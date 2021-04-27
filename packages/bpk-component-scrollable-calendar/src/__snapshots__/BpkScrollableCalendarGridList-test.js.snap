@@ -5,7 +5,7 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
   className="bpk-scrollable-calendar-grid-list"
 >
   <List
-    direction="vertical"
+    direction="ltr"
     estimatedItemSize={270}
     extraData={
       Object {
@@ -69,6 +69,7 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
     initialScrollOffset={0}
     itemCount={13}
     itemSize={[Function]}
+    layout="vertical"
     overscanCount={1}
     rowCount={13}
     style={Object {}}
@@ -85,7 +86,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
   className="bpk-scrollable-calendar-grid-list"
 >
   <List
-    direction="vertical"
+    direction="ltr"
     estimatedItemSize={270}
     extraData={
       Object {
@@ -152,6 +153,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
     initialScrollOffset={0}
     itemCount={13}
     itemSize={[Function]}
+    layout="vertical"
     overscanCount={1}
     rowCount={13}
     style={Object {}}
@@ -168,7 +170,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
   className="bpk-scrollable-calendar-grid-list"
 >
   <List
-    direction="vertical"
+    direction="ltr"
     estimatedItemSize={270}
     extraData={
       Object {
@@ -232,6 +234,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
     initialScrollOffset={0}
     itemCount={13}
     itemSize={[Function]}
+    layout="vertical"
     overscanCount={1}
     rowCount={13}
     style={Object {}}
@@ -248,7 +251,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
   className="bpk-scrollable-calendar-grid-list"
 >
   <List
-    direction="vertical"
+    direction="ltr"
     estimatedItemSize={270}
     extraData={
       Object {
@@ -312,6 +315,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
     initialScrollOffset={0}
     itemCount={13}
     itemSize={[Function]}
+    layout="vertical"
     overscanCount={1}
     rowCount={13}
     style={Object {}}
@@ -328,7 +332,7 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
   className="bpk-scrollable-calendar-grid-list"
 >
   <List
-    direction="vertical"
+    direction="ltr"
     estimatedItemSize={270}
     extraData={
       Object {
@@ -391,6 +395,7 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
     initialScrollOffset={0}
     itemCount={13}
     itemSize={[Function]}
+    layout="vertical"
     overscanCount={1}
     rowCount={13}
     style={Object {}}

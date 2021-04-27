@@ -21,7 +21,7 @@
     "bpk-tokens": "^36.1.1",
     "date-fns": "^1.29.0",
     "prop-types": "^15.5.8",
-    "react-window": "^1.5.0"
+    "react-window": "^1.8.6"
   },
   "devDependencies": {
     "bpk-storybook-utils": "^0.0.19"
