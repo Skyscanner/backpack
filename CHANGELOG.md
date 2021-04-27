@@ -1,3 +1,9 @@
+# 2021-04-27
+
+**Added:**
+- bpk-component-nudger: 2.0.125 => 2.1.0
+  - Added ability to spread `rest` across the input component to add `aria` and other `input` props.
+
 # 2021-04-20
 
 **Fixed:**
