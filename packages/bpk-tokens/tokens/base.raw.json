@@ -2736,6 +2736,55 @@
       "originalValue": "{!SPACING_BASE}",
       "name": "SPACING_BASE"
     },
+    "SPACING_FUNCTION_BASE": {
+      "type": "function",
+      "category": "spacings",
+      "value": "@function bpk-spacing-base() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 1rem; } @return 1.5rem; }",
+      "originalValue": "@function bpk-spacing-base() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 1rem; } @return {!SPACING_BASE}; }",
+      "name": "SPACING_FUNCTION_BASE"
+    },
+    "SPACING_FUNCTION_LG": {
+      "type": "function",
+      "category": "spacings",
+      "value": "@function bpk-spacing-lg() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 1.5rem; } @return 1.875rem; }",
+      "originalValue": "@function bpk-spacing-lg() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 1.5rem; } @return {!SPACING_LG}; }",
+      "name": "SPACING_FUNCTION_LG"
+    },
+    "SPACING_FUNCTION_MD": {
+      "type": "function",
+      "category": "spacings",
+      "value": "@function bpk-spacing-md() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .5rem; } @return 1.125rem; }",
+      "originalValue": "@function bpk-spacing-md() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .5rem; } @return {!SPACING_MD}; }",
+      "name": "SPACING_FUNCTION_MD"
+    },
+    "SPACING_FUNCTION_SM": {
+      "type": "function",
+      "category": "spacings",
+      "value": "@function bpk-spacing-sm() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .25rem; } @return .75rem; }",
+      "originalValue": "@function bpk-spacing-sm() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .25rem; } @return {!SPACING_SM}; }",
+      "name": "SPACING_FUNCTION_SM"
+    },
+    "SPACING_FUNCTION_XL": {
+      "type": "function",
+      "category": "spacings",
+      "value": "@function bpk-spacing-xl() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 2rem; } @return 2.250rem; }",
+      "originalValue": "@function bpk-spacing-xl() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 2rem; } @return {!SPACING_XL}; }",
+      "name": "SPACING_FUNCTION_XL"
+    },
+    "SPACING_FUNCTION_XS": {
+      "type": "function",
+      "category": "spacings",
+      "value": "@function bpk-spacing-xs() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .25rem; } @return .375rem; }",
+      "originalValue": "@function bpk-spacing-xs() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .25rem; } @return {!SPACING_XS}; }",
+      "name": "SPACING_FUNCTION_XS"
+    },
+    "SPACING_FUNCTION_XXL": {
+      "type": "function",
+      "category": "spacings",
+      "value": "@function bpk-spacing-xxl() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 2.5rem; } @return 2.625rem; }",
+      "originalValue": "@function bpk-spacing-xxl() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 2.5rem; } @return {!SPACING_XXL}; }",
+      "name": "SPACING_FUNCTION_XXL"
+    },
     "SPACING_LG": {
       "type": "size",
       "category": "spacings",
@@ -3453,6 +3502,13 @@
     "SELECT_PADDING_RIGHT",
     "SELECT_PADDING_TOP",
     "SPACING_BASE",
+    "SPACING_FUNCTION_BASE",
+    "SPACING_FUNCTION_LG",
+    "SPACING_FUNCTION_MD",
+    "SPACING_FUNCTION_SM",
+    "SPACING_FUNCTION_XL",
+    "SPACING_FUNCTION_XS",
+    "SPACING_FUNCTION_XXL",
     "SPACING_LG",
     "SPACING_MD",
     "SPACING_NONE",
