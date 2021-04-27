@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-checkbox",
-  "version": "2.2.50",
+  "version": "2.2.51",
   "description": "Backpack checkbox component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "c2217d61875a1f3aa2bb9ed9583c50e3f1523501",
   "dependencies": {
-    "bpk-component-icon": "^8.3.24",
-    "bpk-mixins": "^20.1.31",
+    "bpk-component-icon": "^8.3.25",
+    "bpk-mixins": "^20.1.32",
     "bpk-react-utils": "^3.1.0",
     "prop-types": "^15.6.2"
   },
@@ -23,7 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^0.0.19",
-    "bpk-tokens": "^36.1.1"
+    "bpk-storybook-utils": "^0.0.20",
+    "bpk-tokens": "^36.1.2"
   }
 }
