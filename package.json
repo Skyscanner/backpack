@@ -135,7 +135,7 @@
     "copy-webpack-plugin": "^5.0.4",
     "core-js": "^3.0.0",
     "css-loader": "^1.0.0",
-    "danger": "^9.0.1",
+    "danger": "^10.6.4",
     "danger-plugin-toolbox": "^1.13.0",
     "del": "^5.0.0",
     "enzyme": "^3.8.0",
