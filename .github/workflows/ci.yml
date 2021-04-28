@@ -37,6 +37,11 @@ jobs:
         run: |
           nvm use
           npm test
+      
+      - name: Danger
+        run: npm run danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
 
       - name: Build Storybook
         run: |
