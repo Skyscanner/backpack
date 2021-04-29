@@ -175,8 +175,8 @@ const setMonthYear = (date, newMonth, newYear) =>
   setYear(setMonth(date, newMonth), newYear);
 
 const parseIsoDate = parse;
-const formatIsoDate = date => format(date, 'YYYY-MM-DD');
-const formatIsoMonth = date => format(date, 'YYYY-MM');
+const formatIsoDate = date => format(date, 'yyyy-MM-dd');
+const formatIsoMonth = date => format(date, 'yyyy-MM');
 
 export {
   getCalendarMonthWeeks,

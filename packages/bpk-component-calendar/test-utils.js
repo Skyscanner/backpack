@@ -18,18 +18,18 @@
 
 import format from 'date-fns/format';
 
-export const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
+export const formatDateFull = date => format(date, 'EEEE, do MMMM yyyy');
 export const formatDateFullArabic = date => {
-  const dateString = 'dddd, DD، MMMM، YYYY';
-  const newString = dateString.replace('YYYY', date.getUTCFullYear());
+  const dateString = 'EEEE, dd، MMMM، yyyy';
+  const newString = dateString.replace('yyyy', date.getUTCFullYear());
   return format(date, newString);
 };
 export const formatDateFullJapanese = date => {
-  const dateString = 'Y年M月D日dddd';
+  const dateString = 'Y年M月d日EEEE';
   const newString = dateString.replace('Y', date.getUTCFullYear());
   return format(date, newString);
 };
-export const formatMonth = date => format(date, 'MMMM YYYY');
+export const formatMonth = date => format(date, 'MMMM yyyy');
 export const formatMonthArabic = date => {
   const months = [
     'يناير',

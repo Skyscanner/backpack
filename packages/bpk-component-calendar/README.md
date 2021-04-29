@@ -16,8 +16,8 @@ import BpkCalendar from 'bpk-component-calendar';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import format from 'date-fns/format';
 
-const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
-const formatMonth = date => format(date, 'MMMM YYYY');
+const formatDateFull = date => format(date, 'EEEE, do MMMM yyyy');
+const formatMonth = date => format(date, 'MMMM yyyy');
 const daysOfWeek = [
   {
     name: 'Sunday',
@@ -313,7 +313,7 @@ A function to format a full, human-readable date, for example: "Monday, 8th Janu
 ```js
 import format from 'date-fns/format';
 
-const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
+const formatDateFull = date => format(date, 'EEEE, do MMMM yyyy');
 ```
 
 #### formatMonth
@@ -325,7 +325,7 @@ If you just need to quickly prototype, use the following from [`date-fns`](https
 ```js
 import format from 'date-fns/format';
 
-const formatMonth = date => format(date, 'MMMM YYYY');
+const formatMonth = date => format(date, 'MMMM yyyy');
 ```
 
 #### weekStartsOn

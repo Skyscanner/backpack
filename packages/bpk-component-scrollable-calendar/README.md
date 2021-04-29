@@ -16,8 +16,8 @@ import { DateUtils } from 'bpk-component-calendar';
 import BpkScrollableCalendar from 'bpk-component-scrollable-calendar';
 import format from 'date-fns/format';
 
-const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
-const formatMonth = date => format(date, 'MMMM YYYY');
+const formatDateFull = date => format(date, 'EEEE, do MMMM yyyy');
+const formatMonth = date => format(date, 'MMMM yyyy');
 const daysOfWeek = [
   {
     name: 'Sunday',

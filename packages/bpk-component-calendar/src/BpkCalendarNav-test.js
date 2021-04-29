@@ -23,7 +23,7 @@ import format from 'date-fns/format';
 
 import BpkCalendarNav from './BpkCalendarNav';
 
-const formatMonth = date => format(date, 'MMMM YYYY');
+const formatMonth = date => format(date, 'MMMM yyyy');
 
 describe('BpkCalendarNav', () => {
   it('should render correctly', () => {
