@@ -720,6 +720,20 @@ $bpk-select-padding-top: .375rem;
 /// @group spacings
 $bpk-spacing-base: 1.5rem;
 /// @group spacings
+@function bpk-spacing-base() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return 1rem; } @return 1.5rem; }
+/// @group spacings
+@function bpk-spacing-lg() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return 1.5rem; } @return 1.875rem; }
+/// @group spacings
+@function bpk-spacing-md() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return .5rem; } @return 1.125rem; }
+/// @group spacings
+@function bpk-spacing-sm() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return .25rem; } @return .75rem; }
+/// @group spacings
+@function bpk-spacing-xl() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return 2rem; } @return 2.250rem; }
+/// @group spacings
+@function bpk-spacing-xs() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return .25rem; } @return .375rem; }
+/// @group spacings
+@function bpk-spacing-xxl() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return 2.5rem; } @return 2.625rem; }
+/// @group spacings
 $bpk-spacing-lg: 1.875rem;
 /// @group spacings
 $bpk-spacing-md: 1.125rem;

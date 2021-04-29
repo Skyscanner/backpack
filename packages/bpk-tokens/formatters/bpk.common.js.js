@@ -21,15 +21,21 @@ import _ from 'lodash';
 import sortTokens from './sort-tokens';
 import { blockComment } from './license-header';
 
-export const tokenTemplate = ({ name, value }) =>
-  `${_.camelCase(name)}: "${value.replace(/"/g, '\\"')}"`;
+export const tokenTemplate = ({ name, value, type }) => {
+  if (type === 'function') {
+    return null;
+  }
+  return `${_.camelCase(name)}: "${value.replace(/"/g, '\\"')}"`;
+};
 
 export default result => {
   const { props } = sortTokens(result.toJS());
-
   const source = `
 module.exports = {
-  ${_.map(props, prop => tokenTemplate(prop)).join(',\n  ')}
+  ${_.map(
+    props.filter(tokens => tokens.type !== 'function'),
+    prop => tokenTemplate(prop),
+  ).join(',\n  ')}
 };`;
 
   return [blockComment, source].join('\n');

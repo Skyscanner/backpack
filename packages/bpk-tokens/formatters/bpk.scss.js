@@ -26,8 +26,12 @@ export const nameTemplate = ({ name }) => `$bpk-${_.kebabCase(name)}`;
 export const valueTemplate = ({ value, type }) =>
   type === 'media-query' ? `"${value}"` : value;
 
-export const variableTemplate = ({ name, value, type }) =>
-  `${nameTemplate({ name })}: ${valueTemplate({ value, type })};`;
+export const variableTemplate = ({ name, value, type }) => {
+  if (type === 'function') {
+    return `${value}`;
+  }
+  return `${nameTemplate({ name })}: ${valueTemplate({ value, type })};`;
+};
 
 export const sassDocTemplate = ({ category }) => `/// @group ${category}`;
 
