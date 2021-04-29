@@ -46,7 +46,7 @@ import BpkFieldset, {
 
 const getClassName = cssModules(STYLES);
 
-const formatDate = date => format(date, 'DD/MM/YYYY');
+const formatDate = date => format(date, 'dd/MM/yyyy');
 
 const offices = [
   {
