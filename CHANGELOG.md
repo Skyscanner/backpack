@@ -1,3 +1,12 @@
+# 2021-04-29
+
+**Added:**
+- bpk-tokens: 36.1.2 => 36.2.0
+  - Added new spacing Sass function tokens for upcoming grid changes.
+
+- bpk-svgs: 12.5.3 => 12.6.0
+  - Added new `car-door` icon.
+
 # 2021-04-27
 
 **Added:**
