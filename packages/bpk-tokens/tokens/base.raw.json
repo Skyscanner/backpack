@@ -225,11 +225,20 @@
     "SPACING_BASE": {
       "value": "1.5rem"
     },
+    "SPACING_BASE_V2": {
+      "value": "1rem"
+    },
     "SPACING_LG": {
       "value": "1.875rem"
     },
+    "SPACING_LG_V2": {
+      "value": "1.5rem"
+    },
     "SPACING_MD": {
       "value": "1.125rem"
+    },
+    "SPACING_MD_V2": {
+      "value": ".5rem"
     },
     "SPACING_NONE": {
       "value": "0"
@@ -237,14 +246,23 @@
     "SPACING_SM": {
       "value": ".75rem"
     },
+    "SPACING_SM_V2": {
+      "value": ".25rem"
+    },
     "SPACING_XL": {
       "value": "2.250rem"
+    },
+    "SPACING_XL_V2": {
+      "value": "2rem"
     },
     "SPACING_XS": {
       "value": ".375rem"
     },
     "SPACING_XXL": {
       "value": "2.625rem"
+    },
+    "SPACING_XXL_V2": {
+      "value": "2.5rem"
     },
     "TOCHIGI": {
       "value": "#e1ddec"
@@ -2739,50 +2757,50 @@
     "SPACING_FUNCTION_BASE": {
       "type": "function",
       "category": "spacings",
-      "value": "@function bpk-spacing-base() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 1rem; } @return 1.5rem; }",
-      "originalValue": "@function bpk-spacing-base() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 1rem; } @return {!SPACING_BASE}; }",
+      "value": "@function bpk-spacing-base() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return 1rem; } @return 1.5rem; }",
+      "originalValue": "@function bpk-spacing-base() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return {!SPACING_BASE_V2}; } @return {!SPACING_BASE}; }",
       "name": "SPACING_FUNCTION_BASE"
     },
     "SPACING_FUNCTION_LG": {
       "type": "function",
       "category": "spacings",
-      "value": "@function bpk-spacing-lg() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 1.5rem; } @return 1.875rem; }",
-      "originalValue": "@function bpk-spacing-lg() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 1.5rem; } @return {!SPACING_LG}; }",
+      "value": "@function bpk-spacing-lg() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return 1.5rem; } @return 1.875rem; }",
+      "originalValue": "@function bpk-spacing-lg() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return {!SPACING_LG_V2}; } @return {!SPACING_LG}; }",
       "name": "SPACING_FUNCTION_LG"
     },
     "SPACING_FUNCTION_MD": {
       "type": "function",
       "category": "spacings",
-      "value": "@function bpk-spacing-md() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .5rem; } @return 1.125rem; }",
-      "originalValue": "@function bpk-spacing-md() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .5rem; } @return {!SPACING_MD}; }",
+      "value": "@function bpk-spacing-md() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return .5rem; } @return 1.125rem; }",
+      "originalValue": "@function bpk-spacing-md() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return {!SPACING_MD_V2}; } @return {!SPACING_MD}; }",
       "name": "SPACING_FUNCTION_MD"
     },
     "SPACING_FUNCTION_SM": {
       "type": "function",
       "category": "spacings",
-      "value": "@function bpk-spacing-sm() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .25rem; } @return .75rem; }",
-      "originalValue": "@function bpk-spacing-sm() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .25rem; } @return {!SPACING_SM}; }",
+      "value": "@function bpk-spacing-sm() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return .25rem; } @return .75rem; }",
+      "originalValue": "@function bpk-spacing-sm() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return {!SPACING_SM_V2}; } @return {!SPACING_SM}; }",
       "name": "SPACING_FUNCTION_SM"
     },
     "SPACING_FUNCTION_XL": {
       "type": "function",
       "category": "spacings",
-      "value": "@function bpk-spacing-xl() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 2rem; } @return 2.250rem; }",
-      "originalValue": "@function bpk-spacing-xl() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 2rem; } @return {!SPACING_XL}; }",
+      "value": "@function bpk-spacing-xl() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return 2rem; } @return 2.250rem; }",
+      "originalValue": "@function bpk-spacing-xl() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return {!SPACING_XL_V2}; } @return {!SPACING_XL}; }",
       "name": "SPACING_FUNCTION_XL"
     },
     "SPACING_FUNCTION_XS": {
       "type": "function",
       "category": "spacings",
-      "value": "@function bpk-spacing-xs() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .25rem; } @return .375rem; }",
-      "originalValue": "@function bpk-spacing-xs() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return .25rem; } @return {!SPACING_XS}; }",
+      "value": "@function bpk-spacing-xs() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return .25rem; } @return .375rem; }",
+      "originalValue": "@function bpk-spacing-xs() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return {!SPACING_SM_V2}; } @return {!SPACING_XS}; }",
       "name": "SPACING_FUNCTION_XS"
     },
     "SPACING_FUNCTION_XXL": {
       "type": "function",
       "category": "spacings",
-      "value": "@function bpk-spacing-xxl() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 2.5rem; } @return 2.625rem; }",
-      "originalValue": "@function bpk-spacing-xxl() { @if global-variable-exists('new-spacing-values') and $new-spacing-values { @return 2.5rem; } @return {!SPACING_XXL}; }",
+      "value": "@function bpk-spacing-xxl() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return 2.5rem; } @return 2.625rem; }",
+      "originalValue": "@function bpk-spacing-xxl() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return {!SPACING_XXL_V2}; } @return {!SPACING_XXL}; }",
       "name": "SPACING_FUNCTION_XXL"
     },
     "SPACING_LG": {
