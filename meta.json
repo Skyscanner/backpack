@@ -1,23 +1,16 @@
 {
   "maintainers": [
     {
-      "npm": "georgegillams",
-      "github": "georgegillams"
+      "npm": "georgegillams"
     },
     {
-      "npm": "k0nserv",
-      "github": "k0nserv"
+      "npm": "k0nserv"
     },
     {
-      "npm": "shaundon",
-      "github": "shaundon"
+      "npm": "shaundon"
     },
     {
-      "npm": "ojcurt",
-      "github": "olliecurtis"
-    },
-    {
-      "github": "bvitaliyg"
+      "npm": "ojcurt"
     }
   ]
 }
