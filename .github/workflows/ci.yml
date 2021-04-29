@@ -37,6 +37,12 @@ jobs:
         run: |
           nvm use
           npm test
+      
+      - name: Danger
+        run: npm run danger
+        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Storybook
         run: |
