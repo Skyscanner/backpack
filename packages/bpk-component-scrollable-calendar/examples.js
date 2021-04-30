@@ -18,8 +18,8 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import startOfMonth from 'date-fns/start_of_month';
-import endOfMonth from 'date-fns/end_of_month';
+import startOfMonth from 'date-fns/startOfMonth';
+import endOfMonth from 'date-fns/endOfMonth';
 import { action } from 'bpk-storybook-utils';
 import { DateUtils } from 'bpk-component-calendar';
 

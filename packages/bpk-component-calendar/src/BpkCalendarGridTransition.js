@@ -157,7 +157,7 @@ class BpkCalendarGridTransition extends Component {
           onTransitionEnd={this.onMonthTransitionEnd}
         >
           {this.state.months.map((m, index) =>
-            isWithinRange(m, min, max) ? (
+            isWithinRange(m, { start: min, end: max }) ? (
               <TransitionComponent
                 {...rest}
                 key={formatIsoMonth(m)}

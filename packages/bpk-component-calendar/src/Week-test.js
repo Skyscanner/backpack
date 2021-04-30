@@ -18,7 +18,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme/build';
-import startOfDay from 'date-fns/start_of_day';
+import startOfDay from 'date-fns/startOfDay';
 import parse from 'date-fns/parse';
 
 import { weekDays } from '../test-utils';

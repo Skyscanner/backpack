@@ -16,24 +16,24 @@
  * limitations under the License.
  */
 
-import startOfMonth from 'date-fns/start_of_month';
-import endOfMonth from 'date-fns/end_of_month';
-import lastDayOfMonth from 'date-fns/last_day_of_month';
-import getDay from 'date-fns/get_day';
-import isWithinRange from 'date-fns/is_within_range';
-import isToday from 'date-fns/is_today';
-import isSaturday from 'date-fns/is_saturday';
-import isSunday from 'date-fns/is_sunday';
-import isSameDay from 'date-fns/is_same_day';
-import isSameWeek from 'date-fns/is_same_week';
-import isSameMonth from 'date-fns/is_same_month';
-import isBefore from 'date-fns/is_before';
-import differenceInCalendarMonths from 'date-fns/difference_in_calendar_months';
-import addDays from 'date-fns/add_days';
-import addMonths from 'date-fns/add_months';
-import setMonth from 'date-fns/set_month';
-import setYear from 'date-fns/set_year';
-import startOfDay from 'date-fns/start_of_day';
+import startOfMonth from 'date-fns/startOfMonth';
+import endOfMonth from 'date-fns/endOfMonth';
+import lastDayOfMonth from 'date-fns/lastDayOfMonth';
+import getDay from 'date-fns/getDay';
+import isWithinRange from 'date-fns/isWithinInterval';
+import isToday from 'date-fns/isToday';
+import isSaturday from 'date-fns/isSaturday';
+import isSunday from 'date-fns/isSunday';
+import isSameDay from 'date-fns/isSameDay';
+import isSameWeek from 'date-fns/isSameWeek';
+import isSameMonth from 'date-fns/isSameMonth';
+import isBefore from 'date-fns/isBefore';
+import differenceInCalendarMonths from 'date-fns/differenceInCalendarMonths';
+import addDays from 'date-fns/addDays';
+import addMonths from 'date-fns/addMonths';
+import setMonth from 'date-fns/setMonth';
+import setYear from 'date-fns/setYear';
+import startOfDay from 'date-fns/startOfDay';
 import parseISO from 'date-fns/parseISO';
 import format from 'date-fns/format';
 
@@ -153,7 +153,7 @@ function getMonthsInRange(from, to) {
   let currentMonth = startOfMonth(from);
   const monthsInRange = [];
 
-  while (isWithinRange(currentMonth, min, max)) {
+  while (isWithinRange(currentMonth, { start: min, end: max })) {
     monthsInRange.push(currentMonth);
     currentMonth = addMonths(currentMonth, 1);
   }
@@ -162,7 +162,7 @@ function getMonthsInRange(from, to) {
 }
 
 const dateToBoundaries = (date, minDate, maxDate) => {
-  if (isWithinRange(date, minDate, maxDate)) {
+  if (isWithinRange(date, { start: minDate, end: maxDate })) {
     return date;
   }
   if (isBefore(date, minDate)) {
