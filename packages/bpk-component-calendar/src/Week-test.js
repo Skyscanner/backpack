@@ -167,7 +167,11 @@ describe('Week', () => {
       expected ? '' : ' not'
     } update when selection range ${reason}`, () => {
       const date = dt => parse(`1980${dt}`, 'yyyyMMdd', new Date());
-      console.log(date(start));
+      console.log(
+        `Start: ${date(start)}\nEnd: ${date(end)}\nNew Start: ${date(
+          newStart,
+        )}\nNew End: ${date(newEnd)}\n\n`,
+      );
       const week = shallow(
         <Week
           {...initialProps}
@@ -176,7 +180,7 @@ describe('Week', () => {
         />,
       ).instance();
 
-      console.log(week);
+      // console.log(week);
 
       expect(
         week.shouldComponentUpdate({
