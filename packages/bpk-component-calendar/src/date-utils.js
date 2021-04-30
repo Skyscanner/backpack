@@ -34,7 +34,7 @@ import addMonths from 'date-fns/add_months';
 import setMonth from 'date-fns/set_month';
 import setYear from 'date-fns/set_year';
 import startOfDay from 'date-fns/start_of_day';
-import parse from 'date-fns/parse';
+import parseISO from 'date-fns/parseISO';
 import format from 'date-fns/format';
 
 const ONE_MINUTE_IN_MS = 60 * 1000;
@@ -174,7 +174,7 @@ const dateToBoundaries = (date, minDate, maxDate) => {
 const setMonthYear = (date, newMonth, newYear) =>
   setYear(setMonth(date, newMonth), newYear);
 
-const parseIsoDate = parse;
+const parseIsoDate = parseISO;
 const formatIsoDate = date => format(date, 'yyyy-MM-dd');
 const formatIsoMonth = date => format(date, 'yyyy-MM');
 
