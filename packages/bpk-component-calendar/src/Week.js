@@ -78,9 +78,14 @@ class Week extends Component {
       'cellClassName',
     ];
 
+    // If any of the props have changed, component should update.
     if (!shallowEqualProps(this.props, nextProps, shallowProps)) {
       return true;
     }
+
+    // If focusedDate is changing, and it'll be included as part
+    // of either the week we're rendering now or the next week
+    // we'll render, component should update.
     if (
       (isSameWeek(nextProps.focusedDate, nextProps.dates[0], {
         weekStartsOn: nextProps.weekStartsOn,
@@ -92,6 +97,10 @@ class Week extends Component {
     ) {
       return true;
     }
+
+    // If selected date is changing, and it'll be included as part
+    // of either the week we're rendering now or the next week we'll
+    // render, component should update.
     if (
       (isSameWeek(nextProps.selectedDate, nextProps.dates[0], {
         weekStartsOn: nextProps.weekStartsOn,
@@ -103,9 +112,13 @@ class Week extends Component {
     ) {
       return true;
     }
+
+    // If min date is changing, component should update.
     if (!isSameDay(nextProps.minDate, this.props.minDate)) {
       return true;
     }
+
+    // If max date is changing, component should update.
     if (!isSameDay(nextProps.maxDate, this.props.maxDate)) {
       return true;
     }
@@ -123,6 +136,7 @@ class Week extends Component {
       const firstDate = startOfDay(nextProps.dates[0]).getTime() - 1;
       const lastDate =
         startOfDay(nextProps.dates[nextProps.dates.length - 1]).getTime() + 1;
+
       if (
         areRangesOverlapping(
           this.props.selectionStart,
