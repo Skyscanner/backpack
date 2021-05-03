@@ -349,13 +349,13 @@ const WeekExample = () => {
         <tbody>
           <Week
             {...weekProps}
-            selectionStart={parseDate(`19800611`)}
-            selectionEnd={parseDate(`19800616`)}
+            selectionStart={parseDate(`19800611`, 'yyyyMMdd', new Date())}
+            selectionEnd={parseDate(`19800616`, 'yyyyMMdd', new Date())}
           />
           <Week
             {...weekProps}
-            selectionStart={parseDate(`19800601`)}
-            selectionEnd={parseDate(`19800607`)}
+            selectionStart={parseDate(`19800601`, 'yyyyMMdd', new Date())}
+            selectionEnd={parseDate(`19800607`, 'yyyyMMdd', new Date())}
           />
         </tbody>
       </table>

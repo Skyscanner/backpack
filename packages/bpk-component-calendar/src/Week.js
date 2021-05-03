@@ -23,7 +23,6 @@ import areIntervalsOverlapping from 'date-fns/areIntervalsOverlapping';
 import dateMin from 'date-fns/min';
 import dateMax from 'date-fns/max';
 import startOfDay from 'date-fns/startOfDay';
-import { first } from 'lodash';
 
 import {
   getDay,
@@ -122,6 +121,10 @@ class Week extends Component {
     // If max date is changing, component should update.
     if (!isSameDay(nextProps.maxDate, this.props.maxDate)) {
       return true;
+    }
+
+    if (!this.props.selectionStart || !this.props.selectionEnd) {
+      return false;
     }
 
     const selectionStartChanged = !isSameDay(
