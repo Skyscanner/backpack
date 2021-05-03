@@ -25,7 +25,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
 
 import { widthHeightAspectRatioPropType } from './customPropTypes';
-import STYLES from './BpkImage.scss';
+import STYLES from './BpkImage.module.scss';
 import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
 const getClassName = cssModules(STYLES);

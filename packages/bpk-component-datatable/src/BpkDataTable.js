@@ -23,7 +23,7 @@ import { Table, AutoSizer } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
 import _omit from 'lodash/omit';
 
-import STYLES from './BpkDataTable.scss';
+import STYLES from './BpkDataTable.module.scss';
 import BpkDataTableColumn from './BpkDataTableColumn';
 import hasChildrenOfType from './hasChildrenOfType';
 import makeSorter, { type Sorter } from './sorter';

@@ -25,7 +25,7 @@ import { cssModules } from 'bpk-react-utils';
 import { BpkFlareBar, BpkContentBubble } from './index';
 
 // eslint-disable-next-line import/order
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

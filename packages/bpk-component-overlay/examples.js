@@ -26,7 +26,7 @@ import BpkImage, {
   BORDER_RADIUS_STYLES as IMAGE_BORDER_RADIUS_STYLES,
 } from 'bpk-component-image';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkOverlay, { BORDER_RADIUS_STYLES, OVERLAY_TYPES } from './index';
 

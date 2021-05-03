@@ -26,7 +26,7 @@ import BpkSwitch from 'bpk-component-switch';
 import { cssModules } from 'bpk-react-utils';
 import { BpkCode } from 'bpk-component-code';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkAriaLive, { ARIA_LIVE_POLITENESS_SETTINGS } from './index';
 

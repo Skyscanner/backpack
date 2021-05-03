@@ -20,7 +20,7 @@
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkRating, { RATING_SIZES, RATING_TYPES } from './index';
 

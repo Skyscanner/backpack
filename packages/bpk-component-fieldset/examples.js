@@ -36,7 +36,7 @@ import {
 import { format } from 'bpk-component-calendar/src/date-utils';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkFieldset, {
   type BpkFieldsetProps,

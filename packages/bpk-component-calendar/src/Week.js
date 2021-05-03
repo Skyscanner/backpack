@@ -38,9 +38,9 @@ import {
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
 // TODO: Move this to `Week.scss`
-// This should be using its own css file as `BpkCalendarGrid` is also importing `BpkCalendarGrid.scss`
+// This should be using its own css file as `BpkCalendarGrid` is also importing `BpkCalendarGrid.module.scss`
 // and the order of css imports can break the component.
-import STYLES from './BpkCalendarGrid.scss';
+import STYLES from './BpkCalendarGrid.module.scss';
 
 const getClassName = cssModules(STYLES);
 

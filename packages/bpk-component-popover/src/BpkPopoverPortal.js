@@ -25,7 +25,7 @@ import focusStore from 'a11y-focus-store';
 import { Portal, cssModules } from 'bpk-react-utils';
 
 import keyboardFocusScope from './keyboardFocusScope';
-import STYLES from './BpkPopover.scss';
+import STYLES from './BpkPopover.module.scss';
 import BpkPopover, {
   propTypes as popoverPropTypes,
   defaultProps as popoverDefaultProps,

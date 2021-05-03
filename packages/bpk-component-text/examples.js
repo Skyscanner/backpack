@@ -19,7 +19,7 @@
 import React from 'react';
 import { withDefaultProps } from 'bpk-react-utils';
 
-import STYLE from './examples.scss';
+import STYLE from './examples.module.scss';
 
 import BpkText, { WEIGHT_STYLES } from './index';
 

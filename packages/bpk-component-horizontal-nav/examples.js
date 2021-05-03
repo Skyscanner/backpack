@@ -27,7 +27,7 @@ import {
 import BpkText from 'bpk-component-text';
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,

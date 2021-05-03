@@ -40,7 +40,7 @@ import {
   applyMarginRTLTransform,
 } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
-import STYLES from './BpkBarchart.scss';
+import STYLES from './BpkBarchart.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -28,7 +28,7 @@ import {
   dialogInnerPropTypes,
   dialogInnerDefaultProps,
 } from './common-types';
-import STYLES from './BpkDialogInner.scss';
+import STYLES from './BpkDialogInner.module.scss';
 
 const getClassName = cssModules(STYLES);
 

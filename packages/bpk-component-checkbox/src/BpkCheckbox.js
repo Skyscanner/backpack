@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkCheckbox.scss';
+import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -23,7 +23,7 @@ import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
 import BpkText, { WEIGHT_STYLES } from 'bpk-component-text';
 
-import STYLES from './BpkRating.scss';
+import STYLES from './BpkRating.module.scss';
 import { RATING_SIZES, RATING_TYPES } from './common-types';
 
 const getClassName = cssModules(STYLES);

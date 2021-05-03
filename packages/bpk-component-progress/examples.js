@@ -22,7 +22,7 @@ import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkProgress from './index';
 

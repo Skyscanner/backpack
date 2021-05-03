@@ -26,7 +26,7 @@ import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center, remToPx } from './utils';
-import STYLES from './BpkChartAxis.scss';
+import STYLES from './BpkChartAxis.module.scss';
 
 const getClassName = cssModules(STYLES);
 

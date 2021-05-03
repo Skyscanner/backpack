@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkSkipLink.scss';
+import STYLES from './BpkSkipLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 

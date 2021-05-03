@@ -25,7 +25,7 @@ import BpkTextarea from 'bpk-component-textarea';
 import BpkInput from 'bpk-component-input';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkFormValidation from './index';
 

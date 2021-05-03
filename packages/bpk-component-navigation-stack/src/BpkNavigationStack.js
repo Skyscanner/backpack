@@ -25,7 +25,7 @@ import { durationSm } from 'bpk-tokens/tokens/base.es6';
 import { TransitionGroup, Transition } from 'react-transition-group';
 import debounce from 'lodash/debounce';
 
-import STYLES from './BpkNavigationStack.scss';
+import STYLES from './BpkNavigationStack.module.scss';
 
 const getClassName = cssModules(STYLES);
 

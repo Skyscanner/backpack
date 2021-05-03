@@ -24,7 +24,7 @@ import { action } from 'bpk-storybook-utils';
 import BpkLabel from 'bpk-component-label';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkInput, {
   propTypes as inputPropTypes,

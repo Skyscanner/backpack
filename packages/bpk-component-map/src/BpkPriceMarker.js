@@ -29,7 +29,7 @@ import BpkText, {
 
 import { LatLongPropType, type LatLong } from './common-types';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
-import STYLES from './BpkPriceMarker.scss';
+import STYLES from './BpkPriceMarker.module.scss';
 
 const getClassName = cssModules(STYLES);
 

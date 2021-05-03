@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkAriaLive.scss';
+import STYLES from './BpkAriaLive.module.scss';
 
 const getClassName = cssModules(STYLES);
 

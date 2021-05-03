@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkTextarea.scss';
+import STYLES from './BpkTextarea.module.scss';
 
 const getClassName = cssModules(STYLES);
 

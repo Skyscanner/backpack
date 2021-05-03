@@ -21,7 +21,7 @@
 import React from 'react';
 
 import { type Props, propTypes, defaultProps } from './common-types';
-import COMMON_STYLES from './BpkButtonBase.scss';
+import COMMON_STYLES from './BpkButtonBase.module.scss';
 
 // This was originally depended upon from the bpk-react-utils package, however
 // we decided to inline it in this particular component so as not to bloat the

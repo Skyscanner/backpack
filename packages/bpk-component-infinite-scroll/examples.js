@@ -26,7 +26,7 @@ import { BpkList, BpkListItem } from 'bpk-component-list';
 import { BpkSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import withInfiniteScroll, { ArrayDataSource, DataSource } from './index';
 
