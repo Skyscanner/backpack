@@ -20,7 +20,7 @@ import React, { Component } from 'react';
 import { action } from 'bpk-storybook-utils';
 import addMonths from 'date-fns/addMonths';
 import BpkText from 'bpk-component-text';
-import startOfDay from 'date-fns/start_of_day';
+import startOfDay from 'date-fns/startOfDay';
 import parseDate from 'date-fns/parse';
 
 import {
