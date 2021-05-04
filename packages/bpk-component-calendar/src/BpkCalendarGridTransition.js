@@ -147,8 +147,7 @@ class BpkCalendarGridTransition extends Component {
       isTransitioning && 'bpk-calendar-grid-transition__strip--transitioning',
     );
 
-    let min;
-    let max;
+    let min, max;
     if (rest.minDate && rest.maxDate) {
       ({ min, max } = getMonthRange(rest.minDate, rest.maxDate));
     }
