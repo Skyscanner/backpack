@@ -14,6 +14,6 @@
   },
   "gitHead": "09fc99e4e67a5b71dc15f41a5409ad412bc139d4",
   "dependencies": {
-    "tether": "^1.4.0"
+    "tether": "^2.0.0"
   }
 }
