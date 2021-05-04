@@ -96,9 +96,9 @@ const DefaultExample = () => (
   />
 );
 
-const WeekStartsOnSeven = () => (
+const WeekStartsOnSix = () => (
   <ScrollableCal
-    weekStartsOn={7}
+    weekStartsOn={6}
     daysOfWeek={weekDays}
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -292,7 +292,7 @@ const DontMarkToday = () => (
 
 export {
   DefaultExample,
-  WeekStartsOnSeven,
+  WeekStartsOnSix,
   WithFocusedDate,
   TallContainer,
   SingleMonth,
