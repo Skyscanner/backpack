@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+// a change
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -114,13 +116,23 @@ class Week extends Component {
     }
 
     // If min date is changing, component should update.
-    if (!isSameDay(nextProps.minDate, this.props.minDate)) {
-      return true;
+    if (nextProps.minDate) {
+      if (nextProps.minDate !== this.props.minDate) {
+        return true;
+      }
+      if (!isSameDay(nextProps.minDate, this.props.minDate)) {
+        return true;
+      }
     }
 
     // If max date is changing, component should update.
-    if (!isSameDay(nextProps.maxDate, this.props.maxDate)) {
-      return true;
+    if (nextProps.maxDate) {
+      if (nextProps.maxDate !== this.props.maxDate) {
+        return true;
+      }
+      if (!isSameDay(nextProps.maxDate, this.props.maxDate)) {
+        return true;
+      }
     }
 
     if (!this.props.selectionStart || !this.props.selectionEnd) {
