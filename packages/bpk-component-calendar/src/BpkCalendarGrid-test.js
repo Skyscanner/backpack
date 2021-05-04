@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
-import isWeekend from 'date-fns/is_weekend';
+import isWeekend from 'date-fns/isWeekend';
 import { colorMonteverde, colorPanjin } from 'bpk-tokens/tokens/base.es6';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';

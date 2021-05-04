@@ -21,7 +21,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import BpkButton from 'bpk-component-button';
-import addMonths from 'date-fns/add_months';
+import addMonths from 'date-fns/addMonths';
 import {
   colorWhite,
   colorPanjin,

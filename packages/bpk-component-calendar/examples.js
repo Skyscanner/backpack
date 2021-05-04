@@ -18,7 +18,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { action } from 'bpk-storybook-utils';
-import addMonths from 'date-fns/add_months';
+import addMonths from 'date-fns/addMonths';
 import BpkText from 'bpk-component-text';
 import startOfDay from 'date-fns/start_of_day';
 import parseDate from 'date-fns/parse';
@@ -349,13 +349,13 @@ const WeekExample = () => {
         <tbody>
           <Week
             {...weekProps}
-            selectionStart={parseDate(`19800611`)}
-            selectionEnd={parseDate(`19800616`)}
+            selectionStart={parseDate(`19800611`, 'yyyyMMdd', new Date())}
+            selectionEnd={parseDate(`19800616`, 'yyyyMMdd', new Date())}
           />
           <Week
             {...weekProps}
-            selectionStart={parseDate(`19800601`)}
-            selectionEnd={parseDate(`19800607`)}
+            selectionStart={parseDate(`19800601`, 'yyyyMMdd', new Date())}
+            selectionEnd={parseDate(`19800607`, 'yyyyMMdd', new Date())}
           />
         </tbody>
       </table>

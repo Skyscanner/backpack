@@ -18,8 +18,8 @@
 
 import React from 'react';
 import { shallow } from 'enzyme/build';
-import startOfDay from 'date-fns/start_of_day';
-import parseDate from 'date-fns/parse';
+import startOfDay from 'date-fns/startOfDay';
+import parse from 'date-fns/parse';
 
 import { weekDays } from '../test-utils';
 
@@ -166,7 +166,7 @@ describe('Week', () => {
     it(`should${
       expected ? '' : ' not'
     } update when selection range ${reason}`, () => {
-      const date = dt => parseDate(`1980${dt}`);
+      const date = dt => parse(`1980${dt}`, 'yyyyMMdd', new Date());
       const week = shallow(
         <Week
           {...initialProps}

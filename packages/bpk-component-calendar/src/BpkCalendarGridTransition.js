@@ -147,7 +147,11 @@ class BpkCalendarGridTransition extends Component {
       isTransitioning && 'bpk-calendar-grid-transition__strip--transitioning',
     );
 
-    const { min, max } = getMonthRange(rest.minDate, rest.maxDate);
+    let min;
+    let max;
+    if (rest.minDate && rest.maxDate) {
+      ({ min, max } = getMonthRange(rest.minDate, rest.maxDate));
+    }
 
     return (
       <div className={getClassName('bpk-calendar-grid-transition', className)}>
@@ -157,7 +161,7 @@ class BpkCalendarGridTransition extends Component {
           onTransitionEnd={this.onMonthTransitionEnd}
         >
           {this.state.months.map((m, index) =>
-            isWithinRange(m, min, max) ? (
+            min && max && isWithinRange(m, { start: min, end: max }) ? (
               <TransitionComponent
                 {...rest}
                 key={formatIsoMonth(m)}
