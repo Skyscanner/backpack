@@ -1,3 +1,16 @@
+# 2021-05-04
+
+**Breaking:**
+- bpk-component-calendar: `8.0.0`
+- bpk-component-datepicker: `12.0.0`
+- bpk-component-scrollable-calendar: `3.0.0`
+  - Upgraded from `date-fns@^1.29.0` to `date-fns@^2.21.1`. Ensure that anywhere you are using `date-fns` with these components uses syntax and functions compatible with this version. For more information and help with upgrading, see the [`date-fns` changelog](https://github.com/date-fns/date-fns/blob/master/CHANGELOG.md#200---2019-08-20).
+
+**Changed:**
+- bpk-component-barchart: `3.1.48`
+  - Upgraded `d3-scale` and `d3-path` to latest versions.
+
+
 # 2021-04-29
 
 **Added:**
