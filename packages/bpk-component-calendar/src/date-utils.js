@@ -161,7 +161,14 @@ function getMonthsInRange(from, to) {
   return monthsInRange;
 }
 
+/*
+Adjusts a date, if necessary, to fit within a range.
+If date passed in is null, it'll return the minimum date.
+*/
 const dateToBoundaries = (date, minDate, maxDate) => {
+  if (!date) {
+    return minDate;
+  }
   if (isWithinRange(date, { start: minDate, end: maxDate })) {
     return date;
   }
@@ -171,8 +178,10 @@ const dateToBoundaries = (date, minDate, maxDate) => {
   return maxDate;
 };
 
-const setMonthYear = (date, newMonth, newYear) =>
-  setYear(setMonth(date, newMonth), newYear);
+const setMonthYear = (date, newMonth, newYear) => {
+  const dateToUse = date || new Date(newYear, newMonth, 1);
+  return setYear(setMonth(dateToUse, newMonth), newYear);
+};
 
 const parseIsoDate = parseISO;
 const formatIsoDate = date => format(date, 'yyyy-MM-dd');
