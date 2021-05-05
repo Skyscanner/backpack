@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2018 Skyscanner Ltd
+ * Copyright 2016-2021 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,7 +108,6 @@ configure(() => {
   require('../packages/bpk-component-progress/stories');
   require('../packages/bpk-component-radio/stories');
   require('../packages/bpk-component-rating/stories');
-  require('../packages/bpk-component-router-link/stories');
   require('../packages/bpk-component-rtl-toggle/stories');
   require('../packages/bpk-component-scrollable-calendar/stories');
   require('../packages/bpk-component-section-list/stories');

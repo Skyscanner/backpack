@@ -73,7 +73,6 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 | [`bpk-component-popover`](/packages/bpk-component-popover) | [![npm version](https://badge.fury.io/js/bpk-component-popover.svg)](http://badge.fury.io/js/bpk-component-popover) |
 | [`bpk-component-progress`](/packages/bpk-component-progress) | [![npm version](https://badge.fury.io/js/bpk-component-progress.svg)](http://badge.fury.io/js/bpk-component-progress) |
 | [`bpk-component-radio`](/packages/bpk-component-radio) | [![npm version](https://badge.fury.io/js/bpk-component-radio.svg)](http://badge.fury.io/js/bpk-component-radio) |
-| [`bpk-component-router-link`](/packages/bpk-component-router-link) | [![npm version](https://badge.fury.io/js/bpk-component-router-link.svg)](http://badge.fury.io/js/bpk-component-router-link) |
 | [`bpk-component-rtl-toggle`](/packages/bpk-component-rtl-toggle) | [![npm version](https://badge.fury.io/js/bpk-component-rtl-toggle.svg)](http://badge.fury.io/js/bpk-component-rtl-toggle) |
 | [`bpk-component-section-list`](/packages/bpk-component-section-list) | [![npm version](https://badge.fury.io/js/bpk-component-section-list.svg)](http://badge.fury.io/js/bpk-component-section-list) |
 | [`bpk-component-select`](/packages/bpk-component-select) | [![npm version](https://badge.fury.io/js/bpk-component-select.svg)](http://badge.fury.io/js/bpk-component-select) |
