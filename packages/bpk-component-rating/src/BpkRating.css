@@ -1,1 +1,18 @@
+/* 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2021 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
 @keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-rating{display:flex}.bpk-rating--vertical{flex-direction:column}.bpk-rating__component{justify-content:center;align-items:center;border-radius:50%;color:#fff}.bpk-rating--base-rating{display:flex;width:3rem;height:3rem}.bpk-rating--lg-rating{display:flex;width:3.75rem;height:3.75rem}.bpk-rating--sm-rating{display:flex;width:2.25rem;height:2.25rem}.bpk-rating--sm-pill{width:2.25rem;height:1.875rem;border-radius:1.125rem}.bpk-rating--base-pill{width:3rem;height:2.25rem;border-radius:1.125rem}.bpk-rating--lg-pill{width:4.125rem;height:2.625rem;border-radius:1.3125rem}.bpk-rating__text-wrapper{display:flex;flex-direction:column;justify-content:center}.bpk-rating__text-wrapper--horizontal{padding-left:.75rem}html[dir='rtl'] .bpk-rating__text-wrapper--horizontal{padding-right:.75rem}.bpk-rating__text-wrapper--vertical{padding-top:.375rem}.bpk-rating__text--horizontal{text-align:left}html[dir='rtl'] .bpk-rating__text--horizontal{text-align:right}.bpk-rating__text--vertical{align-self:center;text-align:center}.bpk-rating--high-rating{align-self:center;color:#111236;color:#111236;color:var(--bpk-rating-high-text-color, #111236);background-color:#73cec6;background-color:var(--bpk-rating-high-color, #73cec6)}.bpk-rating--medium-rating{align-self:center;color:#111236;color:var(--bpk-rating-medium-text-color, #111236);background-color:#ffb54d;background-color:var(--bpk-rating-medium-color, #ffb54d)}.bpk-rating--low-rating{align-self:center;background-color:#d1435b;background-color:var(--bpk-rating-low-color, #d1435b)}

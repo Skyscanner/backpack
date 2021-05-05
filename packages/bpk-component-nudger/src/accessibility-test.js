@@ -28,17 +28,23 @@ describe('BpkNudger accessibility tests', () => {
   use of a read only input. We should improve it soon and then
   this test will become possible.
   */
-  it.skip('should not have programmatically-detectable accessibility issues', async () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkNudger
-        id="nudger"
-        min={1}
-        max={9}
-        value={2}
-        onChange={() => null}
-        decreaseButtonLabel="Decrease"
-        increaseButtonLabel="Increase"
-      />,
+      <div>
+        <label id="label" htmlFor="nudger">
+          Nudger
+        </label>
+        <BpkNudger
+          id="nudger"
+          aria-labelledby="label"
+          min={1}
+          max={9}
+          value={2}
+          onChange={() => null}
+          decreaseButtonLabel="Decrease"
+          increaseButtonLabel="Increase"
+        />
+      </div>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

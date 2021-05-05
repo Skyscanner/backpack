@@ -1,3 +1,45 @@
+# 2021-05-04
+
+**Breaking:**
+- bpk-component-calendar: `8.0.0`
+- bpk-component-datepicker: `12.0.0`
+- bpk-component-scrollable-calendar: `3.0.0`
+  - Upgraded from `date-fns@^1.29.0` to `date-fns@^2.21.1`. Ensure that anywhere you are using `date-fns` with these components uses syntax and functions compatible with this version. For more information and help with upgrading, see the [`date-fns` changelog](https://github.com/date-fns/date-fns/blob/master/CHANGELOG.md#200---2019-08-20).
+
+**Changed:**
+- bpk-component-barchart: `3.1.48`
+  - Upgraded `d3-scale` and `d3-path` to latest versions.
+
+
+# 2021-04-29
+
+**Added:**
+- bpk-tokens: 36.1.2 => 36.2.0
+  - Added new spacing Sass function tokens for upcoming grid changes.
+
+- bpk-svgs: 12.5.3 => 12.6.0
+  - Added new `car-door` icon.
+
+# 2021-04-27
+
+**Added:**
+- bpk-component-nudger: 2.0.125 => 2.1.0
+  - Added ability to spread `rest` across the input component to add `aria` and other `input` props.
+
+# 2021-04-20
+
+**Fixed:**
+
+- bpk-component-card: 2.2.0 => 2.2.1
+  - Changed non-atomic role to `group` to ensure the link is not exposed to AT.
+
+# 2021-04-19
+
+**Added:**
+
+- bpk-component-card: 2.1.47 => 2.2.0
+  - New `atomic` prop which can be set false to make the card appear to AT as a simple container.
+
 # 2021-04-13
 
 **Fixed:**

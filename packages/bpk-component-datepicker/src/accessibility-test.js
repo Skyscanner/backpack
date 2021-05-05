@@ -39,7 +39,7 @@ jest.mock(
 // eslint-disable-next-line import/first
 import BpkDatepicker from './BpkDatepicker';
 
-const formatDate = date => format(date, 'DD/MM/YYYY');
+const formatDate = date => format(date, 'dd/MM/yyyy');
 
 const inputProps = {
   onChange: () => null,

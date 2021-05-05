@@ -18,8 +18,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { action } from 'bpk-storybook-utils';
-import addMonths from 'date-fns/add_months';
+import addMonths from 'date-fns/addMonths';
 import BpkText from 'bpk-component-text';
+import startOfDay from 'date-fns/startOfDay';
+import parseDate from 'date-fns/parse';
 
 import {
   formatMonth,
@@ -35,6 +37,7 @@ import {
 } from './test-utils';
 import MonthViewCalendar from './examples-components';
 import ColoredCalendar from './coloured-calendar-example';
+import Week from './src/Week';
 
 import BpkCalendar, {
   // BpkCalendarView,
@@ -309,6 +312,57 @@ const CustomColors = () => (
   />
 );
 
+const WeekExample = () => {
+  // eslint-disable-next-line react/prop-types
+  const DummyDateComponent = ({ date }) => <div>{date.toString()}</div>;
+
+  const weekProps = {
+    ...Week.defaultProps,
+    DateComponent: DummyDateComponent,
+    dateModifiers: {},
+    dates: [
+      new Date(1980, 5, 10),
+      new Date(1980, 5, 11),
+      new Date(1980, 5, 12),
+      new Date(1980, 5, 13),
+      new Date(1980, 5, 14),
+      new Date(1980, 5, 15),
+      new Date(1980, 5, 16),
+    ].map(startOfDay),
+    daysOfWeek: weekDays,
+    formatDateFull: d => d.toString(),
+    preventKeyboardFocus: false,
+    showWeekendSeparator: true,
+    markToday: true,
+    markOutsideDays: true,
+    isKeyboardFocusable: true,
+    month: new Date(1980, 5, 1),
+    weekStartsOn: 0,
+  };
+
+  return (
+    <div>
+      <p>
+        This is an internal-only component, it&apos;s not exported to consumers.
+      </p>
+      <table>
+        <tbody>
+          <Week
+            {...weekProps}
+            selectionStart={parseDate(`19800611`, 'yyyyMMdd', new Date())}
+            selectionEnd={parseDate(`19800616`, 'yyyyMMdd', new Date())}
+          />
+          <Week
+            {...weekProps}
+            selectionStart={parseDate(`19800601`, 'yyyyMMdd', new Date())}
+            selectionEnd={parseDate(`19800607`, 'yyyyMMdd', new Date())}
+          />
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
 export {
   DefaultExample,
   CalendarNavExample,
@@ -328,4 +382,5 @@ export {
   CustomComposedCalendar,
   CustomComposedCalendarSafariBug,
   CustomColors,
+  WeekExample,
 };

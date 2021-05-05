@@ -93,6 +93,10 @@ This is required unless `dismissible` is false.
 
 This will change the style of the default flare view. Should you wish to apply an image to the flare you would pass the image using the CSS property `background-image`.
 
+#### getApplicationElement
+
+This is a function that should return the DOM node of the root of your application, the node returned will be hidden from screen readers when the dialog is displayed. Be careful to return the correct node from this, as on iPhone this element is actually hidden from view also.
+
 ## Theme Props
 
 - `linkColor`

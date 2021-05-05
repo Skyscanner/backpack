@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
+// a change
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
-import areRangesOverlapping from 'date-fns/are_ranges_overlapping';
+import areIntervalsOverlapping from 'date-fns/areIntervalsOverlapping';
 import dateMin from 'date-fns/min';
 import dateMax from 'date-fns/max';
-import startOfDay from 'date-fns/start_of_day';
+import startOfDay from 'date-fns/startOfDay';
 
 import {
   getDay,
@@ -78,9 +80,14 @@ class Week extends Component {
       'cellClassName',
     ];
 
+    // If any of the props have changed, component should update.
     if (!shallowEqualProps(this.props, nextProps, shallowProps)) {
       return true;
     }
+
+    // If focusedDate is changing, and it'll be included as part
+    // of either the week we're rendering now or the next week
+    // we'll render, component should update.
     if (
       (isSameWeek(nextProps.focusedDate, nextProps.dates[0], {
         weekStartsOn: nextProps.weekStartsOn,
@@ -92,6 +99,10 @@ class Week extends Component {
     ) {
       return true;
     }
+
+    // If selected date is changing, and it'll be included as part
+    // of either the week we're rendering now or the next week we'll
+    // render, component should update.
     if (
       (isSameWeek(nextProps.selectedDate, nextProps.dates[0], {
         weekStartsOn: nextProps.weekStartsOn,
@@ -103,11 +114,29 @@ class Week extends Component {
     ) {
       return true;
     }
-    if (!isSameDay(nextProps.minDate, this.props.minDate)) {
-      return true;
+
+    // If min date is changing, component should update.
+    if (nextProps.minDate) {
+      if (nextProps.minDate !== this.props.minDate) {
+        return true;
+      }
+      if (!isSameDay(nextProps.minDate, this.props.minDate)) {
+        return true;
+      }
     }
-    if (!isSameDay(nextProps.maxDate, this.props.maxDate)) {
-      return true;
+
+    // If max date is changing, component should update.
+    if (nextProps.maxDate) {
+      if (nextProps.maxDate !== this.props.maxDate) {
+        return true;
+      }
+      if (!isSameDay(nextProps.maxDate, this.props.maxDate)) {
+        return true;
+      }
+    }
+
+    if (!this.props.selectionStart || !this.props.selectionEnd) {
+      return false;
     }
 
     const selectionStartChanged = !isSameDay(
@@ -120,30 +149,35 @@ class Week extends Component {
     );
 
     if (selectionStartChanged || selectionEndChanged) {
-      const firstDate = startOfDay(nextProps.dates[0]).getTime() - 1;
-      const lastDate =
-        startOfDay(nextProps.dates[nextProps.dates.length - 1]).getTime() + 1;
+      const firstDate = new Date(startOfDay(nextProps.dates[0]).getTime() - 1);
+      const lastDate = new Date(
+        startOfDay(nextProps.dates[nextProps.dates.length - 1]).getTime() + 1,
+      );
+
       if (
-        areRangesOverlapping(
-          this.props.selectionStart,
-          this.props.selectionEnd,
-          firstDate,
-          lastDate,
+        areIntervalsOverlapping(
+          { start: this.props.selectionStart, end: this.props.selectionEnd },
+          { start: firstDate, end: lastDate },
         ) ||
-        areRangesOverlapping(
-          nextProps.selectionStart,
-          nextProps.selectionEnd,
-          firstDate,
-          lastDate,
+        areIntervalsOverlapping(
+          { start: nextProps.selectionStart, end: nextProps.selectionEnd },
+          { start: firstDate, end: lastDate },
         )
       ) {
         if (
           selectionStartChanged &&
-          areRangesOverlapping(
-            dateMin(this.props.selectionStart, nextProps.selectionStart),
-            dateMax(this.props.selectionStart, nextProps.selectionStart),
-            firstDate,
-            lastDate,
+          areIntervalsOverlapping(
+            {
+              start: dateMin([
+                this.props.selectionStart,
+                nextProps.selectionStart,
+              ]),
+              end: dateMax([
+                this.props.selectionStart,
+                nextProps.selectionStart,
+              ]),
+            },
+            { start: firstDate, end: lastDate },
           )
         ) {
           return true;
@@ -151,11 +185,12 @@ class Week extends Component {
 
         if (
           selectionEndChanged &&
-          areRangesOverlapping(
-            dateMin(this.props.selectionEnd, nextProps.selectionEnd),
-            dateMax(this.props.selectionEnd, nextProps.selectionEnd),
-            firstDate,
-            lastDate,
+          areIntervalsOverlapping(
+            {
+              start: dateMin([this.props.selectionEnd, nextProps.selectionEnd]),
+              end: dateMax([this.props.selectionEnd, nextProps.selectionEnd]),
+            },
+            { start: firstDate, end: lastDate },
           )
         ) {
           return true;
@@ -207,7 +242,9 @@ class Week extends Component {
       <tr className={getClassName('bpk-calendar-grid__week')}>
         {this.props.dates.map(date => {
           const isBlocked =
-            minDate && maxDate ? !isWithinRange(date, minDate, maxDate) : false;
+            minDate && maxDate
+              ? !isWithinRange(date, { start: minDate, end: maxDate })
+              : false;
 
           return (
             <DateContainer

@@ -20,7 +20,7 @@ import { storiesOf } from '@storybook/react';
 
 import {
   DefaultExample,
-  WeekStartsOnSeven,
+  WeekStartsOnSix,
   WithFocusedDate,
   TallContainer,
   SingleMonth,
@@ -38,7 +38,7 @@ import {
 
 storiesOf('bpk-component-scrollable-calendar', module)
   .add('Scrollable Calendar - default', DefaultExample)
-  .add('Scrollable Calendar - week starts on 7', WeekStartsOnSeven)
+  .add('Scrollable Calendar - week starts on 6', WeekStartsOnSix)
   .add('Scrollable Calendar - with focused date', WithFocusedDate)
   .add('Scrollable Calendar in a tall container', TallContainer)
   .add('Scrollable Calendar with a single month', SingleMonth)

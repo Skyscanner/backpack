@@ -1,1 +1,18 @@
+/* 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2021 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
 @keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-phone-input{display:grid;grid-template-rows:auto auto;grid-template-columns:max-content auto;grid-template-areas:'dialingCodeLabel numberLabel' 'dialingCode number';grid-column-gap:.75rem}@media (max-width: 32.25rem){.bpk-phone-input{grid-template-columns:7.5rem auto}}@media (max-width: 32.25rem){.bpk-phone-input--large{grid-template-columns:8.25rem auto}}.bpk-phone-input__dialing-code-label{grid-area:dialingCodeLabel;align-self:end}.bpk-phone-input__dialing-code{grid-area:dialingCode}.bpk-phone-input__phone-number-label{grid-area:numberLabel;align-self:end}.bpk-phone-input__phone-number-code{grid-area:number}

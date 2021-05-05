@@ -65,6 +65,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
     incrementValue,
     decrementValue,
     compareValues,
+    ...rest
   } = props;
   const classNames = [getClassName('bpk-nudger')];
   if (className) {
@@ -106,6 +107,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
       >
         <AlignedMinusIcon className={minusIconClassNames.join(' ')} />
       </ButtonComponent>
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="text"
         aria-live="assertive"
@@ -113,6 +115,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         value={formatValue(value)}
         id={id}
         className={inputStyles.join(' ')}
+        {...rest}
       />
       <ButtonComponent
         iconOnly

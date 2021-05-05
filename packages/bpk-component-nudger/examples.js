@@ -54,17 +54,18 @@ class NudgerContainer extends Component<
 
     return (
       <div>
-        <BpkLabel htmlFor={id} className={labelClassName}>
+        <BpkLabel id="passenger-label" htmlFor={id} className={labelClassName}>
           Number of passengers
         </BpkLabel>
         <BpkNudger
+          aria-labelledby="passenger-label"
           id={id}
           min={1}
           max={10}
           value={this.state.value}
           onChange={this.handleChange}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
+          decreaseButtonLabel="Remove passenger"
+          increaseButtonLabel="Add passenger"
           buttonType={buttonType}
         />
       </div>
@@ -113,9 +114,12 @@ class ConfigurableNudgerContainer extends Component<{}, { value: string }> {
   render() {
     return (
       <div>
-        <BpkLabel htmlFor="nudger">Traveller Class</BpkLabel>
+        <BpkLabel id="traveller-label" htmlFor="nudger">
+          Traveller Class
+        </BpkLabel>
         <BpkConfigurableNudger
           id="nudger"
+          aria-labelledby="traveller-label"
           min="economy"
           max="first"
           value={this.state.value}

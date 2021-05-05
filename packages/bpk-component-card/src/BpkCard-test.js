@@ -35,9 +35,31 @@ describe('BpkCard', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly when non-atomic', () => {
+    const { asFragment } = render(
+      <BpkCard atomic={false}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkCard>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly with an "href" attribute', () => {
     const { asFragment } = render(
       <BpkCard href="//www.skyscanner.net">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkCard>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with an "href" attribute when non-atomic', () => {
+    const { asFragment } = render(
+      <BpkCard href="//www.skyscanner.net" atomic={false}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.

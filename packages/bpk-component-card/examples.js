@@ -17,22 +17,67 @@
  */
 /* @flow strict */
 
-import React from 'react';
+import React, { Fragment } from 'react';
+import BpkLink from 'bpk-component-link';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
 import BpkCard from './index';
 
-const textContent = `It's your world and we'll help you explore it. Find the best prices across millions of flights, hotels and car hire options to create your perfect trip.`;
+const shortContent = 'Book your next trip on skyscanner.net.';
 
-const DefaultExample = () => <BpkCard>{textContent}</BpkCard>;
+const longContent = (
+  <Fragment>
+    <BpkText tagName="h3" textStyle={TEXT_STYLES.lg}>
+      Let&#39;s explore
+    </BpkText>
+    <BpkText tagName="p">
+      It&#39;s your world and we&#39;ll help you explore it. Find the best
+      prices across millions of flights, hotels and car hire options to create
+      your perfect trip.
+      <br />
+      <BpkLink href="http://www.skyscanner.net/">Go to Skyscanner</BpkLink>
+    </BpkText>
+  </Fragment>
+);
 
-const WithHrefExample = () => (
-  <BpkCard href="https://skyscanner.net">
-    Pressing this card will open https://skyscanner.net.
+const DefaultExample = () => (
+  <BpkCard onClick={() => window.open('https://www.skyscanner.net/')}>
+    {shortContent}
   </BpkCard>
 );
 
-const WithoutPaddingExample = () => (
-  <BpkCard padded={false}>{textContent}</BpkCard>
+const WithHrefExample = () => (
+  <BpkCard href="https://skyscanner.net">{shortContent}</BpkCard>
 );
 
-export { DefaultExample, WithHrefExample, WithoutPaddingExample };
+const WithoutPaddingExample = () => (
+  <BpkCard
+    padded={false}
+    onClick={() => window.open('https://www.skyscanner.net/')}
+  >
+    {shortContent}
+  </BpkCard>
+);
+
+const NonAtomicExample = () => (
+  <BpkCard
+    atomic={false}
+    onClick={() => window.open('https://www.skyscanner.net/')}
+  >
+    {longContent}
+  </BpkCard>
+);
+
+const NonAtomicHrefExample = () => (
+  <BpkCard atomic={false} href="https://www.skyscanner.net/">
+    {longContent}
+  </BpkCard>
+);
+
+export {
+  DefaultExample,
+  WithHrefExample,
+  WithoutPaddingExample,
+  NonAtomicExample,
+  NonAtomicHrefExample,
+};
