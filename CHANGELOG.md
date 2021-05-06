@@ -1,3 +1,12 @@
+# 2021-05-06
+
+**Added:**
+- Backpack compatibility with other build systems. E.g. `Next.js`
+
+**Changed:**
+- bpk-tether: 1.0.23 => 1.1.0
+  - Upgraded `tether` to `2.0.0`.
+
 # 2021-05-04
 
 **Breaking:**
