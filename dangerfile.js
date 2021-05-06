@@ -132,7 +132,7 @@ if (outdatedLicenses.length > 0) {
   fail(
     `These files contain an outdated licensing header: ${outdatedLicenses.join(
       ', ',
-    )}. Please update to ${currentYear}.`,
+    )}. Please update to '2016-${currentYear}'.`,
   );
 }
 
