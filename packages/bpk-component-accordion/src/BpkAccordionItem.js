@@ -29,7 +29,7 @@ import BpkText, {
 } from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkAccordionItem.scss';
+import STYLES from './BpkAccordionItem.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -23,7 +23,7 @@ import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 import BpkLabel from 'bpk-component-label';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkNudgerStory.scss';
+import STYLES from './BpkNudgerStory.module.scss';
 
 import BpkNudger, { BpkConfigurableNudger } from './index';
 

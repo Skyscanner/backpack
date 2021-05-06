@@ -27,7 +27,7 @@ import InfoIcon from 'bpk-component-icon/lg/information-circle';
 import TrashIcon from 'bpk-component-icon/lg/trash';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkDialog, { HEADER_ICON_TYPES } from './index';
 

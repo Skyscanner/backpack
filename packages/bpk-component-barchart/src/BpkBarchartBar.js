@@ -24,7 +24,7 @@ import { cssModules } from 'bpk-react-utils';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
 
 import { remToPx } from './utils';
-import STYLES from './BpkBarchartBar.scss';
+import STYLES from './BpkBarchartBar.module.scss';
 
 const getClassName = cssModules(STYLES);
 

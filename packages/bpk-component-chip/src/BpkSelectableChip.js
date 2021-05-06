@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkSelectableChip.scss';
+import STYLES from './BpkSelectableChip.module.scss';
 import {
   COMMON_PROP_TYPES,
   COMMON_DEFAULT_PROPS,

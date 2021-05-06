@@ -21,7 +21,7 @@
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkMobileScrollContainer from './index';
 

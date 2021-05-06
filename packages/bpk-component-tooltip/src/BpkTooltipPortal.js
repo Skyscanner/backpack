@@ -29,7 +29,7 @@ import BpkTooltip, {
   type TooltipProps,
 } from './BpkTooltip';
 import { ARROW_ID } from './constants';
-import STYLES from './BpkTooltip.scss';
+import STYLES from './BpkTooltip.module.scss';
 
 const getClassName = cssModules(STYLES);
 

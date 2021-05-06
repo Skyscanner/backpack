@@ -29,7 +29,7 @@ import TickIconSm from 'bpk-component-icon/sm/tick';
 import FaceHappyIconSm from 'bpk-component-icon/sm/face--happy';
 import { AriaLiveDemo } from 'bpk-component-aria-live/examples';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 import { COMMON_PROP_TYPES, COMMON_DEFAULT_PROPS } from './src/commonTypes';
 
 import BpkSelectableChip, {

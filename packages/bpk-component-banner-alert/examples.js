@@ -25,7 +25,7 @@ import { AriaLiveDemo } from 'bpk-component-aria-live/examples';
 import { BpkButtonPrimary } from 'bpk-component-button';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkBannerAlert, {
   ALERT_TYPES,

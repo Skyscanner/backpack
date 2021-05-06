@@ -24,7 +24,7 @@ import BpkCloseButton from 'bpk-component-close-button';
 
 import BpkDialogInner from './BpkDialogInner';
 import { type Props, propTypes, defaultProps } from './common-types';
-import STYLES from './BpkDialog.scss';
+import STYLES from './BpkDialog.module.scss';
 
 const getClassName = cssModules(STYLES);
 

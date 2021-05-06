@@ -33,7 +33,7 @@ import {
   COMMON_PROP_TYPES,
   COMMON_DEFAULT_PROPS,
 } from './common-types';
-import STYLES from './BpkNudger.scss';
+import STYLES from './BpkNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import React, { Children, type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './SpinnerLayout.scss';
+import STYLES from './SpinnerLayout.module.scss';
 
 import { SPINNER_TYPES } from './index';
 

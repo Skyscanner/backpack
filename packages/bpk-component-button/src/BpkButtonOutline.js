@@ -22,7 +22,7 @@ import React from 'react';
 
 import { type Props, defaultProps, propTypes } from './common-types';
 import BpkButtonBase, { cssModules } from './BpkButtonBase';
-import STYLES from './BpkButtonOutline.scss';
+import STYLES from './BpkButtonOutline.module.scss';
 
 const getClassName = cssModules(STYLES);
 

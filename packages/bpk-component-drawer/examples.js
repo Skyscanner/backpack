@@ -24,7 +24,7 @@ import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import BpkText from 'bpk-component-text';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkDrawer from './index';
 

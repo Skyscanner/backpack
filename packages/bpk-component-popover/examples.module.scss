@@ -16,31 +16,16 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
-@import './BpkImage.scss';
+@import '~bpk-mixins';
 
-.bpk-background-image {
-  @include bpk-image;
+.bpk-popover-paragraph {
+  margin-bottom: $bpk-spacing-xs;
+}
 
-  &__spinner {
-    @include bpk-image__spinner;
-  }
-
-  &__img {
-    opacity: 0;
-
-    @include bpk-image__img;
-
-    &--shown {
-      opacity: 1;
-    }
-  }
-
-  &__content {
-    position: relative;
-  }
-
-  &--no-background {
-    @include bpk-image--no-background;
-  }
+.bpk-popover-spacer {
+  display: flex;
+  height: 100 * $bpk-one-pixel-rem;
+  margin: 30 * $bpk-one-pixel-rem;
+  justify-content: space-around;
+  align-items: flex-start;
 }

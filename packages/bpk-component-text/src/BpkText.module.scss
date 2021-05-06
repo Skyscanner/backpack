@@ -16,13 +16,52 @@
  * limitations under the License.
  */
 
-import { cssModules } from 'bpk-react-utils';
+@import '~bpk-mixins';
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
+.bpk-text {
+  @include bpk-text;
 
-const getClassName = cssModules(STYLES);
+  &--xs {
+    @include bpk-text--xs;
+  }
 
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+  &--sm {
+    @include bpk-text--sm;
+  }
+
+  &--base {
+    @include bpk-text--base;
+  }
+
+  &--lg {
+    @include bpk-text--lg;
+  }
+
+  &--xl {
+    @include bpk-text--xl;
+  }
+
+  &--xxl {
+    @include bpk-text--xxl;
+  }
+
+  &--xxxl {
+    @include bpk-text--xxxl;
+  }
+
+  &--xxxxl {
+    @include bpk-text--xxxxl;
+  }
+
+  &--xxxxxl {
+    @include bpk-text--xxxxxl;
+  }
+
+  &--bold {
+    @include bpk-text--bold;
+  }
+
+  &--black {
+    @include bpk-text--black;
+  }
+}

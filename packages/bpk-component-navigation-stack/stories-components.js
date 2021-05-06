@@ -32,7 +32,7 @@ import React, {
 import BpkLeftArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import BpkRightArrowIcon from 'bpk-component-icon/sm/long-arrow-right';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkNavigationStack from './index';
 

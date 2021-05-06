@@ -23,7 +23,7 @@ import React, { type StatelessFunctionalComponent } from 'react';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkCloseButton.scss';
+import STYLES from './BpkCloseButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 

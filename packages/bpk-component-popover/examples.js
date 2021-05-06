@@ -26,7 +26,7 @@ import BpkText from 'bpk-component-text';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 
 import BpkPopover from './index';
 

@@ -29,7 +29,7 @@ import {
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
 import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
 
-import STYLES from './BpkButtonStory.scss';
+import STYLES from './BpkButtonStory.module.scss';
 
 import BpkButton, {
   BpkButtonPrimary,

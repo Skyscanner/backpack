@@ -22,7 +22,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 import {
   View,
   SimpleNav,

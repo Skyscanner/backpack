@@ -25,7 +25,7 @@ import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.module.scss';
 import AirlineLogo from './AirlineLogo';
 
 import BpkNavigationBar, {

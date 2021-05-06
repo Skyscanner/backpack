@@ -26,7 +26,7 @@ import { cssModules } from 'bpk-react-utils';
 import { BpkButtonLink } from 'bpk-component-link';
 import BpkCloseButton from 'bpk-component-close-button';
 
-import STYLES from './BpkDrawerContent.scss';
+import STYLES from './BpkDrawerContent.module.scss';
 
 const getClassName = cssModules(STYLES);
 

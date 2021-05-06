@@ -29,16 +29,16 @@ import {
   orderDaysOfWeek,
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
-import STYLES from './BpkCalendarGrid.scss';
+import STYLES from './BpkCalendarGrid.module.scss';
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
-// This should be imported after `./BpkCalendarGrid.scss`.
+// This should be imported after `./BpkCalendarGrid.module.scss`.
 // Because of how css specificity works the class `bpk-calendar-grid-transition__grid` needs to be defined
-// after `bpk-calendar-grid` (defined by BpkCalendarGrid.scss) so it can override width and display of the calendar
+// after `bpk-calendar-grid` (defined by BpkCalendarGrid.module.scss) so it can override width and display of the calendar
 
 // This is because the calendar with transiction is expected to have a fixed width and whenever `bpk-calendar-grid-transition__grid`
 // class is applyed it should override the calendar style.
 
-// NOTE that ./Week is also importing ./BpkCalendarGrid.scss so adding this after `./Week` would also do the job but
+// NOTE that ./Week is also importing ./BpkCalendarGrid.module.scss so adding this after `./Week` would also do the job but
 // for clarity we should leave it here.
 
 const getClassName = cssModules(STYLES);

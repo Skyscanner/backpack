@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 
 const execAsync = promisify(exec);
 
-const command = "git status --porcelain | awk '{print $2}'";
+const command = 'git status --porcelain | awk \'{print $2}\'';
 const [...filesToIgnore] = process.argv;
 
 const exists = item => !!item;
@@ -32,6 +32,16 @@ const init = async () => {
         ', ',
       )}). Changed files: ${changedFiles.join(', ')}`,
     );
+
+    try {
+      const diff = await execAsync('git diff --word-diff', {
+        cwd: process.cwd(),
+      });
+      console.log(diff.stdout);
+    } catch (error) {
+      // continue
+    }
+
     process.exit(1);
   }
 };

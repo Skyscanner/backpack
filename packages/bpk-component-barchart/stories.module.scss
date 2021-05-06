@@ -16,13 +16,22 @@
  * limitations under the License.
  */
 
-import { cssModules } from 'bpk-react-utils';
+@import '~bpk-mixins';
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
+.bpk-heading {
+  margin-bottom: $bpk-spacing-sm;
+}
 
-const getClassName = cssModules(STYLES);
+$custom-color: $bpk-color-sagano;
 
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+.bpk-barchart-custom-scrollers {
+  background: $custom-color;
+
+  &--leading {
+    @include bpk-scroll-indicator-left($custom-color);
+  }
+
+  &--trailing {
+    @include bpk-scroll-indicator-right($custom-color);
+  }
+}

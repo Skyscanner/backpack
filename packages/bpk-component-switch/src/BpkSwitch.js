@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkSwitch.scss';
+import STYLES from './BpkSwitch.module.scss';
 
 const getClassName = cssModules(STYLES);
 

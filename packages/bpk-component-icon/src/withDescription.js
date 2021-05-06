@@ -20,7 +20,7 @@
 import React, { type AbstractComponent } from 'react';
 import { cssModules, wrapDisplayName } from 'bpk-react-utils';
 
-import STYLES from './withDescription.scss';
+import STYLES from './withDescription.module.scss';
 
 const getClassName = cssModules(STYLES);
 
