@@ -136,6 +136,20 @@ if (outdatedLicenses.length > 0) {
   );
 }
 
+const nonModuleCssFiles = fileChanges.filter(
+  filePath =>
+    filePath.match(/bpk-component/) &&
+    filePath.match(/\.s?css/) &&
+    !filePath.match(/\.module\.s?css/),
+);
+if (nonModuleCssFiles.length) {
+  fail(
+    `(S)CSS files must be named with the CSS Module convention - .module.(s)css. Please rename these files: ${nonModuleCssFiles.join(
+      ', ',
+    )}`,
+  );
+}
+
 markdownChanges.forEach(path => {
   const fileContent = fs.readFileSync(path);
 
