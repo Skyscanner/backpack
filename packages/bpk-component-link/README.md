@@ -22,6 +22,14 @@ export default () => (
 )
 ```
 
+## Single Page App (SPA) Frameworks
+
+If you're using a SPA framework like `react-router-dom` or `Next.js` to navigate between pages without refreshing, then you can wrap `BpkLink` in the component provided by the framework.
+
+[`react-router-dom` `Link` using the `component` prop](https://reactrouter.com/web/api/Link/component-reactcomponent)
+
+[`Next.js` `Link` using a custom component as the child element](https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-custom-component-that-wraps-an-a-tag)
+
 ## Props
 
 ### BpkLink
