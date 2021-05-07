@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-calendar",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "description": "Backpack calendar component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "6d446e75ee484e7babe153e3c7248fa1ed8bd46c",
   "dependencies": {
-    "bpk-component-aria-live": "^1.1.0",
+    "bpk-component-aria-live": "^1.1.1",
     "bpk-component-icon": "^8.4.0",
     "bpk-component-select": "^3.1.0",
     "bpk-mixins": "^20.2.0",
