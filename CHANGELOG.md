@@ -1,3 +1,10 @@
+# 2021-05-07
+
+**Fixed:**
+- bpk-scrim-utils: 4.1.0 => 4.1.1
+  - Compatibility with other build systems. E.g. `Next.js`
+
+
 # 2021-05-06
 
 **Added:**
