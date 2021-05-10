@@ -1,3 +1,3 @@
 **Fixed:**
   - bpk-svgs:
-    - Updated `tick-circle` icon to improve tick appearance.
+    - Updated `account--permit`, `baggage-tick`, `breakfast-tick` and `tick-circle` icon to improve tick appearance.
