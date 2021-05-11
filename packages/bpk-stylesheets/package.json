@@ -15,7 +15,7 @@
   "scripts": {
     "build": "node build"
   },
-  "gitHead": "c2217d61875a1f3aa2bb9ed9583c50e3f1523501",
+  "gitHead": "5c156b97cb0ba5e75851d3c763334578714c895e",
   "dependencies": {
     "bpk-mixins": "^20.2.1",
     "bpk-tokens": "^36.2.0",

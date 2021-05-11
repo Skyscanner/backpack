@@ -1,3 +1,10 @@
+# 2021-05-11
+
+**Fixed:**
+  - bpk-svgs: 12.6.0 -> 12.6.1
+    - Updated `account--permit`, `baggage-tick`, `breakfast-tick` and `tick-circle` icon to improve tick appearance.
+
+
 # 2021-05-07
 
 **Fixed:**
