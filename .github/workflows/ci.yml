@@ -75,7 +75,7 @@ jobs:
           external_repository: backpack/storybook
           publish_branch: main
 
-      - name: Run tests
+      - name: Run visual tests
         run: |
           nvm use
           npm run jest:visual-tests

@@ -18,15 +18,16 @@
 
 /* @flow */
 
+import path from 'path';
+
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
-import path from 'path';
 
 // This small timeout is to allow the component to settle.
 // See: https://www.npmjs.com/package/@storybook/addon-storyshots-puppeteer#specifying-options-to-jest-image-snapshots
 // Its primary function is to delay the screenshot being taken to prevent regressions due to mounting animations & images loading.
-const beforeScreenshot = (_page, { context: { _kind, _story }, _url }) =>
-  new Promise((resolve) =>
+const beforeScreenshot = () =>
+  new Promise(resolve =>
     setTimeout(() => {
       resolve();
     }, 800),
@@ -35,6 +36,6 @@ const beforeScreenshot = (_page, { context: { _kind, _story }, _url }) =>
 initStoryshots({
   test: imageSnapshot({
     storybookUrl: `file://${path.resolve(__dirname, '../dist-storybook')}`,
-    beforeScreenshot
+    beforeScreenshot,
   }),
 });
