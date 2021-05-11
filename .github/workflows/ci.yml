@@ -37,7 +37,7 @@ jobs:
         run: |
           nvm use
           npm test
-      
+
       - name: Danger
         run: npm run danger
         if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
@@ -74,6 +74,11 @@ jobs:
           keep_files: false
           external_repository: backpack/storybook
           publish_branch: main
+
+      - name: Run tests
+        run: |
+          nvm use
+          npm run jest:visual-tests
 
       - name: Prepare to deploy Storybook (pull request build)
         run: |
