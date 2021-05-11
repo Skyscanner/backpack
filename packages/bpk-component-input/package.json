@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-input",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "Backpack input component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "6d446e75ee484e7babe153e3c7248fa1ed8bd46c",
   "dependencies": {
-    "bpk-component-icon": "^8.4.0",
-    "bpk-mixins": "^20.2.0",
+    "bpk-component-icon": "^8.4.1",
+    "bpk-mixins": "^20.2.1",
     "bpk-react-utils": "^3.1.0",
     "prop-types": "^15.6.2"
   },
@@ -23,8 +23,8 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-banner-alert": "^4.3.1",
-    "bpk-component-label": "^4.1.0",
-    "bpk-storybook-utils": "^0.1.0"
+    "bpk-component-banner-alert": "^4.3.2",
+    "bpk-component-label": "^4.1.1",
+    "bpk-storybook-utils": "^0.1.1"
   }
 }
