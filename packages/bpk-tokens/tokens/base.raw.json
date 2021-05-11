@@ -2128,14 +2128,14 @@
       "type": "size",
       "category": "icons",
       "value": "1.5rem",
-      "originalValue": "{!SPACING_BASE}",
+      "originalValue": "1.5rem",
       "name": "ICON_SIZE_LG"
     },
     "ICON_SIZE_SM": {
       "type": "size",
       "category": "icons",
       "value": "1.125rem",
-      "originalValue": "{!SPACING_MD}",
+      "originalValue": "1.125rem",
       "name": "ICON_SIZE_SM"
     },
     "INPUT_BACKGROUND": {
