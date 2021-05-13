@@ -1,3 +1,10 @@
+# 2021-05-13
+
+**Added:**
+- bpk-component-rating: 2.2.1 => 2.3.0
+  - Added a `ratingScale` prop, allowing the rating component to be used with a 0-5 scale instead of 0-10 when needed.
+
+
 # 2021-05-11
 
 **Fixed:**
