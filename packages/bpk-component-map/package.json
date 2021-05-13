@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-map",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Backpack map component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "5c156b97cb0ba5e75851d3c763334578714c895e",
   "dependencies": {
-    "bpk-component-spinner": "^3.2.1",
-    "bpk-mixins": "^20.2.1",
+    "bpk-component-spinner": "^3.2.2",
+    "bpk-mixins": "^20.2.2",
     "bpk-react-utils": "^3.1.0",
     "prop-types": "^15.5.8",
     "react-google-maps": "^9.4.5"
@@ -24,9 +24,9 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-icon": "^8.4.1",
-    "bpk-component-text": "^3.2.1",
-    "bpk-storybook-utils": "^0.1.1",
+    "bpk-component-icon": "^8.4.2",
+    "bpk-component-text": "^3.2.2",
+    "bpk-storybook-utils": "^0.1.2",
     "prop-types": "^15.5.8"
   }
 }
