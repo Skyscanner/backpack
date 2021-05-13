@@ -33,7 +33,7 @@
 @mixin bpk-button {
   display: inline-block;
   margin: 0;
-  padding: $bpk-button-padding-y $bpk-button-padding-x;
+  padding: $bpk-spacing-xs $bpk-spacing-md;
   border: 0;
   border-radius: $bpk-button-border-radius;
   background-image: linear-gradient(
@@ -129,7 +129,7 @@
 ///   }
 
 @mixin bpk-button--large {
-  padding: $bpk-button-large-padding-y $bpk-button-large-padding-x;
+  padding: $bpk-spacing-xs $bpk-spacing-base;
   border-radius: $bpk-button-border-radius;
   font-size: $bpk-button-large-font-size;
   line-height: $bpk-button-large-line-height;
@@ -427,7 +427,7 @@
 ///   }
 
 @mixin bpk-button--padded {
-  padding: $bpk-button-padding-y $bpk-button-padding-x;
+  padding: $bpk-spacing-xs $bpk-spacing-md;
 }
 
 /// Icon-only button. Modifies the bpk-button mixin.
@@ -441,7 +441,7 @@
 ///   }
 
 @mixin bpk-button--icon-only {
-  padding: $bpk-button-padding-y $bpk-button-padding-x-icon-only;
+  padding: $bpk-spacing-xs $bpk-button-padding-x-icon-only;
   border-radius: $bpk-button-icon-border-radius;
 }
 
@@ -458,7 +458,7 @@
 ///   }
 
 @mixin bpk-button--large-icon-only {
-  padding: $bpk-button-large-padding-y $bpk-button-large-padding-x-icon-only;
+  padding: $bpk-spacing-xs $bpk-button-large-padding-x-icon-only;
   border-radius: $bpk-button-icon-border-radius-lg;
 }
 
