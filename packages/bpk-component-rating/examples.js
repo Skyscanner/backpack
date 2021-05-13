@@ -22,7 +22,7 @@ import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
-import BpkRating, { RATING_SIZES, RATING_TYPES } from './index';
+import BpkRating, { RATING_SIZES, RATING_TYPES, RATING_SCALES } from './index';
 
 const getClassName = cssModules(STYLES);
 
@@ -47,6 +47,34 @@ const DefaultExample = () => (
       title="Bad"
       subtitle="Avoid here"
       value={2.3}
+    />
+  </div>
+);
+
+const ZeroToFiveScaleExample = () => (
+  <div>
+    <BpkRating
+      ariaLabel="4 Excellent would recommend"
+      title="Excellent"
+      subtitle="This place was amazing"
+      value={4.1}
+      ratingScale={RATING_SCALES.zeroToFive}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="3 Average might recommend"
+      title="Average"
+      subtitle="Might recommend"
+      value={3.4}
+      ratingScale={RATING_SCALES.zeroToFive}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="2 Bad avoid here"
+      title="Bad"
+      subtitle="Avoid here"
+      value={2.3}
+      ratingScale={RATING_SCALES.zeroToFive}
     />
   </div>
 );
@@ -317,6 +345,7 @@ const PillTitleOnly = () => (
 
 export {
   DefaultExample,
+  ZeroToFiveScaleExample,
   Vertical,
   LargeSize,
   LargeVertical,

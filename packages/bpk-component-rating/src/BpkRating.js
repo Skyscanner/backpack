@@ -24,23 +24,50 @@ import { cssModules } from 'bpk-react-utils';
 import BpkText, { WEIGHT_STYLES } from 'bpk-component-text';
 
 import STYLES from './BpkRating.module.scss';
-import { RATING_SIZES, RATING_TYPES } from './common-types';
+import { RATING_SIZES, RATING_TYPES, RATING_SCALES } from './common-types';
 
 const getClassName = cssModules(STYLES);
-const MEDIUM_RATING_THRESHOLD = 6;
-const HIGH_RATING_THRESHOLD = 8;
-const MAX_VALUE = 10;
-const MIN_VALUE = 0;
+
+// The thresholds are what determine whether a rating is low, medium or high.
+// They are expressed as a percentage of the scale. For example, on a 1-5 scale,
+// 5 * 0.8 (4) would be a high rating.
+const MEDIUM_RATING_THRESHOLD = 0.6;
+const HIGH_RATING_THRESHOLD = 0.8;
+
+const getMinValue = () => {
+  // Currently the min value is zero no matter what scale is used.
+  // If this ever changes, this function should be changed to return
+  // different values based on the rating scale.
+  return 0;
+};
+
+const getMaxValue = ratingScale => {
+  switch (ratingScale) {
+    case RATING_SCALES.zeroToFive:
+      return 5;
+    default:
+      return 10;
+  }
+};
+
+const getMediumRatingThreshold = ratingScale => {
+  return getMaxValue(ratingScale) * MEDIUM_RATING_THRESHOLD;
+};
+
+const getHighRatingThreshold = ratingScale => {
+  return getMaxValue(ratingScale) * HIGH_RATING_THRESHOLD;
+};
 
 export type Props = {
   ariaLabel: string,
-  title: string,
-  value: number,
-  className: ?string,
+  ratingScale: $Values<typeof RATING_SCALES>,
   size: $Values<typeof RATING_SIZES>,
-  subtitle: ?string,
+  title: string,
   type: $Values<typeof RATING_TYPES>,
+  value: number,
   vertical: boolean,
+  className: ?string,
+  subtitle: ?string,
 };
 
 const BpkRating = (props: Props) => {
@@ -50,6 +77,7 @@ const BpkRating = (props: Props) => {
     subtitle,
     value,
     className,
+    ratingScale,
     size,
     type,
     vertical,
@@ -73,11 +101,14 @@ const BpkRating = (props: Props) => {
     textSize = 'sm';
   }
 
+  const minValue = getMinValue();
+  const maxValue = getMaxValue(ratingScale);
+
   let adjustedValue = value;
 
-  if (adjustedValue >= HIGH_RATING_THRESHOLD) {
+  if (adjustedValue >= getHighRatingThreshold(ratingScale)) {
     scoreStyles.push(getClassName('bpk-rating--high-rating'));
-  } else if (adjustedValue >= MEDIUM_RATING_THRESHOLD) {
+  } else if (adjustedValue >= getMediumRatingThreshold(ratingScale)) {
     scoreStyles.push(getClassName('bpk-rating--medium-rating'));
   } else {
     scoreStyles.push(getClassName('bpk-rating--low-rating'));
@@ -94,8 +125,8 @@ const BpkRating = (props: Props) => {
     textStyles.push(getClassName('bpk-rating__text--horizontal'));
   }
 
-  if (adjustedValue >= MAX_VALUE || adjustedValue <= MIN_VALUE) {
-    adjustedValue = clamp(adjustedValue, MIN_VALUE, MAX_VALUE);
+  if (adjustedValue >= maxValue || adjustedValue <= minValue) {
+    adjustedValue = clamp(adjustedValue, minValue, maxValue);
   } else {
     adjustedValue = value.toFixed(1);
   }
@@ -142,6 +173,7 @@ BpkRating.propTypes = {
   title: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   className: PropTypes.string,
+  ratingScale: PropTypes.oneOf(Object.keys(RATING_SCALES)),
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
   subtitle: PropTypes.string,
   type: PropTypes.oneOf([RATING_TYPES.default, RATING_TYPES.pill]),
@@ -150,6 +182,7 @@ BpkRating.propTypes = {
 
 BpkRating.defaultProps = {
   className: null,
+  ratingScale: RATING_SCALES.zeroToTen,
   size: RATING_SIZES.base,
   subtitle: null,
   type: RATING_TYPES.default,

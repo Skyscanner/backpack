@@ -1,6 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkRating should correctly handling values higher than 10 1`] = `
+exports[`BpkRating should correctly handling values higher than 5 when rating scale is zero to five 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="10 Super, smashing, great"
+    class="bpk-rating"
+  >
+    <span
+      aria-hidden="true"
+      class="bpk-text bpk-text--base bpk-text--bold bpk-rating__component bpk-rating--base-rating bpk-rating--high-rating"
+    >
+      5
+    </span>
+    <div
+      class="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+      >
+        <strong>
+          Smashing
+        </strong>
+         
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--xs bpk-rating__text bpk-rating__text--horizontal"
+      >
+        Doubleplusgood
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkRating should correctly handling values higher than 10 when rating scale is zero to ten 1`] = `
 <DocumentFragment>
   <div
     aria-label="15 Amazing brilliant"
@@ -64,6 +99,76 @@ exports[`BpkRating should correctly handling values lower than 0 1`] = `
         class="bpk-text bpk-text--xs bpk-rating__text bpk-rating__text--horizontal"
       >
         Bad option
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkRating should render a high score rating component (zero to five scale) 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="4 Amazing best thing since sliced bread"
+    class="bpk-rating"
+  >
+    <span
+      aria-hidden="true"
+      class="bpk-text bpk-text--base bpk-text--bold bpk-rating__component bpk-rating--base-rating bpk-rating--high-rating"
+    >
+      4.0
+    </span>
+    <div
+      class="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+      >
+        <strong>
+          Amazing
+        </strong>
+         
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--xs bpk-rating__text bpk-rating__text--horizontal"
+      >
+        Best thing since sliced bread
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkRating should render a high score rating component (zero to ten scale) 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="9 Amazing best thing since sliced bread"
+    class="bpk-rating"
+  >
+    <span
+      aria-hidden="true"
+      class="bpk-text bpk-text--base bpk-text--bold bpk-rating__component bpk-rating--base-rating bpk-rating--high-rating"
+    >
+      9.0
+    </span>
+    <div
+      class="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+      >
+        <strong>
+          Amazing
+        </strong>
+         
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--xs bpk-rating__text bpk-rating__text--horizontal"
+      >
+        Best thing since sliced bread
       </span>
     </div>
   </div>
@@ -175,7 +280,42 @@ exports[`BpkRating should render a low score rating component 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkRating should render a medium score rating component 1`] = `
+exports[`BpkRating should render a medium score rating component (zero to five scale) 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="3 Average it's ok at best"
+    class="bpk-rating"
+  >
+    <span
+      aria-hidden="true"
+      class="bpk-text bpk-text--base bpk-text--bold bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
+    >
+      3.0
+    </span>
+    <div
+      class="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+      >
+        <strong>
+          Average
+        </strong>
+         
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--xs bpk-rating__text bpk-rating__text--horizontal"
+      >
+        It's ok at best
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkRating should render a medium score rating component (zero to ten scale) 1`] = `
 <DocumentFragment>
   <div
     aria-label="7 Average it's ok at best"

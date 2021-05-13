@@ -21,6 +21,7 @@ import { storiesOf } from '@storybook/react';
 
 import {
   DefaultExample,
+  ZeroToFiveScaleExample,
   Vertical,
   LargeSize,
   LargeVertical,
@@ -33,6 +34,7 @@ import {
 
 storiesOf('bpk-component-rating', module)
   .add('Default', DefaultExample)
+  .add('Zero to five rating scale', ZeroToFiveScaleExample)
   .add('Vertical', Vertical)
   .add('Large size ratings', LargeSize)
   .add('Large vertical ratings', LargeVertical)

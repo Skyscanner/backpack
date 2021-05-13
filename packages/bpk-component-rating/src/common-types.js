@@ -24,3 +24,8 @@ export const RATING_TYPES = {
   default: 'default',
   pill: 'pill',
 };
+
+export const RATING_SCALES = {
+  zeroToFive: 'zeroToFive',
+  zeroToTen: 'zeroToTen',
+};
