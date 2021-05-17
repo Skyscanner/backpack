@@ -30,10 +30,12 @@
 ///     @include bpk-button();
 ///   }
 
+$bpk-spacing-v2: true;
+
 @mixin bpk-button {
   display: inline-block;
   margin: 0;
-  padding: $bpk-spacing-xs $bpk-spacing-md;
+  padding: bpk-spacing-md() bpk-spacing-base();
   border: 0;
   border-radius: $bpk-button-border-radius;
   background-image: linear-gradient(
@@ -129,7 +131,7 @@
 ///   }
 
 @mixin bpk-button--large {
-  padding: $bpk-spacing-xs $bpk-spacing-base;
+  padding: bpk-spacing-md() bpk-spacing-lg();
   border-radius: $bpk-button-border-radius;
   font-size: $bpk-button-large-font-size;
   line-height: $bpk-button-large-line-height;
@@ -427,7 +429,7 @@
 ///   }
 
 @mixin bpk-button--padded {
-  padding: $bpk-spacing-xs $bpk-spacing-md;
+  padding: bpk-spacing-md() bpk-spacing-base();
 }
 
 /// Icon-only button. Modifies the bpk-button mixin.
@@ -441,8 +443,8 @@
 ///   }
 
 @mixin bpk-button--icon-only {
-  padding: $bpk-spacing-xs $bpk-button-padding-x-icon-only;
-  border-radius: $bpk-button-icon-border-radius;
+  padding: bpk-spacing-md() ($bpk-one-pixel-rem * 11);
+  border-radius: 50%;
 }
 
 /// Large icon-only button. Modifies the bpk-button & bpk-button--large mixins.
@@ -458,8 +460,8 @@
 ///   }
 
 @mixin bpk-button--large-icon-only {
-  padding: $bpk-spacing-xs $bpk-button-large-padding-x-icon-only;
-  border-radius: $bpk-button-icon-border-radius-lg;
+  padding: bpk-spacing-md() ($bpk-one-pixel-rem * 11);
+  border-radius: 50%;
 }
 
 /// Featured button. Modifies the bpk-button
