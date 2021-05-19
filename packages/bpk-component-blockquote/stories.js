@@ -22,4 +22,5 @@ import { DefaultExample, ExtraSpaceExample } from './examples';
 
 storiesOf('bpk-component-blockquote', module)
   .add('Default example', DefaultExample)
-  .add('Example with additional spacing (above and below)', ExtraSpaceExample);
+  .add('Example with additional spacing (above and below)', ExtraSpaceExample)
+  .add('Visual test', DefaultExample);

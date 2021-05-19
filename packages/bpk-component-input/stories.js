@@ -33,6 +33,7 @@ import {
   LargeInputExample,
   DockedExample,
   ManuallyDockedExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-input', module)
@@ -48,4 +49,5 @@ storiesOf('bpk-component-input', module)
   .add('Telephone', TelephoneInputExample)
   .add('Large', LargeInputExample)
   .add('Docked', DockedExample)
-  .add('Manually docked', ManuallyDockedExample);
+  .add('Manually docked', ManuallyDockedExample)
+  .add('Visual test', MixedExample);

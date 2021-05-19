@@ -28,6 +28,7 @@ import {
   DisabledExample,
   RequiredExample,
   DoubleLengthLabelExamples,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-phone-input', module)
@@ -37,4 +38,5 @@ storiesOf('bpk-component-phone-input', module)
   .add('With dialing code mask', WithDialingCodeMaskExample)
   .add('Disabled', DisabledExample)
   .add('Required', RequiredExample)
-  .add('Double length labels', DoubleLengthLabelExamples);
+  .add('Double length labels', DoubleLengthLabelExamples)
+  .add('Visual test', MixedExample);

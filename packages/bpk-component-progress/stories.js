@@ -20,9 +20,15 @@
 
 import { storiesOf } from '@storybook/react';
 
-import { DefaultExample, SmallExample, SteppedExample } from './examples';
+import {
+  DefaultExample,
+  SmallExample,
+  SteppedExample,
+  MixedExample,
+} from './examples';
 
 storiesOf('bpk-component-progress', module)
   .add('Default', DefaultExample)
   .add('Small', SmallExample)
-  .add('Stepped', SteppedExample);
+  .add('Stepped', SteppedExample)
+  .add('Visual test', MixedExample);

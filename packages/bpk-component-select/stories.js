@@ -29,6 +29,7 @@ import {
   ManuallyDockedWithImages,
   WithImage,
   WithImageLarge,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-select', module)
@@ -41,4 +42,5 @@ storiesOf('bpk-component-select', module)
   .add('Manually docked', ManuallyDocked)
   .add('Manually docked with images', ManuallyDockedWithImages)
   .add('With Image', WithImage)
-  .add('With Image Large', WithImageLarge);
+  .add('With Image Large', WithImageLarge)
+  .add('Visual test', MixedExample);

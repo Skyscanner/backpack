@@ -45,4 +45,5 @@ storiesOf('bpk-component-accordion', module)
   .add('Custom', CustomExample)
   .add('Custom title textStyle', CustomTitleTextStyleExample)
   .add('With icons', WithIconsExample)
-  .add('With bold titles', WithBoldTitlesExample);
+  .add('With bold titles', WithBoldTitlesExample)
+  .add('Visual test', SingleItemExample);

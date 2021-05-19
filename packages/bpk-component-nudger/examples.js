@@ -185,6 +185,14 @@ const OutlineExample = () => (
   </BpkDarkExampleWrapper>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <ConfigurableExample />
+    <OutlineExample />
+  </div>
+);
+
 export {
   DefaultExample,
   LowerBoundExample,
@@ -192,4 +200,5 @@ export {
   StatefulExample,
   ConfigurableExample,
   OutlineExample,
+  MixedExample,
 };

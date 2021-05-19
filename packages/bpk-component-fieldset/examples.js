@@ -499,6 +499,15 @@ const DisabledCheckboxExample = () => (
   </FieldsetContainer>
 );
 
+const MixedExample = () => (
+  <div>
+    <InputExample />
+    <SelectExample />
+    <CheckboxExample />
+    <TextareaExample />
+  </div>
+);
+
 export {
   InputExample,
   SelectExample,
@@ -512,4 +521,5 @@ export {
   DisabledInputExample,
   DisabledSelectExample,
   DisabledCheckboxExample,
+  MixedExample,
 };

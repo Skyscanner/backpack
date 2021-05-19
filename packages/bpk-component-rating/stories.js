@@ -30,6 +30,7 @@ import {
   TitleOnly,
   PillRatings,
   PillTitleOnly,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-rating', module)
@@ -42,4 +43,5 @@ storiesOf('bpk-component-rating', module)
   .add('Small vertical ratings', SmallVertical)
   .add('Title only ratings', TitleOnly)
   .add('Pill ratings', PillRatings)
-  .add('Pill title only ratings', PillTitleOnly);
+  .add('Pill title only ratings', PillTitleOnly)
+  .add('Visual test', MixedExample);

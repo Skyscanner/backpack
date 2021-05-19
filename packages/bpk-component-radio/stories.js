@@ -27,6 +27,7 @@ import {
   White,
   DisabledChecked,
   DisabledUnchecked,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-radio', module)
@@ -35,4 +36,5 @@ storiesOf('bpk-component-radio', module)
   .add('Invalid', Invalid)
   .add('White', White)
   .add('Disabled (Checked)', DisabledChecked)
-  .add('Disabled (Unchecked)', DisabledUnchecked);
+  .add('Disabled (Unchecked)', DisabledUnchecked)
+  .add('Visual test', MixedExample);

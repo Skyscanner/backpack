@@ -32,6 +32,7 @@ import {
   DisabledInputExample,
   DisabledSelectExample,
   DisabledCheckboxExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-fieldset', module)
@@ -46,4 +47,5 @@ storiesOf('bpk-component-fieldset', module)
   .add('Required checkbox', RequiredCheckboxExample)
   .add('Disabled input', DisabledInputExample)
   .add('Disabled select', DisabledSelectExample)
-  .add('Disabled checkbox', DisabledCheckboxExample);
+  .add('Disabled checkbox', DisabledCheckboxExample)
+  .add('Visual test', MixedExample);

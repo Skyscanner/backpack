@@ -27,6 +27,7 @@ import {
   ButtonLinkAlternativeExample,
   CombinedExample,
   CombinedAlternativeExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-link', module)
@@ -35,4 +36,5 @@ storiesOf('bpk-component-link', module)
   .add('Example (alternate)', LinkAlternativeExample)
   .add('Example (alternate + buttons)', ButtonLinkAlternativeExample)
   .add('Combined Example', CombinedExample)
-  .add('Combined Example (alternate)', CombinedAlternativeExample);
+  .add('Combined Example (alternate)', CombinedAlternativeExample)
+  .add('Visual test', MixedExample);

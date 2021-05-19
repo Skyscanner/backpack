@@ -33,4 +33,5 @@ storiesOf('bpk-component-chip', module)
   .add('Selectable', SelectableChipsExample)
   .add('All Selectable Types', AllSelectableChipStylesExample)
   .add('With icons', WithIconsExample)
-  .add('Dismissable', DismissibleChipsExample);
+  .add('Dismissable', DismissibleChipsExample)
+  .add('Visual tests', AllTypesExample);

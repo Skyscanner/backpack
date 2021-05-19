@@ -343,6 +343,21 @@ const PillTitleOnly = () => (
   </div>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <ZeroToFiveScaleExample />
+    <Vertical />
+    <LargeSize />
+    <LargeVertical />
+    <SmallSize />
+    <SmallVertical />
+    <TitleOnly />
+    <PillRatings />
+    <PillTitleOnly />
+  </div>
+);
+
 export {
   DefaultExample,
   ZeroToFiveScaleExample,
@@ -354,4 +369,5 @@ export {
   TitleOnly,
   PillRatings,
   PillTitleOnly,
+  MixedExample,
 };

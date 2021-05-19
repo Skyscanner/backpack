@@ -25,4 +25,5 @@ import { UnorderedExample, OrderedExample, NestedExample } from './examples';
 storiesOf('bpk-component-list', module)
   .add('Unordered', UnorderedExample)
   .add('Ordered', OrderedExample)
-  .add('Nested', NestedExample);
+  .add('Nested', NestedExample)
+  .add('Visual test', NestedExample);

@@ -82,4 +82,19 @@ const InvalidExample = () => (
   </form>
 );
 
-export { DefaultExample, PlaceholderExample, DisabledExample, InvalidExample };
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <PlaceholderExample />
+    <DisabledExample />
+    <InvalidExample />
+  </div>
+);
+
+export {
+  DefaultExample,
+  PlaceholderExample,
+  DisabledExample,
+  InvalidExample,
+  MixedExample,
+};

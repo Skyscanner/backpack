@@ -44,4 +44,13 @@ const BlockAlternate = () => (
   </BpkCodeBlock>
 );
 
-export { Inline, InlineAlternate, Block, BlockAlternate };
+const MixedExample = () => (
+  <div>
+    <Inline />
+    <InlineAlternate />
+    <Block />
+    <BlockAlternate />
+  </div>
+);
+
+export { Inline, InlineAlternate, Block, BlockAlternate, MixedExample };

@@ -19,8 +19,9 @@
 /* @flow strict */
 import { storiesOf } from '@storybook/react';
 
-import { DefaultExample, AlternateExample } from './examples';
+import { DefaultExample, AlternateExample, MixedExample } from './examples';
 
 storiesOf('bpk-component-table', module)
   .add('Default', DefaultExample)
-  .add('Alternate', AlternateExample);
+  .add('Alternate', AlternateExample)
+  .add('Visual test', MixedExample);

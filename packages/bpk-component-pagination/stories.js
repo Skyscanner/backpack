@@ -31,4 +31,5 @@ storiesOf('bpk-component-pagination', module)
   .add('Pagination - 5 visible pages', FivePagesPaginationExample)
   .add('Pagination - 2 pages', TwoPagesPaginationExample)
   .add('Pagination - single page', SinglePaginationExample)
-  .add('Pagination - Visible example', VisibleRangeExample);
+  .add('Pagination - Visible example', VisibleRangeExample)
+  .add('Visual test', DefaultPaginationExample);

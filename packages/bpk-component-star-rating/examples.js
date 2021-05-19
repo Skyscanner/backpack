@@ -167,6 +167,19 @@ const Interactive = () => (
   </div>
 );
 
+const MixedExample = () => (
+  <div>
+    <FullStars />
+    <EmptyStars />
+    <ThreeStars />
+    <ThreeAndAHalfStars />
+    <ThreePointThreeStars />
+    <ThreePointEightStars />
+    <ThreePointThreeStarsRounded />
+    <ThreePointEightStarsRounded />
+  </div>
+);
+
 export {
   FullExample,
   FullStars,
@@ -178,4 +191,5 @@ export {
   ThreePointThreeStarsRounded,
   ThreePointEightStarsRounded,
   Interactive,
+  MixedExample,
 };

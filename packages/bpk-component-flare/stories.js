@@ -28,6 +28,7 @@ import {
   ContentBubbleStandaloneExample,
   ContentBubbleFixedHeightExample,
   ContentBubblePointerHiddenExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-flare', module)
@@ -43,4 +44,5 @@ storiesOf('bpk-component-flare', module)
   )
   .add('BpkContentBubble - standalone', ContentBubbleStandaloneExample)
   .add('BpkContentBubble - fixed height', ContentBubbleFixedHeightExample)
-  .add('BpkContentBubble - pointer hidden', ContentBubblePointerHiddenExample);
+  .add('BpkContentBubble - pointer hidden', ContentBubblePointerHiddenExample)
+  .add('Visual test', MixedExample);

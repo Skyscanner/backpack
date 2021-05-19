@@ -179,6 +179,17 @@ const DayViewExample = () => (
   </div>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <VerticalExample />
+    <WithoutPaddingExample />
+    <WithoutNotchesExample />
+    <WithoutNotchesVerticalExample />
+    <WithHrefExample />
+  </div>
+);
+
 export {
   DefaultExample,
   VerticalExample,
@@ -188,4 +199,5 @@ export {
   WithoutNotchesVerticalExample,
   WithHrefExample,
   DayViewExample,
+  MixedExample,
 };

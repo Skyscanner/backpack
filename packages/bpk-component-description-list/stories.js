@@ -20,7 +20,6 @@ import { storiesOf } from '@storybook/react';
 
 import DefaultExample from './examples';
 
-storiesOf('bpk-component-description-list', module).add(
-  'Description List',
-  DefaultExample,
-);
+storiesOf('bpk-component-description-list', module)
+  .add('Description List', DefaultExample)
+  .add('Visual test', DefaultExample);

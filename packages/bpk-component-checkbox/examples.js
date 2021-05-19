@@ -144,6 +144,19 @@ const DisabledExample = () => (
   </div>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <IndeterminateExample />
+    <InvalidExample />
+    <MultilineExample />
+    <DisabledExample />
+    <WhiteExample />
+    <RequiredExample />
+    <SmallLabelExample />
+  </div>
+);
+
 export {
   DefaultExample,
   IndeterminateExample,
@@ -153,4 +166,5 @@ export {
   DisabledExample,
   RequiredExample,
   SmallLabelExample,
+  MixedExample,
 };

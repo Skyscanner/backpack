@@ -35,4 +35,5 @@ storiesOf('bpk-component-navigation-bar', module)
   .add('Trailing icon only', TrailingIconOnlyExample)
   .add('With links', WithLinksExample)
   .add('With logo', WithLogoExample)
-  .add('Sticky', StickyExample);
+  .add('Sticky', StickyExample)
+  .add('Visual test', DefaultExample);

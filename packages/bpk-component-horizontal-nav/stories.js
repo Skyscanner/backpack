@@ -29,6 +29,7 @@ import {
   SpacedAroundExample,
   DisabledItemExample,
   SeparatorsExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-horizontal-nav', module)
@@ -41,4 +42,5 @@ storiesOf('bpk-component-horizontal-nav', module)
   .add('Extreme example', ExtremeExample)
   .add('Space around', SpacedAroundExample)
   .add('Disabled item', DisabledItemExample)
-  .add('Separators', SeparatorsExample);
+  .add('Separators', SeparatorsExample)
+  .add('Visual test', MixedExample);

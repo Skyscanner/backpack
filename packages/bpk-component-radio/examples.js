@@ -104,6 +104,17 @@ const DisabledUnchecked = () => (
   />
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <Multiline />
+    <Invalid />
+    <White />
+    <DisabledChecked />
+    <DisabledUnchecked />
+  </div>
+);
+
 export {
   DefaultExample,
   Multiline,
@@ -111,4 +122,5 @@ export {
   White,
   DisabledChecked,
   DisabledUnchecked,
+  MixedExample,
 };

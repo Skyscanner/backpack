@@ -458,6 +458,20 @@ const ManuallyDockedExample = () => (
   </div>
 );
 
+const MixedExample = () => (
+  <div>
+    <TextExample />
+    <PlaceholderExample />
+    <ValidExample />
+    <InvalidExample />
+    <InvalidExample />
+    <DisabledExample />
+    <ClearableExample />
+    <LargeInputExample />
+    <DockedExample />
+  </div>
+);
+
 export {
   TextExample,
   PlaceholderExample,
@@ -472,4 +486,5 @@ export {
   LargeInputExample,
   DockedExample,
   ManuallyDockedExample,
+  MixedExample,
 };

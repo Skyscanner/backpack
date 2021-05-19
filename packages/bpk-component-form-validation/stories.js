@@ -22,4 +22,5 @@ import { DefaultExample, FormsExample } from './examples';
 
 storiesOf('bpk-component-form-validation', module)
   .add('Default', DefaultExample)
-  .add('With forms', FormsExample);
+  .add('With forms', FormsExample)
+  .add('Visual test', FormsExample);

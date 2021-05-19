@@ -119,4 +119,12 @@ const SmallExample = () => <ProgressContainer small />;
 
 const SteppedExample = () => <SteppedProgressContainer />;
 
-export { DefaultExample, SmallExample, SteppedExample };
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <SmallExample />
+    <SteppedExample />
+  </div>
+);
+
+export { DefaultExample, SmallExample, SteppedExample, MixedExample };

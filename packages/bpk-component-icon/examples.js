@@ -131,6 +131,13 @@ const AlignToLargeButtonRTLExample = () => (
   </BpkButton>
 );
 
+const MixedExample = () => (
+  <div>
+    <SmallIconsExample />
+    <LargeIconsExample />
+  </div>
+);
+
 export {
   SmallIconsExample,
   LargeIconsExample,
@@ -141,4 +148,5 @@ export {
   AlignToButtonExample,
   AlignToLargeButtonExample,
   AlignToLargeButtonRTLExample,
+  MixedExample,
 };

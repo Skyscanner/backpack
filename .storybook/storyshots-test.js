@@ -33,9 +33,17 @@ const beforeScreenshot = () =>
     }, 800),
   );
 
+const getMatchOptions = () => ({
+  failureThreshold: 0.5,
+  failureThresholdType: 'percent',
+});
+
 initStoryshots({
+  suite: 'Visual tests',
+  storyNameRegex: /Visual\stest$/i,
   test: imageSnapshot({
     storybookUrl: `file://${path.resolve(__dirname, '../dist-storybook')}`,
+    getMatchOptions,
     beforeScreenshot,
   }),
 });

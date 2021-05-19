@@ -42,4 +42,5 @@ storiesOf('bpk-component-barchart', module)
   .add('Custom ticks', CustomTicks)
   .add('Custom tick labels', CustomTickLabels)
   .add('Grid lines', GridlinesExample)
-  .add('Custom yAxisDomain', CustomYAxisDomain);
+  .add('Custom yAxisDomain', CustomYAxisDomain)
+  .add('Visual test', DefaultExample);

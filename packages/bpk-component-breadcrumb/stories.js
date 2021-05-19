@@ -24,4 +24,5 @@ import { DefaultExample, ExtremeExample } from './examples';
 
 storiesOf('bpk-component-breadcrumb', module)
   .add('Default', DefaultExample)
-  .add('Extreme', ExtremeExample);
+  .add('Extreme', ExtremeExample)
+  .add('Visual test', DefaultExample);

@@ -19,10 +19,17 @@
 
 import { storiesOf } from '@storybook/react';
 
-import { Inline, InlineAlternate, Block, BlockAlternate } from './examples';
+import {
+  Inline,
+  InlineAlternate,
+  Block,
+  BlockAlternate,
+  MixedExample,
+} from './examples';
 
 storiesOf('bpk-component-code', module)
   .add('Inline', Inline)
   .add('Inline - Alternate', InlineAlternate)
   .add('Block', Block)
-  .add('Block - Alternate', BlockAlternate);
+  .add('Block - Alternate', BlockAlternate)
+  .add('Visual test', MixedExample);
