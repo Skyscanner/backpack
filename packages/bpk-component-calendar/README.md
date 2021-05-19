@@ -62,6 +62,8 @@ export default class App extends Component {
           daysOfWeek={daysOfWeek}
           weekStartsOn={1}
           changeMonthLabel="Change month"
+          nextMonthLabel="Next month"
+          previousMonthLabel="Previous month"
           date={this.state.selectedDate}
         />
       </div>
@@ -158,6 +160,8 @@ withCalendarState(composeCalendar(
 | id                    | string               | true                | -                |
 | weekStartsOn          | number               | true                | -                |
 | changeMonthLabel      | string               | if Nav !== null     | -                |
+| nextMonthLabel        | string               | if Nav !== null     | -                |
+| previousMonthLabel    | string               | if Nav !== null     | -                |
 | className             | string               | false               | null             |
 | fixedWidth            | bool                 | false               | true             |
 | gridClassName         | string               | false               | null             |
@@ -186,6 +190,8 @@ buttons and a select box.
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | changeMonthLabel      | string               | true     | -                |
+| nextMonthLabel        | string               | true     | -                |
+| previousMonthLabel    | string               | true     | -                |
 | formatMonth           | func                 | true     | -                |
 | id                    | string               | true     | -                |
 | maxDate               | Date                 | true     | -                |
