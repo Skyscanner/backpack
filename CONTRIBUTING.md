@@ -155,7 +155,6 @@ We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM
 To maintain React 16.4 compatibility, please do not use newer features of React such as Hooks.
 
 When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
-
 ### Documentation
 
 Our documentation consists of two parts: [Sassdoc](https://backpack.github.io/sassdoc/), which is automatically generated from the `bpk-mixin` sources, and the main [documentation](https://backpack.github.io).
@@ -196,6 +195,10 @@ Bear in mind that small, incremental pull requests are likely to be reviewed fas
 `npm test` will pick up any files that end in `-test.js`, so you don't need to do anything to make Jest pick them up.
 
 You can also run the tests in 'watch mode', which means the process will continually run and run tests every time files change. Use `npm run jest:watch` to do this.
+
+There are also visual regression tests, powered by [Storyshots](https://www.npmjs.com/package/@storybook/addon-storyshots) and [jest-image-snapshot](https://www.npmjs.com/package/jest-image-snapshot). Use `npm run jest:visual` to run these. They rely on the `dist-storybook` folder being populated with a pre-built Storybook first, which can be generated with `npm run storybook:dist`.
+
+Visual regression tests run on all Storybook stories titled _'Visual test'_.
 
 </details>
 

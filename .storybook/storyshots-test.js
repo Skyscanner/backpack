@@ -33,8 +33,10 @@ const beforeScreenshot = () =>
     }, 800),
   );
 
+// Allow a small amount of deviation to account for
+// CI running on a different OS than local development.
 const getMatchOptions = () => ({
-  failureThreshold: 0.5,
+  failureThreshold: 0.1,
   failureThresholdType: 'percent',
 });
 

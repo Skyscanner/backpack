@@ -76,9 +76,29 @@ jobs:
           publish_branch: main
 
       - name: Run visual tests
+        id: visualTests
         run: |
           nvm use
           npm run jest:visual-tests
+
+      - name: Upload failed visual tests (if necessary)
+        uses: actions/upload-artifact@v2
+        if: failure() && steps.visualTests.outcome == 'failure'
+        with:
+          name: failed-visual-tests
+          path: .storybook/__image_snapshots__/__diff_output__
+
+      - name: Post a comment about the visual tests (if they pass)
+        uses: unsplash/comment-on-pr@master
+        if: steps.visualTests.outcome == 'success'
+        with:
+          msg: "Visual regression tests passed 😎. Bear in mind that they only run in Chromium on static components – they aren't perfect."
+
+      - name: Post a comment about the visual tests (if they fail)
+        uses: unsplash/comment-on-pr@master
+        if: failure() && steps.visualTests.outcome == 'failure'
+        with:
+          msg: "Visual regression tests failed 😢. You can download images of the failures from the 'Checks' tab."
 
       - name: Prepare to deploy Storybook (pull request build)
         run: |
