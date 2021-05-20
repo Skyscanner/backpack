@@ -532,6 +532,8 @@ showWeekendSeparator
 weekStartsOn
 initiallyFocusedDate
 changeMonthLabel
+previousMonthLabel
+nextMonthLabel
 daysOfWeek
 formatDate
 formatDateFull
