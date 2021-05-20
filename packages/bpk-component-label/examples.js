@@ -47,10 +47,21 @@ const InvalidRequiredExample = () => (
   </BpkLabel>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <RequiredExample />
+    <InvalidExample />
+    <DisabledExample />
+    <InvalidRequiredExample />
+  </div>
+);
+
 export {
   DefaultExample,
   RequiredExample,
   InvalidExample,
   DisabledExample,
   InvalidRequiredExample,
+  MixedExample,
 };

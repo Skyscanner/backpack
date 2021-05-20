@@ -290,6 +290,20 @@ const DontMarkToday = () => (
   />
 );
 
+const PastCalendar = () => (
+  <ScrollableCal
+    id="myCalendar"
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    markToday={false}
+    selectTodaysDate={false}
+    minDate={new Date(2020, 3, 1)}
+    maxDate={new Date(2020, 6, 1)}
+  />
+);
+
 export {
   DefaultExample,
   WeekStartsOnSix,
@@ -306,4 +320,5 @@ export {
   ScrollableCalendarDate,
   ScrollableCalendarGrid,
   ScrollableCalendarGridList,
+  PastCalendar,
 };

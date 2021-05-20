@@ -47,4 +47,17 @@ const FullWidthExample = () => (
   </BpkPanel>
 );
 
-export { DefaultExample, WithoutPaddingExample, FullWidthExample };
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <WithoutPaddingExample />
+    <FullWidthExample />
+  </div>
+);
+
+export {
+  DefaultExample,
+  WithoutPaddingExample,
+  FullWidthExample,
+  MixedExample,
+};

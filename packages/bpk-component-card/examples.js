@@ -74,10 +74,18 @@ const NonAtomicHrefExample = () => (
   </BpkCard>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <WithoutPaddingExample />
+  </div>
+);
+
 export {
   DefaultExample,
   WithHrefExample,
   WithoutPaddingExample,
   NonAtomicExample,
   NonAtomicHrefExample,
+  MixedExample,
 };

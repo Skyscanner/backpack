@@ -25,6 +25,7 @@ import {
   SimpleSliderWithSteps,
   RangeSlider,
   RangeSliderWithMinimumDistance,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-slider', module)
@@ -33,4 +34,5 @@ storiesOf('bpk-component-slider', module)
   .add('Time slider', TimeSlider)
   .add('Simple slider with steps', SimpleSliderWithSteps)
   .add('Range slider', RangeSlider)
-  .add('Range slider with minimum distance', RangeSliderWithMinimumDistance);
+  .add('Range slider with minimum distance', RangeSliderWithMinimumDistance)
+  .add('Visual test', MixedExample);

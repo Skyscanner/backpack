@@ -237,6 +237,17 @@ const WithImageLarge = () => (
   <SelectWithImage large id="countries" name="countries" options={countries} />
 );
 
+const MixedExample = () => (
+  <div>
+    <Example />
+    <Invalid />
+    <Disabled />
+    <Large />
+    <Docked />
+    <ManuallyDocked />
+  </div>
+);
+
 export {
   Example,
   Invalid,
@@ -248,4 +259,5 @@ export {
   ManuallyDockedWithImages,
   WithImage,
   WithImageLarge,
+  MixedExample,
 };

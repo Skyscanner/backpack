@@ -27,6 +27,7 @@ import {
   DepartReturn,
   CustomComponent,
   InvalidExample,
+  OpenOnRenderDateInThePast,
 } from './examples';
 
 storiesOf('bpk-component-datepicker', module)
@@ -37,4 +38,5 @@ storiesOf('bpk-component-datepicker', module)
   .add('Passing through props to underlying input', PassingProps)
   .add('Depart & Return', DepartReturn)
   .add('Custon calendar component', CustomComponent)
-  .add('Invalid', InvalidExample);
+  .add('Invalid', InvalidExample)
+  .add('Visual test', OpenOnRenderDateInThePast);

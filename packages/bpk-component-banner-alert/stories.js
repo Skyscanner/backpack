@@ -57,4 +57,5 @@ storiesOf('bpk-component-banner-alert', module)
     'Success (automatically dismissed after 5 seconds)',
     SuccessAutomaticallyDismissed,
   )
-  .add('Success with custom icon', SuccessCustomIcon);
+  .add('Success with custom icon', SuccessCustomIcon)
+  .add('Visual test', DocsDefault);

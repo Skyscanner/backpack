@@ -34,6 +34,7 @@ import {
   ScrollableCalendarDate,
   ScrollableCalendarGrid,
   ScrollableCalendarGridList,
+  PastCalendar,
 } from './examples';
 
 storiesOf('bpk-component-scrollable-calendar', module)
@@ -51,4 +52,5 @@ storiesOf('bpk-component-scrollable-calendar', module)
   .add("Scrollable Calendar - Don't mark today", DontMarkToday)
   .add('BpkScrollableCalendarDate', ScrollableCalendarDate)
   .add('BpkScrollableCalendarGrid', ScrollableCalendarGrid)
-  .add('BpkScrollableCalendarGridList', ScrollableCalendarGridList);
+  .add('BpkScrollableCalendarGridList', ScrollableCalendarGridList)
+  .add('Visual test', PastCalendar);

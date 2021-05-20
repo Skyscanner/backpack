@@ -113,6 +113,17 @@ const WithWeightsExample = () => (
   </div>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <HeadingsExample />
+    <ParagraphExample />
+    <WithDefaultProps />
+    <BoldExample />
+    <WithWeightsExample />
+  </div>
+);
+
 export {
   DefaultExample,
   HeadingsExample,
@@ -120,4 +131,5 @@ export {
   WithDefaultProps,
   BoldExample,
   WithWeightsExample,
+  MixedExample,
 };

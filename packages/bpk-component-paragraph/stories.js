@@ -22,4 +22,6 @@ import { storiesOf } from '@storybook/react';
 
 import DefaultExample from './examples';
 
-storiesOf('bpk-component-paragraph', module).add('Example', DefaultExample);
+storiesOf('bpk-component-paragraph', module)
+  .add('Example', DefaultExample)
+  .add('Visual test', DefaultExample);

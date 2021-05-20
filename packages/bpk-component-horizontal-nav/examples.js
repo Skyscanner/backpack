@@ -163,6 +163,17 @@ const SeparatorsExample = () => (
   </BpkHorizontalNav>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <LightAppearanceExample />
+    <UsingCustomScrollColors />
+    <DisabledItemExample />
+    <SpacedAroundExample />
+    <SeparatorsExample />
+  </div>
+);
+
 export {
   DefaultExample,
   ScrollToSelectedExample,
@@ -174,4 +185,5 @@ export {
   SpacedAroundExample,
   DisabledItemExample,
   SeparatorsExample,
+  MixedExample,
 };

@@ -25,6 +25,7 @@ import {
   InvalidExample,
   DisabledExample,
   InvalidRequiredExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-label', module)
@@ -32,4 +33,5 @@ storiesOf('bpk-component-label', module)
   .add('Required', RequiredExample)
   .add('Invalid', InvalidExample)
   .add('Disabled', DisabledExample)
-  .add('Invalid required', InvalidRequiredExample);
+  .add('Invalid required', InvalidRequiredExample)
+  .add('Visual test', MixedExample);

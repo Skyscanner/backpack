@@ -138,6 +138,14 @@ const ContentBubblePointerHiddenExample = () => (
   />
 );
 
+const MixedExample = () => (
+  <div>
+    <ContentBubbleStandaloneExample />
+    <ContentBubbleFixedHeightExample />
+    <ContentBubbleFullWithContentExample />
+  </div>
+);
+
 export {
   FlareBarExample,
   FlareBarRoundedExample,
@@ -146,4 +154,5 @@ export {
   ContentBubbleStandaloneExample,
   ContentBubbleFixedHeightExample,
   ContentBubblePointerHiddenExample,
+  MixedExample,
 };

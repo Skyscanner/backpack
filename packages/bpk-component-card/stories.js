@@ -25,6 +25,7 @@ import {
   WithoutPaddingExample,
   NonAtomicExample,
   NonAtomicHrefExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-card', module)
@@ -32,4 +33,5 @@ storiesOf('bpk-component-card', module)
   .add('With href', WithHrefExample)
   .add('Without padding', WithoutPaddingExample)
   .add('Non-atomic', NonAtomicExample)
-  .add('Non-atomic with href', NonAtomicHrefExample);
+  .add('Non-atomic with href', NonAtomicHrefExample)
+  .add('Visual test', MixedExample);

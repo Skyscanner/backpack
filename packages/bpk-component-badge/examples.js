@@ -179,6 +179,18 @@ const OutlineExample = () => (
   </BpkDarkExampleWrapper>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <WarningExample />
+    <SuccessExample />
+    <DestructiveExample />
+    <LightExample />
+    <InverseExample />
+    <OutlineExample />
+  </div>
+);
+
 export {
   DefaultExample,
   WithIconsExample,
@@ -191,4 +203,5 @@ export {
   LightExample,
   InverseExample,
   OutlineExample,
+  MixedExample,
 };

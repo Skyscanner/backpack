@@ -56,4 +56,5 @@ storiesOf('bpk-component-button', () => module)
   .add('Featured', () => <ComponentButtonFeaturedExample />)
   .add('Outline', () => <ComponentButtonOutlineExample />)
   .add('Mixture', () => <MixedExample />)
-  .add('Anchor tags', () => <AnchorTagsExample />);
+  .add('Anchor tags', () => <AnchorTagsExample />)
+  .add('Visual test', () => <MixedExample />);

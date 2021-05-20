@@ -374,6 +374,29 @@ const InvalidExample = () => (
   </div>
 );
 
+const OpenOnRenderDateInThePast = () => (
+  <div id="application-element">
+    <CalendarContainer
+      id="myDatepicker"
+      closeButtonText="Close"
+      daysOfWeek={weekDays}
+      weekStartsOn={1}
+      changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
+      title="Departure date"
+      formatDate={formatDate}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      date={new Date(2020, 3, 19)}
+      minDate={new Date(2020, 3, 1)}
+      selectTodaysDate={false}
+      initiallyFocusedDate={new Date(2020, 3, 19)}
+      isOpen
+    />
+  </div>
+);
+
 export {
   DefaultExample,
   OpenOnRender,
@@ -383,4 +406,5 @@ export {
   DepartReturn,
   CustomComponent,
   InvalidExample,
+  OpenOnRenderDateInThePast,
 };

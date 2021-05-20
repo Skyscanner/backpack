@@ -27,6 +27,7 @@ import {
   WithBpkImageNoTintExample,
   WithBpkImageLazyLoadedExample,
   TextOverlaidOnImageExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-overlay', module)
@@ -39,4 +40,5 @@ storiesOf('bpk-component-overlay', module)
   .add(
     'Text overlaid on an image using foreground content',
     TextOverlaidOnImageExample,
-  );
+  )
+  .add('Visual test', MixedExample);

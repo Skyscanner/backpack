@@ -29,6 +29,7 @@ import {
   DisabledExample,
   RequiredExample,
   SmallLabelExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-checkbox', module)
@@ -39,4 +40,5 @@ storiesOf('bpk-component-checkbox', module)
   .add('White', WhiteExample)
   .add('Disabled', DisabledExample)
   .add('Required', RequiredExample)
-  .add('Small label', SmallLabelExample);
+  .add('Small label', SmallLabelExample)
+  .add('Visual test', MixedExample);

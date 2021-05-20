@@ -33,4 +33,10 @@ module.exports = {
     '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-proposal-class-properties',
   ],
+  env: {
+    test: {
+      // Prevent errors from require.context not existing when running Storyshots.
+      plugins: ['require-context-hook'],
+    },
+  },
 };

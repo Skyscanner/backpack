@@ -25,6 +25,7 @@ import {
   WithDefaultProps,
   BoldExample,
   WithWeightsExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-text', module)
@@ -33,4 +34,5 @@ storiesOf('bpk-component-text', module)
   .add('Paragraph', ParagraphExample)
   .add('using withDefaultProps', WithDefaultProps)
   .add('bold', BoldExample)
-  .add('with weights', WithWeightsExample);
+  .add('with weights', WithWeightsExample)
+  .add('Visual test', MixedExample);

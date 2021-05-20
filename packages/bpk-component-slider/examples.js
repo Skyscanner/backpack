@@ -103,6 +103,14 @@ const RangeSliderWithMinimumDistance = () => (
   <EnhancedSlider min={0} value={[20, 80]} minDistance={10} />
 );
 
+const MixedExample = () => (
+  <div>
+    <SimpleSlider />
+    <SimpleLargeSlider />
+    <RangeSlider />
+  </div>
+);
+
 export {
   SimpleSlider,
   SimpleLargeSlider,
@@ -110,4 +118,5 @@ export {
   SimpleSliderWithSteps,
   RangeSlider,
   RangeSliderWithMinimumDistance,
+  MixedExample,
 };

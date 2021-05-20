@@ -31,6 +31,7 @@ import {
   ThreePointThreeStarsRounded,
   ThreePointEightStarsRounded,
   Interactive,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-star-rating', module)
@@ -43,4 +44,5 @@ storiesOf('bpk-component-star-rating', module)
   .add('3.8 Stars', ThreePointEightStars)
   .add('3.3 Stars Rounded', ThreePointThreeStarsRounded)
   .add('3.8 Stars Rounded', ThreePointEightStarsRounded)
-  .add('Interactive', Interactive);
+  .add('Interactive', Interactive)
+  .add('Visual test', MixedExample);

@@ -25,10 +25,12 @@ import {
   PlaceholderExample,
   DisabledExample,
   InvalidExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-textarea', module)
   .add('Default', DefaultExample)
   .add('Placeholder', PlaceholderExample)
   .add('Disabled', DisabledExample)
-  .add('Invalid', InvalidExample);
+  .add('Invalid', InvalidExample)
+  .add('Visual test', MixedExample);

@@ -28,6 +28,7 @@ import {
   AlignToButtonExample,
   AlignToLargeButtonExample,
   AlignToLargeButtonRTLExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-icon', module)
@@ -39,4 +40,5 @@ storiesOf('bpk-component-icon', module)
   .add('Align text to icon', AlignTextToIconExample)
   .add('Align to button', AlignToButtonExample)
   .add('Align to large button', AlignToLargeButtonExample)
-  .add('Align to large button (RTL support)', AlignToLargeButtonRTLExample);
+  .add('Align to large button (RTL support)', AlignToLargeButtonRTLExample)
+  .add('Visual test', MixedExample);

@@ -31,4 +31,5 @@ storiesOf('bpk-component-datatable', module)
   .add('Rows not hoverable', NonHoverRows)
   .add('Fixed Width Example', FixedWidth)
   .add('Disabled Sort Example', DisabledSort)
-  .add('Custom row and header heights', CustomRowAndHeaderHeights);
+  .add('Custom row and header heights', CustomRowAndHeaderHeights)
+  .add('Visual test', AutowidthExample);

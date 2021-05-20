@@ -157,6 +157,18 @@ const RequiredExample = () => <StoryContainer required />;
 
 const DoubleLengthLabelExamples = () => <StoryContainer useLongLabels />;
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <LargeExample />
+    <WithValidationExample />
+    <WithDialingCodeMaskExample />
+    <DisabledExample />
+    <RequiredExample />
+    <DoubleLengthLabelExamples />
+  </div>
+);
+
 export {
   DefaultExample,
   LargeExample,
@@ -165,4 +177,5 @@ export {
   DisabledExample,
   RequiredExample,
   DoubleLengthLabelExamples,
+  MixedExample,
 };

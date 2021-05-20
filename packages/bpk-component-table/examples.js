@@ -87,4 +87,11 @@ const AlternateExample = () => (
   </BpkTable>
 );
 
-export { DefaultExample, AlternateExample };
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <AlternateExample />
+  </div>
+);
+
+export { DefaultExample, AlternateExample, MixedExample };

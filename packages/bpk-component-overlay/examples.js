@@ -142,6 +142,14 @@ const TextOverlaidOnImageExample = () => (
   </div>
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <OverlayTypeNoneExample />
+    <WithForegroundContentExample />
+  </div>
+);
+
 export {
   DefaultExample,
   OverlayTypeNoneExample,
@@ -151,4 +159,5 @@ export {
   WithBpkImageRoundedExample,
   WithBpkImageLazyLoadedExample,
   TextOverlaidOnImageExample,
+  MixedExample,
 };

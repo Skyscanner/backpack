@@ -89,6 +89,13 @@ const CombinedAlternativeExample = () => (
   </BpkDarkExampleWrapper>
 );
 
+const MixedExample = () => (
+  <div>
+    <CombinedExample />
+    <CombinedAlternativeExample />
+  </div>
+);
+
 export {
   LinkExample,
   ButtonLinkExample,
@@ -96,4 +103,5 @@ export {
   ButtonLinkAlternativeExample,
   CombinedExample,
   CombinedAlternativeExample,
+  MixedExample,
 };

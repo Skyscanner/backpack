@@ -22,9 +22,11 @@ import {
   DefaultExample,
   WithoutPaddingExample,
   FullWidthExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-panel', module)
   .add('Default', DefaultExample)
   .add('Without padding', WithoutPaddingExample)
-  .add('Full width', FullWidthExample);
+  .add('Full width', FullWidthExample)
+  .add('Visual test', MixedExample);

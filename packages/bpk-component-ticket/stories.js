@@ -28,6 +28,7 @@ import {
   WithoutNotchesVerticalExample,
   WithHrefExample,
   DayViewExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-ticket', module)
@@ -38,4 +39,5 @@ storiesOf('bpk-component-ticket', module)
   .add('Without notches', WithoutNotchesExample)
   .add('Without notches (vertical)', WithoutNotchesVerticalExample)
   .add('With a "href" prop', WithHrefExample)
-  .add('Day view', DayViewExample);
+  .add('Day view', DayViewExample)
+  .add('Visual test', MixedExample);
