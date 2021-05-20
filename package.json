@@ -42,7 +42,7 @@
     "jest:watch": "TZ=Etc/UTC jest --watch",
     "jest:accessibility": "jest --testRegex accessibility-test",
     "jest:visual-tests": "jest --testRegex \\.storybook/storyshots-test\\.js",
-    "jest:visual-tests:update": "jest --testRegex \\.storybook/storyshots-test\\.js --update",
+    "jest:visual-tests:update": "jest --testRegex \\.storybook/storyshots-test\\.js --updateSnapshot",
     "lerna": "lerna",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint . .storybook --ext .js,.jsx",
