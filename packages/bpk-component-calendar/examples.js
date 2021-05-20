@@ -363,6 +363,22 @@ const WeekExample = () => {
   );
 };
 
+const FocusedDateInThePastExample = () => (
+  <CalendarContainer
+    minDate={new Date(2020, 3, 1)}
+    selectTodaysDate={false}
+    initiallyFocusedDate={new Date(2020, 3, 19)}
+    id="myCalendar"
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+  />
+);
+
 export {
   DefaultExample,
   CalendarNavExample,
@@ -383,4 +399,5 @@ export {
   CustomComposedCalendarSafariBug,
   CustomColors,
   WeekExample,
+  FocusedDateInThePastExample,
 };

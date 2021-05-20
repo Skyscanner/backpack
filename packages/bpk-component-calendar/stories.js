@@ -38,6 +38,7 @@ import {
   CustomComposedCalendarSafariBug,
   CustomColors,
   WeekExample,
+  FocusedDateInThePastExample,
 } from './examples';
 
 storiesOf('bpk-component-calendar', module)
@@ -65,4 +66,5 @@ storiesOf('bpk-component-calendar', module)
     CustomComposedCalendarSafariBug,
   )
   .add('Custom colours', CustomColors)
-  .add('Week', WeekExample);
+  .add('Week', WeekExample)
+  .add('Visual test', FocusedDateInThePastExample);
