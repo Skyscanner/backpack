@@ -12,7 +12,7 @@ npm install bpk-component-skip-link --save-dev
 
 ```js
 import React from 'react';
-import BpkSkipLink from 'bpk-component-code';
+import BpkSkipLink from 'bpk-component-skip-link';
 
 export default () => <BpkSkipLink href="#main" label="Skip to main content" />;
 ```
