@@ -612,8 +612,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4); // Done
-  height: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4); // Done
+  width: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
+  height: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
   margin: 0;
   padding: 0;
   border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-gray-tint-03;
