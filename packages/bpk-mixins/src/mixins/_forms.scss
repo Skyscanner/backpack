@@ -481,7 +481,7 @@
 @mixin bpk-checkbox {
   position: relative;
   display: inline-block;
-  padding-left: $bpk-spacing-base;
+  padding-left: bpk-spacing-lg();
 
   @include bpk-text;
   @include bpk-text--base;
@@ -580,17 +580,17 @@
   }
 
   &::before {
-    top: $bpk-spacing-xs + $bpk-one-pixel-rem;
+    top: bpk-spacing-md() - $bpk-one-pixel-rem;
     left: 0;
-    width: $bpk-spacing-base / 3;
-    height: $bpk-spacing-xs / 2;
+    width: bpk-spacing-lg() / 3;
+    height: bpk-spacing-sm() - $bpk-one-pixel-rem;
   }
 
   &::after {
-    top: $bpk-spacing-xs / 3;
-    left: $bpk-spacing-xs + $bpk-one-pixel-rem;
-    width: $bpk-spacing-xs / 2;
-    height: $bpk-spacing-sm - $bpk-one-pixel-rem;
+    top: bpk-spacing-sm() / 2;
+    left: bpk-spacing-md() - $bpk-one-pixel-rem;
+    width: bpk-spacing-sm() - $bpk-one-pixel-rem;
+    height: bpk-spacing-md() + ($bpk-one-pixel-rem * 3);
   }
 
   &:disabled {
@@ -612,8 +612,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
-  height: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
+  width: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4); // Done
+  height: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4); // Done
   margin: 0;
   padding: 0;
   border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-gray-tint-03;
