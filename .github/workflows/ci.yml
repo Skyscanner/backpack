@@ -64,7 +64,7 @@ jobs:
 
       - name: Post a comment about the visual tests (if they pass)
         uses: unsplash/comment-on-pr@master
-        if: steps.visualTests.outcome == 'success'
+        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && steps.visualTests.outcome == 'success'
         with:
           msg: "Visual regression tests passed 😎. Bear in mind that they only run in Chromium on static components – they aren't perfect."
         env:
