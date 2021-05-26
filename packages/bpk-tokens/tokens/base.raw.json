@@ -2792,8 +2792,9 @@
     "SPACING_FUNCTION_XS": {
       "type": "function",
       "category": "spacings",
-      "value": "@function bpk-spacing-xs() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return .25rem; } @return .375rem; }",
-      "originalValue": "@function bpk-spacing-xs() { @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return {!SPACING_SM_V2}; } @return {!SPACING_XS}; }",
+      "value": "@function bpk-spacing-xs() { @warn 'bpk-spacing-xs has been deprecated in the new system and will be removed in the future.'; @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return .25rem; } @return .375rem; }",
+      "deprecated": true,
+      "originalValue": "@function bpk-spacing-xs() { @warn 'bpk-spacing-xs has been deprecated in the new system and will be removed in the future.'; @if global-variable-exists('bpk-spacing-v2') and $bpk-spacing-v2 { @return {!SPACING_SM_V2}; } @return {!SPACING_XS}; }",
       "name": "SPACING_FUNCTION_XS"
     },
     "SPACING_FUNCTION_XXL": {
