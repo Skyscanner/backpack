@@ -679,10 +679,10 @@
 @mixin bpk-radio {
   position: relative;
   display: inline-block;
-  padding-left: $bpk-spacing-base;
+  padding-left: bpk-spacing-lg();
 
   @include bpk-rtl {
-    padding-right: $bpk-spacing-base;
+    padding-right: bpk-spacing-lg();
     padding-left: 0;
   }
 }
@@ -744,7 +744,7 @@
 ///   }
 
 @mixin bpk-radio__input {
-  $bpk-radio-size: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
+  $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
 
   position: absolute;
   top: 0;

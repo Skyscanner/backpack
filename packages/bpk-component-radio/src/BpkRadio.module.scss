@@ -18,8 +18,10 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 $bpk-radio-circle-size: $bpk-one-pixel-rem * 8;
-$bpk-radio-size: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
+$bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
 
 .bpk-radio {
   @include bpk-radio;
@@ -55,8 +57,8 @@ $bpk-radio-size: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
 
   &__circle {
     position: absolute;
-    top: $bpk-spacing-xs;
-    left: $bpk-spacing-xs;
+    top: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
+    left: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
     display: none;
     width: $bpk-radio-circle-size;
     height: $bpk-radio-circle-size;
@@ -69,7 +71,7 @@ $bpk-radio-size: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
     );
 
     @include bpk-rtl {
-      right: $bpk-spacing-xs;
+      right: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
       left: auto;
     }
   }
