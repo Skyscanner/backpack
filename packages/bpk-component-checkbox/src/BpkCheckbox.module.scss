@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-checkbox {
   @include bpk-checkbox;
 
@@ -47,11 +49,11 @@
     &-indeterminate {
       &::before {
         position: absolute;
-        top: $bpk-spacing-xs - $bpk-one-pixel-rem;
-        left: $bpk-spacing-xs / 3;
+        top: bpk-spacing-sm() + $bpk-one-pixel-rem;
+        left: bpk-spacing-sm() / 2;
         content: '';
-        width: $bpk-spacing-lg / 3;
-        height: $bpk-spacing-xs / 2;
+        width: bpk-spacing-xxl() / 4;
+        height: bpk-spacing-sm() - $bpk-one-pixel-rem;
         border-radius: $bpk-border-size-lg;
         background-color: $bpk-color-white;
       }
