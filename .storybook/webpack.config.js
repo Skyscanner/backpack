@@ -73,7 +73,7 @@ module.exports = ({ config }) => {
             ? fs.readFileSync(
                 path.join(
                   rootDir,
-                  `packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`,
+                  `node_modules/@skyscanner/bpk-web/tokens/${BPK_TOKENS}.scss`,
                 ),
               )
             : '',

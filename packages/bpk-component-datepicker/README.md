@@ -77,7 +77,7 @@ import {
   withCalendarState,
   composeCalendar,
 } from 'bpk-component-calendar';
-import { colorSagano } from 'bpk-tokens/tokens/base.es6';
+import { colorSagano } from '@skyscanner/bpk-web/tokens/base.es6';
 
 const ColoredCalendarDate = props =>
   <BpkCalendarDate {...props} style={{ backgroundColor: colorSagano }} />;

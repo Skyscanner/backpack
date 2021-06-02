@@ -69,7 +69,7 @@ import React from 'react';
 import { BpkAccordion, BpkAccordionItem } from 'bpk-component-accordion';
 import { withAlignment } from 'bpk-component-icon';
 import StopsIcon from 'bpk-component-icon/sm/stops';
-import { lineHeightBase, iconSizeSm, colorPanjin } from 'bpk-tokens/tokens/base.es6';
+import { lineHeightBase, iconSizeSm, colorPanjin } from '@skyscanner/bpk-web/tokens/base.es6';
 
 const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 

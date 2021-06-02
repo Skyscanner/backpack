@@ -23,7 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-text": "^3.2.3",
-    "bpk-tokens": "^36.2.2"
+    "@skyscanner/bpk-web": "^1.0.1",
+    "bpk-component-text": "^3.2.3"
   }
 }

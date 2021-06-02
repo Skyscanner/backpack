@@ -20,7 +20,7 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { spacingSm } from 'bpk-tokens/tokens/base.es6';
+import { spacingSm } from '@skyscanner/bpk-web/tokens/base.es6';
 
 import BpkChartMargin from './BpkChartMargin';
 

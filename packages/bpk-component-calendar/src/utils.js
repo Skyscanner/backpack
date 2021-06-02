@@ -19,7 +19,7 @@
 import {
   calendarDaySize,
   calendarDaySpacing,
-} from 'bpk-tokens/tokens/base.es6';
+} from '@skyscanner/bpk-web/tokens/base.es6';
 
 const CSS_UNIT_REGEX = /(^[+-]?(?:\d*\.)?\d+)(.+)/i;
 

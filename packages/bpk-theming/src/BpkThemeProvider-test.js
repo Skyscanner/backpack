@@ -19,7 +19,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { render } from '@testing-library/react';
-import { colorWhite } from 'bpk-tokens/tokens/base.es6';
+import { colorWhite } from '@skyscanner/bpk-web/tokens/base.es6';
 
 import BpkThemeProvider from './BpkThemeProvider';
 

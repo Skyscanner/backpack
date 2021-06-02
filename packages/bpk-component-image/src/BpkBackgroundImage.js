@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import { cssModules, deprecated } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
 import CSSTransition from 'react-transition-group/CSSTransition';
-import { animations } from 'bpk-tokens/tokens/base.es6';
+import { animations } from '@skyscanner/bpk-web/tokens/base.es6';
 
 import { widthHeightAspectRatioPropType } from './customPropTypes';
 import STYLES from './BpkBackgroundImage.module.scss';

@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "bpk-component-checkbox": "^2.3.3",
-    "bpk-tokens": "^36.2.2"
+    "@skyscanner/bpk-web": "^1.0.1"
   }
 }

@@ -23,7 +23,7 @@ import {
   spacingSm,
   onePixelRem,
   colorSkyGrayTint06,
-} from 'bpk-tokens/tokens/base.es6';
+} from '@skyscanner/bpk-web/tokens/base.es6';
 import BpkText from 'bpk-component-text';
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
