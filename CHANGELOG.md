@@ -1,3 +1,19 @@
+# 2021-06-02
+
+**Fixed:**
+
+- bpk-mixins: 20.2.2 => 20.2.3
+  - Updated checkbox and radio mixins to utilise new spacing functions.
+
+- bpk-component-radio: 2.1.2 => 2.1.3
+  - Updated radio (and related mixins) to utilise new spacing functions and use the new grid system. This change is not breaking as the size has not changed and set to the same sizes as previous.
+
+- bpk-component-checkbox:  2.3.2 => 2.3.3
+  - Updated checkbox (and related mixins) to utilise new spacing functions and use the new grid system. This change is not breaking as the size has not changed and set to the same sizes as previous.
+
+- bpk-tokens: 36.2.1 => 36.3.2
+  - Added missing deprecation warning for `bpk-spacing-xs()` function as this spacing no longer exists in the new grid system.
+
 # 2021-05-13
 
 **Added:**
