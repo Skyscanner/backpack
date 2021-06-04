@@ -26,7 +26,7 @@ import {
   lineHeightXxl,
   iconSizeSm,
   iconSizeLg,
-} from 'bpk-tokens/tokens/base.es6';
+} from '@skyscanner/bpk-web/tokens/base.es6';
 
 import withAlignment from './withAlignment';
 

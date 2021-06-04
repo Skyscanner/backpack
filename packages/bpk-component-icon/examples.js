@@ -23,7 +23,7 @@ import {
   iconSizeSm,
   iconSizeLg,
   lineHeightSm,
-} from 'bpk-tokens/tokens/base.es6';
+} from '@skyscanner/bpk-web/tokens/base.es6';
 import BpkButton from 'bpk-component-button';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkText from 'bpk-component-text';

@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 import React from 'react';
+import TOKENS from '@skyscanner/bpk-web/tokens/base.common';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
@@ -23,7 +24,6 @@ import { withA11y } from '@storybook/addon-a11y';
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
 
-import TOKENS from '../packages/bpk-tokens/tokens/base.common';
 import BpkGridToggle from '../packages/bpk-component-grid-toggle';
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import BpkThemeToggle, {

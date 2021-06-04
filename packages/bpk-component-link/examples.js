@@ -20,7 +20,10 @@
 
 import React from 'react';
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-import { colorWhite, colorSkyGrayTint04 } from 'bpk-tokens/tokens/base.es6';
+import {
+  colorWhite,
+  colorSkyGrayTint04,
+} from '@skyscanner/bpk-web/tokens/base.es6';
 
 import BpkLink, { BpkButtonLink } from './index';
 

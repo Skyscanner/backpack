@@ -17,11 +17,9 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --no-ci",
-    "build": "npm run build:tokens && npm run build:svgs && npm run build:sass && lerna run build",
+    "build": "npm run build:sass && lerna run build",
     "build:sass": "backpack-node-sass --prefixComment=\"$(cat ./license.txt)\" && rm packages/bpk-stylesheets/index.css",
     "build:stylesheets": "lerna run build --scope bpk-stylesheets",
-    "build:svgs": "lerna run svgs --scope bpk-svgs",
-    "build:tokens": "lerna run tokens --scope bpk-tokens",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-owners": "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",
@@ -56,7 +54,7 @@
     "publish:css": "node ./scripts/publish-process/transform-js-scss-css-imports.js && node ./scripts/publish-process/transform-bpk-imports.js && node ./scripts/publish-process/publish-css-tagged-packages.js && git reset --hard HEAD",
     "postpublish": "./scripts/publish-process/update-docs-deps.sh && node ./scripts/publish-process/update-changelog.js",
     "release": "npm run publish",
-    "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist-sassdoc -v --strict",
+    "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
     "spellcheck": "mdspell -r --en-gb --ignore-acronyms --ignore-numbers --no-suggestions 'UNRELEASED.yaml' '*.md' '**/*.md' '!**/node_modules/**/*.md'",
     "spellcheck:interactive": "mdspell --en-gb --ignore-acronyms --no-suggestions --ignore-numbers 'UNRELEASED.yaml' '*.md' '**/*.md' '!**/node_modules/**/*.md'",
     "start": "npm run build && npm run storybook",
@@ -98,17 +96,15 @@
     "moduleNameMapper": {
       "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",
       "^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js",
-      "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js"
+      "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
+      "@skyscanner/bpk-svgs/dist/svgs/^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js"
     },
     "setupFilesAfterEnv": [
       "<rootDir>/scripts/jest/setup.js"
     ],
-    "testPathIgnorePatterns": [
-      "backpack-react-native/"
-    ],
     "testRegex": "packages/.*-test\\.js$",
     "transformIgnorePatterns": [
-      "node_modules/(?!bpk)"
+      "node_modules/(?!bpk|@skyscanner)"
     ],
     "verbose": true
   },
@@ -121,6 +117,7 @@
     "@babel/preset-flow": "^7.12.1",
     "@babel/preset-react": "^7.12.7",
     "@babel/register": "^7.12.1",
+    "@skyscanner/bpk-web": "^1.0.1",
     "@storybook/addon-a11y": "^5.3.14",
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",

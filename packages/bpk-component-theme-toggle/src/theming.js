@@ -25,7 +25,7 @@ import {
   colorSkyGrayTint06,
   colorWhite,
   colorMonteverde,
-} from 'bpk-tokens/tokens/base.es6';
+} from '@skyscanner/bpk-web/tokens/base.es6';
 
 const generateTheme = ({
   primaryColor300,

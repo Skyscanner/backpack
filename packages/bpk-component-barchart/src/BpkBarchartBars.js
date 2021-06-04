@@ -21,7 +21,7 @@
 import React from 'react';
 import { scaleBand, scaleLinear } from 'd3-scale';
 import PropTypes from 'prop-types';
-import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
+import { borderRadiusXs } from '@skyscanner/bpk-web/tokens/base.es6';
 
 import BpkBarchartBar from './BpkBarchartBar';
 import { remToPx } from './utils';

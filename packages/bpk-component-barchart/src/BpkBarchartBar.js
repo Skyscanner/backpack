@@ -21,7 +21,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
-import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
+import { borderRadiusXs } from '@skyscanner/bpk-web/tokens/base.es6';
 
 import { remToPx } from './utils';
 import STYLES from './BpkBarchartBar.module.scss';

@@ -21,7 +21,10 @@
 import React from 'react';
 import { withDefaultProps } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
-import { spacingSm, colorMonteverde } from 'bpk-tokens/tokens/base.es6';
+import {
+  spacingSm,
+  colorMonteverde,
+} from '@skyscanner/bpk-web/tokens/base.es6';
 
 import BpkTooltip, { TOOLTIP_TYPES } from './index';
 

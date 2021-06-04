@@ -25,7 +25,7 @@ import {
   colorBagan,
   colorPetra,
   colorSkyGray,
-} from 'bpk-tokens/tokens/base.es6';
+} from '@skyscanner/bpk-web/tokens/base.es6';
 import {
   weekDays,
   formatMonth,

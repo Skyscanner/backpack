@@ -21,7 +21,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import isWeekend from 'date-fns/isWeekend';
-import { colorPanjin } from 'bpk-tokens/tokens/base.es6';
+import { colorPanjin } from '@skyscanner/bpk-web/tokens/base.es6';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 

@@ -20,7 +20,7 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { colorPanjin } from 'bpk-tokens/tokens/base.es6';
+import { colorPanjin } from '@skyscanner/bpk-web/tokens/base.es6';
 
 jest.mock('bpk-react-utils', () => {
   const original = jest.requireActual('bpk-react-utils');

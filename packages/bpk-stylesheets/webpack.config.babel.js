@@ -18,10 +18,10 @@
 
 import WrapperPlugin from 'wrapper-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { blockComment as licenseHeader } from 'bpk-tokens/formatters/license-header';
 
 import postCssPlugins from '../../scripts/webpack/postCssPlugins';
 
+import { blockComment as licenseHeader } from './license-header';
 import babelConfig from './base.babel.config';
 
 const path = require('path');

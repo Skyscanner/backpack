@@ -114,7 +114,7 @@ Run `npm start` to start the storybook server, then go to [http://localhost:9001
 
 If you want to add icons, please discuss them with us first.
 
-Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, just copy the correctly named SVG files to the `lg` and `sm` directories in `./packages/bpk-svgs/src/icons/` and then run `npm run build`.
+Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, just copy the correctly named SVG files to the `lg` and `sm` directories in [`@skyscanner/bpk-svgs/src/icons/`](https://github.com/Skyscanner/backpack-foundations/packages/bpk-svgs/src/icons/) and then run `npm run build`.
 
 ## Adding a new component
 
@@ -134,7 +134,7 @@ Sketch is the preferred format for non-technical folks. We’d appreciate if you
 
 ### Tokens
 
-Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the `bpk-tokens` package.
+Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the [`@skyscanner/bpk-web`](https://github.com/Skyscanner/backpack-foundations/packages/bpk-web) package.
 
 Tokens are defined in the `src/base` directory (with the exception of product-specific tokens, which are in other subdirectories). Tokens come in two layers: In `aliases.json`, all base tokens are defined with concrete values, such as colours, numbers and sizes. The other files then map those aliases to tokens for specific elements.
 
@@ -142,7 +142,7 @@ Tokens are defined in the `src/base` directory (with the exception of product-sp
 
 ### Sass mixins
 
-All Sass mixins are defined in the `bpk-mixins` package. The package also exposes the Sass variables from the `bpk-tokens` package.
+All Sass mixins are defined in the `bpk-mixins` package. The package also exposes the Sass variables from the [`@skyscanner/bpk-web`](https://github.com/Skyscanner/backpack-foundations/packages/bpk-web) package.
 
 If you add a new file of mixins, for example for a new *atom*, make sure you add the file to the imports in `_index.scss`.
 
@@ -223,8 +223,6 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 - **Run `npm run release`** (this will run several checks and then `lerna publish`). Do not run `npm publish`.
 - You’ll be asked to confirm the new versions and descriptions for every package that has changed.
 - If you need to make changes you can exit without confirming and no changes will be made.
-
-Be aware that if `bpk-tokens` has changed, *all* packages in the repository will be updated as they all depend on `bpk-tokens`. Changing an existing token is almost always worth a "major" release, whereas adding a new token is usually a "minor" release.
 
 When a component is released for the first time on npm, remember to add the component to the Skyscanner organisation through the [npm UI](https://www.npmjs.com/settings/skyscanner/teams/team/backpack/access).
 

@@ -19,7 +19,7 @@
 import React from 'react';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 import BpkText from 'bpk-component-text';
-import { spacingSm } from 'bpk-tokens/tokens/base.es6';
+import { spacingSm } from '@skyscanner/bpk-web/tokens/base.es6';
 
 import BpkImage, {
   BpkBackgroundImage,
