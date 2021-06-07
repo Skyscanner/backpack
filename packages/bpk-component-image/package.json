@@ -24,7 +24,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "@skyscanner/bpk-web": "^1.0.1",
+    "@skyscanner/bpk-foundations-web": "^1.0.0",
     "bpk-component-mobile-scroll-container": "^2.2.3",
     "bpk-component-text": "^3.2.3"
   }

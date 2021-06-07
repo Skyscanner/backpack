@@ -29,7 +29,7 @@ import BpkCloseButton from 'bpk-component-close-button';
 import TickCircleIcon from 'bpk-component-icon/sm/tick-circle';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
 import InfoCircleIcon from 'bpk-component-icon/sm/information-circle';
-import { durationSm } from '@skyscanner/bpk-web/tokens/base.es6';
+import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';

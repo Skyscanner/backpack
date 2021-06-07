@@ -134,7 +134,7 @@ Sketch is the preferred format for non-technical folks. We’d appreciate if you
 
 ### Tokens
 
-Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the [`@skyscanner/bpk-web`](https://github.com/Skyscanner/backpack-foundations/packages/bpk-web) package.
+Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/packages/bpk-foundations-web) package.
 
 Tokens are defined in the `src/base` directory (with the exception of product-specific tokens, which are in other subdirectories). Tokens come in two layers: In `aliases.json`, all base tokens are defined with concrete values, such as colours, numbers and sizes. The other files then map those aliases to tokens for specific elements.
 
@@ -142,7 +142,7 @@ Tokens are defined in the `src/base` directory (with the exception of product-sp
 
 ### Sass mixins
 
-All Sass mixins are defined in the `bpk-mixins` package. The package also exposes the Sass variables from the [`@skyscanner/bpk-web`](https://github.com/Skyscanner/backpack-foundations/packages/bpk-web) package.
+All Sass mixins are defined in the `bpk-mixins` package. The package also exposes the Sass variables from the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/packages/bpk-foundations-web) package.
 
 If you add a new file of mixins, for example for a new *atom*, make sure you add the file to the imports in `_index.scss`.
 

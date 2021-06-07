@@ -29,7 +29,7 @@ import {
   iconSizeSm,
   lineHeightBase,
   spacingSm,
-} from '@skyscanner/bpk-web/tokens/base.es6';
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import {
   BpkAccordion,

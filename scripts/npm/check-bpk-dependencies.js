@@ -115,7 +115,11 @@ const getLatestProductionVersion = version => {
 
 const getBpkPackageVersions = packageFiles =>
   packageFiles.reduce((acc, pkg) => {
-    if (pkg === '' || !pkg.includes('bpk-')) {
+    if (
+      pkg === '' ||
+      !pkg.includes('bpk-') ||
+      !pkg.includes('@skyscanner/bpk-')
+    ) {
       return acc;
     }
     const pfContent = JSON.parse(fs.readFileSync(pkg));

@@ -13,7 +13,7 @@ npm install bpk-component-image --save-dev
 ```js
 import React from 'react';
 import BpkImage from 'bpk-component-image';
-import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-web/tokens/base.es6';
+import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 export default () => (
   <BpkImage
@@ -35,7 +35,7 @@ Using this HOC can make pages load faster and prevent data being used to display
 
 ```js
 import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
-import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-web/tokens/base.es6';
+import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // Support for SSR
 const documentIfExists = typeof window !== 'undefined' ? document : null;
@@ -59,7 +59,7 @@ When the `loading` prop is set true, a spinner will be displayed. When this chan
 
 ```js
 import BpkImage, BpkBackgroundImage { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
-import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-web/tokens/base.es6';
+import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const FadingImage = withLoadingBehavior(BpkImage);
 const FadingBackgroundImage = withLoadingBehaviour(BpkBackgroundImage);
@@ -91,7 +91,7 @@ Combining `withLazyLoading` and `withLoadingBehavior` gives us a lazily loaded i
 
 ```js
 import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
-import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-web/tokens/base.es6';
+import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));

@@ -23,7 +23,7 @@ import { number } from 'prop-types';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
-import { lineHeightSm } from '@skyscanner/bpk-web/tokens/base.es6';
+import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { scaleLinear, scaleBand } from 'd3-scale';
 
 import { remToPx } from './src/utils';

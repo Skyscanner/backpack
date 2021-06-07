@@ -22,7 +22,10 @@ import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import React, { Component } from 'react';
 import { scaleLinear, scaleBand } from 'd3-scale';
-import { spacingXs, lineHeightSm } from '@skyscanner/bpk-web/tokens/base.es6';
+import {
+  spacingXs,
+  lineHeightSm,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 

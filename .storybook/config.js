@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 import React from 'react';
-import TOKENS from '@skyscanner/bpk-web/tokens/base.common';
+import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';

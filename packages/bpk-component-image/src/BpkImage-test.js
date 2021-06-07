@@ -20,8 +20,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import * as BREAKPOINTS from '@skyscanner/bpk-web/tokens/breakpoints.es6';
-import { spacingSm } from '@skyscanner/bpk-web/tokens/base.es6';
+import * as BREAKPOINTS from '@skyscanner/bpk-foundations-web/tokens/breakpoints.es6';
+import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkImage from './BpkImage';
 import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';

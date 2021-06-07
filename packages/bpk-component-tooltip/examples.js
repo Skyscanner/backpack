@@ -24,7 +24,7 @@ import BpkText from 'bpk-component-text';
 import {
   spacingSm,
   colorMonteverde,
-} from '@skyscanner/bpk-web/tokens/base.es6';
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkTooltip, { TOOLTIP_TYPES } from './index';
 

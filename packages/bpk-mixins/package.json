@@ -14,8 +14,8 @@
   },
   "gitHead": "5c156b97cb0ba5e75851d3c763334578714c895e",
   "dependencies": {
-    "@skyscanner/bpk-svgs": "^12.7.1",
-    "@skyscanner/bpk-web": "^1.0.1"
+    "@skyscanner/bpk-svgs": "^12.7.2",
+    "@skyscanner/bpk-foundations-web": "^1.0.0"
   },
   "peerDependencies": {
     "node-sass": "^4.12.0"

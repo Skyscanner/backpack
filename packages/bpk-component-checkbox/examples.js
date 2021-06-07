@@ -20,7 +20,10 @@
 
 import React, { Component } from 'react';
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-import { spacingXs, spacingSm } from '@skyscanner/bpk-web/tokens/base.es6';
+import {
+  spacingXs,
+  spacingSm,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkCheckbox from './index';
 

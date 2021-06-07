@@ -19,7 +19,7 @@
 
 import React, { Component } from 'react';
 import { action } from 'bpk-storybook-utils';
-import { fontWeightBold } from '@skyscanner/bpk-web/tokens/base.es6';
+import { fontWeightBold } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import CurrencyIcon from 'bpk-component-icon/sm/currency';
 import { AriaLiveDemo } from 'bpk-component-aria-live/examples';
 import { BpkButtonPrimary } from 'bpk-component-button';

@@ -28,7 +28,7 @@ import {
   colorSkyGrayTint06,
   colorSkyGrayTint04,
   colorMonteverde,
-} from '@skyscanner/bpk-web/tokens/base.es6';
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { withButtonAlignment, withRtlSupport } from '../bpk-component-icon';
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
