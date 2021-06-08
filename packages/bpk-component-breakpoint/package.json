@@ -20,7 +20,7 @@
     "react-responsive": "^5.0.0"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.3.0"
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^1.0.0"
