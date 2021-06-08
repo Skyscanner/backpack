@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "bpk-component-checkbox": "^2.3.3",
-    "@skyscanner/bpk-web": "^1.0.1"
+    "@skyscanner/bpk-foundations-web": "^1.0.0"
   }
 }

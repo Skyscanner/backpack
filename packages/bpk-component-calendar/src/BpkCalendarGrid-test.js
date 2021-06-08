@@ -24,7 +24,7 @@ import isWeekend from 'date-fns/isWeekend';
 import {
   colorMonteverde,
   colorPanjin,
-} from '@skyscanner/bpk-web/tokens/base.es6';
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 

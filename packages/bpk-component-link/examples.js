@@ -23,7 +23,7 @@ import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 import {
   colorWhite,
   colorSkyGrayTint04,
-} from '@skyscanner/bpk-web/tokens/base.es6';
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkLink, { BpkButtonLink } from './index';
 

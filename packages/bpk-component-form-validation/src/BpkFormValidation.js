@@ -25,7 +25,7 @@ import { withAlignment } from 'bpk-component-icon';
 import {
   lineHeightBase,
   iconSizeSm,
-} from '@skyscanner/bpk-web/tokens/base.es6';
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import STYLES from './BpkFormValidation.module.scss';
 

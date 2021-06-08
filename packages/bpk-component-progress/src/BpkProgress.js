@@ -20,7 +20,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { colorWhite } from '@skyscanner/bpk-web/tokens/base.es6';
+import { colorWhite } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
 

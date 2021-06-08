@@ -19,7 +19,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
-import { colorWhite } from '@skyscanner/bpk-web/tokens/base.es6';
+import { colorWhite } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkThemeProvider from './BpkThemeProvider';
 

@@ -27,7 +27,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "@skyscanner/bpk-web": "^1.0.1",
+    "@skyscanner/bpk-foundations-web": "^1.0.0",
     "bpk-storybook-utils": "^0.1.3"
   }
 }

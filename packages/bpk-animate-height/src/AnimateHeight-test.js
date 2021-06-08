@@ -19,7 +19,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { render } from '@testing-library/react';
-import { spacingSm } from '@skyscanner/bpk-web/tokens/base.es6';
+import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import AnimateHeight from './AnimateHeight';
 

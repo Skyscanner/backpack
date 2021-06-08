@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "bpk-component-button": "^3.4.3",
-    "@skyscanner/bpk-web": "^1.0.1"
+    "@skyscanner/bpk-foundations-web": "^1.0.0"
   }
 }
