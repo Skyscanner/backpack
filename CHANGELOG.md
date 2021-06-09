@@ -1,3 +1,12 @@
+# 2021-06-09
+
+**Fixed:**
+
+- Adopted new Backpack foundations libraries. Components now use scoped packages:
+  - `@skyscanner/bpk-svgs`
+  - `@skyscanner/bpk-foundations-web` for tokens
+
+
 # 2021-06-02
 
 **Fixed:**
