@@ -20,7 +20,7 @@
     "recompose": "^0.30.0"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
   }
 }
