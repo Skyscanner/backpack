@@ -18,8 +18,5 @@
     "a11y-focus-store": "^1.0.0",
     "bpk-mixins": "^20.2.4",
     "bpk-react-utils": "^3.1.0"
-  },
-  "peerDependencies": {
-    "react": "^16.3.0"
   }
 }

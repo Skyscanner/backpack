@@ -20,7 +20,7 @@
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
-    "react": "^16.3.0"
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "bpk-component-banner-alert": "^4.3.5",
