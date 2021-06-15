@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-barchart",
-  "version": "3.2.5",
+  "version": "3.2.6",
   "description": "Backpack bar chart component.",
   "license": "Apache-2.0",
   "repository": {
@@ -15,9 +15,9 @@
   "gitHead": "5c156b97cb0ba5e75851d3c763334578714c895e",
   "dependencies": {
     "@skyscanner/bpk-foundations-web": "^1.0.0",
-    "bpk-component-mobile-scroll-container": "^2.2.4",
-    "bpk-mixins": "^20.2.4",
-    "bpk-react-utils": "^3.1.0",
+    "bpk-component-mobile-scroll-container": "^2.2.5",
+    "bpk-mixins": "^20.2.5",
+    "bpk-react-utils": "^3.1.1",
     "d3-path": "^2.0.0",
     "d3-scale": "^3.3.0",
     "lodash.debounce": "^4.0.8",
@@ -27,9 +27,9 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-breakpoint": "^2.1.4",
-    "bpk-component-content-container": "^2.1.4",
-    "bpk-component-rtl-toggle": "^2.1.5",
-    "bpk-component-text": "^3.2.4"
+    "bpk-component-breakpoint": "^2.1.5",
+    "bpk-component-content-container": "^2.1.5",
+    "bpk-component-rtl-toggle": "^2.1.6",
+    "bpk-component-text": "^3.2.5"
   }
 }
