@@ -1,3 +1,83 @@
+# 2021-06-16
+
+**Breaking:**
+
+ - bpk-animate-height: 3.1.7 => 4.0.0
+ - bpk-component-accordion: 2.3.7 => 3.0.0
+ - bpk-component-aria-live: 1.1.8 => 2.0.0
+ - bpk-component-autosuggest: 5.1.8 => 6.0.0
+ - bpk-component-badge: 2.1.7 => 3.0.0
+ - bpk-component-banner-alert: 4.3.8 => 5.0.0
+ - bpk-component-barchart: 3.2.8 => 4.0.0
+ - bpk-component-blockquote: 2.1.7 => 3.0.0
+ - bpk-component-boilerplate: 0.1.7 => 1.0.0 (private)
+ - bpk-component-breadcrumb: 2.2.8 => 3.0.0
+ - bpk-component-breakpoint: 2.1.7 => 3.0.0
+ - bpk-component-button: 3.4.7 => 4.0.0
+ - bpk-component-calendar: 8.1.8 => 9.0.0
+ - bpk-component-card: 2.3.8 => 3.0.0
+ - bpk-component-checkbox: 2.3.7 => 3.0.0
+ - bpk-component-chip: 4.2.8 => 5.0.0
+ - bpk-component-close-button: 2.1.7 => 3.0.0
+ - bpk-component-code: 2.1.7 => 3.0.0
+ - bpk-component-content-container: 2.1.7 => 3.0.0
+ - bpk-component-datatable: 2.3.7 => 3.0.0
+ - bpk-component-datepicker: 12.1.8 => 13.0.0
+ - bpk-component-description-list: 2.1.7 => 3.0.0
+ - bpk-component-dialog: 3.1.8 => 4.0.0
+ - bpk-component-drawer: 3.1.8 => 4.0.0
+ - bpk-component-fieldset: 2.1.8 => 3.0.0
+ - bpk-component-flare: 1.1.7 => 2.0.0
+ - bpk-component-form-validation: 3.1.8 => 4.0.0
+ - bpk-component-grid-toggle: 2.1.8 => 3.0.0
+ - bpk-component-grid: 2.1.7 => 3.0.0
+ - bpk-component-heading: 3.2.7 => 4.0.0
+ - bpk-component-horizontal-nav: 3.3.7 => 4.0.0
+ - bpk-component-icon: 8.4.7 => 9.0.0
+ - bpk-component-image: 4.4.7 => 5.0.0
+ - bpk-component-infinite-scroll: 3.1.7 => 4.0.0
+ - bpk-component-input: 5.1.8 => 6.0.0
+ - bpk-component-label: 4.1.7 => 5.0.0
+ - bpk-component-link: 2.2.8 => 3.0.0
+ - bpk-component-list: 2.1.7 => 3.0.0
+ - bpk-component-loading-button: 3.3.7 => 4.0.0
+ - bpk-component-map: 4.1.7 => 5.0.0
+ - bpk-component-mobile-scroll-container: 2.2.7 => 3.0.0
+ - bpk-component-modal: 2.2.8 => 3.0.0
+ - bpk-component-navigation-bar: 2.3.8 => 3.0.0
+ - bpk-component-navigation-stack: 2.1.8 => 3.0.0
+ - bpk-component-nudger: 2.2.7 => 3.0.0
+ - bpk-component-overlay: 1.1.7 => 2.0.0
+ - bpk-component-pagination: 2.1.7 => 3.0.0
+ - bpk-component-panel: 2.1.7 => 3.0.0
+ - bpk-component-paragraph: 2.1.7 => 3.0.0
+ - bpk-component-phone-input: 4.2.8 => 5.0.0
+ - bpk-component-popover: 3.1.8 => 4.0.0
+ - bpk-component-progress: 2.1.7 => 3.0.0
+ - bpk-component-radio: 2.1.7 => 3.0.0
+ - bpk-component-rating: 2.3.5 => 3.0.0
+ - bpk-component-rtl-toggle: 2.1.8 => 3.0.0
+ - bpk-component-scrollable-calendar: 3.1.8 => 4.0.0
+ - bpk-component-section-list: 2.1.7 => 3.0.0
+ - bpk-component-select: 3.1.7 => 4.0.0
+ - bpk-component-skip-link: 1.1.7 => 2.0.0
+ - bpk-component-slider: 2.1.8 => 3.0.0
+ - bpk-component-spinner: 3.2.7 => 4.0.0
+ - bpk-component-star-rating: 2.2.7 => 3.0.0
+ - bpk-component-switch: 1.2.7 => 2.0.0
+ - bpk-component-table: 2.1.7 => 3.0.0
+ - bpk-component-text: 3.2.7 => 4.0.0
+ - bpk-component-textarea: 2.1.7 => 3.0.0
+ - bpk-component-theme-toggle: 2.1.7 => 3.0.0
+ - bpk-component-ticket: 3.1.7 => 4.0.0
+ - bpk-component-tooltip: 5.1.7 => 6.0.0
+ - bpk-mixins: 20.2.7 => 21.0.0
+ - bpk-react-utils: 3.1.3 => 4.0.0
+ - bpk-scrim-utils: 4.1.8 => 5.0.0
+ - bpk-storybook-utils: 0.1.7 => 1.0.0
+ - bpk-stylesheets: 6.1.7 => 7.0.0
+   - Updated peer dependencies versions for components that use newer React features to `16.3.0` as the minimum version.
+
 # 2021-06-09
 
 **Fixed:**
