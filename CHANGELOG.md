@@ -1,3 +1,9 @@
+# 2021-06-17
+
+**Fixed:**
+ - bpk-component-slider: 3.0.0 => 3.0.1
+  - Updated to latest `react-slider` version which contains new A11y fixes.
+
 # 2021-06-16
 
 **Breaking:**
