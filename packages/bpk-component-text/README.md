@@ -12,14 +12,14 @@ npm install bpk-component-text --save-dev
 
 ```javascript
 import React from 'react';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES, WEIGHT_STYLES } from 'bpk-component-text';
 
 export default () => (
-  <BpkText tagName="h1" textStyle="xl">My heading</BpkText>
+  <BpkText tagName="h1" textStyle={TEXT_STYLES.xl}>My heading</BpkText>
   <BpkText tagName="p">My paragraph</BpkText>
-  <BpkText tagName="p" textStyle="lg">My callout paragraph</BpkText>
+  <BpkText tagName="p" textStyle={TEXT_STYLES.lg}>My callout paragraph</BpkText>
   <BpkText tagName="p">
-    Text can be <BpkText tagName="span" bold>bold</BpkText>.
+    Text can be <BpkText tagName="span" weight={WEIGHT_STYLES.bold}>bold</BpkText>.
   </BpkText>
 );
 ```
