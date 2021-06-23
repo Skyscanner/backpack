@@ -153,7 +153,6 @@ const BpkBannerAlertInner = (props: Props) => {
   const isExpandable = configuration === CONFIGURATION.EXPANDABLE;
   const dismissable = configuration === CONFIGURATION.DISMISSABLE;
   const showChildren = isExpandable && expanded;
-  const ariaRoles = ['alert'];
 
   const headerClassNames = [getClassName('bpk-banner-alert__header')];
   const sectionClassNames = [
@@ -167,7 +166,6 @@ const BpkBannerAlertInner = (props: Props) => {
 
   if (isExpandable) {
     headerClassNames.push(getClassName('bpk-banner-alert__header--expandable'));
-    ariaRoles.push('button');
   }
 
   /* eslint-disable
@@ -184,9 +182,9 @@ const BpkBannerAlertInner = (props: Props) => {
       show={show}
       {...rest}
     >
-      <section className={sectionClassNames.join(' ')}>
+      <section className={sectionClassNames.join(' ')} role="alert">
         <div
-          role={ariaRoles.join(' ')}
+          role={isExpandable && 'button'}
           className={headerClassNames.join(' ')}
           onClick={onBannerExpandToggle}
         >

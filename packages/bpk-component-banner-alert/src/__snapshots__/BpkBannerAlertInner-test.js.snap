@@ -9,10 +9,10 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--error"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -69,10 +69,10 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--error"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -129,10 +129,10 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--event"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -189,10 +189,10 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--neutral"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -249,10 +249,10 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--primary"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -309,10 +309,10 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--success"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -369,10 +369,10 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -429,10 +429,10 @@ exports[`BpkBannerAlertInner should render correctly with a custom banner-alert 
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--warn custom-class"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -490,10 +490,10 @@ exports[`BpkBannerAlertInner should render correctly with a custom class name 1`
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -550,10 +550,11 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--success"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
-            role="alert button"
+            role="button"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -645,10 +646,10 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -728,10 +729,10 @@ exports[`BpkBannerAlertInner should render correctly with arbitrary props 1`] = 
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -788,10 +789,11 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--success"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
-            role="alert button"
+            role="button"
           >
             <span
               class="bpk-banner-alert__icon"
@@ -878,10 +880,10 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
       <div>
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
+          role="alert"
         >
           <div
             class="bpk-banner-alert__header"
-            role="alert"
           >
             <span
               class="bpk-banner-alert__icon"
