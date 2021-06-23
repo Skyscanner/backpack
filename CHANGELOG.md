@@ -1,3 +1,11 @@
+# 2021-06-23
+
+**Fixed:**
+
+- bpk-component-banner-alert: 5.0.0 => 5.0.1
+  - Updated role attribute for expandable alerts
+
+
 # 2021-06-17
 
 **Fixed:**
