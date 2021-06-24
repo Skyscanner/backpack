@@ -1,3 +1,11 @@
+# 2021-06-24
+
+**Fixed:**
+
+- bpk-stylesheets: 7.0.0 => 7.0.1
+  - Updated to new fixed Skyscanner Relative font
+
+
 # 2021-06-23
 
 **Fixed:**
