@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-tooltip",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "Backpack tooltip component.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^1.0.0",
-    "bpk-component-text": "^4.0.1"
+    "bpk-component-text": "^4.0.2"
   }
 }

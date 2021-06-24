@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-badge",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Backpack badge component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^1.0.0",
-    "bpk-component-icon": "^9.0.1",
+    "bpk-component-icon": "^9.0.2",
     "bpk-storybook-utils": "^1.0.0"
   }
 }
