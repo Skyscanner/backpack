@@ -37,6 +37,7 @@
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     &:not(.bpk-mobile-scroll-container__showScrollbar) {
+      scrollbar-width: none;
       &::-webkit-scrollbar {
         display: none;
       }
