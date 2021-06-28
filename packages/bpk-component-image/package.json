@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-image",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Backpack image component.",
   "license": "Apache-2.0",
   "repository": {
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^1.0.0",
-    "bpk-component-mobile-scroll-container": "^3.0.0",
+    "bpk-component-mobile-scroll-container": "^3.0.1",
     "bpk-component-text": "^4.0.2"
   }
 }
