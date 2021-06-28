@@ -184,7 +184,7 @@ const BpkBannerAlertInner = (props: Props) => {
     >
       <section className={sectionClassNames.join(' ')} role="alert">
         <div
-          role={isExpandable && 'button'}
+          role={isExpandable ? 'button' : undefined}
           className={headerClassNames.join(' ')}
           onClick={onBannerExpandToggle}
         >
