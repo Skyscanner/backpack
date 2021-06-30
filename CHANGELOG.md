@@ -1,3 +1,26 @@
+# 2021-06-30
+
+**Breaking:**
+
+
+ - bpk-component-button: 4.0.0 => 5.0.0
+ - bpk-component-nudger: 3.0.2 => 4.0.0
+  - The button component is now slightly larger due to usage of the new spacing system. There are no breaking API changes, this change is only labelled as _Breaking_ to ensure you test your buttons still look good at these new sizes. The same applies to the nudger component.
+
+**Changed:**
+
+- bpk-tokens: 36.2.2 => 36.2.3
+  - The following tokens are now deprecated. To migrate, use an equivalent spacing value.
+    - `$button-padding-x`
+    - `$button-padding-y`
+    - `$button-padding-x-icon-only`
+    - `$button-icon-border-radius`
+    - `$button-icon-border-radius-lg`
+    - `$button-large-padding-x`
+    - `$button-large-padding-y`
+    - `$button-large-padding-x-icon-only`
+
+
 # 2021-06-28
 
 **Fixed:**
