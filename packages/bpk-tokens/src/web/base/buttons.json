@@ -8,23 +8,28 @@
   "props": {
     "BUTTON_PADDING_Y": {
       "value": "{!SPACING_XS}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "BUTTON_PADDING_X": {
       "value": "{!SPACING_MD}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "BUTTON_PADDING_X_ICON_ONLY": {
       "value": ".5625rem",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "BUTTON_ICON_BORDER_RADIUS": {
       "value": "{!BORDER_RADIUS_PILL}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "BUTTON_ICON_BORDER_RADIUS_LG": {
       "value": "{!BORDER_RADIUS_PILL_LG}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "BUTTON_BORDER_RADIUS": {
       "value": "{!BORDER_RADIUS_SM}",
@@ -116,15 +121,18 @@
     },
     "BUTTON_LARGE_PADDING_Y": {
       "value": "{!SPACING_XS}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "BUTTON_LARGE_PADDING_X": {
       "value": "{!SPACING_BASE}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "BUTTON_LARGE_PADDING_X_ICON_ONLY": {
       "value": ".5625rem",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "BUTTON_LARGE_FONT_SIZE": {
       "value": "{!FONT_SIZE_XL}",
