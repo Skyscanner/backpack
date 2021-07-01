@@ -17,8 +17,9 @@
  */
 
 @import '~bpk-mixins';
+$bpk-spacing-v2: true;
 
-$arrow-size: $bpk-spacing-xs;
+$arrow-size: bpk-spacing-sm();
 $dark-background-color: $bpk-color-sky-gray;
 
 .bpk-tooltip-portal {
@@ -140,7 +141,7 @@ $dark-background-color: $bpk-color-sky-gray;
     @include bpk-layer;
 
     &--padded {
-      padding: $bpk-spacing-xs $bpk-spacing-sm;
+      padding: bpk-spacing-sm() bpk-spacing-md();
     }
 
     &--dark {
