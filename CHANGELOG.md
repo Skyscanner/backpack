@@ -1,3 +1,10 @@
+# 2021-07-02
+
+**Fixed:**
+
+- bpk-component-tooltip: 6.0.3 => 6.0.4
+  - Updated tooltip component to utilise new spacing functions and use the new grid system. This change is not breaking as size changes are minor size changes that show no noticeable difference.
+
 # 2021-06-30
 
 **Breaking:**
