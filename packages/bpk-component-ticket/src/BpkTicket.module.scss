@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 @mixin hidden-box-shadow-after {
   z-index: 0;
 
@@ -39,7 +41,8 @@
 }
 
 .bpk-ticket {
-  $notch-size: $bpk-spacing-xs;
+  $notch-size: bpk-spacing-md();
+  $ticket-padding: bpk-spacing-base();
 
   position: relative;
   display: block;
@@ -106,7 +109,7 @@
     @include main-styles;
 
     &--padded {
-      padding: $bpk-card-padding;
+      padding: $ticket-padding;
     }
   }
 
@@ -138,7 +141,7 @@
     @include stub-styles;
 
     &--padded {
-      padding: $bpk-card-padding;
+      padding: $ticket-padding;
     }
   }
 
