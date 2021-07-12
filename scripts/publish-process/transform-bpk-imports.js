@@ -47,7 +47,9 @@ const updateImports = (file, dirs) =>
 // eslint-disable-next-line no-console
 console.log('Crunching Backpack import paths...');
 
-const dirs = execSync('ls packages | grep -v "react-version-test.js"')
+const dirs = execSync(
+  'ls packages | grep -v "react-version-test.js" | grep -v "bpk-mixins"',
+)
   .toString()
   .split('\n')
   .filter(s => s !== '');
