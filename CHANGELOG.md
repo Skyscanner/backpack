@@ -144,9 +144,84 @@
 
 **Fixed:**
 
-- Adopted new Backpack foundations libraries. Components now use scoped packages:
-  - `@skyscanner/bpk-svgs`
-  - `@skyscanner/bpk-foundations-web` for tokens
+- bpk-animate-height@3.1.4
+- bpk-component-accordion@2.3.4
+- bpk-component-aria-live@1.1.5
+- bpk-component-autosuggest@5.1.5
+- bpk-component-badge@2.1.4
+- bpk-component-banner-alert@4.3.5
+- bpk-component-barchart@3.2.5
+- bpk-component-blockquote@2.1.4
+- bpk-component-boilerplate@0.1.4
+- bpk-component-breadcrumb@2.2.5
+- bpk-component-breakpoint@2.1.4
+- bpk-component-button@3.4.4
+- bpk-component-calendar@8.1.5
+- bpk-component-card@2.3.5
+- bpk-component-checkbox@2.3.4
+- bpk-component-chip@4.2.5
+- bpk-component-close-button@2.1.4
+- bpk-component-code@2.1.4
+- bpk-component-content-container@2.1.4
+- bpk-component-datatable@2.3.4
+- bpk-component-datepicker@12.1.5
+- bpk-component-description-list@2.1.4
+- bpk-component-dialog@3.1.5
+- bpk-component-drawer@3.1.5
+- bpk-component-fieldset@2.1.5
+- bpk-component-flare@1.1.4
+- bpk-component-form-validation@3.1.5
+- bpk-component-grid-toggle@2.1.5
+- bpk-component-grid@2.1.4
+- bpk-component-heading@3.2.4
+- bpk-component-horizontal-nav@3.3.4
+- bpk-component-icon@8.4.4
+- bpk-component-image@4.4.4
+- bpk-component-infinite-scroll@3.1.4
+- bpk-component-input@5.1.5
+- bpk-component-label@4.1.4
+- bpk-component-link@2.2.5
+- bpk-component-list@2.1.4
+- bpk-component-loading-button@3.3.4
+- bpk-component-map@4.1.4
+- bpk-component-mobile-scroll-container@2.2.4
+- bpk-component-modal@2.2.5
+- bpk-component-navigation-bar@2.3.5
+- bpk-component-navigation-stack@2.1.5
+- bpk-component-nudger@2.2.4
+- bpk-component-overlay@1.1.4
+- bpk-component-pagination@2.1.4
+- bpk-component-panel@2.1.4
+- bpk-component-paragraph@2.1.4
+- bpk-component-phone-input@4.2.5
+- bpk-component-popover@3.1.5
+- bpk-component-progress@2.1.4
+- bpk-component-radio@2.1.4
+- bpk-component-rating@2.3.2
+- bpk-component-rtl-toggle@2.1.5
+- bpk-component-scrollable-calendar@3.1.5
+- bpk-component-section-list@2.1.4
+- bpk-component-select@3.1.4
+- bpk-component-skip-link@1.1.4
+- bpk-component-slider@2.1.5
+- bpk-component-spinner@3.2.4
+- bpk-component-star-rating@2.2.4
+- bpk-component-switch@1.2.4
+- bpk-component-table@2.1.4
+- bpk-component-text@3.2.4
+- bpk-component-textarea@2.1.4
+- bpk-component-theme-toggle@2.1.4
+- bpk-component-ticket@3.1.4
+- bpk-component-tooltip@5.1.4
+- bpk-mixins@20.2.4
+- bpk-scrim-utils@4.1.5
+- bpk-storybook-utils@0.1.4
+- bpk-stylesheets@6.1.4
+- bpk-svgs@12.6.4
+- bpk-theming@2.0.60
+  - Adopted new Backpack foundations libraries. Components now use scoped packages:
+    - `@skyscanner/bpk-svgs`
+    - `@skyscanner/bpk-foundations-web` for tokens
 
 
 # 2021-06-02
