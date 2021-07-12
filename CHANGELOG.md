@@ -1,3 +1,13 @@
+# 2021-07-12
+
+**Fixed:**
+ - bpk-component-badge: 3.0.3 => 3.0.4
+ - bpk-mixins: 21.0.1 => 21.0.2
+    - Fixed badge text style to be bold and correctly aligned to Figma.
+
+ - bpk-component-ticket: 4.0.3 => 4.0.4
+    - Updated ticket component to new spacing system.
+
 # 2021-07-02
 
 **Fixed:**
