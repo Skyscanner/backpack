@@ -10,10 +10,10 @@ exports[`BpkInteractiveStar should render correctly with a selected full star 1`
   >
     <svg
       class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
-      viewBox="0 0 24 24"
-      width="18"
+      height="8"
+      style="width: .5rem; height: .5rem;"
+      viewBox="0 0 16 16"
+      width="8"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -34,10 +34,10 @@ exports[`BpkInteractiveStar should render correctly with empty star 1`] = `
   >
     <svg
       class="bpk-star bpk-interactive-star__icon"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
-      viewBox="0 0 24 24"
-      width="18"
+      height="8"
+      style="width: .5rem; height: .5rem;"
+      viewBox="0 0 16 16"
+      width="8"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -58,10 +58,10 @@ exports[`BpkInteractiveStar should render correctly with full star 1`] = `
   >
     <svg
       class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
-      viewBox="0 0 24 24"
-      width="18"
+      height="8"
+      style="width: .5rem; height: .5rem;"
+      viewBox="0 0 16 16"
+      width="8"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

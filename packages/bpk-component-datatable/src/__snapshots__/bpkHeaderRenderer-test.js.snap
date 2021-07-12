@@ -27,10 +27,10 @@ exports[`bpkHeaderRenderer renders sort icon with down icon selected 1`] = `
     >
       <svg
         class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
-        viewBox="0 0 24 24"
-        width="18"
+        height="8"
+        style="width: .5rem; height: .5rem;"
+        viewBox="0 0 16 16"
+        width="8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -39,10 +39,10 @@ exports[`bpkHeaderRenderer renders sort icon with down icon selected 1`] = `
       </svg>
       <svg
         class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
-        viewBox="0 0 24 24"
-        width="18"
+        height="8"
+        style="width: .5rem; height: .5rem;"
+        viewBox="0 0 16 16"
+        width="8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -68,10 +68,10 @@ exports[`bpkHeaderRenderer renders sort icon with up icon selected 1`] = `
     >
       <svg
         class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
-        viewBox="0 0 24 24"
-        width="18"
+        height="8"
+        style="width: .5rem; height: .5rem;"
+        viewBox="0 0 16 16"
+        width="8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -80,10 +80,10 @@ exports[`bpkHeaderRenderer renders sort icon with up icon selected 1`] = `
       </svg>
       <svg
         class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
-        viewBox="0 0 24 24"
-        width="18"
+        height="8"
+        style="width: .5rem; height: .5rem;"
+        viewBox="0 0 16 16"
+        width="8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -109,10 +109,10 @@ exports[`bpkHeaderRenderer renders sort icons 1`] = `
     >
       <svg
         class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
-        viewBox="0 0 24 24"
-        width="18"
+        height="8"
+        style="width: .5rem; height: .5rem;"
+        viewBox="0 0 16 16"
+        width="8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -121,10 +121,10 @@ exports[`bpkHeaderRenderer renders sort icons 1`] = `
       </svg>
       <svg
         class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
-        viewBox="0 0 24 24"
-        width="18"
+        height="8"
+        style="width: .5rem; height: .5rem;"
+        viewBox="0 0 16 16"
+        width="8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

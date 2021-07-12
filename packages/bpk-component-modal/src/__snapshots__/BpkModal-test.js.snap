@@ -40,10 +40,10 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
             >
               <svg
                 class="bpk-close-button__icon"
-                height="18"
-                style="width: 1.125rem; height: 1.125rem;"
-                viewBox="0 0 24 24"
-                width="18"
+                height="8"
+                style="width: .5rem; height: .5rem;"
+                viewBox="0 0 16 16"
+                width="8"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path

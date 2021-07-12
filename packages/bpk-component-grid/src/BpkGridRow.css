@@ -1,0 +1,1 @@
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-grid__row{margin-right:-.5rem;margin-left:-.5rem}.bpk-grid__row::before,.bpk-grid__row::after{content:'';display:table}.bpk-grid__row::after{clear:both}@media (min-width: 50.3125rem){.bpk-grid__row--padded:first-child{padding-top:.5rem}.bpk-grid__row--padded:last-child{padding-bottom:.5rem}}

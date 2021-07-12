@@ -30,10 +30,10 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
           >
             <svg
               class="bpk-close-button__icon"
-              height="18"
-              style="width: 1.125rem; height: 1.125rem;"
-              viewBox="0 0 24 24"
-              width="18"
+              height="8"
+              style="width: .5rem; height: .5rem;"
+              viewBox="0 0 16 16"
+              width="8"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -105,9 +105,9 @@ exports[`BpkDialog should render default icon dialog correctly 2`] = `
             class="bpk-dialog__icon bpk-dialog__icon--primary"
           >
             <svg
-              height="24"
-              style="width: 1.5rem; height: 1.5rem;"
-              width="24"
+              height="16"
+              style="width: 1rem; height: 1rem;"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -149,9 +149,9 @@ exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
             class="bpk-dialog__icon bpk-dialog__icon--destructive"
           >
             <svg
-              height="24"
-              style="width: 1.5rem; height: 1.5rem;"
-              width="24"
+              height="16"
+              style="width: 1rem; height: 1rem;"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -193,9 +193,9 @@ exports[`BpkDialog should render warning icon dialog correctly 2`] = `
             class="bpk-dialog__icon bpk-dialog__icon--warning"
           >
             <svg
-              height="24"
-              style="width: 1.5rem; height: 1.5rem;"
-              width="24"
+              height="16"
+              style="width: 1rem; height: 1rem;"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -280,10 +280,10 @@ exports[`BpkDialog should render with flare dialog 2`] = `
           >
             <svg
               class="bpk-close-button__icon"
-              height="18"
-              style="width: 1.125rem; height: 1.125rem;"
-              viewBox="0 0 24 24"
-              width="18"
+              height="8"
+              style="width: .5rem; height: .5rem;"
+              viewBox="0 0 16 16"
+              width="8"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -368,10 +368,10 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
           >
             <svg
               class="bpk-close-button__icon"
-              height="18"
-              style="width: 1.125rem; height: 1.125rem;"
-              viewBox="0 0 24 24"
-              width="18"
+              height="8"
+              style="width: .5rem; height: .5rem;"
+              viewBox="0 0 16 16"
+              width="8"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

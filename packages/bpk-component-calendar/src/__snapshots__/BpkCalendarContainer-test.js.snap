@@ -19,9 +19,9 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         >
           <svg
             class="bpk-calendar-nav__icon"
-            height="24"
-            style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            height="16"
+            style="width: 1rem; height: 1rem;"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -72,9 +72,9 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         >
           <svg
             class="bpk-calendar-nav__icon"
-            height="24"
-            style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            height="16"
+            style="width: 1rem; height: 1rem;"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -165,7 +165,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
     >
       <div
         class="bpk-calendar-grid-transition__strip"
-        style="transform: translateX(-18.375rem);"
+        style="transform: translateX(-15.75rem);"
       >
         <div
           class="bpk-calendar-grid-transition__dummy"
@@ -2036,9 +2036,9 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         >
           <svg
             class="bpk-calendar-nav__icon"
-            height="24"
-            style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            height="16"
+            style="width: 1rem; height: 1rem;"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -2089,9 +2089,9 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         >
           <svg
             class="bpk-calendar-nav__icon"
-            height="24"
-            style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            height="16"
+            style="width: 1rem; height: 1rem;"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -2182,7 +2182,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
     >
       <div
         class="bpk-calendar-grid-transition__strip"
-        style="transform: translateX(-18.375rem);"
+        style="transform: translateX(-15.75rem);"
       >
         <div
           class="bpk-calendar-grid-transition__dummy"

@@ -1,0 +1,1 @@
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-spinner-layout{display:flex;flex-direction:column}.bpk-spinner-layout__spinner{display:flex;padding:1rem;justify-content:center}.bpk-spinner-layout__spinner--light{background-color:#444560;border-radius:.25rem}

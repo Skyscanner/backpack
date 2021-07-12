@@ -16,9 +16,9 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
       >
         <svg
           class="bpk-calendar-nav__icon"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
+          height="16"
+          style="width: 1rem; height: 1rem;"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -71,9 +71,9 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
       >
         <svg
           class="bpk-calendar-nav__icon"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
+          height="16"
+          style="width: 1rem; height: 1rem;"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -113,9 +113,9 @@ exports[`BpkCalendarNav should render correctly 1`] = `
       >
         <svg
           class="bpk-calendar-nav__icon"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
+          height="16"
+          style="width: 1rem; height: 1rem;"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -166,9 +166,9 @@ exports[`BpkCalendarNav should render correctly 1`] = `
       >
         <svg
           class="bpk-calendar-nav__icon"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
+          height="16"
+          style="width: 1rem; height: 1rem;"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -208,9 +208,9 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
       >
         <svg
           class="bpk-calendar-nav__icon"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
+          height="16"
+          style="width: 1rem; height: 1rem;"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -263,9 +263,9 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
       >
         <svg
           class="bpk-calendar-nav__icon"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
+          height="16"
+          style="width: 1rem; height: 1rem;"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path

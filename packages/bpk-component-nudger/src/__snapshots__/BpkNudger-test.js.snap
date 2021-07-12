@@ -12,14 +12,14 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -43,14 +43,14 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -75,14 +75,14 @@ exports[`BpkNudger should render as an outline nudger correctly 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -106,14 +106,14 @@ exports[`BpkNudger should render as an outline nudger correctly 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -138,14 +138,14 @@ exports[`BpkNudger should render correctly 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -169,14 +169,14 @@ exports[`BpkNudger should render correctly 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -201,14 +201,14 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -232,14 +232,14 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -265,14 +265,14 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon bpk-nudger__icon--disabled"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -296,14 +296,14 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -328,14 +328,14 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -360,14 +360,14 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon bpk-nudger__icon--disabled"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -393,14 +393,14 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon bpk-nudger__icon--disabled"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -424,14 +424,14 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -456,14 +456,14 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -488,14 +488,14 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-nudger__icon bpk-nudger__icon--disabled"
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
-          viewBox="0 0 24 24"
-          width="18"
+          height="8"
+          style="width: .5rem; height: .5rem;"
+          viewBox="0 0 16 16"
+          width="8"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
