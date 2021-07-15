@@ -19,6 +19,8 @@
 @import '../bonds';
 @import './borders';
 
+$bpk-spacing-v2: true;
+
 ////
 /// @group typography
 ////
@@ -728,7 +730,7 @@
 
 @mixin bpk-table {
   width: 100%;
-  margin-bottom: $bpk-spacing-sm;
+  margin-bottom: bpk-spacing-md();
   border-collapse: collapse;
   table-layout: fixed;
 
@@ -756,7 +758,7 @@
 ///   }
 
 @mixin bpk-table__cell {
-  padding: $bpk-spacing-sm;
+  padding: bpk-spacing-base();
 }
 
 /// Table head cell. Modifies the bpk-table__cell mixin.
