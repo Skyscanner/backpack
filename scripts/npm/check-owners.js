@@ -29,7 +29,7 @@ const cliProgress = require('cli-progress');
 
 // People who've left but we can't remove them because npm won't let us
 // because they were the original publishers of some packages.
-const DEARLY_DEPARTED = ['mattface', 'tiagohngl'];
+const DEARLY_DEPARTED = ['mattface', 'shaundon', 'tiagohngl'];
 
 // TODO remove this warning once NPM is more reliable or we move to
 // scoped packages and don't need the check at all.
