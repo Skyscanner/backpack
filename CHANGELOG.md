@@ -1,3 +1,10 @@
+# 2021-07-16
+
+**Fixed:**
+  - bpk-component-table: 3.0.2 => 3.0.3
+  - bpk-mixins: 21.0.2 => 21.0.3
+    - Update table to use new spacing tokens. Visually this component will appear larger so may change any visual tests you are running.
+
 # 2021-07-12
 
 **Fixed:**
