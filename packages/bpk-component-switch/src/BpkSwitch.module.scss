@@ -26,7 +26,7 @@ $off-color: $bpk-color-sky-gray-tint-06;
 $handle-color: $bpk-color-white;
 
 $height: bpk-spacing-xl();
-$width: bpk-spacing-lg() * 2;
+$width: (bpk-spacing-lg() * 2) + ($bpk-one-pixel-rem * 2);
 $border-width: $bpk-one-pixel-rem * 2;
 
 .bpk-switch {
