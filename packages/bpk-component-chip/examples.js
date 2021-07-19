@@ -21,7 +21,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import BpkText, { TEXT_STYLES, WEIGHT_STYLES } from 'bpk-component-text';
 import BeachIconSm from 'bpk-component-icon/sm/beach';
 import CarWashIconSm from 'bpk-component-icon/sm/car-wash';
 import PlusIconSm from 'bpk-component-icon/sm/plus';
@@ -151,6 +151,75 @@ class StatefulDismissibleChipsExample extends React.Component<
   }
 }
 
+class StatefulRadioGroupChipsExample extends React.Component<
+  { type: $Keys<typeof CHIP_TYPES> },
+  { chips: Array<string>, updates: Array<string>, selectedIndex: number },
+> {
+  constructor() {
+    super();
+    this.state = {
+      selectedIndex: 0,
+      chips: ['Nara', 'Monteverde', 'Panjin', 'Kolkata'],
+      updates: [],
+    };
+  }
+
+  selectChip = (indexToSelect: number) => {
+    const selectedChip = this.state.chips[indexToSelect];
+
+    this.setState(prevState => {
+      return {
+        selectedIndex: indexToSelect,
+        updates: [...prevState.updates, `${selectedChip} selected.`],
+      };
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <div role="radiogroup" aria-labelledby="favorite-color-label">
+          <BpkText
+            id="favorite-color-label"
+            aria-hidden
+            tagName="h1"
+            textStyle={TEXT_STYLES.lg}
+            weight={WEIGHT_STYLES.bold}
+          >
+            Favourite colour
+          </BpkText>
+          {this.state.chips.map((chip, index) => (
+            <BpkSelectableChip
+              {...this.props}
+              role="radio"
+              key={index.toString()}
+              onClick={() => {
+                this.selectChip(index);
+              }}
+              selected={this.state.selectedIndex === index}
+              disabled={index === 3}
+              className={getClassName('bpk-chip-examples__chip')}
+              accessibilityLabel={chip}
+            >
+              {chip}
+            </BpkSelectableChip>
+          ))}
+        </div>
+        <AriaLiveDemo
+          className={getClassName('bpk-banner-alert-examples__component')}
+        >
+          {this.state.updates.map(update => (
+            <>
+              {update}
+              <br />
+            </>
+          ))}
+        </AriaLiveDemo>
+      </div>
+    );
+  }
+}
+
 const AllSelectableChips = ({ ...rest }) => (
   <div>
     <div className={getClassName('bpk-chip-examples__wrapper')}>
@@ -199,6 +268,10 @@ const DismissibleChipsExample = () => (
 );
 
 const SelectableChipsExample = () => <StatefulSelectableChips />;
+
+const RadioGroupChipsExample = () => (
+  <StatefulRadioGroupChipsExample type={CHIP_TYPES.primary} />
+);
 
 const AllSelectableChipStylesExample = () => (
   <div>
@@ -268,4 +341,5 @@ export {
   AllSelectableChipStylesExample,
   WithIconsExample,
   DismissibleChipsExample,
+  RadioGroupChipsExample,
 };
