@@ -25,7 +25,7 @@ import {
   SelectableChipsExample,
   AllSelectableChipStylesExample,
   WithIconsExample,
-  RadiogroupChipsExample,
+  RadioGroupChipsExample,
   DismissibleChipsExample,
 } from './examples';
 
@@ -35,5 +35,5 @@ storiesOf('bpk-component-chip', module)
   .add('All Selectable Types', AllSelectableChipStylesExample)
   .add('With icons', WithIconsExample)
   .add('Dismissable', DismissibleChipsExample)
-  .add('Radio Group', RadiogroupChipsExample)
+  .add('Radio Group', RadioGroupChipsExample)
   .add('Visual tests', AllTypesExample);

@@ -199,6 +199,7 @@ class StatefulRadioGroupChipsExample extends React.Component<
               selected={this.state.selectedIndex === index}
               disabled={index === 3}
               className={getClassName('bpk-chip-examples__chip')}
+              accessibilityLabel={chip}
             >
               {chip}
             </BpkSelectableChip>
@@ -207,9 +208,9 @@ class StatefulRadioGroupChipsExample extends React.Component<
         <AriaLiveDemo
           className={getClassName('bpk-banner-alert-examples__component')}
         >
-          {this.state.updates.map(u => (
+          {this.state.updates.map(update => (
             <>
-              {u}
+              {update}
               <br />
             </>
           ))}
@@ -268,7 +269,7 @@ const DismissibleChipsExample = () => (
 
 const SelectableChipsExample = () => <StatefulSelectableChips />;
 
-const RadiogroupChipsExample = () => (
+const RadioGroupChipsExample = () => (
   <StatefulRadioGroupChipsExample type={CHIP_TYPES.primary} />
 );
 
@@ -340,5 +341,5 @@ export {
   AllSelectableChipStylesExample,
   WithIconsExample,
   DismissibleChipsExample,
-  RadiogroupChipsExample,
+  RadioGroupChipsExample,
 };
