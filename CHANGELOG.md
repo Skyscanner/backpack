@@ -1,3 +1,11 @@
+# 2021-07-20
+
+**Fixed**
+
+- bpk-component-breakpoint: 3.0.3 => 3.0.4
+  - Updated `react-responsive` dependency to 6.1.2. This requires a minimum React version of 16.3.0 as it migrates some life cycle methods to their `UNSAFE_` names.
+
+
 # 2021-07-16
 
 **Fixed:**
