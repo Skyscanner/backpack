@@ -18,20 +18,24 @@
 
 @import '~bpk-mixins';
 
-$slider-control-inset-size: 20 * $bpk-one-pixel-rem;
+$bpk-spacing-v2: true;
+
+$slider-control-inset-size: 22 * $bpk-one-pixel-rem;
+$slider-large-control-inset-size: bpk-spacing-sm() * 7;
 
 .bpk-slider {
-  height: $bpk-spacing-lg;
+  height: bpk-spacing-xl();
   -webkit-tap-highlight-color: transparent;
 
   &--large {
-    height: $bpk-spacing-xxl;
+    height: bpk-spacing-xxl();
+    height: 2.625rem;
   }
 
   &__handle {
     display: flex;
-    width: $bpk-spacing-lg;
-    height: $bpk-spacing-lg;
+    width: bpk-spacing-xl();
+    height: bpk-spacing-xl();
     justify-content: center;
     align-items: center;
     border: $bpk-one-pixel-rem solid $bpk-color-sky-gray-tint-06;
@@ -55,21 +59,21 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
     }
 
     &--large {
-      width: $bpk-spacing-xxl;
-      height: $bpk-spacing-xxl;
+      width: bpk-spacing-xxl();
+      height: bpk-spacing-xxl();
       border-radius: $bpk-border-radius-pill-lg;
 
       &::after {
-        width: $bpk-spacing-lg;
-        height: $bpk-spacing-lg;
+        width: $slider-large-control-inset-size;
+        height: $slider-large-control-inset-size;
         border-radius: $bpk-border-radius-pill-lg;
       }
     }
   }
 
   &__bar {
-    top: calc(50% - (#{$bpk-spacing-xs} / 2));
-    height: $bpk-spacing-xs;
+    top: calc(50% - #{bpk-spacing-sm()});
+    height: bpk-spacing-md();
     border-radius: $bpk-border-radius-sm;
     background-color: $bpk-color-sky-gray-tint-06;
   }
