@@ -18,13 +18,15 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 $primary-on-color: $bpk-color-sky-blue;
 $event-on-color: $bpk-color-abisko;
 $off-color: $bpk-color-sky-gray-tint-06;
 $handle-color: $bpk-color-white;
 
-$height: $bpk-spacing-lg;
-$width: $bpk-spacing-base * 2;
+$height: bpk-spacing-xl();
+$width: bpk-spacing-sm() * 13;
 $border-width: $bpk-one-pixel-rem * 2;
 
 .bpk-switch {
@@ -56,7 +58,7 @@ $border-width: $bpk-one-pixel-rem * 2;
   }
 
   &__label {
-    margin-right: $bpk-spacing-xs;
+    margin-right: bpk-spacing-md();
     line-height: $height;
   }
 
