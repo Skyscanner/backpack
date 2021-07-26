@@ -481,7 +481,7 @@
 @mixin bpk-checkbox {
   position: relative;
   display: inline-block;
-  padding-left: bpk-spacing-lg();
+  padding-left: bpk-spacing-sm() * 7;
 
   @include bpk-text;
   @include bpk-text--base;
