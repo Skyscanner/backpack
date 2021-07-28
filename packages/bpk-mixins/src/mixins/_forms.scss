@@ -18,6 +18,8 @@
 
 @import '../bonds';
 
+$bpk-spacing-v2: true;
+
 ////
 /// @group forms
 ////
@@ -310,27 +312,27 @@
 @mixin bpk-select {
   display: inline-block;
   width: 100%;
-  height: $bpk-select-height;
-  padding: $bpk-select-padding-top $bpk-select-padding-right
-    $bpk-select-padding-bottom $bpk-select-padding-left;
+  height: bpk-spacing-xxl();
+  padding: bpk-spacing-md() bpk-spacing-xl() bpk-spacing-md() bpk-spacing-md();
   border: $bpk-select-border;
   border-radius: $bpk-select-border-radius;
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right
-    $bpk-spacing-sm center;
-  background-size: $bpk-spacing-md $bpk-spacing-md;
+    bpk-spacing-md() center;
+  background-size: bpk-spacing-xxl() / 2;
   color: $bpk-select-color;
   line-height: $bpk-line-height-base - (2 * $bpk-select-border-width);
   appearance: none;
 
   @include bpk-rtl {
-    padding-right: $bpk-select-padding-left;
-    padding-left: $bpk-select-padding-right;
-    background-position: left $bpk-spacing-sm center;
+    padding-right: bpk-spacing-md();
+    padding-left: bpk-spacing-xl();
+    background-position: left bpk-spacing-md() center;
   }
 
   @media screen\0 {
-    padding: $bpk-spacing-xs $bpk-spacing-sm !important; /* stylelint-disable-line declaration-no-important */
+    /* stylelint-disable-next-line declaration-no-important */
+    padding: bpk-spacing-md() !important;
     background-image: none !important; /* stylelint-disable-line declaration-no-important */
   }
 
@@ -338,7 +340,8 @@
     border-color: $bpk-select-disabled-border-color;
     background: $bpk-color-white
       url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-04)) no-repeat right
-      $bpk-spacing-sm center;
+      bpk-spacing-md() center;
+    background-size: bpk-spacing-xxl() / 2;
     color: $bpk-select-disabled-color;
     cursor: not-allowed;
   }
@@ -355,7 +358,7 @@
 ///   }
 
 @mixin bpk-select--large {
-  height: $bpk-select-large-height;
+  height: bpk-spacing-xxl() + bpk-spacing-md();
 }
 
 /// Docked (first-child) form select input. Modifies the bpk-select mixin.
@@ -452,11 +455,11 @@
 ///   }
 
 @mixin bpk-select--invalid {
-  padding-right: $bpk-spacing-base;
+  padding-right: bpk-spacing-lg();
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right
-    $bpk-spacing-sm center;
-  background-size: $bpk-spacing-md $bpk-spacing-md;
+    bpk-spacing-md() center;
+  background-size: bpk-spacing-xxl() / 2;
 
   @include bpk-themeable-property(
     border-color,
@@ -465,9 +468,9 @@
   );
 
   @include bpk-rtl {
-    padding-right: $bpk-input-padding-x;
-    padding-left: $bpk-spacing-base;
-    background-position: left $bpk-spacing-sm center;
+    padding-right: bpk-spacing-md();
+    padding-left: bpk-spacing-xl();
+    background-position: left bpk-spacing-md() center;
   }
 }
 
