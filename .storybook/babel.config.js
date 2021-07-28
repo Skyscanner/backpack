@@ -16,4 +16,35 @@
  * limitations under the License.
  */
 
-module.exports = require('../babel.config.js');
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          browsers: [
+            'chrome >= 63',
+            'safari >= 10',
+            'ie >= 11',
+            'firefox >= 58',
+            'edge >= 16',
+            'samsung >= 6',
+          ],
+          node: 'current',
+        },
+      },
+    ],
+    '@babel/preset-react',
+    '@babel/preset-flow',
+  ],
+  plugins: [
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-proposal-class-properties',
+  ],
+  env: {
+    test: {
+      // Prevent errors from require.context not existing when running Storyshots.
+      plugins: ['require-context-hook'],
+    },
+  },
+};
