@@ -1,3 +1,10 @@
+# 2021-07-30
+
+**Fixed:**
+- bpk-mixins: 21.0.3 => 21.0.4
+- bpk-component-checkbox: 3.0.5 => 3.0.6
+  - Fixed text alignment to checkbox to match correct spacing in Figma.
+
 # 2021-07-23
 
 **Fixed:**
