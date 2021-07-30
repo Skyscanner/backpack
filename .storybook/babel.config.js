@@ -16,6 +16,13 @@
  * limitations under the License.
  */
 
+/*
+ * The purpose of this file is to provide babel config for configuration and use with storybook.
+ *
+ * For babel config used in building and distributing Backpack components, there is a separate file
+ * located in the root of the project.
+ */
+
 module.exports = {
   presets: [
     [

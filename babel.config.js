@@ -16,6 +16,13 @@
  * limitations under the License.
  */
 
+/*
+ * The purpose of this file is to provide a babel config file for building and distributing Backpack components.
+ *
+ * For configuration and use with storybook there is a separate config file in the .storybook/babel.config.js folder,
+ * which provides configuration for running the storybook development system.
+ */
+
 module.exports = {
   presets: [
     [
