@@ -16,4 +16,42 @@
  * limitations under the License.
  */
 
-module.exports = require('../babel.config.js');
+/*
+ * The purpose of this file is to provide babel config for configuration and use with storybook.
+ *
+ * For babel config used in building and distributing Backpack components, there is a separate file
+ * located in the root of the project.
+ */
+
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          browsers: [
+            'chrome >= 63',
+            'safari >= 10',
+            'ie >= 11',
+            'firefox >= 58',
+            'edge >= 16',
+            'samsung >= 6',
+          ],
+          node: 'current',
+        },
+      },
+    ],
+    '@babel/preset-react',
+    '@babel/preset-flow',
+  ],
+  plugins: [
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-proposal-class-properties',
+  ],
+  env: {
+    test: {
+      // Prevent errors from require.context not existing when running Storyshots.
+      plugins: ['require-context-hook'],
+    },
+  },
+};
