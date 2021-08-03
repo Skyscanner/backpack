@@ -7,9 +7,6 @@ exports[`BpkBarchartBar should render as an outlier 1`] = `
       class="bpk-barchart-bar"
       transform="translate(10, 10)"
     >
-      <title>
-        Bar
-      </title>
       <rect
         class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
         height="100"
@@ -40,9 +37,6 @@ exports[`BpkBarchartBar should render as aria-pressed if onClick present and sel
       class="bpk-barchart-bar bpk-barchart-bar--selected bpk-barchart-bar--interactive"
       transform="translate(10, 10)"
     >
-      <title>
-        Bar
-      </title>
       <rect
         class="bpk-barchart-bar__rect"
         height="100"
@@ -75,9 +69,6 @@ exports[`BpkBarchartBar should render as selected 1`] = `
       class="bpk-barchart-bar bpk-barchart-bar--selected"
       transform="translate(10, 10)"
     >
-      <title>
-        Bar
-      </title>
       <rect
         class="bpk-barchart-bar__rect"
         height="100"
@@ -108,9 +99,6 @@ exports[`BpkBarchartBar should render correctly 1`] = `
       class="bpk-barchart-bar"
       transform="translate(10, 10)"
     >
-      <title>
-        Bar
-      </title>
       <rect
         class="bpk-barchart-bar__rect"
         height="100"
@@ -141,9 +129,6 @@ exports[`BpkBarchartBar should render with "padding" prop 1`] = `
       class="bpk-barchart-bar"
       transform="translate(10, 10)"
     >
-      <title>
-        Bar
-      </title>
       <rect
         class="bpk-barchart-bar__rect"
         height="100"
@@ -174,9 +159,6 @@ exports[`BpkBarchartBar should render with an onClick handler 1`] = `
       class="bpk-barchart-bar bpk-barchart-bar--interactive"
       transform="translate(10, 10)"
     >
-      <title>
-        Bar
-      </title>
       <rect
         class="bpk-barchart-bar__rect"
         height="100"
@@ -209,9 +191,6 @@ exports[`BpkBarchartBar should render with an onHover handler 1`] = `
       class="bpk-barchart-bar bpk-barchart-bar--interactive"
       transform="translate(10, 10)"
     >
-      <title>
-        Bar
-      </title>
       <rect
         class="bpk-barchart-bar__rect"
         height="100"

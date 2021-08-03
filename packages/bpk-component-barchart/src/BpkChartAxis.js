@@ -126,6 +126,7 @@ const BpkChartAxis = (props: Props) => {
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <g
       className={getClassName('bpk-chart__axis')}
+      aria-hidden="true"
       {...containerProps}
       {...rest}
     >
