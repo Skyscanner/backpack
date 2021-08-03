@@ -18,8 +18,25 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
+@mixin bpk-spins($spinner: '') {
+  width: $bpk-spacing-md;
+  width: bpk-spacing-base();
+  height: $bpk-spacing-md;
+  height: bpk-spacing-base();
+  animation: bpk-keyframe-spin 600ms linear infinite;
+
+  @if $spinner != '' {
+    content: '';
+    display: inline-block;
+    background: url(map-get($bpk-spinners, $spinner)) no-repeat;
+    background-size: cover;
+  }
+}
+
 .bpk-spinner {
-  @include bpk-spinner;
+  @include bpk-spins;
 
   &--primary {
     @include bpk-themeable-property(
@@ -38,11 +55,19 @@
   }
 
   &--large {
-    @include bpk-spinner--lg;
+    // @include bpk-spinner--lg;
+    width: $bpk-spacing-base;
+    width: bpk-spacing-lg();
+    height: $bpk-spacing-base;
+    height: bpk-spacing-lg();
   }
 
   &--extra-large {
-    @include bpk-spinner--xl;
+    // @include bpk-spinner--xl;
+    width: $bpk-spacing-xl;
+    width: bpk-spacing-xl();
+    height: $bpk-spacing-xl;
+    height: bpk-spacing-xl();
   }
 
   &--align-to-button {
