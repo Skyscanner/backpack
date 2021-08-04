@@ -18,13 +18,15 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-section-list-item {
   $root: &;
 
   display: flex;
   width: 100%;
-  min-height: $bpk-spacing-lg * 2;
-  padding: $bpk-spacing-xs $bpk-spacing-sm;
+  min-height: bpk-spacing-xl() * 2;
+  padding: bpk-spacing-md() bpk-spacing-base();
   justify-content: space-between;
   align-items: center;
   border: none;
