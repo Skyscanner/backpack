@@ -117,7 +117,7 @@
     "@babel/preset-flow": "^7.12.1",
     "@babel/preset-react": "^7.12.7",
     "@babel/register": "^7.12.1",
-    "@skyscanner/bpk-foundations-web": "^1.0.0",
+    "@skyscanner/bpk-foundations-web": "^1.1.0",
     "@storybook/addon-a11y": "^5.3.14",
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
