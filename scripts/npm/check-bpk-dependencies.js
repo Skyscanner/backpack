@@ -115,11 +115,7 @@ const getLatestProductionVersion = version => {
 
 const getBpkPackageVersions = packageFiles =>
   packageFiles.reduce((acc, pkg) => {
-    if (
-      pkg === '' ||
-      !pkg.includes('bpk-') ||
-      !pkg.includes('@skyscanner/bpk-')
-    ) {
+    if (pkg === '' || !pkg.includes('bpk-')) {
       return acc;
     }
     const pfContent = JSON.parse(fs.readFileSync(pkg));
@@ -139,6 +135,26 @@ let packageFiles = execSync(
 
 packageFiles = packageFiles.filter(s => s !== '');
 const bpkPackageVersions = getBpkPackageVersions(packageFiles);
+
+if (
+  process.argv.includes('--upgrade-foundations') ||
+  process.argv.includes('-uf')
+) {
+  const svgsVersion = execSync('npm show @skyscanner/bpk-svgs version')
+    .toString()
+    .split('\n');
+
+  const foundationsVersion = execSync(
+    'npm show @skyscanner/bpk-foundations-web version',
+  )
+    .toString()
+    .split('\n');
+
+  // eslint-disable-next-line prefer-destructuring
+  bpkPackageVersions['@skyscanner/bpk-svgs'] = svgsVersion[0];
+  // eslint-disable-next-line prefer-destructuring
+  bpkPackageVersions['@skyscanner/bpk-foundations-web'] = foundationsVersion[0];
+}
 
 packageFiles.forEach(pf => {
   checkBpkDependencies(pf, bpkPackageVersions);
