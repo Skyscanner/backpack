@@ -4,6 +4,7 @@ exports[`BpkChartAxis X should render band scale 1`] = `
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="middle"
       transform="translate(0, 120)"
@@ -83,6 +84,7 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" and "tickOffse
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="middle"
       transform="translate(0, 120)"
@@ -129,6 +131,7 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" attribute 1`] 
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="middle"
       transform="translate(0, 120)"
@@ -175,6 +178,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="middle"
       transform="translate(0, 120)"
@@ -287,6 +291,7 @@ exports[`BpkChartAxis X should render linear scale with "numTicks" attribute 1`]
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="middle"
       transform="translate(0, 120)"
@@ -322,6 +327,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="middle"
       transform="translate(0, 120)"
@@ -442,6 +448,7 @@ exports[`BpkChartAxis Y should render band scale 1`] = `
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="end"
       transform="translate(0, 0)"
@@ -527,6 +534,7 @@ exports[`BpkChartAxis Y should render band scale with "tickEvery" and "tickOffse
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="end"
       transform="translate(0, 0)"
@@ -576,6 +584,7 @@ exports[`BpkChartAxis Y should render band scale with "tickEvery" attribute 1`] 
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="end"
       transform="translate(0, 0)"
@@ -625,6 +634,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="end"
       transform="translate(0, 0)"
@@ -746,6 +756,7 @@ exports[`BpkChartAxis Y should render linear scale with "numTicks" attribute 1`]
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="end"
       transform="translate(0, 0)"
@@ -783,6 +794,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
 <DocumentFragment>
   <svg>
     <g
+      aria-hidden="true"
       class="bpk-chart__axis"
       text-anchor="end"
       transform="translate(0, 0)"
