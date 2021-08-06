@@ -221,8 +221,8 @@
 ///   }
 
 @mixin bpk-spinner($spinner: '') {
-  width: $bpk-spacing-md;
-  height: $bpk-spacing-md;
+  width: bpk-spacing-base();
+  height: bpk-spacing-base();
   animation: bpk-keyframe-spin 600ms linear infinite;
 
   @if $spinner != '' {
@@ -244,8 +244,8 @@
 ///   }
 
 @mixin bpk-spinner--lg() {
-  width: $bpk-spacing-base;
-  height: $bpk-spacing-base;
+  width: bpk-spacing-lg();
+  height: bpk-spacing-lg();
 }
 
 /// Extra large spinner. Modifies the bpk-spinner mixin.
@@ -259,8 +259,8 @@
 ///   }
 
 @mixin bpk-spinner--xl() {
-  width: $bpk-spacing-xl;
-  height: $bpk-spacing-xl;
+  width: bpk-spacing-xl();
+  height: bpk-spacing-xl();
 }
 
 /// Align spinner to button. Modifies the bpk-spinner mixin.
@@ -274,7 +274,7 @@
 ///   }
 
 @mixin bpk-spinner--align-to-button() {
-  @include _bpk-svg--align-to-button;
+  vertical-align: baseline;
 }
 
 /// Align spinner to large button. Modifies the bpk-spinner mixin.
