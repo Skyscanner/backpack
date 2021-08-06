@@ -58,7 +58,7 @@ export default () => (
 When the `loading` prop is set true, a spinner will be displayed. When this changes to false, the spinner will fade away and the loaded image and content will fade into view.
 
 ```js
-import BpkImage, BpkBackgroundImage { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import BpkImage, { BpkBackgroundImage, withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
 import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const FadingImage = withLoadingBehavior(BpkImage);
