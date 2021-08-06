@@ -1,3 +1,18 @@
+# 2021-08-06
+
+**Changed:**
+- bpk-component-spinner: 4.0.5 => 5.0.0
+- bpk-mixins: 22.0.0 => 22.0.1
+  - Updated spinner to use the new spacing grid. As the `sm` and `xl` spinner are now sized two pixels smaller this change is visually breaking so you should check the alignment when using the component. 
+
+**Fixed:**
+- bpk-component-barchart: 4.0.9 => 4.0.10
+  - Axes are now hidden from assistive technology as the information they convey is included in the bars themselves.
+  - Each bar is now exposed to AT as a single element, instead of multiple.
+
+- bpk-component-loading-button: 4.0.7 => 4.0.8
+  - Fixed a bug where the spinner was not aligned to button text
+
 # 2021-08-05
 
 **Changed:**
