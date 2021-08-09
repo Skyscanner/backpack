@@ -104,11 +104,7 @@ Use `npm run build` to do this.
 
 ### Run the development environment
 
-We use [Storybook](https://storybook.js.org/) for our development environment.
-
-#### Web
-
-Run `npm start` to start the storybook server, then go to [http://localhost:9001](http://localhost:9001) in a web browser to view it.
+We use [Storybook](https://storybook.js.org/) for our development environment. Run `npm start` to start the Storybook server, then go to [http://localhost:9001](http://localhost:9001) in a web browser to view it.
 
 ## Adding icons
 
@@ -120,7 +116,7 @@ Once they're signed off, you can [raise a request](https://bit.ly/backpack-reque
 
 If you want to add a new component, we will need the following:
 
-- Design (Sketch file)
+- Design (Figma file)
 - Associated tokens
 - Sass mixin(s)
 - React component
@@ -130,7 +126,7 @@ If you want to add a new component, we will need the following:
 
 ### Design
 
-Sketch is the preferred format for non-technical folks. We’d appreciate if you could provide an exact match of your component in Sketch format together with folders for each state e.g. disabled, expanded etc.
+Figma is the preferred format for non-technical folks. We’d appreciate if you could provide an exact match of your component in Figma format together with folders for each state e.g. disabled, expanded etc.
 
 ### Tokens
 
@@ -138,7 +134,7 @@ Any visual CSS parameters of the component, such as *color, margins, paddings* e
 
 Tokens are defined in the `src/base` directory (with the exception of product-specific tokens, which are in other subdirectories). Tokens come in two layers: In `aliases.json`, all base tokens are defined with concrete values, such as colours, numbers and sizes. The other files then map those aliases to tokens for specific elements.
 
-> You should probably not touch `aliases.json`, as our color palette or grid rarely changes.
+> You should probably not touch `aliases.json`, as our colour palette or grid rarely changes.
 
 ### Sass mixins
 
