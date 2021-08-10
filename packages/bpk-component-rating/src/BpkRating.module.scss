@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 .bpk-rating {
   display: flex;
 
@@ -34,37 +36,37 @@
 
   &--base-rating {
     display: flex;
-    width: $bpk-rating-base-width;
-    height: $bpk-rating-base-height;
+    width: bpk-spacing-lg() * 2;
+    height: bpk-spacing-lg() * 2;
   }
 
   &--lg-rating {
     display: flex;
-    width: $bpk-rating-lg-width;
-    height: $bpk-rating-lg-height;
+    width: bpk-spacing-xxl() + (bpk-spacing-sm() * 5);
+    height: bpk-spacing-xxl() + (bpk-spacing-sm() * 5);
   }
 
   &--sm-rating {
     display: flex;
-    width: $bpk-rating-sm-width;
-    height: $bpk-rating-sm-width;
+    width: bpk-spacing-sm() * 9;
+    height: bpk-spacing-sm() * 9;
   }
 
   &--sm-pill {
-    width: $bpk-spacing-xl;
-    height: $bpk-spacing-lg;
+    width: bpk-spacing-sm() * 9;
+    height: bpk-spacing-xl() - (bpk-spacing-sm() / 2);
     border-radius: $bpk-border-radius-pill;
   }
 
   &--base-pill {
-    width: $bpk-spacing-base * 2;
-    height: $bpk-spacing-xl;
+    width: bpk-spacing-lg() * 2;
+    height: bpk-spacing-sm() * 9;
     border-radius: $bpk-border-radius-pill;
   }
 
   &--lg-pill {
-    width: $bpk-spacing-xxl + $bpk-spacing-base;
-    height: $bpk-spacing-xxl;
+    width: (bpk-spacing-xl() * 2) + (bpk-spacing-sm() / 2);
+    height: bpk-spacing-xxl() + (bpk-spacing-sm() / 2);
     border-radius: $bpk-border-radius-pill-lg;
   }
 
@@ -75,15 +77,15 @@
 
     &--horizontal {
       // We could use `padding-inline-start: $bpk-spacing-sm` here, but it's unsupported in IE
-      padding-left: $bpk-spacing-sm;
+      padding-left: bpk-spacing-sm() * 3;
 
       @include bpk-rtl {
-        padding-right: $bpk-spacing-sm;
+        padding-right: bpk-spacing-sm() * 3;
       }
     }
 
     &--vertical {
-      padding-top: $bpk-spacing-xs;
+      padding-top: bpk-spacing-sm() + ($bpk-one-pixel-rem * 2);
     }
   }
 
