@@ -88,8 +88,8 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 | [`bpk-mixins`](/packages/bpk-mixins) | [![npm version](https://badge.fury.io/js/bpk-mixins.svg)](http://badge.fury.io/js/bpk-mixins) |
 | [`bpk-react-utils`](/packages/bpk-react-utils) | [![npm version](https://badge.fury.io/js/bpk-react-utils.svg)](http://badge.fury.io/js/bpk-react-utils) |
 | [`bpk-stylesheets`](/packages/bpk-stylesheets) | [![npm version](https://badge.fury.io/js/bpk-stylesheets.svg)](http://badge.fury.io/js/bpk-stylesheets) |
-| [`@skyscanner/bpk-svgs`](https://github.com/Skyscanner/backpack-foundations/packages/@skyscanner/bpk-svgs) | [![npm version](https://badge.fury.io/js/@skyscanner/bpk-svgs.svg)](http://badge.fury.io/js/@skyscanner/bpk-svgs) |
-| [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/packages/@skyscanner/bpk-foundations-web) | [![npm version](https://badge.fury.io/js/@skyscanner/bpk-foundations-web.svg)](http://badge.fury.io/js/@skyscanner/bpk-foundations-web) |
+| [`@skyscanner/bpk-svgs`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-svgs) | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs) |
+| [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web) |
 
 ## Contact
 - backpack@skyscanner.net
