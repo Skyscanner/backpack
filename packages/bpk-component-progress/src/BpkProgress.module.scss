@@ -18,15 +18,17 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-progress {
   position: relative;
-  height: $bpk-spacing-sm;
+  height: bpk-spacing-base();
   border-radius: $bpk-border-radius-sm;
   background-color: $bpk-color-sky-gray-tint-06;
   overflow: hidden;
 
   &--small {
-    height: $bpk-spacing-xs;
+    height: bpk-spacing-md();
     border-radius: $bpk-border-radius-xs;
   }
 
