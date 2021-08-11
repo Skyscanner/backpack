@@ -32,6 +32,9 @@ storiesOf('bpk-component-autosuggest', module)
   .add('With sub heading + tertiary labels', () => (
     <AutosuggestExample includeSubheading includeTertiaryLabel />
   ))
+  .add('Hanzi', () => (
+    <AutosuggestExample includeSubheading includeTertiaryLabel hanzi />
+  ))
   .add('All', () => (
     <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon />
   ))
