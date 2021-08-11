@@ -31,62 +31,83 @@ const offices = [
     name: 'Barcelona',
     code: 'BCN',
     country: 'Spain',
+    tertiaryLabel: 'Tertiary label',
   },
   {
     name: 'Beijing',
     code: 'Any',
     country: 'China',
+    tertiaryLabel: 'Tertiary label',
   },
   {
     name: 'Budapest',
     code: 'BUD',
     country: 'Hungary',
+    tertiaryLabel: 'Tertiary label',
   },
   {
     name: 'Edinburgh',
     code: 'EDI',
     country: 'United Kingdom',
+    tertiaryLabel: 'Tertiary label',
   },
   {
     name: 'Glasgow',
     code: 'Any',
     country: 'United Kingdom',
     indent: true,
+    tertiaryLabel: 'Tertiary label',
   },
   {
     name: 'London',
     code: 'Any',
     country: 'United Kingdom',
+    tertiaryLabel: 'Tertiary label',
   },
   {
     name: 'Miami, FL',
     code: 'Any',
     country: 'United States',
+    tertiaryLabel: 'Tertiary label',
   },
   {
     name: "Shenzhen Bao'an International",
     code: 'SZX',
     country: 'China',
+    tertiaryLabel: 'Tertiary label',
   },
   {
     name: 'Singapore Changi',
     code: 'SIN',
     country: 'Singapore',
+    tertiaryLabel: 'Tertiary label',
   },
   {
     name: 'Sofia',
     code: 'SOF',
     country: 'Bulgaria',
+    tertiaryLabel: 'Tertiary label',
   },
 ];
 
-const getSuggestions = value => {
+const dataHanzi = [
+  {
+    name: '深圳寶安國際 (Shenzhen)',
+    code: 'SZX',
+    country: '中國',
+    tertiaryLabel: '三級標籤',
+  },
+];
+
+const getSuggestions = (value, hanzi) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
+  const data = hanzi ? dataHanzi : offices;
+
   return inputLength === 0
     ? []
-    : offices.filter(
+    : data.filter(
         office => office.name.toLowerCase().indexOf(inputValue) !== -1,
       );
 };
@@ -100,6 +121,7 @@ type State = {
 };
 
 type Props = {
+  hanzi: boolean,
   includeIcon: boolean,
   includeSubheading: boolean,
   includeTertiaryLabel: boolean,
@@ -107,6 +129,7 @@ type Props = {
 
 class AutosuggestExample extends React.Component<Props, State> {
   static defaultProps = {
+    hanzi: false,
     includeIcon: false,
     includeSubheading: false,
     includeTertiaryLabel: false,
@@ -129,7 +152,7 @@ class AutosuggestExample extends React.Component<Props, State> {
 
   onSuggestionsFetchRequested = ({ value }: { value: string }) => {
     this.setState({
-      suggestions: getSuggestions(value),
+      suggestions: getSuggestions(value, this.props.hanzi),
     });
   };
 
@@ -164,7 +187,9 @@ class AutosuggestExample extends React.Component<Props, State> {
             indent={suggestion.indent}
             icon={includeIcon ? BpkFlightIcon : null}
             subHeading={includeSubheading ? suggestion.country : null}
-            tertiaryLabel={includeTertiaryLabel ? 'Tertiary label' : null}
+            tertiaryLabel={
+              includeTertiaryLabel ? suggestion.tertiaryLabel : null
+            }
           />
         )}
         inputProps={inputProps}
