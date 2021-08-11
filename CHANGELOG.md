@@ -1,3 +1,10 @@
+# 2021-08-11
+
+**Fixed:**
+
+- bpk-component-rating: 3.0.8 => 3.0.9
+  - Updating the rating component to use the new spacing functions. This change currently keeps the component to its original size.
+
 # 2021-08-06
 
 **Changed:**
