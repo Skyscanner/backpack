@@ -15,8 +15,8 @@
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
     "bpk-component-breakpoint": "^3.0.7",
-    "bpk-component-calendar": "^9.0.10",
-    "bpk-component-input": "^6.0.11",
+    "bpk-component-calendar": "^9.0.11",
+    "bpk-component-input": "^6.0.12",
     "bpk-component-modal": "^3.0.8",
     "bpk-component-popover": "^4.0.11",
     "bpk-mixins": "^22.0.1",
