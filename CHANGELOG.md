@@ -1,3 +1,13 @@
+# 2021-08-12
+
+# 2021-08-11
+
+**Fixed:**
+
+- bpk-component-autosuggest: 6.0.12 => 6.0.13
+  - Fix tertiary label wrapping when using `hanzi` (Chinese characters) to make sure it won't occupy a large height.
+
+
 # 2021-08-11
 
 **Fixed:**
@@ -10,7 +20,7 @@
 **Changed:**
 - bpk-component-spinner: 4.0.5 => 5.0.0
 - bpk-mixins: 22.0.0 => 22.0.1
-  - Updated spinner to use the new spacing grid. As the `sm` and `xl` spinner are now sized two pixels smaller this change is visually breaking so you should check the alignment when using the component. 
+  - Updated spinner to use the new spacing grid. As the `sm` and `xl` spinner are now sized two pixels smaller this change is visually breaking so you should check the alignment when using the component.
 
 **Fixed:**
 - bpk-component-barchart: 4.0.9 => 4.0.10
@@ -30,7 +40,7 @@
 # 2021-07-30
 
 **Breaking:**
-- bpk-mixins: 21.0.4 => 22.0.0 
+- bpk-mixins: 21.0.4 => 22.0.0
 - bpk-component-select: 4.0.4 => 5.0.0
   - Updated select component and mixins to use the new spacing grid. The select component is now slightly larger due to the spacing changes. There are no breaking API changes, this change is only labelled as _Breaking_ to ensure you test your select components still look good at these new sizes.
 
