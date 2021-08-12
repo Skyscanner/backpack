@@ -60,6 +60,16 @@ describe('BpkAutosuggestSuggestion', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with a "tertiaryLabel" but without a "subHeading" attribute when using hanzi', () => {
+    const { asFragment } = render(
+      <BpkAutosuggestSuggestion
+        value="深圳寶安國際"
+        tertiaryLabel="三級標籤"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly with an "icon" attribute', () => {
     const { asFragment } = render(
       <BpkAutosuggestSuggestion value="Edinburgh" icon={FlightIcon} />,

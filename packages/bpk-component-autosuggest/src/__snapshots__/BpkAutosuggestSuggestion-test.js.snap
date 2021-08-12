@@ -138,6 +138,32 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel"
 </DocumentFragment>
 `;
 
+exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel" but without a "subHeading" attribute when using hanzi 1`] = `
+<DocumentFragment>
+  <section
+    class="bpk-autosuggest__suggestion"
+  >
+    <div
+      class="bpk-autosuggest__suggestion-inner"
+    >
+      <span
+        class="bpk-autosuggest__suggestion-value"
+      >
+        深圳寶安國際
+      </span>
+      <small
+        class="bpk-autosuggest__suggestion-sub-heading"
+      />
+      <aside
+        class="bpk-autosuggest__suggestion-tertiary-label"
+      >
+        三級標籤
+      </aside>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
 exports[`BpkAutosuggestSuggestion should render correctly with a "value" attribute being an element 1`] = `
 <DocumentFragment>
   <section
