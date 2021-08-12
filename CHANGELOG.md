@@ -1,7 +1,5 @@
 # 2021-08-12
 
-# 2021-08-11
-
 **Fixed:**
 
 - bpk-component-autosuggest: 6.0.12 => 6.0.13
