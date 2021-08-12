@@ -135,6 +135,7 @@
     &-tertiary-label {
       display: table-cell;
       vertical-align: top;
+      word-break: keep-all;
 
       @include bpk-text;
       @include bpk-text--xs;
