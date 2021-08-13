@@ -8,3 +8,7 @@
 
 - bpk-component-navigation-bar:
   - Fixed alignment issues with new font.
+
+- bpk-component-breadcrumb:
+  - Fixed alignment of the breadcrumb arrows to text.
+
