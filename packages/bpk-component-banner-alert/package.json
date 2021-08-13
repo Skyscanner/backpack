@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-banner-alert",
-  "version": "5.0.13",
+  "version": "5.0.14",
   "description": "Backpack banner alert component.",
   "license": "Apache-2.0",
   "repository": {
@@ -12,7 +12,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
+  "gitHead": "4e4ec9add28e1db54d6a38a10c331bbd163f2926",
   "dependencies": {
     "@skyscanner/bpk-foundations-web": "^1.2.0",
     "bpk-animate-height": "^4.0.6",
@@ -24,7 +24,7 @@
     "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
-    "bpk-component-aria-live": "^2.0.13",
+    "bpk-component-aria-live": "^2.0.14",
     "bpk-component-button": "^5.0.5",
     "bpk-storybook-utils": "^1.0.6"
   },

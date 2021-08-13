@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-chip",
-  "version": "5.0.12",
+  "version": "5.0.13",
   "description": "Backpack chip component.",
   "license": "Apache-2.0",
   "repository": {
@@ -12,7 +12,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
+  "gitHead": "4e4ec9add28e1db54d6a38a10c331bbd163f2926",
   "dependencies": {
     "bpk-component-icon": "^9.0.8",
     "bpk-mixins": "^22.0.1",
@@ -23,7 +23,7 @@
     "react": "^16.3.0"
   },
   "devDependencies": {
-    "bpk-component-aria-live": "^2.0.13",
+    "bpk-component-aria-live": "^2.0.14",
     "bpk-component-text": "^4.0.8"
   }
 }
