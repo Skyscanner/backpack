@@ -25,6 +25,7 @@
   padding: $bpk-spacing-sm;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 
   @include bpk-themeable-property(
     background-color,
