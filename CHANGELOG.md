@@ -1,3 +1,10 @@
+# 2021-08-18
+
+**Fixed:**
+
+- bpk-component-nudger 4.0.5 => 4.0.6:
+  - Updating the nudger component to use the new spacing grid.
+
 # 2021-08-17
 
 **Changed:**
