@@ -564,7 +564,7 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-paragraph {
   margin-top: $bpk-p-margin-top;
-  margin-bottom: $bpk-p-margin-bottom;
+  margin-bottom: bpk-spacing-base();
 }
 
 /// List.
