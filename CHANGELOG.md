@@ -1,3 +1,31 @@
+# 2021-08-18
+
+**Fixed:**
+
+- bpk-component-nudger 4.0.5 => 4.0.6:
+  - Updating the nudger component to use the new spacing grid.
+
+# 2021-08-17
+
+**Changed:**
+
+- bpk-stylesheets: 7.0.7 => 7.1.0
+  - Updated to new fixed Skyscanner Relative font
+
+**Fixed:**
+
+- bpk-component-banner-alert: 5.0.14 => 5.0.15
+  - Fixed alignment of the alert icon to text.
+
+- bpk-component-breadcrumb: 3.0.8 => 3.0.9
+  - Fixed alignment of the breadcrumb arrows to text.
+
+- bpk-component-drawer: 4.0.8 => 4.0.9
+  - Fixed alignment issues with new font.
+
+- bpk-component-navigation-bar: 3.0.8 => 3.0.9
+  - Fixed alignment issues with new font.
+
 # 2021-08-12
 
 **Fixed:**
