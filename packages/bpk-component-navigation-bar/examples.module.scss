@@ -18,13 +18,15 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-navigation-bar-story {
-  padding: $bpk-one-pixel-rem $bpk-one-pixel-rem $bpk-spacing-xxl * 2;
+  padding: $bpk-one-pixel-rem $bpk-one-pixel-rem bpk-spacing-xxl() * 2;
   background-color: $bpk-color-sky-gray-tint-07;
 
   @include bpk-border-sm($bpk-color-sky-gray-tint-07);
 
   > * {
-    margin-bottom: $bpk-spacing-md;
+    margin-bottom: bpk-spacing-base();
   }
 }
