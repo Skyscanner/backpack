@@ -65,6 +65,7 @@
     padding: $bpk-banner-alert-header-padding-y
       $bpk-banner-alert-header-padding-x;
     flex-direction: row;
+    align-items: center;
 
     &--expandable {
       cursor: pointer;

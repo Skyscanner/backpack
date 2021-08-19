@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-nudger {
   &__button {
     position: relative;
@@ -25,7 +27,7 @@
 
   &__input {
     display: inline-block;
-    padding: $bpk-button-padding-y 0;
+    padding: bpk-spacing-md() 0;
     border: none;
     text-align: center;
     vertical-align: middle;
@@ -39,7 +41,7 @@
     }
 
     &--numeric {
-      $size: $bpk-button-line-height + ($bpk-button-padding-y * 2);
+      $size: bpk-spacing-lg() + (bpk-spacing-md() * 2);
 
       width: $size;
     }
