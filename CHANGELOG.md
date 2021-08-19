@@ -1,3 +1,16 @@
+# 2021-08-19
+
+**Changed:**
+
+- bpk-component-navigation-bar 3.0.9 => 3.0.10:
+  - Updated component to use new grid system. This component will appear slightly larger than before due to the new grid system.
+- bpk-component-progress 3.0.6 => 3.0.7:
+  - Updated component to use the new spacing grid and sizes. This component may now appear larger.
+- bpk-component-popover 4.0.13 => 4.0.14:
+  - Updating the popover component to use the new spacing grid.
+- bpk-component-paragraph 3.0.6 => 3.0.7:
+  - Updating the paragraph component to use the new spacing grid.
+
 # 2021-08-18
 
 **Fixed:**
