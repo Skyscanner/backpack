@@ -18,11 +18,13 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-pagination-page {
-  min-width: $bpk-spacing-xl;
-  height: $bpk-spacing-xl;
+  min-width: bpk-spacing-xxl();
+  height: bpk-spacing-xxl();
   padding: 0;
-  border-radius: $bpk-border-radius-pill;
+  border-radius: $bpk-border-radius-pill-lg;
 }
 
 .bpk-pagination-page--selected {
