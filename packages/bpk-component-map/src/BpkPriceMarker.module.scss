@@ -18,9 +18,11 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 .bpk-price-marker {
   display: flex;
-  padding: ($bpk-spacing-xs / 3) $bpk-spacing-sm;
+  padding: bpk-spacing-sm() bpk-spacing-base(); // 4px 16px
   justify-content: center;
   align-items: center;
   border: $bpk-border-size-xl solid;
@@ -67,7 +69,7 @@
 
   &-focused {
     z-index: 1;
-    padding: ($bpk-spacing-sm / 3) $bpk-spacing-sm;
+    padding: bpk-spacing-sm() bpk-spacing-base();
     background-color: $bpk-color-white;
 
     @include bpk-themeable-property(
@@ -92,8 +94,6 @@
   &__wrapper {
     position: relative;
     display: flex;
-    // This is needed to correctly position the arrow
-    padding-bottom: 5px; // stylelint-disable-line unit-blacklist
     flex-direction: column;
     align-items: center;
     border: none;
@@ -103,7 +103,7 @@
   &__arrow {
     position: absolute;
     // This is needed to correctly position the arrow
-    bottom: -$bpk-spacing-sm;
+    bottom: -(bpk-spacing-base());
 
     &-default {
       @include bpk-themeable-property(

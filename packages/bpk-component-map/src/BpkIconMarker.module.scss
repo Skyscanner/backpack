@@ -18,36 +18,56 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 // Matches the height and width of BpkMapMarkerBackground
-$marker-height: $bpk-spacing-xl;
-$marker-width: $bpk-spacing-lg;
-$selected-marker-height: $bpk-spacing-xxl;
-$selected-marker-width: $bpk-spacing-xl;
+$marker-height: $bpk-spacing-xl; // 36px
+$marker-height2: bpk-spacing-xxl(); // 40px
+
+$marker-width: $bpk-spacing-lg; // 30px
+$marker-width2: bpk-spacing-xl(); // 32px
+
+$selected-marker-height: $bpk-spacing-xxl; // 42px
+$selected-marker-height2: bpk-spacing-xxl() + bpk-spacing-md(); // 40px
+
+$selected-marker-width: $bpk-spacing-xl; // 36px
+$selected-marker-width2: bpk-spacing-xxl(); // 40px
 
 .bpk-icon-marker {
   &__wrapper {
     position: relative;
     z-index: 1;
     width: $marker-width;
+    width: $marker-width2;
     height: $marker-height;
+    height: $marker-height2;
     border: none; // Prevent default <button> styling.
     background: none; // Prevent default <button> styling.
 
     &--selected {
       z-index: 2;
       width: $selected-marker-width;
+      width: $selected-marker-width2;
       height: $selected-marker-height;
+      height: $selected-marker-height2;
     }
   }
 
   &__icon {
     // This ensures that the icon is positioned exactly in the
     // centre of the marker.
+
+    // (30 / 2) - ( 18 / 2) = 6px
     $padding: ($marker-width / 2) - ($bpk-icon-size-sm / 2);
+    // (32 / 2) - (18 / 2) = 7px
+    $padding2: ($marker-width2 / 2) - ($bpk-icon-size-sm / 2);
 
     position: absolute;
     top: $padding;
+    top: $padding2;
+    top: bpk-spacing-md();
     left: $padding;
+    left: $padding2;
     color: $bpk-color-white;
 
     > svg {
@@ -70,9 +90,12 @@ $selected-marker-width: $bpk-spacing-xl;
       // This ensures that the icon is positioned exactly in the
       // centre of the marker.
       $padding: ($selected-marker-width / 2) - ($bpk-icon-size-sm / 2);
+      $paddingv2: ($selected-marker-width2 / 2) - ($bpk-icon-size-sm / 2);
 
       top: $padding;
+      top: $paddingv2;
       left: $padding;
+      left: $paddingv2;
 
       @include bpk-themeable-property(
         color,

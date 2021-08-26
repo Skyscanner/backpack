@@ -94,8 +94,8 @@ const BpkPriceMarker = (props: Props) => {
           weight={WEIGHT_STYLES.bold}
           textStyle={
             status === PRICE_MARKER_STATUSES.focused
-              ? TEXT_STYLES.base
-              : TEXT_STYLES.sm
+              ? TEXT_STYLES.lg
+              : TEXT_STYLES.base
           }
         >
           {label}

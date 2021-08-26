@@ -19,7 +19,7 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "focuse
       bold={null}
       className="bpk-price-marker bpk-price-marker-focused"
       tagName="span"
-      textStyle="base"
+      textStyle="lg"
       weight="bold"
     >
       £120
@@ -52,7 +52,7 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "viewed
       bold={null}
       className="bpk-price-marker bpk-price-marker-viewed"
       tagName="span"
-      textStyle="sm"
+      textStyle="base"
       weight="bold"
     >
       £120
@@ -85,7 +85,7 @@ exports[`BpkMapMarker should render correctly with a "arrowClassName" attribute 
       bold={null}
       className="bpk-price-marker bpk-price-marker-default"
       tagName="span"
-      textStyle="sm"
+      textStyle="base"
       weight="bold"
     >
       £120
@@ -119,7 +119,7 @@ exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`]
       bold={null}
       className="bpk-price-marker bpk-price-marker-default"
       tagName="span"
-      textStyle="sm"
+      textStyle="base"
       weight="bold"
     >
       £120
@@ -152,7 +152,7 @@ exports[`BpkMapMarker should render correctly with a "className" attribute 1`] =
       bold={null}
       className="bpk-price-marker bpk-price-marker-default custom-class-1 custom-class-2"
       tagName="span"
-      textStyle="sm"
+      textStyle="base"
       weight="bold"
     >
       £120
@@ -185,7 +185,7 @@ exports[`BpkMapMarker should render correctly with a "disabled" attribute 1`] = 
       bold={null}
       className="bpk-price-marker bpk-price-marker-default bpk-price-marker-disabled"
       tagName="span"
-      textStyle="sm"
+      textStyle="base"
       weight="bold"
     >
       Sold out
@@ -218,7 +218,7 @@ exports[`BpkMapMarker should render correctly with a "onClick" attribute 1`] = `
       bold={null}
       className="bpk-price-marker bpk-price-marker-default bpk-price-marker--dynamic"
       tagName="span"
-      textStyle="sm"
+      textStyle="base"
       weight="bold"
     >
       £120
@@ -251,7 +251,7 @@ exports[`BpkMapMarker should render properly 1`] = `
       bold={null}
       className="bpk-price-marker bpk-price-marker-default"
       tagName="span"
-      textStyle="sm"
+      textStyle="base"
       weight="bold"
     >
       £120
