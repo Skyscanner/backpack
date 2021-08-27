@@ -18,11 +18,13 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-navigation-bar {
   position: relative;
   display: flex;
-  min-height: $bpk-spacing-xxl + $bpk-spacing-xs;
-  padding: $bpk-spacing-sm;
+  min-height: bpk-spacing-xxl() + bpk-spacing-md();
+  padding: bpk-spacing-base();
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -48,20 +50,20 @@
   }
 
   &__leading-item {
-    left: $bpk-spacing-sm;
+    left: bpk-spacing-base();
 
     @include bpk-rtl {
-      right: $bpk-spacing-sm;
+      right: bpk-spacing-base();
       left: auto;
     }
   }
 
   &__trailing-item {
-    right: $bpk-spacing-sm;
+    right: bpk-spacing-base();
 
     @include bpk-rtl {
       right: auto;
-      left: $bpk-spacing-sm;
+      left: bpk-spacing-base();
     }
   }
 
