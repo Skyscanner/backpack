@@ -36,4 +36,4 @@ storiesOf('bpk-component-chip', module)
   .add('With icons', WithIconsExample)
   .add('Dismissable', DismissibleChipsExample)
   .add('Radio Group', RadioGroupChipsExample)
-  .add('Visual tests', AllTypesExample);
+  .add('Visual test', AllTypesExample);

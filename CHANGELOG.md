@@ -1,3 +1,11 @@
+# 2021-08-27
+
+**Changed:**
+
+- bpk-component-flare: 2.0.9 => 2.0.10
+  - Updated component to use new grid system. This component will appear slightly larger than before due to the new grid system.
+
+
 # 2021-08-19
 
 **Changed:**
