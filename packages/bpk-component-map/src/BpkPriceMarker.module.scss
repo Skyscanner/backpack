@@ -22,7 +22,7 @@ $bpk-spacing-v2: true;
 
 .bpk-price-marker {
   display: flex;
-  padding: bpk-spacing-sm() bpk-spacing-base(); // 4px 16px
+  padding: bpk-spacing-sm() bpk-spacing-base();
   justify-content: center;
   align-items: center;
   border: $bpk-border-size-xl solid;
