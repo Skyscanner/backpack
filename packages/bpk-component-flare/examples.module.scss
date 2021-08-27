@@ -18,8 +18,10 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 .bpk-flare-stories {
-  padding: $bpk-spacing-lg;
+  padding: bpk-spacing-xl();
 
   &__flare-bar {
     width: 100%;
@@ -48,7 +50,7 @@
     }
 
     &--fixed-height {
-      height: $bpk-spacing-xxl * 5;
+      height: bpk-spacing-xxl() * 5;
 
       &--large {
         height: 45rem;
@@ -58,7 +60,7 @@
 
   &__content {
     max-width: 45rem;
-    margin: $bpk-spacing-lg;
+    margin: bpk-spacing-xl();
     color: $bpk-color-white;
   }
 }
