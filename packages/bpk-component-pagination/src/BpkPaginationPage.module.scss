@@ -21,8 +21,8 @@
 $bpk-spacing-v2: true;
 
 .bpk-pagination-page {
-  min-width: bpk-spacing-xxl();
-  height: bpk-spacing-xxl();
+  min-width: bpk-spacing-xl() + bpk-spacing-sm();
+  height: bpk-spacing-xl() + bpk-spacing-sm();
   padding: 0;
   border-radius: 50%;
 }
