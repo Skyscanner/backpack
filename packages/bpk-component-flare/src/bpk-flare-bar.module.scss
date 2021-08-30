@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 .bpk-flare-bar {
   &__container {
     position: relative;
@@ -57,7 +59,7 @@
   &__rounded-corner {
     position: absolute;
     // stylelint-disable-next-line unit-blacklist
-    bottom: calc(#{$bpk-spacing-lg} - 1px);
+    bottom: calc(#{bpk-spacing-lg()} - 1px);
     left: 0;
     width: $bpk-flare-corner-radius;
     height: $bpk-flare-corner-radius;
