@@ -45,6 +45,31 @@ describe('BpkBackgroundImage', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly when overriding src', () => {
+    const { asFragment } = render(
+      <BpkBackgroundImage
+        aspectRatio={612 / 408}
+        style={{
+          width: '100%',
+          height: '20rem',
+        }}
+        src="./path/to/image.jpg"
+        imageStyle={{
+          backgroundImage: './path/to/other_image.jpg',
+        }}
+      >
+        <div
+          style={{
+            opacity: 0.7,
+            marginLeft: spacingSm,
+            paddingTop: spacingSm,
+          }}
+        />
+      </BpkBackgroundImage>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly using legacy width and height props', () => {
     const { asFragment } = render(
       <BpkBackgroundImage

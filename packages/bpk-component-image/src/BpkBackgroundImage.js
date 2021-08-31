@@ -31,17 +31,17 @@ const getClassName = cssModules(STYLES);
 
 export type BpkBackgroundImageProps = {
   children: Node,
-  aspectRatio: number,
-  height: number,
+  aspectRatio: ?number,
+  height: ?number,
   inView: boolean,
   loading: boolean,
   src: string,
-  width: number,
+  width: ?number,
   className: ?string,
   onLoad: ?() => mixed,
   style: ?{},
   imageStyle: ?{
-    backgroundImage: string,
+    backgroundImage: ?string,
   },
 };
 
@@ -107,6 +107,16 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     delete this.trackImg;
   };
 
+  getAspectRatio = () => {
+    if (this.props.aspectRatio) {
+      return this.props.aspectRatio;
+    }
+    if (this.props.width && this.props.height) {
+      return this.props.width / this.props.height;
+    }
+    return 1;
+  };
+
   startImageLoad = (): void => {
     this.trackImg = new Image();
     this.trackImg.src = this.props.src;
@@ -115,9 +125,6 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
 
   render(): Node {
     const {
-      width,
-      height,
-      aspectRatio,
       children,
       className,
       inView,
@@ -127,8 +134,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
       style,
     } = this.props;
 
-    const calculatedAspectRatio =
-      aspectRatio !== null ? aspectRatio : width / height;
+    const calculatedAspectRatio = this.getAspectRatio();
     const aspectRatioPc = `${100 / calculatedAspectRatio}%`;
 
     const classNames = [getClassName('bpk-background-image')];
