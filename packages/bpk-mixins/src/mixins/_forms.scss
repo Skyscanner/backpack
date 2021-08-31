@@ -90,7 +90,7 @@ $bpk-spacing-v2: true;
   padding-right: bpk-spacing-xxl();
   background: $bpk-color-white url(map-get($bpk-icons-sm, tick-monteverde))
     no-repeat right bpk-spacing-base() center;
-  background-size: bpk-spacing-base() bpk-spacing-base();
+  background-size: $bpk-icon-size-sm $bpk-icon-size-sm;
 
   @include bpk-rtl {
     padding-right: bpk-spacing-base();
@@ -114,7 +114,7 @@ $bpk-spacing-v2: true;
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right
     bpk-spacing-base() center;
-  background-size: bpk-spacing-base() bpk-spacing-base();
+  background-size: $bpk-icon-size-sm $bpk-icon-size-sm;
 
   @include bpk-themeable-property(
     border-color,
