@@ -11,6 +11,9 @@
     },
     {
       "npm": "anambl"
+    },
+    {
+      "npm": "marianeumayer-skyscanner"
     }
   ]
 }

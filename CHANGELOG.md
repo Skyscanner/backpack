@@ -1,3 +1,14 @@
+# 2021-09-01
+
+**Breaking:**
+
+- bpk-component-horizontal-nav: 4.0.11 => 5.0.0
+  - Updated component to use new spacing grid. This component will now appear larger in height so should be checked this does not alter layout.
+
+**Changed:**
+- bpk-component-chip: 5.0.16 => 5.1.0
+  - Updated dismissible chip to use new `close-circle` icon to be clearer. 
+
 # 2021-08-27
 
 **Changed:**

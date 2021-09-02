@@ -18,6 +18,7 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
 $custom-color: $bpk-color-sagano;
 
 .bpk-horizontal-nav-custom-scrollers {
@@ -40,8 +41,8 @@ $custom-color: $bpk-color-sagano;
   }
 
   &__light-appearance-wrapper {
-    padding-top: $bpk-spacing-sm;
-    padding-bottom: $bpk-spacing-sm;
+    padding-top: bpk-spacing-base();
+    padding-bottom: bpk-spacing-base();
     background-color: $bpk-color-abisko;
   }
 }
