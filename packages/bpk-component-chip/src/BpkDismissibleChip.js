@@ -25,7 +25,7 @@ of a close icon.
 */
 
 import React from 'react';
-import CloseIconSm from 'bpk-component-icon/sm/close';
+import CloseCircleIconSm from 'bpk-component-icon/sm/close-circle';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import {
@@ -42,7 +42,7 @@ const BpkDismissibleChip = (props: Props) => {
   return (
     <BpkSelectableChip
       {...rest}
-      trailingAccessoryView={<CloseIconSm />}
+      trailingAccessoryView={<CloseCircleIconSm />}
       selected={false}
       role="button" // Override role="checkbox" because this chip is not selectable.
     />
