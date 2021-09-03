@@ -1,6 +1,9 @@
 **Fixed:**
 
+- bpk-component-select:
+  - Fixed component grid sizes as per design.
 - bpk-component-input:
   - Updated component to use new grid system.
-- bpk-component-chip:
-  - Updated dismissible chip to use new `close-circle` icon to be clearer.
+  - Updated valid icon to use new style.
+- bpk-component-phone-input:
+  - Fixed component alignment issue.
