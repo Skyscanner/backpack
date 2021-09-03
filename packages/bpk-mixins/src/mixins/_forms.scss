@@ -88,8 +88,9 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-input--valid {
   padding-right: bpk-spacing-xxl();
-  background: $bpk-color-white url(map-get($bpk-icons-sm, tick-monteverde))
-    no-repeat right bpk-spacing-base() center;
+  background: $bpk-color-white
+    url(map-get($bpk-icons-sm, tick-circle-monteverde)) no-repeat right
+    bpk-spacing-base() center;
   background-size: $bpk-icon-size-sm $bpk-icon-size-sm;
 
   @include bpk-rtl {
@@ -333,7 +334,8 @@ $bpk-spacing-v2: true;
   @media screen\0 {
     /* stylelint-disable-next-line declaration-no-important */
     padding: bpk-spacing-md() !important;
-    background-image: none !important; /* stylelint-disable-line declaration-no-important */
+    /* stylelint-disable-next-line declaration-no-important */
+    background-image: none !important;
   }
 
   &:disabled {
@@ -631,7 +633,8 @@ $bpk-spacing-v2: true;
   }
 
   @media screen\0 {
-    background: none !important; /* stylelint-disable-line declaration-no-important */
+    /* stylelint-disable-next-line declaration-no-important */
+    background: none !important;
   }
 
   &:checked,
@@ -768,7 +771,8 @@ $bpk-spacing-v2: true;
   }
 
   @media screen\0 {
-    background: none !important; /* stylelint-disable-line declaration-no-important */
+    /* stylelint-disable-next-line declaration-no-important */
+    background: none !important;
   }
 
   &:checked {
