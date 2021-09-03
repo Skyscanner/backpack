@@ -25,7 +25,7 @@ $bpk-spacing-v2: true;
   vertical-align: middle;
 
   &__button {
-    height: bpk-spacing-xl() + bpk-spacing-sm();
+    height: $bpk-button-height;
     padding: 0 bpk-spacing-md();
     border: none;
     background: none;
