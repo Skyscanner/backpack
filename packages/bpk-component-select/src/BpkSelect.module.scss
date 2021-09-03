@@ -101,7 +101,7 @@ $select-image-large-height: 24 * $bpk-one-pixel-rem;
 
   &__image {
     position: absolute;
-    top: bpk-spacing-sm() * 3;
+    top: ($bpk-input-height - $select-image-height) / 2;
     left: bpk-spacing-md();
     width: $select-image-width;
     height: $select-image-height;
@@ -113,7 +113,7 @@ $select-image-large-height: 24 * $bpk-one-pixel-rem;
     }
 
     &--large {
-      top: bpk-spacing-sm() * 3;
+      top: ($bpk-input-large-height - $select-image-large-height) / 2;
       width: $select-image-large-width;
       height: $select-image-large-height;
     }
