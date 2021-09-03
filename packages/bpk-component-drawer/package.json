@@ -14,7 +14,7 @@
   },
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
-    "@skyscanner/bpk-foundations-web": "^2.0.0",
+    "@skyscanner/bpk-foundations-web": "^2.1.0",
     "bpk-component-close-button": "^3.0.10",
     "bpk-component-icon": "^9.0.10",
     "bpk-component-link": "^3.0.8",
