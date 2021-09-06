@@ -18,13 +18,15 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-pagination-nudger {
   text-align: center;
   vertical-align: middle;
 
   &__button {
-    height: $bpk-select-height;
-    padding: 0 $bpk-spacing-xs;
+    height: $bpk-button-height;
+    padding: 0 bpk-spacing-md();
     border: none;
     background: none;
     cursor: pointer;
