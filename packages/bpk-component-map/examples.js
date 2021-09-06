@@ -73,8 +73,8 @@ const venues = [
   {
     id: '1',
     name: 'Hotel Monteverde',
-    latitude: 55.944617,
-    longitude: -3.1943123,
+    latitude: 55.9469995,
+    longitude: -3.1905666,
     price: '£48',
     disabled: false,
     icon: <AlignedLandmarkIconSm />,
@@ -100,11 +100,11 @@ const venues = [
   {
     id: '4',
     name: 'Nara Bed & Breakfast',
-    latitude: 55.9452442,
-    longitude: -3.1985704,
+    latitude: 55.9450573,
+    longitude: -3.1996687,
     price: '£342',
     disabled: false,
-    icon: <AlignedLandmarkIconSm />,
+    icon: <AlignedHotelIconSm />,
   },
   {
     id: '5',
@@ -190,7 +190,7 @@ class StatefulBpkIconMarker extends Component<
   constructor(props: { action: () => mixed }) {
     super(props);
     this.state = {
-      selectedId: '1',
+      selectedId: '3',
     };
   }
 

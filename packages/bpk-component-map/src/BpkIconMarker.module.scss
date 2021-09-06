@@ -20,36 +20,26 @@
 
 $bpk-spacing-v2: true;
 
-// Matches the height and width of BpkMapMarkerBackground
-$marker-height: bpk-spacing-xxl();
-$marker-width: bpk-spacing-xl();
-$selected-marker-height: bpk-spacing-xxl() + bpk-spacing-md();
-$selected-marker-width: bpk-spacing-xxl();
-
 .bpk-icon-marker {
   &__wrapper {
     position: relative;
     z-index: 1;
-    width: 26px; //$marker-width;
-    height: 32px; //$marker-height;
+    padding: bpk-spacing-base() (bpk-spacing-base() - ($bpk-one-pixel-rem * 3));
     border: none; // Prevent default <button> styling.
     background: none; // Prevent default <button> styling.
 
     &--selected {
       z-index: 2;
-      width: 32px; //$selected-marker-width;
-      height: 40px; //$selected-marker-height;
+      padding: (bpk-spacing-sm() * 4) bpk-spacing-base();
     }
   }
 
   &__icon {
+    position: absolute;
     // This ensures that the icon is positioned exactly in the
     // centre of the marker.
-    $padding: ($marker-width / 2) - ($bpk-icon-size-sm / 2);
-
-    position: absolute;
-    top: bpk-spacing-md();
-    left: $padding;
+    top: 0.3rem;
+    left: bpk-spacing-sm();
     color: $bpk-color-white;
 
     > svg {
@@ -71,10 +61,8 @@ $selected-marker-width: bpk-spacing-xxl();
     &--selected {
       // This ensures that the icon is positioned exactly in the
       // centre of the marker.
-      $padding: ($selected-marker-width / 2) - ($bpk-icon-size-sm / 2);
-
-      top: $padding;
-      left: $padding;
+      top: bpk-spacing-md();
+      left: 0.4rem;
 
       @include bpk-themeable-property(
         color,

@@ -21,7 +21,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
-import ArrowDownIcon from 'bpk-component-icon/lg/arrow-down';
 import BpkText, {
   WEIGHT_STYLES,
   TEXT_STYLES,
@@ -91,7 +90,6 @@ const BpkPriceMarker = (props: Props) => {
         disabled={disabled}
         {...buttonProps}
       >
-        <div className={arrowClassNames} />
         <BpkText
           className={classNames}
           weight={WEIGHT_STYLES.bold}
@@ -103,9 +101,7 @@ const BpkPriceMarker = (props: Props) => {
         >
           {label}
         </BpkText>
-        {/* <div className={arrowClassNames}>
-          <ArrowDownIcon />
-        </div> */}
+        <div className={arrowClassNames} />
       </button>
     </BpkBasicMapMarker>
   );
