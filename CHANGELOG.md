@@ -1,3 +1,17 @@
+# 2021-09-06
+
+**Fixed:**
+
+- bpk-component-pagination: 3.0.10 => 3.0.11
+  - Updating the pagination component to use the new spacing grid. The height of the buttons inside the component will not change.
+- bpk-component-select: 5.0.3 => 5.0.4
+  - Fixed component grid sizes as per design.
+- bpk-component-input: 6.0.17 => 6.0.18
+  - Updated component to use new grid system.
+  - Updated valid icon to use new style.
+- bpk-component-phone-input: 5.0.16 => 5.0.17
+  - Fixed component alignment issue.
+
 # 2021-09-01
 
 **Breaking:**
