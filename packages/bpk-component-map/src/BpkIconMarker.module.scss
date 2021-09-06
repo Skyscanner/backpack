@@ -30,15 +30,15 @@ $selected-marker-width: bpk-spacing-xxl();
   &__wrapper {
     position: relative;
     z-index: 1;
-    width: $marker-width;
-    height: $marker-height;
+    width: 26px; //$marker-width;
+    height: 32px; //$marker-height;
     border: none; // Prevent default <button> styling.
     background: none; // Prevent default <button> styling.
 
     &--selected {
       z-index: 2;
-      width: $selected-marker-width;
-      height: $selected-marker-height;
+      width: 32px; //$selected-marker-width;
+      height: 40px; //$selected-marker-height;
     }
   }
 

@@ -63,6 +63,8 @@ const BpkPriceMarker = (props: Props) => {
     ...rest
   } = props;
 
+  const markerWrapperClassNames = getClassName('bpk-price-marker__wrapper');
+
   const classNames = getClassName(
     'bpk-price-marker',
     `bpk-price-marker-${status}`,
@@ -84,25 +86,26 @@ const BpkPriceMarker = (props: Props) => {
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
-        className={getClassName('bpk-price-marker__wrapper')}
+        className={markerWrapperClassNames}
         onClick={onClick}
         disabled={disabled}
         {...buttonProps}
       >
+        <div className={arrowClassNames} />
         <BpkText
           className={classNames}
           weight={WEIGHT_STYLES.bold}
           textStyle={
             status === PRICE_MARKER_STATUSES.focused
-              ? TEXT_STYLES.lg
-              : TEXT_STYLES.base
+              ? TEXT_STYLES.base
+              : TEXT_STYLES.sm
           }
         >
           {label}
         </BpkText>
-        <div className={arrowClassNames}>
+        {/* <div className={arrowClassNames}>
           <ArrowDownIcon />
-        </div>
+        </div> */}
       </button>
     </BpkBasicMapMarker>
   );

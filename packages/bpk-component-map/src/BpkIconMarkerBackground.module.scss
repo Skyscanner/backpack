@@ -43,7 +43,6 @@
 
   &--selected {
     fill: $bpk-color-white;
-    stroke: $bpk-color-monteverde;
 
     @include bpk-themeable-property(
       stroke,
