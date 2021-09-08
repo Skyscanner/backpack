@@ -207,7 +207,7 @@ BpkDatepicker.propTypes = {
   previousMonthLabel: PropTypes.string.isRequired,
   weekStartsOn: PropTypes.number.isRequired,
   // Optional
-  calendarComponent: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  calendarComponent: PropTypes.elementType,
   date: PropTypes.instanceOf(Date),
   dateModifiers: CustomPropTypes.DateModifiers,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types

@@ -75,8 +75,8 @@ const propTypes = {
   loaderIntersectionTrigger: PropTypes.oneOf(['small', 'half', 'full']),
   onScroll: PropTypes.func,
   onScrollFinished: PropTypes.func,
-  renderLoadingComponent: PropTypes.func,
-  renderSeeMoreComponent: PropTypes.func,
+  renderLoadingComponent: PropTypes.elementType,
+  renderSeeMoreComponent: PropTypes.elementType,
   seeMoreAfter: PropTypes.number,
 };
 

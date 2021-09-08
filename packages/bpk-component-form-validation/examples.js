@@ -95,7 +95,7 @@ class InputContainer extends Component {
 }
 
 InputContainer.propTypes = {
-  FormComponent: PropTypes.func.isRequired,
+  FormComponent: PropTypes.elementType.isRequired,
 };
 
 const DefaultExample = () => (
