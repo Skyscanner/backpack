@@ -153,7 +153,9 @@ class BpkCalendarDate extends PureComponent {
         ref={this.getButtonRef}
         {...buttonProps}
       >
-        <span aria-hidden="true">{date.getDate()}</span>
+        <span aria-hidden="true" className="notranslate">
+          {date.getDate()}
+        </span>
       </button>
     );
   }

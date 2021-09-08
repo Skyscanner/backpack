@@ -13,6 +13,7 @@ exports[`BpkCalendarDate cellType tests should render a disabled button 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -32,6 +33,7 @@ exports[`BpkCalendarDate cellType tests should render a focused button with tabI
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -51,6 +53,7 @@ exports[`BpkCalendarDate cellType tests should render correctly with default sty
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -70,6 +73,7 @@ exports[`BpkCalendarDate cellType tests should render correctly with negative st
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -89,6 +93,7 @@ exports[`BpkCalendarDate cellType tests should render correctly with neutral sty
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -108,6 +113,7 @@ exports[`BpkCalendarDate cellType tests should render correctly with positive st
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -127,6 +133,7 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -147,6 +154,7 @@ exports[`BpkCalendarDate should render a blocked button as disabled with aria-hi
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -167,6 +175,7 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -186,6 +195,7 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -205,6 +215,7 @@ exports[`BpkCalendarDate should render correctly 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -224,6 +235,7 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -243,6 +255,7 @@ exports[`BpkCalendarDate should set a custom class 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>

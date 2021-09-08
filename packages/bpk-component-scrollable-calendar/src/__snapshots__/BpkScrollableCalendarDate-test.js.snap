@@ -12,6 +12,7 @@ exports[`BpkScrollableCalendarDate should pass props through to button 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -32,6 +33,7 @@ exports[`BpkScrollableCalendarDate should render a disabled button 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -51,6 +53,7 @@ exports[`BpkScrollableCalendarDate should render a focused button with tabIndex 
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -70,6 +73,7 @@ exports[`BpkScrollableCalendarDate should render correctly 1`] = `
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
@@ -89,6 +93,7 @@ exports[`BpkScrollableCalendarDate should render with a click and keyDown handle
   >
     <span
       aria-hidden="true"
+      class="notranslate"
     >
       15
     </span>
