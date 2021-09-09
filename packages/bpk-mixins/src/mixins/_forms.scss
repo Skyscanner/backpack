@@ -932,7 +932,7 @@ $bpk-spacing-v2: true;
   display: inline-block;
   width: 100%;
   max-width: 100%;
-  min-height: $bpk-textarea-min-height;
+  min-height: bpk-spacing-md() * 11;
   padding: $bpk-input-padding-y $bpk-input-padding-x;
   border: $bpk-input-border;
   border-radius: $bpk-input-border-radius;
@@ -969,7 +969,7 @@ $bpk-spacing-v2: true;
 @mixin bpk-textarea--invalid {
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right
-    $bpk-spacing-sm center;
+    bpk-spacing-base() center;
 
   @include bpk-themeable-property(
     border-color,
@@ -979,6 +979,6 @@ $bpk-spacing-v2: true;
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
-    background-position: left $bpk-spacing-sm center;
+    background-position: left bpk-spacing-base() center;
   }
 }

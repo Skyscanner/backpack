@@ -1,3 +1,11 @@
+# 2021-09-08
+
+**Breaking:**
+
+- bpk-mixins: 22.0.4 => 23.0.0
+- bpk-component-textarea: 3.0.9 => 4.0.0
+  - Updating the textarea component and mixins to use the new spacing grid. This component will now appear larger in height so should be checked this does not alter layout.
+
 # 2021-09-06
 
 **Fixed:**

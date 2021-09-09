@@ -23,8 +23,9 @@ import { action } from 'bpk-storybook-utils';
 import BpkText from 'bpk-component-text';
 import { withRtlSupport } from 'bpk-component-icon';
 import LandmarkIconSm from 'bpk-component-icon/sm/landmark';
-import BusIconSm from 'bpk-component-icon/sm/bus';
 import FoodIconSm from 'bpk-component-icon/sm/food';
+import ParkingIconSm from 'bpk-component-icon/sm/parking';
+import HotelIconSm from 'bpk-component-icon/sm/hotels';
 
 import BpkMap, {
   BpkOverlayView,
@@ -36,9 +37,10 @@ import BpkMap, {
 
 const BpkMapWithLoading = withGoogleMapsScript(BpkMap);
 
+const AlignedHotelIconSm = withRtlSupport(HotelIconSm);
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
-const AlignedBusIconSm = withRtlSupport(BusIconSm);
 const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
+const AlignedParkingIconSm = withRtlSupport(ParkingIconSm);
 
 type Props = { children: ?Node, language: string };
 
@@ -71,8 +73,8 @@ const venues = [
   {
     id: '1',
     name: 'Hotel Monteverde',
-    latitude: 35.68,
-    longitude: 139.694,
+    latitude: 55.9469995,
+    longitude: -3.1905666,
     price: '£48',
     disabled: false,
     icon: <AlignedLandmarkIconSm />,
@@ -80,38 +82,38 @@ const venues = [
   {
     id: '2',
     name: 'Abisko Inn & Suites',
-    latitude: 35.685,
-    longitude: 139.69,
+    latitude: 55.9439643,
+    longitude: -3.1938768,
     price: '£151',
-    disabled: false,
-    icon: <AlignedBusIconSm />,
-  },
-  {
-    id: '3',
-    name: 'The Panjin Lounge',
-    latitude: 35.65,
-    longitude: 139.71,
-    price: '£62',
     disabled: false,
     icon: <AlignedFoodIconSm />,
   },
   {
+    id: '3',
+    name: 'The Panjin Lounge',
+    latitude: 55.9432205,
+    longitude: -3.1955874,
+    price: '£62',
+    disabled: false,
+    icon: <AlignedHotelIconSm />,
+  },
+  {
     id: '4',
     name: 'Nara Bed & Breakfast',
-    latitude: 35.63,
-    longitude: 139.7,
+    latitude: 55.9450573,
+    longitude: -3.1996687,
     price: '£342',
     disabled: false,
-    icon: <AlignedLandmarkIconSm />,
+    icon: <AlignedHotelIconSm />,
   },
   {
     id: '5',
     name: 'Kolkata Springs Hotel',
-    latitude: 35.635,
-    longitude: 139.72,
+    latitude: 55.943621,
+    longitude: -3.192098,
     price: 'Sold out',
     disabled: true,
-    icon: <AlignedBusIconSm />,
+    icon: <AlignedParkingIconSm />,
   },
 ];
 
@@ -131,7 +133,7 @@ class StatefulBpkPriceMarker extends Component<
   constructor(props: { action: () => mixed }) {
     super(props);
     this.state = {
-      selectedId: '1',
+      selectedId: '2',
       viewedVenues: ['1'],
     };
   }
@@ -156,8 +158,8 @@ class StatefulBpkPriceMarker extends Component<
   render() {
     return (
       <StoryMap
-        zoom={12}
-        center={{ latitude: 35.661777, longitude: 139.704051 }}
+        zoom={15}
+        center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
         {venues.map(venue => (
           <BpkPriceMarker
@@ -188,7 +190,7 @@ class StatefulBpkIconMarker extends Component<
   constructor(props: { action: () => mixed }) {
     super(props);
     this.state = {
-      selectedId: '1',
+      selectedId: '3',
     };
   }
 
@@ -199,8 +201,8 @@ class StatefulBpkIconMarker extends Component<
   render() {
     return (
       <StoryMap
-        zoom={12}
-        center={{ latitude: 35.661777, longitude: 139.704051 }}
+        zoom={15}
+        center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
         {venues.map(venue => (
           <BpkIconMarker
