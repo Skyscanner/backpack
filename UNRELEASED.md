@@ -6,4 +6,4 @@
 - bpk-component-datepicker:
 - bpk-component-infinite-scroll:
 - bpk-theming:
-  - Corrected component props to use `elementType` for the props were a component type is expected.
+  - Corrected component props to use `elementType` for the props where a component type is expected.
