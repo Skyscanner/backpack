@@ -21,7 +21,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
-import ArrowDownIcon from 'bpk-component-icon/lg/arrow-down';
 import BpkText, {
   WEIGHT_STYLES,
   TEXT_STYLES,
@@ -63,6 +62,8 @@ const BpkPriceMarker = (props: Props) => {
     ...rest
   } = props;
 
+  const markerWrapperClassNames = getClassName('bpk-price-marker__wrapper');
+
   const classNames = getClassName(
     'bpk-price-marker',
     `bpk-price-marker-${status}`,
@@ -84,7 +85,7 @@ const BpkPriceMarker = (props: Props) => {
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
-        className={getClassName('bpk-price-marker__wrapper')}
+        className={markerWrapperClassNames}
         onClick={onClick}
         disabled={disabled}
         {...buttonProps}
@@ -100,9 +101,7 @@ const BpkPriceMarker = (props: Props) => {
         >
           {label}
         </BpkText>
-        <div className={arrowClassNames}>
-          <ArrowDownIcon />
-        </div>
+        <div className={arrowClassNames} />
       </button>
     </BpkBasicMapMarker>
   );

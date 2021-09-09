@@ -26,9 +26,7 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "focuse
     </BpkText>
     <div
       className="bpk-price-marker__arrow bpk-price-marker__arrow-focused"
-    >
-      <_default />
-    </div>
+    />
   </button>
 </BpkBasicMapMarker>
 `;
@@ -59,9 +57,7 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "viewed
     </BpkText>
     <div
       className="bpk-price-marker__arrow bpk-price-marker__arrow-viewed"
-    >
-      <_default />
-    </div>
+    />
   </button>
 </BpkBasicMapMarker>
 `;
@@ -92,9 +88,7 @@ exports[`BpkMapMarker should render correctly with a "arrowClassName" attribute 
     </BpkText>
     <div
       className="bpk-price-marker__arrow bpk-price-marker__arrow-default custom-class-1 custom-class-2"
-    >
-      <_default />
-    </div>
+    />
   </button>
 </BpkBasicMapMarker>
 `;
@@ -126,9 +120,7 @@ exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`]
     </BpkText>
     <div
       className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
-    >
-      <_default />
-    </div>
+    />
   </button>
 </BpkBasicMapMarker>
 `;
@@ -159,9 +151,7 @@ exports[`BpkMapMarker should render correctly with a "className" attribute 1`] =
     </BpkText>
     <div
       className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
-    >
-      <_default />
-    </div>
+    />
   </button>
 </BpkBasicMapMarker>
 `;
@@ -192,9 +182,7 @@ exports[`BpkMapMarker should render correctly with a "disabled" attribute 1`] = 
     </BpkText>
     <div
       className="bpk-price-marker__arrow bpk-price-marker__arrow-default bpk-price-marker__arrow-disabled"
-    >
-      <_default />
-    </div>
+    />
   </button>
 </BpkBasicMapMarker>
 `;
@@ -225,9 +213,7 @@ exports[`BpkMapMarker should render correctly with a "onClick" attribute 1`] = `
     </BpkText>
     <div
       className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
-    >
-      <_default />
-    </div>
+    />
   </button>
 </BpkBasicMapMarker>
 `;
@@ -258,9 +244,7 @@ exports[`BpkMapMarker should render properly 1`] = `
     </BpkText>
     <div
       className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
-    >
-      <_default />
-    </div>
+    />
   </button>
 </BpkBasicMapMarker>
 `;
