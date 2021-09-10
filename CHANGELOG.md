@@ -1,3 +1,16 @@
+# 2021-09-10
+
+**Breaking:**
+
+- bpk-component-phone-input: 5.0.18 => 6.0.0
+  - Updating the phone input component to use the new spacing grid.
+  - On small screens, the dial code and phone number input fields will wrap onto multiple lines.
+
+**Changed:**
+
+- bpk-component-map: 5.0.12 => 5.1.0
+  - Updated map markers to use new spacing grid. This component may appear slightly larger now.
+
 # 2021-09-08
 
 **Breaking:**

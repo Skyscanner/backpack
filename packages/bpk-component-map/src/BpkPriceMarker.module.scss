@@ -18,15 +18,15 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 .bpk-price-marker {
   display: flex;
-  padding: ($bpk-spacing-xs / 3) $bpk-spacing-sm;
+  padding: (bpk-spacing-sm() - $bpk-one-pixel-rem) bpk-spacing-md();
   justify-content: center;
   align-items: center;
   border: $bpk-border-size-xl solid;
   border-radius: $bpk-border-radius-sm;
-
-  @include bpk-box-shadow-lg;
 
   &--dynamic {
     cursor: pointer;
@@ -66,8 +66,7 @@
   }
 
   &-focused {
-    z-index: 1;
-    padding: ($bpk-spacing-sm / 3) $bpk-spacing-sm;
+    padding: (bpk-spacing-sm() + ($bpk-one-pixel-rem * 2)) bpk-spacing-md();
     background-color: $bpk-color-white;
 
     @include bpk-themeable-property(
@@ -83,7 +82,8 @@
   }
 
   &-disabled {
-    z-index: -1;
+    // We want the disabled marker appear under any other markers that maybe rendered around it
+    z-index: -2;
     border-color: $bpk-color-sky-gray-tint-07;
     background-color: $bpk-color-sky-gray-tint-07;
     color: $bpk-color-sky-gray-tint-04;
@@ -92,8 +92,6 @@
   &__wrapper {
     position: relative;
     display: flex;
-    // This is needed to correctly position the arrow
-    padding-bottom: 5px; // stylelint-disable-line unit-blacklist
     flex-direction: column;
     align-items: center;
     border: none;
@@ -102,12 +100,19 @@
 
   &__arrow {
     position: absolute;
-    // This is needed to correctly position the arrow
-    bottom: -$bpk-spacing-sm;
+    // Position the arrow correctly under the price marker
+    top: 1.3rem;
+    // We want the arrow pointer to appear under the marker which is already
+    z-index: -1;
+    width: bpk-spacing-base();
+    height: bpk-spacing-base();
+    transform: rotate(45deg);
+    border-radius: 25%;
+    background-color: $bpk-color-sky-blue;
 
     &-default {
       @include bpk-themeable-property(
-        color,
+        background-color,
         --bpk-price-marker-background-color,
         $bpk-color-sky-blue
       );
@@ -115,29 +120,27 @@
 
     &-viewed {
       @include bpk-themeable-property(
-        color,
+        background-color,
         --bpk-price-marker-viewed-border-color,
         $bpk-color-sky-blue-tint-03
       );
     }
 
     &-focused {
-      z-index: 1;
+      // Position the arrow correctly under the price marker
+      top: 1.8rem;
 
       @include bpk-themeable-property(
-        color,
+        background-color,
         --bpk-price-marker-selected-border-color,
         $bpk-color-sky-blue
       );
     }
 
     &-disabled {
-      z-index: -1;
-      color: $bpk-color-sky-gray-tint-07;
-    }
-
-    svg {
-      fill: currentColor;
+      // We want the arrow pointer to appear under the disabled marker which is already z-index: -2
+      z-index: -3;
+      background-color: $bpk-color-sky-gray-tint-07;
     }
   }
 }

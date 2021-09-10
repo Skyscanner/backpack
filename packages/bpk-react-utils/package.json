@@ -15,7 +15,7 @@
   "gitHead": "c2217d61875a1f3aa2bb9ed9583c50e3f1523501",
   "dependencies": {
     "object-assign": "^4.1.1",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "react-transition-group": "^2.5.3",
     "recompose": "^0.30.0"
   },

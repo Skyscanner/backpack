@@ -17,40 +17,17 @@
  */
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-phone-input {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: max-content auto;
-  grid-template-areas:
-    'dialingCodeLabel numberLabel'
-    'dialingCode number';
-  grid-column-gap: $bpk-spacing-sm;
+  display: flex;
+  column-gap: bpk-spacing-md();
 
   @include bpk-breakpoint-mobile {
-    grid-template-columns: 10 * $bpk-spacing-sm auto;
+    flex-wrap: wrap;
   }
 
-  &--large {
-    @include bpk-breakpoint-mobile {
-      grid-template-columns: 11 * $bpk-spacing-sm auto;
-    }
-  }
-
-  &__dialing-code-label {
-    grid-area: dialingCodeLabel;
-    align-self: end;
-  }
-
-  &__dialing-code {
-    grid-area: dialingCode;
-  }
-
-  &__phone-number-label {
-    grid-area: numberLabel;
-    align-self: end;
-  }
-
-  &__phone-number-code {
-    grid-area: number;
+  &__phone-number {
+    flex: auto;
   }
 }

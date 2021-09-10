@@ -283,7 +283,7 @@ class Week extends Component {
 }
 
 Week.propTypes = {
-  DateComponent: PropTypes.func.isRequired,
+  DateComponent: PropTypes.elementType.isRequired,
   dateModifiers: CustomPropTypes.DateModifiers.isRequired,
   dates: PropTypes.arrayOf(Date).isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,

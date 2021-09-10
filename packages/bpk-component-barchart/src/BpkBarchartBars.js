@@ -143,7 +143,7 @@ BpkBarchartBars.propTypes = {
     right: PropTypes.number,
   }).isRequired,
   getBarLabel: PropTypes.func.isRequired,
-  BarComponent: PropTypes.func.isRequired,
+  BarComponent: PropTypes.elementType.isRequired,
 
   getBarSelection: PropTypes.func,
   outerPadding: PropTypes.number,

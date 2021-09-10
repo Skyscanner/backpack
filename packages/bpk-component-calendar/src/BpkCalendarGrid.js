@@ -165,7 +165,7 @@ class BpkCalendarGrid extends Component {
 
 export const propTypes = {
   // Required
-  DateComponent: PropTypes.func.isRequired,
+  DateComponent: PropTypes.elementType.isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDateFull: PropTypes.func.isRequired,
   formatMonth: PropTypes.func.isRequired,

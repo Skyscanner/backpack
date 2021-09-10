@@ -230,6 +230,7 @@ Animated.Image
 arrayOf
 bool
 displayName
+elementType
 FlatList
 func
 instanceOf
