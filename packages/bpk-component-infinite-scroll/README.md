@@ -170,8 +170,8 @@ Updates the internal array and triggers all listeners.
 | loaderMinDisplay        | oneOf(['small', 'half', 'full']) | false    | 'full'        |
 | onScroll                | func                             | false    | null          |
 | onScrollFinished        | func                             | false    | null          |
-| renderLoadingComponent  | elementType                      | false    | null          |
-| renderSeeMoreComponent  | elementType                      | false    | null          |
+| renderLoadingComponent  | func                             | false    | null          |
+| renderSeeMoreComponent  | func                             | false    | null          |
 | seeMoreAfter            | number                           | false    | null          |
 
 ## `elementsPerScroll`
