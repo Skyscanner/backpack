@@ -64,7 +64,7 @@ export default () => (
 | [onBarFocus](#onbarfocus)               | func                                  | false    | null                    |
 | [getBarLabel](#getbarlabel)             | func                                  | false    | See prop details        |
 | [getBarSelection](#getbarselection)     | func                                  | false    | See prop details        |
-| BarComponent                            | func                                  | false    | BpkBarchartBar          |
+| BarComponent                            | elementType                                  | false    | BpkBarchartBar          |
 | disableDataTable                        | bool                                  | false    | false                   |
 
 ### Theme Props

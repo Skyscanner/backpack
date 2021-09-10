@@ -39,5 +39,5 @@ export default class App extends Component {
 | -----------         | ---------------------------------- | ---------------- | ------------- |
 | children            | node                               | true             | -             |
 | themeAttributes     | arrayOf(string)                    | true             | -             |
-| component           | oneOf(function, string)            | false            | div           |
+| component           | elementType                        | false            | div           |
 | theme               | object                             | false            | null          |

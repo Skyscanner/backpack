@@ -329,7 +329,7 @@ BpkBarchart.propTypes = {
   onBarFocus: PropTypes.func,
   getBarLabel: PropTypes.func,
   getBarSelection: PropTypes.func,
-  BarComponent: PropTypes.func,
+  BarComponent: PropTypes.elementType,
   disableDataTable: PropTypes.bool,
 };
 
