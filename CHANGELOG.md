@@ -1,3 +1,80 @@
+# 2021-09-13
+
+**Fixed:**
+
+- bpk-animate-height: 4.0.10 => 4.0.11
+- bpk-component-accordion: 3.0.12 => 3.0.13
+- bpk-component-autosuggest: 6.0.18 => 6.0.19
+- bpk-component-badge: 3.0.12 => 3.0.13
+- bpk-component-banner-alert: 5.0.19 => 5.0.20
+- bpk-component-barchart: 4.0.14 => 4.0.15
+- bpk-component-blockquote: 3.0.10 => 3.0.11
+- bpk-component-breadcrumb: 3.0.13 => 3.0.14
+- bpk-component-breakpoint: 3.0.11 => 3.0.12
+- bpk-component-button: 5.0.9 => 5.0.10
+- bpk-component-calendar: 9.0.18 => 9.0.19
+- bpk-component-card: 3.0.12 => 3.0.13
+- bpk-component-checkbox: 3.0.12 => 3.0.13
+- bpk-component-chip: 5.1.2 => 5.1.3
+- bpk-component-close-button: 3.0.12 => 3.0.13
+- bpk-component-code: 3.0.10 => 3.0.11
+- bpk-component-content-container: 3.0.10 => 3.0.11
+- bpk-component-datatable: 3.0.12 => 3.0.13
+- bpk-component-datepicker: 13.0.17 => 13.0.18
+- bpk-component-description-list: 3.0.10 => 3.0.11
+- bpk-component-dialog: 4.0.12 => 4.0.13
+- bpk-component-drawer: 4.0.13 => 4.0.14
+- bpk-component-fieldset: 3.0.19 => 3.0.20
+- bpk-component-flare: 2.0.12 => 2.0.13
+- bpk-component-form-validation: 4.0.17 => 4.0.18
+- bpk-component-grid-toggle: 3.0.10 => 3.0.11
+- bpk-component-grid: 3.0.10 => 3.0.11
+- bpk-component-heading: 4.0.10 => 4.0.11
+- bpk-component-horizontal-nav: 5.0.2 => 5.0.3
+- bpk-component-icon: 9.0.12 => 9.0.13
+- bpk-component-image: 5.0.13 => 5.0.14
+- bpk-component-infinite-scroll: 4.0.10 => 4.0.11
+- bpk-component-input: 6.0.19 => 6.0.20
+- bpk-component-label: 5.0.10 => 5.0.11
+- bpk-component-link: 3.0.10 => 3.0.11
+- bpk-component-list: 3.0.10 => 3.0.11
+- bpk-component-loading-button: 4.0.12 => 4.0.13
+- bpk-component-mobile-scroll-container: 3.0.11 => 3.0.12
+- bpk-component-modal: 3.0.13 => 3.0.14
+- bpk-component-navigation-bar: 3.0.13 => 3.0.14
+- bpk-component-navigation-stack: 3.0.13 => 3.0.14
+- bpk-component-nudger: 4.0.10 => 4.0.11
+- bpk-component-pagination: 3.0.12 => 3.0.13
+- bpk-component-panel: 3.0.10 => 3.0.11
+- bpk-component-paragraph: 3.0.10 => 3.0.11
+- bpk-component-phone-input: 6.0.0 => 6.0.1
+- bpk-component-progress: 3.0.10 => 3.0.11
+- bpk-component-radio: 3.0.10 => 3.0.11
+- bpk-component-rating: 3.0.13 => 3.0.14
+- bpk-component-rtl-toggle: 3.0.10 => 3.0.11
+- bpk-component-section-list: 3.1.5 => 3.1.6
+- bpk-component-select: 5.0.5 => 5.0.6
+- bpk-component-slider: 3.0.12 => 3.0.13
+- bpk-component-spinner: 5.0.4 => 5.0.5
+- bpk-component-star-rating: 3.0.12 => 3.0.13
+- bpk-component-table: 3.0.10 => 3.0.11
+- bpk-component-text: 4.0.12 => 4.0.13
+- bpk-component-textarea: 4.0.0 => 4.0.1
+- bpk-component-theme-toggle: 3.0.10 => 3.0.11
+- bpk-component-ticket: 4.0.12 => 4.0.13
+- bpk-component-tooltip: 6.0.13 => 6.0.14
+- bpk-react-utils: 4.0.0 => 4.0.1
+- bpk-theming: 2.0.63 => 2.0.64
+  - Updated `prop-types` to version `15.7.2`
+
+- bpk-component-barchart: 4.0.14 => 4.0.15
+- bpk-component-calendar: 9.0.18 => 9.0.19
+- bpk-component-datepicker: 13.0.17 => 13.0.18
+- bpk-component-infinite-scroll: 4.0.10 => 4.0.11
+- bpk-theming: 2.0.63 => 2.0.64
+  - Corrected component props to use `elementType` for the props where a component type is expected.
+
+
 # 2021-09-10
 
 **Breaking:**
