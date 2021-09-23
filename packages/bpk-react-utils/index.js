@@ -20,6 +20,7 @@
 
 import wrapDisplayName from './src/wrapDisplayName';
 import Portal from './src/Portal';
+import PortalV1 from './src/Portal-v1';
 import TransitionInitialMount from './src/TransitionInitialMount';
 import cssModules from './src/cssModules';
 import deprecated from './src/deprecated';
@@ -33,6 +34,7 @@ import isRTL from './src/isRTL';
 
 export {
   Portal,
+  PortalV1,
   TransitionInitialMount,
   cssModules,
   deprecated,
@@ -45,6 +47,7 @@ export {
 };
 export default {
   Portal,
+  PortalV1,
   TransitionInitialMount,
   cssModules,
   deprecated,

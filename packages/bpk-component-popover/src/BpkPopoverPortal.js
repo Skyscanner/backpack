@@ -22,7 +22,7 @@ import { createPopper, basePlacements } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import focusStore from 'a11y-focus-store';
-import { Portal, cssModules } from 'bpk-react-utils';
+import { PortalV1, cssModules } from 'bpk-react-utils';
 
 import keyboardFocusScope from './keyboardFocusScope';
 import STYLES from './BpkPopover.module.scss';
@@ -216,7 +216,7 @@ class BpkPopoverPortal extends Component<Props> {
     }
 
     return (
-      <Portal
+      <PortalV1
         beforeClose={this.beforeClose}
         className={classNames.join(' ')}
         isOpen={isOpen}
@@ -228,7 +228,7 @@ class BpkPopoverPortal extends Component<Props> {
       >
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkPopover onClose={this.onClose} {...rest} />
-      </Portal>
+      </PortalV1>
     );
   }
 }

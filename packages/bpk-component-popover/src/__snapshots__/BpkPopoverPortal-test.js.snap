@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkPopoverPortal Custom Portal props should render correctly with portalClassName added to portal component 1`] = `
-<Portal
+<PortalV1
   beforeClose={[Function]}
   className="bpk-popover-portal my-custom-classname"
   closeOnEscPressed={true}
@@ -33,11 +33,11 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
       My popover content
     </div>
   </BpkPopover>
-</Portal>
+</PortalV1>
 `;
 
 exports[`BpkPopoverPortal Custom Portal props should render correctly with portalStyle added to portal component 1`] = `
-<Portal
+<PortalV1
   beforeClose={[Function]}
   className="bpk-popover-portal"
   closeOnEscPressed={true}
@@ -73,7 +73,7 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
       My popover content
     </div>
   </BpkPopover>
-</Portal>
+</PortalV1>
 `;
 
 exports[`BpkPopoverPortal should not render anything if target is a function 1`] = `<DocumentFragment />`;

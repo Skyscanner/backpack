@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2016-2021 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,24 +16,24 @@
  * limitations under the License.
  */
 
+import {
+  unstable_renderSubtreeIntoContainer, // eslint-disable-line camelcase
+  unmountComponentAtNode,
+  findDOMNode,
+} from 'react-dom';
 import { Component } from 'react';
-import { createPortal } from 'react-dom';
 import assign from 'object-assign';
 import PropTypes from 'prop-types';
 
 const KEYCODES = {
-  ESCAPE: '27',
+  ESCAPE: 27,
 };
 
-class Portal extends Component {
+class PortalV1 extends Component {
   constructor() {
     super();
 
     this.portalElement = null;
-
-    this.state = {
-      isVisible: false,
-    };
 
     // shouldClose is used to keep track of the user's mouse-down events in order to
     // prevent the dialog closing if the mouse leaves / enters the portal during the click
@@ -65,8 +65,7 @@ class Portal extends Component {
     if (this.props.isOpen) {
       if (!prevProps.isOpen) {
         this.open();
-      } else {
-        this.props.onRender(this.portalElement, this.getTargetElement());
+        return;
       }
     } else if (prevProps.isOpen) {
       if (this.props.beforeClose) {
@@ -74,7 +73,10 @@ class Portal extends Component {
       } else {
         this.close();
       }
+      return;
     }
+
+    this.renderPortal();
   }
 
   componentWillUnmount() {
@@ -116,7 +118,7 @@ class Portal extends Component {
 
   onDocumentKeyDown(event) {
     if (
-      event.key === KEYCODES.ESCAPE &&
+      event.keyCode === KEYCODES.ESCAPE &&
       this.props.isOpen &&
       this.props.closeOnEscPressed
     ) {
@@ -136,42 +138,38 @@ class Portal extends Component {
     const targetElement = this.getTargetElement();
     const isTargetClick =
       targetElement &&
-      event.target instanceof Node &&
       (event.target === targetElement || targetElement.contains(event.target));
 
     const isPortalClick =
       this.portalElement &&
-      event.target instanceof Node &&
       (event.target === this.portalElement ||
         this.portalElement.contains(event.target));
 
     return {
-      isNotLeftClick: !!isNotLeftClick,
-      isTargetClick: !!isTargetClick,
-      isPortalClick: !!isPortalClick,
+      isNotLeftClick,
+      isTargetClick,
+      isPortalClick,
     };
   }
 
   getTargetElement() {
-    return typeof this.props.target === 'function'
-      ? this.props.target()
-      : this.props.target;
+    if (typeof this.props.target === 'function') {
+      return this.props.target();
+    }
+
+    // Whilst findDOMNode is planned for deprecation in a future implementation of react, since this is the only usage
+    // in backpack, we have decided to ignore this instance as it'll be deleted in favour of React 16 first class portal
+    // implementation (see https://reactjs.org/docs/portals.html).
+    // eslint-disable-next-line react/no-find-dom-node
+    return this.props.target && findDOMNode(this);
   }
 
   getRenderTarget() {
-    const target =
-      typeof this.props.renderTarget === 'function'
-        ? this.props.renderTarget()
-        : this.props.renderTarget;
-
-    if (target) {
-      return target;
-    }
-    if (document.body) {
-      return document.body;
+    if (typeof this.props.renderTarget === 'function') {
+      return this.props.renderTarget();
     }
 
-    throw new Error('Render target and fallback unavailable');
+    return document.body;
   }
 
   open() {
@@ -207,15 +205,18 @@ class Portal extends Component {
     if (this.props.className) {
       this.portalElement.className = this.props.className;
     }
-    this.setState({ isVisible: true }, () =>
-      this.props.onOpen(this.portalElement),
-    );
+
+    this.renderPortal(() => {
+      this.props.onOpen(this.portalElement, this.getTargetElement());
+    });
   }
 
   close() {
     if (!this.portalElement) {
       return;
     }
+
+    unmountComponentAtNode(this.portalElement);
 
     const renderTarget = this.getRenderTarget();
     if (renderTarget) {
@@ -230,7 +231,6 @@ class Portal extends Component {
     document.removeEventListener('keydown', this.onDocumentKeyDown);
 
     this.portalElement = null;
-    this.setState({ isVisible: false });
   }
 
   // This function is taken from modernizr
@@ -252,22 +252,34 @@ class Portal extends Component {
     return supportsPassiveOption;
   }
 
-  render() {
-    const {
-      portalElement,
-      props: { children },
-      state: { isVisible },
-    } = this;
+  renderPortal(cb = () => {}) {
+    // If the `target` prop is null, it's fine that there is no targetElement
+    // Otherwise, if a `target` is provided, we don't render if we cannot find the respective element
+    const missesExpectedTarget = this.props.target && !this.getTargetElement();
 
-    if (!isVisible || !portalElement) {
-      return null;
+    if (this.portalElement && !missesExpectedTarget) {
+      unstable_renderSubtreeIntoContainer(
+        this,
+        this.props.children,
+        this.portalElement,
+        () => {
+          if (this.props.isOpen) {
+            this.props.onRender(this.portalElement, this.getTargetElement());
+          }
+          cb();
+        },
+      );
+    } else {
+      setImmediate(cb);
     }
+  }
 
-    return createPortal(children, portalElement);
+  render() {
+    return typeof this.props.target === 'function' ? null : this.props.target;
   }
 }
 
-Portal.propTypes = {
+PortalV1.propTypes = {
   children: PropTypes.node.isRequired,
   isOpen: PropTypes.bool.isRequired,
   beforeClose: PropTypes.func,
@@ -282,7 +294,7 @@ Portal.propTypes = {
   closeOnEscPressed: PropTypes.bool,
 };
 
-Portal.defaultProps = {
+PortalV1.defaultProps = {
   beforeClose: null,
   className: null,
   onClose: () => null,
@@ -295,4 +307,4 @@ Portal.defaultProps = {
   closeOnEscPressed: true,
 };
 
-export default Portal;
+export default PortalV1;
