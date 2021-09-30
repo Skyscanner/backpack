@@ -1,4 +1,4 @@
-**Fixed:**
+**Breaking:**
 
-- bpk-component-image:
-  - Fixed some incorrect Flow types that were causing errors to be incorrectly raised.
+- bpk-component-modal:
+  - Updating the modal component to use the new spacing grid.
