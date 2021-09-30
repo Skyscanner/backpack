@@ -2,407 +2,95 @@
 
 exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSeparator" attribute set to false 1`] = `
 <div
-  className="bpk-scrollable-calendar-grid-list"
+  class="bpk-scrollable-calendar-grid-list"
 >
-  <List
-    direction="ltr"
-    estimatedItemSize={270}
-    extraData={
-      Object {
-        "DateComponent": [Function],
-        "className": null,
-        "daysOfWeek": Array [
-          Object {
-            "index": 0,
-            "isWeekend": true,
-            "name": "Sunday",
-            "nameAbbr": "Sun",
-          },
-          Object {
-            "index": 1,
-            "isWeekend": false,
-            "name": "Monday",
-            "nameAbbr": "Mon",
-          },
-          Object {
-            "index": 2,
-            "isWeekend": false,
-            "name": "Tuesday",
-            "nameAbbr": "Tue",
-          },
-          Object {
-            "index": 3,
-            "isWeekend": false,
-            "name": "Wednesday",
-            "nameAbbr": "Wed",
-          },
-          Object {
-            "index": 4,
-            "isWeekend": false,
-            "name": "Thursday",
-            "nameAbbr": "Thu",
-          },
-          Object {
-            "index": 5,
-            "isWeekend": false,
-            "name": "Friday",
-            "nameAbbr": "Fri",
-          },
-          Object {
-            "index": 6,
-            "isWeekend": true,
-            "name": "Saturday",
-            "nameAbbr": "Sat",
-          },
-        ],
-        "focusedDate": null,
-        "formatDateFull": [Function],
-        "formatMonth": [Function],
-        "maxDate": 2011-02-15T00:00:00.000Z,
-        "minDate": 2010-02-14T00:00:00.000Z,
-        "month": 2010-02-15T00:00:00.000Z,
-        "showWeekendSeparator": false,
-        "weekStartsOn": 0,
-      }
-    }
-    height={270}
-    initialScrollOffset={0}
-    itemCount={13}
-    itemSize={[Function]}
-    layout="vertical"
-    overscanCount={1}
-    rowCount={13}
-    style={Object {}}
-    useIsScrolling={false}
-    width="100%"
+  <div
+    style="overflow:visible;height:0;width:0"
   >
-    <Component />
-  </List>
+    <div
+      aria-label="grid"
+      aria-readonly="true"
+      class="ReactVirtualized__Grid ReactVirtualized__List"
+      role="grid"
+      style="box-sizing:border-box;direction:ltr;height:0;position:relative;width:0;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;overflow-y:auto"
+      tabindex="0"
+    />
+  </div>
 </div>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers" attribute 1`] = `
 <div
-  className="bpk-scrollable-calendar-grid-list"
+  class="bpk-scrollable-calendar-grid-list"
 >
-  <List
-    direction="ltr"
-    estimatedItemSize={270}
-    extraData={
-      Object {
-        "DateComponent": [Function],
-        "className": null,
-        "dateModifiers": Object {
-          "someClass": [Function],
-        },
-        "daysOfWeek": Array [
-          Object {
-            "index": 0,
-            "isWeekend": true,
-            "name": "Sunday",
-            "nameAbbr": "Sun",
-          },
-          Object {
-            "index": 1,
-            "isWeekend": false,
-            "name": "Monday",
-            "nameAbbr": "Mon",
-          },
-          Object {
-            "index": 2,
-            "isWeekend": false,
-            "name": "Tuesday",
-            "nameAbbr": "Tue",
-          },
-          Object {
-            "index": 3,
-            "isWeekend": false,
-            "name": "Wednesday",
-            "nameAbbr": "Wed",
-          },
-          Object {
-            "index": 4,
-            "isWeekend": false,
-            "name": "Thursday",
-            "nameAbbr": "Thu",
-          },
-          Object {
-            "index": 5,
-            "isWeekend": false,
-            "name": "Friday",
-            "nameAbbr": "Fri",
-          },
-          Object {
-            "index": 6,
-            "isWeekend": true,
-            "name": "Saturday",
-            "nameAbbr": "Sat",
-          },
-        ],
-        "focusedDate": null,
-        "formatDateFull": [Function],
-        "formatMonth": [Function],
-        "maxDate": 2011-02-15T00:00:00.000Z,
-        "minDate": 2010-02-14T00:00:00.000Z,
-        "month": 2010-02-15T00:00:00.000Z,
-        "showWeekendSeparator": true,
-        "weekStartsOn": 1,
-      }
-    }
-    height={270}
-    initialScrollOffset={0}
-    itemCount={13}
-    itemSize={[Function]}
-    layout="vertical"
-    overscanCount={1}
-    rowCount={13}
-    style={Object {}}
-    useIsScrolling={false}
-    width="100%"
+  <div
+    style="overflow:visible;height:0;width:0"
   >
-    <Component />
-  </List>
+    <div
+      aria-label="grid"
+      aria-readonly="true"
+      class="ReactVirtualized__Grid ReactVirtualized__List"
+      role="grid"
+      style="box-sizing:border-box;direction:ltr;height:0;position:relative;width:0;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;overflow-y:auto"
+      tabindex="0"
+    />
+  </div>
 </div>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with a custom date component 1`] = `
 <div
-  className="bpk-scrollable-calendar-grid-list"
+  class="bpk-scrollable-calendar-grid-list"
 >
-  <List
-    direction="ltr"
-    estimatedItemSize={270}
-    extraData={
-      Object {
-        "DateComponent": [Function],
-        "className": null,
-        "daysOfWeek": Array [
-          Object {
-            "index": 0,
-            "isWeekend": true,
-            "name": "Sunday",
-            "nameAbbr": "Sun",
-          },
-          Object {
-            "index": 1,
-            "isWeekend": false,
-            "name": "Monday",
-            "nameAbbr": "Mon",
-          },
-          Object {
-            "index": 2,
-            "isWeekend": false,
-            "name": "Tuesday",
-            "nameAbbr": "Tue",
-          },
-          Object {
-            "index": 3,
-            "isWeekend": false,
-            "name": "Wednesday",
-            "nameAbbr": "Wed",
-          },
-          Object {
-            "index": 4,
-            "isWeekend": false,
-            "name": "Thursday",
-            "nameAbbr": "Thu",
-          },
-          Object {
-            "index": 5,
-            "isWeekend": false,
-            "name": "Friday",
-            "nameAbbr": "Fri",
-          },
-          Object {
-            "index": 6,
-            "isWeekend": true,
-            "name": "Saturday",
-            "nameAbbr": "Sat",
-          },
-        ],
-        "focusedDate": null,
-        "formatDateFull": [Function],
-        "formatMonth": [Function],
-        "maxDate": 2011-02-15T00:00:00.000Z,
-        "minDate": 2010-02-14T00:00:00.000Z,
-        "month": 2010-02-15T00:00:00.000Z,
-        "showWeekendSeparator": true,
-        "weekStartsOn": 1,
-      }
-    }
-    height={270}
-    initialScrollOffset={0}
-    itemCount={13}
-    itemSize={[Function]}
-    layout="vertical"
-    overscanCount={1}
-    rowCount={13}
-    style={Object {}}
-    useIsScrolling={false}
-    width="100%"
+  <div
+    style="overflow:visible;height:0;width:0"
   >
-    <Component />
-  </List>
+    <div
+      aria-label="grid"
+      aria-readonly="true"
+      class="ReactVirtualized__Grid ReactVirtualized__List"
+      role="grid"
+      style="box-sizing:border-box;direction:ltr;height:0;position:relative;width:0;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;overflow-y:auto"
+      tabindex="0"
+    />
+  </div>
 </div>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with a different "weekStartsOn" attribute 1`] = `
 <div
-  className="bpk-scrollable-calendar-grid-list"
+  class="bpk-scrollable-calendar-grid-list"
 >
-  <List
-    direction="ltr"
-    estimatedItemSize={270}
-    extraData={
-      Object {
-        "DateComponent": [Function],
-        "className": null,
-        "daysOfWeek": Array [
-          Object {
-            "index": 0,
-            "isWeekend": true,
-            "name": "Sunday",
-            "nameAbbr": "Sun",
-          },
-          Object {
-            "index": 1,
-            "isWeekend": false,
-            "name": "Monday",
-            "nameAbbr": "Mon",
-          },
-          Object {
-            "index": 2,
-            "isWeekend": false,
-            "name": "Tuesday",
-            "nameAbbr": "Tue",
-          },
-          Object {
-            "index": 3,
-            "isWeekend": false,
-            "name": "Wednesday",
-            "nameAbbr": "Wed",
-          },
-          Object {
-            "index": 4,
-            "isWeekend": false,
-            "name": "Thursday",
-            "nameAbbr": "Thu",
-          },
-          Object {
-            "index": 5,
-            "isWeekend": false,
-            "name": "Friday",
-            "nameAbbr": "Fri",
-          },
-          Object {
-            "index": 6,
-            "isWeekend": true,
-            "name": "Saturday",
-            "nameAbbr": "Sat",
-          },
-        ],
-        "focusedDate": null,
-        "formatDateFull": [Function],
-        "formatMonth": [Function],
-        "maxDate": 2011-02-15T00:00:00.000Z,
-        "minDate": 2010-02-14T00:00:00.000Z,
-        "month": 2010-02-15T00:00:00.000Z,
-        "showWeekendSeparator": true,
-        "weekStartsOn": 3,
-      }
-    }
-    height={270}
-    initialScrollOffset={0}
-    itemCount={13}
-    itemSize={[Function]}
-    layout="vertical"
-    overscanCount={1}
-    rowCount={13}
-    style={Object {}}
-    useIsScrolling={false}
-    width="100%"
+  <div
+    style="overflow:visible;height:0;width:0"
   >
-    <Component />
-  </List>
+    <div
+      aria-label="grid"
+      aria-readonly="true"
+      class="ReactVirtualized__Grid ReactVirtualized__List"
+      role="grid"
+      style="box-sizing:border-box;direction:ltr;height:0;position:relative;width:0;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;overflow-y:auto"
+      tabindex="0"
+    />
+  </div>
 </div>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with no optional props set 1`] = `
 <div
-  className="bpk-scrollable-calendar-grid-list"
+  class="bpk-scrollable-calendar-grid-list"
 >
-  <List
-    direction="ltr"
-    estimatedItemSize={270}
-    extraData={
-      Object {
-        "DateComponent": [Function],
-        "className": null,
-        "daysOfWeek": Array [
-          Object {
-            "index": 0,
-            "isWeekend": true,
-            "name": "Sunday",
-            "nameAbbr": "Sun",
-          },
-          Object {
-            "index": 1,
-            "isWeekend": false,
-            "name": "Monday",
-            "nameAbbr": "Mon",
-          },
-          Object {
-            "index": 2,
-            "isWeekend": false,
-            "name": "Tuesday",
-            "nameAbbr": "Tue",
-          },
-          Object {
-            "index": 3,
-            "isWeekend": false,
-            "name": "Wednesday",
-            "nameAbbr": "Wed",
-          },
-          Object {
-            "index": 4,
-            "isWeekend": false,
-            "name": "Thursday",
-            "nameAbbr": "Thu",
-          },
-          Object {
-            "index": 5,
-            "isWeekend": false,
-            "name": "Friday",
-            "nameAbbr": "Fri",
-          },
-          Object {
-            "index": 6,
-            "isWeekend": true,
-            "name": "Saturday",
-            "nameAbbr": "Sat",
-          },
-        ],
-        "focusedDate": null,
-        "formatDateFull": [Function],
-        "formatMonth": [Function],
-        "maxDate": 2011-02-15T00:00:00.000Z,
-        "minDate": 2010-02-14T00:00:00.000Z,
-        "month": 2010-02-15T00:00:00.000Z,
-        "weekStartsOn": 0,
-      }
-    }
-    height={270}
-    initialScrollOffset={0}
-    itemCount={13}
-    itemSize={[Function]}
-    layout="vertical"
-    overscanCount={1}
-    rowCount={13}
-    style={Object {}}
-    useIsScrolling={false}
-    width="100%"
+  <div
+    style="overflow:visible;height:0;width:0"
   >
-    <Component />
-  </List>
+    <div
+      aria-label="grid"
+      aria-readonly="true"
+      class="ReactVirtualized__Grid ReactVirtualized__List"
+      role="grid"
+      style="box-sizing:border-box;direction:ltr;height:0;position:relative;width:0;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;overflow-y:auto"
+      tabindex="0"
+    />
+  </div>
 </div>
 `;
