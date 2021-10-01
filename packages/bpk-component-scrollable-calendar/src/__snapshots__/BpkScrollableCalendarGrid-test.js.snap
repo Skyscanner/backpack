@@ -122,6 +122,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Saturday, 1st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -145,6 +146,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Sunday, 2nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -164,6 +166,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Monday, 3rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -183,6 +186,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Tuesday, 4th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -202,6 +206,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Wednesday, 5th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -221,6 +226,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Thursday, 6th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -240,6 +246,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Friday, 7th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -259,6 +266,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Saturday, 8th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -282,6 +290,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Sunday, 9th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -301,6 +310,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Monday, 10th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -320,6 +330,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Tuesday, 11th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -339,6 +350,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Wednesday, 12th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -358,6 +370,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Thursday, 13th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -377,6 +390,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Friday, 14th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -396,6 +410,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Saturday, 15th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -419,6 +434,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Sunday, 16th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -438,6 +454,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Monday, 17th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -457,6 +474,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Tuesday, 18th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -476,6 +494,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Wednesday, 19th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -495,6 +514,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Thursday, 20th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -514,6 +534,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Friday, 21st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -533,6 +554,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Saturday, 22nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -556,6 +578,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Sunday, 23rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -575,6 +598,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Monday, 24th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -594,6 +618,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Tuesday, 25th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -613,6 +638,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Wednesday, 26th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -632,6 +658,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Thursday, 27th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -651,6 +678,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Friday, 28th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -670,6 +698,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Saturday, 29th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -693,6 +722,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Sunday, 30th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -712,6 +742,7 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
               aria-label="Monday, 31st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -867,6 +898,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 1st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -886,6 +918,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 2nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -909,6 +942,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 3rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -928,6 +962,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Tuesday, 4th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -947,6 +982,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Wednesday, 5th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -966,6 +1002,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Thursday, 6th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -985,6 +1022,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Friday, 7th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1004,6 +1042,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 8th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1023,6 +1062,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 9th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1046,6 +1086,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 10th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1065,6 +1106,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Tuesday, 11th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1084,6 +1126,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Wednesday, 12th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1103,6 +1146,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Thursday, 13th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1122,6 +1166,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Friday, 14th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1141,6 +1186,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 15th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1160,6 +1206,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 16th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1183,6 +1230,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 17th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1202,6 +1250,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Tuesday, 18th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1221,6 +1270,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Wednesday, 19th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1240,6 +1290,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Thursday, 20th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1259,6 +1310,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Friday, 21st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1278,6 +1330,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 22nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1297,6 +1350,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 23rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1320,6 +1374,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 24th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1339,6 +1394,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Tuesday, 25th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1358,6 +1414,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Wednesday, 26th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1377,6 +1434,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Thursday, 27th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1396,6 +1454,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Friday, 28th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1415,6 +1474,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 29th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1434,6 +1494,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 30th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -1457,6 +1518,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 31st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2052,6 +2114,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 1st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2071,6 +2134,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 2nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2090,6 +2154,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 3rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2109,6 +2174,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Tuesday, 4th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2128,6 +2194,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Wednesday, 5th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2147,6 +2214,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Thursday, 6th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2170,6 +2238,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Friday, 7th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2189,6 +2258,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 8th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2208,6 +2278,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 9th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2227,6 +2298,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 10th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2246,6 +2318,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Tuesday, 11th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2265,6 +2338,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Wednesday, 12th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2284,6 +2358,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Thursday, 13th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2307,6 +2382,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Friday, 14th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2326,6 +2402,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 15th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2345,6 +2422,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 16th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2364,6 +2442,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 17th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2383,6 +2462,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Tuesday, 18th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2402,6 +2482,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Wednesday, 19th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2421,6 +2502,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Thursday, 20th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2444,6 +2526,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Friday, 21st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2463,6 +2546,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 22nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2482,6 +2566,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 23rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2501,6 +2586,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 24th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2520,6 +2606,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Tuesday, 25th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2539,6 +2626,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Wednesday, 26th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2558,6 +2646,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Thursday, 27th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2581,6 +2670,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Friday, 28th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2600,6 +2690,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 29th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2619,6 +2710,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 30th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2638,6 +2730,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 31st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2785,6 +2878,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 1st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2804,6 +2898,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 2nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2827,6 +2922,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 3rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2846,6 +2942,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Tuesday, 4th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2865,6 +2962,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Wednesday, 5th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2884,6 +2982,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Thursday, 6th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2903,6 +3002,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Friday, 7th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2922,6 +3022,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 8th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2941,6 +3042,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 9th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2964,6 +3066,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 10th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -2983,6 +3086,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Tuesday, 11th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3002,6 +3106,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Wednesday, 12th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3021,6 +3126,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Thursday, 13th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3040,6 +3146,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Friday, 14th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3059,6 +3166,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 15th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3078,6 +3186,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 16th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3101,6 +3210,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 17th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3120,6 +3230,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Tuesday, 18th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3139,6 +3250,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Wednesday, 19th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3158,6 +3270,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Thursday, 20th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3177,6 +3290,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Friday, 21st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3196,6 +3310,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 22nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3215,6 +3330,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 23rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3238,6 +3354,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 24th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3257,6 +3374,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Tuesday, 25th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3276,6 +3394,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Wednesday, 26th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3295,6 +3414,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Thursday, 27th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3314,6 +3434,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Friday, 28th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3333,6 +3454,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 29th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3352,6 +3474,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 30th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >
@@ -3375,6 +3498,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 31st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              datetype="single"
               tabindex="-1"
               type="button"
             >

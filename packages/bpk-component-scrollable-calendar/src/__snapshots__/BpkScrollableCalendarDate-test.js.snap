@@ -7,6 +7,7 @@ exports[`BpkScrollableCalendarDate should pass props through to button 1`] = `
     aria-label="Nothing happened on this day in 2010"
     aria-pressed="false"
     class="bpk-calendar-date"
+    datetype="single"
     tabindex="-1"
     type="button"
   >
@@ -26,6 +27,7 @@ exports[`BpkScrollableCalendarDate should render a disabled button 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
+    datetype="single"
     disabled=""
     tabindex="-1"
     type="button"
@@ -46,6 +48,7 @@ exports[`BpkScrollableCalendarDate should render a focused button with tabIndex 
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--focused"
+    datetype="single"
     tabindex="0"
     type="button"
   >
@@ -65,6 +68,7 @@ exports[`BpkScrollableCalendarDate should render correctly 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
+    datetype="single"
     tabindex="-1"
     type="button"
   >
@@ -84,6 +88,7 @@ exports[`BpkScrollableCalendarDate should render with a click and keyDown handle
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
+    datetype="single"
     tabindex="-1"
     type="button"
   >

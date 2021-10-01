@@ -2,6 +2,12 @@
 
 exports[`BpkScrollableCalendar should render correctly 1`] = `
 <BpkCalendar
+  calendarConfiguration={
+    Object {
+      "date": null,
+      "type": "single",
+    }
+  }
   changeMonthLabel={null}
   className={null}
   dateModifiers={Object {}}
@@ -82,6 +88,12 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
 
 exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
 <BpkCalendar
+  calendarConfiguration={
+    Object {
+      "date": null,
+      "type": "single",
+    }
+  }
   changeMonthLabel={null}
   className={null}
   dateModifiers={Object {}}
@@ -163,6 +175,12 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
 
 exports[`BpkScrollableCalendar should support custom class names 1`] = `
 <BpkCalendar
+  calendarConfiguration={
+    Object {
+      "date": null,
+      "type": "single",
+    }
+  }
   changeMonthLabel={null}
   className="custom-classname"
   dateModifiers={Object {}}
