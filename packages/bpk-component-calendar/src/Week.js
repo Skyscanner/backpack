@@ -20,7 +20,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 import areIntervalsOverlapping from 'date-fns/areIntervalsOverlapping';
 import dateMin from 'date-fns/min';
 import dateMax from 'date-fns/max';
@@ -301,7 +301,11 @@ Week.propTypes = {
   cellClassName: PropTypes.string,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
-  selectedDate: PropTypes.instanceOf(Date),
+  calendarConfiguration: CustomPropTypes.CalendarConfiguration,
+  selectedDate: deprecated(
+    PropTypes.instanceOf(Date),
+    'Use calendarConfiguration to set selectedDate',
+  ),
   selectionEnd: PropTypes.instanceOf(Date),
   selectionStart: PropTypes.instanceOf(Date),
   ignoreOutsideDate: PropTypes.bool,
@@ -315,6 +319,7 @@ Week.defaultProps = {
   minDate: null,
   onDateClick: null,
   onDateKeyDown: null,
+  calendarConfiguration: { type: 'single', date: null },
   selectedDate: null,
   selectionEnd: null,
   selectionStart: null,

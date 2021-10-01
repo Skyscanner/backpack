@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { isRTL } from 'bpk-react-utils';
+import { deprecated, isRTL } from 'bpk-react-utils';
 
 import BpkCalendarNav from './BpkCalendarNav';
 import { BpkCalendarGridWithTransition } from './BpkCalendarGrid';
@@ -36,6 +36,7 @@ import {
   startOfDay,
   startOfMonth,
 } from './date-utils';
+import CustomProptypes from './custom-proptypes';
 
 const focusedDateHasChanged = (currentProps, nextProps) => {
   const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
@@ -230,6 +231,7 @@ const withCalendarState = Calendar => {
         maxDate,
         date,
         selectedDate,
+        calendarConfiguration,
         ...calendarProps
       } = this.props;
 
@@ -270,6 +272,7 @@ const withCalendarState = Calendar => {
   }
 
   BpkCalendarContainer.propTypes = {
+    calendarConfiguration: CustomProptypes.CalendarConfiguration,
     // `date` is to be DEPRECATED in favour of `selectedDate`
     date: PropTypes.instanceOf(Date),
     fixedWidth: PropTypes.bool,
@@ -277,11 +280,15 @@ const withCalendarState = Calendar => {
     minDate: PropTypes.instanceOf(Date),
     onDateSelect: PropTypes.func,
     onMonthChange: PropTypes.func,
-    selectedDate: PropTypes.instanceOf(Date),
+    selectedDate: deprecated(
+      PropTypes.instanceOf(Date),
+      'Use calendarConfiguration to set selectedDate',
+    ),
     initiallyFocusedDate: PropTypes.instanceOf(Date),
   };
 
   BpkCalendarContainer.defaultProps = {
+    calendarConfiguration: { type: 'single', date: null },
     date: null,
     fixedWidth: true,
     maxDate: addMonths(new Date(), 12),

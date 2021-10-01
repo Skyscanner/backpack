@@ -274,6 +274,7 @@ CELL_TYPES.default
 CELL_TYPES.positive
 CELL_TYPES.neutral
 CELL_TYPES.negative
+calendarConfiguration
 centerLeading
 centerTrailing
 clearButtonMode
@@ -287,6 +288,12 @@ cornerStyle
 CORNER_STYLES.sm
 CORNER_STYLES.lg
 DataSource
+dateType
+DATE_TYPES
+DATE_TYPES.single
+DATE_TYPES.start
+DATE_TYPES.middle
+DATE_TYPES.end
 dateProps
 decreaseButtonLabel
 decrementValue

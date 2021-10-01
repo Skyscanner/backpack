@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
 import STYLES from './BpkCalendar.module.scss';
@@ -151,6 +151,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     previousMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
     weekStartsOn: PropTypes.number.isRequired,
     // Optional
+    calendarConfiguration: CustomPropTypes.CalendarConfiguration,
     className: PropTypes.string,
     dateModifiers: CustomPropTypes.DateModifiers,
     fixedWidth: PropTypes.bool,
@@ -161,7 +162,10 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     onDateClick: PropTypes.func,
     onDateKeyDown: PropTypes.func,
     preventKeyboardFocus: PropTypes.bool,
-    selectedDate: PropTypes.instanceOf(Date),
+    selectedDate: deprecated(
+      PropTypes.instanceOf(Date),
+      'Use calendarConfiguration to set selectedDate',
+    ),
     showWeekendSeparator: PropTypes.bool,
     gridClassName: PropTypes.string,
     weekDayKey: PropTypes.string,
@@ -174,6 +178,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
   };
 
   BpkCalendar.defaultProps = {
+    calendarConfiguration: { type: 'single', date: null },
     changeMonthLabel: null,
     className: null,
     dateModifiers: {},

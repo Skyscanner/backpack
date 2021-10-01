@@ -18,6 +18,22 @@
 
 import PropTypes from 'prop-types';
 
+const CalendarConfigurationSingle = PropTypes.shape({
+  type: 'single',
+  date: PropTypes.instanceOf(Date),
+});
+
+const CalendarConfigurationRange = PropTypes.shape({
+  type: 'range',
+  startDate: PropTypes.instanceOf(Date),
+  endDate: PropTypes.instanceOf(Date),
+});
+
+const CalendarConfiguration = PropTypes.oneOf(
+  CalendarConfigurationSingle,
+  CalendarConfigurationRange,
+);
+
 const WeekDay = PropTypes.shape({
   name: PropTypes.string,
   nameAbbr: PropTypes.string,
@@ -31,6 +47,7 @@ const DateModifiers = PropTypes.objectOf(PropTypes.func);
 const ReactComponent = PropTypes.oneOfType([PropTypes.string, PropTypes.func]);
 
 export default {
+  CalendarConfiguration,
   DateModifiers,
   DaysOfWeek,
   ReactComponent,

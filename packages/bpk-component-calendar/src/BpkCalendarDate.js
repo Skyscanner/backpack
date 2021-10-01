@@ -32,6 +32,13 @@ export const CELL_TYPES = {
   positive: 'positive',
 };
 
+export const DATE_TYPES = {
+  single: 'single',
+  start: 'start',
+  middle: 'middle',
+  end: 'end',
+};
+
 const navigatedByMonthNudger = () =>
   document.activeElement.id &&
   document.activeElement.id.indexOf('month_nudger') !== -1;
@@ -165,6 +172,7 @@ export const propTypes = {
   // Optional
   cellType: PropTypes.oneOf(Object.keys(CELL_TYPES)),
   className: PropTypes.string,
+  dateType: PropTypes.oneOf(Object.keys(DATE_TYPES)),
   isBlocked: PropTypes.bool,
   isFocused: PropTypes.bool,
   isKeyboardFocusable: PropTypes.bool,
@@ -183,6 +191,7 @@ BpkCalendarDate.propTypes = { ...propTypes };
 export const defaultProps = {
   className: null,
   cellType: null,
+  dateType: DATE_TYPES.single,
   isBlocked: false,
   isFocused: false,
   isKeyboardFocusable: true,
