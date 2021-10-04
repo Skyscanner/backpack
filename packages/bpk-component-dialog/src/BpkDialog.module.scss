@@ -18,10 +18,12 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-dialog {
   &__container {
     display: flex;
-    padding: $bpk-spacing-base;
+    padding: bpk-spacing-lg();
 
     // IE11 and below hack for buggy flexbox support
     @media screen\0 {
@@ -31,20 +33,20 @@
 
   &__close-button {
     float: right;
-    margin: 0 0 $bpk-spacing-sm $bpk-spacing-sm;
+    margin: 0 0 bpk-spacing-base() bpk-spacing-base();
 
     @include bpk-rtl {
       float: left;
-      margin: 0 $bpk-spacing-sm $bpk-spacing-sm 0;
+      margin: 0 bpk-spacing-base() bpk-spacing-base() 0;
     }
   }
 
   &--with-icon {
-    margin-top: $bpk-spacing-lg;
+    margin-top: bpk-spacing-xl();
   }
 
   &__icon {
-    $size: $bpk-spacing-lg * 2;
+    $size: bpk-spacing-xl() * 2;
 
     position: absolute;
     top: 0;
