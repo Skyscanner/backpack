@@ -18,21 +18,58 @@
 
 import PropTypes from 'prop-types';
 
-const CalendarConfigurationSingle = PropTypes.shape({
-  type: 'single',
+import { isBefore, isSameDay } from './date-utils';
+
+const DateType = key => props => {
+  const { startDate, endDate } = props[key];
+
+  // No range selected
+  if (!startDate && !endDate) {
+    return null;
+  }
+
+  // End date without a start date is not allowed
+  if (!startDate && endDate) {
+    return new Error(
+      `Cannot specify \`endDate\` without \`startDate\` in ${key}.`,
+    );
+  }
+
+  // Start date without an end date is always valid
+  if (startDate && !endDate) {
+    return null;
+  }
+
+  // Start date cannot be after end date
+  if (isBefore(endDate, startDate) && !isSameDay(endDate, startDate)) {
+    return new Error(
+      `Start date \`${startDate}\` cannot be after end date \`${endDate}\` in \`props.${key}\`.`,
+    );
+  }
+
+  return null;
+};
+
+const CALENDAR_SELECTION_TYPE = {
+  single: 'single',
+  range: 'range',
+};
+
+const SelectionConfigurationSingle = PropTypes.shape({
+  type: CALENDAR_SELECTION_TYPE.single,
   date: PropTypes.instanceOf(Date),
 });
 
-const CalendarConfigurationRange = PropTypes.shape({
-  type: 'range',
-  startDate: PropTypes.instanceOf(Date),
-  endDate: PropTypes.instanceOf(Date),
+const SelectionConfigurationRange = PropTypes.shape({
+  type: CALENDAR_SELECTION_TYPE.range,
+  startDate: DateType('selectionConfiguration'),
+  endDate: DateType('selectionConfiguration'),
 });
 
-const CalendarConfiguration = PropTypes.oneOf(
-  CalendarConfigurationSingle,
-  CalendarConfigurationRange,
-);
+const SelectionConfiguration = PropTypes.oneOfType([
+  SelectionConfigurationSingle,
+  SelectionConfigurationRange,
+]);
 
 const WeekDay = PropTypes.shape({
   name: PropTypes.string,
@@ -46,8 +83,9 @@ const DaysOfWeek = PropTypes.arrayOf(WeekDay);
 const DateModifiers = PropTypes.objectOf(PropTypes.func);
 const ReactComponent = PropTypes.oneOfType([PropTypes.string, PropTypes.func]);
 
+export { CALENDAR_SELECTION_TYPE };
 export default {
-  CalendarConfiguration,
+  SelectionConfiguration,
   DateModifiers,
   DaysOfWeek,
   ReactComponent,

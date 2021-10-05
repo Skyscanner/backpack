@@ -32,11 +32,20 @@ export const CELL_TYPES = {
   positive: 'positive',
 };
 
-export const DATE_TYPES = {
+export const SELECTION_TYPES = {
+  none: 'none',
   single: 'single',
   start: 'start',
   middle: 'middle',
   end: 'end',
+  sameDay: 'sameDay',
+};
+
+export const ROW_TYPES = {
+  start: 'start',
+  middle: 'middle',
+  end: 'end',
+  both: 'both',
 };
 
 const navigatedByMonthNudger = () =>
@@ -101,6 +110,7 @@ class BpkCalendarDate extends PureComponent {
       isKeyboardFocusable,
       className,
       style,
+      selectionType,
       cellType,
       ...buttonProps
     } = this.props;
@@ -172,7 +182,6 @@ export const propTypes = {
   // Optional
   cellType: PropTypes.oneOf(Object.keys(CELL_TYPES)),
   className: PropTypes.string,
-  dateType: PropTypes.oneOf(Object.keys(DATE_TYPES)),
   isBlocked: PropTypes.bool,
   isFocused: PropTypes.bool,
   isKeyboardFocusable: PropTypes.bool,
@@ -183,6 +192,8 @@ export const propTypes = {
   onClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
+  rowType: PropTypes.oneOf(Object.keys(ROW_TYPES)),
+  selectionType: PropTypes.oneOf(Object.keys(SELECTION_TYPES)),
   style: PropTypes.object,
 };
 
@@ -191,7 +202,6 @@ BpkCalendarDate.propTypes = { ...propTypes };
 export const defaultProps = {
   className: null,
   cellType: null,
-  dateType: DATE_TYPES.single,
   isBlocked: false,
   isFocused: false,
   isKeyboardFocusable: true,
@@ -202,6 +212,8 @@ export const defaultProps = {
   onClick: null,
   onDateKeyDown: null,
   preventKeyboardFocus: true,
+  rowType: null,
+  selectionType: SELECTION_TYPES.none,
   style: null,
 };
 

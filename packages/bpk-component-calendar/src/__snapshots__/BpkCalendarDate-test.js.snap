@@ -7,7 +7,6 @@ exports[`BpkCalendarDate cellType tests should render a disabled button 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default"
-    datetype="single"
     disabled=""
     tabindex="-1"
     type="button"
@@ -28,7 +27,6 @@ exports[`BpkCalendarDate cellType tests should render a focused button with tabI
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default bpk-calendar-date--focused"
-    datetype="single"
     tabindex="0"
     type="button"
   >
@@ -48,7 +46,6 @@ exports[`BpkCalendarDate cellType tests should render correctly with default sty
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default"
-    datetype="single"
     tabindex="-1"
     type="button"
   >
@@ -68,7 +65,6 @@ exports[`BpkCalendarDate cellType tests should render correctly with negative st
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-negative"
-    datetype="single"
     tabindex="-1"
     type="button"
   >
@@ -88,7 +84,6 @@ exports[`BpkCalendarDate cellType tests should render correctly with neutral sty
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-neutral"
-    datetype="single"
     tabindex="-1"
     type="button"
   >
@@ -108,7 +103,6 @@ exports[`BpkCalendarDate cellType tests should render correctly with positive st
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-positive"
-    datetype="single"
     tabindex="-1"
     type="button"
   >
@@ -128,7 +122,6 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
     aria-label="Nothing happened on this day in 2010"
     aria-pressed="false"
     class="bpk-calendar-date"
-    datetype="single"
     tabindex="-1"
     type="button"
   >
@@ -148,7 +141,6 @@ exports[`BpkCalendarDate should render a blocked button as disabled with aria-hi
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--blocked"
-    datetype="single"
     disabled=""
     tabindex="-1"
     type="button"
@@ -169,7 +161,6 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
-    datetype="single"
     disabled=""
     tabindex="-1"
     type="button"
@@ -190,7 +181,6 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--focused"
-    datetype="single"
     tabindex="0"
     type="button"
   >
@@ -210,7 +200,6 @@ exports[`BpkCalendarDate should render correctly 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
-    datetype="single"
     tabindex="-1"
     type="button"
   >
@@ -230,7 +219,6 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
-    datetype="single"
     tabindex="-1"
     type="button"
   >
@@ -250,7 +238,6 @@ exports[`BpkCalendarDate should set a custom class 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date userlandClassName"
-    datetype="single"
     tabindex="-1"
     type="button"
   >

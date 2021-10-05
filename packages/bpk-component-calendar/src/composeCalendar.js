@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules, deprecated } from 'bpk-react-utils';
 
-import CustomPropTypes from './custom-proptypes';
+import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import STYLES from './BpkCalendar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -151,7 +151,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     previousMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
     weekStartsOn: PropTypes.number.isRequired,
     // Optional
-    calendarConfiguration: CustomPropTypes.CalendarConfiguration,
     className: PropTypes.string,
     dateModifiers: CustomPropTypes.DateModifiers,
     fixedWidth: PropTypes.bool,
@@ -162,9 +161,10 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     onDateClick: PropTypes.func,
     onDateKeyDown: PropTypes.func,
     preventKeyboardFocus: PropTypes.bool,
+    selectionConfiguration: CustomPropTypes.SelectionConfiguration,
     selectedDate: deprecated(
       PropTypes.instanceOf(Date),
-      'Use calendarConfiguration to set selectedDate',
+      'Use selectionConfiguration to set selectedDate',
     ),
     showWeekendSeparator: PropTypes.bool,
     gridClassName: PropTypes.string,
@@ -178,7 +178,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
   };
 
   BpkCalendar.defaultProps = {
-    calendarConfiguration: { type: 'single', date: null },
     changeMonthLabel: null,
     className: null,
     dateModifiers: {},
@@ -192,6 +191,10 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     onDateKeyDown: () => null,
     preventKeyboardFocus: false,
     previousMonthLabel: null,
+    selectionConfiguration: {
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: null,
+    },
     selectedDate: null,
     showWeekendSeparator: true,
     gridClassName: null,

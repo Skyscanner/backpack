@@ -20,6 +20,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { deprecated, isRTL } from 'bpk-react-utils';
 
+import CustomProptypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import BpkCalendarNav from './BpkCalendarNav';
 import { BpkCalendarGridWithTransition } from './BpkCalendarGrid';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
@@ -36,7 +37,6 @@ import {
   startOfDay,
   startOfMonth,
 } from './date-utils';
-import CustomProptypes from './custom-proptypes';
 
 const focusedDateHasChanged = (currentProps, nextProps) => {
   const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
@@ -230,8 +230,8 @@ const withCalendarState = Calendar => {
         minDate,
         maxDate,
         date,
+        selectionConfiguration,
         selectedDate,
-        calendarConfiguration,
         ...calendarProps
       } = this.props;
 
@@ -272,7 +272,6 @@ const withCalendarState = Calendar => {
   }
 
   BpkCalendarContainer.propTypes = {
-    calendarConfiguration: CustomProptypes.CalendarConfiguration,
     // `date` is to be DEPRECATED in favour of `selectedDate`
     date: PropTypes.instanceOf(Date),
     fixedWidth: PropTypes.bool,
@@ -280,21 +279,25 @@ const withCalendarState = Calendar => {
     minDate: PropTypes.instanceOf(Date),
     onDateSelect: PropTypes.func,
     onMonthChange: PropTypes.func,
+    selectionConfiguration: CustomProptypes.SelectionConfiguration,
     selectedDate: deprecated(
       PropTypes.instanceOf(Date),
-      'Use calendarConfiguration to set selectedDate',
+      'Use selectionConfiguration to set selectedDate',
     ),
     initiallyFocusedDate: PropTypes.instanceOf(Date),
   };
 
   BpkCalendarContainer.defaultProps = {
-    calendarConfiguration: { type: 'single', date: null },
     date: null,
     fixedWidth: true,
     maxDate: addMonths(new Date(), 12),
     minDate: new Date(),
     onDateSelect: null,
     onMonthChange: null,
+    selectionConfiguration: {
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: null,
+    },
     selectedDate: null,
     initiallyFocusedDate: null,
   };

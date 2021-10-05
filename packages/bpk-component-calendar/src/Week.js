@@ -36,7 +36,7 @@ import {
   isToday,
   isWithinRange,
 } from './date-utils';
-import CustomPropTypes from './custom-proptypes';
+import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 // TODO: Move this to `Week.scss`
 // This should be using its own css file as `BpkCalendarGrid` is also importing `BpkCalendarGrid.module.scss`
 // and the order of css imports can break the component.
@@ -301,10 +301,10 @@ Week.propTypes = {
   cellClassName: PropTypes.string,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
-  calendarConfiguration: CustomPropTypes.CalendarConfiguration,
+  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
   selectedDate: deprecated(
     PropTypes.instanceOf(Date),
-    'Use calendarConfiguration to set selectedDate',
+    'Use selectionConfiguration to set selectedDate',
   ),
   selectionEnd: PropTypes.instanceOf(Date),
   selectionStart: PropTypes.instanceOf(Date),
@@ -319,7 +319,7 @@ Week.defaultProps = {
   minDate: null,
   onDateClick: null,
   onDateKeyDown: null,
-  calendarConfiguration: { type: 'single', date: null },
+  selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
   selectedDate: null,
   selectionEnd: null,
   selectionStart: null,

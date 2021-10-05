@@ -173,7 +173,7 @@ withCalendarState(composeCalendar(
 | onDateSelect          | func                 | false               | null             |
 | onMonthChange         | func                 | false               | null             |
 | selectedDate          | Date                 | false               | null             |
-| calendarConfiguration | object               | false               | { type: 'single', date: null }  |
+| selectionConfiguration| object               | false               | { type: CALENDAR_SELECTION_TYPE.single, date: null }  |
 | showWeekendSeparator  | bool                 | false               | true             |
 | navProps              | object               | false               | null             |
 | headerProps           | object               | false               | null             |
@@ -228,7 +228,7 @@ The BpkCalendarGrid component displays a month as a table.
 | formatMonth           | func                 | true     | -                |
 | month                 | Date                 | true     | -                |
 | weekStartsOn          | number               | true     | -                |
-| calendarConfiguration | object               | false    | { type: 'single', date: null }  |
+| selectionConfiguration| object               | false    | { type: CALENDAR_SELECTION_TYPE.single, date: null }  |
 | focusedDate           | Date                 | false    | null             |
 | isKeyboardFocusable   | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |
@@ -250,7 +250,6 @@ The BpkCalendarDate component is used to render the content of a cell
 | --------------------- | -------------------- | -------- | ---------------- |
 | date                  | Date                 | true     | -                |
 | cellType              | oneOf(CELL_TYPES.default, CELL_TYPES.positive, CELL_TYPES.neutral, CELL_TYPES.negative)                     | false    | null             |
-| dateType              | oneOf(DATE_TYPES.single, DATE_TYPES.start, DATE_TYPES.middle, DATE_TYPES.end)                               | false    | DATE_TYPES.single             |
 | isBlocked             | bool                 | false    | false            |
 | isFocused             | bool                 | false    | false            |
 | isKeyboardFocusable   | bool                 | false    | true             |
@@ -260,6 +259,8 @@ The BpkCalendarDate component is used to render the content of a cell
 | onClick               | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | true             |
+| rowType         | oneOf(ROW_TYPES.start, ROW_TYPES.middle, ROW_TYPES.end, ROW_TYPES.both)      | false    | null             |
+| selectionType         | oneOf(SELECTION_TYPES.single, SELECTION_TYPES.start, SELECTION_TYPES.middle, SELECTION_TYPES.end)      | false    | SELECTION_TYPES.single             |
 | style                 | object               | false    | null             |
 
 #### `cellType` prop
@@ -271,18 +272,18 @@ This prop determines what the colour date cell is to be displayed.
 - `CELL_TYPES.negative` - sets the calendar cell to `Panjin`
 - `CELL_TYPES.default` - sets the calendar cell to `Sky Gray Tint 02`
 
-#### `dateType` prop
+#### `selectionType` prop
 
 This property determines which selected styles will be applied to the date cell. If using ranges use `start`, `middle` and `end` to apply the correct range styles.
 
-- `DATE_TYPES.single` - sets the calendar cell to standard `Sky Blue` colour
-- `DATE_TYPES.start` - sets the calendar cell to `Sky Blue` along with the start `Sky Blue Tint 02` range background.
-- `DATE_TYPES.middle` - sets the calendar cell to `Sky Blue Tint 02` background.
-- `DATE_TYPES.end` - sets the calendar cell to `Sky Blue` along with the end `Sky Blue Tint 02` range background.
+- `SELECTION_TYPES.single` - When the date is selected individually i.e. Not as part of a range
+- `SELECTION_TYPES.start` - When a start date is selected in a range calendar i.e. First date in the range
+- `SELECTION_TYPES.middle` - When a date is in a range between start and end date i.e. Date in the middle of two dates
+- `SELECTION_TYPES.end` - When an end date is selected in a range calendar i.e. Last date in the range
 
 ### Prop details
 
-#### calendarConfiguration
+#### selectionConfiguration
 
 An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
 
@@ -290,7 +291,7 @@ An object to indicate which configuration of the calendar is being used. Choices
 
 ```json
 {
-  type: 'single',
+  type: CALENDAR_SELECTION_TYPE.single,
   date: date e.g. new Date()
 }
 ```
@@ -299,7 +300,7 @@ An object to indicate which configuration of the calendar is being used. Choices
 
 ```json
 {
-  type: 'range',
+  type: CALENDAR_SELECTION_TYPE.range,
   startDate: date e.g. new Date(),
   endDate: date e.g. new Date()
 }
