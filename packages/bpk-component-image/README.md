@@ -62,7 +62,7 @@ import BpkImage, { BpkBackgroundImage, withLazyLoading, withLoadingBehavior } fr
 import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const FadingImage = withLoadingBehavior(BpkImage);
-const FadingBackgroundImage = withLoadingBehaviour(BpkBackgroundImage);
+const FadingBackgroundImage = withLoadingBehavior(BpkBackgroundImage);
 
 export default () => (
   <div>
