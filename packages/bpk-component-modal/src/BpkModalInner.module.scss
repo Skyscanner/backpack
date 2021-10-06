@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 @mixin fullscreen() {
   display: flex;
   margin: 0;
@@ -93,7 +95,7 @@
     position: relative; // Override position: absolute coming from BpkNavigationBar
     right: auto;
 
-    @include bpk-margin-leading($bpk-spacing-sm);
+    @include bpk-margin-leading(bpk-spacing-base());
 
     @include bpk-rtl {
       left: auto;
@@ -103,11 +105,11 @@
   &__accessory-view {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     left: auto;
-    margin-right: $bpk-spacing-sm;
+    margin-right: bpk-spacing-base();
 
     @include bpk-rtl {
       right: auto;
-      margin-left: $bpk-spacing-sm;
+      margin-left: bpk-spacing-base();
     }
   }
 

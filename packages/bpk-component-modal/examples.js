@@ -23,16 +23,23 @@ import React, { type Node, Component, type Element } from 'react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
-import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
+import { withAlignment, withRtlSupport } from 'bpk-component-icon';
 import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import BpkText from 'bpk-component-text';
+import {
+  lineHeightBase,
+  iconSizeSm,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import STYLES from './examples.module.scss';
 
 import BpkModal from './index';
 
-const ArrowIconWithRtl = withButtonAlignment(withRtlSupport(ArrowIcon));
-
+const ArrowIconWithRtl = withAlignment(
+  withRtlSupport(ArrowIcon),
+  lineHeightBase,
+  iconSizeSm,
+);
 const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
@@ -274,8 +281,9 @@ const WithAccessoryViewExample = () => (
         className={getClassName('bpk-modal__leading-button')}
       >
         <div>
-          <ArrowIconWithRtl />
-          <BpkText>Back to results</BpkText>
+          <BpkText>
+            <ArrowIconWithRtl /> Back to results
+          </BpkText>
         </div>
       </BpkNavigationBarButtonLink>
     }
