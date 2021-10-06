@@ -1,3 +1,16 @@
+# 2021-09-30
+
+**Fixed:**
+
+- bpk-component-image: 5.0.14 => 5.0.15
+  - Fixed some incorrect Flow types that were causing errors to be incorrectly raised.
+
+**Breaking:**
+
+- bpk-mixins: 23.0.1 => 24.0.0
+- bpk-component-card: 3.0.13 => 4.0.0
+  - Updated the card component to use the new spacing grid.
+
 # 2021-09-13
 
 **Fixed:**
