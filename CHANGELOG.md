@@ -1,3 +1,15 @@
+# 2021-10-07
+
+**Fixed:**
+
+- bpk-component-modal: 3.0.15 => 3.0.16 
+  - Updated the modal component to use the new spacing grid.
+- bpk-component-dialog: 4.0.14 => 4.0.15
+  - Updated the dialog component to use the new spacing grid.
+- bpk-component-image: 5.0.15 => 5.0.16
+  - Fixed a spelling error in the documentation.
+
+
 # 2021-09-30
 
 **Fixed:**
