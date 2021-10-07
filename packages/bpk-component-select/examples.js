@@ -125,6 +125,15 @@ const Example = () => <StatefulBpkSelect />;
 
 const Invalid = () => <StatefulBpkSelect valid={false} />;
 
+const InvalidWithImage = () => (
+  <SelectWithImage
+    valid={false}
+    id="countries"
+    name="countries"
+    options={countries}
+  />
+);
+
 const Disabled = () => <StatefulBpkSelect disabled />;
 
 const Large = () => <StatefulBpkSelect large />;
@@ -241,6 +250,7 @@ const MixedExample = () => (
   <div>
     <Example />
     <Invalid />
+    <InvalidWithImage />
     <Disabled />
     <Large />
     <Docked />
@@ -251,6 +261,7 @@ const MixedExample = () => (
 export {
   Example,
   Invalid,
+  InvalidWithImage,
   Disabled,
   Large,
   Docked,
