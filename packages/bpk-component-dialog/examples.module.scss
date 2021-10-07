@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 .bpk-dialog-paragraph {
-  margin-bottom: $bpk-spacing-xs;
+  margin-bottom: bpk-spacing-md();
 }
