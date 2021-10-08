@@ -27,6 +27,8 @@ import BpkCalendarGridHeader from './src/BpkCalendarGridHeader';
 import BpkCalendarNav from './src/BpkCalendarNav';
 import BpkCalendarDate, {
   CELL_TYPES,
+  ROW_TYPES,
+  SELECTION_TYPES,
   propTypes as BpkCalendarDatePropTypes,
 } from './src/BpkCalendarDate';
 import composeCalendar from './src/composeCalendar';
@@ -44,6 +46,8 @@ export {
   CustomPropTypes,
   DateUtils,
   CELL_TYPES,
+  ROW_TYPES,
+  SELECTION_TYPES,
   composeCalendar,
   withCalendarState,
   themeAttributes,

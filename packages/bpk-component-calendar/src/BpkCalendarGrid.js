@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules, isDeviceIos } from 'bpk-react-utils';
+import { cssModules, deprecated, isDeviceIos } from 'bpk-react-utils';
 
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import Week from './Week';
@@ -28,7 +28,7 @@ import {
   isSameMonth,
   orderDaysOfWeek,
 } from './date-utils';
-import CustomPropTypes from './custom-proptypes';
+import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import STYLES from './BpkCalendarGrid.module.scss';
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 // This should be imported after `./BpkCalendarGrid.module.scss`.
@@ -184,7 +184,11 @@ export const propTypes = {
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
-  selectedDate: PropTypes.instanceOf(Date),
+  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
+  selectedDate: deprecated(
+    PropTypes.instanceOf(Date),
+    'Use selectionConfiguration to set selectedDate',
+  ),
   selectionEnd: PropTypes.instanceOf(Date),
   selectionStart: PropTypes.instanceOf(Date),
   showWeekendSeparator: PropTypes.bool,
@@ -207,6 +211,7 @@ BpkCalendarGrid.defaultProps = {
   onDateKeyDown: null,
   preventKeyboardFocus: false,
   selectedDate: null,
+  selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
   selectionEnd: null,
   selectionStart: null,
   showWeekendSeparator: true,

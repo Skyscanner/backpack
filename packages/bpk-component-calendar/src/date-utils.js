@@ -202,6 +202,7 @@ export {
   isSameDay,
   isSameWeek,
   isSameMonth,
+  isBefore,
   differenceInCalendarMonths,
   addMonths,
   addDays,

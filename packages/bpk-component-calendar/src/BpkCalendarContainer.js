@@ -18,8 +18,9 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { isRTL } from 'bpk-react-utils';
+import { deprecated, isRTL } from 'bpk-react-utils';
 
+import CustomProptypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import BpkCalendarNav from './BpkCalendarNav';
 import { BpkCalendarGridWithTransition } from './BpkCalendarGrid';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
@@ -229,6 +230,7 @@ const withCalendarState = Calendar => {
         minDate,
         maxDate,
         date,
+        selectionConfiguration,
         selectedDate,
         ...calendarProps
       } = this.props;
@@ -277,7 +279,11 @@ const withCalendarState = Calendar => {
     minDate: PropTypes.instanceOf(Date),
     onDateSelect: PropTypes.func,
     onMonthChange: PropTypes.func,
-    selectedDate: PropTypes.instanceOf(Date),
+    selectionConfiguration: CustomProptypes.SelectionConfiguration,
+    selectedDate: deprecated(
+      PropTypes.instanceOf(Date),
+      'Use selectionConfiguration to set selectedDate',
+    ),
     initiallyFocusedDate: PropTypes.instanceOf(Date),
   };
 
@@ -288,6 +294,10 @@ const withCalendarState = Calendar => {
     minDate: new Date(),
     onDateSelect: null,
     onMonthChange: null,
+    selectionConfiguration: {
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: null,
+    },
     selectedDate: null,
     initiallyFocusedDate: null,
   };

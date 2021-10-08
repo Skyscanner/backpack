@@ -74,6 +74,12 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
   preventKeyboardFocus={true}
   previousMonthLabel={null}
   selectedDate={null}
+  selectionConfiguration={
+    Object {
+      "date": null,
+      "type": "single",
+    }
+  }
   showWeekendSeparator={true}
   weekDayKey="nameAbbr"
   weekStartsOn={1}
@@ -154,6 +160,12 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
   preventKeyboardFocus={true}
   previousMonthLabel={null}
   selectedDate={null}
+  selectionConfiguration={
+    Object {
+      "date": null,
+      "type": "single",
+    }
+  }
   showWeekendSeparator={true}
   testid="123"
   weekDayKey="nameAbbr"
@@ -235,6 +247,12 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
   preventKeyboardFocus={true}
   previousMonthLabel={null}
   selectedDate={null}
+  selectionConfiguration={
+    Object {
+      "date": null,
+      "type": "single",
+    }
+  }
   showWeekendSeparator={true}
   weekDayKey="nameAbbr"
   weekStartsOn={1}
