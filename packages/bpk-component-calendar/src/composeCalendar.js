@@ -18,9 +18,9 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 
-import CustomPropTypes from './custom-proptypes';
+import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import STYLES from './BpkCalendar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -161,7 +161,11 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     onDateClick: PropTypes.func,
     onDateKeyDown: PropTypes.func,
     preventKeyboardFocus: PropTypes.bool,
-    selectedDate: PropTypes.instanceOf(Date),
+    selectionConfiguration: CustomPropTypes.SelectionConfiguration,
+    selectedDate: deprecated(
+      PropTypes.instanceOf(Date),
+      'Use selectionConfiguration to set selectedDate',
+    ),
     showWeekendSeparator: PropTypes.bool,
     gridClassName: PropTypes.string,
     weekDayKey: PropTypes.string,
@@ -187,6 +191,10 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     onDateKeyDown: () => null,
     preventKeyboardFocus: false,
     previousMonthLabel: null,
+    selectionConfiguration: {
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: null,
+    },
     selectedDate: null,
     showWeekendSeparator: true,
     gridClassName: null,
