@@ -291,7 +291,7 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
       <div className={getClassName('bpk-fieldsets__container')}>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkFieldset
-          className={classNames.join(' ')}
+          className={classNames}
           isCheckbox={isCheckbox}
           valid={valid}
           {...rest}
