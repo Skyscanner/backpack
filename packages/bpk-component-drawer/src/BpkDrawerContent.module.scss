@@ -18,13 +18,15 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-drawer {
   position: fixed;
   right: 0;
   display: flex;
   z-index: $bpk-zindex-drawer;
   width: 90%;
-  max-width: 67 * $bpk-spacing-xs;
+  max-width: 50 * bpk-spacing-md();
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
@@ -70,8 +72,8 @@
 
   &__header {
     display: flex;
-    min-height: #{2 * $bpk-spacing-sm + $bpk-spacing-base}; // keep height the same if visually hidden title
-    padding: $bpk-spacing-sm;
+    min-height: #{2 * bpk-spacing-base() + bpk-spacing-base()}; // keep height the same if visually hidden title
+    padding: bpk-spacing-base();
     justify-content: space-between;
     align-items: center;
     flex: 0 0;
@@ -99,7 +101,7 @@
 
   &__content {
     height: 100%;
-    padding: $bpk-spacing-sm;
+    padding: bpk-spacing-base();
     flex: 1 1 100%;
     overflow-y: auto;
   }
