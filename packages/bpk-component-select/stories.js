@@ -21,6 +21,7 @@ import { storiesOf } from '@storybook/react';
 import {
   Example,
   Invalid,
+  InvalidWithImage,
   Disabled,
   Large,
   Docked,
@@ -35,6 +36,7 @@ import {
 storiesOf('bpk-component-select', module)
   .add('Example', Example)
   .add('Invalid', Invalid)
+  .add('Invalid with image', InvalidWithImage)
   .add('Disabled', Disabled)
   .add('Large', Large)
   .add('Docked', Docked)
