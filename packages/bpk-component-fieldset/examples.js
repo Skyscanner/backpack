@@ -265,7 +265,13 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
   };
 
   render() {
-    const { children, isCheckbox, validStates, ...rest } = this.props;
+    const {
+      children,
+      isCheckbox,
+      validStates,
+      className,
+      ...rest
+    } = this.props;
     const valid = validStates[this.state.validState];
 
     const dynamicProps = isCheckbox
@@ -280,11 +286,16 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
       ...dynamicProps,
     });
 
+    const classNames = [getClassName('bpk-fieldsets__fieldset')];
+    if (className) {
+      classNames.push(className);
+    }
+
     return (
       <div className={getClassName('bpk-fieldsets__container')}>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkFieldset
-          className={getClassName('bpk-fieldsets__fieldset')}
+          className={classNames.join(' ')}
           isCheckbox={isCheckbox}
           valid={valid}
           {...rest}
