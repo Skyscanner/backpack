@@ -18,8 +18,10 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 .bpk-drawer-paragraph {
-  margin-bottom: $bpk-spacing-xs;
+  margin-bottom: bpk-spacing-md();
 }
 
 .bpk-drawer-content-container {
