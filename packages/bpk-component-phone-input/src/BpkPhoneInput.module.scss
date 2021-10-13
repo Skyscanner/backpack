@@ -25,6 +25,10 @@ $bpk-spacing-v2: true;
 
   @include bpk-breakpoint-mobile {
     flex-wrap: wrap;
+
+    &__phone-number {
+      width: 100%;
+    }
   }
 
   &__phone-number {
