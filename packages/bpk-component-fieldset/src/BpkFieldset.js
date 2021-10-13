@@ -115,6 +115,7 @@ const BpkFieldset = (props: Props) => {
     <fieldset className={classNames.join(' ')} {...rest}>
       {!isCheckbox && (
         <BpkLabel
+          className={getClassName('bpk-fieldset__label')}
           htmlFor={childId}
           required={required}
           disabled={disabled}
@@ -136,6 +137,7 @@ const BpkFieldset = (props: Props) => {
       {!disabled && validationMessage && (
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <BpkFormValidation
+          className={getClassName('bpk-fieldset__validation-message')}
           id={validationMessageId}
           expanded={isInvalid}
           isCheckbox={isCheckbox}
