@@ -35,7 +35,7 @@ exports[`BpkFieldset should render as disabled when input component is disabled 
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label bpk-label--disabled"
+      class="bpk-label bpk-label--disabled bpk-fieldset__label"
       for="name_input"
     >
       Name
@@ -61,7 +61,7 @@ exports[`BpkFieldset should render as disabled when select component is disabled
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label bpk-label--disabled"
+      class="bpk-label bpk-label--disabled bpk-fieldset__label"
       for="fruits_select"
     >
       Fruits
@@ -111,7 +111,7 @@ exports[`BpkFieldset should render correctly when disabled with input component 
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label bpk-label--disabled"
+      class="bpk-label bpk-label--disabled bpk-fieldset__label"
       for="name_input"
     >
       Name
@@ -137,7 +137,7 @@ exports[`BpkFieldset should render correctly when disabled with input component 
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label bpk-label--invalid bpk-label--disabled"
+      class="bpk-label bpk-label--invalid bpk-label--disabled bpk-fieldset__label"
       for="name_input"
     >
       Name
@@ -192,7 +192,7 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-form-validation--is-checkbox"
+            class="bpk-form-validation bpk-form-validation--is-checkbox bpk-fieldset__validation-message"
             id="terms_and_conditions_checkbox_validation_message"
           >
             <span
@@ -259,7 +259,7 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-form-validation--is-checkbox"
+            class="bpk-form-validation bpk-form-validation--is-checkbox bpk-fieldset__validation-message"
             id="terms_and_conditions_checkbox_validation_message"
           >
             <span
@@ -293,7 +293,7 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label"
+      class="bpk-label bpk-fieldset__label"
       for="name_input"
     >
       Name
@@ -318,7 +318,7 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation"
+            class="bpk-form-validation bpk-fieldset__validation-message"
             id="name_input_validation_message"
           >
             <span
@@ -352,7 +352,7 @@ exports[`BpkFieldset should render correctly with input component and "descripti
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label"
+      class="bpk-label bpk-fieldset__label"
       for="name_input"
     >
       Name
@@ -384,7 +384,7 @@ exports[`BpkFieldset should render correctly with input component and "descripti
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation"
+            class="bpk-form-validation bpk-fieldset__validation-message"
             id="name_input_validation_message"
           >
             <span
@@ -418,7 +418,7 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label"
+      class="bpk-label bpk-fieldset__label"
       for="name_input"
     >
       Name
@@ -443,7 +443,7 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation"
+            class="bpk-form-validation bpk-fieldset__validation-message"
             id="name_input_validation_message"
           >
             <span
@@ -477,7 +477,7 @@ exports[`BpkFieldset should render correctly with input component and "required"
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label"
+      class="bpk-label bpk-fieldset__label"
       for="name_input"
     >
       Name
@@ -507,7 +507,7 @@ exports[`BpkFieldset should render correctly with input component and "required"
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation"
+            class="bpk-form-validation bpk-fieldset__validation-message"
             id="name_input_validation_message"
           >
             <span
@@ -541,7 +541,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label"
+      class="bpk-label bpk-fieldset__label"
       for="name_input"
     >
       Name
@@ -566,7 +566,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation"
+            class="bpk-form-validation bpk-fieldset__validation-message"
             id="name_input_validation_message"
           >
             <span
@@ -600,7 +600,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label bpk-label--invalid"
+      class="bpk-label bpk-label--invalid bpk-fieldset__label"
       for="name_input"
     >
       Name
@@ -624,7 +624,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-form-validation--appear"
+            class="bpk-form-validation bpk-form-validation--appear bpk-fieldset__validation-message"
             id="name_input_validation_message"
           >
             <span
@@ -658,7 +658,7 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label"
+      class="bpk-label bpk-fieldset__label"
       for="fruits_select"
     >
       Fruits
@@ -707,7 +707,7 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation"
+            class="bpk-form-validation bpk-fieldset__validation-message"
             id="fruits_select_validation_message"
           >
             <span
@@ -741,7 +741,7 @@ exports[`BpkFieldset should render correctly with select component and "required
     class="bpk-fieldset"
   >
     <label
-      class="bpk-label"
+      class="bpk-label bpk-fieldset__label"
       for="fruits_select"
     >
       Fruits
@@ -795,7 +795,7 @@ exports[`BpkFieldset should render correctly with select component and "required
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation"
+            class="bpk-form-validation bpk-fieldset__validation-message"
             id="fruits_select_validation_message"
           >
             <span
