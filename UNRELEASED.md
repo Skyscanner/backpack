@@ -1,5 +1,7 @@
 **Fixed:**
 
+- bpk-component-fieldset:
+  - Updated the fieldset component to use the new spacing grid.
 - bpk-component-phone-input:
   - Fixed wrapping on mobile screens.
 - bpk-component-select:
