@@ -1,3 +1,20 @@
+# 2021-10-14
+
+**Breaking:**
+
+- bpk-component-fieldset: 3.0.22 => 4.0.0
+  - Updated the fieldset component to use the new spacing grid.
+  - Added margins vertically to fieldset component.
+
+**Fixed:**
+
+- bpk-component-phone-input: 6.0.3 => 6.0.4
+  - Fixed wrapping on mobile screens.
+- bpk-component-select: 5.0.8 => 5.0.9
+  - Fixed padding for RTL invalid with an image select component.
+- bpk-component-drawer: 4.0.16 => 4.0.17
+  - Updated the drawer component to use the new spacing grid.
+
 # 2021-10-07
 
 **Fixed:**
