@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-banner-alert",
-  "version": "5.0.22",
+  "version": "5.0.23",
   "description": "Backpack banner alert component.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,7 +24,7 @@
     "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
-    "bpk-component-aria-live": "^2.0.23",
+    "bpk-component-aria-live": "^2.0.24",
     "bpk-component-button": "^5.0.12",
     "bpk-storybook-utils": "^1.0.13"
   },
