@@ -1,3 +1,11 @@
+# 2021-10-19
+
+**Fixed:**
+
+- bpk-component-scrollable-calendar: 4.0.22 => 4.0.23
+  - Reverted calendar to use `react-virtualised` due to better support for dynamic calendar dates.
+
+
 # 2021-10-14
 
 **Breaking:**
