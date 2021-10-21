@@ -25,6 +25,9 @@ import {
   formatDateFull,
 } from 'bpk-component-calendar/test-utils';
 import { format } from 'bpk-component-calendar/src/date-utils';
+import { CALENDAR_SELECTION_TYPE } from 'bpk-component-calendar';
+
+import BpkDatepicker from './BpkDatepicker';
 
 jest.mock(
   './../node_modules/bpk-component-popover/node_modules/@skyscanner/popper.js',
@@ -35,9 +38,6 @@ jest.mock(
       destroy = () => {};
     },
 );
-
-// eslint-disable-next-line import/first
-import BpkDatepicker from './BpkDatepicker';
 
 const formatDate = date => format(date, 'dd/MM/yyyy');
 
@@ -66,7 +66,10 @@ describe('BpkDatepicker', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -91,7 +94,10 @@ describe('BpkDatepicker', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -115,7 +121,10 @@ describe('BpkDatepicker', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
         isOpen
       />,
     );
@@ -145,7 +154,10 @@ describe('BpkDatepicker', () => {
         inputProps={noReadOnlyInputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -169,7 +181,10 @@ describe('BpkDatepicker', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
       />,
     );
 
@@ -196,7 +211,10 @@ describe('BpkDatepicker', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
         weekStartsOn={1}
       />,
     );
@@ -224,7 +242,10 @@ describe('BpkDatepicker', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
         weekStartsOn={1}
         isOpen={false}
       />,
@@ -257,7 +278,10 @@ describe('BpkDatepicker', () => {
         weekStartsOn={1}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
         onOpenChange={onOpenChangeMock}
       />,
     );
@@ -292,7 +316,10 @@ describe('BpkDatepicker', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
         onOpenChange={onOpenChangeMock}
       />,
     );

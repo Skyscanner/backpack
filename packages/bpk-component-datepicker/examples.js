@@ -45,6 +45,8 @@ import {
   BpkCalendarDate,
   withCalendarState,
   composeCalendar,
+  CustomPropTypes,
+  CALENDAR_SELECTION_TYPE,
 } from 'bpk-component-calendar';
 
 import BpkDatepicker from './index';
@@ -74,9 +76,22 @@ class CalendarContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      date: props.date,
-    };
+    if (this.props.selectionConfiguration.type === 'range') {
+      this.state = {
+        selectionConfiguration: {
+          type: this.props.selectionConfiguration.type,
+          startDate: this.props.selectionConfiguration.startDate,
+          endDate: this.props.selectionConfiguration.endDate,
+        },
+      };
+    } else {
+      this.state = {
+        selectionConfiguration: {
+          type: this.props.selectionConfiguration.type,
+          date: this.props.selectionConfiguration.date,
+        },
+      };
+    }
   }
 
   render() {
@@ -85,10 +100,38 @@ class CalendarContainer extends Component {
         <div id="application-element">
           <BpkDatepicker
             {...this.props}
-            date={this.state.date}
-            onDateSelect={date => {
-              this.setState({ date });
-              action('Selected date')(date);
+            selectionConfiguration={this.state.selectionConfiguration}
+            onDateSelect={(startDate, endDate = null) => {
+              if (this.props.selectionConfiguration.type === 'range') {
+                if (startDate && !endDate) {
+                  this.setState({
+                    selectionConfiguration: {
+                      type: this.props.selectionConfiguration.type,
+                      startDate,
+                      endDate: null,
+                    },
+                  });
+                  action('Selected day')(startDate);
+                }
+                if (startDate && endDate) {
+                  this.setState({
+                    selectionConfiguration: {
+                      type: this.props.selectionConfiguration.type,
+                      startDate,
+                      endDate,
+                    },
+                  });
+                  action('Selected end day')(endDate);
+                }
+              } else {
+                this.setState({
+                  selectionConfiguration: {
+                    type: this.props.selectionConfiguration.type,
+                    date: startDate,
+                  },
+                });
+                action('Selected day')(startDate);
+              }
             }}
             onMonthChange={action('Changed month')}
             getApplicationElement={() =>
@@ -103,11 +146,14 @@ class CalendarContainer extends Component {
 }
 
 CalendarContainer.propTypes = {
-  date: PropTypes.instanceOf(Date),
+  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
 };
 
 CalendarContainer.defaultProps = {
-  date: null,
+  selectionConfiguration: {
+    type: CALENDAR_SELECTION_TYPE.single,
+    date: null,
+  },
 };
 
 const getBackgroundForDate = memoize(
@@ -240,7 +286,10 @@ const DefaultExample = () => (
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
-      date={new Date()}
+      selectionConfiguration={{
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: new Date(),
+      }}
     />
   </div>
 );
@@ -259,7 +308,10 @@ const OpenOnRender = () => (
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
-      date={new Date()}
+      selectionConfiguration={{
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: new Date(),
+      }}
       isOpen
     />
   </div>
@@ -368,7 +420,10 @@ const InvalidExample = () => (
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
-      date={new Date()}
+      selectionConfiguration={{
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: new Date(),
+      }}
       valid={false}
     />
   </div>
@@ -388,7 +443,10 @@ const OpenOnRenderDateInThePast = () => (
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
-      date={new Date(2020, 3, 19)}
+      selectionConfiguration={{
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: new Date(2020, 3, 19),
+      }}
       minDate={new Date(2020, 3, 1)}
       selectTodaysDate={false}
       initiallyFocusedDate={new Date(2020, 3, 19)}

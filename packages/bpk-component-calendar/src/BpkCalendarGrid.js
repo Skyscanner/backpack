@@ -96,7 +96,7 @@ class BpkCalendarGrid extends Component {
       isKeyboardFocusable,
       markToday,
       markOutsideDays,
-      selectedDate,
+      selectionConfiguration,
       selectionEnd,
       selectionStart,
       focusedDate,
@@ -108,6 +108,7 @@ class BpkCalendarGrid extends Component {
     } = this.props;
 
     const { calendarMonthWeeks, daysOfWeek } = this.state;
+    const selectConfig = selectionConfiguration;
 
     const classNames = [getClassName('bpk-calendar-grid')];
     if (className) {
@@ -146,7 +147,7 @@ class BpkCalendarGrid extends Component {
               weekStartsOn={weekStartsOn}
               markToday={markToday}
               markOutsideDays={markOutsideDays}
-              selectedDate={selectedDate}
+              selectionConfiguration={selectConfig}
               selectionEnd={selectionEnd}
               selectionStart={selectionStart}
               focusedDate={focusedDate}

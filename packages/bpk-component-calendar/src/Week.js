@@ -21,10 +21,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cssModules, deprecated } from 'bpk-react-utils';
-import areIntervalsOverlapping from 'date-fns/areIntervalsOverlapping';
-import dateMin from 'date-fns/min';
-import dateMax from 'date-fns/max';
-import startOfDay from 'date-fns/startOfDay';
 
 import {
   getDay,
@@ -57,6 +53,76 @@ const shallowEqualProps = (props1, props2, propList) => {
 function or(total, bool) {
   return total || bool;
 }
+
+/**
+ * Determines if the current date is selected
+ * @param {*} date the current date from the calendar
+ * @param {Object} selectionConfiguration the current selection configuration
+ * @returns {Boolean} true is selected and false if not
+ */
+function getSelectedDate(date, selectionConfiguration) {
+  if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range) {
+    if (selectionConfiguration.startDate && selectionConfiguration.endDate) {
+      if (
+        isSameDay(date, selectionConfiguration.startDate) ||
+        isSameDay(date, selectionConfiguration.endDate) ||
+        isWithinRange(date, {
+          start: selectionConfiguration.startDate,
+          end: selectionConfiguration.endDate,
+        })
+      ) {
+        return true;
+      }
+    } else if (
+      selectionConfiguration.startDate &&
+      !selectionConfiguration.endDate
+    ) {
+      if (isSameDay(date, selectionConfiguration.startDate)) {
+        return true;
+      }
+    }
+  } else if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single) {
+    if (isSameDay(date, selectionConfiguration.date)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+const singleDateHandler = (props, nextProps) => {
+  const currentSelectConfig = props.selectionConfiguration;
+  const nextSelectConfig = nextProps.selectionConfiguration;
+
+  if (
+    (isSameWeek(nextSelectConfig.date, nextProps.dates[0], {
+      weekStartsOn: nextProps.weekStartsOn,
+    }) ||
+      isSameWeek(currentSelectConfig.date, props.dates[0], {
+        weekStartsOn: props.weekStartsOn,
+      })) &&
+    currentSelectConfig.date !== nextSelectConfig.date
+  ) {
+    return true;
+  }
+  return false;
+};
+
+const rangeDateHandler = (props, nextProps) => {
+  const startDateChanged = !isSameDay(
+    props.selectionConfiguration.startDate,
+    nextProps.selectionConfiguration.startDate,
+  );
+  const endDateChanged = !isSameDay(
+    props.selectionConfiguration.endDate,
+    nextProps.selectionConfiguration.endDate,
+  );
+
+  if (startDateChanged || endDateChanged) {
+    return true;
+  }
+
+  return false;
+};
 
 /*
   Week - table row containing a week full of DateContainer components
@@ -104,15 +170,16 @@ class Week extends Component {
     // of either the week we're rendering now or the next week we'll
     // render, component should update.
     if (
-      (isSameWeek(nextProps.selectedDate, nextProps.dates[0], {
-        weekStartsOn: nextProps.weekStartsOn,
-      }) ||
-        isSameWeek(this.props.selectedDate, this.props.dates[0], {
-          weekStartsOn: this.props.weekStartsOn,
-        })) &&
-      this.props.selectedDate !== nextProps.selectedDate
+      this.props.selectionConfiguration.type ===
+        CALENDAR_SELECTION_TYPE.single &&
+      this.props.selectionConfiguration.date
     ) {
-      return true;
+      return singleDateHandler(this.props, nextProps);
+    }
+    if (
+      this.props.selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range
+    ) {
+      return rangeDateHandler(this.props, nextProps);
     }
 
     // If min date is changing, component should update.
@@ -135,69 +202,6 @@ class Week extends Component {
       }
     }
 
-    if (!this.props.selectionStart || !this.props.selectionEnd) {
-      return false;
-    }
-
-    const selectionStartChanged = !isSameDay(
-      this.props.selectionStart,
-      nextProps.selectionStart,
-    );
-    const selectionEndChanged = !isSameDay(
-      this.props.selectionEnd,
-      nextProps.selectionEnd,
-    );
-
-    if (selectionStartChanged || selectionEndChanged) {
-      const firstDate = new Date(startOfDay(nextProps.dates[0]).getTime() - 1);
-      const lastDate = new Date(
-        startOfDay(nextProps.dates[nextProps.dates.length - 1]).getTime() + 1,
-      );
-
-      if (
-        areIntervalsOverlapping(
-          { start: this.props.selectionStart, end: this.props.selectionEnd },
-          { start: firstDate, end: lastDate },
-        ) ||
-        areIntervalsOverlapping(
-          { start: nextProps.selectionStart, end: nextProps.selectionEnd },
-          { start: firstDate, end: lastDate },
-        )
-      ) {
-        if (
-          selectionStartChanged &&
-          areIntervalsOverlapping(
-            {
-              start: dateMin([
-                this.props.selectionStart,
-                nextProps.selectionStart,
-              ]),
-              end: dateMax([
-                this.props.selectionStart,
-                nextProps.selectionStart,
-              ]),
-            },
-            { start: firstDate, end: lastDate },
-          )
-        ) {
-          return true;
-        }
-
-        if (
-          selectionEndChanged &&
-          areIntervalsOverlapping(
-            {
-              start: dateMin([this.props.selectionEnd, nextProps.selectionEnd]),
-              end: dateMax([this.props.selectionEnd, nextProps.selectionEnd]),
-            },
-            { start: firstDate, end: lastDate },
-          )
-        ) {
-          return true;
-        }
-      }
-    }
-
     return false;
   }
 
@@ -217,7 +221,7 @@ class Week extends Component {
       onDateClick,
       onDateKeyDown,
       preventKeyboardFocus,
-      selectedDate,
+      selectionConfiguration,
       showWeekendSeparator,
       ignoreOutsideDate,
       dateProps,
@@ -237,6 +241,7 @@ class Week extends Component {
         return null;
       }
     }
+    const selectConfig = selectionConfiguration;
 
     return (
       <tr className={getClassName('bpk-calendar-grid__week')}>
@@ -260,6 +265,42 @@ class Week extends Component {
               }
             >
               <DateComponent
+                // style={
+                //   {
+                // color:
+                //   date ===
+                //   formatDateFull(this.props.selectionConfiguration.startDate)
+                //     ? 'red'
+                //     : date ===
+                //       formatDateFull(
+                //         this.props.selectionConfiguration.endDate,
+                //       )
+                //     ? 'red'
+                //     : isWithinRange(date, {
+                //         start: formatDateFull(
+                //           this.props.selectionConfiguration.startDate,
+                //         ),
+                //         end: formatDateFull(
+                //           this.props.selectionConfiguration.endDate,
+                //         ),
+                //       })
+                //     ? 'red'
+                //     : '',
+                // backgroundColor:
+                //   formatDateFull(date) ===
+                //   formatDateFull(this.props.selectionStart)
+                //     ? 'purple'
+                //     : formatDateFull(date) ===
+                //       formatDateFull(this.props.selectionEnd)
+                //     ? 'purple'
+                //     : isWithinRange(date, {
+                //         start: this.props.selectionStart,
+                //         end: this.props.selectionEnd,
+                //       })
+                //     ? 'purple'
+                //     : '',
+                //   }
+                // }
                 date={date}
                 modifiers={dateModifiers}
                 aria-label={formatDateFull(date)}
@@ -268,7 +309,7 @@ class Week extends Component {
                 preventKeyboardFocus={preventKeyboardFocus}
                 isKeyboardFocusable={isKeyboardFocusable}
                 isFocused={isSameDay(date, focusedDate)}
-                isSelected={isSameDay(date, selectedDate)}
+                isSelected={getSelectedDate(date, selectConfig)}
                 isBlocked={isBlocked}
                 isOutside={markOutsideDays && !isSameMonth(date, month)}
                 isToday={markToday && isToday(date)}

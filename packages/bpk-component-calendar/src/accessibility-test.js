@@ -23,6 +23,7 @@ import { axe } from 'jest-axe';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkCalendarContainer from './BpkCalendarContainer';
+import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 
 const createNodeMock = () => ({
   focus: () => null,
@@ -40,7 +41,10 @@ describe('BpkCalendar accessibility tests', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        selectedDate={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
       />,

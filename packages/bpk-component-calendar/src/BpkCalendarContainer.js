@@ -19,8 +19,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { deprecated, isRTL } from 'bpk-react-utils';
+import { isAfter } from 'date-fns';
+import isBefore from 'date-fns/isBefore';
 
-import CustomProptypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import BpkCalendarNav from './BpkCalendarNav';
 import { BpkCalendarGridWithTransition } from './BpkCalendarGrid';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
@@ -38,9 +40,20 @@ import {
   startOfMonth,
 } from './date-utils';
 
+/**
+ * Updates the current focused date
+ * @param {Object} currentProps current input properties
+ * @param {Object} nextProps next input properties when component changes
+ * @returns {Boolean} if the selected date has changed
+ */
 const focusedDateHasChanged = (currentProps, nextProps) => {
-  const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
-  const rawSelectedDate = currentProps.selectedDate || currentProps.date;
+  const currentSelectConfig = currentProps.selectionConfiguration;
+  const nextSelectConfig = nextProps.selectionConfiguration;
+
+  const rawNextSelectedDate =
+    nextSelectConfig.date || nextSelectConfig.startDate;
+  const rawSelectedDate =
+    currentSelectConfig.date || currentSelectConfig.startDate;
 
   if (!rawSelectedDate && !rawNextSelectedDate) {
     return false;
@@ -56,6 +69,14 @@ const focusedDateHasChanged = (currentProps, nextProps) => {
   return !isSameDay(rawNextSelectedDate, rawSelectedDate);
 };
 
+/**
+ * Determines the focused date on the calendar
+ * @param {Date} rawSelectedDate the raw date provided to the calendar to be selected
+ * @param {*} initiallyFocusedDate inital date that was selected
+ * @param {*} minDate min available date to be selectable in the calendar
+ * @param {*} maxDate max available date to be selectable in the calendar
+ * @returns {Date} which date to be focused on the calendar when it loads
+ */
 const determineFocusedDate = (
   rawSelectedDate,
   initiallyFocusedDate,
@@ -73,6 +94,28 @@ const determineFocusedDate = (
   return minDate;
 };
 
+/**
+ * Function that based on the configuration will return a single date or start and end date.
+ * @param {Object} selectionConfig - The configuration of calendar to be used
+ * @returns {Array} An array or single of multiple dates
+ */
+const getRawSelectedDate = selectionConfig => {
+  let rawDate = [];
+
+  switch (selectionConfig.type) {
+    case CALENDAR_SELECTION_TYPE.single:
+      rawDate = [selectionConfig.date];
+      break;
+    case CALENDAR_SELECTION_TYPE.range:
+      rawDate = [selectionConfig.startDate, selectionConfig.endDate];
+      break;
+    default:
+      break;
+  }
+
+  return rawDate;
+};
+
 const withCalendarState = Calendar => {
   class BpkCalendarContainer extends Component {
     constructor(props) {
@@ -80,15 +123,16 @@ const withCalendarState = Calendar => {
 
       const minDate = startOfDay(this.props.minDate);
       const maxDate = startOfDay(this.props.maxDate);
+      const selectConfig = this.props.selectionConfiguration;
 
-      // `date` is to be DEPRECATED in favour of `selectedDate`
-      const rawSelectedDate = this.props.selectedDate || this.props.date;
+      const rawSelectedDate = getRawSelectedDate(selectConfig);
+
       const { initiallyFocusedDate } = this.props;
 
       this.state = {
         preventKeyboardFocus: true,
         focusedDate: determineFocusedDate(
-          rawSelectedDate,
+          rawSelectedDate[0],
           initiallyFocusedDate,
           minDate,
           maxDate,
@@ -97,14 +141,18 @@ const withCalendarState = Calendar => {
     }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
-      // `date` is to be DEPRECATED in favour of `selectedDate`
-      const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
+      const selectConfig = nextProps.selectionConfiguration;
+      const rawNextSelectedDate = getRawSelectedDate(selectConfig);
 
       const minDate = startOfDay(nextProps.minDate);
       const maxDate = startOfDay(nextProps.maxDate);
       if (focusedDateHasChanged(this.props, nextProps)) {
         this.setState({
-          focusedDate: dateToBoundaries(rawNextSelectedDate, minDate, maxDate),
+          focusedDate: dateToBoundaries(
+            rawNextSelectedDate[0],
+            minDate,
+            maxDate,
+          ),
         });
       }
     }
@@ -132,7 +180,7 @@ const withCalendarState = Calendar => {
     };
 
     handleDateSelect = date => {
-      const { onDateSelect } = this.props;
+      const { onDateSelect, selectionConfiguration } = this.props;
       const keyboardFocusState = { preventKeyboardFocus: false };
 
       if (onDateSelect) {
@@ -141,8 +189,31 @@ const withCalendarState = Calendar => {
           startOfDay(this.props.minDate),
           startOfDay(this.props.maxDate),
         );
-
-        onDateSelect(newDate);
+        if (selectionConfiguration.type === 'single') {
+          onDateSelect(newDate);
+        } else if (selectionConfiguration.type === 'range') {
+          if (
+            selectionConfiguration.startDate &&
+            selectionConfiguration.endDate
+          ) {
+            onDateSelect(newDate);
+          } else if (
+            selectionConfiguration.startDate ||
+            (selectionConfiguration.startDate &&
+              !selectionConfiguration.endDate)
+          ) {
+            if (isBefore(newDate, selectionConfiguration.startDate)) {
+              onDateSelect(newDate);
+            } else if (
+              isAfter(newDate, selectionConfiguration.startDate) ||
+              isSameDay(newDate, selectionConfiguration.startDate)
+            ) {
+              onDateSelect(selectionConfiguration.startDate, newDate);
+            }
+          } else {
+            onDateSelect(newDate);
+          }
+        }
       } else {
         this.setState(keyboardFocusState);
       }
@@ -231,7 +302,6 @@ const withCalendarState = Calendar => {
         maxDate,
         date,
         selectionConfiguration,
-        selectedDate,
         ...calendarProps
       } = this.props;
 
@@ -241,12 +311,8 @@ const withCalendarState = Calendar => {
       const sanitisedMinDate = startOfDay(minDate);
       const sanitisedMaxDate = startOfDay(maxDate);
 
-      // `date` is to be DEPRECATED in favour of `selectedDate`
-      const rawSelectedDate = selectedDate || date;
+      const selectConfig = selectionConfiguration;
 
-      const sanitisedSelectedDate = rawSelectedDate
-        ? dateToBoundaries(rawSelectedDate, sanitisedMinDate, sanitisedMaxDate)
-        : null;
       const sanitisedFocusedDate = dateToBoundaries(
         this.state.focusedDate,
         sanitisedMinDate,
@@ -261,25 +327,27 @@ const withCalendarState = Calendar => {
           onMonthChange={this.handleMonthChange}
           month={month}
           preventKeyboardFocus={this.state.preventKeyboardFocus}
-          selectedDate={sanitisedSelectedDate}
           focusedDate={sanitisedFocusedDate}
           {...calendarProps}
           minDate={sanitisedMinDate}
           maxDate={sanitisedMaxDate}
+          selectionConfiguration={selectConfig}
         />
       );
     }
   }
 
   BpkCalendarContainer.propTypes = {
-    // `date` is to be DEPRECATED in favour of `selectedDate`
-    date: PropTypes.instanceOf(Date),
+    date: deprecated(
+      PropTypes.instanceOf(Date),
+      'Use selectionConfiguration to set selectedDate',
+    ),
     fixedWidth: PropTypes.bool,
     maxDate: PropTypes.instanceOf(Date),
     minDate: PropTypes.instanceOf(Date),
     onDateSelect: PropTypes.func,
     onMonthChange: PropTypes.func,
-    selectionConfiguration: CustomProptypes.SelectionConfiguration,
+    selectionConfiguration: CustomPropTypes.SelectionConfiguration,
     selectedDate: deprecated(
       PropTypes.instanceOf(Date),
       'Use selectionConfiguration to set selectedDate',

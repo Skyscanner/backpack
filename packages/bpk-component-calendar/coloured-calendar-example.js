@@ -29,6 +29,8 @@ import {
   CELL_TYPES,
   composeCalendar,
   withCalendarState,
+  CustomPropTypes,
+  CALENDAR_SELECTION_TYPE,
 } from './index';
 
 const prices = [
@@ -90,10 +92,8 @@ class ColoredCalendar extends Component {
   constructor(props) {
     super(props);
 
-    const date = this.props.selectTodaysDate ? new Date() : null;
-
     this.state = {
-      date,
+      selectionConfiguration: { type: 'single', date: new Date() },
     };
   }
 
@@ -101,11 +101,16 @@ class ColoredCalendar extends Component {
     return (
       <StatefulCalendar
         {...this.props}
-        selectedDate={this.state.date}
         onDateSelect={date => {
-          this.setState({ date });
+          this.setState({
+            selectionConfiguration: {
+              type: this.props.selectionConfiguration.type,
+              date,
+            },
+          });
           action('Selected day')(date);
         }}
+        selectionConfiguration={this.state.selectionConfiguration}
         onMonthChange={action('Changed month')}
       />
     );
@@ -114,10 +119,15 @@ class ColoredCalendar extends Component {
 
 ColoredCalendar.propTypes = {
   selectTodaysDate: PropTypes.bool,
+  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
 };
 
 ColoredCalendar.defaultProps = {
   selectTodaysDate: true,
+  selectionConfiguration: {
+    type: CALENDAR_SELECTION_TYPE.single,
+    date: new Date(),
+  },
 };
 
 export default ColoredCalendar;

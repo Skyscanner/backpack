@@ -19,11 +19,14 @@
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 import BpkModal from 'bpk-component-modal';
 import BpkPopover from 'bpk-component-popover';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
-import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
+import BpkCalendar, {
+  CustomPropTypes,
+  CALENDAR_SELECTION_TYPE,
+} from 'bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.module.scss';
 
@@ -82,7 +85,6 @@ class BpkDatepicker extends Component {
       changeMonthLabel,
       calendarComponent: Calendar,
       closeButtonText,
-      date,
       dateModifiers,
       daysOfWeek,
       formatDate,
@@ -98,6 +100,7 @@ class BpkDatepicker extends Component {
       nextMonthLabel,
       onMonthChange,
       previousMonthLabel,
+      selectionConfiguration,
       showWeekendSeparator,
       title,
       weekStartsOn,
@@ -107,7 +110,9 @@ class BpkDatepicker extends Component {
       ...rest
     } = this.props;
 
-    const dateLabel = date ? formatDateFull(date) : '';
+    const dateLabel = selectionConfiguration.date
+      ? formatDateFull(selectionConfiguration.date)
+      : '';
 
     // The following props are not used in render
     delete rest.onDateSelect;
@@ -118,7 +123,9 @@ class BpkDatepicker extends Component {
       <Input
         id={id}
         name={`${id}_input`}
-        value={date ? formatDate(date) : ''}
+        value={
+          selectionConfiguration ? formatDate(selectionConfiguration.date) : ''
+        }
         className={getClassName('bpk-datepicker__input')}
         aria-live="assertive"
         aria-atomic="true"
@@ -135,7 +142,6 @@ class BpkDatepicker extends Component {
       id: `${id}-calendar`,
       className: getClassName('bpk-datepicker__calendar'),
       changeMonthLabel,
-      date,
       dateModifiers,
       daysOfWeek,
       formatDateFull,
@@ -151,6 +157,7 @@ class BpkDatepicker extends Component {
       showWeekendSeparator,
       weekStartsOn,
       initiallyFocusedDate,
+      selectionConfiguration,
     };
 
     const calendar = <Calendar {...calendarProps} />;
@@ -208,7 +215,10 @@ BpkDatepicker.propTypes = {
   weekStartsOn: PropTypes.number.isRequired,
   // Optional
   calendarComponent: PropTypes.elementType,
-  date: PropTypes.instanceOf(Date),
+  date: deprecated(
+    PropTypes.instanceOf(Date),
+    'Use selectionConfiguration to set selectedDate',
+  ),
   dateModifiers: CustomPropTypes.DateModifiers,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
@@ -218,6 +228,7 @@ BpkDatepicker.propTypes = {
   onDateSelect: PropTypes.func,
   onOpenChange: PropTypes.func,
   onMonthChange: PropTypes.func,
+  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
   showWeekendSeparator: PropTypes.bool,
   initiallyFocusedDate: PropTypes.instanceOf(Date),
   renderTarget: PropTypes.func,
@@ -239,6 +250,7 @@ BpkDatepicker.defaultProps = {
   onOpenChange: null,
   onMonthChange: null,
   previousMonthLabel: null,
+  selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
   showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
   initiallyFocusedDate: null,
   renderTarget: null,

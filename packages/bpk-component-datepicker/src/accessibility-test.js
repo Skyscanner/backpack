@@ -24,6 +24,7 @@ import {
   formatDateFull,
 } from 'bpk-component-calendar/test-utils';
 import { format } from 'bpk-component-calendar/src/date-utils';
+import { CALENDAR_SELECTION_TYPE } from 'bpk-component-calendar';
 import { axe } from 'jest-axe';
 
 jest.mock(
@@ -64,7 +65,10 @@ describe('BpkDatepicker accessibility tests', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
       />,
     );
     const results = await axe(container);

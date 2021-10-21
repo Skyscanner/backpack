@@ -29,6 +29,7 @@ import {
   colorSkyGrayTint04,
   colorMonteverde,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { action } from 'bpk-storybook-utils';
 
 import { withButtonAlignment, withRtlSupport } from '../bpk-component-icon';
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
@@ -37,11 +38,13 @@ import SmallLongArrowLeftIcon from '../bpk-component-icon/sm/long-arrow-left';
 import { dateToBoundaries, startOfDay, addDays } from './src/date-utils';
 import { formatMonth, formatDateFull, weekDays } from './test-utils';
 
-import {
+import BpkCalendar, {
   BpkCalendarGrid,
   BpkCalendarGridHeader,
   withCalendarState,
   composeCalendar,
+  CustomPropTypes,
+  CALENDAR_SELECTION_TYPE,
 } from './index';
 
 const LeftIcon = withButtonAlignment(withRtlSupport(SmallLongArrowLeftIcon));
@@ -245,4 +248,83 @@ MonthViewCalendar.defaultProps = {
   returnDate: startOfDay(addDays(new Date(), 4)),
 };
 
-export default MonthViewCalendar;
+class CalendarContainer extends Component {
+  constructor(props) {
+    super(props);
+
+    if (this.props.selectionConfiguration.type === 'range') {
+      this.state = {
+        selectionConfiguration: {
+          type: this.props.selectionConfiguration.type,
+          startDate: this.props.selectionConfiguration.startDate,
+          endDate: this.props.selectionConfiguration.endDate,
+        },
+      };
+    } else {
+      this.state = {
+        selectionConfiguration: {
+          type: this.props.selectionConfiguration.type,
+          date: this.props.selectionConfiguration.date,
+        },
+      };
+    }
+  }
+
+  render() {
+    return (
+      <BpkCalendar
+        {...this.props}
+        onDateSelect={(startDate, endDate = null) => {
+          if (this.props.selectionConfiguration.type === 'range') {
+            if (startDate && !endDate) {
+              this.setState({
+                selectionConfiguration: {
+                  type: this.props.selectionConfiguration.type,
+                  startDate,
+                  endDate: null,
+                },
+              });
+              action('Selected day')(startDate);
+            }
+            if (startDate && endDate) {
+              this.setState({
+                selectionConfiguration: {
+                  type: this.props.selectionConfiguration.type,
+                  startDate,
+                  endDate,
+                },
+              });
+              action('Selected end day')(endDate);
+            }
+          } else {
+            this.setState({
+              selectionConfiguration: {
+                type: this.props.selectionConfiguration.type,
+                date: startDate,
+              },
+            });
+            action('Selected day')(startDate);
+          }
+        }}
+        selectionConfiguration={this.state.selectionConfiguration}
+        onMonthChange={action('Changed month')}
+      />
+    );
+  }
+}
+
+CalendarContainer.propTypes = {
+  selectTodaysDate: PropTypes.bool,
+  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
+};
+
+CalendarContainer.defaultProps = {
+  selectTodaysDate: true,
+  selectionConfiguration: {
+    type: CALENDAR_SELECTION_TYPE.single,
+    date: null,
+  },
+};
+
+export default CalendarContainer;
+export { MonthViewCalendar };

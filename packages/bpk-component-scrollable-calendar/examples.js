@@ -21,7 +21,11 @@ import React, { Component } from 'react';
 import startOfMonth from 'date-fns/startOfMonth';
 import endOfMonth from 'date-fns/endOfMonth';
 import { action } from 'bpk-storybook-utils';
-import { DateUtils } from 'bpk-component-calendar';
+import {
+  DateUtils,
+  CustomPropTypes,
+  CALENDAR_SELECTION_TYPE,
+} from 'bpk-component-calendar';
 
 import {
   formatDateFull,
@@ -46,16 +50,17 @@ export default class ScrollableCal extends Component {
   constructor(props) {
     super(props);
 
-    const selectedDate = this.props.selectTodaysDate ? new Date() : null;
-
     this.state = {
-      selectedDate,
+      selectionConfiguration: { type: 'single', date: new Date() },
     };
   }
 
   handleDateSelect = date => {
     this.setState({
-      selectedDate: date,
+      selectionConfiguration: {
+        type: this.props.selectionConfiguration.type,
+        date,
+      },
     });
   };
 
@@ -64,21 +69,31 @@ export default class ScrollableCal extends Component {
       <BpkScrollableCalendar
         id="calendar"
         {...this.props}
-        onDateSelect={selectedDate => {
-          this.setState({ selectedDate });
-          action('Selected day')(selectedDate);
+        onDateSelect={date => {
+          this.setState({
+            selectionConfiguration: {
+              type: this.props.selectionConfiguration.type,
+              date,
+            },
+          });
+          action('Selected day')(date);
         }}
-        date={this.state.selectedDate}
+        selectionConfiguration={this.state.selectionConfiguration}
       />
     );
   }
 }
 ScrollableCal.propTypes = {
   selectTodaysDate: PropTypes.bool,
+  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
 };
 
 ScrollableCal.defaultProps = {
   selectTodaysDate: true,
+  selectionConfiguration: {
+    type: CALENDAR_SELECTION_TYPE.single,
+    date: new Date(),
+  },
 };
 
 const DefaultExample = () => (
