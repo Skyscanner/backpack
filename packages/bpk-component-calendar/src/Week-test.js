@@ -69,144 +69,141 @@ describe('Week', () => {
       }),
     ).toBe(true);
   });
-  ['selectionConfiguration'].forEach(dateField => {
-    it(`should not update if ${dateField} changes but is a different week`, () => {
-      const week = shallow(<Week {...initialProps} />).instance();
 
-      expect(
-        week.shouldComponentUpdate({
-          ...initialProps,
-          [dateField]: {
-            type: CALENDAR_SELECTION_TYPE.single,
-            date: new Date(1980, 4, 11),
-          },
-        }),
-      ).toBe(false);
-    });
+  it(`should not update if selectionConfiguration changes but is a different week`, () => {
+    const week = shallow(<Week {...initialProps} />).instance();
 
-    it(`should update if ${dateField} changes in this week`, () => {
-      const week = shallow(
-        <Week
-          {...initialProps}
-          {...{
-            [dateField]: {
-              type: CALENDAR_SELECTION_TYPE.single,
-              date: new Date(1980, 5, 2),
-            },
-          }}
-        />,
-      ).instance();
-
-      expect(
-        week.shouldComponentUpdate({
-          ...initialProps,
-          [dateField]: {
-            type: CALENDAR_SELECTION_TYPE.single,
-            date: new Date(1980, 5, 14),
-          },
-        }),
-      ).toBe(true);
-    });
-
-    it(`should update if ${dateField} changes from inside to outside the week`, () => {
-      const week = shallow(
-        <Week
-          {...initialProps}
-          {...{
-            [dateField]: {
-              type: CALENDAR_SELECTION_TYPE.single,
-              date: new Date(1980, 5, 12),
-            },
-          }}
-        />,
-      ).instance();
-
-      expect(
-        week.shouldComponentUpdate({
-          ...initialProps,
-          [dateField]: {
-            type: CALENDAR_SELECTION_TYPE.single,
-            date: new Date(1980, 5, 18),
-          },
-        }),
-      ).toBe(true);
-    });
-
-    it(`should update if ${dateField} in week becomes null`, () => {
-      const week = shallow(
-        <Week
-          {...initialProps}
-          {...{
-            [dateField]: {
-              type: CALENDAR_SELECTION_TYPE.single,
-              date: new Date(1980, 5, 12),
-            },
-          }}
-        />,
-      ).instance();
-
-      expect(
-        week.shouldComponentUpdate({
-          ...initialProps,
-          selectionConfiguration: {
-            type: CALENDAR_SELECTION_TYPE.single,
-            date: null,
-          },
-        }),
-      ).toBe(true);
-    });
+    expect(
+      week.shouldComponentUpdate({
+        ...initialProps,
+        selectionConfiguration: {
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(1980, 4, 11),
+        },
+      }),
+    ).toBe(false);
   });
 
-  ['focusedDate'].forEach(dateField => {
-    it(`should not update if ${dateField} changes but is a different week`, () => {
-      const week = shallow(<Week {...initialProps} />).instance();
+  it(`should update if selectionConfiguration changes in this week`, () => {
+    const week = shallow(
+      <Week
+        {...initialProps}
+        {...{
+          selectionConfiguration: {
+            type: CALENDAR_SELECTION_TYPE.single,
+            date: new Date(1980, 5, 2),
+          },
+        }}
+      />,
+    ).instance();
 
-      expect(
-        week.shouldComponentUpdate({
-          ...initialProps,
-          [dateField]: new Date(1980, 4, 11),
-        }),
-      ).toBe(false);
-    });
+    expect(
+      week.shouldComponentUpdate({
+        ...initialProps,
+        selectionConfiguration: {
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(1980, 5, 14),
+        },
+      }),
+    ).toBe(true);
+  });
 
-    it(`should update if ${dateField} changes in this week`, () => {
-      const week = shallow(
-        <Week {...initialProps} {...{ [dateField]: new Date(1980, 5, 2) }} />,
-      ).instance();
+  it(`should update if selectionConfiguration changes from inside to outside the week`, () => {
+    const week = shallow(
+      <Week
+        {...initialProps}
+        {...{
+          selectionConfiguration: {
+            type: CALENDAR_SELECTION_TYPE.single,
+            date: new Date(1980, 5, 12),
+          },
+        }}
+      />,
+    ).instance();
 
-      expect(
-        week.shouldComponentUpdate({
-          ...initialProps,
-          [dateField]: new Date(1980, 5, 14),
-        }),
-      ).toBe(true);
-    });
+    expect(
+      week.shouldComponentUpdate({
+        ...initialProps,
+        selectionConfiguration: {
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(1980, 5, 18),
+        },
+      }),
+    ).toBe(true);
+  });
 
-    it(`should update if ${dateField} changes from inside to outside the week`, () => {
-      const week = shallow(
-        <Week {...initialProps} {...{ [dateField]: new Date(1980, 5, 12) }} />,
-      ).instance();
+  it(`should update if selectionConfiguration in week becomes null`, () => {
+    const week = shallow(
+      <Week
+        {...initialProps}
+        {...{
+          selectionConfiguration: {
+            type: CALENDAR_SELECTION_TYPE.single,
+            date: new Date(1980, 5, 12),
+          },
+        }}
+      />,
+    ).instance();
 
-      expect(
-        week.shouldComponentUpdate({
-          ...initialProps,
-          [dateField]: new Date(1980, 5, 18),
-        }),
-      ).toBe(true);
-    });
+    expect(
+      week.shouldComponentUpdate({
+        ...initialProps,
+        selectionConfiguration: {
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: null,
+        },
+      }),
+    ).toBe(true);
+  });
 
-    it(`should update if ${dateField} in week becomes null`, () => {
-      const week = shallow(
-        <Week {...initialProps} {...{ [dateField]: new Date(1980, 5, 12) }} />,
-      ).instance();
+  it(`should not update if focusedDate changes but is a different week`, () => {
+    const week = shallow(<Week {...initialProps} />).instance();
 
-      expect(
-        week.shouldComponentUpdate({
-          ...initialProps,
-          selectedDate: null,
-        }),
-      ).toBe(true);
-    });
+    expect(
+      week.shouldComponentUpdate({
+        ...initialProps,
+        focusedDate: new Date(1980, 4, 11),
+      }),
+    ).toBe(false);
+  });
+
+  it(`should update if focusedDate changes in this week`, () => {
+    const week = shallow(
+      <Week {...initialProps} {...{ focusedDate: new Date(1980, 5, 2) }} />,
+    ).instance();
+
+    expect(
+      week.shouldComponentUpdate({
+        ...initialProps,
+        focusedDate: new Date(1980, 5, 14),
+      }),
+    ).toBe(true);
+  });
+
+  it(`should update if focusedDate changes from inside to outside the week`, () => {
+    const week = shallow(
+      <Week {...initialProps} {...{ focusedDate: new Date(1980, 5, 12) }} />,
+    ).instance();
+
+    expect(
+      week.shouldComponentUpdate({
+        ...initialProps,
+        focusedDate: new Date(1980, 5, 18),
+      }),
+    ).toBe(true);
+  });
+
+  it(`should update if focusedDate in week becomes null`, () => {
+    const week = shallow(
+      <Week {...initialProps} {...{ focusedDate: new Date(1980, 5, 12) }} />,
+    ).instance();
+
+    expect(
+      week.shouldComponentUpdate({
+        ...initialProps,
+        selectedDate: null,
+      }),
+    ).toBe(true);
   });
 
   it('should update if minDate changes', () => {

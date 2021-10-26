@@ -56,7 +56,7 @@ function or(total, bool) {
 
 /**
  * Determines if the current date is selected
- * @param {*} date the current date from the calendar
+ * @param {Date} date the current date from the calendar
  * @param {Object} selectionConfiguration the current selection configuration
  * @returns {Boolean} true is selected and false if not
  */
@@ -89,6 +89,12 @@ function getSelectedDate(date, selectionConfiguration) {
   return false;
 }
 
+/**
+ * Handles changing selected date when in single mode
+ * @param {Object} props current props
+ * @param {Object} nextProps next props as the component is updating
+ * @returns {Boolean} based on if the date has changed
+ */
 const singleDateHandler = (props, nextProps) => {
   const currentSelectConfig = props.selectionConfiguration;
   const nextSelectConfig = nextProps.selectionConfiguration;
@@ -107,6 +113,12 @@ const singleDateHandler = (props, nextProps) => {
   return false;
 };
 
+/**
+ * Handles changing selected date when in range mode
+ * @param {Object} props current props
+ * @param {Object} nextProps next props as the component is updating
+ * @returns {Boolean} based on if the date has changed
+ */
 const rangeDateHandler = (props, nextProps) => {
   const startDateChanged = !isSameDay(
     props.selectionConfiguration.startDate,
@@ -241,7 +253,6 @@ class Week extends Component {
         return null;
       }
     }
-    const selectConfig = selectionConfiguration;
 
     return (
       <tr className={getClassName('bpk-calendar-grid__week')}>
@@ -265,42 +276,6 @@ class Week extends Component {
               }
             >
               <DateComponent
-                // style={
-                //   {
-                // color:
-                //   date ===
-                //   formatDateFull(this.props.selectionConfiguration.startDate)
-                //     ? 'red'
-                //     : date ===
-                //       formatDateFull(
-                //         this.props.selectionConfiguration.endDate,
-                //       )
-                //     ? 'red'
-                //     : isWithinRange(date, {
-                //         start: formatDateFull(
-                //           this.props.selectionConfiguration.startDate,
-                //         ),
-                //         end: formatDateFull(
-                //           this.props.selectionConfiguration.endDate,
-                //         ),
-                //       })
-                //     ? 'red'
-                //     : '',
-                // backgroundColor:
-                //   formatDateFull(date) ===
-                //   formatDateFull(this.props.selectionStart)
-                //     ? 'purple'
-                //     : formatDateFull(date) ===
-                //       formatDateFull(this.props.selectionEnd)
-                //     ? 'purple'
-                //     : isWithinRange(date, {
-                //         start: this.props.selectionStart,
-                //         end: this.props.selectionEnd,
-                //       })
-                //     ? 'purple'
-                //     : '',
-                //   }
-                // }
                 date={date}
                 modifiers={dateModifiers}
                 aria-label={formatDateFull(date)}
@@ -309,7 +284,7 @@ class Week extends Component {
                 preventKeyboardFocus={preventKeyboardFocus}
                 isKeyboardFocusable={isKeyboardFocusable}
                 isFocused={isSameDay(date, focusedDate)}
-                isSelected={getSelectedDate(date, selectConfig)}
+                isSelected={getSelectedDate(date, selectionConfiguration)}
                 isBlocked={isBlocked}
                 isOutside={markOutsideDays && !isSameMonth(date, month)}
                 isToday={markToday && isToday(date)}

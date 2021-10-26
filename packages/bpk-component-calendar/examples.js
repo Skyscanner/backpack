@@ -348,7 +348,7 @@ const FocusedDateInThePastExample = () => (
   />
 );
 
-const rangeDateCalendar = () => (
+const RangeDateCalendar = () => (
   <CalendarContainer
     id="myCalendar"
     formatMonth={formatMonth}
@@ -387,5 +387,5 @@ export {
   CustomColors,
   WeekExample,
   FocusedDateInThePastExample,
-  rangeDateCalendar,
+  RangeDateCalendar,
 };

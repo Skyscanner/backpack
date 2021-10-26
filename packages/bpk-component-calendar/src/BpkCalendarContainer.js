@@ -19,8 +19,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { deprecated, isRTL } from 'bpk-react-utils';
-import { isAfter } from 'date-fns';
-import isBefore from 'date-fns/isBefore';
 
 import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import BpkCalendarNav from './BpkCalendarNav';
@@ -32,6 +30,8 @@ import {
   addDays,
   addMonths,
   dateToBoundaries,
+  isAfter,
+  isBefore,
   isSameMonth,
   isSameDay,
   lastDayOfMonth,
@@ -72,9 +72,9 @@ const focusedDateHasChanged = (currentProps, nextProps) => {
 /**
  * Determines the focused date on the calendar
  * @param {Date} rawSelectedDate the raw date provided to the calendar to be selected
- * @param {*} initiallyFocusedDate inital date that was selected
- * @param {*} minDate min available date to be selectable in the calendar
- * @param {*} maxDate max available date to be selectable in the calendar
+ * @param {Date} initiallyFocusedDate inital date that was selected
+ * @param {Date} minDate min available date to be selectable in the calendar
+ * @param {Date} maxDate max available date to be selectable in the calendar
  * @returns {Date} which date to be focused on the calendar when it loads
  */
 const determineFocusedDate = (
@@ -123,9 +123,10 @@ const withCalendarState = Calendar => {
 
       const minDate = startOfDay(this.props.minDate);
       const maxDate = startOfDay(this.props.maxDate);
-      const selectConfig = this.props.selectionConfiguration;
 
-      const rawSelectedDate = getRawSelectedDate(selectConfig);
+      const rawSelectedDate = getRawSelectedDate(
+        this.props.selectionConfiguration,
+      );
 
       const { initiallyFocusedDate } = this.props;
 
@@ -141,8 +142,9 @@ const withCalendarState = Calendar => {
     }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
-      const selectConfig = nextProps.selectionConfiguration;
-      const rawNextSelectedDate = getRawSelectedDate(selectConfig);
+      const rawNextSelectedDate = getRawSelectedDate(
+        nextProps.selectionConfiguration,
+      );
 
       const minDate = startOfDay(nextProps.minDate);
       const maxDate = startOfDay(nextProps.maxDate);
@@ -311,8 +313,6 @@ const withCalendarState = Calendar => {
       const sanitisedMinDate = startOfDay(minDate);
       const sanitisedMaxDate = startOfDay(maxDate);
 
-      const selectConfig = selectionConfiguration;
-
       const sanitisedFocusedDate = dateToBoundaries(
         this.state.focusedDate,
         sanitisedMinDate,
@@ -331,7 +331,7 @@ const withCalendarState = Calendar => {
           {...calendarProps}
           minDate={sanitisedMinDate}
           maxDate={sanitisedMaxDate}
-          selectionConfiguration={selectConfig}
+          selectionConfiguration={selectionConfiguration}
         />
       );
     }

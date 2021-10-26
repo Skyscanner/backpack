@@ -124,7 +124,9 @@ class BpkDatepicker extends Component {
         id={id}
         name={`${id}_input`}
         value={
-          selectionConfiguration ? formatDate(selectionConfiguration.date) : ''
+          selectionConfiguration.date
+            ? formatDate(selectionConfiguration.date)
+            : ''
         }
         className={getClassName('bpk-datepicker__input')}
         aria-live="assertive"

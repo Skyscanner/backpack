@@ -51,7 +51,10 @@ export default class ScrollableCal extends Component {
     super(props);
 
     this.state = {
-      selectionConfiguration: { type: 'single', date: new Date() },
+      selectionConfiguration: {
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: new Date(),
+      },
     };
   }
 

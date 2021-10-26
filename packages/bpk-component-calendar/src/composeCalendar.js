@@ -61,7 +61,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       weekDayKey,
     } = props;
 
-    const selectConfig = selectionConfiguration;
     if (className) {
       classNames.push(className);
     }
@@ -131,7 +130,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
           markOutsideDays={markOutsideDays}
           className={gridClasses.join(' ')}
           dateProps={dateProps}
-          selectionConfiguration={selectConfig}
+          selectionConfiguration={selectionConfiguration}
           {...gridProps}
         />
       </div>

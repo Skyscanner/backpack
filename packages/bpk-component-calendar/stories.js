@@ -39,7 +39,7 @@ import {
   CustomColors,
   WeekExample,
   FocusedDateInThePastExample,
-  rangeDateCalendar,
+  RangeDateCalendar,
 } from './examples';
 
 storiesOf('bpk-component-calendar', module)
@@ -69,4 +69,4 @@ storiesOf('bpk-component-calendar', module)
   .add('Custom colours', CustomColors)
   .add('Week', WeekExample)
   .add('Visual test', FocusedDateInThePastExample)
-  .add('Range calendar', rangeDateCalendar);
+  .add('Range calendar', RangeDateCalendar);
