@@ -32,15 +32,20 @@ export default class App extends Component {
   constructor () {
     super();
 
-
     this.state = {
-      selectedDate: null
-    }
+      selectionConfiguration: {
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: null,
+        }
+    };
   }
 
   handleDateSelect = (date) => {
     this.setState({
-      selectedDate: date
+      selectionConfiguration: {
+        type: this.props.selectionConfiguration.type,
+        date: date,
+      },
     });
   }
 
@@ -51,7 +56,7 @@ export default class App extends Component {
           id='dateInput'
           type={INPUT_TYPES.text}
           name='date'
-          value={(this.state.selectedDate || '').toString()}
+          value={(this.state.selectionConfiguration.date || '').toString()}
           placeholder='Departure date'
         />
         <BpkCalendar
@@ -64,7 +69,7 @@ export default class App extends Component {
           changeMonthLabel="Change month"
           nextMonthLabel="Next month"
           previousMonthLabel="Previous month"
-          date={this.state.selectedDate}
+          selectionConfiguration={this.state.selectionConfiguration}
         />
       </div>
     )
@@ -172,7 +177,6 @@ withCalendarState(composeCalendar(
 | minDate               | Date                 | false               | new Date()       |
 | onDateSelect          | func                 | false               | null             |
 | onMonthChange         | func                 | false               | null             |
-| selectedDate          | Date                 | false               | null             |
 | selectionConfiguration| object               | false               | { type: CALENDAR_SELECTION_TYPE.single, date: null }  |
 | showWeekendSeparator  | bool                 | false               | true             |
 | navProps              | object               | false               | null             |
@@ -238,7 +242,6 @@ The BpkCalendarGrid component displays a month as a table.
 | onDateClick           | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | false            |
-| selectedDate          | Date                 | false    | null             |
 | showWeekendSeparator  | bool                 | false    | true             |
 
 ### BpkCalendarDate

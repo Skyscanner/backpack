@@ -201,7 +201,10 @@ describe('Week', () => {
     expect(
       week.shouldComponentUpdate({
         ...initialProps,
-        selectedDate: null,
+        selectionConfiguration: {
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: null,
+        },
       }),
     ).toBe(true);
   });

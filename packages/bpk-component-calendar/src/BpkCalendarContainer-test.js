@@ -167,7 +167,12 @@ describe('BpkCalendarContainer', () => {
 
     expect(calendar.state('focusedDate')).toEqual(initialSelectedDate);
 
-    calendar.setProps({ selectedDate: null });
+    calendar.setProps({
+      selectionConfiguration: {
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: null,
+      },
+    });
 
     expect(calendar.state('focusedDate')).toEqual(minDate);
   });

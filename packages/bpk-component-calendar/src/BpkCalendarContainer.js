@@ -31,7 +31,6 @@ import {
   addMonths,
   dateToBoundaries,
   isAfter,
-  isBefore,
   isSameMonth,
   isSameDay,
   lastDayOfMonth,
@@ -110,6 +109,7 @@ const getRawSelectedDate = selectionConfig => {
       rawDate = [selectionConfig.startDate, selectionConfig.endDate];
       break;
     default:
+      rawDate = [null];
       break;
   }
 
@@ -191,30 +191,17 @@ const withCalendarState = Calendar => {
           startOfDay(this.props.minDate),
           startOfDay(this.props.maxDate),
         );
-        if (selectionConfiguration.type === 'single') {
+
+        if (
+          selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
+          selectionConfiguration.startDate &&
+          !selectionConfiguration.endDate &&
+          (isAfter(newDate, selectionConfiguration.startDate) ||
+            isSameDay(newDate, selectionConfiguration.startDate))
+        ) {
+          onDateSelect(selectionConfiguration.startDate, newDate);
+        } else {
           onDateSelect(newDate);
-        } else if (selectionConfiguration.type === 'range') {
-          if (
-            selectionConfiguration.startDate &&
-            selectionConfiguration.endDate
-          ) {
-            onDateSelect(newDate);
-          } else if (
-            selectionConfiguration.startDate ||
-            (selectionConfiguration.startDate &&
-              !selectionConfiguration.endDate)
-          ) {
-            if (isBefore(newDate, selectionConfiguration.startDate)) {
-              onDateSelect(newDate);
-            } else if (
-              isAfter(newDate, selectionConfiguration.startDate) ||
-              isSameDay(newDate, selectionConfiguration.startDate)
-            ) {
-              onDateSelect(selectionConfiguration.startDate, newDate);
-            }
-          } else {
-            onDateSelect(newDate);
-          }
         }
       } else {
         this.setState(keyboardFocusState);

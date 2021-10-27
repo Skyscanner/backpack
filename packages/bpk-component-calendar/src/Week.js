@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-// a change
-
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cssModules, deprecated } from 'bpk-react-utils';
@@ -61,31 +59,24 @@ function or(total, bool) {
  * @returns {Boolean} true is selected and false if not
  */
 function getSelectedDate(date, selectionConfiguration) {
-  if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range) {
-    if (selectionConfiguration.startDate && selectionConfiguration.endDate) {
-      if (
-        isSameDay(date, selectionConfiguration.startDate) ||
-        isSameDay(date, selectionConfiguration.endDate) ||
-        isWithinRange(date, {
-          start: selectionConfiguration.startDate,
-          end: selectionConfiguration.endDate,
-        })
-      ) {
-        return true;
-      }
-    } else if (
-      selectionConfiguration.startDate &&
-      !selectionConfiguration.endDate
-    ) {
-      if (isSameDay(date, selectionConfiguration.startDate)) {
-        return true;
-      }
-    }
-  } else if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single) {
-    if (isSameDay(date, selectionConfiguration.date)) {
-      return true;
-    }
+  const startDate =
+    selectionConfiguration.date || selectionConfiguration.startDate;
+  const { endDate } = selectionConfiguration;
+  const sameStartDay = isSameDay(date, startDate);
+  const sameEndDay = isSameDay(date, endDate);
+
+  if (
+    (startDate &&
+      endDate &&
+      (sameStartDay ||
+        sameEndDay ||
+        isWithinRange(date, { start: startDate, end: endDate }))) ||
+    (startDate && !endDate && sameStartDay) ||
+    sameStartDay
+  ) {
+    return true;
   }
+
   return false;
 }
 

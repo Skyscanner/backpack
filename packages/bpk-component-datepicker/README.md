@@ -33,15 +33,21 @@ export default class App extends Component {
     super();
 
     this.state = {
-      selectedDate: null,
-    };
+      selectionConfiguration: {
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: null,
+      }
+    }
   }
 
-  handleDateSelect = date => {
+  handleDateSelect = (date) => {
     this.setState({
-      selectedDate: date,
+      selectionConfiguration: {
+        type: this.props.selectionConfiguration.type,
+        date: date,
+      },
     });
-  };
+  }
 
   render() {
     return (
@@ -57,7 +63,7 @@ export default class App extends Component {
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         onDateSelect={this.handleDateSelect}
-        date={this.state.selectedDate}
+        selectionConfiguration={this.state.selectionConfiguration}
       />
     );
   }
@@ -105,7 +111,7 @@ const CustomPicker = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     onDateSelect={this.handleDateSelect}
-    date={this.state.selectedDate}
+    selectionConfiguration={this.state.selectionConfiguration}
   />
 );
 ```
@@ -135,7 +141,6 @@ For more information on some these props, check the BpkCalendar documentation.
 | formatDateFull        | func                  | true     | -                                   |
 | formatMonth           | func                  | true     | -                                   |
 | calendarComponent     | elementType           | false    | BpkCalendar                         |
-| date                  | Date                  | false    | null                                |
 | dateModifiers         | object                | false    | {} (\*)                             |
 | inputProps            | object                | false    | {}                                  |
 | markOutsideDays       | bool                  | false    | true (\*)                           |
@@ -149,6 +154,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | isOpen                | bool                  | false    | false                               |
 | onOpenChange          | func                  | false    | null                                |
 | valid                 | bool                  | false    | null                                |
+| selectionConfiguration| object               | false               | { type: CALENDAR_SELECTION_TYPE.single, date: null }  |
 
 > (\*) Default value is defined on child component
 

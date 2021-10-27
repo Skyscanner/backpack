@@ -33,13 +33,19 @@ export default class App extends Component {
     super();
 
     this.state = {
-      selectedDate: null,
+      selectionConfiguration: {
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: null,
+      }
     };
   }
 
-  handleDateSelect = date => {
+  handleDateSelect = (date) => {
     this.setState({
-      selectedDate: date,
+      selectionConfiguration: {
+        type: this.props.selectionConfiguration.type,
+        date: date,
+      },
     });
   };
 
@@ -52,7 +58,7 @@ export default class App extends Component {
         formatDateFull={formatDateFull}
         daysOfWeek={daysOfWeek}
         weekStartsOn={1}
-        date={this.state.selectedDate}
+        selectionConfiguration={this.state.selectionConfiguration}
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(new Date(), -1)}
         maxDate={DateUtils.addMonths(new Date(), 12)}
