@@ -21,7 +21,7 @@ import React from 'react';
 import isWeekend from 'date-fns/isWeekend';
 import { DateUtils } from 'bpk-component-calendar';
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import { shallow } from 'enzyme';
+import { render } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
@@ -33,7 +33,7 @@ const testDate = new Date(2010, 1, 15);
 
 describe('BpkCalendarScrollGridList', () => {
   it('should render correctly with no optional props set', () => {
-    const tree = shallow(
+    const tree = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -49,7 +49,7 @@ describe('BpkCalendarScrollGridList', () => {
   });
 
   it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
-    const tree = shallow(
+    const tree = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -66,7 +66,7 @@ describe('BpkCalendarScrollGridList', () => {
   });
 
   it('should render correctly with a different "weekStartsOn" attribute', () => {
-    const tree = shallow(
+    const tree = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -86,7 +86,7 @@ describe('BpkCalendarScrollGridList', () => {
     const modifiers = {
       someClass: () => true,
     };
-    const tree = shallow(
+    const tree = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -120,7 +120,7 @@ describe('BpkCalendarScrollGridList', () => {
     MyCustomDate.propTypes = {
       date: PropTypes.instanceOf(Date).isRequired,
     };
-    const tree = shallow(
+    const tree = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}

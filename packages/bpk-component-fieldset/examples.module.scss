@@ -18,18 +18,20 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-fieldsets {
   &__container {
     display: block;
   }
 
   &__fieldset {
-    margin-right: $bpk-spacing-sm;
+    margin-right: bpk-spacing-sm();
     flex: 1;
 
     @include bpk-rtl {
       margin-right: 0;
-      margin-left: $bpk-spacing-sm;
+      margin-left: bpk-spacing-sm();
     }
   }
 

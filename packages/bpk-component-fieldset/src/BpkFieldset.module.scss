@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-fieldset {
   margin: 0;
   padding: 0;
@@ -25,8 +27,17 @@
 
   &__description {
     display: block;
+    margin-top: bpk-spacing-md();
     color: $bpk-color-sky-gray-tint-02;
 
     @include bpk-text--xs;
+  }
+
+  &__label {
+    margin-bottom: bpk-spacing-md();
+  }
+
+  &__validation-message {
+    margin-top: bpk-spacing-md();
   }
 }
