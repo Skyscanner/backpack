@@ -96,7 +96,7 @@ class BpkCalendarGrid extends Component {
       isKeyboardFocusable,
       markToday,
       markOutsideDays,
-      selectedDate,
+      selectionConfiguration,
       selectionEnd,
       selectionStart,
       focusedDate,
@@ -146,7 +146,7 @@ class BpkCalendarGrid extends Component {
               weekStartsOn={weekStartsOn}
               markToday={markToday}
               markOutsideDays={markOutsideDays}
-              selectedDate={selectedDate}
+              selectionConfiguration={selectionConfiguration}
               selectionEnd={selectionEnd}
               selectionStart={selectionStart}
               focusedDate={focusedDate}

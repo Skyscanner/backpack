@@ -49,7 +49,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       onMonthChange,
       preventKeyboardFocus,
       previousMonthLabel,
-      selectedDate,
+      selectionConfiguration,
       showWeekendSeparator,
       weekStartsOn,
       fixedWidth,
@@ -128,9 +128,9 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
           focusedDate={focusedDate}
           markToday={markToday}
           markOutsideDays={markOutsideDays}
-          selectedDate={selectedDate}
           className={gridClasses.join(' ')}
           dateProps={dateProps}
+          selectionConfiguration={selectionConfiguration}
           {...gridProps}
         />
       </div>

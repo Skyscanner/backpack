@@ -15,8 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { action } from 'bpk-storybook-utils';
 import addMonths from 'date-fns/addMonths';
 import BpkText from 'bpk-component-text';
@@ -35,51 +34,17 @@ import {
   weekDaysJapanese,
   weekDays,
 } from './test-utils';
-import MonthViewCalendar from './examples-components';
+import CalendarContainer, { MonthViewCalendar } from './examples-components';
 import ColoredCalendar from './coloured-calendar-example';
 import Week from './src/Week';
+import { CALENDAR_SELECTION_TYPE } from './src/custom-proptypes';
 
-import BpkCalendar, {
-  // BpkCalendarView,
+import {
   BpkCalendarGrid,
   BpkCalendarGridHeader,
   BpkCalendarNav,
   BpkCalendarDate,
 } from './index';
-
-class CalendarContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    const date = this.props.selectTodaysDate ? new Date() : null;
-
-    this.state = {
-      date,
-    };
-  }
-
-  render() {
-    return (
-      <BpkCalendar
-        {...this.props}
-        selectedDate={this.state.date}
-        onDateSelect={date => {
-          this.setState({ date });
-          action('Selected day')(date);
-        }}
-        onMonthChange={action('Changed month')}
-      />
-    );
-  }
-}
-
-CalendarContainer.propTypes = {
-  selectTodaysDate: PropTypes.bool,
-};
-
-CalendarContainer.defaultProps = {
-  selectTodaysDate: true,
-};
 
 const CalendarNavExample = () => (
   <BpkCalendarNav
@@ -134,6 +99,10 @@ const DefaultExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(),
+    }}
   />
 );
 
@@ -379,6 +348,24 @@ const FocusedDateInThePastExample = () => (
   />
 );
 
+const RangeDateCalendar = () => (
+  <CalendarContainer
+    id="myCalendar"
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    selectionConfiguration={{
+      type: 'range',
+      startDate: new Date(2022, 9, 6),
+      endDate: new Date(2022, 9, 10),
+    }}
+  />
+);
+
 export {
   DefaultExample,
   CalendarNavExample,
@@ -400,4 +387,5 @@ export {
   CustomColors,
   WeekExample,
   FocusedDateInThePastExample,
+  RangeDateCalendar,
 };
