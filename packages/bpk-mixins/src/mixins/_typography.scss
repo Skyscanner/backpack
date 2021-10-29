@@ -900,8 +900,8 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-blockquote {
-  margin: 0 0 $bpk-spacing-sm 0;
-  padding: $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-md;
+  margin: 0 0 bpk-spacing-base() 0;
+  padding: bpk-spacing-md() bpk-spacing-md() bpk-spacing-md() bpk-spacing-base();
   background-color: $bpk-color-sky-gray-tint-07;
   color: $bpk-color-sky-gray-tint-02;
 
@@ -911,7 +911,8 @@ $bpk-spacing-v2: true;
   );
 
   @include bpk-rtl {
-    padding: $bpk-spacing-xs $bpk-spacing-md $bpk-spacing-xs $bpk-spacing-xs;
+    padding: bpk-spacing-md() bpk-spacing-base() bpk-spacing-md()
+      bpk-spacing-md();
     border-left: 0;
 
     @include bpk-border-right-lg($bpk-color-sky-blue);
@@ -936,8 +937,8 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-blockquote--extra-spacing {
-  margin-top: $bpk-spacing-lg;
-  margin-bottom: $bpk-spacing-lg;
+  margin-top: bpk-spacing-xl();
+  margin-bottom: bpk-spacing-xl();
 }
 
 /// Content container.
