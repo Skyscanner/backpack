@@ -105,7 +105,7 @@
     ],
     "testRegex": "packages/.*-test\\.js$",
     "transformIgnorePatterns": [
-      "node_modules/(?!bpk|@skyscanner)"
+      "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
     ],
     "verbose": true
   },
