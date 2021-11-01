@@ -36,13 +36,13 @@ const beforeScreenshot = () =>
 // Allow a small amount of deviation to account for
 // CI running on a different OS than local development.
 const getMatchOptions = () => ({
-  failureThreshold: 0.1,
+  failureThreshold: 0.05,
   failureThresholdType: 'percent',
 });
 
 initStoryshots({
   suite: 'Visual tests',
-  storyNameRegex: /Visual\stest$/i,
+  storyNameRegex: /Visual\stest\s?([a-z]*)?/i,
   test: imageSnapshot({
     storybookUrl: `file://${path.resolve(__dirname, '../dist-storybook')}`,
     getMatchOptions,

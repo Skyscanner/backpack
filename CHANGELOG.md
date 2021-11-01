@@ -1,3 +1,10 @@
+# 2021-11-01
+
+**Changed:**
+
+- bpk-component-barchart: 4.0.17 => 4.1.0
+  - Upgraded `d3-scale` to latest version.
+
 # 2021-10-19
 
 **Fixed:**
