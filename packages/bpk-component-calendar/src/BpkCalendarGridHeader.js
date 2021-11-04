@@ -18,14 +18,10 @@
 
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
-import {
-  getFirstDayOfWeekend,
-  getLastDayOfWeekend,
-  orderDaysOfWeek,
-} from './date-utils';
+import { orderDaysOfWeek } from './date-utils';
 import STYLES from './BpkCalendarGridHeader.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -34,32 +30,13 @@ const getClassName = cssModules(STYLES);
   WeekDay - table header cells such as "Mon", "Tue", "Wed"...
 */
 const WeekDay = props => {
-  const {
-    weekDay,
-    weekDayKey,
-    isFirstDayOfWeekend,
-    isLastDayOfWeekend,
-    Element,
-  } = props;
-  const classNames = [getClassName('bpk-calendar-header__weekday')];
-
-  if (weekDay.isWeekend) {
-    classNames.push(getClassName('bpk-calendar-header__weekday--weekend'));
-
-    if (isFirstDayOfWeekend) {
-      classNames.push(
-        getClassName('bpk-calendar-header__weekday--weekend-start'),
-      );
-    }
-    if (isLastDayOfWeekend) {
-      classNames.push(
-        getClassName('bpk-calendar-header__weekday--weekend-end'),
-      );
-    }
-  }
+  const { weekDay, weekDayKey, Element } = props;
 
   return (
-    <Element className={classNames.join(' ')} title={weekDay.name}>
+    <Element
+      className={getClassName('bpk-calendar-header__weekday')}
+      title={weekDay.name}
+    >
       <span>{weekDay[weekDayKey]}</span>
     </Element>
   );
@@ -69,8 +46,6 @@ WeekDay.propTypes = {
   Element: CustomPropTypes.ReactComponent.isRequired,
   weekDay: CustomPropTypes.WeekDay.isRequired,
   weekDayKey: CustomPropTypes.WeekDayKey,
-  isFirstDayOfWeekend: PropTypes.bool.isRequired,
-  isLastDayOfWeekend: PropTypes.bool.isRequired,
 };
 
 WeekDay.defaultProps = {
@@ -79,22 +54,13 @@ WeekDay.defaultProps = {
 
 class BpkCalendarGridHeader extends PureComponent {
   render() {
-    const {
-      isTableHead,
-      showWeekendSeparator,
-      weekStartsOn,
-      weekDayKey,
-      className,
-    } = this.props;
+    const { isTableHead, weekStartsOn, weekDayKey, className } = this.props;
 
     const Header = isTableHead ? 'thead' : 'header';
     const List = isTableHead ? 'tr' : 'ol';
     const Item = isTableHead ? 'th' : 'li';
 
     const daysOfWeek = orderDaysOfWeek(this.props.daysOfWeek, weekStartsOn);
-
-    const firstDayOfWeekendIndex = getFirstDayOfWeekend(daysOfWeek);
-    const lastDayOfWeekendIndex = getLastDayOfWeekend(daysOfWeek);
 
     const classNames = [getClassName('bpk-calendar-header')];
     if (isTableHead) {
@@ -113,12 +79,6 @@ class BpkCalendarGridHeader extends PureComponent {
               key={weekDay.index}
               weekDay={weekDay}
               weekDayKey={weekDayKey}
-              isFirstDayOfWeekend={
-                showWeekendSeparator && firstDayOfWeekendIndex === weekDay.index
-              }
-              isLastDayOfWeekend={
-                showWeekendSeparator && lastDayOfWeekendIndex === weekDay.index
-              }
             />
           ))}
         </List>
@@ -128,12 +88,16 @@ class BpkCalendarGridHeader extends PureComponent {
 }
 
 BpkCalendarGridHeader.propTypes = {
-  showWeekendSeparator: PropTypes.bool.isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   weekStartsOn: PropTypes.number.isRequired,
   isTableHead: PropTypes.bool,
   className: PropTypes.string,
   weekDayKey: CustomPropTypes.WeekDayKey,
+  // eslint-disable-next-line react/require-default-props,react/no-unused-prop-types
+  showWeekendSeparator: deprecated(
+    PropTypes.bool,
+    'The showWeekendSeparator prop in BpkCalendarGridHeader is now deprecated as no longer part of the calendar, so is no longer required',
+  ),
 };
 
 BpkCalendarGridHeader.defaultProps = {

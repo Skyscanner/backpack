@@ -36,7 +36,6 @@ describe('BpkScrollableCalendar accessibility tests', () => {
         daysOfWeek={weekDays}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
-        showWeekendSeparator
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}

@@ -145,6 +145,11 @@ class BpkCalendarDate extends PureComponent {
     if (isToday) {
       classNames.push(getClassName('bpk-calendar-date--today'));
     }
+
+    if (selectionType !== SELECTION_TYPES.none) {
+      classNames.push(getClassName(`bpk-calendar-date--${selectionType}`));
+    }
+
     if (className) {
       classNames.push(className);
     }

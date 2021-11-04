@@ -148,7 +148,6 @@ For more information on some these props, check the BpkCalendar documentation.
 | maxDate               | Date                  | false    | new Date() + 1 year (\*)            |
 | minDate               | Date                  | false    | new Date() (\*)                     |
 | onDateSelect          | func                  | false    | null                                |
-| showWeekendSeparator  | bool                  | false    | true (\*)                           |
 | initiallyFocusedDate  | Date                  | false    | null                                |
 | renderTarget          | func                  | false    | null                                |
 | isOpen                | bool                  | false    | false                               |

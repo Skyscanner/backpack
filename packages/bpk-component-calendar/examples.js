@@ -61,11 +61,7 @@ const CalendarNavExample = () => (
 );
 
 const CalendarGridHeaderExample = () => (
-  <BpkCalendarGridHeader
-    weekStartsOn={1}
-    daysOfWeek={weekDays}
-    showWeekendSeparator
-  />
+  <BpkCalendarGridHeader weekStartsOn={1} daysOfWeek={weekDays} />
 );
 
 const CalendarGridExample = () => (
@@ -77,13 +73,12 @@ const CalendarGridExample = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkCalendarDate}
-    showWeekendSeparator
     preventKeyboardFocus
   />
 );
 
 const CalendarGridAndHeaderExample = () => (
-  <div>
+  <div style={{ display: 'flex', flexDirection: 'column' }}>
     <CalendarGridHeaderExample />
     <CalendarGridExample />
   </div>
@@ -119,20 +114,6 @@ const MinDateInThePastExample = () => (
     minDate={new Date(2011, 1, 1)}
     selectTodaysDate={false}
     initiallyFocusedDate={new Date()}
-  />
-);
-
-const NoWeekendSeparatorExample = () => (
-  <CalendarContainer
-    id="myCalendar"
-    formatMonth={formatMonth}
-    formatDateFull={formatDateFull}
-    daysOfWeek={weekDays}
-    weekStartsOn={1}
-    changeMonthLabel="Change month"
-    previousMonthLabel="Go to previous month"
-    nextMonthLabel="Go to next month"
-    showWeekendSeparator={false}
   />
 );
 
@@ -271,7 +252,6 @@ const CustomColors = () => (
     daysOfWeek={weekDays}
     month={new Date()}
     weekStartsOn={1}
-    showWeekendSeparator
     onDateSelect={date => {
       // TODO we shouldn't do this but as it's only for demo purposes and works I guess it's fine
       // eslint-disable-next-line react/no-this-in-sfc
@@ -301,7 +281,6 @@ const WeekExample = () => {
     daysOfWeek: weekDays,
     formatDateFull: d => d.toString(),
     preventKeyboardFocus: false,
-    showWeekendSeparator: true,
     markToday: true,
     markOutsideDays: true,
     isKeyboardFocusable: true,
@@ -373,7 +352,6 @@ export {
   CalendarGridExample,
   CalendarGridAndHeaderExample,
   MinDateInThePastExample,
-  NoWeekendSeparatorExample,
   WeekStartsOnSundayExample,
   HonestWeekendExample,
   WeekdayKeyIsNameNarrow,

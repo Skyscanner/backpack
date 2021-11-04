@@ -178,7 +178,6 @@ withCalendarState(composeCalendar(
 | onDateSelect          | func                 | false               | null             |
 | onMonthChange         | func                 | false               | null             |
 | selectionConfiguration| object               | false               | { type: CALENDAR_SELECTION_TYPE.single, date: null }  |
-| showWeekendSeparator  | bool                 | false               | true             |
 | navProps              | object               | false               | null             |
 | headerProps           | object               | false               | null             |
 | gridProps             | object               | false               | null             |
@@ -213,10 +212,8 @@ in place while the rest of the grid transitions when changing months.
 
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
-| showWeekendSeparator  | bool                 | true     | -                |
 | daysOfWeek            | object               | true     | -                |
 | weekStartsOn          | number               | true     | -                |
-| showWeekendSeparator  | bool                 | false    | false            |
 | className             | string               | false    | null             |
 | weekDayKey            | string               | false    | nameAbbr         |
 
@@ -242,7 +239,6 @@ The BpkCalendarGrid component displays a month as a table.
 | onDateClick           | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | false            |
-| showWeekendSeparator  | bool                 | false    | true             |
 
 ### BpkCalendarDate
 

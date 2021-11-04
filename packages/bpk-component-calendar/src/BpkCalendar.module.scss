@@ -20,7 +20,9 @@
 @import 'variables';
 
 .bpk-calendar {
+  display: flex;
   width: 100%;
+  flex-direction: column;
 
   @include bpk-border-radius-sm;
 

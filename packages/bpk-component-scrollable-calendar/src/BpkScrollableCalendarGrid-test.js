@@ -43,21 +43,6 @@ describe('BpkCalendarScrollGrid', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
-    const { asFragment } = render(
-      <BpkCalendarScrollGrid
-        month={new Date('2016-10')}
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        DateComponent={BpkCalendarScrollDate}
-        daysOfWeek={weekDays}
-        weekStartsOn={0}
-        showWeekendSeparator={false}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with a different "weekStartsOn" attribute', () => {
     const { asFragment } = render(
       <BpkCalendarScrollGrid
@@ -67,7 +52,6 @@ describe('BpkCalendarScrollGrid', () => {
         DateComponent={BpkCalendarScrollDate}
         daysOfWeek={weekDays}
         weekStartsOn={5}
-        showWeekendSeparator
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -86,7 +70,6 @@ describe('BpkCalendarScrollGrid', () => {
         daysOfWeek={weekDays}
         weekStartsOn={1}
         dateModifiers={modifiers}
-        showWeekendSeparator
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -117,7 +100,6 @@ describe('BpkCalendarScrollGrid', () => {
         DateComponent={MyCustomDate}
         daysOfWeek={weekDays}
         weekStartsOn={1}
-        showWeekendSeparator
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -134,7 +116,6 @@ describe('BpkCalendarScrollGrid', () => {
         DateComponent={BpkCalendarScrollDate}
         daysOfWeek={weekDays}
         weekStartsOn={0}
-        showWeekendSeparator
         onDateClick={onDateClick}
       />,
     );

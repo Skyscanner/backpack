@@ -32,21 +32,6 @@ import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarDate from './BpkCalendarDate';
 
 describe('BpkCalendarGrid', () => {
-  it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
-    const { asFragment } = render(
-      <BpkCalendarGrid
-        month={new Date('2016-10')}
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        DateComponent={BpkCalendarDate}
-        daysOfWeek={weekDays}
-        weekStartsOn={0}
-        showWeekendSeparator={false}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with a different "weekStartsOn" attribute', () => {
     const { asFragment } = render(
       <BpkCalendarGrid
@@ -56,7 +41,6 @@ describe('BpkCalendarGrid', () => {
         DateComponent={BpkCalendarDate}
         daysOfWeek={weekDays}
         weekStartsOn={3}
-        showWeekendSeparator
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -75,7 +59,6 @@ describe('BpkCalendarGrid', () => {
         daysOfWeek={weekDays}
         weekStartsOn={1}
         dateModifiers={modifiers}
-        showWeekendSeparator
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -106,7 +89,6 @@ describe('BpkCalendarGrid', () => {
         DateComponent={MyCustomDate}
         daysOfWeek={weekDays}
         weekStartsOn={1}
-        showWeekendSeparator
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -123,7 +105,6 @@ describe('BpkCalendarGrid', () => {
         DateComponent={BpkCalendarDate}
         daysOfWeek={weekDays}
         weekStartsOn={0}
-        showWeekendSeparator
         onDateClick={onDateClick}
       />,
     );
@@ -154,7 +135,6 @@ describe('BpkCalendarGrid', () => {
         DateComponent={BpkCalendarDate}
         daysOfWeek={weekDays}
         weekStartsOn={0}
-        showWeekendSeparator={false}
         weekDayKey="nameNarrow"
       />,
     );

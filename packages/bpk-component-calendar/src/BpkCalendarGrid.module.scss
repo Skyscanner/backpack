@@ -20,11 +20,8 @@
 @import 'variables';
 
 .bpk-calendar-grid {
-  display: table;
-  width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  table-layout: fixed;
 
   &--animating {
     z-index: 1;
@@ -36,25 +33,35 @@
   }
 
   &__date {
-    padding: $bpk-calendar-day-spacing ($bpk-calendar-day-spacing / 2) 0
-      ($bpk-calendar-day-spacing / 2);
+    width: $bpk-spacing-xxl;
+    padding: 0 ($bpk-calendar-day-spacing / 2);
     text-align: center;
     vertical-align: middle;
 
-    &--weekend-start {
-      box-shadow: $shadow-left;
-
-      @include bpk-rtl {
-        box-shadow: $shadow-right;
-      }
+    &--start {
+      background-image: linear-gradient(
+        to right,
+        $bpk-color-white 50%,
+        $bpk-color-sky-blue-tint-03 50%
+      );
     }
 
-    &--weekend-end:not(:last-child) {
-      box-shadow: $shadow-right;
-
-      @include bpk-rtl {
-        box-shadow: $shadow-left;
-      }
+    &--middle {
+      background-color: $bpk-color-sky-blue-tint-03;
     }
+
+    &--end {
+      background-image: linear-gradient(
+        to left,
+        $bpk-color-white 50%,
+        $bpk-color-sky-blue-tint-03 50%
+      );
+    }
+  }
+
+  &__week {
+    display: flex;
+    padding: bpk-spacing-sm() 0;
+    justify-content: space-around;
   }
 }
