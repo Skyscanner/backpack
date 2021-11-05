@@ -54,59 +54,80 @@ const onRowClick = row => alert(JSON.stringify(row));
 
 const AutowidthExample = () => (
   <BpkDataTable rows={rows} height={400} onRowClick={onRowClick}>
-    <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+    <BpkDataTableColumn label="Name" dataKey="name" width={100} flexGrow={1} />
     <BpkDataTableColumn
       label="Description"
       dataKey="description"
       width={100}
+      flexGrow={4}
+    />
+    <BpkDataTableColumn
+      label="Location"
+      dataKey="location"
+      width={100}
       flexGrow={1}
     />
-    <BpkDataTableColumn label="Location" dataKey="location" width={100} />
     <BpkDataTableColumn
       label="Numeric value"
       dataKey="numericValue"
       width={100}
+      flexGrow={1}
     />
   </BpkDataTable>
 );
 
 const NonHoverRows = () => (
   <BpkDataTable rows={rows} height={300}>
-    <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+    <BpkDataTableColumn label="Name" dataKey="name" width={100} flexGrow={1} />
     <BpkDataTableColumn
       label="Description"
       dataKey="description"
       width={100}
+      flexGrow={4}
+    />
+    <BpkDataTableColumn
+      label="Location"
+      dataKey="location"
+      width={100}
       flexGrow={1}
     />
-    <BpkDataTableColumn label="Location" dataKey="location" width={100} />
   </BpkDataTable>
 );
 
 const FixedWidth = () => (
   <BpkDataTable rows={rows} height={300} width={400} onRowClick={onRowClick}>
-    <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+    <BpkDataTableColumn label="Name" dataKey="name" width={100} flexGrow={1} />
     <BpkDataTableColumn
       label="Description"
       dataKey="description"
       width={100}
+      flexGrow={2}
+    />
+    <BpkDataTableColumn
+      label="Location"
+      dataKey="location"
+      width={100}
       flexGrow={1}
     />
-    <BpkDataTableColumn label="Location" dataKey="location" width={100} />
   </BpkDataTable>
 );
 
 const DisabledSort = () => (
   <BpkDataTable rows={rows} height={300} onRowClick={onRowClick}>
-    <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+    <BpkDataTableColumn label="Name" dataKey="name" width={100} flexGrow={1} />
     <BpkDataTableColumn
       label="Description (Disabled Sorting)"
       dataKey="description"
       width={100}
-      flexGrow={1}
+      flexGrow={4}
       disableSort
     />
-    <BpkDataTableColumn label="Location" dataKey="location" width={100} />
+    <BpkDataTableColumn
+      label="Location"
+      dataKey="location"
+      width={100}
+      flexGrow={1}
+    />
   </BpkDataTable>
 );
 
@@ -118,14 +139,19 @@ const CustomRowAndHeaderHeights = () => (
     rowHeight={30}
     onRowClick={onRowClick}
   >
-    <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+    <BpkDataTableColumn label="Name" dataKey="name" width={100} flexGrow={1} />
     <BpkDataTableColumn
       label="Description"
       dataKey="description"
       width={100}
+      flexGrow={4}
+    />
+    <BpkDataTableColumn
+      label="Location"
+      dataKey="location"
+      width={100}
       flexGrow={1}
     />
-    <BpkDataTableColumn label="Location" dataKey="location" width={100} />
   </BpkDataTable>
 );
 

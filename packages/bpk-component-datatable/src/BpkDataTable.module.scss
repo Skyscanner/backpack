@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 $bpk-border-size-datatable: $bpk-border-size-xl * 2;
 
 @mixin bpk-datatable-border-left() {
@@ -42,7 +44,8 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
   &__header-column {
     display: flex;
     height: 100%;
-    padding: $bpk-spacing-sm;
+    // padding: $bpk-spacing-sm; // here
+    padding: bpk-spacing-base(); // here
     flex-direction: row;
     align-items: center;
     outline-offset: -(4 * $bpk-one-pixel-rem);
