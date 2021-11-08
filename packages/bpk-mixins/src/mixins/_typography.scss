@@ -901,7 +901,7 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-blockquote {
   margin: 0 0 bpk-spacing-base() 0;
-  padding: bpk-spacing-lg() bpk-spacing-lg() bpk-spacing-lg() bpk-spacing-lg();
+  padding: bpk-spacing-lg();
   background-color: $bpk-color-sky-gray-tint-07;
   color: $bpk-color-sky-gray-tint-02;
 
