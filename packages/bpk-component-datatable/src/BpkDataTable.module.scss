@@ -44,8 +44,7 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
   &__header-column {
     display: flex;
     height: 100%;
-    // padding: $bpk-spacing-sm; // here
-    padding: bpk-spacing-base(); // here
+    padding: bpk-spacing-base();
     flex-direction: row;
     align-items: center;
     outline-offset: -(4 * $bpk-one-pixel-rem);
