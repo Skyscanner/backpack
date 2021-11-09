@@ -28,10 +28,15 @@ $bpk-spacing-v2: true;
 
     &__phone-number {
       width: 100%;
+      margin-top: bpk-spacing-base();
     }
   }
 
   &__phone-number {
     flex: auto;
+  }
+
+  &__label {
+    margin-bottom: bpk-spacing-md();
   }
 }
