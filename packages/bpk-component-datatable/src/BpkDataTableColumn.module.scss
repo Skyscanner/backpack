@@ -23,19 +23,10 @@ $bpk-spacing-v2: true;
 $bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
 
 .bpk-data-table-column {
-  padding: bpk-spacing-base();
+  margin: bpk-spacing-base();
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-
-  &:first-child {
-    margin-left: $bpk-border-size-xl;
-
-    @include bpk-rtl {
-      margin-right: $bpk-border-size-xl;
-      margin-left: 0;
-    }
-  }
 }
 
 .bpk-data-table-column__header {

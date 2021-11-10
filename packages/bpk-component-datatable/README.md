@@ -138,4 +138,4 @@ in addition to the following:
 
 ### BpkDataTableColumn
 
-Supports all properties defined in [`Column`](https://github.com/bvaughn/react-virtualized/blob/main/docs/Column.md) (from `react-virtualized`)
+Supports all properties defined in [`Column`](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md) (from `react-virtualized`)
