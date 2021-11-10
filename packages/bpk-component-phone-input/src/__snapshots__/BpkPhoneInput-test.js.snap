@@ -7,7 +7,7 @@ exports[`BpkPhoneInput should render correctly 1`] = `
   >
     <div>
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="dialing-code"
       >
         Dialing code
@@ -37,7 +37,7 @@ exports[`BpkPhoneInput should render correctly 1`] = `
       class="bpk-phone-input__phone-number"
     >
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="phone-input-id"
       >
         Telephone number
@@ -62,7 +62,7 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
   >
     <div>
       <label
-        class="bpk-label bpk-label--disabled"
+        class="bpk-label bpk-label--disabled bpk-phone-input__label"
         for="dialing-code"
       >
         Dialing code
@@ -93,7 +93,7 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
       class="bpk-phone-input__phone-number"
     >
       <label
-        class="bpk-label bpk-label--disabled"
+        class="bpk-label bpk-label--disabled bpk-phone-input__label"
         for="phone-input-id"
       >
         Telephone number
@@ -119,7 +119,7 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
   >
     <div>
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="dialing-code"
       >
         Dialing code
@@ -149,7 +149,7 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
       class="bpk-phone-input__phone-number"
     >
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="phone-input-id"
       >
         Telephone number
@@ -174,7 +174,7 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
   >
     <div>
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="dialing-code"
       >
         Dialing code
@@ -204,7 +204,7 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
       class="bpk-phone-input__phone-number"
     >
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="phone-input-id"
       >
         Telephone number
@@ -230,7 +230,7 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
   >
     <div>
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="dialing-code"
       >
         Dialing code
@@ -260,7 +260,7 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
       class="bpk-phone-input__phone-number"
     >
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="phone-input-id"
       >
         Telephone number
@@ -285,7 +285,7 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
   >
     <div>
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="dialing-code"
       >
         Dialing code
@@ -323,7 +323,7 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
       class="bpk-phone-input__phone-number"
     >
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="phone-input-id"
       >
         Telephone number
@@ -348,7 +348,7 @@ exports[`BpkPhoneInput should render correctly with the "dialingCodeMask" attrib
   >
     <div>
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="dialing-code"
       >
         Dialing code
@@ -378,7 +378,7 @@ exports[`BpkPhoneInput should render correctly with the "dialingCodeMask" attrib
       class="bpk-phone-input__phone-number"
     >
       <label
-        class="bpk-label"
+        class="bpk-label bpk-phone-input__label"
         for="phone-input-id"
       >
         Telephone number
