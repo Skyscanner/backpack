@@ -340,7 +340,7 @@ const RangeDateCalendar = () => (
     selectionConfiguration={{
       type: 'range',
       startDate: new Date(2022, 9, 6),
-      endDate: new Date(2022, 9, 10),
+      endDate: new Date(2022, 9, 15),
     }}
   />
 );
