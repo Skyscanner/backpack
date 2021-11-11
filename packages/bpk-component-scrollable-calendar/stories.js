@@ -34,10 +34,12 @@ import {
   ScrollableCalendarGrid,
   ScrollableCalendarGridList,
   PastCalendar,
+  RangeExample,
 } from './examples';
 
 storiesOf('bpk-component-scrollable-calendar', module)
   .add('Scrollable Calendar - default', DefaultExample)
+  .add('Scrollable Calendar - range', RangeExample)
   .add('Scrollable Calendar - week starts on 6', WeekStartsOnSix)
   .add('Scrollable Calendar - with focused date', WithFocusedDate)
   .add('Scrollable Calendar in a tall container', TallContainer)
@@ -51,4 +53,5 @@ storiesOf('bpk-component-scrollable-calendar', module)
   .add('BpkScrollableCalendarDate', ScrollableCalendarDate)
   .add('BpkScrollableCalendarGrid', ScrollableCalendarGrid)
   .add('BpkScrollableCalendarGridList', ScrollableCalendarGridList)
-  .add('Visual test', PastCalendar);
+  .add('Visual test', PastCalendar)
+  .add('Visual test range', RangeExample);

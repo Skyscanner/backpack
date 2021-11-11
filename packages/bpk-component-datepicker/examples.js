@@ -100,7 +100,6 @@ class CalendarContainer extends Component {
         <div id="application-element">
           <BpkDatepicker
             {...this.props}
-            selectionConfiguration={this.state.selectionConfiguration}
             onDateSelect={(startDate, endDate = null) => {
               if (this.props.selectionConfiguration.type === 'range') {
                 if (startDate && !endDate) {
@@ -133,6 +132,7 @@ class CalendarContainer extends Component {
                 action('Selected day')(startDate);
               }
             }}
+            selectionConfiguration={this.state.selectionConfiguration}
             onMonthChange={action('Changed month')}
             getApplicationElement={() =>
               document.getElementById('application-element')
@@ -294,6 +294,29 @@ const DefaultExample = () => (
   </div>
 );
 
+const RangeExample = () => (
+  <div id="application-element">
+    <CalendarContainer
+      id="myDatepicker"
+      closeButtonText="Close"
+      daysOfWeek={weekDays}
+      weekStartsOn={1}
+      changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
+      title="Departure date"
+      formatDate={formatDate}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      selectionConfiguration={{
+        type: 'range',
+        startDate: new Date(2022, 9, 6),
+        endDate: new Date(2022, 9, 15),
+      }}
+    />
+  </div>
+);
+
 const OpenOnRender = () => (
   <div id="application-element">
     <CalendarContainer
@@ -429,7 +452,7 @@ const InvalidExample = () => (
   </div>
 );
 
-const OpenOnRenderDateInThePast = () => (
+const DefaultVisualExample = () => (
   <div id="application-element">
     <CalendarContainer
       id="myDatepicker"
@@ -455,8 +478,35 @@ const OpenOnRenderDateInThePast = () => (
   </div>
 );
 
+const VisualRangeExample = () => (
+  <div id="application-element">
+    <CalendarContainer
+      id="myDatepicker"
+      closeButtonText="Close"
+      daysOfWeek={weekDays}
+      weekStartsOn={1}
+      changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
+      title="Departure date"
+      formatDate={formatDate}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      selectionConfiguration={{
+        type: 'range',
+        startDate: new Date(2020, 3, 8),
+        endDate: new Date(2020, 3, 15),
+      }}
+      minDate={new Date(2020, 3, 1)}
+      selectTodaysDate={false}
+      isOpen
+    />
+  </div>
+);
+
 export {
   DefaultExample,
+  RangeExample,
   OpenOnRender,
   MinDateInPast,
   WithoutDateSet,
@@ -464,5 +514,6 @@ export {
   DepartReturn,
   CustomComponent,
   InvalidExample,
-  OpenOnRenderDateInThePast,
+  DefaultVisualExample,
+  VisualRangeExample,
 };

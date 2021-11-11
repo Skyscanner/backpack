@@ -26,6 +26,7 @@ import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import BpkCalendar, {
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
+  DateUtils,
 } from 'bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.module.scss';
@@ -73,10 +74,88 @@ class BpkDatepicker extends Component {
     }
   };
 
-  handleDateSelect = dateObj => {
+  /**
+   * Gets the correct label for the input field to be supplied to the aria-label
+   * @param {Object} selectionConfiguration current selection configuration
+   * @param {Function} formatDateFull function supplied to format date
+   * @returns {String} date string
+   */
+  getLabel = (selectionConfiguration, formatDateFull) => {
+    if (
+      selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
+      selectionConfiguration.date
+    ) {
+      return formatDateFull(selectionConfiguration.date);
+    }
+    if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range) {
+      if (selectionConfiguration.startDate && !selectionConfiguration.endDate) {
+        return formatDateFull(selectionConfiguration.startDate);
+      }
+      if (selectionConfiguration.startDate && selectionConfiguration.endDate) {
+        return `${formatDateFull(
+          selectionConfiguration.startDate,
+        )} - ${formatDateFull(selectionConfiguration.endDate)}`;
+      }
+    }
+    return '';
+  };
+
+  /**
+   * Gets the correct value for the input field
+   * @param {Object} selectionConfiguration current selection configuration
+   * @param {Function} formatDate function supplied to format date
+   * @returns {String} date value
+   */
+  getValue = (selectionConfiguration, formatDate) => {
+    if (
+      selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
+      selectionConfiguration.date
+    ) {
+      return formatDate(selectionConfiguration.date);
+    }
+    if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range) {
+      if (selectionConfiguration.startDate && !selectionConfiguration.endDate) {
+        return formatDate(selectionConfiguration.startDate);
+      }
+      if (selectionConfiguration.startDate && selectionConfiguration.endDate) {
+        return `${formatDate(selectionConfiguration.startDate)} - ${formatDate(
+          selectionConfiguration.endDate,
+        )}`;
+      }
+    }
+    return '';
+  };
+
+  handleDateSelect = (startDate, endDate = null) => {
+    const {
+      onDateSelect,
+      selectionConfiguration,
+      minDate,
+      maxDate,
+    } = this.props;
     this.onClose();
-    if (this.props.onDateSelect) {
-      this.props.onDateSelect(dateObj);
+    if (onDateSelect) {
+      const newStartDate = DateUtils.dateToBoundaries(
+        startDate,
+        DateUtils.startOfDay(minDate),
+        DateUtils.startOfDay(maxDate),
+      );
+      const newEndDate = DateUtils.dateToBoundaries(
+        endDate,
+        DateUtils.startOfDay(minDate),
+        DateUtils.startOfDay(maxDate),
+      );
+      if (
+        selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
+        selectionConfiguration.startDate &&
+        !selectionConfiguration.endDate &&
+        (DateUtils.isAfter(newEndDate, selectionConfiguration.startDate) ||
+          DateUtils.isSameDay(newEndDate, selectionConfiguration.startDate))
+      ) {
+        onDateSelect(selectionConfiguration.startDate, newEndDate);
+      } else {
+        onDateSelect(newStartDate);
+      }
     }
   };
 
@@ -109,10 +188,6 @@ class BpkDatepicker extends Component {
       ...rest
     } = this.props;
 
-    const dateLabel = selectionConfiguration.date
-      ? formatDateFull(selectionConfiguration.date)
-      : '';
-
     // The following props are not used in render
     delete rest.onDateSelect;
     delete rest.onOpenChange;
@@ -122,15 +197,11 @@ class BpkDatepicker extends Component {
       <Input
         id={id}
         name={`${id}_input`}
-        value={
-          selectionConfiguration.date
-            ? formatDate(selectionConfiguration.date)
-            : ''
-        }
+        value={this.getValue(selectionConfiguration, formatDate)}
         className={getClassName('bpk-datepicker__input')}
         aria-live="assertive"
         aria-atomic="true"
-        aria-label={dateLabel}
+        aria-label={this.getLabel(selectionConfiguration, formatDateFull)}
         onChange={() => null}
         onOpen={this.onOpen}
         isOpen={this.state.isOpen}
@@ -217,7 +288,7 @@ BpkDatepicker.propTypes = {
   calendarComponent: PropTypes.elementType,
   date: deprecated(
     PropTypes.instanceOf(Date),
-    'Use selectionConfiguration to set selectedDate',
+    'Use selectionConfiguration to set date',
   ),
   dateModifiers: CustomPropTypes.DateModifiers,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types

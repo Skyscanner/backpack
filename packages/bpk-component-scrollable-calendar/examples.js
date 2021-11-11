@@ -50,36 +50,60 @@ export default class ScrollableCal extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      selectionConfiguration: {
-        type: CALENDAR_SELECTION_TYPE.single,
-        date: new Date(),
-      },
-    };
+    if (this.props.selectionConfiguration.type === 'range') {
+      this.state = {
+        selectionConfiguration: {
+          type: this.props.selectionConfiguration.type,
+          startDate: this.props.selectionConfiguration.startDate,
+          endDate: this.props.selectionConfiguration.endDate,
+        },
+      };
+    } else {
+      this.state = {
+        selectionConfiguration: {
+          type: this.props.selectionConfiguration.type,
+          date: this.props.selectionConfiguration.date,
+        },
+      };
+    }
   }
-
-  handleDateSelect = date => {
-    this.setState({
-      selectionConfiguration: {
-        type: this.props.selectionConfiguration.type,
-        date,
-      },
-    });
-  };
 
   render() {
     return (
       <BpkScrollableCalendar
         id="calendar"
         {...this.props}
-        onDateSelect={date => {
-          this.setState({
-            selectionConfiguration: {
-              type: this.props.selectionConfiguration.type,
-              date,
-            },
-          });
-          action('Selected day')(date);
+        onDateSelect={(startDate, endDate = null) => {
+          if (this.props.selectionConfiguration.type === 'range') {
+            if (startDate && !endDate) {
+              this.setState({
+                selectionConfiguration: {
+                  type: this.props.selectionConfiguration.type,
+                  startDate,
+                  endDate: null,
+                },
+              });
+              action('Selected day')(startDate);
+            }
+            if (startDate && endDate) {
+              this.setState({
+                selectionConfiguration: {
+                  type: this.props.selectionConfiguration.type,
+                  startDate,
+                  endDate,
+                },
+              });
+              action('Selected end day')(endDate);
+            }
+          } else {
+            this.setState({
+              selectionConfiguration: {
+                type: this.props.selectionConfiguration.type,
+                date: startDate,
+              },
+            });
+            action('Selected day')(startDate);
+          }
         }}
         selectionConfiguration={this.state.selectionConfiguration}
       />
@@ -110,6 +134,25 @@ const DefaultExample = () => (
     // Subtract one day from today's date to make today selectable by default
     minDate={DateUtils.addDays(new Date(), -1)}
     maxDate={DateUtils.addMonths(new Date(), 12)}
+  />
+);
+
+const RangeExample = () => (
+  <ScrollableCal
+    weekStartsOn={1}
+    daysOfWeek={weekDays}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    DateComponent={BpkScrollableCalendarDate}
+    markToday={false}
+    selectTodaysDate={false}
+    minDate={new Date(2020, 3, 1)}
+    maxDate={new Date(2020, 6, 1)}
+    selectionConfiguration={{
+      type: 'range',
+      startDate: new Date(2020, 3, 7),
+      endDate: new Date(2020, 3, 15),
+    }}
   />
 );
 
@@ -303,6 +346,7 @@ const PastCalendar = () => (
 
 export {
   DefaultExample,
+  RangeExample,
   WeekStartsOnSix,
   WithFocusedDate,
   TallContainer,

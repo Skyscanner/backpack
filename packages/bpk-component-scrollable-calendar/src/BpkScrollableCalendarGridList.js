@@ -18,9 +18,9 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 import { DateUtils, BpkCalendarGridPropTypes } from 'bpk-component-calendar';
-import { startOfDay, startOfMonth, isSameMonth } from 'date-fns';
+import { startOfDay, startOfMonth } from 'date-fns';
 import {
   AutoSizer,
   List,
@@ -99,17 +99,6 @@ class BpkScrollableCalendarGridList extends React.Component {
         rowRenderer={this.rowRenderer}
         rowCount={this.state.months.length}
         overscanRowCount={0}
-        scrollToIndex={
-          isSameMonth(this.props.focusedDate, this.props.selectedDate)
-            ? DateUtils.differenceInCalendarMonths(
-                this.props.selectedDate,
-                this.props.minDate,
-              )
-            : DateUtils.differenceInCalendarMonths(
-                this.props.focusedDate,
-                this.props.minDate,
-              )
-        }
       />
     );
   }
@@ -134,7 +123,10 @@ BpkScrollableCalendarGridList.propTypes = {
   className: PropTypes.string,
   minDate: PropTypes.instanceOf(Date).isRequired,
   maxDate: PropTypes.instanceOf(Date).isRequired,
-  selectedDate: PropTypes.instanceOf(Date).isRequired,
+  selectedDate: deprecated(
+    PropTypes.instanceOf(Date),
+    'Use selectionConfiguration to set selectedDate',
+  ),
   focusedDate: PropTypes.instanceOf(Date),
   ...BpkCalendarGridPropTypes,
 };
@@ -142,6 +134,7 @@ BpkScrollableCalendarGridList.propTypes = {
 BpkScrollableCalendarGridList.defaultProps = {
   className: null,
   focusedDate: null,
+  selectedDate: null,
 };
 
 export default BpkScrollableCalendarGridList;
