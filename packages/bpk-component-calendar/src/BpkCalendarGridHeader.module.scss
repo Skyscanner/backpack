@@ -49,21 +49,5 @@
     &--weekend {
       font-weight: bold;
     }
-
-    &--weekend-start {
-      box-shadow: $shadow-bottom, $shadow-left;
-
-      @include bpk-rtl {
-        box-shadow: $shadow-bottom, $shadow-right;
-      }
-    }
-
-    &--weekend-end:not(:last-child) {
-      box-shadow: $shadow-bottom, $shadow-right;
-
-      @include bpk-rtl {
-        box-shadow: $shadow-bottom, $shadow-left;
-      }
-    }
   }
 }

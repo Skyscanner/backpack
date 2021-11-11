@@ -90,7 +90,6 @@ class BpkCalendarGrid extends Component {
       formatMonth,
       onDateClick,
       onDateKeyDown,
-      showWeekendSeparator,
       weekStartsOn,
       preventKeyboardFocus,
       isKeyboardFocusable,
@@ -109,23 +108,16 @@ class BpkCalendarGrid extends Component {
 
     const { calendarMonthWeeks, daysOfWeek } = this.state;
 
-    const classNames = [getClassName('bpk-calendar-grid')];
-    if (className) {
-      classNames.push(className);
-    }
+    const classNames = getClassName('bpk-calendar-grid', className);
 
     return (
-      <table
-        className={classNames.join(' ')}
-        aria-hidden={!isKeyboardFocusable}
-      >
+      <table className={classNames} aria-hidden={!isKeyboardFocusable}>
         <caption className={getClassName('bpk-calendar-grid__caption')} hidden>
           {formatMonth(month)}
         </caption>
         <BpkCalendarGridHeader
           isTableHead
           daysOfWeek={daysOfWeek}
-          showWeekendSeparator={showWeekendSeparator}
           weekStartsOn={weekStartsOn}
         />
         <tbody>
@@ -136,11 +128,9 @@ class BpkCalendarGrid extends Component {
               dates={dates}
               onDateClick={onDateClick}
               onDateKeyDown={onDateKeyDown}
-              showWeekendSeparator={showWeekendSeparator}
               formatDateFull={formatDateFull}
               DateComponent={DateComponent}
               dateModifiers={dateModifiers}
-              daysOfWeek={daysOfWeek}
               preventKeyboardFocus={preventKeyboardFocus}
               isKeyboardFocusable={isKeyboardFocusable}
               weekStartsOn={weekStartsOn}
@@ -191,7 +181,10 @@ export const propTypes = {
   ),
   selectionEnd: PropTypes.instanceOf(Date),
   selectionStart: PropTypes.instanceOf(Date),
-  showWeekendSeparator: PropTypes.bool,
+  showWeekendSeparator: deprecated(
+    PropTypes.bool,
+    'The showWeekendSeparator prop in BpkCalendarGrid is now deprecated as no longer part of the calendar, so is no longer required',
+  ),
   ignoreOutsideDate: PropTypes.bool,
   dateProps: PropTypes.object,
 };
@@ -214,7 +207,6 @@ BpkCalendarGrid.defaultProps = {
   selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
   selectionEnd: null,
   selectionStart: null,
-  showWeekendSeparator: true,
   ignoreOutsideDate: false,
   dateProps: null,
   cellClassName: null,

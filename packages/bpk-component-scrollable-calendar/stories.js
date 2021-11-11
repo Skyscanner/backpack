@@ -24,7 +24,6 @@ import {
   WithFocusedDate,
   TallContainer,
   SingleMonth,
-  NoWeekendSeparator,
   WeekStartsOnSunday,
   HonestWeekend,
   ArabicLocale,
@@ -43,7 +42,6 @@ storiesOf('bpk-component-scrollable-calendar', module)
   .add('Scrollable Calendar - with focused date', WithFocusedDate)
   .add('Scrollable Calendar in a tall container', TallContainer)
   .add('Scrollable Calendar with a single month', SingleMonth)
-  .add("Scrollable Calendar - Don't show weekend separator", NoWeekendSeparator)
   .add('Scrollable Calendar - Week starts on a Sunday', WeekStartsOnSunday)
   .add('Scrollable Calendar - Honest weekend', HonestWeekend)
   .add('Scrollable Calendar - ar-AE locale', ArabicLocale)

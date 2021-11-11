@@ -21,10 +21,7 @@
 
 .bpk-calendar-grid-transition {
   position: relative;
-  width: $calendar-width;
-  height: $calendar-height;
   overflow: hidden;
-  box-sizing: border-box;
 
   &__dummy {
     display: inline-block;
@@ -32,7 +29,6 @@
   }
 
   &__strip {
-    position: absolute;
     left: 0;
     display: block;
     z-index: 0;

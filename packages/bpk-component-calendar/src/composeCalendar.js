@@ -50,7 +50,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       preventKeyboardFocus,
       previousMonthLabel,
       selectionConfiguration,
-      showWeekendSeparator,
       weekStartsOn,
       fixedWidth,
       gridClassName,
@@ -104,7 +103,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
         {GridHeader && (
           <GridHeader
             daysOfWeek={daysOfWeek}
-            showWeekendSeparator={showWeekendSeparator}
             weekStartsOn={weekStartsOn}
             weekDayKey={weekDayKey}
             className={headerClasses.join(' ')}
@@ -121,7 +119,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
           onDateClick={onDateClick}
           onDateKeyDown={onDateKeyDown}
           preventKeyboardFocus={preventKeyboardFocus}
-          showWeekendSeparator={showWeekendSeparator}
           weekStartsOn={weekStartsOn}
           maxDate={maxDate}
           minDate={minDate}
@@ -166,7 +163,11 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       PropTypes.instanceOf(Date),
       'Use selectionConfiguration to set selectedDate',
     ),
-    showWeekendSeparator: PropTypes.bool,
+    // eslint-disable-next-line react/require-default-props
+    showWeekendSeparator: deprecated(
+      PropTypes.bool,
+      'The showWeekendSeparator prop in composeCalendar is now deprecated as no longer part of the calendar, so is no longer required',
+    ),
     gridClassName: PropTypes.string,
     weekDayKey: PropTypes.string,
     /* eslint-disable react/forbid-prop-types */
@@ -196,7 +197,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       date: null,
     },
     selectedDate: null,
-    showWeekendSeparator: true,
     gridClassName: null,
     weekDayKey: 'nameAbbr',
     navProps: null,

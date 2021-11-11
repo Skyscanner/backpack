@@ -106,7 +106,6 @@ const DefaultExample = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
-    showWeekendSeparator
     selectTodaysDate
     // Subtract one day from today's date to make today selectable by default
     minDate={DateUtils.addDays(new Date(), -1)}
@@ -121,7 +120,6 @@ const WeekStartsOnSix = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
-    showWeekendSeparator
     selectTodaysDate
     // Subtract one day from today's date to make today selectable by default
     minDate={DateUtils.addDays(new Date(), -1)}
@@ -136,7 +134,6 @@ const WithFocusedDate = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
-    showWeekendSeparator
     selectTodaysDate
     // Subtract one day from today's date to make today selectable by default
     minDate={DateUtils.addDays(new Date(), -1)}
@@ -153,7 +150,6 @@ const TallContainer = () => (
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       DateComponent={BpkScrollableCalendarDate}
-      showWeekendSeparator
       selectTodaysDate
       // Subtract one day from today's date to make today selectable by default
       minDate={DateUtils.addDays(new Date(), -1)}
@@ -170,7 +166,6 @@ const SingleMonth = () => (
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       DateComponent={BpkScrollableCalendarDate}
-      showWeekendSeparator
       selectTodaysDate
       // Subtract one day from today's date to make today selectable by default
       minDate={startOfMonth(new Date())}
@@ -195,7 +190,6 @@ const ScrollableCalendarGrid = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
-    showWeekendSeparator
   />
 );
 
@@ -208,21 +202,6 @@ const ScrollableCalendarGridList = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
-    showWeekendSeparator
-    selectTodaysDate
-    minDate={DateUtils.addDays(new Date(), -1)}
-    maxDate={DateUtils.addMonths(new Date(), 12)}
-  />
-);
-
-const NoWeekendSeparator = () => (
-  <ScrollableCal
-    id="myCalendar"
-    formatMonth={formatMonth}
-    formatDateFull={formatDateFull}
-    daysOfWeek={weekDays}
-    weekStartsOn={1}
-    showWeekendSeparator={false}
     selectTodaysDate
     minDate={DateUtils.addDays(new Date(), -1)}
     maxDate={DateUtils.addMonths(new Date(), 12)}
@@ -328,7 +307,6 @@ export {
   WithFocusedDate,
   TallContainer,
   SingleMonth,
-  NoWeekendSeparator,
   WeekStartsOnSunday,
   HonestWeekend,
   ArabicLocale,

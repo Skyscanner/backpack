@@ -20,3 +20,6 @@
           endDate: new Date() // or the value you passed to `selectionEnd`.
         }
      ```
+    - Added styles to support range logic.
+    - Updated calendar to Figma styles.
+    - `showWeekendSeparator` prop has now been deprecated as its no longer part of the calendar design so can be removed.

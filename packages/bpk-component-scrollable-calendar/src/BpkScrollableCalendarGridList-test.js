@@ -48,23 +48,6 @@ describe('BpkCalendarScrollGridList', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
-    const tree = render(
-      <BpkScrollableCalendarGridList
-        minDate={DateUtils.addDays(testDate, -1)}
-        maxDate={DateUtils.addMonths(testDate, 12)}
-        month={testDate}
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        DateComponent={BpkCalendarScrollDate}
-        daysOfWeek={weekDays}
-        weekStartsOn={0}
-        showWeekendSeparator={false}
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
   it('should render correctly with a different "weekStartsOn" attribute', () => {
     const tree = render(
       <BpkScrollableCalendarGridList
@@ -76,7 +59,6 @@ describe('BpkCalendarScrollGridList', () => {
         DateComponent={BpkCalendarScrollDate}
         daysOfWeek={weekDays}
         weekStartsOn={3}
-        showWeekendSeparator
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
@@ -97,7 +79,6 @@ describe('BpkCalendarScrollGridList', () => {
         daysOfWeek={weekDays}
         weekStartsOn={1}
         dateModifiers={modifiers}
-        showWeekendSeparator
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
@@ -130,7 +111,6 @@ describe('BpkCalendarScrollGridList', () => {
         DateComponent={MyCustomDate}
         daysOfWeek={weekDays}
         weekStartsOn={1}
-        showWeekendSeparator
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();

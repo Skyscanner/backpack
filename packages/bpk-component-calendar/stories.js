@@ -25,7 +25,6 @@ import {
   CalendarGridExample,
   CalendarGridAndHeaderExample,
   MinDateInThePastExample,
-  NoWeekendSeparatorExample,
   WeekStartsOnSundayExample,
   HonestWeekendExample,
   WeekdayKeyIsNameNarrow,
@@ -52,7 +51,6 @@ storiesOf('bpk-component-calendar', module)
     'Calendar - min date in the past, focusing today',
     MinDateInThePastExample,
   )
-  .add("Calendar - Don't show weekend separator", NoWeekendSeparatorExample)
   .add('Calendar - Week starts on a Sunday', WeekStartsOnSundayExample)
   .add('Calendar - Honest weekend', HonestWeekendExample)
   .add('Calendar - weekDayKey is nameNarrow', WeekdayKeyIsNameNarrow)
@@ -69,4 +67,4 @@ storiesOf('bpk-component-calendar', module)
   .add('Custom colours', CustomColors)
   .add('Week', WeekExample)
   .add('Visual test', FocusedDateInThePastExample)
-  .add('Range calendar', RangeDateCalendar);
+  .add('Visual test range', RangeDateCalendar);

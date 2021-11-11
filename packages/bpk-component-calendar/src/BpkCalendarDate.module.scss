@@ -104,6 +104,23 @@
     );
   }
 
+  &--middle {
+    background-color: $bpk-color-sky-blue-tint-03;
+    color: $bpk-color-sky-gray;
+  }
+
+  &--single {
+    background-color: $bpk-color-sky-blue;
+  }
+
+  &--start {
+    background-color: $bpk-color-sky-blue;
+  }
+
+  &--end {
+    background-color: $bpk-color-sky-blue;
+  }
+
   &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
     &:not(.bpk-calendar-date--colored) {
       box-shadow: 0 0 0 2px $bpk-calendar-day-focused-border-color inset;

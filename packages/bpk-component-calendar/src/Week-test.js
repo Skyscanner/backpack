@@ -21,7 +21,6 @@ import { shallow } from 'enzyme/build';
 import startOfDay from 'date-fns/startOfDay';
 import parse from 'date-fns/parse';
 
-import { weekDays } from '../test-utils';
 import { CALENDAR_SELECTION_TYPE } from '..';
 
 import Week from './Week';
@@ -41,10 +40,8 @@ const initialProps = {
     new Date(1980, 5, 15),
     new Date(1980, 5, 16),
   ].map(startOfDay),
-  daysOfWeek: weekDays,
   formatDateFull: d => d.toString(),
   preventKeyboardFocus: false,
-  showWeekendSeparator: true,
   markToday: true,
   markOutsideDays: true,
   isKeyboardFocusable: true,
@@ -65,7 +62,7 @@ describe('Week', () => {
     expect(
       week.shouldComponentUpdate({
         ...initialProps,
-        showWeekendSeparator: false,
+        markOutsideDays: false,
       }),
     ).toBe(true);
   });
