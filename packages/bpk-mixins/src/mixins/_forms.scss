@@ -486,13 +486,13 @@ $bpk-spacing-v2: true;
 @mixin bpk-checkbox {
   position: relative;
   display: inline-block;
-  padding-left: bpk-spacing-sm() * 7;
+  padding-left: bpk-spacing-lg() + bpk-spacing-sm();
 
   @include bpk-text;
   @include bpk-text--base;
 
   @include bpk-rtl {
-    padding-right: $bpk-spacing-base;
+    padding-right: bpk-spacing-lg() + bpk-spacing-sm();
     padding-left: 0;
   }
 }
@@ -685,10 +685,10 @@ $bpk-spacing-v2: true;
 @mixin bpk-radio {
   position: relative;
   display: inline-block;
-  padding-left: bpk-spacing-lg();
+  padding-left: bpk-spacing-lg() + bpk-spacing-sm();
 
   @include bpk-rtl {
-    padding-right: bpk-spacing-lg();
+    padding-right: bpk-spacing-lg() + bpk-spacing-sm();
     padding-left: 0;
   }
 }
