@@ -20,6 +20,7 @@
 @import 'variables';
 
 .bpk-calendar-grid {
+  width: 100%;
   border-collapse: separate;
   border-spacing: 0;
 
@@ -33,7 +34,7 @@
   }
 
   &__date {
-    width: $bpk-spacing-xxl;
+    width: 100%;
     padding: 0 ($bpk-calendar-day-spacing / 2);
     text-align: center;
     vertical-align: middle;

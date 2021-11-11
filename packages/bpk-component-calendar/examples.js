@@ -78,7 +78,7 @@ const CalendarGridExample = () => (
 );
 
 const CalendarGridAndHeaderExample = () => (
-  <div style={{ display: 'flex', flexDirection: 'column' }}>
+  <div>
     <CalendarGridHeaderExample />
     <CalendarGridExample />
   </div>
