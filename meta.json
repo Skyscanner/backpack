@@ -8,6 +8,9 @@
     },
     {
       "npm": "marianeumayer-skyscanner"
+    },
+    {
+      "npm": "zgeor"
     }
   ]
 }
