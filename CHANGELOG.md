@@ -1,3 +1,19 @@
+# 2021-11-12
+
+**Breaking:**
+
+- bpk-component-phone-input: 6.0.5 => 7.0.0
+  - Added margins to labels in the phone-input component.
+  - Added space vertically between dialing code and phone number when wrapped.
+- bpk-component-datatable: 3.0.16 => 4.0.0
+  - Updated the datatable component to use the new spacing grid.
+  
+**Fixed:**
+
+- bpk-component-blockquote: 3.0.14 => 3.0.15
+  - Updated the blockquote component to use the new spacing grid.
+
+
 # 2021-11-11
 
 **Updated:**
