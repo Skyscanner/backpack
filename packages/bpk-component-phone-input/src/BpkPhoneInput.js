@@ -139,7 +139,11 @@ const BpkPhoneInput = (props: Props) => {
       className={getClassName('bpk-phone-input', wrapperProps.className)}
     >
       <div>
-        <BpkLabel htmlFor={dialingCodeProps.id} disabled={disabled}>
+        <BpkLabel
+          htmlFor={dialingCodeProps.id}
+          disabled={disabled}
+          className={getClassName('bpk-phone-input__label')}
+        >
           {dialingCodeProps.label}
         </BpkLabel>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
@@ -160,7 +164,11 @@ const BpkPhoneInput = (props: Props) => {
         </BpkSelect>
       </div>
       <div className={getClassName('bpk-phone-input__phone-number')}>
-        <BpkLabel htmlFor={id} disabled={disabled}>
+        <BpkLabel
+          htmlFor={id}
+          disabled={disabled}
+          className={getClassName('bpk-phone-input__label')}
+        >
           {label}
         </BpkLabel>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
