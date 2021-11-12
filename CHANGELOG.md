@@ -1,3 +1,96 @@
+# 2021-11-11
+
+**Updated:**
+
+- bpk-animate-height: 4.0.13 => 4.0.14
+- bpk-component-accordion: 3.0.15 => 3.0.16
+- bpk-component-aria-live: 2.0.24 => 2.0.25
+- bpk-component-autosuggest: 6.0.22 => 6.0.23
+- bpk-component-badge: 3.0.15 => 3.0.16
+- bpk-component-banner-alert: 5.0.23 => 5.0.24
+- bpk-component-barchart: 4.1.0 => 4.1.1
+- bpk-component-blockquote: 3.0.13 => 3.0.14
+- bpk-component-boilerplate: 1.0.13 => 1.0.14 (private)
+- bpk-component-breadcrumb: 3.0.16 => 3.0.17
+- bpk-component-breakpoint: 3.0.14 => 3.0.15
+- bpk-component-button: 5.0.12 => 5.0.13
+- bpk-component-calendar: 9.0.22 => 9.0.23
+- bpk-component-card: 4.0.1 => 4.0.2
+- bpk-component-checkbox: 3.0.15 => 3.0.16
+- bpk-component-chip: 5.1.6 => 5.1.7
+- bpk-component-close-button: 3.0.15 => 3.0.16
+- bpk-component-code: 3.0.13 => 3.0.14
+- bpk-component-content-container: 3.0.13 => 3.0.14
+- bpk-component-datatable: 3.0.15 => 3.0.16
+- bpk-component-datepicker: 13.0.21 => 13.0.22
+- bpk-component-description-list: 3.0.13 => 3.0.14
+- bpk-component-dialog: 4.0.15 => 4.0.16
+- bpk-component-drawer: 4.0.17 => 4.0.18
+- bpk-component-fieldset: 4.0.0 => 4.0.1
+- bpk-component-flare: 2.0.15 => 2.0.16
+- bpk-component-form-validation: 4.0.21 => 4.0.22
+- bpk-component-grid-toggle: 3.0.13 => 3.0.14
+- bpk-component-grid: 3.0.13 => 3.0.14
+- bpk-component-heading: 4.0.13 => 4.0.14
+- bpk-component-horizontal-nav: 5.0.5 => 5.0.6
+- bpk-component-image: 5.0.16 => 5.0.17
+- bpk-component-infinite-scroll: 4.0.13 => 4.0.14
+- bpk-component-input: 6.0.23 => 6.0.24
+- bpk-component-label: 5.0.13 => 5.0.14
+- bpk-component-link: 3.0.13 => 3.0.14
+- bpk-component-list: 3.0.13 => 3.0.14
+- bpk-component-loading-button: 4.0.15 => 4.0.16
+- bpk-component-map: 5.1.3 => 5.1.4
+- bpk-component-mobile-scroll-container: 3.0.14 => 3.0.15
+- bpk-component-modal: 3.0.16 => 3.0.17
+- bpk-component-navigation-bar: 3.0.16 => 3.0.17
+- bpk-component-navigation-stack: 3.0.16 => 3.0.17
+- bpk-component-nudger: 4.0.13 => 4.0.14
+- bpk-component-overlay: 2.0.16 => 2.0.17
+- bpk-component-pagination: 3.0.15 => 3.0.16
+- bpk-component-panel: 3.0.13 => 3.0.14
+- bpk-component-paragraph: 3.0.13 => 3.0.14
+- bpk-component-phone-input: 6.0.4 => 6.0.5
+- bpk-component-popover: 4.0.21 => 4.0.22
+- bpk-component-progress: 3.0.13 => 3.0.14
+- bpk-component-radio: 3.0.13 => 3.0.14
+- bpk-component-rating: 3.0.16 => 3.0.17
+- bpk-component-rtl-toggle: 3.0.13 => 3.0.14
+- bpk-component-scrollable-calendar: 4.0.23 => 4.0.24
+- bpk-component-section-list: 3.1.8 => 3.1.9
+- bpk-component-select: 5.0.9 => 5.0.10
+- bpk-component-skip-link: 2.0.13 => 2.0.14
+- bpk-component-slider: 3.0.15 => 3.0.16
+- bpk-component-spinner: 5.0.7 => 5.0.8
+- bpk-component-star-rating: 3.0.15 => 3.0.16
+- bpk-component-switch: 2.0.14 => 2.0.15
+- bpk-component-table: 3.0.13 => 3.0.14
+- bpk-component-text: 4.0.15 => 4.0.16
+- bpk-component-textarea: 4.0.3 => 4.0.4
+- bpk-component-theme-toggle: 3.0.14 => 3.0.15
+- bpk-component-ticket: 4.0.15 => 4.0.16
+- bpk-component-tooltip: 6.0.16 => 6.0.17
+- bpk-mixins: 24.0.1 => 24.0.2
+- bpk-scrim-utils: 5.0.13 => 5.0.14
+- bpk-storybook-utils: 1.0.13 => 1.0.14
+- bpk-stylesheets: 7.1.7 => 7.1.8
+
+**Added:**
+
+- bpk-component-icon: 9.0.15 => 9.1.0
+  - Added self-service pick-up icon via bpk-svgs
+
+**Fixed:**
+
+- bpk-mixins@24.0.2
+- bpk-component-radio@3.0.14
+  - Fixed text alignment to checkbox to match correct spacing in Figma.
+
+- bpk-mixins@24.0.2
+- bpk-component-checkbox@3.0.16
+  - Improved spacing tokens used to aid readability.
+  - Fix `rtl` spacing for checkbox that was previously missed in PR #2219
+
 # 2021-11-01
 
 **Changed:**
