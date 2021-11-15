@@ -1,3 +1,36 @@
+# 2021-11-15
+
+**Breaking:**
+
+- bpk-component-calendar: 9.0.24 => 10.0.0
+- bpk-component-datepicker: 13.0.23 => 14.0.0
+- bpk-component-scrollable-calendar: 4.0.25 => 5.0.0
+  - Added range support to BpkCalendar
+    - Added new `selectionConfiguration` property to Backpack calendar to allow for range support.
+    - `selectedDate` has been deprecated in favour of `selectionConfiguration`. instead of passing `selectedDate` you would now provide the following
+     ```js
+        selectedConfiguration: {
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date() // or the value you passed to `selectedDate`.
+        }
+      ```
+    - `selectionStart` and `selectionEnd` has been deprecated in favour of `selectionConfiguration`. instead of passing `selectionStart` and `selectionEnd` you would now provide the following
+     ```js
+        selectedConfiguration: {
+          type: CALENDAR_SELECTION_TYPE.range,
+          startDate: new Date() // or the value you passed to `selectionStart`.
+          endDate: new Date() // or the value you passed to `selectionEnd`.
+        }
+     ```
+    - Added styles to support range logic.
+    - Updated calendar to Figma styles.
+    - `showWeekendSeparator` prop has now been deprecated as its no longer part of the calendar design so can be removed.
+
+**Fixed:**
+
+- bpk-component-scrollable-calendar: 4.0.25 => 5.0.0
+  - Fixed a reintroduced functionality of auto scrolling the calendar when a date is clicked, when the library was changed from `react-window` to `react-virtualized` 
+
 # 2021-11-12
 
 **Breaking:**
