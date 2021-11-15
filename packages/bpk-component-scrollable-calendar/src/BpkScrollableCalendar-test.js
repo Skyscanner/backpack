@@ -38,10 +38,30 @@ describe('BpkScrollableCalendar', () => {
         daysOfWeek={weekDays}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
-        showWeekendSeparator
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render ranges correctly', () => {
+    const tree = shallow(
+      <BpkScrollableCalendar
+        id={id}
+        weekStartsOn={1}
+        daysOfWeek={weekDays}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        // Subtract one day from today's date to make today selectable by default
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        selectionConfiguration={{
+          type: 'range',
+          startDate: testDate,
+          endDate: DateUtils.addDays(testDate, +5),
+        }}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
@@ -55,7 +75,6 @@ describe('BpkScrollableCalendar', () => {
         daysOfWeek={weekDays}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
-        showWeekendSeparator
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -73,7 +92,6 @@ describe('BpkScrollableCalendar', () => {
         daysOfWeek={weekDays}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
-        showWeekendSeparator
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}

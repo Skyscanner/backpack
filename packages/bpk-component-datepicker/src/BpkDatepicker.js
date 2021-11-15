@@ -19,11 +19,15 @@
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 import BpkModal from 'bpk-component-modal';
 import BpkPopover from 'bpk-component-popover';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
-import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
+import BpkCalendar, {
+  CustomPropTypes,
+  CALENDAR_SELECTION_TYPE,
+  DateUtils,
+} from 'bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.module.scss';
 
@@ -70,10 +74,88 @@ class BpkDatepicker extends Component {
     }
   };
 
-  handleDateSelect = dateObj => {
+  /**
+   * Gets the correct label for the input field to be supplied to the aria-label
+   * @param {Object} selectionConfiguration current selection configuration
+   * @param {Function} formatDateFull function supplied to format date
+   * @returns {String} date string
+   */
+  getLabel = (selectionConfiguration, formatDateFull) => {
+    if (
+      selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
+      selectionConfiguration.date
+    ) {
+      return formatDateFull(selectionConfiguration.date);
+    }
+    if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range) {
+      if (selectionConfiguration.startDate && !selectionConfiguration.endDate) {
+        return formatDateFull(selectionConfiguration.startDate);
+      }
+      if (selectionConfiguration.startDate && selectionConfiguration.endDate) {
+        return `${formatDateFull(
+          selectionConfiguration.startDate,
+        )} - ${formatDateFull(selectionConfiguration.endDate)}`;
+      }
+    }
+    return '';
+  };
+
+  /**
+   * Gets the correct value for the input field
+   * @param {Object} selectionConfiguration current selection configuration
+   * @param {Function} formatDate function supplied to format date
+   * @returns {String} date value
+   */
+  getValue = (selectionConfiguration, formatDate) => {
+    if (
+      selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
+      selectionConfiguration.date
+    ) {
+      return formatDate(selectionConfiguration.date);
+    }
+    if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range) {
+      if (selectionConfiguration.startDate && !selectionConfiguration.endDate) {
+        return formatDate(selectionConfiguration.startDate);
+      }
+      if (selectionConfiguration.startDate && selectionConfiguration.endDate) {
+        return `${formatDate(selectionConfiguration.startDate)} - ${formatDate(
+          selectionConfiguration.endDate,
+        )}`;
+      }
+    }
+    return '';
+  };
+
+  handleDateSelect = (startDate, endDate = null) => {
+    const {
+      onDateSelect,
+      selectionConfiguration,
+      minDate,
+      maxDate,
+    } = this.props;
     this.onClose();
-    if (this.props.onDateSelect) {
-      this.props.onDateSelect(dateObj);
+    if (onDateSelect) {
+      const newStartDate = DateUtils.dateToBoundaries(
+        startDate,
+        DateUtils.startOfDay(minDate),
+        DateUtils.startOfDay(maxDate),
+      );
+      const newEndDate = DateUtils.dateToBoundaries(
+        endDate,
+        DateUtils.startOfDay(minDate),
+        DateUtils.startOfDay(maxDate),
+      );
+      if (
+        selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
+        selectionConfiguration.startDate &&
+        !selectionConfiguration.endDate &&
+        (DateUtils.isAfter(newEndDate, selectionConfiguration.startDate) ||
+          DateUtils.isSameDay(newEndDate, selectionConfiguration.startDate))
+      ) {
+        onDateSelect(selectionConfiguration.startDate, newEndDate);
+      } else {
+        onDateSelect(newStartDate);
+      }
     }
   };
 
@@ -82,7 +164,6 @@ class BpkDatepicker extends Component {
       changeMonthLabel,
       calendarComponent: Calendar,
       closeButtonText,
-      date,
       dateModifiers,
       daysOfWeek,
       formatDate,
@@ -98,7 +179,7 @@ class BpkDatepicker extends Component {
       nextMonthLabel,
       onMonthChange,
       previousMonthLabel,
-      showWeekendSeparator,
+      selectionConfiguration,
       title,
       weekStartsOn,
       initiallyFocusedDate,
@@ -106,8 +187,6 @@ class BpkDatepicker extends Component {
       valid,
       ...rest
     } = this.props;
-
-    const dateLabel = date ? formatDateFull(date) : '';
 
     // The following props are not used in render
     delete rest.onDateSelect;
@@ -118,11 +197,11 @@ class BpkDatepicker extends Component {
       <Input
         id={id}
         name={`${id}_input`}
-        value={date ? formatDate(date) : ''}
+        value={this.getValue(selectionConfiguration, formatDate)}
         className={getClassName('bpk-datepicker__input')}
         aria-live="assertive"
         aria-atomic="true"
-        aria-label={dateLabel}
+        aria-label={this.getLabel(selectionConfiguration, formatDateFull)}
         onChange={() => null}
         onOpen={this.onOpen}
         isOpen={this.state.isOpen}
@@ -135,7 +214,6 @@ class BpkDatepicker extends Component {
       id: `${id}-calendar`,
       className: getClassName('bpk-datepicker__calendar'),
       changeMonthLabel,
-      date,
       dateModifiers,
       daysOfWeek,
       formatDateFull,
@@ -148,9 +226,9 @@ class BpkDatepicker extends Component {
       onDateSelect: this.handleDateSelect,
       onMonthChange,
       previousMonthLabel,
-      showWeekendSeparator,
       weekStartsOn,
       initiallyFocusedDate,
+      selectionConfiguration,
     };
 
     const calendar = <Calendar {...calendarProps} />;
@@ -208,7 +286,10 @@ BpkDatepicker.propTypes = {
   weekStartsOn: PropTypes.number.isRequired,
   // Optional
   calendarComponent: PropTypes.elementType,
-  date: PropTypes.instanceOf(Date),
+  date: deprecated(
+    PropTypes.instanceOf(Date),
+    'Use selectionConfiguration to set date',
+  ),
   dateModifiers: CustomPropTypes.DateModifiers,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
@@ -218,7 +299,12 @@ BpkDatepicker.propTypes = {
   onDateSelect: PropTypes.func,
   onOpenChange: PropTypes.func,
   onMonthChange: PropTypes.func,
-  showWeekendSeparator: PropTypes.bool,
+  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
+  // eslint-disable-next-line react/require-default-props
+  showWeekendSeparator: deprecated(
+    PropTypes.bool,
+    'The showWeekendSeparator prop in Week is now deprecated as no longer part of the calendar, so is no longer required',
+  ),
   initiallyFocusedDate: PropTypes.instanceOf(Date),
   renderTarget: PropTypes.func,
   isOpen: PropTypes.bool,
@@ -239,7 +325,7 @@ BpkDatepicker.defaultProps = {
   onOpenChange: null,
   onMonthChange: null,
   previousMonthLabel: null,
-  showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
+  selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
   initiallyFocusedDate: null,
   renderTarget: null,
   isOpen: false,

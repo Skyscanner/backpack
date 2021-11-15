@@ -24,6 +24,7 @@ import {
   formatDateFull,
 } from 'bpk-component-calendar/test-utils';
 import { format } from 'bpk-component-calendar/src/date-utils';
+import { CALENDAR_SELECTION_TYPE } from 'bpk-component-calendar';
 import { axe } from 'jest-axe';
 
 jest.mock(
@@ -64,7 +65,37 @@ describe('BpkDatepicker accessibility tests', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        date={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues when used in range configuration', async () => {
+    const { container } = render(
+      <BpkDatepicker
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        weekStartsOn={1}
+        getApplicationElement={() => document.createElement('div')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        inputProps={inputProps}
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.range,
+          startDate: new Date(2010, 1, 17),
+          endDate: new Date(2020, 1, 20),
+        }}
       />,
     );
     const results = await axe(container);

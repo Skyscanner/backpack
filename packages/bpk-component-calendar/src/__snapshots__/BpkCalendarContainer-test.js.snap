@@ -143,7 +143,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           </span>
         </li>
         <li
-          class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
+          class="bpk-calendar-header__weekday"
           title="Saturday"
         >
           <span>
@@ -151,7 +151,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           </span>
         </li>
         <li
-          class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
+          class="bpk-calendar-header__weekday"
           title="Sunday"
         >
           <span>
@@ -228,7 +228,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                 </span>
               </th>
               <th
-                class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
+                class="bpk-calendar-header__weekday"
                 title="Saturday"
               >
                 <span>
@@ -236,7 +236,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                 </span>
               </th>
               <th
-                class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
+                class="bpk-calendar-header__weekday"
                 title="Sunday"
               >
                 <span>
@@ -251,7 +251,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -271,7 +271,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -291,7 +291,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -311,7 +311,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -331,7 +331,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -351,7 +351,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -371,7 +371,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -395,7 +395,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -415,7 +415,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -435,7 +435,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -455,7 +455,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -475,7 +475,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -495,7 +495,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -515,7 +515,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -539,7 +539,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -558,7 +558,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -577,7 +577,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -596,7 +596,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -615,7 +615,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -634,7 +634,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -653,7 +653,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -676,7 +676,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -695,7 +695,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -714,7 +714,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -733,7 +733,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -752,7 +752,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -771,7 +771,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -790,7 +790,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -813,7 +813,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -832,7 +832,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -851,7 +851,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -870,7 +870,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -889,7 +889,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -908,7 +908,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -927,7 +927,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -950,7 +950,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -969,7 +969,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -988,7 +988,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1007,7 +1007,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1026,7 +1026,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1045,7 +1045,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1064,7 +1064,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1142,7 +1142,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                 </span>
               </th>
               <th
-                class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
+                class="bpk-calendar-header__weekday"
                 title="Saturday"
               >
                 <span>
@@ -1150,7 +1150,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                 </span>
               </th>
               <th
-                class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
+                class="bpk-calendar-header__weekday"
                 title="Sunday"
               >
                 <span>
@@ -1165,7 +1165,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1184,7 +1184,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1203,7 +1203,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1222,7 +1222,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1241,7 +1241,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1260,7 +1260,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1279,7 +1279,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1302,7 +1302,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1321,7 +1321,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1340,7 +1340,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1359,7 +1359,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1378,7 +1378,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1397,7 +1397,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1416,7 +1416,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1439,7 +1439,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -1458,7 +1458,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1478,7 +1478,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1498,7 +1498,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1518,7 +1518,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1538,7 +1538,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1558,7 +1558,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1582,7 +1582,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1602,7 +1602,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1622,7 +1622,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1642,7 +1642,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1662,7 +1662,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1682,7 +1682,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1702,7 +1702,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1726,7 +1726,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1746,7 +1746,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1766,7 +1766,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1786,7 +1786,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1806,7 +1806,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1826,7 +1826,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1846,7 +1846,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1870,7 +1870,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1890,7 +1890,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1910,7 +1910,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1930,7 +1930,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1950,7 +1950,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1970,7 +1970,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -1990,7 +1990,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2160,7 +2160,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           </span>
         </li>
         <li
-          class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
+          class="bpk-calendar-header__weekday"
           title="Saturday"
         >
           <span>
@@ -2168,7 +2168,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           </span>
         </li>
         <li
-          class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
+          class="bpk-calendar-header__weekday"
           title="Sunday"
         >
           <span>
@@ -2245,7 +2245,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 </span>
               </th>
               <th
-                class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
+                class="bpk-calendar-header__weekday"
                 title="Saturday"
               >
                 <span>
@@ -2253,7 +2253,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 </span>
               </th>
               <th
-                class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
+                class="bpk-calendar-header__weekday"
                 title="Sunday"
               >
                 <span>
@@ -2268,7 +2268,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2288,7 +2288,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2308,7 +2308,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2328,7 +2328,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2348,7 +2348,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2368,7 +2368,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2388,7 +2388,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2412,7 +2412,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2432,7 +2432,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2452,7 +2452,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2472,7 +2472,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2492,7 +2492,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2512,7 +2512,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2532,7 +2532,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -2556,7 +2556,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2575,7 +2575,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2594,7 +2594,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2613,7 +2613,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2632,7 +2632,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2651,7 +2651,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2670,7 +2670,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2693,7 +2693,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2712,7 +2712,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2731,7 +2731,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2750,7 +2750,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2769,7 +2769,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2788,7 +2788,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2807,7 +2807,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2830,7 +2830,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2849,7 +2849,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2868,7 +2868,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2887,7 +2887,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2906,7 +2906,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2925,7 +2925,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2944,7 +2944,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2967,7 +2967,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -2986,7 +2986,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3005,7 +3005,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3024,7 +3024,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3043,7 +3043,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3062,7 +3062,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3081,7 +3081,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3159,7 +3159,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 </span>
               </th>
               <th
-                class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
+                class="bpk-calendar-header__weekday"
                 title="Saturday"
               >
                 <span>
@@ -3167,7 +3167,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 </span>
               </th>
               <th
-                class="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
+                class="bpk-calendar-header__weekday"
                 title="Sunday"
               >
                 <span>
@@ -3182,7 +3182,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3201,7 +3201,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3220,7 +3220,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3239,7 +3239,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3258,7 +3258,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3277,7 +3277,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3296,7 +3296,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3319,7 +3319,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3338,7 +3338,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3357,7 +3357,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3376,7 +3376,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3395,7 +3395,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3414,7 +3414,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3433,7 +3433,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3456,7 +3456,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="false"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="false"
@@ -3475,7 +3475,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3495,7 +3495,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3515,7 +3515,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3535,7 +3535,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3555,7 +3555,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3575,7 +3575,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3599,7 +3599,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3619,7 +3619,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3639,7 +3639,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3659,7 +3659,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3679,7 +3679,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3699,7 +3699,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3719,7 +3719,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3743,7 +3743,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3763,7 +3763,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3783,7 +3783,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3803,7 +3803,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3823,7 +3823,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3843,7 +3843,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3863,7 +3863,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3887,7 +3887,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3907,7 +3907,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3927,7 +3927,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3947,7 +3947,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3967,7 +3967,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -3987,7 +3987,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"
@@ -4007,7 +4007,2024 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </td>
               <td
                 aria-hidden="true"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Sunday, 11th April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    11
+                  </span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar bpk-calendar--fixed"
+  >
+    <div
+      class="bpk-calendar-nav"
+    >
+      <div
+        class="bpk-calendar-nav__nudger"
+      >
+        <button
+          class="bpk-calendar-nav__button"
+          disabled=""
+          id="myCalendar__bpk_calendar_nav_month_nudger_previous"
+          type="button"
+        >
+          <svg
+            class="bpk-calendar-nav__icon"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251z"
+            />
+          </svg>
+          <span
+            class="bpk-calendar-nav__text--hidden"
+          >
+            Go to previous month
+          </span>
+        </button>
+      </div>
+      <div
+        class="bpk-calendar-nav__month"
+      >
+        <label
+          class="bpk-calendar-nav__text--hidden"
+          for="myCalendar__bpk_calendar_nav_select"
+        >
+          Change month
+        </label>
+        <select
+          aria-invalid="false"
+          class="bpk-select"
+          id="myCalendar__bpk_calendar_nav_select"
+          name="months"
+        >
+          <option
+            value="2010-02"
+          >
+            February 2010
+          </option>
+          <option
+            value="2010-03"
+          >
+            March 2010
+          </option>
+        </select>
+      </div>
+      <div
+        class="bpk-calendar-nav__nudger"
+      >
+        <button
+          class="bpk-calendar-nav__button"
+          id="myCalendar__bpk_calendar_nav_month_nudger_next"
+          type="button"
+        >
+          <svg
+            class="bpk-calendar-nav__icon"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
+            />
+          </svg>
+          <span
+            class="bpk-calendar-nav__text--hidden"
+          >
+            Go to next month
+          </span>
+        </button>
+      </div>
+      <div
+        aria-live="polite"
+        class="bpk-aria-live bpk-aria-live--invisible"
+      >
+        February 2010
+      </div>
+    </div>
+    <header
+      aria-hidden="true"
+      class="bpk-calendar-header bpk-calendar__header"
+    >
+      <ol
+        class="bpk-calendar-header__week"
+      >
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Monday"
+        >
+          <span>
+            Mon
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Tuesday"
+        >
+          <span>
+            Tue
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Wednesday"
+        >
+          <span>
+            Wed
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Thursday"
+        >
+          <span>
+            Thu
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Friday"
+        >
+          <span>
+            Fri
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Saturday"
+        >
+          <span>
+            Sat
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Sunday"
+        >
+          <span>
+            Sun
+          </span>
+        </li>
+      </ol>
+    </header>
+    <div
+      class="bpk-calendar-grid-transition"
+    >
+      <div
+        class="bpk-calendar-grid-transition__strip"
+        style="transform: translateX(-18.375rem);"
+      >
+        <div
+          class="bpk-calendar-grid-transition__dummy"
+        />
+        <table
+          aria-hidden="false"
+          class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+        >
+          <caption
+            class="bpk-calendar-grid__caption"
+            hidden=""
+          >
+            February 2010
+          </caption>
+          <thead
+            aria-hidden="true"
+            class="bpk-calendar-header bpk-calendar-header--table-head"
+          >
+            <tr
+              class="bpk-calendar-header__week"
+            >
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Monday"
+              >
+                <span>
+                  Mon
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Tuesday"
+              >
+                <span>
+                  Tue
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Wednesday"
+              >
+                <span>
+                  Wed
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Thursday"
+              >
+                <span>
+                  Thu
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Friday"
+              >
+                <span>
+                  Fri
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Saturday"
+              >
+                <span>
+                  Sat
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Sunday"
+              >
+                <span>
+                  Sun
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Monday, 1st February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    1
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Tuesday, 2nd February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    2
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Wednesday, 3rd February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    3
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Thursday, 4th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    4
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Friday, 5th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    5
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Saturday, 6th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    6
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Sunday, 7th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    7
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Monday, 8th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    8
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Tuesday, 9th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    9
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Wednesday, 10th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    10
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Thursday, 11th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    11
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Friday, 12th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    12
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Saturday, 13th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    13
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Sunday, 14th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    14
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Monday, 15th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    15
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--start"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Tuesday, 16th February 2010"
+                  aria-pressed="true"
+                  class="bpk-calendar-date bpk-calendar-date--focused bpk-calendar-date--selected bpk-calendar-date--start"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    16
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--middle"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Wednesday, 17th February 2010"
+                  aria-pressed="true"
+                  class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    17
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--middle"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Thursday, 18th February 2010"
+                  aria-pressed="true"
+                  class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    18
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--middle"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Friday, 19th February 2010"
+                  aria-pressed="true"
+                  class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    19
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--end"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Saturday, 20th February 2010"
+                  aria-pressed="true"
+                  class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--end"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    20
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Sunday, 21st February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    21
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Monday, 22nd February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    22
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Tuesday, 23rd February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    23
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Wednesday, 24th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    24
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Thursday, 25th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    25
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Friday, 26th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    26
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Saturday, 27th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    27
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Sunday, 28th February 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    28
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Monday, 1st March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    1
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Tuesday, 2nd March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    2
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Wednesday, 3rd March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    3
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Thursday, 4th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    4
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Friday, 5th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    5
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Saturday, 6th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    6
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Sunday, 7th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    7
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Monday, 8th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    8
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Tuesday, 9th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    9
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Wednesday, 10th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    10
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Thursday, 11th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    11
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Friday, 12th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    12
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Saturday, 13th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    13
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Sunday, 14th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--outside"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    14
+                  </span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table
+          aria-hidden="true"
+          class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+        >
+          <caption
+            class="bpk-calendar-grid__caption"
+            hidden=""
+          >
+            March 2010
+          </caption>
+          <thead
+            aria-hidden="true"
+            class="bpk-calendar-header bpk-calendar-header--table-head"
+          >
+            <tr
+              class="bpk-calendar-header__week"
+            >
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Monday"
+              >
+                <span>
+                  Mon
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Tuesday"
+              >
+                <span>
+                  Tue
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Wednesday"
+              >
+                <span>
+                  Wed
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Thursday"
+              >
+                <span>
+                  Thu
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Friday"
+              >
+                <span>
+                  Fri
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Saturday"
+              >
+                <span>
+                  Sat
+                </span>
+              </th>
+              <th
+                class="bpk-calendar-header__weekday"
+                title="Sunday"
+              >
+                <span>
+                  Sun
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Monday, 1st March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    1
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Tuesday, 2nd March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    2
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Wednesday, 3rd March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    3
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Thursday, 4th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    4
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Friday, 5th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    5
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Saturday, 6th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    6
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Sunday, 7th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    7
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Monday, 8th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    8
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Tuesday, 9th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    9
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Wednesday, 10th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    10
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Thursday, 11th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    11
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Friday, 12th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    12
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Saturday, 13th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    13
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Sunday, 14th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    14
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="false"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="false"
+                  aria-label="Monday, 15th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--focused"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    15
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Tuesday, 16th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    16
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Wednesday, 17th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    17
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Thursday, 18th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    18
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Friday, 19th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    19
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Saturday, 20th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    20
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Sunday, 21st March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    21
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Monday, 22nd March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    22
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Tuesday, 23rd March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    23
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Wednesday, 24th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    24
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Thursday, 25th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    25
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Friday, 26th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    26
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Saturday, 27th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    27
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Sunday, 28th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    28
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Monday, 29th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    29
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Tuesday, 30th March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    30
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Wednesday, 31st March 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    31
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Thursday, 1st April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    1
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Friday, 2nd April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    2
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Saturday, 3rd April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    3
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Sunday, 4th April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    4
+                  </span>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="bpk-calendar-grid__week"
+            >
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Monday, 5th April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    5
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Tuesday, 6th April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    6
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Wednesday, 7th April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    7
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Thursday, 8th April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    8
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Friday, 9th April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    9
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+              >
+                <button
+                  aria-hidden="true"
+                  aria-label="Saturday, 10th April 2010"
+                  aria-pressed="false"
+                  class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    10
+                  </span>
+                </button>
+              </td>
+              <td
+                aria-hidden="true"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
               >
                 <button
                   aria-hidden="true"

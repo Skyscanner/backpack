@@ -42,7 +42,7 @@ const getMatchOptions = () => ({
 
 initStoryshots({
   suite: 'Visual tests',
-  storyNameRegex: /Visual\stest$/i,
+  storyNameRegex: /Visual\stest\s?([a-z]*)?/i,
   test: imageSnapshot({
     storybookUrl: `file://${path.resolve(__dirname, '../dist-storybook')}`,
     getMatchOptions,

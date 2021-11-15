@@ -36,10 +36,34 @@ describe('BpkScrollableCalendar accessibility tests', () => {
         daysOfWeek={weekDays}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
-        showWeekendSeparator
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues when in range mode', async () => {
+    const testDate = new Date(2010, 1, 15);
+    const { container } = render(
+      <BpkScrollableCalendar
+        id="scrollableCalendar"
+        weekStartsOn={1}
+        daysOfWeek={weekDays}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        markToday={false}
+        selectTodaysDate={false}
+        // Subtract one day from today's date to make today selectable by default
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        selectionConfiguration={{
+          type: 'range',
+          startDate: testDate,
+          endDate: DateUtils.addDays(testDate, +5),
+        }}
       />,
     );
     const results = await axe(container);

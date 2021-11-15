@@ -24,6 +24,7 @@ import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkCalendarContainer from './BpkCalendarContainer';
 import { addDays } from './date-utils';
+import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 
 const createNodeMock = () => ({
   focus: () => null,
@@ -43,7 +44,34 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        selectedDate={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly in range mode', () => {
+    const { asFragment } = render(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.range,
+          startDate: new Date(2010, 1, 16),
+          endDate: new Date(2010, 1, 20),
+        }}
       />,
       { createNodeMock },
     );
@@ -83,7 +111,10 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        selectedDate={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
       />,
     );
 
@@ -114,7 +145,10 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        selectedDate={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
         onDateSelect={onDateSelect}
       />,
     );
@@ -129,9 +163,9 @@ describe('BpkCalendarContainer', () => {
     expect(onDateSelect.mock.calls[0][0]).toEqual(new Date(2010, 1, 20));
   });
 
-  it('should account for focus state if selectedDate is set to null', () => {
+  it('should account for focus state if selected date is set to null', () => {
     const onDateSelect = jest.fn();
-    const initialSelectedDate = new Date(2010, 2, 1);
+    const initialSelectedDate = new Date(2010, 1, 15);
     const minDate = new Date(2010, 1, 15);
     const maxDate = new Date(2010, 2, 15);
 
@@ -147,14 +181,22 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={minDate}
         maxDate={maxDate}
-        selectedDate={initialSelectedDate}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: null,
+        }}
         onDateSelect={onDateSelect}
       />,
     );
 
     expect(calendar.state('focusedDate')).toEqual(initialSelectedDate);
 
-    calendar.setProps({ selectedDate: null });
+    calendar.setProps({
+      selectionConfiguration: {
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: null,
+      },
+    });
 
     expect(calendar.state('focusedDate')).toEqual(minDate);
   });
@@ -176,7 +218,10 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        selectedDate={new Date(2010, 1, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: new Date(2010, 1, 15),
+        }}
         onDateSelect={null}
       />,
     );
@@ -208,7 +253,10 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        selectedDate={origin}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: origin,
+        }}
       />,
     );
 
@@ -287,7 +335,10 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 1)}
         maxDate={new Date(2010, 2, 30)}
-        selectedDate={origin}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: origin,
+        }}
         onMonthChange={onMonthChange}
       />,
     );

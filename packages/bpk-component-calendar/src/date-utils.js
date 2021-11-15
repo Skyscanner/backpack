@@ -28,6 +28,7 @@ import isSameDay from 'date-fns/isSameDay';
 import isSameWeek from 'date-fns/isSameWeek';
 import isSameMonth from 'date-fns/isSameMonth';
 import isBefore from 'date-fns/isBefore';
+import isAfter from 'date-fns/isAfter';
 import differenceInCalendarMonths from 'date-fns/differenceInCalendarMonths';
 import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';
@@ -202,6 +203,8 @@ export {
   isSameDay,
   isSameWeek,
   isSameMonth,
+  isBefore,
+  isAfter,
   differenceInCalendarMonths,
   addMonths,
   addDays,

@@ -15,8 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { action } from 'bpk-storybook-utils';
 import addMonths from 'date-fns/addMonths';
 import BpkText from 'bpk-component-text';
@@ -35,51 +34,17 @@ import {
   weekDaysJapanese,
   weekDays,
 } from './test-utils';
-import MonthViewCalendar from './examples-components';
+import CalendarContainer, { MonthViewCalendar } from './examples-components';
 import ColoredCalendar from './coloured-calendar-example';
 import Week from './src/Week';
+import { CALENDAR_SELECTION_TYPE } from './src/custom-proptypes';
 
-import BpkCalendar, {
-  // BpkCalendarView,
+import {
   BpkCalendarGrid,
   BpkCalendarGridHeader,
   BpkCalendarNav,
   BpkCalendarDate,
 } from './index';
-
-class CalendarContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    const date = this.props.selectTodaysDate ? new Date() : null;
-
-    this.state = {
-      date,
-    };
-  }
-
-  render() {
-    return (
-      <BpkCalendar
-        {...this.props}
-        selectedDate={this.state.date}
-        onDateSelect={date => {
-          this.setState({ date });
-          action('Selected day')(date);
-        }}
-        onMonthChange={action('Changed month')}
-      />
-    );
-  }
-}
-
-CalendarContainer.propTypes = {
-  selectTodaysDate: PropTypes.bool,
-};
-
-CalendarContainer.defaultProps = {
-  selectTodaysDate: true,
-};
 
 const CalendarNavExample = () => (
   <BpkCalendarNav
@@ -96,11 +61,7 @@ const CalendarNavExample = () => (
 );
 
 const CalendarGridHeaderExample = () => (
-  <BpkCalendarGridHeader
-    weekStartsOn={1}
-    daysOfWeek={weekDays}
-    showWeekendSeparator
-  />
+  <BpkCalendarGridHeader weekStartsOn={1} daysOfWeek={weekDays} />
 );
 
 const CalendarGridExample = () => (
@@ -112,7 +73,6 @@ const CalendarGridExample = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkCalendarDate}
-    showWeekendSeparator
     preventKeyboardFocus
   />
 );
@@ -134,6 +94,10 @@ const DefaultExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(),
+    }}
   />
 );
 
@@ -150,20 +114,6 @@ const MinDateInThePastExample = () => (
     minDate={new Date(2011, 1, 1)}
     selectTodaysDate={false}
     initiallyFocusedDate={new Date()}
-  />
-);
-
-const NoWeekendSeparatorExample = () => (
-  <CalendarContainer
-    id="myCalendar"
-    formatMonth={formatMonth}
-    formatDateFull={formatDateFull}
-    daysOfWeek={weekDays}
-    weekStartsOn={1}
-    changeMonthLabel="Change month"
-    previousMonthLabel="Go to previous month"
-    nextMonthLabel="Go to next month"
-    showWeekendSeparator={false}
   />
 );
 
@@ -302,7 +252,6 @@ const CustomColors = () => (
     daysOfWeek={weekDays}
     month={new Date()}
     weekStartsOn={1}
-    showWeekendSeparator
     onDateSelect={date => {
       // TODO we shouldn't do this but as it's only for demo purposes and works I guess it's fine
       // eslint-disable-next-line react/no-this-in-sfc
@@ -332,7 +281,6 @@ const WeekExample = () => {
     daysOfWeek: weekDays,
     formatDateFull: d => d.toString(),
     preventKeyboardFocus: false,
-    showWeekendSeparator: true,
     markToday: true,
     markOutsideDays: true,
     isKeyboardFocusable: true,
@@ -379,6 +327,24 @@ const FocusedDateInThePastExample = () => (
   />
 );
 
+const RangeDateCalendar = () => (
+  <CalendarContainer
+    id="myCalendar"
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    selectionConfiguration={{
+      type: 'range',
+      startDate: new Date(2022, 9, 6),
+      endDate: new Date(2022, 9, 15),
+    }}
+  />
+);
+
 export {
   DefaultExample,
   CalendarNavExample,
@@ -386,7 +352,6 @@ export {
   CalendarGridExample,
   CalendarGridAndHeaderExample,
   MinDateInThePastExample,
-  NoWeekendSeparatorExample,
   WeekStartsOnSundayExample,
   HonestWeekendExample,
   WeekdayKeyIsNameNarrow,
@@ -400,4 +365,5 @@ export {
   CustomColors,
   WeekExample,
   FocusedDateInThePastExample,
+  RangeDateCalendar,
 };

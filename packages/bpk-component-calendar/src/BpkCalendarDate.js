@@ -32,6 +32,22 @@ export const CELL_TYPES = {
   positive: 'positive',
 };
 
+export const SELECTION_TYPES = {
+  none: 'none',
+  single: 'single',
+  start: 'start',
+  middle: 'middle',
+  end: 'end',
+  sameDay: 'sameDay',
+};
+
+export const ROW_TYPES = {
+  start: 'start',
+  middle: 'middle',
+  end: 'end',
+  both: 'both',
+};
+
 const navigatedByMonthNudger = () =>
   document.activeElement.id &&
   document.activeElement.id.indexOf('month_nudger') !== -1;
@@ -94,6 +110,7 @@ class BpkCalendarDate extends PureComponent {
       isKeyboardFocusable,
       className,
       style,
+      selectionType,
       cellType,
       ...buttonProps
     } = this.props;
@@ -128,6 +145,11 @@ class BpkCalendarDate extends PureComponent {
     if (isToday) {
       classNames.push(getClassName('bpk-calendar-date--today'));
     }
+
+    if (selectionType !== SELECTION_TYPES.none) {
+      classNames.push(getClassName(`bpk-calendar-date--${selectionType}`));
+    }
+
     if (className) {
       classNames.push(className);
     }
@@ -175,6 +197,8 @@ export const propTypes = {
   onClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
+  rowType: PropTypes.oneOf(Object.keys(ROW_TYPES)),
+  selectionType: PropTypes.oneOf(Object.keys(SELECTION_TYPES)),
   style: PropTypes.object,
 };
 
@@ -193,6 +217,8 @@ export const defaultProps = {
   onClick: null,
   onDateKeyDown: null,
   preventKeyboardFocus: true,
+  rowType: null,
+  selectionType: SELECTION_TYPES.none,
   style: null,
 };
 

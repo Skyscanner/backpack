@@ -16,31 +16,23 @@
  * limitations under the License.
  */
 
-// a change
-
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules } from 'bpk-react-utils';
-import areIntervalsOverlapping from 'date-fns/areIntervalsOverlapping';
-import dateMin from 'date-fns/min';
-import dateMax from 'date-fns/max';
-import startOfDay from 'date-fns/startOfDay';
+import { cssModules, deprecated } from 'bpk-react-utils';
 
 import {
-  getDay,
-  getFirstDayOfWeekend,
-  getLastDayOfWeekend,
   isSameDay,
   isSameWeek,
   isSameMonth,
   isToday,
   isWithinRange,
 } from './date-utils';
-import CustomPropTypes from './custom-proptypes';
+import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 // TODO: Move this to `Week.scss`
 // This should be using its own css file as `BpkCalendarGrid` is also importing `BpkCalendarGrid.module.scss`
 // and the order of css imports can break the component.
 import STYLES from './BpkCalendarGrid.module.scss';
+import { SELECTION_TYPES } from './BpkCalendarDate';
 
 const getClassName = cssModules(STYLES);
 
@@ -58,6 +50,136 @@ function or(total, bool) {
   return total || bool;
 }
 
+/**
+ * Determines if the current date is selected
+ * @param {Date} date the current date from the calendar
+ * @param {Object} selectionConfiguration the current selection configuration
+ * @returns {Boolean} true is selected and false if not
+ */
+function getSelectedDate(date, selectionConfiguration) {
+  const startDate =
+    selectionConfiguration.date || selectionConfiguration.startDate;
+  const { endDate } = selectionConfiguration;
+  const sameStartDay = isSameDay(date, startDate);
+  const sameEndDay = isSameDay(date, endDate);
+
+  if (
+    (startDate &&
+      endDate &&
+      (sameStartDay ||
+        sameEndDay ||
+        isWithinRange(date, { start: startDate, end: endDate }))) ||
+    (startDate && !endDate && sameStartDay) ||
+    sameStartDay
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+/**
+ * Gets the correct selection type for the current date
+ * @param {Date} date the current date of the calendar
+ * @param {Object} selectionConfiguration the current selection configuration
+ * @param {Function} formatDateFull function to format dates
+ * @returns {String} selection type to be passed to the date
+ */
+function getSelectionType(date, selectionConfiguration, formatDateFull) {
+  if (
+    selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
+    selectionConfiguration.date === formatDateFull(date)
+  ) {
+    return SELECTION_TYPES.single;
+  }
+  if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range) {
+    if (
+      (selectionConfiguration.startDate &&
+        !selectionConfiguration.endDate &&
+        isSameDay(date, selectionConfiguration.startDate)) ||
+      (selectionConfiguration.startDate &&
+        selectionConfiguration.endDate &&
+        isSameDay(date, selectionConfiguration.startDate) &&
+        isSameDay(date, selectionConfiguration.endDate))
+    ) {
+      return SELECTION_TYPES.single;
+    }
+    if (
+      selectionConfiguration.startDate &&
+      selectionConfiguration.endDate &&
+      isWithinRange(date, {
+        start: selectionConfiguration.startDate,
+        end: selectionConfiguration.endDate,
+      }) &&
+      !isSameDay(date, selectionConfiguration.startDate) &&
+      !isSameDay(date, selectionConfiguration.endDate)
+    ) {
+      return SELECTION_TYPES.middle;
+    }
+    if (
+      selectionConfiguration.startDate &&
+      formatDateFull(selectionConfiguration.startDate) === formatDateFull(date)
+    ) {
+      return SELECTION_TYPES.start;
+    }
+    if (
+      selectionConfiguration.endDate &&
+      formatDateFull(selectionConfiguration.endDate) === formatDateFull(date)
+    ) {
+      return SELECTION_TYPES.end;
+    }
+  }
+
+  return SELECTION_TYPES.none;
+}
+
+/**
+ * Handles changing selected date when in single mode
+ * @param {Object} props current props
+ * @param {Object} nextProps next props as the component is updating
+ * @returns {Boolean} based on if the date has changed
+ */
+const singleDateHandler = (props, nextProps) => {
+  const currentSelectConfig = props.selectionConfiguration;
+  const nextSelectConfig = nextProps.selectionConfiguration;
+
+  if (
+    (isSameWeek(nextSelectConfig.date, nextProps.dates[0], {
+      weekStartsOn: nextProps.weekStartsOn,
+    }) ||
+      isSameWeek(currentSelectConfig.date, props.dates[0], {
+        weekStartsOn: props.weekStartsOn,
+      })) &&
+    currentSelectConfig.date !== nextSelectConfig.date
+  ) {
+    return true;
+  }
+  return false;
+};
+
+/**
+ * Handles changing selected date when in range mode
+ * @param {Object} props current props
+ * @param {Object} nextProps next props as the component is updating
+ * @returns {Boolean} based on if the date has changed
+ */
+const rangeDateHandler = (props, nextProps) => {
+  const startDateChanged = !isSameDay(
+    props.selectionConfiguration.startDate,
+    nextProps.selectionConfiguration.startDate,
+  );
+  const endDateChanged = !isSameDay(
+    props.selectionConfiguration.endDate,
+    nextProps.selectionConfiguration.endDate,
+  );
+
+  if (startDateChanged || endDateChanged) {
+    return true;
+  }
+
+  return false;
+};
+
 /*
   Week - table row containing a week full of DateContainer components
 */
@@ -66,7 +188,6 @@ class Week extends Component {
     const shallowProps = [
       'DateComponent',
       'dateModifiers',
-      'daysOfWeek',
       'formatDateFull',
       'isKeyboardFocusable',
       'markOutsideDays',
@@ -74,7 +195,6 @@ class Week extends Component {
       'onDateClick',
       'onDateKeyDown',
       'preventKeyboardFocus',
-      'showWeekendSeparator',
       'weekStartsOn',
       'dates',
       'cellClassName',
@@ -104,15 +224,16 @@ class Week extends Component {
     // of either the week we're rendering now or the next week we'll
     // render, component should update.
     if (
-      (isSameWeek(nextProps.selectedDate, nextProps.dates[0], {
-        weekStartsOn: nextProps.weekStartsOn,
-      }) ||
-        isSameWeek(this.props.selectedDate, this.props.dates[0], {
-          weekStartsOn: this.props.weekStartsOn,
-        })) &&
-      this.props.selectedDate !== nextProps.selectedDate
+      this.props.selectionConfiguration.type ===
+        CALENDAR_SELECTION_TYPE.single &&
+      this.props.selectionConfiguration.date
     ) {
-      return true;
+      return singleDateHandler(this.props, nextProps);
+    }
+    if (
+      this.props.selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range
+    ) {
+      return rangeDateHandler(this.props, nextProps);
     }
 
     // If min date is changing, component should update.
@@ -135,69 +256,6 @@ class Week extends Component {
       }
     }
 
-    if (!this.props.selectionStart || !this.props.selectionEnd) {
-      return false;
-    }
-
-    const selectionStartChanged = !isSameDay(
-      this.props.selectionStart,
-      nextProps.selectionStart,
-    );
-    const selectionEndChanged = !isSameDay(
-      this.props.selectionEnd,
-      nextProps.selectionEnd,
-    );
-
-    if (selectionStartChanged || selectionEndChanged) {
-      const firstDate = new Date(startOfDay(nextProps.dates[0]).getTime() - 1);
-      const lastDate = new Date(
-        startOfDay(nextProps.dates[nextProps.dates.length - 1]).getTime() + 1,
-      );
-
-      if (
-        areIntervalsOverlapping(
-          { start: this.props.selectionStart, end: this.props.selectionEnd },
-          { start: firstDate, end: lastDate },
-        ) ||
-        areIntervalsOverlapping(
-          { start: nextProps.selectionStart, end: nextProps.selectionEnd },
-          { start: firstDate, end: lastDate },
-        )
-      ) {
-        if (
-          selectionStartChanged &&
-          areIntervalsOverlapping(
-            {
-              start: dateMin([
-                this.props.selectionStart,
-                nextProps.selectionStart,
-              ]),
-              end: dateMax([
-                this.props.selectionStart,
-                nextProps.selectionStart,
-              ]),
-            },
-            { start: firstDate, end: lastDate },
-          )
-        ) {
-          return true;
-        }
-
-        if (
-          selectionEndChanged &&
-          areIntervalsOverlapping(
-            {
-              start: dateMin([this.props.selectionEnd, nextProps.selectionEnd]),
-              end: dateMax([this.props.selectionEnd, nextProps.selectionEnd]),
-            },
-            { start: firstDate, end: lastDate },
-          )
-        ) {
-          return true;
-        }
-      }
-    }
-
     return false;
   }
 
@@ -205,7 +263,6 @@ class Week extends Component {
     const {
       DateComponent,
       dateModifiers,
-      daysOfWeek,
       focusedDate,
       formatDateFull,
       isKeyboardFocusable,
@@ -217,14 +274,10 @@ class Week extends Component {
       onDateClick,
       onDateKeyDown,
       preventKeyboardFocus,
-      selectedDate,
-      showWeekendSeparator,
+      selectionConfiguration,
       ignoreOutsideDate,
       dateProps,
     } = this.props;
-
-    const firstDayOfWeekendIndex = getFirstDayOfWeekend(daysOfWeek);
-    const lastDayOfWeekendIndex = getLastDayOfWeekend(daysOfWeek);
 
     if (ignoreOutsideDate) {
       const daysOutside = this.props.dates.map(date =>
@@ -246,18 +299,19 @@ class Week extends Component {
               ? !isWithinRange(date, { start: minDate, end: maxDate })
               : false;
 
+          const dateSelectionType = getSelectionType(
+            date,
+            selectionConfiguration,
+            formatDateFull,
+          );
+
           return (
             <DateContainer
               className={this.props.cellClassName}
               isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate}
               isBlocked={isBlocked}
               key={date.getDate()}
-              weekendStart={
-                showWeekendSeparator && firstDayOfWeekendIndex === getDay(date)
-              }
-              weekendEnd={
-                showWeekendSeparator && lastDayOfWeekendIndex === getDay(date)
-              }
+              selectionType={dateSelectionType}
             >
               <DateComponent
                 date={date}
@@ -268,10 +322,11 @@ class Week extends Component {
                 preventKeyboardFocus={preventKeyboardFocus}
                 isKeyboardFocusable={isKeyboardFocusable}
                 isFocused={isSameDay(date, focusedDate)}
-                isSelected={isSameDay(date, selectedDate)}
+                isSelected={getSelectedDate(date, selectionConfiguration)}
                 isBlocked={isBlocked}
                 isOutside={markOutsideDays && !isSameMonth(date, month)}
                 isToday={markToday && isToday(date)}
+                selectionType={dateSelectionType}
                 {...dateProps}
               />
             </DateContainer>
@@ -286,35 +341,48 @@ Week.propTypes = {
   DateComponent: PropTypes.elementType.isRequired,
   dateModifiers: CustomPropTypes.DateModifiers.isRequired,
   dates: PropTypes.arrayOf(Date).isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDateFull: PropTypes.func.isRequired,
   preventKeyboardFocus: PropTypes.bool.isRequired,
-  showWeekendSeparator: PropTypes.bool.isRequired,
   markToday: PropTypes.bool.isRequired,
   markOutsideDays: PropTypes.bool.isRequired,
   isKeyboardFocusable: PropTypes.bool.isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
   weekStartsOn: PropTypes.number.isRequired,
+  daysOfWeek: deprecated(
+    CustomPropTypes.DaysOfWeek,
+    'daysOfWeek property in Week is now deprecated as no longer part of the calendar, so is no longer required',
+  ),
   focusedDate: PropTypes.instanceOf(Date),
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
   cellClassName: PropTypes.string,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
-  selectedDate: PropTypes.instanceOf(Date),
+  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
+  selectedDate: deprecated(
+    PropTypes.instanceOf(Date),
+    'Use selectionConfiguration to set selectedDate',
+  ),
   selectionEnd: PropTypes.instanceOf(Date),
   selectionStart: PropTypes.instanceOf(Date),
+  // eslint-disable-next-line react/require-default-props
+  showWeekendSeparator: deprecated(
+    PropTypes.bool,
+    'The showWeekendSeparator prop in Week is now deprecated as no longer part of the calendar, so is no longer required',
+  ),
   ignoreOutsideDate: PropTypes.bool,
   dateProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 Week.defaultProps = {
   cellClassName: null,
+  daysOfWeek: null,
   focusedDate: null,
   maxDate: null,
   minDate: null,
   onDateClick: null,
   onDateKeyDown: null,
+  selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
   selectedDate: null,
   selectionEnd: null,
   selectionStart: null,
@@ -326,32 +394,24 @@ Week.defaultProps = {
   DateContainer - one for each date in the grid; wraps the actual BpkCalendarDate (or custom) component
 */
 const DateContainer = props => {
-  const classNames = [getClassName('bpk-calendar-grid__date')];
+  const { className, children, selectionType, isBlocked, isEmptyCell } = props;
 
-  if (props.weekendStart) {
-    classNames.push(getClassName('bpk-calendar-grid__date--weekend-start'));
-  }
-  if (props.weekendEnd) {
-    classNames.push(getClassName('bpk-calendar-grid__date--weekend-end'));
-  }
-  if (props.className) {
-    classNames.push(props.className);
-  }
+  const classNames = getClassName(
+    'bpk-calendar-grid__date',
+    `bpk-calendar-grid__date--${selectionType}`,
+    className,
+  );
 
   return (
-    <td
-      aria-hidden={props.isEmptyCell || props.isBlocked}
-      className={classNames.join(' ')}
-    >
-      {props.children}
+    <td aria-hidden={isEmptyCell || isBlocked} className={classNames}>
+      {children}
     </td>
   );
 };
 
 DateContainer.propTypes = {
   children: PropTypes.element.isRequired,
-  weekendStart: PropTypes.bool.isRequired,
-  weekendEnd: PropTypes.bool.isRequired,
+  selectionType: PropTypes.string.isRequired,
   isEmptyCell: PropTypes.bool.isRequired,
   isBlocked: PropTypes.bool.isRequired,
   className: PropTypes.string,

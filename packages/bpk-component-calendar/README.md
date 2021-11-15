@@ -32,15 +32,20 @@ export default class App extends Component {
   constructor () {
     super();
 
-
     this.state = {
-      selectedDate: null
-    }
+      selectionConfiguration: {
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: null,
+        }
+    };
   }
 
   handleDateSelect = (date) => {
     this.setState({
-      selectedDate: date
+      selectionConfiguration: {
+        type: this.props.selectionConfiguration.type,
+        date: date,
+      },
     });
   }
 
@@ -51,7 +56,7 @@ export default class App extends Component {
           id='dateInput'
           type={INPUT_TYPES.text}
           name='date'
-          value={(this.state.selectedDate || '').toString()}
+          value={(this.state.selectionConfiguration.date || '').toString()}
           placeholder='Departure date'
         />
         <BpkCalendar
@@ -64,7 +69,7 @@ export default class App extends Component {
           changeMonthLabel="Change month"
           nextMonthLabel="Next month"
           previousMonthLabel="Previous month"
-          date={this.state.selectedDate}
+          selectionConfiguration={this.state.selectionConfiguration}
         />
       </div>
     )
@@ -172,8 +177,7 @@ withCalendarState(composeCalendar(
 | minDate               | Date                 | false               | new Date()       |
 | onDateSelect          | func                 | false               | null             |
 | onMonthChange         | func                 | false               | null             |
-| selectedDate          | Date                 | false               | null             |
-| showWeekendSeparator  | bool                 | false               | true             |
+| selectionConfiguration| object               | false               | { type: CALENDAR_SELECTION_TYPE.single, date: null }  |
 | navProps              | object               | false               | null             |
 | headerProps           | object               | false               | null             |
 | gridProps             | object               | false               | null             |
@@ -208,10 +212,8 @@ in place while the rest of the grid transitions when changing months.
 
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
-| showWeekendSeparator  | bool                 | true     | -                |
 | daysOfWeek            | object               | true     | -                |
 | weekStartsOn          | number               | true     | -                |
-| showWeekendSeparator  | bool                 | false    | false            |
 | className             | string               | false    | null             |
 | weekDayKey            | string               | false    | nameAbbr         |
 
@@ -227,6 +229,7 @@ The BpkCalendarGrid component displays a month as a table.
 | formatMonth           | func                 | true     | -                |
 | month                 | Date                 | true     | -                |
 | weekStartsOn          | number               | true     | -                |
+| selectionConfiguration| object               | false    | { type: CALENDAR_SELECTION_TYPE.single, date: null }  |
 | focusedDate           | Date                 | false    | null             |
 | isKeyboardFocusable   | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |
@@ -236,8 +239,6 @@ The BpkCalendarGrid component displays a month as a table.
 | onDateClick           | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | false            |
-| selectedDate          | Date                 | false    | null             |
-| showWeekendSeparator  | bool                 | false    | true             |
 
 ### BpkCalendarDate
 
@@ -257,6 +258,8 @@ The BpkCalendarDate component is used to render the content of a cell
 | onClick               | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | true             |
+| rowType         | oneOf(ROW_TYPES.start, ROW_TYPES.middle, ROW_TYPES.end, ROW_TYPES.both)      | false    | null             |
+| selectionType         | oneOf(SELECTION_TYPES.single, SELECTION_TYPES.start, SELECTION_TYPES.middle, SELECTION_TYPES.end)      | false    | SELECTION_TYPES.single             |
 | style                 | object               | false    | null             |
 
 #### `cellType` prop
@@ -268,7 +271,39 @@ This prop determines what the colour date cell is to be displayed.
 - `CELL_TYPES.negative` - sets the calendar cell to `Panjin`
 - `CELL_TYPES.default` - sets the calendar cell to `Sky Gray Tint 02`
 
+#### `selectionType` prop
+
+This property determines which selected styles will be applied to the date cell. If using ranges use `start`, `middle` and `end` to apply the correct range styles.
+
+- `SELECTION_TYPES.single` - When the date is selected individually i.e. Not as part of a range
+- `SELECTION_TYPES.start` - When a start date is selected in a range calendar i.e. First date in the range
+- `SELECTION_TYPES.middle` - When a date is in a range between start and end date i.e. Date in the middle of two dates
+- `SELECTION_TYPES.end` - When an end date is selected in a range calendar i.e. Last date in the range
+
 ### Prop details
+
+#### selectionConfiguration
+
+An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
+
+##### Single date
+
+```json
+{
+  type: CALENDAR_SELECTION_TYPE.single,
+  date: date e.g. new Date()
+}
+```
+
+##### Range
+
+```json
+{
+  type: CALENDAR_SELECTION_TYPE.range,
+  startDate: date e.g. new Date(),
+  endDate: date e.g. new Date()
+}
+```
 
 #### daysOfWeek
 
