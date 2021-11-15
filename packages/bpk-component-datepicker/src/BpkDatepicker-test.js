@@ -75,6 +75,34 @@ describe('BpkDatepicker', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render range correctly', () => {
+    const { asFragment } = render(
+      <BpkDatepicker
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
+        title="Departure date"
+        weekStartsOn={1}
+        getApplicationElement={() => document.createElement('div')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        inputProps={inputProps}
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectionConfiguration={{
+          type: 'range',
+          startDate: new Date(2010, 1, 15),
+          endDate: new Date(2010, 1, 20),
+        }}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly when not valid', () => {
     const { asFragment } = render(
       <BpkDatepicker

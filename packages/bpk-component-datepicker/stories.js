@@ -20,6 +20,7 @@ import { storiesOf } from '@storybook/react';
 
 import {
   DefaultExample,
+  RangeExample,
   OpenOnRender,
   MinDateInPast,
   WithoutDateSet,
@@ -27,11 +28,13 @@ import {
   DepartReturn,
   CustomComponent,
   InvalidExample,
-  OpenOnRenderDateInThePast,
+  DefaultVisualExample,
+  VisualRangeExample,
 } from './examples';
 
 storiesOf('bpk-component-datepicker', module)
   .add('Default', DefaultExample)
+  .add('Range', RangeExample)
   .add('Open on first render', OpenOnRender)
   .add('Min date in the past', MinDateInPast)
   .add('Without date set', WithoutDateSet)
@@ -39,4 +42,5 @@ storiesOf('bpk-component-datepicker', module)
   .add('Depart & Return', DepartReturn)
   .add('Custon calendar component', CustomComponent)
   .add('Invalid', InvalidExample)
-  .add('Visual test', OpenOnRenderDateInThePast);
+  .add('Visual test', DefaultVisualExample)
+  .add('Visual test range', VisualRangeExample);

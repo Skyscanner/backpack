@@ -53,4 +53,29 @@ describe('BpkCalendar accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have programmatically-detectable accessibility issues in range mode', async () => {
+    const { container } = render(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.range,
+          startDate: new Date(2010, 1, 16),
+          endDate: new Date(2020, 1, 20),
+        }}
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
+      />,
+      { createNodeMock },
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

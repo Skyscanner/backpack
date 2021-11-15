@@ -54,6 +54,30 @@ describe('BpkCalendarContainer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly in range mode', () => {
+    const { asFragment } = render(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.range,
+          startDate: new Date(2010, 1, 16),
+          endDate: new Date(2010, 1, 20),
+        }}
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should focus the correct date when `initiallyFocusedDate` is set and selected date is not', () => {
     const { asFragment } = render(
       <BpkCalendarContainer
