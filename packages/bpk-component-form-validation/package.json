@@ -27,7 +27,7 @@
     "bpk-component-button": "^5.0.14",
     "bpk-component-checkbox": "^3.0.17",
     "bpk-component-icon": "^9.1.1",
-    "bpk-component-input": "^6.0.25",
+    "bpk-component-input": "^6.0.26",
     "bpk-component-select": "^5.0.11",
     "bpk-component-textarea": "^4.0.5"
   }

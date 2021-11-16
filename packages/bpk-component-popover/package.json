@@ -30,6 +30,6 @@
   "devDependencies": {
     "bpk-component-button": "^5.0.14",
     "bpk-component-content-container": "^3.0.15",
-    "bpk-component-input": "^6.0.25"
+    "bpk-component-input": "^6.0.26"
   }
 }
