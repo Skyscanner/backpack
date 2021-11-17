@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 .bpk-breadcrumb-item {
   display: flex;
   align-items: center;
@@ -32,7 +34,7 @@
   }
 
   &__arrow {
-    margin: 0 $bpk-spacing-md;
+    margin: 0 bpk-spacing-md();
     fill: $bpk-color-sky-gray-tint-04;
   }
 }
