@@ -133,7 +133,16 @@ class BpkDatepicker extends Component {
       minDate,
       maxDate,
     } = this.props;
-    this.onClose();
+
+    // When the calendar is a single date we always want to close on when a date is selected
+    // or if there is a start date but not yet an end date we don't want the calendar to close until the range is selected.
+    if (
+      selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single ||
+      (selectionConfiguration.startDate && !selectionConfiguration.endDate)
+    ) {
+      this.onClose();
+    }
+
     if (onDateSelect) {
       const newStartDate = DateUtils.dateToBoundaries(
         startDate,
@@ -145,6 +154,7 @@ class BpkDatepicker extends Component {
         DateUtils.startOfDay(minDate),
         DateUtils.startOfDay(maxDate),
       );
+
       if (
         selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
         selectionConfiguration.startDate &&
@@ -163,6 +173,7 @@ class BpkDatepicker extends Component {
     const {
       changeMonthLabel,
       calendarComponent: Calendar,
+      InputComponent,
       closeButtonText,
       dateModifiers,
       daysOfWeek,
@@ -193,7 +204,7 @@ class BpkDatepicker extends Component {
     delete rest.onOpenChange;
     delete rest.isOpen;
 
-    const inputComponent = (
+    const inputComponent = InputComponent || (
       <Input
         id={id}
         name={`${id}_input`}
@@ -286,6 +297,7 @@ BpkDatepicker.propTypes = {
   weekStartsOn: PropTypes.number.isRequired,
   // Optional
   calendarComponent: PropTypes.elementType,
+  InputComponent: PropTypes.elementType,
   date: deprecated(
     PropTypes.instanceOf(Date),
     'Use selectionConfiguration to set date',
@@ -313,6 +325,7 @@ BpkDatepicker.propTypes = {
 
 BpkDatepicker.defaultProps = {
   calendarComponent: BpkCalendar,
+  InputComponent: null,
   date: null,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
   inputProps: {},

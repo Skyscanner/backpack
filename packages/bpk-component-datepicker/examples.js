@@ -48,10 +48,13 @@ import {
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
 } from 'bpk-component-calendar';
+import BpkInput, { withOpenEvents } from 'bpk-component-input';
 
 import BpkDatepicker from './index';
 
 const formatDate = date => format(date, 'dd/MM/yyyy');
+
+const Input = withOpenEvents(BpkInput);
 
 const inputProps = {
   onChange: () => null,
@@ -272,6 +275,141 @@ class ReturnDatepicker extends Component {
   }
 }
 
+class MultipleInputDatepicker extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectionConfiguration: {
+        type: CALENDAR_SELECTION_TYPE.range,
+        startDate: new Date(2020, 3, 8),
+        endDate: new Date(2020, 3, 15),
+      },
+      isOpen: false,
+    };
+  }
+
+  onOpen = () => {
+    this.setState({
+      isOpen: true,
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      isOpen: false,
+    });
+  };
+
+  render() {
+    const inputStyles = {
+      display: 'inline-block',
+      verticalAlign: 'bottom',
+      width: '50%',
+    };
+
+    const inputs = (
+      <div>
+        <Input
+          id="departure-date"
+          name="departure-date"
+          value={
+            this.state.selectionConfiguration.startDate
+              ? formatDate(this.state.selectionConfiguration.startDate)
+              : ''
+          }
+          aria-live="assertive"
+          aria-atomic="true"
+          aria-label={
+            this.state.selectionConfiguration.startDate
+              ? formatDate(this.state.selectionConfiguration.startDate)
+              : ''
+          }
+          onOpen={this.onOpen}
+          isOpen={this.state.isOpen}
+          style={inputStyles}
+          dockedFirst
+        />
+        <Input
+          id="arrival-date"
+          name="arrival-date"
+          value={
+            this.state.selectionConfiguration.endDate
+              ? formatDate(this.state.selectionConfiguration.endDate)
+              : ''
+          }
+          aria-live="assertive"
+          aria-atomic="true"
+          aria-label={
+            this.state.selectionConfiguration.endDate
+              ? formatDate(this.state.selectionConfiguration.endDate)
+              : ''
+          }
+          onOpen={this.onOpen}
+          isOpen={this.state.isOpen}
+          style={inputStyles}
+          dockedLast
+        />
+      </div>
+    );
+
+    return (
+      <div id="datepicker-element">
+        <div id="application-element">
+          <BpkDatepicker
+            {...this.props}
+            id="myDatepicker"
+            closeButtonText="Close"
+            daysOfWeek={weekDays}
+            weekStartsOn={1}
+            changeMonthLabel="Change month"
+            previousMonthLabel="Go to previous month"
+            nextMonthLabel="Go to next month"
+            title="Departure date"
+            formatDate={formatDate}
+            formatMonth={formatMonth}
+            formatDateFull={formatDateFull}
+            minDate={new Date(2020, 3, 1)}
+            selectTodaysDate={false}
+            onClose={this.onClose}
+            isOpen={this.state.isOpen}
+            InputComponent={inputs}
+            onDateSelect={(startDate, endDate = null) => {
+              if (startDate && !endDate) {
+                this.setState({
+                  selectionConfiguration: {
+                    type: CALENDAR_SELECTION_TYPE.range,
+                    startDate,
+                    endDate: null,
+                  },
+                });
+                action('Selected day')(startDate);
+              }
+              if (startDate && endDate) {
+                this.setState({
+                  selectionConfiguration: {
+                    type: CALENDAR_SELECTION_TYPE.range,
+                    startDate,
+                    endDate,
+                  },
+                });
+                this.onClose();
+                action('Selected end day')(endDate);
+              }
+            }}
+            selectionConfiguration={this.state.selectionConfiguration}
+            onMonthChange={action('Changed month')}
+            getApplicationElement={() =>
+              document.getElementById('application-element')
+            }
+            renderTarget={() => document.getElementById('datepicker-element')}
+          />
+        </div>
+      </div>
+    );
+  }
+}
+
 const DefaultExample = () => (
   <div id="application-element">
     <CalendarContainer
@@ -452,6 +590,8 @@ const InvalidExample = () => (
   </div>
 );
 
+const MultipleRangeInputExample = () => <MultipleInputDatepicker />;
+
 const DefaultVisualExample = () => (
   <div id="application-element">
     <CalendarContainer
@@ -514,6 +654,7 @@ export {
   DepartReturn,
   CustomComponent,
   InvalidExample,
+  MultipleRangeInputExample,
   DefaultVisualExample,
   VisualRangeExample,
 };
