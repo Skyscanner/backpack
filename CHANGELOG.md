@@ -1,3 +1,15 @@
+# 2021-11-19
+
+**Breaking:**
+
+- bpk-component-banner-alert: 5.0.26 => 6.0.0
+  - Updated the banner alert component to use the new spacing grid. This component will now appear larger in height so should be checked this does not alter layout.
+
+**Fixed:**
+
+- bpk-component-breadcrumb: 3.0.18 => 3.0.19
+  - Updated the breadcrumb component to use the new spacing grid and small arrow icons.
+
 # 2021-11-15
 
 **Breaking:**
