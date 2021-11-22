@@ -17,6 +17,8 @@
  */
 /* @flow strict */
 
+import { CALENDAR_SELECTION_TYPE } from 'bpk-component-calendar';
+
 import BpkScrollableCalendar from './src/BpkScrollableCalendar';
 import BpkScrollableCalendarDate from './src/BpkScrollableCalendarDate';
 import BpkScrollableCalendarGrid from './src/BpkScrollableCalendarGrid';
@@ -25,6 +27,7 @@ import BpkScrollableCalendarGridList from './src/BpkScrollableCalendarGridList';
 export default BpkScrollableCalendar;
 
 export {
+  CALENDAR_SELECTION_TYPE,
   BpkScrollableCalendarDate,
   BpkScrollableCalendarGrid,
   BpkScrollableCalendarGridList,
