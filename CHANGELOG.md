@@ -1,3 +1,15 @@
+# 2021-11-19
+
+**Breaking:**
+
+- bpk-component-banner-alert: 5.0.26 => 6.0.0
+  - Updated the banner alert component to use the new spacing grid. This component will now appear larger in height so should be checked this does not alter layout.
+
+**Fixed:**
+
+- bpk-component-breadcrumb: 3.0.18 => 3.0.19
+  - Updated the breadcrumb component to use the new spacing grid and small arrow icons.
+
 # 2021-11-15
 
 **Breaking:**
@@ -9,14 +21,14 @@
     - Added new `selectionConfiguration` property to Backpack calendar to allow for range support.
     - `selectedDate` has been deprecated in favour of `selectionConfiguration`. instead of passing `selectedDate` you would now provide the following
      ```js
-        selectedConfiguration: {
+        selectionConfiguration: {
           type: CALENDAR_SELECTION_TYPE.single,
           date: new Date() // or the value you passed to `selectedDate`.
         }
       ```
     - `selectionStart` and `selectionEnd` has been deprecated in favour of `selectionConfiguration`. instead of passing `selectionStart` and `selectionEnd` you would now provide the following
      ```js
-        selectedConfiguration: {
+        selectionConfiguration: {
           type: CALENDAR_SELECTION_TYPE.range,
           startDate: new Date() // or the value you passed to `selectionStart`.
           endDate: new Date() // or the value you passed to `selectionEnd`.
@@ -29,7 +41,7 @@
 **Fixed:**
 
 - bpk-component-scrollable-calendar: 4.0.25 => 5.0.0
-  - Fixed a reintroduced functionality of auto scrolling the calendar when a date is clicked, when the library was changed from `react-window` to `react-virtualized` 
+  - Fixed a reintroduced functionality of auto scrolling the calendar when a date is clicked, when the library was changed from `react-window` to `react-virtualized`
 
 # 2021-11-12
 
@@ -40,7 +52,7 @@
   - Added space vertically between dialing code and phone number when wrapped.
 - bpk-component-datatable: 3.0.16 => 4.0.0
   - Updated the datatable component to use the new spacing grid.
-  
+
 **Fixed:**
 
 - bpk-component-blockquote: 3.0.14 => 3.0.15
@@ -176,7 +188,7 @@
 
 **Fixed:**
 
-- bpk-component-modal: 3.0.15 => 3.0.16 
+- bpk-component-modal: 3.0.15 => 3.0.16
   - Updated the modal component to use the new spacing grid.
 - bpk-component-dialog: 4.0.14 => 4.0.15
   - Updated the dialog component to use the new spacing grid.
@@ -318,7 +330,7 @@
 
 **Changed:**
 - bpk-component-chip: 5.0.16 => 5.1.0
-  - Updated dismissible chip to use new `close-circle` icon to be clearer. 
+  - Updated dismissible chip to use new `close-circle` icon to be clearer.
 
 # 2021-08-27
 

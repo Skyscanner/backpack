@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-banner-alert {
   background-color: $bpk-banner-alert-background-color;
   overflow: hidden;
@@ -62,8 +64,7 @@
 
   &__header {
     display: flex;
-    padding: $bpk-banner-alert-header-padding-y
-      $bpk-banner-alert-header-padding-x;
+    padding: bpk-spacing-md();
     flex-direction: row;
     align-items: center;
 
@@ -88,6 +89,7 @@
   }
 
   &__message {
+    padding: 0 bpk-spacing-md();
     flex-grow: 1;
   }
 
@@ -148,8 +150,11 @@
   }
 
   &__children-container {
-    padding: $bpk-banner-alert-children-padding-y
-      $bpk-banner-alert-children-padding-x;
+    // Temporarily adding an extra 2px padding to align alert message and description until the icon size changes to 16px
+    $extra-padding: 2 * $bpk-one-pixel-rem;
+
+    padding: 0 bpk-spacing-xxl() bpk-spacing-md() bpk-spacing-xl() +
+      $extra-padding;
     color: $bpk-banner-alert-children-color;
 
     @include bpk-text;

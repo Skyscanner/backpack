@@ -18,8 +18,10 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-banner-alert-examples {
   &__component {
-    margin-top: $bpk-spacing-md;
+    margin-top: bpk-spacing-base();
   }
 }

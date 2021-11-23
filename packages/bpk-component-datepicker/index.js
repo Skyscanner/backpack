@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+import { CALENDAR_SELECTION_TYPE } from 'bpk-component-calendar';
+
 import BpkDatepicker from './src/BpkDatepicker';
 import themeAttributes from './src/themeAttributes';
 
 export default BpkDatepicker;
-export { themeAttributes };
+export { CALENDAR_SELECTION_TYPE, themeAttributes };
