@@ -373,7 +373,7 @@ class MultipleInputDatepicker extends Component {
             selectTodaysDate={false}
             onClose={this.onClose}
             isOpen={this.state.isOpen}
-            InputComponent={inputs}
+            inputComponent={inputs}
             onDateSelect={(startDate, endDate = null) => {
               if (startDate && !endDate) {
                 this.setState({
