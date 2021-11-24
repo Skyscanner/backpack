@@ -26,6 +26,8 @@ import {
   isSameMonth,
   isToday,
   isWithinRange,
+  isAfter,
+  isBefore,
 } from './date-utils';
 import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 // TODO: Move this to `Week.scss`
@@ -83,9 +85,19 @@ function getSelectedDate(date, selectionConfiguration) {
  * @param {Date} date the current date of the calendar
  * @param {Object} selectionConfiguration the current selection configuration
  * @param {Function} formatDateFull function to format dates
+ * @param {Date} month the current month of the calendar
+ * @param {Number} weekStartsOn index of the first day of the week
+ * @param {Boolean} ignoreOutsideDate ignore date outside current month
  * @returns {String} selection type to be passed to the date
  */
-function getSelectionType(date, selectionConfiguration, formatDateFull) {
+function getSelectionType(
+  date,
+  selectionConfiguration,
+  formatDateFull,
+  month,
+  weekStartsOn,
+  ignoreOutsideDate,
+) {
   if (
     selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
     selectionConfiguration.date === formatDateFull(date)
@@ -103,6 +115,38 @@ function getSelectionType(date, selectionConfiguration, formatDateFull) {
         isSameDay(date, selectionConfiguration.endDate))
     ) {
       return SELECTION_TYPES.single;
+    }
+    if (
+      ignoreOutsideDate &&
+      selectionConfiguration.startDate &&
+      selectionConfiguration.endDate &&
+      isSameMonth(
+        selectionConfiguration.startDate,
+        selectionConfiguration.endDate,
+      ) &&
+      isWithinRange(date, {
+        start: selectionConfiguration.startDate,
+        end: selectionConfiguration.endDate,
+      }) &&
+      !isSameMonth(month, date)
+    ) {
+      return SELECTION_TYPES.none;
+    }
+    if (
+      ignoreOutsideDate &&
+      selectionConfiguration.startDate &&
+      selectionConfiguration.endDate &&
+      !isSameMonth(
+        selectionConfiguration.startDate,
+        selectionConfiguration.endDate,
+      ) &&
+      !isSameMonth(month, date) &&
+      ((isSameWeek(date, selectionConfiguration.endDate, { weekStartsOn }) &&
+        isAfter(date, selectionConfiguration.startDate)) ||
+        (isSameWeek(date, selectionConfiguration.startDate, { weekStartsOn }) &&
+          isBefore(date, selectionConfiguration.endDate)))
+    ) {
+      return SELECTION_TYPES.middle;
     }
     if (
       selectionConfiguration.startDate &&
@@ -277,6 +321,7 @@ class Week extends Component {
       selectionConfiguration,
       ignoreOutsideDate,
       dateProps,
+      weekStartsOn,
     } = this.props;
 
     if (ignoreOutsideDate) {
@@ -303,6 +348,9 @@ class Week extends Component {
             date,
             selectionConfiguration,
             formatDateFull,
+            month,
+            weekStartsOn,
+            ignoreOutsideDate,
           );
 
           return (
