@@ -27,7 +27,7 @@ import { withButtonAlignment } from 'bpk-component-icon';
 import BpkAnimateHeight from 'bpk-animate-height';
 import BpkCloseButton from 'bpk-component-close-button';
 import TickCircleIcon from 'bpk-component-icon/sm/tick-circle';
-import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
+import ChevronDownIcon from 'bpk-component-icon/lg/chevron-down';
 import InfoCircleIcon from 'bpk-component-icon/sm/information-circle';
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
@@ -191,11 +191,9 @@ const BpkBannerAlertInner = (props: Props) => {
           <span className={getClassName('bpk-banner-alert__icon')}>
             {getIconForType(type, icon)}
           </span>
-          &nbsp;
           <span className={getClassName('bpk-banner-alert__message')}>
             {message}
           </span>
-          &nbsp;
           {isExpandable && (
             <span className={getClassName('bpk-banner-alert__toggle')}>
               <ToggleButton expanded={expanded} label={toggleButtonLabel} />
