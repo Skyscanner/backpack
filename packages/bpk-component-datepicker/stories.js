@@ -28,6 +28,7 @@ import {
   DepartReturn,
   CustomComponent,
   InvalidExample,
+  MultipleRangeInputExample,
   DefaultVisualExample,
   VisualRangeExample,
 } from './examples';
@@ -42,5 +43,6 @@ storiesOf('bpk-component-datepicker', module)
   .add('Depart & Return', DepartReturn)
   .add('Custon calendar component', CustomComponent)
   .add('Invalid', InvalidExample)
+  .add('Range with multiple inputs', MultipleRangeInputExample)
   .add('Visual test', DefaultVisualExample)
   .add('Visual test range', VisualRangeExample);
