@@ -135,8 +135,9 @@ class BpkDatepicker extends Component {
       onClose,
     } = this.props;
 
-    // When the calendar is a single date we always want to close on when a date is selected
-    // or if there is a start date but not yet an end date we don't want the calendar to close until the range is selected.
+    // When the calendar is a single date we always want to close it when a date is selected
+    // or if its a range calendar we only want to close the calendar when a range is selected.
+    // If a custom onClose function is provided then we don't want to run the internal version.
     if (
       (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single ||
         (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
