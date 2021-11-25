@@ -18,14 +18,18 @@
 
 @import '~bpk-mixins';
 
+$bpk-spacing-v2: true;
+
 .bpk-accordion {
   &__title {
+    height: auto;
+
     @include bpk-border-bottom-sm($bpk-color-sky-gray-tint-06);
   }
 
   &__toggle-button {
     width: 100%;
-    padding: $bpk-spacing-xs 0;
+    padding: 0;
     border: 0;
     background-color: transparent;
     text-align: left;
@@ -62,6 +66,7 @@
   &__flex-container {
     display: inline-flex;
     width: 100%;
+    margin: (bpk-spacing-md() + bpk-spacing-sm()) 0;
     flex-direction: row;
   }
 
@@ -75,7 +80,7 @@
   }
 
   &__leading-icon {
-    @include bpk-margin-trailing($bpk-spacing-xs, true);
+    @include bpk-margin-trailing(bpk-spacing-md(), true);
   }
 
   &__item-expand-icon {
@@ -108,6 +113,6 @@
 
   &__content-container {
     margin: 0;
-    padding: $bpk-spacing-xs 0;
+    padding: (bpk-spacing-md() + bpk-spacing-sm()) 0;
   }
 }
