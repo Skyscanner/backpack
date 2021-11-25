@@ -141,6 +141,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | formatDateFull        | func                  | true     | -                                   |
 | formatMonth           | func                  | true     | -                                   |
 | calendarComponent     | elementType           | false    | BpkCalendar                         |
+| inputComponent        | elementType           | false    | BpkInput                            |
 | dateModifiers         | object                | false    | {} (\*)                             |
 | inputProps            | object                | false    | {}                                  |
 | markOutsideDays       | bool                  | false    | true (\*)                           |

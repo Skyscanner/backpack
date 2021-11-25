@@ -132,8 +132,21 @@ class BpkDatepicker extends Component {
       selectionConfiguration,
       minDate,
       maxDate,
+      onClose,
     } = this.props;
-    this.onClose();
+
+    // When the calendar is a single date we always want to close it when a date is selected
+    // or if its a range calendar we only want to close the calendar when a range is selected.
+    // If a custom onClose function is provided then we don't want to run the internal version.
+    if (
+      (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single ||
+        (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
+          endDate)) &&
+      !onClose
+    ) {
+      this.onClose();
+    }
+
     if (onDateSelect) {
       const newStartDate = DateUtils.dateToBoundaries(
         startDate,
@@ -145,6 +158,7 @@ class BpkDatepicker extends Component {
         DateUtils.startOfDay(minDate),
         DateUtils.startOfDay(maxDate),
       );
+
       if (
         selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
         selectionConfiguration.startDate &&
@@ -163,6 +177,7 @@ class BpkDatepicker extends Component {
     const {
       changeMonthLabel,
       calendarComponent: Calendar,
+      inputComponent,
       closeButtonText,
       dateModifiers,
       daysOfWeek,
@@ -193,7 +208,7 @@ class BpkDatepicker extends Component {
     delete rest.onOpenChange;
     delete rest.isOpen;
 
-    const inputComponent = (
+    const input = inputComponent || (
       <Input
         id={id}
         name={`${id}_input`}
@@ -239,9 +254,9 @@ class BpkDatepicker extends Component {
           isMobile ? (
             <BpkModal
               id={`${id}-modal`}
-              target={inputComponent}
+              target={input}
               renderTarget={renderTarget}
-              onClose={this.onClose}
+              onClose={this.props.onClose || this.onClose}
               isOpen={this.state.isOpen}
               title={title}
               closeLabel={closeButtonText}
@@ -252,9 +267,9 @@ class BpkDatepicker extends Component {
           ) : (
             <BpkPopover
               id={`${id}-popover`}
-              target={inputComponent}
+              target={input}
               renderTarget={renderTarget}
-              onClose={this.onClose}
+              onClose={this.props.onClose || this.onClose}
               isOpen={this.state.isOpen}
               label={title}
               closeButtonText={closeButtonText}
@@ -286,6 +301,7 @@ BpkDatepicker.propTypes = {
   weekStartsOn: PropTypes.number.isRequired,
   // Optional
   calendarComponent: PropTypes.elementType,
+  inputComponent: PropTypes.elementType,
   date: deprecated(
     PropTypes.instanceOf(Date),
     'Use selectionConfiguration to set date',
@@ -309,10 +325,14 @@ BpkDatepicker.propTypes = {
   renderTarget: PropTypes.func,
   isOpen: PropTypes.bool,
   valid: PropTypes.bool,
+  // Disabling this as if we set a default property for this value it causes the internal onClose function to stop working for default setup
+  // eslint-disable-next-line react/require-default-props
+  onClose: PropTypes.func,
 };
 
 BpkDatepicker.defaultProps = {
   calendarComponent: BpkCalendar,
+  inputComponent: null,
   date: null,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
   inputProps: {},

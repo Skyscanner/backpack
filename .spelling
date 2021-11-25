@@ -524,6 +524,7 @@ schemaMetaData
 
 autoScrollToSelected
 calendarComponent
+inputComponent
 leadingScrollIndicatorClassName
 trailingScrollIndicatorClassName
 bottomMargin
