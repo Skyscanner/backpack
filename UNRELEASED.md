@@ -3,3 +3,9 @@
 - bpk-component-calendar:
 - bpk-component-scrollable-calendar:
   - Fixed white spaces selection in calendar component. 
+
+**Added:**
+
+- bpk-component-datepicker
+- bpk-component-scrollable-calendar
+  - Export `CALENDAR_SELECTION_TYPE` so it can be imported from `bpk-component-datepicker` and `bpk-component-scrollable-calendar` instead of `bpk-component-calendar`
