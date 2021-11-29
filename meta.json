@@ -11,6 +11,9 @@
     },
     {
       "npm": "zgeor"
+    },
+    {
+      "npm": "frugoman"
     }
   ]
 }

@@ -1,3 +1,19 @@
+# 2021-11-29
+
+**Breaking:**
+
+- bpk-component-badge: 3.0.17 => 4.0.0
+    - Updated badge component to use the new spacing grid. This component will now appear larger in height so should be checked this does not alter layout.
+
+**Added:**
+  - bpk-component-datepicker: 14.0.1 => 14.1.0
+    - Added new (OPTIONAL) `inputComponent` property to allow for custom and multiple input fields to be provided for the calendar component when using ranges.
+      - The previous input will continue to work as expected if you do not supply your own input. 
+    - Export `CALENDAR_SELECTION_TYPE` so it can be imported from `bpk-component-datepicker` and `bpk-component-scrollable-calendar` instead of `bpk-component-calendar`
+
+  - bpk-component-scrollable-calendar: 5.0.1 => 5.1.0
+    - Export `CALENDAR_SELECTION_TYPE` so it can be imported from `bpk-component-datepicker` and `bpk-component-scrollable-calendar` instead of `bpk-component-calendar`
+
 # 2021-11-19
 
 **Breaking:**

@@ -28,7 +28,6 @@ import {
   colorPanjin,
   iconSizeSm,
   lineHeightBase,
-  spacingSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import {
@@ -46,7 +45,7 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 const AlignedTimeIcon = withAlignment(TimeIcon, lineHeightBase, iconSizeSm);
 
 const CheckboxWrapper = props => (
-  <div style={{ padding: `${spacingSm} 0` }} {...props} />
+  <div style={{ padding: `1rem 0` }} {...props} />
 );
 
 const StopsContent = () => (
