@@ -156,6 +156,24 @@ const RangeExample = () => (
   />
 );
 
+const SplitWeekRangeExample = () => (
+  <ScrollableCal
+    DateComponent={BpkScrollableCalendarDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    daysOfWeek={weekDays}
+    weekStartsOn={0}
+    selectTodaysDate={false}
+    minDate={new Date(2020, 3, 1)}
+    maxDate={new Date(2020, 6, 1)}
+    selectionConfiguration={{
+      type: 'range',
+      startDate: new Date(2020, 3, 29),
+      endDate: new Date(2020, 4, 4),
+    }}
+  />
+);
+
 const WeekStartsOnSix = () => (
   <ScrollableCal
     weekStartsOn={6}
@@ -347,6 +365,7 @@ const PastCalendar = () => (
 export {
   DefaultExample,
   RangeExample,
+  SplitWeekRangeExample,
   WeekStartsOnSix,
   WithFocusedDate,
   TallContainer,

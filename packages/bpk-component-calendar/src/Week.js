@@ -98,6 +98,11 @@ function getSelectionType(
   weekStartsOn,
   ignoreOutsideDate,
 ) {
+  const { startDate, endDate } = selectionConfiguration;
+  const sameStartDay = isSameDay(date, startDate);
+  const sameEndDay = isSameDay(date, endDate);
+  const rangeDates = startDate && endDate;
+
   if (
     selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
     selectionConfiguration.date === formatDateFull(date)
@@ -106,70 +111,44 @@ function getSelectionType(
   }
   if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range) {
     if (
-      (selectionConfiguration.startDate &&
-        !selectionConfiguration.endDate &&
-        isSameDay(date, selectionConfiguration.startDate)) ||
-      (selectionConfiguration.startDate &&
-        selectionConfiguration.endDate &&
-        isSameDay(date, selectionConfiguration.startDate) &&
-        isSameDay(date, selectionConfiguration.endDate))
+      (startDate && !endDate && sameStartDay) ||
+      (rangeDates && sameStartDay && sameEndDay)
     ) {
       return SELECTION_TYPES.single;
     }
     if (
       ignoreOutsideDate &&
-      selectionConfiguration.startDate &&
-      selectionConfiguration.endDate &&
-      isSameMonth(
-        selectionConfiguration.startDate,
-        selectionConfiguration.endDate,
-      ) &&
-      isWithinRange(date, {
-        start: selectionConfiguration.startDate,
-        end: selectionConfiguration.endDate,
-      }) &&
+      rangeDates &&
+      isSameMonth(startDate, endDate) &&
+      isWithinRange(date, { start: startDate, end: endDate }) &&
       !isSameMonth(month, date)
     ) {
       return SELECTION_TYPES.none;
     }
     if (
       ignoreOutsideDate &&
-      selectionConfiguration.startDate &&
-      selectionConfiguration.endDate &&
-      !isSameMonth(
-        selectionConfiguration.startDate,
-        selectionConfiguration.endDate,
-      ) &&
+      rangeDates &&
+      !isSameMonth(startDate, endDate) &&
       !isSameMonth(month, date) &&
-      ((isSameWeek(date, selectionConfiguration.endDate, { weekStartsOn }) &&
-        isAfter(date, selectionConfiguration.startDate)) ||
-        (isSameWeek(date, selectionConfiguration.startDate, { weekStartsOn }) &&
-          isBefore(date, selectionConfiguration.endDate)))
+      ((isSameWeek(date, endDate, { weekStartsOn }) &&
+        isAfter(date, startDate)) ||
+        (isSameWeek(date, startDate, { weekStartsOn }) &&
+          isBefore(date, endDate)))
     ) {
       return SELECTION_TYPES.middle;
     }
     if (
-      selectionConfiguration.startDate &&
-      selectionConfiguration.endDate &&
-      isWithinRange(date, {
-        start: selectionConfiguration.startDate,
-        end: selectionConfiguration.endDate,
-      }) &&
-      !isSameDay(date, selectionConfiguration.startDate) &&
-      !isSameDay(date, selectionConfiguration.endDate)
+      rangeDates &&
+      isWithinRange(date, { start: startDate, end: endDate }) &&
+      !sameStartDay &&
+      !sameEndDay
     ) {
       return SELECTION_TYPES.middle;
     }
-    if (
-      selectionConfiguration.startDate &&
-      formatDateFull(selectionConfiguration.startDate) === formatDateFull(date)
-    ) {
+    if (startDate && formatDateFull(startDate) === formatDateFull(date)) {
       return SELECTION_TYPES.start;
     }
-    if (
-      selectionConfiguration.endDate &&
-      formatDateFull(selectionConfiguration.endDate) === formatDateFull(date)
-    ) {
+    if (endDate && formatDateFull(endDate) === formatDateFull(date)) {
       return SELECTION_TYPES.end;
     }
   }
