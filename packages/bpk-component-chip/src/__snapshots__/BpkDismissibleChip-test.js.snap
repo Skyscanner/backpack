@@ -8,7 +8,11 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -36,7 +40,11 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -64,7 +72,11 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -92,7 +104,11 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -120,7 +136,11 @@ exports[`BpkDismissibleChip should render correctly with type="light" 1`] = `
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -155,7 +175,11 @@ exports[`BpkDismissibleChip should render correctly with type="light" and a lead
         Leading
       </span>
     </span>
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -184,7 +208,11 @@ exports[`BpkDismissibleChip should render correctly with type="light" and disabl
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -212,7 +240,11 @@ exports[`BpkDismissibleChip should render correctly with type="primary" 1`] = `
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -247,7 +279,11 @@ exports[`BpkDismissibleChip should render correctly with type="primary" and a le
         Leading
       </span>
     </span>
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -276,7 +312,11 @@ exports[`BpkDismissibleChip should render correctly with type="primary" and disa
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -304,7 +344,11 @@ exports[`BpkDismissibleChip should render correctly with type="success" 1`] = `
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -339,7 +383,11 @@ exports[`BpkDismissibleChip should render correctly with type="success" and a le
         Leading
       </span>
     </span>
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -368,7 +416,11 @@ exports[`BpkDismissibleChip should render correctly with type="success" and disa
     title="Dismiss"
     type="button"
   >
-    Dismiss me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Dismiss me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
