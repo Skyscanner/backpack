@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-autosuggest {
   &__container--open {
     position: relative;
@@ -32,7 +34,7 @@
       display: block;
       z-index: $bpk-zindex-autosuggest;
       width: 100%;
-      margin-top: $bpk-spacing-sm;
+      margin-top: bpk-spacing-md() + bpk-spacing-sm();
 
       &::before {
         position: absolute;
@@ -41,8 +43,8 @@
         content: ' ';
         display: block;
         margin-bottom: -$bpk-one-pixel-rem;
-        margin-left: -($bpk-spacing-sm + $bpk-one-pixel-rem);
-        border: ($bpk-spacing-sm + $bpk-one-pixel-rem) solid transparent;
+        margin-left: -((bpk-spacing-sm() * 3) + $bpk-one-pixel-rem);
+        border: ((bpk-spacing-sm() * 3) + $bpk-one-pixel-rem) solid transparent;
         border-bottom-color: $bpk-color-sky-gray-tint-06;
         pointer-events: none;
       }
@@ -54,8 +56,8 @@
         content: ' ';
         display: block;
         margin-bottom: -$bpk-one-pixel-rem;
-        margin-left: -$bpk-spacing-sm;
-        border: $bpk-spacing-sm solid transparent;
+        margin-left: -(bpk-spacing-md() + bpk-spacing-sm());
+        border: (bpk-spacing-md() + bpk-spacing-sm()) solid transparent;
         border-bottom-color: $bpk-autosuggest-list-background-color;
         pointer-events: none;
       }
@@ -94,21 +96,21 @@
   &__suggestion {
     display: table;
     width: 100%;
-    padding: $bpk-spacing-sm $bpk-spacing-md;
+    padding: bpk-spacing-base();
 
     &--indent {
-      padding-left: $bpk-spacing-lg;
+      padding-left: bpk-spacing-xl();
     }
 
     &-icon {
       display: table-cell;
-      margin-right: $bpk-spacing-xs;
+      margin-right: bpk-spacing-md();
       vertical-align: top;
       fill: $bpk-color-sky-gray-tint-02;
 
       @include bpk-rtl {
         margin-right: 0;
-        margin-left: $bpk-spacing-xs;
+        margin-left: bpk-spacing-md();
       }
     }
 
@@ -120,7 +122,6 @@
 
     &-value {
       display: block;
-      width: 100%;
     }
 
     &-sub-heading {
@@ -134,6 +135,7 @@
 
     &-tertiary-label {
       display: table-cell;
+      color: $bpk-color-sky-gray-tint-02;
       vertical-align: top;
       word-break: keep-all;
 
