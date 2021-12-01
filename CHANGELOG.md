@@ -1,3 +1,14 @@
+# 2021-12-01
+
+**Patch:**
+
+- bpk-component-chip: 5.1.11 => 5.1.12
+  - Updated Chip to new spacing styles. Height has been reduced and text size has been reduced to `14px`.
+
+- bpk-component-accordion: 3.0.18 => 3.0.19
+  - Updated `BpkAccordion` to the new spacing grid.
+
+
 # 2021-11-29
 
 **Breaking:**
