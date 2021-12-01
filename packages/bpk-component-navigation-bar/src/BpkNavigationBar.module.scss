@@ -23,7 +23,7 @@ $bpk-spacing-v2: true;
 .bpk-navigation-bar {
   position: relative;
   display: flex;
-  min-height: bpk-spacing-xxl() + bpk-spacing-md();
+  min-height: bpk-spacing-xl() + bpk-spacing-lg();
   padding: bpk-spacing-base();
   flex-direction: row;
   justify-content: center;
