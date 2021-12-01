@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
+$bpk-spacing-v2: true;
+
 @mixin bpk-chip {
   display: inline-flex;
-  height: $bpk-spacing-xl;
-  padding: 0 $bpk-spacing-md;
+  height: bpk-spacing-xl();
+  padding: 0 bpk-spacing-base();
   align-items: center;
   border: none;
 
@@ -167,13 +169,13 @@
     display: inline-flex;
     fill: currentColor;
 
-    @include bpk-margin-trailing($bpk-spacing-xs);
+    @include bpk-margin-trailing(bpk-spacing-md());
   }
 
   &__trailing-accessory-view {
     display: inline-flex;
     fill: currentColor;
 
-    @include bpk-margin-leading($bpk-spacing-xs);
+    @include bpk-margin-leading(bpk-spacing-md());
   }
 }
