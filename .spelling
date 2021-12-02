@@ -379,11 +379,6 @@ RATING_TYPES.default
 RATING_TYPES.pill
 renderFlag
 renderTarget
-rowType
-ROW_TYPES.start
-ROW_TYPES.middle
-ROW_TYPES.end
-ROW_TYPES.both
 selectionConfiguration
 selectedDates
 selectedId

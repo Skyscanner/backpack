@@ -21,6 +21,7 @@
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
 import STYLES from './BpkSelectableChip.module.scss';
 import {
@@ -76,7 +77,7 @@ const BpkSelectableChip = (props: Props) => {
           {leadingAccessoryView}
         </span>
       )}
-      {children}
+      <BpkText textStyle={TEXT_STYLES.sm}>{children}</BpkText>
       {trailingAccessoryView && (
         <span className={getClassName('bpk-chip__trailing-accessory-view')}>
           {trailingAccessoryView}
