@@ -26,6 +26,8 @@ import {
   isSameMonth,
   isToday,
   isWithinRange,
+  isAfter,
+  isBefore,
 } from './date-utils';
 import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 // TODO: Move this to `Week.scss`
@@ -83,9 +85,24 @@ function getSelectedDate(date, selectionConfiguration) {
  * @param {Date} date the current date of the calendar
  * @param {Object} selectionConfiguration the current selection configuration
  * @param {Function} formatDateFull function to format dates
+ * @param {Date} month the current month of the calendar
+ * @param {Number} weekStartsOn index of the first day of the week
+ * @param {Boolean} ignoreOutsideDate ignore date outside current month
  * @returns {String} selection type to be passed to the date
  */
-function getSelectionType(date, selectionConfiguration, formatDateFull) {
+function getSelectionType(
+  date,
+  selectionConfiguration,
+  formatDateFull,
+  month,
+  weekStartsOn,
+  ignoreOutsideDate,
+) {
+  const { startDate, endDate } = selectionConfiguration;
+  const sameStartDay = isSameDay(date, startDate);
+  const sameEndDay = isSameDay(date, endDate);
+  const rangeDates = startDate && endDate;
+
   if (
     selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
     selectionConfiguration.date === formatDateFull(date)
@@ -94,38 +111,44 @@ function getSelectionType(date, selectionConfiguration, formatDateFull) {
   }
   if (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range) {
     if (
-      (selectionConfiguration.startDate &&
-        !selectionConfiguration.endDate &&
-        isSameDay(date, selectionConfiguration.startDate)) ||
-      (selectionConfiguration.startDate &&
-        selectionConfiguration.endDate &&
-        isSameDay(date, selectionConfiguration.startDate) &&
-        isSameDay(date, selectionConfiguration.endDate))
+      (startDate && !endDate && sameStartDay) ||
+      (rangeDates && sameStartDay && sameEndDay)
     ) {
       return SELECTION_TYPES.single;
     }
     if (
-      selectionConfiguration.startDate &&
-      selectionConfiguration.endDate &&
-      isWithinRange(date, {
-        start: selectionConfiguration.startDate,
-        end: selectionConfiguration.endDate,
-      }) &&
-      !isSameDay(date, selectionConfiguration.startDate) &&
-      !isSameDay(date, selectionConfiguration.endDate)
+      ignoreOutsideDate &&
+      rangeDates &&
+      isSameMonth(startDate, endDate) &&
+      isWithinRange(date, { start: startDate, end: endDate }) &&
+      !isSameMonth(month, date)
+    ) {
+      return SELECTION_TYPES.none;
+    }
+    if (
+      ignoreOutsideDate &&
+      rangeDates &&
+      !isSameMonth(startDate, endDate) &&
+      !isSameMonth(month, date) &&
+      ((isSameWeek(date, endDate, { weekStartsOn }) &&
+        isAfter(date, startDate)) ||
+        (isSameWeek(date, startDate, { weekStartsOn }) &&
+          isBefore(date, endDate)))
     ) {
       return SELECTION_TYPES.middle;
     }
     if (
-      selectionConfiguration.startDate &&
-      formatDateFull(selectionConfiguration.startDate) === formatDateFull(date)
+      rangeDates &&
+      isWithinRange(date, { start: startDate, end: endDate }) &&
+      !sameStartDay &&
+      !sameEndDay
     ) {
+      return SELECTION_TYPES.middle;
+    }
+    if (startDate && formatDateFull(startDate) === formatDateFull(date)) {
       return SELECTION_TYPES.start;
     }
-    if (
-      selectionConfiguration.endDate &&
-      formatDateFull(selectionConfiguration.endDate) === formatDateFull(date)
-    ) {
+    if (endDate && formatDateFull(endDate) === formatDateFull(date)) {
       return SELECTION_TYPES.end;
     }
   }
@@ -277,6 +300,7 @@ class Week extends Component {
       selectionConfiguration,
       ignoreOutsideDate,
       dateProps,
+      weekStartsOn,
     } = this.props;
 
     if (ignoreOutsideDate) {
@@ -303,6 +327,9 @@ class Week extends Component {
             date,
             selectionConfiguration,
             formatDateFull,
+            month,
+            weekStartsOn,
+            ignoreOutsideDate,
           );
 
           return (
