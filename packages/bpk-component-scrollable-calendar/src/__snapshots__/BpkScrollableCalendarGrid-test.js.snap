@@ -6,7 +6,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
     class="bpk-scrollable-calendar-grid"
   >
     <h1
-      class="bpk-text bpk-text--xl bpk-scrollable-calendar-grid__title"
+      class="bpk-text bpk-text--lg bpk-text--bold bpk-scrollable-calendar-grid__title"
     >
       October 2016
     </h1>
@@ -755,7 +755,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
     class="bpk-scrollable-calendar-grid"
   >
     <h1
-      class="bpk-text bpk-text--xl bpk-scrollable-calendar-grid__title"
+      class="bpk-text bpk-text--lg bpk-text--bold bpk-scrollable-calendar-grid__title"
     >
       October 2016
     </h1>
@@ -1207,7 +1207,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
     class="bpk-scrollable-calendar-grid"
   >
     <h1
-      class="bpk-text bpk-text--xl bpk-scrollable-calendar-grid__title"
+      class="bpk-text bpk-text--lg bpk-text--bold bpk-scrollable-calendar-grid__title"
     >
       October 2016
     </h1>
@@ -1924,7 +1924,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
     class="bpk-scrollable-calendar-grid"
   >
     <h1
-      class="bpk-text bpk-text--xl bpk-scrollable-calendar-grid__title"
+      class="bpk-text bpk-text--lg bpk-text--bold bpk-scrollable-calendar-grid__title"
     >
       October 2016
     </h1>
