@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-import { calendarDaySize } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  calendarDaySize,
+  calendarDaySpacing,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const CSS_UNIT_REGEX = /(^[+-]?(?:\d*\.)?\d+)(.+)/i;
 
@@ -33,8 +36,14 @@ const splitToken = value => {
 
 export const getCalendarGridWidth = (multiplier = 1) => {
   const [sizeValue, sizeUnit] = splitToken(calendarDaySize);
+  const [spacingValue, spacingUnit] = splitToken(calendarDaySpacing);
 
-  const width = multiplier * (7 * sizeValue);
+  if (sizeUnit !== spacingUnit) {
+    throw new Error(
+      `'calendarDaySize' and 'calendarDaySpacing' must use the same unit. Got ${sizeUnit} and ${spacingUnit}`,
+    );
+  }
+  const width = multiplier * (7 * (sizeValue + 2 * spacingValue));
   return `${width}${sizeUnit}`;
 };
 

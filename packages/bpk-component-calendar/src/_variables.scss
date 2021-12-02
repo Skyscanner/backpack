@@ -21,4 +21,4 @@
 $shadow-bottom: 0 1px 0 0 $bpk-color-sky-gray-tint-06; /* stylelint-disable-line unit-blacklist */
 $shadow-left: -1px 0 0 0 $bpk-color-sky-gray-tint-06; /* stylelint-disable-line unit-blacklist */
 $shadow-right: 1px 0 0 0 $bpk-color-sky-gray-tint-06; /* stylelint-disable-line unit-blacklist */
-$calendar-width: 7 * $bpk-calendar-day-size;
+$calendar-width: 7 * ($bpk-calendar-day-size + (2 * $bpk-calendar-day-spacing));
