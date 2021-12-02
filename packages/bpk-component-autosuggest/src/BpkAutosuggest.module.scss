@@ -114,10 +114,17 @@ $bpk-spacing-v2: true;
       }
     }
 
-    &-inner {
+    &-content {
       display: table-cell;
       width: 100%;
       vertical-align: top;
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     &-value {
@@ -135,6 +142,7 @@ $bpk-spacing-v2: true;
 
     &-tertiary-label {
       display: table-cell;
+      align-self: center;
       color: $bpk-color-sky-gray-tint-02;
       vertical-align: top;
       word-break: keep-all;
