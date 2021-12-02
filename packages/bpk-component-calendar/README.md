@@ -258,7 +258,6 @@ The BpkCalendarDate component is used to render the content of a cell
 | onClick               | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | true             |
-| rowType         | oneOf(ROW_TYPES.start, ROW_TYPES.middle, ROW_TYPES.end, ROW_TYPES.both)      | false    | null             |
 | selectionType         | oneOf(SELECTION_TYPES.single, SELECTION_TYPES.start, SELECTION_TYPES.middle, SELECTION_TYPES.end)      | false    | SELECTION_TYPES.single             |
 | style                 | object               | false    | null             |
 
