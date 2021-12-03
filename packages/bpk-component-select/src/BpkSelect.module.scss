@@ -72,10 +72,10 @@ $bpk-spacing-v2: true;
   }
 
   &--with-image-large {
-    padding-left: bpk-spacing-xxl() + bpk-spacing-sm();
+    padding-left: bpk-spacing-xxl() + bpk-spacing-base();
 
     @include bpk-rtl {
-      padding-right: bpk-spacing-xxl() + bpk-spacing-sm();
+      padding-right: bpk-spacing-xxl() + bpk-spacing-base();
       padding-left: $bpk-select-padding-right;
 
       @media screen\0 {
@@ -114,6 +114,7 @@ $select-image-large-height: 24 * $bpk-one-pixel-rem;
 
     &--large {
       top: ($bpk-input-large-height - $select-image-large-height) / 2;
+      left: bpk-spacing-base();
       width: $select-image-large-width;
       height: $select-image-large-height;
     }
