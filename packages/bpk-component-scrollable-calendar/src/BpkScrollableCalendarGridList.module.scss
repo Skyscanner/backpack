@@ -18,7 +18,9 @@
 
 @import '~bpk-mixins/index';
 
-$calendar-height: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
+$bpk-spacing-v2: true;
+
+$calendar-height: 7 * ($bpk-calendar-day-size + bpk-spacing-lg());
 
 .bpk-scrollable-calendar-grid-list {
   position: relative;
