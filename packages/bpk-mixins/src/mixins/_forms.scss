@@ -314,21 +314,21 @@ $bpk-spacing-v2: true;
   display: inline-block;
   width: 100%;
   height: $bpk-input-height;
-  padding: bpk-spacing-md() bpk-spacing-xl() bpk-spacing-md() bpk-spacing-base();
+  padding: bpk-spacing-md() bpk-spacing-xl() bpk-spacing-md() bpk-spacing-md();
   border: $bpk-select-border;
   border-radius: $bpk-select-border-radius;
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right
-    bpk-spacing-base() center;
+    bpk-spacing-md() center;
   background-size: $bpk-input-height / 2;
   color: $bpk-select-color;
   line-height: $bpk-line-height-base - (2 * $bpk-select-border-width);
   appearance: none;
 
   @include bpk-rtl {
-    padding-right: bpk-spacing-base();
+    padding-right: bpk-spacing-md();
     padding-left: bpk-spacing-xl();
-    background-position: left bpk-spacing-base() center;
+    background-position: left bpk-spacing-md() center;
   }
 
   @media screen\0 {
@@ -342,7 +342,7 @@ $bpk-spacing-v2: true;
     border-color: $bpk-select-disabled-border-color;
     background: $bpk-color-white
       url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-04)) no-repeat right
-      bpk-spacing-base() center;
+      bpk-spacing-md() center;
     background-size: $bpk-input-height / 2;
     color: $bpk-select-disabled-color;
     cursor: not-allowed;
@@ -361,6 +361,17 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-select--large {
   height: $bpk-input-large-height;
+  padding: bpk-spacing-md() bpk-spacing-xxl() bpk-spacing-md()
+    bpk-spacing-base();
+  background: $bpk-color-white
+    url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right
+    bpk-spacing-base() center;
+
+  @include bpk-rtl {
+    padding-right: bpk-spacing-base();
+    padding-left: bpk-spacing-xl();
+    background-position: left bpk-spacing-base() center;
+  }
 }
 
 /// Docked (first-child) form select input. Modifies the bpk-select mixin.
@@ -460,7 +471,7 @@ $bpk-spacing-v2: true;
   padding-right: bpk-spacing-xl();
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right
-    bpk-spacing-base() center;
+    bpk-spacing-md() center;
   background-size: $bpk-input-height / 2;
 
   @include bpk-themeable-property(
@@ -470,9 +481,9 @@ $bpk-spacing-v2: true;
   );
 
   @include bpk-rtl {
-    padding-right: bpk-spacing-base();
+    padding-right: bpk-spacing-md();
     padding-left: bpk-spacing-xl();
-    background-position: left bpk-spacing-base() center;
+    background-position: left bpk-spacing-md() center;
   }
 }
 
