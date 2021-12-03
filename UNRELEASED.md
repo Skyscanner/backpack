@@ -1,3 +1,4 @@
+
 **Breaking:**
 
 - bpk-component-calendar:
@@ -11,5 +12,8 @@
 - bpk-component-scrollable-calendar:
     - Fixed white spaces selection in calendar component.
 - bpk-component-autosuggest:
-  - Updated component to use new spacing sizes.
-  
+    - Updated component to use new spacing sizes.
+- bpk-component-navigation-bar:
+    - Updated the `min-height` of the nav bar to be `56px`.
+- bpk-component-horizontal-nav:
+    - Updated height to `48px`.
