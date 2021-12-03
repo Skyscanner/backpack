@@ -1,3 +1,27 @@
+# 2021-12-03
+
+
+**Breaking:**
+
+- bpk-component-calendar: 10.0.3 => 11.0.0
+- bpk-component-scrollable-calendar: 5.1.1 => 6.0.0
+- bpk-component-datepicker: 14.1.1 => 15.0.0
+    - Updated calendar component to use the new spacing grid. This component will now appear larger in height.
+
+**Fixed:**
+
+- bpk-component-select:
+  - Updated padding horizontally in select component.
+
+- bpk-component-calendar: 10.0.3 => 11.0.0
+- bpk-component-scrollable-calendar: 5.1.1 => 6.0.0
+    - Fixed white spaces selection in calendar component.
+- bpk-component-navigation-bar: 3.0.20 => 3.0.21
+    - Updated the `min-height` of the nav bar to be `56px`.
+- bpk-component-horizontal-nav: 5.0.9 => 5.0.10
+    - Updated height to `48px`.
+
+
 # 2021-12-01
 
 **Patch:**
