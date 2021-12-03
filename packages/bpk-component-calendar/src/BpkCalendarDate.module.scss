@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-calendar-date {
   width: $bpk-calendar-day-size;
   height: $bpk-calendar-day-size;
@@ -139,7 +141,8 @@
     }
 
     &.bpk-calendar-date--colored {
-      border: ($bpk-spacing-xs / 2) solid $bpk-calendar-day-focused-border-color;
+      border: (bpk-spacing-sm() / 2) solid
+        $bpk-calendar-day-focused-border-color;
       box-shadow: 0 0 0 1px $bpk-color-white inset;
     }
   }
