@@ -19,6 +19,8 @@
 @import '~bpk-mixins/index';
 @import 'variables';
 
+$bpk-spacing-v2: true;
+
 .bpk-calendar {
   display: flex;
   width: 100%;
@@ -31,10 +33,10 @@
   }
 
   &__header {
-    margin-top: $bpk-spacing-sm;
+    margin-top: bpk-spacing-lg();
   }
 
   &__grid {
-    margin-top: $bpk-spacing-sm;
+    margin-top: bpk-spacing-lg();
   }
 }

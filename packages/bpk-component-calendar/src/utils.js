@@ -43,8 +43,7 @@ export const getCalendarGridWidth = (multiplier = 1) => {
       `'calendarDaySize' and 'calendarDaySpacing' must use the same unit. Got ${sizeUnit} and ${spacingUnit}`,
     );
   }
-
-  const width = multiplier * (7 * (sizeValue + spacingValue));
+  const width = multiplier * (7 * (sizeValue + 2 * spacingValue));
   return `${width}${sizeUnit}`;
 };
 
