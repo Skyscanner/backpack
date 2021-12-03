@@ -61,18 +61,23 @@ const BpkSuggestion = (props: Props) => {
       {icon ? (
         <Icon className={getClassName('bpk-autosuggest__suggestion-icon')} />
       ) : null}
-      <div className={getClassName('bpk-autosuggest__suggestion-inner')}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-          }}
-        >
-          <span className={getClassName('bpk-autosuggest__suggestion-value')}>
-            {value}
-          </span>
+      <div className={getClassName('bpk-autosuggest__suggestion-content')}>
+        <div className={getClassName('bpk-autosuggest__suggestion-inner')}>
+          <div>
+            <span className={getClassName('bpk-autosuggest__suggestion-value')}>
+              {value}
+            </span>
+            {subHeading || tertiaryLabel ? (
+              <small
+                className={getClassName(
+                  'bpk-autosuggest__suggestion-sub-heading',
+                )}
+              >
+                {subHeading}
+              </small>
+            ) : null}
+          </div>
+
           {tertiaryLabel ? (
             <aside
               className={getClassName(
@@ -83,14 +88,6 @@ const BpkSuggestion = (props: Props) => {
             </aside>
           ) : null}
         </div>
-
-        {subHeading || tertiaryLabel ? (
-          <small
-            className={getClassName('bpk-autosuggest__suggestion-sub-heading')}
-          >
-            {subHeading}
-          </small>
-        ) : null}
       </div>
     </section>
   );
