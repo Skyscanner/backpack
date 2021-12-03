@@ -6,16 +6,18 @@ exports[`BpkAutosuggestSuggestion should render correctly 1`] = `
     class="bpk-autosuggest__suggestion"
   >
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          Edinburgh
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            Edinburgh
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -28,16 +30,18 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "className" att
     class="bpk-autosuggest__suggestion custom-class-1 custom-class-2"
   >
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          Edinburgh
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            Edinburgh
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -50,22 +54,24 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "subHeading" at
     class="bpk-autosuggest__suggestion"
   >
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          Edinburgh
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            Edinburgh
+          </span>
+          <small
+            class="bpk-autosuggest__suggestion-sub-heading"
+          >
+            United Kingdom
+          </small>
+        </div>
       </div>
-      <small
-        class="bpk-autosuggest__suggestion-sub-heading"
-      >
-        United Kingdom
-      </small>
     </div>
   </section>
 </DocumentFragment>
@@ -77,24 +83,26 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "subHeading" at
     class="bpk-autosuggest__suggestion"
   >
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          Edinburgh
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            Edinburgh
+          </span>
+          <small
+            class="bpk-autosuggest__suggestion-sub-heading"
+          >
+            <strong>
+              United Kingdom
+            </strong>
+          </small>
+        </div>
       </div>
-      <small
-        class="bpk-autosuggest__suggestion-sub-heading"
-      >
-        <strong>
-          United Kingdom
-        </strong>
-      </small>
     </div>
   </section>
 </DocumentFragment>
@@ -106,27 +114,29 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel"
     class="bpk-autosuggest__suggestion"
   >
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          Edinburgh
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            Edinburgh
+          </span>
+          <small
+            class="bpk-autosuggest__suggestion-sub-heading"
+          >
+            United Kingdom
+          </small>
+        </div>
         <aside
           class="bpk-autosuggest__suggestion-tertiary-label"
         >
           Scotland
         </aside>
       </div>
-      <small
-        class="bpk-autosuggest__suggestion-sub-heading"
-      >
-        United Kingdom
-      </small>
     </div>
   </section>
 </DocumentFragment>
@@ -138,25 +148,27 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel"
     class="bpk-autosuggest__suggestion"
   >
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          Edinburgh
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            Edinburgh
+          </span>
+          <small
+            class="bpk-autosuggest__suggestion-sub-heading"
+          />
+        </div>
         <aside
           class="bpk-autosuggest__suggestion-tertiary-label"
         >
           Scotland
         </aside>
       </div>
-      <small
-        class="bpk-autosuggest__suggestion-sub-heading"
-      />
     </div>
   </section>
 </DocumentFragment>
@@ -168,25 +180,27 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel"
     class="bpk-autosuggest__suggestion"
   >
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          深圳寶安國際
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            深圳寶安國際
+          </span>
+          <small
+            class="bpk-autosuggest__suggestion-sub-heading"
+          />
+        </div>
         <aside
           class="bpk-autosuggest__suggestion-tertiary-label"
         >
           三級標籤
         </aside>
       </div>
-      <small
-        class="bpk-autosuggest__suggestion-sub-heading"
-      />
     </div>
   </section>
 </DocumentFragment>
@@ -198,18 +212,20 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "value" attribu
     class="bpk-autosuggest__suggestion"
   >
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          <strong>
-            Edinburgh
-          </strong>
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            <strong>
+              Edinburgh
+            </strong>
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -236,27 +252,29 @@ exports[`BpkAutosuggestSuggestion should render correctly with all available att
       />
     </svg>
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          Edinburgh
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            Edinburgh
+          </span>
+          <small
+            class="bpk-autosuggest__suggestion-sub-heading"
+          >
+            United Kingdom
+          </small>
+        </div>
         <aside
           class="bpk-autosuggest__suggestion-tertiary-label"
         >
           Scotland
         </aside>
       </div>
-      <small
-        class="bpk-autosuggest__suggestion-sub-heading"
-      >
-        United Kingdom
-      </small>
     </div>
   </section>
 </DocumentFragment>
@@ -282,16 +300,18 @@ exports[`BpkAutosuggestSuggestion should render correctly with an "icon" attribu
       />
     </svg>
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          Edinburgh
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            Edinburgh
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -304,16 +324,18 @@ exports[`BpkAutosuggestSuggestion should render correctly with an "indent" attri
     class="bpk-autosuggest__suggestion bpk-autosuggest__suggestion--indent"
   >
     <div
-      class="bpk-autosuggest__suggestion-inner"
+      class="bpk-autosuggest__suggestion-content"
     >
       <div
-        style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;"
+        class="bpk-autosuggest__suggestion-inner"
       >
-        <span
-          class="bpk-autosuggest__suggestion-value"
-        >
-          Edinburgh
-        </span>
+        <div>
+          <span
+            class="bpk-autosuggest__suggestion-value"
+          >
+            Edinburgh
+          </span>
+        </div>
       </div>
     </div>
   </section>
