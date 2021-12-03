@@ -197,7 +197,6 @@ export const propTypes = {
   onClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
-  rowType: PropTypes.oneOf(Object.keys(ROW_TYPES)),
   selectionType: PropTypes.oneOf(Object.keys(SELECTION_TYPES)),
   style: PropTypes.object,
 };
@@ -217,7 +216,6 @@ export const defaultProps = {
   onClick: null,
   onDateKeyDown: null,
   preventKeyboardFocus: true,
-  rowType: null,
   selectionType: SELECTION_TYPES.none,
   style: null,
 };

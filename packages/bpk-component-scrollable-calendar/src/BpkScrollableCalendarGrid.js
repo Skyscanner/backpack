@@ -38,7 +38,8 @@ const BpkScrollableCalendarGrid = props => {
       <BpkText
         className={getClassName('bpk-scrollable-calendar-grid__title')}
         tagName="h1"
-        textStyle="xl"
+        textStyle="lg"
+        weight="bold"
       >
         {props.formatMonth(month)}
       </BpkText>

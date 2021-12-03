@@ -9,7 +9,11 @@ exports[`BpkSelectableChip should render correctly 1`] = `
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -23,7 +27,11 @@ exports[`BpkSelectableChip should render correctly with a "className" attribute 
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -37,7 +45,11 @@ exports[`BpkSelectableChip should render correctly with type="light" 1`] = `
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -58,7 +70,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and a leadi
         Leading
       </span>
     </span>
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -72,7 +88,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and a trail
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -100,7 +120,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and both a 
         Leading
       </span>
     </span>
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -122,7 +146,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and disable
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -136,7 +164,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and selecte
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -151,7 +183,11 @@ exports[`BpkSelectableChip should render correctly with type="light", selected a
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -165,7 +201,11 @@ exports[`BpkSelectableChip should render correctly with type="primary" 1`] = `
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -186,7 +226,11 @@ exports[`BpkSelectableChip should render correctly with type="primary" and a lea
         Leading
       </span>
     </span>
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -200,7 +244,11 @@ exports[`BpkSelectableChip should render correctly with type="primary" and a tra
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -228,7 +276,11 @@ exports[`BpkSelectableChip should render correctly with type="primary" and both 
         Leading
       </span>
     </span>
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -250,7 +302,11 @@ exports[`BpkSelectableChip should render correctly with type="primary" and disab
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -264,7 +320,11 @@ exports[`BpkSelectableChip should render correctly with type="primary" and selec
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -279,7 +339,11 @@ exports[`BpkSelectableChip should render correctly with type="primary", selected
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -293,7 +357,11 @@ exports[`BpkSelectableChip should render correctly with type="success" 1`] = `
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -314,7 +382,11 @@ exports[`BpkSelectableChip should render correctly with type="success" and a lea
         Leading
       </span>
     </span>
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -328,7 +400,11 @@ exports[`BpkSelectableChip should render correctly with type="success" and a tra
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -356,7 +432,11 @@ exports[`BpkSelectableChip should render correctly with type="success" and both 
         Leading
       </span>
     </span>
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
     <span
       class="bpk-chip__trailing-accessory-view"
     >
@@ -378,7 +458,11 @@ exports[`BpkSelectableChip should render correctly with type="success" and disab
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -392,7 +476,11 @@ exports[`BpkSelectableChip should render correctly with type="success" and selec
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -407,7 +495,11 @@ exports[`BpkSelectableChip should render correctly with type="success", selected
     title="Toggle"
     type="button"
   >
-    Toggle me
+    <span
+      class="bpk-text bpk-text--sm"
+    >
+      Toggle me
+    </span>
   </button>
 </DocumentFragment>
 `;

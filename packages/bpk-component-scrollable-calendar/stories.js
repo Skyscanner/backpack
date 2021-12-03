@@ -35,11 +35,16 @@ import {
   ScrollableCalendarGridList,
   PastCalendar,
   RangeExample,
+  SplitWeekRangeExample,
 } from './examples';
 
 storiesOf('bpk-component-scrollable-calendar', module)
   .add('Scrollable Calendar - default', DefaultExample)
   .add('Scrollable Calendar - range', RangeExample)
+  .add(
+    'Scrollable Calendar - Week split across 2 months range',
+    SplitWeekRangeExample,
+  )
   .add('Scrollable Calendar - week starts on 6', WeekStartsOnSix)
   .add('Scrollable Calendar - with focused date', WithFocusedDate)
   .add('Scrollable Calendar in a tall container', TallContainer)
