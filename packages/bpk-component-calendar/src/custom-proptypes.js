@@ -56,12 +56,12 @@ const CALENDAR_SELECTION_TYPE = {
 };
 
 const SelectionConfigurationSingle = PropTypes.shape({
-  type: CALENDAR_SELECTION_TYPE.single,
+  type: PropTypes.oneOf([CALENDAR_SELECTION_TYPE.single]),
   date: PropTypes.instanceOf(Date),
 });
 
 const SelectionConfigurationRange = PropTypes.shape({
-  type: CALENDAR_SELECTION_TYPE.range,
+  type: PropTypes.oneOf([CALENDAR_SELECTION_TYPE.range]),
   startDate: DateType('selectionConfiguration'),
   endDate: DateType('selectionConfiguration'),
 });
