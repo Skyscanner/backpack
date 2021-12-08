@@ -82,12 +82,27 @@ const InvalidExample = () => (
   </form>
 );
 
+const LargeExample = () => (
+  <form>
+    <BpkLabel htmlFor="large">Textarea</BpkLabel>
+    <BpkTextarea
+      id="large"
+      name="large"
+      large
+      value={loremIpsum}
+      onChange={action('input changed')}
+      placeholder="Please enter some text"
+    />
+  </form>
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
     <PlaceholderExample />
     <DisabledExample />
     <InvalidExample />
+    <LargeExample />
   </div>
 );
 
@@ -96,5 +111,6 @@ export {
   PlaceholderExample,
   DisabledExample,
   InvalidExample,
+  LargeExample,
   MixedExample,
 };

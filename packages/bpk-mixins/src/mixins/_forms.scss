@@ -97,6 +97,17 @@ $bpk-spacing-v2: true;
     padding-right: $bpk-input-padding-x;
     padding-left: bpk-spacing-xl();
     background-position: left bpk-spacing-md() center;
+
+    &.bpk-input--large {
+      padding-right: bpk-spacing-base();
+      padding-left: bpk-spacing-xxl();
+      background-position: left bpk-spacing-base() center;
+    }
+  }
+
+  &.bpk-input--large {
+    padding-right: bpk-spacing-xxl();
+    background-position: right bpk-spacing-base() center;
   }
 }
 
@@ -127,6 +138,17 @@ $bpk-spacing-v2: true;
     padding-right: $bpk-input-padding-x;
     padding-left: bpk-spacing-xl();
     background-position: left bpk-spacing-md() center;
+
+    &.bpk-input--large {
+      padding-right: bpk-spacing-base();
+      padding-left: bpk-spacing-xxl();
+      background-position: left bpk-spacing-base() center;
+    }
+  }
+
+  &.bpk-input--large {
+    padding-right: bpk-spacing-xxl();
+    background-position: right bpk-spacing-base() center;
   }
 }
 
@@ -146,6 +168,15 @@ $bpk-spacing-v2: true;
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
     padding-left: bpk-spacing-xl();
+
+    &.bpk-input--large {
+      padding-right: bpk-spacing-base();
+      padding-left: bpk-spacing-xxl();
+    }
+  }
+
+  &.bpk-input--large {
+    padding-right: bpk-spacing-xxl();
   }
 
   &:focus {
@@ -213,11 +244,6 @@ $bpk-spacing-v2: true;
   height: $bpk-input-large-height;
   padding-right: bpk-spacing-base();
   padding-left: bpk-spacing-base();
-  background-position: right bpk-spacing-base() center;
-
-  @include bpk-rtl {
-    background-position: left bpk-spacing-base() center;
-  }
 }
 
 /// Docked (first-child) form input. Modifies the bpk-input mixin.
@@ -773,8 +799,6 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-radio__input {
-  $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
-
   position: absolute;
   top: 0;
   left: 0;
@@ -813,6 +837,7 @@ $bpk-spacing-v2: true;
   &:disabled {
     border-color: $bpk-color-sky-gray-tint-04;
   }
+  $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
 }
 
 /// Form label.
@@ -990,6 +1015,7 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-textarea--invalid {
+  padding-right: bpk-spacing-xl();
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right
     bpk-spacing-md() center;
@@ -1002,6 +1028,24 @@ $bpk-spacing-v2: true;
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
+    padding-left: bpk-spacing-xl();
     background-position: left bpk-spacing-md() center;
+
+    &.bpk-textarea--large {
+      padding-right: bpk-spacing-base();
+      padding-left: bpk-spacing-xxl();
+      background-position: right bpk-spacing-base() center;
+    }
   }
+
+  &.bpk-textarea--large {
+    padding-right: bpk-spacing-xxl();
+    background-position: right bpk-spacing-base() center;
+  }
+}
+
+@mixin bpk-textarea--large {
+  min-height: 6 * bpk-spacing-base();
+  padding-right: bpk-spacing-base();
+  padding-left: bpk-spacing-base();
 }

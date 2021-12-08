@@ -25,6 +25,7 @@ import {
   PlaceholderExample,
   DisabledExample,
   InvalidExample,
+  LargeExample,
   MixedExample,
 } from './examples';
 
@@ -33,4 +34,5 @@ storiesOf('bpk-component-textarea', module)
   .add('Placeholder', PlaceholderExample)
   .add('Disabled', DisabledExample)
   .add('Invalid', InvalidExample)
+  .add('Large', LargeExample)
   .add('Visual test', MixedExample);
