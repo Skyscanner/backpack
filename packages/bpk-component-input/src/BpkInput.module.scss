@@ -18,6 +18,8 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-input {
   @include bpk-input;
 
@@ -37,23 +39,35 @@
 
   &--valid {
     @include bpk-input--valid;
+
+    &.bpk-input--large {
+      padding-right: bpk-spacing-xxl();
+    }
   }
 
   &--invalid {
     @include bpk-input--invalid;
-  }
 
-  &--large {
-    @include bpk-input--large;
+    &.bpk-input--large {
+      padding-right: bpk-spacing-xxl();
+    }
   }
 
   &--clearable {
     @include bpk-input--clearable;
 
+    &.bpk-input--large {
+      padding-right: bpk-spacing-xxl();
+    }
+
     // Display the clear button when a clearable input is focused.
     &:focus + .bpk-input__clear-button {
       display: inherit;
     }
+  }
+
+  &--large {
+    @include bpk-input--large;
   }
 
   // When persistent, set background to override any validity icons

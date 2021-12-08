@@ -87,16 +87,16 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-input--valid {
-  padding-right: bpk-spacing-xxl();
+  padding-right: bpk-spacing-xl();
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, tick-circle-monteverde)) no-repeat right
-    bpk-spacing-base() center;
+    bpk-spacing-md() center;
   background-size: $bpk-icon-size-sm $bpk-icon-size-sm;
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
-    padding-left: bpk-spacing-xxl();
-    background-position: left bpk-spacing-base() center;
+    padding-left: bpk-spacing-xl();
+    background-position: left bpk-spacing-md() center;
   }
 }
 
@@ -111,10 +111,10 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-input--invalid {
-  padding-right: bpk-spacing-xxl();
+  padding-right: bpk-spacing-xl();
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right
-    bpk-spacing-base() center;
+    bpk-spacing-md() center;
   background-size: $bpk-icon-size-sm $bpk-icon-size-sm;
 
   @include bpk-themeable-property(
@@ -125,8 +125,8 @@ $bpk-spacing-v2: true;
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
-    padding-left: bpk-spacing-xxl();
-    background-position: left bpk-spacing-base() center;
+    padding-left: bpk-spacing-xl();
+    background-position: left bpk-spacing-md() center;
   }
 }
 
@@ -141,11 +141,11 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-input--clearable {
-  padding-right: bpk-spacing-xxl();
+  padding-right: bpk-spacing-xl();
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
-    padding-left: bpk-spacing-xxl();
+    padding-left: bpk-spacing-xl();
   }
 
   &:focus {
@@ -181,16 +181,21 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-input__clear-button {
   position: absolute;
-  right: bpk-spacing-base();
+  right: bpk-spacing-md();
   height: $bpk-input-height;
 
   @include bpk-rtl {
     right: inherit;
-    left: bpk-spacing-base();
+    left: bpk-spacing-md();
   }
 
   &--large {
-    @include bpk-input--large;
+    right: bpk-spacing-base();
+    height: $bpk-input-large-height;
+
+    @include bpk-rtl {
+      left: bpk-spacing-base();
+    }
   }
 }
 
@@ -206,6 +211,13 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-input--large {
   height: $bpk-input-large-height;
+  padding-right: bpk-spacing-base();
+  padding-left: bpk-spacing-base();
+  background-position: right bpk-spacing-base() center;
+
+  @include bpk-rtl {
+    background-position: left bpk-spacing-base() center;
+  }
 }
 
 /// Docked (first-child) form input. Modifies the bpk-input mixin.
@@ -369,7 +381,7 @@ $bpk-spacing-v2: true;
 
   @include bpk-rtl {
     padding-right: bpk-spacing-base();
-    padding-left: bpk-spacing-xl();
+    padding-left: bpk-spacing-xxl();
     background-position: left bpk-spacing-base() center;
   }
 }
@@ -980,7 +992,7 @@ $bpk-spacing-v2: true;
 @mixin bpk-textarea--invalid {
   background: $bpk-color-white
     url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right
-    bpk-spacing-base() center;
+    bpk-spacing-md() center;
 
   @include bpk-themeable-property(
     border-color,
@@ -990,6 +1002,6 @@ $bpk-spacing-v2: true;
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
-    background-position: left bpk-spacing-base() center;
+    background-position: left bpk-spacing-md() center;
   }
 }
