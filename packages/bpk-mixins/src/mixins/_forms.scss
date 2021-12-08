@@ -97,17 +97,6 @@ $bpk-spacing-v2: true;
     padding-right: $bpk-input-padding-x;
     padding-left: bpk-spacing-xl();
     background-position: left bpk-spacing-md() center;
-
-    &.bpk-input--large {
-      padding-right: bpk-spacing-base();
-      padding-left: bpk-spacing-xxl();
-      background-position: left bpk-spacing-base() center;
-    }
-  }
-
-  &.bpk-input--large {
-    padding-right: bpk-spacing-xxl();
-    background-position: right bpk-spacing-base() center;
   }
 }
 
@@ -138,17 +127,6 @@ $bpk-spacing-v2: true;
     padding-right: $bpk-input-padding-x;
     padding-left: bpk-spacing-xl();
     background-position: left bpk-spacing-md() center;
-
-    &.bpk-input--large {
-      padding-right: bpk-spacing-base();
-      padding-left: bpk-spacing-xxl();
-      background-position: left bpk-spacing-base() center;
-    }
-  }
-
-  &.bpk-input--large {
-    padding-right: bpk-spacing-xxl();
-    background-position: right bpk-spacing-base() center;
   }
 }
 
@@ -168,15 +146,6 @@ $bpk-spacing-v2: true;
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
     padding-left: bpk-spacing-xl();
-
-    &.bpk-input--large {
-      padding-right: bpk-spacing-base();
-      padding-left: bpk-spacing-xxl();
-    }
-  }
-
-  &.bpk-input--large {
-    padding-right: bpk-spacing-xxl();
   }
 
   &:focus {
@@ -244,6 +213,19 @@ $bpk-spacing-v2: true;
   height: $bpk-input-large-height;
   padding-right: bpk-spacing-base();
   padding-left: bpk-spacing-base();
+
+  &.bpk-input--valid,
+  &.bpk-input--invalid,
+  &.bpk-input--clearable {
+    padding-right: bpk-spacing-xxl();
+    background-position: right bpk-spacing-base() center;
+
+    @include bpk-rtl {
+      padding-right: bpk-spacing-base();
+      padding-left: bpk-spacing-xxl();
+      background-position: left bpk-spacing-base() center;
+    }
+  }
 }
 
 /// Docked (first-child) form input. Modifies the bpk-input mixin.
@@ -1037,15 +1019,21 @@ $bpk-spacing-v2: true;
       background-position: right bpk-spacing-base() center;
     }
   }
-
-  &.bpk-textarea--large {
-    padding-right: bpk-spacing-xxl();
-    background-position: right bpk-spacing-base() center;
-  }
 }
 
 @mixin bpk-textarea--large {
   min-height: 6 * bpk-spacing-base();
   padding-right: bpk-spacing-base();
   padding-left: bpk-spacing-base();
+
+  &.bpk-textarea--invalid {
+    padding-right: bpk-spacing-xxl();
+    background-position: right bpk-spacing-base() center;
+
+    @include bpk-rtl {
+      padding-right: bpk-spacing-base();
+      padding-left: bpk-spacing-xxl();
+      background-position: left bpk-spacing-base() center;
+    }
+  }
 }
