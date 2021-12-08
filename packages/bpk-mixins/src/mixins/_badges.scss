@@ -52,9 +52,6 @@
     /* stylelint-disable declaration-no-important */
     width: 16 * $bpk-one-pixel-rem !important;
     height: 16 * $bpk-one-pixel-rem !important;
-    /* stylelint-enable declaration-no-important */
-    margin-top: $bpk-one-pixel-rem * 2;
-    margin-bottom: $bpk-one-pixel-rem * 2;
   }
 }
 /// Centered badge. Modifies the bpk-badge mixin.
