@@ -1,5 +1,27 @@
-# 2021-12-03
+# 2021-12-09
 
+**Added:**
+- bpk-component-textarea: 4.0.8 => 4.1.0
+  - Add new property `large` (optional) in textarea component with larger default height.
+  - Updated padding horizontally in textarea components.
+
+**Fixed:**
+
+- bpk-component-autosuggest: 6.0.28 => 6.0.29
+  - Updated component to use new spacing sizes.
+
+- bpk-component-input: 6.0.30 => 6.0.31
+  - Updated padding horizontally in input components.
+
+- bpk-component-badge: 4.0.2 => 4.0.3
+  - Fixed a misalignment of height of the badge when an icon variant is being used.
+
+- bpk-component-calendar: 11.0.0 => 11.0.1
+  - Fixed an issue with custom `SelectionConfiguration` prop type where `type` was not correctly typed and threw a console error.
+
+
+
+# 2021-12-03
 
 **Breaking:**
 
@@ -16,8 +38,10 @@
 - bpk-component-calendar: 10.0.3 => 11.0.0
 - bpk-component-scrollable-calendar: 5.1.1 => 6.0.0
     - Fixed white spaces selection in calendar component.
+
 - bpk-component-navigation-bar: 3.0.20 => 3.0.21
     - Updated the `min-height` of the nav bar to be `56px`.
+
 - bpk-component-horizontal-nav: 5.0.9 => 5.0.10
     - Updated height to `48px`.
 
