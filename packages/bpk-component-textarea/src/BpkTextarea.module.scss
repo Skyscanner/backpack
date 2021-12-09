@@ -18,10 +18,16 @@
 
 @import '~bpk-mixins/index';
 
+$bpk-spacing-v2: true;
+
 .bpk-textarea {
   @include bpk-textarea;
 
   &--invalid {
     @include bpk-textarea--invalid;
+  }
+
+  &--large {
+    @include bpk-textarea--large;
   }
 }
