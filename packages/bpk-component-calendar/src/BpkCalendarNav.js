@@ -68,80 +68,84 @@ const BpkCalendarNav = props => {
 
   return (
     <div className={getClassName('bpk-calendar-nav')}>
-      <div className={getClassName('bpk-calendar-nav__nudger')}>
-        <button
-          type="button"
-          className={getClassName('bpk-calendar-nav__button')}
-          id={`${id}_month_nudger_previous`}
-          onClick={changeMonth({
-            month: prevMonth,
-            min,
-            max,
-            callback: onMonthChange,
-            source: 'PREV',
-          })}
-          disabled={
-            disabled || !isWithinRange(prevMonth, { start: min, end: max })
-          }
-        >
-          <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
-          <span className={getClassName('bpk-calendar-nav__text--hidden')}>
-            {previousMonthLabel}
-          </span>
-        </button>
-      </div>
-      <div className={getClassName('bpk-calendar-nav__month')}>
-        <label
-          htmlFor={`${id}_select`}
-          className={getClassName('bpk-calendar-nav__text--hidden')}
-        >
-          {changeMonthLabel}
-        </label>
+      <div style={{ display: 'table-row' }}>
+        <div className={getClassName('bpk-calendar-nav__nudger')}>
+          <button
+            type="button"
+            className={getClassName('bpk-calendar-nav__button')}
+            id={`${id}_month_nudger_previous`}
+            onClick={changeMonth({
+              month: prevMonth,
+              min,
+              max,
+              callback: onMonthChange,
+              source: 'PREV',
+            })}
+            disabled={
+              disabled || !isWithinRange(prevMonth, { start: min, end: max })
+            }
+          >
+            <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
+            <span className={getClassName('bpk-calendar-nav__text--hidden')}>
+              {previousMonthLabel}
+            </span>
+          </button>
+        </div>
+        <div className={getClassName('bpk-calendar-nav__month')}>
+          <label
+            htmlFor={`${id}_select`}
+            className={getClassName('bpk-calendar-nav__text--hidden')}
+          >
+            {changeMonthLabel}
+          </label>
 
-        <BpkSelect
-          id={`${id}_select`}
-          name="months"
-          value={formatIsoMonth(baseMonth)}
-          disabled={disabled}
-          onChange={event => {
-            event.persist();
-            onMonthChange(event, {
-              month: parseIsoDate(event.target.value),
-              source: 'SELECT',
-            });
-          }}
-        >
-          {navigatableMonths.map(m => (
-            <option value={formatIsoMonth(m)} key={m.toString()}>
-              {formatMonth(m)}
-            </option>
-          ))}
-        </BpkSelect>
+          <BpkSelect
+            id={`${id}_select`}
+            name="months"
+            value={formatIsoMonth(baseMonth)}
+            disabled={disabled}
+            onChange={event => {
+              event.persist();
+              onMonthChange(event, {
+                month: parseIsoDate(event.target.value),
+                source: 'SELECT',
+              });
+            }}
+          >
+            {navigatableMonths.map(m => (
+              <option value={formatIsoMonth(m)} key={m.toString()}>
+                {formatMonth(m)}
+              </option>
+            ))}
+          </BpkSelect>
+        </div>
+        <div className={getClassName('bpk-calendar-nav__nudger')}>
+          <button
+            type="button"
+            className={getClassName('bpk-calendar-nav__button')}
+            id={`${id}_month_nudger_next`}
+            onClick={changeMonth({
+              month: nextMonth,
+              min,
+              max,
+              callback: onMonthChange,
+              source: 'NEXT',
+            })}
+            disabled={
+              disabled ||
+              !isWithinRange(addMonths(baseMonth, 1), { start: min, end: max })
+            }
+          >
+            <ArrowRightIcon
+              className={getClassName('bpk-calendar-nav__icon')}
+            />
+            <span className={getClassName('bpk-calendar-nav__text--hidden')}>
+              {nextMonthLabel}
+            </span>
+          </button>
+        </div>
+        <BpkAriaLive>{formatMonth(baseMonth)}</BpkAriaLive>
       </div>
-      <div className={getClassName('bpk-calendar-nav__nudger')}>
-        <button
-          type="button"
-          className={getClassName('bpk-calendar-nav__button')}
-          id={`${id}_month_nudger_next`}
-          onClick={changeMonth({
-            month: nextMonth,
-            min,
-            max,
-            callback: onMonthChange,
-            source: 'NEXT',
-          })}
-          disabled={
-            disabled ||
-            !isWithinRange(addMonths(baseMonth, 1), { start: min, end: max })
-          }
-        >
-          <ArrowRightIcon className={getClassName('bpk-calendar-nav__icon')} />
-          <span className={getClassName('bpk-calendar-nav__text--hidden')}>
-            {nextMonthLabel}
-          </span>
-        </button>
-      </div>
-      <BpkAriaLive>{formatMonth(baseMonth)}</BpkAriaLive>
     </div>
   );
 };
