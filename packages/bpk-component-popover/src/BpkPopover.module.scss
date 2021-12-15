@@ -20,7 +20,7 @@
 
 $bpk-spacing-v2: true;
 
-$arrow-size: bpk-spacing-base();
+$arrow-size: bpk-spacing-sm() * 3;
 
 .bpk-popover-portal {
   z-index: $bpk-zindex-popover;

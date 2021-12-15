@@ -20,6 +20,8 @@
 
 $bpk-spacing-v2: true;
 
+$arrow-size: bpk-spacing-sm() * 3;
+
 .bpk-autosuggest {
   &__container--open {
     position: relative;
@@ -44,7 +46,7 @@ $bpk-spacing-v2: true;
         display: block;
         margin-bottom: -$bpk-one-pixel-rem;
         margin-left: -((bpk-spacing-sm() * 3) + $bpk-one-pixel-rem);
-        border: ((bpk-spacing-sm() * 3) + $bpk-one-pixel-rem) solid transparent;
+        border: ($arrow-size + $bpk-one-pixel-rem) solid transparent;
         border-bottom-color: $bpk-color-sky-gray-tint-06;
         pointer-events: none;
       }
@@ -57,7 +59,7 @@ $bpk-spacing-v2: true;
         display: block;
         margin-bottom: -$bpk-one-pixel-rem;
         margin-left: -(bpk-spacing-md() + bpk-spacing-sm());
-        border: (bpk-spacing-md() + bpk-spacing-sm()) solid transparent;
+        border: $arrow-size solid transparent;
         border-bottom-color: $bpk-autosuggest-list-background-color;
         pointer-events: none;
       }
