@@ -39,8 +39,12 @@
     @include bpk-button--large-icon-only;
   }
 
-  svg {
+  /* stylelint-disable selector-max-compound-selectors */
+  span > svg {
     display: block;
+  }
+
+  svg {
     fill: currentColor;
   }
 }
