@@ -342,7 +342,7 @@ $bpk-spacing-v2: true;
     bpk-spacing-md() center;
   background-size: $bpk-input-height / 2;
   color: $bpk-select-color;
-  line-height: $bpk-line-height-base - (2 * $bpk-select-border-width);
+  line-height: ($bpk-line-height-base - (2 * $bpk-select-border-width));
   appearance: none;
 
   @include bpk-rtl {
@@ -948,6 +948,7 @@ $bpk-spacing-v2: true;
 ///   }
 //
 @mixin bpk-form-validation__container {
+  margin-top: bpk-spacing-md();
   font-size: $bpk-text-xs-font-size;
 }
 
