@@ -1,3 +1,27 @@
+# 2021-12-17
+
+**Fixed:**
+
+- bpk-component-popover: 4.0.28 => 4.0.29
+    - Fixed arrow size in popover component to match the arrow in the autosuggest component.
+
+- bpk-component-calendar: 11.0.1 => 11.0.2
+- bpk-component-datepicker: 15.0.1 => 15.0.2
+- bpk-component-scrollable-calendar: 6.0.1 => 6.0.2
+  - Updated sizing of calendar component to correct width and spacing
+
+- bpk-component-button: 5.0.18 => 5.0.19
+  - Fixed height in buttons with icon
+
+**Added:**
+
+- bpk-component-form-validation: 4.0.28 => 4.1.0
+  - Moved `margin-top` from `bpk-component-fieldset` to `bpk-component-form-validation` to ensure that the `8px` margin is applied to the top of the form validation.
+
+- bpk-mixins: 24.0.7 => 24.1.0
+    - Moved `margin-top` from `bpk-component-fieldset` to `bpk-component-form-validation` to ensure that the `8px` margin is applied to the top of the form validation.
+    - Updated sizing of calendar component to correct width and spacing
+
 # 2021-12-09
 
 **Added:**
