@@ -2,6 +2,13 @@
 
 **Fixed:**
 
+- bpk-component-button: 5.0.19 => 5.0.20
+  - Moved `display` property to be applied only to icons with span parent.
+
+# 2021-12-17
+
+**Fixed:**
+
 - bpk-component-popover: 4.0.28 => 4.0.29
     - Fixed arrow size in popover component to match the arrow in the autosuggest component.
 
