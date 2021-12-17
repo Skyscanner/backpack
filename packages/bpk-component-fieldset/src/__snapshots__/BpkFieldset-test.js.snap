@@ -192,7 +192,7 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-form-validation--is-checkbox bpk-fieldset__validation-message"
+            class="bpk-form-validation bpk-form-validation--is-checkbox"
             id="terms_and_conditions_checkbox_validation_message"
           >
             <span
@@ -259,7 +259,7 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-form-validation--is-checkbox bpk-fieldset__validation-message"
+            class="bpk-form-validation bpk-form-validation--is-checkbox"
             id="terms_and_conditions_checkbox_validation_message"
           >
             <span
@@ -318,7 +318,7 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-fieldset__validation-message"
+            class="bpk-form-validation"
             id="name_input_validation_message"
           >
             <span
@@ -384,7 +384,7 @@ exports[`BpkFieldset should render correctly with input component and "descripti
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-fieldset__validation-message"
+            class="bpk-form-validation"
             id="name_input_validation_message"
           >
             <span
@@ -443,7 +443,7 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-fieldset__validation-message"
+            class="bpk-form-validation"
             id="name_input_validation_message"
           >
             <span
@@ -507,7 +507,7 @@ exports[`BpkFieldset should render correctly with input component and "required"
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-fieldset__validation-message"
+            class="bpk-form-validation"
             id="name_input_validation_message"
           >
             <span
@@ -566,7 +566,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-fieldset__validation-message"
+            class="bpk-form-validation"
             id="name_input_validation_message"
           >
             <span
@@ -624,7 +624,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-form-validation--appear bpk-fieldset__validation-message"
+            class="bpk-form-validation bpk-form-validation--appear"
             id="name_input_validation_message"
           >
             <span
@@ -707,7 +707,7 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-fieldset__validation-message"
+            class="bpk-form-validation"
             id="fruits_select_validation_message"
           >
             <span
@@ -795,7 +795,7 @@ exports[`BpkFieldset should render correctly with select component and "required
           class="bpk-form-validation__container"
         >
           <div
-            class="bpk-form-validation bpk-fieldset__validation-message"
+            class="bpk-form-validation"
             id="fruits_select_validation_message"
           >
             <span
