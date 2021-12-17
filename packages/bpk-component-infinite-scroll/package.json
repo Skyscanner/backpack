@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-infinite-scroll",
-  "version": "4.0.20",
+  "version": "4.0.21",
   "description": "Backpack infinite scroll component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,7 +23,7 @@
     "react": "^16.3.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^5.0.19",
+    "bpk-component-button": "^5.0.20",
     "bpk-component-list": "^3.0.20",
     "bpk-component-spinner": "^5.0.14",
     "bpk-storybook-utils": "^1.0.20"
