@@ -150,8 +150,8 @@ const RangeExample = () => (
     maxDate={new Date(2020, 6, 1)}
     selectionConfiguration={{
       type: 'range',
-      startDate: new Date(2020, 3, 7),
-      endDate: new Date(2020, 3, 15),
+      startDate: new Date(2020, 5, 7),
+      endDate: new Date(2020, 5, 15),
     }}
   />
 );

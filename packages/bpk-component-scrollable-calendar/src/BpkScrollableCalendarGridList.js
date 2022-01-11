@@ -87,7 +87,9 @@ class BpkScrollableCalendarGridList extends React.Component {
     );
   }
 
-  renderList(width, height) {
+  renderList(width, height, minDate, focusedDate, selectionConfiguration) {
+    const { date, startDate } = selectionConfiguration || {};
+    const selectedDate = focusedDate || date || startDate;
     return (
       <List
         extraData={this.props}
@@ -99,11 +101,17 @@ class BpkScrollableCalendarGridList extends React.Component {
         rowRenderer={this.rowRenderer}
         rowCount={this.state.months.length}
         overscanRowCount={0}
+        scrollToIndex={
+          selectedDate
+            ? DateUtils.differenceInCalendarMonths(selectedDate, minDate)
+            : 0
+        }
       />
     );
   }
 
   render() {
+    const { minDate, focusedDate, selectionConfiguration } = this.props;
     return (
       <div
         className={getClassName(
@@ -112,7 +120,15 @@ class BpkScrollableCalendarGridList extends React.Component {
         )}
       >
         <AutoSizer>
-          {({ width, height }) => this.renderList(width, height)}
+          {({ width, height }) =>
+            this.renderList(
+              width,
+              height,
+              minDate,
+              focusedDate,
+              selectionConfiguration,
+            )
+          }
         </AutoSizer>
       </div>
     );
