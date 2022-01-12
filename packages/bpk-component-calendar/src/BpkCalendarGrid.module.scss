@@ -34,8 +34,9 @@
   }
 
   &__date {
+    display: table-cell;
     width: 100%;
-    padding: 0 $bpk-calendar-day-spacing;
+    padding: 0;
     text-align: center;
     vertical-align: middle;
 
@@ -61,8 +62,9 @@
   }
 
   &__week {
-    display: flex;
+    display: table;
+    width: 100%;
     padding-top: bpk-spacing-lg();
-    justify-content: space-around;
+    table-layout: fixed;
   }
 }

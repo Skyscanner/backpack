@@ -24,9 +24,15 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import BpkCalendar, {
+  composeCalendar,
+  BpkCalendarGridHeader,
+  BpkCalendarGrid,
+  BpkCalendarDate,
+  withCalendarState,
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
   DateUtils,
+  BpkCalendarNav,
 } from 'bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.module.scss';
@@ -34,6 +40,15 @@ import STYLES from './BpkDatepicker.module.scss';
 const getClassName = cssModules(STYLES);
 
 const Input = withOpenEvents(BpkInput);
+
+const DefaultCalender = withCalendarState(
+  composeCalendar(
+    BpkCalendarNav,
+    BpkCalendarGridHeader,
+    BpkCalendarGrid,
+    BpkCalendarDate,
+  ),
+);
 
 class BpkDatepicker extends Component {
   constructor(props) {
@@ -181,6 +196,7 @@ class BpkDatepicker extends Component {
       closeButtonText,
       dateModifiers,
       daysOfWeek,
+      fixedWidth,
       formatDate,
       formatDateFull,
       formatMonth,
@@ -246,8 +262,6 @@ class BpkDatepicker extends Component {
       selectionConfiguration,
     };
 
-    const calendar = <Calendar {...calendarProps} />;
-
     return (
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {isMobile =>
@@ -262,7 +276,7 @@ class BpkDatepicker extends Component {
               closeLabel={closeButtonText}
               getApplicationElement={getApplicationElement}
             >
-              {calendar}
+              <Calendar {...calendarProps} fixedWidth={false} />
             </BpkModal>
           ) : (
             <BpkPopover
@@ -276,7 +290,7 @@ class BpkDatepicker extends Component {
               tabIndex={0}
               {...rest}
             >
-              {calendar}
+              <Calendar {...calendarProps} fixedWidth={fixedWidth} />
             </BpkPopover>
           )
         }
@@ -307,6 +321,7 @@ BpkDatepicker.propTypes = {
     'Use selectionConfiguration to set date',
   ),
   dateModifiers: CustomPropTypes.DateModifiers,
+  fixedWidth: PropTypes.bool,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
   markToday: PropTypes.bool,
@@ -331,11 +346,12 @@ BpkDatepicker.propTypes = {
 };
 
 BpkDatepicker.defaultProps = {
-  calendarComponent: BpkCalendar,
+  calendarComponent: DefaultCalender,
   inputComponent: null,
   date: null,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
   inputProps: {},
+  fixedWidth: true,
   markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
   markToday: BpkCalendar.defaultProps.markToday,
   maxDate: BpkCalendar.defaultProps.maxDate,
