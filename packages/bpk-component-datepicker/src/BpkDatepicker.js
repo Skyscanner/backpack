@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016-2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import { cssModules, deprecated } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
-import BpkCalendar, {
+import {
   composeCalendar,
   BpkCalendarGridHeader,
   BpkCalendarGrid,
@@ -41,7 +41,7 @@ const getClassName = cssModules(STYLES);
 
 const Input = withOpenEvents(BpkInput);
 
-const DefaultCalender = withCalendarState(
+const DefaultCalendar = withCalendarState(
   composeCalendar(
     BpkCalendarNav,
     BpkCalendarGridHeader,
@@ -346,16 +346,16 @@ BpkDatepicker.propTypes = {
 };
 
 BpkDatepicker.defaultProps = {
-  calendarComponent: DefaultCalender,
+  calendarComponent: DefaultCalendar,
   inputComponent: null,
   date: null,
-  dateModifiers: BpkCalendar.defaultProps.dateModifiers,
+  dateModifiers: DefaultCalendar.defaultProps.dateModifiers,
   inputProps: {},
   fixedWidth: true,
-  markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
-  markToday: BpkCalendar.defaultProps.markToday,
-  maxDate: BpkCalendar.defaultProps.maxDate,
-  minDate: BpkCalendar.defaultProps.minDate,
+  markOutsideDays: DefaultCalendar.defaultProps.markOutsideDays,
+  markToday: DefaultCalendar.defaultProps.markToday,
+  maxDate: DefaultCalendar.defaultProps.maxDate,
+  minDate: DefaultCalendar.defaultProps.minDate,
   nextMonthLabel: null,
   onDateSelect: null,
   onOpenChange: null,
