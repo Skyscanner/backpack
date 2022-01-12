@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016-2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ import {
   isSameMonth,
   isToday,
   isWithinRange,
-  isAfter,
-  isBefore,
+  startOfMonth,
+  endOfMonth,
 } from './date-utils';
 import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 // TODO: Move this to `Week.scss`
@@ -102,6 +102,7 @@ function getSelectionType(
   const sameStartDay = isSameDay(date, startDate);
   const sameEndDay = isSameDay(date, endDate);
   const rangeDates = startDate && endDate;
+  const isEmptyCell = !isSameMonth(date, month) && ignoreOutsideDate;
 
   if (
     selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
@@ -117,23 +118,23 @@ function getSelectionType(
       return SELECTION_TYPES.single;
     }
     if (
-      ignoreOutsideDate &&
+      isEmptyCell &&
       rangeDates &&
-      isSameMonth(startDate, endDate) &&
-      isWithinRange(date, { start: startDate, end: endDate }) &&
-      !isSameMonth(month, date)
+      ((isSameWeek(startDate, startOfMonth(startDate), { weekStartsOn }) &&
+        isSameWeek(date, startDate, { weekStartsOn })) ||
+        (isSameWeek(endDate, endOfMonth(endDate), { weekStartsOn }) &&
+          isSameWeek(date, endDate, { weekStartsOn })))
     ) {
       return SELECTION_TYPES.none;
     }
     if (
-      ignoreOutsideDate &&
+      isEmptyCell &&
       rangeDates &&
       !isSameMonth(startDate, endDate) &&
-      !isSameMonth(month, date) &&
-      ((isSameWeek(date, endDate, { weekStartsOn }) &&
-        isAfter(date, startDate)) ||
-        (isSameWeek(date, startDate, { weekStartsOn }) &&
-          isBefore(date, endDate)))
+      ((isSameWeek(startDate, endOfMonth(startDate), { weekStartsOn }) &&
+        isSameWeek(date, startDate, { weekStartsOn })) ||
+        (isSameWeek(endDate, startOfMonth(endDate), { weekStartsOn }) &&
+          isSameWeek(date, endDate, { weekStartsOn })))
     ) {
       return SELECTION_TYPES.middle;
     }
