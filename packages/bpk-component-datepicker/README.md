@@ -143,6 +143,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | calendarComponent     | elementType           | false    | BpkCalendar                         |
 | inputComponent        | elementType           | false    | BpkInput                            |
 | dateModifiers         | object                | false    | {} (\*)                             |
+| fixedWidth            | bool                  | false    | true                                |
 | inputProps            | object                | false    | {}                                  |
 | markOutsideDays       | bool                  | false    | true (\*)                           |
 | markToday             | bool                  | false    | true (\*)                           |
