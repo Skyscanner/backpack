@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016-2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,8 +55,9 @@ storiesOf('bpk-component-scrollable-calendar', module)
   .add('Scrollable Calendar - ja-JP locale', JapaneseLocale)
   .add('Scrollable Calendar - Different min/max date', DifferentMinMaxDates)
   .add("Scrollable Calendar - Don't mark today", DontMarkToday)
+  .add('Past Calendar', PastCalendar)
   .add('BpkScrollableCalendarDate', ScrollableCalendarDate)
   .add('BpkScrollableCalendarGrid', ScrollableCalendarGrid)
   .add('BpkScrollableCalendarGridList', ScrollableCalendarGridList)
-  .add('Visual test', PastCalendar)
+  .add('Visual test', DefaultExample)
   .add('Visual test range', RangeExample);

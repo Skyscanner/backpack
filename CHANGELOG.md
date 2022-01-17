@@ -1,3 +1,17 @@
+# 2022-01-13
+
+**Added:**
+  
+  - bpk-component-datepicker: 15.0.3 => 15.1.0
+    - Exposed property `fixedWidth` to datepicker for when used will correctly fit the pop-up container correctly.
+    
+**Fixed:**
+
+- bpk-component-scrollable-calendar: 6.0.3 => 6.0.4
+  - Added auto scroll to focused or selected date.
+- bpk-component-calendar: 11.0.3 => 11.0.4
+  - Fixed a bug where when calendar was not fixed width the dates would not render correctly.
+
 # 2021-12-17
 
 **Fixed:**
