@@ -1,3 +1,9 @@
+# 2022-01-17
+
+**Fixed:**
+  - bpk-component-scrollable-calendar: 6.0.4 => 6.0.5
+    - Fixed white spaces selection in calendar component.
+
 # 2022-01-13
 
 **Added:**
