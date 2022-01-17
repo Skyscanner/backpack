@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-aria-live",
-  "version": "2.0.35",
+  "version": "2.0.36",
   "description": "Backpack aria-live component.",
   "license": "Apache-2.0",
   "repository": {
@@ -20,7 +20,7 @@
   "devDependencies": {
     "bpk-component-chip": "^5.1.17",
     "bpk-component-code": "^3.0.21",
-    "bpk-component-fieldset": "^4.0.11",
+    "bpk-component-fieldset": "^4.0.12",
     "bpk-component-paragraph": "^3.0.21",
     "bpk-component-select": "^5.0.17",
     "bpk-component-switch": "^2.0.22"
