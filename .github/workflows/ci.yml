@@ -63,7 +63,7 @@ jobs:
 
       - name: Post a comment about the visual tests (if they pass)
         uses: actions/github-script@v5
-        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && steps.visualTests.outcome == 'success'
+        if: github.ref != 'refs/heads/main' && steps.visualTests.outcome == 'success' && github.repository == github.event.pull_request.head.repo.full_name  && github.actor != 'dependabot[bot]' 
         with:
           script: |
             github.rest.issues.createComment({
@@ -75,7 +75,7 @@ jobs:
 
       - name: Post a comment about the visual tests (if they fail)
         uses: actions/github-script@v5
-        if: failure() && steps.visualTests.outcome == 'failure'
+        if: failure() && steps.visualTests.outcome == 'failure' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
         with:
           script: |
             github.rest.issues.createComment({
@@ -116,13 +116,13 @@ jobs:
           mkdir build
           mv dist-storybook $PR_NUMBER
           cp -R $PR_NUMBER build/
-        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
+        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 
       - name: Deploy Storybook to backpack.github.io/storybook-prs, if a pull request
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
+        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: build/
@@ -132,7 +132,7 @@ jobs:
 
       - name: Link to the pull request build
         uses: actions/github-script@v5
-        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
+        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
         with:
           script: |
             github.rest.issues.createComment({
