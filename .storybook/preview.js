@@ -17,9 +17,9 @@
  */
 import React from 'react';
 import { addDecorator } from '@storybook/react';
+import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
 
 import '../packages/bpk-stylesheets';
-import TOKENS from '../packages/bpk-tokens/tokens/base.common';
 import BpkGridToggle from '../packages/bpk-component-grid-toggle';
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import BpkThemeToggle, {
