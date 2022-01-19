@@ -29,4 +29,5 @@ require('@babel/register')({
   rootMode: 'upward',
 });
 
+// eslint-disable-next-line import/extensions
 require('./gulpfile.babel.js');

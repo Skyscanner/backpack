@@ -52,7 +52,7 @@ import BpkInput, { withOpenEvents } from 'bpk-component-input';
 
 import BpkDatepicker from './index';
 
-const formatDate = date => format(date, 'dd/MM/yyyy');
+const formatDate = (date) => format(date, 'dd/MM/yyyy');
 
 const Input = withOpenEvents(BpkInput);
 
@@ -163,7 +163,7 @@ const getBackgroundForDate = memoize(
   () => [colorSagano, colorBagan, colorPetra][parseInt(Math.random() * 3, 10)],
 );
 
-const ColoredCalendarDate = props => {
+const ColoredCalendarDate = (props) => {
   let style = {};
 
   if (!props.isFocused && !props.isOutside && !props.isBlocked) {
@@ -218,8 +218,8 @@ class ReturnDatepicker extends Component {
             formatDateFull={formatDateFull}
             inputProps={inputProps}
             date={this.state.departDate}
-            onDateSelect={departDate => {
-              this.setState(prevState => ({
+            onDateSelect={(departDate) => {
+              this.setState((prevState) => ({
                 departDate,
                 returnDate: dateToBoundaries(
                   prevState.returnDate,
@@ -250,8 +250,8 @@ class ReturnDatepicker extends Component {
             formatDateFull={formatDateFull}
             inputProps={inputProps}
             date={this.state.returnDate}
-            onDateSelect={returnDate => {
-              this.setState(prevState => ({
+            onDateSelect={(returnDate) => {
+              this.setState((prevState) => ({
                 returnDate,
                 departDate: dateToBoundaries(
                   prevState.departDate,
@@ -261,7 +261,7 @@ class ReturnDatepicker extends Component {
               }));
               action('Selected return date')(returnDate);
             }}
-            onOpenChange={isOpen => {
+            onOpenChange={(isOpen) => {
               this.setState({
                 isReturnPickerOpen: isOpen,
               });

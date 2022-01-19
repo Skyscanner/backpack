@@ -102,7 +102,7 @@ export const SimpleNav = ({
         pushView &&
         pushView(
           <View index={index + 1} centered>
-            {props => <SimpleNav {...props} />}
+            {(props) => <SimpleNav {...props} />}
           </View>,
         )
       }
@@ -147,7 +147,7 @@ export const NavigationBar = ({
           pushView(
             (nextView && nextView()) || (
               <View index={index + 1}>
-                {props => <NavigationBar {...props} />}
+                {(props) => <NavigationBar {...props} />}
               </View>
             ),
           )

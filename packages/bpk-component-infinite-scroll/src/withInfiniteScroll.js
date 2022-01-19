@@ -137,7 +137,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
     componentDidMount() {
       this.fetchItems({
         elementsPerScroll: this.props.initiallyLoadedElements,
-      }).then(newState => {
+      }).then((newState) => {
         this.setState(newState);
       });
     }
@@ -154,7 +154,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
           index: 0,
           elementsPerScroll: this.props.elementsPerScroll,
           elementsToRender: [],
-        }).then(newState => this.setStateAfterDsUpdate(newState));
+        }).then((newState) => this.setStateAfterDsUpdate(newState));
       }
     }
 
@@ -191,29 +191,25 @@ const withInfiniteScroll = <T: ExtendedProps>(
         elementsPerScroll: isFirstLoad ? this.props.elementsPerScroll : index,
         elementsToRender: [],
         computeShowSeeMore: isFirstLoad,
-      }).then(newState => this.setStateAfterDsUpdate(newState));
+      }).then((newState) => this.setStateAfterDsUpdate(newState));
     };
 
     fetchItems(config): Promise<$Shape<State>> {
       const { onScrollFinished, seeMoreAfter } = this.props;
-      const {
-        index,
-        elementsPerScroll,
-        elementsToRender,
-        computeShowSeeMore,
-      } = extend(
-        {
-          index: this.state.index,
-          elementsPerScroll: this.props.elementsPerScroll,
-          elementsToRender: this.state.elementsToRender,
-          computeShowSeeMore: true,
-        },
-        config,
-      );
+      const { index, elementsPerScroll, elementsToRender, computeShowSeeMore } =
+        extend(
+          {
+            index: this.state.index,
+            elementsPerScroll: this.props.elementsPerScroll,
+            elementsToRender: this.state.elementsToRender,
+            computeShowSeeMore: true,
+          },
+          config,
+        );
 
       return this.props.dataSource
         .fetchItems(index, elementsPerScroll)
-        .then(nextElements => {
+        .then((nextElements) => {
           let result = {
             isListFinished: true,
           };
@@ -247,7 +243,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
         if (onScroll) {
           onScroll({ currentIndex: this.state.index });
         }
-        return this.fetchItems().then(newState => {
+        return this.fetchItems().then((newState) => {
           this.setState(newState);
         });
       }
@@ -255,7 +251,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
     };
 
     handleSeeMoreClick = () => {
-      this.fetchItems().then(newState => {
+      this.fetchItems().then((newState) => {
         this.setState(newState);
       });
     };
@@ -276,7 +272,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
         } else {
           loadingOrButton = (
             <div
-              ref={spinner => {
+              ref={(spinner) => {
                 this.sentinel = spinner;
               }}
               className={

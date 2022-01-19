@@ -50,7 +50,7 @@ const rows = [
 ];
 
 // eslint-disable-next-line no-alert
-const onRowClick = row => alert(JSON.stringify(row));
+const onRowClick = (row) => alert(JSON.stringify(row));
 
 const AutowidthExample = () => (
   <BpkDataTable rows={rows} height={400} onRowClick={onRowClick}>

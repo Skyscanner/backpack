@@ -43,7 +43,7 @@ describe('withAlignment', () => {
   it('should render correctly', () => {
     for (let l = 0; l < lineHeights.length; l += 1) {
       for (let i = 0; i < iconSizes.length; i += 1) {
-        const MyComponent = props => (
+        const MyComponent = (props) => (
           <div {...props}>
             test lineHeight {lineHeights[l]} and iconsSize {iconSizes[i]}
           </div>
@@ -61,7 +61,7 @@ describe('withAlignment', () => {
   });
 
   it('should keep wrapped-component styling', () => {
-    const FloatingComponent = props => (
+    const FloatingComponent = (props) => (
       <div {...props}>
         test lineHeight {lineHeightLg} and iconsSize {iconSizeSm}
       </div>
@@ -80,7 +80,7 @@ describe('withAlignment', () => {
 
   it('should wrap the component display name', () => {
     const AlignedComponent = withAlignment(
-      props => <div {...props}>test</div>,
+      (props) => <div {...props}>test</div>,
       lineHeightLg,
       iconSizeSm,
     );

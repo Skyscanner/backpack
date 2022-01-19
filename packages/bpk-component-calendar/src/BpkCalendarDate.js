@@ -92,7 +92,7 @@ class BpkCalendarDate extends PureComponent {
     }
   }
 
-  getButtonRef = button => {
+  getButtonRef = (button) => {
     this.button = button;
   };
 
@@ -117,7 +117,7 @@ class BpkCalendarDate extends PureComponent {
 
     const classNames = [getClassName('bpk-calendar-date')];
 
-    Object.keys(modifiers).forEach(modifier => {
+    Object.keys(modifiers).forEach((modifier) => {
       if (modifiers[modifier](this.props)) {
         classNames.push(
           getClassName(`bpk-calendar-date--modifier-${modifier}`),

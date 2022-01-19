@@ -163,7 +163,7 @@ export default function withLazyLoading(
       return (
         <div
           id={this.placeholderReference}
-          ref={element => {
+          ref={(element) => {
             this.element = element;
           }}
           style={style}

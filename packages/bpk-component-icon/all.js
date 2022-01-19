@@ -19,7 +19,7 @@
 function requireAll(requireContext) {
   const hash = {};
 
-  requireContext.keys().forEach(key => {
+  requireContext.keys().forEach((key) => {
     const moduleName = key.replace('./', '').replace('.js', '');
     hash[moduleName] = requireContext(key).default;
   });

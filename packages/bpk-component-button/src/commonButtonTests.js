@@ -19,7 +19,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-const commonButtonTests = ButtonToTest => {
+const commonButtonTests = (ButtonToTest) => {
   describe('ButtonToTest', () => {
     it('should render correctly', () => {
       const { asFragment } = render(<ButtonToTest>My button</ButtonToTest>);
@@ -111,4 +111,6 @@ const commonButtonTests = ButtonToTest => {
   });
 };
 
+// This is a valid export as its used for other button tests
+// eslint-disable-next-line jest/no-export
 export default commonButtonTests;

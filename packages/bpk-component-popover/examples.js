@@ -105,13 +105,8 @@ class PopoverContainer extends Component<Props, State> {
   };
 
   render() {
-    const {
-      targetFunction,
-      changeProps,
-      id,
-      inputTrigger,
-      ...rest
-    } = this.props;
+    const { targetFunction, changeProps, id, inputTrigger, ...rest } =
+      this.props;
     let target = null;
     let openButton = <BpkButton onClick={this.openPopover}> Open </BpkButton>;
 

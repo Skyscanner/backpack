@@ -62,7 +62,7 @@ Autosuggest.defaultProps.renderInputComponent = (inputProps: Props) => {
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkInput
-      inputRef={element => {
+      inputRef={(element) => {
         ref(element);
 
         if (typeof inputRef === 'function') {

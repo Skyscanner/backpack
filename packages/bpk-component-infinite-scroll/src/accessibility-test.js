@@ -32,9 +32,9 @@ describe('withInfiniteScroll accessibility tests', () => {
       elementsArray.push(`Element ${i}`);
     }
 
-    const List = props => (
+    const List = (props) => (
       <div id="list">
-        {props.elements.map(element => (
+        {props.elements.map((element) => (
           <div key={element}>{element}</div>
         ))}
       </div>

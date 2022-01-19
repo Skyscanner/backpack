@@ -127,7 +127,7 @@ class BpkInput extends Component<Props, State> {
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <input
         className={classNames.join(' ')}
-        ref={input => {
+        ref={(input) => {
           ref = input;
           if (inputRef) {
             inputRef(input);
@@ -155,7 +155,7 @@ class BpkInput extends Component<Props, State> {
             tabIndex="-1"
             label={clearButtonLabel || ''}
             onMouseDown={onMouseDown}
-            onClick={e => {
+            onClick={(e) => {
               if (ref) {
                 ref.focus();
               }

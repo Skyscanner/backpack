@@ -26,7 +26,7 @@ import CornerRadius from './__generated__/js/corner-radius';
 
 const getClassName = cssModules(STYLES);
 
-const BpkFlareBar = props => {
+const BpkFlareBar = (props) => {
   const { className, svgClassName, rounded, ...rest } = props;
 
   const classNames = [getClassName('bpk-flare-bar__container')];

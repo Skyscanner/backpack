@@ -41,7 +41,7 @@ const getArrowPositionCallback = (
     return () => null;
   }
 
-  return props => {
+  return (props) => {
     const { top, left, targetPos } = props;
 
     const shouldApplyLeftOffset =

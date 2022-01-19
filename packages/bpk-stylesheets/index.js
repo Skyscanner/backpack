@@ -36,6 +36,6 @@ import './index.scss';
   // add more feature tests here...
 
   document.documentElement.className += ` ${classNames
-    .map(className => `bpk-${className}`)
+    .map((className) => `bpk-${className}`)
     .join(' ')}`;
 })();

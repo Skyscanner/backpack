@@ -91,7 +91,7 @@ class SelectExample extends React.Component<
   };
 
   toggleDirectness = () => {
-    this.setState(prevState => ({ direct: !prevState.direct }));
+    this.setState((prevState) => ({ direct: !prevState.direct }));
   };
 
   id = 'aria-live-select-example';
@@ -119,7 +119,7 @@ class SelectExample extends React.Component<
                 id="destination"
                 name="destination"
                 value={destination}
-                onChange={event => {
+                onChange={(event) => {
                   this.onChangeDestination(event.target.value);
                 }}
               >
@@ -184,7 +184,7 @@ class ChipsExample extends React.Component<
   id = 'aria-live-chips-example';
 
   toggleCategory = (category: string) => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const nextState = prevState;
       nextState.categories[category] = !prevState.categories[category];
       nextState.updates.push(
@@ -210,7 +210,7 @@ class ChipsExample extends React.Component<
             <BpkCode>aria-controls=&quot;{this.id}&quot;</BpkCode> to link it to
             the ARIA live region below with the same ID.
           </BpkParagraph>
-          {Object.keys(categories).map(category => (
+          {Object.keys(categories).map((category) => (
             <BpkChip
               className={getClassName('bpk-storybook-aria-live-demo__chip')}
               aria-controls={this.id}
@@ -235,7 +235,7 @@ class ChipsExample extends React.Component<
             </BpkParagraph>
           }
         >
-          {updates.map(update => (
+          {updates.map((update) => (
             <BpkParagraph>
               <strong>{update}</strong>
             </BpkParagraph>

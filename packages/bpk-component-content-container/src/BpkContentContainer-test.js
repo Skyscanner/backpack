@@ -37,7 +37,7 @@ describe('BpkContentContainer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a "bareHtml" attribute ', () => {
+  it('should render correctly with a "bareHtml" attribute', () => {
     const { asFragment } = render(
       <BpkContentContainer bareHtml>
         <h1>Heading</h1>
@@ -67,7 +67,7 @@ describe('BpkContentContainer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a custom "className" attribute ', () => {
+  it('should render correctly with a custom "className" attribute', () => {
     const { asFragment } = render(
       <BpkContentContainer className="my-test-class">
         <h1>Heading</h1>

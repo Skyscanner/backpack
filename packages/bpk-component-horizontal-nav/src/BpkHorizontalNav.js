@@ -165,12 +165,12 @@ class BpkHorizontalNav extends Component<Props> {
     let children = rawChildren;
 
     if (autoScrollToSelected || type === HORIZONTAL_NAV_TYPES.light) {
-      children = React.Children.map(rawChildren, child => {
+      children = React.Children.map(rawChildren, (child) => {
         const childProps = {};
 
         if (autoScrollToSelected) {
           if (child && child.props && child.props.selected) {
-            childProps.ref = ref => {
+            childProps.ref = (ref) => {
               this.selectedItemRef = ref;
             };
           }
@@ -191,7 +191,7 @@ class BpkHorizontalNav extends Component<Props> {
         className={classNames}
         leadingIndicatorClassName={leadingScrollIndicatorClassName}
         trailingIndicatorClassName={trailingScrollIndicatorClassName}
-        scrollerRef={ref => {
+        scrollerRef={(ref) => {
           this.scrollRef = ref;
         }}
         {...rest}

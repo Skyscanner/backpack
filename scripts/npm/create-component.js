@@ -47,7 +47,7 @@ _.mixin({
 });
 
 // Util to recursively make dirs
-const mkdirp = dir =>
+const mkdirp = (dir) =>
   path
     .resolve(dir)
     .split(path.sep)
@@ -104,7 +104,7 @@ const createComponent = async (err, { name }) => {
     `!**/node_modules/**`,
   ]);
 
-  const processBoilerPlateFiles = boilerPlateFilePath => {
+  const processBoilerPlateFiles = (boilerPlateFilePath) => {
     const newFilePath = boilerPlateFilePath
       .split('boilerplate')
       .join(name)
@@ -123,7 +123,7 @@ const createComponent = async (err, { name }) => {
     });
   };
 
-  const componentCreationProcess = async directoryAlreadyExists => {
+  const componentCreationProcess = async (directoryAlreadyExists) => {
     if (directoryAlreadyExists) {
       console.error(
         colors.red(
@@ -148,7 +148,7 @@ const createComponent = async (err, { name }) => {
       .split(STORYBOOK_CONFIG_SPLIT_POINT_1)[1]
       .split(STORYBOOK_CONFIG_SPLIT_POINT_2)[0]
       .split('\n')
-      .filter(s => !_.isEmpty(s));
+      .filter((s) => !_.isEmpty(s));
 
     storybookConfigContentImports.push(storybookImport);
 

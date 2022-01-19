@@ -35,7 +35,7 @@ describe('BpkMapMarker', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with "status" attribute as "focused" ', () => {
+  it('should render correctly with "status" attribute as "focused"', () => {
     const tree = shallow(
       <BpkPriceMarker
         label="£120"
@@ -46,7 +46,7 @@ describe('BpkMapMarker', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with "status" attribute as "viewed" ', () => {
+  it('should render correctly with "status" attribute as "viewed"', () => {
     const tree = shallow(
       <BpkPriceMarker
         label="£120"

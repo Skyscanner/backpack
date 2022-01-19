@@ -48,7 +48,7 @@ const Heading = withDefaultProps(BpkText, {
 const RtlBarchart = updateOnDirectionChange(BpkBarchart);
 const SelectableBarChart = withSelectedState(RtlBarchart);
 
-const data = require('./data');
+const data = require('./data.json');
 
 const margin = {
   top: 0,
@@ -112,7 +112,7 @@ const AxesAndGridlines = () => {
     .domain([5, 480])
     .range([0, size - 40]);
   const scale2 = scaleBand()
-    .domain(dataset.map(d => d[0]))
+    .domain(dataset.map((d) => d[0]))
     .range([0, size - 40]);
 
   return (
@@ -246,7 +246,7 @@ const CustomTickLabels = () => (
     }}
     xAxisLabel="Month"
     xAxisMargin={3 * remToPx(lineHeightSm) + 12}
-    xAxisTickValue={tick => {
+    xAxisTickValue={(tick) => {
       let season = '❄️';
       if (['Mar', 'Apr', 'May'].indexOf(tick) > -1) {
         season = '🌻';
@@ -269,7 +269,7 @@ const CustomTickLabels = () => (
     }}
     yAxisLabel="Average Price"
     yAxisMargin={4 * remToPx(lineHeightSm)}
-    yAxisTickValue={v => `£${v}`}
+    yAxisTickValue={(v) => `£${v}`}
   />
 );
 

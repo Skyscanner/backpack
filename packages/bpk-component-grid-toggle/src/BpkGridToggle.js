@@ -47,20 +47,20 @@ class BpkGridToggle extends React.Component {
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = e => {
+  handleKeyDown = (e) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'g') {
       this.toggleGrid(e);
     }
   };
 
-  toggleGrid = e => {
+  toggleGrid = (e) => {
     e.preventDefault();
 
     document
       .querySelector(this.props.targetContainer)
       .classList.toggle(GRID_CLASS_NAME);
 
-    this.setState(state => ({
+    this.setState((state) => ({
       gridEnabled: !state.gridEnabled,
     }));
   };

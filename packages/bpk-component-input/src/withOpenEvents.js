@@ -29,21 +29,21 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-const handleKeyEvent = (keyCode, callback) => e => {
+const handleKeyEvent = (keyCode, callback) => (e) => {
   if (e.keyCode === keyCode) {
     e.preventDefault();
     callback();
   }
 };
 
-const withEventHandler = (fn, eventHandler) => e => {
+const withEventHandler = (fn, eventHandler) => (e) => {
   fn(e);
   if (eventHandler) {
     eventHandler(e);
   }
 };
 
-const withOpenEvents = InputComponent => {
+const withOpenEvents = (InputComponent) => {
   class WithOpenEvents extends React.Component {
     constructor(props) {
       super(props);
@@ -51,7 +51,7 @@ const withOpenEvents = InputComponent => {
       this.focusCanOpen = true;
     }
 
-    handleTouchEnd = event => {
+    handleTouchEnd = (event) => {
       // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
       // because a touch event is registered on one of the dates.
       // We can only run preventDefault when the input is already focused - otherwise it would never set

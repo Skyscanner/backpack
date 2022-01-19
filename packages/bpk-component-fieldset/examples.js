@@ -46,7 +46,7 @@ import BpkFieldset, {
 
 const getClassName = cssModules(STYLES);
 
-const formatDate = date => format(date, 'dd/MM/yyyy');
+const formatDate = (date) => format(date, 'dd/MM/yyyy');
 
 const offices = [
   {
@@ -102,18 +102,18 @@ const offices = [
   },
 ];
 
-const getSuggestions = value => {
+const getSuggestions = (value) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
   return inputLength === 0
     ? []
     : offices.filter(
-        office => office.name.toLowerCase().indexOf(inputValue) !== -1,
+        (office) => office.name.toLowerCase().indexOf(inputValue) !== -1,
       );
 };
 
-const getSuggestionValue = suggestion =>
+const getSuggestionValue = (suggestion) =>
   `${suggestion.name} (${suggestion.code})`;
 
 let instances = 0;
@@ -179,7 +179,7 @@ class Autosuggest extends Component<{}, AutosuggestState> {
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
           getSuggestionValue={getSuggestionValue}
-          renderSuggestion={suggestion => (
+          renderSuggestion={(suggestion) => (
             <BpkAutosuggestSuggestion
               value={getSuggestionValue(suggestion)}
               indent={suggestion.indent}
@@ -241,7 +241,7 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
   };
 
   toggleStates = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       let nextValidState = prevState.validState + 1;
       let isChecked = prevState.checked;
 
@@ -265,13 +265,8 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
   };
 
   render() {
-    const {
-      children,
-      isCheckbox,
-      validStates,
-      className,
-      ...rest
-    } = this.props;
+    const { children, isCheckbox, validStates, className, ...rest } =
+      this.props;
     const valid = validStates[this.state.validState];
 
     const dynamicProps = isCheckbox

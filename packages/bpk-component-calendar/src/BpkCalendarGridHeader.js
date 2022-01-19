@@ -29,7 +29,7 @@ const getClassName = cssModules(STYLES);
 /*
   WeekDay - table header cells such as "Mon", "Tue", "Wed"...
 */
-const WeekDay = props => {
+const WeekDay = (props) => {
   const { weekDay, weekDayKey, Element } = props;
 
   return (
@@ -73,7 +73,7 @@ class BpkCalendarGridHeader extends PureComponent {
     return (
       <Header className={classNames.join(' ')} aria-hidden>
         <List className={getClassName('bpk-calendar-header__week')}>
-          {daysOfWeek.map(weekDay => (
+          {daysOfWeek.map((weekDay) => (
             <WeekDay
               Element={Item}
               key={weekDay.index}

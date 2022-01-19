@@ -26,7 +26,7 @@ import STYLES from './BpkPaginationList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPaginationList = props => {
+const BpkPaginationList = (props) => {
   const {
     selectedPageIndex,
     pageCount,
@@ -82,7 +82,7 @@ const BpkPaginationList = props => {
       }
       return null;
     })
-    .filter(page => !!page);
+    .filter((page) => !!page);
 
   return (
     <ul className={getClassName('bpk-pagination-page-list')}>{children}</ul>

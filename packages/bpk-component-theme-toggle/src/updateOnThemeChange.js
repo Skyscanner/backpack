@@ -22,7 +22,7 @@ import { wrapDisplayName } from 'bpk-react-utils';
 
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
-const updateOnThemeChange = EnhancedComponent => {
+const updateOnThemeChange = (EnhancedComponent) => {
   class UpdateOnThemeChange extends Component {
     constructor() {
       super();
@@ -47,7 +47,7 @@ const updateOnThemeChange = EnhancedComponent => {
       );
     }
 
-    onThemeChange = e => {
+    onThemeChange = (e) => {
       const { theme } = e.detail;
       this.setState({ theme });
       this.forceUpdate();

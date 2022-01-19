@@ -138,15 +138,15 @@ describe('composeCalendar', () => {
 
   it('should pass props to their respective components', () => {
     const PropsBasedCalendarComponent = composeCalendar(
-      props => props.name,
-      props => props.name,
-      props => (
+      (props) => props.name,
+      (props) => props.name,
+      (props) => (
         <div>
           <h1>{props.name}</h1>
           <props.DateComponent {...props.dateProps} />
         </div>
       ),
-      props => props.name,
+      (props) => props.name,
     );
 
     const { asFragment } = render(

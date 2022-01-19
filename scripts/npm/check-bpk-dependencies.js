@@ -29,7 +29,7 @@ const findReplace = (file, findReplaces) => {
       return console.log(err);
     }
     let result = data;
-    findReplaces.forEach(fr => {
+    findReplaces.forEach((fr) => {
       const splitFile = result.split(fr.find);
       if (splitFile.length === 1) {
         return null;
@@ -38,7 +38,7 @@ const findReplace = (file, findReplaces) => {
       return null;
     });
 
-    fs.writeFile(file, result, 'utf8', err2 => {
+    fs.writeFile(file, result, 'utf8', (err2) => {
       if (err2) return console.log(err2);
       return null;
     });
@@ -46,9 +46,9 @@ const findReplace = (file, findReplaces) => {
   });
 };
 
-const fixDependencyErrors = packageFiles => {
+const fixDependencyErrors = (packageFiles) => {
   const findReplaces = [];
-  errors.forEach(error => {
+  errors.forEach((error) => {
     findReplaces.push({
       find: new RegExp(
         `\\"${error.dependency}\\"\\:[ ]+\\"\\^[0-9]+\\.[0-9]+\\.[0-9]+\\"`,
@@ -61,13 +61,13 @@ const fixDependencyErrors = packageFiles => {
     );
   });
 
-  packageFiles.forEach(file => {
+  packageFiles.forEach((file) => {
     findReplace(file, findReplaces);
   });
 };
 
 const checkBpkDependencyList = (dependencies, correctVersions, packageName) => {
-  Object.keys(dependencies).forEach(dependency => {
+  Object.keys(dependencies).forEach((dependency) => {
     if (Object.keys(correctVersions).indexOf(dependency) !== -1) {
       const dependencyVersion = dependencies[dependency];
       const correctDependencyVersion = `^${correctVersions[dependency]}`;
@@ -103,7 +103,7 @@ const checkBpkDependencies = (packageFile, correctVersions) => {
   }
 };
 
-const getLatestProductionVersion = version => {
+const getLatestProductionVersion = (version) => {
   if (version.includes('-alpha')) {
     return version.split('-alpha')[0];
   }
@@ -113,7 +113,7 @@ const getLatestProductionVersion = version => {
   return version;
 };
 
-const getBpkPackageVersions = packageFiles =>
+const getBpkPackageVersions = (packageFiles) =>
   packageFiles.reduce((acc, pkg) => {
     if (pkg === '' || !pkg.includes('bpk-')) {
       return acc;
@@ -133,7 +133,7 @@ let packageFiles = execSync(
   .toString()
   .split('\n');
 
-packageFiles = packageFiles.filter(s => s !== '');
+packageFiles = packageFiles.filter((s) => s !== '');
 const bpkPackageVersions = getBpkPackageVersions(packageFiles);
 
 if (
@@ -156,7 +156,7 @@ if (
   bpkPackageVersions['@skyscanner/bpk-foundations-web'] = foundationsVersion[0];
 }
 
-packageFiles.forEach(pf => {
+packageFiles.forEach((pf) => {
   checkBpkDependencies(pf, bpkPackageVersions);
 });
 
@@ -171,7 +171,7 @@ if (errors.length === 0) {
 } else {
   console.log('Some Backpack cross dependencies are outdated  😱');
   console.log('');
-  errors.forEach(error => {
+  errors.forEach((error) => {
     console.log(
       `${error.packageName} depends on ${error.dependency} ${error.dependencyVersion}, it should be ${error.correctDependencyVersion}`,
     );

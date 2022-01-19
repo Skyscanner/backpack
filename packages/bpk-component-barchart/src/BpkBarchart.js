@@ -212,12 +212,12 @@ class BpkBarchart extends Component<Props, State> {
     const width = this.state.width - margin.left - margin.right;
     const height = this.state.height - margin.bottom - margin.top;
     const maxYValue = getMaxYValue(
-      data.map(d => d[yScaleDataKey]),
+      data.map((d) => d[yScaleDataKey]),
       outlierPercentage,
     );
 
     this.xScale.rangeRound([0, width]);
-    this.xScale.domain(transformedData.map(d => d[xScaleDataKey]));
+    this.xScale.domain(transformedData.map((d) => d[xScaleDataKey]));
     this.yScale.rangeRound([height, 0]);
     this.yScale.domain([yAxisDomain[0] || 0, yAxisDomain[1] || maxYValue]);
 
@@ -241,7 +241,7 @@ class BpkBarchart extends Component<Props, State> {
           className={classNames.join(' ')}
           width={this.state.width}
           height={this.state.height}
-          ref={svgEl => {
+          ref={(svgEl) => {
             this.svgEl = svgEl;
           }}
           {...rest}

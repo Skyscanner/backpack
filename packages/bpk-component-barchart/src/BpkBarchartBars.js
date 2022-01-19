@@ -115,9 +115,9 @@ const BpkBarchartBars = (props: Props) => {
             height={outlier ? barHeight + borderRadius : barHeight}
             label={getBarLabel(point, xScaleDataKey, yScaleDataKey)}
             outlier={isOutlier(point, props)}
-            onClick={onBarClick ? e => onBarClick(e, { point }) : null}
-            onHover={onBarHover ? e => onBarHover(e, { point }) : null}
-            onFocus={onBarFocus ? e => onBarFocus(e, { point }) : null}
+            onClick={onBarClick ? (e) => onBarClick(e, { point }) : null}
+            onHover={onBarHover ? (e) => onBarHover(e, { point }) : null}
+            onFocus={onBarFocus ? (e) => onBarFocus(e, { point }) : null}
             selected={getBarSelection(point)}
             padding={innerPadding}
             {...rest}

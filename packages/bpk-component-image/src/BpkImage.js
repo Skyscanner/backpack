@@ -62,7 +62,7 @@ class Image extends Component<ImageProps> {
     }
   }
 
-  setImgRef = el => {
+  setImgRef = (el) => {
     this.img = el;
   };
 
@@ -195,7 +195,7 @@ class BpkImage extends Component<BpkImageProps> {
     return (
       <div style={style} className={className}>
         <div
-          ref={div => {
+          ref={(div) => {
             this.placeholder = div;
           }}
           style={{ height: 0, paddingBottom: aspectRatioPercentage }}

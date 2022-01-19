@@ -108,11 +108,11 @@ const getSuggestions = (value, hanzi) => {
   return inputLength === 0
     ? []
     : data.filter(
-        office => office.name.toLowerCase().indexOf(inputValue) !== -1,
+        (office) => office.name.toLowerCase().indexOf(inputValue) !== -1,
       );
 };
 
-const getSuggestionValue = suggestion =>
+const getSuggestionValue = (suggestion) =>
   `${suggestion.name} (${suggestion.code})`;
 
 type State = {
@@ -181,7 +181,7 @@ class AutosuggestExample extends React.Component<Props, State> {
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
-        renderSuggestion={suggestion => (
+        renderSuggestion={(suggestion) => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
             indent={suggestion.indent}

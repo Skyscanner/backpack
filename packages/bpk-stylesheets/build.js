@@ -34,6 +34,7 @@ require('@babel/register')({
 
 const webpack = require('webpack');
 
+// eslint-disable-next-line import/extensions
 const config = require('./webpack.config.babel.js');
 
 /* eslint-disable no-console */

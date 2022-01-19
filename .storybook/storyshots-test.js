@@ -27,7 +27,7 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 // See: https://www.npmjs.com/package/@storybook/addon-storyshots-puppeteer#specifying-options-to-jest-image-snapshots
 // Its primary function is to delay the screenshot being taken to prevent regressions due to mounting animations & images loading.
 const beforeScreenshot = () =>
-  new Promise(resolve =>
+  new Promise((resolve) =>
     setTimeout(() => {
       resolve();
     }, 800),

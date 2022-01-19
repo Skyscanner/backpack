@@ -92,10 +92,7 @@ describe('BpkProgress', () => {
     expect(onCompleteTransitionEndSpy).toHaveBeenCalled();
     expect(onCompleteTransitionEndSpy.mock.calls.length).toBe(1);
 
-    tree
-      .childAt(0)
-      .props()
-      .onTransitionEnd();
+    tree.childAt(0).props().onTransitionEnd();
     expect(onCompleteTransitionEndSpy).toHaveBeenCalled();
     expect(onCompleteTransitionEndSpy.mock.calls.length).toBe(2);
   });

@@ -27,8 +27,8 @@ import BpkAutosuggest from './BpkAutosuggest';
 const suggestions = ['Edinburgh', 'Glasgow', 'London'];
 const onSuggestionsFetchRequested = () => null;
 const onSuggestionsClearRequested = () => null;
-const getSuggestionValue = suggestion => suggestion;
-const renderSuggestion = suggestion => <span>{suggestion}</span>;
+const getSuggestionValue = (suggestion) => suggestion;
+const renderSuggestion = (suggestion) => <span>{suggestion}</span>;
 const inputProps = {
   id: 'origin',
   name: 'Origin',
@@ -69,7 +69,7 @@ describe('BpkAutosuggest', () => {
   it('should set the input reference', () => {
     let inputRef;
 
-    const storeAutosuggestReference = ref => {
+    const storeAutosuggestReference = (ref) => {
       inputRef = ref;
     };
 

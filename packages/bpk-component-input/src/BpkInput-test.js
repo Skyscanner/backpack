@@ -213,7 +213,7 @@ describe('BpkInput', () => {
 
   it('should expose input reference to parent components', () => {
     let inputRef;
-    const storeInputReference = ref => {
+    const storeInputReference = (ref) => {
       inputRef = ref;
     };
     const tree = mount(
@@ -225,10 +225,7 @@ describe('BpkInput', () => {
         onChange={() => {}}
       />,
     );
-    const input = tree
-      .find('input')
-      .at(0)
-      .instance();
+    const input = tree.find('input').at(0).instance();
     expect(input).toEqual(inputRef);
   });
 

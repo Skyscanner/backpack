@@ -37,16 +37,8 @@ type Props = {
 };
 
 const BpkRadio = (props: Props) => {
-  const {
-    ariaLabel,
-    name,
-    label,
-    disabled,
-    white,
-    className,
-    valid,
-    ...rest
-  } = props;
+  const { ariaLabel, name, label, disabled, white, className, valid, ...rest } =
+    props;
 
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid

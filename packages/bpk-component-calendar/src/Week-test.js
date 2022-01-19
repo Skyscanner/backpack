@@ -40,7 +40,7 @@ const initialProps = {
     new Date(1980, 5, 15),
     new Date(1980, 5, 16),
   ].map(startOfDay),
-  formatDateFull: d => d.toString(),
+  formatDateFull: (d) => d.toString(),
   preventKeyboardFocus: false,
   markToday: true,
   markOutsideDays: true,
@@ -251,7 +251,7 @@ describe('Week', () => {
     it(`should${
       expected ? '' : ' not'
     } update when selection range ${reason}`, () => {
-      const date = dt => parse(`1980${dt}`, 'yyyyMMdd', new Date());
+      const date = (dt) => parse(`1980${dt}`, 'yyyyMMdd', new Date());
       const week = shallow(
         <Week
           {...initialProps}

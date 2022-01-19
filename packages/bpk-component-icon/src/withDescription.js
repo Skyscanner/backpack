@@ -29,7 +29,7 @@ export default function withDescription(
   Component: AbstractComponent<any>,
   description: string,
 ): AbstractComponent<any> {
-  const WithDescription = props => (
+  const WithDescription = (props) => (
     <span>
       <Component {...props} />
       <span className={getClassName('bpk-icon-description')}>

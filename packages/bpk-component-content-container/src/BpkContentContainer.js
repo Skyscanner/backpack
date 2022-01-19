@@ -24,7 +24,7 @@ import STYLES from './BpkContentContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkContentContainer = props => {
+const BpkContentContainer = (props) => {
   const {
     tagName: TagName,
     className,

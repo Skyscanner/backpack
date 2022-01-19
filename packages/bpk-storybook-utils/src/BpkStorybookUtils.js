@@ -18,7 +18,10 @@
 /* @flow strict */
 
 /* eslint-disable global-require, no-console, import/no-mutable-exports */
-let action = (...args: Array<any>) => () => console.info(args);
+let action =
+  (...args: Array<any>) =>
+  () =>
+    console.info(args);
 
 try {
   const storybookAction = require('@storybook/addon-actions').action;

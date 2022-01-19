@@ -49,45 +49,14 @@ import BpkCalendar, {
 
 const LeftIcon = withButtonAlignment(withRtlSupport(SmallLongArrowLeftIcon));
 const RightIcon = withButtonAlignment(withRtlSupport(SmallLongArrowRightIcon));
-const withDirection = (Nav, direction) => props => (
-  <Nav {...props} direction={direction} />
-);
-const withPrices = (DateComponent, prices) => props => (
-  <DateComponent {...props} prices={prices} />
-);
+const withDirection = (Nav, direction) => (props) =>
+  <Nav {...props} direction={direction} />;
+const withPrices = (DateComponent, prices) => (props) =>
+  <DateComponent {...props} prices={prices} />;
 
 const prices = [
-  125,
-  56,
-  75,
-  57,
-  78,
-  92,
-  133,
-  90,
-  148,
-  80,
-  122,
-  67,
-  70,
-  123,
-  77,
-  66,
-  64,
-  56,
-  105,
-  138,
-  52,
-  70,
-  106,
-  139,
-  88,
-  97,
-  73,
-  114,
-  119,
-  141,
-  118,
+  125, 56, 75, 57, 78, 92, 133, 90, 148, 80, 122, 67, 70, 123, 77, 66, 64, 56,
+  105, 138, 52, 70, 106, 139, 88, 97, 73, 114, 119, 141, 118,
 ];
 
 const MyCalendarNav = ({ month, onMonthChange, direction }) => (
@@ -102,7 +71,7 @@ const MyCalendarNav = ({ month, onMonthChange, direction }) => (
     <div>
       <BpkButton
         iconOnly
-        onClick={event =>
+        onClick={(event) =>
           onMonthChange(event, { month: addMonths(month, -1), source: 'PREV' })
         }
       >
@@ -111,7 +80,7 @@ const MyCalendarNav = ({ month, onMonthChange, direction }) => (
       &nbsp;
       <BpkButton
         iconOnly
-        onClick={event =>
+        onClick={(event) =>
           onMonthChange(event, { month: addMonths(month, 1), source: 'NEXT' })
         }
       >
@@ -121,7 +90,7 @@ const MyCalendarNav = ({ month, onMonthChange, direction }) => (
   </div>
 );
 
-const MyCalendarDate = props => {
+const MyCalendarDate = (props) => {
   const cx = {
     textAlign: 'center',
     fontSize: '0.8em',
@@ -187,8 +156,8 @@ class MonthViewCalendar extends Component {
           nextMonthLabel="Go to next month"
           date={this.state.departDate}
           fixedWidth={false}
-          onDateSelect={departDate => {
-            this.setState(prevState => ({
+          onDateSelect={(departDate) => {
+            this.setState((prevState) => ({
               departDate,
               returnDate: dateToBoundaries(
                 prevState.returnDate,
@@ -216,8 +185,8 @@ class MonthViewCalendar extends Component {
           nextMonthLabel="Go to next month"
           date={this.state.returnDate}
           fixedWidth={false}
-          onDateSelect={returnDate => {
-            this.setState(prevState => ({
+          onDateSelect={(returnDate) => {
+            this.setState((prevState) => ({
               returnDate,
               departDate: dateToBoundaries(
                 prevState.departDate,

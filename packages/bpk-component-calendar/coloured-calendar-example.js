@@ -34,41 +34,11 @@ import {
 } from './index';
 
 const prices = [
-  125,
-  56,
-  75,
-  57,
-  78,
-  92,
-  133,
-  90,
-  148,
-  80,
-  122,
-  67,
-  70,
-  123,
-  77,
-  66,
-  64,
-  56,
-  105,
-  138,
-  52,
-  70,
-  106,
-  77,
-  66,
-  64,
-  56,
-  105,
-  138,
-  52,
-  70,
-  106,
+  125, 56, 75, 57, 78, 92, 133, 90, 148, 80, 122, 67, 70, 123, 77, 66, 64, 56,
+  105, 138, 52, 70, 106, 77, 66, 64, 56, 105, 138, 52, 70, 106,
 ];
 
-const MyCalendarDate = props => {
+const MyCalendarDate = (props) => {
   const day = props.date.getDate();
   const price = prices[day - 1];
 
@@ -104,7 +74,7 @@ class ColoredCalendar extends Component {
     return (
       <StatefulCalendar
         {...this.props}
-        onDateSelect={date => {
+        onDateSelect={(date) => {
           this.setState({
             selectionConfiguration: {
               type: this.props.selectionConfiguration.type,

@@ -57,7 +57,7 @@ const elementsArray = [
 
 const List = ({ elements }) => (
   <BpkList className={getClassName('bpk-infinite-scroll-stories__list')}>
-    {elements.map(element => (
+    {elements.map((element) => (
       <BpkListItem key={element}>{element}</BpkListItem>
     ))}
   </BpkList>
@@ -71,7 +71,7 @@ const InfiniteList = withInfiniteScroll(List);
 
 class DelayedDataSource extends ArrayDataSource {
   fetchItems(index, nElements) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       setTimeout(() => resolve(super.fetchItems(index, nElements)), 500);
     });
   }
@@ -86,7 +86,7 @@ class InfiniteDataSource extends DataSource {
   }
 
   fetchItems(index, nElements) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       for (let i = index; i < index + nElements; i += 1) {
         this.elements.push(i);
       }

@@ -20,18 +20,20 @@
 import { type PropType } from 'prop-types';
 
 // $FlowIssue[value-as-type] - PropType is imported as a type so is incorrectly reporting the PropType is not a valid type
-const deprecated = (propType: PropType, alternativeSuggestion: string) => (
-  props: { [string]: any },
-  propName: string,
-  componentName: string,
-  ...rest: [any]
-) => {
-  if (props[propName] != null) {
-    const message = `Warning: "${propName}" property of "${componentName}" has been deprecated. ${alternativeSuggestion}`;
-    // eslint-disable-next-line no-console
-    console.warn(message);
-  }
-  return propType(props, propName, componentName, ...rest);
-};
+const deprecated =
+  (propType: PropType, alternativeSuggestion: string) =>
+  (
+    props: { [string]: any },
+    propName: string,
+    componentName: string,
+    ...rest: [any]
+  ) => {
+    if (props[propName] != null) {
+      const message = `Warning: "${propName}" property of "${componentName}" has been deprecated. ${alternativeSuggestion}`;
+      // eslint-disable-next-line no-console
+      console.warn(message);
+    }
+    return propType(props, propName, componentName, ...rest);
+  };
 
 export default deprecated;

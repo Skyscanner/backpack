@@ -43,9 +43,9 @@ const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 type Props<T> = {
   ...$Exact<CommonProps<T>>,
   inputClassName: ?string,
-  formatValue: T => string,
-  incrementValue: T => T,
-  decrementValue: T => T,
+  formatValue: (T) => string,
+  incrementValue: (T) => T,
+  decrementValue: (T) => T,
   compareValues: (T, T) => number,
 };
 

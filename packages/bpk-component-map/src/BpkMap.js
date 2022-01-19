@@ -35,7 +35,7 @@ export type MapRef = ?{
   getBounds: () => Bounds,
   getCenter: () => LatLong,
   getZoom: () => number,
-  fitBounds: Bounds => void,
+  fitBounds: (Bounds) => void,
 };
 
 type Props = {

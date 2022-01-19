@@ -37,7 +37,7 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
 addDecorator(withA11y);
 addDecorator(withKnobs);
-addDecorator(story => (
+addDecorator((story) => (
   <div style={{ padding: TOKENS.spacingBase }}>
     <EnhancedThemeProvider themeAttributes={themeableAttributes}>
       {story()}

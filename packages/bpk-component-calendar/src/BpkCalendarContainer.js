@@ -98,7 +98,7 @@ const determineFocusedDate = (
  * @param {Object} selectionConfig - The configuration of calendar to be used
  * @returns {Array} An array or single of multiple dates
  */
-const getRawSelectedDate = selectionConfig => {
+const getRawSelectedDate = (selectionConfig) => {
   let rawDate = [];
 
   switch (selectionConfig.type) {
@@ -116,7 +116,7 @@ const getRawSelectedDate = selectionConfig => {
   return rawDate;
 };
 
-const withCalendarState = Calendar => {
+const withCalendarState = (Calendar) => {
   class BpkCalendarContainer extends Component {
     constructor(props) {
       super(props);
@@ -181,7 +181,7 @@ const withCalendarState = Calendar => {
       );
     };
 
-    handleDateSelect = date => {
+    handleDateSelect = (date) => {
       const { onDateSelect, selectionConfiguration } = this.props;
       const keyboardFocusState = { preventKeyboardFocus: false };
 
@@ -219,7 +219,7 @@ const withCalendarState = Calendar => {
       });
     };
 
-    handleDateKeyDown = event => {
+    handleDateKeyDown = (event) => {
       event.persist();
       const reverse = isRTL() ? -1 : 1;
       const { focusedDate } = this.state;

@@ -48,15 +48,8 @@ type Props = {
 };
 
 const BpkButton = (props: Props) => {
-  const {
-    secondary,
-    destructive,
-    featured,
-    outline,
-    link,
-    padded,
-    ...rest
-  } = props;
+  const { secondary, destructive, featured, outline, link, padded, ...rest } =
+    props;
 
   if (secondary) {
     return <BpkButtonSecondary {...rest} />;

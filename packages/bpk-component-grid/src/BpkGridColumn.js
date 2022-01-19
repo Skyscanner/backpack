@@ -27,9 +27,9 @@ const getClassName = cssModules(STYLES);
 // IE11 doesn't support `Number.isNaN` so we must use the global.
 // When IE11 support drops we can migrate.
 // eslint-disable-next-line no-restricted-globals
-const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n);
+const isNumeric = (n) => !isNaN(parseFloat(n)) && isFinite(n);
 
-const BpkGridColumn = props => {
+const BpkGridColumn = (props) => {
   const {
     children,
     width,

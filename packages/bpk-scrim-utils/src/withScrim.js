@@ -41,7 +41,7 @@ import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 
-const withScrim = WrappedComponent => {
+const withScrim = (WrappedComponent) => {
   class WithScrim extends Component {
     static propTypes = {
       getApplicationElement: PropTypes.func.isRequired,
@@ -116,7 +116,7 @@ const withScrim = WrappedComponent => {
       focusStore.restoreFocus();
     }
 
-    dialogRef = ref => {
+    dialogRef = (ref) => {
       this.dialogElement = ref;
     };
 

@@ -30,7 +30,7 @@ const inputId = 'theme-select';
 const getClassName = cssModules(STYLES);
 const availableThemes = Object.keys(bpkCustomThemes);
 
-const setTheme = theme => {
+const setTheme = (theme) => {
   const htmlElement = getHtmlElement();
   htmlElement.dispatchEvent(
     new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme } }),
@@ -60,13 +60,13 @@ class BpkThemeToggle extends React.Component {
     }
   }
 
-  handleKeyDown = e => {
+  handleKeyDown = (e) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 't') {
       this.cycleTheme();
     }
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     const selectedTheme = e.target.value;
     this.setState({ selectedTheme });
     setTheme(bpkCustomThemes[selectedTheme]);
@@ -106,7 +106,7 @@ class BpkThemeToggle extends React.Component {
             Change theme
           </option>
           <option value="skyscanner">None</option>
-          {availableThemes.map(themeName => (
+          {availableThemes.map((themeName) => (
             <option key={themeName} value={themeName}>
               {themeName}
             </option>
