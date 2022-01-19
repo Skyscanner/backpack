@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,7 @@
 /* @flow strict */
 
 /* eslint-disable global-require, no-console, import/no-mutable-exports */
-let action = (...args: Array<any>) => {
-  return () => console.info(args);
-};
+let action = (...args: Array<any>) => () => console.info(args);
 
 try {
   const storybookAction = require('@storybook/addon-actions').action;
