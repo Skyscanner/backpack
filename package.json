@@ -29,7 +29,7 @@
     "clean:lerna": "lerna clean --yes",
     "clean:node_modules": "rm -rf node_modules",
     "create-component": "node scripts/npm/create-component.js",
-    "danger": "danger ci",
+    "danger": "danger",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
     "upgrade-foundations": "node scripts/npm/check-bpk-dependencies.js --fix --upgrade-foundations",
     "flow": "flow --max-warnings 0",

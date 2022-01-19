@@ -117,6 +117,7 @@ if (unlicensedFiles.length > 0) {
 const nonModuleCssFiles = fileChanges.filter(
   filePath =>
     filePath.match(/bpk-component/) &&
+    !filePath.startsWith('/_/') &&
     filePath.match(/\.s?css/) &&
     !filePath.match(/\.module\.s?css/),
 );
