@@ -52,7 +52,7 @@ exports[`BpkContentContainer should render correctly with a "bareHtml" and "alte
 </DocumentFragment>
 `;
 
-exports[`BpkContentContainer should render correctly with a "bareHtml" attribute  1`] = `
+exports[`BpkContentContainer should render correctly with a "bareHtml" attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-content-container bpk-content-container--bare-html"
@@ -78,7 +78,7 @@ exports[`BpkContentContainer should render correctly with a "bareHtml" attribute
 </DocumentFragment>
 `;
 
-exports[`BpkContentContainer should render correctly with a custom "className" attribute  1`] = `
+exports[`BpkContentContainer should render correctly with a custom "className" attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-content-container my-test-class"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkMapMarker should render correctly with "status" attribute as "focused"  1`] = `
+exports[`BpkMapMarker should render correctly with "status" attribute as "focused" 1`] = `
 <BpkBasicMapMarker
   position={
     Object {
@@ -31,7 +31,7 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "focuse
 </BpkBasicMapMarker>
 `;
 
-exports[`BpkMapMarker should render correctly with "status" attribute as "viewed"  1`] = `
+exports[`BpkMapMarker should render correctly with "status" attribute as "viewed" 1`] = `
 <BpkBasicMapMarker
   position={
     Object {
