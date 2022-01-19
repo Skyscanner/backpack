@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,24 +27,22 @@ import BpkMobileScrollContainer from './index';
 
 const getClassName = cssModules(STYLES);
 
-const ScrollExampleBlock = () => {
-  return (
-    <div className={getClassName('bpk-scroll-block')}>
-      {new Array(10).fill().map((props, index) => (
-        <div
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          className={getClassName(
-            'bpk-scroll-block__item',
-            index % 2 === 0 && 'bpk-scroll-block__item--alternate',
-          )}
-        >
-          {index}
-        </div>
-      ))}
-    </div>
-  );
-};
+const ScrollExampleBlock = () => (
+  <div className={getClassName('bpk-scroll-block')}>
+    {new Array(10).fill().map((props, index) => (
+      <div
+        // eslint-disable-next-line react/no-array-index-key
+        key={index}
+        className={getClassName(
+          'bpk-scroll-block__item',
+          index % 2 === 0 && 'bpk-scroll-block__item--alternate',
+        )}
+      >
+        {index}
+      </div>
+    ))}
+  </div>
+);
 
 const DefaultExample = () => (
   <BpkMobileScrollContainer>
