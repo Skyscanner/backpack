@@ -124,7 +124,7 @@
     "@storybook/addon-storyshots-puppeteer": "^5.3.14",
     "@storybook/addon-viewport": "^5.3.14",
     "@storybook/react": "^5.3.14",
-    "@testing-library/react": "^11.2.5",
+    "@testing-library/react": "^12.1.2",
     "autoprefixer": "^9.4.7",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.0",
