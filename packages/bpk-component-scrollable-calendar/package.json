@@ -14,7 +14,7 @@
   },
   "gitHead": "4e4ec9add28e1db54d6a38a10c331bbd163f2926",
   "dependencies": {
-    "@skyscanner/bpk-foundations-web": "^4.4.0",
+    "@skyscanner/bpk-foundations-web": "^5.0.0",
     "bpk-component-calendar": "^11.0.5",
     "bpk-component-text": "^4.0.23",
     "bpk-mixins": "^24.1.1",

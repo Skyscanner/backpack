@@ -23,7 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import BpkSmallExclamationIcon from 'bpk-component-icon/sm/exclamation-circle';
 import { withAlignment } from 'bpk-component-icon';
 import {
-  lineHeightBase,
+  lineHeightSm,
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -32,7 +32,7 @@ import STYLES from './BpkFormValidation.module.scss';
 const getClassName = cssModules(STYLES);
 const AlignedExclamationIcon = withAlignment(
   BpkSmallExclamationIcon,
-  lineHeightBase,
+  lineHeightSm,
   iconSizeSm,
 );
 

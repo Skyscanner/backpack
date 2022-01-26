@@ -334,7 +334,8 @@ $bpk-spacing-v2: true;
   display: inline-block;
   width: 100%;
   height: $bpk-input-height;
-  padding: bpk-spacing-md() bpk-spacing-xl() bpk-spacing-md() bpk-spacing-md();
+  padding: bpk-spacing-md() - (2 * $bpk-one-pixel-rem) bpk-spacing-md();
+  padding-right: bpk-spacing-xl();
   border: $bpk-select-border;
   border-radius: $bpk-select-border-radius;
   background: $bpk-color-white
