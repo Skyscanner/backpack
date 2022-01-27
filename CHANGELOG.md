@@ -1,3 +1,10 @@
+# 2022-01-27
+
+**Fixed:**
+    - bpk-component-radio: 3.0.21 => 3.0.22
+    - bpk-mixins: 24.1.1 => 24.1.2
+        - Fixed bug where variable was being used before it was defined.
+
 # 2022-01-17
 
 **Fixed:**

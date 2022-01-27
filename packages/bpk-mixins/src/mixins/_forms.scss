@@ -782,6 +782,8 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-radio__input {
+  $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
+
   position: absolute;
   top: 0;
   left: 0;
@@ -820,7 +822,6 @@ $bpk-spacing-v2: true;
   &:disabled {
     border-color: $bpk-color-sky-gray-tint-04;
   }
-  $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
 }
 
 /// Form label.
