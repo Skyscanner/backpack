@@ -75,8 +75,8 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xs {
   @include _bpk-text-factory(
-    $bpk-font-size-xs,
-    $bpk-line-height-xs,
+    $bpk-text-xs-font-size,
+    $bpk-text-xs-line-height,
     $bpk-font-weight-book
   );
 }
@@ -104,8 +104,8 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--sm {
   @include _bpk-text-factory(
-    $bpk-font-size-sm,
-    $bpk-line-height-sm,
+    $bpk-text-sm-font-size,
+    $bpk-text-sm-line-height,
     $bpk-font-weight-book
   );
 }
@@ -133,8 +133,8 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--base {
   @include _bpk-text-factory(
-    $bpk-font-size-base,
-    $bpk-line-height-base,
+    $bpk-text-base-font-size,
+    $bpk-text-base-line-height,
     $bpk-font-weight-book
   );
 }
@@ -162,8 +162,8 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--lg {
   @include _bpk-text-factory(
-    $bpk-font-size-lg,
-    $bpk-line-height-lg,
+    $bpk-text-lg-font-size,
+    $bpk-text-lg-line-height,
     $bpk-font-weight-book
   );
 }
@@ -191,8 +191,8 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xl {
   @include _bpk-text-factory(
-    $bpk-font-size-xl,
-    $bpk-line-height-xl,
+    $bpk-text-xl-font-size,
+    $bpk-text-xl-line-height,
     $bpk-font-weight-book
   );
 }
@@ -220,8 +220,8 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xxl {
   @include _bpk-text-factory(
-    $bpk-font-size-xxl,
-    $bpk-line-height-xxl,
+    $bpk-text-xxl-font-size,
+    $bpk-text-xxl-line-height,
     $bpk-font-weight-bold
   );
 }
@@ -249,8 +249,8 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xxxl {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxl,
-    $bpk-line-height-xxxl,
+    $bpk-text-xxxl-font-size,
+    $bpk-text-xxxl-line-height,
     $bpk-font-weight-bold
   );
 }
@@ -278,8 +278,8 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xxxxl {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxxl,
-    $bpk-line-height-xxxxl,
+    $bpk-text-xxxxl-font-size,
+    $bpk-text-xxxxl-line-height,
     $bpk-font-weight-bold,
     $bpk-letter-spacing-tight
   );
@@ -308,8 +308,8 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xxxxxl {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxxxl,
-    $bpk-line-height-xxxxxl,
+    $bpk-text-xxxxxl-font-size,
+    $bpk-text-xxxxxl-line-height,
     $bpk-font-weight-bold,
     $bpk-letter-spacing-tight
   );
@@ -387,15 +387,15 @@ $bpk-spacing-v2: true;
   margin-bottom: $bpk-heading-margin-bottom;
 
   @include _bpk-text-factory(
-    $bpk-font-size-xxxl,
-    $bpk-line-height-xxxl,
+    $bpk-text-xxxl-font-size,
+    $bpk-text-xxxl-line-height,
     $bpk-font-weight-bold
   );
 
   @include bpk-breakpoint-mobile {
     @include _bpk-text-factory(
-      $bpk-font-size-xxl,
-      $bpk-line-height-xxl,
+      $bpk-text-xxl-font-size,
+      $bpk-text-xxl-line-height,
       $bpk-font-weight-bold
     );
   }
@@ -413,14 +413,14 @@ $bpk-spacing-v2: true;
   margin-bottom: $bpk-heading-margin-bottom;
 
   @include _bpk-text-factory(
-    $bpk-font-size-xxl,
-    $bpk-line-height-xxl,
+    $bpk-text-xxl-font-size,
+    $bpk-text-xxl-line-height,
     $bpk-font-weight-bold
   );
 
   @include bpk-breakpoint-mobile {
     @include _bpk-text-factory(
-      $bpk-font-size-xl,
+      $bpk-text-xl-font-size,
       $bpk-line-height-xl-tight,
       $bpk-font-weight-bold
     );
@@ -439,14 +439,14 @@ $bpk-spacing-v2: true;
   margin-bottom: $bpk-heading-margin-bottom;
 
   @include _bpk-text-factory(
-    $bpk-font-size-xl,
+    $bpk-text-xl-font-size,
     $bpk-line-height-xl-tight,
     $bpk-font-weight-bold
   );
 
   @include bpk-breakpoint-mobile {
     @include _bpk-text-factory(
-      $bpk-font-size-lg,
+      $bpk-text-lg-font-size,
       $bpk-line-height-lg-tight,
       $bpk-font-weight-bold
     );
@@ -465,14 +465,14 @@ $bpk-spacing-v2: true;
   margin-bottom: $bpk-heading-margin-bottom;
 
   @include _bpk-text-factory(
-    $bpk-font-size-lg,
+    $bpk-text-lg-font-size,
     $bpk-line-height-lg-tight,
     $bpk-font-weight-bold
   );
 
   @include bpk-breakpoint-mobile {
     @include _bpk-text-factory(
-      $bpk-font-size-base,
+      $bpk-text-base-font-size,
       $bpk-line-height-base-tight,
       $bpk-font-weight-bold
     );
@@ -491,7 +491,7 @@ $bpk-spacing-v2: true;
   margin-bottom: $bpk-heading-margin-bottom;
 
   @include _bpk-text-factory(
-    $bpk-font-size-base,
+    $bpk-text-base-font-size,
     $bpk-line-height-base-tight,
     $bpk-font-weight-bold
   );
@@ -509,7 +509,7 @@ $bpk-spacing-v2: true;
   margin-bottom: $bpk-heading-margin-bottom;
 
   @include _bpk-text-factory(
-    $bpk-font-size-base,
+    $bpk-text-base-font-size,
     $bpk-line-height-base-tight,
     $bpk-font-weight-bold
   );
