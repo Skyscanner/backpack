@@ -46,7 +46,7 @@ describe('BpkText', () => {
       </BpkText>,
     );
     expect(asFragment()).toMatchSnapshot();
-    expect(consoleWarnFn.mock.calls.length).toBe(1);
+    expect(consoleWarnFn.mock.calls.length).toBe(2);
   });
 
   it('should render correctly with tageName="h1", textStyle="xxl"', () => {
@@ -132,4 +132,18 @@ describe('BpkText', () => {
       });
     },
   );
+
+  it('should render correctly with deprecated `weight` prop', () => {
+    const consoleWarnFn = jest.fn();
+    jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
+    const { asFragment } = render(
+      <BpkText weight="bold">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    expect(consoleWarnFn.mock.calls.length).toBe(1);
+  });
 });

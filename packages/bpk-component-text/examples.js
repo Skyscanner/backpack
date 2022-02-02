@@ -21,10 +21,10 @@ import { withDefaultProps } from 'bpk-react-utils';
 
 import STYLE from './examples.module.scss';
 
-import BpkText, { WEIGHT_STYLES } from './index';
+import BpkText from './index';
 
 const Paragraph = withDefaultProps(BpkText, {
-  textStyle: 'lg',
+  textStyle: 'bodyLongform',
   tagName: 'p',
   className: STYLE['bpk-my-paragraph'],
 });
@@ -38,31 +38,34 @@ const DefaultExample = () => (
   </BpkText>
 );
 
-const HeadingsExample = () => (
+const WithHeadingTagsExample = () => (
   <div>
-    <BpkText textStyle="xxl" tagName="h1">
+    <BpkText textStyle="subheading" tagName="h1">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="xl" tagName="h2">
+    <BpkText textStyle="bodyLongform" tagName="h2">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="lg" tagName="h3">
+    <BpkText textStyle="label1" tagName="h3">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="base" tagName="h4">
+    <BpkText textStyle="bodyDefault" tagName="h3">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="sm" tagName="h5">
+    <BpkText textStyle="label2" tagName="h4">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="xs" tagName="h6">
+    <BpkText textStyle="footnote" tagName="h5">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="caption" tagName="h6">
       The quick brown fox jumps over the lazy dog
     </BpkText>
   </div>
 );
 
 const ParagraphExample = () => (
-  <BpkText textStyle="base" tagName="p">
+  <BpkText textStyle="bodyDefault" tagName="p">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
     imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
     consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
@@ -87,28 +90,28 @@ const WithDefaultProps = () => (
   </div>
 );
 
-const BoldExample = () => (
-  <BpkText tagName="p">
-    The man jumped over the shark tank. That was very{' '}
-    <BpkText weight={WEIGHT_STYLES.bold}>bold</BpkText> indeed.
-  </BpkText>
-);
-
-const WithWeightsExample = () => (
+const HeadingStylesExample = () => (
   <div>
-    <BpkText tagName="p">
-      The man jumped over the shark tank. That was very brave indeed.
+    <BpkText textStyle="hero4" tagName="h5">
+      The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText tagName="p">
-      The man jumped over the shark tank. That was very{' '}
-      <BpkText weight={WEIGHT_STYLES.bold}>bold</BpkText> indeed.
+    <BpkText textStyle="hero5" tagName="h6">
+      The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText tagName="p">
-      The man jumped over the shark tank. That was a{' '}
-      <BpkText weight={WEIGHT_STYLES.black} textStyle="xl">
-        heavy
-      </BpkText>{' '}
-      shark.
+    <BpkText textStyle="heading1" tagName="h1">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="heading2" tagName="h4">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="heading3" tagName="h2">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="heading4" tagName="h6">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="heading5" tagName="h4">
+      The quick brown fox jumps over the lazy dog
     </BpkText>
   </div>
 );
@@ -116,20 +119,17 @@ const WithWeightsExample = () => (
 const MixedExample = () => (
   <div>
     <DefaultExample />
-    <HeadingsExample />
+    <WithHeadingTagsExample />
     <ParagraphExample />
     <WithDefaultProps />
-    <BoldExample />
-    <WithWeightsExample />
   </div>
 );
 
 export {
   DefaultExample,
-  HeadingsExample,
+  WithHeadingTagsExample,
   ParagraphExample,
   WithDefaultProps,
-  BoldExample,
-  WithWeightsExample,
+  HeadingStylesExample,
   MixedExample,
 };

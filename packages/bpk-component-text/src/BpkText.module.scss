@@ -57,6 +57,74 @@
     @include bpk-text--xxxxxl;
   }
 
+  &--caption {
+    @include bpk-caption;
+  }
+
+  &--footnote {
+    @include bpk-footnote;
+  }
+
+  &--label1 {
+    @include bpk-label-1;
+  }
+
+  &--label2 {
+    @include bpk-label-2;
+  }
+
+  &--bodyDefault {
+    @include bpk-body-default;
+  }
+
+  &--bodyLongform {
+    @include bpk-body-longform;
+  }
+
+  &--subheading {
+    @include bpk-subheading;
+  }
+
+  &--heading1 {
+    @include bpk-heading-1;
+  }
+
+  &--heading2 {
+    @include bpk-heading-2;
+  }
+
+  &--heading3 {
+    @include bpk-heading-3;
+  }
+
+  &--heading4 {
+    @include bpk-heading-4;
+  }
+
+  &--heading5 {
+    @include bpk-heading-5;
+  }
+
+  &--hero1 {
+    @include bpk-hero-1;
+  }
+
+  &--hero2 {
+    @include bpk-hero-2;
+  }
+
+  &--hero3 {
+    @include bpk-hero-3;
+  }
+
+  &--hero4 {
+    @include bpk-hero-4;
+  }
+
+  &--hero5 {
+    @include bpk-hero-5;
+  }
+
   &--bold {
     @include bpk-text--bold;
   }

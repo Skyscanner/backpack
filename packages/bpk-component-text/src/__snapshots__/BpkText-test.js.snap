@@ -41,6 +41,16 @@ exports[`BpkText should render correctly with deprecated \`bold\` prop 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkText should render correctly with deprecated \`weight\` prop 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-text bpk-text--base bpk-text--bold"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </span>
+</DocumentFragment>
+`;
+
 exports[`BpkText should render correctly with tageName="h1", textStyle="xxl" 1`] = `
 <DocumentFragment>
   <h1

@@ -36,6 +36,23 @@ export const TEXT_STYLES = {
   xxxl: 'xxxl',
   xxxxl: 'xxxxl',
   xxxxxl: 'xxxxxl',
+  caption: 'caption',
+  footnote: 'footnote',
+  label1: 'label1',
+  label2: 'label2',
+  bodyDefault: 'bodyDefault',
+  bodyLongform: 'bodyLongform',
+  subheading: 'subheading',
+  heading1: 'heading1',
+  heading2: 'heading2',
+  heading3: 'heading3',
+  heading4: 'heading4',
+  heading5: 'heading5',
+  hero1: 'hero1',
+  hero2: 'hero2',
+  hero3: 'hero3',
+  hero4: 'hero4',
+  hero5: 'hero5',
 };
 
 export const WEIGHT_STYLES = {
@@ -112,8 +129,14 @@ BpkText.propTypes = {
     'h6',
   ]),
   className: PropTypes.string,
-  bold: deprecated(PropTypes.bool, 'Use "weight" instead.'),
-  weight: PropTypes.oneOf(Object.keys(WEIGHT_STYLES)),
+  bold: deprecated(
+    PropTypes.bool,
+    'Use a different "textStyle" to achieve the desired weight.',
+  ),
+  weight: deprecated(
+    PropTypes.oneOf(Object.keys(WEIGHT_STYLES)),
+    'Use a different "textStyle" to achieve the desired weight.',
+  ),
 };
 
 BpkText.defaultProps = {
