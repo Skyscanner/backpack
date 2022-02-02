@@ -1,3 +1,21 @@
+# 2022-02-02
+
+**Added:**
+  - bpk-mixins: 25.0.0 => 25.1.0
+    - Added new Typography mixins.
+      - `bpk-caption`
+      - `bpk-footnote`
+      - `bpk-label-1`
+      - `bpk-label-2`
+      - `bpk-body-default`
+      - `bpk-body-longform`
+      - `bpk-subheading`
+      - `bpk-hero-1`
+      - `bpk-hero-2`
+      - `bpk-hero-3`
+      - `bpk-hero-4`
+      - `bpk-hero-5`
+
 # 2022-01-31
 
 **Breaking:**
