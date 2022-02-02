@@ -375,6 +375,191 @@ $bpk-spacing-v2: true;
   @include bpk-text--black;
 }
 
+/// Caption text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-caption;
+///   }
+
+@mixin bpk-caption {
+  @include _bpk-text-factory(
+    $bpk-font-size-xs,
+    $bpk-line-height-xs,
+    $bpk-font-weight-book
+  );
+}
+
+/// Footnote text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-footnote;
+///   }
+
+@mixin bpk-footnote {
+  @include _bpk-text-factory(
+    $bpk-font-size-sm,
+    $bpk-line-height-sm,
+    $bpk-font-weight-book
+  );
+}
+
+/// Label-1 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label-1;
+///   }
+
+@mixin bpk-label-1 {
+  @include _bpk-text-factory(
+    $bpk-font-size-base,
+    $bpk-line-height-base,
+    $bpk-font-weight-bold
+  );
+}
+
+/// Label-2 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label-2;
+///   }
+
+@mixin bpk-label-2 {
+  @include _bpk-text-factory(
+    $bpk-font-size-sm,
+    $bpk-line-height-sm,
+    $bpk-font-weight-bold
+  );
+}
+
+/// Default body text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-body-default;
+///   }
+
+@mixin bpk-body-default {
+  @include _bpk-text-factory(
+    $bpk-font-size-base,
+    $bpk-line-height-base,
+    $bpk-font-weight-book
+  );
+}
+
+/// Longform body text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-body-longform;
+///   }
+
+@mixin bpk-body-longform {
+  @include _bpk-text-factory(
+    $bpk-font-size-lg,
+    $bpk-line-height-lg,
+    $bpk-font-weight-book
+  );
+}
+
+/// Subheading text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-subheading;
+///   }
+
+@mixin bpk-subheading {
+  @include _bpk-text-factory(
+    $bpk-font-size-xl,
+    $bpk-line-height-xl,
+    $bpk-font-weight-book
+  );
+}
+
+/// Hero 1 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-1;
+///   }
+
+@mixin bpk-hero-1 {
+  @include _bpk-text-factory(
+    $bpk-font-size-8-xl,
+    $bpk-line-height-8-xl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
+/// Hero 2 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-2;
+///   }
+
+@mixin bpk-hero-2 {
+  @include _bpk-text-factory(
+    $bpk-font-size-7-xl,
+    $bpk-line-height-7-xl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
+/// Hero 3 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-3;
+///   }
+
+@mixin bpk-hero-3 {
+  @include _bpk-text-factory(
+    $bpk-font-size-6-xl,
+    $bpk-line-height-6-xl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
+/// Hero 4 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-4;
+///   }
+
+@mixin bpk-hero-4 {
+  @include _bpk-text-factory(
+    $bpk-font-size-xxxxxl,
+    $bpk-line-height-xxxxxl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
+/// Hero 5 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-5;
+///   }
+
+@mixin bpk-hero-5 {
+  @include _bpk-text-factory(
+    $bpk-font-size-xxxxl,
+    $bpk-line-height-xxxxl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
 /// Level 1 heading.
 ///
 /// @example scss
