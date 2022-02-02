@@ -491,7 +491,8 @@ $bpk-spacing-v2: true;
   @include _bpk-text-factory(
     $bpk-font-size-8-xl,
     $bpk-line-height-8-xl,
-    $bpk-font-weight-bold
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
   );
 }
 
@@ -506,7 +507,8 @@ $bpk-spacing-v2: true;
   @include _bpk-text-factory(
     $bpk-font-size-7-xl,
     $bpk-line-height-7-xl,
-    $bpk-font-weight-bold
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
   );
 }
 
@@ -521,7 +523,8 @@ $bpk-spacing-v2: true;
   @include _bpk-text-factory(
     $bpk-font-size-6-xl,
     $bpk-line-height-6-xl,
-    $bpk-font-weight-bold
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
   );
 }
 
@@ -536,7 +539,8 @@ $bpk-spacing-v2: true;
   @include _bpk-text-factory(
     $bpk-font-size-xxxxxl,
     $bpk-line-height-xxxxxl,
-    $bpk-font-weight-bold
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
   );
 }
 
@@ -551,7 +555,8 @@ $bpk-spacing-v2: true;
   @include _bpk-text-factory(
     $bpk-font-size-xxxxl,
     $bpk-line-height-xxxxl,
-    $bpk-font-weight-bold
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
   );
 }
 
