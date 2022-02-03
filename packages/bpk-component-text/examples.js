@@ -24,7 +24,7 @@ import STYLE from './examples.module.scss';
 import BpkText from './index';
 
 const Paragraph = withDefaultProps(BpkText, {
-  textStyle: 'bodyLongform',
+  textStyle: 'body-longform',
   tagName: 'p',
   className: STYLE['bpk-my-paragraph'],
 });
@@ -43,16 +43,16 @@ const WithHeadingTagsExample = () => (
     <BpkText textStyle="subheading" tagName="h1">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="bodyLongform" tagName="h2">
+    <BpkText textStyle="body-longform" tagName="h2">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="label1" tagName="h3">
+    <BpkText textStyle="label-1" tagName="h3">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="bodyDefault" tagName="h3">
+    <BpkText textStyle="body-default" tagName="h3">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="label2" tagName="h4">
+    <BpkText textStyle="label-2" tagName="h4">
       The quick brown fox jumps over the lazy dog
     </BpkText>
     <BpkText textStyle="footnote" tagName="h5">
@@ -65,7 +65,7 @@ const WithHeadingTagsExample = () => (
 );
 
 const ParagraphExample = () => (
-  <BpkText textStyle="bodyDefault" tagName="p">
+  <BpkText textStyle="body-default" tagName="p">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
     imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
     consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
@@ -92,25 +92,25 @@ const WithDefaultProps = () => (
 
 const HeadingStylesExample = () => (
   <div>
-    <BpkText textStyle="hero4" tagName="h5">
+    <BpkText textStyle="hero-4" tagName="h5">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="hero5" tagName="h6">
+    <BpkText textStyle="hero-5" tagName="h6">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="heading1" tagName="h1">
+    <BpkText textStyle="heading-1" tagName="h1">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="heading2" tagName="h4">
+    <BpkText textStyle="heading-2" tagName="h4">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="heading3" tagName="h2">
+    <BpkText textStyle="heading-3" tagName="h2">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="heading4" tagName="h6">
+    <BpkText textStyle="heading-4" tagName="h6">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="heading5" tagName="h4">
+    <BpkText textStyle="heading-5" tagName="h4">
       The quick brown fox jumps over the lazy dog
     </BpkText>
   </div>
