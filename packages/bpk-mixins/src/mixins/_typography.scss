@@ -688,8 +688,12 @@ $bpk-spacing-v2: true;
 ///   .selector {
 ///     @include bpk-heading-6();
 ///   }
+///
+/// @deprecated Use `bpk-heading-5` instead.
 
 @mixin bpk-heading-6 {
+  @warn 'bpk-heading-6 is deprecated. Use `bpk-heading-5` instead.';
+
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
 
