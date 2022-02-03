@@ -1,3 +1,4 @@
+# This component has been deprecated, please use bpk-component-text instead to apply heading styles
 # bpk-component-heading
 
 > Backpack heading component.
