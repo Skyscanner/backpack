@@ -46,7 +46,7 @@ describe('BpkText', () => {
       </BpkText>,
     );
     expect(asFragment()).toMatchSnapshot();
-    expect(consoleWarnFn.mock.calls.length).toBe(2);
+    expect(consoleWarnFn.mock.calls.length).toBe(1);
   });
 
   it('should render correctly with tageName="h1", textStyle="xxl"', () => {
