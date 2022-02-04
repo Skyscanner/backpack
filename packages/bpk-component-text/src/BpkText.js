@@ -62,7 +62,7 @@ export const WEIGHT_STYLES = {
 };
 
 export type Weight = $Keys<typeof WEIGHT_STYLES>;
-export type TextStyle = $Keys<typeof TEXT_STYLES>;
+export type TextStyle = $Values<typeof TEXT_STYLES>;
 
 const getWeight = (bold, weight, textStyle) => {
   if (bold || weight === WEIGHT_STYLES.bold) {
@@ -83,7 +83,7 @@ type Props = {
   tagName: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
   className: ?string,
   bold: ?boolean,
-  weight: Weight,
+  weight: ?Weight,
 };
 
 const BpkText = (props: Props) => {
@@ -116,7 +116,7 @@ const BpkText = (props: Props) => {
 
 BpkText.propTypes = {
   children: PropTypes.node.isRequired,
-  textStyle: PropTypes.oneOf(Object.keys(TEXT_STYLES)),
+  textStyle: PropTypes.oneOf(Object.values(TEXT_STYLES)),
   tagName: PropTypes.oneOf([
     'span',
     'p',
@@ -144,7 +144,7 @@ BpkText.defaultProps = {
   tagName: 'span',
   className: null,
   bold: null,
-  weight: WEIGHT_STYLES.regular,
+  weight: null,
 };
 
 export default BpkText;
