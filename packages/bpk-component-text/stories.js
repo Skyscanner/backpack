@@ -20,19 +20,17 @@ import { storiesOf } from '@storybook/react';
 
 import {
   DefaultExample,
-  HeadingsExample,
+  WithHeadingTagsExample,
   ParagraphExample,
   WithDefaultProps,
-  BoldExample,
-  WithWeightsExample,
+  HeadingStylesExample,
   MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-text', module)
   .add('Default', DefaultExample)
-  .add('Headings', HeadingsExample)
+  .add('With heading tags', WithHeadingTagsExample)
   .add('Paragraph', ParagraphExample)
   .add('using withDefaultProps', WithDefaultProps)
-  .add('bold', BoldExample)
-  .add('with weights', WithWeightsExample)
+  .add('Heading styles', HeadingStylesExample)
   .add('Visual test', MixedExample);
