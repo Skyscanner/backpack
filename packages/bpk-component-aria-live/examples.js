@@ -19,7 +19,6 @@
 
 import React, { type Node } from 'react';
 import BpkChip from 'bpk-component-chip';
-import BpkParagraph from 'bpk-component-paragraph';
 import BpkFieldset from 'bpk-component-fieldset';
 import BpkSelect from 'bpk-component-select';
 import BpkSwitch from 'bpk-component-switch';
@@ -46,14 +45,14 @@ const AriaLiveDemo = (props: {
       className={getClassName('bpk-storybook-aria-live-demo', className)}
       style={style}
     >
-      <BpkParagraph>
+      <p>
         <strong>ARIA live region:</strong>
-      </BpkParagraph>
-      <BpkParagraph>
+      </p>
+      <p>
         {visible
           ? 'This content is relevant to everyone, not just assistive technologies, so it is permanently visible.'
           : 'This would usually be visually hidden, and only visible to assistive technologies. It is visible here for demo purposes.'}
-      </BpkParagraph>
+      </p>
       {preamble}
       <BpkAriaLive
         {...rest}
@@ -101,11 +100,11 @@ class SelectExample extends React.Component<
     return (
       <div>
         <div>
-          <BpkParagraph>
+          <p>
             Interactive component with
             <BpkCode>aria-controls=&quot;{this.id}&quot;</BpkCode> to link it to
             the ARIA live region below with the same ID.
-          </BpkParagraph>
+          </p>
           <div
             className={getClassName(
               'bpk-storybook-aria-live-demo__select-wrapper',
@@ -142,20 +141,20 @@ class SelectExample extends React.Component<
           id={this.id}
           className={getClassName('bpk-storybook-aria-live-demo__aria-live')}
           preamble={
-            <BpkParagraph>
+            <p>
               This region has <BpkCode>id=&quot;{this.id}&quot;</BpkCode>.
               <br />
               It also has <BpkCode>aria-atomic=&quot;true&quot;</BpkCode> to
               instruct assistive technologies to read out everything when
               something changes, not just the part that changed.
-            </BpkParagraph>
+            </p>
           }
         >
-          <BpkParagraph>
+          <p>
             <strong>
               Searching for {direct ? 'direct ' : ''}flights to {destination}.
             </strong>
-          </BpkParagraph>
+          </p>
         </AriaLiveDemo>
       </div>
     );
@@ -205,11 +204,11 @@ class ChipsExample extends React.Component<
             'bpk-storybook-aria-live-demo__chips-wrapper',
           )}
         >
-          <BpkParagraph>
+          <p>
             Interactive component with
             <BpkCode>aria-controls=&quot;{this.id}&quot;</BpkCode> to link it to
             the ARIA live region below with the same ID.
-          </BpkParagraph>
+          </p>
           {Object.keys(categories).map(category => (
             <BpkChip
               className={getClassName('bpk-storybook-aria-live-demo__chip')}
@@ -228,17 +227,17 @@ class ChipsExample extends React.Component<
           id={this.id}
           className={getClassName('bpk-storybook-aria-live-demo__aria-live')}
           preamble={
-            <BpkParagraph>
+            <p>
               This region has <BpkCode>id=&quot;{this.id}&quot;</BpkCode>.
               <br />
               As the above chips are toggled, updates appear here.
-            </BpkParagraph>
+            </p>
           }
         >
           {updates.map(update => (
-            <BpkParagraph>
+            <p>
               <strong>{update}</strong>
-            </BpkParagraph>
+            </p>
           ))}
         </AriaLiveDemo>
       </div>
