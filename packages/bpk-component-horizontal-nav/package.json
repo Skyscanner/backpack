@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-horizontal-nav",
-  "version": "5.0.17",
+  "version": "5.0.18",
   "description": "Backpack horizontal nav component.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^5.0.0",
-    "bpk-component-text": "^5.0.2",
+    "bpk-component-text": "^5.1.0",
     "bpk-storybook-utils": "^1.0.25"
   }
 }
