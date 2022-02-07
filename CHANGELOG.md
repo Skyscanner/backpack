@@ -1,3 +1,9 @@
+# 2022-02-07
+
+**Changed:**
+  - bpk-mixins: 25.1.0 => 25.2.0
+    - Deprecated `bpk-heading-6` mixin.
+
 # 2022-02-02
 
 **Added:**
