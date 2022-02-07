@@ -13,4 +13,23 @@
       - `bpk-hero-3`
       - `bpk-hero-4`
       - `bpk-hero-5`
-    - `weight` property is now deprecated. If you are using the `weight` or `bold` properties, remove them and choose one of the new text styles instead to achieve the desired weight. 
+    - `weight` property is now deprecated. If you are using the `weight` or `bold` properties, remove them and choose one of the new text styles instead to achieve the desired weight.
+
+**Breaking:**
+  - bpk-mixins:
+  - bpk-component-text:
+    - Removed margins from `bpk-heading` mixins. Should you require margins in your headings, you will need to supply them yourself using spacing tokens. See below for an example.
+    ```css
+    /* Old */
+    .MyHeading {
+      @include bpk-heading-1;
+    }
+
+    /* New */
+    .MyHeading {
+      margin-top: bpk-spacing-sm();
+      margin-bottom: bpk-spacing-sm();
+
+      @include bpk-heading-1;
+    }
+    ```
