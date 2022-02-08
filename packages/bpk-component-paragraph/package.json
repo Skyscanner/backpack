@@ -3,6 +3,7 @@
   "version": "3.0.25",
   "description": "Backpack paragraph component.",
   "license": "Apache-2.0",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"

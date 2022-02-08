@@ -21,7 +21,6 @@
     "bpk-component-chip": "^5.1.22",
     "bpk-component-code": "^3.0.25",
     "bpk-component-fieldset": "^4.0.17",
-    "bpk-component-paragraph": "^3.0.25",
     "bpk-component-select": "^5.0.21",
     "bpk-component-switch": "^2.0.26"
   },
