@@ -1,6 +1,25 @@
 # 2022-02-07
 
 **Changed:**
+  - bpk-component-text: 5.0.2 => 5.1.0
+    - Added support for new Typography mixins using the text API:
+      - `bpk-caption`
+      - `bpk-footnote`
+      - `bpk-label-1`
+      - `bpk-label-2`
+      - `bpk-body-default`
+      - `bpk-body-longform`
+      - `bpk-subheading`
+      - `bpk-hero-1`
+      - `bpk-hero-2`
+      - `bpk-hero-3`
+      - `bpk-hero-4`
+      - `bpk-hero-5`
+    - `weight` property is now deprecated. If you are using the `weight` or `bold` properties, remove them and choose one of the new text styles instead to achieve the desired weight. 
+
+# 2022-02-07
+
+**Changed:**
   - bpk-mixins: 25.1.0 => 25.2.0
     - Deprecated `bpk-heading-6` mixin.
 
