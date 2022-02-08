@@ -30,7 +30,7 @@ $bpk-spacing-v2: true;
     margin-top: bpk-spacing-md();
     color: $bpk-color-sky-gray-tint-02;
 
-    @include bpk-text--xs;
+    @include bpk-caption;
   }
 
   &__label {

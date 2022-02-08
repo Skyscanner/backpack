@@ -521,7 +521,7 @@ $bpk-spacing-v2: true;
   padding-left: bpk-spacing-lg() + bpk-spacing-sm();
 
   @include bpk-text;
-  @include bpk-text--base;
+  @include bpk-body-default;
 
   @include bpk-rtl {
     padding-right: bpk-spacing-lg() + bpk-spacing-sm();
@@ -551,7 +551,7 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-checkbox__label--small {
   @include bpk-text;
-  @include bpk-text--xs;
+  @include bpk-caption;
 }
 
 /// White label checkbox. Modifies the bpk-checkbox mixin.

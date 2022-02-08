@@ -34,7 +34,7 @@
     text-align: center;
 
     @include bpk-text;
-    @include bpk-text--xs;
+    @include bpk-caption;
   }
 
   &__weekday {
