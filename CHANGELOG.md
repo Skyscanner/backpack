@@ -1,8 +1,8 @@
 # 2022-02-08
 
 **Breaking:**
-  - bpk-mixins:
-  - bpk-component-text:
+  - bpk-mixins: 25.2.0 => 26.0.0
+  - bpk-component-text: 5.1.0 => 6.0.0
     - Removed margins from `bpk-heading` mixins. Should you require margins in your headings, you will need to supply them yourself using spacing tokens. See below for an example.
       ```css
       /* Old */
