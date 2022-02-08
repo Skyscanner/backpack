@@ -568,9 +568,6 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-1 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
     $bpk-font-size-xxxl,
     $bpk-line-height-xxxl,
@@ -594,9 +591,6 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-2 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
     $bpk-font-size-xxl,
     $bpk-line-height-xxl,
@@ -620,9 +614,6 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-3 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
     $bpk-font-size-xl,
     $bpk-line-height-xl-tight,
@@ -646,9 +637,6 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-4 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
     $bpk-font-size-lg,
     $bpk-line-height-lg-tight,
@@ -672,9 +660,6 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-5 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
     $bpk-font-size-base,
     $bpk-line-height-base-tight,
@@ -693,9 +678,6 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-heading-6 {
   @warn 'bpk-heading-6 is deprecated. Use `bpk-heading-5` instead.';
-
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
 
   @include _bpk-text-factory(
     $bpk-font-size-base,
@@ -718,6 +700,7 @@ $bpk-spacing-v2: true;
 ///     @include bpk-heading-1();
 ///     @include bpk-heading--no-bottom-margin();
 ///   }
+/// @deprecated Headings no longer set margins.
 
 @mixin bpk-heading--no-bottom-margin {
   margin-bottom: 0;
