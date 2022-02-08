@@ -17,11 +17,18 @@
       - `bpk-hero-5`
     - `weight` property is now deprecated. If you are using the `weight` or `bold` properties, remove them and choose one of the new text styles instead to achieve the desired weight. 
 
-# 2022-02-07
-
-**Changed:**
   - bpk-mixins: 25.1.0 => 25.2.0
     - Deprecated `bpk-heading-6` mixin.
+
+  - bpk-component-heading:
+    - This component is deprecated, please use `bpk-component-text` instead:
+      ```
+      // old
+      <BpkHeading level="h1">My Heading</BpkHeading>
+
+      // new
+      <BpkText tagName="h1" textStyle="xxl">My Heading</BpkText>
+      ```
 
 # 2022-02-02
 

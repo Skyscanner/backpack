@@ -57,4 +57,9 @@
   &__aria-live {
     margin-top: $bpk-spacing-sm;
   }
+
+  > p {
+    margin-top: $bpk-p-margin-top;
+    margin-bottom: bpk-spacing-base();
+  }
 }

@@ -1,3 +1,4 @@
+# This component has been deprecated, please use bpk-component-text instead to apply paragraph styles
 # bpk-component-paragraph
 
 > Backpack paragraph component.
