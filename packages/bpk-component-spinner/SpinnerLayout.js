@@ -36,7 +36,7 @@ const SpinnerLayout = (props: Props) => {
   const { children } = props;
   return (
     <div className={getClassName('bpk-spinner-layout')}>
-      {Children.map(children, child => {
+      {Children.map(children, (child) => {
         const classNames = [getClassName('bpk-spinner-layout__spinner')];
 
         if (child.props.type === SPINNER_TYPES.light) {

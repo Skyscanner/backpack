@@ -42,7 +42,7 @@ class PaginationContainer extends Component {
         <BpkPagination
           pageCount={pageCount}
           selectedPageIndex={this.state.pageIndex}
-          onPageChange={pageIndex => {
+          onPageChange={(pageIndex) => {
             this.handleChange(pageIndex);
           }}
           previousLabel="previous"

@@ -35,7 +35,7 @@ export const ICON_POSITION = {
   TRAILING: 'trailing',
 };
 
-const getPropsIcon = props => {
+const getPropsIcon = (props) => {
   const { disabled, loading, icon, iconDisabled, iconLoading } = props;
 
   if (loading) {

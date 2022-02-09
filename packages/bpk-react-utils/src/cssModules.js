@@ -18,13 +18,12 @@
 
 /* @flow strict */
 
-export default (styles: {} = {}) => (
-  ...classNames: Array<?string | ?boolean | ?number | ?{}>
-) =>
-  classNames.reduce((className, currentClass) => {
-    if (currentClass && typeof currentClass === 'string') {
-      const realName = styles[currentClass] || currentClass;
-      return className ? `${className} ${realName}` : realName;
-    }
-    return className;
-  }, '');
+export default (styles: {} = {}) =>
+  (...classNames: Array<?string | ?boolean | ?number | ?{}>) =>
+    classNames.reduce((className, currentClass) => {
+      if (currentClass && typeof currentClass === 'string') {
+        const realName = styles[currentClass] || currentClass;
+        return className ? `${className} ${realName}` : realName;
+      }
+      return className;
+    }, '');

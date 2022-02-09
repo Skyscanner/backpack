@@ -56,7 +56,7 @@ const withAccordionItemState = (ComposedComponent: ComponentType<any>) => {
 
     onClick = () => {
       this.setState(
-        prevState => ({
+        (prevState) => ({
           expanded: !prevState.expanded,
         }),
         this.props.onClick || (() => {}),

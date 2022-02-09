@@ -33,7 +33,7 @@ describe('BpkScrim accessibility tests', () => {
 
 describe('withScrim accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const TestComponent = props => <div {...props} />;
+    const TestComponent = (props) => <div {...props} />;
     const Component = withScrim(TestComponent);
     const { container } = render(
       <Component

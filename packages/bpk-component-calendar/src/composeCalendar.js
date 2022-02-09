@@ -26,7 +26,7 @@ import STYLES from './BpkCalendar.module.scss';
 const getClassName = cssModules(STYLES);
 
 const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
-  const BpkCalendar = props => {
+  const BpkCalendar = (props) => {
     const classNames = [getClassName('bpk-calendar')];
 
     const {

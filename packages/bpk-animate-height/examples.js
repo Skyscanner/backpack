@@ -42,7 +42,7 @@ class AnimateHeightExample extends Component<Props, State> {
   }
 
   onClick = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const height =
         prevState.height !== this.props.fromHeight
           ? this.props.fromHeight

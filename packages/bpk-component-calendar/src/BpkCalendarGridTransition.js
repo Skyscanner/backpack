@@ -207,12 +207,13 @@ BpkCalendarGridTransition.defaultProps = {
   focusedDate: null,
 };
 
-const addCalendarGridTransition = TransitionComponent => props => (
-  <BpkCalendarGridTransition
-    TransitionComponent={TransitionComponent}
-    {...props}
-  />
-);
+const addCalendarGridTransition = (TransitionComponent) => (props) =>
+  (
+    <BpkCalendarGridTransition
+      TransitionComponent={TransitionComponent}
+      {...props}
+    />
+  );
 
 export default BpkCalendarGridTransition;
 export { addCalendarGridTransition };

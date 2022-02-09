@@ -188,7 +188,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     return renderPortal ? (
       <Portal
         target={targetWithAccessibilityProps}
-        targetRef={targetRef => {
+        targetRef={(targetRef) => {
           this.targetRef = targetRef;
         }}
         isOpen={this.state.isOpen}

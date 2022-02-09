@@ -57,7 +57,7 @@ export const clearablePropType = (
   propName: string,
   componentName: string,
 ): ?Error => {
-  const createError = message =>
+  const createError = (message) =>
     new Error(
       `Invalid prop \`${propName}\` supplied to \`${componentName}\`. ${message}.`,
     );

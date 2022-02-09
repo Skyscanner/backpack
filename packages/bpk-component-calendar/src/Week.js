@@ -305,7 +305,7 @@ class Week extends Component {
     } = this.props;
 
     if (ignoreOutsideDate) {
-      const daysOutside = this.props.dates.map(date =>
+      const daysOutside = this.props.dates.map((date) =>
         isSameMonth(date, month),
       );
 
@@ -318,7 +318,7 @@ class Week extends Component {
 
     return (
       <tr className={getClassName('bpk-calendar-grid__week')}>
-        {this.props.dates.map(date => {
+        {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate
               ? !isWithinRange(date, { start: minDate, end: maxDate })
@@ -421,7 +421,7 @@ Week.defaultProps = {
 /*
   DateContainer - one for each date in the grid; wraps the actual BpkCalendarDate (or custom) component
 */
-const DateContainer = props => {
+const DateContainer = (props) => {
   const { className, children, selectionType, isBlocked, isEmptyCell } = props;
 
   const classNames = getClassName(

@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 
 const uniq = (arr = []) => {
   const seen = {};
-  return arr.filter(item => {
+  return arr.filter((item) => {
     if (seen.hasOwnProperty[item]) {
       return false;
     }
@@ -37,11 +37,11 @@ const createStyle = (theme, themeAttributes) => {
   const flattenedThemeAttributes = [].concat(...themeAttributes);
   let style = {};
   const missingThemeAttributes = [];
-  flattenedThemeAttributes.forEach(attribute => {
+  flattenedThemeAttributes.forEach((attribute) => {
     if (theme[attribute]) {
       const cssName = attribute
-        .replace(/([A-Z])/g, variable => `-${variable.toLowerCase()}`)
-        .replace(/([0-9])/, variable => `-${variable.toLowerCase()}`);
+        .replace(/([A-Z])/g, (variable) => `-${variable.toLowerCase()}`)
+        .replace(/([0-9])/, (variable) => `-${variable.toLowerCase()}`);
       const value = theme[attribute];
       style[`--bpk-${cssName}`] = value;
     } else {
@@ -103,7 +103,7 @@ const themeAttributesPropType = (props, propName, componentName) => {
   themeAttributes = [].concat(...themeAttributes);
   const extraneousThemeAttributes = { ...theme };
   const missingThemeAttributes = [];
-  themeAttributes.forEach(attribute => {
+  themeAttributes.forEach((attribute) => {
     if (theme[attribute]) {
       delete extraneousThemeAttributes[attribute];
     } else {

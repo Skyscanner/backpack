@@ -65,7 +65,7 @@ describe('BpkCalendarGrid', () => {
   });
 
   it('should render correctly with a custom date component', () => {
-    const MyCustomDate = props => {
+    const MyCustomDate = (props) => {
       const cx = {
         backgroundColor: colorPanjin,
         width: '50%',
@@ -111,17 +111,11 @@ describe('BpkCalendarGrid', () => {
 
     expect(onDateClick.mock.calls.length).toBe(0);
 
-    grid
-      .find('button')
-      .at(10)
-      .simulate('click');
+    grid.find('button').at(10).simulate('click');
     expect(onDateClick.mock.calls.length).toBe(1);
     expect(onDateClick.mock.calls[0][0]).toEqual(new Date(2016, 9, 5));
 
-    grid
-      .find('button')
-      .at(11)
-      .simulate('click');
+    grid.find('button').at(11).simulate('click');
     expect(onDateClick.mock.calls.length).toBe(2);
     expect(onDateClick.mock.calls[1][0]).toEqual(new Date(2016, 9, 6));
   });

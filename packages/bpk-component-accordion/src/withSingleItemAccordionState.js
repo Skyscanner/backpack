@@ -29,7 +29,7 @@ import React, {
 } from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
-const getInitiallyExpanded = children => {
+const getInitiallyExpanded = (children) => {
   const accordionItems = Children.toArray(children);
   const result = accordionItems.reduceRight(
     (prev, item) => (item.props.initiallyExpanded ? item : prev),

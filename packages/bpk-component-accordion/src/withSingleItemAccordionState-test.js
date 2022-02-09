@@ -84,13 +84,13 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
     expect(accordionContainer.state('expanded')).toEqual('.1');
 
     accordionContainer
-      .findWhere(e => e.text() === 'Accordion Item 1')
+      .findWhere((e) => e.text() === 'Accordion Item 1')
       .first()
       .prop('onClick')();
     expect(accordionContainer.state('expanded')).toEqual('.0');
 
     accordionContainer
-      .findWhere(e => e.text() === 'Accordion Item 3')
+      .findWhere((e) => e.text() === 'Accordion Item 3')
       .first()
       .prop('onClick')();
     expect(accordionContainer.state('expanded')).toEqual('.2');

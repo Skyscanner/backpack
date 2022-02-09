@@ -86,7 +86,7 @@ const BpkCheckbox = (props: Props) => {
         aria-label={label}
         aria-invalid={isInvalid}
         data-indeterminate={indeterminate}
-        ref={e => {
+        ref={(e) => {
           if (e) {
             e.indeterminate = indeterminate;
           }

@@ -27,7 +27,7 @@ import focusin from 'focusin';
 let polyfilled = false;
 let focusTrapped = false;
 
-const init = element => {
+const init = (element) => {
   // lazily polyfill focusin for firefox
   if (!polyfilled) {
     focusin.polyfill();
@@ -46,7 +46,7 @@ const init = element => {
     focusTrapped = false;
   };
 
-  const checkFocus = event => {
+  const checkFocus = (event) => {
     if (!focusTrapped) {
       return;
     }
@@ -73,7 +73,7 @@ const init = element => {
 
 let teardownFn;
 
-const scopeFocus = element => {
+const scopeFocus = (element) => {
   if (teardownFn) teardownFn();
   teardownFn = init(element);
 };

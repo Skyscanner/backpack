@@ -82,7 +82,7 @@ describe('BpkText', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  ['xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach(textStyle => {
+  ['xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach((textStyle) => {
     it(`should render correctly with weight="black" and supported textStyle="${textStyle}"`, () => {
       const { asFragment } = render(
         <BpkText textStyle={textStyle} weight={WEIGHT_STYLES.black}>
@@ -119,7 +119,7 @@ describe('BpkText', () => {
   });
 
   ['xs', 'sm', 'base', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach(
-    textStyle => {
+    (textStyle) => {
       it(`should render correctly with textStyle="${textStyle}"`, () => {
         const { asFragment } = render(
           <BpkText textStyle={textStyle}>

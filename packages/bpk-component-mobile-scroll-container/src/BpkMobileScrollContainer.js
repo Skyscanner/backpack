@@ -211,7 +211,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
         style={{ ...style, height: this.state.computedHeight }}
       >
         <div
-          ref={el => {
+          ref={(el) => {
             if (scrollerRef) {
               scrollerRef(el);
             }
@@ -221,7 +221,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
           className={scrollerClassNames}
         >
           <InnerContainer
-            ref={el => {
+            ref={(el) => {
               this.innerEl = el;
             }}
             className={getClassName('bpk-mobile-scroll-container__inner')}

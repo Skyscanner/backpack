@@ -64,7 +64,7 @@ const withCommonTests = (createNewInstance, extraTests) => {
 describe('DataSource', () =>
   withCommonTests(
     () => new DataSource(),
-    getDs => {
+    (getDs) => {
       it('it throws an error when fetchItems is called directly', () => {
         expect(() => getDs().fetchItems()).toThrow(/Not implemented/);
       });
@@ -75,7 +75,7 @@ describe('ArrayDataSource', () => {
   const elements = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   withCommonTests(
     () => new ArrayDataSource(elements),
-    getDs => {
+    (getDs) => {
       describe('fetchItems', () => {
         it('fetches items correctly', async () => {
           expect(await getDs().fetchItems(0, 5)).toEqual([1, 2, 3, 4, 5]);

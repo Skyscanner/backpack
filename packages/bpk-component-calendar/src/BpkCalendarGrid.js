@@ -121,7 +121,7 @@ class BpkCalendarGrid extends Component {
           weekStartsOn={weekStartsOn}
         />
         <tbody>
-          {calendarMonthWeeks.map(dates => (
+          {calendarMonthWeeks.map((dates) => (
             <Week
               key={formatIsoDate(dates[0])}
               month={month}

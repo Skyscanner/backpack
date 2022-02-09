@@ -124,15 +124,8 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   };
 
   render(): Node {
-    const {
-      children,
-      className,
-      inView,
-      loading,
-      src,
-      imageStyle,
-      style,
-    } = this.props;
+    const { children, className, inView, loading, src, imageStyle, style } =
+      this.props;
 
     const calculatedAspectRatio = this.getAspectRatio();
     const aspectRatioPc = `${100 / calculatedAspectRatio}%`;

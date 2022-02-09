@@ -112,7 +112,7 @@ function getCalendarMonthWeeks(date, weekStartsOn) {
 }
 
 function getLastDayOfWeekend(daysOfWeek) {
-  const weekend = daysOfWeek.map(day => day.isWeekend);
+  const weekend = daysOfWeek.map((day) => day.isWeekend);
 
   if (weekend[0] && weekend[6]) {
     // weekend stretches over turn the of the week
@@ -122,7 +122,7 @@ function getLastDayOfWeekend(daysOfWeek) {
 }
 
 function getFirstDayOfWeekend(daysOfWeek) {
-  const weekend = daysOfWeek.map(day => day.isWeekend);
+  const weekend = daysOfWeek.map((day) => day.isWeekend);
 
   if (weekend[0] && weekend[6]) {
     // weekend stretches over turn the of the week
@@ -185,8 +185,8 @@ const setMonthYear = (date, newMonth, newYear) => {
 };
 
 const parseIsoDate = parseISO;
-const formatIsoDate = date => format(date, 'yyyy-MM-dd');
-const formatIsoMonth = date => format(date, 'yyyy-MM');
+const formatIsoDate = (date) => format(date, 'yyyy-MM-dd');
+const formatIsoMonth = (date) => format(date, 'yyyy-MM');
 
 export {
   getCalendarMonthWeeks,

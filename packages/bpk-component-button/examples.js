@@ -47,8 +47,10 @@ const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(
   withRtlSupport(LargeLongArrowRightIcon),
 );
 
-const cssModules = (styles = {}) => className =>
-  styles[className] ? styles[className] : className;
+const cssModules =
+  (styles = {}) =>
+  (className) =>
+    styles[className] ? styles[className] : className;
 
 const getClassName = cssModules(STYLES);
 
@@ -155,7 +157,7 @@ const ComponentButtonLinkExample = (props: {}) => (
 const ComponentButtonLinkWithPaddingExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
   <ButtonStory
-    wrapped={wrappedProps => <BpkButtonLink padded {...wrappedProps} />}
+    wrapped={(wrappedProps) => <BpkButtonLink padded {...wrappedProps} />}
     {...props}
   />
 );

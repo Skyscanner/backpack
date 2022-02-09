@@ -158,7 +158,7 @@ const BpkBannerAlertInner = (props: Props) => {
   const sectionClassNames = [
     'bpk-banner-alert',
     `bpk-banner-alert--${type}`,
-  ].map(sectionClassName => getClassName(sectionClassName));
+  ].map((sectionClassName) => getClassName(sectionClassName));
 
   if (bannerClassName) {
     sectionClassNames.push(bannerClassName);

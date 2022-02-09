@@ -53,7 +53,7 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
         x: (width - margin.left - margin.right) / 2,
         y: margin.bottom - spacing,
       },
-      tickPosition: tick => [position(tick), 0],
+      tickPosition: (tick) => [position(tick), 0],
     };
   }
 
@@ -77,7 +77,7 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
     labelProps: {
       transform: `translate(${labelTranslateX}, ${labelTranslateY}) rotate(-90)`,
     },
-    tickPosition: tick => [0, position(tick)],
+    tickPosition: (tick) => [0, position(tick)],
   };
 };
 
@@ -114,9 +114,8 @@ const BpkChartAxis = (props: Props) => {
     ...rest
   } = props;
 
-  const { textProps, tickPosition, containerProps, labelProps } = getAxisConfig(
-    props,
-  );
+  const { textProps, tickPosition, containerProps, labelProps } =
+    getAxisConfig(props);
 
   const ticks = scale.ticks
     ? scale.ticks(numTicks)

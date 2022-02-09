@@ -24,7 +24,7 @@ import STYLES from './bpk-scrim.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkScrim = props => (
+const BpkScrim = (props) => (
   <TransitionInitialMount
     appearClassName={getClassName('bpk-scrim--appear')}
     appearActiveClassName={getClassName('bpk-scrim--appear-active')}

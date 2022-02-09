@@ -36,15 +36,9 @@ const AlignedExclamationIcon = withAlignment(
   iconSizeSm,
 );
 
-const BpkFormValidation = props => {
-  const {
-    children,
-    expanded,
-    isCheckbox,
-    className,
-    containerProps,
-    ...rest
-  } = props;
+const BpkFormValidation = (props) => {
+  const { children, expanded, isCheckbox, className, containerProps, ...rest } =
+    props;
 
   const classNames = getClassName(
     'bpk-form-validation',

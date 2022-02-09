@@ -25,7 +25,7 @@
 
 const meta = require('../../meta.json');
 
-meta.maintainers.forEach(maintainer => {
+meta.maintainers.forEach((maintainer) => {
   if (maintainer.npm) {
     process.stdout.write(`${maintainer.npm}\n`);
   }

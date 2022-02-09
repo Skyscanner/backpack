@@ -32,13 +32,13 @@ const {
 } = require('./util');
 
 const getCommitHash = () =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     const rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
     });
 
-    rl.question('Enter the hash of the commit to tag', answer => {
+    rl.question('Enter the hash of the commit to tag', (answer) => {
       if (!answer.match(GIT_HASH_REGEX)) {
         rl.close();
         resolve(getCommitHash());
@@ -55,7 +55,7 @@ const getPackagesForTagging = () => {
     execSync(`npx lerna changed -l --json`).toString(),
   );
   assert(lernaChanges, 'Could not retrieve lerna changes.');
-  return lernaChanges.map(c => ({ name: c.name, newVersion: c.version }));
+  return lernaChanges.map((c) => ({ name: c.name, newVersion: c.version }));
 };
 
 const cli = async () => {

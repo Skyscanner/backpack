@@ -28,7 +28,9 @@ describe('BpkBreakpoint accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {matches => (matches ? <div>matches</div> : <div>does not match</div>)}
+        {(matches) =>
+          matches ? <div>matches</div> : <div>does not match</div>
+        }
       </BpkBreakpoint>,
     );
     const results = await axe(container);

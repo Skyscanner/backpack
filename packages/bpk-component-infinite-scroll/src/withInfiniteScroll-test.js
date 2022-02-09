@@ -25,8 +25,8 @@ import toJson from 'enzyme-to-json';
 import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
 
-const nextTick = () => new Promise(res => setImmediate(res));
-const mockDataSource = data => {
+const nextTick = () => new Promise((res) => setImmediate(res));
+const mockDataSource = (data) => {
   const myDs = new ArrayDataSource(data);
   const mockFetch = myDs.fetchItems.bind(myDs);
   myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
@@ -40,9 +40,9 @@ describe('withInfiniteScroll', () => {
     elementsArray.push(`Element ${i}`);
   }
 
-  const List = props => (
+  const List = (props) => (
     <div id="list">
-      {props.elements.map(element => (
+      {props.elements.map((element) => (
         <div key={element}>{element}</div>
       ))}
     </div>

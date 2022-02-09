@@ -62,7 +62,7 @@ const BpkChartGridLines = (props: Props) => {
     : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
   const position = (scale.bandwidth ? center : identity)(scale.copy());
 
-  const lineProps = tick => {
+  const lineProps = (tick) => {
     const value = position(tick);
     return orientation === ORIENTATION_X
       ? {

@@ -17,16 +17,7 @@
  */
 
 module.exports = {
-//   webpackFinal: async (config, { configType }) => {
-//     config.optimization = {
-//       minimize: false,
-//       minimizer: [],
-//     };
-
-//     return config;
-//   },
-stories: ['../packages/**/stories.js'],
-
+  stories: ['../packages/**/stories.js'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',

@@ -37,16 +37,18 @@ import STYLES from './BpkCalendarNav.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const changeMonth = ({ month, min, max, callback, source }) => event => {
-  // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
-  // PR: https://github.com/facebook/react/pull/8329 - unresolved as of 22/12/2016
-  if (isWithinRange(month, { start: min, end: max })) {
-    event.persist();
-    callback(event, { month, source });
-  }
-};
+const changeMonth =
+  ({ month, min, max, callback, source }) =>
+  (event) => {
+    // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
+    // PR: https://github.com/facebook/react/pull/8329 - unresolved as of 22/12/2016
+    if (isWithinRange(month, { start: min, end: max })) {
+      event.persist();
+      callback(event, { month, source });
+    }
+  };
 
-const BpkCalendarNav = props => {
+const BpkCalendarNav = (props) => {
   const {
     id,
     month,
@@ -104,7 +106,7 @@ const BpkCalendarNav = props => {
             name="months"
             value={formatIsoMonth(baseMonth)}
             disabled={disabled}
-            onChange={event => {
+            onChange={(event) => {
               event.persist();
               onMonthChange(event, {
                 month: parseIsoDate(event.target.value),
@@ -112,7 +114,7 @@ const BpkCalendarNav = props => {
               });
             }}
           >
-            {navigatableMonths.map(m => (
+            {navigatableMonths.map((m) => (
               <option value={formatIsoMonth(m)} key={m.toString()}>
                 {formatMonth(m)}
               </option>

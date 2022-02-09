@@ -29,7 +29,7 @@ const updateImports = (file, dirs) =>
       }
       let result = data;
 
-      dirs.forEach(pkg => {
+      dirs.forEach((pkg) => {
         const split = result.split(`from '${pkg}`);
         if (split.length === 1) {
           return;
@@ -37,7 +37,7 @@ const updateImports = (file, dirs) =>
         result = split.join(`from '${pkg}-css`);
       });
 
-      fs.writeFile(file, result, 'utf8', err2 => {
+      fs.writeFile(file, result, 'utf8', (err2) => {
         if (err2) return reject(err2);
         return resolve();
       });
@@ -50,16 +50,16 @@ console.log('Crunching Backpack import paths...');
 const dirs = execSync('ls packages | grep -v "react-version-test.js"')
   .toString()
   .split('\n')
-  .filter(s => s !== '');
+  .filter((s) => s !== '');
 
 const jsFiles = execSync(
   'find packages -name "*.js" -o -name "*.jsx" | grep -v node_modules',
 )
   .toString()
   .split('\n')
-  .filter(s => s !== '');
+  .filter((s) => s !== '');
 
-const updatePromises = jsFiles.map(jF => updateImports(jF, dirs));
+const updatePromises = jsFiles.map((jF) => updateImports(jF, dirs));
 
 Promise.all(updatePromises).then(() => {
   // eslint-disable-next-line no-console

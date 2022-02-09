@@ -52,7 +52,7 @@ class StatefulCheckbox extends Component<Props, State> {
   }
 
   handleChange = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isChecked: !prevState.isChecked,
     }));
     // $FlowFixMe[incompatible-type] - ignoring as purely for storybook

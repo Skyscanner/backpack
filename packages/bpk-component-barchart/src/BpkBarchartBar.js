@@ -33,7 +33,7 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-const handleKeyboardEvent = callback => event => {
+const handleKeyboardEvent = (callback) => (event) => {
   if (event.keyCode === KEYCODES.ENTER || event.keyCode === KEYCODES.SPACEBAR) {
     event.preventDefault();
     callback(event);

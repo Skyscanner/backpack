@@ -24,7 +24,7 @@ import STYLES from './BpkPanel.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPanel = props => {
+const BpkPanel = (props) => {
   const classNames = [getClassName('bpk-panel')];
   const { children, className, padded, fullWidth, ...rest } = props;
 

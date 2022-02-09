@@ -35,15 +35,8 @@ export type Props = {
 };
 
 const BpkLabel = (props: Props) => {
-  const {
-    children,
-    required,
-    white,
-    disabled,
-    valid,
-    className,
-    ...rest
-  } = props;
+  const { children, required, white, disabled, valid, className, ...rest } =
+    props;
   const classNames = [getClassName('bpk-label')];
   const invalid = valid === false;
 

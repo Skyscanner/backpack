@@ -90,7 +90,7 @@ const BpkPhoneInput = (props: Props) => {
   };
 
   const dialingCodeDefinition = dialingCodes.find(
-    dialingCodeDef => dialingCodeDef.code === dialingCode,
+    (dialingCodeDef) => dialingCodeDef.code === dialingCode,
   );
   if (!dialingCodeDefinition) {
     throw new Error(
@@ -106,7 +106,7 @@ const BpkPhoneInput = (props: Props) => {
     displayValue = `${numberPrefix} ${value}`;
   }
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     if (!onChange) {
       return;
     }
