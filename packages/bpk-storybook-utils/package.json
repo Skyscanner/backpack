@@ -1,6 +1,6 @@
 {
   "name": "bpk-storybook-utils",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "Backpack storybook-utils component.",
   "license": "Apache-2.0",
   "repository": {
@@ -13,7 +13,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-mixins": "^26.0.0",
+    "bpk-mixins": "^26.0.1",
     "bpk-react-utils": "^4.0.2"
   },
   "peerDependencies": {
