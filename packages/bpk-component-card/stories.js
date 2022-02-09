@@ -1,24 +1,3 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* @flow strict */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithHrefExample,
@@ -28,10 +7,37 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-card', module)
-  .add('Default', DefaultExample)
-  .add('With href', WithHrefExample)
-  .add('Without padding', WithoutPaddingExample)
-  .add('Non-atomic', NonAtomicExample)
-  .add('Non-atomic with href', NonAtomicHrefExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-card',
+};
+
+export const Default = DefaultExample;
+export const WithHref = WithHrefExample;
+
+WithHref.story = {
+  name: 'With href',
+};
+
+export const WithoutPadding = WithoutPaddingExample;
+
+WithoutPadding.story = {
+  name: 'Without padding',
+};
+
+export const NonAtomic = NonAtomicExample;
+
+NonAtomic.story = {
+  name: 'Non-atomic',
+};
+
+export const NonAtomicWithHref = NonAtomicHrefExample;
+
+NonAtomicWithHref.story = {
+  name: 'Non-atomic with href',
+};
+
+export const VisualTest = MixedExample;
+
+VisualTest.story = {
+  name: 'Visual test',
+};

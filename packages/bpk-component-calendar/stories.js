@@ -1,23 +1,3 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   CalendarNavExample,
@@ -41,30 +21,123 @@ import {
   RangeDateCalendar,
 } from './examples';
 
-storiesOf('bpk-component-calendar', module)
-  .add('BpkCalendarNav', CalendarNavExample)
-  .add('BpkCalendarGridHeader', CalendarGridHeaderExample)
-  .add('BpkCalendarGrid', CalendarGridExample)
-  .add('BpkCalendarGridHeader + BpkCalendarGrid', CalendarGridAndHeaderExample)
-  .add('Calendar - default', DefaultExample)
-  .add(
-    'Calendar - min date in the past, focusing today',
-    MinDateInThePastExample,
-  )
-  .add('Calendar - Week starts on a Sunday', WeekStartsOnSundayExample)
-  .add('Calendar - Honest weekend', HonestWeekendExample)
-  .add('Calendar - weekDayKey is nameNarrow', WeekdayKeyIsNameNarrow)
-  .add('Calendar - ar-AE locale', ArabicExample)
-  .add('Calendar - ja-JP locale', JapaneseExample)
-  .add('Calendar - Specify min/max date', MinAndMaxDate)
-  .add("Calendar - Don't mark today", MarkTodayFalseExample)
-  .add("Calendar - Don't mark outside days", MarkOutsideDaysFalseExample)
-  .add('Custom composed calendar', CustomComposedCalendar)
-  .add(
-    'Custom composed calendar (Safari DST bug)',
-    CustomComposedCalendarSafariBug,
-  )
-  .add('Custom colours', CustomColors)
-  .add('Week', WeekExample)
-  .add('Visual test', FocusedDateInThePastExample)
-  .add('Visual test range', RangeDateCalendar);
+export default {
+  title: 'bpk-component-calendar',
+};
+
+export const BpkCalendarNav = CalendarNavExample;
+
+BpkCalendarNav.story = {
+  name: 'BpkCalendarNav',
+};
+
+export const BpkCalendarGridHeader = CalendarGridHeaderExample;
+
+BpkCalendarGridHeader.story = {
+  name: 'BpkCalendarGridHeader',
+};
+
+export const BpkCalendarGrid = CalendarGridExample;
+
+BpkCalendarGrid.story = {
+  name: 'BpkCalendarGrid',
+};
+
+export const BpkCalendarGridHeaderBpkCalendarGrid =
+  CalendarGridAndHeaderExample;
+
+BpkCalendarGridHeaderBpkCalendarGrid.story = {
+  name: 'BpkCalendarGridHeader + BpkCalendarGrid',
+};
+
+export const CalendarDefault = DefaultExample;
+
+CalendarDefault.story = {
+  name: 'Calendar - default',
+};
+
+export const CalendarMinDateInThePastFocusingToday = MinDateInThePastExample;
+
+CalendarMinDateInThePastFocusingToday.story = {
+  name: 'Calendar - min date in the past, focusing today',
+};
+
+export const CalendarWeekStartsOnASunday = WeekStartsOnSundayExample;
+
+CalendarWeekStartsOnASunday.story = {
+  name: 'Calendar - Week starts on a Sunday',
+};
+
+export const CalendarHonestWeekend = HonestWeekendExample;
+
+CalendarHonestWeekend.story = {
+  name: 'Calendar - Honest weekend',
+};
+
+export const CalendarWeekDayKeyIsNameNarrow = WeekdayKeyIsNameNarrow;
+
+CalendarWeekDayKeyIsNameNarrow.story = {
+  name: 'Calendar - weekDayKey is nameNarrow',
+};
+
+export const CalendarArAeLocale = ArabicExample;
+
+CalendarArAeLocale.story = {
+  name: 'Calendar - ar-AE locale',
+};
+
+export const CalendarJaJpLocale = JapaneseExample;
+
+CalendarJaJpLocale.story = {
+  name: 'Calendar - ja-JP locale',
+};
+
+export const CalendarSpecifyMinMaxDate = MinAndMaxDate;
+
+CalendarSpecifyMinMaxDate.story = {
+  name: 'Calendar - Specify min/max date',
+};
+
+export const CalendarDontMarkToday = MarkTodayFalseExample;
+
+CalendarDontMarkToday.story = {
+  name: "Calendar - Don't mark today",
+};
+
+export const CalendarDontMarkOutsideDays = MarkOutsideDaysFalseExample;
+
+CalendarDontMarkOutsideDays.story = {
+  name: "Calendar - Don't mark outside days",
+};
+
+export const _CustomComposedCalendar = CustomComposedCalendar;
+
+_CustomComposedCalendar.story = {
+  name: 'Custom composed calendar',
+};
+
+export const CustomComposedCalendarSafariDstBug =
+  CustomComposedCalendarSafariBug;
+
+CustomComposedCalendarSafariDstBug.story = {
+  name: 'Custom composed calendar (Safari DST bug)',
+};
+
+export const CustomColours = CustomColors;
+
+CustomColours.story = {
+  name: 'Custom colours',
+};
+
+export const Week = WeekExample;
+export const VisualTest = FocusedDateInThePastExample;
+
+VisualTest.story = {
+  name: 'Visual test',
+};
+
+export const VisualTestRange = RangeDateCalendar;
+
+VisualTestRange.story = {
+  name: 'Visual test range',
+};

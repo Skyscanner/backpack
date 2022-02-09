@@ -1,26 +1,23 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import { storiesOf } from '@storybook/react';
-
 import { DefaultExample, ExtraSpaceExample } from './examples';
 
-storiesOf('bpk-component-blockquote', module)
-  .add('Default example', DefaultExample)
-  .add('Example with additional spacing (above and below)', ExtraSpaceExample)
-  .add('Visual test', DefaultExample);
+export default {
+  title: 'bpk-component-blockquote',
+};
+
+export const _DefaultExample = DefaultExample;
+
+_DefaultExample.story = {
+  name: 'Default example',
+};
+
+export const ExampleWithAdditionalSpacingAboveAndBelow = ExtraSpaceExample;
+
+ExampleWithAdditionalSpacingAboveAndBelow.story = {
+  name: 'Example with additional spacing (above and below)',
+};
+
+export const VisualTest = DefaultExample;
+
+VisualTest.story = {
+  name: 'Visual test',
+};

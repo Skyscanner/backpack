@@ -18,10 +18,12 @@
 /* @flow strict */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { ChipsExample, SelectExample } from './examples';
 
-storiesOf('bpk-component-aria-live', module)
-  .add('Default', () => <ChipsExample />)
-  .add('Visible', () => <SelectExample />);
+export default {
+  title: 'bpk-component-aria-live',
+};
+
+export const Default = () => <ChipsExample />;
+export const Visible = () => <SelectExample />;

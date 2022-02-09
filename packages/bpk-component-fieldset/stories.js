@@ -1,24 +1,3 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* @flow strict */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   InputExample,
   SelectExample,
@@ -35,17 +14,54 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-fieldset', module)
-  .add('Input', InputExample)
-  .add('Select', SelectExample)
-  .add('Checkbox', CheckboxExample)
-  .add('Datepicker', DatepickerExample)
-  .add('Textarea', TextareaExample)
-  .add('Autosuggest', AutosuggestExample)
-  .add('Required input', RequiredInputExample)
-  .add('Required select', RequiredSelectExample)
-  .add('Required checkbox', RequiredCheckboxExample)
-  .add('Disabled input', DisabledInputExample)
-  .add('Disabled select', DisabledSelectExample)
-  .add('Disabled checkbox', DisabledCheckboxExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-fieldset',
+};
+
+export const Input = InputExample;
+export const Select = SelectExample;
+export const Checkbox = CheckboxExample;
+export const Datepicker = DatepickerExample;
+export const Textarea = TextareaExample;
+export const Autosuggest = AutosuggestExample;
+export const RequiredInput = RequiredInputExample;
+
+RequiredInput.story = {
+  name: 'Required input',
+};
+
+export const RequiredSelect = RequiredSelectExample;
+
+RequiredSelect.story = {
+  name: 'Required select',
+};
+
+export const RequiredCheckbox = RequiredCheckboxExample;
+
+RequiredCheckbox.story = {
+  name: 'Required checkbox',
+};
+
+export const DisabledInput = DisabledInputExample;
+
+DisabledInput.story = {
+  name: 'Disabled input',
+};
+
+export const DisabledSelect = DisabledSelectExample;
+
+DisabledSelect.story = {
+  name: 'Disabled select',
+};
+
+export const DisabledCheckbox = DisabledCheckboxExample;
+
+DisabledCheckbox.story = {
+  name: 'Disabled checkbox',
+};
+
+export const VisualTest = MixedExample;
+
+VisualTest.story = {
+  name: 'Visual test',
+};

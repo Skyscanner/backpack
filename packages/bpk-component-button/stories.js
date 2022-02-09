@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   PrimaryExample,
@@ -39,22 +38,74 @@ import {
   AnchorTagsExample,
 } from './examples';
 
-storiesOf('bpk-component-button', () => module)
-  .add('BpkButton (Primary)', () => <PrimaryExample />)
-  .add('BpkButton (Secondary)', () => <SecondaryExample />)
-  .add('BpkButton (Destructive)', () => <DestructiveExample />)
-  .add('BpkButton (Link button)', () => <LinkExample />)
-  .add('BpkButton (Featured)', () => <FeaturedExample />)
-  .add('BpkButton (Outline)', () => <OutlineExample />)
-  .add('Primary', () => <ComponentButtonPrimaryExample />)
-  .add('Secondary', () => <ComponentButtonSecondaryExample />)
-  .add('Destructive', () => <ComponentButtonDestructiveExample />)
-  .add('Link button', () => <ComponentButtonLinkExample />)
-  .add('Link button with padding', () => (
-    <ComponentButtonLinkWithPaddingExample />
-  ))
-  .add('Featured', () => <ComponentButtonFeaturedExample />)
-  .add('Outline', () => <ComponentButtonOutlineExample />)
-  .add('Mixture', () => <MixedExample />)
-  .add('Anchor tags', () => <AnchorTagsExample />)
-  .add('Visual test', () => <MixedExample />);
+export default {
+  title: 'bpk-component-button',
+};
+
+export const BpkButtonPrimary = () => <PrimaryExample />;
+
+BpkButtonPrimary.story = {
+  name: 'BpkButton (Primary)',
+};
+
+export const BpkButtonSecondary = () => <SecondaryExample />;
+
+BpkButtonSecondary.story = {
+  name: 'BpkButton (Secondary)',
+};
+
+export const BpkButtonDestructive = () => <DestructiveExample />;
+
+BpkButtonDestructive.story = {
+  name: 'BpkButton (Destructive)',
+};
+
+export const BpkButtonLinkButton = () => <LinkExample />;
+
+BpkButtonLinkButton.story = {
+  name: 'BpkButton (Link button)',
+};
+
+export const BpkButtonFeatured = () => <FeaturedExample />;
+
+BpkButtonFeatured.story = {
+  name: 'BpkButton (Featured)',
+};
+
+export const BpkButtonOutline = () => <OutlineExample />;
+
+BpkButtonOutline.story = {
+  name: 'BpkButton (Outline)',
+};
+
+export const Primary = () => <ComponentButtonPrimaryExample />;
+export const Secondary = () => <ComponentButtonSecondaryExample />;
+export const Destructive = () => <ComponentButtonDestructiveExample />;
+export const LinkButton = () => <ComponentButtonLinkExample />;
+
+LinkButton.story = {
+  name: 'Link button',
+};
+
+export const LinkButtonWithPadding = () => (
+  <ComponentButtonLinkWithPaddingExample />
+);
+
+LinkButtonWithPadding.story = {
+  name: 'Link button with padding',
+};
+
+export const Featured = () => <ComponentButtonFeaturedExample />;
+export const Outline = () => <ComponentButtonOutlineExample />;
+export const Mixture = () => <MixedExample />;
+export const AnchorTags = () => <AnchorTagsExample />;
+
+AnchorTags.story = {
+  name: 'Anchor tags',
+};
+
+export const VisualTest = () => <MixedExample />;
+
+VisualTest.story = {
+  name: 'Visual test',
+};

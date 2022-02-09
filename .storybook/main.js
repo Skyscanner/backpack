@@ -25,12 +25,12 @@ module.exports = {
 
 //     return config;
 //   },
-  stories: ['../packages/backpack-component-accordion/stories.js'],
+stories: ['../packages/bpk-component-accordion/stories.js'],
+
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
     '@storybook/addon-knobs',
     '@storybook/addon-viewport',
   ],
-  
 };

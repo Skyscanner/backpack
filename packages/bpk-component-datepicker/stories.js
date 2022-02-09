@@ -1,23 +1,3 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   RangeExample,
@@ -33,16 +13,63 @@ import {
   VisualRangeExample,
 } from './examples';
 
-storiesOf('bpk-component-datepicker', module)
-  .add('Default', DefaultExample)
-  .add('Range', RangeExample)
-  .add('Open on first render', OpenOnRender)
-  .add('Min date in the past', MinDateInPast)
-  .add('Without date set', WithoutDateSet)
-  .add('Passing through props to underlying input', PassingProps)
-  .add('Depart & Return', DepartReturn)
-  .add('Custon calendar component', CustomComponent)
-  .add('Invalid', InvalidExample)
-  .add('Range with multiple inputs', MultipleRangeInputExample)
-  .add('Visual test', DefaultVisualExample)
-  .add('Visual test range', VisualRangeExample);
+export default {
+  title: 'bpk-component-datepicker',
+};
+
+export const Default = DefaultExample;
+export const Range = RangeExample;
+export const OpenOnFirstRender = OpenOnRender;
+
+OpenOnFirstRender.story = {
+  name: 'Open on first render',
+};
+
+export const MinDateInThePast = MinDateInPast;
+
+MinDateInThePast.story = {
+  name: 'Min date in the past',
+};
+
+export const _WithoutDateSet = WithoutDateSet;
+
+_WithoutDateSet.story = {
+  name: 'Without date set',
+};
+
+export const PassingThroughPropsToUnderlyingInput = PassingProps;
+
+PassingThroughPropsToUnderlyingInput.story = {
+  name: 'Passing through props to underlying input',
+};
+
+export const _DepartReturn = DepartReturn;
+
+_DepartReturn.story = {
+  name: 'Depart & Return',
+};
+
+export const CustonCalendarComponent = CustomComponent;
+
+CustonCalendarComponent.story = {
+  name: 'Custon calendar component',
+};
+
+export const Invalid = InvalidExample;
+export const RangeWithMultipleInputs = MultipleRangeInputExample;
+
+RangeWithMultipleInputs.story = {
+  name: 'Range with multiple inputs',
+};
+
+export const VisualTest = DefaultVisualExample;
+
+VisualTest.story = {
+  name: 'Visual test',
+};
+
+export const VisualTestRange = VisualRangeExample;
+
+VisualTestRange.story = {
+  name: 'Visual test range',
+};

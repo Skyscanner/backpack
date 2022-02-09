@@ -1,25 +1,3 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/* @flow strict */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   LinkExample,
   ButtonLinkExample,
@@ -30,11 +8,38 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-link', module)
-  .add('Example', LinkExample)
-  .add('Example (buttons)', ButtonLinkExample)
-  .add('Example (alternate)', LinkAlternativeExample)
-  .add('Example (alternate + buttons)', ButtonLinkAlternativeExample)
-  .add('Combined Example', CombinedExample)
-  .add('Combined Example (alternate)', CombinedAlternativeExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-link',
+};
+
+export const Example = LinkExample;
+export const ExampleButtons = ButtonLinkExample;
+
+ExampleButtons.story = {
+  name: 'Example (buttons)',
+};
+
+export const ExampleAlternate = LinkAlternativeExample;
+
+ExampleAlternate.story = {
+  name: 'Example (alternate)',
+};
+
+export const ExampleAlternateButtons = ButtonLinkAlternativeExample;
+
+ExampleAlternateButtons.story = {
+  name: 'Example (alternate + buttons)',
+};
+
+export const _CombinedExample = CombinedExample;
+export const CombinedExampleAlternate = CombinedAlternativeExample;
+
+CombinedExampleAlternate.story = {
+  name: 'Combined Example (alternate)',
+};
+
+export const VisualTest = MixedExample;
+
+VisualTest.story = {
+  name: 'Visual test',
+};

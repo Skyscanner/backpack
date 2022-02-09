@@ -1,25 +1,3 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/* @flow strict */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WideExample,
@@ -35,16 +13,58 @@ import {
   WithAccessoryViewExample,
 } from './examples';
 
-storiesOf('bpk-component-modal', module)
-  .add('Default', DefaultExample)
-  .add('Wide', WideExample)
-  .add('Overflowing', OverflowingExample)
-  .add('Close button text', CloseButtonTextExample)
-  .add('Long title', LongTitleExample)
-  .add('Not full screen on mobile', NotFullScreenOnMobileExample)
-  .add('Full screen', FullScreenExample)
-  .add('Full screen overflowing', FullScreenOverflowingExample)
-  .add('Nested', NestedExample)
-  .add('No header', NoHeaderExample)
-  .add('No padding', NoPaddingExample)
-  .add('With accessory view', WithAccessoryViewExample);
+export default {
+  title: 'bpk-component-modal',
+};
+
+export const Default = DefaultExample;
+export const Wide = WideExample;
+export const Overflowing = OverflowingExample;
+export const CloseButtonText = CloseButtonTextExample;
+
+CloseButtonText.story = {
+  name: 'Close button text',
+};
+
+export const LongTitle = LongTitleExample;
+
+LongTitle.story = {
+  name: 'Long title',
+};
+
+export const NotFullScreenOnMobile = NotFullScreenOnMobileExample;
+
+NotFullScreenOnMobile.story = {
+  name: 'Not full screen on mobile',
+};
+
+export const FullScreen = FullScreenExample;
+
+FullScreen.story = {
+  name: 'Full screen',
+};
+
+export const FullScreenOverflowing = FullScreenOverflowingExample;
+
+FullScreenOverflowing.story = {
+  name: 'Full screen overflowing',
+};
+
+export const Nested = NestedExample;
+export const NoHeader = NoHeaderExample;
+
+NoHeader.story = {
+  name: 'No header',
+};
+
+export const NoPadding = NoPaddingExample;
+
+NoPadding.story = {
+  name: 'No padding',
+};
+
+export const WithAccessoryView = WithAccessoryViewExample;
+
+WithAccessoryView.story = {
+  name: 'With accessory view',
+};

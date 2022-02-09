@@ -17,38 +17,64 @@
  */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './stories.scss';
 
 const getClassName = cssModules(STYLES);
 
-storiesOf('bpk-mixins', module)
-  .add('bpk-icon-lg mixin', () => (
-    <span className={getClassName('bpk-icon-lg__chart')} />
-  ))
-  .add('bpk-icon-sm mixin', () => (
-    <span className={getClassName('bpk-icon-sm__chart')} />
-  ))
-  .add('bpk-icon mixin (small)', () => (
-    <span className={getClassName('bpk-icon__chart--small')} />
-  ))
-  .add('bpk-icon mixin (large)', () => (
-    <span className={getClassName('bpk-icon__chart--large')} />
-  ))
-  .add('bpk-breakpoint-*', () => (
-    <div>
-      <div className={getClassName('bpk-breakpoint-mobile')}>MOBILE</div>
-      <div className={getClassName('bpk-breakpoint-tablet')}>TABLET</div>
-      <div className={getClassName('bpk-breakpoint-tablet-only')}>
-        TABLET ONLY
-      </div>
-      <div className={getClassName('bpk-breakpoint-above-mobile')}>
-        ABOVE MOBILE
-      </div>
-      <div className={getClassName('bpk-breakpoint-above-tablet')}>
-        ABOVE TABLET
-      </div>
+export default {
+  title: 'bpk-mixins',
+};
+
+export const BpkIconLgMixin = () => (
+  <span className={getClassName('bpk-icon-lg__chart')} />
+);
+
+BpkIconLgMixin.story = {
+  name: 'bpk-icon-lg mixin',
+};
+
+export const BpkIconSmMixin = () => (
+  <span className={getClassName('bpk-icon-sm__chart')} />
+);
+
+BpkIconSmMixin.story = {
+  name: 'bpk-icon-sm mixin',
+};
+
+export const BpkIconMixinSmall = () => (
+  <span className={getClassName('bpk-icon__chart--small')} />
+);
+
+BpkIconMixinSmall.story = {
+  name: 'bpk-icon mixin (small)',
+};
+
+export const BpkIconMixinLarge = () => (
+  <span className={getClassName('bpk-icon__chart--large')} />
+);
+
+BpkIconMixinLarge.story = {
+  name: 'bpk-icon mixin (large)',
+};
+
+export const BpkBreakpoint = () => (
+  <div>
+    <div className={getClassName('bpk-breakpoint-mobile')}>MOBILE</div>
+    <div className={getClassName('bpk-breakpoint-tablet')}>TABLET</div>
+    <div className={getClassName('bpk-breakpoint-tablet-only')}>
+      TABLET ONLY
     </div>
-  ));
+    <div className={getClassName('bpk-breakpoint-above-mobile')}>
+      ABOVE MOBILE
+    </div>
+    <div className={getClassName('bpk-breakpoint-above-tablet')}>
+      ABOVE TABLET
+    </div>
+  </div>
+);
+
+BpkBreakpoint.story = {
+  name: 'bpk-breakpoint-*',
+};

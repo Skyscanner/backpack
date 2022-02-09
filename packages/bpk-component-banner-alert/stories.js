@@ -1,24 +1,3 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* @flow strict */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   Neutral,
   Primary,
@@ -38,24 +17,79 @@ import {
   DocsDefault,
 } from './examples';
 
-storiesOf('bpk-component-banner-alert', module)
-  .add('Docs default', DocsDefault)
-  .add('Neutral', Neutral)
-  .add('Primary', Primary)
-  .add('Success', Success)
-  .add('Success (long message)', SuccessLongMessage)
-  .add('Success (dismissable)', Dismissable)
-  .add('Success(expandable)', SuccessExpandable)
-  .add('Success (animate on enter)', SuccessAnimateOnEnter)
-  .add('Success with React rendered message', SuccessWithReactRenderedMessage)
-  .add('Warn', Warn)
-  .add('Error', ErrorExample)
-  .add('Event', Event)
-  .add('Success (dismissable behaviour)', SuccessDismissableBehaviour)
-  .add('Success (expandable behaviour)', SuccessExpandableBehaviour)
-  .add(
-    'Success (automatically dismissed after 5 seconds)',
-    SuccessAutomaticallyDismissed,
-  )
-  .add('Success with custom icon', SuccessCustomIcon)
-  .add('Visual test', DocsDefault);
+export default {
+  title: 'bpk-component-banner-alert',
+};
+
+export const _DocsDefault = DocsDefault;
+
+_DocsDefault.story = {
+  name: 'Docs default',
+};
+
+export const _Neutral = Neutral;
+export const _Primary = Primary;
+export const _Success = Success;
+export const _SuccessLongMessage = SuccessLongMessage;
+
+_SuccessLongMessage.story = {
+  name: 'Success (long message)',
+};
+
+export const SuccessDismissable = Dismissable;
+
+SuccessDismissable.story = {
+  name: 'Success (dismissable)',
+};
+
+export const _SuccessExpandable = SuccessExpandable;
+
+_SuccessExpandable.story = {
+  name: 'Success(expandable)',
+};
+
+export const _SuccessAnimateOnEnter = SuccessAnimateOnEnter;
+
+_SuccessAnimateOnEnter.story = {
+  name: 'Success (animate on enter)',
+};
+
+export const _SuccessWithReactRenderedMessage = SuccessWithReactRenderedMessage;
+
+_SuccessWithReactRenderedMessage.story = {
+  name: 'Success with React rendered message',
+};
+
+export const _Warn = Warn;
+export const Error = ErrorExample;
+export const _Event = Event;
+export const _SuccessDismissableBehaviour = SuccessDismissableBehaviour;
+
+_SuccessDismissableBehaviour.story = {
+  name: 'Success (dismissable behaviour)',
+};
+
+export const _SuccessExpandableBehaviour = SuccessExpandableBehaviour;
+
+_SuccessExpandableBehaviour.story = {
+  name: 'Success (expandable behaviour)',
+};
+
+export const SuccessAutomaticallyDismissedAfter5Seconds =
+  SuccessAutomaticallyDismissed;
+
+SuccessAutomaticallyDismissedAfter5Seconds.story = {
+  name: 'Success (automatically dismissed after 5 seconds)',
+};
+
+export const SuccessWithCustomIcon = SuccessCustomIcon;
+
+SuccessWithCustomIcon.story = {
+  name: 'Success with custom icon',
+};
+
+export const VisualTest = DocsDefault;
+
+VisualTest.story = {
+  name: 'Visual test',
+};

@@ -1,23 +1,3 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WeekStartsOnSix,
@@ -38,26 +18,116 @@ import {
   SplitWeekRangeExample,
 } from './examples';
 
-storiesOf('bpk-component-scrollable-calendar', module)
-  .add('Scrollable Calendar - default', DefaultExample)
-  .add('Scrollable Calendar - range', RangeExample)
-  .add(
-    'Scrollable Calendar - Week split across 2 months range',
-    SplitWeekRangeExample,
-  )
-  .add('Scrollable Calendar - week starts on 6', WeekStartsOnSix)
-  .add('Scrollable Calendar - with focused date', WithFocusedDate)
-  .add('Scrollable Calendar in a tall container', TallContainer)
-  .add('Scrollable Calendar with a single month', SingleMonth)
-  .add('Scrollable Calendar - Week starts on a Sunday', WeekStartsOnSunday)
-  .add('Scrollable Calendar - Honest weekend', HonestWeekend)
-  .add('Scrollable Calendar - ar-AE locale', ArabicLocale)
-  .add('Scrollable Calendar - ja-JP locale', JapaneseLocale)
-  .add('Scrollable Calendar - Different min/max date', DifferentMinMaxDates)
-  .add("Scrollable Calendar - Don't mark today", DontMarkToday)
-  .add('Past Calendar', PastCalendar)
-  .add('BpkScrollableCalendarDate', ScrollableCalendarDate)
-  .add('BpkScrollableCalendarGrid', ScrollableCalendarGrid)
-  .add('BpkScrollableCalendarGridList', ScrollableCalendarGridList)
-  .add('Visual test', DefaultExample)
-  .add('Visual test range', RangeExample);
+export default {
+  title: 'bpk-component-scrollable-calendar',
+};
+
+export const ScrollableCalendarDefault = DefaultExample;
+
+ScrollableCalendarDefault.story = {
+  name: 'Scrollable Calendar - default',
+};
+
+export const ScrollableCalendarRange = RangeExample;
+
+ScrollableCalendarRange.story = {
+  name: 'Scrollable Calendar - range',
+};
+
+export const ScrollableCalendarWeekSplitAcross2MonthsRange =
+  SplitWeekRangeExample;
+
+ScrollableCalendarWeekSplitAcross2MonthsRange.story = {
+  name: 'Scrollable Calendar - Week split across 2 months range',
+};
+
+export const ScrollableCalendarWeekStartsOn6 = WeekStartsOnSix;
+
+ScrollableCalendarWeekStartsOn6.story = {
+  name: 'Scrollable Calendar - week starts on 6',
+};
+
+export const ScrollableCalendarWithFocusedDate = WithFocusedDate;
+
+ScrollableCalendarWithFocusedDate.story = {
+  name: 'Scrollable Calendar - with focused date',
+};
+
+export const ScrollableCalendarInATallContainer = TallContainer;
+
+ScrollableCalendarInATallContainer.story = {
+  name: 'Scrollable Calendar in a tall container',
+};
+
+export const ScrollableCalendarWithASingleMonth = SingleMonth;
+
+ScrollableCalendarWithASingleMonth.story = {
+  name: 'Scrollable Calendar with a single month',
+};
+
+export const ScrollableCalendarWeekStartsOnASunday = WeekStartsOnSunday;
+
+ScrollableCalendarWeekStartsOnASunday.story = {
+  name: 'Scrollable Calendar - Week starts on a Sunday',
+};
+
+export const ScrollableCalendarHonestWeekend = HonestWeekend;
+
+ScrollableCalendarHonestWeekend.story = {
+  name: 'Scrollable Calendar - Honest weekend',
+};
+
+export const ScrollableCalendarArAeLocale = ArabicLocale;
+
+ScrollableCalendarArAeLocale.story = {
+  name: 'Scrollable Calendar - ar-AE locale',
+};
+
+export const ScrollableCalendarJaJpLocale = JapaneseLocale;
+
+ScrollableCalendarJaJpLocale.story = {
+  name: 'Scrollable Calendar - ja-JP locale',
+};
+
+export const ScrollableCalendarDifferentMinMaxDate = DifferentMinMaxDates;
+
+ScrollableCalendarDifferentMinMaxDate.story = {
+  name: 'Scrollable Calendar - Different min/max date',
+};
+
+export const ScrollableCalendarDontMarkToday = DontMarkToday;
+
+ScrollableCalendarDontMarkToday.story = {
+  name: "Scrollable Calendar - Don't mark today",
+};
+
+export const _PastCalendar = PastCalendar;
+export const BpkScrollableCalendarDate = ScrollableCalendarDate;
+
+BpkScrollableCalendarDate.story = {
+  name: 'BpkScrollableCalendarDate',
+};
+
+export const BpkScrollableCalendarGrid = ScrollableCalendarGrid;
+
+BpkScrollableCalendarGrid.story = {
+  name: 'BpkScrollableCalendarGrid',
+};
+
+export const BpkScrollableCalendarGridList = ScrollableCalendarGridList;
+
+BpkScrollableCalendarGridList.story = {
+  name: 'BpkScrollableCalendarGridList',
+};
+
+export const VisualTest = DefaultExample;
+
+VisualTest.story = {
+  name: 'Visual test',
+};
+
+export const VisualTestRange = RangeExample;
+
+VisualTestRange.story = {
+  name: 'Visual test range',
+};
