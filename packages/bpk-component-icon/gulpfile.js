@@ -29,4 +29,4 @@ require('@babel/register')({
   rootMode: 'upward',
 });
 
-require('./gulpfile.babel.js');
+require('./gulpfile.babel');
