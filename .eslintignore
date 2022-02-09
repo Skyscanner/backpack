@@ -11,3 +11,4 @@ coverage
 backpack-android
 backpack-ios
 backpack-react-native
+packages/**/stories.js
