@@ -87,8 +87,7 @@ $bpk-spacing-v2: true;
 
   &__heading {
     @include bpk-text;
-    @include bpk-text--base;
-    @include bpk-text--bold;
+    @include bpk-label-1;
   }
 
   &__close-button {

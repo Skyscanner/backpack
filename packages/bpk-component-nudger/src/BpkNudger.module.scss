@@ -33,7 +33,7 @@ $bpk-spacing-v2: true;
     vertical-align: middle;
 
     @include bpk-text;
-    @include bpk-text--xl;
+    @include bpk-subheading;
 
     &--outline {
       background-color: transparent;
