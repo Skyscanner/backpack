@@ -1,3 +1,18 @@
+# 2022-02-09
+
+**Fixed:**
+
+- bpk-component-autosuggest: 6.0.38 => 6.0.39
+- bpk-component-banner-alert: 6.0.13 => 6.0.14
+- bpk-component-barchart: 4.1.14 => 4.1.15
+- bpk-component-calendar: 11.0.11 => 11.0.12
+- bpk-component-drawer: 4.0.32 => 4.0.33
+- bpk-component-fieldset: 4.0.18 => 4.0.19
+- bpk-component-modal: 3.0.31 => 3.0.32
+- bpk-component-nudger: 5.0.4 => 5.0.5
+- bpk-mixins: 26.0.0 => 26.0.1
+  - Mixins and component are now using the new style names. There are no visual changes.
+
 # 2022-02-08
 
 **Breaking:**
