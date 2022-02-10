@@ -17,7 +17,7 @@
  */
 
 module.exports = {
-  stories: ['../packages/**/stories.js'],
+  stories: ['../packages/bpk-component-accordion/stories.js'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
