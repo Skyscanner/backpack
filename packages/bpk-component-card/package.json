@@ -23,6 +23,6 @@
     "bpk-component-text": "^5.1.0"
   },
   "peerDependencies": {
-    "react": "^16.3.0"
+    "react": "^17.0.2"
   }
 }
