@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,19 +20,17 @@ import { storiesOf } from '@storybook/react';
 
 import {
   DefaultExample,
-  HeadingsExample,
+  WithHeadingTagsExample,
   ParagraphExample,
   WithDefaultProps,
-  BoldExample,
-  WithWeightsExample,
+  HeadingStylesExample,
   MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-text', module)
   .add('Default', DefaultExample)
-  .add('Headings', HeadingsExample)
+  .add('With heading tags', WithHeadingTagsExample)
   .add('Paragraph', ParagraphExample)
   .add('using withDefaultProps', WithDefaultProps)
-  .add('bold', BoldExample)
-  .add('with weights', WithWeightsExample)
+  .add('Heading styles', HeadingStylesExample)
   .add('Visual test', MixedExample);

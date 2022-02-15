@@ -1,3 +1,150 @@
+# 2022-02-09
+
+**Fixed:**
+
+- bpk-component-autosuggest: 6.0.38 => 6.0.39
+- bpk-component-banner-alert: 6.0.13 => 6.0.14
+- bpk-component-barchart: 4.1.14 => 4.1.15
+- bpk-component-calendar: 11.0.11 => 11.0.12
+- bpk-component-drawer: 4.0.32 => 4.0.33
+- bpk-component-fieldset: 4.0.18 => 4.0.19
+- bpk-component-modal: 3.0.31 => 3.0.32
+- bpk-component-nudger: 5.0.4 => 5.0.5
+- bpk-mixins: 26.0.0 => 26.0.1
+  - Mixins and component are now using the new style names. There are no visual changes.
+
+# 2022-02-08
+
+**Breaking:**
+  - bpk-mixins: 25.2.0 => 26.0.0
+  - bpk-component-text: 5.1.0 => 6.0.0
+    - Removed margins from `bpk-heading` mixins. Should you require margins in your headings, you will need to supply them yourself using spacing tokens. See below for an example.
+      ```css
+      /* Old */
+      .MyHeading {
+        @include bpk-heading-1;
+      }
+
+      /* New */
+      $bpk-spacing-v2: true;
+      
+      .MyHeading {
+        margin-top: bpk-spacing-sm();
+        margin-bottom: bpk-spacing-sm();
+
+        @include bpk-heading-1;
+      }
+      ```
+      **Note:** If you have not or in progress of upgrading to the new spacing system, you will need to enable the v2 system by providing `$bpk-spacing-v2: true` in your `.scss` file in order to enable the v2 spacing.
+
+**Changed:**
+  - bpk-component-paragraph:
+    - This component is deprecated, this had previously been completed in 2017 but it was still being published to npm. So this change updates this.
+    - Please use `bpk-component-text` instead to apply paragraph styles. See the changes below for migration.
+      ```js
+      // old
+      <BpkParagraph>My paragraph.</BpkParagraph>
+
+      // new 
+      <BpkText tagName="p" textStyle="base">
+        My paragraph.
+      </BpkText>
+      ```
+
+
+# 2022-02-07
+
+**Changed:**
+  - bpk-component-text: 5.0.2 => 5.1.0
+    - Added support for new Typography mixins using the text API:
+      - `bpk-caption`
+      - `bpk-footnote`
+      - `bpk-label-1`
+      - `bpk-label-2`
+      - `bpk-body-default`
+      - `bpk-body-longform`
+      - `bpk-subheading`
+      - `bpk-hero-1`
+      - `bpk-hero-2`
+      - `bpk-hero-3`
+      - `bpk-hero-4`
+      - `bpk-hero-5`
+    - `weight` property is now deprecated. If you are using the `weight` or `bold` properties, remove them and choose one of the new text styles instead to achieve the desired weight. 
+
+  - bpk-mixins: 25.1.0 => 25.2.0
+    - Deprecated `bpk-heading-6` mixin.
+
+  - bpk-component-heading:
+    - This component is deprecated, please use `bpk-component-text` instead:
+      ```
+      // old
+      <BpkHeading level="h1">My Heading</BpkHeading>
+
+      // new
+      <BpkText tagName="h1" textStyle="xxl">My Heading</BpkText>
+      ```
+
+# 2022-02-02
+
+**Added:**
+  - bpk-mixins: 25.0.0 => 25.1.0
+    - Added new Typography mixins.
+      - `bpk-caption`
+      - `bpk-footnote`
+      - `bpk-label-1`
+      - `bpk-label-2`
+      - `bpk-body-default`
+      - `bpk-body-longform`
+      - `bpk-subheading`
+      - `bpk-hero-1`
+      - `bpk-hero-2`
+      - `bpk-hero-3`
+      - `bpk-hero-4`
+      - `bpk-hero-5`
+
+# 2022-01-31
+
+**Breaking:**
+
+- bpk-component-content-container: 3.0.22 => 4.0.0
+- bpk-component-heading: 4.0.22 => 5.0.0
+- bpk-component-text: 4.0.24 => 5.0.0
+- bpk-mixins: 24.1.2 => 25.0.0
+    - Updated text to the new typography system. The following styles will have changed: `bpk-text--xs`, `bpk-text--sm`, `bpk-text--base`, `bpk-text--lg`, `bpk-text--xl`, `bpk-text--xxl`, `bpk-text--xxxl`, `bpk-text--xxxxl`, `bpk-text--xxxxxl`, `bpk-heading-1`, `bpk-heading-2`, `bpk-heading-3`, `bpk-heading-4`, `bpk-heading-5`, `bpk-heading-6`. Due to the bigger font sizes and line heights, if using these styles as a mixin or through the text or heading components, components will increase in height.
+    - Tokens used in setting the font (i.e. font-size, line-height) will have changed. If using these tokens from `bpk-mixins`, you should check this does not alter layout.
+
+- bpk-component-accordion: 3.0.25 => 4.0.0
+- bpk-component-checkbox: 3.0.25 => 4.0.0
+- bpk-component-nudger: 4.0.23 => 5.0.0
+    - These components will slightly increase in height due to the underlying font changes, so needs to be checked it does not alter layout.
+
+# 2022-01-27
+
+**Fixed:**
+    - bpk-component-radio: 3.0.21 => 3.0.22
+    - bpk-mixins: 24.1.1 => 24.1.2
+        - Fixed bug where variable was being used before it was defined.
+
+# 2022-01-17
+
+**Fixed:**
+  - bpk-component-scrollable-calendar: 6.0.4 => 6.0.5
+    - Fixed white spaces selection in calendar component.
+
+# 2022-01-13
+
+**Added:**
+  
+  - bpk-component-datepicker: 15.0.3 => 15.1.0
+    - Exposed property `fixedWidth` to datepicker for when used will correctly fit the pop-up container correctly.
+    
+**Fixed:**
+
+- bpk-component-scrollable-calendar: 6.0.3 => 6.0.4
+  - Added auto scroll to focused or selected date.
+- bpk-component-calendar: 11.0.3 => 11.0.4
+  - Fixed a bug where when calendar was not fixed width the dates would not render correctly.
+
 # 2021-12-17
 
 **Fixed:**

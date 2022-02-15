@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,16 @@ import { cssModules, deprecated } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
-import BpkCalendar, {
+import {
+  composeCalendar,
+  BpkCalendarGridHeader,
+  BpkCalendarGrid,
+  BpkCalendarDate,
+  withCalendarState,
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
   DateUtils,
+  BpkCalendarNav,
 } from 'bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.module.scss';
@@ -34,6 +40,15 @@ import STYLES from './BpkDatepicker.module.scss';
 const getClassName = cssModules(STYLES);
 
 const Input = withOpenEvents(BpkInput);
+
+const DefaultCalendar = withCalendarState(
+  composeCalendar(
+    BpkCalendarNav,
+    BpkCalendarGridHeader,
+    BpkCalendarGrid,
+    BpkCalendarDate,
+  ),
+);
 
 class BpkDatepicker extends Component {
   constructor(props) {
@@ -181,6 +196,7 @@ class BpkDatepicker extends Component {
       closeButtonText,
       dateModifiers,
       daysOfWeek,
+      fixedWidth,
       formatDate,
       formatDateFull,
       formatMonth,
@@ -246,8 +262,6 @@ class BpkDatepicker extends Component {
       selectionConfiguration,
     };
 
-    const calendar = <Calendar {...calendarProps} />;
-
     return (
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {isMobile =>
@@ -262,7 +276,7 @@ class BpkDatepicker extends Component {
               closeLabel={closeButtonText}
               getApplicationElement={getApplicationElement}
             >
-              {calendar}
+              <Calendar {...calendarProps} fixedWidth={false} />
             </BpkModal>
           ) : (
             <BpkPopover
@@ -276,7 +290,7 @@ class BpkDatepicker extends Component {
               tabIndex={0}
               {...rest}
             >
-              {calendar}
+              <Calendar {...calendarProps} fixedWidth={fixedWidth} />
             </BpkPopover>
           )
         }
@@ -307,6 +321,7 @@ BpkDatepicker.propTypes = {
     'Use selectionConfiguration to set date',
   ),
   dateModifiers: CustomPropTypes.DateModifiers,
+  fixedWidth: PropTypes.bool,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
   markToday: PropTypes.bool,
@@ -331,15 +346,16 @@ BpkDatepicker.propTypes = {
 };
 
 BpkDatepicker.defaultProps = {
-  calendarComponent: BpkCalendar,
+  calendarComponent: DefaultCalendar,
   inputComponent: null,
   date: null,
-  dateModifiers: BpkCalendar.defaultProps.dateModifiers,
+  dateModifiers: DefaultCalendar.defaultProps.dateModifiers,
   inputProps: {},
-  markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
-  markToday: BpkCalendar.defaultProps.markToday,
-  maxDate: BpkCalendar.defaultProps.maxDate,
-  minDate: BpkCalendar.defaultProps.minDate,
+  fixedWidth: true,
+  markOutsideDays: DefaultCalendar.defaultProps.markOutsideDays,
+  markToday: DefaultCalendar.defaultProps.markToday,
+  maxDate: DefaultCalendar.defaultProps.maxDate,
+  minDate: DefaultCalendar.defaultProps.minDate,
   nextMonthLabel: null,
   onDateSelect: null,
   onOpenChange: null,

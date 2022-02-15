@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,10 @@ $bpk-spacing-v2: true;
   @if ($font-weight) {
     font-weight: $font-weight;
   }
+
+  @if ($letter-spacing) {
+    letter-spacing: $letter-spacing;
+  }
 }
 
 /// Text margin reset.
@@ -71,10 +75,9 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xs {
   @include _bpk-text-factory(
-    $bpk-text-xs-font-size,
-    $bpk-text-xs-line-height,
-    $bpk-text-xs-font-weight,
-    $bpk-text-xs-letter-spacing
+    $bpk-font-size-xs,
+    $bpk-line-height-xs,
+    $bpk-font-weight-book
   );
 }
 
@@ -101,10 +104,9 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--sm {
   @include _bpk-text-factory(
-    $bpk-text-sm-font-size,
-    $bpk-text-sm-line-height,
-    $bpk-text-sm-font-weight,
-    $bpk-text-sm-letter-spacing
+    $bpk-font-size-sm,
+    $bpk-line-height-sm,
+    $bpk-font-weight-book
   );
 }
 
@@ -131,10 +133,9 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--base {
   @include _bpk-text-factory(
-    $bpk-text-base-font-size,
-    $bpk-text-base-line-height,
-    $bpk-text-base-font-weight,
-    $bpk-text-base-letter-spacing
+    $bpk-font-size-base,
+    $bpk-line-height-base,
+    $bpk-font-weight-book
   );
 }
 
@@ -161,10 +162,9 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--lg {
   @include _bpk-text-factory(
-    $bpk-text-lg-font-size,
-    $bpk-text-lg-line-height,
-    $bpk-text-lg-font-weight,
-    $bpk-text-lg-letter-spacing
+    $bpk-font-size-lg,
+    $bpk-line-height-lg,
+    $bpk-font-weight-book
   );
 }
 
@@ -191,10 +191,9 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xl {
   @include _bpk-text-factory(
-    $bpk-text-xl-font-size,
-    $bpk-text-xl-line-height,
-    $bpk-text-xl-font-weight,
-    $bpk-text-xl-letter-spacing
+    $bpk-font-size-xl,
+    $bpk-line-height-xl,
+    $bpk-font-weight-book
   );
 }
 
@@ -221,10 +220,9 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xxl {
   @include _bpk-text-factory(
-    $bpk-text-xxl-font-size,
-    $bpk-text-xxl-line-height,
-    $bpk-text-xxl-font-weight,
-    $bpk-text-xxl-letter-spacing
+    $bpk-font-size-xxl,
+    $bpk-line-height-xxl,
+    $bpk-font-weight-bold
   );
 }
 
@@ -251,9 +249,9 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xxxl {
   @include _bpk-text-factory(
-    $bpk-text-xxxl-font-size,
-    $bpk-text-xxxl-line-height,
-    $bpk-text-xxxl-font-weight
+    $bpk-font-size-xxxl,
+    $bpk-line-height-xxxl,
+    $bpk-font-weight-bold
   );
 }
 
@@ -280,9 +278,10 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xxxxl {
   @include _bpk-text-factory(
-    $bpk-text-xxxxl-font-size,
-    $bpk-text-xxxxl-line-height,
-    $bpk-text-xxxxl-font-weight
+    $bpk-font-size-xxxxl,
+    $bpk-line-height-xxxxl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
   );
 }
 
@@ -309,9 +308,10 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-text--xxxxxl {
   @include _bpk-text-factory(
-    $bpk-text-xxxxxl-font-size,
-    $bpk-text-xxxxxl-line-height,
-    $bpk-text-xxxxxl-font-weight
+    $bpk-font-size-xxxxxl,
+    $bpk-line-height-xxxxxl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
   );
 }
 
@@ -375,6 +375,191 @@ $bpk-spacing-v2: true;
   @include bpk-text--black;
 }
 
+/// Caption text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-caption;
+///   }
+
+@mixin bpk-caption {
+  @include _bpk-text-factory(
+    $bpk-font-size-xs,
+    $bpk-line-height-xs,
+    $bpk-font-weight-book
+  );
+}
+
+/// Footnote text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-footnote;
+///   }
+
+@mixin bpk-footnote {
+  @include _bpk-text-factory(
+    $bpk-font-size-sm,
+    $bpk-line-height-sm,
+    $bpk-font-weight-book
+  );
+}
+
+/// Label-1 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label-1;
+///   }
+
+@mixin bpk-label-1 {
+  @include _bpk-text-factory(
+    $bpk-font-size-base,
+    $bpk-line-height-base,
+    $bpk-font-weight-bold
+  );
+}
+
+/// Label-2 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label-2;
+///   }
+
+@mixin bpk-label-2 {
+  @include _bpk-text-factory(
+    $bpk-font-size-sm,
+    $bpk-line-height-sm,
+    $bpk-font-weight-bold
+  );
+}
+
+/// Default body text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-body-default;
+///   }
+
+@mixin bpk-body-default {
+  @include _bpk-text-factory(
+    $bpk-font-size-base,
+    $bpk-line-height-base,
+    $bpk-font-weight-book
+  );
+}
+
+/// Longform body text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-body-longform;
+///   }
+
+@mixin bpk-body-longform {
+  @include _bpk-text-factory(
+    $bpk-font-size-lg,
+    $bpk-line-height-lg,
+    $bpk-font-weight-book
+  );
+}
+
+/// Subheading text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-subheading;
+///   }
+
+@mixin bpk-subheading {
+  @include _bpk-text-factory(
+    $bpk-font-size-xl,
+    $bpk-line-height-xl,
+    $bpk-font-weight-book
+  );
+}
+
+/// Hero 1 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-1;
+///   }
+
+@mixin bpk-hero-1 {
+  @include _bpk-text-factory(
+    $bpk-font-size-8-xl,
+    $bpk-line-height-8-xl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
+/// Hero 2 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-2;
+///   }
+
+@mixin bpk-hero-2 {
+  @include _bpk-text-factory(
+    $bpk-font-size-7-xl,
+    $bpk-line-height-7-xl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
+/// Hero 3 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-3;
+///   }
+
+@mixin bpk-hero-3 {
+  @include _bpk-text-factory(
+    $bpk-font-size-6-xl,
+    $bpk-line-height-6-xl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
+/// Hero 4 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-4;
+///   }
+
+@mixin bpk-hero-4 {
+  @include _bpk-text-factory(
+    $bpk-font-size-xxxxxl,
+    $bpk-line-height-xxxxxl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
+/// Hero 5 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-5;
+///   }
+
+@mixin bpk-hero-5 {
+  @include _bpk-text-factory(
+    $bpk-font-size-xxxxl,
+    $bpk-line-height-xxxxl,
+    $bpk-font-weight-bold,
+    $bpk-letter-spacing-tight
+  );
+}
+
 /// Level 1 heading.
 ///
 /// @example scss
@@ -383,20 +568,17 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-1 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
-    $bpk-h-1-font-size,
-    $bpk-h-1-line-height,
-    $bpk-h-1-font-weight
+    $bpk-font-size-xxxl,
+    $bpk-line-height-xxxl,
+    $bpk-font-weight-bold
   );
 
   @include bpk-breakpoint-mobile {
     @include _bpk-text-factory(
-      $bpk-h-2-font-size,
-      $bpk-h-2-line-height,
-      $bpk-h-2-font-weight
+      $bpk-font-size-xxl,
+      $bpk-line-height-xxl,
+      $bpk-font-weight-bold
     );
   }
 }
@@ -409,20 +591,17 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-2 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
-    $bpk-h-2-font-size,
-    $bpk-h-2-line-height,
-    $bpk-h-2-font-weight
+    $bpk-font-size-xxl,
+    $bpk-line-height-xxl,
+    $bpk-font-weight-bold
   );
 
   @include bpk-breakpoint-mobile {
     @include _bpk-text-factory(
-      $bpk-h-3-font-size,
-      $bpk-h-3-line-height,
-      $bpk-h-3-font-weight
+      $bpk-font-size-xl,
+      $bpk-line-height-xl-tight,
+      $bpk-font-weight-bold
     );
   }
 }
@@ -435,20 +614,17 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-3 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
-    $bpk-h-3-font-size,
-    $bpk-h-3-line-height,
-    $bpk-h-3-font-weight
+    $bpk-font-size-xl,
+    $bpk-line-height-xl-tight,
+    $bpk-font-weight-bold
   );
 
   @include bpk-breakpoint-mobile {
     @include _bpk-text-factory(
-      $bpk-h-4-font-size,
-      $bpk-h-4-line-height,
-      $bpk-h-4-font-weight
+      $bpk-font-size-lg,
+      $bpk-line-height-lg-tight,
+      $bpk-font-weight-bold
     );
   }
 }
@@ -461,20 +637,17 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-4 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
-    $bpk-h-4-font-size,
-    $bpk-h-4-line-height,
-    $bpk-h-4-font-weight
+    $bpk-font-size-lg,
+    $bpk-line-height-lg-tight,
+    $bpk-font-weight-bold
   );
 
   @include bpk-breakpoint-mobile {
     @include _bpk-text-factory(
-      $bpk-h-5-font-size,
-      $bpk-h-5-line-height,
-      $bpk-h-5-font-weight
+      $bpk-font-size-base,
+      $bpk-line-height-base-tight,
+      $bpk-font-weight-bold
     );
   }
 }
@@ -487,13 +660,10 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-heading-5 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
-
   @include _bpk-text-factory(
-    $bpk-h-5-font-size,
-    $bpk-h-5-line-height,
-    $bpk-h-5-font-weight
+    $bpk-font-size-base,
+    $bpk-line-height-base-tight,
+    $bpk-font-weight-bold
   );
 }
 
@@ -503,15 +673,16 @@ $bpk-spacing-v2: true;
 ///   .selector {
 ///     @include bpk-heading-6();
 ///   }
+///
+/// @deprecated Use `bpk-heading-5` instead.
 
 @mixin bpk-heading-6 {
-  margin-top: $bpk-heading-margin-top;
-  margin-bottom: $bpk-heading-margin-bottom;
+  @warn 'bpk-heading-6 is deprecated. Use `bpk-heading-5` instead.';
 
   @include _bpk-text-factory(
-    $bpk-h-6-font-size,
-    $bpk-h-6-line-height,
-    $bpk-h-6-font-weight
+    $bpk-font-size-base,
+    $bpk-line-height-base-tight,
+    $bpk-font-weight-bold
   );
 }
 
@@ -529,6 +700,7 @@ $bpk-spacing-v2: true;
 ///     @include bpk-heading-1();
 ///     @include bpk-heading--no-bottom-margin();
 ///   }
+/// @deprecated Headings no longer set margins.
 
 @mixin bpk-heading--no-bottom-margin {
   margin-bottom: 0;

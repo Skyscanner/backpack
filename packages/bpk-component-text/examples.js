@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,10 @@ import { withDefaultProps } from 'bpk-react-utils';
 
 import STYLE from './examples.module.scss';
 
-import BpkText, { WEIGHT_STYLES } from './index';
+import BpkText from './index';
 
 const Paragraph = withDefaultProps(BpkText, {
-  textStyle: 'lg',
+  textStyle: 'body-longform',
   tagName: 'p',
   className: STYLE['bpk-my-paragraph'],
 });
@@ -38,31 +38,34 @@ const DefaultExample = () => (
   </BpkText>
 );
 
-const HeadingsExample = () => (
+const WithHeadingTagsExample = () => (
   <div>
-    <BpkText textStyle="xxl" tagName="h1">
+    <BpkText textStyle="subheading" tagName="h1">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="xl" tagName="h2">
+    <BpkText textStyle="body-longform" tagName="h2">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="lg" tagName="h3">
+    <BpkText textStyle="label-1" tagName="h3">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="base" tagName="h4">
+    <BpkText textStyle="body-default" tagName="h3">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="sm" tagName="h5">
+    <BpkText textStyle="label-2" tagName="h4">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle="xs" tagName="h6">
+    <BpkText textStyle="footnote" tagName="h5">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="caption" tagName="h6">
       The quick brown fox jumps over the lazy dog
     </BpkText>
   </div>
 );
 
 const ParagraphExample = () => (
-  <BpkText textStyle="base" tagName="p">
+  <BpkText textStyle="body-default" tagName="p">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
     imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
     consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
@@ -87,28 +90,28 @@ const WithDefaultProps = () => (
   </div>
 );
 
-const BoldExample = () => (
-  <BpkText tagName="p">
-    The man jumped over the shark tank. That was very{' '}
-    <BpkText weight={WEIGHT_STYLES.bold}>bold</BpkText> indeed.
-  </BpkText>
-);
-
-const WithWeightsExample = () => (
+const HeadingStylesExample = () => (
   <div>
-    <BpkText tagName="p">
-      The man jumped over the shark tank. That was very brave indeed.
+    <BpkText textStyle="hero-4" tagName="h5">
+      The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText tagName="p">
-      The man jumped over the shark tank. That was very{' '}
-      <BpkText weight={WEIGHT_STYLES.bold}>bold</BpkText> indeed.
+    <BpkText textStyle="hero-5" tagName="h6">
+      The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText tagName="p">
-      The man jumped over the shark tank. That was a{' '}
-      <BpkText weight={WEIGHT_STYLES.black} textStyle="xl">
-        heavy
-      </BpkText>{' '}
-      shark.
+    <BpkText textStyle="heading-1" tagName="h1">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="heading-2" tagName="h4">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="heading-3" tagName="h2">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="heading-4" tagName="h6">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
+    <BpkText textStyle="heading-5" tagName="h4">
+      The quick brown fox jumps over the lazy dog
     </BpkText>
   </div>
 );
@@ -116,20 +119,17 @@ const WithWeightsExample = () => (
 const MixedExample = () => (
   <div>
     <DefaultExample />
-    <HeadingsExample />
+    <WithHeadingTagsExample />
     <ParagraphExample />
     <WithDefaultProps />
-    <BoldExample />
-    <WithWeightsExample />
   </div>
 );
 
 export {
   DefaultExample,
-  HeadingsExample,
+  WithHeadingTagsExample,
   ParagraphExample,
   WithDefaultProps,
-  BoldExample,
-  WithWeightsExample,
+  HeadingStylesExample,
   MixedExample,
 };

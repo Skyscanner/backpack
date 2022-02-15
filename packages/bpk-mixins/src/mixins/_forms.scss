@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -334,7 +334,8 @@ $bpk-spacing-v2: true;
   display: inline-block;
   width: 100%;
   height: $bpk-input-height;
-  padding: bpk-spacing-md() bpk-spacing-xl() bpk-spacing-md() bpk-spacing-md();
+  padding: bpk-spacing-md() - (2 * $bpk-one-pixel-rem) bpk-spacing-md();
+  padding-right: bpk-spacing-xl();
   border: $bpk-select-border;
   border-radius: $bpk-select-border-radius;
   background: $bpk-color-white
@@ -520,7 +521,7 @@ $bpk-spacing-v2: true;
   padding-left: bpk-spacing-lg() + bpk-spacing-sm();
 
   @include bpk-text;
-  @include bpk-text--base;
+  @include bpk-body-default;
 
   @include bpk-rtl {
     padding-right: bpk-spacing-lg() + bpk-spacing-sm();
@@ -550,7 +551,7 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-checkbox__label--small {
   @include bpk-text;
-  @include bpk-text--xs;
+  @include bpk-caption;
 }
 
 /// White label checkbox. Modifies the bpk-checkbox mixin.
@@ -781,6 +782,8 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-radio__input {
+  $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
+
   position: absolute;
   top: 0;
   left: 0;
@@ -819,7 +822,6 @@ $bpk-spacing-v2: true;
   &:disabled {
     border-color: $bpk-color-sky-gray-tint-04;
   }
-  $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
 }
 
 /// Form label.

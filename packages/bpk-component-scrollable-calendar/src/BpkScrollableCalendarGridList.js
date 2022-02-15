@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,9 @@ class BpkScrollableCalendarGridList extends React.Component {
     );
   }
 
-  renderList(width, height) {
+  renderList(width, height, minDate, focusedDate, selectionConfiguration) {
+    const { date, startDate } = selectionConfiguration || {};
+    const selectedDate = focusedDate || date || startDate;
     return (
       <List
         extraData={this.props}
@@ -99,11 +101,17 @@ class BpkScrollableCalendarGridList extends React.Component {
         rowRenderer={this.rowRenderer}
         rowCount={this.state.months.length}
         overscanRowCount={0}
+        scrollToIndex={
+          selectedDate
+            ? DateUtils.differenceInCalendarMonths(selectedDate, minDate)
+            : 0
+        }
       />
     );
   }
 
   render() {
+    const { minDate, focusedDate, selectionConfiguration } = this.props;
     return (
       <div
         className={getClassName(
@@ -112,7 +120,15 @@ class BpkScrollableCalendarGridList extends React.Component {
         )}
       >
         <AutoSizer>
-          {({ width, height }) => this.renderList(width, height)}
+          {({ width, height }) =>
+            this.renderList(
+              width,
+              height,
+              minDate,
+              focusedDate,
+              selectionConfiguration,
+            )
+          }
         </AutoSizer>
       </div>
     );

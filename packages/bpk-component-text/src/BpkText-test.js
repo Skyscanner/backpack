@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,4 +132,32 @@ describe('BpkText', () => {
       });
     },
   );
+
+  it('should render correctly with deprecated `weight` prop', () => {
+    const consoleWarnFn = jest.fn();
+    jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
+    const { asFragment } = render(
+      <BpkText weight="bold">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    expect(consoleWarnFn.mock.calls.length).toBe(1);
+  });
+
+  it('should render correctly with no `weight` prop', () => {
+    const consoleWarnFn = jest.fn();
+    jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
+    const { asFragment } = render(
+      <BpkText>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    expect(consoleWarnFn.mock.calls.length).toBe(0);
+  });
 });

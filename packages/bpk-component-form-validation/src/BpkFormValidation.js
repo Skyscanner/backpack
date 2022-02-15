@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import BpkSmallExclamationIcon from 'bpk-component-icon/sm/exclamation-circle';
 import { withAlignment } from 'bpk-component-icon';
 import {
-  lineHeightBase,
+  lineHeightSm,
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -32,7 +32,7 @@ import STYLES from './BpkFormValidation.module.scss';
 const getClassName = cssModules(STYLES);
 const AlignedExclamationIcon = withAlignment(
   BpkSmallExclamationIcon,
-  lineHeightBase,
+  lineHeightSm,
   iconSizeSm,
 );
 

@@ -2,7 +2,7 @@
  *
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import fs from 'fs';
 import { includes } from 'lodash';
 import { danger, fail, warn, markdown } from 'danger';
 
-const currentYear = new Date().getFullYear();
 // Applies to js, css, scss and sh files that are not located in dist or flow-typed folders.
 const shouldContainLicensingInformation = filePath =>
   filePath.match(/\.(js|css|scss|sh)$/) &&
@@ -115,31 +114,11 @@ if (unlicensedFiles.length > 0) {
   );
 }
 
-// Updated files should include the latest year in licensing header.
-const outdatedLicenses = fileChanges.filter(filePath => {
-  if (
-    shouldContainLicensingInformation(filePath) &&
-    !unlicensedFiles.includes(filePath)
-  ) {
-    const fileContent = fs.readFileSync(filePath);
-    return !fileContent.includes(
-      `Copyright 2016-${currentYear} Skyscanner Ltd`,
-    );
-  }
-  return false;
-});
-if (outdatedLicenses.length > 0) {
-  fail(
-    `These files contain an outdated licensing header: ${outdatedLicenses.join(
-      ', ',
-    )}. Please update to '2016-${currentYear}'.`,
-  );
-}
-
 const nonModuleCssFiles = fileChanges.filter(
   filePath =>
     filePath.match(/bpk-component/) &&
     filePath.match(/\.s?css/) &&
+    !filePath.match('_') &&
     !filePath.match(/\.module\.s?css/),
 );
 if (nonModuleCssFiles.length) {

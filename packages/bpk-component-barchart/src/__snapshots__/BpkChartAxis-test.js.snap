@@ -15,7 +15,7 @@ exports[`BpkChartAxis X should render band scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           North America
         </text>
@@ -26,7 +26,7 @@ exports[`BpkChartAxis X should render band scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           South America
         </text>
@@ -37,7 +37,7 @@ exports[`BpkChartAxis X should render band scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           Europe
         </text>
@@ -48,7 +48,7 @@ exports[`BpkChartAxis X should render band scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           Asia
         </text>
@@ -59,7 +59,7 @@ exports[`BpkChartAxis X should render band scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           Australia
         </text>
@@ -70,7 +70,7 @@ exports[`BpkChartAxis X should render band scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           Antartica
         </text>
@@ -95,7 +95,7 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" and "tickOffse
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           South America
         </text>
@@ -106,7 +106,7 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" and "tickOffse
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           Asia
         </text>
@@ -117,7 +117,7 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" and "tickOffse
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           Antartica
         </text>
@@ -142,7 +142,7 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" attribute 1`] 
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           North America
         </text>
@@ -153,7 +153,7 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" attribute 1`] 
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           Europe
         </text>
@@ -164,7 +164,7 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" attribute 1`] 
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           Australia
         </text>
@@ -189,7 +189,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           50
         </text>
@@ -200,7 +200,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           100
         </text>
@@ -211,7 +211,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           150
         </text>
@@ -222,7 +222,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           200
         </text>
@@ -233,7 +233,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           250
         </text>
@@ -244,7 +244,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           300
         </text>
@@ -255,7 +255,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           350
         </text>
@@ -266,7 +266,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           400
         </text>
@@ -277,7 +277,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           450
         </text>
@@ -302,7 +302,7 @@ exports[`BpkChartAxis X should render linear scale with "numTicks" attribute 1`]
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           200
         </text>
@@ -313,7 +313,7 @@ exports[`BpkChartAxis X should render linear scale with "numTicks" attribute 1`]
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           400
         </text>
@@ -338,7 +338,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           50
         </text>
@@ -349,7 +349,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           100
         </text>
@@ -360,7 +360,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           150
         </text>
@@ -371,7 +371,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           200
         </text>
@@ -382,7 +382,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           250
         </text>
@@ -393,7 +393,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           300
         </text>
@@ -404,7 +404,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           350
         </text>
@@ -415,7 +415,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           400
         </text>
@@ -426,7 +426,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         <text
           class="bpk-chart__axis-tick-text"
           x="0"
-          y="18"
+          y="20"
         >
           450
         </text>
@@ -910,7 +910,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
       <text
         class="bpk-chart__axis-label"
         text-anchor="middle"
-        transform="translate(-22, 60) rotate(-90)"
+        transform="translate(-20, 60) rotate(-90)"
       >
         Y axis label
       </text>

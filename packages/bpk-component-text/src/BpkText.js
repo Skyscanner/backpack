@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,23 @@ export const TEXT_STYLES = {
   xxxl: 'xxxl',
   xxxxl: 'xxxxl',
   xxxxxl: 'xxxxxl',
+  caption: 'caption',
+  footnote: 'footnote',
+  label1: 'label-1',
+  label2: 'label-2',
+  bodyDefault: 'body-default',
+  bodyLongform: 'body-longform',
+  subheading: 'subheading',
+  heading1: 'heading-1',
+  heading2: 'heading-2',
+  heading3: 'heading-3',
+  heading4: 'heading-4',
+  heading5: 'heading-5',
+  hero1: 'hero-1',
+  hero2: 'hero-2',
+  hero3: 'hero-3',
+  hero4: 'hero-4',
+  hero5: 'hero-5',
 };
 
 export const WEIGHT_STYLES = {
@@ -45,7 +62,7 @@ export const WEIGHT_STYLES = {
 };
 
 export type Weight = $Keys<typeof WEIGHT_STYLES>;
-export type TextStyle = $Keys<typeof TEXT_STYLES>;
+export type TextStyle = $Values<typeof TEXT_STYLES>;
 
 const getWeight = (bold, weight, textStyle) => {
   if (bold || weight === WEIGHT_STYLES.bold) {
@@ -66,7 +83,7 @@ type Props = {
   tagName: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
   className: ?string,
   bold: ?boolean,
-  weight: Weight,
+  weight: ?Weight,
 };
 
 const BpkText = (props: Props) => {
@@ -99,7 +116,7 @@ const BpkText = (props: Props) => {
 
 BpkText.propTypes = {
   children: PropTypes.node.isRequired,
-  textStyle: PropTypes.oneOf(Object.keys(TEXT_STYLES)),
+  textStyle: PropTypes.oneOf(Object.values(TEXT_STYLES)),
   tagName: PropTypes.oneOf([
     'span',
     'p',
@@ -112,8 +129,14 @@ BpkText.propTypes = {
     'h6',
   ]),
   className: PropTypes.string,
-  bold: deprecated(PropTypes.bool, 'Use "weight" instead.'),
-  weight: PropTypes.oneOf(Object.keys(WEIGHT_STYLES)),
+  bold: deprecated(
+    PropTypes.bool,
+    'Use a different "textStyle" to achieve the desired weight.',
+  ),
+  weight: deprecated(
+    PropTypes.oneOf(Object.keys(WEIGHT_STYLES)),
+    'Use a different "textStyle" to achieve the desired weight.',
+  ),
 };
 
 BpkText.defaultProps = {
@@ -121,7 +144,7 @@ BpkText.defaultProps = {
   tagName: 'span',
   className: null,
   bold: null,
-  weight: WEIGHT_STYLES.regular,
+  weight: null,
 };
 
 export default BpkText;

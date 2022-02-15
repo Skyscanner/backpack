@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,12 +41,12 @@ import {
 import {
   BpkCalendarNav,
   BpkCalendarGridHeader,
-  BpkCalendarGridWithTransition,
   BpkCalendarDate,
   withCalendarState,
   composeCalendar,
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
+  BpkCalendarGrid,
 } from 'bpk-component-calendar';
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 
@@ -542,7 +542,7 @@ const CustomComponent = () => {
     composeCalendar(
       BpkCalendarNav,
       BpkCalendarGridHeader,
-      BpkCalendarGridWithTransition,
+      BpkCalendarGrid,
       ColoredCalendarDate,
     ),
   );
