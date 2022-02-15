@@ -121,6 +121,26 @@ const SmallLabelExample = () => (
   <StatefulCheckbox id="abisko" name="abisko" label="Abisko" smallLabel />
 );
 
+const SmallLabelRequiredExample = () => (
+  <StatefulCheckbox
+    id="abisko"
+    name="abisko"
+    label="Backpack is the best design system"
+    smallLabel
+    isRequired
+  />
+);
+
+const SmallLabelInvalidExample = () => (
+  <StatefulCheckbox
+    id="abisko"
+    name="abisko"
+    label="Buñol"
+    smallLabel
+    valid={false}
+  />
+);
+
 const WhiteExample = () => (
   <BpkDarkExampleWrapper>
     <StatefulCheckbox
@@ -157,6 +177,8 @@ const MixedExample = () => (
     <WhiteExample />
     <RequiredExample />
     <SmallLabelExample />
+    <SmallLabelRequiredExample />
+    <SmallLabelInvalidExample />
   </div>
 );
 
@@ -169,5 +191,7 @@ export {
   DisabledExample,
   RequiredExample,
   SmallLabelExample,
+  SmallLabelRequiredExample,
+  SmallLabelInvalidExample,
   MixedExample,
 };
