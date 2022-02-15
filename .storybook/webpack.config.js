@@ -18,8 +18,16 @@
 
 const fs = require('fs');
 const path = require('path');
+const nodeSass = require('node-sass');
 
-const sassFunctions = require('../packages/bpk-mixins/sass-functions');
+const sassFunctions = {
+  'encodebase64($string)': str => {
+    const buffer = Buffer.from(str.getValue());
+
+    return nodeSass.types.String(buffer.toString('base64'));
+  },
+};
+
 const postCssPlugins = require('../scripts/webpack/postCssPlugins');
 
 const { BPK_TOKENS, ENABLE_CSS_MODULES } = process.env;
