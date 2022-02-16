@@ -46,7 +46,7 @@ type Props = {
   icon: ?Element<any>,
   onClick: () => mixed,
   tagName: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
-  textStyle: $Keys<typeof TEXT_STYLES>,
+  textStyle: $Values<typeof TEXT_STYLES>,
 };
 
 const BpkAccordionItem = (props: Props) => {
