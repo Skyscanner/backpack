@@ -646,11 +646,13 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-checkbox__input {
+  $checkbox-input-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
+
   position: absolute;
-  top: 0;
+  top: ($bpk-line-height-base - $checkbox-input-size) / 2;
   left: 0;
-  width: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
-  height: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
+  width: $checkbox-input-size;
+  height: $checkbox-input-size;
   margin: 0;
   padding: 0;
   border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-gray-tint-03;
