@@ -97,7 +97,7 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 | children  | node     | true     | -             |
 | id        | string   | true     | -             |
 | title     | string   | true     | -             |
-| weight    | See prop details     | false    | WEIGHT_STYLES.regular         |
+| weight (deprecated, use a different `textStyle` to achieve the desired weight)    | See prop details     | false    | null         |
 | expanded  | bool     | false    | false         |
 | icon      | node     | false    | null          |
 | onClick   | func     | false    | () => null    |
