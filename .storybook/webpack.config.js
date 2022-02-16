@@ -18,6 +18,7 @@
 
 const fs = require('fs');
 const path = require('path');
+
 const nodeSass = require('node-sass');
 
 const sassFunctions = {

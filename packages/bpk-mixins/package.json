@@ -1,6 +1,6 @@
 {
   "name": "bpk-mixins",
-  "version": "27.0.1",
+  "version": "26.0.1",
   "description": "Sass mixins and variables for Backpack.",
   "license": "Apache-2.0",
   "repository": {
