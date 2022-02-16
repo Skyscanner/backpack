@@ -1,3 +1,10 @@
+# 2022-02-16
+
+**Fixed:**
+
+- bpk-component-checkbox: 4.0.5 => 4.0.6
+    - Due to typography changes which affect the checkbox component, the checkbox and label were misaligned. This release fixes the misalignment.
+
 # 2022-02-09
 
 **Fixed:**
