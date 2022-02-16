@@ -82,28 +82,28 @@ class BpkCalendarGrid extends Component {
 
   render() {
     const {
-      month,
-      className,
       DateComponent,
+      cellClassName,
+      className,
       dateModifiers,
+      dateProps,
+      focusedDate,
       formatDateFull,
       formatMonth,
+      ignoreOutsideDate,
+      isKeyboardFocusable,
+      markOutsideDays,
+      markToday,
+      maxDate,
+      minDate,
+      month,
       onDateClick,
       onDateKeyDown,
-      weekStartsOn,
       preventKeyboardFocus,
-      isKeyboardFocusable,
-      markToday,
-      markOutsideDays,
       selectionConfiguration,
       selectionEnd,
       selectionStart,
-      focusedDate,
-      minDate,
-      maxDate,
-      ignoreOutsideDate,
-      dateProps,
-      cellClassName,
+      weekStartsOn,
     } = this.props;
 
     const { calendarMonthWeeks, daysOfWeek } = this.state;
@@ -121,7 +121,7 @@ class BpkCalendarGrid extends Component {
           weekStartsOn={weekStartsOn}
         />
         <tbody>
-          {calendarMonthWeeks.map(dates => (
+          {calendarMonthWeeks.map((dates) => (
             <Week
               key={formatIsoDate(dates[0])}
               month={month}

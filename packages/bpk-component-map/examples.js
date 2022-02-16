@@ -149,7 +149,7 @@ class StatefulBpkPriceMarker extends Component<
   };
 
   selectVenue = (id: string) => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       selectedId: id,
       viewedVenues: [...prevState.viewedVenues, id],
     }));
@@ -161,7 +161,7 @@ class StatefulBpkPriceMarker extends Component<
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
-        {venues.map(venue => (
+        {venues.map((venue) => (
           <BpkPriceMarker
             id={venue.id}
             label={venue.price}
@@ -204,7 +204,7 @@ class StatefulBpkIconMarker extends Component<
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
-        {venues.map(venue => (
+        {venues.map((venue) => (
           <BpkIconMarker
             position={{ latitude: venue.latitude, longitude: venue.longitude }}
             onClick={() => {
@@ -221,7 +221,7 @@ class StatefulBpkIconMarker extends Component<
   }
 }
 
-const onZoom = level => {
+const onZoom = (level) => {
   action(`Zoom changed to ${level}`);
 };
 

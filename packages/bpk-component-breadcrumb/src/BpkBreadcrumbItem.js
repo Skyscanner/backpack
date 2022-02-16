@@ -41,7 +41,7 @@ export type Props = {
 const RtlSupportedArrowRight = withRtlSupport(ArrowRight);
 
 const BpkBreadcrumbItem = (props: Props) => {
-  const { children, className, active, href, linkProps, ...rest } = props;
+  const { active, children, className, href, linkProps, ...rest } = props;
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.

@@ -44,15 +44,15 @@ export type Props = {
 const BpkFieldset = (props: Props) => {
   const {
     children,
-    label,
     className,
-    validationMessage,
-    valid,
-    required,
-    isCheckbox,
-    validationProps,
-    disabled,
     description,
+    disabled,
+    isCheckbox,
+    label,
+    required,
+    valid,
+    validationMessage,
+    validationProps,
     ...rest
   } = props;
 

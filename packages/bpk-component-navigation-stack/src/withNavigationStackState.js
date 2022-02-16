@@ -57,7 +57,7 @@ export default (
     }
 
     pushView = (view: Element<any>) => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const views = prevState.views.slice();
         views.push(view);
 
@@ -68,7 +68,7 @@ export default (
     };
 
     popView = () => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const views = prevState.views.slice();
         views.pop();
 
@@ -90,7 +90,7 @@ export default (
       };
 
       const [views, optionalCallbacks] = assignCallbacksToChildren
-        ? [this.state.views.map(view => cloneElement(view, callbacks)), {}]
+        ? [this.state.views.map((view) => cloneElement(view, callbacks)), {}]
         : [this.state.views, callbacks];
 
       return (

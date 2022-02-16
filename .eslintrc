@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "skyscanner",
+    "@skyscanner/eslint-config-skyscanner",
     "plugin:flowtype/recommended"
   ],
   "plugins": [
@@ -28,6 +28,21 @@
     "prettier/prettier": "error",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
+    // We override the eslint-config-skyscanner rule here as within Backpack
+    // we need certain order imports otherwise it will break components like the calendar.
+    "import/order": [
+      "error",
+      {
+      "groups": [
+        "builtin", 
+        "external", 
+        "parent", 
+        "sibling", 
+        "index"
+      ],
+      "newlines-between": "always"
+      }
+    ],
     // This is superceded by jsx-a11y/label-has-associated-control
     "jsx-a11y/label-has-for": "off",
     // We want to keep prop-types alongside flow types so we relax this rule to allow us to specify defaults for

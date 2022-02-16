@@ -28,12 +28,12 @@ import { remToPx } from './utils';
 
 const borderRadius = remToPx(borderRadiusXs);
 
-const getYPos = (point, { yScale, yScaleDataKey, maxYValue }) =>
+const getYPos = (point, { maxYValue, yScale, yScaleDataKey }) =>
   yScale(Math.min(point[yScaleDataKey], maxYValue));
 
 const getBarHeight = (
   point,
-  { height, margin, yScale, yScaleDataKey, maxYValue },
+  { height, margin, maxYValue, yScale, yScaleDataKey },
 ) => {
   const barHeight =
     height -
@@ -43,7 +43,7 @@ const getBarHeight = (
   return Math.max(barHeight, 0);
 };
 
-const isOutlier = (point, { yScaleDataKey, maxYValue }) =>
+const isOutlier = (point, { maxYValue, yScaleDataKey }) =>
   point[yScaleDataKey] > maxYValue;
 
 type Props = {
@@ -72,22 +72,22 @@ type Props = {
 
 const BpkBarchartBars = (props: Props) => {
   const {
-    outerPadding,
-    innerPadding,
-    onBarClick,
-    onBarHover,
-    onBarFocus,
-    data,
-    xScaleDataKey,
-    yScaleDataKey,
-    xScale,
-    yScale,
-    maxYValue,
-    margin,
-    height,
     BarComponent,
+    data,
     getBarLabel,
     getBarSelection,
+    height,
+    innerPadding,
+    margin,
+    maxYValue,
+    onBarClick,
+    onBarFocus,
+    onBarHover,
+    outerPadding,
+    xScale,
+    xScaleDataKey,
+    yScale,
+    yScaleDataKey,
     ...rest
   } = props;
 
@@ -115,9 +115,9 @@ const BpkBarchartBars = (props: Props) => {
             height={outlier ? barHeight + borderRadius : barHeight}
             label={getBarLabel(point, xScaleDataKey, yScaleDataKey)}
             outlier={isOutlier(point, props)}
-            onClick={onBarClick ? e => onBarClick(e, { point }) : null}
-            onHover={onBarHover ? e => onBarHover(e, { point }) : null}
-            onFocus={onBarFocus ? e => onBarFocus(e, { point }) : null}
+            onClick={onBarClick ? (e) => onBarClick(e, { point }) : null}
+            onHover={onBarHover ? (e) => onBarHover(e, { point }) : null}
+            onFocus={onBarFocus ? (e) => onBarFocus(e, { point }) : null}
             selected={getBarSelection(point)}
             padding={innerPadding}
             {...rest}

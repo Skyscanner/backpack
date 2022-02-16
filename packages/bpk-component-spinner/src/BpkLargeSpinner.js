@@ -35,7 +35,7 @@ type Props = {
 };
 
 const BpkLargeSpinner = (props: Props) => {
-  const { type, className, alignToButton, ...rest } = props;
+  const { alignToButton, className, type, ...rest } = props;
 
   const classNames = getClassName(
     'bpk-spinner',

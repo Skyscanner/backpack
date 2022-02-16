@@ -41,13 +41,13 @@ export type Props = {
 
 const BpkIconMarker = (props: Props) => {
   const {
-    icon,
-    position,
+    buttonProps,
     className,
     disabled,
-    selected,
+    icon,
     onClick,
-    buttonProps,
+    position,
+    selected,
     ...rest
   } = props;
 

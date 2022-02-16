@@ -57,7 +57,7 @@ describe('BpkBadge', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  Object.keys(BADGE_TYPES).forEach(badgeType => {
+  Object.keys(BADGE_TYPES).forEach((badgeType) => {
     it(`should render correctly with type="${badgeType}"`, () => {
       const { asFragment } = render(
         <BpkBadge type={badgeType}>Promociando</BpkBadge>,

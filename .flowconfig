@@ -2,6 +2,9 @@
 .*/node_modules/jsonlint/.*
 .*/node_modules/config-chain/test/broken.json
 
+# This is expected as this malformed file is for a test in the library.
+.*/node_modules/resolve/test/resolver/malformed_package_json/package.json
+
 # These libraries show 'malformed' errors in the logs when starting
 # the Flow server, so we ignore them.
 .*/node_modules/map-or-similar/.*

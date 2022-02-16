@@ -172,14 +172,14 @@ class BpkPopoverPortal extends Component<Props> {
 
   render() {
     const {
-      target,
       isOpen,
       onClose,
       placement,
-      portalStyle,
-      portalClassName,
-      renderTarget,
       popperModifiers,
+      portalClassName,
+      portalStyle,
+      renderTarget,
+      target,
       ...rest
     } = this.props;
 

@@ -33,7 +33,7 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-const handleKeyboardEvent = callback => event => {
+const handleKeyboardEvent = (callback) => (event) => {
   if (event.keyCode === KEYCODES.ENTER || event.keyCode === KEYCODES.SPACEBAR) {
     event.preventDefault();
     callback(event);
@@ -59,18 +59,18 @@ type Props = {
 
 const BpkBarchartBar = (props: Props) => {
   const {
-    x,
-    y,
-    width,
-    height,
     className,
+    height,
     label,
     onClick,
-    onHover,
     onFocus,
+    onHover,
     outlier,
-    selected,
     padding,
+    selected,
+    width,
+    x,
+    y,
     ...rest
   } = props;
 

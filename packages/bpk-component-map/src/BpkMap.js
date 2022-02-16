@@ -35,7 +35,7 @@ export type MapRef = ?{
   getBounds: () => Bounds,
   getCenter: () => LatLong,
   getZoom: () => number,
-  fitBounds: Bounds => void,
+  fitBounds: (Bounds) => void,
 };
 
 type Props = {
@@ -57,13 +57,13 @@ type Props = {
 const BpkMap = withGoogleMap((props: Props) => {
   const {
     bounds,
+    center,
     children,
     greedyGestureHandling,
     mapRef,
-    onTilesLoaded,
     onRegionChange,
+    onTilesLoaded,
     onZoom,
-    center,
     panEnabled,
     showControls,
     zoom,

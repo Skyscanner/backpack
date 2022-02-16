@@ -28,7 +28,7 @@ class StatefulBpkSelect extends React.Component {
     this.state = { value: 'oranges' };
   }
 
-  onChange = value => {
+  onChange = (value) => {
     action(`BpkSelect changed. New value: ${value}`);
     this.setState({ value });
   };
@@ -39,7 +39,7 @@ class StatefulBpkSelect extends React.Component {
         id="destination"
         name="destination"
         value={this.state.value}
-        onChange={event => {
+        onChange={(event) => {
           this.onChange(event.target.value);
         }}
         {...this.props}
@@ -55,7 +55,7 @@ class StatefulBpkSelect extends React.Component {
   }
 }
 
-const getFlagUriFromCountryCode = countryCode =>
+const getFlagUriFromCountryCode = (countryCode) =>
   `https://images.skyscnr.com/images/country/flag/header/${countryCode.toLowerCase()}.png`;
 
 const countries = [
@@ -79,8 +79,8 @@ class SelectWithImage extends React.Component {
 
   getItemByValue = () => {
     const { options } = this.props;
-    return val => {
-      const items = options.filter(o => o.id === val);
+    return (val) => {
+      const items = options.filter((o) => o.id === val);
       if (!items.length) throw new Error('Item does not exists');
       return items[0];
     };
@@ -88,7 +88,7 @@ class SelectWithImage extends React.Component {
 
   getItem = this.getItemByValue();
 
-  handleChange = e => {
+  handleChange = (e) => {
     const item = this.getItem(e.target.value);
 
     this.setState({
@@ -96,7 +96,7 @@ class SelectWithImage extends React.Component {
     });
   };
 
-  image = id => <img alt="Flag" src={getFlagUriFromCountryCode(id)} />;
+  image = (id) => <img alt="Flag" src={getFlagUriFromCountryCode(id)} />;
 
   render() {
     const { options, ...rest } = this.props;
@@ -107,7 +107,7 @@ class SelectWithImage extends React.Component {
         image={this.image(this.getItem(this.state.selected).id)}
         onChange={this.handleChange}
       >
-        {options.map(o => (
+        {options.map((o) => (
           <option key={o.id} disabled={o.disabled && 'disabled'} value={o.id}>
             {o.name}
           </option>

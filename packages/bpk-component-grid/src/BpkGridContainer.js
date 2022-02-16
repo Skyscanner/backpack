@@ -24,7 +24,7 @@ import STYLES from './BpkGridContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkGridContainer = props => {
+const BpkGridContainer = (props) => {
   const { children, className, debug, fullWidth, ...rest } = props;
   const classNames = [getClassName('bpk-grid__container')];
 

@@ -42,27 +42,27 @@ const MediaQueryStatus = (props: { children: Node, isActive: boolean }) => {
 const DefaultExample = () => (
   <div className={getClassName('bpk-breakpoints-demo')}>
     <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-      {isActive => (
+      {(isActive) => (
         <MediaQueryStatus isActive={isActive}>MOBILE</MediaQueryStatus>
       )}
     </BpkBreakpoint>
     <BpkBreakpoint query={BREAKPOINTS.TABLET}>
-      {isActive => (
+      {(isActive) => (
         <MediaQueryStatus isActive={isActive}>TABLET</MediaQueryStatus>
       )}
     </BpkBreakpoint>
     <BpkBreakpoint query={BREAKPOINTS.TABLET_ONLY}>
-      {isActive => (
+      {(isActive) => (
         <MediaQueryStatus isActive={isActive}>TABLET ONLY</MediaQueryStatus>
       )}
     </BpkBreakpoint>
     <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
-      {isActive => (
+      {(isActive) => (
         <MediaQueryStatus isActive={isActive}>ABOVE MOBILE</MediaQueryStatus>
       )}
     </BpkBreakpoint>
     <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-      {isActive => (
+      {(isActive) => (
         <MediaQueryStatus isActive={isActive}>ABOVE TABLET</MediaQueryStatus>
       )}
     </BpkBreakpoint>

@@ -36,7 +36,7 @@ type Props = {
 
 const BpkCloseButton = (props: Props) => {
   const classNames = [getClassName('bpk-close-button')];
-  const { label, onClick, className, customIcon, ...rest } = props;
+  const { className, customIcon, label, onClick, ...rest } = props;
   const Icon = customIcon || CloseIcon;
 
   if (className) {

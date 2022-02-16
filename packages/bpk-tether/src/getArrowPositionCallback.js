@@ -41,8 +41,8 @@ const getArrowPositionCallback = (
     return () => null;
   }
 
-  return props => {
-    const { top, left, targetPos } = props;
+  return (props) => {
+    const { left, targetPos, top } = props;
 
     const shouldApplyLeftOffset =
       hasClass(popoverElement, `${classNamePrefix}-element-attached-top`) ||

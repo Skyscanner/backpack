@@ -150,7 +150,7 @@ class BpkCalendarGridTransition extends Component {
     let min;
     let max;
     if (rest.minDate && rest.maxDate) {
-      ({ min, max } = getMonthRange(rest.minDate, rest.maxDate));
+      ({ max, min } = getMonthRange(rest.minDate, rest.maxDate));
     }
 
     return (
@@ -207,12 +207,13 @@ BpkCalendarGridTransition.defaultProps = {
   focusedDate: null,
 };
 
-const addCalendarGridTransition = TransitionComponent => props => (
-  <BpkCalendarGridTransition
-    TransitionComponent={TransitionComponent}
-    {...props}
-  />
-);
+const addCalendarGridTransition = (TransitionComponent) => (props) =>
+  (
+    <BpkCalendarGridTransition
+      TransitionComponent={TransitionComponent}
+      {...props}
+    />
+  );
 
 export default BpkCalendarGridTransition;
 export { addCalendarGridTransition };

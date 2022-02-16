@@ -92,32 +92,32 @@ class BpkCalendarDate extends PureComponent {
     }
   }
 
-  getButtonRef = button => {
+  getButtonRef = (button) => {
     this.button = button;
   };
 
   render() {
     const {
+      cellType,
+      className,
       date,
+      isBlocked,
+      isFocused,
+      isKeyboardFocusable,
+      isOutside,
+      isSelected,
+      isToday,
       modifiers,
       onClick,
       onDateKeyDown,
-      isFocused,
-      isSelected,
-      isBlocked,
-      isOutside,
-      isToday,
-      isKeyboardFocusable,
-      className,
-      style,
       selectionType,
-      cellType,
+      style,
       ...buttonProps
     } = this.props;
 
     const classNames = [getClassName('bpk-calendar-date')];
 
-    Object.keys(modifiers).forEach(modifier => {
+    Object.keys(modifiers).forEach((modifier) => {
       if (modifiers[modifier](this.props)) {
         classNames.push(
           getClassName(`bpk-calendar-date--modifier-${modifier}`),

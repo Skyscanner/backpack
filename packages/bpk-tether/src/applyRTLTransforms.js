@@ -18,7 +18,7 @@
 
 import { isRTL } from 'bpk-react-utils';
 
-const tryFlipAttachmentString = value => {
+const tryFlipAttachmentString = (value) => {
   if (value.indexOf('right') !== -1) {
     return value.replace('right', 'left');
   }
@@ -26,7 +26,7 @@ const tryFlipAttachmentString = value => {
   return value.replace('left', 'right');
 };
 
-const transform = tetherOptions => {
+const transform = (tetherOptions) => {
   const { attachment, targetAttachment, ...rest } = tetherOptions;
 
   const options = {};

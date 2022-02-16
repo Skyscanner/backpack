@@ -68,7 +68,7 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
           show={!this.state.dismissed}
           dismissButtonLabel="Dismiss"
           onDismiss={() => {
-            this.setState(prevState => ({
+            this.setState((prevState) => ({
               dismissed: true,
               updates: [...prevState.updates, 'Success alert dismissed'],
             }));
@@ -80,7 +80,7 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
           <BpkButtonPrimary
             className={getClassName('bpk-banner-alert-examples__component')}
             onClick={() => {
-              this.setState(prevState => ({
+              this.setState((prevState) => ({
                 dismissed: false,
                 updates: [...prevState.updates, 'Success alert added'],
               }));
@@ -93,7 +93,7 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
           visible
           className={getClassName('bpk-banner-alert-examples__component')}
         >
-          {this.state.updates.map(u => (
+          {this.state.updates.map((u) => (
             <>
               {u}
               <br />

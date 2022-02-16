@@ -24,7 +24,7 @@ import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
 
 const getDirection = () => getHtmlElement().dir || DIRECTIONS.LTR;
 
-const setDirection = direction => {
+const setDirection = (direction) => {
   const htmlElement = getHtmlElement();
 
   htmlElement.dir = direction;
@@ -48,13 +48,13 @@ class BpkRtlToggle extends React.Component {
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = e => {
+  handleKeyDown = (e) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'r') {
       this.toggleRtl(e);
     }
   };
 
-  toggleRtl = e => {
+  toggleRtl = (e) => {
     e.preventDefault();
 
     const direction =

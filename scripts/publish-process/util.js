@@ -61,7 +61,7 @@ const assert = (condition, message) => {
 const getCurrentPackageMeta = () => {
   const packages = JSON.parse(execSync(`npx lerna ls -l --json`).toString());
   assert(packages && packages.map, 'Failed to get current package meta');
-  return packages.map(p => ({
+  return packages.map((p) => ({
     name: p.name,
     private: p.private,
     path: p.location,
@@ -70,7 +70,7 @@ const getCurrentPackageMeta = () => {
 };
 
 const createGitTags = (changes, commitHash = '') => {
-  changes.forEach(c => {
+  changes.forEach((c) => {
     const tagMessage = `${c.name}@${c.newVersion}`;
     const command = `git tag -a ${tagMessage} ${commitHash} -m ${tagMessage}`;
     if (verbose) {
@@ -85,32 +85,32 @@ const createGitTags = (changes, commitHash = '') => {
   });
 };
 
-const publishPackageToNPM = packageName =>
-  new Promise(resolve => {
+const publishPackageToNPM = (packageName) =>
+  new Promise((resolve) => {
     exec(`(cd packages/${packageName} && npm publish)`, null, () => {
       publishDone();
       resolve();
     });
   });
 
-const publishPackagesToNPM = changes =>
-  new Promise(resolve => {
+const publishPackagesToNPM = (changes) =>
+  new Promise((resolve) => {
     bar.start(changes.length, 0);
-    const tasks = changes.map(c => publishPackageToNPM(c.name));
+    const tasks = changes.map((c) => publishPackageToNPM(c.name));
 
-    Promise.all(tasks).then(result => {
+    Promise.all(tasks).then((result) => {
       bar.stop();
       resolve(result);
     });
   });
 
-const updateDependencies = dependencies => {
+const updateDependencies = (dependencies) => {
   if (!dependencies) {
     return;
   }
   const dependencyList = {};
 
-  Object.keys(dependencies).forEach(depName => {
+  Object.keys(dependencies).forEach((depName) => {
     const depValue = dependencies[depName];
     if (depName.match('bpk-*')) {
       const newName = `${depName}-css`;
@@ -125,7 +125,7 @@ const updateDependencies = dependencies => {
 };
 
 const appendToPackageName = (c, text) =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     const packageJsonFilePath = path.join(c.path, 'package.json');
     const appendedName = `${c.name}-${text}`;
     const packageJsonData = JSON.parse(
@@ -149,10 +149,10 @@ const appendToPackageName = (c, text) =>
   });
 
 const appendToPackageNames = (changes, text) =>
-  new Promise(resolve => {
-    const tasks = changes.map(c => appendToPackageName(c, text));
+  new Promise((resolve) => {
+    const tasks = changes.map((c) => appendToPackageName(c, text));
 
-    Promise.all(tasks).then(result => {
+    Promise.all(tasks).then((result) => {
       resolve(result);
     });
   });

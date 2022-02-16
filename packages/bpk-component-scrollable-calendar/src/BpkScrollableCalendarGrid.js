@@ -28,8 +28,8 @@ import STYLES from './BpkScrollableCalendarGrid.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkScrollableCalendarGrid = props => {
-  const { month, className, ...rest } = props;
+const BpkScrollableCalendarGrid = (props) => {
+  const { className, month, ...rest } = props;
 
   const classNames = getClassName('bpk-scrollable-calendar-grid', className);
 

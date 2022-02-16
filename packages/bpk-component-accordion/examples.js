@@ -44,7 +44,7 @@ const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 const AlignedTimeIcon = withAlignment(TimeIcon, lineHeightBase, iconSizeSm);
 
-const CheckboxWrapper = props => (
+const CheckboxWrapper = (props) => (
   <div style={{ padding: `1rem 0` }} {...props} />
 );
 

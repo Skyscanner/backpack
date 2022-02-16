@@ -317,8 +317,8 @@ describe('BpkDataTable', () => {
     let sortDirectionValue = 'DESC';
     const sortFunction = ({ sortBy, sortDirection }) => {
       complexRows = _sortBy(complexRows, [
-        row => row.seat.office,
-        row => row.seat.desk,
+        (row) => row.seat.office,
+        (row) => row.seat.desk,
       ]);
       sortByValue = sortBy;
       sortDirectionValue = sortDirection;
@@ -399,10 +399,7 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
 
-    wrapper
-      .find('.bpk-data-table__row')
-      .last()
-      .simulate('click');
+    wrapper.find('.bpk-data-table__row').last().simulate('click');
 
     expect(onRowClick).toHaveBeenCalledTimes(1);
     expect(onRowClick).toHaveBeenCalledWith(rows[1]);
@@ -425,10 +422,7 @@ describe('BpkDataTable', () => {
 
     // Select the last element in the table, which after sorting
     // it will be letter Z so index 0.
-    wrapper
-      .find('.bpk-data-table__row')
-      .last()
-      .simulate('click');
+    wrapper.find('.bpk-data-table__row').last().simulate('click');
 
     expect(onRowClick).toHaveBeenCalledTimes(1);
     expect(onRowClick).toHaveBeenCalledWith(abcRows[0]);

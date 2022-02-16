@@ -28,11 +28,13 @@ describe('BpkBreakpoint', () => {
   it('should render if the breakpoint is matched', () => {
     jest.resetModules();
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-    jest.mock('react-responsive', () => props => props.children(true));
+    jest.mock('react-responsive', () => (props) => props.children(true));
 
     const { asFragment } = render(
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {matches => (matches ? <div>matches</div> : <div>does not match</div>)}
+        {(matches) =>
+          matches ? <div>matches</div> : <div>does not match</div>
+        }
       </BpkBreakpoint>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -41,11 +43,13 @@ describe('BpkBreakpoint', () => {
   it('should render if the breakpoint is not matched', () => {
     jest.resetModules();
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-    jest.mock('react-responsive', () => props => props.children(false));
+    jest.mock('react-responsive', () => (props) => props.children(false));
 
     const { asFragment } = render(
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {matches => (matches ? <div>matches</div> : <div>does not match</div>)}
+        {(matches) =>
+          matches ? <div>matches</div> : <div>does not match</div>
+        }
       </BpkBreakpoint>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -60,7 +64,7 @@ describe('BpkBreakpoint', () => {
     beforeEach(() => {
       jest.resetModules();
       BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-      jest.mock('react-responsive', () => props => props.children());
+      jest.mock('react-responsive', () => (props) => props.children());
 
       errorOrWarningSpy = jest.fn();
       oldError = window.console.error;

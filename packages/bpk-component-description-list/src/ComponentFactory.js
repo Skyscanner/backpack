@@ -25,7 +25,7 @@ import STYLES from './BpkDescriptionList.module.scss';
 const getClassName = cssModules(STYLES);
 
 const buildComponent = (TagName, baseClassName) => {
-  const Component = ({ className, children, ...rest }) => {
+  const Component = ({ children, className, ...rest }) => {
     const classNames = [getClassName(baseClassName)];
 
     if (className) {

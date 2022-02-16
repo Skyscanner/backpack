@@ -65,7 +65,7 @@ class ClearableInput extends Component<Props, State> {
     };
   }
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ value: e.target.value });
   };
 

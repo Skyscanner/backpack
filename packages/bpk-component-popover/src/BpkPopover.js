@@ -35,7 +35,7 @@ const EVENT_SOURCES = {
   CLOSE_LINK: 'CLOSE_LINK',
 };
 
-const bindEventSource = (source, callback) => event => {
+const bindEventSource = (source, callback) => (event) => {
   if (event.persist) {
     event.persist();
   }

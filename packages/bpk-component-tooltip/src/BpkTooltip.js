@@ -42,7 +42,7 @@ export type TooltipProps = {
 };
 
 const BpkTooltip = (props: TooltipProps) => {
-  const { id, children, className, padded, type, ...rest } = props;
+  const { children, className, id, padded, type, ...rest } = props;
 
   const classNames = getClassName('bpk-tooltip', className);
 

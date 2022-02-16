@@ -99,11 +99,7 @@ describe('BpkPagination', () => {
     const page = pagination.find('ul');
     expect(onPageChange.mock.calls.length).toBe(0);
 
-    page
-      .find('li')
-      .at(4)
-      .find('button')
-      .simulate('click');
+    page.find('li').at(4).find('button').simulate('click');
 
     expect(onPageChange.mock.calls.length).toBe(1);
     expect(onPageChange.mock.calls[0][0]).toEqual(19);

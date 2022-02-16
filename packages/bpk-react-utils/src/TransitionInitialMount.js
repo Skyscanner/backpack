@@ -35,10 +35,10 @@ type Props = {
 };
 
 const TransitionInitialMount = ({
-  appearClassName,
   appearActiveClassName,
-  transitionTimeout,
+  appearClassName,
   children,
+  transitionTimeout,
 }: Props) => (
   <CSSTransition
     classNames={{

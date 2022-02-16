@@ -124,18 +124,18 @@ const BpkBannerAlertInner = (props: Props) => {
   const {
     animateOnEnter,
     animateOnLeave,
-    children,
     bannerClassName,
+    children,
+    configuration,
     dismissButtonLabel,
+    expanded,
+    icon,
     message,
     onDismiss,
-    show,
-    type,
-    configuration,
-    toggleButtonLabel,
-    expanded,
     onExpandToggle,
-    icon,
+    show,
+    toggleButtonLabel,
+    type,
     ...rest
   } = props;
   const onBannerExpandToggle = () => {
@@ -158,7 +158,7 @@ const BpkBannerAlertInner = (props: Props) => {
   const sectionClassNames = [
     'bpk-banner-alert',
     `bpk-banner-alert--${type}`,
-  ].map(sectionClassName => getClassName(sectionClassName));
+  ].map((sectionClassName) => getClassName(sectionClassName));
 
   if (bannerClassName) {
     sectionClassNames.push(bannerClassName);

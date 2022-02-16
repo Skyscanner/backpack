@@ -34,7 +34,7 @@ require('@babel/register')({
 
 const webpack = require('webpack');
 
-const config = require('./webpack.config.babel.js');
+const config = require('./webpack.config.babel');
 
 /* eslint-disable no-console */
 webpack(config, (err, stats) => {

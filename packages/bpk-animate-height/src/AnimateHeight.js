@@ -22,7 +22,7 @@ import React, { Component } from 'react';
 // IE11 doesn't support `Number.isNaN` so we must use the global.
 // When IE11 support drops we can migrate.
 // eslint-disable-next-line no-restricted-globals
-const isNumber = n => !isNaN(parseFloat(n)) && isFinite(n);
+const isNumber = (n) => !isNaN(parseFloat(n)) && isFinite(n);
 
 const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
@@ -127,14 +127,8 @@ class AnimateHeight extends Component {
   };
 
   render() {
-    const {
-      children,
-      duration,
-      easing,
-      onAnimationComplete,
-      style,
-      ...rest
-    } = this.props;
+    const { children, duration, easing, onAnimationComplete, style, ...rest } =
+      this.props;
 
     const { height, overflow } = this.state;
 
@@ -159,7 +153,7 @@ class AnimateHeight extends Component {
         {...rest}
       >
         <div
-          ref={el => {
+          ref={(el) => {
             this.contentElement = el;
           }}
         >

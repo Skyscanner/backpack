@@ -42,7 +42,7 @@ export type Props<Row> = {
   headerHeight: number,
   className: ?string,
   defaultColumnSortIndex: number,
-  onRowClick: Row => mixed,
+  onRowClick: (Row) => mixed,
   ...$Exact<_SortProps>,
 };
 

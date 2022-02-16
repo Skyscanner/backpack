@@ -27,23 +27,25 @@ import COMMON_STYLES from './BpkButtonBase.module.scss';
 // we decided to inline it in this particular component so as not to bloat the
 // the bundles of consumers who are not yet on webpack 2
 // We'll revisit this again soon.
-const cssModules = (styles: {} = {}) => (className: string) =>
-  styles[className] ? styles[className] : className;
+const cssModules =
+  (styles: {} = {}) =>
+  (className: string) =>
+    styles[className] ? styles[className] : className;
 
 const getCommonClassName = cssModules(COMMON_STYLES);
 
 const BpkButton = (props: Props) => {
   const {
-    children,
-    href,
-    className,
-    onClick,
-    disabled,
-    submit,
-    large,
-    iconOnly,
     blank,
+    children,
+    className,
+    disabled,
+    href,
+    iconOnly,
+    large,
+    onClick,
     rel: propRel,
+    submit,
     ...rest
   } = props;
 

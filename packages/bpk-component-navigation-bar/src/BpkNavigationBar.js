@@ -43,12 +43,12 @@ const cloneWithClass = (elem: Element<any>, newStyle: string) => {
 
 const BpkNavigationBar = (props: Props) => {
   const {
-    id,
-    title,
     className,
+    id,
     leadingButton,
-    trailingButton,
     sticky,
+    title,
+    trailingButton,
     ...rest
   } = props;
 

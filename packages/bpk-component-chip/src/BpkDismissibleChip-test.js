@@ -54,7 +54,7 @@ describe('BpkDismissibleChip', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  Object.keys(CHIP_TYPES).forEach(chipType => {
+  Object.keys(CHIP_TYPES).forEach((chipType) => {
     it(`should render correctly with type="${chipType}"`, () => {
       const { asFragment } = render(<TestChip type={chipType} />);
       expect(asFragment()).toMatchSnapshot();

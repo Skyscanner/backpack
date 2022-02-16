@@ -38,16 +38,8 @@ type Props = {
 };
 
 const BpkInteractiveStar = (props: Props) => {
-  const {
-    selected,
-    type,
-    name,
-    value,
-    onClick,
-    onMouseEnter,
-    label,
-    ...rest
-  } = props;
+  const { label, name, onClick, onMouseEnter, selected, type, value, ...rest } =
+    props;
 
   const buttonClassNames = getClassName(
     'bpk-interactive-star',

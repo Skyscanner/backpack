@@ -158,12 +158,12 @@ export default function withLazyLoading(
     };
 
     render(): Node {
-      const { style, className, ...rest } = this.props;
+      const { className, style, ...rest } = this.props;
 
       return (
         <div
           id={this.placeholderReference}
-          ref={element => {
+          ref={(element) => {
             this.element = element;
           }}
           style={style}

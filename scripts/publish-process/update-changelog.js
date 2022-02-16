@@ -33,13 +33,14 @@ const createTimestamp = () => {
   return `# ${year}-${month}-${day}`;
 };
 
-const insertEntriesIntoChangelog = (changelogContents, changesToInsert) => {
-  return `${createTimestamp()}
+const insertEntriesIntoChangelog = (
+  changelogContents,
+  changesToInsert,
+) => `${createTimestamp()}
 
 ${changesToInsert}
 
 ${changelogContents}`;
-};
 
 const cli = () => {
   console.log(
