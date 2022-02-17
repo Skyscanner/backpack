@@ -1,3 +1,10 @@
+# 2022-02-17
+
+**Added:**
+
+- bpk-mixins: 26.0.2 => 26.1.0
+  - Added support for new versions of `node-sass` peer dependency to enable upgrading to Node 16. Now supports `"^4.12.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"`.
+
 # 2022-02-16
 
 **Fixed:**
