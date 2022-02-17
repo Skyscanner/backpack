@@ -18,7 +18,7 @@
     "@skyscanner/bpk-svgs": "^14.0.19"
   },
   "peerDependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
   },
   "devDependencies": {
     "bpk-react-utils": "^4.0.2"
