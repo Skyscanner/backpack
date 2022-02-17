@@ -41,7 +41,7 @@ describe('BpkOverlay', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  Object.keys(OVERLAY_TYPES).map(overlayType =>
+  Object.keys(OVERLAY_TYPES).map((overlayType) =>
     it(`should render correctly with overlayType={${overlayType}}`, () => {
       const { asFragment } = render(
         <BpkOverlay overlayType={overlayType}>
@@ -52,7 +52,7 @@ describe('BpkOverlay', () => {
     }),
   );
 
-  Object.keys(BORDER_RADIUS_STYLES).map(borderRadiusStyle =>
+  Object.keys(BORDER_RADIUS_STYLES).map((borderRadiusStyle) =>
     it(`should render correctly with borderRadiusStyle={${borderRadiusStyle}}`, () => {
       const { asFragment } = render(
         <BpkOverlay borderRadiusStyle={borderRadiusStyle}>

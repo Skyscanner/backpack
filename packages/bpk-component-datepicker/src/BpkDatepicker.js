@@ -142,13 +142,8 @@ class BpkDatepicker extends Component {
   };
 
   handleDateSelect = (startDate, endDate = null) => {
-    const {
-      onDateSelect,
-      selectionConfiguration,
-      minDate,
-      maxDate,
-      onClose,
-    } = this.props;
+    const { maxDate, minDate, onClose, onDateSelect, selectionConfiguration } =
+      this.props;
 
     // When the calendar is a single date we always want to close it when a date is selected
     // or if its a range calendar we only want to close the calendar when a range is selected.
@@ -190,9 +185,8 @@ class BpkDatepicker extends Component {
 
   render() {
     const {
-      changeMonthLabel,
       calendarComponent: Calendar,
-      inputComponent,
+      changeMonthLabel,
       closeButtonText,
       dateModifiers,
       daysOfWeek,
@@ -202,6 +196,8 @@ class BpkDatepicker extends Component {
       formatMonth,
       getApplicationElement,
       id,
+      initiallyFocusedDate,
+      inputComponent,
       inputProps,
       markOutsideDays,
       markToday,
@@ -210,12 +206,11 @@ class BpkDatepicker extends Component {
       nextMonthLabel,
       onMonthChange,
       previousMonthLabel,
+      renderTarget,
       selectionConfiguration,
       title,
-      weekStartsOn,
-      initiallyFocusedDate,
-      renderTarget,
       valid,
+      weekStartsOn,
       ...rest
     } = this.props;
 
@@ -264,7 +259,7 @@ class BpkDatepicker extends Component {
 
     return (
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {isMobile =>
+        {(isMobile) =>
           isMobile ? (
             <BpkModal
               id={`${id}-modal`}

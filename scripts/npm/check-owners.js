@@ -60,19 +60,19 @@ const meta = require('../../meta.json');
 
 let failures = false;
 
-const owners = meta.maintainers.map(maintainer => maintainer.npm).sort();
+const owners = meta.maintainers.map((maintainer) => maintainer.npm).sort();
 
 const packageDone = () => {
   packagesDataFetched += 1;
   bar.update(packagesDataFetched);
 };
 
-const getPackageMaintainers = pkg =>
+const getPackageMaintainers = (pkg) =>
   new Promise((resolve, reject) => {
-    https.get(`https://registry.npmjs.org/${pkg}/`, res => {
+    https.get(`https://registry.npmjs.org/${pkg}/`, (res) => {
       let body = '';
       res.setEncoding('utf8');
-      res.on('data', d => {
+      res.on('data', (d) => {
         body += d;
       });
       res.on('error', reject);
@@ -83,7 +83,7 @@ const getPackageMaintainers = pkg =>
           packageDone();
           resolve({
             name: pkg,
-            maintainers: pkgData.maintainers.map(m => m.name),
+            maintainers: pkgData.maintainers.map((m) => m.name),
             new: false,
           });
         } else {
@@ -97,7 +97,7 @@ const getPackageMaintainers = pkg =>
     });
   });
 
-const verifyMaintainers = data => {
+const verifyMaintainers = (data) => {
   if (data.new) {
     console.log(
       `${data.name} ⁇\n  Package does not seem to be in NPM registry (yet)`,
@@ -106,7 +106,7 @@ const verifyMaintainers = data => {
   }
 
   const sortedMaintainers = data.maintainers
-    .filter(m => !DEARLY_DEPARTED.includes(m))
+    .filter((m) => !DEARLY_DEPARTED.includes(m))
     .sort();
 
   if (sortedMaintainers.join('') === owners.join('')) {
@@ -127,18 +127,18 @@ console.log(`Maintainers are:\n  ${owners.join('\n  ')}\n`);
 const privatePackages = ['bpk-component-boilerplate'];
 
 readdir('packages/')
-  .then(packages => packages.filter(i => !privatePackages.includes(i)))
-  .then(packages => {
+  .then((packages) => packages.filter((i) => !privatePackages.includes(i)))
+  .then((packages) => {
     bar.start(packages.length, 0);
     return packages;
   })
-  .then(packages => Promise.all(packages.map(getPackageMaintainers)))
-  .then(packages => {
+  .then((packages) => Promise.all(packages.map(getPackageMaintainers)))
+  .then((packages) => {
     bar.stop();
     console.log('');
     return packages;
   })
-  .then(maintainers => maintainers.forEach(verifyMaintainers))
+  .then((maintainers) => maintainers.forEach(verifyMaintainers))
   .then(() => {
     if (failures) {
       console.log(
@@ -150,7 +150,7 @@ readdir('packages/')
       process.exit(0);
     }
   })
-  .catch(error => {
+  .catch((error) => {
     console.error(
       'An unknown error occured. Please check your network connection and try again.',
     );

@@ -62,7 +62,7 @@ class BpkScrollableCalendarGridList extends React.Component {
   getHtmlElement = () =>
     typeof document !== 'undefined' ? document.querySelector('html') : {};
 
-  rowRenderer({ index, key, style, parent }) {
+  rowRenderer({ index, key, parent, style }) {
     return (
       <CellMeasurer
         key={key}
@@ -111,7 +111,7 @@ class BpkScrollableCalendarGridList extends React.Component {
   }
 
   render() {
-    const { minDate, focusedDate, selectionConfiguration } = this.props;
+    const { focusedDate, minDate, selectionConfiguration } = this.props;
     return (
       <div
         className={getClassName(
@@ -120,7 +120,7 @@ class BpkScrollableCalendarGridList extends React.Component {
         )}
       >
         <AutoSizer>
-          {({ width, height }) =>
+          {({ height, width }) =>
             this.renderList(
               width,
               height,

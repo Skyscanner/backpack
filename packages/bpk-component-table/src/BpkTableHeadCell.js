@@ -29,7 +29,7 @@ const getClassName = cssModules(STYLES);
 type Props = { children: Node, alternate: boolean, className: ?string };
 
 const BpkTableHeadCell = (props: Props) => {
-  const { className, alternate, ...rest } = props;
+  const { alternate, className, ...rest } = props;
 
   const classNames = getClassName(
     'bpk-table__cell',

@@ -52,14 +52,14 @@ const getClassName = cssModules(STYLES);
 const DefaultExample = () => (
   <StatefulNavigationStack
     className={getClassName('bpk-navigation-stack-story-wrapper')}
-    initialViews={[<View centered>{props => <SimpleNav {...props} />}</View>]}
+    initialViews={[<View centered>{(props) => <SimpleNav {...props} />}</View>]}
   />
 );
 
 const WithNavBarExample = () => (
   <StatefulNavigationStack
     className={getClassName('bpk-navigation-stack-story-wrapper')}
-    initialViews={[<View>{props => <NavigationBar {...props} />}</View>]}
+    initialViews={[<View>{(props) => <NavigationBar {...props} />}</View>]}
   />
 );
 

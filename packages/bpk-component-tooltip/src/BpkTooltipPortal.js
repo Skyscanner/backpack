@@ -161,15 +161,15 @@ class BpkTooltipPortal extends Component<Props, State> {
   render() {
     const {
       ariaLabel,
-      padded,
-      target,
       children,
-      placement,
       hideOnTouchDevices,
+      padded,
+      placement,
+      popperModifiers,
       portalClassName,
       portalStyle,
       renderTarget,
-      popperModifiers,
+      target,
       ...rest
     } = this.props;
 
@@ -188,7 +188,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     return renderPortal ? (
       <Portal
         target={targetWithAccessibilityProps}
-        targetRef={targetRef => {
+        targetRef={(targetRef) => {
           this.targetRef = targetRef;
         }}
         isOpen={this.state.isOpen}

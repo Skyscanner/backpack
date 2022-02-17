@@ -24,9 +24,9 @@ import STYLES from './BpkGridRow.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkGridRow = props => {
+const BpkGridRow = (props) => {
   const classNames = [getClassName('bpk-grid__row')];
-  const { children, padded, className, ...rest } = props;
+  const { children, className, padded, ...rest } = props;
 
   if (padded) {
     classNames.push(getClassName('bpk-grid__row--padded'));

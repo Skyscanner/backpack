@@ -31,7 +31,7 @@ const AlignedArrowRightIcon = withButtonAlignment(
   withRtlSupport(ArrowRightIcon),
 );
 
-const nudgerIcon = forward =>
+const nudgerIcon = (forward) =>
   forward ? (
     <AlignedArrowRightIcon
       className={getClassName('bpk-pagination-nudger__icon')}
@@ -42,8 +42,8 @@ const nudgerIcon = forward =>
     />
   );
 
-const BpkPaginationNudger = props => {
-  const { label, onNudge, forward, disabled } = props;
+const BpkPaginationNudger = (props) => {
+  const { disabled, forward, label, onNudge } = props;
 
   return (
     <div className={getClassName('bpk-pagination-nudger')}>

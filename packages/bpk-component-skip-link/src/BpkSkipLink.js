@@ -32,7 +32,7 @@ export type Props = {
 };
 
 const BpkSkipLink = (props: Props) => {
-  const { label, href, className, ...rest } = props;
+  const { className, href, label, ...rest } = props;
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.

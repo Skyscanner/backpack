@@ -61,10 +61,10 @@ type Props = {
 };
 export default ({
   dataKey,
+  disableSort,
   label,
   sortBy,
   sortDirection,
-  disableSort,
 }: Props) => {
   const children = [
     <span

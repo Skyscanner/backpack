@@ -29,31 +29,31 @@ export function getDisplayName(Component: AbstractComponent<any>): string {
   );
 }
 
-const hasChildrenOfType = (
-  type: AbstractComponent<any>,
-  atLeast: number = 1,
-) => (props: { [string]: any }, propType: string, componentName: string) => {
-  if (Children.count(props[propType]) < atLeast) {
-    const inflectedNoun = atLeast === 1 ? 'child' : 'children';
-    return Error(
-      `${componentName} requires at least ${atLeast} '${getDisplayName(
-        type,
-      )}' ${inflectedNoun}.`,
-    );
-  }
-
-  const children = Children.toArray(props[propType]);
-  for (let i = 0; i < children.length; i += 1) {
-    const child = children[i];
-    if (child.type !== type && !(child.type.prototype instanceof type)) {
+const hasChildrenOfType =
+  (type: AbstractComponent<any>, atLeast: number = 1) =>
+  (props: { [string]: any }, propType: string, componentName: string) => {
+    if (Children.count(props[propType]) < atLeast) {
+      const inflectedNoun = atLeast === 1 ? 'child' : 'children';
       return Error(
-        `${componentName} only allows '${getDisplayName(type)}' as children. ` +
-          `Found '${getDisplayName(child.type)}'.`,
+        `${componentName} requires at least ${atLeast} '${getDisplayName(
+          type,
+        )}' ${inflectedNoun}.`,
       );
     }
-  }
 
-  return undefined;
-};
+    const children = Children.toArray(props[propType]);
+    for (let i = 0; i < children.length; i += 1) {
+      const child = children[i];
+      if (child.type !== type && !(child.type.prototype instanceof type)) {
+        return Error(
+          `${componentName} only allows '${getDisplayName(
+            type,
+          )}' as children. Found '${getDisplayName(child.type)}'.`,
+        );
+      }
+    }
+
+    return undefined;
+  };
 
 export default hasChildrenOfType;

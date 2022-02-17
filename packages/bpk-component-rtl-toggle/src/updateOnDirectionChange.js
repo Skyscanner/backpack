@@ -21,7 +21,7 @@ import { wrapDisplayName } from 'bpk-react-utils';
 
 import { getHtmlElement, DIRECTION_CHANGE_EVENT } from './utils';
 
-const updateOnDirectionChange = EnhancedComponent => {
+const updateOnDirectionChange = (EnhancedComponent) => {
   class UpdateOnDirectionChange extends Component {
     componentDidMount() {
       getHtmlElement().addEventListener(

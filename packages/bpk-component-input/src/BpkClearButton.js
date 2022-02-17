@@ -37,7 +37,7 @@ type Props = {
 
 const BpkClearButton = (props: Props) => {
   const classNames = [getClassName('bpk-clear-button')];
-  const { label, onClick, className, ...rest } = props;
+  const { className, label, onClick, ...rest } = props;
 
   if (className) {
     classNames.push(className);

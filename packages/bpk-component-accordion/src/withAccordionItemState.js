@@ -56,7 +56,7 @@ const withAccordionItemState = (ComposedComponent: ComponentType<any>) => {
 
     onClick = () => {
       this.setState(
-        prevState => ({
+        (prevState) => ({
           expanded: !prevState.expanded,
         }),
         this.props.onClick || (() => {}),
@@ -64,7 +64,7 @@ const withAccordionItemState = (ComposedComponent: ComponentType<any>) => {
     };
 
     render() {
-      const { initiallyExpanded, expanded, onClick, ...rest } = this.props;
+      const { expanded, initiallyExpanded, onClick, ...rest } = this.props;
 
       return (
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.

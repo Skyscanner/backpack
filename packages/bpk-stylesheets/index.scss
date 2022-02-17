@@ -42,7 +42,7 @@ body {
   line-height: 1.3rem; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
 
   :global(&.scaffold-font-size) {
-    font-size: 13px; /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */
+    font-size: 13px; /* stylelint-disable-line unit-disallowed-list, scale-unlimited/declaration-strict-value */
   }
 
   :global(&.enable-font-smoothing) {

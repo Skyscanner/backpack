@@ -85,7 +85,7 @@ class BpkProgress extends Component<Props> {
   };
 
   componentDidUpdate(previousProps: Props) {
-    const { value, max } = this.props;
+    const { max, value } = this.props;
     if (
       value >= max &&
       value !== previousProps.value &&
@@ -100,7 +100,7 @@ class BpkProgress extends Component<Props> {
   }
 
   handleCompleteTransitionEnd = () => {
-    const { onCompleteTransitionEnd, value, max } = this.props;
+    const { max, onCompleteTransitionEnd, value } = this.props;
     if (value >= max && onCompleteTransitionEnd) {
       onCompleteTransitionEnd();
     }
@@ -108,14 +108,14 @@ class BpkProgress extends Component<Props> {
 
   render() {
     const {
-      min,
-      max,
-      value,
-      small,
-      stepped,
       className,
       getValueText,
+      max,
+      min,
+      small,
       stepColor,
+      stepped,
+      value,
       ...rest
     } = this.props;
     const classNames = [getClassName('bpk-progress')];

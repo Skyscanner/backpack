@@ -36,7 +36,7 @@ type Props = {
 };
 
 const BpkCard = (props: Props) => {
-  const { children, className, href, padded, blank, atomic, ...rest } = props;
+  const { atomic, blank, children, className, href, padded, ...rest } = props;
 
   const classNames = [getClassName('bpk-card')];
   if (padded) {

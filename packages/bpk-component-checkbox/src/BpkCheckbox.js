@@ -41,16 +41,16 @@ type Props = {
 
 const BpkCheckbox = (props: Props) => {
   const {
-    name,
-    label,
-    required,
-    disabled,
-    white,
+    checked,
     className,
+    disabled,
+    indeterminate,
+    label,
+    name,
+    required,
     smallLabel,
     valid,
-    checked,
-    indeterminate,
+    white,
     ...rest
   } = props;
 
@@ -86,7 +86,7 @@ const BpkCheckbox = (props: Props) => {
         aria-label={label}
         aria-invalid={isInvalid}
         data-indeterminate={indeterminate}
-        ref={e => {
+        ref={(e) => {
           if (e) {
             e.indeterminate = indeterminate;
           }

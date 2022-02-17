@@ -32,7 +32,7 @@ const DIALING_CODE_TO_ID_MAP = {
   '998_uz': 'uz',
 };
 
-const getFlag = dialingCode => {
+const getFlag = (dialingCode) => {
   const countryCode = DIALING_CODE_TO_ID_MAP[dialingCode];
   const url = `https://images.skyscnr.com/images/country/flag/header/${countryCode}.png`;
   return <BpkImage altText="Flag" height={38} width={50} src={url} />;
@@ -79,16 +79,16 @@ class StoryContainer extends Component<
 
   render() {
     const {
-      large,
-      validNumber,
-      validationMessage,
-      dialingCodeMask,
       description,
+      dialingCodeMask,
       disabled,
+      large,
       required,
       useLongLabels,
+      validNumber,
+      validationMessage,
     } = this.props;
-    const { value, dialingCode } = this.state;
+    const { dialingCode, value } = this.state;
 
     let dialingCodeLabel = 'Dialing code';
     let phoneNumberLabel = 'Telephone number';

@@ -23,7 +23,7 @@ import {
 
 const CSS_UNIT_REGEX = /(^[+-]?(?:\d*\.)?\d+)(.+)/i;
 
-const splitToken = value => {
+const splitToken = (value) => {
   const match = value.match(CSS_UNIT_REGEX);
   if (!match) {
     throw new Error(
@@ -47,7 +47,7 @@ export const getCalendarGridWidth = (multiplier = 1) => {
   return `${width}${sizeUnit}`;
 };
 
-export const getTransformStyles = transformValue => {
+export const getTransformStyles = (transformValue) => {
   const transform = `translateX(${transformValue})`;
   return {
     transform,

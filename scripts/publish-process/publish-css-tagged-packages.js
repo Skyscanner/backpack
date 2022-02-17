@@ -28,11 +28,11 @@
 /* @flow */
 
 const {
-  getCurrentPackageMeta,
   appendToPackageNames,
+  getCurrentPackageMeta,
+  logVerbose,
   publishPackagesToNPM,
   verbose,
-  logVerbose,
 } = require('./util');
 
 const cli = async () => {

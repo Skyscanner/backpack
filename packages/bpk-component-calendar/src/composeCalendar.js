@@ -26,23 +26,29 @@ import STYLES from './BpkCalendar.module.scss';
 const getClassName = cssModules(STYLES);
 
 const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
-  const BpkCalendar = props => {
+  const BpkCalendar = (props) => {
     const classNames = [getClassName('bpk-calendar')];
 
     const {
       changeMonthLabel,
       className,
       dateModifiers,
+      dateProps,
       daysOfWeek,
+      fixedWidth,
       focusedDate,
       formatDateFull,
       formatMonth,
+      gridClassName,
+      gridProps,
+      headerProps,
       id,
       markOutsideDays,
       markToday,
       maxDate,
       minDate,
       month,
+      navProps,
       nextMonthLabel,
       onDateClick,
       onDateKeyDown,
@@ -50,14 +56,8 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       preventKeyboardFocus,
       previousMonthLabel,
       selectionConfiguration,
-      weekStartsOn,
-      fixedWidth,
-      gridClassName,
-      navProps,
-      headerProps,
-      gridProps,
-      dateProps,
       weekDayKey,
+      weekStartsOn,
     } = props;
 
     if (className) {

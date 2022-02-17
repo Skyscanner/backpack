@@ -52,15 +52,15 @@ type Props = {
 const BpkAccordionItem = (props: Props) => {
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
   const {
-    id,
-    title,
     children,
-    weight,
     expanded,
     icon,
+    id,
     onClick,
     tagName,
     textStyle,
+    title,
+    weight,
     ...rest
   } = props;
 

@@ -41,14 +41,14 @@ type Props = {
 const BpkTicket = (props: Props) => {
   const {
     children,
+    className,
     href,
     padded,
     stub,
-    vertical,
-    withNotches,
-    className,
     stubClassName,
     stubProps,
+    vertical,
+    withNotches,
     ...rest
   } = props;
 

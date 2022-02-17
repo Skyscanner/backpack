@@ -51,13 +51,13 @@ type Props = {
 
 const BpkPriceMarker = (props: Props) => {
   const {
-    label,
-    position,
-    className,
     arrowClassName,
-    disabled,
-    onClick,
     buttonProps,
+    className,
+    disabled,
+    label,
+    onClick,
+    position,
     status,
     ...rest
   } = props;

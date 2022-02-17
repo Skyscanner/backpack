@@ -35,8 +35,8 @@ export const ICON_POSITION = {
   TRAILING: 'trailing',
 };
 
-const getPropsIcon = props => {
-  const { disabled, loading, icon, iconDisabled, iconLoading } = props;
+const getPropsIcon = (props) => {
+  const { disabled, icon, iconDisabled, iconLoading, loading } = props;
 
   if (loading) {
     return iconLoading;
@@ -60,7 +60,7 @@ const getEnabledIcon = (large: boolean) => {
 type IconProps = { loading: boolean, large: boolean };
 
 const getDefaultIcon = (props: IconProps) => {
-  const { loading, large } = props;
+  const { large, loading } = props;
 
   if (loading) {
     return getSpinner(large);
@@ -88,12 +88,12 @@ const BpkLoadingButton = (props: LoadingProps) => {
   const {
     children,
     disabled,
-    loading,
-    iconOnly,
     icon,
     iconDisabled,
     iconLoading,
+    iconOnly,
     iconPosition,
+    loading,
     ...rest
   } = props;
 

@@ -43,7 +43,7 @@ class FormValidationContainer extends Component {
   }
 
   toggleExpanded = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       expanded: !prevState.expanded,
     }));
   };
@@ -79,12 +79,12 @@ class InputContainer extends Component {
     if (FormComponent === BpkCheckbox) {
       overrideProps = {
         checked: this.state.value,
-        onChange: e => this.setState({ value: e.target.checked }),
+        onChange: (e) => this.setState({ value: e.target.checked }),
       };
     } else {
       overrideProps = {
         value: this.state.value,
-        onChange: e => this.setState({ value: e.target.value }),
+        onChange: (e) => this.setState({ value: e.target.value }),
       };
       if (FormComponent === BpkInput) {
         overrideProps.onClear = () => this.setState({ value: '' });

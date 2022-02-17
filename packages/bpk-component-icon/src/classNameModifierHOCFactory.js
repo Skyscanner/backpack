@@ -20,33 +20,34 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
-export default (displayName, classNamesToAdd = []) => ComposedComponent => {
-  const ClassNameModifierHOC = props => {
-    let classNames = [];
-    const { className, ...rest } = props;
+export default (displayName, classNamesToAdd = []) =>
+  (ComposedComponent) => {
+    const ClassNameModifierHOC = (props) => {
+      let classNames = [];
+      const { className, ...rest } = props;
 
-    if (className) {
-      classNames.push(className);
-    }
-    classNames = classNamesToAdd.length
-      ? classNames.concat(classNamesToAdd)
-      : classNames;
+      if (className) {
+        classNames.push(className);
+      }
+      classNames = classNamesToAdd.length
+        ? classNames.concat(classNamesToAdd)
+        : classNames;
 
-    return <ComposedComponent className={classNames.join(' ')} {...rest} />;
+      return <ComposedComponent className={classNames.join(' ')} {...rest} />;
+    };
+
+    ClassNameModifierHOC.propTypes = {
+      className: PropTypes.string,
+    };
+
+    ClassNameModifierHOC.defaultProps = {
+      className: null,
+    };
+
+    ClassNameModifierHOC.displayName = wrapDisplayName(
+      ComposedComponent,
+      displayName,
+    );
+
+    return ClassNameModifierHOC;
   };
-
-  ClassNameModifierHOC.propTypes = {
-    className: PropTypes.string,
-  };
-
-  ClassNameModifierHOC.defaultProps = {
-    className: null,
-  };
-
-  ClassNameModifierHOC.displayName = wrapDisplayName(
-    ComposedComponent,
-    displayName,
-  );
-
-  return ClassNameModifierHOC;
-};

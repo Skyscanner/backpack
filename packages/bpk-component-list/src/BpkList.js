@@ -33,7 +33,7 @@ type Props = {
 };
 
 const BpkList = (props: Props) => {
-  const { children, ordered, className } = props;
+  const { children, className, ordered } = props;
 
   const TagName: any = ordered ? 'ol' : 'ul';
   const classNames: string = getClassName('bpk-list', className);

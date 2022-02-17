@@ -27,7 +27,7 @@ const reactVersionErrors = [];
 
 console.log('Checking React versions...');
 
-reactLibs.forEach(lib => {
+reactLibs.forEach((lib) => {
   if (reactDeps[lib] !== skyscannerStandard) {
     reactVersionErrors.push(
       `Your version of ${lib} ${reactDeps[lib]} does not match the company version ${skyscannerStandard}`,

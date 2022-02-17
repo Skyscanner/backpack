@@ -55,15 +55,15 @@ export type Props = {
 
 const BpkModal = (props: Props) => {
   const {
+    closeOnEscPressed,
+    closeOnScrimClick,
+    fullScreen,
+    fullScreenOnMobile,
+    isIphone,
     isOpen,
     onClose,
-    isIphone,
-    target,
     renderTarget,
-    fullScreenOnMobile,
-    fullScreen,
-    closeOnScrimClick,
-    closeOnEscPressed,
+    target,
     ...rest
   } = props;
 

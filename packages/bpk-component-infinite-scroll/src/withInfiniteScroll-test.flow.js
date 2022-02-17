@@ -48,7 +48,7 @@ class List extends Component<ListProps> {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <div id="list" {...rest}>
-        {elements.forEach(element => (
+        {elements.forEach((element) => (
           <div key={element}>{element}</div>
         ))}
       </div>
@@ -88,10 +88,10 @@ const InfiniteList = withInfiniteScroll(List);
       elementsPerScroll={5}
       initiallyLoadedElements={1}
       loaderIntersectionTrigger="small"
-      onScroll={evt => {}} // eslint-disable-line no-unused-vars
-      onScrollFinished={evt => {}} // eslint-disable-line no-unused-vars
+      onScroll={(evt) => {}} // eslint-disable-line no-unused-vars
+      onScrollFinished={(evt) => {}} // eslint-disable-line no-unused-vars
       renderLoadingComponent={() => <div />}
-      renderSeeMoreComponent={onClick => (
+      renderSeeMoreComponent={(onClick) => (
         <button type="button" onClick={onClick}>
           Button
         </button>

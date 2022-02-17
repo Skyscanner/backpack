@@ -28,6 +28,11 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const generateTheme = ({
+  docsSidebarBackground,
+  docsSidebarLink,
+  docsSidebarLinkBorder,
+  docsSidebarSelectedArrowColor,
+  fontSize,
   primaryColor300,
   primaryColor500,
   primaryColor600,
@@ -35,11 +40,6 @@ const generateTheme = ({
   secondaryColor500,
   secondaryColor600,
   secondaryColor700,
-  fontSize,
-  docsSidebarBackground,
-  docsSidebarLink,
-  docsSidebarLinkBorder,
-  docsSidebarSelectedArrowColor,
   themeName,
 }) => ({
   themeName,

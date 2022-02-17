@@ -25,14 +25,14 @@ import STYLES from './bpk-content-bubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkContentBubble = props => {
+const BpkContentBubble = (props) => {
   const {
-    flareProps,
     className,
-    contentClassName,
-    showPointer,
     content,
+    contentClassName,
+    flareProps,
     rounded,
+    showPointer,
     ...rest
   } = props;
 

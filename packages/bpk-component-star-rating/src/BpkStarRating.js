@@ -61,11 +61,11 @@ type Props = {
 
 const BpkStarRating = (props: Props) => {
   const {
+    className,
+    large,
+    maxRating,
     rating,
     ratingLabel,
-    maxRating,
-    large,
-    className,
     rounding,
     ...rest
   } = props;

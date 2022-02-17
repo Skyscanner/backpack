@@ -25,8 +25,8 @@ import STYLES from './BpkSlider.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkSlider = props => {
-  const { large, className, ...rest } = props;
+const BpkSlider = (props) => {
+  const { className, large, ...rest } = props;
   const invert = isRTL();
   const classNames = [getClassName('bpk-slider')];
   const thumbClassNames = [getClassName('bpk-slider__handle')];

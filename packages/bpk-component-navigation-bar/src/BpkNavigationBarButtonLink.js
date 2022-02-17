@@ -35,8 +35,8 @@ export type Props = {
 };
 
 const BpkNavigationBarButtonLink = ({
-  className,
   children,
+  className,
   ...rest
 }: Props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.

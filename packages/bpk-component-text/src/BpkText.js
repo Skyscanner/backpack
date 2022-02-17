@@ -89,8 +89,8 @@ type Props = {
 const BpkText = (props: Props) => {
   const {
     bold,
-    className,
     children,
+    className,
     tagName: TagName,
     textStyle,
     weight,

@@ -43,14 +43,14 @@ class GroupExample extends React.Component<{}, { value: string }> {
     const { ...rest } = this.props;
     return (
       <div>
-        {['Lagos', 'Kano', 'Ibadan', 'Benin City'].map(city => (
+        {['Lagos', 'Kano', 'Ibadan', 'Benin City'].map((city) => (
           <div>
             <BpkRadio
               {...rest}
               id={city}
               name={city}
               label={city}
-              onChange={event => {
+              onChange={(event) => {
                 this.updateValue(event.target.value);
               }}
               value={city}

@@ -36,7 +36,7 @@ type Props = {
 };
 
 const BpkChartDataTable = (props: Props) => {
-  const { data, xAxisLabel, yAxisLabel, xScaleDataKey, yScaleDataKey } = props;
+  const { data, xAxisLabel, xScaleDataKey, yAxisLabel, yScaleDataKey } = props;
   const rows = data.map((point, i) => {
     const key = `chart-data-table-row-${i}`;
 

@@ -61,7 +61,7 @@ describe('hasChildrenOfType', () => {
     );
   });
 
-  it('should return an error if it has single non matching child ', () => {
+  it('should return an error if it has single non matching child', () => {
     const error = runPropTypeValidatorWith(
       <Component>
         <div />
@@ -72,7 +72,7 @@ describe('hasChildrenOfType', () => {
     );
   });
 
-  it('should return an error if it has a mix of matching and non matching children ', () => {
+  it('should return an error if it has a mix of matching and non matching children', () => {
     const error = runPropTypeValidatorWith(
       <Component>
         <Child />

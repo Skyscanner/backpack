@@ -33,7 +33,7 @@ type Props = {
 };
 
 const BpkTable = (props: Props) => {
-  const { children, className, alternate, ...rest } = props;
+  const { alternate, children, className, ...rest } = props;
 
   const classNames = getClassName(
     'bpk-table',

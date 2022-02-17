@@ -62,12 +62,12 @@ class Image extends Component<ImageProps> {
     }
   }
 
-  setImgRef = el => {
+  setImgRef = (el) => {
     this.img = el;
   };
 
   render() {
-    const { hidden, altText, onImageLoad, ...rest } = this.props;
+    const { altText, hidden, onImageLoad, ...rest } = this.props;
 
     const imgClassNames = [getClassName('bpk-image__img')];
 
@@ -160,16 +160,16 @@ class BpkImage extends Component<BpkImageProps> {
 
   render(): Node {
     const {
-      width,
-      height,
-      aspectRatio,
       altText,
+      aspectRatio,
       borderRadiusStyle,
       className,
+      height,
       inView,
       loading,
       onLoad,
       style,
+      width,
       ...rest
     } = this.props;
 
@@ -195,7 +195,7 @@ class BpkImage extends Component<BpkImageProps> {
     return (
       <div style={style} className={className}>
         <div
-          ref={div => {
+          ref={(div) => {
             this.placeholder = div;
           }}
           style={{ height: 0, paddingBottom: aspectRatioPercentage }}

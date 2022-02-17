@@ -45,7 +45,7 @@ const BpkBreakpoint = (props: Props) => {
 const queryValidator = (props: Props, ...rest) => {
   if (!props.legacy) {
     return PropTypes.oneOf(
-      Object.keys(BREAKPOINTS).map(key => BREAKPOINTS[key]),
+      Object.keys(BREAKPOINTS).map((key) => BREAKPOINTS[key]),
     ).isRequired(props, ...rest);
   }
   return PropTypes.string.isRequired(props, ...rest);

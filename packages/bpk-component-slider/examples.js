@@ -31,11 +31,11 @@ class SliderContainer extends Component {
     };
   }
 
-  handleChange = value => {
+  handleChange = (value) => {
     this.setState({ value });
   };
 
-  valueTimeFormatter = value => `12:${value.toString().padStart(2, '0')}pm`;
+  valueTimeFormatter = (value) => `12:${value.toString().padStart(2, '0')}pm`;
 
   valueComponent = (min, max, formatter) => (
     <p>
@@ -69,7 +69,7 @@ class SliderContainer extends Component {
           {...this.props}
           value={this.state.value}
           ariaLabel={['minimum', 'maximum']}
-          ariaValuetext={time ? s => this.valueTimeFormatter(s.value) : null}
+          ariaValuetext={time ? (s) => this.valueTimeFormatter(s.value) : null}
         />
         <br />
       </div>

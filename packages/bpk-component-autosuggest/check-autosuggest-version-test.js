@@ -21,7 +21,7 @@
 import packageFile from './package.json';
 
 describe('Check version of react-autosuggest', () => {
-  it('it should not be v10 or higher due to compatibility issues with react version < 16.3', () => {
+  it('should not be v10 or higher due to compatibility issues with react version < 16.3', () => {
     expect(packageFile.dependencies['react-autosuggest']).toBe('^9.4.3');
   });
 });

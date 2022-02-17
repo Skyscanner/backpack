@@ -35,7 +35,7 @@ type Props = {
 };
 
 const BpkHeading = (props: Props) => {
-  const { children, level, className, id, bottomMargin } = props;
+  const { bottomMargin, children, className, id, level } = props;
   const classNames = [getClassName(`bpk-heading-${level}`)];
   const Level = level;
 

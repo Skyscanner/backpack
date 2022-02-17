@@ -80,10 +80,10 @@ const BpkInteractiveStarRating = (props: Props) => {
     stars.push(
       <BpkInteractiveStar
         key={`star-${starNumber}`}
-        onClick={event => onRatingSelect(starNumber, event)}
+        onClick={(event) => onRatingSelect(starNumber, event)}
         type={type}
         large={large}
-        onMouseEnter={event => onRatingHover(starNumber, event)}
+        onMouseEnter={(event) => onRatingHover(starNumber, event)}
         selected={rating === starNumber}
         label={getStarLabel(starNumber, maxRating)}
         name={`${id}_rating`}

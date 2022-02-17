@@ -98,7 +98,7 @@ function getSelectionType(
   weekStartsOn,
   ignoreOutsideDate,
 ) {
-  const { startDate, endDate } = selectionConfiguration;
+  const { endDate, startDate } = selectionConfiguration;
   const sameStartDay = isSameDay(date, startDate);
   const sameEndDay = isSameDay(date, endDate);
   const rangeDates = startDate && endDate;
@@ -287,8 +287,10 @@ class Week extends Component {
     const {
       DateComponent,
       dateModifiers,
+      dateProps,
       focusedDate,
       formatDateFull,
+      ignoreOutsideDate,
       isKeyboardFocusable,
       markOutsideDays,
       markToday,
@@ -299,13 +301,11 @@ class Week extends Component {
       onDateKeyDown,
       preventKeyboardFocus,
       selectionConfiguration,
-      ignoreOutsideDate,
-      dateProps,
       weekStartsOn,
     } = this.props;
 
     if (ignoreOutsideDate) {
-      const daysOutside = this.props.dates.map(date =>
+      const daysOutside = this.props.dates.map((date) =>
         isSameMonth(date, month),
       );
 
@@ -318,7 +318,7 @@ class Week extends Component {
 
     return (
       <tr className={getClassName('bpk-calendar-grid__week')}>
-        {this.props.dates.map(date => {
+        {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate
               ? !isWithinRange(date, { start: minDate, end: maxDate })
@@ -421,8 +421,8 @@ Week.defaultProps = {
 /*
   DateContainer - one for each date in the grid; wraps the actual BpkCalendarDate (or custom) component
 */
-const DateContainer = props => {
-  const { className, children, selectionType, isBlocked, isEmptyCell } = props;
+const DateContainer = (props) => {
+  const { children, className, isBlocked, isEmptyCell, selectionType } = props;
 
   const classNames = getClassName(
     'bpk-calendar-grid__date',

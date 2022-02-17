@@ -121,10 +121,7 @@ describe('BpkPopover', () => {
     const event = {
       target: '<BpkCloseButton>',
     };
-    popover
-      .find('BpkCloseButton')
-      .at(0)
-      .simulate('click', event);
+    popover.find('BpkCloseButton').at(0).simulate('click', event);
 
     expect(onCloseSpy.mock.calls[0][0].target).toEqual('<BpkCloseButton>');
     expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'CLOSE_BUTTON' });
@@ -154,10 +151,7 @@ describe('BpkPopover', () => {
       const event = {
         target: '<BpkButtonLink>',
       };
-      popover
-        .find('BpkButtonLink')
-        .at(0)
-        .simulate('click', event);
+      popover.find('BpkButtonLink').at(0).simulate('click', event);
 
       expect(onCloseSpy.mock.calls[0][0].target).toEqual('<BpkButtonLink>');
       expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'CLOSE_LINK' });
@@ -187,10 +181,7 @@ describe('BpkPopover', () => {
       const event = {
         target: '<BpkButtonLink>',
       };
-      popover
-        .find('BpkButtonLink')
-        .at(0)
-        .simulate('click', event);
+      popover.find('BpkButtonLink').at(0).simulate('click', event);
 
       expect(onCloseSpy.mock.calls[0][0].target).toEqual('<BpkButtonLink>');
       expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'CLOSE_LINK' });
