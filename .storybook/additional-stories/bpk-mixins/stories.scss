@@ -16,17 +16,9 @@
  * limitations under the License.
  */
 
-@import 'index';
+@import '~bpk-mixins';
 
 .bpk-icon {
-  &-sm__chart {
-    @include bpk-icon-sm(chart-monteverde);
-  }
-
-  &-lg__chart {
-    @include bpk-icon-lg(chart-monteverde);
-  }
-
   &__chart--small {
     @include bpk-icon(chart, $bpk-color-monteverde, small);
   }

@@ -85,9 +85,9 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 | [`bpk-theming`](/packages/bpk-theming) | [![npm version](https://badge.fury.io/js/bpk-theming.svg)](http://badge.fury.io/js/bpk-theming) |
 | [`bpk-component-ticket`](/packages/bpk-component-ticket) | [![npm version](https://badge.fury.io/js/bpk-component-ticket.svg)](http://badge.fury.io/js/bpk-component-ticket) |
 | [`bpk-component-tooltip`](/packages/bpk-component-tooltip) | [![npm version](https://badge.fury.io/js/bpk-component-tooltip.svg)](http://badge.fury.io/js/bpk-component-tooltip) |
-| [`bpk-mixins`](/packages/bpk-mixins) | [![npm version](https://badge.fury.io/js/bpk-mixins.svg)](http://badge.fury.io/js/bpk-mixins) |
+| [`bpk-mixins`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-mixins) | [![npm version](https://badge.fury.io/js/bpk-mixins.svg)](http://badge.fury.io/js/bpk-mixins) |
 | [`bpk-react-utils`](/packages/bpk-react-utils) | [![npm version](https://badge.fury.io/js/bpk-react-utils.svg)](http://badge.fury.io/js/bpk-react-utils) |
-| [`bpk-stylesheets`](/packages/bpk-stylesheets) | [![npm version](https://badge.fury.io/js/bpk-stylesheets.svg)](http://badge.fury.io/js/bpk-stylesheets) |
+| [`bpk-stylesheets`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-stylesheets) | [![npm version](https://badge.fury.io/js/bpk-stylesheets.svg)](http://badge.fury.io/js/bpk-stylesheets) |
 | [`@skyscanner/bpk-svgs`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-svgs) | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs) |
 | [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web) |
 

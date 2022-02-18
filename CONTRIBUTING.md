@@ -115,7 +115,7 @@ Tokens are defined in the `src/base` directory (with the exception of product-sp
 
 ### Sass mixins
 
-All Sass mixins are defined in the `bpk-mixins` package. The package also exposes the Sass variables from the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) package.
+All Sass mixins are defined in the [`bpk-mixins`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-mixins) package. The package also exposes the Sass variables from the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) package.
 
 If you add a new file of mixins, for example for a new *atom*, make sure you add the file to the imports in `_index.scss`.
 
