@@ -52,7 +52,6 @@ type Props = {
   large: boolean,
   maxRating: number,
   rating: number,
-  // eslint-disable-next-line flowtype/space-after-type-colon
   rounding:
     | typeof ROUNDING_TYPES.down
     | typeof ROUNDING_TYPES.up

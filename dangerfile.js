@@ -24,14 +24,12 @@
 
 import fs from 'fs';
 
-import { includes } from 'lodash';
 import { danger, fail, warn, markdown } from 'danger';
+import { includes } from 'lodash';
 
-// Applies to js, css, scss and sh files that are not located in dist or flow-typed folders.
+// Applies to js, css, scss and sh files that are not located in the dist folder.
 const shouldContainLicensingInformation = (filePath) =>
-  filePath.match(/\.(js|css|scss|sh)$/) &&
-  !filePath.includes('dist/') &&
-  !filePath.includes('flow-typed/');
+  filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) && !filePath.includes('dist/');
 
 const AVOID_EXACT_WORDS = [
   { word: 'react native', reason: 'Please use React Native with capitals' },
@@ -55,7 +53,7 @@ if (svgsChangedOrCreated) {
 }
 
 const componentChangedOrCreated = fileChanges.some((filePath) =>
-  filePath.match(/packages\/bpk-component.+\/src\/.+\.js/),
+  filePath.match(/packages\/bpk-component.+\/src\/.+\.(js|ts|tsx)$/),
 );
 
 if (componentChangedOrCreated) {
@@ -72,6 +70,7 @@ const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.md');
 const packagesModified = fileChanges.some(
   (filePath) => filePath.startsWith('packages/') && !filePath.endsWith('.md'),
 );
+
 if (packagesModified && !unreleasedModified) {
   warn(
     "One or more packages have changed, but `UNRELEASED.md` wasn't updated.",
@@ -82,12 +81,12 @@ if (packagesModified && !unreleasedModified) {
 const componentSourceFilesModified = fileChanges.some(
   (filePath) =>
     // packages/(one or more chars)/src/(one or more chars).js
-    filePath.match(/packages\/.*bpk-component.+\/src\/.+\.js/) &&
+    filePath.match(/packages\/.*bpk-component.+\/src\/.+\.(js|ts|tsx)$/) &&
     !filePath.includes('-test.'),
 );
 
-const snapshotsModified = fileChanges.some((filePath) =>
-  filePath.endsWith('.js.snap'),
+const snapshotsModified = fileChanges.some(
+  (filePath) => filePath.endsWith('.js.snap') || filePath.endsWith('.ts.snap'),
 );
 
 if (componentSourceFilesModified && !snapshotsModified) {
@@ -104,8 +103,10 @@ const unlicensedFiles = createdFiles.filter((filePath) => {
       'Licensed under the Apache License, Version 2.0 (the "License")',
     );
   }
+
   return false;
 });
+
 if (unlicensedFiles.length > 0) {
   fail(
     `These new files do not include the license heading: ${unlicensedFiles.join(
@@ -121,6 +122,7 @@ const nonModuleCssFiles = fileChanges.filter(
     !filePath.match('_') &&
     !filePath.match(/\.module\.s?css/),
 );
+
 if (nonModuleCssFiles.length) {
   fail(
     `(S)CSS files must be named with the CSS Module convention - .module.(s)css. Please rename these files: ${nonModuleCssFiles.join(

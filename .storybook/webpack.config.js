@@ -28,7 +28,7 @@ const useCssModules = ENABLE_CSS_MODULES !== 'false';
 
 module.exports = ({ config }) => {
   config.module.rules.push({
-    test: /\.jsx?$/,
+    test: /\.[jt]sx?$/,
     exclude: /node_modules\/(?!bpk-).*/,
     loader: 'babel-loader',
     options: {

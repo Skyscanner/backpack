@@ -41,7 +41,6 @@ import BpkSelectableChip, {
 const getClassName = cssModules(STYLES);
 
 /* ESLint is fighting with Prettier here, so I had to disable it. */
-/* eslint-disable flowtype/generic-spacing */
 type StatefulSelectableChipProps = $Diff<
   BpkSelectableChipProps,
   {

@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-import WrapperPlugin from 'wrapper-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import WrapperPlugin from 'wrapper-webpack-plugin';
 
 import postCssPlugins from '../../scripts/webpack/postCssPlugins';
 
-import { blockComment as licenseHeader } from './license-header';
 import babelConfig from './base.babel.config';
+import { blockComment as licenseHeader } from './license-header';
 
 const path = require('path');
 
@@ -40,7 +40,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: babelConfig,

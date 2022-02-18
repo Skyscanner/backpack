@@ -37,7 +37,9 @@ module.exports = {
         },
       },
     ],
+    // TODO: Remove this once we have migrated all flow types.
     '@babel/preset-flow',
+    '@babel/preset-typescript',
   ],
   // This tells babel not to include polyfills and assume it will be available during runtime,
   // as a lib project this is what we want.
