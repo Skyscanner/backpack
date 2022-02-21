@@ -1,3 +1,81 @@
+# 2022-02-21
+
+**Changed:**
+
+`bpk-component-accordion` (4.0.6 => 4.1.0) </br>
+  - `weight` property is now deprecated. If you are using the `weight` property, remove it and choose a different text style instead to achieve the desired weight. 
+
+`bpk-animate-height` (4.0.29 => 4.1.0) </br>
+`bpk-component-accordion` (4.0.6 => 4.1.0) </br>
+`bpk-component-aria-live` (2.0.44 => 2.1.0) </br>
+`bpk-component-autosuggest` (6.0.40 => 6.1.0) </br>
+`bpk-component-badge` (4.0.14 => 4.1.0) </br>
+`bpk-component-banner-alert` (6.0.15 => 6.1.0) </br>
+`bpk-component-barchart` (4.1.16 => 4.2.0) </br>
+`bpk-component-blockquote` (3.0.28 => 3.1.0) </br>
+`bpk-component-breadcrumb` (3.0.34 => 3.1.0) </br>
+`bpk-component-breakpoint` (3.0.29 => 3.1.0) </br>
+`bpk-component-button` (5.0.28 => 5.1.0) </br>
+`bpk-component-calendar` (11.0.13 => 11.1.0) </br>
+`bpk-component-card` (4.0.17 => 4.1.0) </br>
+`bpk-component-checkbox` (4.0.6 => 4.1.0) </br>
+`bpk-component-chip` (5.1.25 => 5.2.0) </br>
+`bpk-component-close-button` (3.0.32 => 3.1.0) </br>
+`bpk-component-code` (3.0.28 => 3.1.0) </br>
+`bpk-component-content-container` (4.0.5 => 4.1.0) </br>
+`bpk-component-datatable` (4.0.15 => 4.1.0) </br>
+`bpk-component-datepicker` (15.1.9 => 15.2.0) </br>
+`bpk-component-description-list` (3.0.28 => 3.1.0) </br>
+`bpk-component-dialog` (4.0.32 => 4.1.0) </br>
+`bpk-component-drawer` (4.0.34 => 4.1.0) </br>
+`bpk-component-fieldset` (4.0.20 => 4.1.0) </br>
+`bpk-component-flare` (2.0.31 => 2.1.0) </br>
+`bpk-component-form-validation` (4.1.10 => 4.2.0) </br>
+`bpk-component-grid` (3.0.28 => 3.1.0) </br>
+`bpk-component-grid-toggle` (3.0.28 => 3.1.0) </br>
+`bpk-component-horizontal-nav` (5.0.21 => 5.1.0) </br>
+`bpk-component-icon` (9.1.16 => 9.2.0) </br>
+`bpk-component-image` (5.0.32 => 5.1.0) </br>
+`bpk-component-infinite-scroll` (4.0.29 => 4.1.0) </br>
+`bpk-component-input` (6.0.42 => 6.1.0) </br>
+`bpk-component-label` (5.0.28 => 5.1.0) </br>
+`bpk-component-link` (3.0.28 => 3.1.0) </br>
+`bpk-component-list` (3.0.28 => 3.1.0) </br>
+`bpk-component-loading-button` (4.0.32 => 4.1.0) </br>
+`bpk-component-map` (5.1.20 => 5.2.0) </br>
+`bpk-component-mobile-scroll-container` (3.0.29 => 3.1.0) </br>
+`bpk-component-modal` (3.0.33 => 3.1.0) </br>
+`bpk-component-navigation-bar` (3.0.33 => 3.1.0) </br>
+`bpk-component-navigation-stack` (3.0.33 => 3.1.0) </br>
+`bpk-component-nudger` (5.0.6 => 5.1.0) </br>
+`bpk-component-overlay` (2.0.32 => 2.1.0) </br>
+`bpk-component-pagination` (3.0.32 => 3.1.0) </br>
+`bpk-component-panel` (3.0.28 => 3.1.0) </br>
+`bpk-component-phone-input` (7.0.18 => 7.1.0) </br>
+`bpk-component-popover` (4.0.39 => 4.1.0) </br>
+`bpk-component-progress` (3.0.29 => 3.1.0) </br>
+`bpk-component-radio` (3.0.28 => 3.1.0) </br>
+`bpk-component-rating` (3.0.32 => 3.1.0) </br>
+`bpk-component-rtl-toggle` (3.0.28 => 3.1.0) </br>
+`bpk-component-scrollable-calendar` (6.0.13 => 6.1.0) </br>
+`bpk-component-section-list` (3.1.25 => 3.2.0) </br>
+`bpk-component-select` (5.0.24 => 5.1.0) </br>
+`bpk-component-skip-link` (2.0.28 => ^2.1.0) </br>
+`bpk-component-slider` (3.0.30 => 3.1.0) </br>
+`bpk-component-spinner` (5.0.22 => 5.1.0) </br>
+`bpk-component-star-rating` (3.0.32 => 3.1.0) </br>
+`bpk-component-switch` (2.0.29 => ^2.1.0) </br>
+`bpk-component-table` (3.0.28 => 3.1.0) </br>
+`bpk-component-text` (6.0.2 => 6.1.0) </br>
+`bpk-component-textarea` (4.1.9 => 4.2.0) </br>
+`bpk-component-theme-toggle` (3.0.29 => 3.1.0) </br>
+`bpk-component-ticket` (4.0.32 => 4.1.0) </br>
+`bpk-component-tooltip` (6.0.32 => 6.1.0) </br>
+`bpk-react-utils` (4.0.2 => 4.1.0) </br>
+`bpk-storybook-utils` (1.0.28 => 1.1.0) </br>
+`bpk-theming` (2.0.72 => 2.1.0) </br>
+  - Updated peer dependencies versions for components to support React 17.
+
 # 2022-02-17
 
 **Added:**
