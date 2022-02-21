@@ -24,14 +24,14 @@ import STYLES from './BpkContentContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkContentContainer = props => {
+const BpkContentContainer = (props) => {
   const {
-    tagName: TagName,
-    className,
-    bareHtml,
     alternate,
-    dangerouslySetInnerHTML,
+    bareHtml,
     children,
+    className,
+    dangerouslySetInnerHTML,
+    tagName: TagName,
     ...rest
   } = props;
   const classNames = [getClassName('bpk-content-container')];

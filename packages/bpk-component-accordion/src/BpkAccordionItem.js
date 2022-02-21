@@ -27,7 +27,7 @@ import BpkText, {
   TEXT_STYLES,
   WEIGHT_STYLES as weights,
 } from 'bpk-component-text';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 
 import STYLES from './BpkAccordionItem.module.scss';
 
@@ -41,26 +41,26 @@ type Props = {
   children: Node,
   id: string,
   title: string,
-  weight: $Keys<typeof WEIGHT_STYLES>,
+  weight: ?$Keys<typeof WEIGHT_STYLES>,
   expanded: boolean,
   icon: ?Element<any>,
   onClick: () => mixed,
   tagName: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
-  textStyle: $Keys<typeof TEXT_STYLES>,
+  textStyle: $Values<typeof TEXT_STYLES>,
 };
 
 const BpkAccordionItem = (props: Props) => {
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
   const {
-    id,
-    title,
     children,
-    weight,
     expanded,
     icon,
+    id,
     onClick,
     tagName,
     textStyle,
+    title,
+    weight,
     ...rest
   } = props;
 
@@ -127,7 +127,10 @@ BpkAccordionItem.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  weight: PropTypes.string,
+  weight: deprecated(
+    PropTypes.string,
+    'Use a different "textStyle" to achieve the desired weight',
+  ),
   expanded: PropTypes.bool,
   icon: PropTypes.node,
   onClick: PropTypes.func,
@@ -136,7 +139,7 @@ BpkAccordionItem.propTypes = {
 };
 
 BpkAccordionItem.defaultProps = {
-  weight: WEIGHT_STYLES.regular,
+  weight: null,
   expanded: false,
   icon: null,
   onClick: () => null,

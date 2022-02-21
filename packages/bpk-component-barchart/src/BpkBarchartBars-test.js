@@ -40,11 +40,9 @@ const margin = {
 };
 const { prices } = data;
 const size = 200;
-const yScale = scaleLinear()
-  .domain([0, 500])
-  .range([0, size]);
+const yScale = scaleLinear().domain([0, 500]).range([0, size]);
 const xScale = scaleBand()
-  .domain(prices.map(d => d.month))
+  .domain(prices.map((d) => d.month))
   .range([0, size]);
 
 describe('BpkBarchartBars', () => {
@@ -199,7 +197,7 @@ describe('BpkBarchartBars', () => {
         }
         BarComponent={BpkBarchartBar}
         padding={0}
-        getBarSelection={point => point.month === 'Mar'}
+        getBarSelection={(point) => point.month === 'Mar'}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();

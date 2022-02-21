@@ -7,7 +7,7 @@
         "resolveNestedSelectors": true
       }
     ],
-    "unit-blacklist": [["px"], {
+    "unit-disallowed-list": [["px"], {
       "ignoreProperties": {
         "px": ["box-shadow"]
       }

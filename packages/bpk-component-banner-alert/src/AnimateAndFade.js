@@ -135,7 +135,7 @@ class AnimateAndFade extends Component<Props, State> {
   };
 
   render() {
-    const { children, animateOnEnter, animateOnLeave, className } = this.props;
+    const { animateOnEnter, animateOnLeave, children, className } = this.props;
     const showPlaceholder =
       !this.state.visible && !this.state.hideAnimationInProgress;
     // While the expanding animation takes place, we render the child element

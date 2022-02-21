@@ -41,7 +41,7 @@ import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 
-const withScrim = WrappedComponent => {
+const withScrim = (WrappedComponent) => {
   class WithScrim extends Component {
     static propTypes = {
       getApplicationElement: PropTypes.func.isRequired,
@@ -63,7 +63,7 @@ const withScrim = WrappedComponent => {
     };
 
     componentDidMount() {
-      const { isIphone, isIpad, getApplicationElement } = this.props;
+      const { getApplicationElement, isIpad, isIphone } = this.props;
       const applicationElement = getApplicationElement();
 
       // iPhones need to have the application element hidden
@@ -94,7 +94,7 @@ const withScrim = WrappedComponent => {
     }
 
     componentWillUnmount() {
-      const { isIpad, isIphone, getApplicationElement } = this.props;
+      const { getApplicationElement, isIpad, isIphone } = this.props;
       const applicationElement = getApplicationElement();
 
       if (isIphone && applicationElement) {
@@ -116,19 +116,19 @@ const withScrim = WrappedComponent => {
       focusStore.restoreFocus();
     }
 
-    dialogRef = ref => {
+    dialogRef = (ref) => {
       this.dialogElement = ref;
     };
 
     render() {
       const {
-        getApplicationElement,
-        onClose,
-        isIphone,
-        isIpad,
-        containerClassName,
         closeOnScrimClick,
+        containerClassName,
         dark,
+        getApplicationElement,
+        isIpad,
+        isIphone,
+        onClose,
         ...rest
       } = this.props;
 

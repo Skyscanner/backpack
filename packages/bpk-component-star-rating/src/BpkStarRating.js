@@ -52,7 +52,6 @@ type Props = {
   large: boolean,
   maxRating: number,
   rating: number,
-  // eslint-disable-next-line flowtype/space-after-type-colon
   rounding:
     | typeof ROUNDING_TYPES.down
     | typeof ROUNDING_TYPES.up
@@ -61,11 +60,11 @@ type Props = {
 
 const BpkStarRating = (props: Props) => {
   const {
+    className,
+    large,
+    maxRating,
     rating,
     ratingLabel,
-    maxRating,
-    large,
-    className,
     rounding,
     ...rest
   } = props;

@@ -35,7 +35,7 @@ export type Props = {
   className: ?string,
 };
 
-const BpkNavigationBarIconButton = ({ icon, className, ...rest }: Props) => (
+const BpkNavigationBarIconButton = ({ className, icon, ...rest }: Props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkIconButton
     customIcon={icon}

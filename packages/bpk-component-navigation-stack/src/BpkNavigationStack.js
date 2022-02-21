@@ -73,7 +73,7 @@ class BpkNavigationStack extends React.Component<Props, State> {
   }, parseInt(durationSm, 10) + 10);
 
   render() {
-    const { views, className, ...rest } = this.props;
+    const { className, views, ...rest } = this.props;
     const { transition } = this.state;
     const lastIndex = (views || []).length - 1;
 

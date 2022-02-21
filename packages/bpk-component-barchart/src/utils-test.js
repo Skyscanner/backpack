@@ -37,13 +37,9 @@ describe('utils', () => {
   });
 
   describe('center', () => {
-    const domain = data.prices.map(c => c.month);
-    const scale = scaleBand()
-      .domain(domain)
-      .range([0, 100]);
-    const scaleRound = scaleBand()
-      .domain(domain)
-      .rangeRound([0, 100]);
+    const domain = data.prices.map((c) => c.month);
+    const scale = scaleBand().domain(domain).range([0, 100]);
+    const scaleRound = scaleBand().domain(domain).rangeRound([0, 100]);
 
     it('should return a function', () => {
       expect(typeof center(scale) === 'function').toBe(true);

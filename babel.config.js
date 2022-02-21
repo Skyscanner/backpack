@@ -34,7 +34,9 @@ module.exports = {
       },
     ],
     '@babel/preset-react',
+    // TODO: Remove this once we have migrated all flow types.
     '@babel/preset-flow',
+    '@babel/preset-typescript',
   ],
   plugins: [
     '@babel/plugin-proposal-object-rest-spread',

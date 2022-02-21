@@ -34,7 +34,7 @@ type Props = {
 };
 
 const BpkExtraLargeSpinner = (props: Props) => {
-  const { type, className, ...rest } = props;
+  const { className, type, ...rest } = props;
   const classNames = getClassName(
     'bpk-spinner',
     'bpk-spinner--extra-large',

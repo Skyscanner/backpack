@@ -57,12 +57,12 @@ type Props = {
   autoComplete: string,
 };
 Autosuggest.defaultProps.renderInputComponent = (inputProps: Props) => {
-  const { ref, inputRef, autoComplete = 'off', ...rest } = inputProps;
+  const { autoComplete = 'off', inputRef, ref, ...rest } = inputProps;
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkInput
-      inputRef={element => {
+      inputRef={(element) => {
         ref(element);
 
         if (typeof inputRef === 'function') {

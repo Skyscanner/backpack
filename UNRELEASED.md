@@ -74,3 +74,8 @@
 `bpk-storybook-utils`: </br>
 `bpk-theming`: </br>
   - Updated peer dependencies versions for components to support React 17.
+
+ 
+`bpk-component-accordion`: </br> 
+    - `weight` property is now deprecated. If you are using the `weight` property, remove it and choose a different text style instead to achieve the desired weight. 
+

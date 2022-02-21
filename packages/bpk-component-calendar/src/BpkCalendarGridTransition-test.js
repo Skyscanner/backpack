@@ -24,7 +24,7 @@ import BpkCalendarGridTransition, {
   addCalendarGridTransition,
 } from './BpkCalendarGridTransition';
 
-const MyComponent = props => <div>{JSON.stringify(props)}</div>;
+const MyComponent = (props) => <div>{JSON.stringify(props)}</div>;
 const TransitioningMyComponent = addCalendarGridTransition(MyComponent);
 
 describe('BpkCalendar', () => {

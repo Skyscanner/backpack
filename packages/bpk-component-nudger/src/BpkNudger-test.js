@@ -64,19 +64,19 @@ describe('BpkNudger', () => {
       return aIndex - bIndex;
     };
 
-    const incrementValue = currentValue => {
+    const incrementValue = (currentValue) => {
       const options = ['economy', 'premium', 'business', 'first'];
       const [aIndex] = [options.indexOf(currentValue) + 1];
       return options[aIndex];
     };
 
-    const decrementValue = currentValue => {
+    const decrementValue = (currentValue) => {
       const options = ['economy', 'premium', 'business', 'first'];
       const [aIndex] = [options.indexOf(currentValue) - 1];
       return options[aIndex];
     };
 
-    const formatValue = a => a.toString();
+    const formatValue = (a) => a.toString();
 
     const { asFragment } = render(
       <BpkConfigurableNudger

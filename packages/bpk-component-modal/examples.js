@@ -149,13 +149,8 @@ class ModalContainer extends Component<
   };
 
   render() {
-    const {
-      children,
-      wrapperProps,
-      buttonLabel,
-      accessoryView,
-      ...rest
-    } = this.props;
+    const { accessoryView, buttonLabel, children, wrapperProps, ...rest } =
+      this.props;
 
     return (
       <div id="modal-container" {...wrapperProps}>

@@ -36,7 +36,7 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx(spacingXs);
 const lineHeight = remToPx(lineHeightSm);
 
-const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
+const getAxisConfig = ({ height, margin, orientation, scale, width }) => {
   const position = (scale.bandwidth ? center : identity)(scale.copy());
 
   if (orientation === ORIENTATION_X) {
@@ -53,7 +53,7 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
         x: (width - margin.left - margin.right) / 2,
         y: margin.bottom - spacing,
       },
-      tickPosition: tick => [position(tick), 0],
+      tickPosition: (tick) => [position(tick), 0],
     };
   }
 
@@ -77,7 +77,7 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
     labelProps: {
       transform: `translate(${labelTranslateX}, ${labelTranslateY}) rotate(-90)`,
     },
-    tickPosition: tick => [0, position(tick)],
+    tickPosition: (tick) => [0, position(tick)],
   };
 };
 
@@ -101,22 +101,21 @@ type Props = {
 
 const BpkChartAxis = (props: Props) => {
   const {
-    orientation,
-    numTicks,
-    tickValue,
-    tickOffset,
     height,
-    width,
+    label,
     margin,
+    numTicks,
+    orientation,
     scale,
     tickEvery,
-    label,
+    tickOffset,
+    tickValue,
+    width,
     ...rest
   } = props;
 
-  const { textProps, tickPosition, containerProps, labelProps } = getAxisConfig(
-    props,
-  );
+  const { containerProps, labelProps, textProps, tickPosition } =
+    getAxisConfig(props);
 
   const ticks = scale.ticks
     ? scale.ticks(numTicks)

@@ -84,7 +84,7 @@ class BpkDataTable<Row> extends Component<Props<Row>, State<Row>> {
     event: SyntheticEvent<HTMLDivElement>,
   }) => {
     const column = React.Children.toArray(this.props.children).find(
-      child => child.props.dataKey === sortBy,
+      (child) => child.props.dataKey === sortBy,
     );
 
     if (!column) {
@@ -98,7 +98,7 @@ class BpkDataTable<Row> extends Component<Props<Row>, State<Row>> {
     // See: https://reactjs.org/docs/legacy-event-pooling.html
     const eventTarget = event.target;
     if (eventTarget instanceof Element) {
-      this.setState(prevState => ({
+      this.setState((prevState) => ({
         sorter: prevState.sorter.onHeaderClick(sortBy, eventTarget, column),
       }));
     }
@@ -157,7 +157,7 @@ class BpkDataTable<Row> extends Component<Props<Row>, State<Row>> {
         rowCount={this.state.sorter.rowCount}
         rowGetter={({ index }) => this.state.sorter.getRow(index)}
         headerClassName={headerClassNames.join(' ')}
-        rowClassName={row => this.rowClassName(rowClassName, row)}
+        rowClassName={(row) => this.rowClassName(rowClassName, row)}
         onRowClick={this.onRowClicked}
         onHeaderClick={this.onHeaderClick}
         {...this.state.sorter.sortProps}

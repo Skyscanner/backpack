@@ -24,12 +24,12 @@ import gulp from 'gulp';
 
 const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
 
-const getFolders = dir =>
+const getFolders = (dir) =>
   fs
     .readdirSync(dir)
-    .filter(file => fs.statSync(path.join(dir, file)).isDirectory());
+    .filter((file) => fs.statSync(path.join(dir, file)).isDirectory());
 
-gulp.task('clean', done => del(getFolders(ICONS_FOLDER_PATH), done));
+gulp.task('clean', (done) => del(getFolders(ICONS_FOLDER_PATH), done));
 
 gulp.task('copy', () =>
   gulp.src(`${ICONS_FOLDER_PATH}/**/*.js`).pipe(gulp.dest('.')),

@@ -1,11 +1,7 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "skyscanner",
-    "plugin:flowtype/recommended"
-  ],
-  "plugins": [
-    "flowtype"
+    "@skyscanner/eslint-config-skyscanner",
   ],
   "env": {
     "browser": true,
@@ -16,6 +12,9 @@
       "node": {
         "extensions": [
           ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
           ".json",
           ".android.js",
           ".ios.js"
@@ -24,14 +23,88 @@
     }
   },
   "rules": {
+    // Temp adding this whilst migrating to the latest eslint & TS migration
+    // Activate this when we run the migration scripts
+    // "padding-line-between-statements": [
+    //   "error",
+    //   {
+    //     "blankLine": "always",
+    //     "prev": "*",
+    //     "next": [
+    //       "block",
+    //       "block-like",
+    //       "cjs-export",
+    //       "class",
+    //       "export",
+    //       "import",
+    //       "let",
+    //       "var"
+    //     ]
+    //   },
+    //   {
+    //     "blankLine": "always",
+    //     "prev": [
+    //       "block",
+    //       "block-like",
+    //       "cjs-export",
+    //       "class",
+    //       "multiline-const",
+    //       "export",
+    //       "import",
+    //       "let",
+    //       "var"
+    //     ],
+    //     "next": "*"
+    //   },
+    //   {
+    //     "blankLine": "never",
+    //     "prev": [
+    //       "singleline-const"
+    //     ],
+    //     "next": [
+    //       "singleline-const"
+    //     ]
+    //   },
+    //   {
+    //     "blankLine": "any",
+    //     "prev": [
+    //       "cjs-import",
+    //       "cjs-export",
+    //       "export",
+    //       "import"
+    //     ],
+    //     "next": [
+    //       "cjs-import",
+    //       "cjs-export",
+    //       "export",
+    //       "import",
+    //       "singleline-const"
+    //     ]
+    //   }
+    // ],
     "backpack/use-components": "off",
     "prettier/prettier": "error",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
+    // We override the eslint-config-skyscanner rule here as within Backpack
+    // we need certain order imports otherwise it will break components like the calendar.
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always"
+      }
+    ],
     // This is superceded by jsx-a11y/label-has-associated-control
     "jsx-a11y/label-has-for": "off",
-    // We want to keep prop-types alongside flow types so we relax this rule to allow us to specify defaults for
-    // required flow props
+    // We want to keep prop-types alongside typescript types so we relax this rule to allow us to specify defaults for
+    // required typescript props
     "react/default-props-match-prop-types": [
       "error",
       {
@@ -66,6 +139,8 @@
           "render"
         ]
       }
-    ]
+    ],
+    // Temp setting this to warn whilst migration to TS is in progress.
+    "no-undef": "warn"
   }
 }

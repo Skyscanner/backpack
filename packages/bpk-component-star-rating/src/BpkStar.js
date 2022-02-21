@@ -46,7 +46,7 @@ type Props = {
 };
 
 const BpkStar = (props: Props) => {
-  const { type, large, className, ...rest } = props;
+  const { className, large, type, ...rest } = props;
   const iconClassNames = getClassName(
     'bpk-star',
     large && 'bpk-star--large',

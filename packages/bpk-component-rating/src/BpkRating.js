@@ -39,7 +39,7 @@ const getMinValue = () =>
   // If this ever changes, this function should be changed to return
   // different values based on the rating scale.
   0;
-const getMaxValue = ratingScale => {
+const getMaxValue = (ratingScale) => {
   switch (ratingScale) {
     case RATING_SCALES.zeroToFive:
       return 5;
@@ -48,10 +48,10 @@ const getMaxValue = ratingScale => {
   }
 };
 
-const getMediumRatingThreshold = ratingScale =>
+const getMediumRatingThreshold = (ratingScale) =>
   getMaxValue(ratingScale) * MEDIUM_RATING_THRESHOLD;
 
-const getHighRatingThreshold = ratingScale =>
+const getHighRatingThreshold = (ratingScale) =>
   getMaxValue(ratingScale) * HIGH_RATING_THRESHOLD;
 
 export type Props = {
@@ -69,13 +69,13 @@ export type Props = {
 const BpkRating = (props: Props) => {
   const {
     ariaLabel,
-    title,
-    subtitle,
-    value,
     className,
     ratingScale,
     size,
+    subtitle,
+    title,
     type,
+    value,
     vertical,
     ...rest
   } = props;

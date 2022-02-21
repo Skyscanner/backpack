@@ -37,9 +37,7 @@ const margin = {
 };
 
 const size = 200;
-const linearScale = scaleLinear()
-  .domain([5, 480])
-  .range([0, size]);
+const linearScale = scaleLinear().domain([5, 480]).range([0, size]);
 const bandScale = scaleBand()
   .domain([
     'North America',

@@ -24,7 +24,7 @@ import { render } from '@testing-library/react';
 import BpkNavigationIconButton from './BpkNavigationBarIconButton';
 
 describe('BpkNavigationIconButton', () => {
-  const Icon = props => <span {...props} />;
+  const Icon = (props) => <span {...props} />;
 
   it('should render correctly', () => {
     const { asFragment } = render(

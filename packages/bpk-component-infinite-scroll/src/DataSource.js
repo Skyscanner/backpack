@@ -50,7 +50,7 @@ class DataSource<T = any> {
   }
 
   triggerListeners = (...args: Array<any>): void => {
-    this.listeners.forEach(cb => cb(...args));
+    this.listeners.forEach((cb) => cb(...args));
   };
 }
 
@@ -64,7 +64,7 @@ export class ArrayDataSource<T = any> extends DataSource<T> {
 
   fetchItems(index: number, nElements: number): Promise<Array<T>> {
     const { elements } = this;
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       const totalElements = elements.length;
       const n = totalElements - index;
       if (n <= 0) {

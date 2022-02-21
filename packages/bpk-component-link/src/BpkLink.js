@@ -42,14 +42,14 @@ type Props = {
 
 const BpkLink = (props: Props) => {
   const {
+    alternate,
+    blank,
     children,
     className,
     href,
     onClick,
-    blank,
     rel: propRel,
     white,
-    alternate,
     ...rest
   } = props;
 

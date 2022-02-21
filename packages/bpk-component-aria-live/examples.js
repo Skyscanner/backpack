@@ -38,7 +38,7 @@ const AriaLiveDemo = (props: {
   style: ?{},
   visible: boolean,
 }) => {
-  const { preamble, children, className, style, visible, ...rest } = props;
+  const { children, className, preamble, style, visible, ...rest } = props;
 
   return (
     <div
@@ -90,7 +90,7 @@ class SelectExample extends React.Component<
   };
 
   toggleDirectness = () => {
-    this.setState(prevState => ({ direct: !prevState.direct }));
+    this.setState((prevState) => ({ direct: !prevState.direct }));
   };
 
   id = 'aria-live-select-example';
@@ -118,7 +118,7 @@ class SelectExample extends React.Component<
                 id="destination"
                 name="destination"
                 value={destination}
-                onChange={event => {
+                onChange={(event) => {
                   this.onChangeDestination(event.target.value);
                 }}
               >
@@ -183,7 +183,7 @@ class ChipsExample extends React.Component<
   id = 'aria-live-chips-example';
 
   toggleCategory = (category: string) => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const nextState = prevState;
       nextState.categories[category] = !prevState.categories[category];
       nextState.updates.push(
@@ -209,7 +209,7 @@ class ChipsExample extends React.Component<
             <BpkCode>aria-controls=&quot;{this.id}&quot;</BpkCode> to link it to
             the ARIA live region below with the same ID.
           </p>
-          {Object.keys(categories).map(category => (
+          {Object.keys(categories).map((category) => (
             <BpkChip
               className={getClassName('bpk-storybook-aria-live-demo__chip')}
               aria-controls={this.id}
@@ -234,7 +234,7 @@ class ChipsExample extends React.Component<
             </p>
           }
         >
-          {updates.map(update => (
+          {updates.map((update) => (
             <p>
               <strong>{update}</strong>
             </p>

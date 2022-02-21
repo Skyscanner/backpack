@@ -65,10 +65,7 @@ describe('withBannerAlertState(BpkBannerAlertDismissable)', () => {
       />,
     );
 
-    wrapper
-      .find(BpkCloseButton)
-      .first()
-      .simulate('click');
+    wrapper.find(BpkCloseButton).first().simulate('click');
     expect(onDismissMock).toHaveBeenCalled();
   });
 
@@ -135,10 +132,7 @@ describe('withBannerAlertState(BpkBannerAlertExpandable)', () => {
       </BpkBannerAlertExpandableState>,
     );
 
-    wrapper
-      .find('button')
-      .first()
-      .simulate('click');
+    wrapper.find('button').first().simulate('click');
     expect(onExpandMock).toHaveBeenCalled();
   });
 });

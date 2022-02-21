@@ -32,7 +32,7 @@ export type Props = {
 };
 
 const BadgeLayout = (props: Props) => {
-  const { docked, children } = props;
+  const { children, docked } = props;
   const classNames = [getClassName('bpk-badge-layout__container')];
 
   if (docked) {

@@ -37,7 +37,7 @@ import BpkStarRating, { BpkStar, STAR_TYPES, ROUNDING_TYPES } from './index';
 const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,
 );
-const StarRating = props => (
+const StarRating = (props) => (
   <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />
 );
 

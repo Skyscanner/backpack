@@ -36,7 +36,7 @@ type Props = {
 };
 
 const BpkButtonLink = (props: Props) => {
-  const { children, className, onClick, white, alternate, ...rest } = props;
+  const { alternate, children, className, onClick, white, ...rest } = props;
   const classNames = [getClassName('bpk-link')];
 
   if (white || alternate) {

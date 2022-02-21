@@ -38,7 +38,7 @@ $bpk-spacing-v2: true;
 
   &__curve {
     position: absolute;
-    // stylelint-disable-next-line unit-blacklist
+    // stylelint-disable-next-line unit-disallowed-list
     bottom: -1px;
     width: 700rem; // required for correct behaviour in IE
     height: $bpk-flare-height-desktop;
@@ -58,7 +58,7 @@ $bpk-spacing-v2: true;
 
   &__rounded-corner {
     position: absolute;
-    // stylelint-disable-next-line unit-blacklist
+    // stylelint-disable-next-line unit-disallowed-list
     bottom: calc(#{bpk-spacing-lg()} - 1px);
     left: 0;
     width: $bpk-flare-corner-radius;

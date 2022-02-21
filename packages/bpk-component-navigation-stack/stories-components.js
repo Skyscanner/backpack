@@ -42,13 +42,13 @@ const RightArrowIcon = withRtlSupport(BpkRightArrowIcon);
 const getClassName = cssModules(STYLES);
 
 export const View = ({
-  children,
-  index,
-  pushView,
-  popView,
-  className,
-  noNavBar,
   centered,
+  children,
+  className,
+  index,
+  noNavBar,
+  popView,
+  pushView,
   ...rest
 }: {
   children: ({
@@ -89,8 +89,8 @@ View.defaultProps = {
 
 export const SimpleNav = ({
   index,
-  pushView,
   popView,
+  pushView,
 }: {
   index: number,
   pushView: ?(Element<any>) => mixed,
@@ -102,7 +102,7 @@ export const SimpleNav = ({
         pushView &&
         pushView(
           <View index={index + 1} centered>
-            {props => <SimpleNav {...props} />}
+            {(props) => <SimpleNav {...props} />}
           </View>,
         )
       }
@@ -119,9 +119,9 @@ export const SimpleNav = ({
 
 export const NavigationBar = ({
   index,
-  pushView,
-  popView,
   nextView,
+  popView,
+  pushView,
 }: {
   index: number,
   pushView: ?(Element<any>) => mixed,
@@ -147,7 +147,7 @@ export const NavigationBar = ({
           pushView(
             (nextView && nextView()) || (
               <View index={index + 1}>
-                {props => <NavigationBar {...props} />}
+                {(props) => <NavigationBar {...props} />}
               </View>
             ),
           )
@@ -169,9 +169,9 @@ export const withNavigationBar = (
   Stack: ComponentType<ElementConfig<typeof BpkNavigationStack>>,
 ) => {
   const WithNavigationBar = ({
-    views,
-    pushView,
     popView,
+    pushView,
+    views,
     ...rest
   }: {
     views: Array<Element<any>>,

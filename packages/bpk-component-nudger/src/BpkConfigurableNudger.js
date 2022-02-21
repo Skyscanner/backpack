@@ -43,28 +43,28 @@ const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 type Props<T> = {
   ...$Exact<CommonProps<T>>,
   inputClassName: ?string,
-  formatValue: T => string,
-  incrementValue: T => T,
-  decrementValue: T => T,
+  formatValue: (T) => string,
+  incrementValue: (T) => T,
+  decrementValue: (T) => T,
   compareValues: (T, T) => number,
 };
 
 const BpkConfigurableNudger = <T>(props: Props<T>) => {
   const {
-    id,
-    min,
-    max,
-    value,
-    onChange,
-    className,
-    inputClassName,
-    increaseButtonLabel,
-    decreaseButtonLabel,
     buttonType,
-    formatValue,
-    incrementValue,
-    decrementValue,
+    className,
     compareValues,
+    decreaseButtonLabel,
+    decrementValue,
+    formatValue,
+    id,
+    increaseButtonLabel,
+    incrementValue,
+    inputClassName,
+    max,
+    min,
+    onChange,
+    value,
     ...rest
   } = props;
   const classNames = [getClassName('bpk-nudger')];

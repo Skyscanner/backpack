@@ -29,8 +29,8 @@ const getClassName = cssModules(STYLES);
 /*
   WeekDay - table header cells such as "Mon", "Tue", "Wed"...
 */
-const WeekDay = props => {
-  const { weekDay, weekDayKey, Element } = props;
+const WeekDay = (props) => {
+  const { Element, weekDay, weekDayKey } = props;
 
   return (
     <Element
@@ -54,7 +54,7 @@ WeekDay.defaultProps = {
 
 class BpkCalendarGridHeader extends PureComponent {
   render() {
-    const { isTableHead, weekStartsOn, weekDayKey, className } = this.props;
+    const { className, isTableHead, weekDayKey, weekStartsOn } = this.props;
 
     const Header = isTableHead ? 'thead' : 'header';
     const List = isTableHead ? 'tr' : 'ol';
@@ -73,7 +73,7 @@ class BpkCalendarGridHeader extends PureComponent {
     return (
       <Header className={classNames.join(' ')} aria-hidden>
         <List className={getClassName('bpk-calendar-header__week')}>
-          {daysOfWeek.map(weekDay => (
+          {daysOfWeek.map((weekDay) => (
             <WeekDay
               Element={Item}
               key={weekDay.index}

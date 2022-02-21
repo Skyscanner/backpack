@@ -52,7 +52,7 @@ export type Props = {
 };
 
 const BpkBadge = (props: Props) => {
-  const { type, docked, centered, className, ...rest } = props;
+  const { centered, className, docked, type, ...rest } = props;
   const classNames = [getClassName('bpk-badge'), badgeTypeClassNames[type]];
 
   if (docked === 'right') {

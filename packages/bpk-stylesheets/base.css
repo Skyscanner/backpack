@@ -1697,7 +1697,7 @@ body {
   /* stylelint-disable-line scale-unlimited/declaration-strict-value */ }
   body.scaffold-font-size {
     font-size: 13px;
-    /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */ }
+    /* stylelint-disable-line unit-disallowed-list, scale-unlimited/declaration-strict-value */ }
   body.enable-font-smoothing {
     -webkit-font-smoothing: antialiased; }
 
@@ -1710,11 +1710,11 @@ body {
 .visually-hidden {
   position: absolute;
   width: 1px;
-  /* stylelint-disable-line unit-blacklist */
+  /* stylelint-disable-line unit-disallowed-list */
   height: 1px;
-  /* stylelint-disable-line unit-blacklist */
+  /* stylelint-disable-line unit-disallowed-list */
   margin: -1px;
-  /* stylelint-disable-line unit-blacklist */
+  /* stylelint-disable-line unit-disallowed-list */
   padding: 0;
   border: 0;
   overflow: hidden;

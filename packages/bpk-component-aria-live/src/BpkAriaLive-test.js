@@ -28,7 +28,7 @@ describe('BpkAriaLive', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  Object.keys(POLITENESS_SETTINGS).forEach(politenessSetting => {
+  Object.keys(POLITENESS_SETTINGS).forEach((politenessSetting) => {
     it(`should render correctly with politenessSetting="${politenessSetting}"`, () => {
       const { asFragment } = render(
         <BpkAriaLive politenessSetting={politenessSetting}>

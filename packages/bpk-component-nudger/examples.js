@@ -46,7 +46,7 @@ class NudgerContainer extends Component<
   };
 
   render() {
-    const { id, buttonType } = this.props;
+    const { buttonType, id } = this.props;
 
     const labelClassName = getClassName(
       buttonType === 'outline' && 'bpk-nudger-outline',

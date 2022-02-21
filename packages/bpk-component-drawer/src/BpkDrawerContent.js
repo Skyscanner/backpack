@@ -50,21 +50,21 @@ type Props = {
 
 const BpkDrawerContent = (props: Props) => {
   const {
-    className,
-    hideTitle,
-    contentClassName,
-    isDrawerShown,
-    onCloseAnimationComplete,
-    id,
-    dialogRef,
-    title,
-    closeText,
-    onClose,
-    closeLabel,
     children,
-    closeOnScrimClick, // unusued from withScrim scrim HOC
-    isIphone, // unusued from withScrim scrim HOC
-    isIpad, // unusued from withScrim scrim HOC
+    className,
+    closeLabel,
+    closeOnScrimClick, // Unused from withScrim scrim HOC
+    closeText,
+    contentClassName,
+    dialogRef,
+    hideTitle,
+    id,
+    isDrawerShown,
+    isIpad, // Unused from withScrim scrim HOC
+    isIphone, // Unused from withScrim scrim HOC
+    onClose,
+    onCloseAnimationComplete,
+    title,
     ...rest
   } = props;
 
@@ -98,7 +98,7 @@ const BpkDrawerContent = (props: Props) => {
       in={isDrawerShown}
       onExited={onCloseAnimationComplete}
     >
-      {status => (
+      {(status) => (
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
         <section
           id={id}

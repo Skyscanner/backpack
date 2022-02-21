@@ -26,24 +26,24 @@ import STYLES from './BpkPagination.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
+const handlePageChange = (onPageChange, pageCount) => (nextPageIndex) => {
   if (onPageChange && nextPageIndex < pageCount && nextPageIndex >= 0) {
     onPageChange(nextPageIndex);
   }
 };
 
-const BpkPagination = props => {
+const BpkPagination = (props) => {
   const classNames = [getClassName('bpk-pagination')];
   const {
-    pageCount,
-    previousLabel,
+    className,
     nextLabel,
     onPageChange,
+    pageCount,
+    pageLabel,
+    paginationLabel,
+    previousLabel,
     selectedPageIndex,
     visibleRange,
-    className,
-    paginationLabel,
-    pageLabel,
     ...rest
   } = props;
 

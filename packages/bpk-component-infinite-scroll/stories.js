@@ -39,7 +39,7 @@ import {
  * at the botton, which will cause the next story to load all items up to that position.
  * That is not a problem but we want each story to start with a clean state.
  */
-const withScrollReset = story => {
+const withScrollReset = (story) => {
   window.scrollTo(0, 0);
   return story();
 };

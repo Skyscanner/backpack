@@ -252,7 +252,7 @@ const CustomColors = () => (
     daysOfWeek={weekDays}
     month={new Date()}
     weekStartsOn={1}
-    onDateSelect={date => {
+    onDateSelect={(date) => {
       // TODO we shouldn't do this but as it's only for demo purposes and works I guess it's fine
       // eslint-disable-next-line react/no-this-in-sfc
       this.setState({ date });
@@ -279,7 +279,7 @@ const WeekExample = () => {
       new Date(1980, 5, 16),
     ].map(startOfDay),
     daysOfWeek: weekDays,
-    formatDateFull: d => d.toString(),
+    formatDateFull: (d) => d.toString(),
     preventKeyboardFocus: false,
     markToday: true,
     markOutsideDays: true,

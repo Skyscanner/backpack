@@ -1,5 +1,4 @@
 node_modules
-flow-typed
 dist
 dist-sassdoc
 dist-storybook
@@ -11,3 +10,4 @@ coverage
 backpack-android
 backpack-ios
 backpack-react-native
+.d.ts

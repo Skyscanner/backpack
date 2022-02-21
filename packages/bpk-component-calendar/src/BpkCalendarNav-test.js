@@ -23,7 +23,7 @@ import format from 'date-fns/format';
 
 import BpkCalendarNav from './BpkCalendarNav';
 
-const formatMonth = date => format(date, 'MMMM yyyy');
+const formatMonth = (date) => format(date, 'MMMM yyyy');
 
 describe('BpkCalendarNav', () => {
   it('should render correctly', () => {
@@ -97,10 +97,7 @@ describe('BpkCalendarNav', () => {
 
     // Previous month
     const prevEventStub = { persist: jest.fn() };
-    nav
-      .find('button')
-      .at(0)
-      .simulate('click', prevEventStub);
+    nav.find('button').at(0).simulate('click', prevEventStub);
     expect(onMonthChange.mock.calls.length).toBe(1);
     expect(onMonthChange.mock.calls[0][0]).toEqual(prevEventStub);
     expect(onMonthChange.mock.calls[0][1]).toEqual({
@@ -110,10 +107,7 @@ describe('BpkCalendarNav', () => {
 
     // Next month
     const nextEventStub = { persist: jest.fn() };
-    nav
-      .find('button')
-      .at(1)
-      .simulate('click', nextEventStub);
+    nav.find('button').at(1).simulate('click', nextEventStub);
     expect(onMonthChange.mock.calls.length).toBe(2);
     expect(onMonthChange.mock.calls[1][0]).toEqual(nextEventStub);
     expect(onMonthChange.mock.calls[1][1]).toEqual({

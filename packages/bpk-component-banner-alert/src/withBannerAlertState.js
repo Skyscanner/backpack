@@ -117,7 +117,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
     }
 
     onExpandToggle = () => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const expanded = !prevState.expanded;
 
         if (this.props.onExpandToggle) {
@@ -146,14 +146,14 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
 
     render() {
       const {
-        onDismiss,
-        onExpandToggle,
-        expanded,
-        show,
-        hideAfter,
         animateOnLeave,
         children,
+        expanded,
+        hideAfter,
+        onDismiss,
+        onExpandToggle,
         onHide,
+        show,
         ...rest
       } = this.props;
 

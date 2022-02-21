@@ -70,7 +70,7 @@ class BpkDrawer extends Component<Props, State> {
   };
 
   render() {
-    const { isOpen, onClose, target, renderTarget, ...rest } = this.props;
+    const { isOpen, onClose, renderTarget, target, ...rest } = this.props;
 
     const { isDrawerShown } = this.state;
 

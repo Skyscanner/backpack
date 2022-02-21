@@ -26,7 +26,7 @@ describe('classNameModifierHOCFactory', () => {
     const withTestClass = classNameModifierHOCFactory('withTestClass', [
       'test-class',
     ]);
-    const MyComponent = props => <div {...props}>test</div>;
+    const MyComponent = (props) => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
     const { asFragment } = render(<MyTestClassComponent />);
@@ -38,7 +38,7 @@ describe('classNameModifierHOCFactory', () => {
       'test-class-1',
       'test-class-2',
     ]);
-    const MyComponent = props => <div {...props}>test</div>;
+    const MyComponent = (props) => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
     const { asFragment } = render(<MyTestClassComponent />);
@@ -49,7 +49,7 @@ describe('classNameModifierHOCFactory', () => {
     const withTestClass = classNameModifierHOCFactory('withTestClass', [
       'test-class',
     ]);
-    const MyComponent = props => <div {...props}>test</div>;
+    const MyComponent = (props) => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
     const { asFragment } = render(
@@ -63,7 +63,7 @@ describe('classNameModifierHOCFactory', () => {
       'test-class-1',
       'test-class-2',
     ]);
-    const MyComponent = props => <div {...props}>test</div>;
+    const MyComponent = (props) => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
     const { asFragment } = render(
@@ -74,7 +74,7 @@ describe('classNameModifierHOCFactory', () => {
 
   it('should render correctly with no classNames', () => {
     const withTestClass = classNameModifierHOCFactory('withTestClass');
-    const MyComponent = props => <div {...props}>test</div>;
+    const MyComponent = (props) => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
     const { asFragment } = render(<MyTestClassComponent />);

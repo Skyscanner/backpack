@@ -39,7 +39,7 @@ jest.mock(
     },
 );
 
-const formatDate = date => format(date, 'dd/MM/yyyy');
+const formatDate = (date) => format(date, 'dd/MM/yyyy');
 
 const inputProps = {
   onChange: () => null,

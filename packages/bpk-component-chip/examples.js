@@ -41,7 +41,6 @@ import BpkSelectableChip, {
 const getClassName = cssModules(STYLES);
 
 /* ESLint is fighting with Prettier here, so I had to disable it. */
-/* eslint-disable flowtype/generic-spacing */
 type StatefulSelectableChipProps = $Diff<
   BpkSelectableChipProps,
   {
@@ -75,9 +74,7 @@ class StatefulSelectableChip extends React.Component<
   }
 
   toggleSelected = () => {
-    this.setState(prevState => {
-      return { selected: !prevState.selected };
-    });
+    this.setState((prevState) => ({ selected: !prevState.selected }));
   };
 
   render() {
@@ -106,7 +103,7 @@ class StatefulDismissibleChipsExample extends React.Component<
   }
 
   removeChip = (indexToRemove: number) => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newChips = prevState.chips;
       const removedChip = newChips.splice(indexToRemove, 1)[0];
 
@@ -139,7 +136,7 @@ class StatefulDismissibleChipsExample extends React.Component<
         <AriaLiveDemo
           className={getClassName('bpk-banner-alert-examples__component')}
         >
-          {this.state.updates.map(u => (
+          {this.state.updates.map((u) => (
             <>
               {u}
               <br />
@@ -167,12 +164,10 @@ class StatefulRadioGroupChipsExample extends React.Component<
   selectChip = (indexToSelect: number) => {
     const selectedChip = this.state.chips[indexToSelect];
 
-    this.setState(prevState => {
-      return {
-        selectedIndex: indexToSelect,
-        updates: [...prevState.updates, `${selectedChip} selected.`],
-      };
-    });
+    this.setState((prevState) => ({
+      selectedIndex: indexToSelect,
+      updates: [...prevState.updates, `${selectedChip} selected.`],
+    }));
   };
 
   render() {
@@ -208,7 +203,7 @@ class StatefulRadioGroupChipsExample extends React.Component<
         <AriaLiveDemo
           className={getClassName('bpk-banner-alert-examples__component')}
         >
-          {this.state.updates.map(update => (
+          {this.state.updates.map((update) => (
             <>
               {update}
               <br />
@@ -317,7 +312,7 @@ const AllTypesExample = () => (
     <BpkText textStyle={TEXT_STYLES.lg} tagName="h2">
       Selectable chips
     </BpkText>
-    {Object.keys(CHIP_TYPES).map(chipType => (
+    {Object.keys(CHIP_TYPES).map((chipType) => (
       <>
         <BpkText>{chipType}</BpkText>
         <AllSelectableChips type={chipType} />
@@ -326,7 +321,7 @@ const AllTypesExample = () => (
     <BpkText textStyle={TEXT_STYLES.lg} tagName="h2">
       Dismissible chips
     </BpkText>
-    {Object.keys(CHIP_TYPES).map(chipType => (
+    {Object.keys(CHIP_TYPES).map((chipType) => (
       <>
         <BpkText>{chipType}</BpkText>
         <StatefulDismissibleChipsExample type={chipType} />
