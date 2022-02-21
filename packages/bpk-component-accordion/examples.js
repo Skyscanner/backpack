@@ -35,7 +35,6 @@ import {
   withSingleItemAccordionState,
   BpkAccordionItem,
   withAccordionItemState,
-  WEIGHT_STYLES,
 } from './index';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
@@ -292,24 +291,14 @@ const WithBoldTitlesExample = () => (
       id="stops"
       title="Stops"
       initiallyExpanded
-      weight={WEIGHT_STYLES.bold}
+      textStyle="label-1"
     >
       <StopsContent />
     </BpkAccordionItem>
-    <BpkAccordionItem
-      id="airlines"
-      title="Airlines"
-      textStyle="lg"
-      weight={WEIGHT_STYLES.bold}
-    >
+    <BpkAccordionItem id="airlines" title="Airlines" textStyle="heading-4">
       <AirlinesContent />
     </BpkAccordionItem>
-    <BpkAccordionItem
-      id="airports"
-      title="Airports"
-      textStyle="xl"
-      weight={WEIGHT_STYLES.bold}
-    >
+    <BpkAccordionItem id="airports" title="Airports" textStyle="heading-3">
       <AirportsContent />
     </BpkAccordionItem>
   </SingleItemAccordion>
