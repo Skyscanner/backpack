@@ -4,7 +4,6 @@
 .sass-cache
 /dist
 /dist-storybook
-/dist-sassdoc
 /coverage
 /packages/bpk-component-icon/*/
 /packages/bpk-component-flare/src/__generated__
@@ -12,7 +11,6 @@
 node_modules
 npm-debug.*
 lerna-debug.log
-sassdoc-data.json
 backpack.iml
 yarn.lock
 /packages/*/changelog.md

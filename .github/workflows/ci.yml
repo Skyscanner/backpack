@@ -85,22 +85,6 @@ jobs:
               body: "Visual regression tests failed 😢. You can download the failure diffs from the 'Artifacts' section of the failed CI run. To update the tests, run `npm run jest:visual-tests:update` locally."
             })
 
-      - name: Build Sass docs
-        if: github.ref == 'refs/heads/main'
-        run: |
-          nvm use
-          npm run sassdoc
-
-      - name: Deploy Sass docs to backpack.github.io, if on main branch
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          publish_dir: dist-sassdoc/
-          keep_files: false
-          external_repository: backpack/sassdoc
-          publish_branch: main
-
       - name: Deploy Storybook to backpack.github.io, if on main branch
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'

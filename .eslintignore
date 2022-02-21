@@ -1,6 +1,5 @@
 node_modules
 dist
-dist-sassdoc
 dist-storybook
 coverage
 /packages/bpk-component-flare/src/__generated__

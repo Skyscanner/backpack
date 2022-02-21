@@ -120,6 +120,5 @@ configure(() => {
   require('../packages/bpk-component-textarea/stories');
   require('../packages/bpk-component-ticket/stories');
   require('../packages/bpk-component-tooltip/stories');
-  require('./additional-stories/bpk-mixins/stories');
 }, module);
 /* eslint-enable */
