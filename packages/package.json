@@ -1,0 +1,24 @@
+{
+  "name": "@skyscanner/backpack-web",
+  "version": "0.0.1",
+  "description": "Backpack Design System web library",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "keywords": [
+    "design system",
+    "react",
+    "react components"
+  ],
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Skyscanner/backpack/issues"
+  },
+  "homepage": "https://github.com/Skyscanner/backpack#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
