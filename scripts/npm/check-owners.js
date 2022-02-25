@@ -126,8 +126,18 @@ console.log(`Maintainers are:\n  ${owners.join('\n  ')}\n`);
 
 const privatePackages = ['bpk-component-boilerplate'];
 
+// List of assets related to the single package we want to ignore for now.
+const singlePackageIgnore = [
+  'package.json',
+  'package-lock.json',
+  '.npmignore',
+  'README.md',
+  'node_modules',
+];
+
 readdir('packages/')
   .then((packages) => packages.filter((i) => !privatePackages.includes(i)))
+  .then((packages) => packages.filter((i) => !singlePackageIgnore.includes(i)))
   .then((packages) => {
     bar.start(packages.length, 0);
     return packages;
