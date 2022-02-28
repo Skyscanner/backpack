@@ -26,7 +26,7 @@
     "clean": "npm run clean:dist && npm run clean:lerna && npm run clean:node_modules",
     "clean:dist": "rm -rf dist",
     "clean:lerna": "lerna clean --yes",
-    "clean:node_modules": "rm -rf node_modules",
+    "clean:node_modules": "rm -rf packages/node_modules && rm -rf node_modules",
     "create-component": "node scripts/npm/create-component.js",
     "danger": "danger ci",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
