@@ -148,7 +148,7 @@
     "enzyme-to-json": "^3.3.5",
     "eslint_d": "^9.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
-    "flow-bin": "^0.132.0",
+    "flow-bin": "^0.172.0",
     "flow-typed": "^2.5.1",
     "format-package": "^6.1.0",
     "globby": "^10.0.0",
