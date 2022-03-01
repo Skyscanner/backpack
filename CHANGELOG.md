@@ -1,3 +1,10 @@
+# 2022-03-01
+
+Deleted the following deprecated components as part of moving to the single package
+- `bpk-component-heading`
+- `bpk-component-paragraph`
+- `bpk-tether`
+
 # 2022-02-21
 
 **Changed:**
