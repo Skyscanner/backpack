@@ -18,7 +18,7 @@
 
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import {
   BpkCalendarGrid,
   BpkCalendarGridPropTypes,
@@ -38,8 +38,7 @@ const BpkScrollableCalendarGrid = (props) => {
       <BpkText
         className={getClassName('bpk-scrollable-calendar-grid__title')}
         tagName="h1"
-        textStyle="lg"
-        weight="bold"
+        textStyle={TEXT_STYLES.heading4}
       >
         {props.formatMonth(month)}
       </BpkText>

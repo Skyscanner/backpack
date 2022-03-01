@@ -18,7 +18,7 @@
 
 import React from 'react';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkImage, {
@@ -154,7 +154,7 @@ const BackgroundImageExample = () => (
     src={image}
   >
     <div style={{ marginLeft: spacingSm, paddingTop: spacingSm }}>
-      <BpkText tagName="h2" textStyle="xl">
+      <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>
         Lorem ipsum dolor sit amet
       </BpkText>
     </div>
@@ -174,7 +174,7 @@ const BackgroundImageLegacyPropsExample = () => (
     src={image}
   >
     <div style={{ marginLeft: spacingSm, paddingTop: spacingSm }}>
-      <BpkText tagName="h2" textStyle="xl">
+      <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>
         Lorem ipsum dolor sit amet
       </BpkText>
     </div>
@@ -193,7 +193,7 @@ const BackgroundImageWithLazyLoadingAndAnimationExample = () => (
     src={image}
   >
     <div style={{ marginLeft: spacingSm, paddingTop: spacingSm }}>
-      <BpkText tagName="h2" textStyle="xl">
+      <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>
         Lorem ipsum dolor sit amet
       </BpkText>
     </div>

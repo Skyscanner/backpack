@@ -140,7 +140,7 @@ BpkText.propTypes = {
 };
 
 BpkText.defaultProps = {
-  textStyle: TEXT_STYLES.base,
+  textStyle: TEXT_STYLES.bodyDefault,
   tagName: 'span',
   className: null,
   bold: null,

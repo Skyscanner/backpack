@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
 import STYLES from './examples.module.scss';
 
@@ -31,7 +31,7 @@ import BpkDrawer from './index';
 const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
-  textStyle: 'base',
+  textStyle: TEXT_STYLES.bodyDefault,
   tagName: 'p',
   className: getClassName('bpk-drawer-paragraph'),
 });

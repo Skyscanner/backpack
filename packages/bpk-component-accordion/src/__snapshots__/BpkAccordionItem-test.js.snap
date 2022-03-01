@@ -19,7 +19,7 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--base bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
           >
             My accordion item
           </span>
@@ -84,7 +84,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--base bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
           >
             My accordion item
           </span>
@@ -150,7 +150,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--base bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
           >
             My accordion item
           </span>
@@ -215,7 +215,7 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--base bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
           >
             My accordion item
           </span>
@@ -278,7 +278,7 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
           class="bpk-accordion__flex-container"
         >
           <h3
-            class="bpk-text bpk-text--base bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
           >
             My accordion item
           </h3>
@@ -408,7 +408,7 @@ exports[`BpkAccordionItem should render correctly with "weight" prop set to bold
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--base bpk-text--bold bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-text--bold bpk-accordion__title-text"
           >
             My accordion item
           </span>
@@ -473,7 +473,7 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--base bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
           >
             <svg
               class="bpk-accordion__leading-icon"

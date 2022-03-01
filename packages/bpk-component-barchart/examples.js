@@ -21,7 +21,7 @@
 import React from 'react';
 import { number } from 'prop-types';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { scaleLinear, scaleBand } from 'd3-scale';
@@ -40,7 +40,7 @@ import BpkBarchart, {
 const getClassName = cssModules(STYLES);
 
 const Heading = withDefaultProps(BpkText, {
-  textStyle: 'xl',
+  textStyle: TEXT_STYLES.subheading,
   tagName: 'h1',
   className: getClassName('bpk-heading'),
 });

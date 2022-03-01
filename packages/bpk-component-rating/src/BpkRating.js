@@ -21,7 +21,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
-import BpkText, { WEIGHT_STYLES } from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
 import STYLES from './BpkRating.module.scss';
 import { RATING_SIZES, RATING_TYPES, RATING_SCALES } from './common-types';
@@ -90,11 +90,14 @@ const BpkRating = (props: Props) => {
   const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
   const textStyles = [getClassName('bpk-rating__text')];
 
-  let textSize = 'base';
+  let titleTextSize = TEXT_STYLES.bodyDefault;
+  let valueTextSize = TEXT_STYLES.label1;
   if (size === RATING_SIZES.lg) {
-    textSize = 'lg';
+    titleTextSize = TEXT_STYLES.bodyLongform;
+    valueTextSize = TEXT_STYLES.heading4;
   } else if (size === RATING_SIZES.sm) {
-    textSize = 'sm';
+    titleTextSize = TEXT_STYLES.footnote;
+    valueTextSize = TEXT_STYLES.label2;
   }
 
   const minValue = getMinValue();
@@ -131,18 +134,17 @@ const BpkRating = (props: Props) => {
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div className={classNames.join(' ')} aria-label={ariaLabel} {...rest}>
       <BpkText
-        textStyle={textSize}
+        textStyle={valueTextSize}
         tagName="span"
         className={scoreStyles.join(' ')}
         aria-hidden="true"
-        weight={WEIGHT_STYLES.bold}
       >
         {adjustedValue}
       </BpkText>
       <div className={textWrapperStyles.join(' ')}>
         <BpkText
           className={textStyles.join(' ')}
-          textStyle={textSize}
+          textStyle={titleTextSize}
           tagName="span"
           aria-hidden="true"
         >
@@ -152,7 +154,11 @@ const BpkRating = (props: Props) => {
         {subtitle && type !== RATING_TYPES.pill && (
           <BpkText
             className={textStyles.join(' ')}
-            textStyle={size === RATING_SIZES.lg ? 'sm' : 'xs'}
+            textStyle={
+              size === RATING_SIZES.lg
+                ? TEXT_STYLES.footnote
+                : TEXT_STYLES.caption
+            }
             tagName="span"
             aria-hidden="true"
           >

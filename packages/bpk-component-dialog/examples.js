@@ -20,7 +20,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
 import TickIcon from 'bpk-component-icon/lg/tick';
 import InfoIcon from 'bpk-component-icon/lg/information-circle';
@@ -34,7 +34,7 @@ import BpkDialog, { HEADER_ICON_TYPES } from './index';
 const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
-  textStyle: 'base',
+  textStyle: TEXT_STYLES.bodyDefault,
   tagName: 'p',
   className: getClassName('bpk-dialog-paragraph'),
 });

@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
 
 import { BpkFlareBar, BpkContentBubble } from './index';
@@ -33,7 +33,7 @@ const contentShort = (
   <div className={getClassName('bpk-flare-stories__content')}>
     <BpkText tagName="h1" textStyle="xxl">
       Love planet. Will travel.
-      <BpkText tagName="p" textStyle="base">
+      <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
         Go discover a new adventure.
       </BpkText>
     </BpkText>
@@ -43,7 +43,7 @@ const content = (
   <div className={getClassName('bpk-flare-stories__content')}>
     <BpkText tagName="h1" textStyle="xxl">
       Love planet. Will travel.
-      <BpkText tagName="p" textStyle="base">
+      <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
         Lorem ipsum dolor sit amet consectetur adipiscing elit, volutpat tellus
         massa taciti platea auctor, accumsan egestas cubilia ultricies lacus
         consequat. Vulputate quisque dignissim habitant urna accumsan tempor
