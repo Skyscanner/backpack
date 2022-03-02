@@ -1,3 +1,29 @@
+# 2022-03-02
+
+**Patch:**
+
+- Updated the following components to use the updated `BpkText` API to remove `WEIGHT_STYLES` and use the correct product typography
+  - bpk-component-accordion
+  - bpk-component-barchart
+  - bpk-component-breadcrumb
+  - bpk-component-card
+  - bpk-component-chip
+  - bpk-component-dialog
+  - bpk-component-drawer
+  - bpk-component-flare
+  - bpk-component-icon
+  - bpk-component-image
+  - bpk-component-map
+  - bpk-component-modal
+  - bpk-component-navigation-bar
+  - bpk-component-popover
+  - bpk-component-rating
+  - bpk-component-scrollable-calendar
+  - bpk-component-section-list
+  - bpk-component-text
+  - bpk-component-tooltip
+
+
 # 2022-03-01
 
 Deleted the following deprecated components as part of moving to the single package
