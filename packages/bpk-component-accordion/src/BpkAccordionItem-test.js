@@ -22,7 +22,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import StopsIcon from 'bpk-component-icon/sm/stops';
 
-import BpkAccordionItem, { WEIGHT_STYLES } from './BpkAccordionItem';
+import BpkAccordionItem from './BpkAccordionItem';
 
 describe('BpkAccordionItem', () => {
   it('should render correctly', () => {
@@ -62,19 +62,6 @@ describe('BpkAccordionItem', () => {
         id="my-accordion"
         title="My accordion item"
         textStyle="xl"
-      >
-        My accordion content
-      </BpkAccordionItem>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with "weight" prop set to bold', () => {
-    const { asFragment } = render(
-      <BpkAccordionItem
-        id="my-accordion"
-        title="My accordion item"
-        weight={WEIGHT_STYLES.bold}
       >
         My accordion content
       </BpkAccordionItem>,

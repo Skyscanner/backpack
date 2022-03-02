@@ -97,7 +97,6 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 | children  | node     | true     | -             |
 | id        | string   | true     | -             |
 | title     | string   | true     | -             |
-| weight (deprecated, use a different `textStyle` to achieve the desired weight)    | See prop details     | false    | null         |
 | expanded  | bool     | false    | false         |
 | icon      | node     | false    | null          |
 | onClick   | func     | false    | () => null    |
@@ -117,10 +116,6 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 | ~~expanded~~ initiallyExpanded | bool     | false    | false         |
 
 ## Prop Details
-
-#### weight
-
-This prop takes `WEIGHT_STYLES` that has been re-exported from `BpkText`. For valid options please refer to the [BpkText](https://backpack.github.io/components/text?platform=web#readme) docs.
 
 ## Theme Props
 

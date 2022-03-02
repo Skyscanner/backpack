@@ -23,11 +23,8 @@ import React, { type Node, type Element } from 'react';
 import AnimateHeight from 'bpk-animate-height';
 import { withButtonAlignment } from 'bpk-component-icon';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
-import BpkText, {
-  TEXT_STYLES,
-  WEIGHT_STYLES as weights,
-} from 'bpk-component-text';
-import { cssModules, deprecated } from 'bpk-react-utils';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkAccordionItem.module.scss';
 
@@ -35,13 +32,10 @@ const getClassName = cssModules(STYLES);
 
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 
-export const WEIGHT_STYLES = weights;
-
 type Props = {
   children: Node,
   id: string,
   title: string,
-  weight: ?$Keys<typeof WEIGHT_STYLES>,
   expanded: boolean,
   icon: ?Element<any>,
   onClick: () => mixed,
@@ -60,7 +54,6 @@ const BpkAccordionItem = (props: Props) => {
     tagName,
     textStyle,
     title,
-    weight,
     ...rest
   } = props;
 
@@ -99,7 +92,6 @@ const BpkAccordionItem = (props: Props) => {
               textStyle={textStyle}
               tagName={tagName}
               className={getClassName('bpk-accordion__title-text')}
-              weight={weight}
             >
               {clonedIcon}
               {title}
@@ -127,10 +119,6 @@ BpkAccordionItem.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  weight: deprecated(
-    PropTypes.string,
-    'Use a different "textStyle" to achieve the desired weight',
-  ),
   expanded: PropTypes.bool,
   icon: PropTypes.node,
   onClick: PropTypes.func,
@@ -139,7 +127,6 @@ BpkAccordionItem.propTypes = {
 };
 
 BpkAccordionItem.defaultProps = {
-  weight: null,
   expanded: false,
   icon: null,
   onClick: () => null,
