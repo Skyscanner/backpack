@@ -144,7 +144,7 @@ BpkAccordionItem.defaultProps = {
   icon: null,
   onClick: () => null,
   tagName: 'span',
-  textStyle: TEXT_STYLES.base,
+  textStyle: TEXT_STYLES.bodyDefault,
 };
 
 export default BpkAccordionItem;

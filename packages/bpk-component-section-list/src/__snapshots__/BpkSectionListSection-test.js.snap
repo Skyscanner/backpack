@@ -21,7 +21,7 @@ exports[`BpkSectionListSection should render correctly with "headerText" prop 1`
       class="bpk-section-list-section__header"
     >
       <span
-        class="bpk-text bpk-text--base bpk-text--bold"
+        class="bpk-text bpk-text--label-1"
       >
         Heading
       </span>

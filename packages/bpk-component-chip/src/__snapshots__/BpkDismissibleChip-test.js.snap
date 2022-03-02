@@ -9,7 +9,7 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -41,7 +41,7 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -73,7 +73,7 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -105,7 +105,7 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -137,7 +137,7 @@ exports[`BpkDismissibleChip should render correctly with type="light" 1`] = `
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -176,7 +176,7 @@ exports[`BpkDismissibleChip should render correctly with type="light" and a lead
       </span>
     </span>
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -209,7 +209,7 @@ exports[`BpkDismissibleChip should render correctly with type="light" and disabl
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -241,7 +241,7 @@ exports[`BpkDismissibleChip should render correctly with type="primary" 1`] = `
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -280,7 +280,7 @@ exports[`BpkDismissibleChip should render correctly with type="primary" and a le
       </span>
     </span>
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -313,7 +313,7 @@ exports[`BpkDismissibleChip should render correctly with type="primary" and disa
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -345,7 +345,7 @@ exports[`BpkDismissibleChip should render correctly with type="success" 1`] = `
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -384,7 +384,7 @@ exports[`BpkDismissibleChip should render correctly with type="success" and a le
       </span>
     </span>
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>
@@ -417,7 +417,7 @@ exports[`BpkDismissibleChip should render correctly with type="success" and disa
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Dismiss me
     </span>

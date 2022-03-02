@@ -26,7 +26,7 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import BpkButton from 'bpk-component-button';
 import { BpkList, BpkListItem } from 'bpk-component-list';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
 import { sm, lg } from './all';
 import SearchIcon from './lg/search';
@@ -86,28 +86,28 @@ const LargeIconsExample = () => (
 );
 
 const AlignToBaseTextExample = () => (
-  <BpkText textStyle="base">
+  <BpkText textStyle={TEXT_STYLES.bodyDefault}>
     Search &nbsp;
     <AlignedBaseArrow fill={colors.colorSkyGrayTint01} />
   </BpkText>
 );
 
 const AlignToLargeTextExample = () => (
-  <BpkText textStyle="lg">
+  <BpkText textStyle={TEXT_STYLES.bodyLongform}>
     Search &nbsp;
     <AlignedLargeLongArrowRightIcon fill={colors.colorSkyGrayTint01} />
   </BpkText>
 );
 
 const AlignSmallTextToIconExample = () => (
-  <BpkText textStyle="sm">
+  <BpkText textStyle={TEXT_STYLES.footnote}>
     <SearchIcon fill={colors.colorSkyGrayTint01} />
     <AlignedSpanSmall>&nbsp; Search</AlignedSpanSmall>
   </BpkText>
 );
 
 const AlignTextToIconExample = () => (
-  <BpkText textStyle="base">
+  <BpkText textStyle={TEXT_STYLES.bodyDefault}>
     <SearchIcon fill={colors.colorSkyGrayTint01} />
     <AlignedSpan>&nbsp; Search</AlignedSpan>
   </BpkText>

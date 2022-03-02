@@ -27,7 +27,7 @@ const shortContent = 'Book your next trip on skyscanner.net.';
 
 const longContent = (
   <Fragment>
-    <BpkText tagName="h3" textStyle={TEXT_STYLES.lg}>
+    <BpkText tagName="h3" textStyle={TEXT_STYLES.bodyLongform}>
       Let&#39;s explore
     </BpkText>
     <BpkText tagName="p">

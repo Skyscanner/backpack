@@ -3,7 +3,7 @@
 exports[`BpkText should not apply black styles when weight="black" and not an xl textStyle 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-text bpk-text--base"
+    class="bpk-text bpk-text--body-default"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </span>
@@ -13,7 +13,7 @@ exports[`BpkText should not apply black styles when weight="black" and not an xl
 exports[`BpkText should pass down unknown props 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-text bpk-text--base"
+    class="bpk-text bpk-text--body-default"
     style="color: red;"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -24,7 +24,7 @@ exports[`BpkText should pass down unknown props 1`] = `
 exports[`BpkText should render correctly 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-text bpk-text--base"
+    class="bpk-text bpk-text--body-default"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </span>
@@ -34,7 +34,7 @@ exports[`BpkText should render correctly 1`] = `
 exports[`BpkText should render correctly with deprecated \`bold\` prop 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-text bpk-text--base bpk-text--bold"
+    class="bpk-text bpk-text--body-default bpk-text--bold"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </span>
@@ -44,7 +44,7 @@ exports[`BpkText should render correctly with deprecated \`bold\` prop 1`] = `
 exports[`BpkText should render correctly with deprecated \`weight\` prop 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-text bpk-text--base bpk-text--bold"
+    class="bpk-text bpk-text--body-default bpk-text--bold"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </span>
@@ -54,7 +54,7 @@ exports[`BpkText should render correctly with deprecated \`weight\` prop 1`] = `
 exports[`BpkText should render correctly with no \`weight\` prop 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-text bpk-text--base"
+    class="bpk-text bpk-text--body-default"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </span>
@@ -74,7 +74,7 @@ exports[`BpkText should render correctly with tageName="h1", textStyle="xxl" 1`]
 exports[`BpkText should render correctly with tageName="text" 1`] = `
 <DocumentFragment>
   <text
-    class="bpk-text bpk-text--base"
+    class="bpk-text bpk-text--body-default"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </text>
@@ -224,7 +224,7 @@ exports[`BpkText should render correctly with weight="black" and supported textS
 exports[`BpkText should render correctly with weight="bold" 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-text bpk-text--base bpk-text--bold"
+    class="bpk-text bpk-text--body-default bpk-text--bold"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </span>

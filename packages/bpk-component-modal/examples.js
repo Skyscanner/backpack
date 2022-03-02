@@ -25,7 +25,7 @@ import BpkButton from 'bpk-component-button';
 import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
 import { withAlignment, withRtlSupport } from 'bpk-component-icon';
 import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import {
   lineHeightBase,
   iconSizeSm,
@@ -43,7 +43,7 @@ const ArrowIconWithRtl = withAlignment(
 const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
-  textStyle: 'base',
+  textStyle: TEXT_STYLES.bodyDefault,
   tagName: 'p',
   className: getClassName('bpk-modal-paragraph'),
 });

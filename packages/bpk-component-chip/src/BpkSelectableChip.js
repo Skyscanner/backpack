@@ -77,7 +77,7 @@ const BpkSelectableChip = (props: Props) => {
           {leadingAccessoryView}
         </span>
       )}
-      <BpkText textStyle={TEXT_STYLES.sm}>{children}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.footnote}>{children}</BpkText>
       {trailingAccessoryView && (
         <span className={getClassName('bpk-chip__trailing-accessory-view')}>
           {trailingAccessoryView}

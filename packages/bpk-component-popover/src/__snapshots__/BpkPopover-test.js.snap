@@ -136,7 +136,7 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
       class="bpk-popover__header"
     >
       <h2
-        class="bpk-text bpk-text--base bpk-text--bold"
+        class="bpk-text bpk-text--label-1"
         id="bpk-popover-label-my-popover"
       >
         My popover
