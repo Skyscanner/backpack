@@ -21,10 +21,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
-import BpkText, {
-  WEIGHT_STYLES,
-  TEXT_STYLES,
-} from 'bpk-component-text/src/BpkText';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text/src/BpkText';
 
 import { LatLongPropType, type LatLong } from './common-types';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
@@ -92,11 +89,10 @@ const BpkPriceMarker = (props: Props) => {
       >
         <BpkText
           className={classNames}
-          weight={WEIGHT_STYLES.bold}
           textStyle={
             status === PRICE_MARKER_STATUSES.focused
-              ? TEXT_STYLES.base
-              : TEXT_STYLES.sm
+              ? TEXT_STYLES.label1
+              : TEXT_STYLES.label2
           }
         >
           {label}

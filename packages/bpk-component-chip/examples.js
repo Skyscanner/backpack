@@ -21,7 +21,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
-import BpkText, { TEXT_STYLES, WEIGHT_STYLES } from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import BeachIconSm from 'bpk-component-icon/sm/beach';
 import CarWashIconSm from 'bpk-component-icon/sm/car-wash';
 import PlusIconSm from 'bpk-component-icon/sm/plus';
@@ -178,8 +178,7 @@ class StatefulRadioGroupChipsExample extends React.Component<
             id="favorite-color-label"
             aria-hidden
             tagName="h1"
-            textStyle={TEXT_STYLES.lg}
-            weight={WEIGHT_STYLES.bold}
+            textStyle={TEXT_STYLES.heading4}
           >
             Favourite colour
           </BpkText>
@@ -309,7 +308,7 @@ const WithIconsExample = () => (
 
 const AllTypesExample = () => (
   <div>
-    <BpkText textStyle={TEXT_STYLES.lg} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.bodyLongform} tagName="h2">
       Selectable chips
     </BpkText>
     {Object.keys(CHIP_TYPES).map((chipType) => (
@@ -318,7 +317,7 @@ const AllTypesExample = () => (
         <AllSelectableChips type={chipType} />
       </>
     ))}
-    <BpkText textStyle={TEXT_STYLES.lg} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.bodyLongform} tagName="h2">
       Dismissible chips
     </BpkText>
     {Object.keys(CHIP_TYPES).map((chipType) => (

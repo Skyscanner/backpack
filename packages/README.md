@@ -51,7 +51,6 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 | [`bpk-component-form-validation`](/packages/bpk-component-form-validation) | [![npm version](https://badge.fury.io/js/bpk-component-form-validation.svg)](http://badge.fury.io/js/bpk-component-form-validation) |
 | [`bpk-component-grid`](/packages/bpk-component-grid) | [![npm version](https://badge.fury.io/js/bpk-component-grid.svg)](http://badge.fury.io/js/bpk-component-grid) |
 | [`bpk-component-grid-toggle`](/packages/bpk-component-grid-toggle) | [![npm version](https://badge.fury.io/js/bpk-component-grid-toggle.svg)](http://badge.fury.io/js/bpk-component-grid-toggle) |
-| [`bpk-component-heading`](/packages/bpk-component-heading) | [![npm version](https://badge.fury.io/js/bpk-component-heading.svg)](http://badge.fury.io/js/bpk-component-heading) |
 | [`bpk-component-horizontal-nav`](/packages/bpk-component-horizontal-nav) | [![npm version](https://badge.fury.io/js/bpk-component-horizontal-nav.svg)](http://badge.fury.io/js/bpk-component-horizontal-nav) |
 | [`bpk-component-icon`](/packages/bpk-component-icon) | [![npm version](https://badge.fury.io/js/bpk-component-icon.svg)](http://badge.fury.io/js/bpk-component-icon) |
 | [`bpk-component-image`](/packages/bpk-component-image) | [![npm version](https://badge.fury.io/js/bpk-component-image.svg)](http://badge.fury.io/js/bpk-component-image) |
@@ -68,7 +67,6 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 | [`bpk-component-nudger`](/packages/bpk-component-nudger) | [![npm version](https://badge.fury.io/js/bpk-component-nudger.svg)](http://badge.fury.io/js/bpk-component-nudger) |
 | [`bpk-component-pagination`](/packages/bpk-component-pagination) | [![npm version](https://badge.fury.io/js/bpk-component-pagination.svg)](http://badge.fury.io/js/bpk-component-pagination) |
 | [`bpk-component-panel`](/packages/bpk-component-panel) | [![npm version](https://badge.fury.io/js/bpk-component-panel.svg)](http://badge.fury.io/js/bpk-component-panel) |
-| [`bpk-component-paragraph`](/packages/bpk-component-paragraph) | [![npm version](https://badge.fury.io/js/bpk-component-paragraph.svg)](http://badge.fury.io/js/bpk-component-paragraph) |
 | [`bpk-component-phone-input`](/packages/bpk-component-phone-input) | [![npm version](https://badge.fury.io/js/bpk-component-phone-input.svg)](http://badge.fury.io/js/bpk-component-phone-input) |
 | [`bpk-component-popover`](/packages/bpk-component-popover) | [![npm version](https://badge.fury.io/js/bpk-component-popover.svg)](http://badge.fury.io/js/bpk-component-popover) |
 | [`bpk-component-progress`](/packages/bpk-component-progress) | [![npm version](https://badge.fury.io/js/bpk-component-progress.svg)](http://badge.fury.io/js/bpk-component-progress) |

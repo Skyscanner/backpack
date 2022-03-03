@@ -21,7 +21,7 @@
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
-import BpkText, { WEIGHT_STYLES } from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
 import STYLES from './BpkSectionListSection.module.scss';
 
@@ -39,9 +39,7 @@ const BpkSectionListSection = (props: Props) => {
     <section {...rest}>
       {headerText && (
         <header className={getClassName('bpk-section-list-section__header')}>
-          <BpkText weight={WEIGHT_STYLES.bold} textStyle="base">
-            {headerText}
-          </BpkText>
+          <BpkText textStyle={TEXT_STYLES.label1}>{headerText}</BpkText>
         </header>
       )}
       <ul className={getClassName('bpk-section-list-section')}>

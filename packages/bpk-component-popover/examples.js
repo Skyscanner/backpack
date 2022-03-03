@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 
@@ -35,7 +35,7 @@ const getClassName = cssModules(STYLES);
 const EnhancedInput = withOpenEvents(BpkInput);
 
 const Paragraph = withDefaultProps(BpkText, {
-  textStyle: 'base',
+  textStyle: TEXT_STYLES.bodyDefault,
   tagName: 'p',
   className: getClassName('bpk-popover-paragraph'),
 });

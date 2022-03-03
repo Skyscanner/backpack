@@ -19,7 +19,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--base bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
           >
             My accordion item
           </span>
@@ -84,7 +84,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--base bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
           >
             My accordion item
           </span>
@@ -149,7 +149,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--base bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
           >
             My accordion item
           </span>

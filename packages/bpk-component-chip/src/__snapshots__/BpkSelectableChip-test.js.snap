@@ -10,7 +10,7 @@ exports[`BpkSelectableChip should render correctly 1`] = `
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -28,7 +28,7 @@ exports[`BpkSelectableChip should render correctly with a "className" attribute 
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -46,7 +46,7 @@ exports[`BpkSelectableChip should render correctly with type="light" 1`] = `
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -71,7 +71,7 @@ exports[`BpkSelectableChip should render correctly with type="light" and a leadi
       </span>
     </span>
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -89,7 +89,7 @@ exports[`BpkSelectableChip should render correctly with type="light" and a trail
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -121,7 +121,7 @@ exports[`BpkSelectableChip should render correctly with type="light" and both a 
       </span>
     </span>
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -147,7 +147,7 @@ exports[`BpkSelectableChip should render correctly with type="light" and disable
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -165,7 +165,7 @@ exports[`BpkSelectableChip should render correctly with type="light" and selecte
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -184,7 +184,7 @@ exports[`BpkSelectableChip should render correctly with type="light", selected a
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -202,7 +202,7 @@ exports[`BpkSelectableChip should render correctly with type="primary" 1`] = `
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -227,7 +227,7 @@ exports[`BpkSelectableChip should render correctly with type="primary" and a lea
       </span>
     </span>
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -245,7 +245,7 @@ exports[`BpkSelectableChip should render correctly with type="primary" and a tra
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -277,7 +277,7 @@ exports[`BpkSelectableChip should render correctly with type="primary" and both 
       </span>
     </span>
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -303,7 +303,7 @@ exports[`BpkSelectableChip should render correctly with type="primary" and disab
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -321,7 +321,7 @@ exports[`BpkSelectableChip should render correctly with type="primary" and selec
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -340,7 +340,7 @@ exports[`BpkSelectableChip should render correctly with type="primary", selected
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -358,7 +358,7 @@ exports[`BpkSelectableChip should render correctly with type="success" 1`] = `
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -383,7 +383,7 @@ exports[`BpkSelectableChip should render correctly with type="success" and a lea
       </span>
     </span>
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -401,7 +401,7 @@ exports[`BpkSelectableChip should render correctly with type="success" and a tra
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -433,7 +433,7 @@ exports[`BpkSelectableChip should render correctly with type="success" and both 
       </span>
     </span>
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -459,7 +459,7 @@ exports[`BpkSelectableChip should render correctly with type="success" and disab
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -477,7 +477,7 @@ exports[`BpkSelectableChip should render correctly with type="success" and selec
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>
@@ -496,7 +496,7 @@ exports[`BpkSelectableChip should render correctly with type="success", selected
     type="button"
   >
     <span
-      class="bpk-text bpk-text--sm"
+      class="bpk-text bpk-text--footnote"
     >
       Toggle me
     </span>

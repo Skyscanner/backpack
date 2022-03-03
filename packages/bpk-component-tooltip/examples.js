@@ -20,7 +20,7 @@
 
 import React from 'react';
 import { withDefaultProps } from 'bpk-react-utils';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import {
   spacingSm,
   colorMonteverde,
@@ -35,7 +35,7 @@ const wrapperStyle = {
 };
 
 const Heading = withDefaultProps(BpkText, {
-  textStyle: 'lg',
+  textStyle: TEXT_STYLES.bodyLongform,
   tagName: 'h4',
 });
 

@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-barchart",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Backpack bar chart component.",
   "license": "Apache-2.0",
   "repository": {
@@ -30,6 +30,6 @@
     "bpk-component-breakpoint": "^3.1.0",
     "bpk-component-content-container": "^4.1.0",
     "bpk-component-rtl-toggle": "^3.1.0",
-    "bpk-component-text": "^6.1.0"
+    "bpk-component-text": "^6.1.1"
   }
 }
