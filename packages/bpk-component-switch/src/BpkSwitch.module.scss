@@ -59,7 +59,9 @@ $border-width: $bpk-one-pixel-rem * 2;
 
   &__label {
     margin-right: bpk-spacing-md();
-    line-height: $height;
+
+    @include bpk-subheading;
+    // line-height: $height;
   }
 
   // The 'track'.
