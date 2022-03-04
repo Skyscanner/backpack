@@ -44,5 +44,7 @@
     box-shadow: $shadow-bottom;
     vertical-align: middle;
     box-sizing: content-box;
+
+    @include bpk-footnote;
   }
 }
