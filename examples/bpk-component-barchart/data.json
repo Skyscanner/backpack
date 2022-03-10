@@ -1,0 +1,102 @@
+{
+  "prices": [
+    {
+      "month": "Jan",
+      "price": 305
+    },
+    {
+      "month": "Feb",
+      "price": 348
+    },
+    {
+      "month": "Mar",
+      "price": 418
+    },
+    {
+      "month": "Apr",
+      "price": 448
+    },
+    {
+      "month": "May",
+      "price": 344
+    },
+    {
+      "month": "Jun",
+      "price": 322
+    },
+    {
+      "month": "Jul",
+      "price": 340
+    },
+    {
+      "month": "Aug",
+      "price": 327
+    },
+    {
+      "month": "Sep",
+      "price": 444
+    },
+    {
+      "month": "Oct",
+      "price": 422
+    },
+    {
+      "month": "Nov",
+      "price": 344
+    },
+    {
+      "month": "Dec",
+      "price": 301
+    }
+  ],
+  "prices2": [
+    {
+      "month": "Jan",
+      "price": 305
+    },
+    {
+      "month": "Feb",
+      "price": 348
+    },
+    {
+      "month": "Mar",
+      "price": 418
+    },
+    {
+      "month": "Apr",
+      "price": 448
+    },
+    {
+      "month": "May",
+      "price": 344
+    },
+    {
+      "month": "Jun",
+      "price": 322
+    },
+    {
+      "month": "Jul",
+      "price": 840
+    },
+    {
+      "month": "Aug",
+      "price": 927
+    },
+    {
+      "month": "Sep",
+      "price": 444
+    },
+    {
+      "month": "Oct",
+      "price": 422
+    },
+    {
+      "month": "Nov",
+      "price": 344
+    },
+    {
+      "month": "Dec",
+      "price": 601
+    }
+  ]
+}
