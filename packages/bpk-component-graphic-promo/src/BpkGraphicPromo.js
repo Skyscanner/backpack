@@ -20,6 +20,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import BpkButton from 'bpk-component-button';
+import BpkCard from 'bpk-component-card';
 
 import STYLES from './BpkGraphicPromo.module.scss';
 
@@ -54,10 +57,29 @@ const BpkGraphicPromo = ({
   const classNames = getClassName('bpk-graphic-promo', className);
 
   return (
-    <div>
-      <div id="SponsorContent" />
-      <div id="PromoContent" />
-    </div>
+    // bpk card will have background image set in CSS probably
+    <BpkCard>
+      <div id="SponsorContent">
+        <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>
+          Sponsored
+        </BpkText>
+        <img alt={sponsorAltText} src={sponsorLogo} />
+      </div>
+      <div id="PromoContent">
+        <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>
+          {kicker}
+        </BpkText>
+        <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>
+          {headline}
+        </BpkText>
+        <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>
+          {strapline}
+        </BpkText>
+        <BpkButton href={ctaUrl} link>
+          {ctaText}
+        </BpkButton>
+      </div>
+    </BpkCard>
   );
 };
 
