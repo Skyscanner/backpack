@@ -26,26 +26,61 @@ import STYLES from './BpkGraphicPromo.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  className: ?string,
+  className?: string,
+  kicker?: string,
+  headline: string,
+  strapline?: string,
+  image: string,
+  sponsorLogo?: string,
+  sponsorAltText?: string,
+  ctaText: string,
+  ctaUrl: string,
+  invertVertically: boolean,
+  textAlign: 'start' | 'center' | 'end',
 };
-const BpkGraphicPromo = (props: Props) => {
-  const { className, ...rest } = props;
+const BpkGraphicPromo = ({
+  className,
+  ctaText,
+  ctaUrl,
+  headline,
+  image,
+  invertVertically,
+  kicker,
+  sponsorAltText,
+  sponsorLogo,
+  strapline,
+  textAlign,
+}: Props) => {
   const classNames = getClassName('bpk-graphic-promo', className);
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={classNames} {...rest}>
-      I am an example component.
+    <div>
+      <div id="SponsorContent" />
+      <div id="PromoContent" />
     </div>
   );
 };
 
 BpkGraphicPromo.propTypes = {
   className: PropTypes.string,
+  kicker: PropTypes.string,
+  headline: PropTypes.string.isRequired,
+  strapline: PropTypes.string,
+  image: PropTypes.string.isRequired,
+  sponsorLogo: PropTypes.string,
+  sponsorAltText: PropTypes.string,
+  ctaText: PropTypes.string.isRequired,
+  ctaUrl: PropTypes.string.isRequired,
+  invertVertically: PropTypes.string.isRequired,
+  textAlign: PropTypes.oneOf(['start', 'center', 'end']).isRequired,
 };
 
 BpkGraphicPromo.defaultProps = {
-  className: null,
+  className: undefined,
+  kicker: undefined,
+  strapline: undefined,
+  sponsorLogo: undefined,
+  sponsorAltText: undefined,
 };
 
 export default BpkGraphicPromo;
