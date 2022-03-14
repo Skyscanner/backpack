@@ -20,6 +20,8 @@
 @import './custom-breakpoints';
 
 .bpk-graphic-promo {
+  max-width: pxToRem(1048);
+
   background-color: gray;
   color: white;
 
@@ -126,6 +128,7 @@
 
     @include breakpoint-landscape {
       display: inherit;
+      margin-top: bpk-spacing-xl();
     }
 
     @include breakpoint-portrait {
@@ -134,15 +137,27 @@
   }
 
   @include breakpoint-landscape {
-    &__sponsor-label,
+    &__sponsor-label {
+      @include bpk-label-1;
+      margin-bottom: bpk-spacing-small();
+    }
+
+    &__sponsor-content {
+      margin-bottom: bpk-spacing-xl();
+    }
+
     &__kicker {
       @include bpk-label-1;
+      margin-bottom: bpk-spacing-md();
     }
     &__strapline {
       @include bpk-body-default;
     }
-
     &__headline {
+      &:not(:last-child) {
+        margin-bottom: bpk-spacing-md();
+      }
+
       @include breakpoint-landscape-desktop {
         @include bpk-hero-5;
       }
@@ -155,26 +170,35 @@
   @include breakpoint-portrait-large {
     &__sponsor-label {
       @include bpk-heading-4;
+      margin-bottom: bpk-spacing-md();
     }
+
     &__kicker {
       @include bpk-subheading;
+      margin-bottom: bpk-spacing-md();
     }
     &__headline {
       @include bpk-hero-4;
+      margin-bottom: bpk-spacing-md();
     }
     &__strapline {
       @include bpk-subheading;
     }
   }
+
   @include breakpoint-portrait-medium {
     &__sponsor-label {
       @include bpk-heading-3;
+      margin-bottom: bpk-spacing-md();
     }
+
     &__kicker {
       @include bpk-subheading;
+      margin-bottom: bpk-spacing-md();
     }
     &__headline {
       @include bpk-hero-5;
+      margin-bottom: bpk-spacing-md();
     }
     &__strapline {
       @include bpk-body-longform;
@@ -183,12 +207,16 @@
   @include breakpoint-portrait-small {
     &__sponsor-label {
       @include bpk-label-1;
+      margin-bottom: bpk-spacing-sm();
     }
+
     &__kicker {
       @include bpk-label-1;
+      margin-bottom: bpk-spacing-md();
     }
     &__headline {
       @include bpk-heading-2;
+      margin-bottom: bpk-spacing-md();
     }
     &__strapline {
       @include bpk-body-default;

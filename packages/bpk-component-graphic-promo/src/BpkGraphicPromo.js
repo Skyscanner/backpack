@@ -20,7 +20,7 @@
 import PropTypes from 'prop-types';
 import React, { useCallback } from 'react';
 import { cssModules } from 'bpk-react-utils';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
 import BpkCard from 'bpk-component-card';
 
@@ -91,6 +91,7 @@ const BpkGraphicPromo = ({
               tagName="span"
               className={getClassName('bpk-graphic-promo__sponsor-label')}
             >
+              {/* Translate this text. */}
               Sponsored
             </BpkText>
             <img
