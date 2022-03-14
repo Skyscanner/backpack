@@ -24,16 +24,14 @@ import { axe } from 'jest-axe';
 import BpkGraphicPromo from './BpkGraphicPromo';
 
 describe('BpkGraphicPromo accessibility tests', () => {
-  const image = './path/to/image.jpg';
-
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkGraphicPromo
         kicker="Kicker"
         headline="Headline"
         strapline="Strapline"
-        image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-        sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
+        image="./path/to/image.jpg"
+        sponsorLogo="./path/to/image.jpg"
         sponsorAltText="easyJet"
         ctaText="Learn More"
         textAlign="start"
@@ -50,8 +48,8 @@ describe('BpkGraphicPromo accessibility tests', () => {
         kicker="Kicker"
         headline="Headline"
         strapline="Strapline"
-        image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-        sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
+        image="./path/to/image.jpg"
+        sponsorLogo="./path/to/image.jpg"
         sponsorAltText="easyJet"
         ctaText="Learn More"
         textAlign="center"
@@ -68,8 +66,8 @@ describe('BpkGraphicPromo accessibility tests', () => {
         kicker="Kicker"
         headline="Headline"
         strapline="Strapline"
-        image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-        sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
+        image="./path/to/image.jpg"
+        sponsorLogo="./path/to/image.jpg"
         sponsorAltText="easyJet"
         ctaText="Learn More"
         textAlign="end"
@@ -86,8 +84,8 @@ describe('BpkGraphicPromo accessibility tests', () => {
         kicker="Kicker"
         headline="Headline"
         strapline="Strapline"
-        image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-        sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
+        image="./path/to/image.jpg"
+        sponsorLogo="./path/to/image.jpg"
         ctaText="Learn More"
         textAlign="start"
         invertVertically
@@ -101,8 +99,8 @@ describe('BpkGraphicPromo accessibility tests', () => {
     const { container } = render(
       <BpkGraphicPromo
         headline="Headline"
-        image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-        sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
+        image="./path/to/image.jpg"
+        sponsorLogo="./path/to/image.jpg"
         ctaText="Learn More"
         textAlign="start"
         invertVertically={false}
@@ -118,7 +116,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         kicker="Kicker"
         headline="Headline"
         strapline="Strapline"
-        image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
+        image="./path/to/image.jpg"
         ctaText="Learn More"
         textAlign="start"
         invertVertically={false}
