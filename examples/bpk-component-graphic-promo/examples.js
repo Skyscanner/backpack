@@ -26,6 +26,7 @@ const sponsorLogo =
   'https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png';
 const sponsorAltText = 'easyJet';
 const ctaText = 'Learn more';
+const ctaUrl = 'https://www.skyscanner.net';
 
 const kicker = 'Kicker';
 const headline = 'Ride your wave';
@@ -41,6 +42,7 @@ const DefaultExample = () => (
     sponsorLogo={sponsorLogo}
     sponsorAltText={sponsorAltText}
     ctaText={ctaText}
+    ctaUrl={ctaUrl}
     textAlign="start"
     invertVertically={false}
   />
@@ -55,6 +57,7 @@ const CenterAlignedExample = () => (
     sponsorLogo={sponsorLogo}
     sponsorAltText={sponsorAltText}
     ctaText={ctaText}
+    ctaUrl={ctaUrl}
     textAlign="center"
     invertVertically={false}
   />
@@ -69,6 +72,7 @@ const RightAlignedExample = () => (
     sponsorLogo={sponsorLogo}
     sponsorAltText={sponsorAltText}
     ctaText={ctaText}
+    ctaUrl={ctaUrl}
     textAlign="end"
     invertVertically={false}
   />
@@ -83,6 +87,7 @@ const InvertedPortraitExample = () => (
     sponsorLogo={sponsorLogo}
     sponsorAltText={sponsorAltText}
     ctaText={ctaText}
+    ctaUrl={ctaUrl}
     textAlign="start"
     invertVertically
   />
@@ -94,6 +99,7 @@ const MinimalisticExample = () => (
     image={image}
     sponsorLogo={sponsorLogo}
     ctaText={ctaText}
+    ctaUrl={ctaUrl}
     textAlign="start"
     invertVertically={false}
   />
@@ -106,6 +112,7 @@ const NonSponsoredExample = () => (
     strapline={strapline}
     image={image}
     ctaText={ctaText}
+    ctaUrl={ctaUrl}
     textAlign="start"
     invertVertically={false}
   />

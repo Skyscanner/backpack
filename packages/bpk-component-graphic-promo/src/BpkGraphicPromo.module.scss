@@ -29,13 +29,16 @@
   background-position: center;
   box-shadow: none;
 
+  @include breakpoint-landscape {
+    pointer-events: none;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
 
     @include breakpoint-landscape {
       justify-content: center;
-      pointer-events: none;
 
       &--start {
         align-items: start;
@@ -51,7 +54,6 @@
     }
     @include breakpoint-portrait {
       justify-content: space-between;
-      pointer-events: visible;
 
       &--inverted {
         flex-direction: column-reverse;
@@ -125,6 +127,8 @@
 
     background: white;
     color: black;
+
+    pointer-events: auto;
 
     @include breakpoint-landscape {
       display: inherit;

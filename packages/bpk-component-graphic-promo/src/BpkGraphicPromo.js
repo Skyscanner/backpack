@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { useCallback } from 'react';
+import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
@@ -80,9 +80,10 @@ const BpkGraphicPromo = ({
 
   return (
     <BpkCard
-      padded={false}
       className={cardClasses.join(' ')}
       style={{ backgroundImage: `url(${image})` }}
+      href={ctaUrl}
+      padded={false}
     >
       <div className={containerClasses.join(' ')}>
         {sponsorLogo && (
