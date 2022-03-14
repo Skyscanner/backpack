@@ -70,7 +70,11 @@ const BpkGraphicPromo = ({
   }
 
   return (
-    <BpkCard padded={false} className={cardClasses.join(' ')}>
+    <BpkCard
+      padded={false}
+      className={cardClasses.join(' ')}
+      style={{ backgroundImage: `url(${image})` }}
+    >
       <div className={containerClasses.join(' ')}>
         {sponsorLogo && (
           <div className={getClassName('bpk-graphic-promo__sponsor-content')}>

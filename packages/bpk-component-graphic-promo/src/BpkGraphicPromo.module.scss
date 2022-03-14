@@ -20,9 +20,9 @@
 @import './custom-breakpoints';
 
 .bpk-graphic-promo {
-  background-color: gray;
   color: white;
   box-shadow: none;
+  background-size: cover;
 
   &__container {
     display: flex;
