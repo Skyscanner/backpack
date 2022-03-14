@@ -20,15 +20,27 @@ import React from 'react';
 
 import BpkGraphicPromo from '../../packages/bpk-component-graphic-promo';
 
+const image =
+  'https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png';
+const sponsorLogo =
+  'https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png';
+const sponsorAltText = 'easyJet';
+const ctaText = 'Learn More';
+
+const kicker = 'Kicker';
+const headline = 'Ride your wave';
+const strapline =
+  'Portugal and 6 more countries have just been added to the UK travel green list';
+
 const DefaultExample = () => (
   <BpkGraphicPromo
-    kicker="Kicker"
-    headline="Headline"
-    strapline="Strapline"
-    image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-    sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
-    sponsorAltText="easyJet"
-    ctaText="Learn More"
+    kicker={kicker}
+    headline={headline}
+    strapline={strapline}
+    image={image}
+    sponsorLogo={sponsorLogo}
+    sponsorAltText={sponsorAltText}
+    ctaText={ctaText}
     textAlign="start"
     invertVertically={false}
   />
@@ -36,13 +48,13 @@ const DefaultExample = () => (
 
 const CenterAlignedExample = () => (
   <BpkGraphicPromo
-    kicker="Kicker"
-    headline="Headline"
-    strapline="Strapline"
-    image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-    sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
-    sponsorAltText="easyJet"
-    ctaText="Learn More"
+    kicker={kicker}
+    headline={headline}
+    strapline={strapline}
+    image={image}
+    sponsorLogo={sponsorLogo}
+    sponsorAltText={sponsorAltText}
+    ctaText={ctaText}
     textAlign="center"
     invertVertically={false}
   />
@@ -50,13 +62,13 @@ const CenterAlignedExample = () => (
 
 const RightAlignedExample = () => (
   <BpkGraphicPromo
-    kicker="Kicker"
-    headline="Headline"
-    strapline="Strapline"
-    image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-    sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
-    sponsorAltText="easyJet"
-    ctaText="Learn More"
+    kicker={kicker}
+    headline={headline}
+    strapline={strapline}
+    image={image}
+    sponsorLogo={sponsorLogo}
+    sponsorAltText={sponsorAltText}
+    ctaText={ctaText}
     textAlign="end"
     invertVertically={false}
   />
@@ -64,12 +76,13 @@ const RightAlignedExample = () => (
 
 const InvertedPortraitExample = () => (
   <BpkGraphicPromo
-    kicker="Kicker"
-    headline="Headline"
-    strapline="Strapline"
-    image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-    sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
-    ctaText="Learn More"
+    kicker={kicker}
+    headline={headline}
+    strapline={strapline}
+    image={image}
+    sponsorLogo={sponsorLogo}
+    sponsorAltText={sponsorAltText}
+    ctaText={ctaText}
     textAlign="start"
     invertVertically
   />
@@ -77,10 +90,10 @@ const InvertedPortraitExample = () => (
 
 const MinimalisticExample = () => (
   <BpkGraphicPromo
-    headline="Headline"
-    image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-    sponsorLogo="https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png"
-    ctaText="Learn More"
+    headline={headline}
+    image={image}
+    sponsorLogo={sponsorLogo}
+    ctaText={ctaText}
     textAlign="start"
     invertVertically={false}
   />
@@ -88,11 +101,11 @@ const MinimalisticExample = () => (
 
 const NonSponsoredExample = () => (
   <BpkGraphicPromo
-    kicker="Kicker"
-    headline="Headline"
-    strapline="Strapline"
-    image="https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png"
-    ctaText="Learn More"
+    kicker={kicker}
+    headline={headline}
+    strapline={strapline}
+    image={image}
+    ctaText={ctaText}
     textAlign="start"
     invertVertically={false}
   />
