@@ -20,8 +20,9 @@
 @import './custom-breakpoints';
 
 .bpk-graphic-promo {
-  box-shadow: none;
   background-color: gray;
+  color: white;
+  box-shadow: none;
 
   &__container {
     display: flex;
@@ -29,21 +30,26 @@
 
     @include breakpoint-landscape {
       justify-content: center;
+      pointer-events: none;
 
       &--start {
         text-align: start;
+        align-items: start;
       }
 
       &--center {
         text-align: center;
+        align-items: center;
       }
 
       &--end {
-        text-align: end;
+        text-align: start;
+        align-items: end;
       }
     }
     @include breakpoint-portrait {
       justify-content: space-between;
+      pointer-events: visible;
 
       &--inverted {
         flex-direction: column-reverse;
@@ -73,6 +79,35 @@
     @include breakpoint-portrait-small {
       padding: bpk-spacing-lg();
       height: pxToRem(500);
+    }
+  }
+
+  &__sponsor-content,
+  &__promo-content {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-landscape-desktop {
+      width: pxToRem(360);
+    }
+    @include breakpoint-landscape-tablet {
+      width: pxToRem(320);
+    }
+  }
+
+  &__sponsor-logo {
+    width: pxToRem(148);
+  }
+
+  &__cta {
+    align-self: start;
+
+    @include breakpoint-landscape {
+      display: inherit;
+    }
+
+    @include breakpoint-portrait {
+      display: none;
     }
   }
 }

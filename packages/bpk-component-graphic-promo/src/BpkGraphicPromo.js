@@ -54,7 +54,7 @@ const BpkGraphicPromo = ({
   strapline,
   textAlign,
 }: Props) => {
-  const cardClasses = ['bpk-graphic-promo'];
+  const cardClasses = [getClassName('bpk-graphic-promo')];
   if (className) {
     cardClasses.push(className);
   }
@@ -73,24 +73,36 @@ const BpkGraphicPromo = ({
     <BpkCard padded={false} className={cardClasses.join(' ')}>
       <div className={containerClasses.join(' ')}>
         {sponsorLogo && (
-          <div id="SponsorContent">
-            <BpkText tagName="div" textStyle={TEXT_STYLES.heading}>
+          <div className={getClassName('bpk-graphic-promo__sponsor-content')}>
+            <BpkText tagName="span" textStyle={TEXT_STYLES.label1}>
               Sponsored
             </BpkText>
-            <img alt={sponsorAltText} src={sponsorLogo} />
+            <img
+              className={getClassName('bpk-graphic-promo__sponsor-logo')}
+              alt={sponsorAltText}
+              src={sponsorLogo}
+            />
           </div>
         )}
-        <div id="PromoContent">
-          <BpkText tagName="div" textStyle={TEXT_STYLES.subheading}>
-            {kicker}
-          </BpkText>
-          <BpkText tagName="h2" textStyle={TEXT_STYLES.heading2}>
+        <div className={getClassName('bpk-graphic-promo__promo-content')}>
+          {!sponsorLogo && kicker && (
+            <BpkText tagName="span" textStyle={TEXT_STYLES.label1}>
+              {kicker}
+            </BpkText>
+          )}
+          <BpkText tagName="h2" textStyle={TEXT_STYLES.hero5}>
             {headline}
           </BpkText>
-          <BpkText tagName="p" textStyle={TEXT_STYLES.base}>
-            {strapline}
-          </BpkText>
-          <BpkButton href={ctaUrl} link>
+          {strapline && (
+            <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
+              {strapline}
+            </BpkText>
+          )}
+          <BpkButton
+            className={getClassName('bpk-graphic-promo__cta')}
+            href={ctaUrl}
+            primary
+          >
             {ctaText}
           </BpkButton>
         </div>
