@@ -29,13 +29,13 @@ import STYLES from './BpkGraphicPromo.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  className?: string,
-  kicker?: string,
+  className: ?string,
+  kicker: ?string,
   headline: string,
-  strapline?: string,
+  strapline: ?string,
   image: string,
-  sponsorLogo?: string,
-  sponsorAltText?: string,
+  sponsorLogo: ?string,
+  sponsorAltText: ?string,
   ctaText: string,
   ctaUrl: string,
   invertVertically: boolean,
@@ -54,30 +54,46 @@ const BpkGraphicPromo = ({
   strapline,
   textAlign,
 }: Props) => {
-  const classNames = getClassName('bpk-graphic-promo', className);
+  const cardClasses = ['bpk-graphic-promo'];
+  if (className) {
+    cardClasses.push(className);
+  }
+
+  const containerClasses = [
+    getClassName('bpk-graphic-promo__container'),
+    getClassName(`bpk-graphic-promo__container--${textAlign}`),
+  ];
+  if (invertVertically) {
+    containerClasses.push(
+      getClassName('bpk-graphic-promo__container--inverted'),
+    );
+  }
 
   return (
-    // bpk card will have background image set in CSS probably
-    <BpkCard>
-      <div id="SponsorContent">
-        <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>
-          Sponsored
-        </BpkText>
-        <img alt={sponsorAltText} src={sponsorLogo} />
-      </div>
-      <div id="PromoContent">
-        <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>
-          {kicker}
-        </BpkText>
-        <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>
-          {headline}
-        </BpkText>
-        <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>
-          {strapline}
-        </BpkText>
-        <BpkButton href={ctaUrl} link>
-          {ctaText}
-        </BpkButton>
+    <BpkCard padded={false} className={cardClasses.join(' ')}>
+      <div className={containerClasses.join(' ')}>
+        {sponsorLogo && (
+          <div id="SponsorContent">
+            <BpkText tagName="div" textStyle={TEXT_STYLES.heading}>
+              Sponsored
+            </BpkText>
+            <img alt={sponsorAltText} src={sponsorLogo} />
+          </div>
+        )}
+        <div id="PromoContent">
+          <BpkText tagName="div" textStyle={TEXT_STYLES.subheading}>
+            {kicker}
+          </BpkText>
+          <BpkText tagName="h2" textStyle={TEXT_STYLES.heading2}>
+            {headline}
+          </BpkText>
+          <BpkText tagName="p" textStyle={TEXT_STYLES.base}>
+            {strapline}
+          </BpkText>
+          <BpkButton href={ctaUrl} link>
+            {ctaText}
+          </BpkButton>
+        </div>
       </div>
     </BpkCard>
   );

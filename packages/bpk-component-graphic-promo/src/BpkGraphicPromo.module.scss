@@ -17,7 +17,62 @@
  */
 
 @import '~bpk-mixins/index';
+@import './custom-breakpoints';
 
 .bpk-graphic-promo {
-  display: flex;
+  box-shadow: none;
+  background-color: gray;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-landscape {
+      justify-content: center;
+
+      &--start {
+        text-align: start;
+      }
+
+      &--center {
+        text-align: center;
+      }
+
+      &--end {
+        text-align: end;
+      }
+    }
+    @include breakpoint-portrait {
+      justify-content: space-between;
+
+      &--inverted {
+        flex-direction: column-reverse;
+      }
+    }
+
+    @include breakpoint-landscape-desktop {
+      @include bpk-margin-leading(bpk-spacing-xxxl());
+      @include bpk-margin-trailing(bpk-spacing-xxl());
+
+      height: pxToRem(400);
+    }
+    @include breakpoint-landscape-tablet {
+      @include bpk-margin-leading(bpk-spacing-xxl());
+      @include bpk-margin-trailing(bpk-spacing-xl());
+
+      height: pxToRem(400);
+    }
+    @include breakpoint-portrait-large {
+      padding: bpk-spacing-xl();
+      height: pxToRem(933);
+    }
+    @include breakpoint-portrait-medium {
+      padding: bpk-spacing-xl();
+      height: pxToRem(682);
+    }
+    @include breakpoint-portrait-small {
+      padding: bpk-spacing-lg();
+      height: pxToRem(500);
+    }
+  }
 }
