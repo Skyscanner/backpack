@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
@@ -69,6 +69,15 @@ const BpkGraphicPromo = ({
     );
   }
 
+  const getTextClasses = (baseClass: string) => {
+    const classes = [getClassName(baseClass)];
+    if (textAlign) {
+      classes.push(getClassName(`${baseClass}--${textAlign}`));
+    }
+
+    return classes.join(' ');
+  };
+
   return (
     <BpkCard
       padded={false}
@@ -77,8 +86,11 @@ const BpkGraphicPromo = ({
     >
       <div className={containerClasses.join(' ')}>
         {sponsorLogo && (
-          <div className={getClassName('bpk-graphic-promo__sponsor-content')}>
-            <BpkText tagName="span" textStyle={TEXT_STYLES.label1}>
+          <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
+            <BpkText
+              tagName="span"
+              className={getClassName('bpk-graphic-promo__sponsor-label')}
+            >
               Sponsored
             </BpkText>
             <img
@@ -88,17 +100,26 @@ const BpkGraphicPromo = ({
             />
           </div>
         )}
-        <div className={getClassName('bpk-graphic-promo__promo-content')}>
+        <div className={getTextClasses('bpk-graphic-promo__promo-content')}>
           {!sponsorLogo && kicker && (
-            <BpkText tagName="span" textStyle={TEXT_STYLES.label1}>
+            <BpkText
+              tagName="span"
+              className={getClassName('bpk-graphic-promo__kicker')}
+            >
               {kicker}
             </BpkText>
           )}
-          <BpkText tagName="h2" textStyle={TEXT_STYLES.hero5}>
+          <BpkText
+            tagName="h2"
+            className={getClassName('bpk-graphic-promo__headline')}
+          >
             {headline}
           </BpkText>
           {strapline && (
-            <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
+            <BpkText
+              tagName="p"
+              className={getClassName('bpk-graphic-promo__strapline')}
+            >
               {strapline}
             </BpkText>
           )}

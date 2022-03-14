@@ -21,8 +21,9 @@
 
 .bpk-graphic-promo {
   color: white;
-  box-shadow: none;
   background-size: cover;
+  background-position: center;
+  box-shadow: none;
 
   &__container {
     display: flex;
@@ -33,17 +34,14 @@
       pointer-events: none;
 
       &--start {
-        text-align: start;
         align-items: start;
       }
 
       &--center {
-        text-align: center;
         align-items: center;
       }
 
       &--end {
-        text-align: start;
         align-items: end;
       }
     }
@@ -87,6 +85,25 @@
     display: flex;
     flex-direction: column;
 
+    @include breakpoint-landscape {
+      &--start {
+        align-items: start;
+        text-align: start;
+      }
+
+      &--center {
+        align-items: center;
+        text-align: center;
+      }
+
+      &--end {
+        align-items: start;
+        text-align: start;
+      }
+    }
+    @include breakpoint-portrait {
+    }
+
     @include breakpoint-landscape-desktop {
       width: pxToRem(360);
     }
@@ -100,14 +117,74 @@
   }
 
   &__cta {
-    align-self: start;
-
     @include breakpoint-landscape {
       display: inherit;
     }
 
     @include breakpoint-portrait {
       display: none;
+    }
+  }
+
+  @include breakpoint-landscape {
+    &__sponsor-label,
+    &__kicker {
+      @include bpk-label-1;
+    }
+    &__strapline {
+      @include bpk-body-default;
+    }
+
+    &__headline {
+      @include breakpoint-landscape-desktop {
+        @include bpk-hero-5;
+      }
+      @include breakpoint-landscape-tablet {
+        @include bpk-heading-1;
+      }
+    }
+  }
+
+  @include breakpoint-portrait-large {
+    &__sponsor-label {
+      @include bpk-heading-4;
+    }
+    &__kicker {
+      @include bpk-subheading;
+    }
+    &__headline {
+      @include bpk-hero-4;
+    }
+    &__strapline {
+      @include bpk-subheading;
+    }
+  }
+  @include breakpoint-portrait-medium {
+    &__sponsor-label {
+      @include bpk-heading-3;
+    }
+    &__kicker {
+      @include bpk-subheading;
+    }
+    &__headline {
+      @include bpk-hero-5;
+    }
+    &__strapline {
+      @include bpk-body-longform;
+    }
+  }
+  @include breakpoint-portrait-small {
+    &__sponsor-label {
+      @include bpk-label-1;
+    }
+    &__kicker {
+      @include bpk-label-1;
+    }
+    &__headline {
+      @include bpk-heading-2;
+    }
+    &__strapline {
+      @include bpk-body-default;
     }
   }
 }
