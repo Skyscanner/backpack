@@ -92,7 +92,7 @@ const BpkGraphicPromo = ({
               tagName="span"
               className={getClassName('bpk-graphic-promo__sponsor-label')}
             >
-              {/* Translate this text. */}
+              {/* TODO: Translate this text. */}
               Sponsored
             </BpkText>
             <img
@@ -161,3 +161,13 @@ BpkGraphicPromo.defaultProps = {
 };
 
 export default BpkGraphicPromo;
+
+// TODO: Things to do before submitting:
+// 1) Translate the "Sponsored" text.
+// 2) Set background color for when image fails to load.
+// 3) Confirm background image aspect ratio / dimensions.
+// 4) Confirm text colour.
+// 5) Confirm CTA button style.
+// 6) Write accessibility tests.
+// 7) Write unit tests.
+// 8) Fix remaining ESLint issues before final commit.
