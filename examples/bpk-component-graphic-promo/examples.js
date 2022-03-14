@@ -25,7 +25,7 @@ const image =
 const sponsorLogo =
   'https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png';
 const sponsorAltText = 'easyJet';
-const ctaText = 'Learn More';
+const ctaText = 'Learn more';
 
 const kicker = 'Kicker';
 const headline = 'Ride your wave';
