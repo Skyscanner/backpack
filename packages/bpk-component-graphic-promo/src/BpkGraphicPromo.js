@@ -34,12 +34,14 @@ export type Props = {
   headline: string,
   strapline: ?string,
   image: string,
+  sponsorLabel: string,
   sponsorLogo: ?string,
   sponsorAltText: ?string,
   ctaText: string,
   ctaUrl: string,
   invertVertically: boolean,
   textAlign: 'start' | 'center' | 'end',
+  textColor: 'white' | 'black',
 };
 const BpkGraphicPromo = ({
   className,
@@ -49,10 +51,12 @@ const BpkGraphicPromo = ({
   image,
   invertVertically,
   kicker,
+  sponsorLabel,
   sponsorAltText,
   sponsorLogo,
   strapline,
   textAlign,
+  textColor,
 }: Props) => {
   const cardClasses = [getClassName('bpk-graphic-promo')];
   if (className) {
@@ -81,7 +85,7 @@ const BpkGraphicPromo = ({
   return (
     <BpkCard
       className={cardClasses.join(' ')}
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${image})`, color: textColor }}
       href={ctaUrl}
       padded={false}
     >
@@ -93,7 +97,7 @@ const BpkGraphicPromo = ({
               className={getClassName('bpk-graphic-promo__sponsor-label')}
             >
               {/* TODO: Translate this text. */}
-              Sponsored
+              {sponsorLabel}
             </BpkText>
             <img
               className={getClassName('bpk-graphic-promo__sponsor-logo')}
@@ -144,30 +148,36 @@ BpkGraphicPromo.propTypes = {
   headline: PropTypes.string.isRequired,
   strapline: PropTypes.string,
   image: PropTypes.string.isRequired,
+  sponsorLabel: PropTypes.string,
   sponsorLogo: PropTypes.string,
   sponsorAltText: PropTypes.string,
   ctaText: PropTypes.string.isRequired,
   ctaUrl: PropTypes.string.isRequired,
   invertVertically: PropTypes.string.isRequired,
   textAlign: PropTypes.oneOf(['start', 'center', 'end']).isRequired,
+  textColor: PropTypes.oneOf(['white', 'black']),
 };
 
 BpkGraphicPromo.defaultProps = {
   className: undefined,
   kicker: undefined,
   strapline: undefined,
+  sponsorLabel: undefined,
   sponsorLogo: undefined,
   sponsorAltText: undefined,
+  textColor: 'white',
 };
 
 export default BpkGraphicPromo;
 
 // TODO: Things to do before submitting:
 // 1) Translate the "Sponsored" text.
-// 2) Set background color for when image fails to load.
 // 3) Confirm background image aspect ratio / dimensions.
 // 4) Confirm text colour.
 // 5) Confirm CTA button style.
 // 6) Write accessibility tests.
 // 7) Write unit tests.
 // 8) Fix remaining ESLint issues before final commit.
+
+// DONE
+// 2) Set background color for when image fails to load.

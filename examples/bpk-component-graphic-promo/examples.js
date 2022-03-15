@@ -22,6 +22,7 @@ import BpkGraphicPromo from '../../packages/bpk-component-graphic-promo';
 
 const image =
   'https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png';
+const sponsorLabel = 'Sponsored';
 const sponsorLogo =
   'https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png';
 const sponsorAltText = 'easyJet';
@@ -39,6 +40,7 @@ const DefaultExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
+    sponsorLabel={sponsorLabel}
     sponsorLogo={sponsorLogo}
     sponsorAltText={sponsorAltText}
     ctaText={ctaText}
@@ -54,6 +56,7 @@ const CenterAlignedExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
+    sponsorLabel={sponsorLabel}
     sponsorLogo={sponsorLogo}
     sponsorAltText={sponsorAltText}
     ctaText={ctaText}
@@ -69,6 +72,7 @@ const RightAlignedExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
+    sponsorLabel={sponsorLabel}
     sponsorLogo={sponsorLogo}
     sponsorAltText={sponsorAltText}
     ctaText={ctaText}
@@ -84,6 +88,7 @@ const InvertedPortraitExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
+    sponsorLabel={sponsorLabel}
     sponsorLogo={sponsorLogo}
     sponsorAltText={sponsorAltText}
     ctaText={ctaText}
@@ -97,6 +102,7 @@ const MinimalisticExample = () => (
   <BpkGraphicPromo
     headline={headline}
     image={image}
+    sponsorLabel={sponsorLabel}
     sponsorLogo={sponsorLogo}
     ctaText={ctaText}
     ctaUrl={ctaUrl}
@@ -111,6 +117,7 @@ const NonSponsoredExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
+    sponsorLabel={sponsorLabel}
     ctaText={ctaText}
     ctaUrl={ctaUrl}
     textAlign="start"
