@@ -26,7 +26,8 @@
 
   background-size: cover;
   background-position: center;
-  box-shadow: none;
+  box-shadow: none !important;
+  outline: none !important;
 
   @include breakpoint-landscape {
     pointer-events: none;
@@ -122,6 +123,7 @@
   }
 
   &__cta {
+    // Remove these 3 lines https://gojira.skyscanner.net/browse/ST-4135
     @include bpk-label-1;
 
     background: white;
