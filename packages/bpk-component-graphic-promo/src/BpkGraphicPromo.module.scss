@@ -23,11 +23,10 @@
   max-width: pxToRem(1048);
 
   background-color: gray;
-
-  background-size: cover;
   background-position: center;
-  box-shadow: none !important;
-  outline: none !important;
+  background-size: cover;
+
+  box-shadow: none;
 
   @include breakpoint-landscape {
     pointer-events: none;

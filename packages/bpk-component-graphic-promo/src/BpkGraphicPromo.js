@@ -22,7 +22,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
-import BpkCard from 'bpk-component-card';
+import BpkPanel from 'bpk-component-panel';
 
 import STYLES from './BpkGraphicPromo.module.scss';
 
@@ -51,8 +51,8 @@ const BpkGraphicPromo = ({
   image,
   invertVertically,
   kicker,
-  sponsorLabel,
   sponsorAltText,
+  sponsorLabel,
   sponsorLogo,
   strapline,
   textAlign,
@@ -83,7 +83,7 @@ const BpkGraphicPromo = ({
   };
 
   return (
-    <BpkCard
+    <BpkPanel
       className={cardClasses.join(' ')}
       style={{ backgroundImage: `url(${image})`, color: textColor }}
       href={ctaUrl}
@@ -96,7 +96,6 @@ const BpkGraphicPromo = ({
               tagName="span"
               className={getClassName('bpk-graphic-promo__sponsor-label')}
             >
-              {/* TODO: Translate this text. */}
               {sponsorLabel}
             </BpkText>
             <img
@@ -138,7 +137,7 @@ const BpkGraphicPromo = ({
           </BpkButton>
         </div>
       </div>
-    </BpkCard>
+    </BpkPanel>
   );
 };
 
