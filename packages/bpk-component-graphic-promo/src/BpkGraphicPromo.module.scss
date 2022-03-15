@@ -20,12 +20,12 @@
 @import './custom-breakpoints';
 
 .bpk-graphic-promo {
-  max-width: pxToRem(1048);
-
-  background-color: gray;
+  max-width: pxtorem(1048);
+  margin-right: auto;
+  margin-left: auto;
+  background-color: $bpk-color-sky-blue;
   background-position: center;
   background-size: cover;
-
   box-shadow: none;
 
   @include breakpoint-landscape {
@@ -51,6 +51,7 @@
         align-items: end;
       }
     }
+
     @include breakpoint-portrait {
       justify-content: space-between;
 
@@ -60,28 +61,32 @@
     }
 
     @include breakpoint-landscape-desktop {
+      height: pxtorem(400);
+
       @include bpk-margin-leading(bpk-spacing-xxxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xxl(), false);
-
-      height: pxToRem(400);
     }
+
     @include breakpoint-landscape-tablet {
+      height: pxtorem(400);
+
       @include bpk-margin-leading(bpk-spacing-xxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xl(), false);
+    }
 
-      height: pxToRem(400);
-    }
     @include breakpoint-portrait-large {
+      height: pxtorem(933);
       padding: bpk-spacing-xl();
-      height: pxToRem(933);
     }
+
     @include breakpoint-portrait-medium {
+      height: pxtorem(682);
       padding: bpk-spacing-xl();
-      height: pxToRem(682);
     }
+
     @include breakpoint-portrait-small {
+      height: pxtorem(500);
       padding: bpk-spacing-lg();
-      height: pxToRem(500);
     }
   }
 
@@ -106,29 +111,29 @@
         text-align: start;
       }
     }
-    @include breakpoint-portrait {
-    }
 
     @include breakpoint-landscape-desktop {
-      width: pxToRem(360);
+      width: pxtorem(360);
     }
+
     @include breakpoint-landscape-tablet {
-      width: pxToRem(320);
+      width: pxtorem(320);
     }
   }
 
   &__sponsor-logo {
-    width: pxToRem(148);
+    width: pxtorem(148);
   }
 
   &__cta {
-    // Remove these 3 lines https://gojira.skyscanner.net/browse/ST-4135
-    @include bpk-label-1;
-
-    background: white;
-    color: black;
-
+    // Remove the following 2 lines once the new Button style is reasdy in Backpack. (ST-4135)
+    background: $bpk-color-white;
+    color: black; /* stylelint-disable-line */
     pointer-events: auto;
+
+    // Remove these 2 lines once the new Button style is reasdy in Backpack. (ST-4135)
+
+    @include bpk-label-1;
 
     @include breakpoint-landscape {
       display: inherit;
@@ -208,6 +213,7 @@
       @include bpk-body-longform;
     }
   }
+
   @include breakpoint-portrait-small {
     &__sponsor-label {
       @include bpk-label-1;

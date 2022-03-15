@@ -18,18 +18,18 @@
 
 // FIXME: Replace the custom breakpoints with on es from Backpack when ready. (ST-4102)
 
-@function pxToRem($px) {
+@function pxtorem($px) {
   @return ($px / 16) * 1rem;
 }
 
-$breakpoint-landscape-desktop-min: pxToRem(801);
-$breakpoint-landscape-tablet-max: pxToRem(800);
-$breakpoint-landscape-tablet-min: pxToRem(701);
-$breakpoint-portrait-large-max: pxToRem(700);
-$breakpoint-portrait-large-min: pxToRem(513);
-$breakpoint-portrait-medium-max: pxToRem(512);
-$breakpoint-portrait-medium-min: pxToRem(425);
-$breakpoint-portrait-small-max: pxToRem(424);
+$breakpoint-landscape-desktop-min: pxtorem(801);
+$breakpoint-landscape-tablet-max: pxtorem(800);
+$breakpoint-landscape-tablet-min: pxtorem(701);
+$breakpoint-portrait-large-max: pxtorem(700);
+$breakpoint-portrait-large-min: pxtorem(513);
+$breakpoint-portrait-medium-max: pxtorem(512);
+$breakpoint-portrait-medium-min: pxtorem(425);
+$breakpoint-portrait-small-max: pxtorem(424);
 
 @mixin breakpoint-landscape-desktop {
   @media (min-width: $breakpoint-landscape-desktop-min) {
