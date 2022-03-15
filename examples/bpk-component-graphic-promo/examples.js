@@ -104,6 +104,7 @@ const MinimalisticExample = () => (
     image={image}
     sponsorLabel={sponsorLabel}
     sponsorLogo={sponsorLogo}
+    sponsorAltText={sponsorAltText}
     ctaText={ctaText}
     ctaUrl={ctaUrl}
     textAlign="start"

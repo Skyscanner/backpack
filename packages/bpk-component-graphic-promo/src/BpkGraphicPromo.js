@@ -131,7 +131,6 @@ const BpkGraphicPromo = ({
           <BpkButton
             className={getClassName('bpk-graphic-promo__cta')}
             href={ctaUrl}
-            primary
           >
             {ctaText}
           </BpkButton>
@@ -152,7 +151,7 @@ BpkGraphicPromo.propTypes = {
   sponsorAltText: PropTypes.string,
   ctaText: PropTypes.string.isRequired,
   ctaUrl: PropTypes.string.isRequired,
-  invertVertically: PropTypes.string.isRequired,
+  invertVertically: PropTypes.bool.isRequired,
   textAlign: PropTypes.oneOf(['start', 'center', 'end']).isRequired,
   textColor: PropTypes.oneOf(['white', 'black']),
 };
@@ -171,7 +170,6 @@ export default BpkGraphicPromo;
 
 // TODO: Things to do before submitting:
 // 5) Confirm CTA button style.
-// 6) Write accessibility tests.
 // 7) Write unit tests.
 // 8) Fix remaining ESLint issues before final commit.
 
@@ -180,3 +178,4 @@ export default BpkGraphicPromo;
 // 2) Set background color for when image fails to load.
 // 3) Confirm background image aspect ratio / dimensions.
 // 4) Confirm text colour.
+// 6) Write accessibility tests.

@@ -23,21 +23,38 @@ import { axe } from 'jest-axe';
 
 import BpkGraphicPromo from './BpkGraphicPromo';
 
+const image =
+  'https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png';
+const sponsorLabel = 'Sponsored';
+const sponsorLogo =
+  'https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png';
+const sponsorAltText = 'easyJet';
+const ctaText = 'Learn more';
+const ctaUrl = 'https://www.skyscanner.net';
+
+const kicker = 'Kicker';
+const headline = 'Ride your wave';
+const strapline =
+  'Portugal and 6 more countries have just been added to the UK travel green list';
+
 describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        kicker="Kicker"
-        headline="Headline"
-        strapline="Strapline"
-        image="./path/to/image.jpg"
-        sponsorLogo="./path/to/image.jpg"
-        sponsorAltText="easyJet"
-        ctaText="Learn More"
+        kicker={kicker}
+        headline={headline}
+        strapline={strapline}
+        image={image}
+        sponsorLabel={sponsorLabel}
+        sponsorLogo={sponsorLogo}
+        sponsorAltText={sponsorAltText}
+        ctaText={ctaText}
+        ctaUrl={ctaUrl}
         textAlign="start"
         invertVertically={false}
       />,
     );
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -45,17 +62,20 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in centre aligned', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        kicker="Kicker"
-        headline="Headline"
-        strapline="Strapline"
-        image="./path/to/image.jpg"
-        sponsorLogo="./path/to/image.jpg"
-        sponsorAltText="easyJet"
-        ctaText="Learn More"
+        kicker={kicker}
+        headline={headline}
+        strapline={strapline}
+        image={image}
+        sponsorLabel={sponsorLabel}
+        sponsorLogo={sponsorLogo}
+        sponsorAltText={sponsorAltText}
+        ctaText={ctaText}
+        ctaUrl={ctaUrl}
         textAlign="center"
         invertVertically={false}
       />,
     );
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -63,17 +83,20 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in right aligned', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        kicker="Kicker"
-        headline="Headline"
-        strapline="Strapline"
-        image="./path/to/image.jpg"
-        sponsorLogo="./path/to/image.jpg"
-        sponsorAltText="easyJet"
-        ctaText="Learn More"
+        kicker={kicker}
+        headline={headline}
+        strapline={strapline}
+        image={image}
+        sponsorLabel={sponsorLabel}
+        sponsorLogo={sponsorLogo}
+        sponsorAltText={sponsorAltText}
+        ctaText={ctaText}
+        ctaUrl={ctaUrl}
         textAlign="end"
         invertVertically={false}
       />,
     );
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -81,31 +104,39 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in inverted portrait', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        kicker="Kicker"
-        headline="Headline"
-        strapline="Strapline"
-        image="./path/to/image.jpg"
-        sponsorLogo="./path/to/image.jpg"
-        ctaText="Learn More"
+        kicker={kicker}
+        headline={headline}
+        strapline={strapline}
+        image={image}
+        sponsorLabel={sponsorLabel}
+        sponsorLogo={sponsorLogo}
+        sponsorAltText={sponsorAltText}
+        ctaText={ctaText}
+        ctaUrl={ctaUrl}
         textAlign="start"
         invertVertically
       />,
     );
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
-  it('should not have programmatically-detectable accessibility issues in minimalistic', async () => {
+  it('should not have programmatically-detectable accessibility issues when optional text is missing', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        headline="Headline"
-        image="./path/to/image.jpg"
-        sponsorLogo="./path/to/image.jpg"
-        ctaText="Learn More"
+        headline={headline}
+        image={image}
+        sponsorLabel={sponsorLabel}
+        sponsorLogo={sponsorLogo}
+        sponsorAltText={sponsorAltText}
+        ctaText={ctaText}
+        ctaUrl={ctaUrl}
         textAlign="start"
         invertVertically={false}
       />,
     );
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -113,15 +144,18 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in non-sponsored', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        kicker="Kicker"
-        headline="Headline"
-        strapline="Strapline"
-        image="./path/to/image.jpg"
-        ctaText="Learn More"
+        kicker={kicker}
+        headline={headline}
+        strapline={strapline}
+        image={image}
+        sponsorLabel={sponsorLabel}
+        ctaText={ctaText}
+        ctaUrl={ctaUrl}
         textAlign="start"
         invertVertically={false}
       />,
     );
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
