@@ -30,6 +30,112 @@
 
   @include breakpoint-landscape {
     pointer-events: none;
+
+    &__sponsor-label {
+      margin-bottom: bpk-spacing-small();
+
+      @include bpk-label-1;
+    }
+
+    &__sponsor-content {
+      margin-bottom: bpk-spacing-xl();
+    }
+
+    &__kicker {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-label-1;
+    }
+
+    &__strapline {
+      @include bpk-body-default;
+    }
+
+    &__headline {
+      @include breakpoint-landscape-desktop {
+        @include bpk-hero-5;
+      }
+
+      @include breakpoint-landscape-tablet {
+        @include bpk-heading-1;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: bpk-spacing-md();
+      }
+    }
+  }
+
+  @include breakpoint-portrait-large {
+    &__sponsor-label {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-4;
+    }
+
+    &__kicker {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-subheading;
+    }
+
+    &__headline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-hero-4;
+    }
+
+    &__strapline {
+      @include bpk-subheading;
+    }
+  }
+
+  @include breakpoint-portrait-medium {
+    &__sponsor-label {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-3;
+    }
+
+    &__kicker {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-subheading;
+    }
+
+    &__headline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-hero-5;
+    }
+
+    &__strapline {
+      @include bpk-body-longform;
+    }
+  }
+
+  @include breakpoint-portrait-small {
+    &__sponsor-label {
+      margin-bottom: bpk-spacing-sm();
+
+      @include bpk-label-1;
+    }
+
+    &__kicker {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-label-1;
+    }
+
+    &__headline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-2;
+    }
+
+    &__strapline {
+      @include bpk-body-default;
+    }
   }
 
   &__container {
@@ -131,8 +237,7 @@
     color: black; /* stylelint-disable-line */
     pointer-events: auto;
 
-    // Remove these 2 lines once the new Button style is reasdy in Backpack. (ST-4135)
-
+    // Remove the following line once the new Button style is reasdy in Backpack. (ST-4135)
     @include bpk-label-1;
 
     @include breakpoint-landscape {
@@ -142,94 +247,6 @@
 
     @include breakpoint-portrait {
       display: none;
-    }
-  }
-
-  @include breakpoint-landscape {
-    &__sponsor-label {
-      @include bpk-label-1;
-      margin-bottom: bpk-spacing-small();
-    }
-
-    &__sponsor-content {
-      margin-bottom: bpk-spacing-xl();
-    }
-
-    &__kicker {
-      @include bpk-label-1;
-      margin-bottom: bpk-spacing-md();
-    }
-    &__strapline {
-      @include bpk-body-default;
-    }
-    &__headline {
-      &:not(:last-child) {
-        margin-bottom: bpk-spacing-md();
-      }
-
-      @include breakpoint-landscape-desktop {
-        @include bpk-hero-5;
-      }
-      @include breakpoint-landscape-tablet {
-        @include bpk-heading-1;
-      }
-    }
-  }
-
-  @include breakpoint-portrait-large {
-    &__sponsor-label {
-      @include bpk-heading-4;
-      margin-bottom: bpk-spacing-md();
-    }
-
-    &__kicker {
-      @include bpk-subheading;
-      margin-bottom: bpk-spacing-md();
-    }
-    &__headline {
-      @include bpk-hero-4;
-      margin-bottom: bpk-spacing-md();
-    }
-    &__strapline {
-      @include bpk-subheading;
-    }
-  }
-
-  @include breakpoint-portrait-medium {
-    &__sponsor-label {
-      @include bpk-heading-3;
-      margin-bottom: bpk-spacing-md();
-    }
-
-    &__kicker {
-      @include bpk-subheading;
-      margin-bottom: bpk-spacing-md();
-    }
-    &__headline {
-      @include bpk-hero-5;
-      margin-bottom: bpk-spacing-md();
-    }
-    &__strapline {
-      @include bpk-body-longform;
-    }
-  }
-
-  @include breakpoint-portrait-small {
-    &__sponsor-label {
-      @include bpk-label-1;
-      margin-bottom: bpk-spacing-sm();
-    }
-
-    &__kicker {
-      @include bpk-label-1;
-      margin-bottom: bpk-spacing-md();
-    }
-    &__headline {
-      @include bpk-heading-2;
-      margin-bottom: bpk-spacing-md();
-    }
-    &__strapline {
-      @include bpk-body-default;
     }
   }
 }
