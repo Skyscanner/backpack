@@ -22,6 +22,7 @@ import { fireEvent, render } from '@testing-library/react';
 import { cssModules } from 'bpk-react-utils';
 
 import BpkGraphicPromo from './BpkGraphicPromo';
+import TEXT_ALIGN from './BpkGraphicPromoTextAlign';
 import STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -39,7 +40,7 @@ const props = {
   },
   ctaText: 'Learn more',
   onClick: jest.fn(),
-  textAlign: 'start',
+  textAlign: TEXT_ALIGN.start,
   invertVertically: false,
 };
 

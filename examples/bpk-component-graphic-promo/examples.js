@@ -18,7 +18,9 @@
 
 import React from 'react';
 
-import BpkGraphicPromo from '../../packages/bpk-component-graphic-promo';
+import BpkGraphicPromo, {
+  TEXT_ALIGN,
+} from '../../packages/bpk-component-graphic-promo';
 
 const image =
   'https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png';
@@ -46,7 +48,7 @@ const DefaultExample = () => (
     sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
-    textAlign="start"
+    textAlign={TEXT_ALIGN.start}
     invertVertically={false}
   />
 );
@@ -60,7 +62,7 @@ const CenterAlignedExample = () => (
     sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
-    textAlign="center"
+    textAlign={TEXT_ALIGN.center}
     invertVertically={false}
   />
 );
@@ -74,7 +76,7 @@ const RightAlignedExample = () => (
     sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
-    textAlign="end"
+    textAlign={TEXT_ALIGN.end}
     invertVertically={false}
   />
 );
@@ -88,7 +90,7 @@ const InvertedPortraitExample = () => (
     sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
-    textAlign="start"
+    textAlign={TEXT_ALIGN.start}
     invertVertically
   />
 );
@@ -100,7 +102,7 @@ const MinimalisticExample = () => (
     sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
-    textAlign="start"
+    textAlign={TEXT_ALIGN.start}
     invertVertically={false}
   />
 );
@@ -113,7 +115,7 @@ const NonSponsoredExample = () => (
     image={image}
     ctaText={ctaText}
     onClick={onClick}
-    textAlign="start"
+    textAlign={TEXT_ALIGN.start}
     invertVertically={false}
   />
 );

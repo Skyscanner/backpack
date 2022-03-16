@@ -21,6 +21,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
+import TEXT_ALIGN from './BpkGraphicPromoTextAlign';
 import BpkGraphicPromo from './BpkGraphicPromo';
 
 const image = 'path/to/image.jpg';
@@ -43,6 +44,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkGraphicPromo
+        className="test"
         kicker={kicker}
         headline={headline}
         strapline={strapline}
@@ -50,7 +52,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
-        textAlign="start"
+        textAlign={TEXT_ALIGN.start}
         invertVertically={false}
       />,
     );
@@ -69,7 +71,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
-        textAlign="center"
+        textAlign={TEXT_ALIGN.center}
         invertVertically={false}
       />,
     );
@@ -88,7 +90,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
-        textAlign="end"
+        textAlign={TEXT_ALIGN.end}
         invertVertically={false}
       />,
     );
@@ -107,7 +109,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
-        textAlign="start"
+        textAlign={TEXT_ALIGN.start}
         invertVertically
       />,
     );
@@ -124,7 +126,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
-        textAlign="start"
+        textAlign={TEXT_ALIGN.start}
         invertVertically={false}
       />,
     );
@@ -142,7 +144,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         image={image}
         ctaText={ctaText}
         onClick={onClick}
-        textAlign="start"
+        textAlign={TEXT_ALIGN.start}
         invertVertically={false}
       />,
     );

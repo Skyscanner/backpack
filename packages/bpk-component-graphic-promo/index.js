@@ -23,5 +23,6 @@ import BpkGraphicPromo, {
   type Props as BpkGraphicPromoProps,
 } from './src/BpkGraphicPromo';
 
-export type { BpkGraphicPromoProps, TEXT_ALIGN, TEXT_COLORS };
+export type { BpkGraphicPromoProps };
+export { TEXT_ALIGN, TEXT_COLORS };
 export default BpkGraphicPromo;
