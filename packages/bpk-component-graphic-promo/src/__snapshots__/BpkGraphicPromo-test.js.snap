@@ -43,53 +43,6 @@ exports[`BpkGraphicPromo should display the kicker and no sponsor for non-sponso
 </DocumentFragment>
 `;
 
-exports[`BpkGraphicPromo should not display kicker for sponsored ad 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="Sponsored. Airline Name. Ride your wave. Learn more"
-    class="bpk-card bpk-graphic-promo"
-    role="button"
-    style="background-image: url(path/to/image.jpg); color: white;"
-    tabindex="0"
-  >
-    <div
-      aria-hidden="true"
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
-    >
-      <div
-        class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
-      >
-        <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
-        >
-          Sponsored
-        </span>
-        <img
-          alt="Airline Name"
-          class="bpk-graphic-promo__sponsor-logo"
-          src="path/to/logo.png"
-        />
-      </div>
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
-      >
-        <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
-        >
-          Ride your wave
-        </h2>
-        <button
-          class="bpk-button bpk-graphic-promo__cta"
-          type="button"
-        >
-          Learn more
-        </button>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`BpkGraphicPromo should not display kicker or strapline when not provided 1`] = `
 <DocumentFragment>
   <div
@@ -137,53 +90,10 @@ exports[`BpkGraphicPromo should not display kicker or strapline when not provide
 </DocumentFragment>
 `;
 
-exports[`BpkGraphicPromo should not have programmatically-detectable accessibility issues in non-sponsored 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
-    class="bpk-card bpk-graphic-promo"
-    role="button"
-    style="background-image: url(path/to/image.jpg); color: white;"
-    tabindex="0"
-  >
-    <div
-      aria-hidden="true"
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
-    >
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
-      >
-        <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__kicker"
-        >
-          Kicker
-        </span>
-        <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
-        >
-          Ride your wave
-        </h2>
-        <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
-        >
-          Portugal and 6 more countries have just been added to the UK travel green list
-        </p>
-        <button
-          class="bpk-button bpk-graphic-promo__cta"
-          type="button"
-        >
-          Learn more
-        </button>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
     style="background-image: url(path/to/image.jpg); color: white;"
@@ -235,7 +145,7 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
 exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
     style="background-image: url(path/to/image.jpg); color: white;"
@@ -287,7 +197,7 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
 exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
     style="background-image: url(path/to/image.jpg); color: white;"
@@ -339,7 +249,7 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
 exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
     style="background-image: url(path/to/image.jpg); color: white;"
@@ -391,7 +301,7 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
 exports[`BpkGraphicPromo should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
     style="background-image: url(path/to/image.jpg); color: white;"
@@ -443,7 +353,7 @@ exports[`BpkGraphicPromo should support arbitrary props 1`] = `
 exports[`BpkGraphicPromo should support custom class names 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo custom-classname"
     role="button"
     style="background-image: url(path/to/image.jpg); color: white;"
