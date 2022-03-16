@@ -38,26 +38,50 @@ export type Props = {
   sponsorLogo: ?string,
   sponsorAltText: ?string,
   ctaText: string,
-  ctaUrl: string,
+  onClick: () => void,
   invertVertically: boolean,
   textAlign: 'start' | 'center' | 'end',
   textColor: 'white' | 'black',
 };
-const BpkGraphicPromo = ({
-  className,
+
+const constructAriaLabel = ({
   ctaText,
-  ctaUrl,
   headline,
-  image,
-  invertVertically,
   kicker,
   sponsorAltText,
   sponsorLabel,
-  sponsorLogo,
   strapline,
-  textAlign,
-  textColor,
 }: Props) => {
+  const text = [];
+  const addText = (value) => value && text.push(`${value}.`);
+
+  addText(sponsorLabel);
+  addText(sponsorAltText);
+  addText(kicker);
+  addText(headline);
+  addText(strapline);
+  addText(ctaText);
+
+  return text.join(' ');
+};
+
+const BpkGraphicPromo = (props: Props) => {
+  const {
+    className,
+    ctaText,
+    headline,
+    image,
+    invertVertically,
+    kicker,
+    onClick,
+    sponsorAltText,
+    sponsorLabel,
+    sponsorLogo,
+    strapline,
+    textAlign,
+    textColor,
+  } = props;
+
   const cardClasses = [getClassName('bpk-graphic-promo')];
   if (className) {
     cardClasses.push(className);
@@ -84,10 +108,12 @@ const BpkGraphicPromo = ({
     <BpkCard
       className={cardClasses.join(' ')}
       style={{ backgroundImage: `url(${image})`, color: textColor }}
-      href={ctaUrl}
+      onClick={onClick}
+      ariaRole="button"
+      ariaLabel={constructAriaLabel(props)}
       padded={false}
     >
-      <div className={containerClasses.join(' ')}>
+      <div className={containerClasses.join(' ')} ariaHidden>
         {sponsorLogo && (
           <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
             <BpkText
@@ -128,7 +154,7 @@ const BpkGraphicPromo = ({
           )}
           <BpkButton
             className={getClassName('bpk-graphic-promo__cta')}
-            href={ctaUrl}
+            onClick={onClick}
           >
             {ctaText}
           </BpkButton>
@@ -148,7 +174,7 @@ BpkGraphicPromo.propTypes = {
   sponsorLogo: PropTypes.string,
   sponsorAltText: PropTypes.string,
   ctaText: PropTypes.string.isRequired,
-  ctaUrl: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
   invertVertically: PropTypes.bool.isRequired,
   textAlign: PropTypes.oneOf(['start', 'center', 'end']).isRequired,
   textColor: PropTypes.oneOf(['white', 'black']),
