@@ -227,6 +227,10 @@
     }
   }
 
+  &::after {
+    display: none;
+  }
+
   &__sponsor-logo {
     width: pxtorem(148);
   }

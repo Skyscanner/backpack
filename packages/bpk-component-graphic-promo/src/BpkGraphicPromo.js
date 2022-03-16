@@ -22,7 +22,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
-import BpkPanel from 'bpk-component-panel';
+import BpkCard from 'bpk-component-card';
 
 import STYLES from './BpkGraphicPromo.module.scss';
 
@@ -83,7 +83,7 @@ const BpkGraphicPromo = ({
   };
 
   return (
-    <BpkPanel
+    <BpkCard
       className={cardClasses.join(' ')}
       style={{ backgroundImage: `url(${image})`, color: textColor }}
       href={ctaUrl}
@@ -136,7 +136,7 @@ const BpkGraphicPromo = ({
           </BpkButton>
         </div>
       </div>
-    </BpkPanel>
+    </BpkCard>
   );
 };
 
