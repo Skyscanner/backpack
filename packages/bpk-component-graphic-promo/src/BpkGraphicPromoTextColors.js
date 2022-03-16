@@ -17,11 +17,9 @@
  */
 /* @flow strict */
 
-import TEXT_ALIGN from './src/BpkGraphicPromoTextAlign';
-import TEXT_COLORS from './src/BpkGraphicPromoTextColors';
-import BpkGraphicPromo, {
-  type Props as BpkGraphicPromoProps,
-} from './src/BpkGraphicPromo';
+const TEXT_COLORS = {
+  black: 'black',
+  white: 'white',
+};
 
-export type { BpkGraphicPromoProps, TEXT_ALIGN, TEXT_COLORS };
-export default BpkGraphicPromo;
+export default TEXT_COLORS;

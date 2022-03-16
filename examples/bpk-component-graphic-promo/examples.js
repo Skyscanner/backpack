@@ -22,10 +22,11 @@ import BpkGraphicPromo from '../../packages/bpk-component-graphic-promo';
 
 const image =
   'https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png';
-const sponsorLabel = 'Sponsored';
-const sponsorLogo =
-  'https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png';
-const sponsorAltText = 'easyJet';
+const sponsor = {
+  label: 'Sponsored',
+  logo: 'https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png',
+  altText: 'easyJet',
+};
 const ctaText = 'Learn more';
 const onClick = () => {
   window.location.href = 'https://www.skyscanner.net';
@@ -34,7 +35,7 @@ const onClick = () => {
 const kicker = 'Kicker';
 const headline = 'Ride your wave';
 const strapline =
-  'Portugal and 6 more countries have just been added to the UK travel green list';
+  'Portugal and 6 more countries have just been added to the UK travel green list';
 
 const DefaultExample = () => (
   <BpkGraphicPromo
@@ -42,9 +43,7 @@ const DefaultExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
-    sponsorLabel={sponsorLabel}
-    sponsorLogo={sponsorLogo}
-    sponsorAltText={sponsorAltText}
+    sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
     textAlign="start"
@@ -58,9 +57,7 @@ const CenterAlignedExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
-    sponsorLabel={sponsorLabel}
-    sponsorLogo={sponsorLogo}
-    sponsorAltText={sponsorAltText}
+    sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
     textAlign="center"
@@ -74,9 +71,7 @@ const RightAlignedExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
-    sponsorLabel={sponsorLabel}
-    sponsorLogo={sponsorLogo}
-    sponsorAltText={sponsorAltText}
+    sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
     textAlign="end"
@@ -90,9 +85,7 @@ const InvertedPortraitExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
-    sponsorLabel={sponsorLabel}
-    sponsorLogo={sponsorLogo}
-    sponsorAltText={sponsorAltText}
+    sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
     textAlign="start"
@@ -104,9 +97,7 @@ const MinimalisticExample = () => (
   <BpkGraphicPromo
     headline={headline}
     image={image}
-    sponsorLabel={sponsorLabel}
-    sponsorLogo={sponsorLogo}
-    sponsorAltText={sponsorAltText}
+    sponsor={sponsor}
     ctaText={ctaText}
     onClick={onClick}
     textAlign="start"
@@ -120,7 +111,6 @@ const NonSponsoredExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
-    sponsorLabel={sponsorLabel}
     ctaText={ctaText}
     onClick={onClick}
     textAlign="start"

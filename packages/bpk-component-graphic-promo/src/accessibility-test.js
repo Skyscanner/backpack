@@ -24,9 +24,11 @@ import { axe } from 'jest-axe';
 import BpkGraphicPromo from './BpkGraphicPromo';
 
 const image = 'path/to/image.jpg';
-const sponsorLabel = 'Sponsored';
-const sponsorLogo = 'path/to/logo.png';
-const sponsorAltText = 'Airline Name';
+const sponsor = {
+  label: 'Sponsored',
+  logo: 'path/to/logo.png',
+  altText: 'Airline Name',
+};
 const ctaText = 'Learn more';
 const onClick = () => {
   window.location.href = 'https://www.skyscanner.net';
@@ -45,9 +47,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         headline={headline}
         strapline={strapline}
         image={image}
-        sponsorLabel={sponsorLabel}
-        sponsorLogo={sponsorLogo}
-        sponsorAltText={sponsorAltText}
+        sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
         textAlign="start"
@@ -66,9 +66,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         headline={headline}
         strapline={strapline}
         image={image}
-        sponsorLabel={sponsorLabel}
-        sponsorLogo={sponsorLogo}
-        sponsorAltText={sponsorAltText}
+        sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
         textAlign="center"
@@ -87,9 +85,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         headline={headline}
         strapline={strapline}
         image={image}
-        sponsorLabel={sponsorLabel}
-        sponsorLogo={sponsorLogo}
-        sponsorAltText={sponsorAltText}
+        sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
         textAlign="end"
@@ -108,9 +104,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         headline={headline}
         strapline={strapline}
         image={image}
-        sponsorLabel={sponsorLabel}
-        sponsorLogo={sponsorLogo}
-        sponsorAltText={sponsorAltText}
+        sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
         textAlign="start"
@@ -127,9 +121,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
       <BpkGraphicPromo
         headline={headline}
         image={image}
-        sponsorLabel={sponsorLabel}
-        sponsorLogo={sponsorLogo}
-        sponsorAltText={sponsorAltText}
+        sponsor={sponsor}
         ctaText={ctaText}
         onClick={onClick}
         textAlign="start"
@@ -148,7 +140,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         headline={headline}
         strapline={strapline}
         image={image}
-        sponsorLabel={sponsorLabel}
         ctaText={ctaText}
         onClick={onClick}
         textAlign="start"

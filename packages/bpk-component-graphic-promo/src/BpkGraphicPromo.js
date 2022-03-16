@@ -24,6 +24,8 @@ import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
 import BpkCard from 'bpk-component-card';
 
+import TEXT_ALIGN from './BpkGraphicPromoTextAlign';
+import TEXT_COLORS from './BpkGraphicPromoTextColors';
 import STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -34,29 +36,30 @@ export type Props = {
   headline: string,
   strapline: ?string,
   image: string,
-  sponsorLabel: string,
-  sponsorLogo: ?string,
-  sponsorAltText: ?string,
+  sponsor: ?{
+    label: string,
+    logo: string,
+    altText: string,
+  },
   ctaText: string,
   onClick: () => void,
   invertVertically: boolean,
-  textAlign: 'start' | 'center' | 'end',
-  textColor: 'white' | 'black',
+  textAlign: TEXT_ALIGN,
+  textColor: TEXT_COLORS,
 };
 
 const constructAriaLabel = ({
   ctaText,
   headline,
   kicker,
-  sponsorAltText,
-  sponsorLabel,
+  sponsor,
   strapline,
 }: Props) => {
   const text = [];
   const addText = (value) => value && text.push(value);
 
-  addText(sponsorLabel);
-  addText(sponsorAltText);
+  addText(sponsor.label);
+  addText(sponsor.altText);
   addText(kicker);
   addText(headline);
   addText(strapline);
@@ -74,9 +77,7 @@ const BpkGraphicPromo = (props: Props) => {
     invertVertically,
     kicker,
     onClick,
-    sponsorAltText,
-    sponsorLabel,
-    sponsorLogo,
+    sponsor,
     strapline,
     textAlign,
     textColor,
@@ -119,23 +120,23 @@ const BpkGraphicPromo = (props: Props) => {
       padded={false}
     >
       <div className={containerClasses.join(' ')} aria-hidden>
-        {sponsorLogo && (
+        {sponsor && (
           <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
             <BpkText
               tagName="span"
               className={getClassName('bpk-graphic-promo__sponsor-label')}
             >
-              {sponsorLabel}
+              {sponsor.label}
             </BpkText>
             <img
               className={getClassName('bpk-graphic-promo__sponsor-logo')}
-              alt={sponsorAltText}
-              src={sponsorLogo}
+              alt={sponsor.altText}
+              src={sponsor.logo}
             />
           </div>
         )}
         <div className={getTextClasses('bpk-graphic-promo__promo-content')}>
-          {!sponsorLogo && kicker && (
+          {!sponsor && kicker && (
             <BpkText
               tagName="span"
               className={getClassName('bpk-graphic-promo__kicker')}
@@ -175,24 +176,24 @@ BpkGraphicPromo.propTypes = {
   headline: PropTypes.string.isRequired,
   strapline: PropTypes.string,
   image: PropTypes.string.isRequired,
-  sponsorLabel: PropTypes.string,
-  sponsorLogo: PropTypes.string,
-  sponsorAltText: PropTypes.string,
+  sponsor: PropTypes.shape({
+    label: PropTypes.string,
+    logo: PropTypes.string,
+    altText: PropTypes.string,
+  }),
   ctaText: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   invertVertically: PropTypes.bool.isRequired,
-  textAlign: PropTypes.oneOf(['start', 'center', 'end']).isRequired,
-  textColor: PropTypes.oneOf(['white', 'black']),
+  textAlign: PropTypes.oneOf(Object.values(TEXT_ALIGN)).isRequired,
+  textColor: PropTypes.oneOf(Object.values(TEXT_COLORS)),
 };
 
 BpkGraphicPromo.defaultProps = {
-  className: undefined,
-  kicker: undefined,
-  strapline: undefined,
-  sponsorLabel: undefined,
-  sponsorLogo: undefined,
-  sponsorAltText: undefined,
-  textColor: 'white',
+  className: null,
+  kicker: null,
+  strapline: null,
+  sponsor: null,
+  textColor: TEXT_COLORS.white,
 };
 
 export default BpkGraphicPromo;
