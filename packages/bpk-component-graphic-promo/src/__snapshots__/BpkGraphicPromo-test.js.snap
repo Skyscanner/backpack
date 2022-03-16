@@ -1,63 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkGraphicPromo should not have programmatically-detectable accessibility issues in centre aligned 1`] = `
+exports[`BpkGraphicPromo should not display kicker for sponsored ad 1`] = `
 <DocumentFragment>
-  <section
-    class="bpk-panel bpk-graphic-promo"
+  <a
+    class="bpk-card bpk-graphic-promo"
     href="https://www.skyscanner.net"
     style="background-image: url(path/to/image.jpg); color: white;"
+  />
+  <div
+    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
   >
-    <div
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--center"
-    >
-      <div
-        class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--center"
-      >
-        <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
-        >
-          Sponsored
-        </span>
-        <img
-          alt="Airline Name"
-          class="bpk-graphic-promo__sponsor-logo"
-          src="path/to/logo.png"
-        />
-      </div>
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--center"
-      >
-        <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
-        >
-          Ride your wave
-        </h2>
-        <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
-        >
-          Portugal and 6 more countries have just been added to the UK travel green list
-        </p>
-        <a
-          class="bpk-button bpk-graphic-promo__cta"
-          href="https://www.skyscanner.net"
-        >
-          Learn more
-        </a>
-      </div>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`BpkGraphicPromo should not have programmatically-detectable accessibility issues in inverted portrait 1`] = `
-<DocumentFragment>
-  <section
-    class="bpk-panel bpk-graphic-promo"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  >
-    <div
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--start bpk-graphic-promo__container--inverted"
+    <a
+      class="bpk-card bpk-graphic-promo"
+      href="https://www.skyscanner.net"
+      style="background-image: url(path/to/image.jpg); color: white;"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
@@ -73,43 +29,54 @@ exports[`BpkGraphicPromo should not have programmatically-detectable accessibili
           src="path/to/logo.png"
         />
       </div>
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+    </a>
+    <div
+      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+    >
+      <a
+        class="bpk-card bpk-graphic-promo"
+        href="https://www.skyscanner.net"
+        style="background-image: url(path/to/image.jpg); color: white;"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
-        <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
-        >
-          Portugal and 6 more countries have just been added to the UK travel green list
-        </p>
-        <a
-          class="bpk-button bpk-graphic-promo__cta"
-          href="https://www.skyscanner.net"
-        >
-          Learn more
-        </a>
-      </div>
+      </a>
+      <a
+        class="bpk-button bpk-graphic-promo__cta"
+        href="https://www.skyscanner.net"
+      >
+        Learn more
+      </a>
     </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`BpkGraphicPromo should not have programmatically-detectable accessibility issues in non-sponsored 1`] = `
 <DocumentFragment>
-  <section
-    class="bpk-panel bpk-graphic-promo"
+  <a
+    class="bpk-card bpk-graphic-promo"
     href="https://www.skyscanner.net"
     style="background-image: url(path/to/image.jpg); color: white;"
+  />
+  <div
+    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
   >
+    <a
+      class="bpk-card bpk-graphic-promo"
+      href="https://www.skyscanner.net"
+      style="background-image: url(path/to/image.jpg); color: white;"
+    />
     <div
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
     >
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+      <a
+        class="bpk-card bpk-graphic-promo"
+        href="https://www.skyscanner.net"
+        style="background-image: url(path/to/image.jpg); color: white;"
       >
         <span
           class="bpk-text bpk-text--body-default bpk-graphic-promo__kicker"
@@ -126,27 +93,152 @@ exports[`BpkGraphicPromo should not have programmatically-detectable accessibili
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-        <a
-          class="bpk-button bpk-graphic-promo__cta"
-          href="https://www.skyscanner.net"
-        >
-          Learn more
-        </a>
-      </div>
+      </a>
+      <a
+        class="bpk-button bpk-graphic-promo__cta"
+        href="https://www.skyscanner.net"
+      >
+        Learn more
+      </a>
     </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`BpkGraphicPromo should not have programmatically-detectable accessibility issues in right aligned 1`] = `
+exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
 <DocumentFragment>
-  <section
-    class="bpk-panel bpk-graphic-promo"
+  <a
+    class="bpk-card bpk-graphic-promo"
     href="https://www.skyscanner.net"
     style="background-image: url(path/to/image.jpg); color: white;"
+  />
+  <div
+    class="bpk-graphic-promo__container bpk-graphic-promo__container--center"
   >
+    <a
+      class="bpk-card bpk-graphic-promo"
+      href="https://www.skyscanner.net"
+      style="background-image: url(path/to/image.jpg); color: white;"
+    >
+      <div
+        class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--center"
+      >
+        <span
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+        >
+          Sponsored
+        </span>
+        <img
+          alt="Airline Name"
+          class="bpk-graphic-promo__sponsor-logo"
+          src="path/to/logo.png"
+        />
+      </div>
+    </a>
     <div
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--end"
+      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--center"
+    >
+      <a
+        class="bpk-card bpk-graphic-promo"
+        href="https://www.skyscanner.net"
+        style="background-image: url(path/to/image.jpg); color: white;"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+        >
+          Ride your wave
+        </h2>
+        <p
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
+        >
+          Portugal and 6 more countries have just been added to the UK travel green list
+        </p>
+      </a>
+      <a
+        class="bpk-button bpk-graphic-promo__cta"
+        href="https://www.skyscanner.net"
+      >
+        Learn more
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-card bpk-graphic-promo"
+    href="https://www.skyscanner.net"
+    style="background-image: url(path/to/image.jpg); color: white;"
+  />
+  <div
+    class="bpk-graphic-promo__container bpk-graphic-promo__container--start bpk-graphic-promo__container--inverted"
+  >
+    <a
+      class="bpk-card bpk-graphic-promo"
+      href="https://www.skyscanner.net"
+      style="background-image: url(path/to/image.jpg); color: white;"
+    >
+      <div
+        class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
+      >
+        <span
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+        >
+          Sponsored
+        </span>
+        <img
+          alt="Airline Name"
+          class="bpk-graphic-promo__sponsor-logo"
+          src="path/to/logo.png"
+        />
+      </div>
+    </a>
+    <div
+      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+    >
+      <a
+        class="bpk-card bpk-graphic-promo"
+        href="https://www.skyscanner.net"
+        style="background-image: url(path/to/image.jpg); color: white;"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+        >
+          Ride your wave
+        </h2>
+        <p
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
+        >
+          Portugal and 6 more countries have just been added to the UK travel green list
+        </p>
+      </a>
+      <a
+        class="bpk-button bpk-graphic-promo__cta"
+        href="https://www.skyscanner.net"
+      >
+        Learn more
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-card bpk-graphic-promo"
+    href="https://www.skyscanner.net"
+    style="background-image: url(path/to/image.jpg); color: white;"
+  />
+  <div
+    class="bpk-graphic-promo__container bpk-graphic-promo__container--end"
+  >
+    <a
+      class="bpk-card bpk-graphic-promo"
+      href="https://www.skyscanner.net"
+      style="background-image: url(path/to/image.jpg); color: white;"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--end"
@@ -162,8 +254,14 @@ exports[`BpkGraphicPromo should not have programmatically-detectable accessibili
           src="path/to/logo.png"
         />
       </div>
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--end"
+    </a>
+    <div
+      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--end"
+    >
+      <a
+        class="bpk-card bpk-graphic-promo"
+        href="https://www.skyscanner.net"
+        style="background-image: url(path/to/image.jpg); color: white;"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -175,71 +273,32 @@ exports[`BpkGraphicPromo should not have programmatically-detectable accessibili
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-        <a
-          class="bpk-button bpk-graphic-promo__cta"
-          href="https://www.skyscanner.net"
-        >
-          Learn more
-        </a>
-      </div>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`BpkGraphicPromo should not have programmatically-detectable accessibility issues when optional text is missing 1`] = `
-<DocumentFragment>
-  <section
-    class="bpk-panel bpk-graphic-promo"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  >
-    <div
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
-    >
-      <div
-        class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
+      </a>
+      <a
+        class="bpk-button bpk-graphic-promo__cta"
+        href="https://www.skyscanner.net"
       >
-        <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
-        >
-          Sponsored
-        </span>
-        <img
-          alt="Airline Name"
-          class="bpk-graphic-promo__sponsor-logo"
-          src="path/to/logo.png"
-        />
-      </div>
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
-      >
-        <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
-        >
-          Ride your wave
-        </h2>
-        <a
-          class="bpk-button bpk-graphic-promo__cta"
-          href="https://www.skyscanner.net"
-        >
-          Learn more
-        </a>
-      </div>
+        Learn more
+      </a>
     </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
 <DocumentFragment>
-  <section
-    class="bpk-panel bpk-graphic-promo"
+  <a
+    class="bpk-card bpk-graphic-promo"
     href="https://www.skyscanner.net"
     style="background-image: url(path/to/image.jpg); color: white;"
+  />
+  <div
+    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
   >
-    <div
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+    <a
+      class="bpk-card bpk-graphic-promo"
+      href="https://www.skyscanner.net"
+      style="background-image: url(path/to/image.jpg); color: white;"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
@@ -255,8 +314,14 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
           src="path/to/logo.png"
         />
       </div>
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+    </a>
+    <div
+      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+    >
+      <a
+        class="bpk-card bpk-graphic-promo"
+        href="https://www.skyscanner.net"
+        style="background-image: url(path/to/image.jpg); color: white;"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -268,27 +333,32 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-        <a
-          class="bpk-button bpk-graphic-promo__cta"
-          href="https://www.skyscanner.net"
-        >
-          Learn more
-        </a>
-      </div>
+      </a>
+      <a
+        class="bpk-button bpk-graphic-promo__cta"
+        href="https://www.skyscanner.net"
+      >
+        Learn more
+      </a>
     </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`BpkGraphicPromo should support arbitrary props 1`] = `
 <DocumentFragment>
-  <section
-    class="bpk-panel bpk-graphic-promo"
+  <a
+    class="bpk-card bpk-graphic-promo"
     href="https://www.skyscanner.net"
     style="background-image: url(path/to/image.jpg); color: white;"
+  />
+  <div
+    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
   >
-    <div
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+    <a
+      class="bpk-card bpk-graphic-promo"
+      href="https://www.skyscanner.net"
+      style="background-image: url(path/to/image.jpg); color: white;"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
@@ -304,8 +374,14 @@ exports[`BpkGraphicPromo should support arbitrary props 1`] = `
           src="path/to/logo.png"
         />
       </div>
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+    </a>
+    <div
+      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+    >
+      <a
+        class="bpk-card bpk-graphic-promo"
+        href="https://www.skyscanner.net"
+        style="background-image: url(path/to/image.jpg); color: white;"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -317,27 +393,32 @@ exports[`BpkGraphicPromo should support arbitrary props 1`] = `
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-        <a
-          class="bpk-button bpk-graphic-promo__cta"
-          href="https://www.skyscanner.net"
-        >
-          Learn more
-        </a>
-      </div>
+      </a>
+      <a
+        class="bpk-button bpk-graphic-promo__cta"
+        href="https://www.skyscanner.net"
+      >
+        Learn more
+      </a>
     </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`BpkGraphicPromo should support custom class names 1`] = `
 <DocumentFragment>
-  <section
-    class="bpk-panel bpk-graphic-promo custom-classname"
+  <a
+    class="bpk-card bpk-graphic-promo custom-classname"
     href="https://www.skyscanner.net"
     style="background-image: url(path/to/image.jpg); color: white;"
+  />
+  <div
+    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
   >
-    <div
-      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+    <a
+      class="bpk-card bpk-graphic-promo custom-classname"
+      href="https://www.skyscanner.net"
+      style="background-image: url(path/to/image.jpg); color: white;"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
@@ -353,8 +434,14 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
           src="path/to/logo.png"
         />
       </div>
-      <div
-        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+    </a>
+    <div
+      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+    >
+      <a
+        class="bpk-card bpk-graphic-promo custom-classname"
+        href="https://www.skyscanner.net"
+        style="background-image: url(path/to/image.jpg); color: white;"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -366,14 +453,14 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-        <a
-          class="bpk-button bpk-graphic-promo__cta"
-          href="https://www.skyscanner.net"
-        >
-          Learn more
-        </a>
-      </div>
+      </a>
+      <a
+        class="bpk-button bpk-graphic-promo__cta"
+        href="https://www.skyscanner.net"
+      >
+        Learn more
+      </a>
     </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;

@@ -75,9 +75,7 @@ const BpkGraphicPromo = ({
 
   const getTextClasses = (baseClass: string) => {
     const classes = [getClassName(baseClass)];
-    if (textAlign) {
-      classes.push(getClassName(`${baseClass}--${textAlign}`));
-    }
+    classes.push(getClassName(`${baseClass}--${textAlign}`));
 
     return classes.join(' ');
   };

@@ -19,8 +19,12 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
+import { cssModules } from 'bpk-react-utils';
 
 import BpkGraphicPromo from './BpkGraphicPromo';
+import STYLES from './BpkGraphicPromo.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const props = {
   kicker: 'Kicker',
@@ -58,28 +62,28 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not have programmatically-detectable accessibility issues in centre aligned', async () => {
+  it('should render correctly when centre aligned', async () => {
     const customProps = { ...props, textAlign: 'center' };
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not have programmatically-detectable accessibility issues in right aligned', async () => {
+  it('should render correctly when right aligned', async () => {
     const customProps = { ...props, textAlign: 'end' };
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not have programmatically-detectable accessibility issues in inverted portrait', async () => {
+  it('should render correctly when inverted portrait', async () => {
     const customProps = { ...props, invertVertically: true };
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not have programmatically-detectable accessibility issues when optional text is missing', async () => {
+  it('should not display kicker for sponsored ad', async () => {
     const customProps = { ...props };
     delete customProps.kicker;
     delete customProps.strapline;
@@ -96,5 +100,23 @@ describe('BpkGraphicPromo', () => {
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should redirect us to link when button is clicked', async () => {
+    render(<BpkGraphicPromo {...props} />);
+    const graphicPromo = document.getElementsByClassName(
+      getClassName('bpk-graphic-promo'),
+    )[0];
+
+    expect(graphicPromo.getAttribute('href')).toEqual(props.ctaUrl);
+  });
+
+  it('should redirect us to link when card is pressed on mobile', async () => {
+    render(<BpkGraphicPromo {...props} />);
+    const graphicPromo = document.getElementsByClassName(
+      getClassName('bpk-graphic-promo__cta'),
+    )[0];
+
+    expect(graphicPromo.getAttribute('href')).toEqual(props.ctaUrl);
   });
 });
