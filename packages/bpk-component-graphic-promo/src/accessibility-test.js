@@ -23,19 +23,17 @@ import { axe } from 'jest-axe';
 
 import BpkGraphicPromo from './BpkGraphicPromo';
 
-const image =
-  'https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png';
+const image = 'path/to/image.jpg';
 const sponsorLabel = 'Sponsored';
-const sponsorLogo =
-  'https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png';
-const sponsorAltText = 'easyJet';
+const sponsorLogo = 'path/to/logo.png';
+const sponsorAltText = 'Airline Name';
 const ctaText = 'Learn more';
 const ctaUrl = 'https://www.skyscanner.net';
 
 const kicker = 'Kicker';
 const headline = 'Ride your wave';
 const strapline =
-  'Portugal and 6 more countries have just been added to the UK travel green list';
+  'Portugal and 6 more countries have just been added to the UK travel green list';
 
 describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
