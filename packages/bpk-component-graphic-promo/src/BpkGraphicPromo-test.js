@@ -32,9 +32,11 @@ const props = {
   strapline:
     'Portugal and 6 more countries have just been added to the UK travel green list',
   image: 'path/to/image.jpg',
-  sponsorLabel: 'Sponsored',
-  sponsorLogo: 'path/to/logo.png',
-  sponsorAltText: 'Airline Name',
+  sponsor: {
+    label: 'Sponsored',
+    logo: 'path/to/logo.png',
+    altText: 'Airline Name',
+  },
   ctaText: 'Learn more',
   onClick: jest.fn(),
   textAlign: 'start',
@@ -87,7 +89,7 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not display kicker for sponsored ad', async () => {
+  it('should not display kicker or strapline when not provided', async () => {
     const customProps = { ...props };
     delete customProps.kicker;
     delete customProps.strapline;
@@ -96,11 +98,9 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not have programmatically-detectable accessibility issues in non-sponsored', async () => {
+  it('should display the kicker and no sponsor for non-sponsored ad', async () => {
     const customProps = { ...props };
-    delete customProps.sponsorAltText;
-    delete customProps.sponsorLabel;
-    delete customProps.sponsorLogo;
+    delete customProps.sponsor;
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();

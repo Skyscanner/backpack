@@ -36,21 +36,25 @@ $breakpoint-portrait-small-max: pxtorem(424);
     @content;
   }
 }
+
 @mixin breakpoint-landscape-tablet {
   @media (min-width: $breakpoint-landscape-tablet-min) and (max-width: $breakpoint-landscape-tablet-max) {
     @content;
   }
 }
+
 @mixin breakpoint-portrait-large {
   @media (min-width: $breakpoint-portrait-large-min) and (max-width: $breakpoint-portrait-large-max) {
     @content;
   }
 }
+
 @mixin breakpoint-portrait-medium {
   @media (min-width: $breakpoint-portrait-medium-min) and (max-width: $breakpoint-portrait-medium-max) {
     @content;
   }
 }
+
 @mixin breakpoint-portrait-small {
   @media (max-width: $breakpoint-portrait-small-max) {
     @content;
@@ -62,6 +66,7 @@ $breakpoint-portrait-small-max: pxtorem(424);
     @content;
   }
 }
+
 @mixin breakpoint-portrait {
   @media (max-width: $breakpoint-portrait-large-max) {
     @content;

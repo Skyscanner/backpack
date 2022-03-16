@@ -58,9 +58,12 @@ const constructAriaLabel = ({
   const text = [];
   const addText = (value) => value && text.push(value);
 
-  addText(sponsor.label);
-  addText(sponsor.altText);
-  addText(kicker);
+  if (sponsor) {
+    addText(sponsor.label);
+    addText(sponsor.altText);
+  } else {
+    addText(kicker);
+  }
   addText(headline);
   addText(strapline);
   addText(ctaText);
