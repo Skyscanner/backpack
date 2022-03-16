@@ -53,7 +53,7 @@ const constructAriaLabel = ({
   strapline,
 }: Props) => {
   const text = [];
-  const addText = (value) => value && text.push(`${value}.`);
+  const addText = (value) => value && text.push(value);
 
   addText(sponsorLabel);
   addText(sponsorAltText);
@@ -62,7 +62,7 @@ const constructAriaLabel = ({
   addText(strapline);
   addText(ctaText);
 
-  return text.join(' ');
+  return text.join('. ');
 };
 
 const BpkGraphicPromo = (props: Props) => {
@@ -81,6 +81,12 @@ const BpkGraphicPromo = (props: Props) => {
     textAlign,
     textColor,
   } = props;
+
+  // FIXME: Use useCallback() here when React is updated.
+  const onClickWrapper = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    onClick();
+  };
 
   const cardClasses = [getClassName('bpk-graphic-promo')];
   if (className) {
@@ -108,12 +114,11 @@ const BpkGraphicPromo = (props: Props) => {
     <BpkCard
       className={cardClasses.join(' ')}
       style={{ backgroundImage: `url(${image})`, color: textColor }}
-      onClick={onClick}
-      ariaRole="button"
-      ariaLabel={constructAriaLabel(props)}
+      onClick={onClickWrapper}
+      aria-label={constructAriaLabel(props)}
       padded={false}
     >
-      <div className={containerClasses.join(' ')} ariaHidden>
+      <div className={containerClasses.join(' ')} aria-hidden>
         {sponsorLogo && (
           <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
             <BpkText
@@ -154,7 +159,7 @@ const BpkGraphicPromo = (props: Props) => {
           )}
           <BpkButton
             className={getClassName('bpk-graphic-promo__cta')}
-            onClick={onClick}
+            onClick={onClickWrapper}
           >
             {ctaText}
           </BpkButton>

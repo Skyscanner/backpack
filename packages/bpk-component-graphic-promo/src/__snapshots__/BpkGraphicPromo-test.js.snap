@@ -2,18 +2,16 @@
 
 exports[`BpkGraphicPromo should not display kicker for sponsored ad 1`] = `
 <DocumentFragment>
-  <a
-    class="bpk-card bpk-graphic-promo"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  />
   <div
-    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+    aria-label="Sponsored. Airline Name. Ride your wave. Learn more"
+    class="bpk-card bpk-graphic-promo"
+    role="button"
+    style="background-image: url(path/to/image.jpg); color: white;"
+    tabindex="0"
   >
-    <a
-      class="bpk-card bpk-graphic-promo"
-      href="https://www.skyscanner.net"
-      style="background-image: url(path/to/image.jpg); color: white;"
+    <div
+      aria-hidden="true"
+      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
@@ -29,27 +27,21 @@ exports[`BpkGraphicPromo should not display kicker for sponsored ad 1`] = `
           src="path/to/logo.png"
         />
       </div>
-    </a>
-    <div
-      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
-    >
-      <a
-        class="bpk-card bpk-graphic-promo"
-        href="https://www.skyscanner.net"
-        style="background-image: url(path/to/image.jpg); color: white;"
+      <div
+        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
-      </a>
-      <a
-        class="bpk-button bpk-graphic-promo__cta"
-        href="https://www.skyscanner.net"
-      >
-        Learn more
-      </a>
+        <button
+          class="bpk-button bpk-graphic-promo__cta"
+          type="button"
+        >
+          Learn more
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -57,26 +49,19 @@ exports[`BpkGraphicPromo should not display kicker for sponsored ad 1`] = `
 
 exports[`BpkGraphicPromo should not have programmatically-detectable accessibility issues in non-sponsored 1`] = `
 <DocumentFragment>
-  <a
-    class="bpk-card bpk-graphic-promo"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  />
   <div
-    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+    aria-label="Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    class="bpk-card bpk-graphic-promo"
+    role="button"
+    style="background-image: url(path/to/image.jpg); color: white;"
+    tabindex="0"
   >
-    <a
-      class="bpk-card bpk-graphic-promo"
-      href="https://www.skyscanner.net"
-      style="background-image: url(path/to/image.jpg); color: white;"
-    />
     <div
-      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+      aria-hidden="true"
+      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
     >
-      <a
-        class="bpk-card bpk-graphic-promo"
-        href="https://www.skyscanner.net"
-        style="background-image: url(path/to/image.jpg); color: white;"
+      <div
+        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <span
           class="bpk-text bpk-text--body-default bpk-graphic-promo__kicker"
@@ -93,13 +78,13 @@ exports[`BpkGraphicPromo should not have programmatically-detectable accessibili
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-      </a>
-      <a
-        class="bpk-button bpk-graphic-promo__cta"
-        href="https://www.skyscanner.net"
-      >
-        Learn more
-      </a>
+        <button
+          class="bpk-button bpk-graphic-promo__cta"
+          type="button"
+        >
+          Learn more
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -107,18 +92,16 @@ exports[`BpkGraphicPromo should not have programmatically-detectable accessibili
 
 exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
 <DocumentFragment>
-  <a
-    class="bpk-card bpk-graphic-promo"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  />
   <div
-    class="bpk-graphic-promo__container bpk-graphic-promo__container--center"
+    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    class="bpk-card bpk-graphic-promo"
+    role="button"
+    style="background-image: url(path/to/image.jpg); color: white;"
+    tabindex="0"
   >
-    <a
-      class="bpk-card bpk-graphic-promo"
-      href="https://www.skyscanner.net"
-      style="background-image: url(path/to/image.jpg); color: white;"
+    <div
+      aria-hidden="true"
+      class="bpk-graphic-promo__container bpk-graphic-promo__container--center"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--center"
@@ -134,14 +117,8 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
           src="path/to/logo.png"
         />
       </div>
-    </a>
-    <div
-      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--center"
-    >
-      <a
-        class="bpk-card bpk-graphic-promo"
-        href="https://www.skyscanner.net"
-        style="background-image: url(path/to/image.jpg); color: white;"
+      <div
+        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--center"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -153,13 +130,13 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-      </a>
-      <a
-        class="bpk-button bpk-graphic-promo__cta"
-        href="https://www.skyscanner.net"
-      >
-        Learn more
-      </a>
+        <button
+          class="bpk-button bpk-graphic-promo__cta"
+          type="button"
+        >
+          Learn more
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -167,18 +144,16 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
 
 exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
 <DocumentFragment>
-  <a
-    class="bpk-card bpk-graphic-promo"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  />
   <div
-    class="bpk-graphic-promo__container bpk-graphic-promo__container--start bpk-graphic-promo__container--inverted"
+    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    class="bpk-card bpk-graphic-promo"
+    role="button"
+    style="background-image: url(path/to/image.jpg); color: white;"
+    tabindex="0"
   >
-    <a
-      class="bpk-card bpk-graphic-promo"
-      href="https://www.skyscanner.net"
-      style="background-image: url(path/to/image.jpg); color: white;"
+    <div
+      aria-hidden="true"
+      class="bpk-graphic-promo__container bpk-graphic-promo__container--start bpk-graphic-promo__container--inverted"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
@@ -194,14 +169,8 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
           src="path/to/logo.png"
         />
       </div>
-    </a>
-    <div
-      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
-    >
-      <a
-        class="bpk-card bpk-graphic-promo"
-        href="https://www.skyscanner.net"
-        style="background-image: url(path/to/image.jpg); color: white;"
+      <div
+        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -213,13 +182,13 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-      </a>
-      <a
-        class="bpk-button bpk-graphic-promo__cta"
-        href="https://www.skyscanner.net"
-      >
-        Learn more
-      </a>
+        <button
+          class="bpk-button bpk-graphic-promo__cta"
+          type="button"
+        >
+          Learn more
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -227,18 +196,16 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
 
 exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
 <DocumentFragment>
-  <a
-    class="bpk-card bpk-graphic-promo"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  />
   <div
-    class="bpk-graphic-promo__container bpk-graphic-promo__container--end"
+    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    class="bpk-card bpk-graphic-promo"
+    role="button"
+    style="background-image: url(path/to/image.jpg); color: white;"
+    tabindex="0"
   >
-    <a
-      class="bpk-card bpk-graphic-promo"
-      href="https://www.skyscanner.net"
-      style="background-image: url(path/to/image.jpg); color: white;"
+    <div
+      aria-hidden="true"
+      class="bpk-graphic-promo__container bpk-graphic-promo__container--end"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--end"
@@ -254,14 +221,8 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
           src="path/to/logo.png"
         />
       </div>
-    </a>
-    <div
-      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--end"
-    >
-      <a
-        class="bpk-card bpk-graphic-promo"
-        href="https://www.skyscanner.net"
-        style="background-image: url(path/to/image.jpg); color: white;"
+      <div
+        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--end"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -273,13 +234,13 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-      </a>
-      <a
-        class="bpk-button bpk-graphic-promo__cta"
-        href="https://www.skyscanner.net"
-      >
-        Learn more
-      </a>
+        <button
+          class="bpk-button bpk-graphic-promo__cta"
+          type="button"
+        >
+          Learn more
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -287,18 +248,16 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
 
 exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
 <DocumentFragment>
-  <a
-    class="bpk-card bpk-graphic-promo"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  />
   <div
-    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    class="bpk-card bpk-graphic-promo"
+    role="button"
+    style="background-image: url(path/to/image.jpg); color: white;"
+    tabindex="0"
   >
-    <a
-      class="bpk-card bpk-graphic-promo"
-      href="https://www.skyscanner.net"
-      style="background-image: url(path/to/image.jpg); color: white;"
+    <div
+      aria-hidden="true"
+      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
@@ -314,14 +273,8 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
           src="path/to/logo.png"
         />
       </div>
-    </a>
-    <div
-      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
-    >
-      <a
-        class="bpk-card bpk-graphic-promo"
-        href="https://www.skyscanner.net"
-        style="background-image: url(path/to/image.jpg); color: white;"
+      <div
+        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -333,13 +286,13 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-      </a>
-      <a
-        class="bpk-button bpk-graphic-promo__cta"
-        href="https://www.skyscanner.net"
-      >
-        Learn more
-      </a>
+        <button
+          class="bpk-button bpk-graphic-promo__cta"
+          type="button"
+        >
+          Learn more
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -347,18 +300,16 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
 
 exports[`BpkGraphicPromo should support arbitrary props 1`] = `
 <DocumentFragment>
-  <a
-    class="bpk-card bpk-graphic-promo"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  />
   <div
-    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    class="bpk-card bpk-graphic-promo"
+    role="button"
+    style="background-image: url(path/to/image.jpg); color: white;"
+    tabindex="0"
   >
-    <a
-      class="bpk-card bpk-graphic-promo"
-      href="https://www.skyscanner.net"
-      style="background-image: url(path/to/image.jpg); color: white;"
+    <div
+      aria-hidden="true"
+      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
@@ -374,14 +325,8 @@ exports[`BpkGraphicPromo should support arbitrary props 1`] = `
           src="path/to/logo.png"
         />
       </div>
-    </a>
-    <div
-      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
-    >
-      <a
-        class="bpk-card bpk-graphic-promo"
-        href="https://www.skyscanner.net"
-        style="background-image: url(path/to/image.jpg); color: white;"
+      <div
+        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -393,13 +338,13 @@ exports[`BpkGraphicPromo should support arbitrary props 1`] = `
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-      </a>
-      <a
-        class="bpk-button bpk-graphic-promo__cta"
-        href="https://www.skyscanner.net"
-      >
-        Learn more
-      </a>
+        <button
+          class="bpk-button bpk-graphic-promo__cta"
+          type="button"
+        >
+          Learn more
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -407,18 +352,16 @@ exports[`BpkGraphicPromo should support arbitrary props 1`] = `
 
 exports[`BpkGraphicPromo should support custom class names 1`] = `
 <DocumentFragment>
-  <a
-    class="bpk-card bpk-graphic-promo custom-classname"
-    href="https://www.skyscanner.net"
-    style="background-image: url(path/to/image.jpg); color: white;"
-  />
   <div
-    class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+    aria-label="Sponsored. Airline Name. Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    class="bpk-card bpk-graphic-promo custom-classname"
+    role="button"
+    style="background-image: url(path/to/image.jpg); color: white;"
+    tabindex="0"
   >
-    <a
-      class="bpk-card bpk-graphic-promo custom-classname"
-      href="https://www.skyscanner.net"
-      style="background-image: url(path/to/image.jpg); color: white;"
+    <div
+      aria-hidden="true"
+      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
     >
       <div
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
@@ -434,14 +377,8 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
           src="path/to/logo.png"
         />
       </div>
-    </a>
-    <div
-      class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
-    >
-      <a
-        class="bpk-card bpk-graphic-promo custom-classname"
-        href="https://www.skyscanner.net"
-        style="background-image: url(path/to/image.jpg); color: white;"
+      <div
+        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -453,13 +390,13 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
-      </a>
-      <a
-        class="bpk-button bpk-graphic-promo__cta"
-        href="https://www.skyscanner.net"
-      >
-        Learn more
-      </a>
+        <button
+          class="bpk-button bpk-graphic-promo__cta"
+          type="button"
+        >
+          Learn more
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>

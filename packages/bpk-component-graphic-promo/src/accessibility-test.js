@@ -28,7 +28,9 @@ const sponsorLabel = 'Sponsored';
 const sponsorLogo = 'path/to/logo.png';
 const sponsorAltText = 'Airline Name';
 const ctaText = 'Learn more';
-const ctaUrl = 'https://www.skyscanner.net';
+const onClick = () => {
+  window.location.href = 'https://www.skyscanner.net';
+};
 
 const kicker = 'Kicker';
 const headline = 'Ride your wave';
@@ -47,7 +49,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsorLogo={sponsorLogo}
         sponsorAltText={sponsorAltText}
         ctaText={ctaText}
-        ctaUrl={ctaUrl}
+        onClick={onClick}
         textAlign="start"
         invertVertically={false}
       />,
@@ -68,7 +70,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsorLogo={sponsorLogo}
         sponsorAltText={sponsorAltText}
         ctaText={ctaText}
-        ctaUrl={ctaUrl}
+        onClick={onClick}
         textAlign="center"
         invertVertically={false}
       />,
@@ -89,7 +91,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsorLogo={sponsorLogo}
         sponsorAltText={sponsorAltText}
         ctaText={ctaText}
-        ctaUrl={ctaUrl}
+        onClick={onClick}
         textAlign="end"
         invertVertically={false}
       />,
@@ -110,7 +112,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsorLogo={sponsorLogo}
         sponsorAltText={sponsorAltText}
         ctaText={ctaText}
-        ctaUrl={ctaUrl}
+        onClick={onClick}
         textAlign="start"
         invertVertically
       />,
@@ -129,7 +131,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         sponsorLogo={sponsorLogo}
         sponsorAltText={sponsorAltText}
         ctaText={ctaText}
-        ctaUrl={ctaUrl}
+        onClick={onClick}
         textAlign="start"
         invertVertically={false}
       />,
@@ -148,7 +150,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         image={image}
         sponsorLabel={sponsorLabel}
         ctaText={ctaText}
-        ctaUrl={ctaUrl}
+        onClick={onClick}
         textAlign="start"
         invertVertically={false}
       />,

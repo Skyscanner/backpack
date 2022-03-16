@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { cssModules } from 'bpk-react-utils';
 
 import BpkGraphicPromo from './BpkGraphicPromo';
@@ -36,12 +36,16 @@ const props = {
   sponsorLogo: 'path/to/logo.png',
   sponsorAltText: 'Airline Name',
   ctaText: 'Learn more',
-  ctaUrl: 'https://www.skyscanner.net',
+  onClick: jest.fn(),
   textAlign: 'start',
   invertVertically: false,
 };
 
 describe('BpkGraphicPromo', () => {
+  beforeEach(() => {
+    props.onClick.mockReset();
+  });
+
   it('should render correctly with all properties set', () => {
     const { asFragment } = render(<BpkGraphicPromo {...props} />);
 
@@ -102,21 +106,25 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should redirect us to link when button is clicked', async () => {
+  it('should redirect us to link when card is clicked on mobile', async () => {
     render(<BpkGraphicPromo {...props} />);
+
     const graphicPromo = document.getElementsByClassName(
       getClassName('bpk-graphic-promo'),
     )[0];
+    fireEvent.click(graphicPromo);
 
-    expect(graphicPromo.getAttribute('href')).toEqual(props.ctaUrl);
+    expect(props.onClick).toHaveBeenCalledTimes(1);
   });
 
-  it('should redirect us to link when card is pressed on mobile', async () => {
+  it('should redirect us to link when button is clicked', async () => {
     render(<BpkGraphicPromo {...props} />);
-    const graphicPromo = document.getElementsByClassName(
+
+    const graphicPromoCTA = document.getElementsByClassName(
       getClassName('bpk-graphic-promo__cta'),
     )[0];
+    fireEvent.click(graphicPromoCTA);
 
-    expect(graphicPromo.getAttribute('href')).toEqual(props.ctaUrl);
+    expect(props.onClick).toHaveBeenCalledTimes(1);
   });
 });
