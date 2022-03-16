@@ -287,6 +287,7 @@ containerClassName
 cornerStyle
 CORNER_STYLES.sm
 CORNER_STYLES.lg
+ctaText
 DataSource
 dateProps
 decreaseButtonLabel
@@ -316,6 +317,7 @@ iconPosition
 ICON_POSITION
 ICON_POSITION.LEADING
 ICON_POSITION.TRAILING
+invertVertically
 headerText
 headerIcon
 headerIconType
@@ -396,7 +398,11 @@ showIndicator
 showTitle
 showUnderline
 spaceAround
+sponsor.altText
+sponsor.label
+sponsor.logo
 STAR_TYPES
+strapline
 stubClassName
 stubProps
 stubStyle
@@ -404,6 +410,8 @@ subtitleView
 suppressHydrationWarnings
 SWITCH_TYPES.primary
 SWITCH_TYPES.event
+TEXT_ALIGN
+TEXT_COLOR
 TEXT_STYLES.xs
 TEXT_STYLES.sm
 TEXT_STYLES.base
@@ -431,6 +439,8 @@ TEXT_STYLES.hero2
 TEXT_STYLES.hero3
 TEXT_STYLES.hero4
 TEXT_STYLES.hero5
+textAlign
+textColor
 textProps
 textStyle
 themeAttributes
