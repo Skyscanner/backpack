@@ -167,16 +167,3 @@ BpkGraphicPromo.defaultProps = {
 };
 
 export default BpkGraphicPromo;
-
-// TODO: Things to do before submitting:
-// 7) Write unit tests.
-// 9) Fix remaining StyleLint issues.
-
-// DONE
-// 1) Translate the "Sponsored" text.
-// 2) Set background color for when image fails to load.
-// 3) Confirm background image aspect ratio / dimensions.
-// 4) Confirm text colour.
-// 5) Confirm CTA button style.
-// 6) Write accessibility tests.
-// 8) Fix remaining ESLint issues before final commit.
