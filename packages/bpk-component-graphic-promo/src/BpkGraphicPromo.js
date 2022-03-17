@@ -115,21 +115,23 @@ const BpkGraphicPromo = (props: Props) => {
       padded={false}
     >
       <div className={containerClasses} aria-hidden>
-        {sponsor && (
-          <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
-            <BpkText
-              tagName="span"
-              className={getClassName('bpk-graphic-promo__sponsor-label')}
-            >
-              {sponsor.label}
-            </BpkText>
-            <img
-              className={getClassName('bpk-graphic-promo__sponsor-logo')}
-              alt={sponsor.altText}
-              src={sponsor.logo}
-            />
-          </div>
-        )}
+        <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
+          {sponsor && (
+            <>
+              <BpkText
+                tagName="span"
+                className={getClassName('bpk-graphic-promo__sponsor-label')}
+              >
+                {sponsor.label}
+              </BpkText>
+              <img
+                className={getClassName('bpk-graphic-promo__sponsor-logo')}
+                alt={sponsor.altText}
+                src={sponsor.logo}
+              />
+            </>
+          )}
+        </div>
         <div className={getTextClasses('bpk-graphic-promo__promo-content')}>
           {!sponsor && kicker && (
             <BpkText
