@@ -14,6 +14,9 @@ exports[`BpkGraphicPromo should display the kicker and no sponsor for non-sponso
       class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
     >
       <div
+        class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
+      />
+      <div
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <span
