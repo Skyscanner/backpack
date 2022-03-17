@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,6 @@ const props = {
   ctaText: 'Learn more',
   onClick: jest.fn(),
   textAlign: TEXT_ALIGN.start,
-  invertVertically: false,
 };
 
 describe('BpkGraphicPromo', () => {
@@ -69,28 +68,28 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly when centre aligned', async () => {
+  it('should render correctly when centre aligned', () => {
     const customProps = { ...props, textAlign: 'center' };
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly when right aligned', async () => {
+  it('should render correctly when right aligned', () => {
     const customProps = { ...props, textAlign: 'end' };
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly when inverted portrait', async () => {
+  it('should render correctly when inverted portrait', () => {
     const customProps = { ...props, invertVertically: true };
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not display kicker or strapline when not provided', async () => {
+  it('should not display kicker or strapline when not provided', () => {
     const customProps = { ...props };
     delete customProps.kicker;
     delete customProps.strapline;
@@ -99,7 +98,7 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should display the kicker and no sponsor for non-sponsored ad', async () => {
+  it('should display the kicker and no sponsor for non-sponsored ad', () => {
     const customProps = { ...props };
     delete customProps.sponsor;
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
@@ -107,7 +106,7 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should redirect us to link when card is clicked on mobile', async () => {
+  it('should redirect us to link when card is clicked on mobile', () => {
     render(<BpkGraphicPromo {...props} />);
 
     const graphicPromo = document.getElementsByClassName(
@@ -118,7 +117,7 @@ describe('BpkGraphicPromo', () => {
     expect(props.onClick).toHaveBeenCalledTimes(1);
   });
 
-  it('should redirect us to link when button is clicked', async () => {
+  it('should redirect us to link when button is clicked', () => {
     render(<BpkGraphicPromo {...props} />);
 
     const graphicPromoCTA = document.getElementsByClassName(

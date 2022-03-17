@@ -5,4 +5,4 @@
 
 **Added:**
 
-- `bpk-component-graphic-promo` (1.0.0)
+- `bpk-component-graphic-promo`

@@ -12,24 +12,40 @@ npm install bpk-component-graphic-promo --save-dev
 import React from 'react';
 import BpkGraphicPromo from 'bpk-component-code';
 
-export default () => <BpkGraphicPromo />;
+export default () => (
+  <BpkGraphicPromo
+    kicker="Kicker"
+    headline="Ride your wave"
+    strapline="Portugal and 6 more countries have just been added to the UK travel green list"
+    image="./path/to/background/image.jpg"
+    sponsor={{
+      label: 'Sponsored',
+      logo: './path/to/sponsor/logo.png',
+      altText: 'Sponsor Name',
+    }}
+    ctaText="Learn more"
+    onClick={() => redirect("https://www.sponsor-name.com/promotion"))}
+    textAlign={TEXT_ALIGN.start}
+    invertVertically
+  />
+);
 ```
 
 ## Props
 
 | Property         | PropType          | Required | Default Value |
 | ---------------- | ----------------- | -------- | ------------- |
-| className        | string            | false    | null          |
-| kicker           | string            | false    | null          |
-| headline         | string            | true     | -             |
-| strapline        | string            | false    | null          |
-| image            | string            | true     | -             |
-| sponsor          | object            | false    | null          |
-| sponsor.label    | string            | true     | -             |
-| sponsor.logo     | string            | true     | -             |
-| sponsor.altText  | string            | true     | -             |
 | ctaText          | string            | true     | -             |
-| onClick          | func              | true     | -             |
+| headline         | string            | true     | -             |
+| image            | string            | true     | -             |
 | invertVertically | bool              | true     | -             |
+| onClick          | func              | true     | -             |
 | textAlign        | oneOf(TEXT_ALIGN) | true     | -             |
 | textColor        | oneOf(TEXT_COLOR) | true     | -             |
+| className        | string            | false    | null          |
+| kicker           | string            | false    | null          |
+| sponsor          | object            | false    | null          |
+| sponsor.altText  | string            | true     | -             |
+| sponsor.label    | string            | true     | -             |
+| sponsor.logo     | string            | true     | -             |
+| strapline        | string            | false    | null          |

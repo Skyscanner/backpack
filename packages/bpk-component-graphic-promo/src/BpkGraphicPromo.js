@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,20 +92,12 @@ const BpkGraphicPromo = (props: Props) => {
     onClick();
   };
 
-  const cardClasses = [getClassName('bpk-graphic-promo')];
-  if (className) {
-    cardClasses.push(className);
-  }
-
-  const containerClasses = [
-    getClassName('bpk-graphic-promo__container'),
-    getClassName(`bpk-graphic-promo__container--${textAlign}`),
-  ];
-  if (invertVertically) {
-    containerClasses.push(
-      getClassName('bpk-graphic-promo__container--inverted'),
-    );
-  }
+  const cardClasses = getClassName('bpk-graphic-promo', className);
+  const containerClasses = getClassName(
+    'bpk-graphic-promo__container',
+    `bpk-graphic-promo__container--${textAlign}`,
+    invertVertically && 'bpk-graphic-promo__container--inverted',
+  );
 
   const getTextClasses = (baseClass: string) => {
     const classes = [getClassName(baseClass)];
@@ -116,13 +108,13 @@ const BpkGraphicPromo = (props: Props) => {
 
   return (
     <BpkCard
-      className={cardClasses.join(' ')}
+      className={cardClasses}
       style={{ backgroundImage: `url(${image})`, color: textColor }}
       onClick={onClickWrapper}
       aria-label={constructAriaLabel(props)}
       padded={false}
     >
-      <div className={containerClasses.join(' ')} aria-hidden>
+      <div className={containerClasses} aria-hidden>
         {sponsor && (
           <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
             <BpkText
@@ -186,7 +178,7 @@ BpkGraphicPromo.propTypes = {
   }),
   ctaText: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  invertVertically: PropTypes.bool.isRequired,
+  invertVertically: PropTypes.bool,
   textAlign: PropTypes.oneOf(Object.values(TEXT_ALIGN)).isRequired,
   textColor: PropTypes.oneOf(Object.values(TEXT_COLORS)),
 };
@@ -196,6 +188,7 @@ BpkGraphicPromo.defaultProps = {
   kicker: null,
   strapline: null,
   sponsor: null,
+  invertVertically: false,
   textColor: TEXT_COLORS.white,
 };
 

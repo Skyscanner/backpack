@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         ctaText={ctaText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.start}
-        invertVertically={false}
       />,
     );
 
@@ -72,7 +71,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         ctaText={ctaText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.center}
-        invertVertically={false}
       />,
     );
 
@@ -91,7 +89,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         ctaText={ctaText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.end}
-        invertVertically={false}
       />,
     );
 
@@ -127,7 +124,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         ctaText={ctaText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.start}
-        invertVertically={false}
       />,
     );
 
@@ -145,7 +141,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         ctaText={ctaText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.start}
-        invertVertically={false}
       />,
     );
 
