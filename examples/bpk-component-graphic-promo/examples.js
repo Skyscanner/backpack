@@ -26,7 +26,7 @@ const image =
   'https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png';
 const sponsor = {
   label: 'Sponsored',
-  logo: 'https://www.easyjet.com/ejcms/cache/medialibrary/Images/Global/Main-III/Logo/ej-transparent-x.png',
+  logo: 'https://js.skyscnr.com/sttc/bpk-content/logo_suite_horizontal_logo-33239ee8.svg',
   altText: 'easyJet',
 };
 const ctaText = 'Learn more';
