@@ -41,7 +41,7 @@ export type Props = {
     logo: string,
     altText: string,
   },
-  ctaText: string,
+  buttonText: string,
   onClick: () => void,
   invertVertically: boolean,
   textAlign: TEXT_ALIGN,
@@ -49,7 +49,7 @@ export type Props = {
 };
 
 const constructAriaLabel = ({
-  ctaText,
+  buttonText,
   headline,
   kicker,
   sponsor,
@@ -66,15 +66,15 @@ const constructAriaLabel = ({
   }
   addText(headline);
   addText(strapline);
-  addText(ctaText);
+  addText(buttonText);
 
   return text.join('. ');
 };
 
 const BpkGraphicPromo = (props: Props) => {
   const {
+    buttonText,
     className,
-    ctaText,
     headline,
     image,
     invertVertically,
@@ -159,7 +159,7 @@ const BpkGraphicPromo = (props: Props) => {
             className={getClassName('bpk-graphic-promo__cta')}
             onClick={onClickWrapper}
           >
-            {ctaText}
+            {buttonText}
           </BpkButton>
         </div>
       </div>
@@ -178,7 +178,7 @@ BpkGraphicPromo.propTypes = {
     logo: PropTypes.string,
     altText: PropTypes.string,
   }),
-  ctaText: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   invertVertically: PropTypes.bool,
   textAlign: PropTypes.oneOf(Object.values(TEXT_ALIGN)).isRequired,

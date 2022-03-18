@@ -23,7 +23,7 @@ export default () => (
       logo: './path/to/sponsor/logo.png',
       altText: 'Sponsor Name',
     }}
-    ctaText="Learn more"
+    buttonText="Learn more"
     onClick={() => redirect("https://www.sponsor-name.com/promotion"))}
     textAlign={TEXT_ALIGN.start}
     invertVertically
@@ -35,7 +35,7 @@ export default () => (
 
 | Property         | PropType          | Required | Default Value |
 | ---------------- | ----------------- | -------- | ------------- |
-| ctaText          | string            | true     | -             |
+| buttonText       | string            | true     | -             |
 | headline         | string            | true     | -             |
 | image            | string            | true     | -             |
 | invertVertically | bool              | true     | -             |

@@ -30,7 +30,7 @@ const sponsor = {
   logo: 'path/to/logo.png',
   altText: 'Airline Name',
 };
-const ctaText = 'Learn more';
+const buttonText = 'Learn more';
 const onClick = () => {
   window.location.href = 'https://www.skyscanner.net';
 };
@@ -50,7 +50,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         strapline={strapline}
         image={image}
         sponsor={sponsor}
-        ctaText={ctaText}
+        buttonText={buttonText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.start}
       />,
@@ -68,7 +68,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         strapline={strapline}
         image={image}
         sponsor={sponsor}
-        ctaText={ctaText}
+        buttonText={buttonText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.center}
       />,
@@ -86,7 +86,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         strapline={strapline}
         image={image}
         sponsor={sponsor}
-        ctaText={ctaText}
+        buttonText={buttonText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.end}
       />,
@@ -104,7 +104,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         strapline={strapline}
         image={image}
         sponsor={sponsor}
-        ctaText={ctaText}
+        buttonText={buttonText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.start}
         invertVertically
@@ -121,7 +121,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         headline={headline}
         image={image}
         sponsor={sponsor}
-        ctaText={ctaText}
+        buttonText={buttonText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.start}
       />,
@@ -138,7 +138,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         headline={headline}
         strapline={strapline}
         image={image}
-        ctaText={ctaText}
+        buttonText={buttonText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.start}
       />,

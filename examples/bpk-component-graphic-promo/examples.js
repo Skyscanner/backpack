@@ -29,7 +29,7 @@ const sponsor = {
   logo: 'https://js.skyscnr.com/sttc/bpk-content/logo_suite_horizontal_logo-33239ee8.svg',
   altText: 'easyJet',
 };
-const ctaText = 'Learn more';
+const buttonText = 'Learn more';
 const onClick = () => {
   window.location.href = 'https://www.skyscanner.net';
 };
@@ -46,7 +46,7 @@ const DefaultExample = () => (
     strapline={strapline}
     image={image}
     sponsor={sponsor}
-    ctaText={ctaText}
+    buttonText={buttonText}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}
   />
@@ -59,7 +59,7 @@ const CenterAlignedExample = () => (
     strapline={strapline}
     image={image}
     sponsor={sponsor}
-    ctaText={ctaText}
+    buttonText={buttonText}
     onClick={onClick}
     textAlign={TEXT_ALIGN.center}
   />
@@ -72,7 +72,7 @@ const RightAlignedExample = () => (
     strapline={strapline}
     image={image}
     sponsor={sponsor}
-    ctaText={ctaText}
+    buttonText={buttonText}
     onClick={onClick}
     textAlign={TEXT_ALIGN.end}
   />
@@ -85,7 +85,7 @@ const InvertedPortraitExample = () => (
     strapline={strapline}
     image={image}
     sponsor={sponsor}
-    ctaText={ctaText}
+    buttonText={buttonText}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}
     invertVertically
@@ -97,7 +97,7 @@ const MinimalisticExample = () => (
     headline={headline}
     image={image}
     sponsor={sponsor}
-    ctaText={ctaText}
+    buttonText={buttonText}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}
   />
@@ -109,7 +109,7 @@ const NonSponsoredExample = () => (
     headline={headline}
     strapline={strapline}
     image={image}
-    ctaText={ctaText}
+    buttonText={buttonText}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}
   />

@@ -38,7 +38,7 @@ const props = {
     logo: 'path/to/logo.png',
     altText: 'Airline Name',
   },
-  ctaText: 'Learn more',
+  buttonText: 'Learn more',
   onClick: jest.fn(),
   textAlign: TEXT_ALIGN.start,
 };
