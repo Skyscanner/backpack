@@ -20,7 +20,7 @@
 @import './custom-breakpoints.module';
 
 .bpk-graphic-promo {
-  max-width: pxtorem(1048);
+  max-width: 65.5rem;
   margin-right: auto;
   margin-left: auto;
   background-color: $bpk-color-sky-blue;
@@ -167,31 +167,31 @@
     }
 
     @include breakpoint-landscape-desktop {
-      height: pxtorem(400);
+      height: 25rem;
 
       @include bpk-margin-leading(bpk-spacing-xxxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xxl(), false);
     }
 
     @include breakpoint-landscape-tablet {
-      height: pxtorem(400);
+      height: 25rem;
 
       @include bpk-margin-leading(bpk-spacing-xxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xl(), false);
     }
 
     @include breakpoint-portrait-large {
-      height: pxtorem(933);
+      height: 58.3125rem;
       padding: bpk-spacing-xl();
     }
 
     @include breakpoint-portrait-medium {
-      height: pxtorem(682);
+      height: 42.625rem;
       padding: bpk-spacing-xl();
     }
 
     @include breakpoint-portrait-small {
-      height: pxtorem(500);
+      height: 31.25rem;
       padding: bpk-spacing-lg();
     }
   }
@@ -219,11 +219,11 @@
     }
 
     @include breakpoint-landscape-desktop {
-      width: pxtorem(360);
+      width: 22.5rem;
     }
 
     @include breakpoint-landscape-tablet {
-      width: pxtorem(320);
+      width: 20rem;
     }
   }
 
@@ -232,7 +232,7 @@
   }
 
   &__sponsor-logo {
-    width: pxtorem(148);
+    width: 9.25rem;
   }
 
   &__cta {
