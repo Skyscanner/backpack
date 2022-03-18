@@ -45,7 +45,26 @@ export default () => (
 | className        | string            | false    | null          |
 | kicker           | string            | false    | null          |
 | sponsor          | object            | false    | null          |
-| sponsor.altText  | string            | true     | -             |
-| sponsor.label    | string            | true     | -             |
-| sponsor.logo     | string            | true     | -             |
 | strapline        | string            | false    | null          |
+
+### Prop Details
+
+#### sponsor
+
+An object that groups together all the sponsor related properties. This should only be provided if the graphic promo is sponsored, in which case all of the object's properties are required.
+
+The object consists of the following fields:
+
+- `altText`: string
+- `label`: string
+- `logo`: string
+
+##### Example
+
+```typescript
+const sponsor = {
+  label: 'Sponsored',
+  altText: 'Skyscanner',
+  logo: './path/to/skyscanner/logo.png',
+};
+```
