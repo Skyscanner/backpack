@@ -24,11 +24,19 @@ import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
 import BpkCard from 'bpk-component-card';
 
-import TEXT_ALIGN from './BpkGraphicPromoTextAlign';
-import TEXT_COLORS from './BpkGraphicPromoTextColors';
 import STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);
+
+export const TEXT_ALIGN = {
+  start: 'start',
+  center: 'center',
+  end: 'end',
+};
+export const TEXT_COLORS = {
+  black: 'black',
+  white: 'white',
+};
 
 export type Props = {
   className: ?string,
