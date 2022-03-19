@@ -402,10 +402,10 @@ sponsor.altText
 sponsor.label
 sponsor.logo
 STAR_TYPES
-strapline
 stubClassName
 stubProps
 stubStyle
+subheading
 subtitleView
 suppressHydrationWarnings
 SWITCH_TYPES.primary

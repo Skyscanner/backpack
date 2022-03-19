@@ -36,7 +36,7 @@ const onClick = () => {
 
 const tagline = 'Tagline';
 const headline = 'Ride your wave';
-const strapline =
+const subheading =
   'Portugal and 6 more countries have just been added to the UK travel green list';
 
 describe('BpkGraphicPromo accessibility tests', () => {
@@ -46,7 +46,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
         className="test"
         tagline={tagline}
         headline={headline}
-        strapline={strapline}
+        subheading={subheading}
         image={image}
         sponsor={sponsor}
         buttonText={buttonText}
@@ -64,7 +64,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
       <BpkGraphicPromo
         tagline={tagline}
         headline={headline}
-        strapline={strapline}
+        subheading={subheading}
         image={image}
         sponsor={sponsor}
         buttonText={buttonText}
@@ -82,7 +82,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
       <BpkGraphicPromo
         tagline={tagline}
         headline={headline}
-        strapline={strapline}
+        subheading={subheading}
         image={image}
         sponsor={sponsor}
         buttonText={buttonText}
@@ -100,7 +100,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
       <BpkGraphicPromo
         tagline={tagline}
         headline={headline}
-        strapline={strapline}
+        subheading={subheading}
         image={image}
         sponsor={sponsor}
         buttonText={buttonText}
@@ -135,7 +135,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
       <BpkGraphicPromo
         tagline={tagline}
         headline={headline}
-        strapline={strapline}
+        subheading={subheading}
         image={image}
         buttonText={buttonText}
         onClick={onClick}

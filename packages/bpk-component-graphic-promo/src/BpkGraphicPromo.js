@@ -42,7 +42,7 @@ export type Props = {
   className: ?string,
   tagline: ?string,
   headline: string,
-  strapline: ?string,
+  subheading: ?string,
   image: string,
   sponsor: ?{
     label: string,
@@ -60,7 +60,7 @@ const constructAriaLabel = ({
   buttonText,
   headline,
   sponsor,
-  strapline,
+  subheading,
   tagline,
 }: Props) => {
   const text = [];
@@ -73,7 +73,7 @@ const constructAriaLabel = ({
     addText(tagline);
   }
   addText(headline);
-  addText(strapline);
+  addText(subheading);
   addText(buttonText);
 
   return text.join('. ');
@@ -88,7 +88,7 @@ const BpkGraphicPromo = (props: Props) => {
     invertVertically,
     onClick,
     sponsor,
-    strapline,
+    subheading,
     tagline,
     textAlign,
     textColor,
@@ -151,12 +151,12 @@ const BpkGraphicPromo = (props: Props) => {
           >
             {headline}
           </BpkText>
-          {strapline && (
+          {subheading && (
             <BpkText
               tagName="p"
-              className={getClassName('bpk-graphic-promo__strapline')}
+              className={getClassName('bpk-graphic-promo__subheading')}
             >
-              {strapline}
+              {subheading}
             </BpkText>
           )}
           <BpkButton
@@ -175,7 +175,7 @@ BpkGraphicPromo.propTypes = {
   className: PropTypes.string,
   tagline: PropTypes.string,
   headline: PropTypes.string.isRequired,
-  strapline: PropTypes.string,
+  subheading: PropTypes.string,
   image: PropTypes.string.isRequired,
   sponsor: PropTypes.shape({
     label: PropTypes.string,
@@ -192,7 +192,7 @@ BpkGraphicPromo.propTypes = {
 BpkGraphicPromo.defaultProps = {
   className: null,
   tagline: null,
-  strapline: null,
+  subheading: null,
   sponsor: null,
   invertVertically: false,
   textColor: TEXT_COLORS.white,

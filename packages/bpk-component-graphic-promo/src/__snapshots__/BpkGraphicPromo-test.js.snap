@@ -30,7 +30,7 @@ exports[`BpkGraphicPromo should display the tagline and no sponsor for non-spons
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -46,7 +46,7 @@ exports[`BpkGraphicPromo should display the tagline and no sponsor for non-spons
 </DocumentFragment>
 `;
 
-exports[`BpkGraphicPromo should not display tagline or strapline when not provided 1`] = `
+exports[`BpkGraphicPromo should not display tagline or subheading when not provided 1`] = `
 <DocumentFragment>
   <div
     aria-label="Sponsored. Airline Name. Ride your wave. Learn more"
@@ -129,7 +129,7 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -181,7 +181,7 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -233,7 +233,7 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -285,7 +285,7 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -337,7 +337,7 @@ exports[`BpkGraphicPromo should support arbitrary props 1`] = `
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -389,7 +389,7 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__strapline"
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>

@@ -36,14 +36,14 @@ const onClick = () => {
 
 const tagline = 'Tagline';
 const headline = 'Ride your wave';
-const strapline =
+const subheading =
   'Portugal and 6 more countries have just been added to the UK travel green list';
 
 const DefaultExample = () => (
   <BpkGraphicPromo
     tagline={tagline}
     headline={headline}
-    strapline={strapline}
+    subheading={subheading}
     image={image}
     sponsor={sponsor}
     buttonText={buttonText}
@@ -56,7 +56,7 @@ const CenterAlignedExample = () => (
   <BpkGraphicPromo
     tagline={tagline}
     headline={headline}
-    strapline={strapline}
+    subheading={subheading}
     image={image}
     sponsor={sponsor}
     buttonText={buttonText}
@@ -69,7 +69,7 @@ const RightAlignedExample = () => (
   <BpkGraphicPromo
     tagline={tagline}
     headline={headline}
-    strapline={strapline}
+    subheading={subheading}
     image={image}
     sponsor={sponsor}
     buttonText={buttonText}
@@ -82,7 +82,7 @@ const InvertedPortraitExample = () => (
   <BpkGraphicPromo
     tagline={tagline}
     headline={headline}
-    strapline={strapline}
+    subheading={subheading}
     image={image}
     sponsor={sponsor}
     buttonText={buttonText}
@@ -107,7 +107,7 @@ const NonSponsoredExample = () => (
   <BpkGraphicPromo
     tagline={tagline}
     headline={headline}
-    strapline={strapline}
+    subheading={subheading}
     image={image}
     buttonText={buttonText}
     onClick={onClick}

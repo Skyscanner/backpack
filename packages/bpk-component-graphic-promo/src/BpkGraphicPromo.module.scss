@@ -47,7 +47,7 @@
       @include bpk-label-1;
     }
 
-    &__strapline {
+    &__subheading {
       @include bpk-body-default;
     }
 
@@ -85,7 +85,7 @@
       @include bpk-hero-4;
     }
 
-    &__strapline {
+    &__subheading {
       @include bpk-subheading;
     }
   }
@@ -109,7 +109,7 @@
       @include bpk-hero-5;
     }
 
-    &__strapline {
+    &__subheading {
       @include bpk-body-longform;
     }
   }
@@ -133,7 +133,7 @@
       @include bpk-heading-2;
     }
 
-    &__strapline {
+    &__subheading {
       @include bpk-body-default;
     }
   }

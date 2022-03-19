@@ -16,7 +16,7 @@ export default () => (
   <BpkGraphicPromo
     tagline="Tagline"
     headline="Ride your wave"
-    strapline="Portugal and 6 more countries have just been added to the UK travel green list"
+    subheading="Portugal and 6 more countries have just been added to the UK travel green list"
     image="./path/to/background/image.jpg"
     sponsor={{
       label: 'Sponsored',
@@ -45,7 +45,7 @@ export default () => (
 | className        | string            | false    | null          |
 | tagline          | string            | false    | null          |
 | sponsor          | object            | false    | null          |
-| strapline        | string            | false    | null          |
+| subheading       | string            | false    | null          |
 
 ### Prop Details
 

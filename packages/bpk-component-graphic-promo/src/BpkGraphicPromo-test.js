@@ -29,7 +29,7 @@ const getClassName = cssModules(STYLES);
 const props = {
   tagline: 'Tagline',
   headline: 'Ride your wave',
-  strapline:
+  subheading:
     'Portugal and 6 more countries have just been added to the UK travel green list',
   image: 'path/to/image.jpg',
   sponsor: {
@@ -88,10 +88,10 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not display tagline or strapline when not provided', () => {
+  it('should not display tagline or subheading when not provided', () => {
     const customProps = { ...props };
     delete customProps.tagline;
-    delete customProps.strapline;
+    delete customProps.subheading;
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
