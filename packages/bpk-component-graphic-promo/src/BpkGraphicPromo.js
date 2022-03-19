@@ -107,12 +107,8 @@ const BpkGraphicPromo = (props: Props) => {
     invertVertically && 'bpk-graphic-promo__container--inverted',
   );
 
-  const getTextClasses = (baseClass: string) => {
-    const classes = [getClassName(baseClass)];
-    classes.push(getClassName(`${baseClass}--${textAlign}`));
-
-    return classes.join(' ');
-  };
+  const getTextClasses = (baseClass: string) =>
+    getClassName(baseClass, `${baseClass}--${textAlign}`);
 
   return (
     <BpkCard
