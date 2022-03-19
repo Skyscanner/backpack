@@ -14,7 +14,7 @@ import BpkGraphicPromo from 'bpk-component-code';
 
 export default () => (
   <BpkGraphicPromo
-    kicker="Kicker"
+    tagline="Tagline"
     headline="Ride your wave"
     strapline="Portugal and 6 more countries have just been added to the UK travel green list"
     image="./path/to/background/image.jpg"
@@ -43,7 +43,7 @@ export default () => (
 | textAlign        | oneOf(TEXT_ALIGN) | true     | -             |
 | textColor        | oneOf(TEXT_COLOR) | true     | -             |
 | className        | string            | false    | null          |
-| kicker           | string            | false    | null          |
+| tagline          | string            | false    | null          |
 | sponsor          | object            | false    | null          |
 | strapline        | string            | false    | null          |
 

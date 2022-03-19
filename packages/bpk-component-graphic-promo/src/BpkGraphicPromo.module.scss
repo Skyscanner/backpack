@@ -41,7 +41,7 @@
       margin-bottom: bpk-spacing-xl();
     }
 
-    &__kicker {
+    &__tagline {
       margin-bottom: bpk-spacing-md();
 
       @include bpk-label-1;
@@ -73,7 +73,7 @@
       @include bpk-heading-4;
     }
 
-    &__kicker {
+    &__tagline {
       margin-bottom: bpk-spacing-md();
 
       @include bpk-subheading;
@@ -97,7 +97,7 @@
       @include bpk-heading-3;
     }
 
-    &__kicker {
+    &__tagline {
       margin-bottom: bpk-spacing-md();
 
       @include bpk-subheading;
@@ -121,7 +121,7 @@
       @include bpk-label-1;
     }
 
-    &__kicker {
+    &__tagline {
       margin-bottom: bpk-spacing-md();
 
       @include bpk-label-1;

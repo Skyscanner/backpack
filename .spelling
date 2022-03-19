@@ -410,6 +410,7 @@ subtitleView
 suppressHydrationWarnings
 SWITCH_TYPES.primary
 SWITCH_TYPES.event
+tagline
 TEXT_ALIGN
 TEXT_COLOR
 TEXT_STYLES.xs

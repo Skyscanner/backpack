@@ -34,14 +34,14 @@ const onClick = () => {
   window.location.href = 'https://www.skyscanner.net';
 };
 
-const kicker = 'Kicker';
+const tagline = 'Tagline';
 const headline = 'Ride your wave';
 const strapline =
   'Portugal and 6 more countries have just been added to the UK travel green list';
 
 const DefaultExample = () => (
   <BpkGraphicPromo
-    kicker={kicker}
+    tagline={tagline}
     headline={headline}
     strapline={strapline}
     image={image}
@@ -54,7 +54,7 @@ const DefaultExample = () => (
 
 const CenterAlignedExample = () => (
   <BpkGraphicPromo
-    kicker={kicker}
+    tagline={tagline}
     headline={headline}
     strapline={strapline}
     image={image}
@@ -67,7 +67,7 @@ const CenterAlignedExample = () => (
 
 const RightAlignedExample = () => (
   <BpkGraphicPromo
-    kicker={kicker}
+    tagline={tagline}
     headline={headline}
     strapline={strapline}
     image={image}
@@ -80,7 +80,7 @@ const RightAlignedExample = () => (
 
 const InvertedPortraitExample = () => (
   <BpkGraphicPromo
-    kicker={kicker}
+    tagline={tagline}
     headline={headline}
     strapline={strapline}
     image={image}
@@ -105,7 +105,7 @@ const MinimalisticExample = () => (
 
 const NonSponsoredExample = () => (
   <BpkGraphicPromo
-    kicker={kicker}
+    tagline={tagline}
     headline={headline}
     strapline={strapline}
     image={image}

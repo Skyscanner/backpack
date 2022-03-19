@@ -40,7 +40,7 @@ export const TEXT_COLORS = {
 
 export type Props = {
   className: ?string,
-  kicker: ?string,
+  tagline: ?string,
   headline: string,
   strapline: ?string,
   image: string,
@@ -59,9 +59,9 @@ export type Props = {
 const constructAriaLabel = ({
   buttonText,
   headline,
-  kicker,
   sponsor,
   strapline,
+  tagline,
 }: Props) => {
   const text = [];
   const addText = (value) => value && text.push(value);
@@ -70,7 +70,7 @@ const constructAriaLabel = ({
     addText(sponsor.label);
     addText(sponsor.altText);
   } else {
-    addText(kicker);
+    addText(tagline);
   }
   addText(headline);
   addText(strapline);
@@ -86,10 +86,10 @@ const BpkGraphicPromo = (props: Props) => {
     headline,
     image,
     invertVertically,
-    kicker,
     onClick,
     sponsor,
     strapline,
+    tagline,
     textAlign,
     textColor,
   } = props;
@@ -137,12 +137,12 @@ const BpkGraphicPromo = (props: Props) => {
           )}
         </div>
         <div className={getTextClasses('bpk-graphic-promo__promo-content')}>
-          {!sponsor && kicker && (
+          {!sponsor && tagline && (
             <BpkText
               tagName="span"
-              className={getClassName('bpk-graphic-promo__kicker')}
+              className={getClassName('bpk-graphic-promo__tagline')}
             >
-              {kicker}
+              {tagline}
             </BpkText>
           )}
           <BpkText
@@ -173,7 +173,7 @@ const BpkGraphicPromo = (props: Props) => {
 
 BpkGraphicPromo.propTypes = {
   className: PropTypes.string,
-  kicker: PropTypes.string,
+  tagline: PropTypes.string,
   headline: PropTypes.string.isRequired,
   strapline: PropTypes.string,
   image: PropTypes.string.isRequired,
@@ -191,7 +191,7 @@ BpkGraphicPromo.propTypes = {
 
 BpkGraphicPromo.defaultProps = {
   className: null,
-  kicker: null,
+  tagline: null,
   strapline: null,
   sponsor: null,
   invertVertically: false,

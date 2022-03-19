@@ -21,14 +21,13 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { cssModules } from 'bpk-react-utils';
 
-import BpkGraphicPromo from './BpkGraphicPromo';
-import TEXT_ALIGN from './BpkGraphicPromoTextAlign';
+import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
 import STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const props = {
-  kicker: 'Kicker',
+  tagline: 'Tagline',
   headline: 'Ride your wave',
   strapline:
     'Portugal and 6 more countries have just been added to the UK travel green list',
@@ -89,16 +88,16 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not display kicker or strapline when not provided', () => {
+  it('should not display tagline or strapline when not provided', () => {
     const customProps = { ...props };
-    delete customProps.kicker;
+    delete customProps.tagline;
     delete customProps.strapline;
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should display the kicker and no sponsor for non-sponsored ad', () => {
+  it('should display the tagline and no sponsor for non-sponsored ad', () => {
     const customProps = { ...props };
     delete customProps.sponsor;
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);

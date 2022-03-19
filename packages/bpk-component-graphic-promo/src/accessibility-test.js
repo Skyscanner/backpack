@@ -21,8 +21,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import TEXT_ALIGN from './BpkGraphicPromoTextAlign';
-import BpkGraphicPromo from './BpkGraphicPromo';
+import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
 
 const image = 'path/to/image.jpg';
 const sponsor = {
@@ -35,7 +34,7 @@ const onClick = () => {
   window.location.href = 'https://www.skyscanner.net';
 };
 
-const kicker = 'Kicker';
+const tagline = 'Tagline';
 const headline = 'Ride your wave';
 const strapline =
   'Portugal and 6 more countries have just been added to the UK travel green list';
@@ -45,7 +44,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
     const { container } = render(
       <BpkGraphicPromo
         className="test"
-        kicker={kicker}
+        tagline={tagline}
         headline={headline}
         strapline={strapline}
         image={image}
@@ -63,7 +62,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in centre aligned', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        kicker={kicker}
+        tagline={tagline}
         headline={headline}
         strapline={strapline}
         image={image}
@@ -81,7 +80,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in right aligned', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        kicker={kicker}
+        tagline={tagline}
         headline={headline}
         strapline={strapline}
         image={image}
@@ -99,7 +98,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in inverted portrait', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        kicker={kicker}
+        tagline={tagline}
         headline={headline}
         strapline={strapline}
         image={image}
@@ -134,7 +133,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in non-sponsored', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        kicker={kicker}
+        tagline={tagline}
         headline={headline}
         strapline={strapline}
         image={image}

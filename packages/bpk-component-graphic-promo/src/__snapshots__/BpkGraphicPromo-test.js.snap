@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkGraphicPromo should display the kicker and no sponsor for non-sponsored ad 1`] = `
+exports[`BpkGraphicPromo should display the tagline and no sponsor for non-sponsored ad 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Kicker. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    aria-label="Tagline. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
     style="background-image: url(path/to/image.jpg); color: white;"
@@ -20,9 +20,9 @@ exports[`BpkGraphicPromo should display the kicker and no sponsor for non-sponso
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__kicker"
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__tagline"
         >
-          Kicker
+          Tagline
         </span>
         <h2
           class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
@@ -46,7 +46,7 @@ exports[`BpkGraphicPromo should display the kicker and no sponsor for non-sponso
 </DocumentFragment>
 `;
 
-exports[`BpkGraphicPromo should not display kicker or strapline when not provided 1`] = `
+exports[`BpkGraphicPromo should not display tagline or strapline when not provided 1`] = `
 <DocumentFragment>
   <div
     aria-label="Sponsored. Airline Name. Ride your wave. Learn more"
