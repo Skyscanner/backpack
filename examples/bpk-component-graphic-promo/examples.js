@@ -115,6 +115,17 @@ const NonSponsoredExample = () => (
   />
 );
 
+const MixedExample = () => (
+  <>
+    <DefaultExample />
+    <CenterAlignedExample />
+    <RightAlignedExample />
+    <InvertedPortraitExample />
+    <MinimalisticExample />
+    <NonSponsoredExample />
+  </>
+);
+
 export {
   DefaultExample,
   CenterAlignedExample,
@@ -122,4 +133,5 @@ export {
   InvertedPortraitExample,
   MinimalisticExample,
   NonSponsoredExample,
+  MixedExample,
 };
