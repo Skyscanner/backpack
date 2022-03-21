@@ -32,7 +32,7 @@
     pointer-events: none;
 
     &__sponsor-label {
-      margin-bottom: bpk-spacing-small();
+      margin-bottom: bpk-spacing-sm();
 
       @include bpk-label-1;
     }
