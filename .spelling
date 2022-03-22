@@ -287,6 +287,7 @@ containerClassName
 cornerStyle
 CORNER_STYLES.sm
 CORNER_STYLES.lg
+buttonText
 DataSource
 dateProps
 decreaseButtonLabel
@@ -316,6 +317,7 @@ iconPosition
 ICON_POSITION
 ICON_POSITION.LEADING
 ICON_POSITION.TRAILING
+invertVertically
 headerText
 headerIcon
 headerIconType
@@ -396,14 +398,21 @@ showIndicator
 showTitle
 showUnderline
 spaceAround
+sponsor.altText
+sponsor.label
+sponsor.logo
 STAR_TYPES
 stubClassName
 stubProps
 stubStyle
+subheading
 subtitleView
 suppressHydrationWarnings
 SWITCH_TYPES.primary
 SWITCH_TYPES.event
+tagline
+TEXT_ALIGN
+TEXT_COLOR
 TEXT_STYLES.xs
 TEXT_STYLES.sm
 TEXT_STYLES.base
@@ -431,6 +440,8 @@ TEXT_STYLES.hero2
 TEXT_STYLES.hero3
 TEXT_STYLES.hero4
 TEXT_STYLES.hero5
+textAlign
+textColor
 textProps
 textStyle
 themeAttributes
@@ -670,6 +681,7 @@ bpk-component-drawer
 bpk-component-fieldset
 bpk-component-flare
 bpk-component-form-validation
+bpk-component-graphic-promo
 bpk-component-grid
 bpk-component-grid-toggle
 bpk-component-heading

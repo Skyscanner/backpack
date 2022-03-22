@@ -1,0 +1,256 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2022 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+@import './custom-breakpoints.module';
+
+.bpk-graphic-promo {
+  max-width: 65.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: $bpk-color-sky-blue;
+  background-position: center;
+  background-size: cover;
+  box-shadow: none;
+
+  @include breakpoint-landscape {
+    pointer-events: none;
+
+    &__sponsor-label {
+      margin-bottom: bpk-spacing-sm();
+
+      @include bpk-label-1;
+    }
+
+    &__sponsor-content {
+      margin-bottom: bpk-spacing-xl();
+    }
+
+    &__tagline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-label-1;
+    }
+
+    &__subheading {
+      @include bpk-body-default;
+    }
+
+    &__headline {
+      @include breakpoint-landscape-desktop {
+        @include bpk-hero-5;
+      }
+
+      @include breakpoint-landscape-tablet {
+        @include bpk-heading-1;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: bpk-spacing-md();
+      }
+    }
+  }
+
+  @include breakpoint-portrait-large {
+    &__sponsor-label {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-4;
+    }
+
+    &__tagline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-subheading;
+    }
+
+    &__headline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-hero-4;
+    }
+
+    &__subheading {
+      @include bpk-subheading;
+    }
+  }
+
+  @include breakpoint-portrait-medium {
+    &__sponsor-label {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-3;
+    }
+
+    &__tagline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-subheading;
+    }
+
+    &__headline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-hero-5;
+    }
+
+    &__subheading {
+      @include bpk-body-longform;
+    }
+  }
+
+  @include breakpoint-portrait-small {
+    &__sponsor-label {
+      margin-bottom: bpk-spacing-sm();
+
+      @include bpk-label-1;
+    }
+
+    &__tagline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-label-1;
+    }
+
+    &__headline {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-2;
+    }
+
+    &__subheading {
+      @include bpk-body-default;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-landscape {
+      justify-content: center;
+
+      &--start {
+        align-items: start;
+      }
+
+      &--center {
+        align-items: center;
+      }
+
+      &--end {
+        align-items: end;
+      }
+    }
+
+    @include breakpoint-portrait {
+      justify-content: space-between;
+
+      &--inverted {
+        flex-direction: column-reverse;
+      }
+    }
+
+    @include breakpoint-landscape-desktop {
+      height: 25rem;
+
+      @include bpk-margin-leading(bpk-spacing-xxxl(), false);
+      @include bpk-margin-trailing(bpk-spacing-xxl(), false);
+    }
+
+    @include breakpoint-landscape-tablet {
+      height: 25rem;
+
+      @include bpk-margin-leading(bpk-spacing-xxl(), false);
+      @include bpk-margin-trailing(bpk-spacing-xl(), false);
+    }
+
+    @include breakpoint-portrait-large {
+      height: 58.3125rem;
+      padding: bpk-spacing-xl();
+    }
+
+    @include breakpoint-portrait-medium {
+      height: 42.625rem;
+      padding: bpk-spacing-xl();
+    }
+
+    @include breakpoint-portrait-small {
+      height: 31.25rem;
+      padding: bpk-spacing-lg();
+    }
+  }
+
+  &__sponsor-content,
+  &__promo-content {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-landscape {
+      &--start {
+        align-items: start;
+        text-align: start;
+      }
+
+      &--center {
+        align-items: center;
+        text-align: center;
+      }
+
+      &--end {
+        align-items: start;
+        text-align: start;
+      }
+    }
+
+    @include breakpoint-landscape-desktop {
+      width: 22.5rem;
+    }
+
+    @include breakpoint-landscape-tablet {
+      width: 20rem;
+    }
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &__sponsor-logo {
+    width: 9.25rem;
+  }
+
+  &__cta {
+    // Remove the following 2 lines once the new Button style is reasdy in Backpack. (ST-4135)
+    background: $bpk-color-white;
+    color: black; /* stylelint-disable-line */
+    pointer-events: auto;
+
+    // Remove the following line once the new Button style is reasdy in Backpack. (ST-4135)
+    @include bpk-label-1;
+
+    @include breakpoint-landscape {
+      display: inherit;
+      margin-top: bpk-spacing-xl();
+    }
+
+    @include breakpoint-portrait {
+      display: none;
+    }
+  }
+}
