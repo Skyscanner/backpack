@@ -1,3 +1,79 @@
+# 2022-03-22
+
+**Breaking:**
+
+- bpk-component-accordion: 4.1.1 => 5.0.0
+  - Remove `weight` property from `BpkAccordion`.
+
+**Patched:**
+
+- bpk-animate-height: 4.1.0 => 4.1.1
+- bpk-component-aria-live: 2.1.1 => 2.1.2
+- bpk-component-autosuggest: 6.1.1 => 6.1.2
+- bpk-component-badge: 4.1.1 => 4.1.2
+- bpk-component-banner-alert: 6.1.1 => 6.1.2
+- bpk-component-barchart: 4.2.1 => 4.2.2
+- bpk-component-blockquote: 3.1.0 => 3.1.1
+- bpk-component-boilerplate: 1.1.0 => 1.1.1 (private)
+- bpk-component-breadcrumb: 3.1.1 => 3.1.2
+- bpk-component-breakpoint: 3.1.0 => 3.1.1
+- bpk-component-button: 5.1.0 => 5.1.1
+- bpk-component-calendar: 11.1.1 => 11.1.2
+- bpk-component-card: 4.1.1 => 4.1.2
+- bpk-component-checkbox: 4.1.1 => 4.1.2
+- bpk-component-chip: 5.2.1 => 5.2.2
+- bpk-component-close-button: 3.1.1 => 3.1.2
+- bpk-component-code: 3.1.0 => 3.1.1
+- bpk-component-content-container: 4.1.0 => 4.1.1
+- bpk-component-datatable: 4.1.1 => 4.1.2
+- bpk-component-datepicker: 15.2.1 => 15.2.2
+- bpk-component-description-list: 3.1.0 => 3.1.1
+- bpk-component-dialog: 4.1.1 => 4.1.2
+- bpk-component-drawer: 4.1.1 => 4.1.2
+- bpk-component-fieldset: 4.1.1 => 4.1.2
+- bpk-component-flare: 2.1.1 => 2.1.2
+- bpk-component-form-validation: 4.2.1 => 4.2.2
+- bpk-component-grid-toggle: 3.1.0 => 3.1.1
+- bpk-component-grid: 3.1.0 => 3.1.1
+- bpk-component-horizontal-nav: 5.1.1 => 5.1.2
+- bpk-component-icon: 9.2.1 => 9.2.2
+- bpk-component-image: 5.1.1 => 5.1.2
+- bpk-component-infinite-scroll: 4.1.0 => 4.1.1
+- bpk-component-input: 6.1.1 => 6.1.2
+- bpk-component-label: 5.1.0 => 5.1.1
+- bpk-component-link: 3.1.0 => 3.1.1
+- bpk-component-list: 3.1.0 => 3.1.1
+- bpk-component-loading-button: 4.1.1 => 4.1.2
+- bpk-component-map: 5.2.1 => 5.2.2
+- bpk-component-mobile-scroll-container: 3.1.0 => 3.1.1
+- bpk-component-modal: 3.1.1 => 3.1.2
+- bpk-component-navigation-bar: 3.1.1 => 3.1.2
+- bpk-component-navigation-stack: 3.1.1 => 3.1.2
+- bpk-component-nudger: 5.1.1 => 5.1.2
+- bpk-component-overlay: 2.1.1 => 2.1.2
+- bpk-component-pagination: 3.1.1 => 3.1.2
+- bpk-component-panel: 3.1.0 => 3.1.1
+- bpk-component-phone-input: 7.1.1 => 7.1.2
+- bpk-component-popover: 4.1.1 => 4.1.2
+- bpk-component-progress: 3.1.0 => 3.1.1
+- bpk-component-radio: 3.1.0 => 3.1.1
+- bpk-component-rating: 3.1.1 => 3.1.2
+- bpk-component-rtl-toggle: 3.1.0 => 3.1.1
+- bpk-component-scrollable-calendar: 6.1.1 => 6.1.2
+- bpk-component-section-list: 3.2.1 => 3.2.2
+- bpk-component-select: 5.1.0 => 5.1.1
+- bpk-component-skip-link: 2.1.0 => 2.1.1
+- bpk-component-slider: 3.1.0 => 3.1.1
+- bpk-component-spinner: 5.1.0 => 5.1.1
+- bpk-component-star-rating: 3.1.1 => 3.1.2
+- bpk-component-switch: 2.1.0 => 2.1.1
+- bpk-component-table: 3.1.0 => 3.1.1
+- bpk-component-text: 6.1.1 => 6.1.2
+- bpk-component-textarea: 4.2.0 => 4.2.1
+- bpk-component-theme-toggle: 3.1.0 => 3.1.1
+- bpk-component-ticket: 4.1.1 => 4.1.2
+- bpk-component-tooltip: 6.1.1 => 6.1.2
+  - As part of preparing for the release of the single package, we have removed the examples and stories from each of the components to a separate location. Resulting in a patch as these files have been removed from the npm packages.
 # 2022-03-02
 
 **Patch:**
