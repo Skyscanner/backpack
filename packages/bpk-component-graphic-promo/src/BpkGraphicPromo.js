@@ -162,7 +162,7 @@ const BpkGraphicPromo = (props: Props) => {
           <BpkButton
             className={getClassName('bpk-graphic-promo__cta')}
             onClick={onClickWrapper}
-            tabIndex={-1} /* button is not focusable for accessibility tests */
+            tabIndex={-1} /* button is not focusable for accessibility */
           >
             {buttonText}
           </BpkButton>
