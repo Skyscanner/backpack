@@ -1,2 +1,2 @@
 **Added:**
-- `bpk-component-graphic-promo`
+- `bpk-component-graphic-promotion`

@@ -28,7 +28,7 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-graphic-promo', module)
+storiesOf('bpk-component-graphic-promotion', module)
   .add('Default', DefaultExample)
   .add('Center Aligned', CenterAlignedExample)
   .add('Right Aligned', RightAlignedExample)

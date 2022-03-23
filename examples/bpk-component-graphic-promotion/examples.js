@@ -20,7 +20,7 @@ import React from 'react';
 
 import BpkGraphicPromo, {
   TEXT_ALIGN,
-} from '../../packages/bpk-component-graphic-promo';
+} from '../../packages/bpk-component-graphic-promotion';
 
 const image =
   'https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png';

@@ -1,16 +1,16 @@
-# bpk-component-graphic-promo
+# bpk-component-graphic-promotion
 
 ## Installation
 
 ```sh
-npm install bpk-component-graphic-promo --save-dev
+npm install bpk-component-graphic-promotion --save-dev
 ```
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkGraphicPromo from 'bpk-component-code';
+import BpkGraphicPromo from 'bpk-component-graphic-promotion';
 
 export default () => (
   <BpkGraphicPromo

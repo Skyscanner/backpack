@@ -81,7 +81,7 @@ configure(() => {
   require('../examples/bpk-component-fieldset/stories');
   require('../examples/bpk-component-flare/stories');
   require('../examples/bpk-component-form-validation/stories');
-  require('../examples/bpk-component-graphic-promo/stories');
+  require('../examples/bpk-component-graphic-promotion/stories');
   require('../examples/bpk-component-grid-toggle/stories');
   require('../examples/bpk-component-grid/stories');
   require('../examples/bpk-component-horizontal-nav/stories');

@@ -1,7 +1,7 @@
 {
-  "name": "bpk-component-graphic-promo",
+  "name": "bpk-component-graphic-promotion",
   "version": "0.0.1",
-  "description": "Backpack graphic-promo component.",
+  "description": "Backpack graphic-promotion component.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
