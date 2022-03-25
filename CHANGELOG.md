@@ -1,3 +1,12 @@
+# 2022-03-25
+
+**Fixed**
+- bpk-component-calendar: 11.1.2 => 11.1.3
+- bpk-component-datepicker: 15.2.2 => 15.2.3
+- bpk-component-scrollable-calendar: 6.1.2 => 6.1.3
+  - Remove prop index from `DateType`.
+
+
 # 2022-03-23
 
 **Added:**
