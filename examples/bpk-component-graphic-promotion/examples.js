@@ -22,22 +22,23 @@ import BpkGraphicPromo, {
   TEXT_ALIGN,
 } from '../../packages/bpk-component-graphic-promotion';
 
+import SkyLand from './skyland.png';
+
 const image =
-  'https://content.skyscnr.com/m/4933408c167ee099/original/MERCH-131-Graphic-Promo-2096x800.png';
+  'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=1048px:400px&quality=90';
 const sponsor = {
   label: 'Sponsored',
-  logo: 'https://js.skyscnr.com/sttc/bpk-content/logo_suite_horizontal_logo-33239ee8.svg',
-  altText: 'easyJet',
+  logo: SkyLand,
+  altText: 'SkyLand',
 };
-const buttonText = 'Learn more';
+const buttonText = 'Discover more';
 const onClick = () => {
   window.location.href = 'https://www.skyscanner.net';
 };
 
-const tagline = 'Tagline';
-const headline = 'Ride your wave';
-const subheading =
-  'Portugal and 6 more countries have just been added to the UK travel green list';
+const tagline = 'Travel tips';
+const headline = 'Three Peaks Challenge';
+const subheading = 'How to complete the climb in 3 days';
 
 const DefaultExample = () => (
   <BpkGraphicPromo
