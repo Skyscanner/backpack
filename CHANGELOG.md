@@ -9,7 +9,7 @@
     - Removed `padded` property from Link buttons. If using this property, it will no longer have any effect on the button's padding and the default Link button padding which was introduced with this PR will be applied instead. This means different vertical padding and no horizontal padding will be applied. Note: if using this property in Link buttons, you should remove it.
     - Introduced `2.25rem` minimum height for default buttons and `0.375rem` vertical padding. This will result in buttons appearing slightly smaller in height.
     - Introduced `3rem` minimum height for large buttons and `0.75rem` vertical padding. This will result in large buttons appearing slightly larger in height. 
-    - L/R padding for large buttons was changed which causes the width of the large buttons to decrease.
+    - Horizontal padding for large buttons was changed which causes the width of the large buttons to decrease.
 - Button shape changes:
     - Changed radius from `.375rem` to `.5rem` for both default and large buttons. Buttons will look slightly more rounded.
     - Changed radius of icon-only buttons from `50%` to `.5rem` which will make icon-only buttons more square-shaped.
