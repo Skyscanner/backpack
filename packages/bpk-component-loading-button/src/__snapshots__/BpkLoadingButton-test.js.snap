@@ -8,7 +8,7 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -62,7 +62,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -89,7 +89,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -115,7 +115,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -145,7 +145,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
       Search
     </span>
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -166,12 +166,12 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
 exports[`BpkLoadingButton should render correctly with "large" and "link" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--link"
+    class="bpk-button bpk-button--large bpk-button--link bpk-button--link-large"
     type="button"
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -276,7 +276,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -555,7 +555,7 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -760,7 +760,7 @@ exports[`BpkLoadingButton should respect the class names entered as a string 1`]
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"

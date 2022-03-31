@@ -50,11 +50,8 @@ export default () => (
 | iconOnly    | bool     | false    | false         |
 | large       | bool     | false    | false         |
 | onClick     | func     | false    | null          |
-| padded      | bool     | false    | false         |
 | rel         | string   | false    | null          |
 | submit      | bool     | false    | false         |
-
-> Note: The `padded` boolean only applies to link-style buttons
 
 ## Theme Props
 

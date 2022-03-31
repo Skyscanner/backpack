@@ -44,12 +44,10 @@ type Props = {
   featured: boolean,
   outline: boolean,
   link: boolean,
-  padded: boolean,
 };
 
 const BpkButton = (props: Props) => {
-  const { destructive, featured, link, outline, padded, secondary, ...rest } =
-    props;
+  const { destructive, featured, link, outline, secondary, ...rest } = props;
 
   if (secondary) {
     return <BpkButtonSecondary {...rest} />;
@@ -64,8 +62,7 @@ const BpkButton = (props: Props) => {
     return <BpkButtonOutline {...rest} />;
   }
   if (link) {
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    return <BpkButtonLink padded={padded} {...rest} />;
+    return <BpkButtonLink {...rest} />;
   }
   return <BpkButtonPrimary {...rest} />;
 };
@@ -76,7 +73,6 @@ BpkButton.propTypes = {
   destructive: PropTypes.bool,
   featured: PropTypes.bool,
   outline: PropTypes.bool,
-  padded: PropTypes.bool,
   link: PropTypes.bool,
 };
 
@@ -86,7 +82,6 @@ BpkButton.defaultProps = {
   destructive: false,
   featured: false,
   outline: false,
-  padded: false,
   link: false,
 };
 
