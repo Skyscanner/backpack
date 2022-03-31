@@ -245,7 +245,6 @@
     @include bpk-label-1;
 
     @include breakpoint-landscape {
-      display: inherit;
       margin-top: bpk-spacing-xl();
     }
 

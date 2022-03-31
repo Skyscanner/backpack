@@ -32,7 +32,6 @@ import {
   ComponentButtonSecondaryExample,
   ComponentButtonDestructiveExample,
   ComponentButtonLinkExample,
-  ComponentButtonLinkWithPaddingExample,
   ComponentButtonFeaturedExample,
   ComponentButtonOutlineExample,
   MixedExample,
@@ -50,9 +49,6 @@ storiesOf('bpk-component-button', () => module)
   .add('Secondary', () => <ComponentButtonSecondaryExample />)
   .add('Destructive', () => <ComponentButtonDestructiveExample />)
   .add('Link button', () => <ComponentButtonLinkExample />)
-  .add('Link button with padding', () => (
-    <ComponentButtonLinkWithPaddingExample />
-  ))
   .add('Featured', () => <ComponentButtonFeaturedExample />)
   .add('Outline', () => <ComponentButtonOutlineExample />)
   .add('Mixture', () => <MixedExample />)

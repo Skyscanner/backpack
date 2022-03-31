@@ -156,13 +156,6 @@ const ComponentButtonLinkExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
   <ButtonStory wrapped={BpkButtonLink} {...props} />
 );
-const ComponentButtonLinkWithPaddingExample = (props: {}) => (
-  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-  <ButtonStory
-    wrapped={(wrappedProps) => <BpkButtonLink padded {...wrappedProps} />}
-    {...props}
-  />
-);
 const ComponentButtonFeaturedExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
   <ButtonStory wrapped={BpkButtonFeatured} {...props} />
@@ -207,7 +200,6 @@ export {
   ComponentButtonSecondaryExample,
   ComponentButtonDestructiveExample,
   ComponentButtonLinkExample,
-  ComponentButtonLinkWithPaddingExample,
   ComponentButtonFeaturedExample,
   ComponentButtonOutlineExample,
   MixedExample,

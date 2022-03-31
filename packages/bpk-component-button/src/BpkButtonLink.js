@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import {
   type Props as CommonProps,
@@ -33,15 +32,14 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   ...CommonProps,
-  padded: boolean,
 };
 const BpkButtonLink = (props: Props) => {
-  const { className, padded, ...rest } = props;
+  const { className, large, ...rest } = props;
 
   const classNames = [getClassName('bpk-button--link')];
 
-  if (padded) {
-    classNames.push(getClassName('bpk-button--padded'));
+  if (large) {
+    classNames.push(getClassName('bpk-button--link-large'));
   }
 
   if (className) {
@@ -51,11 +49,11 @@ const BpkButtonLink = (props: Props) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <BpkButtonBase className={classNamesFinal} {...rest} />
+    <BpkButtonBase className={classNamesFinal} large={large} {...rest} />
   );
 };
 
-BpkButtonLink.propTypes = { ...propTypes, padded: PropTypes.bool };
-BpkButtonLink.defaultProps = { ...defaultProps, padded: false };
+BpkButtonLink.propTypes = { ...propTypes };
+BpkButtonLink.defaultProps = { ...defaultProps };
 
 export default BpkButtonLink;
