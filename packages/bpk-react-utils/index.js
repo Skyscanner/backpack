@@ -18,8 +18,7 @@
 
 /* @flow strict */
 
-import wrapDisplayName from 'recompose/wrapDisplayName';
-
+import wrapDisplayName from './src/wrapDisplayName';
 import Portal from './src/Portal';
 import TransitionInitialMount from './src/TransitionInitialMount';
 import cssModules from './src/cssModules';
