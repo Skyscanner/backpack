@@ -1,3 +1,12 @@
+# 2022-04-04
+
+The following package version bump, will affect all components as `bpk-react-utils` is a dependency of all components.
+
+**Fixed:**
+
+- bpk-react-utils: 4.1.0 => 4.1.1
+  - Migrated from deprecated `recompose` library and function `wrapDisplayName`to support React 17+. Created localised version to support same functionality.
+
 # 2022-03-31
 
 **Breaking**
