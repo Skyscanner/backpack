@@ -22,13 +22,11 @@ import BpkGraphicPromo, {
   TEXT_ALIGN,
 } from '../../packages/bpk-component-graphic-promotion';
 
-import SkyLand from './skyland.png';
-
 const image =
   'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=1048px:400px&quality=90';
 const sponsor = {
   label: 'Sponsored',
-  logo: SkyLand,
+  logo: 'https://js.skyscnr.com/sttc/bpk-content/skyland-a76916b4.png',
   altText: 'SkyLand',
 };
 const buttonText = 'Discover more';
