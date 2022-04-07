@@ -1,0 +1,1 @@
+- when button is loading, there will only be a centered icon displayed (text is no longer displayed)

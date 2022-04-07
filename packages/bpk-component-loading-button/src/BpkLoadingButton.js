@@ -29,6 +29,11 @@ import {
 } from 'bpk-component-icon';
 import ArrowIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import ArrowIconLg from 'bpk-component-icon/lg/long-arrow-right';
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './BpkLoadingButton.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 export const ICON_POSITION = {
   LEADING: 'leading',
@@ -87,12 +92,14 @@ type LoadingProps = {
 const BpkLoadingButton = (props: LoadingProps) => {
   const {
     children,
+    className,
     disabled,
     icon,
     iconDisabled,
     iconLoading,
     iconOnly,
     iconPosition,
+    large,
     loading,
     ...rest
   } = props;
@@ -107,9 +114,27 @@ const BpkLoadingButton = (props: LoadingProps) => {
       ? [buttonIcon, spacer, children]
       : [children, spacer, buttonIcon];
 
+  const loadingIcon = getPropsIcon(props) || getSpinner(props.large);
+
+  const classNames = getClassName(loading && 'bpk-loading-button', className);
+
+  const iconClassNames = getClassName(
+    'bpk-loading-button__icon',
+    large && 'bpk-loading-button__icon--large',
+  );
+
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <BpkButton iconOnly={iconOnly} disabled={showBtnDisabled} {...rest}>
+    <BpkButton
+      iconOnly={iconOnly}
+      disabled={showBtnDisabled}
+      large={large}
+      className={classNames}
+      {...rest}
+    >
+      {loading && !iconOnly && (
+        <span className={iconClassNames}>{loadingIcon}</span>
+      )}
       {child0}
       {child1}
       {child2}
