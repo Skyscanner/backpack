@@ -317,7 +317,7 @@ class Week extends Component {
     }
 
     return (
-      <tr className={getClassName('bpk-calendar-grid__week')}>
+      <div className={getClassName('bpk-calendar-grid__week')}>
         {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate
@@ -360,7 +360,7 @@ class Week extends Component {
             </DateContainer>
           );
         })}
-      </tr>
+      </div>
     );
   }
 }
@@ -431,9 +431,9 @@ const DateContainer = (props) => {
   );
 
   return (
-    <td aria-hidden={isEmptyCell || isBlocked} className={classNames}>
+    <div aria-hidden={isEmptyCell || isBlocked} className={classNames}>
       {children}
-    </td>
+    </div>
   );
 };
 

@@ -111,7 +111,7 @@ class BpkCalendarGrid extends Component {
     const classNames = getClassName('bpk-calendar-grid', className);
 
     return (
-      <table className={classNames} aria-hidden={!isKeyboardFocusable}>
+      <div className={classNames} aria-hidden={!isKeyboardFocusable}>
         <caption className={getClassName('bpk-calendar-grid__caption')} hidden>
           {formatMonth(month)}
         </caption>
@@ -120,7 +120,7 @@ class BpkCalendarGrid extends Component {
           daysOfWeek={daysOfWeek}
           weekStartsOn={weekStartsOn}
         />
-        <tbody>
+        <div>
           {calendarMonthWeeks.map((dates) => (
             <Week
               key={formatIsoDate(dates[0])}
@@ -147,8 +147,8 @@ class BpkCalendarGrid extends Component {
               cellClassName={cellClassName}
             />
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
     );
   }
 }
