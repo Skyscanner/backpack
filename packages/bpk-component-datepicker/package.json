@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-datepicker",
-  "version": "15.2.4",
+  "version": "15.2.6",
   "description": "Backpack datepicker component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,13 +14,13 @@
   },
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
-    "bpk-component-breakpoint": "^3.1.2",
-    "bpk-component-calendar": "^11.1.4",
-    "bpk-component-input": "^6.1.3",
-    "bpk-component-modal": "^3.1.3",
-    "bpk-component-popover": "^4.1.3",
+    "bpk-component-breakpoint": "^3.1.3",
+    "bpk-component-calendar": "^11.1.6",
+    "bpk-component-input": "^6.1.4",
+    "bpk-component-modal": "^3.1.4",
+    "bpk-component-popover": "^4.1.4",
     "bpk-mixins": "^28.1.0",
-    "bpk-react-utils": "^4.1.0",
+    "bpk-react-utils": "^4.1.1",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^6.1.0",
-    "bpk-storybook-utils": "^1.1.1"
+    "bpk-storybook-utils": "^1.1.2"
   }
 }

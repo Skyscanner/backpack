@@ -10,106 +10,57 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
     >
       October 2016
     </h1>
-    <table
+    <div
       aria-hidden="false"
       class="bpk-calendar-grid"
     >
-      <caption
-        class="bpk-calendar-grid__caption"
-        hidden=""
-      >
-        October 2016
-      </caption>
-      <thead
-        aria-hidden="true"
-        class="bpk-calendar-header bpk-calendar-header--table-head"
-      >
-        <tr
-          class="bpk-calendar-header__week"
-        >
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Monday"
-          >
-            <span>
-              Mon
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Tuesday"
-          >
-            <span>
-              Tue
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Wednesday"
-          >
-            <span>
-              Wed
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Thursday"
-          >
-            <span>
-              Thu
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Friday"
-          >
-            <span>
-              Fri
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Saturday"
-          >
-            <span>
-              Sat
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Sunday"
-          >
-            <span>
-              Sun
-            </span>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
+      October 2016
+      <span>
+        Mon
+      </span>
+      <span>
+        Tue
+      </span>
+      <span>
+        Wed
+      </span>
+      <span>
+        Thu
+      </span>
+      <span>
+        Fri
+      </span>
+      <span>
+        Sat
+      </span>
+      <span>
+        Sun
+      </span>
+      <div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -127,8 +78,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 1
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -146,12 +97,12 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 2
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -169,8 +120,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 3
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -188,8 +139,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 4
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -207,8 +158,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 5
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -226,8 +177,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 6
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -245,8 +196,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 7
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -264,8 +215,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 8
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -283,12 +234,12 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 9
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -306,8 +257,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 10
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -325,8 +276,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 11
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -344,8 +295,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 12
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -363,8 +314,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 13
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -382,8 +333,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 14
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -401,8 +352,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 15
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -420,12 +371,12 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 16
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -443,8 +394,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 17
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -462,8 +413,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 18
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -481,8 +432,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 19
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -500,8 +451,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 20
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -519,8 +470,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 21
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -538,8 +489,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 22
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -557,12 +508,12 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 23
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -580,8 +531,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 24
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -599,8 +550,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 25
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -618,8 +569,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 26
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -637,8 +588,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 27
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -656,8 +607,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 28
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -675,8 +626,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 29
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -694,12 +645,12 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 30
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -717,34 +668,34 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
                 31
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-        </tr>
-      </tbody>
-    </table>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -759,444 +710,395 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
     >
       October 2016
     </h1>
-    <table
+    <div
       aria-hidden="false"
       class="bpk-calendar-grid"
     >
-      <caption
-        class="bpk-calendar-grid__caption"
-        hidden=""
-      >
-        October 2016
-      </caption>
-      <thead
-        aria-hidden="true"
-        class="bpk-calendar-header bpk-calendar-header--table-head"
-      >
-        <tr
-          class="bpk-calendar-header__week"
-        >
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Monday"
-          >
-            <span>
-              Mon
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Tuesday"
-          >
-            <span>
-              Tue
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Wednesday"
-          >
-            <span>
-              Wed
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Thursday"
-          >
-            <span>
-              Thu
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Friday"
-          >
-            <span>
-              Fri
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Saturday"
-          >
-            <span>
-              Sat
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Sunday"
-          >
-            <span>
-              Sun
-            </span>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
+      October 2016
+      <span>
+        Mon
+      </span>
+      <span>
+        Tue
+      </span>
+      <span>
+        Wed
+      </span>
+      <span>
+        Thu
+      </span>
+      <span>
+        Fri
+      </span>
+      <span>
+        Sat
+      </span>
+      <span>
+        Sun
+      </span>
+      <div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
             <div
               style="background-color: rgb(0, 215, 117); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
             />
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -1211,90 +1113,41 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
     >
       October 2016
     </h1>
-    <table
+    <div
       aria-hidden="false"
       class="bpk-calendar-grid"
     >
-      <caption
-        class="bpk-calendar-grid__caption"
-        hidden=""
-      >
-        October 2016
-      </caption>
-      <thead
-        aria-hidden="true"
-        class="bpk-calendar-header bpk-calendar-header--table-head"
-      >
-        <tr
-          class="bpk-calendar-header__week"
-        >
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Friday"
-          >
-            <span>
-              Fri
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Saturday"
-          >
-            <span>
-              Sat
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Sunday"
-          >
-            <span>
-              Sun
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Monday"
-          >
-            <span>
-              Mon
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Tuesday"
-          >
-            <span>
-              Tue
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Wednesday"
-          >
-            <span>
-              Wed
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Thursday"
-          >
-            <span>
-              Thu
-            </span>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
+      October 2016
+      <span>
+        Fri
+      </span>
+      <span>
+        Sat
+      </span>
+      <span>
+        Sun
+      </span>
+      <span>
+        Mon
+      </span>
+      <span>
+        Tue
+      </span>
+      <span>
+        Wed
+      </span>
+      <span>
+        Thu
+      </span>
+      <div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1312,8 +1165,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 1
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1331,8 +1184,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 2
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1350,8 +1203,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 3
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1369,8 +1222,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 4
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1388,8 +1241,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 5
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1407,12 +1260,12 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 6
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1430,8 +1283,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 7
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1449,8 +1302,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 8
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1468,8 +1321,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 9
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1487,8 +1340,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 10
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1506,8 +1359,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 11
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1525,8 +1378,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 12
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1544,12 +1397,12 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 13
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1567,8 +1420,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 14
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1586,8 +1439,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 15
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1605,8 +1458,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 16
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1624,8 +1477,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 17
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1643,8 +1496,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 18
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1662,8 +1515,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 19
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1681,12 +1534,12 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 20
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1704,8 +1557,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 21
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1723,8 +1576,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 22
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1742,8 +1595,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 23
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1761,8 +1614,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 24
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1780,8 +1633,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 25
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1799,8 +1652,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 26
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1818,12 +1671,12 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 27
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1841,8 +1694,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 28
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1860,8 +1713,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 29
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1879,8 +1732,8 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 30
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -1898,22 +1751,22 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
                 31
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-        </tr>
-      </tbody>
-    </table>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -1928,106 +1781,57 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
     >
       October 2016
     </h1>
-    <table
+    <div
       aria-hidden="false"
       class="bpk-calendar-grid"
     >
-      <caption
-        class="bpk-calendar-grid__caption"
-        hidden=""
-      >
-        October 2016
-      </caption>
-      <thead
-        aria-hidden="true"
-        class="bpk-calendar-header bpk-calendar-header--table-head"
-      >
-        <tr
-          class="bpk-calendar-header__week"
-        >
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Monday"
-          >
-            <span>
-              Mon
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Tuesday"
-          >
-            <span>
-              Tue
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Wednesday"
-          >
-            <span>
-              Wed
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Thursday"
-          >
-            <span>
-              Thu
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Friday"
-          >
-            <span>
-              Fri
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Saturday"
-          >
-            <span>
-              Sat
-            </span>
-          </th>
-          <th
-            class="bpk-calendar-header__weekday"
-            title="Sunday"
-          >
-            <span>
-              Sun
-            </span>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
+      October 2016
+      <span>
+        Mon
+      </span>
+      <span>
+        Tue
+      </span>
+      <span>
+        Wed
+      </span>
+      <span>
+        Thu
+      </span>
+      <span>
+        Fri
+      </span>
+      <span>
+        Sat
+      </span>
+      <span>
+        Sun
+      </span>
+      <div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2045,8 +1849,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 1
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2064,12 +1868,12 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 2
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2087,8 +1891,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 3
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2106,8 +1910,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 4
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2125,8 +1929,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 5
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2144,8 +1948,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 6
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2163,8 +1967,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 7
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2182,8 +1986,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 8
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2201,12 +2005,12 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 9
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2224,8 +2028,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 10
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2243,8 +2047,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 11
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2262,8 +2066,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 12
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2281,8 +2085,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 13
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2300,8 +2104,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 14
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2319,8 +2123,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 15
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2338,12 +2142,12 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 16
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2361,8 +2165,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 17
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2380,8 +2184,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 18
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2399,8 +2203,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 19
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2418,8 +2222,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 20
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2437,8 +2241,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 21
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2456,8 +2260,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 22
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2475,12 +2279,12 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 23
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2498,8 +2302,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 24
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2517,8 +2321,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 25
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2536,8 +2340,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 26
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2555,8 +2359,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 27
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2574,8 +2378,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 28
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2593,8 +2397,8 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 29
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2612,12 +2416,12 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 30
               </span>
             </button>
-          </td>
-        </tr>
-        <tr
+          </div>
+        </div>
+        <div
           class="bpk-calendar-grid__week"
         >
-          <td
+          <div
             aria-hidden="false"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           >
@@ -2635,34 +2439,34 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
                 31
               </span>
             </button>
-          </td>
-          <td
+          </div>
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-          <td
+          <div
             aria-hidden="true"
             class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
           />
-        </tr>
-      </tbody>
-    </table>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
