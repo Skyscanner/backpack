@@ -10,8 +10,3 @@ You can use these buttons by setting the `primaryOnDark` or `primaryOnLight` pro
 `bpk-component-button`: </br>
 `bpk-component-loading-button`: </br>
 - Deprecated `BpkButtonOutline` button. Use `BpkButtonPrimaryOnDark` or `BpkButtonPrimaryOnLight` instead.
-
-**Fixed:**
-  - bpk-component-calendar
-  - bpk-component-datepicker
-    - Fixed an issue when using Assistive Technologies, a user could not select a date.
