@@ -22,8 +22,12 @@ import BpkGraphicPromo, {
   TEXT_ALIGN,
 } from '../../packages/bpk-component-graphic-promotion';
 
-const image =
-  'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=1048px:400px&quality=90';
+const backgroundImageDesktop =
+  'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=2096px:800px&quality=90';
+const backgroundImageTablet =
+  'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=820px:1180px&quality=90';
+const backgroundImageMobile =
+  'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=390:844px&quality=90';
 const sponsor = {
   label: 'Sponsored',
   logo: 'https://js.skyscnr.com/sttc/bpk-content/skyland-a76916b4.png',
@@ -43,7 +47,9 @@ const DefaultExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
+    backgroundImageDesktop={backgroundImageDesktop}
+    backgroundImageMobile={backgroundImageMobile}
+    backgroundImageTablet={backgroundImageTablet}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
@@ -56,7 +62,9 @@ const CenterAlignedExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
+    backgroundImageDesktop={backgroundImageDesktop}
+    backgroundImageTablet={backgroundImageTablet}
+    backgroundImageMobile={backgroundImageMobile}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
@@ -69,7 +77,9 @@ const RightAlignedExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
+    backgroundImageDesktop={backgroundImageDesktop}
+    backgroundImageTablet={backgroundImageTablet}
+    backgroundImageMobile={backgroundImageMobile}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
@@ -82,7 +92,9 @@ const InvertedPortraitExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
+    backgroundImageDesktop={backgroundImageDesktop}
+    backgroundImageTablet={backgroundImageTablet}
+    backgroundImageMobile={backgroundImageMobile}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
@@ -94,7 +106,9 @@ const InvertedPortraitExample = () => (
 const MinimalisticExample = () => (
   <BpkGraphicPromo
     headline={headline}
-    image={image}
+    backgroundImageDesktop={backgroundImageDesktop}
+    backgroundImageTablet={backgroundImageTablet}
+    backgroundImageMobile={backgroundImageMobile}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
@@ -107,7 +121,9 @@ const NonSponsoredExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
+    backgroundImageDesktop={backgroundImageDesktop}
+    backgroundImageTablet={backgroundImageTablet}
+    backgroundImageMobile={backgroundImageMobile}
     buttonText={buttonText}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}

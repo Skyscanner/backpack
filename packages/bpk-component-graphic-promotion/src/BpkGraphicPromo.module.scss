@@ -31,6 +31,14 @@
   @include breakpoint-landscape {
     pointer-events: none;
 
+    @include breakpoint-landscape-desktop {
+      background-image: var(--background-image-desktop);
+    }
+
+    @include breakpoint-landscape-tablet {
+      background-image: var(--background-image-tablet);
+    }
+
     &__sponsor-label {
       margin-bottom: bpk-spacing-sm();
 
@@ -67,6 +75,7 @@
   }
 
   @include breakpoint-portrait-large {
+    background-image: var(--background-image-mobile);
     &__sponsor-label {
       margin-bottom: bpk-spacing-md();
 
@@ -91,6 +100,8 @@
   }
 
   @include breakpoint-portrait-medium {
+    background-image: var(--background-image-mobile);
+
     &__sponsor-label {
       margin-bottom: bpk-spacing-md();
 
@@ -115,6 +126,7 @@
   }
 
   @include breakpoint-portrait-small {
+    background-image: var(--background-image-mobile);
     &__sponsor-label {
       margin-bottom: bpk-spacing-sm();
 

@@ -43,7 +43,9 @@ export type Props = {
   tagline: ?string,
   headline: string,
   subheading: ?string,
-  image: string,
+  backgroundImageMobile: string,
+  backgroundImageTablet: string,
+  backgroundImageDesktop: string,
   sponsor: ?{
     label: string,
     logo: string,
@@ -81,10 +83,12 @@ const constructAriaLabel = ({
 
 const BpkGraphicPromo = (props: Props) => {
   const {
+    backgroundImageDesktop,
+    backgroundImageMobile,
+    backgroundImageTablet,
     buttonText,
     className,
     headline,
-    image,
     invertVertically,
     onClick,
     sponsor,
@@ -109,11 +113,15 @@ const BpkGraphicPromo = (props: Props) => {
 
   const getTextClasses = (baseClass: string) =>
     getClassName(baseClass, `${baseClass}--${textAlign}`);
-
   return (
     <BpkCard
       className={cardClasses}
-      style={{ backgroundImage: `url(${image})`, color: textColor }}
+      style={{
+        color: textColor,
+        '--background-image-mobile': `url(${backgroundImageMobile})`,
+        '--background-image-tablet': `url(${backgroundImageTablet})`,
+        '--background-image-desktop': `url(${backgroundImageDesktop})`,
+      }}
       onClick={onClickWrapper}
       aria-label={constructAriaLabel(props)}
       padded={false}
@@ -177,7 +185,9 @@ BpkGraphicPromo.propTypes = {
   tagline: PropTypes.string,
   headline: PropTypes.string.isRequired,
   subheading: PropTypes.string,
-  image: PropTypes.string.isRequired,
+  backgroundImageMobile: PropTypes.string.isRequired,
+  backgroundImageTablet: PropTypes.string.isRequired,
+  backgroundImageDesktop: PropTypes.string.isRequired,
   sponsor: PropTypes.shape({
     label: PropTypes.string,
     logo: PropTypes.string,
