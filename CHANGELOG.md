@@ -1,3 +1,10 @@
+# 2022-04-07
+
+**Fixed:**
+ - bpk-component-calendar: 11.1.5 => 11.1.6
+ - bpk-component-datepicker: 15.2.5 => 15.2.6
+    - Fixed an issue when using Assistive Technologies, a user could not select a date.
+
 # 2022-04-04
 
 The following package version bump, will affect all components as `bpk-react-utils` is a dependency of all components.
