@@ -13,7 +13,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-mixins": "^28.0.0",
+    "bpk-mixins": "^28.1.0",
     "bpk-react-utils": "^4.1.1"
   },
   "peerDependencies": {
