@@ -30,7 +30,7 @@ const beforeScreenshot = () =>
   new Promise((resolve) =>
     setTimeout(() => {
       resolve();
-    }, 800),
+    }, 1600),
   );
 
 // Allow a small amount of deviation to account for
