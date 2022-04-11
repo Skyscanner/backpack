@@ -1,3 +1,8 @@
+**Breaking:**
+
+`bpk-component-loading-button`: </br>
+- Changed loading button to display only loading spinner when loading. Text and icon will be hidden. Button width is maintained when switching to loading state.
+
 **Added:**
 
 `bpk-component-button`: </br>
@@ -7,7 +12,8 @@ You can use these buttons by setting the `primaryOnDark` or `primaryOnLight` pro
 - Added `primaryOnDarkThemeAttributes`, `primaryOnLightThemeAttributes` theme attributes
 
 **Changed:**
+
 `bpk-component-button`: </br>
 `bpk-component-loading-button`: </br>
 - Deprecated `BpkButtonOutline` button. Use `BpkButtonPrimaryOnDark` or `BpkButtonPrimaryOnLight` instead.
-- Changed loading button to display only loading spinner when loading. Text and icon will be hidden. Button width is maintained when switching to loading state.
+
