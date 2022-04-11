@@ -21,22 +21,35 @@
 $bpk-spacing-v2: true;
 
 .bpk-loading-button {
+  $button-padding-x: bpk-spacing-base() * 2;
+  $button-padding-y: bpk-spacing-lg() / 2;
+  $button-large-padding-y: bpk-spacing-lg();
+
   position: relative;
   overflow: hidden;
+
+  &--link {
+    visibility: hidden;
+  }
 
   &__icon {
     position: absolute;
     display: inline-flex;
+    visibility: visible;
     z-index: 1;
-    // parent (button) has horizontal and vertical padding so need to subtract that so that the icon is centred
-    width: calc(100% - #{bpk-spacing-base()} * 2);
-    height: calc(100% - #{bpk-spacing-lg()} / 2);
+    width: calc(100% - #{$button-padding-x});
+    height: calc(100% - #{$button-padding-y});
     justify-content: center;
     align-items: center;
-    background-color: $bpk-button-disabled-background-color;
-  }
+    background-color: inherit;
 
-  &__icon--large {
-    height: calc(100% - #{bpk-spacing-lg()});
+    &--large {
+      height: calc(100% - #{$button-large-padding-y});
+    }
+
+    &--link {
+      width: 100%;
+      background: unset;
+    }
   }
 }
