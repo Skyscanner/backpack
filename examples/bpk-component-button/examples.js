@@ -33,11 +33,12 @@ import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-a
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
 import BpkButton, {
   BpkButtonPrimary,
+  BpkButtonPrimaryOnDark,
+  BpkButtonPrimaryOnLight,
   BpkButtonSecondary,
   BpkButtonDestructive,
   BpkButtonLink,
   BpkButtonFeatured,
-  BpkButtonOutline,
 } from '../../packages/bpk-component-button';
 
 import STYLES from './BpkButtonStory.module.scss';
@@ -124,25 +125,34 @@ const ButtonStory = ({
 ButtonStory.defaultProps = { className: null };
 
 const PrimaryExample = () => <ButtonStory primary wrapped={BpkButton} />;
+const PrimaryOnDarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <ButtonStory primaryOnDark wrapped={BpkButton} />
+  </BpkDarkExampleWrapper>
+);
+const PrimaryOnLightExample = () => (
+  <ButtonStory primaryOnLight wrapped={BpkButton} />
+);
 const SecondaryExample = () => <ButtonStory secondary wrapped={BpkButton} />;
 const DestructiveExample = () => (
   <ButtonStory destructive wrapped={BpkButton} />
 );
 const LinkExample = () => <ButtonStory link wrapped={BpkButton} />;
 const FeaturedExample = () => <ButtonStory featured wrapped={BpkButton} />;
-const OutlineExample = () => (
-  <BpkDarkExampleWrapper>
-    <ButtonStory
-      outline
-      wrapped={BpkButton}
-      className={getClassName('bpk-outline-layout')}
-    />
-  </BpkDarkExampleWrapper>
-);
 
 const ComponentButtonPrimaryExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
   <ButtonStory wrapped={BpkButtonPrimary} {...props} />
+);
+const ComponentButtonPrimaryOnDarkExample = (props: {}) => (
+  <BpkDarkExampleWrapper>
+    {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+    <ButtonStory wrapped={BpkButtonPrimaryOnDark} {...props} />
+  </BpkDarkExampleWrapper>
+);
+const ComponentButtonPrimaryOnLightExample = (props: {}) => (
+  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
+  <ButtonStory wrapped={BpkButtonPrimaryOnLight} {...props} />
 );
 const ComponentButtonSecondaryExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
@@ -160,48 +170,46 @@ const ComponentButtonFeaturedExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
   <ButtonStory wrapped={BpkButtonFeatured} {...props} />
 );
-const ComponentButtonOutlineExample = (props: {}) => (
-  <BpkDarkExampleWrapper>
-    {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-    <ButtonStory wrapped={BpkButtonOutline} {...props} />
-  </BpkDarkExampleWrapper>
-);
 
 const MixedExample = () => (
   <>
     <ComponentButtonPrimaryExample />
+    <ComponentButtonPrimaryOnDarkExample />
+    <ComponentButtonPrimaryOnLightExample />
     <ComponentButtonSecondaryExample />
     <ComponentButtonDestructiveExample />
     <ComponentButtonLinkExample />
     <ComponentButtonFeaturedExample />
-    <ComponentButtonOutlineExample />
   </>
 );
 
 const AnchorTagsExample = () => (
   <>
     <ComponentButtonPrimaryExample href="#" />
+    <ComponentButtonPrimaryOnDarkExample href="#" />
+    <ComponentButtonPrimaryOnLightExample href="#" />
     <ComponentButtonSecondaryExample href="#" />
     <ComponentButtonDestructiveExample href="#" />
     <ComponentButtonLinkExample href="#" />
     <ComponentButtonFeaturedExample href="#" />
-    <ComponentButtonOutlineExample href="#" />
   </>
 );
 
 export {
   PrimaryExample,
+  PrimaryOnDarkExample,
+  PrimaryOnLightExample,
   SecondaryExample,
   DestructiveExample,
   LinkExample,
   FeaturedExample,
-  OutlineExample,
   ComponentButtonPrimaryExample,
+  ComponentButtonPrimaryOnDarkExample,
+  ComponentButtonPrimaryOnLightExample,
   ComponentButtonSecondaryExample,
   ComponentButtonDestructiveExample,
   ComponentButtonLinkExample,
   ComponentButtonFeaturedExample,
-  ComponentButtonOutlineExample,
   MixedExample,
   AnchorTagsExample,
 };
