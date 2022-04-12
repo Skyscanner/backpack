@@ -87,11 +87,11 @@ const BpkGraphicPromo = (props: Props) => {
     invertVertically,
     onClick,
     sponsor,
+    style,
     subheading,
     tagline,
     textAlign,
     textColor,
-    style
   } = props;
 
   // FIXME: Use useCallback() here when React is updated.
@@ -114,7 +114,7 @@ const BpkGraphicPromo = (props: Props) => {
       className={cardClasses}
       style={{
         color: textColor,
-        ...style
+        ...style,
       }}
       onClick={onClickWrapper}
       aria-label={constructAriaLabel(props)}
@@ -179,9 +179,6 @@ BpkGraphicPromo.propTypes = {
   tagline: PropTypes.string,
   headline: PropTypes.string.isRequired,
   subheading: PropTypes.string,
-  backgroundImageMobile: PropTypes.string.isRequired,
-  backgroundImageTablet: PropTypes.string.isRequired,
-  backgroundImageDesktop: PropTypes.string.isRequired,
   sponsor: PropTypes.shape({
     label: PropTypes.string,
     logo: PropTypes.string,
@@ -192,6 +189,7 @@ BpkGraphicPromo.propTypes = {
   invertVertically: PropTypes.bool,
   textAlign: PropTypes.oneOf(Object.values(TEXT_ALIGN)).isRequired,
   textColor: PropTypes.oneOf(Object.values(TEXT_COLORS)),
+  style: PropTypes.string,
 };
 
 BpkGraphicPromo.defaultProps = {
@@ -201,6 +199,7 @@ BpkGraphicPromo.defaultProps = {
   sponsor: null,
   invertVertically: false,
   textColor: TEXT_COLORS.white,
+  style: {},
 };
 
 export default BpkGraphicPromo;

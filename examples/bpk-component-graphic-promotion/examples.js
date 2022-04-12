@@ -18,12 +18,13 @@
 
 import React from 'react';
 
-import STYLES from './examples.module.scss';
-
 import BpkGraphicPromo, {
   TEXT_ALIGN,
 } from '../../packages/bpk-component-graphic-promotion';
 import { cssModules } from '../../packages/bpk-react-utils';
+
+import STYLES from './examples.module.scss';
+
 const getClassName = cssModules(STYLES);
 const sponsor = {
   label: 'Sponsored',
@@ -39,9 +40,12 @@ const tagline = 'Travel tips';
 const headline = 'Three Peaks Challenge';
 const subheading = 'How to complete the climb in 3 days';
 const style = {
-  '--background-image-mobile': 'url(\'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=390:844px&quality=90\')',
-  '--background-image-tablet': 'url(\'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=820px:1180px&quality=90\')',
-  '--background-image-desktop': 'url(\'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=2096px:800px&quality=90\')',
+  '--background-image-mobile':
+    "url('https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=390:844px&quality=90')",
+  '--background-image-tablet':
+    "url('https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=820px:1180px&quality=90')",
+  '--background-image-desktop':
+    "url('https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=2096px:800px&quality=90')",
 };
 
 const DefaultExample = () => (
