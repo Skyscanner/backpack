@@ -33,10 +33,6 @@ export const TEXT_ALIGN = {
   center: 'center',
   end: 'end',
 };
-export const TEXT_COLORS = {
-  black: 'black',
-  white: 'white',
-};
 
 export type Props = {
   className: ?string,
@@ -52,7 +48,6 @@ export type Props = {
   onClick: () => void,
   invertVertically: boolean,
   textAlign: TEXT_ALIGN,
-  textColor: TEXT_COLORS,
   style: ?{},
 };
 
@@ -91,7 +86,6 @@ const BpkGraphicPromo = (props: Props) => {
     subheading,
     tagline,
     textAlign,
-    textColor,
   } = props;
 
   // FIXME: Use useCallback() here when React is updated.
@@ -112,10 +106,7 @@ const BpkGraphicPromo = (props: Props) => {
   return (
     <BpkCard
       className={cardClasses}
-      style={{
-        color: textColor,
-        ...style,
-      }}
+      style={style}
       onClick={onClickWrapper}
       aria-label={constructAriaLabel(props)}
       padded={false}
@@ -188,8 +179,7 @@ BpkGraphicPromo.propTypes = {
   onClick: PropTypes.func.isRequired,
   invertVertically: PropTypes.bool,
   textAlign: PropTypes.oneOf(Object.values(TEXT_ALIGN)).isRequired,
-  textColor: PropTypes.oneOf(Object.values(TEXT_COLORS)),
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  style: PropTypes.shape({ [PropTypes.string]: PropTypes.string }),
 };
 
 BpkGraphicPromo.defaultProps = {
@@ -198,7 +188,6 @@ BpkGraphicPromo.defaultProps = {
   subheading: null,
   sponsor: null,
   invertVertically: false,
-  textColor: TEXT_COLORS.white,
   style: {},
 };
 

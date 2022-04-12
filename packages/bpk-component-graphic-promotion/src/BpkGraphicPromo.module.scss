@@ -23,10 +23,11 @@
   max-width: 65.5rem;
   margin-right: auto;
   margin-left: auto;
-  background-color: $bpk-color-sky-blue;
   background-position: center;
   background-size: cover;
   box-shadow: none;
+  color: black;
+  background-color: white;
 
   @include breakpoint-landscape {
     pointer-events: none;

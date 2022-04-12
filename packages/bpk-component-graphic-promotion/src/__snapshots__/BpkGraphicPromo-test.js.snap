@@ -6,7 +6,6 @@ exports[`BpkGraphicPromo should display the tagline and no sponsor for non-spons
     aria-label="Tagline. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
-    style="color: white;"
     tabindex="0"
   >
     <div
@@ -53,7 +52,6 @@ exports[`BpkGraphicPromo should not display tagline or subheading when not provi
     aria-label="Sponsored. Airline Name. Ride your wave. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
-    style="color: white;"
     tabindex="0"
   >
     <div
@@ -101,7 +99,6 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
     aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
-    style="color: white;"
     tabindex="0"
   >
     <div
@@ -154,7 +151,6 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
     aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
-    style="color: white;"
     tabindex="0"
   >
     <div
@@ -207,7 +203,6 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
     aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
-    style="color: white;"
     tabindex="0"
   >
     <div
@@ -260,7 +255,6 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
     aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
-    style="color: white;"
     tabindex="0"
   >
     <div
@@ -313,7 +307,6 @@ exports[`BpkGraphicPromo should support arbitrary props 1`] = `
     aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     role="button"
-    style="color: white;"
     tabindex="0"
   >
     <div
@@ -366,7 +359,6 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
     aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo custom-classname"
     role="button"
-    style="color: white;"
     tabindex="0"
   >
     <div
