@@ -1,0 +1,19 @@
+$breakpoint-landscape-desktop-min: 50.01rem;
+$breakpoint-landscape-tablet-max: 50rem;
+$breakpoint-landscape-tablet-min: 43.76rem;
+$breakpoint-portrait-large-max: 43.75rem;
+
+.graphicPromo {
+  @media (max-width: $breakpoint-portrait-large-max) {
+    background-image: var(--background-image-mobile);
+  }
+
+  @media (min-width: $breakpoint-landscape-tablet-min) and (max-width: $breakpoint-landscape-tablet-max) {
+    background-image: var(--background-image-tablet);;
+  }
+
+  @media (min-width: $breakpoint-landscape-desktop-min) {
+    background-image: var(--background-image-desktop);
+  }
+}
+

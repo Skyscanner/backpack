@@ -18,16 +18,13 @@
 
 import React from 'react';
 
+import STYLES from './examples.module.scss';
+
 import BpkGraphicPromo, {
   TEXT_ALIGN,
 } from '../../packages/bpk-component-graphic-promotion';
-
-const backgroundImageDesktop =
-  'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=2096px:800px&quality=90';
-const backgroundImageTablet =
-  'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=820px:1180px&quality=90';
-const backgroundImageMobile =
-  'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=390:844px&quality=90';
+import { cssModules } from '../../packages/bpk-react-utils';
+const getClassName = cssModules(STYLES);
 const sponsor = {
   label: 'Sponsored',
   logo: 'https://js.skyscnr.com/sttc/bpk-content/skyland-a76916b4.png',
@@ -41,18 +38,22 @@ const onClick = () => {
 const tagline = 'Travel tips';
 const headline = 'Three Peaks Challenge';
 const subheading = 'How to complete the climb in 3 days';
+const style = {
+  '--background-image-mobile': 'url(\'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=390:844px&quality=90\')',
+  '--background-image-tablet': 'url(\'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=820px:1180px&quality=90\')',
+  '--background-image-desktop': 'url(\'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=2096px:800px&quality=90\')',
+};
 
 const DefaultExample = () => (
   <BpkGraphicPromo
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    backgroundImageDesktop={backgroundImageDesktop}
-    backgroundImageMobile={backgroundImageMobile}
-    backgroundImageTablet={backgroundImageTablet}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     textAlign={TEXT_ALIGN.start}
   />
 );
@@ -62,12 +63,11 @@ const CenterAlignedExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    backgroundImageDesktop={backgroundImageDesktop}
-    backgroundImageTablet={backgroundImageTablet}
-    backgroundImageMobile={backgroundImageMobile}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     textAlign={TEXT_ALIGN.center}
   />
 );
@@ -77,12 +77,11 @@ const RightAlignedExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    backgroundImageDesktop={backgroundImageDesktop}
-    backgroundImageTablet={backgroundImageTablet}
-    backgroundImageMobile={backgroundImageMobile}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     textAlign={TEXT_ALIGN.end}
   />
 );
@@ -92,12 +91,11 @@ const InvertedPortraitExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    backgroundImageDesktop={backgroundImageDesktop}
-    backgroundImageTablet={backgroundImageTablet}
-    backgroundImageMobile={backgroundImageMobile}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     textAlign={TEXT_ALIGN.start}
     invertVertically
   />
@@ -106,11 +104,10 @@ const InvertedPortraitExample = () => (
 const MinimalisticExample = () => (
   <BpkGraphicPromo
     headline={headline}
-    backgroundImageDesktop={backgroundImageDesktop}
-    backgroundImageTablet={backgroundImageTablet}
-    backgroundImageMobile={backgroundImageMobile}
     sponsor={sponsor}
     buttonText={buttonText}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}
   />
@@ -121,10 +118,9 @@ const NonSponsoredExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    backgroundImageDesktop={backgroundImageDesktop}
-    backgroundImageTablet={backgroundImageTablet}
-    backgroundImageMobile={backgroundImageMobile}
     buttonText={buttonText}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}
   />

@@ -43,9 +43,6 @@ export type Props = {
   tagline: ?string,
   headline: string,
   subheading: ?string,
-  backgroundImageMobile: string,
-  backgroundImageTablet: string,
-  backgroundImageDesktop: string,
   sponsor: ?{
     label: string,
     logo: string,
@@ -56,6 +53,7 @@ export type Props = {
   invertVertically: boolean,
   textAlign: TEXT_ALIGN,
   textColor: TEXT_COLORS,
+  style: string,
 };
 
 const constructAriaLabel = ({
@@ -83,9 +81,6 @@ const constructAriaLabel = ({
 
 const BpkGraphicPromo = (props: Props) => {
   const {
-    backgroundImageDesktop,
-    backgroundImageMobile,
-    backgroundImageTablet,
     buttonText,
     className,
     headline,
@@ -96,6 +91,7 @@ const BpkGraphicPromo = (props: Props) => {
     tagline,
     textAlign,
     textColor,
+    style
   } = props;
 
   // FIXME: Use useCallback() here when React is updated.
@@ -118,9 +114,7 @@ const BpkGraphicPromo = (props: Props) => {
       className={cardClasses}
       style={{
         color: textColor,
-        '--background-image-mobile': `url(${backgroundImageMobile})`,
-        '--background-image-tablet': `url(${backgroundImageTablet})`,
-        '--background-image-desktop': `url(${backgroundImageDesktop})`,
+        ...style
       }}
       onClick={onClickWrapper}
       aria-label={constructAriaLabel(props)}
