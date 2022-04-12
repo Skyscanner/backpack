@@ -117,6 +117,16 @@ const MinimalisticExample = () => (
   />
 );
 
+const NoStyleExample = () => (
+  <BpkGraphicPromo
+    headline={headline}
+    sponsor={sponsor}
+    buttonText={buttonText}
+    onClick={onClick}
+    textAlign={TEXT_ALIGN.start}
+  />
+);
+
 const NonSponsoredExample = () => (
   <BpkGraphicPromo
     tagline={tagline}
@@ -149,4 +159,5 @@ export {
   MinimalisticExample,
   NonSponsoredExample,
   MixedExample,
+  NoStyleExample,
 };

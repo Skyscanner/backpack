@@ -26,9 +26,11 @@ import {
   MinimalisticExample,
   NonSponsoredExample,
   MixedExample,
+  NoStyleExample,
 } from './examples';
 
 storiesOf('bpk-component-graphic-promotion', module)
+  .add('Default styling', NoStyleExample)
   .add('Default', DefaultExample)
   .add('Center Aligned', CenterAlignedExample)
   .add('Right Aligned', RightAlignedExample)
