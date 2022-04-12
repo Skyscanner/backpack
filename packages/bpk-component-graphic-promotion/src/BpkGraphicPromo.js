@@ -53,7 +53,7 @@ export type Props = {
   invertVertically: boolean,
   textAlign: TEXT_ALIGN,
   textColor: TEXT_COLORS,
-  style: string,
+  style: ?{},
 };
 
 const constructAriaLabel = ({
@@ -189,7 +189,7 @@ BpkGraphicPromo.propTypes = {
   invertVertically: PropTypes.bool,
   textAlign: PropTypes.oneOf(Object.values(TEXT_ALIGN)).isRequired,
   textColor: PropTypes.oneOf(Object.values(TEXT_COLORS)),
-  style: PropTypes.string,
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 BpkGraphicPromo.defaultProps = {
