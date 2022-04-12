@@ -23,34 +23,38 @@ import { storiesOf } from '@storybook/react';
 
 import {
   PrimaryExample,
+  PrimaryOnDarkExample,
+  PrimaryOnLightExample,
   SecondaryExample,
   DestructiveExample,
   LinkExample,
   FeaturedExample,
-  OutlineExample,
   ComponentButtonPrimaryExample,
+  ComponentButtonPrimaryOnDarkExample,
+  ComponentButtonPrimaryOnLightExample,
   ComponentButtonSecondaryExample,
   ComponentButtonDestructiveExample,
   ComponentButtonLinkExample,
   ComponentButtonFeaturedExample,
-  ComponentButtonOutlineExample,
   MixedExample,
   AnchorTagsExample,
 } from './examples';
 
 storiesOf('bpk-component-button', () => module)
   .add('BpkButton (Primary)', () => <PrimaryExample />)
+  .add('BpkButton (PrimaryOnDark)', () => <PrimaryOnDarkExample />)
+  .add('BpkButton (PrimaryOnLight)', () => <PrimaryOnLightExample />)
   .add('BpkButton (Secondary)', () => <SecondaryExample />)
   .add('BpkButton (Destructive)', () => <DestructiveExample />)
   .add('BpkButton (Link button)', () => <LinkExample />)
   .add('BpkButton (Featured)', () => <FeaturedExample />)
-  .add('BpkButton (Outline)', () => <OutlineExample />)
   .add('Primary', () => <ComponentButtonPrimaryExample />)
+  .add('PrimaryOnDark', () => <ComponentButtonPrimaryOnDarkExample />)
+  .add('PrimaryOnLight', () => <ComponentButtonPrimaryOnLightExample />)
   .add('Secondary', () => <ComponentButtonSecondaryExample />)
   .add('Destructive', () => <ComponentButtonDestructiveExample />)
   .add('Link button', () => <ComponentButtonLinkExample />)
   .add('Featured', () => <ComponentButtonFeaturedExample />)
-  .add('Outline', () => <ComponentButtonOutlineExample />)
   .add('Mixture', () => <MixedExample />)
   .add('Anchor tags', () => <AnchorTagsExample />)
   .add('Visual test', () => <MixedExample />);

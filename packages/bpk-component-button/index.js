@@ -20,6 +20,8 @@
 
 import BpkButton from './src/BpkButton'; // eslint-disable-line import/no-cycle
 import BpkButtonPrimary from './src/BpkButtonPrimary';
+import BpkButtonPrimaryOnDark from './src/BpkButtonPrimaryOnDark';
+import BpkButtonPrimaryOnLight from './src/BpkButtonPrimaryOnLight';
 import BpkButtonSecondary from './src/BpkButtonSecondary';
 import BpkButtonDestructive from './src/BpkButtonDestructive';
 import BpkButtonLink from './src/BpkButtonLink';
@@ -38,6 +40,8 @@ export default BpkButton;
 
 export {
   BpkButtonPrimary,
+  BpkButtonPrimaryOnDark,
+  BpkButtonPrimaryOnLight,
   BpkButtonSecondary,
   BpkButtonDestructive,
   BpkButtonLink,
