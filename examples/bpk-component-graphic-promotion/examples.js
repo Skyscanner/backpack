@@ -151,6 +151,83 @@ const MixedExample = () => (
   </>
 );
 
+const VisualTestExample = () => (
+  <>
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      onClick={onClick}
+      className={getClassName(STYLES.graphicPromo)}
+      textAlign={TEXT_ALIGN.start}
+    />
+
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      onClick={onClick}
+      className={getClassName(STYLES.graphicPromo)}
+      textAlign={TEXT_ALIGN.center}
+    />
+
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      onClick={onClick}
+      className={getClassName(STYLES.graphicPromo)}
+      textAlign={TEXT_ALIGN.end}
+    />
+
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      onClick={onClick}
+      className={getClassName(STYLES.graphicPromo)}
+      textAlign={TEXT_ALIGN.start}
+      invertVertically
+    />
+
+    <BpkGraphicPromo
+      headline={headline}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      className={getClassName(STYLES.graphicPromo)}
+      onClick={onClick}
+      textAlign={TEXT_ALIGN.start}
+    />
+
+    <BpkGraphicPromo
+      headline={headline}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      className={getClassName(STYLES.graphicPromo)}
+      onClick={onClick}
+      textAlign={TEXT_ALIGN.start}
+    />
+
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      buttonText={buttonText}
+      className={getClassName(STYLES.graphicPromo)}
+      onClick={onClick}
+      textAlign={TEXT_ALIGN.start}
+    />
+  </>
+);
+
 export {
   DefaultExample,
   CenterAlignedExample,
@@ -160,4 +237,5 @@ export {
   NonSponsoredExample,
   MixedExample,
   NoStyleExample,
+  VisualTestExample,
 };
