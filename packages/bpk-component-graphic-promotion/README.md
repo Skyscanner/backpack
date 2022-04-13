@@ -17,14 +17,13 @@ export default () => (
     tagline="Tagline"
     headline="Ride your wave"
     subheading="Portugal and 6 more countries have just been added to the UK travel green list"
-    image="./path/to/background/image.jpg"
     sponsor={{
       label: 'Sponsored',
       logo: './path/to/sponsor/logo.png',
       altText: 'Sponsor Name',
     }}
     buttonText="Learn more"
-    onClick={() => redirect("https://www.sponsor-name.com/promotion"))}
+    onClick={() => redirect("https://www.sponsor-name.com/promotion")}
     textAlign={TEXT_ALIGN.start}
     invertVertically
   />
@@ -41,8 +40,8 @@ export default () => (
 | invertVertically | bool              | true     | -             |
 | onClick          | func              | true     | -             |
 | textAlign        | oneOf(TEXT_ALIGN) | true     | -             |
-| textColor        | oneOf(TEXT_COLOR) | true     | -             |
 | className        | string            | false    | null          |
+| style            | object            | false    | {}            |
 | tagline          | string            | false    | null          |
 | sponsor          | object            | false    | null          |
 | subheading       | string            | false    | null          |

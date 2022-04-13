@@ -31,7 +31,6 @@ const props = {
   headline: 'Ride your wave',
   subheading:
     'Portugal and 6 more countries have just been added to the UK travel green list',
-  image: 'path/to/image.jpg',
   sponsor: {
     label: 'Sponsored',
     logo: 'path/to/logo.png',
