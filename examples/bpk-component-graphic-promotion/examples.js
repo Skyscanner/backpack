@@ -140,17 +140,6 @@ const NonSponsoredExample = () => (
   />
 );
 
-const MixedExample = () => (
-  <>
-    <DefaultExample />
-    <CenterAlignedExample />
-    <RightAlignedExample />
-    <InvertedPortraitExample />
-    <MinimalisticExample />
-    <NonSponsoredExample />
-  </>
-);
-
 const VisualTestExample = () => (
   <>
     <BpkGraphicPromo
@@ -226,7 +215,6 @@ export {
   InvertedPortraitExample,
   MinimalisticExample,
   NonSponsoredExample,
-  MixedExample,
   NoStyleExample,
   VisualTestExample,
 };
