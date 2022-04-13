@@ -36,7 +36,6 @@ export default () => (
 | ---------------- | ----------------- | -------- | ------------- |
 | buttonText       | string            | true     | -             |
 | headline         | string            | true     | -             |
-| image            | string            | true     | -             |
 | invertVertically | bool              | true     | -             |
 | onClick          | func              | true     | -             |
 | textAlign        | oneOf(TEXT_ALIGN) | true     | -             |
