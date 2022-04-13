@@ -208,15 +208,6 @@ const VisualTestExample = () => (
     />
 
     <BpkGraphicPromo
-      headline={headline}
-      sponsor={sponsor}
-      buttonText={buttonText}
-      className={getClassName(STYLES.graphicPromo)}
-      onClick={onClick}
-      textAlign={TEXT_ALIGN.start}
-    />
-
-    <BpkGraphicPromo
       tagline={tagline}
       headline={headline}
       subheading={subheading}
