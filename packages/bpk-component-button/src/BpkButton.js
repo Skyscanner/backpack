@@ -24,6 +24,8 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-cycle
 import {
   BpkButtonPrimary,
+  BpkButtonPrimaryOnDark,
+  BpkButtonPrimaryOnLight,
   BpkButtonSecondary,
   BpkButtonDestructive,
   BpkButtonLink,
@@ -39,6 +41,8 @@ import {
 
 type Props = {
   ...CommonProps,
+  primaryOnDark: boolean,
+  primaryOnLight: boolean,
   secondary: boolean,
   destructive: boolean,
   featured: boolean,
@@ -47,7 +51,24 @@ type Props = {
 };
 
 const BpkButton = (props: Props) => {
-  const { destructive, featured, link, outline, secondary, ...rest } = props;
+  const {
+    destructive,
+    featured,
+    link,
+    outline,
+    primaryOnDark,
+    primaryOnLight,
+    secondary,
+    ...rest
+  } = props;
+
+  if (primaryOnDark) {
+    return <BpkButtonPrimaryOnDark {...rest} />;
+  }
+
+  if (primaryOnLight) {
+    return <BpkButtonPrimaryOnLight {...rest} />;
+  }
 
   if (secondary) {
     return <BpkButtonSecondary {...rest} />;
@@ -69,6 +90,8 @@ const BpkButton = (props: Props) => {
 
 BpkButton.propTypes = {
   ...propTypes,
+  primaryOnDark: PropTypes.bool,
+  primaryOnLight: PropTypes.bool,
   secondary: PropTypes.bool,
   destructive: PropTypes.bool,
   featured: PropTypes.bool,
@@ -78,6 +101,8 @@ BpkButton.propTypes = {
 
 BpkButton.defaultProps = {
   ...defaultProps,
+  primaryOnDark: false,
+  primaryOnLight: false,
   secondary: false,
   destructive: false,
   featured: false,

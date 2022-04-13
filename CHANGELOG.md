@@ -1,3 +1,33 @@
+# 2022-04-11
+
+**Breaking:**
+
+`bpk-component-loading-button`: (5.0.1 => 6.0.0) </br>
+- Changed loading button to display only loading spinner when loading. Text and icon will be hidden. Button width is maintained when switching to loading state.
+
+**Added:**
+
+`bpk-component-button`: (6.0.1 => 6.1.0) </br>
+`bpk-component-loading-button`: (5.0.1 => 6.0.0) </br>
+- Added `BpkButtonPrimaryOnDark` and `BpkButtonPrimaryOnLight` button types.
+You can use these buttons by setting the `primaryOnDark` or `primaryOnLight` property to true in the `BpkButton` component, or can be imported directly, e.g. `import { BpkButtonPrimaryOnDark, BpkButtonPrimaryOnLight } from 'bpk-component-button';`
+- Added `primaryOnDarkThemeAttributes`, `primaryOnLightThemeAttributes` theme attributes
+
+**Changed:**
+
+`bpk-component-button`: (6.0.1 => 6.1.0) </br>
+`bpk-component-loading-button`: (5.0.1 => 6.0.0) </br>
+- Deprecated `BpkButtonOutline` button. Use `BpkButtonPrimaryOnDark` or `BpkButtonPrimaryOnLight` instead.
+
+
+
+# 2022-04-07
+
+**Fixed:**
+ - bpk-component-calendar: 11.1.5 => 11.1.6
+ - bpk-component-datepicker: 15.2.5 => 15.2.6
+    - Fixed an issue when using Assistive Technologies, a user could not select a date.
+
 # 2022-04-04
 
 The following package version bump, will affect all components as `bpk-react-utils` is a dependency of all components.

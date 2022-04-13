@@ -40,6 +40,20 @@ describe('BpkLoadingButton', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with a "primaryOnDark" attribute', () => {
+    const { asFragment } = render(
+      <BpkLoadingButton primaryOnDark>My button</BpkLoadingButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "primaryOnLight" attribute', () => {
+    const { asFragment } = render(
+      <BpkLoadingButton primaryOnLight>My button</BpkLoadingButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly with a "secondary" attribute', () => {
     const { asFragment } = render(
       <BpkLoadingButton secondary>My button</BpkLoadingButton>,
@@ -110,6 +124,24 @@ describe('BpkLoadingButton', () => {
   it('should render correctly with "large" and "secondary" attributes', () => {
     const { asFragment } = render(
       <BpkLoadingButton large secondary>
+        My button
+      </BpkLoadingButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with "large" and "primaryOnDark" attributes', () => {
+    const { asFragment } = render(
+      <BpkLoadingButton large primaryOnDark>
+        My button
+      </BpkLoadingButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with "large" and "primaryOnLight" attributes', () => {
+    const { asFragment } = render(
+      <BpkLoadingButton large primaryOnLight>
         My button
       </BpkLoadingButton>,
     );
