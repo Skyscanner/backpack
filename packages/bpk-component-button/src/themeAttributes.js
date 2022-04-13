@@ -59,6 +59,15 @@ export const secondaryThemeAttributes = [
   'buttonSecondaryActiveBackgroundColor',
 ];
 
+export const secondaryOnDarkThemeAttributes = [
+  'buttonSecondaryOnDarkTextColor',
+  'buttonSecondaryOnDarkHoverTextColor',
+  'buttonSecondaryOnDarkActiveTextColor',
+  'buttonSecondaryOnDarkBackgroundColor',
+  'buttonSecondaryOnDarkHoverBackgroundColor',
+  'buttonSecondaryOnDarkActiveBackgroundColor',
+];
+
 export const featuredThemeAttributes = [
   'buttonFeaturedTextColor',
   'buttonFeaturedHoverTextColor',

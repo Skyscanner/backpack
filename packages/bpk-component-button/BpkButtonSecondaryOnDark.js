@@ -18,13 +18,4 @@
 
 /* @flow strict */
 
-export {
-  buttonThemeAttributes,
-  primaryThemeAttributes,
-  primaryOnDarkThemeAttributes,
-  primaryOnLightThemeAttributes,
-  secondaryThemeAttributes,
-  secondaryOnDarkThemeAttributes,
-  featuredThemeAttributes,
-  destructiveThemeAttributes,
-} from './src/themeAttributes';
+export { default } from './src/BpkButtonSecondaryOnDark';

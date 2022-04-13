@@ -26,15 +26,19 @@ import {
   PrimaryOnDarkExample,
   PrimaryOnLightExample,
   SecondaryExample,
+  SecondaryOnDarkExample,
   DestructiveExample,
   LinkExample,
+  LinkOnDarkExample,
   FeaturedExample,
   ComponentButtonPrimaryExample,
   ComponentButtonPrimaryOnDarkExample,
   ComponentButtonPrimaryOnLightExample,
   ComponentButtonSecondaryExample,
+  ComponentButtonSecondaryOnDarkExample,
   ComponentButtonDestructiveExample,
   ComponentButtonLinkExample,
+  ComponentButtonLinkOnDarkExample,
   ComponentButtonFeaturedExample,
   MixedExample,
   AnchorTagsExample,
@@ -45,15 +49,19 @@ storiesOf('bpk-component-button', () => module)
   .add('BpkButton (PrimaryOnDark)', () => <PrimaryOnDarkExample />)
   .add('BpkButton (PrimaryOnLight)', () => <PrimaryOnLightExample />)
   .add('BpkButton (Secondary)', () => <SecondaryExample />)
+  .add('BpkButton (SecondaryOnDark)', () => <SecondaryOnDarkExample />)
   .add('BpkButton (Destructive)', () => <DestructiveExample />)
   .add('BpkButton (Link button)', () => <LinkExample />)
+  .add('BpkButton (Link on dark button)', () => <LinkOnDarkExample />)
   .add('BpkButton (Featured)', () => <FeaturedExample />)
   .add('Primary', () => <ComponentButtonPrimaryExample />)
   .add('PrimaryOnDark', () => <ComponentButtonPrimaryOnDarkExample />)
   .add('PrimaryOnLight', () => <ComponentButtonPrimaryOnLightExample />)
   .add('Secondary', () => <ComponentButtonSecondaryExample />)
+  .add('SecondaryOnDark', () => <ComponentButtonSecondaryOnDarkExample />)
   .add('Destructive', () => <ComponentButtonDestructiveExample />)
   .add('Link button', () => <ComponentButtonLinkExample />)
+  .add('LinkOnDark button', () => <ComponentButtonLinkOnDarkExample />)
   .add('Featured', () => <ComponentButtonFeaturedExample />)
   .add('Mixture', () => <MixedExample />)
   .add('Anchor tags', () => <AnchorTagsExample />)
