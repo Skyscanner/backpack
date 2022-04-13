@@ -23,7 +23,6 @@ import { axe } from 'jest-axe';
 
 import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
 
-const image = 'path/to/image.jpg';
 const sponsor = {
   label: 'Sponsored',
   logo: 'path/to/logo.png',
@@ -47,7 +46,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         tagline={tagline}
         headline={headline}
         subheading={subheading}
-        image={image}
         sponsor={sponsor}
         buttonText={buttonText}
         onClick={onClick}
@@ -65,7 +63,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         tagline={tagline}
         headline={headline}
         subheading={subheading}
-        image={image}
         sponsor={sponsor}
         buttonText={buttonText}
         onClick={onClick}
@@ -83,7 +80,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         tagline={tagline}
         headline={headline}
         subheading={subheading}
-        image={image}
         sponsor={sponsor}
         buttonText={buttonText}
         onClick={onClick}
@@ -101,7 +97,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         tagline={tagline}
         headline={headline}
         subheading={subheading}
-        image={image}
         sponsor={sponsor}
         buttonText={buttonText}
         onClick={onClick}
@@ -118,7 +113,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
     const { container } = render(
       <BpkGraphicPromo
         headline={headline}
-        image={image}
         sponsor={sponsor}
         buttonText={buttonText}
         onClick={onClick}
@@ -136,7 +130,6 @@ describe('BpkGraphicPromo accessibility tests', () => {
         tagline={tagline}
         headline={headline}
         subheading={subheading}
-        image={image}
         buttonText={buttonText}
         onClick={onClick}
         textAlign={TEXT_ALIGN.start}
