@@ -237,13 +237,7 @@
   }
 
   &__cta {
-    // Remove the following 2 lines once the new Button style is reasdy in Backpack. (ST-4135)
-    background: $bpk-color-white;
-    color: black; /* stylelint-disable-line */
     pointer-events: auto;
-
-    // Remove the following line once the new Button style is reasdy in Backpack. (ST-4135)
-    @include bpk-label-1;
 
     @include breakpoint-landscape {
       margin-top: bpk-spacing-xl();

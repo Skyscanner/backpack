@@ -34,7 +34,7 @@ exports[`BpkGraphicPromo should display the tagline and no sponsor for non-spons
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
         <button
-          class="bpk-button bpk-graphic-promo__cta"
+          class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
           type="button"
         >
@@ -81,7 +81,7 @@ exports[`BpkGraphicPromo should not display tagline or subheading when not provi
           Ride your wave
         </h2>
         <button
-          class="bpk-button bpk-graphic-promo__cta"
+          class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
           type="button"
         >
@@ -133,7 +133,7 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
         <button
-          class="bpk-button bpk-graphic-promo__cta"
+          class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
           type="button"
         >
@@ -185,7 +185,7 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
         <button
-          class="bpk-button bpk-graphic-promo__cta"
+          class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
           type="button"
         >
@@ -237,7 +237,7 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
         <button
-          class="bpk-button bpk-graphic-promo__cta"
+          class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
           type="button"
         >
@@ -289,7 +289,7 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
         <button
-          class="bpk-button bpk-graphic-promo__cta"
+          class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
           type="button"
         >
@@ -341,7 +341,7 @@ exports[`BpkGraphicPromo should support arbitrary props 1`] = `
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
         <button
-          class="bpk-button bpk-graphic-promo__cta"
+          class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
           type="button"
         >
@@ -393,7 +393,7 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
         <button
-          class="bpk-button bpk-graphic-promo__cta"
+          class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
           type="button"
         >
