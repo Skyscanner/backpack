@@ -104,11 +104,6 @@ const LoadingButtonStory = ({
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
-        Disabled
-      </Wrapped>
-      &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         Loading
       </Wrapped>
@@ -141,16 +136,6 @@ const LoadingButtonStory = ({
         {...rest}
       >
         Button
-      </Wrapped>
-      &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        large
-        disabled
-        onClick={action('THIS SHOULD NEVER HAPPEN')}
-        {...rest}
-      >
-        Disabled
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
@@ -319,6 +304,95 @@ const CustomIcon = () => {
     </div>
   );
 };
+const VisualExample = () => (
+  <div>
+    <div>
+      <BpkLoadingButton loading onClick={action('button clicked')}>
+        Search
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton iconOnly loading onClick={action('iconOnly clicked')}>
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton large loading onClick={action('button clicked')}>
+        Search
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        large
+        iconOnly
+        loading
+        onClick={action('iconOnly clicked')}
+      >
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>
+    </div>
+    <div>
+      <BpkLoadingButton link loading onClick={action('button clicked')}>
+        Search
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        link
+        iconOnly
+        loading
+        onClick={action('iconOnly clicked')}
+      >
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton link large loading onClick={action('button clicked')}>
+        Search
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        link
+        large
+        iconOnly
+        loading
+        onClick={action('iconOnly clicked')}
+      >
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>
+    </div>
+    <div>
+      <BpkDarkExampleWrapper>
+        <BpkLoadingButton linkOnDark loading onClick={action('button clicked')}>
+          Search
+        </BpkLoadingButton>
+        &nbsp;
+        <BpkLoadingButton
+          linkOnDark
+          iconOnly
+          loading
+          onClick={action('iconOnly clicked')}
+        >
+          <span className="visually-hidden">Search</span>
+        </BpkLoadingButton>
+        &nbsp;
+        <BpkLoadingButton
+          linkOnDark
+          large
+          loading
+          onClick={action('button clicked')}
+        >
+          Search
+        </BpkLoadingButton>
+        &nbsp;
+        <BpkLoadingButton
+          linkOnDark
+          large
+          iconOnly
+          loading
+          onClick={action('iconOnly clicked')}
+        >
+          <span className="visually-hidden">Search</span>
+        </BpkLoadingButton>
+      </BpkDarkExampleWrapper>
+    </div>
+  </div>
+);
 
 export {
   DocsPrimary,
@@ -334,4 +408,5 @@ export {
   Mixture,
   AnchorTags,
   CustomIcon,
+  VisualExample,
 };

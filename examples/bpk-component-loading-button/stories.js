@@ -34,6 +34,7 @@ import {
   Mixture,
   AnchorTags,
   CustomIcon,
+  VisualExample,
 } from './examples';
 
 storiesOf('bpk-component-loading-button', module)
@@ -50,4 +51,4 @@ storiesOf('bpk-component-loading-button', module)
   .add('Mixture', Mixture)
   .add('Anchor tags', AnchorTags)
   .add('Custom Icon', CustomIcon)
-  .add('Visual test', Mixture);
+  .add('Visual test', VisualExample);
