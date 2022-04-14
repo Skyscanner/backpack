@@ -19,20 +19,22 @@
 import { storiesOf } from '@storybook/react';
 
 import {
+  VisualTestExample,
   DefaultExample,
   CenterAlignedExample,
   RightAlignedExample,
   InvertedPortraitExample,
   MinimalisticExample,
   NonSponsoredExample,
-  MixedExample,
+  NoStyleExample,
 } from './examples';
 
 storiesOf('bpk-component-graphic-promotion', module)
-  .add('Default', DefaultExample)
+  .add('Default no background image', NoStyleExample)
+  .add('Default with background image', DefaultExample)
   .add('Center Aligned', CenterAlignedExample)
   .add('Right Aligned', RightAlignedExample)
   .add('Inverted Portrait Mode', InvertedPortraitExample)
   .add('Minimalistic', MinimalisticExample)
   .add('Non-Sponsored', NonSponsoredExample)
-  .add('Visual test', MixedExample);
+  .add('Visual test', VisualTestExample);

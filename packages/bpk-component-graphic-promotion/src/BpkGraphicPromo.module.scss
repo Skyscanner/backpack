@@ -26,6 +26,7 @@
   background-color: $bpk-color-sky-blue;
   background-position: center;
   background-size: cover;
+  color: $bpk-color-white;
   box-shadow: none;
 
   @include breakpoint-landscape {

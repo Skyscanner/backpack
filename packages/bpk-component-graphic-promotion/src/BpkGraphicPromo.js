@@ -33,17 +33,12 @@ export const TEXT_ALIGN = {
   center: 'center',
   end: 'end',
 };
-export const TEXT_COLORS = {
-  black: 'black',
-  white: 'white',
-};
 
 export type Props = {
   className: ?string,
   tagline: ?string,
   headline: string,
   subheading: ?string,
-  image: string,
   sponsor: ?{
     label: string,
     logo: string,
@@ -53,7 +48,7 @@ export type Props = {
   onClick: () => void,
   invertVertically: boolean,
   textAlign: TEXT_ALIGN,
-  textColor: TEXT_COLORS,
+  style: ?{},
 };
 
 const constructAriaLabel = ({
@@ -84,14 +79,13 @@ const BpkGraphicPromo = (props: Props) => {
     buttonText,
     className,
     headline,
-    image,
     invertVertically,
     onClick,
     sponsor,
+    style,
     subheading,
     tagline,
     textAlign,
-    textColor,
   } = props;
 
   // FIXME: Use useCallback() here when React is updated.
@@ -109,11 +103,10 @@ const BpkGraphicPromo = (props: Props) => {
 
   const getTextClasses = (baseClass: string) =>
     getClassName(baseClass, `${baseClass}--${textAlign}`);
-
   return (
     <BpkCard
       className={cardClasses}
-      style={{ backgroundImage: `url(${image})`, color: textColor }}
+      style={style}
       onClick={onClickWrapper}
       aria-label={constructAriaLabel(props)}
       padded={false}
@@ -177,7 +170,6 @@ BpkGraphicPromo.propTypes = {
   tagline: PropTypes.string,
   headline: PropTypes.string.isRequired,
   subheading: PropTypes.string,
-  image: PropTypes.string.isRequired,
   sponsor: PropTypes.shape({
     label: PropTypes.string,
     logo: PropTypes.string,
@@ -187,7 +179,7 @@ BpkGraphicPromo.propTypes = {
   onClick: PropTypes.func.isRequired,
   invertVertically: PropTypes.bool,
   textAlign: PropTypes.oneOf(Object.values(TEXT_ALIGN)).isRequired,
-  textColor: PropTypes.oneOf(Object.values(TEXT_COLORS)),
+  style: PropTypes.shape({ [PropTypes.string]: PropTypes.string }),
 };
 
 BpkGraphicPromo.defaultProps = {
@@ -196,7 +188,7 @@ BpkGraphicPromo.defaultProps = {
   subheading: null,
   sponsor: null,
   invertVertically: false,
-  textColor: TEXT_COLORS.white,
+  style: {},
 };
 
 export default BpkGraphicPromo;

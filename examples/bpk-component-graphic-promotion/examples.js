@@ -21,9 +21,11 @@ import React from 'react';
 import BpkGraphicPromo, {
   TEXT_ALIGN,
 } from '../../packages/bpk-component-graphic-promotion';
+import { cssModules } from '../../packages/bpk-react-utils';
 
-const image =
-  'https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=1048px:400px&quality=90';
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 const sponsor = {
   label: 'Sponsored',
   logo: 'https://js.skyscnr.com/sttc/bpk-content/skyland-a76916b4.png',
@@ -37,16 +39,25 @@ const onClick = () => {
 const tagline = 'Travel tips';
 const headline = 'Three Peaks Challenge';
 const subheading = 'How to complete the climb in 3 days';
+const style = {
+  '--background-image-mobile':
+    "url('https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=390:844px&quality=90')",
+  '--background-image-tablet':
+    "url('https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=820px:1180px&quality=90')",
+  '--background-image-desktop':
+    "url('https://content.skyscnr.com/m/31ebf33b07194794/original/Hiker-looking-out-over-mountain.jpg?crop=2096px:800px&quality=90')",
+};
 
 const DefaultExample = () => (
   <BpkGraphicPromo
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     textAlign={TEXT_ALIGN.start}
   />
 );
@@ -56,10 +67,11 @@ const CenterAlignedExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     textAlign={TEXT_ALIGN.center}
   />
 );
@@ -69,10 +81,11 @@ const RightAlignedExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     textAlign={TEXT_ALIGN.end}
   />
 );
@@ -82,10 +95,11 @@ const InvertedPortraitExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     textAlign={TEXT_ALIGN.start}
     invertVertically
   />
@@ -94,7 +108,18 @@ const InvertedPortraitExample = () => (
 const MinimalisticExample = () => (
   <BpkGraphicPromo
     headline={headline}
-    image={image}
+    sponsor={sponsor}
+    buttonText={buttonText}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
+    onClick={onClick}
+    textAlign={TEXT_ALIGN.start}
+  />
+);
+
+const NoStyleExample = () => (
+  <BpkGraphicPromo
+    headline={headline}
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
@@ -107,21 +132,79 @@ const NonSponsoredExample = () => (
     tagline={tagline}
     headline={headline}
     subheading={subheading}
-    image={image}
     buttonText={buttonText}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}
   />
 );
 
-const MixedExample = () => (
+const VisualTestExample = () => (
   <>
-    <DefaultExample />
-    <CenterAlignedExample />
-    <RightAlignedExample />
-    <InvertedPortraitExample />
-    <MinimalisticExample />
-    <NonSponsoredExample />
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      onClick={onClick}
+      className={getClassName(STYLES.graphicPromo)}
+      textAlign={TEXT_ALIGN.start}
+    />
+
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      onClick={onClick}
+      className={getClassName(STYLES.graphicPromo)}
+      textAlign={TEXT_ALIGN.center}
+    />
+
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      onClick={onClick}
+      className={getClassName(STYLES.graphicPromo)}
+      textAlign={TEXT_ALIGN.end}
+    />
+
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      onClick={onClick}
+      className={getClassName(STYLES.graphicPromo)}
+      textAlign={TEXT_ALIGN.start}
+      invertVertically
+    />
+
+    <BpkGraphicPromo
+      headline={headline}
+      sponsor={sponsor}
+      buttonText={buttonText}
+      className={getClassName(STYLES.graphicPromo)}
+      onClick={onClick}
+      textAlign={TEXT_ALIGN.start}
+    />
+
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      buttonText={buttonText}
+      className={getClassName(STYLES.graphicPromo)}
+      onClick={onClick}
+      textAlign={TEXT_ALIGN.start}
+    />
   </>
 );
 
@@ -132,5 +215,6 @@ export {
   InvertedPortraitExample,
   MinimalisticExample,
   NonSponsoredExample,
-  MixedExample,
+  NoStyleExample,
+  VisualTestExample,
 };
