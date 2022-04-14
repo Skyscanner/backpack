@@ -61,6 +61,13 @@ describe('BpkLoadingButton', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with a "secondaryOnDark" attribute', () => {
+    const { asFragment } = render(
+      <BpkLoadingButton secondaryOnDark>My button</BpkLoadingButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly with a "destructive" attribute', () => {
     const { asFragment } = render(
       <BpkLoadingButton destructive>My button</BpkLoadingButton>,
@@ -71,6 +78,13 @@ describe('BpkLoadingButton', () => {
   it('should render correctly with a "link" attribute', () => {
     const { asFragment } = render(
       <BpkLoadingButton link>My button</BpkLoadingButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "linkOnDark" attribute', () => {
+    const { asFragment } = render(
+      <BpkLoadingButton linkOnDark>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -130,6 +144,15 @@ describe('BpkLoadingButton', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with "large" and "secondaryOnDark" attributes', () => {
+    const { asFragment } = render(
+      <BpkLoadingButton large secondaryOnDark>
+        My button
+      </BpkLoadingButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly with "large" and "primaryOnDark" attributes', () => {
     const { asFragment } = render(
       <BpkLoadingButton large primaryOnDark>
@@ -160,6 +183,15 @@ describe('BpkLoadingButton', () => {
   it('should render correctly with "large" and "link" attributes', () => {
     const { asFragment } = render(
       <BpkLoadingButton large link>
+        My button
+      </BpkLoadingButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with "large" and "linkOnDark" attributes', () => {
+    const { asFragment } = render(
+      <BpkLoadingButton large linkOnDark>
         My button
       </BpkLoadingButton>,
     );

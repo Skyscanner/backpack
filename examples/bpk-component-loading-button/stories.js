@@ -23,11 +23,14 @@ import { storiesOf } from '@storybook/react';
 import {
   DocsPrimary,
   Primary,
+  PrimaryOnDark,
+  PrimaryOnLight,
   Secondary,
+  SecondaryOnDark,
   Destructive,
   LinkButton,
+  LinkOnDarkButton,
   Featured,
-  IconOnly,
   Mixture,
   AnchorTags,
   CustomIcon,
@@ -36,11 +39,15 @@ import {
 storiesOf('bpk-component-loading-button', module)
   .add('DocsPrimary', DocsPrimary)
   .add('Primary', Primary)
+  .add('PrimaryOnDark', PrimaryOnDark)
+  .add('PrimaryOnLight', PrimaryOnLight)
   .add('Secondary', Secondary)
+  .add('SecondaryOnDark', SecondaryOnDark)
   .add('Destructive', Destructive)
   .add('Link button', LinkButton)
+  .add('LinkOnDark button', LinkOnDarkButton)
   .add('Featured', Featured)
-  .add('Icon-only button', IconOnly)
   .add('Mixture', Mixture)
   .add('Anchor tags', AnchorTags)
-  .add('Custom Icon', CustomIcon);
+  .add('Custom Icon', CustomIcon)
+  .add('Visual test', Mixture);
