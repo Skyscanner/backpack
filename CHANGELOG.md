@@ -1,3 +1,10 @@
+# 2022-04-14
+
+**Breaking**
+- bpk-component-graphic-promotion: 1.0.3 => 2.0.0
+- Now accepts a style prop and no longer accepts an image prop, leaving it up to the consumer to populate the background-image through styling
+
+
 # 2022-04-11
 
 **Breaking:**
