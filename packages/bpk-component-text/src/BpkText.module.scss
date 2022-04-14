@@ -73,6 +73,10 @@
     @include bpk-label-2;
   }
 
+  &--label-3 {
+    @include bpk-label-3;
+  }
+
   &--body-default {
     @include bpk-body-default;
   }
