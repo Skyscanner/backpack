@@ -1,5 +1,28 @@
 # 2022-04-15
 
+**Added:**
+
+`bpk-component-button`: (6.1.0 => 6.2.0) </br>
+`bpk-component-loading-button`: (6.0.0 => 6.1.0) </br>
+- Added `BpkButtonLinkOnDark` and `BpkButtonSecondaryOnDark` button types.
+You can use these buttons by setting the `linkOnDark` or `secondaryOnDark` property to true in the `BpkButton` component, or can be imported directly, e.g. `import { BpkButtonLinkOnDark, BpkButtonSecondaryOnDark } from 'bpk-component-button';`
+- Added `secondaryOnDarkThemeAttributes` theme attributes
+
+`bpk-component-text`: (6.1.5 => 6.2.0) </br>
+- Added support for new typography style `label-3`.
+
+**Fixed:**
+
+`bpk-component-button`: (6.1.0 => 6.2.0) </br>
+`bpk-component-loading-button`: (6.0.0 => 6.1.0) </br>
+- Remove underline from `BpkButtonLink` in hover and active state
+
+`bpk-component-loading-button`: (6.0.0 => 6.1.0) </br>
+- Fixed icon-only loading buttons to show spinner or custom loading icon when in loading state.
+
+
+# 2022-04-15
+
 **Fixed**
 - bpk-component-graphic-promotion: 2.0.0 => 2.0.1 
   - Uses new primaryOnDark button type to fix previous hover state which was showing primary (green) hover on a white button. Now is a white button with appropriate hover state.
