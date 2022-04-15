@@ -430,6 +430,7 @@ TEXT_STYLES.caption
 TEXT_STYLES.footnote
 TEXT_STYLES.label1
 TEXT_STYLES.label2
+TEXT_STYLES.label3
 TEXT_STYLES.bodyDefault
 TEXT_STYLES.bodyLongform
 TEXT_STYLES.subheading

@@ -55,6 +55,9 @@ const WithHeadingTagsExample = () => (
     <BpkText textStyle={TEXT_STYLES.label2} tagName="h4">
       The quick brown fox jumps over the lazy dog
     </BpkText>
+    <BpkText textStyle={TEXT_STYLES.label3} tagName="h4">
+      The quick brown fox jumps over the lazy dog
+    </BpkText>
     <BpkText textStyle={TEXT_STYLES.footnote} tagName="h5">
       The quick brown fox jumps over the lazy dog
     </BpkText>
