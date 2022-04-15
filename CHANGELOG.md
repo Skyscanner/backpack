@@ -1,8 +1,14 @@
+# 2022-04-15
+
+**Fixed**
+- bpk-component-graphic-promotion: 2.0.0 => 2.0.1 
+  - Uses new primaryOnDark button type to fix previous hover state which was showing primary (green) hover on a white button. Now is a white button with appropriate hover state.
+
 # 2022-04-14
 
 **Breaking**
 - bpk-component-graphic-promotion: 1.0.3 => 2.0.0
-- Now accepts a style prop and no longer accepts an image prop, leaving it up to the consumer to populate the background-image through styling
+  - Now accepts a style prop and no longer accepts an image prop, leaving it up to the consumer to populate the background-image through styling
 
 
 # 2022-04-11

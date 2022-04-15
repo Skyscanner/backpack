@@ -1,6 +1,3 @@
-**Fixed**
-- `bpk-component-graphic-promotion` - Uses new primaryOnDark button type to fix previous hover state which was showing primary (green) hover on a white button. Now is a white button with appropriate hover state.
-
 **Added:**
 
 `bpk-component-button`: </br>
