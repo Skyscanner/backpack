@@ -189,6 +189,32 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
 </DocumentFragment>
 `;
 
+exports[`BpkLoadingButton should render correctly with "large" and "linkOnDark" attributes 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--large bpk-button--link-on-dark bpk-button--link-on-dark-large"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="24"
+        style="width: 1.5rem; height: 1.5rem;"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`BpkLoadingButton should render correctly with "large" and "loading" attributes 1`] = `
 <DocumentFragment>
   <button
@@ -343,6 +369,32 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--large bpk-button--secondary"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="24"
+        style="width: 1.5rem; height: 1.5rem;"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkLoadingButton should render correctly with "large" and "secondaryOnDark" attributes 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--large bpk-button--secondary-on-dark"
     type="button"
   >
     My button 
@@ -693,6 +745,34 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
 </DocumentFragment>
 `;
 
+exports[`BpkLoadingButton should render correctly with a "linkOnDark" attribute 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--link-on-dark"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="18"
+        style="width: 1.125rem; height: 1.125rem;"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`] = `
 <DocumentFragment>
   <button
@@ -897,6 +977,34 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--secondary"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="18"
+        style="width: 1.125rem; height: 1.125rem;"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkLoadingButton should render correctly with a "secondaryOnDark" attribute 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--secondary-on-dark"
     type="button"
   >
     My button 

@@ -73,6 +73,7 @@ type LoadingProps = {
   destructive: boolean,
   large: boolean,
   link: boolean,
+  linkOnDark: boolean,
   loading: boolean,
   iconOnly: boolean,
   icon: ?Element<any>,
@@ -93,6 +94,7 @@ const BpkLoadingButton = (props: LoadingProps) => {
     iconPosition,
     large,
     link,
+    linkOnDark,
     loading,
     ...rest
   } = props;
@@ -111,14 +113,18 @@ const BpkLoadingButton = (props: LoadingProps) => {
 
   const classNames = getClassName(
     loading && 'bpk-loading-button',
-    loading && link && 'bpk-loading-button--link',
+    loading && (link || linkOnDark) && 'bpk-loading-button--link',
     className,
   );
 
   const iconClassNames = getClassName(
     'bpk-loading-button__icon',
     large && 'bpk-loading-button__icon--large',
-    link && 'bpk-loading-button__icon--link',
+    iconOnly &&
+      (large
+        ? 'bpk-loading-button__icon--large-icon-only'
+        : 'bpk-loading-button__icon--icon-only'),
+    (link || linkOnDark) && 'bpk-loading-button__icon--link',
   );
 
   return (
@@ -129,11 +135,10 @@ const BpkLoadingButton = (props: LoadingProps) => {
       large={large}
       className={classNames}
       link={link}
+      linkOnDark={linkOnDark}
       {...rest}
     >
-      {loading && !iconOnly && (
-        <span className={iconClassNames}>{loadingIcon}</span>
-      )}
+      {loading && <span className={iconClassNames}>{loadingIcon}</span>}
       {child0}
       {child1}
       {child2}
@@ -148,6 +153,7 @@ BpkLoadingButton.propTypes = {
   secondary: PropTypes.bool,
   destructive: PropTypes.bool,
   link: PropTypes.bool,
+  linkOnDark: PropTypes.bool,
   loading: PropTypes.bool,
   iconOnly: PropTypes.bool,
   icon: PropTypes.element,
@@ -166,6 +172,7 @@ BpkLoadingButton.defaultProps = {
   destructive: false,
   large: false,
   link: false,
+  linkOnDark: false,
   loading: false,
   iconOnly: false,
   icon: null,

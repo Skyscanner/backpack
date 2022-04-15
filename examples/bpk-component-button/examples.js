@@ -36,8 +36,10 @@ import BpkButton, {
   BpkButtonPrimaryOnDark,
   BpkButtonPrimaryOnLight,
   BpkButtonSecondary,
+  BpkButtonSecondaryOnDark,
   BpkButtonDestructive,
   BpkButtonLink,
+  BpkButtonLinkOnDark,
   BpkButtonFeatured,
 } from '../../packages/bpk-component-button';
 
@@ -134,10 +136,20 @@ const PrimaryOnLightExample = () => (
   <ButtonStory primaryOnLight wrapped={BpkButton} />
 );
 const SecondaryExample = () => <ButtonStory secondary wrapped={BpkButton} />;
+const SecondaryOnDarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <ButtonStory secondaryOnDark wrapped={BpkButton} />
+  </BpkDarkExampleWrapper>
+);
 const DestructiveExample = () => (
   <ButtonStory destructive wrapped={BpkButton} />
 );
 const LinkExample = () => <ButtonStory link wrapped={BpkButton} />;
+const LinkOnDarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <ButtonStory linkOnDark wrapped={BpkButton} />
+  </BpkDarkExampleWrapper>
+);
 const FeaturedExample = () => <ButtonStory featured wrapped={BpkButton} />;
 
 const ComponentButtonPrimaryExample = (props: {}) => (
@@ -158,6 +170,12 @@ const ComponentButtonSecondaryExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
   <ButtonStory wrapped={BpkButtonSecondary} {...props} />
 );
+const ComponentButtonSecondaryOnDarkExample = (props: {}) => (
+  <BpkDarkExampleWrapper>
+    {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+    <ButtonStory wrapped={BpkButtonSecondaryOnDark} {...props} />
+  </BpkDarkExampleWrapper>
+);
 const ComponentButtonDestructiveExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
   <ButtonStory wrapped={BpkButtonDestructive} {...props} />
@@ -165,6 +183,12 @@ const ComponentButtonDestructiveExample = (props: {}) => (
 const ComponentButtonLinkExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
   <ButtonStory wrapped={BpkButtonLink} {...props} />
+);
+const ComponentButtonLinkOnDarkExample = (props: {}) => (
+  <BpkDarkExampleWrapper>
+    {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+    <ButtonStory wrapped={BpkButtonLinkOnDark} {...props} />
+  </BpkDarkExampleWrapper>
 );
 const ComponentButtonFeaturedExample = (props: {}) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
@@ -177,8 +201,10 @@ const MixedExample = () => (
     <ComponentButtonPrimaryOnDarkExample />
     <ComponentButtonPrimaryOnLightExample />
     <ComponentButtonSecondaryExample />
+    <ComponentButtonSecondaryOnDarkExample />
     <ComponentButtonDestructiveExample />
     <ComponentButtonLinkExample />
+    <ComponentButtonLinkOnDarkExample />
     <ComponentButtonFeaturedExample />
   </>
 );
@@ -189,8 +215,10 @@ const AnchorTagsExample = () => (
     <ComponentButtonPrimaryOnDarkExample href="#" />
     <ComponentButtonPrimaryOnLightExample href="#" />
     <ComponentButtonSecondaryExample href="#" />
+    <ComponentButtonSecondaryOnDarkExample href="#" />
     <ComponentButtonDestructiveExample href="#" />
     <ComponentButtonLinkExample href="#" />
+    <ComponentButtonLinkOnDarkExample href="#" />
     <ComponentButtonFeaturedExample href="#" />
   </>
 );
@@ -200,15 +228,19 @@ export {
   PrimaryOnDarkExample,
   PrimaryOnLightExample,
   SecondaryExample,
+  SecondaryOnDarkExample,
   DestructiveExample,
   LinkExample,
+  LinkOnDarkExample,
   FeaturedExample,
   ComponentButtonPrimaryExample,
   ComponentButtonPrimaryOnDarkExample,
   ComponentButtonPrimaryOnLightExample,
   ComponentButtonSecondaryExample,
+  ComponentButtonSecondaryOnDarkExample,
   ComponentButtonDestructiveExample,
   ComponentButtonLinkExample,
+  ComponentButtonLinkOnDarkExample,
   ComponentButtonFeaturedExample,
   MixedExample,
   AnchorTagsExample,

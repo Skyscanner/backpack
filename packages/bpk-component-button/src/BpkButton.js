@@ -27,8 +27,10 @@ import {
   BpkButtonPrimaryOnDark,
   BpkButtonPrimaryOnLight,
   BpkButtonSecondary,
+  BpkButtonSecondaryOnDark,
   BpkButtonDestructive,
   BpkButtonLink,
+  BpkButtonLinkOnDark,
   BpkButtonFeatured,
   BpkButtonOutline,
 } from '../index';
@@ -44,10 +46,12 @@ type Props = {
   primaryOnDark: boolean,
   primaryOnLight: boolean,
   secondary: boolean,
+  secondaryOnDark: boolean,
   destructive: boolean,
   featured: boolean,
   outline: boolean,
   link: boolean,
+  linkOnDark: boolean,
 };
 
 const BpkButton = (props: Props) => {
@@ -55,10 +59,12 @@ const BpkButton = (props: Props) => {
     destructive,
     featured,
     link,
+    linkOnDark,
     outline,
     primaryOnDark,
     primaryOnLight,
     secondary,
+    secondaryOnDark,
     ...rest
   } = props;
 
@@ -73,6 +79,9 @@ const BpkButton = (props: Props) => {
   if (secondary) {
     return <BpkButtonSecondary {...rest} />;
   }
+  if (secondaryOnDark) {
+    return <BpkButtonSecondaryOnDark {...rest} />;
+  }
   if (destructive) {
     return <BpkButtonDestructive {...rest} />;
   }
@@ -85,6 +94,9 @@ const BpkButton = (props: Props) => {
   if (link) {
     return <BpkButtonLink {...rest} />;
   }
+  if (linkOnDark) {
+    return <BpkButtonLinkOnDark {...rest} />;
+  }
   return <BpkButtonPrimary {...rest} />;
 };
 
@@ -93,10 +105,12 @@ BpkButton.propTypes = {
   primaryOnDark: PropTypes.bool,
   primaryOnLight: PropTypes.bool,
   secondary: PropTypes.bool,
+  secondaryOnDark: PropTypes.bool,
   destructive: PropTypes.bool,
   featured: PropTypes.bool,
   outline: PropTypes.bool,
   link: PropTypes.bool,
+  linkOnDark: PropTypes.bool,
 };
 
 BpkButton.defaultProps = {
@@ -104,10 +118,12 @@ BpkButton.defaultProps = {
   primaryOnDark: false,
   primaryOnLight: false,
   secondary: false,
+  secondaryOnDark: false,
   destructive: false,
   featured: false,
   outline: false,
   link: false,
+  linkOnDark: false,
 };
 
 export default BpkButton;
