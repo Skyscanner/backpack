@@ -16,15 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkButtonSecondaryOnDark from './BpkButtonSecondaryOnDark';
+import commonButtonTests from './commonButtonTests';
 
-export {
-  buttonThemeAttributes,
-  primaryThemeAttributes,
-  primaryOnDarkThemeAttributes,
-  primaryOnLightThemeAttributes,
-  secondaryThemeAttributes,
-  secondaryOnDarkThemeAttributes,
-  featuredThemeAttributes,
-  destructiveThemeAttributes,
-} from './src/themeAttributes';
+commonButtonTests(BpkButtonSecondaryOnDark);

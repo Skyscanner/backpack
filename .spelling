@@ -341,6 +341,7 @@ isOpen
 itemClassName
 itemStyle
 leadingButton
+linkOnDark
 mainStyle
 maxDate
 maxRating
@@ -383,6 +384,7 @@ RATING_TYPES.default
 RATING_TYPES.pill
 renderFlag
 renderTarget
+secondaryOnDark
 selectionConfiguration
 selectedDates
 selectedId

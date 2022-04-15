@@ -23,7 +23,9 @@ export default () => (
     <BpkButton>Primary</BpkButton>
     <BpkButton large>Large primary</BpkButton>
     <BpkButton secondary>Secondary</BpkButton>
+    <BpkButton secondaryOnDark>SecondaryOnDark</BpkButton>
     <BpkButton link>Link</BpkButton>
+    <BpkButton linkOnDark>LinkOnDark</BpkButton>
     <BpkButton outline>Outline (Deprecated, use PrimaryOnDark or PrimaryOnLight instead)</BpkButton>
     <BpkButton primaryOnDark>PrimaryOnDark</BpkButton>
     <BpkButton primaryOnLight>PrimaryOnLight</BpkButton>
@@ -37,25 +39,27 @@ export default () => (
 
 ## Props
 
-| Property       | PropType             | Required | Default Value |
-| -------------  | -------------------- | -------- | ------------- |
-| children       | -                    | true     | -             |
-| destructive    | bool                 | false    | false         |
-| featured       | bool                 | false    | false         |
-| link           | bool                 | false    | false         |
-| outline        | bool (deprecated)    | false    | false         |
-| secondary      | bool                 | false    | false         |
-| primaryOnDark  | bool                 | false    | false         |
-| primaryOnLight | bool                 | false    | false         |
-| blank          | bool                 | false    | false         |
-| className      | string               | false    | null          |
-| disabled       | bool                 | false    | false         |
-| href           | string               | false    | null          |
-| iconOnly       | bool                 | false    | false         |
-| large          | bool                 | false    | false         |
-| onClick        | func                 | false    | null          |
-| rel            | string               | false    | null          |
-| submit         | bool                 | false    | false         |
+| Property        | PropType             | Required | Default Value |
+| --------------- | -------------------- | -------- | ------------- |
+| children        | -                    | true     | -             |
+| destructive     | bool                 | false    | false         |
+| featured        | bool                 | false    | false         |
+| link            | bool                 | false    | false         |
+| linkOnDark      | bool                 | false    | false         |
+| outline         | bool (deprecated)    | false    | false         |
+| secondary       | bool                 | false    | false         |
+| secondaryOnDark | bool                 | false    | false         |
+| primaryOnDark   | bool                 | false    | false         |
+| primaryOnLight  | bool                 | false    | false         |
+| blank           | bool                 | false    | false         |
+| className       | string               | false    | null          |
+| disabled        | bool                 | false    | false         |
+| href            | string               | false    | null          |
+| iconOnly        | bool                 | false    | false         |
+| large           | bool                 | false    | false         |
+| onClick         | func                 | false    | null          |
+| rel             | string               | false    | null          |
+| submit          | bool                 | false    | false         |
 
 ## Theme Props
 
@@ -99,6 +103,15 @@ export default () => (
 * `buttonSecondaryBackgroundColor`
 * `buttonSecondaryHoverBackgroundColor`
 * `buttonSecondaryActiveBackgroundColor`
+
+### Secondary on dark:
+
+* `buttonSecondaryOnDarkTextColor`
+* `buttonSecondaryOnDarkHoverTextColor`
+* `buttonSecondaryOnDarkActiveTextColor`
+* `buttonSecondaryOnDarkBackgroundColor`
+* `buttonSecondaryOnDarkHoverBackgroundColor`
+* `buttonSecondaryOnDarkActiveBackgroundColor`
 
 ### Featured:
 

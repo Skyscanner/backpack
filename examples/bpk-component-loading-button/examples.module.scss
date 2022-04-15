@@ -16,15 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+@import '~bpk-mixins/index';
 
-export {
-  buttonThemeAttributes,
-  primaryThemeAttributes,
-  primaryOnDarkThemeAttributes,
-  primaryOnLightThemeAttributes,
-  secondaryThemeAttributes,
-  secondaryOnDarkThemeAttributes,
-  featuredThemeAttributes,
-  destructiveThemeAttributes,
-} from './src/themeAttributes';
+$bpk-spacing-v2: true;
+
+.bpk-loading-button-example-wrapper {
+  padding: bpk-spacing-sm() 0;
+}

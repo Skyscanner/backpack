@@ -23,15 +23,20 @@ import BpkButtonPrimary from './src/BpkButtonPrimary';
 import BpkButtonPrimaryOnDark from './src/BpkButtonPrimaryOnDark';
 import BpkButtonPrimaryOnLight from './src/BpkButtonPrimaryOnLight';
 import BpkButtonSecondary from './src/BpkButtonSecondary';
+import BpkButtonSecondaryOnDark from './src/BpkButtonSecondaryOnDark';
 import BpkButtonDestructive from './src/BpkButtonDestructive';
 import BpkButtonLink from './src/BpkButtonLink';
+import BpkButtonLinkOnDark from './src/BpkButtonLinkOnDark';
 import BpkButtonFeatured from './src/BpkButtonFeatured';
 import BpkButtonOutline from './src/BpkButtonOutline';
 
 export {
   buttonThemeAttributes,
   primaryThemeAttributes,
+  primaryOnDarkThemeAttributes,
+  primaryOnLightThemeAttributes,
   secondaryThemeAttributes,
+  secondaryOnDarkThemeAttributes,
   featuredThemeAttributes,
   destructiveThemeAttributes,
 } from './themeAttributes';
@@ -43,8 +48,10 @@ export {
   BpkButtonPrimaryOnDark,
   BpkButtonPrimaryOnLight,
   BpkButtonSecondary,
+  BpkButtonSecondaryOnDark,
   BpkButtonDestructive,
   BpkButtonLink,
+  BpkButtonLinkOnDark,
   BpkButtonFeatured,
   BpkButtonOutline,
 };

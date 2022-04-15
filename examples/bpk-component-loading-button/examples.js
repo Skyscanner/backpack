@@ -20,7 +20,10 @@
 
 import React, { Component } from 'react';
 
-import { action } from '../../packages/bpk-storybook-utils';
+import {
+  action,
+  BpkDarkExampleWrapper,
+} from '../../packages/bpk-storybook-utils';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
@@ -28,9 +31,14 @@ import {
 } from '../../packages/bpk-component-icon';
 import BaggageIconSm from '../../packages/bpk-component-icon/sm/baggage';
 import BaggageIconLg from '../../packages/bpk-component-icon/lg/baggage';
+import { cssModules } from '../../packages/bpk-react-utils';
 import BpkLoadingButton, {
   ICON_POSITION,
 } from '../../packages/bpk-component-loading-button';
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 type Props = {};
 
@@ -64,6 +72,108 @@ class InteractiveExample extends Component<Props, State> {
   }
 }
 
+const LoadingButtonStory = ({
+  className,
+  wrapped,
+  ...rest
+}: {
+  className: ?string,
+  wrapped: Object,
+}) => {
+  const Wrapped = wrapped;
+  return (
+    <div
+      className={[
+        getClassName('bpk-loading-button-example-wrapper'),
+        className,
+      ].join(' ')}
+    >
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped onClick={action('Button clicked')} {...rest}>
+        Button
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped
+        iconPosition={ICON_POSITION.LEADING}
+        onClick={action('Button leading icon clicked')}
+        {...rest}
+      >
+        Button
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
+        Loading
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped iconOnly onClick={action('Button iconOnly clicked')} {...rest}>
+        <span className="visually-hidden">Search</span>
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped
+        iconOnly
+        loading
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        {...rest}
+      >
+        <span className="visually-hidden">Search</span>
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped large onClick={action('Button clicked')} {...rest}>
+        Button
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped
+        iconPosition={ICON_POSITION.LEADING}
+        large
+        onClick={action('Button clicked')}
+        {...rest}
+      >
+        Button
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped
+        large
+        loading
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        {...rest}
+      >
+        Loading
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped
+        iconOnly
+        large
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        {...rest}
+      >
+        <span className="visually-hidden">Search</span>
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped
+        iconOnly
+        large
+        loading
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        {...rest}
+      >
+        <span className="visually-hidden">Search</span>
+      </Wrapped>
+    </div>
+  );
+};
+
+LoadingButtonStory.defaultProps = { className: null };
+
 const DocsPrimary = () => (
   <div>
     <InteractiveExample>Search</InteractiveExample>
@@ -71,512 +181,59 @@ const DocsPrimary = () => (
     <InteractiveExample large>Search</InteractiveExample>
   </div>
 );
-const Primary = () => (
-  <div>
-    &nbsp;
-    <BpkLoadingButton onClick={action('primary clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconPosition={ICON_POSITION.LEADING}
-      onClick={action('primary leading clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton loading onClick={action('THIS SHOULD NOT HAPPEN')}>
-      Loading
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      loading
-      iconPosition={ICON_POSITION.LEADING}
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Loading
-    </BpkLoadingButton>
-    &nbsp; &nbsp;
-    <BpkLoadingButton large onClick={action('large primary clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconPosition={ICON_POSITION.LEADING}
-      large
-      onClick={action('large primary clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton large loading onClick={action('THIS SHOULD NOT HAPPEN')}>
-      Loading
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      large
-      iconPosition={ICON_POSITION.LEADING}
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Loading
-    </BpkLoadingButton>
-  </div>
+const Primary = () => <LoadingButtonStory wrapped={BpkLoadingButton} />;
+const PrimaryOnDark = () => (
+  <BpkDarkExampleWrapper>
+    <LoadingButtonStory primaryOnDark wrapped={BpkLoadingButton} />
+  </BpkDarkExampleWrapper>
+);
+const PrimaryOnLight = () => (
+  <LoadingButtonStory primaryOnLight wrapped={BpkLoadingButton} />
 );
 const Secondary = () => (
-  <div>
-    &nbsp;
-    <BpkLoadingButton secondary onClick={action('secondary clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      secondary
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      secondary
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Loading
-    </BpkLoadingButton>
-    &nbsp; &nbsp;
-    <BpkLoadingButton
-      secondary
-      large
-      onClick={action('large secondary clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      secondary
-      large
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      secondary
-      large
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Loading
-    </BpkLoadingButton>
-  </div>
+  <LoadingButtonStory secondary wrapped={BpkLoadingButton} />
+);
+const SecondaryOnDark = () => (
+  <BpkDarkExampleWrapper>
+    <LoadingButtonStory secondaryOnDark wrapped={BpkLoadingButton} />
+  </BpkDarkExampleWrapper>
 );
 const Destructive = () => (
-  <div>
-    <BpkLoadingButton destructive onClick={action('destructive clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      destructive
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      destructive
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Loading
-    </BpkLoadingButton>
-    &nbsp; &nbsp;
-    <BpkLoadingButton
-      destructive
-      large
-      onClick={action('large destructive clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      destructive
-      large
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      destructive
-      large
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Loading
-    </BpkLoadingButton>
-  </div>
+  <LoadingButtonStory destructive wrapped={BpkLoadingButton} />
 );
-const LinkButton = () => (
-  <div>
-    <BpkLoadingButton link onClick={action('link button clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton link disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton link loading onClick={action('THIS SHOULD NOT HAPPEN')}>
-      Loading
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton link large onClick={action('large link button clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      link
-      large
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      link
-      large
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Loading
-    </BpkLoadingButton>
-  </div>
+const LinkButton = () => <LoadingButtonStory link wrapped={BpkLoadingButton} />;
+const LinkOnDarkButton = () => (
+  <BpkDarkExampleWrapper>
+    <LoadingButtonStory linkOnDark wrapped={BpkLoadingButton} />
+  </BpkDarkExampleWrapper>
 );
 const Featured = () => (
-  <div>
-    <BpkLoadingButton featured onClick={action('featured button clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      featured
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      featured
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Loading
-    </BpkLoadingButton>
-    &nbsp; &nbsp;
-    <BpkLoadingButton
-      featured
-      large
-      onClick={action('featured button clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      featured
-      large
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Disabled
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      featured
-      large
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      Loading
-    </BpkLoadingButton>
-  </div>
-);
-const IconOnly = () => (
-  <div>
-    <BpkLoadingButton iconOnly onClick={action('iconOnly button clicked')}>
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      secondary
-      onClick={action('iconOnly button secondary clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      destructive
-      onClick={action('iconOnly button destructive clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      featured
-      onClick={action('iconOnly button featured clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp; &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      large
-      onClick={action('large iconOnly button clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      large
-      secondary
-      onClick={action('large iconOnly button secondary clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      large
-      destructive
-      onClick={action('large iconOnly button destructive clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      large
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      large
-      loading
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      large
-      featured
-      onClick={action('large iconOnly button featured clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp;
-  </div>
+  <LoadingButtonStory featured wrapped={BpkLoadingButton} />
 );
 const Mixture = () => (
   <div>
-    <BpkLoadingButton onClick={action('primary button clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton secondary onClick={action('secondary button clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      destructive
-      onClick={action('destructive button clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton link onClick={action('link button clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton featured onClick={action('featured button clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton iconOnly onClick={action('iconOnly button clicked')}>
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp; &nbsp;
-    <BpkLoadingButton large onClick={action('primary button clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      large
-      secondary
-      onClick={action('secondary button clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      large
-      destructive
-      onClick={action('destructive button clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton large link onClick={action('link button clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      large
-      featured
-      onClick={action('featured button clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      iconOnly
-      large
-      onClick={action('large iconOnly button clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
+    <Primary />
+    <PrimaryOnLight />
+    <PrimaryOnDark />
+    <Secondary />
+    <SecondaryOnDark />
+    <Destructive />
+    <LinkButton />
+    <LinkOnDarkButton />
+    <Featured />
   </div>
 );
 const AnchorTags = () => (
   <div>
-    <BpkLoadingButton href="#" onClick={action('primary anchor clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      href="#"
-      secondary
-      onClick={action('secondary anchor clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      href="#"
-      destructive
-      onClick={action('destructive anchor clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton href="#" link onClick={action('link anchor clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      href="#"
-      featured
-      onClick={action('featured anchor clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      href="#"
-      iconOnly
-      onClick={action('iconOnly anchor clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
-    &nbsp; &nbsp;
-    <BpkLoadingButton href="#" large onClick={action('primary anchor clicked')}>
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      href="#"
-      large
-      secondary
-      onClick={action('secondary anchor clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      href="#"
-      large
-      destructive
-      onClick={action('destructive anchor clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      href="#"
-      large
-      link
-      onClick={action('link anchor clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      href="#"
-      large
-      featured
-      onClick={action('featured anchor clicked')}
-    >
-      Button
-    </BpkLoadingButton>
-    &nbsp;
-    <BpkLoadingButton
-      href="#"
-      large
-      iconOnly
-      onClick={action('iconOnly anchor clicked')}
-    >
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>
+    <Primary href="#" />
+    <PrimaryOnLight href="#" />
+    <PrimaryOnDark href="#" />
+    <Secondary href="#" />
+    <SecondaryOnDark href="#" />
+    <Destructive href="#" />
+    <LinkButton href="#" />
+    <LinkOnDarkButton href="#" />
+    <Featured href="#" />
   </div>
 );
 const CustomIcon = () => {
@@ -647,16 +304,109 @@ const CustomIcon = () => {
     </div>
   );
 };
+const VisualExample = () => (
+  <div>
+    <div>
+      <BpkLoadingButton loading onClick={action('button clicked')}>
+        Search
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton iconOnly loading onClick={action('iconOnly clicked')}>
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton large loading onClick={action('button clicked')}>
+        Search
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        large
+        iconOnly
+        loading
+        onClick={action('iconOnly clicked')}
+      >
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>
+    </div>
+    <div>
+      <BpkLoadingButton link loading onClick={action('button clicked')}>
+        Search
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        link
+        iconOnly
+        loading
+        onClick={action('iconOnly clicked')}
+      >
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton link large loading onClick={action('button clicked')}>
+        Search
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        link
+        large
+        iconOnly
+        loading
+        onClick={action('iconOnly clicked')}
+      >
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>
+    </div>
+    <div>
+      <BpkDarkExampleWrapper>
+        <BpkLoadingButton linkOnDark loading onClick={action('button clicked')}>
+          Search
+        </BpkLoadingButton>
+        &nbsp;
+        <BpkLoadingButton
+          linkOnDark
+          iconOnly
+          loading
+          onClick={action('iconOnly clicked')}
+        >
+          <span className="visually-hidden">Search</span>
+        </BpkLoadingButton>
+        &nbsp;
+        <BpkLoadingButton
+          linkOnDark
+          large
+          loading
+          onClick={action('button clicked')}
+        >
+          Search
+        </BpkLoadingButton>
+        &nbsp;
+        <BpkLoadingButton
+          linkOnDark
+          large
+          iconOnly
+          loading
+          onClick={action('iconOnly clicked')}
+        >
+          <span className="visually-hidden">Search</span>
+        </BpkLoadingButton>
+      </BpkDarkExampleWrapper>
+    </div>
+  </div>
+);
 
 export {
   DocsPrimary,
   Primary,
+  PrimaryOnDark,
+  PrimaryOnLight,
   Secondary,
+  SecondaryOnDark,
   Destructive,
   LinkButton,
+  LinkOnDarkButton,
   Featured,
-  IconOnly,
   Mixture,
   AnchorTags,
   CustomIcon,
+  VisualExample,
 };
