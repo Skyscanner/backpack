@@ -19,23 +19,58 @@
 
 import React, { type ComponentType } from 'react';
 import PropTypes from 'prop-types';
-import { withScriptjs } from 'react-google-maps';
+import { useJsApiLoader } from '@react-google-maps/api';
 
 import DefaultLoadingElement from './DefaultLoadingElement';
 
-function withGoogleMapsScript(Component: ComponentType<any>) {
-  const ScriptedComponent = withScriptjs(Component);
+export const LibraryShapeType = PropTypes.arrayOf(
+  PropTypes.oneOf([
+    'drawing',
+    'geometry',
+    'localContext',
+    'places',
+    'visualization',
+  ]),
+);
 
-  const WithGoogleMapsScript = ({ ...rest }: { [string]: any }) => (
-    <ScriptedComponent {...rest} />
-  );
+function withGoogleMapsScript(Component: ComponentType<any>) {
+  const WithGoogleMapsScript = ({
+    config,
+    loadingElement,
+    ...rest
+  }: {
+    [string]: any,
+  }) => {
+    const { isLoaded, loadError } = useJsApiLoader(config);
+
+    if (!isLoaded) {
+      return loadingElement;
+    }
+
+    if (loadError) {
+      throw new Error('Google maps cannot be loaded!');
+    }
+
+    return <Component {...rest} />;
+  };
 
   WithGoogleMapsScript.propTypes = {
     loadingElement: PropTypes.node,
+    config: PropTypes.shape({
+      googleMapsApiKey: PropTypes.string.isRequired,
+      libraries: LibraryShapeType,
+      version: PropTypes.string,
+      preventGoogleFontsLoading: PropTypes.bool,
+    }),
   };
 
   WithGoogleMapsScript.defaultProps = {
     loadingElement: <DefaultLoadingElement />,
+    config: {
+      preventGoogleFontsLoading: true,
+      // https://github.com/JustFly1984/react-google-maps-api/issues/2963
+      version: '3.46',
+    },
   };
 
   return WithGoogleMapsScript;
