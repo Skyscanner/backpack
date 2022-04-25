@@ -295,6 +295,21 @@ const WithPriceMarkersExample = () => (
   <StatefulBpkPriceMarker action={action('Price marker clicked')} />
 );
 
+const MultipleMapsExample = () => (
+  <>
+    <span>first map:</span>
+    <StoryMap
+      zoom={15}
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
+    />
+    <span>second map:</span>
+    <StoryMap
+      zoom={15}
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
+    />
+  </>
+);
+
 export {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -305,4 +320,5 @@ export {
   WithAMarkerExample,
   WithIconMarkersExample,
   WithPriceMarkersExample,
+  MultipleMapsExample,
 };

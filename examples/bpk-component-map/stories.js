@@ -29,6 +29,7 @@ import {
   WithAMarkerExample,
   WithIconMarkersExample,
   WithPriceMarkersExample,
+  MultipleMapsExample,
 } from './examples';
 
 storiesOf('bpk-component-map', module)
@@ -46,4 +47,5 @@ storiesOf('bpk-component-map', module)
   .add('With a bounding box', WithBoundingBoxExample)
   .add('With a marker', WithAMarkerExample)
   .add('Icon markers', WithIconMarkersExample)
-  .add('Price markers', WithPriceMarkersExample);
+  .add('Price markers', WithPriceMarkersExample)
+  .add('Multi maps', MultipleMapsExample);
