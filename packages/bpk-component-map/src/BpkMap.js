@@ -42,6 +42,25 @@ export type MapRef = ?{
   fitBounds: (Bounds) => void,
 };
 
+// https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle
+const MapTypeStyle = PropTypes.arrayOf(
+  PropTypes.shape({
+    featureType: PropTypes.string,
+    elementType: PropTypes.string,
+    stylers: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
+);
+
+type stylersObject = {
+  [string]: string,
+};
+
+type singleStyleType = {
+  featureType: ?string,
+  elementType: ?string,
+  stylers: Array<stylersObject>,
+};
+
 type Props = {
   greedyGestureHandling: boolean,
   panEnabled: boolean,
@@ -54,7 +73,8 @@ type Props = {
   onRegionChange: ?(Bounds, LatLong) => mixed,
   onZoom: ?(number) => mixed,
   onTilesLoaded: ?() => void,
-  className: ?(string) => string,
+  className: ?string,
+  mapOptionStyles: ?Array<singleStyleType>,
 };
 
 const BpkMap = (props: Props) => {
@@ -64,6 +84,7 @@ const BpkMap = (props: Props) => {
     children,
     className,
     greedyGestureHandling,
+    mapOptionStyles,
     mapRef,
     onRegionChange,
     onTilesLoaded,
@@ -125,6 +146,8 @@ const BpkMap = (props: Props) => {
         streetViewControl: false,
         fullscreenControl: false,
         rotateControl: false,
+        clickableIcons: false,
+        styles: mapOptionStyles,
       }}
       onDragEnd={() => {
         if (ref && ref.current && onRegionChange) {
@@ -166,6 +189,7 @@ BpkMap.propTypes = {
   showControls: PropTypes.bool,
   onTilesLoaded: PropTypes.func,
   zoom: PropTypes.number,
+  mapOptionStyles: MapTypeStyle,
 };
 
 BpkMap.defaultProps = {
@@ -181,6 +205,7 @@ BpkMap.defaultProps = {
   showControls: true,
   zoom: 15,
   className: null,
+  mapOptionStyles: null,
 };
 
 export default BpkMap;
