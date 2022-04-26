@@ -35,20 +35,23 @@ export default () => (
     }}
   >
     <BpkIconMarker
-      icon={<AlignedLandmarkIconSm />}
+      icon={<AlignedLandmarkIconSm/>}
       position={{ latitude: 27.9881, longitude: 86.925 }}
-      onClick={() => {}}
+      onClick={() => {
+      }}
     />
     <BpkIconMarker
-      icon={<AlignedLandmarkIconSm />}
+      icon={<AlignedLandmarkIconSm/>}
       position={{ latitude: 27.9881, longitude: 86.925 }}
-      onClick={() => {}}
+      onClick={() => {
+      }}
       selected
     />
     <BpkIconMarker
-      icon={<AlignedLandmarkIconSm />}
+      icon={<AlignedLandmarkIconSm/>}
       position={{ latitude: 27.9881, longitude: 86.927 }}
-      onClick={() => {}}
+      onClick={() => {
+      }}
       disabled
     />
     <BpkOverlayView position={{ latitude: 27.9881, longitude: 86.925 }}>
@@ -100,22 +103,24 @@ export default () => (
 
 ### withGoogleMapsScript
 
-`withGoogleMapsScript` is a HOC that loads the Google Maps JavaScript, then loads the map. This is useful for when you don't already have the Google Maps JavaScript loaded.
+`withGoogleMapsScript` is a HOC that loads the Google Maps JavaScript, then loads the map. This is useful for when you
+don't already have the Google Maps JavaScript loaded.
 
-If you intend to include multiple maps on one page, it's better to load the Google Maps JavaScript in this HOC, as it ensures that script will not be re-downloaded every time it's used.
+If you intend to include multiple maps on one page, it's better to load the Google Maps JavaScript in this HOC, as it
+ensures that script will not be re-downloaded every time it's used.
 
 ```js
 import React from 'react';
 import BpkMap, { withGoogleMapsScript } from 'bpk-component-map';
 
-const MAP_URL =
-  'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places';
-
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 
 export default () => (
   <BpkMapWithScript
-    googleMapURL={MAP_URL}
+    config={{
+      googleMapsApiKey: 'YOUR_API_KEY',
+      // ...otherOptions
+    }}
     zoom={15}
     center={{
       latitude: 27.9881,
@@ -135,9 +140,7 @@ export default () => (
 | --------------------- | ----------------------------------------------------------------- | -------- | -------------------------------- |
 | bounds                | shape({north: number, east: number, south: number, west: number}) | false    | null                             |
 | center                | shape({latitude: number, longitude: number})                      | false    | null                             |
-| containerElement      | node                                                              | false    | <div style={{height: '100%'}} /> |
 | greedyGestureHandling | bool                                                              | false    | false                            |
-| mapElement            | node                                                              | false    | <div style={{height: '100%'}} /> |
 | mapRef                | func                                                              | false    | null                             |
 | onRegionChange        | func                                                              | false    | null                             |
 | onZoom                | func                                                              | false    | null                             |
@@ -145,6 +148,8 @@ export default () => (
 | panEnabled            | bool                                                              | false    | true                             |
 | showControls          | bool                                                              | false    | true                             |
 | zoom                  | number                                                            | false    | 15                               |
+| className             | string                                                            | false    | null                             |
+| mapOptionStyles       | [`Array<MapTypeStyle>`](https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle) | false | null |
 
 Note: One of `bounds` and `center` must be provided.
 
@@ -154,7 +159,7 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 | Property       | PropType | Required | Default Value |
 | -------------- | -------- | -------- | ------------- |
-| googleMapURL   | string   | true     | -             |
+| config   | shape({googleMapsApiKey: string})   | true     | -             |
 | loadingElement | node     | false    | BpkSpinner    |
 
 ### BpkIconMarker
@@ -171,8 +176,8 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 #### `icon`
 
-`BpkIconMarker` only supports small icons from the Backpack icon set. Large icons should not be used with `BpkIconMarker`.
-
+`BpkIconMarker` only supports small icons from the Backpack icon set. Large icons should not be used
+with `BpkIconMarker`.
 
 ### BpkPriceMarker
 
