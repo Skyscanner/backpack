@@ -17,7 +17,7 @@
     "@skyscanner/bpk-foundations-web": "^6.2.0",
     "bpk-component-label": "^5.1.5",
     "bpk-component-select": "^5.1.5",
-    "bpk-mixins": "^28.3.0",
+    "bpk-mixins": "^29.0.0",
     "bpk-react-utils": "^4.1.1",
     "konami": "^1.6.2",
     "prop-types": "^15.7.2"

@@ -19,7 +19,7 @@
   "dependencies": {
     "@skyscanner/bpk-foundations-web": "^6.2.0",
     "@skyscanner/bpk-svgs": "^14.1.7",
-    "bpk-mixins": "^28.3.0",
+    "bpk-mixins": "^29.0.0",
     "bpk-react-utils": "^4.1.1",
     "prop-types": "^15.7.2"
   },
