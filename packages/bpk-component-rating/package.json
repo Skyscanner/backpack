@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-rating",
-  "version": "3.1.6",
+  "version": "3.1.7",
   "description": "Backpack rating component.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^6.2.0",
-    "bpk-component-text": "^6.2.0"
+    "bpk-component-text": "^7.0.0"
   }
 }
