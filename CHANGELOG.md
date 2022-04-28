@@ -1,3 +1,11 @@
+# 2022-04-27
+
+**Breaking:**
+  - bpk-component-content-container: 4.1.5 => 5.0.0
+  - bpk-component-graphic-promotion: 2.0.2 => 3.0.0
+  - bpk-component-text: 6.2.0 => 7.0.0
+    - Updated typography mixins to latest which removes type styles that applied to smaller sizes when on mobile breakpoints.
+
 # 2022-04-15
 
 **Added:**
