@@ -20,7 +20,7 @@
 
 const reactDeps = require('../../package.json').devDependencies;
 
-const skyscannerStandard = '16.4.2';
+const skyscannerStandard = '16.8.3';
 const reactLibs = ['react', 'react-dom'];
 
 const reactVersionErrors = [];
