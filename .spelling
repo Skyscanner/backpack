@@ -868,3 +868,6 @@ ratingScale
 RATING_SCALES
 RATING_SCALES.zeroToTen
 Storyshots
+mapOptionStyles
+googleMapsApiKey
+preventGoogleFontsLoading

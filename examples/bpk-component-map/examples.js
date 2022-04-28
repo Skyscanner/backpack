@@ -49,13 +49,7 @@ const StoryMap = (props: Props) => {
   return (
     <div style={{ height: '400px' }}>
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <BpkMapWithLoading
-        config={{
-          googleMapsApiKey: '',
-          libraries: ['geometry', 'drawing', 'places'],
-        }}
-        {...rest}
-      >
+      <BpkMapWithLoading googleMapsApiKey="" {...rest}>
         {children}
       </BpkMapWithLoading>
     </div>

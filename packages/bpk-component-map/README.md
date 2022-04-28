@@ -112,10 +112,7 @@ const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 
 export default () => (
   <BpkMapWithScript
-    config={{
-      googleMapsApiKey: 'YOUR_API_KEY',
-      // ...otherOptions
-    }}
+    googleMapsApiKey='YOUR_API_KEY'
     zoom={15}
     center={{
       latitude: 27.9881,
@@ -144,7 +141,7 @@ export default () => (
 | showControls          | bool                                                              | false    | true                             |
 | zoom                  | number                                                            | false    | 15                               |
 | className             | string                                                            | false    | null                             |
-| mapOptionStyles       | [`Array<MapTypeStyle>`](https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle) | false | null |
+| mapOptionStyles       | [array](https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle) | false | null |
 
 Note: One of `bounds` and `center` must be provided.
 
@@ -154,7 +151,10 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 | Property       | PropType | Required | Default Value |
 | -------------- | -------- | -------- | ------------- |
-| config   | shape({googleMapsApiKey: string})   | true     | -             |
+| googleMapsApiKey   | string   | true     | -             |
+| libraries        | array     | false    | ['geometry', 'drawing', 'places']    |
+| preventGoogleFontsLoading | bool     | false    | true    |
+| version | string     | false    | '3.46'    |
 | loadingElement | node     | false    | BpkSpinner    |
 
 ### BpkIconMarker

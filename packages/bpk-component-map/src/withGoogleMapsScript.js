@@ -35,13 +35,21 @@ export const LibraryShapeType = PropTypes.arrayOf(
 
 function withGoogleMapsScript(Component: ComponentType<any>) {
   const WithGoogleMapsScript = ({
-    config,
+    googleMapsApiKey,
+    libraries,
     loadingElement,
+    preventGoogleFontsLoading,
+    version,
     ...rest
   }: {
     [string]: any,
   }) => {
-    const { isLoaded, loadError } = useJsApiLoader(config);
+    const { isLoaded, loadError } = useJsApiLoader({
+      googleMapsApiKey,
+      libraries,
+      preventGoogleFontsLoading,
+      version,
+    });
 
     if (!isLoaded) {
       return loadingElement;
@@ -56,21 +64,18 @@ function withGoogleMapsScript(Component: ComponentType<any>) {
 
   WithGoogleMapsScript.propTypes = {
     loadingElement: PropTypes.node,
-    config: PropTypes.shape({
-      googleMapsApiKey: PropTypes.string.isRequired,
-      libraries: LibraryShapeType,
-      version: PropTypes.string,
-      preventGoogleFontsLoading: PropTypes.bool,
-    }),
+    googleMapsApiKey: PropTypes.string.isRequired,
+    libraries: LibraryShapeType,
+    version: PropTypes.string,
+    preventGoogleFontsLoading: PropTypes.bool,
   };
 
   WithGoogleMapsScript.defaultProps = {
     loadingElement: <DefaultLoadingElement />,
-    config: {
-      preventGoogleFontsLoading: true,
-      // https://github.com/JustFly1984/react-google-maps-api/issues/2963
-      version: '3.46',
-    },
+    preventGoogleFontsLoading: true,
+    libraries: ['geometry', 'drawing', 'places'],
+    // https://github.com/JustFly1984/react-google-maps-api/issues/2963
+    version: '3.46',
   };
 
   return WithGoogleMapsScript;
