@@ -31,6 +31,7 @@ exports[`BpkSwitch should render correctly when checked 1`] = `
   >
     <input
       aria-label="Switch"
+      checked=""
       class="bpk-switch__checkbox"
       type="checkbox"
     />
