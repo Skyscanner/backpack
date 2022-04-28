@@ -26,7 +26,7 @@ import {
   UpperBoundsExample,
   StatefulExample,
   ConfigurableExample,
-  OutlineExample,
+  OnDarkExample,
   MixedExample,
 } from './examples';
 
@@ -36,5 +36,5 @@ storiesOf('bpk-component-nudger', module)
   .add('Upper bounds', UpperBoundsExample)
   .add('Stateful example', StatefulExample)
   .add('Configurable nudger', ConfigurableExample)
-  .add('Outline nudger', OutlineExample)
+  .add('On dark nudger', OnDarkExample)
   .add('Visual test', MixedExample);

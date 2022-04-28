@@ -36,7 +36,7 @@ export const COMMON_PROP_TYPES = {
   increaseButtonLabel: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
-  buttonType: PropTypes.oneOf(['secondary', 'outline']),
+  buttonType: PropTypes.oneOf(['secondary', 'secondaryOnDark']),
 };
 
 export const COMMON_DEFAULT_PROPS = {
