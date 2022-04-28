@@ -129,19 +129,19 @@ export default () => (
 ### BpkMap
 
 | Property              | PropType                                                                                        | Required | Default Value                    |
-| --------------------- | ----------------------------------------------------------------------------------------------- | -------- | -------------------------------- |
-| bounds                | shape({north: number, east: number, south: number, west: number})                               | false    | null                             |
-| center                | shape({latitude: number, longitude: number})                                                    | false    | null                             |
-| className             | string                                                                                          | false    | null                             |
-| greedyGestureHandling | bool                                                                                            | false    | false                            |
-| mapOptionStyles       | [array](https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle) | false    | null                             |
-| mapRef                | func                                                                                            | false    | null                             |
-| onRegionChange        | func                                                                                            | false    | null                             |
-| onZoom                | func                                                                                            | false    | null                             |
-| onTilesLoaded         | func                                                                                            | false    | null                             |
-| panEnabled            | bool                                                                                            | false    | true                             |
-| showControls          | bool                                                                                            | false    | true                             |
-| zoom                  | number                                                                                          | false    | 15                               |
+| --------------------- | ----------------------------------------------------------------- | -------- | -------------------------------- |
+| bounds                | shape({north: number, east: number, south: number, west: number}) | false    | null                             |
+| center                | shape({latitude: number, longitude: number})                      | false    | null                             |
+| className             | string                                                            | false    | null                             |
+| greedyGestureHandling | bool                                                              | false    | false                            |
+| mapOptionStyles       | array                                                             | false    | null                             |
+| mapRef                | func                                                              | false    | null                             |
+| onRegionChange        | func                                                              | false    | null                             |
+| onZoom                | func                                                              | false    | null                             |
+| onTilesLoaded         | func                                                              | false    | null                             |
+| panEnabled            | bool                                                              | false    | true                             |
+| showControls          | bool                                                              | false    | true                             |
+| zoom                  | number                                                            | false    | 15                               |
 
 Note: One of `bounds` and `center` must be provided.
 
