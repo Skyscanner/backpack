@@ -54,7 +54,7 @@ class NudgerContainer extends Component<
     const { buttonType, id } = this.props;
 
     const labelClassName = getClassName(
-      buttonType === 'outline' && 'bpk-nudger-outline',
+      buttonType === 'secondaryOnDark' && 'bpk-nudger-secondary-on-dark',
     );
 
     return (
@@ -184,9 +184,9 @@ const StatefulExample = () => (
 
 const ConfigurableExample = () => <ConfigurableNudgerContainer />;
 
-const OutlineExample = () => (
+const OnDarkExample = () => (
   <BpkDarkExampleWrapper>
-    <NudgerContainer id="outline-nudger" buttonType="outline" />
+    <NudgerContainer id="on-dark-nudger" buttonType="secondaryOnDark" />
   </BpkDarkExampleWrapper>
 );
 
@@ -194,7 +194,7 @@ const MixedExample = () => (
   <div>
     <DefaultExample />
     <ConfigurableExample />
-    <OutlineExample />
+    <OnDarkExample />
   </div>
 );
 
@@ -204,6 +204,6 @@ export {
   UpperBoundsExample,
   StatefulExample,
   ConfigurableExample,
-  OutlineExample,
+  OnDarkExample,
   MixedExample,
 };
