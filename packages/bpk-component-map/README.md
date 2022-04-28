@@ -128,20 +128,20 @@ export default () => (
 
 ### BpkMap
 
-| Property              | PropType                                                          | Required | Default Value                    |
-| --------------------- | ----------------------------------------------------------------- | -------- | -------------------------------- |
-| bounds                | shape({north: number, east: number, south: number, west: number}) | false    | null                             |
-| center                | shape({latitude: number, longitude: number})                      | false    | null                             |
-| greedyGestureHandling | bool                                                              | false    | false                            |
-| mapRef                | func                                                              | false    | null                             |
-| onRegionChange        | func                                                              | false    | null                             |
-| onZoom                | func                                                              | false    | null                             |
-| onTilesLoaded         | func                                                              | false    | null                             |
-| panEnabled            | bool                                                              | false    | true                             |
-| showControls          | bool                                                              | false    | true                             |
-| zoom                  | number                                                            | false    | 15                               |
-| className             | string                                                            | false    | null                             |
-| mapOptionStyles       | [array](https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle) | false | null |
+| Property              | PropType                                                                                        | Required | Default Value                    |
+| --------------------- | ----------------------------------------------------------------------------------------------- | -------- | -------------------------------- |
+| bounds                | shape({north: number, east: number, south: number, west: number})                               | false    | null                             |
+| center                | shape({latitude: number, longitude: number})                                                    | false    | null                             |
+| greedyGestureHandling | bool                                                                                            | false    | false                            |
+| mapRef                | func                                                                                            | false    | null                             |
+| onRegionChange        | func                                                                                            | false    | null                             |
+| onZoom                | func                                                                                            | false    | null                             |
+| onTilesLoaded         | func                                                                                            | false    | null                             |
+| panEnabled            | bool                                                                                            | false    | true                             |
+| showControls          | bool                                                                                            | false    | true                             |
+| zoom                  | number                                                                                          | false    | 15                               |
+| className             | string                                                                                          | false    | null                             |
+| mapOptionStyles       | [array](https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle) | false    | null                             |
 
 Note: One of `bounds` and `center` must be provided.
 
@@ -149,13 +149,13 @@ Note: One of `bounds` and `center` must be provided.
 
 When using `withGoogleMapsScript`, some additional props are available:
 
-| Property       | PropType | Required | Default Value |
-| -------------- | -------- | -------- | ------------- |
-| googleMapsApiKey   | string   | true     | -             |
-| libraries        | array     | false    | ['geometry', 'drawing', 'places']    |
-| preventGoogleFontsLoading | bool     | false    | true    |
-| version | string     | false    | '3.46'    |
-| loadingElement | node     | false    | BpkSpinner    |
+| Property                  | PropType | Required | Default Value                     |
+| ------------------------- | -------- | -------- | --------------------------------- |
+| googleMapsApiKey          | string   | true     | -                                 |
+| libraries                 | array    | false    | ['geometry', 'drawing', 'places'] |
+| preventGoogleFontsLoading | bool     | false    | true                              |
+| version                   | string   | false    | '3.46'                            |
+| loadingElement            | node     | false    | BpkSpinner                        |
 
 ### BpkIconMarker
 
