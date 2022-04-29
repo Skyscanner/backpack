@@ -74,8 +74,7 @@ function withGoogleMapsScript(Component: ComponentType<any>) {
     loadingElement: <DefaultLoadingElement />,
     preventGoogleFontsLoading: true,
     libraries: ['geometry', 'drawing', 'places'],
-    // https://github.com/JustFly1984/react-google-maps-api/issues/2963
-    version: '3.46',
+    version: 'weekly',
   };
 
   return WithGoogleMapsScript;
