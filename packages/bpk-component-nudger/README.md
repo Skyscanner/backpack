@@ -125,7 +125,7 @@ class App extends Component {
 | onChange            | func                          | true     | -             |
 | value               | number                        | true     | -             |
 | className           | string                        | false    | null          |
-| buttonType          | oneOf('secondary', 'outline') | false    | secondary     |
+| buttonType          | oneOf('secondary', 'secondaryOnDark') | false    | secondary     |
 
 ### BpkConfigurableNudger
 
@@ -144,7 +144,7 @@ class App extends Component {
 | formatValue         | func                          | true     | -             |
 | className           | string                        | false    | null          |
 | inputClassName      | string                        | false    | null          |
-| buttonType          | oneOf('secondary', 'outline') | false    | secondary     |
+| buttonType          | oneOf('secondary', 'secondaryOnDark') | false    | secondary     |
 
 ### `compareValues`
 

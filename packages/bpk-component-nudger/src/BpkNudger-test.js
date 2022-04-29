@@ -40,7 +40,7 @@ describe('BpkNudger', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render as an outline nudger correctly', () => {
+  it('should render as an on dark nudger correctly', () => {
     const { asFragment } = render(
       <BpkNudger
         id="nudger"
@@ -50,7 +50,7 @@ describe('BpkNudger', () => {
         onChange={() => null}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
-        buttonType="outline"
+        buttonType="secondaryOnDark"
       />,
     );
 
