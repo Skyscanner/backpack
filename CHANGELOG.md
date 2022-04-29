@@ -1,3 +1,9 @@
+# 2022-04-29
+
+**Breaking:**
+  - bpk-component-nudger: 6.0.4 => 7.0.0
+    - Removed `outline` nudger variant to be replaced with the `secondaryOnDark` variant which has been added to the nudger.
+
 # 2022-04-27
 
 **Breaking:**
