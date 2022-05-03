@@ -47,6 +47,8 @@ $bpk-spacing-v2: true;
   &__leading-item,
   &__trailing-item {
     position: absolute;
+
+    @include bpk-label-2;
   }
 
   &__leading-item {
