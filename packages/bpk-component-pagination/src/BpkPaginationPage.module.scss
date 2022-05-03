@@ -25,6 +25,8 @@ $bpk-spacing-v2: true;
   height: $bpk-button-height;
   padding: 0;
   border-radius: 50%;
+
+  @include bpk-label-1;
 }
 
 .bpk-pagination-page--selected {
