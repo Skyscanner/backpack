@@ -1,3 +1,12 @@
+# 2022-05-03
+
+**Fixed:**
+
+- bpk-component-pagination: 4.0.4 => 4.0.5
+    - Fixed pagination button typography style. Pagination font size will appear slightly smaller.
+ - bpk-component-navigation-bar: 3.1.7 => 3.1.8
+    - Fixed navigation bar buttons and title typography.
+
 # 2022-04-29
 
 **Breaking:**
