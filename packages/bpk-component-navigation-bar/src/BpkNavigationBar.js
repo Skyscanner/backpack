@@ -73,7 +73,7 @@ const BpkNavigationBar = (props: Props) => {
       {typeof title === 'string' ? (
         <BpkText
           id={titleId}
-          textStyle={TEXT_STYLES.label1}
+          textStyle={TEXT_STYLES.heading5}
           className={getClassNames('bpk-navigation-bar__title')}
         >
           {title}
