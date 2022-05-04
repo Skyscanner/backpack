@@ -42,23 +42,12 @@ export type MapRef = ?{
   fitBounds: (Bounds) => void,
 };
 
-// https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle
-const MapTypeStyle = PropTypes.arrayOf(
-  PropTypes.shape({
-    featureType: PropTypes.string,
-    elementType: PropTypes.string,
-    stylers: PropTypes.arrayOf(PropTypes.object).isRequired,
-  }),
-);
-
-type stylersObject = {
-  [string]: string,
-};
-
-type singleStyleType = {
+type MapOptionStyle = {
   featureType: ?string,
   elementType: ?string,
-  stylers: Array<stylersObject>,
+  stylers: Array<{
+    [string]: string,
+  }>,
 };
 
 type Props = {
@@ -74,7 +63,7 @@ type Props = {
   onZoom: ?(number) => mixed,
   onTilesLoaded: ?() => void,
   className: ?string,
-  mapOptionStyles: ?Array<singleStyleType>,
+  mapOptionStyles: ?Array<MapOptionStyle>,
 };
 
 const BpkMap = (props: Props) => {
@@ -147,6 +136,7 @@ const BpkMap = (props: Props) => {
         fullscreenControl: false,
         rotateControl: false,
         clickableIcons: false,
+        // https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle
         styles: mapOptionStyles,
       }}
       onDragEnd={() => {
@@ -189,7 +179,13 @@ BpkMap.propTypes = {
   showControls: PropTypes.bool,
   onTilesLoaded: PropTypes.func,
   zoom: PropTypes.number,
-  mapOptionStyles: MapTypeStyle,
+  mapOptionStyles: PropTypes.arrayOf(
+    PropTypes.shape({
+      featureType: PropTypes.string,
+      elementType: PropTypes.string,
+      stylers: PropTypes.arrayOf(PropTypes.object).isRequired,
+    }),
+  ),
 };
 
 BpkMap.defaultProps = {
