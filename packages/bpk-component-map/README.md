@@ -155,7 +155,6 @@ When using `withGoogleMapsScript`, some additional props are available:
 | libraries                 | array    | false    | ['geometry', 'drawing', 'places'] |
 | loadingElement            | node     | false    | BpkSpinner                        |
 | preventGoogleFontsLoading | bool     | false    | true                              |
-| version                   | string   | false    | weekly                            |
 
 ### BpkIconMarker
 

@@ -39,7 +39,6 @@ function withGoogleMapsScript(Component: ComponentType<any>) {
     libraries,
     loadingElement,
     preventGoogleFontsLoading,
-    version,
     ...rest
   }: {
     [string]: any,
@@ -48,7 +47,7 @@ function withGoogleMapsScript(Component: ComponentType<any>) {
       googleMapsApiKey,
       libraries,
       preventGoogleFontsLoading,
-      version,
+      version: '3.46',
     });
 
     if (!isLoaded) {
@@ -66,7 +65,6 @@ function withGoogleMapsScript(Component: ComponentType<any>) {
     loadingElement: PropTypes.node,
     googleMapsApiKey: PropTypes.string.isRequired,
     libraries: LibraryShapeType,
-    version: PropTypes.string,
     preventGoogleFontsLoading: PropTypes.bool,
   };
 
@@ -74,7 +72,6 @@ function withGoogleMapsScript(Component: ComponentType<any>) {
     loadingElement: <DefaultLoadingElement />,
     preventGoogleFontsLoading: true,
     libraries: ['geometry', 'drawing', 'places'],
-    version: 'weekly',
   };
 
   return WithGoogleMapsScript;
