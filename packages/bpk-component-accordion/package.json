@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-accordion",
-  "version": "5.0.5",
+  "version": "5.0.6",
   "description": "Backpack accordion component.",
   "license": "Apache-2.0",
   "repository": {
@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^6.2.0",
-    "bpk-component-checkbox": "^4.1.7"
+    "bpk-component-checkbox": "^4.1.8"
   }
 }
