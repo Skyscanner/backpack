@@ -49,10 +49,7 @@ const StoryMap = (props: Props) => {
   return (
     <div style={{ height: '400px' }}>
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <BpkMapWithLoading
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&language=en&libraries=geometry,drawing,places"
-        {...rest}
-      >
+      <BpkMapWithLoading googleMapsApiKey="" {...rest}>
         {children}
       </BpkMapWithLoading>
     </div>
@@ -292,6 +289,21 @@ const WithPriceMarkersExample = () => (
   <StatefulBpkPriceMarker action={action('Price marker clicked')} />
 );
 
+const MultipleMapsExample = () => (
+  <>
+    <span>first map:</span>
+    <StoryMap
+      zoom={15}
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
+    />
+    <span>second map:</span>
+    <StoryMap
+      zoom={15}
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
+    />
+  </>
+);
+
 export {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -302,4 +314,5 @@ export {
   WithAMarkerExample,
   WithIconMarkersExample,
   WithPriceMarkersExample,
+  MultipleMapsExample,
 };

@@ -18,11 +18,15 @@
 
 /* @flow strict */
 
-import React, { type Node } from 'react';
+import React, { type Node, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
+import { cssModules } from 'bpk-react-utils';
+import { GoogleMap } from '@react-google-maps/api';
 
 import { LatLongPropType, type LatLong } from './common-types';
+import STYLES from './BpkMap.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 export type Bounds = {
   south: number,
@@ -38,6 +42,14 @@ export type MapRef = ?{
   fitBounds: (Bounds) => void,
 };
 
+type MapOptionStyle = {
+  featureType: ?string,
+  elementType: ?string,
+  stylers: Array<{
+    [string]: string,
+  }>,
+};
+
 type Props = {
   greedyGestureHandling: boolean,
   panEnabled: boolean,
@@ -46,20 +58,22 @@ type Props = {
   bounds: ?Bounds,
   center: ?LatLong,
   children: ?Node,
-  containerElement: ?Node,
-  mapElement: ?Node,
   mapRef: ?(MapRef) => mixed,
   onRegionChange: ?(Bounds, LatLong) => mixed,
   onZoom: ?(number) => mixed,
   onTilesLoaded: ?() => void,
+  className: ?string,
+  mapOptionStyles: ?Array<MapOptionStyle>,
 };
 
-const BpkMap = withGoogleMap((props: Props) => {
+const BpkMap = (props: Props) => {
   const {
     bounds,
     center,
     children,
+    className,
     greedyGestureHandling,
+    mapOptionStyles,
     mapRef,
     onRegionChange,
     onTilesLoaded,
@@ -68,7 +82,6 @@ const BpkMap = withGoogleMap((props: Props) => {
     showControls,
     zoom,
   } = props;
-  let ref: MapRef = null;
 
   if (!bounds && !center) {
     throw new Error('BpkMap: Provide either `bounds` or `center` props.');
@@ -82,29 +95,37 @@ const BpkMap = withGoogleMap((props: Props) => {
     gestureHandling = 'greedy';
   }
 
+  const ref = useRef(null);
+  const mapContainerClassName = getClassName('bpk-map', className);
+
+  const onLoad = useCallback(
+    (map) => {
+      ref.current = map;
+      if (map && bounds) {
+        map.fitBounds({
+          south: bounds.south,
+          west: bounds.west,
+          north: bounds.north,
+          east: bounds.east,
+        });
+      }
+      if (mapRef) {
+        mapRef(map);
+      }
+    },
+    [bounds, mapRef],
+  );
+
   return (
     <GoogleMap
-      ref={(map: MapRef) => {
-        ref = map;
-        if (map && bounds) {
-          map.fitBounds({
-            south: bounds.south,
-            west: bounds.west,
-            north: bounds.north,
-            east: bounds.east,
-          });
-        }
-        if (mapRef) {
-          mapRef(map);
-        }
-      }}
+      onLoad={onLoad}
       center={
         center
           ? {
               lat: center.latitude,
               lng: center.longitude,
             }
-          : null
+          : undefined
       }
       zoom={zoom}
       options={{
@@ -114,15 +135,18 @@ const BpkMap = withGoogleMap((props: Props) => {
         streetViewControl: false,
         fullscreenControl: false,
         rotateControl: false,
+        clickableIcons: false,
+        // https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle
+        styles: mapOptionStyles,
       }}
       onDragEnd={() => {
-        if (ref && onRegionChange) {
-          onRegionChange(ref.getBounds(), ref.getCenter());
+        if (ref && ref.current && onRegionChange) {
+          onRegionChange(ref.current.getBounds(), ref.current.getCenter());
         }
       }}
       onZoomChanged={() => {
-        if (ref && onZoom) {
-          onZoom(ref.getZoom());
+        if (ref && ref.current && onZoom) {
+          onZoom(ref.current.getZoom());
         }
       }}
       onTilesLoaded={() => {
@@ -130,11 +154,12 @@ const BpkMap = withGoogleMap((props: Props) => {
           onTilesLoaded();
         }
       }}
+      mapContainerClassName={mapContainerClassName}
     >
       {children}
     </GoogleMap>
   );
-});
+};
 
 BpkMap.propTypes = {
   bounds: PropTypes.shape({
@@ -145,30 +170,38 @@ BpkMap.propTypes = {
   }),
   center: LatLongPropType,
   children: PropTypes.node,
-  containerElement: PropTypes.node,
   greedyGestureHandling: PropTypes.bool,
-  mapElement: PropTypes.node,
   mapRef: PropTypes.func,
+  className: PropTypes.string,
   onRegionChange: PropTypes.func,
   onZoom: PropTypes.func,
   panEnabled: PropTypes.bool,
   showControls: PropTypes.bool,
+  onTilesLoaded: PropTypes.func,
   zoom: PropTypes.number,
+  mapOptionStyles: PropTypes.arrayOf(
+    PropTypes.shape({
+      featureType: PropTypes.string,
+      elementType: PropTypes.string,
+      stylers: PropTypes.arrayOf(PropTypes.object).isRequired,
+    }),
+  ),
 };
 
 BpkMap.defaultProps = {
   bounds: null,
-  center: null,
+  center: undefined,
   children: null,
-  containerElement: <div style={{ height: '100%' }} />,
   greedyGestureHandling: false,
-  mapElement: <div style={{ height: '100%' }} />,
   mapRef: null,
   onRegionChange: null,
   onZoom: null,
+  onTilesLoaded: null,
   panEnabled: true,
   showControls: true,
   zoom: 15,
+  className: null,
+  mapOptionStyles: null,
 };
 
 export default BpkMap;
