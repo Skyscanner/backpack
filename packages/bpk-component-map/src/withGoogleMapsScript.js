@@ -70,7 +70,7 @@ function withGoogleMapsScript(Component: ComponentType<any>) {
 
   WithGoogleMapsScript.defaultProps = {
     loadingElement: <DefaultLoadingElement />,
-    preventGoogleFontsLoading: true,
+    preventGoogleFontsLoading: false,
     libraries: ['geometry', 'drawing', 'places'],
   };
 
