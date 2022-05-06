@@ -1,3 +1,11 @@
+# 2022-05-06
+
+**Fixed:**
+
+- bpk-component-map: 6.0.0 => 6.0.1
+  - Fixed `preventGoogleFontsLoading` defaulting to `true` make Google Maps cannot be interactive
+
+
 # 2022-05-05
 
 **Breaking:**
