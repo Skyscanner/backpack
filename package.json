@@ -4,8 +4,8 @@
   "license": "Apache-2.0",
   "private": true,
   "engines": {
-    "node": "^12.13.0",
-    "npm": "^6.12.0"
+    "node": "^14.19.1",
+    "npm": "^6.14.16"
   },
   "repository": {
     "type": "git",
@@ -47,7 +47,6 @@
     "lint:scss:fix": "stylelint 'packages/**/*.scss' --syntax scss --fix",
     "lint-staged": "lint-staged",
     "postinstall": "npm run bootstrap",
-    "preinstall": "npx ensure-node-env",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
     "publish": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && npm run test && lerna publish && npm run publish:css",
     "publish:css": "node ./scripts/publish-process/transform-js-scss-css-imports.js && node ./scripts/publish-process/transform-bpk-imports.js && node ./scripts/publish-process/publish-css-tagged-packages.js && git reset --hard HEAD",
