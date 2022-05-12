@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-link",
-  "version": "3.1.6",
+  "version": "3.1.7",
   "description": "Backpack link component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,6 +23,6 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^7.0.0",
-    "bpk-storybook-utils": "^1.1.5"
+    "bpk-storybook-utils": "^1.1.6"
   }
 }
