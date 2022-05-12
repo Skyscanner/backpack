@@ -1,3 +1,14 @@
+# 2022-05-12
+
+**Breaking:**
+
+- bpk-component-list: 3.1.6 => 4.0.0
+    - Changed list margins and paddings. This will make the component larger in height, so please check it does not alter the layout.
+        - Changed vertical margins in list component
+        - Added bottom margins to list items 
+        - Added top and bottom padding to nested lists
+
+
 # 2022-05-06
 
 **Fixed:**
