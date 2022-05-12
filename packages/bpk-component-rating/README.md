@@ -12,40 +12,47 @@ npm install bpk-component-rating --save-dev
 
 ```js
 import React from 'react';
-import BpkRating, { RATING_SIZES, RATING_SCALES, RATING_TYPES } from 'bpk-component-rating';
+import BpkRating, { RATING_SIZES, RATING_SCALES } from 'bpk-component-rating';
 
 export default () => (
   <BpkRating
-    ariaLabel="9 Excellent would recommend"
+    ariaLabel="4.6 Excellent 2,420 reviews"
+    value={4.6}
     title="Excellent"
-    subtitle="It was almost perfect!"
-    value={9}
+    subtitle="2,420 reviews"
   />
 
-  // Large rating
+  // Large size rating
   <BpkRating
-    ariaLabel="9 Excellent would recommend"
+    ariaLabel="4.5 Excellent would recommend"
     title="Excellent"
     subtitle="It was almost perfect!"
     size={RATING_SIZES.large}
-    value={9}
+    value={4.5}
   />
 
-  // Pill-shaped rating
+  // Title only rating
   <BpkRating
-    ariaLabel="9 Excellent would recommend"
+    ariaLabel="4.5 Excellent would recommend"
+    title="Excellent"
+    value={4.5}
+  />
+
+  // Show max value rating
+  <BpkRating
+    ariaLabel="4.8 Excellent would recommend"
     title="Excellent"
     subtitle="It was almost perfect!"
-    type={RATING_TYPE.pill}
-    value={9}
+    value={4.8}
+    showMaxValue
   />
 
-  // 0-5 scale
+  // 0-10 scale
   <BpkRating
-    ariaLabel="2 It was ok I guess"
-    title="Meh"
-    value={2}
-    ratingScale={RATING_SCALES.zeroToFive}
+    ariaLabel="9.4 Excellent would recommend"
+    title="Excellent"
+    subtitle="It was almost perfect!"
+    value={9.4}
   />
 );
 ```
@@ -58,16 +65,7 @@ export default () => (
 | title     | string                | true     | -                 |
 | value     | number                | true     | -                 |
 | className | string                | false    | null              |
-| ratingScale | oneOf(RATING_SCALES) | false    | RATING_SCALES.zeroToTen |
+| ratingScale | oneOf(RATING_SCALES) | false    | RATING_SCALES.zeroToFive |
 | size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
 | subtitle  | string                | false    | null              |
-| type      | oneOf(RATING_TYPES)   | false    | RATING_TYPES.default |
-| vertical  | boolean               | false    | false             |
-
-## Theme props
-
-* `ratingHighColor`
-* `ratingHighTextColor`
-* `ratingMediumColor`
-* `ratingMediumTextColor`
-* `ratingLowColor`
+| showMaxValue  | boolean               | false    | false             |

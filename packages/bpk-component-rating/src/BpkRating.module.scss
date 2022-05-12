@@ -22,127 +22,51 @@ $bpk-spacing-v2: true;
 
 .bpk-rating {
   display: flex;
+  align-items: center;
 
-  &--vertical {
-    flex-direction: column;
-  }
-
-  &__component {
+  &__score {
+    display: flex;
+    padding-right: bpk-spacing-sm() * 2;
     justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: $bpk-color-white;
-  }
-
-  &--base-rating {
-    display: flex;
-    width: bpk-spacing-lg() * 2;
-    height: bpk-spacing-lg() * 2;
-  }
-
-  &--lg-rating {
-    display: flex;
-    width: bpk-spacing-xxl() + (bpk-spacing-sm() * 5);
-    height: bpk-spacing-xxl() + (bpk-spacing-sm() * 5);
-  }
-
-  &--sm-rating {
-    display: flex;
-    width: bpk-spacing-sm() * 9;
-    height: bpk-spacing-sm() * 9;
-  }
-
-  &--sm-pill {
-    width: bpk-spacing-sm() * 9;
-    height: bpk-spacing-xl() - (bpk-spacing-sm() / 2);
-    border-radius: $bpk-border-radius-pill;
-  }
-
-  &--base-pill {
-    width: bpk-spacing-lg() * 2;
-    height: bpk-spacing-sm() * 9;
-    border-radius: $bpk-border-radius-pill;
-  }
-
-  &--lg-pill {
-    width: (bpk-spacing-xl() * 2) + (bpk-spacing-sm() / 2);
-    height: bpk-spacing-xxl() + (bpk-spacing-sm() / 2);
-    border-radius: $bpk-border-radius-pill-lg;
+    align-items: baseline;
+    color: $bpk-color-sky-gray;
   }
 
   &__text-wrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
 
-    &--horizontal {
-      // We could use `padding-inline-start: $bpk-spacing-sm` here, but it's unsupported in IE
-      padding-left: bpk-spacing-sm() * 3;
+    &--large {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__scale {
+    color: $bpk-color-sky-gray-tint-02;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  &__subtitle {
+    padding-left: bpk-spacing-sm() * 2;
+    color: $bpk-color-sky-gray-tint-02;
+
+    @include bpk-rtl {
+      padding-right: bpk-spacing-sm() * 2;
+    }
+
+    &--large {
+      padding-left: 0;
 
       @include bpk-rtl {
-        padding-right: bpk-spacing-sm() * 3;
+        padding-right: 0;
       }
     }
-
-    &--vertical {
-      padding-top: bpk-spacing-sm() + ($bpk-one-pixel-rem * 2);
-    }
-  }
-
-  &__text {
-    &--horizontal {
-      // We could use `text-align: start` here, but it's unsupported in IE
-      text-align: left;
-
-      @include bpk-rtl {
-        text-align: right;
-      }
-    }
-
-    &--vertical {
-      align-self: center;
-      text-align: center;
-    }
-  }
-
-  &--high-rating {
-    align-self: center;
-    color: $bpk-color-sky-gray;
-
-    @include bpk-themeable-property(
-      color,
-      --bpk-rating-high-text-color,
-      $bpk-color-sky-gray
-    );
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-rating-high-color,
-      $bpk-color-glencoe
-    );
-  }
-
-  &--medium-rating {
-    align-self: center;
-
-    @include bpk-themeable-property(
-      color,
-      --bpk-rating-medium-text-color,
-      $bpk-color-sky-gray
-    );
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-rating-medium-color,
-      $bpk-color-erfoud
-    );
-  }
-
-  &--low-rating {
-    align-self: center;
-
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-rating-low-color,
-      $bpk-color-panjin
-    );
   }
 }

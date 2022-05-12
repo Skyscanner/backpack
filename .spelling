@@ -865,8 +865,9 @@ politenessSetting
 Inkscape
 Figma
 ratingScale
+showMaxValue
 RATING_SCALES
-RATING_SCALES.zeroToTen
+RATING_SCALES.zeroToFive
 Storyshots
 mapOptionStyles
 googleMapsApiKey
