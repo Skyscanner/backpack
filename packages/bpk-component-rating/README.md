@@ -16,56 +16,58 @@ import BpkRating, { RATING_SIZES, RATING_SCALES } from 'bpk-component-rating';
 
 export default () => (
   <BpkRating
-    ariaLabel="4.6 Excellent 2,420 reviews"
-    value={4.6}
+    ariaLabel="4.8 Excellent 2,420 reviews"
+    value={4.8}
     title="Excellent"
     subtitle="2,420 reviews"
   />
 
   // Large size rating
   <BpkRating
-    ariaLabel="4.5 Excellent would recommend"
-    title="Excellent"
-    subtitle="It was almost perfect!"
+    ariaLabel="4.4 Very good This place was amazing"
+    title="Very good"
+    subtitle="This place was amazing"
     size={RATING_SIZES.large}
-    value={4.5}
+    value={4.4}
   />
 
   // Title only rating
   <BpkRating
-    ariaLabel="4.5 Excellent would recommend"
-    title="Excellent"
-    value={4.5}
+    ariaLabel="2.3 Bad"
+    title="Bad"
+    value={2.3}
   />
 
   // Show max value rating
   <BpkRating
-    ariaLabel="4.8 Excellent would recommend"
-    title="Excellent"
-    subtitle="It was almost perfect!"
-    value={4.8}
+    ariaLabel="3.8 Good Nice choice"
+    title="Good"
+    subtitle="Nice choice"
+    value={3.8}
     showMaxValue
   />
 
   // 0-10 scale
   <BpkRating
-    ariaLabel="9.4 Excellent would recommend"
-    title="Excellent"
-    subtitle="It was almost perfect!"
-    value={9.4}
+    ariaLabel="9.9 Awesome It was almost perfect"
+    title="Awesome"
+    subtitle="It was almost perfect"
+    value={9.9}
+    ratingScale={RATING_SCALES.zeroToTen}
   />
 );
 ```
 
 ## Props
 
-| Property  | PropType              | Required | Default Value     |
-| --------- | --------------------- | -------- | ----------------- |
-| ariaLabel | string                | true     | -                 |
-| title     | string                | true     | -                 |
-| value     | number                | true     | -                 |
-| className | string                | false    | null              |
-| ratingScale | oneOf(RATING_SCALES) | false    | RATING_SCALES.zeroToFive |
-| size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
-| subtitle  | string                | false    | null              |
-| showMaxValue  | boolean               | false    | false             |
+| Property  | PropType                        | Required | Default Value             |
+| --------------- | ------------------------- | -------- | ------------------------  |
+| ariaLabel       | string                    | true     | -                         |
+| title           | oneOfType(string, node)   | true     | -                         |
+| value           | number                    | true     | -                         |
+| className       | string                    | false    | null                      |
+| ratingScale     | oneOf(RATING_SCALES)      | false    | RATING_SCALES.zeroToFive  |
+| size            | oneOf(RATING_SIZES)       | false    | RATING_SIZES.base         |
+| subtitle        | string                    | false    | null                      |
+| showMaxValue    | boolean                   | false    | false                     |
+| titleClassName  | string                    | false    | null                      |

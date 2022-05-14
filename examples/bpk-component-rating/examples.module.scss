@@ -23,13 +23,20 @@ $bpk-spacing-v2: true;
 .bpk-rating-story {
   width: bpk-spacing-xxl() * 4;
 
-  &--img {
-    height: bpk-spacing-base();
-    margin-right: -bpk-spacing-sm();
-    margin-left: -bpk-spacing-sm();
+  &--title {
+    align-items: center;
   }
 
   &--large {
+    height: bpk-spacing-lg();
+  }
+
+  &--img {
+    height: bpk-spacing-base();
+    vertical-align: middle;
+  }
+
+  &--score {
     height: bpk-spacing-lg();
   }
 }

@@ -29,133 +29,118 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const ImageTiltle = (
+const ImageTitle = (
   <img
     alt="rating 4.5"
     className={getClassName('bpk-rating-story--img')}
-    src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-64600-4.svg"
+    src="https://content.skyscnr.com/m/5360ff02f861ef63/original/owl-rate-4-5-light.png"
   />
 );
 
-const LargeImageTiltle = (
-  <span className={getClassName('bpk-rating-story--large')}>
+const LargeImageTitle = (
+  <span lassName={getClassName('bpk-rating-story--large')}>
     <img
       alt="rating 4.5"
       className={getClassName('bpk-rating-story--img')}
-      src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-64600-4.svg"
+      src="https://content.skyscnr.com/m/5360ff02f861ef63/original/owl-rate-4-5-light.png"
     />
   </span>
+);
+
+const HighScoreTitle = (
+  <span className={getClassName('bpk-rating-story--score')}>With honours</span>
 );
 
 const DefaultExample = () => (
   <div>
     <BpkRating
-      ariaLabel="4.6 Excellent 672 reviews"
-      value={4.6}
+      ariaLabel="4.8 Excellent 2,420 reviews"
+      value={4.8}
       title="Excellent"
-      subtitle="672 reviews"
+      subtitle="2,420 reviews"
     />
     <br />
     <BpkRating
-      ariaLabel="4.5 Excellent 672 reviews"
+      ariaLabel="4.5 Great 818 reviews"
       value={4.5}
-      title={ImageTiltle}
-      subtitle="672 reviews"
+      title={ImageTitle}
+      subtitle="818 reviews"
+      titleClassName={getClassName('bpk-rating-story--title')}
     />
+    <br />
   </div>
 );
 
 const LargeSizeExample = () => (
   <div>
     <BpkRating
-      ariaLabel="4.6 Excellent 2,420 reviews"
-      value={4.6}
-      title="Excellent"
-      subtitle="2,420 reviews"
+      ariaLabel="4.4 Very good This place was amazing"
+      title="Very good"
+      subtitle="This place was amazing"
       size={RATING_SIZES.large}
+      value={4.4}
     />
     <br />
     <BpkRating
-      ariaLabel="4.5 Excellent 2,420 reviews"
-      value={4.5}
-      title={LargeImageTiltle}
-      subtitle="2,420 reviews"
+      ariaLabel="5.0 With honours 8,202 reviews"
+      value={5}
+      title={HighScoreTitle}
+      subtitle="8,202 reviews"
       size={RATING_SIZES.large}
+      showMaxValue
     />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great. 6,170 reviews"
+      value={4.5}
+      title={LargeImageTitle}
+      subtitle="6,170 reviews"
+      size={RATING_SIZES.large}
+      showMaxValue
+    />
+    <br />
   </div>
 );
 
 const ShowMaxValueExample = () => (
   <div>
     <BpkRating
-      ariaLabel="4.6 Excellent 2,420 reviews"
-      value={4.6}
-      title="Excellent"
-      subtitle="2,420 reviews"
+      ariaLabel="3.8 Good Nice choice"
+      title="Good"
+      subtitle="Nice choice"
+      value={3.8}
       showMaxValue
     />
     <br />
-    <BpkRating
-      ariaLabel="4.5 Excellent 2,420 reviews"
-      value={4.5}
-      title={ImageTiltle}
-      subtitle="2,420 reviews"
-      showMaxValue
-    />
-    <br />
-    <BpkRating
-      ariaLabel="4.6 Excellent 2,420 reviews"
-      value={4.6}
-      title="Excellent"
-      subtitle="2,420 reviews"
-      size={RATING_SIZES.large}
-      showMaxValue
-    />
-    <br />
-    <BpkRating
-      ariaLabel="4.5 Excellent 2,420 reviews"
-      value={4.5}
-      title={LargeImageTiltle}
-      subtitle="2,420 reviews"
-      size={RATING_SIZES.large}
-      showMaxValue
-    />
   </div>
 );
 
 const TitleOnlyExample = () => (
   <div>
-    <BpkRating
-      ariaLabel="4.6 Excellent 2,420 reviews"
-      value={4.6}
-      title="Excellent"
-    />
+    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} />
     <br />
-    <BpkRating
-      ariaLabel="4.5 Excellent 2,420 reviews"
-      value={4.5}
-      title={ImageTiltle}
-    />
+    <BpkRating ariaLabel="4.5 Great" title={ImageTitle} value={4.5} />
+    <br />
   </div>
 );
 
 const ZeroToTenScaleExample = () => (
   <div>
     <BpkRating
-      ariaLabel="8.2 Excellent 2,420 reviews"
-      value={8.2}
-      title="Excellent"
-      subtitle="2,420 reviews"
+      ariaLabel="1.0 Terrible"
+      title="Terrible"
+      value={1}
       ratingScale={RATING_SCALES.zeroToTen}
     />
     <br />
     <BpkRating
-      ariaLabel="9.0 Excellent 2,420 reviews"
-      value={9.0}
-      title={ImageTiltle}
-      subtitle="2,420 reviews"
+      ariaLabel="9.9 Fantastic It is almost perfect"
+      title="Fantastic"
+      subtitle="It is almost perfect"
+      value={9.9}
       ratingScale={RATING_SCALES.zeroToTen}
     />
+    <br />
   </div>
 );
 

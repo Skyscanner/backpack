@@ -51,6 +51,7 @@ export type Props = {
   size: $Values<typeof RATING_SIZES>,
   subtitle: ?string,
   title: string,
+  titleClassName: ?string,
   value: number,
 };
 
@@ -63,13 +64,16 @@ const BpkRating = (props: Props) => {
     size,
     subtitle,
     title,
+    titleClassName,
     value,
     ...rest
   } = props;
 
   const classNames = [getClassName('bpk-rating', className)];
   const scoreStyles = [getClassName('bpk-rating__score')];
-  const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
+  const textWrapperStyles = [
+    getClassName('bpk-rating__text-wrapper', titleClassName),
+  ];
   const titleStyles = [getClassName('bpk-rating__title')];
   const maxValueStyles = [getClassName('bpk-rating__scale')];
   const subtitleStyles = [getClassName('bpk-rating__subtitle')];
@@ -154,7 +158,8 @@ BpkRating.propTypes = {
   showMaxValue: PropTypes.bool,
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
   subtitle: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  titleClassName: PropTypes.string,
   value: PropTypes.number.isRequired,
 };
 
@@ -164,6 +169,7 @@ BpkRating.defaultProps = {
   size: RATING_SIZES.base,
   subtitle: null,
   showMaxValue: false,
+  titleClassName: null,
 };
 
 export default BpkRating;
