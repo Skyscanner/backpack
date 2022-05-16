@@ -52,7 +52,7 @@ const computeScrollIndicatorClassName = (
   const { offsetWidth, scrollLeft, scrollWidth } = scrollerEl;
 
   const rtl = isRTL();
-  const scrollValue = rtl ? -scrollLeft : scrollLeft;
+  const scrollValue = rtl ? -Math.floor(scrollLeft) : Math.ceil(scrollLeft);
   const showLeadingIndicator = scrollValue > 0;
   const showTrailingIndicator = scrollValue < scrollWidth - offsetWidth;
   const showLeftIndicator = rtl ? showTrailingIndicator : showLeadingIndicator;
