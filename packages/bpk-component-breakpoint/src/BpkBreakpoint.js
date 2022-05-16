@@ -24,7 +24,10 @@ import MediaQuery from 'react-responsive';
 import TOKENS from '@skyscanner/bpk-foundations-web/tokens/breakpoints.common';
 
 const BREAKPOINTS = {
+  SMALL_MOBILE: TOKENS.breakpointQuerySmallMobile,
   MOBILE: TOKENS.breakpointQueryMobile,
+  SMALL_TABLET: TOKENS.breakpointQuerySmallTablet,
+  SMALL_TABLET_ONLY: TOKENS.breakpointQuerySmallTabletOnly,
   TABLET: TOKENS.breakpointQueryTablet,
   TABLET_ONLY: TOKENS.breakpointQueryTabletOnly,
   ABOVE_MOBILE: TOKENS.breakpointQueryAboveMobile,
