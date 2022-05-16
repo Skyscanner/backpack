@@ -23,7 +23,11 @@ $bpk-spacing-v2: true;
 .bpk-rating {
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  align-items: baseline;
+
+  &--large {
+    align-items: center;
+  }
 
   &__score {
     display: flex;
@@ -47,11 +51,6 @@ $bpk-spacing-v2: true;
 
   &__scale {
     color: $bpk-color-sky-gray-tint-02;
-  }
-
-  &__title {
-    display: flex;
-    align-items: center;
   }
 
   &__subtitle {

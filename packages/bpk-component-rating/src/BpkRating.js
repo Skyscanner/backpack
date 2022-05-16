@@ -67,11 +67,9 @@ const BpkRating = (props: Props) => {
     ...rest
   } = props;
 
-  const isLargeSize = size === RATING_SIZES.large;
   const classNames = [getClassName('bpk-rating', className)];
   const scoreStyles = [getClassName('bpk-rating__score')];
   const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
-  const titleStyles = [getClassName('bpk-rating__title')];
   const maxValueStyles = [getClassName('bpk-rating__scale')];
   const subtitleStyles = [getClassName('bpk-rating__subtitle')];
 
@@ -80,7 +78,8 @@ const BpkRating = (props: Props) => {
   let maxValueTextSize = TEXT_STYLES.xs;
   let subtitleTextSize = TEXT_STYLES.caption;
 
-  if (isLargeSize) {
+  if (size === RATING_SIZES.large) {
+    classNames.push(getClassName('bpk-rating--large'));
     textWrapperStyles.push(getClassName('bpk-rating__text-wrapper--large'));
     subtitleStyles.push(getClassName('bpk-rating__subtitle--large'));
 
@@ -123,51 +122,22 @@ const BpkRating = (props: Props) => {
         )}
       </BpkText>
 
-      {isLargeSize ? (
-        <div className={textWrapperStyles.join(' ')}>
+      <div className={textWrapperStyles.join(' ')}>
+        <BpkText textStyle={titleTextSize} tagName="span" aria-hidden="true">
+          {title}
+        </BpkText>
+
+        {subtitle && (
           <BpkText
-            className={titleStyles.join(' ')}
-            textStyle={titleTextSize}
+            className={subtitleStyles.join(' ')}
+            textStyle={subtitleTextSize}
             tagName="span"
             aria-hidden="true"
           >
-            {title}
+            {subtitle}
           </BpkText>
-
-          {subtitle && (
-            <BpkText
-              className={subtitleStyles.join(' ')}
-              textStyle={subtitleTextSize}
-              tagName="span"
-              aria-hidden="true"
-            >
-              {subtitle}
-            </BpkText>
-          )}
-        </div>
-      ) : (
-        <>
-          <BpkText
-            className={titleStyles.join(' ')}
-            textStyle={titleTextSize}
-            tagName="span"
-            aria-hidden="true"
-          >
-            {title}
-          </BpkText>
-
-          {subtitle && (
-            <BpkText
-              className={subtitleStyles.join(' ')}
-              textStyle={subtitleTextSize}
-              tagName="span"
-              aria-hidden="true"
-            >
-              {subtitle}
-            </BpkText>
-          )}
-        </>
-      )}
+        )}
+      </div>
     </div>
   );
 };

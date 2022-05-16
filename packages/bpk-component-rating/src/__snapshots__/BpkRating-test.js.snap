@@ -17,7 +17,7 @@ exports[`BpkRating should correctly handling values higher than 5 when rating sc
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Smashing
       </span>
@@ -49,7 +49,7 @@ exports[`BpkRating should correctly handling values higher than 10 when rating s
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Amazing
       </span>
@@ -81,7 +81,7 @@ exports[`BpkRating should correctly handling values lower than 0 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Low
       </span>
@@ -113,7 +113,7 @@ exports[`BpkRating should render a high score rating component (zero to five sca
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Amazing
       </span>
@@ -145,7 +145,7 @@ exports[`BpkRating should render a high score rating component (zero to ten scal
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Amazing
       </span>
@@ -177,7 +177,7 @@ exports[`BpkRating should render a high score rating component 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Amazing
       </span>
@@ -209,7 +209,7 @@ exports[`BpkRating should render a low score rating component 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Low
       </span>
@@ -241,7 +241,7 @@ exports[`BpkRating should render a medium score rating component (zero to five s
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Average
       </span>
@@ -273,7 +273,7 @@ exports[`BpkRating should render a medium score rating component (zero to ten sc
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Average
       </span>
@@ -305,7 +305,7 @@ exports[`BpkRating should render correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Excellent
       </span>
@@ -324,7 +324,7 @@ exports[`BpkRating should render large size correctly 1`] = `
 <DocumentFragment>
   <div
     aria-label="4.6 Excellent 2,420 reviews"
-    class="bpk-rating"
+    class="bpk-rating bpk-rating--large"
   >
     <span
       aria-hidden="true"
@@ -337,7 +337,7 @@ exports[`BpkRating should render large size correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Excellent
       </span>
@@ -375,7 +375,7 @@ exports[`BpkRating should render showMaxValue rating correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Average
       </span>
@@ -407,7 +407,7 @@ exports[`BpkRating should render title only correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Average
       </span>
@@ -433,7 +433,7 @@ exports[`BpkRating should render zero to ten scale rating correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1 bpk-rating__title"
+        class="bpk-text bpk-text--label-1"
       >
         Excellent
       </span>
