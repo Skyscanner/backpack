@@ -65,7 +65,6 @@ const DefaultExample = () => (
       value={4.5}
       title={ImageTitle}
       subtitle="818 reviews"
-      titleClassName={getClassName('bpk-rating-story--title')}
     />
     <br />
   </div>

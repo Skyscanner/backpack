@@ -51,7 +51,6 @@ export type Props = {
   size: $Values<typeof RATING_SIZES>,
   subtitle: ?string,
   title: string,
-  titleClassName: ?string,
   value: number,
 };
 
@@ -64,16 +63,14 @@ const BpkRating = (props: Props) => {
     size,
     subtitle,
     title,
-    titleClassName,
     value,
     ...rest
   } = props;
 
+  const isLargeSize = size === RATING_SIZES.large;
   const classNames = [getClassName('bpk-rating', className)];
   const scoreStyles = [getClassName('bpk-rating__score')];
-  const textWrapperStyles = [
-    getClassName('bpk-rating__text-wrapper', titleClassName),
-  ];
+  const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
   const titleStyles = [getClassName('bpk-rating__title')];
   const maxValueStyles = [getClassName('bpk-rating__scale')];
   const subtitleStyles = [getClassName('bpk-rating__subtitle')];
@@ -83,7 +80,7 @@ const BpkRating = (props: Props) => {
   let maxValueTextSize = TEXT_STYLES.xs;
   let subtitleTextSize = TEXT_STYLES.caption;
 
-  if (size === RATING_SIZES.large) {
+  if (isLargeSize) {
     textWrapperStyles.push(getClassName('bpk-rating__text-wrapper--large'));
     subtitleStyles.push(getClassName('bpk-rating__subtitle--large'));
 
@@ -126,27 +123,51 @@ const BpkRating = (props: Props) => {
         )}
       </BpkText>
 
-      <div className={textWrapperStyles.join(' ')}>
-        <BpkText
-          className={titleStyles.join(' ')}
-          textStyle={titleTextSize}
-          tagName="span"
-          aria-hidden="true"
-        >
-          {title}
-        </BpkText>
-
-        {subtitle && (
+      {isLargeSize ? (
+        <div className={textWrapperStyles.join(' ')}>
           <BpkText
-            className={subtitleStyles.join(' ')}
-            textStyle={subtitleTextSize}
+            className={titleStyles.join(' ')}
+            textStyle={titleTextSize}
             tagName="span"
             aria-hidden="true"
           >
-            {subtitle}
+            {title}
           </BpkText>
-        )}
-      </div>
+
+          {subtitle && (
+            <BpkText
+              className={subtitleStyles.join(' ')}
+              textStyle={subtitleTextSize}
+              tagName="span"
+              aria-hidden="true"
+            >
+              {subtitle}
+            </BpkText>
+          )}
+        </div>
+      ) : (
+        <>
+          <BpkText
+            className={titleStyles.join(' ')}
+            textStyle={titleTextSize}
+            tagName="span"
+            aria-hidden="true"
+          >
+            {title}
+          </BpkText>
+
+          {subtitle && (
+            <BpkText
+              className={subtitleStyles.join(' ')}
+              textStyle={subtitleTextSize}
+              tagName="span"
+              aria-hidden="true"
+            >
+              {subtitle}
+            </BpkText>
+          )}
+        </>
+      )}
     </div>
   );
 };
@@ -159,7 +180,6 @@ BpkRating.propTypes = {
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
   subtitle: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  titleClassName: PropTypes.string,
   value: PropTypes.number.isRequired,
 };
 
@@ -169,7 +189,6 @@ BpkRating.defaultProps = {
   size: RATING_SIZES.base,
   subtitle: null,
   showMaxValue: false,
-  titleClassName: null,
 };
 
 export default BpkRating;

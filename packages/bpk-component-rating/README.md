@@ -70,4 +70,3 @@ export default () => (
 | size            | oneOf(RATING_SIZES)       | false    | RATING_SIZES.base         |
 | subtitle        | string                    | false    | null                      |
 | showMaxValue    | boolean                   | false    | false                     |
-| titleClassName  | string                    | false    | null                      |

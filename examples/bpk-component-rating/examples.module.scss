@@ -23,10 +23,6 @@ $bpk-spacing-v2: true;
 .bpk-rating-story {
   width: bpk-spacing-xxl() * 4;
 
-  &--title {
-    align-items: center;
-  }
-
   &--large {
     height: bpk-spacing-lg();
   }
