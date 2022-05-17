@@ -31,7 +31,7 @@ describe('BpkRating accessibility tests', () => {
         title="Average"
         subtitle="Might recommend"
         value={3.6}
-        showMaxValue
+        showScale
       />,
     );
     const results = await axe(container);

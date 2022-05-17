@@ -352,7 +352,7 @@ exports[`BpkRating should render large size correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkRating should render showMaxValue rating correctly 1`] = `
+exports[`BpkRating should render showScale rating correctly 1`] = `
 <DocumentFragment>
   <div
     aria-label="6.7 Average might recommend"

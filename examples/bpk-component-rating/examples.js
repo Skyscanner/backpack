@@ -65,7 +65,7 @@ const DefaultExample = () => (
       value={4.8}
       title="Excellent"
       subtitle="2,420 reviews"
-      showMaxValue
+      showScale
     />
     <br />
   </div>
@@ -79,7 +79,7 @@ const LargeSizeExample = () => (
       subtitle="This place was amazing"
       size={RATING_SIZES.large}
       value={4.4}
-      showMaxValue
+      showScale
     />
     <br />
     <BpkRating
@@ -88,7 +88,7 @@ const LargeSizeExample = () => (
       title={HighScoreTitle}
       subtitle="8,202 reviews"
       size={RATING_SIZES.large}
-      showMaxValue
+      showScale
     />
     <br />
     <BpkRating
@@ -109,7 +109,7 @@ const ShowMaxValueExample = () => (
       title="Good"
       subtitle="Nice choice"
       value={3.8}
-      showMaxValue
+      showScale
     />
     <br />
   </div>
@@ -117,7 +117,7 @@ const ShowMaxValueExample = () => (
 
 const TitleOnlyExample = () => (
   <div>
-    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} showMaxValue />
+    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} showScale />
     <br />
     <BpkRating ariaLabel="4.5 Great" title={ImageTitle} value={4.5} />
     <br />
@@ -131,7 +131,7 @@ const ZeroToTenScaleExample = () => (
       title="Terrible"
       value={1}
       ratingScale={RATING_SCALES.zeroToTen}
-      showMaxValue
+      showScale
     />
     <br />
     <BpkRating
@@ -140,7 +140,7 @@ const ZeroToTenScaleExample = () => (
       subtitle="It is almost perfect"
       value={9.9}
       ratingScale={RATING_SCALES.zeroToTen}
-      showMaxValue
+      showScale
     />
     <br />
   </div>

@@ -44,7 +44,7 @@ export default () => (
     title="Good"
     subtitle="Nice choice"
     value={3.8}
-    showMaxValue
+    showScale
   />
 
   // 0-10 scale
@@ -69,4 +69,4 @@ export default () => (
 | ratingScale | oneOf(RATING_SCALES) | false    | RATING_SCALES.zeroToFive |
 | size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
 | subtitle  | string                | false    | null              |
-| showMaxValue  | boolean               | false    | false             |
+| showScale  | boolean               | false    | false             |

@@ -48,14 +48,14 @@ describe('BpkRating', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render showMaxValue rating correctly', () => {
+  it('should render showScale rating correctly', () => {
     const { asFragment } = render(
       <BpkRating
         ariaLabel="6.7 Average might recommend"
         title="Average"
         subtitle="Might recommend"
         value={6.7}
-        showMaxValue
+        showScale
       />,
     );
     expect(asFragment()).toMatchSnapshot();

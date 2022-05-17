@@ -47,7 +47,7 @@ export type Props = {
   ariaLabel: string,
   className: ?string,
   ratingScale: $Values<typeof RATING_SCALES>,
-  showMaxValue: ?boolean,
+  showScale: ?boolean,
   size: $Values<typeof RATING_SIZES>,
   subtitle: ?string,
   title: string,
@@ -59,7 +59,7 @@ const BpkRating = (props: Props) => {
     ariaLabel,
     className,
     ratingScale,
-    showMaxValue,
+    showScale,
     size,
     subtitle,
     title,
@@ -110,7 +110,7 @@ const BpkRating = (props: Props) => {
       >
         {adjustedValue}
 
-        {showMaxValue && (
+        {showScale && (
           <BpkText
             textStyle={maxValueTextSize}
             className={maxValueStyles.join(' ')}
@@ -150,7 +150,7 @@ BpkRating.propTypes = {
   ratingScale: PropTypes.oneOf(Object.keys(RATING_SCALES)),
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
   subtitle: PropTypes.string,
-  showMaxValue: PropTypes.bool,
+  showScale: PropTypes.bool,
 };
 
 BpkRating.defaultProps = {
@@ -158,7 +158,7 @@ BpkRating.defaultProps = {
   ratingScale: RATING_SCALES.zeroToFive,
   size: RATING_SIZES.base,
   subtitle: null,
-  showMaxValue: false,
+  showScale: false,
 };
 
 export default BpkRating;
