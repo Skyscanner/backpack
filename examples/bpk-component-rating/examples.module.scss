@@ -35,6 +35,12 @@ $bpk-spacing-v2: true;
     vertical-align: middle;
   }
 
+  &--trip {
+    height: bpk-spacing-base();
+    margin-bottom: -(bpk-spacing-sm() / 2);
+    vertical-align: middle;
+  }
+
   &--score {
     height: bpk-spacing-lg();
   }

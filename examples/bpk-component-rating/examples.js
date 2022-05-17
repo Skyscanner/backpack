@@ -29,11 +29,24 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const owlSrc =
+  'https://content.skyscnr.com/m/276cca4d531e119b/original/4-5-64600-4.svg';
+const tripSrc =
+  'https://content.skyscnr.com/m/70435dd3a4ec4038/original/sc_trip_logo_primary_full.svg';
+
 const ImageTitle = (
   <img
     alt="rating 4.5"
     className={getClassName('bpk-rating-story--img')}
-    src="https://content.skyscnr.com/m/276cca4d531e119b/original/4-5-64600-4.svg"
+    src={owlSrc}
+  />
+);
+
+const TripImageTitle = (
+  <img
+    alt="rating 4.5"
+    className={getClassName('bpk-rating-story--trip')}
+    src={tripSrc}
   />
 );
 
@@ -42,7 +55,17 @@ const LargeImageTitle = (
     <img
       alt="rating 4.5"
       className={getClassName('bpk-rating-story--img')}
-      src="https://content.skyscnr.com/m/276cca4d531e119b/original/4-5-64600-4.svg"
+      src={owlSrc}
+    />
+  </span>
+);
+
+const LargeTripImageTitle = (
+  <span lassName={getClassName('bpk-rating-story--large')}>
+    <img
+      alt="rating 4.5"
+      className={getClassName('bpk-rating-story--trip')}
+      src={tripSrc}
     />
   </span>
 );
@@ -58,6 +81,14 @@ const DefaultExample = () => (
       value={4.5}
       title={ImageTitle}
       subtitle="818 reviews"
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 818 reviews"
+      value={4.5}
+      title={TripImageTitle}
+      subtitle="818 reviews"
+      showScale
     />
     <br />
     <BpkRating
@@ -97,6 +128,15 @@ const LargeSizeExample = () => (
       title={LargeImageTitle}
       subtitle="6,170 reviews"
       size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great. 6,170 reviews"
+      value={4.5}
+      title={LargeTripImageTitle}
+      subtitle="6,170 reviews"
+      size={RATING_SIZES.large}
+      showScale
     />
     <br />
   </div>
@@ -148,11 +188,66 @@ const ZeroToTenScaleExample = () => (
 
 const MixedExample = () => (
   <div>
-    <DefaultExample />
-    <LargeSizeExample />
-    <ShowMaxValueExample />
-    <TitleOnlyExample />
-    <ZeroToTenScaleExample />
+    <BpkRating
+      ariaLabel="4.5 Great 818 reviews"
+      value={4.5}
+      title={ImageTitle}
+      subtitle="818 reviews"
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 1,532 reviews"
+      value={4.5}
+      title={LargeImageTitle}
+      subtitle="1,532 reviews"
+      size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.8 Excellent 2,420 reviews"
+      value={4.8}
+      title="Excellent"
+      subtitle="2,420 reviews"
+      showScale
+    />
+    <br />
+    <BpkRating
+      ariaLabel="5.0 With honours 8,202 reviews"
+      value={5}
+      title={HighScoreTitle}
+      subtitle="8,202 reviews"
+      size={RATING_SIZES.large}
+      showScale
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 818 reviews"
+      value={4.5}
+      title={TripImageTitle}
+      subtitle="818 reviews"
+      showScale
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 6,170 reviews"
+      value={4.5}
+      title={LargeTripImageTitle}
+      subtitle="6,170 reviews"
+      size={RATING_SIZES.large}
+      showScale
+    />
+    <br />
+    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} showScale />
+    <br />
+    <BpkRating ariaLabel="4.5 Great" title={ImageTitle} value={4.5} />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great"
+      title={TripImageTitle}
+      value={4.5}
+      showScale
+    />
+    <br />
   </div>
 );
 

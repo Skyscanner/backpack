@@ -22,7 +22,7 @@ import { storiesOf } from '@storybook/react';
 import {
   DefaultExample,
   LargeSizeExample,
-  ShowMaxValueExample,
+  ShowScaleExample,
   TitleOnlyExample,
   ZeroToTenScaleExample,
   MixedExample,
@@ -31,7 +31,7 @@ import {
 storiesOf('bpk-component-rating', module)
   .add('Default', DefaultExample)
   .add('Large size ratings', LargeSizeExample)
-  .add('Show maxValue ratings', ShowMaxValueExample)
+  .add('Show scale ratings', ShowScaleExample)
   .add('Title only ratings', TitleOnlyExample)
   .add('Zero to ten scale ratings', ZeroToTenScaleExample)
   .add('Visual test', MixedExample);
