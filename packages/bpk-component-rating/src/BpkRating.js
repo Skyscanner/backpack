@@ -144,13 +144,13 @@ const BpkRating = (props: Props) => {
 
 BpkRating.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  ratingScale: PropTypes.oneOf(Object.keys(RATING_SCALES)),
-  showMaxValue: PropTypes.bool,
-  size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
-  subtitle: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   value: PropTypes.number.isRequired,
+  className: PropTypes.string,
+  ratingScale: PropTypes.oneOf(Object.keys(RATING_SCALES)),
+  size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
+  subtitle: PropTypes.string,
+  showMaxValue: PropTypes.bool,
 };
 
 BpkRating.defaultProps = {

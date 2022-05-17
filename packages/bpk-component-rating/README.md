@@ -60,13 +60,13 @@ export default () => (
 
 ## Props
 
-| Property  | PropType                        | Required | Default Value             |
-| --------------- | ------------------------- | -------- | ------------------------  |
-| ariaLabel       | string                    | true     | -                         |
-| title           | oneOfType(string, node)   | true     | -                         |
-| value           | number                    | true     | -                         |
-| className       | string                    | false    | null                      |
-| ratingScale     | oneOf(RATING_SCALES)      | false    | RATING_SCALES.zeroToFive  |
-| size            | oneOf(RATING_SIZES)       | false    | RATING_SIZES.base         |
-| subtitle        | string                    | false    | null                      |
-| showMaxValue    | boolean                   | false    | false                     |
+| Property  | PropType              | Required | Default Value     |
+| --------- | --------------------- | -------- | ----------------- |
+| ariaLabel | string                | true     | -                 |
+| title     | oneOfType(string, node) | true     | -                 |
+| value     | number                | true     | -                 |
+| className | string                | false    | null              |
+| ratingScale | oneOf(RATING_SCALES) | false    | RATING_SCALES.zeroToFive |
+| size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
+| subtitle  | string                | false    | null              |
+| showMaxValue  | boolean               | false    | false             |

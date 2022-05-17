@@ -33,7 +33,7 @@ const ImageTitle = (
   <img
     alt="rating 4.5"
     className={getClassName('bpk-rating-story--img')}
-    src="https://content.skyscnr.com/m/5360ff02f861ef63/original/owl-rate-4-5-light.png"
+    src="https://content.skyscnr.com/m/276cca4d531e119b/original/4-5-64600-4.svg"
   />
 );
 
@@ -42,7 +42,7 @@ const LargeImageTitle = (
     <img
       alt="rating 4.5"
       className={getClassName('bpk-rating-story--img')}
-      src="https://content.skyscnr.com/m/5360ff02f861ef63/original/owl-rate-4-5-light.png"
+      src="https://content.skyscnr.com/m/276cca4d531e119b/original/4-5-64600-4.svg"
     />
   </span>
 );
@@ -97,7 +97,6 @@ const LargeSizeExample = () => (
       title={LargeImageTitle}
       subtitle="6,170 reviews"
       size={RATING_SIZES.large}
-      showMaxValue
     />
     <br />
   </div>
