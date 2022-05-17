@@ -38,7 +38,7 @@ export default () => (
     value={2.3}
   />
 
-  // Show max value rating
+  // Show scale rating
   <BpkRating
     ariaLabel="3.8 Good Nice choice"
     title="Good"

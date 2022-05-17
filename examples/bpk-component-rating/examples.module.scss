@@ -29,9 +29,9 @@ $bpk-spacing-v2: true;
 
   &--img {
     height: bpk-spacing-base();
-    margin-right: -bpk-spacing-lg() / 4;
+    margin-right: -(bpk-spacing-lg() / 4);
     margin-bottom: bpk-spacing-sm() / 4;
-    margin-left: -bpk-spacing-lg() / 4;
+    margin-left: -(bpk-spacing-lg() / 4);
     vertical-align: middle;
   }
 
