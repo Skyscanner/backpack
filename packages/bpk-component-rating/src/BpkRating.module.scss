@@ -35,6 +35,10 @@ $bpk-spacing-v2: true;
     justify-content: center;
     align-items: baseline;
     color: $bpk-color-sky-gray;
+
+    @include bpk-rtl {
+      padding-left: bpk-spacing-sm() * 2;
+    }
   }
 
   &__text-wrapper {
