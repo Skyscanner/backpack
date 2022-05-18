@@ -55,7 +55,19 @@ describe('BpkRating', () => {
         title="Average"
         subtitle="Might recommend"
         value={6.7}
-        showScale
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render showScale with false rating correctly', () => {
+    const { asFragment } = render(
+      <BpkRating
+        ariaLabel="4.9 Awesome It is a fantanstic place"
+        title="Awesome"
+        subtitle="It is a fantanstic place"
+        value={4.9}
+        showScale={false}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

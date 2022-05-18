@@ -158,7 +158,7 @@ BpkRating.defaultProps = {
   ratingScale: RATING_SCALES.zeroToFive,
   size: RATING_SIZES.base,
   subtitle: null,
-  showScale: false,
+  showScale: true,
 };
 
 export default BpkRating;

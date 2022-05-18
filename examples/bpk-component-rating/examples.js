@@ -77,10 +77,18 @@ const HighScoreTitle = (
 const DefaultExample = () => (
   <div>
     <BpkRating
+      ariaLabel="4.8 Excellent 2,420 reviews"
+      value={4.8}
+      title="Excellent"
+      subtitle="2,420 reviews"
+    />
+    <br />
+    <BpkRating
       ariaLabel="4.5 Great 818 reviews"
       value={4.5}
       title={ImageTitle}
       subtitle="818 reviews"
+      showScale={false}
     />
     <br />
     <BpkRating
@@ -88,15 +96,6 @@ const DefaultExample = () => (
       value={4.5}
       title={TripImageTitle}
       subtitle="818 reviews"
-      showScale
-    />
-    <br />
-    <BpkRating
-      ariaLabel="4.8 Excellent 2,420 reviews"
-      value={4.8}
-      title="Excellent"
-      subtitle="2,420 reviews"
-      showScale
     />
     <br />
   </div>
@@ -110,7 +109,6 @@ const LargeSizeExample = () => (
       subtitle="This place was amazing"
       size={RATING_SIZES.large}
       value={4.4}
-      showScale
     />
     <br />
     <BpkRating
@@ -119,7 +117,6 @@ const LargeSizeExample = () => (
       title={HighScoreTitle}
       subtitle="8,202 reviews"
       size={RATING_SIZES.large}
-      showScale
     />
     <br />
     <BpkRating
@@ -128,6 +125,7 @@ const LargeSizeExample = () => (
       title={LargeImageTitle}
       subtitle="6,170 reviews"
       size={RATING_SIZES.large}
+      showScale={false}
     />
     <br />
     <BpkRating
@@ -136,7 +134,6 @@ const LargeSizeExample = () => (
       title={LargeTripImageTitle}
       subtitle="6,170 reviews"
       size={RATING_SIZES.large}
-      showScale
     />
     <br />
   </div>
@@ -149,7 +146,14 @@ const ShowScaleExample = () => (
       title="Good"
       subtitle="Nice choice"
       value={3.8}
-      showScale
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 112 reviews"
+      value={4.5}
+      title={ImageTitle}
+      subtitle="112 reviews"
+      showScale={false}
     />
     <br />
   </div>
@@ -157,9 +161,14 @@ const ShowScaleExample = () => (
 
 const TitleOnlyExample = () => (
   <div>
-    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} showScale />
+    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} />
     <br />
-    <BpkRating ariaLabel="4.5 Great" title={ImageTitle} value={4.5} />
+    <BpkRating
+      ariaLabel="4.5 Great"
+      title={ImageTitle}
+      value={4.5}
+      showScale={false}
+    />
     <br />
   </div>
 );
@@ -171,7 +180,6 @@ const ZeroToTenScaleExample = () => (
       title="Terrible"
       value={1}
       ratingScale={RATING_SCALES.zeroToTen}
-      showScale
     />
     <br />
     <BpkRating
@@ -180,7 +188,6 @@ const ZeroToTenScaleExample = () => (
       subtitle="It is almost perfect"
       value={9.9}
       ratingScale={RATING_SCALES.zeroToTen}
-      showScale
     />
     <br />
   </div>
@@ -193,6 +200,7 @@ const MixedExample = () => (
       value={4.5}
       title={ImageTitle}
       subtitle="818 reviews"
+      showScale={false}
     />
     <br />
     <BpkRating
@@ -201,6 +209,7 @@ const MixedExample = () => (
       title={LargeImageTitle}
       subtitle="1,532 reviews"
       size={RATING_SIZES.large}
+      showScale={false}
     />
     <br />
     <BpkRating
@@ -208,7 +217,6 @@ const MixedExample = () => (
       value={4.8}
       title="Excellent"
       subtitle="2,420 reviews"
-      showScale
     />
     <br />
     <BpkRating
@@ -217,7 +225,6 @@ const MixedExample = () => (
       title={HighScoreTitle}
       subtitle="8,202 reviews"
       size={RATING_SIZES.large}
-      showScale
     />
     <br />
     <BpkRating
@@ -225,7 +232,6 @@ const MixedExample = () => (
       value={4.5}
       title={TripImageTitle}
       subtitle="818 reviews"
-      showScale
     />
     <br />
     <BpkRating
@@ -234,19 +240,18 @@ const MixedExample = () => (
       title={LargeTripImageTitle}
       subtitle="6,170 reviews"
       size={RATING_SIZES.large}
-      showScale
     />
     <br />
-    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} showScale />
-    <br />
-    <BpkRating ariaLabel="4.5 Great" title={ImageTitle} value={4.5} />
+    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} />
     <br />
     <BpkRating
       ariaLabel="4.5 Great"
-      title={TripImageTitle}
+      title={ImageTitle}
       value={4.5}
-      showScale
+      showScale={false}
     />
+    <br />
+    <BpkRating ariaLabel="4.5 Great" title={TripImageTitle} value={4.5} />
     <br />
   </div>
 );
