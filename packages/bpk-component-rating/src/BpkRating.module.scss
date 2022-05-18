@@ -31,13 +31,13 @@ $bpk-spacing-v2: true;
 
   &__score {
     display: flex;
-    padding-right: bpk-spacing-sm() * 2;
+    padding-right: bpk-spacing-md();
     justify-content: center;
     align-items: baseline;
     color: $bpk-color-sky-gray;
 
     @include bpk-rtl {
-      padding-left: bpk-spacing-sm() * 2;
+      padding-left: bpk-spacing-md();
     }
   }
 
@@ -58,11 +58,11 @@ $bpk-spacing-v2: true;
   }
 
   &__subtitle {
-    padding-left: bpk-spacing-sm() * 2;
+    padding-left: bpk-spacing-md();
     color: $bpk-color-sky-gray-tint-02;
 
     @include bpk-rtl {
-      padding-right: bpk-spacing-sm() * 2;
+      padding-right: bpk-spacing-md();
     }
 
     &--large {

@@ -142,7 +142,7 @@ const LargeSizeExample = () => (
   </div>
 );
 
-const ShowMaxValueExample = () => (
+const ShowScaleExample = () => (
   <div>
     <BpkRating
       ariaLabel="3.8 Good Nice choice"
@@ -254,7 +254,7 @@ const MixedExample = () => (
 export {
   DefaultExample,
   LargeSizeExample,
-  ShowMaxValueExample,
+  ShowScaleExample,
   TitleOnlyExample,
   ZeroToTenScaleExample,
   MixedExample,
