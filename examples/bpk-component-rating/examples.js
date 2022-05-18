@@ -30,7 +30,7 @@ import STYLES from './examples.module.scss';
 const getClassName = cssModules(STYLES);
 
 const owlSrc =
-  'https://content.skyscnr.com/m/276cca4d531e119b/original/4-5-64600-4.svg';
+  'https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-64600-4.svg';
 const tripSrc =
   'https://content.skyscnr.com/m/70435dd3a4ec4038/original/sc_trip_logo_primary_full.svg';
 
