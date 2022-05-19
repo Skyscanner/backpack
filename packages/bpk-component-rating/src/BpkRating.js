@@ -73,9 +73,9 @@ const BpkRating = (props: Props) => {
   const maxValueStyles = [getClassName('bpk-rating__scale')];
   const subtitleStyles = [getClassName('bpk-rating__subtitle')];
 
-  const titleTextSize = TEXT_STYLES.label1;
   let valueTextSize = TEXT_STYLES.label1;
-  let maxValueTextSize = TEXT_STYLES.xs;
+  let scaleTextSize = TEXT_STYLES.caption;
+  const titleTextSize = TEXT_STYLES.label1;
   let subtitleTextSize = TEXT_STYLES.caption;
 
   if (size === RATING_SIZES.large) {
@@ -83,9 +83,9 @@ const BpkRating = (props: Props) => {
     textWrapperStyles.push(getClassName('bpk-rating__text-wrapper--large'));
     subtitleStyles.push(getClassName('bpk-rating__subtitle--large'));
 
-    valueTextSize = TEXT_STYLES.xxxxl;
-    maxValueTextSize = TEXT_STYLES.base;
-    subtitleTextSize = TEXT_STYLES.base;
+    valueTextSize = TEXT_STYLES.hero5;
+    scaleTextSize = TEXT_STYLES.bodyDefault;
+    subtitleTextSize = TEXT_STYLES.bodyDefault;
   }
 
   const minValue = getMinValue();
@@ -112,7 +112,7 @@ const BpkRating = (props: Props) => {
 
         {showScale && (
           <BpkText
-            textStyle={maxValueTextSize}
+            textStyle={scaleTextSize}
             className={maxValueStyles.join(' ')}
             tagName="span"
             aria-hidden="true"

@@ -13,7 +13,7 @@ exports[`BpkRating should correctly handling values higher than 5 when rating sc
       5.0
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /5
       </span>
@@ -51,7 +51,7 @@ exports[`BpkRating should correctly handling values higher than 10 when rating s
       10.0
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /10
       </span>
@@ -89,7 +89,7 @@ exports[`BpkRating should correctly handling values lower than 0 1`] = `
       0.0
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /5
       </span>
@@ -127,7 +127,7 @@ exports[`BpkRating should render a high score rating component (zero to five sca
       4.0
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /5
       </span>
@@ -165,7 +165,7 @@ exports[`BpkRating should render a high score rating component (zero to ten scal
       9.0
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /10
       </span>
@@ -203,7 +203,7 @@ exports[`BpkRating should render a high score rating component 1`] = `
       4.7
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /5
       </span>
@@ -241,7 +241,7 @@ exports[`BpkRating should render a low score rating component 1`] = `
       1.3
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /5
       </span>
@@ -279,7 +279,7 @@ exports[`BpkRating should render a medium score rating component (zero to five s
       3.7
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /5
       </span>
@@ -317,7 +317,7 @@ exports[`BpkRating should render a medium score rating component (zero to ten sc
       6.8
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /10
       </span>
@@ -355,7 +355,7 @@ exports[`BpkRating should render correctly 1`] = `
       4.6
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /5
       </span>
@@ -388,12 +388,12 @@ exports[`BpkRating should render large size correctly 1`] = `
   >
     <span
       aria-hidden="true"
-      class="bpk-text bpk-text--xxxxl bpk-rating__score"
+      class="bpk-text bpk-text--hero-5 bpk-rating__score"
     >
       4.6
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--base bpk-rating__scale"
+        class="bpk-text bpk-text--body-default bpk-rating__scale"
       >
         /5
       </span>
@@ -409,7 +409,7 @@ exports[`BpkRating should render large size correctly 1`] = `
       </span>
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--base bpk-rating__subtitle bpk-rating__subtitle--large"
+        class="bpk-text bpk-text--body-default bpk-rating__subtitle bpk-rating__subtitle--large"
       >
         2,420 reviews
       </span>
@@ -431,7 +431,7 @@ exports[`BpkRating should render showScale rating correctly 1`] = `
       5.0
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /5
       </span>
@@ -501,7 +501,7 @@ exports[`BpkRating should render title only correctly 1`] = `
       5.0
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /5
       </span>
@@ -533,7 +533,7 @@ exports[`BpkRating should render zero to ten scale rating correctly 1`] = `
       8.2
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--xs bpk-rating__scale"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
       >
         /10
       </span>
