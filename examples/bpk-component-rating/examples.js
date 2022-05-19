@@ -70,10 +70,6 @@ const LargeTripImageTitle = (
   </span>
 );
 
-const HighScoreTitle = (
-  <span className={getClassName('bpk-rating-story--score')}>With honours</span>
-);
-
 const DefaultExample = () => (
   <div>
     <BpkRating
@@ -114,7 +110,7 @@ const LargeSizeExample = () => (
     <BpkRating
       ariaLabel="5.0 With honours 8,202 reviews"
       value={5}
-      title={HighScoreTitle}
+      title="With honours"
       subtitle="8,202 reviews"
       size={RATING_SIZES.large}
     />
@@ -222,7 +218,7 @@ const MixedExample = () => (
     <BpkRating
       ariaLabel="5.0 With honours 8,202 reviews"
       value={5}
-      title={HighScoreTitle}
+      title="With honours"
       subtitle="8,202 reviews"
       size={RATING_SIZES.large}
     />
