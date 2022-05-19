@@ -75,7 +75,7 @@ const BpkRating = (props: Props) => {
 
   let valueTextSize = TEXT_STYLES.label1;
   let scaleTextSize = TEXT_STYLES.caption;
-  const titleTextSize = TEXT_STYLES.label1;
+  let titleTextSize = TEXT_STYLES.label1;
   let subtitleTextSize = TEXT_STYLES.caption;
 
   if (size === RATING_SIZES.large) {
@@ -85,6 +85,7 @@ const BpkRating = (props: Props) => {
 
     valueTextSize = TEXT_STYLES.hero5;
     scaleTextSize = TEXT_STYLES.bodyDefault;
+    titleTextSize = TEXT_STYLES.heading5;
     subtitleTextSize = TEXT_STYLES.bodyDefault;
   }
 

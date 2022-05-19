@@ -403,7 +403,7 @@ exports[`BpkRating should render large size correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
+        class="bpk-text bpk-text--heading-5"
       >
         Excellent
       </span>
