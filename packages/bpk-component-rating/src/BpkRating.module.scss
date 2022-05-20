@@ -29,7 +29,7 @@ $bpk-spacing-v2: true;
     align-items: center;
   }
 
-  &__score {
+  &__value {
     display: flex;
     padding-right: bpk-spacing-md();
     justify-content: center;
@@ -57,6 +57,12 @@ $bpk-spacing-v2: true;
     color: $bpk-color-sky-gray-tint-02;
   }
 
+  &__title {
+    &--large {
+      padding-top: $bpk-one-pixel-rem;
+    }
+  }
+
   &__subtitle {
     padding-left: bpk-spacing-md();
     color: $bpk-color-sky-gray-tint-02;
@@ -66,6 +72,7 @@ $bpk-spacing-v2: true;
     }
 
     &--large {
+      padding-top: $bpk-one-pixel-rem;
       padding-left: 0;
 
       @include bpk-rtl {

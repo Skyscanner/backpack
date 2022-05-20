@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import React from 'react';
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
@@ -43,14 +43,14 @@ const getMaxValue = (ratingScale) => {
   }
 };
 
-export type Props = {
+type Props = {
   ariaLabel: string,
   className: ?string,
   ratingScale: $Values<typeof RATING_SCALES>,
   showScale: ?boolean,
   size: $Values<typeof RATING_SIZES>,
   subtitle: ?string,
-  title: string,
+  title: string | Node,
   value: number,
 };
 
@@ -68,9 +68,10 @@ const BpkRating = (props: Props) => {
   } = props;
 
   const classNames = [getClassName('bpk-rating', className)];
-  const scoreStyles = [getClassName('bpk-rating__score')];
+  const valueStyles = [getClassName('bpk-rating__value')];
+  const scaleStyles = [getClassName('bpk-rating__scale')];
   const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
-  const maxValueStyles = [getClassName('bpk-rating__scale')];
+  const titleStyles = [];
   const subtitleStyles = [getClassName('bpk-rating__subtitle')];
 
   let valueTextSize = TEXT_STYLES.label1;
@@ -81,6 +82,7 @@ const BpkRating = (props: Props) => {
   if (size === RATING_SIZES.large) {
     classNames.push(getClassName('bpk-rating--large'));
     textWrapperStyles.push(getClassName('bpk-rating__text-wrapper--large'));
+    titleStyles.push(getClassName('bpk-rating__title--large'));
     subtitleStyles.push(getClassName('bpk-rating__subtitle--large'));
 
     valueTextSize = TEXT_STYLES.hero5;
@@ -106,7 +108,7 @@ const BpkRating = (props: Props) => {
       <BpkText
         textStyle={valueTextSize}
         tagName="span"
-        className={scoreStyles.join(' ')}
+        className={valueStyles.join(' ')}
         aria-hidden="true"
       >
         {adjustedValue}
@@ -114,7 +116,7 @@ const BpkRating = (props: Props) => {
         {showScale && (
           <BpkText
             textStyle={scaleTextSize}
-            className={maxValueStyles.join(' ')}
+            className={scaleStyles.join(' ')}
             tagName="span"
             aria-hidden="true"
           >
@@ -124,7 +126,12 @@ const BpkRating = (props: Props) => {
       </BpkText>
 
       <div className={textWrapperStyles.join(' ')}>
-        <BpkText textStyle={titleTextSize} tagName="span" aria-hidden="true">
+        <BpkText
+          textStyle={titleTextSize}
+          className={titleStyles.join(' ')}
+          tagName="span"
+          aria-hidden="true"
+        >
           {title}
         </BpkText>
 
