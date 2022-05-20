@@ -22,7 +22,6 @@ import React from 'react';
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkRating, {
   RATING_SIZES,
-  RATING_TYPES,
   RATING_SCALES,
 } from '../../packages/bpk-component-rating';
 
@@ -30,318 +29,161 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const owlSrc =
+  'https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-64600-4.svg';
+const tripSrc =
+  'https://content.skyscnr.com/m/70435dd3a4ec4038/original/sc_trip_logo_primary_full.svg';
+
+const ImageTitle = (
+  <img
+    alt="rating 4.5"
+    className={getClassName('bpk-rating-story--img')}
+    src={owlSrc}
+  />
+);
+
+const TripImageTitle = (
+  <img
+    alt="rating 4.5"
+    className={getClassName('bpk-rating-story--trip')}
+    src={tripSrc}
+  />
+);
+
+const LargeImageTitle = (
+  <span lassName={getClassName('bpk-rating-story--large')}>
+    <img
+      alt="rating 4.5"
+      className={getClassName('bpk-rating-story--img')}
+      src={owlSrc}
+    />
+  </span>
+);
+
+const LargeTripImageTitle = (
+  <span lassName={getClassName('bpk-rating-story--large')}>
+    <img
+      alt="rating 4.5"
+      className={getClassName('bpk-rating-story--trip')}
+      src={tripSrc}
+    />
+  </span>
+);
+
 const DefaultExample = () => (
   <div>
     <BpkRating
-      ariaLabel="9 Excellent would recommend"
+      ariaLabel="4.8 Excellent 2,420 reviews"
+      value={4.8}
       title="Excellent"
+      subtitle="2,420 reviews"
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 818 reviews"
+      value={4.5}
+      title={ImageTitle}
+      subtitle="818 reviews"
+      showScale={false}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 818 reviews"
+      value={4.5}
+      title={TripImageTitle}
+      subtitle="818 reviews"
+    />
+    <br />
+  </div>
+);
+
+const LargeSizeExample = () => (
+  <div>
+    <BpkRating
+      ariaLabel="4.4 Very good This place was amazing"
+      title="Very good"
       subtitle="This place was amazing"
-      value={9}
+      size={RATING_SIZES.large}
+      value={4.4}
     />
     <br />
     <BpkRating
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      subtitle="Might recommend"
-      value={6.7}
+      ariaLabel="5.0 With honours 8,202 reviews"
+      value={5}
+      title="With honours"
+      subtitle="8,202 reviews"
+      size={RATING_SIZES.large}
     />
     <br />
     <BpkRating
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      subtitle="Avoid here"
-      value={2.3}
-    />
-  </div>
-);
-
-const ZeroToFiveScaleExample = () => (
-  <div>
-    <BpkRating
-      ariaLabel="4 Excellent would recommend"
-      title="Excellent"
-      subtitle="This place was amazing"
-      value={4.1}
-      ratingScale={RATING_SCALES.zeroToFive}
+      ariaLabel="4.5 Great. 6,170 reviews"
+      value={4.5}
+      title={LargeImageTitle}
+      subtitle="6,170 reviews"
+      size={RATING_SIZES.large}
+      showScale={false}
     />
     <br />
     <BpkRating
-      ariaLabel="3 Average might recommend"
-      title="Average"
-      subtitle="Might recommend"
-      value={3.4}
-      ratingScale={RATING_SCALES.zeroToFive}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="2 Bad avoid here"
-      title="Bad"
-      subtitle="Avoid here"
-      value={2.3}
-      ratingScale={RATING_SCALES.zeroToFive}
-    />
-  </div>
-);
-
-const Vertical = () => (
-  <div>
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      subtitle="This place was amazing"
-      value={9}
-      vertical
-    />
-    <br />
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      subtitle="Might recommend"
-      value={6.7}
-      vertical
-    />
-    <br />
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      subtitle="Avoid here"
-      value={2.3}
-      vertical
-    />
-  </div>
-);
-
-const LargeSize = () => (
-  <div>
-    <BpkRating
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      subtitle="This place was amazing"
-      value={9}
-      size={RATING_SIZES.lg}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      subtitle="Might recommend"
-      value={6.7}
-      size={RATING_SIZES.lg}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      subtitle="Avoid here"
-      value={2.3}
-      size={RATING_SIZES.lg}
-    />
-  </div>
-);
-
-const LargeVertical = () => (
-  <div>
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      subtitle="This place was amazing"
-      value={9}
-      size={RATING_SIZES.lg}
-      vertical
-    />
-    <br />
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      subtitle="Might recommend"
-      value={6.7}
-      size={RATING_SIZES.lg}
-      vertical
-    />
-    <br />
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      subtitle="Avoid here"
-      value={2.3}
-      size={RATING_SIZES.lg}
-      vertical
-    />
-  </div>
-);
-
-const SmallSize = () => (
-  <div>
-    <BpkRating
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      subtitle="This place was amazing"
-      value={9}
-      size={RATING_SIZES.sm}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      subtitle="Might recommend"
-      value={6.7}
-      size={RATING_SIZES.sm}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      subtitle="Avoid here"
-      value={2.3}
-      size={RATING_SIZES.sm}
-    />
-  </div>
-);
-
-const SmallVertical = () => (
-  <div>
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      subtitle="This place was amazing"
-      value={9}
-      size={RATING_SIZES.sm}
-      vertical
-    />
-    <br />
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      subtitle="Might recommend"
-      value={6.7}
-      size={RATING_SIZES.sm}
-      vertical
-    />
-    <br />
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      subtitle="Avoid here"
-      value={2.3}
-      size={RATING_SIZES.sm}
-      vertical
-    />
-  </div>
-);
-
-const TitleOnly = () => (
-  <div>
-    <BpkRating
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      value={9}
-      size={RATING_SIZES.sm}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      value={6.7}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      value={2.3}
-      size={RATING_SIZES.lg}
-    />
-    <br />
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      value={9}
-      size={RATING_SIZES.sm}
-      vertical
-    />
-    <br />
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      value={6.7}
-      vertical
-    />
-    <br />
-    <BpkRating
-      className={getClassName('bpk-rating-story')}
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      value={2.3}
-      size={RATING_SIZES.lg}
-      vertical
-    />
-  </div>
-);
-
-const PillRatings = () => (
-  <div>
-    <BpkRating
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      subtitle="(4,000 reviews)"
-      value={9}
-      size={RATING_SIZES.sm}
-      type={RATING_TYPES.pill}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      subtitle="(50 reviews)"
-      value={6.7}
-      type={RATING_TYPES.pill}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      subtitle="(1,000 reviews)"
-      value={2.3}
-      size={RATING_SIZES.lg}
-      type={RATING_TYPES.pill}
+      ariaLabel="4.5 Great. 6,170 reviews"
+      value={4.5}
+      title={LargeTripImageTitle}
+      subtitle="6,170 reviews"
+      size={RATING_SIZES.large}
     />
     <br />
   </div>
 );
 
-const PillTitleOnly = () => (
+const ShowScaleExample = () => (
   <div>
     <BpkRating
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      value={9}
-      size={RATING_SIZES.sm}
-      type={RATING_TYPES.pill}
+      ariaLabel="3.8 Good Nice choice"
+      title="Good"
+      subtitle="Nice choice"
+      value={3.8}
     />
     <br />
     <BpkRating
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      value={6.7}
-      type={RATING_TYPES.pill}
+      ariaLabel="4.5 Great 112 reviews"
+      value={4.5}
+      title={ImageTitle}
+      subtitle="112 reviews"
+      showScale={false}
+    />
+    <br />
+  </div>
+);
+
+const TitleOnlyExample = () => (
+  <div>
+    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great"
+      title={ImageTitle}
+      value={4.5}
+      showScale={false}
+    />
+    <br />
+  </div>
+);
+
+const ZeroToTenScaleExample = () => (
+  <div>
+    <BpkRating
+      ariaLabel="1.0 Terrible"
+      title="Terrible"
+      value={1}
+      ratingScale={RATING_SCALES.zeroToTen}
     />
     <br />
     <BpkRating
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      value={2.3}
-      size={RATING_SIZES.lg}
-      type={RATING_TYPES.pill}
+      ariaLabel="9.9 Fantastic It is almost perfect"
+      title="Fantastic"
+      subtitle="It is almost perfect"
+      value={9.9}
+      ratingScale={RATING_SCALES.zeroToTen}
     />
     <br />
   </div>
@@ -349,29 +191,72 @@ const PillTitleOnly = () => (
 
 const MixedExample = () => (
   <div>
-    <DefaultExample />
-    <ZeroToFiveScaleExample />
-    <Vertical />
-    <LargeSize />
-    <LargeVertical />
-    <SmallSize />
-    <SmallVertical />
-    <TitleOnly />
-    <PillRatings />
-    <PillTitleOnly />
+    <BpkRating
+      ariaLabel="4.5 Great 818 reviews"
+      value={4.5}
+      title={ImageTitle}
+      subtitle="818 reviews"
+      showScale={false}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 1,532 reviews"
+      value={4.5}
+      title={LargeImageTitle}
+      subtitle="1,532 reviews"
+      size={RATING_SIZES.large}
+      showScale={false}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.8 Excellent 2,420 reviews"
+      value={4.8}
+      title="Excellent"
+      subtitle="2,420 reviews"
+    />
+    <br />
+    <BpkRating
+      ariaLabel="5.0 With honours 8,202 reviews"
+      value={5}
+      title="With honours"
+      subtitle="8,202 reviews"
+      size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 818 reviews"
+      value={4.5}
+      title={TripImageTitle}
+      subtitle="818 reviews"
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great 6,170 reviews"
+      value={4.5}
+      title={LargeTripImageTitle}
+      subtitle="6,170 reviews"
+      size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great"
+      title={ImageTitle}
+      value={4.5}
+      showScale={false}
+    />
+    <br />
+    <BpkRating ariaLabel="4.5 Great" title={TripImageTitle} value={4.5} />
+    <br />
   </div>
 );
 
 export {
   DefaultExample,
-  ZeroToFiveScaleExample,
-  Vertical,
-  LargeSize,
-  LargeVertical,
-  SmallSize,
-  SmallVertical,
-  TitleOnly,
-  PillRatings,
-  PillTitleOnly,
+  LargeSizeExample,
+  ShowScaleExample,
+  TitleOnlyExample,
+  ZeroToTenScaleExample,
   MixedExample,
 };
