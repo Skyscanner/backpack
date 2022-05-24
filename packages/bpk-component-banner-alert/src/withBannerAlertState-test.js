@@ -18,9 +18,8 @@
 /* @flow strict */
 
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import BpkCloseButton from 'bpk-component-close-button';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { ALERT_TYPES } from './common-types';
 import BpkBannerAlertDismissable from './BpkBannerAlertDismissable';
@@ -43,20 +42,20 @@ const BpkBannerAlertExpandableState = withBannerAlertState(
 );
 describe('withBannerAlertState(BpkBannerAlertDismissable)', () => {
   it('should render correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBannerAlertDismissableState
         type={ALERT_TYPES.SUCCESS}
         message={message}
         dismissButtonLabel="Dismiss"
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call provided `onDismiss`', () => {
+  it('should call provided `onDismiss`', async () => {
     const onDismissMock = jest.fn();
 
-    const wrapper = mount(
+    render(
       <BpkBannerAlertDismissableState
         type={ALERT_TYPES.SUCCESS}
         message={message}
@@ -65,7 +64,9 @@ describe('withBannerAlertState(BpkBannerAlertDismissable)', () => {
       />,
     );
 
-    wrapper.find(BpkCloseButton).first().simulate('click');
+    const dismissButton = screen.getByRole('button', { name: 'Dismiss' });
+
+    await userEvent.click(dismissButton);
     expect(onDismissMock).toHaveBeenCalled();
   });
 
@@ -73,7 +74,7 @@ describe('withBannerAlertState(BpkBannerAlertDismissable)', () => {
     jest.useFakeTimers();
     const onHideMock = jest.fn();
 
-    mount(
+    render(
       <BpkBannerAlertDismissableState
         type={ALERT_TYPES.SUCCESS}
         message={message}
@@ -86,12 +87,15 @@ describe('withBannerAlertState(BpkBannerAlertDismissable)', () => {
     jest.runAllTimers();
 
     expect(onHideMock).toHaveBeenCalled();
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 });
 
 describe('withBannerAlertState(BpkBannerAlertExpandable)', () => {
   it('should render correctly collapsed', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBannerAlertExpandableState
         type={ALERT_TYPES.SUCCESS}
         message={message}
@@ -101,11 +105,11 @@ describe('withBannerAlertState(BpkBannerAlertExpandable)', () => {
         {longMessage}
       </BpkBannerAlertExpandableState>,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly expanded', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBannerAlertExpandableState
         message={message}
         type={ALERT_TYPES.SUCCESS}
@@ -115,13 +119,13 @@ describe('withBannerAlertState(BpkBannerAlertExpandable)', () => {
         {longMessage}
       </BpkBannerAlertExpandableState>,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call provided "onExpandToggle"', () => {
+  it('should call provided "onExpandToggle"', async () => {
     const onExpandMock = jest.fn();
 
-    const wrapper = mount(
+    render(
       <BpkBannerAlertExpandableState
         message={message}
         type={ALERT_TYPES.SUCCESS}
@@ -132,7 +136,9 @@ describe('withBannerAlertState(BpkBannerAlertExpandable)', () => {
       </BpkBannerAlertExpandableState>,
     );
 
-    wrapper.find('button').first().simulate('click');
+    const expandButton = screen.getByRole('button', { name: 'View more' });
+
+    await userEvent.click(expandButton);
     expect(onExpandMock).toHaveBeenCalled();
   });
 });

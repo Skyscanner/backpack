@@ -18,8 +18,8 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkBannerAlert from './BpkBannerAlert';
 import { ALERT_TYPES } from './common-types';
@@ -28,31 +28,31 @@ const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
 describe('BpkBannerAlert', () => {
   it('should render correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBannerAlert type={ALERT_TYPES.SUCCESS} message={message} />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly hidden', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBannerAlert
         show={false}
         type={ALERT_TYPES.SUCCESS}
         message={message}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom bannerClassName', () => {
-    const tree = shallow(
+    render(
       <BpkBannerAlert
         bannerClassName="custom-banner-class-name"
         type={ALERT_TYPES.SUCCESS}
         message={message}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(screen.getByRole('alert')).toHaveClass('custom-banner-class-name');
   });
 });

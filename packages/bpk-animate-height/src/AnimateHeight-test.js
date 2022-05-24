@@ -17,8 +17,8 @@
  */
 
 import React from 'react';
-import { mount } from 'enzyme';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import AnimateHeight from './AnimateHeight';
@@ -42,19 +42,21 @@ describe('AnimateHeight', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should set "display: none;" on contentElement if height is 0', () => {
-    const tree = mount(
+  it('content element should not be visible if height is 0', () => {
+    const { rerender } = render(
       <AnimateHeight duration={0} height={0}>
         Content.
       </AnimateHeight>,
-      { lifecycleExperimental: true }, // See https://github.com/airbnb/enzyme/pull/318
     );
 
-    expect(tree.instance().contentElement.style.display).toEqual('none');
+    expect(screen.getByText('Content.')).not.toBeVisible();
 
-    tree.setProps({ height: spacingSm }).update();
-
-    expect(tree.instance().contentElement.style.display).toEqual('');
+    rerender(
+      <AnimateHeight duration={0} height={spacingSm}>
+        Content.
+      </AnimateHeight>,
+    );
+    expect(screen.getByText('Content.')).toBeVisible();
   });
 
   it('should render correctly with "transitionOverflow" attribute equal to "visible"', () => {

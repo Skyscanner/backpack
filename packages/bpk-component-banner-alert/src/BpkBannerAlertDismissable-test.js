@@ -18,8 +18,7 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
 import BpkBannerAlertDismissable from './BpkBannerAlertDismissable';
 import { ALERT_TYPES } from './common-types';
@@ -28,7 +27,7 @@ const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
 describe('BpkBannerAlertDismissable', () => {
   it('should render correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBannerAlertDismissable
         type={ALERT_TYPES.SUCCESS}
         message={message}
@@ -36,6 +35,6 @@ describe('BpkBannerAlertDismissable', () => {
         onDismiss={jest.fn()}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

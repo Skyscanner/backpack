@@ -20,7 +20,6 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
 
 import { BREAKPOINTS } from './BpkBreakpoint';
 
@@ -79,7 +78,7 @@ describe('BpkBreakpoint', () => {
     });
 
     it("should not error if the 'query' prop is an allowed value", () => {
-      mount(
+      render(
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
           {() => <div />}
         </BpkBreakpoint>,
@@ -88,14 +87,14 @@ describe('BpkBreakpoint', () => {
     });
 
     it("should error if the 'query' prop is not an allowed value", () => {
-      mount(
+      render(
         <BpkBreakpoint query="A RANDOM STRING">{() => <div />}</BpkBreakpoint>,
       );
       expect(errorOrWarningSpy.mock.calls.length).toBe(1);
     });
 
     it("should not error if the 'query' prop is not an allowed value but 'legacy' prop is true", () => {
-      mount(
+      render(
         <BpkBreakpoint query="A RANDOM STRING" legacy>
           {() => <div />}
         </BpkBreakpoint>,

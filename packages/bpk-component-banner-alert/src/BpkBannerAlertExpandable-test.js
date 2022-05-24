@@ -18,20 +18,21 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
 import { ALERT_TYPES } from './common-types';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
-const innerMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
-blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
-nec mi.`;
+const innerMessage =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
+  'Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus.' +
+  'Nunc diam augue, egestas id egestas ut, facilisis nec mi.';
 
 describe('BpkBannerAlertExpandable', () => {
-  it('should render correctly', () => {
-    const tree = shallow(
+  it('should not show inner message when "expanded" is not set to true', () => {
+    render(
       <BpkBannerAlertExpandable
         type={ALERT_TYPES.SUCCESS}
         message={message}
@@ -41,11 +42,11 @@ describe('BpkBannerAlertExpandable', () => {
         {innerMessage}
       </BpkBannerAlertExpandable>,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(screen.getByText(innerMessage)).not.toBeVisible();
   });
 
-  it('should render correctly expanded', () => {
-    const tree = shallow(
+  it('should show inner message when "expanded" is set to true', () => {
+    render(
       <BpkBannerAlertExpandable
         type={ALERT_TYPES.SUCCESS}
         message={message}
@@ -56,6 +57,6 @@ describe('BpkBannerAlertExpandable', () => {
         {innerMessage}
       </BpkBannerAlertExpandable>,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(screen.getByText(innerMessage)).toBeVisible();
   });
 });
