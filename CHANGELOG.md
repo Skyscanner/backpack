@@ -1,3 +1,10 @@
+# 2022-05-25
+
+**Fixed:**
+
+ - bpk-component-rating: 4.0.0 => 4.0.1
+   - Fixed RTL issue where the value had additional padding.
+
 # 2022-05-20
 
 **Breaking:**
