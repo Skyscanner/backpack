@@ -37,6 +37,7 @@ $bpk-spacing-v2: true;
     color: $bpk-color-sky-gray;
 
     @include bpk-rtl {
+      padding-right: 0;
       padding-left: bpk-spacing-md();
     }
   }
@@ -69,6 +70,7 @@ $bpk-spacing-v2: true;
 
     @include bpk-rtl {
       padding-right: bpk-spacing-md();
+      padding-left: 0;
     }
 
     &--large {
@@ -77,6 +79,7 @@ $bpk-spacing-v2: true;
 
       @include bpk-rtl {
         padding-right: 0;
+        padding-left: 0;
       }
     }
   }
