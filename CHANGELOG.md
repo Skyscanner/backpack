@@ -1,3 +1,16 @@
+# 2022-05-25
+
+Major Release - `@skyscanner/backpack-web v1.0.0`
+
+New release and option to use single package version of Backpack
+
+To install please use `npm install --save @skyscanner/backpack-web`
+
+**Fixed:**
+
+ - bpk-component-rating: 4.0.0 => 4.0.1
+   - Fixed RTL issue where the value had additional padding.
+
 # 2022-05-20
 
 **Breaking:**
