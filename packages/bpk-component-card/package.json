@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-card",
-  "version": "4.1.9",
+  "version": "4.1.10",
   "description": "Backpack card component.",
   "license": "Apache-2.0",
   "repository": {
@@ -19,8 +19,8 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "bpk-component-link": "^3.1.8",
-    "bpk-component-text": "^7.0.2"
+    "bpk-component-link": "^3.1.9",
+    "bpk-component-text": "^7.0.3"
   },
   "peerDependencies": {
     "react": "^16.3.0 || ^17.0.0"

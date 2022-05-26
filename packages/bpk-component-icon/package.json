@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-icon",
-  "version": "9.2.9",
+  "version": "9.2.10",
   "description": "Backpack icon components.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,9 +24,9 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^6.2.3",
-    "bpk-component-list": "^4.0.1",
-    "bpk-component-text": "^7.0.2"
+    "bpk-component-button": "^6.2.4",
+    "bpk-component-list": "^4.0.2",
+    "bpk-component-text": "^7.0.3"
   },
   "peerDependencies": {
     "react": "^16.3.0 || ^17.0.0"

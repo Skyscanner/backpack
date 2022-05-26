@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-section-list",
-  "version": "3.2.9",
+  "version": "3.2.10",
   "description": "Backpack section list component.",
   "license": "Apache-2.0",
   "repository": {
@@ -15,14 +15,14 @@
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
     "@skyscanner/bpk-foundations-web": "^8.0.0",
-    "bpk-component-icon": "^9.2.9",
-    "bpk-component-text": "^7.0.2",
+    "bpk-component-icon": "^9.2.10",
+    "bpk-component-text": "^7.0.3",
     "bpk-mixins": "^31.1.1",
     "bpk-react-utils": "^4.1.1",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^1.1.7"
+    "bpk-storybook-utils": "^1.1.8"
   },
   "peerDependencies": {
     "react": "^16.3.0 || ^17.0.0"
