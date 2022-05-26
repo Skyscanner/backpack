@@ -18,7 +18,7 @@
     "bpk-component-aria-live": "^2.1.13",
     "bpk-component-icon": "^9.2.9",
     "bpk-component-select": "^5.1.8",
-    "bpk-mixins": "^31.0.0",
+    "bpk-mixins": "^31.1.1",
     "bpk-react-utils": "^4.1.1",
     "date-fns": "^2.21.1",
     "prop-types": "^15.7.2"
