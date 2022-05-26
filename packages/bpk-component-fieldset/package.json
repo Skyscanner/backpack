@@ -16,7 +16,7 @@
   "dependencies": {
     "bpk-component-form-validation": "^4.2.11",
     "bpk-component-label": "^5.1.8",
-    "bpk-mixins": "^31.0.0",
+    "bpk-mixins": "^31.1.1",
     "bpk-react-utils": "^4.1.1",
     "prop-types": "^15.7.2"
   },

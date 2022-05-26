@@ -16,7 +16,7 @@
     "bpk-component-button": "^6.2.3",
     "bpk-component-card": "^4.1.9",
     "bpk-component-text": "^7.0.2",
-    "bpk-mixins": "^31.0.0",
+    "bpk-mixins": "^31.1.1",
     "bpk-react-utils": "^4.1.1",
     "prop-types": "^15.5.8"
   },
