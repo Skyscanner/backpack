@@ -1,3 +1,11 @@
+# 2022-05-26
+
+**Fixed:**
+
+- bpk-component-button: 6.2.3 => 6.2.4
+   - Fix link buttons text font weight. Link buttons text will now be bold.
+
+
 # 2022-05-25
 
 Major Release - `@skyscanner/backpack-web v1.0.0`
