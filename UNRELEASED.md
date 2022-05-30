@@ -1,4 +1,6 @@
-**Fixed:**
+**Breaking:**
 
 - bpk-component-rating:
-   - Support rating `value` when type is `string`.
+   - Deprecate `size` value `lg` and replace with `large` to show vertical style.
+   - Support `value` when it's localized `string` type.
+   - Adjust vertical style to align with baseline.
