@@ -24,9 +24,9 @@ export default () => (
 
   // Large size rating
   <BpkRating
-    ariaLabel="4.4 Very good This place was amazing"
+    ariaLabel="4.4 Very good 120 reviews"
     title="Very good"
-    subtitle="This place was amazing"
+    subtitle="120 reviews"
     size={RATING_SIZES.large}
     value={4.4}
   />
@@ -40,17 +40,26 @@ export default () => (
 
   // Show scale rating
   <BpkRating
-    ariaLabel="3.8 Good Nice choice"
+    ariaLabel="3.8 Good 530 reviews"
     title="Good"
-    subtitle="Nice choice"
+    subtitle="530 reviews"
     value={3.8}
+  />
+
+  // Hide scale rating
+  <BpkRating
+    ariaLabel="3.8 Good 530 reviews"
+    title="Good"
+    subtitle="530 reviews"
+    value={3.8}
+    showScale={false}
   />
 
   // 0-10 scale
   <BpkRating
-    ariaLabel="9.9 Awesome It was almost perfect"
+    ariaLabel="9.9 Awesome 6,549 reviews"
     title="Awesome"
-    subtitle="It was almost perfect"
+    subtitle="6,549 reviews"
     value={9.9}
     ratingScale={RATING_SCALES.zeroToTen}
   />
@@ -63,7 +72,7 @@ export default () => (
 | --------- | --------------------- | -------- | ----------------- |
 | ariaLabel | string                | true     | -                 |
 | title     | oneOfType(string, node) | true     | -                 |
-| value     | number                | true     | -                 |
+| value     | oneOfType(string, number) | true     | -               |
 | className | string                | false    | null              |
 | ratingScale | oneOf(RATING_SCALES) | false    | RATING_SCALES.zeroToFive |
 | size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |

@@ -51,23 +51,19 @@ const TripImageTitle = (
 );
 
 const LargeImageTitle = (
-  <span lassName={getClassName('bpk-rating-story--large')}>
-    <img
-      alt="rating 4.5"
-      className={getClassName('bpk-rating-story--img')}
-      src={owlSrc}
-    />
-  </span>
+  <img
+    alt="rating 4.5"
+    className={getClassName('bpk-rating-story--img')}
+    src={owlSrc}
+  />
 );
 
 const LargeTripImageTitle = (
-  <span lassName={getClassName('bpk-rating-story--large')}>
-    <img
-      alt="rating 4.5"
-      className={getClassName('bpk-rating-story--trip')}
-      src={tripSrc}
-    />
-  </span>
+  <img
+    alt="rating 4.5"
+    className={getClassName('bpk-rating-story--trip')}
+    src={tripSrc}
+  />
 );
 
 const DefaultExample = () => (
