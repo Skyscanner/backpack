@@ -21,10 +21,6 @@
 $bpk-spacing-v2: true;
 
 .bpk-rating-story {
-  &--large {
-    height: bpk-spacing-lg();
-  }
-
   &--img {
     height: bpk-spacing-base();
     margin-right: -($bpk-one-pixel-rem * 6);
