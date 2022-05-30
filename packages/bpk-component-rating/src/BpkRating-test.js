@@ -212,4 +212,16 @@ describe('BpkRating', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should correctly when value is string type', () => {
+    const { asFragment } = render(
+      <BpkRating
+        ariaLabel="4,6 Wonderful Wise choice"
+        title="Wonderful"
+        subtitle="Wise choice"
+        value="4,6"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

@@ -46,6 +46,15 @@ export default () => (
     value={3.8}
   />
 
+  // Hide scale rating
+  <BpkRating
+    ariaLabel="3.8 Good Nice choice"
+    title="Good"
+    subtitle="Nice choice"
+    value={3.8}
+    showScale={false}
+  />
+
   // 0-10 scale
   <BpkRating
     ariaLabel="9.9 Awesome It was almost perfect"
@@ -63,7 +72,7 @@ export default () => (
 | --------- | --------------------- | -------- | ----------------- |
 | ariaLabel | string                | true     | -                 |
 | title     | oneOfType(string, node) | true     | -                 |
-| value     | number                | true     | -                 |
+| value     | oneOfType(string, number) | true     | -               |
 | className | string                | false    | null              |
 | ratingScale | oneOf(RATING_SCALES) | false    | RATING_SCALES.zeroToFive |
 | size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
