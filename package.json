@@ -168,7 +168,7 @@
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-svg-loader": "^3.0.1",
-    "sass-loader": "^8.0.0",
+    "sass-loader": "^13.0.0",
     "style-loader": "^2.0.0",
     "stylelint-config-skyscanner": "^4.0.0",
     "ts-migrate": "^0.1.27",
