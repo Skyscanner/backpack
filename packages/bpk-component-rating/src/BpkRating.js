@@ -51,7 +51,7 @@ type Props = {
   size: $Values<typeof RATING_SIZES>,
   subtitle: ?string,
   title: string | Node,
-  value: number,
+  value: string | number,
 };
 
 const BpkRating = (props: Props) => {
@@ -97,9 +97,7 @@ const BpkRating = (props: Props) => {
   let adjustedValue = value;
 
   if (adjustedValue >= maxValue || adjustedValue <= minValue) {
-    adjustedValue = clamp(adjustedValue, minValue, maxValue).toFixed(1);
-  } else {
-    adjustedValue = value.toFixed(1);
+    adjustedValue = clamp(adjustedValue, minValue, maxValue);
   }
 
   return (
@@ -153,7 +151,7 @@ const BpkRating = (props: Props) => {
 BpkRating.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   className: PropTypes.string,
   ratingScale: PropTypes.oneOf(Object.keys(RATING_SCALES)),
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),

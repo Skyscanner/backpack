@@ -1,3 +1,29 @@
+# 2022-05-26
+
+- `@skyscanner/backpack-web`: 1.0.0 => 1.0.1
+  - Fix link buttons text font weight. Link buttons text will now be bold.
+  
+# 2022-05-26
+
+**Fixed:**
+
+- bpk-component-button: 6.2.3 => 6.2.4
+   - Fix link buttons text font weight. Link buttons text will now be bold.
+
+
+# 2022-05-25
+
+Major Release - `@skyscanner/backpack-web v1.0.0`
+
+New release and option to use single package version of Backpack
+
+To install please use `npm install --save @skyscanner/backpack-web`
+
+**Fixed:**
+
+ - bpk-component-rating: 4.0.0 => 4.0.1
+   - Fixed RTL issue where the value had additional padding.
+
 # 2022-05-20
 
 **Breaking:**
