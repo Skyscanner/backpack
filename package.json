@@ -119,7 +119,7 @@
     "@storybook/addon-storyshots-puppeteer": "^5.3.14",
     "@storybook/addon-viewport": "^5.3.14",
     "@storybook/react": "^5.3.14",
-    "@testing-library/react": "^11.2.5",
+    "@testing-library/react": "^12.1.5",
     "@types/jest": "^27.0.3",
     "@types/jest-axe": "^3.5.3",
     "@types/react": "^17.0.37",
