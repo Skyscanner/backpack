@@ -1,3 +1,12 @@
+# 2022-05-31
+
+**Breaking:**
+
+- bpk-component-rating: 4.0.2 => 5.0.0
+  - Deprecate `size` value `lg` and replace with `large` to show vertical style.
+  - Support `value` when it's localized `string` type.
+
+
 # 2022-05-26
 
 - `@skyscanner/backpack-web`: 1.0.0 => 1.0.1
