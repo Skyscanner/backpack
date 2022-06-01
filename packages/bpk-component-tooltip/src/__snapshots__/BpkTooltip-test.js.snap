@@ -10,6 +10,7 @@ exports[`BpkTooltip should render correctly 1`] = `
   >
     <span
       class="bpk-tooltip__arrow"
+      data-popper-arrow="true"
       id="js-bpk-popover-arrow"
       role="presentation"
     />
@@ -32,6 +33,7 @@ exports[`BpkTooltip should render correctly with "className" attribute 1`] = `
   >
     <span
       class="bpk-tooltip__arrow"
+      data-popper-arrow="true"
       id="js-bpk-popover-arrow"
       role="presentation"
     />
@@ -54,6 +56,7 @@ exports[`BpkTooltip should render correctly with "padded" attribute equal to fal
   >
     <span
       class="bpk-tooltip__arrow"
+      data-popper-arrow="true"
       id="js-bpk-popover-arrow"
       role="presentation"
     />
@@ -76,6 +79,7 @@ exports[`BpkTooltip should render correctly with type=dark 1`] = `
   >
     <span
       class="bpk-tooltip__arrow bpk-tooltip__arrow--dark"
+      data-popper-arrow="true"
       id="js-bpk-popover-arrow"
       role="presentation"
     />

@@ -71,7 +71,12 @@ const BpkTooltip = (props: TooltipProps) => {
         className={classNames}
         {...rest}
       >
-        <span id={ARROW_ID} className={arrowClassNames} role="presentation" />
+        <span
+          id={ARROW_ID}
+          data-popper-arrow
+          className={arrowClassNames}
+          role="presentation"
+        />
         <div className={innerClassNames}>{children}</div>
       </section>
     </TransitionInitialMount>

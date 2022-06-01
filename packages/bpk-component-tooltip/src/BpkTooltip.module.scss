@@ -19,27 +19,13 @@
 @import '~bpk-mixins';
 $bpk-spacing-v2: true;
 
-$arrow-size: bpk-spacing-sm();
+$arrow-size: bpk-spacing-md();
+$arrow-inset-margin: -($bpk-one-pixel-rem * 3);
+$light-arrow-border-color: $bpk-color-sky-gray-tint-06;
 $dark-background-color: $bpk-color-sky-gray;
 
 .bpk-tooltip-portal {
   z-index: $bpk-zindex-tooltip;
-
-  &[x-placement='top'] {
-    margin-bottom: $arrow-size;
-  }
-
-  &[x-placement='right'] {
-    margin-left: $arrow-size;
-  }
-
-  &[x-placement='bottom'] {
-    margin-top: $arrow-size;
-  }
-
-  &[x-placement='left'] {
-    margin-right: $arrow-size;
-  }
 }
 
 .bpk-tooltip {
@@ -51,24 +37,26 @@ $dark-background-color: $bpk-color-sky-gray;
   &--appear {
     opacity: 0;
 
-    .bpk-tooltip-portal[x-placement='top'] &:not(.bpk-tooltip--appear-active) {
+    .bpk-tooltip-portal[data-popper-placement='top']
+      &:not(.bpk-tooltip--appear-active) {
       transform: translate(0, -1rem);
       transition: none;
     }
 
-    .bpk-tooltip-portal[x-placement='right']
+    .bpk-tooltip-portal[data-popper-placement='right']
       &:not(.bpk-tooltip--appear-active) {
       transform: translate(1rem, 0);
       transition: none;
     }
 
-    .bpk-tooltip-portal[x-placement='bottom']
+    .bpk-tooltip-portal[data-popper-placement='bottom']
       &:not(.bpk-tooltip--appear-active) {
       transform: translate(0, 1rem);
       transition: none;
     }
 
-    .bpk-tooltip-portal[x-placement='left'] &:not(.bpk-tooltip--appear-active) {
+    .bpk-tooltip-portal[data-popper-placement='left']
+      &:not(.bpk-tooltip--appear-active) {
       transform: translate(-1rem, 0);
       transition: none;
     }
@@ -82,55 +70,58 @@ $dark-background-color: $bpk-color-sky-gray;
   }
 
   &__arrow {
-    @include bpk-layer-arrow($arrow-size);
+    position: aboslute;
+    width: $arrow-size;
+    height: $arrow-size;
+    transform: rotate(45deg);
+    border: $bpk-one-pixel-rem solid transparent;
+    background: inherit;
+    background-color: $bpk-color-white;
 
-    .bpk-tooltip-portal[x-placement='top'] & {
-      @include bpk-layer-arrow-bottom($arrow-size);
+    .bpk-tooltip-portal[data-popper-placement='top'] & {
+      bottom: $arrow-inset-margin;
+      border-right-color: $light-arrow-border-color;
+      border-bottom-color: $light-arrow-border-color;
     }
 
-    .bpk-tooltip-portal[x-placement='right'] & {
-      @include bpk-layer-arrow-left($arrow-size);
+    .bpk-tooltip-portal[data-popper-placement='right'] & {
+      left: $arrow-inset-margin;
+      border-bottom-color: $light-arrow-border-color;
+      border-left-color: $light-arrow-border-color;
     }
 
-    .bpk-tooltip-portal[x-placement='bottom'] & {
-      @include bpk-layer-arrow-top($arrow-size);
+    .bpk-tooltip-portal[data-popper-placement='bottom'] & {
+      top: $arrow-inset-margin;
+      border-top-color: $light-arrow-border-color;
+      border-left-color: $light-arrow-border-color;
     }
 
-    .bpk-tooltip-portal[x-placement='left'] & {
-      @include bpk-layer-arrow-right($arrow-size);
+    .bpk-tooltip-portal[data-popper-placement='left'] & {
+      right: $arrow-inset-margin;
+      border-top-color: $light-arrow-border-color;
+      border-right-color: $light-arrow-border-color;
     }
 
     &--dark {
-      .bpk-tooltip-portal[x-placement='top'] & {
-        @include bpk-layer-arrow-bottom(
-          $arrow-size,
-          $dark-background-color,
-          $dark-background-color
-        );
+      background-color: $dark-background-color;
+      .bpk-tooltip-portal[data-popper-placement='top'] & {
+        border-right-color: $dark-background-color;
+        border-bottom-color: $dark-background-color;
       }
 
-      .bpk-tooltip-portal[x-placement='right'] & {
-        @include bpk-layer-arrow-left(
-          $arrow-size,
-          $dark-background-color,
-          $dark-background-color
-        );
+      .bpk-tooltip-portal[data-popper-placement='right'] & {
+        border-bottom-color: $dark-background-color;
+        border-left-color: $dark-background-color;
       }
 
-      .bpk-tooltip-portal[x-placement='bottom'] & {
-        @include bpk-layer-arrow-top(
-          $arrow-size,
-          $dark-background-color,
-          $dark-background-color
-        );
+      .bpk-tooltip-portal[data-popper-placement='bottom'] & {
+        border-top-color: $dark-background-color;
+        border-left-color: $dark-background-color;
       }
 
-      .bpk-tooltip-portal[x-placement='left'] & {
-        @include bpk-layer-arrow-right(
-          $arrow-size,
-          $dark-background-color,
-          $dark-background-color
-        );
+      .bpk-tooltip-portal[data-popper-placement='left'] & {
+        border-top-color: $dark-background-color;
+        border-right-color: $dark-background-color;
       }
     }
   }
