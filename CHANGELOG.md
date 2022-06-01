@@ -1,3 +1,9 @@
+# 2022-06-01
+
+**Fixed:**
+- `@skyscanner/backpack-web`: 2.0.0 => 2.0.1
+  - Fixed an issue with imports being incorrectly set.
+
 # 2022-05-31
 
 **Breaking:**
