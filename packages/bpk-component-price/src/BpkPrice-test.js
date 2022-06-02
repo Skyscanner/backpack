@@ -68,7 +68,7 @@ describe('Mobile layout', () => {
 
 describe('Desktop layout', () => {
   beforeEach(() => {
-    BpkBreakpoint.mockImplementation(({ children }) => children(true));
+    BpkBreakpoint.mockImplementation(({ children }) => children(false));
   });
 
   it('should render correctly', () => {

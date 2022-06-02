@@ -3,13 +3,15 @@
 exports[`Desktop layout should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile"
+    class="bpk-price"
   >
-    <span
-      class="bpk-text bpk-text--heading-4"
-    >
-      £1,830
-    </span>
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -17,14 +19,16 @@ exports[`Desktop layout should render correctly 1`] = `
 exports[`Desktop layout should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile"
+    class="bpk-price"
     testid="123"
   >
-    <span
-      class="bpk-text bpk-text--heading-4"
-    >
-      £1,830
-    </span>
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -32,13 +36,15 @@ exports[`Desktop layout should support arbitrary props 1`] = `
 exports[`Desktop layout should support custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile custom-classname"
+    class="bpk-price custom-classname"
   >
-    <span
-      class="bpk-text bpk-text--heading-4"
-    >
-      £1,830
-    </span>
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -46,18 +52,20 @@ exports[`Desktop layout should support custom class names 1`] = `
 exports[`Desktop layout should support description attribute 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile"
+    class="bpk-price"
   >
-    <span
-      class="bpk-text bpk-text--heading-4"
-    >
-      £1,830
-    </span>
-    <span
-      class="bpk-text bpk-text--xs"
-    >
-      / night
-    </span>
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+      <span
+        class="bpk-text bpk-text--sm bpk-price__descriptionSpacing"
+      >
+        / night
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -65,18 +73,20 @@ exports[`Desktop layout should support description attribute 1`] = `
 exports[`Desktop layout should support subtitle attribute 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile"
+    class="bpk-price"
   >
     <span
-      class="bpk-text bpk-text--xs bpk-price--subtitle"
+      class="bpk-text bpk-text--sm bpk-price__subtitle"
     >
       £200
     </span>
-    <span
-      class="bpk-text bpk-text--heading-4"
-    >
-      £1,830
-    </span>
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;
