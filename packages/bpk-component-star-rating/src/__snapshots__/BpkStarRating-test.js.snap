@@ -4,6 +4,7 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
 <div
   aria-label="Rated 7 out of 5 stars"
   className="bpk-star-rating"
+  role="img"
 >
   <withRtlSupport(BpkStar)
     className={null}
@@ -42,6 +43,7 @@ exports[`BpkStarRating should render correctly with "large" attribute 1`] = `
 <div
   aria-label="Rated 5 out of 5 stars"
   className="bpk-star-rating"
+  role="img"
 >
   <withRtlSupport(BpkStar)
     className={null}
@@ -80,6 +82,7 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
 <div
   aria-label="Rated 5 out of 8 stars"
   className="bpk-star-rating"
+  role="img"
 >
   <withRtlSupport(BpkStar)
     className={null}
@@ -136,6 +139,7 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
 <div
   aria-label="Rated 3.4 out of 5 stars"
   className="bpk-star-rating"
+  role="img"
 >
   <withRtlSupport(BpkStar)
     className={null}
@@ -174,6 +178,7 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
 <div
   aria-label="Rated 0 out of 5 stars"
   className="bpk-star-rating"
+  role="img"
 >
   <withRtlSupport(BpkStar)
     className={null}
@@ -212,6 +217,7 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
 <div
   aria-label="Rated 3 out of 5 stars"
   className="bpk-star-rating"
+  role="img"
 >
   <withRtlSupport(BpkStar)
     className={null}
@@ -250,6 +256,7 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
 <div
   aria-label="Rated 3.5 out of 5 stars"
   className="bpk-star-rating"
+  role="img"
 >
   <withRtlSupport(BpkStar)
     className={null}
@@ -288,6 +295,7 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
 <div
   aria-label="Rated 5 out of 5 stars"
   className="bpk-star-rating"
+  role="img"
 >
   <withRtlSupport(BpkStar)
     className={null}

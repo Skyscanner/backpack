@@ -116,8 +116,9 @@ const BpkBarchartBar = (props: Props) => {
         onFocus={onFocus || undefined}
         onKeyDown={onClick ? handleKeyboardEvent(onClick) : undefined}
         tabIndex={onClick ? 0 : undefined}
-        role={onClick ? 'button' : undefined}
-        aria-pressed={isAriaPressed}
+        role={onClick ? 'button' : 'graphics-symbol'}
+        aria-roledescription={onClick ? undefined : 'bar'}
+        aria-pressed={onClick ? isAriaPressed : undefined}
         aria-label={label}
       />
     </g>
