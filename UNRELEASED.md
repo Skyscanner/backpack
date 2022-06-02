@@ -1,3 +1,5 @@
+**Added:**
+
 - bpk-component-price
   - Price is a new component.
   - `title` is a required attribute to show price.
