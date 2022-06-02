@@ -18,7 +18,7 @@
 
 /* @flow */
 
-export const RATING_SIZES = { base: 'base', large: 'lg' };
+export const RATING_SIZES = { base: 'base', large: 'large' };
 
 export const RATING_SCALES = {
   zeroToFive: 'zeroToFive',

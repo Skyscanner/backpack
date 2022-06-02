@@ -10,7 +10,7 @@ exports[`BpkRating should correctly handling values higher than 5 when rating sc
       aria-hidden="true"
       class="bpk-text bpk-text--label-1 bpk-rating__value"
     >
-      5.0
+      5
       <span
         aria-hidden="true"
         class="bpk-text bpk-text--caption bpk-rating__scale"
@@ -48,7 +48,7 @@ exports[`BpkRating should correctly handling values higher than 10 when rating s
       aria-hidden="true"
       class="bpk-text bpk-text--label-1 bpk-rating__value"
     >
-      10.0
+      10
       <span
         aria-hidden="true"
         class="bpk-text bpk-text--caption bpk-rating__scale"
@@ -86,7 +86,7 @@ exports[`BpkRating should correctly handling values lower than 0 1`] = `
       aria-hidden="true"
       class="bpk-text bpk-text--label-1 bpk-rating__value"
     >
-      0.0
+      0
       <span
         aria-hidden="true"
         class="bpk-text bpk-text--caption bpk-rating__scale"
@@ -114,6 +114,44 @@ exports[`BpkRating should correctly handling values lower than 0 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkRating should correctly when value is string type 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="4,6 Wonderful Wise choice"
+    class="bpk-rating"
+  >
+    <span
+      aria-hidden="true"
+      class="bpk-text bpk-text--label-1 bpk-rating__value"
+    >
+      4,6
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption bpk-rating__scale"
+      >
+        /5
+      </span>
+    </span>
+    <div
+      class="bpk-rating__text-wrapper"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--label-1"
+      >
+        Wonderful
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption bpk-rating__subtitle"
+      >
+        Wise choice
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`BpkRating should render a high score rating component (zero to five scale) 1`] = `
 <DocumentFragment>
   <div
@@ -124,7 +162,7 @@ exports[`BpkRating should render a high score rating component (zero to five sca
       aria-hidden="true"
       class="bpk-text bpk-text--label-1 bpk-rating__value"
     >
-      4.0
+      4
       <span
         aria-hidden="true"
         class="bpk-text bpk-text--caption bpk-rating__scale"
@@ -162,7 +200,7 @@ exports[`BpkRating should render a high score rating component (zero to ten scal
       aria-hidden="true"
       class="bpk-text bpk-text--label-1 bpk-rating__value"
     >
-      9.0
+      9
       <span
         aria-hidden="true"
         class="bpk-text bpk-text--caption bpk-rating__scale"
@@ -428,7 +466,7 @@ exports[`BpkRating should render showScale rating correctly 1`] = `
       aria-hidden="true"
       class="bpk-text bpk-text--label-1 bpk-rating__value"
     >
-      5.0
+      5
       <span
         aria-hidden="true"
         class="bpk-text bpk-text--caption bpk-rating__scale"
@@ -498,7 +536,7 @@ exports[`BpkRating should render title only correctly 1`] = `
       aria-hidden="true"
       class="bpk-text bpk-text--label-1 bpk-rating__value"
     >
-      5.0
+      5
       <span
         aria-hidden="true"
         class="bpk-text bpk-text--caption bpk-rating__scale"
