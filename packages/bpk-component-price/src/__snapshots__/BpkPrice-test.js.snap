@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Desktop layout should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile"
+  >
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Desktop layout should support arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile"
+    testid="123"
+  >
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Desktop layout should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile custom-classname"
+  >
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Desktop layout should support description attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile"
+  >
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+    <span
+      class="bpk-text bpk-text--xs"
+    >
+      / night
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Desktop layout should support subtitle attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile"
+  >
+    <span
+      class="bpk-text bpk-text--xs bpk-price--subtitle"
+    >
+      £200
+    </span>
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Mobile layout should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile"
+  >
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Mobile layout should support arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile"
+    testid="123"
+  >
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Mobile layout should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile custom-classname"
+  >
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Mobile layout should support description attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile"
+  >
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+    <span
+      class="bpk-text bpk-text--xs"
+    >
+      / night
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Mobile layout should support subtitle attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--mobile"
+  >
+    <span
+      class="bpk-text bpk-text--xs bpk-price--subtitle"
+    >
+      £200
+    </span>
+    <span
+      class="bpk-text bpk-text--heading-4"
+    >
+      £1,830
+    </span>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,5 @@
+- bpk-component-price
+  - Price is a new component.
+  - `title` is a required attribute to show price.
+  - `subtitle` is a optional attributes to show original price.
+  - `description` is a optional attribute which could be used to show the price is for how many nights.
