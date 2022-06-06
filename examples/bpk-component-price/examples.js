@@ -18,34 +18,32 @@
 
 import React from 'react';
 
-import BpkPrice, { LAYOUTS } from '../../packages/bpk-component-price';
+import BpkPrice, { SIZES } from '../../packages/bpk-component-price';
 
-const DefaultExample = () => <BpkPrice layout={LAYOUTS.small} title="£1,830" />;
+const SmallExample = () => <BpkPrice layout={SIZES.small} title="£1,830" />;
 
-const WithDescriptionExample = () => (
-  <BpkPrice layout={LAYOUTS.small} title="£1,830" description="/ night" />
+const SmallWithDescriptionExample = () => (
+  <BpkPrice layout={SIZES.small} title="£1,830" description="/ night" />
 );
 
-const WithSubtitleDescriptionExample = () => (
+const SmallWithSubtitleDescriptionExample = () => (
   <BpkPrice
-    layout={LAYOUTS.small}
+    layout={SIZES.small}
     subtitle="£209"
     title="£1,830"
     description="/ night"
   />
 );
 
-const LargeRawExample = () => (
-  <BpkPrice layout={LAYOUTS.large} title="£1,830" />
-);
+const LargeExample = () => <BpkPrice layout={SIZES.large} title="£1,830" />;
 
 const LargeWithDescriptionExample = () => (
-  <BpkPrice layout={LAYOUTS.large} title="£1,830" description="/ night" />
+  <BpkPrice layout={SIZES.large} title="£1,830" description="/ night" />
 );
 
 const LargeWithSubtitleDescriptionExample = () => (
   <BpkPrice
-    layout={LAYOUTS.large}
+    layout={SIZES.large}
     subtitle="£209"
     title="£1,830"
     description="/ night"
@@ -54,20 +52,20 @@ const LargeWithSubtitleDescriptionExample = () => (
 
 const MixedExample = () => (
   <div>
-    <DefaultExample />
-    <WithDescriptionExample />
-    <WithSubtitleDescriptionExample />
-    <LargeRawExample />
+    <SmallExample />
+    <SmallWithDescriptionExample />
+    <SmallWithSubtitleDescriptionExample />
+    <LargeExample />
     <LargeWithDescriptionExample />
     <LargeWithSubtitleDescriptionExample />
   </div>
 );
 
 export {
-  DefaultExample,
-  WithDescriptionExample,
-  WithSubtitleDescriptionExample,
-  LargeRawExample,
+  SmallExample,
+  SmallWithDescriptionExample,
+  SmallWithSubtitleDescriptionExample,
+  LargeExample,
   LargeWithDescriptionExample,
   LargeWithSubtitleDescriptionExample,
   MixedExample,

@@ -12,11 +12,11 @@ npm install bpk-component-price --save-dev
 
 ```js
 import React from 'react';
-import BpkPrice, { LAYOUTS } from 'bpk-component-price';
+import BpkPrice, { SIZES } from 'bpk-component-price';
 
 export default () => (
   <BpkPrice
-    layout={LAYOUTS.large}
+    size={SIZES.large}
     subtitle="£209"
     title="£1,830"
     description="/ night"
@@ -29,7 +29,7 @@ export default () => (
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | title     | string   | true     | -             |
-| layout | oneOf([LAYOUTS.small, LAYOUTS.large])   | true    | -          |
+| size | oneOf([SIZES.small, SIZES.large])   | true    | -          |
 | subtitle  | string   | false    | null          |
 | description | string   | false    | null          |
 | className | string   | false    | null          |

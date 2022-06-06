@@ -17,53 +17,32 @@
  */
 /* @flow strict */
 
+import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
-import { type Props, propTypes, defaultProps, LAYOUTS } from './common-types';
 import STYLES from './BpkPrice.module.scss';
+
+export const SIZES = {
+  small: 'small',
+  large: 'large',
+};
+
+type Props = {
+  title: string,
+  size: $Values<typeof SIZES>,
+  className: ?string,
+  subtitle: ?string,
+  description: ?string,
+};
 
 const getClassName = cssModules(STYLES);
 
 const BpkPrice = (props: Props) => {
-  const { className, description, layout, subtitle, title, ...rest } = props;
+  const { className, description, size, subtitle, title, ...rest } = props;
 
-  const isSmall = layout === LAYOUTS.small;
-
-  const getTitle = () => (
-    <BpkText
-      textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
-      tagName="span"
-    >
-      {title}
-    </BpkText>
-  );
-
-  const getSubTitle = () =>
-    subtitle && (
-      <BpkText
-        className={getClassName('bpk-price__subtitle')}
-        textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-        tagName="span"
-      >
-        {subtitle}
-      </BpkText>
-    );
-
-  const getDescription = () =>
-    description && (
-      <BpkText
-        textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-        tagName="span"
-        className={getClassName(
-          'bpk-price__description',
-          !isSmall && 'bpk-price__descriptionSpacing',
-        )}
-      >
-        {description}
-      </BpkText>
-    );
+  const isSmall = size === SIZES.small;
 
   const conditionalWrap = (children) =>
     isSmall ? children : <div>{children}</div>;
@@ -78,11 +57,35 @@ const BpkPrice = (props: Props) => {
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
-      {getSubTitle()}
+      {subtitle && (
+        <BpkText
+          className={getClassName('bpk-price__subtitle')}
+          textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
+          tagName="span"
+        >
+          {subtitle}
+        </BpkText>
+      )}
       {conditionalWrap(
         <Fragment>
-          {getTitle()}
-          {getDescription()}
+          <BpkText
+            textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
+            tagName="span"
+          >
+            {title}
+          </BpkText>
+          {description && (
+            <BpkText
+              textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
+              tagName="span"
+              className={getClassName(
+                'bpk-price__description',
+                !isSmall && 'bpk-price__descriptionSpacing',
+              )}
+            >
+              {description}
+            </BpkText>
+          )}
         </Fragment>,
       )}
     </div>
@@ -90,11 +93,17 @@ const BpkPrice = (props: Props) => {
 };
 
 BpkPrice.propTypes = {
-  ...propTypes,
+  title: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(Object.keys(SIZES)).isRequired,
+  className: PropTypes.string,
+  subtitle: PropTypes.string,
+  description: PropTypes.string,
 };
 
 BpkPrice.defaultProps = {
-  ...defaultProps,
+  className: null,
+  subtitle: null,
+  description: null,
 };
 
 export default BpkPrice;

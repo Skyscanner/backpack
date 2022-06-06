@@ -19,23 +19,26 @@
 import { storiesOf } from '@storybook/react';
 
 import {
-  DefaultExample,
-  WithDescriptionExample,
-  WithSubtitleDescriptionExample,
-  LargeRawExample,
+  SmallExample,
+  SmallWithDescriptionExample,
+  SmallWithSubtitleDescriptionExample,
+  LargeExample,
   LargeWithDescriptionExample,
   LargeWithSubtitleDescriptionExample,
   MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-price', module)
-  .add('Default', DefaultExample)
-  .add('With description', WithDescriptionExample)
-  .add('With subtitle and description', WithSubtitleDescriptionExample)
-  .add('Large raw', LargeRawExample)
-  .add('Large with description', LargeWithDescriptionExample)
+  .add('Small view', SmallExample)
+  .add('Small view with description', SmallWithDescriptionExample)
   .add(
-    'Large with subtitle and description',
+    'Small view with subtitle and description',
+    SmallWithSubtitleDescriptionExample,
+  )
+  .add('Large view', LargeExample)
+  .add('Large view with description', LargeWithDescriptionExample)
+  .add(
+    'Large view with subtitle and description',
     LargeWithSubtitleDescriptionExample,
   )
   .add('Visual test', MixedExample);
