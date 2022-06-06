@@ -239,9 +239,12 @@ const PopperModifiersExample = () => (
   <Spacer>
     <PopoverContainer
       id="my-popover"
-      popperModifiers={{
-        flip: { enabled: false },
-      }}
+      popperModifiers={[
+        {
+          name: 'flip',
+          options: { enabled: false },
+        },
+      ]}
     />
   </Spacer>
 );

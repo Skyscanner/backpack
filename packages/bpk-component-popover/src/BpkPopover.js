@@ -108,6 +108,7 @@ const BpkPopover = (props: Props) => {
           id={ARROW_ID}
           className={getClassName('bpk-popover__arrow')}
           role="presentation"
+          data-popper-arrow
         />
         {labelAsTitle ? (
           <header className={getClassName('bpk-popover__header')}>
