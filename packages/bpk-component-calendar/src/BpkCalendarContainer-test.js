@@ -121,7 +121,7 @@ describe('BpkCalendarContainer', () => {
 
     // dates in March are outside current month
     const outsideDate = screen.getByRole('button', {
-      name: 'Monday, 1st March 2010',
+      name: /1st March 2010/i,
     });
     expect(outsideDate.classList.contains('bpk-calendar-date--outside')).toBe(
       true,
@@ -133,7 +133,7 @@ describe('BpkCalendarContainer', () => {
 
     // dates in March are within current month
     const currentDate = screen.getByRole('button', {
-      name: 'Monday, 1st March 2010',
+      name: /1st March 2010/i,
     });
     expect(currentDate.classList.contains('bpk-calendar-date--outside')).toBe(
       false,
@@ -166,7 +166,7 @@ describe('BpkCalendarContainer', () => {
     expect(onDateSelect.mock.calls.length).toBe(0);
 
     const date = screen.getByRole('button', {
-      name: 'Saturday, 20th February 2010',
+      name: /20th February 2010/i,
     });
     await userEvent.click(date);
 
@@ -200,7 +200,7 @@ describe('BpkCalendarContainer', () => {
     );
 
     const initialSelectedDateButton = screen.getByRole('button', {
-      name: 'Monday, 22nd February 2010',
+      name: /22nd February 2010/i,
     });
     expect(
       initialSelectedDateButton.classList.contains(
@@ -229,19 +229,19 @@ describe('BpkCalendarContainer', () => {
     );
 
     const minDateButton = screen.getByRole('button', {
-      name: 'Monday, 15th February 2010',
+      name: /15th February 2010/i,
     });
     expect(minDateButton.classList.contains('bpk-calendar-date--focused')).toBe(
       true,
     );
   });
 
-  it('should set state only once on date selection', () => {
+  it('should set state only once on date selection', async () => {
     const setStateSpy = jest.fn();
     const oldSetState = BpkCalendarContainer.prototype.setState;
     BpkCalendarContainer.prototype.setState = setStateSpy;
 
-    const calendar = mount(
+    render(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -261,11 +261,13 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    const grid = calendar.find('BpkCalendarGridTransition');
-
     expect(setStateSpy.mock.calls.length).toBe(0);
 
-    grid.prop('onDateClick')(new Date(2010, 1, 20));
+    const date = screen.getByRole('button', {
+      name: /20th February 2010/i,
+    });
+
+    await userEvent.click(date);
     expect(setStateSpy.mock.calls.length).toBe(1);
 
     BpkCalendarContainer.prototype.setState = oldSetState;
@@ -296,6 +298,8 @@ describe('BpkCalendarContainer', () => {
     );
 
     expect(calendar.state('focusedDate')).toEqual(origin);
+
+    // await fireEvent.keyDown(calendar, { key: 'S' });
 
     calendar
       .instance()

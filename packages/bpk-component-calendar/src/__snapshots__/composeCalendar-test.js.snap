@@ -4,6 +4,7 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
+    data-testid="bpk-calendar"
   >
     <nav
       changemonthlabel="Change month"
@@ -39,6 +40,7 @@ exports[`composeCalendar should pass props to their respective components 1`] = 
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
+    data-testid="bpk-calendar"
   >
     NavHeader
     <div>
@@ -55,6 +57,7 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar"
+    data-testid="bpk-calendar"
   >
     <nav
       changemonthlabel="Change month"
@@ -90,6 +93,7 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
 <DocumentFragment>
   <div
     class="bpk-calendar my-custom-class bpk-calendar--fixed"
+    data-testid="bpk-calendar"
   >
     <nav
       changemonthlabel="Change month"
@@ -125,6 +129,7 @@ exports[`composeCalendar should render without a header element 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
+    data-testid="bpk-calendar"
   >
     <nav
       changemonthlabel="Change month"
@@ -154,6 +159,7 @@ exports[`composeCalendar should render without a nav or header element 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
+    data-testid="bpk-calendar"
   >
     <grid
       class=""

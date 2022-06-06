@@ -112,11 +112,11 @@ describe('BpkCalendarGrid', () => {
     expect(onDateClick.mock.calls.length).toBe(0);
 
     const date = screen.getByRole('button', {
-      name: 'Wednesday, 5th October 2016',
+      name: /15th October 2016/i,
     });
     await userEvent.click(date);
     expect(onDateClick.mock.calls.length).toBe(1);
-    expect(onDateClick.mock.calls[0][0]).toEqual(new Date(2016, 9, 5));
+    expect(onDateClick.mock.calls[0][0]).toEqual(new Date(2016, 9, 15));
   });
 
   it('should render correctly with "weekDayKey" attribute set to nameNarrow', () => {

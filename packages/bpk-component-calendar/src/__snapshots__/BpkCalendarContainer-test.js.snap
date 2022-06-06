@@ -4,6 +4,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
+    data-testid="bpk-calendar"
   >
     <div
       class="bpk-calendar-nav"
@@ -1927,6 +1928,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
+    data-testid="bpk-calendar"
   >
     <div
       class="bpk-calendar-nav"
@@ -3850,6 +3852,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
+    data-testid="bpk-calendar"
   >
     <div
       class="bpk-calendar-nav"

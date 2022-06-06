@@ -218,7 +218,7 @@ describe('BpkDatepicker', () => {
     );
 
     const inputField = screen.getByRole('textbox', {
-      name: 'Monday, 15th February 2010',
+      name: /15th February 2010/i,
     });
     await userEvent.click(inputField);
 
@@ -254,7 +254,7 @@ describe('BpkDatepicker', () => {
     );
 
     const inputField = screen.getByRole('textbox', {
-      name: 'Monday, 15th February 2010',
+      name: /15th February 2010/i,
     });
     fireEvent.focus(inputField);
 
@@ -329,7 +329,7 @@ describe('BpkDatepicker', () => {
     );
 
     const inputField = screen.getByRole('textbox', {
-      name: 'Monday, 15th February 2010',
+      name: /15th February 2010/i,
     });
     await userEvent.click(inputField);
 
@@ -340,7 +340,7 @@ describe('BpkDatepicker', () => {
     expect(onOpenChangeMock).toHaveBeenCalledWith(true);
 
     const dateButton = screen.getByRole('button', {
-      name: 'Monday, 15th February 2010',
+      name: /15th February 2010/i,
     });
     await userEvent.click(dateButton);
     expect(onOpenChangeMock).toHaveBeenCalledWith(false);
