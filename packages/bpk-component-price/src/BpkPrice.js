@@ -26,44 +26,47 @@ import STYLES from './BpkPrice.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const getTitle = (title, isSmall) => (
-  <BpkText
-    textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
-    tagName="span"
-  >
-    {title}
-  </BpkText>
-);
-
-const getSubTitle = (subtitle, isSmall) =>
-  subtitle && (
-    <BpkText
-      className={getClassName('bpk-price__subtitle')}
-      textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-      tagName="span"
-    >
-      {subtitle}
-    </BpkText>
-  );
-
-const getDescription = (description, isSmall) =>
-  description && (
-    <BpkText
-      textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-      tagName="span"
-      className={!isSmall && getClassName('bpk-price__descriptionSpacing')}
-    >
-      {description}
-    </BpkText>
-  );
-
-const conditionalWrap = (isSmall, children) =>
-  isSmall ? children : <div>{children}</div>;
-
 const BpkPrice = (props: Props) => {
   const { className, description, layout, subtitle, title, ...rest } = props;
 
   const isSmall = layout === LAYOUTS.small;
+
+  const getTitle = () => (
+    <BpkText
+      textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
+      tagName="span"
+    >
+      {title}
+    </BpkText>
+  );
+
+  const getSubTitle = () =>
+    subtitle && (
+      <BpkText
+        className={getClassName('bpk-price__subtitle')}
+        textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
+        tagName="span"
+      >
+        {subtitle}
+      </BpkText>
+    );
+
+  const getDescription = () =>
+    description && (
+      <BpkText
+        textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
+        tagName="span"
+        className={getClassName(
+          'bpk-price__description',
+          !isSmall && 'bpk-price__descriptionSpacing',
+        )}
+      >
+        {description}
+      </BpkText>
+    );
+
+  const conditionalWrap = (children) =>
+    isSmall ? children : <div>{children}</div>;
 
   return (
     <div
@@ -75,12 +78,11 @@ const BpkPrice = (props: Props) => {
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
-      {getSubTitle(subtitle, isSmall)}
+      {getSubTitle()}
       {conditionalWrap(
-        isSmall,
         <Fragment>
-          {getTitle(title, isSmall)}
-          {getDescription(description, isSmall)}
+          {getTitle()}
+          {getDescription()}
         </Fragment>,
       )}
     </div>

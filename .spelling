@@ -875,3 +875,5 @@ googleMapsApiKey
 preventGoogleFontsLoading
 scrollLeft
 scrollerEl
+LAYOUTS.small
+LAYOUTS.large

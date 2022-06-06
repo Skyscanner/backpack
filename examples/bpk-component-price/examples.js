@@ -18,16 +18,38 @@
 
 import React from 'react';
 
-import BpkPrice from '../../packages/bpk-component-price';
+import BpkPrice, { LAYOUTS } from '../../packages/bpk-component-price';
 
-const DefaultExample = () => <BpkPrice title="£1,830" />;
+const DefaultExample = () => <BpkPrice layout={LAYOUTS.small} title="£1,830" />;
 
 const WithDescriptionExample = () => (
-  <BpkPrice title="£1,830" description="/ night" />
+  <BpkPrice layout={LAYOUTS.small} title="£1,830" description="/ night" />
 );
 
 const WithSubtitleDescriptionExample = () => (
-  <BpkPrice subtitle="£209" title="£1,830" description="/ night" />
+  <BpkPrice
+    layout={LAYOUTS.small}
+    subtitle="£209"
+    title="£1,830"
+    description="/ night"
+  />
+);
+
+const LargeRawExample = () => (
+  <BpkPrice layout={LAYOUTS.large} title="£1,830" />
+);
+
+const LargeWithDescriptionExample = () => (
+  <BpkPrice layout={LAYOUTS.large} title="£1,830" description="/ night" />
+);
+
+const LargeWithSubtitleDescriptionExample = () => (
+  <BpkPrice
+    layout={LAYOUTS.large}
+    subtitle="£209"
+    title="£1,830"
+    description="/ night"
+  />
 );
 
 const MixedExample = () => (
@@ -35,6 +57,9 @@ const MixedExample = () => (
     <DefaultExample />
     <WithDescriptionExample />
     <WithSubtitleDescriptionExample />
+    <LargeRawExample />
+    <LargeWithDescriptionExample />
+    <LargeWithSubtitleDescriptionExample />
   </div>
 );
 
@@ -42,5 +67,8 @@ export {
   DefaultExample,
   WithDescriptionExample,
   WithSubtitleDescriptionExample,
+  LargeRawExample,
+  LargeWithDescriptionExample,
+  LargeWithSubtitleDescriptionExample,
   MixedExample,
 };

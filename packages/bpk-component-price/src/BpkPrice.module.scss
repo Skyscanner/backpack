@@ -31,15 +31,20 @@
   }
 
   &__subtitle {
+    color: $bpk-color-sky-gray-tint-02;
     text-decoration-line: line-through;
   }
 
-  &__descriptionSpacing {
-    margin-left: bpk-spacing-sm();
+  &__description {
+    color: $bpk-color-sky-gray-tint-02;
 
-    @include bpk-rtl {
-      margin-right: bpk-spacing-sm();
-      margin-left: left;
+    &Spacing {
+      margin-left: bpk-spacing-sm();
+
+      @include bpk-rtl {
+        margin-right: bpk-spacing-sm();
+        margin-left: unset;
+      }
     }
   }
 }

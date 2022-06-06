@@ -22,6 +22,9 @@ import {
   DefaultExample,
   WithDescriptionExample,
   WithSubtitleDescriptionExample,
+  LargeRawExample,
+  LargeWithDescriptionExample,
+  LargeWithSubtitleDescriptionExample,
   MixedExample,
 } from './examples';
 
@@ -29,4 +32,10 @@ storiesOf('bpk-component-price', module)
   .add('Default', DefaultExample)
   .add('With description', WithDescriptionExample)
   .add('With subtitle and description', WithSubtitleDescriptionExample)
+  .add('Large raw', LargeRawExample)
+  .add('Large with description', LargeWithDescriptionExample)
+  .add(
+    'Large with subtitle and description',
+    LargeWithSubtitleDescriptionExample,
+  )
   .add('Visual test', MixedExample);

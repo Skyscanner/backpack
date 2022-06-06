@@ -21,6 +21,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkPrice from './BpkPrice';
+import { LAYOUTS } from './common-types';
 
 jest.mock('bpk-component-breakpoint');
 
@@ -29,7 +30,7 @@ const subtitle = '£200';
 const description = '/ night';
 let props;
 
-describe.each([['small'], ['large']])('Layout %s', (layoutProp) => {
+describe.each([[LAYOUTS.small], [LAYOUTS.large]])('Layout %s', (layoutProp) => {
   beforeEach(() => {
     props = {
       title,
