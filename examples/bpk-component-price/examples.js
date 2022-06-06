@@ -30,8 +30,17 @@ const WithSubtitleDescriptionExample = () => (
   <BpkPrice subtitle="£209" title="£1,830" description="/ night" />
 );
 
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <WithDescriptionExample />
+    <WithSubtitleDescriptionExample />
+  </div>
+);
+
 export {
   DefaultExample,
   WithDescriptionExample,
   WithSubtitleDescriptionExample,
+  MixedExample,
 };

@@ -12,7 +12,7 @@ npm install bpk-component-price --save-dev
 
 ```js
 import React from 'react';
-import BpkPrice from 'bpk-component-code';
+import BpkPrice from 'bpk-component-price';
 
 export default () => <BpkPrice title='£1,830' />;
 ```

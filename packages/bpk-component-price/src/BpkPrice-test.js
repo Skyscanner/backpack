@@ -19,7 +19,6 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import BpkBreakpoint from 'bpk-component-breakpoint';
 
 import BpkPrice from './BpkPrice';
 
@@ -28,77 +27,42 @@ jest.mock('bpk-component-breakpoint');
 const title = '£1,830';
 const subtitle = '£200';
 const description = '/ night';
+let props;
 
-describe('Mobile layout', () => {
+describe.each([['small'], ['large']])('Layout %s', (layoutProp) => {
   beforeEach(() => {
-    BpkBreakpoint.mockImplementation(({ children }) => children(true));
+    props = {
+      title,
+      layout: layoutProp,
+    };
   });
 
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkPrice title={title} />);
+    const { asFragment } = render(<BpkPrice {...props} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support description attribute', () => {
     const { asFragment } = render(
-      <BpkPrice title={title} description={description} />,
+      <BpkPrice {...props} description={description} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support subtitle attribute', () => {
-    const { asFragment } = render(
-      <BpkPrice title={title} subtitle={subtitle} />,
-    );
+    const { asFragment } = render(<BpkPrice {...props} subtitle={subtitle} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
     const { asFragment } = render(
-      <BpkPrice title={title} className="custom-classname" />,
+      <BpkPrice {...props} className="custom-classname" />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkPrice title={title} testid="123" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
-
-describe('Desktop layout', () => {
-  beforeEach(() => {
-    BpkBreakpoint.mockImplementation(({ children }) => children(false));
-  });
-
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkPrice title={title} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should support description attribute', () => {
-    const { asFragment } = render(
-      <BpkPrice title={title} description={description} />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should support subtitle attribute', () => {
-    const { asFragment } = render(
-      <BpkPrice title={title} subtitle={subtitle} />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should support custom class names', () => {
-    const { asFragment } = render(
-      <BpkPrice title={title} className="custom-classname" />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkPrice title={title} testid="123" />);
+    const { asFragment } = render(<BpkPrice {...props} testid="123" />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

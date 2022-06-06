@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Desktop layout should render correctly 1`] = `
+exports[`Layout large should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
@@ -16,7 +16,7 @@ exports[`Desktop layout should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Desktop layout should support arbitrary props 1`] = `
+exports[`Layout large should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
@@ -33,7 +33,7 @@ exports[`Desktop layout should support arbitrary props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Desktop layout should support custom class names 1`] = `
+exports[`Layout large should support custom class names 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price custom-classname"
@@ -49,7 +49,7 @@ exports[`Desktop layout should support custom class names 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Desktop layout should support description attribute 1`] = `
+exports[`Layout large should support description attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
@@ -70,7 +70,7 @@ exports[`Desktop layout should support description attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Desktop layout should support subtitle attribute 1`] = `
+exports[`Layout large should support subtitle attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
@@ -91,10 +91,10 @@ exports[`Desktop layout should support subtitle attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Mobile layout should render correctly 1`] = `
+exports[`Layout small should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile"
+    class="bpk-price bpk-price--small"
   >
     <span
       class="bpk-text bpk-text--heading-4"
@@ -105,10 +105,10 @@ exports[`Mobile layout should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Mobile layout should support arbitrary props 1`] = `
+exports[`Layout small should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile"
+    class="bpk-price bpk-price--small"
     testid="123"
   >
     <span
@@ -120,10 +120,10 @@ exports[`Mobile layout should support arbitrary props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Mobile layout should support custom class names 1`] = `
+exports[`Layout small should support custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile custom-classname"
+    class="bpk-price bpk-price--small custom-classname"
   >
     <span
       class="bpk-text bpk-text--heading-4"
@@ -134,10 +134,10 @@ exports[`Mobile layout should support custom class names 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Mobile layout should support description attribute 1`] = `
+exports[`Layout small should support description attribute 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile"
+    class="bpk-price bpk-price--small"
   >
     <span
       class="bpk-text bpk-text--heading-4"
@@ -153,13 +153,13 @@ exports[`Mobile layout should support description attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Mobile layout should support subtitle attribute 1`] = `
+exports[`Layout small should support subtitle attribute 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price bpk-price--mobile"
+    class="bpk-price bpk-price--small"
   >
     <span
-      class="bpk-text bpk-text--xs bpk-price--subtitle"
+      class="bpk-text bpk-text--xs bpk-price__subtitle"
     >
       £200
     </span>

@@ -17,7 +17,9 @@
  */
 /* @flow strict */
 
-import BpkPrice, { type Props as BpkPriceProps } from './src/BpkPrice';
+import BpkPrice from './src/BpkPrice';
+import { LAYOUTS, type Props } from './src/common-types';
 
-export type { BpkPriceProps };
+export type BpkPriceProps = Props;
 export default BpkPrice;
+export { LAYOUTS };

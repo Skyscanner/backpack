@@ -22,10 +22,11 @@ import {
   DefaultExample,
   WithDescriptionExample,
   WithSubtitleDescriptionExample,
+  MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-price', module)
   .add('Default', DefaultExample)
   .add('With description', WithDescriptionExample)
   .add('With subtitle and description', WithSubtitleDescriptionExample)
-  .add('Visual test', WithSubtitleDescriptionExample);
+  .add('Visual test', MixedExample);

@@ -16,30 +16,33 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+/* @flow strict */
 
-.bpk-price {
-  display: flex;
-  flex-direction: column;
+import PropTypes from 'prop-types';
 
-  &--small {
-    text-align: right;
+export const LAYOUTS = {
+  small: 'small',
+  large: 'large',
+};
 
-    @include bpk-rtl {
-      text-align: left;
-    }
-  }
+export type Props = {
+  title: string,
+  layout: string,
+  className: ?string,
+  subtitle: ?string,
+  description: ?string,
+};
 
-  &__subtitle {
-    text-decoration-line: line-through;
-  }
+export const propTypes = {
+  title: PropTypes.string.isRequired,
+  layout: PropTypes.oneOf(Object.keys(LAYOUTS)),
+  className: PropTypes.string,
+  subtitle: PropTypes.string,
+  description: PropTypes.string,
+};
 
-  &__descriptionSpacing {
-    margin-left: bpk-spacing-sm();
-
-    @include bpk-rtl {
-      margin-right: bpk-spacing-sm();
-      margin-left: left;
-    }
-  }
-}
+export const defaultProps = {
+  className: null,
+  subtitle: null,
+  description: null,
+};
