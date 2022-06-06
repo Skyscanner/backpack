@@ -20,7 +20,8 @@
 
 $bpk-spacing-v2: true;
 
-$arrow-size: bpk-spacing-sm() * 3;
+$arrow-size: bpk-spacing-lg();
+$arrow-inset-margin: -($bpk-one-pixel-rem * 11);
 
 .bpk-popover-portal {
   z-index: $bpk-zindex-popover;
@@ -28,22 +29,6 @@ $arrow-size: bpk-spacing-sm() * 3;
   @include bpk-breakpoint-mobile {
     margin-right: bpk-spacing-base();
     margin-left: bpk-spacing-base();
-  }
-
-  &[x-placement='top'] {
-    margin-bottom: $arrow-size;
-  }
-
-  &[x-placement='right'] {
-    margin-left: $arrow-size;
-  }
-
-  &[x-placement='bottom'] {
-    margin-top: $arrow-size;
-  }
-
-  &[x-placement='left'] {
-    margin-right: $arrow-size;
   }
 }
 
@@ -68,22 +53,39 @@ $arrow-size: bpk-spacing-sm() * 3;
   }
 
   &__arrow {
-    @include bpk-layer-arrow($arrow-size);
+    position: aboslute;
+    width: $arrow-size;
+    height: $arrow-size;
+    transform: rotate(45deg);
+    border: $bpk-one-pixel-rem solid transparent;
+    background: inherit;
 
-    .bpk-popover-portal[x-placement='top'] & {
-      @include bpk-layer-arrow-bottom($arrow-size);
+    .bpk-popover-portal[data-popper-placement='top'] & {
+      bottom: $arrow-inset-margin;
+      border-right-color: $bpk-color-sky-gray-tint-06;
+      border-bottom-color: $bpk-color-sky-gray-tint-06;
     }
 
-    .bpk-popover-portal[x-placement='right'] & {
-      @include bpk-layer-arrow-left($arrow-size);
+    .bpk-popover-portal[data-popper-placement='right'] & {
+      left: $arrow-inset-margin;
+      border-bottom-color: $bpk-color-sky-gray-tint-06;
+      border-left-color: $bpk-color-sky-gray-tint-06;
     }
 
-    .bpk-popover-portal[x-placement='bottom'] & {
-      @include bpk-layer-arrow-top($arrow-size);
+    .bpk-popover-portal[data-popper-placement='bottom'] & {
+      top: $arrow-inset-margin;
+      border-top-color: $bpk-color-sky-gray-tint-06;
+      border-left-color: $bpk-color-sky-gray-tint-06;
     }
 
-    .bpk-popover-portal[x-placement='left'] & {
-      @include bpk-layer-arrow-right($arrow-size);
+    .bpk-popover-portal[data-popper-placement='left'] & {
+      right: $arrow-inset-margin;
+      border-top-color: $bpk-color-sky-gray-tint-06;
+      border-right-color: $bpk-color-sky-gray-tint-06;
+    }
+
+    &[data-hide] {
+      visibility: hidden;
     }
   }
 

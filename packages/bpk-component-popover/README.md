@@ -84,7 +84,7 @@ class App extends Component {
 | labelAsTitle          | bool                                      | false    | false         |
 | padded                | bool                                      | false    | true          |
 | placement             | oneOf(['top', 'right', 'bottom', 'left']) | false    | 'bottom'      |
-| popperModifiers       | object                                    | false    | null          |
+| popperModifiers       | arrayOf(object)                           | false    | null          |
 | portalClassName       | string                                    | false    | null          |
 | portalStyle           | object                                    | false    | null          |
 | renderTarget          | func                                      | false    | null          |
@@ -118,7 +118,7 @@ const onClose = (event, {
 
 #### popperModifiers
 
-Please refer to the [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the popover to overflow the viewport etc.
+Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the popover to overflow the viewport etc.
 
 ## Theme Props
 

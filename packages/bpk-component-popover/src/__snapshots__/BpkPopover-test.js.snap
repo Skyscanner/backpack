@@ -11,6 +11,7 @@ exports[`BpkPopover should render correctly 1`] = `
   >
     <span
       class="bpk-popover__arrow"
+      data-popper-arrow="true"
       id="js-bpk-popover-arrow"
       role="presentation"
     />
@@ -50,6 +51,7 @@ exports[`BpkPopover should render correctly with "className" attribute 1`] = `
   >
     <span
       class="bpk-popover__arrow"
+      data-popper-arrow="true"
       id="js-bpk-popover-arrow"
       role="presentation"
     />
@@ -89,6 +91,7 @@ exports[`BpkPopover should render correctly with "closeButtonProps" provided 1`]
   >
     <span
       class="bpk-popover__arrow"
+      data-popper-arrow="true"
       id="js-bpk-popover-arrow"
       role="presentation"
     />
@@ -129,6 +132,7 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
   >
     <span
       class="bpk-popover__arrow"
+      data-popper-arrow="true"
       id="js-bpk-popover-arrow"
       role="presentation"
     />
@@ -182,6 +186,7 @@ exports[`BpkPopover should render correctly with "padded" attribute equal to fal
   >
     <span
       class="bpk-popover__arrow"
+      data-popper-arrow="true"
       id="js-bpk-popover-arrow"
       role="presentation"
     />

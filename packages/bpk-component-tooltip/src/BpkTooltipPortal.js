@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import Popper from '@skyscanner/popper.js';
+import { createPopper, basePlacements } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node, type Element } from 'react';
 import { Portal, cssModules } from 'bpk-react-utils';
@@ -28,7 +28,6 @@ import BpkTooltip, {
   defaultProps as tooltipDefaultProps,
   type TooltipProps,
 } from './BpkTooltip';
-import { ARROW_ID } from './constants';
 import STYLES from './BpkTooltip.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -58,7 +57,7 @@ type State = {
 };
 
 class BpkTooltipPortal extends Component<Props, State> {
-  popper: ?typeof Popper;
+  popper: ?typeof createPopper;
 
   targetRef: ?HTMLElement;
 
@@ -67,7 +66,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     ariaLabel: PropTypes.string.isRequired,
     target: PropTypes.node.isRequired,
     children: PropTypes.node.isRequired,
-    placement: PropTypes.oneOf(Popper.placements),
+    placement: PropTypes.oneOf(basePlacements),
     hideOnTouchDevices: PropTypes.bool,
     portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     portalClassName: PropTypes.string,
@@ -119,22 +118,32 @@ class BpkTooltipPortal extends Component<Props, State> {
   }
 
   onOpen = (tooltipElement: HTMLElement, targetElement: HTMLElement) => {
+    // The default modifiers for the popper
     // Note that GPU acceleration should be disabled otherwise Popper will use `translate3d`
     // which can cause blurriness in Safari and Chrome.
-    this.popper = new Popper(targetElement, tooltipElement, {
-      placement: this.props.placement,
-      modifiers: {
-        ...this.props.popperModifiers,
-        computeStyle: {
+    const stdModifiers = [
+      {
+        name: 'computeStyles',
+        options: {
           gpuAcceleration: false,
         },
-        arrow: {
-          element: `#${ARROW_ID}`,
+      },
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 8],
         },
       },
+    ];
+
+    this.popper = createPopper(targetElement, tooltipElement, {
+      placement: this.props.placement,
+      modifiers: this.props.popperModifiers
+        ? [...this.props.popperModifiers, ...stdModifiers]
+        : stdModifiers,
     });
 
-    this.popper.scheduleUpdate();
+    this.popper.update();
   };
 
   beforeClose = (done: () => mixed) => {

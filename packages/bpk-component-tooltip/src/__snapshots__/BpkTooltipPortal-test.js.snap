@@ -14,6 +14,7 @@ exports[`BpkTooltipPortal should render correctly 1`] = `
     >
       <span
         class="bpk-tooltip__arrow"
+        data-popper-arrow="true"
         id="js-bpk-popover-arrow"
         role="presentation"
       />
@@ -41,6 +42,7 @@ exports[`BpkTooltipPortal should render correctly with a custom portal className
     >
       <span
         class="bpk-tooltip__arrow"
+        data-popper-arrow="true"
         id="js-bpk-popover-arrow"
         role="presentation"
       />
@@ -68,6 +70,7 @@ exports[`BpkTooltipPortal should render correctly with a custom tooltip classNam
     >
       <span
         class="bpk-tooltip__arrow"
+        data-popper-arrow="true"
         id="js-bpk-popover-arrow"
         role="presentation"
       />
@@ -96,6 +99,7 @@ exports[`BpkTooltipPortal should render correctly with custom portal style 1`] =
     >
       <span
         class="bpk-tooltip__arrow"
+        data-popper-arrow="true"
         id="js-bpk-popover-arrow"
         role="presentation"
       />
