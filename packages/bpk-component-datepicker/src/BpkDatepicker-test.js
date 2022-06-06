@@ -17,8 +17,9 @@
  */
 
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 import {
   weekDays,
   formatMonth,
@@ -132,7 +133,7 @@ describe('BpkDatepicker', () => {
   });
 
   it('should render correctly with datepicker open', () => {
-    const datepicker = mount(
+    render(
       <BpkDatepicker
         id="myDatepicker"
         closeButtonText="Close"
@@ -157,10 +158,10 @@ describe('BpkDatepicker', () => {
       />,
     );
 
-    expect(datepicker.state('isOpen')).toEqual(true);
-
-    datepicker.instance().onClose();
-    expect(datepicker.state('isOpen')).toEqual(false);
+    const calendarDialog = screen.queryByRole('dialog', {
+      name: 'Departure date',
+    });
+    expect(calendarDialog).toBeInTheDocument();
   });
 
   it('"readOnly" can be overriden in "inputProps"', () => {
@@ -191,8 +192,8 @@ describe('BpkDatepicker', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should open on click', () => {
-    const datepicker = mount(
+  it('should open on click', async () => {
+    render(
       <BpkDatepicker
         id="myDatepicker"
         closeButtonText="Close"
@@ -216,14 +217,19 @@ describe('BpkDatepicker', () => {
       />,
     );
 
-    expect(datepicker.state('isOpen')).toEqual(false);
+    const inputField = screen.getByRole('textbox', {
+      name: 'Monday, 15th February 2010',
+    });
+    await userEvent.click(inputField);
 
-    datepicker.find('BpkInput').simulate('click');
-    expect(datepicker.state('isOpen')).toEqual(true);
+    const calendarDialog = screen.getByRole('dialog', {
+      name: 'Departure date',
+    });
+    expect(calendarDialog).toBeInTheDocument();
   });
 
   it('should open on focus', () => {
-    const datepicker = mount(
+    render(
       <BpkDatepicker
         id="myDatepicker"
         closeButtonText="Close"
@@ -247,14 +253,19 @@ describe('BpkDatepicker', () => {
       />,
     );
 
-    expect(datepicker.state('isOpen')).toEqual(false);
+    const inputField = screen.getByRole('textbox', {
+      name: 'Monday, 15th February 2010',
+    });
+    fireEvent.focus(inputField);
 
-    datepicker.find('BpkInput').simulate('focus');
-    expect(datepicker.state('isOpen')).toEqual(true);
+    const calendarDialog = screen.getByRole('dialog', {
+      name: 'Departure date',
+    });
+    expect(calendarDialog).toBeInTheDocument();
   });
 
   it('should open when the isOpen prop is changed from the outside', () => {
-    const datepicker = mount(
+    const getDatepicker = (isOpen) => (
       <BpkDatepicker
         id="myDatepicker"
         closeButtonText="Close"
@@ -275,21 +286,24 @@ describe('BpkDatepicker', () => {
           date: new Date(2010, 1, 15),
         }}
         weekStartsOn={1}
-        isOpen={false}
-      />,
+        isOpen={isOpen}
+      />
     );
 
-    expect(datepicker.state('isOpen')).toBeFalsy();
+    const { rerender } = render(getDatepicker(false));
 
-    datepicker.setProps({ isOpen: true });
+    rerender(getDatepicker(true));
 
-    expect(datepicker.state('isOpen')).toBeTruthy();
+    const calendarDialog = screen.getByRole('dialog', {
+      name: 'Departure date',
+    });
+    expect(calendarDialog).toBeInTheDocument();
   });
 
-  it('should update state when a date is selected', () => {
+  it('should call onOpenChange when a date is selected', async () => {
     const onOpenChangeMock = jest.fn();
 
-    const datepicker = mount(
+    render(
       <BpkDatepicker
         id="myDatepicker"
         closeButtonText="Close"
@@ -314,20 +328,28 @@ describe('BpkDatepicker', () => {
       />,
     );
 
-    datepicker.find('BpkInput').simulate('click');
-    expect(datepicker.state('isOpen')).toEqual(true);
+    const inputField = screen.getByRole('textbox', {
+      name: 'Monday, 15th February 2010',
+    });
+    await userEvent.click(inputField);
+
+    const calendarDialog = screen.queryByRole('dialog', {
+      name: 'Departure date',
+    });
+    expect(calendarDialog).toBeInTheDocument();
     expect(onOpenChangeMock).toHaveBeenCalledWith(true);
 
-    const date = new Date(2010, 1, 15);
-    datepicker.instance().handleDateSelect(date);
-    expect(datepicker.state('isOpen')).toEqual(false);
+    const dateButton = screen.getByRole('button', {
+      name: 'Monday, 15th February 2010',
+    });
+    await userEvent.click(dateButton);
     expect(onOpenChangeMock).toHaveBeenCalledWith(false);
   });
 
-  it('should close when `onClose` is called', () => {
+  it('should close when `onClose` is called', async () => {
     const onOpenChangeMock = jest.fn();
 
-    const datepicker = mount(
+    render(
       <BpkDatepicker
         id="myDatepicker"
         closeButtonText="Close"
@@ -349,15 +371,18 @@ describe('BpkDatepicker', () => {
           date: new Date(2010, 1, 15),
         }}
         onOpenChange={onOpenChangeMock}
+        isOpen
       />,
     );
 
-    datepicker.find('BpkInput').simulate('click');
-    expect(datepicker.state('isOpen')).toEqual(true);
-    expect(onOpenChangeMock).toHaveBeenCalledWith(true);
+    const calendarDialog = screen.queryByRole('dialog', {
+      name: 'Departure date',
+    });
+    expect(calendarDialog).toBeInTheDocument();
 
-    datepicker.instance().onClose();
-    expect(datepicker.state('isOpen')).toEqual(false);
+    const closeButton = screen.getByRole('button', { name: 'Close' });
+    await userEvent.click(closeButton);
+    expect(calendarDialog).not.toBeInTheDocument();
     expect(onOpenChangeMock).toHaveBeenCalledWith(false);
   });
 });

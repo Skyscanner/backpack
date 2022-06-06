@@ -17,8 +17,9 @@
  */
 
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { mount } from 'enzyme';
+import userEvent from '@testing-library/user-event';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
@@ -98,8 +99,8 @@ describe('BpkCalendarContainer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should change the month', () => {
-    const calendar = mount(
+  it('should change the month', async () => {
+    render(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -118,22 +119,31 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    let grid = calendar.find('BpkCalendarGridTransition');
-    const nav = calendar.find('BpkCalendarNav');
-    const eventStub = { persist: jest.fn() };
+    // dates in March are outside current month
+    const outsideDate = screen.getByRole('button', {
+      name: 'Monday, 1st March 2010',
+    });
+    expect(outsideDate.classList.contains('bpk-calendar-date--outside')).toBe(
+      true,
+    );
 
-    expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
+    // change month to March
+    const inputField = screen.getByRole('combobox', { name: 'Change month' });
+    await userEvent.selectOptions(inputField, 'March 2010');
 
-    nav.prop('onMonthChange')(eventStub, { month: new Date(2010, 2, 1) });
-    calendar.update();
-    grid = calendar.find('BpkCalendarGridTransition');
-    expect(grid.prop('month')).toEqual(new Date(2010, 2, 1));
+    // dates in March are within current month
+    const currentDate = screen.getByRole('button', {
+      name: 'Monday, 1st March 2010',
+    });
+    expect(currentDate.classList.contains('bpk-calendar-date--outside')).toBe(
+      false,
+    );
   });
 
-  it('should call the onDateSelect callback', () => {
+  it('should call the onDateSelect callback', async () => {
     const onDateSelect = jest.fn();
 
-    const calendar = mount(
+    render(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -153,23 +163,52 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    const grid = calendar.find('BpkCalendarGridTransition');
-
     expect(onDateSelect.mock.calls.length).toBe(0);
-    expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
 
-    grid.prop('onDateClick')(new Date(2010, 1, 20));
+    const date = screen.getByRole('button', {
+      name: 'Saturday, 20th February 2010',
+    });
+    await userEvent.click(date);
+
     expect(onDateSelect.mock.calls.length).toBe(1);
-    expect(onDateSelect.mock.calls[0][0]).toEqual(new Date(2010, 1, 20));
   });
 
-  it('should account for focus state if selected date is set to null', () => {
+  it('should account for focus state if selected date is set to null', async () => {
     const onDateSelect = jest.fn();
-    const initialSelectedDate = new Date(2010, 1, 15);
+    const initialSelectedDate = new Date(2010, 1, 22);
     const minDate = new Date(2010, 1, 15);
     const maxDate = new Date(2010, 2, 15);
 
-    const calendar = mount(
+    const { rerender } = render(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
+        id="myCalendar"
+        minDate={minDate}
+        maxDate={maxDate}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: initialSelectedDate,
+        }}
+        onDateSelect={onDateSelect}
+      />,
+    );
+
+    const initialSelectedDateButton = screen.getByRole('button', {
+      name: 'Monday, 22nd February 2010',
+    });
+    expect(
+      initialSelectedDateButton.classList.contains(
+        'bpk-calendar-date--focused',
+      ),
+    ).toBe(true);
+
+    rerender(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -189,16 +228,12 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    expect(calendar.state('focusedDate')).toEqual(initialSelectedDate);
-
-    calendar.setProps({
-      selectionConfiguration: {
-        type: CALENDAR_SELECTION_TYPE.single,
-        date: null,
-      },
+    const minDateButton = screen.getByRole('button', {
+      name: 'Monday, 15th February 2010',
     });
-
-    expect(calendar.state('focusedDate')).toEqual(minDate);
+    expect(minDateButton.classList.contains('bpk-calendar-date--focused')).toBe(
+      true,
+    );
   });
 
   it('should set state only once on date selection', () => {
