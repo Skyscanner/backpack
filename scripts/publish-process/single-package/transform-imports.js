@@ -62,7 +62,7 @@ const jsSrcFiles = execSync(
   .filter((s) => s !== '');
 
 const jsRootFiles = execSync(
-  'find packages -name "*.js" -o -name "*.jsx" | grep -Ev "node_modules|src" --include "src/"',
+  'find packages -name "*.js" -o -name "*.jsx" | grep -Ev "node_modules|src"',
 )
   .toString()
   .split('\n')
