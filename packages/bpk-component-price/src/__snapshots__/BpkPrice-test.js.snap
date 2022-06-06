@@ -61,7 +61,7 @@ exports[`Layout large should support description attribute 1`] = `
         £1,830
       </span>
       <span
-        class="bpk-text bpk-text--sm bpk-price__descriptionSpacing"
+        class="bpk-text bpk-text--sm bpk-price__description bpk-price__descriptionSpacing"
       >
         / night
       </span>
@@ -145,7 +145,7 @@ exports[`Layout small should support description attribute 1`] = `
       £1,830
     </span>
     <span
-      class="bpk-text bpk-text--xs"
+      class="bpk-text bpk-text--xs bpk-price__description"
     >
       / night
     </span>
