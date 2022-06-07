@@ -35,6 +35,11 @@
     text-decoration-line: line-through;
   }
 
+  &__titleColumn {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__description {
     color: $bpk-color-sky-gray-tint-02;
 

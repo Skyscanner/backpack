@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
@@ -44,9 +44,6 @@ const BpkPrice = (props: Props) => {
 
   const isSmall = size === SIZES.small;
 
-  const conditionalWrap = (children) =>
-    isSmall ? children : <div>{children}</div>;
-
   return (
     <div
       className={getClassName(
@@ -66,28 +63,26 @@ const BpkPrice = (props: Props) => {
           {subtitle}
         </BpkText>
       )}
-      {conditionalWrap(
-        <Fragment>
+      <div className={isSmall && getClassName('bpk-price__titleColumn')}>
+        <BpkText
+          textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
+          tagName="span"
+        >
+          {title}
+        </BpkText>
+        {description && (
           <BpkText
-            textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
+            textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
             tagName="span"
+            className={getClassName(
+              'bpk-price__description',
+              !isSmall && 'bpk-price__descriptionSpacing',
+            )}
           >
-            {title}
+            {description}
           </BpkText>
-          {description && (
-            <BpkText
-              textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-              tagName="span"
-              className={getClassName(
-                'bpk-price__description',
-                !isSmall && 'bpk-price__descriptionSpacing',
-              )}
-            >
-              {description}
-            </BpkText>
-          )}
-        </Fragment>,
-      )}
+        )}
+      </div>
     </div>
   );
 };

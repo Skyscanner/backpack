@@ -29,11 +29,11 @@ const subtitle = '£200';
 const description = '/ night';
 let props;
 
-describe.each([[SIZES.small], [SIZES.large]])('%s view', (layoutProp) => {
+describe.each([SIZES.small, SIZES.large])('%s view', (sizeProp) => {
   beforeEach(() => {
     props = {
       title,
-      layout: layoutProp,
+      size: sizeProp,
     };
   });
 

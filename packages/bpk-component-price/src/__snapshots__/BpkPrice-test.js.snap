@@ -4,7 +4,6 @@ exports[`large view should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
-    layout="large"
   >
     <div>
       <span
@@ -21,7 +20,6 @@ exports[`large view should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
-    layout="large"
     testid="123"
   >
     <div>
@@ -39,7 +37,6 @@ exports[`large view should support custom class names 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price custom-classname"
-    layout="large"
   >
     <div>
       <span
@@ -56,7 +53,6 @@ exports[`large view should support description attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
-    layout="large"
   >
     <div>
       <span
@@ -78,7 +74,6 @@ exports[`large view should support subtitle attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
-    layout="large"
   >
     <span
       class="bpk-text bpk-text--sm bpk-price__subtitle"
@@ -99,12 +94,13 @@ exports[`large view should support subtitle attribute 1`] = `
 exports[`small view should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price"
-    layout="small"
+    class="bpk-price bpk-price--small"
   >
-    <div>
+    <div
+      class="bpk-price__titleColumn"
+    >
       <span
-        class="bpk-text bpk-text--xxl"
+        class="bpk-text bpk-text--heading-4"
       >
         £1,830
       </span>
@@ -116,13 +112,14 @@ exports[`small view should render correctly 1`] = `
 exports[`small view should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price"
-    layout="small"
+    class="bpk-price bpk-price--small"
     testid="123"
   >
-    <div>
+    <div
+      class="bpk-price__titleColumn"
+    >
       <span
-        class="bpk-text bpk-text--xxl"
+        class="bpk-text bpk-text--heading-4"
       >
         £1,830
       </span>
@@ -134,12 +131,13 @@ exports[`small view should support arbitrary props 1`] = `
 exports[`small view should support custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price custom-classname"
-    layout="small"
+    class="bpk-price bpk-price--small custom-classname"
   >
-    <div>
+    <div
+      class="bpk-price__titleColumn"
+    >
       <span
-        class="bpk-text bpk-text--xxl"
+        class="bpk-text bpk-text--heading-4"
       >
         £1,830
       </span>
@@ -151,17 +149,18 @@ exports[`small view should support custom class names 1`] = `
 exports[`small view should support description attribute 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price"
-    layout="small"
+    class="bpk-price bpk-price--small"
   >
-    <div>
+    <div
+      class="bpk-price__titleColumn"
+    >
       <span
-        class="bpk-text bpk-text--xxl"
+        class="bpk-text bpk-text--heading-4"
       >
         £1,830
       </span>
       <span
-        class="bpk-text bpk-text--sm bpk-price__description bpk-price__descriptionSpacing"
+        class="bpk-text bpk-text--xs bpk-price__description"
       >
         / night
       </span>
@@ -173,17 +172,18 @@ exports[`small view should support description attribute 1`] = `
 exports[`small view should support subtitle attribute 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-price"
-    layout="small"
+    class="bpk-price bpk-price--small"
   >
     <span
-      class="bpk-text bpk-text--sm bpk-price__subtitle"
+      class="bpk-text bpk-text--xs bpk-price__subtitle"
     >
       £200
     </span>
-    <div>
+    <div
+      class="bpk-price__titleColumn"
+    >
       <span
-        class="bpk-text bpk-text--xxl"
+        class="bpk-text bpk-text--heading-4"
       >
         £1,830
       </span>
