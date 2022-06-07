@@ -89,13 +89,14 @@ const BpkPrice = (props: Props) => {
 
 BpkPrice.propTypes = {
   title: PropTypes.string.isRequired,
-  size: PropTypes.oneOf(Object.keys(SIZES)).isRequired,
+  size: PropTypes.oneOf(Object.keys(SIZES)),
   className: PropTypes.string,
   subtitle: PropTypes.string,
   description: PropTypes.string,
 };
 
 BpkPrice.defaultProps = {
+  size: SIZES.small,
   className: null,
   subtitle: null,
   description: null,

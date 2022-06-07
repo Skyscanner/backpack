@@ -29,7 +29,7 @@ export default () => (
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | title     | string   | true     | -             |
-| size | oneOf([SIZES.small, SIZES.large])   | true    | -          |
+| size | oneOf(SIZES)   | false    | SIZES.small         |
 | subtitle  | string   | false    | null          |
 | description | string   | false    | null          |
 | className | string   | false    | null          |
