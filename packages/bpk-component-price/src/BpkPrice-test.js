@@ -22,8 +22,6 @@ import { render } from '@testing-library/react';
 
 import BpkPrice, { SIZES } from './BpkPrice';
 
-jest.mock('bpk-component-breakpoint');
-
 const title = '£1,830';
 const subtitle = '£200';
 const description = '/ night';
