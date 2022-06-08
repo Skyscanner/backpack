@@ -105,7 +105,7 @@ const BpkRating = (props: Props) => {
     <div
       className={classNames.join(' ')}
       aria-label={ariaLabel}
-      role="img"
+      role="article"
       {...rest}
     >
       <BpkText
