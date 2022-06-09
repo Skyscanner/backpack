@@ -111,7 +111,7 @@
     "@babel/preset-typescript": "^7.16.5",
     "@babel/register": "^7.12.1",
     "@skyscanner/bpk-foundations-web": "^8.0.0",
-    "@skyscanner/eslint-config-skyscanner": "^11.0.0",
+    "@skyscanner/eslint-config-skyscanner": "^12.0.0",
     "@storybook/addon-a11y": "^5.3.14",
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
