@@ -17,9 +17,9 @@
  */
 
 import React from 'react';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import format from 'date-fns/format';
+import userEvent from '@testing-library/user-event';
 
 import BpkCalendarNav from './BpkCalendarNav';
 
@@ -76,10 +76,10 @@ describe('BpkCalendarNav', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call the onMonthChange callback when nudging/selecting month', () => {
+  it('should call the onMonthChange callback when nudging/selecting month', async () => {
     const onMonthChange = jest.fn();
 
-    const nav = shallow(
+    render(
       <BpkCalendarNav
         month={new Date(2010, 1, 1)}
         minDate={new Date(2010, 0, 1)}
@@ -96,36 +96,22 @@ describe('BpkCalendarNav', () => {
     expect(onMonthChange.mock.calls.length).toBe(0);
 
     // Previous month
-    const prevEventStub = { persist: jest.fn() };
-    nav.find('button').at(0).simulate('click', prevEventStub);
-    expect(onMonthChange.mock.calls.length).toBe(1);
-    expect(onMonthChange.mock.calls[0][0]).toEqual(prevEventStub);
-    expect(onMonthChange.mock.calls[0][1]).toEqual({
-      month: new Date(2010, 0, 1),
-      source: 'PREV',
+    const prevMonthButton = screen.getByRole('button', {
+      name: 'Go to previous month',
     });
+    await userEvent.click(prevMonthButton);
+    expect(onMonthChange.mock.calls.length).toBe(1);
 
     // Next month
-    const nextEventStub = { persist: jest.fn() };
-    nav.find('button').at(1).simulate('click', nextEventStub);
-    expect(onMonthChange.mock.calls.length).toBe(2);
-    expect(onMonthChange.mock.calls[1][0]).toEqual(nextEventStub);
-    expect(onMonthChange.mock.calls[1][1]).toEqual({
-      month: new Date(2010, 2, 1),
-      source: 'NEXT',
+    const nextMonthButton = screen.getByRole('button', {
+      name: 'Go to next month',
     });
+    await userEvent.click(nextMonthButton);
+    expect(onMonthChange.mock.calls.length).toBe(2);
 
     // Select month
-    const selectEventStub = {
-      target: { value: '2010-03-01' },
-      persist: jest.fn(),
-    };
-    nav.find('BpkSelect').simulate('change', selectEventStub);
+    const select = screen.getByRole('combobox');
+    await userEvent.selectOptions(select, 'March 2010');
     expect(onMonthChange.mock.calls.length).toBe(3);
-    expect(onMonthChange.mock.calls[2][0]).toEqual(selectEventStub);
-    expect(onMonthChange.mock.calls[2][1]).toEqual({
-      month: new Date(2010, 2, 1),
-      source: 'SELECT',
-    });
   });
 });
