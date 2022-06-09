@@ -57,7 +57,7 @@ class BpkCalendarGridTransition extends Component {
   constructor(props) {
     super(props);
 
-    this.onMonthTransitionEnd.bind(this);
+    this.onMonthTransitionEnd = this.onMonthTransitionEnd.bind(this);
 
     this.state = {
       isTransitioning: false,
