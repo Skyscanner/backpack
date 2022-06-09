@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import Popper from '@skyscanner/popper.js';
+import { createPopper, basePlacements } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import focusStore from 'a11y-focus-store';
@@ -31,7 +31,6 @@ import BpkPopover, {
   defaultProps as popoverDefaultProps,
   type Props as PopoverProps,
 } from './BpkPopover';
-import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
 
@@ -51,7 +50,7 @@ export const propTypes = {
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  placement: PropTypes.oneOf(basePlacements),
   portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   portalClassName: PropTypes.string,
   renderTarget: PropTypes.func,
@@ -68,7 +67,7 @@ export const defaultProps = {
 };
 
 class BpkPopoverPortal extends Component<Props> {
-  popper: ?typeof Popper;
+  popper: ?typeof createPopper;
 
   suppressRestoreFocus: boolean;
 
@@ -139,34 +138,61 @@ class BpkPopoverPortal extends Component<Props> {
       this.popper = null;
     }
 
+    // Custom modifier that makes the arrow display at the edge of the target.
+    const applyArrowHide = {
+      name: 'applyArrowHide',
+      enabled: true,
+      phase: 'write',
+      fn({ state }) {
+        const { arrow } = state.elements;
+        if (arrow) {
+          if (state.modifiersData.arrow.centerOffset !== 0) {
+            arrow.setAttribute('data-hide', '');
+          } else {
+            arrow.removeAttribute('data-hide');
+          }
+        }
+      },
+    };
+
+    // The default modifiers for the popper
     // Note that GPU acceleration should be disabled otherwise Popper will use `translate3d`
     // which can cause blurriness in Safari and Chrome.
+    const stdModifiers = [
+      {
+        name: 'computeStyles',
+        options: {
+          gpuAcceleration: false,
+        },
+      },
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 17],
+        },
+      },
+      applyArrowHide,
+    ];
+
     if (!this.popper) {
-      this.popper = new Popper(targetElement, popoverElement, {
+      this.popper = createPopper(targetElement, popoverElement, {
         placement: this.props.placement,
-        onCreate: () => {
+        onFirstUpdate: () => {
           if (targetElement) {
             targetElement.focus();
           }
           focusStore.storeFocus();
           keyboardFocusScope.scopeFocus(popoverElement);
         },
-        modifiers: {
-          ...this.props.popperModifiers,
-          computeStyle: {
-            gpuAcceleration: false,
-          },
-          arrow: {
-            element: `#${ARROW_ID}`,
-          },
-        },
+        modifiers: this.props.popperModifiers
+          ? [...this.props.popperModifiers, ...stdModifiers]
+          : stdModifiers,
       });
     }
 
     this.previousTargetElement = targetElement;
-
     if (this.popper) {
-      this.popper.scheduleUpdate();
+      this.popper.update();
     }
   }
 

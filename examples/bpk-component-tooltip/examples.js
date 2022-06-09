@@ -127,9 +127,12 @@ const PopperModifiersExample = () => (
       ariaLabel="Berlin Brandenburg Airport"
       id="my-tooltip"
       target={<Heading>BER</Heading>}
-      popperModifiers={{
-        flip: { enabled: false },
-      }}
+      popperModifiers={[
+        {
+          name: 'flip',
+          options: { enabled: false },
+        },
+      ]}
     >
       Berlin Brandenburg Airport
     </BpkTooltip>

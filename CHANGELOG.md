@@ -1,3 +1,19 @@
+# 2022-06-01
+
+**Fixed:**
+- `@skyscanner/backpack-web`: 2.0.0 => 2.0.1
+  - Fixed an issue with imports being incorrectly set.
+
+# 2022-05-31
+
+**Breaking:**
+
+- `@skyscanner/backpack-web`: 1.0.1 => 2.0.0
+- bpk-component-rating: 4.0.2 => 5.0.0
+  - Deprecate `size` value `lg` and replace with `large` to show vertical style.
+  - Support `value` when it's localized `string` type.
+
+
 # 2022-05-26
 
 - `@skyscanner/backpack-web`: 1.0.0 => 1.0.1

@@ -19,14 +19,13 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
 import TransitionInitialMount from './TransitionInitialMount';
 
 describe('TransitionInitialMount', () => {
   it('should render correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <TransitionInitialMount
         appearClassName="block--appear"
         appearActiveClassName="block--apear-active"
@@ -36,6 +35,6 @@ describe('TransitionInitialMount', () => {
       </TransitionInitialMount>,
     );
 
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
