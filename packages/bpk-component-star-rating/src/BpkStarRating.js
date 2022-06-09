@@ -92,7 +92,12 @@ const BpkStarRating = (props: Props) => {
       : ratingLabel(rating, maxRating);
 
   return (
-    <div {...rest} aria-label={label} className={classNames.join(' ')}>
+    <div
+      {...rest}
+      role="img"
+      aria-label={label}
+      className={classNames.join(' ')}
+    >
       {stars}
     </div>
   );

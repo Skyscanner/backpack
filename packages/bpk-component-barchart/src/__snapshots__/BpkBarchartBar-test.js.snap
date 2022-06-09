@@ -18,9 +18,10 @@ exports[`BpkBarchartBar should render as an outlier 1`] = `
       />
       <rect
         aria-label="Bar"
-        aria-pressed="false"
+        aria-roledescription="bar"
         class="bpk-barchart-bar__tappable-area"
         height="100"
+        role="graphics-symbol"
         width="20"
         x="0"
         y="0"
@@ -80,9 +81,10 @@ exports[`BpkBarchartBar should render as selected 1`] = `
       />
       <rect
         aria-label="Bar"
-        aria-pressed="false"
+        aria-roledescription="bar"
         class="bpk-barchart-bar__tappable-area"
         height="100"
+        role="graphics-symbol"
         width="20"
         x="0"
         y="0"
@@ -110,9 +112,10 @@ exports[`BpkBarchartBar should render correctly 1`] = `
       />
       <rect
         aria-label="Bar"
-        aria-pressed="false"
+        aria-roledescription="bar"
         class="bpk-barchart-bar__tappable-area"
         height="100"
+        role="graphics-symbol"
         width="20"
         x="0"
         y="0"
@@ -140,9 +143,10 @@ exports[`BpkBarchartBar should render with "padding" prop 1`] = `
       />
       <rect
         aria-label="Bar"
-        aria-pressed="false"
+        aria-roledescription="bar"
         class="bpk-barchart-bar__tappable-area"
         height="100"
+        role="graphics-symbol"
         width="20"
         x="0"
         y="0"
@@ -202,9 +206,10 @@ exports[`BpkBarchartBar should render with an onHover handler 1`] = `
       />
       <rect
         aria-label="Bar"
-        aria-pressed="false"
+        aria-roledescription="bar"
         class="bpk-barchart-bar__tappable-area"
         height="100"
+        role="graphics-symbol"
         width="20"
         x="0"
         y="0"
