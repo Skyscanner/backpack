@@ -106,7 +106,9 @@ function getSelectionType(
 
   if (
     selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
-    selectionConfiguration.date === formatDateFull(date)
+    selectionConfiguration.date &&
+    (selectionConfiguration.date === formatDateFull(date) ||
+      formatDateFull(selectionConfiguration.date) === formatDateFull(date))
   ) {
     return SELECTION_TYPES.single;
   }

@@ -4,7 +4,6 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
-    data-testid="bpk-calendar"
   >
     <header
       aria-hidden="true"
@@ -109,7 +108,6 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
-    data-testid="bpk-calendar"
   >
     <header
       aria-hidden="true"
@@ -214,7 +212,6 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
-    data-testid="bpk-calendar"
   >
     <header
       aria-hidden="true"
@@ -319,7 +316,6 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar custom-classname bpk-calendar--fixed"
-    data-testid="bpk-calendar"
   >
     <header
       aria-hidden="true"

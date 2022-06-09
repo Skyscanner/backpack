@@ -4,7 +4,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
-    data-testid="bpk-calendar"
   >
     <div
       class="bpk-calendar-nav"
@@ -1928,7 +1927,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
-    data-testid="bpk-calendar"
   >
     <div
       class="bpk-calendar-nav"
@@ -2419,13 +2417,13 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <div
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--single"
               >
                 <button
                   aria-hidden="false"
                   aria-label="Monday, 15th February 2010"
                   aria-pressed="true"
-                  class="bpk-calendar-date bpk-calendar-date--focused bpk-calendar-date--selected"
+                  class="bpk-calendar-date bpk-calendar-date--focused bpk-calendar-date--selected bpk-calendar-date--single"
                   tabindex="0"
                   type="button"
                 >
@@ -3852,7 +3850,6 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar bpk-calendar--fixed"
-    data-testid="bpk-calendar"
   >
     <div
       class="bpk-calendar-nav"

@@ -85,7 +85,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     }
 
     return (
-      <div data-testid="bpk-calendar" className={classNames.join(' ')}>
+      <div className={classNames.join(' ')}>
         {Nav && (
           <Nav
             changeMonthLabel={changeMonthLabel}
