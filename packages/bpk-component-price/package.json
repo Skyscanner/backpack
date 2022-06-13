@@ -14,9 +14,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-component-text": "^7.0.3",
+    "bpk-component-text": "^7.0.4",
     "bpk-mixins": "^31.1.1",
-    "bpk-react-utils": "^4.1.1",
+    "bpk-react-utils": "^4.1.2",
     "prop-types": "^15.5.8"
   },
   "peerDependencies": {
