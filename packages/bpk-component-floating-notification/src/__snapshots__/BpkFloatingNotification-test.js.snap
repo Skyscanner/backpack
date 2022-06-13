@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkFloatingNotification should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-floating-notification"
+  >
+    I am an example component.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkFloatingNotification should support arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-floating-notification"
+    testid="123"
+  >
+    I am an example component.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkFloatingNotification should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-floating-notification custom-classname"
+  >
+    I am an example component.
+  </div>
+</DocumentFragment>
+`;

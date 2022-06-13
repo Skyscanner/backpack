@@ -1,0 +1,122 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+
+// @keyframes float {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(bpk-spacing-xl());
+//   }
+
+//   8% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+
+//   92% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+
+//   100% {
+//     opacity: 0;
+//     transform: translateY(bpk-spacing-xl());
+//   }
+// }
+
+// @keyframes float {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(bpk-spacing-xl());
+//   }
+
+//   100% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// @keyframes sink {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(bpk-spacing-xl());
+//   }
+
+//   100% {
+//     opacity: 0;
+//     transform: translateY(bpk-spacing-xl());
+//   }
+// }
+
+.bpk-floating-notification {
+  display: flex;
+  position: absolute;
+  bottom: bpk-spacing-xl();
+  left: 0;
+  right: 0;
+  padding: bpk-spacing-lg();
+  border-radius: $bpk-border-radius-md;
+  color: $bpk-color-white;
+  background: $bpk-color-sky-blue-shade-03;
+  box-shadow: $bpk-box-shadow-xl, $bpk-box-shadow-lg;
+  margin: auto;
+  max-width: 400px;
+  // opacity: 0;
+  // animation: float 4600ms ease-in-out;
+
+  &__button {
+    margin: 0 0 auto auto;
+    min-height: 0;
+    padding: 0;
+  }
+
+  &__icon {
+    fill: $bpk-color-white;
+    flex-shrink: 0;
+    margin: bpk-spacing-sm() bpk-spacing-md() 0 bpk-spacing-sm();
+    text-align: bottom;
+
+    &--dark {
+      fill: $bpk-color-sky-gray;
+    }
+  }
+
+  &__text {
+    margin-right: bpk-spacing-md();
+  }
+
+  &--hidden {
+    animation: sink 300ms ease-in-out;
+  }
+
+  &--visible {
+    animation: float 300ms ease-in-out;
+  }
+
+  &--dark {
+    fill: $bpk-color-sky-gray;
+    color: $bpk-color-sky-gray;
+    background: $bpk-color-white;
+  }
+
+  @include bpk-breakpoint-mobile {
+    padding: bpk-spacing-base();
+    max-width: 100%;
+  }
+}

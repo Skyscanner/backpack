@@ -685,6 +685,7 @@ bpk-component-dialog
 bpk-component-drawer
 bpk-component-fieldset
 bpk-component-flare
+bpk-component-floating-notification
 bpk-component-form-validation
 bpk-component-graphic-promotion
 bpk-component-grid
