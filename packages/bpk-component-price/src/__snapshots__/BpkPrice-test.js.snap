@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`large view should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`large view should support arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+    testid="123"
+  >
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`large view should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price custom-classname"
+  >
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`large view should support description attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+      <span
+        class="bpk-text bpk-text--sm bpk-price__description bpk-price__descriptionSpacing"
+      >
+        / night
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`large view should support subtitle attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <span
+      class="bpk-text bpk-text--sm bpk-price__subtitle"
+    >
+      £200
+    </span>
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`small view should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--small"
+  >
+    <div
+      class="bpk-price__titleColumn"
+    >
+      <span
+        class="bpk-text bpk-text--heading-4"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`small view should support arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--small"
+    testid="123"
+  >
+    <div
+      class="bpk-price__titleColumn"
+    >
+      <span
+        class="bpk-text bpk-text--heading-4"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`small view should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--small custom-classname"
+  >
+    <div
+      class="bpk-price__titleColumn"
+    >
+      <span
+        class="bpk-text bpk-text--heading-4"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`small view should support description attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--small"
+  >
+    <div
+      class="bpk-price__titleColumn"
+    >
+      <span
+        class="bpk-text bpk-text--heading-4"
+      >
+        £1,830
+      </span>
+      <span
+        class="bpk-text bpk-text--xs bpk-price__description"
+      >
+        / night
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`small view should support subtitle attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--small"
+  >
+    <span
+      class="bpk-text bpk-text--xs bpk-price__subtitle"
+    >
+      £200
+    </span>
+    <div
+      class="bpk-price__titleColumn"
+    >
+      <span
+        class="bpk-text bpk-text--heading-4"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

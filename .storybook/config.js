@@ -104,6 +104,7 @@ configure(() => {
   require('../examples/bpk-component-panel/stories');
   require('../examples/bpk-component-phone-input/stories');
   require('../examples/bpk-component-popover/stories');
+  require('../examples/bpk-component-price/stories');
   require('../examples/bpk-component-progress/stories');
   require('../examples/bpk-component-radio/stories');
   require('../examples/bpk-component-rating/stories');

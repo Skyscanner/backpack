@@ -1,0 +1,25 @@
+{
+  "name": "bpk-component-price",
+  "version": "0.0.1",
+  "description": "Backpack price component.",
+  "license": "Apache-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "bpk-component-text": "^7.0.4",
+    "bpk-mixins": "^31.1.1",
+    "bpk-react-utils": "^4.1.2",
+    "prop-types": "^15.5.8"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0 || ^17.0.0"
+  }
+}
