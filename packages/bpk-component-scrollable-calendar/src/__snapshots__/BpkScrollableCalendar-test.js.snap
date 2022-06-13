@@ -1,343 +1,417 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkScrollableCalendar should render correctly 1`] = `
-<BpkCalendar
-  changeMonthLabel={null}
-  className={null}
-  dateModifiers={Object {}}
-  dateProps={null}
-  daysOfWeek={
-    Array [
-      Object {
-        "index": 0,
-        "isWeekend": true,
-        "name": "Sunday",
-        "nameAbbr": "Sun",
-      },
-      Object {
-        "index": 1,
-        "isWeekend": false,
-        "name": "Monday",
-        "nameAbbr": "Mon",
-      },
-      Object {
-        "index": 2,
-        "isWeekend": false,
-        "name": "Tuesday",
-        "nameAbbr": "Tue",
-      },
-      Object {
-        "index": 3,
-        "isWeekend": false,
-        "name": "Wednesday",
-        "nameAbbr": "Wed",
-      },
-      Object {
-        "index": 4,
-        "isWeekend": false,
-        "name": "Thursday",
-        "nameAbbr": "Thu",
-      },
-      Object {
-        "index": 5,
-        "isWeekend": false,
-        "name": "Friday",
-        "nameAbbr": "Fri",
-      },
-      Object {
-        "index": 6,
-        "isWeekend": true,
-        "name": "Saturday",
-        "nameAbbr": "Sat",
-      },
-    ]
-  }
-  fixedWidth={true}
-  focusedDate={2010-02-14T00:00:00.000Z}
-  formatDateFull={[Function]}
-  formatMonth={[Function]}
-  gridClassName={null}
-  gridProps={null}
-  headerProps={null}
-  id="scrollableCalendar"
-  initiallyFocusedDate={null}
-  markOutsideDays={true}
-  markToday={true}
-  maxDate={2011-02-15T00:00:00.000Z}
-  minDate={2010-02-14T00:00:00.000Z}
-  month={2010-02-01T00:00:00.000Z}
-  navProps={null}
-  nextMonthLabel={null}
-  onDateClick={[Function]}
-  onDateKeyDown={[Function]}
-  onMonthChange={[Function]}
-  preventKeyboardFocus={true}
-  previousMonthLabel={null}
-  selectedDate={null}
-  selectionConfiguration={
-    Object {
-      "date": null,
-      "type": "single",
-    }
-  }
-  weekDayKey="nameAbbr"
-  weekStartsOn={1}
-/>
+<DocumentFragment>
+  <div
+    class="bpk-calendar bpk-calendar--fixed"
+  >
+    <header
+      aria-hidden="true"
+      class="bpk-calendar-header"
+    >
+      <ol
+        class="bpk-calendar-header__week"
+      >
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Monday"
+        >
+          <span>
+            Mon
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Tuesday"
+        >
+          <span>
+            Tue
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Wednesday"
+        >
+          <span>
+            Wed
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Thursday"
+        >
+          <span>
+            Thu
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Friday"
+        >
+          <span>
+            Fri
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Saturday"
+        >
+          <span>
+            Sat
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Sunday"
+        >
+          <span>
+            Sun
+          </span>
+        </li>
+      </ol>
+    </header>
+    <div
+      class="bpk-scrollable-calendar-grid-list"
+    >
+      <div
+        style="overflow: visible; height: 0px; width: 0px;"
+      >
+        <div
+          aria-label="grid"
+          aria-readonly="true"
+          class="ReactVirtualized__Grid ReactVirtualized__List"
+          role="grid"
+          style="box-sizing: border-box; direction: ltr; height: 0px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
+          tabindex="0"
+        />
+      </div>
+      <div
+        class="resize-triggers"
+      >
+        <div
+          class="expand-trigger"
+        >
+          <div
+            style="width: 1px; height: 1px;"
+          />
+        </div>
+        <div
+          class="contract-trigger"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
-<BpkCalendar
-  changeMonthLabel={null}
-  className={null}
-  dateModifiers={Object {}}
-  dateProps={null}
-  daysOfWeek={
-    Array [
-      Object {
-        "index": 0,
-        "isWeekend": true,
-        "name": "Sunday",
-        "nameAbbr": "Sun",
-      },
-      Object {
-        "index": 1,
-        "isWeekend": false,
-        "name": "Monday",
-        "nameAbbr": "Mon",
-      },
-      Object {
-        "index": 2,
-        "isWeekend": false,
-        "name": "Tuesday",
-        "nameAbbr": "Tue",
-      },
-      Object {
-        "index": 3,
-        "isWeekend": false,
-        "name": "Wednesday",
-        "nameAbbr": "Wed",
-      },
-      Object {
-        "index": 4,
-        "isWeekend": false,
-        "name": "Thursday",
-        "nameAbbr": "Thu",
-      },
-      Object {
-        "index": 5,
-        "isWeekend": false,
-        "name": "Friday",
-        "nameAbbr": "Fri",
-      },
-      Object {
-        "index": 6,
-        "isWeekend": true,
-        "name": "Saturday",
-        "nameAbbr": "Sat",
-      },
-    ]
-  }
-  fixedWidth={true}
-  focusedDate={2010-02-15T00:00:00.000Z}
-  formatDateFull={[Function]}
-  formatMonth={[Function]}
-  gridClassName={null}
-  gridProps={null}
-  headerProps={null}
-  id="scrollableCalendar"
-  initiallyFocusedDate={null}
-  markOutsideDays={true}
-  markToday={true}
-  maxDate={2011-02-15T00:00:00.000Z}
-  minDate={2010-02-14T00:00:00.000Z}
-  month={2010-02-01T00:00:00.000Z}
-  navProps={null}
-  nextMonthLabel={null}
-  onDateClick={[Function]}
-  onDateKeyDown={[Function]}
-  onMonthChange={[Function]}
-  preventKeyboardFocus={true}
-  previousMonthLabel={null}
-  selectedDate={null}
-  selectionConfiguration={
-    Object {
-      "endDate": 2010-02-20T00:00:00.000Z,
-      "startDate": 2010-02-15T00:00:00.000Z,
-      "type": "range",
-    }
-  }
-  weekDayKey="nameAbbr"
-  weekStartsOn={1}
-/>
+<DocumentFragment>
+  <div
+    class="bpk-calendar bpk-calendar--fixed"
+  >
+    <header
+      aria-hidden="true"
+      class="bpk-calendar-header"
+    >
+      <ol
+        class="bpk-calendar-header__week"
+      >
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Monday"
+        >
+          <span>
+            Mon
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Tuesday"
+        >
+          <span>
+            Tue
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Wednesday"
+        >
+          <span>
+            Wed
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Thursday"
+        >
+          <span>
+            Thu
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Friday"
+        >
+          <span>
+            Fri
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Saturday"
+        >
+          <span>
+            Sat
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Sunday"
+        >
+          <span>
+            Sun
+          </span>
+        </li>
+      </ol>
+    </header>
+    <div
+      class="bpk-scrollable-calendar-grid-list"
+    >
+      <div
+        style="overflow: visible; height: 0px; width: 0px;"
+      >
+        <div
+          aria-label="grid"
+          aria-readonly="true"
+          class="ReactVirtualized__Grid ReactVirtualized__List"
+          role="grid"
+          style="box-sizing: border-box; direction: ltr; height: 0px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
+          tabindex="0"
+        />
+      </div>
+      <div
+        class="resize-triggers"
+      >
+        <div
+          class="expand-trigger"
+        >
+          <div
+            style="width: 1px; height: 1px;"
+          />
+        </div>
+        <div
+          class="contract-trigger"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
-<BpkCalendar
-  changeMonthLabel={null}
-  className={null}
-  dateModifiers={Object {}}
-  dateProps={null}
-  daysOfWeek={
-    Array [
-      Object {
-        "index": 0,
-        "isWeekend": true,
-        "name": "Sunday",
-        "nameAbbr": "Sun",
-      },
-      Object {
-        "index": 1,
-        "isWeekend": false,
-        "name": "Monday",
-        "nameAbbr": "Mon",
-      },
-      Object {
-        "index": 2,
-        "isWeekend": false,
-        "name": "Tuesday",
-        "nameAbbr": "Tue",
-      },
-      Object {
-        "index": 3,
-        "isWeekend": false,
-        "name": "Wednesday",
-        "nameAbbr": "Wed",
-      },
-      Object {
-        "index": 4,
-        "isWeekend": false,
-        "name": "Thursday",
-        "nameAbbr": "Thu",
-      },
-      Object {
-        "index": 5,
-        "isWeekend": false,
-        "name": "Friday",
-        "nameAbbr": "Fri",
-      },
-      Object {
-        "index": 6,
-        "isWeekend": true,
-        "name": "Saturday",
-        "nameAbbr": "Sat",
-      },
-    ]
-  }
-  fixedWidth={true}
-  focusedDate={2010-02-14T00:00:00.000Z}
-  formatDateFull={[Function]}
-  formatMonth={[Function]}
-  gridClassName={null}
-  gridProps={null}
-  headerProps={null}
-  id="scrollableCalendar"
-  initiallyFocusedDate={null}
-  markOutsideDays={true}
-  markToday={true}
-  maxDate={2011-02-15T00:00:00.000Z}
-  minDate={2010-02-14T00:00:00.000Z}
-  month={2010-02-01T00:00:00.000Z}
-  navProps={null}
-  nextMonthLabel={null}
-  onDateClick={[Function]}
-  onDateKeyDown={[Function]}
-  onMonthChange={[Function]}
-  preventKeyboardFocus={true}
-  previousMonthLabel={null}
-  selectedDate={null}
-  selectionConfiguration={
-    Object {
-      "date": null,
-      "type": "single",
-    }
-  }
-  testid="123"
-  weekDayKey="nameAbbr"
-  weekStartsOn={1}
-/>
+<DocumentFragment>
+  <div
+    class="bpk-calendar bpk-calendar--fixed"
+  >
+    <header
+      aria-hidden="true"
+      class="bpk-calendar-header"
+    >
+      <ol
+        class="bpk-calendar-header__week"
+      >
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Monday"
+        >
+          <span>
+            Mon
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Tuesday"
+        >
+          <span>
+            Tue
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Wednesday"
+        >
+          <span>
+            Wed
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Thursday"
+        >
+          <span>
+            Thu
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Friday"
+        >
+          <span>
+            Fri
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Saturday"
+        >
+          <span>
+            Sat
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Sunday"
+        >
+          <span>
+            Sun
+          </span>
+        </li>
+      </ol>
+    </header>
+    <div
+      class="bpk-scrollable-calendar-grid-list"
+    >
+      <div
+        style="overflow: visible; height: 0px; width: 0px;"
+      >
+        <div
+          aria-label="grid"
+          aria-readonly="true"
+          class="ReactVirtualized__Grid ReactVirtualized__List"
+          role="grid"
+          style="box-sizing: border-box; direction: ltr; height: 0px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
+          tabindex="0"
+        />
+      </div>
+      <div
+        class="resize-triggers"
+      >
+        <div
+          class="expand-trigger"
+        >
+          <div
+            style="width: 1px; height: 1px;"
+          />
+        </div>
+        <div
+          class="contract-trigger"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkScrollableCalendar should support custom class names 1`] = `
-<BpkCalendar
-  changeMonthLabel={null}
-  className="custom-classname"
-  dateModifiers={Object {}}
-  dateProps={null}
-  daysOfWeek={
-    Array [
-      Object {
-        "index": 0,
-        "isWeekend": true,
-        "name": "Sunday",
-        "nameAbbr": "Sun",
-      },
-      Object {
-        "index": 1,
-        "isWeekend": false,
-        "name": "Monday",
-        "nameAbbr": "Mon",
-      },
-      Object {
-        "index": 2,
-        "isWeekend": false,
-        "name": "Tuesday",
-        "nameAbbr": "Tue",
-      },
-      Object {
-        "index": 3,
-        "isWeekend": false,
-        "name": "Wednesday",
-        "nameAbbr": "Wed",
-      },
-      Object {
-        "index": 4,
-        "isWeekend": false,
-        "name": "Thursday",
-        "nameAbbr": "Thu",
-      },
-      Object {
-        "index": 5,
-        "isWeekend": false,
-        "name": "Friday",
-        "nameAbbr": "Fri",
-      },
-      Object {
-        "index": 6,
-        "isWeekend": true,
-        "name": "Saturday",
-        "nameAbbr": "Sat",
-      },
-    ]
-  }
-  fixedWidth={true}
-  focusedDate={2010-02-14T00:00:00.000Z}
-  formatDateFull={[Function]}
-  formatMonth={[Function]}
-  gridClassName={null}
-  gridProps={null}
-  headerProps={null}
-  id="scrollableCalendar"
-  initiallyFocusedDate={null}
-  markOutsideDays={true}
-  markToday={true}
-  maxDate={2011-02-15T00:00:00.000Z}
-  minDate={2010-02-14T00:00:00.000Z}
-  month={2010-02-01T00:00:00.000Z}
-  navProps={null}
-  nextMonthLabel={null}
-  onDateClick={[Function]}
-  onDateKeyDown={[Function]}
-  onMonthChange={[Function]}
-  preventKeyboardFocus={true}
-  previousMonthLabel={null}
-  selectedDate={null}
-  selectionConfiguration={
-    Object {
-      "date": null,
-      "type": "single",
-    }
-  }
-  weekDayKey="nameAbbr"
-  weekStartsOn={1}
-/>
+<DocumentFragment>
+  <div
+    class="bpk-calendar custom-classname bpk-calendar--fixed"
+  >
+    <header
+      aria-hidden="true"
+      class="bpk-calendar-header"
+    >
+      <ol
+        class="bpk-calendar-header__week"
+      >
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Monday"
+        >
+          <span>
+            Mon
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Tuesday"
+        >
+          <span>
+            Tue
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Wednesday"
+        >
+          <span>
+            Wed
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Thursday"
+        >
+          <span>
+            Thu
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Friday"
+        >
+          <span>
+            Fri
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Saturday"
+        >
+          <span>
+            Sat
+          </span>
+        </li>
+        <li
+          class="bpk-calendar-header__weekday"
+          title="Sunday"
+        >
+          <span>
+            Sun
+          </span>
+        </li>
+      </ol>
+    </header>
+    <div
+      class="bpk-scrollable-calendar-grid-list"
+    >
+      <div
+        style="overflow: visible; height: 0px; width: 0px;"
+      >
+        <div
+          aria-label="grid"
+          aria-readonly="true"
+          class="ReactVirtualized__Grid ReactVirtualized__List"
+          role="grid"
+          style="box-sizing: border-box; direction: ltr; height: 0px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
+          tabindex="0"
+        />
+      </div>
+      <div
+        class="resize-triggers"
+      >
+        <div
+          class="expand-trigger"
+        >
+          <div
+            style="width: 1px; height: 1px;"
+          />
+        </div>
+        <div
+          class="contract-trigger"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;

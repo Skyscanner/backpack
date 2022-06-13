@@ -21,8 +21,7 @@ import React from 'react';
 import isWeekend from 'date-fns/isWeekend';
 import { DateUtils } from 'bpk-component-calendar';
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import { render } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
@@ -33,7 +32,7 @@ const testDate = new Date(2010, 1, 15);
 
 describe('BpkCalendarScrollGridList', () => {
   it('should render correctly with no optional props set', () => {
-    const tree = render(
+    const { asFragment } = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -45,11 +44,11 @@ describe('BpkCalendarScrollGridList', () => {
         weekStartsOn={0}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a different "weekStartsOn" attribute', () => {
-    const tree = render(
+    const { asFragment } = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -61,14 +60,14 @@ describe('BpkCalendarScrollGridList', () => {
         weekStartsOn={3}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "dateModifiers" attribute', () => {
     const modifiers = {
       someClass: () => true,
     };
-    const tree = render(
+    const { asFragment } = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -81,7 +80,7 @@ describe('BpkCalendarScrollGridList', () => {
         dateModifiers={modifiers}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom date component', () => {
@@ -101,7 +100,7 @@ describe('BpkCalendarScrollGridList', () => {
     MyCustomDate.propTypes = {
       date: PropTypes.instanceOf(Date).isRequired,
     };
-    const tree = render(
+    const { asFragment } = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -113,6 +112,6 @@ describe('BpkCalendarScrollGridList', () => {
         weekStartsOn={1}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

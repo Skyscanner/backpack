@@ -1,3 +1,32 @@
+# 2022-05-10
+
+`@skyscanner/backpack-web`: 2.0.1 => 3.0.1
+  - Fixed an issue with imports being incorrectly set via release.
+
+# 2022-05-10
+
+`@skyscanner/backpack-web`: 2.0.1 => 3.0.0
+
+**Breaking:**
+
+ `bpk-component-popover`: 4.1.12 => 5.0.0 </br>
+ `bpk-component-tooltip`: 6.1.10 => 7.0.0 </br>
+  - Migrated from custom `popper.js` version 1 to upstream version 2.
+  - `popperModifiers` now accepts an array of objects instead of an object of options.
+    - Modifiers now follow a new format and existing versions will no longer function as expected. See https://popper.js.org/docs/v2/modifiers/ for more information.
+
+**Fixed:**
+
+`bpk-component-barchart`: 4.2.10 => 4.2.11 </br>
+`bpk-component-rating`: 5.0.0 => 5.0.1 </br>
+`bpk-component-star-rating`: 3.1.10 => 3.1.11 </br>
+  - Added accessibility roles to components.
+
+
+`bpk-component-calendar`: 11.1.14 => 11.1.15 </br>
+`bpk-component-scrollable-calendar`: 6.1.14 => 6.1.15 </br>
+  - Fixed bug in calendar components where the wrong `selectionType` property (and hence style) is set in a date component when `selectionConfiguration.type` is `single`.
+
 # 2022-06-01
 
 **Fixed:**

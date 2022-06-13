@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-image",
-  "version": "5.1.10",
+  "version": "5.1.11",
   "description": "Backpack image component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,9 +14,9 @@
   },
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
-    "bpk-component-spinner": "^5.1.9",
+    "bpk-component-spinner": "^5.1.10",
     "bpk-mixins": "^31.1.1",
-    "bpk-react-utils": "^4.1.1",
+    "bpk-react-utils": "^4.1.2",
     "prop-types": "^15.7.2",
     "react-transition-group": "^2.5.3"
   },
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^8.0.0",
-    "bpk-component-mobile-scroll-container": "^3.1.9",
-    "bpk-component-text": "^7.0.3"
+    "bpk-component-mobile-scroll-container": "^3.1.10",
+    "bpk-component-text": "^7.0.4"
   }
 }

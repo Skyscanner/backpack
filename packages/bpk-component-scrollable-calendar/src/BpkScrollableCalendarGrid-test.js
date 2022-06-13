@@ -18,8 +18,8 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import isWeekend from 'date-fns/isWeekend';
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -105,10 +105,10 @@ describe('BpkCalendarScrollGrid', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call the onDateClick callback', () => {
+  it('should call the onDateClick callback', async () => {
     const onDateClick = jest.fn();
 
-    const grid = mount(
+    render(
       <BpkCalendarScrollGrid
         month={new Date('2016-10')}
         formatMonth={formatMonth}
@@ -122,11 +122,15 @@ describe('BpkCalendarScrollGrid', () => {
 
     expect(onDateClick.mock.calls.length).toBe(0);
 
-    grid.find('button').at(10).simulate('click');
+    const date1 = screen.getByRole('button', { name: /11th October/i });
+    await userEvent.click(date1);
+
     expect(onDateClick.mock.calls.length).toBe(1);
     expect(onDateClick.mock.calls[0][0]).toEqual(new Date(2016, 9, 11));
 
-    grid.find('button').at(11).simulate('click');
+    const date2 = screen.getByRole('button', { name: /12th October/i });
+    await userEvent.click(date2);
+
     expect(onDateClick.mock.calls.length).toBe(2);
     expect(onDateClick.mock.calls[1][0]).toEqual(new Date(2016, 9, 12));
   });
