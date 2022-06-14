@@ -22,3 +22,7 @@ export default () => <BpkFloatingNotification />;
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | className | string   | false    | null          |
+| ctaText   | string   | false    | null          |
+| darkMode  | bool     | false    | false         |
+| icon      | bool     | false    | false         |
+| text      | string   | true     | null          |

@@ -20,7 +20,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
-
 import BpkButton from 'bpk-component-button';
 import BpkIconHeart from 'bpk-component-icon/sm/heart';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
@@ -34,18 +33,17 @@ export type Props = {
   ctaText: ?string,
   darkMode: ?boolean,
   icon: ?boolean,
+  onClick: ?() => void,
   text: string,
 };
 
 const BpkFloatingNotification = (props: Props) => {
-  const { className, ctaText, darkMode, icon, text, ...rest } = props;
+  const { className, ctaText, darkMode, icon, onClick, text, ...rest } = props;
   const classNames = [getClassName('bpk-floating-notification', className)];
 
-  darkMode && classNames.push(getClassName('bpk-floating-notification--dark'));
-
-  const handleClick = () => {
-    return;
-  };
+  if (darkMode) {
+    classNames.push(getClassName('bpk-floating-notification--dark'));
+  }
 
   return (
     <div className={classNames.join(' ')} {...rest}>
@@ -54,7 +52,7 @@ const BpkFloatingNotification = (props: Props) => {
           className={`${getClassName('bpk-floating-notification__icon')} ${
             darkMode && getClassName('bpk-floating-notification__icon--dark')
           }`}
-        ></BpkIconHeart>
+        />
       )}
       <BpkText
         tagName="p"
@@ -66,8 +64,10 @@ const BpkFloatingNotification = (props: Props) => {
       {ctaText && (
         <BpkButton
           link
-          onClick={handleClick}
-          className={getClassName('bpk-floating-notification__button')}
+          onClick={onClick}
+          className={`${getClassName('bpk-floating-notification__button')} ${
+            darkMode && getClassName('bpk-floating-notification__button--dark')
+          }`}
         >
           {ctaText}
         </BpkButton>
@@ -82,6 +82,7 @@ BpkFloatingNotification.propTypes = {
 
 BpkFloatingNotification.defaultProps = {
   className: null,
+  ctaText: null,
   darkMode: false,
   icon: false,
 };

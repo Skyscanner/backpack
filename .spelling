@@ -267,6 +267,7 @@ BORDER_RADIUS_STYLES
 BORDER_RADIUS_STYLES.none
 BORDER_RADIUS_STYLES.sm
 borderlessBackground
+buttonText
 buttonType
 CALENDAR_SELECTION_TYPE.single
 cellType
@@ -287,9 +288,10 @@ containerClassName
 cornerStyle
 CORNER_STYLES.sm
 CORNER_STYLES.lg
-buttonText
+ctaText
 DataSource
 dateProps
+darkMode
 decreaseButtonLabel
 decrementValue
 dialing
