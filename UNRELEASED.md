@@ -5,5 +5,8 @@
 
 **Fixed:**
 
+- bpk-component-graphic-promotion
+  - Ensured text is centered correctly despite margins
+
 - `@skyscanner/backpack-web`
   - Added missing dependencies `@skyscanner/bpk-svgs`, `@react-google-maps/api`, `@popperjs/core` 
