@@ -154,7 +154,7 @@
         align-items: center;
 
         > * {
-          @include bpk-margin-trailing(bpk-spacing-lg() / 2);
+          @include bpk-margin-trailing(bpk-spacing-lg());
         }
       }
 
