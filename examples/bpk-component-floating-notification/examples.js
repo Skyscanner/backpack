@@ -21,20 +21,11 @@ import React from 'react';
 import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
 
 const DefaultExample = () => (
-  <BpkFloatingNotification
-    ctaText="View"
-    icon
-    text="Saved"
-  ></BpkFloatingNotification>
+  <BpkFloatingNotification ctaText="View" icon text="Saved" />
 );
 
 const DarkModeExample = () => (
-  <BpkFloatingNotification
-    ctaText="View"
-    darkMode
-    icon
-    text="Saved"
-  ></BpkFloatingNotification>
+  <BpkFloatingNotification ctaText="View" darkMode icon text="Saved" />
 );
 
 const LongTextExample = () => (
@@ -42,23 +33,30 @@ const LongTextExample = () => (
     ctaText="View"
     icon
     text="Killer Combo saved to New York and Miami 🎉"
-  ></BpkFloatingNotification>
+  />
 );
 
-const NoCTAExample = () => (
-  <BpkFloatingNotification icon text="Saved" ></BpkFloatingNotification>
-);
+const NoCTAExample = () => <BpkFloatingNotification icon text="Saved" />;
 
 const NoCTALongTextExample = () => (
-  <BpkFloatingNotification icon text="Killer Combo saved to New York and Miami 🎉" ></BpkFloatingNotification>
+  <BpkFloatingNotification
+    icon
+    text="Killer Combo saved to New York and Miami 🎉"
+  />
 );
 
 const NoIconExample = () => (
-  <BpkFloatingNotification ctaText="View" text="Saved"></BpkFloatingNotification>
+  <BpkFloatingNotification ctaText="View" text="Saved" />
 );
 
-const OnlyTextExample = () => (
-  <BpkFloatingNotification text="Saved"></BpkFloatingNotification>
-);
+const OnlyTextExample = () => <BpkFloatingNotification text="Saved" />;
 
-export { DefaultExample, DarkModeExample, LongTextExample, NoCTAExample, NoCTALongTextExample, NoIconExample, OnlyTextExample };
+export {
+  DefaultExample,
+  DarkModeExample,
+  LongTextExample,
+  NoCTAExample,
+  NoCTALongTextExample,
+  NoIconExample,
+  OnlyTextExample,
+};
