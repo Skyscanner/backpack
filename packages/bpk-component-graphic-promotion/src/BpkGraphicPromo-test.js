@@ -104,7 +104,7 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should redirect us to link when card is clicked on mobile', () => {
+  it('should redirect us to link when card is clicked', () => {
     render(<BpkGraphicPromo {...props} />);
 
     const graphicPromo = document.getElementsByClassName(
