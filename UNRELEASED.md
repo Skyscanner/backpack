@@ -1,3 +1,6 @@
+**Added:**
+ - `bpk-component-floating-notification` - `1.0.0`
+
 **Breaking:**
  - bpk-component-popover:
  - bpk-component-tooltip:
