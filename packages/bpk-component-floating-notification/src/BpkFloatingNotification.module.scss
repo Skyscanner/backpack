@@ -55,7 +55,6 @@
   background: $bpk-color-sky-blue-shade-03;
   color: $bpk-color-white;
   box-shadow: $bpk-box-shadow-xl, $bpk-box-shadow-lg;
-  opacity: 0;
   animation: float-in-out 4600ms ease-in-out;
 
   @include bpk-breakpoint-mobile {

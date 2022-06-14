@@ -18,25 +18,82 @@
 /* @flow strict */
 
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { cssModules } from 'bpk-react-utils';
 
 import BpkFloatingNotification from './BpkFloatingNotification';
+import STYLES from './BpkFloatingNotification.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+const props = {
+  text: 'Saved',
+};
 
 describe('BpkFloatingNotification', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkFloatingNotification />);
+    const { asFragment } = render(<BpkFloatingNotification {...props} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
     const { asFragment } = render(
-      <BpkFloatingNotification className="custom-classname" />,
+      <BpkFloatingNotification className="custom-classname" {...props} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkFloatingNotification testid="123" />);
+    const { asFragment } = render(
+      <BpkFloatingNotification testid="123" {...props} />,
+    );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly in dark mode (prop)', () => {
+    const { asFragment } = render(
+      <BpkFloatingNotification darkMode {...props} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with icon prop', () => {
+    const { asFragment } = render(<BpkFloatingNotification icon {...props} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with icon prop in dark mode', () => {
+    const { asFragment } = render(
+      <BpkFloatingNotification darkMode icon {...props} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with CTA text', () => {
+    const { asFragment } = render(
+      <BpkFloatingNotification ctaText="View" {...props} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with CTA text in dark mode', () => {
+    const { asFragment } = render(
+      <BpkFloatingNotification ctaText="View" darkMode {...props} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should do function when button is pressed', () => {
+    const onClick = jest.fn();
+    render(
+      <BpkFloatingNotification ctaText="View" onClick={onClick} {...props} />,
+    );
+
+    const cta = document.getElementsByClassName(
+      getClassName('bpk-floating-notification__button'),
+    )[0];
+    fireEvent.click(cta);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

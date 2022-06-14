@@ -50,7 +50,9 @@ const BpkFloatingNotification = (props: Props) => {
       {icon && (
         <BpkIconHeart
           className={`${getClassName('bpk-floating-notification__icon')} ${
-            darkMode && getClassName('bpk-floating-notification__icon--dark')
+            darkMode
+              ? getClassName('bpk-floating-notification__icon--dark')
+              : ''
           }`}
         />
       )}
@@ -66,7 +68,9 @@ const BpkFloatingNotification = (props: Props) => {
           link
           onClick={onClick}
           className={`${getClassName('bpk-floating-notification__button')} ${
-            darkMode && getClassName('bpk-floating-notification__button--dark')
+            darkMode
+              ? getClassName('bpk-floating-notification__button--dark')
+              : ''
           }`}
         >
           {ctaText}
