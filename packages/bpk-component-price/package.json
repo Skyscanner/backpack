@@ -1,9 +1,8 @@
 {
   "name": "bpk-component-price",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Backpack price component.",
   "license": "Apache-2.0",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
