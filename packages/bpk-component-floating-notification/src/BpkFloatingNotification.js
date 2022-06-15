@@ -18,38 +18,69 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import { cssModules } from 'bpk-react-utils';
-import BpkButton from 'bpk-component-button';
-import BpkIconHeart from 'bpk-component-icon/sm/heart';
+import React, { useEffect, useState, ReactElement } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import BpkButton from 'bpk-component-button';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import { cssModules } from 'bpk-react-utils';
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const THEME = {
+  light: 'light',
+  dark: 'dark',
+};
+
 export type Props = {
+  animateOnEnter: ?boolean,
+  animateOnExit: ?boolean,
   className: ?string,
   ctaText: ?string,
   darkMode: ?boolean,
-  icon: ?boolean,
+  hideAfter: ?number,
+  icon: ?() => ReactElement,
   onClick: ?() => void,
   text: string,
-  animateOnEnter: ?boolean,
-  animateOnExit: ?boolean,
-  hideAfter: ?number,
+  theme: ?THEME,
 };
 
 const BpkFloatingNotification = (props: Props) => {
   const [showMessage, setShowMessage] = useState(true);
-  const { animateOnEnter, animateOnExit, className, ctaText, darkMode, hideAfter, icon, onClick, text, ...rest } = props;
-  const classNames = [getClassName('bpk-floating-notification', className)];
 
-  if (darkMode) {
-    classNames.push(getClassName('bpk-floating-notification--dark'));
-  }
+  const {
+    animateOnEnter,
+    animateOnExit,
+    className,
+    ctaText,
+    darkMode,
+    hideAfter,
+    icon: Icon,
+    onClick,
+    text,
+    theme,
+    ...rest
+  } = props;
+
+  console.log("THEME: " + THEME)
+
+  const classNames = getClassName(
+    'bpk-floating-notification',
+    theme == 'dark' && 'bpk-floating-notification--dark',
+    className,
+  );
+
+  const iconClassNames = getClassName(
+    'bpk-floating-notification__icon',
+    theme == 'dark' && 'bpk-floating-notification__icon--dark',
+  );
+
+  const buttonClassNames = getClassName(
+    'bpk-floating-notification__button',
+    theme == 'dark' && 'bpk-floating-notification__button--dark',
+  );
 
   useEffect(() => {
     let timer;
@@ -69,20 +100,16 @@ const BpkFloatingNotification = (props: Props) => {
         appear: getClassName('bpk-floating-notification--appear'),
         appearActive: getClassName('bpk-floating-notification--appear-active'),
       }}
-      timeout={animations.durationBase}
+      timeout={400}
       appear={animateOnEnter}
       exit={animateOnExit}
       unmountOnExit
     >
-      <div className={getClassName('bpk-floating-notification')} {...rest}>
-        {icon && (
-          <BpkIconHeart
-            className={`${getClassName('bpk-floating-notification__icon')} ${
-              darkMode
-                ? getClassName('bpk-floating-notification__icon--dark')
-                : ''
-            }`}
-          />
+      <div className={classNames} {...rest}>
+        {Icon && (
+          <div className={iconClassNames}>
+            <Icon />
+          </div>
         )}
         <BpkText
           tagName="p"
@@ -92,15 +119,7 @@ const BpkFloatingNotification = (props: Props) => {
           {text}
         </BpkText>
         {ctaText && (
-          <BpkButton
-            link
-            onClick={onClick}
-            className={`${getClassName('bpk-floating-notification__button')} ${
-              darkMode
-                ? getClassName('bpk-floating-notification__button--dark')
-                : ''
-            }`}
-          >
+          <BpkButton link onClick={onClick} className={buttonClassNames}>
             {ctaText}
           </BpkButton>
         )}
@@ -111,15 +130,20 @@ const BpkFloatingNotification = (props: Props) => {
 
 BpkFloatingNotification.propTypes = {
   className: PropTypes.string,
+  ctaText: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  theme: PropTypes.oneOf(Object.values(THEME)),
 };
 
 BpkFloatingNotification.defaultProps = {
+  animateOnEnter: true,
+  animateOnExit: true,
   className: null,
   ctaText: null,
   darkMode: false,
-  icon: false,
-  animateOnEnter: false,
-  animateOnExit: false,
+  hideAfter: 4000,
+  icon: null,
+  theme: THEME.light,
 };
 
 export default BpkFloatingNotification;
