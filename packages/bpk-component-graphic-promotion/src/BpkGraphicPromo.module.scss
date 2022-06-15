@@ -170,6 +170,11 @@
 
       @include bpk-margin-leading(bpk-spacing-xxxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xxl(), false);
+
+      /* adjusting for 1.5rem different between margins */
+      &--center > * {
+        @include bpk-margin-trailing(bpk-spacing-lg());
+      }
     }
 
     @include breakpoint-landscape-tablet {
@@ -177,6 +182,11 @@
 
       @include bpk-margin-leading(bpk-spacing-xxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xl(), false);
+
+      /* adjusting for 0.5rem different between margins */
+      &--center > * {
+        @include bpk-margin-trailing(bpk-spacing-md());
+      }
     }
 
     @include breakpoint-portrait-large {
