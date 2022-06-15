@@ -152,6 +152,10 @@
 
       &--center {
         align-items: center;
+
+        > * {
+          @include bpk-margin-trailing(bpk-spacing-lg());
+        }
       }
 
       &--end {
