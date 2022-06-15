@@ -24,7 +24,7 @@
   bottom: bpk-spacing-xl();
   left: 0;
   display: flex;
-  max-width: 400px; /* stylelint-disable-line unit-disallowed-list */
+  max-width: $bpk-one-pixel-rem * 400;
   margin: auto;
   padding: bpk-spacing-lg();
   border-radius: $bpk-border-radius-md;

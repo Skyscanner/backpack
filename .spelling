@@ -253,6 +253,7 @@ accessibilityLabel
 accessoryView
 alignToButton
 animateOnEnter
+animateOnExit
 animateOnLeave
 animationDuration
 appearActiveClassName

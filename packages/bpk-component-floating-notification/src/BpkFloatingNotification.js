@@ -64,8 +64,6 @@ const BpkFloatingNotification = (props: Props) => {
     ...rest
   } = props;
 
-  console.log("THEME: " + THEME)
-
   const classNames = getClassName(
     'bpk-floating-notification',
     theme == 'dark' && 'bpk-floating-notification--dark',
