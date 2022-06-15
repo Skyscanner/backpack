@@ -18,9 +18,12 @@
 /* @flow strict */
 
 import React from 'react';
-import { DateUtils } from 'bpk-component-calendar';
+// TODO: Once we stop publishing individual packages and single packages we can remove this lint disable
+// eslint-disable-next-line import/order
 import { render } from '@testing-library/react';
+
 import '@testing-library/jest-dom';
+import { DateUtils } from 'bpk-component-calendar';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
