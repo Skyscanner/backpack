@@ -39,28 +39,30 @@
 
   &--leave {
     transform: translateY(0);
-    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+    transition: opacity $bpk-duration-base ease-in-out,
+      transform $bpk-duration-base ease-in-out;
     opacity: 1;
-  }
 
-  &--leave-active {
-    transform: translateY(bpk-spacing-xl());
-    opacity: 0;
-  }
+    &-active {
+      transform: translateY(bpk-spacing-xl());
+      opacity: 0;
+    }
 
-  &--leave-done {
-    opacity: 0;
+    &-done {
+      opacity: 0;
+    }
   }
 
   &--appear {
     transform: translateY(bpk-spacing-xl());
-    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+    transition: opacity $bpk-duration-base ease-in-out,
+      transform $bpk-duration-base ease-in-out;
     opacity: 0;
-  }
 
-  &--appear-active {
-    transform: translateY(0);
-    opacity: 1;
+    &-active {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   &__button {

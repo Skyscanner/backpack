@@ -24,6 +24,7 @@ import BpkButton from 'bpk-component-button';
 import BpkIconHeart from 'bpk-component-icon/sm/heart';
 import { CSSTransition } from 'react-transition-group';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import STYLES from './BpkFloatingNotification.module.scss';
 
@@ -43,7 +44,7 @@ export type Props = {
 
 const BpkFloatingNotification = (props: Props) => {
   const [showMessage, setShowMessage] = useState(true);
-  const { className, ctaText, darkMode, icon, onClick, text, ...rest } = props;
+  const { animateOnEnter, animateOnExit, className, ctaText, darkMode, hideAfter, icon, onClick, text, ...rest } = props;
   const classNames = [getClassName('bpk-floating-notification', className)];
 
   if (darkMode) {
@@ -51,9 +52,11 @@ const BpkFloatingNotification = (props: Props) => {
   }
 
   useEffect(() => {
-    if (props.hideAfter) {
-      setTimeout(() => setShowMessage(false), props.hideAfter);
+    let timer;
+    if (hideAfter) {
+      timer = setTimeout(() => setShowMessage(false), hideAfter);
     }
+    return () => timer && clearTimeout(timer);
   });
 
   return (
@@ -66,11 +69,12 @@ const BpkFloatingNotification = (props: Props) => {
         appear: getClassName('bpk-floating-notification--appear'),
         appearActive: getClassName('bpk-floating-notification--appear-active'),
       }}
-      timeout={500}
-      appear={props.animateOnEnter}
-      exit={props.animateOnExit}
+      timeout={animations.durationBase}
+      appear={animateOnEnter}
+      exit={animateOnExit}
+      unmountOnExit
     >
-      <div className={getClassName('bpk-floating-notification')}>
+      <div className={getClassName('bpk-floating-notification')} {...rest}>
         {icon && (
           <BpkIconHeart
             className={`${getClassName('bpk-floating-notification__icon')} ${
