@@ -18,7 +18,7 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
+import '@testing-library/jest-dom';
 
 import BpkCalendarGridTransition, {
   addCalendarGridTransition,
@@ -28,6 +28,10 @@ const MyComponent = (props) => <div>{JSON.stringify(props)}</div>;
 const TransitioningMyComponent = addCalendarGridTransition(MyComponent);
 
 describe('BpkCalendar', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should render correctly', () => {
     const { asFragment } = render(
       <TransitioningMyComponent
@@ -40,60 +44,72 @@ describe('BpkCalendar', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should transition to the next month', () => {
-    const calendar = shallow(
+  it('should transition to the next month', async () => {
+    const onMonthTransitionEndSpy = jest.spyOn(
+      BpkCalendarGridTransition.prototype,
+      'onMonthTransitionEnd',
+    );
+
+    const { rerender } = render(
       <BpkCalendarGridTransition
         TransitionComponent={MyComponent}
         month={new Date(Date.UTC(2010, 1))}
       />,
     );
 
-    expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
-    expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe('-22.75rem');
+    rerender(
+      <BpkCalendarGridTransition
+        TransitionComponent={MyComponent}
+        month={new Date(Date.UTC(2010, 2))}
+      />,
+    );
 
-    // Next month
-    calendar.setProps({ month: new Date(Date.UTC(2010, 2)) });
-    expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 2)));
-    expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe('-22.75rem');
+    expect(onMonthTransitionEndSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should transition to the previous month', () => {
-    const calendar = shallow(
+    const onMonthTransitionEndSpy = jest.spyOn(
+      BpkCalendarGridTransition.prototype,
+      'onMonthTransitionEnd',
+    );
+
+    const { rerender } = render(
       <BpkCalendarGridTransition
         TransitionComponent={MyComponent}
         month={new Date(Date.UTC(2010, 1))}
       />,
     );
 
-    expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
-    expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe('-22.75rem');
+    rerender(
+      <BpkCalendarGridTransition
+        TransitionComponent={MyComponent}
+        month={new Date(Date.UTC(2010, 0))}
+      />,
+    );
 
-    // Previous month
-    calendar.setProps({ month: new Date(Date.UTC(2010, 0)) });
-    expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 0)));
-    expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe('-22.75rem');
+    expect(onMonthTransitionEndSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should jump (without transition) to any other month', () => {
-    const calendar = shallow(
+    const onMonthTransitionEndSpy = jest.spyOn(
+      BpkCalendarGridTransition.prototype,
+      'onMonthTransitionEnd',
+    );
+
+    const { rerender } = render(
       <BpkCalendarGridTransition
         TransitionComponent={MyComponent}
         month={new Date(Date.UTC(2010, 1))}
       />,
     );
 
-    expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
-    expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe('-22.75rem');
+    rerender(
+      <BpkCalendarGridTransition
+        TransitionComponent={MyComponent}
+        month={new Date(Date.UTC(2010, 3))}
+      />,
+    );
 
-    // 2 months ahead
-    calendar.setProps({ month: new Date(Date.UTC(2010, 3)) });
-    expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 3)));
-    expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe('-22.75rem');
+    expect(onMonthTransitionEndSpy).not.toHaveBeenCalled();
   });
 });

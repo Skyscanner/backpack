@@ -17,9 +17,7 @@
  */
 
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render, screen, fireEvent } from '@testing-library/react';
 import * as BREAKPOINTS from '@skyscanner/bpk-foundations-web/tokens/breakpoints.es6';
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -89,31 +87,34 @@ describe('BpkImage', () => {
 
   it('should call onLoadCallback', () => {
     const onLoad = jest.fn();
-    const wrapper = mount(
+    const { asFragment } = render(
       <BpkImage
         onLoad={onLoad}
         altText="image description"
         aspectRatio={816 / 544}
         src="./path/to/image.jpg"
       />,
-    )
-      .find('img')
-      .simulate('load');
-    expect(onLoad.mock.calls.length).toBe(1);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    );
+
+    const img = screen.getByAltText('image description');
+    fireEvent.load(img);
+    expect(onLoad).toHaveBeenCalledTimes(1);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should load even without onLoadCallback', () => {
-    const wrapper = mount(
+    const { asFragment } = render(
       <BpkImage
         altText="image description"
         aspectRatio={816 / 544}
         src="./path/to/image.jpg"
       />,
-    )
-      .find('img')
-      .simulate('load');
-    expect(toJson(wrapper)).toMatchSnapshot();
+    );
+
+    const img = screen.getByAltText('image description');
+    fireEvent.load(img);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have !inView behavior', () => {

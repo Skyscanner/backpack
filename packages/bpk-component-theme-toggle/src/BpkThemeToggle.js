@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import Konami from 'konami';
 import BpkLabel from 'bpk-component-label';
 import BpkSelect from 'bpk-component-select';
 import { cssModules } from 'bpk-react-utils';
@@ -47,17 +46,10 @@ class BpkThemeToggle extends React.Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyDown);
-    this.easterEgg = new Konami(() => {
-      this.konamiInterval = setInterval(this.cycleTheme, 200);
-    });
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeyDown);
-
-    if (this.konamiInterval) {
-      clearInterval(this.konamiInterval);
-    }
   }
 
   handleKeyDown = (e) => {

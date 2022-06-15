@@ -17,8 +17,8 @@
  */
 
 import React from 'react';
-import { mount } from 'enzyme';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
 import BpkNudger from './BpkNudger';
@@ -173,9 +173,9 @@ describe('BpkNudger', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should return a number up/down on change', () => {
+  it('should return a number up/down on change', async () => {
     const onChangeSpy = jest.fn();
-    const nudger = mount(
+    render(
       <BpkNudger
         id="nudger"
         min={1}
@@ -187,12 +187,12 @@ describe('BpkNudger', () => {
       />,
     );
 
-    const minusButton = nudger.find('button').first();
-    minusButton.simulate('click');
+    const minusButton = screen.getByRole('button', { name: 'Decrease' });
+    await userEvent.click(minusButton);
     expect(onChangeSpy).toHaveBeenCalledWith(2);
 
-    const plusButton = nudger.find('button').last();
-    plusButton.simulate('click');
+    const plusButton = screen.getByRole('button', { name: 'Increase' });
+    await userEvent.click(plusButton);
     expect(onChangeSpy).toHaveBeenCalledWith(4);
   });
 });

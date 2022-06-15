@@ -2417,13 +2417,13 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <div
                 aria-hidden="false"
-                class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                class="bpk-calendar-grid__date bpk-calendar-grid__date--single"
               >
                 <button
                   aria-hidden="false"
                   aria-label="Monday, 15th February 2010"
                   aria-pressed="true"
-                  class="bpk-calendar-date bpk-calendar-date--focused bpk-calendar-date--selected"
+                  class="bpk-calendar-date bpk-calendar-date--focused bpk-calendar-date--selected bpk-calendar-date--single"
                   tabindex="0"
                   type="button"
                 >

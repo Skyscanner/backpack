@@ -17,9 +17,8 @@
  */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import withOpenEvents from './withOpenEvents';
 import BpkInput from './BpkInput';
@@ -66,9 +65,9 @@ describe('withOpenEvents', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should open on click', () => {
+  it('should open on click', async () => {
     const onOpen = jest.fn();
-    const input = mount(
+    render(
       <Input
         id="my-input"
         name="my-input"
@@ -80,13 +79,15 @@ describe('withOpenEvents', () => {
 
     expect(onOpen).not.toHaveBeenCalled();
 
-    input.simulate('click');
+    const input = screen.getByRole('textbox');
+    await userEvent.click(input);
+
     expect(onOpen).toHaveBeenCalled();
   });
 
   it('should open on focus', () => {
     const onOpen = jest.fn();
-    const input = mount(
+    render(
       <Input
         id="my-input"
         name="my-input"
@@ -98,13 +99,15 @@ describe('withOpenEvents', () => {
 
     expect(onOpen).not.toHaveBeenCalled();
 
-    input.simulate('focus');
+    const input = screen.getByRole('textbox');
+
+    fireEvent.focus(input);
     expect(onOpen).toHaveBeenCalled();
   });
 
   it('should open on touch', () => {
     const onOpen = jest.fn();
-    const input = mount(
+    render(
       <Input
         id="my-input"
         name="my-input"
@@ -116,16 +119,17 @@ describe('withOpenEvents', () => {
     );
 
     expect(onOpen).not.toHaveBeenCalled();
-    // We need to focus the DOM node first, thanks to Really Annoying Hack™
-    ReactDOM.findDOMNode(input.instance()).focus(); // eslint-disable-line react/no-find-dom-node
 
-    input.simulate('touchEnd');
+    const input = screen.getByRole('textbox');
+
+    fireEvent.focus(input);
+    fireEvent.touchEnd(input);
     expect(onOpen).toHaveBeenCalled();
   });
 
   it('should open on "Enter" key', () => {
     const onOpen = jest.fn();
-    const input = mount(
+    render(
       <Input
         id="my-input"
         name="my-input"
@@ -137,14 +141,15 @@ describe('withOpenEvents', () => {
 
     expect(onOpen).not.toHaveBeenCalled();
 
-    input.simulate('keyDown', { keyCode: 13 });
+    const input = screen.getByRole('textbox');
+    fireEvent.keyDown(input, { keyCode: 13 });
 
     expect(onOpen).toHaveBeenCalled();
   });
 
   it('should open on "Space" key', () => {
     const onOpen = jest.fn();
-    const input = mount(
+    render(
       <Input
         id="my-input"
         name="my-input"
@@ -156,7 +161,8 @@ describe('withOpenEvents', () => {
 
     expect(onOpen).not.toHaveBeenCalled();
 
-    input.simulate('keyUp', { keyCode: 32 });
+    const input = screen.getByRole('textbox');
+    fireEvent.keyUp(input, { keyCode: 32 });
 
     expect(onOpen).toHaveBeenCalled();
   });
