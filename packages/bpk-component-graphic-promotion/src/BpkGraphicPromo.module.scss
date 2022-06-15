@@ -152,10 +152,6 @@
 
       &--center {
         align-items: center;
-
-        > * {
-          @include bpk-margin-trailing(bpk-spacing-lg());
-        }
       }
 
       &--end {
@@ -176,6 +172,10 @@
 
       @include bpk-margin-leading(bpk-spacing-xxxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xxl(), false);
+
+      &--center > * {
+        @include bpk-margin-trailing(bpk-spacing-lg());
+      }
     }
 
     @include breakpoint-landscape-tablet {
@@ -183,6 +183,10 @@
 
       @include bpk-margin-leading(bpk-spacing-xxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xl(), false);
+
+      &--center > * {
+        @include bpk-margin-trailing(bpk-spacing-md());
+      }
     }
 
     @include breakpoint-portrait-large {
