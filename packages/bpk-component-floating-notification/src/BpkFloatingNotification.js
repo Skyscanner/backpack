@@ -18,10 +18,11 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import BpkIconHeart from 'bpk-component-icon/sm/heart';
+import { CSSTransition } from 'react-transition-group';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
 import STYLES from './BpkFloatingNotification.module.scss';
@@ -35,9 +36,13 @@ export type Props = {
   icon: ?boolean,
   onClick: ?() => void,
   text: string,
+  animateOnEnter: ?boolean,
+  animateOnExit: ?boolean,
+  hideAfter: ?number,
 };
 
 const BpkFloatingNotification = (props: Props) => {
+  const [showMessage, setShowMessage] = useState(true);
   const { className, ctaText, darkMode, icon, onClick, text, ...rest } = props;
   const classNames = [getClassName('bpk-floating-notification', className)];
 
@@ -45,38 +50,58 @@ const BpkFloatingNotification = (props: Props) => {
     classNames.push(getClassName('bpk-floating-notification--dark'));
   }
 
+  useEffect(() => {
+    if (props.hideAfter) {
+      setTimeout(() => setShowMessage(false), props.hideAfter);
+    }
+  });
+
   return (
-    <div className={classNames.join(' ')} {...rest}>
-      {icon && (
-        <BpkIconHeart
-          className={`${getClassName('bpk-floating-notification__icon')} ${
-            darkMode
-              ? getClassName('bpk-floating-notification__icon--dark')
-              : ''
-          }`}
-        />
-      )}
-      <BpkText
-        tagName="p"
-        textStyle={TEXT_STYLES.bodyDefault}
-        className={getClassName('bpk-floating-notification__text')}
-      >
-        {text}
-      </BpkText>
-      {ctaText && (
-        <BpkButton
-          link
-          onClick={onClick}
-          className={`${getClassName('bpk-floating-notification__button')} ${
-            darkMode
-              ? getClassName('bpk-floating-notification__button--dark')
-              : ''
-          }`}
+    <CSSTransition
+      in={showMessage}
+      classNames={{
+        exit: getClassName('bpk-floating-notification--leave'),
+        exitActive: getClassName('bpk-floating-notification--leave-active'),
+        exitDone: getClassName('bpk-floating-notification--leave-done'),
+        appear: getClassName('bpk-floating-notification--appear'),
+        appearActive: getClassName('bpk-floating-notification--appear-active'),
+      }}
+      timeout={500}
+      appear={props.animateOnEnter}
+      exit={props.animateOnExit}
+    >
+      <div className={getClassName('bpk-floating-notification')}>
+        {icon && (
+          <BpkIconHeart
+            className={`${getClassName('bpk-floating-notification__icon')} ${
+              darkMode
+                ? getClassName('bpk-floating-notification__icon--dark')
+                : ''
+            }`}
+          />
+        )}
+        <BpkText
+          tagName="p"
+          textStyle={TEXT_STYLES.bodyDefault}
+          className={getClassName('bpk-floating-notification__text')}
         >
-          {ctaText}
-        </BpkButton>
-      )}
-    </div>
+          {text}
+        </BpkText>
+        {ctaText && (
+          <BpkButton
+            link
+            onClick={onClick}
+            className={`${getClassName('bpk-floating-notification__button')} ${
+              darkMode
+                ? getClassName('bpk-floating-notification__button--dark')
+                : ''
+            }`}
+          >
+            {ctaText}
+          </BpkButton>
+        )}
+      </div>
+    </CSSTransition>
   );
 };
 
@@ -89,6 +114,8 @@ BpkFloatingNotification.defaultProps = {
   ctaText: null,
   darkMode: false,
   icon: false,
+  animateOnEnter: false,
+  animateOnExit: false,
 };
 
 export default BpkFloatingNotification;
