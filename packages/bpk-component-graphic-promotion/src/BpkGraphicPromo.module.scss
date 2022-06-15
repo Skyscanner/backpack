@@ -30,8 +30,6 @@
   box-shadow: none;
 
   @include breakpoint-landscape {
-    pointer-events: none;
-
     &__sponsor-label {
       margin-bottom: bpk-spacing-sm();
 
@@ -247,8 +245,6 @@
   }
 
   &__cta {
-    pointer-events: auto;
-
     @include breakpoint-landscape {
       margin-top: bpk-spacing-xl();
     }
