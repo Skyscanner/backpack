@@ -38,7 +38,6 @@ export type Props = {
   animateOnExit: ?boolean,
   className: ?string,
   ctaText: ?string,
-  darkMode: ?boolean,
   hideAfter: ?number,
   icon: ?() => ReactElement,
   onClick: ?() => void,

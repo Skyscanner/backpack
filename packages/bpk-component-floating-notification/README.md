@@ -18,6 +18,7 @@ export default () => (
     ctaText="View"
     type={TYPE.dark}
     icon={BpkIconHeart}
+    onClick={() => {}}
     text="Killer Combo saved to New York and Miami 🎉"
   />
 );
