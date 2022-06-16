@@ -53,10 +53,13 @@ const CtaIconLongTextDarkModeExample = () => (
 
 const VisualTestExample = () => (
   <BpkFloatingNotification
+    animateOnEnter
+    animateOnExit
     ctaText="View"
-    type={TYPE.dark}
+    hideAfter={5000}
     icon={BpkIconInformationCircle}
     text="Killer Combo saved to New York and Miami 🎉"
+    type={TYPE.dark}
   />
 );
 
