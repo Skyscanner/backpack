@@ -32,7 +32,7 @@
     "upgrade-foundations": "node scripts/npm/check-bpk-dependencies.js --fix --upgrade-foundations",
     "format:packagejson": "format-package -w",
     "generate-changelogs": "node scripts/publish-process/generate-changelogs.js",
-    "jest": "TZ=Etc/UTC jest --coverage",
+    "jest": "TZ=Etc/UTC jest packages/bpk-component-accordion",
     "jest:update": "TZ=Etc/UTC jest --updateSnapshot",
     "jest:watch": "TZ=Etc/UTC jest --watch",
     "jest:accessibility": "jest --testRegex accessibility-test",

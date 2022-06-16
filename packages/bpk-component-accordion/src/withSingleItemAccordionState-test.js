@@ -19,8 +19,8 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkAccordion from './BpkAccordion';
 import withSingleItemAccordionState from './withSingleItemAccordionState';
@@ -73,7 +73,7 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
   });
 
   it('should update "expanded" value with key of clicked child', () => {
-    const accordionContainer = shallow(
+    const { container, debug } = render(
       <EnhancedComponent>
         <div>Accordion Item 1</div>
         <div initiallyExpanded>Accordion Item 2</div>
@@ -81,6 +81,13 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
       </EnhancedComponent>,
     );
 
+    debug();
+
+    // await userEvent.click(screen.querySelector('.bpk-accordion'));
+
+    expect(container.querySelector('.bpk-accordion')).toHaveAttribute(
+      'expanded',
+    );
     expect(accordionContainer.state('expanded')).toEqual('.1');
 
     accordionContainer
