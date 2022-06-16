@@ -23,7 +23,6 @@ import { CSSTransition } from 'react-transition-group';
 import BpkButton from 'bpk-component-button';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
-import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import STYLES from './BpkFloatingNotification.module.scss';
 
@@ -64,22 +63,22 @@ const BpkFloatingNotification = (props: Props) => {
     ...rest
   } = props;
 
-  console.log("THEME: " + THEME)
+  console.log(`THEME: ${THEME}`);
 
   const classNames = getClassName(
     'bpk-floating-notification',
-    theme == 'dark' && 'bpk-floating-notification--dark',
+    theme === 'dark' && 'bpk-floating-notification--dark',
     className,
   );
 
   const iconClassNames = getClassName(
     'bpk-floating-notification__icon',
-    theme == 'dark' && 'bpk-floating-notification__icon--dark',
+    theme === 'dark' && 'bpk-floating-notification__icon--dark',
   );
 
   const buttonClassNames = getClassName(
     'bpk-floating-notification__button',
-    theme == 'dark' && 'bpk-floating-notification__button--dark',
+    theme === 'dark' && 'bpk-floating-notification__button--dark',
   );
 
   useEffect(() => {
