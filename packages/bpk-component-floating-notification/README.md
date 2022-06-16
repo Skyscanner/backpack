@@ -17,7 +17,7 @@ export default () => (
   <BpkFloatingNotification
     ctaText="View"
     type={TYPE.dark}
-    icon={BpkIconInformationCircle}
+    icon={BpkIconHeart}
     text="Killer Combo saved to New York and Miami 🎉"
   />
 );
