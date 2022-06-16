@@ -19,10 +19,19 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
 import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './BpkPriceMarker';
+
+jest.mock('@react-google-maps/api', () => ({
+  OverlayView: (props) => (
+    <div>
+      <div className="mock-overlay-view" />
+      {/* eslint-disable-next-line react/prop-types */}
+      {props.children}
+    </div>
+  ),
+}));
 
 describe('BpkMapMarker', () => {
   const position = {
@@ -31,74 +40,76 @@ describe('BpkMapMarker', () => {
   };
 
   it('should render properly', () => {
-    const tree = shallow(<BpkPriceMarker label="£120" position={position} />);
-    expect(toJson(tree)).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPriceMarker label="£120" position={position} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "status" attribute as "focused"', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkPriceMarker
         label="£120"
         position={position}
         status={PRICE_MARKER_STATUSES.focused}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "status" attribute as "viewed"', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkPriceMarker
         label="£120"
         position={position}
         status={PRICE_MARKER_STATUSES.viewed}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "disabled" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkPriceMarker label="Sold out" position={position} disabled />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkPriceMarker
         label="£120"
         position={position}
         className="custom-class-1 custom-class-2"
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "arrowClassName" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkPriceMarker
         label="£120"
         position={position}
         arrowClassName="custom-class-1 custom-class-2"
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "buttonProps" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkPriceMarker
         label="£120"
         position={position}
         buttonProps={{ testId: 'arbitrary value' }}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "onClick" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkPriceMarker
         label="£120"
         position={position}
@@ -107,6 +118,6 @@ describe('BpkMapMarker', () => {
         }}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

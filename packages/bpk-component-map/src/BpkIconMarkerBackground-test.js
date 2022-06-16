@@ -19,29 +19,28 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
 import BpkIconMarkerBackground from './BpkIconMarkerBackground';
 
 describe('BpkIconMarkerBackground', () => {
   it('should render properly', () => {
-    const tree = shallow(<BpkIconMarkerBackground />);
-    expect(toJson(tree)).toMatchSnapshot();
+    const { asFragment } = render(<BpkIconMarkerBackground />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render properly with "disabled"', () => {
-    const tree = shallow(<BpkIconMarkerBackground disabled />);
-    expect(toJson(tree)).toMatchSnapshot();
+    const { asFragment } = render(<BpkIconMarkerBackground disabled />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render properly with "interactive"', () => {
-    const tree = shallow(<BpkIconMarkerBackground interactive />);
-    expect(toJson(tree)).toMatchSnapshot();
+    const { asFragment } = render(<BpkIconMarkerBackground interactive />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render properly with "selected"', () => {
-    const tree = shallow(<BpkIconMarkerBackground selected />);
-    expect(toJson(tree)).toMatchSnapshot();
+    const { asFragment } = render(<BpkIconMarkerBackground selected />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
