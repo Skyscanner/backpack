@@ -18,34 +18,36 @@
 
 import React from 'react';
 
-import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
+import BpkFloatingNotification, {
+  THEME,
+} from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
 
+console.log("THEME: " + THEME)
+
 const DefaultExample = () => (
   <BpkFloatingNotification
-    ctaText="View"
-    icon={BpkIconInformationCircle}
-    text="Saved"
-  />
-);
-
-const DarkModeExample = () => (
-  <BpkFloatingNotification
-    ctaText="View"
-    darkMode
-    icon={BpkIconHeart}
     text="Saved"
   />
 );
 
 const LongTextExample = () => (
   <BpkFloatingNotification
-    ctaText="View"
-    icon={BpkIconHeart}
     text="Killer Combo saved to New York and Miami 🎉"
   />
 );
+
+const DarkModeExample = () => (
+  <BpkFloatingNotification
+    ctaText="View"
+    icon={BpkIconHeart}
+    text="Saved"
+    theme={THEME.dark}
+  />
+);
+
+
 
 const NoCTAExample = () => (
   <BpkFloatingNotification icon={BpkIconHeart} text="Saved" />

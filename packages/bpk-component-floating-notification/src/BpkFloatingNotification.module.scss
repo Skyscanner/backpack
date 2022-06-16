@@ -31,6 +31,8 @@
   background: $bpk-color-sky-blue-shade-03;
   color: $bpk-color-white;
   box-shadow: $bpk-box-shadow-xl, $bpk-box-shadow-lg;
+  transition: opacity $bpk-duration-base ease-in-out,
+    transform $bpk-duration-base ease-in-out;
 
   @include bpk-breakpoint-mobile {
     max-width: 100%;
@@ -39,8 +41,7 @@
 
   &--leave {
     transform: translateY(0);
-    transition: opacity $bpk-duration-base ease-in-out,
-      transform $bpk-duration-base ease-in-out;
+
     opacity: 1;
 
     &-active {
@@ -55,8 +56,6 @@
 
   &--appear {
     transform: translateY(bpk-spacing-xl());
-    transition: opacity $bpk-duration-base ease-in-out,
-      transform $bpk-duration-base ease-in-out;
     opacity: 0;
 
     &-active {
