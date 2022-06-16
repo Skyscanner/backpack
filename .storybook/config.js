@@ -80,6 +80,7 @@ configure(() => {
   require('../examples/bpk-component-drawer/stories');
   require('../examples/bpk-component-fieldset/stories');
   require('../examples/bpk-component-flare/stories');
+  require('../examples/bpk-component-floating-notification/stories');
   require('../examples/bpk-component-form-validation/stories');
   require('../examples/bpk-component-graphic-promotion/stories');
   require('../examples/bpk-component-grid-toggle/stories');

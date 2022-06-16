@@ -1,0 +1,96 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+
+.bpk-floating-notification {
+  position: absolute;
+  right: 0;
+  bottom: bpk-spacing-xl();
+  left: 0;
+  display: flex;
+  max-width: bpk-spacing-xxl() * 10;
+  margin: auto;
+  padding: bpk-spacing-lg();
+  transition: opacity $bpk-duration-base ease-in-out,
+    transform $bpk-duration-base ease-in-out;
+  border-radius: $bpk-border-radius-md;
+  background: $bpk-color-sky-blue-shade-03;
+  color: $bpk-color-white;
+  box-shadow: $bpk-box-shadow-xl, $bpk-box-shadow-lg;
+
+  @include bpk-breakpoint-mobile {
+    max-width: 100%;
+    padding: bpk-spacing-base();
+  }
+
+  &--leave {
+    transform: translateY(0);
+    opacity: 1;
+
+    &-active {
+      transform: translateY(bpk-spacing-xl());
+      opacity: 0;
+    }
+
+    &-done {
+      opacity: 0;
+    }
+  }
+
+  &--appear {
+    transform: translateY(bpk-spacing-xl());
+    opacity: 0;
+
+    &-active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__button {
+    min-height: 0;
+    margin: 0 0 auto auto;
+    padding: 0;
+    color: $bpk-color-sky-blue-tint-01;
+
+    &--dark {
+      color: $bpk-link-color;
+    }
+  }
+
+  &__icon {
+    margin: bpk-spacing-sm() bpk-spacing-md() 0 bpk-spacing-sm();
+    flex-shrink: 0;
+    text-align: bottom;
+    fill: $bpk-color-white;
+
+    &--dark {
+      fill: $bpk-color-sky-gray;
+    }
+  }
+
+  &__text {
+    margin-right: bpk-spacing-md();
+  }
+
+  &--dark {
+    background: $bpk-color-white;
+    color: $bpk-color-sky-gray;
+  }
+}

@@ -253,6 +253,7 @@ accessibilityLabel
 accessoryView
 alignToButton
 animateOnEnter
+animateOnExit
 animateOnLeave
 animationDuration
 appearActiveClassName
@@ -267,6 +268,7 @@ BORDER_RADIUS_STYLES
 BORDER_RADIUS_STYLES.none
 BORDER_RADIUS_STYLES.sm
 borderlessBackground
+buttonText
 buttonType
 CALENDAR_SELECTION_TYPE.single
 cellType
@@ -287,7 +289,7 @@ containerClassName
 cornerStyle
 CORNER_STYLES.sm
 CORNER_STYLES.lg
-buttonText
+ctaText
 DataSource
 dateProps
 decreaseButtonLabel
@@ -382,6 +384,7 @@ RATING_SIZES.base
 RATING_TYPES
 RATING_TYPES.default
 RATING_TYPES.pill
+ReactElement
 renderFlag
 renderTarget
 secondaryOnDark
@@ -455,6 +458,7 @@ toggleExpandedButtonLabel
 trailingButton
 TransitionInitialMount
 transitionTimeout
+TYPE.light
 uppercase
 validationMessage
 WEIGHT_STYLES.regular
@@ -685,6 +689,7 @@ bpk-component-dialog
 bpk-component-drawer
 bpk-component-fieldset
 bpk-component-flare
+bpk-component-floating-notification
 bpk-component-form-validation
 bpk-component-graphic-promotion
 bpk-component-grid
