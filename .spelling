@@ -458,6 +458,7 @@ toggleExpandedButtonLabel
 trailingButton
 TransitionInitialMount
 transitionTimeout
+TYPE.light
 uppercase
 validationMessage
 WEIGHT_STYLES.regular

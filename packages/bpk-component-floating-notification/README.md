@@ -31,12 +31,21 @@ export default () => (
 | animateOnExit  | bool         | false    | true          |
 | className      | string       | false    | null          |
 | ctaText        | string       | false    | null          |
+| hideAfter      | number       | false    | 4000          |
 | icon           | ReactElement | false    | null          |
+| onClick        | func         | true     | null          |
 | text           | string       | true     | null          |
+| type           | oneOf(TYPE)  | false    | TYPE.light     |
 
 ### Prop Details
 
-#### theme
+#### hideAfter
+
+This prop controls the amount of time that the notification stays visible before the exit animation begins.
+
+The default value is 4 seconds (4000 milliseconds).
+
+#### type
 
 By default the component is rendered in the light theme (`TYPE.light`) which uses a dark background and white text for the notification. This contrasts against a white page.
 
