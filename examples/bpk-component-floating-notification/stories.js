@@ -19,20 +19,21 @@
 import { storiesOf } from '@storybook/react';
 
 import {
-  DarkModeExample,
+  CtaIconLongTextExample,
+  CtaIconLongTextDarkModeExample,
+  CtaExample,
   DefaultExample,
-  LongTextExample,
-  NoCTAExample,
-  NoCTALongTextExample,
-  NoIconExample,
-  OnlyTextExample,
+  IconExample,
+  VisualTestExample,
 } from './examples';
 
 storiesOf('bpk-component-floating-notification', module)
   .add('Default', DefaultExample)
-  .add('Default in dark mode', DarkModeExample)
-  .add('Default with long text', LongTextExample)
-  .add('No CTA', NoCTAExample)
-  .add('No CTA with long text', NoCTALongTextExample)
-  .add('No icon', NoIconExample)
-  .add('Only Text', OnlyTextExample);
+  .add('With icon', IconExample)
+  .add('With CTA', CtaExample)
+  .add('With CTA, icon, and long text', CtaIconLongTextExample)
+  .add(
+    'With CTA, icon, long text, in dark mode',
+    CtaIconLongTextDarkModeExample,
+  )
+  .add('Visual test', VisualTestExample);

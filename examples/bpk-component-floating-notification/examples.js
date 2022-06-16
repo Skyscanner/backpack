@@ -24,54 +24,57 @@ import BpkFloatingNotification, {
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
 
-console.log("THEME: " + THEME)
+const DefaultExample = () => <BpkFloatingNotification text="Saved" />;
 
-const DefaultExample = () => (
-  <BpkFloatingNotification
-    text="Saved"
-  />
-);
-
-const LongTextExample = () => (
-  <BpkFloatingNotification
-    text="Killer Combo saved to New York and Miami 🎉"
-  />
-);
-
-const DarkModeExample = () => (
-  <BpkFloatingNotification
-    ctaText="View"
-    icon={BpkIconHeart}
-    text="Saved"
-    theme={THEME.dark}
-  />
-);
-
-
-
-const NoCTAExample = () => (
+const IconExample = () => (
   <BpkFloatingNotification icon={BpkIconHeart} text="Saved" />
 );
 
-const NoCTALongTextExample = () => (
+const CtaExample = () => (
+  <BpkFloatingNotification ctaText="View" text="Saved" />
+);
+
+const CtaIconLongTextExample = () => (
   <BpkFloatingNotification
+    ctaText="View"
     icon={BpkIconHeart}
     text="Killer Combo saved to New York and Miami 🎉"
   />
 );
 
-const NoIconExample = () => (
-  <BpkFloatingNotification ctaText="View" text="Saved" />
+const CtaIconLongTextDarkModeExample = () => (
+  <BpkFloatingNotification
+    ctaText="View"
+    theme={THEME.dark}
+    icon={BpkIconInformationCircle}
+    text="Killer Combo saved to New York and Miami 🎉"
+  />
 );
 
-const OnlyTextExample = () => <BpkFloatingNotification text="Saved" />;
+const VisualTestExample = () => (
+  <>
+    <BpkFloatingNotification text="Saved" />
+    <BpkFloatingNotification icon={BpkIconHeart} text="Saved" />
+    <BpkFloatingNotification ctaText="View" text="Saved" />
+    <BpkFloatingNotification
+      ctaText="View"
+      icon={BpkIconHeart}
+      text="Killer Combo saved to New York and Miami 🎉"
+    />
+    <BpkFloatingNotification
+      ctaText="View"
+      theme={THEME.dark}
+      icon={BpkIconInformationCircle}
+      text="Killer Combo saved to New York and Miami 🎉"
+    />
+  </>
+);
 
 export {
+  CtaIconLongTextExample,
+  CtaIconLongTextDarkModeExample,
+  CtaExample,
   DefaultExample,
-  DarkModeExample,
-  LongTextExample,
-  NoCTAExample,
-  NoCTALongTextExample,
-  NoIconExample,
-  OnlyTextExample,
+  IconExample,
+  VisualTestExample,
 };
