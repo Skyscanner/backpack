@@ -71,35 +71,4 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-
-  it('should update "expanded" value with key of clicked child', () => {
-    const { container, debug } = render(
-      <EnhancedComponent>
-        <div>Accordion Item 1</div>
-        <div initiallyExpanded>Accordion Item 2</div>
-        <div>Accordion Item 3</div>
-      </EnhancedComponent>,
-    );
-
-    debug();
-
-    // await userEvent.click(screen.querySelector('.bpk-accordion'));
-
-    expect(container.querySelector('.bpk-accordion')).toHaveAttribute(
-      'expanded',
-    );
-    expect(accordionContainer.state('expanded')).toEqual('.1');
-
-    accordionContainer
-      .findWhere((e) => e.text() === 'Accordion Item 1')
-      .first()
-      .prop('onClick')();
-    expect(accordionContainer.state('expanded')).toEqual('.0');
-
-    accordionContainer
-      .findWhere((e) => e.text() === 'Accordion Item 3')
-      .first()
-      .prop('onClick')();
-    expect(accordionContainer.state('expanded')).toEqual('.2');
-  });
 });

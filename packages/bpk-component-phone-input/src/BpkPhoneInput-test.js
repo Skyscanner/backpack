@@ -130,7 +130,7 @@ describe('BpkPhoneInput', () => {
   });
 
   it('should error if the selected dialing code has no corresponding data', () => {
-    console.error = jest.fn();
+    jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
 
     expect(() =>
       render(<BpkPhoneInput {...defaultProps} dialingCode="00_non" />),
