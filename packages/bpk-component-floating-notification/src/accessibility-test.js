@@ -21,7 +21,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkFloatingNotification from './BpkFloatingNotification';
+import BpkIconHeart from '../../bpk-component-icon/sm/heart';
+
+import BpkFloatingNotification, { TYPE } from './BpkFloatingNotification';
 
 const props = {
   text: 'View',
@@ -43,7 +45,9 @@ describe('BpkFloatingNotification accessibility tests', () => {
   });
 
   it('should not have programmatically-detectable accessibility issues with icon', async () => {
-    const { container } = render(<BpkFloatingNotification icon {...props} />);
+    const { container } = render(
+      <BpkFloatingNotification icon={BpkIconHeart} {...props} />,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -58,7 +62,7 @@ describe('BpkFloatingNotification accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues with icon and cta', async () => {
     const { container } = render(
-      <BpkFloatingNotification icon ctaText="View" {...props} />,
+      <BpkFloatingNotification icon={BpkIconHeart} ctaText="View" {...props} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -66,7 +70,7 @@ describe('BpkFloatingNotification accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues in dark mode (prop)', async () => {
     const { container } = render(
-      <BpkFloatingNotification darkMode {...props} />,
+      <BpkFloatingNotification type={TYPE.dark} {...props} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
