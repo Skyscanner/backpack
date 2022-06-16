@@ -27,12 +27,12 @@
   max-width: $bpk-one-pixel-rem * 400;
   margin: auto;
   padding: bpk-spacing-lg();
+  transition: opacity $bpk-duration-base ease-in-out,
+    transform $bpk-duration-base ease-in-out;
   border-radius: $bpk-border-radius-md;
   background: $bpk-color-sky-blue-shade-03;
   color: $bpk-color-white;
   box-shadow: $bpk-box-shadow-xl, $bpk-box-shadow-lg;
-  transition: opacity $bpk-duration-base ease-in-out,
-    transform $bpk-duration-base ease-in-out;
 
   @include bpk-breakpoint-mobile {
     max-width: 100%;
@@ -41,7 +41,6 @@
 
   &--leave {
     transform: translateY(0);
-
     opacity: 1;
 
     &-active {
