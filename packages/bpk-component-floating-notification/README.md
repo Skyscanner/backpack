@@ -34,9 +34,9 @@ export default () => (
 | ctaText        | string       | false    | null          |
 | hideAfter      | number       | false    | 4000          |
 | icon           | ReactElement | false    | null          |
-| onClick        | func         | true     | null          |
-| text           | string       | true     | null          |
-| type           | oneOf(TYPE)  | false    | TYPE.light     |
+| onClick        | func         | false    | null          |
+| text           | string       | true     | -             |
+| type           | oneOf(TYPE)  | false    | TYPE.light    |
 
 ### Prop Details
 
