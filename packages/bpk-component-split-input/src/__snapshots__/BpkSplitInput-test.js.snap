@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSplitInput should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-split-input"
+  >
+    I am an example component.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkSplitInput should support arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-split-input"
+    testid="123"
+  >
+    I am an example component.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkSplitInput should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-split-input custom-classname"
+  >
+    I am an example component.
+  </div>
+</DocumentFragment>
+`;
