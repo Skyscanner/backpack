@@ -28,7 +28,7 @@ import STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const THEME = {
+export const TYPE = {
   light: 'light',
   dark: 'dark',
 };
@@ -43,7 +43,7 @@ export type Props = {
   icon: ?() => ReactElement,
   onClick: ?() => void,
   text: string,
-  theme: ?THEME,
+  type: ?TYPE,
 };
 
 const BpkFloatingNotification = (props: Props) => {
@@ -54,31 +54,28 @@ const BpkFloatingNotification = (props: Props) => {
     animateOnExit,
     className,
     ctaText,
-    darkMode,
     hideAfter,
     icon: Icon,
     onClick,
     text,
-    theme,
+    type,
     ...rest
   } = props;
 
-  console.log(`THEME: ${THEME}`);
-
   const classNames = getClassName(
     'bpk-floating-notification',
-    theme === 'dark' && 'bpk-floating-notification--dark',
+    type === TYPE.dark && 'bpk-floating-notification--dark',
     className,
   );
 
   const iconClassNames = getClassName(
     'bpk-floating-notification__icon',
-    theme === 'dark' && 'bpk-floating-notification__icon--dark',
+    type === TYPE.dark && 'bpk-floating-notification__icon--dark',
   );
 
   const buttonClassNames = getClassName(
     'bpk-floating-notification__button',
-    theme === 'dark' && 'bpk-floating-notification__button--dark',
+    type === TYPE.dark && 'bpk-floating-notification__button--dark',
   );
 
   useEffect(() => {
@@ -128,10 +125,15 @@ const BpkFloatingNotification = (props: Props) => {
 };
 
 BpkFloatingNotification.propTypes = {
+  animateOnEnter: PropTypes.bool,
+  animateOnExit: PropTypes.bool,
   className: PropTypes.string,
   ctaText: PropTypes.string,
+  hideAfter: PropTypes.number,
+  icon: PropTypes.ReactElement,
+  onClick: PropTypes.func,
   text: PropTypes.string.isRequired,
-  theme: PropTypes.oneOf(Object.values(THEME)),
+  type: PropTypes.oneOf(Object.values(TYPE)),
 };
 
 BpkFloatingNotification.defaultProps = {
@@ -139,10 +141,10 @@ BpkFloatingNotification.defaultProps = {
   animateOnExit: true,
   className: null,
   ctaText: null,
-  darkMode: false,
   hideAfter: 4000,
   icon: null,
-  theme: THEME.light,
+  onClick: null,
+  type: TYPE.light,
 };
 
 export default BpkFloatingNotification;

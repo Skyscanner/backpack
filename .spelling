@@ -385,6 +385,7 @@ RATING_SIZES.base
 RATING_TYPES
 RATING_TYPES.default
 RATING_TYPES.pill
+ReactElement
 renderFlag
 renderTarget
 secondaryOnDark

@@ -3,7 +3,7 @@
 exports[`BpkFloatingNotification should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-floating-notification"
+    class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
@@ -17,7 +17,7 @@ exports[`BpkFloatingNotification should render correctly 1`] = `
 exports[`BpkFloatingNotification should render correctly in dark mode (prop) 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-floating-notification bpk-floating-notification--dark"
+    class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
@@ -31,7 +31,7 @@ exports[`BpkFloatingNotification should render correctly in dark mode (prop) 1`]
 exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-floating-notification"
+    class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
@@ -39,7 +39,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
       Saved
     </p>
     <button
-      class="bpk-button bpk-button--link bpk-floating-notification__button "
+      class="bpk-button bpk-button--link bpk-floating-notification__button"
       type="button"
     >
       View
@@ -51,7 +51,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
 exports[`BpkFloatingNotification should render correctly with CTA text in dark mode 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-floating-notification bpk-floating-notification--dark"
+    class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
@@ -59,7 +59,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text in dark m
       Saved
     </p>
     <button
-      class="bpk-button bpk-button--link bpk-floating-notification__button bpk-floating-notification__button--dark"
+      class="bpk-button bpk-button--link bpk-floating-notification__button"
       type="button"
     >
       View
@@ -123,7 +123,7 @@ exports[`BpkFloatingNotification should render correctly with icon prop in dark 
 exports[`BpkFloatingNotification should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-floating-notification"
+    class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
     testid="123"
   >
     <p
@@ -138,7 +138,7 @@ exports[`BpkFloatingNotification should support arbitrary props 1`] = `
 exports[`BpkFloatingNotification should support custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-floating-notification custom-classname"
+    class="bpk-floating-notification custom-classname bpk-floating-notification--appear bpk-floating-notification--appear-active"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
