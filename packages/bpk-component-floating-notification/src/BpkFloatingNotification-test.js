@@ -21,7 +21,9 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { cssModules } from 'bpk-react-utils';
 
-import BpkFloatingNotification from './BpkFloatingNotification';
+import BpkIconHeart from '../../bpk-component-icon/sm/heart';
+
+import BpkFloatingNotification, { TYPE } from './BpkFloatingNotification';
 import STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -52,19 +54,25 @@ describe('BpkFloatingNotification', () => {
 
   it('should render correctly in dark mode (prop)', () => {
     const { asFragment } = render(
-      <BpkFloatingNotification darkMode {...props} />,
+      <BpkFloatingNotification type={TYPE.dark} {...props} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with icon prop', () => {
-    const { asFragment } = render(<BpkFloatingNotification icon {...props} />);
+    const { asFragment } = render(
+      <BpkFloatingNotification icon={BpkIconHeart} {...props} />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with icon prop in dark mode', () => {
     const { asFragment } = render(
-      <BpkFloatingNotification darkMode icon {...props} />,
+      <BpkFloatingNotification
+        type={TYPE.dark}
+        icon={BpkIconHeart}
+        {...props}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -78,7 +86,7 @@ describe('BpkFloatingNotification', () => {
 
   it('should render correctly with CTA text in dark mode', () => {
     const { asFragment } = render(
-      <BpkFloatingNotification ctaText="View" darkMode {...props} />,
+      <BpkFloatingNotification ctaText="View" type={TYPE.dark} {...props} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
