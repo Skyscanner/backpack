@@ -24,7 +24,7 @@
   bottom: bpk-spacing-xl();
   left: 0;
   display: flex;
-  max-width: $bpk-one-pixel-rem * 400;
+  max-width: bpk-spacing-xxl() * 10;
   margin: auto;
   padding: bpk-spacing-lg();
   transition: opacity $bpk-duration-base ease-in-out,
