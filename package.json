@@ -99,7 +99,10 @@
     "transformIgnorePatterns": [
       "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
     ],
-    "verbose": true
+    "verbose": true,
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -120,8 +123,8 @@
     "@storybook/addon-storyshots-puppeteer": "^5.3.14",
     "@storybook/addon-viewport": "^5.3.14",
     "@storybook/react": "^5.3.14",
-    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/dom": "^8.13.0",
+    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^14.2.0",
     "@types/jest": "^27.0.3",
@@ -146,7 +149,7 @@
     "del": "^5.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
-    "enzyme-to-json": "^3.3.5",
+    "enzyme-to-json": "^3.6.2",
     "eslint_d": "^9.1.1",
     "flow-bin": "^0.132.0",
     "flow-typed": "^2.5.1",

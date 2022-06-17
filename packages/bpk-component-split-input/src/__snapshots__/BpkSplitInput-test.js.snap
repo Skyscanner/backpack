@@ -1,9 +1,335 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkSplitInput should render correctly with inputLength param 1`] = `ShallowWrapper {}`;
+exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
+<div
+  className="BpkSplitInput"
+>
+  <BpkInputField
+    focus={true}
+    id="otpInput-0"
+    index={0}
+    key="0"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-1"
+    index={1}
+    key="1"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-2"
+    index={2}
+    key="2"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-3"
+    index={3}
+    key="3"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-4"
+    index={4}
+    key="4"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-5"
+    index={5}
+    key="5"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+</div>
+`;
 
-exports[`BpkSplitInput should render correctly with large set as false 1`] = `ShallowWrapper {}`;
+exports[`BpkSplitInput should render correctly with large set as false 1`] = `
+<div
+  className="BpkSplitInput"
+>
+  <BpkInputField
+    focus={true}
+    id="otpInput-0"
+    index={0}
+    key="0"
+    label="otp input"
+    large={false}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-1"
+    index={1}
+    key="1"
+    label="otp input"
+    large={false}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-2"
+    index={2}
+    key="2"
+    label="otp input"
+    large={false}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-3"
+    index={3}
+    key="3"
+    label="otp input"
+    large={false}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+</div>
+`;
 
-exports[`BpkSplitInput should render correctly with placeholder 1`] = `ShallowWrapper {}`;
+exports[`BpkSplitInput should render correctly with placeholder 1`] = `
+<div
+  className="BpkSplitInput"
+>
+  <BpkInputField
+    focus={true}
+    id="otpInput-0"
+    index={0}
+    key="0"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder="x"
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-1"
+    index={1}
+    key="1"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder="x"
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-2"
+    index={2}
+    key="2"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder="x"
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-3"
+    index={3}
+    key="3"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder="x"
+    type="tel"
+    value=""
+  />
+</div>
+`;
 
-exports[`BpkSplitInput should render without crashing 1`] = `ShallowWrapper {}`;
+exports[`BpkSplitInput should render without crashing 1`] = `
+<div
+  className="BpkSplitInput"
+>
+  <BpkInputField
+    focus={true}
+    id="otpInput-0"
+    index={0}
+    key="0"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-1"
+    index={1}
+    key="1"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-2"
+    index={2}
+    key="2"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+  <BpkInputField
+    focus={false}
+    id="otpInput-3"
+    index={3}
+    key="3"
+    label="otp input"
+    large={true}
+    name="otpInput"
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    onPaste={[Function]}
+    placeholder=""
+    type="tel"
+    value=""
+  />
+</div>
+`;
