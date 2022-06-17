@@ -16,8 +16,21 @@
  * limitations under the License.
  */
 
+ /* stylelint-disable */
+
 @import '~bpk-mixins/index';
 
-.bpk-split-input {
+.BpkSplitInput {
   display: flex;
+  width: 100%;
+  padding-top: $bpk-spacing-xs;
+  flex-direction: row;
+  align-items: center;
+  font-size: $bpk-font-size-base;
+  direction: ltr;
+
+  &__textbox {
+    display: flex;
+    align-items: center;
+  }
 }
