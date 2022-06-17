@@ -19,8 +19,9 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import BpkAccordionItem from './BpkAccordionItem';
 import withAccordionItemState from './withAccordionItemState';
@@ -59,23 +60,18 @@ describe('withAccordionItemState(BpkAccordionItem)', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should toggle "expanded" on click', () => {
-    const accordionItem = shallow(
-      <EnhancedComponent
-        id="my-accordion"
-        title="My accordion item"
-        initiallyExpanded
-      >
+  it('should expand on click', async () => {
+    render(
+      <EnhancedComponent id="my-accordion" title="My accordion item">
         My accordion content
       </EnhancedComponent>,
     );
 
-    expect(accordionItem.state('expanded')).toBe(true);
+    expect(screen.getByText('My accordion content')).not.toBeVisible();
 
-    accordionItem.instance().onClick();
-    expect(accordionItem.state('expanded')).toBe(false);
+    const accordionItem = screen.getByText('My accordion item');
+    await userEvent.click(accordionItem);
 
-    accordionItem.instance().onClick();
-    expect(accordionItem.state('expanded')).toBe(true);
+    expect(screen.getByText('My accordion content')).toBeVisible();
   });
 });

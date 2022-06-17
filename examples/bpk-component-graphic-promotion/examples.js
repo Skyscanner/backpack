@@ -33,7 +33,7 @@ const sponsor = {
 };
 const buttonText = 'Discover more';
 const onClick = () => {
-  window.location.href = 'https://www.skyscanner.net';
+  window.open('https://www.skyscanner.net');
 };
 
 const tagline = 'Travel tips';

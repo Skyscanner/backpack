@@ -18,8 +18,8 @@
 /* @flow strict */
 
 import React from 'react';
-import { mount } from 'enzyme';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import BpkInput from './BpkInput';
 import { INPUT_TYPES } from './common-types';
@@ -216,7 +216,8 @@ describe('BpkInput', () => {
     const storeInputReference = (ref) => {
       inputRef = ref;
     };
-    const tree = mount(
+
+    render(
       <BpkInput
         id="test"
         name="test"
@@ -225,16 +226,17 @@ describe('BpkInput', () => {
         onChange={() => {}}
       />,
     );
-    const input = tree.find('input').at(0).instance();
+
+    const input = screen.getByRole('textbox');
     expect(input).toEqual(inputRef);
   });
 
-  it('should call "onClear" when clearing', () => {
+  it('should call "onClear" when clearing', async () => {
     const onClear = jest.fn();
 
     const name = 'field_name';
 
-    const wrapper = mount(
+    render(
       <BpkInput
         id="test"
         name={name}
@@ -246,10 +248,9 @@ describe('BpkInput', () => {
       />,
     );
 
-    wrapper.find('BpkClearButton').simulate('click');
+    const button = screen.getByRole('button', { name: 'clear' });
+    await userEvent.click(button);
 
-    expect(onClear).toHaveBeenCalledWith(
-      expect.objectContaining({ target: expect.objectContaining({ name }) }),
-    );
+    expect(onClear).toHaveBeenCalled();
   });
 });

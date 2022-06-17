@@ -19,10 +19,19 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
 import BpkBasicMapMarker from './BpkBasicMapMarker';
+
+jest.mock('@react-google-maps/api', () => ({
+  OverlayView: (props) => (
+    <div>
+      <div className="mock-overlay-view" />
+      {/* eslint-disable-next-line react/prop-types */}
+      {props.children}
+    </div>
+  ),
+}));
 
 describe('BpkBasicMapMarker', () => {
   it('should render correctly', () => {
@@ -30,9 +39,9 @@ describe('BpkBasicMapMarker', () => {
       latitude: 41.386947,
       longitude: 2.170048,
     };
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBasicMapMarker position={position}>Children</BpkBasicMapMarker>,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

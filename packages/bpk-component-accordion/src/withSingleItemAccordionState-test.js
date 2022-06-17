@@ -19,8 +19,8 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkAccordion from './BpkAccordion';
 import withSingleItemAccordionState from './withSingleItemAccordionState';
@@ -70,29 +70,5 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
       </EnhancedComponent>,
     );
     expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should update "expanded" value with key of clicked child', () => {
-    const accordionContainer = shallow(
-      <EnhancedComponent>
-        <div>Accordion Item 1</div>
-        <div initiallyExpanded>Accordion Item 2</div>
-        <div>Accordion Item 3</div>
-      </EnhancedComponent>,
-    );
-
-    expect(accordionContainer.state('expanded')).toEqual('.1');
-
-    accordionContainer
-      .findWhere((e) => e.text() === 'Accordion Item 1')
-      .first()
-      .prop('onClick')();
-    expect(accordionContainer.state('expanded')).toEqual('.0');
-
-    accordionContainer
-      .findWhere((e) => e.text() === 'Accordion Item 3')
-      .first()
-      .prop('onClick')();
-    expect(accordionContainer.state('expanded')).toEqual('.2');
   });
 });

@@ -1,3 +1,44 @@
+# 2022-06-17
+
+**Added:**
+  - `bpk-component-floating-notification` - `1.0.0`
+
+**Fixed:**
+  - bpk-component-image: 5.1.11 => 5.1.12
+      - Fix `@skyscanner/bpk-foundations-web` dependency
+
+
+
+# 2022-06-16
+
+`@skyscanner/backpack-web`: 3.0.1 => 3.1.0
+
+**Fixed:**
+
+- bpk-component-graphic-promotion: 3.0.4 => 3.1.0
+  - Updated tests and storybook examples for component
+  - Ensured text is centered correctly despite margins
+
+**Changed:**
+- bpk-component-graphic-promotion: 3.0.4 => 3.1.0
+  - Made entire card clickable on all platforms
+
+# 2022-06-15
+
+**Added:**
+
+ bpk-component-price: 0.0.1 => 1.0.0
+  - Price is a new component to ensure consistent display of pricing.
+
+**Fixed:**
+
+- `@skyscanner/backpack-web`: 3.0.1 => 3.1.0
+  - Added missing dependencies `@skyscanner/bpk-svgs`, `@react-google-maps/api`, `@popperjs/core`
+
+- bpk-component-theme-toggle: 3.1.10 => 3.1.11
+  - Removed `Konami` library and logic, so not to require it for the single package. It was added as fun for the documentation site but no longer relevant now. 
+
+
 # 2022-05-10
 
 `@skyscanner/backpack-web`: 2.0.1 => 3.0.1
