@@ -23,7 +23,6 @@ import PropTypes from 'prop-types';
 import { INPUT_TYPES } from 'bpk-component-input';
 
 import InputField from './BpkInputField';
-
 import STYLES from './BpkSplitInput.module.scss';
 
 const className = cssModules(STYLES);
@@ -36,7 +35,7 @@ const DELETE = 46;
 const SPACEBAR = 32;
 const ENTER = 13;
 
-class SplitInput extends Component {
+class BpkSplitInput extends Component {
   constructor(props) {
     super(props);
 
@@ -50,7 +49,7 @@ class SplitInput extends Component {
     this.setState({ inputValue: input });
     const { onChange } = this.props;
     const value = input.join('');
-    //console.log("VALUE", value);
+    // console.log("VALUE", value);
     onChange(value);
   };
 
@@ -82,10 +81,14 @@ class SplitInput extends Component {
     return true;
   };
 
-  isNumeric = () => this.props.type === INPUT_TYPES.number || this.props.type === INPUT_TYPES.tel;
+  isNumeric = () =>
+    this.props.type === INPUT_TYPES.number ||
+    this.props.type === INPUT_TYPES.tel;
 
   isInputValid = (value) => {
-    const isTypeValid = this.isNumeric() ? /^\d$/.test(value) : typeof value === 'string';
+    const isTypeValid = this.isNumeric()
+      ? /^\d$/.test(value)
+      : typeof value === 'string';
     return isTypeValid && value.trim().length === 1;
   };
 
@@ -127,7 +130,9 @@ class SplitInput extends Component {
       }
     }
     this.focusInput(
-      typeof firstInvalidInputPosition !== 'undefined' ? firstInvalidInputPosition : position,
+      typeof firstInvalidInputPosition !== 'undefined'
+        ? firstInvalidInputPosition
+        : position,
     );
     this.onInputChange(inputValue);
   };
@@ -140,10 +145,18 @@ class SplitInput extends Component {
     } else if (e.keyCode === DELETE || e.key === 'Delete') {
       e.preventDefault();
       this.updateInputValue('');
-    } else if (e.keyCode === LEFT_ARROW || e.key === 'Left' || e.key === 'ArrowLeft') {
+    } else if (
+      e.keyCode === LEFT_ARROW ||
+      e.key === 'Left' ||
+      e.key === 'ArrowLeft'
+    ) {
       e.preventDefault();
       this.focusPreviousInput();
-    } else if (e.keyCode === RIGHT_ARROW || e.key === 'Right' || e.key === 'ArrowRight') {
+    } else if (
+      e.keyCode === RIGHT_ARROW ||
+      e.key === 'Right' ||
+      e.key === 'ArrowRight'
+    ) {
       e.preventDefault();
       this.focusNextInput();
     } else if (e.keyCode === ENTER || e.key === 'Enter') {
@@ -174,7 +187,8 @@ class SplitInput extends Component {
 
   renderInputs = () => {
     const { focusedInput, inputValue } = this.state;
-    const { inputLength, name, type, large, placeholder, id, label } = this.props;
+    const { id, inputLength, label, large, name, placeholder, type } =
+      this.props;
     const inputs = [];
     for (let index = 0; index < inputLength; index += 1) {
       inputs.push(
@@ -202,12 +216,18 @@ class SplitInput extends Component {
   };
 
   render() {
-    return <div className={className('SplitInput')}>{this.renderInputs()}</div>;
+    return (
+      <div className={className('BpkSplitInput')}>{this.renderInputs()}</div>
+    );
   }
 }
 
-SplitInput.propTypes = {
-  type: PropTypes.oneOf([INPUT_TYPES.text, INPUT_TYPES.number, INPUT_TYPES.tel]),
+BpkSplitInput.propTypes = {
+  type: PropTypes.oneOf([
+    INPUT_TYPES.text,
+    INPUT_TYPES.number,
+    INPUT_TYPES.tel,
+  ]),
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -218,11 +238,11 @@ SplitInput.propTypes = {
   large: PropTypes.bool,
 };
 
-SplitInput.defaultProps = {
+BpkSplitInput.defaultProps = {
   type: INPUT_TYPES.tel,
   inputLength: 4,
   large: true,
   placeholder: '',
 };
 
-export default SplitInput;
+export default BpkSplitInput;
