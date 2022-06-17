@@ -19,12 +19,14 @@
 
 import PropTypes from 'prop-types';
 import React, { cloneElement, Component } from 'react';
+import { action } from '@storybook/addon-actions';
 
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';
 import BpkButton from '../../packages/bpk-component-button';
 import BpkDatepicker from '../../packages/bpk-component-datepicker';
+import BpkSplitInput from '../../packages/bpk-component-split-input';
 import BpkTextarea from '../../packages/bpk-component-textarea';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
@@ -510,6 +512,18 @@ const MixedExample = () => (
   </div>
 );
 
+const SplitInputExample = () => (
+  <BpkSplitInput
+    type={INPUT_TYPES.tel}
+    name="otpInput"
+    id="otpInput"
+    label="otp input"
+    onChange={action('On Input Change')}
+    onSubmit={action('On Submit')}
+    inputLength={4}
+  />
+);
+
 export {
   InputExample,
   SelectExample,
@@ -524,4 +538,5 @@ export {
   DisabledSelectExample,
   DisabledCheckboxExample,
   MixedExample,
+  SplitInputExample,
 };
