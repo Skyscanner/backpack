@@ -1,3 +1,14 @@
+# 2022-06-17
+
+**Added:**
+  - `bpk-component-floating-notification` - `1.0.0`
+
+**Fixed:**
+  - bpk-component-image: 5.1.11 => 5.1.12
+      - Fix `@skyscanner/bpk-foundations-web` dependency
+
+
+
 # 2022-06-16
 
 `@skyscanner/backpack-web`: 3.0.1 => 3.1.0
