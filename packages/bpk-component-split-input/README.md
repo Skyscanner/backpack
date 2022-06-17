@@ -1,6 +1,6 @@
 # bpk-component-split-input
 
-> Backpack example component.
+> Backpack split-input component.
 
 ## Installation
 
