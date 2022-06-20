@@ -17,13 +17,15 @@
  */
 
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 
 import BpkPagination from './BpkPagination';
 
 describe('BpkPagination', () => {
   it('should display forward nudger', () => {
-    const pagination = mount(
+    render(
       <BpkPagination
         pageCount={20}
         selectedPageIndex={0}
@@ -36,34 +38,14 @@ describe('BpkPagination', () => {
       />,
     );
 
-    expect(pagination.find({ label: 'next' }).length).toBe(1);
-    expect(pagination.find({ label: 'previous', disabled: true }).length).toBe(
-      1,
-    );
-  });
+    const nextButton = screen.getByRole('button', { name: 'next' });
 
-  it('should display backward nudger when not on the first page', () => {
-    const pagination = mount(
-      <BpkPagination
-        pageCount={20}
-        selectedPageIndex={1}
-        previousLabel="previous"
-        nextLabel="next"
-        paginationLabel="Pagination Navigation"
-        pageLabel={(page, isSelected) =>
-          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
-        }
-      />,
-    );
-
-    expect(pagination.find({ label: 'next' }).length).toBe(1);
-    expect(pagination.find({ label: 'previous', disabled: false }).length).toBe(
-      1,
-    );
+    expect(nextButton).toBeInTheDocument();
+    expect(nextButton).not.toHaveAttribute('disabled');
   });
 
   it('should not display forward nudger when on last page', () => {
-    const pagination = mount(
+    render(
       <BpkPagination
         pageCount={2}
         selectedPageIndex={1}
@@ -76,13 +58,53 @@ describe('BpkPagination', () => {
       />,
     );
 
-    expect(pagination.find({ label: 'next', disabled: true }).length).toBe(1);
-    expect(pagination.find({ label: 'previous' }).length).toBe(1);
+    const nextButton = screen.getByRole('button', { name: 'next' });
+    expect(nextButton).toBeInTheDocument();
+    expect(nextButton).toHaveAttribute('disabled');
   });
 
-  it("should call the 'onPageChange' callback when page is selected", () => {
+  it('should display backward nudger when not on the first page', () => {
+    render(
+      <BpkPagination
+        pageCount={20}
+        selectedPageIndex={1}
+        previousLabel="previous"
+        nextLabel="next"
+        paginationLabel="Pagination Navigation"
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
+
+    const previousButton = screen.getByRole('button', { name: 'previous' });
+    expect(previousButton).toBeInTheDocument();
+    expect(previousButton).not.toHaveAttribute('disabled');
+  });
+
+  it('should not display backward nudger when on first page', () => {
+    render(
+      <BpkPagination
+        pageCount={20}
+        selectedPageIndex={0}
+        previousLabel="previous"
+        nextLabel="next"
+        paginationLabel="Pagination Navigation"
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
+
+    const previousButton = screen.getByRole('button', { name: 'previous' });
+
+    expect(previousButton).toBeInTheDocument();
+    expect(previousButton).toHaveAttribute('disabled');
+  });
+
+  it("should call the 'onPageChange' callback when page is selected", async () => {
     const onPageChange = jest.fn();
-    const pagination = mount(
+    render(
       <BpkPagination
         pageCount={20}
         selectedPageIndex={0}
@@ -96,18 +118,17 @@ describe('BpkPagination', () => {
       />,
     );
 
-    const page = pagination.find('ul');
     expect(onPageChange.mock.calls.length).toBe(0);
 
-    page.find('li').at(4).find('button').simulate('click');
+    const pageButton = screen.getByText('3');
+    await userEvent.click(pageButton);
 
     expect(onPageChange.mock.calls.length).toBe(1);
-    expect(onPageChange.mock.calls[0][0]).toEqual(19);
   });
 
-  it("should call the 'onPageChange' callback when nudger is clicked", () => {
+  it("should call the 'onPageChange' callback when nudger is clicked", async () => {
     const onPageChange = jest.fn();
-    const pagination = mount(
+    render(
       <BpkPagination
         pageCount={20}
         selectedPageIndex={0}
@@ -121,14 +142,11 @@ describe('BpkPagination', () => {
       />,
     );
 
-    const forwardNudger = pagination.find('BpkPaginationNudger').at(1);
-    const page = pagination.find('BpkPaginationList');
-    expect(page.prop('selectedPageIndex')).toEqual(0);
     expect(onPageChange.mock.calls.length).toBe(0);
 
-    forwardNudger.find('button').simulate('click');
+    const nextButton = screen.getByRole('button', { name: 'next' });
+    await userEvent.click(nextButton);
 
     expect(onPageChange.mock.calls.length).toBe(1);
-    expect(onPageChange.mock.calls[0][0]).toEqual(1);
   });
 });
