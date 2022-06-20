@@ -731,6 +731,7 @@ bpk-component-select
 bpk-component-skip-link
 bpk-component-slider
 bpk-component-spinner
+bpk-component-split-input
 bpk-component-star-rating
 bpk-component-table
 bpk-component-text
@@ -777,6 +778,7 @@ react-native-bpk-component-progress
 react-native-bpk-component-section-list
 react-native-bpk-component-select
 react-native-bpk-component-spinner
+react-native-bpk-component-split-input
 react-native-bpk-component-star-rating
 react-native-bpk-component-switch
 react-native-bpk-component-text
@@ -882,3 +884,6 @@ scrollLeft
 scrollerEl
 SIZES.small
 SIZES.large
+INPUT_TYPES.number
+inputLength
+onSubmit
