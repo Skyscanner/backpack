@@ -99,18 +99,13 @@ const BpkGraphicPromo = (props: Props) => {
     textAlign,
   } = props;
 
-  const onClickWrapper = React.useCallback(
-    (event: React.MouseEvent<HTMLElement>) => {
-      event.stopPropagation();
-      onClick();
-    },
-    [onClick],
-  );
-  const onKeyWrapper = React.useCallback(
-    (event: React.KeyboardEvent<HTMLElement>) =>
-      isAccessibilityClick(event) && onClick(),
-    [onClick],
-  );
+  // FIXME: Use useCallback() here when React is updated.
+  const onClickWrapper = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    onClick();
+  };
+  const onKeyWrapper = (event: React.KeyboardEvent<HTMLElement>) =>
+    isAccessibilityClick(event) && onClick();
 
   const cardClasses = getClassName(
     getCardClassName('bpk-card'),
