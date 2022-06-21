@@ -30,7 +30,7 @@ import GP_STYLES from './BpkGraphicPromo.module.scss';
 const getClassName = cssModules(GP_STYLES);
 const getCardClassName = cssModules(CARD_STYLES);
 
-const ACCESSIBILITY_KEYS = [13, 32];
+const ACCESSIBILITY_KEYS = [13 /* Enter */, 32 /* Space */];
 
 export const TEXT_ALIGN = {
   start: 'start',
