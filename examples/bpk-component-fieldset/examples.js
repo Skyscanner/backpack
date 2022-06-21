@@ -514,7 +514,7 @@ const MixedExample = () => (
 
 const SplitInputExample = () => (
   <BpkSplitInput
-    type={INPUT_TYPES.tel}
+    type={INPUT_TYPES.number}
     name="otpInput"
     id="otpInput"
     label="otp input"

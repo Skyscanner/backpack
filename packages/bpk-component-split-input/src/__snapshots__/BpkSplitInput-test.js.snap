@@ -18,7 +18,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -35,7 +35,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -52,7 +52,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -69,7 +69,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -86,7 +86,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -103,7 +103,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
 </div>
@@ -127,7 +127,7 @@ exports[`BpkSplitInput should render correctly with large set as false 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -144,7 +144,7 @@ exports[`BpkSplitInput should render correctly with large set as false 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -161,7 +161,7 @@ exports[`BpkSplitInput should render correctly with large set as false 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -178,7 +178,7 @@ exports[`BpkSplitInput should render correctly with large set as false 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
 </div>
@@ -202,7 +202,7 @@ exports[`BpkSplitInput should render correctly with placeholder 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder="x"
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -219,7 +219,7 @@ exports[`BpkSplitInput should render correctly with placeholder 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder="x"
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -236,7 +236,7 @@ exports[`BpkSplitInput should render correctly with placeholder 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder="x"
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -253,7 +253,7 @@ exports[`BpkSplitInput should render correctly with placeholder 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder="x"
-    type="tel"
+    type="number"
     value=""
   />
 </div>
@@ -277,7 +277,7 @@ exports[`BpkSplitInput should render without crashing 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -294,7 +294,7 @@ exports[`BpkSplitInput should render without crashing 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -311,7 +311,7 @@ exports[`BpkSplitInput should render without crashing 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
   <BpkInputField
@@ -328,7 +328,7 @@ exports[`BpkSplitInput should render without crashing 1`] = `
     onKeyDown={[Function]}
     onPaste={[Function]}
     placeholder=""
-    type="tel"
+    type="number"
     value=""
   />
 </div>

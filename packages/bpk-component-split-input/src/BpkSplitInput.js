@@ -226,7 +226,6 @@ BpkSplitInput.propTypes = {
   type: PropTypes.oneOf([
     INPUT_TYPES.text,
     INPUT_TYPES.number,
-    INPUT_TYPES.tel,
   ]),
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
@@ -239,7 +238,7 @@ BpkSplitInput.propTypes = {
 };
 
 BpkSplitInput.defaultProps = {
-  type: INPUT_TYPES.tel,
+  type: INPUT_TYPES.number,
   inputLength: 4,
   large: true,
   placeholder: '',
