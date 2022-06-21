@@ -30,6 +30,8 @@ import GP_STYLES from './BpkGraphicPromo.module.scss';
 const getClassName = cssModules(GP_STYLES);
 const getCardClassName = cssModules(CARD_STYLES);
 
+const ACCESSIBILITY_KEYS = [13, 32];
+
 export const TEXT_ALIGN = {
   start: 'start',
   center: 'center',
@@ -91,8 +93,15 @@ const BpkGraphicPromo = (props: Props) => {
   } = props;
 
   // FIXME: Use useCallback() here when React is updated.
-  const onClickWrapper = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
+  const onClickWrapper = (
+    event: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>,
+  ) => {
+    if (event.type === 'click') {
+      event.stopPropagation();
+    } else if (!ACCESSIBILITY_KEYS.includes(event.keyCode || event.which)) {
+      return;
+    }
+
     onClick();
   };
 
@@ -109,14 +118,19 @@ const BpkGraphicPromo = (props: Props) => {
 
   const getTextClasses = (baseClass: string) =>
     getClassName(baseClass, `${baseClass}--${textAlign}`);
+
   return (
+    // The card appears as a single component for the screen reader; its children are hidden. The card handles mouse
+    // clicks and key presses (Enter) for the whole component, as described here:
+    // https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
     <div
       className={cardClasses}
       style={style}
-      onClick={onClickWrapper}
       role="link"
       aria-label={constructAriaLabel(props)}
       tabIndex={0}
+      onClick={onClickWrapper}
+      onKeyDown={onClickWrapper}
     >
       <div className={containerClasses} aria-hidden>
         <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
