@@ -41,7 +41,7 @@ const subheading =
 describe('BpkGraphicPromo accessibility tests', () => {
   // TODO: Temporarily disabling tests due to a newer version of jest-axe which causes tests to fail when using nested interactive elements
 
-  it.skip('should not have programmatically-detectable accessibility issues', async () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkGraphicPromo
         className="test"
@@ -59,7 +59,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it.skip('should not have programmatically-detectable accessibility issues in centre aligned', async () => {
+  it('should not have programmatically-detectable accessibility issues in centre aligned', async () => {
     const { container } = render(
       <BpkGraphicPromo
         tagline={tagline}
@@ -76,7 +76,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it.skip('should not have programmatically-detectable accessibility issues in right aligned', async () => {
+  it('should not have programmatically-detectable accessibility issues in right aligned', async () => {
     const { container } = render(
       <BpkGraphicPromo
         tagline={tagline}
@@ -93,7 +93,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it.skip('should not have programmatically-detectable accessibility issues in inverted portrait', async () => {
+  it('should not have programmatically-detectable accessibility issues in inverted portrait', async () => {
     const { container } = render(
       <BpkGraphicPromo
         tagline={tagline}
@@ -111,7 +111,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it.skip('should not have programmatically-detectable accessibility issues when optional text is missing', async () => {
+  it('should not have programmatically-detectable accessibility issues when optional text is missing', async () => {
     const { container } = render(
       <BpkGraphicPromo
         headline={headline}
@@ -126,7 +126,7 @@ describe('BpkGraphicPromo accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it.skip('should not have programmatically-detectable accessibility issues in non-sponsored', async () => {
+  it('should not have programmatically-detectable accessibility issues in non-sponsored', async () => {
     const { container } = render(
       <BpkGraphicPromo
         tagline={tagline}

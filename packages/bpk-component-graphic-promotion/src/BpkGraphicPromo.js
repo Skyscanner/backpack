@@ -22,11 +22,13 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
-import BpkCard from 'bpk-component-card';
 
-import STYLES from './BpkGraphicPromo.module.scss';
+import CARD_STYLES from '../../bpk-component-card/src/BpkCard.module.scss';
 
-const getClassName = cssModules(STYLES);
+import GP_STYLES from './BpkGraphicPromo.module.scss';
+
+const getClassName = cssModules(GP_STYLES);
+const getCardClassName = cssModules(CARD_STYLES);
 
 export const TEXT_ALIGN = {
   start: 'start',
@@ -94,7 +96,11 @@ const BpkGraphicPromo = (props: Props) => {
     onClick();
   };
 
-  const cardClasses = getClassName('bpk-graphic-promo', className);
+  const cardClasses = getClassName(
+    getCardClassName('bpk-card'),
+    'bpk-graphic-promo',
+    className,
+  );
   const containerClasses = getClassName(
     'bpk-graphic-promo__container',
     `bpk-graphic-promo__container--${textAlign}`,
@@ -104,12 +110,13 @@ const BpkGraphicPromo = (props: Props) => {
   const getTextClasses = (baseClass: string) =>
     getClassName(baseClass, `${baseClass}--${textAlign}`);
   return (
-    <BpkCard
+    <div
       className={cardClasses}
       style={style}
       onClick={onClickWrapper}
+      role="link"
       aria-label={constructAriaLabel(props)}
-      padded={false}
+      tabIndex={0}
     >
       <div className={containerClasses} aria-hidden>
         <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
@@ -162,7 +169,7 @@ const BpkGraphicPromo = (props: Props) => {
           </BpkButton>
         </div>
       </div>
-    </BpkCard>
+    </div>
   );
 };
 
