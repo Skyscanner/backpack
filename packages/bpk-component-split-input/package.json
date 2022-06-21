@@ -1,9 +1,8 @@
 {
   "name": "bpk-component-split-input",
-  "version": "1.1.10",
+  "version": "0.0.1",
   "description": "Backpack split-input component.",
   "license": "Apache-2.0",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
