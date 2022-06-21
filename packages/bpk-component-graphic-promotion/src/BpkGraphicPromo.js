@@ -35,6 +35,10 @@ const ACCESSIBILITY_KEYS = {
   Space: 32 /* Space */,
 };
 
+const isAccessibilityClick = (event: React.KeyboardEvent<HTMLElement>) =>
+  Object.keys(ACCESSIBILITY_KEYS).includes(event.key) ||
+  Object.values(ACCESSIBILITY_KEYS).includes(event.keyCode || event.which);
+
 export const TEXT_ALIGN = {
   start: 'start',
   center: 'center',
@@ -101,11 +105,7 @@ const BpkGraphicPromo = (props: Props) => {
     ) => {
       if (event.type === 'click') {
         event.stopPropagation();
-      } else if (
-        !Object.values(ACCESSIBILITY_KEYS).includes(
-          event.keyCode || event.which,
-        )
-      ) {
+      } else if (!isAccessibilityClick(event)) {
         return;
       }
 
