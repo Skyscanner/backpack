@@ -223,10 +223,7 @@ class BpkSplitInput extends Component {
 }
 
 BpkSplitInput.propTypes = {
-  type: PropTypes.oneOf([
-    INPUT_TYPES.text,
-    INPUT_TYPES.number,
-  ]),
+  type: PropTypes.oneOf([INPUT_TYPES.text, INPUT_TYPES.number]),
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

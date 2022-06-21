@@ -1,335 +1,861 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
-<div
-  className="BpkSplitInput"
->
-  <BpkInputField
-    focus={true}
-    id="otpInput-0"
-    index={0}
-    key="0"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-1"
-    index={1}
-    key="1"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-2"
-    index={2}
-    key="2"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-3"
-    index={3}
-    key="3"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-4"
-    index={4}
-    key="4"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-5"
-    index={5}
-    key="5"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-</div>
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="BpkSplitInput"
+      >
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 0"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-0"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 1"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-1"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 2"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-2"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 3"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-3"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 4"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-4"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 5"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-5"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="BpkSplitInput"
+    >
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 0"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-0"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 1"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-1"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 2"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-2"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 3"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-3"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 4"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-4"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 5"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-5"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`BpkSplitInput should render correctly with large set as false 1`] = `
-<div
-  className="BpkSplitInput"
->
-  <BpkInputField
-    focus={true}
-    id="otpInput-0"
-    index={0}
-    key="0"
-    label="otp input"
-    large={false}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-1"
-    index={1}
-    key="1"
-    label="otp input"
-    large={false}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-2"
-    index={2}
-    key="2"
-    label="otp input"
-    large={false}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-3"
-    index={3}
-    key="3"
-    label="otp input"
-    large={false}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-</div>
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="BpkSplitInput"
+      >
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 0"
+            autocomplete="off"
+            class="bpk-input"
+            id="otpInput-0"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 1"
+            autocomplete="off"
+            class="bpk-input"
+            id="otpInput-1"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 2"
+            autocomplete="off"
+            class="bpk-input"
+            id="otpInput-2"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 3"
+            autocomplete="off"
+            class="bpk-input"
+            id="otpInput-3"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="BpkSplitInput"
+    >
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 0"
+          autocomplete="off"
+          class="bpk-input"
+          id="otpInput-0"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 1"
+          autocomplete="off"
+          class="bpk-input"
+          id="otpInput-1"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 2"
+          autocomplete="off"
+          class="bpk-input"
+          id="otpInput-2"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 3"
+          autocomplete="off"
+          class="bpk-input"
+          id="otpInput-3"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`BpkSplitInput should render correctly with placeholder 1`] = `
-<div
-  className="BpkSplitInput"
->
-  <BpkInputField
-    focus={true}
-    id="otpInput-0"
-    index={0}
-    key="0"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder="x"
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-1"
-    index={1}
-    key="1"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder="x"
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-2"
-    index={2}
-    key="2"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder="x"
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-3"
-    index={3}
-    key="3"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder="x"
-    type="number"
-    value=""
-  />
-</div>
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="BpkSplitInput"
+      >
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 0"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-0"
+            maxlength="1"
+            name="otpInput"
+            placeholder="x"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 1"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-1"
+            maxlength="1"
+            name="otpInput"
+            placeholder="x"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 2"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-2"
+            maxlength="1"
+            name="otpInput"
+            placeholder="x"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 3"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-3"
+            maxlength="1"
+            name="otpInput"
+            placeholder="x"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="BpkSplitInput"
+    >
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 0"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-0"
+          maxlength="1"
+          name="otpInput"
+          placeholder="x"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 1"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-1"
+          maxlength="1"
+          name="otpInput"
+          placeholder="x"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 2"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-2"
+          maxlength="1"
+          name="otpInput"
+          placeholder="x"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 3"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-3"
+          maxlength="1"
+          name="otpInput"
+          placeholder="x"
+          type="number"
+          value=""
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`BpkSplitInput should render without crashing 1`] = `
-<div
-  className="BpkSplitInput"
->
-  <BpkInputField
-    focus={true}
-    id="otpInput-0"
-    index={0}
-    key="0"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-1"
-    index={1}
-    key="1"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-2"
-    index={2}
-    key="2"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-  <BpkInputField
-    focus={false}
-    id="otpInput-3"
-    index={3}
-    key="3"
-    label="otp input"
-    large={true}
-    name="otpInput"
-    onChange={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
-    placeholder=""
-    type="number"
-    value=""
-  />
-</div>
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="BpkSplitInput"
+      >
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 0"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-0"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 1"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-1"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 2"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-2"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="BpkInputField"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="otp input 3"
+            autocomplete="off"
+            class="bpk-input bpk-input--large"
+            id="otpInput-3"
+            maxlength="1"
+            name="otpInput"
+            placeholder=""
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="BpkSplitInput"
+    >
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 0"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-0"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 1"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-1"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 2"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-2"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="BpkInputField"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="otp input 3"
+          autocomplete="off"
+          class="bpk-input bpk-input--large"
+          id="otpInput-3"
+          maxlength="1"
+          name="otpInput"
+          placeholder=""
+          type="number"
+          value=""
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
