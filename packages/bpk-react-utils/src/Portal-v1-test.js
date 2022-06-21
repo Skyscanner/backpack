@@ -24,7 +24,7 @@ import { render as reactDomRender, unmountComponentAtNode } from 'react-dom';
 import PortalV1 from './Portal-v1';
 
 const KEYCODES = {
-  ESCAPE: 27,
+  ESCAPE: 'Escape',
 };
 
 describe('Portal', () => {
@@ -224,7 +224,7 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    const event = new KeyboardEvent('keydown', { key: KEYCODES.ESCAPE });
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls.length).toEqual(1);
@@ -250,7 +250,7 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    const event = new KeyboardEvent('keydown', { key: KEYCODES.ESCAPE });
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
@@ -271,7 +271,7 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    const event = new KeyboardEvent('keydown', { key: KEYCODES.ESCAPE });
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls[0][0]).toEqual(event);
@@ -293,7 +293,7 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    const event = new KeyboardEvent('keydown', { key: KEYCODES.ESCAPE });
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
@@ -314,7 +314,7 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    const event = new KeyboardEvent('keydown', { key: KEYCODES.ESCAPE });
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls.length).toEqual(1);

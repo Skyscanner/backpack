@@ -22,7 +22,7 @@ import assign from 'object-assign';
 import PropTypes from 'prop-types';
 
 const KEYCODES = {
-  ESCAPE: '27',
+  ESCAPE: 'Escape',
 };
 
 class Portal extends Component {

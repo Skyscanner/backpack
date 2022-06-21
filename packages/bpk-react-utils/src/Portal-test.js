@@ -22,7 +22,7 @@ import { render, waitFor, fireEvent } from '@testing-library/react';
 import Portal from './Portal';
 
 const KEYCODES = {
-  ESCAPE: '27',
+  ESCAPE: 'Escape',
 };
 
 describe('Portal', () => {
@@ -443,7 +443,7 @@ describe('Portal', () => {
     expect(onCloseSpy).toHaveBeenCalledTimes(0);
 
     const event = new KeyboardEvent('keydown', {
-      keyCode: KEYCODES.ESCAPE,
+      key: KEYCODES.ESCAPE,
     });
 
     document.dispatchEvent(event);
@@ -486,7 +486,7 @@ describe('Portal', () => {
     expect(onCloseSpy).toHaveBeenCalledTimes(0);
 
     const event = new KeyboardEvent('keydown', {
-      keyCode: KEYCODES.ESCAPE,
+      key: KEYCODES.ESCAPE,
     });
 
     document.dispatchEvent(event);

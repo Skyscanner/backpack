@@ -26,7 +26,7 @@ import assign from 'object-assign';
 import PropTypes from 'prop-types';
 
 const KEYCODES = {
-  ESCAPE: 27,
+  ESCAPE: 'Escape',
 };
 
 class PortalV1 extends Component {
@@ -118,7 +118,7 @@ class PortalV1 extends Component {
 
   onDocumentKeyDown(event) {
     if (
-      event.keyCode === KEYCODES.ESCAPE &&
+      event.key === KEYCODES.ESCAPE &&
       this.props.isOpen &&
       this.props.closeOnEscPressed
     ) {
