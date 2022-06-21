@@ -100,7 +100,12 @@ const BpkFloatingNotification = (props: Props) => {
       exit={animateOnExit}
       unmountOnExit
     >
-      <div className={classNames} {...rest}>
+      <div
+        className={classNames}
+        {...rest}
+        role="alertdialog"
+        aria-describedby="dialogdesc"
+      >
         {Icon && (
           <div className={iconClassNames}>
             <Icon />
@@ -110,6 +115,7 @@ const BpkFloatingNotification = (props: Props) => {
           tagName="p"
           textStyle={TEXT_STYLES.bodyDefault}
           className={getClassName('bpk-floating-notification__text')}
+          id="dialogdesc"
         >
           {text}
         </BpkText>
