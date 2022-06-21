@@ -100,17 +100,15 @@ const BpkGraphicPromo = (props: Props) => {
   } = props;
 
   const onClickWrapper = React.useCallback(
-    (
-      event: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>,
-    ) => {
-      if (event.type === 'click') {
-        event.stopPropagation();
-      } else if (!isAccessibilityClick(event)) {
-        return;
-      }
-
+    (event: React.MouseEvent<HTMLElement>) => {
+      event.stopPropagation();
       onClick();
     },
+    [onClick],
+  );
+  const onKeyWrapper = React.useCallback(
+    (event: React.KeyboardEvent<HTMLElement>) =>
+      isAccessibilityClick(event) && onClick(),
     [onClick],
   );
 
@@ -139,7 +137,7 @@ const BpkGraphicPromo = (props: Props) => {
       aria-label={constructAriaLabel(props)}
       tabIndex={0}
       onClick={onClickWrapper}
-      onKeyDown={onClickWrapper}
+      onKeyDown={onKeyWrapper}
     >
       <div className={containerClasses} aria-hidden>
         <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
