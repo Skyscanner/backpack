@@ -3,10 +3,14 @@
 exports[`BpkFloatingNotification should render correctly 1`] = `
 <DocumentFragment>
   <div
+    aria-describedby="dialogdesc"
+    aria-label="alert"
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    role="alertdialog"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
+      id="dialogdesc"
     >
       Saved
     </p>
@@ -17,10 +21,14 @@ exports[`BpkFloatingNotification should render correctly 1`] = `
 exports[`BpkFloatingNotification should render correctly in dark mode (prop) 1`] = `
 <DocumentFragment>
   <div
+    aria-describedby="dialogdesc"
+    aria-label="alert"
     class="bpk-floating-notification bpk-floating-notification--dark bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    role="alertdialog"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
+      id="dialogdesc"
     >
       Saved
     </p>
@@ -31,10 +39,14 @@ exports[`BpkFloatingNotification should render correctly in dark mode (prop) 1`]
 exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
 <DocumentFragment>
   <div
+    aria-describedby="dialogdesc"
+    aria-label="alert"
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    role="alertdialog"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
+      id="dialogdesc"
     >
       Saved
     </p>
@@ -51,10 +63,14 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
 exports[`BpkFloatingNotification should render correctly with CTA text in dark mode 1`] = `
 <DocumentFragment>
   <div
+    aria-describedby="dialogdesc"
+    aria-label="alert"
     class="bpk-floating-notification bpk-floating-notification--dark bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    role="alertdialog"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
+      id="dialogdesc"
     >
       Saved
     </p>
@@ -71,7 +87,10 @@ exports[`BpkFloatingNotification should render correctly with CTA text in dark m
 exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
 <DocumentFragment>
   <div
+    aria-describedby="dialogdesc"
+    aria-label="alert"
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    role="alertdialog"
   >
     <div
       class="bpk-floating-notification__icon"
@@ -90,6 +109,7 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
     </div>
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
+      id="dialogdesc"
     >
       Saved
     </p>
@@ -100,7 +120,10 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
 exports[`BpkFloatingNotification should render correctly with icon prop in dark mode 1`] = `
 <DocumentFragment>
   <div
+    aria-describedby="dialogdesc"
+    aria-label="alert"
     class="bpk-floating-notification bpk-floating-notification--dark bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    role="alertdialog"
   >
     <div
       class="bpk-floating-notification__icon bpk-floating-notification__icon--dark"
@@ -119,6 +142,7 @@ exports[`BpkFloatingNotification should render correctly with icon prop in dark 
     </div>
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
+      id="dialogdesc"
     >
       Saved
     </p>
@@ -129,11 +153,15 @@ exports[`BpkFloatingNotification should render correctly with icon prop in dark 
 exports[`BpkFloatingNotification should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
+    aria-describedby="dialogdesc"
+    aria-label="alert"
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    role="alertdialog"
     testid="123"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
+      id="dialogdesc"
     >
       Saved
     </p>
@@ -144,10 +172,14 @@ exports[`BpkFloatingNotification should support arbitrary props 1`] = `
 exports[`BpkFloatingNotification should support custom class names 1`] = `
 <DocumentFragment>
   <div
+    aria-describedby="dialogdesc"
+    aria-label="alert"
     class="bpk-floating-notification custom-classname bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    role="alertdialog"
   >
     <p
       class="bpk-text bpk-text--body-default bpk-floating-notification__text"
+      id="dialogdesc"
     >
       Saved
     </p>

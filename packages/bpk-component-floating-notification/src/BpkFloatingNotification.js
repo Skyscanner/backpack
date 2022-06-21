@@ -105,6 +105,7 @@ const BpkFloatingNotification = (props: Props) => {
         {...rest}
         role="alertdialog"
         aria-describedby="dialogdesc"
+        aria-label="alert"
       >
         {Icon && (
           <div className={iconClassNames}>
