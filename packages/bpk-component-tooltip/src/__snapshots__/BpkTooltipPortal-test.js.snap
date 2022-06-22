@@ -2,7 +2,7 @@
 
 exports[`BpkTooltipPortal should render correctly 1`] = `
 <DocumentFragment>
-  <portal
+  <portalv1
     class="bpk-tooltip-portal"
     target="[object Object]"
   >
@@ -24,13 +24,13 @@ exports[`BpkTooltipPortal should render correctly 1`] = `
         My tooltip content
       </div>
     </section>
-  </portal>
+  </portalv1>
 </DocumentFragment>
 `;
 
 exports[`BpkTooltipPortal should render correctly with a custom portal className 1`] = `
 <DocumentFragment>
-  <portal
+  <portalv1
     class="bpk-tooltip-portal my-custom-class"
     target="[object Object]"
   >
@@ -52,13 +52,13 @@ exports[`BpkTooltipPortal should render correctly with a custom portal className
         My tooltip content
       </div>
     </section>
-  </portal>
+  </portalv1>
 </DocumentFragment>
 `;
 
 exports[`BpkTooltipPortal should render correctly with a custom tooltip className 1`] = `
 <DocumentFragment>
-  <portal
+  <portalv1
     class="bpk-tooltip-portal"
     target="[object Object]"
   >
@@ -80,13 +80,13 @@ exports[`BpkTooltipPortal should render correctly with a custom tooltip classNam
         My tooltip content
       </div>
     </section>
-  </portal>
+  </portalv1>
 </DocumentFragment>
 `;
 
 exports[`BpkTooltipPortal should render correctly with custom portal style 1`] = `
 <DocumentFragment>
-  <portal
+  <portalv1
     class="bpk-tooltip-portal"
     style="color: rgb(209, 67, 91);"
     target="[object Object]"
@@ -109,6 +109,6 @@ exports[`BpkTooltipPortal should render correctly with custom portal style 1`] =
         My tooltip content
       </div>
     </section>
-  </portal>
+  </portalv1>
 </DocumentFragment>
 `;

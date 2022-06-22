@@ -21,7 +21,7 @@
 import { createPopper, basePlacements } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node, type Element } from 'react';
-import { Portal, cssModules } from 'bpk-react-utils';
+import { PortalV1, cssModules } from 'bpk-react-utils';
 
 import BpkTooltip, {
   propTypes as tooltipPropTypes,
@@ -195,7 +195,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     }
 
     return renderPortal ? (
-      <Portal
+      <PortalV1
         target={targetWithAccessibilityProps}
         targetRef={(targetRef) => {
           this.targetRef = targetRef;
@@ -211,7 +211,7 @@ class BpkTooltipPortal extends Component<Props, State> {
         <BpkTooltip padded={padded} {...rest}>
           {children}
         </BpkTooltip>
-      </Portal>
+      </PortalV1>
     ) : (
       targetWithAccessibilityProps
     );
