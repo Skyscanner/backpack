@@ -14,950 +14,224 @@ exports[`withInfiniteScroll renders an empty list for the first render 1`] = `
 `;
 
 exports[`withInfiniteScroll renders correctly with different initial and onScroll numbers 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={2}
-  initiallyLoadedElements={3}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
     <div
-      className="bpk-sentinel"
+      id="list"
+    />
+    <div
+      class="bpk-sentinel"
     />
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll renders items after the first render 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={
-        Array [
-          "Element 0",
-          "Element 1",
-          "Element 2",
-          "Element 3",
-          "Element 4",
-        ]
-      }
-    >
-      <div
-        id="list"
-      >
-        <div
-          key="Element 0"
-        >
-          Element 0
-        </div>
-        <div
-          key="Element 1"
-        >
-          Element 1
-        </div>
-        <div
-          key="Element 2"
-        >
-          Element 2
-        </div>
-        <div
-          key="Element 3"
-        >
-          Element 3
-        </div>
-        <div
-          key="Element 4"
-        >
-          Element 4
-        </div>
-      </div>
-    </List>
     <div
-      className="bpk-sentinel"
+      id="list"
+    >
+      <div>
+        Element 0
+      </div>
+      <div>
+        Element 1
+      </div>
+      <div>
+        Element 2
+      </div>
+      <div>
+        Element 3
+      </div>
+      <div>
+        Element 4
+      </div>
+    </div>
+    <div
+      class="bpk-sentinel"
     />
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should finish the list when array changes to empty 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [],
-      "fetchItems": [MockFunction] {
-        "calls": Array [
-          Array [
-            0,
-            5,
-          ],
-          Array [
-            0,
-            5,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      },
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={1}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
-            "totalNumberElements": 0,
-          },
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={0}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
+    <div
+      id="list"
+    />
   </div>
-</WithInfiniteScroll>
-`;
-
-exports[`withInfiniteScroll should finish the list when data source changes to an empty data source 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [],
-      "fetchItems": [MockFunction] {
-        "calls": Array [
-          Array [
-            0,
-            1,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      },
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={1}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
-            "totalNumberElements": 0,
-          },
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={0}
->
-  <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
-  </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should finish the list when data source returns less than the number of elements requested 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "fetchItems": [MockFunction] {
-        "calls": Array [
-          Array [
-            0,
-            3,
-          ],
-          Array [
-            0,
-            3,
-          ],
-          Array [
-            3,
-            3,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      },
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={3}
-  initiallyLoadedElements={3}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
-            "totalNumberElements": 3,
-          },
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
     <div
-      className="bpk-sentinel"
-    />
+      id="list"
+    >
+      <div>
+        Element 0
+      </div>
+      <div>
+        Element 1
+      </div>
+      <div>
+        Element 2
+      </div>
+      <div>
+        Element 3
+      </div>
+      <div>
+        Element 4
+      </div>
+    </div>
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should pass extra props to the decorated component 1`] = `
-<WithInfiniteScroll
-  aria-label="Test"
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      aria-label="Test"
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
     <div
-      className="bpk-sentinel"
+      id="list"
+    />
+    <div
+      class="bpk-sentinel"
     />
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should refresh data when data changes 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        1,
-        2,
-        3,
-      ],
-      "fetchItems": [MockFunction] {
-        "calls": Array [
-          Array [
-            0,
-            5,
-          ],
-          Array [
-            0,
-            5,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      },
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={
-        Array [
-          1,
-          2,
-          3,
-        ]
-      }
+    <div
+      id="list"
     >
-      <div
-        id="list"
-      >
-        <div
-          key="1"
-        >
-          1
-        </div>
-        <div
-          key="2"
-        >
-          2
-        </div>
-        <div
-          key="3"
-        >
-          3
-        </div>
+      <div>
+        1
       </div>
-    </List>
+      <div>
+        2
+      </div>
+      <div>
+        3
+      </div>
+    </div>
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should refresh data when data changes from an empty Array 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        1,
-        2,
-        3,
-      ],
-      "fetchItems": [MockFunction] {
-        "calls": Array [
-          Array [
-            0,
-            5,
-          ],
-          Array [
-            0,
-            5,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      },
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={
-        Array [
-          1,
-          2,
-          3,
-        ]
-      }
+    <div
+      id="list"
     >
-      <div
-        id="list"
-      >
-        <div
-          key="1"
-        >
-          1
-        </div>
-        <div
-          key="2"
-        >
-          2
-        </div>
-        <div
-          key="3"
-        >
-          3
-        </div>
+      <div>
+        1
       </div>
-    </List>
-  </div>
-</WithInfiniteScroll>
-`;
-
-exports[`withInfiniteScroll should refresh data when data source changes from an empty data source 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        1,
-        2,
-        3,
-      ],
-      "fetchItems": [MockFunction] {
-        "calls": Array [
-          Array [
-            0,
-            5,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      },
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
-  <div>
-    <List
-      elements={
-        Array [
-          1,
-          2,
-          3,
-        ]
-      }
-    >
-      <div
-        id="list"
-      >
-        <div
-          key="1"
-        >
-          1
-        </div>
-        <div
-          key="2"
-        >
-          2
-        </div>
-        <div
-          key="3"
-        >
-          3
-        </div>
+      <div>
+        2
       </div>
-    </List>
-  </div>
-</WithInfiniteScroll>
-`;
-
-exports[`withInfiniteScroll should refresh when data source changes 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        1,
-        2,
-        3,
-      ],
-      "fetchItems": [MockFunction] {
-        "calls": Array [
-          Array [
-            0,
-            5,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      },
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
-  <div>
-    <List
-      elements={
-        Array [
-          1,
-          2,
-          3,
-        ]
-      }
-    >
-      <div
-        id="list"
-      >
-        <div
-          key="1"
-        >
-          1
-        </div>
-        <div
-          key="2"
-        >
-          2
-        </div>
-        <div
-          key="3"
-        >
-          3
-        </div>
+      <div>
+        3
       </div>
-    </List>
+    </div>
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should render correctly when no more elements 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={
-        Array [
-          "Element 0",
-          "Element 1",
-          "Element 2",
-          "Element 3",
-          "Element 4",
-        ]
-      }
+    <div
+      id="list"
     >
-      <div
-        id="list"
-      >
-        <div
-          key="Element 0"
-        >
-          Element 0
-        </div>
-        <div
-          key="Element 1"
-        >
-          Element 1
-        </div>
-        <div
-          key="Element 2"
-        >
-          Element 2
-        </div>
-        <div
-          key="Element 3"
-        >
-          Element 3
-        </div>
-        <div
-          key="Element 4"
-        >
-          Element 4
-        </div>
+      <div>
+        Element 0
       </div>
-    </List>
+      <div>
+        Element 1
+      </div>
+      <div>
+        Element 2
+      </div>
+      <div>
+        Element 3
+      </div>
+      <div>
+        Element 4
+      </div>
+    </div>
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should render correctly with a "loaderIntersectionTrigger" attribute 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="small"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={[Function]}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
     <div
-      className={null}
-    >
+      id="list"
+    />
+    <div>
       <span>
         Loading
       </span>
     </div>
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should render correctly with a "renderLoadingComponent" attribute 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={[Function]}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
     <div
-      className={null}
-    >
+      id="list"
+    />
+    <div>
       <span>
         Loading
       </span>
     </div>
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should render correctly with a "renderSeeMoreComponent" attribute 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={1}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={[Function]}
-  seeMoreAfter={0}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={
-        Array [
-          "Element 0",
-        ]
-      }
+    <div
+      id="list"
     >
-      <div
-        id="list"
-      >
-        <div
-          key="Element 0"
-        >
-          Element 0
-        </div>
+      <div>
+        Element 0
       </div>
-    </List>
+    </div>
     <button
-      onClick={[Function]}
       type="button"
     >
       see more
     </button>
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" attribute 1`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={1}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
+<DocumentFragment>
   <div>
-    <List
-      elements={
-        Array [
-          "Element 0",
-        ]
-      }
-    >
-      <div
-        id="list"
-      >
-        <div
-          key="Element 0"
-        >
-          Element 0
-        </div>
-      </div>
-    </List>
     <div
-      className="bpk-sentinel"
+      id="list"
+    >
+      <div>
+        Element 0
+      </div>
+    </div>
+    <div
+      class="bpk-sentinel"
     />
   </div>
-</WithInfiniteScroll>
+</DocumentFragment>
 `;

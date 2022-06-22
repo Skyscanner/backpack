@@ -18,9 +18,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
@@ -81,42 +80,38 @@ describe('withInfiniteScroll', () => {
   });
 
   it('renders items after the first render', async () => {
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />,
     );
-
     await intersect();
-    tree.update();
 
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders correctly with different initial and onScroll numbers', () => {
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         initiallyLoadedElements={3}
         elementsPerScroll={2}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when no more elements', async () => {
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />,
     );
 
     await intersect();
-    tree.update();
     await intersect();
-    tree.update();
 
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an "elementsPerScroll" attribute', async () => {
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         elementsPerScroll={1}
@@ -124,13 +119,12 @@ describe('withInfiniteScroll', () => {
     );
 
     await intersect();
-    tree.update();
 
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "renderSeeMoreComponent" attribute', async () => {
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         elementsPerScroll={1}
@@ -144,24 +138,23 @@ describe('withInfiniteScroll', () => {
     );
 
     await intersect();
-    tree.update();
 
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "renderLoadingComponent" attribute', () => {
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         renderLoadingComponent={() => <span>Loading</span>}
       />,
     );
 
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "loaderIntersectionTrigger" attribute', () => {
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         renderLoadingComponent={() => <span>Loading</span>}
@@ -169,11 +162,11 @@ describe('withInfiniteScroll', () => {
       />,
     );
 
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should create the IntersectionObserver with a 0.01 threshold if the prop is set to "small"', () => {
-    mount(
+    render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         renderLoadingComponent={() => <span>Loading</span>}
@@ -185,7 +178,7 @@ describe('withInfiniteScroll', () => {
   });
 
   it('should create the IntersectionObserver with a 0.5 threshold if the prop is set to "half"', () => {
-    mount(
+    render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         renderLoadingComponent={() => <span>Loading</span>}
@@ -197,7 +190,7 @@ describe('withInfiniteScroll', () => {
   });
 
   it('should create the IntersectionObserver with a 0.99 threshold if the prop is set to "full"', () => {
-    mount(
+    render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         renderLoadingComponent={() => <span>Loading</span>}
@@ -209,25 +202,25 @@ describe('withInfiniteScroll', () => {
   });
 
   it('should create the IntersectionObserver with a 0.99 threshold if the prop is not set', () => {
-    mount(<InfiniteList dataSource={new ArrayDataSource(elementsArray)} />);
+    render(<InfiniteList dataSource={new ArrayDataSource(elementsArray)} />);
 
     expect(currentOptions).toEqual({ threshold: 0.99 });
   });
 
   it('should pass extra props to the decorated component', () => {
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         aria-label="Test"
       />,
     );
 
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should call onScroll on intersection fired', async () => {
     const spy = jest.fn();
-    mount(
+    render(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         onScroll={spy}
@@ -243,7 +236,7 @@ describe('withInfiniteScroll', () => {
 
   it('should call onScrollFinished when no more elements to render', async () => {
     const spy = jest.fn();
-    mount(
+    render(
       <InfiniteList
         dataSource={new ArrayDataSource([1, 2])}
         onScrollFinished={spy}
@@ -262,7 +255,7 @@ describe('withInfiniteScroll', () => {
   it('should fetch more items when see more is clicked', async () => {
     const myDs = mockDataSource(elementsArray);
 
-    const tree = mount(
+    render(
       <InfiniteList
         dataSource={myDs}
         elementsPerScroll={1}
@@ -276,39 +269,35 @@ describe('withInfiniteScroll', () => {
     );
 
     await intersect();
-    tree.update();
-
-    const button = tree.find('#test-button');
-    button.simulate('click');
-    expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
+    const button = screen.getByRole('button');
+    userEvent.click(button);
+    expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
   });
 
   it('should refresh data when data changes', async () => {
     const myDs = mockDataSource(elementsArray);
 
-    const tree = mount(<InfiniteList dataSource={myDs} />);
+    const { asFragment } = render(<InfiniteList dataSource={myDs} />);
     await nextTick();
 
     myDs.updateData([1, 2, 3]);
     await nextTick();
-    tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should refresh data when data changes from an empty Array', async () => {
     const myDs = mockDataSource(elementsArray);
 
-    const tree = mount(<InfiniteList dataSource={myDs} />);
+    const { asFragment } = render(<InfiniteList dataSource={myDs} />);
     await nextTick();
 
     myDs.updateData([1, 2, 3]);
     await nextTick();
-    tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should finish the list when array changes to empty', async () => {
@@ -316,7 +305,7 @@ describe('withInfiniteScroll', () => {
 
     const onFinished = jest.fn();
 
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList
         dataSource={myDs}
         seeMoreAfter={0}
@@ -328,45 +317,43 @@ describe('withInfiniteScroll', () => {
 
     myDs.updateData([]);
     await nextTick();
-    tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
     expect(onFinished).toHaveBeenCalled();
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should refresh when data source changes', async () => {
     const myDs = mockDataSource(elementsArray);
 
-    const tree = mount(<InfiniteList dataSource={myDs} />);
+    const { rerender } = render(<InfiniteList dataSource={myDs} />);
+
     await nextTick();
 
     const newDs = mockDataSource([1, 2, 3]);
 
-    tree.setProps({ dataSource: newDs });
+    rerender(<InfiniteList dataSource={newDs} />);
     await nextTick();
-    tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalled();
     expect(newDs.fetchItems).toHaveBeenCalled();
-    expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should refresh data when data source changes from an empty data source', async () => {
     const myDs = mockDataSource([]);
 
-    const tree = mount(<InfiniteList dataSource={myDs} />);
+    const { rerender } = render(<InfiniteList dataSource={myDs} />);
+
     await nextTick();
 
     const newDs = mockDataSource([1, 2, 3]);
 
-    tree.setProps({ dataSource: newDs });
+    rerender(<InfiniteList dataSource={newDs} />);
+
     await nextTick();
-    tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalled();
     expect(newDs.fetchItems).toHaveBeenCalled();
-    expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should finish the list when data source changes to an empty data source', async () => {
@@ -374,7 +361,7 @@ describe('withInfiniteScroll', () => {
 
     const onFinished = jest.fn();
 
-    const tree = mount(
+    const { rerender } = render(
       <InfiniteList
         dataSource={myDs}
         seeMoreAfter={0}
@@ -383,18 +370,22 @@ describe('withInfiniteScroll', () => {
       />,
     );
     await nextTick();
-    tree.update();
 
     const newDs = mockDataSource([]);
 
-    tree.setProps({ dataSource: newDs });
+    rerender(
+      <InfiniteList
+        dataSource={newDs}
+        seeMoreAfter={0}
+        elementsPerScroll={1}
+        onScrollFinished={onFinished}
+      />,
+    );
     await nextTick();
-    tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalled();
     expect(newDs.fetchItems).toHaveBeenCalled();
     expect(onFinished).toHaveBeenCalled();
-    expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should finish the list when data source returns less than the number of elements requested', async () => {
@@ -402,7 +393,7 @@ describe('withInfiniteScroll', () => {
 
     const onFinished = jest.fn();
 
-    const tree = mount(
+    const { asFragment } = render(
       <InfiniteList
         dataSource={myDs}
         elementsPerScroll={3}
@@ -415,6 +406,6 @@ describe('withInfiniteScroll', () => {
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
     expect(onFinished).toHaveBeenCalled();
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
