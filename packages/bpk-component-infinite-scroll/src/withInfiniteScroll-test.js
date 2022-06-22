@@ -269,8 +269,6 @@ describe('withInfiniteScroll', () => {
     );
 
     await intersect();
-    // tree.update();
-
     const button = screen.getByRole('button');
     userEvent.click(button);
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
@@ -284,7 +282,6 @@ describe('withInfiniteScroll', () => {
 
     myDs.updateData([1, 2, 3]);
     await nextTick();
-    // tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
     expect(asFragment()).toMatchSnapshot();
@@ -298,7 +295,6 @@ describe('withInfiniteScroll', () => {
 
     myDs.updateData([1, 2, 3]);
     await nextTick();
-    // tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
     expect(asFragment()).toMatchSnapshot();
