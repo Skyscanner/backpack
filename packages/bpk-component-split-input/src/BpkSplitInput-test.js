@@ -32,26 +32,32 @@ const defaultProps = {
 
 describe('BpkSplitInput', () => {
   it('should render without crashing', () => {
-    const wrapper = render(<BpkSplitInput {...defaultProps} />);
+    const { asFragment } = render(<BpkSplitInput {...defaultProps} />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with inputLength param', () => {
-    const wrapper = render(<BpkSplitInput {...defaultProps} inputLength={6} />);
+    const { asFragment } = render(
+      <BpkSplitInput {...defaultProps} inputLength={6} />,
+    );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with large set as false', () => {
-    const wrapper = render(<BpkSplitInput {...defaultProps} large={false} />);
+    const { asFragment } = render(
+      <BpkSplitInput {...defaultProps} large={false} />,
+    );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with placeholder', () => {
-    const wrapper = render(<BpkSplitInput {...defaultProps} placeholder="x" />);
+    const { asFragment } = render(
+      <BpkSplitInput {...defaultProps} placeholder="x" />,
+    );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

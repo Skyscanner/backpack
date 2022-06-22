@@ -99,10 +99,7 @@
     "transformIgnorePatterns": [
       "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
     ],
-    "verbose": true,
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "verbose": true
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
