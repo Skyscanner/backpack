@@ -45,9 +45,18 @@ class BpkSplitInput extends Component {
     };
   }
 
+  onInputChange = (input) => {
+    this.setState({ inputValue: input });
+    const { onChange } = this.props;
+    const value = input.join('');
+    onChange(value);
+  };
+
   updateInputValue = (value) => {
     const { focusedInput, inputValue } = this.state;
     inputValue[focusedInput] = value;
+
+    this.onInputChange(inputValue);
   };
 
   handleSubmit = () => {
@@ -71,9 +80,7 @@ class BpkSplitInput extends Component {
     return true;
   };
 
-  isNumeric = () =>
-    this.props.type === INPUT_TYPES.number ||
-    this.props.type === INPUT_TYPES.tel;
+  isNumeric = () => this.props.type === INPUT_TYPES.number;
 
   isInputValid = (value) => {
     const isTypeValid = this.isNumeric()
@@ -124,6 +131,7 @@ class BpkSplitInput extends Component {
         ? firstInvalidInputPosition
         : position,
     );
+    this.onInputChange(inputValue);
   };
 
   handleOnKeyDown = (e) => {
