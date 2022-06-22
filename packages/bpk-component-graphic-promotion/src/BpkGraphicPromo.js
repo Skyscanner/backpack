@@ -22,11 +22,19 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
-import BpkCard from 'bpk-component-card';
 
 import STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);
+
+const ACCESSIBILITY_KEYS = {
+  Enter: 13 /* Enter */,
+  Space: 32 /* Space */,
+};
+
+const isAccessibilityClick = (event: React.KeyboardEvent<HTMLElement>) =>
+  Object.keys(ACCESSIBILITY_KEYS).includes(event.key) ||
+  Object.values(ACCESSIBILITY_KEYS).includes(event.keyCode || event.which);
 
 export const TEXT_ALIGN = {
   start: 'start',
@@ -93,8 +101,10 @@ const BpkGraphicPromo = (props: Props) => {
     event.stopPropagation();
     onClick();
   };
+  const onKeyWrapper = (event: React.KeyboardEvent<HTMLElement>) =>
+    isAccessibilityClick(event) && onClick();
 
-  const cardClasses = getClassName('bpk-graphic-promo', className);
+  const cardClasses = getClassName('bpk-card', 'bpk-graphic-promo', className);
   const containerClasses = getClassName(
     'bpk-graphic-promo__container',
     `bpk-graphic-promo__container--${textAlign}`,
@@ -103,13 +113,19 @@ const BpkGraphicPromo = (props: Props) => {
 
   const getTextClasses = (baseClass: string) =>
     getClassName(baseClass, `${baseClass}--${textAlign}`);
+
   return (
-    <BpkCard
+    // The card appears as a single component for the screen reader; its children are hidden. The card handles mouse
+    // clicks and key presses (Enter/Space) for the whole component, as described here:
+    // https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
+    <div
       className={cardClasses}
       style={style}
-      onClick={onClickWrapper}
+      role="link"
       aria-label={constructAriaLabel(props)}
-      padded={false}
+      tabIndex={0}
+      onClick={onClickWrapper}
+      onKeyDown={onKeyWrapper}
     >
       <div className={containerClasses} aria-hidden>
         <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
@@ -162,7 +178,7 @@ const BpkGraphicPromo = (props: Props) => {
           </BpkButton>
         </div>
       </div>
-    </BpkCard>
+    </div>
   );
 };
 

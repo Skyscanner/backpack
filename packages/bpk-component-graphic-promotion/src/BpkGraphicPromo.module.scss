@@ -19,6 +19,10 @@
 @import '~bpk-mixins/index';
 @import './custom-breakpoints.module';
 
+.bpk-card {
+  @include bpk-card;
+}
+
 .bpk-graphic-promo {
   max-width: 65.5rem;
   margin-right: auto;

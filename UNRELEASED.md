@@ -20,4 +20,7 @@
 `bpk-component-popover`
   - Migrated to `PortalV1` - to continue using the old portal implementation, as we are breaking the task down, but in a future implementation will be migrated to the new portal system.
 
+**Fixed:**
 
+`bpk-component-graphic-promotion`
+- Fixed accessibility errors.
