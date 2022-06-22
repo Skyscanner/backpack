@@ -1,3 +1,32 @@
+# 2022-06-22
+
+**Breaking:**
+
+`@skyscanner/backpack-web` - `4.0.0`<br />
+`bpk-react-utils` - `4.1.2 => 5.0.0`
+  - Upgraded `Portal` to use the native React Portal implementation.
+  - Removed usage of `unstable_renderSubtreeIntoContainer` as this has been deprecated in the latest version.
+  - Removed usage of `findDOMNode` which has been deprecated in strict mode, and should only be used as an escape hatch in legacy edge cases. (possibly with tooltips and popovers)
+  - Removed `unmountComponentAtNode` as we now unmount by removing the portal from the `renderTarget`.
+  - Introduced `PortalV1` to support legacy usage during the transition and will throw a warning if used to move to the latest version.
+
+`bpk-component-drawer` - `4.1.11 => 5.0.0`<br /> 
+`bpk-component-dialog` - `4.1.13 => 5.0.0`<br />
+`bpk-component-modal` - `3.1.12 => 4.0.0`
+  - Migrated to the new native portal implementation. Which should now mean that context is available from the parent component to the child pop-up components.
+
+**Updated:**
+
+`bpk-component-datepicker` - `15.2.16 => 15.2.17`<br /> 
+`bpk-component-tooltip` - `7.0.0 => 7.0.1`<br /> 
+`bpk-component-popover` - `5.0.1 => 5.0.2`
+  - Migrated to `PortalV1` - to continue using the old portal implementation, as we are breaking the task down, but in a future implementation will be migrated to the new portal system.
+
+**Fixed:**
+
+`bpk-component-graphic-promotion` - `3.1.0` => `3.1.1`
+- Fixed accessibility errors.
+
 # 2022-06-17
 
 **Added:**
