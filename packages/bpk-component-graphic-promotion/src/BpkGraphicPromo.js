@@ -104,7 +104,7 @@ const BpkGraphicPromo = (props: Props) => {
   const onKeyWrapper = (event: React.KeyboardEvent<HTMLElement>) =>
     isAccessibilityClick(event) && onClick();
 
-  const cardClasses = getClassName('bpk-graphic-promo', className);
+  const cardClasses = getClassName('bpk-card', 'bpk-graphic-promo', className);
   const containerClasses = getClassName(
     'bpk-graphic-promo__container',
     `bpk-graphic-promo__container--${textAlign}`,

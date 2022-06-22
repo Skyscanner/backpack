@@ -19,6 +19,10 @@
 @import '~bpk-mixins/index';
 @import './custom-breakpoints.module';
 
+.bpk-card {
+  @include bpk-card;
+}
+
 .bpk-graphic-promo {
   max-width: 65.5rem;
   margin-right: auto;
@@ -28,8 +32,6 @@
   background-size: cover;
   color: $bpk-color-white;
   box-shadow: none;
-
-  @include bpk-card;
 
   @include breakpoint-landscape {
     &__sponsor-label {
