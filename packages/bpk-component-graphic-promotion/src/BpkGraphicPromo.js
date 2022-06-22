@@ -23,9 +23,9 @@ import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
 
-import GP_STYLES from './BpkGraphicPromo.module.scss';
+import STYLES from './BpkGraphicPromo.module.scss';
 
-const getClassName = cssModules(GP_STYLES);
+const getClassName = cssModules(STYLES);
 
 const ACCESSIBILITY_KEYS = {
   Enter: 13 /* Enter */,
