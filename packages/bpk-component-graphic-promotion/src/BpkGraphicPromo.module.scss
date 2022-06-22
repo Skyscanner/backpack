@@ -29,6 +29,8 @@
   color: $bpk-color-white;
   box-shadow: none;
 
+  @include bpk-card;
+
   @include breakpoint-landscape {
     &__sponsor-label {
       margin-bottom: bpk-spacing-sm();

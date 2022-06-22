@@ -23,12 +23,9 @@ import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
 
-import CARD_STYLES from '../../bpk-component-card/src/BpkCard.module.scss';
-
 import GP_STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(GP_STYLES);
-const getCardClassName = cssModules(CARD_STYLES);
 
 const ACCESSIBILITY_KEYS = {
   Enter: 13 /* Enter */,
@@ -107,11 +104,7 @@ const BpkGraphicPromo = (props: Props) => {
   const onKeyWrapper = (event: React.KeyboardEvent<HTMLElement>) =>
     isAccessibilityClick(event) && onClick();
 
-  const cardClasses = getClassName(
-    getCardClassName('bpk-card'),
-    'bpk-graphic-promo',
-    className,
-  );
+  const cardClasses = getClassName('bpk-graphic-promo', className);
   const containerClasses = getClassName(
     'bpk-graphic-promo__container',
     `bpk-graphic-promo__container--${textAlign}`,
