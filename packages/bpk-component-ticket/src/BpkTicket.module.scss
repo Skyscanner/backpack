@@ -71,22 +71,9 @@ $bpk-spacing-v2: true;
     flex-direction: column;
   }
 
-  &--with-notches {
-    box-shadow: none;
-
-    &::after {
-      content: none;
-    }
-  }
-
   &__paper {
     position: relative;
     background-color: $bpk-card-background-color;
-
-    &--with-notches {
-      @include bpk-box-shadow-sm;
-      @include hidden-box-shadow-after;
-    }
   }
 
   @mixin main-styles {
@@ -124,14 +111,17 @@ $bpk-spacing-v2: true;
     &--horizontal {
       min-width: 30%;
       border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
+      box-shadow: inset $bpk-one-pixel-rem 0 0 $bpk-color-sky-gray-tint-05;
 
       @include bpk-rtl {
         border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
+        box-shadow: inset (-$bpk-one-pixel-rem) 0 0 $bpk-color-sky-gray-tint-05;
       }
     }
 
     &--vertical {
       border-radius: 0 0 $bpk-border-radius-sm $bpk-border-radius-sm;
+      box-shadow: inset 0 $bpk-one-pixel-rem 0 $bpk-color-sky-gray-tint-05;
     }
   }
 
@@ -150,148 +140,5 @@ $bpk-spacing-v2: true;
     overflow: hidden;
 
     @include stub-styles;
-  }
-
-  &__punchline {
-    position: relative;
-    z-index: 1;
-    flex: 0 0 auto;
-    background-color: $bpk-card-background-color;
-
-    &--horizontal {
-      height: $bpk-one-pixel-rem * 2;
-      background-image: linear-gradient(
-        $bpk-color-sky-gray-tint-06,
-        $bpk-color-sky-gray-tint-06
-      );
-      background-repeat: repeat-x;
-      background-position: 0 50%;
-      background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
-    }
-
-    &--horizontal-with-notches {
-      height: $notch-size * 2;
-      margin: auto $notch-size;
-      padding: 0 $notch-size;
-      background-image: linear-gradient(
-        $bpk-color-sky-gray-tint-06,
-        $bpk-color-sky-gray-tint-06
-      );
-      background-repeat: repeat-x;
-      background-position: 0 50%;
-      background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
-    }
-
-    &--vertical {
-      width: $bpk-one-pixel-rem * 2;
-      background-image: linear-gradient(
-        $bpk-color-sky-gray-tint-06,
-        $bpk-color-sky-gray-tint-06
-      );
-      background-repeat: repeat-y;
-      background-position: 50% 0;
-      background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
-    }
-
-    &--vertical-with-notches {
-      width: $notch-size * 2;
-      margin: $notch-size auto;
-      padding: $notch-size 0;
-      background-image: linear-gradient(
-        $bpk-color-sky-gray-tint-06,
-        $bpk-color-sky-gray-tint-06
-      );
-      background-repeat: repeat-y;
-      background-position: 50% 0;
-      background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
-    }
-
-    &--fallback {
-      display: table-cell;
-      width: 2 * $bpk-one-pixel-rem;
-      background-image: linear-gradient(
-        $bpk-color-sky-gray-tint-06,
-        $bpk-color-sky-gray-tint-06
-      );
-      background-repeat: repeat-y;
-      background-position: 50% 0;
-      background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
-    }
-  }
-
-  &__notch {
-    position: absolute;
-    width: $notch-size * 2;
-    height: $notch-size;
-    overflow: hidden;
-
-    &::after {
-      position: relative;
-      content: '';
-      display: block;
-      width: $notch-size * 4;
-      height: $notch-size * 4;
-      transform: translate3d(
-        0,
-        0,
-        0
-      ); // BPK-1011 fix rendering bug in safari 11
-
-      border: $notch-size solid $bpk-color-white;
-      border-radius: $notch-size * 2;
-      box-shadow: $bpk-box-shadow-sm inset;
-    }
-
-    &--top {
-      top: -$notch-size;
-
-      &::after {
-        right: -50%;
-        bottom: 200%;
-        left: -50%;
-      }
-    }
-
-    &--right {
-      right: -$notch-size;
-      width: $notch-size;
-      height: $notch-size * 2;
-
-      &::after {
-        right: 100%;
-        bottom: 50%;
-
-        @include bpk-rtl {
-          right: auto;
-          left: 200%;
-        }
-      }
-    }
-
-    &--bottom {
-      bottom: -$notch-size;
-
-      &::after {
-        right: -50%;
-        bottom: 100%;
-        left: -50%;
-      }
-    }
-
-    &--left {
-      left: -$notch-size;
-      width: $notch-size;
-      height: $notch-size * 2;
-
-      &::after {
-        right: 200%;
-        bottom: 50%;
-
-        @include bpk-rtl {
-          right: auto;
-          left: 100%;
-        }
-      }
-    }
   }
 }

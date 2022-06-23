@@ -24,8 +24,6 @@ import {
   VerticalExample,
   WithoutPaddingExample,
   WithoutPaddingImageExample,
-  WithoutNotchesExample,
-  WithoutNotchesVerticalExample,
   WithHrefExample,
   DayViewExample,
   MixedExample,
@@ -36,8 +34,6 @@ storiesOf('bpk-component-ticket', module)
   .add('Vertical', VerticalExample)
   .add('Without padding', WithoutPaddingExample)
   .add('Without padding and with an image ', WithoutPaddingImageExample)
-  .add('Without notches', WithoutNotchesExample)
-  .add('Without notches (vertical)', WithoutNotchesVerticalExample)
   .add('With a "href" prop', WithHrefExample)
   .add('Day view', DayViewExample)
   .add('Visual test', MixedExample);
