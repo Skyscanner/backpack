@@ -33,4 +33,5 @@ storiesOf('bpk-component-split-input', module)
     '6 char alphanumeric OTP with placeholder',
     SplitInputExampleWithPlaceholder,
   )
-  .add('Small Input', SplitInputSmall);
+  .add('Small Input', SplitInputSmall)
+  .add('Visual test', SplitInputExample);

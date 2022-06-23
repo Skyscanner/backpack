@@ -24,7 +24,7 @@ import PropTypes from 'prop-types';
 
 import STYLES from './BpkInputField.module.scss';
 
-const className = cssModules(STYLES);
+const getClassName = cssModules(STYLES);
 
 class BpkInputField extends Component {
   componentDidUpdate(prevProps) {
@@ -38,7 +38,7 @@ class BpkInputField extends Component {
   render() {
     const { focus, id, index, label, value, ...rest } = this.props;
     return (
-      <div key={index} className={className('BpkInputField')}>
+      <div key={index} className={getClassName('BpkInputField')}>
         <BpkInput
           id={id}
           autoComplete="off"

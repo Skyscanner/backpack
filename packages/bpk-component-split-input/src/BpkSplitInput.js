@@ -25,7 +25,7 @@ import { INPUT_TYPES } from 'bpk-component-input';
 import InputField from './BpkInputField';
 import STYLES from './BpkSplitInput.module.scss';
 
-const className = cssModules(STYLES);
+const getClassName = cssModules(STYLES);
 
 // keyCode constants
 const BACKSPACE = 8;
@@ -214,7 +214,7 @@ class BpkSplitInput extends Component {
 
   render() {
     return (
-      <div className={className('BpkSplitInput')}>{this.renderInputs()}</div>
+      <div className={getClassName('BpkSplitInput')}>{this.renderInputs()}</div>
     );
   }
 }

@@ -509,6 +509,7 @@ const MixedExample = () => (
     <SelectExample />
     <CheckboxExample />
     <TextareaExample />
+    <SplitInputExample />
   </div>
 );
 
