@@ -41,7 +41,6 @@ $bpk-spacing-v2: true;
 }
 
 .bpk-ticket {
-  $notch-size: bpk-spacing-md();
   $ticket-padding: bpk-spacing-base();
 
   position: relative;
@@ -49,12 +48,16 @@ $bpk-spacing-v2: true;
   display: flex;
   flex-direction: row;
   align-items: stretch;
+  order: 1;
+  flex: none;
+  flex-grow: 0;
   color: $bpk-card-color;
   text-decoration: none;
+  box-shadow: 0 5px 12px rgba($bpk-button-outline-background-color, 0.08),
+    0 3px 12px rgba($bpk-button-outline-background-color, 0.08);
   cursor: pointer;
 
-  @include bpk-box-shadow-sm;
-  @include bpk-border-radius-sm;
+  @include bpk-border-radius-md;
   @include hidden-box-shadow-after;
 
   @include bpk-hover {
@@ -69,6 +72,7 @@ $bpk-spacing-v2: true;
 
   &--vertical {
     flex-direction: column;
+    order: 2;
   }
 
   &__paper {
