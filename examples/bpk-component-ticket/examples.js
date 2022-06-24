@@ -177,6 +177,7 @@ const MixedExample = () => (
     <VerticalExample />
     <WithoutPaddingExample />
     <WithHrefExample />
+    <WithoutPaddingImageExample />
   </div>
 );
 
