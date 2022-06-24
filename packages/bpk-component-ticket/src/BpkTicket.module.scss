@@ -48,9 +48,7 @@ $bpk-spacing-v2: true;
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  order: 1;
   flex: none;
-  flex-grow: 0;
   color: $bpk-card-color;
   text-decoration: none;
   box-shadow: 0 5px 12px rgba($bpk-button-outline-background-color, 0.08),
@@ -72,7 +70,6 @@ $bpk-spacing-v2: true;
 
   &--vertical {
     flex-direction: column;
-    order: 2;
   }
 
   &__paper {

@@ -23,6 +23,7 @@ import {
   DefaultExample,
   VerticalExample,
   WithoutPaddingExample,
+  WithoutPaddingVerticalExample,
   WithoutPaddingImageExample,
   WithHrefExample,
   DayViewExample,
@@ -33,6 +34,7 @@ storiesOf('bpk-component-ticket', module)
   .add('Default', DefaultExample)
   .add('Vertical', VerticalExample)
   .add('Without padding', WithoutPaddingExample)
+  .add('Without padding and in vertical', WithoutPaddingVerticalExample)
   .add('Without padding and with an image ', WithoutPaddingImageExample)
   .add('With a "href" prop', WithHrefExample)
   .add('Day view', DayViewExample)

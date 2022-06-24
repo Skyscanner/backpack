@@ -131,6 +131,17 @@ const WithoutPaddingExample = () => (
   </BpkTicket>
 );
 
+const WithoutPaddingVerticalExample = () => (
+  <BpkTicket stub="Lorem ipsum dolor sit amet." padded={false} vertical>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+    parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
+    consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+    massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+    nascetur ridiculus mus.
+  </BpkTicket>
+);
+
 const WithoutPaddingImageExample = () => (
   <BpkTicket stub="Lorem ipsum dolor sit amet." padded={false}>
     <img
@@ -173,6 +184,7 @@ export {
   DefaultExample,
   VerticalExample,
   WithoutPaddingExample,
+  WithoutPaddingVerticalExample,
   WithoutPaddingImageExample,
   WithHrefExample,
   DayViewExample,
