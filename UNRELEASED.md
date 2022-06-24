@@ -1,4 +1,4 @@
-**Breaking**
+**Breaking:**
 
 - bpk-component-ticket
   - Updated `box-shadow` and `border-radius` to match the new design
