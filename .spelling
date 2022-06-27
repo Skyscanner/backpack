@@ -886,3 +886,4 @@ SIZES.large
 INPUT_TYPES.number
 inputLength
 onSubmit
+otp
