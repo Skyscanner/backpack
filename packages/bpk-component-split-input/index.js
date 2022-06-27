@@ -19,7 +19,8 @@
 
 import BpkSplitInput, {
   type Props as BpkSplitInputProps,
+  INPUT_TYPES,
 } from './src/BpkSplitInput';
 
-export type { BpkSplitInputProps };
+export type { BpkSplitInputProps, INPUT_TYPES };
 export default BpkSplitInput;

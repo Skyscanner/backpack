@@ -12,12 +12,11 @@ npm install bpk-component-split-input --save-dev
 
 ```js
 import React from 'react';
-import BpkSplitInput from 'bpk-component-code';
-import { INPUT_TYPES } from 'bpk-component-input';
-import { action } from '@storybook/addon-actions';
+import BpkSplitInput, { INPUT_TYPES } from 'bpk-component-split-input';
 
 export default () => (
   <BpkSplitInput
+    type={INPUT_TYPES.number}
     name="otpInput"
     id="otpInput"
     label="otp input"
