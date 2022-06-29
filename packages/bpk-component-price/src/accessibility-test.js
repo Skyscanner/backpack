@@ -21,17 +21,12 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkPrice, { SIZES } from './BpkPrice';
+import BpkPrice from './BpkPrice';
 
 describe('BpkPrice accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkPrice
-        size={SIZES.small}
-        title="£1,830"
-        subtitle="£200"
-        description="a night"
-      />,
+      <BpkPrice title="£1,830" subtitle="£200" description="a night" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
