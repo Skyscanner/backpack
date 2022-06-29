@@ -23,11 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
 import STYLES from './BpkPrice.module.scss';
-
-export const SIZES = {
-  small: 'small',
-  large: 'large',
-};
+import { SIZES, ALIGNS } from './common-types';
 
 type Props = {
   title: string,
@@ -40,15 +36,17 @@ type Props = {
 const getClassName = cssModules(STYLES);
 
 const BpkPrice = (props: Props) => {
-  const { className, description, size, subtitle, title, ...rest } = props;
+  const { align, className, description, size, subtitle, title, ...rest } =
+    props;
 
   const isSmall = size === SIZES.small;
+  const isAlighRight = align === ALIGNS.right;
 
   return (
     <div
       className={getClassName(
         'bpk-price',
-        isSmall && 'bpk-price--small',
+        isAlighRight && 'bpk-price--right',
         className,
       )}
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
@@ -63,9 +61,15 @@ const BpkPrice = (props: Props) => {
           {subtitle}
         </BpkText>
       )}
-      <div className={isSmall && getClassName('bpk-price__titleColumn')}>
+      <div
+        className={isAlighRight && getClassName('bpk-price__columnContainer')}
+      >
         <BpkText
           textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
+          className={getClassName(
+            'bpk-price__title',
+            !isAlighRight && 'bpk-price__spacing',
+          )}
           tagName="span"
         >
           {title}
@@ -74,10 +78,7 @@ const BpkPrice = (props: Props) => {
           <BpkText
             textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
             tagName="span"
-            className={getClassName(
-              'bpk-price__description',
-              !isSmall && 'bpk-price__descriptionSpacing',
-            )}
+            className={getClassName('bpk-price__description')}
           >
             {description}
           </BpkText>
@@ -90,6 +91,7 @@ const BpkPrice = (props: Props) => {
 BpkPrice.propTypes = {
   title: PropTypes.string.isRequired,
   size: PropTypes.oneOf(Object.keys(SIZES)),
+  align: PropTypes.oneOf(Object.keys(ALIGNS)),
   className: PropTypes.string,
   subtitle: PropTypes.string,
   description: PropTypes.string,
@@ -97,6 +99,7 @@ BpkPrice.propTypes = {
 
 BpkPrice.defaultProps = {
   size: SIZES.small,
+  align: ALIGNS.left,
   className: null,
   subtitle: null,
   description: null,

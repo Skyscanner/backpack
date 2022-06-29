@@ -40,6 +40,7 @@ const getMatchOptions = () => ({
   failureThresholdType: 'percent',
 });
 
+
 initStoryshots({
   suite: 'Visual tests',
   storyNameRegex: /Visual\stest\s?([a-z]*)?/i,

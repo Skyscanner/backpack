@@ -19,7 +19,7 @@ export default () => (
     size={SIZES.large}
     subtitle="£209"
     title="£1,830"
-    description="/ night"
+    description="a night"
   />
 );
 ```

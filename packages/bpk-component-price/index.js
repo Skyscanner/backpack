@@ -17,7 +17,8 @@
  */
 /* @flow strict */
 
-import BpkPrice, { SIZES } from './src/BpkPrice';
+import BpkPrice from './src/BpkPrice';
+import { SIZES, ALIGNS } from './src/common-types';
 
 export default BpkPrice;
-export { SIZES };
+export { SIZES, ALIGNS };
