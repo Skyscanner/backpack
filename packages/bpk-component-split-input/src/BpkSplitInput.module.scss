@@ -21,9 +21,10 @@
 @import '~bpk-mixins/index';
 
 .BpkSplitInput {
+  @include bpk-body-default;
   display: flex;
   width: 100%;
-  padding-top: $bpk-spacing-xs();
+  padding-top: bpk-spacing-xs();
   flex-direction: row;
   align-items: center;
   font-size: $bpk-font-size-base;

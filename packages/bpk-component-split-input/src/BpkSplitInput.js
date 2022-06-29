@@ -239,3 +239,4 @@ BpkSplitInput.defaultProps = {
 };
 
 export default BpkSplitInput;
+export { INPUT_TYPES };

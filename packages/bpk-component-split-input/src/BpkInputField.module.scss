@@ -21,7 +21,7 @@
 .BpkInputField {
   display: flex;
   max-width: 3*bpk-spacing-xxl();
-  margin-right: $bpk-spacing-xs();
+  margin-right: bpk-spacing-xs();
   align-items: center;
 
   input {
