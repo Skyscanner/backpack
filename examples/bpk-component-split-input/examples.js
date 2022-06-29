@@ -19,10 +19,11 @@
 
 import React from 'react';
 
-import BpkSplitInput from '../../packages/bpk-component-split-input';
+import BpkSplitInput, {
+  INPUT_TYPES,
+} from '../../packages/bpk-component-split-input';
 import BpkLabel from '../../packages/bpk-component-label';
 import { action } from '../../packages/bpk-storybook-utils';
-import { INPUT_TYPES } from '../../packages/bpk-component-input';
 
 const SplitInputExample = () => (
   <form>
