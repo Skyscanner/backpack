@@ -64,11 +64,17 @@ const LargeLeftWithSubtitleDescriptionExample = () => (
 
 const LargeLeftLongPriceExample = () => (
   // eslint-disable-next-line backpack/use-tokens
-  <div style={{ width: 170 }}>
+  <div style={{ width: 184 }}>
     <BpkPrice
       size={SIZES.large}
       subtitle="£209"
-      title="£1,830,123,123,789,890"
+      title="£1,830,123,123"
+      description="a night"
+    />
+    <BpkPrice
+      size={SIZES.large}
+      subtitle="£209"
+      title="ZK 20,309"
       description="a night"
     />
   </div>

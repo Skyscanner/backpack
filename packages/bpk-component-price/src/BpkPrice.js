@@ -28,6 +28,7 @@ import { SIZES, ALIGNS } from './common-types';
 type Props = {
   title: string,
   size: $Values<typeof SIZES>,
+  align: $Values<typeof ALIGNS>,
   className: ?string,
   subtitle: ?string,
   description: ?string,
