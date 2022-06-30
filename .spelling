@@ -731,6 +731,7 @@ bpk-component-select
 bpk-component-skip-link
 bpk-component-slider
 bpk-component-spinner
+bpk-component-split-input
 bpk-component-star-rating
 bpk-component-table
 bpk-component-text
@@ -882,3 +883,7 @@ scrollLeft
 scrollerEl
 SIZES.small
 SIZES.large
+INPUT_TYPES.number
+inputLength
+onSubmit
+otp
