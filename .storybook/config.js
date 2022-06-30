@@ -116,6 +116,7 @@ configure(() => {
   require('../examples/bpk-component-skip-link/stories');
   require('../examples/bpk-component-slider/stories');
   require('../examples/bpk-component-spinner/stories');
+  require('../examples/bpk-component-split-input/stories');
   require('../examples/bpk-component-star-rating/stories');
   require('../examples/bpk-component-switch/stories');
   require('../examples/bpk-component-table/stories');
