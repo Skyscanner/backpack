@@ -148,7 +148,7 @@
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.6.2",
     "eslint_d": "^9.1.1",
-    "flow-bin": "^0.132.0",
+    "flow-bin": "^0.181.2",
     "flow-typed": "^2.5.1",
     "format-package": "^6.1.0",
     "globby": "^10.0.0",
