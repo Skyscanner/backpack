@@ -17,18 +17,11 @@
  */
 /* @flow strict */
 
-import React from 'react';
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import BpkSplitInput, {
+  type Props as BpkSplitInputProps,
+  INPUT_TYPES,
+} from './src/BpkSplitInput';
 
-import BpkPrice from './BpkPrice';
-
-describe('BpkPrice accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkPrice title="£1,830" subtitle="£200" description="a night" />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export type { BpkSplitInputProps };
+export { INPUT_TYPES };
+export default BpkSplitInput;

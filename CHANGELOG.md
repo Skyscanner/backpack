@@ -1,3 +1,20 @@
+# 2022-06-30
+
+**Added:**
+
+`@skyscanner/backpack-web`: `4.0.1 => 4.1.0` <br />
+`bpk-component-split-input`: `1.0.0`
+ - Added new component to be used as an input component for otp and pin numbers
+
+# 2022-06-30
+
+**Fixed:**
+
+`@skyscanner/backpack-web`: `4.0.0 => 4.0.1` <br />
+`bpk-component-datepicker`: `15.2.17 => 15.2.18` </br>
+`bpk-component-modal`: `4.0.0 => 4.0.1` </br>
+- Revert portal in modal component to old portal implementation `PortalV1` as due to the differences in implementation between the two portals it causes the input fields in datepicker to disappear.
+
 # 2022-06-22
 
 **Breaking:**

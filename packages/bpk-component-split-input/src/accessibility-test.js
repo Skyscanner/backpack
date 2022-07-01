@@ -21,13 +21,11 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkPrice from './BpkPrice';
+import BpkSplitInput from './BpkSplitInput';
 
-describe('BpkPrice accessibility tests', () => {
+describe('BpkSplitInput accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkPrice title="£1,830" subtitle="£200" description="a night" />,
-    );
+    const { container } = render(<BpkSplitInput />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

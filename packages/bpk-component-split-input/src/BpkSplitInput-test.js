@@ -20,53 +20,44 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BpkPrice from './BpkPrice';
-import { ALIGNS, SIZES } from './common-types';
+import BpkSplitInput from './BpkSplitInput';
 
-const title = '£1,830';
-const subtitle = '£200';
-const description = 'a night';
-let props;
+const defaultProps = {
+  name: 'otpInput',
+  id: 'otpInput',
+  label: 'otp input',
+  onChange: () => {},
+  onSubmit: () => {},
+};
 
-describe.each([
-  [SIZES.small, ALIGNS.left],
-  [SIZES.large, ALIGNS.left],
-  [SIZES.small, ALIGNS.right],
-])(`%s %s view`, (size, align) => {
-  beforeEach(() => {
-    props = {
-      title,
-      size,
-      align,
-    };
-  });
+describe('BpkSplitInput', () => {
+  it('should render without crashing', () => {
+    const { asFragment } = render(<BpkSplitInput {...defaultProps} />);
 
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkPrice {...props} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support description attribute', () => {
+  it('should render correctly with inputLength param', () => {
     const { asFragment } = render(
-      <BpkPrice {...props} description={description} />,
+      <BpkSplitInput {...defaultProps} inputLength={6} />,
     );
+
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support subtitle attribute', () => {
-    const { asFragment } = render(<BpkPrice {...props} subtitle={subtitle} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should support custom class names', () => {
+  it('should render correctly with large set as false', () => {
     const { asFragment } = render(
-      <BpkPrice {...props} className="custom-classname" />,
+      <BpkSplitInput {...defaultProps} large={false} />,
     );
+
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkPrice {...props} testid="123" />);
+  it('should render correctly with placeholder', () => {
+    const { asFragment } = render(
+      <BpkSplitInput {...defaultProps} placeholder="x" />,
+    );
+
     expect(asFragment()).toMatchSnapshot();
   });
 });

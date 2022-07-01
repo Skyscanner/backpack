@@ -15,20 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import React from 'react';
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+ /* stylelint-disable */
 
-import BpkPrice from './BpkPrice';
+@import '~bpk-mixins/index';
 
-describe('BpkPrice accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkPrice title="£1,830" subtitle="£200" description="a night" />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+.BpkSplitInput {
+  @include bpk-body-default;
+  display: flex;
+  width: 100%;
+  padding-top: bpk-spacing-xs();
+  flex-direction: row;
+  align-items: center;
+  direction: ltr;
+
+  &__textbox {
+    display: flex;
+    align-items: center;
+  }
+}

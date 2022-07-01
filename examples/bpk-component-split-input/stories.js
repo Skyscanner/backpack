@@ -17,18 +17,21 @@
  */
 /* @flow strict */
 
-import React from 'react';
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { storiesOf } from '@storybook/react';
 
-import BpkPrice from './BpkPrice';
+import {
+  SplitInputExample,
+  SplitInputSixDigit,
+  SplitInputExampleWithPlaceholder,
+  SplitInputSmall,
+} from './examples';
 
-describe('BpkPrice accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkPrice title="£1,830" subtitle="£200" description="a night" />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+storiesOf('bpk-component-split-input', module)
+  .add('Default Input', SplitInputExample)
+  .add('6 char alphanumeric OTP', SplitInputSixDigit)
+  .add(
+    '6 char alphanumeric OTP with placeholder',
+    SplitInputExampleWithPlaceholder,
+  )
+  .add('Small Input', SplitInputSmall)
+  .add('Visual test', SplitInputExample);

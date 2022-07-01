@@ -21,7 +21,7 @@
 import PropTypes from 'prop-types';
 import React, { type Element } from 'react';
 import { withScrim } from 'bpk-scrim-utils';
-import { Portal, cssModules, isDeviceIphone } from 'bpk-react-utils';
+import { PortalV1, cssModules, isDeviceIphone } from 'bpk-react-utils';
 
 import STYLES from './BpkModal.module.scss';
 import BpkModalInner, {
@@ -78,7 +78,7 @@ const BpkModal = (props: Props) => {
   }
 
   return (
-    <Portal
+    <PortalV1
       isOpen={isOpen}
       onClose={onClose}
       target={target}
@@ -95,7 +95,7 @@ const BpkModal = (props: Props) => {
         isIphone={isIphone}
         {...rest}
       />
-    </Portal>
+    </PortalV1>
   );
 };
 

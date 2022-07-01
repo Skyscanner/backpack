@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
 
-  &--small {
+  &--right {
     text-align: right;
 
     @include bpk-rtl {
@@ -35,21 +35,27 @@
     text-decoration-line: line-through;
   }
 
-  &__titleColumn {
+  &__column-container {
     display: flex;
     flex-direction: column;
   }
 
+  &__title {
+    word-break: break-all;
+  }
+
+  &__spacing::after {
+    content: '';
+    margin-right: bpk-spacing-sm();
+
+    @include bpk-rtl {
+      margin-right: unset;
+      margin-left: bpk-spacing-sm();
+    }
+  }
+
   &__description {
     color: $bpk-color-sky-gray-tint-02;
-
-    &Spacing {
-      margin-left: bpk-spacing-sm();
-
-      @include bpk-rtl {
-        margin-right: bpk-spacing-sm();
-        margin-left: unset;
-      }
-    }
+    white-space: nowrap;
   }
 }

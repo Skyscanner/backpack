@@ -19,26 +19,37 @@
 import { storiesOf } from '@storybook/react';
 
 import {
-  SmallExample,
-  SmallWithDescriptionExample,
-  SmallWithSubtitleDescriptionExample,
-  LargeExample,
-  LargeWithDescriptionExample,
-  LargeWithSubtitleDescriptionExample,
+  SmallLeftExample,
+  SmallLeftWithDescriptionExample,
+  SmallLeftWithSubtitleDescriptionExample,
+  SmallRightExample,
+  SmallRightWithDescriptionExample,
+  SmallRightWithSubtitleDescriptionExample,
+  LargeLeftExample,
+  LargeLeftWithDescriptionExample,
+  LargeLeftWithSubtitleDescriptionExample,
+  LargeLeftLongPriceExample,
   MixedExample,
 } from './examples';
 
 storiesOf('bpk-component-price', module)
-  .add('Small view', SmallExample)
-  .add('Small view with description', SmallWithDescriptionExample)
+  .add('Small left - default', SmallLeftExample)
+  .add('Small left with description', SmallLeftWithDescriptionExample)
   .add(
-    'Small view with subtitle and description',
-    SmallWithSubtitleDescriptionExample,
+    'Small left with subtitle and description',
+    SmallLeftWithSubtitleDescriptionExample,
   )
-  .add('Large view', LargeExample)
-  .add('Large view with description', LargeWithDescriptionExample)
+  .add('Small right', SmallRightExample)
+  .add('Small right with description', SmallRightWithDescriptionExample)
   .add(
-    'Large view with subtitle and description',
-    LargeWithSubtitleDescriptionExample,
+    'Small right with subtitle and description',
+    SmallRightWithSubtitleDescriptionExample,
   )
+  .add('Large left - default', LargeLeftExample)
+  .add('Large left with description', LargeLeftWithDescriptionExample)
+  .add(
+    'Large left with subtitle and description',
+    LargeLeftWithSubtitleDescriptionExample,
+  )
+  .add('Large left with long price', LargeLeftLongPriceExample)
   .add('Visual test', MixedExample);
