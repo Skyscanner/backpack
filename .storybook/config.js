@@ -98,7 +98,6 @@ configure(() => {
   require('../examples/bpk-component-mobile-scroll-container/stories');
   require('../examples/bpk-component-modal/stories');
   require('../examples/bpk-component-navigation-bar/stories');
-  require('../examples/bpk-component-navigation-stack/stories');
   require('../examples/bpk-component-nudger/stories');
   require('../examples/bpk-component-overlay/stories');
   require('../examples/bpk-component-pagination/stories');

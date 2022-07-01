@@ -3,6 +3,7 @@
   "version": "3.1.13",
   "description": "Backpack navigation stack component.",
   "license": "Apache-2.0",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
