@@ -188,7 +188,7 @@ exports[`small right view should render correctly 1`] = `
     class="bpk-price bpk-price--right"
   >
     <div
-      class="bpk-price__columnContainer"
+      class="bpk-price__column-container"
     >
       <span
         class="bpk-text bpk-text--heading-4 bpk-price__title"
@@ -207,7 +207,7 @@ exports[`small right view should support arbitrary props 1`] = `
     testid="123"
   >
     <div
-      class="bpk-price__columnContainer"
+      class="bpk-price__column-container"
     >
       <span
         class="bpk-text bpk-text--heading-4 bpk-price__title"
@@ -225,7 +225,7 @@ exports[`small right view should support custom class names 1`] = `
     class="bpk-price bpk-price--right custom-classname"
   >
     <div
-      class="bpk-price__columnContainer"
+      class="bpk-price__column-container"
     >
       <span
         class="bpk-text bpk-text--heading-4 bpk-price__title"
@@ -243,7 +243,7 @@ exports[`small right view should support description attribute 1`] = `
     class="bpk-price bpk-price--right"
   >
     <div
-      class="bpk-price__columnContainer"
+      class="bpk-price__column-container"
     >
       <span
         class="bpk-text bpk-text--heading-4 bpk-price__title"
@@ -271,7 +271,7 @@ exports[`small right view should support subtitle attribute 1`] = `
       £200
     </span>
     <div
-      class="bpk-price__columnContainer"
+      class="bpk-price__column-container"
     >
       <span
         class="bpk-text bpk-text--heading-4 bpk-price__title"
