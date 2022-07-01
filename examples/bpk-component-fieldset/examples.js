@@ -19,8 +19,8 @@
 
 import PropTypes from 'prop-types';
 import React, { cloneElement, Component } from 'react';
-import { action } from '@storybook/addon-actions';
 
+import { action } from '../../packages/bpk-storybook-utils';
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';
