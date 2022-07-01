@@ -15,20 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /* @flow strict */
 
-import React from 'react';
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+export const SIZES = {
+  small: 'small',
+  large: 'large',
+};
 
-import BpkPrice from './BpkPrice';
-
-describe('BpkPrice accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkPrice title="£1,830" subtitle="£200" description="a night" />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export const ALIGNS = {
+  left: 'left',
+  right: 'right',
+};

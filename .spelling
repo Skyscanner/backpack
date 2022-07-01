@@ -883,6 +883,7 @@ scrollLeft
 scrollerEl
 SIZES.small
 SIZES.large
+ALIGNS.left
 INPUT_TYPES.number
 inputLength
 onSubmit

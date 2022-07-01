@@ -20,18 +20,24 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BpkPrice, { SIZES } from './BpkPrice';
+import BpkPrice from './BpkPrice';
+import { ALIGNS, SIZES } from './common-types';
 
 const title = '£1,830';
 const subtitle = '£200';
-const description = '/ night';
+const description = 'a night';
 let props;
 
-describe.each([SIZES.small, SIZES.large])('%s view', (sizeProp) => {
+describe.each([
+  [SIZES.small, ALIGNS.left],
+  [SIZES.large, ALIGNS.left],
+  [SIZES.small, ALIGNS.right],
+])(`%s %s view`, (size, align) => {
   beforeEach(() => {
     props = {
       title,
-      size: sizeProp,
+      size,
+      align,
     };
   });
 

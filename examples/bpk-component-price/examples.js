@@ -18,55 +18,93 @@
 
 import React from 'react';
 
-import BpkPrice, { SIZES } from '../../packages/bpk-component-price';
+import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
 
-const SmallExample = () => <BpkPrice size={SIZES.small} title="£1,830" />;
+const SmallLeftExample = () => <BpkPrice title="£1,830" />;
 
-const SmallWithDescriptionExample = () => (
-  <BpkPrice size={SIZES.small} title="£1,830" description="/ night" />
+const SmallLeftWithDescriptionExample = () => (
+  <BpkPrice title="£1,830" description="a night" />
 );
 
-const SmallWithSubtitleDescriptionExample = () => (
+const SmallLeftWithSubtitleDescriptionExample = () => (
+  <BpkPrice subtitle="£209" title="£1,830" description="a night" />
+);
+
+const SmallRightExample = () => (
+  <BpkPrice title="£1,830" align={ALIGNS.right} />
+);
+
+const SmallRightWithDescriptionExample = () => (
+  <BpkPrice title="£1,830" description="a night" align={ALIGNS.right} />
+);
+
+const SmallRightWithSubtitleDescriptionExample = () => (
   <BpkPrice
-    size={SIZES.small}
     subtitle="£209"
     title="£1,830"
-    description="/ night"
+    description="a night"
+    align={ALIGNS.right}
   />
 );
 
-const LargeExample = () => <BpkPrice size={SIZES.large} title="£1,830" />;
+const LargeLeftExample = () => <BpkPrice size={SIZES.large} title="£1,830" />;
 
-const LargeWithDescriptionExample = () => (
-  <BpkPrice size={SIZES.large} title="£1,830" description="/ night" />
+const LargeLeftWithDescriptionExample = () => (
+  <BpkPrice size={SIZES.large} title="£1,830" description="a night" />
 );
 
-const LargeWithSubtitleDescriptionExample = () => (
+const LargeLeftWithSubtitleDescriptionExample = () => (
   <BpkPrice
     size={SIZES.large}
     subtitle="£209"
     title="£1,830"
-    description="/ night"
+    description="a night"
   />
+);
+
+const LargeLeftLongPriceExample = () => (
+  // eslint-disable-next-line backpack/use-tokens
+  <div style={{ width: 184 }}>
+    <BpkPrice
+      size={SIZES.large}
+      subtitle="£209"
+      title="£1,830,123,123"
+      description="a night"
+    />
+    <BpkPrice
+      size={SIZES.large}
+      subtitle="£209"
+      title="ZK 20,309"
+      description="a night"
+    />
+  </div>
 );
 
 const MixedExample = () => (
   <div>
-    <SmallExample />
-    <SmallWithDescriptionExample />
-    <SmallWithSubtitleDescriptionExample />
-    <LargeExample />
-    <LargeWithDescriptionExample />
-    <LargeWithSubtitleDescriptionExample />
+    <SmallLeftExample />
+    <SmallLeftWithDescriptionExample />
+    <SmallLeftWithSubtitleDescriptionExample />
+    <SmallRightExample />
+    <SmallRightWithDescriptionExample />
+    <SmallRightWithSubtitleDescriptionExample />
+    <LargeLeftExample />
+    <LargeLeftWithDescriptionExample />
+    <LargeLeftWithSubtitleDescriptionExample />
+    <LargeLeftLongPriceExample />
   </div>
 );
 
 export {
-  SmallExample,
-  SmallWithDescriptionExample,
-  SmallWithSubtitleDescriptionExample,
-  LargeExample,
-  LargeWithDescriptionExample,
-  LargeWithSubtitleDescriptionExample,
+  SmallLeftExample,
+  SmallLeftWithDescriptionExample,
+  SmallLeftWithSubtitleDescriptionExample,
+  SmallRightExample,
+  SmallRightWithDescriptionExample,
+  SmallRightWithSubtitleDescriptionExample,
+  LargeLeftExample,
+  LargeLeftWithDescriptionExample,
+  LargeLeftWithSubtitleDescriptionExample,
+  LargeLeftLongPriceExample,
   MixedExample,
 };
