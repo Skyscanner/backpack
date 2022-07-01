@@ -41,13 +41,13 @@ const BpkPrice = (props: Props) => {
     props;
 
   const isSmall = size === SIZES.small;
-  const isAlighRight = align === ALIGNS.right;
+  const isAlignRight = align === ALIGNS.right;
 
   return (
     <div
       className={getClassName(
         'bpk-price',
-        isAlighRight && 'bpk-price--right',
+        isAlignRight && 'bpk-price--right',
         className,
       )}
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
@@ -63,13 +63,13 @@ const BpkPrice = (props: Props) => {
         </BpkText>
       )}
       <div
-        className={isAlighRight && getClassName('bpk-price__columnContainer')}
+        className={isAlignRight && getClassName('bpk-price__column-container')}
       >
         <BpkText
           textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
           className={getClassName(
             'bpk-price__title',
-            !isAlighRight && 'bpk-price__spacing',
+            !isAlignRight && 'bpk-price__spacing',
           )}
           tagName="span"
         >
