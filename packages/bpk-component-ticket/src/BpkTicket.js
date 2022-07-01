@@ -32,7 +32,6 @@ type Props = {
   stubProps: { [string]: any },
   padded: boolean,
   vertical: boolean,
-  withNotches: boolean,
   className: ?string,
   stubClassName: ?string,
   href: ?string,
@@ -48,7 +47,6 @@ const BpkTicket = (props: Props) => {
     stubClassName,
     stubProps,
     vertical,
-    withNotches,
     ...rest
   } = props;
 
@@ -56,7 +54,6 @@ const BpkTicket = (props: Props) => {
     'bpk-ticket',
     className,
     vertical && 'bpk-ticket--vertical',
-    withNotches && 'bpk-ticket--with-notches',
   );
 
   const mainClassNames = getClassName(
@@ -65,7 +62,6 @@ const BpkTicket = (props: Props) => {
     padded && 'bpk-ticket__main--padded',
     vertical && 'bpk-ticket__main--vertical',
     !vertical && 'bpk-ticket__main--horizontal',
-    withNotches && 'bpk-ticket__paper--with-notches',
   );
 
   const mainInnerClassNames = getClassName(
@@ -81,37 +77,12 @@ const BpkTicket = (props: Props) => {
     padded && 'bpk-ticket__stub--padded',
     vertical && 'bpk-ticket__stub--vertical',
     !vertical && 'bpk-ticket__stub--horizontal',
-    withNotches && 'bpk-ticket__paper--with-notches',
   );
 
   const stubInnerClassNames = getClassName(
     'bpk-ticket__stub-inner',
     vertical && 'bpk-ticket__stub-inner--vertical',
     !vertical && 'bpk-ticket__stub-inner--horizontal',
-  );
-
-  const punchlineClassNames = getClassName(
-    'bpk-ticket__punchline',
-    vertical &&
-      (withNotches
-        ? 'bpk-ticket__punchline--horizontal-with-notches'
-        : 'bpk-ticket__punchline--horizontal'),
-    !vertical &&
-      (withNotches
-        ? 'bpk-ticket__punchline--vertical-with-notches'
-        : 'bpk-ticket__punchline--vertical'),
-  );
-
-  const startNotchClassNames = getClassName(
-    'bpk-ticket__notch',
-    vertical && 'bpk-ticket__notch--left',
-    !vertical && 'bpk-ticket__notch--top',
-  );
-
-  const endNotchClassNames = getClassName(
-    'bpk-ticket__notch',
-    vertical && 'bpk-ticket__notch--right',
-    !vertical && 'bpk-ticket__notch--bottom',
   );
 
   const mainContent = padded ? (
@@ -129,15 +100,6 @@ const BpkTicket = (props: Props) => {
   const contents = [
     <div key="main" className={mainClassNames}>
       {mainContent}
-    </div>,
-    <div
-      key="punchline"
-      className={punchlineClassNames}
-      role="presentation"
-      aria-hidden="true"
-    >
-      {withNotches && <div className={startNotchClassNames} />}
-      {withNotches && <div className={endNotchClassNames} />}
     </div>,
     // $FlowFixMe[cannot-spread-indexer] - inexact rest. See 'decisions/flowfixme.md'.
     <div key="stub" className={stubClassNames} {...stubProps}>
@@ -171,7 +133,6 @@ BpkTicket.propTypes = {
   vertical: PropTypes.bool,
   stubClassName: PropTypes.string,
   stubProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  withNotches: PropTypes.bool,
 };
 
 BpkTicket.defaultProps = {
@@ -181,7 +142,6 @@ BpkTicket.defaultProps = {
   vertical: false,
   stubClassName: null,
   stubProps: {},
-  withNotches: true,
 };
 
 export default BpkTicket;

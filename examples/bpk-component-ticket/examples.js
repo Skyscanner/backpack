@@ -131,6 +131,17 @@ const WithoutPaddingExample = () => (
   </BpkTicket>
 );
 
+const WithoutPaddingVerticalExample = () => (
+  <BpkTicket stub="Lorem ipsum dolor sit amet." padded={false} vertical>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+    parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
+    consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+    massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+    nascetur ridiculus mus.
+  </BpkTicket>
+);
+
 const WithoutPaddingImageExample = () => (
   <BpkTicket stub="Lorem ipsum dolor sit amet." padded={false}>
     <img
@@ -138,28 +149,6 @@ const WithoutPaddingImageExample = () => (
       alt="Thoughtful bear"
       width={300}
     />
-  </BpkTicket>
-);
-
-const WithoutNotchesExample = () => (
-  <BpkTicket stub="Lorem ipsum dolor sit amet." withNotches={false}>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-    parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
-    consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-    massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-    nascetur ridiculus mus.
-  </BpkTicket>
-);
-
-const WithoutNotchesVerticalExample = () => (
-  <BpkTicket stub="Lorem ipsum dolor sit amet." vertical withNotches={false}>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-    parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
-    consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-    massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-    nascetur ridiculus mus.
   </BpkTicket>
 );
 
@@ -187,8 +176,7 @@ const MixedExample = () => (
     <DefaultExample />
     <VerticalExample />
     <WithoutPaddingExample />
-    <WithoutNotchesExample />
-    <WithoutNotchesVerticalExample />
+    <WithoutPaddingVerticalExample />
     <WithHrefExample />
   </div>
 );
@@ -197,9 +185,8 @@ export {
   DefaultExample,
   VerticalExample,
   WithoutPaddingExample,
+  WithoutPaddingVerticalExample,
   WithoutPaddingImageExample,
-  WithoutNotchesExample,
-  WithoutNotchesVerticalExample,
   WithHrefExample,
   DayViewExample,
   MixedExample,

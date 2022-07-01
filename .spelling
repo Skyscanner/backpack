@@ -464,7 +464,6 @@ validationMessage
 WEIGHT_STYLES.regular
 WEIGHT_STYLES.bold
 WEIGHT_STYLES.black
-withNotches
 withOpenEvents
 withRtlSupport
 wrapperClassName

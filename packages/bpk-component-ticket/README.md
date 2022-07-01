@@ -34,5 +34,4 @@ export default () => (
 | vertical      | bool     | false    | false         |
 | stubProps     | object   | false    | {}            |
 | stubClassName | string   | false    | null          |
-| withNotches   | bool     | false    | true          |
 
