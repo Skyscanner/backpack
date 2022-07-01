@@ -1,3 +1,18 @@
+# 2022-07-01
+
+`@skyscanner/backpack-web`: `4.1.0 => 5.0.0`
+
+**Breaking:**
+- bpk-component-ticket: 4.1.12 => 5.0.0
+  - Updated `box-shadow` and `border-radius` to match the new design
+  - The `withNotches` prop is deprecated because the notched design is no longer supported
+
+**Changed:**
+- bpk-component-price: 1.0.1 => 1.1.0
+  - The prop `size` only controls font size now
+  - Adding a new prop `align` to control the alignment and the wrapping behaviour of `subtitle`
+
+
 # 2022-06-30
 
 **Added:**
