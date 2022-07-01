@@ -1,5 +1,13 @@
 # 2022-06-30
 
+**Added:**
+
+`@skyscanner/backpack-web`: `4.0.1 => 4.1.0` <br />
+`bpk-component-split-input`: `1.0.0`
+ - Added new component to be used as an input component for otp and pin numbers
+
+# 2022-06-30
+
 **Fixed:**
 
 `@skyscanner/backpack-web`: `4.0.0 => 4.0.1` <br />
