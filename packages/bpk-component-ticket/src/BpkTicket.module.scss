@@ -79,15 +79,15 @@ $bpk-spacing-v2: true;
 
   @mixin main-styles {
     &--horizontal {
-      border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
+      border-radius: $bpk-border-radius-md 0 0 $bpk-border-radius-md;
 
       @include bpk-rtl {
-        border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
+        border-radius: 0 $bpk-border-radius-md $bpk-border-radius-md 0;
       }
     }
 
     &--vertical {
-      border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
+      border-radius: $bpk-border-radius-md $bpk-border-radius-md 0 0;
     }
   }
 
@@ -111,17 +111,17 @@ $bpk-spacing-v2: true;
   @mixin stub-styles {
     &--horizontal {
       min-width: 30%;
-      border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
+      border-radius: 0 $bpk-border-radius-md $bpk-border-radius-md 0;
       box-shadow: inset $bpk-one-pixel-rem 0 0 $bpk-color-sky-gray-tint-05;
 
       @include bpk-rtl {
-        border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
+        border-radius: $bpk-border-radius-md 0 0 $bpk-border-radius-md;
         box-shadow: inset (-$bpk-one-pixel-rem) 0 0 $bpk-color-sky-gray-tint-05;
       }
     }
 
     &--vertical {
-      border-radius: 0 0 $bpk-border-radius-sm $bpk-border-radius-sm;
+      border-radius: 0 0 $bpk-border-radius-md $bpk-border-radius-md;
       box-shadow: inset 0 $bpk-one-pixel-rem 0 $bpk-color-sky-gray-tint-05;
     }
   }
