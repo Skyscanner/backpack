@@ -214,7 +214,9 @@ class BpkSplitInput extends Component {
 
   render() {
     return (
-      <div className={getClassName('BpkSplitInput')}>{this.renderInputs()}</div>
+      <div className={getClassName('bpk-split-input')}>
+        {this.renderInputs()}
+      </div>
     );
   }
 }
