@@ -1,3 +1,4 @@
+# This component is deprecated and should be considered as not supported.
 # bpk-component-navigation-stack
 
 > Backpack navigation stack component.
