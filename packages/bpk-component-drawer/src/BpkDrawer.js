@@ -34,7 +34,6 @@ type Props = {
   isOpen: boolean,
   onClose: () => mixed,
   renderTarget: ?() => mixed,
-  target: ?any,
 };
 
 type State = {
@@ -44,7 +43,6 @@ type State = {
 class BpkDrawer extends Component<Props, State> {
   static defaultProps = {
     renderTarget: null,
-    target: null,
   };
 
   constructor() {
@@ -70,17 +68,12 @@ class BpkDrawer extends Component<Props, State> {
   };
 
   render() {
-    const { isOpen, onClose, renderTarget, target, ...rest } = this.props;
+    const { isOpen, onClose, renderTarget, ...rest } = this.props;
 
     const { isDrawerShown } = this.state;
 
     return (
-      <Portal
-        isOpen={isOpen}
-        onClose={this.hide}
-        target={target}
-        renderTarget={renderTarget}
-      >
+      <Portal isOpen={isOpen} onClose={this.hide} renderTarget={renderTarget}>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
         <BpkScrimDrawerContent
           isDrawerShown={isDrawerShown}
@@ -98,7 +91,6 @@ BpkDrawer.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   renderTarget: PropTypes.func,
-  target: PropTypes.element,
 };
 
 export default BpkDrawer;

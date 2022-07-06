@@ -22,7 +22,7 @@ import { createPopper, basePlacements } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import focusStore from 'a11y-focus-store';
-import { PortalV1, cssModules } from 'bpk-react-utils';
+import { Portal, cssModules } from 'bpk-react-utils';
 
 import keyboardFocusScope from './keyboardFocusScope';
 import STYLES from './BpkPopover.module.scss';
@@ -82,6 +82,7 @@ class BpkPopoverPortal extends Component<Props> {
 
     this.popper = null;
     this.previousTargetElement = null;
+    this.ref = React.createRef();
   }
 
   onRender = (popoverElement: HTMLElement, targetElement: ?HTMLElement) => {
@@ -215,20 +216,30 @@ class BpkPopoverPortal extends Component<Props> {
       classNames.push(portalClassName);
     }
 
+    const targetElement =
+      typeof target === 'function' ? (
+        target
+      ) : (
+        <div ref={this.ref}>{target}</div>
+      );
+
     return (
-      <PortalV1
-        beforeClose={this.beforeClose}
-        className={classNames.join(' ')}
-        isOpen={isOpen}
-        onClose={this.onClose}
-        onRender={this.onRender}
-        style={portalStyle}
-        renderTarget={renderTarget}
-        target={target}
-      >
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        <BpkPopover onClose={this.onClose} {...rest} />
-      </PortalV1>
+      <>
+        {typeof targetElement !== 'function' && targetElement}
+        <Portal
+          beforeClose={this.beforeClose}
+          className={classNames.join(' ')}
+          isOpen={isOpen}
+          onClose={this.onClose}
+          onRender={this.onRender}
+          style={portalStyle}
+          renderTarget={renderTarget}
+          target={targetElement}
+        >
+          {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+          <BpkPopover onClose={this.onClose} {...rest} />
+        </Portal>
+      </>
     );
   }
 }

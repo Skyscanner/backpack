@@ -108,15 +108,28 @@ class PopoverContainer extends Component<Props, State> {
     const { changeProps, id, inputTrigger, targetFunction, ...rest } =
       this.props;
     let target = null;
-    let openButton = <BpkButton onClick={this.openPopover}> Open </BpkButton>;
+
+    const openButton = <BpkButton onClick={this.openPopover}>Open</BpkButton>;
+
+    const inputField = (
+      <EnhancedInput
+        id="input"
+        name="input"
+        value="John Smith"
+        isOpen={this.state.isOpen}
+        onOpen={this.openPopover}
+        onChange={() => null}
+      />
+    );
 
     if (targetFunction != null) {
       target = targetFunction;
     } else if (this.state.changedTarget) {
       target = this.state.changedTarget;
+    } else if (inputTrigger) {
+      target = inputField;
     } else {
       target = openButton;
-      openButton = null;
     }
 
     const renderTarget: ?Function = (): ?HTMLElement =>
@@ -124,7 +137,7 @@ class PopoverContainer extends Component<Props, State> {
 
     return (
       <div id="popover-container">
-        {openButton}
+        {typeof target === 'function' ? openButton : null}
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkPopover
           closeButtonText="Close"
@@ -133,20 +146,7 @@ class PopoverContainer extends Component<Props, State> {
           label="My popover"
           onClose={this.closePopover}
           renderTarget={renderTarget}
-          target={
-            inputTrigger ? (
-              <EnhancedInput
-                id="input"
-                name="input"
-                value="John Smith"
-                isOpen={this.state.isOpen}
-                onOpen={this.openPopover}
-                onChange={() => null}
-              />
-            ) : (
-              target
-            )
-          }
+          target={target}
           {...rest}
         >
           <BpkContentContainer>
