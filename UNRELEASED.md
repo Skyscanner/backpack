@@ -8,7 +8,8 @@
 `bpk-component-modal`: </br>
 `bpk-component-dialog`: </br>
 `bpk-component-drawer`: </br>
-    - `target` prop is removed.
+    - `target` prop is removed. If you are passing the `target` prop to either of these components, you should instead:
+        - ensure the target component is rendered in your component as it will no longer be rendered in the `Portal`
 
 **Changed:**
 - bpk-component-navigation-stack:
