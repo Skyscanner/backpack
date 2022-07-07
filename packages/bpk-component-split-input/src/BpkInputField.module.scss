@@ -18,10 +18,10 @@
 /* stylelint-disable */
 @import '~bpk-mixins';
 
-.BpkInputField {
+.bpk-input-field {
   display: flex;
   max-width: 3*bpk-spacing-xxl();
-  margin-right: bpk-spacing-xs();
+  margin-right: bpk-spacing-sm();
   align-items: center;
 
   input {
@@ -29,6 +29,6 @@
   }
 }
 
-.BpkInputField:last-child {
+.bpk-input-field:last-child {
   margin-right: $bpk-spacing-none;
 }

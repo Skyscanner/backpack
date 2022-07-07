@@ -3,10 +3,10 @@
 exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
 <DocumentFragment>
   <div
-    class="BpkSplitInput"
+    class="bpk-split-input"
   >
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -22,7 +22,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -38,7 +38,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -54,7 +54,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -70,7 +70,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -86,7 +86,7 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -108,10 +108,10 @@ exports[`BpkSplitInput should render correctly with inputLength param 1`] = `
 exports[`BpkSplitInput should render correctly with large set as false 1`] = `
 <DocumentFragment>
   <div
-    class="BpkSplitInput"
+    class="bpk-split-input"
   >
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -127,7 +127,7 @@ exports[`BpkSplitInput should render correctly with large set as false 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -143,7 +143,7 @@ exports[`BpkSplitInput should render correctly with large set as false 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -159,7 +159,7 @@ exports[`BpkSplitInput should render correctly with large set as false 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -181,10 +181,10 @@ exports[`BpkSplitInput should render correctly with large set as false 1`] = `
 exports[`BpkSplitInput should render correctly with placeholder 1`] = `
 <DocumentFragment>
   <div
-    class="BpkSplitInput"
+    class="bpk-split-input"
   >
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -200,7 +200,7 @@ exports[`BpkSplitInput should render correctly with placeholder 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -216,7 +216,7 @@ exports[`BpkSplitInput should render correctly with placeholder 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -232,7 +232,7 @@ exports[`BpkSplitInput should render correctly with placeholder 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -254,10 +254,10 @@ exports[`BpkSplitInput should render correctly with placeholder 1`] = `
 exports[`BpkSplitInput should render without crashing 1`] = `
 <DocumentFragment>
   <div
-    class="BpkSplitInput"
+    class="bpk-split-input"
   >
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -273,7 +273,7 @@ exports[`BpkSplitInput should render without crashing 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -289,7 +289,7 @@ exports[`BpkSplitInput should render without crashing 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"
@@ -305,7 +305,7 @@ exports[`BpkSplitInput should render without crashing 1`] = `
       />
     </div>
     <div
-      class="BpkInputField"
+      class="bpk-input-field"
     >
       <input
         aria-invalid="false"

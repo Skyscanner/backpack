@@ -38,7 +38,7 @@ class BpkInputField extends Component {
   render() {
     const { focus, id, index, label, value, ...rest } = this.props;
     return (
-      <div key={index} className={getClassName('BpkInputField')}>
+      <div key={index} className={getClassName('bpk-input-field')}>
         <BpkInput
           id={id}
           autoComplete="off"
