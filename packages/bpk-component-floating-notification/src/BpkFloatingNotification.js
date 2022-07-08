@@ -33,7 +33,7 @@ export const TYPE = {
   dark: 'dark',
 };
 
-export type Props = {
+type Props = {
   animateOnEnter: ?boolean,
   animateOnExit: ?boolean,
   className: ?string,
