@@ -16,15 +16,44 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React, { useState, Node } from 'react';
 
 import BpkFloatingNotification, {
   TYPE,
 } from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
+import BpkButton from '../../packages/bpk-component-button';
 
-const DefaultExample = () => <BpkFloatingNotification text="Saved" />;
+type Props = {
+  children: Node,
+};
+
+const AlertContainer = ({ children }: Props): Node => {
+  const [showAlert, setShowAlert] = useState(false);
+
+  return (
+    <>
+      <BpkButton
+        onClick={() => {
+          setShowAlert(true);
+          setTimeout(() => {
+            setShowAlert(false);
+          }, 4800);
+        }}
+      >
+        Trigger alert
+      </BpkButton>
+      {showAlert && children}
+    </>
+  );
+};
+
+const DefaultExample = () => (
+  <AlertContainer>
+    <BpkFloatingNotification text="Saved" />
+  </AlertContainer>
+);
 
 const IconExample = () => (
   <BpkFloatingNotification icon={BpkIconHeart} text="Saved" />
