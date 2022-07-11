@@ -355,6 +355,7 @@ onClick
 onClose
 onDialingCodePress
 onDismiss
+onExit
 onItemPress
 onLoad
 onMonthChange

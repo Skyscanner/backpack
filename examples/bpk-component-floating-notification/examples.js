@@ -16,51 +16,88 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React, { useState, Node } from 'react';
 
 import BpkFloatingNotification, {
   TYPE,
 } from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
+import BpkButton from '../../packages/bpk-component-button';
 
-const DefaultExample = () => <BpkFloatingNotification text="Saved" />;
+type Props = {
+  children: Node,
+};
+
+const AlertContainer = ({ children }: Props): Node => {
+  const [showAlert, setShowAlert] = useState(false);
+
+  return (
+    <>
+      <BpkButton
+        onClick={() => {
+          setShowAlert(true);
+        }}
+      >
+        Trigger alert
+      </BpkButton>
+      {showAlert &&
+        React.cloneElement(children, { onExit: () => setShowAlert(false) })}
+    </>
+  );
+};
+
+const DefaultExample = () => (
+  <AlertContainer>
+    <BpkFloatingNotification text="Saved" />
+  </AlertContainer>
+);
 
 const IconExample = () => (
-  <BpkFloatingNotification icon={BpkIconHeart} text="Saved" />
+  <AlertContainer>
+    <BpkFloatingNotification icon={BpkIconHeart} text="Saved" />
+  </AlertContainer>
 );
 
 const CtaExample = () => (
-  <BpkFloatingNotification ctaText="View" text="Saved" />
+  <AlertContainer>
+    <BpkFloatingNotification ctaText="View" text="Saved" />
+  </AlertContainer>
 );
 
 const CtaIconLongTextExample = () => (
-  <BpkFloatingNotification
-    ctaText="View"
-    icon={BpkIconHeart}
-    text="Killer Combo saved to New York and Miami 🎉"
-  />
+  <AlertContainer>
+    <BpkFloatingNotification
+      ctaText="View"
+      icon={BpkIconHeart}
+      text="Killer Combo saved to New York and Miami 🎉"
+    />
+  </AlertContainer>
 );
 
 const CtaIconLongTextDarkModeExample = () => (
-  <BpkFloatingNotification
-    ctaText="View"
-    type={TYPE.dark}
-    icon={BpkIconInformationCircle}
-    text="Killer Combo saved to New York and Miami 🎉"
-  />
+  <AlertContainer>
+    <BpkFloatingNotification
+      ctaText="View"
+      type={TYPE.dark}
+      icon={BpkIconInformationCircle}
+      text="Killer Combo saved to New York and Miami 🎉"
+    />
+  </AlertContainer>
 );
 
 const VisualTestExample = () => (
-  <BpkFloatingNotification
-    animateOnEnter
-    animateOnExit
-    ctaText="View"
-    hideAfter={5000}
-    icon={BpkIconInformationCircle}
-    text="Killer Combo saved to New York and Miami 🎉"
-    type={TYPE.dark}
-  />
+  <AlertContainer>
+    <BpkFloatingNotification
+      animateOnEnter
+      animateOnExit
+      ctaText="View"
+      hideAfter={5000}
+      icon={BpkIconInformationCircle}
+      text="Killer Combo saved to New York and Miami 🎉"
+      type={TYPE.dark}
+    />
+  </AlertContainer>
 );
 
 export {

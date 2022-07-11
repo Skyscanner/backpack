@@ -104,4 +104,13 @@ describe('BpkFloatingNotification', () => {
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
+
+  it('should do function when unmounted (exited)', () => {
+    const onExit = jest.fn();
+    render(<BpkFloatingNotification onExit={onExit} {...props} />);
+
+    setTimeout(() => {
+      expect(onExit).toHaveBeenCalledTimes(1);
+    });
+  });
 });
