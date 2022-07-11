@@ -10,6 +10,12 @@ exports[`BpkFloatingNotification should render correctly 1`] = `
     >
       Saved
     </p>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Saved
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -24,6 +30,12 @@ exports[`BpkFloatingNotification should render correctly in dark mode (prop) 1`]
     >
       Saved
     </p>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Saved
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -38,6 +50,12 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
     >
       Saved
     </p>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Saved
+    </div>
     <button
       class="bpk-button bpk-button--link bpk-floating-notification__button"
       type="button"
@@ -58,6 +76,12 @@ exports[`BpkFloatingNotification should render correctly with CTA text in dark m
     >
       Saved
     </p>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Saved
+    </div>
     <button
       class="bpk-button bpk-button--link bpk-floating-notification__button bpk-floating-notification__button--dark"
       type="button"
@@ -93,6 +117,12 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
     >
       Saved
     </p>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Saved
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -122,6 +152,12 @@ exports[`BpkFloatingNotification should render correctly with icon prop in dark 
     >
       Saved
     </p>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Saved
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -137,6 +173,12 @@ exports[`BpkFloatingNotification should support arbitrary props 1`] = `
     >
       Saved
     </p>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Saved
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -151,6 +193,12 @@ exports[`BpkFloatingNotification should support custom class names 1`] = `
     >
       Saved
     </p>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Saved
+    </div>
   </div>
 </DocumentFragment>
 `;
