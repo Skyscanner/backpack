@@ -37,14 +37,12 @@ const AlertContainer = ({ children }: Props): Node => {
       <BpkButton
         onClick={() => {
           setShowAlert(true);
-          setTimeout(() => {
-            setShowAlert(false);
-          }, 4800);
         }}
       >
         Trigger alert
       </BpkButton>
-      {showAlert && children}
+      {showAlert &&
+        React.cloneElement(children, { onExit: () => setShowAlert(false) })}
     </>
   );
 };
@@ -56,40 +54,50 @@ const DefaultExample = () => (
 );
 
 const IconExample = () => (
-  <BpkFloatingNotification icon={BpkIconHeart} text="Saved" />
+  <AlertContainer>
+    <BpkFloatingNotification icon={BpkIconHeart} text="Saved" />
+  </AlertContainer>
 );
 
 const CtaExample = () => (
-  <BpkFloatingNotification ctaText="View" text="Saved" />
+  <AlertContainer>
+    <BpkFloatingNotification ctaText="View" text="Saved" />
+  </AlertContainer>
 );
 
 const CtaIconLongTextExample = () => (
-  <BpkFloatingNotification
-    ctaText="View"
-    icon={BpkIconHeart}
-    text="Killer Combo saved to New York and Miami 🎉"
-  />
+  <AlertContainer>
+    <BpkFloatingNotification
+      ctaText="View"
+      icon={BpkIconHeart}
+      text="Killer Combo saved to New York and Miami 🎉"
+    />
+  </AlertContainer>
 );
 
 const CtaIconLongTextDarkModeExample = () => (
-  <BpkFloatingNotification
-    ctaText="View"
-    type={TYPE.dark}
-    icon={BpkIconInformationCircle}
-    text="Killer Combo saved to New York and Miami 🎉"
-  />
+  <AlertContainer>
+    <BpkFloatingNotification
+      ctaText="View"
+      type={TYPE.dark}
+      icon={BpkIconInformationCircle}
+      text="Killer Combo saved to New York and Miami 🎉"
+    />
+  </AlertContainer>
 );
 
 const VisualTestExample = () => (
-  <BpkFloatingNotification
-    animateOnEnter
-    animateOnExit
-    ctaText="View"
-    hideAfter={5000}
-    icon={BpkIconInformationCircle}
-    text="Killer Combo saved to New York and Miami 🎉"
-    type={TYPE.dark}
-  />
+  <AlertContainer>
+    <BpkFloatingNotification
+      animateOnEnter
+      animateOnExit
+      ctaText="View"
+      hideAfter={5000}
+      icon={BpkIconInformationCircle}
+      text="Killer Combo saved to New York and Miami 🎉"
+      type={TYPE.dark}
+    />
+  </AlertContainer>
 );
 
 export {

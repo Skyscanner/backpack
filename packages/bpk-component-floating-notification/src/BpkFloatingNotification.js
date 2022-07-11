@@ -41,6 +41,7 @@ type Props = {
   hideAfter: ?number,
   icon: ?() => ReactElement,
   onClick: ?() => void,
+  onExit: ?() => void,
   text: string,
   type: ?TYPE,
 };
@@ -56,6 +57,7 @@ const BpkFloatingNotification = (props: Props) => {
     hideAfter,
     icon: Icon,
     onClick,
+    onExit,
     text,
     type,
     ...rest
@@ -99,6 +101,7 @@ const BpkFloatingNotification = (props: Props) => {
       appear={animateOnEnter}
       exit={animateOnExit}
       unmountOnExit
+      onExited={onExit}
     >
       <div className={classNames} {...rest} role="alert">
         {Icon && (
@@ -131,6 +134,7 @@ BpkFloatingNotification.propTypes = {
   hideAfter: PropTypes.number,
   icon: PropTypes.ReactElement,
   onClick: PropTypes.func,
+  onExit: PropTypes.func,
   text: PropTypes.string.isRequired,
   type: PropTypes.oneOf(Object.values(TYPE)),
 };
@@ -143,6 +147,7 @@ BpkFloatingNotification.defaultProps = {
   hideAfter: 4000,
   icon: null,
   onClick: null,
+  onExit: null,
   type: TYPE.light,
 };
 
