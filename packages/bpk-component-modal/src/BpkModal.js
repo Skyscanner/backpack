@@ -19,9 +19,9 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Element } from 'react';
+import React from 'react';
 import { withScrim } from 'bpk-scrim-utils';
-import { PortalV1, cssModules, isDeviceIphone } from 'bpk-react-utils';
+import { Portal, cssModules, isDeviceIphone } from 'bpk-react-utils';
 
 import STYLES from './BpkModal.module.scss';
 import BpkModalInner, {
@@ -49,7 +49,6 @@ export type Props = {
   closeOnScrimClick: boolean,
   closeOnEscPressed: boolean,
   renderTarget: ?() => ?HTMLElement,
-  target: ?((() => ?HTMLElement) | Element<any>),
   onClose: (event: SyntheticEvent<>) => void | null,
 };
 
@@ -63,7 +62,6 @@ const BpkModal = (props: Props) => {
     isOpen,
     onClose,
     renderTarget,
-    target,
     ...rest
   } = props;
 
@@ -78,10 +76,9 @@ const BpkModal = (props: Props) => {
   }
 
   return (
-    <PortalV1
+    <Portal
       isOpen={isOpen}
       onClose={onClose}
-      target={target}
       renderTarget={renderTarget}
       closeOnEscPressed={closeOnEscPressed}
     >
@@ -95,7 +92,7 @@ const BpkModal = (props: Props) => {
         isIphone={isIphone}
         {...rest}
       />
-    </PortalV1>
+    </Portal>
   );
 };
 
@@ -107,7 +104,6 @@ export const propTypes = {
   isIphone: PropTypes.bool,
   isOpen: PropTypes.bool.isRequired,
   renderTarget: PropTypes.func,
-  target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
   closeOnScrimClick: PropTypes.bool,
   closeOnEscPressed: PropTypes.bool,
 };
@@ -116,7 +112,6 @@ export const defaultProps = {
   ...modalDialogDefaultProps,
   onClose: () => null,
   renderTarget: null,
-  target: null,
   isIphone: isDeviceIphone(),
   closeOnScrimClick: true,
   closeOnEscPressed: true,

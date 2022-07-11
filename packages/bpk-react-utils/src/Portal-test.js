@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
 
 import Portal from './Portal';
@@ -220,6 +220,7 @@ describe('Portal', () => {
   it('should call the onClose handler on click outside', async () => {
     const renderTarget = document.createElement('div');
     const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
     const { getByText } = render(
       <>
@@ -349,6 +350,7 @@ describe('Portal', () => {
 
   it('should propagate the click event to the onClose handler', () => {
     const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
     const { getByText } = render(
       <>
@@ -396,6 +398,7 @@ describe('Portal', () => {
 
   it('should call the onClose handler on escape key', () => {
     const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
     render(
       <Portal isOpen onClose={onCloseSpy} target={target}>
@@ -415,19 +418,25 @@ describe('Portal', () => {
   });
 
   it('should call targetRef with the target', () => {
-    const target = document.createElement('div');
     const targetRef = jest.fn();
+    const target = jest.fn();
+    const targetElement = <div>target</div>;
+    target.mockReturnValue(targetElement);
     render(
-      <Portal isOpen target={target} targetRef={targetRef}>
-        <div>My portal content</div>
-      </Portal>,
+      <>
+        {target}
+        <Portal isOpen target={target} targetRef={targetRef}>
+          <div>My portal content</div>
+        </Portal>
+      </>,
     );
 
-    expect(targetRef).toHaveBeenCalledWith(target);
+    expect(targetRef).toHaveBeenCalledWith(targetElement);
   });
 
   it('should not close on escape key if closeOnEscPressed is false', () => {
     const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
     render(
       <Portal
@@ -453,6 +462,7 @@ describe('Portal', () => {
 
   it('should propagate the escape key event to the onClose handler', () => {
     const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
     render(
       <Portal isOpen onClose={onCloseSpy} target={target}>
@@ -496,6 +506,7 @@ describe('Portal', () => {
 
   it('should not call the onClose handler again on escape key if portal is unmounted', () => {
     const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
     const { rerender } = render(
       <Portal isOpen onClose={onCloseSpy} target={target}>

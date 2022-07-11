@@ -26,6 +26,7 @@ import {
   colorSkyGray,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { cssModules } from '../../packages/bpk-react-utils';
 import { action } from '../../packages/bpk-storybook-utils';
 import {
   weekDays,
@@ -52,6 +53,10 @@ import {
 import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
 import BpkDatepicker from '../../packages/bpk-component-datepicker';
 
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
+
 const formatDate = (date) => format(date, 'dd/MM/yyyy');
 
 const Input = withOpenEvents(BpkInput);
@@ -60,7 +65,6 @@ const inputProps = {
   onChange: () => null,
   placeholder: 'placeholder',
   large: true,
-  docked: true,
 };
 
 const inputPropsWithEventHandlers = {
@@ -199,76 +203,83 @@ class ReturnDatepicker extends Component {
   render() {
     return (
       <div id="datepicker-element">
-        <div style={{ display: 'flex' }} id="application-element">
-          <BpkDatepicker
-            id="depart"
-            closeButtonText="Close"
-            daysOfWeek={weekDays}
-            weekStartsOn={1}
-            changeMonthLabel="Change month"
-            previousMonthLabel="Go to previous month"
-            nextMonthLabel="Go to next month"
-            title="Departure date"
-            getApplicationElement={() =>
-              document.getElementById('application-element')
-            }
-            renderTarget={() => document.getElementById('datepicker-element')}
-            formatDate={formatDate}
-            formatMonth={formatMonth}
-            formatDateFull={formatDateFull}
-            inputProps={inputProps}
-            date={this.state.departDate}
-            onDateSelect={(departDate) => {
-              this.setState((prevState) => ({
-                departDate,
-                returnDate: dateToBoundaries(
-                  prevState.returnDate,
+        <div
+          className={getClassName('bpk-datepicker__container')}
+          id="application-element"
+        >
+          <div className={getClassName('bpk-datepicker__container--item')}>
+            <BpkDatepicker
+              id="depart"
+              closeButtonText="Close"
+              daysOfWeek={weekDays}
+              weekStartsOn={1}
+              changeMonthLabel="Change month"
+              previousMonthLabel="Go to previous month"
+              nextMonthLabel="Go to next month"
+              title="Departure date"
+              getApplicationElement={() =>
+                document.getElementById('application-element')
+              }
+              renderTarget={() => document.getElementById('datepicker-element')}
+              formatDate={formatDate}
+              formatMonth={formatMonth}
+              formatDateFull={formatDateFull}
+              inputProps={inputProps}
+              date={this.state.departDate}
+              onDateSelect={(departDate) => {
+                this.setState((prevState) => ({
                   departDate,
-                  this.maxDate,
-                ),
-                isReturnPickerOpen: true,
-              }));
-              action('Selected departure date')(departDate);
-            }}
-            onMonthChange={action('Changed month')}
-          />
-          <BpkDatepicker
-            id="return"
-            closeButtonText="Close"
-            daysOfWeek={weekDays}
-            weekStartsOn={1}
-            changeMonthLabel="Change month"
-            previousMonthLabel="Go to previous month"
-            nextMonthLabel="Go to next month"
-            title="Return date"
-            getApplicationElement={() =>
-              document.getElementById('application-element')
-            }
-            renderTarget={() => document.getElementById('datepicker-element')}
-            formatDate={formatDate}
-            formatMonth={formatMonth}
-            formatDateFull={formatDateFull}
-            inputProps={inputProps}
-            date={this.state.returnDate}
-            onDateSelect={(returnDate) => {
-              this.setState((prevState) => ({
-                returnDate,
-                departDate: dateToBoundaries(
-                  prevState.departDate,
-                  this.minDate,
+                  returnDate: dateToBoundaries(
+                    prevState.returnDate,
+                    departDate,
+                    this.maxDate,
+                  ),
+                  isReturnPickerOpen: true,
+                }));
+                action('Selected departure date')(departDate);
+              }}
+              onMonthChange={action('Changed month')}
+            />
+          </div>
+          <div className={getClassName('bpk-datepicker__container--item')}>
+            <BpkDatepicker
+              id="return"
+              closeButtonText="Close"
+              daysOfWeek={weekDays}
+              weekStartsOn={1}
+              changeMonthLabel="Change month"
+              previousMonthLabel="Go to previous month"
+              nextMonthLabel="Go to next month"
+              title="Return date"
+              getApplicationElement={() =>
+                document.getElementById('application-element')
+              }
+              renderTarget={() => document.getElementById('datepicker-element')}
+              formatDate={formatDate}
+              formatMonth={formatMonth}
+              formatDateFull={formatDateFull}
+              inputProps={inputProps}
+              date={this.state.returnDate}
+              onDateSelect={(returnDate) => {
+                this.setState((prevState) => ({
                   returnDate,
-                ),
-              }));
-              action('Selected return date')(returnDate);
-            }}
-            onOpenChange={(isOpen) => {
-              this.setState({
-                isReturnPickerOpen: isOpen,
-              });
-            }}
-            onMonthChange={action('Changed month')}
-            isOpen={this.state.isReturnPickerOpen}
-          />
+                  departDate: dateToBoundaries(
+                    prevState.departDate,
+                    this.minDate,
+                    returnDate,
+                  ),
+                }));
+                action('Selected return date')(returnDate);
+              }}
+              onOpenChange={(isOpen) => {
+                this.setState({
+                  isReturnPickerOpen: isOpen,
+                });
+              }}
+              onMonthChange={action('Changed month')}
+              isOpen={this.state.isReturnPickerOpen}
+            />
+          </div>
         </div>
       </div>
     );
