@@ -103,7 +103,7 @@ const BpkFloatingNotification = (props: Props) => {
       unmountOnExit
       onExited={onExit}
     >
-      <div className={classNames} role="alert" {...rest}>
+      <div className={classNames} {...rest}>
         {Icon && (
           <div className={iconClassNames}>
             <Icon />
