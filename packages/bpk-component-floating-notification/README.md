@@ -35,6 +35,7 @@ export default () => (
 | hideAfter      | number       | false    | 4000          |
 | icon           | ReactElement | false    | null          |
 | onClick        | func         | false    | null          |
+| onExit         | func         | false    | null          |
 | text           | string       | true     | -             |
 | type           | oneOf(TYPE)  | false    | TYPE.light    |
 
@@ -45,6 +46,10 @@ export default () => (
 This prop controls the amount of time that the notification stays visible before the exit animation begins.
 
 The default value is 4 seconds (4000 milliseconds).
+
+#### onExit
+
+Execute a function after the component has finished the exit animation.
 
 #### type
 
