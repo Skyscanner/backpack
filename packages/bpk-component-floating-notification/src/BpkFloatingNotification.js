@@ -20,6 +20,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState, ReactElement } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import BpkAriaLive from 'bpk-component-aria-live';
 import BpkButton from 'bpk-component-button';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
@@ -116,6 +117,7 @@ const BpkFloatingNotification = (props: Props) => {
         >
           {text}
         </BpkText>
+        <BpkAriaLive>{text}</BpkAriaLive>
         {ctaText && (
           <BpkButton link onClick={onClick} className={buttonClassNames}>
             {ctaText}
