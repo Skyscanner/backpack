@@ -132,7 +132,6 @@
     "babel-jest": "^26.0.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "bpk-component-aria-live": "^2.1.18",
     "bpk-mixins": "^31.1.1",
     "bpk-stylesheets": "^7.1.35",
     "cli-progress": "^3.11.1",

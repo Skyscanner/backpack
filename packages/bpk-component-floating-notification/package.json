@@ -13,6 +13,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
+    "bpk-component-aria-live": "^2.1.18",
     "bpk-component-button": "^6.2.6",
     "bpk-component-text": "^7.0.5",
     "bpk-mixins": "^31.1.1",
