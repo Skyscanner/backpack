@@ -19,8 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import { mount } from 'enzyme';
-import { render } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import BpkPopover from './BpkPopover';
 
@@ -100,9 +99,9 @@ describe('BpkPopover', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should propagate the click event to the onClose handler when clicking on the closing button', () => {
+  it('should propagate the click event to the onClose handler when clicking on the closing button', async () => {
     const onCloseSpy = jest.fn();
-    const popover = mount(
+    render(
       <BpkPopover
         id="my-popover"
         onClose={onCloseSpy}
@@ -116,23 +115,20 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(onCloseSpy).not.toHaveBeenCalled();
 
-    const event = {
-      target: '<BpkCloseButton>',
-    };
-    popover.find('BpkCloseButton').at(0).simulate('click', event);
+    const closeButton = screen.getByRole('button', { name: 'Close' });
+    await fireEvent.click(closeButton);
 
-    expect(onCloseSpy.mock.calls[0][0].target).toEqual('<BpkCloseButton>');
-    expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'CLOSE_BUTTON' });
+    expect(onCloseSpy).toHaveBeenCalled();
   });
 
   it(
     'should propagate the click event to the onClose handler when clicking on the closing link' +
       'when using label as a title',
-    () => {
+    async () => {
       const onCloseSpy = jest.fn();
-      const popover = mount(
+      render(
         <BpkPopover
           id="my-popover"
           onClose={onCloseSpy}
@@ -146,24 +142,21 @@ describe('BpkPopover', () => {
         </BpkPopover>,
       );
 
-      expect(onCloseSpy.mock.calls.length).toEqual(0);
+      expect(onCloseSpy).not.toHaveBeenCalled();
 
-      const event = {
-        target: '<BpkButtonLink>',
-      };
-      popover.find('BpkButtonLink').at(0).simulate('click', event);
+      const linkButton = screen.getByRole('button', { name: 'Close' });
+      await fireEvent.click(linkButton);
 
-      expect(onCloseSpy.mock.calls[0][0].target).toEqual('<BpkButtonLink>');
-      expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'CLOSE_LINK' });
+      expect(onCloseSpy).toHaveBeenCalled();
     },
   );
 
   it(
     'should propagate the click event to the onClose handler when clicking on the closing link' +
       'when not using label as a title',
-    () => {
+    async () => {
       const onCloseSpy = jest.fn();
-      const popover = mount(
+      render(
         <BpkPopover
           id="my-popover"
           onClose={onCloseSpy}
@@ -176,15 +169,12 @@ describe('BpkPopover', () => {
         </BpkPopover>,
       );
 
-      expect(onCloseSpy.mock.calls.length).toEqual(0);
+      expect(onCloseSpy).not.toHaveBeenCalled();
 
-      const event = {
-        target: '<BpkButtonLink>',
-      };
-      popover.find('BpkButtonLink').at(0).simulate('click', event);
+      const linkButton = screen.getByRole('button', { name: 'Close' });
+      await fireEvent.click(linkButton);
 
-      expect(onCloseSpy.mock.calls[0][0].target).toEqual('<BpkButtonLink>');
-      expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'CLOSE_LINK' });
+      expect(onCloseSpy).toHaveBeenCalled();
     },
   );
 });

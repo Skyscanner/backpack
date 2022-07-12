@@ -1,87 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkPopoverPortal Custom Portal props should render correctly with portalClassName added to portal component 1`] = `
-<PortalV1
-  beforeClose={[Function]}
-  className="bpk-popover-portal my-custom-classname"
-  closeOnEscPressed={true}
-  isOpen={false}
-  onClose={[Function]}
-  onOpen={[Function]}
-  onRender={[Function]}
-  renderTarget={null}
-  style={null}
-  target={
-    <div>
-      target
-    </div>
-  }
-  targetRef={null}
->
-  <BpkPopover
-    className={null}
-    closeButtonIcon={true}
-    closeButtonProps={null}
-    closeButtonText="Close"
-    id="my-popover"
-    label="My popover"
-    labelAsTitle={false}
-    onClose={[Function]}
-    padded={true}
-  >
-    <div>
-      My popover content
-    </div>
-  </BpkPopover>
-</PortalV1>
-`;
-
-exports[`BpkPopoverPortal Custom Portal props should render correctly with portalStyle added to portal component 1`] = `
-<PortalV1
-  beforeClose={[Function]}
-  className="bpk-popover-portal"
-  closeOnEscPressed={true}
-  isOpen={false}
-  onClose={[Function]}
-  onOpen={[Function]}
-  onRender={[Function]}
-  renderTarget={null}
-  style={
-    Object {
-      "color": "red",
-    }
-  }
-  target={
-    <div>
-      target
-    </div>
-  }
-  targetRef={null}
->
-  <BpkPopover
-    className={null}
-    closeButtonIcon={true}
-    closeButtonProps={null}
-    closeButtonText="Close"
-    id="my-popover"
-    label="My popover"
-    labelAsTitle={false}
-    onClose={[Function]}
-    padded={true}
-  >
-    <div>
-      My popover content
-    </div>
-  </BpkPopover>
-</PortalV1>
-`;
-
 exports[`BpkPopoverPortal should not render anything if target is a function 1`] = `<DocumentFragment />`;
 
 exports[`BpkPopoverPortal should render correctly 1`] = `
 <DocumentFragment>
   <div>
-    target
+    <div>
+      target
+    </div>
   </div>
 </DocumentFragment>
 `;

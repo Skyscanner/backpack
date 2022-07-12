@@ -1,3 +1,36 @@
+# 2022-07-12
+
+**Breaking:**
+
+`@skyscanner/backpack-web`: `5.0.0 => 6.0.0` <br />
+`bpk-react-utils`: `5.0.0 => 6.0.0` </br>
+  - As part of the migration of `Portal` to use the native React Portal implementation:
+    - We removed the usage of `findDOMNode` which has been deprecated in strict mode. Therefore, if you are passing `target` prop to `Portal`, you should ensure `target` is an HTML element with a `ref` attached to it.
+    - `target` will no longer be rendered inside the `Portal`. If you are passing `target` prop to `Portal`, please ensure `target` is rendered in your component.
+
+`bpk-component-popover`: `5.0.3 => 6.0.0` </br>
+`bpk-component-modal`: `4.0.1 => 5.0.0` </br>
+`bpk-component-datepicker`: `15.2.18 => 16.0.0` </br>
+  - Components are now using the new native React `Portal` implementation. Please ensure your components still work as expected with the new `Portal`.
+
+`bpk-component-modal`: `4.0.1 => 5.0.0` </br>
+`bpk-component-dialog`: `5.0.0 => 6.0.0` </br>
+`bpk-component-drawer`: `5.0.0 => 6.0.0` </br>
+  - `target` prop is removed. If you are passing the `target` prop to either of these components, you should instead:
+    - ensure the target component is rendered in your component as it will no longer be rendered in the `Portal`.
+
+
+**Changed:**
+- bpk-component-navigation-stack:
+  - This component is deprecated, please avoid using this component and ensure you migrate away from this component.
+
+- bpk-component-split-input: `1.0.0` => `1.1.0`
+  - Replace deprecated spacing tokens with new tokens. There are no visual changes as the new tokens have the exact values.
+
+- bpk-component-floating-notification: `1.0.0` => `1.1.0`
+  - Added new prop `onExit` which executes a function after the component has finished the exit animation.
+
+
 # 2022-07-01
 
 `@skyscanner/backpack-web`: `4.1.0 => 5.0.0`

@@ -155,7 +155,7 @@ class Portal extends Component {
   getTargetElement() {
     return typeof this.props.target === 'function'
       ? this.props.target()
-      : this.props.target;
+      : this.props.target?.ref.current;
   }
 
   getRenderTarget() {
