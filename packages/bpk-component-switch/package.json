@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-switch",
-  "version": "2.1.12",
+  "version": "2.1.13",
   "description": "Backpack switch component.",
   "license": "Apache-2.0",
   "repository": {
@@ -15,7 +15,7 @@
   "gitHead": "5c156b97cb0ba5e75851d3c763334578714c895e",
   "dependencies": {
     "bpk-mixins": "^31.1.1",
-    "bpk-react-utils": "^5.0.0",
+    "bpk-react-utils": "^6.0.0",
     "prop-types": "^15.5.8"
   },
   "peerDependencies": {
