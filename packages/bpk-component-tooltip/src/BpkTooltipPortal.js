@@ -21,7 +21,7 @@
 import { createPopper, basePlacements } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node, type Element } from 'react';
-import { PortalV1, cssModules } from 'bpk-react-utils';
+import { Portal, cssModules } from 'bpk-react-utils';
 
 import BpkTooltip, {
   propTypes as tooltipPropTypes,
@@ -93,6 +93,7 @@ class BpkTooltipPortal extends Component<Props, State> {
 
     this.popper = null;
     this.targetRef = null;
+    this.ref = React.createRef();
   }
 
   componentDidMount() {
@@ -190,30 +191,37 @@ class BpkTooltipPortal extends Component<Props, State> {
       'aria-label': ariaLabel,
     });
 
+    const targetElement = (
+      <div ref={this.ref}>{targetWithAccessibilityProps}</div>
+    );
+
     if (portalClassName) {
       classNames.push(portalClassName);
     }
 
-    return renderPortal ? (
-      <PortalV1
-        target={targetWithAccessibilityProps}
-        targetRef={(targetRef) => {
-          this.targetRef = targetRef;
-        }}
-        isOpen={this.state.isOpen}
-        onOpen={this.onOpen}
-        onClose={this.closeTooltip}
-        style={portalStyle}
-        renderTarget={renderTarget}
-        className={classNames.join(' ')}
-      >
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        <BpkTooltip padded={padded} {...rest}>
-          {children}
-        </BpkTooltip>
-      </PortalV1>
-    ) : (
-      targetWithAccessibilityProps
+    return (
+      <>
+        {targetElement}
+        {renderPortal && (
+          <Portal
+            target={targetElement}
+            targetRef={(targetRef) => {
+              this.targetRef = targetRef;
+            }}
+            isOpen={this.state.isOpen}
+            onOpen={this.onOpen}
+            onClose={this.closeTooltip}
+            style={portalStyle}
+            renderTarget={renderTarget}
+            className={classNames.join(' ')}
+          >
+            {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+            <BpkTooltip padded={padded} {...rest}>
+              {children}
+            </BpkTooltip>
+          </Portal>
+        )}
+      </>
     );
   }
 }

@@ -27,7 +27,7 @@ jest.mock('bpk-react-utils', () => {
 
   return {
     ...original,
-    PortalV1: 'PortalV1',
+    Portal: 'Portal',
   };
 });
 

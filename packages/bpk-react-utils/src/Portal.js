@@ -208,7 +208,7 @@ class Portal extends Component {
       this.portalElement.className = this.props.className;
     }
     this.setState({ isVisible: true }, () =>
-      this.props.onOpen(this.portalElement),
+      this.props.onOpen(this.portalElement, this.getTargetElement()),
     );
   }
 
