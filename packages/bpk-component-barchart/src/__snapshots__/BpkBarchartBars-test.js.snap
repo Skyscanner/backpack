@@ -1,1308 +1,413 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkBarchartBars should render correctly 1`] = `
-<g>
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar0"
-    label="Jan - 305"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={5.511811023622045}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar1"
-    label="Feb - 348"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={21.259842519685037}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar2"
-    label="Mar - 418"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={37.00787401574803}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar3"
-    label="Apr - 448"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={52.75590551181102}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar4"
-    label="May - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={68.50393700787401}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar5"
-    label="Jun - 322"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={84.25196850393701}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar6"
-    label="Jul - 340"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={100}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar7"
-    label="Aug - 327"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={115.74803149606299}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar8"
-    label="Sep - 444"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={131.49606299212599}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar9"
-    label="Oct - 422"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={147.24409448818898}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar10"
-    label="Nov - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={162.99212598425197}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar11"
-    label="Dec - 301"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    selected={false}
-    width={200}
-    x={178.74015748031496}
-    y={16}
-  />
-</g>
+<DocumentFragment>
+  <g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(14.893617021276597, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Jan - 305"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(57.4468085106383, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Feb - 348"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(100, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Mar - 418"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(142.55319148936172, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Apr - 448"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+  </g>
+</DocumentFragment>
 `;
 
 exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`] = `
-<g>
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar0"
-    label="Jan - 305"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={5.511811023622045}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar1"
-    label="Feb - 348"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={21.259842519685037}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar2"
-    label="Mar - 418"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={true}
-    width={200}
-    x={37.00787401574803}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar3"
-    label="Apr - 448"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={52.75590551181102}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar4"
-    label="May - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={68.50393700787401}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar5"
-    label="Jun - 322"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={84.25196850393701}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar6"
-    label="Jul - 340"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={100}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar7"
-    label="Aug - 327"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={115.74803149606299}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar8"
-    label="Sep - 444"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={131.49606299212599}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar9"
-    label="Oct - 422"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={147.24409448818898}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar10"
-    label="Nov - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={162.99212598425197}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar11"
-    label="Dec - 301"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={178.74015748031496}
-    y={16}
-  />
-</g>
-`;
-
-exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
-<g>
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar0"
-    label="Jan - 305"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={5.511811023622045}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar1"
-    label="Feb - 348"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={21.259842519685037}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar2"
-    label="Mar - 418"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={37.00787401574803}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar3"
-    label="Apr - 448"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={52.75590551181102}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar4"
-    label="May - 344"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={68.50393700787401}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar5"
-    label="Jun - 322"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={84.25196850393701}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar6"
-    label="Jul - 340"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={100}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar7"
-    label="Aug - 327"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={115.74803149606299}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar8"
-    label="Sep - 444"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={131.49606299212599}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar9"
-    label="Oct - 422"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={147.24409448818898}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar10"
-    label="Nov - 344"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={162.99212598425197}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar11"
-    label="Dec - 301"
-    onClick={[Function]}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={178.74015748031496}
-    y={16}
-  />
-</g>
-`;
-
-exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
-<g>
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar0"
-    label="Jan - 305"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={5.511811023622045}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar1"
-    label="Feb - 348"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={21.259842519685037}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar2"
-    label="Mar - 418"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={37.00787401574803}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar3"
-    label="Apr - 448"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={52.75590551181102}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar4"
-    label="May - 344"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={68.50393700787401}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar5"
-    label="Jun - 322"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={84.25196850393701}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar6"
-    label="Jul - 340"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={100}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar7"
-    label="Aug - 327"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={115.74803149606299}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar8"
-    label="Sep - 444"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={131.49606299212599}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar9"
-    label="Oct - 422"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={147.24409448818898}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar10"
-    label="Nov - 344"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={162.99212598425197}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar11"
-    label="Dec - 301"
-    onClick={null}
-    onFocus={[Function]}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={178.74015748031496}
-    y={16}
-  />
-</g>
-`;
-
-exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
-<g>
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar0"
-    label="Jan - 305"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={5.511811023622045}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar1"
-    label="Feb - 348"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={21.259842519685037}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar2"
-    label="Mar - 418"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={37.00787401574803}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar3"
-    label="Apr - 448"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={52.75590551181102}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar4"
-    label="May - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={68.50393700787401}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar5"
-    label="Jun - 322"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={84.25196850393701}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar6"
-    label="Jul - 340"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={100}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar7"
-    label="Aug - 327"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={115.74803149606299}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar8"
-    label="Sep - 444"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={131.49606299212599}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar9"
-    label="Oct - 422"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={147.24409448818898}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar10"
-    label="Nov - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={162.99212598425197}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar11"
-    label="Dec - 301"
-    onClick={null}
-    onFocus={null}
-    onHover={[Function]}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={178.74015748031496}
-    y={16}
-  />
-</g>
+<DocumentFragment>
+  <g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(14.893617021276597, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Jan - 305"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(57.4468085106383, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Feb - 348"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar bpk-barchart-bar--selected"
+      transform="translate(100, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Mar - 418"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(142.55319148936172, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Apr - 448"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+  </g>
+</DocumentFragment>
 `;
 
 exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
-<g>
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar0"
-    label="Jan - 305"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={5.511811023622045}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar1"
-    label="Feb - 348"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={21.259842519685037}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar2"
-    label="Mar - 418"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={37.00787401574803}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar3"
-    label="Apr - 448"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={52.75590551181102}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar4"
-    label="May - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={68.50393700787401}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar5"
-    label="Jun - 322"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={84.25196850393701}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar6"
-    label="Jul - 340"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={100}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar7"
-    label="Aug - 327"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={115.74803149606299}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar8"
-    label="Sep - 444"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={131.49606299212599}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar9"
-    label="Oct - 422"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={147.24409448818898}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar10"
-    label="Nov - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={162.99212598425197}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar11"
-    label="Dec - 301"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0}
-    selected={false}
-    width={200}
-    x={178.74015748031496}
-    y={16}
-  />
-</g>
+<DocumentFragment>
+  <g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(14.893617021276597, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Jan - 305"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(57.4468085106383, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Feb - 348"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(100, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Mar - 418"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(142.55319148936172, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Apr - 448"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+  </g>
+</DocumentFragment>
 `;
 
 exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = `
-<g>
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar0"
-    label="Jan - 305"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={5.511811023622045}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar1"
-    label="Feb - 348"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={21.259842519685037}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar2"
-    label="Mar - 418"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={37.00787401574803}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar3"
-    label="Apr - 448"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={52.75590551181102}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar4"
-    label="May - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={68.50393700787401}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar5"
-    label="Jun - 322"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={84.25196850393701}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar6"
-    label="Jul - 340"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={100}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar7"
-    label="Aug - 327"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={115.74803149606299}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar8"
-    label="Sep - 444"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={131.49606299212599}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar9"
-    label="Oct - 422"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={147.24409448818898}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar10"
-    label="Nov - 344"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={162.99212598425197}
-    y={16}
-  />
-  <BpkBarchartBar
-    className={null}
-    height={144}
-    key="bar11"
-    label="Dec - 301"
-    onClick={null}
-    onFocus={null}
-    onHover={null}
-    outlier={true}
-    padding={0.35}
-    rounded={false}
-    selected={false}
-    width={200}
-    x={178.74015748031496}
-    y={16}
-  />
-</g>
+<DocumentFragment>
+  <g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(14.893617021276597, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Jan - 305"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(57.4468085106383, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Feb - 348"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(100, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Mar - 418"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(142.55319148936172, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Apr - 448"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+  </g>
+</DocumentFragment>
 `;
