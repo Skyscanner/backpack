@@ -107,7 +107,7 @@ const BpkFloatingNotification = (props: Props) => {
       <div className={classNames} {...rest}>
         {Icon && (
           <div className={iconClassNames}>
-            <Icon />
+            <Icon aria-hidden />
           </div>
         )}
         <BpkText
@@ -117,7 +117,7 @@ const BpkFloatingNotification = (props: Props) => {
         >
           {text}
         </BpkText>
-        <BpkAriaLive>{text}</BpkAriaLive>
+        <BpkAriaLive aria-hidden>{text}</BpkAriaLive>
         {ctaText && (
           <BpkButton link onClick={onClick} className={buttonClassNames}>
             {ctaText}
