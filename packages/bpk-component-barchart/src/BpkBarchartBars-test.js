@@ -23,8 +23,7 @@
 /* eslint-disable backpack/use-tokens */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 
 import data from '../data.json';
@@ -47,7 +46,7 @@ const xScale = scaleBand()
 
 describe('BpkBarchartBars', () => {
   it('should render correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchartBars
         margin={margin}
         xScale={xScale}
@@ -64,11 +63,11 @@ describe('BpkBarchartBars', () => {
         BarComponent={BpkBarchartBar}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with "rounded" prop set to "false"', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchartBars
         margin={margin}
         xScale={xScale}
@@ -86,11 +85,11 @@ describe('BpkBarchartBars', () => {
         rounded={false}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "padding" prop', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchartBars
         margin={margin}
         xScale={xScale}
@@ -108,80 +107,11 @@ describe('BpkBarchartBars', () => {
         padding={0}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly with "onBarClick" prop', () => {
-    const tree = shallow(
-      <BpkBarchartBars
-        margin={margin}
-        xScale={xScale}
-        yScale={yScale}
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        maxYValue={50}
-        width={size}
-        height={size}
-        data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
-          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
-        }
-        BarComponent={BpkBarchartBar}
-        padding={0}
-        onBarClick={() => null}
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly with "onBarHover" prop', () => {
-    const tree = shallow(
-      <BpkBarchartBars
-        margin={margin}
-        xScale={xScale}
-        yScale={yScale}
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        maxYValue={50}
-        width={size}
-        height={size}
-        data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
-          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
-        }
-        BarComponent={BpkBarchartBar}
-        padding={0}
-        onBarHover={() => null}
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly with "onBarFocus" prop', () => {
-    const tree = shallow(
-      <BpkBarchartBars
-        margin={margin}
-        xScale={xScale}
-        yScale={yScale}
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        maxYValue={50}
-        width={size}
-        height={size}
-        data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
-          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
-        }
-        BarComponent={BpkBarchartBar}
-        padding={0}
-        onBarFocus={() => null}
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "getBarSelection" prop', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchartBars
         margin={margin}
         xScale={xScale}
@@ -200,6 +130,86 @@ describe('BpkBarchartBars', () => {
         getBarSelection={(point) => point.month === 'Mar'}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should call provided "onBarClick"', async () => {
+    const onClickSpy = jest.fn();
+    render(
+      <BpkBarchartBars
+        margin={margin}
+        xScale={xScale}
+        yScale={yScale}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        maxYValue={50}
+        width={size}
+        height={size}
+        data={prices}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
+        BarComponent={BpkBarchartBar}
+        padding={0}
+        onBarClick={onClickSpy}
+      />,
+    );
+
+    const bar = screen.getByRole('button', { name: /Jan/i });
+    await fireEvent.click(bar);
+    expect(onClickSpy).toHaveBeenCalled();
+  });
+
+  it('should call provided "onBarHover"', async () => {
+    const onHoverSpy = jest.fn();
+    render(
+      <BpkBarchartBars
+        margin={margin}
+        xScale={xScale}
+        yScale={yScale}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        maxYValue={50}
+        width={size}
+        height={size}
+        data={prices}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
+        BarComponent={BpkBarchartBar}
+        padding={0}
+        onBarHover={onHoverSpy}
+      />,
+    );
+
+    const bar = screen.getByRole('graphics-symbol', { name: /Jan/i });
+    await fireEvent.mouseEnter(bar);
+    expect(onHoverSpy).toHaveBeenCalled();
+  });
+
+  it('should call provided "onBarFocus"', async () => {
+    const onFocusSpy = jest.fn();
+    render(
+      <BpkBarchartBars
+        margin={margin}
+        xScale={xScale}
+        yScale={yScale}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        maxYValue={50}
+        width={size}
+        height={size}
+        data={prices}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
+        BarComponent={BpkBarchartBar}
+        padding={0}
+        onBarFocus={onFocusSpy}
+      />,
+    );
+    const bar = screen.getByRole('graphics-symbol', { name: /Jan/i });
+    await fireEvent.focus(bar);
+    expect(onFocusSpy).toHaveBeenCalled();
   });
 });
