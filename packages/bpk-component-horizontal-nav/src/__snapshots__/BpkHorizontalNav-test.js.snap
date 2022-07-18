@@ -64,21 +64,27 @@ exports[`BpkHorizontalNav should render correctly with "type" prop 1`] = `
           class="bpk-horizontal-nav__list"
           role="tablist"
         >
-          <li
-            type="light"
-          >
-            One
-          </li>
-          <li
-            type="light"
-          >
-            Two
-          </li>
-          <li
-            type="light"
-          >
-            Three
-          </li>
+          <div>
+            <li
+              type="light"
+            >
+              One
+            </li>
+          </div>
+          <div>
+            <li
+              type="light"
+            >
+              Two
+            </li>
+          </div>
+          <div>
+            <li
+              type="light"
+            >
+              Three
+            </li>
+          </div>
         </div>
       </nav>
     </div>
