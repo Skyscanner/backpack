@@ -1,2410 +1,2343 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkBarchart should render correctly 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <div
+    class="bpk-mobile-scroll-container"
+    style="height: auto;"
   >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        <table
+          class="bpk-chart-data-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Month
+              </th>
+              <th>
+                Average price (£)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Jan
+              </td>
+              <td>
+                305
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Feb
+              </td>
+              <td>
+                348
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mar
+              </td>
+              <td>
+                418
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Apr
+              </td>
+              <td>
+                448
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <svg
+          class="bpk-barchart"
+          height="0"
+          width="0"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <lineargradient
+              id="bpk-barchart__def-gradient"
+              x1="0"
+              x2="0"
+              y1="0"
+              y2="1"
+            >
+              <stop
+                offset="0"
+                stop-color="white"
+                stop-opacity="0"
+              />
+              <stop
+                offset="10%"
+                stop-color="white"
+                stop-opacity="1"
+              />
+            </lineargradient>
+            <mask
+              id="bpk-barchart__def-mask"
+            >
+              <rect
+                fill="url(#bpk-barchart__def-gradient)"
+                height="100%"
+                width="100%"
+                x="0"
+                y="0"
+              />
+            </mask>
+          </defs>
+          <g
+            transform="translate(86, 6)"
+          >
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="end"
+              transform="translate(0, 0)"
+            >
+              <g
+                transform="translate(0, -58)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  0
+                </text>
+              </g>
+              <g
+                transform="translate(0, -52)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  50
+                </text>
+              </g>
+              <g
+                transform="translate(0, -45)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  100
+                </text>
+              </g>
+              <g
+                transform="translate(0, -39)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  150
+                </text>
+              </g>
+              <g
+                transform="translate(0, -32)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  200
+                </text>
+              </g>
+              <g
+                transform="translate(0, -26)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  250
+                </text>
+              </g>
+              <g
+                transform="translate(0, -19)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -13)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  350
+                </text>
+              </g>
+              <g
+                transform="translate(0, -6)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  400
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                transform="translate(-66, -29) rotate(-90)"
+              >
+                Average price (£)
+              </text>
+            </g>
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="middle"
+              transform="translate(0, -58)"
+            >
+              <g
+                transform="translate(-11, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Jan
+                </text>
+              </g>
+              <g
+                transform="translate(-32, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Feb
+                </text>
+              </g>
+              <g
+                transform="translate(-53, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Mar
+                </text>
+              </g>
+              <g
+                transform="translate(-74, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Apr
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                x="-43"
+                y="46"
+              >
+                Month
+              </text>
+            </g>
+            <g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-22, -19)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Jan - 305"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-43, -13)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Feb - 348"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-64, -4)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Mar - 418"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-85, 0)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Apr - 448"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkBarchart should render correctly with "className" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart my-custom-class-name"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <div
+    class="bpk-mobile-scroll-container"
+    style="height: auto;"
   >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        <table
+          class="bpk-chart-data-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Month
+              </th>
+              <th>
+                Average price (£)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Jan
+              </td>
+              <td>
+                305
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Feb
+              </td>
+              <td>
+                348
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mar
+              </td>
+              <td>
+                418
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Apr
+              </td>
+              <td>
+                448
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <svg
+          class="bpk-barchart my-custom-class-name"
+          height="0"
+          width="0"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <lineargradient
+              id="bpk-barchart__def-gradient"
+              x1="0"
+              x2="0"
+              y1="0"
+              y2="1"
+            >
+              <stop
+                offset="0"
+                stop-color="white"
+                stop-opacity="0"
+              />
+              <stop
+                offset="10%"
+                stop-color="white"
+                stop-opacity="1"
+              />
+            </lineargradient>
+            <mask
+              id="bpk-barchart__def-mask"
+            >
+              <rect
+                fill="url(#bpk-barchart__def-gradient)"
+                height="100%"
+                width="100%"
+                x="0"
+                y="0"
+              />
+            </mask>
+          </defs>
+          <g
+            transform="translate(86, 6)"
+          >
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="end"
+              transform="translate(0, 0)"
+            >
+              <g
+                transform="translate(0, -58)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  0
+                </text>
+              </g>
+              <g
+                transform="translate(0, -52)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  50
+                </text>
+              </g>
+              <g
+                transform="translate(0, -45)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  100
+                </text>
+              </g>
+              <g
+                transform="translate(0, -39)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  150
+                </text>
+              </g>
+              <g
+                transform="translate(0, -32)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  200
+                </text>
+              </g>
+              <g
+                transform="translate(0, -26)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  250
+                </text>
+              </g>
+              <g
+                transform="translate(0, -19)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -13)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  350
+                </text>
+              </g>
+              <g
+                transform="translate(0, -6)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  400
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                transform="translate(-66, -29) rotate(-90)"
+              >
+                Average price (£)
+              </text>
+            </g>
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="middle"
+              transform="translate(0, -58)"
+            >
+              <g
+                transform="translate(-11, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Jan
+                </text>
+              </g>
+              <g
+                transform="translate(-32, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Feb
+                </text>
+              </g>
+              <g
+                transform="translate(-53, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Mar
+                </text>
+              </g>
+              <g
+                transform="translate(-74, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Apr
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                x="-43"
+                y="46"
+              >
+                Month
+              </text>
+            </g>
+            <g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-22, -19)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Jan - 305"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-43, -13)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Feb - 348"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-64, -4)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Mar - 418"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-85, 0)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Apr - 448"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassName" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName="my-custom-class-name"
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <div
+    class="bpk-mobile-scroll-container"
+    style="height: auto;"
   >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        <table
+          class="bpk-chart-data-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Month
+              </th>
+              <th>
+                Average price (£)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Jan
+              </td>
+              <td>
+                305
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Feb
+              </td>
+              <td>
+                348
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mar
+              </td>
+              <td>
+                418
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Apr
+              </td>
+              <td>
+                448
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <svg
+          class="bpk-barchart"
+          height="0"
+          width="0"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <lineargradient
+              id="bpk-barchart__def-gradient"
+              x1="0"
+              x2="0"
+              y1="0"
+              y2="1"
+            >
+              <stop
+                offset="0"
+                stop-color="white"
+                stop-opacity="0"
+              />
+              <stop
+                offset="10%"
+                stop-color="white"
+                stop-opacity="1"
+              />
+            </lineargradient>
+            <mask
+              id="bpk-barchart__def-mask"
+            >
+              <rect
+                fill="url(#bpk-barchart__def-gradient)"
+                height="100%"
+                width="100%"
+                x="0"
+                y="0"
+              />
+            </mask>
+          </defs>
+          <g
+            transform="translate(86, 6)"
+          >
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="end"
+              transform="translate(0, 0)"
+            >
+              <g
+                transform="translate(0, -58)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  0
+                </text>
+              </g>
+              <g
+                transform="translate(0, -52)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  50
+                </text>
+              </g>
+              <g
+                transform="translate(0, -45)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  100
+                </text>
+              </g>
+              <g
+                transform="translate(0, -39)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  150
+                </text>
+              </g>
+              <g
+                transform="translate(0, -32)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  200
+                </text>
+              </g>
+              <g
+                transform="translate(0, -26)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  250
+                </text>
+              </g>
+              <g
+                transform="translate(0, -19)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -13)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  350
+                </text>
+              </g>
+              <g
+                transform="translate(0, -6)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  400
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                transform="translate(-66, -29) rotate(-90)"
+              >
+                Average price (£)
+              </text>
+            </g>
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="middle"
+              transform="translate(0, -58)"
+            >
+              <g
+                transform="translate(-11, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Jan
+                </text>
+              </g>
+              <g
+                transform="translate(-32, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Feb
+                </text>
+              </g>
+              <g
+                transform="translate(-53, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Mar
+                </text>
+              </g>
+              <g
+                transform="translate(-74, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Apr
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                x="-43"
+                y="46"
+              >
+                Month
+              </text>
+            </g>
+            <g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-22, -19)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Jan - 305"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-43, -13)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Feb - 348"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-64, -4)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Mar - 418"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-85, 0)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Apr - 448"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassName" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName="my-custom-class-name"
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <div
+    class="bpk-mobile-scroll-container"
+    style="height: auto;"
   >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        <table
+          class="bpk-chart-data-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Month
+              </th>
+              <th>
+                Average price (£)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Jan
+              </td>
+              <td>
+                305
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Feb
+              </td>
+              <td>
+                348
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mar
+              </td>
+              <td>
+                418
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Apr
+              </td>
+              <td>
+                448
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <svg
+          class="bpk-barchart"
+          height="0"
+          width="0"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <lineargradient
+              id="bpk-barchart__def-gradient"
+              x1="0"
+              x2="0"
+              y1="0"
+              y2="1"
+            >
+              <stop
+                offset="0"
+                stop-color="white"
+                stop-opacity="0"
+              />
+              <stop
+                offset="10%"
+                stop-color="white"
+                stop-opacity="1"
+              />
+            </lineargradient>
+            <mask
+              id="bpk-barchart__def-mask"
+            >
+              <rect
+                fill="url(#bpk-barchart__def-gradient)"
+                height="100%"
+                width="100%"
+                x="0"
+                y="0"
+              />
+            </mask>
+          </defs>
+          <g
+            transform="translate(86, 6)"
+          >
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="end"
+              transform="translate(0, 0)"
+            >
+              <g
+                transform="translate(0, -58)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  0
+                </text>
+              </g>
+              <g
+                transform="translate(0, -52)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  50
+                </text>
+              </g>
+              <g
+                transform="translate(0, -45)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  100
+                </text>
+              </g>
+              <g
+                transform="translate(0, -39)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  150
+                </text>
+              </g>
+              <g
+                transform="translate(0, -32)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  200
+                </text>
+              </g>
+              <g
+                transform="translate(0, -26)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  250
+                </text>
+              </g>
+              <g
+                transform="translate(0, -19)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -13)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  350
+                </text>
+              </g>
+              <g
+                transform="translate(0, -6)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  400
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                transform="translate(-66, -29) rotate(-90)"
+              >
+                Average price (£)
+              </text>
+            </g>
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="middle"
+              transform="translate(0, -58)"
+            >
+              <g
+                transform="translate(-11, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Jan
+                </text>
+              </g>
+              <g
+                transform="translate(-32, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Feb
+                </text>
+              </g>
+              <g
+                transform="translate(-53, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Mar
+                </text>
+              </g>
+              <g
+                transform="translate(-74, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Apr
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                x="-43"
+                y="46"
+              >
+                Month
+              </text>
+            </g>
+            <g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-22, -19)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Jan - 305"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-43, -13)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Feb - 348"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-64, -4)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Mar - 418"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-85, 0)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Apr - 448"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <div
+    class="bpk-mobile-scroll-container"
+    style="height: auto;"
   >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
-    >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        <table
+          class="bpk-chart-data-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Month
+              </th>
+              <th>
+                Average price (£)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Jan
+              </td>
+              <td>
+                305
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Feb
+              </td>
+              <td>
+                348
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mar
+              </td>
+              <td>
+                418
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Apr
+              </td>
+              <td>
+                448
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <svg
+          class="bpk-barchart"
+          height="0"
+          width="0"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <lineargradient
+              id="bpk-barchart__def-gradient"
+              x1="0"
+              x2="0"
+              y1="0"
+              y2="1"
+            >
+              <stop
+                offset="0"
+                stop-color="white"
+                stop-opacity="0"
+              />
+              <stop
+                offset="10%"
+                stop-color="white"
+                stop-opacity="1"
+              />
+            </lineargradient>
+            <mask
+              id="bpk-barchart__def-mask"
+            >
+              <rect
+                fill="url(#bpk-barchart__def-gradient)"
+                height="100%"
+                width="100%"
+                x="0"
+                y="0"
+              />
+            </mask>
+          </defs>
+          <g
+            transform="translate(86, 6)"
+          >
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="end"
+              transform="translate(0, 0)"
+            >
+              <g
+                transform="translate(0, -58)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  0
+                </text>
+              </g>
+              <g
+                transform="translate(0, -52)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  10
+                </text>
+              </g>
+              <g
+                transform="translate(0, -46)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  20
+                </text>
+              </g>
+              <g
+                transform="translate(0, -41)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  30
+                </text>
+              </g>
+              <g
+                transform="translate(0, -35)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  40
+                </text>
+              </g>
+              <g
+                transform="translate(0, -29)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  50
+                </text>
+              </g>
+              <g
+                transform="translate(0, -23)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  60
+                </text>
+              </g>
+              <g
+                transform="translate(0, -17)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  70
+                </text>
+              </g>
+              <g
+                transform="translate(0, -12)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  80
+                </text>
+              </g>
+              <g
+                transform="translate(0, -6)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  90
+                </text>
+              </g>
+              <g
+                transform="translate(0, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  100
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                transform="translate(-66, -29) rotate(-90)"
+              >
+                Average price (£)
+              </text>
+            </g>
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="middle"
+              transform="translate(0, -58)"
+            >
+              <g
+                transform="translate(-11, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Jan
+                </text>
+              </g>
+              <g
+                transform="translate(-32, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Feb
+                </text>
+              </g>
+              <g
+                transform="translate(-53, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Mar
+                </text>
+              </g>
+              <g
+                transform="translate(-74, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Apr
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                x="-43"
+                y="46"
+              >
+                Month
+              </text>
+            </g>
+            <g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-22, 119)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Jan - 305"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-43, 144)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Feb - 348"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-64, 184)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Mar - 418"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-85, 202)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-label="Apr - 448"
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <div
+    class="bpk-mobile-scroll-container"
+    style="height: auto;"
   >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    hideXAxisLabel={true}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
-    >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    hideYAxisLabel={true}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
-    >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
-    >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={[Function]}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "onBarHover" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
-    >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={[Function]}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  scrollerRef={null}
-  showScrollbar={false}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 52,
-          "left": 86,
-          "right": 0,
-          "top": 6,
-        }
-      }
-    >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartGridLines
-        height={200}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 52,
-            "left": 86,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        outerPadding={0.35}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        <table
+          class="bpk-chart-data-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Month
+              </th>
+              <th>
+                Average price (£)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Jan
+              </td>
+              <td>
+                305
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Feb
+              </td>
+              <td>
+                348
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mar
+              </td>
+              <td>
+                418
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Apr
+              </td>
+              <td>
+                448
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <svg
+          class="bpk-barchart"
+          height="0"
+          width="0"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <lineargradient
+              id="bpk-barchart__def-gradient"
+              x1="0"
+              x2="0"
+              y1="0"
+              y2="1"
+            >
+              <stop
+                offset="0"
+                stop-color="white"
+                stop-opacity="0"
+              />
+              <stop
+                offset="10%"
+                stop-color="white"
+                stop-opacity="1"
+              />
+            </lineargradient>
+            <mask
+              id="bpk-barchart__def-mask"
+            >
+              <rect
+                fill="url(#bpk-barchart__def-gradient)"
+                height="100%"
+                width="100%"
+                x="0"
+                y="0"
+              />
+            </mask>
+          </defs>
+          <g
+            transform="translate(86, 6)"
+          >
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="end"
+              transform="translate(0, 0)"
+            >
+              <g
+                transform="translate(0, -58)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  0
+                </text>
+              </g>
+              <g
+                transform="translate(0, -52)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  50
+                </text>
+              </g>
+              <g
+                transform="translate(0, -45)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  100
+                </text>
+              </g>
+              <g
+                transform="translate(0, -39)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  150
+                </text>
+              </g>
+              <g
+                transform="translate(0, -32)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  200
+                </text>
+              </g>
+              <g
+                transform="translate(0, -26)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  250
+                </text>
+              </g>
+              <g
+                transform="translate(0, -19)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -13)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  350
+                </text>
+              </g>
+              <g
+                transform="translate(0, -6)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="-6"
+                  y="0"
+                >
+                  400
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                transform="translate(-66, -29) rotate(-90)"
+              >
+                Average price (£)
+              </text>
+            </g>
+            <g
+              aria-hidden="true"
+              class="bpk-chart__axis"
+              text-anchor="middle"
+              transform="translate(0, -58)"
+            >
+              <g
+                transform="translate(-11, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Jan
+                </text>
+              </g>
+              <g
+                transform="translate(-32, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Feb
+                </text>
+              </g>
+              <g
+                transform="translate(-53, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Mar
+                </text>
+              </g>
+              <g
+                transform="translate(-74, 0)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  x="0"
+                  y="20"
+                >
+                  Apr
+                </text>
+              </g>
+              <text
+                class="bpk-chart__axis-label"
+                text-anchor="middle"
+                x="-43"
+                y="46"
+              >
+                Month
+              </text>
+            </g>
+            <g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-22, -19)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-43, -13)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-64, -4)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+              <g
+                class="bpk-barchart-bar"
+                transform="translate(-85, 0)"
+              >
+                <rect
+                  class="bpk-barchart-bar__rect"
+                  height="0"
+                  rx="4"
+                  ry="4"
+                  width="13.65"
+                  x="3.675"
+                  y="0"
+                />
+                <rect
+                  aria-roledescription="bar"
+                  class="bpk-barchart-bar__tappable-area"
+                  height="0"
+                  role="graphics-symbol"
+                  width="21"
+                  x="0"
+                  y="0"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;

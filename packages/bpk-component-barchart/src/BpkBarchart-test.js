@@ -19,8 +19,8 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import data from '../data.json';
 
@@ -31,7 +31,7 @@ const size = 200;
 
 describe('BpkBarchart', () => {
   it('should render correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchart
         xScaleDataKey="month"
         yScaleDataKey="price"
@@ -42,11 +42,11 @@ describe('BpkBarchart', () => {
         data={prices}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "className" prop', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchart
         xScaleDataKey="month"
         yScaleDataKey="price"
@@ -58,11 +58,11 @@ describe('BpkBarchart', () => {
         className="my-custom-class-name"
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "leadingScrollIndicatorClassName" prop', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchart
         xScaleDataKey="month"
         yScaleDataKey="price"
@@ -74,11 +74,11 @@ describe('BpkBarchart', () => {
         leadingScrollIndicatorClassName="my-custom-class-name"
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "trailingScrollIndicatorClassName" prop', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchart
         xScaleDataKey="month"
         yScaleDataKey="price"
@@ -90,91 +90,11 @@ describe('BpkBarchart', () => {
         trailingScrollIndicatorClassName="my-custom-class-name"
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render with "showGridlines" prop', () => {
-    const tree = shallow(
-      <BpkBarchart
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        xAxisLabel="Month"
-        yAxisLabel="Average price (£)"
-        initialWidth={size}
-        initialHeight={size}
-        data={prices}
-        showGridlines
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render with "onBarClick" prop', () => {
-    const tree = shallow(
-      <BpkBarchart
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        xAxisLabel="Month"
-        yAxisLabel="Average price (£)"
-        initialWidth={size}
-        initialHeight={size}
-        data={prices}
-        onBarClick={() => null}
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render with "onBarHover" prop', () => {
-    const tree = shallow(
-      <BpkBarchart
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        xAxisLabel="Month"
-        yAxisLabel="Average price (£)"
-        initialWidth={size}
-        initialHeight={size}
-        data={prices}
-        onBarHover={() => null}
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render with "hideXAxisLabel" prop', () => {
-    const tree = shallow(
-      <BpkBarchart
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        xAxisLabel="Month"
-        yAxisLabel="Average price (£)"
-        initialWidth={size}
-        initialHeight={size}
-        data={prices}
-        hideXAxisLabel
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render with "hideYAxisLabel" prop', () => {
-    const tree = shallow(
-      <BpkBarchart
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        xAxisLabel="Month"
-        yAxisLabel="Average price (£)"
-        initialWidth={size}
-        initialHeight={size}
-        data={prices}
-        hideYAxisLabel
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with "getBarLabel" prop', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchart
         xScaleDataKey="month"
         yScaleDataKey="price"
@@ -186,26 +106,11 @@ describe('BpkBarchart', () => {
         getBarLabel={() => null}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render with "disableDataTable" prop', () => {
-    const tree = shallow(
-      <BpkBarchart
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        xAxisLabel="Month"
-        yAxisLabel="Average price (£)"
-        initialWidth={size}
-        initialHeight={size}
-        data={prices}
-        disableDataTable
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
   it('should render correctly with "yAxisDomain" prop', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkBarchart
         xScaleDataKey="month"
         yScaleDataKey="price"
@@ -217,6 +122,84 @@ describe('BpkBarchart', () => {
         yAxisDomain={[null, 100]}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render with "showGridlines" prop', () => {
+    render(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        showGridlines
+      />,
+    );
+
+    const gridLinesElement = document.getElementsByClassName(
+      'bpk-chart__grid-lines',
+    );
+    expect(gridLinesElement.length).toEqual(1);
+  });
+
+  it('should call provided "onBarClick"', async () => {
+    const onClickSpy = jest.fn();
+    render(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        onBarClick={onClickSpy}
+      />,
+    );
+
+    const bar = screen.getByRole('button', { name: /Jan/i });
+    await fireEvent.click(bar);
+    expect(onClickSpy).toHaveBeenCalled();
+  });
+
+  it('should call provided "onBarHover"', async () => {
+    const onHoverSpy = jest.fn();
+    render(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        onBarHover={onHoverSpy}
+      />,
+    );
+
+    const bar = screen.getByRole('graphics-symbol', { name: /Jan/i });
+    await fireEvent.mouseEnter(bar);
+    expect(onHoverSpy).toHaveBeenCalled();
+  });
+
+  it('should not render table when "disableDataTable" is true', () => {
+    render(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        disableDataTable
+      />,
+    );
+
+    const dataTable = screen.queryByRole('table');
+    expect(dataTable).not.toBeInTheDocument();
   });
 });

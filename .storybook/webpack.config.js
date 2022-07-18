@@ -88,7 +88,7 @@ module.exports = ({ config }) => {
       {
         loader: 'sass-loader',
         options: {
-          prependData: BPK_TOKENS
+          additionalData: BPK_TOKENS
             ? fs.readFileSync(
                 path.join(
                   rootDir,

@@ -19,8 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
 import data from '../data.json';
 
@@ -30,7 +29,7 @@ const { prices } = data;
 
 describe('BpkChartDataTable', () => {
   it('should render correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkChartDataTable
         xScaleDataKey="month"
         yScaleDataKey="price"
@@ -39,6 +38,6 @@ describe('BpkChartDataTable', () => {
         data={prices}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
