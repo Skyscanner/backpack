@@ -112,7 +112,7 @@
     "@babel/register": "^7.17.7",
     "@skyscanner/bpk-foundations-web": "^8.0.0",
     "@skyscanner/eslint-config-skyscanner": "^12.0.0",
-    "@storybook/addon-a11y": "^5.3.14",
+    "@storybook/addon-a11y": "^6.5.9",
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
     "@storybook/addon-links": "^5.3.14",
