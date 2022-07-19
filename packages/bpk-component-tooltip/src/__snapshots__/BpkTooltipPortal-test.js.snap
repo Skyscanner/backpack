@@ -2,7 +2,9 @@
 
 exports[`BpkTooltipPortal should render correctly 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="bpk-tooltip-portal--target"
+  >
     <div
       aria-label="My tooltip content"
       tabindex="0"
@@ -38,7 +40,9 @@ exports[`BpkTooltipPortal should render correctly 1`] = `
 
 exports[`BpkTooltipPortal should render correctly with a custom portal className 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="bpk-tooltip-portal--target"
+  >
     <div
       aria-label="My tooltip content"
       tabindex="0"
@@ -74,7 +78,9 @@ exports[`BpkTooltipPortal should render correctly with a custom portal className
 
 exports[`BpkTooltipPortal should render correctly with a custom tooltip className 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="bpk-tooltip-portal--target"
+  >
     <div
       aria-label="My tooltip content"
       tabindex="0"
@@ -110,7 +116,9 @@ exports[`BpkTooltipPortal should render correctly with a custom tooltip classNam
 
 exports[`BpkTooltipPortal should render correctly with custom portal style 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="bpk-tooltip-portal--target"
+  >
     <div
       aria-label="My tooltip content"
       tabindex="0"

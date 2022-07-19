@@ -192,7 +192,12 @@ class BpkTooltipPortal extends Component<Props, State> {
     });
 
     const targetElement = (
-      <div ref={this.ref}>{targetWithAccessibilityProps}</div>
+      <div
+        className={getClassName('bpk-tooltip-portal--target')}
+        ref={this.ref}
+      >
+        {targetWithAccessibilityProps}
+      </div>
     );
 
     if (portalClassName) {

@@ -30,6 +30,10 @@ $arrow-inset-margin: -($bpk-one-pixel-rem * 11);
     margin-right: bpk-spacing-base();
     margin-left: bpk-spacing-base();
   }
+
+  &--target {
+    display: inline-block;
+  }
 }
 
 .bpk-popover {

@@ -26,6 +26,10 @@ $dark-background-color: $bpk-color-sky-gray;
 
 .bpk-tooltip-portal {
   z-index: $bpk-zindex-tooltip;
+
+  &--target {
+    display: inline-block;
+  }
 }
 
 .bpk-tooltip {

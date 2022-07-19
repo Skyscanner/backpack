@@ -220,7 +220,12 @@ class BpkPopoverPortal extends Component<Props> {
       typeof target === 'function' ? (
         target
       ) : (
-        <div ref={this.ref}>{target}</div>
+        <div
+          className={getClassName('bpk-popover-portal--target')}
+          ref={this.ref}
+        >
+          {target}
+        </div>
       );
 
     return (
