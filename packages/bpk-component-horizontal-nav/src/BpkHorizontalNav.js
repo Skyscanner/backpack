@@ -18,7 +18,6 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import { cssModules } from 'bpk-react-utils';
 import React, { Component, type Node } from 'react';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
@@ -98,17 +97,11 @@ class BpkHorizontalNav extends Component<Props> {
       return;
     }
 
-    // Using find dom node is preferable here over changing the underlying mechanism of BpkHorizontalNavItem to accomodate dom-node refs
-    // eslint-disable-next-line react/no-find-dom-node
-    const selectedItemRef = ((ReactDOM.findDOMNode(
-      this.selectedItemRef,
-    ): any): Element);
-
     if (!this.scrollRef) {
       return;
     }
 
-    const selectedItemPos = getPos(selectedItemRef);
+    const selectedItemPos = getPos(this.selectedItemRef);
     if (!selectedItemPos) {
       return;
     }
@@ -167,10 +160,10 @@ class BpkHorizontalNav extends Component<Props> {
     if (autoScrollToSelected || type === HORIZONTAL_NAV_TYPES.light) {
       children = React.Children.map(rawChildren, (child) => {
         const childProps = {};
-
+        let childRef;
         if (autoScrollToSelected) {
           if (child && child.props && child.props.selected) {
-            childProps.ref = (ref) => {
+            childRef = (ref) => {
               this.selectedItemRef = ref;
             };
           }
@@ -180,7 +173,9 @@ class BpkHorizontalNav extends Component<Props> {
           childProps.type = HORIZONTAL_NAV_TYPES.light;
         }
 
-        return child ? React.cloneElement(child, childProps) : null;
+        return child ? (
+          <div ref={childRef}>{React.cloneElement(child, childProps)}</div>
+        ) : null;
       });
     }
 
