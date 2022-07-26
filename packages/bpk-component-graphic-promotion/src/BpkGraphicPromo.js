@@ -44,6 +44,7 @@ export const TEXT_ALIGN = {
 
 export type Props = {
   className: ?string,
+  contentId: ?string,
   tagline: ?string,
   headline: string,
   subheading: ?string,
@@ -86,6 +87,7 @@ const BpkGraphicPromo = (props: Props) => {
   const {
     buttonText,
     className,
+    contentId,
     headline,
     invertVertically,
     onClick,
@@ -127,7 +129,7 @@ const BpkGraphicPromo = (props: Props) => {
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
     >
-      <div className={containerClasses} aria-hidden>
+      <div id={contentId} className={containerClasses} aria-hidden>
         <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
           {sponsor && (
             <>
