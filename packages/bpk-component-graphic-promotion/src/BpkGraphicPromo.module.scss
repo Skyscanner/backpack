@@ -41,7 +41,7 @@
     flex-direction: column;
 
     @include bpk-breakpoint-above-tablet {
-      height: 25rem;
+      height: 28.75rem;
       justify-content: center;
 
       @include bpk-margin-leading(bpk-spacing-xxxl(), false);
@@ -66,7 +66,7 @@
     }
 
     @include bpk-breakpoint-tablet {
-      height: 25rem;
+      height: 22.5rem;
       justify-content: center;
 
       @include bpk-margin-leading(bpk-spacing-xxl(), false);
@@ -191,7 +191,7 @@
     @include bpk-breakpoint-small-tablet {
       margin-bottom: bpk-spacing-md();
 
-      @include bpk-hero-4;
+      @include bpk-heading-1;
     }
 
     @include bpk-breakpoint-mobile {
