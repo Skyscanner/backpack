@@ -57,63 +57,38 @@
   &__container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     @include bpk-breakpoint-above-tablet {
       height: 28.75rem;
-      justify-content: center;
 
       @include bpk-margin-leading(bpk-spacing-xxxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xxl(), false);
 
-      &--start {
-        align-items: start;
-      }
-
-      &--center {
-        align-items: center;
-
-        /* adjusting for 1.5rem difference between margins */
-        > * {
-          @include bpk-margin-trailing(bpk-spacing-lg());
-        }
-      }
-
-      &--end {
-        align-items: end;
+      /* adjusting for 1.5rem difference between margins */
+      &--center > * {
+        @include bpk-margin-trailing(bpk-spacing-lg());
       }
     }
 
     @include bpk-breakpoint-tablet {
       height: 22.5rem;
-      justify-content: center;
 
       @include bpk-margin-leading(bpk-spacing-xxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xl(), false);
 
-      &--start {
-        align-items: start;
-      }
-
-      &--center {
-        align-items: center;
-
-        /* adjusting for 0.5rem difference between margins */
-        > * {
-          @include bpk-margin-trailing(bpk-spacing-md());
-        }
-      }
-
-      &--end {
-        align-items: end;
+      /* adjusting for 1.5rem difference between margins */
+      &--center > * {
+        @include bpk-margin-trailing(bpk-spacing-md());
       }
     }
 
     @include bpk-breakpoint-small-tablet {
-      margin: initial;
       padding: bpk-spacing-xl();
       justify-content: space-between;
       align-items: initial;
 
+      @include bpk-margin-leading(0, true);
       @include fill-parent;
 
       &--inverted {
@@ -121,73 +96,37 @@
       }
 
       > * {
-        margin: initial;
-      }
-    }
-
-    @include bpk-breakpoint-mobile {
-      margin: initial;
-      padding: bpk-spacing-xl();
-      justify-content: space-between;
-      align-items: initial;
-
-      @include fill-parent;
-
-      &--inverted {
-        flex-direction: column-reverse;
-      }
-
-      > * {
-        margin: initial;
+        @include bpk-margin-leading(0, true);
       }
     }
 
     @include bpk-breakpoint-small-mobile {
-      margin: initial;
       padding: bpk-spacing-lg();
-      justify-content: space-between;
-      align-items: initial;
+    }
 
-      @include fill-parent;
+    &--start {
+      align-items: start;
+    }
 
-      &--inverted {
-        flex-direction: column-reverse;
-      }
+    &--center {
+      align-items: center;
+    }
 
-      > * {
-        margin: initial;
-      }
+    &--end {
+      align-items: end;
     }
   }
 
   &__tagline {
-    @include bpk-breakpoint-above-tablet {
-      margin-bottom: bpk-spacing-md();
+    margin-bottom: bpk-spacing-md();
 
-      @include bpk-label-1;
-    }
-
-    @include bpk-breakpoint-tablet {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-label-1;
-    }
+    @include bpk-label-1;
 
     @include bpk-breakpoint-small-tablet {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-subheading;
-    }
-
-    @include bpk-breakpoint-mobile {
-      margin-bottom: bpk-spacing-md();
-
       @include bpk-subheading;
     }
 
     @include bpk-breakpoint-small-mobile {
-      margin-bottom: bpk-spacing-md();
-
       @include bpk-label-1;
     }
   }
@@ -216,14 +155,10 @@
     }
 
     @include bpk-breakpoint-mobile {
-      margin-bottom: bpk-spacing-md();
-
       @include bpk-hero-5;
     }
 
     @include bpk-breakpoint-small-mobile {
-      margin-bottom: bpk-spacing-md();
-
       @include bpk-heading-2;
     }
   }
@@ -251,40 +186,10 @@
 
     @include bpk-breakpoint-above-tablet {
       width: 22.5rem;
-
-      &--start {
-        align-items: start;
-        text-align: start;
-      }
-
-      &--center {
-        align-items: center;
-        text-align: center;
-      }
-
-      &--end {
-        align-items: start;
-        text-align: start;
-      }
     }
 
     @include bpk-breakpoint-tablet {
       width: 20rem;
-
-      &--start {
-        align-items: start;
-        text-align: start;
-      }
-
-      &--center {
-        align-items: center;
-        text-align: center;
-      }
-
-      &--end {
-        align-items: start;
-        text-align: start;
-      }
     }
 
     @include bpk-breakpoint-small-tablet {
@@ -293,56 +198,36 @@
       text-align: initial;
     }
 
-    @include bpk-breakpoint-mobile {
-      width: initial;
-      align-items: initial;
-      text-align: initial;
+    &--start {
+      align-items: start;
+      text-align: start;
     }
 
-    @include bpk-breakpoint-small-mobile {
-      width: initial;
-      align-items: initial;
-      text-align: initial;
+    &--center {
+      align-items: center;
+      text-align: center;
+    }
+
+    &--end {
+      align-items: start;
+      text-align: start;
     }
   }
 
   &__sponsor-content {
     display: flex;
+    margin-bottom: bpk-spacing-xl();
     flex-direction: column;
 
-    @include bpk-breakpoint-above-tablet {
-      margin-bottom: bpk-spacing-xl();
-    }
-
-    @include bpk-breakpoint-tablet {
-      margin-bottom: bpk-spacing-xl();
-    }
-
     @include bpk-breakpoint-small-tablet {
-      margin-bottom: initial;
-    }
-
-    @include bpk-breakpoint-mobile {
-      margin-bottom: initial;
-    }
-
-    @include bpk-breakpoint-small-mobile {
       margin-bottom: initial;
     }
   }
 
   &__sponsor-label {
-    @include bpk-breakpoint-above-tablet {
-      margin-bottom: bpk-spacing-sm();
+    margin-bottom: bpk-spacing-sm();
 
-      @include bpk-label-1;
-    }
-
-    @include bpk-breakpoint-tablet {
-      margin-bottom: bpk-spacing-sm();
-
-      @include bpk-label-1;
-    }
+    @include bpk-label-1;
 
     @include bpk-breakpoint-small-tablet {
       margin-bottom: bpk-spacing-md();
@@ -351,8 +236,6 @@
     }
 
     @include bpk-breakpoint-mobile {
-      margin-bottom: bpk-spacing-md();
-
       @include bpk-heading-3;
     }
 
@@ -368,23 +251,9 @@
   }
 
   &__cta {
-    @include bpk-breakpoint-above-tablet {
-      margin-top: bpk-spacing-xl();
-    }
-
-    @include bpk-breakpoint-tablet {
-      margin-top: bpk-spacing-xl();
-    }
+    margin-top: bpk-spacing-xl();
 
     @include bpk-breakpoint-small-tablet {
-      display: none;
-    }
-
-    @include bpk-breakpoint-mobile {
-      display: none;
-    }
-
-    @include bpk-breakpoint-small-mobile {
       display: none;
     }
   }
