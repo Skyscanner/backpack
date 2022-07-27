@@ -49,14 +49,7 @@
     @include aspect-ratio(133%);
   }
 
-  @include bpk-breakpoint-mobile {
-    @include aspect-ratio(133%);
-  }
-
-  @include bpk-breakpoint-small-mobile {
-    @include aspect-ratio(133%);
-  }
-
+  /* remove shadow and hightlights from Backpack Card */
   &::after {
     display: none;
   }
