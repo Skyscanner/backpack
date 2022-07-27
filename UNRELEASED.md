@@ -1,4 +1,4 @@
-**Fixed**
+**Breaking**
 
 `bpk-component-graphic-promotion`
 
