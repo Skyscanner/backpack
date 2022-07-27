@@ -229,13 +229,7 @@
   }
 
   &__subheading {
-    @include bpk-breakpoint-above-tablet {
-      @include bpk-body-default;
-    }
-
-    @include bpk-breakpoint-tablet {
-      @include bpk-body-default;
-    }
+    @include bpk-body-default;
 
     @include bpk-breakpoint-small-tablet {
       @include bpk-subheading;
