@@ -123,5 +123,6 @@ configure(() => {
   require('../examples/bpk-component-textarea/stories');
   require('../examples/bpk-component-ticket/stories');
   require('../examples/bpk-component-tooltip/stories');
+require('./../packages/bpk-component-image-gallery/stories');
 }, module);
 /* eslint-enable */

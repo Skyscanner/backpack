@@ -1,0 +1,34 @@
+{
+  "name": "bpk-component-image-gallery",
+  "version": "1.1.12",
+  "description": "Backpack image-gallery component.",
+  "license": "Apache-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "bpk-component-badge": "^4.1.13",
+    "bpk-component-breakpoint": "^4.0.4",
+    "bpk-component-button": "^6.2.7",
+    "bpk-component-icon": "^9.2.13",
+    "bpk-component-text": "^7.0.6",
+    "bpk-mixins": "^31.1.4",
+    "bpk-react-utils": "^6.0.0",
+    "bpk-scrim-utils": "^5.1.11"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0 || ^17.0.0",
+    "typescript": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.47",
+    "@types/react-dom": "^17.0.17"
+  }
+}

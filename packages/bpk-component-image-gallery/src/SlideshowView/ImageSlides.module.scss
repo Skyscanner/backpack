@@ -1,0 +1,94 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable selector-class-pattern */
+@import '~bpk-mixins/index';
+
+$bpk-spacing-v2: true;
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > :first-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.aspectRatio {
+  @include aspect-ratio(3, 2);
+
+  @include bpk-breakpoint-mobile {
+    @include aspect-ratio(1, 1);
+  }
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  flex-flow: column nowrap;
+  align-items: center;
+  user-select: none;
+}
+
+.imagesContainer {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin-bottom: $bpk-spacing-lg();
+  column-gap: $bpk-one-pixel-rem * 46;
+  grid: 1fr / min-content 1fr min-content;
+  align-items: center;
+
+  @include bpk-breakpoint-tablet {
+    grid-template-columns: 100%;
+  }
+}
+
+.imagesContainerNoNudgers {
+  grid-template-columns: 100%;
+
+  .nudgeButton {
+    display: none;
+  }
+}
+
+.nudgeButton {
+  padding: $bpk-spacing-sm();
+  border: none;
+  background: none;
+  /* stylelint-disable-next-line declaration-no-important */
+  color: $bpk-color-sky-gray !important;
+
+  @include bpk-border-radius-md;
+
+  @include bpk-breakpoint-tablet {
+    display: none;
+  }
+}

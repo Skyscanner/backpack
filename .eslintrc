@@ -1,8 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "@skyscanner/eslint-config-skyscanner",
-  ],
+  "extends": ["@skyscanner/eslint-config-skyscanner"],
   "env": {
     "browser": true,
     "jest": true
@@ -91,13 +89,7 @@
     "import/order": [
       "error",
       {
-        "groups": [
-          "builtin",
-          "external",
-          "parent",
-          "sibling",
-          "index"
-        ],
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
         "newlines-between": "always"
       }
     ],
@@ -142,5 +134,11 @@
     ],
     // Temp setting this to warn whilst migration to TS is in progress.
     "no-undef": "warn"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.{ts,tsx}"],
+      "parser": "@typescript-eslint/parser"
+    }
+  ]
 }
