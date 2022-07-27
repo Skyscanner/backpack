@@ -18,6 +18,19 @@
 
 @import '~bpk-mixins/index';
 
+@mixin aspect-ratio($ratio) {
+  padding-top: $ratio;
+  box-sizing: border-box;
+}
+
+@mixin fill-parent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+
 .bpk-card {
   @include bpk-card;
 }
@@ -31,6 +44,18 @@
   background-size: cover;
   color: $bpk-color-white;
   box-shadow: none;
+
+  @include bpk-breakpoint-small-tablet {
+    @include aspect-ratio(133%);
+  }
+
+  @include bpk-breakpoint-mobile {
+    @include aspect-ratio(133%);
+  }
+
+  @include bpk-breakpoint-small-mobile {
+    @include aspect-ratio(133%);
+  }
 
   &::after {
     display: none;
@@ -91,11 +116,12 @@
     }
 
     @include bpk-breakpoint-small-tablet {
-      height: 58.3125rem;
       margin: initial;
       padding: bpk-spacing-xl();
       justify-content: space-between;
       align-items: initial;
+
+      @include fill-parent;
 
       &--inverted {
         flex-direction: column-reverse;
@@ -107,11 +133,12 @@
     }
 
     @include bpk-breakpoint-mobile {
-      height: 42.625rem;
       margin: initial;
       padding: bpk-spacing-xl();
       justify-content: space-between;
       align-items: initial;
+
+      @include fill-parent;
 
       &--inverted {
         flex-direction: column-reverse;
@@ -123,11 +150,12 @@
     }
 
     @include bpk-breakpoint-small-mobile {
-      height: 31.25rem;
       margin: initial;
       padding: bpk-spacing-lg();
       justify-content: space-between;
       align-items: initial;
+
+      @include fill-parent;
 
       &--inverted {
         flex-direction: column-reverse;
