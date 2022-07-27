@@ -74,6 +74,7 @@ class PopoverContainer extends Component<Props, State> {
   constructor() {
     super();
 
+    this.ref = React.createRef();
     this.state = {
       isOpen: false,
       changedTarget: null,
@@ -109,17 +110,23 @@ class PopoverContainer extends Component<Props, State> {
       this.props;
     let target = null;
 
-    const openButton = <BpkButton onClick={this.openPopover}>Open</BpkButton>;
+    const openButton = (
+      <div className={getClassName('bpk-popover-target')} ref={this.ref}>
+        <BpkButton onClick={this.openPopover}>Open</BpkButton>
+      </div>
+    );
 
     const inputField = (
-      <EnhancedInput
-        id="input"
-        name="input"
-        value="John Smith"
-        isOpen={this.state.isOpen}
-        onOpen={this.openPopover}
-        onChange={() => null}
-      />
+      <div className={getClassName('bpk-popover-target')} ref={this.ref}>
+        <EnhancedInput
+          id="input"
+          name="input"
+          value="John Smith"
+          isOpen={this.state.isOpen}
+          onOpen={this.openPopover}
+          onChange={() => null}
+        />
+      </div>
     );
 
     if (targetFunction != null) {
@@ -137,6 +144,7 @@ class PopoverContainer extends Component<Props, State> {
 
     return (
       <div id="popover-container">
+        <BpkButton>I don&apos;t do anything</BpkButton>&nbsp;
         {typeof target === 'function' ? openButton : null}
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkPopover

@@ -93,7 +93,6 @@ class BpkTooltipPortal extends Component<Props, State> {
 
     this.popper = null;
     this.targetRef = null;
-    this.ref = React.createRef();
   }
 
   componentDidMount() {
@@ -191,25 +190,16 @@ class BpkTooltipPortal extends Component<Props, State> {
       'aria-label': ariaLabel,
     });
 
-    const targetElement = (
-      <div
-        className={getClassName('bpk-tooltip-portal--target')}
-        ref={this.ref}
-      >
-        {targetWithAccessibilityProps}
-      </div>
-    );
-
     if (portalClassName) {
       classNames.push(portalClassName);
     }
 
     return (
       <>
-        {targetElement}
+        {targetWithAccessibilityProps}
         {renderPortal && (
           <Portal
-            target={targetElement}
+            target={targetWithAccessibilityProps}
             targetRef={(targetRef) => {
               this.targetRef = targetRef;
             }}

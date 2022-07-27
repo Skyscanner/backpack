@@ -82,7 +82,6 @@ class BpkPopoverPortal extends Component<Props> {
 
     this.popper = null;
     this.previousTargetElement = null;
-    this.ref = React.createRef();
   }
 
   onRender = (popoverElement: HTMLElement, targetElement: ?HTMLElement) => {
@@ -216,21 +215,9 @@ class BpkPopoverPortal extends Component<Props> {
       classNames.push(portalClassName);
     }
 
-    const targetElement =
-      typeof target === 'function' ? (
-        target
-      ) : (
-        <div
-          className={getClassName('bpk-popover-portal--target')}
-          ref={this.ref}
-        >
-          {target}
-        </div>
-      );
-
     return (
       <>
-        {typeof targetElement !== 'function' && targetElement}
+        {typeof target !== 'function' && target}
         <Portal
           beforeClose={this.beforeClose}
           className={classNames.join(' ')}
@@ -239,7 +226,7 @@ class BpkPopoverPortal extends Component<Props> {
           onRender={this.onRender}
           style={portalStyle}
           renderTarget={renderTarget}
-          target={targetElement}
+          target={target}
         >
           {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
           <BpkPopover onClose={this.onClose} {...rest} />

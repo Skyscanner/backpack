@@ -20,6 +20,7 @@ class App extends Component {
   constructor() {
     super();
 
+    this.ref = React.createRef();
     this.state = {
       isOpen: false,
     };
@@ -38,14 +39,21 @@ class App extends Component {
     });
   }
 
+  const target = (
+    <div ref={this.ref} className={'my-popover-target'}>
+      <BpkButton
+        onClick={this.openPopover}>
+          Open
+      </BpkButton>
+    </div>
+  )
+
   render() {
     return (
       <div id="popover-container">
         <BpkPopover
           id="my-popover"
-          target={
-            <BpkButton onClick={this.openPopover}>Open</BpkButton>
-          }
+          target={target}
           onClose={this.closePopover}
           isOpen={this.state.isOpen}
           label="My popover"
@@ -119,6 +127,10 @@ const onClose = (event, {
 #### popperModifiers
 
 Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the popover to overflow the viewport etc.
+
+#### target
+
+`target` can be a DOM element with a `ref` attached to it or a function that returns a DOM element.
 
 ## Theme Props
 
