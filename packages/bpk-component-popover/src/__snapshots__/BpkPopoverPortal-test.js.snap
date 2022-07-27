@@ -4,12 +4,8 @@ exports[`BpkPopoverPortal should not render anything if target is a function 1`]
 
 exports[`BpkPopoverPortal should render correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-popover-portal--target"
-  >
-    <div>
-      target
-    </div>
+  <div>
+    target
   </div>
 </DocumentFragment>
 `;
