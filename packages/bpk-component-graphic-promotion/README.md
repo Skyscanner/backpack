@@ -14,6 +14,7 @@ import BpkGraphicPromo from 'bpk-component-graphic-promotion';
 
 export default () => (
   <BpkGraphicPromo
+    contentId="graphic-promo-1"
     tagline="Tagline"
     headline="Ride your wave"
     subheading="Portugal and 6 more countries have just been added to the UK travel green list"
@@ -34,6 +35,7 @@ export default () => (
 
 | Property         | PropType          | Required | Default Value |
 | ---------------- | ----------------- | -------- | ------------- |
+| contentId        | string            | false    | null          |
 | buttonText       | string            | true     | -             |
 | headline         | string            | true     | -             |
 | invertVertically | bool              | true     | -             |

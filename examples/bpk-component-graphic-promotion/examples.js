@@ -25,6 +25,7 @@ import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
+const contentId = 'graphic-promo-content';
 const getClassName = cssModules(STYLES);
 const sponsor = {
   label: 'Sponsored',
@@ -50,6 +51,7 @@ const style = {
 
 const DefaultExample = () => (
   <BpkGraphicPromo
+    contentId={contentId}
     tagline={tagline}
     headline={headline}
     subheading={subheading}
