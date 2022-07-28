@@ -41,13 +41,10 @@
     display: table-cell;
     height: $bpk-calendar-day-size;
     padding: 0 $bpk-calendar-day-spacing;
-    font-weight: normal;
     box-shadow: $shadow-bottom;
     vertical-align: middle;
     box-sizing: content-box;
 
-    &--weekend {
-      font-weight: bold;
-    }
+    @include bpk-footnote;
   }
 }

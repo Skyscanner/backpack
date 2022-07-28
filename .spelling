@@ -286,6 +286,7 @@ collapseDelay
 color
 compareValues
 containerClassName
+contentId
 cornerStyle
 CORNER_STYLES.sm
 CORNER_STYLES.lg

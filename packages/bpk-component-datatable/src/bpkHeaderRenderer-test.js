@@ -18,13 +18,13 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
 import { SortDirection } from 'react-virtualized';
 
 import bpkHeaderRenderer, { getSortIconDirection } from './bpkHeaderRenderer';
 
 jest.mock('./utils', () => ({
-  hasClassName: (element, className) => element && element.hasClass(className),
+  hasClassName: (element, className) =>
+    element && element.classList.contains(className),
 }));
 
 describe('bpkHeaderRenderer', () => {
@@ -63,9 +63,8 @@ describe('bpkHeaderRenderer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
   describe('getSortIconDirection', () => {
-    let mounted;
     beforeEach(() => {
-      mounted = mount(
+      const { debug } = render(
         <div>
           {bpkHeaderRenderer({
             dataKey: 'data',
@@ -74,26 +73,27 @@ describe('bpkHeaderRenderer', () => {
           })}
         </div>,
       );
+      debug();
     });
 
     it('returns ASC for the up icon element', () => {
-      const upIcon = mounted
-        .find('svg')
-        .find('.bpk-data-table-column__sort-icon--up');
+      const upIcon = document.getElementsByClassName(
+        'bpk-data-table-column__sort-icon--up',
+      )[0];
       const sortDirection = getSortIconDirection(upIcon);
       expect(sortDirection).toBe(SortDirection.ASC);
     });
     it('returns DESC for the down path element', () => {
-      const downIcon = mounted
-        .find('svg')
-        .find('.bpk-data-table-column__sort-icon--down');
+      const downIcon = document.getElementsByClassName(
+        'bpk-data-table-column__sort-icon--down',
+      )[0];
       const sortDirection = getSortIconDirection(downIcon);
       expect(sortDirection).toBe(SortDirection.DESC);
     });
     it('returns null other things', () => {
-      const headerLabel = mounted
-        .find('span')
-        .find('.bpk-data-table-column__header');
+      const headerLabel = document.getElementsByClassName(
+        'bpk-data-table-column__header',
+      )[0];
       const sortDirection = getSortIconDirection(headerLabel);
       expect(sortDirection).toBeNull();
     });

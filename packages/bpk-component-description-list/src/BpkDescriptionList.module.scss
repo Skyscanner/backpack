@@ -22,7 +22,7 @@
   margin: 0;
 
   &__term {
-    font-weight: $bpk-font-weight-bold;
+    @include bpk-label-1;
   }
 
   &__details {

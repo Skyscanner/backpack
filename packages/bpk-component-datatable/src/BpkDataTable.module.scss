@@ -49,6 +49,8 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     align-items: center;
     outline-offset: -(4 * $bpk-one-pixel-rem);
 
+    @include bpk-label-2;
+
     &:hover {
       cursor: pointer;
     }
@@ -62,7 +64,8 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     border-bottom: none;
     outline-offset: -(4 * $bpk-one-pixel-rem);
     color: $bpk-color-sky-gray-tint-01;
-    font-weight: normal;
+
+    @include bpk-footnote;
 
     &:last-child {
       border-bottom: $bpk-border-size-sm solid $bpk-color-sky-gray-tint-07;
