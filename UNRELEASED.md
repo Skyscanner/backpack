@@ -1,13 +1,11 @@
-**Fixed:**
+**Changed:**
 
+`@skyscanner/backpack-web`: <br />
 `bpk-component-calendar:` </br>
 `bpk-component-scrollable-calendar:` </br>
 `bpk-component-datatable:` </br>
- - Update components to the new typography system.
-
-
-**Breaking:** </br>
+ - Update components to the new typography system. This will cause a change in the font weight of dates.
 
 `bpk-component-description-list:` </br>
- - Update components to the new typography system. Due to the typography changes, this will cause the component to increase in height so needs to be checked it does not alter the layout.
+ - Update components to the new typography system.
 
