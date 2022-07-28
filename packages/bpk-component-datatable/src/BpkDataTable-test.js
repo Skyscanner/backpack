@@ -17,8 +17,8 @@
  */
 
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+import { render, screen, fireEvent, within } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { SortDirection } from 'react-virtualized/dist/commonjs/Table';
 import _sortBy from 'lodash/sortBy';
 
@@ -174,8 +174,8 @@ describe('BpkDataTable', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should sort rows if header is clicked', () => {
-    const wrapper = mount(
+  it('should sort rows if header is clicked', async () => {
+    render(
       <BpkDataTable rows={rows} height={200} width={400}>
         <BpkDataTableColumn label="Name" dataKey="name" width={100} />
         <BpkDataTableColumn
@@ -186,27 +186,29 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
 
-    let cell = wrapper
-      .find('.bpk-data-table__row .bpk-data-table-column')
-      .last();
-    expect(cell.text()).toBe('Some guy');
+    const firstRow = within(screen.getAllByRole('rowgroup')[0]).getAllByRole(
+      'row',
+    )[0];
+    expect(firstRow).toHaveTextContent(/Software Engineer/i);
 
-    wrapper
-      .find('.bpk-data-table-column__header[title="Name"]')
-      .simulate('click');
+    const header = screen.getByRole('columnheader', { name: 'Name' });
+    await fireEvent.click(header);
 
-    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').last();
-    expect(cell.text()).toBe('Software Engineer');
+    const firstRowNameSorted = within(
+      screen.getAllByRole('rowgroup')[0],
+    ).getAllByRole('row')[0];
+
+    expect(firstRowNameSorted).toHaveTextContent(/Some guy/i);
   });
 
-  it('should sort rows ascending if the UpIcon in the header is clicked', () => {
+  it('should sort rows ascending if the UpIcon in the header is clicked', async () => {
     const abcRows = [
       { name: 'Bruno', letter: 'A' },
       { name: 'Daniela', letter: 'B' },
       { name: 'Ana', letter: 'C' },
       { name: 'Carla', letter: 'D' },
     ];
-    const wrapper = mount(
+    render(
       <BpkDataTable
         rows={abcRows}
         height={200}
@@ -218,28 +220,30 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
 
-    let cell = wrapper
-      .find('.bpk-data-table__row .bpk-data-table-column')
-      .first();
-    expect(cell.text()).toBe('Bruno');
+    const firstRow = within(screen.getAllByRole('rowgroup')[0]).getAllByRole(
+      'row',
+    )[0];
+    expect(firstRow).toHaveTextContent(/Bruno/i);
 
-    wrapper
-      .find('svg.bpk-data-table-column__sort-icon--up')
-      .first()
-      .simulate('click');
+    const sortIconUp = document.getElementsByClassName(
+      'bpk-data-table-column__sort-icon--up',
+    )[0];
+    await fireEvent.click(sortIconUp);
 
-    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').first();
-    expect(cell.text()).toBe('Ana');
+    const firstRowNameSorted = within(
+      screen.getAllByRole('rowgroup')[0],
+    ).getAllByRole('row')[0];
+    expect(firstRowNameSorted).toHaveTextContent(/Ana/i);
   });
 
-  it('should sort rows descending if the DownIcon in the header is clicked', () => {
+  it('should sort rows descending if the DownIcon in the header is clicked', async () => {
     const abcRows = [
       { name: 'Bruno', letter: 'A' },
       { name: 'Daniela', letter: 'B' },
       { name: 'Ana', letter: 'C' },
       { name: 'Carla', letter: 'D' },
     ];
-    const wrapper = mount(
+    render(
       <BpkDataTable
         rows={abcRows}
         height={200}
@@ -251,22 +255,24 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
 
-    let cell = wrapper
-      .find('.bpk-data-table__row .bpk-data-table-column')
-      .first();
-    expect(cell.text()).toBe('Bruno');
+    const firstRow = within(screen.getAllByRole('rowgroup')[0]).getAllByRole(
+      'row',
+    )[0];
+    expect(firstRow).toHaveTextContent(/Bruno/i);
 
-    wrapper
-      .find('svg.bpk-data-table-column__sort-icon--down')
-      .first()
-      .simulate('click');
+    const sortIconDown = document.getElementsByClassName(
+      'bpk-data-table-column__sort-icon--down',
+    )[0];
+    await fireEvent.click(sortIconDown);
 
-    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').first();
-    expect(cell.text()).toBe('Daniela');
+    const firstRowNameSorted = within(
+      screen.getAllByRole('rowgroup')[0],
+    ).getAllByRole('row')[0];
+    expect(firstRowNameSorted).toHaveTextContent(/Daniela/i);
   });
 
-  it('should not sort rows if header with disableSort is clicked', () => {
-    const wrapper = mount(
+  it('should not sort rows if header with disableSort is clicked', async () => {
+    render(
       <BpkDataTable rows={rows} height={200} width={400}>
         <BpkDataTableColumn
           label="Name"
@@ -282,20 +288,21 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
 
-    let cell = wrapper
-      .find('.bpk-data-table__row .bpk-data-table-column')
-      .last();
-    expect(cell.text()).toBe('Some guy');
+    const firstRow = within(screen.getAllByRole('row')[1]).getAllByRole(
+      'gridcell',
+    )[1];
+    expect(firstRow).toHaveTextContent('Software Engineer');
 
-    wrapper
-      .find('.bpk-data-table-column__header[title="Name"]')
-      .simulate('click');
+    const header = screen.getAllByRole('columnheader');
+    await fireEvent.click(header[0]);
 
-    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').last();
-    expect(cell.text()).toBe('Some guy');
+    const firstRowDescriptionSorted = within(
+      screen.getAllByRole('row')[1],
+    ).getAllByRole('gridcell')[1];
+    expect(firstRowDescriptionSorted).toHaveTextContent('Software Engineer');
   });
 
-  it('should sort rows using custom sort when it is passed', () => {
+  it('should sort rows using custom sort when it is passed', async () => {
     let complexRows = [
       {
         name: 'Jose',
@@ -323,14 +330,14 @@ describe('BpkDataTable', () => {
       sortByValue = sortBy;
       sortDirectionValue = sortDirection;
     };
-    const wrapper = mount(
+    const getBpkDataTable = (rowsData, sortBy, sortDirection) => (
       <BpkDataTable
-        rows={complexRows}
+        rows={rowsData}
         height={200}
         width={400}
         sort={sortFunction}
-        sortBy={sortByValue}
-        sortDirection={sortDirectionValue}
+        sortBy={sortBy}
+        sortDirection={sortDirection}
       >
         <BpkDataTableColumn
           label="Name"
@@ -354,36 +361,35 @@ describe('BpkDataTable', () => {
             </React.Fragment>
           )}
         />
-      </BpkDataTable>,
+      </BpkDataTable>
+    );
+    const { rerender } = render(
+      getBpkDataTable(complexRows, sortByValue, sortDirectionValue),
     );
 
-    let cell = wrapper
-      .find('.bpk-data-table__row .bpk-data-table-column')
-      .last();
-    expect(cell.text()).toBe('Barcelona - 15');
+    expect(
+      within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[2],
+    ).toHaveTextContent('Barcelona - 15');
 
-    wrapper
-      .find('.bpk-data-table-column__header[title="Seat"]')
-      .simulate('click');
-    wrapper.setProps({
-      rows: complexRows,
-      sortBy: sortByValue,
-      sortDirection: sortDirectionValue,
-    });
+    const header = screen.getByRole('columnheader', { name: 'Seat' });
+    await fireEvent.click(header);
 
-    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').at(2);
-    expect(cell.text()).toBe('Barcelona - 12');
+    rerender(getBpkDataTable(complexRows, sortByValue, sortDirectionValue));
 
-    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').at(5);
-    expect(cell.text()).toBe('Barcelona - 15');
-
-    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').last();
-    expect(cell.text()).toBe('London - 10');
+    expect(
+      within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[0],
+    ).toHaveTextContent(/Barcelona - 12/i);
+    expect(
+      within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[1],
+    ).toHaveTextContent(/Barcelona - 15/i);
+    expect(
+      within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[2],
+    ).toHaveTextContent(/London - 10/i);
   });
 
-  it('should call the onRowClick callback when a row is clicked', () => {
+  it('should call the onRowClick callback when a row is clicked', async () => {
     const onRowClick = jest.fn();
-    const wrapper = mount(
+    render(
       <BpkDataTable
         rows={rows}
         height={200}
@@ -399,16 +405,19 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
 
-    wrapper.find('.bpk-data-table__row').last().simulate('click');
+    const firstRow = within(screen.getAllByRole('rowgroup')[0]).getAllByRole(
+      'row',
+    )[0];
+    await fireEvent.click(firstRow);
 
     expect(onRowClick).toHaveBeenCalledTimes(1);
-    expect(onRowClick).toHaveBeenCalledWith(rows[1]);
+    expect(onRowClick).toHaveBeenCalledWith(rows[0]);
   });
 
-  it('onRowClick/bug: ensure handler is applied to the right element after sorting', () => {
+  it('onRowClick/bug: ensure handler is applied to the right element after sorting', async () => {
     const abcRows = [{ letter: 'Z' }, { letter: 'P' }, { letter: 'A' }];
     const onRowClick = jest.fn();
-    const wrapper = mount(
+    render(
       <BpkDataTable
         rows={abcRows}
         height={200}
@@ -422,14 +431,16 @@ describe('BpkDataTable', () => {
 
     // Select the last element in the table, which after sorting
     // it will be letter Z so index 0.
-    wrapper.find('.bpk-data-table__row').last().simulate('click');
+    await fireEvent.click(
+      within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[2],
+    );
 
     expect(onRowClick).toHaveBeenCalledTimes(1);
     expect(onRowClick).toHaveBeenCalledWith(abcRows[0]);
   });
 
   it('should re-render when rows prop is updated', () => {
-    const wrapper = mount(
+    const { rerender } = render(
       <BpkDataTable rows={rows} height={200} width={400}>
         <BpkDataTableColumn label="Name" dataKey="name" width={100} />
         <BpkDataTableColumn
@@ -439,12 +450,37 @@ describe('BpkDataTable', () => {
         />
       </BpkDataTable>,
     );
+    expect(
+      within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row'),
+    ).toHaveLength(2);
 
-    wrapper.setProps({ rows: [] });
-    expect(wrapper.find('.bpk-data-table__row')).toHaveLength(1);
+    rerender(
+      <BpkDataTable rows={[]} height={200} width={400}>
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+        />
+      </BpkDataTable>,
+    );
+    expect(
+      within(screen.getAllByRole('rowgroup')[0]).queryAllByRole('row'),
+    ).toHaveLength(0);
 
-    wrapper.setProps({ rows: [rows[0]] });
-    expect(wrapper.find('.bpk-data-table__row')).toHaveLength(2);
+    rerender(
+      <BpkDataTable rows={[rows[0]]} height={200} width={400}>
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+        />
+      </BpkDataTable>,
+    );
+    expect(
+      within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row'),
+    ).toHaveLength(1);
   });
 
   it('Default table is sorted by the column specified in the index', () => {
@@ -453,7 +489,7 @@ describe('BpkDataTable', () => {
       { letter: 'B', number: 2 },
       { letter: 'C', number: 3 },
     ];
-    const wrapper = mount(
+    render(
       <BpkDataTable
         rows={abcRows}
         height={200}
@@ -472,7 +508,8 @@ describe('BpkDataTable', () => {
 
     // Select the last element in the table, when sorting by default on 2nd
     // column it will be A1.
-    const firstRow = wrapper.find('.bpk-data-table__row').at(1);
-    expect(firstRow.text()).toBe('C3');
+    expect(
+      within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[0],
+    ).toHaveTextContent('C3');
   });
 });

@@ -7,7 +7,7 @@ exports[`BpkNavigationBar should render correctly 1`] = `
     class="bpk-navigation-bar"
   >
     <span
-      class="bpk-text bpk-text--label-1 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
       id="test-bpk-navigation-bar-title"
     >
       test
@@ -23,7 +23,7 @@ exports[`BpkNavigationBar should render correctly when sticky 1`] = `
     class="bpk-navigation-bar bpk-navigation-bar__sticky"
   >
     <span
-      class="bpk-text bpk-text--label-1 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
       id="test-bpk-navigation-bar-title"
     >
       test
@@ -47,7 +47,7 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
       <span />
     </button>
     <span
-      class="bpk-text bpk-text--label-1 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
       id="test-bpk-navigation-bar-title"
     >
       test
@@ -63,7 +63,7 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
     class="bpk-navigation-bar"
   >
     <span
-      class="bpk-text bpk-text--label-1 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
       id="test-bpk-navigation-bar-title"
     >
       test
@@ -109,7 +109,7 @@ exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
     testid="arbitrary value"
   >
     <span
-      class="bpk-text bpk-text--label-1 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
       id="test-bpk-navigation-bar-title"
     >
       test
@@ -125,7 +125,7 @@ exports[`BpkNavigationBar should render correctly with custom class 1`] = `
     class="bpk-navigation-bar my-custom-class"
   >
     <span
-      class="bpk-text bpk-text--label-1 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
       id="test-bpk-navigation-bar-title"
     >
       test

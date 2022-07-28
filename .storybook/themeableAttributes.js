@@ -53,7 +53,6 @@ import { themeAttributes as paginationThemeAttributes } from '../packages/bpk-co
 import { themeAttributes as popoverThemeAttributes } from '../packages/bpk-component-popover';
 import { themeAttributes as progressThemeAttributes } from '../packages/bpk-component-progress';
 import { themeAttributes as radioThemeAttributes } from '../packages/bpk-component-radio';
-import { themeAttributes as ratingThemeAttributes } from '../packages/bpk-component-rating';
 import { themeAttributes as selectThemeAttributes } from '../packages/bpk-component-select';
 import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-component-slider';
 import { themeAttributes as skipLinkThemeAttributes } from '../packages/bpk-component-skip-link';
@@ -93,7 +92,6 @@ export default [
   ...popoverThemeAttributes,
   ...progressThemeAttributes,
   ...radioThemeAttributes,
-  ...ratingThemeAttributes,
   ...selectThemeAttributes,
   ...skipLinkThemeAttributes,
   ...sliderThemeAttributes,

@@ -24,9 +24,13 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-cycle
 import {
   BpkButtonPrimary,
+  BpkButtonPrimaryOnDark,
+  BpkButtonPrimaryOnLight,
   BpkButtonSecondary,
+  BpkButtonSecondaryOnDark,
   BpkButtonDestructive,
   BpkButtonLink,
+  BpkButtonLinkOnDark,
   BpkButtonFeatured,
   BpkButtonOutline,
 } from '../index';
@@ -39,20 +43,44 @@ import {
 
 type Props = {
   ...CommonProps,
+  primaryOnDark: boolean,
+  primaryOnLight: boolean,
   secondary: boolean,
+  secondaryOnDark: boolean,
   destructive: boolean,
   featured: boolean,
   outline: boolean,
   link: boolean,
-  padded: boolean,
+  linkOnDark: boolean,
 };
 
 const BpkButton = (props: Props) => {
-  const { destructive, featured, link, outline, padded, secondary, ...rest } =
-    props;
+  const {
+    destructive,
+    featured,
+    link,
+    linkOnDark,
+    outline,
+    primaryOnDark,
+    primaryOnLight,
+    secondary,
+    secondaryOnDark,
+    ...rest
+  } = props;
+
+  if (primaryOnDark) {
+    return <BpkButtonPrimaryOnDark {...rest} />;
+  }
+
+  if (primaryOnLight) {
+    return <BpkButtonPrimaryOnLight {...rest} />;
+  }
 
   if (secondary) {
     return <BpkButtonSecondary {...rest} />;
+  }
+  if (secondaryOnDark) {
+    return <BpkButtonSecondaryOnDark {...rest} />;
   }
   if (destructive) {
     return <BpkButtonDestructive {...rest} />;
@@ -64,30 +92,38 @@ const BpkButton = (props: Props) => {
     return <BpkButtonOutline {...rest} />;
   }
   if (link) {
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    return <BpkButtonLink padded={padded} {...rest} />;
+    return <BpkButtonLink {...rest} />;
+  }
+  if (linkOnDark) {
+    return <BpkButtonLinkOnDark {...rest} />;
   }
   return <BpkButtonPrimary {...rest} />;
 };
 
 BpkButton.propTypes = {
   ...propTypes,
+  primaryOnDark: PropTypes.bool,
+  primaryOnLight: PropTypes.bool,
   secondary: PropTypes.bool,
+  secondaryOnDark: PropTypes.bool,
   destructive: PropTypes.bool,
   featured: PropTypes.bool,
   outline: PropTypes.bool,
-  padded: PropTypes.bool,
   link: PropTypes.bool,
+  linkOnDark: PropTypes.bool,
 };
 
 BpkButton.defaultProps = {
   ...defaultProps,
+  primaryOnDark: false,
+  primaryOnLight: false,
   secondary: false,
+  secondaryOnDark: false,
   destructive: false,
   featured: false,
   outline: false,
-  padded: false,
   link: false,
+  linkOnDark: false,
 };
 
 export default BpkButton;

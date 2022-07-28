@@ -35,7 +35,7 @@ $bpk-spacing-v2: true;
     @include bpk-text;
     @include bpk-subheading;
 
-    &--outline {
+    &--secondary-on-dark {
       background-color: transparent;
       color: $bpk-color-white;
     }

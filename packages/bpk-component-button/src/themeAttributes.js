@@ -29,6 +29,24 @@ export const primaryThemeAttributes = [
   'buttonPrimaryActiveBackgroundColor',
 ];
 
+export const primaryOnDarkThemeAttributes = [
+  'buttonPrimaryOnDarkTextColor',
+  'buttonPrimaryOnDarkHoverTextColor',
+  'buttonPrimaryOnDarkActiveTextColor',
+  'buttonPrimaryOnDarkBackgroundColor',
+  'buttonPrimaryOnDarkHoverBackgroundColor',
+  'buttonPrimaryOnDarkActiveBackgroundColor',
+];
+
+export const primaryOnLightThemeAttributes = [
+  'buttonPrimaryOnLightTextColor',
+  'buttonPrimaryOnLightHoverTextColor',
+  'buttonPrimaryOnLightActiveTextColor',
+  'buttonPrimaryOnLightBackgroundColor',
+  'buttonPrimaryOnLightHoverBackgroundColor',
+  'buttonPrimaryOnLightActiveBackgroundColor',
+];
+
 export const secondaryThemeAttributes = [
   'buttonSecondaryTextColor',
   'buttonSecondaryHoverTextColor',
@@ -39,6 +57,15 @@ export const secondaryThemeAttributes = [
   'buttonSecondaryBackgroundColor',
   'buttonSecondaryHoverBackgroundColor',
   'buttonSecondaryActiveBackgroundColor',
+];
+
+export const secondaryOnDarkThemeAttributes = [
+  'buttonSecondaryOnDarkTextColor',
+  'buttonSecondaryOnDarkHoverTextColor',
+  'buttonSecondaryOnDarkActiveTextColor',
+  'buttonSecondaryOnDarkBackgroundColor',
+  'buttonSecondaryOnDarkHoverBackgroundColor',
+  'buttonSecondaryOnDarkActiveBackgroundColor',
 ];
 
 export const featuredThemeAttributes = [

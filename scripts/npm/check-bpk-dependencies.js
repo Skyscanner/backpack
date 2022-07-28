@@ -127,9 +127,7 @@ const getBpkPackageVersions = (packageFiles) =>
 console.log('Checking Backpack cross dependencies...');
 console.log('');
 
-let packageFiles = execSync(
-  'find packages -name package.json | grep -v node_modules',
-)
+let packageFiles = execSync('find . -name package.json | grep -v node_modules')
   .toString()
   .split('\n');
 
@@ -150,10 +148,22 @@ if (
     .toString()
     .split('\n');
 
+  const mixinsVersion = execSync('npm show bpk-mixins version')
+    .toString()
+    .split('\n');
+
+  const stylesheetsVersion = execSync('npm show bpk-stylesheets version')
+    .toString()
+    .split('\n');
+
   // eslint-disable-next-line prefer-destructuring
   bpkPackageVersions['@skyscanner/bpk-svgs'] = svgsVersion[0];
   // eslint-disable-next-line prefer-destructuring
   bpkPackageVersions['@skyscanner/bpk-foundations-web'] = foundationsVersion[0];
+  // eslint-disable-next-line prefer-destructuring
+  bpkPackageVersions['bpk-mixins'] = mixinsVersion[0];
+  // eslint-disable-next-line prefer-destructuring
+  bpkPackageVersions['bpk-stylesheets'] = stylesheetsVersion[0];
 }
 
 packageFiles.forEach((pf) => {

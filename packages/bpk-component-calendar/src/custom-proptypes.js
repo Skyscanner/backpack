@@ -20,8 +20,8 @@ import PropTypes from 'prop-types';
 
 import { isBefore, isSameDay } from './date-utils';
 
-const DateType = (key) => (props) => {
-  const { endDate, startDate } = props[key];
+const DateType = () => (props) => {
+  const { endDate, startDate } = props;
 
   // No range selected
   if (!startDate && !endDate) {
@@ -30,9 +30,7 @@ const DateType = (key) => (props) => {
 
   // End date without a start date is not allowed
   if (!startDate && endDate) {
-    return new Error(
-      `Cannot specify \`endDate\` without \`startDate\` in ${key}.`,
-    );
+    return new Error(`Cannot specify \`endDate\` without \`startDate\`.`);
   }
 
   // Start date without an end date is always valid
@@ -43,7 +41,7 @@ const DateType = (key) => (props) => {
   // Start date cannot be after end date
   if (isBefore(endDate, startDate) && !isSameDay(endDate, startDate)) {
     return new Error(
-      `Start date \`${startDate}\` cannot be after end date \`${endDate}\` in \`props.${key}\`.`,
+      `Start date \`${startDate}\` cannot be after end date \`${endDate}\`.`,
     );
   }
 
@@ -62,8 +60,8 @@ const SelectionConfigurationSingle = PropTypes.shape({
 
 const SelectionConfigurationRange = PropTypes.shape({
   type: PropTypes.oneOf([CALENDAR_SELECTION_TYPE.range]),
-  startDate: DateType('selectionConfiguration'),
-  endDate: DateType('selectionConfiguration'),
+  startDate: DateType(),
+  endDate: DateType(),
 });
 
 const SelectionConfiguration = PropTypes.oneOfType([

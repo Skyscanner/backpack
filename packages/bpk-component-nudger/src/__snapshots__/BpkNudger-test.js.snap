@@ -63,14 +63,14 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkNudger should render as an outline nudger correctly 1`] = `
+exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-nudger"
   >
     <button
       aria-controls="nudger"
-      class="bpk-button bpk-button--icon-only bpk-button--outline bpk-nudger__button"
+      class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark bpk-nudger__button"
       title="Decrease"
       type="button"
     >
@@ -93,7 +93,7 @@ exports[`BpkNudger should render as an outline nudger correctly 1`] = `
     </button>
     <input
       aria-live="assertive"
-      class="bpk-nudger__input bpk-nudger__input--numeric bpk-nudger__input--outline"
+      class="bpk-nudger__input bpk-nudger__input--numeric bpk-nudger__input--secondary-on-dark"
       id="nudger"
       readonly=""
       type="text"
@@ -101,7 +101,7 @@ exports[`BpkNudger should render as an outline nudger correctly 1`] = `
     />
     <button
       aria-controls="nudger"
-      class="bpk-button bpk-button--icon-only bpk-button--outline bpk-nudger__button"
+      class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark bpk-nudger__button"
       title="Increase"
       type="button"
     >

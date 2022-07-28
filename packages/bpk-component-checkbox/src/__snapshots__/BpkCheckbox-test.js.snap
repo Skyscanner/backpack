@@ -78,6 +78,7 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
     <input
       aria-invalid="false"
       aria-label="Prefer directs"
+      checked=""
       class="bpk-checkbox__input"
       data-indeterminate="false"
       name="checkbox"
@@ -172,6 +173,7 @@ exports[`BpkCheckbox should render correctly with indeterminate state when both 
     <input
       aria-invalid="false"
       aria-label="Prefer directs"
+      checked=""
       class="bpk-checkbox__input bpk-checkbox__input-indeterminate"
       data-indeterminate="true"
       name="checkbox"

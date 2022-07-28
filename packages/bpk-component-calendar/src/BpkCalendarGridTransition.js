@@ -57,6 +57,8 @@ class BpkCalendarGridTransition extends Component {
   constructor(props) {
     super(props);
 
+    this.onMonthTransitionEnd = this.onMonthTransitionEnd.bind(this);
+
     this.state = {
       isTransitioning: false,
       transitionValue: transitionValues.current,
@@ -125,7 +127,7 @@ class BpkCalendarGridTransition extends Component {
     }
   }
 
-  onMonthTransitionEnd = () => {
+  onMonthTransitionEnd() {
     const { month } = this.props;
 
     this.setState({
@@ -136,7 +138,7 @@ class BpkCalendarGridTransition extends Component {
       currentMonth: month,
       months: [addMonths(month, -1), month, addMonths(month, 1)],
     });
-  };
+  }
 
   render() {
     const { TransitionComponent, className, focusedDate, ...rest } = this.props;

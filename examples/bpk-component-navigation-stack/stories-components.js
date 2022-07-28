@@ -1,0 +1,202 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* @flow strict */
+
+import React, {
+  type Element,
+  type ComponentType,
+  type ElementConfig,
+} from 'react';
+
+import BpkNavigationBar, {
+  BpkNavigationBarIconButton,
+} from '../../packages/bpk-component-navigation-bar';
+import BpkButton from '../../packages/bpk-component-button';
+import { cssModules } from '../../packages/bpk-react-utils';
+import { withRtlSupport } from '../../packages/bpk-component-icon';
+import BpkLeftArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
+import BpkRightArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
+import BpkNavigationStack from '../../packages/bpk-component-navigation-stack';
+
+import STYLES from './examples.module.scss';
+
+const LeftArrowIcon = withRtlSupport(BpkLeftArrowIcon);
+const RightArrowIcon = withRtlSupport(BpkRightArrowIcon);
+
+const getClassName = cssModules(STYLES);
+
+export const View = ({
+  centered,
+  children,
+  className,
+  index,
+  noNavBar,
+  popView,
+  pushView,
+  ...rest
+}: {
+  children: ({
+    index: number,
+    pushView: ?(Element<any>) => mixed,
+    popView: ?() => mixed,
+  }) => ?Element<any>,
+  index: number,
+  pushView: ?(Element<any>) => mixed,
+  popView: ?() => mixed,
+  className: ?string,
+  noNavBar: boolean,
+  centered: boolean,
+}) => (
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+  <section
+    className={getClassName(
+      'bpk-navigation-stack-view',
+      index % 2 === 0 && 'bpk-navigation-stack-view--alternate',
+      noNavBar && 'bpk-navigation-stack-view--no-nav-bar',
+      centered && 'bpk-navigation-stack-view--centered',
+      className,
+    )}
+    {...rest}
+  >
+    {children({ index, pushView, popView })}
+  </section>
+);
+
+View.defaultProps = {
+  index: 0,
+  className: null,
+  pushView: null,
+  popView: null,
+  noNavBar: false,
+  centered: false,
+};
+
+export const SimpleNav = ({
+  index,
+  popView,
+  pushView,
+}: {
+  index: number,
+  pushView: ?(Element<any>) => mixed,
+  popView: ?() => mixed,
+}) => (
+  <div>
+    <BpkButton
+      onClick={() =>
+        pushView &&
+        pushView(
+          <View index={index + 1} centered>
+            {(props) => <SimpleNav {...props} />}
+          </View>,
+        )
+      }
+    >
+      Push view
+    </BpkButton>
+    {index > 0 ? (
+      <BpkButton destructive onClick={() => popView && popView()}>
+        Pop view
+      </BpkButton>
+    ) : null}
+  </div>
+);
+
+export const NavigationBar = ({
+  index,
+  nextView,
+  popView,
+  pushView,
+}: {
+  index: number,
+  pushView: ?(Element<any>) => mixed,
+  popView: ?() => mixed,
+  nextView: ?() => ?Element<any>,
+}) => (
+  <BpkNavigationBar
+    id={`my-navigation-bar-${index}`}
+    title={`View ${index + 1}`}
+    leadingButton={
+      index > 0 ? (
+        <BpkNavigationBarIconButton
+          onClick={() => popView && popView()}
+          icon={LeftArrowIcon}
+          label="Back"
+        />
+      ) : null
+    }
+    trailingButton={
+      <BpkNavigationBarIconButton
+        onClick={() =>
+          pushView &&
+          pushView(
+            (nextView && nextView()) || (
+              <View index={index + 1}>
+                {(props) => <NavigationBar {...props} />}
+              </View>
+            ),
+          )
+        }
+        icon={RightArrowIcon}
+        label="Next"
+      />
+    }
+  />
+);
+
+NavigationBar.defaultProps = {
+  pushView: null,
+  popView: null,
+  nextView: null,
+};
+
+export const withNavigationBar = (
+  Stack: ComponentType<ElementConfig<typeof BpkNavigationStack>>,
+) => {
+  const WithNavigationBar = ({
+    popView,
+    pushView,
+    views,
+    ...rest
+  }: {
+    views: Array<Element<any>>,
+    pushView: ?(Element<any>) => mixed,
+    popView: ?() => mixed,
+  }) => (
+    <div {...rest}>
+      <NavigationBar
+        index={views.length - 1}
+        pushView={pushView}
+        popView={popView}
+        nextView={() => (
+          <View index={views.length} noNavBar>
+            {() => null}
+          </View>
+        )}
+      />
+      <Stack views={views} />
+    </div>
+  );
+
+  WithNavigationBar.defaultProps = {
+    pushView: null,
+    popView: null,
+  };
+
+  return WithNavigationBar;
+};

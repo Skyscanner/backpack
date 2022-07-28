@@ -20,7 +20,8 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node, type AbstractComponent } from 'react';
-import wrapDisplayName from 'recompose/wrapDisplayName';
+
+import wrapDisplayName from './wrapDisplayName';
 
 type Props = {
   children: ?Node,

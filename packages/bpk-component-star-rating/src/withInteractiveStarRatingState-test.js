@@ -19,8 +19,8 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkInteractiveStarRating from './BpkInteractiveStarRating';
 import withInteractiveStarRatingState from './withInteractiveStarRatingState';
@@ -31,49 +31,56 @@ const InteractiveStarRating = withInteractiveStarRatingState(
 
 describe('withInteractiveStarRatingState', () => {
   it('should render correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <InteractiveStarRating
         id="my-star-rating"
         getStarLabel={() => 'my-label'}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "large" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <InteractiveStarRating
         id="my-star-rating"
         getStarLabel={() => 'my-label'}
         large
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should have a rating of 3 when onRatingSelect is called with 3', () => {
-    const interactiveItem = shallow(
+  it('should render correctly when selecting 3rd star', async () => {
+    const { asFragment } = render(
       <InteractiveStarRating
         id="my-star-rating"
-        getStarLabel={() => 'my-label'}
-      />,
-    );
-    interactiveItem.instance().onRatingSelect(3);
-    expect(interactiveItem.state('rating')).toBe(3);
-  });
-
-  it('should have a hover rating of 4 when onRatingHover is called with 4', () => {
-    const interactiveItem = shallow(
-      <InteractiveStarRating
-        id="my-star-rating"
-        getStarLabel={() => 'my-label'}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
       />,
     );
 
-    interactiveItem.instance().onRatingHover(4);
-    expect(interactiveItem.state('hoverRating')).toBe(4);
+    const star = screen.getByLabelText('3 out of 5 stars');
+    await fireEvent.click(star);
 
-    interactiveItem.instance().onMouseLeave();
-    expect(interactiveItem.state('hoverRating')).toBe(0);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly when hovering over 4th star', async () => {
+    const { asFragment } = render(
+      <InteractiveStarRating
+        id="my-star-rating"
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
+      />,
+    );
+
+    const star = screen.getByLabelText('4 out of 5 stars');
+
+    await fireEvent.mouseOver(star);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

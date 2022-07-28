@@ -47,16 +47,16 @@ describe('utils', () => {
 
     it('should return the exact band center', () => {
       const position = center(scale);
-      expect(position(domain[0])).not.toBe(4);
-      expect(Math.round(position(domain[0]))).toBe(4);
-      expect(position(domain[1])).not.toBe(13);
-      expect(Math.round(position(domain[1]))).toBe(13);
+      expect(position(domain[0])).not.toBe(13);
+      expect(Math.round(position(domain[0]))).toBe(13);
+      expect(position(domain[1])).not.toBe(38);
+      expect(Math.round(position(domain[1]))).toBe(38);
     });
 
     it('should return the rounded band center for a rounded range', () => {
       const position = center(scaleRound);
-      expect(position(domain[0])).toBe(6);
-      expect(position(domain[1])).toBe(14);
+      expect(position(domain[0])).toBe(13);
+      expect(position(domain[1])).toBe(38);
     });
   });
 

@@ -8,7 +8,7 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -62,7 +62,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -89,7 +89,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -115,7 +115,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -145,7 +145,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
       Search
     </span>
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -166,12 +166,38 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
 exports[`BpkLoadingButton should render correctly with "large" and "link" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--link"
+    class="bpk-button bpk-button--large bpk-button--link bpk-button--link-large"
     type="button"
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="24"
+        style="width: 1.5rem; height: 1.5rem;"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkLoadingButton should render correctly with "large" and "linkOnDark" attributes 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--large bpk-button--link-on-dark bpk-button--link-on-dark-large"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -192,78 +218,149 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
 exports[`BpkLoadingButton should render correctly with "large" and "loading" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large"
+    class="bpk-button bpk-button--large bpk-loading-button"
     disabled=""
     type="button"
   >
-    My button 
-    <svg
-      class="bpk-spinner bpk-spinner--large bpk-spinner--dark bpk-spinner--align-to-large-button"
-      height="24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      class="bpk-loading-button__icon bpk-loading-button__icon--large"
     >
-      <path
-        clip-rule="evenodd"
-        d="M12 6.657a.946.946 0 0 1-.943-.943V1.943c0-.519.424-.943.943-.943.519 0 .943.424.943.943v3.771a.946.946 0 0 1-.943.943z"
-        opacity=".65"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M14.671 7.373a.946.946 0 0 1-.345-1.288l1.886-3.266a.946.946 0 0 1 1.288-.345c.45.26.604.839.345 1.288L15.96 7.028a.946.946 0 0 1-1.288.345z"
-        opacity=".75"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M16.627 9.329a.945.945 0 0 1 .345-1.288l3.266-1.886a.946.946 0 0 1 1.288.345.946.946 0 0 1-.345 1.288l-3.266 1.886a.946.946 0 0 1-1.288-.345z"
-        opacity=".85"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M17.343 12c0-.519.424-.943.943-.943h3.771c.519 0 .943.424.943.943a.946.946 0 0 1-.943.943h-3.771a.946.946 0 0 1-.943-.943z"
-        opacity=".9"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M16.627 14.671a.946.946 0 0 1 1.288-.345l3.266 1.886c.45.26.604.839.345 1.288a.946.946 0 0 1-1.288.345l-3.266-1.886a.946.946 0 0 1-.345-1.288z"
-        opacity=".2"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M14.671 16.627a.946.946 0 0 1 1.288.345l1.886 3.266a.946.946 0 0 1-.345 1.288.945.945 0 0 1-1.288-.345l-1.886-3.266a.946.946 0 0 1 .345-1.288z"
-        opacity=".25"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M12 17.343c.519 0 .943.424.943.943v3.771A.946.946 0 0 1 12 23a.946.946 0 0 1-.943-.943v-3.771c0-.519.424-.943.943-.943z"
-        opacity=".3"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M9.329 16.627c.449.26.604.839.345 1.288l-1.886 3.266a.945.945 0 0 1-1.288.345.946.946 0 0 1-.345-1.288l1.886-3.266a.946.946 0 0 1 1.288-.345z"
-        opacity=".35"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M7.373 14.671a.946.946 0 0 1-.345 1.288l-3.266 1.886a.946.946 0 0 1-1.288-.345.946.946 0 0 1 .345-1.288l3.266-1.886a.946.946 0 0 1 1.288.345z"
-        opacity=".4"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M6.657 12a.946.946 0 0 1-.943.943H1.943A.946.946 0 0 1 1 12c0-.519.424-.943.943-.943h3.771c.519 0 .943.424.943.943z"
-        opacity=".45"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M7.373 9.329a.946.946 0 0 1-1.288.345L2.819 7.788A.946.946 0 0 1 2.474 6.5a.946.946 0 0 1 1.288-.345L7.028 8.04a.946.946 0 0 1 .345 1.288z"
-        opacity=".5"
-      />
-      <path
-        clip-rule="evenodd"
-        d="M9.329 7.373a.946.946 0 0 1-1.288-.345L6.155 3.762A.946.946 0 0 1 6.5 2.474a.946.946 0 0 1 1.288.345l1.886 3.266a.946.946 0 0 1-.345 1.288z"
-        opacity=".55"
-      />
-    </svg>
+      <svg
+        class="bpk-spinner bpk-spinner--large bpk-spinner--dark bpk-spinner--align-to-large-button"
+        height="24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12 6.657a.946.946 0 0 1-.943-.943V1.943c0-.519.424-.943.943-.943.519 0 .943.424.943.943v3.771a.946.946 0 0 1-.943.943z"
+          opacity=".65"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M14.671 7.373a.946.946 0 0 1-.345-1.288l1.886-3.266a.946.946 0 0 1 1.288-.345c.45.26.604.839.345 1.288L15.96 7.028a.946.946 0 0 1-1.288.345z"
+          opacity=".75"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M16.627 9.329a.945.945 0 0 1 .345-1.288l3.266-1.886a.946.946 0 0 1 1.288.345.946.946 0 0 1-.345 1.288l-3.266 1.886a.946.946 0 0 1-1.288-.345z"
+          opacity=".85"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M17.343 12c0-.519.424-.943.943-.943h3.771c.519 0 .943.424.943.943a.946.946 0 0 1-.943.943h-3.771a.946.946 0 0 1-.943-.943z"
+          opacity=".9"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M16.627 14.671a.946.946 0 0 1 1.288-.345l3.266 1.886c.45.26.604.839.345 1.288a.946.946 0 0 1-1.288.345l-3.266-1.886a.946.946 0 0 1-.345-1.288z"
+          opacity=".2"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M14.671 16.627a.946.946 0 0 1 1.288.345l1.886 3.266a.946.946 0 0 1-.345 1.288.945.945 0 0 1-1.288-.345l-1.886-3.266a.946.946 0 0 1 .345-1.288z"
+          opacity=".25"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M12 17.343c.519 0 .943.424.943.943v3.771A.946.946 0 0 1 12 23a.946.946 0 0 1-.943-.943v-3.771c0-.519.424-.943.943-.943z"
+          opacity=".3"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M9.329 16.627c.449.26.604.839.345 1.288l-1.886 3.266a.945.945 0 0 1-1.288.345.946.946 0 0 1-.345-1.288l1.886-3.266a.946.946 0 0 1 1.288-.345z"
+          opacity=".35"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M7.373 14.671a.946.946 0 0 1-.345 1.288l-3.266 1.886a.946.946 0 0 1-1.288-.345.946.946 0 0 1 .345-1.288l3.266-1.886a.946.946 0 0 1 1.288.345z"
+          opacity=".4"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M6.657 12a.946.946 0 0 1-.943.943H1.943A.946.946 0 0 1 1 12c0-.519.424-.943.943-.943h3.771c.519 0 .943.424.943.943z"
+          opacity=".45"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M7.373 9.329a.946.946 0 0 1-1.288.345L2.819 7.788A.946.946 0 0 1 2.474 6.5a.946.946 0 0 1 1.288-.345L7.028 8.04a.946.946 0 0 1 .345 1.288z"
+          opacity=".5"
+        />
+        <path
+          clip-rule="evenodd"
+          d="M9.329 7.373a.946.946 0 0 1-1.288-.345L6.155 3.762A.946.946 0 0 1 6.5 2.474a.946.946 0 0 1 1.288.345l1.886 3.266a.946.946 0 0 1-.345 1.288z"
+          opacity=".55"
+        />
+      </svg>
+    </span>
+    My button 
+    <span
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="24"
+        style="width: 1.5rem; height: 1.5rem;"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkLoadingButton should render correctly with "large" and "primaryOnDark" attributes 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--large bpk-button--primary-on-dark"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="24"
+        style="width: 1.5rem; height: 1.5rem;"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkLoadingButton should render correctly with "large" and "primaryOnLight" attributes 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--large bpk-button--primary-on-light"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="24"
+        style="width: 1.5rem; height: 1.5rem;"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
+        />
+      </svg>
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -276,7 +373,33 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="24"
+        style="width: 1.5rem; height: 1.5rem;"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkLoadingButton should render correctly with "large" and "secondaryOnDark" attributes 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--large bpk-button--secondary-on-dark"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -463,15 +586,35 @@ exports[`BpkLoadingButton should render correctly with a "iconDisabled" attribut
 exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button"
+    class="bpk-button bpk-loading-button"
     disabled=""
     type="button"
   >
+    <span
+      class="bpk-loading-button__icon"
+    >
+      <span
+        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      >
+        <svg
+          height="18"
+          style="width: 1.125rem; height: 1.125rem;"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zm2.625 6h-5.25C9.168 7.5 9 7.276 9 7v-.583c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5z"
+          />
+        </svg>
+      </span>
+    </span>
     My button 
     <span
       style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
     >
       <svg
+        class="bpk-icon--rtl-support"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -479,7 +622,8 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zm2.625 6h-5.25C9.168 7.5 9 7.276 9 7v-.583c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5z"
+          clip-rule="evenodd"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
         />
       </svg>
     </span>
@@ -555,7 +699,7 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
@@ -601,125 +745,230 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
 </DocumentFragment>
 `;
 
-exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`] = `
+exports[`BpkLoadingButton should render correctly with a "linkOnDark" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button"
-    disabled=""
+    class="bpk-button bpk-button--link-on-dark"
     type="button"
   >
     My button 
-    <svg
-      class="bpk-spinner bpk-spinner--dark bpk-spinner--align-to-button"
-      height="16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
     >
-      <rect
-        height="2"
-        opacity=".45"
-        rx="1"
-        width="4"
-        y="7"
-      />
-      <rect
-        height="2"
-        rx="1"
-        width="4"
-        x="12"
-        y="7"
-      />
-      <rect
-        height="2"
-        opacity=".3"
-        rx="1"
-        transform="rotate(-90 7 16)"
-        width="4"
-        x="7"
-        y="16"
-      />
-      <rect
-        height="2"
-        opacity=".65"
-        rx="1"
-        transform="rotate(-90 7 4)"
-        width="4"
-        x="7"
-        y="4"
-      />
-      <rect
-        height="2"
-        opacity=".25"
-        rx="1"
-        transform="rotate(-120 11.134 15.428)"
-        width="4"
-        x="11.134"
-        y="15.428"
-      />
-      <rect
-        height="2"
-        opacity=".55"
-        rx="1"
-        transform="rotate(-120 5.134 5.036)"
-        width="4"
-        x="5.134"
-        y="5.036"
-      />
-      <rect
-        height="2"
-        opacity=".2"
-        rx="1"
-        transform="rotate(-150 14.428 12.866)"
-        width="4"
-        x="14.428"
-        y="12.866"
-      />
-      <rect
-        height="2"
-        opacity=".5"
-        rx="1"
-        transform="rotate(-150 4.036 6.866)"
-        width="4"
-        x="4.036"
-        y="6.866"
-      />
-      <rect
-        height="2"
-        opacity=".85"
-        rx="1"
-        transform="rotate(150 15.428 4.866)"
-        width="4"
-        x="15.428"
-        y="4.866"
-      />
-      <rect
-        height="2"
-        opacity=".4"
-        rx="1"
-        transform="rotate(150 5.036 10.866)"
-        width="4"
-        x="5.036"
-        y="10.866"
-      />
-      <rect
-        height="2"
-        opacity=".75"
-        rx="1"
-        transform="rotate(120 12.866 1.572)"
-        width="4"
-        x="12.866"
-        y="1.572"
-      />
-      <rect
-        height="2"
-        opacity=".35"
-        rx="1"
-        transform="rotate(120 6.866 11.964)"
-        width="4"
-        x="6.866"
-        y="11.964"
-      />
-    </svg>
+      <svg
+        class="bpk-icon--rtl-support"
+        height="18"
+        style="width: 1.125rem; height: 1.125rem;"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-loading-button"
+    disabled=""
+    type="button"
+  >
+    <span
+      class="bpk-loading-button__icon"
+    >
+      <svg
+        class="bpk-spinner bpk-spinner--dark bpk-spinner--align-to-button"
+        height="16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          height="2"
+          opacity=".45"
+          rx="1"
+          width="4"
+          y="7"
+        />
+        <rect
+          height="2"
+          rx="1"
+          width="4"
+          x="12"
+          y="7"
+        />
+        <rect
+          height="2"
+          opacity=".3"
+          rx="1"
+          transform="rotate(-90 7 16)"
+          width="4"
+          x="7"
+          y="16"
+        />
+        <rect
+          height="2"
+          opacity=".65"
+          rx="1"
+          transform="rotate(-90 7 4)"
+          width="4"
+          x="7"
+          y="4"
+        />
+        <rect
+          height="2"
+          opacity=".25"
+          rx="1"
+          transform="rotate(-120 11.134 15.428)"
+          width="4"
+          x="11.134"
+          y="15.428"
+        />
+        <rect
+          height="2"
+          opacity=".55"
+          rx="1"
+          transform="rotate(-120 5.134 5.036)"
+          width="4"
+          x="5.134"
+          y="5.036"
+        />
+        <rect
+          height="2"
+          opacity=".2"
+          rx="1"
+          transform="rotate(-150 14.428 12.866)"
+          width="4"
+          x="14.428"
+          y="12.866"
+        />
+        <rect
+          height="2"
+          opacity=".5"
+          rx="1"
+          transform="rotate(-150 4.036 6.866)"
+          width="4"
+          x="4.036"
+          y="6.866"
+        />
+        <rect
+          height="2"
+          opacity=".85"
+          rx="1"
+          transform="rotate(150 15.428 4.866)"
+          width="4"
+          x="15.428"
+          y="4.866"
+        />
+        <rect
+          height="2"
+          opacity=".4"
+          rx="1"
+          transform="rotate(150 5.036 10.866)"
+          width="4"
+          x="5.036"
+          y="10.866"
+        />
+        <rect
+          height="2"
+          opacity=".75"
+          rx="1"
+          transform="rotate(120 12.866 1.572)"
+          width="4"
+          x="12.866"
+          y="1.572"
+        />
+        <rect
+          height="2"
+          opacity=".35"
+          rx="1"
+          transform="rotate(120 6.866 11.964)"
+          width="4"
+          x="6.866"
+          y="11.964"
+        />
+      </svg>
+    </span>
+    My button 
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="18"
+        style="width: 1.125rem; height: 1.125rem;"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkLoadingButton should render correctly with a "primaryOnDark" attribute 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary-on-dark"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="18"
+        style="width: 1.125rem; height: 1.125rem;"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkLoadingButton should render correctly with a "primaryOnLight" attribute 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary-on-light"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="18"
+        style="width: 1.125rem; height: 1.125rem;"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        />
+      </svg>
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -752,6 +1001,34 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
 </DocumentFragment>
 `;
 
+exports[`BpkLoadingButton should render correctly with a "secondaryOnDark" attribute 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--secondary-on-dark"
+    type="button"
+  >
+    My button 
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+    >
+      <svg
+        class="bpk-icon--rtl-support"
+        height="18"
+        style="width: 1.125rem; height: 1.125rem;"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`BpkLoadingButton should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
@@ -760,7 +1037,7 @@ exports[`BpkLoadingButton should respect the class names entered as a string 1`]
   >
     My button 
     <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"

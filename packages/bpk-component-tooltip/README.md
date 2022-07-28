@@ -39,7 +39,7 @@ const App = () => (
 | padded                | bool                                           | false    | true                |
 | portalStyle           | object                                         | false    | null                |
 | portalClassName       | string                                         | false    | null                |
-| popperModifiers       | object                                         | false    | null                |
+| popperModifiers       | arrayOf(object)                                | false    | null                |
 | renderTarget          | func                                           | false    | null                |
 | type                  | oneOf(`TOOLTIP_TYPES.light`, `TOOLTIP_TYPES.dark`) | false    | `TOOLTIP_TYPES.light` |
 
@@ -53,4 +53,4 @@ The label will be used on the `target` element, so any existing `aria-label` att
 
 #### `popperModifiers`
 
-Please refer to the [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the tooltip to overflow the viewport etc.
+Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the tooltip to overflow the viewport etc.

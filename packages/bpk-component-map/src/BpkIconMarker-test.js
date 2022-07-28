@@ -19,10 +19,19 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 
 import BpkIconMarker from './BpkIconMarker';
+
+jest.mock('@react-google-maps/api', () => ({
+  OverlayView: (props) => (
+    <div>
+      <div className="mock-overlay-view" />
+      {/* eslint-disable-next-line react/prop-types */}
+      {props.children}
+    </div>
+  ),
+}));
 
 describe('BpkIconMarker', () => {
   const position = {
@@ -32,50 +41,52 @@ describe('BpkIconMarker', () => {
   const icon = <span>Icon</span>;
 
   it('should render properly', () => {
-    const tree = shallow(<BpkIconMarker position={position} icon={icon} />);
-    expect(toJson(tree)).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkIconMarker position={position} icon={icon} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "selected" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkIconMarker position={position} icon={icon} selected />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "disabled" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkIconMarker position={position} icon={icon} disabled />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with both a "selected" and "disabled" attribute (disabled takes precedence)', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkIconMarker position={position} icon={icon} selected disabled />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkIconMarker
         position={position}
         icon={icon}
         className="custom-class-1 custom-class-2"
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "buttonProps" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkIconMarker
         position={position}
         icon={icon}
         buttonProps={{ testId: 'arbitrary value' }}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -261,18 +261,20 @@ class BpkDatepicker extends Component {
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {(isMobile) =>
           isMobile ? (
-            <BpkModal
-              id={`${id}-modal`}
-              target={input}
-              renderTarget={renderTarget}
-              onClose={this.props.onClose || this.onClose}
-              isOpen={this.state.isOpen}
-              title={title}
-              closeLabel={closeButtonText}
-              getApplicationElement={getApplicationElement}
-            >
-              <Calendar {...calendarProps} fixedWidth={false} />
-            </BpkModal>
+            <>
+              {input}
+              <BpkModal
+                id={`${id}-modal`}
+                renderTarget={renderTarget}
+                onClose={this.props.onClose || this.onClose}
+                isOpen={this.state.isOpen}
+                title={title}
+                closeLabel={closeButtonText}
+                getApplicationElement={getApplicationElement}
+              >
+                <Calendar {...calendarProps} fixedWidth={false} />
+              </BpkModal>
+            </>
           ) : (
             <BpkPopover
               id={`${id}-popover`}

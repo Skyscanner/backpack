@@ -27,5 +27,11 @@
 
   & & {
     @include bpk-list--nested;
+
+    /* stylelint-disable selector-max-compound-selectors */
+
+    > li {
+      margin-bottom: 0;
+    }
   }
 }

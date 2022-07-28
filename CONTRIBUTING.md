@@ -27,14 +27,14 @@ Conventions and squad decisions are kept in the [decisions folder](/decisions). 
 
 Backpack is developed using Node, using the following versions:
 
-* `LTS/Erbium` (Node ^12.13.0)
-* `^6.12.0` (npm)
+* `LTS/Fermium` (Node ^14.19.1)
+* `^6.14.16` (npm)
 
 This is enforced using a pre-install hook that calls out to [ensure-node-env](https://github.com/Skyscanner/ensure-node-env).
 
 If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com/isaacs/nave) to manage your Node environment, Backpack has built-in support for these. Just run `nvm use` or `nave auto` to install the correct Node version.
 
-To install npm, use `npm install --global npm@^6.12.0`.
+To install npm, use `npm install --global npm@^6.14.16`.
 
 ### Android, iOS and React Native
 
@@ -125,7 +125,7 @@ Use `npm run create-component` to create a new skeleton React component. Once th
 
 We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
 
-To maintain React 16.4 compatibility, please do not use newer features of React such as Hooks.
+Our current supported React version is 16.8.3, please be mindful when using React features that may not yet be supported.
 
 When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
 ### Documentation
@@ -149,7 +149,7 @@ For documentation changes, please see our [Backpack docs repo](http://github.com
 
 For anything non-trivial, we strongly recommend speaking to somebody from Backpack squad before starting work on a PR. This lets us pass on any advice or knowledge we already have about the work you're proposing. It might even be something we're already working on. After this, follow the steps below.
 
-1. [Fork the repository](https://github.com/Skyscanner/backpack/fork).
+1. If you are not a Skyscanner employee, [fork the repository](https://github.com/Skyscanner/backpack/fork). If you are a Skyscanner employee, please follow the "Engineering Contribution" guide in the Backpack space in Confluence to get push rights to this repository.
 2. Create a new branch.
 3. Make your changes.
 4. Commit and push your new branch.

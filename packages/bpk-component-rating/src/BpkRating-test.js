@@ -20,16 +20,54 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BpkRating, { RATING_TYPES, RATING_SCALES } from '../index';
+import BpkRating, { RATING_SIZES, RATING_SCALES } from '../index';
 
 describe('BpkRating', () => {
   it('should render correctly', () => {
+    const { asFragment } = render(
+      <BpkRating
+        ariaLabel="4.6 Excellent 672 reviews"
+        value={4.6}
+        title="Excellent"
+        subtitle="672 reviews"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render large size correctly', () => {
+    const { asFragment } = render(
+      <BpkRating
+        ariaLabel="4.6 Excellent 2,420 reviews"
+        value={4.6}
+        title="Excellent"
+        subtitle="2,420 reviews"
+        size={RATING_SIZES.large}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render showScale rating correctly', () => {
     const { asFragment } = render(
       <BpkRating
         ariaLabel="6.7 Average might recommend"
         title="Average"
         subtitle="Might recommend"
         value={6.7}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render showScale with false rating correctly', () => {
+    const { asFragment } = render(
+      <BpkRating
+        ariaLabel="4.9 Awesome It is a fantanstic place"
+        title="Awesome"
+        subtitle="It is a fantanstic place"
+        value={4.9}
+        showScale={false}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -46,27 +84,14 @@ describe('BpkRating', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render vertical rating correctly', () => {
+  it('should render zero to ten scale rating correctly', () => {
     const { asFragment } = render(
       <BpkRating
-        ariaLabel="6.7 Average might recommend"
-        title="Average"
-        subtitle="Might recommend"
-        value={6.7}
-        vertical
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should support custom class names', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="6.7 Average might recommend"
-        title="Average"
-        subtitle="Might recommend"
-        value={6.7}
-        className="custom-classname"
+        ariaLabel="8.2 Excellent 2,420 reviews"
+        value={8.2}
+        title="Excellent"
+        subtitle="2,420 reviews"
+        ratingScale={RATING_SCALES.zeroToTen}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -84,26 +109,27 @@ describe('BpkRating', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render a medium score rating component (zero to ten scale)', () => {
+  it('should render a medium score rating component (zero to five scale)', () => {
     const { asFragment } = render(
       <BpkRating
-        ariaLabel="7 Average it's ok at best"
+        ariaLabel="3.7 Average it's ok at best"
         title="Average"
         subtitle="It's ok at best"
-        value={7}
+        value={3.7}
+        ratingScale={RATING_SCALES.zeroToFive}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render a medium score rating component (zero to five scale)', () => {
+  it('should render a medium score rating component (zero to ten scale)', () => {
     const { asFragment } = render(
       <BpkRating
-        ariaLabel="3 Average it's ok at best"
+        ariaLabel="6.8 Average it's ok at best"
         title="Average"
         subtitle="It's ok at best"
-        value={3}
-        ratingScale={RATING_SCALES.zeroToFive}
+        value={6.8}
+        ratingScale={RATING_SCALES.zeroToTen}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -116,6 +142,7 @@ describe('BpkRating', () => {
         title="Amazing"
         subtitle="Best thing since sliced bread"
         value={9}
+        ratingScale={RATING_SCALES.zeroToTen}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -137,10 +164,10 @@ describe('BpkRating', () => {
   it('should render a high score rating component', () => {
     const { asFragment } = render(
       <BpkRating
-        ariaLabel="9 Amazing best thing since sliced bread"
+        ariaLabel="4.7 Amazing best thing since sliced bread"
         title="Amazing"
         subtitle="Best thing since sliced bread"
-        value={9}
+        value={4.7}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -180,57 +207,19 @@ describe('BpkRating', () => {
         subtitle="Brilliant"
         value={15}
         className="custom-classname"
+        ratingScale={RATING_SCALES.zeroToTen}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render a small rating component', () => {
+  it('should correctly when value is string type', () => {
     const { asFragment } = render(
       <BpkRating
-        ariaLabel="9 Excellent would recommend"
-        title="Excellent"
-        subtitle="This place was amazing"
-        value={9}
-        size="sm"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render a large rating component', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="9 Excellent would recommend"
-        title="Excellent"
-        subtitle="This place was amazing"
-        value={9}
-        size="lg"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly pill rating', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="6.7 Average might recommend"
-        title="Average"
-        subtitle="Might recommend"
-        type={RATING_TYPES.pill}
-        value={6.7}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly title only pill rating', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="6.7 Average might recommend"
-        title="Average"
-        type={RATING_TYPES.pill}
-        value={6.7}
+        ariaLabel="4,6 Wonderful Wise choice"
+        title="Wonderful"
+        subtitle="Wise choice"
+        value="4,6"
       />,
     );
     expect(asFragment()).toMatchSnapshot();

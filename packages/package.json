@@ -1,6 +1,6 @@
 {
   "name": "@skyscanner/backpack-web",
-  "version": "0.0.1",
+  "version": "6.1.0",
   "description": "Backpack Design System web library",
   "repository": {
     "type": "git",
@@ -22,14 +22,16 @@
     "access": "public"
   },
   "dependencies": {
-    "@skyscanner/bpk-foundations-web": "^5.0.0",
-    "@skyscanner/popper.js": "^1.12.9-beta.1",
+    "@popperjs/core": "^2.11.5",
+    "@react-google-maps/api": "^2.12.0",
+    "@skyscanner/bpk-foundations-web": "^8.0.0",
+    "@skyscanner/bpk-svgs": "^14.1.9",
     "a11y-focus-scope": "^1.1.3",
     "a11y-focus-store": "^1.0.0",
-    "bpk-mixins": "^26.1.0",
-    "date-fns": "^2.21.1",
+    "bpk-mixins": "^31.1.1",
     "d3-path": "^2.0.0",
     "d3-scale": "^4.0.2",
+    "date-fns": "^2.21.1",
     "intersection-observer": "^0.7.0",
     "lodash": "^4.17.20",
     "lodash.clamp": "^4.0.3",
@@ -37,14 +39,12 @@
     "object-assign": "^4.1.1",
     "prop-types": "^15.7.2",
     "react-autosuggest": "^9.4.3",
-    "react-google-maps": "^9.4.5",
     "react-responsive": "^6.1.2",
     "react-slider": "^1.3.1",
     "react-transition-group": "^2.5.3",
-    "react-virtualized": "^9.22.3",
-    "recompose": "^0.30.0"
+    "react-virtualized": "^9.22.3"
   },
   "peerDependencies": {
-    "react": "^16.3.0 || ^17.0.0"
+    "react": "^16.8.3 || ^17.0.0"
   }
 }

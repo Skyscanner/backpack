@@ -106,7 +106,9 @@ function getSelectionType(
 
   if (
     selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
-    selectionConfiguration.date === formatDateFull(date)
+    selectionConfiguration.date &&
+    (selectionConfiguration.date === formatDateFull(date) ||
+      formatDateFull(selectionConfiguration.date) === formatDateFull(date))
   ) {
     return SELECTION_TYPES.single;
   }
@@ -317,7 +319,7 @@ class Week extends Component {
     }
 
     return (
-      <tr className={getClassName('bpk-calendar-grid__week')}>
+      <div className={getClassName('bpk-calendar-grid__week')}>
         {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate
@@ -360,7 +362,7 @@ class Week extends Component {
             </DateContainer>
           );
         })}
-      </tr>
+      </div>
     );
   }
 }
@@ -431,9 +433,9 @@ const DateContainer = (props) => {
   );
 
   return (
-    <td aria-hidden={isEmptyCell || isBlocked} className={classNames}>
+    <div aria-hidden={isEmptyCell || isBlocked} className={classNames}>
       {children}
-    </td>
+    </div>
   );
 };
 

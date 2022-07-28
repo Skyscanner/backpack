@@ -1,3 +1,519 @@
+# 2022-07-20
+
+**Changed:**
+
+- `bpk-component-floating-notification`: `1.1.0 => 1.2.0`
+  - Added new prop `onExit` which executes a function after the component has finished the exit animation.
+  - Fixed accessibility issue where screen reader would only read out notification once after triggering. Subsequent triggers wouldn't engage screen reader.
+  - Fixed the `<Icon>` and `<BpkAriaLive>` components being selectable by screen readers.
+
+**Fixed:**
+`bpk-component-horizontal-nav`: `5.1.13 => 5.1.14`
+  - Removed `findDOMNode` usage from the component which was causing an error when mounting the component and migrated to using `ref` to manage the component rendering when scrolling to the selected item.
+
+# 2022-07-12
+
+**Breaking:**
+
+`@skyscanner/backpack-web`: `5.0.0 => 6.0.0` <br />
+`bpk-react-utils`: `5.0.0 => 6.0.0` </br>
+  - As part of the migration of `Portal` to use the native React Portal implementation:
+    - We removed the usage of `findDOMNode` which has been deprecated in strict mode. Therefore, if you are passing `target` prop to `Portal`, you should ensure `target` is an HTML element with a `ref` attached to it.
+    - `target` will no longer be rendered inside the `Portal`. If you are passing `target` prop to `Portal`, please ensure `target` is rendered in your component.
+
+`bpk-component-popover`: `5.0.3 => 6.0.0` </br>
+`bpk-component-modal`: `4.0.1 => 5.0.0` </br>
+`bpk-component-datepicker`: `15.2.18 => 16.0.0` </br>
+  - Components are now using the new native React `Portal` implementation. Please ensure your components still work as expected with the new `Portal`.
+
+`bpk-component-modal`: `4.0.1 => 5.0.0` </br>
+`bpk-component-dialog`: `5.0.0 => 6.0.0` </br>
+`bpk-component-drawer`: `5.0.0 => 6.0.0` </br>
+  - `target` prop is removed. If you are passing the `target` prop to either of these components, you should instead:
+    - ensure the target component is rendered in your component as it will no longer be rendered in the `Portal`.
+
+
+**Changed:**
+- bpk-component-navigation-stack:
+  - This component is deprecated, please avoid using this component and ensure you migrate away from this component.
+
+- bpk-component-split-input: `1.0.0` => `1.1.0`
+  - Replace deprecated spacing tokens with new tokens. There are no visual changes as the new tokens have the exact values.
+
+- bpk-component-floating-notification: `1.0.0` => `1.1.0`
+  - Added new prop `onExit` which executes a function after the component has finished the exit animation.
+
+
+# 2022-07-01
+
+`@skyscanner/backpack-web`: `4.1.0 => 5.0.0`
+
+**Breaking:**
+- bpk-component-ticket: 4.1.12 => 5.0.0
+  - Updated `box-shadow` and `border-radius` to match the new design
+  - The `withNotches` prop is deprecated because the notched design is no longer supported
+
+**Changed:**
+- bpk-component-price: 1.0.1 => 1.1.0
+  - The prop `size` only controls font size now
+  - Adding a new prop `align` to control the alignment and the wrapping behaviour of `subtitle`
+
+
+# 2022-06-30
+
+**Added:**
+
+`@skyscanner/backpack-web`: `4.0.1 => 4.1.0` <br />
+`bpk-component-split-input`: `1.0.0`
+ - Added new component to be used as an input component for otp and pin numbers
+
+# 2022-06-30
+
+**Fixed:**
+
+`@skyscanner/backpack-web`: `4.0.0 => 4.0.1` <br />
+`bpk-component-datepicker`: `15.2.17 => 15.2.18` </br>
+`bpk-component-modal`: `4.0.0 => 4.0.1` </br>
+- Revert portal in modal component to old portal implementation `PortalV1` as due to the differences in implementation between the two portals it causes the input fields in datepicker to disappear.
+
+# 2022-06-22
+
+**Breaking:**
+
+`@skyscanner/backpack-web` - `4.0.0`<br />
+`bpk-react-utils` - `4.1.2 => 5.0.0`
+  - Upgraded `Portal` to use the native React Portal implementation.
+  - Removed usage of `unstable_renderSubtreeIntoContainer` as this has been deprecated in the latest version.
+  - Removed usage of `findDOMNode` which has been deprecated in strict mode, and should only be used as an escape hatch in legacy edge cases. (possibly with tooltips and popovers)
+  - Removed `unmountComponentAtNode` as we now unmount by removing the portal from the `renderTarget`.
+  - Introduced `PortalV1` to support legacy usage during the transition and will throw a warning if used to move to the latest version.
+
+`bpk-component-drawer` - `4.1.11 => 5.0.0`<br /> 
+`bpk-component-dialog` - `4.1.13 => 5.0.0`<br />
+`bpk-component-modal` - `3.1.12 => 4.0.0`
+  - Migrated to the new native portal implementation. Which should now mean that context is available from the parent component to the child pop-up components.
+
+**Updated:**
+
+`bpk-component-datepicker` - `15.2.16 => 15.2.17`<br /> 
+`bpk-component-tooltip` - `7.0.0 => 7.0.1`<br /> 
+`bpk-component-popover` - `5.0.1 => 5.0.2`
+  - Migrated to `PortalV1` - to continue using the old portal implementation, as we are breaking the task down, but in a future implementation will be migrated to the new portal system.
+
+**Fixed:**
+
+`bpk-component-graphic-promotion` - `3.1.0` => `3.1.1`
+- Fixed accessibility errors.
+
+# 2022-06-17
+
+**Added:**
+  - `bpk-component-floating-notification` - `1.0.0`
+
+**Fixed:**
+  - bpk-component-image: 5.1.11 => 5.1.12
+      - Fix `@skyscanner/bpk-foundations-web` dependency
+
+
+
+# 2022-06-16
+
+`@skyscanner/backpack-web`: 3.0.1 => 3.1.0
+
+**Fixed:**
+
+- bpk-component-graphic-promotion: 3.0.4 => 3.1.0
+  - Updated tests and storybook examples for component
+  - Ensured text is centered correctly despite margins
+
+**Changed:**
+- bpk-component-graphic-promotion: 3.0.4 => 3.1.0
+  - Made entire card clickable on all platforms
+
+# 2022-06-15
+
+**Added:**
+
+ bpk-component-price: 0.0.1 => 1.0.0
+  - Price is a new component to ensure consistent display of pricing.
+
+**Fixed:**
+
+- `@skyscanner/backpack-web`: 3.0.1 => 3.1.0
+  - Added missing dependencies `@skyscanner/bpk-svgs`, `@react-google-maps/api`, `@popperjs/core`
+
+- bpk-component-theme-toggle: 3.1.10 => 3.1.11
+  - Removed `Konami` library and logic, so not to require it for the single package. It was added as fun for the documentation site but no longer relevant now. 
+
+
+# 2022-05-10
+
+`@skyscanner/backpack-web`: 2.0.1 => 3.0.1
+  - Fixed an issue with imports being incorrectly set via release.
+
+# 2022-05-10
+
+`@skyscanner/backpack-web`: 2.0.1 => 3.0.0
+
+**Breaking:**
+
+ `bpk-component-popover`: 4.1.12 => 5.0.0 </br>
+ `bpk-component-tooltip`: 6.1.10 => 7.0.0 </br>
+  - Migrated from custom `popper.js` version 1 to upstream version 2.
+  - `popperModifiers` now accepts an array of objects instead of an object of options.
+    - Modifiers now follow a new format and existing versions will no longer function as expected. See https://popper.js.org/docs/v2/modifiers/ for more information.
+
+**Fixed:**
+
+`bpk-component-barchart`: 4.2.10 => 4.2.11 </br>
+`bpk-component-rating`: 5.0.0 => 5.0.1 </br>
+`bpk-component-star-rating`: 3.1.10 => 3.1.11 </br>
+  - Added accessibility roles to components.
+
+
+`bpk-component-calendar`: 11.1.14 => 11.1.15 </br>
+`bpk-component-scrollable-calendar`: 6.1.14 => 6.1.15 </br>
+  - Fixed bug in calendar components where the wrong `selectionType` property (and hence style) is set in a date component when `selectionConfiguration.type` is `single`.
+
+# 2022-06-01
+
+**Fixed:**
+- `@skyscanner/backpack-web`: 2.0.0 => 2.0.1
+  - Fixed an issue with imports being incorrectly set.
+
+# 2022-05-31
+
+**Breaking:**
+
+- `@skyscanner/backpack-web`: 1.0.1 => 2.0.0
+- bpk-component-rating: 4.0.2 => 5.0.0
+  - Deprecate `size` value `lg` and replace with `large` to show vertical style.
+  - Support `value` when it's localized `string` type.
+
+
+# 2022-05-26
+
+- `@skyscanner/backpack-web`: 1.0.0 => 1.0.1
+  - Fix link buttons text font weight. Link buttons text will now be bold.
+  
+# 2022-05-26
+
+**Fixed:**
+
+- bpk-component-button: 6.2.3 => 6.2.4
+   - Fix link buttons text font weight. Link buttons text will now be bold.
+
+
+# 2022-05-25
+
+Major Release - `@skyscanner/backpack-web v1.0.0`
+
+New release and option to use single package version of Backpack
+
+To install please use `npm install --save @skyscanner/backpack-web`
+
+**Fixed:**
+
+ - bpk-component-rating: 4.0.0 => 4.0.1
+   - Fixed RTL issue where the value had additional padding.
+
+# 2022-05-20
+
+**Breaking:**
+
+- bpk-component-rating: 3.1.9 => 4.0.0
+   - Rating has been redesigned to have a fresh look.
+   - `title` could be passed as string, image or component with high customize requirement.
+   - `size` changes to distinguish style instead of font size.
+       - `sm` deprecated.
+       - `base` show default horizon style.
+       - `lg` show vertical style.
+   - New `showScale` prop to show maximum scale of rating value.
+   - Remove `type`, which distinguish `pill` and `default` type.
+   - Remove `vertical` as it's repetitive and it now is replaced by large `size`.
+   - Update `ratingScale` default value from `zeroToTen` to `zeroToFive`.
+
+# 2022-05-16
+
+**Breaking:**
+
+- bpk-component-breakpoint:
+    - Updated the following `BREAKPOINTS`. If you are using any of the following breakpoints, please ensure your component still looks good with the new breakpoints.
+        - `MOBILE`
+        - `ABOVE_MOBILE`
+        - `TABLET`
+        - `TABLET_ONLY`
+        - `ABOVE_TABLET`
+        - `DESKTOP`
+
+**Added:**
+- bpk-component-breakpoint:
+    - Added the following new `BREAKPOINTS`:
+        - `SMALL_MOBILE`
+        - `SMALL_TABLET`
+        - `SMALL_TABLET_ONLY`
+
+**Fixed:**
+
+- bpk-component-mobile-scroll-container:
+    - Fixed indicator style when scrollLeft of scrollerEl is a decimal value.
+
+# 2022-05-12
+
+**Breaking:**
+
+- bpk-component-list: 3.1.6 => 4.0.0
+    - Changed list margins and paddings. This will make the component larger in height, so please check it does not alter the layout.
+        - Changed vertical margins in list component
+        - Added bottom margins to list items 
+        - Added top and bottom padding to nested lists
+
+
+# 2022-05-06
+
+**Fixed:**
+
+- bpk-component-map: 6.0.0 => 6.0.1
+  - Fixed `preventGoogleFontsLoading` defaulting to `true` make Google Maps cannot be interactive
+
+
+# 2022-05-05
+
+**Breaking:**
+
+- bpk-component-map: 5.2.7 => 6.0.0
+  - Migrated map dependency to `@react-google-maps/api`. This requires a minimum React version of 16.8.0 as it provides more new features available through hooks.
+  - `withGoogleMapsScript` provides better loading capabilities, no longer have to worry about the problem of multiple downloads of google map script when loading multiple map components.
+    - Now `withGoogleMapsScript` accept `googleMapsApiKey` directly and no longer accept `googleMapUrl` to load map.
+    - Added new (OPTIONAL) `preventGoogleFontsLoading` and `libraries` properties in `withGoogleMapsScript` to allow making changes to Google Maps loading configuration.
+  - `BpkMap` properties changed:
+    - Now `BpkMap` accept `className` and no longer accept `containerElement` or `mapElement` property to custom google map container style.
+    - Added `mapOptionStyles` to better support google map style customization.
+    - Changed default option `clickableIcons` to false, which means the information box won't pop up when icons on map are clicked.
+
+
+# 2022-05-03
+
+**Fixed:**
+
+- bpk-component-pagination: 4.0.4 => 4.0.5
+    - Fixed pagination button typography style. Pagination font size will appear slightly smaller.
+ - bpk-component-navigation-bar: 3.1.7 => 3.1.8
+    - Fixed navigation bar buttons and title typography.
+
+# 2022-04-29
+
+**Breaking:**
+  - bpk-component-nudger: 6.0.4 => 7.0.0
+    - Removed `outline` nudger variant to be replaced with the `secondaryOnDark` variant which has been added to the nudger.
+
+# 2022-04-27
+
+**Breaking:**
+  - bpk-component-content-container: 4.1.5 => 5.0.0
+  - bpk-component-graphic-promotion: 2.0.2 => 3.0.0
+  - bpk-component-text: 6.2.0 => 7.0.0
+    - Updated typography mixins to latest which removes type styles that applied to smaller sizes when on mobile breakpoints.
+
+# 2022-04-15
+
+**Added:**
+
+`bpk-component-button`: (6.1.0 => 6.2.0) </br>
+`bpk-component-loading-button`: (6.0.0 => 6.1.0) </br>
+- Added `BpkButtonLinkOnDark` and `BpkButtonSecondaryOnDark` button types.
+You can use these buttons by setting the `linkOnDark` or `secondaryOnDark` property to true in the `BpkButton` component, or can be imported directly, e.g. `import { BpkButtonLinkOnDark, BpkButtonSecondaryOnDark } from 'bpk-component-button';`
+- Added `secondaryOnDarkThemeAttributes` theme attributes
+
+`bpk-component-text`: (6.1.5 => 6.2.0) </br>
+- Added support for new typography style `label-3`.
+
+**Fixed:**
+
+`bpk-component-button`: (6.1.0 => 6.2.0) </br>
+`bpk-component-loading-button`: (6.0.0 => 6.1.0) </br>
+- Remove underline from `BpkButtonLink` in hover and active state
+
+`bpk-component-loading-button`: (6.0.0 => 6.1.0) </br>
+- Fixed icon-only loading buttons to show spinner or custom loading icon when in loading state.
+
+
+# 2022-04-15
+
+**Fixed**
+- bpk-component-graphic-promotion: 2.0.0 => 2.0.1 
+  - Uses new primaryOnDark button type to fix previous hover state which was showing primary (green) hover on a white button. Now is a white button with appropriate hover state.
+
+# 2022-04-14
+
+**Breaking**
+- bpk-component-graphic-promotion: 1.0.3 => 2.0.0
+  - Now accepts a style prop and no longer accepts an image prop, leaving it up to the consumer to populate the background-image through styling
+
+
+# 2022-04-11
+
+**Breaking:**
+
+`bpk-component-loading-button`: (5.0.1 => 6.0.0) </br>
+- Changed loading button to display only loading spinner when loading. Text and icon will be hidden. Button width is maintained when switching to loading state.
+
+**Added:**
+
+`bpk-component-button`: (6.0.1 => 6.1.0) </br>
+`bpk-component-loading-button`: (5.0.1 => 6.0.0) </br>
+- Added `BpkButtonPrimaryOnDark` and `BpkButtonPrimaryOnLight` button types.
+You can use these buttons by setting the `primaryOnDark` or `primaryOnLight` property to true in the `BpkButton` component, or can be imported directly, e.g. `import { BpkButtonPrimaryOnDark, BpkButtonPrimaryOnLight } from 'bpk-component-button';`
+- Added `primaryOnDarkThemeAttributes`, `primaryOnLightThemeAttributes` theme attributes
+
+**Changed:**
+
+`bpk-component-button`: (6.0.1 => 6.1.0) </br>
+`bpk-component-loading-button`: (5.0.1 => 6.0.0) </br>
+- Deprecated `BpkButtonOutline` button. Use `BpkButtonPrimaryOnDark` or `BpkButtonPrimaryOnLight` instead.
+
+
+
+# 2022-04-07
+
+**Fixed:**
+ - bpk-component-calendar: 11.1.5 => 11.1.6
+ - bpk-component-datepicker: 15.2.5 => 15.2.6
+    - Fixed an issue when using Assistive Technologies, a user could not select a date.
+
+# 2022-04-04
+
+The following package version bump, will affect all components as `bpk-react-utils` is a dependency of all components.
+
+**Fixed:**
+
+- bpk-react-utils: 4.1.0 => 4.1.1
+  - Migrated from deprecated `recompose` library and function `wrapDisplayName`to support React 17+. Created localised version to support same functionality.
+
+# 2022-03-31
+
+**Breaking**
+
+`bpk-component-loading-button`: (4.1.2 => 5.0.0)  </br>
+`bpk-component-button`: (5.1.1 => 6.0.0) </br>
+- Button size changes:
+    - Introduced vertical padding to Link buttons which will cause all Link buttons to appear larger in height.
+    - Removed `padded` property from Link buttons. If using this property, it will no longer have any effect on the button's padding and the default Link button padding which was introduced with this PR will be applied instead. This means different vertical padding and no horizontal padding will be applied. Note: if using this property in Link buttons, you should remove it.
+    - Introduced `2.25rem` minimum height for default buttons and `0.375rem` vertical padding. This will result in buttons appearing slightly smaller in height.
+    - Introduced `3rem` minimum height for large buttons and `0.75rem` vertical padding. This will result in large buttons appearing slightly larger in height. 
+    - Horizontal padding for large buttons was changed which causes the width of the large buttons to decrease.
+- Button shape changes:
+    - Changed radius from `.375rem` to `.5rem` for both default and large buttons. Buttons will look slightly more rounded.
+    - Changed radius of icon-only buttons from `50%` to `.5rem` which will make icon-only buttons more square-shaped.
+- Button colour changes:
+    - Primary buttons:
+        - background colour in hover state is slightly changed
+    - Secondary buttons:
+        - background colour in default, hover, and pressed mode is changed
+        - text colour in default and hover state is changed
+    - Destructive buttons:
+        - background colour and text colour changed in default, hover, pressed mode
+- Other appearance changes:
+    - Changed large buttons text style to `heading-4`
+    - Removed borders and box shadow from all buttons
+
+`bpk-component-pagination`: (3.1.2 => 4.0.0) </br>
+- Pagination default buttons colour changed
+
+`bpk-component-nudger`: (5.1.2 => 6.0.0) </br>
+- Changed nudger buttons from circle to more square-shaped
+
+# 2022-03-25
+
+**Fixed**
+- bpk-component-calendar: 11.1.2 => 11.1.3
+- bpk-component-datepicker: 15.2.2 => 15.2.3
+- bpk-component-scrollable-calendar: 6.1.2 => 6.1.3
+  - Remove prop index from `DateType`.
+
+
+# 2022-03-23
+
+**Added:**
+- `bpk-component-graphic-promotion` - `1.0.0`
+
+
+# 2022-03-22
+
+**Breaking:**
+
+- bpk-component-accordion: 4.1.1 => 5.0.0
+  - Remove `weight` property from `BpkAccordion`.
+
+**Patched:**
+
+- bpk-animate-height: 4.1.0 => 4.1.1
+- bpk-component-aria-live: 2.1.1 => 2.1.2
+- bpk-component-autosuggest: 6.1.1 => 6.1.2
+- bpk-component-badge: 4.1.1 => 4.1.2
+- bpk-component-banner-alert: 6.1.1 => 6.1.2
+- bpk-component-barchart: 4.2.1 => 4.2.2
+- bpk-component-blockquote: 3.1.0 => 3.1.1
+- bpk-component-boilerplate: 1.1.0 => 1.1.1 (private)
+- bpk-component-breadcrumb: 3.1.1 => 3.1.2
+- bpk-component-breakpoint: 3.1.0 => 3.1.1
+- bpk-component-button: 5.1.0 => 5.1.1
+- bpk-component-calendar: 11.1.1 => 11.1.2
+- bpk-component-card: 4.1.1 => 4.1.2
+- bpk-component-checkbox: 4.1.1 => 4.1.2
+- bpk-component-chip: 5.2.1 => 5.2.2
+- bpk-component-close-button: 3.1.1 => 3.1.2
+- bpk-component-code: 3.1.0 => 3.1.1
+- bpk-component-content-container: 4.1.0 => 4.1.1
+- bpk-component-datatable: 4.1.1 => 4.1.2
+- bpk-component-datepicker: 15.2.1 => 15.2.2
+- bpk-component-description-list: 3.1.0 => 3.1.1
+- bpk-component-dialog: 4.1.1 => 4.1.2
+- bpk-component-drawer: 4.1.1 => 4.1.2
+- bpk-component-fieldset: 4.1.1 => 4.1.2
+- bpk-component-flare: 2.1.1 => 2.1.2
+- bpk-component-form-validation: 4.2.1 => 4.2.2
+- bpk-component-grid-toggle: 3.1.0 => 3.1.1
+- bpk-component-grid: 3.1.0 => 3.1.1
+- bpk-component-horizontal-nav: 5.1.1 => 5.1.2
+- bpk-component-icon: 9.2.1 => 9.2.2
+- bpk-component-image: 5.1.1 => 5.1.2
+- bpk-component-infinite-scroll: 4.1.0 => 4.1.1
+- bpk-component-input: 6.1.1 => 6.1.2
+- bpk-component-label: 5.1.0 => 5.1.1
+- bpk-component-link: 3.1.0 => 3.1.1
+- bpk-component-list: 3.1.0 => 3.1.1
+- bpk-component-loading-button: 4.1.1 => 4.1.2
+- bpk-component-map: 5.2.1 => 5.2.2
+- bpk-component-mobile-scroll-container: 3.1.0 => 3.1.1
+- bpk-component-modal: 3.1.1 => 3.1.2
+- bpk-component-navigation-bar: 3.1.1 => 3.1.2
+- bpk-component-navigation-stack: 3.1.1 => 3.1.2
+- bpk-component-nudger: 5.1.1 => 5.1.2
+- bpk-component-overlay: 2.1.1 => 2.1.2
+- bpk-component-pagination: 3.1.1 => 3.1.2
+- bpk-component-panel: 3.1.0 => 3.1.1
+- bpk-component-phone-input: 7.1.1 => 7.1.2
+- bpk-component-popover: 4.1.1 => 4.1.2
+- bpk-component-progress: 3.1.0 => 3.1.1
+- bpk-component-radio: 3.1.0 => 3.1.1
+- bpk-component-rating: 3.1.1 => 3.1.2
+- bpk-component-rtl-toggle: 3.1.0 => 3.1.1
+- bpk-component-scrollable-calendar: 6.1.1 => 6.1.2
+- bpk-component-section-list: 3.2.1 => 3.2.2
+- bpk-component-select: 5.1.0 => 5.1.1
+- bpk-component-skip-link: 2.1.0 => 2.1.1
+- bpk-component-slider: 3.1.0 => 3.1.1
+- bpk-component-spinner: 5.1.0 => 5.1.1
+- bpk-component-star-rating: 3.1.1 => 3.1.2
+- bpk-component-switch: 2.1.0 => 2.1.1
+- bpk-component-table: 3.1.0 => 3.1.1
+- bpk-component-text: 6.1.1 => 6.1.2
+- bpk-component-textarea: 4.2.0 => 4.2.1
+- bpk-component-theme-toggle: 3.1.0 => 3.1.1
+- bpk-component-ticket: 4.1.1 => 4.1.2
+- bpk-component-tooltip: 6.1.1 => 6.1.2
+  - As part of preparing for the release of the single package, we have removed the examples and stories from each of the components to a separate location. Resulting in a patch as these files have been removed from the npm packages.
 # 2022-03-02
 
 **Patch:**

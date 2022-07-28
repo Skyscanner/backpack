@@ -17,10 +17,7 @@
  */
 
 import React from 'react';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
-import BpkInput from 'bpk-component-input';
-import BpkSelect from 'bpk-component-select';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import BpkPhoneInput from './BpkPhoneInput';
 
@@ -51,6 +48,8 @@ const defaultProps = {
 };
 
 describe('BpkPhoneInput', () => {
+  afterEach(() => jest.resetAllMocks());
+
   it('should render correctly', () => {
     const { asFragment } = render(<BpkPhoneInput {...defaultProps} />);
     expect(asFragment()).toMatchSnapshot();
@@ -98,32 +97,43 @@ describe('BpkPhoneInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call "onChange" when phone number changes', () => {
+  it('should call "onChange" when phone number changes', async () => {
     const onChange = jest.fn();
-    const tree = shallow(
-      <BpkPhoneInput {...defaultProps} onChange={onChange} />,
-    );
-    const evt = { target: { value: '99' } };
-    tree.find(BpkInput).simulate('change', evt);
-    expect(onChange).toHaveBeenCalledWith(evt);
+
+    render(<BpkPhoneInput {...defaultProps} onChange={onChange} />);
+
+    const telephoneNumberInput = screen.getByRole('textbox', {
+      name: /Telephone number/i,
+    });
+
+    await fireEvent.change(telephoneNumberInput, { target: { value: '99' } });
+
+    expect(onChange).toHaveBeenCalled();
   });
 
-  it('should call "onDialingCodeChange" when dialing code changes', () => {
+  it('should call "onDialingCodeChange" when dialing code changes', async () => {
     const onDialingCodeChange = jest.fn();
-    const tree = shallow(
+
+    render(
       <BpkPhoneInput
         {...defaultProps}
         onDialingCodeChange={onDialingCodeChange}
       />,
     );
-    const evt = { target: { value: '99' } };
-    tree.find(BpkSelect).simulate('change', evt);
-    expect(onDialingCodeChange).toHaveBeenCalledWith(evt);
+    const dialingCodeInput = screen.getByRole('combobox', {
+      name: /Dialing code/i,
+    });
+
+    await fireEvent.change(dialingCodeInput, { target: { value: '99' } });
+
+    expect(onDialingCodeChange).toHaveBeenCalled();
   });
 
   it('should error if the selected dialing code has no corresponding data', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
+
     expect(() =>
-      shallow(<BpkPhoneInput {...defaultProps} dialingCode="00_non" />),
+      render(<BpkPhoneInput {...defaultProps} dialingCode="00_non" />),
     ).toThrow(
       'BpkPhoneInput: A valid value must be provided for the "dialingCode" prop. The provided value for "dialingCode" (00_non) does not match any definitions in the "dialingCodes" prop',
     );

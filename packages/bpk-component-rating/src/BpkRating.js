@@ -17,28 +17,23 @@
  */
 /* @flow strict */
 
-import React from 'react';
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
 import BpkText, { TEXT_STYLES } from 'bpk-component-text';
 
 import STYLES from './BpkRating.module.scss';
-import { RATING_SIZES, RATING_TYPES, RATING_SCALES } from './common-types';
+import { RATING_SIZES, RATING_SCALES } from './common-types';
 
 const getClassName = cssModules(STYLES);
-
-// The thresholds are what determine whether a rating is low, medium or high.
-// They are expressed as a percentage of the scale. For example, on a 1-5 scale,
-// 5 * 0.8 (4) would be a high rating.
-const MEDIUM_RATING_THRESHOLD = 0.6;
-const HIGH_RATING_THRESHOLD = 0.8;
 
 const getMinValue = () =>
   // Currently the min value is zero no matter what scale is used.
   // If this ever changes, this function should be changed to return
   // different values based on the rating scale.
   0;
+
 const getMaxValue = (ratingScale) => {
   switch (ratingScale) {
     case RATING_SCALES.zeroToFive:
@@ -48,22 +43,15 @@ const getMaxValue = (ratingScale) => {
   }
 };
 
-const getMediumRatingThreshold = (ratingScale) =>
-  getMaxValue(ratingScale) * MEDIUM_RATING_THRESHOLD;
-
-const getHighRatingThreshold = (ratingScale) =>
-  getMaxValue(ratingScale) * HIGH_RATING_THRESHOLD;
-
-export type Props = {
+type Props = {
   ariaLabel: string,
-  ratingScale: $Values<typeof RATING_SCALES>,
-  size: $Values<typeof RATING_SIZES>,
-  title: string,
-  type: $Values<typeof RATING_TYPES>,
-  value: number,
-  vertical: boolean,
   className: ?string,
+  ratingScale: $Values<typeof RATING_SCALES>,
+  showScale: ?boolean,
+  size: $Values<typeof RATING_SIZES>,
   subtitle: ?string,
+  title: string | Node,
+  value: string | number,
 };
 
 const BpkRating = (props: Props) => {
@@ -71,33 +59,36 @@ const BpkRating = (props: Props) => {
     ariaLabel,
     className,
     ratingScale,
+    showScale,
     size,
     subtitle,
     title,
-    type,
     value,
-    vertical,
     ...rest
   } = props;
-  const classNames = [getClassName('bpk-rating', className)];
-  const scoreStyles = [
-    getClassName(
-      'bpk-rating__component',
-      `bpk-rating--${size}-rating`,
-      type === RATING_TYPES.pill && `bpk-rating--${size}-pill`,
-    ),
-  ];
-  const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
-  const textStyles = [getClassName('bpk-rating__text')];
 
-  let titleTextSize = TEXT_STYLES.bodyDefault;
+  const classNames = [getClassName('bpk-rating', className)];
+  const valueStyles = [getClassName('bpk-rating__value')];
+  const scaleStyles = [getClassName('bpk-rating__scale')];
+  const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
+  const titleStyles = [];
+  const subtitleStyles = [getClassName('bpk-rating__subtitle')];
+
   let valueTextSize = TEXT_STYLES.label1;
-  if (size === RATING_SIZES.lg) {
-    titleTextSize = TEXT_STYLES.bodyLongform;
-    valueTextSize = TEXT_STYLES.heading4;
-  } else if (size === RATING_SIZES.sm) {
-    titleTextSize = TEXT_STYLES.footnote;
-    valueTextSize = TEXT_STYLES.label2;
+  let scaleTextSize = TEXT_STYLES.caption;
+  let titleTextSize = TEXT_STYLES.label1;
+  let subtitleTextSize = TEXT_STYLES.caption;
+
+  if (size === RATING_SIZES.large) {
+    classNames.push(getClassName('bpk-rating--large'));
+    textWrapperStyles.push(getClassName('bpk-rating__text-wrapper--large'));
+    titleStyles.push(getClassName('bpk-rating__title--large'));
+    subtitleStyles.push(getClassName('bpk-rating__subtitle--large'));
+
+    valueTextSize = TEXT_STYLES.hero5;
+    scaleTextSize = TEXT_STYLES.bodyDefault;
+    titleTextSize = TEXT_STYLES.heading5;
+    subtitleTextSize = TEXT_STYLES.bodyDefault;
   }
 
   const minValue = getMinValue();
@@ -105,60 +96,52 @@ const BpkRating = (props: Props) => {
 
   let adjustedValue = value;
 
-  if (adjustedValue >= getHighRatingThreshold(ratingScale)) {
-    scoreStyles.push(getClassName('bpk-rating--high-rating'));
-  } else if (adjustedValue >= getMediumRatingThreshold(ratingScale)) {
-    scoreStyles.push(getClassName('bpk-rating--medium-rating'));
-  } else {
-    scoreStyles.push(getClassName('bpk-rating--low-rating'));
-  }
-
-  if (vertical) {
-    classNames.push(getClassName('bpk-rating--vertical'));
-    textWrapperStyles.push(getClassName('bpk-rating__text-wrapper--vertical'));
-    textStyles.push(getClassName('bpk-rating__text--vertical'));
-  } else {
-    textWrapperStyles.push(
-      getClassName('bpk-rating__text-wrapper--horizontal'),
-    );
-    textStyles.push(getClassName('bpk-rating__text--horizontal'));
-  }
-
   if (adjustedValue >= maxValue || adjustedValue <= minValue) {
     adjustedValue = clamp(adjustedValue, minValue, maxValue);
-  } else {
-    adjustedValue = value.toFixed(1);
   }
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={classNames.join(' ')} aria-label={ariaLabel} {...rest}>
+    <div
+      className={classNames.join(' ')}
+      aria-label={ariaLabel}
+      role="figure"
+      {...rest}
+    >
       <BpkText
         textStyle={valueTextSize}
         tagName="span"
-        className={scoreStyles.join(' ')}
+        className={valueStyles.join(' ')}
         aria-hidden="true"
       >
         {adjustedValue}
+
+        {showScale && (
+          <BpkText
+            textStyle={scaleTextSize}
+            className={scaleStyles.join(' ')}
+            tagName="span"
+            aria-hidden="true"
+          >
+            /{maxValue}
+          </BpkText>
+        )}
       </BpkText>
+
       <div className={textWrapperStyles.join(' ')}>
         <BpkText
-          className={textStyles.join(' ')}
           textStyle={titleTextSize}
+          className={titleStyles.join(' ')}
           tagName="span"
           aria-hidden="true"
         >
-          <strong>{title}</strong>{' '}
-          {subtitle && type === RATING_TYPES.pill && <span>{subtitle}</span>}
+          {title}
         </BpkText>
-        {subtitle && type !== RATING_TYPES.pill && (
+
+        {subtitle && (
           <BpkText
-            className={textStyles.join(' ')}
-            textStyle={
-              size === RATING_SIZES.lg
-                ? TEXT_STYLES.footnote
-                : TEXT_STYLES.caption
-            }
+            className={subtitleStyles.join(' ')}
+            textStyle={subtitleTextSize}
             tagName="span"
             aria-hidden="true"
           >
@@ -172,23 +155,21 @@ const BpkRating = (props: Props) => {
 
 BpkRating.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   className: PropTypes.string,
   ratingScale: PropTypes.oneOf(Object.keys(RATING_SCALES)),
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
   subtitle: PropTypes.string,
-  type: PropTypes.oneOf([RATING_TYPES.default, RATING_TYPES.pill]),
-  vertical: PropTypes.bool,
+  showScale: PropTypes.bool,
 };
 
 BpkRating.defaultProps = {
   className: null,
-  ratingScale: RATING_SCALES.zeroToTen,
+  ratingScale: RATING_SCALES.zeroToFive,
   size: RATING_SIZES.base,
   subtitle: null,
-  type: RATING_TYPES.default,
-  vertical: false,
+  showScale: true,
 };
 
 export default BpkRating;

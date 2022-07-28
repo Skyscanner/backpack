@@ -27,13 +27,12 @@ jest.mock('bpk-react-utils', () => {
 
   return {
     ...original,
-    Portal: 'Portal',
+    PortalV1: 'PortalV1',
   };
 });
 
-/* eslint-disable import/first */
+// eslint-disable-next-line import/first
 import BpkTooltipPortal from './BpkTooltipPortal';
-/* eslint-enable */
 
 describe('BpkTooltipPortal', () => {
   it('should render correctly', () => {

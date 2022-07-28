@@ -108,6 +108,7 @@ exports[`BpkRadio should render correctly with checked attribute 1`] = `
     <input
       aria-invalid="false"
       aria-label="Direct"
+      checked=""
       class="bpk-radio__input"
       name="radio"
       type="radio"

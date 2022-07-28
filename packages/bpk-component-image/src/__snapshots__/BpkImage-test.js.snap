@@ -57,13 +57,20 @@ exports[`BpkImage should apply borderRadius 1`] = `
 `;
 
 exports[`BpkImage should call onLoadCallback 1`] = `
-<img
-  alt="image description"
-  className="bpk-image__img"
-  onLoad={[Function]}
-  src="./path/to/image.jpg"
-  suppressHydrationWarning={false}
-/>
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image bpk-image--no-background"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img"
+        src="./path/to/image.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkImage should have !inView behavior 1`] = `
@@ -210,13 +217,20 @@ exports[`BpkImage should have loading behavior 1`] = `
 `;
 
 exports[`BpkImage should load even without onLoadCallback 1`] = `
-<img
-  alt="image description"
-  className="bpk-image__img"
-  onLoad={[Function]}
-  src="./path/to/image.jpg"
-  suppressHydrationWarning={false}
-/>
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image bpk-image--no-background"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img"
+        src="./path/to/image.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkImage should render correctly 1`] = `
@@ -263,7 +277,7 @@ exports[`BpkImage should support srcSet 1`] = `
       <img
         alt="image description"
         class="bpk-image__img"
-        sizes="(min-width: 71.25rem) 48rem, (min-width: 50.25rem) calc(100vw - 18rem), calc(100vw - 4.5rem)"
+        sizes="(min-width: 80rem) 48rem, (min-width: 64rem) calc(100vw - 18rem), calc(100vw - 4.5rem)"
         src="./path/to/image_1640.jpg"
         srcset="./path/to/image_320px.jpg 320w, ./path/to/image_640px.jpg 640w, ./path/to/image_1640px.jpg 1640w, ./path/to/image_3200px.jpg 3200w"
       />

@@ -1,0 +1,260 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2022 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+
+@mixin aspect-ratio($ratio) {
+  padding-top: $ratio;
+  box-sizing: border-box;
+}
+
+@mixin fill-parent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+
+.bpk-card {
+  @include bpk-card;
+}
+
+.bpk-graphic-promo {
+  max-width: 80rem;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: $bpk-color-sky-blue;
+  background-position: center;
+  background-size: cover;
+  color: $bpk-color-white;
+  box-shadow: none;
+
+  @include bpk-breakpoint-small-tablet {
+    @include aspect-ratio(133%);
+  }
+
+  /* remove shadow and hightlights from Backpack Card */
+  &::after {
+    display: none;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include bpk-breakpoint-above-tablet {
+      height: 28.75rem;
+
+      @include bpk-margin-leading(bpk-spacing-xxxl(), false);
+      @include bpk-margin-trailing(bpk-spacing-xxl(), false);
+
+      /* adjusting for 1.5rem difference between margins */
+      &--center > * {
+        @include bpk-margin-trailing(bpk-spacing-lg());
+      }
+    }
+
+    @include bpk-breakpoint-tablet {
+      height: 22.5rem;
+
+      @include bpk-margin-leading(bpk-spacing-xxl(), false);
+      @include bpk-margin-trailing(bpk-spacing-xl(), false);
+
+      /* adjusting for 1.5rem difference between margins */
+      &--center > * {
+        @include bpk-margin-trailing(bpk-spacing-md());
+      }
+    }
+
+    @include bpk-breakpoint-small-tablet {
+      padding: bpk-spacing-xl();
+      justify-content: space-between;
+      align-items: initial;
+
+      @include bpk-margin-leading(0);
+      @include fill-parent;
+
+      &--inverted {
+        flex-direction: column-reverse;
+      }
+
+      > * {
+        @include bpk-margin-leading(0);
+      }
+    }
+
+    @include bpk-breakpoint-small-mobile {
+      padding: bpk-spacing-lg();
+    }
+
+    &--start {
+      align-items: start;
+    }
+
+    &--center {
+      align-items: center;
+    }
+
+    &--end {
+      align-items: end;
+    }
+  }
+
+  &__tagline {
+    margin-bottom: bpk-spacing-md();
+
+    @include bpk-label-1;
+
+    @include bpk-breakpoint-small-tablet {
+      @include bpk-subheading;
+    }
+
+    @include bpk-breakpoint-small-mobile {
+      @include bpk-label-1;
+    }
+  }
+
+  &__headline {
+    @include bpk-breakpoint-above-tablet {
+      @include bpk-hero-5;
+
+      &:not(:last-child) {
+        margin-bottom: bpk-spacing-md();
+      }
+    }
+
+    @include bpk-breakpoint-tablet {
+      @include bpk-heading-1;
+
+      &:not(:last-child) {
+        margin-bottom: bpk-spacing-md();
+      }
+    }
+
+    @include bpk-breakpoint-small-tablet {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-1;
+    }
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-hero-5;
+    }
+
+    @include bpk-breakpoint-small-mobile {
+      @include bpk-heading-2;
+    }
+  }
+
+  &__subheading {
+    @include bpk-body-default;
+
+    @include bpk-breakpoint-small-tablet {
+      @include bpk-subheading;
+    }
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-body-longform;
+    }
+
+    @include bpk-breakpoint-small-mobile {
+      @include bpk-body-default;
+    }
+  }
+
+  &__promo-content,
+  &__sponsor-content {
+    display: flex;
+    flex-direction: column;
+
+    @include bpk-breakpoint-above-tablet {
+      width: 22.5rem;
+    }
+
+    @include bpk-breakpoint-tablet {
+      width: 20rem;
+    }
+
+    @include bpk-breakpoint-small-tablet {
+      width: initial;
+      align-items: initial;
+      text-align: initial;
+    }
+
+    &--start {
+      align-items: start;
+      text-align: start;
+    }
+
+    &--center {
+      align-items: center;
+      text-align: center;
+    }
+
+    &--end {
+      align-items: end;
+      text-align: end;
+    }
+  }
+
+  &__sponsor-content {
+    display: flex;
+    margin-bottom: bpk-spacing-xl();
+    flex-direction: column;
+
+    @include bpk-breakpoint-small-tablet {
+      margin-bottom: initial;
+    }
+  }
+
+  &__sponsor-label {
+    margin-bottom: bpk-spacing-sm();
+
+    @include bpk-label-1;
+
+    @include bpk-breakpoint-small-tablet {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-4;
+    }
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-heading-3;
+    }
+
+    @include bpk-breakpoint-small-mobile {
+      margin-bottom: bpk-spacing-sm();
+
+      @include bpk-label-1;
+    }
+  }
+
+  &__sponsor-logo {
+    width: 9.25rem;
+  }
+
+  &__cta {
+    margin-top: bpk-spacing-xl();
+
+    @include bpk-breakpoint-small-tablet {
+      display: none;
+    }
+  }
+}

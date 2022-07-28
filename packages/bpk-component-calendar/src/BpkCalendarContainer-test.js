@@ -17,13 +17,12 @@
  */
 
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkCalendarContainer from './BpkCalendarContainer';
-import { addDays } from './date-utils';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 
 const createNodeMock = () => ({
@@ -98,8 +97,8 @@ describe('BpkCalendarContainer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should change the month', () => {
-    const calendar = mount(
+  it('should change the month', async () => {
+    render(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -118,22 +117,31 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    let grid = calendar.find('BpkCalendarGridTransition');
-    const nav = calendar.find('BpkCalendarNav');
-    const eventStub = { persist: jest.fn() };
+    // dates in March are outside current month
+    const outsideDate = screen.getByRole('button', {
+      name: /1st March 2010/i,
+    });
+    expect(outsideDate.classList.contains('bpk-calendar-date--outside')).toBe(
+      true,
+    );
 
-    expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
+    // change month to March
+    const inputField = screen.getByRole('combobox', { name: 'Change month' });
+    await userEvent.selectOptions(inputField, 'March 2010');
 
-    nav.prop('onMonthChange')(eventStub, { month: new Date(2010, 2, 1) });
-    calendar.update();
-    grid = calendar.find('BpkCalendarGridTransition');
-    expect(grid.prop('month')).toEqual(new Date(2010, 2, 1));
+    // dates in March are within current month
+    const currentDate = screen.getByRole('button', {
+      name: /1st March 2010/i,
+    });
+    expect(currentDate.classList.contains('bpk-calendar-date--outside')).toBe(
+      false,
+    );
   });
 
-  it('should call the onDateSelect callback', () => {
+  it('should call the onDateSelect callback', async () => {
     const onDateSelect = jest.fn();
 
-    const calendar = mount(
+    render(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -153,23 +161,52 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    const grid = calendar.find('BpkCalendarGridTransition');
-
     expect(onDateSelect.mock.calls.length).toBe(0);
-    expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
 
-    grid.prop('onDateClick')(new Date(2010, 1, 20));
+    const date = screen.getByRole('button', {
+      name: /20th February 2010/i,
+    });
+    await userEvent.click(date);
+
     expect(onDateSelect.mock.calls.length).toBe(1);
-    expect(onDateSelect.mock.calls[0][0]).toEqual(new Date(2010, 1, 20));
   });
 
-  it('should account for focus state if selected date is set to null', () => {
+  it('should account for focus state if selected date is set to null', async () => {
     const onDateSelect = jest.fn();
-    const initialSelectedDate = new Date(2010, 1, 15);
+    const initialSelectedDate = new Date(2010, 1, 22);
     const minDate = new Date(2010, 1, 15);
     const maxDate = new Date(2010, 2, 15);
 
-    const calendar = mount(
+    const { rerender } = render(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
+        id="myCalendar"
+        minDate={minDate}
+        maxDate={maxDate}
+        selectionConfiguration={{
+          type: CALENDAR_SELECTION_TYPE.single,
+          date: initialSelectedDate,
+        }}
+        onDateSelect={onDateSelect}
+      />,
+    );
+
+    const initialSelectedDateButton = screen.getByRole('button', {
+      name: /22nd February 2010/i,
+    });
+    expect(
+      initialSelectedDateButton.classList.contains(
+        'bpk-calendar-date--focused',
+      ),
+    ).toBe(true);
+
+    rerender(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -189,24 +226,20 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    expect(calendar.state('focusedDate')).toEqual(initialSelectedDate);
-
-    calendar.setProps({
-      selectionConfiguration: {
-        type: CALENDAR_SELECTION_TYPE.single,
-        date: null,
-      },
+    const minDateButton = screen.getByRole('button', {
+      name: /15th February 2010/i,
     });
-
-    expect(calendar.state('focusedDate')).toEqual(minDate);
+    expect(minDateButton.classList.contains('bpk-calendar-date--focused')).toBe(
+      true,
+    );
   });
 
-  it('should set state only once on date selection', () => {
+  it('should set state only once on date selection', async () => {
     const setStateSpy = jest.fn();
     const oldSetState = BpkCalendarContainer.prototype.setState;
     BpkCalendarContainer.prototype.setState = setStateSpy;
 
-    const calendar = mount(
+    render(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -226,22 +259,25 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    const grid = calendar.find('BpkCalendarGridTransition');
-
     expect(setStateSpy.mock.calls.length).toBe(0);
 
-    grid.prop('onDateClick')(new Date(2010, 1, 20));
+    const date = screen.getByRole('button', {
+      name: /20th February 2010/i,
+    });
+
+    await userEvent.click(date);
     expect(setStateSpy.mock.calls.length).toBe(1);
 
     BpkCalendarContainer.prototype.setState = oldSetState;
   });
 
-  it('should move focus on keyboard input', () => {
-    const preventDefault = jest.fn();
-    const persist = jest.fn();
+  it('should move focus on keyboard input', async () => {
     const origin = new Date(2010, 2, 1);
+    const originStr = 'Monday, 1st March 2010';
 
-    const calendar = mount(
+    const getDate = (name) => screen.getByRole('button', { name });
+
+    render(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -260,70 +296,62 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    expect(calendar.state('focusedDate')).toEqual(origin);
+    await fireEvent.keyDown(getDate(originStr), { key: 'S' });
+    expect(
+      getDate(originStr).classList.contains('bpk-calendar-date--focused'),
+    ).toBe(true);
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'S', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(origin);
-    expect(preventDefault.mock.calls.length).toEqual(0);
+    await fireEvent.keyDown(getDate(originStr), { key: 'ArrowRight' });
+    expect(
+      getDate(/2nd March/).classList.contains('bpk-calendar-date--focused'),
+    ).toBe(true);
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'ArrowRight', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 1));
-    expect(preventDefault.mock.calls.length).toEqual(1);
+    await fireEvent.keyDown(getDate(/2nd March/i), { key: 'ArrowDown' });
+    expect(
+      getDate(/9th March/i).classList.contains('bpk-calendar-date--focused'),
+    ).toBe(true);
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'ArrowDown', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 8));
-    expect(preventDefault.mock.calls.length).toEqual(2);
+    await fireEvent.keyDown(getDate(/9th March/i), { key: 'ArrowLeft' });
+    expect(
+      getDate(/8th March/i).classList.contains('bpk-calendar-date--focused'),
+    ).toBe(true);
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'ArrowLeft', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 7));
-    expect(preventDefault.mock.calls.length).toEqual(3);
+    await fireEvent.keyDown(getDate(/8th March/i), { key: 'ArrowUp' });
+    expect(
+      getDate(originStr).classList.contains('bpk-calendar-date--focused'),
+    ).toBe(true);
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'ArrowUp', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(origin);
-    expect(preventDefault.mock.calls.length).toEqual(4);
+    await fireEvent.keyDown(getDate(originStr), { key: 'End' });
+    expect(
+      getDate(/15th March/i).classList.contains('bpk-calendar-date--focused'),
+    ).toBe(true);
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'End', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 14));
-    expect(preventDefault.mock.calls.length).toEqual(5);
+    await fireEvent.keyDown(getDate(/15th March/i), { key: 'Home' });
+    expect(
+      getDate(originStr).classList.contains('bpk-calendar-date--focused'),
+    ).toBe(true);
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'Home', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(origin);
-    expect(preventDefault.mock.calls.length).toEqual(6);
+    await fireEvent.keyDown(getDate(originStr), { key: 'PageDown' });
+    expect(
+      getDate(/15th March/i).classList.contains('bpk-calendar-date--focused'),
+    ).toBe(true);
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'PageDown', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 14));
-    expect(preventDefault.mock.calls.length).toEqual(7);
-
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'PageUp', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(addDays(origin, -14));
-    expect(preventDefault.mock.calls.length).toEqual(8);
+    await fireEvent.keyDown(getDate(/15th March/i), { key: 'PageUp' });
+    expect(
+      getDate(/15th February/i).classList.contains(
+        'bpk-calendar-date--focused',
+      ),
+    ).toBe(true);
   });
 
-  it('should change month on keyboard nav across month boundary', () => {
-    const preventDefault = jest.fn();
-    const persist = jest.fn();
+  it('should change month on keyboard nav across month boundary', async () => {
     const onMonthChange = jest.fn();
     const origin = new Date(2010, 1, 27);
+    const originStr = 'Saturday, 27th February 2010';
 
-    const calendar = mount(
+    const getDate = (name) => screen.getByRole('button', { name });
+
+    render(
       <BpkCalendarContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -334,7 +362,7 @@ describe('BpkCalendarContainer', () => {
         nextMonthLabel="Go to next month"
         id="myCalendar"
         minDate={new Date(2010, 1, 1)}
-        maxDate={new Date(2010, 2, 30)}
+        maxDate={new Date(2010, 2, 15)}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
           date: origin,
@@ -343,16 +371,17 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'ArrowRight', preventDefault, persist });
-    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 1));
-    expect(preventDefault.mock.calls.length).toEqual(1);
-    expect(onMonthChange.mock.calls.length).toEqual(0);
+    await fireEvent.keyDown(getDate(originStr), { key: 'ArrowRight' });
+    expect(
+      getDate(/28th February/i).classList.contains(
+        'bpk-calendar-date--focused',
+      ),
+    ).toBe(true);
 
-    calendar
-      .instance()
-      .handleDateKeyDown({ key: 'ArrowRight', preventDefault, persist });
+    await fireEvent.keyDown(getDate(/28th February/i), { key: 'ArrowRight' });
+    expect(
+      getDate(/1st March/i).classList.contains('bpk-calendar-date--focused'),
+    ).toBe(true);
     expect(onMonthChange.mock.calls.length).toEqual(1);
     expect(onMonthChange.mock.calls[0][1]).toEqual({
       month: new Date(2010, 2, 1),

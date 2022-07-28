@@ -20,7 +20,7 @@
 
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
-import { OverlayView } from 'react-google-maps';
+import { OverlayView } from '@react-google-maps/api';
 
 import { LatLongPropType, type LatLong } from './common-types';
 

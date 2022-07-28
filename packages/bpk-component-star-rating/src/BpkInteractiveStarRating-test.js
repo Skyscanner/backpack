@@ -19,8 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import BpkInteractiveStarRating, {
   getTypeByRating,
@@ -29,7 +28,7 @@ import { STAR_TYPES } from './BpkStar';
 
 describe('BpkInteractiveStarRating', () => {
   it('should render correctly if you give it more than the max rating allowed', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -38,11 +37,11 @@ describe('BpkInteractiveStarRating', () => {
         rating={7}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with 0 stars', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -51,11 +50,11 @@ describe('BpkInteractiveStarRating', () => {
         rating={0}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with 3 stars', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -64,11 +63,11 @@ describe('BpkInteractiveStarRating', () => {
         rating={3}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with 3.5 stars', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -77,11 +76,11 @@ describe('BpkInteractiveStarRating', () => {
         rating={3.5}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with 5 stars', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -90,11 +89,11 @@ describe('BpkInteractiveStarRating', () => {
         rating={5}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "large" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -104,11 +103,11 @@ describe('BpkInteractiveStarRating', () => {
         large
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "maxRating" attribute', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -118,11 +117,11 @@ describe('BpkInteractiveStarRating', () => {
         maxRating={8}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render 4 stars based on hoverRating as it has priority over rating', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -132,12 +131,12 @@ describe('BpkInteractiveStarRating', () => {
         hoverRating={4}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call onRatingHover on mouseenter', () => {
+  it('should call onRatingHover on mouseenter', async () => {
     const onRatingHover = jest.fn();
-    const tree = shallow(
+    render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -148,13 +147,13 @@ describe('BpkInteractiveStarRating', () => {
     );
 
     expect(onRatingHover).not.toHaveBeenCalled();
-    tree.childAt(0).prop('onMouseEnter')(1, {});
+    await fireEvent.mouseEnter(screen.getByLabelText('1 out of 5 stars'));
     expect(onRatingHover).toHaveBeenCalled();
   });
 
-  it('should call onRatingSelect on click', () => {
+  it('should call onRatingSelect on click', async () => {
     const onRatingSelect = jest.fn();
-    const tree = shallow(
+    render(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) =>
           `${rating} out of ${maxRating} stars`
@@ -165,7 +164,7 @@ describe('BpkInteractiveStarRating', () => {
     );
 
     expect(onRatingSelect).not.toHaveBeenCalled();
-    tree.childAt(0).prop('onClick')(1, {});
+    await fireEvent.click(screen.getByLabelText('1 out of 5 stars'));
     expect(onRatingSelect).toHaveBeenCalled();
   });
 

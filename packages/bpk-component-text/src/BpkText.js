@@ -40,6 +40,7 @@ export const TEXT_STYLES = {
   footnote: 'footnote',
   label1: 'label-1',
   label2: 'label-2',
+  label3: 'label-3',
   bodyDefault: 'body-default',
   bodyLongform: 'body-longform',
   subheading: 'subheading',

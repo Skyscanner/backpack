@@ -8,4 +8,3 @@
 
 `bpk-component-description-list:` </br>
  - Update components to the new typography system.
-

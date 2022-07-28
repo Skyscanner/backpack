@@ -19,7 +19,6 @@
 const { Transform } = require('stream');
 
 const loader = require('react-svg-loader');
-const { PluginError } = require('gulp-util');
 
 const PLUGIN_NAME = 'svg2react';
 
@@ -33,7 +32,7 @@ module.exports = (opts = {}) => {
     }
 
     if (file.isStream()) {
-      return cb(new PluginError(PLUGIN_NAME, 'Streaming not supported'));
+      return cb(new Error(`${PLUGIN_NAME}: 'Streaming not supported`));
     }
 
     if (file.isBuffer()) {
@@ -62,7 +61,7 @@ module.exports = (opts = {}) => {
       );
     }
 
-    return cb(new PluginError(PLUGIN_NAME, 'Data type not supported'));
+    return cb(new Error(`${PLUGIN_NAME}: Data type not supported`));
   };
 
   return stream;

@@ -22,7 +22,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import BpkButtonSecondary from 'bpk-component-button/BpkButtonSecondary';
-import BpkButtonOutline from 'bpk-component-button/BpkButtonOutline';
+import BpkButtonSecondaryOnDark from 'bpk-component-button/BpkButtonSecondaryOnDark';
 import { withButtonAlignment } from 'bpk-component-icon';
 import MinusIcon from 'bpk-component-icon/sm/minus';
 import PlusIcon from 'bpk-component-icon/sm/plus';
@@ -67,36 +67,31 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
     value,
     ...rest
   } = props;
-  const classNames = [getClassName('bpk-nudger')];
-  if (className) {
-    classNames.push(className);
-  }
+
+  const classNames = getClassName('bpk-nudger', className);
 
   const maxButtonDisabled = compareValues(value, max) >= 0;
   const minButtonDisabled = compareValues(value, min) <= 0;
 
-  const minusIconClassNames = [getClassName('bpk-nudger__icon')];
-  if (minButtonDisabled) {
-    minusIconClassNames.push(getClassName('bpk-nudger__icon--disabled'));
-  }
-  const plusIconClassNames = [getClassName('bpk-nudger__icon')];
-  if (maxButtonDisabled) {
-    plusIconClassNames.push(getClassName('bpk-nudger__icon--disabled'));
-  }
-
-  const inputStyles = [getClassName('bpk-nudger__input')];
-  if (inputClassName) {
-    inputStyles.push(inputClassName);
-  }
-  if (buttonType === 'outline') {
-    inputStyles.push(getClassName('bpk-nudger__input--outline'));
-  }
+  const minusIconClassNames = getClassName(
+    'bpk-nudger__icon',
+    minButtonDisabled && 'bpk-nudger__icon--disabled',
+  );
+  const plusIconClassNames = getClassName(
+    'bpk-nudger__icon',
+    maxButtonDisabled && 'bpk-nudger__icon--disabled',
+  );
+  const inputStyles = getClassName(
+    'bpk-nudger__input',
+    inputClassName && inputClassName,
+    buttonType === 'secondaryOnDark' && 'bpk-nudger__input--secondary-on-dark',
+  );
 
   const ButtonComponent =
-    buttonType === 'secondary' ? BpkButtonSecondary : BpkButtonOutline;
+    buttonType === 'secondary' ? BpkButtonSecondary : BpkButtonSecondaryOnDark;
 
   return (
-    <div className={classNames.join(' ')}>
+    <div className={classNames}>
       <ButtonComponent
         iconOnly
         onClick={() => onChange(decrementValue(value))}
@@ -105,7 +100,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         aria-controls={id}
         className={getClassName('bpk-nudger__button')}
       >
-        <AlignedMinusIcon className={minusIconClassNames.join(' ')} />
+        <AlignedMinusIcon className={minusIconClassNames} />
       </ButtonComponent>
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
@@ -114,7 +109,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         readOnly
         value={formatValue(value)}
         id={id}
-        className={inputStyles.join(' ')}
+        className={inputStyles}
         {...rest}
       />
       <ButtonComponent
@@ -125,7 +120,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         aria-controls={id}
         className={getClassName('bpk-nudger__button')}
       >
-        <AlignedPlusIcon className={plusIconClassNames.join(' ')} />
+        <AlignedPlusIcon className={plusIconClassNames} />
       </ButtonComponent>
     </div>
   );

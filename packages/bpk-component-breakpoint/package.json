@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-breakpoint",
-  "version": "3.1.0",
+  "version": "4.0.4",
   "description": "Backpack breakpoint component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "5c156b97cb0ba5e75851d3c763334578714c895e",
   "dependencies": {
-    "bpk-mixins": "^26.1.0",
-    "bpk-react-utils": "^4.1.0",
+    "bpk-mixins": "^31.1.1",
+    "bpk-react-utils": "^6.0.0",
     "prop-types": "^15.7.2",
     "react-responsive": "^6.1.2"
   },
@@ -23,6 +23,6 @@
     "react": "^16.3.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@skyscanner/bpk-foundations-web": "^5.0.0"
+    "@skyscanner/bpk-foundations-web": "^8.0.0"
   }
 }

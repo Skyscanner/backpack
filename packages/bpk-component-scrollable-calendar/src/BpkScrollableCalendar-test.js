@@ -18,9 +18,12 @@
 /* @flow strict */
 
 import React from 'react';
+// TODO: Once we stop publishing individual packages and single packages we can remove this lint disable
+// eslint-disable-next-line import/order
+import { render } from '@testing-library/react';
+
+import '@testing-library/jest-dom';
 import { DateUtils } from 'bpk-component-calendar';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
@@ -31,7 +34,7 @@ const id = 'scrollableCalendar';
 
 describe('BpkScrollableCalendar', () => {
   it('should render correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkScrollableCalendar
         id={id}
         weekStartsOn={1}
@@ -43,11 +46,11 @@ describe('BpkScrollableCalendar', () => {
         maxDate={DateUtils.addMonths(testDate, 12)}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render ranges correctly', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkScrollableCalendar
         id={id}
         weekStartsOn={1}
@@ -64,11 +67,11 @@ describe('BpkScrollableCalendar', () => {
         }}
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkScrollableCalendar
         id={id}
         weekStartsOn={1}
@@ -81,11 +84,11 @@ describe('BpkScrollableCalendar', () => {
         className="custom-classname"
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const tree = shallow(
+    const { asFragment } = render(
       <BpkScrollableCalendar
         id={id}
         weekStartsOn={1}
@@ -98,6 +101,6 @@ describe('BpkScrollableCalendar', () => {
         testid="123"
       />,
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

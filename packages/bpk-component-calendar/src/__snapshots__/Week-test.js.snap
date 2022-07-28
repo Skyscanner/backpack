@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Week should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar-grid__week"
+  >
+    <div
+      aria-hidden="false"
+      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+    >
+      <div />
+    </div>
+    <div
+      aria-hidden="false"
+      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+    >
+      <div />
+    </div>
+    <div
+      aria-hidden="false"
+      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+    >
+      <div />
+    </div>
+    <div
+      aria-hidden="false"
+      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+    >
+      <div />
+    </div>
+    <div
+      aria-hidden="false"
+      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+    >
+      <div />
+    </div>
+    <div
+      aria-hidden="false"
+      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+    >
+      <div />
+    </div>
+    <div
+      aria-hidden="false"
+      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+    >
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;

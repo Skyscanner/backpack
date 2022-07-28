@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-icon",
-  "version": "9.2.1",
+  "version": "9.2.13",
   "description": "Backpack icon components.",
   "license": "Apache-2.0",
   "repository": {
@@ -17,16 +17,16 @@
   },
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
-    "@skyscanner/bpk-foundations-web": "^5.0.0",
-    "@skyscanner/bpk-svgs": "^14.0.19",
-    "bpk-mixins": "^26.1.0",
-    "bpk-react-utils": "^4.1.0",
+    "@skyscanner/bpk-foundations-web": "^8.0.0",
+    "@skyscanner/bpk-svgs": "^14.1.9",
+    "bpk-mixins": "^31.1.1",
+    "bpk-react-utils": "^6.0.0",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^5.1.0",
-    "bpk-component-list": "^3.1.0",
-    "bpk-component-text": "^6.1.1"
+    "bpk-component-button": "^6.2.7",
+    "bpk-component-list": "^4.0.5",
+    "bpk-component-text": "^7.0.6"
   },
   "peerDependencies": {
     "react": "^16.3.0 || ^17.0.0"

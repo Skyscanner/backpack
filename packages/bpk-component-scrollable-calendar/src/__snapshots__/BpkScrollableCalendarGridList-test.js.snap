@@ -1,77 +1,141 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers" attribute 1`] = `
-<div
-  class="bpk-scrollable-calendar-grid-list"
->
+<DocumentFragment>
   <div
-    style="overflow:visible;height:0;width:0"
+    class="bpk-scrollable-calendar-grid-list"
   >
     <div
-      aria-label="grid"
-      aria-readonly="true"
-      class="ReactVirtualized__Grid ReactVirtualized__List"
-      role="grid"
-      style="box-sizing:border-box;direction:ltr;height:0;position:relative;width:0;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;overflow-y:auto"
-      tabindex="0"
-    />
+      style="overflow: visible; height: 0px; width: 0px;"
+    >
+      <div
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__List"
+        role="grid"
+        style="box-sizing: border-box; direction: ltr; height: 0px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
+        tabindex="0"
+      />
+    </div>
+    <div
+      class="resize-triggers"
+    >
+      <div
+        class="expand-trigger"
+      >
+        <div
+          style="width: 1px; height: 1px;"
+        />
+      </div>
+      <div
+        class="contract-trigger"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with a custom date component 1`] = `
-<div
-  class="bpk-scrollable-calendar-grid-list"
->
+<DocumentFragment>
   <div
-    style="overflow:visible;height:0;width:0"
+    class="bpk-scrollable-calendar-grid-list"
   >
     <div
-      aria-label="grid"
-      aria-readonly="true"
-      class="ReactVirtualized__Grid ReactVirtualized__List"
-      role="grid"
-      style="box-sizing:border-box;direction:ltr;height:0;position:relative;width:0;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;overflow-y:auto"
-      tabindex="0"
-    />
+      style="overflow: visible; height: 0px; width: 0px;"
+    >
+      <div
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__List"
+        role="grid"
+        style="box-sizing: border-box; direction: ltr; height: 0px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
+        tabindex="0"
+      />
+    </div>
+    <div
+      class="resize-triggers"
+    >
+      <div
+        class="expand-trigger"
+      >
+        <div
+          style="width: 1px; height: 1px;"
+        />
+      </div>
+      <div
+        class="contract-trigger"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with a different "weekStartsOn" attribute 1`] = `
-<div
-  class="bpk-scrollable-calendar-grid-list"
->
+<DocumentFragment>
   <div
-    style="overflow:visible;height:0;width:0"
+    class="bpk-scrollable-calendar-grid-list"
   >
     <div
-      aria-label="grid"
-      aria-readonly="true"
-      class="ReactVirtualized__Grid ReactVirtualized__List"
-      role="grid"
-      style="box-sizing:border-box;direction:ltr;height:0;position:relative;width:0;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;overflow-y:auto"
-      tabindex="0"
-    />
+      style="overflow: visible; height: 0px; width: 0px;"
+    >
+      <div
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__List"
+        role="grid"
+        style="box-sizing: border-box; direction: ltr; height: 0px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
+        tabindex="0"
+      />
+    </div>
+    <div
+      class="resize-triggers"
+    >
+      <div
+        class="expand-trigger"
+      >
+        <div
+          style="width: 1px; height: 1px;"
+        />
+      </div>
+      <div
+        class="contract-trigger"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with no optional props set 1`] = `
-<div
-  class="bpk-scrollable-calendar-grid-list"
->
+<DocumentFragment>
   <div
-    style="overflow:visible;height:0;width:0"
+    class="bpk-scrollable-calendar-grid-list"
   >
     <div
-      aria-label="grid"
-      aria-readonly="true"
-      class="ReactVirtualized__Grid ReactVirtualized__List"
-      role="grid"
-      style="box-sizing:border-box;direction:ltr;height:0;position:relative;width:0;-webkit-overflow-scrolling:touch;will-change:transform;overflow-x:hidden;overflow-y:auto"
-      tabindex="0"
-    />
+      style="overflow: visible; height: 0px; width: 0px;"
+    >
+      <div
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__List"
+        role="grid"
+        style="box-sizing: border-box; direction: ltr; height: 0px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
+        tabindex="0"
+      />
+    </div>
+    <div
+      class="resize-triggers"
+    >
+      <div
+        class="expand-trigger"
+      >
+        <div
+          style="width: 1px; height: 1px;"
+        />
+      </div>
+      <div
+        class="contract-trigger"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

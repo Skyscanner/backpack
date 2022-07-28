@@ -28,13 +28,19 @@ import { CALENDAR_SELECTION_TYPE } from 'bpk-component-calendar';
 import { axe } from 'jest-axe';
 
 jest.mock(
-  './../node_modules/bpk-component-popover/node_modules/@skyscanner/popper.js',
-  () =>
-    class Popper {
-      scheduleUpdate = () => {};
-
-      destroy = () => {};
-    },
+  './../node_modules/bpk-component-popover/node_modules/@popperjs/core',
+  () => {
+    const originalModule = jest.requireActual(
+      './../node_modules/bpk-component-popover/node_modules/@popperjs/core',
+    );
+    return {
+      ...originalModule,
+      createPopper: jest.fn(() => ({
+        update: jest.fn(),
+        destroy: jest.fn(),
+      })),
+    };
+  },
 );
 
 // eslint-disable-next-line import/first

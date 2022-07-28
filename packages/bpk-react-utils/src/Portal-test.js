@@ -16,437 +16,765 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { mount } from 'enzyme';
-import { render } from '@testing-library/react';
-import { render as reactDomRender, unmountComponentAtNode } from 'react-dom';
+import React, { useState, useEffect, createRef } from 'react';
+import { render, waitFor, fireEvent } from '@testing-library/react';
 
 import Portal from './Portal';
 
 const KEYCODES = {
-  ESCAPE: 27,
+  ESCAPE: 'Escape',
 };
 
 describe('Portal', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
+  });
+
   it('should render correctly with no target', () => {
-    const { asFragment } = render(
-      <Portal isOpen={false}>
+    const { container } = render(
+      <Portal isOpen={false} onClose={jest.fn()}>
         <div>My portal content</div>
       </Portal>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('should render correctly with target', () => {
-    const { asFragment } = render(
-      <Portal isOpen={false} target={<div>Target</div>}>
+    const target = document.createElement('div');
+    const { container } = render(
+      <Portal isOpen={false} target={target} onClose={jest.fn()}>
         <div>My portal content</div>
       </Portal>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('should render correctly with renderTarget', () => {
-    const div = document.createElement('div');
-    const { asFragment } = render(
-      <Portal isOpen renderTarget={() => div}>
+    const renderTarget = document.createElement('div');
+    const { container } = render(
+      <Portal isOpen renderTarget={renderTarget} onClose={jest.fn()}>
         <div>My portal content</div>
       </Portal>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
-    expect(div).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
+    expect(renderTarget).toMatchSnapshot();
   });
 
   it('should render with a custom style property', () => {
-    const customStyle = { color: 'red' }; // eslint-disable-line backpack/use-tokens
+    const renderTarget = document.createElement('div');
+    const customStyle = {
+      // eslint-disable-next-line backpack/use-tokens
+      color: 'red',
+    };
 
-    const portal = mount(
-      <Portal isOpen style={customStyle}>
-        <div>My portal content</div>
-      </Portal>,
-    );
-
-    expect(portal.instance().portalElement.style.color).toEqual(
-      customStyle.color,
-    );
-  });
-
-  it('should render with a custom className property', () => {
-    const customClassname = 'my-custom-classname';
-
-    const portal = mount(
-      <Portal isOpen className={customClassname}>
-        <div>My portal content</div>
-      </Portal>,
-    );
-
-    expect(
-      portal.instance().portalElement.classList.contains(customClassname),
-    ).toBe(true);
-  });
-
-  it('should render portal children to document.body', () => {
-    mount(
-      <Portal isOpen>
-        <div>My portal content</div>
-      </Portal>,
-    );
-
-    expect(document.body.lastChild.textContent).toEqual('My portal content');
-  });
-
-  it('should remove portal children from document.body on close', () => {
-    const div = document.createElement('div');
-    div.appendChild(document.createTextNode('Not a portal'));
-    document.body.appendChild(div);
-
-    expect(document.body.lastChild.textContent).toEqual('Not a portal');
-
-    const portal = mount(
-      <Portal isOpen>
-        <div>My portal content</div>
-      </Portal>,
-    );
-
-    expect(document.body.lastChild.textContent).toEqual('My portal content');
-
-    portal.setProps({ isOpen: false }).update();
-
-    expect(document.body.lastChild.textContent).toEqual('Not a portal');
-  });
-
-  it('should not remove portal children if render target no longer exists', () => {
-    const div = document.createElement('div');
-    div.id = 'render-target';
-    document.body.appendChild(div);
-
-    const portal = mount(
+    render(
       <Portal
         isOpen
-        renderTarget={() => document.getElementById('render-target')}
+        style={customStyle}
+        renderTarget={renderTarget}
+        onClose={jest.fn()}
       >
         <div>My portal content</div>
       </Portal>,
     );
+    const portalElement = renderTarget.firstChild;
 
-    expect(document.body.lastChild.textContent).toEqual('My portal content');
+    if (!portalElement || !(portalElement instanceof HTMLElement)) {
+      throw new Error('portalElement not defined or is of wrong type');
+    }
 
-    document.body.removeChild(div);
-
-    expect(() => {
-      portal.setProps({ isOpen: false }).update();
-    }).not.toThrow();
+    expect(portalElement.style.color).toEqual(customStyle.color);
   });
 
-  it('should call the onClose handler on click outside', () => {
-    const onCloseSpy = jest.fn();
+  it('should render with a custom className property', () => {
+    const renderTarget = document.createElement('div');
+    const customClassname = 'my-custom-classname';
+    render(
+      <Portal
+        isOpen
+        className={customClassname}
+        renderTarget={renderTarget}
+        onClose={jest.fn()}
+      >
+        <div>My portal content</div>
+      </Portal>,
+    );
+    const portalElement = renderTarget.firstChild;
 
-    const portal = mount(
-      <Portal isOpen onClose={onCloseSpy} target={<div>target</div>}>
+    if (!portalElement || !(portalElement instanceof HTMLElement)) {
+      throw new Error('portalElement not defined or is of wrong type');
+    }
+
+    expect(portalElement.classList.contains(customClassname)).toBe(true);
+  });
+
+  it('should render portal children to document.body', () => {
+    render(
+      <Portal isOpen onClose={jest.fn()}>
         <div>My portal content</div>
       </Portal>,
     );
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(document.body && document.body.textContent).toEqual(
+      'My portal content',
+    );
+  });
 
-    portal.instance().onDocumentMouseDown({
-      button: 1,
-    });
-    portal.instance().onDocumentMouseUp({
-      button: 1,
-    });
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+  it('should remove portal children from document.body on close', () => {
+    const renderTarget = document.createElement('div');
+    const text = document.createElement('h1');
+    text.textContent = 'Not a portal';
+    renderTarget.appendChild(text);
 
-    portal.instance().onDocumentMouseDown({
-      button: 0,
-      target: portal.instance().getTargetElement(),
-    });
-    portal.instance().onDocumentMouseUp({
-      button: 0,
-      target: portal.instance().getTargetElement(),
-    });
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(renderTarget).toMatchInlineSnapshot(`
+      <div>
+        <h1>
+          Not a portal
+        </h1>
+      </div>
+    `);
 
-    portal.instance().onDocumentMouseDown({
-      button: 0,
-      target: portal.instance().portalElement,
-    });
-    portal.instance().onDocumentMouseUp({
-      button: 0,
-      target: portal.instance().portalElement,
-    });
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    const { rerender } = render(
+      <Portal isOpen renderTarget={renderTarget} onClose={jest.fn()}>
+        <div>My portal content</div>
+      </Portal>,
+    );
 
-    portal.instance().onDocumentMouseDown({
-      button: 0,
-    });
-    portal.instance().onDocumentMouseUp({
-      button: 0,
-    });
-    expect(onCloseSpy.mock.calls.length).toEqual(1);
+    expect(renderTarget).toMatchInlineSnapshot(`
+      <div>
+        <h1>
+          Not a portal
+        </h1>
+        <div>
+          <div>
+            My portal content
+          </div>
+        </div>
+      </div>
+    `);
+
+    rerender(
+      <Portal isOpen={false} renderTarget={renderTarget} onClose={jest.fn()}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(renderTarget).toMatchInlineSnapshot(`
+      <div>
+        <h1>
+          Not a portal
+        </h1>
+      </div>
+    `);
+  });
+
+  it('should not remove portal children if render target no longer exists', () => {
+    const { body } = document;
+
+    if (!body) {
+      throw new Error('failed to setup test');
+    }
+
+    const renderTarget = document.createElement('div');
+    renderTarget.id = 'render-target';
+    body.appendChild(renderTarget);
+    const { baseElement, container, rerender } = render(
+      <Portal isOpen renderTarget={renderTarget} onClose={jest.fn()}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(container.firstChild).toBe(null);
+    expect(baseElement).toMatchInlineSnapshot(`
+      <body>
+        <div
+          id="render-target"
+        >
+          <div>
+            <div>
+              My portal content
+            </div>
+          </div>
+        </div>
+        <div />
+      </body>
+    `);
+
+    body.removeChild(renderTarget);
+    rerender(
+      <Portal isOpen={false} renderTarget={renderTarget} onClose={jest.fn()}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(baseElement).toMatchInlineSnapshot(`
+      <body>
+        <div />
+      </body>
+    `);
+  });
+
+  it('should call the onClose handler on click outside', async () => {
+    const renderTarget = document.createElement('div');
+    const target = document.createElement('div');
+    target.ref = createRef();
+    const onCloseSpy = jest.fn();
+    const { getByText } = render(
+      <>
+        <h1>My other content</h1>
+        <Portal
+          isOpen
+          onClose={onCloseSpy}
+          target={target}
+          renderTarget={renderTarget}
+        >
+          <div>My portal content</div>
+        </Portal>
+      </>,
+    );
+
+    // @ts-expect-error ts-migrate(7006) FIXME: Parameter 'where' implicitly has an 'any' type.
+    const click = (where, right, drag = false) => {
+      fireEvent(
+        where,
+        new MouseEvent('mousedown', {
+          bubbles: true,
+          cancelable: true,
+          button: right ? 2 : 0,
+        }),
+      );
+
+      if (drag) {
+        fireEvent(
+          where,
+          new MouseEvent('touchmove', {
+            bubbles: true,
+            cancelable: true,
+            button: right ? 2 : 0,
+          }),
+        );
+      }
+
+      fireEvent(
+        where,
+        new MouseEvent('mouseup', {
+          bubbles: true,
+          cancelable: true,
+          button: right ? 2 : 0,
+        }),
+      );
+    };
+
+    const outOfPortal = getByText('My other content');
+
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
+
+    click(outOfPortal, true);
+
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
+
+    click(target, false);
+
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
+
+    click(renderTarget, false);
+
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
+
+    click(outOfPortal, false, true);
+
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
+
+    click(outOfPortal, false);
+
+    expect(onCloseSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not have a race condition if the portal is opened then closed quickly', async () => {
+    const renderTarget = document.createElement('div');
+    const target = document.createElement('div');
+    const onCloseSpy = jest.fn();
+
+    const MyApp = () => {
+      const [visible, setVisible] = useState(true);
+      useEffect(() => {
+        setVisible(false);
+      }, []);
+      return (
+        <>
+          <h1>My other content</h1>
+          {visible && (
+            <Portal
+              isOpen
+              onClose={onCloseSpy}
+              target={target}
+              renderTarget={renderTarget}
+            >
+              <div>My portal content</div>
+            </Portal>
+          )}
+        </>
+      );
+    };
+
+    const { getByText } = render(<MyApp />);
+
+    // @ts-expect-error ts-migrate(7006) FIXME: Parameter 'where' implicitly has an 'any' type.
+    const click = (where) => {
+      fireEvent(
+        where,
+        new MouseEvent('mousedown', {
+          bubbles: true,
+          cancelable: true,
+          button: 0,
+        }),
+      );
+      fireEvent(
+        where,
+        new MouseEvent('mouseup', {
+          bubbles: true,
+          cancelable: true,
+          button: 0,
+        }),
+      );
+    };
+
+    const outOfPortal = getByText('My other content');
+    click(outOfPortal);
+
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
   });
 
   it('should propagate the click event to the onClose handler', () => {
+    const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
-
-    const portal = mount(
-      <Portal isOpen onClose={onCloseSpy} target={<div>target</div>}>
-        <div>My portal content</div>
-      </Portal>,
+    const { getByText } = render(
+      <>
+        <h1>My other content</h1>
+        <Portal isOpen onClose={onCloseSpy} target={target}>
+          <div>My portal content</div>
+        </Portal>
+      </>,
     );
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    const outOfPortal = getByText('My other content');
 
-    const event = {
-      button: 0,
-    };
-    portal.instance().onDocumentMouseDown(event);
-    portal.instance().onDocumentMouseUp(event);
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
 
-    expect(onCloseSpy.mock.calls[0][0]).toEqual(event);
-    expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'DOCUMENT_CLICK' });
+    fireEvent(
+      outOfPortal,
+      new MouseEvent('mousedown', {
+        bubbles: true,
+        cancelable: true,
+        button: 0,
+      }),
+    );
+    fireEvent(
+      outOfPortal,
+      new MouseEvent('mouseup', {
+        bubbles: true,
+        cancelable: true,
+        button: 0,
+      }),
+    );
+
+    expect(onCloseSpy.mock.calls).toMatchInlineSnapshot(`
+      Array [
+        Array [
+          MouseEvent {
+            "isTrusted": false,
+          },
+          Object {
+            "source": "DOCUMENT_CLICK",
+          },
+        ],
+      ]
+    `);
   });
 
   it('should call the onClose handler on escape key', () => {
-    const mountPoint = document.createElement('div');
-    document.body.appendChild(mountPoint);
-
+    const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
-
-    reactDomRender(
-      <Portal isOpen onClose={onCloseSpy} target={<div>target</div>}>
+    render(
+      <Portal isOpen onClose={onCloseSpy} target={target}>
         <div>My portal content</div>
       </Portal>,
-      mountPoint,
     );
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    const event = new KeyboardEvent('keydown', {
+      key: KEYCODES.ESCAPE,
+    });
+
     document.dispatchEvent(event);
 
-    expect(onCloseSpy.mock.calls.length).toEqual(1);
+    expect(onCloseSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call targetRef with the target', () => {
+    const targetRef = jest.fn();
+    const target = jest.fn();
+    const targetElement = <div>target</div>;
+    target.mockReturnValue(targetElement);
+    render(
+      <>
+        {target}
+        <Portal isOpen target={target} targetRef={targetRef}>
+          <div>My portal content</div>
+        </Portal>
+      </>,
+    );
+
+    expect(targetRef).toHaveBeenCalledWith(targetElement);
   });
 
   it('should not close on escape key if closeOnEscPressed is false', () => {
-    const mountPoint = document.createElement('div');
-    document.body.appendChild(mountPoint);
-
+    const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
-
-    reactDomRender(
+    render(
       <Portal
         isOpen
         onClose={onCloseSpy}
-        target={<div>target</div>}
+        target={target}
         closeOnEscPressed={false}
       >
         <div>My portal content</div>
       </Portal>,
-      mountPoint,
     );
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    const event = new KeyboardEvent('keydown', {
+      key: KEYCODES.ESCAPE,
+    });
+
     document.dispatchEvent(event);
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
   });
 
   it('should propagate the escape key event to the onClose handler', () => {
-    const mountPoint = document.createElement('div');
-    document.body.appendChild(mountPoint);
-
+    const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
-
-    reactDomRender(
-      <Portal isOpen onClose={onCloseSpy} target={<div>target</div>}>
+    render(
+      <Portal isOpen onClose={onCloseSpy} target={target}>
         <div>My portal content</div>
       </Portal>,
-      mountPoint,
     );
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    const event = new KeyboardEvent('keydown', {
+      key: KEYCODES.ESCAPE,
+    });
+
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls[0][0]).toEqual(event);
-    expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'ESCAPE' });
+    expect(onCloseSpy.mock.calls[0][1]).toEqual({
+      source: 'ESCAPE',
+    });
   });
 
   it('should not call the onClose handler on escape key if portal is closed', () => {
-    const mountPoint = document.createElement('div');
-    document.body.appendChild(mountPoint);
-
+    const target = document.createElement('div');
     const onCloseSpy = jest.fn();
-
-    reactDomRender(
-      <Portal isOpen={false} onClose={onCloseSpy} target={<div>target</div>}>
+    render(
+      <Portal isOpen={false} onClose={onCloseSpy} target={target}>
         <div>My portal content</div>
       </Portal>,
-      mountPoint,
     );
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    const event = new KeyboardEvent('keydown', {
+      key: KEYCODES.ESCAPE,
+    });
+
     document.dispatchEvent(event);
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
   });
 
   it('should not call the onClose handler again on escape key if portal is unmounted', () => {
-    const mountPoint = document.createElement('div');
-    document.body.appendChild(mountPoint);
-
+    const target = document.createElement('div');
+    target.ref = createRef();
     const onCloseSpy = jest.fn();
-
-    reactDomRender(
-      <Portal isOpen onClose={onCloseSpy} target={<div>target</div>}>
+    const { rerender } = render(
+      <Portal isOpen onClose={onCloseSpy} target={target}>
         <div>My portal content</div>
       </Portal>,
-      mountPoint,
     );
 
-    expect(onCloseSpy.mock.calls.length).toEqual(0);
+    expect(onCloseSpy).toHaveBeenCalledTimes(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
-    document.dispatchEvent(event);
-
-    expect(onCloseSpy.mock.calls.length).toEqual(1);
-
-    unmountComponentAtNode(mountPoint);
+    const event = new KeyboardEvent('keydown', {
+      key: KEYCODES.ESCAPE,
+    });
 
     document.dispatchEvent(event);
 
-    expect(onCloseSpy.mock.calls.length).toEqual(1);
+    expect(onCloseSpy).toHaveBeenCalledTimes(1);
+
+    rerender(
+      <Portal isOpen={false} onClose={onCloseSpy} target={target}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+    document.dispatchEvent(event);
+
+    expect(onCloseSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should call the onRender handler when props are updated', () => {
     const onRenderSpy = jest.fn();
-
-    const portal = mount(
-      <Portal isOpen onRender={onRenderSpy}>
+    const { rerender } = render(
+      <Portal isOpen onRender={onRenderSpy} onClose={jest.fn()}>
         <div>My portal content</div>
       </Portal>,
     );
 
-    expect(onRenderSpy.mock.calls.length).toBe(1);
+    expect(onRenderSpy).toHaveBeenCalledTimes(1);
 
-    portal.setProps({ target: <div>target1</div> }).update();
-    expect(onRenderSpy.mock.calls.length).toBe(2);
+    rerender(
+      <Portal isOpen onRender={onRenderSpy} onClose={jest.fn()}>
+        <div>My portal content changed</div>
+      </Portal>,
+    );
 
-    portal.setProps({ target: <div>target2</div> }).update();
-    expect(onRenderSpy.mock.calls.length).toBe(3);
+    expect(onRenderSpy).toHaveBeenCalledTimes(2);
+
+    rerender(
+      <Portal isOpen onRender={onRenderSpy} onClose={jest.fn()}>
+        <div>My portal content changed again</div>
+      </Portal>,
+    );
+
+    expect(onRenderSpy).toHaveBeenCalledTimes(3);
   });
 
   it('should call the onRender handler before the onOpen handler handler when props are updated', () => {
-    let order = 0;
-
-    const portal = mount(
+    const handler = jest.fn();
+    const { rerender } = render(
       <Portal
         isOpen={false}
-        onRender={() => {
-          order = 1;
-        }}
-        onOpen={() => {
-          order = 2;
-        }}
+        onRender={() => handler('onRender')}
+        onOpen={() => handler('onOpen')}
+        onClose={jest.fn()}
       >
         <div>My portal content</div>
       </Portal>,
     );
 
-    portal.setProps({ isOpen: true }).update();
-    expect(order).toBe(2);
+    expect(handler.mock.calls).toMatchInlineSnapshot('Array []');
+
+    jest.clearAllMocks();
+    rerender(
+      <Portal
+        isOpen
+        onRender={() => handler('onRender')}
+        onOpen={() => handler('onOpen')}
+        onClose={jest.fn()}
+      >
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(handler.mock.calls).toMatchInlineSnapshot(`
+      Array [
+        Array [
+          "onRender",
+        ],
+        Array [
+          "onOpen",
+        ],
+      ]
+    `);
   });
 
   it('should call the onRender handler before the onOpen handler handler when component is mounted', () => {
-    let order = 0;
-
-    mount(
+    const handler = jest.fn();
+    render(
       <Portal
         isOpen
-        onRender={() => {
-          order = 1;
-        }}
-        onOpen={() => {
-          order = 2;
-        }}
+        onRender={() => handler('onRender')}
+        onOpen={() => handler('onOpen')}
+        onClose={jest.fn()}
       >
         <div>My portal content</div>
       </Portal>,
     );
 
-    expect(order).toBe(2);
+    expect(handler.mock.calls).toMatchInlineSnapshot(`
+      Array [
+        Array [
+          "onRender",
+        ],
+        Array [
+          "onOpen",
+        ],
+      ]
+    `);
   });
 
   it('should not call the onRender handler when isOpen is false', () => {
     const onRenderSpy = jest.fn();
-
-    const portal = mount(
-      <Portal isOpen={false} onRender={onRenderSpy}>
+    const { rerender } = render(
+      <Portal isOpen={false} onRender={onRenderSpy} onClose={jest.fn()}>
         <div>My portal content</div>
       </Portal>,
     );
 
-    expect(onRenderSpy.mock.calls.length).toBe(0);
+    expect(onRenderSpy).toHaveBeenCalledTimes(0);
 
-    portal.setProps({ isOpen: true }).update();
-    expect(onRenderSpy.mock.calls.length).toBe(1);
+    rerender(
+      <Portal isOpen onRender={onRenderSpy} onClose={jest.fn()}>
+        <div>My portal content</div>
+      </Portal>,
+    );
 
-    portal.setProps({ isOpen: false }).update();
-    expect(onRenderSpy.mock.calls.length).toBe(1);
+    expect(onRenderSpy).toHaveBeenCalledTimes(1);
+
+    rerender(
+      <Portal isOpen={false} onRender={onRenderSpy} onClose={jest.fn()}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(onRenderSpy).toHaveBeenCalledTimes(1);
   });
 
   describe('lifecycle methods', () => {
-    let portal;
+    // @ts-expect-error ts-migrate(7034) FIXME: Variable 'rerender' implicitly has type 'any' in s... Remove this comment to see the full error message
+    let rerender;
+
     const openSpy = jest.fn();
-    const closeSpy = jest.fn();
-    const beforeCloseSpy = jest.fn();
-
-    beforeAll(() => {
-      Portal.prototype.open = openSpy;
-      Portal.prototype.close = closeSpy;
-
-      portal = mount(
-        <Portal isOpen>
-          <div>My portal content</div>
-        </Portal>,
-      );
-    });
+    const closeSpy = jest.fn((close) => close());
 
     describe('componentDidMount()', () => {
       it('should open the portal on mount', () => {
-        expect(openSpy.mock.calls.length).toEqual(1);
+        expect(openSpy).toHaveBeenCalledTimes(0);
+        expect(closeSpy).toHaveBeenCalledTimes(0);
+
+        ({ rerender } = render(
+          <Portal
+            isOpen
+            onOpen={openSpy}
+            beforeClose={closeSpy}
+            onClose={jest.fn()}
+          >
+            <div>My portal content</div>
+          </Portal>,
+        ));
+
+        expect(openSpy).toHaveBeenCalledTimes(1);
+        expect(closeSpy).toHaveBeenCalledTimes(0);
       });
     });
 
     describe('UNSAFE_componentWillReceiveProps()', () => {
       it('should close the portal when isOpen is removed', () => {
-        portal.setProps({ isOpen: false }).update();
-        expect(closeSpy.mock.calls.length).toEqual(1);
+        expect(openSpy).toHaveBeenCalledTimes(0);
+        expect(closeSpy).toHaveBeenCalledTimes(0);
+
+        // @ts-expect-error ts-migrate(7005) FIXME: Variable 'rerender' implicitly has an 'any' type.
+        rerender(
+          <Portal
+            isOpen={false}
+            onOpen={openSpy}
+            beforeClose={closeSpy}
+            onClose={jest.fn()}
+          >
+            <div>My portal content</div>
+          </Portal>,
+        );
+        waitFor(() => {
+          expect(openSpy).toHaveBeenCalledTimes(0);
+          expect(closeSpy).toHaveBeenCalledTimes(1);
+        });
       });
 
       it('should open the portal again when isOpen is added', () => {
-        portal.setProps({ isOpen: true }).update();
-        expect(openSpy.mock.calls.length).toEqual(2);
-      });
+        expect(openSpy).toHaveBeenCalledTimes(0);
+        expect(closeSpy).toHaveBeenCalledTimes(0);
 
-      it('should call beforeClose when isOpen is removed', () => {
-        portal
-          .setProps({ beforeClose: beforeCloseSpy, isOpen: false })
-          .update();
-        expect(beforeCloseSpy.mock.calls.length).toEqual(1);
+        // @ts-expect-error ts-migrate(7005) FIXME: Variable 'rerender' implicitly has an 'any' type.
+        rerender(
+          <Portal
+            isOpen
+            onOpen={openSpy}
+            beforeClose={closeSpy}
+            onClose={jest.fn()}
+          >
+            <div>My portal content</div>
+          </Portal>,
+        );
+
+        expect(openSpy).toHaveBeenCalledTimes(1);
+        expect(closeSpy).toHaveBeenCalledTimes(0);
       });
     });
+  });
 
-    // No tests for
-    // - renderPortal, as we'd have to mock react-dom render()
-    // - componentWillUnmount, as it takes forever and slows down the test suite immensely
+  it('should remove all items from the dom when unmounted', () => {
+    const { body } = document;
+
+    if (!body) {
+      throw new Error('failed to setup test');
+    }
+
+    const addEventListener = jest.spyOn(document, 'addEventListener');
+    const removeEventListener = jest.spyOn(document, 'removeEventListener');
+    const { baseElement, rerender } = render(
+      <Portal isOpen onClose={jest.fn()}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(baseElement).toMatchInlineSnapshot(`
+      <body>
+        <div />
+        <div>
+          <div>
+            My portal content
+          </div>
+        </div>
+      </body>
+    `);
+
+    rerender(<h1>My replacement content</h1>);
+
+    expect(baseElement).toMatchInlineSnapshot(`
+      <body>
+        <div>
+          <h1>
+            My replacement content
+          </h1>
+        </div>
+      </body>
+    `);
+
+    // The first two argments should be the same
+    addEventListener.mock.calls.forEach((_, index) => {
+      expect(addEventListener.mock.calls[index][0]).toEqual(
+        removeEventListener.mock.calls[index][0],
+      );
+      expect(addEventListener.mock.calls[index][1]).toEqual(
+        removeEventListener.mock.calls[index][1],
+      );
+    });
+
+    expect(addEventListener.mock.calls.length).toEqual(
+      removeEventListener.mock.calls.length,
+    );
+    expect(addEventListener.mock.calls.length).toEqual(6);
   });
 });
