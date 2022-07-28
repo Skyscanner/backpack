@@ -17,14 +17,26 @@
  */
 
 @import '~bpk-mixins/index';
-@import './custom-breakpoints.module';
+
+@mixin aspect-ratio($ratio) {
+  padding-top: $ratio;
+  box-sizing: border-box;
+}
+
+@mixin fill-parent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+}
 
 .bpk-card {
   @include bpk-card;
 }
 
 .bpk-graphic-promo {
-  max-width: 65.5rem;
+  max-width: 80rem;
   margin-right: auto;
   margin-left: auto;
   background-color: $bpk-color-sky-blue;
@@ -33,215 +45,205 @@
   color: $bpk-color-white;
   box-shadow: none;
 
-  @include breakpoint-landscape {
-    &__sponsor-label {
-      margin-bottom: bpk-spacing-sm();
-
-      @include bpk-label-1;
-    }
-
-    &__sponsor-content {
-      margin-bottom: bpk-spacing-xl();
-    }
-
-    &__tagline {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-label-1;
-    }
-
-    &__subheading {
-      @include bpk-body-default;
-    }
-
-    &__headline {
-      @include breakpoint-landscape-desktop {
-        @include bpk-hero-5;
-      }
-
-      @include breakpoint-landscape-tablet {
-        @include bpk-heading-1;
-      }
-
-      &:not(:last-child) {
-        margin-bottom: bpk-spacing-md();
-      }
-    }
+  @include bpk-breakpoint-small-tablet {
+    @include aspect-ratio(133%);
   }
 
-  @include breakpoint-portrait-large {
-    &__sponsor-label {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-heading-4;
-    }
-
-    &__tagline {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-subheading;
-    }
-
-    &__headline {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-hero-4;
-    }
-
-    &__subheading {
-      @include bpk-subheading;
-    }
-  }
-
-  @include breakpoint-portrait-medium {
-    &__sponsor-label {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-heading-3;
-    }
-
-    &__tagline {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-subheading;
-    }
-
-    &__headline {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-hero-5;
-    }
-
-    &__subheading {
-      @include bpk-body-longform;
-    }
-  }
-
-  @include breakpoint-portrait-small {
-    &__sponsor-label {
-      margin-bottom: bpk-spacing-sm();
-
-      @include bpk-label-1;
-    }
-
-    &__tagline {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-label-1;
-    }
-
-    &__headline {
-      margin-bottom: bpk-spacing-md();
-
-      @include bpk-heading-2;
-    }
-
-    &__subheading {
-      @include bpk-body-default;
-    }
+  /* remove shadow and hightlights from Backpack Card */
+  &::after {
+    display: none;
   }
 
   &__container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
-    @include breakpoint-landscape {
-      justify-content: center;
-
-      &--start {
-        align-items: start;
-      }
-
-      &--center {
-        align-items: center;
-      }
-
-      &--end {
-        align-items: end;
-      }
-    }
-
-    @include breakpoint-portrait {
-      justify-content: space-between;
-
-      &--inverted {
-        flex-direction: column-reverse;
-      }
-    }
-
-    @include breakpoint-landscape-desktop {
-      height: 25rem;
+    @include bpk-breakpoint-above-tablet {
+      height: 28.75rem;
 
       @include bpk-margin-leading(bpk-spacing-xxxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xxl(), false);
 
-      /* adjusting for 1.5rem different between margins */
+      /* adjusting for 1.5rem difference between margins */
       &--center > * {
         @include bpk-margin-trailing(bpk-spacing-lg());
       }
     }
 
-    @include breakpoint-landscape-tablet {
-      height: 25rem;
+    @include bpk-breakpoint-tablet {
+      height: 22.5rem;
 
       @include bpk-margin-leading(bpk-spacing-xxl(), false);
       @include bpk-margin-trailing(bpk-spacing-xl(), false);
 
-      /* adjusting for 0.5rem different between margins */
+      /* adjusting for 1.5rem difference between margins */
       &--center > * {
         @include bpk-margin-trailing(bpk-spacing-md());
       }
     }
 
-    @include breakpoint-portrait-large {
-      height: 58.3125rem;
+    @include bpk-breakpoint-small-tablet {
       padding: bpk-spacing-xl();
+      justify-content: space-between;
+      align-items: initial;
+
+      @include bpk-margin-leading(0);
+      @include fill-parent;
+
+      &--inverted {
+        flex-direction: column-reverse;
+      }
+
+      > * {
+        @include bpk-margin-leading(0);
+      }
     }
 
-    @include breakpoint-portrait-medium {
-      height: 42.625rem;
-      padding: bpk-spacing-xl();
-    }
-
-    @include breakpoint-portrait-small {
-      height: 31.25rem;
+    @include bpk-breakpoint-small-mobile {
       padding: bpk-spacing-lg();
+    }
+
+    &--start {
+      align-items: start;
+    }
+
+    &--center {
+      align-items: center;
+    }
+
+    &--end {
+      align-items: end;
     }
   }
 
-  &__sponsor-content,
-  &__promo-content {
+  &__tagline {
+    margin-bottom: bpk-spacing-md();
+
+    @include bpk-label-1;
+
+    @include bpk-breakpoint-small-tablet {
+      @include bpk-subheading;
+    }
+
+    @include bpk-breakpoint-small-mobile {
+      @include bpk-label-1;
+    }
+  }
+
+  &__headline {
+    @include bpk-breakpoint-above-tablet {
+      @include bpk-hero-5;
+
+      &:not(:last-child) {
+        margin-bottom: bpk-spacing-md();
+      }
+    }
+
+    @include bpk-breakpoint-tablet {
+      @include bpk-heading-1;
+
+      &:not(:last-child) {
+        margin-bottom: bpk-spacing-md();
+      }
+    }
+
+    @include bpk-breakpoint-small-tablet {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-1;
+    }
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-hero-5;
+    }
+
+    @include bpk-breakpoint-small-mobile {
+      @include bpk-heading-2;
+    }
+  }
+
+  &__subheading {
+    @include bpk-body-default;
+
+    @include bpk-breakpoint-small-tablet {
+      @include bpk-subheading;
+    }
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-body-longform;
+    }
+
+    @include bpk-breakpoint-small-mobile {
+      @include bpk-body-default;
+    }
+  }
+
+  &__promo-content,
+  &__sponsor-content {
     display: flex;
     flex-direction: column;
 
-    @include breakpoint-landscape {
-      &--start {
-        align-items: start;
-        text-align: start;
-      }
-
-      &--center {
-        align-items: center;
-        text-align: center;
-      }
-
-      &--end {
-        align-items: start;
-        text-align: start;
-      }
-    }
-
-    @include breakpoint-landscape-desktop {
+    @include bpk-breakpoint-above-tablet {
       width: 22.5rem;
     }
 
-    @include breakpoint-landscape-tablet {
+    @include bpk-breakpoint-tablet {
       width: 20rem;
+    }
+
+    @include bpk-breakpoint-small-tablet {
+      width: initial;
+      align-items: initial;
+      text-align: initial;
+    }
+
+    &--start {
+      align-items: start;
+      text-align: start;
+    }
+
+    &--center {
+      align-items: center;
+      text-align: center;
+    }
+
+    &--end {
+      align-items: end;
+      text-align: end;
     }
   }
 
-  &::after {
-    display: none;
+  &__sponsor-content {
+    display: flex;
+    margin-bottom: bpk-spacing-xl();
+    flex-direction: column;
+
+    @include bpk-breakpoint-small-tablet {
+      margin-bottom: initial;
+    }
+  }
+
+  &__sponsor-label {
+    margin-bottom: bpk-spacing-sm();
+
+    @include bpk-label-1;
+
+    @include bpk-breakpoint-small-tablet {
+      margin-bottom: bpk-spacing-md();
+
+      @include bpk-heading-4;
+    }
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-heading-3;
+    }
+
+    @include bpk-breakpoint-small-mobile {
+      margin-bottom: bpk-spacing-sm();
+
+      @include bpk-label-1;
+    }
   }
 
   &__sponsor-logo {
@@ -249,11 +251,9 @@
   }
 
   &__cta {
-    @include breakpoint-landscape {
-      margin-top: bpk-spacing-xl();
-    }
+    margin-top: bpk-spacing-xl();
 
-    @include breakpoint-portrait {
+    @include bpk-breakpoint-small-tablet {
       display: none;
     }
   }
