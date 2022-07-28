@@ -144,7 +144,6 @@ class PopoverContainer extends Component<Props, State> {
 
     return (
       <div id="popover-container">
-        <BpkButton>I don&apos;t do anything</BpkButton>&nbsp;
         {typeof target === 'function' ? openButton : null}
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkPopover
