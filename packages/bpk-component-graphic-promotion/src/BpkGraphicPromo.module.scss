@@ -88,7 +88,7 @@
       justify-content: space-between;
       align-items: initial;
 
-      @include bpk-margin-leading(0, true);
+      @include bpk-margin-leading(0);
       @include fill-parent;
 
       &--inverted {
@@ -96,7 +96,7 @@
       }
 
       > * {
-        @include bpk-margin-leading(0, true);
+        @include bpk-margin-leading(0);
       }
     }
 
