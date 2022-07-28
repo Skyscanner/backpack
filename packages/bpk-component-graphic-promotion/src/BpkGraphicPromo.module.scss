@@ -247,7 +247,10 @@
   }
 
   &__sponsor-logo {
-    width: 9.25rem;
+    width: auto;
+    max-width: 9.25rem;
+    height: auto;
+    max-height: 3.75rem;
   }
 
   &__cta {

@@ -8,3 +8,6 @@
 
 `bpk-component-description-list:` </br>
  - Update components to the new typography system.
+
+`bpk-component-graphic-promotion`
+- Use a maximum height in the Graphic Promo sponsor logo.
