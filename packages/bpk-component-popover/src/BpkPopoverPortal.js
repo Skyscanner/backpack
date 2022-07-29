@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { createPopper, basePlacements } from '@popperjs/core';
+import { createPopper } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import focusStore from 'a11y-focus-store';
@@ -50,7 +50,7 @@ export const propTypes = {
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  placement: PropTypes.oneOf(basePlacements),
+  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
   portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   portalClassName: PropTypes.string,
   renderTarget: PropTypes.func,
