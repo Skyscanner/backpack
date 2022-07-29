@@ -17,7 +17,7 @@
     "bpk-animate-height": "^4.1.13",
     "bpk-component-icon": "^9.2.14",
     "bpk-component-text": "^7.0.7",
-    "bpk-mixins": "^31.1.1",
+    "bpk-mixins": "^31.1.6",
     "bpk-react-utils": "^6.0.1",
     "prop-types": "^15.7.2"
   },
@@ -25,7 +25,7 @@
     "react": "^16.3.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@skyscanner/bpk-foundations-web": "^8.0.0",
+    "@skyscanner/bpk-foundations-web": "^8.2.1",
     "bpk-component-checkbox": "^4.1.15"
   }
 }
