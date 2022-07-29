@@ -26,6 +26,8 @@ import {
   InvertedPortraitExample,
   MinimalisticExample,
   NonSponsoredExample,
+  NonSponsoredCenterAlignedExample,
+  NonSponsoredRightAlignedExample,
   NoStyleExample,
 } from './examples';
 
@@ -37,4 +39,6 @@ storiesOf('bpk-component-graphic-promotion', module)
   .add('Inverted Portrait Mode', InvertedPortraitExample)
   .add('Minimalistic', MinimalisticExample)
   .add('Non-Sponsored', NonSponsoredExample)
+  .add('Non-Sponsored Center Aligned', NonSponsoredCenterAlignedExample)
+  .add('Non-Sponsored Right Aligned', NonSponsoredRightAlignedExample)
   .add('Visual test', VisualTestExample);
