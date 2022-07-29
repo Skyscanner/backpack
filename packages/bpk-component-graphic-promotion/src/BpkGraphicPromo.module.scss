@@ -31,6 +31,42 @@
   height: 100%;
 }
 
+@mixin content-alignment {
+  &--start {
+    align-items: start;
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--end {
+    align-items: end;
+  }
+}
+
+@mixin text-alignment {
+  &--start {
+    align-items: start;
+    text-align: start;
+  }
+
+  &--center {
+    align-items: center;
+    text-align: center;
+  }
+
+  &--end {
+    align-items: start;
+    text-align: start;
+  }
+}
+
+@mixin reset-alignment {
+  align-items: initial;
+  text-align: initial;
+}
+
 .bpk-card {
   @include bpk-card;
 }
@@ -59,6 +95,8 @@
     flex-direction: column;
     justify-content: center;
 
+    @include content-alignment;
+
     @include bpk-breakpoint-above-tablet {
       height: 28.75rem;
 
@@ -86,8 +124,8 @@
     @include bpk-breakpoint-small-tablet {
       padding: bpk-spacing-xl();
       justify-content: space-between;
-      align-items: initial;
 
+      @include reset-alignment;
       @include bpk-margin-leading(0);
       @include fill-parent;
 
@@ -103,27 +141,19 @@
     @include bpk-breakpoint-small-mobile {
       padding: bpk-spacing-lg();
     }
-
-    &--start {
-      align-items: start;
-    }
-
-    &--center {
-      align-items: center;
-    }
-
-    &--end {
-      align-items: end;
-    }
   }
 
   &__tagline {
     margin-bottom: bpk-spacing-md();
 
-    @include bpk-label-1;
+    @include bpk-heading-5;
+
+    @include bpk-breakpoint-tablet {
+      @include bpk-label-1;
+    }
 
     @include bpk-breakpoint-small-tablet {
-      @include bpk-subheading;
+      @include bpk-heading-3;
     }
 
     @include bpk-breakpoint-small-mobile {
@@ -150,15 +180,9 @@
 
     @include bpk-breakpoint-small-tablet {
       margin-bottom: bpk-spacing-md();
-
-      @include bpk-heading-1;
     }
 
     @include bpk-breakpoint-mobile {
-      @include bpk-hero-5;
-    }
-
-    @include bpk-breakpoint-small-mobile {
       @include bpk-heading-2;
     }
   }
@@ -166,16 +190,16 @@
   &__subheading {
     @include bpk-body-default;
 
+    @include bpk-breakpoint-tablet {
+      @include bpk-heading-5;
+    }
+
     @include bpk-breakpoint-small-tablet {
-      @include bpk-subheading;
+      @include bpk-heading-3;
     }
 
     @include bpk-breakpoint-mobile {
-      @include bpk-body-longform;
-    }
-
-    @include bpk-breakpoint-small-mobile {
-      @include bpk-body-default;
+      @include bpk-heading-5;
     }
   }
 
@@ -183,6 +207,8 @@
   &__sponsor-content {
     display: flex;
     flex-direction: column;
+
+    @include text-alignment;
 
     @include bpk-breakpoint-above-tablet {
       width: 22.5rem;
@@ -194,23 +220,8 @@
 
     @include bpk-breakpoint-small-tablet {
       width: initial;
-      align-items: initial;
-      text-align: initial;
-    }
 
-    &--start {
-      align-items: start;
-      text-align: start;
-    }
-
-    &--center {
-      align-items: center;
-      text-align: center;
-    }
-
-    &--end {
-      align-items: start;
-      text-align: start;
+      @include reset-alignment;
     }
   }
 
