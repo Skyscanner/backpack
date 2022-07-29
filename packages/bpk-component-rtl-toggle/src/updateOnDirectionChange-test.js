@@ -17,8 +17,7 @@
  */
 
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 
 import updateOnDirectionChange from './updateOnDirectionChange';
 import { DIRECTION_CHANGE_EVENT, getHtmlElement } from './utils';
@@ -32,13 +31,16 @@ describe('BpkRtlToggle', () => {
   });
 
   it('should force an update when receiving a direction change event', () => {
-    const component = mount(<EnhancedComponent />);
-    const forceUpdateSpy = jest.fn();
+    render(<EnhancedComponent />);
 
-    component.instance().forceUpdate = forceUpdateSpy;
+    const forceUpdateSpy = jest.spyOn(
+      EnhancedComponent.prototype,
+      'forceUpdate',
+    );
     expect(forceUpdateSpy).not.toHaveBeenCalled();
 
-    getHtmlElement().dispatchEvent(new Event(DIRECTION_CHANGE_EVENT));
+    fireEvent(getHtmlElement(), new Event(DIRECTION_CHANGE_EVENT));
+
     expect(forceUpdateSpy).toHaveBeenCalled();
   });
 });

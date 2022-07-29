@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { createPopper, basePlacements } from '@popperjs/core';
+import { createPopper } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node, type Element } from 'react';
 import { Portal, cssModules } from 'bpk-react-utils';
@@ -66,7 +66,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     ariaLabel: PropTypes.string.isRequired,
     target: PropTypes.node.isRequired,
     children: PropTypes.node.isRequired,
-    placement: PropTypes.oneOf(basePlacements),
+    placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left', 'auto']),
     hideOnTouchDevices: PropTypes.bool,
     portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     portalClassName: PropTypes.string,

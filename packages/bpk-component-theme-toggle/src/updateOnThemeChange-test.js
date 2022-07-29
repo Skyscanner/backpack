@@ -18,8 +18,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 
 import updateOnThemeChange from './updateOnThemeChange';
 import { THEME_CHANGE_EVENT, getHtmlElement } from './utils';
@@ -39,17 +38,20 @@ describe('EnhancedComponent', () => {
   });
 
   it('should force an update when receiving a theme change event', () => {
-    const component = mount(
+    render(
       <EnhancedComponent>
         <p />
       </EnhancedComponent>,
     );
-    const forceUpdateSpy = jest.fn();
 
-    component.instance().forceUpdate = forceUpdateSpy;
+    const forceUpdateSpy = jest.spyOn(
+      EnhancedComponent.prototype,
+      'forceUpdate',
+    );
     expect(forceUpdateSpy).not.toHaveBeenCalled();
 
-    getHtmlElement().dispatchEvent(
+    fireEvent(
+      getHtmlElement(),
       new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme: null } }),
     );
 

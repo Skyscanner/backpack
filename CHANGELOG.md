@@ -1,3 +1,51 @@
+# 2022-07-29
+
+**Changed**
+
+`bpk-component-graphic-promotion`: `4.0.0` => `4.1.0` </br>
+  - Change the maximum width to `1224px` from `1280px`.
+
+**Fixed:**
+
+`bpk-component-popover`: `6.0.0` => `6.0.1` </br>
+`bpk-component-tooltip`: `7.0.2` => `7.0.3` </br>
+  - Fix `placement` PropType
+
+
+# 2022-07-28
+
+**Changed:**
+
+`bpk-component-calendar`: `11.1.19` => `11.2.0` </br>
+`bpk-component-scrollable-calendar`: `6.1.20` => `6.2.0` </br>
+ - Update components to the new typography system. This will cause a change in the font weight of dates.
+
+`bpk-component-description-list`: `3.1.12` => `3.2.0` </br>
+`bpk-component-datatable`: `4.1.13` => `4.2.0` </br>
+ - Update components to the new typography system.
+
+`bpk-component-graphic-promotion`: `3.1.2` => `4.0.0` </br>
+ - Use a maximum height in the Graphic Promo sponsor logo.
+
+**Added:**
+
+`bpk-component-graphic-promotion`: `3.1.2` => `4.0.0` </br>
+ - Added optional property `contentId`, to apply a HTML attribute `id` to the `div` containing the main content of the Graphic Promotion.
+
+**Breaking**
+
+`@skyscanner/backpack-web`: `6.1.0` => `7.0.0` <br />
+
+`bpk-component-graphic-promotion`: `3.1.2` => `4.0.0` </br>
+  - The component CSS was refactored to use the standard breakpoints from backpack.
+  - Additional changes requested by design:
+    - The `max-width` is `1280px`.
+    - The `height` in desktop landscape mode is `460px`.
+    - The `height` in tablet landscape mode is `360px`.
+    - The font style for the heading in small tablet portrait mode is `Bpk-Heading-1`.
+    - The font style for the heading in tablet landscape mode is `Bpk-Heading-1`.
+    - Portrait modes should change their height to maintain aspect ratio of 4/3 as the width changes.
+
 # 2022-07-20
 
 **Changed:**

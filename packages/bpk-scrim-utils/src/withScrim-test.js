@@ -18,7 +18,6 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
 import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
 
@@ -112,7 +111,7 @@ describe('BpkScrim', () => {
     });
 
     it('should mount correctly when is iPhone', () => {
-      mount(
+      render(
         <Component
           onClose={jest.fn()}
           getApplicationElement={jest.fn(() => ({ style: {} }))}
@@ -125,12 +124,14 @@ describe('BpkScrim', () => {
 
     it('should mount correctly when is not iPhone', () => {
       const mockSetAttribute = jest.fn();
-      mount(
+      const mockRemoveAttribute = jest.fn();
+      render(
         <Component
           onClose={jest.fn()}
           getApplicationElement={jest.fn(() => ({
             style: {},
             setAttribute: mockSetAttribute,
+            removeAttribute: mockRemoveAttribute,
           }))}
           isIphone={false}
         />,
@@ -151,14 +152,14 @@ describe('BpkScrim', () => {
     });
 
     it('should unmount correctly when is iPhone', () => {
-      const instance = mount(
+      const { unmount } = render(
         <Component
           onClose={jest.fn()}
           getApplicationElement={jest.fn(() => ({ style: {} }))}
           isIphone
         />,
       );
-      instance.unmount();
+      unmount();
 
       expect(restoreScroll).toHaveBeenCalled();
       expect(focusStore.restoreFocus).toHaveBeenCalled();
@@ -167,7 +168,7 @@ describe('BpkScrim', () => {
 
     it('should unmount correctly when is not iPhone', () => {
       const mockRemoveAttribute = jest.fn();
-      const instance = mount(
+      const { unmount } = render(
         <Component
           onClose={jest.fn()}
           getApplicationElement={jest.fn(() => ({
@@ -178,7 +179,7 @@ describe('BpkScrim', () => {
           isIphone={false}
         />,
       );
-      instance.unmount();
+      unmount();
 
       expect(unlockScroll).toHaveBeenCalled();
       expect(focusStore.storeFocus).toHaveBeenCalled();

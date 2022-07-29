@@ -36,7 +36,7 @@
 }
 
 .bpk-graphic-promo {
-  max-width: 80rem;
+  max-width: 76.5rem;
   margin-right: auto;
   margin-left: auto;
   background-color: $bpk-color-sky-blue;
@@ -247,7 +247,10 @@
   }
 
   &__sponsor-logo {
-    width: 9.25rem;
+    width: auto;
+    max-width: 9.25rem;
+    height: auto;
+    max-height: 3.75rem;
   }
 
   &__cta {
