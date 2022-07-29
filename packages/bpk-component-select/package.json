@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-select",
-  "version": "5.1.12",
+  "version": "5.1.13",
   "description": "Backpack select component.",
   "license": "Apache-2.0",
   "repository": {
@@ -15,11 +15,11 @@
   "gitHead": "5c156b97cb0ba5e75851d3c763334578714c895e",
   "dependencies": {
     "bpk-mixins": "^31.1.1",
-    "bpk-react-utils": "^6.0.0",
+    "bpk-react-utils": "^6.0.1",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^1.1.11"
+    "bpk-storybook-utils": "^1.1.12"
   },
   "peerDependencies": {
     "react": "^16.3.0 || ^17.0.0"

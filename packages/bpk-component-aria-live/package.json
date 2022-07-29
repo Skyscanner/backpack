@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-aria-live",
-  "version": "2.1.21",
+  "version": "2.1.22",
   "description": "Backpack aria-live component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,15 +14,15 @@
   },
   "dependencies": {
     "bpk-mixins": "^31.1.1",
-    "bpk-react-utils": "^6.0.0",
+    "bpk-react-utils": "^6.0.1",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-chip": "^5.2.18",
-    "bpk-component-code": "^3.1.12",
-    "bpk-component-fieldset": "^4.1.21",
-    "bpk-component-select": "^5.1.12",
-    "bpk-component-switch": "^2.1.13"
+    "bpk-component-chip": "^5.2.19",
+    "bpk-component-code": "^3.1.13",
+    "bpk-component-fieldset": "^4.1.22",
+    "bpk-component-select": "^5.1.13",
+    "bpk-component-switch": "^2.1.14"
   },
   "peerDependencies": {
     "react": "^16.3.0 || ^17.0.0"
