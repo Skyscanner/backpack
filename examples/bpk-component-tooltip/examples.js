@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React from 'react';
+import React, { useRef, forwardRef } from 'react';
 import {
   spacingSm,
   colorMonteverde,
@@ -41,139 +41,177 @@ const Heading = withDefaultProps(BpkText, {
   tagName: 'h4',
 });
 
-const DefaultExample = () => (
-  <div style={wrapperStyle}>
-    <BpkTooltip
-      ariaLabel="Montréal-Trudeau International Airport"
-      id="my-tooltip"
-      target={<Heading>YUL</Heading>}
-    >
-      Montréal-Trudeau International Airport
-    </BpkTooltip>
+const HeadingComponent = forwardRef((props: { children: Node }, ref) => (
+  <div ref={ref}>
+    <Heading>{props.children}</Heading>
   </div>
-);
+));
 
-const DarkExample = () => (
-  <div style={wrapperStyle}>
-    <BpkTooltip
-      ariaLabel="Edinburgh Airport"
-      type={TOOLTIP_TYPES.dark}
-      id="my-tooltip"
-      target={<Heading>EDI</Heading>}
-    >
-      Edinburgh Airport
-    </BpkTooltip>
-  </div>
-);
+const DefaultExample = () => {
+  const target = useRef(null);
 
-const SideExample = () => (
-  <div style={wrapperStyle}>
-    <BpkTooltip
-      ariaLabel="Julius Nyerere International Airport, Dar es Salaam"
-      id="my-tooltip"
-      target={<Heading>DAR</Heading>}
-      placement="right"
-    >
-      Julius Nyerere International Airport, Dar es Salaam
-    </BpkTooltip>
-  </div>
-);
-
-const NoPaddingExample = () => (
-  <div style={wrapperStyle}>
-    <BpkTooltip
-      ariaLabel="Singapore Changi Airport"
-      id="my-tooltip"
-      target={<Heading>SIN</Heading>}
-      padded={false}
-    >
-      <div
-        style={{
-          borderBottomWidth: '5px',
-          borderBottomColor: colorMonteverde,
-          borderBottomStyle: 'solid',
-          padding: spacingSm,
-        }}
+  return (
+    <div style={wrapperStyle}>
+      <BpkTooltip
+        ariaLabel="Montréal-Trudeau International Airport"
+        id="my-tooltip"
+        target={<HeadingComponent ref={target}>YUL</HeadingComponent>}
       >
-        Singapore Changi Airport
-      </div>
-    </BpkTooltip>
-  </div>
-);
+        Montréal-Trudeau International Airport
+      </BpkTooltip>
+    </div>
+  );
+};
 
-const LinkExample = () => (
-  <div style={wrapperStyle}>
-    <BpkTooltip
-      ariaLabel="We do hotels too!"
-      id="my-tooltip"
-      target={
-        <a
-          href="//skyscanner.net/hotels"
-          target="_blank"
-          rel="noopener noreferrer"
+const DarkExample = () => {
+  const target = useRef(null);
+
+  return (
+    <div style={wrapperStyle}>
+      <BpkTooltip
+        ariaLabel="Edinburgh Airport"
+        type={TOOLTIP_TYPES.dark}
+        id="my-tooltip"
+        target={<HeadingComponent ref={target}>EDI</HeadingComponent>}
+      >
+        Edinburgh Airport
+      </BpkTooltip>
+    </div>
+  );
+};
+
+const SideExample = () => {
+  const target = useRef(null);
+
+  return (
+    <div style={wrapperStyle}>
+      <BpkTooltip
+        ariaLabel="Julius Nyerere International Airport, Dar es Salaam"
+        id="my-tooltip"
+        target={<HeadingComponent ref={target}>DAR</HeadingComponent>}
+        placement="right"
+      >
+        Julius Nyerere International Airport, Dar es Salaam
+      </BpkTooltip>
+    </div>
+  );
+};
+
+const NoPaddingExample = () => {
+  const target = useRef(null);
+
+  return (
+    <div style={wrapperStyle}>
+      <BpkTooltip
+        ariaLabel="Singapore Changi Airport"
+        id="my-tooltip"
+        target={<HeadingComponent ref={target}>SIN</HeadingComponent>}
+        padded={false}
+      >
+        <div
+          style={{
+            borderBottomWidth: '5px',
+            borderBottomColor: colorMonteverde,
+            borderBottomStyle: 'solid',
+            padding: spacingSm,
+          }}
         >
-          Hotels
-        </a>
-      }
-    >
-      We do hotels too!
-    </BpkTooltip>
-  </div>
-);
+          Singapore Changi Airport
+        </div>
+      </BpkTooltip>
+    </div>
+  );
+};
 
-const PopperModifiersExample = () => (
-  <div style={wrapperStyle}>
-    <BpkTooltip
-      ariaLabel="Berlin Brandenburg Airport"
-      id="my-tooltip"
-      target={<Heading>BER</Heading>}
-      popperModifiers={[
-        {
-          name: 'flip',
-          options: { enabled: false },
-        },
-      ]}
-    >
-      Berlin Brandenburg Airport
-    </BpkTooltip>
-  </div>
-);
+const LinkExample = () => {
+  const target = useRef(null);
 
-const FocusExample = () => (
-  <div style={wrapperStyle}>
-    <BpkTooltip
-      ariaLabel="Should be focused on first"
-      id="my-tooltip"
-      target={<Heading>One</Heading>}
-    >
-      Should be focused on first
-    </BpkTooltip>
-    <BpkTooltip
-      ariaLabel="Should be focused on second"
-      id="my-tooltip"
-      target={<Heading>Two</Heading>}
-    >
-      Should be focused on second
-    </BpkTooltip>
-    <BpkTooltip
-      ariaLabel="Should be focused on third"
-      id="my-tooltip"
-      target={<Heading>Three</Heading>}
-    >
-      Should be focused on third
-    </BpkTooltip>
-    <button type="button" onClick={() => {}}>
-      Four
-    </button>
-    <BpkTooltip
-      ariaLabel="Should be focused on fifth"
-      id="my-tooltip"
-      target={<Heading>Five</Heading>}
-    >
-      Should be focused on fifth
-    </BpkTooltip>
-  </div>
-);
+  return (
+    <div style={wrapperStyle}>
+      <BpkTooltip
+        ariaLabel="We do hotels too!"
+        id="my-tooltip"
+        target={
+          <a
+            href="//skyscanner.net/hotels"
+            target="_blank"
+            rel="noopener noreferrer"
+            ref={target}
+          >
+            Hotels
+          </a>
+        }
+      >
+        We do hotels too!
+      </BpkTooltip>
+    </div>
+  );
+};
+
+const PopperModifiersExample = () => {
+  const target = useRef(null);
+
+  return (
+    <div style={wrapperStyle}>
+      <BpkTooltip
+        ariaLabel="Berlin Brandenburg Airport"
+        id="my-tooltip"
+        target={<HeadingComponent ref={target}>BER</HeadingComponent>}
+        popperModifiers={[
+          {
+            name: 'flip',
+            options: { enabled: false },
+          },
+        ]}
+      >
+        Berlin Brandenburg Airport
+      </BpkTooltip>
+    </div>
+  );
+};
+
+const FocusExample = () => {
+  const targetRef1 = useRef(null);
+  const targetRef2 = useRef(null);
+  const targetRef3 = useRef(null);
+  const targetRef5 = useRef(null);
+
+  return (
+    <div style={wrapperStyle}>
+      <BpkTooltip
+        ariaLabel="Should be focused on first"
+        id="my-tooltip"
+        target={<HeadingComponent ref={targetRef1}>One</HeadingComponent>}
+      >
+        Should be focused on first
+      </BpkTooltip>
+      <BpkTooltip
+        ariaLabel="Should be focused on second"
+        id="my-tooltip"
+        target={<HeadingComponent ref={targetRef2}>Two</HeadingComponent>}
+      >
+        Should be focused on second
+      </BpkTooltip>
+      <BpkTooltip
+        ariaLabel="Should be focused on third"
+        id="my-tooltip"
+        target={<HeadingComponent ref={targetRef3}>Three</HeadingComponent>}
+      >
+        Should be focused on third
+      </BpkTooltip>
+      <button type="button" onClick={() => {}}>
+        Four
+      </button>
+      <BpkTooltip
+        ariaLabel="Should be focused on fifth"
+        id="my-tooltip"
+        target={<HeadingComponent ref={targetRef5}>Five</HeadingComponent>}
+      >
+        Should be focused on fifth
+      </BpkTooltip>
+    </div>
+  );
+};
 
 export {
   DefaultExample,

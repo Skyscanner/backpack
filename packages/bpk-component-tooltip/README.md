@@ -16,10 +16,17 @@ import BpkText from 'bpk-component-text';
 import BpkTooltip from 'bpk-component-tooltip';
 
 const App = () => (
+  const targetRef = useRef(null);
+  const target = (
+    <div ref={targetRef} className={'my-tooltip-target'}>
+      <BpkText textStyle="lg">LHR</BpkText>
+    </div>
+  );
+
   <BpkTooltip
     ariaLabel="London Heathrow"
     id="my-tooltip"
-    target={<BpkText textStyle="lg">LHR</BpkText>}
+    target={target}
   >
     London Heathrow
   </BpkTooltip>
@@ -54,3 +61,7 @@ The label will be used on the `target` element, so any existing `aria-label` att
 #### `popperModifiers`
 
 Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the tooltip to overflow the viewport etc.
+
+#### target
+
+`target` should be a DOM element with a `ref` attached to it.

@@ -49,10 +49,12 @@ describe('BpkPopoverPortal', () => {
   afterEach(() => jest.clearAllMocks());
 
   it('should render correctly', () => {
+    const ref = React.createRef();
+
     const { asFragment } = render(
       <BpkPopoverPortal
         id="my-popover"
-        target={<div>target</div>}
+        target={<div ref={ref}>target</div>}
         isOpen={false}
         onClose={() => null}
         label="My popover"
@@ -89,10 +91,12 @@ describe('BpkPopoverPortal', () => {
     // are passed to the <Portal> component.
 
     it('should render correctly with portalClassName added to portal component', () => {
+      const ref = React.createRef();
+
       render(
         <BpkPopoverPortal
           id="my-popover"
-          target={<div>target</div>}
+          target={<div ref={ref}>target</div>}
           isOpen
           onClose={() => null}
           label="My popover"
@@ -112,10 +116,12 @@ describe('BpkPopoverPortal', () => {
 
     it('should render correctly with portalStyle added to portal component', () => {
       const customStyle: ?Object = { color: 'red' }; // eslint-disable-line  backpack/use-tokens
+      const ref = React.createRef();
+
       render(
         <BpkPopoverPortal
           id="my-popover"
-          target={<div>target</div>}
+          target={<div ref={ref}>target</div>}
           isOpen
           onClose={() => null}
           label="My popover"
@@ -172,11 +178,12 @@ describe('BpkPopoverPortal', () => {
 
   it('should reposition when props are updated', () => {
     const positionSpy = jest.spyOn(BpkPopoverPortal.prototype, 'position');
+    const ref = React.createRef();
 
     const { rerender } = render(
       <BpkPopoverPortal
         id="my-popover"
-        target={<div>target</div>}
+        target={<div ref={ref}>target</div>}
         isOpen={false}
         onClose={() => null}
         label="My popover"
@@ -189,7 +196,7 @@ describe('BpkPopoverPortal', () => {
     rerender(
       <BpkPopoverPortal
         id="my-popover"
-        target={<div>target</div>}
+        target={<div ref={ref}>target</div>}
         isOpen
         onClose={() => null}
         label="My popover"
@@ -204,7 +211,7 @@ describe('BpkPopoverPortal', () => {
     rerender(
       <BpkPopoverPortal
         id="my-popover"
-        target={<div>another target</div>}
+        target={<div ref={ref}>another target</div>}
         isOpen
         onClose={() => null}
         label="My popover"
@@ -218,11 +225,12 @@ describe('BpkPopoverPortal', () => {
 
   it('should not reposition if not open', () => {
     const positionSpy = jest.spyOn(BpkPopoverPortal.prototype, 'position');
+    const ref = React.createRef();
 
     const { rerender } = render(
       <BpkPopoverPortal
         id="my-popover"
-        target={<div>target</div>}
+        target={<div ref={ref}>target</div>}
         isOpen
         onClose={() => null}
         label="My popover"
@@ -237,7 +245,7 @@ describe('BpkPopoverPortal', () => {
     rerender(
       <BpkPopoverPortal
         id="my-popover"
-        target={<div>target</div>}
+        target={<div ref={ref}>target</div>}
         isOpen={false}
         onClose={() => null}
         label="My popover"
@@ -258,10 +266,12 @@ describe('BpkPopoverPortal', () => {
       destroy: jest.fn(),
     });
 
+    const ref = React.createRef();
+
     const { rerender } = render(
       <BpkPopoverPortal
         id="my-popover"
-        target={<div>target</div>}
+        target={<div ref={ref}>target</div>}
         isOpen
         onClose={() => null}
         label="My popover"
@@ -276,7 +286,7 @@ describe('BpkPopoverPortal', () => {
     rerender(
       <BpkPopoverPortal
         id="my-popover"
-        target={<div>another target</div>}
+        target={<div ref={ref}>another target</div>}
         isOpen
         onClose={() => null}
         label="My popover"

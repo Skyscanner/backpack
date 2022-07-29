@@ -290,6 +290,7 @@ class MultipleInputDatepicker extends Component {
   constructor(props) {
     super(props);
 
+    this.ref = React.createRef();
     this.state = {
       selectionConfiguration: {
         type: CALENDAR_SELECTION_TYPE.range,
@@ -320,7 +321,7 @@ class MultipleInputDatepicker extends Component {
     };
 
     const inputs = (
-      <div>
+      <div ref={this.ref}>
         <Input
           id="departure-date"
           name="departure-date"

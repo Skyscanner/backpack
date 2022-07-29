@@ -121,6 +121,10 @@ const CustomPicker = () => (
 
 ## Props
 
+#### inputComponent
+
+`inputComponent` prop is not required. However, if you do pass an `inputComponent` it should be a DOM node with a `ref` attached to it.
+
 For more information on some these props, check the BpkCalendar documentation.
 
 > **Note:** Because this component uses a modal on mobile viewports, you need to let it know what

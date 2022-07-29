@@ -57,6 +57,7 @@ class BpkDatepicker extends Component {
     this.state = {
       isOpen: props.isOpen,
     };
+    this.inputRef = React.createRef();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -220,20 +221,24 @@ class BpkDatepicker extends Component {
     delete rest.isOpen;
 
     const input = inputComponent || (
-      <Input
-        id={id}
-        name={`${id}_input`}
-        value={this.getValue(selectionConfiguration, formatDate)}
+      <div
         className={getClassName('bpk-datepicker__input')}
-        aria-live="assertive"
-        aria-atomic="true"
-        aria-label={this.getLabel(selectionConfiguration, formatDateFull)}
-        onChange={() => null}
-        onOpen={this.onOpen}
-        isOpen={this.state.isOpen}
-        valid={valid}
-        {...inputProps}
-      />
+        ref={this.inputRef}
+      >
+        <Input
+          id={id}
+          name={`${id}_input`}
+          value={this.getValue(selectionConfiguration, formatDate)}
+          aria-live="assertive"
+          aria-atomic="true"
+          aria-label={this.getLabel(selectionConfiguration, formatDateFull)}
+          onChange={() => null}
+          onOpen={this.onOpen}
+          isOpen={this.state.isOpen}
+          valid={valid}
+          {...inputProps}
+        />
+      </div>
     );
 
     const calendarProps = {

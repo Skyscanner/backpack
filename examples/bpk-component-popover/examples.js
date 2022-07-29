@@ -74,6 +74,7 @@ class PopoverContainer extends Component<Props, State> {
   constructor() {
     super();
 
+    this.ref = React.createRef();
     this.state = {
       isOpen: false,
       changedTarget: null,
@@ -109,17 +110,23 @@ class PopoverContainer extends Component<Props, State> {
       this.props;
     let target = null;
 
-    const openButton = <BpkButton onClick={this.openPopover}>Open</BpkButton>;
+    const openButton = (
+      <div className={getClassName('bpk-popover-target')} ref={this.ref}>
+        <BpkButton onClick={this.openPopover}>Open</BpkButton>
+      </div>
+    );
 
     const inputField = (
-      <EnhancedInput
-        id="input"
-        name="input"
-        value="John Smith"
-        isOpen={this.state.isOpen}
-        onOpen={this.openPopover}
-        onChange={() => null}
-      />
+      <div className={getClassName('bpk-popover-target')} ref={this.ref}>
+        <EnhancedInput
+          id="input"
+          name="input"
+          value="John Smith"
+          isOpen={this.state.isOpen}
+          onOpen={this.openPopover}
+          onChange={() => null}
+        />
+      </div>
     );
 
     if (targetFunction != null) {
