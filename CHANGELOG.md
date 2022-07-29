@@ -1,3 +1,17 @@
+# 2022-07-29
+
+**Changed**
+
+`bpk-component-graphic-promotion`: `4.0.0` => `4.1.0` </br>
+  - Change the maximum width to `1224px` from `1280px`.
+
+**Fixed:**
+
+`bpk-component-popover`: `6.0.0` => `6.0.1` </br>
+`bpk-component-tooltip`: `7.0.2` => `7.0.3` </br>
+  - Fix `placement` PropType
+
+
 # 2022-07-28
 
 **Changed:**
