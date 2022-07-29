@@ -15,7 +15,7 @@
   "dependencies": {
     "bpk-component-button": "^6.2.8",
     "bpk-component-text": "^7.0.7",
-    "bpk-mixins": "^31.1.1",
+    "bpk-mixins": "^31.1.6",
     "bpk-react-utils": "^6.0.1",
     "prop-types": "^15.5.8"
   },
