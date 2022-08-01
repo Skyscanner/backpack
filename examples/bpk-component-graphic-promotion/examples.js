@@ -119,6 +119,18 @@ const MinimalisticExample = () => (
   />
 );
 
+const MinimalisticRightAlignedExample = () => (
+  <BpkGraphicPromo
+    headline={headline}
+    subheading={subheading}
+    buttonText={buttonText}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
+    onClick={onClick}
+    textAlign={TEXT_ALIGN.end}
+  />
+);
+
 const NoStyleExample = () => (
   <BpkGraphicPromo
     headline={headline}
@@ -142,6 +154,32 @@ const NonSponsoredExample = () => (
   />
 );
 
+const NonSponsoredCenterAlignedExample = () => (
+  <BpkGraphicPromo
+    tagline={tagline}
+    headline={headline}
+    subheading={subheading}
+    buttonText={buttonText}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
+    onClick={onClick}
+    textAlign={TEXT_ALIGN.center}
+  />
+);
+
+const NonSponsoredRightAlignedExample = () => (
+  <BpkGraphicPromo
+    tagline={tagline}
+    headline={headline}
+    subheading={subheading}
+    buttonText={buttonText}
+    className={getClassName(STYLES.graphicPromo)}
+    style={style}
+    onClick={onClick}
+    textAlign={TEXT_ALIGN.end}
+  />
+);
+
 const VisualTestExample = () => (
   <>
     <BpkGraphicPromo
@@ -154,7 +192,6 @@ const VisualTestExample = () => (
       className={getClassName(STYLES.graphicPromo)}
       textAlign={TEXT_ALIGN.start}
     />
-
     <BpkGraphicPromo
       tagline={tagline}
       headline={headline}
@@ -165,7 +202,6 @@ const VisualTestExample = () => (
       className={getClassName(STYLES.graphicPromo)}
       textAlign={TEXT_ALIGN.center}
     />
-
     <BpkGraphicPromo
       tagline={tagline}
       headline={headline}
@@ -176,7 +212,6 @@ const VisualTestExample = () => (
       className={getClassName(STYLES.graphicPromo)}
       textAlign={TEXT_ALIGN.end}
     />
-
     <BpkGraphicPromo
       tagline={tagline}
       headline={headline}
@@ -188,7 +223,6 @@ const VisualTestExample = () => (
       textAlign={TEXT_ALIGN.start}
       invertVertically
     />
-
     <BpkGraphicPromo
       headline={headline}
       sponsor={sponsor}
@@ -197,7 +231,14 @@ const VisualTestExample = () => (
       onClick={onClick}
       textAlign={TEXT_ALIGN.start}
     />
-
+    <BpkGraphicPromo
+      headline={headline}
+      subheading={subheading}
+      buttonText={buttonText}
+      className={getClassName(STYLES.graphicPromo)}
+      onClick={onClick}
+      textAlign={TEXT_ALIGN.end}
+    />
     <BpkGraphicPromo
       tagline={tagline}
       headline={headline}
@@ -206,6 +247,24 @@ const VisualTestExample = () => (
       className={getClassName(STYLES.graphicPromo)}
       onClick={onClick}
       textAlign={TEXT_ALIGN.start}
+    />
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      buttonText={buttonText}
+      className={getClassName(STYLES.graphicPromo)}
+      onClick={onClick}
+      textAlign={TEXT_ALIGN.center}
+    />
+    <BpkGraphicPromo
+      tagline={tagline}
+      headline={headline}
+      subheading={subheading}
+      buttonText={buttonText}
+      className={getClassName(STYLES.graphicPromo)}
+      onClick={onClick}
+      textAlign={TEXT_ALIGN.end}
     />
   </>
 );
@@ -216,7 +275,10 @@ export {
   RightAlignedExample,
   InvertedPortraitExample,
   MinimalisticExample,
+  MinimalisticRightAlignedExample,
   NonSponsoredExample,
+  NonSponsoredCenterAlignedExample,
+  NonSponsoredRightAlignedExample,
   NoStyleExample,
   VisualTestExample,
 };
