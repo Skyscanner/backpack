@@ -63,8 +63,8 @@
 }
 
 @mixin reset-alignment {
-  align-items: initial;
-  text-align: initial;
+  align-items: start;
+  text-align: start;
 }
 
 .bpk-card {
@@ -227,7 +227,7 @@
 
   &__sponsor-content {
     display: flex;
-    margin-bottom: bpk-spacing-xl();
+    margin-bottom: bpk-spacing-base();
     flex-direction: column;
 
     @include bpk-breakpoint-small-tablet {
@@ -255,8 +255,6 @@
 
   &__sponsor-logo {
     width: auto;
-    max-width: 9.25rem;
-    height: auto;
     max-height: 3.75rem;
   }
 
