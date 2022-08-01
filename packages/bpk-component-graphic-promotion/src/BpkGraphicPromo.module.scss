@@ -153,7 +153,7 @@
     }
 
     @include bpk-breakpoint-small-tablet {
-      @include bpk-heading-3;
+      @include bpk-subheading;
     }
 
     @include bpk-breakpoint-small-mobile {
@@ -243,10 +243,6 @@
     @include bpk-breakpoint-small-tablet {
       margin-bottom: bpk-spacing-md();
 
-      @include bpk-heading-4;
-    }
-
-    @include bpk-breakpoint-mobile {
       @include bpk-heading-3;
     }
 
