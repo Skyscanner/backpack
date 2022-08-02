@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import React from 'react';
-import { mount } from 'enzyme';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -27,10 +26,15 @@ jest.mock('@popperjs/core', () => {
   const originalModule = jest.requireActual('@popperjs/core');
   return {
     ...originalModule,
-    createPopper: jest.fn(() => ({
-      update: jest.fn(),
-      destroy: jest.fn(),
-    })),
+    createPopper: jest
+      .fn()
+      .mockReturnValue({
+        update: jest.fn(),
+        destroy: jest.fn(),
+      })
+      .mockImplementation((target, popover, options) =>
+        options.onFirstUpdate(),
+      ),
   };
 });
 jest.mock('a11y-focus-store', () => ({
@@ -138,18 +142,18 @@ describe('BpkPopoverPortal', () => {
     });
   });
 
-  // TODO: Skipping test for now due to an issue with mocking focusStore and keyboardFocusScope
-  // eslint-disable-next-line jest/no-disabled-tests
-  it.skip('should trap and restore focus', () => {
+  it('should trap and restore focus', () => {
     const focusStore = require('a11y-focus-store'); // eslint-disable-line global-require
     const keyboardFocusScope = require('./keyboardFocusScope').default; // eslint-disable-line global-require
     keyboardFocusScope.scopeFocus = jest.fn();
     keyboardFocusScope.unscopeFocus = jest.fn();
 
-    const portal = mount(
+    const ref = React.createRef();
+
+    const { rerender } = render(
       <BpkPopoverPortal
         id="my-popover"
-        target={<div>target</div>}
+        target={<div ref={ref}>target</div>}
         isOpen={false}
         onClose={() => null}
         label="My popover"
@@ -159,18 +163,39 @@ describe('BpkPopoverPortal', () => {
       </BpkPopoverPortal>,
     );
 
-    expect(portal.instance().popper).toBeNull();
     expect(focusStore.storeFocus).not.toHaveBeenCalled();
     expect(keyboardFocusScope.scopeFocus).not.toHaveBeenCalled();
     expect(focusStore.restoreFocus).not.toHaveBeenCalled();
     expect(keyboardFocusScope.unscopeFocus).not.toHaveBeenCalled();
 
-    portal.setProps({ isOpen: true }).update();
+    rerender(
+      <BpkPopoverPortal
+        id="my-popover"
+        target={<div ref={ref}>target</div>}
+        isOpen
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    );
 
     expect(focusStore.storeFocus).toHaveBeenCalled();
     expect(keyboardFocusScope.scopeFocus).toHaveBeenCalled();
 
-    portal.setProps({ isOpen: false }).update();
+    rerender(
+      <BpkPopoverPortal
+        id="my-popover"
+        target={<div ref={ref}>target</div>}
+        isOpen={false}
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    );
 
     expect(focusStore.restoreFocus).toHaveBeenCalled();
     expect(keyboardFocusScope.unscopeFocus).toHaveBeenCalled();
