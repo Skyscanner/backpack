@@ -1,3 +1,22 @@
+# 2022-08-02
+
+**Changed**
+
+`bpk-component-graphic-promotion: 4.1.1 => 4.1.2`
+
+- Fix the alignment for right aligned graphic promos.
+- Fix some mismatched fonts to reflect designs.
+- Ensure that the logo is never stretched.
+
+**Patched:**
+
+- Bumped the following dependencies to the latest version
+  - `@skyscanner/bpk-foundations-web`
+  - `@skyscanner/bpk-svgs`
+  - `bpk-mixins`
+  - `bpk-stylesheets`
+
+
 # 2022-07-29
 
 **Breaking:**
