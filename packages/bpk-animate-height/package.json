@@ -20,7 +20,7 @@
     "react": "^16.3.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@skyscanner/bpk-foundations-web": "^8.2.1",
+    "@skyscanner/bpk-foundations-web": "^8.3.0",
     "bpk-component-button": "^6.2.9"
   }
 }
