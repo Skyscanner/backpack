@@ -546,7 +546,6 @@ seeMoreAfter
 altText
 src
 imageStyle
-withNavigationStackState
 arrowClassName
 touchend
 keydown
