@@ -711,6 +711,7 @@ bpk-component-map
 bpk-component-mobile-scroll-container
 bpk-component-modal
 bpk-component-navigation-bar
+bpk-component-navigation-stack
 bpk-component-nudger
 bpk-component-overlay
 bpk-component-pagination

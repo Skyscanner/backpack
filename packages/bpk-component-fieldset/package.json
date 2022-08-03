@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-fieldset",
-  "version": "4.1.22",
+  "version": "4.1.23",
   "description": "Backpack fieldset component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "4e4ec9add28e1db54d6a38a10c331bbd163f2926",
   "dependencies": {
-    "bpk-component-form-validation": "^4.2.19",
-    "bpk-component-label": "^5.1.13",
+    "bpk-component-form-validation": "^4.2.20",
+    "bpk-component-label": "^5.1.14",
     "bpk-mixins": "^31.1.6",
     "bpk-react-utils": "^6.0.1",
     "prop-types": "^15.7.2"
@@ -24,13 +24,13 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "bpk-component-autosuggest": "^6.1.19",
-    "bpk-component-button": "^6.2.8",
-    "bpk-component-calendar": "^11.2.2",
-    "bpk-component-checkbox": "^4.1.15",
-    "bpk-component-datepicker": "^17.0.0",
-    "bpk-component-input": "^6.1.19",
-    "bpk-component-select": "^5.1.13",
-    "bpk-component-textarea": "^4.2.13"
+    "bpk-component-autosuggest": "^6.1.20",
+    "bpk-component-button": "^6.2.9",
+    "bpk-component-calendar": "^11.2.3",
+    "bpk-component-checkbox": "^4.1.16",
+    "bpk-component-datepicker": "^17.0.1",
+    "bpk-component-input": "^6.1.20",
+    "bpk-component-select": "^5.1.14",
+    "bpk-component-textarea": "^4.2.14"
   }
 }

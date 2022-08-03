@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-progress",
-  "version": "3.1.13",
+  "version": "3.1.14",
   "description": "Backpack progress bar component.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,7 +24,7 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^6.2.8",
-    "bpk-storybook-utils": "^1.1.12"
+    "bpk-component-button": "^6.2.9",
+    "bpk-storybook-utils": "^1.1.13"
   }
 }

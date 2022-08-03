@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-horizontal-nav",
-  "version": "5.1.15",
+  "version": "5.1.16",
   "description": "Backpack horizontal nav component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
-    "bpk-component-mobile-scroll-container": "^3.1.13",
+    "bpk-component-mobile-scroll-container": "^3.1.14",
     "bpk-mixins": "^31.1.6",
     "bpk-react-utils": "^6.0.1",
     "prop-types": "^15.7.2"
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^8.2.1",
-    "bpk-component-text": "^7.0.7",
-    "bpk-storybook-utils": "^1.1.12"
+    "bpk-component-text": "^7.0.8",
+    "bpk-storybook-utils": "^1.1.13"
   }
 }
