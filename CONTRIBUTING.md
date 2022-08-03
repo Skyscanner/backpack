@@ -125,7 +125,7 @@ Use `npm run create-component` to create a new skeleton React component. Once th
 
 We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
 
-Our current supported React version is 16.8.3, please be mindful when using React features that may not yet be supported.
+Our current supported React version is 17.0.2, please be mindful when using React features that may not yet be supported.
 
 When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
 ### Documentation
