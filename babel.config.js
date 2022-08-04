@@ -42,8 +42,41 @@ module.exports = {
   plugins: [
     '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-private-methods',
   ],
   env: {
+    dev: {
+      plugins: [
+        [
+          'module-resolver',
+          {
+            root: ['./packages'],
+            alias: {
+              '^@skyscanner/bpk-svgs/dist/js/(.+)': (stats) =>
+                `@skyscanner/bpk-svgs/dist/svgs/${stats[1]}.svg`,
+              'react-responsive': 'react-responsive/dist/react-responsive',
+            },
+          },
+        ],
+        [
+          'css-modules-transform',
+          {
+            extractCss: './dist/index.css',
+          },
+        ],
+        'inline-react-svg',
+      ],
+      ignore: [
+        (fileName) =>
+          !!(
+            fileName.includes('-test') ||
+            fileName.includes('-Test') ||
+            fileName.includes('dist') ||
+            fileName.includes('dist-storybook') ||
+            /\/node_modules\//.test(fileName)
+          ),
+      ],
+    },
     test: {
       // Prevent errors from require.context not existing when running Storyshots.
       plugins: ['require-context-hook'],
