@@ -1,4 +1,5 @@
 **Breaking:**
+
 - Deleted the following deprecated components:
   - `bpk-component-navigation-stack`
   - `PortalV1` (in `bpk-react-utils`)
@@ -9,3 +10,6 @@
 
 - bpk-component-badge:
   - Updated Badge styles to use `Caption` instead of bold.
+
+- bpk-component-breakpoint:
+  - Updated `react-responsive` dependency to 8.2.0. This requires `React` 16.8.0 or higher.
