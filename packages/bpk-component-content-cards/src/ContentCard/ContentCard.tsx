@@ -31,11 +31,7 @@ const ContentCard = ({ card, layout }: Props) => (
     target="_blank"
     rel="noreferrer"
   >
-    <div
-      className={getClassName(
-        'bpk-content-cards__cardHorizontal__imageAspectRatio',
-      )}
-    >
+    <div className={getClassName('bpk-content-cards__imageAspectRatio')}>
       <img
         className={getClassName('bpk-content-cards__image')}
         alt=""
