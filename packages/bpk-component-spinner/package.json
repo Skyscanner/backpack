@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-spinner",
-  "version": "5.1.14",
+  "version": "6.0.0",
   "description": "Backpack spinner components.",
   "license": "Apache-2.0",
   "repository": {
@@ -16,7 +16,7 @@
   "dependencies": {
     "@skyscanner/bpk-svgs": "^14.3.4",
     "bpk-mixins": "^31.2.0",
-    "bpk-react-utils": "^6.0.1",
+    "bpk-react-utils": "^7.0.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {

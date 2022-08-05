@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-datatable",
-  "version": "4.2.2",
+  "version": "5.0.0",
   "description": "Backpack datatable component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,9 +14,9 @@
   },
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
-    "bpk-component-icon": "^9.2.15",
+    "bpk-component-icon": "^10.0.0",
     "bpk-mixins": "^31.2.0",
-    "bpk-react-utils": "^6.0.1",
+    "bpk-react-utils": "^7.0.0",
     "lodash": "^4.17.20",
     "prop-types": "^15.7.2",
     "react-virtualized": "^9.22.3"

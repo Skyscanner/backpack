@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-floating-notification",
-  "version": "1.2.3",
+  "version": "2.0.0",
   "description": "Backpack floating-notification component.",
   "license": "Apache-2.0",
   "repository": {
@@ -13,11 +13,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-component-aria-live": "^2.1.23",
-    "bpk-component-button": "^6.2.9",
-    "bpk-component-text": "^7.0.8",
+    "bpk-component-aria-live": "^3.0.0",
+    "bpk-component-button": "^7.0.0",
+    "bpk-component-text": "^8.0.0",
     "bpk-mixins": "^31.2.0",
-    "bpk-react-utils": "^6.0.1",
+    "bpk-react-utils": "^7.0.0",
     "prop-types": "^15.5.8"
   },
   "peerDependencies": {
