@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import BpkText from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './ContentCard.module.scss';
@@ -22,16 +21,16 @@ type Props = {
 const ContentCard = ({ card, layout }: Props) => (
   <a
     className={[
-      getClassName('bpk-content-cards__cardLink'),
+      getClassName('bpk-content-cards__card-link'),
       layout === 'HORIZONTAL'
-        ? getClassName('bpk-content-cards__cardHorizontal')
-        : getClassName('bpk-content-cards__cardVertical'),
+        ? getClassName('bpk-content-cards__card-horizontal')
+        : getClassName('bpk-content-cards__card-vertical'),
     ].join(' ')}
     href={card.ctaLink}
     target="_blank"
     rel="noreferrer"
   >
-    <div className={getClassName('bpk-content-cards__imageAspectRatio')}>
+    <div className={getClassName('bpk-content-cards__image-aspect-ratio')}>
       <img
         className={getClassName('bpk-content-cards__image')}
         alt=""

@@ -23,15 +23,13 @@
 $bpk-spacing-v2: true;
 
 .bpk-content-card {
-  &__headerText {
+  &__header-text {
     margin-bottom: bpk-spacing-base();
-    font-size: $bpk-h-2-font-size;
-    font-weight: $bpk-font-weight-bold;
-    line-height: $bpk-line-height-xxl;
+
+    @include bpk-heading-2;
 
     @include bpk-breakpoint-mobile {
-      font-size: $bpk-font-size-xl;
-      line-height: $bpk-line-height-xl;
+      @include bpk-heading-3;
     }
   }
 

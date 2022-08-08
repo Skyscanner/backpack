@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import React from 'react';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import BpkText from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
 
 import ContentCard from './ContentCard';
@@ -45,7 +45,7 @@ const BpkContentCards = ({ cards, headerText }: Props) => {
     <div>
       <BpkText
         tagName="h2"
-        className={getClassName('bpk-content-card__headerText')}
+        className={getClassName('bpk-content-card__header-text')}
       >
         {headerText}
       </BpkText>
