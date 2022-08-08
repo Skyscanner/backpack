@@ -20,5 +20,8 @@
   },
   "peerDependencies": {
     "react": "^16.3.0 || ^17.0.0"
+  },
+  "devDependencies": {
+    "bpk-component-text": "^8.0.0"
   }
 }
