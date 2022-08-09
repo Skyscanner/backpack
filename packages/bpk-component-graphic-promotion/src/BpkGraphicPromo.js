@@ -130,7 +130,11 @@ const BpkGraphicPromo = (props: Props) => {
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
     >
-      <div className={containerClasses} aria-hidden>
+      <div
+        id={`${contentId}__content`}
+        className={containerClasses}
+        aria-hidden
+      >
         <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
           {sponsor && (
             <>
