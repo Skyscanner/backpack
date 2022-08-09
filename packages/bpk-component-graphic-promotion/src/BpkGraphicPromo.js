@@ -121,6 +121,7 @@ const BpkGraphicPromo = (props: Props) => {
     // clicks and key presses (Enter/Space) for the whole component, as described here:
     // https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
     <div
+      id={contentId}
       className={cardClasses}
       style={style}
       role="link"
@@ -129,7 +130,7 @@ const BpkGraphicPromo = (props: Props) => {
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
     >
-      <div id={contentId} className={containerClasses} aria-hidden>
+      <div className={containerClasses} aria-hidden>
         <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
           {sponsor && (
             <>
