@@ -6,6 +6,10 @@
 - Fix some mismatched fonts to reflect designs.
 - Ensure that the logo is never stretched.
 
+`bpk-component-content-cards`
+
+- Added.
+
 **Patched:**
 
 - Bumped the following dependencies to the latest version

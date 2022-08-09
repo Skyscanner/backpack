@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-content-cards",
-  "version": "1.1.13",
+  "version": "0.0.1",
   "description": "Backpack content-cards component.",
   "license": "Apache-2.0",
   "private": true,
@@ -21,6 +21,7 @@
     "react": "^16.3.0 || ^17.0.0"
   },
   "devDependencies": {
+    "bpk-component-image": "^6.0.0",
     "bpk-component-text": "^8.0.0",
     "bpk-react-utils": "^7.0.0"
   }

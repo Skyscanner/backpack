@@ -21,7 +21,7 @@ import React from 'react';
 import BpkText from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
 
-import ContentCard from './ContentCard';
+import BpkContentCard from './BpkContentCard';
 import STYLES from './BpkContentCards.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -30,6 +30,7 @@ type Props = {
   headerText: string;
   cards: Array<{
     imageLink?: string;
+    imageAlt?: string;
     headline?: string;
     description?: string;
     ctaLink?: string;
@@ -49,13 +50,15 @@ const BpkContentCards = ({ cards, headerText }: Props) => {
       >
         {headerText}
       </BpkText>
-      <div className={getClassName('bpk-content-card__layout')}>
+      <div role="list" className={getClassName('bpk-content-card__layout')}>
         {cards.map((card) => (
-          <ContentCard
-            key={card.imageLink}
-            card={card}
-            layout={cards.length === 1 ? 'HORIZONTAL' : 'VERTICAL'}
-          />
+          <div role="listitem">
+            <BpkContentCard
+              key={card.imageLink}
+              card={card}
+              layout={cards.length === 1 ? 'HORIZONTAL' : 'VERTICAL'}
+            />
+          </div>
         ))}
       </div>
     </div>

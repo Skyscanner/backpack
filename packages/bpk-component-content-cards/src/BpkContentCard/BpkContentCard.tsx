@@ -1,8 +1,9 @@
 import React from 'react';
 import BpkText from 'bpk-component-text';
+import BpkImage from 'bpk-component-image';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './ContentCard.module.scss';
+import STYLES from './BpkContentCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -11,6 +12,7 @@ type CardLayout = 'HORIZONTAL' | 'VERTICAL';
 type Props = {
   card: {
     imageLink?: string;
+    imageAlt?: string;
     headline?: string;
     description?: string;
     ctaLink?: string;
@@ -18,26 +20,27 @@ type Props = {
   layout: CardLayout;
 };
 
-const ContentCard = ({ card, layout }: Props) => (
+const BpkContentCard = ({ card, layout }: Props) => (
   <a
-    className={[
-      getClassName('bpk-content-cards__card-link'),
+    className={getClassName(
+      'bpk-content-cards__card-link',
       layout === 'HORIZONTAL'
-        ? getClassName('bpk-content-cards__card-horizontal')
-        : getClassName('bpk-content-cards__card-vertical'),
-    ].join(' ')}
+        ? 'bpk-content-cards__card-horizontal'
+        : 'bpk-content-cards__card-vertical',
+    )}
     href={card.ctaLink}
     target="_blank"
     rel="noreferrer"
   >
-    <div className={getClassName('bpk-content-cards__image-aspect-ratio')}>
+    <div className={getClassName('bpk-content-cards__image-container')}>
       <img
         className={getClassName('bpk-content-cards__image')}
-        alt=""
+        alt={card.imageAlt}
         src={card.imageLink}
         loading="lazy"
       />
     </div>
+
     <div>
       <BpkText
         className={getClassName('bpk-content-cards__headline')}
@@ -55,4 +58,4 @@ const ContentCard = ({ card, layout }: Props) => (
   </a>
 );
 
-export default ContentCard;
+export default BpkContentCard;
