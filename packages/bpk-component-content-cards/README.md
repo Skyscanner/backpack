@@ -14,6 +14,19 @@ npm install bpk-component-content-cards --save-dev
 import React from 'react';
 import BpkContentCards from 'bpk-component-content-cards';
 
+<BpkContentCards
+    headerText='Header'
+    cards=[
+        {
+        imageLink: 'http://skyscanner.net/card-1-image-link.jpg',
+        imageAlt: '',
+        headline: 'Card headline',
+        description: 'Card description',
+        ctaLink: 'http://skyscanner.net/card-1-cta-link.html',
+        },
+    ]
+/>
+
 export default () => <BpkContentCards />;
 ```
 

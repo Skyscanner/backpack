@@ -4,25 +4,6 @@
 
 $bpk-spacing-v2: true;
 
-// @mixin aspect-ratio($width, $height) {
-//   position: relative;
-
-//   &::before {
-//     content: '';
-//     display: block;
-//     width: 100%;
-//     padding-top: ($height / $width) * 100%;
-//   }
-
-//   > :first-child {
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//   }
-// }
-
 .bpk-content-cards {
   &__card-link {
     color: inherit;
@@ -43,15 +24,15 @@ $bpk-spacing-v2: true;
 
   &__card-horizontal &__image-container {
     width: 100%;
-    height: 100%;
+    height: $bpk-one-pixel-rem * 420;
 
     @include bpk-breakpoint-mobile {
       max-height: $bpk-one-pixel-rem * 180;
       margin-bottom: bpk-spacing-base();
     }
 
-    @include bpk-breakpoint-above-tablet {
-      height: $bpk-one-pixel-rem * 420;
+    @include bpk-breakpoint-tablet {
+      height: 100%;
     }
   }
 

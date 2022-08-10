@@ -1,6 +1,5 @@
 import React from 'react';
 import BpkText from 'bpk-component-text';
-import BpkImage from 'bpk-component-image';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkContentCard.module.scss';
