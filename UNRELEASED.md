@@ -11,3 +11,8 @@
 - bpk-component-blockquote:
   - Changed text colour
   - Removed background colour
+
+**Fixed**
+
+- `bpk-component-nudger`
+  - Changed `aria-live` from assertive to polite.

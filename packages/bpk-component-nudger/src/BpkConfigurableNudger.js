@@ -105,7 +105,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="text"
-        aria-live="assertive"
+        aria-live="polite"
         readOnly
         value={formatValue(value)}
         id={id}
