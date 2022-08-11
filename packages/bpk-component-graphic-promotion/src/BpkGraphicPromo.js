@@ -131,7 +131,7 @@ const BpkGraphicPromo = (props: Props) => {
       onKeyDown={onKeyWrapper}
     >
       <div
-        id={`${contentId}__content`}
+        id={contentId && `${contentId}__content`}
         className={containerClasses}
         aria-hidden
       >
