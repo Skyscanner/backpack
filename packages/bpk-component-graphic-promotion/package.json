@@ -8,7 +8,7 @@
     "url": "git@github.com:Skyscanner/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
-  "main": "index.js",
+  "main": "index.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

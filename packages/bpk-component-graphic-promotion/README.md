@@ -8,25 +8,25 @@ npm install bpk-component-graphic-promotion --save-dev
 
 ## Usage
 
-```js
+```tsx
 import React from 'react';
 import BpkGraphicPromo from 'bpk-component-graphic-promotion';
 
 export default () => (
   <BpkGraphicPromo
+    buttonText="Learn more"
     contentId="graphic-promo-1"
-    tagline="Tagline"
     headline="Ride your wave"
-    subheading="Portugal and 6 more countries have just been added to the UK travel green list"
+    invertVertically
+    onClick={() => redirect("https://www.sponsor-name.com/promotion")}
     sponsor={{
       label: 'Sponsored',
       logo: './path/to/sponsor/logo.png',
       altText: 'Sponsor Name',
     }}
-    buttonText="Learn more"
-    onClick={() => redirect("https://www.sponsor-name.com/promotion")}
+    subheading="Portugal and 6 more countries have just been added to the UK travel green list"
+    tagline="Tagline"
     textAlign={TEXT_ALIGN.start}
-    invertVertically
   />
 );
 ```
@@ -35,17 +35,17 @@ export default () => (
 
 | Property         | PropType          | Required | Default Value |
 | ---------------- | ----------------- | -------- | ------------- |
-| contentId        | string            | false    | null          |
 | buttonText       | string            | true     | -             |
+| className        | string            | false    | null          |
+| contentId        | string            | false    | null          |
 | headline         | string            | true     | -             |
 | invertVertically | bool              | true     | -             |
 | onClick          | func              | true     | -             |
-| textAlign        | oneOf(TEXT_ALIGN) | true     | -             |
-| className        | string            | false    | null          |
-| style            | object            | false    | {}            |
-| tagline          | string            | false    | null          |
 | sponsor          | object            | false    | null          |
+| style            | object            | false    | {}            |
 | subheading       | string            | false    | null          |
+| tagline          | string            | false    | null          |
+| textAlign        | oneOf(TEXT_ALIGN) | true     | -             |
 
 ### Prop Details
 
@@ -61,7 +61,7 @@ The object consists of the following fields:
 
 ##### Example
 
-```typescript
+```ts
 const sponsor = {
   label: 'Sponsored',
   altText: 'Skyscanner',
