@@ -18,7 +18,8 @@
 
 import gulp from 'gulp';
 
-const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
+const ICONS_FOLDER_PATH =
+  '../../node_modules/@skyscanner/bpk-svgs/dist/js/icons';
 
 gulp.task('copy', () =>
   gulp

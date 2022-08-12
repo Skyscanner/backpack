@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "gulp",
+    "build:transpiled": "./scripts/transpilation/transpiled-build.sh",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-owners": "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",
@@ -99,6 +100,7 @@
     "verbose": true
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.2",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
     "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
@@ -129,6 +131,10 @@
     "autoprefixer": "^9.4.7",
     "babel-jest": "^26.0.0",
     "babel-loader": "^8.0.0",
+    "babel-plugin-css-modules-transform": "^1.6.2",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-replace-imports": "^1.0.2",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-require-context-hook": "^1.0.0",
     "bpk-mixins": "^34.0.5",
     "bpk-stylesheets": "^8.1.5",
@@ -158,6 +164,7 @@
     "lodash": "^4.17.20",
     "markdown-spellcheck": "^1.3.1",
     "node-sass": "^6.0.1",
+    "node-sass-package-importer": "^5.3.2",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "prompt": "^1.3.0",
