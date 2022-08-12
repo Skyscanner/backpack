@@ -249,6 +249,60 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkGraphicPromo should render correctly with a content ID 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
+    class="bpk-card bpk-graphic-promo"
+    id="content-id"
+    role="link"
+    tabindex="0"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-graphic-promo__container bpk-graphic-promo__container--start"
+      id="content-id__content"
+    >
+      <div
+        class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
+      >
+        <span
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+        >
+          Sponsored
+        </span>
+        <img
+          alt="Airline Name"
+          class="bpk-graphic-promo__sponsor-logo"
+          src="path/to/logo.png"
+        />
+      </div>
+      <div
+        class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+        >
+          Ride your wave
+        </h2>
+        <p
+          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
+        >
+          Portugal and 6 more countries have just been added to the UK travel green list
+        </p>
+        <button
+          class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
+          tabindex="-1"
+          type="button"
+        >
+          Learn more
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
 <DocumentFragment>
   <div
