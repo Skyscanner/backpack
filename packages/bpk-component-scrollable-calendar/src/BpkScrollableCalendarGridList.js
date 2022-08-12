@@ -75,7 +75,7 @@ class BpkScrollableCalendarGridList extends React.Component {
   componentDidMount = () => {
     this.setComponentHeight();
     if (typeof document !== 'undefined') {
-      document.addEventListener('resize', this.setComponentHeight);
+      window.addEventListener('resize', this.setComponentHeight);
       document.addEventListener('orientationchange', this.setComponentHeight);
       document.addEventListener('fullscreenchange', this.setComponentHeight);
     }
@@ -83,7 +83,7 @@ class BpkScrollableCalendarGridList extends React.Component {
 
   componentWillUnmount = () => {
     if (typeof document !== 'undefined') {
-      document.removeEventListener('resize', this.setComponentHeight);
+      window.removeEventListener('resize', this.setComponentHeight);
       document.removeEventListener(
         'orientationchange',
         this.setComponentHeight,
