@@ -22,7 +22,8 @@ import path from 'path';
 import del from 'del';
 import gulp from 'gulp';
 
-const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
+const ICONS_FOLDER_PATH =
+  '../../node_modules/@skyscanner/bpk-svgs/dist/js/icons';
 
 const getFolders = (dir) =>
   fs

@@ -32,6 +32,7 @@
     "d3-path": "^2.0.0",
     "d3-scale": "^4.0.2",
     "date-fns": "^2.21.1",
+    "internmap": "^2.0.3",
     "intersection-observer": "^0.7.0",
     "lodash": "^4.17.20",
     "lodash.clamp": "^4.0.3",
