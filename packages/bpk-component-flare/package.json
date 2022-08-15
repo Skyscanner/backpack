@@ -19,7 +19,7 @@
   "dependencies": {
     "bpk-component-label": "^6.0.0",
     "bpk-component-text": "^8.0.0",
-    "bpk-mixins": "^31.3.0",
+    "bpk-mixins": "^31.4.0",
     "bpk-react-utils": "^7.0.0",
     "prop-types": "^15.7.2"
   },

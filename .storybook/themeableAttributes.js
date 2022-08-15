@@ -18,7 +18,6 @@
 
 /* @flow */
 
-import { themeAttributes as accordionThemeAttributes } from '../packages/bpk-component-accordion';
 import { themeAttributes as badgeThemeAttributes } from '../packages/bpk-component-badge';
 import { themeAttributes as bannerAlertThemeAttributes } from '../packages/bpk-component-banner-alert';
 import { themeAttributes as barchartThemeAttributes } from '../packages/bpk-component-barchart';
@@ -65,7 +64,6 @@ import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk
 const storybookAttributes = ['primaryColor', 'themeName', 'logoFillColor'];
 
 export default [
-  ...accordionThemeAttributes,
   ...badgeThemeAttributes,
   ...bannerAlertThemeAttributes,
   ...barchartThemeAttributes,

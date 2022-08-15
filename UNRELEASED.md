@@ -1,7 +1,25 @@
-**Fixed:**
+**Changed:**
 
-`bpk-component-graphic-promotion`
-- Move the content ID to the correct element.
+- bpk-component-accordion:
+  - Changed accordion title bottom border colour
+  - Changed text and toggle icon colour
+  - Remove accordion theme attributes
+
+- bpk-component-card:
+  - Changed text colour
+
+- bpk-component-blockquote:
+  - Changed text colour
+  - Removed background colour
+
+- bpk-component-panel:
+  - Changed border colour
+
+
+**Fixed**
+
+- `bpk-component-graphic-promotion`
+  - Move the content ID to the correct element.
 
 - `bpk-component-nudger`
   - Changed `aria-live` from assertive to polite.
