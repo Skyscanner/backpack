@@ -31,6 +31,7 @@ export const BADGE_TYPES = {
   light: 'light',
   inverse: 'inverse',
   outline: 'outline',
+  strong: 'strong',
 };
 
 const getClassName = cssModules(STYLES);
@@ -42,6 +43,7 @@ const badgeTypeClassNames = {
   [BADGE_TYPES.light]: getClassName('bpk-badge--light'),
   [BADGE_TYPES.inverse]: getClassName('bpk-badge--inverse'),
   [BADGE_TYPES.outline]: getClassName('bpk-badge--outline'),
+  [BADGE_TYPES.strong]: getClassName('bpk-badge--strong'),
 };
 
 export type Props = {
