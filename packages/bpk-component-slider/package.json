@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-slider",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Backpack slider component.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,6 +24,6 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "bpk-component-rtl-toggle": "^4.0.0"
+    "bpk-component-rtl-toggle": "^4.0.1"
   }
 }
