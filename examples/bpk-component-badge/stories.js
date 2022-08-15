@@ -33,6 +33,7 @@ import {
   InverseExample,
   OutlineExample,
   MixedExample,
+  StrongExample,
 } from './examples';
 
 storiesOf('bpk-component-badge', module)
@@ -44,6 +45,7 @@ storiesOf('bpk-component-badge', module)
   .add('Warning (Default)', WarningExample)
   .add('Success', SuccessExample)
   .add('Destructive', DestructiveExample)
+  .add('Strong', StrongExample)
   .add('Light', LightExample)
   .add('Inverse', InverseExample)
   .add('Outline', OutlineExample)

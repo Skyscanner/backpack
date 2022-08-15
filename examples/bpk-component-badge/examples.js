@@ -179,12 +179,29 @@ const OutlineExample = () => (
   </BpkDarkExampleWrapper>
 );
 
+const StrongExample = () => (
+  <BadgeLayout>
+    <BpkBadge type={BADGE_TYPES.strong}>Strong</BpkBadge>
+    &nbsp;
+    <BpkBadge type={BADGE_TYPES.strong}>
+      <BpkSmallTickIcon />
+      &nbsp;Strong
+    </BpkBadge>
+    &nbsp;
+    <BpkBadge type={BADGE_TYPES.strong}>
+      Strong&nbsp;
+      <BpkSmallTickIcon />
+    </BpkBadge>
+  </BadgeLayout>
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
     <WarningExample />
     <SuccessExample />
     <DestructiveExample />
+    <StrongExample />
     <LightExample />
     <InverseExample />
     <OutlineExample />
@@ -203,5 +220,6 @@ export {
   LightExample,
   InverseExample,
   OutlineExample,
+  StrongExample,
   MixedExample,
 };

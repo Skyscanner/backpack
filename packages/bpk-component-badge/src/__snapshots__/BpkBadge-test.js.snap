@@ -104,6 +104,16 @@ exports[`BpkBadge should render correctly with type="outline" 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkBadge should render correctly with type="strong" 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-badge bpk-badge--strong"
+  >
+    Promociando
+  </span>
+</DocumentFragment>
+`;
+
 exports[`BpkBadge should render correctly with type="success" 1`] = `
 <DocumentFragment>
   <span
