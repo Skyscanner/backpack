@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import React from 'react';
 import BpkText from 'bpk-component-text';
@@ -29,11 +28,13 @@ const getClassName = cssModules(STYLES);
 type Props = {
   headerText: string;
   cards: Array<{
-    imageLink?: string;
-    imageAlt?: string;
+    img?: {
+      url?: string;
+      alt?: string;
+    };
     headline?: string;
     description?: string;
-    ctaLink?: string;
+    link?: string;
   }>;
 };
 
@@ -46,15 +47,15 @@ const BpkContentCards = ({ cards, headerText }: Props) => {
     <div>
       <BpkText
         tagName="h2"
-        className={getClassName('bpk-content-card__header-text')}
+        className={getClassName('bpk-content-cards--header-text')}
       >
         {headerText}
       </BpkText>
-      <div role="list" className={getClassName('bpk-content-card__layout')}>
+      <div role="list" className={getClassName('bpk-content-cards--layout')}>
         {cards.map((card) => (
           <div role="listitem">
             <BpkContentCard
-              key={card.imageLink}
+              key={card.img?.url}
               card={card}
               layout={cards.length === 1 ? 'HORIZONTAL' : 'VERTICAL'}
             />

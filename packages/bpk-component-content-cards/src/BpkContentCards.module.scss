@@ -22,8 +22,8 @@
 
 $bpk-spacing-v2: true;
 
-.bpk-content-card {
-  &__header-text {
+.bpk-content-cards {
+  &--header-text {
     margin-bottom: bpk-spacing-base();
 
     @include bpk-heading-2;
@@ -33,7 +33,7 @@ $bpk-spacing-v2: true;
     }
   }
 
-  &__layout {
+  &--layout {
     display: grid;
     grid-template-columns: repeat(
       auto-fit,

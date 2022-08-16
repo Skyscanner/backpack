@@ -28,11 +28,13 @@ type CardLayout = 'HORIZONTAL' | 'VERTICAL';
 
 type Props = {
   card: {
-    imageLink?: string;
-    imageAlt?: string;
+    img?: {
+      url?: string;
+      alt?: string;
+    };
     headline?: string;
     description?: string;
-    ctaLink?: string;
+    link?: string;
   };
   layout: CardLayout;
 };
@@ -40,33 +42,33 @@ type Props = {
 const BpkContentCard = ({ card, layout }: Props) => (
   <a
     className={getClassName(
-      'bpk-content-cards__card-link',
+      'bpk-content-card--link',
       layout === 'HORIZONTAL'
-        ? 'bpk-content-cards__card-horizontal'
-        : 'bpk-content-cards__card-vertical',
+        ? 'bpk-content-card--horizontal'
+        : 'bpk-content-card--vertical',
     )}
-    href={card.ctaLink}
+    href={card.link}
     target="_blank"
     rel="noreferrer"
   >
-    <div className={getClassName('bpk-content-cards__image-container')}>
+    <div className={getClassName('bpk-content-card--image-container')}>
       <img
-        className={getClassName('bpk-content-cards__image')}
-        alt={card.imageAlt}
-        src={card.imageLink}
+        className={getClassName('bpk-content-card--image')}
+        alt={card.img?.alt}
+        src={card.img?.url}
         loading="lazy"
       />
     </div>
 
     <div>
       <BpkText
-        className={getClassName('bpk-content-cards__headline')}
+        className={getClassName('bpk-content-card--headline')}
         tagName="h3"
       >
         {card.headline}
       </BpkText>
       <BpkText
-        className={getClassName('bpk-content-cards__description')}
+        className={getClassName('bpk-content-card--description')}
         tagName="p"
       >
         {card.description}

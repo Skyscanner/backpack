@@ -10,19 +10,21 @@ npm install bpk-component-content-cards --save-dev
 
 ## Usage
 
-```js
+```tsx
 import React from 'react';
-import BpkContentCards from 'bpk-component-content-cards';
+import BpkContentCards from '@skyscanner/backpack-web/bpk-component-content-cards';
 
 <BpkContentCards
     headerText='Header'
     cards=[
         {
-        imageLink: 'http://skyscanner.net/card-1-image-link.jpg',
-        imageAlt: '',
-        headline: 'Card headline',
-        description: 'Card description',
-        ctaLink: 'http://skyscanner.net/card-1-cta-link.html',
+            img: {
+                url: 'http://skyscanner.net/card-1-image-link.jpg',
+                alt: '',
+            },
+            headline: 'Card headline',
+            description: 'Card description',
+            link: 'http://skyscanner.net/card-1-cta-link.html',
         },
     ]
 />
