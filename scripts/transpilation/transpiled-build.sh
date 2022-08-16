@@ -43,7 +43,7 @@ do
   fi
 
   rm -rf ./dist
-  babel . --out-dir dist --config-file '../../babel.config.js'
+  BABEL_ENV=dev babel . --out-dir dist --config-file '../../babel.config.js'
   mv "dist" "../../dist/$d"
 
   if [ "$d" == "bpk-component-barchart/" ]
