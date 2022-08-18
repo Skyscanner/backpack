@@ -37,7 +37,7 @@ jobs:
           nvm use
           npm test
 
-      - name: Run Typecheck
+      - name: Run typecheck
         run: |
           nvm use
           npm run typecheck
