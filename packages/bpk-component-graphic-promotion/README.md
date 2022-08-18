@@ -36,16 +36,16 @@ export default () => (
 | Property         | PropType          | Required | Default Value |
 | ---------------- | ----------------- | -------- | ------------- |
 | buttonText       | string            | true     | -             |
+| headline         | string            | true     | -             |
+| onClick          | func              | true     | -             |
+| textAlign        | oneOf(TEXT_ALIGN) | true     | -             |
 | className        | string            | false    | null          |
 | contentId        | string            | false    | null          |
-| headline         | string            | true     | -             |
 | invertVertically | bool              | false    | false         |
-| onClick          | func              | true     | -             |
 | sponsor          | object            | false    | null          |
 | style            | object            | false    | {}            |
 | subheading       | string            | false    | null          |
 | tagline          | string            | false    | null          |
-| textAlign        | oneOf(TEXT_ALIGN) | true     | -             |
 
 ### Prop Details
 
