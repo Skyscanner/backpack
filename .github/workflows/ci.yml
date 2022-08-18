@@ -37,6 +37,11 @@ jobs:
           nvm use
           npm test
 
+      - name: Run Typecheck
+        run: |
+          nvm use
+          npm run typecheck
+
       - name: Danger
         run: npm run danger
         if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
@@ -53,7 +58,7 @@ jobs:
       #   run: |
       #     nvm use
       #     npm run jest:visual-tests
-      
+
       # - name: Upload failed visual tests (if necessary)
       #   uses: actions/upload-artifact@v2
       #   if: failure() && steps.visualTests.outcome == 'failure'
@@ -63,7 +68,7 @@ jobs:
 
       # - name: Post a comment about the visual tests (if they pass)
       #   uses: actions/github-script@v5
-      #   if: github.ref != 'refs/heads/main' && steps.visualTests.outcome == 'success' && github.repository == github.event.pull_request.head.repo.full_name  && github.actor != 'dependabot[bot]' 
+      #   if: github.ref != 'refs/heads/main' && steps.visualTests.outcome == 'success' && github.repository == github.event.pull_request.head.repo.full_name  && github.actor != 'dependabot[bot]'
       #   with:
       #     script: |
       #       github.rest.issues.createComment({
@@ -72,7 +77,7 @@ jobs:
       #         repo: context.repo.repo,
       #         body: "Visual regression tests passed 😎. Bear in mind that they only run in Chromium on static components – they aren't perfect."
       #       })
-      
+
       # - name: Post a comment about the visual tests (if they fail)
       #   uses: actions/github-script@v5
       #   if: failure() && steps.visualTests.outcome == 'failure' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
@@ -84,7 +89,7 @@ jobs:
       #         repo: context.repo.repo,
       #         body: "Visual regression tests failed 😢. You can download the failure diffs from the 'Artifacts' section of the failed CI run. To update the tests, run `npm run jest:visual-tests:update` locally."
       #       })
-   
+
       - name: Deploy Storybook to backpack.github.io, if on main branch
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
