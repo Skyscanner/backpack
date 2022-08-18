@@ -45,7 +45,7 @@ export type Props = {
   className?: string | null;
   contentId?: string | null;
   headline: string;
-  invertVertically: boolean;
+  invertVertically?: boolean;
   onClick: () => void;
   sponsor?: {
     label: string;
@@ -135,11 +135,7 @@ const BpkGraphicPromo = ({
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
     >
-      <div
-        id={(contentId && contentId) || ''}
-        className={containerClasses}
-        aria-hidden
-      >
+      <div id={contentId || ''} className={containerClasses} aria-hidden>
         <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
           {sponsor && (
             <>
