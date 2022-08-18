@@ -43,6 +43,8 @@ module.exports = ({ config }) => {
       ],
     },
   });
+  config.resolve.extensions.push('.tsx');
+  config.resolve.extensions.push('.ts');
   config.module.rules.push({
     test: /\.css/,
     use: [
