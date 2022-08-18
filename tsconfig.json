@@ -21,6 +21,7 @@
     "allowJs": false
   },
   "include": [
-    "packages"
+    "packages",
+    "types"
   ]
 }
