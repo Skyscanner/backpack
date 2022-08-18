@@ -52,4 +52,8 @@
   &--outline {
     @include bpk-badge--outline;
   }
+
+  &--strong {
+    @include bpk-badge--strong;
+  }
 }
