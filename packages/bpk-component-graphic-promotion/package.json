@@ -8,7 +8,7 @@
     "url": "git@github.com:Skyscanner/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
-  "main": "index.ts",
+  "main": "index.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -16,7 +16,8 @@
     "bpk-component-button": "^7.0.1",
     "bpk-component-text": "^8.0.1",
     "bpk-mixins": "^31.4.0",
-    "bpk-react-utils": "^7.0.0"
+    "bpk-react-utils": "^7.0.0",
+    "prop-types": "^15.5.8"
   },
   "peerDependencies": {
     "react": "^17.0.2"
