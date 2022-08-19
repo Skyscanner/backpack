@@ -75,11 +75,11 @@ const constructAriaLabel = (
     addText(tagline);
   }
 
+  addText(headline);
+
   if (subheading) {
     addText(subheading);
   }
-
-  addText(headline);
   addText(buttonText);
 
   return text.join('. ');

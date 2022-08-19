@@ -3,7 +3,7 @@
 exports[`BpkGraphicPromo should display the tagline and no sponsor for non-sponsored ad 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Tagline. Portugal and 6 more countries have just been added to the UK travel green list. Ride your wave. Learn more"
+    aria-label="Tagline. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     id=""
     role="link"
@@ -100,7 +100,7 @@ exports[`BpkGraphicPromo should not display tagline or subheading when not provi
 exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Portugal and 6 more countries have just been added to the UK travel green list. Ride your wave. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     id=""
     role="link"
@@ -154,7 +154,7 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
 exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Portugal and 6 more countries have just been added to the UK travel green list. Ride your wave. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     id=""
     role="link"
@@ -208,7 +208,7 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
 exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Portugal and 6 more countries have just been added to the UK travel green list. Ride your wave. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     id=""
     role="link"
@@ -262,7 +262,7 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
 exports[`BpkGraphicPromo should render correctly with a content ID 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Portugal and 6 more countries have just been added to the UK travel green list. Ride your wave. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     id="content-id"
     role="link"
@@ -316,7 +316,7 @@ exports[`BpkGraphicPromo should render correctly with a content ID 1`] = `
 exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Portugal and 6 more countries have just been added to the UK travel green list. Ride your wave. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo"
     id=""
     role="link"
@@ -370,7 +370,7 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
 exports[`BpkGraphicPromo should support custom class names 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Sponsored. Airline Name. Portugal and 6 more countries have just been added to the UK travel green list. Ride your wave. Learn more"
+    aria-label="Sponsored. Airline Name. Ride your wave. Portugal and 6 more countries have just been added to the UK travel green list. Learn more"
     class="bpk-card bpk-graphic-promo custom-classname"
     id=""
     role="link"
