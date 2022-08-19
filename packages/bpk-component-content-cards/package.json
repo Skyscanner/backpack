@@ -20,8 +20,8 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "bpk-component-image": "^6.0.0",
-    "bpk-component-text": "^8.0.0",
+    "bpk-component-image": "^6.0.1",
+    "bpk-component-text": "^8.0.1",
     "bpk-react-utils": "^7.0.0"
   }
 }
