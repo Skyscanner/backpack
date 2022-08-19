@@ -28,13 +28,13 @@ const getClassName = cssModules(STYLES);
 type Props = {
   headerText: string;
   cards: Array<{
-    img?: {
-      url?: string;
+    image: {
+      url: string;
       alt?: string;
     };
-    headline?: string;
-    description?: string;
-    link?: string;
+    headline: string;
+    description: string;
+    href: string;
   }>;
 };
 
@@ -55,7 +55,7 @@ const BpkContentCards = ({ cards, headerText }: Props) => {
         {cards.map((card) => (
           <div role="listitem">
             <BpkContentCard
-              key={card.img?.url}
+              key={card.image.url}
               card={card}
               layout={cards.length === 1 ? 'HORIZONTAL' : 'VERTICAL'}
             />

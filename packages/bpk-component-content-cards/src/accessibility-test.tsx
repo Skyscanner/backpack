@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import React from 'react';
 import { render } from '@testing-library/react';
@@ -26,25 +25,31 @@ import BpkContentCards from './BpkContentCards';
 const headerText = 'Header for the component';
 const cards = [
   {
-    imageLink: 'http://skyscanner.net/card-1-image-link.jpg',
-    imageAlt: '',
+    image: {
+      url: 'http://skyscanner.net/card-1-image-link.jpg',
+      alt: '',
+    },
     headline: 'Card 1 headline',
     description: 'Card 1 description',
-    ctaLink: 'http://skyscanner.net/card-1-cta-link.html',
+    href: 'http://skyscanner.net/card-1-cta-link.html',
   },
   {
-    imageLink: 'http://skyscanner.net/card-2-image-link.jpg',
-    imageAlt: '',
+    image: {
+      url: 'http://skyscanner.net/card-2-image-link.jpg',
+      alt: '',
+    },
     headline: 'Card 2 headline',
     description: 'Card 2 description',
-    ctaLink: 'http://skyscanner.net/card-2-cta-link.html',
+    href: 'http://skyscanner.net/card-2-cta-link.html',
   },
   {
-    imageLink: 'http://skyscanner.net/card-3-image-link.jpg',
-    imageAlt: '',
+    image: {
+      url: 'http://skyscanner.net/card-3-image-link.jpg',
+      alt: '',
+    },
     headline: 'Card 3 headline',
     description: 'Card 3 description',
-    ctaLink: 'http://skyscanner.net/card-3-cta-link.html',
+    href: 'http://skyscanner.net/card-3-cta-link.html',
   },
 ];
 

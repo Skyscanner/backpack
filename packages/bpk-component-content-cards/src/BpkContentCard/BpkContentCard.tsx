@@ -28,13 +28,13 @@ type CardLayout = 'HORIZONTAL' | 'VERTICAL';
 
 type Props = {
   card: {
-    img?: {
-      url?: string;
+    image: {
+      url: string;
       alt?: string;
     };
-    headline?: string;
-    description?: string;
-    link?: string;
+    headline: string;
+    description: string;
+    href: string;
   };
   layout: CardLayout;
 };
@@ -47,15 +47,16 @@ const BpkContentCard = ({ card, layout }: Props) => (
         ? 'bpk-content-card--horizontal'
         : 'bpk-content-card--vertical',
     )}
-    href={card.link}
+    href={card.href}
     target="_blank"
     rel="noreferrer"
   >
     <div className={getClassName('bpk-content-card--image-container')}>
+      {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
       <img
         className={getClassName('bpk-content-card--image')}
-        alt={card.img?.alt}
-        src={card.img?.url}
+        alt={card.image?.alt || ''}
+        src={card.image?.url}
         loading="lazy"
       />
     </div>

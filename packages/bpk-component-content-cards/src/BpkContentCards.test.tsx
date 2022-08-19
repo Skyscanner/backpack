@@ -30,29 +30,29 @@ describe('Content Card widget', () => {
       {
         image: {
           url: 'http://skyscanner.net/card-1-image-link.jpg',
-          alt: 'White sand beach in a shiny weather of Australian coast',
+          alt: 'People surfing in the ocean',
         },
         headline: 'Card 1 headline',
         description: 'Card 1 description',
-        link: 'http://skyscanner.net/card-1-cta-link.html',
+        href: 'http://skyscanner.net/card-1-cta-link.html',
       },
       {
         image: {
           url: 'http://skyscanner.net/card-2-image-link.jpg',
-          alt: 'White sand beach in a shiny weather of Australian coast',
+          alt: 'Man on boat in a fjord',
         },
         headline: 'Card 2 headline',
         description: 'Card 2 description',
-        link: 'http://skyscanner.net/card-2-cta-link.html',
+        href: 'http://skyscanner.net/card-2-cta-link.html',
       },
       {
         image: {
           url: 'http://skyscanner.net/card-3-image-link.jpg',
-          alt: 'White sand beach in a shiny weather of Australian coast',
+          alt: 'Airplane flying over mountains',
         },
         headline: 'Card 3 headline',
         description: 'Card 3 description',
-        link: 'http://skyscanner.net/card-3-cta-link.html',
+        href: 'http://skyscanner.net/card-3-cta-link.html',
       },
     ],
   };

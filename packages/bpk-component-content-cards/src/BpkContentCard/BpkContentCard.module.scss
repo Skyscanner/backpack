@@ -77,8 +77,7 @@ $bpk-spacing-v2: true;
   &--description {
     color: $bpk-color-sky-gray-tint-02;
 
-    @include bpk-text;
-    @include bpk-text--base;
+    @include bpk-body-default;
   }
 
   &--image {

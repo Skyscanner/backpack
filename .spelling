@@ -293,7 +293,6 @@ cornerStyle
 CORNER_STYLES.sm
 CORNER_STYLES.lg
 ctaText
-ctaLink
 DataSource
 dateProps
 decreaseButtonLabel
@@ -323,8 +322,6 @@ iconPosition
 ICON_POSITION
 ICON_POSITION.LEADING
 ICON_POSITION.TRAILING
-imageAlt
-imageLink
 invertVertically
 headerText
 headerIcon
