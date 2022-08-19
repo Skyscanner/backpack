@@ -17,8 +17,11 @@
  */
 
 import React from 'react';
+// @ts-expect-error Untyped import. Not added as a stub declaration so consumers still have the suppression in their node_modules when shipped untranspiled.
 import { cssModules } from 'bpk-react-utils';
+// @ts-expect-error Untyped import. Not added as a stub declaration so consumers still have the suppression in their node_modules when shipped untranspiled.
 import BpkText from 'bpk-component-text';
+// @ts-expect-error Untyped import. Not added as a stub declaration so consumers still have the suppression in their node_modules when shipped untranspiled.
 import BpkButton from 'bpk-component-button';
 
 import STYLES from './BpkGraphicPromo.module.scss';
