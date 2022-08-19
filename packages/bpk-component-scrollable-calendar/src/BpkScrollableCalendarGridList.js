@@ -25,7 +25,7 @@ import { VariableSizeList as List } from 'react-window';
 
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
-import getMonthsArray from './utils';
+import { getMonthsArray, getMonthItemHeights } from './utils';
 
 const getClassName = cssModules(STYLES);
 
@@ -33,7 +33,7 @@ const getClassName = cssModules(STYLES);
 // These constants are here to facilitate calculating the height.
 const ROW_HEIGHT = 44;
 // This is the additional height of each grid without any rows.
-const BASE_MONTH_ITEM_HEIGHT = 140;
+const BASE_MONTH_ITEM_HEIGHT = 130;
 const COLUMN_COUNT = 7;
 // Most calendar grids have 5 rows:
 const ESTIMATED_MONTH_ITEM_HEIGHT = BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT;
@@ -51,19 +51,13 @@ class BpkScrollableCalendarGridList extends React.Component {
       startDate,
     );
     const months = getMonthsArray(startDate, monthsCount);
-
-    // Here we calculate the height of each calendar grid item in pixels, as the `react-window` API
-    // requires that these are provided so that they can be efficiently rendered.
-    const monthItemHeights = months.map((month) => {
-      const firstDayOffset = (month.getDay() + 7 - props.weekStartsOn) % 7;
-      const monthLength = DateUtils.daysInMonth(
-        month.getYear(),
-        month.getMonth(),
-      );
-      const calendarGridSpaces = firstDayOffset + monthLength;
-      const rowCount = Math.ceil(calendarGridSpaces / COLUMN_COUNT);
-      return BASE_MONTH_ITEM_HEIGHT + ROW_HEIGHT * rowCount;
-    });
+    const monthItemHeights = getMonthItemHeights(
+      months,
+      props.weekStartsOn,
+      COLUMN_COUNT,
+      ROW_HEIGHT,
+      BASE_MONTH_ITEM_HEIGHT,
+    );
 
     this.state = {
       months,

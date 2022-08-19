@@ -27,4 +27,27 @@ const getMonthsArray = (startDate, count) => {
 
   return months;
 };
-export default getMonthsArray;
+
+// Here we calculate the height of each calendar grid item in pixels, as the `react-window` API
+// requires that these are provided so that they can be efficiently rendered.
+const getMonthItemHeights = (
+  months,
+  weekStartsOn,
+  columnCount,
+  rowHeight,
+  baseMonthItemHeight,
+) => {
+  const monthItemHeights = months.map((month) => {
+    const firstDayOffset = (month.getDay() + 7 - weekStartsOn) % 7;
+    const monthLength = DateUtils.daysInMonth(
+      month.getYear(),
+      month.getMonth(),
+    );
+    const calendarGridSpaces = firstDayOffset + monthLength;
+    const rowCount = Math.ceil(calendarGridSpaces / columnCount);
+    return baseMonthItemHeight + rowHeight * rowCount;
+  });
+  return monthItemHeights;
+};
+
+export { getMonthsArray, getMonthItemHeights };

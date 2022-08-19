@@ -77,10 +77,10 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
         style="position: relative; height: 0px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
-          style="height: 4636px; width: 100%;"
+          style="height: 4506px; width: 100%;"
         >
           <div
-            style="position: absolute; left: 0px; top: 0px; height: 316px; width: 100%;"
+            style="position: absolute; left: 0px; top: 0px; height: 306px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
@@ -683,7 +683,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
             </div>
           </div>
           <div
-            style="position: absolute; left: 0px; top: 316px; height: 360px; width: 100%;"
+            style="position: absolute; left: 0px; top: 306px; height: 350px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
@@ -1433,10 +1433,10 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
         style="position: relative; height: 0px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
-          style="height: 4636px; width: 100%;"
+          style="height: 4506px; width: 100%;"
         >
           <div
-            style="position: absolute; left: 0px; top: 0px; height: 316px; width: 100%;"
+            style="position: absolute; left: 0px; top: 0px; height: 306px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
@@ -2039,7 +2039,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
             </div>
           </div>
           <div
-            style="position: absolute; left: 0px; top: 316px; height: 360px; width: 100%;"
+            style="position: absolute; left: 0px; top: 306px; height: 350px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
@@ -2789,10 +2789,10 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
         style="position: relative; height: 0px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
-          style="height: 4636px; width: 100%;"
+          style="height: 4506px; width: 100%;"
         >
           <div
-            style="position: absolute; left: 0px; top: 0px; height: 316px; width: 100%;"
+            style="position: absolute; left: 0px; top: 0px; height: 306px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
@@ -3395,7 +3395,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
             </div>
           </div>
           <div
-            style="position: absolute; left: 0px; top: 316px; height: 360px; width: 100%;"
+            style="position: absolute; left: 0px; top: 306px; height: 350px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
@@ -4145,10 +4145,10 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
         style="position: relative; height: 0px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
-          style="height: 4636px; width: 100%;"
+          style="height: 4506px; width: 100%;"
         >
           <div
-            style="position: absolute; left: 0px; top: 0px; height: 316px; width: 100%;"
+            style="position: absolute; left: 0px; top: 0px; height: 306px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
@@ -4751,7 +4751,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
             </div>
           </div>
           <div
-            style="position: absolute; left: 0px; top: 316px; height: 360px; width: 100%;"
+            style="position: absolute; left: 0px; top: 306px; height: 350px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
