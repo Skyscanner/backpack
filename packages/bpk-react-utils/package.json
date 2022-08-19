@@ -1,6 +1,6 @@
 {
   "name": "bpk-react-utils",
-  "version": "6.0.1",
+  "version": "7.0.0",
   "description": "Utilities for Backpack's React components.",
   "license": "Apache-2.0",
   "repository": {
@@ -19,7 +19,7 @@
     "react-transition-group": "^2.5.3"
   },
   "peerDependencies": {
-    "react": "^16.3.0 || ^17.0.0",
+    "react": "^17.0.2",
     "react-dom": "^16.3.0 || ^17.0.0"
   }
 }

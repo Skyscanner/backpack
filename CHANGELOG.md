@@ -1,3 +1,84 @@
+# 2022-08-15
+
+**Changed:**
+
+- `@skyscanner/backpack-web` - 9.1.0
+
+- `bpk-component-accordion`: 6.0.0 => 6.1.0
+  - Changed accordion title bottom border colour
+  - Changed text and toggle icon colour
+  - Remove accordion theme attributes
+
+- `bpk-component-card`: 5.0.0 => 5.1.0
+  - Changed text colour
+
+- `bpk-component-blockquote`: 4.0.0 => 4.1.0
+  - Changed text colour
+  - Removed background colour
+
+- `bpk-component-panel`: 4.0.0 => 4.1.0
+  - Changed border colour
+
+
+**Fixed**
+
+- `@skyscanner/backpack-web` - 9.1.0
+
+- `bpk-component-graphic-promotion`: 5.0.0 => 5.0.1
+  - Move the content ID to the correct element.
+
+- `bpk-component-nudger`: 8.0.0 => 8.0.1
+  - Changed `aria-live` from assertive to polite.
+
+**Added**
+
+- `@skyscanner/backpack-web` - 9.1.0
+
+- `bpk-component-badge`: 5.0.0 => 5.1.0
+  - The `strong` badge theme has been added, which aligns to our APP implementations and better meets the needs of users.
+
+
+# 2022-08-05
+
+**Breaking:**
+
+`@skyscanner/backpack-web - 9.0.0`
+
+Major version for all components:
+  - Dropped support for React versions < 17. No new functionality is introduced, but from this point forwards it should not be assumed React 16 will work.
+
+- Deleted the following deprecated components:
+  - `bpk-component-navigation-stack`
+  - `PortalV1` (in `bpk-react-utils`)
+
+
+**Changed:**
+
+- bpk-component-badge:
+  - Updated Badge styles to use `Caption` instead of bold.
+
+- bpk-component-breakpoint:
+  - Updated `react-responsive` dependency to 8.2.0. This requires `React` 16.8.0 or higher.
+
+# 2022-08-02
+
+**Changed**
+
+`bpk-component-graphic-promotion: 4.1.1 => 4.1.2`
+
+- Fix the alignment for right aligned graphic promos.
+- Fix some mismatched fonts to reflect designs.
+- Ensure that the logo is never stretched.
+
+**Patched:**
+
+- Bumped the following dependencies to the latest version
+  - `@skyscanner/bpk-foundations-web`
+  - `@skyscanner/bpk-svgs`
+  - `bpk-mixins`
+  - `bpk-stylesheets`
+
+
 # 2022-07-29
 
 **Breaking:**
