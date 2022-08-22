@@ -44,21 +44,21 @@ export const TEXT_ALIGN = {
 } as const;
 
 export type Props = {
-  buttonText: string;
   className?: string | null;
   contentId?: string | null;
+  tagline?: string | null;
   headline: string;
-  invertVertically?: boolean;
-  onClick: () => void;
+  subheading?: string | null;
   sponsor?: {
     label: string;
     logo: string;
     altText: string;
   } | null;
-  style?: {};
-  subheading?: string | null;
-  tagline?: string | null;
+  buttonText: string;
+  onClick: () => void;
+  invertVertically?: boolean;
   textAlign: typeof TEXT_ALIGN[keyof typeof TEXT_ALIGN];
+  style?: {};
 };
 
 const constructAriaLabel = (
