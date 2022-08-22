@@ -32,15 +32,15 @@ jobs:
       - name: Confirm the build hasn't changed any files
         run: ./scripts/check-pristine-state package-lock.json
 
-      - name: Run tests
-        run: |
-          nvm use
-          npm test
-
       - name: Run typecheck
         run: |
           nvm use
           npm run typecheck
+
+      - name: Run tests
+        run: |
+          nvm use
+          npm test
 
       - name: Danger
         run: npm run danger
