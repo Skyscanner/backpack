@@ -18,8 +18,9 @@
 
 import React from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
+import '@testing-library/jest-dom';
+import { SORT_DIRECTION_TYPES } from './sort-types';
 import BpkDataTable from './BpkDataTable';
 import BpkDataTableColumn from './BpkDataTableColumn';
 
@@ -503,7 +504,7 @@ describe('BpkDataTable', () => {
           label="Number"
           dataKey="number"
           width={100}
-          defaultSortDirection={SortDirection.DESC}
+          defaultSortDirection={SORT_DIRECTION_TYPES.DESC}
         />
       </BpkDataTable>,
     );
