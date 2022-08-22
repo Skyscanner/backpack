@@ -44,7 +44,7 @@ $bpk-spacing-v2: true;
     height: $bpk-flare-height-desktop;
     margin-left: 50%;
     transform: translateX(-50%);
-    fill: $bpk-color-white;
+    fill: $bpk-surface-default-day;
 
     @include bpk-rtl {
       margin-right: 50%;
@@ -63,7 +63,7 @@ $bpk-spacing-v2: true;
     left: 0;
     width: $bpk-flare-corner-radius;
     height: $bpk-flare-corner-radius;
-    fill: $bpk-color-white;
+    fill: $bpk-surface-default-day;
 
     &--trailing {
       right: 0;

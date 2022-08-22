@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-calendar",
-  "version": "12.0.0",
+  "version": "12.0.1",
   "description": "Backpack calendar component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,11 +14,11 @@
   },
   "gitHead": "4e4ec9add28e1db54d6a38a10c331bbd163f2926",
   "dependencies": {
-    "@skyscanner/bpk-foundations-web": "^8.3.0",
-    "bpk-component-aria-live": "^3.0.0",
-    "bpk-component-icon": "^10.0.0",
-    "bpk-component-select": "^6.0.0",
-    "bpk-mixins": "^31.2.0",
+    "@skyscanner/bpk-foundations-web": "^8.5.0",
+    "bpk-component-aria-live": "^3.0.1",
+    "bpk-component-icon": "^10.0.1",
+    "bpk-component-select": "^6.0.1",
+    "bpk-mixins": "^31.4.0",
     "bpk-react-utils": "^7.0.0",
     "date-fns": "^2.21.1",
     "prop-types": "^15.7.2"
@@ -27,8 +27,8 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^7.0.0",
-    "bpk-component-text": "^8.0.0",
-    "bpk-storybook-utils": "^2.0.0"
+    "bpk-component-button": "^7.0.1",
+    "bpk-component-text": "^8.0.1",
+    "bpk-storybook-utils": "^2.0.1"
   }
 }
