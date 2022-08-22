@@ -1,17 +1,19 @@
-# `bpk-*` import TypeScript suppressions during Flow to TypeScript migration
+# Untyped import statements TypeScript suppressions
 
 ## TL;DR
 
-When using TypeScript in a file that imports from another `bpk-*` package also published from this repository add a suppression like the below:
+When using TypeScript in a file that imports from any untyped add a suppression like the below:
 
 ```ts
-// @ts-expect-error Untyped local `bpk-*` import. See `decisions/bpk-imports-ts-suppressions.md`.
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from 'bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { helper } from 'some-external-untyped-package';
 ```
 
 ## Decision
 
-Use `@ts-expect-error` inside of Backpack for untyped local `bpk-*` imports.
+Use `@ts-expect-error` inside of Backpack for untyped  imports.
 
 Don't ask consumers to add suppressions where they consume Backpack.
 
@@ -41,6 +43,7 @@ For (1) consumers can suppress by adding a stub declaration file per import like
 
 ```ts
 declare module '*/bpk-component-text';
+declare module 'some-external-untyped-package';
 ```
 
 This is more toil for consumers, and Backpack itself still also has to do this locally to pass its own repo's type check.
@@ -52,11 +55,11 @@ For (2) the ideal would be for consumers to benefit from Backpack's own declarat
 A secondary, temporary, solution is to use `ts-expect-error` to suppress per line inside Backpack.
 
 ```ts
-// @ts-expect-error Untyped local `bpk-*` import. See `decisions/bpk-imports-ts-suppressions.md`.
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from 'bpk-react-utils';
 ```
 
-This is read by TypeScript in consumers, and so all consumers benefit. It is ugly inside Backpack but is only temporary while the 4 conditions listed above are all in place. `ts-expect-error` will error when a suppression is no longer required, prompting us to remove the suppression as all files are migrated to TypeScript.
+This is read by TypeScript in consumers, and so all consumers benefit. It is ugly inside Backpack but is only temporary while Backpack is published non-transpiled, and will reduce even before then as more local files are migrated to TypeScript. `ts-expect-error` will error when a suppression is no longer required, prompting us to remove the suppression as all files are migrated to TypeScript.
 
 While publishing non-transpiled, and still mid migration, Option 2 is preferred.
 
