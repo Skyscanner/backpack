@@ -107,7 +107,7 @@ const BpkDataTable = (props: Props) => {
                     },
                   ]),
             ],
-            [columns],
+            [defaultColumnSortIndex, columns, sort],
           ),
         },
       },
