@@ -38,7 +38,7 @@ export default () => (
 );
 ```
 
-By default `BpkDataTable` sorts the column using the value of `dataKey`. For use cases where the data might more complex and requires custom sorting you can pass a `sort` function along with `sortBy` and `sortDirection` and they will be handled as explained in react-virtualized's [docs] (https://github.com/bvaughn/react-virtualized/blob/main/docs/Table.md#prop-types)
+By default `BpkDataTable` sorts the column using the value of `dataKey`. For use cases where the data might more complex and requires custom sorting you can pass a `sort` function along with `sortBy` and `sortDirection`.
 
 ```js
 import React from 'react';
@@ -65,21 +65,16 @@ const complexRows = [
 
 let sortByValue = 'seat';
 let sortDirectionValue = 'DESC';
-const sortFunction = ({ sortBy, sortDirection }) => {
-  if (sortBy === 'seat') {
-    complexRows = _sortBy(complexRows, [
-      row => row.seat.office,
-      row => row.seat.desk,
-    ]);
+const sortFunction = (rowA, rowB, id, desc) => {
+  const deskA = rowA.values.seat.desk;
+  const deskB = rowB.values.seat.desk;
+
+  if (deskA === deskB) {
+      return 0;
   } else {
-    complexRows = _sortBy(complexRows, sortBy);
+      return deskA > deskB ? 1 : -1;
   }
-  if (sortDirection === 'DESC') {
-    complexRows.reverse();
-  }
-  sortByValue = sortBy;
-  sortDirectionValue = sortDirection;
-};
+}
 
 export default () => (
   <BpkDataTable
@@ -118,10 +113,6 @@ export default () => (
 
 ### BpkDataTable
 
-Supports all properties defined in [`Table`](https://github.com/bvaughn/react-virtualized/blob/main/docs/Table.md) (from `react-virtualized`),
-in addition to the following:
-
-
 | Property               | PropType                    | Required | Default Value        |
 | ---------------------- | --------------------------- | -------- | -------------------- |
 | rows                   | arrayOf(Object)             | true     | -                    |
@@ -130,12 +121,77 @@ in addition to the following:
 | width                  | number                      | false    | full width of parent |
 | headerHeight           | number                      | false    | 60                   |
 | rowHeight              | number                      | false    | 60                   |
+| rowStyle               | object                      | false    | {}                   |
+| onRowClick             | func                        | false    | null                 |
+| className              | string                      | false    | null                 |
 | defaultColumnSortIndex | number                      | false    | 0                    |
 | sort                   | func                        | false    | null                 |
 | sortBy                 | string                      | false    | null                 |
-| sortDirection          | oneOf('ASC', 'DESC')        | false    | null                 |
+| sortDirection          | oneOf('ASC', 'DESC')        | false    | 'ASC'                |
 
 
 ### BpkDataTableColumn
 
-Supports all properties defined in [`Column`](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md) (from `react-virtualized`)
+| Property               | PropType                    | Required | Default Value        |
+| ---------------------- | --------------------------- | -------- | -------------------- |
+| dataKey                | string                      | true     | -                    |
+| width                  | number                      | true     | -                    |
+| flexGrow               | number                      | false    | 0                    |
+| label                  | string                      | false    | null                 |
+| headerRenderer         | func                        | false    | null                 |
+| headerClassName        | string                      | false    | null                 |
+| headerStyle            | object                      | false    | {}                   |
+| cellRenderer           | func                        | false    | null                 |
+| cellDataGetter         | func                        | false    | null                 |
+| disableSort            | bool                        | false    | false                |
+| defaultSortDirection   | oneOf('ASC', 'DESC')        | false    | 'ASC'                |
+| className              | string                      | false    | null                 |
+
+### Prop Details
+
+
+#### sort, sortBy, sortDirection
+
+For custom sorting, pass a `sort` function.
+Use `sortBy` to specify which column the custom sorting will be applied to.
+Use `sortDirection` to set the direction of sorting. By default, it will be ascending.
+
+#### defaultColumnSortIndex
+
+The data will be sorted by default based on this column.
+
+#### headerRenderer
+
+To handle more complex header data that needs any custom processing, pass a function or component to `headerRenderer` prop. This will only be formatting the header value - all styling will be handled by the component.
+It should implement the following signature:
+
+```
+function ({
+  column: { id: string, disableSortBy: boolean, label: string}
+}): element
+```
+
+#### cellDataGetter
+
+To handle more complex cell data that needs any custom processing, pass a function or component to `cellDataGetter` prop. This will only be formatting the cell value - all styling will be handled by the component.
+It should implement the following signature:
+
+```
+function ({
+  column: {id: string }
+  row: { values: any }
+}): any
+```
+
+#### cellRenderer
+
+To handle more complex cell data that needs any custom processing, pass a function or component to `cellRenderer` prop. This will only be formatting the cell value - all styling will be handled by the component. To maintain backward compatibility, both `cellRenderer` and `cellDataGetter` will be supported, however, they are interchangeable as they both can only format the cell value.
+It should implement the following signature:
+
+```
+function ({
+  value: any,
+  column: { id: string },
+  row: { values: any }
+}): node
+```

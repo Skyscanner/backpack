@@ -3,38 +3,38 @@
 exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
 <DocumentFragment>
   <div
-    style="overflow: visible; width: 0px;"
+    class="bpk-data-table"
+    headerheight="60"
+    role="table"
+    rowheight="60"
+    style="height: 200px;"
   >
-    <div
-      aria-colcount="3"
-      aria-rowcount="2"
-      class="ReactVirtualized__Table bpk-data-table"
-      role="grid"
-    >
+    <div>
       <div
-        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__row--clickable bpk-data-table__header-row"
+        class="bpk-data-table__row bpk-data-table__header-row "
         role="row"
-        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
+        style="height: 60px;"
       >
         <div
-          aria-label="Name"
-          aria-sort="ascending"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Name"
+            aria-label="Name"
+            aria-pressed="true"
+            role="button"
+            tabindex="0"
           >
             Name
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -60,24 +60,25 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
           </div>
         </div>
         <div
-          aria-label="Description"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 1 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 1;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Description"
+            aria-label="Description"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Description
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -89,7 +90,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -103,24 +104,25 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
           </div>
         </div>
         <div
-          aria-label="Bla"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Bla"
+            aria-label="Bla"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Bla
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -132,7 +134,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -146,28 +148,67 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
           </div>
         </div>
       </div>
-      <div
-        aria-label="grid"
-        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-        role="rowgroup"
-        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
-        tabindex="0"
-      />
     </div>
-  </div>
-  <div
-    class="resize-triggers"
-  >
     <div
-      class="expand-trigger"
+      role="rowgroup"
     >
       <div
-        style="width: 1px; height: 1px;"
-      />
+        class="bpk-data-table__row bpk-data-table__row--clickable"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Jose
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Software Engineer
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
+      <div
+        class="bpk-data-table__row bpk-data-table__row--clickable"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Rolf
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Some guy
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
     </div>
-    <div
-      class="contract-trigger"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -175,38 +216,38 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
 exports[`BpkDataTable should render correctly with a custom className 1`] = `
 <DocumentFragment>
   <div
-    style="overflow: visible; width: 0px;"
+    class="bpk-data-table custom-data-table"
+    headerheight="60"
+    role="table"
+    rowheight="60"
+    style="height: 200px;"
   >
-    <div
-      aria-colcount="3"
-      aria-rowcount="2"
-      class="ReactVirtualized__Table bpk-data-table custom-data-table"
-      role="grid"
-    >
+    <div>
       <div
-        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
+        class="bpk-data-table__row bpk-data-table__header-row "
         role="row"
-        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
+        style="height: 60px;"
       >
         <div
-          aria-label="Name"
-          aria-sort="ascending"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Name"
+            aria-label="Name"
+            aria-pressed="true"
+            role="button"
+            tabindex="0"
           >
             Name
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -218,7 +259,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -232,24 +273,25 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
           </div>
         </div>
         <div
-          aria-label="Description"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 1 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 1;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Description"
+            aria-label="Description"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Description
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -261,7 +303,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -275,24 +317,25 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
           </div>
         </div>
         <div
-          aria-label="Bla"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Bla"
+            aria-label="Bla"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Bla
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -304,7 +347,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -318,28 +361,67 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
           </div>
         </div>
       </div>
-      <div
-        aria-label="grid"
-        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-        role="rowgroup"
-        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
-        tabindex="0"
-      />
     </div>
-  </div>
-  <div
-    class="resize-triggers"
-  >
     <div
-      class="expand-trigger"
+      role="rowgroup"
     >
       <div
-        style="width: 1px; height: 1px;"
-      />
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Jose
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Software Engineer
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
+      <div
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Rolf
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Some guy
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
     </div>
-    <div
-      class="contract-trigger"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -347,38 +429,39 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
 exports[`BpkDataTable should render correctly with a custom headerClassName 1`] = `
 <DocumentFragment>
   <div
-    style="overflow: visible; width: 0px;"
+    class="bpk-data-table"
+    headerclassname="custom-data-table__header"
+    headerheight="60"
+    role="table"
+    rowheight="60"
+    style="height: 200px;"
   >
-    <div
-      aria-colcount="3"
-      aria-rowcount="2"
-      class="ReactVirtualized__Table bpk-data-table"
-      role="grid"
-    >
+    <div>
       <div
-        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
+        class="bpk-data-table__row bpk-data-table__header-row custom-data-table__header"
         role="row"
-        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
+        style="height: 60px;"
       >
         <div
-          aria-label="Name"
-          aria-sort="ascending"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column custom-data-table__header"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Name"
+            aria-label="Name"
+            aria-pressed="true"
+            role="button"
+            tabindex="0"
           >
             Name
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -390,7 +473,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -404,24 +487,25 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
           </div>
         </div>
         <div
-          aria-label="Description"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column custom-data-table__header"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 1 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 1;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Description"
+            aria-label="Description"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Description
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -433,7 +517,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -447,24 +531,25 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
           </div>
         </div>
         <div
-          aria-label="Bla"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column custom-data-table__header"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Bla"
+            aria-label="Bla"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Bla
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -476,7 +561,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -490,28 +575,67 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
           </div>
         </div>
       </div>
-      <div
-        aria-label="grid"
-        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-        role="rowgroup"
-        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
-        tabindex="0"
-      />
     </div>
-  </div>
-  <div
-    class="resize-triggers"
-  >
     <div
-      class="expand-trigger"
+      role="rowgroup"
     >
       <div
-        style="width: 1px; height: 1px;"
-      />
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Jose
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Software Engineer
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
+      <div
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Rolf
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Some guy
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
     </div>
-    <div
-      class="contract-trigger"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -519,38 +643,38 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
 exports[`BpkDataTable should render correctly with a custom rowClassName function 1`] = `
 <DocumentFragment>
   <div
-    style="overflow: visible; width: 0px;"
+    class="bpk-data-table"
+    headerheight="60"
+    role="table"
+    rowheight="60"
+    style="height: 200px;"
   >
-    <div
-      aria-colcount="3"
-      aria-rowcount="2"
-      class="ReactVirtualized__Table bpk-data-table"
-      role="grid"
-    >
+    <div>
       <div
-        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row custom-data-table__row_odd"
+        class="bpk-data-table__row bpk-data-table__header-row "
         role="row"
-        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
+        style="height: 60px;"
       >
         <div
-          aria-label="Name"
-          aria-sort="ascending"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Name"
+            aria-label="Name"
+            aria-pressed="true"
+            role="button"
+            tabindex="0"
           >
             Name
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -562,7 +686,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -576,24 +700,25 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
           </div>
         </div>
         <div
-          aria-label="Description"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 1 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 1;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Description"
+            aria-label="Description"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Description
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -605,7 +730,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -619,24 +744,25 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
           </div>
         </div>
         <div
-          aria-label="Bla"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Bla"
+            aria-label="Bla"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Bla
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -648,7 +774,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -662,28 +788,67 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
           </div>
         </div>
       </div>
-      <div
-        aria-label="grid"
-        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-        role="rowgroup"
-        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
-        tabindex="0"
-      />
     </div>
-  </div>
-  <div
-    class="resize-triggers"
-  >
     <div
-      class="expand-trigger"
+      role="rowgroup"
     >
       <div
-        style="width: 1px; height: 1px;"
-      />
+        class="bpk-data-table__row custom-data-table__row_even"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Jose
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Software Engineer
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
+      <div
+        class="bpk-data-table__row custom-data-table__row_odd"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Rolf
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Some guy
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
     </div>
-    <div
-      class="contract-trigger"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -691,38 +856,39 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
 exports[`BpkDataTable should render correctly with a custom rowClassName string 1`] = `
 <DocumentFragment>
   <div
-    style="overflow: visible; width: 0px;"
+    class="bpk-data-table"
+    headerheight="60"
+    role="table"
+    rowclassname="custom-data-table__row"
+    rowheight="60"
+    style="height: 200px;"
   >
-    <div
-      aria-colcount="3"
-      aria-rowcount="2"
-      class="ReactVirtualized__Table bpk-data-table"
-      role="grid"
-    >
+    <div>
       <div
-        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row custom-data-table__row"
+        class="bpk-data-table__row bpk-data-table__header-row "
         role="row"
-        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
+        style="height: 60px;"
       >
         <div
-          aria-label="Name"
-          aria-sort="ascending"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Name"
+            aria-label="Name"
+            aria-pressed="true"
+            role="button"
+            tabindex="0"
           >
             Name
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -734,7 +900,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -748,24 +914,25 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
           </div>
         </div>
         <div
-          aria-label="Description"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 1 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 1;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Description"
+            aria-label="Description"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Description
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -777,7 +944,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -791,24 +958,25 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
           </div>
         </div>
         <div
-          aria-label="Bla"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Bla"
+            aria-label="Bla"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Bla
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -820,7 +988,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -834,28 +1002,67 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
           </div>
         </div>
       </div>
-      <div
-        aria-label="grid"
-        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-        role="rowgroup"
-        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
-        tabindex="0"
-      />
     </div>
-  </div>
-  <div
-    class="resize-triggers"
-  >
     <div
-      class="expand-trigger"
+      role="rowgroup"
     >
       <div
-        style="width: 1px; height: 1px;"
-      />
+        class="bpk-data-table__row custom-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Jose
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Software Engineer
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
+      <div
+        class="bpk-data-table__row custom-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Rolf
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Some guy
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
     </div>
-    <div
-      class="contract-trigger"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -863,229 +1070,209 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
 exports[`BpkDataTable should render correctly with a specified width 1`] = `
 <DocumentFragment>
   <div
-    aria-colcount="3"
-    aria-rowcount="2"
-    class="ReactVirtualized__Table bpk-data-table"
-    role="grid"
+    class="bpk-data-table"
+    headerheight="60"
+    role="table"
+    rowheight="60"
+    style="width: 400px; height: 200px;"
   >
-    <div
-      class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
-      role="row"
-      style="height: 60px; overflow: hidden; padding-right: 0px; width: 400px;"
-    >
+    <div>
       <div
-        aria-label="Name"
-        aria-sort="ascending"
-        class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        role="columnheader"
-        style="flex: 0 1 100px;"
-        tabindex="0"
+        class="bpk-data-table__row bpk-data-table__header-row "
+        role="row"
+        style="height: 60px;"
       >
-        <span
-          class="bpk-data-table-column__header"
-          title="Name"
-        >
-          Name
-        </span>
         <div
-          class="bpk-data-table-column__sort-icons"
+          class="bpk-data-table-column__header"
+          colspan="1"
+          role="columnheader"
+          style="width: 100px; flex-grow: 0;"
         >
-          <svg
-            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            aria-label="Name"
+            aria-pressed="true"
+            role="button"
+            tabindex="0"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Name
+          </span>
+          <div
+            aria-hidden="true"
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
-      </div>
-      <div
-        aria-label="Description"
-        aria-sort="none"
-        class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        role="columnheader"
-        style="flex: 1 1 100px;"
-        tabindex="0"
-      >
-        <span
-          class="bpk-data-table-column__header"
-          title="Description"
-        >
-          Description
-        </span>
         <div
-          class="bpk-data-table-column__sort-icons"
+          class="bpk-data-table-column__header"
+          colspan="1"
+          role="columnheader"
+          style="width: 100px; flex-grow: 1;"
         >
-          <svg
-            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            aria-label="Description"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Description
+          </span>
+          <div
+            aria-hidden="true"
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
-      </div>
-      <div
-        aria-label="Bla"
-        aria-sort="none"
-        class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        role="columnheader"
-        style="flex: 0 1 100px;"
-        tabindex="0"
-      >
-        <span
-          class="bpk-data-table-column__header"
-          title="Bla"
-        >
-          Bla
-        </span>
         <div
-          class="bpk-data-table-column__sort-icons"
+          class="bpk-data-table-column__header"
+          colspan="1"
+          role="columnheader"
+          style="width: 100px; flex-grow: 0;"
         >
-          <svg
-            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            aria-label="Bla"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Bla
+          </span>
+          <div
+            aria-hidden="true"
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
     <div
-      aria-label="grid"
-      class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
       role="rowgroup"
-      style="box-sizing: border-box; height: 140px; position: relative; width: 400px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
-      tabindex="0"
     >
       <div
-        class="ReactVirtualized__Grid__innerScrollContainer"
-        role="rowgroup"
-        style="width: auto; height: 120px; max-width: 400px; max-height: 120px; overflow: hidden; position: relative;"
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
       >
         <div
-          aria-label="row"
-          aria-rowindex="1"
-          class="ReactVirtualized__Table__row bpk-data-table__row"
-          role="row"
-          style="height: 60px; left: 0px; position: absolute; top: 0px; width: 400px; overflow: hidden; padding-right: 0px;"
-          tabindex="0"
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
         >
-          <div
-            aria-colindex="1"
-            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-            role="gridcell"
-            style="overflow: hidden; flex: 0 1 100px;"
-            title="Jose"
-          >
-            Jose
-          </div>
-          <div
-            aria-colindex="2"
-            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-            role="gridcell"
-            style="overflow: hidden; flex: 1 1 100px;"
-            title="Software Engineer"
-          >
-            Software Engineer
-          </div>
-          <div
-            aria-colindex="3"
-            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-            role="gridcell"
-            style="overflow: hidden; flex: 0 1 100px;"
-            title="Bla"
-          >
-            Bla
-          </div>
+          Jose
         </div>
         <div
-          aria-label="row"
-          aria-rowindex="2"
-          class="ReactVirtualized__Table__row bpk-data-table__row"
-          role="row"
-          style="height: 60px; left: 0px; position: absolute; top: 60px; width: 400px; overflow: hidden; padding-right: 0px;"
-          tabindex="0"
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
         >
-          <div
-            aria-colindex="1"
-            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-            role="gridcell"
-            style="overflow: hidden; flex: 0 1 100px;"
-            title="Rolf"
-          >
-            Rolf
-          </div>
-          <div
-            aria-colindex="2"
-            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-            role="gridcell"
-            style="overflow: hidden; flex: 1 1 100px;"
-            title="Some guy"
-          >
-            Some guy
-          </div>
-          <div
-            aria-colindex="3"
-            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-            role="gridcell"
-            style="overflow: hidden; flex: 0 1 100px;"
-            title="Bla"
-          >
-            Bla
-          </div>
+          Software Engineer
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
+      <div
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Rolf
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Some guy
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
         </div>
       </div>
     </div>
@@ -1096,38 +1283,38 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
 exports[`BpkDataTable should render correctly with multiple columns 1`] = `
 <DocumentFragment>
   <div
-    style="overflow: visible; width: 0px;"
+    class="bpk-data-table"
+    headerheight="60"
+    role="table"
+    rowheight="60"
+    style="height: 200px;"
   >
-    <div
-      aria-colcount="3"
-      aria-rowcount="2"
-      class="ReactVirtualized__Table bpk-data-table"
-      role="grid"
-    >
+    <div>
       <div
-        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
+        class="bpk-data-table__row bpk-data-table__header-row "
         role="row"
-        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
+        style="height: 60px;"
       >
         <div
-          aria-label="Name"
-          aria-sort="ascending"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Name"
+            aria-label="Name"
+            aria-pressed="true"
+            role="button"
+            tabindex="0"
           >
             Name
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1139,7 +1326,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1153,24 +1340,25 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
           </div>
         </div>
         <div
-          aria-label="Description"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 1 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 1;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Description"
+            aria-label="Description"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Description
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1182,7 +1370,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1196,24 +1384,25 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
           </div>
         </div>
         <div
-          aria-label="Bla"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Bla"
+            aria-label="Bla"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Bla
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1225,7 +1414,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1239,28 +1428,67 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
           </div>
         </div>
       </div>
-      <div
-        aria-label="grid"
-        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-        role="rowgroup"
-        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
-        tabindex="0"
-      />
     </div>
-  </div>
-  <div
-    class="resize-triggers"
-  >
     <div
-      class="expand-trigger"
+      role="rowgroup"
     >
       <div
-        style="width: 1px; height: 1px;"
-      />
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Jose
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Software Engineer
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
+      <div
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 60px;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Rolf
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 1;"
+        >
+          Some guy
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 100px; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
     </div>
-    <div
-      class="contract-trigger"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -1268,38 +1496,38 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
 exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
 <DocumentFragment>
   <div
-    style="overflow: visible; width: 0px;"
+    class="bpk-data-table"
+    headerheight="60"
+    role="table"
+    rowheight="60"
+    style="height: 200px;"
   >
-    <div
-      aria-colcount="3"
-      aria-rowcount="0"
-      class="ReactVirtualized__Table bpk-data-table"
-      role="grid"
-    >
+    <div>
       <div
-        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
+        class="bpk-data-table__row bpk-data-table__header-row "
         role="row"
-        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
+        style="height: 60px;"
       >
         <div
-          aria-label="Name"
-          aria-sort="ascending"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Name"
+            aria-label="Name"
+            aria-pressed="true"
+            role="button"
+            tabindex="0"
           >
             Name
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1311,7 +1539,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1325,24 +1553,25 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
           </div>
         </div>
         <div
-          aria-label="Description"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 1 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 1;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Description"
+            aria-label="Description"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Description
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1354,7 +1583,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1368,24 +1597,25 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
           </div>
         </div>
         <div
-          aria-label="Bla"
-          aria-sort="none"
-          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          class="bpk-data-table-column__header"
+          colspan="1"
           role="columnheader"
-          style="flex: 0 1 100px;"
-          tabindex="0"
+          style="width: 100px; flex-grow: 0;"
         >
           <span
-            class="bpk-data-table-column__header"
-            title="Bla"
+            aria-label="Bla"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
           >
             Bla
           </span>
           <div
+            aria-hidden="true"
             class="bpk-data-table-column__sort-icons"
           >
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1397,7 +1627,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               />
             </svg>
             <svg
-              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="18"
               style="width: 1.125rem; height: 1.125rem;"
               viewBox="0 0 24 24"
@@ -1411,27 +1641,9 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
           </div>
         </div>
       </div>
-      <div
-        aria-label="grid"
-        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-        role="rowgroup"
-        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
-        tabindex="0"
-      />
-    </div>
-  </div>
-  <div
-    class="resize-triggers"
-  >
-    <div
-      class="expand-trigger"
-    >
-      <div
-        style="width: 1px; height: 1px;"
-      />
     </div>
     <div
-      class="contract-trigger"
+      role="rowgroup"
     />
   </div>
 </DocumentFragment>

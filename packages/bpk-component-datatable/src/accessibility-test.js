@@ -29,12 +29,7 @@ const rows = [
 ];
 
 describe('BpkDataTable accessibility tests', () => {
-  /*
-  This component isn't as accessible as it could be due to the underlying
-  library we use for it. At some point we should fix this, but for now
-  it won't pass the accessibility test.
-  */
-  it.skip('should not have programmatically-detectable accessibility issues', async () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkDataTable rows={rows} height={200}>
         <BpkDataTableColumn label="Name" dataKey="name" width={100} />

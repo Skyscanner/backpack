@@ -17,33 +17,55 @@
  */
 
 /* @flow strict */
-import type { ChildrenArray, Element } from 'react';
-
-import BpkDataTableColumn from './BpkDataTableColumn';
 import type {
   SortDirectionType as _SortDirectionType,
   SortProps as _SortProps,
 } from './sort-types';
 
-export type ColumnType = {
-  toColumn(column: any, key: string): any,
-};
-
-export type DataTableProps = {
+type CommonColumnProps = {
+  defaultSortDirection: _SortDirectionType,
+  flexGrow: number,
   headerClassName: ?string,
-  rowClassName: ?string,
+  headerStyle: ?{},
+  label: ?string,
+  minWidth: ?number,
+  width: number,
 };
 
 export type Props<Row> = {
-  ...$Exact<DataTableProps>,
   rows: Array<Row>,
-  children: ChildrenArray<Element<typeof BpkDataTableColumn> & ColumnType>,
+  children: Node,
+  height: number,
   width: ?number,
   headerHeight: number,
+  rowHeight: number,
   className: ?string,
   defaultColumnSortIndex: number,
+  headerClassName: ?string,
+  rowClassName: ?string,
   onRowClick: (Row) => mixed,
   ...$Exact<_SortProps>,
+};
+
+export type ColumnType = {
+  disableSortBy: boolean,
+  getHeaderProps: Function,
+  isSorted: boolean,
+  isSortedDesc: boolean,
+  render: Function,
+  sortDirection: _SortDirectionType,
+  toggleSortBy: Function,
+  ...$Exact<CommonColumnProps>,
+};
+
+export type BpkDataTableColumnProps = {
+  cellDataGetter: ?Function,
+  cellRenderer: ?Function,
+  className: ?string,
+  dataKey: string,
+  disableSort: boolean,
+  headerRenderer: ?Function,
+  ...$Exact<CommonColumnProps>,
 };
 
 export type SortDirectionType = _SortDirectionType;

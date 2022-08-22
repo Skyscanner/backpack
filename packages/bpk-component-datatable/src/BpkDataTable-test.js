@@ -20,7 +20,6 @@ import React from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { SortDirection } from 'react-virtualized/dist/commonjs/Table';
-import _sortBy from 'lodash/sortBy';
 
 import BpkDataTable from './BpkDataTable';
 import BpkDataTableColumn from './BpkDataTableColumn';
@@ -191,7 +190,7 @@ describe('BpkDataTable', () => {
     )[0];
     expect(firstRow).toHaveTextContent(/Software Engineer/i);
 
-    const header = screen.getByRole('columnheader', { name: 'Name' });
+    const header = screen.getByRole('button', { name: 'Name' });
     await fireEvent.click(header);
 
     const firstRowNameSorted = within(
@@ -289,21 +288,21 @@ describe('BpkDataTable', () => {
     );
 
     const firstRow = within(screen.getAllByRole('row')[1]).getAllByRole(
-      'gridcell',
+      'cell',
     )[1];
     expect(firstRow).toHaveTextContent('Software Engineer');
 
-    const header = screen.getAllByRole('columnheader');
-    await fireEvent.click(header[0]);
+    const header = screen.getByRole('button', { name: 'Name' });
+    await fireEvent.click(header);
 
     const firstRowDescriptionSorted = within(
       screen.getAllByRole('row')[1],
-    ).getAllByRole('gridcell')[1];
+    ).getAllByRole('cell')[1];
     expect(firstRowDescriptionSorted).toHaveTextContent('Software Engineer');
   });
 
   it('should sort rows using custom sort when it is passed', async () => {
-    let complexRows = [
+    const complexRows = [
       {
         name: 'Jose',
         description: 'Software Engineer',
@@ -320,16 +319,18 @@ describe('BpkDataTable', () => {
         seat: { office: 'Barcelona', desk: 15 },
       },
     ];
-    let sortByValue = 'seat';
-    let sortDirectionValue = 'DESC';
-    const sortFunction = ({ sortBy, sortDirection }) => {
-      complexRows = _sortBy(complexRows, [
-        (row) => row.seat.office,
-        (row) => row.seat.desk,
-      ]);
-      sortByValue = sortBy;
-      sortDirectionValue = sortDirection;
+    const sortByValue = 'seat';
+    const sortDirectionValue = 'DESC';
+    const sortFunction = (rowA, rowB) => {
+      const deskA = rowA.values.seat.desk;
+      const deskB = rowB.values.seat.desk;
+
+      if (deskA === deskB) {
+        return 0;
+      }
+      return deskA > deskB ? 1 : -1;
     };
+
     const getBpkDataTable = (rowsData, sortBy, sortDirection) => (
       <BpkDataTable
         rows={rowsData}
@@ -355,9 +356,9 @@ describe('BpkDataTable', () => {
           dataKey="seat"
           width={100}
           flexGrow={1}
-          cellRenderer={({ cellData }) => (
+          cellRenderer={({ value }) => (
             <React.Fragment>
-              {cellData.office} - {cellData.desk}
+              {value.office} - {value.desk}
             </React.Fragment>
           )}
         />
@@ -371,17 +372,17 @@ describe('BpkDataTable', () => {
       within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[2],
     ).toHaveTextContent('Barcelona - 15');
 
-    const header = screen.getByRole('columnheader', { name: 'Seat' });
+    const header = screen.getByRole('button', { name: 'Seat' });
     await fireEvent.click(header);
 
     rerender(getBpkDataTable(complexRows, sortByValue, sortDirectionValue));
 
     expect(
       within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[0],
-    ).toHaveTextContent(/Barcelona - 12/i);
+    ).toHaveTextContent(/Barcelona - 15/i);
     expect(
       within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[1],
-    ).toHaveTextContent(/Barcelona - 15/i);
+    ).toHaveTextContent(/Barcelona - 12/i);
     expect(
       within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[2],
     ).toHaveTextContent(/London - 10/i);
@@ -415,7 +416,11 @@ describe('BpkDataTable', () => {
   });
 
   it('onRowClick/bug: ensure handler is applied to the right element after sorting', async () => {
-    const abcRows = [{ letter: 'Z' }, { letter: 'P' }, { letter: 'A' }];
+    const abcRows = [
+      { letter: 'Z', number: 0 },
+      { letter: 'P', number: 1 },
+      { letter: 'A', number: 2 },
+    ];
     const onRowClick = jest.fn();
     render(
       <BpkDataTable
@@ -425,12 +430,10 @@ describe('BpkDataTable', () => {
         onRowClick={onRowClick}
       >
         <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
-        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
+        <BpkDataTableColumn label="Number" dataKey="number" width={100} />
       </BpkDataTable>,
     );
 
-    // Select the last element in the table, which after sorting
-    // it will be letter Z so index 0.
     await fireEvent.click(
       within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[2],
     );
@@ -485,9 +488,9 @@ describe('BpkDataTable', () => {
 
   it('Default table is sorted by the column specified in the index', () => {
     const abcRows = [
-      { letter: 'A', number: 1 },
+      { letter: 'C', number: 1 },
       { letter: 'B', number: 2 },
-      { letter: 'C', number: 3 },
+      { letter: 'A', number: 3 },
     ];
     render(
       <BpkDataTable
@@ -506,10 +509,8 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
 
-    // Select the last element in the table, when sorting by default on 2nd
-    // column it will be A1.
     expect(
       within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row')[0],
-    ).toHaveTextContent('C3');
+    ).toHaveTextContent('A3');
   });
 });

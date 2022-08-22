@@ -1,32 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`bpkHeaderRenderer does not render sort icons if sorting disabled 1`] = `
+exports[`BpkDataTableHeader does not render sort icons if sorting disabled 1`] = `
 <DocumentFragment>
   <div>
     <span
-      class="bpk-data-table-column__header"
-      title="Label"
+      aria-label="Name"
+      aria-pressed="false"
+      role="button"
+      tabindex="0"
     >
-      Label
+      Name
     </span>
   </div>
 </DocumentFragment>
 `;
 
-exports[`bpkHeaderRenderer renders sort icon with down icon selected 1`] = `
+exports[`BpkDataTableHeader renders sort icon with down icon selected 1`] = `
 <DocumentFragment>
   <div>
     <span
-      class="bpk-data-table-column__header"
-      title="Label"
+      aria-label="Name"
+      aria-pressed="true"
+      role="button"
+      tabindex="0"
     >
-      Label
+      Name
     </span>
     <div
+      aria-hidden="true"
       class="bpk-data-table-column__sort-icons"
     >
       <svg
-        class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+        class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -38,7 +43,7 @@ exports[`bpkHeaderRenderer renders sort icon with down icon selected 1`] = `
         />
       </svg>
       <svg
-        class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+        class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -54,20 +59,23 @@ exports[`bpkHeaderRenderer renders sort icon with down icon selected 1`] = `
 </DocumentFragment>
 `;
 
-exports[`bpkHeaderRenderer renders sort icon with up icon selected 1`] = `
+exports[`BpkDataTableHeader renders sort icon with up icon selected 1`] = `
 <DocumentFragment>
   <div>
     <span
-      class="bpk-data-table-column__header"
-      title="Label"
+      aria-label="Name"
+      aria-pressed="true"
+      role="button"
+      tabindex="0"
     >
-      Label
+      Name
     </span>
     <div
+      aria-hidden="true"
       class="bpk-data-table-column__sort-icons"
     >
       <svg
-        class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+        class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -79,7 +87,7 @@ exports[`bpkHeaderRenderer renders sort icon with up icon selected 1`] = `
         />
       </svg>
       <svg
-        class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+        class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -95,20 +103,23 @@ exports[`bpkHeaderRenderer renders sort icon with up icon selected 1`] = `
 </DocumentFragment>
 `;
 
-exports[`bpkHeaderRenderer renders sort icons 1`] = `
+exports[`BpkDataTableHeader renders sort icons 1`] = `
 <DocumentFragment>
   <div>
     <span
-      class="bpk-data-table-column__header"
-      title="Label"
+      aria-label="Name"
+      aria-pressed="false"
+      role="button"
+      tabindex="0"
     >
-      Label
+      Name
     </span>
     <div
+      aria-hidden="true"
       class="bpk-data-table-column__sort-icons"
     >
       <svg
-        class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+        class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -120,7 +131,7 @@ exports[`bpkHeaderRenderer renders sort icons 1`] = `
         />
       </svg>
       <svg
-        class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+        class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"

@@ -17,47 +17,45 @@
  */
 /* @flow strict */
 
-import React, { type Element } from 'react';
-import { Column } from 'react-virtualized';
-import { cssModules } from 'bpk-react-utils';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import bpkHeaderRenderer from './bpkHeaderRenderer';
-import STYLES from './BpkDataTableColumn.module.scss';
-import { type SortDirectionType } from './sort-types';
+import { SORT_DIRECTION_TYPES } from './sort-types';
+import { type BpkDataTableColumnProps } from './common-types';
 
-export type BpkDataTableColumnProps = {
-  className: ?string,
-  dataKey: string,
-  disableSort: boolean,
-  defaultSortDirection: SortDirectionType,
+// BpkDataTableColumn is just a props wrapper
+// to maintain backwards compatibility with the old API of BpkDataTable which takes columns as children
+// The `react-table` library however expects columns as an array of objects
+
+const BpkDataTableColumn = (props: BpkDataTableColumnProps) => (
+  <div {...props} />
+);
+
+BpkDataTableColumn.propTypes = {
+  dataKey: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  className: PropTypes.string,
+  disableSort: PropTypes.bool,
+  defaultSortDirection: PropTypes.oneOf(Object.keys(SORT_DIRECTION_TYPES)),
+  flexGrow: PropTypes.number,
+  label: PropTypes.string,
+  headerRenderer: PropTypes.func,
+  headerClassName: PropTypes.string,
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  cellRenderer: PropTypes.func,
+  cellDataGetter: PropTypes.func,
 };
-
-const getClassName = cssModules(STYLES);
-
-// BpkDataTableColumn is just a props wrapper since Table only accepts Column children
-// BpkDataTable uses BpkDataTableColumn.toColumn to convert BpkDataTableColumn to Columns
-// eslint-disable-next-line no-unused-vars
-const BpkDataTableColumn = (props: BpkDataTableColumnProps) => null;
-
-BpkDataTableColumn.toColumn = (
-  bpkDataTableColumn: Element<typeof BpkDataTableColumn>,
-  key,
-) => {
-  const { className, ...rest } = bpkDataTableColumn.props;
-  const classNames = [getClassName('bpk-data-table-column')];
-
-  if (className) {
-    classNames.push(className);
-  }
-
-  // $FlowFixMe[cannot-spread-inexact]
-  return <Column className={classNames.join(' ')} key={key} {...rest} />;
-};
-
-BpkDataTableColumn.propTypes = { ...Column.propTypes };
 BpkDataTableColumn.defaultProps = {
-  ...Column.defaultProps,
-  headerRenderer: bpkHeaderRenderer,
+  className: null,
+  disableSort: false,
+  defaultSortDirection: SORT_DIRECTION_TYPES.ASC,
+  flexGrow: 0,
+  label: null,
+  headerRenderer: null,
+  headerClassName: null,
+  headerStyle: null,
+  cellRenderer: null,
+  cellDataGetter: null,
 };
 
 export default BpkDataTableColumn;

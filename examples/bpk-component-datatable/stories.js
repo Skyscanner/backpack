@@ -24,6 +24,8 @@ import {
   FixedWidth,
   DisabledSort,
   CustomRowAndHeaderHeights,
+  HeaderRendererExample,
+  CustomSortingExample,
 } from './examples';
 
 storiesOf('bpk-component-datatable', module)
@@ -32,4 +34,6 @@ storiesOf('bpk-component-datatable', module)
   .add('Fixed Width Example', FixedWidth)
   .add('Disabled Sort Example', DisabledSort)
   .add('Custom row and header heights', CustomRowAndHeaderHeights)
+  .add('Custom sorting Example', CustomSortingExample)
+  .add('Custom header data Example', HeaderRendererExample)
   .add('Visual test', AutowidthExample);

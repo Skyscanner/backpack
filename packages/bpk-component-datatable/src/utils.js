@@ -17,14 +17,42 @@
  */
 /* @flow strict */
 
+// To maintain backwards compatibility with the old API of BpkDataTable which takes columns as children
+// The `react-table` library however expects columns as an array of objects
 // eslint-disable-next-line import/prefer-default-export
-export const hasClassName = (node: ?Element, className: ?string): boolean => {
-  if (node == null) {
-    return false;
-  }
-
-  const nodeClassName = node.getAttribute('class');
-  return (
-    nodeClassName != null && nodeClassName.split(' ').indexOf(className) !== -1
-  );
-};
+export const getColumns = (columns) =>
+  columns.map((column) => {
+    const {
+      cellDataGetter,
+      cellRenderer,
+      className,
+      dataKey,
+      defaultSortDirection,
+      disableSort,
+      flexGrow,
+      headerClassName,
+      headerRenderer,
+      headerStyle,
+      label,
+      minWidth,
+      style,
+      width,
+    } = column.props;
+    return {
+      Header: headerRenderer || label,
+      accessor: dataKey,
+      ...((cellRenderer || cellDataGetter) && {
+        Cell: cellRenderer || cellDataGetter,
+      }),
+      className,
+      disableSortBy: disableSort,
+      defaultSortDirection,
+      flexGrow,
+      headerClassName,
+      headerStyle,
+      label,
+      minWidth,
+      style,
+      width,
+    };
+  });
