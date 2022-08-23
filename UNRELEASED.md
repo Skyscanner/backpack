@@ -35,3 +35,8 @@
 
 - bpk-component-map:
   - Changed price marker colours in `viewed` and `disabled` states.
+
+**Fixed:**
+
+- bpk-component-calendar:
+  - Set default values for `minDate` and `maxDate` in `BpkCalendarGrid`
