@@ -33,17 +33,17 @@ $bpk-spacing-v2: true;
   }
 
   &-default {
-    color: $bpk-color-white;
+    color: $bpk-color-white; // needs to be changed
 
     @include bpk-themeable-property(
       border-color,
       --bpk-price-marker-background-color,
-      $bpk-color-sky-blue
+      $bpk-core-accent-day
     );
     @include bpk-themeable-property(
       background-color,
       --bpk-price-marker-background-color,
-      $bpk-color-sky-blue
+      $bpk-core-accent-day
     );
   }
 
@@ -51,42 +51,42 @@ $bpk-spacing-v2: true;
     @include bpk-themeable-property(
       color,
       --bpk-price-marker-viewed-color,
-      $bpk-color-sky-blue
+      $bpk-color-sky-blue // needs to be changed
     );
     @include bpk-themeable-property(
       border-color,
       --bpk-price-marker-viewed-border-color,
-      $bpk-color-sky-blue-tint-03
+      $bpk-core-accent-day
     );
     @include bpk-themeable-property(
       background-color,
       --bpk-price-marker-viewed-background-color,
-      $bpk-color-sky-blue-tint-03
+      $bpk-core-accent-day
     );
   }
 
   &-focused {
     padding: (bpk-spacing-sm() + ($bpk-one-pixel-rem * 2)) bpk-spacing-md();
-    background-color: $bpk-color-white;
+    background-color: $bpk-surface-default-day;
 
     @include bpk-themeable-property(
       border-color,
       --bpk-price-marker-selected-border-color,
-      $bpk-color-sky-blue
+      $bpk-core-accent-day
     );
     @include bpk-themeable-property(
       color,
       --bpk-price-marker-selected-color,
-      $bpk-color-sky-blue
+      $bpk-text-link-day
     );
   }
 
   &-disabled {
     // We want the disabled marker appear under any other markers that maybe rendered around it
     z-index: -2;
-    border-color: $bpk-color-sky-gray-tint-07;
-    background-color: $bpk-color-sky-gray-tint-07;
-    color: $bpk-color-sky-gray-tint-04;
+    border-color: $bpk-canvas-day;
+    background-color: $bpk-canvas-day;
+    color: $bpk-text-disabled-day;
   }
 
   &__wrapper {
@@ -108,13 +108,13 @@ $bpk-spacing-v2: true;
     height: bpk-spacing-base();
     transform: rotate(45deg);
     border-radius: 25%;
-    background-color: $bpk-color-sky-blue;
+    background-color: $bpk-core-accent-day;
 
     &-default {
       @include bpk-themeable-property(
         background-color,
         --bpk-price-marker-background-color,
-        $bpk-color-sky-blue
+        $bpk-core-accent-day
       );
     }
 
@@ -122,7 +122,7 @@ $bpk-spacing-v2: true;
       @include bpk-themeable-property(
         background-color,
         --bpk-price-marker-viewed-border-color,
-        $bpk-color-sky-blue-tint-03
+        $bpk-core-accent-day
       );
     }
 
@@ -133,14 +133,14 @@ $bpk-spacing-v2: true;
       @include bpk-themeable-property(
         background-color,
         --bpk-price-marker-selected-border-color,
-        $bpk-color-sky-blue
+        $bpk-core-accent-day
       );
     }
 
     &-disabled {
       // We want the arrow pointer to appear under the disabled marker which is already z-index: -2
       z-index: -3;
-      background-color: $bpk-color-sky-gray-tint-07;
+      background-color: $bpk-canvas-day;
     }
   }
 }
