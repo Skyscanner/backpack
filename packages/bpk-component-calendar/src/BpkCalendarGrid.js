@@ -23,6 +23,7 @@ import { cssModules, deprecated, isDeviceIos } from 'bpk-react-utils';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import Week from './Week';
 import {
+  addMonths,
   formatIsoDate,
   getCalendarMonthWeeks,
   isSameMonth,
@@ -198,8 +199,8 @@ BpkCalendarGrid.defaultProps = {
   isKeyboardFocusable: true,
   markOutsideDays: true,
   markToday: true,
-  maxDate: null,
-  minDate: null,
+  maxDate: addMonths(new Date(), 12),
+  minDate: new Date(),
   onDateClick: null,
   onDateKeyDown: null,
   preventKeyboardFocus: false,
