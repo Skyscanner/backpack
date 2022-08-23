@@ -34,3 +34,8 @@
       />
   </div>
   ```
+
+**Fixed:**
+
+- bpk-component-calendar:
+  - Set default values for `minDate` and `maxDate` in `BpkCalendarGrid`
