@@ -1,8 +1,7 @@
 **Changed:**
 
-- `bpk-component-graphic-promotion` - converted to TypeScript
-
-- `bpk-component-scrollable-calendar`:
+- bpk-component-graphic-promotion - converted to TypeScript
+- bpk-component-scrollable-calendar:
   - Migrated from heavy `react-virtualized` library to more lightweight library previously used
   - With this change you will see snapshot (if being used) fail as it will change from rendering as the following to previously fuller rendered components showing week days and numbers
 
