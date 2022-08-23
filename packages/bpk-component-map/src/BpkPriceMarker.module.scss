@@ -33,7 +33,7 @@ $bpk-spacing-v2: true;
   }
 
   &-default {
-    color: $bpk-color-white; // needs to be changed
+    color: $bpk-text-primary-inverse-day;
 
     @include bpk-themeable-property(
       border-color,
@@ -51,7 +51,7 @@ $bpk-spacing-v2: true;
     @include bpk-themeable-property(
       color,
       --bpk-price-marker-viewed-color,
-      $bpk-color-sky-blue // needs to be changed
+      rgba($bpk-text-on-dark-day, 0.8)
     );
     @include bpk-themeable-property(
       border-color,
