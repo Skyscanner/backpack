@@ -15,12 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
 import React from 'react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from 'bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText from 'bpk-component-text';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButton from 'bpk-component-button';
 
 import STYLES from './BpkGraphicPromo.module.scss';
@@ -40,24 +41,24 @@ export const TEXT_ALIGN = {
   start: 'start',
   center: 'center',
   end: 'end',
-};
+} as const;
 
 export type Props = {
-  className: ?string,
-  contentId: ?string,
-  tagline: ?string,
-  headline: string,
-  subheading: ?string,
-  sponsor: ?{
-    label: string,
-    logo: string,
-    altText: string,
-  },
-  buttonText: string,
-  onClick: () => void,
-  invertVertically: boolean,
-  textAlign: TEXT_ALIGN,
-  style: ?{},
+  className?: string | null;
+  contentId?: string | null;
+  tagline?: string | null;
+  headline: string;
+  subheading?: string | null;
+  sponsor?: {
+    label: string;
+    logo: string;
+    altText: string;
+  } | null;
+  buttonText: string;
+  onClick: () => void;
+  invertVertically?: boolean;
+  textAlign: typeof TEXT_ALIGN[keyof typeof TEXT_ALIGN];
+  style?: {};
 };
 
 const constructAriaLabel = ({
@@ -66,9 +67,12 @@ const constructAriaLabel = ({
   sponsor,
   subheading,
   tagline,
-}: Props) => {
-  const text = [];
-  const addText = (value) => value && text.push(value);
+}: Pick<
+  Props,
+  'buttonText' | 'headline' | 'sponsor' | 'subheading' | 'tagline'
+>) => {
+  const text: string[] = [];
+  const addText = (value?: string | null) => value && text.push(value);
 
   if (sponsor) {
     addText(sponsor.label);
@@ -76,6 +80,7 @@ const constructAriaLabel = ({
   } else {
     addText(tagline);
   }
+
   addText(headline);
   addText(subheading);
   addText(buttonText);
@@ -83,21 +88,19 @@ const constructAriaLabel = ({
   return text.join('. ');
 };
 
-const BpkGraphicPromo = (props: Props) => {
-  const {
-    buttonText,
-    className,
-    contentId,
-    headline,
-    invertVertically,
-    onClick,
-    sponsor,
-    style,
-    subheading,
-    tagline,
-    textAlign,
-  } = props;
-
+const BpkGraphicPromo = ({
+  buttonText,
+  className = null,
+  contentId,
+  headline,
+  invertVertically = false,
+  onClick,
+  sponsor = null,
+  style = {},
+  subheading = null,
+  tagline = null,
+  textAlign,
+}: Props) => {
   // FIXME: Use useCallback() here when React is updated.
   const onClickWrapper = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
@@ -121,17 +124,23 @@ const BpkGraphicPromo = (props: Props) => {
     // clicks and key presses (Enter/Space) for the whole component, as described here:
     // https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
     <div
-      id={contentId}
+      id={contentId || ''}
       className={cardClasses}
       style={style}
       role="link"
-      aria-label={constructAriaLabel(props)}
+      aria-label={constructAriaLabel({
+        buttonText,
+        headline,
+        sponsor,
+        subheading,
+        tagline,
+      })}
       tabIndex={0}
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
     >
       <div
-        id={contentId && `${contentId}__content`}
+        id={(contentId && `${contentId}__content`) || ''}
         className={containerClasses}
         aria-hidden
       >
@@ -187,32 +196,6 @@ const BpkGraphicPromo = (props: Props) => {
       </div>
     </div>
   );
-};
-
-BpkGraphicPromo.propTypes = {
-  className: PropTypes.string,
-  tagline: PropTypes.string,
-  headline: PropTypes.string.isRequired,
-  subheading: PropTypes.string,
-  sponsor: PropTypes.shape({
-    label: PropTypes.string,
-    logo: PropTypes.string,
-    altText: PropTypes.string,
-  }),
-  buttonText: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  invertVertically: PropTypes.bool,
-  textAlign: PropTypes.oneOf(Object.values(TEXT_ALIGN)).isRequired,
-  style: PropTypes.shape({ [PropTypes.string]: PropTypes.string }),
-};
-
-BpkGraphicPromo.defaultProps = {
-  className: null,
-  tagline: null,
-  subheading: null,
-  sponsor: null,
-  invertVertically: false,
-  style: {},
 };
 
 export default BpkGraphicPromo;

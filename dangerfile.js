@@ -86,7 +86,10 @@ const componentSourceFilesModified = fileChanges.some(
 );
 
 const snapshotsModified = fileChanges.some(
-  (filePath) => filePath.endsWith('.js.snap') || filePath.endsWith('.ts.snap'),
+  (filePath) =>
+    filePath.endsWith('.js.snap') ||
+    filePath.endsWith('.tsx.snap') ||
+    filePath.endsWith('.ts.snap'),
 );
 
 if (componentSourceFilesModified && !snapshotsModified) {
