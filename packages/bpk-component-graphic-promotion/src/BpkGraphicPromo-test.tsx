@@ -15,35 +15,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+// @ts-expect-error Untyped import. Not added as a stub declaration so consumers still have the suppression in their node_modules when shipped untranspiled.
 import { cssModules } from 'bpk-react-utils';
 
 import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
+import type { Props } from './BpkGraphicPromo';
 import STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const props = {
-  tagline: 'Tagline',
+const props: Props = {
+  buttonText: 'Learn more',
   headline: 'Ride your wave',
-  subheading:
-    'Portugal and 6 more countries have just been added to the UK travel green list',
+  invertVertically: false,
+  onClick: jest.fn(),
   sponsor: {
     label: 'Sponsored',
     logo: 'path/to/logo.png',
     altText: 'Airline Name',
   },
-  buttonText: 'Learn more',
-  onClick: jest.fn(),
+  subheading:
+    'Portugal and 6 more countries have just been added to the UK travel green list',
+  tagline: 'Tagline',
   textAlign: TEXT_ALIGN.start,
 };
 
 describe('BpkGraphicPromo', () => {
   beforeEach(() => {
-    props.onClick.mockReset();
+    (props.onClick as jest.MockedFunction<Props['onClick']>).mockReset();
   });
 
   it('should render correctly with all properties set', () => {
@@ -60,21 +62,15 @@ describe('BpkGraphicPromo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkGraphicPromo testid="123" {...props} />);
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly when centre aligned', () => {
-    const customProps = { ...props, textAlign: 'center' };
+    const customProps = { ...props, textAlign: TEXT_ALIGN.center };
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when right aligned', () => {
-    const customProps = { ...props, textAlign: 'end' };
+    const customProps = { ...props, textAlign: TEXT_ALIGN.end };
     const { asFragment } = render(<BpkGraphicPromo {...customProps} />);
 
     expect(asFragment()).toMatchSnapshot();

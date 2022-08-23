@@ -15,13 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkGraphicPromo, {
-  type Props as BpkGraphicPromoProps,
-  TEXT_ALIGN,
-} from './src/BpkGraphicPromo';
-
-export type { BpkGraphicPromoProps };
-export { TEXT_ALIGN };
-export default BpkGraphicPromo;
+declare module '*.scss' {
+  declare const styles: { [className: string]: string };
+  export default styles;
+}

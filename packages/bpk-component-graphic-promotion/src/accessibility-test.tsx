@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
-
 import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
@@ -44,13 +42,14 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        className="test"
-        tagline={tagline}
-        headline={headline}
-        subheading={subheading}
-        sponsor={sponsor}
         buttonText={buttonText}
+        className="test"
+        headline={headline}
+        invertVertically={false}
         onClick={onClick}
+        sponsor={sponsor}
+        subheading={subheading}
+        tagline={tagline}
         textAlign={TEXT_ALIGN.start}
       />,
     );
@@ -62,12 +61,13 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in centre aligned', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        tagline={tagline}
-        headline={headline}
-        subheading={subheading}
-        sponsor={sponsor}
         buttonText={buttonText}
+        headline={headline}
+        invertVertically={false}
         onClick={onClick}
+        sponsor={sponsor}
+        subheading={subheading}
+        tagline={tagline}
         textAlign={TEXT_ALIGN.center}
       />,
     );
@@ -79,12 +79,13 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in right aligned', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        tagline={tagline}
-        headline={headline}
-        subheading={subheading}
-        sponsor={sponsor}
         buttonText={buttonText}
+        headline={headline}
+        invertVertically={false}
         onClick={onClick}
+        sponsor={sponsor}
+        subheading={subheading}
+        tagline={tagline}
         textAlign={TEXT_ALIGN.end}
       />,
     );
@@ -96,14 +97,14 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in inverted portrait', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        tagline={tagline}
-        headline={headline}
-        subheading={subheading}
-        sponsor={sponsor}
         buttonText={buttonText}
-        onClick={onClick}
-        textAlign={TEXT_ALIGN.start}
+        headline={headline}
         invertVertically
+        onClick={onClick}
+        sponsor={sponsor}
+        subheading={subheading}
+        tagline={tagline}
+        textAlign={TEXT_ALIGN.start}
       />,
     );
 
@@ -114,10 +115,11 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues when optional text is missing', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        headline={headline}
-        sponsor={sponsor}
         buttonText={buttonText}
+        headline={headline}
+        invertVertically={false}
         onClick={onClick}
+        sponsor={sponsor}
         textAlign={TEXT_ALIGN.start}
       />,
     );
@@ -129,11 +131,12 @@ describe('BpkGraphicPromo accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in non-sponsored', async () => {
     const { container } = render(
       <BpkGraphicPromo
-        tagline={tagline}
-        headline={headline}
-        subheading={subheading}
         buttonText={buttonText}
+        headline={headline}
+        invertVertically={false}
         onClick={onClick}
+        subheading={subheading}
+        tagline={tagline}
         textAlign={TEXT_ALIGN.start}
       />,
     );
