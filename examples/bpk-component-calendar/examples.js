@@ -74,6 +74,8 @@ const CalendarGridExample = () => (
     formatDateFull={formatDateFull}
     DateComponent={BpkCalendarDate}
     preventKeyboardFocus
+    minDate={new Date()}
+    maxDate={addMonths(new Date(), 12)}
   />
 );
 
