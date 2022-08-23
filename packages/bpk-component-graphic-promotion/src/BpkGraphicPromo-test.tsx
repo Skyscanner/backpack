@@ -41,6 +41,7 @@ const props: Props = {
     'Portugal and 6 more countries have just been added to the UK travel green list',
   tagline: 'Tagline',
   textAlign: TEXT_ALIGN.start,
+  contentId: 'mock-content-id',
 };
 
 describe('BpkGraphicPromo', () => {
@@ -122,9 +123,9 @@ describe('BpkGraphicPromo', () => {
     expect(props.onClick).toHaveBeenCalledTimes(1);
   });
 
-  it('should render correctly with a content ID', () => {
+  it('should render as expected without a content ID', () => {
     const { asFragment } = render(
-      <BpkGraphicPromo contentId="content-id" {...props} />,
+      <BpkGraphicPromo {...props} contentId={null} />,
     );
 
     expect(asFragment()).toMatchSnapshot();
