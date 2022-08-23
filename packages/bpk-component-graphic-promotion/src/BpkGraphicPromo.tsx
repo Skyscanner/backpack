@@ -72,20 +72,17 @@ const constructAriaLabel = ({
   'buttonText' | 'headline' | 'sponsor' | 'subheading' | 'tagline'
 >) => {
   const text: string[] = [];
-  const addText = (value?: string) => value && text.push(value);
+  const addText = (value?: string | null) => value && text.push(value);
 
   if (sponsor) {
     addText(sponsor.label);
     addText(sponsor.altText);
-  } else if (tagline) {
+  } else {
     addText(tagline);
   }
 
   addText(headline);
-
-  if (subheading) {
-    addText(subheading);
-  }
+  addText(subheading);
   addText(buttonText);
 
   return text.join('. ');
