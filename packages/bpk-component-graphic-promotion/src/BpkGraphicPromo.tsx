@@ -61,15 +61,18 @@ export type Props = {
   style?: {};
 };
 
-const constructAriaLabel = (
-  buttonText: Props['buttonText'],
-  headline: Props['headline'],
-  sponsor: Props['sponsor'],
-  subheading: Props['subheading'],
-  tagline: Props['tagline'],
-) => {
+const constructAriaLabel = ({
+  buttonText,
+  headline,
+  sponsor,
+  subheading,
+  tagline,
+}: Pick<
+  Props,
+  'buttonText' | 'headline' | 'sponsor' | 'subheading' | 'tagline'
+>) => {
   const text: string[] = [];
-  const addText = (value: string) => value && text.push(value);
+  const addText = (value?: string) => value && text.push(value);
 
   if (sponsor) {
     addText(sponsor.label);
@@ -128,13 +131,13 @@ const BpkGraphicPromo = ({
       className={cardClasses}
       style={style}
       role="link"
-      aria-label={constructAriaLabel(
+      aria-label={constructAriaLabel({
         buttonText,
         headline,
         sponsor,
         subheading,
         tagline,
-      )}
+      })}
       tabIndex={0}
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
