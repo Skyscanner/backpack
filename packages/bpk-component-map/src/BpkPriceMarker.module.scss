@@ -86,7 +86,7 @@ $bpk-spacing-v2: true;
     z-index: -2;
     border-color: $bpk-canvas-day;
     background-color: $bpk-canvas-day;
-    color: rgba($bpk-text-disabled-day, 0.2);
+    color: $bpk-text-disabled-day;
   }
 
   &__wrapper {
