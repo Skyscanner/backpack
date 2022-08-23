@@ -27,4 +27,5 @@ import {
 storiesOf('bpk-component-content-cards', module)
   .add('Default One Card', ExampleWithOneCard)
   .add('Default Two Cards', ExampleWithTwoCards)
-  .add('Default Three Cards', ExampleWithThreeCards);
+  .add('Default Three Cards', ExampleWithThreeCards)
+  .add('Visual test', ExampleWithThreeCards);
