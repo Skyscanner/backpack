@@ -1,3 +1,57 @@
+# 2022-08-24
+
+`@skyscanner/backpack-web` - 9.2.0 - all changes noted below
+
+**Changed:**
+
+- bpk-component-graphic-promotion: 5.0.1 => 5.1.0
+  - converted to TypeScript
+
+- bpk-component-scrollable-calendar: 7.0.1 => 7.1.0
+  - Migrated from heavy `react-virtualized` library to more lightweight library previously used
+  - With this change you will see snapshot (if being used) fail as it will change from rendering as the following to previously fuller rendered components showing week days and numbers
+
+  ```
+  <div
+      style="overflow: visible; height: 0px; width: 0px;"
+    >
+      <div
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__List"
+        role="grid"
+        style="box-sizing: border-box; direction: ltr; height: 0px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
+        tabindex="0"
+      />
+    </div>
+    <div
+      class="resize-triggers"
+    >
+      <div
+        class="expand-trigger"
+      >
+        <div
+          style="width: 1px; height: 1px;"
+        />
+      </div>
+      <div
+        class="contract-trigger"
+      />
+  </div>
+  ```
+
+- bpk-component-map: 7.0.1 => 7.1.0
+  - Changed price marker colours in `viewed` and `disabled` states.
+
+- bpk-component-breadcrumb: 4.0.1 => 4.1.0
+  - Migrated component to semantic tokens.
+
+**Fixed:**
+
+- bpk-component-calendar: 12.0.1 => 12.0.2
+  - Set default values for `minDate` and `maxDate` in `BpkCalendarGrid`
+
+
 # 2022-08-15
 
 `@skyscanner/backpack-web` - 9.1.0 - all changes noted below
