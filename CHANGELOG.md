@@ -1,3 +1,43 @@
+# 2022-08-15
+
+**Changed:**
+
+- `@skyscanner/backpack-web` - 9.1.0
+
+- `bpk-component-accordion`: 6.0.0 => 6.1.0
+  - Changed accordion title bottom border colour
+  - Changed text and toggle icon colour
+  - Remove accordion theme attributes
+
+- `bpk-component-card`: 5.0.0 => 5.1.0
+  - Changed text colour
+
+- `bpk-component-blockquote`: 4.0.0 => 4.1.0
+  - Changed text colour
+  - Removed background colour
+
+- `bpk-component-panel`: 4.0.0 => 4.1.0
+  - Changed border colour
+
+
+**Fixed**
+
+- `@skyscanner/backpack-web` - 9.1.0
+
+- `bpk-component-graphic-promotion`: 5.0.0 => 5.0.1
+  - Move the content ID to the correct element.
+
+- `bpk-component-nudger`: 8.0.0 => 8.0.1
+  - Changed `aria-live` from assertive to polite.
+
+**Added**
+
+- `@skyscanner/backpack-web` - 9.1.0
+
+- `bpk-component-badge`: 5.0.0 => 5.1.0
+  - The `strong` badge theme has been added, which aligns to our APP implementations and better meets the needs of users.
+
+
 # 2022-08-05
 
 **Breaking:**

@@ -55,14 +55,14 @@ const dirs = execSync(
   .filter((s) => s !== '');
 
 const jsSrcFiles = execSync(
-  'find packages -name "*.js" -o -name "*.jsx" | grep -Ev "node_modules|index.js" --include "*/src"',
+  'find packages -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" | grep -Ev "node_modules|index.js" --include "*/src"',
 )
   .toString()
   .split('\n')
   .filter((s) => s !== '');
 
 const jsRootFiles = execSync(
-  'find packages -name "*.js" -o -name "*.jsx" | grep -Ev "node_modules|src"',
+  'find packages -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" | grep -Ev "node_modules|src"',
 )
   .toString()
   .split('\n')

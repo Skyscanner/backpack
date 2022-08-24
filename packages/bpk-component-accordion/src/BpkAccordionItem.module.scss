@@ -24,7 +24,7 @@ $bpk-spacing-v2: true;
   &__title {
     height: auto;
 
-    @include bpk-border-bottom-sm($bpk-color-sky-gray-tint-06);
+    @include bpk-border-bottom-sm($bpk-line-day);
   }
 
   &__toggle-button {
@@ -32,34 +32,13 @@ $bpk-spacing-v2: true;
     padding: 0;
     border: 0;
     background-color: transparent;
+    color: $bpk-text-primary-day;
     text-align: left;
     cursor: pointer;
     appearance: none;
 
-    @include bpk-themeable-property(
-      color,
-      --bpk-accordion-color,
-      $bpk-color-sky-blue-shade-03
-    );
-
     @include bpk-rtl {
       text-align: right;
-    }
-
-    @include bpk-hover {
-      @include bpk-themeable-property(
-        color,
-        --bpk-accordion-hover-color,
-        $bpk-color-sky-blue-shade-03
-      );
-    }
-
-    &:active {
-      @include bpk-themeable-property(
-        color,
-        --bpk-accordion-active-color,
-        $bpk-color-sky-blue-shade-03
-      );
     }
   }
 
@@ -84,27 +63,7 @@ $bpk-spacing-v2: true;
   }
 
   &__item-expand-icon {
-    @include bpk-themeable-property(
-      fill,
-      --bpk-accordion-color,
-      $bpk-color-sky-blue-shade-03
-    );
-
-    @include bpk-hover {
-      @include bpk-themeable-property(
-        fill,
-        --bpk-accordion-hover-color,
-        $bpk-color-sky-blue-shade-03
-      );
-    }
-
-    &:active {
-      @include bpk-themeable-property(
-        fill,
-        --bpk-accordion-active-color,
-        $bpk-color-sky-blue-shade-03
-      );
-    }
+    fill: $bpk-text-primary-day;
 
     &--flipped {
       transform: scaleY(-1);

@@ -125,4 +125,12 @@ describe('BpkGraphicPromo', () => {
 
     expect(props.onClick).toHaveBeenCalledTimes(1);
   });
+
+  it('should render correctly with a content ID', () => {
+    const { asFragment } = render(
+      <BpkGraphicPromo contentId="content-id" {...props} />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
