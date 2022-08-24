@@ -34,6 +34,9 @@
   </div>
   ```
 
+- bpk-component-map:
+  - Changed price marker colours in `viewed` and `disabled` states.
+
 - bpk-component-breadcrumb
   - Migrated component to semantic tokens.
 

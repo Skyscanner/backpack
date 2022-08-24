@@ -26,7 +26,7 @@
   @include bpk-themeable-property(
     fill,
     --bpk-icon-marker-default-background-color,
-    $bpk-color-monteverde
+    $bpk-status-success-spot-day
   );
 
   &--interactive {
@@ -37,17 +37,17 @@
     @include bpk-themeable-property(
       fill,
       --bpk-icon-marker-default-disabled-background-color,
-      $bpk-color-sagano
+      $bpk-status-success-fill-day
     );
   }
 
   &--selected {
-    fill: $bpk-color-white;
+    fill: $bpk-surface-default-day;
 
     @include bpk-themeable-property(
       stroke,
       --bpk-icon-marker-default-selected-color,
-      $bpk-color-monteverde
+      $bpk-status-success-spot-day
     );
   }
 }
