@@ -20,7 +20,7 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "bpk-component-text": "^8.0.1",
+    "bpk-component-text": "^8.0.2",
     "bpk-react-utils": "^7.0.0"
   }
 }
