@@ -34,6 +34,9 @@
   </div>
   ```
 
+- bpk-component-breadcrumb
+  - Migrated component to semantic tokens.
+
 **Fixed:**
 
 - bpk-component-calendar:
