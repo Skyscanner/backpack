@@ -30,11 +30,11 @@ $bpk-spacing-v2: true;
   }
 
   &__active-item {
-    color: $bpk-color-sky-gray-tint-01;
+    color: $bpk-text-secondary-day;
   }
 
   &__arrow {
     margin: 0 bpk-spacing-sm();
-    fill: $bpk-color-sky-gray-tint-04;
+    fill: $bpk-text-disabled-day;
   }
 }
