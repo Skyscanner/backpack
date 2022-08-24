@@ -17,7 +17,9 @@
  */
 
 import React from 'react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText from 'bpk-component-text';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from 'bpk-react-utils';
 
 import BpkContentCard from './BpkContentCard';

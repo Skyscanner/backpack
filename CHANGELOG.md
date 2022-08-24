@@ -1,8 +1,8 @@
 # 2022-08-15
 
-**Changed:**
+`@skyscanner/backpack-web` - 9.1.0 - all changes noted below
 
-- `@skyscanner/backpack-web` - 9.1.0
+**Changed:**
 
 - `bpk-component-accordion`: 6.0.0 => 6.1.0
   - Changed accordion title bottom border colour
@@ -22,8 +22,6 @@
 
 **Fixed**
 
-- `@skyscanner/backpack-web` - 9.1.0
-
 - `bpk-component-graphic-promotion`: 5.0.0 => 5.0.1
   - Move the content ID to the correct element.
 
@@ -31,8 +29,6 @@
   - Changed `aria-live` from assertive to polite.
 
 **Added**
-
-- `@skyscanner/backpack-web` - 9.1.0
 
 - `bpk-component-badge`: 5.0.0 => 5.1.0
   - The `strong` badge theme has been added, which aligns to our APP implementations and better meets the needs of users.
@@ -61,6 +57,9 @@ Major version for all components:
   - Updated `react-responsive` dependency to 8.2.0. This requires `React` 16.8.0 or higher.
 
 # 2022-08-02
+
+
+`@skyscanner/backpack-web: 8.0.0 => 8.0.1`
 
 **Changed**
 

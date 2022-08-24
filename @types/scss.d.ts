@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,4 +16,7 @@
  * limitations under the License.
  */
 
-declare module 'bpk-scrim-utils';
+declare module '*.scss' {
+  declare const styles: { [className: string]: string };
+  export default styles;
+}
