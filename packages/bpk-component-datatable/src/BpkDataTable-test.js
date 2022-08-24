@@ -356,9 +356,9 @@ describe('BpkDataTable', () => {
           dataKey="seat"
           width={100}
           flexGrow={1}
-          cellRenderer={({ value }) => (
+          cellRenderer={({ cellData }) => (
             <React.Fragment>
-              {value.office} - {value.desk}
+              {cellData.office} - {cellData.desk}
             </React.Fragment>
           )}
         />

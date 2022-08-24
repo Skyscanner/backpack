@@ -22,16 +22,31 @@
 // eslint-disable-next-line import/prefer-default-export
 export const getColumns = (columns) =>
   columns.map((column) => {
+    const { cellDataGetter, cellRenderer, headerRenderer } = column.props;
+    // To maintain backwards compatibility with the old API of BpkDataTable we rename the parameters
+    // And create an interface so that the function signature doesn't depend on the underlying library
+    const columnCellRenderer = ({
+      column: { id: columnIndex },
+      row: { values: rowData },
+      value: cellData,
+    }) => cellRenderer({ cellData, rowData, columnIndex });
+
+    const columnCellDataGetter = ({
+      column: { id: columnIndex },
+      row: { values: rowData },
+    }) => cellDataGetter({ columnIndex, rowData });
+
+    const columnHeaderRenderer = ({
+      column: { disableSortBy: disableSort, id: columnIndex, label },
+    }) => headerRenderer({ columnIndex, label, disableSort });
+
     const {
-      cellDataGetter,
-      cellRenderer,
       className,
       dataKey,
       defaultSortDirection,
       disableSort,
       flexGrow,
       headerClassName,
-      headerRenderer,
       headerStyle,
       label,
       minWidth,
@@ -39,10 +54,10 @@ export const getColumns = (columns) =>
       width,
     } = column.props;
     return {
-      Header: headerRenderer || label,
+      Header: headerRenderer ? columnHeaderRenderer : label,
       accessor: dataKey,
       ...((cellRenderer || cellDataGetter) && {
-        Cell: cellRenderer || cellDataGetter,
+        Cell: columnCellRenderer || columnCellDataGetter,
       }),
       className,
       disableSortBy: disableSort,

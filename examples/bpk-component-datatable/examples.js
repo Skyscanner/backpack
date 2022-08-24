@@ -174,7 +174,7 @@ const HeaderRendererExample = () => (
       label="Numeric value"
       dataKey="numericValue"
       width={100}
-      headerRenderer={({ column: { label } }) => <div> This is a {label} </div>}
+      headerRenderer={({ label }) => <div> This is a {label} </div>}
     />
   </BpkDataTable>
 );
@@ -199,13 +199,14 @@ const CustomSortingExample = () => (
       label="Seat"
       dataKey="seat"
       width={100}
-      cellRenderer={({ row: { values }, value }) => {
-        if (values.name === 'Jose') {
+      cellRenderer={({ cellData, rowData }) => {
+        if (rowData.name === 'Jose') {
           return <div> Remote </div>;
         }
         return (
           <div>
-            {value.office} - {value.desk}
+            {' '}
+            {cellData.office} - {cellData.desk}{' '}
           </div>
         );
       }}

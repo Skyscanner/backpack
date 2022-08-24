@@ -166,9 +166,9 @@ To handle more complex header data that needs any custom processing, pass a func
 It should implement the following signature:
 
 ```
-function ({
-  column: { id: string, disableSortBy: boolean, label: string}
-}): element
+  function ({
+  columnIndex: string, disableSort: boolean, label: string
+  }): element
 ```
 
 #### cellDataGetter
@@ -178,8 +178,8 @@ It should implement the following signature:
 
 ```
 function ({
-  column: {id: string }
-  row: { values: any }
+  columnIndex: string,
+  rowData: any
 }): any
 ```
 
@@ -190,8 +190,8 @@ It should implement the following signature:
 
 ```
 function ({
-  value: any,
-  column: { id: string },
-  row: { values: any }
+  cellData: any,
+  columnIndex: string,
+  rowData: any
 }): node
 ```
