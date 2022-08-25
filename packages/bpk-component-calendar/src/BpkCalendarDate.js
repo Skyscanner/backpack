@@ -25,13 +25,6 @@ import STYLES from './BpkCalendarDate.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const CELL_TYPES = {
-  default: 'default',
-  negative: 'negative',
-  neutral: 'neutral',
-  positive: 'positive',
-};
-
 export const SELECTION_TYPES = {
   none: 'none',
   single: 'single',
@@ -98,7 +91,6 @@ class BpkCalendarDate extends PureComponent {
 
   render() {
     const {
-      cellType,
       className,
       date,
       isBlocked,
@@ -124,11 +116,6 @@ class BpkCalendarDate extends PureComponent {
         );
       }
     });
-
-    if (cellType) {
-      classNames.push(getClassName(`bpk-calendar-date--colored`));
-      classNames.push(getClassName(`bpk-calendar-date--colored-${cellType}`));
-    }
 
     if (isFocused) {
       classNames.push(getClassName('bpk-calendar-date--focused'));
@@ -182,7 +169,6 @@ export const propTypes = {
   // Required
   date: PropTypes.instanceOf(Date).isRequired,
   // Optional
-  cellType: PropTypes.oneOf(Object.keys(CELL_TYPES)),
   className: PropTypes.string,
   isBlocked: PropTypes.bool,
   isFocused: PropTypes.bool,
@@ -202,7 +188,6 @@ BpkCalendarDate.propTypes = { ...propTypes };
 
 export const defaultProps = {
   className: null,
-  cellType: null,
   isBlocked: false,
   isFocused: false,
   isKeyboardFocusable: true,

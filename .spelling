@@ -272,11 +272,6 @@ buttonText
 buttonType
 CALENDAR_SELECTION_TYPE.single
 cellType
-CELL_TYPES
-CELL_TYPES.default
-CELL_TYPES.positive
-CELL_TYPES.neutral
-CELL_TYPES.negative
 centerLeading
 centerTrailing
 clearButtonMode

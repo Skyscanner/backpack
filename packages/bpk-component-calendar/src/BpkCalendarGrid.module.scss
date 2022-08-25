@@ -40,20 +40,20 @@
     &--start {
       background-image: linear-gradient(
         to right,
-        $bpk-color-white 50%,
-        $bpk-color-sky-blue-tint-03 50%
+        $bpk-surface-default-day 50%,
+        $bpk-surface-highlight-day 50%
       );
     }
 
     &--middle {
-      background-color: $bpk-color-sky-blue-tint-03;
+      background-color: $bpk-surface-highlight-day;
     }
 
     &--end {
       background-image: linear-gradient(
         to left,
-        $bpk-color-white 50%,
-        $bpk-color-sky-blue-tint-03 50%
+        $bpk-surface-default-day 50%,
+        $bpk-surface-highlight-day 50%
       );
     }
   }

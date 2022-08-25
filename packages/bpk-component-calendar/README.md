@@ -248,7 +248,6 @@ The BpkCalendarDate component is used to render the content of a cell
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | date                  | Date                 | true     | -                |
-| cellType              | oneOf(CELL_TYPES.default, CELL_TYPES.positive, CELL_TYPES.neutral, CELL_TYPES.negative)                     | false    | null             |
 | isBlocked             | bool                 | false    | false            |
 | isFocused             | bool                 | false    | false            |
 | isKeyboardFocusable   | bool                 | false    | true             |
@@ -260,15 +259,6 @@ The BpkCalendarDate component is used to render the content of a cell
 | preventKeyboardFocus  | bool                 | false    | true             |
 | selectionType         | oneOf(SELECTION_TYPES.single, SELECTION_TYPES.start, SELECTION_TYPES.middle, SELECTION_TYPES.end)      | false    | SELECTION_TYPES.single             |
 | style                 | object               | false    | null             |
-
-#### `cellType` prop
-
-This prop determines what the colour date cell is to be displayed.
-
-- `CELL_TYPES.positive` - sets the calendar cell to `Monteverde`
-- `CELL_TYPES.neutral` - sets the calendar cell to `Erfoud`
-- `CELL_TYPES.negative` - sets the calendar cell to `Panjin`
-- `CELL_TYPES.default` - sets the calendar cell to `Sky Gray Tint 02`
 
 #### `selectionType` prop
 
