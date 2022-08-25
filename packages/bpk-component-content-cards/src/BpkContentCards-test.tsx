@@ -25,7 +25,7 @@ describe('Content Card widget', () => {
   const contentContainerTestProps: React.ComponentProps<
     typeof BpkContentCards
   > = {
-    headerText: 'Header for the component',
+    header: 'Header for the component',
     cards: [
       {
         image: {
@@ -60,7 +60,7 @@ describe('Content Card widget', () => {
   it('renders correctly with 1 card', async () => {
     const { asFragment } = render(
       <BpkContentCards
-        headerText={contentContainerTestProps.headerText}
+        header={contentContainerTestProps.header}
         cards={contentContainerTestProps.cards.slice(0, 1)}
       />,
     );
@@ -71,7 +71,7 @@ describe('Content Card widget', () => {
   it('renders correctly with 2 cards', async () => {
     const { asFragment } = render(
       <BpkContentCards
-        headerText={contentContainerTestProps.headerText}
+        header={contentContainerTestProps.header}
         cards={contentContainerTestProps.cards.slice(0, 2)}
       />,
     );
@@ -82,7 +82,7 @@ describe('Content Card widget', () => {
   it('renders correctly with 3 cards', async () => {
     const { asFragment } = render(
       <BpkContentCards
-        headerText={contentContainerTestProps.headerText}
+        header={contentContainerTestProps.header}
         cards={contentContainerTestProps.cards}
       />,
     );
@@ -93,7 +93,7 @@ describe('Content Card widget', () => {
   it('renders the title, the headline and the description for each card', async () => {
     render(
       <BpkContentCards
-        headerText={contentContainerTestProps.headerText}
+        header={contentContainerTestProps.header}
         cards={contentContainerTestProps.cards}
       />,
     );
@@ -115,10 +115,7 @@ describe('Content Card widget', () => {
 
   it('does not render anything if the cards are not defined', () => {
     const { container } = render(
-      <BpkContentCards
-        headerText={contentContainerTestProps.headerText}
-        cards={[]}
-      />,
+      <BpkContentCards header={contentContainerTestProps.header} cards={[]} />,
     );
 
     expect(container.firstChild).toBe(null);

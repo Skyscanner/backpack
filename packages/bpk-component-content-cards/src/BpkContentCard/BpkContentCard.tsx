@@ -44,7 +44,6 @@ type Props = {
 const BpkContentCard = ({ card, layout }: Props) => (
   <a
     className={getClassName(
-      'bpk-content-card--link',
       layout === 'HORIZONTAL'
         ? 'bpk-content-card--horizontal'
         : 'bpk-content-card--vertical',

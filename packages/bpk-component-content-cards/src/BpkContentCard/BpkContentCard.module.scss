@@ -15,19 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* stylelint-disable selector-class-pattern */
-/* stylelint-disable selector-max-compound-selectors */
 @import '~bpk-mixins/index';
 
 $bpk-spacing-v2: true;
 
 .bpk-content-card {
-  &--link {
-    color: inherit;
-    font: inherit;
-    text-decoration: inherit;
-  }
-
   &--horizontal {
     display: grid;
     column-gap: bpk-spacing-xxl();

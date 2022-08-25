@@ -18,6 +18,7 @@
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkContentCard from './BpkContentCard';
 
@@ -81,7 +82,7 @@ describe('Content Card widget', () => {
     const expectedElements = ['Card 1 headline', 'Card 1 description'];
 
     expectedElements.forEach((element) =>
-      expect(screen.getByText(element)).toBeTruthy(),
+      expect(screen.getByText(element)).toBeVisible(),
     );
   });
 });
