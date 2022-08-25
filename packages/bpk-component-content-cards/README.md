@@ -18,7 +18,7 @@ import React from 'react';
 import BpkContentCards from '@skyscanner/backpack-web/bpk-component-content-cards';
 
 <BpkContentCards
-    header='Header'
+    heading='Heading'
     cards=[
         {
             image: {
@@ -39,5 +39,5 @@ export default () => <BpkContentCards />;
 
 | Property                                                                                                         | PropType                                                                                                           | Required                                                                                               | Default Value |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------- |
-| header                                                                                                           | string                                                                                                             | true                                                                                                   |               |
+| heading                                                                                                          | string                                                                                                             | true                                                                                                   |               |
 | cards <ul><li>image</li><ul><li>url</li><li>alt</li></ul><li>headline</li><li>description</li><li>href</li></ul> | Array <ul><li>Object</li><ul><li>string</li><li>string</li></ul><li>string</li><li>string</li><li>string</li></ul> | true <ul><li>true</li><ul><li>true</li><li>false</li></ul><li>true</li><li>true</li><li>true</li></ul> | ""            |
