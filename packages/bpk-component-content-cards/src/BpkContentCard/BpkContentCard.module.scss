@@ -20,6 +20,12 @@
 $bpk-spacing-v2: true;
 
 .bpk-content-card {
+  &--link {
+    color: inherit;
+    font: inherit;
+    text-decoration: inherit;
+  }
+
   &--horizontal {
     display: grid;
     column-gap: bpk-spacing-xxl();
