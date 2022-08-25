@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^9.2.0",
-    "bpk-component-text": "^8.0.1"
+    "bpk-component-text": "^8.0.2"
   }
 }
