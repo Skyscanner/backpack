@@ -21,7 +21,7 @@ import React from 'react';
 import BpkContentCards from '../../packages/bpk-component-content-cards';
 
 const contentCardProps: React.ComponentProps<typeof BpkContentCards> = {
-  headerText: 'Content cards header text',
+  heading: 'Content cards header text',
   cards: [
     {
       image: {
@@ -58,21 +58,21 @@ const contentCardProps: React.ComponentProps<typeof BpkContentCards> = {
 
 const ExampleWithOneCard = () => (
   <BpkContentCards
-    headerText={contentCardProps.headerText}
+    heading={contentCardProps.heading}
     cards={contentCardProps.cards.slice(0, 1)}
   />
 );
 
 const ExampleWithTwoCards = () => (
   <BpkContentCards
-    headerText={contentCardProps.headerText}
+    heading={contentCardProps.heading}
     cards={contentCardProps.cards.slice(0, 2)}
   />
 );
 
 const ExampleWithThreeCards = () => (
   <BpkContentCards
-    headerText={contentCardProps.headerText}
+    heading={contentCardProps.heading}
     cards={contentCardProps.cards}
   />
 );

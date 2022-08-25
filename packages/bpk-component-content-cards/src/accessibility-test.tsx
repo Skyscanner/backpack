@@ -22,7 +22,7 @@ import { axe } from 'jest-axe';
 
 import BpkContentCards from './BpkContentCards';
 
-const header = 'Header for the component';
+const heading = 'Header for the component';
 const cards = [
   {
     image: {
@@ -56,7 +56,7 @@ const cards = [
 describe('BpkContentCards accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkContentCards header={header} cards={cards} />,
+      <BpkContentCards heading={heading} cards={cards} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
