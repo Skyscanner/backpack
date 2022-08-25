@@ -11,7 +11,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
   >
     <div>
       <div
-        class="bpk-data-table__row bpk-data-table__header-row "
+        class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
         style="height: 60px;"
       >
@@ -224,7 +224,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
   >
     <div>
       <div
-        class="bpk-data-table__row bpk-data-table__header-row "
+        class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
         style="height: 60px;"
       >
@@ -651,7 +651,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
   >
     <div>
       <div
-        class="bpk-data-table__row bpk-data-table__header-row "
+        class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
         style="height: 60px;"
       >
@@ -865,7 +865,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
   >
     <div>
       <div
-        class="bpk-data-table__row bpk-data-table__header-row "
+        class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
         style="height: 60px;"
       >
@@ -1078,7 +1078,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
   >
     <div>
       <div
-        class="bpk-data-table__row bpk-data-table__header-row "
+        class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
         style="height: 60px;"
       >
@@ -1291,7 +1291,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
   >
     <div>
       <div
-        class="bpk-data-table__row bpk-data-table__header-row "
+        class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
         style="height: 60px;"
       >
@@ -1504,7 +1504,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
   >
     <div>
       <div
-        class="bpk-data-table__row bpk-data-table__header-row "
+        class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
         style="height: 60px;"
       >

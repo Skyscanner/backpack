@@ -28,7 +28,7 @@ $bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
   margin: bpk-spacing-base();
   flex-direction: row;
   align-items: center;
-  outline-offset: -(4 * $bpk-one-pixel-rem);
+  outline-offset: -(bpk-spacing-sm());
 
   @include bpk-label-2;
 

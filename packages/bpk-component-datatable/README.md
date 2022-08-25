@@ -43,7 +43,6 @@ By default `BpkDataTable` sorts the column using the value of `dataKey`. For use
 ```js
 import React from 'react';
 import { BpkDataTable, BpkDataTableColumn } from 'bpk-component-datatable';
-import _sortBy from 'lodash/sortBy';
 
 const complexRows = [
     {

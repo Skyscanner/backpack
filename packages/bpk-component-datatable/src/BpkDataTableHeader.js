@@ -81,24 +81,21 @@ const BpkDataTableHeader = ({ column }: { column: ColumnType }) => {
     }
   };
 
-  const headerClassNames = [getClassName('bpk-data-table-column__header')];
-  const upIconClassNames = [
-    getClassName('bpk-data-table-column__sort-icon--up'),
-    getClassName('bpk-data-table-column__sort-icon'),
-  ];
-  const downIconClassNames = [
-    getClassName('bpk-data-table-column__sort-icon--down'),
-    getClassName('bpk-data-table-column__sort-icon'),
-  ];
+  const headerClassNames = getClassName(
+    'bpk-data-table-column__header',
+    headerClassName,
+  );
+  const upIconClassNames = getClassName(
+    'bpk-data-table-column__sort-icon--up',
+    'bpk-data-table-column__sort-icon',
+    isSorted && !isSortedDesc && 'bpk-data-table-column__sort-icon--selected',
+  );
 
-  if (headerClassName) {
-    headerClassNames.push(headerClassName);
-  }
-  if (isSorted) {
-    (isSortedDesc ? downIconClassNames : upIconClassNames).push(
-      getClassName('bpk-data-table-column__sort-icon--selected'),
-    );
-  }
+  const downIconClassNames = getClassName(
+    'bpk-data-table-column__sort-icon--down',
+    'bpk-data-table-column__sort-icon',
+    isSorted && isSortedDesc && 'bpk-data-table-column__sort-icon--selected',
+  );
 
   return (
     <div
@@ -109,7 +106,7 @@ const BpkDataTableHeader = ({ column }: { column: ColumnType }) => {
           flexGrow,
           ...headerStyle,
         },
-        className: headerClassNames.join(' '),
+        className: headerClassNames,
       })}
     >
       <span
@@ -130,11 +127,11 @@ const BpkDataTableHeader = ({ column }: { column: ColumnType }) => {
         >
           <UpIcon
             onClick={() => column.toggleSortBy(false)}
-            className={upIconClassNames.join(' ')}
+            className={upIconClassNames}
           />
           <DownIcon
             onClick={() => column.toggleSortBy(true)}
-            className={downIconClassNames.join(' ')}
+            className={downIconClassNames}
           />
         </div>
       )}

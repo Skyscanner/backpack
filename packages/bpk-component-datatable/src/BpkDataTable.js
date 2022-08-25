@@ -51,40 +51,30 @@ const BpkDataTable = (props: Props) => {
 
   const [rowSelected, updateRowSelected] = useState(undefined);
 
-  const classNames = [getClassName('bpk-data-table')];
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName('bpk-data-table', className);
 
   const getRowClassNames = (
     consumerClassName: ?string | ?(({ index: number }) => string),
     index: number,
   ) => {
-    const rowClassNames = [getClassName('bpk-data-table__row')];
-    if (rowSelected === index) {
-      rowClassNames.push(getClassName('bpk-data-table__row--selected'));
-    }
-    if (props.onRowClick !== undefined) {
-      rowClassNames.push(getClassName('bpk-data-table__row--clickable'));
-    }
-    if (index === -1) {
-      rowClassNames.push(getClassName('bpk-data-table__header-row'));
-    }
-    if (consumerClassName) {
-      if (typeof consumerClassName === 'function') {
-        rowClassNames.push(consumerClassName({ index }));
-      } else {
-        rowClassNames.push(consumerClassName);
-      }
-    }
-    return rowClassNames.join(' ');
+    const rowClassNames = getClassName(
+      'bpk-data-table__row',
+      rowSelected === index && 'bpk-data-table__row--selected',
+      props.onRowClick !== undefined && 'bpk-data-table__row--clickable',
+      index === -1 && 'bpk-data-table__header-row',
+      consumerClassName &&
+        (typeof consumerClassName === 'function'
+          ? consumerClassName({ index })
+          : consumerClassName),
+    );
+    return rowClassNames;
   };
 
-  const headerClassNames = [
-    getClassName('bpk-data-table__row'),
-    getClassName('bpk-data-table__header-row'),
+  const headerClassNames = getClassName(
+    'bpk-data-table__row',
+    'bpk-data-table__header-row',
     props.headerClassName,
-  ];
+  );
 
   const columns = useMemo(() => getColumns(children), [children]);
 
@@ -142,7 +132,7 @@ const BpkDataTable = (props: Props) => {
     <div
       {...getTableProps({
         style: { width, height },
-        className: classNames.join(' '),
+        className: classNames,
       })}
       {...restOfProps}
     >
@@ -151,7 +141,7 @@ const BpkDataTable = (props: Props) => {
           <div
             {...headerGroup.getHeaderGroupProps({
               style: { height: props.headerHeight },
-              className: headerClassNames.join(' '),
+              className: headerClassNames,
             })}
           >
             {headerGroup.headers.map((column) => {

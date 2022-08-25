@@ -17,6 +17,7 @@
  */
 /* @flow strict */
 
+// TODO: Remove these functions once we want to change the API to match the react-table library API
 // To maintain backwards compatibility with the old API of BpkDataTable which takes columns as children
 // The `react-table` library however expects columns as an array of objects
 // eslint-disable-next-line import/prefer-default-export
