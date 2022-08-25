@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,11 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import BpkGraphicPromo, {
+  type Props as BpkGraphicPromoProps,
+  TEXT_ALIGN,
+} from './src/BpkGraphicPromo';
 
-.bpk-map-default-loading-element {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  background-color: $bpk-surface-highlight-day;
-}
+export type { BpkGraphicPromoProps };
+export { TEXT_ALIGN };
+export default BpkGraphicPromo;

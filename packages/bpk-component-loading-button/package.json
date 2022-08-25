@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-loading-button",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "Backpack loading button component.",
   "license": "Apache-2.0",
   "repository": {
@@ -22,7 +22,7 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^2.0.1"
+    "bpk-storybook-utils": "^2.0.2"
   },
   "peerDependencies": {
     "react": "^17.0.2"

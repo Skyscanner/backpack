@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-autosuggest",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "Backpack autosuggest component.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,6 +24,6 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "bpk-component-icon": "^10.0.1"
+    "bpk-component-icon": "^10.0.2"
   }
 }

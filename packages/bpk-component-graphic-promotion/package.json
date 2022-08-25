@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-graphic-promotion",
-  "version": "5.0.1",
+  "version": "5.1.0",
   "description": "Backpack graphic-promotion component.",
   "license": "Apache-2.0",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "git@github.com:Skyscanner/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
-  "main": "index.js",
+  "main": "index.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
