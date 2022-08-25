@@ -2,6 +2,7 @@
 
 **Changed:**
 
+`@skyscanner/backpack-web: 9.2.0 => 9.3.0`<br />
 `bpk-component-content-cards: 1.0.0`
 
 - Added new `BpkContentCards` component, currently used for sponsored content.
