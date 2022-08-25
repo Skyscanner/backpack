@@ -57,8 +57,8 @@ const BpkContentCard = ({ card, layout }: Props) => (
       {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
       <img
         className={getClassName('bpk-content-card--image')}
-        alt={card.image?.alt || ''}
-        src={card.image?.url}
+        alt={card.image.alt || ''}
+        src={card.image.url}
         loading="lazy"
       />
     </div>
