@@ -103,6 +103,8 @@ BpkThemeProvider
 
 BpkTicket
 
+BpkContentCards
+
 # Company names, libraries etc.
 Artifactory
 Cocoapods
