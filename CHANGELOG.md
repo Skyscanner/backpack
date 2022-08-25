@@ -1,3 +1,11 @@
+# 2022-08-25
+
+**Changed:**
+
+`bpk-component-content-cards: 1.0.0`
+
+- Added new `BpkContentCards` component, currently used for sponsored content.
+
 # 2022-08-24
 
 `@skyscanner/backpack-web` - 9.2.0 - all changes noted below
