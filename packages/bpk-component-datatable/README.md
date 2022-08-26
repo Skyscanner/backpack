@@ -166,7 +166,7 @@ It should implement the following signature:
 
 ```
   function ({
-  columnIndex: string, disableSort: boolean, label: string
+  dataKey: string, disableSort: boolean, label: string
   }): element
 ```
 
@@ -177,7 +177,7 @@ It should implement the following signature:
 
 ```
 function ({
-  columnIndex: string,
+  dataKey: string,
   rowData: any
 }): any
 ```
@@ -190,7 +190,9 @@ It should implement the following signature:
 ```
 function ({
   cellData: any,
-  columnIndex: string,
-  rowData: any
+  columnIndex: number,
+  dataKey: string,
+  rowData: any,
+  rowIndex: any,
 }): node
 ```

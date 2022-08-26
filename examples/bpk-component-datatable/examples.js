@@ -205,8 +205,7 @@ const CustomSortingExample = () => (
         }
         return (
           <div>
-            {' '}
-            {cellData.office} - {cellData.desk}{' '}
+            {cellData.office} - {cellData.desk}
           </div>
         );
       }}

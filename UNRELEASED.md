@@ -6,9 +6,11 @@
             - `cellRenderer` should now follow the following function signature:
                 ```js
                 function ({
-                cellData: any,
-                columnIndex: string,
-                rowData: any
+                  cellData: any,
+                  columnIndex: number,
+                  dataKey: string,
+                  rowData: any,
+                  rowIndex: any
                 }): node
                 ```
                 You can use these as a means to handle more complex data that needs any custom processing, but all styling will be handled by the component. You can use these strictly to render the cell data. For example:
@@ -24,7 +26,7 @@
             - `cellDataGetter` should now follow the following function signature:
                 ```js
                 function ({
-                columnIndex: string,
+                dataKey: string,
                 rowData: any
                 }): any
                 ```
@@ -40,9 +42,11 @@
             
             - `headerRenderer` should now follow the following function signature:
                 ```js
-                function ({
-                column: { id: string, disableSortBy: boolean, label: string}
-                }): element
+                  function ({
+                  dataKey: string,
+                  disableSort: boolean,
+                  label: string
+                  }): element
                 ```
                 All styling will be handled by the component and you no longer have to add styling or things such as sorting arrows. You can use this strictly to render the header data. For example:
                 ```js

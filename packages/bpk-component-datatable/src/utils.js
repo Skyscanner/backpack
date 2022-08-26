@@ -27,19 +27,32 @@ export const getColumns = (columns) =>
     // To maintain backwards compatibility with the old API of BpkDataTable we rename the parameters
     // And create an interface so that the function signature doesn't depend on the underlying library
     const columnCellRenderer = ({
-      column: { id: columnIndex },
-      row: { values: rowData },
+      column: { id: dataKey },
+      columns: columnsData,
+      row: { id: rowID, values: rowData },
+      sortedRows,
       value: cellData,
-    }) => cellRenderer({ cellData, rowData, columnIndex });
+    }) => {
+      const columnIndex = columnsData.map((col) => col.id).indexOf(dataKey);
+      const rowIndex = sortedRows.map((row) => row.id).indexOf(rowID);
+
+      return cellRenderer({
+        cellData,
+        columnIndex,
+        dataKey,
+        rowData,
+        rowIndex,
+      });
+    };
 
     const columnCellDataGetter = ({
-      column: { id: columnIndex },
+      column: { id: dataKey },
       row: { values: rowData },
-    }) => cellDataGetter({ columnIndex, rowData });
+    }) => cellDataGetter({ dataKey, rowData });
 
     const columnHeaderRenderer = ({
-      column: { disableSortBy: disableSort, id: columnIndex, label },
-    }) => headerRenderer({ columnIndex, label, disableSort });
+      column: { disableSortBy: disableSort, id: dataKey, label },
+    }) => headerRenderer({ dataKey, label, disableSort });
 
     const {
       className,
