@@ -35,7 +35,6 @@ import {
   MarkOutsideDaysFalseExample,
   CustomComposedCalendar,
   CustomComposedCalendarSafariBug,
-  CustomColors,
   WeekExample,
   FocusedDateInThePastExample,
   RangeDateCalendar,
@@ -64,7 +63,6 @@ storiesOf('bpk-component-calendar', module)
     'Custom composed calendar (Safari DST bug)',
     CustomComposedCalendarSafariBug,
   )
-  .add('Custom colours', CustomColors)
   .add('Week', WeekExample)
   .add('Visual test', FocusedDateInThePastExample)
   .add('Visual test range', RangeDateCalendar);

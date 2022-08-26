@@ -103,6 +103,8 @@ BpkThemeProvider
 
 BpkTicket
 
+BpkContentCards
+
 # Company names, libraries etc.
 Artifactory
 Cocoapods
@@ -274,11 +276,6 @@ CALENDAR_SELECTION_TYPE.single
 cellDataGetter
 cellRenderer
 cellType
-CELL_TYPES
-CELL_TYPES.default
-CELL_TYPES.positive
-CELL_TYPES.neutral
-CELL_TYPES.negative
 centerLeading
 centerTrailing
 clearButtonMode

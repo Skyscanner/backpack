@@ -21,9 +21,3 @@ Calendar components -
     - `Week` - This is a container that will take the `DateComponent` to display each of the dates in the calendar
 
   - `BpkCalendarDate` - is each date cell that would be displayed inside the calendar grid. This would be used to customise how each date cell is displayed e.g. coloured or with special pricing displayed.
-
-  It has a `cellType` prop which can be used to set a custom colour. An exported `CELL_TYPES` object offers the following cell types:
-    - `CELL_TYPES.positive` - sets the calendar cell to `Monteverde`
-    - `CELL_TYPES.neutral` - sets the calendar cell to `Erfoud`
-    - `CELL_TYPES.negative` - sets the calendar cell to `Panjin`
-    - `CELL_TYPES.default` - sets the calendar cell to `Sky Gray Tint 02`

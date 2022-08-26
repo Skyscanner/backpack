@@ -1,6 +1,6 @@
 {
   "name": "bpk-theming",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Backpack theming utlities.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "c2217d61875a1f3aa2bb9ed9583c50e3f1523501",
   "dependencies": {
-    "@skyscanner/bpk-foundations-web": "^8.5.0",
+    "@skyscanner/bpk-foundations-web": "^9.2.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {

@@ -124,3 +124,20 @@
       />
   </div>
   ```
+
+**Fixed:**
+
+- bpk-component-calendar:
+  - Set default values for `minDate` and `maxDate` in `BpkCalendarGrid`
+
+**Breaking:**
+
+- bpk-component-calendar:
+  - Removed `cellType` prop and `CELL_TYPES` object which were used to colour the date cell. This is no longer supported.
+
+**Changed:**
+
+- bpk-component-calendar:
+  - Changed calendar to semantic colours:
+    - Changed navigation icon colours
+    - Changed date range selection background colour

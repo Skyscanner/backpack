@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import isWeekend from 'date-fns/isWeekend';
+import { addMonths, isWeekend } from 'date-fns';
 import {
   colorMonteverde,
   colorPanjin,
@@ -41,6 +41,8 @@ describe('BpkCalendarGrid', () => {
         DateComponent={BpkCalendarDate}
         daysOfWeek={weekDays}
         weekStartsOn={3}
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -59,6 +61,8 @@ describe('BpkCalendarGrid', () => {
         daysOfWeek={weekDays}
         weekStartsOn={1}
         dateModifiers={modifiers}
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -89,6 +93,8 @@ describe('BpkCalendarGrid', () => {
         DateComponent={MyCustomDate}
         daysOfWeek={weekDays}
         weekStartsOn={1}
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -106,6 +112,8 @@ describe('BpkCalendarGrid', () => {
         daysOfWeek={weekDays}
         weekStartsOn={0}
         onDateClick={onDateClick}
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
       />,
     );
 
@@ -129,6 +137,8 @@ describe('BpkCalendarGrid', () => {
         daysOfWeek={weekDays}
         weekStartsOn={0}
         weekDayKey="nameNarrow"
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
