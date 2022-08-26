@@ -44,7 +44,6 @@ import {
   weekDays,
 } from './test-utils';
 import CalendarContainer, { MonthViewCalendar } from './examples-components';
-import ColoredCalendar from './coloured-calendar-example';
 
 const CalendarNavExample = () => (
   <BpkCalendarNav
@@ -244,23 +243,6 @@ const CustomComposedCalendarSafariBug = () => (
 
 const CustomComposedCalendar = () => <MonthViewCalendar weekStartsOn={1} />;
 
-const CustomColors = () => (
-  <ColoredCalendar
-    id="myCalendar"
-    formatMonth={formatMonth}
-    formatDateFull={formatDateFull}
-    daysOfWeek={weekDays}
-    month={new Date()}
-    weekStartsOn={1}
-    onDateSelect={(date) => {
-      // TODO we shouldn't do this but as it's only for demo purposes and works I guess it's fine
-      // eslint-disable-next-line react/no-this-in-sfc
-      this.setState({ date });
-      action('Selected day')(date);
-    }}
-  />
-);
-
 const WeekExample = () => {
   // eslint-disable-next-line react/prop-types
   const DummyDateComponent = ({ date }) => <div>{date.toString()}</div>;
@@ -362,7 +344,6 @@ export {
   MarkOutsideDaysFalseExample,
   CustomComposedCalendar,
   CustomComposedCalendarSafariBug,
-  CustomColors,
   WeekExample,
   FocusedDateInThePastExample,
   RangeDateCalendar,

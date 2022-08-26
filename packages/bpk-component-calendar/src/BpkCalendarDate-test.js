@@ -19,7 +19,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BpkCalendarDate, { CELL_TYPES } from './BpkCalendarDate';
+import BpkCalendarDate from './BpkCalendarDate';
 
 const createNodeMock = () => ({
   focus: () => null,
@@ -87,72 +87,5 @@ describe('BpkCalendarDate', () => {
       />,
     );
     expect(asFragment()).toMatchSnapshot();
-  });
-
-  describe('cellType tests', () => {
-    it('should render correctly with default style', () => {
-      const { asFragment } = render(
-        <BpkCalendarDate
-          cellType={CELL_TYPES.default}
-          date={new Date(2010, 1, 15)}
-        />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it('should render correctly with positive style', () => {
-      const { asFragment } = render(
-        <BpkCalendarDate
-          cellType={CELL_TYPES.positive}
-          date={new Date(2010, 1, 15)}
-        />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it('should render correctly with neutral style', () => {
-      const { asFragment } = render(
-        <BpkCalendarDate
-          cellType={CELL_TYPES.neutral}
-          date={new Date(2010, 1, 15)}
-        />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it('should render correctly with negative style', () => {
-      const { asFragment } = render(
-        <BpkCalendarDate
-          cellType={CELL_TYPES.negative}
-          date={new Date(2010, 1, 15)}
-        />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it('should render a disabled button', () => {
-      const { asFragment } = render(
-        <BpkCalendarDate
-          cellType={CELL_TYPES.default}
-          date={new Date(2010, 1, 15)}
-          disabled
-        />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it('should render a focused button with tabIndex', () => {
-      const { asFragment } = render(
-        <BpkCalendarDate
-          cellType={CELL_TYPES.default}
-          date={new Date(2010, 1, 15)}
-          isFocused
-        />,
-        {
-          createNodeMock,
-        },
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
   });
 });
