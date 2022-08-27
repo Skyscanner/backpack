@@ -15,11 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import React from 'react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from 'bpk-react-utils';
+import type { ReactElement } from 'react';
 
 import STYLES from './BpkAriaLive.module.scss';
 
@@ -29,38 +29,32 @@ export const POLITENESS_SETTINGS = {
   off: 'off',
   polite: 'polite',
   assertive: 'assertive',
-};
+} as const;
+
+export type PolitenessSetting =
+  typeof POLITENESS_SETTINGS[keyof typeof POLITENESS_SETTINGS];
 
 export type Props = {
-  children: Node,
-  politenessSetting: $Keys<typeof POLITENESS_SETTINGS>,
-  visible: boolean,
-  className: ?string,
+  children: ReactElement | string;
+  politenessSetting?: PolitenessSetting;
+  visible?: boolean;
+  className?: string | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
-const BpkAriaLive = (props: Props) => {
-  const { className, politenessSetting, visible, ...rest } = props;
+
+const BpkAriaLive = ({
+  className = null,
+  politenessSetting = POLITENESS_SETTINGS.polite,
+  visible = false,
+  ...rest
+}: Props) => {
   const classNames = getClassName(
     'bpk-aria-live',
     !visible && 'bpk-aria-live--invisible',
     className,
   );
 
-  return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div aria-live={politenessSetting} className={classNames} {...rest} />
-  );
-};
-
-BpkAriaLive.propTypes = {
-  className: PropTypes.string,
-  politenessSetting: PropTypes.oneOf(Object.keys(POLITENESS_SETTINGS)),
-  visible: PropTypes.bool,
-};
-
-BpkAriaLive.defaultProps = {
-  className: null,
-  politenessSetting: POLITENESS_SETTINGS.polite,
-  visible: false,
+  return <div aria-live={politenessSetting} className={classNames} {...rest} />;
 };
 
 export default BpkAriaLive;

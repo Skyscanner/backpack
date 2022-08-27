@@ -15,12 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkAriaLive, { POLITENESS_SETTINGS } from './BpkAriaLive';
+import type { PolitenessSetting } from './BpkAriaLive';
 
 describe('BpkAriaLive', () => {
   it('should render correctly', () => {
@@ -31,7 +31,7 @@ describe('BpkAriaLive', () => {
   Object.keys(POLITENESS_SETTINGS).forEach((politenessSetting) => {
     it(`should render correctly with politenessSetting="${politenessSetting}"`, () => {
       const { asFragment } = render(
-        <BpkAriaLive politenessSetting={politenessSetting}>
+        <BpkAriaLive politenessSetting={politenessSetting as PolitenessSetting}>
           Backpack
         </BpkAriaLive>,
       );
