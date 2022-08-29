@@ -143,3 +143,5 @@
   - Changed calendar to semantic colours:
     - Changed navigation icon colours
     - Changed date range selection background colour
+- bpk-component-list:
+  - Now accepts `ariaLabel`, `ariaLabelledby` and `title` properties.

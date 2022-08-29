@@ -215,6 +215,7 @@ z-index
 
 # a11y terms
 aria-describedby
+aria-labelledby
 tablist
 
 # Locales
@@ -260,6 +261,7 @@ animateOnLeave
 animationDuration
 appearActiveClassName
 appearClassName
+ariaLabelledby
 aspectRatio
 bannerStyle
 BarChart
