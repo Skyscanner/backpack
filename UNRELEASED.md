@@ -1,5 +1,7 @@
 **Changed:**
 
+- bpk-component-aria-live
+  - Converted to TypeScript. If you were using a stub definition for this package the stub can now be deleted as types are readable directly from the package.
 - bpk-component-scrollable-calendar:
   - Migrated from heavy `react-virtualized` library to more lightweight library previously used
   - With this change you will see snapshot (if being used) fail as it will change from rendering as the following to previously fuller rendered components showing week days and numbers
