@@ -17,9 +17,9 @@
  */
 
 import React from 'react';
+import type { ReactElement } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from 'bpk-react-utils';
-import type { ReactElement } from 'react';
 
 import STYLES from './BpkAriaLive.module.scss';
 
