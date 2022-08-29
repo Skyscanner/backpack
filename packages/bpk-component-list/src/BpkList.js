@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
@@ -30,15 +30,28 @@ type Props = {
   children: Node,
   ordered: boolean,
   className: ?string,
+  ariaLabel: ?string,
+  ariaLabelledby: ?string,
+  title: ?string,
 };
 
 const BpkList = (props: Props) => {
-  const { children, className, ordered } = props;
+  const { ariaLabel, ariaLabelledby, children, className, ordered, title } =
+    props;
 
   const TagName: any = ordered ? 'ol' : 'ul';
   const classNames: string = getClassName('bpk-list', className);
 
-  return <TagName className={classNames}>{children}</TagName>;
+  return (
+    <TagName
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
+      title={title}
+      className={classNames}
+    >
+      {children}
+    </TagName>
+  );
 };
 
 BpkList.propTypes = {
@@ -53,6 +66,9 @@ BpkList.propTypes = {
 BpkList.defaultProps = {
   ordered: false,
   className: null,
+  ariaLabel: null,
+  ariaLabelledby: null,
+  title: null,
 };
 
 export default BpkList;
