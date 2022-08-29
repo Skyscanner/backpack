@@ -41,19 +41,8 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
 .bpk-data-table {
   width: 100%;
 
-  &__header-column {
-    display: flex;
-    height: 100%;
-    margin: bpk-spacing-base();
-    flex-direction: row;
-    align-items: center;
-    outline-offset: -(4 * $bpk-one-pixel-rem);
-
-    @include bpk-label-2;
-
-    &:hover {
-      cursor: pointer;
-    }
+  &__header-row {
+    overflow: hidden;
   }
 
   &__row {
@@ -67,7 +56,7 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
 
     @include bpk-footnote;
 
-    &:last-child {
+    &:last-child:not(.bpk-data-table__header-row) {
       border-bottom: $bpk-border-size-sm solid $bpk-color-sky-gray-tint-07;
     }
 
@@ -91,5 +80,12 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
         @include bpk-datatable-border-right;
       }
     }
+  }
+
+  &__cell {
+    margin: bpk-spacing-base();
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }

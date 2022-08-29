@@ -52,8 +52,36 @@ const rows = [
   },
 ];
 
+const complexRows = [
+  {
+    name: 'Jose',
+    description: 'Software Engineer',
+    seat: { office: 'London', desk: 10 },
+  },
+  {
+    name: 'Rolf',
+    description: 'Manager',
+    seat: { office: 'Barcelona', desk: 12 },
+  },
+  {
+    name: 'John',
+    description: 'Software Engineer',
+    seat: { office: 'Barcelona', desk: 15 },
+  },
+];
+
 // eslint-disable-next-line no-alert
 const onRowClick = (row) => alert(JSON.stringify(row));
+
+const sortFunc = (rowA, rowB) => {
+  const deskA = rowA.values.seat.desk;
+  const deskB = rowB.values.seat.desk;
+
+  if (deskA === deskB) {
+    return 0;
+  }
+  return deskA > deskB ? 1 : -1;
+};
 
 const AutowidthExample = () => (
   <BpkDataTable rows={rows} height={400} onRowClick={onRowClick}>
@@ -132,10 +160,65 @@ const CustomRowAndHeaderHeights = () => (
   </BpkDataTable>
 );
 
+const HeaderRendererExample = () => (
+  <BpkDataTable rows={rows} height={400} onRowClick={onRowClick}>
+    <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+    <BpkDataTableColumn
+      label="Description"
+      dataKey="description"
+      width={100}
+      flexGrow={1}
+    />
+    <BpkDataTableColumn label="Location" dataKey="location" width={100} />
+    <BpkDataTableColumn
+      label="Numeric value"
+      dataKey="numericValue"
+      width={100}
+      headerRenderer={({ label }) => <div> This is a {label} </div>}
+    />
+  </BpkDataTable>
+);
+
+const CustomSortingExample = () => (
+  <BpkDataTable
+    rows={complexRows}
+    height={400}
+    onRowClick={onRowClick}
+    sort={sortFunc}
+    sortBy="seat"
+    sortDirection="DESC"
+  >
+    <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+    <BpkDataTableColumn
+      label="Description"
+      dataKey="description"
+      width={100}
+      flexGrow={1}
+    />
+    <BpkDataTableColumn
+      label="Seat"
+      dataKey="seat"
+      width={100}
+      cellRenderer={({ cellData, rowData }) => {
+        if (rowData.name === 'Jose') {
+          return <div> Remote </div>;
+        }
+        return (
+          <div>
+            {cellData.office} - {cellData.desk}
+          </div>
+        );
+      }}
+    />
+  </BpkDataTable>
+);
+
 export {
   AutowidthExample,
   NonHoverRows,
   FixedWidth,
   DisabledSort,
   CustomRowAndHeaderHeights,
+  HeaderRendererExample,
+  CustomSortingExample,
 };

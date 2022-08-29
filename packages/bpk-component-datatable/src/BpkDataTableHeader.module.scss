@@ -16,24 +16,25 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+@import '~bpk-mixins';
 
 $bpk-spacing-v2: true;
 
 $bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
 
-.bpk-data-table-column {
-  margin: bpk-spacing-base();
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .bpk-data-table-column__header {
-  display: inline-block;
-  max-width: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  display: flex;
+  height: 100%;
+  margin: bpk-spacing-base();
+  flex-direction: row;
+  align-items: center;
+  outline-offset: -(bpk-spacing-sm());
+
+  @include bpk-label-2;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .bpk-data-table-column__sort-icons {

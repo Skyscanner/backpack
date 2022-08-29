@@ -20,6 +20,12 @@
 
 // This file exists to break a cycle that would otherwise happen between
 // BpkDataTableColumn.js and common-types.js
+
+export const SORT_DIRECTION_TYPES = {
+  ASC: 'ASC',
+  DESC: 'DESC',
+};
+
 export type SortDirectionType = 'ASC' | ' DESC';
 
 export type SortProps = {

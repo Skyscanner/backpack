@@ -18,179 +18,212 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Table, AutoSizer } from 'react-virtualized';
+import React, { useMemo, useState } from 'react';
+import { useTable, useSortBy } from 'react-table';
 import { cssModules } from 'bpk-react-utils';
-import _omit from 'lodash/omit';
 
 import STYLES from './BpkDataTable.module.scss';
-import BpkDataTableColumn from './BpkDataTableColumn';
-import hasChildrenOfType from './hasChildrenOfType';
-import makeSorter, { type Sorter } from './sorter';
 import type { Props } from './common-types';
+import { SORT_DIRECTION_TYPES } from './sort-types';
+import BpkDataTableHeader from './BpkDataTableHeader';
+import { getColumns } from './utils';
 
 const getClassName = cssModules(STYLES);
-const omittedTableProps = ['rowGetter', 'rowCount', 'onHeaderClick'];
 
-type State<Row> = {
-  sorter: Sorter<Row>,
-  rowSelected: ?number,
+const KEYCODES = {
+  ENTER: 13,
+  SPACEBAR: 32,
 };
 
-class BpkDataTable<Row> extends Component<Props<Row>, State<Row>> {
-  static defaultProps = {
-    ...Table.defaultProps,
-    width: null,
-    headerHeight: 60,
-    rowHeight: 60,
-    gridStyle: { direction: undefined }, // This is required for rows to automatically respect rtl
-    defaultColumnSortIndex: 0,
-    sort: null,
-    sortBy: null,
-    sortDirection: null,
-  };
+const BpkDataTable = (props: Props) => {
+  const {
+    children,
+    className,
+    defaultColumnSortIndex,
+    height,
+    rows: data,
+    sort,
+    sortBy,
+    sortDirection,
+    width,
+    ...restOfProps
+  } = props;
 
-  constructor(props: Props<Row>) {
-    super();
+  const [rowSelected, updateRowSelected] = useState(undefined);
 
-    this.state = {
-      sorter: makeSorter(props),
-      rowSelected: undefined,
-    };
-  }
+  const classNames = getClassName('bpk-data-table', className);
 
-  UNSAFE_componentWillReceiveProps(nextProps: Props<Row>) {
-    if (nextProps.rows !== this.props.rows) {
-      this.state.sorter.propsChange(nextProps);
-    }
-  }
-
-  onRowClicked = ({ index }: { index: number }) => {
-    if (this.state.rowSelected === index) {
-      this.setState({ rowSelected: undefined });
-    } else {
-      this.setState({ rowSelected: index });
-    }
-    if (this.props.onRowClick !== undefined) {
-      this.props.onRowClick(this.state.sorter.getRow(index));
-    }
-  };
-
-  onHeaderClick = ({
-    dataKey: sortBy,
-    event,
-  }: {
-    dataKey: string,
-    event: SyntheticEvent<HTMLDivElement>,
-  }) => {
-    const column = React.Children.toArray(this.props.children).find(
-      (child) => child.props.dataKey === sortBy,
-    );
-
-    if (!column) {
-      return;
-    }
-
-    if (column.props.disableSort === true) {
-      return;
-    }
-
-    // See: https://reactjs.org/docs/legacy-event-pooling.html
-    const eventTarget = event.target;
-    if (eventTarget instanceof Element) {
-      this.setState((prevState) => ({
-        sorter: prevState.sorter.onHeaderClick(sortBy, eventTarget, column),
-      }));
-    }
-  };
-
-  rowClassName = (
+  const getRowClassNames = (
     consumerClassName: ?string | ?(({ index: number }) => string),
-    { index }: { index: number },
+    index: number,
   ) => {
-    const classNames = [getClassName('bpk-data-table__row')];
-    if (this.state.rowSelected === index) {
-      classNames.push(getClassName('bpk-data-table__row--selected'));
-    }
-    if (this.props.onRowClick !== undefined) {
-      classNames.push(getClassName('bpk-data-table__row--clickable'));
-    }
-    if (index === -1) {
-      classNames.push(getClassName('bpk-data-table__header-row'));
-    }
-    if (consumerClassName) {
-      if (typeof consumerClassName === 'function') {
-        classNames.push(consumerClassName({ index }));
-      } else {
-        classNames.push(consumerClassName);
-      }
-    }
-    return classNames;
+    const rowClassNames = getClassName(
+      'bpk-data-table__row',
+      rowSelected === index && 'bpk-data-table__row--selected',
+      props.onRowClick !== undefined && 'bpk-data-table__row--clickable',
+      index === -1 && 'bpk-data-table__header-row',
+      consumerClassName &&
+        (typeof consumerClassName === 'function'
+          ? consumerClassName({ index })
+          : consumerClassName),
+    );
+    return rowClassNames;
   };
 
-  renderTable(width: ?number) {
-    const {
-      children,
-      className,
-      headerClassName,
-      rowClassName,
-      sort,
-      ...restOfProps
-    } = this.props;
+  const headerClassNames = getClassName(
+    'bpk-data-table__row',
+    'bpk-data-table__header-row',
+    props.headerClassName,
+  );
 
-    const classNames = [getClassName('bpk-data-table')];
-    if (className) {
-      classNames.push(className);
-    }
+  const columns = useMemo(() => getColumns(children), [children]);
 
-    const headerClassNames = [getClassName('bpk-data-table__header-column')];
-    if (headerClassName) {
-      headerClassNames.push(headerClassName);
-    }
-
-    return (
-      // $FlowFixMe[cannot-spread-inexact]
-      <Table
-        {...restOfProps}
-        className={classNames.join(' ')}
-        width={width}
-        rowCount={this.state.sorter.rowCount}
-        rowGetter={({ index }) => this.state.sorter.getRow(index)}
-        headerClassName={headerClassNames.join(' ')}
-        rowClassName={(row) => this.rowClassName(rowClassName, row)}
-        onRowClick={this.onRowClicked}
-        onHeaderClick={this.onHeaderClick}
-        {...this.state.sorter.sortProps}
-      >
-        {React.Children.map(children, BpkDataTableColumn.toColumn)}
-      </Table>
+  const { getTableBodyProps, getTableProps, headerGroups, prepareRow, rows } =
+    useTable(
+      {
+        columns,
+        data,
+        initialState: {
+          sortBy: useMemo(
+            () => [
+              ...(sort
+                ? []
+                : [
+                    {
+                      id: columns[defaultColumnSortIndex].accessor,
+                      desc:
+                        columns[defaultColumnSortIndex].defaultSortDirection ===
+                          'DESC' || false,
+                    },
+                  ]),
+            ],
+            [defaultColumnSortIndex, columns, sort],
+          ),
+        },
+      },
+      useSortBy,
     );
-  }
 
-  render() {
-    if (this.props.width !== null) {
-      return this.renderTable(this.props.width);
+  const onRowClicked = (index: number) => {
+    if (rowSelected === index) {
+      updateRowSelected(undefined);
+    } else {
+      updateRowSelected(index);
     }
+    if (props.onRowClick !== undefined) {
+      props.onRowClick(rows[index].original);
+    }
+  };
 
-    return (
-      <AutoSizer disableHeight>
-        {({ width }) => this.renderTable(width)}
-      </AutoSizer>
-    );
-  }
-}
+  const handleKeyboardEvent = (
+    event: React.KeyboardEvent<HTMLElement>,
+    i: number,
+  ) => {
+    if (
+      event.keyCode === KEYCODES.ENTER ||
+      event.keyCode === KEYCODES.SPACEBAR
+    ) {
+      event.preventDefault();
+      onRowClicked(i);
+    }
+  };
+
+  return (
+    <div
+      {...getTableProps({
+        style: { width, height },
+        className: classNames,
+      })}
+      {...restOfProps}
+    >
+      <div>
+        {headerGroups.map((headerGroup) => (
+          <div
+            {...headerGroup.getHeaderGroupProps({
+              style: { height: props.headerHeight },
+              className: headerClassNames,
+            })}
+          >
+            {headerGroup.headers.map((column) => {
+              if (sort && sortBy) {
+                if (column.id === sortBy) {
+                  column.sortType = sort; // eslint-disable-line no-param-reassign
+                  column.sortDirection = sortDirection; // eslint-disable-line no-param-reassign
+                }
+              }
+              return <BpkDataTableHeader key={column.id} column={column} />;
+            })}
+          </div>
+        ))}
+      </div>
+      <div {...getTableBodyProps()}>
+        {rows.map((row, i) => {
+          prepareRow(row);
+          const cellClassNames = [getClassName('bpk-data-table__cell')];
+          return (
+            <div
+              onClick={() => onRowClicked(i)}
+              role="button"
+              onKeyDown={(event) => handleKeyboardEvent(event, i)}
+              tabIndex={0}
+              {...row.getRowProps({
+                style: {
+                  ...props.rowStyle,
+                  height: props.rowHeight,
+                },
+                className: getRowClassNames(props.rowClassName, i),
+              })}
+            >
+              {row.cells.map((cell) => {
+                if (cell.column.className) {
+                  cellClassNames.push(cell.column.className);
+                }
+                return (
+                  <div
+                    {...cell.getCellProps({
+                      style: {
+                        width: cell.column.width,
+                        minWidth: cell.column.minWidth,
+                        flexGrow: cell.column.flexGrow,
+                      },
+                      className: cellClassNames.join(' '),
+                    })}
+                  >
+                    {cell.render('Cell')}
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 BpkDataTable.propTypes = {
-  ..._omit(Table.propTypes, omittedTableProps),
   rows: PropTypes.arrayOf(Object).isRequired,
-  children: hasChildrenOfType(BpkDataTableColumn),
+  children: PropTypes.node.isRequired,
+  height: PropTypes.number.isRequired,
   width: PropTypes.number,
   headerHeight: PropTypes.number,
+  rowHeight: PropTypes.number,
   className: PropTypes.string,
   defaultColumnSortIndex: PropTypes.number,
   sort: PropTypes.func,
   sortBy: PropTypes.string,
-  sortDirection: PropTypes.oneOf(['ASC', 'DESC']),
+  sortDirection: PropTypes.oneOf(Object.keys(SORT_DIRECTION_TYPES)),
+};
+
+BpkDataTable.defaultProps = {
+  width: null,
+  headerHeight: 60,
+  rowHeight: 60,
+  className: null,
+  defaultColumnSortIndex: 0,
+  sort: null,
+  sortBy: null,
+  sortDirection: SORT_DIRECTION_TYPES.ASC,
 };
 
 export default BpkDataTable;

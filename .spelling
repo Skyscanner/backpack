@@ -273,6 +273,8 @@ borderlessBackground
 buttonText
 buttonType
 CALENDAR_SELECTION_TYPE.single
+cellDataGetter
+cellRenderer
 cellType
 centerLeading
 centerTrailing
@@ -288,14 +290,17 @@ cornerStyle
 CORNER_STYLES.sm
 CORNER_STYLES.lg
 ctaText
+dataKey
 DataSource
 dateProps
 decreaseButtonLabel
 decrementValue
+defaultSortDirection
 dialing
 dialingCode
 dialingCodes
 dialingCodeMask
+disableSort
 dismissable
 dismissButtonLabel
 toggleable
@@ -305,6 +310,7 @@ dockedLast
 doneLabel
 expandDelay
 flareClassName
+flexGrow
 fillStyle
 foregroundContent
 formatValue
@@ -312,7 +318,10 @@ getApplicationElement
 getArrowPositionCallback
 getStarLabel
 gridProps
+headerClassName
 headerProps
+headerRenderer
+headerStyle
 iconPosition
 ICON_POSITION
 ICON_POSITION.LEADING
@@ -364,6 +373,7 @@ onPress
 onRatingHover
 onRatingSelect
 onRender
+onRowClick
 onToggleExpanded
 onValueChange
 overlayStyle
@@ -386,6 +396,7 @@ RATING_TYPES.pill
 ReactElement
 renderFlag
 renderTarget
+rowStyle
 secondaryOnDark
 selectionConfiguration
 selectedDates

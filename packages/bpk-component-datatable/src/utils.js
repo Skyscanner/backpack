@@ -17,14 +17,71 @@
  */
 /* @flow strict */
 
+// TODO: Remove these functions once we want to change the API to match the react-table library API
+// To maintain backwards compatibility with the old API of BpkDataTable which takes columns as children
+// The `react-table` library however expects columns as an array of objects
 // eslint-disable-next-line import/prefer-default-export
-export const hasClassName = (node: ?Element, className: ?string): boolean => {
-  if (node == null) {
-    return false;
-  }
+export const getColumns = (columns) =>
+  columns.map((column) => {
+    const { cellDataGetter, cellRenderer, headerRenderer } = column.props;
+    // To maintain backwards compatibility with the old API of BpkDataTable we rename the parameters
+    // And create an interface so that the function signature doesn't depend on the underlying library
+    const columnCellRenderer = ({
+      column: { id: dataKey },
+      columns: columnsData,
+      row: { id: rowID, values: rowData },
+      sortedRows,
+      value: cellData,
+    }) => {
+      const columnIndex = columnsData.map((col) => col.id).indexOf(dataKey);
+      const rowIndex = sortedRows.map((row) => row.id).indexOf(rowID);
 
-  const nodeClassName = node.getAttribute('class');
-  return (
-    nodeClassName != null && nodeClassName.split(' ').indexOf(className) !== -1
-  );
-};
+      return cellRenderer({
+        cellData,
+        columnIndex,
+        dataKey,
+        rowData,
+        rowIndex,
+      });
+    };
+
+    const columnCellDataGetter = ({
+      column: { id: dataKey },
+      row: { values: rowData },
+    }) => cellDataGetter({ dataKey, rowData });
+
+    const columnHeaderRenderer = ({
+      column: { disableSortBy: disableSort, id: dataKey, label },
+    }) => headerRenderer({ dataKey, label, disableSort });
+
+    const {
+      className,
+      dataKey,
+      defaultSortDirection,
+      disableSort,
+      flexGrow,
+      headerClassName,
+      headerStyle,
+      label,
+      minWidth,
+      style,
+      width,
+    } = column.props;
+    return {
+      Header: headerRenderer ? columnHeaderRenderer : label,
+      accessor: dataKey,
+      ...((cellRenderer || cellDataGetter) && {
+        Cell: columnCellRenderer || columnCellDataGetter,
+      }),
+      className,
+      disableSortBy: disableSort,
+      defaultSortDirection,
+      flexGrow,
+      headerClassName,
+      headerStyle,
+      label,
+      minWidth,
+      style,
+      width,
+    };
+  });
