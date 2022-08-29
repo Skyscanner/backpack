@@ -14,7 +14,7 @@
 **Changed:**
 
 - bpk-component-graphic-promotion: 5.0.1 => 5.1.0
-  - converted to TypeScript
+  - Converted to TypeScript. If you were using a stub definition for this package the stub can now be deleted as types are readable directly from the package.
 
 - bpk-component-scrollable-calendar: 7.0.1 => 7.1.0
   - Migrated from heavy `react-virtualized` library to more lightweight library previously used
@@ -297,15 +297,15 @@ Major version for all components:
   - Removed `unmountComponentAtNode` as we now unmount by removing the portal from the `renderTarget`.
   - Introduced `PortalV1` to support legacy usage during the transition and will throw a warning if used to move to the latest version.
 
-`bpk-component-drawer` - `4.1.11 => 5.0.0`<br /> 
+`bpk-component-drawer` - `4.1.11 => 5.0.0`<br />
 `bpk-component-dialog` - `4.1.13 => 5.0.0`<br />
 `bpk-component-modal` - `3.1.12 => 4.0.0`
   - Migrated to the new native portal implementation. Which should now mean that context is available from the parent component to the child pop-up components.
 
 **Updated:**
 
-`bpk-component-datepicker` - `15.2.16 => 15.2.17`<br /> 
-`bpk-component-tooltip` - `7.0.0 => 7.0.1`<br /> 
+`bpk-component-datepicker` - `15.2.16 => 15.2.17`<br />
+`bpk-component-tooltip` - `7.0.0 => 7.0.1`<br />
 `bpk-component-popover` - `5.0.1 => 5.0.2`
   - Migrated to `PortalV1` - to continue using the old portal implementation, as we are breaking the task down, but in a future implementation will be migrated to the new portal system.
 
@@ -352,7 +352,7 @@ Major version for all components:
   - Added missing dependencies `@skyscanner/bpk-svgs`, `@react-google-maps/api`, `@popperjs/core`
 
 - bpk-component-theme-toggle: 3.1.10 => 3.1.11
-  - Removed `Konami` library and logic, so not to require it for the single package. It was added as fun for the documentation site but no longer relevant now. 
+  - Removed `Konami` library and logic, so not to require it for the single package. It was added as fun for the documentation site but no longer relevant now.
 
 
 # 2022-05-10
@@ -404,7 +404,7 @@ Major version for all components:
 
 - `@skyscanner/backpack-web`: 1.0.0 => 1.0.1
   - Fix link buttons text font weight. Link buttons text will now be bold.
-  
+
 # 2022-05-26
 
 **Fixed:**
@@ -474,7 +474,7 @@ To install please use `npm install --save @skyscanner/backpack-web`
 - bpk-component-list: 3.1.6 => 4.0.0
     - Changed list margins and paddings. This will make the component larger in height, so please check it does not alter the layout.
         - Changed vertical margins in list component
-        - Added bottom margins to list items 
+        - Added bottom margins to list items
         - Added top and bottom padding to nested lists
 
 
@@ -550,7 +550,7 @@ You can use these buttons by setting the `linkOnDark` or `secondaryOnDark` prope
 # 2022-04-15
 
 **Fixed**
-- bpk-component-graphic-promotion: 2.0.0 => 2.0.1 
+- bpk-component-graphic-promotion: 2.0.0 => 2.0.1
   - Uses new primaryOnDark button type to fix previous hover state which was showing primary (green) hover on a white button. Now is a white button with appropriate hover state.
 
 # 2022-04-14
@@ -609,7 +609,7 @@ The following package version bump, will affect all components as `bpk-react-uti
     - Introduced vertical padding to Link buttons which will cause all Link buttons to appear larger in height.
     - Removed `padded` property from Link buttons. If using this property, it will no longer have any effect on the button's padding and the default Link button padding which was introduced with this PR will be applied instead. This means different vertical padding and no horizontal padding will be applied. Note: if using this property in Link buttons, you should remove it.
     - Introduced `2.25rem` minimum height for default buttons and `0.375rem` vertical padding. This will result in buttons appearing slightly smaller in height.
-    - Introduced `3rem` minimum height for large buttons and `0.75rem` vertical padding. This will result in large buttons appearing slightly larger in height. 
+    - Introduced `3rem` minimum height for large buttons and `0.75rem` vertical padding. This will result in large buttons appearing slightly larger in height.
     - Horizontal padding for large buttons was changed which causes the width of the large buttons to decrease.
 - Button shape changes:
     - Changed radius from `.375rem` to `.5rem` for both default and large buttons. Buttons will look slightly more rounded.
@@ -761,7 +761,7 @@ Deleted the following deprecated components as part of moving to the single pack
 **Changed:**
 
 `bpk-component-accordion` (4.0.6 => 4.1.0) </br>
-  - `weight` property is now deprecated. If you are using the `weight` property, remove it and choose a different text style instead to achieve the desired weight. 
+  - `weight` property is now deprecated. If you are using the `weight` property, remove it and choose a different text style instead to achieve the desired weight.
 
 `bpk-animate-height` (4.0.29 => 4.1.0) </br>
 `bpk-component-accordion` (4.0.6 => 4.1.0) </br>
@@ -877,7 +877,7 @@ Deleted the following deprecated components as part of moving to the single pack
 
       /* New */
       $bpk-spacing-v2: true;
-      
+
       .MyHeading {
         margin-top: bpk-spacing-sm();
         margin-bottom: bpk-spacing-sm();
@@ -895,7 +895,7 @@ Deleted the following deprecated components as part of moving to the single pack
       // old
       <BpkParagraph>My paragraph.</BpkParagraph>
 
-      // new 
+      // new
       <BpkText tagName="p" textStyle="base">
         My paragraph.
       </BpkText>
@@ -919,7 +919,7 @@ Deleted the following deprecated components as part of moving to the single pack
       - `bpk-hero-3`
       - `bpk-hero-4`
       - `bpk-hero-5`
-    - `weight` property is now deprecated. If you are using the `weight` or `bold` properties, remove them and choose one of the new text styles instead to achieve the desired weight. 
+    - `weight` property is now deprecated. If you are using the `weight` or `bold` properties, remove them and choose one of the new text styles instead to achieve the desired weight.
 
   - bpk-mixins: 25.1.0 => 25.2.0
     - Deprecated `bpk-heading-6` mixin.
@@ -1000,10 +1000,10 @@ Deleted the following deprecated components as part of moving to the single pack
 # 2022-01-13
 
 **Added:**
-  
+
   - bpk-component-datepicker: 15.0.3 => 15.1.0
     - Exposed property `fixedWidth` to datepicker for when used will correctly fit the pop-up container correctly.
-    
+
 **Fixed:**
 
 - bpk-component-scrollable-calendar: 6.0.3 => 6.0.4
@@ -1111,7 +1111,7 @@ Deleted the following deprecated components as part of moving to the single pack
 **Added:**
   - bpk-component-datepicker: 14.0.1 => 14.1.0
     - Added new (OPTIONAL) `inputComponent` property to allow for custom and multiple input fields to be provided for the calendar component when using ranges.
-      - The previous input will continue to work as expected if you do not supply your own input. 
+      - The previous input will continue to work as expected if you do not supply your own input.
     - Export `CALENDAR_SELECTION_TYPE` so it can be imported from `bpk-component-datepicker` and `bpk-component-scrollable-calendar` instead of `bpk-component-calendar`
 
   - bpk-component-scrollable-calendar: 5.0.1 => 5.1.0
