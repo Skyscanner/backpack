@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-select",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "Backpack select component.",
   "license": "Apache-2.0",
   "repository": {
@@ -19,7 +19,7 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^2.0.2"
+    "bpk-storybook-utils": "^2.0.3"
   },
   "peerDependencies": {
     "react": "^17.0.2"

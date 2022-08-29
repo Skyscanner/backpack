@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-radio",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Backpack radio button component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,6 +23,6 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^9.2.0",
-    "bpk-storybook-utils": "^2.0.2"
+    "bpk-storybook-utils": "^2.0.3"
   }
 }
