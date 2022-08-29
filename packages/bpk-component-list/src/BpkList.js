@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import PropTypes, { string } from 'prop-types';
+import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
