@@ -118,7 +118,7 @@ class SelectWithImage extends React.Component {
 }
 
 SelectWithImage.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.object).isRequired,
+  options: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 const Example = () => <StatefulBpkSelect />;

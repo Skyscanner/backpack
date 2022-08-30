@@ -124,7 +124,7 @@ class StatefulDismissibleChipsExample extends React.Component<
           {this.state.chips.map((chip, index) => (
             <BpkDismissibleChip
               {...this.props}
-              key={index.toString()}
+              key={index.toString()} // eslint-disable-line react/no-array-index-key
               onClick={() => {
                 this.removeChip(index);
               }}
@@ -189,7 +189,7 @@ class StatefulRadioGroupChipsExample extends React.Component<
             <BpkSelectableChip
               {...this.props}
               role="radio"
-              key={index.toString()}
+              key={index.toString()} // eslint-disable-line react/no-array-index-key
               onClick={() => {
                 this.selectChip(index);
               }}
