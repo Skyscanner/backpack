@@ -4,8 +4,8 @@
   "license": "Apache-2.0",
   "private": true,
   "engines": {
-    "node": "^14.19.1",
-    "npm": "^6.14.16"
+    "node": "^16.13.0",
+    "npm": "^8.1.0"
   },
   "repository": {
     "type": "git",
@@ -112,14 +112,14 @@
     "@babel/register": "^7.17.7",
     "@skyscanner/bpk-foundations-web": "^9.2.0",
     "@skyscanner/eslint-config-skyscanner": "^12.0.0",
-    "@storybook/addon-a11y": "^5.3.14",
-    "@storybook/addon-actions": "^5.3.14",
-    "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/addon-links": "^5.3.14",
-    "@storybook/addon-storyshots": "^5.3.14",
-    "@storybook/addon-storyshots-puppeteer": "^5.3.14",
-    "@storybook/addon-viewport": "^5.3.14",
-    "@storybook/react": "^5.3.14",
+    "@storybook/addon-a11y": "5.3.21",
+    "@storybook/addon-actions": "5.3.21",
+    "@storybook/addon-knobs": "5.3.21",
+    "@storybook/addon-links": "5.3.21",
+    "@storybook/addon-storyshots": "5.3.21",
+    "@storybook/addon-storyshots-puppeteer": "5.3.21",
+    "@storybook/addon-viewport": "5.3.21",
+    "@storybook/react": "5.3.21",
     "@testing-library/dom": "^8.13.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.0",
@@ -164,7 +164,6 @@
     "postcss-loader": "^3.0.0",
     "prompt": "^1.3.0",
     "prop-types": "^15.7.2",
-    "puppeteer": "^9.1.1",
     "raf": "^3.4.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -174,7 +173,7 @@
     "stylelint-config-skyscanner": "^4.0.0",
     "ts-migrate": "^0.1.27",
     "typescript": "^4.5.4",
-    "webpack": "^4.30.0",
+    "webpack": "^4.46.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1"
   }
