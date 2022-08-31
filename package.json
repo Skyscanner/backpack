@@ -176,8 +176,5 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1"
-  },
-  "dependencies": {
-    "npm": "^8.18.0"
   }
 }
