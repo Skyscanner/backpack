@@ -22,14 +22,14 @@
   @include bpk-themeable-property(
     color,
     --bpk-navigation-bar-button-link-color,
-    $bpk-color-white
+    $bpk-text-primary-inverse-day
   );
 
   @include bpk-hover {
     @include bpk-themeable-property(
       color,
       --bpk-navigation-bar-button-link-hover-color,
-      $bpk-color-white
+      $bpk-text-primary-inverse-day
     );
   }
 
@@ -37,7 +37,7 @@
     @include bpk-themeable-property(
       color,
       --bpk-navigation-bar-button-link-active-color,
-      $bpk-color-white
+      $bpk-text-primary-inverse-day
     );
   }
 
@@ -45,7 +45,7 @@
     @include bpk-themeable-property(
       color,
       --bpk-navigation-bar-button-link-visited-color,
-      $bpk-color-white
+      $bpk-text-primary-inverse-day
     );
   }
 }
