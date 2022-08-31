@@ -20,7 +20,6 @@ import { storiesOf } from '@storybook/react';
 
 import {
   CtaIconLongTextExample,
-  CtaIconLongTextDarkModeExample,
   CtaExample,
   DefaultExample,
   IconExample,
@@ -32,8 +31,4 @@ storiesOf('bpk-component-floating-notification', module)
   .add('With icon', IconExample)
   .add('With CTA', CtaExample)
   .add('With CTA, icon, and long text', CtaIconLongTextExample)
-  .add(
-    'With CTA, icon, long text, in dark mode',
-    CtaIconLongTextDarkModeExample,
-  )
   .add('Visual test', VisualTestExample);

@@ -18,9 +18,7 @@
 
 import React, { useState, Node } from 'react';
 
-import BpkFloatingNotification, {
-  TYPE,
-} from '../../packages/bpk-component-floating-notification';
+import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
 import BpkButton from '../../packages/bpk-component-button';
@@ -75,17 +73,6 @@ const CtaIconLongTextExample = () => (
   </AlertContainer>
 );
 
-const CtaIconLongTextDarkModeExample = () => (
-  <AlertContainer>
-    <BpkFloatingNotification
-      ctaText="View"
-      type={TYPE.dark}
-      icon={BpkIconInformationCircle}
-      text="Killer Combo saved to New York and Miami 🎉"
-    />
-  </AlertContainer>
-);
-
 const VisualTestExample = () => (
   <AlertContainer>
     <BpkFloatingNotification
@@ -95,14 +82,12 @@ const VisualTestExample = () => (
       hideAfter={5000}
       icon={BpkIconInformationCircle}
       text="Killer Combo saved to New York and Miami 🎉"
-      type={TYPE.dark}
     />
   </AlertContainer>
 );
 
 export {
   CtaIconLongTextExample,
-  CtaIconLongTextDarkModeExample,
   CtaExample,
   DefaultExample,
   IconExample,
