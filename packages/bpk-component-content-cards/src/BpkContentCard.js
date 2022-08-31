@@ -31,14 +31,14 @@ type CardLayout = 'HORIZONTAL' | 'VERTICAL';
 type Props = {
   card: {
     image: {
-      url: string;
-      alt?: string;
-    };
-    headline: string;
-    description: string;
-    href: string;
-  };
-  layout: CardLayout;
+      url: string,
+      alt?: string,
+    },
+    headline: string,
+    description: string,
+    href: string,
+  },
+  layout: CardLayout,
 };
 
 const BpkContentCard = ({ card, layout }: Props) => (
@@ -54,7 +54,6 @@ const BpkContentCard = ({ card, layout }: Props) => (
     rel="noreferrer"
   >
     <div className={getClassName('bpk-content-card--image-container')}>
-      {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
       <img
         className={getClassName('bpk-content-card--image')}
         alt={card.image.alt || ''}
