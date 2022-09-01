@@ -23,7 +23,7 @@ import BpkContentCards from './BpkContentCards';
 
 describe('Content Card widget', () => {
   const contentContainerTestProps: React.ComponentProps<
-    typeof BpkContentCards
+    typeof BpkContentCards,
   > = {
     heading: 'Header for the component',
     cards: [
