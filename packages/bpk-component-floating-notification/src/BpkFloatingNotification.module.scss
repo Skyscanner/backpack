@@ -30,8 +30,8 @@
   transition: opacity $bpk-duration-base ease-in-out,
     transform $bpk-duration-base ease-in-out;
   border-radius: $bpk-border-radius-md;
-  background: $bpk-color-sky-blue-shade-03;
-  color: $bpk-color-white;
+  background: $bpk-core-primary-day;
+  color: $bpk-text-on-dark-day;
   box-shadow: $bpk-box-shadow-xl, $bpk-box-shadow-lg;
 
   @include bpk-breakpoint-mobile {
@@ -67,30 +67,17 @@
     min-height: 0;
     margin: 0 0 auto auto;
     padding: 0;
-    color: $bpk-color-sky-blue-tint-01;
-
-    &--dark {
-      color: $bpk-link-color;
-    }
+    color: $bpk-text-on-dark-day;
   }
 
   &__icon {
     margin: bpk-spacing-sm() bpk-spacing-md() 0 bpk-spacing-sm();
     flex-shrink: 0;
     text-align: bottom;
-    fill: $bpk-color-white;
-
-    &--dark {
-      fill: $bpk-color-sky-gray;
-    }
+    fill: $bpk-text-on-dark-day;
   }
 
   &__text {
     margin-right: bpk-spacing-md();
-  }
-
-  &--dark {
-    background: $bpk-color-white;
-    color: $bpk-color-sky-gray;
   }
 }

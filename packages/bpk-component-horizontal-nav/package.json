@@ -15,7 +15,7 @@
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
     "bpk-component-mobile-scroll-container": "^4.0.3",
-    "bpk-mixins": "^31.6.1",
+    "bpk-mixins": "^31.6.3",
     "bpk-react-utils": "^7.0.0",
     "prop-types": "^15.7.2"
   },
@@ -24,7 +24,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@skyscanner/bpk-foundations-web": "^9.2.0",
+    "@skyscanner/bpk-foundations-web": "^9.3.0",
     "bpk-component-text": "^8.0.3",
     "bpk-storybook-utils": "^2.0.3"
   }
