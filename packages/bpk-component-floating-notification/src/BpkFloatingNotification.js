@@ -29,11 +29,6 @@ import STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const TYPE = {
-  light: 'light',
-  dark: 'dark',
-};
-
 type Props = {
   animateOnEnter: ?boolean,
   animateOnExit: ?boolean,
@@ -44,7 +39,6 @@ type Props = {
   onClick: ?() => void,
   onExit: ?() => void,
   text: string,
-  type: ?TYPE,
 };
 
 const BpkFloatingNotification = (props: Props) => {
@@ -60,25 +54,10 @@ const BpkFloatingNotification = (props: Props) => {
     onClick,
     onExit,
     text,
-    type,
     ...rest
   } = props;
 
-  const classNames = getClassName(
-    'bpk-floating-notification',
-    type === TYPE.dark && 'bpk-floating-notification--dark',
-    className,
-  );
-
-  const iconClassNames = getClassName(
-    'bpk-floating-notification__icon',
-    type === TYPE.dark && 'bpk-floating-notification__icon--dark',
-  );
-
-  const buttonClassNames = getClassName(
-    'bpk-floating-notification__button',
-    type === TYPE.dark && 'bpk-floating-notification__button--dark',
-  );
+  const classNames = getClassName('bpk-floating-notification', className);
 
   useEffect(() => {
     let timer;
@@ -106,7 +85,7 @@ const BpkFloatingNotification = (props: Props) => {
     >
       <div className={classNames} {...rest}>
         {Icon && (
-          <div className={iconClassNames}>
+          <div className={getClassName('bpk-floating-notification__icon')}>
             <Icon aria-hidden />
           </div>
         )}
@@ -119,7 +98,11 @@ const BpkFloatingNotification = (props: Props) => {
         </BpkText>
         <BpkAriaLive aria-hidden>{text}</BpkAriaLive>
         {ctaText && (
-          <BpkButton link onClick={onClick} className={buttonClassNames}>
+          <BpkButton
+            link
+            onClick={onClick}
+            className={getClassName('bpk-floating-notification__button')}
+          >
             {ctaText}
           </BpkButton>
         )}
@@ -138,7 +121,6 @@ BpkFloatingNotification.propTypes = {
   onClick: PropTypes.func,
   onExit: PropTypes.func,
   text: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(Object.values(TYPE)),
 };
 
 BpkFloatingNotification.defaultProps = {
@@ -150,7 +132,6 @@ BpkFloatingNotification.defaultProps = {
   icon: null,
   onClick: null,
   onExit: null,
-  type: TYPE.light,
 };
 
 export default BpkFloatingNotification;

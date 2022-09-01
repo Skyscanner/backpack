@@ -19,9 +19,7 @@
 
 import BpkFloatingNotification, {
   type Props as BpkFloatingNotificationProps,
-  TYPE,
 } from './src/BpkFloatingNotification';
 
 export type { BpkFloatingNotificationProps };
-export { TYPE };
 export default BpkFloatingNotification;

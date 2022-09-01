@@ -28,16 +28,16 @@ import STYLES from './BpkContentCards.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  heading: string;
+  heading: string,
   cards: Array<{
     image: {
-      url: string;
-      alt?: string;
-    };
-    headline: string;
-    description: string;
-    href: string;
-  }>;
+      url: string,
+      alt?: string,
+    },
+    headline: string,
+    description: string,
+    href: string,
+  }>,
 };
 
 const BpkContentCards = ({ cards, heading }: Props) => {

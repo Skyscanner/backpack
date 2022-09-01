@@ -20,7 +20,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkAriaLive, { POLITENESS_SETTINGS } from './BpkAriaLive';
-import type { PolitenessSetting } from './BpkAriaLive';
+// Temp disabling TS types due to non TS projects compatibility.
+// import type { PolitenessSetting } from './BpkAriaLive';
 
 describe('BpkAriaLive', () => {
   it('should render correctly', () => {
@@ -31,7 +32,9 @@ describe('BpkAriaLive', () => {
   Object.keys(POLITENESS_SETTINGS).forEach((politenessSetting) => {
     it(`should render correctly with politenessSetting="${politenessSetting}"`, () => {
       const { asFragment } = render(
-        <BpkAriaLive politenessSetting={politenessSetting as PolitenessSetting}>
+        // Temp disabling TS types due to non TS projects compatibility.
+        // <BpkAriaLive politenessSetting={politenessSetting as PolitenessSetting}>
+        <BpkAriaLive politenessSetting={politenessSetting}>
           Backpack
         </BpkAriaLive>,
       );
