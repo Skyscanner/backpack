@@ -50,7 +50,7 @@ $bpk-spacing-v2: true;
       );
 
       @include bpk-hover {
-        @include bpk-border-bottom-xl($bpk-color-sky-gray-tint-06);
+        @include bpk-border-bottom-xl($bpk-surface-highlight-day);
         @include bpk-themeable-property(
           color,
           --bpk-horizontal-nav-link-hover-color,
@@ -59,7 +59,7 @@ $bpk-spacing-v2: true;
       }
 
       &:active {
-        @include bpk-border-bottom-xl($bpk-color-sky-gray-tint-05);
+        @include bpk-border-bottom-xl($bpk-line-day);
         @include bpk-themeable-property(
           color,
           --bpk-horizontal-nav-link-active-color,
@@ -68,11 +68,11 @@ $bpk-spacing-v2: true;
       }
 
       &-disabled {
-        color: $bpk-color-sky-gray-tint-06;
+        color: $bpk-text-disabled-day;
         cursor: not-allowed;
 
         &:active {
-          color: $bpk-color-sky-gray-tint-06;
+          color: $bpk-text-disabled-day;
           box-shadow: unset;
         }
       }
@@ -114,37 +114,37 @@ $bpk-spacing-v2: true;
     }
 
     &--light {
-      color: $bpk-color-white;
+      color: $bpk-text-on-dark-day;
 
       @include bpk-hover {
-        @include bpk-border-bottom-xl($bpk-color-white);
+        @include bpk-border-bottom-xl($bpk-text-on-dark-day);
       }
 
       &:active {
-        @include bpk-border-bottom-xl($bpk-color-white);
+        @include bpk-border-bottom-xl($bpk-text-on-dark-day);
       }
 
       &-disabled {
-        color: $bpk-color-sky-gray-tint-06;
+        color: $bpk-text-disabled-day;
         cursor: not-allowed;
 
         &:active {
-          color: $bpk-color-sky-gray-tint-06;
+          color: $bpk-text-disabled-day;
           box-shadow: unset;
         }
       }
 
       &-selected {
-        color: $bpk-color-white;
+        color: $bpk-text-on-dark-day;
 
-        @include bpk-border-bottom-xl($bpk-color-white);
+        @include bpk-border-bottom-xl($bpk-text-on-dark-day);
 
         @include bpk-hover {
-          @include bpk-border-bottom-xl($bpk-color-white);
+          @include bpk-border-bottom-xl($bpk-text-on-dark-day);
         }
 
         &:active {
-          @include bpk-border-bottom-xl($bpk-color-white);
+          @include bpk-border-bottom-xl($bpk-text-on-dark-day);
         }
       }
     }

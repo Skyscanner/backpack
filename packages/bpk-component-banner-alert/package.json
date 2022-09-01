@@ -14,11 +14,11 @@
   },
   "gitHead": "4e4ec9add28e1db54d6a38a10c331bbd163f2926",
   "dependencies": {
-    "@skyscanner/bpk-foundations-web": "^9.2.0",
+    "@skyscanner/bpk-foundations-web": "^9.3.0",
     "bpk-animate-height": "^5.0.3",
     "bpk-component-close-button": "^4.0.3",
     "bpk-component-icon": "^10.0.3",
-    "bpk-mixins": "^31.6.1",
+    "bpk-mixins": "^31.6.3",
     "bpk-react-utils": "^7.0.0",
     "prop-types": "^15.7.2",
     "react-transition-group": "^2.5.3"
