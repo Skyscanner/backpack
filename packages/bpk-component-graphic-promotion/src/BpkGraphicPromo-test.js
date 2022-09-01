@@ -46,7 +46,9 @@ const props: Props = {
 
 describe('BpkGraphicPromo', () => {
   beforeEach(() => {
-    (props.onClick as jest.MockedFunction<Props['onClick']>).mockReset();
+    // Temp disabling TS types due to non TS projects compatibility.
+    // (props.onClick as jest.MockedFunction<Props['onClick']>).mockReset();
+    props.onClick.mockReset();
   });
 
   it('should render correctly with all properties set', () => {
