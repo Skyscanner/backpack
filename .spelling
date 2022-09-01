@@ -690,6 +690,7 @@ bpk-component-checkbox
 bpk-component-chip
 bpk-component-close-button
 bpk-component-code
+bpk-component-content-cards
 bpk-component-content-container
 bpk-component-cta-button
 bpk-component-datatable
