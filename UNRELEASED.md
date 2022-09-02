@@ -17,3 +17,9 @@
 - bpk-component-content-cards<br />
 - bpk-component-graphic-promotion
   - Disabled recent Typescript changes due to incompatibility for non Typescript projects
+
+**Changed:**
+
+- bpk-component-switch:
+  - Added new `small` variant using a `boolean` to enable the small size.
+  - Deprecated `type` property as we no longer use/support `event` type switch and only have one style.

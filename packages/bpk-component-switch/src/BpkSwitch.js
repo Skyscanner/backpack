@@ -19,7 +19,7 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 
 import STYLES from './BpkSwitch.module.scss';
 
@@ -32,11 +32,6 @@ export const SWITCH_TYPES = {
 
 export type SwitchTypeValue = $Values<typeof SWITCH_TYPES>;
 
-const switchTypeClassNames = {
-  [SWITCH_TYPES.primary]: getClassName('bpk-switch__switch--primary'),
-  [SWITCH_TYPES.event]: getClassName('bpk-switch__switch--event'),
-};
-
 export type Props = {
   label: Node,
   type: SwitchTypeValue,
@@ -44,12 +39,13 @@ export type Props = {
 };
 
 const BpkSwitch = (props: Props) => {
-  const { className, label, type, ...rest } = props;
+  const { className, label, small, type, ...rest } = props;
 
-  const switchClassNames = [
-    getClassName('bpk-switch__switch'),
-    switchTypeClassNames[type],
-  ];
+  const switchClassNames = getClassName(
+    'bpk-switch__switch',
+    `bpk-switch__switch--${type}`,
+    small && 'bpk-switch__switch--small',
+  );
 
   return (
     <label className={getClassName('bpk-switch', className)}>
@@ -63,20 +59,25 @@ const BpkSwitch = (props: Props) => {
       <span aria-hidden className={getClassName('bpk-switch__label')}>
         {label}
       </span>
-      <span aria-hidden className={switchClassNames.join(' ')} />
+      <span aria-hidden className={switchClassNames} />
     </label>
   );
 };
 
 BpkSwitch.propTypes = {
   label: PropTypes.node.isRequired,
-  type: PropTypes.oneOf([SWITCH_TYPES.primary, SWITCH_TYPES.event]),
+  type: deprecated(
+    PropTypes.oneOf([SWITCH_TYPES.primary, SWITCH_TYPES.event]),
+    'This property is deprecated and only one type supported, please remove your usage of this property',
+  ),
   className: PropTypes.string,
+  small: PropTypes.boolean,
 };
 
 BpkSwitch.defaultProps = {
   className: null,
   type: SWITCH_TYPES.primary,
+  small: false,
 };
 
 export default BpkSwitch;

@@ -19,9 +19,9 @@
 
 import { storiesOf } from '@storybook/react';
 
-import { DefaultExample, EventExample, MixedExample } from './examples';
+import { DefaultExample, SmallExample, MixedExample } from './examples';
 
 storiesOf('bpk-component-switch', module)
   .add('Default', DefaultExample)
-  .add('Event', EventExample)
+  .add('Small', SmallExample)
   .add('Visual test', MixedExample);
