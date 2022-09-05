@@ -20,18 +20,14 @@
 
 $bpk-spacing-v2: true;
 
-$primary-on-color: $bpk-color-sky-blue;
-$event-on-color: $bpk-color-abisko;
-$off-color: $bpk-color-sky-gray-tint-06;
-$handle-color: $bpk-color-white;
-
 $height: bpk-spacing-xl();
 $width: bpk-spacing-sm() * 13;
 $border-width: $bpk-one-pixel-rem * 2;
 
 .bpk-switch {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 
   // Checkbox is invisible so the switch element can be the visual element.
   &__checkbox {
@@ -43,12 +39,13 @@ $border-width: $bpk-one-pixel-rem * 2;
         @include bpk-themeable-property(
           background,
           --bpk-switch-checked-color,
-          $primary-on-color
+          $bpk-core-accent-day
         );
       }
 
+      // This is now deprecated and will be removed in the future.
       &--event {
-        background: $event-on-color;
+        background: $bpk-color-abisko;
       }
 
       &::before {
@@ -71,7 +68,7 @@ $border-width: $bpk-one-pixel-rem * 2;
     height: $height;
     transition: background $bpk-duration-sm linear;
     border-radius: $height / 2;
-    background: $off-color;
+    background: $bpk-surface-highlight-day;
     cursor: pointer;
 
     // The 'handle'.
@@ -85,9 +82,19 @@ $border-width: $bpk-one-pixel-rem * 2;
       height: $height - ($border-width * 2);
       transition: left $bpk-duration-sm ease-out;
       border-radius: 50%;
-      background: $handle-color;
+      background: $bpk-text-on-dark-day;
 
       @include bpk-box-shadow-sm;
+    }
+
+    &--small {
+      width: bpk-spacing-xxl();
+      height: bpk-spacing-sm() * 5;
+
+      &::before {
+        width: bpk-spacing-base();
+        height: bpk-spacing-base();
+      }
     }
   }
 }

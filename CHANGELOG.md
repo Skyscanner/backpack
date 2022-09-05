@@ -1,3 +1,28 @@
+# 2022-09-02
+
+`@skyscanner/backpack-web: 10.0.0 => 11.0.0` - all changes noted below <br />
+
+**Changed:**
+
+  bpk-component-navigation-bar: 4.0.3 => 4.1.0 <br />
+    - Update component to semantic colours.
+  bpk-component-horizontal-nav: 6.0.3 => 6.1.0 <br />
+  - Migrated component to semantic colour tokens.
+
+**Breaking:**
+
+  bpk-component-floating-notification: 2.0.3 => 3.0.0 <br />
+    - Remove `type` prop and `TYPE` object
+    - Change component to use semantic colour tokens
+
+**Fixed:**
+
+  bpk-component-aria-live: 3.1.0 => 3.1.1 <br />
+  bpk-component-content-cards: 1.0.1 => 1.0.2 <br />
+  bpk-component-graphic-promotion: 5.1.1 => 5.1.2 <br />
+    - Disabled recent Typescript changes due to incompatibility for non Typescript projects
+
+
 # 2022-08-29
 
 `@skyscanner/backpack-web: 9.3.0 => 10.0.0` - all changes noted below <br />

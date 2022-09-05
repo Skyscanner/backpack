@@ -49,7 +49,7 @@ exports[`BpkSwitch should render correctly when checked 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkSwitch should render event type 1`] = `
+exports[`BpkSwitch should render small switch 1`] = `
 <DocumentFragment>
   <label
     class="bpk-switch"
@@ -67,7 +67,7 @@ exports[`BpkSwitch should render event type 1`] = `
     </span>
     <span
       aria-hidden="true"
-      class="bpk-switch__switch bpk-switch__switch--event"
+      class="bpk-switch__switch bpk-switch__switch--primary bpk-switch__switch--small"
     />
   </label>
 </DocumentFragment>
