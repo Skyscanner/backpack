@@ -32,24 +32,53 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-price', module)
-  .add('Small left - default', SmallLeftExample)
-  .add('Small left with description', SmallLeftWithDescriptionExample)
-  .add(
-    'Small left with subtitle and description',
-    SmallLeftWithSubtitleDescriptionExample,
-  )
-  .add('Small right', SmallRightExample)
-  .add('Small right with description', SmallRightWithDescriptionExample)
-  .add(
-    'Small right with subtitle and description',
-    SmallRightWithSubtitleDescriptionExample,
-  )
-  .add('Large left - default', LargeLeftExample)
-  .add('Large left with description', LargeLeftWithDescriptionExample)
-  .add(
-    'Large left with subtitle and description',
-    LargeLeftWithSubtitleDescriptionExample,
-  )
-  .add('Large left with long price', LargeLeftLongPriceExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-price',
+};
+
+export const SmallLeftDefault = SmallLeftExample;
+
+SmallLeftDefault.storyName = 'Small left - default';
+
+export const SmallLeftWithDescription = SmallLeftWithDescriptionExample;
+
+SmallLeftWithDescription.storyName = 'Small left with description';
+
+export const SmallLeftWithSubtitleAndDescription =
+  SmallLeftWithSubtitleDescriptionExample;
+
+SmallLeftWithSubtitleAndDescription.storyName = 'Small left with subtitle and description';
+
+export const SmallRight = SmallRightExample;
+
+SmallRight.storyName = 'Small right';
+
+export const SmallRightWithDescription = SmallRightWithDescriptionExample;
+
+SmallRightWithDescription.storyName = 'Small right with description';
+
+export const SmallRightWithSubtitleAndDescription =
+  SmallRightWithSubtitleDescriptionExample;
+
+SmallRightWithSubtitleAndDescription.storyName = 'Small right with subtitle and description';
+
+export const LargeLeftDefault = LargeLeftExample;
+
+LargeLeftDefault.storyName = 'Large left - default';
+
+export const LargeLeftWithDescription = LargeLeftWithDescriptionExample;
+
+LargeLeftWithDescription.storyName = 'Large left with description';
+
+export const LargeLeftWithSubtitleAndDescription =
+  LargeLeftWithSubtitleDescriptionExample;
+
+LargeLeftWithSubtitleAndDescription.storyName = 'Large left with subtitle and description';
+
+export const LargeLeftWithLongPrice = LargeLeftLongPriceExample;
+
+LargeLeftWithLongPrice.storyName = 'Large left with long price';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

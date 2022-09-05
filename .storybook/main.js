@@ -3,7 +3,7 @@
  *
  * Copyright 2018 Skyscanner Ltd
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License",
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -16,8 +16,16 @@
  * limitations under the License.
  */
 
-// TODO: addon-a11y breaks the calendar example
-import '@storybook/addon-a11y/register';
-import '@storybook/addon-actions/register';
-import '@storybook/addon-knobs/register';
-import '@storybook/addon-viewport/register';
+
+
+module.exports = {
+    stories: [
+      '../examples/**/stories.js'
+    ],
+    addons: [
+      '@storybook/addon-a11y',
+      '@storybook/addon-actions',
+      '@storybook/addon-knobs',
+      '@storybook/addon-viewport',
+    ],
+  };

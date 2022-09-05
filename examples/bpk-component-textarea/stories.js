@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   PlaceholderExample,
@@ -29,10 +27,15 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-textarea', module)
-  .add('Default', DefaultExample)
-  .add('Placeholder', PlaceholderExample)
-  .add('Disabled', DisabledExample)
-  .add('Invalid', InvalidExample)
-  .add('Large', LargeExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-textarea',
+};
+
+export const Default = DefaultExample;
+export const Placeholder = PlaceholderExample;
+export const Disabled = DisabledExample;
+export const Invalid = InvalidExample;
+export const Large = LargeExample;
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

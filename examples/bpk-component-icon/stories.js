@@ -31,14 +31,46 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-icon', module)
-  .add('Small icons', SmallIconsExample)
-  .add('Large icons', LargeIconsExample)
-  .add('Align to text base', AlignToBaseTextExample)
-  .add('Align to large text', AlignToLargeTextExample)
-  .add('Align small text to icon', AlignSmallTextToIconExample)
-  .add('Align text to icon', AlignTextToIconExample)
-  .add('Align to button', AlignToButtonExample)
-  .add('Align to large button', AlignToLargeButtonExample)
-  .add('Align to large button (RTL support)', AlignToLargeButtonRTLExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-icon',
+};
+
+export const SmallIcons = SmallIconsExample;
+
+SmallIcons.storyName = 'Small icons';
+
+export const LargeIcons = LargeIconsExample;
+
+LargeIcons.storyName = 'Large icons';
+
+export const AlignToTextBase = AlignToBaseTextExample;
+
+AlignToTextBase.storyName = 'Align to text base';
+
+export const AlignToLargeText = AlignToLargeTextExample;
+
+AlignToLargeText.storyName = 'Align to large text';
+
+export const AlignSmallTextToIcon = AlignSmallTextToIconExample;
+
+AlignSmallTextToIcon.storyName = 'Align small text to icon';
+
+export const AlignTextToIcon = AlignTextToIconExample;
+
+AlignTextToIcon.storyName = 'Align text to icon';
+
+export const AlignToButton = AlignToButtonExample;
+
+AlignToButton.storyName = 'Align to button';
+
+export const AlignToLargeButton = AlignToLargeButtonExample;
+
+AlignToLargeButton.storyName = 'Align to large button';
+
+export const AlignToLargeButtonRtlSupport = AlignToLargeButtonRTLExample;
+
+AlignToLargeButtonRtlSupport.storyName = 'Align to large button (RTL support)';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

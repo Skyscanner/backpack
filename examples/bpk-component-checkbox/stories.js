@@ -32,13 +32,21 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-checkbox', module)
-  .add('Default', DefaultExample)
-  .add('Indeterminate', IndeterminateExample)
-  .add('Invalid', InvalidExample)
-  .add('Multiline', MultilineExample)
-  .add('White', WhiteExample)
-  .add('Disabled', DisabledExample)
-  .add('Required', RequiredExample)
-  .add('Small label', SmallLabelExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-checkbox',
+};
+
+export const Default = DefaultExample;
+export const Indeterminate = IndeterminateExample;
+export const Invalid = InvalidExample;
+export const Multiline = MultilineExample;
+export const White = WhiteExample;
+export const Disabled = DisabledExample;
+export const Required = RequiredExample;
+export const SmallLabel = SmallLabelExample;
+
+SmallLabel.storyName = 'Small label';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

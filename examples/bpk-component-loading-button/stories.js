@@ -37,18 +37,44 @@ import {
   VisualExample,
 } from './examples';
 
-storiesOf('bpk-component-loading-button', module)
-  .add('DocsPrimary', DocsPrimary)
-  .add('Primary', Primary)
-  .add('PrimaryOnDark', PrimaryOnDark)
-  .add('PrimaryOnLight', PrimaryOnLight)
-  .add('Secondary', Secondary)
-  .add('SecondaryOnDark', SecondaryOnDark)
-  .add('Destructive', Destructive)
-  .add('Link button', LinkButton)
-  .add('LinkOnDark button', LinkOnDarkButton)
-  .add('Featured', Featured)
-  .add('Mixture', Mixture)
-  .add('Anchor tags', AnchorTags)
-  .add('Custom Icon', CustomIcon)
-  .add('Visual test', VisualExample);
+export default {
+  title: 'bpk-component-loading-button',
+};
+
+export const _DocsPrimary = DocsPrimary;
+
+_DocsPrimary.storyName = 'DocsPrimary';
+
+export const _Primary = Primary;
+export const _PrimaryOnDark = PrimaryOnDark;
+
+_PrimaryOnDark.storyName = 'PrimaryOnDark';
+
+export const _PrimaryOnLight = PrimaryOnLight;
+
+_PrimaryOnLight.storyName = 'PrimaryOnLight';
+
+export const _Secondary = Secondary;
+export const _SecondaryOnDark = SecondaryOnDark;
+
+_SecondaryOnDark.storyName = 'SecondaryOnDark';
+
+export const _Destructive = Destructive;
+export const _LinkButton = LinkButton;
+
+_LinkButton.storyName = 'Link button';
+
+export const _LinkOnDarkButton = LinkOnDarkButton;
+
+_LinkOnDarkButton.storyName = 'LinkOnDark button';
+
+export const _Featured = Featured;
+export const _Mixture = Mixture;
+export const _AnchorTags = AnchorTags;
+
+_AnchorTags.storyName = 'Anchor tags';
+
+export const _CustomIcon = CustomIcon;
+export const VisualTest = VisualExample;
+
+VisualTest.storyName = 'Visual test';

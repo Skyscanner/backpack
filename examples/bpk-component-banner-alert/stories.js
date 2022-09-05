@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 /* @flow strict */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   Neutral,
   Primary,
@@ -38,24 +35,57 @@ import {
   DocsDefault,
 } from './examples';
 
-storiesOf('bpk-component-banner-alert', module)
-  .add('Docs default', DocsDefault)
-  .add('Neutral', Neutral)
-  .add('Primary', Primary)
-  .add('Success', Success)
-  .add('Success (long message)', SuccessLongMessage)
-  .add('Success (dismissable)', Dismissable)
-  .add('Success(expandable)', SuccessExpandable)
-  .add('Success (animate on enter)', SuccessAnimateOnEnter)
-  .add('Success with React rendered message', SuccessWithReactRenderedMessage)
-  .add('Warn', Warn)
-  .add('Error', ErrorExample)
-  .add('Event', Event)
-  .add('Success (dismissable behaviour)', SuccessDismissableBehaviour)
-  .add('Success (expandable behaviour)', SuccessExpandableBehaviour)
-  .add(
-    'Success (automatically dismissed after 5 seconds)',
-    SuccessAutomaticallyDismissed,
-  )
-  .add('Success with custom icon', SuccessCustomIcon)
-  .add('Visual test', DocsDefault);
+export default {
+  title: 'bpk-component-banner-alert',
+};
+
+export const _DocsDefault = DocsDefault;
+
+_DocsDefault.storyName = 'Docs default';
+
+export const _Neutral = Neutral;
+export const _Primary = Primary;
+export const _Success = Success;
+export const _SuccessLongMessage = SuccessLongMessage;
+
+_SuccessLongMessage.storyName = 'Success (long message)';
+
+export const SuccessDismissable = Dismissable;
+
+SuccessDismissable.storyName = 'Success (dismissable)';
+
+export const _SuccessExpandable = SuccessExpandable;
+
+_SuccessExpandable.storyName = 'Success(expandable)';
+
+export const _SuccessAnimateOnEnter = SuccessAnimateOnEnter;
+
+_SuccessAnimateOnEnter.storyName = 'Success (animate on enter)';
+
+export const _SuccessWithReactRenderedMessage = SuccessWithReactRenderedMessage;
+
+_SuccessWithReactRenderedMessage.storyName = 'Success with React rendered message';
+
+export const _Warn = Warn;
+export const Error = ErrorExample;
+export const _Event = Event;
+export const _SuccessDismissableBehaviour = SuccessDismissableBehaviour;
+
+_SuccessDismissableBehaviour.storyName = 'Success (dismissable behaviour)';
+
+export const _SuccessExpandableBehaviour = SuccessExpandableBehaviour;
+
+_SuccessExpandableBehaviour.storyName = 'Success (expandable behaviour)';
+
+export const SuccessAutomaticallyDismissedAfter5Seconds =
+  SuccessAutomaticallyDismissed;
+
+SuccessAutomaticallyDismissedAfter5Seconds.storyName = 'Success (automatically dismissed after 5 seconds)';
+
+export const SuccessWithCustomIcon = SuccessCustomIcon;
+
+SuccessWithCustomIcon.storyName = 'Success with custom icon';
+
+export const VisualTest = DocsDefault;
+
+VisualTest.storyName = 'Visual test';

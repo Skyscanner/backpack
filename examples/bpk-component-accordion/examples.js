@@ -304,6 +304,8 @@ const WithBoldTitlesExample = () => (
   </SingleItemAccordion>
 );
 
+const VisualExample = () => <SingleItemExample />;
+
 export {
   SingleItemExample,
   SingleItemExampleInitiallyExpanded,
@@ -313,4 +315,5 @@ export {
   CustomTitleTextStyleExample,
   WithIconsExample,
   WithBoldTitlesExample,
+  VisualExample,
 };

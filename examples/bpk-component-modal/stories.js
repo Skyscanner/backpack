@@ -35,16 +35,42 @@ import {
   WithAccessoryViewExample,
 } from './examples';
 
-storiesOf('bpk-component-modal', module)
-  .add('Default', DefaultExample)
-  .add('Wide', WideExample)
-  .add('Overflowing', OverflowingExample)
-  .add('Close button text', CloseButtonTextExample)
-  .add('Long title', LongTitleExample)
-  .add('Not full screen on mobile', NotFullScreenOnMobileExample)
-  .add('Full screen', FullScreenExample)
-  .add('Full screen overflowing', FullScreenOverflowingExample)
-  .add('Nested', NestedExample)
-  .add('No header', NoHeaderExample)
-  .add('No padding', NoPaddingExample)
-  .add('With accessory view', WithAccessoryViewExample);
+export default {
+  title: 'bpk-component-modal',
+};
+
+export const Default = DefaultExample;
+export const Wide = WideExample;
+export const Overflowing = OverflowingExample;
+export const CloseButtonText = CloseButtonTextExample;
+
+CloseButtonText.storyName = 'Close button text';
+
+export const LongTitle = LongTitleExample;
+
+LongTitle.storyName = 'Long title';
+
+export const NotFullScreenOnMobile = NotFullScreenOnMobileExample;
+
+NotFullScreenOnMobile.storyName = 'Not full screen on mobile';
+
+export const FullScreen = FullScreenExample;
+
+FullScreen.storyName = 'Full screen';
+
+export const FullScreenOverflowing = FullScreenOverflowingExample;
+
+FullScreenOverflowing.storyName = 'Full screen overflowing';
+
+export const Nested = NestedExample;
+export const NoHeader = NoHeaderExample;
+
+NoHeader.storyName = 'No header';
+
+export const NoPadding = NoPaddingExample;
+
+NoPadding.storyName = 'No padding';
+
+export const WithAccessoryView = WithAccessoryViewExample;
+
+WithAccessoryView.storyName = 'With accessory view';

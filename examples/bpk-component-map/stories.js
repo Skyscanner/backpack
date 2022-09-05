@@ -32,20 +32,45 @@ import {
   MultipleMapsExample,
 } from './examples';
 
-storiesOf('bpk-component-map', module)
-  .add('Simple', SimpleExample)
-  .add(
-    'Drag disabled and controls hidden',
-    DragDisabledAndHiddenControlsExample,
-  )
-  .add('Greedy gesture handling', GreddyGestureHandlingExample)
-  .add(
-    'With onZoom and onRegionChange callbacks',
-    WithOnZoomAndOnRegionChangeExample,
-  )
-  .add('With onTilesLoaded', WithOnTilesLoadedExample)
-  .add('With a bounding box', WithBoundingBoxExample)
-  .add('With a marker', WithAMarkerExample)
-  .add('Icon markers', WithIconMarkersExample)
-  .add('Price markers', WithPriceMarkersExample)
-  .add('Multi maps', MultipleMapsExample);
+export default {
+  title: 'bpk-component-map',
+};
+
+export const Simple = SimpleExample;
+export const DragDisabledAndControlsHidden =
+  DragDisabledAndHiddenControlsExample;
+
+DragDisabledAndControlsHidden.storyName = 'Drag disabled and controls hidden';
+
+export const GreedyGestureHandling = GreddyGestureHandlingExample;
+
+GreedyGestureHandling.storyName = 'Greedy gesture handling';
+
+export const WithOnZoomAndOnRegionChangeCallbacks =
+  WithOnZoomAndOnRegionChangeExample;
+
+WithOnZoomAndOnRegionChangeCallbacks.storyName = 'With onZoom and onRegionChange callbacks';
+
+export const WithOnTilesLoaded = WithOnTilesLoadedExample;
+
+WithOnTilesLoaded.storyName = 'With onTilesLoaded';
+
+export const WithABoundingBox = WithBoundingBoxExample;
+
+WithABoundingBox.storyName = 'With a bounding box';
+
+export const WithAMarker = WithAMarkerExample;
+
+WithAMarker.storyName = 'With a marker';
+
+export const IconMarkers = WithIconMarkersExample;
+
+IconMarkers.storyName = 'Icon markers';
+
+export const PriceMarkers = WithPriceMarkersExample;
+
+PriceMarkers.storyName = 'Price markers';
+
+export const MultiMaps = MultipleMapsExample;
+
+MultiMaps.storyName = 'Multi maps';

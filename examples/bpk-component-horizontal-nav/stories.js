@@ -32,15 +32,44 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-horizontal-nav', module)
-  .add('Example', DefaultExample)
-  .add('Scroll to selected element', ScrollToSelectedExample)
-  .add('Not underlined', NotUnderlinedExample)
-  .add('Light appearance', LightAppearanceExample)
-  .add('Using custom scroll colors', UsingCustomScrollColors)
-  .add('Anchor tags', AnchorTagsExample)
-  .add('Extreme example', ExtremeExample)
-  .add('Space around', SpacedAroundExample)
-  .add('Disabled item', DisabledItemExample)
-  .add('Separators', SeparatorsExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-horizontal-nav',
+};
+
+export const Example = DefaultExample;
+export const ScrollToSelectedElement = ScrollToSelectedExample;
+
+ScrollToSelectedElement.storyName = 'Scroll to selected element';
+
+export const NotUnderlined = NotUnderlinedExample;
+
+NotUnderlined.storyName = 'Not underlined';
+
+export const LightAppearance = LightAppearanceExample;
+
+LightAppearance.storyName = 'Light appearance';
+
+export const _UsingCustomScrollColors = UsingCustomScrollColors;
+
+_UsingCustomScrollColors.storyName = 'Using custom scroll colors';
+
+export const AnchorTags = AnchorTagsExample;
+
+AnchorTags.storyName = 'Anchor tags';
+
+export const _ExtremeExample = ExtremeExample;
+
+_ExtremeExample.storyName = 'Extreme example';
+
+export const SpaceAround = SpacedAroundExample;
+
+SpaceAround.storyName = 'Space around';
+
+export const DisabledItem = DisabledItemExample;
+
+DisabledItem.storyName = 'Disabled item';
+
+export const Separators = SeparatorsExample;
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

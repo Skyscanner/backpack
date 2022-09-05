@@ -27,8 +27,13 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-progress', module)
-  .add('Default', DefaultExample)
-  .add('Small', SmallExample)
-  .add('Stepped', SteppedExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-progress',
+};
+
+export const Default = DefaultExample;
+export const Small = SmallExample;
+export const Stepped = SteppedExample;
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

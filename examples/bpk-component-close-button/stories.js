@@ -18,10 +18,13 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import DefaultExample from './examples';
 
-storiesOf('bpk-component-close-button', module)
-  .add('Default', DefaultExample)
-  .add('Visual test', DefaultExample);
+export default {
+  title: 'bpk-component-close-button',
+};
+
+export const Default = DefaultExample;
+export const VisualTest = DefaultExample;
+
+VisualTest.storyName = 'Visual test';

@@ -30,11 +30,25 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-radio', module)
-  .add('Default', DefaultExample)
-  .add('Multi line', Multiline)
-  .add('Invalid', Invalid)
-  .add('White', White)
-  .add('Disabled (Checked)', DisabledChecked)
-  .add('Disabled (Unchecked)', DisabledUnchecked)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-radio',
+};
+
+export const Default = DefaultExample;
+export const MultiLine = Multiline;
+
+MultiLine.storyName = 'Multi line';
+
+export const _Invalid = Invalid;
+export const _White = White;
+export const _DisabledChecked = DisabledChecked;
+
+_DisabledChecked.storyName = 'Disabled (Checked)';
+
+export const _DisabledUnchecked = DisabledUnchecked;
+
+_DisabledUnchecked.storyName = 'Disabled (Unchecked)';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

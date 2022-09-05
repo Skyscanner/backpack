@@ -40,29 +40,81 @@ import {
   RangeDateCalendar,
 } from './examples';
 
-storiesOf('bpk-component-calendar', module)
-  .add('BpkCalendarNav', CalendarNavExample)
-  .add('BpkCalendarGridHeader', CalendarGridHeaderExample)
-  .add('BpkCalendarGrid', CalendarGridExample)
-  .add('BpkCalendarGridHeader + BpkCalendarGrid', CalendarGridAndHeaderExample)
-  .add('Calendar - default', DefaultExample)
-  .add(
-    'Calendar - min date in the past, focusing today',
-    MinDateInThePastExample,
-  )
-  .add('Calendar - Week starts on a Sunday', WeekStartsOnSundayExample)
-  .add('Calendar - Honest weekend', HonestWeekendExample)
-  .add('Calendar - weekDayKey is nameNarrow', WeekdayKeyIsNameNarrow)
-  .add('Calendar - ar-AE locale', ArabicExample)
-  .add('Calendar - ja-JP locale', JapaneseExample)
-  .add('Calendar - Specify min/max date', MinAndMaxDate)
-  .add("Calendar - Don't mark today", MarkTodayFalseExample)
-  .add("Calendar - Don't mark outside days", MarkOutsideDaysFalseExample)
-  .add('Custom composed calendar', CustomComposedCalendar)
-  .add(
-    'Custom composed calendar (Safari DST bug)',
-    CustomComposedCalendarSafariBug,
-  )
-  .add('Week', WeekExample)
-  .add('Visual test', FocusedDateInThePastExample)
-  .add('Visual test range', RangeDateCalendar);
+export default {
+  title: 'bpk-component-calendar',
+};
+
+export const BpkCalendarNav = CalendarNavExample;
+
+BpkCalendarNav.storyName = 'BpkCalendarNav';
+
+export const BpkCalendarGridHeader = CalendarGridHeaderExample;
+
+BpkCalendarGridHeader.storyName = 'BpkCalendarGridHeader';
+
+export const BpkCalendarGrid = CalendarGridExample;
+
+BpkCalendarGrid.storyName = 'BpkCalendarGrid';
+
+export const BpkCalendarGridHeaderBpkCalendarGrid =
+  CalendarGridAndHeaderExample;
+
+BpkCalendarGridHeaderBpkCalendarGrid.storyName = 'BpkCalendarGridHeader + BpkCalendarGrid';
+
+export const CalendarDefault = DefaultExample;
+
+CalendarDefault.storyName = 'Calendar - default';
+
+export const CalendarMinDateInThePastFocusingToday = MinDateInThePastExample;
+
+CalendarMinDateInThePastFocusingToday.storyName = 'Calendar - min date in the past, focusing today';
+
+export const CalendarWeekStartsOnASunday = WeekStartsOnSundayExample;
+
+CalendarWeekStartsOnASunday.storyName = 'Calendar - Week starts on a Sunday';
+
+export const CalendarHonestWeekend = HonestWeekendExample;
+
+CalendarHonestWeekend.storyName = 'Calendar - Honest weekend';
+
+export const CalendarWeekDayKeyIsNameNarrow = WeekdayKeyIsNameNarrow;
+
+CalendarWeekDayKeyIsNameNarrow.storyName = 'Calendar - weekDayKey is nameNarrow';
+
+export const CalendarArAeLocale = ArabicExample;
+
+CalendarArAeLocale.storyName = 'Calendar - ar-AE locale';
+
+export const CalendarJaJpLocale = JapaneseExample;
+
+CalendarJaJpLocale.storyName = 'Calendar - ja-JP locale';
+
+export const CalendarSpecifyMinMaxDate = MinAndMaxDate;
+
+CalendarSpecifyMinMaxDate.storyName = 'Calendar - Specify min/max date';
+
+export const CalendarDontMarkToday = MarkTodayFalseExample;
+
+CalendarDontMarkToday.storyName = "Calendar - Don't mark today";
+
+export const CalendarDontMarkOutsideDays = MarkOutsideDaysFalseExample;
+
+CalendarDontMarkOutsideDays.storyName = "Calendar - Don't mark outside days";
+
+export const _CustomComposedCalendar = CustomComposedCalendar;
+
+_CustomComposedCalendar.storyName = 'Custom composed calendar';
+
+export const CustomComposedCalendarSafariDstBug =
+  CustomComposedCalendarSafariBug;
+
+CustomComposedCalendarSafariDstBug.storyName = 'Custom composed calendar (Safari DST bug)';
+
+export const Week = WeekExample;
+export const VisualTest = FocusedDateInThePastExample;
+
+VisualTest.storyName = 'Visual test';
+
+export const VisualTestRange = RangeDateCalendar;
+
+VisualTestRange.storyName = 'Visual test range';

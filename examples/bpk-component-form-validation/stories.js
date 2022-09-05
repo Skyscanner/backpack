@@ -16,11 +16,10 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import { DefaultExample, FormsExample } from './examples';
 
-storiesOf('bpk-component-form-validation', module)
-  .add('Default', DefaultExample)
-  .add('With forms', FormsExample)
-  .add('Visual test', FormsExample);
+WithForms.storyName = 'With forms';
+
+export const VisualTest = FormsExample;
+
+VisualTest.storyName = 'Visual test';

@@ -28,12 +28,29 @@ import {
   CustomSortingExample,
 } from './examples';
 
-storiesOf('bpk-component-datatable', module)
-  .add('Autowidth Example', AutowidthExample)
-  .add('Rows not hoverable', NonHoverRows)
-  .add('Fixed Width Example', FixedWidth)
-  .add('Disabled Sort Example', DisabledSort)
-  .add('Custom row and header heights', CustomRowAndHeaderHeights)
-  .add('Custom sorting Example', CustomSortingExample)
-  .add('Custom header data Example', HeaderRendererExample)
-  .add('Visual test', AutowidthExample);
+export default {
+  title: 'bpk-component-datatable',
+};
+
+export const _AutowidthExample = AutowidthExample;
+export const RowsNotHoverable = NonHoverRows;
+
+RowsNotHoverable.storyName = 'Rows not hoverable';
+
+export const FixedWidthExample = FixedWidth;
+export const DisabledSortExample = DisabledSort;
+export const _CustomRowAndHeaderHeights = CustomRowAndHeaderHeights;
+
+_CustomRowAndHeaderHeights.storyName = 'Custom row and header heights';
+
+export const _CustomSortingExample = CustomSortingExample;
+
+_CustomSortingExample.storyName = 'Custom sorting Example';
+
+export const CustomHeaderDataExample = HeaderRendererExample;
+
+CustomHeaderDataExample.storyName = 'Custom header data Example';
+
+export const VisualTest = AutowidthExample;
+
+VisualTest.storyName = 'Visual test';

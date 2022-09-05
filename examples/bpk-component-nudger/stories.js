@@ -30,11 +30,31 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-nudger', module)
-  .add('Default', DefaultExample)
-  .add('Lower bounds', LowerBoundExample)
-  .add('Upper bounds', UpperBoundsExample)
-  .add('Stateful example', StatefulExample)
-  .add('Configurable nudger', ConfigurableExample)
-  .add('On dark nudger', OnDarkExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-nudger',
+};
+
+export const Default = DefaultExample;
+export const LowerBounds = LowerBoundExample;
+
+LowerBounds.storyName = 'Lower bounds';
+
+export const UpperBounds = UpperBoundsExample;
+
+UpperBounds.storyName = 'Upper bounds';
+
+export const _StatefulExample = StatefulExample;
+
+_StatefulExample.storyName = 'Stateful example';
+
+export const ConfigurableNudger = ConfigurableExample;
+
+ConfigurableNudger.storyName = 'Configurable nudger';
+
+export const OnDarkNudger = OnDarkExample;
+
+OnDarkNudger.storyName = 'On dark nudger';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

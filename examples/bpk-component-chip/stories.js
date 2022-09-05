@@ -29,11 +29,22 @@ import {
   DismissibleChipsExample,
 } from './examples';
 
-storiesOf('bpk-component-chip', module)
-  .add('All types', AllTypesExample)
-  .add('Selectable', SelectableChipsExample)
-  .add('All Selectable Types', AllSelectableChipStylesExample)
-  .add('With icons', WithIconsExample)
-  .add('Dismissable', DismissibleChipsExample)
-  .add('Radio Group', RadioGroupChipsExample)
-  .add('Visual test', AllTypesExample);
+export default {
+  title: 'bpk-component-chip',
+};
+
+export const AllTypes = AllTypesExample;
+
+AllTypes.storyName = 'All types';
+
+export const Selectable = SelectableChipsExample;
+export const AllSelectableTypes = AllSelectableChipStylesExample;
+export const WithIcons = WithIconsExample;
+
+WithIcons.storyName = 'With icons';
+
+export const Dismissable = DismissibleChipsExample;
+export const RadioGroup = RadioGroupChipsExample;
+export const VisualTest = AllTypesExample;
+
+VisualTest.storyName = 'Visual test';

@@ -28,10 +28,18 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-label', module)
-  .add('Example', DefaultExample)
-  .add('Required', RequiredExample)
-  .add('Invalid', InvalidExample)
-  .add('Disabled', DisabledExample)
-  .add('Invalid required', InvalidRequiredExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-label',
+};
+
+export const Example = DefaultExample;
+export const Required = RequiredExample;
+export const Invalid = InvalidExample;
+export const Disabled = DisabledExample;
+export const InvalidRequired = InvalidRequiredExample;
+
+InvalidRequired.storyName = 'Invalid required';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

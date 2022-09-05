@@ -17,9 +17,6 @@
  */
 
 /* @flow strict */
-
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithIconsExample,
@@ -36,17 +33,34 @@ import {
   StrongExample,
 } from './examples';
 
-storiesOf('bpk-component-badge', module)
-  .add('Default', DefaultExample)
-  .add('With icons', WithIconsExample)
-  .add('Centered', CenteredExample)
-  .add('Docked right', DockedLeadingExample)
-  .add('Docked left', DockedTrailingExample)
-  .add('Warning (Default)', WarningExample)
-  .add('Success', SuccessExample)
-  .add('Destructive', DestructiveExample)
-  .add('Strong', StrongExample)
-  .add('Light', LightExample)
-  .add('Inverse', InverseExample)
-  .add('Outline', OutlineExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-badge',
+};
+
+export const Default = DefaultExample;
+export const WithIcons = WithIconsExample;
+
+WithIcons.storyName = 'With icons';
+
+export const Centered = CenteredExample;
+export const DockedRight = DockedLeadingExample;
+
+DockedRight.storyName = 'Docked right';
+
+export const DockedLeft = DockedTrailingExample;
+
+DockedLeft.storyName = 'Docked left';
+
+export const WarningDefault = WarningExample;
+
+WarningDefault.storyName = 'Warning (Default)';
+
+export const Success = SuccessExample;
+export const Destructive = DestructiveExample;
+export const Strong = StrongExample;
+export const Light = LightExample;
+export const Inverse = InverseExample;
+export const Outline = OutlineExample;
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

@@ -33,16 +33,33 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-select', module)
-  .add('Example', Example)
-  .add('Invalid', Invalid)
-  .add('Invalid with image', InvalidWithImage)
-  .add('Disabled', Disabled)
-  .add('Large', Large)
-  .add('Docked', Docked)
-  .add('Docked with images', DockedWithImages)
-  .add('Manually docked', ManuallyDocked)
-  .add('Manually docked with images', ManuallyDockedWithImages)
-  .add('With Image', WithImage)
-  .add('With Image Large', WithImageLarge)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-select',
+};
+
+export const _Example = Example;
+export const _Invalid = Invalid;
+export const _InvalidWithImage = InvalidWithImage;
+
+_InvalidWithImage.storyName = 'Invalid with image';
+
+export const _Disabled = Disabled;
+export const _Large = Large;
+export const _Docked = Docked;
+export const _DockedWithImages = DockedWithImages;
+
+_DockedWithImages.storyName = 'Docked with images';
+
+export const _ManuallyDocked = ManuallyDocked;
+
+_ManuallyDocked.storyName = 'Manually docked';
+
+export const _ManuallyDockedWithImages = ManuallyDockedWithImages;
+
+_ManuallyDockedWithImages.storyName = 'Manually docked with images';
+
+export const _WithImage = WithImage;
+export const _WithImageLarge = WithImageLarge;
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

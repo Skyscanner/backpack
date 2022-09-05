@@ -28,10 +28,27 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-card', module)
-  .add('Default', DefaultExample)
-  .add('With href', WithHrefExample)
-  .add('Without padding', WithoutPaddingExample)
-  .add('Non-atomic', NonAtomicExample)
-  .add('Non-atomic with href', NonAtomicHrefExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-card',
+};
+
+export const Default = DefaultExample;
+export const WithHref = WithHrefExample;
+
+WithHref.storyName = 'With href';
+
+export const WithoutPadding = WithoutPaddingExample;
+
+WithoutPadding.storyName = 'Without padding';
+
+export const NonAtomic = NonAtomicExample;
+
+NonAtomic.storyName = 'Non-atomic';
+
+export const NonAtomicWithHref = NonAtomicHrefExample;
+
+NonAtomicWithHref.storyName = 'Non-atomic with href';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

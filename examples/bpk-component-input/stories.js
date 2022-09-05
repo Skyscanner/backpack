@@ -36,18 +36,29 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-input', module)
-  .add('Text value', TextExample)
-  .add('Placeholder', PlaceholderExample)
-  .add('Valid', ValidExample)
-  .add('Invalid', InvalidExample)
-  .add('Disabled', DisabledExample)
-  .add('Clearable', ClearableExample)
-  .add('Email', EmailInputExample)
-  .add('Number', NumberInputExample)
-  .add('Password', PasswordInputExample)
-  .add('Telephone', TelephoneInputExample)
-  .add('Large', LargeInputExample)
-  .add('Docked', DockedExample)
-  .add('Manually docked', ManuallyDockedExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-input',
+};
+
+export const TextValue = TextExample;
+
+TextValue.storyName = 'Text value';
+
+export const Placeholder = PlaceholderExample;
+export const Valid = ValidExample;
+export const Invalid = InvalidExample;
+export const Disabled = DisabledExample;
+export const Clearable = ClearableExample;
+export const Email = EmailInputExample;
+export const Number = NumberInputExample;
+export const Password = PasswordInputExample;
+export const Telephone = TelephoneInputExample;
+export const Large = LargeInputExample;
+export const Docked = DockedExample;
+export const ManuallyDocked = ManuallyDockedExample;
+
+ManuallyDocked.storyName = 'Manually docked';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

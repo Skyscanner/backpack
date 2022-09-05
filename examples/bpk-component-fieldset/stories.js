@@ -36,18 +36,42 @@ import {
   SplitInputExample,
 } from './examples';
 
-storiesOf('bpk-component-fieldset', module)
-  .add('Input', InputExample)
-  .add('Select', SelectExample)
-  .add('Checkbox', CheckboxExample)
-  .add('Datepicker', DatepickerExample)
-  .add('Textarea', TextareaExample)
-  .add('Autosuggest', AutosuggestExample)
-  .add('Required input', RequiredInputExample)
-  .add('Required select', RequiredSelectExample)
-  .add('Required checkbox', RequiredCheckboxExample)
-  .add('Disabled input', DisabledInputExample)
-  .add('Disabled select', DisabledSelectExample)
-  .add('Disabled checkbox', DisabledCheckboxExample)
-  .add('Visual test', MixedExample)
-  .add('Split Input', SplitInputExample);
+export default {
+  title: 'bpk-component-fieldset',
+};
+
+export const Input = InputExample;
+export const Select = SelectExample;
+export const Checkbox = CheckboxExample;
+export const Datepicker = DatepickerExample;
+export const Textarea = TextareaExample;
+export const Autosuggest = AutosuggestExample;
+export const RequiredInput = RequiredInputExample;
+
+RequiredInput.storyName = 'Required input';
+
+export const RequiredSelect = RequiredSelectExample;
+
+RequiredSelect.storyName = 'Required select';
+
+export const RequiredCheckbox = RequiredCheckboxExample;
+
+RequiredCheckbox.storyName = 'Required checkbox';
+
+export const DisabledInput = DisabledInputExample;
+
+DisabledInput.storyName = 'Disabled input';
+
+export const DisabledSelect = DisabledSelectExample;
+
+DisabledSelect.storyName = 'Disabled select';
+
+export const DisabledCheckbox = DisabledCheckboxExample;
+
+DisabledCheckbox.storyName = 'Disabled checkbox';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';
+
+export const SplitInput = SplitInputExample;

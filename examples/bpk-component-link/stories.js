@@ -30,11 +30,28 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-link', module)
-  .add('Example', LinkExample)
-  .add('Example (buttons)', ButtonLinkExample)
-  .add('Example (alternate)', LinkAlternativeExample)
-  .add('Example (alternate + buttons)', ButtonLinkAlternativeExample)
-  .add('Combined Example', CombinedExample)
-  .add('Combined Example (alternate)', CombinedAlternativeExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-link',
+};
+
+export const Example = LinkExample;
+export const ExampleButtons = ButtonLinkExample;
+
+ExampleButtons.storyName = 'Example (buttons)';
+
+export const ExampleAlternate = LinkAlternativeExample;
+
+ExampleAlternate.storyName = 'Example (alternate)';
+
+export const ExampleAlternateButtons = ButtonLinkAlternativeExample;
+
+ExampleAlternateButtons.storyName = 'Example (alternate + buttons)';
+
+export const _CombinedExample = CombinedExample;
+export const CombinedExampleAlternate = CombinedAlternativeExample;
+
+CombinedExampleAlternate.storyName = 'Combined Example (alternate)';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

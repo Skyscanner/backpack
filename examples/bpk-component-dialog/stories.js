@@ -27,8 +27,19 @@ import {
   WithFlareExample,
 } from './examples';
 
-storiesOf('bpk-component-dialog', module)
-  .add('Default', DefaultExample)
-  .add('With an icon', WithIconExample)
-  .add('Not dismissible', NotDismissibleExample)
-  .add('With flare', WithFlareExample);
+export default {
+  title: 'bpk-component-dialog',
+};
+
+export const Default = DefaultExample;
+export const WithAnIcon = WithIconExample;
+
+WithAnIcon.storyName = 'With an icon';
+
+export const NotDismissible = NotDismissibleExample;
+
+NotDismissible.storyName = 'Not dismissible';
+
+export const WithFlare = WithFlareExample;
+
+WithFlare.storyName = 'With flare';

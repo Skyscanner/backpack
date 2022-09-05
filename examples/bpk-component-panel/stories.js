@@ -25,8 +25,19 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-panel', module)
-  .add('Default', DefaultExample)
-  .add('Without padding', WithoutPaddingExample)
-  .add('Full width', FullWidthExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-panel',
+};
+
+export const Default = DefaultExample;
+export const WithoutPadding = WithoutPaddingExample;
+
+WithoutPadding.storyName = 'Without padding';
+
+export const FullWidth = FullWidthExample;
+
+FullWidth.storyName = 'Full width';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

@@ -16,12 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-import { storiesOf } from '@storybook/react';
-
 import { DefaultExample, AlternateExample, MixedExample } from './examples';
 
-storiesOf('bpk-component-table', module)
-  .add('Default', DefaultExample)
-  .add('Alternate', AlternateExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-table',
+};
+
+export const Default = DefaultExample;
+export const Alternate = AlternateExample;
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

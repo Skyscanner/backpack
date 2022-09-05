@@ -31,12 +31,23 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-phone-input', module)
-  .add('Default', DefaultExample)
-  .add('Large', LargeExample)
-  .add('With Validation', WithValidationExample)
-  .add('With dialing code mask', WithDialingCodeMaskExample)
-  .add('Disabled', DisabledExample)
-  .add('Required', RequiredExample)
-  .add('Double length labels', DoubleLengthLabelExamples)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-phone-input',
+};
+
+export const Default = DefaultExample;
+export const Large = LargeExample;
+export const WithValidation = WithValidationExample;
+export const WithDialingCodeMask = WithDialingCodeMaskExample;
+
+WithDialingCodeMask.storyName = 'With dialing code mask';
+
+export const Disabled = DisabledExample;
+export const Required = RequiredExample;
+export const DoubleLengthLabels = DoubleLengthLabelExamples;
+
+DoubleLengthLabels.storyName = 'Double length labels';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

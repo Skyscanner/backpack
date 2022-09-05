@@ -26,12 +26,21 @@ import {
   SplitInputSmall,
 } from './examples';
 
-storiesOf('bpk-component-split-input', module)
-  .add('Default Input', SplitInputExample)
-  .add('6 char alphanumeric OTP', SplitInputSixDigit)
-  .add(
-    '6 char alphanumeric OTP with placeholder',
-    SplitInputExampleWithPlaceholder,
-  )
-  .add('Small Input', SplitInputSmall)
-  .add('Visual test', SplitInputExample);
+export default {
+  title: 'bpk-component-split-input',
+};
+
+export const DefaultInput = SplitInputExample;
+export const _6CharAlphanumericOtp = SplitInputSixDigit;
+
+_6CharAlphanumericOtp.storyName = '6 char alphanumeric OTP';
+
+export const _6CharAlphanumericOtpWithPlaceholder =
+  SplitInputExampleWithPlaceholder;
+
+_6CharAlphanumericOtpWithPlaceholder.storyName = '6 char alphanumeric OTP with placeholder';
+
+export const SmallInput = SplitInputSmall;
+export const VisualTest = SplitInputExample;
+
+VisualTest.storyName = 'Visual test';

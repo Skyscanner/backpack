@@ -33,16 +33,45 @@ import {
   VisualRangeExample,
 } from './examples';
 
-storiesOf('bpk-component-datepicker', module)
-  .add('Default', DefaultExample)
-  .add('Range', RangeExample)
-  .add('Open on first render', OpenOnRender)
-  .add('Min date in the past', MinDateInPast)
-  .add('Without date set', WithoutDateSet)
-  .add('Passing through props to underlying input', PassingProps)
-  .add('Depart & Return', DepartReturn)
-  .add('Custon calendar component', CustomComponent)
-  .add('Invalid', InvalidExample)
-  .add('Range with multiple inputs', MultipleRangeInputExample)
-  .add('Visual test', DefaultVisualExample)
-  .add('Visual test range', VisualRangeExample);
+export default {
+  title: 'bpk-component-datepicker',
+};
+
+export const Default = DefaultExample;
+export const Range = RangeExample;
+export const OpenOnFirstRender = OpenOnRender;
+
+OpenOnFirstRender.storyName = 'Open on first render';
+
+export const MinDateInThePast = MinDateInPast;
+
+MinDateInThePast.storyName = 'Min date in the past';
+
+export const _WithoutDateSet = WithoutDateSet;
+
+_WithoutDateSet.storyName = 'Without date set';
+
+export const PassingThroughPropsToUnderlyingInput = PassingProps;
+
+PassingThroughPropsToUnderlyingInput.storyName = 'Passing through props to underlying input';
+
+export const _DepartReturn = DepartReturn;
+
+_DepartReturn.storyName = 'Depart & Return';
+
+export const CustonCalendarComponent = CustomComponent;
+
+CustonCalendarComponent.storyName = 'Custon calendar component';
+
+export const Invalid = InvalidExample;
+export const RangeWithMultipleInputs = MultipleRangeInputExample;
+
+RangeWithMultipleInputs.storyName = 'Range with multiple inputs';
+
+export const VisualTest = DefaultVisualExample;
+
+VisualTest.storyName = 'Visual test';
+
+export const VisualTestRange = VisualRangeExample;
+
+VisualTestRange.storyName = 'Visual test range';

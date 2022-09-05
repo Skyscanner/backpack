@@ -17,8 +17,10 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import { DefaultExample } from './examples';
 
-storiesOf('bpk-component-skip-link', module).add('Default', DefaultExample);
+export default {
+  title: 'bpk-component-skip-link',
+};
+
+export const Default = DefaultExample;

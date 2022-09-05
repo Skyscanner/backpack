@@ -32,15 +32,35 @@ import {
   NoStyleExample,
 } from './examples';
 
-storiesOf('bpk-component-graphic-promotion', module)
-  .add('Default no background image', NoStyleExample)
-  .add('Default with background image', DefaultExample)
-  .add('Center Aligned', CenterAlignedExample)
-  .add('Right Aligned', RightAlignedExample)
-  .add('Inverted Portrait Mode', InvertedPortraitExample)
-  .add('Minimalistic', MinimalisticExample)
-  .add('Minimalistic Right Aligned', MinimalisticRightAlignedExample)
-  .add('Non-Sponsored', NonSponsoredExample)
-  .add('Non-Sponsored Center Aligned', NonSponsoredCenterAlignedExample)
-  .add('Non-Sponsored Right Aligned', NonSponsoredRightAlignedExample)
-  .add('Visual test', VisualTestExample);
+export default {
+  title: 'bpk-component-graphic-promotion',
+};
+
+export const DefaultNoBackgroundImage = NoStyleExample;
+
+DefaultNoBackgroundImage.storyName = 'Default no background image';
+
+export const DefaultWithBackgroundImage = DefaultExample;
+
+DefaultWithBackgroundImage.storyName = 'Default with background image';
+
+export const CenterAligned = CenterAlignedExample;
+export const RightAligned = RightAlignedExample;
+export const InvertedPortraitMode = InvertedPortraitExample;
+export const Minimalistic = MinimalisticExample;
+export const MinimalisticRightAligned = MinimalisticRightAlignedExample;
+export const NonSponsored = NonSponsoredExample;
+
+NonSponsored.storyName = 'Non-Sponsored';
+
+export const NonSponsoredCenterAligned = NonSponsoredCenterAlignedExample;
+
+NonSponsoredCenterAligned.storyName = 'Non-Sponsored Center Aligned';
+
+export const NonSponsoredRightAligned = NonSponsoredRightAlignedExample;
+
+NonSponsoredRightAligned.storyName = 'Non-Sponsored Right Aligned';
+
+export const VisualTest = VisualTestExample;
+
+VisualTest.storyName = 'Visual test';

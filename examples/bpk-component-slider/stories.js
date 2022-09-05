@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SimpleSlider,
   SimpleLargeSlider,
@@ -28,11 +26,34 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-slider', module)
-  .add('Simple slider', SimpleSlider)
-  .add('Simple large slider', SimpleLargeSlider)
-  .add('Time slider', TimeSlider)
-  .add('Simple slider with steps', SimpleSliderWithSteps)
-  .add('Range slider', RangeSlider)
-  .add('Range slider with minimum distance', RangeSliderWithMinimumDistance)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-slider',
+};
+
+export const _SimpleSlider = SimpleSlider;
+
+_SimpleSlider.storyName = 'Simple slider';
+
+export const _SimpleLargeSlider = SimpleLargeSlider;
+
+_SimpleLargeSlider.storyName = 'Simple large slider';
+
+export const _TimeSlider = TimeSlider;
+
+_TimeSlider.storyName = 'Time slider';
+
+export const _SimpleSliderWithSteps = SimpleSliderWithSteps;
+
+_SimpleSliderWithSteps.storyName = 'Simple slider with steps';
+
+export const _RangeSlider = RangeSlider;
+
+_RangeSlider.storyName = 'Range slider';
+
+export const _RangeSliderWithMinimumDistance = RangeSliderWithMinimumDistance;
+
+_RangeSliderWithMinimumDistance.storyName = 'Range slider with minimum distance';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

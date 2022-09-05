@@ -18,11 +18,14 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import { Small, Large, ExtraLarge } from './examples';
 
-storiesOf('bpk-component-spinner', module)
-  .add('Small', Small)
-  .add('Large', Large)
-  .add('Extra large', ExtraLarge);
+export default {
+  title: 'bpk-component-spinner',
+};
+
+export const _Small = Small;
+export const _Large = Large;
+export const _ExtraLarge = ExtraLarge;
+
+_ExtraLarge.storyName = 'Extra large';

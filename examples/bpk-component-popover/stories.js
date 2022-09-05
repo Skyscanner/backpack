@@ -34,21 +34,46 @@ import {
   InputTriggerExample,
 } from './examples';
 
-storiesOf('bpk-component-popover', module)
-  .add('Default', DefaultExample)
-  .add('With label as title', WithLabelAsTitleExample)
-  .add('Alongside input', AlongsideInputExample)
-  .add('Close programmatically', CloseProgrammaticallyExample)
-  .add(
-    'With label as title but close button text',
-    WithLabelAsTitleAndTextCloseButtonExample,
-  )
-  .add('On the side', OnTheSideExample)
-  .add('Attach to external element', AttachToExternalExample)
-  .add(
-    'Not rendering if external element does not exist',
-    NoRenderWhenNoExternalElementExample,
-  )
-  .add('Repositioning', RepositioningExample)
-  .add('Popper modifiers', PopperModifiersExample)
-  .add('Triggered by input', InputTriggerExample);
+export default {
+  title: 'bpk-component-popover',
+};
+
+export const Default = DefaultExample;
+export const WithLabelAsTitle = WithLabelAsTitleExample;
+
+WithLabelAsTitle.storyName = 'With label as title';
+
+export const AlongsideInput = AlongsideInputExample;
+
+AlongsideInput.storyName = 'Alongside input';
+
+export const CloseProgrammatically = CloseProgrammaticallyExample;
+
+CloseProgrammatically.storyName = 'Close programmatically';
+
+export const WithLabelAsTitleButCloseButtonText =
+  WithLabelAsTitleAndTextCloseButtonExample;
+
+WithLabelAsTitleButCloseButtonText.storyName = 'With label as title but close button text';
+
+export const OnTheSide = OnTheSideExample;
+
+OnTheSide.storyName = 'On the side';
+
+export const AttachToExternalElement = AttachToExternalExample;
+
+AttachToExternalElement.storyName = 'Attach to external element';
+
+export const NotRenderingIfExternalElementDoesNotExist =
+  NoRenderWhenNoExternalElementExample;
+
+NotRenderingIfExternalElementDoesNotExist.storyName = 'Not rendering if external element does not exist';
+
+export const Repositioning = RepositioningExample;
+export const PopperModifiers = PopperModifiersExample;
+
+PopperModifiers.storyName = 'Popper modifiers';
+
+export const TriggeredByInput = InputTriggerExample;
+
+TriggeredByInput.storyName = 'Triggered by input';

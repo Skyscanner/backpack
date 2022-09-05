@@ -34,15 +34,38 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-star-rating', module)
-  .add('BpkStar examples', FullExample)
-  .add('Full Stars', FullStars)
-  .add('Empty Stars', EmptyStars)
-  .add('3 Stars Rating', ThreeStars)
-  .add('3 1/2 Stars Rating', ThreeAndAHalfStars)
-  .add('3.3 Stars', ThreePointThreeStars)
-  .add('3.8 Stars', ThreePointEightStars)
-  .add('3.3 Stars Rounded', ThreePointThreeStarsRounded)
-  .add('3.8 Stars Rounded', ThreePointEightStarsRounded)
-  .add('Interactive', Interactive)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-star-rating',
+};
+
+export const BpkStarExamples = FullExample;
+
+BpkStarExamples.storyName = 'BpkStar examples';
+
+export const _FullStars = FullStars;
+export const _EmptyStars = EmptyStars;
+export const _3StarsRating = ThreeStars;
+export const _312StarsRating = ThreeAndAHalfStars;
+
+_312StarsRating.storyName = '3 1/2 Stars Rating';
+
+export const _33Stars = ThreePointThreeStars;
+
+_33Stars.storyName = '3.3 Stars';
+
+export const _38Stars = ThreePointEightStars;
+
+_38Stars.storyName = '3.8 Stars';
+
+export const _33StarsRounded = ThreePointThreeStarsRounded;
+
+_33StarsRounded.storyName = '3.3 Stars Rounded';
+
+export const _38StarsRounded = ThreePointEightStarsRounded;
+
+_38StarsRounded.storyName = '3.8 Stars Rounded';
+
+export const _Interactive = Interactive;
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

@@ -27,9 +27,20 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-code', module)
-  .add('Inline', Inline)
-  .add('Inline - Alternate', InlineAlternate)
-  .add('Block', Block)
-  .add('Block - Alternate', BlockAlternate)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-code',
+};
+
+export const _Inline = Inline;
+export const _InlineAlternate = InlineAlternate;
+
+_InlineAlternate.storyName = 'Inline - Alternate';
+
+export const _Block = Block;
+export const _BlockAlternate = BlockAlternate;
+
+_BlockAlternate.storyName = 'Block - Alternate';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

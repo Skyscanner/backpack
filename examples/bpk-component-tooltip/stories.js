@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   DarkExample,
@@ -30,11 +28,28 @@ import {
   FocusExample,
 } from './examples';
 
-storiesOf('bpk-component-tooltip', module)
-  .add('Default', DefaultExample)
-  .add('Dark', DarkExample)
-  .add('On the side', SideExample)
-  .add('Without padding', NoPaddingExample)
-  .add('On a link', LinkExample)
-  .add('Popper modifiers', PopperModifiersExample)
-  .add('Focus example', FocusExample);
+export default {
+  title: 'bpk-component-tooltip',
+};
+
+export const Default = DefaultExample;
+export const Dark = DarkExample;
+export const OnTheSide = SideExample;
+
+OnTheSide.storyName = 'On the side';
+
+export const WithoutPadding = NoPaddingExample;
+
+WithoutPadding.storyName = 'Without padding';
+
+export const OnALink = LinkExample;
+
+OnALink.storyName = 'On a link';
+
+export const PopperModifiers = PopperModifiersExample;
+
+PopperModifiers.storyName = 'Popper modifiers';
+
+export const _FocusExample = FocusExample;
+
+_FocusExample.storyName = 'Focus example';

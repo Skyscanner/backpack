@@ -28,10 +28,27 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-rating', module)
-  .add('Default', DefaultExample)
-  .add('Large size ratings', LargeSizeExample)
-  .add('Show scale ratings', ShowScaleExample)
-  .add('Title only ratings', TitleOnlyExample)
-  .add('Zero to ten scale ratings', ZeroToTenScaleExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-rating',
+};
+
+export const Default = DefaultExample;
+export const LargeSizeRatings = LargeSizeExample;
+
+LargeSizeRatings.storyName = 'Large size ratings';
+
+export const ShowScaleRatings = ShowScaleExample;
+
+ShowScaleRatings.storyName = 'Show scale ratings';
+
+export const TitleOnlyRatings = TitleOnlyExample;
+
+TitleOnlyRatings.storyName = 'Title only ratings';
+
+export const ZeroToTenScaleRatings = ZeroToTenScaleExample;
+
+ZeroToTenScaleRatings.storyName = 'Zero to ten scale ratings';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

@@ -18,11 +18,14 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import { DefaultExample, ExtremeExample } from './examples';
 
-storiesOf('bpk-component-breadcrumb', module)
-  .add('Default', DefaultExample)
-  .add('Extreme', ExtremeExample)
-  .add('Visual test', DefaultExample);
+export default {
+  title: 'bpk-component-breadcrumb',
+};
+
+export const Default = DefaultExample;
+export const Extreme = ExtremeExample;
+export const VisualTest = DefaultExample;
+
+VisualTest.storyName = 'Visual test';

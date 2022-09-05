@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SingleItemExample,
   SingleItemExampleInitiallyExpanded,
@@ -29,21 +27,37 @@ import {
   CustomTitleTextStyleExample,
   WithIconsExample,
   WithBoldTitlesExample,
+  VisualExample,
 } from './examples';
 
-storiesOf('bpk-component-accordion', module)
-  .add('Single item only', SingleItemExample)
-  .add(
-    'Single item only (second item initially expanded)',
-    SingleItemExampleInitiallyExpanded,
-  )
-  .add('Multiple items open', MultipleItemsOpenExample)
-  .add(
-    'Multiple items open (second & third items initially expanded)',
-    MultipleItemsOpenInitiallyExpandedExample,
-  )
-  .add('Custom', CustomExample)
-  .add('Custom title textStyle', CustomTitleTextStyleExample)
-  .add('With icons', WithIconsExample)
-  .add('With bold titles', WithBoldTitlesExample)
-  .add('Visual test', SingleItemExample);
+export default {
+  title: 'bpk-component-accordion',
+  component: SingleItemExample,
+};
+
+export const SingleItemOnly = SingleItemExample;
+SingleItemOnly.storyName = 'Single item only';
+
+export const SingleItemOnlySecondItemInitiallyExpanded = SingleItemExampleInitiallyExpanded;
+SingleItemOnlySecondItemInitiallyExpanded.storyName = 'Single item only (second item initially expanded)';
+
+export const MultipleItemsOpen = MultipleItemsOpenExample;
+MultipleItemsOpen.storyName = 'Multiple items open';
+
+export const MultipleItemsOpenSecondThirdItemsInitiallyExpanded = MultipleItemsOpenInitiallyExpandedExample;
+MultipleItemsOpenSecondThirdItemsInitiallyExpanded.storyName = 'Multiple items open (second & third items initially expanded)';
+
+export const Custom = CustomExample;
+Custom.storyName = 'Custom';
+
+export const CustomTitleTextStyle = CustomTitleTextStyleExample;
+CustomTitleTextStyle.storyName = 'Custom title textStyle';
+
+export const WithIcons = WithIconsExample;
+WithIcons.storyName = 'With icons';
+
+export const WithBoldTitles = WithBoldTitlesExample;
+WithBoldTitles.storyName = 'With bold titles';
+
+export const VisualTest = VisualExample;
+VisualTest.storyName = 'Visual test';

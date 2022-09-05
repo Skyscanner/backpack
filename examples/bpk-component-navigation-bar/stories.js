@@ -29,11 +29,28 @@ import {
   StickyExample,
 } from './examples';
 
-storiesOf('bpk-component-navigation-bar', module)
-  .add('Default', DefaultExample)
-  .add('Leading icon only', LeadingIconOnlyExample)
-  .add('Trailing icon only', TrailingIconOnlyExample)
-  .add('With links', WithLinksExample)
-  .add('With logo', WithLogoExample)
-  .add('Sticky', StickyExample)
-  .add('Visual test', DefaultExample);
+export default {
+  title: 'bpk-component-navigation-bar',
+};
+
+export const Default = DefaultExample;
+export const LeadingIconOnly = LeadingIconOnlyExample;
+
+LeadingIconOnly.storyName = 'Leading icon only';
+
+export const TrailingIconOnly = TrailingIconOnlyExample;
+
+TrailingIconOnly.storyName = 'Trailing icon only';
+
+export const WithLinks = WithLinksExample;
+
+WithLinks.storyName = 'With links';
+
+export const WithLogo = WithLogoExample;
+
+WithLogo.storyName = 'With logo';
+
+export const Sticky = StickyExample;
+export const VisualTest = DefaultExample;
+
+VisualTest.storyName = 'Visual test';

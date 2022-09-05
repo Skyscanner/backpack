@@ -28,9 +28,20 @@ import {
   WithFullHeightContentExample,
 } from './examples';
 
-storiesOf('bpk-component-drawer', module)
-  .add('Default', DefaultExample)
-  .add('Overflowing', OverflowingExamples)
-  .add('Close button text', CloseButtonTextExample)
-  .add('With visually hidden title', WithVisuallyHiddenTitleExample)
-  .add('With full height content', WithFullHeightContentExample);
+export default {
+  title: 'bpk-component-drawer',
+};
+
+export const Default = DefaultExample;
+export const Overflowing = OverflowingExamples;
+export const CloseButtonText = CloseButtonTextExample;
+
+CloseButtonText.storyName = 'Close button text';
+
+export const WithVisuallyHiddenTitle = WithVisuallyHiddenTitleExample;
+
+WithVisuallyHiddenTitle.storyName = 'With visually hidden title';
+
+export const WithFullHeightContent = WithFullHeightContentExample;
+
+WithFullHeightContent.storyName = 'With full height content';

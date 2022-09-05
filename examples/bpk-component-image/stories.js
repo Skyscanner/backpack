@@ -33,22 +33,38 @@ import {
   BackgroundImageWithLazyLoadingAndAnimationExample,
 } from './examples';
 
-storiesOf('bpk-component-image', module)
-  .add('Default', DefaultExample)
-  .add('Using legacy width and height props', LegacyWidthAndHeightExample)
-  .add('With Border Radius', RoundedCornersExample)
-  .add('Full Width', FullWidthExample)
-  .add('Using SrcSet', UsingSrcSetExample)
-  .add('With Animation', WithAnimationExample)
-  .add('With Lazy Loading', WithLazyLoadingExample)
-  .add('With Lazy Loading and Animation', WithLazyLoadingAndAnimationExample)
-  .add('Within a scroll div', WithinScrollDivExample)
-  .add('Background Image', BackgroundImageExample)
-  .add(
-    'Background Image using legacy width and height props',
-    BackgroundImageLegacyPropsExample,
-  )
-  .add(
-    'Background Image with Lazy Loading and Animation',
-    BackgroundImageWithLazyLoadingAndAnimationExample,
-  );
+export default {
+  title: 'bpk-component-image',
+};
+
+export const Default = DefaultExample;
+export const UsingLegacyWidthAndHeightProps = LegacyWidthAndHeightExample;
+
+UsingLegacyWidthAndHeightProps.storyName = 'Using legacy width and height props';
+
+export const WithBorderRadius = RoundedCornersExample;
+export const FullWidth = FullWidthExample;
+export const UsingSrcSet = UsingSrcSetExample;
+
+UsingSrcSet.storyName = 'Using SrcSet';
+
+export const WithAnimation = WithAnimationExample;
+export const WithLazyLoading = WithLazyLoadingExample;
+export const WithLazyLoadingAndAnimation = WithLazyLoadingAndAnimationExample;
+
+WithLazyLoadingAndAnimation.storyName = 'With Lazy Loading and Animation';
+
+export const WithinAScrollDiv = WithinScrollDivExample;
+
+WithinAScrollDiv.storyName = 'Within a scroll div';
+
+export const BackgroundImage = BackgroundImageExample;
+export const BackgroundImageUsingLegacyWidthAndHeightProps =
+  BackgroundImageLegacyPropsExample;
+
+BackgroundImageUsingLegacyWidthAndHeightProps.storyName = 'Background Image using legacy width and height props';
+
+export const BackgroundImageWithLazyLoadingAndAnimation =
+  BackgroundImageWithLazyLoadingAndAnimationExample;
+
+BackgroundImageWithLazyLoadingAndAnimation.storyName = 'Background Image with Lazy Loading and Animation';

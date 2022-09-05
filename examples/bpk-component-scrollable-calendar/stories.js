@@ -38,26 +38,80 @@ import {
   SplitWeekRangeExample,
 } from './examples';
 
-storiesOf('bpk-component-scrollable-calendar', module)
-  .add('Scrollable Calendar - default', DefaultExample)
-  .add('Scrollable Calendar - range', RangeExample)
-  .add(
-    'Scrollable Calendar - Week split across 2 months range',
-    SplitWeekRangeExample,
-  )
-  .add('Scrollable Calendar - week starts on 6', WeekStartsOnSix)
-  .add('Scrollable Calendar - with focused date', WithFocusedDate)
-  .add('Scrollable Calendar in a tall container', TallContainer)
-  .add('Scrollable Calendar with a single month', SingleMonth)
-  .add('Scrollable Calendar - Week starts on a Sunday', WeekStartsOnSunday)
-  .add('Scrollable Calendar - Honest weekend', HonestWeekend)
-  .add('Scrollable Calendar - ar-AE locale', ArabicLocale)
-  .add('Scrollable Calendar - ja-JP locale', JapaneseLocale)
-  .add('Scrollable Calendar - Different min/max date', DifferentMinMaxDates)
-  .add("Scrollable Calendar - Don't mark today", DontMarkToday)
-  .add('Past Calendar', PastCalendar)
-  .add('BpkScrollableCalendarDate', ScrollableCalendarDate)
-  .add('BpkScrollableCalendarGrid', ScrollableCalendarGrid)
-  .add('BpkScrollableCalendarGridList', ScrollableCalendarGridList)
-  .add('Visual test', DefaultExample)
-  .add('Visual test range', RangeExample);
+export default {
+  title: 'bpk-component-scrollable-calendar',
+};
+
+export const ScrollableCalendarDefault = DefaultExample;
+
+ScrollableCalendarDefault.storyName = 'Scrollable Calendar - default';
+
+export const ScrollableCalendarRange = RangeExample;
+
+ScrollableCalendarRange.storyName = 'Scrollable Calendar - range';
+
+export const ScrollableCalendarWeekSplitAcross2MonthsRange =
+  SplitWeekRangeExample;
+
+ScrollableCalendarWeekSplitAcross2MonthsRange.storyName = 'Scrollable Calendar - Week split across 2 months range';
+
+export const ScrollableCalendarWeekStartsOn6 = WeekStartsOnSix;
+
+ScrollableCalendarWeekStartsOn6.storyName = 'Scrollable Calendar - week starts on 6';
+
+export const ScrollableCalendarWithFocusedDate = WithFocusedDate;
+
+ScrollableCalendarWithFocusedDate.storyName = 'Scrollable Calendar - with focused date';
+
+export const ScrollableCalendarInATallContainer = TallContainer;
+
+ScrollableCalendarInATallContainer.storyName = 'Scrollable Calendar in a tall container';
+
+export const ScrollableCalendarWithASingleMonth = SingleMonth;
+
+ScrollableCalendarWithASingleMonth.storyName = 'Scrollable Calendar with a single month';
+
+export const ScrollableCalendarWeekStartsOnASunday = WeekStartsOnSunday;
+
+ScrollableCalendarWeekStartsOnASunday.storyName = 'Scrollable Calendar - Week starts on a Sunday';
+
+export const ScrollableCalendarHonestWeekend = HonestWeekend;
+
+ScrollableCalendarHonestWeekend.storyName = 'Scrollable Calendar - Honest weekend';
+
+export const ScrollableCalendarArAeLocale = ArabicLocale;
+
+ScrollableCalendarArAeLocale.storyName = 'Scrollable Calendar - ar-AE locale';
+
+export const ScrollableCalendarJaJpLocale = JapaneseLocale;
+
+ScrollableCalendarJaJpLocale.storyName = 'Scrollable Calendar - ja-JP locale';
+
+export const ScrollableCalendarDifferentMinMaxDate = DifferentMinMaxDates;
+
+ScrollableCalendarDifferentMinMaxDate.storyName = 'Scrollable Calendar - Different min/max date';
+
+export const ScrollableCalendarDontMarkToday = DontMarkToday;
+
+ScrollableCalendarDontMarkToday.storyName = "Scrollable Calendar - Don't mark today";
+
+export const _PastCalendar = PastCalendar;
+export const BpkScrollableCalendarDate = ScrollableCalendarDate;
+
+BpkScrollableCalendarDate.storyName = 'BpkScrollableCalendarDate';
+
+export const BpkScrollableCalendarGrid = ScrollableCalendarGrid;
+
+BpkScrollableCalendarGrid.storyName = 'BpkScrollableCalendarGrid';
+
+export const BpkScrollableCalendarGridList = ScrollableCalendarGridList;
+
+BpkScrollableCalendarGridList.storyName = 'BpkScrollableCalendarGridList';
+
+export const VisualTest = DefaultExample;
+
+VisualTest.storyName = 'Visual test';
+
+export const VisualTestRange = RangeExample;
+
+VisualTestRange.storyName = 'Visual test range';

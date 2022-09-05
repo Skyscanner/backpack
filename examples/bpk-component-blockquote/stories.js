@@ -16,11 +16,21 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
 
 import { DefaultExample, ExtraSpaceExample } from './examples';
 
-storiesOf('bpk-component-blockquote', module)
-  .add('Default example', DefaultExample)
-  .add('Example with additional spacing (above and below)', ExtraSpaceExample)
-  .add('Visual test', DefaultExample);
+export default {
+  title: 'bpk-component-blockquote',
+};
+
+export const _DefaultExample = DefaultExample;
+
+_DefaultExample.storyName = 'Default example';
+
+export const ExampleWithAdditionalSpacingAboveAndBelow = ExtraSpaceExample;
+
+ExampleWithAdditionalSpacingAboveAndBelow.storyName = 'Example with additional spacing (above and below)';
+
+export const VisualTest = DefaultExample;
+
+VisualTest.storyName = 'Visual test';

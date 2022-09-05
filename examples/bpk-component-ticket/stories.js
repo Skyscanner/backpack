@@ -17,7 +17,6 @@
  */
 
 /* @flow strict */
-import { storiesOf } from '@storybook/react';
 
 import {
   DefaultExample,
@@ -30,12 +29,32 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-ticket', module)
-  .add('Default', DefaultExample)
-  .add('Vertical', VerticalExample)
-  .add('Without padding', WithoutPaddingExample)
-  .add('Without padding and in vertical', WithoutPaddingVerticalExample)
-  .add('Without padding and with an image ', WithoutPaddingImageExample)
-  .add('With a "href" prop', WithHrefExample)
-  .add('Day view', DayViewExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-ticket',
+};
+
+export const Default = DefaultExample;
+export const Vertical = VerticalExample;
+export const WithoutPadding = WithoutPaddingExample;
+
+WithoutPadding.storyName = 'Without padding';
+
+export const WithoutPaddingAndInVertical = WithoutPaddingVerticalExample;
+
+WithoutPaddingAndInVertical.storyName = 'Without padding and in vertical';
+
+export const WithoutPaddingAndWithAnImage = WithoutPaddingImageExample;
+
+WithoutPaddingAndWithAnImage.storyName = 'Without padding and with an image ';
+
+export const WithAHrefProp = WithHrefExample;
+
+WithAHrefProp.storyName = 'With a "href" prop';
+
+export const DayView = DayViewExample;
+
+DayView.storyName = 'Day view';
+
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

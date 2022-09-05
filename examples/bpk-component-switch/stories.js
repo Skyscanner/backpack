@@ -17,11 +17,14 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import { DefaultExample, EventExample, MixedExample } from './examples';
 
-storiesOf('bpk-component-switch', module)
-  .add('Default', DefaultExample)
-  .add('Event', EventExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-switch',
+};
+
+export const Default = DefaultExample;
+export const Event = EventExample;
+export const VisualTest = MixedExample;
+
+VisualTest.storyName = 'Visual test';

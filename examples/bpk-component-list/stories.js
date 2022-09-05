@@ -18,12 +18,15 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import { UnorderedExample, OrderedExample, NestedExample } from './examples';
 
-storiesOf('bpk-component-list', module)
-  .add('Unordered', UnorderedExample)
-  .add('Ordered', OrderedExample)
-  .add('Nested', NestedExample)
-  .add('Visual test', NestedExample);
+export default {
+  title: 'bpk-component-list',
+};
+
+export const Unordered = UnorderedExample;
+export const Ordered = OrderedExample;
+export const Nested = NestedExample;
+export const VisualTest = NestedExample;
+
+VisualTest.storyName = 'Visual test';

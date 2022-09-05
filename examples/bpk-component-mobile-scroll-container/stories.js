@@ -26,10 +26,16 @@ import {
   SettingLeadingAndTrailingIndicatorClassNameExample,
 } from './examples';
 
-storiesOf('bpk-component-mobile-scroll-container', module)
-  .add('Default', DefaultExample)
-  .add('With visible scrollbar', WithVisibleScrollbarExample)
-  .add(
-    'Setting leadingIndicatorClassName and trailingIndicatorClassName',
-    SettingLeadingAndTrailingIndicatorClassNameExample,
-  );
+export default {
+  title: 'bpk-component-mobile-scroll-container',
+};
+
+export const Default = DefaultExample;
+export const WithVisibleScrollbar = WithVisibleScrollbarExample;
+
+WithVisibleScrollbar.storyName = 'With visible scrollbar';
+
+export const SettingLeadingIndicatorClassNameAndTrailingIndicatorClassName =
+  SettingLeadingAndTrailingIndicatorClassNameExample;
+
+SettingLeadingIndicatorClassNameAndTrailingIndicatorClassName.storyName = 'Setting leadingIndicatorClassName and trailingIndicatorClassName';

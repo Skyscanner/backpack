@@ -25,8 +25,19 @@ import {
   DayViewGridExample,
 } from './examples';
 
-storiesOf('bpk-component-grid', module)
-  .add('Example', DefaultExample)
-  .add('Full width example', FullWidthGridExample)
-  .add('Home page example', HomePageGridExample)
-  .add('Day view example', DayViewGridExample);
+export default {
+  title: 'bpk-component-grid',
+};
+
+export const Example = DefaultExample;
+export const FullWidthExample = FullWidthGridExample;
+
+FullWidthExample.storyName = 'Full width example';
+
+export const HomePageExample = HomePageGridExample;
+
+HomePageExample.storyName = 'Home page example';
+
+export const DayViewExample = DayViewGridExample;
+
+DayViewExample.storyName = 'Day view example';

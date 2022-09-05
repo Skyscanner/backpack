@@ -26,9 +26,23 @@ import {
   VisualTestExample,
 } from './examples';
 
-storiesOf('bpk-component-floating-notification', module)
-  .add('Default', DefaultExample)
-  .add('With icon', IconExample)
-  .add('With CTA', CtaExample)
-  .add('With CTA, icon, and long text', CtaIconLongTextExample)
-  .add('Visual test', VisualTestExample);
+export default {
+  title: 'bpk-component-floating-notification',
+};
+
+export const Default = DefaultExample;
+export const WithIcon = IconExample;
+
+WithIcon.storyName = 'With icon';
+
+export const WithCta = CtaExample;
+
+WithCta.storyName = 'With CTA';
+
+export const WithCtaIconAndLongText = CtaIconLongTextExample;
+
+WithCtaIconAndLongText.storyName = 'With CTA, icon, and long text';
+
+export const VisualTest = VisualTestExample;
+
+VisualTest.storyName = 'Visual test';

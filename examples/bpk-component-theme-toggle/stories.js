@@ -17,10 +17,11 @@
  */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import BpkThemeToggle from '../../packages/bpk-component-theme-toggle';
 
-storiesOf('bpk-component-theme-toggle', module).add('Example', () => (
-  <BpkThemeToggle />
-));
+export default {
+  title: 'bpk-component-theme-toggle',
+};
+
+export const Example = () => <BpkThemeToggle />;
