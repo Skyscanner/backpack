@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+@import '~bpk-mixins/index.scss';
 
 .bpk-mobile-scroll-container {
   position: relative;
@@ -36,8 +36,10 @@
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+
     &:not(.bpk-mobile-scroll-container__showScrollbar) {
       scrollbar-width: none;
+
       &::-webkit-scrollbar {
         display: none;
       }

@@ -118,6 +118,8 @@ class SelectWithImage extends React.Component {
 }
 
 SelectWithImage.propTypes = {
+  // The following will go away with the move to TS
+  // eslint-disable-next-line react/forbid-prop-types
   options: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 

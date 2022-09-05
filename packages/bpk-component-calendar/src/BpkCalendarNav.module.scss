@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
-@import 'variables';
+@import '~bpk-mixins/index.scss';
+@import 'variables.scss';
 
 .bpk-calendar-nav {
   display: table;
@@ -67,7 +67,7 @@
     }
 
     .bpk-calendar-nav__icon {
-      fill: currentColor;
+      fill: currentcolor;
 
       @include bpk-icon--rtl-support;
     }

@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+@import '~bpk-mixins/index.scss';
 
 $bpk-spacing-v2: true;
-
 $height: bpk-spacing-xl();
 $width: bpk-spacing-sm() * 13;
 $border-width: $bpk-one-pixel-rem * 2;

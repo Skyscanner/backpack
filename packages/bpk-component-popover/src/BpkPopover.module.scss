@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index.scss';
 
 $bpk-spacing-v2: true;
-
 $arrow-size: bpk-spacing-lg();
 $arrow-inset-margin: -($bpk-one-pixel-rem * 11);
 

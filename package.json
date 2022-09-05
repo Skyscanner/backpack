@@ -42,8 +42,8 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint . .storybook --ext .js,.jsx,.ts,.tsx",
     "lint:js:fix": "eslint . .storybook --ext .js,.jsx,.ts,.tsx --fix",
-    "lint:scss": "stylelint 'packages/**/*.scss' --syntax scss",
-    "lint:scss:fix": "stylelint 'packages/**/*.scss' --syntax scss --fix",
+    "lint:scss": "stylelint 'packages/**/*.scss'",
+    "lint:scss:fix": "stylelint 'packages/**/*.scss' --fix",
     "lint-staged": "lint-staged",
     "postinstall": "npm run bootstrap",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
@@ -70,8 +70,8 @@
       "mdspell -r --en-gb --ignore-acronyms --ignore-numbers --no-suggestions"
     ],
     "*.scss": [
-      "stylelint --syntax scss --fix",
-      "stylelint --syntax scss"
+      "stylelint --fix",
+      "stylelint"
     ]
   },
   "jest": {
@@ -111,7 +111,7 @@
     "@babel/preset-typescript": "^7.17.12",
     "@babel/register": "^7.17.7",
     "@skyscanner/bpk-foundations-web": "^9.3.0",
-    "@skyscanner/eslint-config-skyscanner": "^12.0.0",
+    "@skyscanner/stylelint-config-skyscanner": "^6.0.0",
     "@storybook/addon-a11y": "^5.3.14",
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
@@ -171,7 +171,6 @@
     "react-svg-loader": "^3.0.1",
     "sass-loader": "^10.2.1",
     "style-loader": "^2.0.0",
-    "stylelint-config-skyscanner": "^4.0.0",
     "ts-migrate": "^0.1.27",
     "typescript": "^4.5.4",
     "webpack": "^4.30.0",
