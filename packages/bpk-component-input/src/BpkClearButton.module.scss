@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index.scss';
 
 .bpk-clear-button {
   padding: 0;
@@ -35,6 +35,6 @@
   }
 
   &__icon {
-    fill: currentColor;
+    fill: currentcolor;
   }
 }

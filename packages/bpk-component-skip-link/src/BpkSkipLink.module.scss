@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+@import '~bpk-mixins/index.scss';
 
 .bpk-skip-link {
   display: inline-block;
@@ -30,6 +30,7 @@
   opacity: 0;
   overflow: hidden;
   pointer-events: none;
+
   // We want the skiplink to remain visible for a short period of time after it is blurred so that
   // a user tabbing quickly has a chance to see that it appeared
   transition-delay: $bpk-duration-sm;

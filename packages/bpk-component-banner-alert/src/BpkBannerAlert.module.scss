@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+@import '~bpk-mixins/index.scss';
 
 $bpk-spacing-v2: true;
 
@@ -153,8 +153,8 @@ $bpk-spacing-v2: true;
     // Temporarily adding an extra 2px padding to align alert message and description until the icon size changes to 16px
     $extra-padding: 2 * $bpk-one-pixel-rem;
 
-    padding: 0 bpk-spacing-xxl() bpk-spacing-md() bpk-spacing-xl() +
-      $extra-padding;
+    padding: 0 bpk-spacing-xxl() bpk-spacing-md()
+      (bpk-spacing-xl() + $extra-padding);
     color: $bpk-banner-alert-children-color;
 
     @include bpk-text;

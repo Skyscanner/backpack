@@ -16,13 +16,14 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index.scss';
 
 $button-padding: $bpk-spacing-xs / 2;
 
 .bpk-close-button {
   width: $bpk-spacing-base;
   height: $bpk-spacing-base;
+
   // The margin here is used to ensure that the icon is aligned to
   // the leading or trailing edge of its parent container
   margin-right: -#{$button-padding};
@@ -46,6 +47,6 @@ $button-padding: $bpk-spacing-xs / 2;
 
   &__icon {
     vertical-align: -#{$button-padding};
-    fill: currentColor;
+    fill: currentcolor;
   }
 }

@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index.scss';
 
-@keyframes star_dust {
+@keyframes star-dust {
   0% {
     transform: scale(1);
   }
@@ -60,7 +60,7 @@
 
     &--selected {
       animation-duration: 300ms;
-      animation-name: star_dust;
+      animation-name: star-dust;
     }
   }
 }

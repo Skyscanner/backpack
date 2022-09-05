@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+@import '~bpk-mixins/index.scss';
 
 .bpk-barchart-bar {
   @include bpk-themeable-property(
@@ -58,6 +58,8 @@
     shape-rendering: auto;
 
     &--outlier {
+      // We expect this due as this is a dyanmically applied def in BpkBarchartDefs.js
+      /* stylelint-disable-next-line function-url-quotes */
       mask: url(#bpk-barchart__def-mask);
     }
   }
