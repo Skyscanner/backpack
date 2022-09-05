@@ -28,7 +28,7 @@ export default () => (
 | --------- | -------- | -------- | ------------- |
 | label     | Node     | true     | -             |
 | className | string   | false    | null          |
-| type      | oneOf(SWITCH_TYPES.primary, SWITCH_TYPES.event) | false | SWITCH_TYPES.primary
+| small     | boolean  | false    | false         |
 
 This component uses a hidden [`<input type="checkbox" />`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox), so it supports all the same properties as it (for example `checked`).
 
