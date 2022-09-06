@@ -3,7 +3,7 @@
  *
  * Copyright 2018 Skyscanner Ltd
  *
- * Licensed under the Apache License, Version 2.0 (the "License",
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -17,7 +17,7 @@
  */
 
 module.exports = {
-  stories: ['../examples/**/stories.js'],
+  stories: ['../examples/**/stories.@(ts|js)'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
