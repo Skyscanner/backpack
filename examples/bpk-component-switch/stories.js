@@ -17,12 +17,12 @@
  */
 /* @flow strict */
 
-import { DefaultExample, EventExample, MixedExample } from './examples';
+import { DefaultExample, SmallExample, MixedExample } from './examples';
 
 export default {
   title: 'bpk-component-switch',
 };
 
 export const Default = DefaultExample;
-export const Event = EventExample;
+export const Small = SmallExample;
 export const VisualTest = MixedExample;
