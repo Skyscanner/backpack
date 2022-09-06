@@ -70,7 +70,7 @@ const List = ({ elements }) => (
 );
 
 List.propTypes = {
-  elements: PropTypes.arrayOf(PropTypes.any).isRequired,
+  elements: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 
 const InfiniteList = withInfiniteScroll(List);

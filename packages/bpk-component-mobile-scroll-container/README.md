@@ -42,7 +42,7 @@ export default () => (
 
 *`MyComponent.scss`:*
 ```scss
-@import '~bpk-mixins/index';
+@import '~bpk-mixins/index.scss';
 
 .my-component {
   display: flex;

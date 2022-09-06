@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index.scss';
 
 .bpk-content-bubble {
   &__pointer {
@@ -50,6 +50,7 @@
 
   &__content-wrapper {
     display: flex;
+
     // flex-direction is required because IE doesn't cope well with
     // flex-row when the parent is flex-col
     flex-direction: column;

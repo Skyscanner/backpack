@@ -19,22 +19,23 @@
 
 import React from 'react';
 
-import BpkSwitch, { SWITCH_TYPES } from '../../packages/bpk-component-switch';
+import BpkSwitch from '../../packages/bpk-component-switch';
 
 const DefaultExample = ({ ...rest }: {}) => (
   <BpkSwitch {...rest} label="Backpack" />
 );
-const EventExample = ({ ...rest }: {}) => (
-  <BpkSwitch {...rest} label="Backpack" type={SWITCH_TYPES.event} />
+
+const SmallExample = ({ ...rest }: {}) => (
+  <BpkSwitch small {...rest} label="Backpack" />
 );
 
 const MixedExample = () => (
   <div>
     <DefaultExample />
-    <EventExample />
+    <SmallExample />
     <DefaultExample checked />
-    <EventExample checked />
+    <SmallExample checked />
   </div>
 );
 
-export { DefaultExample, EventExample, MixedExample };
+export { DefaultExample, SmallExample, MixedExample };
