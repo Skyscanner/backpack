@@ -37,5 +37,3 @@ export const Disabled = DisabledExample;
 export const Invalid = InvalidExample;
 export const Large = LargeExample;
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

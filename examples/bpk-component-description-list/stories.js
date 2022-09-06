@@ -24,5 +24,3 @@ export default {
 
 export const DescriptionList = DefaultExample;
 export const VisualTest = DefaultExample;
-
-VisualTest.storyName = 'Visual test';

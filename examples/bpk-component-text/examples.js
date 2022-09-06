@@ -76,7 +76,7 @@ const ParagraphExample = () => (
   </BpkText>
 );
 
-const WithDefaultProps = () => (
+const WithDefaultPropsExample = () => (
   <div>
     <Paragraph>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -124,7 +124,7 @@ const MixedExample = () => (
     <DefaultExample />
     <WithHeadingTagsExample />
     <ParagraphExample />
-    <WithDefaultProps />
+    <WithDefaultPropsExample />
   </div>
 );
 
@@ -132,7 +132,7 @@ export {
   DefaultExample,
   WithHeadingTagsExample,
   ParagraphExample,
-  WithDefaultProps,
+  WithDefaultPropsExample,
   HeadingStylesExample,
   MixedExample,
 };

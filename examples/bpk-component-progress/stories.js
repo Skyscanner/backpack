@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   SmallExample,
@@ -35,5 +33,3 @@ export const Default = DefaultExample;
 export const Small = SmallExample;
 export const Stepped = SteppedExample;
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

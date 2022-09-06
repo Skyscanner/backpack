@@ -17,75 +17,54 @@
  */
 /* @flow strict */
 import {
-  Neutral,
-  Primary,
-  Success,
-  SuccessLongMessage,
-  Dismissable,
-  SuccessExpandable,
-  SuccessAnimateOnEnter,
-  SuccessWithReactRenderedMessage,
-  Warn,
+  NeutralExample,
+  PrimaryExample,
+  SuccessExample,
+  SuccessLongMessageExample,
+  DismissableExample,
+  SuccessExpandableExample,
+  SuccessAnimateOnEnterExample,
+  SuccessWithReactRenderedMessageExample,
+  WarnExample,
   ErrorExample,
-  Event,
-  SuccessDismissableBehaviour,
-  SuccessExpandableBehaviour,
-  SuccessAutomaticallyDismissed,
-  SuccessCustomIcon,
-  DocsDefault,
+  EventExample,
+  SuccessDismissableBehaviourExample,
+  SuccessExpandableBehaviourExample,
+  SuccessAutomaticallyDismissedExample,
+  SuccessCustomIconExample,
+  DocsDefaultExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-banner-alert',
 };
 
-export const _DocsDefault = DocsDefault;
+export const DocsDefault = DocsDefaultExample;
 
-_DocsDefault.storyName = 'Docs default';
+export const Neutral = NeutralExample;
+export const Primary = PrimaryExample;
+export const Success = SuccessExample;
+export const SuccessLongMessage = SuccessLongMessageExample;
 
-export const _Neutral = Neutral;
-export const _Primary = Primary;
-export const _Success = Success;
-export const _SuccessLongMessage = SuccessLongMessage;
+export const SuccessDismissable = DismissableExample;
 
-_SuccessLongMessage.storyName = 'Success (long message)';
+export const SuccessExpandable = SuccessExpandableExample;
 
-export const SuccessDismissable = Dismissable;
+export const SuccessAnimateOnEnter = SuccessAnimateOnEnterExample;
 
-SuccessDismissable.storyName = 'Success (dismissable)';
+export const SuccessWithReactRenderedMessage =
+  SuccessWithReactRenderedMessageExample;
 
-export const _SuccessExpandable = SuccessExpandable;
-
-_SuccessExpandable.storyName = 'Success(expandable)';
-
-export const _SuccessAnimateOnEnter = SuccessAnimateOnEnter;
-
-_SuccessAnimateOnEnter.storyName = 'Success (animate on enter)';
-
-export const _SuccessWithReactRenderedMessage = SuccessWithReactRenderedMessage;
-
-_SuccessWithReactRenderedMessage.storyName = 'Success with React rendered message';
-
-export const _Warn = Warn;
+export const Warn = WarnExample;
 export const Error = ErrorExample;
-export const _Event = Event;
-export const _SuccessDismissableBehaviour = SuccessDismissableBehaviour;
+export const Event = EventExample;
+export const SuccessDismissableBehaviour = SuccessDismissableBehaviourExample;
 
-_SuccessDismissableBehaviour.storyName = 'Success (dismissable behaviour)';
-
-export const _SuccessExpandableBehaviour = SuccessExpandableBehaviour;
-
-_SuccessExpandableBehaviour.storyName = 'Success (expandable behaviour)';
+export const SuccessExpandableBehaviour = SuccessExpandableBehaviourExample;
 
 export const SuccessAutomaticallyDismissedAfter5Seconds =
-  SuccessAutomaticallyDismissed;
+  SuccessAutomaticallyDismissedExample;
 
-SuccessAutomaticallyDismissedAfter5Seconds.storyName = 'Success (automatically dismissed after 5 seconds)';
+export const SuccessWithCustomIcon = SuccessCustomIconExample;
 
-export const SuccessWithCustomIcon = SuccessCustomIcon;
-
-SuccessWithCustomIcon.storyName = 'Success with custom icon';
-
-export const VisualTest = DocsDefault;
-
-VisualTest.storyName = 'Visual test';
+export const VisualTest = DocsDefaultExample;

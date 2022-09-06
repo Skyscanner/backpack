@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   VisualTestExample,
   DefaultExample,
@@ -38,11 +36,7 @@ export default {
 
 export const DefaultNoBackgroundImage = NoStyleExample;
 
-DefaultNoBackgroundImage.storyName = 'Default no background image';
-
 export const DefaultWithBackgroundImage = DefaultExample;
-
-DefaultWithBackgroundImage.storyName = 'Default with background image';
 
 export const CenterAligned = CenterAlignedExample;
 export const RightAligned = RightAlignedExample;
@@ -51,16 +45,8 @@ export const Minimalistic = MinimalisticExample;
 export const MinimalisticRightAligned = MinimalisticRightAlignedExample;
 export const NonSponsored = NonSponsoredExample;
 
-NonSponsored.storyName = 'Non-Sponsored';
-
 export const NonSponsoredCenterAligned = NonSponsoredCenterAlignedExample;
-
-NonSponsoredCenterAligned.storyName = 'Non-Sponsored Center Aligned';
 
 export const NonSponsoredRightAligned = NonSponsoredRightAlignedExample;
 
-NonSponsoredRightAligned.storyName = 'Non-Sponsored Right Aligned';
-
 export const VisualTest = VisualTestExample;
-
-VisualTest.storyName = 'Visual test';

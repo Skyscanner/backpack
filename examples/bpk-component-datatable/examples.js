@@ -101,7 +101,7 @@ const AutowidthExample = () => (
   </BpkDataTable>
 );
 
-const NonHoverRows = () => (
+const NonHoverRowsExample = () => (
   <BpkDataTable rows={rows} height={300}>
     <BpkDataTableColumn label="Name" dataKey="name" width={100} />
     <BpkDataTableColumn
@@ -114,7 +114,7 @@ const NonHoverRows = () => (
   </BpkDataTable>
 );
 
-const FixedWidth = () => (
+const FixedWidthExample = () => (
   <BpkDataTable rows={rows} height={300} width={400} onRowClick={onRowClick}>
     <BpkDataTableColumn label="Name" dataKey="name" width={100} />
     <BpkDataTableColumn
@@ -127,7 +127,7 @@ const FixedWidth = () => (
   </BpkDataTable>
 );
 
-const DisabledSort = () => (
+const DisabledSortExample = () => (
   <BpkDataTable rows={rows} height={300} onRowClick={onRowClick}>
     <BpkDataTableColumn label="Name" dataKey="name" width={100} />
     <BpkDataTableColumn
@@ -141,7 +141,7 @@ const DisabledSort = () => (
   </BpkDataTable>
 );
 
-const CustomRowAndHeaderHeights = () => (
+const CustomRowAndHeaderHeightsExample = () => (
   <BpkDataTable
     rows={rows}
     height={300}
@@ -215,10 +215,10 @@ const CustomSortingExample = () => (
 
 export {
   AutowidthExample,
-  NonHoverRows,
-  FixedWidth,
-  DisabledSort,
-  CustomRowAndHeaderHeights,
+  NonHoverRowsExample,
+  FixedWidthExample,
+  DisabledSortExample,
+  CustomRowAndHeaderHeightsExample,
   HeaderRendererExample,
   CustomSortingExample,
 };

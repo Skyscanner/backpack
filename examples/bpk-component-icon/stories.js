@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SmallIconsExample,
   LargeIconsExample,
@@ -37,40 +35,20 @@ export default {
 
 export const SmallIcons = SmallIconsExample;
 
-SmallIcons.storyName = 'Small icons';
-
 export const LargeIcons = LargeIconsExample;
-
-LargeIcons.storyName = 'Large icons';
 
 export const AlignToTextBase = AlignToBaseTextExample;
 
-AlignToTextBase.storyName = 'Align to text base';
-
 export const AlignToLargeText = AlignToLargeTextExample;
-
-AlignToLargeText.storyName = 'Align to large text';
 
 export const AlignSmallTextToIcon = AlignSmallTextToIconExample;
 
-AlignSmallTextToIcon.storyName = 'Align small text to icon';
-
 export const AlignTextToIcon = AlignTextToIconExample;
-
-AlignTextToIcon.storyName = 'Align text to icon';
 
 export const AlignToButton = AlignToButtonExample;
 
-AlignToButton.storyName = 'Align to button';
-
 export const AlignToLargeButton = AlignToLargeButtonExample;
-
-AlignToLargeButton.storyName = 'Align to large button';
 
 export const AlignToLargeButtonRtlSupport = AlignToLargeButtonRTLExample;
 
-AlignToLargeButtonRtlSupport.storyName = 'Align to large button (RTL support)';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   LargeExample,
@@ -40,14 +38,8 @@ export const Large = LargeExample;
 export const WithValidation = WithValidationExample;
 export const WithDialingCodeMask = WithDialingCodeMaskExample;
 
-WithDialingCodeMask.storyName = 'With dialing code mask';
-
 export const Disabled = DisabledExample;
 export const Required = RequiredExample;
 export const DoubleLengthLabels = DoubleLengthLabelExamples;
 
-DoubleLengthLabels.storyName = 'Double length labels';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

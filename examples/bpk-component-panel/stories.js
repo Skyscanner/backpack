@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithoutPaddingExample,
@@ -32,12 +30,6 @@ export default {
 export const Default = DefaultExample;
 export const WithoutPadding = WithoutPaddingExample;
 
-WithoutPadding.storyName = 'Without padding';
-
 export const FullWidth = FullWidthExample;
 
-FullWidth.storyName = 'Full width';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

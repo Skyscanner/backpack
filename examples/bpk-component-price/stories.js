@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SmallLeftExample,
   SmallLeftWithDescriptionExample,
@@ -38,47 +36,25 @@ export default {
 
 export const SmallLeftDefault = SmallLeftExample;
 
-SmallLeftDefault.storyName = 'Small left - default';
-
 export const SmallLeftWithDescription = SmallLeftWithDescriptionExample;
-
-SmallLeftWithDescription.storyName = 'Small left with description';
 
 export const SmallLeftWithSubtitleAndDescription =
   SmallLeftWithSubtitleDescriptionExample;
 
-SmallLeftWithSubtitleAndDescription.storyName = 'Small left with subtitle and description';
-
 export const SmallRight = SmallRightExample;
 
-SmallRight.storyName = 'Small right';
-
 export const SmallRightWithDescription = SmallRightWithDescriptionExample;
-
-SmallRightWithDescription.storyName = 'Small right with description';
 
 export const SmallRightWithSubtitleAndDescription =
   SmallRightWithSubtitleDescriptionExample;
 
-SmallRightWithSubtitleAndDescription.storyName = 'Small right with subtitle and description';
-
 export const LargeLeftDefault = LargeLeftExample;
 
-LargeLeftDefault.storyName = 'Large left - default';
-
 export const LargeLeftWithDescription = LargeLeftWithDescriptionExample;
-
-LargeLeftWithDescription.storyName = 'Large left with description';
 
 export const LargeLeftWithSubtitleAndDescription =
   LargeLeftWithSubtitleDescriptionExample;
 
-LargeLeftWithSubtitleAndDescription.storyName = 'Large left with subtitle and description';
-
 export const LargeLeftWithLongPrice = LargeLeftLongPriceExample;
 
-LargeLeftWithLongPrice.storyName = 'Large left with long price';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

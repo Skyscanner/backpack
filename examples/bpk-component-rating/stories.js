@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   LargeSizeExample,
@@ -35,20 +33,10 @@ export default {
 export const Default = DefaultExample;
 export const LargeSizeRatings = LargeSizeExample;
 
-LargeSizeRatings.storyName = 'Large size ratings';
-
 export const ShowScaleRatings = ShowScaleExample;
-
-ShowScaleRatings.storyName = 'Show scale ratings';
 
 export const TitleOnlyRatings = TitleOnlyExample;
 
-TitleOnlyRatings.storyName = 'Title only ratings';
-
 export const ZeroToTenScaleRatings = ZeroToTenScaleExample;
 
-ZeroToTenScaleRatings.storyName = 'Zero to ten scale ratings';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

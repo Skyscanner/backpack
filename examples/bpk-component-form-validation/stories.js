@@ -18,8 +18,12 @@
 
 import { DefaultExample, FormsExample } from './examples';
 
-WithForms.storyName = 'With forms';
+export default {
+  title: 'bpk-component-form-validation',
+};
+
+export const Default = DefaultExample;
+
+export const WithForms = FormsExample;
 
 export const VisualTest = FormsExample;
-
-VisualTest.storyName = 'Visual test';

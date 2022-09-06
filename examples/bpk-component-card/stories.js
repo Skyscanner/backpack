@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithHrefExample,
@@ -35,20 +33,10 @@ export default {
 export const Default = DefaultExample;
 export const WithHref = WithHrefExample;
 
-WithHref.storyName = 'With href';
-
 export const WithoutPadding = WithoutPaddingExample;
-
-WithoutPadding.storyName = 'Without padding';
 
 export const NonAtomic = NonAtomicExample;
 
-NonAtomic.storyName = 'Non-atomic';
-
 export const NonAtomicWithHref = NonAtomicHrefExample;
 
-NonAtomicWithHref.storyName = 'Non-atomic with href';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

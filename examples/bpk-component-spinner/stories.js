@@ -18,14 +18,12 @@
 
 /* @flow strict */
 
-import { Small, Large, ExtraLarge } from './examples';
+import { SmallExample, LargeExample, ExtraLargeExample } from './examples';
 
 export default {
   title: 'bpk-component-spinner',
 };
 
-export const _Small = Small;
-export const _Large = Large;
-export const _ExtraLarge = ExtraLarge;
-
-_ExtraLarge.storyName = 'Extra large';
+export const Small = SmallExample;
+export const Large = LargeExample;
+export const ExtraLarge = ExtraLargeExample;

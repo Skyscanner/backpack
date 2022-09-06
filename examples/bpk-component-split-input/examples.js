@@ -40,7 +40,7 @@ const SplitInputExample = () => (
   </form>
 );
 
-const SplitInputSixDigit = () => (
+const SplitInputSixDigitExample = () => (
   <form>
     <BpkLabel htmlFor="otpInput">6-digit verification code</BpkLabel>
     <BpkSplitInput
@@ -55,7 +55,7 @@ const SplitInputSixDigit = () => (
   </form>
 );
 
-const SplitInputExampleWithPlaceholder = () => (
+const SplitInputWithPlaceholderExample = () => (
   <form>
     <BpkLabel htmlFor="otpInput">6-digit verification code</BpkLabel>
     <BpkSplitInput
@@ -71,7 +71,7 @@ const SplitInputExampleWithPlaceholder = () => (
   </form>
 );
 
-const SplitInputSmall = () => (
+const SplitInputSmallExample = () => (
   <form>
     <BpkLabel htmlFor="otpInput">4-digit verification code</BpkLabel>
     <BpkSplitInput
@@ -88,7 +88,7 @@ const SplitInputSmall = () => (
 
 export {
   SplitInputExample,
-  SplitInputSixDigit,
-  SplitInputExampleWithPlaceholder,
-  SplitInputSmall,
+  SplitInputSixDigitExample,
+  SplitInputWithPlaceholderExample,
+  SplitInputSmallExample,
 };

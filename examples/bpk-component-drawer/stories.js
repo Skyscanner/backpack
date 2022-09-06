@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   OverflowingExamples,
@@ -36,12 +34,6 @@ export const Default = DefaultExample;
 export const Overflowing = OverflowingExamples;
 export const CloseButtonText = CloseButtonTextExample;
 
-CloseButtonText.storyName = 'Close button text';
-
 export const WithVisuallyHiddenTitle = WithVisuallyHiddenTitleExample;
 
-WithVisuallyHiddenTitle.storyName = 'With visually hidden title';
-
 export const WithFullHeightContent = WithFullHeightContentExample;
-
-WithFullHeightContent.storyName = 'With full height content';

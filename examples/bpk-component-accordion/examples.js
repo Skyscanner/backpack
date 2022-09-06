@@ -170,7 +170,7 @@ const SingleItemExample = () => (
   </SingleItemAccordion>
 );
 
-const SingleItemExampleInitiallyExpanded = () => (
+const SingleItemExampleInitiallyExpandedExample = () => (
   <SingleItemAccordion>
     <BpkAccordionItem id="stops" title="Stops">
       <StopsContent />
@@ -304,16 +304,13 @@ const WithBoldTitlesExample = () => (
   </SingleItemAccordion>
 );
 
-const VisualExample = () => <SingleItemExample />;
-
 export {
   SingleItemExample,
-  SingleItemExampleInitiallyExpanded,
+  SingleItemExampleInitiallyExpandedExample,
   MultipleItemsOpenExample,
   MultipleItemsOpenInitiallyExpandedExample,
   CustomExample,
   CustomTitleTextStyleExample,
   WithIconsExample,
   WithBoldTitlesExample,
-  VisualExample,
 };

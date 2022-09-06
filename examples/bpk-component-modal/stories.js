@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WideExample,
@@ -44,33 +42,17 @@ export const Wide = WideExample;
 export const Overflowing = OverflowingExample;
 export const CloseButtonText = CloseButtonTextExample;
 
-CloseButtonText.storyName = 'Close button text';
-
 export const LongTitle = LongTitleExample;
-
-LongTitle.storyName = 'Long title';
 
 export const NotFullScreenOnMobile = NotFullScreenOnMobileExample;
 
-NotFullScreenOnMobile.storyName = 'Not full screen on mobile';
-
 export const FullScreen = FullScreenExample;
 
-FullScreen.storyName = 'Full screen';
-
 export const FullScreenOverflowing = FullScreenOverflowingExample;
-
-FullScreenOverflowing.storyName = 'Full screen overflowing';
 
 export const Nested = NestedExample;
 export const NoHeader = NoHeaderExample;
 
-NoHeader.storyName = 'No header';
-
 export const NoPadding = NoPaddingExample;
 
-NoPadding.storyName = 'No padding';
-
 export const WithAccessoryView = WithAccessoryViewExample;
-
-WithAccessoryView.storyName = 'With accessory view';

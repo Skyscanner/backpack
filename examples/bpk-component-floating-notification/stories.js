@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   CtaIconLongTextExample,
   CtaExample,
@@ -33,16 +31,8 @@ export default {
 export const Default = DefaultExample;
 export const WithIcon = IconExample;
 
-WithIcon.storyName = 'With icon';
-
 export const WithCta = CtaExample;
-
-WithCta.storyName = 'With CTA';
 
 export const WithCtaIconAndLongText = CtaIconLongTextExample;
 
-WithCtaIconAndLongText.storyName = 'With CTA, icon, and long text';
-
 export const VisualTest = VisualTestExample;
-
-VisualTest.storyName = 'Visual test';

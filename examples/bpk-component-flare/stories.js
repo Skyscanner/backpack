@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   FlareBarExample,
   FlareBarRoundedExample,
@@ -37,34 +35,18 @@ export default {
 
 export const BpkFlareBarDefault = FlareBarExample;
 
-BpkFlareBarDefault.storyName = 'BpkFlareBar - default';
-
 export const BpkFlareBarRounded = FlareBarRoundedExample;
-
-BpkFlareBarRounded.storyName = 'BpkFlareBar - rounded';
 
 export const BpkContentBubbleFullWidthWithBackgroundImage =
   ContentBubbleFullWithImageExample;
 
-BpkContentBubbleFullWidthWithBackgroundImage.storyName = 'BpkContentBubble - Full width with background image';
-
 export const BpkContentBubbleFullWidthWithContent =
   ContentBubbleFullWithContentExample;
 
-BpkContentBubbleFullWidthWithContent.storyName = 'BpkContentBubble - Full width with content';
-
 export const BpkContentBubbleStandalone = ContentBubbleStandaloneExample;
-
-BpkContentBubbleStandalone.storyName = 'BpkContentBubble - standalone';
 
 export const BpkContentBubbleFixedHeight = ContentBubbleFixedHeightExample;
 
-BpkContentBubbleFixedHeight.storyName = 'BpkContentBubble - fixed height';
-
 export const BpkContentBubblePointerHidden = ContentBubblePointerHiddenExample;
 
-BpkContentBubblePointerHidden.storyName = 'BpkContentBubble - pointer hidden';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

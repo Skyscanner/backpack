@@ -18,19 +18,17 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   FullExample,
-  FullStars,
-  EmptyStars,
-  ThreeStars,
-  ThreeAndAHalfStars,
-  ThreePointThreeStars,
-  ThreePointEightStars,
-  ThreePointThreeStarsRounded,
-  ThreePointEightStarsRounded,
-  Interactive,
+  FullStarsExample,
+  EmptyStarsExample,
+  ThreeStarsExample,
+  ThreeAndAHalfStarsExample,
+  ThreePointThreeStarsExample,
+  ThreePointEightStarsExample,
+  ThreePointThreeStarsRoundedExample,
+  ThreePointEightStarsRoundedExample,
+  InteractiveExample,
   MixedExample,
 } from './examples';
 
@@ -40,32 +38,18 @@ export default {
 
 export const BpkStarExamples = FullExample;
 
-BpkStarExamples.storyName = 'BpkStar examples';
+export const FullStars = FullStarsExample;
+export const EmptyStars = EmptyStarsExample;
+export const ThreeStars = ThreeStarsExample;
+export const ThreeAndAHalfStars = ThreeAndAHalfStarsExample;
 
-export const _FullStars = FullStars;
-export const _EmptyStars = EmptyStars;
-export const _3StarsRating = ThreeStars;
-export const _312StarsRating = ThreeAndAHalfStars;
+export const ThreePointThreeStars = ThreePointThreeStarsExample;
 
-_312StarsRating.storyName = '3 1/2 Stars Rating';
+export const ThreePointEightStars = ThreePointEightStarsExample;
 
-export const _33Stars = ThreePointThreeStars;
+export const ThreePointThreeStarsRounded = ThreePointThreeStarsRoundedExample;
 
-_33Stars.storyName = '3.3 Stars';
+export const ThreePointEightStarsRounded = ThreePointEightStarsRoundedExample;
 
-export const _38Stars = ThreePointEightStars;
-
-_38Stars.storyName = '3.8 Stars';
-
-export const _33StarsRounded = ThreePointThreeStarsRounded;
-
-_33StarsRounded.storyName = '3.3 Stars Rounded';
-
-export const _38StarsRounded = ThreePointEightStarsRounded;
-
-_38StarsRounded.storyName = '3.8 Stars Rounded';
-
-export const _Interactive = Interactive;
+export const Interactive = InteractiveExample;
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

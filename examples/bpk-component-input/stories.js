@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   TextExample,
   PlaceholderExample,
@@ -42,8 +40,6 @@ export default {
 
 export const TextValue = TextExample;
 
-TextValue.storyName = 'Text value';
-
 export const Placeholder = PlaceholderExample;
 export const Valid = ValidExample;
 export const Invalid = InvalidExample;
@@ -57,8 +53,4 @@ export const Large = LargeInputExample;
 export const Docked = DockedExample;
 export const ManuallyDocked = ManuallyDockedExample;
 
-ManuallyDocked.storyName = 'Manually docked';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

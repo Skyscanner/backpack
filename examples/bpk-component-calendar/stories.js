@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   CalendarNavExample,
@@ -27,17 +25,17 @@ import {
   MinDateInThePastExample,
   WeekStartsOnSundayExample,
   HonestWeekendExample,
-  WeekdayKeyIsNameNarrow,
+  WeekdayKeyIsNameNarrowExample,
   ArabicExample,
   JapaneseExample,
-  MinAndMaxDate,
+  MinAndMaxDateExample,
   MarkTodayFalseExample,
   MarkOutsideDaysFalseExample,
-  CustomComposedCalendar,
-  CustomComposedCalendarSafariBug,
+  CustomComposedCalendarExample,
+  CustomComposedCalendarSafariBugExample,
   WeekExample,
   FocusedDateInThePastExample,
-  RangeDateCalendar,
+  RangeDateCalendarExample,
 } from './examples';
 
 export default {
@@ -46,75 +44,39 @@ export default {
 
 export const BpkCalendarNav = CalendarNavExample;
 
-BpkCalendarNav.storyName = 'BpkCalendarNav';
-
 export const BpkCalendarGridHeader = CalendarGridHeaderExample;
 
-BpkCalendarGridHeader.storyName = 'BpkCalendarGridHeader';
-
 export const BpkCalendarGrid = CalendarGridExample;
-
-BpkCalendarGrid.storyName = 'BpkCalendarGrid';
 
 export const BpkCalendarGridHeaderBpkCalendarGrid =
   CalendarGridAndHeaderExample;
 
-BpkCalendarGridHeaderBpkCalendarGrid.storyName = 'BpkCalendarGridHeader + BpkCalendarGrid';
-
 export const CalendarDefault = DefaultExample;
-
-CalendarDefault.storyName = 'Calendar - default';
 
 export const CalendarMinDateInThePastFocusingToday = MinDateInThePastExample;
 
-CalendarMinDateInThePastFocusingToday.storyName = 'Calendar - min date in the past, focusing today';
-
 export const CalendarWeekStartsOnASunday = WeekStartsOnSundayExample;
-
-CalendarWeekStartsOnASunday.storyName = 'Calendar - Week starts on a Sunday';
 
 export const CalendarHonestWeekend = HonestWeekendExample;
 
-CalendarHonestWeekend.storyName = 'Calendar - Honest weekend';
-
-export const CalendarWeekDayKeyIsNameNarrow = WeekdayKeyIsNameNarrow;
-
-CalendarWeekDayKeyIsNameNarrow.storyName = 'Calendar - weekDayKey is nameNarrow';
+export const CalendarWeekDayKeyIsNameNarrow = WeekdayKeyIsNameNarrowExample;
 
 export const CalendarArAeLocale = ArabicExample;
 
-CalendarArAeLocale.storyName = 'Calendar - ar-AE locale';
-
 export const CalendarJaJpLocale = JapaneseExample;
 
-CalendarJaJpLocale.storyName = 'Calendar - ja-JP locale';
-
-export const CalendarSpecifyMinMaxDate = MinAndMaxDate;
-
-CalendarSpecifyMinMaxDate.storyName = 'Calendar - Specify min/max date';
+export const CalendarSpecifyMinMaxDate = MinAndMaxDateExample;
 
 export const CalendarDontMarkToday = MarkTodayFalseExample;
 
-CalendarDontMarkToday.storyName = "Calendar - Don't mark today";
-
 export const CalendarDontMarkOutsideDays = MarkOutsideDaysFalseExample;
 
-CalendarDontMarkOutsideDays.storyName = "Calendar - Don't mark outside days";
-
-export const _CustomComposedCalendar = CustomComposedCalendar;
-
-_CustomComposedCalendar.storyName = 'Custom composed calendar';
+export const CustomComposedCalendar = CustomComposedCalendarExample;
 
 export const CustomComposedCalendarSafariDstBug =
-  CustomComposedCalendarSafariBug;
-
-CustomComposedCalendarSafariDstBug.storyName = 'Custom composed calendar (Safari DST bug)';
+  CustomComposedCalendarSafariBugExample;
 
 export const Week = WeekExample;
 export const VisualTest = FocusedDateInThePastExample;
 
-VisualTest.storyName = 'Visual test';
-
-export const VisualTestRange = RangeDateCalendar;
-
-VisualTestRange.storyName = 'Visual test range';
+export const VisualTestRange = RangeDateCalendarExample;

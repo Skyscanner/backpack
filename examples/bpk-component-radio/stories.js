@@ -18,15 +18,13 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
-  Multiline,
-  Invalid,
-  White,
-  DisabledChecked,
-  DisabledUnchecked,
+  MultilineExample,
+  InvalidExample,
+  WhiteExample,
+  DisabledCheckedExample,
+  DisabledUncheckedExample,
   MixedExample,
 } from './examples';
 
@@ -35,20 +33,12 @@ export default {
 };
 
 export const Default = DefaultExample;
-export const MultiLine = Multiline;
+export const MultiLine = MultilineExample;
 
-MultiLine.storyName = 'Multi line';
+export const Invalid = InvalidExample;
+export const White = WhiteExample;
+export const DisabledChecked = DisabledCheckedExample;
 
-export const _Invalid = Invalid;
-export const _White = White;
-export const _DisabledChecked = DisabledChecked;
-
-_DisabledChecked.storyName = 'Disabled (Checked)';
-
-export const _DisabledUnchecked = DisabledUnchecked;
-
-_DisabledUnchecked.storyName = 'Disabled (Unchecked)';
+export const DisabledUnchecked = DisabledUncheckedExample;
 
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

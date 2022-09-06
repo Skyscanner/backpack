@@ -36,20 +36,10 @@ export const Default = DefaultExample;
 export const Dark = DarkExample;
 export const OnTheSide = SideExample;
 
-OnTheSide.storyName = 'On the side';
-
 export const WithoutPadding = NoPaddingExample;
-
-WithoutPadding.storyName = 'Without padding';
 
 export const OnALink = LinkExample;
 
-OnALink.storyName = 'On a link';
-
 export const PopperModifiers = PopperModifiersExample;
 
-PopperModifiers.storyName = 'Popper modifiers';
-
-export const _FocusExample = FocusExample;
-
-_FocusExample.storyName = 'Focus example';
+export const Focus = FocusExample;

@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   LegacyWidthAndHeightExample,
@@ -40,31 +38,19 @@ export default {
 export const Default = DefaultExample;
 export const UsingLegacyWidthAndHeightProps = LegacyWidthAndHeightExample;
 
-UsingLegacyWidthAndHeightProps.storyName = 'Using legacy width and height props';
-
 export const WithBorderRadius = RoundedCornersExample;
 export const FullWidth = FullWidthExample;
 export const UsingSrcSet = UsingSrcSetExample;
-
-UsingSrcSet.storyName = 'Using SrcSet';
 
 export const WithAnimation = WithAnimationExample;
 export const WithLazyLoading = WithLazyLoadingExample;
 export const WithLazyLoadingAndAnimation = WithLazyLoadingAndAnimationExample;
 
-WithLazyLoadingAndAnimation.storyName = 'With Lazy Loading and Animation';
-
 export const WithinAScrollDiv = WithinScrollDivExample;
-
-WithinAScrollDiv.storyName = 'Within a scroll div';
 
 export const BackgroundImage = BackgroundImageExample;
 export const BackgroundImageUsingLegacyWidthAndHeightProps =
   BackgroundImageLegacyPropsExample;
 
-BackgroundImageUsingLegacyWidthAndHeightProps.storyName = 'Background Image using legacy width and height props';
-
 export const BackgroundImageWithLazyLoadingAndAnimation =
   BackgroundImageWithLazyLoadingAndAnimationExample;
-
-BackgroundImageWithLazyLoadingAndAnimation.storyName = 'Background Image with Lazy Loading and Animation';

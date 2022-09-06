@@ -19,53 +19,37 @@
 /* @flow strict */
 
 import {
-  AxesAndGridlines,
+  AxesAndGridlinesExample,
   DefaultExample,
-  CustomScrollColors,
-  DefaultDisabledDataTable,
-  Interactive,
-  Outliers,
-  CustomTicks,
-  CustomTickLabels,
+  CustomScrollColorsExample,
+  DefaultDisabledDataTableExample,
+  InteractiveExample,
+  OutliersExample,
+  CustomTicksExample,
+  CustomTickLabelsExample,
   GridlinesExample,
-  CustomYAxisDomain,
+  CustomYAxisDomainExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-barchart',
 };
 
-export const _AxesAndGridlines = AxesAndGridlines;
-
-_AxesAndGridlines.storyName = 'Axes and Gridlines';
+export const AxesAndGridlines = AxesAndGridlinesExample;
 
 export const Default = DefaultExample;
-export const UsingCustomScrollColours = CustomScrollColors;
+export const UsingCustomScrollColours = CustomScrollColorsExample;
 
-UsingCustomScrollColours.storyName = 'Using custom scroll colours';
+export const DefaultDisabledDataTable = DefaultDisabledDataTableExample;
 
-export const _DefaultDisabledDataTable = DefaultDisabledDataTable;
+export const Interactive = InteractiveExample;
+export const Outliers = OutliersExample;
+export const CustomTicks = CustomTicksExample;
 
-_DefaultDisabledDataTable.storyName = 'Default disabled data table';
-
-export const _Interactive = Interactive;
-export const _Outliers = Outliers;
-export const _CustomTicks = CustomTicks;
-
-_CustomTicks.storyName = 'Custom ticks';
-
-export const _CustomTickLabels = CustomTickLabels;
-
-_CustomTickLabels.storyName = 'Custom tick labels';
+export const CustomTickLabels = CustomTickLabelsExample;
 
 export const GridLines = GridlinesExample;
 
-GridLines.storyName = 'Grid lines';
-
-export const _CustomYAxisDomain = CustomYAxisDomain;
-
-_CustomYAxisDomain.storyName = 'Custom yAxisDomain';
+export const CustomYAxisDomain = CustomYAxisDomainExample;
 
 export const VisualTest = DefaultExample;
-
-VisualTest.storyName = 'Visual test';

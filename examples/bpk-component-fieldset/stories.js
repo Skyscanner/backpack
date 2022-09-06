@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   InputExample,
   SelectExample,
@@ -48,30 +46,16 @@ export const Textarea = TextareaExample;
 export const Autosuggest = AutosuggestExample;
 export const RequiredInput = RequiredInputExample;
 
-RequiredInput.storyName = 'Required input';
-
 export const RequiredSelect = RequiredSelectExample;
-
-RequiredSelect.storyName = 'Required select';
 
 export const RequiredCheckbox = RequiredCheckboxExample;
 
-RequiredCheckbox.storyName = 'Required checkbox';
-
 export const DisabledInput = DisabledInputExample;
-
-DisabledInput.storyName = 'Disabled input';
 
 export const DisabledSelect = DisabledSelectExample;
 
-DisabledSelect.storyName = 'Disabled select';
-
 export const DisabledCheckbox = DisabledCheckboxExample;
 
-DisabledCheckbox.storyName = 'Disabled checkbox';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';
 
 export const SplitInput = SplitInputExample;

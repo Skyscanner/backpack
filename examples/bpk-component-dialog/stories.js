@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithIconExample,
@@ -34,12 +32,6 @@ export default {
 export const Default = DefaultExample;
 export const WithAnIcon = WithIconExample;
 
-WithAnIcon.storyName = 'With an icon';
-
 export const NotDismissible = NotDismissibleExample;
 
-NotDismissible.storyName = 'Not dismissible';
-
 export const WithFlare = WithFlareExample;
-
-WithFlare.storyName = 'With flare';

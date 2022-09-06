@@ -16,20 +16,18 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
-  Example,
-  Invalid,
-  InvalidWithImage,
-  Disabled,
-  Large,
-  Docked,
-  DockedWithImages,
-  ManuallyDocked,
-  ManuallyDockedWithImages,
-  WithImage,
-  WithImageLarge,
+  DefaultExample,
+  InvalidExample,
+  InvalidWithImageExample,
+  DisabledExample,
+  LargeExample,
+  DockedExample,
+  DockedWithImagesExample,
+  ManuallyDockedExample,
+  ManuallyDockedWithImagesExample,
+  WithImageExample,
+  WithImageLargeExample,
   MixedExample,
 } from './examples';
 
@@ -37,29 +35,19 @@ export default {
   title: 'bpk-component-select',
 };
 
-export const _Example = Example;
-export const _Invalid = Invalid;
-export const _InvalidWithImage = InvalidWithImage;
+export const Example = DefaultExample;
+export const Invalid = InvalidExample;
+export const InvalidWithImage = InvalidWithImageExample;
 
-_InvalidWithImage.storyName = 'Invalid with image';
+export const Disabled = DisabledExample;
+export const Large = LargeExample;
+export const Docked = DockedExample;
+export const DockedWithImages = DockedWithImagesExample;
 
-export const _Disabled = Disabled;
-export const _Large = Large;
-export const _Docked = Docked;
-export const _DockedWithImages = DockedWithImages;
+export const ManuallyDocked = ManuallyDockedExample;
 
-_DockedWithImages.storyName = 'Docked with images';
+export const ManuallyDockedWithImages = ManuallyDockedWithImagesExample;
 
-export const _ManuallyDocked = ManuallyDocked;
-
-_ManuallyDocked.storyName = 'Manually docked';
-
-export const _ManuallyDockedWithImages = ManuallyDockedWithImages;
-
-_ManuallyDockedWithImages.storyName = 'Manually docked with images';
-
-export const _WithImage = WithImage;
-export const _WithImageLarge = WithImageLarge;
+export const WithImage = WithImageExample;
+export const WithImageLarge = WithImageLargeExample;
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

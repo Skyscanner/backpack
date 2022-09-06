@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -40,37 +38,19 @@ export const Simple = SimpleExample;
 export const DragDisabledAndControlsHidden =
   DragDisabledAndHiddenControlsExample;
 
-DragDisabledAndControlsHidden.storyName = 'Drag disabled and controls hidden';
-
 export const GreedyGestureHandling = GreddyGestureHandlingExample;
-
-GreedyGestureHandling.storyName = 'Greedy gesture handling';
 
 export const WithOnZoomAndOnRegionChangeCallbacks =
   WithOnZoomAndOnRegionChangeExample;
 
-WithOnZoomAndOnRegionChangeCallbacks.storyName = 'With onZoom and onRegionChange callbacks';
-
 export const WithOnTilesLoaded = WithOnTilesLoadedExample;
-
-WithOnTilesLoaded.storyName = 'With onTilesLoaded';
 
 export const WithABoundingBox = WithBoundingBoxExample;
 
-WithABoundingBox.storyName = 'With a bounding box';
-
 export const WithAMarker = WithAMarkerExample;
-
-WithAMarker.storyName = 'With a marker';
 
 export const IconMarkers = WithIconMarkersExample;
 
-IconMarkers.storyName = 'Icon markers';
-
 export const PriceMarkers = WithPriceMarkersExample;
 
-PriceMarkers.storyName = 'Price markers';
-
 export const MultiMaps = MultipleMapsExample;
-
-MultiMaps.storyName = 'Multi maps';

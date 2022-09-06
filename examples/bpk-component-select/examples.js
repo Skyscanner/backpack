@@ -121,11 +121,11 @@ SelectWithImage.propTypes = {
   options: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-const Example = () => <StatefulBpkSelect />;
+const DefaultExample = () => <StatefulBpkSelect />;
 
-const Invalid = () => <StatefulBpkSelect valid={false} />;
+const InvalidExample = () => <StatefulBpkSelect valid={false} />;
 
-const InvalidWithImage = () => (
+const InvalidWithImageExample = () => (
   <SelectWithImage
     valid={false}
     id="countries"
@@ -134,11 +134,11 @@ const InvalidWithImage = () => (
   />
 );
 
-const Disabled = () => <StatefulBpkSelect disabled />;
+const DisabledExample = () => <StatefulBpkSelect disabled />;
 
-const Large = () => <StatefulBpkSelect large />;
+const LargeExample = () => <StatefulBpkSelect large />;
 
-const Docked = () => (
+const DockedExample = () => (
   <div style={{ display: 'flex' }}>
     <StatefulBpkSelect large docked />
     <StatefulBpkSelect large docked />
@@ -147,7 +147,7 @@ const Docked = () => (
   </div>
 );
 
-const DockedWithImages = () => (
+const DockedWithImagesExample = () => (
   <div style={{ display: 'flex' }}>
     <SelectWithImage
       large
@@ -180,7 +180,7 @@ const DockedWithImages = () => (
   </div>
 );
 
-const ManuallyDocked = () => (
+const ManuallyDockedExample = () => (
   <div style={{ display: 'flex' }}>
     <div style={{ width: '100%' }}>
       <StatefulBpkSelect large dockedFirst />
@@ -197,7 +197,7 @@ const ManuallyDocked = () => (
   </div>
 );
 
-const ManuallyDockedWithImages = () => (
+const ManuallyDockedWithImagesExample = () => (
   <div style={{ display: 'flex' }}>
     <div style={{ width: '100%' }}>
       <SelectWithImage
@@ -238,37 +238,37 @@ const ManuallyDockedWithImages = () => (
   </div>
 );
 
-const WithImage = () => (
+const WithImageExample = () => (
   <SelectWithImage id="countries" name="countries" options={countries} />
 );
 
-const WithImageLarge = () => (
+const WithImageLargeExample = () => (
   <SelectWithImage large id="countries" name="countries" options={countries} />
 );
 
 const MixedExample = () => (
   <div>
-    <Example />
-    <Invalid />
-    <InvalidWithImage />
-    <Disabled />
-    <Large />
-    <Docked />
-    <ManuallyDocked />
+    <DefaultExample />
+    <InvalidExample />
+    <InvalidWithImageExample />
+    <DisabledExample />
+    <LargeExample />
+    <DockedExample />
+    <ManuallyDockedExample />
   </div>
 );
 
 export {
-  Example,
-  Invalid,
-  InvalidWithImage,
-  Disabled,
-  Large,
-  Docked,
-  DockedWithImages,
-  ManuallyDocked,
-  ManuallyDockedWithImages,
-  WithImage,
-  WithImageLarge,
+  DefaultExample,
+  InvalidExample,
+  InvalidWithImageExample,
+  DisabledExample,
+  LargeExample,
+  DockedExample,
+  DockedWithImagesExample,
+  ManuallyDockedExample,
+  ManuallyDockedWithImagesExample,
+  WithImageExample,
+  WithImageLargeExample,
   MixedExample,
 };

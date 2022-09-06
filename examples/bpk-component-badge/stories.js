@@ -40,20 +40,12 @@ export default {
 export const Default = DefaultExample;
 export const WithIcons = WithIconsExample;
 
-WithIcons.storyName = 'With icons';
-
 export const Centered = CenteredExample;
 export const DockedRight = DockedLeadingExample;
 
-DockedRight.storyName = 'Docked right';
-
 export const DockedLeft = DockedTrailingExample;
 
-DockedLeft.storyName = 'Docked left';
-
 export const WarningDefault = WarningExample;
-
-WarningDefault.storyName = 'Warning (Default)';
 
 export const Success = SuccessExample;
 export const Destructive = DestructiveExample;
@@ -62,5 +54,3 @@ export const Light = LightExample;
 export const Inverse = InverseExample;
 export const Outline = OutlineExample;
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

@@ -49,69 +49,37 @@ export default {
 
 export const BpkButtonPrimary = () => <PrimaryExample />;
 
-BpkButtonPrimary.storyName = 'BpkButton (Primary)';
-
 export const BpkButtonPrimaryOnDark = () => <PrimaryOnDarkExample />;
-
-BpkButtonPrimaryOnDark.storyName = 'BpkButton (PrimaryOnDark)';
 
 export const BpkButtonPrimaryOnLight = () => <PrimaryOnLightExample />;
 
-BpkButtonPrimaryOnLight.storyName = 'BpkButton (PrimaryOnLight)';
-
 export const BpkButtonSecondary = () => <SecondaryExample />;
-
-BpkButtonSecondary.storyName = 'BpkButton (Secondary)';
 
 export const BpkButtonSecondaryOnDark = () => <SecondaryOnDarkExample />;
 
-BpkButtonSecondaryOnDark.storyName = 'BpkButton (SecondaryOnDark)';
-
 export const BpkButtonDestructive = () => <DestructiveExample />;
-
-BpkButtonDestructive.storyName = 'BpkButton (Destructive)';
 
 export const BpkButtonLinkButton = () => <LinkExample />;
 
-BpkButtonLinkButton.storyName = 'BpkButton (Link button)';
-
 export const BpkButtonLinkOnDarkButton = () => <LinkOnDarkExample />;
 
-BpkButtonLinkOnDarkButton.storyName = 'BpkButton (Link on dark button)';
-
 export const BpkButtonFeatured = () => <FeaturedExample />;
-
-BpkButtonFeatured.storyName = 'BpkButton (Featured)';
 
 export const Primary = () => <ComponentButtonPrimaryExample />;
 export const PrimaryOnDark = () => <ComponentButtonPrimaryOnDarkExample />;
 
-PrimaryOnDark.storyName = 'PrimaryOnDark';
-
 export const PrimaryOnLight = () => <ComponentButtonPrimaryOnLightExample />;
-
-PrimaryOnLight.storyName = 'PrimaryOnLight';
 
 export const Secondary = () => <ComponentButtonSecondaryExample />;
 export const SecondaryOnDark = () => <ComponentButtonSecondaryOnDarkExample />;
 
-SecondaryOnDark.storyName = 'SecondaryOnDark';
-
 export const Destructive = () => <ComponentButtonDestructiveExample />;
 export const LinkButton = () => <ComponentButtonLinkExample />;
 
-LinkButton.storyName = 'Link button';
-
 export const LinkOnDarkButton = () => <ComponentButtonLinkOnDarkExample />;
-
-LinkOnDarkButton.storyName = 'LinkOnDark button';
 
 export const Featured = () => <ComponentButtonFeaturedExample />;
 export const Mixture = () => <MixedExample />;
 export const AnchorTags = () => <AnchorTagsExample />;
 
-AnchorTags.storyName = 'Anchor tags';
-
 export const VisualTest = () => <MixedExample />;
-
-VisualTest.storyName = 'Visual test';

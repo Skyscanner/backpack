@@ -16,16 +16,12 @@
  * limitations under the License.
  */
 
-
-
 module.exports = {
-    stories: [
-      '../examples/**/stories.js'
-    ],
-    addons: [
-      '@storybook/addon-a11y',
-      '@storybook/addon-actions',
-      '@storybook/addon-knobs',
-      '@storybook/addon-viewport',
-    ],
-  };
+  stories: ['../examples/**/stories.js'],
+  addons: [
+    '@storybook/addon-a11y',
+    '@storybook/addon-actions',
+    '@storybook/addon-knobs',
+    '@storybook/addon-viewport',
+  ],
+};

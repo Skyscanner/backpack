@@ -18,22 +18,20 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
-  DocsPrimary,
-  Primary,
-  PrimaryOnDark,
-  PrimaryOnLight,
-  Secondary,
-  SecondaryOnDark,
-  Destructive,
-  LinkButton,
-  LinkOnDarkButton,
-  Featured,
-  Mixture,
-  AnchorTags,
-  CustomIcon,
+  DocsPrimaryExample,
+  PrimaryExample,
+  PrimaryOnDarkExample,
+  PrimaryOnLightExample,
+  SecondaryExample,
+  SecondaryOnDarkExample,
+  DestructiveExample,
+  LinkButtonExample,
+  LinkOnDarkButtonExample,
+  FeaturedExample,
+  MixtureExample,
+  AnchorTagsExample,
+  CustomIconExample,
   VisualExample,
 } from './examples';
 
@@ -41,40 +39,24 @@ export default {
   title: 'bpk-component-loading-button',
 };
 
-export const _DocsPrimary = DocsPrimary;
+export const DocsPrimary = DocsPrimaryExample;
 
-_DocsPrimary.storyName = 'DocsPrimary';
+export const Primary = PrimaryExample;
+export const PrimaryOnDark = PrimaryOnDarkExample;
 
-export const _Primary = Primary;
-export const _PrimaryOnDark = PrimaryOnDark;
+export const PrimaryOnLight = PrimaryOnLightExample;
 
-_PrimaryOnDark.storyName = 'PrimaryOnDark';
+export const Secondary = SecondaryExample;
+export const SecondaryOnDark = SecondaryOnDarkExample;
 
-export const _PrimaryOnLight = PrimaryOnLight;
+export const Destructive = DestructiveExample;
+export const LinkButton = LinkButtonExample;
 
-_PrimaryOnLight.storyName = 'PrimaryOnLight';
+export const LinkOnDarkButton = LinkOnDarkButtonExample;
 
-export const _Secondary = Secondary;
-export const _SecondaryOnDark = SecondaryOnDark;
+export const Featured = FeaturedExample;
+export const Mixture = MixtureExample;
+export const AnchorTags = AnchorTagsExample;
 
-_SecondaryOnDark.storyName = 'SecondaryOnDark';
-
-export const _Destructive = Destructive;
-export const _LinkButton = LinkButton;
-
-_LinkButton.storyName = 'Link button';
-
-export const _LinkOnDarkButton = LinkOnDarkButton;
-
-_LinkOnDarkButton.storyName = 'LinkOnDark button';
-
-export const _Featured = Featured;
-export const _Mixture = Mixture;
-export const _AnchorTags = AnchorTags;
-
-_AnchorTags.storyName = 'Anchor tags';
-
-export const _CustomIcon = CustomIcon;
+export const CustomIcon = CustomIconExample;
 export const VisualTest = VisualExample;
-
-VisualTest.storyName = 'Visual test';

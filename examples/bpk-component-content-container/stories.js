@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import { DefaultExample, Alternate } from './examples';
+import { DefaultExample, AlternateExample } from './examples';
 
 export default {
   title: 'bpk-component-content-container',
 };
 
 export const Default = DefaultExample;
-export const _Alternate = Alternate;
+export const Alternate = AlternateExample;

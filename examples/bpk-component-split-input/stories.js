@@ -17,13 +17,11 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SplitInputExample,
-  SplitInputSixDigit,
-  SplitInputExampleWithPlaceholder,
-  SplitInputSmall,
+  SplitInputSixDigitExample,
+  SplitInputWithPlaceholderExample,
+  SplitInputSmallExample,
 } from './examples';
 
 export default {
@@ -31,16 +29,9 @@ export default {
 };
 
 export const DefaultInput = SplitInputExample;
-export const _6CharAlphanumericOtp = SplitInputSixDigit;
+export const SplitInputSixDigit = SplitInputSixDigitExample;
 
-_6CharAlphanumericOtp.storyName = '6 char alphanumeric OTP';
+export const SplitInputWithPlaceholder = SplitInputWithPlaceholderExample;
 
-export const _6CharAlphanumericOtpWithPlaceholder =
-  SplitInputExampleWithPlaceholder;
-
-_6CharAlphanumericOtpWithPlaceholder.storyName = '6 char alphanumeric OTP with placeholder';
-
-export const SmallInput = SplitInputSmall;
+export const SmallInput = SplitInputSmallExample;
 export const VisualTest = SplitInputExample;
-
-VisualTest.storyName = 'Visual test';

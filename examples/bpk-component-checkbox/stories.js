@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   IndeterminateExample,
@@ -45,8 +43,4 @@ export const Disabled = DisabledExample;
 export const Required = RequiredExample;
 export const SmallLabel = SmallLabelExample;
 
-SmallLabel.storyName = 'Small label';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

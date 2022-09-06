@@ -28,5 +28,3 @@ export const Unordered = UnorderedExample;
 export const Ordered = OrderedExample;
 export const Nested = NestedExample;
 export const VisualTest = NestedExample;
-
-VisualTest.storyName = 'Visual test';

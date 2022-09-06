@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   RequiredExample,
@@ -38,8 +36,4 @@ export const Invalid = InvalidExample;
 export const Disabled = DisabledExample;
 export const InvalidRequired = InvalidRequiredExample;
 
-InvalidRequired.storyName = 'Invalid required';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

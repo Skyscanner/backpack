@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   StoppingAfterScrollsExample,
@@ -52,40 +50,22 @@ export default {
 export const Default = DefaultExample;
 export const PartialLoadLoadMoreAfter15Items = StoppingAfterScrollsExample;
 
-PartialLoadLoadMoreAfter15Items.storyName = 'Partial load - load more after 15 items';
-
 export const InfiniteListOfElements = InfiniteListOfElementsExample;
-
-InfiniteListOfElements.storyName = 'Infinite list of elements';
 
 export const DifferentNoElementsOnLoadAndOnScroll =
   DifferentNumElementsOnLoadAndScrollExample;
 
-DifferentNoElementsOnLoadAndOnScroll.storyName = 'Different no. elements on load and on scroll';
-
 export const Load1ElementPerScroll = LoadOneElementPerScrollExample;
-
-Load1ElementPerScroll.storyName = 'Load 1 element per scroll';
 
 export const CustomLoadingItem = CustomLoadingItemExample;
 
-CustomLoadingItem.storyName = 'Custom loading Item';
-
 export const ForceUpdateData = ForceUpdateDataExample;
-
-ForceUpdateData.storyName = 'Force update data';
 
 export const ForceUpdateDataEmptyArrayAndSeeMoreAfter =
   ForceUpdateDataExampleEmptyArrayExample;
 
-ForceUpdateDataEmptyArrayAndSeeMoreAfter.storyName = 'Force update data - Empty array and see more after';
-
 export const ForceUpdateDataFromNonEmptyToEmpty =
   ForceUpdateDataExampleFromNonEmptyToEmptyExample;
 
-ForceUpdateDataFromNonEmptyToEmpty.storyName = 'Force update data - From non empty to empty';
-
 export const InferDatasourceCompleteWhenLessThanRequestElementsRetrunedByDatasource =
   InferDatasourceWhenLessThanRequestElementsExample;
-
-InferDatasourceCompleteWhenLessThanRequestElementsRetrunedByDatasource.storyName = 'Infer datasource complete when less than request elements retruned by datasource';

@@ -20,7 +20,7 @@ import {
   DefaultExample,
   WithHeadingTagsExample,
   ParagraphExample,
-  WithDefaultProps,
+  WithDefaultPropsExample,
   HeadingStylesExample,
   MixedExample,
 } from './examples';
@@ -32,17 +32,9 @@ export default {
 export const Default = DefaultExample;
 export const WithHeadingTags = WithHeadingTagsExample;
 
-WithHeadingTags.storyName = 'With heading tags';
-
 export const Paragraph = ParagraphExample;
-export const UsingWithDefaultProps = WithDefaultProps;
-
-UsingWithDefaultProps.storyName = 'using withDefaultProps';
+export const UsingWithDefaultProps = WithDefaultPropsExample;
 
 export const HeadingStyles = HeadingStylesExample;
 
-HeadingStyles.storyName = 'Heading styles';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

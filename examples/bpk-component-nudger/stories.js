@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   LowerBoundExample,
@@ -37,24 +35,12 @@ export default {
 export const Default = DefaultExample;
 export const LowerBounds = LowerBoundExample;
 
-LowerBounds.storyName = 'Lower bounds';
-
 export const UpperBounds = UpperBoundsExample;
 
-UpperBounds.storyName = 'Upper bounds';
-
-export const _StatefulExample = StatefulExample;
-
-_StatefulExample.storyName = 'Stateful example';
+export const Stateful = StatefulExample;
 
 export const ConfigurableNudger = ConfigurableExample;
 
-ConfigurableNudger.storyName = 'Configurable nudger';
-
 export const OnDarkNudger = OnDarkExample;
 
-OnDarkNudger.storyName = 'On dark nudger';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

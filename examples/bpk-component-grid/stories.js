@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   FullWidthGridExample,
@@ -32,12 +30,6 @@ export default {
 export const Example = DefaultExample;
 export const FullWidthExample = FullWidthGridExample;
 
-FullWidthExample.storyName = 'Full width example';
-
 export const HomePageExample = HomePageGridExample;
 
-HomePageExample.storyName = 'Home page example';
-
 export const DayViewExample = DayViewGridExample;
-
-DayViewExample.storyName = 'Day view example';

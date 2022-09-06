@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   AllTypesExample,
   SelectableChipsExample,
@@ -35,16 +33,10 @@ export default {
 
 export const AllTypes = AllTypesExample;
 
-AllTypes.storyName = 'All types';
-
 export const Selectable = SelectableChipsExample;
 export const AllSelectableTypes = AllSelectableChipStylesExample;
 export const WithIcons = WithIconsExample;
 
-WithIcons.storyName = 'With icons';
-
 export const Dismissable = DismissibleChipsExample;
 export const RadioGroup = RadioGroupChipsExample;
 export const VisualTest = AllTypesExample;
-
-VisualTest.storyName = 'Visual test';

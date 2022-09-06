@@ -37,24 +37,12 @@ export const Default = DefaultExample;
 export const Vertical = VerticalExample;
 export const WithoutPadding = WithoutPaddingExample;
 
-WithoutPadding.storyName = 'Without padding';
-
 export const WithoutPaddingAndInVertical = WithoutPaddingVerticalExample;
-
-WithoutPaddingAndInVertical.storyName = 'Without padding and in vertical';
 
 export const WithoutPaddingAndWithAnImage = WithoutPaddingImageExample;
 
-WithoutPaddingAndWithAnImage.storyName = 'Without padding and with an image ';
-
 export const WithAHrefProp = WithHrefExample;
-
-WithAHrefProp.storyName = 'With a "href" prop';
 
 export const DayView = DayViewExample;
 
-DayView.storyName = 'Day view';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

@@ -21,11 +21,11 @@ import React from 'react';
 
 import { BpkCode, BpkCodeBlock } from '../../packages/bpk-component-code';
 
-const Inline = () => <BpkCode>npm install react --save</BpkCode>;
-const InlineAlternate = () => (
+const InlineExample = () => <BpkCode>npm install react --save</BpkCode>;
+const InlineAlternateExample = () => (
   <BpkCode alternate>npm install react --save</BpkCode>
 );
-const Block = () => (
+const BlockExample = () => (
   <BpkCodeBlock>
     import React from &apos;react&apos;;
     <br />
@@ -34,7 +34,7 @@ const Block = () => (
     ReactDOM.render( ... );
   </BpkCodeBlock>
 );
-const BlockAlternate = () => (
+const BlockAlternateExample = () => (
   <BpkCodeBlock alternate>
     import React from &apos;react&apos;;
     <br />
@@ -46,11 +46,17 @@ const BlockAlternate = () => (
 
 const MixedExample = () => (
   <div>
-    <Inline />
-    <InlineAlternate />
-    <Block />
-    <BlockAlternate />
+    <InlineExample />
+    <InlineAlternateExample />
+    <BlockExample />
+    <BlockAlternateExample />
   </div>
 );
 
-export { Inline, InlineAlternate, Block, BlockAlternate, MixedExample };
+export {
+  InlineExample,
+  InlineAlternateExample,
+  BlockExample,
+  BlockAlternateExample,
+  MixedExample,
+};

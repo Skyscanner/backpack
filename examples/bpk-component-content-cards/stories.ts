@@ -16,16 +16,20 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
-  ExampleWithOneCard,
-  ExampleWithTwoCards,
-  ExampleWithThreeCards,
+  WithOneCardExample,
+  WithTwoCardsExample,
+  WithThreeCardsExample,
 } from './examples';
 
-storiesOf('bpk-component-content-cards', module)
-  .add('Default One Card', ExampleWithOneCard)
-  .add('Default Two Cards', ExampleWithTwoCards)
-  .add('Default Three Cards', ExampleWithThreeCards)
-  .add('Visual test', ExampleWithThreeCards);
+export default {
+  title: 'bpk-component-content-cards',
+};
+
+export const DefaultOneCard = WithOneCardExample;
+
+export const DefaultTwoCards = WithTwoCardsExample;
+
+export const DefaultThreeCards = WithThreeCardsExample;
+
+export const VisualTest = WithThreeCardsExample;

@@ -16,14 +16,12 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   ScrollToSelectedExample,
   NotUnderlinedExample,
   LightAppearanceExample,
-  UsingCustomScrollColors,
+  UsingCustomScrollColorsExample,
   AnchorTagsExample,
   ExtremeExample,
   SpacedAroundExample,
@@ -39,37 +37,19 @@ export default {
 export const Example = DefaultExample;
 export const ScrollToSelectedElement = ScrollToSelectedExample;
 
-ScrollToSelectedElement.storyName = 'Scroll to selected element';
-
 export const NotUnderlined = NotUnderlinedExample;
-
-NotUnderlined.storyName = 'Not underlined';
 
 export const LightAppearance = LightAppearanceExample;
 
-LightAppearance.storyName = 'Light appearance';
-
-export const _UsingCustomScrollColors = UsingCustomScrollColors;
-
-_UsingCustomScrollColors.storyName = 'Using custom scroll colors';
+export const UsingCustomScrollColors = UsingCustomScrollColorsExample;
 
 export const AnchorTags = AnchorTagsExample;
 
-AnchorTags.storyName = 'Anchor tags';
-
-export const _ExtremeExample = ExtremeExample;
-
-_ExtremeExample.storyName = 'Extreme example';
+export const Extreme = ExtremeExample;
 
 export const SpaceAround = SpacedAroundExample;
 
-SpaceAround.storyName = 'Space around';
-
 export const DisabledItem = DisabledItemExample;
-
-DisabledItem.storyName = 'Disabled item';
 
 export const Separators = SeparatorsExample;
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

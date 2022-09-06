@@ -20,44 +20,35 @@
 
 import {
   SingleItemExample,
-  SingleItemExampleInitiallyExpanded,
+  SingleItemExampleInitiallyExpandedExample,
   MultipleItemsOpenExample,
   MultipleItemsOpenInitiallyExpandedExample,
   CustomExample,
   CustomTitleTextStyleExample,
   WithIconsExample,
   WithBoldTitlesExample,
-  VisualExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-accordion',
-  component: SingleItemExample,
 };
 
 export const SingleItemOnly = SingleItemExample;
-SingleItemOnly.storyName = 'Single item only';
 
-export const SingleItemOnlySecondItemInitiallyExpanded = SingleItemExampleInitiallyExpanded;
-SingleItemOnlySecondItemInitiallyExpanded.storyName = 'Single item only (second item initially expanded)';
+export const SingleItemOnlySecondItemInitiallyExpanded =
+  SingleItemExampleInitiallyExpandedExample;
 
 export const MultipleItemsOpen = MultipleItemsOpenExample;
-MultipleItemsOpen.storyName = 'Multiple items open';
 
-export const MultipleItemsOpenSecondThirdItemsInitiallyExpanded = MultipleItemsOpenInitiallyExpandedExample;
-MultipleItemsOpenSecondThirdItemsInitiallyExpanded.storyName = 'Multiple items open (second & third items initially expanded)';
+export const MultipleItemsOpenSecondThirdItemsInitiallyExpanded =
+  MultipleItemsOpenInitiallyExpandedExample;
 
 export const Custom = CustomExample;
-Custom.storyName = 'Custom';
 
 export const CustomTitleTextStyle = CustomTitleTextStyleExample;
-CustomTitleTextStyle.storyName = 'Custom title textStyle';
 
 export const WithIcons = WithIconsExample;
-WithIcons.storyName = 'With icons';
 
 export const WithBoldTitles = WithBoldTitlesExample;
-WithBoldTitles.storyName = 'With bold titles';
 
-export const VisualTest = VisualExample;
-VisualTest.storyName = 'Visual test';
+export const VisualTest = SingleItemExample;

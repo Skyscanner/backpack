@@ -17,12 +17,12 @@
  */
 
 import {
-  SimpleSlider,
-  SimpleLargeSlider,
-  TimeSlider,
-  SimpleSliderWithSteps,
-  RangeSlider,
-  RangeSliderWithMinimumDistance,
+  SimpleSliderExample,
+  SimpleLargeSliderExample,
+  TimeSliderExample,
+  SimpleSliderWithStepsExample,
+  RangeSliderExample,
+  RangeSliderWithMinimumDistanceExample,
   MixedExample,
 } from './examples';
 
@@ -30,30 +30,17 @@ export default {
   title: 'bpk-component-slider',
 };
 
-export const _SimpleSlider = SimpleSlider;
+export const SimpleSlider = SimpleSliderExample;
 
-_SimpleSlider.storyName = 'Simple slider';
+export const SimpleLargeSlider = SimpleLargeSliderExample;
 
-export const _SimpleLargeSlider = SimpleLargeSlider;
+export const TimeSlider = TimeSliderExample;
 
-_SimpleLargeSlider.storyName = 'Simple large slider';
+export const SimpleSliderWithSteps = SimpleSliderWithStepsExample;
 
-export const _TimeSlider = TimeSlider;
+export const RangeSlider = RangeSliderExample;
 
-_TimeSlider.storyName = 'Time slider';
-
-export const _SimpleSliderWithSteps = SimpleSliderWithSteps;
-
-_SimpleSliderWithSteps.storyName = 'Simple slider with steps';
-
-export const _RangeSlider = RangeSlider;
-
-_RangeSlider.storyName = 'Range slider';
-
-export const _RangeSliderWithMinimumDistance = RangeSliderWithMinimumDistance;
-
-_RangeSliderWithMinimumDistance.storyName = 'Range slider with minimum distance';
+export const RangeSliderWithMinimumDistance =
+  RangeSliderWithMinimumDistanceExample;
 
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

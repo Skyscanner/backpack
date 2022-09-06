@@ -56,25 +56,25 @@ const contentCardProps: React.ComponentProps<typeof BpkContentCards> = {
   ],
 };
 
-const ExampleWithOneCard = () => (
+const WithOneCardExample = () => (
   <BpkContentCards
     heading={contentCardProps.heading}
     cards={contentCardProps.cards.slice(0, 1)}
   />
 );
 
-const ExampleWithTwoCards = () => (
+const WithTwoCardsExample = () => (
   <BpkContentCards
     heading={contentCardProps.heading}
     cards={contentCardProps.cards.slice(0, 2)}
   />
 );
 
-const ExampleWithThreeCards = () => (
+const WithThreeCardsExample = () => (
   <BpkContentCards
     heading={contentCardProps.heading}
     cards={contentCardProps.cards}
   />
 );
 
-export { ExampleWithOneCard, ExampleWithTwoCards, ExampleWithThreeCards };
+export { WithOneCardExample, WithTwoCardsExample, WithThreeCardsExample };

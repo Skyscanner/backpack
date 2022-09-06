@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   LinkExample,
   ButtonLinkExample,
@@ -37,21 +35,11 @@ export default {
 export const Example = LinkExample;
 export const ExampleButtons = ButtonLinkExample;
 
-ExampleButtons.storyName = 'Example (buttons)';
-
 export const ExampleAlternate = LinkAlternativeExample;
-
-ExampleAlternate.storyName = 'Example (alternate)';
 
 export const ExampleAlternateButtons = ButtonLinkAlternativeExample;
 
-ExampleAlternateButtons.storyName = 'Example (alternate + buttons)';
-
-export const _CombinedExample = CombinedExample;
-export const CombinedExampleAlternate = CombinedAlternativeExample;
-
-CombinedExampleAlternate.storyName = 'Combined Example (alternate)';
+export const Combined = CombinedExample;
+export const CombinedAlternative = CombinedAlternativeExample;
 
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

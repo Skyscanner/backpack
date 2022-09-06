@@ -28,23 +28,15 @@ export default {
 export const Example = () => <AutosuggestExample />;
 export const WithIcons = () => <AutosuggestExample includeIcon />;
 
-WithIcons.storyName = 'With icons';
-
 export const WithSubHeadings = () => <AutosuggestExample includeSubheading />;
-
-WithSubHeadings.storyName = 'With sub headings';
 
 export const WithTertiaryLabels = () => (
   <AutosuggestExample includeTertiaryLabel />
 );
 
-WithTertiaryLabels.storyName = 'With tertiary labels';
-
 export const WithSubHeadingTertiaryLabels = () => (
   <AutosuggestExample includeSubheading includeTertiaryLabel />
 );
-
-WithSubHeadingTertiaryLabels.storyName = 'With sub heading + tertiary labels';
 
 export const Hanzi = () => (
   <AutosuggestExample includeSubheading includeTertiaryLabel hanzi />
@@ -59,5 +51,3 @@ export const SmallInput = () => (
     <AutosuggestExample />
   </div>
 );
-
-SmallInput.storyName = 'Small input';

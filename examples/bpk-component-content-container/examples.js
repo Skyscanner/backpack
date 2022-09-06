@@ -162,7 +162,7 @@ export default () => (
   </div>
 );
 
-const Alternate = () => (
+const AlternateExample = () => (
   <div>
     <BpkContentContainer bareHtml alternate>
       <h1>Heading Level 1</h1>
@@ -304,4 +304,4 @@ export default () => (
   </div>
 );
 
-export { DefaultExample, Alternate };
+export { DefaultExample, AlternateExample };

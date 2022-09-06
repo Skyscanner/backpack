@@ -16,14 +16,12 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   AutowidthExample,
-  NonHoverRows,
-  FixedWidth,
-  DisabledSort,
-  CustomRowAndHeaderHeights,
+  NonHoverRowsExample,
+  FixedWidthExample,
+  DisabledSortExample,
+  CustomRowAndHeaderHeightsExample,
   HeaderRendererExample,
   CustomSortingExample,
 } from './examples';
@@ -32,25 +30,15 @@ export default {
   title: 'bpk-component-datatable',
 };
 
-export const _AutowidthExample = AutowidthExample;
-export const RowsNotHoverable = NonHoverRows;
+export const Autowidth = AutowidthExample;
+export const RowsNotHoverable = NonHoverRowsExample;
 
-RowsNotHoverable.storyName = 'Rows not hoverable';
+export const FixedWidth = FixedWidthExample;
+export const DisabledSort = DisabledSortExample;
+export const CustomRowAndHeaderHeights = CustomRowAndHeaderHeightsExample;
 
-export const FixedWidthExample = FixedWidth;
-export const DisabledSortExample = DisabledSort;
-export const _CustomRowAndHeaderHeights = CustomRowAndHeaderHeights;
+export const CustomSorting = CustomSortingExample;
 
-_CustomRowAndHeaderHeights.storyName = 'Custom row and header heights';
-
-export const _CustomSortingExample = CustomSortingExample;
-
-_CustomSortingExample.storyName = 'Custom sorting Example';
-
-export const CustomHeaderDataExample = HeaderRendererExample;
-
-CustomHeaderDataExample.storyName = 'Custom header data Example';
+export const CustomHeaderData = HeaderRendererExample;
 
 export const VisualTest = AutowidthExample;
-
-VisualTest.storyName = 'Visual test';

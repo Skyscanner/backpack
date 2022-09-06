@@ -16,21 +16,14 @@
  * limitations under the License.
  */
 
-
 import { DefaultExample, ExtraSpaceExample } from './examples';
 
 export default {
   title: 'bpk-component-blockquote',
 };
 
-export const _DefaultExample = DefaultExample;
-
-_DefaultExample.storyName = 'Default example';
+export const Default = DefaultExample;
 
 export const ExampleWithAdditionalSpacingAboveAndBelow = ExtraSpaceExample;
 
-ExampleWithAdditionalSpacingAboveAndBelow.storyName = 'Example with additional spacing (above and below)';
-
 export const VisualTest = DefaultExample;
-
-VisualTest.storyName = 'Visual test';

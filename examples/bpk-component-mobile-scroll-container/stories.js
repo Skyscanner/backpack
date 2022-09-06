@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithVisibleScrollbarExample,
@@ -33,9 +31,5 @@ export default {
 export const Default = DefaultExample;
 export const WithVisibleScrollbar = WithVisibleScrollbarExample;
 
-WithVisibleScrollbar.storyName = 'With visible scrollbar';
-
 export const SettingLeadingIndicatorClassNameAndTrailingIndicatorClassName =
   SettingLeadingAndTrailingIndicatorClassNameExample;
-
-SettingLeadingIndicatorClassNameAndTrailingIndicatorClassName.storyName = 'Setting leadingIndicatorClassName and trailingIndicatorClassName';

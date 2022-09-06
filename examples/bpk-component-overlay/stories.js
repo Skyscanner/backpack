@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   OverlayTypeNoneExample,
@@ -37,29 +35,15 @@ export default {
 export const Default = DefaultExample;
 export const OverlayTypeNone = OverlayTypeNoneExample;
 
-OverlayTypeNone.storyName = 'overlayType="none"';
-
 export const WithForegroundContent = WithForegroundContentExample;
-
-WithForegroundContent.storyName = 'with foreground content';
 
 export const WithBpkImage = WithBpkImageExample;
 
-WithBpkImage.storyName = 'With BpkImage';
-
 export const WithBpkImageAndOverlayTypeNone = WithBpkImageNoTintExample;
 
-WithBpkImageAndOverlayTypeNone.storyName = 'With BpkImage and overlayType="none"';
-
 export const WithBpkImageLazyLoaded = WithBpkImageLazyLoadedExample;
-
-WithBpkImageLazyLoaded.storyName = 'With BpkImage, lazy loaded';
 
 export const TextOverlaidOnAnImageUsingForegroundContent =
   TextOverlaidOnImageExample;
 
-TextOverlaidOnAnImageUsingForegroundContent.storyName = 'Text overlaid on an image using foreground content';
-
 export const VisualTest = MixedExample;
-
-VisualTest.storyName = 'Visual test';

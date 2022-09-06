@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultPaginationExample,
   FivePagesPaginationExample,
@@ -32,24 +30,12 @@ export default {
 
 export const PaginationDefault = DefaultPaginationExample;
 
-PaginationDefault.storyName = 'Pagination - default';
-
 export const Pagination5VisiblePages = FivePagesPaginationExample;
-
-Pagination5VisiblePages.storyName = 'Pagination - 5 visible pages';
 
 export const Pagination2Pages = TwoPagesPaginationExample;
 
-Pagination2Pages.storyName = 'Pagination - 2 pages';
-
 export const PaginationSinglePage = SinglePaginationExample;
-
-PaginationSinglePage.storyName = 'Pagination - single page';
 
 export const PaginationVisibleExample = VisibleRangeExample;
 
-PaginationVisibleExample.storyName = 'Pagination - Visible example';
-
 export const VisualTest = DefaultPaginationExample;
-
-VisualTest.storyName = 'Visual test';

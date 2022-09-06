@@ -16,17 +16,15 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   RangeExample,
-  OpenOnRender,
-  MinDateInPast,
-  WithoutDateSet,
-  PassingProps,
-  DepartReturn,
-  CustomComponent,
+  OpenOnFirstRenderExample,
+  MinDateInPastExample,
+  WithoutDateSetExample,
+  PassingPropsExample,
+  DepartReturnExample,
+  CustomComponentExample,
   InvalidExample,
   MultipleRangeInputExample,
   DefaultVisualExample,
@@ -39,39 +37,21 @@ export default {
 
 export const Default = DefaultExample;
 export const Range = RangeExample;
-export const OpenOnFirstRender = OpenOnRender;
+export const OpenOnFirstRender = OpenOnFirstRenderExample;
 
-OpenOnFirstRender.storyName = 'Open on first render';
+export const MinDateInThePast = MinDateInPastExample;
 
-export const MinDateInThePast = MinDateInPast;
+export const WithoutDateSet = WithoutDateSetExample;
 
-MinDateInThePast.storyName = 'Min date in the past';
+export const PassingThroughPropsToUnderlyingInput = PassingPropsExample;
 
-export const _WithoutDateSet = WithoutDateSet;
+export const DepartReturn = DepartReturnExample;
 
-_WithoutDateSet.storyName = 'Without date set';
-
-export const PassingThroughPropsToUnderlyingInput = PassingProps;
-
-PassingThroughPropsToUnderlyingInput.storyName = 'Passing through props to underlying input';
-
-export const _DepartReturn = DepartReturn;
-
-_DepartReturn.storyName = 'Depart & Return';
-
-export const CustonCalendarComponent = CustomComponent;
-
-CustonCalendarComponent.storyName = 'Custon calendar component';
+export const CustonCalendarComponent = CustomComponentExample;
 
 export const Invalid = InvalidExample;
 export const RangeWithMultipleInputs = MultipleRangeInputExample;
 
-RangeWithMultipleInputs.storyName = 'Range with multiple inputs';
-
 export const VisualTest = DefaultVisualExample;
 
-VisualTest.storyName = 'Visual test';
-
 export const VisualTestRange = VisualRangeExample;
-
-VisualTestRange.storyName = 'Visual test range';
