@@ -1,5 +1,5 @@
 {
-  "extends": "stylelint-config-skyscanner",
+  "extends": "@skyscanner/stylelint-config-skyscanner",
   "rules": {
     "selector-class-pattern": [
       "(bpk|bpkdocs)(-[a-z0-9]+)+((__|--)[a-z0-9]+((-[a-z0-9]+)+)?(--)?([a-z0-9]+)+)?",

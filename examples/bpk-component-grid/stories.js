@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   FullWidthGridExample,
@@ -25,8 +23,13 @@ import {
   DayViewGridExample,
 } from './examples';
 
-storiesOf('bpk-component-grid', module)
-  .add('Example', DefaultExample)
-  .add('Full width example', FullWidthGridExample)
-  .add('Home page example', HomePageGridExample)
-  .add('Day view example', DayViewGridExample);
+export default {
+  title: 'bpk-component-grid',
+};
+
+export const Example = DefaultExample;
+export const FullWidthExample = FullWidthGridExample;
+
+export const HomePageExample = HomePageGridExample;
+
+export const DayViewExample = DayViewGridExample;

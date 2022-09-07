@@ -16,48 +16,65 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
-  WeekStartsOnSix,
-  WithFocusedDate,
-  TallContainer,
-  SingleMonth,
-  WeekStartsOnSunday,
-  HonestWeekend,
-  ArabicLocale,
-  JapaneseLocale,
-  DifferentMinMaxDates,
-  DontMarkToday,
-  ScrollableCalendarDate,
-  ScrollableCalendarGrid,
-  ScrollableCalendarGridList,
-  PastCalendar,
+  WeekStartsOnSixExample,
+  WithFocusedDateExample,
+  TallContainerExample,
+  SingleMonthExample,
+  WeekStartsOnSundayExample,
+  HonestWeekendExample,
+  ArabicLocaleExample,
+  JapaneseLocaleExample,
+  DifferentMinMaxDatesExample,
+  DontMarkTodayExample,
+  ScrollableCalendarDateExample,
+  ScrollableCalendarGridExample,
+  ScrollableCalendarGridListExample,
+  PastCalendarExample,
   RangeExample,
   SplitWeekRangeExample,
 } from './examples';
 
-storiesOf('bpk-component-scrollable-calendar', module)
-  .add('Scrollable Calendar - default', DefaultExample)
-  .add('Scrollable Calendar - range', RangeExample)
-  .add(
-    'Scrollable Calendar - Week split across 2 months range',
-    SplitWeekRangeExample,
-  )
-  .add('Scrollable Calendar - week starts on 6', WeekStartsOnSix)
-  .add('Scrollable Calendar - with focused date', WithFocusedDate)
-  .add('Scrollable Calendar in a tall container', TallContainer)
-  .add('Scrollable Calendar with a single month', SingleMonth)
-  .add('Scrollable Calendar - Week starts on a Sunday', WeekStartsOnSunday)
-  .add('Scrollable Calendar - Honest weekend', HonestWeekend)
-  .add('Scrollable Calendar - ar-AE locale', ArabicLocale)
-  .add('Scrollable Calendar - ja-JP locale', JapaneseLocale)
-  .add('Scrollable Calendar - Different min/max date', DifferentMinMaxDates)
-  .add("Scrollable Calendar - Don't mark today", DontMarkToday)
-  .add('Past Calendar', PastCalendar)
-  .add('BpkScrollableCalendarDate', ScrollableCalendarDate)
-  .add('BpkScrollableCalendarGrid', ScrollableCalendarGrid)
-  .add('BpkScrollableCalendarGridList', ScrollableCalendarGridList)
-  .add('Visual test', DefaultExample)
-  .add('Visual test range', RangeExample);
+export default {
+  title: 'bpk-component-scrollable-calendar',
+};
+
+export const ScrollableCalendarDefault = DefaultExample;
+
+export const ScrollableCalendarRange = RangeExample;
+
+export const ScrollableCalendarWeekSplitAcross2MonthsRange =
+  SplitWeekRangeExample;
+
+export const ScrollableCalendarWeekStartsOn6 = WeekStartsOnSixExample;
+
+export const ScrollableCalendarWithFocusedDate = WithFocusedDateExample;
+
+export const ScrollableCalendarInATallContainer = TallContainerExample;
+
+export const ScrollableCalendarWithASingleMonth = SingleMonthExample;
+
+export const ScrollableCalendarWeekStartsOnASunday = WeekStartsOnSundayExample;
+
+export const ScrollableCalendarHonestWeekend = HonestWeekendExample;
+
+export const ScrollableCalendarArAeLocale = ArabicLocaleExample;
+
+export const ScrollableCalendarJaJpLocale = JapaneseLocaleExample;
+
+export const ScrollableCalendarDifferentMinMaxDate =
+  DifferentMinMaxDatesExample;
+
+export const ScrollableCalendarDontMarkToday = DontMarkTodayExample;
+
+export const PastCalendar = PastCalendarExample;
+export const BpkScrollableCalendarDate = ScrollableCalendarDateExample;
+
+export const BpkScrollableCalendarGrid = ScrollableCalendarGridExample;
+
+export const BpkScrollableCalendarGridList = ScrollableCalendarGridListExample;
+
+export const VisualTest = DefaultExample;
+
+export const VisualTestRange = RangeExample;

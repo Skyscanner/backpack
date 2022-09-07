@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   LowerBoundExample,
@@ -30,11 +28,19 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-nudger', module)
-  .add('Default', DefaultExample)
-  .add('Lower bounds', LowerBoundExample)
-  .add('Upper bounds', UpperBoundsExample)
-  .add('Stateful example', StatefulExample)
-  .add('Configurable nudger', ConfigurableExample)
-  .add('On dark nudger', OnDarkExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-nudger',
+};
+
+export const Default = DefaultExample;
+export const LowerBounds = LowerBoundExample;
+
+export const UpperBounds = UpperBoundsExample;
+
+export const Stateful = StatefulExample;
+
+export const ConfigurableNudger = ConfigurableExample;
+
+export const OnDarkNudger = OnDarkExample;
+
+export const VisualTest = MixedExample;

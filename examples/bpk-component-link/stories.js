@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   LinkExample,
   ButtonLinkExample,
@@ -30,11 +28,18 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-link', module)
-  .add('Example', LinkExample)
-  .add('Example (buttons)', ButtonLinkExample)
-  .add('Example (alternate)', LinkAlternativeExample)
-  .add('Example (alternate + buttons)', ButtonLinkAlternativeExample)
-  .add('Combined Example', CombinedExample)
-  .add('Combined Example (alternate)', CombinedAlternativeExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-link',
+};
+
+export const Example = LinkExample;
+export const ExampleButtons = ButtonLinkExample;
+
+export const ExampleAlternate = LinkAlternativeExample;
+
+export const ExampleAlternateButtons = ButtonLinkAlternativeExample;
+
+export const Combined = CombinedExample;
+export const CombinedAlternative = CombinedAlternativeExample;
+
+export const VisualTest = MixedExample;

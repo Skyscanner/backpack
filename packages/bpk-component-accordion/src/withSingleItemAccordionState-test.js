@@ -54,6 +54,7 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
     const { asFragment } = render(
       <EnhancedComponent>
         <div>Accordion Item 1</div>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div initiallyExpanded>Accordion Item 2</div>
         <div>Accordion Item 3</div>
       </EnhancedComponent>,
@@ -65,7 +66,9 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
     const { asFragment } = render(
       <EnhancedComponent>
         <div>Accordion Item 1</div>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div initiallyExpanded>Accordion Item 2</div>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div initiallyExpanded>Accordion Item 3</div>
       </EnhancedComponent>,
     );

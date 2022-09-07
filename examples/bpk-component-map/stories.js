@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -32,20 +30,27 @@ import {
   MultipleMapsExample,
 } from './examples';
 
-storiesOf('bpk-component-map', module)
-  .add('Simple', SimpleExample)
-  .add(
-    'Drag disabled and controls hidden',
-    DragDisabledAndHiddenControlsExample,
-  )
-  .add('Greedy gesture handling', GreddyGestureHandlingExample)
-  .add(
-    'With onZoom and onRegionChange callbacks',
-    WithOnZoomAndOnRegionChangeExample,
-  )
-  .add('With onTilesLoaded', WithOnTilesLoadedExample)
-  .add('With a bounding box', WithBoundingBoxExample)
-  .add('With a marker', WithAMarkerExample)
-  .add('Icon markers', WithIconMarkersExample)
-  .add('Price markers', WithPriceMarkersExample)
-  .add('Multi maps', MultipleMapsExample);
+export default {
+  title: 'bpk-component-map',
+};
+
+export const Simple = SimpleExample;
+export const DragDisabledAndControlsHidden =
+  DragDisabledAndHiddenControlsExample;
+
+export const GreedyGestureHandling = GreddyGestureHandlingExample;
+
+export const WithOnZoomAndOnRegionChangeCallbacks =
+  WithOnZoomAndOnRegionChangeExample;
+
+export const WithOnTilesLoaded = WithOnTilesLoadedExample;
+
+export const WithABoundingBox = WithBoundingBoxExample;
+
+export const WithAMarker = WithAMarkerExample;
+
+export const IconMarkers = WithIconMarkersExample;
+
+export const PriceMarkers = WithPriceMarkersExample;
+
+export const MultiMaps = MultipleMapsExample;

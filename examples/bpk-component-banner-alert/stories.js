@@ -16,46 +16,55 @@
  * limitations under the License.
  */
 /* @flow strict */
-
-import { storiesOf } from '@storybook/react';
-
 import {
-  Neutral,
-  Primary,
-  Success,
-  SuccessLongMessage,
-  Dismissable,
-  SuccessExpandable,
-  SuccessAnimateOnEnter,
-  SuccessWithReactRenderedMessage,
-  Warn,
+  NeutralExample,
+  PrimaryExample,
+  SuccessExample,
+  SuccessLongMessageExample,
+  DismissableExample,
+  SuccessExpandableExample,
+  SuccessAnimateOnEnterExample,
+  SuccessWithReactRenderedMessageExample,
+  WarnExample,
   ErrorExample,
-  Event,
-  SuccessDismissableBehaviour,
-  SuccessExpandableBehaviour,
-  SuccessAutomaticallyDismissed,
-  SuccessCustomIcon,
-  DocsDefault,
+  EventExample,
+  SuccessDismissableBehaviourExample,
+  SuccessExpandableBehaviourExample,
+  SuccessAutomaticallyDismissedExample,
+  SuccessCustomIconExample,
+  DocsDefaultExample,
 } from './examples';
 
-storiesOf('bpk-component-banner-alert', module)
-  .add('Docs default', DocsDefault)
-  .add('Neutral', Neutral)
-  .add('Primary', Primary)
-  .add('Success', Success)
-  .add('Success (long message)', SuccessLongMessage)
-  .add('Success (dismissable)', Dismissable)
-  .add('Success(expandable)', SuccessExpandable)
-  .add('Success (animate on enter)', SuccessAnimateOnEnter)
-  .add('Success with React rendered message', SuccessWithReactRenderedMessage)
-  .add('Warn', Warn)
-  .add('Error', ErrorExample)
-  .add('Event', Event)
-  .add('Success (dismissable behaviour)', SuccessDismissableBehaviour)
-  .add('Success (expandable behaviour)', SuccessExpandableBehaviour)
-  .add(
-    'Success (automatically dismissed after 5 seconds)',
-    SuccessAutomaticallyDismissed,
-  )
-  .add('Success with custom icon', SuccessCustomIcon)
-  .add('Visual test', DocsDefault);
+export default {
+  title: 'bpk-component-banner-alert',
+};
+
+export const DocsDefault = DocsDefaultExample;
+
+export const Neutral = NeutralExample;
+export const Primary = PrimaryExample;
+export const Success = SuccessExample;
+export const SuccessLongMessage = SuccessLongMessageExample;
+
+export const SuccessDismissable = DismissableExample;
+
+export const SuccessExpandable = SuccessExpandableExample;
+
+export const SuccessAnimateOnEnter = SuccessAnimateOnEnterExample;
+
+export const SuccessWithReactRenderedMessage =
+  SuccessWithReactRenderedMessageExample;
+
+export const Warn = WarnExample;
+export const Error = ErrorExample;
+export const Event = EventExample;
+export const SuccessDismissableBehaviour = SuccessDismissableBehaviourExample;
+
+export const SuccessExpandableBehaviour = SuccessExpandableBehaviourExample;
+
+export const SuccessAutomaticallyDismissedAfter5Seconds =
+  SuccessAutomaticallyDismissedExample;
+
+export const SuccessWithCustomIcon = SuccessCustomIconExample;
+
+export const VisualTest = DocsDefaultExample;

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index.scss';
 
 $bpk-spacing-v2: true;
 
@@ -36,6 +36,7 @@ $bpk-spacing-v2: true;
 
   &__icon {
     position: absolute;
+
     // This ensures that the icon is positioned exactly in the
     // centre of the marker.
     top: 0.3rem;
@@ -43,7 +44,7 @@ $bpk-spacing-v2: true;
     color: $bpk-surface-default-day;
 
     > svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
 
     &--interactive {

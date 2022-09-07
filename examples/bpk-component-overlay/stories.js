@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   OverlayTypeNoneExample,
@@ -30,15 +28,22 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-overlay', module)
-  .add('Default', DefaultExample)
-  .add('overlayType="none"', OverlayTypeNoneExample)
-  .add('with foreground content', WithForegroundContentExample)
-  .add('With BpkImage', WithBpkImageExample)
-  .add('With BpkImage and overlayType="none"', WithBpkImageNoTintExample)
-  .add('With BpkImage, lazy loaded', WithBpkImageLazyLoadedExample)
-  .add(
-    'Text overlaid on an image using foreground content',
-    TextOverlaidOnImageExample,
-  )
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-overlay',
+};
+
+export const Default = DefaultExample;
+export const OverlayTypeNone = OverlayTypeNoneExample;
+
+export const WithForegroundContent = WithForegroundContentExample;
+
+export const WithBpkImage = WithBpkImageExample;
+
+export const WithBpkImageAndOverlayTypeNone = WithBpkImageNoTintExample;
+
+export const WithBpkImageLazyLoaded = WithBpkImageLazyLoadedExample;
+
+export const TextOverlaidOnAnImageUsingForegroundContent =
+  TextOverlaidOnImageExample;
+
+export const VisualTest = MixedExample;

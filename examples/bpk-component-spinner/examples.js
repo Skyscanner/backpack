@@ -29,7 +29,7 @@ import {
 
 import SpinnerLayout from './SpinnerLayout';
 
-const Small = () => (
+const SmallExample = () => (
   <SpinnerLayout>
     <BpkSpinner type={SPINNER_TYPES.primary} />
     <BpkSpinner type={SPINNER_TYPES.dark} />
@@ -37,7 +37,7 @@ const Small = () => (
   </SpinnerLayout>
 );
 
-const Large = () => (
+const LargeExample = () => (
   <SpinnerLayout>
     <BpkLargeSpinner type={SPINNER_TYPES.primary} />
     <BpkLargeSpinner type={SPINNER_TYPES.dark} />
@@ -45,7 +45,7 @@ const Large = () => (
   </SpinnerLayout>
 );
 
-const ExtraLarge = () => (
+const ExtraLargeExample = () => (
   <SpinnerLayout>
     <BpkExtraLargeSpinner type={SPINNER_TYPES.primary} />
     <BpkExtraLargeSpinner type={SPINNER_TYPES.dark} />
@@ -53,4 +53,4 @@ const ExtraLarge = () => (
   </SpinnerLayout>
 );
 
-export { Small, Large, ExtraLarge };
+export { SmallExample, LargeExample, ExtraLargeExample };

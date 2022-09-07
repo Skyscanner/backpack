@@ -16,14 +16,12 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   ScrollToSelectedExample,
   NotUnderlinedExample,
   LightAppearanceExample,
-  UsingCustomScrollColors,
+  UsingCustomScrollColorsExample,
   AnchorTagsExample,
   ExtremeExample,
   SpacedAroundExample,
@@ -32,15 +30,26 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-horizontal-nav', module)
-  .add('Example', DefaultExample)
-  .add('Scroll to selected element', ScrollToSelectedExample)
-  .add('Not underlined', NotUnderlinedExample)
-  .add('Light appearance', LightAppearanceExample)
-  .add('Using custom scroll colors', UsingCustomScrollColors)
-  .add('Anchor tags', AnchorTagsExample)
-  .add('Extreme example', ExtremeExample)
-  .add('Space around', SpacedAroundExample)
-  .add('Disabled item', DisabledItemExample)
-  .add('Separators', SeparatorsExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-horizontal-nav',
+};
+
+export const Example = DefaultExample;
+export const ScrollToSelectedElement = ScrollToSelectedExample;
+
+export const NotUnderlined = NotUnderlinedExample;
+
+export const LightAppearance = LightAppearanceExample;
+
+export const UsingCustomScrollColors = UsingCustomScrollColorsExample;
+
+export const AnchorTags = AnchorTagsExample;
+
+export const Extreme = ExtremeExample;
+
+export const SpaceAround = SpacedAroundExample;
+
+export const DisabledItem = DisabledItemExample;
+
+export const Separators = SeparatorsExample;
+export const VisualTest = MixedExample;

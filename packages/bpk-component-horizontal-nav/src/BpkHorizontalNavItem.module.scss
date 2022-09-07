@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+@import '~bpk-mixins/index.scss';
 
 $bpk-spacing-v2: true;
 
@@ -40,7 +40,7 @@ $bpk-spacing-v2: true;
     background: none;
     text-decoration: none;
     cursor: pointer;
-    fill: currentColor;
+    fill: currentcolor;
 
     &--default {
       @include bpk-themeable-property(

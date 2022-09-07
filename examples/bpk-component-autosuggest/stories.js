@@ -18,28 +18,36 @@
 
 /* @flow strict */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import AutosuggestExample from './examples';
 
-storiesOf('bpk-component-autosuggest', module)
-  .add('Example', () => <AutosuggestExample />)
-  .add('With icons', () => <AutosuggestExample includeIcon />)
-  .add('With sub headings', () => <AutosuggestExample includeSubheading />)
-  .add('With tertiary labels', () => (
-    <AutosuggestExample includeTertiaryLabel />
-  ))
-  .add('With sub heading + tertiary labels', () => (
-    <AutosuggestExample includeSubheading includeTertiaryLabel />
-  ))
-  .add('Hanzi', () => (
-    <AutosuggestExample includeSubheading includeTertiaryLabel hanzi />
-  ))
-  .add('All', () => (
-    <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon />
-  ))
-  .add('Small input', () => (
-    <div style={{ width: '80px' }}>
-      <AutosuggestExample />
-    </div>
-  ));
+export default {
+  title: 'bpk-component-autosuggest',
+};
+
+export const Example = () => <AutosuggestExample />;
+export const WithIcons = () => <AutosuggestExample includeIcon />;
+
+export const WithSubHeadings = () => <AutosuggestExample includeSubheading />;
+
+export const WithTertiaryLabels = () => (
+  <AutosuggestExample includeTertiaryLabel />
+);
+
+export const WithSubHeadingTertiaryLabels = () => (
+  <AutosuggestExample includeSubheading includeTertiaryLabel />
+);
+
+export const Hanzi = () => (
+  <AutosuggestExample includeSubheading includeTertiaryLabel hanzi />
+);
+
+export const All = () => (
+  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon />
+);
+
+export const SmallInput = () => (
+  <div style={{ width: '80px' }}>
+    <AutosuggestExample />
+  </div>
+);

@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   StoppingAfterScrollsExample,
@@ -44,27 +42,30 @@ const withScrollReset = (story) => {
   return story();
 };
 
-storiesOf('bpk-component-infinite-scroll', module)
-  .addDecorator(withScrollReset)
-  .add('Default', DefaultExample)
-  .add('Partial load - load more after 15 items', StoppingAfterScrollsExample)
-  .add('Infinite list of elements', InfiniteListOfElementsExample)
-  .add(
-    'Different no. elements on load and on scroll',
-    DifferentNumElementsOnLoadAndScrollExample,
-  )
-  .add('Load 1 element per scroll', LoadOneElementPerScrollExample)
-  .add('Custom loading Item', CustomLoadingItemExample)
-  .add('Force update data', ForceUpdateDataExample)
-  .add(
-    'Force update data - Empty array and see more after',
-    ForceUpdateDataExampleEmptyArrayExample,
-  )
-  .add(
-    'Force update data - From non empty to empty',
-    ForceUpdateDataExampleFromNonEmptyToEmptyExample,
-  )
-  .add(
-    'Infer datasource complete when less than request elements retruned by datasource',
-    InferDatasourceWhenLessThanRequestElementsExample,
-  );
+export default {
+  title: 'bpk-component-infinite-scroll',
+  decorators: [withScrollReset],
+};
+
+export const Default = DefaultExample;
+export const PartialLoadLoadMoreAfter15Items = StoppingAfterScrollsExample;
+
+export const InfiniteListOfElements = InfiniteListOfElementsExample;
+
+export const DifferentNoElementsOnLoadAndOnScroll =
+  DifferentNumElementsOnLoadAndScrollExample;
+
+export const Load1ElementPerScroll = LoadOneElementPerScrollExample;
+
+export const CustomLoadingItem = CustomLoadingItemExample;
+
+export const ForceUpdateData = ForceUpdateDataExample;
+
+export const ForceUpdateDataEmptyArrayAndSeeMoreAfter =
+  ForceUpdateDataExampleEmptyArrayExample;
+
+export const ForceUpdateDataFromNonEmptyToEmpty =
+  ForceUpdateDataExampleFromNonEmptyToEmptyExample;
+
+export const InferDatasourceCompleteWhenLessThanRequestElementsRetrunedByDatasource =
+  InferDatasourceWhenLessThanRequestElementsExample;

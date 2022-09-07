@@ -16,33 +16,42 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   RangeExample,
-  OpenOnRender,
-  MinDateInPast,
-  WithoutDateSet,
-  PassingProps,
-  DepartReturn,
-  CustomComponent,
+  OpenOnFirstRenderExample,
+  MinDateInPastExample,
+  WithoutDateSetExample,
+  PassingPropsExample,
+  DepartReturnExample,
+  CustomComponentExample,
   InvalidExample,
   MultipleRangeInputExample,
   DefaultVisualExample,
   VisualRangeExample,
 } from './examples';
 
-storiesOf('bpk-component-datepicker', module)
-  .add('Default', DefaultExample)
-  .add('Range', RangeExample)
-  .add('Open on first render', OpenOnRender)
-  .add('Min date in the past', MinDateInPast)
-  .add('Without date set', WithoutDateSet)
-  .add('Passing through props to underlying input', PassingProps)
-  .add('Depart & Return', DepartReturn)
-  .add('Custon calendar component', CustomComponent)
-  .add('Invalid', InvalidExample)
-  .add('Range with multiple inputs', MultipleRangeInputExample)
-  .add('Visual test', DefaultVisualExample)
-  .add('Visual test range', VisualRangeExample);
+export default {
+  title: 'bpk-component-datepicker',
+};
+
+export const Default = DefaultExample;
+export const Range = RangeExample;
+export const OpenOnFirstRender = OpenOnFirstRenderExample;
+
+export const MinDateInThePast = MinDateInPastExample;
+
+export const WithoutDateSet = WithoutDateSetExample;
+
+export const PassingThroughPropsToUnderlyingInput = PassingPropsExample;
+
+export const DepartReturn = DepartReturnExample;
+
+export const CustonCalendarComponent = CustomComponentExample;
+
+export const Invalid = InvalidExample;
+export const RangeWithMultipleInputs = MultipleRangeInputExample;
+
+export const VisualTest = DefaultVisualExample;
+
+export const VisualTestRange = VisualRangeExample;

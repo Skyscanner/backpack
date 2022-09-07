@@ -16,21 +16,25 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithHeadingTagsExample,
   ParagraphExample,
-  WithDefaultProps,
+  WithDefaultPropsExample,
   HeadingStylesExample,
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-text', module)
-  .add('Default', DefaultExample)
-  .add('With heading tags', WithHeadingTagsExample)
-  .add('Paragraph', ParagraphExample)
-  .add('using withDefaultProps', WithDefaultProps)
-  .add('Heading styles', HeadingStylesExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-text',
+};
+
+export const Default = DefaultExample;
+export const WithHeadingTags = WithHeadingTagsExample;
+
+export const Paragraph = ParagraphExample;
+export const UsingWithDefaultProps = WithDefaultPropsExample;
+
+export const HeadingStyles = HeadingStylesExample;
+
+export const VisualTest = MixedExample;

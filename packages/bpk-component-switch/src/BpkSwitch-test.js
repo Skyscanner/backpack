@@ -20,7 +20,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BpkSwitch, { SWITCH_TYPES } from './BpkSwitch';
+import BpkSwitch from './BpkSwitch';
 
 describe('BpkSwitch', () => {
   it('should render correctly', () => {
@@ -28,10 +28,8 @@ describe('BpkSwitch', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render event type', () => {
-    const { asFragment } = render(
-      <BpkSwitch label="Switch" type={SWITCH_TYPES.event} />,
-    );
+  it('should render small switch', () => {
+    const { asFragment } = render(<BpkSwitch label="Switch" small />);
     expect(asFragment()).toMatchSnapshot();
   });
 

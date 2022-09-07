@@ -97,7 +97,7 @@ const Gridlines = ({ size, ...rest }) => (
 
 Gridlines.propTypes = { size: number.isRequired };
 
-const AxesAndGridlines = () => {
+const AxesAndGridlinesExample = () => {
   const dataset = [
     [5, 20],
     [480, 90],
@@ -147,7 +147,7 @@ const DefaultExample = () => (
   />
 );
 
-const CustomScrollColors = () => (
+const CustomScrollColorsExample = () => (
   <RtlBarchart
     initialWidth={500}
     initialHeight={300}
@@ -170,7 +170,7 @@ const CustomScrollColors = () => (
   />
 );
 
-const DefaultDisabledDataTable = () => (
+const DefaultDisabledDataTableExample = () => (
   <RtlBarchart
     initialWidth={500}
     initialHeight={300}
@@ -187,7 +187,7 @@ const DefaultDisabledDataTable = () => (
   />
 );
 
-const Interactive = () => (
+const InteractiveExample = () => (
   <SelectableBarChart
     initialWidth={500}
     initialHeight={300}
@@ -203,7 +203,7 @@ const Interactive = () => (
   />
 );
 
-const Outliers = () => (
+const OutliersExample = () => (
   <RtlBarchart
     initialWidth={500}
     initialHeight={300}
@@ -219,7 +219,7 @@ const Outliers = () => (
   />
 );
 
-const CustomTicks = () => (
+const CustomTicksExample = () => (
   <RtlBarchart
     initialWidth={500}
     initialHeight={300}
@@ -237,7 +237,7 @@ const CustomTicks = () => (
   />
 );
 
-const CustomTickLabels = () => (
+const CustomTickLabelsExample = () => (
   <RtlBarchart
     initialWidth={500}
     initialHeight={300}
@@ -292,7 +292,7 @@ const GridlinesExample = () => (
   />
 );
 
-const CustomYAxisDomain = () => (
+const CustomYAxisDomainExample = () => (
   <div>
     <Heading>Domain (0 - 800)</Heading>
     <RtlBarchart
@@ -324,14 +324,14 @@ const CustomYAxisDomain = () => (
 );
 
 export {
-  AxesAndGridlines,
+  AxesAndGridlinesExample,
   DefaultExample,
-  CustomScrollColors,
-  DefaultDisabledDataTable,
-  Interactive,
-  Outliers,
-  CustomTicks,
-  CustomTickLabels,
+  CustomScrollColorsExample,
+  DefaultDisabledDataTableExample,
+  InteractiveExample,
+  OutliersExample,
+  CustomTicksExample,
+  CustomTickLabelsExample,
   GridlinesExample,
-  CustomYAxisDomain,
+  CustomYAxisDomainExample,
 };

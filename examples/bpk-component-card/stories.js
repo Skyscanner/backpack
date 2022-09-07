@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithHrefExample,
@@ -28,10 +26,17 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-card', module)
-  .add('Default', DefaultExample)
-  .add('With href', WithHrefExample)
-  .add('Without padding', WithoutPaddingExample)
-  .add('Non-atomic', NonAtomicExample)
-  .add('Non-atomic with href', NonAtomicHrefExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-card',
+};
+
+export const Default = DefaultExample;
+export const WithHref = WithHrefExample;
+
+export const WithoutPadding = WithoutPaddingExample;
+
+export const NonAtomic = NonAtomicExample;
+
+export const NonAtomicWithHref = NonAtomicHrefExample;
+
+export const VisualTest = MixedExample;

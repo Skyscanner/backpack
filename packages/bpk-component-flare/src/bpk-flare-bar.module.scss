@@ -16,13 +16,14 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index.scss';
 
 $bpk-spacing-v2: true;
 
 .bpk-flare-bar {
   &__container {
     position: relative;
+
     // when we use `margin: X%`, the percentage is proportional to the size of the nearest block container's width
     // https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     // By using `display: flex` we ensure that this container is the nearest block container

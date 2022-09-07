@@ -174,69 +174,71 @@ const LoadingButtonStory = ({
 
 LoadingButtonStory.defaultProps = { className: null };
 
-const DocsPrimary = () => (
+const DocsPrimaryExample = () => (
   <div>
     <InteractiveExample>Search</InteractiveExample>
     &nbsp;
     <InteractiveExample large>Search</InteractiveExample>
   </div>
 );
-const Primary = () => <LoadingButtonStory wrapped={BpkLoadingButton} />;
-const PrimaryOnDark = () => (
+const PrimaryExample = () => <LoadingButtonStory wrapped={BpkLoadingButton} />;
+const PrimaryOnDarkExample = () => (
   <BpkDarkExampleWrapper>
     <LoadingButtonStory primaryOnDark wrapped={BpkLoadingButton} />
   </BpkDarkExampleWrapper>
 );
-const PrimaryOnLight = () => (
+const PrimaryOnLightExample = () => (
   <LoadingButtonStory primaryOnLight wrapped={BpkLoadingButton} />
 );
-const Secondary = () => (
+const SecondaryExample = () => (
   <LoadingButtonStory secondary wrapped={BpkLoadingButton} />
 );
-const SecondaryOnDark = () => (
+const SecondaryOnDarkExample = () => (
   <BpkDarkExampleWrapper>
     <LoadingButtonStory secondaryOnDark wrapped={BpkLoadingButton} />
   </BpkDarkExampleWrapper>
 );
-const Destructive = () => (
+const DestructiveExample = () => (
   <LoadingButtonStory destructive wrapped={BpkLoadingButton} />
 );
-const LinkButton = () => <LoadingButtonStory link wrapped={BpkLoadingButton} />;
-const LinkOnDarkButton = () => (
+const LinkButtonExample = () => (
+  <LoadingButtonStory link wrapped={BpkLoadingButton} />
+);
+const LinkOnDarkButtonExample = () => (
   <BpkDarkExampleWrapper>
     <LoadingButtonStory linkOnDark wrapped={BpkLoadingButton} />
   </BpkDarkExampleWrapper>
 );
-const Featured = () => (
+const FeaturedExample = () => (
   <LoadingButtonStory featured wrapped={BpkLoadingButton} />
 );
-const Mixture = () => (
+const MixtureExample = () => (
   <div>
-    <Primary />
-    <PrimaryOnLight />
-    <PrimaryOnDark />
-    <Secondary />
-    <SecondaryOnDark />
-    <Destructive />
-    <LinkButton />
-    <LinkOnDarkButton />
-    <Featured />
+    <PrimaryExample />
+    <PrimaryOnLightExample />
+    <PrimaryOnDarkExample />
+    <SecondaryExample />
+    <SecondaryOnDarkExample />
+    <DestructiveExample />
+    <LinkButtonExample />
+    <LinkOnDarkButtonExample />
+    <FeaturedExample />
   </div>
 );
-const AnchorTags = () => (
+const AnchorTagsExample = () => (
   <div>
-    <Primary href="#" />
-    <PrimaryOnLight href="#" />
-    <PrimaryOnDark href="#" />
-    <Secondary href="#" />
-    <SecondaryOnDark href="#" />
-    <Destructive href="#" />
-    <LinkButton href="#" />
-    <LinkOnDarkButton href="#" />
-    <Featured href="#" />
+    <PrimaryExample href="#" />
+    <PrimaryOnLightExample href="#" />
+    <PrimaryOnDarkExample href="#" />
+    <SecondaryExample href="#" />
+    <SecondaryOnDarkExample href="#" />
+    <DestructiveExample href="#" />
+    <LinkButtonExample href="#" />
+    <LinkOnDarkButtonExample href="#" />
+    <FeaturedExample href="#" />
   </div>
 );
-const CustomIcon = () => {
+const CustomIconExample = () => {
   const AlignedIconSm = withButtonAlignment(withRtlSupport(BaggageIconSm));
   const iconSm = <AlignedIconSm />;
   const AlignedIconLg = withLargeButtonAlignment(withRtlSupport(BaggageIconLg));
@@ -395,18 +397,18 @@ const VisualExample = () => (
 );
 
 export {
-  DocsPrimary,
-  Primary,
-  PrimaryOnDark,
-  PrimaryOnLight,
-  Secondary,
-  SecondaryOnDark,
-  Destructive,
-  LinkButton,
-  LinkOnDarkButton,
-  Featured,
-  Mixture,
-  AnchorTags,
-  CustomIcon,
+  DocsPrimaryExample,
+  PrimaryExample,
+  PrimaryOnDarkExample,
+  PrimaryOnLightExample,
+  SecondaryExample,
+  SecondaryOnDarkExample,
+  DestructiveExample,
+  LinkButtonExample,
+  LinkOnDarkButtonExample,
+  FeaturedExample,
+  MixtureExample,
+  AnchorTagsExample,
+  CustomIconExample,
   VisualExample,
 };

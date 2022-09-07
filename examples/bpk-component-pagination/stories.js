@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultPaginationExample,
   FivePagesPaginationExample,
@@ -26,10 +24,18 @@ import {
   VisibleRangeExample,
 } from './examples';
 
-storiesOf('bpk-component-pagination', module)
-  .add('Pagination - default', DefaultPaginationExample)
-  .add('Pagination - 5 visible pages', FivePagesPaginationExample)
-  .add('Pagination - 2 pages', TwoPagesPaginationExample)
-  .add('Pagination - single page', SinglePaginationExample)
-  .add('Pagination - Visible example', VisibleRangeExample)
-  .add('Visual test', DefaultPaginationExample);
+export default {
+  title: 'bpk-component-pagination',
+};
+
+export const PaginationDefault = DefaultPaginationExample;
+
+export const Pagination5VisiblePages = FivePagesPaginationExample;
+
+export const Pagination2Pages = TwoPagesPaginationExample;
+
+export const PaginationSinglePage = SinglePaginationExample;
+
+export const PaginationVisibleExample = VisibleRangeExample;
+
+export const VisualTest = DefaultPaginationExample;

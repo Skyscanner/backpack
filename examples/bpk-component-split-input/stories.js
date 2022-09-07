@@ -17,21 +17,21 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SplitInputExample,
-  SplitInputSixDigit,
-  SplitInputExampleWithPlaceholder,
-  SplitInputSmall,
+  SplitInputSixDigitExample,
+  SplitInputWithPlaceholderExample,
+  SplitInputSmallExample,
 } from './examples';
 
-storiesOf('bpk-component-split-input', module)
-  .add('Default Input', SplitInputExample)
-  .add('6 char alphanumeric OTP', SplitInputSixDigit)
-  .add(
-    '6 char alphanumeric OTP with placeholder',
-    SplitInputExampleWithPlaceholder,
-  )
-  .add('Small Input', SplitInputSmall)
-  .add('Visual test', SplitInputExample);
+export default {
+  title: 'bpk-component-split-input',
+};
+
+export const DefaultInput = SplitInputExample;
+export const SplitInputSixDigit = SplitInputSixDigitExample;
+
+export const SplitInputWithPlaceholder = SplitInputWithPlaceholderExample;
+
+export const SmallInput = SplitInputSmallExample;
+export const VisualTest = SplitInputExample;

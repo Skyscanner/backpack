@@ -142,7 +142,7 @@ const HonestWeekendExample = () => (
   />
 );
 
-const WeekdayKeyIsNameNarrow = () => (
+const WeekdayKeyIsNameNarrowExample = () => (
   <CalendarContainer
     id="myCalendar"
     formatMonth={formatMonth}
@@ -180,7 +180,7 @@ const JapaneseExample = () => (
   />
 );
 
-const MinAndMaxDate = () => (
+const MinAndMaxDateExample = () => (
   <CalendarContainer
     id="myCalendar"
     formatMonth={formatMonth}
@@ -223,7 +223,7 @@ const MarkOutsideDaysFalseExample = () => (
   />
 );
 
-const CustomComposedCalendarSafariBug = () => (
+const CustomComposedCalendarSafariBugExample = () => (
   <div>
     <p>
       <BpkText>Set your timezone to BRT (Brasilia)</BpkText>
@@ -241,7 +241,9 @@ const CustomComposedCalendarSafariBug = () => (
   </div>
 );
 
-const CustomComposedCalendar = () => <MonthViewCalendar weekStartsOn={1} />;
+const CustomComposedCalendarExample = () => (
+  <MonthViewCalendar weekStartsOn={1} />
+);
 
 const WeekExample = () => {
   // eslint-disable-next-line react/prop-types
@@ -309,7 +311,7 @@ const FocusedDateInThePastExample = () => (
   />
 );
 
-const RangeDateCalendar = () => (
+const RangeDateCalendarExample = () => (
   <CalendarContainer
     id="myCalendar"
     formatMonth={formatMonth}
@@ -336,15 +338,15 @@ export {
   MinDateInThePastExample,
   WeekStartsOnSundayExample,
   HonestWeekendExample,
-  WeekdayKeyIsNameNarrow,
+  WeekdayKeyIsNameNarrowExample,
   ArabicExample,
   JapaneseExample,
-  MinAndMaxDate,
+  MinAndMaxDateExample,
   MarkTodayFalseExample,
   MarkOutsideDaysFalseExample,
-  CustomComposedCalendar,
-  CustomComposedCalendarSafariBug,
+  CustomComposedCalendarExample,
+  CustomComposedCalendarSafariBugExample,
   WeekExample,
   FocusedDateInThePastExample,
-  RangeDateCalendar,
+  RangeDateCalendarExample,
 };

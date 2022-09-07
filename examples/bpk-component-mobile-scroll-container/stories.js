@@ -18,18 +18,18 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithVisibleScrollbarExample,
   SettingLeadingAndTrailingIndicatorClassNameExample,
 } from './examples';
 
-storiesOf('bpk-component-mobile-scroll-container', module)
-  .add('Default', DefaultExample)
-  .add('With visible scrollbar', WithVisibleScrollbarExample)
-  .add(
-    'Setting leadingIndicatorClassName and trailingIndicatorClassName',
-    SettingLeadingAndTrailingIndicatorClassNameExample,
-  );
+export default {
+  title: 'bpk-component-mobile-scroll-container',
+};
+
+export const Default = DefaultExample;
+export const WithVisibleScrollbar = WithVisibleScrollbarExample;
+
+export const SettingLeadingIndicatorClassNameAndTrailingIndicatorClassName =
+  SettingLeadingAndTrailingIndicatorClassNameExample;

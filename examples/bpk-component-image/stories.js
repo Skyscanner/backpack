@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   LegacyWidthAndHeightExample,
@@ -33,22 +31,26 @@ import {
   BackgroundImageWithLazyLoadingAndAnimationExample,
 } from './examples';
 
-storiesOf('bpk-component-image', module)
-  .add('Default', DefaultExample)
-  .add('Using legacy width and height props', LegacyWidthAndHeightExample)
-  .add('With Border Radius', RoundedCornersExample)
-  .add('Full Width', FullWidthExample)
-  .add('Using SrcSet', UsingSrcSetExample)
-  .add('With Animation', WithAnimationExample)
-  .add('With Lazy Loading', WithLazyLoadingExample)
-  .add('With Lazy Loading and Animation', WithLazyLoadingAndAnimationExample)
-  .add('Within a scroll div', WithinScrollDivExample)
-  .add('Background Image', BackgroundImageExample)
-  .add(
-    'Background Image using legacy width and height props',
-    BackgroundImageLegacyPropsExample,
-  )
-  .add(
-    'Background Image with Lazy Loading and Animation',
-    BackgroundImageWithLazyLoadingAndAnimationExample,
-  );
+export default {
+  title: 'bpk-component-image',
+};
+
+export const Default = DefaultExample;
+export const UsingLegacyWidthAndHeightProps = LegacyWidthAndHeightExample;
+
+export const WithBorderRadius = RoundedCornersExample;
+export const FullWidth = FullWidthExample;
+export const UsingSrcSet = UsingSrcSetExample;
+
+export const WithAnimation = WithAnimationExample;
+export const WithLazyLoading = WithLazyLoadingExample;
+export const WithLazyLoadingAndAnimation = WithLazyLoadingAndAnimationExample;
+
+export const WithinAScrollDiv = WithinScrollDivExample;
+
+export const BackgroundImage = BackgroundImageExample;
+export const BackgroundImageUsingLegacyWidthAndHeightProps =
+  BackgroundImageLegacyPropsExample;
+
+export const BackgroundImageWithLazyLoadingAndAnimation =
+  BackgroundImageWithLazyLoadingAndAnimationExample;

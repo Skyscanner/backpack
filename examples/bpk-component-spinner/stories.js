@@ -18,11 +18,12 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
+import { SmallExample, LargeExample, ExtraLargeExample } from './examples';
 
-import { Small, Large, ExtraLarge } from './examples';
+export default {
+  title: 'bpk-component-spinner',
+};
 
-storiesOf('bpk-component-spinner', module)
-  .add('Small', Small)
-  .add('Large', Large)
-  .add('Extra large', ExtraLarge);
+export const Small = SmallExample;
+export const Large = LargeExample;
+export const ExtraLarge = ExtraLargeExample;

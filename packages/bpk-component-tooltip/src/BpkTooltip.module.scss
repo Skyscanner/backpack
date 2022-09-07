@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
-$bpk-spacing-v2: true;
+@import '~bpk-mixins/index.scss';
 
+$bpk-spacing-v2: true;
 $arrow-size: bpk-spacing-md();
 $arrow-inset-margin: -($bpk-one-pixel-rem * 3);
 $light-arrow-border-color: $bpk-color-sky-gray-tint-06;
@@ -108,6 +108,7 @@ $dark-background-color: $bpk-color-sky-gray;
 
     &--dark {
       background-color: $dark-background-color;
+
       .bpk-tooltip-portal[data-popper-placement='top'] & {
         border-right-color: $dark-background-color;
         border-bottom-color: $dark-background-color;

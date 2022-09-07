@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   CtaIconLongTextExample,
   CtaExample,
@@ -26,9 +24,15 @@ import {
   VisualTestExample,
 } from './examples';
 
-storiesOf('bpk-component-floating-notification', module)
-  .add('Default', DefaultExample)
-  .add('With icon', IconExample)
-  .add('With CTA', CtaExample)
-  .add('With CTA, icon, and long text', CtaIconLongTextExample)
-  .add('Visual test', VisualTestExample);
+export default {
+  title: 'bpk-component-floating-notification',
+};
+
+export const Default = DefaultExample;
+export const WithIcon = IconExample;
+
+export const WithCta = CtaExample;
+
+export const WithCtaIconAndLongText = CtaIconLongTextExample;
+
+export const VisualTest = VisualTestExample;

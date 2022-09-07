@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   RequiredExample,
@@ -28,10 +26,14 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-label', module)
-  .add('Example', DefaultExample)
-  .add('Required', RequiredExample)
-  .add('Invalid', InvalidExample)
-  .add('Disabled', DisabledExample)
-  .add('Invalid required', InvalidRequiredExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-label',
+};
+
+export const Example = DefaultExample;
+export const Required = RequiredExample;
+export const Invalid = InvalidExample;
+export const Disabled = DisabledExample;
+export const InvalidRequired = InvalidRequiredExample;
+
+export const VisualTest = MixedExample;

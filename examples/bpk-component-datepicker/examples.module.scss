@@ -16,11 +16,12 @@
 * limitations under the License.
 */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index.scss';
 
 .bpk-datepicker {
   &__container {
     display: flex;
+
     &--item {
       width: 100%;
     }

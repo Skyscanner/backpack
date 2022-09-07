@@ -174,7 +174,7 @@ const SplitWeekRangeExample = () => (
   />
 );
 
-const WeekStartsOnSix = () => (
+const WeekStartsOnSixExample = () => (
   <ScrollableCal
     weekStartsOn={6}
     daysOfWeek={weekDays}
@@ -188,7 +188,7 @@ const WeekStartsOnSix = () => (
   />
 );
 
-const WithFocusedDate = () => (
+const WithFocusedDateExample = () => (
   <ScrollableCal
     weekStartsOn={1}
     daysOfWeek={weekDays}
@@ -203,7 +203,7 @@ const WithFocusedDate = () => (
   />
 );
 
-const TallContainer = () => (
+const TallContainerExample = () => (
   <div style={{ height: '500px', display: 'flex' }}>
     <ScrollableCal
       weekStartsOn={1}
@@ -219,7 +219,7 @@ const TallContainer = () => (
   </div>
 );
 
-const SingleMonth = () => (
+const SingleMonthExample = () => (
   <div style={{ height: '500px', display: 'flex' }}>
     <ScrollableCal
       weekStartsOn={1}
@@ -235,14 +235,14 @@ const SingleMonth = () => (
   </div>
 );
 
-const ScrollableCalendarDate = () => (
+const ScrollableCalendarDateExample = () => (
   <BpkScrollableCalendarDate
     date={new Date()}
     onDateClick={action('Clicked day')}
   />
 );
 
-const ScrollableCalendarGrid = () => (
+const ScrollableCalendarGridExample = () => (
   <BpkScrollableCalendarGrid
     month={new Date(2019, 1, 0)}
     weekStartsOn={1}
@@ -254,7 +254,7 @@ const ScrollableCalendarGrid = () => (
   />
 );
 
-const ScrollableCalendarGridList = () => (
+const ScrollableCalendarGridListExample = () => (
   <BpkScrollableCalendarGridList
     month={new Date()}
     weekStartsOn={1}
@@ -269,7 +269,7 @@ const ScrollableCalendarGridList = () => (
   />
 );
 
-const WeekStartsOnSunday = () => (
+const WeekStartsOnSundayExample = () => (
   <ScrollableCal
     id="myCalendar"
     formatMonth={formatMonth}
@@ -282,7 +282,7 @@ const WeekStartsOnSunday = () => (
   />
 );
 
-const HonestWeekend = () => (
+const HonestWeekendExample = () => (
   <ScrollableCal
     id="myCalendar"
     formatMonth={formatMonth}
@@ -295,7 +295,7 @@ const HonestWeekend = () => (
   />
 );
 
-const ArabicLocale = () => (
+const ArabicLocaleExample = () => (
   <ScrollableCal
     id="myCalendar"
     formatMonth={formatMonthArabic}
@@ -308,7 +308,7 @@ const ArabicLocale = () => (
   />
 );
 
-const JapaneseLocale = () => (
+const JapaneseLocaleExample = () => (
   <ScrollableCal
     id="myCalendar"
     formatMonth={formatMonthJapanese}
@@ -321,7 +321,7 @@ const JapaneseLocale = () => (
   />
 );
 
-const DifferentMinMaxDates = () => (
+const DifferentMinMaxDatesExample = () => (
   <ScrollableCal
     id="myCalendar"
     formatMonth={formatMonth}
@@ -334,7 +334,7 @@ const DifferentMinMaxDates = () => (
   />
 );
 
-const DontMarkToday = () => (
+const DontMarkTodayExample = () => (
   <ScrollableCal
     id="myCalendar"
     formatMonth={formatMonth}
@@ -348,7 +348,7 @@ const DontMarkToday = () => (
   />
 );
 
-const PastCalendar = () => (
+const PastCalendarExample = () => (
   <ScrollableCal
     id="myCalendar"
     formatMonth={formatMonth}
@@ -366,18 +366,18 @@ export {
   DefaultExample,
   RangeExample,
   SplitWeekRangeExample,
-  WeekStartsOnSix,
-  WithFocusedDate,
-  TallContainer,
-  SingleMonth,
-  WeekStartsOnSunday,
-  HonestWeekend,
-  ArabicLocale,
-  JapaneseLocale,
-  DifferentMinMaxDates,
-  DontMarkToday,
-  ScrollableCalendarDate,
-  ScrollableCalendarGrid,
-  ScrollableCalendarGridList,
-  PastCalendar,
+  WeekStartsOnSixExample,
+  WithFocusedDateExample,
+  TallContainerExample,
+  SingleMonthExample,
+  WeekStartsOnSundayExample,
+  HonestWeekendExample,
+  ArabicLocaleExample,
+  JapaneseLocaleExample,
+  DifferentMinMaxDatesExample,
+  DontMarkTodayExample,
+  ScrollableCalendarDateExample,
+  ScrollableCalendarGridExample,
+  ScrollableCalendarGridListExample,
+  PastCalendarExample,
 };

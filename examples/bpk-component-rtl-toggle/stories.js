@@ -17,10 +17,11 @@
  */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import BpkRtlToggle from '../../packages/bpk-component-rtl-toggle';
 
-storiesOf('bpk-component-rtl-toggle', module).add('Example', () => (
-  <BpkRtlToggle />
-));
+export default {
+  title: 'bpk-component-rtl-toggle',
+};
+
+export const Example = () => <BpkRtlToggle />;

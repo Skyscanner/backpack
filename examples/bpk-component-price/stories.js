@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SmallLeftExample,
   SmallLeftWithDescriptionExample,
@@ -32,24 +30,31 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-price', module)
-  .add('Small left - default', SmallLeftExample)
-  .add('Small left with description', SmallLeftWithDescriptionExample)
-  .add(
-    'Small left with subtitle and description',
-    SmallLeftWithSubtitleDescriptionExample,
-  )
-  .add('Small right', SmallRightExample)
-  .add('Small right with description', SmallRightWithDescriptionExample)
-  .add(
-    'Small right with subtitle and description',
-    SmallRightWithSubtitleDescriptionExample,
-  )
-  .add('Large left - default', LargeLeftExample)
-  .add('Large left with description', LargeLeftWithDescriptionExample)
-  .add(
-    'Large left with subtitle and description',
-    LargeLeftWithSubtitleDescriptionExample,
-  )
-  .add('Large left with long price', LargeLeftLongPriceExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-price',
+};
+
+export const SmallLeftDefault = SmallLeftExample;
+
+export const SmallLeftWithDescription = SmallLeftWithDescriptionExample;
+
+export const SmallLeftWithSubtitleAndDescription =
+  SmallLeftWithSubtitleDescriptionExample;
+
+export const SmallRight = SmallRightExample;
+
+export const SmallRightWithDescription = SmallRightWithDescriptionExample;
+
+export const SmallRightWithSubtitleAndDescription =
+  SmallRightWithSubtitleDescriptionExample;
+
+export const LargeLeftDefault = LargeLeftExample;
+
+export const LargeLeftWithDescription = LargeLeftWithDescriptionExample;
+
+export const LargeLeftWithSubtitleAndDescription =
+  LargeLeftWithSubtitleDescriptionExample;
+
+export const LargeLeftWithLongPrice = LargeLeftLongPriceExample;
+
+export const VisualTest = MixedExample;

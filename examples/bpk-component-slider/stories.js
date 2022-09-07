@@ -16,23 +16,31 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
-  SimpleSlider,
-  SimpleLargeSlider,
-  TimeSlider,
-  SimpleSliderWithSteps,
-  RangeSlider,
-  RangeSliderWithMinimumDistance,
+  SimpleSliderExample,
+  SimpleLargeSliderExample,
+  TimeSliderExample,
+  SimpleSliderWithStepsExample,
+  RangeSliderExample,
+  RangeSliderWithMinimumDistanceExample,
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-slider', module)
-  .add('Simple slider', SimpleSlider)
-  .add('Simple large slider', SimpleLargeSlider)
-  .add('Time slider', TimeSlider)
-  .add('Simple slider with steps', SimpleSliderWithSteps)
-  .add('Range slider', RangeSlider)
-  .add('Range slider with minimum distance', RangeSliderWithMinimumDistance)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-slider',
+};
+
+export const SimpleSlider = SimpleSliderExample;
+
+export const SimpleLargeSlider = SimpleLargeSliderExample;
+
+export const TimeSlider = TimeSliderExample;
+
+export const SimpleSliderWithSteps = SimpleSliderWithStepsExample;
+
+export const RangeSlider = RangeSliderExample;
+
+export const RangeSliderWithMinimumDistance =
+  RangeSliderWithMinimumDistanceExample;
+
+export const VisualTest = MixedExample;

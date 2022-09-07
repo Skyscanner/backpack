@@ -467,7 +467,7 @@ const RangeExample = () => (
   </div>
 );
 
-const OpenOnRender = () => (
+const OpenOnFirstRenderExample = () => (
   <div id="application-element">
     <CalendarContainer
       id="myDatepicker"
@@ -490,7 +490,7 @@ const OpenOnRender = () => (
   </div>
 );
 
-const MinDateInPast = () => (
+const MinDateInPastExample = () => (
   <div id="application-element">
     <CalendarContainer
       id="myDatepicker"
@@ -510,7 +510,7 @@ const MinDateInPast = () => (
   </div>
 );
 
-const WithoutDateSet = () => (
+const WithoutDateSetExample = () => (
   <div id="application-element">
     <CalendarContainer
       id="myDatepicker"
@@ -528,7 +528,7 @@ const WithoutDateSet = () => (
   </div>
 );
 
-const PassingProps = () => (
+const PassingPropsExample = () => (
   <div id="application-element">
     <CalendarContainer
       id="myDatepicker"
@@ -547,9 +547,9 @@ const PassingProps = () => (
   </div>
 );
 
-const DepartReturn = () => <ReturnDatepicker />;
+const DepartReturnExample = () => <ReturnDatepicker />;
 
-const CustomComponent = () => {
+const CustomComponentExample = () => {
   const CalendarWithColoredDates = withCalendarState(
     composeCalendar(
       BpkCalendarNav,
@@ -659,12 +659,12 @@ const VisualRangeExample = () => (
 export {
   DefaultExample,
   RangeExample,
-  OpenOnRender,
-  MinDateInPast,
-  WithoutDateSet,
-  PassingProps,
-  DepartReturn,
-  CustomComponent,
+  OpenOnFirstRenderExample,
+  MinDateInPastExample,
+  WithoutDateSetExample,
+  PassingPropsExample,
+  DepartReturnExample,
+  CustomComponentExample,
   InvalidExample,
   MultipleRangeInputExample,
   DefaultVisualExample,

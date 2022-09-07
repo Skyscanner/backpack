@@ -17,9 +17,10 @@
  */
 
 /* @flow strict */
-
-import { storiesOf } from '@storybook/react';
-
 import DefaultExample from './examples';
 
-storiesOf('bpk-component-breakpoint', module).add('Examples', DefaultExample);
+export default {
+  title: 'bpk-component-breakpoint',
+};
+
+export const Examples = DefaultExample;

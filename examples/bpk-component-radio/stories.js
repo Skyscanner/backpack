@@ -18,23 +18,27 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
-  Multiline,
-  Invalid,
-  White,
-  DisabledChecked,
-  DisabledUnchecked,
+  MultilineExample,
+  InvalidExample,
+  WhiteExample,
+  DisabledCheckedExample,
+  DisabledUncheckedExample,
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-radio', module)
-  .add('Default', DefaultExample)
-  .add('Multi line', Multiline)
-  .add('Invalid', Invalid)
-  .add('White', White)
-  .add('Disabled (Checked)', DisabledChecked)
-  .add('Disabled (Unchecked)', DisabledUnchecked)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-radio',
+};
+
+export const Default = DefaultExample;
+export const MultiLine = MultilineExample;
+
+export const Invalid = InvalidExample;
+export const White = WhiteExample;
+export const DisabledChecked = DisabledCheckedExample;
+
+export const DisabledUnchecked = DisabledUncheckedExample;
+
+export const VisualTest = MixedExample;

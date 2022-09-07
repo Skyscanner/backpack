@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
+import { DefaultExample, AlternateExample } from './examples';
 
-import { DefaultExample, Alternate } from './examples';
+export default {
+  title: 'bpk-component-content-container',
+};
 
-storiesOf('bpk-component-content-container', module)
-  .add('Default', DefaultExample)
-  .add('Alternate', Alternate);
+export const Default = DefaultExample;
+export const Alternate = AlternateExample;

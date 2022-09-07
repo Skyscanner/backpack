@@ -183,7 +183,8 @@ BpkMap.propTypes = {
     PropTypes.shape({
       featureType: PropTypes.string,
       elementType: PropTypes.string,
-      stylers: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
+      // eslint-disable-next-line react/forbid-prop-types
+      stylers: PropTypes.arrayOf(PropTypes.object).isRequired,
     }),
   ),
 };
