@@ -16,24 +16,29 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   AutowidthExample,
-  NonHoverRows,
-  FixedWidth,
-  DisabledSort,
-  CustomRowAndHeaderHeights,
+  NonHoverRowsExample,
+  FixedWidthExample,
+  DisabledSortExample,
+  CustomRowAndHeaderHeightsExample,
   HeaderRendererExample,
   CustomSortingExample,
 } from './examples';
 
-storiesOf('bpk-component-datatable', module)
-  .add('Autowidth Example', AutowidthExample)
-  .add('Rows not hoverable', NonHoverRows)
-  .add('Fixed Width Example', FixedWidth)
-  .add('Disabled Sort Example', DisabledSort)
-  .add('Custom row and header heights', CustomRowAndHeaderHeights)
-  .add('Custom sorting Example', CustomSortingExample)
-  .add('Custom header data Example', HeaderRendererExample)
-  .add('Visual test', AutowidthExample);
+export default {
+  title: 'bpk-component-datatable',
+};
+
+export const Autowidth = AutowidthExample;
+export const RowsNotHoverable = NonHoverRowsExample;
+
+export const FixedWidth = FixedWidthExample;
+export const DisabledSort = DisabledSortExample;
+export const CustomRowAndHeaderHeights = CustomRowAndHeaderHeightsExample;
+
+export const CustomSorting = CustomSortingExample;
+
+export const CustomHeaderData = HeaderRendererExample;
+
+export const VisualTest = AutowidthExample;

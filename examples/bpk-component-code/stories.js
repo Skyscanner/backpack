@@ -17,19 +17,22 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
-  Inline,
-  InlineAlternate,
-  Block,
-  BlockAlternate,
+  InlineExample,
+  InlineAlternateExample,
+  BlockExample,
+  BlockAlternateExample,
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-code', module)
-  .add('Inline', Inline)
-  .add('Inline - Alternate', InlineAlternate)
-  .add('Block', Block)
-  .add('Block - Alternate', BlockAlternate)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-code',
+};
+
+export const Inline = InlineExample;
+export const InlineAlternate = InlineAlternateExample;
+
+export const Block = BlockExample;
+export const BlockAlternate = BlockAlternateExample;
+
+export const VisualTest = MixedExample;

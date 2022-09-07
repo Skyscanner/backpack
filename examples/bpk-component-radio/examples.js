@@ -69,7 +69,7 @@ class GroupExample extends React.Component<{}, { value: string }> {
 
 const DefaultExample = () => <GroupExample />;
 
-const Multiline = () => (
+const MultilineExample = () => (
   <BpkRadio
     id="multi_line"
     name="multi_line"
@@ -78,15 +78,15 @@ const Multiline = () => (
   />
 );
 
-const Invalid = () => <GroupExample valid={false} />;
+const InvalidExample = () => <GroupExample valid={false} />;
 
-const White = () => (
+const WhiteExample = () => (
   <BpkDarkExampleWrapper padded>
     <GroupExample white />
   </BpkDarkExampleWrapper>
 );
 
-const DisabledChecked = () => (
+const DisabledCheckedExample = () => (
   <BpkRadio
     id="disabled_checked"
     name="disabled_checked"
@@ -97,7 +97,7 @@ const DisabledChecked = () => (
   />
 );
 
-const DisabledUnchecked = () => (
+const DisabledUncheckedExample = () => (
   <BpkRadio
     id="disabled"
     name="disabled"
@@ -110,20 +110,20 @@ const DisabledUnchecked = () => (
 const MixedExample = () => (
   <div>
     <DefaultExample />
-    <Multiline />
-    <Invalid />
-    <White />
-    <DisabledChecked />
-    <DisabledUnchecked />
+    <MultilineExample />
+    <InvalidExample />
+    <WhiteExample />
+    <DisabledCheckedExample />
+    <DisabledUncheckedExample />
   </div>
 );
 
 export {
   DefaultExample,
-  Multiline,
-  Invalid,
-  White,
-  DisabledChecked,
-  DisabledUnchecked,
+  MultilineExample,
+  InvalidExample,
+  WhiteExample,
+  DisabledCheckedExample,
+  DisabledUncheckedExample,
   MixedExample,
 };

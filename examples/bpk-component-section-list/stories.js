@@ -18,10 +18,11 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import DefaultExample from './examples';
 
-storiesOf('bpk-component-section-list', module)
-  .add('Default', DefaultExample)
-  .add('Visual test', DefaultExample);
+export default {
+  title: 'bpk-component-section-list',
+};
+
+export const Default = DefaultExample;
+export const VisualTest = DefaultExample;

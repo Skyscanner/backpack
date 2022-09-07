@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   OverflowingExamples,
@@ -28,9 +26,14 @@ import {
   WithFullHeightContentExample,
 } from './examples';
 
-storiesOf('bpk-component-drawer', module)
-  .add('Default', DefaultExample)
-  .add('Overflowing', OverflowingExamples)
-  .add('Close button text', CloseButtonTextExample)
-  .add('With visually hidden title', WithVisuallyHiddenTitleExample)
-  .add('With full height content', WithFullHeightContentExample);
+export default {
+  title: 'bpk-component-drawer',
+};
+
+export const Default = DefaultExample;
+export const Overflowing = OverflowingExamples;
+export const CloseButtonText = CloseButtonTextExample;
+
+export const WithVisuallyHiddenTitle = WithVisuallyHiddenTitleExample;
+
+export const WithFullHeightContent = WithFullHeightContentExample;

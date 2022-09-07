@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import DefaultExample from './examples';
 
-storiesOf('bpk-component-grid-toggle', module).add('Example', DefaultExample);
+export default {
+  title: 'bpk-component-grid-toggle',
+};
+
+export const Example = DefaultExample;

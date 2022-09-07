@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   LargeSizeExample,
@@ -28,10 +26,17 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-rating', module)
-  .add('Default', DefaultExample)
-  .add('Large size ratings', LargeSizeExample)
-  .add('Show scale ratings', ShowScaleExample)
-  .add('Title only ratings', TitleOnlyExample)
-  .add('Zero to ten scale ratings', ZeroToTenScaleExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-rating',
+};
+
+export const Default = DefaultExample;
+export const LargeSizeRatings = LargeSizeExample;
+
+export const ShowScaleRatings = ShowScaleExample;
+
+export const TitleOnlyRatings = TitleOnlyExample;
+
+export const ZeroToTenScaleRatings = ZeroToTenScaleExample;
+
+export const VisualTest = MixedExample;

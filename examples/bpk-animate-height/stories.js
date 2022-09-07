@@ -18,12 +18,15 @@
 
 /* @flow strict */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 
 import AnimateHeightExample from './examples';
 
-storiesOf('bpk-animate-height', module).add('Example', () => (
+export default {
+  title: 'bpk-animate-height',
+};
+
+export const Example = () => (
   <AnimateHeightExample
     fromHeight="auto"
     toHeight={0}
@@ -37,4 +40,4 @@ ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
 parturient montes, nascetur ridiculus mus.`,
     )}
   </AnimateHeightExample>
-));
+);

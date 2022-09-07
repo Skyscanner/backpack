@@ -18,11 +18,9 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SingleItemExample,
-  SingleItemExampleInitiallyExpanded,
+  SingleItemExampleInitiallyExpandedExample,
   MultipleItemsOpenExample,
   MultipleItemsOpenInitiallyExpandedExample,
   CustomExample,
@@ -31,19 +29,26 @@ import {
   WithBoldTitlesExample,
 } from './examples';
 
-storiesOf('bpk-component-accordion', module)
-  .add('Single item only', SingleItemExample)
-  .add(
-    'Single item only (second item initially expanded)',
-    SingleItemExampleInitiallyExpanded,
-  )
-  .add('Multiple items open', MultipleItemsOpenExample)
-  .add(
-    'Multiple items open (second & third items initially expanded)',
-    MultipleItemsOpenInitiallyExpandedExample,
-  )
-  .add('Custom', CustomExample)
-  .add('Custom title textStyle', CustomTitleTextStyleExample)
-  .add('With icons', WithIconsExample)
-  .add('With bold titles', WithBoldTitlesExample)
-  .add('Visual test', SingleItemExample);
+export default {
+  title: 'bpk-component-accordion',
+};
+
+export const SingleItemOnly = SingleItemExample;
+
+export const SingleItemOnlySecondItemInitiallyExpanded =
+  SingleItemExampleInitiallyExpandedExample;
+
+export const MultipleItemsOpen = MultipleItemsOpenExample;
+
+export const MultipleItemsOpenSecondThirdItemsInitiallyExpanded =
+  MultipleItemsOpenInitiallyExpandedExample;
+
+export const Custom = CustomExample;
+
+export const CustomTitleTextStyle = CustomTitleTextStyleExample;
+
+export const WithIcons = WithIconsExample;
+
+export const WithBoldTitles = WithBoldTitlesExample;
+
+export const VisualTest = SingleItemExample;

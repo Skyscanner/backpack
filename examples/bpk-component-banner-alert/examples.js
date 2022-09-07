@@ -109,7 +109,7 @@ const BpkBannerAlertExpandableState = withBannerAlertState(
   BpkBannerAlertExpandable,
 );
 
-const Neutral = (props: {}) => (
+const NeutralExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlert
     message="Neutral alert"
@@ -117,7 +117,7 @@ const Neutral = (props: {}) => (
     {...props}
   />
 );
-const Primary = (props: {}) => (
+const PrimaryExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlert
     message="Primary alert"
@@ -125,7 +125,7 @@ const Primary = (props: {}) => (
     {...props}
   />
 );
-const Success = (props: {}) => (
+const SuccessExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlert
     message="Success alert"
@@ -133,11 +133,11 @@ const Success = (props: {}) => (
     {...props}
   />
 );
-const SuccessLongMessage = (props: {}) => (
+const SuccessLongMessageExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} {...props} />
 );
-const Dismissable = () => (
+const DismissableExample = () => (
   <BpkBannerAlertDismissable
     dismissButtonLabel="Dismiss"
     message="Dimissable alert"
@@ -145,7 +145,7 @@ const Dismissable = () => (
     onDismiss={action('dismissed')}
   />
 );
-const SuccessExpandable = () => (
+const SuccessExpandableExample = () => (
   <BpkBannerAlertExpandable
     message="Success alert"
     type={ALERT_TYPES.SUCCESS}
@@ -154,7 +154,7 @@ const SuccessExpandable = () => (
     {longMessage}
   </BpkBannerAlertExpandable>
 );
-const SuccessAnimateOnEnter = () => (
+const SuccessAnimateOnEnterExample = () => (
   <BpkBannerAlert
     animateOnEnter
     message={message}
@@ -162,7 +162,7 @@ const SuccessAnimateOnEnter = () => (
     onDismiss={action('dismissed')}
   />
 );
-const SuccessWithReactRenderedMessage = (props: {}) => (
+const SuccessWithReactRenderedMessageExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlert
     message={
@@ -174,7 +174,7 @@ const SuccessWithReactRenderedMessage = (props: {}) => (
     {...props}
   />
 );
-const Warn = (props: {}) => (
+const WarnExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlert message="Warn alert" type={ALERT_TYPES.WARN} {...props} />
 );
@@ -182,18 +182,18 @@ const ErrorExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlert message="Error alert" type={ALERT_TYPES.ERROR} {...props} />
 );
-const Event = (props: {}) => (
+const EventExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlert message="Event alert" type={ALERT_TYPES.EVENT} {...props} />
 );
-const SuccessDismissableBehaviour = () => (
+const SuccessDismissableBehaviourExample = () => (
   <BpkBannerAlertDismissableState
     dismissButtonLabel="Dismiss"
     message="Success alert with dismiss option"
     type={ALERT_TYPES.SUCCESS}
   />
 );
-const SuccessExpandableBehaviour = () => (
+const SuccessExpandableBehaviourExample = () => (
   <BpkBannerAlertExpandableState
     message="Success alert with more information"
     type={ALERT_TYPES.SUCCESS}
@@ -202,7 +202,7 @@ const SuccessExpandableBehaviour = () => (
     {longMessage}
   </BpkBannerAlertExpandableState>
 );
-const SuccessAutomaticallyDismissed = () => (
+const SuccessAutomaticallyDismissedExample = () => (
   <BpkBannerAlertDismissableState
     hideAfter={5}
     message={message}
@@ -210,7 +210,7 @@ const SuccessAutomaticallyDismissed = () => (
     dismissButtonLabel="Dismiss"
   />
 );
-const SuccessCustomIcon = () => (
+const SuccessCustomIconExample = () => (
   <BpkBannerAlert
     message="Success alert with custom icon"
     type={ALERT_TYPES.SUCCESS}
@@ -218,15 +218,21 @@ const SuccessCustomIcon = () => (
   />
 );
 
-const DocsDefault = () => (
+const DocsDefaultExample = () => (
   <>
-    <Neutral />
-    <Primary className={getClassName('bpk-banner-alert-examples__component')} />
-    <Success className={getClassName('bpk-banner-alert-examples__component')} />
-    <SuccessWithReactRenderedMessage
+    <NeutralExample />
+    <PrimaryExample
       className={getClassName('bpk-banner-alert-examples__component')}
     />
-    <Warn className={getClassName('bpk-banner-alert-examples__component')} />
+    <SuccessExample
+      className={getClassName('bpk-banner-alert-examples__component')}
+    />
+    <SuccessWithReactRenderedMessageExample
+      className={getClassName('bpk-banner-alert-examples__component')}
+    />
+    <WarnExample
+      className={getClassName('bpk-banner-alert-examples__component')}
+    />
     <ErrorExample
       className={getClassName('bpk-banner-alert-examples__component')}
     />
@@ -234,20 +240,20 @@ const DocsDefault = () => (
 );
 
 export {
-  Neutral,
-  Primary,
-  Success,
-  SuccessLongMessage,
-  Dismissable,
-  SuccessExpandable,
-  SuccessAnimateOnEnter,
-  SuccessWithReactRenderedMessage,
-  Warn,
+  NeutralExample,
+  PrimaryExample,
+  SuccessExample,
+  SuccessLongMessageExample,
+  DismissableExample,
+  SuccessExpandableExample,
+  SuccessAnimateOnEnterExample,
+  SuccessWithReactRenderedMessageExample,
+  WarnExample,
   ErrorExample,
-  Event,
-  SuccessDismissableBehaviour,
-  SuccessExpandableBehaviour,
-  SuccessAutomaticallyDismissed,
-  SuccessCustomIcon,
-  DocsDefault,
+  EventExample,
+  SuccessDismissableBehaviourExample,
+  SuccessExpandableBehaviourExample,
+  SuccessAutomaticallyDismissedExample,
+  SuccessCustomIconExample,
+  DocsDefaultExample,
 };

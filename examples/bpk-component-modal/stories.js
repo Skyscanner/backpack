@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WideExample,
@@ -35,16 +33,26 @@ import {
   WithAccessoryViewExample,
 } from './examples';
 
-storiesOf('bpk-component-modal', module)
-  .add('Default', DefaultExample)
-  .add('Wide', WideExample)
-  .add('Overflowing', OverflowingExample)
-  .add('Close button text', CloseButtonTextExample)
-  .add('Long title', LongTitleExample)
-  .add('Not full screen on mobile', NotFullScreenOnMobileExample)
-  .add('Full screen', FullScreenExample)
-  .add('Full screen overflowing', FullScreenOverflowingExample)
-  .add('Nested', NestedExample)
-  .add('No header', NoHeaderExample)
-  .add('No padding', NoPaddingExample)
-  .add('With accessory view', WithAccessoryViewExample);
+export default {
+  title: 'bpk-component-modal',
+};
+
+export const Default = DefaultExample;
+export const Wide = WideExample;
+export const Overflowing = OverflowingExample;
+export const CloseButtonText = CloseButtonTextExample;
+
+export const LongTitle = LongTitleExample;
+
+export const NotFullScreenOnMobile = NotFullScreenOnMobileExample;
+
+export const FullScreen = FullScreenExample;
+
+export const FullScreenOverflowing = FullScreenOverflowingExample;
+
+export const Nested = NestedExample;
+export const NoHeader = NoHeaderExample;
+
+export const NoPadding = NoPaddingExample;
+
+export const WithAccessoryView = WithAccessoryViewExample;

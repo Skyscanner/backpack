@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   PrimaryExample,
@@ -44,25 +43,43 @@ import {
   AnchorTagsExample,
 } from './examples';
 
-storiesOf('bpk-component-button', () => module)
-  .add('BpkButton (Primary)', () => <PrimaryExample />)
-  .add('BpkButton (PrimaryOnDark)', () => <PrimaryOnDarkExample />)
-  .add('BpkButton (PrimaryOnLight)', () => <PrimaryOnLightExample />)
-  .add('BpkButton (Secondary)', () => <SecondaryExample />)
-  .add('BpkButton (SecondaryOnDark)', () => <SecondaryOnDarkExample />)
-  .add('BpkButton (Destructive)', () => <DestructiveExample />)
-  .add('BpkButton (Link button)', () => <LinkExample />)
-  .add('BpkButton (Link on dark button)', () => <LinkOnDarkExample />)
-  .add('BpkButton (Featured)', () => <FeaturedExample />)
-  .add('Primary', () => <ComponentButtonPrimaryExample />)
-  .add('PrimaryOnDark', () => <ComponentButtonPrimaryOnDarkExample />)
-  .add('PrimaryOnLight', () => <ComponentButtonPrimaryOnLightExample />)
-  .add('Secondary', () => <ComponentButtonSecondaryExample />)
-  .add('SecondaryOnDark', () => <ComponentButtonSecondaryOnDarkExample />)
-  .add('Destructive', () => <ComponentButtonDestructiveExample />)
-  .add('Link button', () => <ComponentButtonLinkExample />)
-  .add('LinkOnDark button', () => <ComponentButtonLinkOnDarkExample />)
-  .add('Featured', () => <ComponentButtonFeaturedExample />)
-  .add('Mixture', () => <MixedExample />)
-  .add('Anchor tags', () => <AnchorTagsExample />)
-  .add('Visual test', () => <MixedExample />);
+export default {
+  title: 'bpk-component-button',
+};
+
+export const BpkButtonPrimary = () => <PrimaryExample />;
+
+export const BpkButtonPrimaryOnDark = () => <PrimaryOnDarkExample />;
+
+export const BpkButtonPrimaryOnLight = () => <PrimaryOnLightExample />;
+
+export const BpkButtonSecondary = () => <SecondaryExample />;
+
+export const BpkButtonSecondaryOnDark = () => <SecondaryOnDarkExample />;
+
+export const BpkButtonDestructive = () => <DestructiveExample />;
+
+export const BpkButtonLinkButton = () => <LinkExample />;
+
+export const BpkButtonLinkOnDarkButton = () => <LinkOnDarkExample />;
+
+export const BpkButtonFeatured = () => <FeaturedExample />;
+
+export const Primary = () => <ComponentButtonPrimaryExample />;
+export const PrimaryOnDark = () => <ComponentButtonPrimaryOnDarkExample />;
+
+export const PrimaryOnLight = () => <ComponentButtonPrimaryOnLightExample />;
+
+export const Secondary = () => <ComponentButtonSecondaryExample />;
+export const SecondaryOnDark = () => <ComponentButtonSecondaryOnDarkExample />;
+
+export const Destructive = () => <ComponentButtonDestructiveExample />;
+export const LinkButton = () => <ComponentButtonLinkExample />;
+
+export const LinkOnDarkButton = () => <ComponentButtonLinkOnDarkExample />;
+
+export const Featured = () => <ComponentButtonFeaturedExample />;
+export const Mixture = () => <MixedExample />;
+export const AnchorTags = () => <AnchorTagsExample />;
+
+export const VisualTest = () => <MixedExample />;

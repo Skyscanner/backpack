@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   WithoutPaddingExample,
@@ -25,8 +23,13 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-panel', module)
-  .add('Default', DefaultExample)
-  .add('Without padding', WithoutPaddingExample)
-  .add('Full width', FullWidthExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-panel',
+};
+
+export const Default = DefaultExample;
+export const WithoutPadding = WithoutPaddingExample;
+
+export const FullWidth = FullWidthExample;
+
+export const VisualTest = MixedExample;

@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   FlareBarExample,
   FlareBarRoundedExample,
@@ -31,18 +29,24 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-flare', module)
-  .add('BpkFlareBar - default', FlareBarExample)
-  .add('BpkFlareBar - rounded', FlareBarRoundedExample)
-  .add(
-    'BpkContentBubble - Full width with background image',
-    ContentBubbleFullWithImageExample,
-  )
-  .add(
-    'BpkContentBubble - Full width with content',
-    ContentBubbleFullWithContentExample,
-  )
-  .add('BpkContentBubble - standalone', ContentBubbleStandaloneExample)
-  .add('BpkContentBubble - fixed height', ContentBubbleFixedHeightExample)
-  .add('BpkContentBubble - pointer hidden', ContentBubblePointerHiddenExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-flare',
+};
+
+export const BpkFlareBarDefault = FlareBarExample;
+
+export const BpkFlareBarRounded = FlareBarRoundedExample;
+
+export const BpkContentBubbleFullWidthWithBackgroundImage =
+  ContentBubbleFullWithImageExample;
+
+export const BpkContentBubbleFullWidthWithContent =
+  ContentBubbleFullWithContentExample;
+
+export const BpkContentBubbleStandalone = ContentBubbleStandaloneExample;
+
+export const BpkContentBubbleFixedHeight = ContentBubbleFixedHeightExample;
+
+export const BpkContentBubblePointerHidden = ContentBubblePointerHiddenExample;
+
+export const VisualTest = MixedExample;

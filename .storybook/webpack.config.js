@@ -33,18 +33,19 @@ module.exports = ({ config }) => {
     exclude: /node_modules\/(?!bpk-).*/,
     loader: 'babel-loader',
     options: {
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            targets: { browsers: ['ie >= 11'] },
-          },
-        ],
-      ],
+      presets: [['@babel/preset-env']],
     },
   });
   config.resolve.extensions.push('.tsx');
   config.resolve.extensions.push('.ts');
+  config.module.rules.push({
+    test: /\.[jt]sx?$/,
+    include: /node_modules\/@skyscanner\/bpk-svgs.*/,
+    loader: 'babel-loader',
+    options: {
+      presets: [['@babel/preset-env']],
+    },
+  });
   config.module.rules.push({
     test: /\.css/,
     use: [
@@ -105,6 +106,5 @@ module.exports = ({ config }) => {
       },
     ],
   });
-
   return config;
 };

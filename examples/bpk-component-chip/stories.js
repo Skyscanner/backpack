@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   AllTypesExample,
   SelectableChipsExample,
@@ -29,11 +27,16 @@ import {
   DismissibleChipsExample,
 } from './examples';
 
-storiesOf('bpk-component-chip', module)
-  .add('All types', AllTypesExample)
-  .add('Selectable', SelectableChipsExample)
-  .add('All Selectable Types', AllSelectableChipStylesExample)
-  .add('With icons', WithIconsExample)
-  .add('Dismissable', DismissibleChipsExample)
-  .add('Radio Group', RadioGroupChipsExample)
-  .add('Visual test', AllTypesExample);
+export default {
+  title: 'bpk-component-chip',
+};
+
+export const AllTypes = AllTypesExample;
+
+export const Selectable = SelectableChipsExample;
+export const AllSelectableTypes = AllSelectableChipStylesExample;
+export const WithIcons = WithIconsExample;
+
+export const Dismissable = DismissibleChipsExample;
+export const RadioGroup = RadioGroupChipsExample;
+export const VisualTest = AllTypesExample;

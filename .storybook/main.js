@@ -16,8 +16,12 @@
  * limitations under the License.
  */
 
-// TODO: addon-a11y breaks the calendar example
-import '@storybook/addon-a11y/register';
-import '@storybook/addon-actions/register';
-import '@storybook/addon-knobs/register';
-import '@storybook/addon-viewport/register';
+module.exports = {
+  stories: ['../examples/**/stories.@(ts|js)'],
+  addons: [
+    '@storybook/addon-a11y',
+    '@storybook/addon-actions',
+    '@storybook/addon-knobs',
+    '@storybook/addon-viewport',
+  ],
+};

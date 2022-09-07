@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   DefaultExample,
   CalendarNavExample,
@@ -27,42 +25,58 @@ import {
   MinDateInThePastExample,
   WeekStartsOnSundayExample,
   HonestWeekendExample,
-  WeekdayKeyIsNameNarrow,
+  WeekdayKeyIsNameNarrowExample,
   ArabicExample,
   JapaneseExample,
-  MinAndMaxDate,
+  MinAndMaxDateExample,
   MarkTodayFalseExample,
   MarkOutsideDaysFalseExample,
-  CustomComposedCalendar,
-  CustomComposedCalendarSafariBug,
+  CustomComposedCalendarExample,
+  CustomComposedCalendarSafariBugExample,
   WeekExample,
   FocusedDateInThePastExample,
-  RangeDateCalendar,
+  RangeDateCalendarExample,
 } from './examples';
 
-storiesOf('bpk-component-calendar', module)
-  .add('BpkCalendarNav', CalendarNavExample)
-  .add('BpkCalendarGridHeader', CalendarGridHeaderExample)
-  .add('BpkCalendarGrid', CalendarGridExample)
-  .add('BpkCalendarGridHeader + BpkCalendarGrid', CalendarGridAndHeaderExample)
-  .add('Calendar - default', DefaultExample)
-  .add(
-    'Calendar - min date in the past, focusing today',
-    MinDateInThePastExample,
-  )
-  .add('Calendar - Week starts on a Sunday', WeekStartsOnSundayExample)
-  .add('Calendar - Honest weekend', HonestWeekendExample)
-  .add('Calendar - weekDayKey is nameNarrow', WeekdayKeyIsNameNarrow)
-  .add('Calendar - ar-AE locale', ArabicExample)
-  .add('Calendar - ja-JP locale', JapaneseExample)
-  .add('Calendar - Specify min/max date', MinAndMaxDate)
-  .add("Calendar - Don't mark today", MarkTodayFalseExample)
-  .add("Calendar - Don't mark outside days", MarkOutsideDaysFalseExample)
-  .add('Custom composed calendar', CustomComposedCalendar)
-  .add(
-    'Custom composed calendar (Safari DST bug)',
-    CustomComposedCalendarSafariBug,
-  )
-  .add('Week', WeekExample)
-  .add('Visual test', FocusedDateInThePastExample)
-  .add('Visual test range', RangeDateCalendar);
+export default {
+  title: 'bpk-component-calendar',
+};
+
+export const BpkCalendarNav = CalendarNavExample;
+
+export const BpkCalendarGridHeader = CalendarGridHeaderExample;
+
+export const BpkCalendarGrid = CalendarGridExample;
+
+export const BpkCalendarGridHeaderBpkCalendarGrid =
+  CalendarGridAndHeaderExample;
+
+export const CalendarDefault = DefaultExample;
+
+export const CalendarMinDateInThePastFocusingToday = MinDateInThePastExample;
+
+export const CalendarWeekStartsOnASunday = WeekStartsOnSundayExample;
+
+export const CalendarHonestWeekend = HonestWeekendExample;
+
+export const CalendarWeekDayKeyIsNameNarrow = WeekdayKeyIsNameNarrowExample;
+
+export const CalendarArAeLocale = ArabicExample;
+
+export const CalendarJaJpLocale = JapaneseExample;
+
+export const CalendarSpecifyMinMaxDate = MinAndMaxDateExample;
+
+export const CalendarDontMarkToday = MarkTodayFalseExample;
+
+export const CalendarDontMarkOutsideDays = MarkOutsideDaysFalseExample;
+
+export const CustomComposedCalendar = CustomComposedCalendarExample;
+
+export const CustomComposedCalendarSafariDstBug =
+  CustomComposedCalendarSafariBugExample;
+
+export const Week = WeekExample;
+export const VisualTest = FocusedDateInThePastExample;
+
+export const VisualTestRange = RangeDateCalendarExample;

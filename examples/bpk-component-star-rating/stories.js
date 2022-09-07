@@ -18,31 +18,38 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   FullExample,
-  FullStars,
-  EmptyStars,
-  ThreeStars,
-  ThreeAndAHalfStars,
-  ThreePointThreeStars,
-  ThreePointEightStars,
-  ThreePointThreeStarsRounded,
-  ThreePointEightStarsRounded,
-  Interactive,
+  FullStarsExample,
+  EmptyStarsExample,
+  ThreeStarsExample,
+  ThreeAndAHalfStarsExample,
+  ThreePointThreeStarsExample,
+  ThreePointEightStarsExample,
+  ThreePointThreeStarsRoundedExample,
+  ThreePointEightStarsRoundedExample,
+  InteractiveExample,
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-star-rating', module)
-  .add('BpkStar examples', FullExample)
-  .add('Full Stars', FullStars)
-  .add('Empty Stars', EmptyStars)
-  .add('3 Stars Rating', ThreeStars)
-  .add('3 1/2 Stars Rating', ThreeAndAHalfStars)
-  .add('3.3 Stars', ThreePointThreeStars)
-  .add('3.8 Stars', ThreePointEightStars)
-  .add('3.3 Stars Rounded', ThreePointThreeStarsRounded)
-  .add('3.8 Stars Rounded', ThreePointEightStarsRounded)
-  .add('Interactive', Interactive)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-star-rating',
+};
+
+export const BpkStarExamples = FullExample;
+
+export const FullStars = FullStarsExample;
+export const EmptyStars = EmptyStarsExample;
+export const ThreeStars = ThreeStarsExample;
+export const ThreeAndAHalfStars = ThreeAndAHalfStarsExample;
+
+export const ThreePointThreeStars = ThreePointThreeStarsExample;
+
+export const ThreePointEightStars = ThreePointEightStarsExample;
+
+export const ThreePointThreeStarsRounded = ThreePointThreeStarsRoundedExample;
+
+export const ThreePointEightStarsRounded = ThreePointEightStarsRoundedExample;
+
+export const Interactive = InteractiveExample;
+export const VisualTest = MixedExample;

@@ -96,7 +96,7 @@ const LightAppearanceExample = () => (
   </BpkDarkExampleWrapper>
 );
 
-const UsingCustomScrollColors = () => (
+const UsingCustomScrollColorsExample = () => (
   <BpkHorizontalNav
     className={getClassName('bpk-horizontal-nav-custom-scrollers')}
     leadingScrollIndicatorClassName={getClassName(
@@ -167,7 +167,7 @@ const MixedExample = () => (
   <div>
     <DefaultExample />
     <LightAppearanceExample />
-    <UsingCustomScrollColors />
+    <UsingCustomScrollColorsExample />
     <DisabledItemExample />
     <SpacedAroundExample />
     <SeparatorsExample />
@@ -179,7 +179,7 @@ export {
   ScrollToSelectedExample,
   NotUnderlinedExample,
   LightAppearanceExample,
-  UsingCustomScrollColors,
+  UsingCustomScrollColorsExample,
   AnchorTagsExample,
   ExtremeExample,
   SpacedAroundExample,

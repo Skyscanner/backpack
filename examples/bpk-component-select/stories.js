@@ -16,33 +16,38 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
-  Example,
-  Invalid,
-  InvalidWithImage,
-  Disabled,
-  Large,
-  Docked,
-  DockedWithImages,
-  ManuallyDocked,
-  ManuallyDockedWithImages,
-  WithImage,
-  WithImageLarge,
+  DefaultExample,
+  InvalidExample,
+  InvalidWithImageExample,
+  DisabledExample,
+  LargeExample,
+  DockedExample,
+  DockedWithImagesExample,
+  ManuallyDockedExample,
+  ManuallyDockedWithImagesExample,
+  WithImageExample,
+  WithImageLargeExample,
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-select', module)
-  .add('Example', Example)
-  .add('Invalid', Invalid)
-  .add('Invalid with image', InvalidWithImage)
-  .add('Disabled', Disabled)
-  .add('Large', Large)
-  .add('Docked', Docked)
-  .add('Docked with images', DockedWithImages)
-  .add('Manually docked', ManuallyDocked)
-  .add('Manually docked with images', ManuallyDockedWithImages)
-  .add('With Image', WithImage)
-  .add('With Image Large', WithImageLarge)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-select',
+};
+
+export const Example = DefaultExample;
+export const Invalid = InvalidExample;
+export const InvalidWithImage = InvalidWithImageExample;
+
+export const Disabled = DisabledExample;
+export const Large = LargeExample;
+export const Docked = DockedExample;
+export const DockedWithImages = DockedWithImagesExample;
+
+export const ManuallyDocked = ManuallyDockedExample;
+
+export const ManuallyDockedWithImages = ManuallyDockedWithImagesExample;
+
+export const WithImage = WithImageExample;
+export const WithImageLarge = WithImageLargeExample;
+export const VisualTest = MixedExample;

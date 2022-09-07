@@ -85,7 +85,7 @@ const FullExample = () => (
   </BpkTable>
 );
 
-const FullStars = () => (
+const FullStarsExample = () => (
   <div>
     <StarRating rating={5} />
     <br />
@@ -93,7 +93,7 @@ const FullStars = () => (
   </div>
 );
 
-const EmptyStars = () => (
+const EmptyStarsExample = () => (
   <div>
     <StarRating rating={0} />
     <br />
@@ -101,7 +101,7 @@ const EmptyStars = () => (
   </div>
 );
 
-const ThreeStars = () => (
+const ThreeStarsExample = () => (
   <div>
     <StarRating rating={3} />
     <br />
@@ -109,7 +109,7 @@ const ThreeStars = () => (
   </div>
 );
 
-const ThreeAndAHalfStars = () => (
+const ThreeAndAHalfStarsExample = () => (
   <div>
     <StarRating rating={3.5} />
     <br />
@@ -117,7 +117,7 @@ const ThreeAndAHalfStars = () => (
   </div>
 );
 
-const ThreePointThreeStars = () => (
+const ThreePointThreeStarsExample = () => (
   <div>
     <StarRating rating={3.3} />
     <br />
@@ -125,7 +125,7 @@ const ThreePointThreeStars = () => (
   </div>
 );
 
-const ThreePointEightStars = () => (
+const ThreePointEightStarsExample = () => (
   <div>
     <StarRating rating={3.8} />
     <br />
@@ -133,7 +133,7 @@ const ThreePointEightStars = () => (
   </div>
 );
 
-const ThreePointThreeStarsRounded = () => (
+const ThreePointThreeStarsRoundedExample = () => (
   <div>
     <StarRating rating={3.3} rounding={ROUNDING_TYPES.nearest} />
     <br />
@@ -141,7 +141,7 @@ const ThreePointThreeStarsRounded = () => (
   </div>
 );
 
-const ThreePointEightStarsRounded = () => (
+const ThreePointEightStarsRoundedExample = () => (
   <div>
     <StarRating rating={3.8} rounding={ROUNDING_TYPES.nearest} />
     <br />
@@ -149,7 +149,7 @@ const ThreePointEightStarsRounded = () => (
   </div>
 );
 
-const Interactive = () => (
+const InteractiveExample = () => (
   <div>
     <InteractiveStarRating
       id="small-star-rating"
@@ -172,27 +172,27 @@ const Interactive = () => (
 
 const MixedExample = () => (
   <div>
-    <FullStars />
-    <EmptyStars />
-    <ThreeStars />
-    <ThreeAndAHalfStars />
-    <ThreePointThreeStars />
-    <ThreePointEightStars />
-    <ThreePointThreeStarsRounded />
-    <ThreePointEightStarsRounded />
+    <FullStarsExample />
+    <EmptyStarsExample />
+    <ThreeStarsExample />
+    <ThreeAndAHalfStarsExample />
+    <ThreePointThreeStarsExample />
+    <ThreePointEightStarsExample />
+    <ThreePointThreeStarsRoundedExample />
+    <ThreePointEightStarsRoundedExample />
   </div>
 );
 
 export {
   FullExample,
-  FullStars,
-  EmptyStars,
-  ThreeStars,
-  ThreeAndAHalfStars,
-  ThreePointThreeStars,
-  ThreePointEightStars,
-  ThreePointThreeStarsRounded,
-  ThreePointEightStarsRounded,
-  Interactive,
+  FullStarsExample,
+  EmptyStarsExample,
+  ThreeStarsExample,
+  ThreeAndAHalfStarsExample,
+  ThreePointThreeStarsExample,
+  ThreePointEightStarsExample,
+  ThreePointThreeStarsRoundedExample,
+  ThreePointEightStarsRoundedExample,
+  InteractiveExample,
   MixedExample,
 };

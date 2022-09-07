@@ -17,30 +17,39 @@
  */
 
 /* @flow strict */
-import { storiesOf } from '@storybook/react';
 
 import {
-  AxesAndGridlines,
+  AxesAndGridlinesExample,
   DefaultExample,
-  CustomScrollColors,
-  DefaultDisabledDataTable,
-  Interactive,
-  Outliers,
-  CustomTicks,
-  CustomTickLabels,
+  CustomScrollColorsExample,
+  DefaultDisabledDataTableExample,
+  InteractiveExample,
+  OutliersExample,
+  CustomTicksExample,
+  CustomTickLabelsExample,
   GridlinesExample,
-  CustomYAxisDomain,
+  CustomYAxisDomainExample,
 } from './examples';
 
-storiesOf('bpk-component-barchart', module)
-  .add('Axes and Gridlines', AxesAndGridlines)
-  .add('Default', DefaultExample)
-  .add('Using custom scroll colours', CustomScrollColors)
-  .add('Default disabled data table', DefaultDisabledDataTable)
-  .add('Interactive', Interactive)
-  .add('Outliers', Outliers)
-  .add('Custom ticks', CustomTicks)
-  .add('Custom tick labels', CustomTickLabels)
-  .add('Grid lines', GridlinesExample)
-  .add('Custom yAxisDomain', CustomYAxisDomain)
-  .add('Visual test', DefaultExample);
+export default {
+  title: 'bpk-component-barchart',
+};
+
+export const AxesAndGridlines = AxesAndGridlinesExample;
+
+export const Default = DefaultExample;
+export const UsingCustomScrollColours = CustomScrollColorsExample;
+
+export const DefaultDisabledDataTable = DefaultDisabledDataTableExample;
+
+export const Interactive = InteractiveExample;
+export const Outliers = OutliersExample;
+export const CustomTicks = CustomTicksExample;
+
+export const CustomTickLabels = CustomTickLabelsExample;
+
+export const GridLines = GridlinesExample;
+
+export const CustomYAxisDomain = CustomYAxisDomainExample;
+
+export const VisualTest = DefaultExample;

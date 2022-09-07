@@ -18,37 +18,45 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
-  DocsPrimary,
-  Primary,
-  PrimaryOnDark,
-  PrimaryOnLight,
-  Secondary,
-  SecondaryOnDark,
-  Destructive,
-  LinkButton,
-  LinkOnDarkButton,
-  Featured,
-  Mixture,
-  AnchorTags,
-  CustomIcon,
+  DocsPrimaryExample,
+  PrimaryExample,
+  PrimaryOnDarkExample,
+  PrimaryOnLightExample,
+  SecondaryExample,
+  SecondaryOnDarkExample,
+  DestructiveExample,
+  LinkButtonExample,
+  LinkOnDarkButtonExample,
+  FeaturedExample,
+  MixtureExample,
+  AnchorTagsExample,
+  CustomIconExample,
   VisualExample,
 } from './examples';
 
-storiesOf('bpk-component-loading-button', module)
-  .add('DocsPrimary', DocsPrimary)
-  .add('Primary', Primary)
-  .add('PrimaryOnDark', PrimaryOnDark)
-  .add('PrimaryOnLight', PrimaryOnLight)
-  .add('Secondary', Secondary)
-  .add('SecondaryOnDark', SecondaryOnDark)
-  .add('Destructive', Destructive)
-  .add('Link button', LinkButton)
-  .add('LinkOnDark button', LinkOnDarkButton)
-  .add('Featured', Featured)
-  .add('Mixture', Mixture)
-  .add('Anchor tags', AnchorTags)
-  .add('Custom Icon', CustomIcon)
-  .add('Visual test', VisualExample);
+export default {
+  title: 'bpk-component-loading-button',
+};
+
+export const DocsPrimary = DocsPrimaryExample;
+
+export const Primary = PrimaryExample;
+export const PrimaryOnDark = PrimaryOnDarkExample;
+
+export const PrimaryOnLight = PrimaryOnLightExample;
+
+export const Secondary = SecondaryExample;
+export const SecondaryOnDark = SecondaryOnDarkExample;
+
+export const Destructive = DestructiveExample;
+export const LinkButton = LinkButtonExample;
+
+export const LinkOnDarkButton = LinkOnDarkButtonExample;
+
+export const Featured = FeaturedExample;
+export const Mixture = MixtureExample;
+export const AnchorTags = AnchorTagsExample;
+
+export const CustomIcon = CustomIconExample;
+export const VisualTest = VisualExample;

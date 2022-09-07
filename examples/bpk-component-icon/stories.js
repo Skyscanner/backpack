@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   SmallIconsExample,
   LargeIconsExample,
@@ -31,14 +29,26 @@ import {
   MixedExample,
 } from './examples';
 
-storiesOf('bpk-component-icon', module)
-  .add('Small icons', SmallIconsExample)
-  .add('Large icons', LargeIconsExample)
-  .add('Align to text base', AlignToBaseTextExample)
-  .add('Align to large text', AlignToLargeTextExample)
-  .add('Align small text to icon', AlignSmallTextToIconExample)
-  .add('Align text to icon', AlignTextToIconExample)
-  .add('Align to button', AlignToButtonExample)
-  .add('Align to large button', AlignToLargeButtonExample)
-  .add('Align to large button (RTL support)', AlignToLargeButtonRTLExample)
-  .add('Visual test', MixedExample);
+export default {
+  title: 'bpk-component-icon',
+};
+
+export const SmallIcons = SmallIconsExample;
+
+export const LargeIcons = LargeIconsExample;
+
+export const AlignToTextBase = AlignToBaseTextExample;
+
+export const AlignToLargeText = AlignToLargeTextExample;
+
+export const AlignSmallTextToIcon = AlignSmallTextToIconExample;
+
+export const AlignTextToIcon = AlignTextToIconExample;
+
+export const AlignToButton = AlignToButtonExample;
+
+export const AlignToLargeButton = AlignToLargeButtonExample;
+
+export const AlignToLargeButtonRtlSupport = AlignToLargeButtonRTLExample;
+
+export const VisualTest = MixedExample;

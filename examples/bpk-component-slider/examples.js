@@ -92,31 +92,35 @@ SliderContainer.defaultProps = {
 
 const EnhancedSlider = updateOnDirectionChange(SliderContainer);
 
-const SimpleSlider = () => <EnhancedSlider min={0} value={50} />;
-const SimpleLargeSlider = () => <EnhancedSlider min={0} value={50} large />;
-const TimeSlider = () => <EnhancedSlider time min={0} value={50} large />;
-const SimpleSliderWithSteps = () => (
+const SimpleSliderExample = () => <EnhancedSlider min={0} value={50} />;
+const SimpleLargeSliderExample = () => (
+  <EnhancedSlider min={0} value={50} large />
+);
+const TimeSliderExample = () => (
+  <EnhancedSlider time min={0} value={50} large />
+);
+const SimpleSliderWithStepsExample = () => (
   <EnhancedSlider min={0} value={50} step={10} />
 );
-const RangeSlider = () => <EnhancedSlider min={0} value={[20, 80]} />;
-const RangeSliderWithMinimumDistance = () => (
+const RangeSliderExample = () => <EnhancedSlider min={0} value={[20, 80]} />;
+const RangeSliderWithMinimumDistanceExample = () => (
   <EnhancedSlider min={0} value={[20, 80]} minDistance={10} />
 );
 
 const MixedExample = () => (
   <div>
-    <SimpleSlider />
-    <SimpleLargeSlider />
-    <RangeSlider />
+    <SimpleSliderExample />
+    <SimpleLargeSliderExample />
+    <RangeSliderExample />
   </div>
 );
 
 export {
-  SimpleSlider,
-  SimpleLargeSlider,
-  TimeSlider,
-  SimpleSliderWithSteps,
-  RangeSlider,
-  RangeSliderWithMinimumDistance,
+  SimpleSliderExample,
+  SimpleLargeSliderExample,
+  TimeSliderExample,
+  SimpleSliderWithStepsExample,
+  RangeSliderExample,
+  RangeSliderWithMinimumDistanceExample,
   MixedExample,
 };

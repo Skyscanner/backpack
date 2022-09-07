@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
-
 import {
   InputExample,
   SelectExample,
@@ -36,18 +34,28 @@ import {
   SplitInputExample,
 } from './examples';
 
-storiesOf('bpk-component-fieldset', module)
-  .add('Input', InputExample)
-  .add('Select', SelectExample)
-  .add('Checkbox', CheckboxExample)
-  .add('Datepicker', DatepickerExample)
-  .add('Textarea', TextareaExample)
-  .add('Autosuggest', AutosuggestExample)
-  .add('Required input', RequiredInputExample)
-  .add('Required select', RequiredSelectExample)
-  .add('Required checkbox', RequiredCheckboxExample)
-  .add('Disabled input', DisabledInputExample)
-  .add('Disabled select', DisabledSelectExample)
-  .add('Disabled checkbox', DisabledCheckboxExample)
-  .add('Visual test', MixedExample)
-  .add('Split Input', SplitInputExample);
+export default {
+  title: 'bpk-component-fieldset',
+};
+
+export const Input = InputExample;
+export const Select = SelectExample;
+export const Checkbox = CheckboxExample;
+export const Datepicker = DatepickerExample;
+export const Textarea = TextareaExample;
+export const Autosuggest = AutosuggestExample;
+export const RequiredInput = RequiredInputExample;
+
+export const RequiredSelect = RequiredSelectExample;
+
+export const RequiredCheckbox = RequiredCheckboxExample;
+
+export const DisabledInput = DisabledInputExample;
+
+export const DisabledSelect = DisabledSelectExample;
+
+export const DisabledCheckbox = DisabledCheckboxExample;
+
+export const VisualTest = MixedExample;
+
+export const SplitInput = SplitInputExample;

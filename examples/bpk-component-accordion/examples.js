@@ -170,7 +170,7 @@ const SingleItemExample = () => (
   </SingleItemAccordion>
 );
 
-const SingleItemExampleInitiallyExpanded = () => (
+const SingleItemExampleInitiallyExpandedExample = () => (
   <SingleItemAccordion>
     <BpkAccordionItem id="stops" title="Stops">
       <StopsContent />
@@ -306,7 +306,7 @@ const WithBoldTitlesExample = () => (
 
 export {
   SingleItemExample,
-  SingleItemExampleInitiallyExpanded,
+  SingleItemExampleInitiallyExpandedExample,
   MultipleItemsOpenExample,
   MultipleItemsOpenInitiallyExpandedExample,
   CustomExample,
