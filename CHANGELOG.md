@@ -4,18 +4,17 @@
 
 **Changed:**
 
-  bpk-component-navigation-bar: 4.0.3 => 4.1.0 <br />
-    - Update component to semantic colours. <br />
-  bpk-component-horizontal-nav: 6.0.3 => 6.1.0 <br />
-    - Migrated component to semantic colour tokens. <br />
-  bpk-component-content-cards: 1.0.2 => 1.0.3 <br />
-    - Fix broken list key props in cards array <br />
+- bpk-component-navigation-bar: 4.0.3 => 4.1.0:
+  - Update component to semantic colours.
+  
+- bpk-component-horizontal-nav: 6.0.3 => 6.1.0
+  - Migrated component to semantic colour tokens.
 
 **Breaking:**
 
-  bpk-component-floating-notification: 2.0.3 => 3.0.0 <br />
-    - Remove `type` prop and `TYPE` object
-    - Change component to use semantic colour tokens
+- bpk-component-floating-notification: 2.0.3 => 3.0.0:
+  - Remove `type` prop and `TYPE` object
+  - Change component to use semantic colour tokens
 
 **Fixed:**
 

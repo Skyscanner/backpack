@@ -11,3 +11,6 @@
 `bpk-component-navigation-bar`: </br>
 `bpk-component-modal`: </br>
   - Add missing bottom border in navigation bar
+
+- bpk-component-content-cards: 1.0.2 => 1.0.3
+  - Fix broken list key props in cards array
