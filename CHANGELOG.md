@@ -5,9 +5,11 @@
 **Changed:**
 
   bpk-component-navigation-bar: 4.0.3 => 4.1.0 <br />
-    - Update component to semantic colours.
+    - Update component to semantic colours. <br />
   bpk-component-horizontal-nav: 6.0.3 => 6.1.0 <br />
-  - Migrated component to semantic colour tokens.
+    - Migrated component to semantic colour tokens. <br />
+  bpk-component-content-cards: 1.0.2 => 1.0.3 <br />
+    - Fix broken list key props in cards array <br />
 
 **Breaking:**
 
