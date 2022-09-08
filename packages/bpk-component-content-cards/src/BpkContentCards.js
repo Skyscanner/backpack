@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* eslint react/no-array-index-key: 0 */
 
 import React from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -54,10 +55,9 @@ const BpkContentCards = ({ cards, heading }: Props) => {
         {heading}
       </BpkText>
       <div role="list" className={getClassName('bpk-content-cards--layout')}>
-        {cards.map((card) => (
-          <div role="listitem">
+        {cards.map((card, index) => (
+          <div role="listitem" key={index}>
             <BpkContentCard
-              key={card.image.url}
               card={card}
               layout={cards.length === 1 ? 'HORIZONTAL' : 'VERTICAL'}
             />
