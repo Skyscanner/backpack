@@ -38,7 +38,4 @@ export default () => (
 * `badgeSuccessBackgroundColor`
 * `badgeDestructiveBackgroundColor`
 
-![image](../../decisions/lineheights.png)
-
-### same folder
-![image](./lineheights2.png)
+![image](/decisions/lineheights.png)
