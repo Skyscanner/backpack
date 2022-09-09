@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-tooltip",
-  "version": "9.0.4",
+  "version": "9.0.5",
   "description": "Backpack tooltip component.",
   "license": "Apache-2.0",
   "repository": {
@@ -16,7 +16,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.5",
     "bpk-mixins": "^31.6.3",
-    "bpk-react-utils": "^7.0.0",
+    "bpk-react-utils": "^7.0.1",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^9.3.0",
-    "bpk-component-text": "^8.0.4"
+    "bpk-component-text": "^8.0.5"
   }
 }
