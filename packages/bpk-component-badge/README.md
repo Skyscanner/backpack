@@ -38,4 +38,5 @@ export default () => (
 * `badgeSuccessBackgroundColor`
 * `badgeDestructiveBackgroundColor`
 
-![image](/decisions/lineheights.png)
+
+<img src="https://raw.githubusercontent.com/Skyscanner/backpack/no-jira-screenshots/decisions/lineheights.png" alt="Supernova Logo" style="max-width:100%;">
