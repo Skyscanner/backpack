@@ -1,3 +1,24 @@
+# 2022-09-09
+
+`@skyscanner/backpack-web: 11.0.0 => 11.1.0` - all changes noted below <br />
+
+**Changed:**
+
+- bpk-component-switch: 3.0.4 => 3.1.0
+  - Added new `small` variant using a `boolean` to enable the small size.
+  - Deprecated `type` property as we no longer use/support `event` type switch and only have one style.
+
+**Patched:**
+
+- Upgraded to latest `@stylelint-config-skyscanner`, which brings into align style standards across components. The main change that impacts all components is updating `@import '~bpk-mixins/index'` to include the `.scss` file extension `@import '~bpk-mixins/index.scss`.
+
+`bpk-component-navigation-bar`: 4.1.0 => 4.1.1 </br>
+`bpk-component-modal`: 6.0.4 => 6.0.5 </br>
+  - Add missing bottom border in navigation bar
+
+- bpk-component-content-cards: 1.0.2 => 1.0.3
+  - Fix broken list key props in cards array
+
 # 2022-09-02
 
 `@skyscanner/backpack-web: 10.0.0 => 11.0.0` - all changes noted below <br />
