@@ -71,7 +71,7 @@ BpkSwitch.propTypes = {
     'This property is deprecated and only one type supported, please remove your usage of this property',
   ),
   className: PropTypes.string,
-  small: PropTypes.boolean,
+  small: PropTypes.bool,
 };
 
 BpkSwitch.defaultProps = {
