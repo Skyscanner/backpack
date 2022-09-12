@@ -28,7 +28,7 @@ $bpk-spacing-v2: true;
   &__description {
     display: block;
     margin-top: bpk-spacing-md();
-    color: $bpk-color-sky-gray-tint-02;
+    color: $bpk-text-secondary-day;
 
     @include bpk-caption;
   }

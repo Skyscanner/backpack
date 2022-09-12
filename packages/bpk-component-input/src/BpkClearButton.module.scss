@@ -22,16 +22,16 @@
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $bpk-color-sky-gray-tint-02;
+  color: $bpk-text-secondary-day;
   cursor: pointer;
   appearance: none;
 
   @include bpk-hover {
-    color: $bpk-color-sky-gray-tint-01;
+    color: $bpk-text-primary-day;
   }
 
   &:active {
-    color: $bpk-color-sky-gray;
+    color: $bpk-text-primary-day;
   }
 
   &__icon {

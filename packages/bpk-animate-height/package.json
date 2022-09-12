@@ -1,6 +1,6 @@
 {
   "name": "bpk-animate-height",
-  "version": "5.0.5",
+  "version": "5.0.6",
   "description": "Animate height using CSS transitions.",
   "license": "Apache-2.0",
   "repository": {
@@ -21,7 +21,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@skyscanner/bpk-foundations-web": "^9.3.0",
-    "bpk-component-button": "^7.0.5"
+    "@skyscanner/bpk-foundations-web": "^9.4.0",
+    "bpk-component-button": "^7.0.6"
   }
 }

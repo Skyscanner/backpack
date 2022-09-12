@@ -8,5 +8,3 @@
 - `@skyscanner/backpack-web`:
   - Add missing `react-table` dependency used by datatable component
 
-- bpk-component-switch:
-  - Fixed `small` prop type
