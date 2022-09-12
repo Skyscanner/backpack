@@ -18,7 +18,7 @@
     "bpk-component-icon": "^10.0.6",
     "bpk-component-link": "^4.0.6",
     "bpk-component-navigation-bar": "^4.1.2",
-    "bpk-mixins": "^31.6.6",
+    "bpk-mixins": "^31.6.7",
     "bpk-react-utils": "^7.0.1",
     "bpk-scrim-utils": "^6.0.6",
     "prop-types": "^15.7.2"
