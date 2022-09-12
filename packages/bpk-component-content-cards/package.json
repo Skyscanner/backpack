@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-content-cards",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Backpack content-cards component.",
   "license": "Apache-2.0",
   "repository": {
@@ -13,7 +13,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-component-text": "^8.0.5",
+    "bpk-component-text": "^8.0.6",
     "bpk-mixins": "^31.6.6",
     "bpk-react-utils": "^7.0.1"
   },

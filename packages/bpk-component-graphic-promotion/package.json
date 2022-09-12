@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-graphic-promotion",
-  "version": "5.1.3",
+  "version": "5.1.4",
   "description": "Backpack graphic-promotion component.",
   "license": "Apache-2.0",
   "repository": {
@@ -13,8 +13,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-component-button": "^7.0.5",
-    "bpk-component-text": "^8.0.5",
+    "bpk-component-button": "^7.0.6",
+    "bpk-component-text": "^8.0.6",
     "bpk-mixins": "^31.6.6",
     "bpk-react-utils": "^7.0.1",
     "prop-types": "^15.5.8"
