@@ -1,3 +1,16 @@
+# 2022-09-12
+
+**Changed:**
+
+- bpk-component-input: 7.0.5 => 7.0.6<br />
+- bpk-component-fieldset: 5.0.5 => 5.0.6
+  - Updated to use semantic tokens.
+
+**Fixed:**
+
+- bpk-component-switch: 3.1.0 => 3.1.1:
+  - Fixed `small` prop type
+
 # 2022-09-09
 
 `@skyscanner/backpack-web: 11.0.0 => 11.1.0` - all changes noted below <br />
