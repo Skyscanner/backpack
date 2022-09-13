@@ -24,7 +24,8 @@
     "bpk-component-switch": "^3.1.1"
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "gitHead": "4e4ec9add28e1db54d6a38a10c331bbd163f2926"
 }
