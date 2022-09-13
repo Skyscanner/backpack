@@ -36,9 +36,9 @@ $slider-large-control-inset-size: bpk-spacing-sm() * 7;
     height: bpk-spacing-xl();
     justify-content: center;
     align-items: center;
-    border: $bpk-one-pixel-rem solid $bpk-color-sky-gray-tint-06;
+    border: $bpk-one-pixel-rem solid $bpk-surface-highlight-day;
     border-radius: $bpk-border-radius-pill;
-    background-color: $bpk-color-white;
+    background-color: $bpk-surface-default-day;
     cursor: pointer;
 
     @include bpk-box-shadow-sm;
@@ -49,7 +49,7 @@ $slider-large-control-inset-size: bpk-spacing-sm() * 7;
       width: $slider-control-inset-size;
       height: $slider-control-inset-size;
       border-radius: $bpk-border-radius-pill;
-      box-shadow: inset 0 0 0 $bpk-one-pixel-rem $bpk-color-sky-gray-tint-04;
+      box-shadow: inset 0 0 0 $bpk-one-pixel-rem rgba(37, 32, 31, 0.3);
     }
 
     &--active {
@@ -73,7 +73,7 @@ $slider-large-control-inset-size: bpk-spacing-sm() * 7;
     top: calc(50% - #{bpk-spacing-sm()});
     height: bpk-spacing-md();
     border-radius: $bpk-border-radius-sm;
-    background-color: $bpk-color-sky-gray-tint-06;
+    background-color: $bpk-surface-highlight-day;
   }
 
   // stylelint-disable-next-line selector-attribute-quotes
@@ -81,21 +81,21 @@ $slider-large-control-inset-size: bpk-spacing-sm() * 7;
     @include bpk-themeable-property(
       background-color,
       --bpk-slider-bar-color,
-      $bpk-color-sky-blue-shade-03
+      $bpk-core-primary-day
     );
   }
 
   &--range {
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='0'] {
-      background-color: $bpk-color-sky-gray-tint-06;
+      background-color: $bpk-surface-highlight-day;
     }
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='1'] {
       @include bpk-themeable-property(
         background-color,
         --bpk-slider-bar-color,
-        $bpk-color-sky-blue-shade-03
+        $bpk-core-primary-day
       );
     }
   }
