@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-accordion",
-  "version": "6.1.5",
+  "version": "6.2.0",
   "description": "Backpack accordion component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,11 +14,11 @@
   },
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
-    "bpk-animate-height": "^5.0.6",
-    "bpk-component-icon": "^10.0.6",
-    "bpk-component-text": "^8.0.6",
+    "bpk-animate-height": "^5.1.0",
+    "bpk-component-icon": "^10.1.0",
+    "bpk-component-text": "^8.1.0",
     "bpk-mixins": "^31.7.0",
-    "bpk-react-utils": "^7.0.1",
+    "bpk-react-utils": "^7.1.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
@@ -27,6 +27,6 @@
   },
   "devDependencies": {
     "@skyscanner/bpk-foundations-web": "^9.6.0",
-    "bpk-component-checkbox": "^5.0.6"
+    "bpk-component-checkbox": "^5.1.0"
   }
 }

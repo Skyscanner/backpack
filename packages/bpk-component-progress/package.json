@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-progress",
-  "version": "4.0.6",
+  "version": "4.1.0",
   "description": "Backpack progress bar component.",
   "license": "Apache-2.0",
   "repository": {
@@ -16,7 +16,7 @@
   "dependencies": {
     "@skyscanner/bpk-foundations-web": "^9.6.0",
     "bpk-mixins": "^31.7.0",
-    "bpk-react-utils": "^7.0.1",
+    "bpk-react-utils": "^7.1.0",
     "lodash.clamp": "^4.0.3",
     "prop-types": "^15.7.2"
   },
@@ -25,7 +25,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^7.0.6",
-    "bpk-storybook-utils": "^2.0.6"
+    "bpk-component-button": "^7.1.0",
+    "bpk-storybook-utils": "^2.1.0"
   }
 }
