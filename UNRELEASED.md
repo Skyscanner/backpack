@@ -6,6 +6,9 @@
 - bpk-component-price:
   - Update component to use semantic colour tokens
 
+- bpk-component-autosuggest:
+    - Update autosuggest component to semantic colour tokens
+
 **Fixed:**
 
 - `@skyscanner/backpack-web`:
