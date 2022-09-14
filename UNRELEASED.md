@@ -4,10 +4,12 @@
   - Add `react-dom v^17.0.2` as a peer dependency
 
 - bpk-component-autosuggest:
-    - Update autosuggest component to semantic colour tokens
+  - Update autosuggest component to semantic colour tokens
+
+- bpk-component-price:
+  - Update component to use semantic colour tokens
 
 **Fixed:**
 
 - `@skyscanner/backpack-web`:
   - Add missing `react-table` dependency used by datatable component
-
