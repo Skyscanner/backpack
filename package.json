@@ -92,7 +92,6 @@
       "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
       "@skyscanner/bpk-svgs/dist/svgs/^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js",
       "^react($|/.+)": "<rootDir>/node_modules/react$1"
-
     },
     "setupFilesAfterEnv": [
       "<rootDir>/scripts/jest/setup.js"
@@ -112,7 +111,7 @@
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
     "@babel/register": "^7.17.7",
-    "@skyscanner/bpk-foundations-web": "^9.5.0",
+    "@skyscanner/bpk-foundations-web": "^9.6.0",
     "@skyscanner/stylelint-config-skyscanner": "^6.0.0",
     "@storybook/addon-a11y": "^6.0.2",
     "@storybook/addon-actions": "^6.0.2",
@@ -134,8 +133,8 @@
     "babel-jest": "^26.0.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "bpk-mixins": "^31.6.7",
-    "bpk-stylesheets": "^7.2.7",
+    "bpk-mixins": "^31.7.0",
+    "bpk-stylesheets": "^7.2.9",
     "cli-progress": "^3.11.1",
     "colors": "^1.3.3",
     "copy-webpack-plugin": "^5.0.4",

@@ -14,7 +14,7 @@
   },
   "gitHead": "5c156b97cb0ba5e75851d3c763334578714c895e",
   "dependencies": {
-    "bpk-mixins": "^31.6.7",
+    "bpk-mixins": "^31.7.0",
     "bpk-react-utils": "^7.0.1",
     "prop-types": "^15.7.2",
     "react-responsive": "^8.2.0"
@@ -24,6 +24,6 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@skyscanner/bpk-foundations-web": "^9.5.0"
+    "@skyscanner/bpk-foundations-web": "^9.6.0"
   }
 }
