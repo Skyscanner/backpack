@@ -55,12 +55,12 @@ $bpk-spacing-v2: true;
         width: bpk-spacing-xxl() / 4;
         height: bpk-spacing-sm() - $bpk-one-pixel-rem;
         border-radius: $bpk-border-size-lg;
-        background-color: $bpk-color-white;
+        background-color: $bpk-surface-default-day;
       }
     }
 
     &-white {
-      background-color: $bpk-color-white;
+      background-color: $bpk-surface-default-day;
     }
   }
 

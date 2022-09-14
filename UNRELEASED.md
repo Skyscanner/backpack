@@ -10,3 +10,9 @@
 
 - `@skyscanner/backpack-web`:
   - Add missing `react-table` dependency used by datatable component
+
+- bpk-component-checkbox<br />
+- bpk-component-radio<br />
+- bpk-component-select<br />
+- bpk-component-slider<br />
+  - Updated to use new semantic colours

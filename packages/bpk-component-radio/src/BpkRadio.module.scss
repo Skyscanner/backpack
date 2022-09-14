@@ -48,7 +48,7 @@ $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
       &:disabled {
         + .bpk-radio__circle {
           display: block;
-          background: $bpk-color-sky-gray-tint-04;
+          background: $bpk-text-disabled-day;
         }
       }
     }
