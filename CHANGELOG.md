@@ -1,3 +1,31 @@
+# 2022-09-14
+
+**Changed:**
+
+`@skyscanner/backpack-web`: 11.1.1 => 11.2.0 - all changes noted below <br />
+
+- `bpk-component-price`: 2.0.6 => 2.1.0
+  - Update component to use semantic colour tokens
+
+- `bpk-component-autosuggest`: 7.0.6 => 7.1.0
+    - Update autosuggest component to semantic colour tokens
+
+- All components:
+  - Upgrade Backpack to Node 16:
+    - Add `react-dom v^17.0.2` as a peer dependency
+
+**Fixed:**
+
+- `@skyscanner/backpack-web`: 11.1.1 => 11.2.0
+  - Add missing `react-table` dependency used by datatable component
+
+- `bpk-component-checkbox`: 5.0.6 => 5.1.0 <br />
+`bpk-component-radio`: 4.0.6 => 4.1.0 <br />
+`bpk-component-select`: 6.0.6 => 6.1.0 <br />
+`bpk-component-slider`: 4.0.6 => 4.1.0 <br />
+  - Updated to use new semantic colours
+
+
 # 2022-09-12
 
 **Changed:**
