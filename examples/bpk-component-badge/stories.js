@@ -19,7 +19,6 @@
 /* @flow strict */
 import {
   DefaultExample,
-  WithIconsExample,
   CenteredExample,
   DockedLeadingExample,
   DockedTrailingExample,
@@ -38,7 +37,6 @@ export default {
 };
 
 export const Default = DefaultExample;
-export const WithIcons = WithIconsExample;
 
 export const Centered = CenteredExample;
 export const DockedRight = DockedLeadingExample;
