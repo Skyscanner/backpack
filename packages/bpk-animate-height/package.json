@@ -21,7 +21,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@skyscanner/bpk-foundations-web": "^10.0.0",
+    "@skyscanner/bpk-foundations-web": "^10.2.0",
     "bpk-component-button": "^7.1.0"
   }
 }
