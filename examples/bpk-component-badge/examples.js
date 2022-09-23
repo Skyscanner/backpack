@@ -20,11 +20,9 @@
 
 import React from 'react';
 
-import BpkSmallBeerIcon from '../../packages/bpk-component-icon/sm/beer';
-import BpkSmallFlightIcon from '../../packages/bpk-component-icon/sm/flight';
-import BpkSmallWeatherIcon from '../../packages/bpk-component-icon/sm/weather';
 import BpkSmallTickIcon from '../../packages/bpk-component-icon/sm/tick-circle';
-import BpkSmallCloseIcon from '../../packages/bpk-component-icon/sm/close-circle';
+import BpkSmallExclamationIcon from '../../packages/bpk-component-icon/sm/exclamation';
+import BpkSmallHelpCircleIcon from '../../packages/bpk-component-icon/sm/help-circle';
 import { BpkDarkExampleWrapper } from '../../packages/bpk-storybook-utils';
 import BpkBadge, { BADGE_TYPES } from '../../packages/bpk-component-badge';
 
@@ -38,24 +36,6 @@ const DefaultExample = () => (
       <BpkBadge>Cherries</BpkBadge>&nbsp;
       <BpkBadge>Dragonfruit</BpkBadge>
     </div>
-  </BadgeLayout>
-);
-
-const WithIconsExample = () => (
-  <BadgeLayout>
-    <BpkBadge>
-      <BpkSmallFlightIcon />
-      &nbsp;Flights
-    </BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.success}>
-      <BpkSmallWeatherIcon /> + <BpkSmallBeerIcon />
-      &nbsp;Drinks in the sun
-    </BpkBadge>
-    &nbsp;
-    <BpkBadge>
-      <BpkSmallWeatherIcon /> + <BpkSmallBeerIcon />
-    </BpkBadge>
   </BadgeLayout>
 );
 
@@ -85,11 +65,11 @@ const WarningExample = () => (
     <BpkBadge type={BADGE_TYPES.warning}>Warning</BpkBadge>
     &nbsp;
     <BpkBadge type={BADGE_TYPES.warning}>
-      <BpkSmallTickIcon /> &nbsp;Warning
+      <BpkSmallHelpCircleIcon /> &nbsp;Warning
     </BpkBadge>
     &nbsp;
     <BpkBadge type={BADGE_TYPES.warning}>
-      Warning&nbsp; <BpkSmallTickIcon />
+      Warning&nbsp; <BpkSmallHelpCircleIcon />
     </BpkBadge>
   </BadgeLayout>
 );
@@ -115,13 +95,13 @@ const DestructiveExample = () => (
     <BpkBadge type={BADGE_TYPES.destructive}>Destructive</BpkBadge>
     &nbsp;
     <BpkBadge type={BADGE_TYPES.destructive}>
-      <BpkSmallCloseIcon />
+      <BpkSmallExclamationIcon />
       &nbsp;Destructive
     </BpkBadge>
     &nbsp;
     <BpkBadge type={BADGE_TYPES.destructive}>
       Destructive&nbsp;
-      <BpkSmallCloseIcon />
+      <BpkSmallExclamationIcon />
     </BpkBadge>
   </BadgeLayout>
 );
@@ -210,7 +190,6 @@ const MixedExample = () => (
 
 export {
   DefaultExample,
-  WithIconsExample,
   CenteredExample,
   DockedLeadingExample,
   DockedTrailingExample,
