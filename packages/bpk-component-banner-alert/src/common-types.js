@@ -25,7 +25,7 @@ export const ALERT_TYPES = {
   WARN: 'warn',
   ERROR: 'error',
   NEUTRAL: 'neutral',
-  EVENT: 'event',
+  EVENT: 'event', // DEPRECATED
 };
 
 export type AlertTypeValue = $Values<typeof ALERT_TYPES>;
