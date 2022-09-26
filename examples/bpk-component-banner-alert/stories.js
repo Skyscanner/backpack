@@ -27,7 +27,6 @@ import {
   SuccessWithReactRenderedMessageExample,
   WarnExample,
   ErrorExample,
-  EventExample,
   SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
@@ -57,7 +56,6 @@ export const SuccessWithReactRenderedMessage =
 
 export const Warn = WarnExample;
 export const Error = ErrorExample;
-export const Event = EventExample;
 export const SuccessDismissableBehaviour = SuccessDismissableBehaviourExample;
 
 export const SuccessExpandableBehaviour = SuccessExpandableBehaviourExample;

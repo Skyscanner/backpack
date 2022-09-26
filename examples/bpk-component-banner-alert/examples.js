@@ -182,10 +182,6 @@ const ErrorExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlert message="Error alert" type={ALERT_TYPES.ERROR} {...props} />
 );
-const EventExample = (props: {}) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlert message="Event alert" type={ALERT_TYPES.EVENT} {...props} />
-);
 const SuccessDismissableBehaviourExample = () => (
   <BpkBannerAlertDismissableState
     dismissButtonLabel="Dismiss"
@@ -250,7 +246,6 @@ export {
   SuccessWithReactRenderedMessageExample,
   WarnExample,
   ErrorExample,
-  EventExample,
   SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
