@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-ticket",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "Backpack ticket component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,7 +23,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^7.1.0",
-    "bpk-component-icon": "^10.1.0"
+    "bpk-component-button": "^7.1.1",
+    "bpk-component-icon": "^10.1.1"
   }
 }
