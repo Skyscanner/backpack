@@ -1,3 +1,18 @@
+# 2022-09-26
+
+`@skyscanner/backpack-web`: 11.2.0 => 12.0.0 - all changes noted below <br />
+
+**Breaking:**
+
+- bpk-component-badge: 5.2.0 => 6.0.0
+    - Update component to semantic colours. This is a visually breaking change only.
+
+**Changed:**
+
+- bpk-component-banner-alert: 7.1.0 => 7.2.0
+    - deprecated type `event` of banner alert. This will be removed in a future release.
+    - changed to semantic colours.
+
 # 2022-09-14
 
 **Changed:**
