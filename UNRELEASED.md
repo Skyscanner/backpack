@@ -7,3 +7,6 @@
 - bpk-component-star-rating<br />
 - bpk-component-ticket<br />
   - Migrated components to use semantic tokens
+
+- bpk-component-section-list:
+  - Updated component to use new semantic tokens.
