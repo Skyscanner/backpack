@@ -75,10 +75,10 @@
   max-width: 76.5rem;
   margin-right: auto;
   margin-left: auto;
-  background-color: $bpk-color-sky-blue;
+  background-color: $bpk-surface-contrast-day;
   background-position: center;
   background-size: cover;
-  color: $bpk-color-white;
+  color: $bpk-text-on-dark-day;
   box-shadow: none;
 
   @include bpk-breakpoint-small-tablet {
