@@ -24,7 +24,7 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
 @mixin bpk-datatable-border-left() {
   @include _bpk-border-left(
     $bpk-border-size-datatable,
-    $bpk-color-sky-blue,
+    $bpk-core-accent-day,
     inset
   );
 }
@@ -32,7 +32,7 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
 @mixin bpk-datatable-border-right() {
   @include _bpk-border-right(
     $bpk-border-size-datatable,
-    $bpk-color-sky-blue,
+    $bpk-core-accent-day,
     inset
   );
 }
@@ -48,19 +48,19 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: $bpk-border-size-sm solid $bpk-color-sky-gray-tint-07;
+    border: $bpk-border-size-sm solid $bpk-line-day;
     border-bottom: none;
     outline-offset: -(4 * $bpk-one-pixel-rem);
-    color: $bpk-color-sky-gray-tint-01;
+    color: $bpk-text-primary-day;
 
     @include bpk-footnote;
 
     &:last-child:not(.bpk-data-table__header-row) {
-      border-bottom: $bpk-border-size-sm solid $bpk-color-sky-gray-tint-07;
+      border-bottom: $bpk-border-size-sm solid $bpk-line-day;
     }
 
     &--clickable:not(.bpk-data-table__header-row):hover {
-      background-color: $bpk-color-sky-gray-tint-07;
+      background-color: $bpk-canvas-contrast-day;
       cursor: pointer;
 
       @include bpk-datatable-border-left;
@@ -71,7 +71,7 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     }
 
     &--selected {
-      background-color: $bpk-color-sky-gray-tint-06;
+      background-color: $bpk-canvas-contrast-day;
 
       @include bpk-datatable-border-left;
 
