@@ -59,8 +59,8 @@ export default () => (
 
 > For `BpkTable` & `BpkTableHeadCell`.
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | node     | true     | -             |
-| alternate | bool     | false    | false         |
+| Property               | PropType | Required | Default Value |
+| ---------------------- | -------- | -------- | ------------- |
+| children               | node     | true     | -             |
+| alternate (deprecated) | bool     | false    | false         |
 
