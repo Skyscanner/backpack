@@ -9,3 +9,6 @@
 - bpk-component-progress:
   - Migrated to semantic colours
   - Removed `stepColor` prop as not being used and shouldn't be customised.
+
+- bpk-component-section-list:
+  - Updated component to use new semantic tokens.
