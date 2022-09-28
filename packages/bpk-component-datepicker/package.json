@@ -19,7 +19,7 @@
     "bpk-component-input": "^7.1.1",
     "bpk-component-modal": "^6.1.1",
     "bpk-component-popover": "^8.1.1",
-    "bpk-mixins": "^32.0.2",
+    "bpk-mixins": "^32.1.0",
     "bpk-react-utils": "^7.1.0",
     "prop-types": "^15.7.2"
   },
@@ -28,7 +28,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@skyscanner/bpk-foundations-web": "^10.2.0",
+    "@skyscanner/bpk-foundations-web": "^10.3.1",
     "bpk-storybook-utils": "^2.1.1"
   }
 }
