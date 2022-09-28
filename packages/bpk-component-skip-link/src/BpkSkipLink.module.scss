@@ -23,8 +23,7 @@
   padding: $bpk-spacing-sm;
   transition: opacity $bpk-duration-sm ease-in-out;
   border-radius: $bpk-border-radius-sm;
-  background-color: $bpk-color-panjin;
-  color: $bpk-color-white;
+  color: $bpk-text-on-dark-day;
   font-weight: bold;
   text-decoration: none;
   opacity: 0;
@@ -38,7 +37,7 @@
   @include bpk-themeable-property(
     background-color,
     --bpk-skip-link-background-color,
-    $bpk-color-panjin
+    $bpk-status-danger-spot-day
   );
 
   &:focus-within,

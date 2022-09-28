@@ -27,7 +27,7 @@
 .bpk-star {
   display: inline-block;
   vertical-align: text-bottom;
-  fill: $bpk-color-sky-gray-tint-04;
+  fill: $bpk-text-disabled-day;
 
   &--large {
     @include large-star;
@@ -42,7 +42,7 @@
     @include bpk-themeable-property(
       fill,
       --bpk-star-rating-filled-color,
-      $bpk-color-kolkata
+      $bpk-status-warning-spot-day
     );
   }
 

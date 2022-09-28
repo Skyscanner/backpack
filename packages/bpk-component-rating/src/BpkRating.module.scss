@@ -34,7 +34,7 @@ $bpk-spacing-v2: true;
     padding-right: bpk-spacing-md();
     justify-content: center;
     align-items: baseline;
-    color: $bpk-color-sky-gray;
+    color: $bpk-text-primary-day;
 
     @include bpk-rtl {
       padding-right: 0;
@@ -55,7 +55,7 @@ $bpk-spacing-v2: true;
   }
 
   &__scale {
-    color: $bpk-color-sky-gray-tint-02;
+    color: $bpk-text-secondary-day;
   }
 
   &__title {
@@ -66,7 +66,7 @@ $bpk-spacing-v2: true;
 
   &__subtitle {
     padding-left: bpk-spacing-md();
-    color: $bpk-color-sky-gray-tint-02;
+    color: $bpk-text-secondary-day;
 
     @include bpk-rtl {
       padding-right: bpk-spacing-md();
