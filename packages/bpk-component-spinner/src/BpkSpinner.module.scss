@@ -24,19 +24,20 @@ $bpk-spacing-v2: true;
   @include bpk-spinner;
 
   &--primary {
+    // Post colour adoption/rollout we will require to move the 'primary' style to be the same as dark and make dark (moving to primary/defautl) and light the only options
     @include bpk-themeable-property(
       fill,
       --bpk-spinner-primary-color,
-      $bpk-color-sky-blue
+      $bpk-core-accent-day
     );
   }
 
   &--light {
-    fill: $bpk-color-white;
+    fill: $bpk-text-on-dark-day;
   }
 
   &--dark {
-    fill: $bpk-color-sky-gray-tint-01;
+    fill: $bpk-text-primary-day;
   }
 
   &--large {
