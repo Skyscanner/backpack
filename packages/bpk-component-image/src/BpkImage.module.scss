@@ -53,7 +53,7 @@
 }
 
 @mixin bpk-image--no-background {
-  background-color: transparent;
+  background-color: $bpk-surface-contrast-day;
 }
 
 @mixin bpk-image {
@@ -61,7 +61,7 @@
   display: block;
   max-width: 100%;
   transition: background-color $bpk-duration-base ease-in-out;
-  background-color: $bpk-color-sky-gray-tint-06;
+  background-color: $bpk-surface-highlight-day;
   overflow: hidden;
   transition-delay: $bpk-duration-base;
 }

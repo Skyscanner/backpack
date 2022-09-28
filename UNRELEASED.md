@@ -1,5 +1,15 @@
+**Breaking:**
+
+`bpk-component-progress`:
+  - Migrated to semantic colours
+  - Removed `stepColor` prop as not being used and shouldn't be customised.
+  
 **Changed:**
 
+`bpk-component-graphic-promotion`: <br />
+`bpk-component-image`: <br />
+`bpk-component-rating`: <br />
+`bpk-component-skip-link`: <br />
 `bpk-component-close-button`: <br />
 `bpk-component-content-cards`: <br />
 `bpk-component-nudger`: <br />
