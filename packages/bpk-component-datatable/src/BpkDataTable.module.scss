@@ -71,7 +71,7 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     }
 
     &--selected {
-      background-color: $bpk-canvas-contrast-day;
+      background-color: $bpk-status-warning-fill-day;
 
       @include bpk-datatable-border-left;
 
