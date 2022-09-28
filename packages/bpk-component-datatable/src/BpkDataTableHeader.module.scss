@@ -46,16 +46,16 @@ $bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
 
 .bpk-data-table-column__sort-icon {
   display: block;
-  fill: $bpk-color-sky-gray-tint-04;
+  fill: $bpk-line-day;
 
   &:hover {
-    fill: $bpk-color-sky-gray-tint-02;
+    fill: $bpk-line-day;
   }
 
   &--selected {
     &,
     &:hover {
-      fill: $bpk-color-sky-blue-shade-01;
+      fill: $bpk-core-accent-day;
     }
   }
 }

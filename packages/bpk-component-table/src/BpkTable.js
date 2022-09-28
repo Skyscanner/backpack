@@ -20,7 +20,7 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 
 import STYLES from './BpkTable.module.scss';
 
@@ -29,7 +29,7 @@ const getClassName = cssModules(STYLES);
 type Props = {
   children: Node,
   className: ?string,
-  alternate: boolean,
+  alternate: ?boolean,
 };
 
 const BpkTable = (props: Props) => {
@@ -52,12 +52,15 @@ const BpkTable = (props: Props) => {
 BpkTable.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  alternate: PropTypes.bool,
+  alternate: deprecated(
+    PropTypes.bool,
+    'Alternate prop is deprecated, please remove your usage of this property.',
+  ),
 };
 
 BpkTable.defaultProps = {
   className: null,
-  alternate: false,
+  alternate: null,
 };
 
 export default BpkTable;
