@@ -21,8 +21,8 @@
 $bpk-spacing-v2: true;
 $arrow-size: bpk-spacing-md();
 $arrow-inset-margin: -($bpk-one-pixel-rem * 3);
-$light-arrow-border-color: $bpk-color-sky-gray-tint-06;
-$dark-background-color: $bpk-color-sky-gray;
+$light-arrow-border-color: $bpk-line-day;
+$dark-background-color: $bpk-surface-contrast-day;
 
 .bpk-tooltip-portal {
   z-index: $bpk-zindex-tooltip;
@@ -80,7 +80,7 @@ $dark-background-color: $bpk-color-sky-gray;
     transform: rotate(45deg);
     border: $bpk-one-pixel-rem solid transparent;
     background: inherit;
-    background-color: $bpk-color-white;
+    background-color: $bpk-surface-default-day;
 
     .bpk-tooltip-portal[data-popper-placement='top'] & {
       bottom: $arrow-inset-margin;
@@ -141,7 +141,7 @@ $dark-background-color: $bpk-color-sky-gray;
     }
 
     &--dark {
-      color: $bpk-color-white;
+      color: $bpk-text-primary-inverse-day;
 
       @include bpk-layer($dark-background-color, $dark-background-color);
     }
