@@ -58,23 +58,23 @@ $bpk-spacing-v2: true;
     margin-left: -$size / 2;
     justify-content: center;
     align-items: center;
-    border: $bpk-border-size-lg $bpk-color-white solid;
+    border: ($bpk-border-size-lg * 2) $bpk-surface-default-day solid;
     border-radius: 50%;
 
     &--primary {
-      background-color: $bpk-color-monteverde;
+      background-color: $bpk-core-accent-day;
     }
 
     &--warning {
-      background-color: $bpk-color-kolkata;
+      background-color: $bpk-status-warning-spot-day;
     }
 
     &--destructive {
-      background-color: $bpk-color-panjin;
+      background-color: $bpk-status-danger-spot-day;
     }
 
     > svg {
-      fill: $bpk-color-white;
+      fill: $bpk-text-primary-inverse-day;
     }
   }
 }
