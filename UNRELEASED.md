@@ -30,7 +30,8 @@
 `bpk-component-section-list`: <br />
 `bpk-component-link`: <br />
 `bpk-component-breadcrumb`: <br />
-`bpk-component-drawer`: <br />
-`bpk-component-modal`: <br />
 `bpk-component-navigation-bar`: <br />
+`bpk-component-dialog`: <br />
+`bpk-component-modal`: <br />
+`bpk-component-drawer`: <br />
    - Update component to semantic colours
