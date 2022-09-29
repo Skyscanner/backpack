@@ -18,7 +18,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
+import {
+  TransitionInitialMount,
+  cssModules,
+  deprecated,
+} from 'bpk-react-utils';
 
 import STYLES from './bpk-scrim.module.scss';
 
@@ -32,7 +36,7 @@ const BpkScrim = (props) => (
   >
     <div
       role="presentation"
-      className={getClassName('bpk-scrim', props.dark && 'bpk-scrim--dark')}
+      className={getClassName('bpk-scrim')}
       onMouseDown={props.onClose}
       onTouchStart={props.onClose}
     />
@@ -40,7 +44,11 @@ const BpkScrim = (props) => (
 );
 
 BpkScrim.propTypes = {
-  dark: PropTypes.bool,
+  // eslint-disable-next-line react/no-unused-prop-types
+  dark: deprecated(
+    PropTypes.bool,
+    "This property 'dark' is deprecated. Please remove any usage of this property",
+  ),
   onClose: PropTypes.func,
 };
 

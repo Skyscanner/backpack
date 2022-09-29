@@ -29,3 +29,7 @@
 `bpk-component-tooltip`: </br>
 `bpk-component-section-list`: <br />
    - Update component to semantic colours
+
+`bpk-scrim-utils`:
+  - Update component to semantic colours
+  - Deprecated `dark` property as we only support one scrim style and this property could never be applied.

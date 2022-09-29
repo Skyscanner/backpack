@@ -25,6 +25,7 @@ import {
   isDeviceIpad,
   isDeviceIphone,
   wrapDisplayName,
+  deprecated,
 } from 'bpk-react-utils';
 
 import BpkScrim from './BpkScrim';
@@ -46,7 +47,10 @@ const withScrim = (WrappedComponent) => {
     static propTypes = {
       getApplicationElement: PropTypes.func.isRequired,
       onClose: onClosePropType,
-      dark: PropTypes.bool,
+      dark: deprecated(
+        PropTypes.bool,
+        "This property 'dark' is deprecated. Please remove any usage of this property",
+      ),
       isIphone: PropTypes.bool,
       isIpad: PropTypes.bool,
       containerClassName: PropTypes.string,
@@ -140,7 +144,7 @@ const withScrim = (WrappedComponent) => {
 
       return (
         <div className={classNames.join(' ')}>
-          <BpkScrim onClose={closeOnScrimClick ? onClose : null} dark={dark} />
+          <BpkScrim onClose={closeOnScrimClick ? onClose : null} />
           <WrappedComponent
             {...rest}
             isIphone={isIphone}

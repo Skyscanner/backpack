@@ -26,9 +26,4 @@ describe('BpkScrim', () => {
     const { asFragment } = render(<BpkScrim />);
     expect(asFragment()).toMatchSnapshot();
   });
-
-  it('should render correctly with dark="true"', () => {
-    const { asFragment } = render(<BpkScrim dark />);
-    expect(asFragment()).toMatchSnapshot();
-  });
 });

@@ -41,7 +41,7 @@ const BoxWithScrim = withScrim(Box);
 | isIphone              | bool     | false    | `/iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '')` |
 | containerClassName    | string   | false    | ''                                                                               |
 | closeOnScrimClick     | bool     | false    | true                                                                             |
-| dark                  | bool     | false    | false                                                                            |
+| dark (deprecated)     | bool     | false    | false                                                                            |
 
 ### Prop Details
 
