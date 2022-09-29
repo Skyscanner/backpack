@@ -29,3 +29,8 @@
 `bpk-component-tooltip`: </br>
 `bpk-component-section-list`: <br />
    - Update component to semantic colours
+
+**Fixed:**
+
+- bpk-component-accordion:
+    - Remove redundant `aria-labeledby` tags in accordion item
