@@ -28,4 +28,9 @@
 `bpk-component-datepicker`: </br>
 `bpk-component-tooltip`: </br>
 `bpk-component-section-list`: <br />
+`bpk-component-link`: <br />
+`bpk-component-breadcrumb`: <br />
+`bpk-component-drawer`: <br />
+`bpk-component-modal`: <br />
+`bpk-component-navigation-bar`: <br />
    - Update component to semantic colours
