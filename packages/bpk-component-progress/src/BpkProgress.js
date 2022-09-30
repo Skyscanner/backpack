@@ -20,7 +20,6 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { colorWhite } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
 
@@ -31,16 +30,15 @@ const getClassName = cssModules(STYLES);
 const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
-const renderSteps = (numberOfSteps, stepColor) => {
+const renderSteps = (numberOfSteps) => {
   const steps = [];
   for (let i = 1; i <= numberOfSteps; i += 1) {
     const left = `${100 * (i / (numberOfSteps + 1))}%`;
-    const backgroundColor = stepColor;
     steps.push(
       <div
         key={`bpk-progress__step-${i}`}
         className={getClassName('bpk-progress__step')}
-        style={{ left, backgroundColor }}
+        style={{ left }}
       />,
     );
   }
@@ -52,7 +50,6 @@ type Props = {
   min: number,
   value: number,
   stepped: boolean,
-  stepColor: string,
   small: boolean,
   className: ?string,
   onComplete: ?() => mixed,
@@ -66,7 +63,6 @@ class BpkProgress extends Component<Props> {
     min: PropTypes.number.isRequired,
     value: PropTypes.number.isRequired,
     stepped: PropTypes.bool,
-    stepColor: PropTypes.string,
     small: PropTypes.bool,
     className: PropTypes.string,
     onComplete: PropTypes.func,
@@ -77,7 +73,6 @@ class BpkProgress extends Component<Props> {
   static defaultProps = {
     className: null,
     stepped: false,
-    stepColor: colorWhite,
     small: false,
     onComplete: () => null,
     onCompleteTransitionEnd: () => null,
@@ -113,23 +108,21 @@ class BpkProgress extends Component<Props> {
       max,
       min,
       small,
-      stepColor,
       stepped,
       value,
       ...rest
     } = this.props;
-    const classNames = [getClassName('bpk-progress')];
-    if (className) {
-      classNames.push(className);
-    }
-    if (small) {
-      classNames.push(getClassName('bpk-progress--small'));
-    }
 
-    const valueClassName = [getClassName('bpk-progress__value')];
-    if (stepped) {
-      valueClassName.push(getClassName('bpk-progress__value--stepped'));
-    }
+    const classNames = getClassName(
+      'bpk-progress',
+      className,
+      small && 'bpk-progress--small',
+    );
+
+    const valueClassName = getClassName(
+      'bpk-progress__value',
+      stepped && 'bpk-progress__value--stepped',
+    );
 
     const adjustedValue = clamp(value, min, max);
     const percentage = 100 * (adjustedValue / (max - min));
@@ -141,7 +134,7 @@ class BpkProgress extends Component<Props> {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <div
-        className={classNames.join(' ')}
+        className={classNames}
         role="progressbar"
         aria-valuetext={getValueText ? getValueText(value, min, max) : null}
         aria-valuenow={value}
@@ -151,11 +144,11 @@ class BpkProgress extends Component<Props> {
         {...rest}
       >
         <div
-          className={valueClassName.join(' ')}
+          className={valueClassName}
           style={{ width: `${percentage}%` }}
           onTransitionEnd={this.handleCompleteTransitionEnd}
         />
-        {renderSteps(numberOfSteps, stepColor)}
+        {renderSteps(numberOfSteps)}
       </div>
     );
   }

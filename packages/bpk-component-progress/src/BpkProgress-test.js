@@ -50,13 +50,6 @@ describe('BpkProgress', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a "stepColor" attribute', () => {
-    const { asFragment } = render(
-      <BpkProgress min={0} max={9} value={2} stepped stepColor="blue" />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with "small" and "stepped" attributes', () => {
     const { asFragment } = render(
       <BpkProgress min={0} max={9} value={2} small stepped />,

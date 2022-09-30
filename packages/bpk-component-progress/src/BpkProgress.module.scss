@@ -24,7 +24,7 @@ $bpk-spacing-v2: true;
   position: relative;
   height: bpk-spacing-base();
   border-radius: $bpk-border-radius-pill;
-  background-color: $bpk-color-sky-gray-tint-06;
+  background-color: $bpk-surface-highlight-day;
   overflow: hidden;
 
   &--small {
@@ -46,7 +46,7 @@ $bpk-spacing-v2: true;
     @include bpk-themeable-property(
       background-color,
       --bpk-progress-bar-fill-color,
-      $bpk-color-sky-blue
+      $bpk-core-accent-day
     );
 
     &--stepped {
@@ -59,6 +59,6 @@ $bpk-spacing-v2: true;
     top: 0;
     bottom: 0;
     width: 2 * $bpk-one-pixel-rem;
-    background: $bpk-color-white;
+    background: $bpk-canvas-day;
   }
 }

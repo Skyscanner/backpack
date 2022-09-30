@@ -20,13 +20,13 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 
 import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = { children: Node, alternate: boolean, className: ?string };
+type Props = { children: Node, alternate: ?boolean, className: ?string };
 
 const BpkTableHeadCell = (props: Props) => {
   const { alternate, className, ...rest } = props;
@@ -42,12 +42,15 @@ const BpkTableHeadCell = (props: Props) => {
 
 BpkTableHeadCell.propTypes = {
   children: PropTypes.node.isRequired,
-  alternate: PropTypes.bool,
+  alternate: deprecated(
+    PropTypes.bool,
+    'Alternate prop is deprecated, please remove your usage of this property.',
+  ),
   className: PropTypes.string,
 };
 
 BpkTableHeadCell.defaultProps = {
-  alternate: false,
+  alternate: null,
   className: null,
 };
 

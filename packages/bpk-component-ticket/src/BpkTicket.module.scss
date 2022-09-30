@@ -34,7 +34,7 @@ $bpk-spacing-v2: true;
     z-index: -1;
     transition: opacity 200ms ease-in-out;
     border-radius: inherit;
-    box-shadow: $bpk-box-shadow-lg;
+    box-shadow: $bpk-box-shadow-sm;
     opacity: 0;
     pointer-events: none; // To prevent the pseudo element absorbing click events
   }
@@ -51,8 +51,7 @@ $bpk-spacing-v2: true;
   flex: none;
   color: $bpk-card-color;
   text-decoration: none;
-  box-shadow: 0 5px 12px rgba($bpk-button-outline-background-color, 0.08),
-    0 3px 12px rgba($bpk-button-outline-background-color, 0.08);
+  box-shadow: $bpk-box-shadow-sm;
   cursor: pointer;
 
   @include bpk-border-radius-md;
@@ -112,17 +111,17 @@ $bpk-spacing-v2: true;
     &--horizontal {
       min-width: 30%;
       border-radius: 0 $bpk-border-radius-md $bpk-border-radius-md 0;
-      box-shadow: inset $bpk-one-pixel-rem 0 0 $bpk-color-sky-gray-tint-05;
+      box-shadow: inset $bpk-one-pixel-rem 0 0 $bpk-line-day;
 
       @include bpk-rtl {
         border-radius: $bpk-border-radius-md 0 0 $bpk-border-radius-md;
-        box-shadow: inset (-$bpk-one-pixel-rem) 0 0 $bpk-color-sky-gray-tint-05;
+        box-shadow: inset (-$bpk-one-pixel-rem) 0 0 $bpk-line-day;
       }
     }
 
     &--vertical {
       border-radius: 0 0 $bpk-border-radius-md $bpk-border-radius-md;
-      box-shadow: inset 0 $bpk-one-pixel-rem 0 $bpk-color-sky-gray-tint-05;
+      box-shadow: inset 0 $bpk-one-pixel-rem 0 $bpk-line-day;
     }
   }
 
