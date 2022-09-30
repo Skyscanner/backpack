@@ -725,6 +725,7 @@ bpk-component-navigation-bar
 bpk-component-navigation-stack
 bpk-component-nudger
 bpk-component-overlay
+bpk-component-page-indicator
 bpk-component-pagination
 bpk-component-panel
 bpk-component-paragraph
@@ -900,3 +901,8 @@ INPUT_TYPES.number
 inputLength
 onSubmit
 otp
+currentItem
+totalItems
+activeItemClassName
+showNav
+updateItemCallback

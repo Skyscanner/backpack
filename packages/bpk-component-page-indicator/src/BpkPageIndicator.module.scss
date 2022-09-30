@@ -1,0 +1,84 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index.scss';
+
+$dot-size: $bpk-one-pixel-rem * 8;
+$dot-margin: $dot-size / 2;
+$displayed-total: 5;
+/* stylelint-disable-next-line scss/operator-no-newline-after */
+$container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total *
+  2;
+
+.bpk-page-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__container {
+    max-width: $container-width;
+    min-height: $dot-size;
+    overflow: hidden;
+  }
+
+  &__bulletsContainer {
+    --direction: -1;
+
+    /* stylelint-disable scss/operator-no-newline-after */
+    transform: translateX(
+      calc(
+        var(--direction) * var(--scroll-index, 0) * #{$dot-size + $dot-margin *
+          2}
+      )
+    );
+    /* stylelint-enable scss/operator-no-newline-after */
+    transition: transform $bpk-duration-sm ease-in-out;
+    white-space: nowrap;
+
+    @include bpk-rtl {
+      --direction: 1;
+    }
+  }
+
+  &__bullet {
+    display: inline-block;
+    width: $dot-size;
+    height: $dot-size;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: $bpk-color-sky-gray-tint-04;
+    margin-inline: $dot-margin;
+
+    &--active {
+      background: $bpk-color-sky-gray-tint-02;
+    }
+  }
+
+  &__dark {
+    background: $bpk-color-black-tint-03;
+
+    &--active {
+      background: $bpk-color-white;
+    }
+
+    &--arrow {
+      color: $bpk-color-sky-blue-tint-01;
+    }
+  }
+}

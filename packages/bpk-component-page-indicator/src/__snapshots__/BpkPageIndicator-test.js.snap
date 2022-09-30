@@ -1,0 +1,337 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkPageIndicator should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-page-indicator"
+  >
+    <div
+      class="bpk-page-indicator__container"
+    >
+      <div
+        class="bpk-page-indicator__bulletsContainer"
+      >
+        <div
+          aria-label="Go to Slide 1"
+          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 2"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 3"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 4"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 5"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 6"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 7"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkPageIndicator should support arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-page-indicator"
+    testid="123"
+  >
+    <div
+      class="bpk-page-indicator__container"
+    >
+      <div
+        class="bpk-page-indicator__bulletsContainer"
+      >
+        <div
+          aria-label="Go to Slide 1"
+          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 2"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 3"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 4"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 5"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 6"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 7"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkPageIndicator should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-page-indicator custom-classname"
+  >
+    <div
+      class="bpk-page-indicator__container"
+    >
+      <div
+        class="bpk-page-indicator__bulletsContainer"
+      >
+        <div
+          aria-label="Go to Slide 1"
+          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active custom-active-item-classname custom-item-classname"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 2"
+          class="bpk-page-indicator__bullet custom-item-classname"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 3"
+          class="bpk-page-indicator__bullet custom-item-classname"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 4"
+          class="bpk-page-indicator__bullet custom-item-classname"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 5"
+          class="bpk-page-indicator__bullet custom-item-classname"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 6"
+          class="bpk-page-indicator__bullet custom-item-classname"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 7"
+          class="bpk-page-indicator__bullet custom-item-classname"
+          role="button"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkPageIndicator should support dark attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-page-indicator"
+  >
+    <div
+      class="bpk-page-indicator__container"
+    >
+      <div
+        class="bpk-page-indicator__bulletsContainer"
+      >
+        <div
+          aria-label="Go to Slide 1"
+          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active bpk-page-indicator__dark bpk-page-indicator__dark--active"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 2"
+          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 3"
+          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 4"
+          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 5"
+          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 6"
+          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 7"
+          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
+          role="button"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkPageIndicator should support showNav attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-page-indicator"
+  >
+    <button
+      class="bpk-button bpk-button--icon-only bpk-button--link"
+      type="button"
+    >
+      <span
+        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      >
+        <svg
+          class="bpk-icon--rtl-support"
+          height="24"
+          style="width: 1.5rem; height: 1.5rem;"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.207 4.299a1 1 0 0 1 0 1.414l-6.293 6.293 6.293 6.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="bpk-page-indicator__container"
+    >
+      <div
+        class="bpk-page-indicator__bulletsContainer"
+      >
+        <div
+          aria-label="Go to Slide 1"
+          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 2"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 3"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 4"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 5"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 6"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+        <div
+          aria-label="Go to Slide 7"
+          class="bpk-page-indicator__bullet"
+          role="button"
+          tabindex="0"
+        />
+      </div>
+    </div>
+    <button
+      class="bpk-button bpk-button--icon-only bpk-button--link"
+      type="button"
+    >
+      <span
+        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      >
+        <svg
+          class="bpk-icon--rtl-support"
+          height="24"
+          style="width: 1.5rem; height: 1.5rem;"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.8 4.287a1 1 0 0 0 0 1.414l6.292 6.293L7.8 18.287a1 1 0 0 0 1.39 1.438l.024-.024 7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
