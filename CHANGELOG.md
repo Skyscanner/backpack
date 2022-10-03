@@ -1,3 +1,43 @@
+# 2022-09-30
+
+`@skyscanner/backpack-web`: 12.0.0 => 13.0.0 - all changes noted below <br />
+
+**Breaking:**
+
+`bpk-component-progress: 4.1.1 => 5.0.0`:
+  - Migrated to semantic colours
+  - Removed `stepColor` prop as not being used and shouldn't be customised.
+  
+**Changed:**
+
+`bpk-component-table: 4.1.1 => 4.2.0`:
+    - Deprecate `alternate` property.
+    - Update component to semantic colours
+
+`bpk-component-breadcrumb: 4.2.1 => 4.2.2`: <br />
+`bpk-component-close-button: 4.1.1 => 4.1.2`: <br />
+`bpk-component-content-cards: 1.1.1 => 1.1.2`: <br />
+`bpk-component-content-container: 6.1.1 => 6.1.2`: <br />
+`bpk-component-datatable: 6.1.1 => 6.1.2`: <br />
+`bpk-component-datepicker: 18.1.1 => 18.1.2`: </br>
+`bpk-component-dialog: 7.1.1 => 7.1.2`: <br />
+`bpk-component-drawer: 7.1.1 => 7.1.2`: <br />
+`bbpk-component-graphic-promotion: 5.2.1 => 5.2.2`: <br />
+`bpk-component-image: 6.1.1 => 6.1.2`: <br />
+`bpk-component-link: 4.1.1 => 4.1.2`: <br />
+`bpk-component-modal: 6.1.1 => 6.1.2`: <br />
+`bpk-component-navigation-bar: 4.2.1 => 4.2.2`: <br />
+`bpk-component-nudger: 8.1.1 => 8.1.2`: <br />
+`bpk-component-popover: 8.1.1 => 8.1.2`: </br>
+`bpk-component-rating: 6.1.1 => 6.1.2`: <br />
+`bpk-component-section-list: 4.1.1 => 4.1.2`: <br />
+`bpk-component-skip-link: 3.1.1 => 3.1.2`: <br />
+`bpk-component-spinner: 6.1.1 => 6.1.2`: <br />
+`bpk-component-star-rating: 4.1.1 => 4.1.2`: <br />
+`bpk-component-ticket: 6.1.1 => 6.1.2`: <br />
+`bpk-component-tooltip: 9.1.1 => 9.1.2`: </br>
+   - Update component to semantic colours
+
 # 2022-09-26
 
 `@skyscanner/backpack-web`: 11.2.0 => 12.0.0 - all changes noted below <br />
