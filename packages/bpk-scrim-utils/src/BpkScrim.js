@@ -18,11 +18,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  TransitionInitialMount,
-  cssModules,
-  deprecated,
-} from 'bpk-react-utils';
+import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-scrim.module.scss';
 
@@ -44,16 +40,10 @@ const BpkScrim = (props) => (
 );
 
 BpkScrim.propTypes = {
-  // eslint-disable-next-line react/no-unused-prop-types
-  dark: deprecated(
-    PropTypes.bool,
-    "This property 'dark' is deprecated. Please remove any usage of this property",
-  ),
   onClose: PropTypes.func,
 };
 
 BpkScrim.defaultProps = {
-  dark: false,
   onClose: null,
 };
 
