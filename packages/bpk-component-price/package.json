@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-price",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Backpack price component.",
   "license": "Apache-2.0",
   "repository": {
@@ -13,8 +13,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-component-text": "^8.1.1",
-    "bpk-mixins": "^32.1.0",
+    "bpk-component-text": "^8.1.2",
+    "bpk-mixins": "^32.2.0",
     "bpk-react-utils": "^7.1.0",
     "prop-types": "^15.5.8"
   },
