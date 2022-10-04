@@ -46,7 +46,6 @@ const withScrim = (WrappedComponent) => {
     static propTypes = {
       getApplicationElement: PropTypes.func.isRequired,
       onClose: onClosePropType,
-      dark: PropTypes.bool,
       isIphone: PropTypes.bool,
       isIpad: PropTypes.bool,
       containerClassName: PropTypes.string,
@@ -54,7 +53,6 @@ const withScrim = (WrappedComponent) => {
     };
 
     static defaultProps = {
-      dark: false,
       onClose: null,
       isIphone: isDeviceIphone(),
       isIpad: isDeviceIpad(),
@@ -124,7 +122,6 @@ const withScrim = (WrappedComponent) => {
       const {
         closeOnScrimClick,
         containerClassName,
-        dark,
         getApplicationElement,
         isIpad,
         isIphone,
@@ -140,7 +137,7 @@ const withScrim = (WrappedComponent) => {
 
       return (
         <div className={classNames.join(' ')}>
-          <BpkScrim onClose={closeOnScrimClick ? onClose : null} dark={dark} />
+          <BpkScrim onClose={closeOnScrimClick ? onClose : null} />
           <WrappedComponent
             {...rest}
             isIphone={isIphone}
