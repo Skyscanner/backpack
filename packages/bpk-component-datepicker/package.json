@@ -14,13 +14,7 @@
   },
   "gitHead": "f9f94f86d7cfc75e43bc6ad5eb01b23e62a89cc8",
   "dependencies": {
-    "bpk-component-breakpoint": "^5.1.2",
-    "bpk-component-calendar": "^13.1.2",
-    "bpk-component-input": "^7.1.2",
-    "bpk-component-modal": "^6.1.2",
-    "bpk-component-popover": "^8.1.2",
-    "bpk-mixins": "^32.2.0",
-    "bpk-react-utils": "^7.1.0",
+    "bpk-mixins": "^34.0.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
@@ -28,7 +22,6 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@skyscanner/bpk-foundations-web": "^10.4.0",
-    "bpk-storybook-utils": "^2.1.2"
+    "@skyscanner/bpk-foundations-web": "^12.0.0"
   }
 }

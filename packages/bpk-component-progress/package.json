@@ -14,8 +14,8 @@
   },
   "gitHead": "5c156b97cb0ba5e75851d3c763334578714c895e",
   "dependencies": {
-    "@skyscanner/bpk-foundations-web": "^10.4.0",
-    "bpk-mixins": "^32.2.0",
+    "@skyscanner/bpk-foundations-web": "^12.0.0",
+    "bpk-mixins": "^34.0.0",
     "bpk-react-utils": "^7.1.0",
     "lodash.clamp": "^4.0.3",
     "prop-types": "^15.7.2"
