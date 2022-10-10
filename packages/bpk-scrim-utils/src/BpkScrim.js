@@ -32,7 +32,7 @@ const BpkScrim = (props) => (
   >
     <div
       role="presentation"
-      className={getClassName('bpk-scrim', props.dark && 'bpk-scrim--dark')}
+      className={getClassName('bpk-scrim')}
       onMouseDown={props.onClose}
       onTouchStart={props.onClose}
     />
@@ -40,12 +40,10 @@ const BpkScrim = (props) => (
 );
 
 BpkScrim.propTypes = {
-  dark: PropTypes.bool,
   onClose: PropTypes.func,
 };
 
 BpkScrim.defaultProps = {
-  dark: false,
   onClose: null,
 };
 

@@ -8,12 +8,3 @@ exports[`BpkScrim should render correctly 1`] = `
   />
 </DocumentFragment>
 `;
-
-exports[`BpkScrim should render correctly with dark="true" 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-scrim bpk-scrim--dark"
-    role="presentation"
-  />
-</DocumentFragment>
-`;
