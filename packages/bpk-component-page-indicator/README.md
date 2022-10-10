@@ -35,5 +35,4 @@ export default () =>
 | activeItemClassName | string   | false    | null          |
 | ariaLabel           | string   | false    | 'Go to Slide' |
 | showNav             | bool     | false    | false         |
-| dark                | bool     | false    | false         |
 | updateItemCallback  | func     | false    | null          |

@@ -39,7 +39,6 @@ const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 export type Props = {
   className: ?string,
   showNav?: boolean,
-  dark?: boolean,
   currentItem: number,
   totalItems: number,
   updateItemCallback?: Function,
@@ -59,7 +58,6 @@ const BpkPageIndicator = (props: Props) => {
     ariaLabel,
     className,
     currentItem,
-    dark,
     itemClassName,
     showNav,
     totalItems,
@@ -111,9 +109,7 @@ const BpkPageIndicator = (props: Props) => {
             updateItem(currentItem - 1);
           }}
         >
-          <AlignedLeftArrowIcon
-            className={dark && getClassName('bpk-page-indicator__dark--arrow')}
-          />
+          <AlignedLeftArrowIcon />
           <span className="visually-hidden">Prev</span>
         </BpkButton>
       )}
@@ -148,10 +144,6 @@ const BpkPageIndicator = (props: Props) => {
                 'bpk-page-indicator__bullet',
                 index === currentItem && 'bpk-page-indicator__bullet--active',
                 index === currentItem && activeItemClassName,
-                dark && 'bpk-page-indicator__dark',
-                dark &&
-                  index === currentItem &&
-                  'bpk-page-indicator__dark--active',
                 itemClassName,
               )}
               aria-label={`${ariaLabel} ${index + 1}`}
@@ -167,9 +159,7 @@ const BpkPageIndicator = (props: Props) => {
             updateItem(currentItem + 1);
           }}
         >
-          <AlignedRightArrowIcon
-            className={dark && getClassName('bpk-page-indicator__dark--arrow')}
-          />
+          <AlignedRightArrowIcon />
           <span className="visually-hidden">Next</span>
         </BpkButton>
       )}
@@ -183,7 +173,6 @@ BpkPageIndicator.propTypes = {
   updateItemCallback: PropTypes.func,
   className: PropTypes.string,
   showNav: PropTypes.bool,
-  dark: PropTypes.bool,
   itemClassName: PropTypes.string,
   activeItemClassName: PropTypes.string,
   ariaLabel: PropTypes.string,
@@ -196,7 +185,6 @@ BpkPageIndicator.defaultProps = {
   itemClassName: null,
   activeItemClassName: null,
   showNav: false,
-  dark: false,
 };
 
 export default BpkPageIndicator;

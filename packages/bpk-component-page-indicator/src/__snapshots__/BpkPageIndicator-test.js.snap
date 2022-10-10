@@ -178,65 +178,6 @@ exports[`BpkPageIndicator should support custom class names 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkPageIndicator should support dark attribute 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-page-indicator"
-  >
-    <div
-      class="bpk-page-indicator__container"
-    >
-      <div
-        class="bpk-page-indicator__bulletsContainer"
-      >
-        <div
-          aria-label="Go to Slide 1"
-          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active bpk-page-indicator__dark bpk-page-indicator__dark--active"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 2"
-          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 3"
-          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 4"
-          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 5"
-          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 6"
-          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 7"
-          class="bpk-page-indicator__bullet bpk-page-indicator__dark"
-          role="button"
-          tabindex="0"
-        />
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`BpkPageIndicator should support showNav attribute 1`] = `
 <DocumentFragment>
   <div

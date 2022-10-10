@@ -19,7 +19,6 @@
 import React, { useState } from 'react';
 
 import BpkPageIndicator from '../../packages/bpk-component-page-indicator';
-import { BpkDarkExampleWrapper } from '../../packages/bpk-storybook-utils';
 
 const PageIndicatorContainer = (props) => {
   const [currentItem, setCurrentItem] = useState(0);
@@ -53,12 +52,6 @@ const ThreePagesWithNavExample = () => (
   />
 );
 
-const OnDarkExample = () => (
-  <BpkDarkExampleWrapper>
-    <PageIndicatorContainer id="on-dark-example" totalItems={7} showNav dark />
-  </BpkDarkExampleWrapper>
-);
-
 const VisualTestExample = () => (
   <>
     <DefaultExample />
@@ -68,14 +61,7 @@ const VisualTestExample = () => (
     <div style={{ width: '50%' }}>
       <WithNavExample />
     </div>
-    <OnDarkExample />
   </>
 );
 
-export {
-  DefaultExample,
-  ThreePagesExample,
-  WithNavExample,
-  OnDarkExample,
-  VisualTestExample,
-};
+export { DefaultExample, ThreePagesExample, WithNavExample, VisualTestExample };

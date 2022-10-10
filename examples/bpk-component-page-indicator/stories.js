@@ -20,7 +20,6 @@ import {
   DefaultExample,
   ThreePagesExample,
   WithNavExample,
-  OnDarkExample,
   VisualTestExample,
 } from './examples';
 
@@ -31,5 +30,4 @@ export default {
 export const Default = DefaultExample;
 export const ThreePages = ThreePagesExample;
 export const WithNav = WithNavExample;
-export const OnDarkIndicator = OnDarkExample;
 export const VisualTest = VisualTestExample;

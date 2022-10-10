@@ -54,11 +54,6 @@ describe('BpkPageIndicator', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support dark attribute', () => {
-    const { asFragment } = render(<BpkPageIndicator {...props} dark />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should support arbitrary props', () => {
     const { asFragment } = render(<BpkPageIndicator {...props} testid="123" />);
     expect(asFragment()).toMatchSnapshot();

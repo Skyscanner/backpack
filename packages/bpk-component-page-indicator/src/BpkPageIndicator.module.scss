@@ -63,23 +63,11 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: $bpk-color-sky-gray-tint-04;
+    background-color: $bpk-color-sky-gray-tint-04;
     margin-inline: $dot-margin;
 
     &--active {
-      background: $bpk-color-sky-gray-tint-02;
-    }
-  }
-
-  &__dark {
-    background: $bpk-color-black-tint-03;
-
-    &--active {
-      background: $bpk-color-white;
-    }
-
-    &--arrow {
-      color: $bpk-color-sky-blue-tint-01;
+      background-color: $bpk-color-sky-gray-tint-02;
     }
   }
 }
