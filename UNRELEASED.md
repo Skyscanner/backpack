@@ -8,3 +8,8 @@
 
 - bpk-component-accordion:
     - Remove redundant `aria-labeledby` tags in accordion item
+
+**Added**
+
+- bpk-component-page-indicator
+  - The page indicator is a new component that will ensure the consistency of the image gallery display indicator.
