@@ -18,8 +18,9 @@
 
 @import '~bpk-mixins/index.scss';
 
-$dot-size: $bpk-one-pixel-rem * 8;
-$dot-margin: $dot-size / 2;
+$bpk-spacing-v2: true;
+$dot-size: bpk-spacing-md();
+$dot-margin: bpk-spacing-sm();
 $displayed-total: 5;
 /* stylelint-disable-next-line scss/operator-no-newline-after */
 $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total *

@@ -114,6 +114,7 @@ const BpkPageIndicator = (props: Props) => {
           <AlignedLeftArrowIcon
             className={dark && getClassName('bpk-page-indicator__dark--arrow')}
           />
+          <span className="visually-hidden">Prev</span>
         </BpkButton>
       )}
       <div className={getClassName('bpk-page-indicator__container')}>
@@ -169,6 +170,7 @@ const BpkPageIndicator = (props: Props) => {
           <AlignedRightArrowIcon
             className={dark && getClassName('bpk-page-indicator__dark--arrow')}
           />
+          <span className="visually-hidden">Next</span>
         </BpkButton>
       )}
     </div>
