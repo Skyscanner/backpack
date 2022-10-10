@@ -1,3 +1,10 @@
+**Breaking:**
+
+- Upgraded foundations to latest, adopting new colours
+
+- bpk-component-button:
+  - Migrating to semantic tokens and new colours
+
 **Changed:**
 
 `bpk-scrim-utils`:
