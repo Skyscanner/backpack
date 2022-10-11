@@ -21,7 +21,7 @@
 .bpk-chart {
   &__axis-tick {
     &-text {
-      fill: $bpk-color-sky-gray-tint-02;
+      fill: $bpk-text-secondary-day;
 
       @include bpk-text;
       @include bpk-caption;
@@ -29,7 +29,7 @@
   }
 
   &__axis-label {
-    fill: $bpk-color-sky-gray-tint-02;
+    fill: $bpk-text-secondary-day;
 
     @include bpk-text;
     @include bpk-caption;
