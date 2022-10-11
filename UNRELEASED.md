@@ -6,6 +6,9 @@
   
   `Backpack/Button`
   - Update buttons to semantic colour tokens.
+
+  `Backpack/Barchart`
+  - Update bar chart to semantic colour tokens.
     
   **Changed:**
 
