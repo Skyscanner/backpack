@@ -27,7 +27,8 @@ import React, {
   type Element,
   type ComponentType,
 } from 'react';
-import { wrapDisplayName } from 'bpk-react-utils';
+
+import { wrapDisplayName } from '../../bpk-react-utils';
 
 const getInitiallyExpanded = (children) => {
   const accordionItems = Children.toArray(children);

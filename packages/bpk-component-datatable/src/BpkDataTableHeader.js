@@ -18,10 +18,11 @@
 /* @flow strict */
 
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
-import BpkSmallArrowDownIcon from 'bpk-component-icon/sm/arrow-down';
-import BpkSmallArrowUpIcon from 'bpk-component-icon/sm/arrow-up';
-import { withRtlSupport } from 'bpk-component-icon';
+
+import { cssModules } from '../../bpk-react-utils';
+import BpkSmallArrowDownIcon from '../../bpk-component-icon/sm/arrow-down';
+import BpkSmallArrowUpIcon from '../../bpk-component-icon/sm/arrow-up';
+import { withRtlSupport } from '../../bpk-component-icon';
 
 import { SORT_DIRECTION_TYPES } from './sort-types';
 import STYLES from './BpkDataTableHeader.module.scss';

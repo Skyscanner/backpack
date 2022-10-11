@@ -20,7 +20,8 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
+
+import { BpkNavigationBarButtonLink } from '../../bpk-component-navigation-bar';
 
 import BpkModalInner from './BpkModalInner';
 

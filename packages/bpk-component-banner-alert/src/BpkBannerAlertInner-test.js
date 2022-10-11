@@ -19,7 +19,8 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import CurrencyIcon from 'bpk-component-icon/sm/currency';
+
+import CurrencyIcon from '../../bpk-component-icon/sm/currency';
 
 import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';
 import { ALERT_TYPES } from './common-types';

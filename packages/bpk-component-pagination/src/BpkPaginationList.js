@@ -18,7 +18,8 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkPaginationPage from './BpkPaginationPage';
 import BpkPaginationBreak from './BpkPaginationBreak';

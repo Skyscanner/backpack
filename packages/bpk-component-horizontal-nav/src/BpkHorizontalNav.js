@@ -18,9 +18,10 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
 import React, { Component, type Node } from 'react';
-import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
+
+import { cssModules } from '../../bpk-react-utils';
+import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 
 import STYLES from './BpkHorizontalNav.module.scss';
 

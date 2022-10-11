@@ -23,8 +23,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
-import { DateUtils } from 'bpk-component-calendar';
-
+import { DateUtils } from '../../bpk-component-calendar';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkScrollableCalendar from './BpkScrollableCalendar';

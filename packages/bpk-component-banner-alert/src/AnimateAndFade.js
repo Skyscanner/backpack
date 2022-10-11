@@ -19,10 +19,11 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node, Component } from 'react';
-import { cssModules } from 'bpk-react-utils';
-import BpkAnimateHeight from 'bpk-animate-height';
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+
+import { cssModules } from '../../bpk-react-utils';
+import BpkAnimateHeight from '../../bpk-animate-height';
 
 import STYLES from './BpkAnimateAndFade.module.scss';
 

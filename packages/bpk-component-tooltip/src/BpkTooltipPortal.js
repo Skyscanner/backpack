@@ -21,7 +21,8 @@
 import { createPopper } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node, type Element } from 'react';
-import { Portal, cssModules } from 'bpk-react-utils';
+
+import { Portal, cssModules } from '../../bpk-react-utils';
 
 import BpkTooltip, {
   propTypes as tooltipPropTypes,

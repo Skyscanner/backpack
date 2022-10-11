@@ -20,7 +20,8 @@
 
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkIconMarkerBackground from './BpkIconMarkerBackground';
 import { LatLongPropType, type LatLong } from './common-types';

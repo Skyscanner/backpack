@@ -20,14 +20,15 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import SmallIcon from 'bpk-component-icon/sm/star';
-import LargeIcon from 'bpk-component-icon/lg/star';
-import OutlineSmallIcon from 'bpk-component-icon/sm/star-outline';
-import OutlineLargeIcon from 'bpk-component-icon/lg/star-outline';
-import HalfSmallIcon from 'bpk-component-icon/sm/star-half';
-import HalfLargeIcon from 'bpk-component-icon/lg/star-half';
-import { withRtlSupport } from 'bpk-component-icon';
-import { cssModules } from 'bpk-react-utils';
+
+import SmallIcon from '../../bpk-component-icon/sm/star';
+import LargeIcon from '../../bpk-component-icon/lg/star';
+import OutlineSmallIcon from '../../bpk-component-icon/sm/star-outline';
+import OutlineLargeIcon from '../../bpk-component-icon/lg/star-outline';
+import HalfSmallIcon from '../../bpk-component-icon/sm/star-half';
+import HalfLargeIcon from '../../bpk-component-icon/lg/star-half';
+import { withRtlSupport } from '../../bpk-component-icon';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkStar.module.scss';
 

@@ -18,7 +18,8 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
+
+import BpkSmallFlightIcon from '../../bpk-component-icon/sm/flight';
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 

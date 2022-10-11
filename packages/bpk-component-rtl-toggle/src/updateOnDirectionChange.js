@@ -17,7 +17,8 @@
  */
 
 import React, { Component } from 'react';
-import { wrapDisplayName } from 'bpk-react-utils';
+
+import { wrapDisplayName } from '../../bpk-react-utils';
 
 import { getHtmlElement, DIRECTION_CHANGE_EVENT } from './utils';
 

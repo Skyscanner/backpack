@@ -18,9 +18,10 @@
 /* @flow strict */
 
 import React, { Component } from 'react';
-import { cssModules } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
-import { INPUT_TYPES } from 'bpk-component-input';
+
+import { cssModules } from '../../bpk-react-utils';
+import { INPUT_TYPES } from '../../bpk-component-input';
 
 import InputField from './BpkInputField';
 import STYLES from './BpkSplitInput.module.scss';

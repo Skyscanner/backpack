@@ -25,9 +25,10 @@ import React, {
   type AbstractComponent,
 } from 'react';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
 import omit from 'lodash/omit';
 import extend from 'lodash/extend';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import './intersection-observer';
 import DataSource from './DataSource';

@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import { CALENDAR_SELECTION_TYPE } from 'bpk-component-calendar';
+import { CALENDAR_SELECTION_TYPE } from '../bpk-component-calendar';
 
 import BpkScrollableCalendar from './src/BpkScrollableCalendar';
 import BpkScrollableCalendarDate from './src/BpkScrollableCalendarDate';

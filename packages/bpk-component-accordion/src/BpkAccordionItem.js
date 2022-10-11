@@ -20,11 +20,12 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node, type Element } from 'react';
-import AnimateHeight from 'bpk-animate-height';
-import { withButtonAlignment } from 'bpk-component-icon';
-import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
-import { cssModules } from 'bpk-react-utils';
+
+import AnimateHeight from '../../bpk-animate-height';
+import { withButtonAlignment } from '../../bpk-component-icon';
+import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkAccordionItem.module.scss';
 

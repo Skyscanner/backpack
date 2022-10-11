@@ -19,10 +19,11 @@
 
 import React, { type Node, Component } from 'react';
 import PropTypes from 'prop-types';
-import { cssModules, deprecated } from 'bpk-react-utils';
-import { BpkSpinner } from 'bpk-component-spinner';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+import { cssModules, deprecated } from '../../bpk-react-utils';
+import { BpkSpinner } from '../../bpk-component-spinner';
 
 import { widthHeightAspectRatioPropType } from './customPropTypes';
 import STYLES from './BpkBackgroundImage.module.scss';

@@ -20,8 +20,9 @@
 
 import React, { type Node, type Element } from 'react';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+
+import { cssModules } from '../../bpk-react-utils';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
 import STYLES from './BpkNavigationBar.module.scss';
 

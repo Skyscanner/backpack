@@ -19,8 +19,8 @@
 
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import { cssModules } from 'bpk-react-utils';
 
+import { cssModules } from '../../bpk-react-utils';
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
 
 import BpkFloatingNotification from './BpkFloatingNotification';

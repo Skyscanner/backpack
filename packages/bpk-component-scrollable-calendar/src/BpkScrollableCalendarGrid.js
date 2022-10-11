@@ -17,12 +17,13 @@
  */
 
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+
+import { cssModules } from '../../bpk-react-utils';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import {
   BpkCalendarGrid,
   BpkCalendarGridPropTypes,
-} from 'bpk-component-calendar';
+} from '../../bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGrid.module.scss';
 

@@ -26,8 +26,9 @@ import {
   spacingXs,
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import { cssModules } from 'bpk-react-utils';
-import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
+
+import { cssModules } from '../../bpk-react-utils';
+import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 
 import BpkBarchartDefs from './BpkBarchartDefs';
 import BpkBarchartBars from './BpkBarchartBars';

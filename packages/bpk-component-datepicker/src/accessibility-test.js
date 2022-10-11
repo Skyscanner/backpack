@@ -18,14 +18,15 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+
 import {
   weekDays,
   formatMonth,
   formatDateFull,
-} from 'bpk-component-calendar/test-utils';
-import { format } from 'bpk-component-calendar/src/date-utils';
-import { CALENDAR_SELECTION_TYPE } from 'bpk-component-calendar';
-import { axe } from 'jest-axe';
+} from '../../bpk-component-calendar/test-utils';
+import { format } from '../../bpk-component-calendar/src/date-utils';
+import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
 
 jest.mock(
   './../node_modules/bpk-component-popover/node_modules/@popperjs/core',

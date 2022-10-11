@@ -18,6 +18,6 @@
 
 /* @flow strict */
 
-import { themeAttributes as linkAttributes } from 'bpk-component-link';
+import { themeAttributes as linkAttributes } from '../../bpk-component-link';
 
 export default [...linkAttributes];

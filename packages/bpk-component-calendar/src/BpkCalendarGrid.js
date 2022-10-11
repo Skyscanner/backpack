@@ -18,7 +18,8 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules, deprecated, isDeviceIos } from 'bpk-react-utils';
+
+import { cssModules, deprecated, isDeviceIos } from '../../bpk-react-utils';
 
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import Week from './Week';
