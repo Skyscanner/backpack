@@ -37,7 +37,7 @@ const DefaultExample = () => (
 );
 
 const ThreePagesExample = () => (
-  <PageIndicatorContainer id="no-scroll-example" totalItems={3} />
+  <PageIndicatorContainer id="three-pages-example" totalItems={3} />
 );
 
 const WithNavExample = () => (
@@ -46,7 +46,7 @@ const WithNavExample = () => (
 
 const ThreePagesWithNavExample = () => (
   <PageIndicatorContainer
-    id="no-scroll-with-nav-example"
+    id="three-pages-with-nav-example"
     totalItems={3}
     showNav
   />

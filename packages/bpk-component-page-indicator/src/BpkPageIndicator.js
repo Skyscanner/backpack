@@ -38,13 +38,13 @@ const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 
 export type Props = {
   className: ?string,
-  showNav?: boolean,
+  showNav: ?boolean,
   currentItem: number,
   totalItems: number,
-  updateItemCallback?: Function,
-  itemClassName?: string,
-  activeItemClassName?: string,
-  ariaLabel?: string,
+  updateItemCallback: ?() => void,
+  itemClassName: ?string,
+  activeItemClassName: ?string,
+  ariaLabel: ?string,
 };
 
 const KEYS = {

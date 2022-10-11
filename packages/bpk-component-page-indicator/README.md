@@ -12,7 +12,7 @@ npm install bpk-component-page-indicator --save-dev
 
 ```js
 import React from 'react';
-import BpkPageIndicator from 'bpk-component-code';
+import BpkPageIndicator from 'bpk-component-page-indicator';
 
 export default () =>
   <BpkPageIndicator
