@@ -16,8 +16,14 @@
  * limitations under the License.
  */
 
-const GIT_HASH_REGEX = /[A-Za-z0-9]*/i;
+import gulp from 'gulp';
 
-module.exports = {
-  GIT_HASH_REGEX,
-};
+const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
+
+gulp.task('copy', () =>
+  gulp
+    .src(`${ICONS_FOLDER_PATH}/**/*.js`)
+    .pipe(gulp.dest('./packages/bpk-component-icon')),
+);
+
+gulp.task('generateIcons', gulp.series('copy'));
