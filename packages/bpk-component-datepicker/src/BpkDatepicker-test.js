@@ -31,22 +31,17 @@ import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
 
 import BpkDatepicker from './BpkDatepicker';
 
-jest.mock(
-  './../node_modules/bpk-component-popover/node_modules/@popperjs/core',
-  () => {
-    const PopperJS = jest.requireActual(
-      './../node_modules/bpk-component-popover/node_modules/@popperjs/core',
-    );
-    return {
-      __esModule: true,
-      ...PopperJS,
-      createPopper: jest.fn(() => ({
-        update: jest.fn(),
-        destroy: jest.fn(),
-      })),
-    };
-  },
-);
+jest.mock('../../node_modules/@popperjs/core', () => {
+  const PopperJS = jest.requireActual('../../node_modules/@popperjs/core');
+  return {
+    __esModule: true,
+    ...PopperJS,
+    createPopper: jest.fn(() => ({
+      update: jest.fn(),
+      destroy: jest.fn(),
+    })),
+  };
+});
 
 const formatDate = (date) => format(date, 'dd/MM/yyyy');
 

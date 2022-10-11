@@ -28,21 +28,18 @@ import {
 import { format } from '../../bpk-component-calendar/src/date-utils';
 import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
 
-jest.mock(
-  './../node_modules/bpk-component-popover/node_modules/@popperjs/core',
-  () => {
-    const originalModule = jest.requireActual(
-      './../node_modules/bpk-component-popover/node_modules/@popperjs/core',
-    );
-    return {
-      ...originalModule,
-      createPopper: jest.fn(() => ({
-        update: jest.fn(),
-        destroy: jest.fn(),
-      })),
-    };
-  },
-);
+jest.mock('../../node_modules/@popperjs/core', () => {
+  const originalModule = jest.requireActual(
+    '../../node_modules/@popperjs/core',
+  );
+  return {
+    ...originalModule,
+    createPopper: jest.fn(() => ({
+      update: jest.fn(),
+      destroy: jest.fn(),
+    })),
+  };
+});
 
 // eslint-disable-next-line import/first
 import BpkDatepicker from './BpkDatepicker';
