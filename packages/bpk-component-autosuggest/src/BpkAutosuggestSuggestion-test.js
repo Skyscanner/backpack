@@ -20,7 +20,8 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import FlightIcon from 'bpk-component-icon/lg/flight';
+
+import FlightIcon from '../../bpk-component-icon/lg/flight';
 
 import BpkAutosuggestSuggestion from './BpkAutosuggestSuggestion';
 

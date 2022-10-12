@@ -18,7 +18,8 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { deprecated, isRTL } from 'bpk-react-utils';
+
+import { deprecated, isRTL } from '../../bpk-react-utils';
 
 import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import BpkCalendarNav from './BpkCalendarNav';

@@ -21,7 +21,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import clamp from 'lodash.clamp';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkProgress.module.scss';
 

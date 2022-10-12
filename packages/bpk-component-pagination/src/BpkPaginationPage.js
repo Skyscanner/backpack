@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import BpkButton from 'bpk-component-button';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+
+import BpkButton from '../../bpk-component-button';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPaginationPage.module.scss';
 

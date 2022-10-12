@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { cssModules } from 'bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkIcon.module.scss';
 import classNameModifierHOCFactory from './classNameModifierHOCFactory';

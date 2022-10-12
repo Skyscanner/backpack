@@ -20,8 +20,9 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { withScrim } from 'bpk-scrim-utils';
-import { Portal, cssModules, isDeviceIphone } from 'bpk-react-utils';
+
+import { withScrim } from '../../bpk-scrim-utils';
+import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
 
 import STYLES from './BpkModal.module.scss';
 import BpkModalInner, {

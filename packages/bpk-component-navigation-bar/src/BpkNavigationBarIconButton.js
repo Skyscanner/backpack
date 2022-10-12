@@ -20,9 +20,10 @@
 
 import React, { type ComponentType } from 'react';
 import PropTypes from 'prop-types';
+
 // TODO: close button is not really only a close button, we should rename and update the import here
-import BpkIconButton from 'bpk-component-close-button';
-import { cssModules } from 'bpk-react-utils';
+import BpkIconButton from '../../bpk-component-close-button';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationBarIconButton.module.scss';
 

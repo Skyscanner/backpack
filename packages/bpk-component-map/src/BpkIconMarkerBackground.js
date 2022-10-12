@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkIconMarkerBackground.module.scss';
 

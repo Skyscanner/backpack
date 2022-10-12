@@ -19,8 +19,9 @@
 
 import React, { type Node, type ComponentType } from 'react';
 import PropTypes from 'prop-types';
-import { wrapDisplayName } from 'bpk-react-utils';
 import throttle from 'lodash/throttle';
+
+import { wrapDisplayName } from '../../bpk-react-utils';
 
 type WithLazyLoadingProps = {
   className: ?string,

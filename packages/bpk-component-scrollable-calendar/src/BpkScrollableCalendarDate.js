@@ -18,10 +18,11 @@
 
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+
 import {
   BpkCalendarDate,
   BpkCalendarDatePropTypes,
-} from 'bpk-component-calendar';
+} from '../../bpk-component-calendar';
 
 class BpkScrollableCalendarDate extends PureComponent {
   render() {

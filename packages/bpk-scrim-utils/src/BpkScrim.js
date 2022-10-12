@@ -18,7 +18,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
+
+import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import STYLES from './bpk-scrim.module.scss';
 

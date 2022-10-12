@@ -20,10 +20,11 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
-import { BpkButtonLink } from 'bpk-component-link';
-import BpkCloseButton from 'bpk-component-close-button';
-import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
+
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { BpkButtonLink } from '../../bpk-component-link';
+import BpkCloseButton from '../../bpk-component-close-button';
+import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPopover.module.scss';
 import { ARROW_ID } from './constants';

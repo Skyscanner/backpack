@@ -19,7 +19,8 @@
 
 import PropTypes from 'prop-types';
 import React, { type Element } from 'react';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSelect.module.scss';
 

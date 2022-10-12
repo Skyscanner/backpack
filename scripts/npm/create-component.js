@@ -122,10 +122,6 @@ const createComponent = async (err, { name }) => {
       boilerPlateFilePaths.map(_.unary(processBoilerPlateFiles)),
     );
 
-    // Link everything up with Lerna.
-    console.log(colors.yellow(`Bootsrapping Lerna..`));
-    execSync(`npm run lerna bootstrap`);
-
     // Fix eslint errors and run Prettier.
     console.log(colors.yellow(`Formatting code using eslint..`));
     execSync(`npx eslint --fix ${newComponentPath}`);

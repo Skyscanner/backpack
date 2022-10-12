@@ -19,7 +19,8 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import { cssModules, deprecated } from 'bpk-react-utils';
+
+import { cssModules, deprecated } from '../../bpk-react-utils';
 
 import STYLES from './BpkSwitch.module.scss';
 

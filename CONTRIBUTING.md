@@ -62,17 +62,6 @@ git clone https://github.com/YOUR_USERNAME/Backpack.git
 
 Run `npm install` to install dependencies from npm.
 
-<details>
-<summary>A note on dependencies</summary>
-
-Backpack is a multi-package repository, also known as a monorepo. This means that instead of having one code repository for each npm package, we manage them all inside this single repository.
-
-We use [Lerna](https://lernajs.io) to achieve this. Lerna links packages together inside this repo by 'bootstrapping'.
-
-When you run `npm install`, Lerna is bootstrapped automatically as a post-install hook. However, if you change dependencies within a package, you will need to run Lerna manually with `npm run bootstrap`.
-
-</details>
-
 ### Build the code
 
 Backpack's code depends on some things that must be built first, such as icon fonts, SVGs and tokens.
@@ -190,12 +179,12 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 
 - Update the [unreleased changelog](/UNRELEASED.md) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes. See `CHANGELOG_FORMAT.md` for tips.
   - Some useful commands for determining "what's changed?":
-    - `npm run lerna updated`
-    - `npm run lerna diff <package-name>`
+    - `git log --pretty=format:"* %s (%h)" $(git describe --tags --abbrev=0)...HEAD`
 - Make sure you are an owner of the npm packages (speak to a member of the Backpack squad).
-- **Run `npm run release`** (this will run several checks and then `lerna publish`). Do not run `npm publish`.
-- You’ll be asked to confirm the new versions and descriptions for every package that has changed.
-- If you need to make changes you can exit without confirming and no changes will be made.
+- **Run `npm run release`**. Do not run `npm publish`.
+- You’ll be asked to specify a new version. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [unreleased changelog](/unreleased.md) in step 1.
+- Move entries from [unreleased.md](/unreleased.md) to the [changelog](/changelog.md). Update the package versions for the new changes, and group them under a title with today’s date and a brief summary of what has changed.
+- Commit and push to main.
 
 When a component is released for the first time on npm, remember to add the component to the Skyscanner organisation through the [npm UI](https://www.npmjs.com/settings/skyscanner/teams/team/backpack/access).
 

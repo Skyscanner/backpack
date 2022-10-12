@@ -10,7 +10,6 @@
 !/packages/bpk-component-icon/src
 node_modules
 npm-debug.*
-lerna-debug.log
 backpack.iml
 yarn.lock
 /packages/*/changelog.md

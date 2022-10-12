@@ -20,8 +20,9 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import { cssModules } from 'bpk-react-utils';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+
+import { cssModules } from '../../bpk-react-utils';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
 import STYLES from './BpkSectionListSection.module.scss';
 

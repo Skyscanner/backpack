@@ -19,10 +19,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import isWeekend from 'date-fns/isWeekend';
-import { DateUtils } from 'bpk-component-calendar';
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { render } from '@testing-library/react';
 
+import { DateUtils } from '../../bpk-component-calendar';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkCalendarScrollDate from './BpkScrollableCalendarDate';

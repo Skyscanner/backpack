@@ -18,7 +18,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkFlareBar from './BpkFlareBar';
 import STYLES from './bpk-content-bubble.module.scss';

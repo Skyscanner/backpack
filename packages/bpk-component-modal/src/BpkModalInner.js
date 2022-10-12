@@ -18,12 +18,13 @@
 
 /* @flow strict */
 
-import { BpkButtonLink } from 'bpk-component-link';
 import PropTypes from 'prop-types';
 import React, { type Node, type Element } from 'react';
-import BpkCloseButton from 'bpk-component-close-button';
-import BpkNavigationBar from 'bpk-component-navigation-bar';
-import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
+
+import { BpkButtonLink } from '../../bpk-component-link';
+import BpkCloseButton from '../../bpk-component-close-button';
+import BpkNavigationBar from '../../bpk-component-navigation-bar';
+import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkModalInner.module.scss';
 import { titlePropType, onClosePropType } from './customPropTypes';

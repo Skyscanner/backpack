@@ -18,10 +18,10 @@
 /* @flow strict */
 
 import React from 'react';
-import { DateUtils } from 'bpk-component-calendar';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
+import { DateUtils } from '../../bpk-component-calendar';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkScrollableCalendar from './BpkScrollableCalendar';

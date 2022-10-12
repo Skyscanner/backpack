@@ -23,14 +23,15 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node, type StatelessFunctionalComponent } from 'react';
-import { withButtonAlignment } from 'bpk-component-icon';
-import BpkAnimateHeight from 'bpk-animate-height';
-import BpkCloseButton from 'bpk-component-close-button';
-import TickCircleIcon from 'bpk-component-icon/sm/tick-circle';
-import ChevronDownIcon from 'bpk-component-icon/lg/chevron-down';
-import InfoCircleIcon from 'bpk-component-icon/sm/information-circle';
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import { cssModules } from 'bpk-react-utils';
+
+import { withButtonAlignment } from '../../bpk-component-icon';
+import BpkAnimateHeight from '../../bpk-animate-height';
+import BpkCloseButton from '../../bpk-component-close-button';
+import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
+import ChevronDownIcon from '../../bpk-component-icon/lg/chevron-down';
+import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
+import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
 import {

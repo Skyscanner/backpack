@@ -20,8 +20,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
 import XlSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/xl';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSpinner.module.scss';
 import SPINNER_TYPES from './spinnerTypes';

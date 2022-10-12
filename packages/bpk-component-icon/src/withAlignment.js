@@ -17,7 +17,8 @@
  */
 
 import React from 'react';
-import { wrapDisplayName } from 'bpk-react-utils';
+
+import { wrapDisplayName } from '../../bpk-react-utils';
 
 export default function withAlignment(Component, objectHeight, subjectHeight) {
   const WithAlignment = (props) => {

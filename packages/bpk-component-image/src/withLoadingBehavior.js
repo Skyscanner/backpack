@@ -18,7 +18,8 @@
 /* @flow */
 
 import React, { type AbstractComponent } from 'react';
-import { wrapDisplayName } from 'bpk-react-utils';
+
+import { wrapDisplayName } from '../../bpk-react-utils';
 
 type InjectedProps = {|
   onLoad: () => mixed,

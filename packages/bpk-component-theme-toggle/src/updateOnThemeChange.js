@@ -18,7 +18,8 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { wrapDisplayName } from 'bpk-react-utils';
+
+import { wrapDisplayName } from '../../bpk-react-utils';
 
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 

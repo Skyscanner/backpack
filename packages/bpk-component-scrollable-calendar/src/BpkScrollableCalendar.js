@@ -21,7 +21,7 @@ import {
   BpkCalendarGridHeader,
   withCalendarState,
   composeCalendar,
-} from 'bpk-component-calendar';
+} from '../../bpk-component-calendar';
 
 import BpkscrollableCalendarDate from './BpkScrollableCalendarDate';
 import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';

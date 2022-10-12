@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import React, { Component } from 'react';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
 import STYLES from './BpkInput.module.scss';

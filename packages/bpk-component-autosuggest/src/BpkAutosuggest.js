@@ -19,9 +19,10 @@
 /* @flow strict */
 
 import React from 'react';
-import BpkInput from 'bpk-component-input';
 import Autosuggest from 'react-autosuggest';
-import { cssModules } from 'bpk-react-utils';
+
+import BpkInput from '../../bpk-component-input';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkAutosuggest.module.scss';
 

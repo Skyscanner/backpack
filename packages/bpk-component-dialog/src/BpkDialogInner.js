@@ -19,9 +19,10 @@
 /* @flow strict */
 
 import React from 'react';
-import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
-import { withScrim } from 'bpk-scrim-utils';
-import { BpkContentBubble } from 'bpk-component-flare';
+
+import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { withScrim } from '../../bpk-scrim-utils';
+import { BpkContentBubble } from '../../bpk-component-flare';
 
 import {
   type DialogInnerProps as Props,

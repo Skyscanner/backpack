@@ -20,7 +20,8 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkAccordion.module.scss';
 
