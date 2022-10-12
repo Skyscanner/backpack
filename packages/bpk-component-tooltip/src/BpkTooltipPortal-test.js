@@ -22,8 +22,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-jest.mock('bpk-react-utils', () => {
-  const original = jest.requireActual('bpk-react-utils');
+jest.mock('../../bpk-react-utils', () => {
+  const original = jest.requireActual('../../bpk-react-utils');
 
   return {
     ...original,

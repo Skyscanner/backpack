@@ -31,8 +31,8 @@ import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
 
 import BpkDatepicker from './BpkDatepicker';
 
-jest.mock('../../node_modules/@popperjs/core', () => {
-  const PopperJS = jest.requireActual('../../node_modules/@popperjs/core');
+jest.mock('@popperjs/core', () => {
+  const PopperJS = jest.requireActual('@popperjs/core');
   return {
     __esModule: true,
     ...PopperJS,
