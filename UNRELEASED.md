@@ -12,4 +12,4 @@
 **Added**
 
 - bpk-component-page-indicator
-  - The page indicator is a new component that will ensure the consistency of the image gallery display indicator.
+  - The page indicator is a new component that will be used to display multiple swappable images.
