@@ -17,15 +17,16 @@
  */
 /* @flow strict */
 
-import PropTypes from 'prop-types';
-import React from 'react';
-import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-import BpkButton from 'bpk-component-button';
-import LeftArrowIcon from 'bpk-component-icon/lg/chevron-left';
-import RightArrowIcon from 'bpk-component-icon/lg/chevron-right';
-import { cssModules } from 'bpk-react-utils';
+import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
+import BpkButton from '../../bpk-component-button';
+import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
+import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPageIndicator.module.scss';
+
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const getClassName = cssModules(STYLES);
 const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
@@ -40,7 +41,7 @@ export type Props = {
   showNav: ?boolean,
   currentIndex: number,
   totalBullets: number,
-  updateItemCallback: ?() => void,
+  onClick: ?() => void,
   ariaLabel: ?string,
 };
 
@@ -49,33 +50,28 @@ const KEYS = {
   SPACE: 'Spacebar',
 };
 
+const DIRECTIONS = {
+  PREV: -1,
+  BULLETS: 0,
+  NEXT: 1,
+};
+
 const BpkPageIndicator = (props: Props) => {
   const {
     ariaLabel,
     className,
     currentIndex,
+    onClick,
     showNav,
     totalBullets,
-    updateItemCallback,
     ...rest
   } = props;
   const classNames = getClassName('bpk-page-indicator', className);
 
-  const updateItem = (index) => {
-    let newIndex = index;
-    if (index < 0) {
-      newIndex = totalBullets - 1;
-    }
-    if (index >= totalBullets) {
-      newIndex = 0;
-    }
-    updateItemCallback(newIndex);
-  };
-
   const handleKeyboardEvent = (e, index) => {
     if (e.key === KEYS.ENTER || e.key === KEYS.SPACE || e.key === ' ') {
       e.preventDefault();
-      updateItemCallback(index);
+      onClick(e, index, DIRECTIONS.BULLETS);
     }
   };
 
@@ -86,8 +82,8 @@ const BpkPageIndicator = (props: Props) => {
         <BpkButton
           iconOnly
           link
-          onClick={() => {
-            updateItem(currentIndex - 1);
+          onClick={(e) => {
+            onClick(e, currentIndex - 1, DIRECTIONS.PREV);
           }}
           aria-label="Previous Slide"
           disabled={currentIndex === 0}
@@ -116,8 +112,8 @@ const BpkPageIndicator = (props: Props) => {
             <div
               role="button"
               tabIndex={0}
-              onClick={() => {
-                updateItem(index);
+              onClick={(e) => {
+                onClick(e, index, DIRECTIONS.BULLETS);
               }}
               onKeyDown={(e) => {
                 handleKeyboardEvent(e, index);
@@ -135,8 +131,8 @@ const BpkPageIndicator = (props: Props) => {
         <BpkButton
           iconOnly
           link
-          onClick={() => {
-            updateItem(currentIndex + 1);
+          onClick={(e) => {
+            onClick(e, currentIndex + 1, DIRECTIONS.NEXT);
           }}
           aria-label="Next Slide"
           disabled={currentIndex === totalBullets - 1}
@@ -151,14 +147,14 @@ const BpkPageIndicator = (props: Props) => {
 BpkPageIndicator.propTypes = {
   currentIndex: PropTypes.number.isRequired,
   totalBullets: PropTypes.number.isRequired,
-  updateItemCallback: PropTypes.func,
+  onClick: PropTypes.func,
   className: PropTypes.string,
   showNav: PropTypes.bool,
   ariaLabel: PropTypes.string,
 };
 
 BpkPageIndicator.defaultProps = {
-  updateItemCallback: null,
+  onClick: null,
   className: null,
   ariaLabel: 'Go to Slide',
   showNav: false,
