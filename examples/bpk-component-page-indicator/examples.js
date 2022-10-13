@@ -26,9 +26,8 @@ const PageIndicatorContainer = (props) => {
   return (
     <BpkPageIndicator
       currentIndex={currentIndex}
-      onClick={(_e, index, direction) => {
+      onClick={(_e, index) => {
         setCurrentIndex(index);
-        console.log('here-->', direction);
       }}
       {...props}
     />
