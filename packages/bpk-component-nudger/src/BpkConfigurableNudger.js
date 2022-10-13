@@ -21,12 +21,13 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import BpkButtonSecondary from 'bpk-component-button/BpkButtonSecondary';
-import BpkButtonSecondaryOnDark from 'bpk-component-button/BpkButtonSecondaryOnDark';
-import { withButtonAlignment } from 'bpk-component-icon';
-import MinusIcon from 'bpk-component-icon/sm/minus';
-import PlusIcon from 'bpk-component-icon/sm/plus';
-import { cssModules } from 'bpk-react-utils';
+
+import BpkButtonSecondary from '../../bpk-component-button/BpkButtonSecondary';
+import BpkButtonSecondaryOnDark from '../../bpk-component-button/BpkButtonSecondaryOnDark';
+import { withButtonAlignment } from '../../bpk-component-icon';
+import MinusIcon from '../../bpk-component-icon/sm/minus';
+import PlusIcon from '../../bpk-component-icon/sm/plus';
+import { cssModules } from '../../bpk-react-utils';
 
 import {
   type CommonProps,

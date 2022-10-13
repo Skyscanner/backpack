@@ -19,8 +19,9 @@
 /* @flow strict */
 
 import React from 'react';
-import { cssModules, Portal } from 'bpk-react-utils';
-import BpkCloseButton from 'bpk-component-close-button';
+
+import { cssModules, Portal } from '../../bpk-react-utils';
+import BpkCloseButton from '../../bpk-component-close-button';
 
 import BpkDialogInner from './BpkDialogInner';
 import { type Props, propTypes, defaultProps } from './common-types';

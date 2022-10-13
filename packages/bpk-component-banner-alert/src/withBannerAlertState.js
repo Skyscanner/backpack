@@ -19,7 +19,8 @@
 
 import React, { type Node, type ComponentType, Component } from 'react';
 import PropTypes from 'prop-types';
-import { wrapDisplayName } from 'bpk-react-utils';
+
+import { wrapDisplayName } from '../../bpk-react-utils';
 
 import {
   type OnDismissHandler,

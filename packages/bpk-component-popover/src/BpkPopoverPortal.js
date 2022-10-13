@@ -22,7 +22,8 @@ import { createPopper } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import focusStore from 'a11y-focus-store';
-import { Portal, cssModules } from 'bpk-react-utils';
+
+import { Portal, cssModules } from '../../bpk-react-utils';
 
 import keyboardFocusScope from './keyboardFocusScope';
 import STYLES from './BpkPopover.module.scss';

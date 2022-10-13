@@ -20,8 +20,9 @@
 
 import React, { type Node, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
 import { GoogleMap } from '@react-google-maps/api';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import { LatLongPropType, type LatLong } from './common-types';
 import STYLES from './BpkMap.module.scss';

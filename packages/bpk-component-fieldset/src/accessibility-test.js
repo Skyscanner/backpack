@@ -19,8 +19,9 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import { axe } from 'jest-axe';
+
+import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
 
 import BpkFieldset from './BpkFieldset';
 

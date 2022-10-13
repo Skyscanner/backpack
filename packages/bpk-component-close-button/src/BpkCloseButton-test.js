@@ -20,7 +20,8 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import CustomCloseIcon from 'bpk-component-icon/sm/close-circle';
+
+import CustomCloseIcon from '../../bpk-component-icon/sm/close-circle';
 
 import BpkCloseButton from './BpkCloseButton';
 

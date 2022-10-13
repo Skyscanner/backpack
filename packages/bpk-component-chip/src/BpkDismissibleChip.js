@@ -25,7 +25,8 @@ of a close icon.
 */
 
 import React from 'react';
-import CloseCircleIconSm from 'bpk-component-icon/sm/close-circle';
+
+import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import {

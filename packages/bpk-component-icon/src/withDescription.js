@@ -18,7 +18,8 @@
 /* @flow strict */
 
 import React, { type AbstractComponent } from 'react';
-import { cssModules, wrapDisplayName } from 'bpk-react-utils';
+
+import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
 
 import STYLES from './withDescription.module.scss';
 

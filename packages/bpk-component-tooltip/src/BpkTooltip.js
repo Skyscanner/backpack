@@ -26,7 +26,8 @@ The actual component that developers create (i.e. the default export from this p
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
+
+import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkTooltip.module.scss';
 import { ARROW_ID, TOOLTIP_TYPES } from './constants';

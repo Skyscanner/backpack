@@ -21,7 +21,8 @@
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import React, { Component, type Node } from 'react';
-import { cssModules, isRTL } from 'bpk-react-utils';
+
+import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import STYLES from './BpkMobileScrollContainer.module.scss';
 

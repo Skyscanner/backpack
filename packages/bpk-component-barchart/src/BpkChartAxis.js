@@ -20,11 +20,12 @@
 
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
 import {
   spacingXs,
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';

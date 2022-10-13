@@ -18,7 +18,8 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules, isRTL } from 'bpk-react-utils';
+
+import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import {
   getCalendarGridWidth,

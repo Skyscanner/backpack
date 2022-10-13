@@ -18,11 +18,12 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import ArrowLeftIcon from 'bpk-component-icon/lg/arrow-left';
-import ArrowRightIcon from 'bpk-component-icon/lg/arrow-right';
-import BpkSelect from 'bpk-component-select';
-import { cssModules } from 'bpk-react-utils';
-import BpkAriaLive from 'bpk-component-aria-live';
+
+import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
+import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
+import BpkSelect from '../../bpk-component-select';
+import { cssModules } from '../../bpk-react-utils';
+import BpkAriaLive from '../../bpk-component-aria-live';
 
 import {
   addMonths,

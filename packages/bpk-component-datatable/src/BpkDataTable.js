@@ -20,7 +20,8 @@
 import PropTypes from 'prop-types';
 import React, { useMemo, useState } from 'react';
 import { useTable, useSortBy } from 'react-table';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkDataTable.module.scss';
 import type { Props } from './common-types';

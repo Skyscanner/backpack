@@ -18,7 +18,8 @@
 
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
 import STYLES from './BpkCalendarDate.module.scss';

@@ -17,9 +17,10 @@
  */
 
 import React from 'react';
-import BpkLabel from 'bpk-component-label';
-import BpkSelect from 'bpk-component-select';
-import { cssModules } from 'bpk-react-utils';
+
+import BpkLabel from '../../bpk-component-label';
+import BpkSelect from '../../bpk-component-select';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkThemeToggle.module.scss';
 import bpkCustomThemes from './theming';

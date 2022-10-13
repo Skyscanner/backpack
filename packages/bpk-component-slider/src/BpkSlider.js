@@ -19,7 +19,8 @@
 import React from 'react';
 import Slider from 'react-slider';
 import PropTypes from 'prop-types';
-import { cssModules, isRTL } from 'bpk-react-utils';
+
+import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import STYLES from './BpkSlider.module.scss';
 

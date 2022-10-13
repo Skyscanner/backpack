@@ -20,9 +20,10 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import TickIcon from 'bpk-component-icon/lg/tick';
-import InfoIcon from 'bpk-component-icon/lg/information-circle';
-import TrashIcon from 'bpk-component-icon/lg/trash';
+
+import TickIcon from '../../bpk-component-icon/lg/tick';
+import InfoIcon from '../../bpk-component-icon/lg/information-circle';
+import TrashIcon from '../../bpk-component-icon/lg/trash';
 
 import BpkDialog from './BpkDialog';
 import { HEADER_ICON_TYPES } from './common-types';

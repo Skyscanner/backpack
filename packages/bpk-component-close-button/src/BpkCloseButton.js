@@ -20,8 +20,9 @@
 
 import PropTypes from 'prop-types';
 import React, { type StatelessFunctionalComponent } from 'react';
-import CloseIcon from 'bpk-component-icon/sm/close';
-import { cssModules } from 'bpk-react-utils';
+
+import CloseIcon from '../../bpk-component-icon/sm/close';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkCloseButton.module.scss';
 

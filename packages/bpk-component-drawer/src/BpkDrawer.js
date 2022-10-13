@@ -20,8 +20,9 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Portal, cssModules } from 'bpk-react-utils';
-import { withScrim } from 'bpk-scrim-utils';
+
+import { Portal, cssModules } from '../../bpk-react-utils';
+import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
 import STYLES from './BpkDrawer.module.scss';

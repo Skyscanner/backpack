@@ -16,23 +16,9 @@
  * limitations under the License.
  */
 
-import fs from 'fs';
-import path from 'path';
+const gulp = require('gulp');
 
-import del from 'del';
-import gulp from 'gulp';
+require('./bpk-component-flare/gulpfile');
+require('./bpk-component-icon/gulpfile');
 
-const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
-
-const getFolders = (dir) =>
-  fs
-    .readdirSync(dir)
-    .filter((file) => fs.statSync(path.join(dir, file)).isDirectory());
-
-gulp.task('clean', (done) => del(getFolders(ICONS_FOLDER_PATH), done));
-
-gulp.task('copy', () =>
-  gulp.src(`${ICONS_FOLDER_PATH}/**/*.js`).pipe(gulp.dest('.')),
-);
-
-gulp.task('default', gulp.series('copy'));
+gulp.task('default', gulp.series('generateFlare', 'generateIcons'));

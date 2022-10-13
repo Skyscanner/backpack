@@ -20,7 +20,8 @@
 
 import PropTypes from 'prop-types';
 import React, { Component, type ComponentType } from 'react';
-import { wrapDisplayName } from 'bpk-react-utils';
+
+import { wrapDisplayName } from '../../bpk-react-utils';
 
 type Props = {
   initiallyExpanded: boolean,

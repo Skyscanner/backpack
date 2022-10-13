@@ -28,9 +28,6 @@ const prompt = require('prompt');
 const _ = require('lodash');
 const globby = require('globby');
 
-const STORYBOOK_CONFIG_SPLIT_POINT_1 = 'configure(() => {';
-const STORYBOOK_CONFIG_SPLIT_POINT_2 = '}, module);';
-
 const schema = {
   properties: {
     name: {
@@ -74,18 +71,6 @@ const Replacer = (source, destination) =>
     },
   });
 
-const sortLines = (lineA, lineB) => {
-  const trimmedA = lineA.trim();
-  const trimmedB = lineB.trim();
-  if (trimmedA < trimmedB) {
-    return -1;
-  }
-  if (trimmedA > trimmedB) {
-    return 1;
-  }
-  return 0;
-};
-
 const createComponent = async (err, { name }) => {
   if (err) {
     console.error(err);
@@ -94,8 +79,6 @@ const createComponent = async (err, { name }) => {
 
   const boilerplateComponentPath = `packages/bpk-component-boilerplate`;
   const newComponentPath = `packages/bpk-component-${name}`;
-  const storybookConfigFile = `.storybook/config.js`;
-  const storybookImport = `require('./../${newComponentPath}/stories');`;
 
   const pascalCaseName = _.pascalCase(name);
 
@@ -139,36 +122,9 @@ const createComponent = async (err, { name }) => {
       boilerPlateFilePaths.map(_.unary(processBoilerPlateFiles)),
     );
 
-    // Add the new component to storybook config:
-    const storybookConfigContent = fs
-      .readFileSync(storybookConfigFile)
-      .toString();
-
-    const storybookConfigContentImports = storybookConfigContent
-      .split(STORYBOOK_CONFIG_SPLIT_POINT_1)[1]
-      .split(STORYBOOK_CONFIG_SPLIT_POINT_2)[0]
-      .split('\n')
-      .filter((s) => !_.isEmpty(s));
-
-    storybookConfigContentImports.push(storybookImport);
-
-    const newStorybookConfigContent = `${
-      storybookConfigContent.split(STORYBOOK_CONFIG_SPLIT_POINT_1)[0]
-    }${STORYBOOK_CONFIG_SPLIT_POINT_1}\n${storybookConfigContentImports
-      .sort(sortLines)
-      .join('\n')}\n${STORYBOOK_CONFIG_SPLIT_POINT_2}${
-      storybookConfigContent.split(STORYBOOK_CONFIG_SPLIT_POINT_2)[1]
-    }`;
-
-    fs.writeFileSync(storybookConfigFile, newStorybookConfigContent, 'utf8');
-
-    // Link everything up with Lerna.
-    console.log(colors.yellow(`Bootsrapping Lerna..`));
-    execSync(`npm run lerna bootstrap`);
-
     // Fix eslint errors and run Prettier.
     console.log(colors.yellow(`Formatting code using eslint..`));
-    execSync(`npx eslint --fix ${newComponentPath} ${storybookConfigFile}`);
+    execSync(`npx eslint --fix ${newComponentPath}`);
 
     console.log(colors.green(`${newComponentPath} has been created! 👍\n`));
 

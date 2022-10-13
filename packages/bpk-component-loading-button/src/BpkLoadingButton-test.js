@@ -20,8 +20,9 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { withButtonAlignment } from 'bpk-component-icon';
-import BaggageIcon from 'bpk-component-icon/sm/baggage';
+
+import { withButtonAlignment } from '../../bpk-component-icon';
+import BaggageIcon from '../../bpk-component-icon/sm/baggage';
 
 import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
 

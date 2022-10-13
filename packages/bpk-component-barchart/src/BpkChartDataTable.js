@@ -20,7 +20,8 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+
+import { cssModules } from '../../bpk-react-utils';
 
 import dataProp from './customPropTypes';
 import STYLES from './BpkChartDataTable.module.scss';

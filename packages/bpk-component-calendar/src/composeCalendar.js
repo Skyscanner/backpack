@@ -18,7 +18,8 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules, deprecated } from 'bpk-react-utils';
+
+import { cssModules, deprecated } from '../../bpk-react-utils';
 
 import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import STYLES from './BpkCalendar.module.scss';

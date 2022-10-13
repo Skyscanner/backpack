@@ -18,10 +18,14 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules, deprecated } from 'bpk-react-utils';
-import { DateUtils, BpkCalendarGridPropTypes } from 'bpk-component-calendar';
 import { startOfDay, startOfMonth } from 'date-fns';
 import { VariableSizeList as List } from 'react-window';
+
+import { cssModules, deprecated } from '../../bpk-react-utils';
+import {
+  DateUtils,
+  BpkCalendarGridPropTypes,
+} from '../../bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';

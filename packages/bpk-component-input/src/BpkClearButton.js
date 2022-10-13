@@ -19,9 +19,10 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import ClearIcon from 'bpk-component-icon/sm/close-circle';
-import { withButtonAlignment } from 'bpk-component-icon';
-import { cssModules } from 'bpk-react-utils';
+
+import ClearIcon from '../../bpk-component-icon/sm/close-circle';
+import { withButtonAlignment } from '../../bpk-component-icon';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkClearButton.module.scss';
 

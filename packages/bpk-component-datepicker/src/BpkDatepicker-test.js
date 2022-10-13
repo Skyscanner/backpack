@@ -20,32 +20,28 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
+
 import {
   weekDays,
   formatMonth,
   formatDateFull,
-} from 'bpk-component-calendar/test-utils';
-import { format } from 'bpk-component-calendar/src/date-utils';
-import { CALENDAR_SELECTION_TYPE } from 'bpk-component-calendar';
+} from '../../bpk-component-calendar/test-utils';
+import { format } from '../../bpk-component-calendar/src/date-utils';
+import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
 
 import BpkDatepicker from './BpkDatepicker';
 
-jest.mock(
-  './../node_modules/bpk-component-popover/node_modules/@popperjs/core',
-  () => {
-    const PopperJS = jest.requireActual(
-      './../node_modules/bpk-component-popover/node_modules/@popperjs/core',
-    );
-    return {
-      __esModule: true,
-      ...PopperJS,
-      createPopper: jest.fn(() => ({
-        update: jest.fn(),
-        destroy: jest.fn(),
-      })),
-    };
-  },
-);
+jest.mock('@popperjs/core', () => {
+  const PopperJS = jest.requireActual('@popperjs/core');
+  return {
+    __esModule: true,
+    ...PopperJS,
+    createPopper: jest.fn(() => ({
+      update: jest.fn(),
+      destroy: jest.fn(),
+    })),
+  };
+});
 
 const formatDate = (date) => format(date, 'dd/MM/yyyy');
 

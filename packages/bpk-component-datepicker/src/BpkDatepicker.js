@@ -16,13 +16,14 @@
  * limitations under the License.
  */
 
-import BpkInput, { withOpenEvents } from 'bpk-component-input';
-import BpkModal from 'bpk-component-modal';
-import BpkPopover from 'bpk-component-popover';
-import { cssModules, deprecated } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
+
+import BpkInput, { withOpenEvents } from '../../bpk-component-input';
+import BpkModal from '../../bpk-component-modal';
+import BpkPopover from '../../bpk-component-popover';
+import { cssModules, deprecated } from '../../bpk-react-utils';
+import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import {
   composeCalendar,
   BpkCalendarGridHeader,
@@ -33,7 +34,7 @@ import {
   CALENDAR_SELECTION_TYPE,
   DateUtils,
   BpkCalendarNav,
-} from 'bpk-component-calendar';
+} from '../../bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.module.scss';
 

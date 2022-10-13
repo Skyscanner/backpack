@@ -20,12 +20,13 @@ import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+
 import {
   cssModules,
   isDeviceIpad,
   isDeviceIphone,
   wrapDisplayName,
-} from 'bpk-react-utils';
+} from '../../bpk-react-utils';
 
 import BpkScrim from './BpkScrim';
 import {
