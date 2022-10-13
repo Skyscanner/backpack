@@ -17,16 +17,17 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkPageIndicator from './BpkPageIndicator';
 
+import React from 'react';
+
 describe('BpkPageIndicator accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkPageIndicator currentItem={0} totalItems={7} showNav />,
+      <BpkPageIndicator currentIndex={0} totalBullets={7} showNav />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

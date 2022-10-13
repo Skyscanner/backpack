@@ -18,19 +18,20 @@ export default () =>
   <BpkPageIndicator
     currentIndex={0}
     totalBullets={7}
-    updateItemCallback={(newIndex) => {
+    onClick={(e, newIndex, direction) => {
       console.log('Slide to new index:', newIndex);
+      console.log('Slide direction:', direction);
     }}
   />;
 ```
 
 ## Props
 
-| Property            | PropType | Required | Default Value |
-|---------------------|----------|----------|---------------|
-| currentIndex         | number   | true     | -             |
-| totalBullets          | number   | true     | -             |
-| className           | string   | false    | null          |
-| ariaLabel           | string   | false    | 'Go to Slide' |
-| showNav             | bool     | false    | false         |
-| updateItemCallback  | func     | false    | null          |
+| Property     | PropType | Required | Default Value |
+|--------------|----------|----------|---------------|
+| currentIndex | number   | true     | -             |
+| totalBullets | number   | true     | -             |
+| className    | string   | false    | null          |
+| ariaLabel    | string   | false    | 'Go to Slide' |
+| showNav      | bool     | false    | false         |
+| onClick      | func     | false    | null          |
