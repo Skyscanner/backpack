@@ -186,6 +186,7 @@ exports[`BpkPageIndicator should support showNav attribute 1`] = `
     <button
       aria-label="Previous Slide"
       class="bpk-button bpk-button--icon-only bpk-button--link"
+      disabled=""
       type="button"
     >
       <span
