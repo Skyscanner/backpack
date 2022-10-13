@@ -20,11 +20,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-import { useSwipeable } from 'react-swipeable';
 import BpkButton from 'bpk-component-button';
 import LeftArrowIcon from 'bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from 'bpk-component-icon/lg/chevron-right';
-import { isRTL, cssModules } from 'bpk-react-utils';
+import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkPageIndicator.module.scss';
 
@@ -39,11 +38,9 @@ const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 export type Props = {
   className: ?string,
   showNav: ?boolean,
-  currentItem: number,
-  totalItems: number,
+  currentIndex: number,
+  totalBullets: number,
   updateItemCallback: ?() => void,
-  itemClassName: ?string,
-  activeItemClassName: ?string,
   ariaLabel: ?string,
 };
 
@@ -54,27 +51,25 @@ const KEYS = {
 
 const BpkPageIndicator = (props: Props) => {
   const {
-    activeItemClassName,
     ariaLabel,
     className,
-    currentItem,
-    itemClassName,
+    currentIndex,
     showNav,
-    totalItems,
+    totalBullets,
     updateItemCallback,
     ...rest
   } = props;
   const classNames = getClassName('bpk-page-indicator', className);
 
   const updateItem = (index) => {
-    let newItem = index;
+    let newIndex = index;
     if (index < 0) {
-      newItem = totalItems - 1;
+      newIndex = totalBullets - 1;
     }
-    if (index >= totalItems) {
-      newItem = 0;
+    if (index >= totalBullets) {
+      newIndex = 0;
     }
-    updateItemCallback(newItem);
+    updateItemCallback(newIndex);
   };
 
   const handleKeyboardEvent = (e, index) => {
@@ -84,53 +79,40 @@ const BpkPageIndicator = (props: Props) => {
     }
   };
 
-  const direction = isRTL() ? 1 : -1;
-  const handlers = useSwipeable({
-    onSwipedLeft: () => updateItem(currentItem - direction),
-    onSwipedRight: () => updateItem(currentItem + direction),
-    trackMouse: true,
-    trackTouch: true,
-    preventScrollOnSwipe: true,
-  });
-
-  const bulletArray = [];
-  for (let i = 0; i < totalItems; i += 1) {
-    bulletArray.push(i);
-  }
-
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div {...handlers} className={classNames} {...rest}>
+    <div className={classNames} {...rest}>
       {showNav && (
         <BpkButton
           iconOnly
           link
           onClick={() => {
-            updateItem(currentItem - 1);
+            updateItem(currentIndex - 1);
           }}
+          aria-label="Previous Slide"
+          disabled={currentIndex === 0}
         >
           <AlignedLeftArrowIcon />
-          <span className="visually-hidden">Prev</span>
         </BpkButton>
       )}
       <div className={getClassName('bpk-page-indicator__container')}>
         <div
           className={getClassName('bpk-page-indicator__bulletsContainer')}
           style={
-            currentItem > START_SCROLL_INDEX
+            currentIndex > START_SCROLL_INDEX
               ? {
                   '--scroll-index':
-                    totalItems > DISPLAYED_TOTAL
+                    totalBullets > DISPLAYED_TOTAL
                       ? Math.min(
-                          currentItem - START_SCROLL_INDEX,
-                          totalItems - DISPLAYED_TOTAL,
+                          currentIndex - START_SCROLL_INDEX,
+                          totalBullets - DISPLAYED_TOTAL,
                         )
                       : 0,
                 }
               : undefined
           }
         >
-          {bulletArray.map((index) => (
+          {[...Array(totalBullets)].map((val, index) => (
             <div
               role="button"
               tabIndex={0}
@@ -142,9 +124,7 @@ const BpkPageIndicator = (props: Props) => {
               }}
               className={getClassName(
                 'bpk-page-indicator__bullet',
-                index === currentItem && 'bpk-page-indicator__bullet--active',
-                index === currentItem && activeItemClassName,
-                itemClassName,
+                index === currentIndex && 'bpk-page-indicator__bullet--active',
               )}
               aria-label={`${ariaLabel} ${index + 1}`}
             />
@@ -156,11 +136,12 @@ const BpkPageIndicator = (props: Props) => {
           iconOnly
           link
           onClick={() => {
-            updateItem(currentItem + 1);
+            updateItem(currentIndex + 1);
           }}
+          aria-label="Next Slide"
+          disabled={currentIndex === totalBullets - 1}
         >
           <AlignedRightArrowIcon />
-          <span className="visually-hidden">Next</span>
         </BpkButton>
       )}
     </div>
@@ -168,13 +149,11 @@ const BpkPageIndicator = (props: Props) => {
 };
 
 BpkPageIndicator.propTypes = {
-  currentItem: PropTypes.number.isRequired,
-  totalItems: PropTypes.number.isRequired,
+  currentIndex: PropTypes.number.isRequired,
+  totalBullets: PropTypes.number.isRequired,
   updateItemCallback: PropTypes.func,
   className: PropTypes.string,
   showNav: PropTypes.bool,
-  itemClassName: PropTypes.string,
-  activeItemClassName: PropTypes.string,
   ariaLabel: PropTypes.string,
 };
 
@@ -182,8 +161,6 @@ BpkPageIndicator.defaultProps = {
   updateItemCallback: null,
   className: null,
   ariaLabel: 'Go to Slide',
-  itemClassName: null,
-  activeItemClassName: null,
   showNav: false,
 };
 

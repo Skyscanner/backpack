@@ -1,9 +1,8 @@
 {
   "name": "bpk-component-page-indicator",
-  "version": "2.1.1",
+  "version": "0.0.1",
   "description": "Backpack page-indicator component.",
   "license": "Apache-2.0",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
@@ -18,8 +17,7 @@
     "bpk-component-icon": "^10.1.2",
     "bpk-mixins": "^32.0.2",
     "bpk-react-utils": "^7.1.0",
-    "prop-types": "^15.5.8",
-    "react-swipeable": "^7.0.0"
+    "prop-types": "^15.5.8"
   },
   "peerDependencies": {
     "react": "^17.0.2",

@@ -132,43 +132,43 @@ exports[`BpkPageIndicator should support custom class names 1`] = `
       >
         <div
           aria-label="Go to Slide 1"
-          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active custom-active-item-classname custom-item-classname"
+          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
           role="button"
           tabindex="0"
         />
         <div
           aria-label="Go to Slide 2"
-          class="bpk-page-indicator__bullet custom-item-classname"
+          class="bpk-page-indicator__bullet"
           role="button"
           tabindex="0"
         />
         <div
           aria-label="Go to Slide 3"
-          class="bpk-page-indicator__bullet custom-item-classname"
+          class="bpk-page-indicator__bullet"
           role="button"
           tabindex="0"
         />
         <div
           aria-label="Go to Slide 4"
-          class="bpk-page-indicator__bullet custom-item-classname"
+          class="bpk-page-indicator__bullet"
           role="button"
           tabindex="0"
         />
         <div
           aria-label="Go to Slide 5"
-          class="bpk-page-indicator__bullet custom-item-classname"
+          class="bpk-page-indicator__bullet"
           role="button"
           tabindex="0"
         />
         <div
           aria-label="Go to Slide 6"
-          class="bpk-page-indicator__bullet custom-item-classname"
+          class="bpk-page-indicator__bullet"
           role="button"
           tabindex="0"
         />
         <div
           aria-label="Go to Slide 7"
-          class="bpk-page-indicator__bullet custom-item-classname"
+          class="bpk-page-indicator__bullet"
           role="button"
           tabindex="0"
         />
@@ -184,6 +184,7 @@ exports[`BpkPageIndicator should support showNav attribute 1`] = `
     class="bpk-page-indicator"
   >
     <button
+      aria-label="Previous Slide"
       class="bpk-button bpk-button--icon-only bpk-button--link"
       type="button"
     >
@@ -201,11 +202,6 @@ exports[`BpkPageIndicator should support showNav attribute 1`] = `
             d="M16.207 4.299a1 1 0 0 1 0 1.414l-6.293 6.293 6.293 6.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z"
           />
         </svg>
-      </span>
-      <span
-        class="visually-hidden"
-      >
-        Prev
       </span>
     </button>
     <div
@@ -259,6 +255,7 @@ exports[`BpkPageIndicator should support showNav attribute 1`] = `
       </div>
     </div>
     <button
+      aria-label="Next Slide"
       class="bpk-button bpk-button--icon-only bpk-button--link"
       type="button"
     >
@@ -276,11 +273,6 @@ exports[`BpkPageIndicator should support showNav attribute 1`] = `
             d="M7.8 4.287a1 1 0 0 0 0 1.414l6.292 6.293L7.8 18.287a1 1 0 0 0 1.39 1.438l.024-.024 7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0z"
           />
         </svg>
-      </span>
-      <span
-        class="visually-hidden"
-      >
-        Next
       </span>
     </button>
   </div>

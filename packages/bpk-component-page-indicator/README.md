@@ -16,8 +16,8 @@ import BpkPageIndicator from 'bpk-component-page-indicator';
 
 export default () =>
   <BpkPageIndicator
-    currentItem={0}
-    totalItems={7}
+    currentIndex={0}
+    totalBullets={7}
     updateItemCallback={(newIndex) => {
       console.log('Slide to new index:', newIndex);
     }}
@@ -28,11 +28,9 @@ export default () =>
 
 | Property            | PropType | Required | Default Value |
 |---------------------|----------|----------|---------------|
-| currentItem         | number   | true     | -             |
-| totalItems          | number   | true     | -             |
+| currentIndex         | number   | true     | -             |
+| totalBullets          | number   | true     | -             |
 | className           | string   | false    | null          |
-| itemClassName       | string   | false    | null          |
-| activeItemClassName | string   | false    | null          |
 | ariaLabel           | string   | false    | 'Go to Slide' |
 | showNav             | bool     | false    | false         |
 | updateItemCallback  | func     | false    | null          |

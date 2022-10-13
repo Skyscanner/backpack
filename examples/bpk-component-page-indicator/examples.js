@@ -21,33 +21,33 @@ import React, { useState } from 'react';
 import BpkPageIndicator from '../../packages/bpk-component-page-indicator';
 
 const PageIndicatorContainer = (props) => {
-  const [currentItem, setCurrentItem] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <BpkPageIndicator
-      currentItem={currentItem}
-      updateItemCallback={setCurrentItem}
+      currentIndex={currentIndex}
+      updateItemCallback={setCurrentIndex}
       {...props}
     />
   );
 };
 
 const DefaultExample = () => (
-  <PageIndicatorContainer id="default-example" totalItems={7} />
+  <PageIndicatorContainer id="default-example" totalBullets={7} />
 );
 
 const ThreePagesExample = () => (
-  <PageIndicatorContainer id="three-pages-example" totalItems={3} />
+  <PageIndicatorContainer id="three-pages-example" totalBullets={3} />
 );
 
 const WithNavExample = () => (
-  <PageIndicatorContainer id="with-nav-example" totalItems={7} showNav />
+  <PageIndicatorContainer id="with-nav-example" totalBullets={7} showNav />
 );
 
 const ThreePagesWithNavExample = () => (
   <PageIndicatorContainer
     id="three-pages-with-nav-example"
-    totalItems={3}
+    totalBullets={3}
     showNav
   />
 );

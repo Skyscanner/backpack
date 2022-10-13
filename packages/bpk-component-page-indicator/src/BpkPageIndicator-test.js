@@ -27,8 +27,8 @@ let props;
 describe('BpkPageIndicator', () => {
   beforeEach(() => {
     props = {
-      currentItem: 0,
-      totalItems: 7,
+      currentIndex: 0,
+      totalBullets: 7,
     };
   });
 
@@ -39,12 +39,7 @@ describe('BpkPageIndicator', () => {
 
   it('should support custom class names', () => {
     const { asFragment } = render(
-      <BpkPageIndicator
-        {...props}
-        className="custom-classname"
-        itemClassName="custom-item-classname"
-        activeItemClassName="custom-active-item-classname"
-      />,
+      <BpkPageIndicator {...props} className="custom-classname" />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
