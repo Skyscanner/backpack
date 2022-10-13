@@ -17,6 +17,9 @@
  */
 /* @flow strict */
 
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import BpkButton from '../../bpk-component-button';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
@@ -24,9 +27,6 @@ import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPageIndicator.module.scss';
-
-import React from 'react';
-import PropTypes from 'prop-types';
 
 const getClassName = cssModules(STYLES);
 const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
