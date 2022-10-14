@@ -22,8 +22,8 @@ import { cssModules } from '../../bpk-react-utils';
 import NavButton, { DIRECTIONS } from './NavButton';
 import STYLES from './BpkPageIndicator.module.scss';
 
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 const getClassName = cssModules(STYLES);
 

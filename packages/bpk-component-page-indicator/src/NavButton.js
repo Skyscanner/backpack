@@ -22,8 +22,8 @@ import BpkButton from '../../bpk-component-button';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 export type Props = {
   showNav: ?boolean,
