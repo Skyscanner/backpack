@@ -22,7 +22,7 @@
   &__text-story {
     height: $bpk-spacing-xl * 4;
     padding: $bpk-spacing-md;
-    background-color: $bpk-color-tochigi;
+    background-color: $bpk-surface-highlight-day;
 
     @include bpk-border-radius-sm;
   }
@@ -33,6 +33,6 @@
     padding-bottom: $bpk-spacing-xl;
     justify-content: center;
     align-items: flex-end;
-    color: $bpk-color-white;
+    color: $bpk-text-primary-inverse-day;
   }
 }

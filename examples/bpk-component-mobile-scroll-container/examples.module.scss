@@ -20,11 +20,11 @@
 
 .bpk-stories-mobile-scroll-container {
   &__leading-indicator {
-    @include bpk-scroll-indicator-left($bpk-color-sky-blue);
+    @include bpk-scroll-indicator-left($bpk-core-accent-day);
   }
 
   &__trailing-indicator {
-    @include bpk-scroll-indicator-right($bpk-color-sky-blue);
+    @include bpk-scroll-indicator-right($bpk-core-accent-day);
   }
 }
 
@@ -37,10 +37,10 @@
     height: $bpk-spacing-xxl * 5;
     justify-content: center;
     align-items: center;
-    background-color: $bpk-color-sky-gray-tint-07;
+    background-color: $bpk-canvas-contrast-day;
 
     &--alternate {
-      background-color: $bpk-color-sky-gray-tint-06;
+      background-color: $bpk-surface-highlight-day;
     }
   }
 }
