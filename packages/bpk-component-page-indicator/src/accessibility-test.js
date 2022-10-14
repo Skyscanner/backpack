@@ -17,12 +17,12 @@
  */
 /* @flow strict */
 
+import React from 'react';
+
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkPageIndicator from './BpkPageIndicator';
-
-import React from 'react';
 
 describe('BpkPageIndicator accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

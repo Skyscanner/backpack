@@ -17,11 +17,12 @@
  */
 /* @flow strict */
 
+import React from 'react';
+
 import { render } from '@testing-library/react';
 
 import BpkPageIndicator from './BpkPageIndicator';
 
-import React from 'react';
 
 let props;
 
