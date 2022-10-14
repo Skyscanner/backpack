@@ -25,7 +25,6 @@ import BpkButton from '../../bpk-component-button';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 
-
 type Props = {
   prev?: boolean,
   disabled?: boolean,
