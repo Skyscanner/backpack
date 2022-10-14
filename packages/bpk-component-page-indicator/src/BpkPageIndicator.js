@@ -17,14 +17,13 @@
  */
 /* @flow strict */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import { cssModules } from '../../bpk-react-utils';
 
 import NavButton, { DIRECTIONS } from './NavButton';
 import STYLES from './BpkPageIndicator.module.scss';
 
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const getClassName = cssModules(STYLES);
 
@@ -73,13 +72,14 @@ const BpkPageIndicator = (props: Props) => {
           showNav && 'bpk-page-indicator__showNav',
         )}
       >
-        <NavButton
-          currentIndex={currentIndex}
-          totalBullets={totalBullets}
-          onClick={onClick}
-          showNav={showNav}
-          prev
-        />
+        {showNav && (
+          <NavButton
+            currentIndex={currentIndex}
+            onClick={onClick}
+            disabled={currentIndex === 0}
+            prev
+          />
+        )}
         <div className={getClassName('bpk-page-indicator__container')}>
           <div
             className={getClassName('bpk-page-indicator__bullets-container')}
@@ -124,12 +124,13 @@ const BpkPageIndicator = (props: Props) => {
             ))}
           </div>
         </div>
-        <NavButton
-          currentIndex={currentIndex}
-          totalBullets={totalBullets}
-          onClick={onClick}
-          showNav={showNav}
-        />
+        {showNav && (
+          <NavButton
+            currentIndex={currentIndex}
+            onClick={onClick}
+            disabled={currentIndex === totalBullets - 1}
+          />
+        )}
       </div>
     </div>
   );

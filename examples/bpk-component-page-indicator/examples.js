@@ -53,26 +53,24 @@ const ThreePagesExample = () => (
 );
 
 const OverImageExample = () => (
-  <>
-    <BpkBackgroundImage
-      width={612}
-      height={408}
-      style={{ width: imageWidth, height: imageHeight }}
-      imageStyle={{
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: '50% 50%',
-      }}
-      src={image}
-    >
-      <PageIndicatorContainer
-        id="over-image-example"
-        totalBullets={3}
-        dark
-        className={getClassName('bpk-page-indicator-examples__container')}
-      />
-    </BpkBackgroundImage>
-  </>
+  <BpkBackgroundImage
+    width={612}
+    height={408}
+    style={{ width: imageWidth, height: imageHeight }}
+    imageStyle={{
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: '50% 50%',
+    }}
+    src={image}
+  >
+    <PageIndicatorContainer
+      id="over-image-example"
+      totalBullets={3}
+      dark
+      className={getClassName('bpk-page-indicator-examples__container')}
+    />
+  </BpkBackgroundImage>
 );
 
 const WithNavExample = () => (

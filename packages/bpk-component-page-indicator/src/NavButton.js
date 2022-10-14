@@ -17,20 +17,18 @@
  */
 /* @flow strict */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import BpkButton from '../../bpk-component-button';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 
+import PropTypes from 'prop-types';
+import React from 'react';
 
 export type Props = {
-  showNav: ?boolean,
   prev?: boolean,
+  disabled?: boolean,
   currentIndex: number,
-  totalBullets: number,
   onClick: ?() => void,
 };
 
@@ -46,39 +44,36 @@ const AlignedRightArrowIcon = withButtonAlignment(
 );
 
 const NavButton = (props: Props) => {
-  const { currentIndex, onClick, prev, showNav, totalBullets } = props;
+  const { currentIndex, disabled, onClick, prev } = props;
   return (
-    showNav && (
-      <BpkButton
-        iconOnly
-        link
-        onClick={(e) => {
-          if (prev) {
-            onClick(e, currentIndex - 1, DIRECTIONS.PREV);
-          } else {
-            onClick(e, currentIndex + 1, DIRECTIONS.NEXT);
-          }
-        }}
-        aria-label={prev ? 'Previous Slide' : 'Next Slide'}
-        disabled={prev ? currentIndex === 0 : currentIndex === totalBullets - 1}
-      >
-        {prev ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
-      </BpkButton>
-    )
+    <BpkButton
+      iconOnly
+      link
+      onClick={(e) => {
+        if (prev) {
+          onClick(e, currentIndex - 1, DIRECTIONS.PREV);
+        } else {
+          onClick(e, currentIndex + 1, DIRECTIONS.NEXT);
+        }
+      }}
+      aria-label={prev ? 'Previous Slide' : 'Next Slide'}
+      disabled={disabled}
+    >
+      {prev ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
+    </BpkButton>
   );
 };
 
 NavButton.propTypes = {
-  showNav: PropTypes.bool,
   prev: PropTypes.bool,
+  disabled: PropTypes.bool,
   currentIndex: PropTypes.number.isRequired,
-  totalBullets: PropTypes.number.isRequired,
   onClick: PropTypes.func,
 };
 
 NavButton.defaultProps = {
-  showNav: false,
   prev: false,
+  disabled: false,
   onClick: null,
 };
 
