@@ -17,22 +17,16 @@
  */
 /* @flow strict */
 
-import PropTypes from 'prop-types';
-import React from 'react';
-
-import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
-import BpkButton from '../../bpk-component-button';
-import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
-import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 import { cssModules } from '../../bpk-react-utils';
 
+import NavButton, { DIRECTIONS } from './NavButton';
 import STYLES from './BpkPageIndicator.module.scss';
 
+import React from 'react';
+import PropTypes from 'prop-types';
+
 const getClassName = cssModules(STYLES);
-const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
-const AlignedRightArrowIcon = withButtonAlignment(
-  withRtlSupport(RightArrowIcon),
-);
+
 const DISPLAYED_TOTAL = 5;
 const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 
@@ -43,6 +37,7 @@ export type Props = {
   totalBullets: number,
   onClick: ?() => void,
   ariaLabel: ?string,
+  dark: ?boolean,
 };
 
 const KEYS = {
@@ -50,24 +45,17 @@ const KEYS = {
   SPACE: 'Spacebar',
 };
 
-const DIRECTIONS = {
-  PREV: -1,
-  BULLETS: 0,
-  NEXT: 1,
-};
-
 const BpkPageIndicator = (props: Props) => {
   const {
     ariaLabel,
     className,
     currentIndex,
+    dark,
     onClick,
     showNav,
     totalBullets,
     ...rest
   } = props;
-  const classNames = getClassName('bpk-page-indicator', className);
-
   const handleKeyboardEvent = (e, index) => {
     if (e.key === KEYS.ENTER || e.key === KEYS.SPACE || e.key === ' ') {
       e.preventDefault();
@@ -77,69 +65,71 @@ const BpkPageIndicator = (props: Props) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={classNames} {...rest}>
-      {showNav && (
-        <BpkButton
-          iconOnly
-          link
-          onClick={(e) => {
-            onClick(e, currentIndex - 1, DIRECTIONS.PREV);
-          }}
-          aria-label="Previous Slide"
-          disabled={currentIndex === 0}
-        >
-          <AlignedLeftArrowIcon />
-        </BpkButton>
-      )}
-      <div className={getClassName('bpk-page-indicator__container')}>
-        <div
-          className={getClassName('bpk-page-indicator__bulletsContainer')}
-          style={
-            currentIndex > START_SCROLL_INDEX
-              ? {
-                  '--scroll-index':
-                    totalBullets > DISPLAYED_TOTAL
-                      ? Math.min(
-                          currentIndex - START_SCROLL_INDEX,
-                          totalBullets - DISPLAYED_TOTAL,
-                        )
-                      : 0,
-                }
-              : undefined
-          }
-        >
-          {[...Array(totalBullets)].map((val, index) => (
-            <div
-              role="button"
-              tabIndex={0}
-              onClick={(e) => {
-                onClick(e, index, DIRECTIONS.BULLETS);
-              }}
-              onKeyDown={(e) => {
-                handleKeyboardEvent(e, index);
-              }}
-              className={getClassName(
-                'bpk-page-indicator__bullet',
-                index === currentIndex && 'bpk-page-indicator__bullet--active',
-              )}
-              aria-label={`${ariaLabel} ${index + 1}`}
-            />
-          ))}
+    <div className={className} {...rest}>
+      <div
+        className={getClassName(
+          'bpk-page-indicator',
+          showNav && 'bpk-page-indicator__showNav',
+        )}
+      >
+        <NavButton
+          currentIndex={currentIndex}
+          totalBullets={totalBullets}
+          onClick={onClick}
+          showNav={showNav}
+          prev
+        />
+        <div className={getClassName('bpk-page-indicator__container')}>
+          <div
+            className={getClassName('bpk-page-indicator__bullets-container')}
+            style={
+              currentIndex > START_SCROLL_INDEX
+                ? {
+                    '--scroll-index':
+                      totalBullets > DISPLAYED_TOTAL
+                        ? Math.min(
+                            currentIndex - START_SCROLL_INDEX,
+                            totalBullets - DISPLAYED_TOTAL,
+                          )
+                        : 0,
+                  }
+                : undefined
+            }
+          >
+            {[...Array(totalBullets)].map((val, index) => (
+              <button
+                type="button"
+                tabIndex={0}
+                onClick={(e) => {
+                  onClick(e, index, DIRECTIONS.BULLETS);
+                }}
+                onKeyDown={(e) => {
+                  handleKeyboardEvent(e, index);
+                }}
+                className={getClassName(
+                  'bpk-page-indicator__bullet',
+                  dark && 'bpk-page-indicator__dark',
+                  index === currentIndex &&
+                    'bpk-page-indicator__bullet--active',
+                  index === currentIndex &&
+                    dark &&
+                    'bpk-page-indicator__dark--active',
+                )}
+                aria-label={`${ariaLabel} ${index + 1}`}
+                aria-pressed={currentIndex === index ? 'true' : 'false'}
+                // eslint-disable-next-line react/no-array-index-key
+                key={`bullet-${index}`}
+              />
+            ))}
+          </div>
         </div>
+        <NavButton
+          currentIndex={currentIndex}
+          totalBullets={totalBullets}
+          onClick={onClick}
+          showNav={showNav}
+        />
       </div>
-      {showNav && (
-        <BpkButton
-          iconOnly
-          link
-          onClick={(e) => {
-            onClick(e, currentIndex + 1, DIRECTIONS.NEXT);
-          }}
-          aria-label="Next Slide"
-          disabled={currentIndex === totalBullets - 1}
-        >
-          <AlignedRightArrowIcon />
-        </BpkButton>
-      )}
     </div>
   );
 };
@@ -151,6 +141,7 @@ BpkPageIndicator.propTypes = {
   className: PropTypes.string,
   showNav: PropTypes.bool,
   ariaLabel: PropTypes.string,
+  dark: PropTypes.bool,
 };
 
 BpkPageIndicator.defaultProps = {
@@ -158,6 +149,7 @@ BpkPageIndicator.defaultProps = {
   className: null,
   ariaLabel: 'Go to Slide',
   showNav: false,
+  dark: false,
 };
 
 export default BpkPageIndicator;

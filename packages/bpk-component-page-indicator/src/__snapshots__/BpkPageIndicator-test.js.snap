@@ -2,57 +2,66 @@
 
 exports[`BpkPageIndicator should render correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-page-indicator"
-  >
+  <div>
     <div
-      class="bpk-page-indicator__container"
+      class="bpk-page-indicator"
     >
       <div
-        class="bpk-page-indicator__bulletsContainer"
+        class="bpk-page-indicator__container"
       >
         <div
-          aria-label="Go to Slide 1"
-          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 2"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 3"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 4"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 5"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 6"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 7"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
+          class="bpk-page-indicator__bullets-container"
+        >
+          <button
+            aria-label="Go to Slide 1"
+            aria-pressed="true"
+            class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 2"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 3"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 4"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 5"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 6"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 7"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -62,57 +71,67 @@ exports[`BpkPageIndicator should render correctly 1`] = `
 exports[`BpkPageIndicator should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-page-indicator"
     testid="123"
   >
     <div
-      class="bpk-page-indicator__container"
+      class="bpk-page-indicator"
     >
       <div
-        class="bpk-page-indicator__bulletsContainer"
+        class="bpk-page-indicator__container"
       >
         <div
-          aria-label="Go to Slide 1"
-          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 2"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 3"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 4"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 5"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 6"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 7"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
+          class="bpk-page-indicator__bullets-container"
+        >
+          <button
+            aria-label="Go to Slide 1"
+            aria-pressed="true"
+            class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 2"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 3"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 4"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 5"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 6"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 7"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -122,56 +141,67 @@ exports[`BpkPageIndicator should support arbitrary props 1`] = `
 exports[`BpkPageIndicator should support custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-page-indicator custom-classname"
+    class="custom-classname"
   >
     <div
-      class="bpk-page-indicator__container"
+      class="bpk-page-indicator"
     >
       <div
-        class="bpk-page-indicator__bulletsContainer"
+        class="bpk-page-indicator__container"
       >
         <div
-          aria-label="Go to Slide 1"
-          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 2"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 3"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 4"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 5"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 6"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 7"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
+          class="bpk-page-indicator__bullets-container"
+        >
+          <button
+            aria-label="Go to Slide 1"
+            aria-pressed="true"
+            class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 2"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 3"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 4"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 5"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 6"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 7"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -180,102 +210,111 @@ exports[`BpkPageIndicator should support custom class names 1`] = `
 
 exports[`BpkPageIndicator should support showNav attribute 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-page-indicator"
-  >
-    <button
-      aria-label="Previous Slide"
-      class="bpk-button bpk-button--icon-only bpk-button--link"
-      disabled=""
-      type="button"
-    >
-      <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
-      >
-        <svg
-          class="bpk-icon--rtl-support"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M16.207 4.299a1 1 0 0 1 0 1.414l-6.293 6.293 6.293 6.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z"
-          />
-        </svg>
-      </span>
-    </button>
+  <div>
     <div
-      class="bpk-page-indicator__container"
+      class="bpk-page-indicator bpk-page-indicator__showNav"
     >
-      <div
-        class="bpk-page-indicator__bulletsContainer"
+      <button
+        aria-label="Previous Slide"
+        class="bpk-button bpk-button--icon-only bpk-button--link"
+        disabled=""
+        type="button"
       >
-        <div
-          aria-label="Go to Slide 1"
-          class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 2"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 3"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 4"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 5"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 6"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-        <div
-          aria-label="Go to Slide 7"
-          class="bpk-page-indicator__bullet"
-          role="button"
-          tabindex="0"
-        />
-      </div>
-    </div>
-    <button
-      aria-label="Next Slide"
-      class="bpk-button bpk-button--icon-only bpk-button--link"
-      type="button"
-    >
-      <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
-      >
-        <svg
-          class="bpk-icon--rtl-support"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+        <span
+          style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
         >
-          <path
-            d="M7.8 4.287a1 1 0 0 0 0 1.414l6.292 6.293L7.8 18.287a1 1 0 0 0 1.39 1.438l.024-.024 7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0z"
+          <svg
+            class="bpk-icon--rtl-support"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.207 4.299a1 1 0 0 1 0 1.414l-6.293 6.293 6.293 6.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="bpk-page-indicator__container"
+      >
+        <div
+          class="bpk-page-indicator__bullets-container"
+        >
+          <button
+            aria-label="Go to Slide 1"
+            aria-pressed="true"
+            class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
+            tabindex="0"
+            type="button"
           />
-        </svg>
-      </span>
-    </button>
+          <button
+            aria-label="Go to Slide 2"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 3"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 4"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 5"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 6"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+          <button
+            aria-label="Go to Slide 7"
+            aria-pressed="false"
+            class="bpk-page-indicator__bullet"
+            tabindex="0"
+            type="button"
+          />
+        </div>
+      </div>
+      <button
+        aria-label="Next Slide"
+        class="bpk-button bpk-button--icon-only bpk-button--link"
+        type="button"
+      >
+        <span
+          style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        >
+          <svg
+            class="bpk-icon--rtl-support"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.8 4.287a1 1 0 0 0 0 1.414l6.292 6.293L7.8 18.287a1 1 0 0 0 1.39 1.438l.024-.024 7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;

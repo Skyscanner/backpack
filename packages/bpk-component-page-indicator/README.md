@@ -34,4 +34,6 @@ export default () =>
 | className    | string   | false    | null          |
 | ariaLabel    | string   | false    | 'Go to Slide' |
 | showNav      | bool     | false    | false         |
+| dark         | bool     | false    | false         |
 | onClick      | func     | false    | null          |
+

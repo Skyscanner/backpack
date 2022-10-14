@@ -19,7 +19,17 @@
 import React, { useState } from 'react';
 
 import BpkPageIndicator from '../../packages/bpk-component-page-indicator';
+import { BpkBackgroundImage } from '../../packages/bpk-component-image';
+import { cssModules } from '../../packages/bpk-react-utils';
 
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+const image =
+  'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
+const imageWidth = 612;
+const imageHeight = 408;
 const PageIndicatorContainer = (props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -42,6 +52,29 @@ const ThreePagesExample = () => (
   <PageIndicatorContainer id="three-pages-example" totalBullets={3} />
 );
 
+const OverImageExample = () => (
+  <>
+    <BpkBackgroundImage
+      width={612}
+      height={408}
+      style={{ width: imageWidth, height: imageHeight }}
+      imageStyle={{
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: '50% 50%',
+      }}
+      src={image}
+    >
+      <PageIndicatorContainer
+        id="over-image-example"
+        totalBullets={3}
+        dark
+        className={getClassName('bpk-page-indicator-examples__container')}
+      />
+    </BpkBackgroundImage>
+  </>
+);
+
 const WithNavExample = () => (
   <PageIndicatorContainer id="with-nav-example" totalBullets={7} showNav />
 );
@@ -58,6 +91,7 @@ const VisualTestExample = () => (
   <>
     <DefaultExample />
     <ThreePagesExample />
+    <OverImageExample />
     <WithNavExample />
     <ThreePagesWithNavExample />
     <div style={{ width: '50%' }}>
@@ -66,4 +100,10 @@ const VisualTestExample = () => (
   </>
 );
 
-export { DefaultExample, ThreePagesExample, WithNavExample, VisualTestExample };
+export {
+  DefaultExample,
+  ThreePagesExample,
+  OverImageExample,
+  WithNavExample,
+  VisualTestExample,
+};
