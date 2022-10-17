@@ -72,7 +72,7 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     margin-inline: $dot-margin;
 
     &--active {
-      background-color: $bpk-marcomms-grey-40;
+      background-color: $bpk-text-secondary-day;
     }
   }
 
@@ -80,7 +80,7 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     background-color: $bpk-private-button-link-on-dark-pressed-foreground-night;
 
     &--active {
-      background-color: $bpk-color-white;
+      background-color: $bpk-text-on-dark-day;
     }
   }
 }

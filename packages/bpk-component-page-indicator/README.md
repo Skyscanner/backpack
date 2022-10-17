@@ -5,14 +5,14 @@
 ## Installation
 
 ```sh
-npm install bpk-component-page-indicator --save-dev
+npm install @skyscanner/backpack-web --save
 ```
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkPageIndicator from 'bpk-component-page-indicator';
+import BpkPageIndicator from '@skyscanner/backpack-web/bpk-component-page-indicator';
 
 export default () =>
   <BpkPageIndicator
@@ -22,6 +22,7 @@ export default () =>
       console.log('Slide to new index:', newIndex);
       console.log('Slide direction:', direction);
     }}
+    ariaLabel='Go to Slide'
   />;
 ```
 
@@ -31,8 +32,8 @@ export default () =>
 |--------------|----------|----------|---------------|
 | currentIndex | number   | true     | -             |
 | totalBullets | number   | true     | -             |
+| ariaLabel    | string   | true     | -             |
 | className    | string   | false    | null          |
-| ariaLabel    | string   | false    | 'Go to Slide' |
 | showNav      | bool     | false    | false         |
 | dark         | bool     | false    | false         |
 | onClick      | func     | false    | null          |

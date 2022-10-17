@@ -17,13 +17,13 @@
  */
 /* @flow strict */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import { cssModules } from '../../bpk-react-utils';
 
 import NavButton, { DIRECTIONS } from './NavButton';
 import STYLES from './BpkPageIndicator.module.scss';
+
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const getClassName = cssModules(STYLES);
 
@@ -54,7 +54,6 @@ const BpkPageIndicator = (props: Props) => {
     onClick,
     showNav,
     totalBullets,
-    ...rest
   } = props;
   const handleKeyboardEvent = (e, index) => {
     if (e.key === KEYS.ENTER || e.key === KEYS.SPACE || e.key === ' ') {
@@ -65,7 +64,7 @@ const BpkPageIndicator = (props: Props) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={className} {...rest}>
+    <div className={className}>
       <div
         className={getClassName(
           'bpk-page-indicator',
@@ -137,19 +136,18 @@ const BpkPageIndicator = (props: Props) => {
 };
 
 BpkPageIndicator.propTypes = {
+  ariaLabel: PropTypes.string.isRequired,
   currentIndex: PropTypes.number.isRequired,
   totalBullets: PropTypes.number.isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
   showNav: PropTypes.bool,
-  ariaLabel: PropTypes.string,
   dark: PropTypes.bool,
 };
 
 BpkPageIndicator.defaultProps = {
   onClick: null,
   className: null,
-  ariaLabel: 'Go to Slide',
   showNav: false,
   dark: false,
 };
