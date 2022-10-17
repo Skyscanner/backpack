@@ -77,7 +77,7 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
   }
 
   &__dark {
-    background-color: $bpk-private-button-link-on-dark-pressed-foreground-night;
+    background-color: $bpk-line-on-dark-day;
 
     &--active {
       background-color: $bpk-text-on-dark-day;
