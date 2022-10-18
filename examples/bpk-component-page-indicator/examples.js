@@ -47,13 +47,9 @@ const PageIndicatorContainer = (props) => {
   );
 };
 
-const DefaultExample = () => (
-  <PageIndicatorContainer id="default-example" totalBullets={7} />
-);
+const DefaultExample = () => <PageIndicatorContainer totalBullets={7} />;
 
-const ThreePagesExample = () => (
-  <PageIndicatorContainer id="three-pages-example" totalBullets={3} />
-);
+const ThreePagesExample = () => <PageIndicatorContainer totalBullets={3} />;
 
 const OverImageExample = () => (
   <BpkBackgroundImage
@@ -68,7 +64,6 @@ const OverImageExample = () => (
     src={image}
   >
     <PageIndicatorContainer
-      id="over-image-example"
       totalBullets={3}
       dark
       className={getClassName('bpk-page-indicator-examples__container')}
@@ -77,15 +72,11 @@ const OverImageExample = () => (
 );
 
 const WithNavExample = () => (
-  <PageIndicatorContainer id="with-nav-example" totalBullets={7} showNav />
+  <PageIndicatorContainer totalBullets={7} showNav />
 );
 
 const ThreePagesWithNavExample = () => (
-  <PageIndicatorContainer
-    id="three-pages-with-nav-example"
-    totalBullets={3}
-    showNav
-  />
+  <PageIndicatorContainer totalBullets={3} showNav />
 );
 
 const VisualTestExample = () => (

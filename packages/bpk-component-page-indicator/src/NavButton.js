@@ -17,26 +17,26 @@
  */
 /* @flow strict */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import BpkButton from '../../bpk-component-button';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
+
+import PropTypes from 'prop-types';
+import React from 'react';
 
 type Props = {
   prev?: boolean,
   disabled?: boolean,
   currentIndex: number,
   onClick: ?() => void,
-  navButtonLabel: string,
+  ariaLabel: string,
 };
 
 export const DIRECTIONS = {
-  PREV: -1,
-  BULLETS: 0,
-  NEXT: 1,
+  PREV: 'PREV',
+  BULLETS: 'BULLETS',
+  NEXT: 'NEXT',
 };
 
 const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
@@ -45,7 +45,7 @@ const AlignedRightArrowIcon = withButtonAlignment(
 );
 
 const NavButton = (props: Props) => {
-  const { currentIndex, disabled, navButtonLabel, onClick, prev } = props;
+  const { ariaLabel, currentIndex, disabled, onClick, prev } = props;
   return (
     <BpkButton
       iconOnly
@@ -57,7 +57,7 @@ const NavButton = (props: Props) => {
           onClick(e, currentIndex + 1, DIRECTIONS.NEXT);
         }
       }}
-      aria-label={navButtonLabel}
+      aria-label={ariaLabel}
       disabled={disabled}
     >
       {prev ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
@@ -68,6 +68,7 @@ const NavButton = (props: Props) => {
 NavButton.propTypes = {
   prev: PropTypes.bool,
   disabled: PropTypes.bool,
+  ariaLabel: PropTypes.string.isRequired,
   currentIndex: PropTypes.number.isRequired,
   onClick: PropTypes.func,
 };

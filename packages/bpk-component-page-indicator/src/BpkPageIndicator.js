@@ -46,99 +46,84 @@ const KEYS = {
   SPACE: 'Spacebar',
 };
 
-const BpkPageIndicator = (props: Props) => {
-  const {
-    bulletLabel,
-    className,
-    currentIndex,
-    dark,
-    nextNavLabel,
-    onClick,
-    prevNavLabel,
-    showNav,
-    totalBullets,
-  } = props;
-  const handleKeyboardEvent = (e, index) => {
-    if (e.key === KEYS.ENTER || e.key === KEYS.SPACE || e.key === ' ') {
-      e.preventDefault();
-      onClick(e, index, DIRECTIONS.BULLETS);
-    }
-  };
-
-  return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={className}>
-      <div
-        className={getClassName(
-          'bpk-page-indicator',
-          showNav && 'bpk-page-indicator__showNav',
-        )}
-      >
-        {showNav && (
-          <NavButton
-            currentIndex={currentIndex}
-            onClick={onClick}
-            disabled={currentIndex === 0}
-            prev
-            navButtonLabel={prevNavLabel}
-          />
-        )}
-        <div className={getClassName('bpk-page-indicator__container')}>
-          <div
-            className={getClassName('bpk-page-indicator__bullets-container')}
-            style={
-              currentIndex > START_SCROLL_INDEX
-                ? {
-                    '--scroll-index':
-                      totalBullets > DISPLAYED_TOTAL
-                        ? Math.min(
-                            currentIndex - START_SCROLL_INDEX,
-                            totalBullets - DISPLAYED_TOTAL,
-                          )
-                        : 0,
-                  }
-                : undefined
-            }
-          >
-            {[...Array(totalBullets)].map((val, index) => (
-              <button
-                type="button"
-                tabIndex={0}
-                onClick={(e) => {
-                  onClick(e, index, DIRECTIONS.BULLETS);
-                }}
-                onKeyDown={(e) => {
-                  handleKeyboardEvent(e, index);
-                }}
-                className={getClassName(
-                  'bpk-page-indicator__bullet',
-                  dark && 'bpk-page-indicator__dark',
-                  index === currentIndex &&
-                    'bpk-page-indicator__bullet--active',
-                  index === currentIndex &&
-                    dark &&
-                    'bpk-page-indicator__dark--active',
-                )}
-                aria-label={`${bulletLabel} ${index + 1}`}
-                aria-pressed={currentIndex === index ? 'true' : 'false'}
-                // eslint-disable-next-line react/no-array-index-key
-                key={`bullet-${index}`}
-              />
-            ))}
-          </div>
+const BpkPageIndicator = ({
+  bulletLabel,
+  className,
+  currentIndex,
+  dark,
+  nextNavLabel,
+  onClick,
+  prevNavLabel,
+  showNav,
+  totalBullets,
+}: Props) => (
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+  <div className={className}>
+    <div
+      className={getClassName(
+        'bpk-page-indicator',
+        showNav && 'bpk-page-indicator__showNav',
+      )}
+    >
+      {showNav && (
+        <NavButton
+          currentIndex={currentIndex}
+          onClick={onClick}
+          disabled={currentIndex === 0}
+          prev
+          ariaLabel={prevNavLabel}
+        />
+      )}
+      <div className={getClassName('bpk-page-indicator__container')}>
+        <div
+          className={getClassName('bpk-page-indicator__bullets-container')}
+          style={
+            currentIndex > START_SCROLL_INDEX
+              ? {
+                  '--scroll-index':
+                    totalBullets > DISPLAYED_TOTAL
+                      ? Math.min(
+                          currentIndex - START_SCROLL_INDEX,
+                          totalBullets - DISPLAYED_TOTAL,
+                        )
+                      : 0,
+                }
+              : undefined
+          }
+        >
+          {[...Array(totalBullets)].map((val, index) => (
+            <button
+              type="button"
+              onClick={(e) => {
+                onClick(e, index, DIRECTIONS.BULLETS);
+              }}
+              className={getClassName(
+                'bpk-page-indicator__bullet',
+                dark && 'bpk-page-indicator__dark',
+                index === currentIndex && 'bpk-page-indicator__bullet--active',
+                index === currentIndex &&
+                  dark &&
+                  'bpk-page-indicator__dark--active',
+              )}
+              aria-label={`${bulletLabel} ${index + 1}`}
+              aria-pressed={currentIndex === index ? 'true' : 'false'}
+              // eslint-disable-next-line react/no-array-index-key
+              key={`bullet-${index}`}
+            />
+          ))}
         </div>
-        {showNav && (
-          <NavButton
-            currentIndex={currentIndex}
-            onClick={onClick}
-            disabled={currentIndex === totalBullets - 1}
-            navButtonLabel={nextNavLabel}
-          />
-        )}
       </div>
+      {showNav && (
+        <NavButton
+          currentIndex={currentIndex}
+          onClick={onClick}
+          disabled={currentIndex === totalBullets - 1}
+          ariaLabel={nextNavLabel}
+        />
+      )}
     </div>
-  );
-};
+  </div>
+);
 
 BpkPageIndicator.propTypes = {
   bulletLabel: PropTypes.string.isRequired,

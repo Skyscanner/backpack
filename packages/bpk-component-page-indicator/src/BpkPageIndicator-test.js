@@ -51,9 +51,4 @@ describe('BpkPageIndicator', () => {
     const { asFragment } = render(<BpkPageIndicator {...props} showNav />);
     expect(asFragment()).toMatchSnapshot();
   });
-
-  it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkPageIndicator {...props} testid="123" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
 });
