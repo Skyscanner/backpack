@@ -138,6 +138,7 @@ const ContentBubblePointerHiddenExample = () => (
     style={{ height: '45rem' }}
     rounded={false}
     showPointer={false}
+    content={contentShort}
   />
 );
 

@@ -25,11 +25,11 @@ $bpk-spacing-v2: true;
 }
 
 .bpk-modal__leading-button {
-  color: $bpk-color-sky-blue;
-  fill: $bpk-color-sky-blue;
+  color: $bpk-text-link-day;
+  fill: $bpk-text-link-day;
 
   :hover {
-    color: $bpk-color-sky-blue-shade-01;
-    fill: $bpk-color-sky-blue-shade-01;
+    color: $bpk-text-secondary-day;
+    fill: $bpk-text-secondary-day;
   }
 }

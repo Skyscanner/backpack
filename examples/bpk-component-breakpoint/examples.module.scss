@@ -24,13 +24,13 @@
 
   &--active {
     padding: $bpk-spacing-base;
-    color: $bpk-color-white;
+    color: $bpk-text-primary-inverse-day;
 
     @include bpk-apply-primary-color-to(background-color);
   }
 
   &--inactive {
     padding: $bpk-spacing-base;
-    background-color: $bpk-color-sky-gray-tint-06;
+    background-color: $bpk-surface-highlight-day;
   }
 }
