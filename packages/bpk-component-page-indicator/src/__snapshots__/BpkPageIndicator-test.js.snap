@@ -16,117 +16,42 @@ exports[`BpkPageIndicator should render correctly 1`] = `
             aria-label="Go to slide 1"
             aria-pressed="true"
             class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 2"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 3"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 4"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 5"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 6"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 7"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
-            type="button"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkPageIndicator should support arbitrary props 1`] = `
-<DocumentFragment>
-  <div>
-    <div
-      class="bpk-page-indicator"
-    >
-      <div
-        class="bpk-page-indicator__container"
-      >
-        <div
-          class="bpk-page-indicator__bullets-container"
-        >
-          <button
-            aria-label="Go to slide 1"
-            aria-pressed="true"
-            class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
-            tabindex="0"
-            type="button"
-          />
-          <button
-            aria-label="Go to slide 2"
-            aria-pressed="false"
-            class="bpk-page-indicator__bullet"
-            tabindex="0"
-            type="button"
-          />
-          <button
-            aria-label="Go to slide 3"
-            aria-pressed="false"
-            class="bpk-page-indicator__bullet"
-            tabindex="0"
-            type="button"
-          />
-          <button
-            aria-label="Go to slide 4"
-            aria-pressed="false"
-            class="bpk-page-indicator__bullet"
-            tabindex="0"
-            type="button"
-          />
-          <button
-            aria-label="Go to slide 5"
-            aria-pressed="false"
-            class="bpk-page-indicator__bullet"
-            tabindex="0"
-            type="button"
-          />
-          <button
-            aria-label="Go to slide 6"
-            aria-pressed="false"
-            class="bpk-page-indicator__bullet"
-            tabindex="0"
-            type="button"
-          />
-          <button
-            aria-label="Go to slide 7"
-            aria-pressed="false"
-            class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
         </div>
@@ -154,49 +79,42 @@ exports[`BpkPageIndicator should support custom class names 1`] = `
             aria-label="Go to slide 1"
             aria-pressed="true"
             class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 2"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 3"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 4"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 5"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 6"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 7"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
         </div>
@@ -244,49 +162,42 @@ exports[`BpkPageIndicator should support showNav attribute 1`] = `
             aria-label="Go to slide 1"
             aria-pressed="true"
             class="bpk-page-indicator__bullet bpk-page-indicator__bullet--active"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 2"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 3"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 4"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 5"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 6"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
           <button
             aria-label="Go to slide 7"
             aria-pressed="false"
             class="bpk-page-indicator__bullet"
-            tabindex="0"
             type="button"
           />
         </div>

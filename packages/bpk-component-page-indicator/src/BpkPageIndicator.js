@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 /* @flow strict */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
