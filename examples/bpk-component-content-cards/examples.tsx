@@ -20,6 +20,8 @@ import React from 'react';
 
 import BpkContentCards from '../../packages/bpk-component-content-cards';
 
+import imageExample from './content-cards-visual-test-example.png';
+
 const contentCardProps: React.ComponentProps<typeof BpkContentCards> = {
   heading: 'Content cards header text',
   cards: [
@@ -83,8 +85,8 @@ const VisualTestExample = () => (
     cards={[
       {
         image: {
-          url: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
-          alt: 'Sloane Square Station, London',
+          url: imageExample,
+          alt: 'Blue colour',
         },
         headline: 'Do this amazing thing number three',
         description:
