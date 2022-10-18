@@ -29,6 +29,7 @@ describe('BpkPageIndicator', () => {
     props = {
       currentIndex: 0,
       totalBullets: 7,
+      ariaLabel: 'Go to slide',
     };
   });
 

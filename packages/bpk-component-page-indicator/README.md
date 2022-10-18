@@ -22,7 +22,7 @@ export default () =>
       console.log('Slide to new index:', newIndex);
       console.log('Slide direction:', direction);
     }}
-    ariaLabel='Go to Slide'
+    ariaLabel='Go to slide'
   />;
 ```
 

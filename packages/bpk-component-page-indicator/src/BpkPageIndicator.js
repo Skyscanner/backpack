@@ -35,7 +35,7 @@ export type Props = {
   currentIndex: number,
   totalBullets: number,
   onClick: ?() => void,
-  ariaLabel: ?string,
+  ariaLabel: string,
   dark: ?boolean,
 };
 

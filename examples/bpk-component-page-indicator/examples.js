@@ -39,6 +39,7 @@ const PageIndicatorContainer = (props) => {
       onClick={(_e, index) => {
         setCurrentIndex(index);
       }}
+      ariaLabel="Go to slide"
       {...props}
     />
   );
