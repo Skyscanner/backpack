@@ -41,11 +41,6 @@ export type Props = {
   dark: ?boolean,
 };
 
-const KEYS = {
-  ENTER: 'Enter',
-  SPACE: 'Spacebar',
-};
-
 const BpkPageIndicator = ({
   bulletLabel,
   className,

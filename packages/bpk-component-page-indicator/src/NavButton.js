@@ -17,8 +17,8 @@
  */
 /* @flow strict */
 
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import BpkButton from '../../bpk-component-button';
