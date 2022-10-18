@@ -35,7 +35,7 @@ type Props = {
 
 export const DIRECTIONS = {
   PREV: 'PREV',
-  BULLETS: 'BULLETS',
+  INDICATORS: 'INDICATORS',
   NEXT: 'NEXT',
 };
 

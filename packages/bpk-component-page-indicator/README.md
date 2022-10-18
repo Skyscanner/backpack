@@ -17,12 +17,12 @@ import BpkPageIndicator from '@skyscanner/backpack-web/bpk-component-page-indica
 export default () =>
   <BpkPageIndicator
     currentIndex={0}
-    totalBullets={7}
+    totalIndicators={7}
     onClick={(e, newIndex, direction) => {
       console.log('Slide to new index:', newIndex);
       console.log('Slide direction:', direction);
     }}
-    bulletLabel='Go to slide'
+    indicatorLabel='Go to slide'
     prevNavLabel='Previous slide'
     nextNavLabel='Next slide'
   />;
@@ -30,15 +30,15 @@ export default () =>
 
 ## Props
 
-| Property     | PropType | Required | Default Value |
-|--------------|----------|----------|---------------|
-| currentIndex | number   | true     | -             |
-| totalBullets | number   | true     | -             |
-| bulletLabel  | string   | true     | -             |
-| prevNavLabel | string   | true     | -             |
-| nextNavLabel | string   | true     | -             |
-| className    | string   | false    | null          |
-| showNav      | bool     | false    | false         |
-| dark         | bool     | false    | false         |
-| onClick      | func     | false    | null          |
+| Property        | PropType | Required | Default Value |
+|-----------------|----------|----------|---------------|
+| currentIndex    | number   | true     | -             |
+| totalIndicators | number   | true     | -             |
+| indicatorLabel  | string   | true     | -             |
+| prevNavLabel    | string   | true     | -             |
+| nextNavLabel    | string   | true     | -             |
+| className       | string   | false    | null          |
+| showNav         | bool     | false    | false         |
+| overImage       | bool     | false    | false         |
+| onClick         | func     | false    | null          |
 

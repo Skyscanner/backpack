@@ -28,8 +28,8 @@ describe('BpkPageIndicator', () => {
   beforeEach(() => {
     props = {
       currentIndex: 0,
-      totalBullets: 7,
-      bulletLabel: 'Go to slide',
+      totalIndicators: 7,
+      indicatorLabel: 'Go to slide',
       prevNavLabel: 'Previous slide',
       nextNavLabel: 'Next slide',
     };

@@ -28,9 +28,9 @@ describe('BpkPageIndicator accessibility tests', () => {
     const { container } = render(
       <BpkPageIndicator
         currentIndex={0}
-        totalBullets={7}
+        totalIndicators={7}
         showNav
-        bulletLabel="Go to slide"
+        indicatorLabel="Go to slide"
         prevNavLabel="Previous slide"
         nextNavLabel="Next slide"
       />,

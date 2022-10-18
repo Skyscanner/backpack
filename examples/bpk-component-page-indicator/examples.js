@@ -39,7 +39,7 @@ const PageIndicatorContainer = (props) => {
       onClick={(_e, index) => {
         setCurrentIndex(index);
       }}
-      bulletLabel="Go to slide"
+      indicatorLabel="Go to slide"
       prevNavLabel="Previous slide"
       nextNavLabel="Next slide"
       {...props}
@@ -47,9 +47,9 @@ const PageIndicatorContainer = (props) => {
   );
 };
 
-const DefaultExample = () => <PageIndicatorContainer totalBullets={7} />;
+const DefaultExample = () => <PageIndicatorContainer totalIndicators={7} />;
 
-const ThreePagesExample = () => <PageIndicatorContainer totalBullets={3} />;
+const ThreePagesExample = () => <PageIndicatorContainer totalIndicators={3} />;
 
 const OverImageExample = () => (
   <BpkBackgroundImage
@@ -64,19 +64,19 @@ const OverImageExample = () => (
     src={image}
   >
     <PageIndicatorContainer
-      totalBullets={3}
-      dark
+      totalIndicators={3}
+      overImage
       className={getClassName('bpk-page-indicator-examples__container')}
     />
   </BpkBackgroundImage>
 );
 
 const WithNavExample = () => (
-  <PageIndicatorContainer totalBullets={7} showNav />
+  <PageIndicatorContainer totalIndicators={7} showNav />
 );
 
 const ThreePagesWithNavExample = () => (
-  <PageIndicatorContainer totalBullets={3} showNav />
+  <PageIndicatorContainer totalIndicators={3} showNav />
 );
 
 const VisualTestExample = () => (

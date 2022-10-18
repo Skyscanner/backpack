@@ -34,24 +34,24 @@ export type Props = {
   className: ?string,
   showNav: ?boolean,
   currentIndex: number,
-  totalBullets: number,
+  totalIndicators: number,
   onClick: ?() => void,
-  bulletLabel: string,
+  indicatorLabel: string,
   prevNavLabel: string,
   nextNavLabel: string,
-  dark: ?boolean,
+  overImage: ?boolean,
 };
 
 const BpkPageIndicator = ({
-  bulletLabel,
   className,
   currentIndex,
-  dark,
+  indicatorLabel,
   nextNavLabel,
   onClick,
+  overImage,
   prevNavLabel,
   showNav,
-  totalBullets,
+  totalIndicators,
 }: Props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <div className={className}>
@@ -72,39 +72,40 @@ const BpkPageIndicator = ({
       )}
       <div className={getClassName('bpk-page-indicator__container')}>
         <div
-          className={getClassName('bpk-page-indicator__bullets-container')}
+          className={getClassName('bpk-page-indicator__indicators-container')}
           style={
             currentIndex > START_SCROLL_INDEX
               ? {
                   '--scroll-index':
-                    totalBullets > DISPLAYED_TOTAL
+                    totalIndicators > DISPLAYED_TOTAL
                       ? Math.min(
                           currentIndex - START_SCROLL_INDEX,
-                          totalBullets - DISPLAYED_TOTAL,
+                          totalIndicators - DISPLAYED_TOTAL,
                         )
                       : 0,
                 }
               : undefined
           }
         >
-          {[...Array(totalBullets)].map((val, index) => (
+          {[...Array(totalIndicators)].map((val, index) => (
             <button
               type="button"
               onClick={(e) => {
-                onClick(e, index, DIRECTIONS.BULLETS);
+                onClick(e, index, DIRECTIONS.INDICATORS);
               }}
               className={getClassName(
-                'bpk-page-indicator__bullet',
-                dark && 'bpk-page-indicator__dark',
-                index === currentIndex && 'bpk-page-indicator__bullet--active',
+                'bpk-page-indicator__indicator',
+                overImage && 'bpk-page-indicator__over-image',
                 index === currentIndex &&
-                  dark &&
-                  'bpk-page-indicator__dark--active',
+                  'bpk-page-indicator__indicator--active',
+                index === currentIndex &&
+                  overImage &&
+                  'bpk-page-indicator__over-image--active',
               )}
-              aria-label={`${bulletLabel} ${index + 1}`}
+              aria-label={`${indicatorLabel} ${index + 1}`}
               aria-pressed={currentIndex === index ? 'true' : 'false'}
               // eslint-disable-next-line react/no-array-index-key
-              key={`bullet-${index}`}
+              key={`indicator-${index}`}
             />
           ))}
         </div>
@@ -113,7 +114,7 @@ const BpkPageIndicator = ({
         <NavButton
           currentIndex={currentIndex}
           onClick={onClick}
-          disabled={currentIndex === totalBullets - 1}
+          disabled={currentIndex === totalIndicators - 1}
           ariaLabel={nextNavLabel}
         />
       )}
@@ -122,22 +123,22 @@ const BpkPageIndicator = ({
 );
 
 BpkPageIndicator.propTypes = {
-  bulletLabel: PropTypes.string.isRequired,
+  indicatorLabel: PropTypes.string.isRequired,
   prevNavLabel: PropTypes.string.isRequired,
   nextNavLabel: PropTypes.string.isRequired,
   currentIndex: PropTypes.number.isRequired,
-  totalBullets: PropTypes.number.isRequired,
+  totalIndicators: PropTypes.number.isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
   showNav: PropTypes.bool,
-  dark: PropTypes.bool,
+  overImage: PropTypes.bool,
 };
 
 BpkPageIndicator.defaultProps = {
   onClick: null,
   className: null,
   showNav: false,
-  dark: false,
+  overImage: false,
 };
 
 export default BpkPageIndicator;

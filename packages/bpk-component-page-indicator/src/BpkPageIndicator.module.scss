@@ -42,7 +42,7 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     overflow: hidden;
   }
 
-  &__bullets-container {
+  &__indicators-container {
     --direction: -1;
 
     /* stylelint-disable scss/operator-no-newline-after */
@@ -61,7 +61,7 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     }
   }
 
-  &__bullet {
+  &__indicator {
     display: inline-block;
     width: $dot-size;
     height: $dot-size;
@@ -76,7 +76,7 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     }
   }
 
-  &__dark {
+  &__over-image {
     background-color: $bpk-line-on-dark-day;
 
     &--active {

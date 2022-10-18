@@ -901,8 +901,8 @@ inputLength
 onSubmit
 otp
 currentIndex
-totalBullets
+totalIndicators
 showNav
-bulletLabel
+indicatorLabel
 prevNavLabel
 nextNavLabel
