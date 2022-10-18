@@ -17,13 +17,13 @@
  */
 /* @flow strict */
 
+import PropTypes from 'prop-types';
+import React from 'react';
+
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import BpkButton from '../../bpk-component-button';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
-
-import PropTypes from 'prop-types';
-import React from 'react';
 
 type Props = {
   prev?: boolean,
