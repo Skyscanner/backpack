@@ -83,7 +83,7 @@ const VisualTestExample = () => (
     cards={[
       {
         image: {
-          url: 'static/media/examples/bpk-component-content-cards/Condor-Homepage-Hero-Option-3.png',
+          url: 'https://image.shutterstock.com/image-photo/el-nido-palawan-philippines-traveler-600w-1570416172.jpg',
           alt: 'Airplane flying over mountains',
         },
         headline: 'Do this amazing thing number three',
