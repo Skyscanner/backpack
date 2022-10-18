@@ -22,7 +22,9 @@ export default () =>
       console.log('Slide to new index:', newIndex);
       console.log('Slide direction:', direction);
     }}
-    ariaLabel='Go to slide'
+    bulletLabel='Go to slide'
+    prevNavLabel='Previous slide'
+    nextNavLabel='Next slide'
   />;
 ```
 
@@ -32,7 +34,9 @@ export default () =>
 |--------------|----------|----------|---------------|
 | currentIndex | number   | true     | -             |
 | totalBullets | number   | true     | -             |
-| ariaLabel    | string   | true     | -             |
+| bulletLabel  | string   | true     | -             |
+| prevNavLabel | string   | true     | -             |
+| nextNavLabel | string   | true     | -             |
 | className    | string   | false    | null          |
 | showNav      | bool     | false    | false         |
 | dark         | bool     | false    | false         |

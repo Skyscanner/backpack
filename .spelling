@@ -903,3 +903,6 @@ otp
 currentIndex
 totalBullets
 showNav
+bulletLabel
+prevNavLabel
+nextNavLabel

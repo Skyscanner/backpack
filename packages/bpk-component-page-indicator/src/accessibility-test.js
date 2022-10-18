@@ -26,7 +26,14 @@ import BpkPageIndicator from './BpkPageIndicator';
 describe('BpkPageIndicator accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkPageIndicator currentIndex={0} totalBullets={7} showNav />,
+      <BpkPageIndicator
+        currentIndex={0}
+        totalBullets={7}
+        showNav
+        bulletLabel="Go to slide"
+        prevNavLabel="Previous slide"
+        nextNavLabel="Next slide"
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

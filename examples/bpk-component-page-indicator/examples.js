@@ -39,7 +39,9 @@ const PageIndicatorContainer = (props) => {
       onClick={(_e, index) => {
         setCurrentIndex(index);
       }}
-      ariaLabel="Go to slide"
+      bulletLabel="Go to slide"
+      prevNavLabel="Previous slide"
+      nextNavLabel="Next slide"
       {...props}
     />
   );

@@ -35,7 +35,9 @@ export type Props = {
   currentIndex: number,
   totalBullets: number,
   onClick: ?() => void,
-  ariaLabel: string,
+  bulletLabel: string,
+  prevNavLabel: string,
+  nextNavLabel: string,
   dark: ?boolean,
 };
 
@@ -46,11 +48,13 @@ const KEYS = {
 
 const BpkPageIndicator = (props: Props) => {
   const {
-    ariaLabel,
+    bulletLabel,
     className,
     currentIndex,
     dark,
+    nextNavLabel,
     onClick,
+    prevNavLabel,
     showNav,
     totalBullets,
   } = props;
@@ -76,6 +80,7 @@ const BpkPageIndicator = (props: Props) => {
             onClick={onClick}
             disabled={currentIndex === 0}
             prev
+            navButtonLabel={prevNavLabel}
           />
         )}
         <div className={getClassName('bpk-page-indicator__container')}>
@@ -114,7 +119,7 @@ const BpkPageIndicator = (props: Props) => {
                     dark &&
                     'bpk-page-indicator__dark--active',
                 )}
-                aria-label={`${ariaLabel} ${index + 1}`}
+                aria-label={`${bulletLabel} ${index + 1}`}
                 aria-pressed={currentIndex === index ? 'true' : 'false'}
                 // eslint-disable-next-line react/no-array-index-key
                 key={`bullet-${index}`}
@@ -127,6 +132,7 @@ const BpkPageIndicator = (props: Props) => {
             currentIndex={currentIndex}
             onClick={onClick}
             disabled={currentIndex === totalBullets - 1}
+            navButtonLabel={nextNavLabel}
           />
         )}
       </div>
@@ -135,7 +141,9 @@ const BpkPageIndicator = (props: Props) => {
 };
 
 BpkPageIndicator.propTypes = {
-  ariaLabel: PropTypes.string.isRequired,
+  bulletLabel: PropTypes.string.isRequired,
+  prevNavLabel: PropTypes.string.isRequired,
+  nextNavLabel: PropTypes.string.isRequired,
   currentIndex: PropTypes.number.isRequired,
   totalBullets: PropTypes.number.isRequired,
   onClick: PropTypes.func,

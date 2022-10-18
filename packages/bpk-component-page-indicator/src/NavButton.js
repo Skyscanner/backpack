@@ -30,6 +30,7 @@ type Props = {
   disabled?: boolean,
   currentIndex: number,
   onClick: ?() => void,
+  navButtonLabel: string,
 };
 
 export const DIRECTIONS = {
@@ -44,7 +45,7 @@ const AlignedRightArrowIcon = withButtonAlignment(
 );
 
 const NavButton = (props: Props) => {
-  const { currentIndex, disabled, onClick, prev } = props;
+  const { currentIndex, disabled, navButtonLabel, onClick, prev } = props;
   return (
     <BpkButton
       iconOnly
@@ -56,7 +57,7 @@ const NavButton = (props: Props) => {
           onClick(e, currentIndex + 1, DIRECTIONS.NEXT);
         }
       }}
-      aria-label={prev ? 'Previous Slide' : 'Next Slide'}
+      aria-label={navButtonLabel}
       disabled={disabled}
     >
       {prev ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}

@@ -29,7 +29,9 @@ describe('BpkPageIndicator', () => {
     props = {
       currentIndex: 0,
       totalBullets: 7,
-      ariaLabel: 'Go to slide',
+      bulletLabel: 'Go to slide',
+      prevNavLabel: 'Previous slide',
+      nextNavLabel: 'Next slide',
     };
   });
 

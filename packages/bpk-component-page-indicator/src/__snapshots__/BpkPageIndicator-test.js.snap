@@ -213,7 +213,7 @@ exports[`BpkPageIndicator should support showNav attribute 1`] = `
       class="bpk-page-indicator bpk-page-indicator__showNav"
     >
       <button
-        aria-label="Previous Slide"
+        aria-label="Previous slide"
         class="bpk-button bpk-button--icon-only bpk-button--link"
         disabled=""
         type="button"
@@ -292,7 +292,7 @@ exports[`BpkPageIndicator should support showNav attribute 1`] = `
         </div>
       </div>
       <button
-        aria-label="Next Slide"
+        aria-label="Next slide"
         class="bpk-button bpk-button--icon-only bpk-button--link"
         type="button"
       >
