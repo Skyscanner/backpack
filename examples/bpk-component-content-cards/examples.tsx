@@ -83,8 +83,8 @@ const VisualTestExample = () => (
     cards={[
       {
         image: {
-          url: 'https://image.shutterstock.com/image-photo/el-nido-palawan-philippines-traveler-600w-1570416172.jpg',
-          alt: 'Airplane flying over mountains',
+          url: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+          alt: 'Sloane Square Station, London',
         },
         headline: 'Do this amazing thing number three',
         description:
