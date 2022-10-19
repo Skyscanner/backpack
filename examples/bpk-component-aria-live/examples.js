@@ -59,7 +59,6 @@ const AriaLiveDemo = (props: {
       <BpkAriaLive
         {...rest}
         visible
-        className={getClassName('bpk-storybook-aria-live-demo__aria-content')}
         politenessSetting={ARIA_LIVE_POLITENESS_SETTINGS.assertive}
       >
         {children}

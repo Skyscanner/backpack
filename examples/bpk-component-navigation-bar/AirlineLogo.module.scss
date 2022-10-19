@@ -22,6 +22,6 @@
   @include bpk-themeable-property(
     fill,
     --bpk-navigation-bar-title-color,
-    $bpk-color-white
+    $bpk-text-primary-inverse-day
   );
 }
