@@ -20,7 +20,6 @@ import {
   WithOneCardExample,
   WithTwoCardsExample,
   WithThreeCardsExample,
-  VisualTestExample,
 } from './examples';
 
 export default {
@@ -33,4 +32,4 @@ export const DefaultTwoCards = WithTwoCardsExample;
 
 export const DefaultThreeCards = WithThreeCardsExample;
 
-export const VisualTest = VisualTestExample;
+export const VisualTest = WithThreeCardsExample;

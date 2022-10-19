@@ -20,8 +20,6 @@ import React from 'react';
 
 import BpkContentCards from '../../packages/bpk-component-content-cards';
 
-import imageExample from './content-cards-visual-test-example.png';
-
 const contentCardProps: React.ComponentProps<typeof BpkContentCards> = {
   heading: 'Content cards header text',
   cards: [
@@ -79,27 +77,4 @@ const WithThreeCardsExample = () => (
   />
 );
 
-const VisualTestExample = () => (
-  <BpkContentCards
-    heading={contentCardProps.heading}
-    cards={[
-      {
-        image: {
-          url: imageExample,
-          alt: 'Blue colour',
-        },
-        headline: 'Do this amazing thing number three',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        href: 'https://www.skyscanner.net',
-      },
-    ]}
-  />
-);
-
-export {
-  WithOneCardExample,
-  WithTwoCardsExample,
-  WithThreeCardsExample,
-  VisualTestExample,
-};
+export { WithOneCardExample, WithTwoCardsExample, WithThreeCardsExample };
