@@ -28,7 +28,7 @@
     justify-content: center;
 
     &--light {
-      background-color: $bpk-color-sky-gray-tint-01;
+      background-color: $bpk-surface-contrast-day;
 
       @include bpk-border-radius-xs;
     }

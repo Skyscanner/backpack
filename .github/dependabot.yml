@@ -11,3 +11,9 @@ updates:
   versioning-strategy: increase-if-necessary
   allow:
     - dependency-type: "direct"
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "10:00"
+  open-pull-requests-limit: 10
