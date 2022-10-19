@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set the correct npm version
         run: nvm install && nvm use
@@ -67,7 +67,7 @@ jobs:
           path: .storybook/__image_snapshots__/__diff_output__
 
       - name: Post a comment about the visual tests (if they pass)
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         if: github.ref != 'refs/heads/main' && steps.visualTests.outcome == 'success' && github.repository == github.event.pull_request.head.repo.full_name  && github.actor != 'dependabot[bot]'
         with:
           script: |
@@ -79,7 +79,7 @@ jobs:
             })
 
       - name: Post a comment about the visual tests (if they fail)
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         if: failure() && steps.visualTests.outcome == 'failure' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
         with:
           script: |
@@ -120,7 +120,7 @@ jobs:
           publish_branch: main
 
       - name: Link to the pull request build
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
         with:
           script: |

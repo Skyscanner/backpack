@@ -21,12 +21,9 @@ import React from 'react';
 import { withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
-import STYLE from './examples.module.scss';
-
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.bodyLongform,
   tagName: 'p',
-  className: STYLE['bpk-my-paragraph'],
 });
 
 const DefaultExample = () => (

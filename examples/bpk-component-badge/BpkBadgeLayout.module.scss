@@ -28,7 +28,7 @@ $bpk-spacing-v2: true;
     padding: bpk-spacing-lg();
 
     &--light {
-      background-color: $bpk-color-sky-gray-tint-07;
+      background-color: $bpk-canvas-contrast-day;
 
       @include bpk-border-radius-xs;
     }

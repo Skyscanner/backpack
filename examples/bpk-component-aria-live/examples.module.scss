@@ -20,15 +20,11 @@
 
 .bpk-storybook-aria-live-demo {
   padding: $bpk-spacing-sm;
-  background: $bpk-color-sky-gray-tint-07;
-  color: $bpk-color-sky-gray-tint-03;
+  background: $bpk-canvas-contrast-day;
+  color: $bpk-text-primary-day;
 
-  @include bpk-border-sm($bpk-color-sky-gray-tint-03);
+  @include bpk-border-sm($bpk-line-day);
   @include bpk-border-radius-sm;
-
-  &__aria-content {
-    color: $bpk-color-sky-gray;
-  }
 
   &__chips-wrapper {
     margin-bottom: $bpk-spacing-sm;
