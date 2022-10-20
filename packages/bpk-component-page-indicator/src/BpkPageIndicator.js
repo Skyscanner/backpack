@@ -44,7 +44,7 @@ export type Props = {
   indicatorLabel: string,
   prevNavLabel: string,
   nextNavLabel: string,
-  style: ?$Values<typeof INDICATOR_STYLE_TYPE>,
+  style: ?$Keys<typeof INDICATOR_STYLE_TYPE>,
 };
 
 const BpkPageIndicator = ({
@@ -130,7 +130,7 @@ BpkPageIndicator.propTypes = {
   nextNavLabel: PropTypes.string.isRequired,
   currentIndex: PropTypes.number.isRequired,
   totalIndicators: PropTypes.number.isRequired,
-  style: PropTypes.oneOfType(Object.values(INDICATOR_STYLE_TYPE)),
+  style: PropTypes.oneOfType(Object.keys(INDICATOR_STYLE_TYPE)),
   onClick: PropTypes.func,
   className: PropTypes.string,
   showNav: PropTypes.bool,

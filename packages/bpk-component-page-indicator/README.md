@@ -1,6 +1,6 @@
 # bpk-component-page-indicator
 
-> Backpack example component.
+> Backpack page indicator component.
 
 ## Installation
 
@@ -30,15 +30,15 @@ export default () =>
 
 ## Props
 
-| Property        | PropType | Required | Default Value |
-|-----------------|----------|----------|---------------|
-| currentIndex    | number   | true     | -             |
-| totalIndicators | number   | true     | -             |
-| indicatorLabel  | string   | true     | -             |
-| prevNavLabel    | string   | true     | -             |
-| nextNavLabel    | string   | true     | -             |
-| className       | string   | false    | null          |
-| showNav         | bool     | false    | false         |
-| style           | object   | false    | 'default'     |
-| onClick         | func     | false    | null          |
+| Property        | PropType                    | Required | Default Value     |
+|-----------------|-----------------------------|----------|-------------------|
+| currentIndex    | number                      | true     | -                 |
+| totalIndicators | number                      | true     | -                 |
+| indicatorLabel  | string                      | true     | -                 |
+| prevNavLabel    | string                      | true     | -                 |
+| nextNavLabel    | string                      | true     | -                 |
+| className       | string                      | false    | null              |
+| showNav         | bool                        | false    | false             |
+| style           | oneOf(INDICATOR_STYLE_TYPE) | false    | INDICATOR.default |
+| onClick         | func                        | false    | null              |
 
