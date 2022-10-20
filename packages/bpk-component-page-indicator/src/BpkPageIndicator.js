@@ -30,6 +30,11 @@ const getClassName = cssModules(STYLES);
 const DISPLAYED_TOTAL = 5;
 const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 
+export const INDICATOR_STYLE_TYPE = {
+  default: 'default',
+  overImage: 'overImage',
+};
+
 export type Props = {
   className: ?string,
   showNav: ?boolean,
@@ -39,7 +44,7 @@ export type Props = {
   indicatorLabel: string,
   prevNavLabel: string,
   nextNavLabel: string,
-  overImage: ?boolean,
+  style: ?$Values<typeof INDICATOR_STYLE_TYPE>,
 };
 
 const BpkPageIndicator = ({
@@ -48,9 +53,9 @@ const BpkPageIndicator = ({
   indicatorLabel,
   nextNavLabel,
   onClick,
-  overImage,
   prevNavLabel,
   showNav,
+  style,
   totalIndicators,
 }: Props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
@@ -95,12 +100,9 @@ const BpkPageIndicator = ({
               }}
               className={getClassName(
                 'bpk-page-indicator__indicator',
-                overImage && 'bpk-page-indicator__over-image',
+                `bpk-page-indicator__indicator--${style}`,
                 index === currentIndex &&
-                  'bpk-page-indicator__indicator--active',
-                index === currentIndex &&
-                  overImage &&
-                  'bpk-page-indicator__over-image--active',
+                  `bpk-page-indicator__indicator--active-${style}`,
               )}
               aria-label={`${indicatorLabel} ${index + 1}`}
               aria-pressed={currentIndex === index ? 'true' : 'false'}
@@ -128,17 +130,17 @@ BpkPageIndicator.propTypes = {
   nextNavLabel: PropTypes.string.isRequired,
   currentIndex: PropTypes.number.isRequired,
   totalIndicators: PropTypes.number.isRequired,
+  style: PropTypes.oneOfType(Object.values(INDICATOR_STYLE_TYPE)),
   onClick: PropTypes.func,
   className: PropTypes.string,
   showNav: PropTypes.bool,
-  overImage: PropTypes.bool,
 };
 
 BpkPageIndicator.defaultProps = {
   onClick: null,
   className: null,
   showNav: false,
-  overImage: false,
+  style: INDICATOR_STYLE_TYPE.default,
 };
 
 export default BpkPageIndicator;

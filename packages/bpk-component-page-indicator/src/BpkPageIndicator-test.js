@@ -20,7 +20,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BpkPageIndicator from './BpkPageIndicator';
+import BpkPageIndicator, { INDICATOR_STYLE_TYPE } from './BpkPageIndicator';
 
 let props;
 
@@ -49,6 +49,13 @@ describe('BpkPageIndicator', () => {
 
   it('should support showNav attribute', () => {
     const { asFragment } = render(<BpkPageIndicator {...props} showNav />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should support style attribute', () => {
+    const { asFragment } = render(
+      <BpkPageIndicator {...props} style={INDICATOR_STYLE_TYPE.overImage} />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });

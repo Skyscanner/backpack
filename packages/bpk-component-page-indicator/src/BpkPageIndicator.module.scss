@@ -68,19 +68,25 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     padding: 0;
     border: none;
     border-radius: 50%;
-    background-color: $bpk-line-day;
     margin-inline: $dot-margin;
 
-    &--active {
-      background-color: $bpk-text-secondary-day;
+    &--default {
+      background-color: $bpk-line-day;
     }
-  }
 
-  &__over-image {
-    background-color: $bpk-line-on-dark-day;
+    &--overImage {
+      //background-color: $bpk-line-on-dark-day;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
 
     &--active {
-      background-color: $bpk-text-on-dark-day;
+      &-default {
+      background-color: $bpk-text-secondary-day;
+      }
+
+      &-overImage {
+        background-color: $bpk-text-on-dark-day;
+      }
     }
   }
 }

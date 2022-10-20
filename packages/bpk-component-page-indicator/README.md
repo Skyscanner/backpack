@@ -39,6 +39,6 @@ export default () =>
 | nextNavLabel    | string   | true     | -             |
 | className       | string   | false    | null          |
 | showNav         | bool     | false    | false         |
-| overImage       | bool     | false    | false         |
+| style           | object   | false    | 'default'     |
 | onClick         | func     | false    | null          |
 
