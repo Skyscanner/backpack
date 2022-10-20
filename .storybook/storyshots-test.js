@@ -19,6 +19,8 @@
 /* @flow */
 
 import path from 'path';
+import 'bpk-stylesheets';
+import 'bpk-stylesheets/font';
 
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
