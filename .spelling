@@ -907,3 +907,5 @@ indicatorLabel
 prevNavLabel
 nextNavLabel
 overImage
+INDICATOR_STYLE_TYPE
+INDICATOR_STYLE_TYPE.default
