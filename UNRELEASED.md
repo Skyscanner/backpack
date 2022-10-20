@@ -2,3 +2,6 @@
 
 **Patched:**
   - `BpkCode` - updated to latest colours.
+
+**Changed:**
+  - `BpkPagination` - updated to the new colours.

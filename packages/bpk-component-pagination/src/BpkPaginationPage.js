@@ -36,7 +36,8 @@ const BpkPaginationPage = (props) => {
 
   return (
     <BpkButton
-      secondary
+      primaryOnDark={!isSelected}
+      primary={isSelected}
       onClick={onSelect}
       className={classNames.join(' ')}
       aria-label={pageLabel(page, isSelected)}

@@ -32,30 +32,9 @@ $bpk-spacing-v2: true;
     cursor: pointer;
     appearance: none;
 
-    @include bpk-themeable-property(
-      color,
-      --bpk-pagination-nudger-color,
-      $bpk-color-sky-blue
-    );
-
-    @include bpk-hover {
-      @include bpk-themeable-property(
-        color,
-        --bpk-pagination-nudger-hover-color,
-        $bpk-color-sky-blue-shade-02
-      );
-    }
-
-    &:active {
-      @include bpk-themeable-property(
-        color,
-        --bpk-pagination-nudger-active-color,
-        $bpk-color-sky-blue
-      );
-    }
+    @include bpk-button--link;
 
     &:disabled {
-      color: $bpk-color-sky-gray-tint-06;
       cursor: not-allowed;
     }
 
