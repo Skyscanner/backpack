@@ -73,8 +73,7 @@ $bpk-spacing-v2: true;
   }
 
   &--description {
-    // color: $bpk-text-secondary-day;
-    color: $bpk-color-black;
+    color: $bpk-text-secondary-day;
 
     @include bpk-body-default;
   }
