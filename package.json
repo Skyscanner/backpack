@@ -144,7 +144,7 @@
     "del": "^5.0.0",
     "eslint_d": "^9.1.1",
     "flow-bin": "^0.132.0",
-    "flow-typed": "^2.5.1",
+    "flow-typed": "^3.8.0",
     "format-package": "^6.1.0",
     "globby": "^10.0.0",
     "gulp": "^4.0.2",
