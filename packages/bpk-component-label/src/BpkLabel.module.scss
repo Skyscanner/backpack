@@ -31,6 +31,10 @@
 
   &--disabled {
     @include bpk-label--disabled;
+
+    &--white {
+      color: $bpk-text-disabled-night;
+    }
   }
 
   &__asterisk {

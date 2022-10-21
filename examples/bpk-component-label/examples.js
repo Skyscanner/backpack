@@ -19,6 +19,7 @@
 
 import React from 'react';
 
+import { BpkDarkExampleWrapper } from '../../packages/bpk-storybook-utils';
 import BpkLabel from '../../packages/bpk-component-label';
 
 const DefaultExample = () => <BpkLabel htmlFor="origin">Origin</BpkLabel>;
@@ -47,6 +48,20 @@ const InvalidRequiredExample = () => (
   </BpkLabel>
 );
 
+const WhiteExample = () => (
+  <BpkDarkExampleWrapper>
+    <BpkLabel htmlFor="origin" white>
+      Origin
+    </BpkLabel>
+    <BpkLabel htmlFor="origin" white valid={false}>
+      Origin
+    </BpkLabel>
+    <BpkLabel htmlFor="origin" white disabled>
+      Origin
+    </BpkLabel>
+  </BpkDarkExampleWrapper>
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
@@ -54,6 +69,7 @@ const MixedExample = () => (
     <InvalidExample />
     <DisabledExample />
     <InvalidRequiredExample />
+    <WhiteExample />
   </div>
 );
 
@@ -63,5 +79,6 @@ export {
   InvalidExample,
   DisabledExample,
   InvalidRequiredExample,
+  WhiteExample,
   MixedExample,
 };

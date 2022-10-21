@@ -38,25 +38,20 @@ export type Props = {
 const BpkLabel = (props: Props) => {
   const { children, className, disabled, required, valid, white, ...rest } =
     props;
-  const classNames = [getClassName('bpk-label')];
   const invalid = valid === false;
 
-  if (white) {
-    classNames.push(getClassName('bpk-label--white'));
-  }
-  if (invalid) {
-    classNames.push(getClassName('bpk-label--invalid'));
-  }
-  if (disabled) {
-    classNames.push(getClassName('bpk-label--disabled'));
-  }
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName(
+    'bpk-label',
+    white && 'bpk-label--white',
+    invalid && 'bpk-label--invalid',
+    disabled && 'bpk-label--disabled',
+    white && disabled && 'bpk-label--disabled--white',
+    className,
+  );
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <label className={classNames.join(' ')} {...rest}>
+    <label className={classNames} {...rest}>
       {children}
       {!disabled && required && (
         <span className={getClassName('bpk-label__asterisk')}>*</span>
