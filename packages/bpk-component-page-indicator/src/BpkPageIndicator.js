@@ -71,7 +71,7 @@ const BpkPageIndicator = ({
           currentIndex={currentIndex}
           onClick={onClick}
           disabled={currentIndex === 0}
-          prev
+          direction={DIRECTIONS.PREV}
           ariaLabel={prevNavLabel}
         />
       )}
@@ -105,7 +105,7 @@ const BpkPageIndicator = ({
                   `bpk-page-indicator__indicator--active-${style}`,
               )}
               aria-label={`${indicatorLabel} ${index + 1}`}
-              aria-pressed={currentIndex === index ? 'true' : 'false'}
+              aria-current={currentIndex === index ? 'true' : 'false'}
               // eslint-disable-next-line react/no-array-index-key
               key={`indicator-${index}`}
             />
@@ -118,6 +118,7 @@ const BpkPageIndicator = ({
           onClick={onClick}
           disabled={currentIndex === totalIndicators - 1}
           ariaLabel={nextNavLabel}
+          direction={DIRECTIONS.NEXT}
         />
       )}
     </div>

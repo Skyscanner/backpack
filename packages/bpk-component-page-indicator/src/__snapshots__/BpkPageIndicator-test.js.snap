@@ -13,44 +13,44 @@ exports[`BpkPageIndicator should render correctly 1`] = `
           class="bpk-page-indicator__indicators-container"
         >
           <button
+            aria-current="true"
             aria-label="Go to slide 1"
-            aria-pressed="true"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default bpk-page-indicator__indicator--active-default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 2"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 3"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 4"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 5"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 6"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 7"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
@@ -76,44 +76,44 @@ exports[`BpkPageIndicator should support custom class names 1`] = `
           class="bpk-page-indicator__indicators-container"
         >
           <button
+            aria-current="true"
             aria-label="Go to slide 1"
-            aria-pressed="true"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default bpk-page-indicator__indicator--active-default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 2"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 3"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 4"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 5"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 6"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 7"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
@@ -159,44 +159,44 @@ exports[`BpkPageIndicator should support showNav attribute 1`] = `
           class="bpk-page-indicator__indicators-container"
         >
           <button
+            aria-current="true"
             aria-label="Go to slide 1"
-            aria-pressed="true"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default bpk-page-indicator__indicator--active-default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 2"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 3"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 4"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 5"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 6"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 7"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
             type="button"
           />
@@ -241,44 +241,44 @@ exports[`BpkPageIndicator should support style attribute 1`] = `
           class="bpk-page-indicator__indicators-container"
         >
           <button
+            aria-current="true"
             aria-label="Go to slide 1"
-            aria-pressed="true"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage bpk-page-indicator__indicator--active-overImage"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 2"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 3"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 4"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 5"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 6"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />
           <button
+            aria-current="false"
             aria-label="Go to slide 7"
-            aria-pressed="false"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />

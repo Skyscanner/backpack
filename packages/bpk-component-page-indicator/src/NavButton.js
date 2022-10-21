@@ -26,7 +26,7 @@ import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 
 type Props = {
-  prev?: boolean,
+  direction: $Keys<typeof DIRECTIONS>,
   disabled?: boolean,
   currentIndex: number,
   onClick: ?() => void,
@@ -45,28 +45,28 @@ const AlignedRightArrowIcon = withButtonAlignment(
 );
 
 const NavButton = (props: Props) => {
-  const { ariaLabel, currentIndex, disabled, onClick, prev } = props;
+  const { ariaLabel, currentIndex, direction, disabled, onClick } = props;
   return (
     <BpkButton
       iconOnly
       link
       onClick={(e) => {
-        if (prev) {
-          onClick(e, currentIndex - 1, DIRECTIONS.PREV);
-        } else {
-          onClick(e, currentIndex + 1, DIRECTIONS.NEXT);
+        if (direction === DIRECTIONS.PREV) {
+          onClick(e, currentIndex - 1, direction);
+        }else{
+          onClick(e, currentIndex + 1, direction);
         }
       }}
       aria-label={ariaLabel}
       disabled={disabled}
     >
-      {prev ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
+      {direction === DIRECTIONS.PREV ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
     </BpkButton>
   );
 };
 
 NavButton.propTypes = {
-  prev: PropTypes.bool,
+  direction: PropTypes.oneOf(Object.keys(DIRECTIONS)).isRequired,
   disabled: PropTypes.bool,
   ariaLabel: PropTypes.string.isRequired,
   currentIndex: PropTypes.number.isRequired,
@@ -74,7 +74,6 @@ NavButton.propTypes = {
 };
 
 NavButton.defaultProps = {
-  prev: false,
   disabled: false,
   onClick: null,
 };
