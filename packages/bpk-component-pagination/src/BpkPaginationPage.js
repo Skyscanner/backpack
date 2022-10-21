@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import React from 'react';
-
 import BpkButton from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPaginationPage.module.scss';
+
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const getClassName = cssModules(STYLES);
 
@@ -36,7 +36,8 @@ const BpkPaginationPage = (props) => {
 
   return (
     <BpkButton
-      secondary
+      primaryOnDark={!isSelected}
+      primary={isSelected}
       onClick={onSelect}
       className={classNames.join(' ')}
       aria-label={pageLabel(page, isSelected)}

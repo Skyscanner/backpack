@@ -17,6 +17,7 @@
  */
 import React from 'react';
 import addMonths from 'date-fns/addMonths';
+import addDays from 'date-fns/addDays';
 import startOfDay from 'date-fns/startOfDay';
 import parseDate from 'date-fns/parse';
 
@@ -323,8 +324,8 @@ const RangeDateCalendarExample = () => (
     nextMonthLabel="Go to next month"
     selectionConfiguration={{
       type: 'range',
-      startDate: new Date(2022, 9, 6),
-      endDate: new Date(2022, 9, 15),
+      startDate: new Date(),
+      endDate: addDays(new Date(), 5),
     }}
   />
 );

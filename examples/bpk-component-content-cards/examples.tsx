@@ -56,6 +56,32 @@ const contentCardProps: React.ComponentProps<typeof BpkContentCards> = {
   ],
 };
 
+const visualTestsContentCardProps: React.ComponentProps<
+  typeof BpkContentCards
+> = {
+  heading: 'Content cards header text',
+  cards: [
+    {
+      image: {
+        url: 'https://content.skyscnr.com/m/41c355bf68f93d5b/original/ST3-108-MADPT-DNSW-Q222-Social-Silver-Pitch-6.jpg',
+        alt: 'People surfing in the ocean',
+      },
+      headline: 'Do this amazing thing number one',
+      description: 'Lorem ipsum dolor sit amet.',
+      href: 'https://www.skyscanner.net',
+    },
+    {
+      image: {
+        url: 'https://content.skyscnr.com/m/2e070403cb8488b8/original/shutterstock_1568380735.jpg',
+        alt: 'Man on boat in a fjord',
+      },
+      headline: 'Do this amazing thing number two',
+      description: 'Lorem ipsum dolor sit amet.',
+      href: 'https://www.skyscanner.net',
+    },
+  ],
+};
+
 const WithOneCardExample = () => (
   <BpkContentCards
     heading={contentCardProps.heading}
@@ -77,4 +103,16 @@ const WithThreeCardsExample = () => (
   />
 );
 
-export { WithOneCardExample, WithTwoCardsExample, WithThreeCardsExample };
+const VisualExample = () => (
+  <BpkContentCards
+    heading={visualTestsContentCardProps.heading}
+    cards={visualTestsContentCardProps.cards}
+  />
+);
+
+export {
+  WithOneCardExample,
+  WithTwoCardsExample,
+  WithThreeCardsExample,
+  VisualExample,
+};
