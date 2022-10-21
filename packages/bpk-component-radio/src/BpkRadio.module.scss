@@ -33,7 +33,7 @@ $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
     @include bpk-radio--disabled;
 
     &--white {
-      color: $bpk-text-disabled-night;
+      color: $bpk-text-disabled-on-dark-day;
     }
   }
 

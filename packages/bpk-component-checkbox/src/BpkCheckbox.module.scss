@@ -39,7 +39,7 @@ $bpk-spacing-v2: true;
     @include bpk-checkbox--disabled;
 
     &--white {
-      color: $bpk-text-disabled-night;
+      color: $bpk-text-disabled-on-dark-day;
     }
   }
 
