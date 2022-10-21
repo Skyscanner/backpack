@@ -25,18 +25,18 @@ import BpkButton from '../../bpk-component-button';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 
+export const DIRECTIONS = {
+  PREV: 'PREV',
+  INDICATORS: 'INDICATORS',
+  NEXT: 'NEXT',
+};
+
 type Props = {
   direction: $Keys<typeof DIRECTIONS>,
   disabled?: boolean,
   currentIndex: number,
   onClick: ?() => void,
   ariaLabel: string,
-};
-
-export const DIRECTIONS = {
-  PREV: 'PREV',
-  INDICATORS: 'INDICATORS',
-  NEXT: 'NEXT',
 };
 
 const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
