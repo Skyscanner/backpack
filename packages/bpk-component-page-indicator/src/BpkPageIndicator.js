@@ -130,7 +130,7 @@ BpkPageIndicator.propTypes = {
   nextNavLabel: PropTypes.string.isRequired,
   currentIndex: PropTypes.number.isRequired,
   totalIndicators: PropTypes.number.isRequired,
-  style: PropTypes.oneOfType(Object.keys(INDICATOR_STYLE_TYPE)),
+  style: PropTypes.oneOf(Object.keys(INDICATOR_STYLE_TYPE)),
   onClick: PropTypes.func,
   className: PropTypes.string,
   showNav: PropTypes.bool,
