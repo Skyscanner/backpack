@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import BpkButton from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPaginationPage.module.scss';
-
-import React from 'react';
-import PropTypes from 'prop-types';
 
 const getClassName = cssModules(STYLES);
 
