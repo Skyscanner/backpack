@@ -53,14 +53,18 @@ const NavButton = (props: Props) => {
       onClick={(e) => {
         if (direction === DIRECTIONS.PREV) {
           onClick(e, currentIndex - 1, direction);
-        }else{
+        } else {
           onClick(e, currentIndex + 1, direction);
         }
       }}
       aria-label={ariaLabel}
       disabled={disabled}
     >
-      {direction === DIRECTIONS.PREV ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
+      {direction === DIRECTIONS.PREV ? (
+        <AlignedLeftArrowIcon />
+      ) : (
+        <AlignedRightArrowIcon />
+      )}
     </BpkButton>
   );
 };
