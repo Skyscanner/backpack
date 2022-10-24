@@ -2,15 +2,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-graphic-promotion --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```tsx
 import React from 'react';
-import BpkGraphicPromo from 'bpk-component-graphic-promotion';
+import BpkGraphicPromo from '@skyscanner/backpack-web/bpk-component-graphic-promotion';
 
 export default () => (
   <BpkGraphicPromo

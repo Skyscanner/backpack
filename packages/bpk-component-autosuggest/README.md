@@ -4,18 +4,16 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-autosuggest --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkLabel from 'bpk-component-label';
-import { withRtlSupport } from 'bpk-component-icon';
-import FlightIcon from 'bpk-component-icon/lg/flight';
-import BpkAutosuggest, { BpkAutosuggestSuggestion } from 'bpk-component-autosuggest';
+import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
+import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
+import FlightIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/flight';
+import BpkAutosuggest, { BpkAutosuggestSuggestion } from '@skyscanner/backpack-web/bpk-component-autosuggest';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 

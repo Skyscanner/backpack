@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-grid --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import { BpkGridContainer, BpkGridRow, BpkGridColumn } from '@skyscanner/backpack-web/bpk-component-grid';
 
 export default () => (
   <BpkGridContainer>

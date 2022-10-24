@@ -4,9 +4,7 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-flare --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
@@ -16,7 +14,7 @@ Note that the default background color is white. You will need to apply a custom
 
 ```js
 import React from 'react';
-import { BpkContentBubble } from 'bpk-component-flare';
+import { BpkContentBubble } from '@skyscanner/backpack-web/bpk-component-flare';
 
 export default MyComponent = () => (
   <div>

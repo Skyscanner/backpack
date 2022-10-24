@@ -4,9 +4,7 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-nudger --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
@@ -14,8 +12,8 @@ npm install bpk-component-nudger --save-dev
 
 ```js
 import React, { Component } from 'react';
-import BpkLabel from 'bpk-component-label';
-import BpkNudger from 'bpk-component-nudger';
+import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
+import BpkNudger from '@skyscanner/backpack-web/bpk-component-nudger';
 
 class App extends Component {
   constructor() {
@@ -53,8 +51,8 @@ class App extends Component {
 
 ```js
 import React, { Component } from 'react';
-import BpkLabel from 'bpk-component-label';
-import { BpkConfigurableNudger } from 'bpk-component-nudger';
+import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
+import { BpkConfigurableNudger } from '@skyscanner/backpack-web/bpk-component-nudger';
 
 const options = ['economy', 'premium', 'business', 'first'];
 

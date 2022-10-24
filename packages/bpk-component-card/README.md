@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-card --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkCard from 'bpk-component-card';
+import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCard>

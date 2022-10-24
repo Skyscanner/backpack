@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-datepicker --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkDatepicker, { CALENDAR_SELECTION_TYPE } from 'bpk-component-datepicker';
+import BpkDatepicker, { CALENDAR_SELECTION_TYPE } from '@skyscanner/backpack-web/bpk-component-datepicker';
 import format from 'date-fns/format';
 
 const formatDate = date => format(date, 'dd/MM/yyyy');
@@ -74,7 +72,7 @@ By default `BpkCalendar` is used but the calendar component is fully configurabl
 
 ```js
 import React, { Component } from 'react';
-import BpkDatepicker from 'bpk-component-datepicker';
+import BpkDatepicker from '@skyscanner/backpack-web/bpk-component-datepicker';
 import {
   BpkCalendarNav,
   BpkCalendarGridHeader,
@@ -82,7 +80,7 @@ import {
   BpkCalendarDate,
   withCalendarState,
   composeCalendar,
-} from 'bpk-component-calendar';
+} from '@skyscanner/backpack-web/bpk-component-calendar';
 import { colorSagano } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const ColoredCalendarDate = props =>

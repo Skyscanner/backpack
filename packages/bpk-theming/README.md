@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-theming --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
-import BpkThemeProvider from 'bpk-theming';
+import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
 
-import BpkLink, { themeAttributes as linkThemeAttributes } from 'bpk-component-link';
+import BpkLink, { themeAttributes as linkThemeAttributes } from '@skyscanner/backpack-web/bpk-component-link';
 
 const theme = {
   linkColor: '#c00',

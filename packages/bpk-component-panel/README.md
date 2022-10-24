@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-panel --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkPanel from 'bpk-component-panel';
+import BpkPanel from '@skyscanner/backpack-web/bpk-component-panel';
 
 export default () => (
   <BpkPanel>

@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-horizontal-nav --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkHorizontalNav, { BpkHorizontalNavItem } from 'bpk-component-horizontal-nav';
+import BpkHorizontalNav, { BpkHorizontalNavItem } from '@skyscanner/backpack-web/bpk-component-horizontal-nav';
 
 export default class App extends Component {
   constructor() {

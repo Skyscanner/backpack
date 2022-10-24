@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-badge --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkBadge, { BADGE_TYPES } from 'bpk-component-badge';
+import BpkBadge, { BADGE_TYPES } from '@skyscanner/backpack-web/bpk-component-badge';
 
 export default () => (
   <BpkBadge

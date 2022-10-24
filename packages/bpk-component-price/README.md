@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-price --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkPrice, { SIZES, ALIGNS } from 'bpk-component-price';
+import BpkPrice, { SIZES, ALIGNS } from '@skyscanner/backpack-web/bpk-component-price';
 
 export default () => (
   <BpkPrice

@@ -4,12 +4,10 @@
 
 ## Installation
 
-```sh
-npm install bpk-scrim-utils --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ```js
-import { withScrim } from 'bpk-scrim-utils';
+import { withScrim } from '@skyscanner/backpack-web/bpk-scrim-utils';
 
 const Box = props => (
   <div ref={props.dialogRef}>

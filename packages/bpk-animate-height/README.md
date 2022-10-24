@@ -9,14 +9,12 @@ More information on the easing values can be found at [http://easings.net/](http
 
 ## Installation
 
-```sh
-npm install bpk-animate-height --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
-import AnimateHeight from 'bpk-animate-height';
+import AnimateHeight from '@skyscanner/backpack-web/bpk-animate-height';
 import React, { Component } from 'react';
 
 class AnimateHeightContainer extends Component {

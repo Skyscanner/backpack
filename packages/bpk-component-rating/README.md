@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-rating --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkRating, { RATING_SIZES, RATING_SCALES } from 'bpk-component-rating';
+import BpkRating, { RATING_SIZES, RATING_SCALES } from '@skyscanner/backpack-web/bpk-component-rating';
 
 export default () => (
   <BpkRating
