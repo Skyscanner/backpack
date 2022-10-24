@@ -60,7 +60,7 @@ jobs:
           npm run jest:visual-tests
 
       - name: Upload failed visual tests (if necessary)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure() && steps.visualTests.outcome == 'failure'
         with:
           name: failed-visual-tests
