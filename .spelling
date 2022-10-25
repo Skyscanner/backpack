@@ -349,7 +349,6 @@ inputClassName
 inputRef
 isIphone
 isOpen
-itemClassName
 itemStyle
 leadingButton
 linkOnDark
@@ -725,6 +724,7 @@ bpk-component-navigation-bar
 bpk-component-navigation-stack
 bpk-component-nudger
 bpk-component-overlay
+bpk-component-page-indicator
 bpk-component-pagination
 bpk-component-panel
 bpk-component-paragraph
@@ -900,3 +900,12 @@ INPUT_TYPES.number
 inputLength
 onSubmit
 otp
+currentIndex
+totalIndicators
+showNav
+indicatorLabel
+prevNavLabel
+nextNavLabel
+overImage
+VARIANT
+VARIANT.default
