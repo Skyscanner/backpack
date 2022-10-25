@@ -20,7 +20,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BpkPageIndicator, { INDICATOR_STYLE_TYPE } from './BpkPageIndicator';
+import BpkPageIndicator, { VARIANT } from './BpkPageIndicator';
 
 let props;
 
@@ -54,7 +54,7 @@ describe('BpkPageIndicator', () => {
 
   it('should support style attribute', () => {
     const { asFragment } = render(
-      <BpkPageIndicator {...props} style={INDICATOR_STYLE_TYPE.overImage} />,
+      <BpkPageIndicator {...props} variant={VARIANT.overImage} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });

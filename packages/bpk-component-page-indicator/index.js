@@ -19,10 +19,10 @@
 
 import BpkPageIndicator, {
   type Props as BpkPageIndicatorProps,
-  INDICATOR_STYLE_TYPE,
+  VARIANT,
 } from './src/BpkPageIndicator';
 import { DIRECTIONS } from './src/NavButton';
 
 export type { BpkPageIndicatorProps };
-export { DIRECTIONS, INDICATOR_STYLE_TYPE };
+export { DIRECTIONS, VARIANT };
 export default BpkPageIndicator;

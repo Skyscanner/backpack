@@ -19,7 +19,7 @@
 import React, { useState } from 'react';
 
 import BpkPageIndicator, {
-  INDICATOR_STYLE_TYPE,
+  VARIANT,
 } from '../../packages/bpk-component-page-indicator';
 import { BpkBackgroundImage } from '../../packages/bpk-component-image';
 import { cssModules } from '../../packages/bpk-react-utils';
@@ -67,7 +67,7 @@ const OverImageExample = () => (
   >
     <PageIndicatorContainer
       totalIndicators={3}
-      style={INDICATOR_STYLE_TYPE.overImage}
+      variant={VARIANT.overImage}
       className={getClassName('bpk-page-indicator-examples__container')}
     />
   </BpkBackgroundImage>

@@ -30,7 +30,7 @@ const getClassName = cssModules(STYLES);
 const DISPLAYED_TOTAL = 5;
 const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 
-export const INDICATOR_STYLE_TYPE = {
+export const VARIANT = {
   default: 'default',
   overImage: 'overImage',
 };
@@ -44,7 +44,7 @@ export type Props = {
   indicatorLabel: string,
   prevNavLabel: string,
   nextNavLabel: string,
-  style: ?$Keys<typeof INDICATOR_STYLE_TYPE>,
+  variant: ?$Keys<typeof VARIANT>,
 };
 
 const BpkPageIndicator = ({
@@ -55,8 +55,8 @@ const BpkPageIndicator = ({
   onClick,
   prevNavLabel,
   showNav,
-  style,
   totalIndicators,
+  variant,
 }: Props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <div className={className}>
@@ -100,9 +100,9 @@ const BpkPageIndicator = ({
               }}
               className={getClassName(
                 'bpk-page-indicator__indicator',
-                `bpk-page-indicator__indicator--${style}`,
+                `bpk-page-indicator__indicator--${variant}`,
                 index === currentIndex &&
-                  `bpk-page-indicator__indicator--active-${style}`,
+                  `bpk-page-indicator__indicator--active-${variant}`,
               )}
               aria-label={`${indicatorLabel} ${index + 1}`}
               aria-current={currentIndex === index ? 'true' : 'false'}
@@ -131,7 +131,7 @@ BpkPageIndicator.propTypes = {
   nextNavLabel: PropTypes.string.isRequired,
   currentIndex: PropTypes.number.isRequired,
   totalIndicators: PropTypes.number.isRequired,
-  style: PropTypes.oneOf(Object.keys(INDICATOR_STYLE_TYPE)),
+  variant: PropTypes.oneOf(Object.keys(VARIANT)),
   onClick: PropTypes.func,
   className: PropTypes.string,
   showNav: PropTypes.bool,
@@ -141,7 +141,7 @@ BpkPageIndicator.defaultProps = {
   onClick: null,
   className: null,
   showNav: false,
-  style: INDICATOR_STYLE_TYPE.default,
+  variant: VARIANT.default,
 };
 
 export default BpkPageIndicator;
