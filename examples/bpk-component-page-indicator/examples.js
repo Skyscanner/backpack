@@ -29,9 +29,9 @@ import STYLES from './examples.module.scss';
 const getClassName = cssModules(STYLES);
 
 const image =
-  'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
-const imageWidth = 612;
-const imageHeight = 408;
+  'https://content.skyscnr.com/m/50d9dff3186775ad/original/Condor-Homepage-Hero-Option-3.png';
+const imageWidth = 400;
+const imageHeight = 90;
 const PageIndicatorContainer = (props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -55,8 +55,8 @@ const ThreePagesExample = () => <PageIndicatorContainer totalIndicators={3} />;
 
 const OverImageExample = () => (
   <BpkBackgroundImage
-    width={612}
-    height={408}
+    width={400}
+    height={90}
     style={{ width: imageWidth, height: imageHeight }}
     imageStyle={{
       backgroundRepeat: 'no-repeat',
