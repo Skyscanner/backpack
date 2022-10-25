@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-spinner --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
+import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner, SPINNER_TYPES } from '@skyscanner/backpack-web/bpk-component-spinner';
 
 export default () => (
   <div>

@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-text --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```javascript
 import React from 'react';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
   <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>My heading</BpkText>
@@ -25,8 +23,8 @@ When using the same style in many places repeating the `textStyle` and `tagName`
 
 ```javascript
 import React from 'react';
-import BpkText from 'bpk-component-text';
-import { withDefaultProps } from 'bpk-react-utils';
+import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import { withDefaultProps } from '@skyscanner/backpack-web/bpk-react-utils';
 
 const LargeParagraph = withDefaultProps(BpkText, { textStyle: 'bodyLongform', tagName: 'p' });
 const TinySpan = withDefaultProps(BpkText, { textStyle: 'caption', tagName: 'span' });
@@ -56,7 +54,7 @@ Heading `textStyle` should not be confused with heading `tagName` that provide s
 
 ```javascript
 import React from 'react';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
   <BpkText tagName="h1" textStyle={TEXT_STYLES.heading1}>My heading</BpkText>

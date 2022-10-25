@@ -6,21 +6,19 @@ Requires **React 16.8+**
 
 ## Installation
 
-```sh
-npm install bpk-component-map --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkText from 'bpk-component-text';
-import { withRtlSupport } from 'bpk-component-icon';
-import LandmarkIconSm from 'bpk-component-icon/sm/landmark';
+import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
+import LandmarkIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/landmark';
 import BpkMap, {
   BpkIconMarker,
   BpkOverlayView,
-} from 'bpk-component-map';
+} from '@skyscanner/backpack-web/bpk-component-map';
 
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
 
@@ -64,7 +62,7 @@ Price markers are used to display clickable prices on a map.
 
 ```js
 import React from 'react';
-import BpkMap, { BpkPriceMarker, PRICE_MARKER_STATUSES } from 'bpk-component-map';
+import BpkMap, { BpkPriceMarker, PRICE_MARKER_STATUSES } from '@skyscanner/backpack-web/bpk-component-map';
 
 export default () => (
   <BpkMap
@@ -106,7 +104,7 @@ If you intend to include multiple maps on one page, it's better to load the Goog
 
 ```js
 import React from 'react';
-import BpkMap, { withGoogleMapsScript } from 'bpk-component-map';
+import BpkMap, { withGoogleMapsScript } from '@skyscanner/backpack-web/bpk-component-map';
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 

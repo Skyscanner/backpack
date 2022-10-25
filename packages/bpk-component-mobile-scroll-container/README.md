@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-mobile-scroll-container --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
-import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
+import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
+import BpkMobileScrollContainer from '@skyscanner/backpack-web/bpk-component-mobile-scroll-container';
 
 import STYLES from './MyComponent.scss';
 

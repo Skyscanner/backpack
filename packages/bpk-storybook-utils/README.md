@@ -4,9 +4,7 @@ This package contains convenience utilities for use with storybook.
 
 ## Installation
 
-```sh
-npm install bpk-storybook-utils --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Included utilities
 
@@ -18,7 +16,7 @@ This makes it possible to use the `action` both within and without environments 
 #### Usage
 
 ```js
-import { action } from 'bpk-storybook-utils';
+import { action } from '@skyscanner/backpack-web/bpk-storybook-utils';
 
 ...
 
@@ -32,7 +30,7 @@ Adds a dark background, useful for displaying components that don't appear on a 
 #### Usage
 
 ```js
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '@skyscanner/backpack-web/bpk-storybook-utils';
 
 ...
 

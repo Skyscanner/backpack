@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-barchart --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkBarchart from 'bpk-component-barchart';
+import BpkBarchart from '@skyscanner/backpack-web/bpk-component-barchart';
 
 const priceData = [
   {

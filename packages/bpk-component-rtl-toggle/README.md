@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-rtl-toggle --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkRtlToggle from 'bpk-component-rtl-toggle';
+import BpkRtlToggle from '@skyscanner/backpack-web/bpk-component-rtl-toggle';
 
 export default () => (
   <BpkRtlToggle />

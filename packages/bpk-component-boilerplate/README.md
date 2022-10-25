@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-boilerplate --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkBoilerplate from 'bpk-component-code';
+import BpkBoilerplate from '@skyscanner/backpack-web/bpk-component-code';
 
 export default () => <BpkBoilerplate />;
 ```

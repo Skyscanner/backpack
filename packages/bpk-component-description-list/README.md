@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-description-list --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import { BpkDescriptionList, BpkDescriptionTerm, BpkDescriptionDetails } from 'bpk-component-description-list';
+import { BpkDescriptionList, BpkDescriptionTerm, BpkDescriptionDetails } from '@skyscanner/backpack-web/bpk-component-description-list';
 
 export default () => (
   <BpkDescriptionList>

@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-progress --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkProgress from 'bpk-component-progress';
+import BpkProgress from '@skyscanner/backpack-web/bpk-component-progress';
 
 const Progress = () => (
   <BpkProgress

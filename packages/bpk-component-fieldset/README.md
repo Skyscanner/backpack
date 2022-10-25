@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-fieldset --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkFieldset from 'bpk-component-fieldset';
-import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
+import BpkFieldset from '@skyscanner/backpack-web/bpk-component-fieldset';
+import BpkInput, { INPUT_TYPES } from '@skyscanner/backpack-web/bpk-component-input';
 
 class FieldsetContainer extends Component {
   constructor(props) {

@@ -2,15 +2,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-floating-notification --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkFloatingNotification from 'bpk-component-floating-notification';
+import BpkFloatingNotification from '@skyscanner/backpack-web/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 
 export default () => (

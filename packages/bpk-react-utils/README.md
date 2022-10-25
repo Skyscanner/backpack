@@ -4,9 +4,7 @@
 
 ## Installation
 
-```sh
-npm install bpk-react-utils --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Portal.js
 
@@ -16,9 +14,9 @@ it's necessary in overcoming z-index issues when absolutely positioning elements
 ### Usage
 
 ```js
-import { Portal } from 'bpk-react-utils';
-import BpkButton from 'bpk-component-button';
-import { BpkCode } from 'bpk-component-code';
+import { Portal } from '@skyscanner/backpack-web/bpk-react-utils';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkCode } from '@skyscanner/backpack-web/bpk-component-code';
 import React, { Component } from 'react';
 
 class MyComponent extends Component {
@@ -81,7 +79,7 @@ A helpful utility which permits backwards compatibility with hard coded classes 
 
 ```js
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
 
 import STYLES from './MyComponent.scss';
 
@@ -119,7 +117,7 @@ Without CSS modules:
 The returned function accepts multiple class names and ignores values other than strings. e.g:
 
 ```js
-import { cssModules } from 'bpk-react-utils';
+import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
 
 import STYLES from './MyComponent.scss';
 
@@ -143,7 +141,7 @@ components initial mount. All you need to provide is two class names and a timeo
 
 ```js
 import React from 'react';
-import { TransitionInitialMount } from 'bpk-react-utils';
+import { TransitionInitialMount } from '@skyscanner/backpack-web/bpk-react-utils';
 
 const MyComponent = (props) => (
   <TransitionInitialMount
@@ -190,7 +188,7 @@ Returns true if the browser is showing content right-to-left.
 
 ```js
 import React from 'react';
-import { isRTL } from 'bpk-react-utils';
+import { isRTL } from '@skyscanner/backpack-web/bpk-react-utils';
 
 if (isRTL()) {
   // do RTL stuff
@@ -207,7 +205,7 @@ Returns true if the device is an iPhone.
 
 ```js
 import React from 'react';
-import { isDeviceIphone } from 'bpk-react-utils';
+import { isDeviceIphone } from '@skyscanner/backpack-web/bpk-react-utils';
 
 if (isDeviceIphone()) {
   // do iPhone specific stuff
@@ -224,7 +222,7 @@ Returns true if the device is an iPad.
 
 ```js
 import React from 'react';
-import { isDeviceIpad } from 'bpk-react-utils';
+import { isDeviceIpad } from '@skyscanner/backpack-web/bpk-react-utils';
 
 if (isDeviceIpad()) {
   // do iPad specific stuff
@@ -241,7 +239,7 @@ Returns true if the platform is iOS (iPhone/iPad).
 
 ```js
 import React from 'react';
-import { isDeviceIos } from 'bpk-react-utils';
+import { isDeviceIos } from '@skyscanner/backpack-web/bpk-react-utils';
 
 if (isDeviceIos()) {
   // do iOS specific stuff

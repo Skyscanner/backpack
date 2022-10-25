@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-datatable --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import { BpkDataTable, BpkDataTableColumn } from 'bpk-component-datatable';
+import { BpkDataTable, BpkDataTableColumn } from '@skyscanner/backpack-web/bpk-component-datatable';
 
 const rows = [
   { name: 'Jose', description: 'Software Engineer' },
@@ -42,7 +40,7 @@ By default `BpkDataTable` sorts the column using the value of `dataKey`. For use
 
 ```js
 import React from 'react';
-import { BpkDataTable, BpkDataTableColumn } from 'bpk-component-datatable';
+import { BpkDataTable, BpkDataTableColumn } from '@skyscanner/backpack-web/bpk-component-datatable';
 
 const complexRows = [
     {
