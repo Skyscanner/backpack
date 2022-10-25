@@ -2,6 +2,7 @@
 
 **Patched:**
   - `BpkCode` - updated to latest colours.
+  - `BpkSelect` - updated prop types
 
 **Changed:**
   - `BpkPagination` - updated to the new colours.
