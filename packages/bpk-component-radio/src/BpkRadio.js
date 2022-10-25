@@ -45,18 +45,17 @@ const BpkRadio = (props: Props) => {
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
 
-  const classNames = [
-    getClassName(
-      'bpk-radio',
-      white && 'bpk-radio--white',
-      disabled && 'bpk-radio--disabled',
-      isInvalid && 'bpk-radio--invalid',
-      className,
-    ),
-  ];
+  const classNames = getClassName(
+    'bpk-radio',
+    white && 'bpk-radio--white',
+    disabled && 'bpk-radio--disabled',
+    white && disabled && 'bpk-radio--disabled--white',
+    isInvalid && 'bpk-radio--invalid',
+    className,
+  );
 
   return (
-    <label className={classNames.join(' ')}>
+    <label className={classNames}>
       {/* Deciding to support this because `aria-invalid` does often work with voiceover
       despite not being in the spec. */}
       {/* eslint-disable jsx-a11y/role-supports-aria-props */}

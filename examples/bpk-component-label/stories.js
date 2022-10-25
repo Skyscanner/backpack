@@ -23,6 +23,7 @@ import {
   InvalidExample,
   DisabledExample,
   InvalidRequiredExample,
+  WhiteExample,
   MixedExample,
 } from './examples';
 
@@ -35,5 +36,6 @@ export const Required = RequiredExample;
 export const Invalid = InvalidExample;
 export const Disabled = DisabledExample;
 export const InvalidRequired = InvalidRequiredExample;
+export const White = WhiteExample;
 
 export const VisualTest = MixedExample;
