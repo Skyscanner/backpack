@@ -1,3 +1,22 @@
+# 2022-10-25
+
+`@skyscanner/backpack-web`: `14.0.0 => 14.1.0`
+
+**Added**
+
+- bpk-component-page-indicator
+  - The page indicator is a new component which indicates the current page in a stack of pages. And it provides a callback function and scrolling styles when switching pages.
+
+**Changed:**
+  - `BpkPagination` - updated to the new colours.
+  - `BpkCode` - updated to latest colours.
+
+**Patched:**
+  - `BpkRadio` - fixed disabled on dark colours.
+  - `BpkCheckbox` - fixed disabled on dark colours.
+  - `BpkLabel` - fixed disabled on dark colours.
+
+
 # 2022-10-11
 
 `@skyscanner/backpack-web`: 13.0.0 => 14.0.0
