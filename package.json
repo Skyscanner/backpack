@@ -150,7 +150,7 @@
     "gulp": "^4.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-svgmin": "^2.2.0",
-    "husky": "^7.0.0",
+    "husky": "^8.0.1",
     "inquirer": "^8.2.3",
     "jest": "^26.0.1",
     "jest-axe": "^4.1.0",
