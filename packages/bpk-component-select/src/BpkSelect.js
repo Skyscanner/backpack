@@ -104,7 +104,7 @@ const BpkSelect = (props: Props) => {
 BpkSelect.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   docked: PropTypes.bool,
