@@ -4,9 +4,7 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-accordion --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
@@ -16,7 +14,7 @@ The `withSingleItemAccordionState` higher-order component is used to limit one s
 
 ```js
 import React from 'react';
-import { BpkAccordion, BpkAccordionItem, withSingleItemAccordionState } from 'bpk-component-accordion';
+import { BpkAccordion, BpkAccordionItem, withSingleItemAccordionState } from '@skyscanner/backpack-web/bpk-component-accordion';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 
@@ -41,7 +39,7 @@ The `withAccordionItemState` higher-order component is used to allow multiple it
 
 ```js
 import React from 'react';
-import { BpkAccordion, BpkAccordionItem, withAccordionItemState } from 'bpk-component-accordion';
+import { BpkAccordion, BpkAccordionItem, withAccordionItemState } from '@skyscanner/backpack-web/bpk-component-accordion';
 
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
@@ -66,9 +64,9 @@ export default () => (
 
 ```js
 import React from 'react';
-import { BpkAccordion, BpkAccordionItem } from 'bpk-component-accordion';
-import { withAlignment } from 'bpk-component-icon';
-import StopsIcon from 'bpk-component-icon/sm/stops';
+import { BpkAccordion, BpkAccordionItem } from '@skyscanner/backpack-web/bpk-component-accordion';
+import { withAlignment } from '@skyscanner/backpack-web/bpk-component-icon';
+import StopsIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/stops';
 import { lineHeightBase, iconSizeSm, colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);

@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-grid-toggle --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkGridToggle from 'bpk-component-grid-toggle';
+import BpkGridToggle from '@skyscanner/backpack-web/bpk-component-grid-toggle';
 
 export default () => (
   <BpkGridToggle />

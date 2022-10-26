@@ -4,17 +4,15 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-loading-button --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkLoadingButton from 'bpk-component-loading-button';
-import BaggageIcon from 'bpk-component-icon/sm/baggage';
-import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
+import BpkLoadingButton from '@skyscanner/backpack-web/bpk-component-loading-button';
+import BaggageIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/baggage';
+import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 
 const AlignedBaggageIcon = withButtonAlignment(withRtlSupport(BaggageIcon));
 const icon = <AlignedBaggageIcon />;

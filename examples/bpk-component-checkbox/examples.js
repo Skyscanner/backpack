@@ -154,6 +154,7 @@ const WhiteExample = () => (
       white
     />
     <StatefulCheckbox id="bunol" name="bunol" label="Buñol" white />
+    <StatefulCheckbox id="places" name="places" label="Places" white disabled />
   </BpkDarkExampleWrapper>
 );
 

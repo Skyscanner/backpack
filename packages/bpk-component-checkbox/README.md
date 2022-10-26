@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-checkbox --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkCheckbox from 'bpk-component-checkbox';
+import BpkCheckbox from '@skyscanner/backpack-web/bpk-component-checkbox';
 
 export default () => (
   <BpkCheckbox

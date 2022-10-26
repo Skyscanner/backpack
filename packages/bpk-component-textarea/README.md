@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-textarea --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkTextarea from 'bpk-component-textarea';
+import BpkTextarea from '@skyscanner/backpack-web/bpk-component-textarea';
 
 export default () => (
   <BpkTextarea

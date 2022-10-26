@@ -4,14 +4,12 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-breadcrumb --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 ```js
 import React, { Component } from 'react';
-import BpkBreadcrumb, { BpkBreadcrumbItem } from 'bpk-component-breadcrumb';
+import BpkBreadcrumb, { BpkBreadcrumbItem } from '@skyscanner/backpack-web/bpk-component-breadcrumb';
 
 
 export default class App extends Component {

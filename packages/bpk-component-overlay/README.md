@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-overlay --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkText from 'bpk-component-text';
-import BpkOverlay, { BORDER_RADIUS_STYLES, OVERLAY_TYPES } from 'bpk-component-overlay';
+import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import BpkOverlay, { BORDER_RADIUS_STYLES, OVERLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-overlay';
 
 export default () => (
   <div>

@@ -4,9 +4,7 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-table --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
@@ -19,7 +17,7 @@ import {
   BpkTableRow,
   BpkTableCell,
   BpkTableHeadCell,
-} from 'bpk-component-table';
+} from '@skyscanner/backpack-web/bpk-component-table';
 
 export default () => (
   <BpkTable>

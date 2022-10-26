@@ -4,17 +4,15 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-popover --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkButton from 'bpk-component-button';
-import BpkPopover from 'bpk-component-popover';
-import BpkText from 'bpk-component-text';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import BpkPopover from '@skyscanner/backpack-web/bpk-component-popover';
+import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 
 class App extends Component {
   constructor() {

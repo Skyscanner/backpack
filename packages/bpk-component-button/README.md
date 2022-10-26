@@ -4,17 +4,15 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-button --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-import ArrowIcon from 'bpk-component-icon/sm/long-arrow-right';
-import BpkButton from 'bpk-component-button';
+import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
+import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 
 const AlignedArrowIcon = withButtonAlignment(withRtlSupport(ArrowIcon));
 

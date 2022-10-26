@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-tooltip --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkText from 'bpk-component-text';
-import BpkTooltip from 'bpk-component-tooltip';
+import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import BpkTooltip from '@skyscanner/backpack-web/bpk-component-tooltip';
 
 const App = () => (
   const targetRef = useRef(null);

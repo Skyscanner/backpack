@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-label --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkLabel from 'bpk-component-label';
+import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
 
 export default () => (
   <BpkLabel htmlFor="origin">Origin</BpkLabel>

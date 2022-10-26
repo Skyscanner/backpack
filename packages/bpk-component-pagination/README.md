@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-pagination --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkPagination from 'bpk-component-pagination';
+import BpkPagination from '@skyscanner/backpack-web/bpk-component-pagination';
 
 const Pagination = () => (
   <BpkPagination

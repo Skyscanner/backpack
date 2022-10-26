@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-breakpoint --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
+import BpkBreakpoint, { BREAKPOINTS } from '@skyscanner/backpack-web/bpk-component-breakpoint';
 
 export default () => (
   <BpkBreakpoint query={BREAKPOINTS.MOBILE}>

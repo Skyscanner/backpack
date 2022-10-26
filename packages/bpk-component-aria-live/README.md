@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-aria-live --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```tsx
 import React from 'react';
-import BpkAriaLive, { ARIA_LIVE_POLITENESS_SETTINGS } from 'bpk-component-aria-live';
+import BpkAriaLive, { ARIA_LIVE_POLITENESS_SETTINGS } from '@skyscanner/backpack-web/bpk-component-aria-live';
 
 export default () => (
   <>

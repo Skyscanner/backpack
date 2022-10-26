@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-radio --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkRadio from 'bpk-component-radio';
+import BpkRadio from '@skyscanner/backpack-web/bpk-component-radio';
 
 export default () => (
   <BpkRadio

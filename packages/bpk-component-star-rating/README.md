@@ -4,9 +4,7 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-star-rating --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
@@ -17,7 +15,7 @@ import BpkStarRating, {
   STAR_TYPES,
   BpkInteractiveStarRating,
   withInteractiveStarRatingState
-} from 'bpk-component-star-rating';
+} from '@skyscanner/backpack-web/bpk-component-star-rating';
 
 const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
 

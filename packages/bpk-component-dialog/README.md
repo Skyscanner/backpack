@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-dialog --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkDialog from 'bpk-component-dialog';
-import BpkButton from 'bpk-component-button';
+import BpkDialog from '@skyscanner/backpack-web/bpk-component-dialog';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 
 class App extends Component {
   constructor() {

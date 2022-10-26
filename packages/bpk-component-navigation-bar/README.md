@@ -4,9 +4,7 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-navigation-bar --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
@@ -14,10 +12,10 @@ npm install bpk-component-navigation-bar --save-dev
 
 ```js
 import React from 'react';
-import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
-import { withRtlSupport } from 'bpk-component-icon';
+import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-left';
+import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 
-import BpkNavigationBar, { BpkNavigationBarIconButton, BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
+import BpkNavigationBar, { BpkNavigationBarIconButton, BpkNavigationBarButtonLink } from '@skyscanner/backpack-web/bpk-component-navigation-bar';
 
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
 
@@ -58,8 +56,8 @@ export default () => (
 
 ```js
 import React from 'react';
-import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
-import { BpkNavigationBarIconButton } from 'bpk-component-navigation-bar';
+import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-left';
+import { BpkNavigationBarIconButton } from '@skyscanner/backpack-web/bpk-component-navigation-bar';
 
 export default () => (
   <BpkNavigationBarIconButton
@@ -89,7 +87,7 @@ export default () => (
 
 ```js
 import React from 'react';
-import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
+import { BpkNavigationBarButtonLink } from '@skyscanner/backpack-web/bpk-component-navigation-bar';
 
 export default () => (
   <BpkNavigationBarButtonLink onClick={() => {}}>

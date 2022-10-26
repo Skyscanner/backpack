@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-code --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
-import BpkText from 'bpk-component-text';
+import { BpkCode, BpkCodeBlock } from '@skyscanner/backpack-web/bpk-component-code';
+import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 
 const codeBlock = `import React from 'react';
 import ReactDOM from 'react-dom';
