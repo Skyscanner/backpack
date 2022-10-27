@@ -196,7 +196,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onDark"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -214,7 +214,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and a lead
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onDark"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -239,7 +239,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and a trai
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onDark"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -264,7 +264,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and both a
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onDark"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -296,7 +296,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and disabl
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onDark bpk-chip--disabled bpk-chip--onDark-disabled"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -315,7 +315,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and select
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--onDark bpk-chip--onDark-selected"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -333,7 +333,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark", selected 
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--onDark bpk-chip--disabled bpk-chip--onDark-disabled"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -352,7 +352,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onImage"
+    class="bpk-chip bpk-chip--on-image"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -370,7 +370,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and a lea
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onImage"
+    class="bpk-chip bpk-chip--on-image"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -395,7 +395,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and a tra
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onImage"
+    class="bpk-chip bpk-chip--on-image"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -420,7 +420,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and both 
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onImage"
+    class="bpk-chip bpk-chip--on-image"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -452,7 +452,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and disab
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onImage bpk-chip--disabled bpk-chip--onImage-disabled"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -471,7 +471,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and selec
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--onImage bpk-chip--onImage-selected"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -489,7 +489,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage", selected
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--onImage bpk-chip--disabled bpk-chip--onImage-disabled"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"

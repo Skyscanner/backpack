@@ -244,7 +244,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onDark"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -277,7 +277,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark" and a leadin
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onDark"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -317,7 +317,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark" and disabled
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onDark bpk-chip--disabled bpk-chip--onDark-disabled"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -351,7 +351,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark" and selected
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--onDark bpk-chip--onDark-selected"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -384,7 +384,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark", selected an
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--onDark bpk-chip--disabled bpk-chip--onDark-disabled"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -418,7 +418,7 @@ exports[`BpkDropdownChip should render correctly with type="onImage" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onImage"
+    class="bpk-chip bpk-chip--on-image"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -451,7 +451,7 @@ exports[`BpkDropdownChip should render correctly with type="onImage" and a leadi
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onImage"
+    class="bpk-chip bpk-chip--on-image"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -491,7 +491,7 @@ exports[`BpkDropdownChip should render correctly with type="onImage" and disable
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--onImage bpk-chip--disabled bpk-chip--onImage-disabled"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -525,7 +525,7 @@ exports[`BpkDropdownChip should render correctly with type="onImage" and selecte
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--onImage bpk-chip--onImage-selected"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -558,7 +558,7 @@ exports[`BpkDropdownChip should render correctly with type="onImage", selected a
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--onImage bpk-chip--disabled bpk-chip--onImage-disabled"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"

@@ -242,7 +242,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" and disa
 exports[`BpkDismissibleChip should render correctly with type="onDark" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--onDark bpk-chip--onDark-selected bpk-chip--onDark-dismissible"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -256,7 +256,7 @@ exports[`BpkDismissibleChip should render correctly with type="onDark" 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        class="bpk-chip--onDark-dismissible__trailing-accessory-view"
+        class="bpk-chip--on-dark-dismissible__trailing-accessory-view"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -275,7 +275,7 @@ exports[`BpkDismissibleChip should render correctly with type="onDark" 1`] = `
 exports[`BpkDismissibleChip should render correctly with type="onDark" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--onDark bpk-chip--onDark-selected bpk-chip--onDark-dismissible"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -296,7 +296,7 @@ exports[`BpkDismissibleChip should render correctly with type="onDark" and a lea
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        class="bpk-chip--onDark-dismissible__trailing-accessory-view"
+        class="bpk-chip--on-dark-dismissible__trailing-accessory-view"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -315,7 +315,7 @@ exports[`BpkDismissibleChip should render correctly with type="onDark" and a lea
 exports[`BpkDismissibleChip should render correctly with type="onDark" and disabled 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--onDark bpk-chip--disabled bpk-chip--onDark-disabled bpk-chip--onDark-dismissible"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled bpk-chip--on-dark-dismissible"
     disabled=""
     role="button"
     title="Dismiss"
@@ -330,7 +330,7 @@ exports[`BpkDismissibleChip should render correctly with type="onDark" and disab
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        class="bpk-chip--onDark-dismissible__trailing-accessory-view"
+        class="bpk-chip--on-dark-dismissible__trailing-accessory-view"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -349,7 +349,7 @@ exports[`BpkDismissibleChip should render correctly with type="onDark" and disab
 exports[`BpkDismissibleChip should render correctly with type="onImage" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--onImage bpk-chip--onImage-selected bpk-chip--onImage-dismissible"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -363,7 +363,7 @@ exports[`BpkDismissibleChip should render correctly with type="onImage" 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        class="bpk-chip--onImage-dismissible__trailing-accessory-view"
+        class="bpk-chip--on-image-dismissible__trailing-accessory-view"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -382,7 +382,7 @@ exports[`BpkDismissibleChip should render correctly with type="onImage" 1`] = `
 exports[`BpkDismissibleChip should render correctly with type="onImage" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--onImage bpk-chip--onImage-selected bpk-chip--onImage-dismissible"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -403,7 +403,7 @@ exports[`BpkDismissibleChip should render correctly with type="onImage" and a le
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        class="bpk-chip--onImage-dismissible__trailing-accessory-view"
+        class="bpk-chip--on-image-dismissible__trailing-accessory-view"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
@@ -422,7 +422,7 @@ exports[`BpkDismissibleChip should render correctly with type="onImage" and a le
 exports[`BpkDismissibleChip should render correctly with type="onImage" and disabled 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--onImage bpk-chip--disabled bpk-chip--onImage-disabled bpk-chip--onImage-dismissible"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled bpk-chip--on-image-dismissible"
     disabled=""
     role="button"
     title="Dismiss"
@@ -437,7 +437,7 @@ exports[`BpkDismissibleChip should render correctly with type="onImage" and disa
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        class="bpk-chip--onImage-dismissible__trailing-accessory-view"
+        class="bpk-chip--on-image-dismissible__trailing-accessory-view"
         height="18"
         style="width: 1.125rem; height: 1.125rem;"
         viewBox="0 0 24 24"
