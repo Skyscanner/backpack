@@ -170,7 +170,6 @@ class StatefulDismissibleChipsExample extends React.Component<
               onClick={() => {
                 this.removeChip(index);
               }}
-              disabled={index === 3}
               accessibilityLabel="Remove chip"
               className={getClassName('bpk-chip-examples__chip')}
             >

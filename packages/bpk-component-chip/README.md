@@ -113,7 +113,6 @@ Dismissible chips are selectable chips that have been preconfigured to have a 'c
 | children             | node                                                                  | true     | -             |
 | onClick              | func                                                                  | true     | -             |
 | className            | string                                                                | false    | null          |
-| disabled             | bool                                                                  | false    | false         |
 | leadingAccessoryView | node                                                                  | false    | null          |
 | type                 | oneOf(`CHIP_TYPES.onDark`, `CHIP_TYPES.default`, `CHIP_TYPES.onImage`) |
 
