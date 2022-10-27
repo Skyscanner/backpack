@@ -107,20 +107,16 @@ const generateTheme = ({
   buttonDestructiveHoverBackgroundColor: colorWhite,
   buttonDestructiveActiveBackgroundColor: colorWhite,
 
-  chipPrimarySelectedBackgroundColor: primaryColor500,
-  chipPrimarySelectedHoverBackgroundColor: primaryColor600,
-  chipPrimarySelectedActiveBackgroundColor: primaryColor700,
-  chipPrimarySelectedTextColor: colorWhite,
+  chipDefaultSelectedBackgroundColor: primaryColor500,
+  chipDefaultSelectedTextColor: colorWhite,
 
-  chipSuccessSelectedBackgroundColor: secondaryColor500,
-  chipSuccessSelectedHoverBackgroundColor: secondaryColor600,
-  chipSuccessSelectedActiveBackgroundColor: secondaryColor700,
-  chipSuccessSelectedTextColor: colorWhite,
+  chipOnDarkSelectedBackgroundColor: primaryColor500,
+  chipOnDarkSelectedTextColor: colorWhite,
 
-  chipLightSelectedBackgroundColor: primaryColor500,
-  chipLightSelectedHoverBackgroundColor: primaryColor600,
-  chipLightSelectedActiveBackgroundColor: primaryColor700,
-  chipLightSelectedTextColor: colorWhite,
+  chipOnImageSelectedBackgroundColor: primaryColor500,
+  chipOnImageSelectedHoverBackgroundColor: primaryColor500,
+  chipOnImageSelectedActiveBackgroundColor: primaryColor500,
+  chipOnImageSelectedTextColor: colorWhite,
 
   fieldsetLabelTextColor: secondaryColor500,
 

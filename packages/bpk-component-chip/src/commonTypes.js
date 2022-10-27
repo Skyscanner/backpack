@@ -22,9 +22,9 @@ import PropTypes from 'prop-types';
 import { type Node } from 'react';
 
 export const CHIP_TYPES = {
-  light: 'light',
-  primary: 'primary',
-  success: 'success',
+  onDark: 'on-dark',
+  default: 'default',
+  onImage: 'on-image',
 };
 
 export type CommonProps = {
@@ -56,5 +56,5 @@ export const COMMON_DEFAULT_PROPS = {
   leadingAccessoryView: null,
   selected: false,
   trailingAccessoryView: null,
-  type: CHIP_TYPES.primary,
+  type: CHIP_TYPES.default,
 };

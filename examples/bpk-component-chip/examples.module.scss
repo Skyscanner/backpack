@@ -28,4 +28,22 @@
     margin-right: $bpk-spacing-xs;
     margin-bottom: $bpk-spacing-sm;
   }
+
+  &__on-dark {
+    padding-top: $bpk-spacing-sm;
+    padding-left: $bpk-spacing-md-v-2;
+    background-color: $bpk-core-primary-day;
+  }
+
+  &__default {
+    padding-top: $bpk-spacing-sm;
+    padding-left: $bpk-spacing-md-v-2;
+    background-color: $bpk-surface-default-day;
+  }
+
+  &__on-image {
+    padding-top: $bpk-spacing-sm;
+    padding-left: $bpk-spacing-md-v-2;
+    background-color: $bpk-surface-default-day;
+  }
 }

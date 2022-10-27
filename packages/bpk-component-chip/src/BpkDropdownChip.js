@@ -26,8 +26,7 @@ of a close icon.
 
 import React from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
+import ChevronDownIconSm from '../../bpk-component-icon/sm/chevron-down';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import {
@@ -35,34 +34,21 @@ import {
   COMMON_DEFAULT_PROPS,
   type CommonProps,
 } from './commonTypes';
-import STYLES from './BpkSelectableChip.module.scss';
 
 export type Props = CommonProps;
 
-const getClassName = cssModules(STYLES);
-
-const BpkDismissibleChip = (props: Props) => {
-  const { className, type, ...rest } = props;
+const BpkDropdownChip = (props: Props) => {
+  const { ...rest } = props;
 
   return (
     <BpkSelectableChip
       {...rest}
-      trailingAccessoryView={
-        <CloseCircleIconSm
-          className={getClassName(
-            `bpk-chip--${type}-dismissible__trailing-accessory-view`,
-          )}
-        />
-      }
-      selected
-      type={type}
-      role="button" // Override role="checkbox" because this chip is not selectable.
-      className={getClassName(`bpk-chip--${type}-dismissible`, className)}
+      trailingAccessoryView={<ChevronDownIconSm />}
     />
   );
 };
 
-BpkDismissibleChip.propTypes = COMMON_PROP_TYPES;
-BpkDismissibleChip.defaultProps = COMMON_DEFAULT_PROPS;
+BpkDropdownChip.propTypes = COMMON_PROP_TYPES;
+BpkDropdownChip.defaultProps = COMMON_DEFAULT_PROPS;
 
-export default BpkDismissibleChip;
+export default BpkDropdownChip;

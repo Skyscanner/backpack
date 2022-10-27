@@ -19,16 +19,12 @@
 /* @flow strict */
 
 export default [
-  'chipPrimarySelectedBackgroundColor',
-  'chipPrimarySelectedHoverBackgroundColor',
-  'chipPrimarySelectedActiveBackgroundColor',
-  'chipPrimarySelectedTextColor',
-  'chipLightSelectedBackgroundColor',
-  'chipLightSelectedHoverBackgroundColor',
-  'chipLightSelectedActiveBackgroundColor',
-  'chipLightSelectedTextColor',
-  'chipSuccessSelectedBackgroundColor',
-  'chipSuccessSelectedHoverBackgroundColor',
-  'chipSuccessSelectedActiveBackgroundColor',
-  'chipSuccessSelectedTextColor',
+  'chipDefaultSelectedBackgroundColor',
+  'chipDefaultSelectedTextColor',
+  'chipOnDarkSelectedBackgroundColor',
+  'chipOnDarkSelectedTextColor',
+  'chipOnImageSelectedBackgroundColor',
+  'chipOnImageSelectedHoverBackgroundColor',
+  'chipOnImageSelectedActiveBackgroundColor',
+  'chipOnImageSelectedTextColor',
 ];
