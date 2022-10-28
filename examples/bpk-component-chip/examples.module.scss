@@ -31,19 +31,19 @@
 
   &__on-dark {
     padding-top: $bpk-spacing-sm;
-    padding-left: $bpk-spacing-md-v-2;
+    padding-left: bpk-spacing-md();
     background-color: $bpk-core-primary-day;
   }
 
   &__default {
     padding-top: $bpk-spacing-sm;
-    padding-left: $bpk-spacing-md-v-2;
+    padding-left: bpk-spacing-md();
     background-color: $bpk-surface-default-day;
   }
 
   &__on-image {
     padding-top: $bpk-spacing-sm;
-    padding-left: $bpk-spacing-md-v-2;
+    padding-left: bpk-spacing-md();
     background-color: $bpk-surface-default-day;
   }
 }

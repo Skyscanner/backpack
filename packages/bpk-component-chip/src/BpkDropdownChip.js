@@ -19,9 +19,8 @@
 /* @flow strict */
 
 /*
-The dismissible chip component is just a selectable chip that's
-been hard coded to have selected={false} and a trailing accessory view
-of a close icon.
+The dropdown chip component is just a selectable chip component
+with a trailing accessory view of a chevron down icon.
 */
 
 import React from 'react';

@@ -8,10 +8,11 @@
 **Breaking:**
 
 - bpk-component-chip:
-  - Delete the theme type of the Chip component: `primary`, `success`, `light`
+  - Change theme type of the Chip component: `primary` => `default`, `light` => `onDark`
+  - Delete theme type of the Chip component: `success`
 
 **Added:**
 
 - bpk-component-chip:
-  - Added the theme type of the Chip component: `default`, `onDark`, `onImage`
+  - Added theme type of the Chip component: `onImage`
   - Added a new Chip type: `BpkDropdownChip`
