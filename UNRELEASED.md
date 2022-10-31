@@ -1,0 +1,4 @@
+**Added:**
+
+- bpk-component-divided-card
+  - It is a new component which is used for the inventory card. It just is a layout structure.
