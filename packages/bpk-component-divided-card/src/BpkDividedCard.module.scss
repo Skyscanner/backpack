@@ -1,0 +1,68 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index.scss';
+
+$min-vertical-width: 240;
+$max-vertical-width: 720;
+$min-horizontal-width: 216;
+$min-horizontal-height: 292;
+
+.bpk-divided-card {
+  display: flex;
+
+  &--vertical {
+    min-width: $bpk-one-pixel-rem * $min-vertical-width;
+    max-width: $bpk-one-pixel-rem * $max-vertical-width;
+    flex-direction: column;
+  }
+
+  &--horizontal {
+    min-width: $bpk-one-pixel-rem * ($max-vertical-width + 1);
+    min-height: $bpk-one-pixel-rem * $min-horizontal-height;
+  }
+
+  &__primary {
+    &--horizontal {
+      flex: 1;
+    }
+
+    &--padded {
+      @include bpk-card--padded;
+    }
+  }
+
+  &__secondary {
+    &--vertical {
+      box-shadow: inset 0 $bpk-one-pixel-rem $bpk-color-sky-gray-tint-05;
+    }
+
+    &--horizontal {
+      width: $bpk-one-pixel-rem * $min-horizontal-width;
+      box-shadow: inset $bpk-one-pixel-rem 0 $bpk-color-sky-gray-tint-05;
+
+      @include bpk-rtl {
+        box-shadow: inset $bpk-one-pixel-rem * -1 0 $bpk-color-sky-gray-tint-05;
+      }
+    }
+
+    &--padded {
+      @include bpk-card--padded;
+    }
+  }
+}

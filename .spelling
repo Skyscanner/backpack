@@ -696,6 +696,7 @@ bpk-component-datatable
 bpk-component-datepicker
 bpk-component-description-list
 bpk-component-dialog
+bpk-component-divided-card
 bpk-component-drawer
 bpk-component-fieldset
 bpk-component-flare
@@ -909,3 +910,8 @@ nextNavLabel
 overImage
 VARIANT
 VARIANT.default
+primaryContent
+secondaryContent
+isPrimaryContentPadded
+isSecondaryContentPadded
+ORIENTATION.horizontal
