@@ -46,10 +46,7 @@ const BpkDismissibleChip = (props: Props) => {
   const iconClassNames = getClassName(
     `bpk-chip--${type}-dismissible__trailing-accessory-view`,
   );
-  const dismissibleClassNames = getClassName(
-    `bpk-chip--${type}-dismissible`,
-    className,
-  );
+  const classNames = getClassName(`bpk-chip--${type}-dismissible`, className);
 
   return (
     <BpkSelectableChip
@@ -59,7 +56,7 @@ const BpkDismissibleChip = (props: Props) => {
       selected
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
-      className={dismissibleClassNames}
+      className={classNames}
     />
   );
 };
