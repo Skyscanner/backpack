@@ -20,8 +20,9 @@
 
 $min-vertical-width: 240;
 $max-vertical-width: 720;
-$min-horizontal-width: 216;
+$min-horizontal-width: $max-vertical-width + 1;
 $min-horizontal-height: 292;
+$fixed-secondary-width: 216;
 
 .bpk-divided-card {
   display: flex;
@@ -33,7 +34,7 @@ $min-horizontal-height: 292;
   }
 
   &--horizontal {
-    min-width: $bpk-one-pixel-rem * ($max-vertical-width + 1);
+    min-width: $bpk-one-pixel-rem * $min-horizontal-width;
     min-height: $bpk-one-pixel-rem * $min-horizontal-height;
   }
 
@@ -53,7 +54,7 @@ $min-horizontal-height: 292;
     }
 
     &--horizontal {
-      width: $bpk-one-pixel-rem * $min-horizontal-width;
+      width: $bpk-one-pixel-rem * $fixed-secondary-width;
       box-shadow: inset $bpk-one-pixel-rem 0 $bpk-color-sky-gray-tint-05;
 
       @include bpk-rtl {

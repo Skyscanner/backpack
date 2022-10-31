@@ -64,7 +64,7 @@ const BpkDividedCard = (props: Props) => {
     <BpkCard className={classNames} href={href} padded={false} {...rest}>
       <div
         className={getClassName(
-          isVertical ? null : 'bpk-divided-card__primary--horizontal',
+          !isVertical && 'bpk-divided-card__primary--horizontal',
           isPrimaryContentPadded && 'bpk-divided-card__primary--padded',
         )}
       >

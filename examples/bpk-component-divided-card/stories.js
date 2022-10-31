@@ -31,8 +31,8 @@ export default {
 
 export const Default = DefaultExample;
 export const Vertical = VerticalExample;
-export const withoutPrimaryPadding = WithoutPrimaryPaddingExample;
-export const withoutSecondaryPadding = WithoutSecondaryPaddingExample;
+export const WithoutPrimaryPadding = WithoutPrimaryPaddingExample;
+export const WithoutSecondaryPadding = WithoutSecondaryPaddingExample;
 export const WithHref = WithHrefExample;
 
 export const VisualTest = MixedExample;
