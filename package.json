@@ -130,7 +130,7 @@
     "babel-jest": "^26.0.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "bpk-mixins": "^35.0.2",
+    "bpk-mixins": "^36.0.0",
     "bpk-stylesheets": "^8.1.8",
     "cli-progress": "^3.11.1",
     "colors": "^1.3.3",

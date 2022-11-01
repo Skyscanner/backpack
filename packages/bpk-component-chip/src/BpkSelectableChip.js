@@ -58,6 +58,7 @@ const BpkSelectableChip = (props: Props) => {
     'bpk-chip',
     `bpk-chip--${type}`,
     disabled && 'bpk-chip--disabled',
+    disabled && `bpk-chip--${type}-disabled`,
     !disabled && selected && `bpk-chip--${type}-selected`,
     className,
   );

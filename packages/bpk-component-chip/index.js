@@ -24,11 +24,15 @@ import BpkSelectableChip, {
 import BpkDismissibleChip, {
   type Props as DismissibleProps,
 } from './src/BpkDismissibleChip';
+import BpkDropdownChip, {
+  type Props as DropdownProps,
+} from './src/BpkDropdownChip';
 import { CHIP_TYPES } from './src/commonTypes';
 import themeAttributes from './src/themeAttributes';
 
 export type BpkSelectableChipProps = SelectableProps;
 export type BpkDismissibleChipProps = DismissibleProps;
+export type BpkDropdownChipProps = DropdownProps;
 
 export default BpkSelectableChip;
-export { BpkDismissibleChip, CHIP_TYPES, themeAttributes };
+export { BpkDismissibleChip, BpkDropdownChip, CHIP_TYPES, themeAttributes };

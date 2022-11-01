@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import React from 'react';
-import BpkSelectableChip, { BpkDismissibleChip, CHIP_TYPES } from '@skyscanner/backpack-web/bpk-component-chip';
+import BpkSelectableChip, { BpkDismissibleChip, BpkDropdownChip, CHIP_TYPES } from '@skyscanner/backpack-web/bpk-component-chip';
 import BeachIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/beach';
 
 export default () => (
@@ -34,6 +34,25 @@ export default () => (
     >
       Toggle me
     </BpkSelectableChip>
+
+    // Standard dropdown chip.
+    <BpkDropdownChip
+      accessibilityLabel="Press to toggle chip"
+      selected={false}
+      onClick={() => { /* Use state to set 'selected={true}' */ }}
+    >
+      Toggle me
+    </BpkDropdownChip>
+
+    // Dropdown chip with an icon.
+    <BpkDropdownChip
+      accessibilityLabel="Press to toggle chip"
+      selected={false}
+      onClick={() => { /* Use state to set 'selected={true}' */ }}
+      leadingAccessoryView={<BeachIconSm />}
+    >
+      Toggle me
+    </BpkDropdownChip>
 
     // Standard dismissible chip.
     <BpkDismissibleChip
@@ -69,7 +88,20 @@ export default () => (
 | leadingAccessoryView  | node                                                                  | false    | null          |
 | selected              | bool                                                                  | false    | false         |
 | trailingAccessoryView | node                                                                  | false    | null          |
-| type                  | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) |
+| type                  | oneOf(`CHIP_TYPES.onDark`, `CHIP_TYPES.default`, `CHIP_TYPES.onImage`) |
+
+### BpkDropdownChip
+
+| Property              | PropType                                                              | Required | Default Value |
+| --------------------- | --------------------------------------------------------------------- | -------- | ------------- |
+| accessibilityLabel    | string                                                                | true     | -             |
+| children              | node                                                                  | true     | -             |
+| onClick               | func                                                                  | true     | -             |
+| className             | string                                                                | false    | null          |
+| disabled              | bool                                                                  | false    | false         |
+| leadingAccessoryView  | node                                                                  | false    | null          |
+| selected              | bool                                                                  | false    | false         |
+| type                  | oneOf(`CHIP_TYPES.onDark`, `CHIP_TYPES.default`, `CHIP_TYPES.onImage`) |
 
 ### BpkDismissibleChip
 
@@ -81,29 +113,24 @@ Dismissible chips are selectable chips that have been preconfigured to have a 'c
 | children             | node                                                                  | true     | -             |
 | onClick              | func                                                                  | true     | -             |
 | className            | string                                                                | false    | null          |
-| disabled             | bool                                                                  | false    | false         |
 | leadingAccessoryView | node                                                                  | false    | null          |
-| type                 | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) |
+| type                 | oneOf(`CHIP_TYPES.onDark`, `CHIP_TYPES.default`, `CHIP_TYPES.onImage`) |
 
 ## Theme Props
 
-### Primary
+### Default
 
-- `chipPrimarySelectedBackgroundColor`
-- `chipPrimarySelectedHoverBackgroundColor`
-- `chipPrimarySelectedActiveBackgroundColor`
-- `chipPrimarySelectedTextColor`
+- `chipDefaultSelectedBackgroundColor`
+- `chipDefaultSelectedTextColor`
 
-### Light
+### On Dark
 
-- `chipLightSelectedBackgroundColor`
-- `chipLightSelectedHoverBackgroundColor`
-- `chipLightSelectedActiveBackgroundColor`
-- `chipLightSelectedTextColor`
+- `chipOnDarkSelectedBackgroundColor`
+- `chipOnDarkSelectedTextColor`
 
-### Success
+### On Image
 
-- `chipSuccessSelectedBackgroundColor`
-- `chipSuccessSelectedHoverBackgroundColor`
-- `chipSuccessSelectedActiveBackgroundColor`
-- `chipSuccessSelectedTextColor`
+- `chipOnImageSelectedBackgroundColor`
+- `chipOnImageSelectedHoverBackgroundColor`
+- `chipOnImageSelectedActiveBackgroundColor`
+- `chipOnImageSelectedTextColor`

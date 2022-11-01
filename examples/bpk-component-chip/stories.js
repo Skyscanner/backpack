@@ -25,6 +25,7 @@ import {
   WithIconsExample,
   RadioGroupChipsExample,
   DismissibleChipsExample,
+  DropdownChipsExample,
 } from './examples';
 
 export default {
@@ -34,6 +35,7 @@ export default {
 export const AllTypes = AllTypesExample;
 
 export const Selectable = SelectableChipsExample;
+export const Dropdown = DropdownChipsExample;
 export const AllSelectableTypes = AllSelectableChipStylesExample;
 export const WithIcons = WithIconsExample;
 

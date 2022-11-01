@@ -23,18 +23,14 @@ import themeAttributes from './themeAttributes';
 describe('themeAttributes', () => {
   it('exports the expected attributes', () => {
     expect(themeAttributes).toEqual([
-      'chipPrimarySelectedBackgroundColor',
-      'chipPrimarySelectedHoverBackgroundColor',
-      'chipPrimarySelectedActiveBackgroundColor',
-      'chipPrimarySelectedTextColor',
-      'chipLightSelectedBackgroundColor',
-      'chipLightSelectedHoverBackgroundColor',
-      'chipLightSelectedActiveBackgroundColor',
-      'chipLightSelectedTextColor',
-      'chipSuccessSelectedBackgroundColor',
-      'chipSuccessSelectedHoverBackgroundColor',
-      'chipSuccessSelectedActiveBackgroundColor',
-      'chipSuccessSelectedTextColor',
+      'chipDefaultSelectedBackgroundColor',
+      'chipDefaultSelectedTextColor',
+      'chipOnDarkSelectedBackgroundColor',
+      'chipOnDarkSelectedTextColor',
+      'chipOnImageSelectedBackgroundColor',
+      'chipOnImageSelectedHoverBackgroundColor',
+      'chipOnImageSelectedActiveBackgroundColor',
+      'chipOnImageSelectedTextColor',
     ]);
   });
 });

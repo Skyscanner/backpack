@@ -40,23 +40,27 @@ describe('BpkSelectableChip', () => {
 
   Object.keys(CHIP_TYPES).forEach((chipType) => {
     it(`should render correctly with type="${chipType}"`, () => {
-      const { asFragment } = render(<TestChip type={chipType} />);
+      const { asFragment } = render(<TestChip type={CHIP_TYPES[chipType]} />);
       expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}" and selected`, () => {
-      const { asFragment } = render(<TestChip type={chipType} selected />);
+      const { asFragment } = render(
+        <TestChip type={CHIP_TYPES[chipType]} selected />,
+      );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}" and disabled`, () => {
-      const { asFragment } = render(<TestChip type={chipType} disabled />);
+      const { asFragment } = render(
+        <TestChip type={CHIP_TYPES[chipType]} disabled />,
+      );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}", selected and disabled`, () => {
       const { asFragment } = render(
-        <TestChip type={chipType} selected disabled />,
+        <TestChip type={CHIP_TYPES[chipType]} selected disabled />,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -64,7 +68,7 @@ describe('BpkSelectableChip', () => {
     it(`should render correctly with type="${chipType}" and a leading accessory view`, () => {
       const { asFragment } = render(
         <TestChip
-          type={chipType}
+          type={CHIP_TYPES[chipType]}
           leadingAccessoryView={<span>Leading</span>}
         />,
       );
@@ -74,7 +78,7 @@ describe('BpkSelectableChip', () => {
     it(`should render correctly with type="${chipType}" and a trailing accessory view`, () => {
       const { asFragment } = render(
         <TestChip
-          type={chipType}
+          type={CHIP_TYPES[chipType]}
           trailingAccessoryView={<span>Trailing</span>}
         />,
       );
@@ -84,7 +88,7 @@ describe('BpkSelectableChip', () => {
     it(`should render correctly with type="${chipType}" and both a leading and trailing accessory view`, () => {
       const { asFragment } = render(
         <TestChip
-          type={chipType}
+          type={CHIP_TYPES[chipType]}
           leadingAccessoryView={<span>Leading</span>}
           trailingAccessoryView={<span>Trailing</span>}
         />,
