@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-input --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from 'bpk-component-input';
+import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from '@skyscanner/backpack-web/bpk-component-input';
 
 export default () => (
   <BpkInput
@@ -75,8 +73,8 @@ You can still attach custom handlers for these events as they will still be call
 
 ```js
 import React from 'react';
-import BpkInput, { withOpenEvents } from 'bpk-component-input';
-import BpkPopover from 'bpk-component-popover';
+import BpkInput, { withOpenEvents } from '@skyscanner/backpack-web/bpk-component-input';
+import BpkPopover from '@skyscanner/backpack-web/bpk-component-popover';
 
 const EnhancedInput = withOpenEvents(BpkInput);
 

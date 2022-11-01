@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-select --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage (controlled)
 
 ```js
 import React from 'react';
-import BpkSelect from 'bpk-component-select';
+import BpkSelect from '@skyscanner/backpack-web/bpk-component-select';
 
 export default () => (
   <BpkSelect

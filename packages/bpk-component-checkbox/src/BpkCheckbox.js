@@ -63,6 +63,7 @@ const BpkCheckbox = (props: Props) => {
     'bpk-checkbox',
     white && 'bpk-checkbox--white',
     disabled && 'bpk-checkbox--disabled',
+    white && disabled && 'bpk-checkbox--disabled--white',
     isInvalid && 'bpk-checkbox--invalid',
     className,
   );

@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-form-validation --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkFormValidation from 'bpk-component-form-validation';
+import BpkFormValidation from '@skyscanner/backpack-web/bpk-component-form-validation';
 
 export default () => (
   <BpkFormValidation id="my-form-validation" expanded>

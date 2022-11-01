@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-calendar --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkCalendar from 'bpk-component-calendar';
-import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
+import BpkCalendar from '@skyscanner/backpack-web/bpk-component-calendar';
+import BpkInput, { INPUT_TYPES } from '@skyscanner/backpack-web/bpk-component-input';
 import format from 'date-fns/format';
 
 const formatDateFull = date => format(date, 'EEEE, do MMMM yyyy');

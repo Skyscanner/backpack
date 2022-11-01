@@ -1,0 +1,91 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index.scss';
+
+$bpk-spacing-v2: true;
+$dot-size: bpk-spacing-md();
+$dot-margin: bpk-spacing-sm();
+$displayed-total: 5;
+/* stylelint-disable-next-line scss/operator-no-newline-after */
+$container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total *
+  2;
+
+.bpk-page-indicator {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  &__showNav {
+    justify-content: space-between;
+  }
+
+  &__container {
+    max-width: $container-width;
+    min-height: $dot-size;
+    overflow: hidden;
+  }
+
+  &__indicators-container {
+    --direction: -1;
+
+    /* stylelint-disable scss/operator-no-newline-after */
+    transform: translateX(
+      calc(
+        var(--direction) * var(--scroll-index, 0) * #{$dot-size + $dot-margin *
+          2}
+      )
+    );
+    /* stylelint-enable scss/operator-no-newline-after */
+    transition: transform $bpk-duration-sm ease-in-out;
+    white-space: nowrap;
+
+    @include bpk-rtl {
+      --direction: 1;
+    }
+  }
+
+  &__indicator {
+    display: inline-block;
+    width: $dot-size;
+    height: $dot-size;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    margin-inline: $dot-margin;
+
+    &--default {
+      background-color: $bpk-line-day;
+    }
+
+    &--overImage {
+      background-color: $bpk-line-on-dark-day;
+    }
+
+    &--active {
+      &-default {
+        background-color: $bpk-text-secondary-day;
+      }
+
+      &-overImage {
+        background-color: $bpk-text-on-dark-day;
+      }
+    }
+  }
+}

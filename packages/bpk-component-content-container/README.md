@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-content-container --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkContentContainer from 'bpk-component-content-container';
+import BpkContentContainer from '@skyscanner/backpack-web/bpk-component-content-container';
 
 export default () => (
   <BpkContentContainer>

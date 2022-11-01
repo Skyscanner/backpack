@@ -29,6 +29,7 @@ $bpk-spacing-v2: true;
     display: inline-block;
     padding: bpk-spacing-md() 0;
     border: none;
+    color: $bpk-text-primary-day;
     text-align: center;
     vertical-align: middle;
 
@@ -37,7 +38,7 @@ $bpk-spacing-v2: true;
 
     &--secondary-on-dark {
       background-color: transparent;
-      color: $bpk-text-primary-night;
+      color: $bpk-text-on-dark-day;
     }
 
     &--numeric {

@@ -4,17 +4,15 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-modal --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkModal from 'bpk-component-modal';
-import BpkButton from 'bpk-component-button';
-import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
+import BpkModal from '@skyscanner/backpack-web/bpk-component-modal';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkNavigationBarButtonLink } from '@skyscanner/backpack-web/bpk-component-navigation-bar';
 
 class App extends Component {
   constructor() {

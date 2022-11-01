@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-scrollable-calendar --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import { DateUtils } from 'bpk-component-calendar';
-import BpkScrollableCalendar, { CALENDAR_SELECTION_TYPE } from 'bpk-component-scrollable-calendar';
+import { DateUtils } from '@skyscanner/backpack-web/bpk-component-calendar';
+import BpkScrollableCalendar, { CALENDAR_SELECTION_TYPE } from '@skyscanner/backpack-web/bpk-component-scrollable-calendar';
 import format from 'date-fns/format';
 
 const formatDateFull = date => format(date, 'EEEE, do MMMM yyyy');

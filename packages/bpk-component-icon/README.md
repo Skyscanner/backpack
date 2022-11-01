@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-icon --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Basic usage
 
 ```js
 import React from 'react';
-import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
-import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility';
+import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
+import BpkLargeAccessibilityIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/accessibility';
 
 import './icons.scss';
 
@@ -42,10 +40,10 @@ export default () => (
 
 ```js
 import React from 'react';
-import BpkButton from 'bpk-component-button';
-import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
-import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility';
-import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
+import BpkLargeAccessibilityIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/accessibility';
+import { withButtonAlignment, withLargeButtonAlignment } from '@skyscanner/backpack-web/bpk-component-icon';
 
 const AlignedBpkSmallFlightIcon = withButtonAlignment(BpkSmallFlightIcon);
 const AlignedBpkLargeAccessibilityIcon = withLargeButtonAlignment(BpkLargeAccessibilityIcon);
@@ -66,8 +64,8 @@ export default () => (
 
 ```js
 import React from 'react';
-import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
-import { withRtlSupport } from 'bpk-component-icon';
+import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
+import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 
 import './icons.scss';
 

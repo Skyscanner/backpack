@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-phone-input --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkPhoneInput from 'bpk-component-phone-input';
-import BpkImage from 'bpk-component-image';
+import BpkPhoneInput from '@skyscanner/backpack-web/bpk-component-phone-input';
+import BpkImage from '@skyscanner/backpack-web/bpk-component-image';
 
 const DIALING_CODE_TO_ID_MAP = {
   '44': 'uk',

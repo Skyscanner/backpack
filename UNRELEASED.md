@@ -1,8 +1,10 @@
-`@skyscanner/backpack-web`: `14.0.0 => 14.0.1`
 
-**Patched:**
-  - `BpkCode` - updated to latest colours.
-  - `BpkSelect` - updated prop types to allow for BpkSelect to be used in a uncontrolled manner.
+`@skyscanner/backpack-web`: `14.1.0 => 14.2.0`
 
 **Changed:**
-  - `BpkPagination` - updated to the new colours.
+
+- `BpkFieldset`
+  - Updated spacing between label and input field.
+  
+**Patched:**
+  - `BpkSelect` - updated prop types to allow for BpkSelect to be used in a uncontrolled manner.

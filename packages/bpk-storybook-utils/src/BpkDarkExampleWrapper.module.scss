@@ -23,7 +23,7 @@
   @include bpk-themeable-property(
     background-color,
     --bpk-docs-sidebar-background,
-    $bpk-color-sky-blue-shade-02
+    $bpk-core-primary-day
   );
 
   &--padded {

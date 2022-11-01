@@ -7,9 +7,7 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-content-cards --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 

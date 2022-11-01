@@ -4,15 +4,13 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-slider --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkSlider from 'bpk-component-slider';
+import BpkSlider from '@skyscanner/backpack-web/bpk-component-slider';
 
 const Slider = () => (
   <BpkSlider

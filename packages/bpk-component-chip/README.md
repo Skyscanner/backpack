@@ -4,16 +4,14 @@
 
 ## Installation
 
-```sh
-npm install bpk-component-chip --save-dev
-```
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkSelectableChip, { BpkDismissibleChip, CHIP_TYPES } from 'bpk-component-chip';
-import BeachIconSm from 'bpk-component-icon/sm/beach';
+import BpkSelectableChip, { BpkDismissibleChip, CHIP_TYPES } from '@skyscanner/backpack-web/bpk-component-chip';
+import BeachIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/beach';
 
 export default () => (
 
