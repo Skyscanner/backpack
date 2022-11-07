@@ -24,6 +24,10 @@
     flex-wrap: wrap;
   }
 
+  &__container {
+    padding: bpk-spacing-base() $bpk-spacing-none;
+  }
+
   &__chip {
     margin-right: $bpk-spacing-xs;
     margin-bottom: $bpk-spacing-sm;
@@ -44,6 +48,6 @@
   &__on-image {
     padding-top: $bpk-spacing-sm;
     padding-left: bpk-spacing-md();
-    background-color: $bpk-surface-default-day;
+    background-color: $bpk-surface-highlight-day;
   }
 }

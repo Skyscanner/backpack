@@ -18,7 +18,7 @@
 
 import React from 'react';
 import {
-  colors,
+  textColors,
   lineHeightBase,
   iconSizeSm,
   iconSizeLg,
@@ -64,7 +64,7 @@ const SmallIconsExample = () => (
       const Icon = sm[icon];
       return (
         <BpkListItem key={icon}>
-          <Icon fill={colors.colorSkyGrayTint01} /> <span>{icon}</span>
+          <Icon fill={textColors.textPrimaryDay} /> <span>{icon}</span>
         </BpkListItem>
       );
     })}
@@ -77,7 +77,7 @@ const LargeIconsExample = () => (
       const Icon = lg[icon];
       return (
         <BpkListItem key={icon}>
-          <Icon fill={colors.colorSkyGrayTint01} /> <span>{icon}</span>
+          <Icon fill={textColors.textPrimaryDay} /> <span>{icon}</span>
         </BpkListItem>
       );
     })}
@@ -87,46 +87,51 @@ const LargeIconsExample = () => (
 const AlignToBaseTextExample = () => (
   <BpkText textStyle={TEXT_STYLES.bodyDefault}>
     Search &nbsp;
-    <AlignedBaseArrow fill={colors.colorSkyGrayTint01} />
+    <AlignedBaseArrow fill={textColors.textPrimaryDay} />
   </BpkText>
 );
 
 const AlignToLargeTextExample = () => (
   <BpkText textStyle={TEXT_STYLES.bodyLongform}>
     Search &nbsp;
-    <AlignedLargeLongArrowRightIcon fill={colors.colorSkyGrayTint01} />
+    <AlignedLargeLongArrowRightIcon fill={textColors.textPrimaryDay} />
   </BpkText>
 );
 
 const AlignSmallTextToIconExample = () => (
   <BpkText textStyle={TEXT_STYLES.footnote}>
-    <SearchIcon fill={colors.colorSkyGrayTint01} />
+    <SearchIcon fill={textColors.textPrimaryDay} />
     <AlignedSpanSmall>&nbsp; Search</AlignedSpanSmall>
   </BpkText>
 );
 
 const AlignTextToIconExample = () => (
   <BpkText textStyle={TEXT_STYLES.bodyDefault}>
-    <SearchIcon fill={colors.colorSkyGrayTint01} />
+    <SearchIcon fill={textColors.textPrimaryDay} />
     <AlignedSpan>&nbsp; Search</AlignedSpan>
   </BpkText>
 );
 
 const AlignToButtonExample = () => (
   <BpkButton>
-    Next step <AlignedSmallLongArrowRightIcon fill={colors.colorWhite} />
+    Next step{' '}
+    <AlignedSmallLongArrowRightIcon fill={textColors.textPrimaryInverseDay} />
   </BpkButton>
 );
 
 const AlignToLargeButtonExample = () => (
   <BpkButton large>
-    Next step <AlignedLargeLongArrowRightIcon fill={colors.colorWhite} />
+    Next step{' '}
+    <AlignedLargeLongArrowRightIcon fill={textColors.textPrimaryInverseDay} />
   </BpkButton>
 );
 
 const AlignToLargeButtonRTLExample = () => (
   <BpkButton large>
-    Search <RtlAlignedLargeLongArrowRightIcon fill={colors.colorWhite} />
+    Search{' '}
+    <RtlAlignedLargeLongArrowRightIcon
+      fill={textColors.textPrimaryInverseDay}
+    />
   </BpkButton>
 );
 

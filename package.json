@@ -108,7 +108,7 @@
     "@babel/preset-typescript": "^7.17.12",
     "@babel/register": "^7.17.7",
     "@skyscanner/bpk-foundations-web": "^12.1.2",
-    "@skyscanner/bpk-svgs": "^15.1.6",
+    "@skyscanner/bpk-svgs": "^15.2.0",
     "@skyscanner/stylelint-config-skyscanner": "^6.0.0",
     "@storybook/addon-a11y": "^6.0.2",
     "@storybook/addon-actions": "^6.0.2",
