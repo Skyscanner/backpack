@@ -29,25 +29,21 @@
   }
 
   &__chip {
-    margin-right: $bpk-spacing-xs;
-    margin-bottom: $bpk-spacing-sm;
+    margin-right: bpk-spacing-md();
   }
 
   &__on-dark {
-    padding-top: $bpk-spacing-sm;
-    padding-left: bpk-spacing-md();
+    padding: bpk-spacing-base();
     background-color: $bpk-core-primary-day;
   }
 
   &__default {
-    padding-top: $bpk-spacing-sm;
-    padding-left: bpk-spacing-md();
+    padding: bpk-spacing-base();
     background-color: $bpk-surface-default-day;
   }
 
   &__on-image {
-    padding-top: $bpk-spacing-sm;
-    padding-left: bpk-spacing-md();
+    padding: bpk-spacing-base();
     background-color: $bpk-surface-highlight-day;
   }
 }

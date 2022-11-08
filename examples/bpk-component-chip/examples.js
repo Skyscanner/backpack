@@ -138,7 +138,7 @@ class StatefulDismissibleChipsExample extends React.Component<
   constructor() {
     super();
     this.state = {
-      chips: ['Nara', 'Monteverde', 'Panjin', 'Kolkata'],
+      chips: ['Cheapest flights', 'Direct flights', 'Most popular'],
       updates: [],
     };
   }
@@ -194,7 +194,7 @@ class StatefulRadioGroupChipsExample extends React.Component<
     super();
     this.state = {
       selectedIndex: 0,
-      chips: ['Nara', 'Monteverde', 'Panjin', 'Kolkata'],
+      chips: ['Cheapest flights', 'Direct flights', 'Most popular'],
       updates: [],
     };
   }
@@ -254,26 +254,24 @@ class StatefulRadioGroupChipsExample extends React.Component<
 
 const StatefulSelectableChips = ({ ...rest }: {}) => (
   <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>
-    <StatefulSelectableChip {...rest}>Flights</StatefulSelectableChip>
+    <StatefulSelectableChip {...rest}>Cheapest flights</StatefulSelectableChip>
     <StatefulSelectableChip {...rest} selected>
-      Hotels
+      Direct flights
     </StatefulSelectableChip>
-    <StatefulSelectableChip {...rest}>Car hire</StatefulSelectableChip>
     <StatefulSelectableChip {...rest} disabled>
-      Disabled
+      Most popular
     </StatefulSelectableChip>
   </div>
 );
 
 const StatefulDropdownChips = ({ ...rest }: {}) => (
   <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>
-    <StatefulDropdownChip {...rest}>Flights</StatefulDropdownChip>
+    <StatefulDropdownChip {...rest}>Car type</StatefulDropdownChip>
     <StatefulDropdownChip {...rest} selected>
-      Hotels
+      Pick-up
     </StatefulDropdownChip>
-    <StatefulDropdownChip {...rest}>Car hire</StatefulDropdownChip>
     <StatefulDropdownChip {...rest} disabled>
-      Disabled
+      Seats
     </StatefulDropdownChip>
   </div>
 );
