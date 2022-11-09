@@ -286,17 +286,21 @@ const AllSelectableChipsExample = () => (
       Selectable chips
     </BpkText>
     {Object.keys(CHIP_TYPES).map((chipType) => (
-      <div className={getClassName(`bpk-chip-examples__container`)}>
-        <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
-        <StatefulSelectableChips type={CHIP_TYPES[chipType]} />
-        <BpkText textStyle={TEXT_STYLES.heading3}>
-          {chipType} with leading icon
-        </BpkText>
-        <StatefulSelectableChips
-          type={CHIP_TYPES[chipType]}
-          leadingAccessoryView={<FaceHappyIconSm />}
-        />
-      </div>
+      <>
+        <div className={getClassName(`bpk-chip-examples__container`)}>
+          <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
+          <StatefulSelectableChips type={CHIP_TYPES[chipType]} />
+        </div>
+        <div className={getClassName(`bpk-chip-examples__container`)}>
+          <BpkText textStyle={TEXT_STYLES.heading3}>
+            {chipType} with leading icon
+          </BpkText>
+          <StatefulSelectableChips
+            type={CHIP_TYPES[chipType]}
+            leadingAccessoryView={<FaceHappyIconSm />}
+          />
+        </div>
+      </>
     ))}
   </>
 );
