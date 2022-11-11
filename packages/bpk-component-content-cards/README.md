@@ -1,4 +1,4 @@
-# BpkContentCards
+# bpk-component-content-cards
 
 > Backpack example component.
 
