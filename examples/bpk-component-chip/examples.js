@@ -281,7 +281,7 @@ const RadioGroupChipsExample = () => (
 );
 
 const AllSelectableChipsExample = () => (
-  <>
+  <div>
     <BpkText textStyle={TEXT_STYLES.heading1} tagName="h2">
       Selectable chips
     </BpkText>
@@ -302,11 +302,11 @@ const AllSelectableChipsExample = () => (
         </div>
       </>
     ))}
-  </>
+  </div>
 );
 
 const AllDropdownChipsExample = () => (
-  <>
+  <div>
     <BpkText textStyle={TEXT_STYLES.heading1} tagName="h2">
       Dropdown chips
     </BpkText>
@@ -316,11 +316,11 @@ const AllDropdownChipsExample = () => (
         <StatefulDropdownChips type={CHIP_TYPES[chipType]} />
       </div>
     ))}
-  </>
+  </div>
 );
 
 const AllDismissibleChipsExample = () => (
-  <>
+  <div>
     <BpkText textStyle={TEXT_STYLES.heading1} tagName="h2">
       Dismissible chips
     </BpkText>
@@ -330,7 +330,7 @@ const AllDismissibleChipsExample = () => (
         <StatefulDismissibleChipsExample type={CHIP_TYPES[chipType]} />
       </div>
     ))}
-  </>
+  </div>
 );
 
 const AllTypesExample = () => (

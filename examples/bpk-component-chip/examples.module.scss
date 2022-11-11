@@ -25,7 +25,11 @@
   }
 
   &__container {
-    padding: bpk-spacing-base() $bpk-spacing-none;
+    padding-top: bpk-spacing-xl();
+
+    &:last-child {
+      padding-bottom: 13 * bpk-spacing-md();
+    }
   }
 
   &__chip {
@@ -33,16 +37,19 @@
   }
 
   &__on-dark {
+    margin-top: bpk-spacing-xl();
     padding: bpk-spacing-base();
     background-color: $bpk-core-primary-day;
   }
 
   &__default {
+    margin-top: bpk-spacing-xl();
     padding: bpk-spacing-base();
     background-color: $bpk-surface-default-day;
   }
 
   &__on-image {
+    margin-top: bpk-spacing-xl();
     padding: bpk-spacing-base();
     background-color: $bpk-surface-highlight-day;
   }
