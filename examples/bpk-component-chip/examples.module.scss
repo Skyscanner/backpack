@@ -25,10 +25,10 @@
   }
 
   &__container {
-    padding-top: bpk-spacing-xl();
+    padding-top: bpk-spacing-lg();
 
     &:last-child {
-      padding-bottom: 13 * bpk-spacing-md();
+      padding-bottom: bpk-spacing-xl();
     }
   }
 
@@ -37,19 +37,19 @@
   }
 
   &__on-dark {
-    margin-top: bpk-spacing-xl();
+    margin-top: bpk-spacing-lg();
     padding: bpk-spacing-base();
     background-color: $bpk-core-primary-day;
   }
 
   &__default {
-    margin-top: bpk-spacing-xl();
+    margin-top: bpk-spacing-lg();
     padding: bpk-spacing-base();
     background-color: $bpk-surface-default-day;
   }
 
   &__on-image {
-    margin-top: bpk-spacing-xl();
+    margin-top: bpk-spacing-lg();
     padding: bpk-spacing-base();
     background-color: $bpk-surface-highlight-day;
   }
