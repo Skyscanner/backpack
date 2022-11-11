@@ -60,7 +60,7 @@ describe('BpkRating', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render showScale with false rating correctly', () => {
+  it('should not show scale with showScale=false correctly', () => {
     const { asFragment } = render(
       <BpkRating
         ariaLabel="4.9 Awesome It is a fantanstic place"
@@ -84,6 +84,18 @@ describe('BpkRating', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render large title only correctly', () => {
+    const { asFragment } = render(
+      <BpkRating
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        value={6.7}
+        size={RATING_SIZES.large}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render zero to ten scale rating correctly', () => {
     const { asFragment } = render(
       <BpkRating
@@ -92,82 +104,6 @@ describe('BpkRating', () => {
         title="Excellent"
         subtitle="2,420 reviews"
         ratingScale={RATING_SCALES.zeroToTen}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render a low score rating component', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="1.3 Low bad option"
-        title="Low"
-        subtitle="Bad option"
-        value={1.3}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render a medium score rating component (zero to five scale)', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="3.7 Average it's ok at best"
-        title="Average"
-        subtitle="It's ok at best"
-        value={3.7}
-        ratingScale={RATING_SCALES.zeroToFive}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render a medium score rating component (zero to ten scale)', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="6.8 Average it's ok at best"
-        title="Average"
-        subtitle="It's ok at best"
-        value={6.8}
-        ratingScale={RATING_SCALES.zeroToTen}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render a high score rating component (zero to ten scale)', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="9 Amazing best thing since sliced bread"
-        title="Amazing"
-        subtitle="Best thing since sliced bread"
-        value={9}
-        ratingScale={RATING_SCALES.zeroToTen}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render a high score rating component (zero to five scale)', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="4 Amazing best thing since sliced bread"
-        title="Amazing"
-        subtitle="Best thing since sliced bread"
-        value={4}
-        ratingScale={RATING_SCALES.zeroToFive}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render a high score rating component', () => {
-    const { asFragment } = render(
-      <BpkRating
-        ariaLabel="4.7 Amazing best thing since sliced bread"
-        title="Amazing"
-        subtitle="Best thing since sliced bread"
-        value={4.7}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

@@ -68,12 +68,24 @@ const BpkRating = (props: Props) => {
     ...rest
   } = props;
 
-  const classNames = [getClassName('bpk-rating', className)];
-  const valueStyles = [getClassName('bpk-rating__value')];
-  const scaleStyles = [getClassName('bpk-rating__scale')];
-  const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
-  const titleStyles = [];
-  const subtitleStyles = [getClassName('bpk-rating__subtitle')];
+  const classNames = getClassName(
+    'bpk-rating',
+    className,
+    size === RATING_SIZES.large && subtitle && 'bpk-rating--large',
+  );
+  const valueStyles = getClassName('bpk-rating__value');
+  const scaleStyles = getClassName('bpk-rating__scale');
+  const textWrapperStyles = getClassName(
+    'bpk-rating__text-wrapper',
+    size === RATING_SIZES.large && 'bpk-rating__text-wrapper--large',
+  );
+  const titleStyles = getClassName(
+    size === RATING_SIZES.large && 'bpk-rating__title--large',
+  );
+  const subtitleStyles = getClassName(
+    'bpk-rating__subtitle',
+    size === RATING_SIZES.large && 'bpk-rating__subtitle--large',
+  );
 
   let valueTextSize = TEXT_STYLES.label1;
   let scaleTextSize = TEXT_STYLES.caption;
@@ -81,11 +93,6 @@ const BpkRating = (props: Props) => {
   let subtitleTextSize = TEXT_STYLES.caption;
 
   if (size === RATING_SIZES.large) {
-    classNames.push(getClassName('bpk-rating--large'));
-    textWrapperStyles.push(getClassName('bpk-rating__text-wrapper--large'));
-    titleStyles.push(getClassName('bpk-rating__title--large'));
-    subtitleStyles.push(getClassName('bpk-rating__subtitle--large'));
-
     valueTextSize = TEXT_STYLES.hero5;
     scaleTextSize = TEXT_STYLES.bodyDefault;
     titleTextSize = TEXT_STYLES.heading5;
@@ -103,16 +110,11 @@ const BpkRating = (props: Props) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div
-      className={classNames.join(' ')}
-      aria-label={ariaLabel}
-      role="figure"
-      {...rest}
-    >
+    <div className={classNames} aria-label={ariaLabel} role="figure" {...rest}>
       <BpkText
         textStyle={valueTextSize}
         tagName="span"
-        className={valueStyles.join(' ')}
+        className={valueStyles}
         aria-hidden="true"
       >
         {adjustedValue}
@@ -120,7 +122,7 @@ const BpkRating = (props: Props) => {
         {showScale && (
           <BpkText
             textStyle={scaleTextSize}
-            className={scaleStyles.join(' ')}
+            className={scaleStyles}
             tagName="span"
             aria-hidden="true"
           >
@@ -129,10 +131,10 @@ const BpkRating = (props: Props) => {
         )}
       </BpkText>
 
-      <div className={textWrapperStyles.join(' ')}>
+      <div className={textWrapperStyles}>
         <BpkText
           textStyle={titleTextSize}
-          className={titleStyles.join(' ')}
+          className={titleStyles}
           tagName="span"
           aria-hidden="true"
         >
@@ -141,7 +143,7 @@ const BpkRating = (props: Props) => {
 
         {subtitle && (
           <BpkText
-            className={subtitleStyles.join(' ')}
+            className={subtitleStyles}
             textStyle={subtitleTextSize}
             tagName="span"
             aria-hidden="true"
