@@ -17,7 +17,7 @@
  */
 
 module.exports = {
-  stories: ['../examples/**/stories.@(ts|js)'],
+  stories: ['../examples/bpk-component-content-cards/stories.@(ts|js)'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
