@@ -4,7 +4,7 @@ exports[`BpkSelectableChip should render correctly 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--primary"
+    class="bpk-chip bpk-chip--default"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -22,7 +22,7 @@ exports[`BpkSelectableChip should render correctly with a "className" attribute 
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--primary custom-class"
+    class="bpk-chip bpk-chip--default custom-class"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -36,11 +36,11 @@ exports[`BpkSelectableChip should render correctly with a "className" attribute 
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="light" 1`] = `
+exports[`BpkSelectableChip should render correctly with type="default" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--light"
+    class="bpk-chip bpk-chip--default"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -54,11 +54,11 @@ exports[`BpkSelectableChip should render correctly with type="light" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="light" and a leading accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="default" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--light"
+    class="bpk-chip bpk-chip--default"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -79,11 +79,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and a leadi
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="light" and a trailing accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="default" and a trailing accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--light"
+    class="bpk-chip bpk-chip--default"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -104,11 +104,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and a trail
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="light" and both a leading and trailing accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="default" and both a leading and trailing accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--light"
+    class="bpk-chip bpk-chip--default"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -136,11 +136,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and both a 
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="light" and disabled 1`] = `
+exports[`BpkSelectableChip should render correctly with type="default" and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--light bpk-chip--disabled"
+    class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -155,11 +155,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and disable
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="light" and selected 1`] = `
+exports[`BpkSelectableChip should render correctly with type="default" and selected 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--light bpk-chip--light-selected"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -173,11 +173,11 @@ exports[`BpkSelectableChip should render correctly with type="light" and selecte
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="light", selected and disabled 1`] = `
+exports[`BpkSelectableChip should render correctly with type="default", selected and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--light bpk-chip--disabled"
+    class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -192,11 +192,11 @@ exports[`BpkSelectableChip should render correctly with type="light", selected a
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="primary" 1`] = `
+exports[`BpkSelectableChip should render correctly with type="onDark" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--primary"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -210,11 +210,11 @@ exports[`BpkSelectableChip should render correctly with type="primary" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="primary" and a leading accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="onDark" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--primary"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -235,11 +235,11 @@ exports[`BpkSelectableChip should render correctly with type="primary" and a lea
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="primary" and a trailing accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="onDark" and a trailing accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--primary"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -260,167 +260,11 @@ exports[`BpkSelectableChip should render correctly with type="primary" and a tra
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="primary" and both a leading and trailing accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="onDark" and both a leading and trailing accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--primary"
-    role="checkbox"
-    title="Toggle"
-    type="button"
-  >
-    <span
-      class="bpk-chip__leading-accessory-view"
-    >
-      <span>
-        Leading
-      </span>
-    </span>
-    <span
-      class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
-    <span
-      class="bpk-chip__trailing-accessory-view"
-    >
-      <span>
-        Trailing
-      </span>
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`BpkSelectableChip should render correctly with type="primary" and disabled 1`] = `
-<DocumentFragment>
-  <button
-    aria-checked="false"
-    class="bpk-chip bpk-chip--primary bpk-chip--disabled"
-    disabled=""
-    role="checkbox"
-    title="Toggle"
-    type="button"
-  >
-    <span
-      class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`BpkSelectableChip should render correctly with type="primary" and selected 1`] = `
-<DocumentFragment>
-  <button
-    aria-checked="true"
-    class="bpk-chip bpk-chip--primary bpk-chip--primary-selected"
-    role="checkbox"
-    title="Toggle"
-    type="button"
-  >
-    <span
-      class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`BpkSelectableChip should render correctly with type="primary", selected and disabled 1`] = `
-<DocumentFragment>
-  <button
-    aria-checked="true"
-    class="bpk-chip bpk-chip--primary bpk-chip--disabled"
-    disabled=""
-    role="checkbox"
-    title="Toggle"
-    type="button"
-  >
-    <span
-      class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`BpkSelectableChip should render correctly with type="success" 1`] = `
-<DocumentFragment>
-  <button
-    aria-checked="false"
-    class="bpk-chip bpk-chip--success"
-    role="checkbox"
-    title="Toggle"
-    type="button"
-  >
-    <span
-      class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`BpkSelectableChip should render correctly with type="success" and a leading accessory view 1`] = `
-<DocumentFragment>
-  <button
-    aria-checked="false"
-    class="bpk-chip bpk-chip--success"
-    role="checkbox"
-    title="Toggle"
-    type="button"
-  >
-    <span
-      class="bpk-chip__leading-accessory-view"
-    >
-      <span>
-        Leading
-      </span>
-    </span>
-    <span
-      class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`BpkSelectableChip should render correctly with type="success" and a trailing accessory view 1`] = `
-<DocumentFragment>
-  <button
-    aria-checked="false"
-    class="bpk-chip bpk-chip--success"
-    role="checkbox"
-    title="Toggle"
-    type="button"
-  >
-    <span
-      class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
-    <span
-      class="bpk-chip__trailing-accessory-view"
-    >
-      <span>
-        Trailing
-      </span>
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`BpkSelectableChip should render correctly with type="success" and both a leading and trailing accessory view 1`] = `
-<DocumentFragment>
-  <button
-    aria-checked="false"
-    class="bpk-chip bpk-chip--success"
+    class="bpk-chip bpk-chip--on-dark"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -448,11 +292,11 @@ exports[`BpkSelectableChip should render correctly with type="success" and both 
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="success" and disabled 1`] = `
+exports[`BpkSelectableChip should render correctly with type="onDark" and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--success bpk-chip--disabled"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -467,11 +311,11 @@ exports[`BpkSelectableChip should render correctly with type="success" and disab
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="success" and selected 1`] = `
+exports[`BpkSelectableChip should render correctly with type="onDark" and selected 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--success bpk-chip--success-selected"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -485,11 +329,167 @@ exports[`BpkSelectableChip should render correctly with type="success" and selec
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="success", selected and disabled 1`] = `
+exports[`BpkSelectableChip should render correctly with type="onDark", selected and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--success bpk-chip--disabled"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
+    disabled=""
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="onImage" 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="onImage" and a leading accessory view 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="onImage" and a trailing accessory view 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <span>
+        Trailing
+      </span>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="onImage" and both a leading and trailing accessory view 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <span>
+        Trailing
+      </span>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="onImage" and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
+    disabled=""
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="onImage" and selected 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="onImage", selected and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
     disabled=""
     role="checkbox"
     title="Toggle"

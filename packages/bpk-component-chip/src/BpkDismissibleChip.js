@@ -20,12 +20,13 @@
 
 /*
 The dismissible chip component is just a selectable chip that's
-been hard coded to have selected={false} and a trailing accessory view
-of a close icon.
+been hard coded to have disabled={false}, selected and a trailing
+accessory view of a close icon.
 */
 
 import React from 'react';
 
+import { cssModules } from '../../bpk-react-utils';
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
 
 import BpkSelectableChip from './BpkSelectableChip';
@@ -34,18 +35,28 @@ import {
   COMMON_DEFAULT_PROPS,
   type CommonProps,
 } from './commonTypes';
+import STYLES from './BpkSelectableChip.module.scss';
 
 export type Props = CommonProps;
 
+const getClassName = cssModules(STYLES);
+
 const BpkDismissibleChip = (props: Props) => {
-  const { ...rest } = props;
+  const { className, type, ...rest } = props;
+  const iconClassNames = getClassName(
+    `bpk-chip--${type}-dismissible__trailing-accessory-view`,
+  );
+  const classNames = getClassName(`bpk-chip--${type}-dismissible`, className);
 
   return (
     <BpkSelectableChip
       {...rest}
-      trailingAccessoryView={<CloseCircleIconSm />}
-      selected={false}
+      disabled={false}
+      trailingAccessoryView={<CloseCircleIconSm className={iconClassNames} />}
+      selected
+      type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
+      className={classNames}
     />
   );
 };

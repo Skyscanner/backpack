@@ -21,36 +21,20 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BpkDismissibleChip from './BpkDismissibleChip';
+import BpkDropdownChip from './BpkDropdownChip';
 import { CHIP_TYPES } from './commonTypes';
 
 // Just a convenience wrapper that includes the default props so we don't
 // have to keep writing them for each test.
 const TestChip = ({ ...rest }) => (
-  <BpkDismissibleChip
-    onClick={() => null}
-    accessibilityLabel="Dismiss"
-    {...rest}
-  >
-    Dismiss me
-  </BpkDismissibleChip>
+  <BpkDropdownChip onClick={() => null} accessibilityLabel="Toggle" {...rest}>
+    Toggle me
+  </BpkDropdownChip>
 );
 
-describe('BpkDismissibleChip', () => {
+describe('BpkDropdownChip', () => {
   it('should render correctly', () => {
     const { asFragment } = render(<TestChip />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it(`should override setting selected={true}, resulting in selected={false}`, () => {
-    const { asFragment } = render(<TestChip selected />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it(`should ignore setting a trailing accessory view, resulting in a close icon`, () => {
-    const { asFragment } = render(
-      <TestChip trailingAccessoryView={<span>trailing</span>} />,
-    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -60,9 +44,23 @@ describe('BpkDismissibleChip', () => {
       expect(asFragment()).toMatchSnapshot();
     });
 
+    it(`should render correctly with type="${chipType}" and selected`, () => {
+      const { asFragment } = render(
+        <TestChip type={CHIP_TYPES[chipType]} selected />,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
     it(`should render correctly with type="${chipType}" and disabled`, () => {
       const { asFragment } = render(
         <TestChip type={CHIP_TYPES[chipType]} disabled />,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it(`should render correctly with type="${chipType}", selected and disabled`, () => {
+      const { asFragment } = render(
+        <TestChip type={CHIP_TYPES[chipType]} selected disabled />,
       );
       expect(asFragment()).toMatchSnapshot();
     });

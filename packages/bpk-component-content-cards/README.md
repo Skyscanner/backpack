@@ -1,9 +1,6 @@
-# BpkContentCards
+# bpk-component-content-cards
 
 > Backpack example component.
-
-- [Storybook link](https://backpack.github.io/storybook)
-- [Content Cards Docs](backpack.github.io/components/content-cards)
 
 ## Installation
 

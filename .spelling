@@ -32,6 +32,7 @@ BpkCarouselItem
 BpkChip
 BpkDismissibleChip
 BpkSelectableChip
+BpkDropdownChip
 
 BpkDialingCodeList
 

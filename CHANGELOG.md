@@ -1,10 +1,31 @@
+# 2022-11-01
+
+`@skyscanner/backpack-web`: `14.1.0 => 15.0.0`
+
+**Changed:**
+
+- `BpkFieldset`:
+  - Updated spacing between label and input field.
+
+**Breaking:**
+
+- `BpkChip`:
+  - Change theme type of the Chip component: `primary` => `default`, `light` => `onDark`
+  - Delete theme type of the Chip component: `success`
+
+**Added:**
+
+- `BpkChip`:
+  - Added theme type of the Chip component: `onImage`
+  - Added a new Chip type: `BpkDropdownChip`
+
 # 2022-10-25
 
 `@skyscanner/backpack-web`: `14.0.0 => 14.1.0`
 
 **Added**
 
-- bpk-component-page-indicator
+- `BpkPageIndicator`:
   - The page indicator is a new component which indicates the current page in a stack of pages. And it provides a callback function and scrolling styles when switching pages.
 
 **Changed:**
