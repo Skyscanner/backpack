@@ -22,8 +22,8 @@ import PropTypes from 'prop-types';
 import { type Node } from 'react';
 
 export const CHIP_TYPES = {
-  onDark: 'on-dark',
   default: 'default',
+  onDark: 'on-dark',
   onImage: 'on-image',
 };
 
