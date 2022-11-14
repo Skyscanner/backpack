@@ -867,6 +867,7 @@ BADGE_TYPES.light
 BADGE_TYPES.inverse
 BADGE_TYPES.outline
 BADGE_TYPES.strong
+BADGE_TYPES.brand
 BarComponent
 outlierPercentage
 onBarClick

@@ -30,6 +30,7 @@ import {
   OutlineExample,
   MixedExample,
   StrongExample,
+  BrandExample,
 } from './examples';
 
 export default {
@@ -48,6 +49,7 @@ export const WarningDefault = WarningExample;
 export const Success = SuccessExample;
 export const Destructive = DestructiveExample;
 export const Strong = StrongExample;
+export const Brand = BrandExample;
 export const Light = LightExample;
 export const Inverse = InverseExample;
 export const Outline = OutlineExample;

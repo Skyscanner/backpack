@@ -64,6 +64,16 @@ exports[`BpkBadge should render correctly with an icon 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkBadge should render correctly with type="brand" 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-badge bpk-badge--brand"
+  >
+    Promociando
+  </span>
+</DocumentFragment>
+`;
+
 exports[`BpkBadge should render correctly with type="destructive" 1`] = `
 <DocumentFragment>
   <span
