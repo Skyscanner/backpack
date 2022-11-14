@@ -28,7 +28,7 @@ export default () => (
 | centered  | bool                                                                                                                                                     | false    | null                |
 | className | string                                                                                                                                                   | false    | null                |
 | docked    | oneOf('left', 'right')                                                                                                                                   | false    | null                |
-| type      | oneOf(BADGE_TYPES.warning, BADGE_TYPES.success, BADGE_TYPES.destructive, BADGE_TYPES.light, BADGE_TYPES.inverse, BADGE_TYPES.outline, BADGE_TYPES.strong)| false    | BADGE_TYPES.warning |
+| type      | oneOf(BADGE_TYPES.warning, BADGE_TYPES.success, BADGE_TYPES.destructive, BADGE_TYPES.light, BADGE_TYPES.inverse, BADGE_TYPES.outline, BADGE_TYPES.strong, BADGE_TYPES.brand)| false    | BADGE_TYPES.warning |
 
 ## Theme props
 
