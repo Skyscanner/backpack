@@ -44,22 +44,6 @@ const VerticalExample = () => (
     />
   </div>
 );
-const WithoutPrimaryPaddingExample = () => (
-  <BpkDividedCard
-    primaryContent={longMessage}
-    secondaryContent={message}
-    isPrimaryContentPadded={false}
-  />
-);
-
-const WithoutSecondaryPaddingExample = () => (
-  <BpkDividedCard
-    primaryContent={longMessage}
-    secondaryContent={message}
-    isSecondaryContentPadded={false}
-  />
-);
-
 const WithHrefExample = () => (
   <BpkDividedCard
     primaryContent={longMessage}
@@ -72,17 +56,8 @@ const MixedExample = () => (
   <div>
     <DefaultExample />
     <VerticalExample />
-    <WithoutPrimaryPaddingExample />
-    <WithoutSecondaryPaddingExample />
     <WithHrefExample />
   </div>
 );
 
-export {
-  DefaultExample,
-  VerticalExample,
-  WithoutPrimaryPaddingExample,
-  WithoutSecondaryPaddingExample,
-  WithHrefExample,
-  MixedExample,
-};
+export { DefaultExample, VerticalExample, WithHrefExample, MixedExample };

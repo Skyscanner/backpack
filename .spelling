@@ -915,6 +915,4 @@ VARIANT
 VARIANT.default
 primaryContent
 secondaryContent
-isPrimaryContentPadded
-isSecondaryContentPadded
 ORIENTATION.horizontal

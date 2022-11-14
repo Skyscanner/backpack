@@ -74,28 +74,6 @@ describe('BpkDividedCard', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly without primary padding', () => {
-    const { asFragment } = render(
-      <BpkDividedCard
-        primaryContent={longMessage}
-        secondaryContent={message}
-        isPrimaryContentPadded={false}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly without secondary padding', () => {
-    const { asFragment } = render(
-      <BpkDividedCard
-        primaryContent={longMessage}
-        secondaryContent={message}
-        isSecondaryContentPadded={false}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with href prop', () => {
     const { asFragment } = render(
       <BpkDividedCard

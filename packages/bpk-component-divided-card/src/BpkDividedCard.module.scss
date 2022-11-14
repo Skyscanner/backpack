@@ -42,10 +42,6 @@ $fixed-secondary-width: 216;
     &--horizontal {
       flex: 1;
     }
-
-    &--padded {
-      @include bpk-card--padded;
-    }
   }
 
   &__secondary {
@@ -60,10 +56,6 @@ $fixed-secondary-width: 216;
       @include bpk-rtl {
         box-shadow: inset $bpk-one-pixel-rem * -1 0 $bpk-color-sky-gray-tint-05;
       }
-    }
-
-    &--padded {
-      @include bpk-card--padded;
     }
   }
 }

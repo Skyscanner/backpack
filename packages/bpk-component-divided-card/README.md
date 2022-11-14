@@ -1,6 +1,6 @@
 # bpk-component-divided-card
 
-> Backpack example component.
+> Backpack divided component.
 
 ## Installation
 
@@ -25,8 +25,6 @@ export default () => <BpkDividedCard
 | --------- | -------- | -------- | ------------- |
 | primaryContent | node   | true    | -          |
 | secondaryContent | node   | true    | -          |
-| isPrimaryContentPadded | bool   | false    | false          |
-| isSecondaryContentPadded | bool   | false    | false          |
 | orientation | string   | false    | ORIENTATION.horizontal          |
 | href | string   | false    | null          |
 | className | string   | false    | null          |

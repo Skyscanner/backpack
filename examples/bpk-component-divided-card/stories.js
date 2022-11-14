@@ -19,8 +19,6 @@
 import {
   DefaultExample,
   VerticalExample,
-  WithoutPrimaryPaddingExample,
-  WithoutSecondaryPaddingExample,
   WithHrefExample,
   MixedExample,
 } from './examples';
@@ -31,8 +29,6 @@ export default {
 
 export const Default = DefaultExample;
 export const Vertical = VerticalExample;
-export const WithoutPrimaryPadding = WithoutPrimaryPaddingExample;
-export const WithoutSecondaryPadding = WithoutSecondaryPaddingExample;
 export const WithHref = WithHrefExample;
 
 export const VisualTest = MixedExample;

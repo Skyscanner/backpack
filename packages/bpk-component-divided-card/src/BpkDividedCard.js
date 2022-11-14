@@ -35,8 +35,6 @@ export const ORIENTATION = {
 export type Props = {
   primaryContent: Node,
   secondaryContent: Node,
-  isPrimaryContentPadded: ?boolean,
-  isSecondaryContentPadded: ?boolean,
   orientation: $Values<typeof ORIENTATION>,
   href: ?string,
   className: ?string,
@@ -45,8 +43,6 @@ const BpkDividedCard = (props: Props) => {
   const {
     className,
     href,
-    isPrimaryContentPadded,
-    isSecondaryContentPadded,
     orientation,
     primaryContent,
     secondaryContent,
@@ -65,7 +61,6 @@ const BpkDividedCard = (props: Props) => {
       <div
         className={getClassName(
           !isVertical && 'bpk-divided-card__primary--horizontal',
-          isPrimaryContentPadded && 'bpk-divided-card__primary--padded',
         )}
       >
         {primaryContent}
@@ -75,7 +70,6 @@ const BpkDividedCard = (props: Props) => {
           isVertical
             ? 'bpk-divided-card__secondary--vertical'
             : 'bpk-divided-card__secondary--horizontal',
-          isSecondaryContentPadded && 'bpk-divided-card__secondary--padded',
         )}
       >
         {secondaryContent}
@@ -87,16 +81,12 @@ const BpkDividedCard = (props: Props) => {
 BpkDividedCard.propTypes = {
   primaryContent: PropTypes.node.isRequired,
   secondaryContent: PropTypes.node.isRequired,
-  isPrimaryContentPadded: PropTypes.bool,
-  isSecondaryContentPadded: PropTypes.bool,
   orientation: PropTypes.oneOf(Object.keys(ORIENTATION)),
   href: PropTypes.string,
   className: PropTypes.string,
 };
 
 BpkDividedCard.defaultProps = {
-  isPrimaryContentPadded: true,
-  isSecondaryContentPadded: true,
   orientation: ORIENTATION.horizontal,
   href: null,
   className: null,
