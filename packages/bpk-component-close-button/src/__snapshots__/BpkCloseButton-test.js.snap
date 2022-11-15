@@ -10,10 +10,10 @@ exports[`BpkCloseButton should render correctly 1`] = `
   >
     <svg
       class="bpk-close-button__icon"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -34,10 +34,10 @@ exports[`BpkCloseButton should render correctly with a custom className 1`] = `
   >
     <svg
       class="bpk-close-button__icon"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -58,10 +58,10 @@ exports[`BpkCloseButton should render correctly with a custom icon 1`] = `
   >
     <svg
       class="bpk-close-button__icon"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

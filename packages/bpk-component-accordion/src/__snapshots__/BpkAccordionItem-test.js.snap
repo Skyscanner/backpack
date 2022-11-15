@@ -26,14 +26,14 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
             class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 class="bpk-accordion__item-expand-icon"
-                height="18"
-                style="width: 1.125rem; height: 1.125rem;"
+                height="16"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="18"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -89,14 +89,14 @@ exports[`BpkAccordionItem should render correctly 1`] = `
             class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 class="bpk-accordion__item-expand-icon"
-                height="18"
-                style="width: 1.125rem; height: 1.125rem;"
+                height="16"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="18"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -153,14 +153,14 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
             class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 class="bpk-accordion__item-expand-icon"
-                height="18"
-                style="width: 1.125rem; height: 1.125rem;"
+                height="16"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="18"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -216,14 +216,14 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
             class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
-                height="18"
-                style="width: 1.125rem; height: 1.125rem;"
+                height="16"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="18"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -277,14 +277,14 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
             class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 class="bpk-accordion__item-expand-icon"
-                height="18"
-                style="width: 1.125rem; height: 1.125rem;"
+                height="16"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="18"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -340,14 +340,14 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
             class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 class="bpk-accordion__item-expand-icon"
-                height="18"
-                style="width: 1.125rem; height: 1.125rem;"
+                height="16"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="18"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -399,10 +399,10 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
           >
             <svg
               class="bpk-accordion__leading-icon"
-              height="18"
-              style="width: 1.125rem; height: 1.125rem;"
+              height="16"
+              style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="18"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -415,14 +415,14 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
             class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 class="bpk-accordion__item-expand-icon"
-                height="18"
-                style="width: 1.125rem; height: 1.125rem;"
+                height="16"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="18"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
