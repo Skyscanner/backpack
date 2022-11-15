@@ -23,9 +23,11 @@ $bpk-spacing-v2: true;
 .bpk-loading-button {
   $button-padding-x: bpk-spacing-base() * 2;
   $button-padding-y: bpk-spacing-lg() / 2;
-  $button-icon-only-padding-x: $bpk-one-pixel-rem * 9 * 2;
-  $button-large-icon-only-padding-x: $bpk-one-pixel-rem * 12 * 2;
   $button-large-padding-y: bpk-spacing-lg();
+  $button-icon-only-padding-x: $bpk-button-height - $bpk-icon-size-sm; // this is in order to ensure icons are centred in icon-only buttons
+  /* stylelint-disable-next-line scss/operator-no-newline-after */
+  $button-large-icon-only-padding-x: $bpk-button-large-height -
+    $bpk-icon-size-lg; // this is in order to ensure icons are centred in icon-only buttons
 
   position: relative;
   overflow: hidden;
