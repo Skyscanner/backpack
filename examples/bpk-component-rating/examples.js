@@ -162,6 +162,21 @@ const TitleOnlyExample = () => (
       showScale={false}
     />
     <br />
+    <BpkRating
+      ariaLabel="2.3 Bad"
+      value={2.3}
+      title="Bad"
+      size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great"
+      value={4.5}
+      title={LargeImageTitle}
+      size={RATING_SIZES.large}
+      showScale={false}
+    />
+    <br />
   </div>
 );
 
@@ -244,6 +259,28 @@ const MixedExample = () => (
     />
     <br />
     <BpkRating ariaLabel="4.5 Great" title={TripImageTitle} value={4.5} />
+    <br />
+    <BpkRating
+      ariaLabel="2.3 Bad"
+      title="Bad"
+      value={2.3}
+      size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great"
+      title={ImageTitle}
+      value={4.5}
+      showScale={false}
+      size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="4.5 Great"
+      title={TripImageTitle}
+      value={4.5}
+      size={RATING_SIZES.large}
+    />
     <br />
   </div>
 );

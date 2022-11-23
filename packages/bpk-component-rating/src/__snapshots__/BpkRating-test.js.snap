@@ -156,10 +156,10 @@ exports[`BpkRating should correctly when value is string type 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkRating should render a high score rating component (zero to five scale) 1`] = `
+exports[`BpkRating should not show scale with showScale=false correctly 1`] = `
 <DocumentFragment>
   <div
-    aria-label="4 Amazing best thing since sliced bread"
+    aria-label="4.9 Awesome It is a fantanstic place"
     class="bpk-rating"
     role="figure"
   >
@@ -167,13 +167,7 @@ exports[`BpkRating should render a high score rating component (zero to five sca
       aria-hidden="true"
       class="bpk-text bpk-text--label-1 bpk-rating__value"
     >
-      4
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__scale"
-      >
-        /5
-      </span>
+      4.9
     </span>
     <div
       class="bpk-rating__text-wrapper"
@@ -182,208 +176,13 @@ exports[`BpkRating should render a high score rating component (zero to five sca
         aria-hidden="true"
         class="bpk-text bpk-text--label-1"
       >
-        Amazing
+        Awesome
       </span>
       <span
         aria-hidden="true"
         class="bpk-text bpk-text--caption bpk-rating__subtitle"
       >
-        Best thing since sliced bread
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkRating should render a high score rating component (zero to ten scale) 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="9 Amazing best thing since sliced bread"
-    class="bpk-rating"
-    role="figure"
-  >
-    <span
-      aria-hidden="true"
-      class="bpk-text bpk-text--label-1 bpk-rating__value"
-    >
-      9
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__scale"
-      >
-        /10
-      </span>
-    </span>
-    <div
-      class="bpk-rating__text-wrapper"
-    >
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
-      >
-        Amazing
-      </span>
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__subtitle"
-      >
-        Best thing since sliced bread
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkRating should render a high score rating component 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="4.7 Amazing best thing since sliced bread"
-    class="bpk-rating"
-    role="figure"
-  >
-    <span
-      aria-hidden="true"
-      class="bpk-text bpk-text--label-1 bpk-rating__value"
-    >
-      4.7
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__scale"
-      >
-        /5
-      </span>
-    </span>
-    <div
-      class="bpk-rating__text-wrapper"
-    >
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
-      >
-        Amazing
-      </span>
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__subtitle"
-      >
-        Best thing since sliced bread
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkRating should render a low score rating component 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="1.3 Low bad option"
-    class="bpk-rating"
-    role="figure"
-  >
-    <span
-      aria-hidden="true"
-      class="bpk-text bpk-text--label-1 bpk-rating__value"
-    >
-      1.3
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__scale"
-      >
-        /5
-      </span>
-    </span>
-    <div
-      class="bpk-rating__text-wrapper"
-    >
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
-      >
-        Low
-      </span>
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__subtitle"
-      >
-        Bad option
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkRating should render a medium score rating component (zero to five scale) 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="3.7 Average it's ok at best"
-    class="bpk-rating"
-    role="figure"
-  >
-    <span
-      aria-hidden="true"
-      class="bpk-text bpk-text--label-1 bpk-rating__value"
-    >
-      3.7
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__scale"
-      >
-        /5
-      </span>
-    </span>
-    <div
-      class="bpk-rating__text-wrapper"
-    >
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
-      >
-        Average
-      </span>
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__subtitle"
-      >
-        It's ok at best
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkRating should render a medium score rating component (zero to ten scale) 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="6.8 Average it's ok at best"
-    class="bpk-rating"
-    role="figure"
-  >
-    <span
-      aria-hidden="true"
-      class="bpk-text bpk-text--label-1 bpk-rating__value"
-    >
-      6.8
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__scale"
-      >
-        /10
-      </span>
-    </span>
-    <div
-      class="bpk-rating__text-wrapper"
-    >
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
-      >
-        Average
-      </span>
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__subtitle"
-      >
-        It's ok at best
+        It is a fantanstic place
       </span>
     </div>
   </div>
@@ -468,6 +267,39 @@ exports[`BpkRating should render large size correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkRating should render large title only correctly 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="6.7 Average might recommend"
+    class="bpk-rating"
+    role="figure"
+  >
+    <span
+      aria-hidden="true"
+      class="bpk-text bpk-text--hero-5 bpk-rating__value"
+    >
+      5
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--body-default bpk-rating__scale"
+      >
+        /5
+      </span>
+    </span>
+    <div
+      class="bpk-rating__text-wrapper bpk-rating__text-wrapper--large"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--heading-5 bpk-rating__title--large"
+      >
+        Average
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`BpkRating should render showScale rating correctly 1`] = `
 <DocumentFragment>
   <div
@@ -501,39 +333,6 @@ exports[`BpkRating should render showScale rating correctly 1`] = `
         class="bpk-text bpk-text--caption bpk-rating__subtitle"
       >
         Might recommend
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkRating should render showScale with false rating correctly 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="4.9 Awesome It is a fantanstic place"
-    class="bpk-rating"
-    role="figure"
-  >
-    <span
-      aria-hidden="true"
-      class="bpk-text bpk-text--label-1 bpk-rating__value"
-    >
-      4.9
-    </span>
-    <div
-      class="bpk-rating__text-wrapper"
-    >
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
-      >
-        Awesome
-      </span>
-      <span
-        aria-hidden="true"
-        class="bpk-text bpk-text--caption bpk-rating__subtitle"
-      >
-        It is a fantanstic place
       </span>
     </div>
   </div>

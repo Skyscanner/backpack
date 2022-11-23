@@ -56,4 +56,8 @@
   &--strong {
     @include bpk-badge--strong;
   }
+
+  &--brand {
+    @include bpk-badge--brand;
+  }
 }
