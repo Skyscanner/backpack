@@ -21,9 +21,18 @@ import React, { Fragment } from 'react';
 
 import BpkLink from '../../packages/bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import BpkCard from '../../packages/bpk-component-card';
+import BpkCard, {
+  BpkDividedCard,
+  ORIENTATION,
+} from '../../packages/bpk-component-card';
 
 const shortContent = 'Book your next trip on skyscanner.net.';
+const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
+nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
+porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
+sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
+ante in, vestibulum nulla.`;
 
 const longContent = (
   <Fragment>
@@ -74,10 +83,37 @@ const NonAtomicHrefExample = () => (
   </BpkCard>
 );
 
+const DefaultDividedCardExample = () => (
+  <BpkDividedCard
+    primaryContent={longMessage}
+    secondaryContent={shortContent}
+  />
+);
+
+const VerticalDividedCardExample = () => (
+  // eslint-disable-next-line backpack/use-tokens
+  <div style={{ width: 343 }}>
+    <BpkDividedCard
+      primaryContent={longMessage}
+      secondaryContent={shortContent}
+      orientation={ORIENTATION.vertical}
+    />
+  </div>
+);
+const WithHrefDividedCardExample = () => (
+  <BpkDividedCard
+    primaryContent={longMessage}
+    secondaryContent={shortContent}
+    href="http://www.skyscanner.net/"
+  />
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
     <WithoutPaddingExample />
+    <DefaultDividedCardExample />
+    <VerticalDividedCardExample />
   </div>
 );
 
@@ -87,5 +123,8 @@ export {
   WithoutPaddingExample,
   NonAtomicExample,
   NonAtomicHrefExample,
+  DefaultDividedCardExample,
+  VerticalDividedCardExample,
+  WithHrefDividedCardExample,
   MixedExample,
 };

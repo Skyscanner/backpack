@@ -8,6 +8,8 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
+### BpkCard
+
 ```js
 import React from 'react';
 import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
@@ -21,7 +23,24 @@ export default () => (
 );
 ```
 
+### BpkDividedCard
+
+```js
+import React from 'react';
+import { BpkDividedCard, ORIENTATION } from '@skyscanner/backpack-web/bpk-component-divided-card';
+
+export default () => (
+  <BpkDividedCard
+    primaryContent={'foo'}
+    secondaryContent={'bar'}
+    orientation={ORIENTATION.vertical}
+  />
+);
+```
+
 ## Props
+
+### BpkCard
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
@@ -30,3 +49,13 @@ export default () => (
 | href      | string   | false    | null          |
 | atomic    | bool     | false    | true          |
 | padded    | bool     | false    | true          |
+
+### BpkDividedCard
+
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| primaryContent | node   | true    | -          |
+| secondaryContent | node   | true    | -          |
+| orientation | oneOf(ORIENTATION.horizontal, ORIENTATION.vertical)    | false    | ORIENTATION.horizontal          |
+| href | string   | false    | null          |
+| className | string   | false    | null          |
