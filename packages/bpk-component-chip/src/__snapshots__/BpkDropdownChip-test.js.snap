@@ -18,10 +18,10 @@ exports[`BpkDropdownChip should render correctly 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -51,10 +51,10 @@ exports[`BpkDropdownChip should render correctly with a "className" attribute 1`
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -84,10 +84,10 @@ exports[`BpkDropdownChip should render correctly with type="default" 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -124,10 +124,10 @@ exports[`BpkDropdownChip should render correctly with type="default" and a leadi
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -158,10 +158,10 @@ exports[`BpkDropdownChip should render correctly with type="default" and disable
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -191,10 +191,10 @@ exports[`BpkDropdownChip should render correctly with type="default" and selecte
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -225,10 +225,10 @@ exports[`BpkDropdownChip should render correctly with type="default", selected a
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -258,10 +258,10 @@ exports[`BpkDropdownChip should render correctly with type="onDark" 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -298,10 +298,10 @@ exports[`BpkDropdownChip should render correctly with type="onDark" and a leadin
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -332,10 +332,10 @@ exports[`BpkDropdownChip should render correctly with type="onDark" and disabled
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -365,10 +365,10 @@ exports[`BpkDropdownChip should render correctly with type="onDark" and selected
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -399,10 +399,10 @@ exports[`BpkDropdownChip should render correctly with type="onDark", selected an
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -432,10 +432,10 @@ exports[`BpkDropdownChip should render correctly with type="onImage" 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -472,10 +472,10 @@ exports[`BpkDropdownChip should render correctly with type="onImage" and a leadi
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -506,10 +506,10 @@ exports[`BpkDropdownChip should render correctly with type="onImage" and disable
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -539,10 +539,10 @@ exports[`BpkDropdownChip should render correctly with type="onImage" and selecte
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -573,10 +573,10 @@ exports[`BpkDropdownChip should render correctly with type="onImage", selected a
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

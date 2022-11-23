@@ -18,14 +18,14 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__error-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -76,14 +76,14 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__error-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -134,14 +134,14 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__event-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -192,14 +192,14 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__neutral-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -250,14 +250,14 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__primary-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -308,14 +308,14 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__success-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -366,14 +366,14 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__warn-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -424,14 +424,14 @@ exports[`BpkBannerAlertInner should render correctly with a custom banner-alert 
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__warn-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -483,14 +483,14 @@ exports[`BpkBannerAlertInner should render correctly with a custom class name 1`
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__warn-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -542,14 +542,14 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__success-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -579,7 +579,7 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
                 type="button"
               >
                 <span
-                  style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                 >
                   <svg
                     class="bpk-banner-alert__expand-icon"
@@ -634,14 +634,14 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__warn-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -666,10 +666,10 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
               >
                 <svg
                   class="bpk-close-button__icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -715,14 +715,14 @@ exports[`BpkBannerAlertInner should render correctly with arbitrary props 1`] = 
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__warn-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -774,14 +774,14 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__success-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -806,7 +806,7 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
                 type="button"
               >
                 <span
-                  style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                 >
                   <svg
                     class="bpk-banner-alert__expand-icon"
@@ -861,14 +861,14 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
               class="bpk-banner-alert__icon"
             >
               <span
-                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
                   class="bpk-banner-alert__warn-icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -893,10 +893,10 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
               >
                 <svg
                   class="bpk-close-button__icon"
-                  height="18"
-                  style="width: 1.125rem; height: 1.125rem;"
+                  height="16"
+                  style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="18"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path

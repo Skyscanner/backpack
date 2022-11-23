@@ -10,7 +10,7 @@ exports[`BpkPaginationNudger should display backward nudger 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-pagination-nudger__icon bpk-icon--rtl-support"
@@ -44,7 +44,7 @@ exports[`BpkPaginationNudger should display forward nudger 1`] = `
       type="button"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
           class="bpk-pagination-nudger__icon bpk-icon--rtl-support"
