@@ -14,14 +14,14 @@ exports[`BpkFormValidation should render correctly 1`] = `
           id="my-form-validation"
         >
           <span
-            style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
+            style="line-height: 1rem; display: inline-block; margin-top: 0.125rem; vertical-align: top;"
           >
             <svg
               class="bpk-form-validation__icon"
-              height="18"
-              style="width: 1.125rem; height: 1.125rem;"
+              height="16"
+              style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="18"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -53,14 +53,14 @@ exports[`BpkFormValidation should render correctly with "expanded" equal to fals
           id="my-form-validation"
         >
           <span
-            style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
+            style="line-height: 1rem; display: inline-block; margin-top: 0.125rem; vertical-align: top;"
           >
             <svg
               class="bpk-form-validation__icon"
-              height="18"
-              style="width: 1.125rem; height: 1.125rem;"
+              height="16"
+              style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="18"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

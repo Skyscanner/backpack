@@ -13,10 +13,10 @@ exports[`withInteractiveStarRatingState should render correctly 1`] = `
     >
       <svg
         class="bpk-star bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -32,10 +32,10 @@ exports[`withInteractiveStarRatingState should render correctly 1`] = `
     >
       <svg
         class="bpk-star bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -51,10 +51,10 @@ exports[`withInteractiveStarRatingState should render correctly 1`] = `
     >
       <svg
         class="bpk-star bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -70,10 +70,10 @@ exports[`withInteractiveStarRatingState should render correctly 1`] = `
     >
       <svg
         class="bpk-star bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -89,10 +89,10 @@ exports[`withInteractiveStarRatingState should render correctly 1`] = `
     >
       <svg
         class="bpk-star bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -117,10 +117,10 @@ exports[`withInteractiveStarRatingState should render correctly when hovering ov
     >
       <svg
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -136,10 +136,10 @@ exports[`withInteractiveStarRatingState should render correctly when hovering ov
     >
       <svg
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -155,10 +155,10 @@ exports[`withInteractiveStarRatingState should render correctly when hovering ov
     >
       <svg
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -174,10 +174,10 @@ exports[`withInteractiveStarRatingState should render correctly when hovering ov
     >
       <svg
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -193,10 +193,10 @@ exports[`withInteractiveStarRatingState should render correctly when hovering ov
     >
       <svg
         class="bpk-star bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -221,10 +221,10 @@ exports[`withInteractiveStarRatingState should render correctly when selecting 3
     >
       <svg
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -240,10 +240,10 @@ exports[`withInteractiveStarRatingState should render correctly when selecting 3
     >
       <svg
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -259,10 +259,10 @@ exports[`withInteractiveStarRatingState should render correctly when selecting 3
     >
       <svg
         class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -278,10 +278,10 @@ exports[`withInteractiveStarRatingState should render correctly when selecting 3
     >
       <svg
         class="bpk-star bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -297,10 +297,10 @@ exports[`withInteractiveStarRatingState should render correctly when selecting 3
     >
       <svg
         class="bpk-star bpk-interactive-star__icon"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
