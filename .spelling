@@ -380,8 +380,10 @@ onToggleExpanded
 onValueChange
 overlayStyle
 overlayType
+overlayLevel
 OVERLAY_TYPES
 OVERLAY_TYPES.tint
+OVERLAY_LEVELS
 pageCount
 popperModifiers
 portalStyle
