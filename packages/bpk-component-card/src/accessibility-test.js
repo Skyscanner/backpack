@@ -49,17 +49,6 @@ describe('BpkCard accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
-
-  it('should not have programmatically-detectable accessibility issues for BpkDividedCard', async () => {
-    const { container } = render(
-      <BpkDividedCard
-        primaryContent="primaryContent"
-        secondaryContent="secondaryContent"
-      />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
 });
 
 describe('BpkDividedCard accessibility tests', () => {
