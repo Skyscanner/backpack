@@ -21,8 +21,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkCard from '../../bpk-component-card';
 
+import BpkCard from './BpkCard';
 import STYLES from './BpkDividedCard.module.scss';
 
 const getClassName = cssModules(STYLES);

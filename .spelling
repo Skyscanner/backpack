@@ -917,3 +917,4 @@ VARIANT.default
 primaryContent
 secondaryContent
 ORIENTATION.horizontal
+ORIENTATION.vertical

@@ -23,6 +23,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkCard from './BpkCard';
+import BpkDividedCard from './BpkDividedCard';
 
 describe('BpkCard accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
@@ -44,6 +45,30 @@ describe('BpkCard accessibility tests', () => {
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
       </BpkCard>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues for BpkDividedCard', async () => {
+    const { container } = render(
+      <BpkDividedCard
+        primaryContent="primaryContent"
+        secondaryContent="secondaryContent"
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('BpkDividedCard accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkDividedCard
+        primaryContent="primaryContent"
+        secondaryContent="secondaryContent"
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
