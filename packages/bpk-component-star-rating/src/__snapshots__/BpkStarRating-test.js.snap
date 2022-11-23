@@ -9,10 +9,10 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
   >
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -21,10 +21,10 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -33,10 +33,10 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -45,10 +45,10 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -57,10 +57,10 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -146,10 +146,10 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
   >
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -158,10 +158,10 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -170,10 +170,10 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -182,10 +182,10 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -194,10 +194,10 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -206,10 +206,10 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     </svg>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -218,10 +218,10 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     </svg>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -230,10 +230,10 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     </svg>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -253,10 +253,10 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
   >
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -265,10 +265,10 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -277,10 +277,10 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -292,10 +292,10 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
     >
       <svg
         class="bpk-star bpk-star--half bpk-star--filled"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -305,10 +305,10 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
     </span>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -328,10 +328,10 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
   >
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -340,10 +340,10 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -352,10 +352,10 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -364,10 +364,10 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -376,10 +376,10 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -399,10 +399,10 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
   >
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -411,10 +411,10 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -423,10 +423,10 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -435,10 +435,10 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -447,10 +447,10 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -470,10 +470,10 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
   >
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -482,10 +482,10 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -494,10 +494,10 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -509,10 +509,10 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
     >
       <svg
         class="bpk-star bpk-star--half bpk-star--filled"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -522,10 +522,10 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
     </span>
     <svg
       class="bpk-star bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -545,10 +545,10 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
   >
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -557,10 +557,10 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -569,10 +569,10 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -581,10 +581,10 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -593,10 +593,10 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
     </svg>
     <svg
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

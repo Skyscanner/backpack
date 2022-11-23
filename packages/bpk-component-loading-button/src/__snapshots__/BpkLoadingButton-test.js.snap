@@ -34,14 +34,14 @@ exports[`BpkLoadingButton should render correctly 1`] = `
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -425,14 +425,14 @@ exports[`BpkLoadingButton should render correctly with a "destructive" attribute
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -454,14 +454,14 @@ exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -482,14 +482,14 @@ exports[`BpkLoadingButton should render correctly with a "featured" attribute 1`
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -510,14 +510,14 @@ exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = 
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -538,13 +538,13 @@ exports[`BpkLoadingButton should render correctly with a "icon" attribute 1`] = 
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -565,13 +565,13 @@ exports[`BpkLoadingButton should render correctly with a "iconDisabled" attribut
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -594,13 +594,13 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
       class="bpk-loading-button__icon"
     >
       <span
-        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
-          height="18"
-          style="width: 1.125rem; height: 1.125rem;"
+          height="16"
+          style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="18"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -611,14 +611,14 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
     </span>
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -643,14 +643,14 @@ exports[`BpkLoadingButton should render correctly with a "iconOnly" attribute 1`
       Search
     </span>
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -670,14 +670,14 @@ exports[`BpkLoadingButton should render correctly with a "iconPosition=leading" 
     type="button"
   >
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -725,14 +725,14 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -753,14 +753,14 @@ exports[`BpkLoadingButton should render correctly with a "linkOnDark" attribute 
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -897,14 +897,14 @@ exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`]
     </span>
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -925,14 +925,14 @@ exports[`BpkLoadingButton should render correctly with a "primaryOnDark" attribu
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -953,14 +953,14 @@ exports[`BpkLoadingButton should render correctly with a "primaryOnLight" attrib
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -981,14 +981,14 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -1009,14 +1009,14 @@ exports[`BpkLoadingButton should render correctly with a "secondaryOnDark" attri
   >
     My button 
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-icon--rtl-support"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

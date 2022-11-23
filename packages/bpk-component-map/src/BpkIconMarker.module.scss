@@ -35,12 +35,14 @@ $bpk-spacing-v2: true;
   }
 
   &__icon {
+    $marker-width: $bpk-one-pixel-rem * 26;
+
     position: absolute;
 
     // This ensures that the icon is positioned exactly in the
     // centre of the marker.
     top: 0.3rem;
-    left: bpk-spacing-sm();
+    left: ($marker-width - $bpk-icon-size-sm) / 2;
     color: $bpk-surface-default-day;
 
     > svg {
@@ -60,10 +62,12 @@ $bpk-spacing-v2: true;
     }
 
     &--selected {
+      $selected-marker-width: $bpk-one-pixel-rem * 32;
+
       // This ensures that the icon is positioned exactly in the
       // centre of the marker.
       top: bpk-spacing-md();
-      left: 0.4rem;
+      left: ($selected-marker-width - $bpk-icon-size-sm) / 2;
 
       @include bpk-themeable-property(
         color,
