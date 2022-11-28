@@ -18,13 +18,14 @@
 /* @flow strict */
 
 import {
-  DefaultExample,
+  SolidExamples,
+  TopExamples,
+  BottomExamples,
+  LeftExamples,
+  RightExamples,
+  VignetteExample,
   OverlayTypeNoneExample,
   WithForegroundContentExample,
-  WithBpkImageExample,
-  WithBpkImageNoTintExample,
-  WithBpkImageLazyLoadedExample,
-  TextOverlaidOnImageExample,
   MixedExample,
 } from './examples';
 
@@ -32,18 +33,15 @@ export default {
   title: 'bpk-component-overlay',
 };
 
-export const Default = DefaultExample;
+export const Solid = SolidExamples;
+export const Top = TopExamples;
+export const Bottom = BottomExamples;
+export const Left = LeftExamples;
+export const Right = RightExamples;
+export const Vignette = VignetteExample;
+
 export const OverlayTypeNone = OverlayTypeNoneExample;
 
 export const WithForegroundContent = WithForegroundContentExample;
-
-export const WithBpkImage = WithBpkImageExample;
-
-export const WithBpkImageAndOverlayTypeNone = WithBpkImageNoTintExample;
-
-export const WithBpkImageLazyLoaded = WithBpkImageLazyLoadedExample;
-
-export const TextOverlaidOnAnImageUsingForegroundContent =
-  TextOverlaidOnImageExample;
 
 export const VisualTest = MixedExample;

@@ -19,10 +19,11 @@
 
 import BpkOverlay, {
   OVERLAY_TYPES,
+  OVERLAY_LEVELS,
   BORDER_RADIUS_STYLES,
   type Props as BpkOverlayProps,
 } from './src/BpkOverlay';
 
 export type { BpkOverlayProps };
 export default BpkOverlay;
-export { OVERLAY_TYPES, BORDER_RADIUS_STYLES };
+export { OVERLAY_TYPES, OVERLAY_LEVELS, BORDER_RADIUS_STYLES };

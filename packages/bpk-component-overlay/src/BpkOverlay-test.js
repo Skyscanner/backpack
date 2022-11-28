@@ -20,7 +20,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BpkOverlay, { BORDER_RADIUS_STYLES, OVERLAY_TYPES } from './BpkOverlay';
+import BpkOverlay, { OVERLAY_LEVELS, OVERLAY_TYPES } from './BpkOverlay';
 
 describe('BpkOverlay', () => {
   it('should render correctly', () => {
@@ -42,25 +42,16 @@ describe('BpkOverlay', () => {
   });
 
   Object.keys(OVERLAY_TYPES).map((overlayType) =>
-    it(`should render correctly with overlayType={${overlayType}}`, () => {
-      const { asFragment } = render(
-        <BpkOverlay overlayType={overlayType}>
-          <span>Backpack</span>
-        </BpkOverlay>,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    }),
-  );
-
-  Object.keys(BORDER_RADIUS_STYLES).map((borderRadiusStyle) =>
-    it(`should render correctly with borderRadiusStyle={${borderRadiusStyle}}`, () => {
-      const { asFragment } = render(
-        <BpkOverlay borderRadiusStyle={borderRadiusStyle}>
-          <span>Backpack</span>
-        </BpkOverlay>,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    }),
+    Object.keys(OVERLAY_LEVELS).map((overlayLevel) =>
+      it(`should render correctly with overlayType={${overlayType}} & overlayLevel={${overlayLevel}}`, () => {
+        const { asFragment } = render(
+          <BpkOverlay overlayType={overlayType} overlayLevel={overlayLevel}>
+            <span>Backpack</span>
+          </BpkOverlay>,
+        );
+        expect(asFragment()).toMatchSnapshot();
+      }),
+    ),
   );
 
   it('should support custom class names', () => {
