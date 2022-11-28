@@ -67,7 +67,7 @@ $border-width: $bpk-one-pixel-rem * 2;
     height: $height;
     transition: background $bpk-duration-sm linear;
     border-radius: $height / 2;
-    background: $bpk-surface-highlight-day;
+    background: $bpk-text-disabled-day;
     cursor: pointer;
 
     // The 'handle'.
