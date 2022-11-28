@@ -19,18 +19,17 @@
 @import '~bpk-mixins/index.scss';
 
 .bpk-overlay-stories {
-  &__text-story {
-    height: $bpk-spacing-xl * 4;
-    padding: $bpk-spacing-md;
-    background-color: $bpk-surface-highlight-day;
+  display: flex;
+  justify-content: space-around;
 
-    @include bpk-border-radius-sm;
+  &__text-story {
+    width: 100%;
+    padding: $bpk-spacing-md;
   }
 
   &__foreground {
     display: flex;
     height: 100%;
-    padding-bottom: $bpk-spacing-xl;
     justify-content: center;
     align-items: flex-end;
     color: $bpk-text-primary-inverse-day;
