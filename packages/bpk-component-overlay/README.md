@@ -47,5 +47,5 @@ export default () => (
 | borderRadiusStyle (deprecated) | BORDER_RADIUS_STYLES | false | BORDER_RADIUS_STYLES.none |
 | className | string | false | null |
 | foregroundContent | Node | false | null |
-| overlayType | oneOf(OVERLAY_TYPES) | false | null |
-| overlayLevel | oneOf(OVERLAY_LEVELS) | false | null |
+| overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.solid |
+| overlayLevel | oneOf(OVERLAY_LEVELS) | false | OVERLAY_LEVELS.low |

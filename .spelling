@@ -384,8 +384,9 @@ overlayStyle
 overlayType
 overlayLevel
 OVERLAY_TYPES
-OVERLAY_TYPES.tint
+OVERLAY_TYPES.solid
 OVERLAY_LEVELS
+OVERLAY_LEVELS.low
 pageCount
 popperModifiers
 portalStyle

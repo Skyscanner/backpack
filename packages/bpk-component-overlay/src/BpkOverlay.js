@@ -102,8 +102,8 @@ BpkOverlay.defaultProps = {
   borderRadiusStyle: null,
   className: null,
   foregroundContent: null,
-  overlayType: null,
-  overlayLevel: null,
+  overlayType: OVERLAY_TYPES.solid,
+  overlayLevel: OVERLAY_LEVELS.low,
 };
 
 export default BpkOverlay;
