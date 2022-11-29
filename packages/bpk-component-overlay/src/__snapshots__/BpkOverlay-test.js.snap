@@ -9,7 +9,7 @@ exports[`BpkOverlay should render correctly 1`] = `
       Backpack
     </span>
     <div
-      class="bpk-overlay__overlay"
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
     />
   </div>
 </DocumentFragment>
@@ -24,7 +24,7 @@ exports[`BpkOverlay should render correctly with foregroundContent 1`] = `
       Backpack
     </span>
     <div
-      class="bpk-overlay__overlay"
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
     >
       <span>
         Skyscanner
@@ -404,7 +404,7 @@ exports[`BpkOverlay should support arbitrary props 1`] = `
       Backpack
     </span>
     <div
-      class="bpk-overlay__overlay"
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
     />
   </div>
 </DocumentFragment>
@@ -419,7 +419,7 @@ exports[`BpkOverlay should support custom class names 1`] = `
       Backpack
     </span>
     <div
-      class="bpk-overlay__overlay"
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
     />
   </div>
 </DocumentFragment>
