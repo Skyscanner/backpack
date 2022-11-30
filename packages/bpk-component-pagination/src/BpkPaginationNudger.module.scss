@@ -26,13 +26,16 @@ $bpk-spacing-v2: true;
 
   &__button {
     height: $bpk-button-height;
-    padding: 0 bpk-spacing-md();
     border: none;
     background: none;
     cursor: pointer;
     appearance: none;
 
     @include bpk-button--link;
+
+    // Using stylelint-disable as we need to override padding provided by bpk-button--link otherwise it shifts the arrow buttons out of alignment.
+    /* stylelint-disable-next-line order/properties-order, order/order */
+    padding: 0;
 
     &:disabled {
       cursor: not-allowed;
