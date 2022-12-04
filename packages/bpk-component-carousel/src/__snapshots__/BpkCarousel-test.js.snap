@@ -1,0 +1,657 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkCarousel should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="slider-container"
+    style="position: relative;"
+  >
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0px; margin: -1px; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+      tabindex="-1"
+    >
+      Slide 1 of 1
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-start; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerleft"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="previous"
+          class="bpk-carousel__button"
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 1; cursor: pointer;"
+          type="button"
+        >
+          Prev
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-end; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerright"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="next"
+          class="bpk-carousel__button"
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 1; cursor: pointer;"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: flex-end; justify-content: center; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-bottomcenter"
+        style="pointer-events: auto;"
+      >
+        <ul
+          class="bpk-carousel__dots--container"
+          style="position: relative; top: -10px; display: flex; margin: 0px; padding: 0px; list-style-type: none;"
+        >
+          <li
+            class="paging-item active"
+          >
+            <button
+              aria-label="slide 1 bullet"
+              aria-selected="true"
+              class="bpk-carousel__dots"
+              style="cursor: pointer; opacity: 1; background: transparent; fill: rgb(255, 255, 255);"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="paging-dot"
+                focusable="false"
+                height="6"
+                viewBox="0 0 6 6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="slider-frame bpk-carousel"
+      role="region"
+      style="overflow: hidden; width: 100%; position: relative; outline: none; height: auto; transition: height 300ms ease-in-out; will-change: height; user-select: none;"
+      tabindex="-1"
+    >
+      <div
+        class="slider-list"
+        style="width: 300%; text-align: left; user-select: auto; transform: translateX(calc(-33.333333333333336% - 0px)); display: flex;"
+      >
+        <div
+          class="slide prev-cloned"
+          inert="true"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+        <div
+          class="slide slide-current slide-visible"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+        <div
+          class="slide next-cloned"
+          inert="true"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCarousel should support arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    class="slider-container"
+    style="position: relative;"
+  >
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0px; margin: -1px; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+      tabindex="-1"
+    >
+      Slide 1 of 1
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-start; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerleft"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="previous"
+          class="bpk-carousel__button"
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 1; cursor: pointer;"
+          type="button"
+        >
+          Prev
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-end; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerright"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="next"
+          class="bpk-carousel__button"
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 1; cursor: pointer;"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: flex-end; justify-content: center; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-bottomcenter"
+        style="pointer-events: auto;"
+      >
+        <ul
+          class="bpk-carousel__dots--container"
+          style="position: relative; top: -10px; display: flex; margin: 0px; padding: 0px; list-style-type: none;"
+        >
+          <li
+            class="paging-item active"
+          >
+            <button
+              aria-label="slide 1 bullet"
+              aria-selected="true"
+              class="bpk-carousel__dots"
+              style="cursor: pointer; opacity: 1; background: transparent; fill: rgb(255, 255, 255);"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="paging-dot"
+                focusable="false"
+                height="6"
+                viewBox="0 0 6 6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="slider-frame bpk-carousel"
+      role="region"
+      style="overflow: hidden; width: 100%; position: relative; outline: none; height: auto; transition: height 300ms ease-in-out; will-change: height; user-select: none;"
+      tabindex="-1"
+    >
+      <div
+        class="slider-list"
+        style="width: 300%; text-align: left; user-select: auto; transform: translateX(calc(-33.333333333333336% - 0px)); display: flex;"
+      >
+        <div
+          class="slide prev-cloned"
+          inert="true"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+        <div
+          class="slide slide-current slide-visible"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+        <div
+          class="slide next-cloned"
+          inert="true"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCarousel should support children 1`] = `
+<DocumentFragment>
+  <div
+    class="slider-container"
+    style="position: relative;"
+  >
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0px; margin: -1px; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+      tabindex="-1"
+    >
+      Slide 1 of 2
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-start; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerleft"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="previous"
+          class="bpk-carousel__button"
+          disabled=""
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 0.3; cursor: not-allowed;"
+          type="button"
+        >
+          Prev
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-end; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerright"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="next"
+          class="bpk-carousel__button"
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 1; cursor: pointer;"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: flex-end; justify-content: center; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-bottomcenter"
+        style="pointer-events: auto;"
+      >
+        <ul
+          class="bpk-carousel__dots--container"
+          style="position: relative; top: -10px; display: flex; margin: 0px; padding: 0px; list-style-type: none;"
+        >
+          <li
+            class="paging-item active"
+          >
+            <button
+              aria-label="slide 1 bullet"
+              aria-selected="true"
+              class="bpk-carousel__dots"
+              style="cursor: pointer; opacity: 1; background: transparent; fill: rgb(255, 255, 255);"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="paging-dot"
+                focusable="false"
+                height="6"
+                viewBox="0 0 6 6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                />
+              </svg>
+            </button>
+          </li>
+          <li
+            class="paging-item"
+          >
+            <button
+              aria-label="slide 2 bullet"
+              aria-selected="false"
+              class="bpk-carousel__dots"
+              style="cursor: pointer; opacity: 0.5; background: transparent; fill: rgb(255, 255, 255);"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="paging-dot"
+                focusable="false"
+                height="6"
+                viewBox="0 0 6 6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="slider-frame bpk-carousel"
+      role="region"
+      style="overflow: hidden; width: 100%; position: relative; outline: none; height: auto; transition: height 300ms ease-in-out; will-change: height; user-select: none;"
+      tabindex="-1"
+    >
+      <div
+        class="slider-list"
+        style="width: 200%; text-align: left; user-select: auto; display: flex;"
+      >
+        <div
+          class="slide slide-current slide-visible"
+          style="width: 50%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        >
+          <span>
+            slide 1
+          </span>
+        </div>
+        <div
+          class="slide"
+          inert="true"
+          style="width: 50%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        >
+          <span>
+            slide 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCarousel should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="slider-container"
+    style="position: relative;"
+  >
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0px; margin: -1px; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+      tabindex="-1"
+    >
+      Slide 1 of 1
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-start; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerleft"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="previous"
+          class="bpk-carousel__button"
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 1; cursor: pointer;"
+          type="button"
+        >
+          Prev
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-end; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerright"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="next"
+          class="bpk-carousel__button"
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 1; cursor: pointer;"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: flex-end; justify-content: center; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-bottomcenter"
+        style="pointer-events: auto;"
+      >
+        <ul
+          class="bpk-carousel__dots--container"
+          style="position: relative; top: -10px; display: flex; margin: 0px; padding: 0px; list-style-type: none;"
+        >
+          <li
+            class="paging-item active"
+          >
+            <button
+              aria-label="slide 1 bullet"
+              aria-selected="true"
+              class="bpk-carousel__dots"
+              style="cursor: pointer; opacity: 1; background: transparent; fill: rgb(255, 255, 255);"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="paging-dot"
+                focusable="false"
+                height="6"
+                viewBox="0 0 6 6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="slider-frame bpk-carousel custom-classname"
+      role="region"
+      style="overflow: hidden; width: 100%; position: relative; outline: none; height: auto; transition: height 300ms ease-in-out; will-change: height; user-select: none;"
+      tabindex="-1"
+    >
+      <div
+        class="slider-list"
+        style="width: 300%; text-align: left; user-select: auto; transform: translateX(calc(-33.333333333333336% - 0px)); display: flex;"
+      >
+        <div
+          class="slide prev-cloned"
+          inert="true"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+        <div
+          class="slide slide-current slide-visible"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+        <div
+          class="slide next-cloned"
+          inert="true"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCarousel should support infinite 1`] = `
+<DocumentFragment>
+  <div
+    class="slider-container"
+    style="position: relative;"
+  >
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0px; margin: -1px; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+      tabindex="-1"
+    >
+      Slide 1 of 1
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-start; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerleft"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="previous"
+          class="bpk-carousel__button"
+          disabled=""
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 0.3; cursor: not-allowed;"
+          type="button"
+        >
+          Prev
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: center; justify-content: flex-end; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-centerright"
+        style="pointer-events: auto;"
+      >
+        <button
+          aria-label="next"
+          class="bpk-carousel__button"
+          disabled=""
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 0.3; cursor: not-allowed;"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-items: flex-end; justify-content: center; position: absolute; display: flex; z-index: 1; top: 0px; left: 0px; bottom: 0px; right: 0px; pointer-events: none;"
+    >
+      <div
+        class="slider-control-bottomcenter"
+        style="pointer-events: auto;"
+      >
+        <ul
+          class="bpk-carousel__dots--container"
+          style="position: relative; top: -10px; display: flex; margin: 0px; padding: 0px; list-style-type: none;"
+        >
+          <li
+            class="paging-item active"
+          >
+            <button
+              aria-label="slide 1 bullet"
+              aria-selected="true"
+              class="bpk-carousel__dots"
+              style="cursor: pointer; opacity: 1; background: transparent; fill: rgb(255, 255, 255);"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="paging-dot"
+                focusable="false"
+                height="6"
+                viewBox="0 0 6 6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="slider-frame bpk-carousel"
+      role="region"
+      style="overflow: hidden; width: 100%; position: relative; outline: none; height: auto; transition: height 300ms ease-in-out; will-change: height; user-select: none;"
+      tabindex="-1"
+    >
+      <div
+        class="slider-list"
+        style="width: 100%; text-align: left; user-select: auto; display: flex;"
+      >
+        <div
+          class="slide slide-current slide-visible"
+          style="width: 100%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCarousel should support showIndicator 1`] = `
+<DocumentFragment>
+  <div
+    class="slider-container"
+    style="position: relative;"
+  >
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0px; margin: -1px; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+      tabindex="-1"
+    >
+      Slide 1 of 1
+    </div>
+    <div
+      class="slider-frame bpk-carousel"
+      role="region"
+      style="overflow: hidden; width: 100%; position: relative; outline: none; height: auto; transition: height 300ms ease-in-out; will-change: height; user-select: none;"
+      tabindex="-1"
+    >
+      <div
+        class="slider-list"
+        style="width: 300%; text-align: left; user-select: auto; transform: translateX(calc(-33.333333333333336% - 0px)); display: flex;"
+      >
+        <div
+          class="slide prev-cloned"
+          inert="true"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+        <div
+          class="slide slide-current slide-visible"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+        <div
+          class="slide next-cloned"
+          inert="true"
+          style="width: 33.333333333333336%; flex: 1; height: auto; padding: 0px 0px; opacity: 1;"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
