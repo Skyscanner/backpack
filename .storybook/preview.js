@@ -18,7 +18,6 @@
 import React from 'react';
 import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
 import { addDecorator } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 
 import 'bpk-stylesheets';
@@ -36,7 +35,6 @@ import themeableAttributes from './themeableAttributes';
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
 addDecorator(withA11y);
-addDecorator(withKnobs);
 addDecorator((story) => (
   <div style={{ padding: TOKENS.spacingBase }}>
     <EnhancedThemeProvider themeAttributes={themeableAttributes}>
