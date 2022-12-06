@@ -28,15 +28,15 @@ export default () =>
 
 ## Props
 
-| Property        | PropType       | Required | Default Value   |
-|-----------------|----------------|----------|-----------------|
-| currentIndex    | number         | true     | -               |
-| totalIndicators | number         | true     | -               |
-| indicatorLabel  | string         | true     | -               |
-| prevNavLabel    | string         | true     | -               |
-| nextNavLabel    | string         | true     | -               |
-| className       | string         | false    | null            |
-| showNav         | bool           | false    | false           |
-| variant         | oneOf(VARIANT) | false    | VARIANT.default |
-| onClick         | func           | false    | null            |
+| Property        | PropType                                  | Required | Default Value   |
+|-----------------|-------------------------------------------|----------|-----------------|
+| currentIndex    | number                                    | true     | -               |
+| totalIndicators | number                                    | true     | -               |
+| indicatorLabel  | string                                    | true     | -               |
+| prevNavLabel    | string                                    | true     | -               |
+| nextNavLabel    | string                                    | true     | -               |
+| className       | string                                    | false    | null            |
+| showNav         | bool                                      | false    | false           |
+| variant         | oneOf(VARIANT.default, VARIANT.overImage) | false    | VARIANT.default |
+| onClick         | func                                      | false    | null            |
 
