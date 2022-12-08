@@ -7,3 +7,6 @@
 **Patched:**
   - `BpkPagination`
     - Fixed an alignment issue with the arrow and dots in component.
+  
+  - `BpkContentCards`
+    - Fix headline vertical spacing
