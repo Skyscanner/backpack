@@ -36,232 +36,150 @@ const getClassName = cssModules(STYLES);
 
 const SolidExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.solid}
-        overlayLevel={OVERLAY_LEVELS.high}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.solid}
-        overlayLevel={OVERLAY_LEVELS.medium}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.solid}
-        overlayLevel={OVERLAY_LEVELS.low}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.solid} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Solid {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
   </div>
 );
 
 const TopExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.top}
-        overlayLevel={OVERLAY_LEVELS.high}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.top}
-        overlayLevel={OVERLAY_LEVELS.medium}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.top}
-        overlayLevel={OVERLAY_LEVELS.low}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.top} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Top {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
   </div>
 );
 
 const BottomExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.bottom}
-        overlayLevel={OVERLAY_LEVELS.high}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.bottom}
-        overlayLevel={OVERLAY_LEVELS.medium}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.bottom}
-        overlayLevel={OVERLAY_LEVELS.low}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.bottom} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Bottom {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
   </div>
 );
 
 const LeftExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.left}
-        overlayLevel={OVERLAY_LEVELS.high}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.left}
-        overlayLevel={OVERLAY_LEVELS.medium}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.left}
-        overlayLevel={OVERLAY_LEVELS.low}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.left} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Left {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
   </div>
 );
 
 const RightExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.right}
-        overlayLevel={OVERLAY_LEVELS.high}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.right}
-        overlayLevel={OVERLAY_LEVELS.medium}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
-    <div className={getClassName('bpk-overlay-stories__text-story')}>
-      <BpkOverlay
-        overlayType={OVERLAY_TYPES.right}
-        overlayLevel={OVERLAY_LEVELS.low}
-      >
-        <BpkImage
-          src={EDI_IMAGE_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          aspectRatio={1.8}
-        />
-      </BpkOverlay>
-    </div>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.right} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Left {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
   </div>
 );
 
 const VignetteExample = () => (
-  <>
+  <div className={getClassName('bpk-overlay-stories__overlay-story')}>
     <BpkOverlay
       overlayType={OVERLAY_TYPES.vignette}
       overlayLevel={OVERLAY_LEVELS.high}
     >
       <BpkImage
         src={EDI_IMAGE_SRC}
-        altText="Canadian Parliament Building in Ottawa"
+        altText="Edinburgh skyline"
         aspectRatio={1.8}
       />
     </BpkOverlay>
-  </>
-);
-
-const OverlayTypeNoneExample = () => (
-  <BpkOverlay>
-    <BpkImage
-      src={EDI_IMAGE_SRC}
-      altText="Canadian Parliament Building in Ottawa"
-      aspectRatio={1.8}
-    />
-  </BpkOverlay>
+    <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+      <BpkText textStyle={TEXT_STYLES.xl}>Vignette</BpkText>
+    </div>
+  </div>
 );
 
 const WithForegroundContentExample = () => (
@@ -278,7 +196,7 @@ const WithForegroundContentExample = () => (
   >
     <BpkImage
       src={EDI_IMAGE_SRC}
-      altText="Canadian Parliament Building in Ottawa"
+      altText="Edinburgh skyline"
       aspectRatio={1.8}
     />
   </BpkOverlay>
@@ -291,14 +209,9 @@ const MixedExample = () => (
     <BottomExamples />
     <LeftExamples />
     <RightExamples />
+    <VignetteExample />
     <div className={getClassName('bpk-overlay-stories')}>
-      <div className={getClassName('bpk-overlay-stories__text-story')}>
-        <VignetteExample />
-      </div>
-      <div className={getClassName('bpk-overlay-stories__text-story')}>
-        <OverlayTypeNoneExample />
-      </div>
-      <div className={getClassName('bpk-overlay-stories__text-story')}>
+      <div className={getClassName('bpk-overlay-stories__overlay-story')}>
         <WithForegroundContentExample />
       </div>
     </div>
@@ -312,7 +225,6 @@ export {
   LeftExamples,
   RightExamples,
   VignetteExample,
-  OverlayTypeNoneExample,
   WithForegroundContentExample,
   MixedExample,
 };

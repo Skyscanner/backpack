@@ -24,7 +24,6 @@ import {
   LeftExamples,
   RightExamples,
   VignetteExample,
-  OverlayTypeNoneExample,
   WithForegroundContentExample,
   MixedExample,
 } from './examples';
@@ -39,8 +38,6 @@ export const Bottom = BottomExamples;
 export const Left = LeftExamples;
 export const Right = RightExamples;
 export const Vignette = VignetteExample;
-
-export const OverlayTypeNone = OverlayTypeNoneExample;
 
 export const WithForegroundContent = WithForegroundContentExample;
 
