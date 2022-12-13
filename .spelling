@@ -917,6 +917,7 @@ nextNavLabel
 overImage
 VARIANT
 VARIANT.default
+VARIANT.overImage
 primaryContent
 secondaryContent
 ORIENTATION.horizontal
