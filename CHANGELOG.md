@@ -1,3 +1,15 @@
+# 2022-12-13
+
+`@skyscanner/backpack-web`: 16.1.0 => 16.2.0
+
+**Changed:**
+  - `BpkOverlay`
+    - Updated the default type to `solid` and the default level to `low`, as per design requirements.
+
+**Patched:**
+  - `BpkPagination`
+    - Fixed an alignment issue with the arrow and dots in component.
+
 # 2022-11-28
 
 `@skyscanner/backpack-web`: 16.0.0 => 16.1.0
