@@ -1,3 +1,5 @@
+`@skyscanner/backpack-web`
+
 **Breaking:**
 - Removed `bpk-component-content-container`. As this component was originally created for use on the backpack-docs site it is being removed. This component also follows a pattern of using `dangerouslySetInnerHTML` which is not a good practice.
   - Should you be using this component, please migrate to the `BpkText` and should you need to include bottom padding pass this as a custom `className` to apply. E.g.
@@ -17,3 +19,7 @@
       Your content here
     </BpkText>
     ```
+
+**Patched:**
+  - `BpkContentCards`
+    - Fix headline vertical spacing
