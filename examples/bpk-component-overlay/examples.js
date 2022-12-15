@@ -153,7 +153,7 @@ const RightExamples = () => (
             </BpkOverlay>
             <div className={getClassName('bpk-overlay-stories__overlay--name')}>
               <BpkText textStyle={TEXT_STYLES.xl}>
-                Left {level.charAt(0).toUpperCase() + level.slice(1)}
+                Right {level.charAt(0).toUpperCase() + level.slice(1)}
               </BpkText>
             </div>
           </div>
