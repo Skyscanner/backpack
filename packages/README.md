@@ -40,7 +40,6 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-chip`](/packages/bpk-component-chip)
 [`bpk-component-close-button`](/packages/bpk-component-close-button)
 [`bpk-component-code`](/packages/bpk-component-code)
-[`bpk-component-content-container`](/packages/bpk-component-content-container)
 [`bpk-component-datatable`](/packages/bpk-component-datatable)
 [`bpk-component-datepicker`](/packages/bpk-component-datepicker)
 [`bpk-component-description-list`](/packages/bpk-component-description-list)
