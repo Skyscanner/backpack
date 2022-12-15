@@ -47,14 +47,14 @@
     @include bpk-themeable-property(
       color,
       --bpk-calendar-nudger-icon-color,
-      $bpk-calendar-nav-icon-fill
+      $bpk-text-primary-day
     );
 
     @include bpk-hover {
       @include bpk-themeable-property(
         color,
         --bpk-calendar-nudger-icon-hover-color,
-        $bpk-calendar-nav-icon-hover-fill
+        $bpk-text-primary-day
       );
     }
 
@@ -62,7 +62,7 @@
       @include bpk-themeable-property(
         color,
         --bpk-calendar-nudger-icon-active-color,
-        $bpk-calendar-nav-icon-active-fill
+        $bpk-text-primary-day
       );
     }
 
@@ -76,7 +76,7 @@
       cursor: not-allowed;
 
       .bpk-calendar-nav__icon {
-        fill: $bpk-calendar-nav-icon-disabled-fill;
+        fill: $bpk-text-disabled-day;
       }
     }
   }
