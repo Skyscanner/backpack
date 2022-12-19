@@ -49,6 +49,11 @@ $bpk-spacing-v2: true;
 
   &__input {
     @include bpk-checkbox__input;
+  }
+
+    &--disabled {
+      cursor: inherit;
+    }
 
     &-indeterminate {
       &::before {
