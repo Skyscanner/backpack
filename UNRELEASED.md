@@ -20,6 +20,10 @@
     </BpkText>
     ```
 
+**Changed:**
+  - `BpkPanel`
+    - Change panel padding to `16px`
+
 **Patched:**
   - `BpkContentCards`
     - Fix headline vertical spacing
