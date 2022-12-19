@@ -12,7 +12,7 @@
     ```
     ```javascript
     // myJsFile.js
-    
+
     import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 
     <BpkText tagName="h1" textStyle={TEXT_STYLES.heading1} className='myTextClass'>
@@ -23,6 +23,9 @@
 **Patched:**
   - `BpkContentCards`
     - Fix headline vertical spacing
-  
+
   - `BpkCalendar`
     - Swap calendar tokens for semantic tokens
+
+  - `BpkCheckbox`
+    - Update disabled input cursor to inherit `not-allowed` style
