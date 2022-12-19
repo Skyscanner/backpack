@@ -29,3 +29,6 @@
 
   - `BpkCheckbox`
     - Update disabled input cursor to inherit `not-allowed` style
+
+  - `BpkRadio`
+    - Update disabled input cursor to inherit `not-allowed` style
