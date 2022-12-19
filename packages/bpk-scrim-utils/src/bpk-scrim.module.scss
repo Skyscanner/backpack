@@ -27,22 +27,19 @@
   z-index: $bpk-zindex-scrim;
   transition: opacity $bpk-duration-sm ease-in-out;
   background-color: $bpk-scrim-day;
-
-  // We will need to remove this on hex launch as opacity will be built into the above colour.
-  opacity: $bpk-scrim-opacity;
   overflow: hidden;
 
   &--full-screen {
     @include bpk-breakpoint-mobile {
-      opacity: $bpk-scrim-mobile-opacity;
+      opacity: 1;
     }
   }
 
   &--appear {
-    opacity: $bpk-scrim-initial-opacity;
+    opacity: 0;
   }
 
   &--appear-active {
-    opacity: $bpk-scrim-opacity;
+    opacity: 0.7;
   }
 }
