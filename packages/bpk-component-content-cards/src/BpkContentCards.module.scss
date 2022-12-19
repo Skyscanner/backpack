@@ -40,7 +40,7 @@ $bpk-spacing-v2: true;
       minmax($bpk-one-pixel-rem * 50, 1fr)
     );
     grid-auto-flow: column;
-    gap: bpk-spacing-base();
+    gap: bpk-spacing-lg();
 
     @include bpk-breakpoint-small-tablet {
       grid-template-columns: 1fr;

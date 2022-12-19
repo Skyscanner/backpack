@@ -27,3 +27,6 @@
 **Patched:**
   - `BpkContentCards`
     - Fix headline vertical spacing
+  
+  - `BpkCalendar`
+    - Swap calendar tokens for semantic tokens
