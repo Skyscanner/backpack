@@ -19,12 +19,11 @@ import {
   horizontalNavLinkColor,
   horizontalNavLinkHoverColor,
   horizontalNavLinkActiveColor,
-  calendarDayHoverColor,
-  calendarDayActiveColor,
   colorSkyGrayTint02,
   colorSkyGrayTint06,
   colorWhite,
   colorMonteverde,
+  textPrimaryDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const generateTheme = ({
@@ -159,8 +158,8 @@ const generateTheme = ({
   progressBarFillColor: primaryColor500,
 
   calendarDateTextColor: primaryColor500,
-  calendarDateTextHoverColor: calendarDayHoverColor,
-  calendarDateTextActiveColor: calendarDayActiveColor,
+  calendarDateTextHoverColor: textPrimaryDay,
+  calendarDateTextActiveColor: textPrimaryDay,
   calendarDateTextFocusColor: primaryColor500,
   calendarDateTextSelectedColor: colorWhite,
   calendarDateSelectedBackgroundColor: primaryColor700,
