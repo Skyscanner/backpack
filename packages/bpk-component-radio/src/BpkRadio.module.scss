@@ -44,6 +44,10 @@ $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
   &__input {
     @include bpk-radio__input;
 
+    &:disabled {
+      cursor: inherit;
+    }
+
     &:checked {
       + .bpk-radio__circle {
         display: block;
