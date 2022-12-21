@@ -37,28 +37,10 @@ const DefaultExample = () => (
 
 const WithHeadingTagsExample = () => (
   <div>
-    <BpkText textStyle={TEXT_STYLES.subheading} tagName="h1">
+    <BpkText textStyle={TEXT_STYLES.hero4} tagName="h4">
       The quick brown fox jumps over the lazy dog
     </BpkText>
-    <BpkText textStyle={TEXT_STYLES.bodyLongform} tagName="h2">
-      The quick brown fox jumps over the lazy dog
-    </BpkText>
-    <BpkText textStyle={TEXT_STYLES.label1} tagName="h3">
-      The quick brown fox jumps over the lazy dog
-    </BpkText>
-    <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="h3">
-      The quick brown fox jumps over the lazy dog
-    </BpkText>
-    <BpkText textStyle={TEXT_STYLES.label2} tagName="h4">
-      The quick brown fox jumps over the lazy dog
-    </BpkText>
-    <BpkText textStyle={TEXT_STYLES.label3} tagName="h4">
-      The quick brown fox jumps over the lazy dog
-    </BpkText>
-    <BpkText textStyle={TEXT_STYLES.footnote} tagName="h5">
-      The quick brown fox jumps over the lazy dog
-    </BpkText>
-    <BpkText textStyle={TEXT_STYLES.caption} tagName="h6">
+    <BpkText textStyle={TEXT_STYLES.hero5} tagName="h5">
       The quick brown fox jumps over the lazy dog
     </BpkText>
   </div>
@@ -90,38 +72,86 @@ const WithDefaultPropsExample = () => (
   </div>
 );
 
+const HeroStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.hero1} tagName="h1">
+      Hero 1
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero2} tagName="h2">
+      Hero 2
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero3} tagName="h3">
+      Hero 3
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero4} tagName="h4">
+      Hero 4
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero5} tagName="h5">
+      Hero 5
+    </BpkText>
+  </div>
+);
+
 const HeadingStylesExample = () => (
   <div>
-    <BpkText textStyle={TEXT_STYLES.hero4} tagName="h5">
-      The quick brown fox jumps over the lazy dog
-    </BpkText>
-    <BpkText textStyle={TEXT_STYLES.hero5} tagName="h6">
-      The quick brown fox jumps over the lazy dog
-    </BpkText>
     <BpkText textStyle={TEXT_STYLES.heading1} tagName="h1">
-      The quick brown fox jumps over the lazy dog
+      Heading 1
     </BpkText>
-    <BpkText textStyle={TEXT_STYLES.heading2} tagName="h4">
-      The quick brown fox jumps over the lazy dog
+    <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
+      Heading 2
     </BpkText>
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
-      The quick brown fox jumps over the lazy dog
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Heading 3
     </BpkText>
-    <BpkText textStyle={TEXT_STYLES.heading4} tagName="h6">
-      The quick brown fox jumps over the lazy dog
+    <BpkText textStyle={TEXT_STYLES.heading4} tagName="h4">
+      Heading 4
     </BpkText>
-    <BpkText textStyle={TEXT_STYLES.heading5} tagName="h4">
-      The quick brown fox jumps over the lazy dog
+    <BpkText textStyle={TEXT_STYLES.heading5} tagName="h5">
+      Heading 5
+    </BpkText>
+  </div>
+);
+
+const BodyStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.subheading} tagName="p">
+      Subheading
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.bodyLongform} tagName="p">
+      Body Longform
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+      Body Default
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.footnote} tagName="p">
+      Footnote
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.caption} tagName="p">
+      Caption
+    </BpkText>
+  </div>
+);
+
+const LabelStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.label1} tagName="p">
+      Label 1
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.label2} tagName="p">
+      Label 2
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.label3} tagName="p">
+      Label 3
     </BpkText>
   </div>
 );
 
 const MixedExample = () => (
   <div>
-    <DefaultExample />
-    <WithHeadingTagsExample />
-    <ParagraphExample />
-    <WithDefaultPropsExample />
+    <HeroStylesExample />
+    <HeadingStylesExample />
+    <BodyStylesExample />
+    <LabelStylesExample />
   </div>
 );
 
@@ -131,5 +161,8 @@ export {
   ParagraphExample,
   WithDefaultPropsExample,
   HeadingStylesExample,
+  HeroStylesExample,
+  BodyStylesExample,
+  LabelStylesExample,
   MixedExample,
 };
