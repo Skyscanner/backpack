@@ -27,7 +27,7 @@ export default () => (
 
 ```js
 import React from 'react';
-import { BpkDividedCard, ORIENTATION } from '@skyscanner/backpack-web/bpk-component-divided-card';
+import { BpkDividedCard, ORIENTATION } from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkDividedCard
