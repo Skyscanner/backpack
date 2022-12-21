@@ -22,6 +22,9 @@ import {
   ParagraphExample,
   WithDefaultPropsExample,
   HeadingStylesExample,
+  HeroStylesExample,
+  BodyStylesExample,
+  LabelStylesExample,
   MixedExample,
 } from './examples';
 
@@ -35,6 +38,9 @@ export const WithHeadingTags = WithHeadingTagsExample;
 export const Paragraph = ParagraphExample;
 export const UsingWithDefaultProps = WithDefaultPropsExample;
 
+export const HeroStyles = HeroStylesExample;
 export const HeadingStyles = HeadingStylesExample;
+export const BodyStyles = BodyStylesExample;
+export const LabelStyles = LabelStylesExample;
 
 export const VisualTest = MixedExample;

@@ -132,11 +132,26 @@ const BodyStylesExample = () => (
   </div>
 );
 
+const LabelStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.label1} tagName="p">
+      Label 1
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.label2} tagName="p">
+      Label 2
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.label3} tagName="p">
+      Label 3
+    </BpkText>
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <HeroStylesExample />
     <HeadingStylesExample />
     <BodyStylesExample />
+    <LabelStylesExample />
   </div>
 );
 
@@ -146,5 +161,8 @@ export {
   ParagraphExample,
   WithDefaultPropsExample,
   HeadingStylesExample,
+  HeroStylesExample,
+  BodyStylesExample,
+  LabelStylesExample,
   MixedExample,
 };
