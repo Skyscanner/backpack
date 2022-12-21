@@ -59,7 +59,7 @@ $arrow-size: bpk-spacing-sm() * 3;
         margin-bottom: -$bpk-one-pixel-rem;
         margin-left: -(bpk-spacing-md() + bpk-spacing-sm());
         border: $arrow-size solid transparent;
-        border-bottom-color: $bpk-autosuggest-list-background-color;
+        border-bottom-color: $bpk-surface-default-day;
         pointer-events: none;
       }
     }
@@ -86,11 +86,11 @@ $arrow-size: bpk-spacing-sm() * 3;
     }
 
     &:active {
-      background-color: $bpk-autosuggest-list-item-active-background-color;
+      background-color: $bpk-canvas-contrast-day;
     }
 
     &--highlighted {
-      background-color: $bpk-autosuggest-list-item-highlighted-background-color;
+      background-color: $bpk-canvas-contrast-day;
     }
   }
 
