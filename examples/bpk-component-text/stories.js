@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkText from '../../packages/bpk-component-text';
+
 import {
   DefaultExample,
   WithHeadingTagsExample,
@@ -27,6 +29,7 @@ import {
 
 export default {
   title: 'bpk-component-text',
+  component: BpkText,
 };
 
 export const Default = DefaultExample;

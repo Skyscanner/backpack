@@ -19,8 +19,9 @@
 module.exports = {
   stories: ['../examples/**/stories.@(ts|js)'],
   addons: [
+    '@storybook/addon-docs',
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
-    '@storybook/addon-viewport',
+    '@storybook/addon-viewport'
   ],
 };

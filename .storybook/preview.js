@@ -50,3 +50,11 @@ addDecorator((story) => (
     </div>
   </div>
 ));
+
+export const parameters = {
+  docs: {
+    source: {
+      type: 'dynamic'
+    }
+  },
+};
