@@ -1,3 +1,10 @@
+# 2022-12-22
+
+`@skyscanner/backpack-web`: 17.0.0 => 17.0.1
+
+**Patched:**
+    - Fix banner alert alignment between message and description
+
 # 2022-12-20
 
 `@skyscanner/backpack-web`: 16.2.0 => 17.0.0
