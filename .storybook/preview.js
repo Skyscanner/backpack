@@ -51,10 +51,11 @@ addDecorator((story) => (
   </div>
 ));
 
+// eslint-disable-next-line import/prefer-default-export
 export const parameters = {
   docs: {
     source: {
-      type: 'dynamic'
-    }
+      type: 'dynamic',
+    },
   },
 };
