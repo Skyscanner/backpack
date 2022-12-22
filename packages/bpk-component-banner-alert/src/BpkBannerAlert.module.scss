@@ -21,7 +21,7 @@
 $bpk-spacing-v2: true;
 
 .bpk-banner-alert {
-  background-color: $bpk-banner-alert-background-color;
+  background-color: $bpk-surface-default-day;
   overflow: hidden;
 
   @include bpk-border-radius-sm;
@@ -142,7 +142,7 @@ $bpk-spacing-v2: true;
   }
 
   &__expand-icon {
-    fill: $bpk-banner-alert-expand-icon-fill;
+    fill: $bpk-text-secondary-day;
 
     &--flipped {
       transform: scaleY(-1);
@@ -150,12 +150,8 @@ $bpk-spacing-v2: true;
   }
 
   &__children-container {
-    // Temporarily adding an extra 2px padding to align alert message and description until the icon size changes to 16px
-    $extra-padding: 2 * $bpk-one-pixel-rem;
-
-    padding: 0 bpk-spacing-xxl() bpk-spacing-md()
-      (bpk-spacing-xl() + $extra-padding);
-    color: $bpk-banner-alert-children-color;
+    padding: 0 bpk-spacing-xxl() bpk-spacing-md() bpk-spacing-xl();
+    color: $bpk-text-secondary-day;
 
     @include bpk-text;
     @include bpk-caption;
