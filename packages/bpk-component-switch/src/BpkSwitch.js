@@ -40,12 +40,12 @@ export type Props = {
 };
 
 const BpkSwitch = (props: Props) => {
-  const { className, label, small, ...rest } = props;
-  const type = props.type || SWITCH_TYPES.primary;
+  const { className, label, small, type, ...rest } = props;
+  const resolvedType = type || SWITCH_TYPES.primary;
 
   const switchClassNames = getClassName(
     'bpk-switch__switch',
-    `bpk-switch__switch--${type}`,
+    `bpk-switch__switch--${resolvedType}`,
     small && 'bpk-switch__switch--small',
   );
 
@@ -78,6 +78,7 @@ BpkSwitch.propTypes = {
 
 BpkSwitch.defaultProps = {
   className: null,
+  type: null,
   small: false,
 };
 
