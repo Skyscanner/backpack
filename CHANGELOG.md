@@ -1,3 +1,12 @@
+# 2023-01-04
+
+`@skyscanner/backpack-web`: 17.0.1 => 17.0.2
+
+**Patched:**
+  - `BpkSwitch`
+    - Fix deprecation message caused by default "type" set
+
+
 # 2022-12-22
 
 `@skyscanner/backpack-web`: 17.0.0 => 17.0.1
