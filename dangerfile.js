@@ -40,18 +40,6 @@ const modifiedFiles = danger.git.modified_files;
 const fileChanges = [...modifiedFiles, ...createdFiles];
 const markdownChanges = fileChanges.filter((path) => path.endsWith('md'));
 
-const svgsChangedOrCreated = fileChanges.some((filePath) =>
-  filePath.endsWith('svg'),
-);
-
-if (svgsChangedOrCreated) {
-  markdown(`
-  This pull request changes some SVGs. Ensure they look as expected after they have been through the build process.
-
-  If anything looks wrong, see _decisions/fill-rule-in-svgs.md_ for advice on how to fix it.
-    `);
-}
-
 const componentChangedOrCreated = fileChanges.some((filePath) =>
   filePath.match(/packages\/bpk-component.+\/src\/.+\.(js|ts|tsx)$/),
 );
@@ -60,8 +48,7 @@ if (componentChangedOrCreated) {
   markdown(`
   ## Browser support
 
-  If this is a visual change, make sure you've tested it in multiple browsers,
-  particularly IE11.
+  If this is a visual change, make sure you've tested it in multiple browsers.
   `);
 }
 
