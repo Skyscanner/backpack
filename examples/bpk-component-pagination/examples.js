@@ -76,6 +76,10 @@ const FivePagesPaginationExample = () => (
   <PaginationContainer pageCount={20} visibleRange={5} />
 );
 
+const LargePagesPaginationExample = () => (
+  <PaginationContainer pageCount={2222} />
+);
+
 const TwoPagesPaginationExample = () => <PaginationContainer pageCount={2} />;
 
 const SinglePaginationExample = () => <PaginationContainer pageCount={1} />;
@@ -87,6 +91,7 @@ const VisibleRangeExample = () => (
 export {
   DefaultPaginationExample,
   FivePagesPaginationExample,
+  LargePagesPaginationExample,
   TwoPagesPaginationExample,
   SinglePaginationExample,
   VisibleRangeExample,

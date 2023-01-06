@@ -2,68 +2,54 @@
 
 exports[`BpkPaginationNudger should display backward nudger 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-pagination-nudger"
+  <button
+    class="bpk-button bpk-button--link bpk-pagination-nudger"
+    type="button"
   >
-    <button
-      class="bpk-pagination-nudger__button"
-      type="button"
+    <svg
+      class="bpk-pagination-nudger__icon bpk-icon--rtl-support"
+      height="16"
+      style="width: 1rem; height: 1rem;"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <span
-        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-      >
-        <svg
-          class="bpk-pagination-nudger__icon bpk-icon--rtl-support"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M16.5 17.293V6.707a1.632 1.632 0 00-2.701-1.296l-5.724 5.081a1.75 1.75 0 00-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 002.75-1.251z"
-          />
-        </svg>
-      </span>
-      <span
-        class="bpk-pagination-nudger__text--hidden"
-      >
-        previous
-      </span>
-    </button>
-  </div>
+      <path
+        d="M15.75 16.537V7.463a1.358 1.358 0 00-2.251-1.11l-4.77 4.354a1.53 1.53 0 00-.04 2.184l4.77 4.718a1.357 1.357 0 002.291-1.072z"
+      />
+    </svg>
+    <span
+      class="bpk-pagination-nudger__text--hidden"
+    >
+      previous
+    </span>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`BpkPaginationNudger should display forward nudger 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-pagination-nudger"
+  <button
+    class="bpk-button bpk-button--link bpk-pagination-nudger"
+    type="button"
   >
-    <button
-      class="bpk-pagination-nudger__button"
-      type="button"
+    <svg
+      class="bpk-pagination-nudger__icon bpk-icon--rtl-support"
+      height="16"
+      style="width: 1rem; height: 1rem;"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <span
-        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-      >
-        <svg
-          class="bpk-pagination-nudger__icon bpk-icon--rtl-support"
-          height="24"
-          style="width: 1.5rem; height: 1.5rem;"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M7.5 17.293V6.707a1.632 1.632 0 012.701-1.296l5.724 5.081a1.75 1.75 0 01.121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 01-2.75-1.251z"
-          />
-        </svg>
-      </span>
-      <span
-        class="bpk-pagination-nudger__text--hidden"
-      >
-        next
-      </span>
-    </button>
-  </div>
+      <path
+        d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
+      />
+    </svg>
+    <span
+      class="bpk-pagination-nudger__text--hidden"
+    >
+      next
+    </span>
+  </button>
 </DocumentFragment>
 `;
