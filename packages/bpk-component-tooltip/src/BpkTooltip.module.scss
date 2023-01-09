@@ -137,7 +137,7 @@ $dark-background-color: $bpk-surface-contrast-day;
     @include bpk-layer;
 
     &--padded {
-      padding: bpk-spacing-sm() bpk-spacing-md();
+      padding: bpk-spacing-md() bpk-spacing-base();
     }
 
     &--dark {
