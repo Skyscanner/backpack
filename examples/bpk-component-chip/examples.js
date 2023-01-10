@@ -282,9 +282,6 @@ const RadioGroupChipsExample = () => (
 
 const AllSelectableChipsExample = () => (
   <div>
-    <BpkText textStyle={TEXT_STYLES.heading1} tagName="h2">
-      Selectable chips
-    </BpkText>
     {Object.keys(CHIP_TYPES).map((chipType) => (
       <>
         <div className={getClassName(`bpk-chip-examples__container`)}>
@@ -307,9 +304,6 @@ const AllSelectableChipsExample = () => (
 
 const AllDropdownChipsExample = () => (
   <div>
-    <BpkText textStyle={TEXT_STYLES.heading1} tagName="h2">
-      Dropdown chips
-    </BpkText>
     {Object.keys(CHIP_TYPES).map((chipType) => (
       <div className={getClassName(`bpk-chip-examples__container`)}>
         <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
@@ -321,9 +315,6 @@ const AllDropdownChipsExample = () => (
 
 const AllDismissibleChipsExample = () => (
   <div>
-    <BpkText textStyle={TEXT_STYLES.heading1} tagName="h2">
-      Dismissible chips
-    </BpkText>
     {Object.keys(CHIP_TYPES).map((chipType) => (
       <div className={getClassName(`bpk-chip-examples__container`)}>
         <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
@@ -335,8 +326,17 @@ const AllDismissibleChipsExample = () => (
 
 const AllTypesExample = () => (
   <div>
+    <BpkText textStyle={TEXT_STYLES.heading1} tagName="h2">
+      Selectable chips
+    </BpkText>
     <AllSelectableChipsExample />
+    <BpkText textStyle={TEXT_STYLES.heading1} tagName="h2">
+      Dropdown chips
+    </BpkText>
     <AllDropdownChipsExample />
+    <BpkText textStyle={TEXT_STYLES.heading1} tagName="h2">
+      Dismissible chips
+    </BpkText>
     <AllDismissibleChipsExample />
   </div>
 );
