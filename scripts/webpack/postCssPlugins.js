@@ -17,5 +17,9 @@
  */
 
 const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
+const autoprefixer = require('autoprefixer');
 
-module.exports = () => [postCssFlexbugsFixes];
+module.exports = () => [
+  postCssFlexbugsFixes,
+  autoprefixer({ flexbox: 'no-2009' }),
+];
