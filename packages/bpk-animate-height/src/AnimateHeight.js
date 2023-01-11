@@ -45,19 +45,12 @@ class AnimateHeight extends Component {
     };
   }
 
-  componentDidMount() {
-    if (this.contentElement && this.props.height === 0) {
-      this.contentElement.style.display = 'none';
-    }
-  }
-
   UNSAFE_componentWillReceiveProps(nextProps) {
     const { height } = this.props;
 
     // Check if 'height' prop has changed
     if (this.contentElement && nextProps.height !== height) {
       // Cache content height
-      this.contentElement.style.display = '';
       this.contentElement.style.overflow = this.props.transitionOverflow;
       const contentHeight = this.contentElement.offsetHeight;
       this.contentElement.style.overflow = '';
@@ -118,9 +111,6 @@ class AnimateHeight extends Component {
   }
 
   onTransitionEnd = () => {
-    if (this.contentElement && this.props.height === 0) {
-      this.contentElement.style.display = 'none';
-    }
     if (this.props.onAnimationComplete) {
       this.props.onAnimationComplete();
     }
