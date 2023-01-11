@@ -2,8 +2,7 @@
 
 > Animate height using CSS transitions.
 
-Note: This was forked from https://github.com/Stanko/react-animate-height. We have added functionality to
-set the display property of the container to `display: none;` when the height is equal to 0.
+Note: This was forked from https://github.com/Stanko/react-animate-height.
 
 More information on the easing values can be found at [http://easings.net/](http://easings.net/)
 
