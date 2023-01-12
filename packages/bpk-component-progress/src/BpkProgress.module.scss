@@ -23,7 +23,7 @@ $bpk-spacing-v2: true;
 .bpk-progress {
   position: relative;
   height: bpk-spacing-base();
-  border-radius: $bpk-border-radius-pill;
+  border-radius: $bpk-border-radius-md;
   background-color: $bpk-surface-highlight-day;
   overflow: hidden;
 

@@ -19,11 +19,6 @@
 @import '~bpk-mixins/index.scss';
 
 .bpk-chip-examples {
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   &__container {
     padding-top: bpk-spacing-lg();
 
