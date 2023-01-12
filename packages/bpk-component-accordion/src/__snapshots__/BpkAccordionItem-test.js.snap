@@ -52,9 +52,7 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
       <div
         style="height: 0px; overflow: hidden; transition: height 200ms ease;"
       >
-        <div
-          style="display: none;"
-        >
+        <div>
           My accordion content
         </div>
       </div>
@@ -115,9 +113,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
       <div
         style="height: 0px; overflow: hidden; transition: height 200ms ease;"
       >
-        <div
-          style="display: none;"
-        >
+        <div>
           My accordion content
         </div>
       </div>
@@ -179,9 +175,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
       <div
         style="height: 0px; overflow: hidden; transition: height 200ms ease;"
       >
-        <div
-          style="display: none;"
-        >
+        <div>
           My accordion content
         </div>
       </div>
@@ -303,9 +297,7 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
       <div
         style="height: 0px; overflow: hidden; transition: height 200ms ease;"
       >
-        <div
-          style="display: none;"
-        >
+        <div>
           My accordion content
         </div>
       </div>
@@ -366,9 +358,7 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
       <div
         style="height: 0px; overflow: hidden; transition: height 200ms ease;"
       >
-        <div
-          style="display: none;"
-        >
+        <div>
           My accordion content
         </div>
       </div>
@@ -441,9 +431,7 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
       <div
         style="height: 0px; overflow: hidden; transition: height 200ms ease;"
       >
-        <div
-          style="display: none;"
-        >
+        <div>
           My accordion content
         </div>
       </div>

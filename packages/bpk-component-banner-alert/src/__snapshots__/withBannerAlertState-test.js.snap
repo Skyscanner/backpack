@@ -66,9 +66,7 @@ exports[`withBannerAlertState(BpkBannerAlertDismissable) should render correctly
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            <div
-              style="display: none;"
-            >
+            <div>
               <div
                 class="bpk-banner-alert__children-container"
               />
@@ -152,9 +150,7 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            <div
-              style="display: none;"
-            >
+            <div>
               <div
                 class="bpk-banner-alert__children-container"
               >

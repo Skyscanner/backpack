@@ -185,9 +185,7 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      <div
-        style="display: none;"
-      >
+      <div>
         <div
           class="bpk-form-validation__container"
         >
@@ -252,9 +250,7 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      <div
-        style="display: none;"
-      >
+      <div>
         <div
           class="bpk-form-validation__container"
         >
@@ -311,9 +307,7 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      <div
-        style="display: none;"
-      >
+      <div>
         <div
           class="bpk-form-validation__container"
         >
@@ -377,9 +371,7 @@ exports[`BpkFieldset should render correctly with input component and "descripti
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      <div
-        style="display: none;"
-      >
+      <div>
         <div
           class="bpk-form-validation__container"
         >
@@ -436,9 +428,7 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      <div
-        style="display: none;"
-      >
+      <div>
         <div
           class="bpk-form-validation__container"
         >
@@ -500,9 +490,7 @@ exports[`BpkFieldset should render correctly with input component and "required"
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      <div
-        style="display: none;"
-      >
+      <div>
         <div
           class="bpk-form-validation__container"
         >
@@ -559,9 +547,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      <div
-        style="display: none;"
-      >
+      <div>
         <div
           class="bpk-form-validation__container"
         >
@@ -700,9 +686,7 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      <div
-        style="display: none;"
-      >
+      <div>
         <div
           class="bpk-form-validation__container"
         >
@@ -788,9 +772,7 @@ exports[`BpkFieldset should render correctly with select component and "required
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      <div
-        style="display: none;"
-      >
+      <div>
         <div
           class="bpk-form-validation__container"
         >

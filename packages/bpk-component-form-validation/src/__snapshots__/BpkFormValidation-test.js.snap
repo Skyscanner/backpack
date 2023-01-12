@@ -42,9 +42,7 @@ exports[`BpkFormValidation should render correctly with "expanded" equal to fals
   <div
     style="height: 0px; overflow: visible; transition: height 200ms ease;"
   >
-    <div
-      style="display: none;"
-    >
+    <div>
       <div
         class="bpk-form-validation__container"
       >
