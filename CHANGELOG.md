@@ -1,3 +1,13 @@
+# 2023-01-12
+
+**Changed:**
+
+- `@skyscanner/backpack-web`: 17.0.2 => 17.1.0
+  - `BpkPagination`:
+    - Updated component to the new design of the component to align with our brand.
+  - `BpkTooltip`:
+    - Updated padding 
+
 # 2023-01-04
 
 `@skyscanner/backpack-web`: 17.0.1 => 17.0.2
