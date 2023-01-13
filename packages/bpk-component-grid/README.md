@@ -2,6 +2,8 @@
 
 > Backpack grid components.
 
+This component is deprecated and will be removed in a future release.
+
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
