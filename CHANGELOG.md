@@ -1,3 +1,20 @@
+# 2023-01-16
+
+`@skyscanner/backpack-web`: 17.1.0 => 17.2.0
+
+**Changed:**
+
+- `BpkBannerAlert` </br>
+  `BpkCalendar` </br>
+  `BpkDialog` </br>
+  `BpkImage` </br>
+  `BpkMap` </br>
+  `BpkModal` </br>
+  `BpkProgress` </br>
+  `BpkSkipLink` </br>
+  `BpkSlider` </br>
+    - Updated border radius
+
 # 2023-01-12
 
 **Changed:**
