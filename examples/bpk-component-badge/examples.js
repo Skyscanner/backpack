@@ -92,15 +92,15 @@ const SuccessExample = () => (
 
 const DestructiveExample = () => (
   <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.destructive}>Destructive</BpkBadge>
+    <BpkBadge type={BADGE_TYPES.destructive}>Critical</BpkBadge>
     &nbsp;
     <BpkBadge type={BADGE_TYPES.destructive}>
       <BpkSmallExclamationIcon />
-      &nbsp;Destructive
+      &nbsp;Critical
     </BpkBadge>
     &nbsp;
     <BpkBadge type={BADGE_TYPES.destructive}>
-      Destructive&nbsp;
+      Critical&nbsp;
       <BpkSmallExclamationIcon />
     </BpkBadge>
   </BadgeLayout>
