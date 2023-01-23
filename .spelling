@@ -73,6 +73,7 @@ BpkContentBubble
 BpkFlareBar
 
 BpkPanel
+BpkPagination
 
 BpkPhoneNumberInput
 
