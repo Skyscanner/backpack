@@ -20,26 +20,39 @@
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, deprecated } from '../../bpk-react-utils';
 
 import STYLES from './BpkOverlay.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 export const OVERLAY_TYPES = {
-  none: 'none',
-  tint: 'tint',
+  solid: 'solid',
+  top: 'top',
+  bottom: 'bottom',
+  left: 'left',
+  right: 'right',
+  vignette: 'vignette',
 };
 
+export const OVERLAY_LEVELS = {
+  low: 'low',
+  medium: 'medium',
+  high: 'high',
+  off: 'off',
+};
+
+// DEPRECATED
 export const BORDER_RADIUS_STYLES = {
   none: 'none',
   sm: 'sm',
 };
 
 export type Props = {
-  borderRadiusStyle: $Keys<typeof BORDER_RADIUS_STYLES>,
+  borderRadiusStyle: ?$Keys<typeof BORDER_RADIUS_STYLES>,
   children: Node,
-  overlayType: $Keys<typeof OVERLAY_TYPES>,
+  overlayType: ?$Keys<typeof OVERLAY_TYPES>,
+  overlayLevel: ?$Keys<typeof OVERLAY_LEVELS>,
   className: ?string,
   foregroundContent: ?Node,
 };
@@ -50,6 +63,7 @@ const BpkOverlay = (props: Props) => {
     children,
     className,
     foregroundContent,
+    overlayLevel,
     overlayType,
     ...rest
   } = props;
@@ -57,9 +71,10 @@ const BpkOverlay = (props: Props) => {
   const wrapperClassNames = getClassName('bpk-overlay__wrapper', className);
   const overlayClassNames = getClassName(
     'bpk-overlay__overlay',
-    borderRadiusStyle === BORDER_RADIUS_STYLES.sm &&
-      'bpk-overlay__overlay--border-radius-sm',
-    overlayType === OVERLAY_TYPES.tint && 'bpk-overlay__overlay--tint',
+    overlayType !== null &&
+      (overlayType !== OVERLAY_TYPES.vignette
+        ? `bpk-overlay__overlay--${overlayType}-${overlayLevel}`
+        : `bpk-overlay__overlay--${overlayType}`),
   );
 
   return (
@@ -73,17 +88,22 @@ const BpkOverlay = (props: Props) => {
 
 BpkOverlay.propTypes = {
   children: PropTypes.node.isRequired,
-  borderRadiusStyle: PropTypes.oneOf(Object.keys(BORDER_RADIUS_STYLES)),
+  borderRadiusStyle: deprecated(
+    PropTypes.oneOf(Object.keys(BORDER_RADIUS_STYLES)),
+    'This property is deprecated and radius will now be set based on the content. Please remove usage of this property.',
+  ),
   className: PropTypes.string,
   foregroundContent: PropTypes.node,
   overlayType: PropTypes.oneOf(Object.keys(OVERLAY_TYPES)),
+  overlayLevel: PropTypes.oneOf(Object.keys(OVERLAY_LEVELS)),
 };
 
 BpkOverlay.defaultProps = {
-  borderRadiusStyle: BORDER_RADIUS_STYLES.none,
+  borderRadiusStyle: null,
   className: null,
   foregroundContent: null,
-  overlayType: OVERLAY_TYPES.tint,
+  overlayType: OVERLAY_TYPES.solid,
+  overlayLevel: OVERLAY_LEVELS.low,
 };
 
 export default BpkOverlay;

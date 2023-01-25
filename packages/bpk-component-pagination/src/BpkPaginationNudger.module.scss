@@ -21,29 +21,10 @@
 $bpk-spacing-v2: true;
 
 .bpk-pagination-nudger {
-  text-align: center;
-  vertical-align: middle;
-
-  &__button {
-    height: $bpk-button-height;
-    padding: 0 bpk-spacing-md();
-    border: none;
-    background: none;
-    cursor: pointer;
-    appearance: none;
-
-    @include bpk-button--link;
-
-    &:disabled {
-      cursor: not-allowed;
-    }
-
-    .bpk-pagination-nudger__icon {
-      fill: currentcolor;
-
-      @include bpk-icon--rtl-support;
-    }
-  }
+  display: flex;
+  width: bpk-spacing-xl() + bpk-spacing-sm();
+  height: bpk-spacing-xl() + bpk-spacing-sm();
+  padding: $bpk-one-pixel-rem * 10;
 
   &__text {
     &--hidden {

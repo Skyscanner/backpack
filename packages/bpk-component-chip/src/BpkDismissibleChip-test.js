@@ -56,19 +56,21 @@ describe('BpkDismissibleChip', () => {
 
   Object.keys(CHIP_TYPES).forEach((chipType) => {
     it(`should render correctly with type="${chipType}"`, () => {
-      const { asFragment } = render(<TestChip type={chipType} />);
+      const { asFragment } = render(<TestChip type={CHIP_TYPES[chipType]} />);
       expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}" and disabled`, () => {
-      const { asFragment } = render(<TestChip type={chipType} disabled />);
+      const { asFragment } = render(
+        <TestChip type={CHIP_TYPES[chipType]} disabled />,
+      );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}" and a leading accessory view`, () => {
       const { asFragment } = render(
         <TestChip
-          type={chipType}
+          type={CHIP_TYPES[chipType]}
           leadingAccessoryView={<span>Leading</span>}
         />,
       );

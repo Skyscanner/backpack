@@ -1,0 +1,589 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkDropdownChip should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with a "className" attribute 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default custom-class"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="default" 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="default" and a leading accessory view 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="default" and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled"
+    disabled=""
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="default" and selected 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="default", selected and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled"
+    disabled=""
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onDark" 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-dark"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onDark" and a leading accessory view 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-dark"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onDark" and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
+    disabled=""
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onDark" and selected 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onDark", selected and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
+    disabled=""
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onImage" 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onImage" and a leading accessory view 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onImage" and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
+    disabled=""
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onImage" and selected 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkDropdownChip should render correctly with type="onImage", selected and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
+    disabled=""
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+    <span
+      class="bpk-chip__trailing-accessory-view"
+    >
+      <svg
+        height="16"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;

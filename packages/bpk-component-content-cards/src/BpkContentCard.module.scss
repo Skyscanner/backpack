@@ -67,7 +67,7 @@ $bpk-spacing-v2: true;
   }
 
   &--headline {
-    margin-bottom: $bpk-heading-margin-bottom;
+    margin-bottom: bpk-spacing-sm();
 
     @include bpk-heading-4;
   }

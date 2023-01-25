@@ -63,6 +63,10 @@ $bpk-spacing-v2: true;
       }
     }
 
+    &:disabled {
+      cursor: inherit;
+    }
+
     &-white {
       background-color: $bpk-surface-default-day;
     }

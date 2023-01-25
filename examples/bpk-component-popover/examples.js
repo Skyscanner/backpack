@@ -24,7 +24,6 @@ import React, { Component, type Node } from 'react';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkButton from '../../packages/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import BpkContentContainer from '../../packages/bpk-component-content-container';
 import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
 import BpkPopover from '../../packages/bpk-component-popover';
 
@@ -156,13 +155,11 @@ class PopoverContainer extends Component<Props, State> {
           target={target}
           {...rest}
         >
-          <BpkContentContainer>
-            <Paragraph>My popover content.</Paragraph>
-            <Paragraph>Some more popover content.</Paragraph>
-            {changeProps ? (
-              <BpkButton onClick={this.changeTarget}>Change target</BpkButton>
-            ) : null}
-          </BpkContentContainer>
+          <Paragraph>My popover content.</Paragraph>
+          <Paragraph>Some more popover content.</Paragraph>
+          {changeProps ? (
+            <BpkButton onClick={this.changeTarget}>Change target</BpkButton>
+          ) : null}
         </BpkPopover>
       </div>
     );

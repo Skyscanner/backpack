@@ -19,6 +19,7 @@
 import {
   DefaultPaginationExample,
   FivePagesPaginationExample,
+  LargePagesPaginationExample,
   TwoPagesPaginationExample,
   SinglePaginationExample,
   VisibleRangeExample,
@@ -31,6 +32,8 @@ export default {
 export const PaginationDefault = DefaultPaginationExample;
 
 export const Pagination5VisiblePages = FivePagesPaginationExample;
+
+export const PaginationManyPages = LargePagesPaginationExample;
 
 export const Pagination2Pages = TwoPagesPaginationExample;
 

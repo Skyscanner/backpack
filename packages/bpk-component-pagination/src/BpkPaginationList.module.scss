@@ -23,7 +23,8 @@ $bpk-spacing-v2: true;
 .bpk-pagination-page-list {
   display: flex;
   margin: 0;
-  padding: 0;
+  padding: 0 bpk-spacing-md();
+  align-items: baseline;
   list-style: none;
 
   &__item {

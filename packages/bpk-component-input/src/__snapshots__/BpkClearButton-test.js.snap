@@ -9,19 +9,19 @@ exports[`BpkClearButton should render correctly 1`] = `
     type="button"
   >
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-clear-button__icon"
         focusable="false"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5zM7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12z"
+          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
         />
       </svg>
     </span>
@@ -38,19 +38,19 @@ exports[`BpkClearButton should render correctly with a custom class 1`] = `
     type="button"
   >
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-clear-button__icon"
         focusable="false"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
+        height="16"
+        style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="18"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5zM7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12z"
+          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
         />
       </svg>
     </span>

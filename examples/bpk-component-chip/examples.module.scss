@@ -19,13 +19,33 @@
 @import '~bpk-mixins/index.scss';
 
 .bpk-chip-examples {
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
+  &__container {
+    padding-top: bpk-spacing-lg();
+
+    &:last-child {
+      padding-bottom: bpk-spacing-xl();
+    }
   }
 
   &__chip {
-    margin-right: $bpk-spacing-xs;
-    margin-bottom: $bpk-spacing-sm;
+    margin-right: bpk-spacing-md();
+  }
+
+  &__on-dark {
+    margin-top: bpk-spacing-lg();
+    padding: bpk-spacing-base();
+    background-color: $bpk-core-primary-day;
+  }
+
+  &__default {
+    margin-top: bpk-spacing-lg();
+    padding: bpk-spacing-base();
+    background-color: $bpk-surface-default-day;
+  }
+
+  &__on-image {
+    margin-top: bpk-spacing-lg();
+    padding: bpk-spacing-base();
+    background-color: $bpk-surface-highlight-day;
   }
 }

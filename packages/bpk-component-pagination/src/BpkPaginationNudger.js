@@ -20,17 +20,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
-import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
-import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
+import BpkButton from '../../bpk-component-button';
+import { withRtlSupport } from '../../bpk-component-icon';
+import ArrowLeftIcon from '../../bpk-component-icon/sm/arrow-left';
+import ArrowRightIcon from '../../bpk-component-icon/sm/arrow-right';
 
 import STYLES from './BpkPaginationNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
-const AlignedArrowLeftIcon = withButtonAlignment(withRtlSupport(ArrowLeftIcon));
-const AlignedArrowRightIcon = withButtonAlignment(
-  withRtlSupport(ArrowRightIcon),
-);
+const AlignedArrowLeftIcon = withRtlSupport(ArrowLeftIcon);
+const AlignedArrowRightIcon = withRtlSupport(ArrowRightIcon);
 
 const nudgerIcon = (forward) =>
   forward ? (
@@ -47,19 +46,17 @@ const BpkPaginationNudger = (props) => {
   const { disabled, forward, label, onNudge } = props;
 
   return (
-    <div className={getClassName('bpk-pagination-nudger')}>
-      <button
-        type="button"
-        className={getClassName('bpk-pagination-nudger__button')}
-        onClick={onNudge}
-        disabled={disabled}
-      >
-        {nudgerIcon(forward)}
-        <span className={getClassName('bpk-pagination-nudger__text--hidden')}>
-          {label}
-        </span>
-      </button>
-    </div>
+    <BpkButton
+      link
+      onClick={onNudge}
+      disabled={disabled}
+      className={getClassName('bpk-pagination-nudger')}
+    >
+      {nudgerIcon(forward)}
+      <span className={getClassName('bpk-pagination-nudger__text--hidden')}>
+        {label}
+      </span>
+    </BpkButton>
   );
 };
 

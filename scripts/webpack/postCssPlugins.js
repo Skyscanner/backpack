@@ -16,13 +16,10 @@
  * limitations under the License.
  */
 
-const autoprefixer = require('autoprefixer');
 const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
+const autoprefixer = require('autoprefixer');
 
 module.exports = () => [
   postCssFlexbugsFixes,
-  autoprefixer({
-    browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-    flexbox: 'no-2009',
-  }),
+  autoprefixer({ flexbox: 'no-2009' }),
 ];

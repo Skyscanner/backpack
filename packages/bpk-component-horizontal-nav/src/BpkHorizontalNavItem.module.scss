@@ -46,7 +46,7 @@ $bpk-spacing-v2: true;
       @include bpk-themeable-property(
         color,
         --bpk-horizontal-nav-link-color,
-        $bpk-horizontal-nav-link-color
+        $bpk-text-secondary-day
       );
 
       @include bpk-hover {
@@ -54,7 +54,7 @@ $bpk-spacing-v2: true;
         @include bpk-themeable-property(
           color,
           --bpk-horizontal-nav-link-hover-color,
-          $bpk-horizontal-nav-link-hover-color
+          $bpk-text-secondary-day
         );
       }
 
@@ -63,7 +63,7 @@ $bpk-spacing-v2: true;
         @include bpk-themeable-property(
           color,
           --bpk-horizontal-nav-link-active-color,
-          $bpk-horizontal-nav-link-active-color
+          $bpk-text-secondary-day
         );
       }
 
@@ -88,7 +88,7 @@ $bpk-spacing-v2: true;
         @include bpk-themeable-property(
           color,
           --bpk-horizontal-nav-link-selected-color,
-          $bpk-horizontal-nav-link-selected-color
+          $bpk-text-link-day
         );
 
         @include bpk-hover {

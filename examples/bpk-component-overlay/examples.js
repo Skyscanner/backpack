@@ -21,146 +21,210 @@ import React from 'react';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import BpkImage, {
-  withLazyLoading,
-  withLoadingBehavior,
-  BORDER_RADIUS_STYLES as IMAGE_BORDER_RADIUS_STYLES,
-} from '../../packages/bpk-component-image';
+import BpkImage from '../../packages/bpk-component-image';
 import BpkOverlay, {
-  BORDER_RADIUS_STYLES,
   OVERLAY_TYPES,
+  OVERLAY_LEVELS,
 } from '../../packages/bpk-component-overlay';
 
 import STYLES from './examples.module.scss';
 
-const documentIfExists = typeof window !== 'undefined' ? document : null;
-const FadingLazyLoadedImage = withLoadingBehavior(
-  withLazyLoading(BpkImage, documentIfExists),
-);
-
-const OTTAWA_IMG_SRC =
-  'https://images.unsplash.com/photo-1535046460986-c0084bba76f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80';
+const EDI_IMAGE_SRC =
+  'https://images.unsplash.com/photo-1506377585622-bedcbb027afc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80';
 
 const getClassName = cssModules(STYLES);
 
-const DefaultExample = () => (
-  <BpkOverlay
-    borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
-    className={getClassName('bpk-overlay-stories__text-story')}
-  >
-    <BpkText>Hotels in Canada</BpkText>
-  </BpkOverlay>
+const SolidExamples = () => (
+  <div className={getClassName('bpk-overlay-stories')}>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.solid} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Solid {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
+  </div>
 );
 
-const OverlayTypeNoneExample = () => (
-  <BpkOverlay
-    overlayType={OVERLAY_TYPES.none}
-    className={getClassName('bpk-overlay-stories__text-story')}
-  >
-    <BpkText>Hotels in Canada</BpkText>
-  </BpkOverlay>
+const TopExamples = () => (
+  <div className={getClassName('bpk-overlay-stories')}>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.top} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Top {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
+  </div>
+);
+
+const BottomExamples = () => (
+  <div className={getClassName('bpk-overlay-stories')}>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.bottom} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Bottom {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
+  </div>
+);
+
+const LeftExamples = () => (
+  <div className={getClassName('bpk-overlay-stories')}>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.left} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Left {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
+  </div>
+);
+
+const RightExamples = () => (
+  <div className={getClassName('bpk-overlay-stories')}>
+    {Object.keys(OVERLAY_LEVELS).map((level) => {
+      if (level !== OVERLAY_LEVELS.off) {
+        return (
+          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+            <BpkOverlay overlayType={OVERLAY_TYPES.right} overlayLevel={level}>
+              <BpkImage
+                src={EDI_IMAGE_SRC}
+                altText="Edinburgh skyline"
+                aspectRatio={1.8}
+              />
+            </BpkOverlay>
+            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+              <BpkText textStyle={TEXT_STYLES.xl}>
+                Right {level.charAt(0).toUpperCase() + level.slice(1)}
+              </BpkText>
+            </div>
+          </div>
+        );
+      }
+      return null;
+    })}
+  </div>
+);
+
+const VignetteExample = () => (
+  <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+    <BpkOverlay
+      overlayType={OVERLAY_TYPES.vignette}
+      overlayLevel={OVERLAY_LEVELS.high}
+    >
+      <BpkImage
+        src={EDI_IMAGE_SRC}
+        altText="Edinburgh skyline"
+        aspectRatio={1.8}
+      />
+    </BpkOverlay>
+    <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+      <BpkText textStyle={TEXT_STYLES.xl}>Vignette</BpkText>
+    </div>
+  </div>
 );
 
 const WithForegroundContentExample = () => (
   <BpkOverlay
-    borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
-    className={getClassName('bpk-overlay-stories__text-story')}
+    overlayType={OVERLAY_TYPES.solid}
+    overlayLevel={OVERLAY_LEVELS.high}
     foregroundContent={
-      <BpkText
-        textStyle={TEXT_STYLES.xxl}
-        className={getClassName('bpk-overlay-stories__foreground')}
-      >
-        Visit Ottawa, Canada&apos;s illustrious capital
-      </BpkText>
+      <div className={getClassName('bpk-overlay-stories__foreground')}>
+        <BpkText textStyle={TEXT_STYLES.xl}>
+          Visit Edinburgh, Scotland&apos;s illustrious capital
+        </BpkText>
+      </div>
     }
   >
-    <BpkText>Hotels in Canada</BpkText>
-  </BpkOverlay>
-);
-
-const WithBpkImageExample = () => (
-  <BpkOverlay>
     <BpkImage
-      src={OTTAWA_IMG_SRC}
-      altText="Canadian Parliament Building in Ottawa"
-      width={300}
-      height={200}
+      src={EDI_IMAGE_SRC}
+      altText="Edinburgh skyline"
+      aspectRatio={1.8}
     />
   </BpkOverlay>
-);
-
-const WithBpkImageNoTintExample = () => (
-  <BpkOverlay overlayType={OVERLAY_TYPES.none}>
-    <BpkImage
-      src={OTTAWA_IMG_SRC}
-      altText="Canadian Parliament Building in Ottawa"
-      width={300}
-      height={200}
-    />
-  </BpkOverlay>
-);
-
-const WithBpkImageRoundedExample = () => (
-  <BpkOverlay borderRadiusStyle={BORDER_RADIUS_STYLES.sm}>
-    <BpkImage
-      borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
-      src={OTTAWA_IMG_SRC}
-      altText="Canadian Parliament Building in Ottawa"
-      width={300}
-      height={200}
-    />
-  </BpkOverlay>
-);
-
-const WithBpkImageLazyLoadedExample = () => (
-  <BpkOverlay borderRadiusStyle={BORDER_RADIUS_STYLES.sm}>
-    <FadingLazyLoadedImage
-      borderRadiusStyle={IMAGE_BORDER_RADIUS_STYLES.sm}
-      src={OTTAWA_IMG_SRC}
-      altText="Canadian Parliament Building in Ottawa"
-      width={300}
-      height={200}
-    />
-  </BpkOverlay>
-);
-
-const TextOverlaidOnImageExample = () => (
-  <div>
-    <BpkOverlay
-      foregroundContent={
-        <div className={getClassName('bpk-overlay-stories__foreground')}>
-          <BpkText textStyle={TEXT_STYLES.xxl}>
-            Visit Ottawa, Canada&apos;s illustrious capital
-          </BpkText>
-        </div>
-      }
-    >
-      <BpkImage
-        src={OTTAWA_IMG_SRC}
-        altText="Canadian Parliament Building in Ottawa"
-        width={300}
-        height={200}
-      />
-    </BpkOverlay>
-  </div>
 );
 
 const MixedExample = () => (
   <div>
-    <DefaultExample />
-    <OverlayTypeNoneExample />
-    <WithForegroundContentExample />
+    <SolidExamples />
+    <TopExamples />
+    <BottomExamples />
+    <LeftExamples />
+    <RightExamples />
+    <VignetteExample />
+    <div className={getClassName('bpk-overlay-stories')}>
+      <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+        <WithForegroundContentExample />
+      </div>
+    </div>
   </div>
 );
 
 export {
-  DefaultExample,
-  OverlayTypeNoneExample,
+  SolidExamples,
+  TopExamples,
+  BottomExamples,
+  LeftExamples,
+  RightExamples,
+  VignetteExample,
   WithForegroundContentExample,
-  WithBpkImageExample,
-  WithBpkImageNoTintExample,
-  WithBpkImageRoundedExample,
-  WithBpkImageLazyLoadedExample,
-  TextOverlaidOnImageExample,
   MixedExample,
 };

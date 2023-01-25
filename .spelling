@@ -32,8 +32,11 @@ BpkCarouselItem
 BpkChip
 BpkDismissibleChip
 BpkSelectableChip
+BpkDropdownChip
 
 BpkDialingCodeList
+
+BpkDividedCard
 
 BpkFieldset
 
@@ -379,8 +382,11 @@ onToggleExpanded
 onValueChange
 overlayStyle
 overlayType
+overlayLevel
 OVERLAY_TYPES
-OVERLAY_TYPES.tint
+OVERLAY_TYPES.solid
+OVERLAY_LEVELS
+OVERLAY_LEVELS.low
 pageCount
 popperModifiers
 portalStyle
@@ -696,6 +702,7 @@ bpk-component-datatable
 bpk-component-datepicker
 bpk-component-description-list
 bpk-component-dialog
+bpk-component-divided-card
 bpk-component-drawer
 bpk-component-fieldset
 bpk-component-flare
@@ -866,6 +873,7 @@ BADGE_TYPES.light
 BADGE_TYPES.inverse
 BADGE_TYPES.outline
 BADGE_TYPES.strong
+BADGE_TYPES.brand
 BarComponent
 outlierPercentage
 onBarClick
@@ -909,3 +917,8 @@ nextNavLabel
 overImage
 VARIANT
 VARIANT.default
+VARIANT.overImage
+primaryContent
+secondaryContent
+ORIENTATION.horizontal
+ORIENTATION.vertical

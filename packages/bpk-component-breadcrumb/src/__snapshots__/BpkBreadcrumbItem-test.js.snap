@@ -13,14 +13,14 @@ exports[`BpkBreadcrumbItem should render correctly 1`] = `
     </a>
     <svg
       class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M8.25 7.463v9.074a1.358 1.358 0 0 0 2.251 1.11l4.77-4.354a1.53 1.53 0 0 0 .04-2.184l-4.77-4.718A1.357 1.357 0 0 0 8.25 7.463z"
+        d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
       />
     </svg>
   </li>
@@ -55,14 +55,14 @@ exports[`BpkBreadcrumbItem should render correctly with a custom class name 1`] 
     </a>
     <svg
       class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M8.25 7.463v9.074a1.358 1.358 0 0 0 2.251 1.11l4.77-4.354a1.53 1.53 0 0 0 .04-2.184l-4.77-4.718A1.357 1.357 0 0 0 8.25 7.463z"
+        d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
       />
     </svg>
   </li>
@@ -83,14 +83,14 @@ exports[`BpkBreadcrumbItem should render correctly with arbitrary props 1`] = `
     </a>
     <svg
       class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M8.25 7.463v9.074a1.358 1.358 0 0 0 2.251 1.11l4.77-4.354a1.53 1.53 0 0 0 .04-2.184l-4.77-4.718A1.357 1.357 0 0 0 8.25 7.463z"
+        d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
       />
     </svg>
   </li>
@@ -111,14 +111,14 @@ exports[`BpkBreadcrumbItem should render correctly with with "linkProps" attribu
     </a>
     <svg
       class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
+      height="16"
+      style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M8.25 7.463v9.074a1.358 1.358 0 0 0 2.251 1.11l4.77-4.354a1.53 1.53 0 0 0 .04-2.184l-4.77-4.718A1.357 1.357 0 0 0 8.25 7.463z"
+        d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
       />
     </svg>
   </li>

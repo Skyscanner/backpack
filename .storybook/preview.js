@@ -18,13 +18,11 @@
 import React from 'react';
 import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
 import { addDecorator } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 
 import 'bpk-stylesheets';
 import 'bpk-stylesheets/font';
 
-import BpkGridToggle from '../packages/bpk-component-grid-toggle';
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import BpkThemeToggle, {
   updateOnThemeChange,
@@ -36,14 +34,11 @@ import themeableAttributes from './themeableAttributes';
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
 addDecorator(withA11y);
-addDecorator(withKnobs);
 addDecorator((story) => (
   <div style={{ padding: TOKENS.spacingBase }}>
     <EnhancedThemeProvider themeAttributes={themeableAttributes}>
       {story()}
     </EnhancedThemeProvider>
-    <br />
-    <BpkGridToggle />
     <br />
     <BpkRtlToggle />
     <br />

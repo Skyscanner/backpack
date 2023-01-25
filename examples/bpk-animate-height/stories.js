@@ -18,7 +18,6 @@
 
 /* @flow strict */
 import React from 'react';
-import { text } from '@storybook/addon-knobs';
 
 import AnimateHeightExample from './examples';
 
@@ -31,13 +30,10 @@ export const Example = () => (
     fromHeight="auto"
     toHeight={0}
     duration={300}
-    buttonText={text('Button copy', 'Toggle height!')}
+    buttonText="Toggle height!"
   >
-    {text(
-      'Copy',
-      `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-parturient montes, nascetur ridiculus mus.`,
-    )}
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+    parturient montes, nascetur ridiculus mus.`,
   </AnimateHeightExample>
 );

@@ -19,12 +19,11 @@ import {
   horizontalNavLinkColor,
   horizontalNavLinkHoverColor,
   horizontalNavLinkActiveColor,
-  calendarDayHoverColor,
-  calendarDayActiveColor,
   colorSkyGrayTint02,
   colorSkyGrayTint06,
   colorWhite,
   colorMonteverde,
+  textPrimaryDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const generateTheme = ({
@@ -107,20 +106,16 @@ const generateTheme = ({
   buttonDestructiveHoverBackgroundColor: colorWhite,
   buttonDestructiveActiveBackgroundColor: colorWhite,
 
-  chipPrimarySelectedBackgroundColor: primaryColor500,
-  chipPrimarySelectedHoverBackgroundColor: primaryColor600,
-  chipPrimarySelectedActiveBackgroundColor: primaryColor700,
-  chipPrimarySelectedTextColor: colorWhite,
+  chipDefaultSelectedBackgroundColor: primaryColor500,
+  chipDefaultSelectedTextColor: colorWhite,
 
-  chipSuccessSelectedBackgroundColor: secondaryColor500,
-  chipSuccessSelectedHoverBackgroundColor: secondaryColor600,
-  chipSuccessSelectedActiveBackgroundColor: secondaryColor700,
-  chipSuccessSelectedTextColor: colorWhite,
+  chipOnDarkSelectedBackgroundColor: primaryColor500,
+  chipOnDarkSelectedTextColor: colorWhite,
 
-  chipLightSelectedBackgroundColor: primaryColor500,
-  chipLightSelectedHoverBackgroundColor: primaryColor600,
-  chipLightSelectedActiveBackgroundColor: primaryColor700,
-  chipLightSelectedTextColor: colorWhite,
+  chipOnImageSelectedBackgroundColor: primaryColor500,
+  chipOnImageSelectedHoverBackgroundColor: primaryColor500,
+  chipOnImageSelectedActiveBackgroundColor: primaryColor500,
+  chipOnImageSelectedTextColor: colorWhite,
 
   fieldsetLabelTextColor: secondaryColor500,
 
@@ -163,8 +158,8 @@ const generateTheme = ({
   progressBarFillColor: primaryColor500,
 
   calendarDateTextColor: primaryColor500,
-  calendarDateTextHoverColor: calendarDayHoverColor,
-  calendarDateTextActiveColor: calendarDayActiveColor,
+  calendarDateTextHoverColor: textPrimaryDay,
+  calendarDateTextActiveColor: textPrimaryDay,
   calendarDateTextFocusColor: primaryColor500,
   calendarDateTextSelectedColor: colorWhite,
   calendarDateSelectedBackgroundColor: primaryColor700,

@@ -23,6 +23,9 @@ import {
   WithoutPaddingExample,
   NonAtomicExample,
   NonAtomicHrefExample,
+  DefaultDividedCardExample,
+  VerticalDividedCardExample,
+  WithHrefDividedCardExample,
   MixedExample,
 } from './examples';
 
@@ -38,5 +41,9 @@ export const WithoutPadding = WithoutPaddingExample;
 export const NonAtomic = NonAtomicExample;
 
 export const NonAtomicWithHref = NonAtomicHrefExample;
+
+export const DefaultDividedCard = DefaultDividedCardExample;
+export const VerticalDividedCard = VerticalDividedCardExample;
+export const WithHrefDividedCard = WithHrefDividedCardExample;
 
 export const VisualTest = MixedExample;

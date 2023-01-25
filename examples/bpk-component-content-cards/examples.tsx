@@ -21,26 +21,26 @@ import React from 'react';
 import BpkContentCards from '../../packages/bpk-component-content-cards';
 
 const contentCardProps: React.ComponentProps<typeof BpkContentCards> = {
-  heading: 'Content cards header text',
+  heading: 'Your ultimate Greece guide',
   cards: [
-    {
-      image: {
-        url: 'https://content.skyscnr.com/m/41c355bf68f93d5b/original/ST3-108-MADPT-DNSW-Q222-Social-Silver-Pitch-6.jpg',
-        alt: 'People surfing in the ocean',
-      },
-      headline: 'Do this amazing thing number one',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      href: 'https://www.skyscanner.net',
-    },
     {
       image: {
         url: 'https://content.skyscnr.com/m/2e070403cb8488b8/original/shutterstock_1568380735.jpg',
         alt: 'Man on boat in a fjord',
       },
-      headline: 'Do this amazing thing number two',
+      headline: 'Discover your Grecian getaway',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'From city exploring to remote-island hoping, discover a side to Greece that makes up your dream getaway.',
+      href: 'https://www.skyscanner.net',
+    },
+    {
+      image: {
+        url: 'https://content.skyscnr.com/m/56a748936cd8aca2/original/Greece-YunanAdasi-GreekIslands-Food-ea76e3a0194c5f0ebcf3-jpg.jpg',
+        alt: 'Plate of traditional Greek seafood',
+      },
+      headline: 'Try the food of the Gods',
+      description:
+        'Greece gave us the Gyros. A vessel of bread lifting chips from plate to mouth. It doesn’t get godlier than this.',
       href: 'https://www.skyscanner.net',
     },
     {
@@ -48,35 +48,9 @@ const contentCardProps: React.ComponentProps<typeof BpkContentCards> = {
         url: 'https://content.skyscnr.com/m/50d9dff3186775ad/original/Condor-Homepage-Hero-Option-3.png',
         alt: 'Airplane flying over mountains',
       },
-      headline: 'Do this amazing thing number three',
+      headline: 'Our top 10 Greek islands',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      href: 'https://www.skyscanner.net',
-    },
-  ],
-};
-
-const visualTestsContentCardProps: React.ComponentProps<
-  typeof BpkContentCards
-> = {
-  heading: 'Content cards header text',
-  cards: [
-    {
-      image: {
-        url: 'https://content.skyscnr.com/m/41c355bf68f93d5b/original/ST3-108-MADPT-DNSW-Q222-Social-Silver-Pitch-6.jpg',
-        alt: 'People surfing in the ocean',
-      },
-      headline: 'Do this amazing thing number one',
-      description: 'Lorem ipsum dolor sit amet.',
-      href: 'https://www.skyscanner.net',
-    },
-    {
-      image: {
-        url: 'https://content.skyscnr.com/m/2e070403cb8488b8/original/shutterstock_1568380735.jpg',
-        alt: 'Man on boat in a fjord',
-      },
-      headline: 'Do this amazing thing number two',
-      description: 'Lorem ipsum dolor sit amet.',
+        'There are islands for everything. You can party, relax, chill, eat and hike, and that’s just Santorini.',
       href: 'https://www.skyscanner.net',
     },
   ],
@@ -103,16 +77,4 @@ const WithThreeCardsExample = () => (
   />
 );
 
-const VisualExample = () => (
-  <BpkContentCards
-    heading={visualTestsContentCardProps.heading}
-    cards={visualTestsContentCardProps.cards}
-  />
-);
-
-export {
-  WithOneCardExample,
-  WithTwoCardsExample,
-  WithThreeCardsExample,
-  VisualExample,
-};
+export { WithOneCardExample, WithTwoCardsExample, WithThreeCardsExample };

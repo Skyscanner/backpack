@@ -1,10 +1,187 @@
+# 2023-01-16
+
+`@skyscanner/backpack-web`: 17.1.0 => 17.2.0
+
+**Changed:**
+
+- `BpkBannerAlert` </br>
+  `BpkCalendar` </br>
+  `BpkDialog` </br>
+  `BpkImage` </br>
+  `BpkMap` </br>
+  `BpkModal` </br>
+  `BpkProgress` </br>
+  `BpkSkipLink` </br>
+  `BpkSlider` </br>
+    - Updated border radius
+
+# 2023-01-12
+
+**Changed:**
+
+- `@skyscanner/backpack-web`: 17.0.2 => 17.1.0
+  - `BpkPagination`:
+    - Updated component to the new design of the component to align with our brand.
+  - `BpkTooltip`:
+    - Updated padding 
+
+# 2023-01-04
+
+`@skyscanner/backpack-web`: 17.0.1 => 17.0.2
+
+**Patched:**
+  - `BpkSwitch`
+    - Fix deprecation message caused by default "type" set
+
+
+# 2022-12-22
+
+`@skyscanner/backpack-web`: 17.0.0 => 17.0.1
+
+**Patched:**
+    - Fix banner alert alignment between message and description
+
+# 2022-12-20
+
+`@skyscanner/backpack-web`: 16.2.0 => 17.0.0
+
+**Breaking:**
+- Removed `bpk-component-content-container`. As this component was originally created for use on the backpack-docs site it is being removed. This component also follows a pattern of using `dangerouslySetInnerHTML` which is not a good practice.
+  - Should you be using this component, please migrate to the `BpkText` and should you need to include bottom padding pass this as a custom `className` to apply. E.g.
+
+    ```css
+    /* myCssFile.scss */
+    .myTextClass {
+      padding-bottom: $bpk-spacing-md;
+    }
+    ```
+    ```javascript
+    // myJsFile.js
+
+    import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+
+    <BpkText tagName="h1" textStyle={TEXT_STYLES.heading1} className='myTextClass'>
+      Your content here
+    </BpkText>
+    ```
+
+**Changed:**
+  - `BpkPanel`
+    - Change panel padding to `16px`
+
+**Patched:**
+  - `BpkContentCards`
+    - Fix headline vertical spacing
+
+  - `BpkCalendar`
+    - Swap calendar tokens for semantic tokens
+
+  - `BpkCheckbox`
+    - Update disabled input cursor to inherit `not-allowed` style
+
+  - `BpkRadio`
+    - Update disabled input cursor to inherit `not-allowed` style
+
+
+# 2022-12-13
+
+`@skyscanner/backpack-web`: 16.1.0 => 16.2.0
+
+**Changed:**
+  - `BpkOverlay`
+    - Updated the default type to `solid` and the default level to `low`, as per design requirements.
+
+**Patched:**
+  - `BpkPagination`
+    - Fixed an alignment issue with the arrow and dots in component.
+
+# 2022-11-28
+
+`@skyscanner/backpack-web`: 16.0.0 => 16.1.0
+
+**Fixed:**
+
+- `BpkSwitch`:
+  - Update switch track colour
+
+**Changed:**
+
+  - `BpkOverlay`
+    - Added new overlay styles to unify the availability of styles.
+      - `OVERLAY_TYPES` - Sets the type of overlay from: `solid`, `top`, `bottom`, `left`, `right`, `vingette`.
+      - `OVERLAY_LEVELS` - Sets the level of overlay from: `low`, `medium`, `high`. In the case of `vingette`, you do no need to set this as it's always one style.
+    - Deprecated `borderRadiusStyle` as this now inherits from the wrapper.
+
+# 2022-11-23
+
+`@skyscanner/backpack-web`: `15.1.0 => 16.0.0`
+
+**Breaking:**
+
+- `BpkIcon`:
+  - Update small icons to `16px` to align with apps. Please check this does not break your UI.
+
+`BpkBannerAlert` </br>
+`BpkBreadcrumb` </br>
+`BpkButton` </br>
+`BpkCloseButton` </br>
+`BpkFormValidation` </br>
+`BpkStarRating` </br>
+  - Update components to use new icon size.
+
+**Added:**
+
+- `BpkDividedCard`
+  - It is a new component which is used for the inventory card. It just is a layout structure.
+
+
+# 2022-11-14
+
+`@skyscanner/backpack-web`: `15.0.0 => 15.1.0`
+
+**Changed:**
+
+- `BpkIcon`:
+  - Bump `@skyscanner/bpk-svgs`. The icons are visually the same, but your snapshot tests might break due to small differences in the `svg` paths.
+
+**Added**
+  - `BpkBadge`
+    - Added new `brand` variant.
+  
+ **Patched:**
+
+- BpkRating:
+  - At large size with no subtitle fixed the component where the title would 'float' above the baseline.
+
+
+# 2022-11-01
+
+`@skyscanner/backpack-web`: `14.1.0 => 15.0.0`
+
+**Changed:**
+
+- `BpkFieldset`:
+  - Updated spacing between label and input field.
+
+**Breaking:**
+
+- `BpkChip`:
+  - Change theme type of the Chip component: `primary` => `default`, `light` => `onDark`
+  - Delete theme type of the Chip component: `success`
+
+**Added:**
+
+- `BpkChip`:
+  - Added theme type of the Chip component: `onImage`
+  - Added a new Chip type: `BpkDropdownChip`
+
 # 2022-10-25
 
 `@skyscanner/backpack-web`: `14.0.0 => 14.1.0`
 
 **Added**
 
-- bpk-component-page-indicator
+- `BpkPageIndicator`:
   - The page indicator is a new component which indicates the current page in a stack of pages. And it provides a callback function and scrolling styles when switching pages.
 
 **Changed:**

@@ -20,11 +20,10 @@
 
 import {
   AllTypesExample,
-  SelectableChipsExample,
-  AllSelectableChipStylesExample,
-  WithIconsExample,
+  AllSelectableChipsExample,
+  AllDropdownChipsExample,
+  AllDismissibleChipsExample,
   RadioGroupChipsExample,
-  DismissibleChipsExample,
 } from './examples';
 
 export default {
@@ -32,11 +31,8 @@ export default {
 };
 
 export const AllTypes = AllTypesExample;
-
-export const Selectable = SelectableChipsExample;
-export const AllSelectableTypes = AllSelectableChipStylesExample;
-export const WithIcons = WithIconsExample;
-
-export const Dismissable = DismissibleChipsExample;
+export const AllSelectableTypes = AllSelectableChipsExample;
+export const AllDropdownTypes = AllDropdownChipsExample;
+export const AllDismissibleTypes = AllDismissibleChipsExample;
 export const RadioGroup = RadioGroupChipsExample;
 export const VisualTest = AllTypesExample;

@@ -8,7 +8,7 @@ A change is `major` if:
 - Changes are not backwards compatible.
 - Breaking changes to components such as updating the API or visual changes.
 - Changes to tokens such as changes to colours or changes to values such as padding/margins.
-- Deprecation to tokens, components or API.
+- Removal of tokens, components or API.
 - Adding new functionality to a component.
 
 ### Minor
@@ -17,6 +17,7 @@ A change is `minor` if:
 - Added new functionality to a component that didn't exist before and are not mandatory meaning there would be no impact on release.
 - Adding a new icon that is not in used yet.
 - Adding a new component to the Backpack library.
+- Deprecation to tokens, components or API.
 
 ### Patch
 A change is `patch` if:
