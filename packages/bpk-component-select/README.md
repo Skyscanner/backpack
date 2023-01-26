@@ -30,7 +30,7 @@ export default () => (
 
 ```js
 import React from 'react';
-import BpkSelect from 'bpk-component-select';
+import BpkSelect from '@skyscanner/backpack-web/bpk-component-select';
 
 export default () => (
   <BpkSelect
