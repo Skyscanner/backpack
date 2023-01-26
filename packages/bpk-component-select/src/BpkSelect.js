@@ -104,7 +104,13 @@ const BpkSelect = (props: Props) => {
 BpkSelect.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  // The below "value" prop is only relevant if the user is wanting a controlled component
+  // In some cases, users may want to create an uncontrolled select as described here: https://beta.reactjs.org/reference/react-dom/components/select
+  // In this case value is not required and nor should it be given a default value (as the linter thinks)
+  // Prop types are not expressive enough (without a drastic increase in complexity of writing a custom validator) to encode this relationship. Equally, this wouldn't actually solve the linting issue (AFAIK).
+  // As a solution, the require-default-props has been disabled for this line.
+  // eslint-disable-next-line react/require-default-props
+  value: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   docked: PropTypes.bool,

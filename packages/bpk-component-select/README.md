@@ -6,7 +6,7 @@
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
-## Usage
+## Usage (controlled)
 
 ```js
 import React from 'react';
@@ -26,14 +26,33 @@ export default () => (
 );
 ```
 
+## Usage (uncontrolled)
+
+```js
+import React from 'react';
+import BpkSelect from '@skyscanner/backpack-web/bpk-component-select';
+
+export default () => (
+  <BpkSelect
+    id="fruits"
+    name="fruits"
+    defaultValue="oranges"
+  >
+    <option value="apples">Apples</option>
+    <option value="oranges">Oranges</option>
+    <option value="pears">Pears</option>
+  </BpkSelect>
+);
+```
+
 ## Props
 
 | Property                  | PropType   | Required | Default Value |
 | ------------              | --------   | -------- | ------------- |
 | id                        | string     | true     | -             |
 | name                      | string     | true     | -             |
-| value                     | string     | true     | -             |
-| onChange                  | func       | true     | -             |
+| value                     | string     | false    | use [defaultValue](https://reactjs.org/docs/dom-elements.html#value)|
+| onChange                  | func       | false    | undefined     |
 | valid                     | bool       | false    | null          |
 | large                     | bool       | false    | false         |
 | disabled                  | bool       | false    | false         |

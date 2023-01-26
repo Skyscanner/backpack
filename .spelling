@@ -302,6 +302,7 @@ dateProps
 decreaseButtonLabel
 decrementValue
 defaultSortDirection
+defaultValue
 dialing
 dialingCode
 dialingCodes
