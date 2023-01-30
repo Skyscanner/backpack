@@ -67,10 +67,6 @@ const WarningExample = () => (
     <BpkBadge type={BADGE_TYPES.warning}>
       <BpkSmallHelpCircleIcon /> &nbsp;Warning
     </BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.warning}>
-      Warning&nbsp; <BpkSmallHelpCircleIcon />
-    </BpkBadge>
   </BadgeLayout>
 );
 
@@ -81,11 +77,6 @@ const SuccessExample = () => (
     <BpkBadge type={BADGE_TYPES.success}>
       <BpkSmallTickIcon />
       &nbsp;Success
-    </BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.success}>
-      Success&nbsp;
-      <BpkSmallTickIcon />
     </BpkBadge>
   </BadgeLayout>
 );
@@ -98,11 +89,6 @@ const DestructiveExample = () => (
       <BpkSmallExclamationIcon />
       &nbsp;Critical
     </BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.destructive}>
-      Critical&nbsp;
-      <BpkSmallExclamationIcon />
-    </BpkBadge>
   </BadgeLayout>
 );
 
@@ -114,11 +100,6 @@ const LightExample = () => (
       <BpkBadge type={BADGE_TYPES.light}>
         <BpkSmallTickIcon />
         &nbsp;Light
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.light}>
-        Light&nbsp;
-        <BpkSmallTickIcon />
       </BpkBadge>
     </BadgeLayout>
   </BpkDarkExampleWrapper>
@@ -133,11 +114,6 @@ const InverseExample = () => (
         <BpkSmallTickIcon />
         &nbsp;Inverse
       </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.inverse}>
-        Inverse&nbsp;
-        <BpkSmallTickIcon />
-      </BpkBadge>
     </BadgeLayout>
   </BpkDarkExampleWrapper>
 );
@@ -151,10 +127,6 @@ const OutlineExample = () => (
         <BpkSmallTickIcon />
         &nbsp;Outline
       </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.outline}>
-        Outline&nbsp; <BpkSmallTickIcon />
-      </BpkBadge>
     </BadgeLayout>
   </BpkDarkExampleWrapper>
 );
@@ -167,11 +139,6 @@ const StrongExample = () => (
       <BpkSmallTickIcon />
       &nbsp;Strong
     </BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.strong}>
-      Strong&nbsp;
-      <BpkSmallTickIcon />
-    </BpkBadge>
   </BadgeLayout>
 );
 
@@ -182,11 +149,6 @@ const BrandExample = () => (
     <BpkBadge type={BADGE_TYPES.brand}>
       <BpkSmallTickIcon />
       &nbsp;Brand
-    </BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.brand}>
-      Brand&nbsp;
-      <BpkSmallTickIcon />
     </BpkBadge>
   </BadgeLayout>
 );
