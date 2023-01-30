@@ -34,13 +34,12 @@ export type Props = {
 
 const BadgeLayout = (props: Props) => {
   const { children, docked } = props;
-  const classNames = [getClassName('bpk-badge-layout__container')];
+  const classNames = getClassName(
+    'bpk-badge-layout__container',
+    docked && 'bpk-badge-layout__container--light',
+  );
 
-  if (docked) {
-    classNames.push(getClassName('bpk-badge-layout__container--light'));
-  }
-
-  return <div className={classNames.join(' ')}>{children}</div>;
+  return <div className={classNames}>{children}</div>;
 };
 
 BadgeLayout.propTypes = {
