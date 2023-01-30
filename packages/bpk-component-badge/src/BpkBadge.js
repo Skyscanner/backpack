@@ -28,8 +28,8 @@ import STYLES from './BpkBadge.module.scss';
 export const BADGE_TYPES = {
   warning: 'warning',
   success: 'success',
-  destructive: 'destructive',
-  light: 'light',
+  critical: 'critical',
+  normal: 'normal',
   inverse: 'inverse',
   outline: 'outline',
   strong: 'strong',
@@ -39,10 +39,10 @@ export const BADGE_TYPES = {
 const getClassName = cssModules(STYLES);
 
 const badgeTypeClassNames = {
-  [BADGE_TYPES.warning]: null,
+  [BADGE_TYPES.warning]: getClassName('bpk-badge--warning'),
   [BADGE_TYPES.success]: getClassName('bpk-badge--success'),
-  [BADGE_TYPES.destructive]: getClassName('bpk-badge--destructive'),
-  [BADGE_TYPES.light]: getClassName('bpk-badge--light'),
+  [BADGE_TYPES.critical]: getClassName('bpk-badge--critical'),
+  [BADGE_TYPES.normal]: getClassName('bpk-badge--normal'),
   [BADGE_TYPES.inverse]: getClassName('bpk-badge--inverse'),
   [BADGE_TYPES.outline]: getClassName('bpk-badge--outline'),
   [BADGE_TYPES.strong]: getClassName('bpk-badge--strong'),
@@ -58,24 +58,18 @@ export type Props = {
 
 const BpkBadge = (props: Props) => {
   const { centered, className, docked, type, ...rest } = props;
-  const classNames = [getClassName('bpk-badge'), badgeTypeClassNames[type]];
-
-  if (docked === 'right') {
-    classNames.push(getClassName('bpk-badge--docked-right'));
-  }
-  if (docked === 'left') {
-    classNames.push(getClassName('bpk-badge--docked-left'));
-  }
-  if (centered) {
-    classNames.push(getClassName('bpk-badge--centered'));
-  }
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName(
+    'bpk-badge',
+    badgeTypeClassNames[type],
+    docked === 'right' && 'bpk-badge--docked-right',
+    docked === 'left' && 'bpk-badge--docked-left',
+    centered && 'bpk-badge--centered',
+    className,
+  );
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <span className={classNames.join(' ')} {...rest} />
+    <span className={classNames} {...rest} />
   );
 };
 
@@ -87,7 +81,7 @@ BpkBadge.propTypes = {
 };
 
 BpkBadge.defaultProps = {
-  type: BADGE_TYPES.warning,
+  type: BADGE_TYPES.normal,
   docked: null,
   centered: false,
   className: null,

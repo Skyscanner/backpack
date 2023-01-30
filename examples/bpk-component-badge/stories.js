@@ -19,18 +19,17 @@
 /* @flow strict */
 import {
   DefaultExample,
+  WarningExample,
+  SuccessExample,
+  CriticalExample,
+  InverseExample,
+  OutlineExample,
+  StrongExample,
+  BrandExample,
   CenteredExample,
   DockedLeadingExample,
   DockedTrailingExample,
-  WarningExample,
-  SuccessExample,
-  DestructiveExample,
-  LightExample,
-  InverseExample,
-  OutlineExample,
   MixedExample,
-  StrongExample,
-  BrandExample,
 } from './examples';
 
 export default {
@@ -38,19 +37,14 @@ export default {
 };
 
 export const Default = DefaultExample;
-
-export const Centered = CenteredExample;
-export const DockedRight = DockedLeadingExample;
-
-export const DockedLeft = DockedTrailingExample;
-
-export const WarningDefault = WarningExample;
-
+export const Warning = WarningExample;
 export const Success = SuccessExample;
-export const Destructive = DestructiveExample;
+export const Critical = CriticalExample;
 export const Strong = StrongExample;
 export const Brand = BrandExample;
-export const Light = LightExample;
 export const Inverse = InverseExample;
 export const Outline = OutlineExample;
+export const Centered = CenteredExample;
+export const DockedRight = DockedLeadingExample;
+export const DockedLeft = DockedTrailingExample;
 export const VisualTest = MixedExample;

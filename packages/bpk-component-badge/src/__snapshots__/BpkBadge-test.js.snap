@@ -3,7 +3,7 @@
 exports[`BpkBadge should render correctly 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-badge "
+    class="bpk-badge bpk-badge--normal"
   >
     Promociando
   </span>
@@ -13,7 +13,7 @@ exports[`BpkBadge should render correctly 1`] = `
 exports[`BpkBadge should render correctly with a "centered" 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-badge  bpk-badge--centered"
+    class="bpk-badge bpk-badge--normal bpk-badge--centered"
   >
     Promociando
   </span>
@@ -23,7 +23,7 @@ exports[`BpkBadge should render correctly with a "centered" 1`] = `
 exports[`BpkBadge should render correctly with a "docked" attribute value equal to "left" 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-badge  bpk-badge--docked-left"
+    class="bpk-badge bpk-badge--normal bpk-badge--docked-left"
   >
     Promociando
   </span>
@@ -33,7 +33,7 @@ exports[`BpkBadge should render correctly with a "docked" attribute value equal 
 exports[`BpkBadge should render correctly with a "docked" attribute value equal to "right" 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-badge  bpk-badge--docked-right"
+    class="bpk-badge bpk-badge--normal bpk-badge--docked-right"
   >
     Promociando
   </span>
@@ -43,7 +43,7 @@ exports[`BpkBadge should render correctly with a "docked" attribute value equal 
 exports[`BpkBadge should render correctly with an icon 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-badge "
+    class="bpk-badge bpk-badge--normal"
   >
     <svg
       height="16"
@@ -74,10 +74,10 @@ exports[`BpkBadge should render correctly with type="brand" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkBadge should render correctly with type="destructive" 1`] = `
+exports[`BpkBadge should render correctly with type="critical" 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-badge bpk-badge--destructive"
+    class="bpk-badge bpk-badge--critical"
   >
     Promociando
   </span>
@@ -94,10 +94,10 @@ exports[`BpkBadge should render correctly with type="inverse" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkBadge should render correctly with type="light" 1`] = `
+exports[`BpkBadge should render correctly with type="normal" 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-badge bpk-badge--light"
+    class="bpk-badge bpk-badge--normal"
   >
     Promociando
   </span>
@@ -137,7 +137,7 @@ exports[`BpkBadge should render correctly with type="success" 1`] = `
 exports[`BpkBadge should render correctly with type="warning" 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-badge "
+    class="bpk-badge bpk-badge--warning"
   >
     Promociando
   </span>
