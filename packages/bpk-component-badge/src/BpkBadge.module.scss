@@ -33,16 +33,20 @@
     @include bpk-badge--docked-left;
   }
 
+  &--warning {
+    @include bpk-badge--warning;
+  }
+
   &--success {
     @include bpk-badge--success;
   }
 
-  &--destructive {
-    @include bpk-badge--destructive;
+  &--critical {
+    @include bpk-badge--critical;
   }
 
-  &--light {
-    @include bpk-badge--light;
+  &--normal {
+    @include bpk-badge--normal;
   }
 
   &--inverse {

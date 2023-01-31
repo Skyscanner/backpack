@@ -868,9 +868,11 @@ BpkSpinner
 MARKER_TYPES.primary
 Portal.js
 eg
+BADGE_TYPES.normal
 BADGE_TYPES.warning
 BADGE_TYPES.success
 BADGE_TYPES.destructive
+BADGE_TYPES.critical
 BADGE_TYPES.light
 BADGE_TYPES.inverse
 BADGE_TYPES.outline

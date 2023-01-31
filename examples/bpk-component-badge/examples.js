@@ -30,33 +30,11 @@ import BadgeLayout from './BadgeLayout';
 
 const DefaultExample = () => (
   <BadgeLayout>
-    <div>
-      <BpkBadge>Apples</BpkBadge>&nbsp;
-      <BpkBadge>Bananas</BpkBadge>&nbsp;
-      <BpkBadge>Cherries</BpkBadge>&nbsp;
-      <BpkBadge>Dragonfruit</BpkBadge>
-    </div>
-  </BadgeLayout>
-);
-
-const CenteredExample = () => (
-  <BadgeLayout>
-    <div>
-      The badge is aligned to the centre of this text.{' '}
-      <BpkBadge centered>Centered</BpkBadge>
-    </div>
-  </BadgeLayout>
-);
-
-const DockedLeadingExample = () => (
-  <BadgeLayout docked="left">
-    <BpkBadge docked="left">Advert</BpkBadge>
-  </BadgeLayout>
-);
-
-const DockedTrailingExample = () => (
-  <BadgeLayout docked="right">
-    <BpkBadge docked="right">Advert</BpkBadge>
+    <BpkBadge>Normal</BpkBadge>
+    &nbsp;
+    <BpkBadge>
+      <BpkSmallTickIcon /> &nbsp;Normal
+    </BpkBadge>
   </BadgeLayout>
 );
 
@@ -81,28 +59,15 @@ const SuccessExample = () => (
   </BadgeLayout>
 );
 
-const DestructiveExample = () => (
+const CriticalExample = () => (
   <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.destructive}>Critical</BpkBadge>
+    <BpkBadge type={BADGE_TYPES.critical}>Critical</BpkBadge>
     &nbsp;
-    <BpkBadge type={BADGE_TYPES.destructive}>
+    <BpkBadge type={BADGE_TYPES.critical}>
       <BpkSmallExclamationIcon />
       &nbsp;Critical
     </BpkBadge>
   </BadgeLayout>
-);
-
-const LightExample = () => (
-  <BpkDarkExampleWrapper>
-    <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.light}>Light</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.light}>
-        <BpkSmallTickIcon />
-        &nbsp;Light
-      </BpkBadge>
-    </BadgeLayout>
-  </BpkDarkExampleWrapper>
 );
 
 const InverseExample = () => (
@@ -153,15 +118,35 @@ const BrandExample = () => (
   </BadgeLayout>
 );
 
+const CenteredExample = () => (
+  <BadgeLayout>
+    <div>
+      The badge is aligned to the centre of this text.{' '}
+      <BpkBadge centered>Centered</BpkBadge>
+    </div>
+  </BadgeLayout>
+);
+
+const DockedLeadingExample = () => (
+  <BadgeLayout docked="left">
+    <BpkBadge docked="left">Advert</BpkBadge>
+  </BadgeLayout>
+);
+
+const DockedTrailingExample = () => (
+  <BadgeLayout docked="right">
+    <BpkBadge docked="right">Advert</BpkBadge>
+  </BadgeLayout>
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
     <WarningExample />
     <SuccessExample />
-    <DestructiveExample />
+    <CriticalExample />
     <StrongExample />
     <BrandExample />
-    <LightExample />
     <InverseExample />
     <OutlineExample />
   </div>
@@ -169,16 +154,15 @@ const MixedExample = () => (
 
 export {
   DefaultExample,
-  CenteredExample,
-  DockedLeadingExample,
-  DockedTrailingExample,
   WarningExample,
   SuccessExample,
-  DestructiveExample,
-  LightExample,
+  CriticalExample,
   InverseExample,
   OutlineExample,
   StrongExample,
   BrandExample,
+  CenteredExample,
+  DockedLeadingExample,
+  DockedTrailingExample,
   MixedExample,
 };
