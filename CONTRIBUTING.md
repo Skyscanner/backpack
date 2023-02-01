@@ -110,7 +110,7 @@ If you add a new file of mixins, for example for a new *atom*, make sure you add
 
 ### React component
 
-Use `npm run create-component` to create a new skeleton React component. Once this is created, use existing components for code style inspiration.
+Use `bpk-component-boilerplate` to create a new skeleton React component. Once this is created, use existing components for code style inspiration.
 
 We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
 
