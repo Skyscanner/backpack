@@ -26,7 +26,7 @@ import BpkBreadcrumbItem from './BpkBreadcrumbItem';
 describe('BpkBreadcrumbItem', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkBreadcrumbItem href="https://backpack.github.io/">
+      <BpkBreadcrumbItem href="https://skyscanner.design/">
         Backpack
       </BpkBreadcrumbItem>,
     );
@@ -45,7 +45,7 @@ describe('BpkBreadcrumbItem', () => {
   it('should render correctly with a custom class name', () => {
     const { asFragment } = render(
       <BpkBreadcrumbItem
-        href="https://backpack.github.io/"
+        href="https://skyscanner.design/"
         className="my-custom-class"
       >
         Backpack
@@ -57,7 +57,7 @@ describe('BpkBreadcrumbItem', () => {
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
       <BpkBreadcrumbItem
-        href="https://backpack.github.io/"
+        href="https://skyscanner.design/"
         testid="arbitrary value" // <-- arbitrary prop
       >
         Backpack
@@ -70,7 +70,7 @@ describe('BpkBreadcrumbItem', () => {
   it('should render correctly with with "linkProps" attribute', () => {
     const { asFragment } = render(
       <BpkBreadcrumbItem
-        href="https://backpack.github.io/"
+        href="https://skyscanner.design/"
         linkProps={{ testid: 'arbitrary value' }} // <-- arbitrary prop
       >
         Backpack

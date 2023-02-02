@@ -119,7 +119,7 @@ Our current supported React version is 17.0.2, please be mindful when using Reac
 When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
 ### Documentation
 
-Our documentation consists of two parts: [Sassdoc](https://backpack.github.io/sassdoc/), which is automatically generated from the `bpk-mixin` sources, and the main [documentation](https://backpack.github.io).
+Our documentation consists of two parts: [Sassdoc](https://backpack.github.io/sassdoc/), which is automatically generated from the `bpk-mixin` sources, and the main [documentation](skyscanner.design).
 
 #### Sassdoc
 

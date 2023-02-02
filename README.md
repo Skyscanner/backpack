@@ -7,7 +7,7 @@
 
 ## Quick links
 
-- [Documentation](https://backpack.github.io/)
+- [Documentation](skyscanner.design/)
 - [Changelog](./CHANGELOG.md)
 
 ## Usage
