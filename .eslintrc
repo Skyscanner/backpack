@@ -85,6 +85,9 @@
     "prettier/prettier": "error",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
+    "no-restricted-imports": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
     // We override the eslint-config-skyscanner rule here as within Backpack
     // we need certain order imports otherwise it will break components like the calendar.
     "import/order": [
