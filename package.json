@@ -45,12 +45,10 @@
     "publish": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && npm run test && node scripts/publish-process/single-package/release.js",
     "postpublish": "./scripts/publish-process/update-docs-deps.sh && node ./scripts/publish-process/update-changelog.js",
     "release": "npm run publish",
-    "spellcheck": "mdspell -r --en-gb --ignore-acronyms --ignore-numbers --no-suggestions 'UNRELEASED.yaml' '*.md' '**/*.md' '!**/node_modules/**/*.md'",
-    "spellcheck:interactive": "mdspell --en-gb --ignore-acronyms --no-suggestions --ignore-numbers 'UNRELEASED.yaml' '*.md' '**/*.md' '!**/node_modules/**/*.md'",
     "start": "npm run build && npm run storybook",
     "storybook": "start-storybook -p 9001",
     "storybook:dist": "build-storybook -c .storybook -o dist-storybook",
-    "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest && npm run spellcheck",
+    "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
     "upcoming-changes": "node scripts/publish-process/upcoming-changes.js",
     "prepare": "husky install"
@@ -58,9 +56,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix"
-    ],
-    "*.md": [
-      "mdspell -r --en-gb --ignore-acronyms --ignore-numbers --no-suggestions"
     ],
     "*.scss": [
       "stylelint --fix",
@@ -152,7 +147,6 @@
     "jest-axe": "^7.0.0",
     "lint-staged": "^13.1.0",
     "lodash": "^4.17.20",
-    "markdown-spellcheck": "^1.3.1",
     "node-sass": "^6.0.1",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
