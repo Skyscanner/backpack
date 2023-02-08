@@ -117,19 +117,10 @@ We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM
 Our current supported React version is 17.0.2, please be mindful when using React features that may not yet be supported.
 
 When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
+
 ### Documentation
 
-Our documentation consists of two parts: [Sassdoc](https://backpack.github.io/sassdoc/), which is automatically generated from the `bpk-mixin` sources, and the main [documentation](skyscanner.design).
-
-#### Sassdoc
-
-As mentioned, the Sassdoc are automatically generated from source and comments. If you want to double check, you can generate them using `npm run sassdoc` and start a static server to browse the docs, but usually this is not necessary.
-
-Take a look at some of the mixin source files to see how to annotate your Sass to generate proper Sassdoc.
-
-#### Backpack documentation
-
-For documentation changes, please see our [Backpack docs repo](http://github.com/Skyscanner/backpack-docs).
+See our design system documentation at [skyscanner.design](https://www.skyscanner.design).
 
 ## How to
 
