@@ -1,3 +1,13 @@
+# 2023-02-08
+
+- `@skyscanner/backpack-web`: 18.0.0 => 18.1.0
+
+**Added:**
+
+- `bpk-component-icon`:
+  - Adding new `Origin` icon.
+
+
 # 2023-01-31
 
 `@skyscanner/backpack-web`: 17.2.0 => 18.0.0
