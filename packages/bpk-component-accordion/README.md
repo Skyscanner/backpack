@@ -60,7 +60,7 @@ export default () => (
 
 ### Displaying icons
 
-`BpkAccordionItem` supports the use of displaying icons alongside the title. To do this you will need to align your icon to the text using `withAlignment` and pass through the matching sizes for the icon you wish to use. For more information see [Alignment](https://backpack.github.io/components/alignment?platform=web)
+`BpkAccordionItem` supports the use of displaying icons alongside the title. To do this you will need to align your icon to the text using `withAlignment` and pass through the matching sizes for the icon you wish to use. For more information see [Alignment](https://skyscanner.design/latest/components/alignment/web.html)
 
 ```js
 import React from 'react';
