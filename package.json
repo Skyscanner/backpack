@@ -145,7 +145,7 @@
     "jest-axe": "^7.0.0",
     "lint-staged": "^13.1.0",
     "lodash": "^4.17.20",
-    "node-sass": "^6.0.1",
+    "node-sass": "^8.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "prop-types": "^15.7.2",
