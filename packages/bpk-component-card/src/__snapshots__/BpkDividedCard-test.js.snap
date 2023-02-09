@@ -2,10 +2,9 @@
 
 exports[`BpkDividedCard should render correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-card bpk-divided-card bpk-divided-card--horizontal"
-    role="button"
-    tabindex="0"
+  <button
+    class="bpk-card bpk-card--atomic-button bpk-divided-card bpk-divided-card--horizontal"
+    type="button"
   >
     <div
       class="bpk-divided-card__primary--horizontal"
@@ -22,7 +21,7 @@ ante in, vestibulum nulla.
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </div>
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
@@ -53,10 +52,9 @@ ante in, vestibulum nulla.
 
 exports[`BpkDividedCard should render correctly with vertical orientation 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-card bpk-divided-card bpk-divided-card--vertical"
-    role="button"
-    tabindex="0"
+  <button
+    class="bpk-card bpk-card--atomic-button bpk-divided-card bpk-divided-card--vertical"
+    type="button"
   >
     <div
       class=""
@@ -73,17 +71,16 @@ ante in, vestibulum nulla.
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </div>
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`BpkDividedCard should support arbitrary props 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-card bpk-divided-card bpk-divided-card--horizontal"
-    role="button"
-    tabindex="0"
+  <button
+    class="bpk-card bpk-card--atomic-button bpk-divided-card bpk-divided-card--horizontal"
     testid="123"
+    type="button"
   >
     <div
       class="bpk-divided-card__primary--horizontal"
@@ -100,16 +97,15 @@ ante in, vestibulum nulla.
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </div>
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`BpkDividedCard should support custom class names 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-card bpk-divided-card bpk-divided-card--horizontal custom-classname"
-    role="button"
-    tabindex="0"
+  <button
+    class="bpk-card bpk-card--atomic-button bpk-divided-card bpk-divided-card--horizontal custom-classname"
+    type="button"
   >
     <div
       class="bpk-divided-card__primary--horizontal"
@@ -126,6 +122,6 @@ ante in, vestibulum nulla.
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </div>
-  </div>
+  </button>
 </DocumentFragment>
 `;
