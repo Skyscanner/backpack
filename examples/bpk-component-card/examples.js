@@ -108,12 +108,25 @@ const WithHrefDividedCardExample = () => (
   />
 );
 
+const UnElevatedDividedCardExample = () => (
+  // eslint-disable-next-line backpack/use-tokens
+  <div style={{ width: 343 }}>
+    <BpkDividedCard
+      primaryContent={longMessage}
+      secondaryContent={shortContent}
+      orientation={ORIENTATION.vertical}
+      isElevated={false}
+    />
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
     <WithoutPaddingExample />
     <DefaultDividedCardExample />
     <VerticalDividedCardExample />
+    <UnElevatedDividedCardExample />
   </div>
 );
 
@@ -126,5 +139,6 @@ export {
   DefaultDividedCardExample,
   VerticalDividedCardExample,
   WithHrefDividedCardExample,
+  UnElevatedDividedCardExample,
   MixedExample,
 };

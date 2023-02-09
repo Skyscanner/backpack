@@ -38,11 +38,13 @@ export type Props = {
   orientation: $Values<typeof ORIENTATION>,
   href: ?string,
   className: ?string,
+  isElevated: boolean,
 };
 const BpkDividedCard = (props: Props) => {
   const {
     className,
     href,
+    isElevated,
     orientation,
     primaryContent,
     secondaryContent,
@@ -52,6 +54,7 @@ const BpkDividedCard = (props: Props) => {
   const classNames = getClassName(
     'bpk-divided-card',
     isVertical ? 'bpk-divided-card--vertical' : 'bpk-divided-card--horizontal',
+    !isElevated ? 'bpk-divided-card--depressed' : '',
     className,
   );
 
@@ -84,12 +87,14 @@ BpkDividedCard.propTypes = {
   orientation: PropTypes.oneOf(Object.keys(ORIENTATION)),
   href: PropTypes.string,
   className: PropTypes.string,
+  isElevated: PropTypes.bool,
 };
 
 BpkDividedCard.defaultProps = {
   orientation: ORIENTATION.horizontal,
   href: null,
   className: null,
+  isElevated: true,
 };
 
 export default BpkDividedCard;
