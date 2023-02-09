@@ -4,9 +4,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table"
-    headerheight="60"
     role="table"
-    rowheight="60"
     style="height: 200px;"
   >
     <div>
@@ -217,9 +215,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table custom-data-table"
-    headerheight="60"
     role="table"
-    rowheight="60"
     style="height: 200px;"
   >
     <div>
@@ -430,10 +426,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
 <DocumentFragment>
   <div
     class="bpk-data-table"
-    headerclassname="custom-data-table__header"
-    headerheight="60"
     role="table"
-    rowheight="60"
     style="height: 200px;"
   >
     <div>
@@ -644,9 +637,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
 <DocumentFragment>
   <div
     class="bpk-data-table"
-    headerheight="60"
     role="table"
-    rowheight="60"
     style="height: 200px;"
   >
     <div>
@@ -857,10 +848,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
 <DocumentFragment>
   <div
     class="bpk-data-table"
-    headerheight="60"
     role="table"
-    rowclassname="custom-data-table__row"
-    rowheight="60"
     style="height: 200px;"
   >
     <div>
@@ -1071,9 +1059,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table"
-    headerheight="60"
     role="table"
-    rowheight="60"
     style="width: 400px; height: 200px;"
   >
     <div>
@@ -1284,9 +1270,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table"
-    headerheight="60"
     role="table"
-    rowheight="60"
     style="height: 200px;"
   >
     <div>
@@ -1497,9 +1481,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table"
-    headerheight="60"
     role="table"
-    rowheight="60"
     style="height: 200px;"
   >
     <div>
