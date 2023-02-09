@@ -26,6 +26,7 @@ $fixed-secondary-width: 216;
 
 .bpk-divided-card {
   display: flex;
+  align-items: stretch;
 
   &--vertical {
     min-width: $bpk-one-pixel-rem * $min-vertical-width;
