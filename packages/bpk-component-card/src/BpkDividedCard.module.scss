@@ -62,5 +62,11 @@ $fixed-secondary-width: 216;
 
   &--depressed {
     box-shadow: none;
+
+    @include bpk-hover {
+      &::after {
+        box-shadow: none;
+      }
+    }
   }
 }
