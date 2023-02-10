@@ -54,7 +54,7 @@ ante in, vestibulum nulla.
 exports[`BpkDividedCard should render correctly with isElevated prop 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-card bpk-divided-card bpk-divided-card--horizontal bpk-divided-card--depressed"
+    class="bpk-card bpk-divided-card bpk-divided-card--horizontal bpk-divided-card--no-elevation"
     role="button"
     tabindex="0"
   >
