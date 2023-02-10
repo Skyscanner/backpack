@@ -60,13 +60,11 @@ $fixed-secondary-width: 216;
     }
   }
 
-  &--depressed {
+  &--no-elevation {
     box-shadow: none;
 
-    @include bpk-hover {
-      &::after {
-        box-shadow: none;
-      }
+    &::after {
+      box-shadow: none;
     }
   }
 }

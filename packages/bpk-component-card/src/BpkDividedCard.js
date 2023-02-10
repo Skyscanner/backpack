@@ -54,7 +54,7 @@ const BpkDividedCard = (props: Props) => {
   const classNames = getClassName(
     'bpk-divided-card',
     isVertical ? 'bpk-divided-card--vertical' : 'bpk-divided-card--horizontal',
-    !isElevated && 'bpk-divided-card--depressed',
+    !isElevated && 'bpk-divided-card--no-elevation',
     className,
   );
 
