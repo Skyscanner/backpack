@@ -84,4 +84,15 @@ describe('BpkDividedCard', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should render correctly with isElevated prop', () => {
+    const { asFragment } = render(
+      <BpkDividedCard
+        primaryContent={longMessage}
+        secondaryContent={message}
+        isElevated={false}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
