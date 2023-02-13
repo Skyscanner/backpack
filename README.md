@@ -7,7 +7,7 @@
 
 ## Quick links
 
-- [Documentation](skyscanner.design/)
+- [Documentation](https://www.skyscanner.design/)
 - [Changelog](./CHANGELOG.md)
 
 ## Usage
