@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 

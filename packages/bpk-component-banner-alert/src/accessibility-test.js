@@ -17,7 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import { axe } from 'jest-axe';
 import { render } from '@testing-library/react';
 

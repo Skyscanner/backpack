@@ -17,7 +17,6 @@
  */
 
 import PropTypes from 'prop-types';
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { addMonths, isWeekend } from 'date-fns';
 import {

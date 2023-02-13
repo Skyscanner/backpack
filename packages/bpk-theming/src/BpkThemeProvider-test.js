@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { render } from '@testing-library/react';
 import { colorWhite } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -32,7 +32,7 @@ CustomComponentFunction.propTypes = {
 };
 
 // eslint-disable-next-line react/prefer-stateless-function
-class CustomComponentClass extends React.Component {
+class CustomComponentClass extends Component {
   render() {
     const { children, ...rest } = this.props;
     return <span {...rest}>{children}</span>;

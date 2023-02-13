@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import type { ComponentProps } from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkContentCard from './BpkContentCard';
 
 describe('Content Card widget', () => {
-  const horizontalCardTestProps: React.ComponentProps<typeof BpkContentCard> = {
+  const horizontalCardTestProps: ComponentProps<typeof BpkContentCard> = {
     card: {
       image: {
         url: 'http://skyscanner.net/card-1-image-link.jpg',
@@ -36,7 +36,7 @@ describe('Content Card widget', () => {
     layout: 'HORIZONTAL',
   };
 
-  const verticalCardTestProps: React.ComponentProps<typeof BpkContentCard> = {
+  const verticalCardTestProps: ComponentProps<typeof BpkContentCard> = {
     card: {
       image: {
         url: 'http://skyscanner.net/card-1-image-link.jpg',

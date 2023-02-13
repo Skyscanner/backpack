@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import { Fragment } from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
@@ -357,9 +357,9 @@ describe('BpkDataTable', () => {
           width={100}
           flexGrow={1}
           cellRenderer={({ cellData }) => (
-            <React.Fragment>
+            <Fragment>
               {cellData.office} - {cellData.desk}
-            </React.Fragment>
+            </Fragment>
           )}
         />
       </BpkDataTable>
