@@ -17,8 +17,6 @@
  */
 
 /* @flow strict */
-import React from 'react';
-
 import AutosuggestExample from './examples';
 
 export default {

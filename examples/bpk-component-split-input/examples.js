@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
-
 import BpkSplitInput, {
   INPUT_TYPES,
 } from '../../packages/bpk-component-split-input';

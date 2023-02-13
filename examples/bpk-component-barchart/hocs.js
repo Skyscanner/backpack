@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import isEqual from 'lodash/isEqual';
-import React, { Component, type ComponentType } from 'react';
+import { Component } from 'react';
+import type { ComponentType } from 'react';
 
 import { wrapDisplayName } from '../../packages/bpk-react-utils';
 

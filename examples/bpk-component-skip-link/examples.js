@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
-
 import BpkSkipLink from '../../packages/bpk-component-skip-link';
 
 const DefaultExample = () => (

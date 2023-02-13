@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { cloneElement, Component } from 'react';
+import { cloneElement, Component } from 'react';
 
 import { action } from '../../packages/bpk-storybook-utils';
 import BpkSelect from '../../packages/bpk-component-select';

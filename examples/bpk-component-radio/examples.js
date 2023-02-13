@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React from 'react';
+import { Component } from 'react';
 
 import {
   action,
@@ -30,7 +30,7 @@ const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Do
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
 Nesciunt, voluptate, illo.`;
 
-class GroupExample extends React.Component<{}, { value: string }> {
+class GroupExample extends Component<{}, { value: string }> {
   constructor() {
     super();
     this.state = { value: 'Lagos' };

@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import { action } from '../../packages/bpk-storybook-utils';

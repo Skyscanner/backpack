@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
-
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkImage from '../../packages/bpk-component-image';

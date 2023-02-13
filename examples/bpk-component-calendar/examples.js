@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import React from 'react';
 import addMonths from 'date-fns/addMonths';
 import addDays from 'date-fns/addDays';
 import startOfDay from 'date-fns/startOfDay';

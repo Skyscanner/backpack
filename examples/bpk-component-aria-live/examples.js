@@ -17,7 +17,8 @@
  */
 /* @flow strict */
 
-import React, { type Node } from 'react';
+import { Component } from 'react';
+import type { Node } from 'react';
 
 import BpkChip from '../../packages/bpk-component-chip';
 import BpkFieldset from '../../packages/bpk-component-fieldset';
@@ -74,7 +75,7 @@ AriaLiveDemo.defaultProps = {
   style: null,
 };
 
-class SelectExample extends React.Component<
+class SelectExample extends Component<
   {},
   { destination: string, direct: boolean },
 > {
@@ -162,7 +163,7 @@ class SelectExample extends React.Component<
   }
 }
 
-class ChipsExample extends React.Component<
+class ChipsExample extends Component<
   {},
   {
     categories: { Flights: boolean, Hotels: boolean, 'Car hire': boolean },
