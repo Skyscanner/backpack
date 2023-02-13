@@ -60,4 +60,12 @@ $fixed-secondary-width: 216;
       }
     }
   }
+
+  &--no-elevation {
+    box-shadow: none;
+
+    &::after {
+      box-shadow: none;
+    }
+  }
 }
