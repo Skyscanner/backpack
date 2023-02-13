@@ -20,91 +20,124 @@ import React from 'react';
 
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
 
-const SmallLeftExample = () => <BpkPrice title="£1,830" />;
+const Small = () => <BpkPrice price="£1,830" />;
 
-const SmallLeftWithDescriptionExample = () => (
-  <BpkPrice title="£1,830" description="a night" />
+const SmallWithTrailingText = () => (
+  <BpkPrice price="£1,830" trailingText="per day" />
 );
 
-const SmallLeftWithSubtitleDescriptionExample = () => (
-  <BpkPrice subtitle="£209" title="£1,830" description="a night" />
+const SmallWithLeadingAndTrailingText = () => (
+  <BpkPrice leadingText="from" price="£1,830" trailingText="per day" />
 );
 
-const SmallRightExample = () => (
-  <BpkPrice title="£1,830" align={ALIGNS.right} />
-);
-
-const SmallRightWithDescriptionExample = () => (
-  <BpkPrice title="£1,830" description="a night" align={ALIGNS.right} />
-);
-
-const SmallRightWithSubtitleDescriptionExample = () => (
+const SmallWithPreviousPrice = () => (
   <BpkPrice
-    subtitle="£209"
-    title="£1,830"
-    description="a night"
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+  />
+);
+
+const SmallRight = () => <BpkPrice price="£1,830" align={ALIGNS.right} />;
+
+const SmallRightWithTrailingText = () => (
+  <BpkPrice price="£1,830" trailingText="per day" align={ALIGNS.right} />
+);
+
+const SmallRightWithLeadingandTrailingText = () => (
+  <BpkPrice
+    leadingText="from"
+    price="£1,830"
+    trailingText="per day"
     align={ALIGNS.right}
   />
 );
 
-const LargeLeftExample = () => <BpkPrice size={SIZES.large} title="£1,830" />;
-
-const LargeLeftWithDescriptionExample = () => (
-  <BpkPrice size={SIZES.large} title="£1,830" description="a night" />
-);
-
-const LargeLeftWithSubtitleDescriptionExample = () => (
+const SmallRightWithPreviousPrice = () => (
   <BpkPrice
-    size={SIZES.large}
-    subtitle="£209"
-    title="£1,830"
-    description="a night"
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+    align={ALIGNS.right}
   />
 );
 
-const LargeLeftLongPriceExample = () => (
+const Large = () => <BpkPrice size={SIZES.large} price="£1,830" />;
+
+const LargeWithTrailingText = () => (
+  <BpkPrice size={SIZES.large} price="£1,830" trailingText="per day" />
+);
+
+const LargeWithLeadingAndTrailingText = () => (
+  <BpkPrice
+    size={SIZES.large}
+    leadingText="from"
+    price="£1,830"
+    trailingText="per day"
+  />
+);
+
+const LargeWithPreviousPrice = () => (
+  <BpkPrice
+    size={SIZES.large}
+    leadingText="App only deal"
+    price="£1,830"
+    trailingText="per day"
+    previousPrice="£2,033"
+  />
+);
+
+const LargeLongPrice = () => (
   // eslint-disable-next-line backpack/use-tokens
   <div style={{ width: 184 }}>
     <BpkPrice
       size={SIZES.large}
-      subtitle="£209"
-      title="£1,830,123,123"
-      description="a night"
+      leadingText="from"
+      price="£1,830,123,123"
+      trailingText="per day"
     />
     <BpkPrice
       size={SIZES.large}
-      subtitle="£209"
-      title="ZK 20,309"
-      description="a night"
+      leadingText="from"
+      price="ZK 20,309"
+      trailingText="a night"
     />
   </div>
 );
 
 const MixedExample = () => (
   <div>
-    <SmallLeftExample />
-    <SmallLeftWithDescriptionExample />
-    <SmallLeftWithSubtitleDescriptionExample />
-    <SmallRightExample />
-    <SmallRightWithDescriptionExample />
-    <SmallRightWithSubtitleDescriptionExample />
-    <LargeLeftExample />
-    <LargeLeftWithDescriptionExample />
-    <LargeLeftWithSubtitleDescriptionExample />
-    <LargeLeftLongPriceExample />
+    <Small />
+    <SmallWithTrailingText />
+    <SmallWithLeadingAndTrailingText />
+    <SmallWithPreviousPrice />
+    <SmallRight />
+    <SmallRightWithTrailingText />
+    <SmallRightWithLeadingandTrailingText />
+    <SmallRightWithPreviousPrice />
+    <Large />
+    <LargeWithTrailingText />
+    <LargeWithLeadingAndTrailingText />
+    <LargeWithPreviousPrice />
+    <LargeLongPrice />
   </div>
 );
 
 export {
-  SmallLeftExample,
-  SmallLeftWithDescriptionExample,
-  SmallLeftWithSubtitleDescriptionExample,
-  SmallRightExample,
-  SmallRightWithDescriptionExample,
-  SmallRightWithSubtitleDescriptionExample,
-  LargeLeftExample,
-  LargeLeftWithDescriptionExample,
-  LargeLeftWithSubtitleDescriptionExample,
-  LargeLeftLongPriceExample,
+  Small,
+  SmallWithTrailingText,
+  SmallWithLeadingAndTrailingText,
+  SmallWithPreviousPrice,
+  SmallRight,
+  SmallRightWithTrailingText,
+  SmallRightWithLeadingandTrailingText,
+  SmallRightWithPreviousPrice,
+  Large,
+  LargeWithTrailingText,
+  LargeWithLeadingAndTrailingText,
+  LargeWithPreviousPrice,
+  LargeLongPrice,
   MixedExample,
 };

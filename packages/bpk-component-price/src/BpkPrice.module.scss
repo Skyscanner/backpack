@@ -21,6 +21,7 @@
 .bpk-price {
   display: flex;
   flex-direction: column;
+  color: $bpk-text-secondary-day;
 
   &--right {
     text-align: right;
@@ -30,9 +31,21 @@
     }
   }
 
-  &__subtitle {
-    color: $bpk-text-secondary-day;
+  &__leadingText {
+    display: flex;
+    flex-direction: row;
+
+    &--right {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__previous-price {
     text-decoration-line: line-through;
+  }
+
+  &__separator {
+    margin: 0 bpk-spacing-sm();
   }
 
   &__column-container {
@@ -40,7 +53,8 @@
     flex-direction: column;
   }
 
-  &__title {
+  &__price {
+    color: $bpk-text-primary-day;
     word-break: break-all;
   }
 
@@ -54,8 +68,7 @@
     }
   }
 
-  &__description {
-    color: $bpk-text-secondary-day;
+  &__trailing {
     white-space: nowrap;
   }
 }
