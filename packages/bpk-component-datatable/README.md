@@ -117,6 +117,7 @@ export default () => (
 | height                 | number                      | true     | -                    |
 | width                  | number                      | false    | full width of parent |
 | headerHeight           | number                      | false    | 60                   |
+| rowClassName           | string                      | false    | null                 |
 | rowHeight              | number                      | false    | 60                   |
 | rowStyle               | object                      | false    | {}                   |
 | onRowClick             | func                        | false    | null                 |
