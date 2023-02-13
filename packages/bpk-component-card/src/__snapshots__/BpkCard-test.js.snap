@@ -2,13 +2,12 @@
 
 exports[`BpkCard should render correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-card bpk-card--padded"
-    role="button"
-    tabindex="0"
+  <button
+    class="bpk-card bpk-card--atomic-button bpk-card--padded"
+    type="button"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
@@ -37,25 +36,23 @@ exports[`BpkCard should render correctly with "href" and "blank" attributes 1`] 
 
 exports[`BpkCard should render correctly with "padded" attribute equal to "false" 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-card"
-    role="button"
-    tabindex="0"
+  <button
+    class="bpk-card bpk-card--atomic-button"
+    type="button"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`BpkCard should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-card bpk-card--padded custom-class"
-    role="button"
-    tabindex="0"
+  <button
+    class="bpk-card bpk-card--atomic-button bpk-card--padded custom-class"
+    type="button"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
