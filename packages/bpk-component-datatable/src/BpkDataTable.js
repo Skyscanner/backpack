@@ -41,7 +41,13 @@ const BpkDataTable = (props: Props) => {
     children,
     className,
     defaultColumnSortIndex,
+    headerClassName,
+    headerHeight,
     height,
+    onRowClick,
+    rowClassName,
+    rowHeight,
+    rowStyle,
     rows: data,
     sort,
     sortBy,
@@ -61,7 +67,7 @@ const BpkDataTable = (props: Props) => {
     const rowClassNames = getClassName(
       'bpk-data-table__row',
       rowSelected === index && 'bpk-data-table__row--selected',
-      props.onRowClick !== undefined && 'bpk-data-table__row--clickable',
+      onRowClick !== undefined && 'bpk-data-table__row--clickable',
       index === -1 && 'bpk-data-table__header-row',
       consumerClassName &&
         (typeof consumerClassName === 'function'
@@ -74,7 +80,7 @@ const BpkDataTable = (props: Props) => {
   const headerClassNames = getClassName(
     'bpk-data-table__row',
     'bpk-data-table__header-row',
-    props.headerClassName,
+    headerClassName,
   );
 
   const columns = useMemo(() => getColumns(children), [children]);
@@ -111,8 +117,8 @@ const BpkDataTable = (props: Props) => {
     } else {
       updateRowSelected(index);
     }
-    if (props.onRowClick !== undefined) {
-      props.onRowClick(rows[index].original);
+    if (onRowClick !== undefined) {
+      onRowClick(rows[index].original);
     }
   };
 
@@ -141,7 +147,7 @@ const BpkDataTable = (props: Props) => {
         {headerGroups.map((headerGroup) => (
           <div
             {...headerGroup.getHeaderGroupProps({
-              style: { height: props.headerHeight },
+              style: { height: headerHeight },
               className: headerClassNames,
             })}
           >
@@ -169,10 +175,10 @@ const BpkDataTable = (props: Props) => {
               tabIndex={0}
               {...row.getRowProps({
                 style: {
-                  ...props.rowStyle,
-                  height: props.rowHeight,
+                  ...rowStyle,
+                  height: rowHeight,
                 },
-                className: getRowClassNames(props.rowClassName, i),
+                className: getRowClassNames(rowClassName, i),
               })}
             >
               {row.cells.map((cell) => {
