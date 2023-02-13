@@ -1,5 +1,9 @@
-`bpk-mixins`: `39.0.1=> 39.1.0`
-`bpk-stylesheets`: `9.0.1 => 9.0.2`
-
 **Changed:**
-  - Update Input placeholder state color.
+  - `BpkInput`
+    - Update placeholder state color.
+
+  - `BpkTextarea`
+    - Update placeholder state color.
+
+  - `BpkDividedCard`
+    - Add prop `isElevated` to switch on/off the card shadow so that it wouldn't overlap with the shadow of the card wrapper.
