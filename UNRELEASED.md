@@ -8,7 +8,10 @@
 
 **Fixed:**
 
-  - `BpkDataTable`:
+- `BpkCard`:
+    - Make atomic cards accessible to keyboard users
+
+- `BpkDataTable`:
     - Fixed warnings about props not being recognised.
 
 **Changed:**

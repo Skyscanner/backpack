@@ -39,15 +39,12 @@ type Props = {
 const BpkCard = (props: Props) => {
   const { atomic, blank, children, className, href, padded, ...rest } = props;
 
-  const classNames = [getClassName('bpk-card')];
-  if (padded) {
-    classNames.push(getClassName('bpk-card--padded'));
-  }
-  if (className) {
-    classNames.push(className);
-  }
-
-  const classNameFinal = classNames.join(' ');
+  const classNames = getClassName(
+    'bpk-card',
+    atomic && !href && 'bpk-card--atomic-button',
+    padded && 'bpk-card--padded',
+    className,
+  );
 
   const atomicProps: { tabIndex: ?number, role: ?string } = {};
 
@@ -68,7 +65,7 @@ const BpkCard = (props: Props) => {
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
-        className={classNameFinal}
+        className={classNames}
         {...atomicProps}
         {...blankProps}
         {...rest}
@@ -78,15 +75,17 @@ const BpkCard = (props: Props) => {
     );
   }
 
-  // If the card is atomic, we need to enable keyboard focus and provide an appropriate role.
   if (atomic) {
-    atomicProps.tabIndex = 0;
-    atomicProps.role = 'button';
+    return (
+      <button type="button" className={classNames} {...rest}>
+        {children}
+      </button>
+    );
   }
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div {...atomicProps} className={classNameFinal} {...rest}>
+    <div className={classNames} {...rest}>
       {children}
     </div>
   );
