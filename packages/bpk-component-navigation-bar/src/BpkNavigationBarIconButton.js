@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React, { type ComponentType } from 'react';
+import type { ComponentType } from 'react';
 import PropTypes from 'prop-types';
 
 // TODO: close button is not really only a close button, we should rename and update the import here

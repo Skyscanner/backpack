@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';

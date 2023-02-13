@@ -18,9 +18,7 @@
 
 /* @flow strict */
 
-import React from 'react';
-
-import { type Props, propTypes, defaultProps } from './common-types';
+import { Props, propTypes, defaultProps } from './common-types';
 import COMMON_STYLES from './BpkButtonBase.module.scss';
 
 // This was originally depended upon from the bpk-react-utils package, however

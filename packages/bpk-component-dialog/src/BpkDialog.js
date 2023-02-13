@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
-
 import { cssModules, Portal } from '../../bpk-react-utils';
 import BpkCloseButton from '../../bpk-component-close-button';
 

@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
 import SmSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/sm';
 
 import { cssModules } from '../../bpk-react-utils';

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import type { KeyboardEvent, MouseEvent } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
@@ -34,7 +34,7 @@ const ACCESSIBILITY_KEYS = {
   Space: 32 /* Space */,
 };
 
-const isAccessibilityClick = (event: React.KeyboardEvent<HTMLElement>) =>
+const isAccessibilityClick = (event: KeyboardEvent<HTMLElement>) =>
   Object.keys(ACCESSIBILITY_KEYS).includes(event.key) ||
   Object.values(ACCESSIBILITY_KEYS).includes(event.keyCode || event.which);
 
@@ -103,11 +103,11 @@ const BpkGraphicPromo = ({
   textAlign,
 }: Props) => {
   // FIXME: Use useCallback() here when React is updated.
-  const onClickWrapper = (event: React.MouseEvent<HTMLElement>) => {
+  const onClickWrapper = (event: MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     onClick();
   };
-  const onKeyWrapper = (event: React.KeyboardEvent<HTMLElement>) =>
+  const onKeyWrapper = (event: KeyboardEvent<HTMLElement>) =>
     isAccessibilityClick(event) && onClick();
 
   const cardClasses = getClassName('bpk-card', 'bpk-graphic-promo', className);

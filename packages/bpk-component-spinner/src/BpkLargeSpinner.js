@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
 import LgSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/lg';
 
 import { cssModules } from '../../bpk-react-utils';

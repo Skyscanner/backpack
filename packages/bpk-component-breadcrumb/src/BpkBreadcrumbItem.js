@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import type { Node } from 'react';
 
 import BpkLink from '../../bpk-component-link';
 import BpkText from '../../bpk-component-text';

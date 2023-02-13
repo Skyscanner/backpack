@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import type { Node } from 'react';
 import MediaQuery from 'react-responsive';
 import TOKENS from '@skyscanner/bpk-foundations-web/tokens/breakpoints.common';
 

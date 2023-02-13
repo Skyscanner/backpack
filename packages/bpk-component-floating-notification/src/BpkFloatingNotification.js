@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { useEffect, useState, ReactElement } from 'react';
+import { useEffect, useState, ReactElement } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import BpkAriaLive from '../../bpk-component-aria-live';

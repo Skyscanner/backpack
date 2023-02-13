@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import { cssModules, deprecated, isDeviceIos } from '../../bpk-react-utils';
 

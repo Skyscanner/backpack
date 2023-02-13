@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
-
 const GRADIENT_ATTRIBUTES = {
   x1: 0,
   y1: 0,

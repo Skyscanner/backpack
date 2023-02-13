@@ -18,7 +18,8 @@
 
 /* @flow strict */
 
-import React, { type Node, useCallback, useRef } from 'react';
+import type { Node } from 'react';
+import { useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { GoogleMap } from '@react-google-maps/api';
 

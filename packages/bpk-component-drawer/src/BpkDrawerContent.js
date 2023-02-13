@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import type { Node } from 'react';
 import Transition from 'react-transition-group/Transition';
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 

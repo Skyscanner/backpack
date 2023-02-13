@@ -18,7 +18,6 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import ClearIcon from '../../bpk-component-icon/sm/close-circle';
 import { withButtonAlignment } from '../../bpk-component-icon';

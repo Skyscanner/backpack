@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';

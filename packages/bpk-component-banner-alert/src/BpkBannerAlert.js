@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 /* @flow strict */
-import React from 'react';
-
 import {
-  type CommonProps,
+  CommonProps,
   COMMON_PROP_TYPES,
   COMMON_DEFAULT_PROPS,
 } from './common-types';

@@ -17,7 +17,6 @@
  */
 
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
