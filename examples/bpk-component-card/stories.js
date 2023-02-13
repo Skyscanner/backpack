@@ -26,6 +26,7 @@ import {
   DefaultDividedCardExample,
   VerticalDividedCardExample,
   WithHrefDividedCardExample,
+  NonElevatedDividedCardExample,
   MixedExample,
 } from './examples';
 
@@ -45,5 +46,6 @@ export const NonAtomicWithHref = NonAtomicHrefExample;
 export const DefaultDividedCard = DefaultDividedCardExample;
 export const VerticalDividedCard = VerticalDividedCardExample;
 export const WithHrefDividedCard = WithHrefDividedCardExample;
+export const NonElevatedDividedCard = NonElevatedDividedCardExample;
 
 export const VisualTest = MixedExample;
