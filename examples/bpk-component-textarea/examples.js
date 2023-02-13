@@ -36,7 +36,7 @@ const DefaultExample = () => (
       name="default"
       value={loremIpsum}
       onChange={action('input changed')}
-      placeholder="Please enter some text"
+      placeholder="Please enter some text..."
     />
   </form>
 );
@@ -49,7 +49,7 @@ const PlaceholderExample = () => (
       name="placeholder"
       value=""
       onChange={action('input changed')}
-      placeholder="Please enter some text"
+      placeholder="Please enter some text..."
     />
   </form>
 );
@@ -62,7 +62,7 @@ const DisabledExample = () => (
       name="disabled"
       value=""
       onChange={action('input changed')}
-      placeholder="Please enter some text"
+      placeholder="Please enter some text..."
       disabled
     />
   </form>
@@ -76,7 +76,7 @@ const InvalidExample = () => (
       name="invalid"
       value=""
       onChange={action('input changed')}
-      placeholder="Please enter some text"
+      placeholder="Please enter some text..."
       valid={false}
     />
   </form>
@@ -91,7 +91,7 @@ const LargeExample = () => (
       large
       value={loremIpsum}
       onChange={action('input changed')}
-      placeholder="Please enter some text"
+      placeholder="Please enter some text..."
     />
   </form>
 );

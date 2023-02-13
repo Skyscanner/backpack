@@ -98,7 +98,7 @@ const TextExample = () => (
       name="text_value"
       value="Edinburgh"
       onChange={action('input changed')}
-      placeholder="Enter a country, city or airport"
+      placeholder="Enter a country, city or airport..."
     />
   </form>
 );
@@ -111,7 +111,7 @@ const PlaceholderExample = () => (
       name="placeholder"
       value=""
       onChange={action('input changed')}
-      placeholder="Enter a country, city or airport"
+      placeholder="Enter a country, city or airport..."
     />
   </form>
 );
@@ -124,7 +124,7 @@ const ValidExample = () => (
       name="valid"
       value="Edinburgh"
       onChange={action('input changed')}
-      placeholder="Enter a country, city or airport"
+      placeholder="Enter a country, city or airport..."
       valid
     />
   </form>
@@ -138,7 +138,7 @@ const InvalidExample = () => (
       name="invalid"
       value="Edinbrvgh"
       onChange={action('input changed')}
-      placeholder="Enter a country, city or airport"
+      placeholder="Enter a country, city or airport..."
       valid={false}
     />
   </form>
@@ -152,7 +152,7 @@ const DisabledExample = () => (
       name="disabled"
       value="Edinburgh"
       onChange={action('input changed')}
-      placeholder="Enter a country, city or airport"
+      placeholder="Enter a country, city or airport..."
       disabled
     />
   </form>
@@ -165,7 +165,7 @@ const ClearableExample = () => (
       id="clearable_clearable"
       name="clearable_clearable"
       initialValue="Edinburgh"
-      placeholder="Enter a country, city or airport"
+      placeholder="Enter a country, city or airport..."
       clearButtonMode={CLEAR_BUTTON_MODES.whileEditing}
       clearButtonLabel="Clear field"
     />
@@ -175,7 +175,7 @@ const ClearableExample = () => (
       id="input_clearable_always"
       name="input_clearable_always"
       initialValue="Edinburgh"
-      placeholder="Enter a country, city or airport"
+      placeholder="Enter a country, city or airport..."
       valid
       clearButtonMode={CLEAR_BUTTON_MODES.always}
       clearButtonLabel="Clear field"
@@ -188,7 +188,7 @@ const ClearableExample = () => (
       id="input_large_valid_clearable"
       name="input_large_valid_clearable"
       initialValue="Edinburgh"
-      placeholder="Enter a country, city or airport"
+      placeholder="Enter a country, city or airport..."
       large
       valid
       clearButtonMode={CLEAR_BUTTON_MODES.whileEditing}
@@ -261,7 +261,7 @@ const LargeInputExample = () => (
       name="large"
       value="Edinburgh"
       onChange={action('input changed')}
-      placeholder="Enter a country, city or airport"
+      placeholder="Enter a country, city or airport..."
       large
     />
   </form>
@@ -417,7 +417,7 @@ const ManuallyDockedExample = () => (
         name="large"
         value="Edinburgh"
         onChange={action('input changed')}
-        placeholder="Enter a country, city or airport"
+        placeholder="Enter a country, city or airport..."
         large
         valid
         dockedFirst
@@ -429,7 +429,7 @@ const ManuallyDockedExample = () => (
         name="large"
         value="Edinburgh"
         onChange={action('input changed')}
-        placeholder="Enter a country, city or airport"
+        placeholder="Enter a country, city or airport..."
         large
         valid={false}
         dockedMiddle
@@ -441,7 +441,7 @@ const ManuallyDockedExample = () => (
         name="large"
         value="Edinburgh"
         onChange={action('input changed')}
-        placeholder="Enter a country, city or airport"
+        placeholder="Enter a country, city or airport..."
         large
         dockedMiddle
       />
@@ -452,7 +452,7 @@ const ManuallyDockedExample = () => (
         name="large"
         value="Edinburgh"
         onChange={action('input changed')}
-        placeholder="Enter a country, city or airport"
+        placeholder="Enter a country, city or airport..."
         large
         dockedLast
       />
