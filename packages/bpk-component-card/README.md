@@ -30,11 +30,21 @@ import React from 'react';
 import { BpkDividedCard, ORIENTATION } from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
-  <BpkDividedCard
-    primaryContent={'foo'}
-    secondaryContent={'bar'}
-    orientation={ORIENTATION.vertical}
-  />
+  <>
+    <BpkDividedCard
+      primaryContent={'foo'}
+      secondaryContent={'bar'}
+      orientation={ORIENTATION.vertical}
+    />
+
+    // Toggle shadow shadow with isElevated
+    <BpkDividedCard
+      primaryContent={'foo'}
+      secondaryContent={'bar'}
+      orientation={ORIENTATION.horizontal}
+      isElevated={false}
+    />
+  </>
 );
 ```
 
@@ -59,3 +69,4 @@ export default () => (
 | orientation | oneOf(ORIENTATION.horizontal, ORIENTATION.vertical)    | false    | ORIENTATION.horizontal          |
 | href | string   | false    | null          |
 | className | string   | false    | null          |
+| isElevated | bool   | false    | true          |
