@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component, type Node } from 'react';
+import { Component } from 'react';
+import type { Node } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkButton from '../../packages/bpk-component-button';

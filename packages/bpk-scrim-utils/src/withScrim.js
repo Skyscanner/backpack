@@ -19,7 +19,7 @@
 import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import {
   cssModules,

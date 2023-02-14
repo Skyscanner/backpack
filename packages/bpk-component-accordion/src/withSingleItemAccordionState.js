@@ -19,14 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, {
-  Component,
-  Children,
-  cloneElement,
-  type Node,
-  type Element,
-  type ComponentType,
-} from 'react';
+import { Component, Children, cloneElement } from 'react';
+import type { Node, Element, ComponentType } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 

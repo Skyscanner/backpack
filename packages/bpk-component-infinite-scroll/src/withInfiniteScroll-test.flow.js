@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React, { Component } from 'react';
+import { Component, Fragment } from 'react';
 
 import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
@@ -64,7 +64,7 @@ List.defaultProps = {
 const InfiniteList = withInfiniteScroll(List);
 
 (() => (
-  <React.Fragment>
+  <Fragment>
     {/* $FlowExpectedError[prop-missing] */}
     <InfiniteList dataSource={new ArrayDataSource([])} />
 
@@ -98,5 +98,5 @@ const InfiniteList = withInfiniteScroll(List);
       )}
       seeMoreAfter={5}
     />
-  </React.Fragment>
+  </Fragment>
 ))();

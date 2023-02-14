@@ -20,7 +20,8 @@
 
 import { createPopper } from '@popperjs/core';
 import PropTypes from 'prop-types';
-import React, { Component, type Node } from 'react';
+import type { Node } from 'react';
+import { Component } from 'react';
 import focusStore from 'a11y-focus-store';
 
 import { Portal, cssModules } from '../../bpk-react-utils';

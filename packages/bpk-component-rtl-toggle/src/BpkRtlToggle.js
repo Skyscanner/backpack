@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { BpkButtonLink } from '../../bpk-component-link';
@@ -32,7 +32,7 @@ const setDirection = (direction) => {
   htmlElement.dispatchEvent(new Event(DIRECTION_CHANGE_EVENT));
 };
 
-class BpkRtlToggle extends React.Component {
+class BpkRtlToggle extends Component {
   constructor(props) {
     super(props);
 
