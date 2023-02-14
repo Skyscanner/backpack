@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React, { Component } from 'react';
+import { Component } from 'react';
 import BpkPhoneInput from '@skyscanner/backpack-web/bpk-component-phone-input';
 import BpkImage from '@skyscanner/backpack-web/bpk-component-image';
 

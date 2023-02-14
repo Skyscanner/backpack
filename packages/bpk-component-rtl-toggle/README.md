@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import BpkRtlToggle from '@skyscanner/backpack-web/bpk-component-rtl-toggle';
 
 export default () => (

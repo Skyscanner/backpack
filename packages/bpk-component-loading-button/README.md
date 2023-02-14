@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import BpkLoadingButton from '@skyscanner/backpack-web/bpk-component-loading-button';
 import BaggageIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/baggage';
 import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';

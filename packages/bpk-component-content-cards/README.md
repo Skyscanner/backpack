@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import React from 'react';
 import BpkContentCards from '@skyscanner/backpack-web/bpk-component-content-cards';
 
 <BpkContentCards

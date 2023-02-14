@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React, { Component } from 'react';
+import { Component } from 'react';
 import BpkHorizontalNav, { BpkHorizontalNavItem } from '@skyscanner/backpack-web/bpk-component-horizontal-nav';
 
 export default class App extends Component {

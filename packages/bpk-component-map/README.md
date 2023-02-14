@@ -11,7 +11,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import LandmarkIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/landmark';
@@ -61,7 +60,6 @@ export default () => (
 Price markers are used to display clickable prices on a map.
 
 ```js
-import React from 'react';
 import BpkMap, { BpkPriceMarker, PRICE_MARKER_STATUSES } from '@skyscanner/backpack-web/bpk-component-map';
 
 export default () => (
@@ -103,7 +101,6 @@ export default () => (
 If you intend to include multiple maps on one page, it's better to load the Google Maps JavaScript in this HOC, as it ensures that script will not be re-downloaded every time it's used.
 
 ```js
-import React from 'react';
 import BpkMap, { withGoogleMapsScript } from '@skyscanner/backpack-web/bpk-component-map';
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);

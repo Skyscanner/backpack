@@ -11,7 +11,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ### BpkCard
 
 ```js
-import React from 'react';
 import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
@@ -26,7 +25,6 @@ export default () => (
 ### BpkDividedCard
 
 ```js
-import React from 'react';
 import { BpkDividedCard, ORIENTATION } from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (

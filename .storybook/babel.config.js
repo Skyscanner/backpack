@@ -41,7 +41,7 @@ module.exports = {
         },
       },
     ],
-    ['@babel/preset-react', {"runtime": "automatic"}],
+    ['@babel/preset-react', { runtime: 'automatic' }],
     // TODO: Remove this once we have migrated all flow types.
     '@babel/preset-flow',
     '@babel/preset-typescript',

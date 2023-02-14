@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage (controlled)
 
 ```js
-import React from 'react';
 import BpkSelect from '@skyscanner/backpack-web/bpk-component-select';
 
 export default () => (
@@ -29,7 +28,6 @@ export default () => (
 ## Usage (uncontrolled)
 
 ```js
-import React from 'react';
 import BpkSelect from '@skyscanner/backpack-web/bpk-component-select';
 
 export default () => (

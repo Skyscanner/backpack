@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React, { Component } from 'react';
+import { Component } from 'react';
 import BpkCalendar from '@skyscanner/backpack-web/bpk-component-calendar';
 import BpkInput, { INPUT_TYPES } from '@skyscanner/backpack-web/bpk-component-input';
 import format from 'date-fns/format';

@@ -25,7 +25,6 @@ Basic dismissible chips are simple to migrate. This should cover the overwhelmin
 #### Original
 
 ```jsx
-import React from 'react';
 import BpkChip from 'bpk-component-chip';
 
 const MyComponent = () => (
@@ -41,7 +40,6 @@ const MyComponent = () => (
 #### Replacement
 
 ```jsx
-import React from 'react';
 import { BpkDismissibleChip } from 'bpk-component-chip';
 
 const MyComponent = () => (
@@ -63,7 +61,7 @@ Now, this is properly supported with a first-class API, and the component is mar
 #### Original
 
 ```jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BpkChip, { CHIP_TYPES } from 'bpk-component-chip';
 
 const MyComponent = () => {
@@ -84,7 +82,7 @@ const MyComponent = () => {
 #### Replacement
 
 ```jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BpkSelectableChip from 'bpk-component-chip';
 
 const MyComponent = () => {

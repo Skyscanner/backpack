@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React, { Component } from 'react';
+import { Component } from 'react';
 import BpkDatepicker, { CALENDAR_SELECTION_TYPE } from '@skyscanner/backpack-web/bpk-component-datepicker';
 import format from 'date-fns/format';
 
@@ -71,7 +71,7 @@ export default class App extends Component {
 By default `BpkCalendar` is used but the calendar component is fully configurable through the `calendarComponent` prop.
 
 ```js
-import React, { Component } from 'react';
+import { Component } from 'react';
 import BpkDatepicker from '@skyscanner/backpack-web/bpk-component-datepicker';
 import {
   BpkCalendarNav,

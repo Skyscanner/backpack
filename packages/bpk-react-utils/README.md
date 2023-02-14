@@ -17,7 +17,7 @@ it's necessary in overcoming z-index issues when absolutely positioning elements
 import { Portal } from '@skyscanner/backpack-web/bpk-react-utils';
 import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 import { BpkCode } from '@skyscanner/backpack-web/bpk-component-code';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 class MyComponent extends Component {
   constructor() {
@@ -78,7 +78,6 @@ A helpful utility which permits backwards compatibility with hard coded classes 
 ### Usage
 
 ```js
-import React from 'react';
 import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
 
 import STYLES from './MyComponent.scss';
@@ -140,7 +139,6 @@ components initial mount. All you need to provide is two class names and a timeo
 ### Usage
 
 ```js
-import React from 'react';
 import { TransitionInitialMount } from '@skyscanner/backpack-web/bpk-react-utils';
 
 const MyComponent = (props) => (
@@ -187,7 +185,6 @@ Returns true if the browser is showing content right-to-left.
 ### Usage
 
 ```js
-import React from 'react';
 import { isRTL } from '@skyscanner/backpack-web/bpk-react-utils';
 
 if (isRTL()) {
@@ -204,7 +201,6 @@ Returns true if the device is an iPhone.
 ### Usage
 
 ```js
-import React from 'react';
 import { isDeviceIphone } from '@skyscanner/backpack-web/bpk-react-utils';
 
 if (isDeviceIphone()) {
@@ -221,7 +217,6 @@ Returns true if the device is an iPad.
 ### Usage
 
 ```js
-import React from 'react';
 import { isDeviceIpad } from '@skyscanner/backpack-web/bpk-react-utils';
 
 if (isDeviceIpad()) {
@@ -238,7 +233,6 @@ Returns true if the platform is iOS (iPhone/iPad).
 ### Usage
 
 ```js
-import React from 'react';
 import { isDeviceIos } from '@skyscanner/backpack-web/bpk-react-utils';
 
 if (isDeviceIos()) {
