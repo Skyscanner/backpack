@@ -8,6 +8,9 @@
 - `BpkDataTable`:
     - Fixed warnings about props not being recognised.
 
+- `BpkImage`:
+  - Fixed an issue where if the image didn't fit the full size of the container and dark background was shown behind the image.
+
 **Changed:**
   - `BpkInput`
     - Update placeholder state color.
