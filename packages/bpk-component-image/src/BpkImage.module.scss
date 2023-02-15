@@ -53,7 +53,7 @@
 }
 
 @mixin bpk-image--no-background {
-  background-color: $bpk-surface-contrast-day;
+  background-color: transparent;
 }
 
 @mixin bpk-image {
