@@ -51,7 +51,7 @@ export type Props = {
   portalStyle: ?Object,
   portalClassName: ?string,
   renderTarget: ?() => HTMLElement,
-  popperModifiers: ?Object,
+  popperModifiers: ?Array<Object>,
 };
 
 type State = {
@@ -73,7 +73,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     portalClassName: PropTypes.string,
     renderTarget: PropTypes.func,
-    popperModifiers: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    popperModifiers: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
   };
 
   static defaultProps = {
