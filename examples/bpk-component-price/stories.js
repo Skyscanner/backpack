@@ -17,19 +17,19 @@
  */
 
 import {
-  Small,
-  SmallWithTrailingText,
-  SmallWithLeadingAndTrailingText,
-  SmallWithPreviousPrice,
-  SmallRight,
-  SmallRightWithTrailingText,
-  SmallRightWithLeadingandTrailingText,
-  SmallRightWithPreviousPrice,
-  Large,
-  LargeWithTrailingText,
-  LargeWithLeadingAndTrailingText,
-  LargeWithPreviousPrice,
-  LargeLongPrice,
+  SmallExample,
+  SmallWithTrailingTextExample,
+  SmallWithLeadingAndTrailingTextExample,
+  SmallWithPreviousPriceExample,
+  SmallRightExample,
+  SmallRightWithTrailingTextExample,
+  SmallRightWithLeadingandTrailingTextExample,
+  SmallRightWithPreviousPriceExample,
+  LargeExample,
+  LargeWithTrailingTextExample,
+  LargeWithLeadingAndTrailingTextExample,
+  LargeWithPreviousPriceExample,
+  LargeLongPriceExample,
   MixedExample,
 } from './examples';
 
@@ -37,21 +37,21 @@ export default {
   title: 'bpk-component-price',
 };
 
-export const SmallExample = Small;
-export const SmallWithTrailingTextExample = SmallWithTrailingText;
-export const SmallWithLeadingAndTrailingTextExample =
-  SmallWithLeadingAndTrailingText;
-export const SmallWithPreviousPriceExample = SmallWithPreviousPrice;
-export const SmallRightExample = SmallRight;
-export const SmallRightWithTrailingTextExample = SmallRightWithTrailingText;
-export const SmallRightWithLeadingandTrailingTextExample =
-  SmallRightWithLeadingandTrailingText;
-export const SmallRightWithPreviousPriceExample = SmallRightWithPreviousPrice;
-export const LargeExample = Large;
-export const LargeWithTrailingTextExample = LargeWithTrailingText;
-export const LargeWithLeadingAndTrailingTextExample =
-  LargeWithLeadingAndTrailingText;
-export const LargeWithPreviousPriceExample = LargeWithPreviousPrice;
-export const LargeLongPriceExample = LargeLongPrice;
+export const Small = SmallExample;
+export const SmallWithTrailingText = SmallWithTrailingTextExample;
+export const SmallWithLeadingAndTrailingText =
+  SmallWithLeadingAndTrailingTextExample;
+export const SmallWithPreviousPrice = SmallWithPreviousPriceExample;
+export const SmallRight = SmallRightExample;
+export const SmallRightWithTrailingText = SmallRightWithTrailingTextExample;
+export const SmallRightWithLeadingandTrailingText =
+  SmallRightWithLeadingandTrailingTextExample;
+export const SmallRightWithPreviousPrice = SmallRightWithPreviousPriceExample;
+export const Large = LargeExample;
+export const LargeWithTrailingText = LargeWithTrailingTextExample;
+export const LargeWithLeadingAndTrailingText =
+  LargeWithLeadingAndTrailingTextExample;
+export const LargeWithPreviousPrice = LargeWithPreviousPriceExample;
+export const LargeLongPrice = LargeLongPriceExample;
 
 export const VisualTest = MixedExample;

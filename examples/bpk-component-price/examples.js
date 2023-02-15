@@ -20,17 +20,17 @@ import React from 'react';
 
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
 
-const Small = () => <BpkPrice price="£1,830" />;
+const SmallExample = () => <BpkPrice price="£1,830" />;
 
-const SmallWithTrailingText = () => (
+const SmallWithTrailingTextExample = () => (
   <BpkPrice price="£1,830" trailingText="per day" />
 );
 
-const SmallWithLeadingAndTrailingText = () => (
+const SmallWithLeadingAndTrailingTextExample = () => (
   <BpkPrice leadingText="from" price="£1,830" trailingText="per day" />
 );
 
-const SmallWithPreviousPrice = () => (
+const SmallWithPreviousPriceExample = () => (
   <BpkPrice
     previousPrice="£2,033"
     leadingText="Web only deal"
@@ -39,13 +39,15 @@ const SmallWithPreviousPrice = () => (
   />
 );
 
-const SmallRight = () => <BpkPrice price="£1,830" align={ALIGNS.right} />;
+const SmallRightExample = () => (
+  <BpkPrice price="£1,830" align={ALIGNS.right} />
+);
 
-const SmallRightWithTrailingText = () => (
+const SmallRightWithTrailingTextExample = () => (
   <BpkPrice price="£1,830" trailingText="per day" align={ALIGNS.right} />
 );
 
-const SmallRightWithLeadingandTrailingText = () => (
+const SmallRightWithLeadingandTrailingTextExample = () => (
   <BpkPrice
     leadingText="from"
     price="£1,830"
@@ -54,7 +56,7 @@ const SmallRightWithLeadingandTrailingText = () => (
   />
 );
 
-const SmallRightWithPreviousPrice = () => (
+const SmallRightWithPreviousPriceExample = () => (
   <BpkPrice
     previousPrice="£2,033"
     leadingText="Web only deal"
@@ -64,13 +66,13 @@ const SmallRightWithPreviousPrice = () => (
   />
 );
 
-const Large = () => <BpkPrice size={SIZES.large} price="£1,830" />;
+const LargeExample = () => <BpkPrice size={SIZES.large} price="£1,830" />;
 
-const LargeWithTrailingText = () => (
+const LargeWithTrailingTextExample = () => (
   <BpkPrice size={SIZES.large} price="£1,830" trailingText="per day" />
 );
 
-const LargeWithLeadingAndTrailingText = () => (
+const LargeWithLeadingAndTrailingTextExample = () => (
   <BpkPrice
     size={SIZES.large}
     leadingText="from"
@@ -79,7 +81,7 @@ const LargeWithLeadingAndTrailingText = () => (
   />
 );
 
-const LargeWithPreviousPrice = () => (
+const LargeWithPreviousPriceExample = () => (
   <BpkPrice
     size={SIZES.large}
     leadingText="App only deal"
@@ -89,7 +91,7 @@ const LargeWithPreviousPrice = () => (
   />
 );
 
-const LargeLongPrice = () => (
+const LargeLongPriceExample = () => (
   // eslint-disable-next-line backpack/use-tokens
   <div style={{ width: 184 }}>
     <BpkPrice
@@ -109,35 +111,35 @@ const LargeLongPrice = () => (
 
 const MixedExample = () => (
   <div>
-    <Small />
-    <SmallWithTrailingText />
-    <SmallWithLeadingAndTrailingText />
-    <SmallWithPreviousPrice />
-    <SmallRight />
-    <SmallRightWithTrailingText />
-    <SmallRightWithLeadingandTrailingText />
-    <SmallRightWithPreviousPrice />
-    <Large />
-    <LargeWithTrailingText />
-    <LargeWithLeadingAndTrailingText />
-    <LargeWithPreviousPrice />
-    <LargeLongPrice />
+    <SmallExample />
+    <SmallWithTrailingTextExample />
+    <SmallWithLeadingAndTrailingTextExample />
+    <SmallWithPreviousPriceExample />
+    <SmallRightExample />
+    <SmallRightWithTrailingTextExample />
+    <SmallRightWithLeadingandTrailingTextExample />
+    <SmallRightWithPreviousPriceExample />
+    <LargeExample />
+    <LargeWithTrailingTextExample />
+    <LargeWithLeadingAndTrailingTextExample />
+    <LargeWithPreviousPriceExample />
+    <LargeLongPriceExample />
   </div>
 );
 
 export {
-  Small,
-  SmallWithTrailingText,
-  SmallWithLeadingAndTrailingText,
-  SmallWithPreviousPrice,
-  SmallRight,
-  SmallRightWithTrailingText,
-  SmallRightWithLeadingandTrailingText,
-  SmallRightWithPreviousPrice,
-  Large,
-  LargeWithTrailingText,
-  LargeWithLeadingAndTrailingText,
-  LargeWithPreviousPrice,
-  LargeLongPrice,
+  SmallExample,
+  SmallWithTrailingTextExample,
+  SmallWithLeadingAndTrailingTextExample,
+  SmallWithPreviousPriceExample,
+  SmallRightExample,
+  SmallRightWithTrailingTextExample,
+  SmallRightWithLeadingandTrailingTextExample,
+  SmallRightWithPreviousPriceExample,
+  LargeExample,
+  LargeWithTrailingTextExample,
+  LargeWithLeadingAndTrailingTextExample,
+  LargeWithPreviousPriceExample,
+  LargeLongPriceExample,
   MixedExample,
 };

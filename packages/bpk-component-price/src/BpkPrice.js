@@ -65,8 +65,8 @@ const BpkPrice = (props: Props) => {
     >
       <div
         className={getClassName(
-          previousPrice && 'bpk-price__leadingText',
-          isAlignRight && 'bpk-price__leadingText--right',
+          previousPrice && 'bpk-price__leading',
+          isAlignRight && 'bpk-price__leading--right',
         )}
       >
         {previousPrice && (
