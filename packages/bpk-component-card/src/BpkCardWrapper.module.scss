@@ -19,8 +19,9 @@
 @import '~bpk-mixins/index.scss';
 
 .bpk-card-wrapper {
-  @include bpk-border-radius-md;
   @include bpk-card;
+  @include bpk-border-radius-md;
+  @include bpk-border-lg(var(--background-color), '');
 
   &::before,
   &::after {
