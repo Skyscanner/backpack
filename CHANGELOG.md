@@ -1,3 +1,13 @@
+# 2023-02-15
+
+- `@skyscanner/backpack-web`: 18.2.0 => 18.2.1
+
+**Fixed:**
+
+`BpkPopover`: </br>
+`BpkTooltip`:
+- Fixed warnings about `popperModifiers` prop type
+
 # 2023-02-14
 
 - `@skyscanner/backpack-web`: 18.1.0 => 18.2.0
