@@ -20,7 +20,6 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import { borderSizeLg } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -44,19 +43,16 @@ const BpkCardWrapper = (props: Props) => {
     <div
       className={classNames}
       style={{
-        boxShadow: `0 0 0 2px ${backgroundColor}`,
         '--background-color': backgroundColor,
       }}
     >
-      <section
+      <div
         style={{ backgroundColor }}
         className={getClassName('bpk-card-wrapper--header')}
       >
         {header}
-      </section>
-      <section className={getClassName('bpk-card-wrapper--content')}>
-        {card}
-      </section>
+      </div>
+      <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>
     </div>
   );
 };

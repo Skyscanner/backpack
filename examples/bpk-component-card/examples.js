@@ -33,7 +33,6 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const shortMessage = 'Here is header';
 const shortContent = 'Book your next trip on skyscanner.net.';
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
@@ -43,7 +42,7 @@ sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rho
 ante in, vestibulum nulla.`;
 const headerContent = (
   <div className={getClassName('bpk-card-examples__header')}>
-    {shortMessage}
+    <BpkText tagName="span">Here is header</BpkText>
   </div>
 );
 const longContent = (
