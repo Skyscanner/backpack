@@ -25,7 +25,12 @@ import BpkPrice from './BpkPrice';
 describe('BpkPrice accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkPrice title="£1,830" subtitle="£200" description="a night" />,
+      <BpkPrice
+        price="£1,830"
+        previousPrice="£2,000"
+        leadingText="Web only deal"
+        trailingText="per day"
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

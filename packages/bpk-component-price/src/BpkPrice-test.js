@@ -22,9 +22,10 @@ import { render } from '@testing-library/react';
 import BpkPrice from './BpkPrice';
 import { ALIGNS, SIZES } from './common-types';
 
-const title = '£1,830';
-const subtitle = '£200';
-const description = 'a night';
+const price = '£1,830';
+const previousPrice = '£2,000';
+const leadingText = 'from';
+const trailingText = 'per day';
 let props;
 
 describe.each([
@@ -34,7 +35,7 @@ describe.each([
 ])(`%s %s view`, (size, align) => {
   beforeEach(() => {
     props = {
-      title,
+      price,
       size,
       align,
     };
@@ -45,15 +46,29 @@ describe.each([
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support description attribute', () => {
+  it('should support trailing text attribute', () => {
     const { asFragment } = render(
-      <BpkPrice {...props} description={description} />,
+      <BpkPrice {...props} trailingText={trailingText} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support subtitle attribute', () => {
-    const { asFragment } = render(<BpkPrice {...props} subtitle={subtitle} />);
+  it('should support leading text attribute', () => {
+    const { asFragment } = render(
+      <BpkPrice {...props} leadingText={leadingText} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should support previous price attribute', () => {
+    const { asFragment } = render(
+      <BpkPrice
+        {...props}
+        previousPrice={previousPrice}
+        leadingText={leadingText}
+        trailingText={trailingText}
+      />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -61,11 +76,6 @@ describe.each([
     const { asFragment } = render(
       <BpkPrice {...props} className="custom-classname" />,
     );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkPrice {...props} testid="123" />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
