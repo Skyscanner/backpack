@@ -16,9 +16,9 @@ import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCard>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-    commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-    penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+    parturient montes, nascetur ridiculus mus.
   </BpkCard>
 );
 ```
@@ -27,7 +27,10 @@ export default () => (
 
 ```js
 import React from 'react';
-import { BpkDividedCard, ORIENTATION } from '@skyscanner/backpack-web/bpk-component-card';
+import {
+  BpkDividedCard,
+  ORIENTATION,
+} from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
   <>
@@ -36,7 +39,6 @@ export default () => (
       secondaryContent={'bar'}
       orientation={ORIENTATION.vertical}
     />
-
     // Toggle shadow shadow with isElevated
     <BpkDividedCard
       primaryContent={'foo'}
@@ -45,6 +47,18 @@ export default () => (
       isElevated={false}
     />
   </>
+);
+```
+
+### BpkCardWrapper
+
+```js
+import React from 'react';
+import { BpkCardWrapper } from '@skyscanner/backpack-web/bpk-component-card';
+import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+export default () => (
+  <BpkCardWrapper header={'foo'} card={'bar'} backgroundColor={coreAccentDay} />
 );
 ```
 
@@ -62,11 +76,20 @@ export default () => (
 
 ### BpkDividedCard
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| primaryContent | node   | true    | -          |
-| secondaryContent | node   | true    | -          |
-| orientation | oneOf(ORIENTATION.horizontal, ORIENTATION.vertical)    | false    | ORIENTATION.horizontal          |
-| href | string   | false    | null          |
-| className | string   | false    | null          |
-| isElevated | bool   | false    | true          |
+| Property         | PropType                                            | Required | Default Value          |
+| ---------------- | --------------------------------------------------- | -------- | ---------------------- |
+| primaryContent   | node                                                | true     | -                      |
+| secondaryContent | node                                                | true     | -                      |
+| orientation      | oneOf(ORIENTATION.horizontal, ORIENTATION.vertical) | false    | ORIENTATION.horizontal |
+| href             | string                                              | false    | null                   |
+| className        | string                                              | false    | null                   |
+| isElevated       | bool                                                | false    | true                   |
+
+### BpkCardWrapper
+
+| Property        | PropType | Required | Default Value |
+| --------------- | -------- | -------- | ------------- |
+| backgroundColor | string   | true     | -             |
+| card            | node     | true     | -             |
+| header          | node     | true     | -             |
+| className       | string   | false    | null          |

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkCardWrapper should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-wrapper"
+    style="box-shadow: 0 0 0 2px rgb(0, 98, 227); --background-color: rgb(0, 98, 227);"
+  >
+    <section
+      class="bpk-card-wrapper--header"
+      style="background-color: rgb(0, 98, 227);"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </section>
+    <section
+      class="bpk-card-wrapper--content"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
+nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
+porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
+sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
+ante in, vestibulum nulla.
+    </section>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardWrapper should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-wrapper custom-classname"
+    style="box-shadow: 0 0 0 2px rgb(0, 98, 227); --background-color: rgb(0, 98, 227);"
+  >
+    <section
+      class="bpk-card-wrapper--header"
+      style="background-color: rgb(0, 98, 227);"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </section>
+    <section
+      class="bpk-card-wrapper--content"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
+nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
+porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
+sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
+ante in, vestibulum nulla.
+    </section>
+  </div>
+</DocumentFragment>
+`;
