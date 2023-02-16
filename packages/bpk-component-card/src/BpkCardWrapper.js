@@ -43,6 +43,7 @@ const BpkCardWrapper = (props: Props) => {
     <div
       className={classNames}
       style={{
+        boxShadow: `0 0 0 2px ${backgroundColor}`,
         '--background-color': backgroundColor,
       }}
     >

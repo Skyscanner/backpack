@@ -4,7 +4,7 @@ exports[`BpkCardWrapper should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-card-wrapper"
-    style="--background-color: rgb(0, 98, 227);"
+    style="box-shadow: 0 0 0 2px rgb(0, 98, 227); --background-color: rgb(0, 98, 227);"
   >
     <div
       class="bpk-card-wrapper--header"
@@ -30,7 +30,7 @@ exports[`BpkCardWrapper should support custom class names 1`] = `
 <DocumentFragment>
   <div
     class="bpk-card-wrapper custom-classname"
-    style="--background-color: rgb(0, 98, 227);"
+    style="box-shadow: 0 0 0 2px rgb(0, 98, 227); --background-color: rgb(0, 98, 227);"
   >
     <div
       class="bpk-card-wrapper--header"

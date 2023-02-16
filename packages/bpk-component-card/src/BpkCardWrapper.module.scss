@@ -19,8 +19,6 @@
 @import '~bpk-mixins/index.scss';
 
 .bpk-card-wrapper {
-  box-shadow: 0 0 0 bpk-spacing-sm() / 2 var(--background-color);
-
   @include bpk-border-radius-md;
   @include bpk-card;
 
