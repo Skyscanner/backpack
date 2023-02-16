@@ -27,19 +27,28 @@ import STYLES from './BpkPrice.module.scss';
 import { SIZES, ALIGNS } from './common-types';
 
 type Props = {
-  title: string,
+  price: string,
   size: $Values<typeof SIZES>,
   align: $Values<typeof ALIGNS>,
   className: ?string,
-  subtitle: ?string,
-  description: ?string,
+  leadingText: ?string,
+  trailingText: ?string,
+  previousPrice: ?string,
 };
 
 const getClassName = cssModules(STYLES);
 
 const BpkPrice = (props: Props) => {
-  const { align, className, description, size, subtitle, title, ...rest } =
-    props;
+  const {
+    align,
+    className,
+    leadingText,
+    previousPrice,
+    price,
+    size,
+    trailingText,
+    ...rest
+  } = props;
 
   const isSmall = size === SIZES.small;
   const isAlignRight = align === ALIGNS.right;
@@ -54,35 +63,60 @@ const BpkPrice = (props: Props) => {
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
-      {subtitle && (
-        <BpkText
-          className={getClassName('bpk-price__subtitle')}
-          textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-          tagName="span"
-        >
-          {subtitle}
-        </BpkText>
-      )}
+      <div
+        className={getClassName(
+          previousPrice && 'bpk-price__leading',
+          isAlignRight && 'bpk-price__leading--right',
+        )}
+      >
+        {previousPrice && (
+          <BpkText
+            className={getClassName('bpk-price__previous-price')}
+            textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
+            tagName="span"
+          >
+            {previousPrice}
+          </BpkText>
+        )}
+        {previousPrice && (
+          <BpkText
+            textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
+            tagName="span"
+            className={getClassName('bpk-price__separator')}
+          >
+            &#67871;
+          </BpkText>
+        )}
+
+        {leadingText && (
+          <BpkText
+            textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
+            tagName="span"
+          >
+            {leadingText}
+          </BpkText>
+        )}
+      </div>
       <div
         className={isAlignRight && getClassName('bpk-price__column-container')}
       >
         <BpkText
           textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
           className={getClassName(
-            'bpk-price__title',
+            'bpk-price__price',
             !isAlignRight && 'bpk-price__spacing',
           )}
           tagName="span"
         >
-          {title}
+          {price}
         </BpkText>
-        {description && (
+        {trailingText && (
           <BpkText
             textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
             tagName="span"
-            className={getClassName('bpk-price__description')}
+            className={getClassName('bpk-price__trailing')}
           >
-            {description}
+            {trailingText}
           </BpkText>
         )}
       </div>
@@ -91,20 +125,22 @@ const BpkPrice = (props: Props) => {
 };
 
 BpkPrice.propTypes = {
-  title: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
   size: PropTypes.oneOf(Object.keys(SIZES)),
   align: PropTypes.oneOf(Object.keys(ALIGNS)),
   className: PropTypes.string,
-  subtitle: PropTypes.string,
-  description: PropTypes.string,
+  leadingText: PropTypes.string,
+  trailingText: PropTypes.string,
+  previousPrice: PropTypes.string,
 };
 
 BpkPrice.defaultProps = {
   size: SIZES.small,
   align: ALIGNS.left,
   className: null,
-  subtitle: null,
-  description: null,
+  leadingText: null,
+  trailingText: null,
+  previousPrice: null,
 };
 
 export default BpkPrice;

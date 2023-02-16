@@ -5,26 +5,12 @@ exports[`large left view should render correctly 1`] = `
   <div
     class="bpk-price"
   >
+    <div
+      class=""
+    />
     <div>
       <span
-        class="bpk-text bpk-text--xxl bpk-price__title bpk-price__spacing"
-      >
-        £1,830
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`large left view should support arbitrary props 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-price"
-    testid="123"
-  >
-    <div>
-      <span
-        class="bpk-text bpk-text--xxl bpk-price__title bpk-price__spacing"
+        class="bpk-text bpk-text--xxl bpk-price__price bpk-price__spacing"
       >
         £1,830
       </span>
@@ -38,9 +24,12 @@ exports[`large left view should support custom class names 1`] = `
   <div
     class="bpk-price custom-classname"
   >
+    <div
+      class=""
+    />
     <div>
       <span
-        class="bpk-text bpk-text--xxl bpk-price__title bpk-price__spacing"
+        class="bpk-text bpk-text--xxl bpk-price__price bpk-price__spacing"
       >
         £1,830
       </span>
@@ -49,42 +38,89 @@ exports[`large left view should support custom class names 1`] = `
 </DocumentFragment>
 `;
 
-exports[`large left view should support description attribute 1`] = `
+exports[`large left view should support leading text attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
   >
-    <div>
-      <span
-        class="bpk-text bpk-text--xxl bpk-price__title bpk-price__spacing"
-      >
-        £1,830
-      </span>
-      <span
-        class="bpk-text bpk-text--sm bpk-price__description"
-      >
-        a night
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`large left view should support subtitle attribute 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-price"
-  >
-    <span
-      class="bpk-text bpk-text--sm bpk-price__subtitle"
+    <div
+      class=""
     >
-      £200
-    </span>
+      <span
+        class="bpk-text bpk-text--sm"
+      >
+        from
+      </span>
+    </div>
     <div>
       <span
-        class="bpk-text bpk-text--xxl bpk-price__title bpk-price__spacing"
+        class="bpk-text bpk-text--xxl bpk-price__price bpk-price__spacing"
       >
         £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`large left view should support previous price attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class="bpk-price__leading"
+    >
+      <span
+        class="bpk-text bpk-text--sm bpk-price__previous-price"
+      >
+        £2,000
+      </span>
+      <span
+        class="bpk-text bpk-text--sm bpk-price__separator"
+      >
+        𐤟
+      </span>
+      <span
+        class="bpk-text bpk-text--sm"
+      >
+        from
+      </span>
+    </div>
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl bpk-price__price bpk-price__spacing"
+      >
+        £1,830
+      </span>
+      <span
+        class="bpk-text bpk-text--sm bpk-price__trailing"
+      >
+        per day
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`large left view should support trailing text attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class=""
+    />
+    <div>
+      <span
+        class="bpk-text bpk-text--xxl bpk-price__price bpk-price__spacing"
+      >
+        £1,830
+      </span>
+      <span
+        class="bpk-text bpk-text--sm bpk-price__trailing"
+      >
+        per day
       </span>
     </div>
   </div>
@@ -96,26 +132,12 @@ exports[`small left view should render correctly 1`] = `
   <div
     class="bpk-price"
   >
+    <div
+      class=""
+    />
     <div>
       <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title bpk-price__spacing"
-      >
-        £1,830
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`small left view should support arbitrary props 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-price"
-    testid="123"
-  >
-    <div>
-      <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title bpk-price__spacing"
+        class="bpk-text bpk-text--heading-4 bpk-price__price bpk-price__spacing"
       >
         £1,830
       </span>
@@ -129,9 +151,12 @@ exports[`small left view should support custom class names 1`] = `
   <div
     class="bpk-price custom-classname"
   >
+    <div
+      class=""
+    />
     <div>
       <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title bpk-price__spacing"
+        class="bpk-text bpk-text--heading-4 bpk-price__price bpk-price__spacing"
       >
         £1,830
       </span>
@@ -140,42 +165,89 @@ exports[`small left view should support custom class names 1`] = `
 </DocumentFragment>
 `;
 
-exports[`small left view should support description attribute 1`] = `
+exports[`small left view should support leading text attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price"
   >
-    <div>
-      <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title bpk-price__spacing"
-      >
-        £1,830
-      </span>
-      <span
-        class="bpk-text bpk-text--xs bpk-price__description"
-      >
-        a night
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`small left view should support subtitle attribute 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-price"
-  >
-    <span
-      class="bpk-text bpk-text--xs bpk-price__subtitle"
+    <div
+      class=""
     >
-      £200
-    </span>
+      <span
+        class="bpk-text bpk-text--xs"
+      >
+        from
+      </span>
+    </div>
     <div>
       <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title bpk-price__spacing"
+        class="bpk-text bpk-text--heading-4 bpk-price__price bpk-price__spacing"
       >
         £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`small left view should support previous price attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class="bpk-price__leading"
+    >
+      <span
+        class="bpk-text bpk-text--xs bpk-price__previous-price"
+      >
+        £2,000
+      </span>
+      <span
+        class="bpk-text bpk-text--xs bpk-price__separator"
+      >
+        𐤟
+      </span>
+      <span
+        class="bpk-text bpk-text--xs"
+      >
+        from
+      </span>
+    </div>
+    <div>
+      <span
+        class="bpk-text bpk-text--heading-4 bpk-price__price bpk-price__spacing"
+      >
+        £1,830
+      </span>
+      <span
+        class="bpk-text bpk-text--xs bpk-price__trailing"
+      >
+        per day
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`small left view should support trailing text attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class=""
+    />
+    <div>
+      <span
+        class="bpk-text bpk-text--heading-4 bpk-price__price bpk-price__spacing"
+      >
+        £1,830
+      </span>
+      <span
+        class="bpk-text bpk-text--xs bpk-price__trailing"
+      >
+        per day
       </span>
     </div>
   </div>
@@ -188,29 +260,13 @@ exports[`small right view should render correctly 1`] = `
     class="bpk-price bpk-price--right"
   >
     <div
-      class="bpk-price__column-container"
-    >
-      <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title"
-      >
-        £1,830
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`small right view should support arbitrary props 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-price bpk-price--right"
-    testid="123"
-  >
+      class="bpk-price__leading--right"
+    />
     <div
       class="bpk-price__column-container"
     >
       <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title"
+        class="bpk-text bpk-text--heading-4 bpk-price__price"
       >
         £1,830
       </span>
@@ -225,10 +281,13 @@ exports[`small right view should support custom class names 1`] = `
     class="bpk-price bpk-price--right custom-classname"
   >
     <div
+      class="bpk-price__leading--right"
+    />
+    <div
       class="bpk-price__column-container"
     >
       <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title"
+        class="bpk-text bpk-text--heading-4 bpk-price__price"
       >
         £1,830
       </span>
@@ -237,46 +296,95 @@ exports[`small right view should support custom class names 1`] = `
 </DocumentFragment>
 `;
 
-exports[`small right view should support description attribute 1`] = `
+exports[`small right view should support leading text attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price bpk-price--right"
   >
     <div
+      class="bpk-price__leading--right"
+    >
+      <span
+        class="bpk-text bpk-text--xs"
+      >
+        from
+      </span>
+    </div>
+    <div
       class="bpk-price__column-container"
     >
       <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title"
+        class="bpk-text bpk-text--heading-4 bpk-price__price"
       >
         £1,830
-      </span>
-      <span
-        class="bpk-text bpk-text--xs bpk-price__description"
-      >
-        a night
       </span>
     </div>
   </div>
 </DocumentFragment>
 `;
 
-exports[`small right view should support subtitle attribute 1`] = `
+exports[`small right view should support previous price attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-price bpk-price--right"
   >
-    <span
-      class="bpk-text bpk-text--xs bpk-price__subtitle"
+    <div
+      class="bpk-price__leading bpk-price__leading--right"
     >
-      £200
-    </span>
+      <span
+        class="bpk-text bpk-text--xs bpk-price__previous-price"
+      >
+        £2,000
+      </span>
+      <span
+        class="bpk-text bpk-text--xs bpk-price__separator"
+      >
+        𐤟
+      </span>
+      <span
+        class="bpk-text bpk-text--xs"
+      >
+        from
+      </span>
+    </div>
     <div
       class="bpk-price__column-container"
     >
       <span
-        class="bpk-text bpk-text--heading-4 bpk-price__title"
+        class="bpk-text bpk-text--heading-4 bpk-price__price"
       >
         £1,830
+      </span>
+      <span
+        class="bpk-text bpk-text--xs bpk-price__trailing"
+      >
+        per day
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`small right view should support trailing text attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--right"
+  >
+    <div
+      class="bpk-price__leading--right"
+    />
+    <div
+      class="bpk-price__column-container"
+    >
+      <span
+        class="bpk-text bpk-text--heading-4 bpk-price__price"
+      >
+        £1,830
+      </span>
+      <span
+        class="bpk-text bpk-text--xs bpk-price__trailing"
+      >
+        per day
       </span>
     </div>
   </div>

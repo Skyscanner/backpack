@@ -27,9 +27,10 @@ export default () => (
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
-| title     | string   | true     | -             |
+| price     | string   | true     | -             |
 | size | oneOf(SIZES)   | false    | SIZES.small         |
 | align | oneOf(ALIGNS)   | false    | ALIGNS.left         |
-| subtitle  | string   | false    | null          |
-| description | string   | false    | null          |
+| leadingText | string   | false    | null          |
+| trailingText | string   | false    | null          |
+| previousPrice | string   | false    | null          |
 | className | string   | false    | null          |
