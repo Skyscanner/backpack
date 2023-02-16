@@ -17,9 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
-// TODO: Once we stop publishing individual packages and single packages we can remove this lint disable
-// eslint-disable-next-line import/order
 import { render } from '@testing-library/react';
 
 import '@testing-library/jest-dom';

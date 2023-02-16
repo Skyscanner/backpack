@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import { Component } from 'react';
 import { startOfDay, startOfMonth } from 'date-fns';
 import { VariableSizeList as List } from 'react-window';
 
@@ -42,7 +42,7 @@ const COLUMN_COUNT = 7;
 // Most calendar grids have 5 rows:
 const ESTIMATED_MONTH_ITEM_HEIGHT = BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT;
 
-class BpkScrollableCalendarGridList extends React.Component {
+class BpkScrollableCalendarGridList extends Component {
   constructor(props) {
     super(props);
 

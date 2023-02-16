@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from '@skyscanner/backpack-web/bpk-component-input';
 
 export default () => (
@@ -72,7 +71,6 @@ You can still attach custom handlers for these events as they will still be call
 | hasTouchSupport | bool                 | false     | (feature detection) |
 
 ```js
-import React from 'react';
 import BpkInput, { withOpenEvents } from '@skyscanner/backpack-web/bpk-component-input';
 import BpkPopover from '@skyscanner/backpack-web/bpk-component-popover';
 

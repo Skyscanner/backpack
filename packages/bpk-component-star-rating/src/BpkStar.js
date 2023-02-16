@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import SmallIcon from '../../bpk-component-icon/sm/star';

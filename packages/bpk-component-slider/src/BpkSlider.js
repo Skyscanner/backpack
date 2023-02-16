@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import Slider from 'react-slider';
 import PropTypes from 'prop-types';
 

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import * as BREAKPOINTS from '@skyscanner/bpk-foundations-web/tokens/breakpoints.es6';
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';

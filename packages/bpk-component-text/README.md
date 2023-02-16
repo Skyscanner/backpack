@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```javascript
-import React from 'react';
 import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
@@ -22,7 +21,6 @@ export default () => (
 When using the same style in many places repeating the `textStyle` and `tagName` props can become tedious in this case you can use `withDefaultProps` from `bpk-react-utils`.
 
 ```javascript
-import React from 'react';
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 import { withDefaultProps } from '@skyscanner/backpack-web/bpk-react-utils';
 
@@ -53,7 +51,6 @@ export default () => (
 Heading `textStyle` should not be confused with heading `tagName` that provide structure for SEO and Accessibility. The weight which is normally applied using `tagName` will be overwritten by the weight defined in the `textStyle`.
 
 ```javascript
-import React from 'react';
 import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (

@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-
 import BpkThemeToggle from '../../packages/bpk-component-theme-toggle';
 
 export default {

@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import type { Node } from 'react';
+import { Children } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -44,7 +45,7 @@ const BpkSectionListSection = (props: Props) => {
         </header>
       )}
       <ul className={getClassName('bpk-section-list-section')}>
-        {React.Children.map(children, (child) => (
+        {Children.map(children, (child) => (
           <li>{child}</li>
         ))}
       </ul>

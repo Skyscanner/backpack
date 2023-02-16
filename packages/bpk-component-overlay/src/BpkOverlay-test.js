@@ -17,7 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkOverlay, { OVERLAY_LEVELS, OVERLAY_TYPES } from './BpkOverlay';

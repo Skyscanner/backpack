@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component, type Node } from 'react';
+import { Component, createRef } from 'react';
+import type { Node } from 'react';
 
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkButton from '../../packages/bpk-component-button';
@@ -73,7 +74,7 @@ class PopoverContainer extends Component<Props, State> {
   constructor() {
     super();
 
-    this.ref = React.createRef();
+    this.ref = createRef();
     this.state = {
       isOpen: false,
       changedTarget: null,

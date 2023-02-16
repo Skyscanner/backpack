@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React, { type Node } from 'react';
+import type { Node } from 'react';
 import PropTypes from 'prop-types';
 
 // TODO: close button is not really only a close button, we should rename and update the import here

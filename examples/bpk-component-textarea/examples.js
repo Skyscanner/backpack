@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
-
 import { action } from '../../packages/bpk-storybook-utils';
 import BpkLabel from '../../packages/bpk-component-label';
 import BpkTextarea from '../../packages/bpk-component-textarea';

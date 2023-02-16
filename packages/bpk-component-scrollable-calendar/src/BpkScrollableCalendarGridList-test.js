@@ -17,7 +17,6 @@
  */
 
 import PropTypes from 'prop-types';
-import React from 'react';
 import isWeekend from 'date-fns/isWeekend';
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { render } from '@testing-library/react';

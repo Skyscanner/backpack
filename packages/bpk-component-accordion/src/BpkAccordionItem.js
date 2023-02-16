@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node, type Element } from 'react';
+import type { Node, Element } from 'react';
+import { cloneElement } from 'react';
 
 import AnimateHeight from '../../bpk-animate-height';
 import { withButtonAlignment } from '../../bpk-component-icon';
@@ -72,7 +73,7 @@ const BpkAccordionItem = (props: Props) => {
 
   const contentId = `${id}_content`;
   const clonedIcon = icon
-    ? React.cloneElement(icon, {
+    ? cloneElement(icon, {
         className: getClassName('bpk-accordion__leading-icon'),
       })
     : null;

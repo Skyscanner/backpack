@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import { Component } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 import { BpkButtonLink } from '../../bpk-component-link';
@@ -28,7 +28,7 @@ const getClassName = cssModules(STYLES);
 
 const GRID_CLASS_NAME = getClassName('bpk-vertical-grid--on');
 
-class BpkGridToggle extends React.Component {
+class BpkGridToggle extends Component {
   constructor(props) {
     super(props);
 

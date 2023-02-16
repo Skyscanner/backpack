@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React, { useState, useEffect, createRef } from 'react';
+import { useState, useEffect, createRef } from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
 
 import Portal from './Portal';

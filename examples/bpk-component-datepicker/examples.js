@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React, { Component } from 'react';
+import { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { memoize } from 'lodash';
 import {
@@ -290,7 +290,7 @@ class MultipleInputDatepicker extends Component {
   constructor(props) {
     super(props);
 
-    this.ref = React.createRef();
+    this.ref = createRef();
     this.state = {
       selectionConfiguration: {
         type: CALENDAR_SELECTION_TYPE.range,

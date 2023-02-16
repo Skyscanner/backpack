@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import React from 'react';
+import type { KeyboardEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 import BpkSmallArrowDownIcon from '../../bpk-component-icon/sm/arrow-down';
@@ -72,7 +72,7 @@ const BpkDataTableHeader = ({ column }: { column: ColumnType }) => {
     column.toggleSortBy(isDescending);
   };
 
-  const handleKeyboardEvent = (event: React.KeyboardEvent<HTMLElement>) => {
+  const handleKeyboardEvent = (event: KeyboardEvent<HTMLElement>) => {
     if (
       event.keyCode === KEYCODES.ENTER ||
       event.keyCode === KEYCODES.SPACEBAR

@@ -25,7 +25,7 @@ The actual component that developers create (i.e. the default export from this p
 */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import type { Node } from 'react';
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 

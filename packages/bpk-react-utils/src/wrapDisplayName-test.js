@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-
 import wrapDisplayName from './wrapDisplayName';
 
 test('wrapDisplayName adds hoc name to component', () => {

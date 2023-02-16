@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
-
 import { BpkCode, BpkCodeBlock } from '../../packages/bpk-component-code';
 
 const InlineExample = () => <BpkCode>npm install react --save</BpkCode>;

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkSmallFlightIcon from '../../bpk-component-icon/sm/flight';

@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { scaleBand, scaleLinear } from 'd3-scale';
 import PropTypes from 'prop-types';
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';

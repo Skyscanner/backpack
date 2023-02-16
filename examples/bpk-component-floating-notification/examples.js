@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React, { useState, Node } from 'react';
+import { cloneElement, useState, Node } from 'react';
 
 import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
@@ -40,7 +40,7 @@ const AlertContainer = ({ children }: Props): Node => {
         Trigger alert
       </BpkButton>
       {showAlert &&
-        React.cloneElement(children, { onExit: () => setShowAlert(false) })}
+        cloneElement(children, { onExit: () => setShowAlert(false) })}
     </>
   );
 };

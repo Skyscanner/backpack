@@ -22,7 +22,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { type Node, type StatelessFunctionalComponent } from 'react';
+import type { Node, StatelessFunctionalComponent } from 'react';
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { withButtonAlignment } from '../../bpk-component-icon';

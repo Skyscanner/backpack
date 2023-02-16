@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-
 import BpkPanel from '../../packages/bpk-component-panel';
 
 const DefaultExample = () => (

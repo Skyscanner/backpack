@@ -20,7 +20,6 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import BpkButtonSecondary from '../../bpk-component-button/BpkButtonSecondary';
 import BpkButtonSecondaryOnDark from '../../bpk-component-button/BpkButtonSecondaryOnDark';

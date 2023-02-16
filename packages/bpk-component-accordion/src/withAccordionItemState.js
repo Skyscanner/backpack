@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component, type ComponentType } from 'react';
+import { Component } from 'react';
+import type { ComponentType } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 

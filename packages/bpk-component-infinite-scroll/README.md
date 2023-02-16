@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import PropTypes from 'prop-types';
 import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 import BpkSpinner, { SPINNER_TYPES } from '@skyscanner/backpack-web/bpk-component-spinner';
@@ -104,7 +103,6 @@ used by subclasses to tell the `InfiniteScroll` component it should refresh
 its data.
 
 ```js
-import React from 'react';
 import PropTypes from 'prop-types';
 import withInfiniteScroll, { DataSource } from '@skyscanner/backpack-web/bpk-component-infinite-scroll';
 

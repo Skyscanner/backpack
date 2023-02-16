@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-
 import BpkGridToggle from '../../packages/bpk-component-grid-toggle';
 
 const DefaultExample = () => <BpkGridToggle />;

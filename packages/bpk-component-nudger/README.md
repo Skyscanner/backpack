@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ### `BpkNudger`
 
 ```js
-import React, { Component } from 'react';
+import { Component } from 'react';
 import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
 import BpkNudger from '@skyscanner/backpack-web/bpk-component-nudger';
 
@@ -50,7 +50,7 @@ class App extends Component {
 ### `BpkConfigurableNudger`
 
 ```js
-import React, { Component } from 'react';
+import { Component } from 'react';
 import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
 import { BpkConfigurableNudger } from '@skyscanner/backpack-web/bpk-component-nudger';
 

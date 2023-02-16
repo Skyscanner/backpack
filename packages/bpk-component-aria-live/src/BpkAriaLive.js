@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import type { ReactElement } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.

@@ -20,7 +20,8 @@
 
 import { createPopper } from '@popperjs/core';
 import PropTypes from 'prop-types';
-import React, { Component, type Node, type Element } from 'react';
+import { cloneElement, Component } from 'react';
+import type { Node, Element } from 'react';
 
 import { Portal, cssModules } from '../../bpk-react-utils';
 
@@ -186,7 +187,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     const classNames = [getClassName('bpk-tooltip-portal')];
     const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
 
-    const targetWithAccessibilityProps = React.cloneElement(target, {
+    const targetWithAccessibilityProps = cloneElement(target, {
       tabIndex: '0',
       'aria-label': ariaLabel,
     });

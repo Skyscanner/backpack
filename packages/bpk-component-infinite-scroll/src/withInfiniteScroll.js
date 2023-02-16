@@ -18,12 +18,8 @@
 
 /* @flow strict */
 
-import React, {
-  Component,
-  type Element,
-  type Config,
-  type AbstractComponent,
-} from 'react';
+import { Component } from 'react';
+import type { Element, Config, AbstractComponent } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import extend from 'lodash/extend';

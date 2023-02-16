@@ -18,7 +18,8 @@
 
 /* @flow strict */
 
-import React, { Component, type Node } from 'react';
+import { Component } from 'react';
+import type { Node } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
 import AnimateHeight from '../../packages/bpk-animate-height';

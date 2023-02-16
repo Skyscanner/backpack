@@ -22,7 +22,6 @@
 // other than pixels
 /* eslint-disable backpack/use-tokens */
 
-import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 

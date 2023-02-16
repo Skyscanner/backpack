@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React, { useRef, forwardRef } from 'react';
+import { useRef, forwardRef } from 'react';
 import {
   spacingSm,
   colorMonteverde,

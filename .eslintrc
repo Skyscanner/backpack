@@ -85,12 +85,6 @@
     "prettier/prettier": "error",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
-    // TODO: To ignore linting errors which are blocking the CI
-    // "no-restricted-imports", "no-unused-vars", "@typescript-eslint/consistent-type-imports" 
-    // are temporarily disabled. To be be re-enabled in KOA-5904.
-    "no-restricted-imports": "off",
-    "no-unused-vars": "off",
-    "@typescript-eslint/consistent-type-imports": "off",
     // We override the eslint-config-skyscanner rule here as within Backpack
     // we need certain order imports otherwise it will break components like the calendar.
     "import/order": [

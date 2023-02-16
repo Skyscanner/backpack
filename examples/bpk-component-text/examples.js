@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-
 import { withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 

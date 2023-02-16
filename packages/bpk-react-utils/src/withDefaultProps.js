@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node, type AbstractComponent } from 'react';
+import type { Node, AbstractComponent } from 'react';
 
 import wrapDisplayName from './wrapDisplayName';
 

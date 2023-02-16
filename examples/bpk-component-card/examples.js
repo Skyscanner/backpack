@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 
 import BpkLink from '../../packages/bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';

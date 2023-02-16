@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
 import BpkSelect from '../../packages/bpk-component-select';

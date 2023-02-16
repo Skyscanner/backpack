@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
 
 const SmallExample = () => <BpkPrice price="£1,830" />;

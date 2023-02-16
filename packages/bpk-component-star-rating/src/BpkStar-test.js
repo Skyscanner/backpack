@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkStar, { STAR_TYPES } from './BpkStar';

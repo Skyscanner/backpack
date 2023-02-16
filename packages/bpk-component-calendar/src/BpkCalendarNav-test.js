@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import format from 'date-fns/format';
 import userEvent from '@testing-library/user-event';

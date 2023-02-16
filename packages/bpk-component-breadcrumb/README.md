@@ -8,7 +8,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 ```js
-import React, { Component } from 'react';
+import { Component } from 'react';
 import BpkBreadcrumb, { BpkBreadcrumbItem } from '@skyscanner/backpack-web/bpk-component-breadcrumb';
 
 

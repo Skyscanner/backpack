@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';

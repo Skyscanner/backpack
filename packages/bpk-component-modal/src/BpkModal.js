@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import { withScrim } from '../../bpk-scrim-utils';
 import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';

@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import React from 'react';
 import BpkAriaLive, { ARIA_LIVE_POLITENESS_SETTINGS } from '@skyscanner/backpack-web/bpk-component-aria-live';
 
 export default () => (

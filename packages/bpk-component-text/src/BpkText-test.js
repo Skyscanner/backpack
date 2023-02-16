@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkText, { WEIGHT_STYLES } from './BpkText';

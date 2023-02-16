@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
