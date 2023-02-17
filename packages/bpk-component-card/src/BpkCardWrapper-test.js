@@ -17,6 +17,7 @@
  */
 /* @flow strict */
 
+import { axe } from 'jest-axe';
 import { render } from '@testing-library/react';
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -52,5 +53,19 @@ describe('BpkCardWrapper', () => {
       />,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkCardWrapper
+        className="custom-classname"
+        header={message}
+        card={longMessage}
+        backgroundColor={coreAccentDay}
+      />,
+    );
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 });
