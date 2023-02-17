@@ -40,10 +40,11 @@
       z-index: 2;
       width: bpk-spacing-lg();
       height: bpk-spacing-lg();
-      border-radius: 50%;
       background-color: transparent;
       box-shadow: bpk-spacing-base() 0 0 0 var(--background-color);
       overflow: hidden;
+
+      @include bpk-border-radius-md;
     }
 
     &::before {
