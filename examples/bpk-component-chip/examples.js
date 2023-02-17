@@ -19,6 +19,7 @@
 /* @flow strict */
 
 // eslint-disable-next-line max-classes-per-file
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../packages/bpk-react-utils';

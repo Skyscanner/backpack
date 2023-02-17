@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import { Component } from 'react';
+
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
 import BpkAutosuggest, {
