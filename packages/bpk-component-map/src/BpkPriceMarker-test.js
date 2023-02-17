@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './BpkPriceMarker';

@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import BpkSelectableChip, { BpkDismissibleChip, BpkDropdownChip, CHIP_TYPES } from '@skyscanner/backpack-web/bpk-component-chip';
 import BeachIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/beach';
 

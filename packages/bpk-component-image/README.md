@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import BpkImage from '@skyscanner/backpack-web/bpk-component-image';
 import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 

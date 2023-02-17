@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node, Component, type Element } from 'react';
+import { Component, Children } from 'react';
+import type { Node, Element } from 'react';
 import {
   lineHeightBase,
   iconSizeSm,
@@ -194,7 +195,7 @@ const WideExample = () => (
 
 const OverflowingExample = () => (
   <ModalContainer title="Modal title" closeLabel="Close modal">
-    {React.Children.toArray(content)}
+    {Children.toArray(content)}
   </ModalContainer>
 );
 
@@ -231,7 +232,7 @@ const FullScreenExample = () => (
 
 const FullScreenOverflowingExample = () => (
   <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen>
-    {React.Children.toArray(content)}
+    {Children.toArray(content)}
   </ModalContainer>
 );
 

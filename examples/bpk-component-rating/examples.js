@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
-
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkRating, {
   RATING_SIZES,

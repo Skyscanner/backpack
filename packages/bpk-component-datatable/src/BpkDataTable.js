@@ -18,7 +18,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { useMemo, useState } from 'react';
+import type { KeyboardEvent } from 'react';
+import { useMemo, useState } from 'react';
 import { useTable, useSortBy } from 'react-table';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -123,7 +124,7 @@ const BpkDataTable = (props: Props) => {
   };
 
   const handleKeyboardEvent = (
-    event: React.KeyboardEvent<HTMLElement>,
+    event: KeyboardEvent<HTMLElement>,
     i: number,
   ) => {
     if (

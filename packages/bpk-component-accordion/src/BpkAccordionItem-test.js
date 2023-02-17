@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import StopsIcon from '../../bpk-component-icon/sm/stops';

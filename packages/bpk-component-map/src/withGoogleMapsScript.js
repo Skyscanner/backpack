@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import React, { type ComponentType } from 'react';
+import type { ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import { useJsApiLoader } from '@react-google-maps/api';
 

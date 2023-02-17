@@ -13,7 +13,6 @@ Note that the default background color is white. You will need to apply a custom
 ### React components
 
 ```js
-import React from 'react';
 import { BpkContentBubble } from '@skyscanner/backpack-web/bpk-component-flare';
 
 export default MyComponent = () => (

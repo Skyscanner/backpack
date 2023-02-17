@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import type { ComponentProps } from 'react';
 
 import BpkContentCards from '../../packages/bpk-component-content-cards';
 
-const contentCardProps: React.ComponentProps<typeof BpkContentCards> = {
+const contentCardProps: ComponentProps<typeof BpkContentCards> = {
   heading: 'Your ultimate Greece guide',
   cards: [
     {

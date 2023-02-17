@@ -17,7 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import { SORT_DIRECTION_TYPES } from './sort-types';

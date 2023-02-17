@@ -17,7 +17,8 @@
  */
 /* @flow strict */
 
-import React, { Component, type Node } from 'react';
+import { Component } from 'react';
+import type { Node } from 'react';
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';

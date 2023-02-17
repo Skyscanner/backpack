@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { action } from '../../packages/bpk-storybook-utils';
 import BpkSelect from '../../packages/bpk-component-select';
 
-class StatefulBpkSelect extends React.Component {
+class StatefulBpkSelect extends Component {
   constructor() {
     super();
     this.state = { value: 'oranges' };
@@ -69,7 +69,7 @@ const countries = [
   { key: 7, id: 'IT', name: 'Italy', disabled: false },
   { key: 8, id: 'US', name: 'USA', disabled: true },
 ];
-class SelectWithImage extends React.Component {
+class SelectWithImage extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -18,13 +18,7 @@
 
 /* @flow strict */
 
-import React from 'react';
-
-import {
-  type Props as CommonProps,
-  defaultProps,
-  propTypes,
-} from './common-types';
+import { Props as CommonProps, defaultProps, propTypes } from './common-types';
 import BpkButtonBase, { cssModules } from './BpkButtonBase';
 import STYLES from './BpkButtonLinkOnDark.module.scss';
 

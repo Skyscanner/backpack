@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import { Portal, cssModules } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';

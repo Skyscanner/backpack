@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import PropTypes from 'prop-types';
 import XlSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/xl';
 

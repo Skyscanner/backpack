@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import { Component } from 'react';
 
 import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
@@ -37,7 +37,7 @@ const setTheme = (theme) => {
   );
 };
 
-class BpkThemeToggle extends React.Component {
+class BpkThemeToggle extends Component {
   constructor(props) {
     super(props);
     this.state = {

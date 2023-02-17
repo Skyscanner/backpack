@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import BpkPagination from '@skyscanner/backpack-web/bpk-component-pagination';
 
 const Pagination = () => (

@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import React, { type AbstractComponent } from 'react';
+import type { AbstractComponent } from 'react';
 
 import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
 

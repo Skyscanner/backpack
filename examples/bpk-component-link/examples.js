@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import {
   colorWhite,
   colorSkyGrayTint04,

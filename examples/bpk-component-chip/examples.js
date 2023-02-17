@@ -19,7 +19,6 @@
 /* @flow strict */
 
 // eslint-disable-next-line max-classes-per-file
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../packages/bpk-react-utils';
@@ -51,7 +50,7 @@ type StatefulSelectableChipProps = $Diff<
 >;
 /* eslint-enable */
 
-class StatefulSelectableChip extends React.Component<
+class StatefulSelectableChip extends Component<
   StatefulSelectableChipProps,
   { selected: boolean },
 > {
@@ -91,7 +90,7 @@ class StatefulSelectableChip extends React.Component<
   }
 }
 
-class StatefulDropdownChip extends React.Component<
+class StatefulDropdownChip extends Component<
   { type: $Keys<typeof CHIP_TYPES> },
   { chips: Array<string>, updates: Array<string> },
 > {
@@ -131,7 +130,7 @@ class StatefulDropdownChip extends React.Component<
   }
 }
 
-class StatefulDismissibleChipsExample extends React.Component<
+class StatefulDismissibleChipsExample extends Component<
   { type: $Keys<typeof CHIP_TYPES> },
   { chips: Array<string>, updates: Array<string> },
 > {
@@ -186,7 +185,7 @@ class StatefulDismissibleChipsExample extends React.Component<
   }
 }
 
-class StatefulRadioGroupChipsExample extends React.Component<
+class StatefulRadioGroupChipsExample extends Component<
   { type: $Keys<typeof CHIP_TYPES> },
   { chips: Array<string>, updates: Array<string>, selectedIndex: number },
 > {

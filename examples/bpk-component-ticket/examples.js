@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkButton from '../../packages/bpk-component-button';

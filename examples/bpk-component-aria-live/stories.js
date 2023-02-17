@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
-
 import { ChipsExample, SelectExample } from './examples';
 
 export default {

@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { number } from 'prop-types';
 import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { scaleLinear, scaleBand } from 'd3-scale';

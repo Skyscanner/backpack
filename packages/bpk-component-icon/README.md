@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Basic usage
 
 ```js
-import React from 'react';
 import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
 import BpkLargeAccessibilityIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/accessibility';
 
@@ -39,7 +38,6 @@ export default () => (
 ### Aligning to BpkButton components
 
 ```js
-import React from 'react';
 import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
 import BpkLargeAccessibilityIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/accessibility';
@@ -63,7 +61,6 @@ export default () => (
 ### RTL support
 
 ```js
-import React from 'react';
 import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
 import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 

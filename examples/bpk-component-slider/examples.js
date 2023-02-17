@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle';
 import BpkSlider from '../../packages/bpk-component-slider';

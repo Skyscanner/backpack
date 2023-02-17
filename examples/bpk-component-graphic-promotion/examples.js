@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-
 import BpkGraphicPromo, {
   TEXT_ALIGN,
 } from '../../packages/bpk-component-graphic-promotion';

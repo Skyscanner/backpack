@@ -18,7 +18,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component, type Node } from 'react';
+import { Component, Children, cloneElement } from 'react';
+import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
@@ -159,7 +160,7 @@ class BpkHorizontalNav extends Component<Props> {
     let children = rawChildren;
 
     if (autoScrollToSelected || type === HORIZONTAL_NAV_TYPES.light) {
-      children = React.Children.map(rawChildren, (child) => {
+      children = Children.map(rawChildren, (child) => {
         const childProps = {};
         let childRef;
         if (autoScrollToSelected) {
@@ -175,7 +176,7 @@ class BpkHorizontalNav extends Component<Props> {
         }
 
         return child ? (
-          <div ref={childRef}>{React.cloneElement(child, childProps)}</div>
+          <div ref={childRef}>{cloneElement(child, childProps)}</div>
         ) : null;
       });
     }

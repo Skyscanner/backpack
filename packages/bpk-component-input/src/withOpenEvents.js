@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
@@ -45,7 +45,7 @@ const withEventHandler = (fn, eventHandler) => (e) => {
 };
 
 const withOpenEvents = (InputComponent) => {
-  class WithOpenEvents extends React.Component {
+  class WithOpenEvents extends Component {
     constructor(props) {
       super(props);
 

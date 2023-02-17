@@ -11,7 +11,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ### BpkCard
 
 ```js
-import React from 'react';
 import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
@@ -26,7 +25,6 @@ export default () => (
 ### BpkDividedCard
 
 ```js
-import React from 'react';
 import {
   BpkDividedCard,
   ORIENTATION,
@@ -53,7 +51,6 @@ export default () => (
 ### BpkCardWrapper
 
 ```js
-import React from 'react';
 import { BpkCardWrapper } from '@skyscanner/backpack-web/bpk-component-card';
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 

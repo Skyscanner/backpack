@@ -18,7 +18,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Element } from 'react';
+import type { Element } from 'react';
+import { cloneElement } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -85,7 +86,7 @@ const BpkSelect = (props: Props) => {
   if (image) {
     return (
       <div className={getClassName('bpk-select-wrapper', wrapperClassName)}>
-        {React.cloneElement(image, {
+        {cloneElement(image, {
           'aria-hidden': true,
           className: getClassName(
             'bpk-select-wrapper__image',

@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Children, type Node } from 'react';
+import type { Node } from 'react';
+import { Children } from 'react';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 import { SPINNER_TYPES } from '../../packages/bpk-component-spinner';

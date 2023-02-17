@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
-
 import BpkSmallTickIcon from '../../packages/bpk-component-icon/sm/tick-circle';
 import BpkSmallExclamationIcon from '../../packages/bpk-component-icon/sm/exclamation';
 import BpkSmallHelpCircleIcon from '../../packages/bpk-component-icon/sm/help-circle';

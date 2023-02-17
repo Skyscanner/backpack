@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
-
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkDarkExampleWrapper.module.scss';

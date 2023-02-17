@@ -17,7 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkSelect from '../../bpk-component-select';

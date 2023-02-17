@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../packages/bpk-react-utils';

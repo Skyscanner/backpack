@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
-
 import BpkBreadcrumb, {
   BpkBreadcrumbItem,
 } from '../../packages/bpk-component-breadcrumb';

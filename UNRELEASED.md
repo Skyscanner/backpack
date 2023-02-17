@@ -1,9 +1,13 @@
-`@skyscanner/backpack-web`
+`@skyscanner/backpack-web`:
 
 **Added:**
 
 - `BpkCardWrapper`
   - It is a new component which is used for card wrapper component.
+
+**Changed:**
+
+- Remove unused React imports. This is now handled automatically by the new JSX transform. This should not have any impact on consumers.
 
 **Breaking:**
 

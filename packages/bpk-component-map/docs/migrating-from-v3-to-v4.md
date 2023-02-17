@@ -25,7 +25,6 @@ Some teams were changing the `large` prop when pressing the marker to apply a ps
 #### Original
 
 ```jsx
-import React from 'react';
 import { BpkMapMarker } from 'bpk-component-map';
 import BusIconSm from 'bpk-component-icon/sm/bus';
 
@@ -41,7 +40,6 @@ const MyComponent = () => (
 #### Replacement
 
 ```jsx
-import React from 'react';
 import { BpkIconMarker } from 'bpk-component-map';
 import BusIconSm from 'bpk-component-icon/sm/bus';
 

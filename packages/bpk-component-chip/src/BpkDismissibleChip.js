@@ -24,8 +24,6 @@ been hard coded to have disabled={false}, selected and a trailing
 accessory view of a close icon.
 */
 
-import React from 'react';
-
 import { cssModules } from '../../bpk-react-utils';
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
 

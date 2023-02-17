@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import { version } from 'react';
 
 it('packages/* should be ^17.0.0', () => {
-  expect(React.version).toMatch(/^17/);
+  expect(version).toMatch(/^17/);
 });

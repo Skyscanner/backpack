@@ -23,7 +23,6 @@ Note: The tests here are wrapped in table > tr to avoid a validation
 warning (that <td> elements must be inside tables) when running tests.
 */
 
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import BpkTableCell from './BpkTableCell';

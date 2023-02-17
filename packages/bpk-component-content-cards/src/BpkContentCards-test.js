@@ -16,15 +16,13 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import type { ComponentProps } from 'react';
 import { render, screen } from '@testing-library/react';
 
 import BpkContentCards from './BpkContentCards';
 
 describe('Content Card widget', () => {
-  const contentContainerTestProps: React.ComponentProps<
-    typeof BpkContentCards,
-  > = {
+  const contentContainerTestProps: ComponentProps<typeof BpkContentCards> = {
     heading: 'Header for the component',
     cards: [
       {

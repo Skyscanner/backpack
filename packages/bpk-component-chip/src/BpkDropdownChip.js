@@ -23,8 +23,6 @@ The dropdown chip component is just a selectable chip component
 with a trailing accessory view of a chevron down icon.
 */
 
-import React from 'react';
-
 import ChevronDownIconSm from '../../bpk-component-icon/sm/chevron-down';
 
 import BpkSelectableChip from './BpkSelectableChip';

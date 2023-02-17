@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node, type Element } from 'react';
+import type { Node, Element } from 'react';
 
 import { BpkButtonLink } from '../../bpk-component-link';
 import BpkCloseButton from '../../bpk-component-close-button';

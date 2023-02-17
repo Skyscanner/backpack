@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';

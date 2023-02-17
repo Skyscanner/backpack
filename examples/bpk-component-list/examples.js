@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
-
 import { BpkList, BpkListItem } from '../../packages/bpk-component-list';
 
 const UnorderedExample = () => (

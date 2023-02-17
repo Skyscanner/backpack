@@ -18,7 +18,8 @@
 
 /* @flow strict */
 
-import React, { type Node, type Element } from 'react';
+import type { Node, Element } from 'react';
+import { cloneElement } from 'react';
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -39,7 +40,7 @@ export type Props = {
 
 const cloneWithClass = (elem: Element<any>, newStyle: string) => {
   const className = getClassNames(elem.props.className, newStyle);
-  return React.cloneElement(elem, { ...elem.props, className });
+  return cloneElement(elem, { ...elem.props, className });
 };
 
 const BpkNavigationBar = (props: Props) => {

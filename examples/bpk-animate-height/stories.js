@@ -17,8 +17,6 @@
  */
 
 /* @flow strict */
-import React from 'react';
-
 import AnimateHeightExample from './examples';
 
 export default {

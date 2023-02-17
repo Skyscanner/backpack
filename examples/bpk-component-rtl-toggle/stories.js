@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-
 import BpkRtlToggle from '../../packages/bpk-component-rtl-toggle';
 
 export default {

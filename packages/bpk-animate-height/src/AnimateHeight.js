@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 // IE11 doesn't support `Number.isNaN` so we must use the global.
 // When IE11 support drops we can migrate.

@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { createRef, Component } from 'react';
 
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
@@ -58,7 +58,7 @@ class BpkDatepicker extends Component {
     this.state = {
       isOpen: props.isOpen,
     };
-    this.inputRef = React.createRef();
+    this.inputRef = createRef();
   }
 
   componentDidUpdate(prevProps, prevState) {

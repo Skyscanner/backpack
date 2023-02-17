@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container';

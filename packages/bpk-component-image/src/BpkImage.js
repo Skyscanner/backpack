@@ -17,7 +17,8 @@
  */
 /* @flow strict */
 
-import React, { type Node, Component } from 'react';
+import { Component } from 'react';
+import type { Node } from 'react';
 import PropTypes from 'prop-types';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';

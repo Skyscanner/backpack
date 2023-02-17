@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import BpkPageIndicator from '@skyscanner/backpack-web/bpk-component-page-indicator';
 
 export default () =>

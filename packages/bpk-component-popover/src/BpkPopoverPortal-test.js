@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React from 'react';
+import { createRef } from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -53,7 +53,7 @@ describe('BpkPopoverPortal', () => {
   afterEach(() => jest.clearAllMocks());
 
   it('should render correctly', () => {
-    const ref = React.createRef();
+    const ref = createRef();
 
     const { asFragment } = render(
       <BpkPopoverPortal
@@ -95,7 +95,7 @@ describe('BpkPopoverPortal', () => {
     // are passed to the <Portal> component.
 
     it('should render correctly with portalClassName added to portal component', () => {
-      const ref = React.createRef();
+      const ref = createRef();
 
       render(
         <BpkPopoverPortal
@@ -120,7 +120,7 @@ describe('BpkPopoverPortal', () => {
 
     it('should render correctly with portalStyle added to portal component', () => {
       const customStyle: ?Object = { color: 'red' }; // eslint-disable-line  backpack/use-tokens
-      const ref = React.createRef();
+      const ref = createRef();
 
       render(
         <BpkPopoverPortal
@@ -148,7 +148,7 @@ describe('BpkPopoverPortal', () => {
     keyboardFocusScope.scopeFocus = jest.fn();
     keyboardFocusScope.unscopeFocus = jest.fn();
 
-    const ref = React.createRef();
+    const ref = createRef();
 
     const { rerender } = render(
       <BpkPopoverPortal
@@ -203,7 +203,7 @@ describe('BpkPopoverPortal', () => {
 
   it('should reposition when props are updated', () => {
     const positionSpy = jest.spyOn(BpkPopoverPortal.prototype, 'position');
-    const ref = React.createRef();
+    const ref = createRef();
 
     const { rerender } = render(
       <BpkPopoverPortal
@@ -250,7 +250,7 @@ describe('BpkPopoverPortal', () => {
 
   it('should not reposition if not open', () => {
     const positionSpy = jest.spyOn(BpkPopoverPortal.prototype, 'position');
-    const ref = React.createRef();
+    const ref = createRef();
 
     const { rerender } = render(
       <BpkPopoverPortal
@@ -291,7 +291,7 @@ describe('BpkPopoverPortal', () => {
       destroy: jest.fn(),
     });
 
-    const ref = React.createRef();
+    const ref = createRef();
 
     const { rerender } = render(
       <BpkPopoverPortal

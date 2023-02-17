@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import { Component, Fragment } from 'react';
+import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -60,7 +61,7 @@ const buildMetaData = (schemaMetaData: SchemaMetaDataItem[]): string => {
   });
 };
 
-class BpkBreadcrumb extends React.Component<Props> {
+class BpkBreadcrumb extends Component<Props> {
   metaData: ?string;
 
   static defaultProps = {
@@ -77,7 +78,7 @@ class BpkBreadcrumb extends React.Component<Props> {
     const { children, label, schemaMetaData, ...rest } = this.props;
 
     return (
-      <React.Fragment>
+      <Fragment>
         {this.metaData && (
           <script
             type="application/ld+json"
@@ -89,7 +90,7 @@ class BpkBreadcrumb extends React.Component<Props> {
         <nav aria-label={label} {...rest}>
           <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
         </nav>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

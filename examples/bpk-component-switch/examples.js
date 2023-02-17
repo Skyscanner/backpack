@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import React from 'react';
-
 import BpkSwitch from '../../packages/bpk-component-switch';
 
 const DefaultExample = ({ ...rest }: {}) => (

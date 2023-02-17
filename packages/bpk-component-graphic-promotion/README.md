@@ -7,7 +7,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import React from 'react';
 import BpkGraphicPromo from '@skyscanner/backpack-web/bpk-component-graphic-promotion';
 
 export default () => (

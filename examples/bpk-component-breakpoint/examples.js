@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React, { type Node } from 'react';
+import type { Node } from 'react';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkBreakpoint, {

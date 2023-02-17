@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
-
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
 import BpkAutosuggest, {
@@ -129,7 +127,7 @@ type Props = {
   includeTertiaryLabel: boolean,
 };
 
-class AutosuggestExample extends React.Component<Props, State> {
+class AutosuggestExample extends Component<Props, State> {
   static defaultProps = {
     hanzi: false,
     includeIcon: false,

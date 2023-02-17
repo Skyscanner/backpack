@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
-
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 import {

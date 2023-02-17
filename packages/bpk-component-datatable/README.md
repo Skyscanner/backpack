@@ -9,7 +9,6 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import React from 'react';
 import { BpkDataTable, BpkDataTableColumn } from '@skyscanner/backpack-web/bpk-component-datatable';
 
 const rows = [
@@ -39,7 +38,7 @@ export default () => (
 By default `BpkDataTable` sorts the column using the value of `dataKey`. For use cases where the data might more complex and requires custom sorting you can pass a `sort` function along with `sortBy` and `sortDirection`.
 
 ```js
-import React from 'react';
+import { Fragment } from 'react';
 import { BpkDataTable, BpkDataTableColumn } from '@skyscanner/backpack-web/bpk-component-datatable';
 
 const complexRows = [
@@ -97,9 +96,9 @@ export default () => (
       width={100}
       flexGrow={1}
       cellRenderer={({ cellData }) => (
-        <React.Fragment>
+        <Fragment>
           {cellData.office} - {cellData.desk}
-        </React.Fragment>
+        </Fragment>
       )}
     />
   </BpkDataTable>

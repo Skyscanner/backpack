@@ -17,7 +17,8 @@
  */
 /* @flow */
 
-import React, { type AbstractComponent } from 'react';
+import { Component } from 'react';
+import type { AbstractComponent } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
@@ -27,9 +28,9 @@ type InjectedProps = {|
 |};
 
 export default function withLoadingBehavior<Config>(
-  Component: AbstractComponent<{| ...Config, ...InjectedProps |}>,
+  WrappedComponent: AbstractComponent<{| ...Config, ...InjectedProps |}>,
 ): AbstractComponent<Config> {
-  class WithLoadingBehavior<C: Config> extends React.Component<
+  class WithLoadingBehavior<C: Config> extends Component<
     C,
     {| loading: boolean |},
   > {
@@ -49,7 +50,7 @@ export default function withLoadingBehavior<Config>(
 
     render() {
       return (
-        <Component
+        <WrappedComponent
           onLoad={this.onLoad}
           loading={this.state.loading}
           {...this.props}
@@ -58,7 +59,7 @@ export default function withLoadingBehavior<Config>(
     }
   }
   WithLoadingBehavior.displayName = wrapDisplayName(
-    Component,
+    WrappedComponent,
     'withLoadingBehavior',
   );
 

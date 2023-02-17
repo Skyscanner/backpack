@@ -18,7 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
 import ReactTestUtils from 'react-dom/test-utils';
 import { render } from '@testing-library/react';
 

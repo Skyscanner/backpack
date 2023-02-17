@@ -17,7 +17,8 @@
  */
 /* @flow strict */
 
-import React, { type Node, type ComponentType } from 'react';
+import type { Node, ComponentType } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 
@@ -33,10 +34,10 @@ type WithLazyLoadingState = {
 };
 
 export default function withLazyLoading(
-  Component: ComponentType<any>,
+  WrappedComponent: ComponentType<any>,
   documentRef: typeof window,
 ): ComponentType<any> {
-  class WithLazyLoading extends React.Component<
+  class WithLazyLoading extends Component<
     WithLazyLoadingProps,
     WithLazyLoadingState,
   > {
@@ -171,12 +172,15 @@ export default function withLazyLoading(
           className={className}
         >
           {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-          <Component inView={this.state.inView} {...rest} />
+          <WrappedComponent inView={this.state.inView} {...rest} />
         </div>
       );
     }
   }
-  WithLazyLoading.displayName = wrapDisplayName(Component, 'withLazyLoading');
+  WithLazyLoading.displayName = wrapDisplayName(
+    WrappedComponent,
+    'withLazyLoading',
+  );
 
   return WithLazyLoading;
 }

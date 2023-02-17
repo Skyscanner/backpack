@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import React from 'react';
-
 import { action } from '../../packages/bpk-storybook-utils';
 import BpkCloseButton from '../../packages/bpk-component-close-button';
 
