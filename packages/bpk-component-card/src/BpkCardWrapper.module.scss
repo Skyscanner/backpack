@@ -23,12 +23,6 @@
   @include bpk-border-radius-md;
   @include bpk-border-lg(var(--background-color), '');
 
-  &::before,
-  &::after {
-    box-shadow: 0 bpk-spacing-sm() bpk-spacing-lg() / 2 0
-      var(--background-color);
-  }
-
   &--header {
     border-radius: $bpk-border-radius-sm() $bpk-border-radius-sm 0 0;
     overflow: hidden;
