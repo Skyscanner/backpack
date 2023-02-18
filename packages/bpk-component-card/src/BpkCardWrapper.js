@@ -46,12 +46,7 @@ const BpkCardWrapper = (props: Props) => {
         '--background-color': backgroundColor,
       }}
     >
-      <div
-        style={{ backgroundColor }}
-        className={getClassName('bpk-card-wrapper--header')}
-      >
-        {header}
-      </div>
+      <div className={getClassName('bpk-card-wrapper--header')}>{header}</div>
       <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>
     </div>
   );

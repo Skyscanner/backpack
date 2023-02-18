@@ -20,9 +20,11 @@
 
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkCard from './BpkCard';
 import BpkDividedCard from './BpkDividedCard';
+import BpkCardWrapper from './BpkCardWrapper';
 
 describe('BpkCard accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
@@ -59,6 +61,28 @@ describe('BpkDividedCard accessibility tests', () => {
       />,
     );
     const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('BpkCardWrapper accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkCardWrapper
+        className="custom-classname"
+        header={<span>Hoc header</span>}
+        card={
+          <BpkCard>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </BpkCard>
+        }
+        backgroundColor={coreAccentDay}
+      />,
+    );
+    const results = await axe(container);
+
     expect(results).toHaveNoViolations();
   });
 });
