@@ -25,6 +25,7 @@
 
   &--header {
     border-radius: $bpk-border-radius-sm() $bpk-border-radius-sm 0 0;
+    background-color: var(--background-color);
     overflow: hidden;
   }
 

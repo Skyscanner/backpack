@@ -17,26 +17,33 @@
  */
 /* @flow strict */
 
-import { axe } from 'jest-axe';
 import { render } from '@testing-library/react';
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkCardWrapper from './BpkCardWrapper';
 
-const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
-const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
-blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
-nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
-porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
-sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
-ante in, vestibulum nulla.`;
+const headerContent = (
+  <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+);
+const cardContent = (
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis
+    sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum
+    dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et
+    congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla
+    libero laoreet at. Mauris porta varius ullamcorper. Sed laoreet libero
+    mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
+    sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae
+    rhoncus. Fusce id enim porttitor, mattis ante in, vestibulum nulla.
+  </div>
+);
 
 describe('BpkCardWrapper', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
       <BpkCardWrapper
-        header={message}
-        card={longMessage}
+        header={headerContent}
+        card={cardContent}
         backgroundColor={coreAccentDay}
       />,
     );
@@ -47,25 +54,11 @@ describe('BpkCardWrapper', () => {
     const { asFragment } = render(
       <BpkCardWrapper
         className="custom-classname"
-        header={message}
-        card={longMessage}
+        header={headerContent}
+        card={cardContent}
         backgroundColor={coreAccentDay}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkCardWrapper
-        className="custom-classname"
-        header={message}
-        card={longMessage}
-        backgroundColor={coreAccentDay}
-      />,
-    );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
   });
 });

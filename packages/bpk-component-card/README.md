@@ -33,14 +33,14 @@ import {
 export default () => (
   <>
     <BpkDividedCard
-      primaryContent={'foo'}
-      secondaryContent={'bar'}
+      primaryContent={<span>foo</span>}
+      secondaryContent={<span>bar</span>}
       orientation={ORIENTATION.vertical}
     />
     // Toggle shadow shadow with isElevated
     <BpkDividedCard
-      primaryContent={'foo'}
-      secondaryContent={'bar'}
+      primaryContent={<span>foo</span>}
+      secondaryContent={<span>bar</span>}
       orientation={ORIENTATION.horizontal}
       isElevated={false}
     />
@@ -53,9 +53,20 @@ export default () => (
 ```js
 import { BpkCardWrapper } from '@skyscanner/backpack-web/bpk-component-card';
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
-  <BpkCardWrapper header={'foo'} card={'bar'} backgroundColor={coreAccentDay} />
+  <BpkCardWrapper
+    header={<span>Hoc header</span>}
+    card={
+      <BpkCard>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkCard>
+    }
+    backgroundColor={coreAccentDay}
+  />
 );
 ```
 
