@@ -55,8 +55,7 @@ const ThreePagesExample = () => <PageIndicatorContainer totalIndicators={3} />;
 
 const OverImageExample = () => (
   <BpkBackgroundImage
-    width={400}
-    height={90}
+    aspectRatio={imageWidth / imageHeight}
     style={{ width: imageWidth, height: imageHeight }}
     imageStyle={{
       backgroundRepeat: 'no-repeat',
