@@ -54,13 +54,8 @@ $border-width: $bpk-one-pixel-rem * 2;
   }
 
   &__label {
-    margin-right: bpk-spacing-md();
     line-height: $height;
-
-    @include bpk-rtl {
-      margin-right: 0;
-      margin-left: bpk-spacing-md();
-    }
+    margin-inline-end: bpk-spacing-md();
   }
 
   // The 'track'.
