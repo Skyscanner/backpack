@@ -18,7 +18,6 @@
 
 import {
   DefaultExample,
-  LegacyWidthAndHeightExample,
   RoundedCornersExample,
   FullWidthExample,
   UsingSrcSetExample,
@@ -27,7 +26,6 @@ import {
   WithLazyLoadingAndAnimationExample,
   WithinScrollDivExample,
   BackgroundImageExample,
-  BackgroundImageLegacyPropsExample,
   BackgroundImageWithLazyLoadingAndAnimationExample,
 } from './examples';
 
@@ -36,7 +34,6 @@ export default {
 };
 
 export const Default = DefaultExample;
-export const UsingLegacyWidthAndHeightProps = LegacyWidthAndHeightExample;
 
 export const WithBorderRadius = RoundedCornersExample;
 export const FullWidth = FullWidthExample;
@@ -49,8 +46,6 @@ export const WithLazyLoadingAndAnimation = WithLazyLoadingAndAnimationExample;
 export const WithinAScrollDiv = WithinScrollDivExample;
 
 export const BackgroundImage = BackgroundImageExample;
-export const BackgroundImageUsingLegacyWidthAndHeightProps =
-  BackgroundImageLegacyPropsExample;
 
 export const BackgroundImageWithLazyLoadingAndAnimation =
   BackgroundImageWithLazyLoadingAndAnimationExample;

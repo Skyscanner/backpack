@@ -38,7 +38,6 @@ type Props = {
   blank: boolean,
   rel: ?string,
   alternate: boolean,
-  white: boolean,
 };
 
 const BpkLink = (props: Props) => {
@@ -50,7 +49,6 @@ const BpkLink = (props: Props) => {
     href,
     onClick,
     rel: propRel,
-    white,
     ...rest
   } = props;
 
@@ -59,7 +57,7 @@ const BpkLink = (props: Props) => {
   const target = blank ? '_blank' : null;
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
-  if (white || alternate) {
+  if (alternate) {
     classNames.push(getClassName('bpk-link--alternate'));
   }
   if (className) {
@@ -92,8 +90,6 @@ BpkLink.propTypes = {
   blank: PropTypes.bool,
   rel: PropTypes.string,
   alternate: PropTypes.bool,
-  // DEPRECATED
-  white: PropTypes.bool,
 };
 
 BpkLink.defaultProps = {
@@ -102,8 +98,6 @@ BpkLink.defaultProps = {
   blank: false,
   rel: null,
   alternate: false,
-  // DEPRECATED
-  white: false,
 };
 
 export default BpkLink;
