@@ -47,7 +47,6 @@ addDecorator((story) => (
   </div>
 ));
 
-
 const parameters = {
   percy: {
     include: [/Visual\stest\s?([a-z]*)?/i],
