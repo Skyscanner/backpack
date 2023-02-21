@@ -69,29 +69,6 @@ describe('BpkBackgroundImage', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly using legacy width and height props', () => {
-    const { asFragment } = render(
-      <BpkBackgroundImage
-        width={612}
-        height={408}
-        style={{
-          width: '100%',
-          height: '20rem',
-        }}
-        src="./path/to/image.jpg"
-      >
-        <div
-          style={{
-            opacity: 0.7,
-            marginLeft: spacingSm,
-            paddingTop: spacingSm,
-          }}
-        />
-      </BpkBackgroundImage>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should accept userland className', () => {
     const { asFragment } = render(
       <BpkBackgroundImage

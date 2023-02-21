@@ -65,7 +65,6 @@ const getIconForType = (
     [ALERT_TYPES.WARN]: getClassName('bpk-banner-alert__warn-icon'),
     [ALERT_TYPES.ERROR]: getClassName('bpk-banner-alert__error-icon'),
     [ALERT_TYPES.NEUTRAL]: getClassName('bpk-banner-alert__neutral-icon'),
-    [ALERT_TYPES.EVENT]: getClassName('bpk-banner-alert__event-icon'),
   };
   const className = classMap[type];
   const componentMap: { [AlertTypeValue]: Node } = {
@@ -74,7 +73,6 @@ const getIconForType = (
     [ALERT_TYPES.WARN]: InfoCircleIcon,
     [ALERT_TYPES.ERROR]: InfoCircleIcon,
     [ALERT_TYPES.NEUTRAL]: InfoCircleIcon,
-    [ALERT_TYPES.EVENT]: InfoCircleIcon,
   };
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
