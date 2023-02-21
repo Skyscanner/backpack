@@ -56,11 +56,6 @@ describe('BpkButton', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with an "outline" attribute', () => {
-    const { asFragment } = render(<BpkButton outline>My button</BpkButton>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with an "iconOnly" attribute', () => {
     const { asFragment } = render(<BpkButton iconOnly>My button</BpkButton>);
     expect(asFragment()).toMatchSnapshot();
