@@ -25,7 +25,6 @@ export const ALERT_TYPES = {
   WARN: 'warn',
   ERROR: 'error',
   NEUTRAL: 'neutral',
-  EVENT: 'event', // DEPRECATED
 };
 
 export type AlertTypeValue = $Values<typeof ALERT_TYPES>;
@@ -45,14 +44,7 @@ export type OnDismissHandler = ?() => void;
 export type OnHideHandler = ?() => void;
 
 export const COMMON_PROP_TYPES = {
-  type: PropTypes.oneOf([
-    ALERT_TYPES.PRIMARY,
-    ALERT_TYPES.SUCCESS,
-    ALERT_TYPES.WARN,
-    ALERT_TYPES.ERROR,
-    ALERT_TYPES.NEUTRAL,
-    ALERT_TYPES.EVENT,
-  ]).isRequired,
+  type: PropTypes.oneOf(Object.values(ALERT_TYPES)).isRequired,
   message: PropTypes.node.isRequired,
   animateOnEnter: PropTypes.bool,
   animateOnLeave: PropTypes.bool,
