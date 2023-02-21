@@ -44,7 +44,7 @@ export type OnDismissHandler = ?() => void;
 export type OnHideHandler = ?() => void;
 
 export const COMMON_PROP_TYPES = {
-  type: PropTypes.oneOf(Object.keys(ALERT_TYPES)).isRequired,
+  type: PropTypes.oneOf(Object.values(ALERT_TYPES)).isRequired,
   message: PropTypes.node.isRequired,
   animateOnEnter: PropTypes.bool,
   animateOnLeave: PropTypes.bool,
