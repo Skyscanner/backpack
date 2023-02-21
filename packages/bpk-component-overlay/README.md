@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
-import BpkOverlay, { BORDER_RADIUS_STYLES, OVERLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-overlay';
+import BpkOverlay, { OVERLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-overlay';
 
 export default () => (
   <div>
@@ -43,7 +43,6 @@ export default () => (
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | children | Node | true | - |
-| borderRadiusStyle (deprecated) | BORDER_RADIUS_STYLES | false | BORDER_RADIUS_STYLES.none |
 | className | string | false | null |
 | foregroundContent | Node | false | null |
 | overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.solid |
