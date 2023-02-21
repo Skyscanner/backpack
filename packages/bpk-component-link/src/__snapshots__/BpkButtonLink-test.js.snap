@@ -22,17 +22,6 @@ exports[`BpkButtonLink should render correctly with "alternate" attribute 1`] = 
 </DocumentFragment>
 `;
 
-exports[`BpkButtonLink should render correctly with "white" attribute 1`] = `
-<DocumentFragment>
-  <button
-    class="bpk-link bpk-link--alternate"
-    type="button"
-  >
-    Link
-  </button>
-</DocumentFragment>
-`;
-
 exports[`BpkButtonLink should render correctly with a "className" atribute 1`] = `
 <DocumentFragment>
   <button
