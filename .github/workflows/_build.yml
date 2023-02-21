@@ -137,7 +137,8 @@ jobs:
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
 
       - name: Percy Test
-        run: npx percy storybook ./dist-storybook -i "/Visual\stest\s?([a-z]*)?/i"
+        run: npm run percy-test
+        if: github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
         env:
           PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
 

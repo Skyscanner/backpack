@@ -45,7 +45,8 @@
     "storybook:dist": "build-storybook -c .storybook -o dist-storybook",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
