@@ -39,15 +39,6 @@ describe('BpkButtonLink', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "white" attribute', () => {
-    const { asFragment } = render(
-      <BpkButtonLink onClick={() => null} white>
-        Link
-      </BpkButtonLink>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with "alternate" attribute', () => {
     const { asFragment } = render(
       <BpkButtonLink onClick={() => null} alternate>

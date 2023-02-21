@@ -59,5 +59,4 @@ export default () => (
 | Property               | PropType | Required | Default Value |
 | ---------------------- | -------- | -------- | ------------- |
 | children               | node     | true     | -             |
-| alternate (deprecated) | bool     | false    | false         |
 
