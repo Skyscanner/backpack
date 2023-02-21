@@ -28,7 +28,6 @@ import BpkButtonDestructive from './src/BpkButtonDestructive';
 import BpkButtonLink from './src/BpkButtonLink';
 import BpkButtonLinkOnDark from './src/BpkButtonLinkOnDark';
 import BpkButtonFeatured from './src/BpkButtonFeatured';
-import BpkButtonOutline from './src/BpkButtonOutline';
 
 export {
   buttonThemeAttributes,
@@ -53,5 +52,4 @@ export {
   BpkButtonLink,
   BpkButtonLinkOnDark,
   BpkButtonFeatured,
-  BpkButtonOutline,
 };
