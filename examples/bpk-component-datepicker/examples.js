@@ -225,7 +225,10 @@ class ReturnDatepicker extends Component {
               formatMonth={formatMonth}
               formatDateFull={formatDateFull}
               inputProps={inputProps}
-              date={this.state.departDate}
+              selectionConfiguration={{
+                type: CALENDAR_SELECTION_TYPE.single,
+                date: this.state.departDate,
+              }}
               onDateSelect={(departDate) => {
                 this.setState((prevState) => ({
                   departDate,
@@ -259,7 +262,10 @@ class ReturnDatepicker extends Component {
               formatMonth={formatMonth}
               formatDateFull={formatDateFull}
               inputProps={inputProps}
-              date={this.state.returnDate}
+              selectionConfiguration={{
+                type: CALENDAR_SELECTION_TYPE.single,
+                date: this.state.returnDate,
+              }}
               onDateSelect={(returnDate) => {
                 this.setState((prevState) => ({
                   returnDate,

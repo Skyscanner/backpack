@@ -18,7 +18,6 @@
 import addMonths from 'date-fns/addMonths';
 import addDays from 'date-fns/addDays';
 import startOfDay from 'date-fns/startOfDay';
-import parseDate from 'date-fns/parse';
 
 import { action } from '../../packages/bpk-storybook-utils';
 import BpkText from '../../packages/bpk-component-text';
@@ -279,16 +278,8 @@ const WeekExample = () => {
       </p>
       <table>
         <tbody>
-          <Week
-            {...weekProps}
-            selectionStart={parseDate(`19800611`, 'yyyyMMdd', new Date())}
-            selectionEnd={parseDate(`19800616`, 'yyyyMMdd', new Date())}
-          />
-          <Week
-            {...weekProps}
-            selectionStart={parseDate(`19800601`, 'yyyyMMdd', new Date())}
-            selectionEnd={parseDate(`19800607`, 'yyyyMMdd', new Date())}
-          />
+          <Week {...weekProps} />
+          <Week {...weekProps} />
         </tbody>
       </table>
     </div>
