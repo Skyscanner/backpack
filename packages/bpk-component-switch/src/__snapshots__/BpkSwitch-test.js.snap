@@ -18,7 +18,7 @@ exports[`BpkSwitch should render correctly 1`] = `
     </span>
     <span
       aria-hidden="true"
-      class="bpk-switch__switch bpk-switch__switch--primary"
+      class="bpk-switch__switch"
     />
   </label>
 </DocumentFragment>
@@ -43,7 +43,7 @@ exports[`BpkSwitch should render correctly when checked 1`] = `
     </span>
     <span
       aria-hidden="true"
-      class="bpk-switch__switch bpk-switch__switch--primary"
+      class="bpk-switch__switch"
     />
   </label>
 </DocumentFragment>
@@ -67,7 +67,7 @@ exports[`BpkSwitch should render small switch 1`] = `
     </span>
     <span
       aria-hidden="true"
-      class="bpk-switch__switch bpk-switch__switch--primary bpk-switch__switch--small"
+      class="bpk-switch__switch bpk-switch__switch--small"
     />
   </label>
 </DocumentFragment>
@@ -92,7 +92,7 @@ exports[`BpkSwitch should support arbitrary props 1`] = `
     </span>
     <span
       aria-hidden="true"
-      class="bpk-switch__switch bpk-switch__switch--primary"
+      class="bpk-switch__switch"
     />
   </label>
 </DocumentFragment>
@@ -116,7 +116,7 @@ exports[`BpkSwitch should support custom class names 1`] = `
     </span>
     <span
       aria-hidden="true"
-      class="bpk-switch__switch bpk-switch__switch--primary"
+      class="bpk-switch__switch"
     />
   </label>
 </DocumentFragment>
