@@ -47,8 +47,10 @@ addDecorator((story) => (
   </div>
 ));
 
-export default parameters = {
+
+const parameters = {
   percy: {
     include: [/Visual\stest\s?([a-z]*)?/i],
   },
 };
+export default parameters;
