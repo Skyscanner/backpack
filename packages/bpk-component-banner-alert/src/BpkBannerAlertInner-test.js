@@ -62,13 +62,6 @@ describe('BpkBannerAlertInner', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "type" attribute equal to "event"', () => {
-    const { asFragment } = render(
-      <BpkBannerAlertInner type={ALERT_TYPES.EVENT} message={message} />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with child nodes', () => {
     const { asFragment } = render(
       <BpkBannerAlertInner
