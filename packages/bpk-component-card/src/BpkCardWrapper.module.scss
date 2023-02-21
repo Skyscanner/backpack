@@ -20,11 +20,10 @@
 
 .bpk-card-wrapper {
   @include bpk-card;
-  @include bpk-border-radius-md;
   @include bpk-border-lg(var(--background-color), '');
 
   &--header {
-    border-radius: $bpk-border-radius-sm() $bpk-border-radius-sm 0 0;
+    border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
     background-color: var(--background-color);
     overflow: hidden;
   }
