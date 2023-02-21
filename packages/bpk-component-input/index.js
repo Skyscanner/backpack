@@ -23,28 +23,19 @@ import {
   propTypes,
   defaultProps,
   CLEAR_BUTTON_MODES,
-  INPUT_TYPES as TYPES,
+  INPUT_TYPES,
   type Props,
 } from './src/common-types';
 import themeAttributes from './src/themeAttributes';
 
 export default BpkInput;
 
-// TODO: Remove these in the next major
-const DEPRECATED_INPUT_TYPES = {
-  TEXT: 'text',
-  EMAIL: 'email',
-  NUMBER: 'number',
-  PASSWORD: 'password',
-  TEL: 'tel',
-};
-
 export type BpkInputProps = Props;
-export const INPUT_TYPES = { ...DEPRECATED_INPUT_TYPES, ...TYPES };
 export {
   propTypes,
   defaultProps,
   withOpenEvents,
+  INPUT_TYPES,
   CLEAR_BUTTON_MODES,
   themeAttributes,
 };
