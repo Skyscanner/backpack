@@ -138,6 +138,8 @@ jobs:
 
       - name: Percy Test
         run: npx percy storybook ./dist-storybook
+        env:
+          PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
 
 
   Danger:
