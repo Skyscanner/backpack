@@ -113,7 +113,7 @@ export default () => (
 | ---------------------- | --------------------------- | -------- | -------------------- |
 | rows                   | arrayOf(Object)             | true     | -                    |
 | children               | arrayOf(BpkDataTableColumn) | true     | -                    |
-| height                 | number                      | true     | -                    |
+| height                 | oneOfType(number, string)   | true     | -                    |
 | width                  | number                      | false    | full width of parent |
 | headerHeight           | number                      | false    | 60                   |
 | rowClassName           | string                      | false    | null                 |

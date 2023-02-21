@@ -212,7 +212,10 @@ const BpkDataTable = (props: Props) => {
 BpkDataTable.propTypes = {
   rows: PropTypes.arrayOf(Object).isRequired,
   children: PropTypes.node.isRequired,
-  height: PropTypes.number.isRequired,
+  height: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]).isRequired,
   width: PropTypes.number,
   headerHeight: PropTypes.number,
   rowHeight: PropTypes.number,
