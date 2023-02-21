@@ -7,3 +7,6 @@
 `BpkImage`<br />
 `BpkBackgroundImage`
   - Removed deprecated `width` and `height` props. Use `aspectRatio` instead.
+
+`bpk-component-grid`
+  - This component has been removed.
