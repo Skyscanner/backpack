@@ -21,7 +21,7 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkTable.module.scss';
 
@@ -30,17 +30,12 @@ const getClassName = cssModules(STYLES);
 type Props = {
   children: Node,
   className: ?string,
-  alternate: ?boolean,
 };
 
 const BpkTable = (props: Props) => {
-  const { alternate, children, className, ...rest } = props;
+  const { children, className, ...rest } = props;
 
-  const classNames = getClassName(
-    'bpk-table',
-    className,
-    alternate && 'bpk-table--alternate',
-  );
+  const classNames = getClassName('bpk-table', className);
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
@@ -53,15 +48,10 @@ const BpkTable = (props: Props) => {
 BpkTable.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  alternate: deprecated(
-    PropTypes.bool,
-    'Alternate prop is deprecated, please remove your usage of this property.',
-  ),
 };
 
 BpkTable.defaultProps = {
   className: null,
-  alternate: null,
 };
 
 export default BpkTable;

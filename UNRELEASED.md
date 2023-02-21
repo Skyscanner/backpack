@@ -22,6 +22,13 @@
 `BpkSwitch`
   - Removed `type` prop.
 
+`BpkOverlay`
+  - Removed `borderRadiusStyle` prop.
+  - Removed `BORDER_RADIUS_STYLES` object.
+
+`BpkTable`
+  - Removed `alternate` prop.
+
 `BpkCalendar` <br />
 `BpkScrollableCalendar` <br />
 `BpkDatepicker`
