@@ -72,17 +72,6 @@ exports[`BpkLink should render correctly with a "rel" attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkLink should render correctly with a "white" attribute 1`] = `
-<DocumentFragment>
-  <a
-    class="bpk-link bpk-link--alternate"
-    href="#"
-  >
-    Link
-  </a>
-</DocumentFragment>
-`;
-
 exports[`BpkLink should render correctly with arbitrary attributes 1`] = `
 <DocumentFragment>
   <a

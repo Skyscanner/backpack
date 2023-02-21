@@ -35,18 +35,6 @@ describe('BpkImage', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly using legacy width and height props', () => {
-    const { asFragment } = render(
-      <BpkImage
-        altText="image description"
-        width={816}
-        height={544}
-        src="./path/to/image.jpg"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should accept userland styling', () => {
     const { asFragment } = render(
       <BpkImage

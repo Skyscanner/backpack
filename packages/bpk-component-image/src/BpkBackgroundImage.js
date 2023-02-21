@@ -23,10 +23,9 @@ import PropTypes from 'prop-types';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 import { BpkSpinner } from '../../bpk-component-spinner';
 
-import { widthHeightAspectRatioPropType } from './customPropTypes';
 import STYLES from './BpkBackgroundImage.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -34,11 +33,9 @@ const getClassName = cssModules(STYLES);
 export type BpkBackgroundImageProps = {
   children: Node,
   aspectRatio: ?number,
-  height: ?number,
   inView: boolean,
   loading: boolean,
   src: string,
-  width: ?number,
   className: ?string,
   onLoad: ?() => mixed,
   style: ?{},
@@ -55,15 +52,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   onBackgroundImageLoad: () => mixed;
 
   static propTypes = {
-    aspectRatio: widthHeightAspectRatioPropType,
-    height: deprecated(
-      widthHeightAspectRatioPropType,
-      'Use "aspectRatio" instead of "width" and "height".',
-    ),
-    width: deprecated(
-      widthHeightAspectRatioPropType,
-      'Use "aspectRatio" instead of "width" and "height".',
-    ),
+    aspectRatio: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
     className: PropTypes.string,
     inView: PropTypes.bool,
@@ -74,9 +63,6 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   };
 
   static defaultProps = {
-    width: null,
-    height: null,
-    aspectRatio: null,
     className: null,
     inView: true,
     loading: false,
@@ -112,9 +98,6 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   getAspectRatio = () => {
     if (this.props.aspectRatio) {
       return this.props.aspectRatio;
-    }
-    if (this.props.width && this.props.height) {
-      return this.props.width / this.props.height;
     }
     return 1;
   };
