@@ -133,7 +133,6 @@ const NonElevatedDividedCardExample = () => (
 
 const CardWrapperExample = () => (
   <BpkCardWrapper
-    backgroundColor={coreAccentDay}
     card={
       <BpkCard
         atomic={false}
@@ -148,7 +147,6 @@ const CardWrapperExample = () => (
 
 const DividedCardWrapperExample = () => (
   <BpkCardWrapper
-    backgroundColor={coreAccentDay}
     card={
       <BpkDividedCard
         primaryContent={longMessage}
@@ -157,6 +155,22 @@ const DividedCardWrapperExample = () => (
       />
     }
     header={headerContent}
+  />
+);
+
+const WithBackgroundColorExample = () => (
+  <BpkCardWrapper
+    backgroundColor={coreAccentDay}
+    card={
+      <BpkCard
+        atomic={false}
+        onClick={() => window.open('https://www.skyscanner.net/')}
+      >
+        {longContent}
+      </BpkCard>
+    }
+    header={headerContent}
+    className={getClassName('bpk-card-examples__wrapper')}
   />
 );
 
@@ -175,6 +189,8 @@ const MixedExample = () => (
     <CardWrapperExample />
     <br />
     <DividedCardWrapperExample />
+    <br />
+    <WithBackgroundColorExample />
   </div>
 );
 
@@ -190,5 +206,6 @@ export {
   NonElevatedDividedCardExample,
   CardWrapperExample,
   DividedCardWrapperExample,
+  WithBackgroundColorExample,
   MixedExample,
 };

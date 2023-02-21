@@ -41,6 +41,13 @@ const cardContent = (
 describe('BpkCardWrapper', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
+      <BpkCardWrapper header={headerContent} card={cardContent} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with backgroundColor', () => {
+    const { asFragment } = render(
       <BpkCardWrapper
         header={headerContent}
         card={cardContent}

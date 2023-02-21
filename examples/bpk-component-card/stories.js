@@ -29,6 +29,7 @@ import {
   NonElevatedDividedCardExample,
   CardWrapperExample,
   DividedCardWrapperExample,
+  WithBackgroundColorExample,
   MixedExample,
 } from './examples';
 
@@ -52,5 +53,6 @@ export const NonElevatedDividedCard = NonElevatedDividedCardExample;
 
 export const CardWrapper = CardWrapperExample;
 export const DividedCardWrapper = DividedCardWrapperExample;
+export const WithBackgroundColor = WithBackgroundColorExample;
 
 export const VisualTest = MixedExample;
