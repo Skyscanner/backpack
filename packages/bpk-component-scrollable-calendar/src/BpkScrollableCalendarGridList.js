@@ -21,7 +21,7 @@ import { Component } from 'react';
 import { startOfDay, startOfMonth } from 'date-fns';
 import { VariableSizeList as List } from 'react-window';
 
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 import {
   DateUtils,
   BpkCalendarGridPropTypes,
@@ -174,10 +174,6 @@ BpkScrollableCalendarGridList.propTypes = {
   className: PropTypes.string,
   minDate: PropTypes.instanceOf(Date).isRequired,
   maxDate: PropTypes.instanceOf(Date).isRequired,
-  selectedDate: deprecated(
-    PropTypes.instanceOf(Date),
-    'Use selectionConfiguration to set selectedDate',
-  ),
   focusedDate: PropTypes.instanceOf(Date),
   ...BpkCalendarGridPropTypes,
 };
@@ -185,7 +181,6 @@ BpkScrollableCalendarGridList.propTypes = {
 BpkScrollableCalendarGridList.defaultProps = {
   className: null,
   focusedDate: null,
-  selectedDate: null,
 };
 
 export default BpkScrollableCalendarGridList;

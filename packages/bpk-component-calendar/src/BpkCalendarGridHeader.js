@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import { PureComponent } from 'react';
 
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
 import { orderDaysOfWeek } from './date-utils';
@@ -94,11 +94,6 @@ BpkCalendarGridHeader.propTypes = {
   isTableHead: PropTypes.bool,
   className: PropTypes.string,
   weekDayKey: CustomPropTypes.WeekDayKey,
-  // eslint-disable-next-line react/require-default-props,react/no-unused-prop-types
-  showWeekendSeparator: deprecated(
-    PropTypes.bool,
-    'The showWeekendSeparator prop in BpkCalendarGridHeader is now deprecated as no longer part of the calendar, so is no longer required',
-  ),
 };
 
 BpkCalendarGridHeader.defaultProps = {
