@@ -250,23 +250,6 @@ exports[`BpkImage should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkImage should render correctly using legacy width and height props 1`] = `
-<DocumentFragment>
-  <div>
-    <div
-      class="bpk-image bpk-image--no-background"
-      style="height: 0px; padding-bottom: 66.66666666666667%;"
-    >
-      <img
-        alt="image description"
-        class="bpk-image__img"
-        src="./path/to/image.jpg"
-      />
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`BpkImage should support srcSet 1`] = `
 <DocumentFragment>
   <div>

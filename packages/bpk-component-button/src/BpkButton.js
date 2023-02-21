@@ -31,7 +31,6 @@ import {
   BpkButtonLink,
   BpkButtonLinkOnDark,
   BpkButtonFeatured,
-  BpkButtonOutline,
 } from '../index';
 
 import {
@@ -48,7 +47,6 @@ type Props = {
   secondaryOnDark: boolean,
   destructive: boolean,
   featured: boolean,
-  outline: boolean,
   link: boolean,
   linkOnDark: boolean,
 };
@@ -59,7 +57,6 @@ const BpkButton = (props: Props) => {
     featured,
     link,
     linkOnDark,
-    outline,
     primaryOnDark,
     primaryOnLight,
     secondary,
@@ -87,9 +84,6 @@ const BpkButton = (props: Props) => {
   if (featured) {
     return <BpkButtonFeatured {...rest} />;
   }
-  if (outline) {
-    return <BpkButtonOutline {...rest} />;
-  }
   if (link) {
     return <BpkButtonLink {...rest} />;
   }
@@ -107,7 +101,6 @@ BpkButton.propTypes = {
   secondaryOnDark: PropTypes.bool,
   destructive: PropTypes.bool,
   featured: PropTypes.bool,
-  outline: PropTypes.bool,
   link: PropTypes.bool,
   linkOnDark: PropTypes.bool,
 };
@@ -120,7 +113,6 @@ BpkButton.defaultProps = {
   secondaryOnDark: false,
   destructive: false,
   featured: false,
-  outline: false,
   link: false,
   linkOnDark: false,
 };

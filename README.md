@@ -48,7 +48,6 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-fieldset`](/packages/bpk-component-fieldset)
 [`bpk-component-form-validation`](/packages/bpk-component-form-validation)
 [`bpk-component-graphic-promotion`](/packages/bpk-component-graphic-promotion)
-[`bpk-component-grid`](/packages/bpk-component-grid)
 [`bpk-component-grid-toggle`](/packages/bpk-component-grid-toggle)
 [`bpk-component-horizontal-nav`](/packages/bpk-component-horizontal-nav)
 [`bpk-component-icon`](/packages/bpk-component-icon)
