@@ -35,7 +35,7 @@ const DIALING_CODE_TO_ID_MAP = {
 const getFlag = (dialingCode) => {
   const countryCode = DIALING_CODE_TO_ID_MAP[dialingCode];
   const url = `https://images.skyscnr.com/images/country/flag/header/${countryCode}.png`;
-  return <BpkImage altText="Flag" height={38} width={50} src={url} />;
+  return <BpkImage altText="Flag" aspectRatio={50 / 38} src={url} />;
 };
 
 type Props = {
