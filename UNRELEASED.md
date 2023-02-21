@@ -1,5 +1,9 @@
 **Breaking:**
 
+`BpkLink`<br />
+`BpkButtonLink`
+  - Removed deprecated `white` prop. Use `alternate` instead.
+ 
 `BpkImage`<br />
 `BpkBackgroundImage`
   - Removed deprecated `width` and `height` props. Use `aspectRatio` instead.
