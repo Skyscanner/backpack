@@ -64,15 +64,6 @@ describe('BpkLink', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a "white" attribute', () => {
-    const { asFragment } = render(
-      <BpkLink href="#" white>
-        Link
-      </BpkLink>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with a "alternate" attribute', () => {
     const { asFragment } = render(
       <BpkLink href="#" alternate>

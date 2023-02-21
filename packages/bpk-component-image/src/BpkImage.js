@@ -23,10 +23,9 @@ import PropTypes from 'prop-types';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 import { BpkSpinner } from '../../bpk-component-spinner';
 
-import { widthHeightAspectRatioPropType } from './customPropTypes';
 import STYLES from './BpkImage.module.scss';
 import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
@@ -93,11 +92,9 @@ class Image extends Component<ImageProps> {
 type BpkImageProps = {
   altText: string,
   aspectRatio: ?number,
-  height: ?number,
   inView: boolean,
   loading: boolean,
   src: string,
-  width: ?number,
   borderRadiusStyle: $Keys<typeof BORDER_RADIUS_STYLES>,
   className: ?string,
   onLoad: ?() => mixed,
@@ -113,7 +110,7 @@ class BpkImage extends Component<BpkImageProps> {
   static propTypes = {
     altText: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
-    aspectRatio: widthHeightAspectRatioPropType,
+    aspectRatio: PropTypes.number.isRequired,
     borderRadiusStyle: PropTypes.oneOf(Object.keys(BORDER_RADIUS_STYLES)),
     className: PropTypes.string,
     inView: PropTypes.bool,
@@ -121,27 +118,16 @@ class BpkImage extends Component<BpkImageProps> {
     onLoad: PropTypes.func,
     style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     suppressHydrationWarning: PropTypes.bool,
-    height: deprecated(
-      widthHeightAspectRatioPropType,
-      'Use "aspectRatio" instead of "width" and "height".',
-    ),
-    width: deprecated(
-      widthHeightAspectRatioPropType,
-      'Use "aspectRatio" instead of "width" and "height".',
-    ),
   };
 
   static defaultProps = {
-    aspectRatio: null,
     borderRadiusStyle: BORDER_RADIUS_STYLES.none,
     className: null,
-    height: null,
     inView: true,
     loading: false,
     onLoad: null,
     style: {},
     suppressHydrationWarning: false,
-    width: null,
   };
 
   onImageLoad = (): void => {
@@ -154,9 +140,6 @@ class BpkImage extends Component<BpkImageProps> {
     if (this.props.aspectRatio) {
       return this.props.aspectRatio;
     }
-    if (this.props.width && this.props.height) {
-      return this.props.width / this.props.height;
-    }
     return 1;
   };
 
@@ -166,12 +149,10 @@ class BpkImage extends Component<BpkImageProps> {
       aspectRatio,
       borderRadiusStyle,
       className,
-      height,
       inView,
       loading,
       onLoad,
       style,
-      width,
       ...rest
     } = this.props;
 
