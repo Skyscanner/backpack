@@ -137,7 +137,7 @@ jobs:
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
 
       - name: Percy Test
-        run: percy storybook ./dist-storybook
+        run: npx percy storybook ./dist-storybook
 
 
   Danger:
