@@ -3,13 +3,6 @@
 `BpkLink`<br />
 `BpkButtonLink`
   - Removed deprecated `white` prop. Use `alternate` instead.
-
-`BpkCalendar` <br />
-`BpkScrollableCalendar` <br />
-`BpkDatepicker`
-  - Removed deprecated
-    - `selectedDate`, `selectionStart`, `selectionEnd`, `date`. Use `selectionConfiguration` prop instead.
-    - `showWeekendSeparator` - this is no longer supported
  
 `BpkImage`<br />
 `BpkBackgroundImage`
@@ -25,3 +18,13 @@
 `bpk-component-button`
   - Removed `BpkButtonOutline` component. Use `BpkButtonPrimaryOnDark` or `BpkButtonPrimaryOnLight` instead.
   - Removed `outline` prop from `BpkButton`.
+
+`BpkSwitch`
+  - Removed `type` prop.
+
+`BpkCalendar` <br />
+`BpkScrollableCalendar` <br />
+`BpkDatepicker`
+  - Removed deprecated
+    - `selectedDate`, `selectionStart`, `selectionEnd`, `date`. Use `selectionConfiguration` prop instead.
+    - `showWeekendSeparator` - this is no longer supported
