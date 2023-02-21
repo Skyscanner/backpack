@@ -25,3 +25,6 @@
 `BpkOverlay`
   - Removed `borderRadiusStyle` prop.
   - Removed `BORDER_RADIUS_STYLES` object.
+
+`BpkTable`
+  - Removed `alternate` prop.

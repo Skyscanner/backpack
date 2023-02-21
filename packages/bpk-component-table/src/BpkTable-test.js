@@ -32,15 +32,6 @@ describe('BpkTable', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "alternate" attribute', () => {
-    const { asFragment } = render(
-      <BpkTable alternate>
-        <tbody />
-      </BpkTable>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with custom class', () => {
     const { asFragment } = render(
       <BpkTable className="my-table">
