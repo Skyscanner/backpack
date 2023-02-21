@@ -16,22 +16,6 @@ exports[`BpkTableHeadCell should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkTableHeadCell should render correctly with "alternate" 1`] = `
-<DocumentFragment>
-  <table>
-    <thead>
-      <tr>
-        <th
-          class="bpk-table__cell bpk-table__cell--head-alternate"
-        >
-          Skyscanner
-        </th>
-      </tr>
-    </thead>
-  </table>
-</DocumentFragment>
-`;
-
 exports[`BpkTableHeadCell should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
   <table>
