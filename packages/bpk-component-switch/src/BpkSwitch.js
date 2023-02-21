@@ -20,32 +20,22 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSwitch.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const SWITCH_TYPES = {
-  primary: 'primary',
-  event: 'event',
-};
-
-export type SwitchTypeValue = $Values<typeof SWITCH_TYPES>;
-
 export type Props = {
   label: Node,
-  type: SwitchTypeValue,
   className: ?string,
 };
 
 const BpkSwitch = (props: Props) => {
-  const { className, label, small, type, ...rest } = props;
-  const resolvedType = type || SWITCH_TYPES.primary;
+  const { className, label, small, ...rest } = props;
 
   const switchClassNames = getClassName(
     'bpk-switch__switch',
-    `bpk-switch__switch--${resolvedType}`,
     small && 'bpk-switch__switch--small',
   );
 
@@ -68,17 +58,12 @@ const BpkSwitch = (props: Props) => {
 
 BpkSwitch.propTypes = {
   label: PropTypes.node.isRequired,
-  type: deprecated(
-    PropTypes.oneOf([SWITCH_TYPES.primary, SWITCH_TYPES.event]),
-    'This property is deprecated and only one type supported, please remove your usage of this property',
-  ),
   className: PropTypes.string,
   small: PropTypes.bool,
 };
 
 BpkSwitch.defaultProps = {
   className: null,
-  type: null,
   small: false,
 };
 

@@ -10,16 +10,6 @@ exports[`BpkTable should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkTable should render correctly with "alternate" attribute 1`] = `
-<DocumentFragment>
-  <table
-    class="bpk-table bpk-table--alternate"
-  >
-    <tbody />
-  </table>
-</DocumentFragment>
-`;
-
 exports[`BpkTable should render correctly with custom class 1`] = `
 <DocumentFragment>
   <table
