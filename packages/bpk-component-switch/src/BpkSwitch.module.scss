@@ -34,18 +34,11 @@ $border-width: $bpk-one-pixel-rem * 2;
     opacity: 0;
 
     &:checked ~ .bpk-switch__switch {
-      &--primary {
-        @include bpk-themeable-property(
-          background,
-          --bpk-switch-checked-color,
-          $bpk-core-accent-day
-        );
-      }
-
-      // This is now deprecated and will be removed in the future.
-      &--event {
-        background: $bpk-color-abisko;
-      }
+      @include bpk-themeable-property(
+        background,
+        --bpk-switch-checked-color,
+        $bpk-core-accent-day
+      );
 
       &::before {
         left: ($width - $height) + $border-width;
@@ -54,8 +47,8 @@ $border-width: $bpk-one-pixel-rem * 2;
   }
 
   &__label {
-    margin-right: bpk-spacing-md();
     line-height: $height;
+    margin-inline-end: bpk-spacing-md();
   }
 
   // The 'track'.

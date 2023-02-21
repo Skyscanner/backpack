@@ -23,7 +23,6 @@ export default () => (
     <BpkButton secondaryOnDark>SecondaryOnDark</BpkButton>
     <BpkButton link>Link</BpkButton>
     <BpkButton linkOnDark>LinkOnDark</BpkButton>
-    <BpkButton outline>Outline (Deprecated, use PrimaryOnDark or PrimaryOnLight instead)</BpkButton>
     <BpkButton primaryOnDark>PrimaryOnDark</BpkButton>
     <BpkButton primaryOnLight>PrimaryOnLight</BpkButton>
     <BpkButton iconOnly>
@@ -43,7 +42,6 @@ export default () => (
 | featured        | bool                 | false    | false         |
 | link            | bool                 | false    | false         |
 | linkOnDark      | bool                 | false    | false         |
-| outline         | bool (deprecated)    | false    | false         |
 | secondary       | bool                 | false    | false         |
 | secondaryOnDark | bool                 | false    | false         |
 | primaryOnDark   | bool                 | false    | false         |
