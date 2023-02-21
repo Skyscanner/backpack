@@ -32,15 +32,14 @@ type Props = {
   children: Node,
   className: ?string,
   onClick: (event: SyntheticEvent<>) => mixed,
-  white: boolean,
   alternate: boolean,
 };
 
 const BpkButtonLink = (props: Props) => {
-  const { alternate, children, className, onClick, white, ...rest } = props;
+  const { alternate, children, className, onClick, ...rest } = props;
   const classNames = [getClassName('bpk-link')];
 
-  if (white || alternate) {
+  if (alternate) {
     classNames.push(getClassName('bpk-link--alternate'));
   }
   if (className) {
@@ -65,15 +64,11 @@ BpkButtonLink.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   alternate: PropTypes.bool,
-  // DEPRECATED
-  white: PropTypes.bool,
 };
 
 BpkButtonLink.defaultProps = {
   className: null,
   alternate: false,
-  // DEPRECATED
-  white: false,
 };
 
 export { themeAttributes };
