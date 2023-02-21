@@ -51,16 +51,6 @@ const DefaultExample = () => (
   />
 );
 
-const LegacyWidthAndHeightExample = () => (
-  <BpkImage
-    altText="image"
-    width={612}
-    height={408}
-    style={{ width: imageWidth, height: imageHeight }}
-    src={image}
-  />
-);
-
 const RoundedCornersExample = () => (
   <BpkImage
     altText="image"
@@ -72,7 +62,11 @@ const RoundedCornersExample = () => (
 );
 
 const FullWidthExample = () => (
-  <BpkImage altText="image" width={612} height={408} src={image} />
+  <BpkImage
+    altText="image"
+    aspectRatio={imageWidth / imageHeight}
+    src={image}
+  />
 );
 
 const UsingSrcSetExample = () => (
@@ -160,26 +154,6 @@ const BackgroundImageExample = () => (
   </BpkBackgroundImage>
 );
 
-const BackgroundImageLegacyPropsExample = () => (
-  <BpkBackgroundImage
-    width={612}
-    height={408}
-    style={{ width: imageWidth, height: imageHeight }}
-    imageStyle={{
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: '50% 50%',
-    }}
-    src={image}
-  >
-    <div style={{ marginLeft: spacingSm, paddingTop: spacingSm }}>
-      <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>
-        Lorem ipsum dolor sit amet
-      </BpkText>
-    </div>
-  </BpkBackgroundImage>
-);
-
 const BackgroundImageWithLazyLoadingAndAnimationExample = () => (
   <FadingLazyLoadedBackgroundImage
     aspectRatio={612 / 408}
@@ -201,7 +175,6 @@ const BackgroundImageWithLazyLoadingAndAnimationExample = () => (
 
 export {
   DefaultExample,
-  LegacyWidthAndHeightExample,
   RoundedCornersExample,
   FullWidthExample,
   UsingSrcSetExample,
@@ -210,6 +183,5 @@ export {
   WithLazyLoadingAndAnimationExample,
   WithinScrollDivExample,
   BackgroundImageExample,
-  BackgroundImageLegacyPropsExample,
   BackgroundImageWithLazyLoadingAndAnimationExample,
 };

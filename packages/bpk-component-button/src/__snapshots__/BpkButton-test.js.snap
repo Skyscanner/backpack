@@ -161,17 +161,6 @@ exports[`BpkButton should render correctly with an "iconOnly" attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkButton should render correctly with an "outline" attribute 1`] = `
-<DocumentFragment>
-  <button
-    class="bpk-button bpk-button--outline"
-    type="button"
-  >
-    My button
-  </button>
-</DocumentFragment>
-`;
-
 exports[`BpkButton should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
