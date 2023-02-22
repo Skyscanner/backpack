@@ -23,15 +23,15 @@ const svgmin = require('gulp-svgmin');
 const svg2react = require('./tasks/svg2react');
 
 const svgoCommonPlugins = [
-  { removeTitle: true },
-  { removeStyleElement: true },
-  { removeEmptyContainers: true },
-  { sortAttrs: true },
-  { removeUselessDefs: true },
-  { removeEmptyText: true },
-  { removeEditorsNSData: true },
-  { removeEmptyAttrs: true },
-  { removeHiddenElems: true },
+  'removeTitle',
+  'removeStyleElement',
+  'removeEmptyContainers',
+  'sortAttrs',
+  'removeUselessDefs',
+  'removeEmptyText',
+  'removeEditorsNSData',
+  'removeEmptyAttrs',
+  'removeHiddenElems',
 ];
 
 gulp.task('pointer-base', () => {

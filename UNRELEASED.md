@@ -35,6 +35,13 @@
 `BpkBannerAlert`
   - Removed `event` variant and associated styles.
 
+`BpkCalendar` <br />
+`BpkScrollableCalendar` <br />
+`BpkDatepicker`
+  - Removed deprecated
+    - `selectedDate`, `selectionStart`, `selectionEnd`, `date`. Use `selectionConfiguration` prop instead.
+    - `showWeekendSeparator` - this is no longer supported
+    
 **Changed:**
 - `BpkDataTable`
   - `height` prop can now be either a string or a number

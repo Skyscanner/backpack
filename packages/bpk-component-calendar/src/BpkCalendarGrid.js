@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { cssModules, deprecated, isDeviceIos } from '../../bpk-react-utils';
+import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import Week from './Week';
@@ -103,8 +103,6 @@ class BpkCalendarGrid extends Component {
       onDateKeyDown,
       preventKeyboardFocus,
       selectionConfiguration,
-      selectionEnd,
-      selectionStart,
       weekStartsOn,
     } = this.props;
 
@@ -139,8 +137,6 @@ class BpkCalendarGrid extends Component {
               markToday={markToday}
               markOutsideDays={markOutsideDays}
               selectionConfiguration={selectionConfiguration}
-              selectionEnd={selectionEnd}
-              selectionStart={selectionStart}
               focusedDate={focusedDate}
               minDate={minDate}
               maxDate={maxDate}
@@ -177,16 +173,6 @@ export const propTypes = {
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
   selectionConfiguration: CustomPropTypes.SelectionConfiguration,
-  selectedDate: deprecated(
-    PropTypes.instanceOf(Date),
-    'Use selectionConfiguration to set selectedDate',
-  ),
-  selectionEnd: PropTypes.instanceOf(Date),
-  selectionStart: PropTypes.instanceOf(Date),
-  showWeekendSeparator: deprecated(
-    PropTypes.bool,
-    'The showWeekendSeparator prop in BpkCalendarGrid is now deprecated as no longer part of the calendar, so is no longer required',
-  ),
   ignoreOutsideDate: PropTypes.bool,
   dateProps: PropTypes.object,
 };
@@ -205,10 +191,7 @@ BpkCalendarGrid.defaultProps = {
   onDateClick: null,
   onDateKeyDown: null,
   preventKeyboardFocus: false,
-  selectedDate: null,
   selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
-  selectionEnd: null,
-  selectionStart: null,
   ignoreOutsideDate: false,
   dateProps: null,
   cellClassName: null,

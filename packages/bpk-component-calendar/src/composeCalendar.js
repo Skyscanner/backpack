@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import STYLES from './BpkCalendar.module.scss';
@@ -159,15 +159,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     onDateKeyDown: PropTypes.func,
     preventKeyboardFocus: PropTypes.bool,
     selectionConfiguration: CustomPropTypes.SelectionConfiguration,
-    selectedDate: deprecated(
-      PropTypes.instanceOf(Date),
-      'Use selectionConfiguration to set selectedDate',
-    ),
-    // eslint-disable-next-line react/require-default-props
-    showWeekendSeparator: deprecated(
-      PropTypes.bool,
-      'The showWeekendSeparator prop in composeCalendar is now deprecated as no longer part of the calendar, so is no longer required',
-    ),
     gridClassName: PropTypes.string,
     weekDayKey: PropTypes.string,
     /* eslint-disable react/forbid-prop-types */
@@ -196,7 +187,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       type: CALENDAR_SELECTION_TYPE.single,
       date: null,
     },
-    selectedDate: null,
     gridClassName: null,
     weekDayKey: 'nameAbbr',
     navProps: null,
