@@ -3,7 +3,7 @@
 `BpkLink`<br />
 `BpkButtonLink`
   - Removed deprecated `white` prop. Use `alternate` instead.
- 
+
 `BpkImage`<br />
 `BpkBackgroundImage`
   - Removed deprecated `width` and `height` props. Use `aspectRatio` instead.
@@ -41,7 +41,7 @@
   - Removed deprecated
     - `selectedDate`, `selectionStart`, `selectionEnd`, `date`. Use `selectionConfiguration` prop instead.
     - `showWeekendSeparator` - this is no longer supported
-    
+
 **Changed:**
 - `BpkDataTable`
-  - `height` prop can now be either a string or a number
+  - `height`, `width`, `headerHeight`, and `rowHeight` props can now be either a string or a number
