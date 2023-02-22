@@ -36,11 +36,7 @@ function withLargeButtonAlignment(WrappedComponent) {
   return withAlignment(WrappedComponent, buttonLargeLineHeight, iconSizeLg);
 }
 
-// alias to maintain backwards compat, can be deprecated in due course
-// alias to maintain backwards compat, can be deprecated in due course
 export {
-  withButtonAlignment as alignToButton,
-  withLargeButtonAlignment as alignToLargeButton,
   withButtonAlignment,
   withLargeButtonAlignment,
   withAlignment,

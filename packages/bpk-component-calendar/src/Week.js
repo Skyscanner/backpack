@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import {
   isSameDay,
@@ -379,10 +379,6 @@ Week.propTypes = {
   isKeyboardFocusable: PropTypes.bool.isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
   weekStartsOn: PropTypes.number.isRequired,
-  daysOfWeek: deprecated(
-    CustomPropTypes.DaysOfWeek,
-    'daysOfWeek property in Week is now deprecated as no longer part of the calendar, so is no longer required',
-  ),
   focusedDate: PropTypes.instanceOf(Date),
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
@@ -390,33 +386,18 @@ Week.propTypes = {
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   selectionConfiguration: CustomPropTypes.SelectionConfiguration,
-  selectedDate: deprecated(
-    PropTypes.instanceOf(Date),
-    'Use selectionConfiguration to set selectedDate',
-  ),
-  selectionEnd: PropTypes.instanceOf(Date),
-  selectionStart: PropTypes.instanceOf(Date),
-  // eslint-disable-next-line react/require-default-props
-  showWeekendSeparator: deprecated(
-    PropTypes.bool,
-    'The showWeekendSeparator prop in Week is now deprecated as no longer part of the calendar, so is no longer required',
-  ),
   ignoreOutsideDate: PropTypes.bool,
   dateProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 Week.defaultProps = {
   cellClassName: null,
-  daysOfWeek: null,
   focusedDate: null,
   maxDate: null,
   minDate: null,
   onDateClick: null,
   onDateKeyDown: null,
   selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
-  selectedDate: null,
-  selectionEnd: null,
-  selectionStart: null,
   ignoreOutsideDate: false,
   dateProps: null,
 };

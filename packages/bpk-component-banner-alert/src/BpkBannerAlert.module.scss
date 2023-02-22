@@ -58,10 +58,6 @@ $bpk-spacing-v2: true;
     @include bpk-border-sm($bpk-banner-alert-neutral-color, '');
   }
 
-  &--event {
-    @include bpk-border-sm($bpk-banner-alert-event-color, '');
-  }
-
   &__header {
     display: flex;
     padding: bpk-spacing-md();
@@ -127,10 +123,6 @@ $bpk-spacing-v2: true;
 
   &__neutral-icon {
     fill: $bpk-text-secondary-day;
-  }
-
-  &__event-icon {
-    fill: $bpk-banner-alert-event-color;
   }
 
   &__toggle-button {

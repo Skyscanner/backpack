@@ -36,19 +36,6 @@ describe('BpkTableHeadCell', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "alternate"', () => {
-    const { asFragment } = render(
-      <table>
-        <thead>
-          <tr>
-            <BpkTableHeadCell alternate>Skyscanner</BpkTableHeadCell>
-          </tr>
-        </thead>
-      </table>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with custom class', () => {
     const { asFragment } = render(
       <table>

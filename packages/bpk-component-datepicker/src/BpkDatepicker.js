@@ -22,7 +22,7 @@ import { createRef, Component } from 'react';
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
 import BpkPopover from '../../bpk-component-popover';
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import {
   composeCalendar,
@@ -319,10 +319,6 @@ BpkDatepicker.propTypes = {
   // Optional
   calendarComponent: PropTypes.elementType,
   inputComponent: PropTypes.elementType,
-  date: deprecated(
-    PropTypes.instanceOf(Date),
-    'Use selectionConfiguration to set date',
-  ),
   dateModifiers: CustomPropTypes.DateModifiers,
   fixedWidth: PropTypes.bool,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -334,11 +330,6 @@ BpkDatepicker.propTypes = {
   onOpenChange: PropTypes.func,
   onMonthChange: PropTypes.func,
   selectionConfiguration: CustomPropTypes.SelectionConfiguration,
-  // eslint-disable-next-line react/require-default-props
-  showWeekendSeparator: deprecated(
-    PropTypes.bool,
-    'The showWeekendSeparator prop in Week is now deprecated as no longer part of the calendar, so is no longer required',
-  ),
   initiallyFocusedDate: PropTypes.instanceOf(Date),
   renderTarget: PropTypes.func,
   isOpen: PropTypes.bool,
@@ -351,7 +342,6 @@ BpkDatepicker.propTypes = {
 BpkDatepicker.defaultProps = {
   calendarComponent: DefaultCalendar,
   inputComponent: null,
-  date: null,
   dateModifiers: DefaultCalendar.defaultProps.dateModifiers,
   inputProps: {},
   fixedWidth: true,
