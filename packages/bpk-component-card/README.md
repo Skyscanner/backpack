@@ -56,31 +56,17 @@ import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
-  <>
-    // The default implementation
-    <BpkCardWrapper
-      header={<span>Hoc header</span>}
-      card={
-        <BpkCard>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkCard>
-      }
-    />
-    // With backgroundColor
-    <BpkCardWrapper
-      header={<span>Hoc header</span>}
-      card={
-        <BpkCard>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkCard>
-      }
-      backgroundColor={coreAccentDay}
-    />
-  </>
+  <BpkCardWrapper
+    header={<span>Hoc header</span>}
+    card={
+      <BpkCard>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkCard>
+    }
+    backgroundColor={coreAccentDay}
+  />
 );
 ```
 
@@ -109,9 +95,9 @@ export default () => (
 
 ### BpkCardWrapper
 
-| Property        | PropType | Required | Default Value       |
-| --------------- | -------- | -------- | ------------------- |
-| backgroundColor | string   | false    | surfaceHighlightDay |
-| card            | node     | true     | -                   |
-| header          | node     | true     | -                   |
-| className       | string   | false    | null                |
+| Property        | PropType | Required | Default Value |
+| --------------- | -------- | -------- | ------------- |
+| backgroundColor | string   | true     | null          |
+| card            | node     | true     | -             |
+| header          | node     | true     | -             |
+| className       | string   | false    | null          |

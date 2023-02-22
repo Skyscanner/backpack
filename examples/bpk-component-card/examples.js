@@ -18,7 +18,10 @@
 /* @flow strict */
 
 import { Fragment } from 'react';
-import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  coreAccentDay,
+  surfaceHighlightDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkLink from '../../packages/bpk-component-link';
@@ -133,6 +136,7 @@ const NonElevatedDividedCardExample = () => (
 
 const CardWrapperExample = () => (
   <BpkCardWrapper
+    backgroundColor={coreAccentDay}
     card={
       <BpkCard
         atomic={false}
@@ -147,6 +151,7 @@ const CardWrapperExample = () => (
 
 const DividedCardWrapperExample = () => (
   <BpkCardWrapper
+    backgroundColor={coreAccentDay}
     card={
       <BpkDividedCard
         primaryContent={longMessage}
@@ -158,9 +163,9 @@ const DividedCardWrapperExample = () => (
   />
 );
 
-const WithBackgroundColorExample = () => (
+const WithClassNameWrapperExample = () => (
   <BpkCardWrapper
-    backgroundColor={coreAccentDay}
+    backgroundColor={surfaceHighlightDay}
     card={
       <BpkCard
         atomic={false}
@@ -190,7 +195,7 @@ const MixedExample = () => (
     <br />
     <DividedCardWrapperExample />
     <br />
-    <WithBackgroundColorExample />
+    <WithClassNameWrapperExample />
   </div>
 );
 
@@ -206,6 +211,6 @@ export {
   NonElevatedDividedCardExample,
   CardWrapperExample,
   DividedCardWrapperExample,
-  WithBackgroundColorExample,
+  WithClassNameWrapperExample,
   MixedExample,
 };

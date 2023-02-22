@@ -20,7 +20,6 @@
 
 import PropTypes from 'prop-types';
 import { type Node } from 'react';
-import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -54,7 +53,7 @@ const BpkCardWrapper = (props: Props) => {
 };
 
 BpkCardWrapper.propTypes = {
-  backgroundColor: PropTypes.string,
+  backgroundColor: PropTypes.string.isRequired,
   card: PropTypes.node.isRequired,
   className: PropTypes.string,
   header: PropTypes.node.isRequired,
@@ -62,7 +61,6 @@ BpkCardWrapper.propTypes = {
 
 BpkCardWrapper.defaultProps = {
   className: null,
-  backgroundColor: surfaceHighlightDay,
 };
 
 export default BpkCardWrapper;
