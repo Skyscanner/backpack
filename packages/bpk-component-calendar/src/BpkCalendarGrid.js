@@ -112,14 +112,6 @@ class BpkCalendarGrid extends Component {
 
     return (
       <div className={classNames} aria-hidden={!isKeyboardFocusable}>
-        <caption className={getClassName('bpk-calendar-grid__caption')} hidden>
-          {formatMonth(month)}
-        </caption>
-        <BpkCalendarGridHeader
-          isTableHead
-          daysOfWeek={daysOfWeek}
-          weekStartsOn={weekStartsOn}
-        />
         <div>
           {calendarMonthWeeks.map((dates) => (
             <Week
