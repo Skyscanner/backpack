@@ -113,11 +113,11 @@ export default () => (
 | ---------------------- | --------------------------- | -------- | -------------------- |
 | rows                   | arrayOf(Object)             | true     | -                    |
 | children               | arrayOf(BpkDataTableColumn) | true     | -                    |
-| height                 | number                      | true     | -                    |
-| width                  | number                      | false    | full width of parent |
-| headerHeight           | number                      | false    | 60                   |
+| height                 | oneOfType(number, string)   | true     | -                    |
+| width                  | oneOfType(number, string)   | false    | full width of parent |
+| headerHeight           | oneOfType(number, string)   | false    | 60                   |
 | rowClassName           | string                      | false    | null                 |
-| rowHeight              | number                      | false    | 60                   |
+| rowHeight              | oneOfType(number, string)   | false    | 60                   |
 | rowStyle               | object                      | false    | {}                   |
 | onRowClick             | func                        | false    | null                 |
 | className              | string                      | false    | null                 |
