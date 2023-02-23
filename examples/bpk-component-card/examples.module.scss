@@ -15,12 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkCard from './src/BpkCard';
-import BpkCardWrapper from './src/BpkCardWrapper';
-import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
+@import '~bpk-mixins/index.scss';
 
-export { ORIENTATION, BpkDividedCard, BpkCardWrapper };
+.bpk-card-examples {
+  &__header {
+    display: flex;
+    height: bpk-spacing-xxl();
+    padding: bpk-spacing-md();
+    justify-content: space-between;
+    align-items: center;
+    color: $bpk-text-on-dark-day;
+  }
 
-export default BpkCard;
+  &__wrapper {
+    width: bpk-spacing-md() * 41;
+  }
+}

@@ -15,9 +15,9 @@ import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCard>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-    commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-    penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+    parturient montes, nascetur ridiculus mus.
   </BpkCard>
 );
 ```
@@ -25,24 +25,48 @@ export default () => (
 ### BpkDividedCard
 
 ```js
-import { BpkDividedCard, ORIENTATION } from '@skyscanner/backpack-web/bpk-component-card';
+import {
+  BpkDividedCard,
+  ORIENTATION,
+} from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
   <>
     <BpkDividedCard
-      primaryContent={'foo'}
-      secondaryContent={'bar'}
+      primaryContent={<span>foo</span>}
+      secondaryContent={<span>bar</span>}
       orientation={ORIENTATION.vertical}
     />
-
     // Toggle shadow shadow with isElevated
     <BpkDividedCard
-      primaryContent={'foo'}
-      secondaryContent={'bar'}
+      primaryContent={<span>foo</span>}
+      secondaryContent={<span>bar</span>}
       orientation={ORIENTATION.horizontal}
       isElevated={false}
     />
   </>
+);
+```
+
+### BpkCardWrapper
+
+```js
+import { BpkCardWrapper } from '@skyscanner/backpack-web/bpk-component-card';
+import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
+
+export default () => (
+  <BpkCardWrapper
+    header={<span>Hoc header</span>}
+    card={
+      <BpkCard>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkCard>
+    }
+    backgroundColor={coreAccentDay}
+  />
 );
 ```
 
@@ -60,11 +84,20 @@ export default () => (
 
 ### BpkDividedCard
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| primaryContent | node   | true    | -          |
-| secondaryContent | node   | true    | -          |
-| orientation | oneOf(ORIENTATION.horizontal, ORIENTATION.vertical)    | false    | ORIENTATION.horizontal          |
-| href | string   | false    | null          |
-| className | string   | false    | null          |
-| isElevated | bool   | false    | true          |
+| Property         | PropType                                            | Required | Default Value          |
+| ---------------- | --------------------------------------------------- | -------- | ---------------------- |
+| primaryContent   | node                                                | true     | -                      |
+| secondaryContent | node                                                | true     | -                      |
+| orientation      | oneOf(ORIENTATION.horizontal, ORIENTATION.vertical) | false    | ORIENTATION.horizontal |
+| href             | string                                              | false    | null                   |
+| className        | string                                              | false    | null                   |
+| isElevated       | bool                                                | false    | true                   |
+
+### BpkCardWrapper
+
+| Property        | PropType | Required | Default Value |
+| --------------- | -------- | -------- | ------------- |
+| backgroundColor | string   | true     | null          |
+| card            | node     | true     | -             |
+| header          | node     | true     | -             |
+| className       | string   | false    | null          |

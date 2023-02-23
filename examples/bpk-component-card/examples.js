@@ -18,13 +18,23 @@
 /* @flow strict */
 
 import { Fragment } from 'react';
+import {
+  coreAccentDay,
+  surfaceHighlightDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { cssModules } from '../../packages/bpk-react-utils';
 import BpkLink from '../../packages/bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkCard, {
   BpkDividedCard,
+  BpkCardWrapper,
   ORIENTATION,
 } from '../../packages/bpk-component-card';
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const shortContent = 'Book your next trip on skyscanner.net.';
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
@@ -33,7 +43,11 @@ nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fr
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
-
+const headerContent = (
+  <div className={getClassName('bpk-card-examples__header')}>
+    <BpkText tagName="span">Here is header</BpkText>
+  </div>
+);
 const longContent = (
   <Fragment>
     <BpkText tagName="h3" textStyle={TEXT_STYLES.bodyLongform}>
@@ -120,13 +134,68 @@ const NonElevatedDividedCardExample = () => (
   </div>
 );
 
+const CardWrapperExample = () => (
+  <BpkCardWrapper
+    backgroundColor={coreAccentDay}
+    card={
+      <BpkCard
+        atomic={false}
+        onClick={() => window.open('https://www.skyscanner.net/')}
+      >
+        {longContent}
+      </BpkCard>
+    }
+    header={headerContent}
+  />
+);
+
+const DividedCardWrapperExample = () => (
+  <BpkCardWrapper
+    backgroundColor={coreAccentDay}
+    card={
+      <BpkDividedCard
+        primaryContent={longMessage}
+        secondaryContent={shortContent}
+        isElevated={false}
+      />
+    }
+    header={headerContent}
+  />
+);
+
+const WithClassNameWrapperExample = () => (
+  <BpkCardWrapper
+    backgroundColor={surfaceHighlightDay}
+    card={
+      <BpkCard
+        atomic={false}
+        onClick={() => window.open('https://www.skyscanner.net/')}
+      >
+        {longContent}
+      </BpkCard>
+    }
+    header={headerContent}
+    className={getClassName('bpk-card-examples__wrapper')}
+  />
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
+    <br />
     <WithoutPaddingExample />
+    <br />
     <DefaultDividedCardExample />
+    <br />
     <VerticalDividedCardExample />
+    <br />
     <NonElevatedDividedCardExample />
+    <br />
+    <CardWrapperExample />
+    <br />
+    <DividedCardWrapperExample />
+    <br />
+    <WithClassNameWrapperExample />
   </div>
 );
 
@@ -140,5 +209,8 @@ export {
   VerticalDividedCardExample,
   WithHrefDividedCardExample,
   NonElevatedDividedCardExample,
+  CardWrapperExample,
+  DividedCardWrapperExample,
+  WithClassNameWrapperExample,
   MixedExample,
 };
