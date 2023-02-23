@@ -1,3 +1,18 @@
+# 2023-02-23
+
+`@skyscanner/backpack-web`: 20.0.0 => 20.1.0
+
+**Added:**
+
+`BpkCardWrapper`
+  - It is a new component which is used for card wrapper component.
+
+**Changed:**
+
+`BpkDataTable`
+  - `height`, `width`, `headerHeight`, and `rowHeight` props can now be either a string or a number
+
+
 # 2023-02-22
 
 `@skyscanner/backpack-web`: 19.0.0 => 20.0.0
