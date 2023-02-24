@@ -94,28 +94,6 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                February 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -697,28 +675,6 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                March 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -1450,28 +1406,6 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                February 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -2053,28 +1987,6 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                March 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -2806,28 +2718,6 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                February 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -3409,28 +3299,6 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                March 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -4162,28 +4030,6 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                February 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -4765,28 +4611,6 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                March 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
