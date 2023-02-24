@@ -66,9 +66,7 @@ const CalendarGridExample = () => (
   <BpkCalendarGrid
     month={new Date()}
     weekStartsOn={1}
-    daysOfWeek={weekDays}
     onDateClick={action('Clicked day')}
-    formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkCalendarDate}
     preventKeyboardFocus
