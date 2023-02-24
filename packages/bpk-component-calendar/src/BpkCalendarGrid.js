@@ -21,14 +21,12 @@ import { Component } from 'react';
 
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 
-import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import Week from './Week';
 import {
   addMonths,
   formatIsoDate,
   getCalendarMonthWeeks,
   isSameMonth,
-  orderDaysOfWeek,
 } from './date-utils';
 import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import STYLES from './BpkCalendarGrid.module.scss';
@@ -58,24 +56,18 @@ class BpkCalendarGrid extends Component {
         props.month,
         props.weekStartsOn,
       ),
-      daysOfWeek: orderDaysOfWeek(props.daysOfWeek, props.weekStartsOn),
     };
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     // We cache expensive calculations (and identities) in state
     if (
-      nextProps.daysOfWeek !== this.props.daysOfWeek ||
       !isSameMonth(nextProps.month, this.props.month) ||
       nextProps.weekStartsOn !== this.props.weekStartsOn
     ) {
       this.setState({
         calendarMonthWeeks: getCalendarMonthWeeks(
           nextProps.month,
-          nextProps.weekStartsOn,
-        ),
-        daysOfWeek: orderDaysOfWeek(
-          nextProps.daysOfWeek,
           nextProps.weekStartsOn,
         ),
       });
@@ -91,7 +83,6 @@ class BpkCalendarGrid extends Component {
       dateProps,
       focusedDate,
       formatDateFull,
-      formatMonth,
       ignoreOutsideDate,
       isKeyboardFocusable,
       markOutsideDays,
@@ -106,7 +97,7 @@ class BpkCalendarGrid extends Component {
       weekStartsOn,
     } = this.props;
 
-    const { calendarMonthWeeks, daysOfWeek } = this.state;
+    const { calendarMonthWeeks } = this.state;
 
     const classNames = getClassName('bpk-calendar-grid', className);
 
@@ -146,9 +137,7 @@ class BpkCalendarGrid extends Component {
 export const propTypes = {
   // Required
   DateComponent: PropTypes.elementType.isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDateFull: PropTypes.func.isRequired,
-  formatMonth: PropTypes.func.isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
   weekStartsOn: PropTypes.number.isRequired,
   // Optional
