@@ -20,11 +20,11 @@
 
 const isDeviceIphone = () =>
   /iPhone/i.test(
-    typeof window !== 'undefined' ? window.navigator.platform : '',
+    typeof window !== 'undefined' ? window.navigator.userAgent : '',
   );
 
 const isDeviceIpad = () =>
-  /iPad/i.test(typeof window !== 'undefined' ? window.navigator.platform : '');
+  /iPad/i.test(typeof window !== 'undefined' ? window.navigator.userAgent : '');
 
 const isDeviceIos = () => isDeviceIphone() || isDeviceIpad();
 
