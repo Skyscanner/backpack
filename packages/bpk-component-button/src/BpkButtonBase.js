@@ -85,16 +85,6 @@ const BpkButton = (props: Props) => {
     );
   }
 
-  // Due to React bug in Chrome, the onClick event fires even if the button is disabled.
-  // Pull request is being worked on (as of 2016-12-22): https://github.com/facebook/react/pull/8329
-  const onClickWrapper = onClick
-    ? (...args) => {
-        if (!disabled) {
-          onClick(...args);
-        }
-      }
-    : null;
-
   const buttonType = submit ? 'submit' : 'button';
 
   /* eslint-disable react/button-has-type */
@@ -104,7 +94,7 @@ const BpkButton = (props: Props) => {
       type={buttonType}
       disabled={disabled}
       className={classNameFinal}
-      onClick={onClickWrapper}
+      onClick={onClick}
       {...rest}
     >
       {children}
