@@ -26,28 +26,6 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               aria-hidden="false"
               class="bpk-calendar-grid"
             >
-              February 2010
-              <span>
-                Mon
-              </span>
-              <span>
-                Tue
-              </span>
-              <span>
-                Wed
-              </span>
-              <span>
-                Thu
-              </span>
-              <span>
-                Fri
-              </span>
-              <span>
-                Sat
-              </span>
-              <span>
-                Sun
-              </span>
               <div>
                 <div
                   class="bpk-calendar-grid__week"
@@ -629,28 +607,6 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               aria-hidden="false"
               class="bpk-calendar-grid"
             >
-              March 2010
-              <span>
-                Mon
-              </span>
-              <span>
-                Tue
-              </span>
-              <span>
-                Wed
-              </span>
-              <span>
-                Thu
-              </span>
-              <span>
-                Fri
-              </span>
-              <span>
-                Sat
-              </span>
-              <span>
-                Sun
-              </span>
               <div>
                 <div
                   class="bpk-calendar-grid__week"
@@ -1313,28 +1269,6 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
               aria-hidden="false"
               class="bpk-calendar-grid"
             >
-              February 2010
-              <span>
-                Mon
-              </span>
-              <span>
-                Tue
-              </span>
-              <span>
-                Wed
-              </span>
-              <span>
-                Thu
-              </span>
-              <span>
-                Fri
-              </span>
-              <span>
-                Sat
-              </span>
-              <span>
-                Sun
-              </span>
               <div>
                 <div
                   class="bpk-calendar-grid__week"
@@ -1595,28 +1529,6 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
               aria-hidden="false"
               class="bpk-calendar-grid"
             >
-              March 2010
-              <span>
-                Mon
-              </span>
-              <span>
-                Tue
-              </span>
-              <span>
-                Wed
-              </span>
-              <span>
-                Thu
-              </span>
-              <span>
-                Fri
-              </span>
-              <span>
-                Sat
-              </span>
-              <span>
-                Sun
-              </span>
               <div>
                 <div
                   class="bpk-calendar-grid__week"
@@ -1954,28 +1866,6 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               aria-hidden="false"
               class="bpk-calendar-grid"
             >
-              February 2010
-              <span>
-                Wed
-              </span>
-              <span>
-                Thu
-              </span>
-              <span>
-                Fri
-              </span>
-              <span>
-                Sat
-              </span>
-              <span>
-                Sun
-              </span>
-              <span>
-                Mon
-              </span>
-              <span>
-                Tue
-              </span>
               <div>
                 <div
                   class="bpk-calendar-grid__week"
@@ -2589,28 +2479,6 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               aria-hidden="false"
               class="bpk-calendar-grid"
             >
-              March 2010
-              <span>
-                Wed
-              </span>
-              <span>
-                Thu
-              </span>
-              <span>
-                Fri
-              </span>
-              <span>
-                Sat
-              </span>
-              <span>
-                Sun
-              </span>
-              <span>
-                Mon
-              </span>
-              <span>
-                Tue
-              </span>
               <div>
                 <div
                   class="bpk-calendar-grid__week"
@@ -3305,28 +3173,6 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               aria-hidden="false"
               class="bpk-calendar-grid"
             >
-              February 2010
-              <span>
-                Sun
-              </span>
-              <span>
-                Mon
-              </span>
-              <span>
-                Tue
-              </span>
-              <span>
-                Wed
-              </span>
-              <span>
-                Thu
-              </span>
-              <span>
-                Fri
-              </span>
-              <span>
-                Sat
-              </span>
               <div>
                 <div
                   class="bpk-calendar-grid__week"
@@ -3940,28 +3786,6 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               aria-hidden="false"
               class="bpk-calendar-grid"
             >
-              March 2010
-              <span>
-                Sun
-              </span>
-              <span>
-                Mon
-              </span>
-              <span>
-                Tue
-              </span>
-              <span>
-                Wed
-              </span>
-              <span>
-                Thu
-              </span>
-              <span>
-                Fri
-              </span>
-              <span>
-                Sat
-              </span>
               <div>
                 <div
                   class="bpk-calendar-grid__week"
