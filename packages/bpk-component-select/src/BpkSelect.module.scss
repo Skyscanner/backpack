@@ -76,7 +76,7 @@ $bpk-spacing-v2: true;
 
     @include bpk-rtl {
       padding-right: bpk-spacing-xxl() + bpk-spacing-base();
-      padding-left: $bpk-select-padding-right;
+      padding-left: bpk-spacing-xxl();
 
       @media screen\0 {
         padding-right: bpk-spacing-xxl() + bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
@@ -117,6 +117,11 @@ $select-image-large-height: 24 * $bpk-one-pixel-rem;
       left: bpk-spacing-base();
       width: $select-image-large-width;
       height: $select-image-large-height;
+
+      @include bpk-rtl {
+        right: bpk-spacing-base();
+        left: auto;
+      }
     }
 
     &--disabled {

@@ -47,7 +47,7 @@ $bpk-spacing-v2: true;
 
 .bpk-pagination-page--selected {
   color: $bpk-text-primary-inverse-day;
-  box-shadow: $bpk-button-selected-box-shadow;
+  box-shadow: none;
 
   @include bpk-hover {
     color: $bpk-text-primary-day;
