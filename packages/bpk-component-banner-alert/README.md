@@ -77,6 +77,7 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
 />
 
 <BannerAlertDismissableState
+  dismissButtonLabel="Dismiss"
   message="Successful alert that will disappear after 5 seconds."
   hideAfter={5}
   type={ALERT_TYPES.SUCCESS}
