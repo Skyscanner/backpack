@@ -14,28 +14,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
       aria-hidden="false"
       class="bpk-calendar-grid"
     >
-      October 2016
-      <span>
-        Mon
-      </span>
-      <span>
-        Tue
-      </span>
-      <span>
-        Wed
-      </span>
-      <span>
-        Thu
-      </span>
-      <span>
-        Fri
-      </span>
-      <span>
-        Sat
-      </span>
-      <span>
-        Sun
-      </span>
       <div>
         <div
           class="bpk-calendar-grid__week"
@@ -714,28 +692,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
       aria-hidden="false"
       class="bpk-calendar-grid"
     >
-      October 2016
-      <span>
-        Mon
-      </span>
-      <span>
-        Tue
-      </span>
-      <span>
-        Wed
-      </span>
-      <span>
-        Thu
-      </span>
-      <span>
-        Fri
-      </span>
-      <span>
-        Sat
-      </span>
-      <span>
-        Sun
-      </span>
       <div>
         <div
           class="bpk-calendar-grid__week"
@@ -1117,28 +1073,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
       aria-hidden="false"
       class="bpk-calendar-grid"
     >
-      October 2016
-      <span>
-        Fri
-      </span>
-      <span>
-        Sat
-      </span>
-      <span>
-        Sun
-      </span>
-      <span>
-        Mon
-      </span>
-      <span>
-        Tue
-      </span>
-      <span>
-        Wed
-      </span>
-      <span>
-        Thu
-      </span>
       <div>
         <div
           class="bpk-calendar-grid__week"
@@ -1785,28 +1719,6 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
       aria-hidden="false"
       class="bpk-calendar-grid"
     >
-      October 2016
-      <span>
-        Mon
-      </span>
-      <span>
-        Tue
-      </span>
-      <span>
-        Wed
-      </span>
-      <span>
-        Thu
-      </span>
-      <span>
-        Fri
-      </span>
-      <span>
-        Sat
-      </span>
-      <span>
-        Sun
-      </span>
       <div>
         <div
           class="bpk-calendar-grid__week"
