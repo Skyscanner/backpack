@@ -10,3 +10,6 @@
 
 - `BpkSelect`:
     - Fix spacing in large select component with image
+
+- `BpkBannerAlert`:
+    - Documentation updated to correctly reflect required props for `BpkBannerAlertExpandable` and `BpkBannerAlertDismissable`.
