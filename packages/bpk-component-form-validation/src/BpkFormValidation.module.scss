@@ -31,7 +31,7 @@
       --bpk-form-validation-icon-fill,
       $bpk-form-validation-color
     );
-    @include bpk-margin-trailing($bpk-spacing-xs);
+    @include bpk-margin-trailing(bpk-spacing-sm());
   }
 
   &--appear {

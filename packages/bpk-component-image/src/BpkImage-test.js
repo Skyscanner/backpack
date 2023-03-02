@@ -17,8 +17,10 @@
  */
 
 import { render, screen, fireEvent } from '@testing-library/react';
-import * as BREAKPOINTS from '@skyscanner/bpk-foundations-web/tokens/breakpoints.es6';
-import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  spacingSm,
+  breakpoints as BREAKPOINTS,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkImage from './BpkImage';
 import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
