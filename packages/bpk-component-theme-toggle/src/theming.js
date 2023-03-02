@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 import {
-  horizontalNavLinkColor,
-  horizontalNavLinkHoverColor,
-  horizontalNavLinkActiveColor,
   colorSkyGrayTint02,
   colorSkyGrayTint06,
   colorWhite,
@@ -136,9 +133,9 @@ const generateTheme = ({
 
   horizontalNavBarSelectedColor: primaryColor500,
   horizontalNavLinkSelectedColor: primaryColor500,
-  horizontalNavLinkColor,
-  horizontalNavLinkHoverColor,
-  horizontalNavLinkActiveColor,
+  horizontalNavLinkColor: primaryColor500,
+  horizontalNavLinkHoverColor: primaryColor500,
+  horizontalNavLinkActiveColor: primaryColor500,
 
   selectInvalidBorderColor: secondaryColor500,
 
