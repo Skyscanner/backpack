@@ -13,3 +13,6 @@
 
 - `BpkBannerAlert`:
     - Documentation updated to correctly reflect required props for `BpkBannerAlertExpandable` and `BpkBannerAlertDismissable`.
+
+- `BpkThemeToggle`:
+    - Fix theme toggle component to use correct tokens
