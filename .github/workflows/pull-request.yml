@@ -20,6 +20,43 @@ jobs:
       pull-requests: write
     uses: ./.github/workflows/_build.yml
 
+  StorybookDeploy:
+    runs-on: ubuntu-latest
+    needs: [Build]
+    steps:
+    - name: Prepare to deploy Storybook (pull request build)
+      run: |
+        mkdir build
+        mv dist-storybook $PR_NUMBER
+        cp -R $PR_NUMBER build/
+      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
+      env:
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+
+    - name: Deploy Storybook to backpack.github.io/storybook-prs, if a pull request
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
+      with:
+        personal_token: ${{ secrets.DEPLOY_TOKEN }}
+        publish_dir: build/
+        keep_files: true
+        external_repository: backpack/storybook-prs
+        publish_branch: main
+
+    - name: Link to the pull request build
+      uses: actions/github-script@v6
+      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `Visit https://backpack.github.io/storybook-prs/${{ env.PR_NUMBER }} to see this build running in a browser.`
+          })
+      env:
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+
   Dependabot:
     runs-on: ubuntu-latest
     permissions:

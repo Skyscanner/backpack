@@ -20,6 +20,20 @@ jobs:
       pull-requests: write
     uses: ./.github/workflows/_build.yml
 
+  StorybookDeploy:
+    runs-on: ubuntu-latest
+    needs: [Build]
+    steps:
+      - name: Deploy Storybook for main
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_dir: dist-storybook/
+          keep_files: false
+          external_repository: backpack/storybook
+          publish_branch: main
+
   ReleaseDraft:
     runs-on: ubuntu-latest
     permissions:
