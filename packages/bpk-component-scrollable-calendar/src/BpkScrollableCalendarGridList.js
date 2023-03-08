@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import { Component } from 'react';
-import { startOfDay, startOfMonth } from 'date-fns';
 import { VariableSizeList as List } from 'react-window';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -30,6 +27,10 @@ import {
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
 import { getMonthsArray, getMonthItemHeights } from './utils';
+
+import { startOfDay, startOfMonth } from 'date-fns';
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const getClassName = cssModules(STYLES);
 
@@ -99,8 +100,10 @@ class BpkScrollableCalendarGridList extends Component {
   setComponentHeight = () => {
     const outerNode = this.outerDiv;
     if (outerNode) {
-      const newHeight = outerNode.clientHeight;
-      this.setState({ outerHeight: newHeight });
+      if (outerNode.clientHeight > 0) {
+        const newHeight = outerNode.clientHeight;
+        this.setState({ outerHeight: newHeight });
+      }
     } else {
       this.setState({ outerHeight: ESTIMATED_MONTH_ITEM_HEIGHT });
     }
