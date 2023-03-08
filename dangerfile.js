@@ -20,25 +20,17 @@
 
 // See http://danger.systems/js if you're not sure what this is.
 
-// @flow
-
 import fs from 'fs';
 
 import { danger, fail, warn, markdown } from 'danger';
-import { includes } from 'lodash';
 
 // Applies to js, css, scss and sh files that are not located in the dist folder.
 const shouldContainLicensingInformation = (filePath) =>
   filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) && !filePath.includes('dist/');
 
-const AVOID_EXACT_WORDS = [
-  { word: 'react native', reason: 'Please use React Native with capitals' },
-];
-
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
 const fileChanges = [...modifiedFiles, ...createdFiles];
-const markdownChanges = fileChanges.filter((path) => path.endsWith('md'));
 
 const componentChangedOrCreated = fileChanges.some((filePath) =>
   filePath.match(/packages\/bpk-component.+\/src\/.+\.(js|ts|tsx)$/),
@@ -50,18 +42,6 @@ if (componentChangedOrCreated) {
 
   If this is a visual change, make sure you've tested it in multiple browsers.
   `);
-}
-
-// If any of the packages have changed, the UNRELEASED log should have been updated.
-const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.md');
-const packagesModified = fileChanges.some(
-  (filePath) => filePath.startsWith('packages/') && !filePath.endsWith('.md'),
-);
-
-if (packagesModified && !unreleasedModified) {
-  warn(
-    "One or more packages have changed, but `UNRELEASED.md` wasn't updated.",
-  );
 }
 
 // If source files have changed, the snapshots should have been updated.
@@ -120,18 +100,3 @@ if (nonModuleCssFiles.length) {
     )}`,
   );
 }
-
-markdownChanges.forEach((path) => {
-  const fileContent = fs.readFileSync(path);
-
-  fileContent
-    .toString()
-    .split(/\r?\n/)
-    .forEach((line, lineIndex) => {
-      AVOID_EXACT_WORDS.forEach((phrase) => {
-        if (line.includes(phrase.word)) {
-          warn(`${phrase.reason} on line ${lineIndex + 1} in ${path}`);
-        }
-      });
-    });
-});

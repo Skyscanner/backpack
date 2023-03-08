@@ -1,0 +1,30 @@
+name-template: '$RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
+categories:
+  - title: 'Breaking'
+    label: 'major'
+  - title: 'Added'
+    label: 'minor'
+  - title: 'Fixed'
+    label: 'patch'
+  - title: 'Dependency updates'
+    label: 'dependencies'
+exclude-labels:
+  - 'skip-changelog'
+  - 'javascript'
+  - 'github_actions'
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+      - 'dependencies'
+  default: patch
+template: |
+  ## What’s Changed
+  $CHANGES

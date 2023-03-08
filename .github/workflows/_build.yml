@@ -1,17 +1,18 @@
-name: Backpack CI
+name: Build
 
 on:
-  push:
-    branches: [main]
-  pull_request:
+  workflow_call:
 
 defaults:
   run:
     shell: bash -l {0}
 
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v3
