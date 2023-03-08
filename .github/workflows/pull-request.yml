@@ -14,16 +14,31 @@ defaults:
 
 jobs:
   Build:
-    name: Build
     permissions:
       statuses: write
       pull-requests: write
     uses: ./.github/workflows/_build.yml
 
+
   StorybookDeploy:
     runs-on: ubuntu-latest
-    needs: [Build]
     steps:
+    - uses: actions/checkout@v3
+
+    - name: Set the correct npm version
+      run: nvm install && nvm use
+
+    - name: Install dependencies from npm
+      run: |
+        nvm use
+        npm ci
+
+    - name: Build Backpack
+      run: |
+        nvm use
+        npm run build
+        npm run storybook:dist
+
     - name: Prepare to deploy Storybook (pull request build)
       run: |
         mkdir build
@@ -33,7 +48,7 @@ jobs:
       env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
 
-    - name: Deploy Storybook to backpack.github.io/storybook-prs, if a pull request
+    - name: Deploy Storybook to backpack.github.io/storybook-prs
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
       with:
