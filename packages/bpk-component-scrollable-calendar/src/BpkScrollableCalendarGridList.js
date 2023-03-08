@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+import PropTypes from 'prop-types';
+import { Component } from 'react';
+import { startOfDay, startOfMonth } from 'date-fns';
 import { VariableSizeList as List } from 'react-window';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -27,10 +30,6 @@ import {
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
 import { getMonthsArray, getMonthItemHeights } from './utils';
-
-import { startOfDay, startOfMonth } from 'date-fns';
-import { Component } from 'react';
-import PropTypes from 'prop-types';
 
 const getClassName = cssModules(STYLES);
 
