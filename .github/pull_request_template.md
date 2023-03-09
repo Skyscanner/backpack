@@ -10,7 +10,7 @@ Add `major`, `minor` or `patch` label depending on the change according to [semv
 
 Remember to include the following changes:
 
-- [ ] `README.md`
+- [ ] `README.md` (If you have created a new component)
 - [ ] Component `README.md`
 - [ ] Tests
 - [ ] Storybook examples created/updated
