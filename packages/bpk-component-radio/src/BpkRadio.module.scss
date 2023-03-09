@@ -74,7 +74,7 @@ $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
     @include bpk-themeable-property(
       background,
       --bpk-radio-checked-color,
-      $bpk-radio-checked-circle-color
+      $bpk-text-link-day
     );
 
     @include bpk-rtl {

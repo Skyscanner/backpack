@@ -55,35 +55,28 @@ WeekDay.defaultProps = {
 
 class BpkCalendarGridHeader extends PureComponent {
   render() {
-    const { className, isTableHead, weekDayKey, weekStartsOn } = this.props;
-
-    const Header = isTableHead ? 'thead' : 'header';
-    const List = isTableHead ? 'tr' : 'ol';
-    const Item = isTableHead ? 'th' : 'li';
+    const { className, weekDayKey, weekStartsOn } = this.props;
 
     const daysOfWeek = orderDaysOfWeek(this.props.daysOfWeek, weekStartsOn);
 
     const classNames = [getClassName('bpk-calendar-header')];
-    if (isTableHead) {
-      classNames.push(getClassName('bpk-calendar-header--table-head'));
-    }
     if (className) {
       classNames.push(className);
     }
 
     return (
-      <Header className={classNames.join(' ')} aria-hidden>
-        <List className={getClassName('bpk-calendar-header__week')}>
+      <header className={classNames.join(' ')} aria-hidden>
+        <ol className={getClassName('bpk-calendar-header__week')}>
           {daysOfWeek.map((weekDay) => (
             <WeekDay
-              Element={Item}
+              Element="li"
               key={weekDay.index}
               weekDay={weekDay}
               weekDayKey={weekDayKey}
             />
           ))}
-        </List>
-      </Header>
+        </ol>
+      </header>
     );
   }
 }
@@ -91,13 +84,11 @@ class BpkCalendarGridHeader extends PureComponent {
 BpkCalendarGridHeader.propTypes = {
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   weekStartsOn: PropTypes.number.isRequired,
-  isTableHead: PropTypes.bool,
   className: PropTypes.string,
   weekDayKey: CustomPropTypes.WeekDayKey,
 };
 
 BpkCalendarGridHeader.defaultProps = {
-  isTableHead: false,
   className: null,
   weekDayKey: 'nameAbbr',
 };

@@ -133,10 +133,12 @@ For anything non-trivial, we strongly recommend speaking to somebody from Backpa
 2. Create a new branch.
 3. Make your changes.
 4. Commit and push your new branch.
-5. Submit a [pull request](https://github.com/Skyscanner/backpack/pulls).
+5. Submit a [pull request](https://github.com/Skyscanner/backpack/pulls). When submitting a PR ensure you add the correct label to your PR.
+    * major, A breaking change (visual or API contract changes)
+    * minor, A non-breaking change or a new component
+    * patch, A fixed bug or updates to documentation
+    * skip-changelog, The change you made should not end up in the release changelog
 6. Notify someone in Backpack squad or drop a note in #backpack.
-
-Don't forget to update [`UNRELEASED.md`](UNRELEASED.md) for any user-facing changes.
 
 Bear in mind that small, incremental pull requests are likely to be reviewed faster.
 
@@ -168,16 +170,9 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 <details>
 <summary>Publish packages (Backpack squad members only)</summary>
 
-- Update the [unreleased changelog](/UNRELEASED.md) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes. See `CHANGELOG_FORMAT.md` for tips.
-  - Some useful commands for determining "what's changed?":
-    - `git log --pretty=format:"* %s (%h)" $(git describe --tags --abbrev=0)...HEAD`
-- Make sure you are an owner of the npm packages (speak to a member of the Backpack squad).
-- **Run `npm run release`**. Do not run `npm publish`.
-- You’ll be asked to specify a new version. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [unreleased changelog](/unreleased.md) in step 1.
-- Move entries from [unreleased.md](/unreleased.md) to the [changelog](/changelog.md). Update the package versions for the new changes, and group them under a title with today’s date and a brief summary of what has changed.
-- Commit and push to main.
-
-When a component is released for the first time on npm, remember to add the component to the Skyscanner organisation through the [npm UI](https://www.npmjs.com/settings/skyscanner/teams/team/backpack/access).
+- Publish the latest draft on the [releases pages](https://github.com/Skyscanner/backpack/releases)
+- Ensure CI runs the release workflow successfully
+- Once released verify the artifacts are available
 
 </details>
 

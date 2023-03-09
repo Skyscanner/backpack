@@ -6,28 +6,6 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
     aria-hidden="false"
     class="bpk-calendar-grid"
   >
-    October 2016
-    <span>
-      Sun
-    </span>
-    <span>
-      Mon
-    </span>
-    <span>
-      Tue
-    </span>
-    <span>
-      Wed
-    </span>
-    <span>
-      Thu
-    </span>
-    <span>
-      Fri
-    </span>
-    <span>
-      Sat
-    </span>
     <div>
       <div
         class="bpk-calendar-grid__week"
@@ -862,28 +840,6 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
     aria-hidden="false"
     class="bpk-calendar-grid"
   >
-    October 2016
-    <span>
-      Mon
-    </span>
-    <span>
-      Tue
-    </span>
-    <span>
-      Wed
-    </span>
-    <span>
-      Thu
-    </span>
-    <span>
-      Fri
-    </span>
-    <span>
-      Sat
-    </span>
-    <span>
-      Sun
-    </span>
     <div>
       <div
         class="bpk-calendar-grid__week"
@@ -1718,28 +1674,6 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
     aria-hidden="false"
     class="bpk-calendar-grid"
   >
-    October 2016
-    <span>
-      Mon
-    </span>
-    <span>
-      Tue
-    </span>
-    <span>
-      Wed
-    </span>
-    <span>
-      Thu
-    </span>
-    <span>
-      Fri
-    </span>
-    <span>
-      Sat
-    </span>
-    <span>
-      Sun
-    </span>
     <div>
       <div
         class="bpk-calendar-grid__week"
@@ -2112,28 +2046,6 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
     aria-hidden="false"
     class="bpk-calendar-grid"
   >
-    October 2016
-    <span>
-      Wed
-    </span>
-    <span>
-      Thu
-    </span>
-    <span>
-      Fri
-    </span>
-    <span>
-      Sat
-    </span>
-    <span>
-      Sun
-    </span>
-    <span>
-      Mon
-    </span>
-    <span>
-      Tue
-    </span>
     <div>
       <div
         class="bpk-calendar-grid__week"

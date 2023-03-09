@@ -37,8 +37,8 @@
 
   &__button {
     width: 100%;
-    height: $bpk-select-height;
-    padding: $bpk-select-padding-top 0 $bpk-select-padding-bottom 0;
+    height: $bpk-input-height;
+    padding: bpk-spacing-md() - (2 * $bpk-one-pixel-rem) 0;
     border: none;
     background: none;
     cursor: pointer;

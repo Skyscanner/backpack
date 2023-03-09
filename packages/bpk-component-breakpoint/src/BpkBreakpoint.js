@@ -21,7 +21,7 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 import MediaQuery from 'react-responsive';
-import TOKENS from '@skyscanner/bpk-foundations-web/tokens/breakpoints.common';
+import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
 
 const BREAKPOINTS = {
   SMALL_MOBILE: TOKENS.breakpointQuerySmallMobile,

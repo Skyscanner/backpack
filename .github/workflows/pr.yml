@@ -1,0 +1,91 @@
+name: PR
+
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  Build:
+    permissions:
+      statuses: write
+      pull-requests: write
+    uses: ./.github/workflows/_build.yml
+
+
+  StorybookDeploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set the correct npm version
+      run: nvm install && nvm use
+
+    - name: Install dependencies from npm
+      run: |
+        nvm use
+        npm ci
+
+    - name: Build Backpack
+      run: |
+        nvm use
+        npm run build
+        npm run storybook:dist
+
+    - name: Prepare to deploy Storybook (pull request build)
+      run: |
+        mkdir build
+        mv dist-storybook $PR_NUMBER
+        cp -R $PR_NUMBER build/
+      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
+      env:
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+
+    - name: Deploy Storybook to backpack.github.io/storybook-prs
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
+      with:
+        personal_token: ${{ secrets.DEPLOY_TOKEN }}
+        publish_dir: build/
+        keep_files: true
+        external_repository: backpack/storybook-prs
+        publish_branch: main
+
+    - name: Link to the pull request build
+      uses: actions/github-script@v6
+      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `Visit https://backpack.github.io/storybook-prs/${{ env.PR_NUMBER }} to see this build running in a browser.`
+          })
+      env:
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+
+  Dependabot:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: Fetch Dependabot metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@v1.3.6
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Add bpk label
+        if: contains(steps.dependabot-metadata.outputs.dependency-names, 'bpk-')
+        run: gh pr edit "$PR_URL" --add-label "bpk" --remove-label "javascript"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{github.event.pull_request.html_url}}

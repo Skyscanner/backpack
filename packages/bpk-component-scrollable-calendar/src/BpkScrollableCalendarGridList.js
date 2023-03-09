@@ -99,8 +99,10 @@ class BpkScrollableCalendarGridList extends Component {
   setComponentHeight = () => {
     const outerNode = this.outerDiv;
     if (outerNode) {
-      const newHeight = outerNode.clientHeight;
-      this.setState({ outerHeight: newHeight });
+      if (outerNode.clientHeight > 0) {
+        const newHeight = outerNode.clientHeight;
+        this.setState({ outerHeight: newHeight });
+      }
     } else {
       this.setState({ outerHeight: ESTIMATED_MONTH_ITEM_HEIGHT });
     }

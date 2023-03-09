@@ -74,7 +74,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
       class="bpk-scrollable-calendar-grid-list"
     >
       <div
-        style="position: relative; height: 0px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
+        style="position: relative; height: 350px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
           style="height: 4506px; width: 100%;"
@@ -94,28 +94,6 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                February 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -697,28 +675,6 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                March 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -1349,6 +1305,636 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
               </div>
             </div>
           </div>
+          <div
+            style="position: absolute; left: 0px; top: 656px; height: 350px; width: 100%;"
+          >
+            <div
+              class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+            >
+              <h1
+                class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+              >
+                April 2010
+              </h1>
+              <div
+                aria-hidden="false"
+                class="bpk-calendar-grid"
+              >
+                <div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 1st April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          1
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 2nd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          2
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 3rd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          3
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 4th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          4
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 5th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          5
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 6th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          6
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 7th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          7
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 8th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          8
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 9th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          9
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 10th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          10
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 11th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          11
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 12th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          12
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 13th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          13
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 14th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          14
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 15th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          15
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 16th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          16
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 17th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          17
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 18th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          18
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 19th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          19
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 20th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          20
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 21st April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          21
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 22nd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          22
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 23rd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          23
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 24th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          24
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 25th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          25
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 26th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          26
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 27th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          27
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 28th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          28
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 29th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          29
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 30th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          30
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1430,7 +2016,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
       class="bpk-scrollable-calendar-grid-list"
     >
       <div
-        style="position: relative; height: 0px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
+        style="position: relative; height: 350px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
           style="height: 4506px; width: 100%;"
@@ -1450,28 +2036,6 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                February 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -2053,28 +2617,6 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                March 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -2692,6 +3234,636 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       aria-hidden="true"
                       class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
                     />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="position: absolute; left: 0px; top: 656px; height: 350px; width: 100%;"
+          >
+            <div
+              class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+            >
+              <h1
+                class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+              >
+                April 2010
+              </h1>
+              <div
+                aria-hidden="false"
+                class="bpk-calendar-grid"
+              >
+                <div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 1st April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          1
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 2nd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          2
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 3rd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          3
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 4th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          4
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 5th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          5
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 6th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          6
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 7th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          7
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 8th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          8
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 9th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          9
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 10th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          10
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 11th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          11
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 12th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          12
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 13th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          13
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 14th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          14
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 15th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          15
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 16th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          16
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 17th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          17
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 18th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          18
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 19th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          19
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 20th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          20
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 21st April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          21
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 22nd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          22
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 23rd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          23
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 24th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          24
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 25th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          25
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 26th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          26
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 27th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          27
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 28th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          28
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 29th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          29
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 30th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          30
+                        </span>
+                      </button>
+                    </div>
                     <div
                       aria-hidden="true"
                       class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
@@ -2786,7 +3958,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
       class="bpk-scrollable-calendar-grid-list"
     >
       <div
-        style="position: relative; height: 0px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
+        style="position: relative; height: 350px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
           style="height: 4506px; width: 100%;"
@@ -2806,28 +3978,6 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                February 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -3409,28 +4559,6 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                March 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -4048,6 +5176,636 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       aria-hidden="true"
                       class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
                     />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="position: absolute; left: 0px; top: 656px; height: 350px; width: 100%;"
+          >
+            <div
+              class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+            >
+              <h1
+                class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+              >
+                April 2010
+              </h1>
+              <div
+                aria-hidden="false"
+                class="bpk-calendar-grid"
+              >
+                <div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 1st April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          1
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 2nd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          2
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 3rd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          3
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 4th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          4
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 5th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          5
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 6th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          6
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 7th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          7
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 8th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          8
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 9th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          9
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 10th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          10
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 11th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          11
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 12th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          12
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 13th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          13
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 14th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          14
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 15th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          15
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 16th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          16
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 17th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          17
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 18th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          18
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 19th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          19
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 20th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          20
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 21st April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          21
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 22nd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          22
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 23rd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          23
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 24th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          24
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 25th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          25
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 26th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          26
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 27th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          27
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 28th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          28
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 29th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          29
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 30th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          30
+                        </span>
+                      </button>
+                    </div>
                     <div
                       aria-hidden="true"
                       class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
@@ -4142,7 +5900,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
       class="bpk-scrollable-calendar-grid-list"
     >
       <div
-        style="position: relative; height: 0px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
+        style="position: relative; height: 350px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
           style="height: 4506px; width: 100%;"
@@ -4162,28 +5920,6 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                February 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -4765,28 +6501,6 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 aria-hidden="false"
                 class="bpk-calendar-grid"
               >
-                March 2010
-                <span>
-                  Mon
-                </span>
-                <span>
-                  Tue
-                </span>
-                <span>
-                  Wed
-                </span>
-                <span>
-                  Thu
-                </span>
-                <span>
-                  Fri
-                </span>
-                <span>
-                  Sat
-                </span>
-                <span>
-                  Sun
-                </span>
                 <div>
                   <div
                     class="bpk-calendar-grid__week"
@@ -5404,6 +7118,636 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       aria-hidden="true"
                       class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
                     />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="position: absolute; left: 0px; top: 656px; height: 350px; width: 100%;"
+          >
+            <div
+              class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+            >
+              <h1
+                class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+              >
+                April 2010
+              </h1>
+              <div
+                aria-hidden="false"
+                class="bpk-calendar-grid"
+              >
+                <div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="true"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    />
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 1st April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          1
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 2nd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          2
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 3rd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          3
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 4th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          4
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 5th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          5
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 6th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          6
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 7th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          7
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 8th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          8
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 9th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          9
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 10th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          10
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 11th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          11
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 12th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          12
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 13th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          13
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 14th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          14
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 15th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          15
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 16th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          16
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 17th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          17
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 18th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          18
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 19th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          19
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 20th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          20
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 21st April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          21
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 22nd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          22
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 23rd April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          23
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Saturday, 24th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          24
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Sunday, 25th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          25
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="bpk-calendar-grid__week"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Monday, 26th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          26
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Tuesday, 27th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          27
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Wednesday, 28th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          28
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Thursday, 29th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          29
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                    >
+                      <button
+                        aria-hidden="false"
+                        aria-label="Friday, 30th April 2010"
+                        aria-pressed="false"
+                        class="bpk-calendar-date"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          30
+                        </span>
+                      </button>
+                    </div>
                     <div
                       aria-hidden="true"
                       class="bpk-calendar-grid__date bpk-calendar-grid__date--none"

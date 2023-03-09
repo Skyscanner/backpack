@@ -18,8 +18,9 @@
 /* @flow strict */
 
 import BpkCard from './src/BpkCard';
+import BpkCardWrapper from './src/BpkCardWrapper';
 import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
 
-export { ORIENTATION, BpkDividedCard };
+export { ORIENTATION, BpkDividedCard, BpkCardWrapper };
 
 export default BpkCard;
