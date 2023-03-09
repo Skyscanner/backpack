@@ -429,128 +429,116 @@ class MultipleInputDatepicker extends Component {
 }
 
 const DefaultExample = () => (
-  <div id="application-element">
-    <CalendarContainer
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      weekStartsOn={1}
-      changeMonthLabel="Change month"
-      previousMonthLabel="Go to previous month"
-      nextMonthLabel="Go to next month"
-      title="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      selectionConfiguration={{
-        type: CALENDAR_SELECTION_TYPE.single,
-        date: new Date(),
-      }}
-    />
-  </div>
+  <CalendarContainer
+    id="myDatepicker"
+    closeButtonText="Close"
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    title="Departure date"
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(),
+    }}
+  />
 );
 
 const RangeExample = () => (
-  <div id="application-element">
-    <CalendarContainer
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      weekStartsOn={1}
-      changeMonthLabel="Change month"
-      previousMonthLabel="Go to previous month"
-      nextMonthLabel="Go to next month"
-      title="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      selectionConfiguration={{
-        type: 'range',
-        startDate: new Date(2022, 9, 6),
-        endDate: new Date(2022, 9, 15),
-      }}
-    />
-  </div>
+  <CalendarContainer
+    id="myDatepicker"
+    closeButtonText="Close"
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    title="Departure date"
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    selectionConfiguration={{
+      type: 'range',
+      startDate: new Date(2022, 9, 6),
+      endDate: new Date(2022, 9, 15),
+    }}
+  />
 );
 
 const OpenOnFirstRenderExample = () => (
-  <div id="application-element">
-    <CalendarContainer
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      weekStartsOn={1}
-      changeMonthLabel="Change month"
-      previousMonthLabel="Go to previous month"
-      nextMonthLabel="Go to next month"
-      title="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      selectionConfiguration={{
-        type: CALENDAR_SELECTION_TYPE.single,
-        date: new Date(),
-      }}
-      isOpen
-    />
-  </div>
+  <CalendarContainer
+    id="myDatepicker"
+    closeButtonText="Close"
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    title="Departure date"
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(),
+    }}
+    isOpen
+  />
 );
 
 const MinDateInPastExample = () => (
-  <div id="application-element">
-    <CalendarContainer
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      weekStartsOn={1}
-      changeMonthLabel="Change month"
-      previousMonthLabel="Go to previous month"
-      nextMonthLabel="Go to next month"
-      title="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      minDate={new Date(2011, 1, 2)}
-      initiallyFocusedDate={new Date()}
-    />
-  </div>
+  <CalendarContainer
+    id="myDatepicker"
+    closeButtonText="Close"
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    title="Departure date"
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    minDate={new Date(2011, 1, 2)}
+    initiallyFocusedDate={new Date()}
+  />
 );
 
 const WithoutDateSetExample = () => (
-  <div id="application-element">
-    <CalendarContainer
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      weekStartsOn={1}
-      changeMonthLabel="Change month"
-      previousMonthLabel="Go to previous month"
-      nextMonthLabel="Go to next month"
-      title="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-    />
-  </div>
+  <CalendarContainer
+    id="myDatepicker"
+    closeButtonText="Close"
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    title="Departure date"
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+  />
 );
 
 const PassingPropsExample = () => (
-  <div id="application-element">
-    <CalendarContainer
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      weekStartsOn={1}
-      changeMonthLabel="Change month"
-      previousMonthLabel="Go to previous month"
-      nextMonthLabel="Go to next month"
-      title="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      inputProps={inputPropsWithEventHandlers}
-    />
-  </div>
+  <CalendarContainer
+    id="myDatepicker"
+    closeButtonText="Close"
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    title="Departure date"
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    inputProps={inputPropsWithEventHandlers}
+  />
 );
 
 const DepartReturnExample = () => <ReturnDatepicker />;
@@ -566,27 +554,6 @@ const CustomComponentExample = () => {
   );
 
   return (
-    <div id="application-element">
-      <CalendarContainer
-        id="myDatepicker"
-        closeButtonText="Close"
-        daysOfWeek={weekDays}
-        weekStartsOn={1}
-        changeMonthLabel="Change month"
-        previousMonthLabel="Go to previous month"
-        nextMonthLabel="Go to next month"
-        title="Departure date"
-        formatDate={formatDate}
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        calendarComponent={CalendarWithColoredDates}
-      />
-    </div>
-  );
-};
-
-const InvalidExample = () => (
-  <div id="application-element">
     <CalendarContainer
       id="myDatepicker"
       closeButtonText="Close"
@@ -599,67 +566,80 @@ const InvalidExample = () => (
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
-      selectionConfiguration={{
-        type: CALENDAR_SELECTION_TYPE.single,
-        date: new Date(),
-      }}
-      valid={false}
+      calendarComponent={CalendarWithColoredDates}
     />
-  </div>
+  );
+};
+
+const InvalidExample = () => (
+  <CalendarContainer
+    id="myDatepicker"
+    closeButtonText="Close"
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    title="Departure date"
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(),
+    }}
+    valid={false}
+  />
 );
 
 const MultipleRangeInputExample = () => <MultipleInputDatepicker />;
 
 const DefaultVisualExample = () => (
-  <div id="application-element">
-    <CalendarContainer
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      weekStartsOn={1}
-      changeMonthLabel="Change month"
-      previousMonthLabel="Go to previous month"
-      nextMonthLabel="Go to next month"
-      title="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      selectionConfiguration={{
-        type: CALENDAR_SELECTION_TYPE.single,
-        date: new Date(2020, 3, 19),
-      }}
-      minDate={new Date(2020, 3, 1)}
-      selectTodaysDate={false}
-      initiallyFocusedDate={new Date(2020, 3, 19)}
-      isOpen
-    />
-  </div>
+  <CalendarContainer
+    id="myDatepicker"
+    closeButtonText="Close"
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    title="Departure date"
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(2020, 3, 19),
+    }}
+    minDate={new Date(2020, 3, 1)}
+    selectTodaysDate={false}
+    initiallyFocusedDate={new Date(2020, 3, 19)}
+    isOpen
+  />
 );
 
 const VisualRangeExample = () => (
-  <div id="application-element">
-    <CalendarContainer
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      weekStartsOn={1}
-      changeMonthLabel="Change month"
-      previousMonthLabel="Go to previous month"
-      nextMonthLabel="Go to next month"
-      title="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      selectionConfiguration={{
-        type: 'range',
-        startDate: new Date(2020, 3, 8),
-        endDate: new Date(2020, 3, 15),
-      }}
-      minDate={new Date(2020, 3, 1)}
-      selectTodaysDate={false}
-      isOpen
-    />
-  </div>
+  <CalendarContainer
+    id="myDatepicker"
+    closeButtonText="Close"
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    title="Departure date"
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    selectionConfiguration={{
+      type: 'range',
+      startDate: new Date(2020, 3, 8),
+      endDate: new Date(2020, 3, 15),
+    }}
+    minDate={new Date(2020, 3, 1)}
+    selectTodaysDate={false}
+    isOpen
+  />
 );
 
 export {

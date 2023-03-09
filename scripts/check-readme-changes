@@ -23,10 +23,14 @@ const init = async () => {
     .filter(file => file.endsWith('README.md'));
 
   if (changedFiles.length) {
-    return true;
+    isChanged = true;
+    return;
   }
 
-  return false;
+  isChanged = false;
+  return;
 };
 
-init();
+init().then(
+  isChanged => console.log(isChanged)
+  );

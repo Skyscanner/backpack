@@ -15,6 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       - name: Set the correct npm version
         run: nvm install && nvm use
@@ -132,3 +134,12 @@ jobs:
             })
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
+      
+      - name: Check if any README.md files have changed
+        id: checkReadmeChanges
+        run: echo "readmeChanged=$(./scripts/check-readme-changes)" >> $GITHUB_OUTPUT
+        if: github.ref == 'refs/heads/main'
+
+      - name: Update Supernova docs
+        run: supernova publish-documentation --apiKey=${{ secrets.SUPERNOVA_API_KEY }} --designSystemid=${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
+        if: github.ref == 'refs/heads/main' && steps.checkReadmeChanges.outputs.readmeChanged == 'true'
