@@ -16,3 +16,6 @@
 
 - `BpkThemeToggle`:
     - Fix theme toggle component to use correct tokens
+
+- `BpkScrollableCalendarGridList`:
+  - Fix issue where calendar grid list was disappearing
