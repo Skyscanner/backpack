@@ -1,17 +1,18 @@
-name: Backpack CI
+name: Build
 
 on:
-  push:
-    branches: [main]
-  pull_request:
+  workflow_call:
 
 defaults:
   run:
     shell: bash -l {0}
 
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v3
@@ -91,55 +92,3 @@ jobs:
               repo: context.repo.repo,
               body: "Visual regression tests failed 😢. You can download the failure diffs from the 'Artifacts' section of the failed CI run. To update the tests, run `npm run jest:visual-tests:update` locally."
             })
-
-      - name: Deploy Storybook to backpack.github.io, if on main branch
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          publish_dir: dist-storybook/
-          keep_files: false
-          external_repository: backpack/storybook
-          publish_branch: main
-
-      - name: Prepare to deploy Storybook (pull request build)
-        run: |
-          mkdir build
-          mv dist-storybook $PR_NUMBER
-          cp -R $PR_NUMBER build/
-        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-
-      - name: Deploy Storybook to backpack.github.io/storybook-prs, if a pull request
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
-        with:
-          personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          publish_dir: build/
-          keep_files: true
-          external_repository: backpack/storybook-prs
-          publish_branch: main
-
-      - name: Link to the pull request build
-        uses: actions/github-script@v6
-        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `Visit https://backpack.github.io/storybook-prs/${{ env.PR_NUMBER }} to see this build running in a browser.`
-            })
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-      
-      - name: Check if any README.md files have changed
-        id: checkReadmeChanges
-        run: echo "readmeChanged=$(./scripts/check-readme-changes)" >> $GITHUB_OUTPUT
-        if: github.ref == 'refs/heads/main'
-
-      - name: Update Supernova docs
-        run: supernova publish-documentation --apiKey=${{ secrets.SUPERNOVA_API_KEY }} --designSystemid=${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
-        if: github.ref == 'refs/heads/main' && steps.checkReadmeChanges.outputs.readmeChanged == 'true'

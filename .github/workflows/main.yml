@@ -1,0 +1,76 @@
+name: Main
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  Build:
+    name: Build
+    permissions:
+      statuses: write
+      pull-requests: write
+    uses: ./.github/workflows/_build.yml
+
+  StorybookDeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set the correct npm version
+        run: nvm install && nvm use
+
+      - name: Install dependencies from npm
+        run: |
+          nvm use
+          npm ci
+
+      - name: Build Backpack
+        run: |
+          nvm use
+          npm run build
+          npm run storybook:dist
+      
+      - name: Deploy Storybook for main
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_dir: dist-storybook/
+          keep_files: false
+          external_repository: backpack/storybook
+          publish_branch: main
+
+  SupernovaPublish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Check if any README.md files have changed
+        id: checkReadmeChanges
+        run: echo "readmeChanged=$(./scripts/check-readme-changes)" >> $GITHUB_OUTPUT
+
+      - name: Update Supernova docs
+        run: supernova publish-documentation --apiKey=${{ secrets.SUPERNOVA_API_KEY }} --designSystemid=${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
+        if: steps.checkReadmeChanges.outputs.readmeChanged == 'true'
+
+  ReleaseDraft:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - name: Draft release notes
+        uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
