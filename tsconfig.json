@@ -16,12 +16,15 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
-    "allowJs": false
+    "allowJs": true,
+    "declaration": true,
+    "outDir": "./dist"
   },
   "include": [
     "packages",
-    "@types"
+    // "packages/bpk-component-aria-live", - to generate dts file as this is the only TS component
+    "@types",
+    "examples"
   ]
 }

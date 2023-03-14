@@ -16,50 +16,33 @@
  * limitations under the License.
  */
 
-import type { ReactElement } from 'react';
-
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkAriaLive.module.scss';
-
-const getClassName = cssModules(STYLES);
+import type { ReactType } from 'react';
 
 export const POLITENESS_SETTINGS = {
   off: 'off',
   polite: 'polite',
   assertive: 'assertive',
-}; // as const; // Temp disabling TS types due to non TS projects compatibility.
+} as const;
 
 // Temp disabling TS types due to non TS projects compatibility.
-// export type PolitenessSetting =
-//   typeof POLITENESS_SETTINGS[keyof typeof POLITENESS_SETTINGS];
+export type PolitenessSetting =
+  (typeof POLITENESS_SETTINGS)[keyof typeof POLITENESS_SETTINGS];
 
 export type Props = {
-  children: ReactElement | string,
-  politenessSetting?: $Keys<typeof POLITENESS_SETTINGS>, // PolitenessSetting,
-  visible?: boolean,
-  className?: string | null,
-  [rest: string]: any, // Inexact rest. See decisions/inexact-rest.md
+  // ReactType is deprecated using the deprecated annotation JSDoc tag so this will emit a warning
+  children: ReactType | string;
+  politenessSetting?: PolitenessSetting;
+  visible?: boolean;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkAriaLive = ({
-  className = null,
   politenessSetting = POLITENESS_SETTINGS.polite,
   visible = false,
   ...rest
-}: Props) => {
-  const classNames = getClassName(
-    'bpk-aria-live',
-    !visible && 'bpk-aria-live--invisible',
-    className,
-  );
-
-  return <div aria-live={politenessSetting} className={classNames} {...rest} />;
-};
+}: Props) => <div aria-live={politenessSetting} {...rest} />;
 
 BpkAriaLive.defaultProps = {
-  className: null,
   politenessSetting: POLITENESS_SETTINGS.polite,
   visible: false,
 };

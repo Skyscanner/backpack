@@ -19,6 +19,7 @@
 import { render } from '@testing-library/react';
 
 import BpkAriaLive, { POLITENESS_SETTINGS } from './BpkAriaLive';
+import type { PolitenessSetting } from './BpkAriaLive';
 // Temp disabling TS types due to non TS projects compatibility.
 // import type { PolitenessSetting } from './BpkAriaLive';
 
@@ -33,7 +34,7 @@ describe('BpkAriaLive', () => {
       const { asFragment } = render(
         // Temp disabling TS types due to non TS projects compatibility.
         // <BpkAriaLive politenessSetting={politenessSetting as PolitenessSetting}>
-        <BpkAriaLive politenessSetting={politenessSetting}>
+        <BpkAriaLive politenessSetting={politenessSetting as PolitenessSetting}>
           Backpack
         </BpkAriaLive>,
       );
