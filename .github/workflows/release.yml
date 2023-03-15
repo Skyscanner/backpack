@@ -47,18 +47,10 @@ jobs:
 
   SupernovaPublish:
     runs-on: ubuntu-latest
+    environment: Publishing
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      - name: Check if any README.md files have changed
-        id: checkReadmeChanges
-        run: echo "readmeChanged=$(./scripts/check-readme-changes)" >> $GITHUB_OUTPUT
-
       - name: Update Supernova docs
         run: supernova publish-documentation --apiKey=$SUPERNOVA_API_KEY --designSystemid=$DESIGN_SYSTEM_ID
-        if: steps.checkReadmeChanges.outputs.readmeChanged == 'true'
         env:
           SUPERNOVA_API_KEY: ${{ secrets.SUPERNOVA_API_KEY }}
           DESIGN_SYSTEM_ID: ${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
