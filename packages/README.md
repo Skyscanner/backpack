@@ -8,7 +8,7 @@
 ## Quick links
 
 - [Documentation](https://www.skyscanner.design/)
-- [Changelog](./CHANGELOG.md)
+- [Changelog](https://github.com/Skyscanner/backpack/releases)
 
 ## Usage
 
