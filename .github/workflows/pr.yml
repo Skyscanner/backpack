@@ -71,21 +71,3 @@ jobs:
           })
       env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
-
-  Dependabot:
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-    if: ${{ github.actor == 'dependabot[bot]' }}
-    steps:
-      - name: Fetch Dependabot metadata
-        id: dependabot-metadata
-        uses: dependabot/fetch-metadata@v1.3.6
-        with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Add bpk label
-        if: contains(steps.dependabot-metadata.outputs.dependency-names, 'bpk-')
-        run: gh pr edit "$PR_URL" --add-label "bpk" --remove-label "javascript"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_URL: ${{github.event.pull_request.html_url}}
