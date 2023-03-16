@@ -1,0 +1,56 @@
+name: release
+
+on:
+  release:
+    types: [ published ]
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  Build:
+      name: Build
+      permissions:
+        statuses: write
+        pull-requests: write
+      uses: ./.github/workflows/_build.yml
+
+  ReleaseWeb:
+    name: Release @skyscanner/backpack-web to NPM
+    runs-on: ubuntu-latest
+    environment: Publishing
+    needs: [Build]
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v3
+      with:
+        ref: main
+    
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16.13.0'
+        registry-url: 'https://registry.npmjs.org'
+
+    - run: npm ci
+    
+    - run: npm run build
+
+    - name: Publish NPM package
+      run: |
+        cd packages
+        npm version $RELEASE_VERSION --no-git-tag-version
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        RELEASE_VERSION: ${{ github.event.release.tag_name }}
+
+  SupernovaPublish:
+    runs-on: ubuntu-latest
+    environment: Publishing
+    steps:
+      - name: Update Supernova docs
+        run: supernova publish-documentation --apiKey=$SUPERNOVA_API_KEY --designSystemid=$DESIGN_SYSTEM_ID
+        env:
+          SUPERNOVA_API_KEY: ${{ secrets.SUPERNOVA_API_KEY }}
+          DESIGN_SYSTEM_ID: ${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
