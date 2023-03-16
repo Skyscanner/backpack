@@ -26,7 +26,7 @@ import STYLES from './BpkSlider.module.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkSlider = (props) => {
-  const { className, large, ...rest } = props;
+  const { className, ...rest } = props;
   const invert = isRTL();
   const classNames = [getClassName('bpk-slider')];
   const thumbClassNames = [getClassName('bpk-slider__handle')];
@@ -40,10 +40,6 @@ const BpkSlider = (props) => {
   if (className) {
     classNames.push(getClassName(className));
   }
-  if (large) {
-    classNames.push(getClassName('bpk-slider--large'));
-    thumbClassNames.push(getClassName('bpk-slider__handle--large'));
-  }
 
   return (
     <Slider
@@ -52,7 +48,6 @@ const BpkSlider = (props) => {
       invert={invert}
       className={classNames.join(' ')}
       thumbClassName={thumbClassNames.join(' ')}
-      thumbActiveClassName={getClassName('bpk-slider__handle--active')}
       trackClassName={trackClassNames.join(' ')}
     />
   );
@@ -60,12 +55,10 @@ const BpkSlider = (props) => {
 
 BpkSlider.propTypes = {
   className: PropTypes.string,
-  large: PropTypes.bool,
 };
 
 BpkSlider.defaultProps = {
   className: null,
-  large: false,
 };
 
 export default BpkSlider;

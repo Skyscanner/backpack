@@ -93,12 +93,7 @@ SliderContainer.defaultProps = {
 const EnhancedSlider = updateOnDirectionChange(SliderContainer);
 
 const SimpleSliderExample = () => <EnhancedSlider min={0} value={50} />;
-const SimpleLargeSliderExample = () => (
-  <EnhancedSlider min={0} value={50} large />
-);
-const TimeSliderExample = () => (
-  <EnhancedSlider time min={0} value={50} large />
-);
+const TimeSliderExample = () => <EnhancedSlider time min={0} value={50} />;
 const SimpleSliderWithStepsExample = () => (
   <EnhancedSlider min={0} value={50} step={10} />
 );
@@ -110,14 +105,12 @@ const RangeSliderWithMinimumDistanceExample = () => (
 const MixedExample = () => (
   <div>
     <SimpleSliderExample />
-    <SimpleLargeSliderExample />
     <RangeSliderExample />
   </div>
 );
 
 export {
   SimpleSliderExample,
-  SimpleLargeSliderExample,
   TimeSliderExample,
   SimpleSliderWithStepsExample,
   RangeSliderExample,
