@@ -46,6 +46,11 @@ $slider-bar-height: bpk-spacing-sm();
       height: $slider-handle-touch-size;
       border-radius: 50%;
     }
+
+    &--active {
+      transform: scale(1.2) translate3d(0, 0, 0);
+      background-color: $bpk-private-slider-selected-day;
+    }
   }
 
   &__bar {

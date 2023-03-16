@@ -48,6 +48,7 @@ const BpkSlider = (props) => {
       invert={invert}
       className={classNames.join(' ')}
       thumbClassName={thumbClassNames.join(' ')}
+      thumbActiveClassName={getClassName('bpk-slider__handle--active')}
       trackClassName={trackClassNames.join(' ')}
     />
   );
