@@ -27,10 +27,6 @@ $slider-bar-height: bpk-spacing-sm();
   height: $slider-handle-size;
   -webkit-tap-highlight-color: transparent;
 
-  :focus-visible {
-    outline: none;
-  }
-
   &__handle {
     display: flex;
     width: $slider-handle-size;
