@@ -36,7 +36,7 @@ const BpkAccordion = (props: Props) => {
 
   const classNames = getClassName(
     'bpk-accordion',
-    props.onDark ? 'bpk-accordion--day' : undefined,
+    props.onDark && 'bpk-accordion--on-dark',
     className,
   );
 
