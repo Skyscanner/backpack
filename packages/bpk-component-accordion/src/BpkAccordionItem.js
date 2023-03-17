@@ -82,21 +82,31 @@ const BpkAccordionItem = (props: Props) => {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--flipped'),
     );
-    iconClassNames.push(getClassName('bpk-accordion__item-expand-icon--day'));
-    contentClassNames.push(
-      getClassName('bpk-accordion__content-container--expanded-day'),
+    iconClassNames.push(
+      getClassName('bpk-accordion__item-expand-icon--on-dark'),
     );
-    titleTextClassNames.push(getClassName('bpk-accordion__title-text--day'));
+    contentClassNames.push(
+      getClassName('bpk-accordion__content-container--expanded-on-dark'),
+    );
+    titleTextClassNames.push(
+      getClassName('bpk-accordion__title-text--on-dark'),
+    );
   }
 
   if (!expanded && onDark) {
-    iconClassNames.push(getClassName('bpk-accordion__item-expand-icon--day'));
-    titleClassNames.push(getClassName('bpk-accordion__title--expanded-day'));
-    titleTextClassNames.push(getClassName('bpk-accordion__title-text--day'));
+    iconClassNames.push(
+      getClassName('bpk-accordion__item-expand-icon--on-dark'),
+    );
+    titleClassNames.push(
+      getClassName('bpk-accordion__title--collapsed-on-dark'),
+    );
+    titleTextClassNames.push(
+      getClassName('bpk-accordion__title-text--on-dark'),
+    );
   }
 
   if (!expanded && !onDark) {
-    titleClassNames.push(getClassName('bpk-accordion__title--expanded'));
+    titleClassNames.push(getClassName('bpk-accordion__title--collapsed'));
   }
 
   const contentId = `${id}_content`;
