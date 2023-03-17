@@ -38,14 +38,6 @@ describe('BpkSlider', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a "large" attribute', () => {
-    const { asFragment } = render(
-      <BpkSlider min={0} max={9} value={2} large />,
-      { createNodeMock },
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with a "step" attribute', () => {
     const { asFragment } = render(
       <BpkSlider min={0} max={100} value={2} step={10} />,
