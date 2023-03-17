@@ -56,34 +56,6 @@ exports[`BpkSlider should render correctly with a "className" attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkSlider should render correctly with a "large" attribute 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-slider bpk-slider--large"
-    style="position: relative;"
-  >
-    <div
-      class="bpk-slider__bar bpk-slider__bar-0"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      class="bpk-slider__bar bpk-slider__bar-1"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      aria-orientation="horizontal"
-      aria-valuemax="9"
-      aria-valuemin="0"
-      aria-valuenow="2"
-      class="bpk-slider__handle bpk-slider__handle--large bpk-slider__handle bpk-slider__handle--large-0 "
-      role="slider"
-      style="position: absolute; z-index: 1; left: 0px;"
-      tabindex="0"
-    />
-  </div>
-</DocumentFragment>
-`;
-
 exports[`BpkSlider should render correctly with a "step" attribute 1`] = `
 <DocumentFragment>
   <div
