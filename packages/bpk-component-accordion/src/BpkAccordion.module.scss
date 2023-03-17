@@ -20,4 +20,8 @@
 
 .bpk-accordion {
   margin: 0;
+
+  &--day {
+    color: $bpk-text-on-dark-day;
+  }
 }

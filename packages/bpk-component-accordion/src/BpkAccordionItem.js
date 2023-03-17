@@ -19,8 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import type { Node, Element } from 'react';
-import { cloneElement } from 'react';
+import { Node, Element, useContext, cloneElement } from 'react';
 
 import AnimateHeight from '../../bpk-animate-height';
 import { withButtonAlignment } from '../../bpk-component-icon';
@@ -28,6 +27,7 @@ import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
+import { BpkAccordionContext } from './BpkAccordion';
 import STYLES from './BpkAccordionItem.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -46,7 +46,11 @@ type Props = {
 };
 
 const BpkAccordionItem = (props: Props) => {
+  const { onDark } = useContext(BpkAccordionContext);
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
+  const titleTextClassNames = [getClassName('bpk-accordion__title-text')];
+  const titleClassNames = [getClassName('bpk-accordion__title')];
+  const contentClassNames = [getClassName('bpk-accordion__content-container')];
   const {
     children,
     expanded,
@@ -65,10 +69,31 @@ const BpkAccordionItem = (props: Props) => {
   // $FlowFixMe[prop-missing] - see above
   delete rest.initiallyExpanded;
 
-  if (expanded) {
+  if (expanded && !onDark) {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--flipped'),
     );
+    contentClassNames.push(
+      getClassName('bpk-accordion__content-container--expanded'),
+    );
+  }
+
+  if (expanded && onDark) {
+    iconClassNames.push(getClassName('bpk-accordion__item-expand-icon--day'));
+    contentClassNames.push(
+      getClassName('bpk-accordion__content-container--expanded-day'),
+    );
+    titleTextClassNames.push(getClassName('bpk-accordion__title-text--day'));
+  }
+
+  if (!expanded && onDark) {
+    iconClassNames.push(getClassName('bpk-accordion__item-expand-icon--day'));
+    titleClassNames.push(getClassName('bpk-accordion__title--expanded-day'));
+    titleTextClassNames.push(getClassName('bpk-accordion__title-text--day'));
+  }
+
+  if (!expanded && !onDark) {
+    titleClassNames.push(getClassName('bpk-accordion__title--expanded'));
   }
 
   const contentId = `${id}_content`;
@@ -81,7 +106,7 @@ const BpkAccordionItem = (props: Props) => {
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <div id={id} {...rest}>
-      <dt className={getClassName('bpk-accordion__title')}>
+      <dt className={titleClassNames.join(' ')}>
         <button
           type="button"
           aria-expanded={expanded}
@@ -93,7 +118,7 @@ const BpkAccordionItem = (props: Props) => {
             <BpkText
               textStyle={textStyle}
               tagName={tagName}
-              className={getClassName('bpk-accordion__title-text')}
+              className={titleTextClassNames.join(' ')}
             >
               {clonedIcon}
               {title}
@@ -104,10 +129,7 @@ const BpkAccordionItem = (props: Props) => {
           </span>
         </button>
       </dt>
-      <dd
-        id={contentId}
-        className={getClassName('bpk-accordion__content-container')}
-      >
+      <dd id={contentId} className={contentClassNames.join(' ')}>
         <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
           {children}
         </AnimateHeight>
