@@ -6,7 +6,7 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
     id="my-accordion"
   >
     <dt
-      class="bpk-accordion__title"
+      class="bpk-accordion__title bpk-accordion__title--expanded"
     >
       <button
         aria-controls="my-accordion_content"
@@ -69,7 +69,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
     id="my-accordion"
   >
     <dt
-      class="bpk-accordion__title"
+      class="bpk-accordion__title bpk-accordion__title--expanded"
     >
       <button
         aria-controls="my-accordion_content"
@@ -133,7 +133,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
     id="my-accordion"
   >
     <dt
-      class="bpk-accordion__title"
+      class="bpk-accordion__title bpk-accordion__title--expanded"
     >
       <button
         aria-controls="my-accordion_content"
@@ -236,7 +236,7 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
       </button>
     </dt>
     <dd
-      class="bpk-accordion__content-container"
+      class="bpk-accordion__content-container bpk-accordion__content-container--expanded"
       id="my-accordion_content"
     >
       <div
@@ -257,7 +257,7 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
     id="my-accordion"
   >
     <dt
-      class="bpk-accordion__title"
+      class="bpk-accordion__title bpk-accordion__title--expanded"
     >
       <button
         aria-controls="my-accordion_content"
@@ -320,7 +320,7 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
     id="my-accordion"
   >
     <dt
-      class="bpk-accordion__title"
+      class="bpk-accordion__title bpk-accordion__title--expanded"
     >
       <button
         aria-controls="my-accordion_content"
@@ -383,7 +383,7 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
     id="my-accordion"
   >
     <dt
-      class="bpk-accordion__title"
+      class="bpk-accordion__title bpk-accordion__title--expanded"
     >
       <button
         aria-controls="my-accordion_content"
@@ -449,5 +449,69 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
       </div>
     </dd>
   </div>
+</DocumentFragment>
+`;
+
+exports[`BpkAccordionItem should render correctly with onDark set 1`] = `
+<DocumentFragment>
+  <div
+    id="my-accordion"
+  >
+    <dt
+      class="bpk-accordion__title bpk-accordion__title--expanded-day"
+    >
+      <button
+        aria-controls="my-accordion_content"
+        aria-expanded="false"
+        class="bpk-accordion__toggle-button"
+        type="button"
+      >
+        <span
+          class="bpk-accordion__flex-container"
+        >
+          <span
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text bpk-accordion__title-text--day"
+          >
+            My accordion item
+          </span>
+          <span
+            class="bpk-accordion__icon-wrapper"
+          >
+            <span
+              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+            >
+              <svg
+                class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--day"
+                height="16"
+                style="width: 1rem; height: 1rem;"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+                />
+              </svg>
+            </span>
+          </span>
+        </span>
+      </button>
+    </dt>
+    <dd
+      class="bpk-accordion__content-container"
+      id="my-accordion_content"
+    >
+      <div
+        style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+      >
+        <div
+          style="display: none;"
+        >
+          My accordion content
+        </div>
+      </div>
+    </dd>
+  </div>
+  ,
 </DocumentFragment>
 `;

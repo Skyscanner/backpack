@@ -6,7 +6,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
     id="my-accordion"
   >
     <dt
-      class="bpk-accordion__title"
+      class="bpk-accordion__title bpk-accordion__title--expanded"
     >
       <button
         aria-controls="my-accordion_content"
@@ -69,7 +69,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
     id="my-accordion"
   >
     <dt
-      class="bpk-accordion__title"
+      class="bpk-accordion__title bpk-accordion__title--expanded"
     >
       <button
         aria-controls="my-accordion_content"
@@ -172,7 +172,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
       </button>
     </dt>
     <dd
-      class="bpk-accordion__content-container"
+      class="bpk-accordion__content-container bpk-accordion__content-container--expanded"
       id="my-accordion_content"
     >
       <div
