@@ -79,6 +79,9 @@ const BpkAccordionItem = (props: Props) => {
   }
 
   if (expanded && onDark) {
+    iconClassNames.push(
+      getClassName('bpk-accordion__item-expand-icon--flipped'),
+    );
     iconClassNames.push(getClassName('bpk-accordion__item-expand-icon--day'));
     contentClassNames.push(
       getClassName('bpk-accordion__content-container--expanded-day'),
