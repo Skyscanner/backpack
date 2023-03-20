@@ -77,7 +77,7 @@ const BpkPrice = (props: Props) => {
             {previousPrice}
           </BpkText>
         )}
-        {previousPrice && (
+        {previousPrice && leadingText && (
           <BpkText
             textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
             tagName="span"

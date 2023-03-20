@@ -65,6 +65,17 @@ describe.each([
       <BpkPrice
         {...props}
         previousPrice={previousPrice}
+        trailingText={trailingText}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should support previous price with leading text attribute', () => {
+    const { asFragment } = render(
+      <BpkPrice
+        {...props}
+        previousPrice={previousPrice}
         leadingText={leadingText}
         trailingText={trailingText}
       />,

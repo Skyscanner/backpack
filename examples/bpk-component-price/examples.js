@@ -29,6 +29,10 @@ const SmallWithLeadingAndTrailingTextExample = () => (
 );
 
 const SmallWithPreviousPriceExample = () => (
+  <BpkPrice previousPrice="£2,033" price="£1,830" trailingText="per day" />
+);
+
+const SmallWithPreviousPriceLeadingTextExample = () => (
   <BpkPrice
     previousPrice="£2,033"
     leadingText="Web only deal"
@@ -82,6 +86,15 @@ const LargeWithLeadingAndTrailingTextExample = () => (
 const LargeWithPreviousPriceExample = () => (
   <BpkPrice
     size={SIZES.large}
+    price="£1,830"
+    trailingText="per day"
+    previousPrice="£2,033"
+  />
+);
+
+const LargeWithPreviousPriceLeadingTextExample = () => (
+  <BpkPrice
+    size={SIZES.large}
     leadingText="App only deal"
     price="£1,830"
     trailingText="per day"
@@ -113,6 +126,7 @@ const MixedExample = () => (
     <SmallWithTrailingTextExample />
     <SmallWithLeadingAndTrailingTextExample />
     <SmallWithPreviousPriceExample />
+    <SmallWithPreviousPriceLeadingTextExample />
     <SmallRightExample />
     <SmallRightWithTrailingTextExample />
     <SmallRightWithLeadingandTrailingTextExample />
@@ -121,6 +135,7 @@ const MixedExample = () => (
     <LargeWithTrailingTextExample />
     <LargeWithLeadingAndTrailingTextExample />
     <LargeWithPreviousPriceExample />
+    <LargeWithPreviousPriceLeadingTextExample />
     <LargeLongPriceExample />
   </div>
 );
@@ -130,6 +145,7 @@ export {
   SmallWithTrailingTextExample,
   SmallWithLeadingAndTrailingTextExample,
   SmallWithPreviousPriceExample,
+  SmallWithPreviousPriceLeadingTextExample,
   SmallRightExample,
   SmallRightWithTrailingTextExample,
   SmallRightWithLeadingandTrailingTextExample,
@@ -138,6 +154,7 @@ export {
   LargeWithTrailingTextExample,
   LargeWithLeadingAndTrailingTextExample,
   LargeWithPreviousPriceExample,
+  LargeWithPreviousPriceLeadingTextExample,
   LargeLongPriceExample,
   MixedExample,
 };
