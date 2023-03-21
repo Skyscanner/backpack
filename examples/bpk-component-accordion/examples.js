@@ -376,6 +376,20 @@ const WithSeoContentExample = () => (
   </SingleItemAccordion>
 );
 
+const SingleItemExampleWithoutDivider = () => (
+  <SingleItemAccordion withDivider={false}>
+    <BpkAccordionItem id="stops" title="Stops" initiallyExpanded>
+      <StopsContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem id="airlines" title="Airlines">
+      <AirlinesContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem id="airports" title="Airports">
+      <AirportsContent />
+    </BpkAccordionItem>
+  </SingleItemAccordion>
+);
+
 export {
   SingleItemExample,
   SingleItemExampleInitiallyExpandedExample,
@@ -388,4 +402,5 @@ export {
   WithDarkBackgroundExample,
   WithSeoContentExample,
   WithSeoContentOnDarkExample,
+  SingleItemExampleWithoutDivider,
 };

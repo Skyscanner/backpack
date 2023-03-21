@@ -29,7 +29,10 @@ const getClassName = cssModules(STYLES);
 
 type Props = { children: Node, className: ?string };
 
-export const BpkAccordionContext = createContext({ onDark: false });
+export const BpkAccordionContext = createContext({
+  onDark: false,
+  withDivider: true,
+});
 
 const BpkAccordion = (props: Props) => {
   const { children, className, ...rest } = props;
@@ -41,7 +44,9 @@ const BpkAccordion = (props: Props) => {
   );
 
   return (
-    <BpkAccordionContext.Provider value={{ onDark: props.onDark }}>
+    <BpkAccordionContext.Provider
+      value={{ onDark: props.onDark, withDivider: props.withDivider }}
+    >
       {/* // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
       <dl className={classNames} {...rest}>
         {children}
@@ -54,11 +59,13 @@ BpkAccordion.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   onDark: PropTypes.bool,
+  withDivider: PropTypes.bool,
 };
 
 BpkAccordion.defaultProps = {
   className: null,
   onDark: false,
+  withDivider: true,
 };
 
 export default BpkAccordion;

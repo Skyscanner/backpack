@@ -46,7 +46,7 @@ type Props = {
 };
 
 const BpkAccordionItem = (props: Props) => {
-  const { onDark } = useContext(BpkAccordionContext);
+  const { onDark, withDivider } = useContext(BpkAccordionContext);
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
   const titleTextClassNames = [getClassName('bpk-accordion__title-text')];
   const titleClassNames = [getClassName('bpk-accordion__title')];
@@ -73,9 +73,11 @@ const BpkAccordionItem = (props: Props) => {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--flipped'),
     );
-    contentClassNames.push(
-      getClassName('bpk-accordion__content-container--expanded'),
-    );
+    if (withDivider) {
+      contentClassNames.push(
+        getClassName('bpk-accordion__content-container--expanded'),
+      );
+    }
   }
 
   if (expanded && onDark) {
@@ -85,9 +87,11 @@ const BpkAccordionItem = (props: Props) => {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--on-dark'),
     );
-    contentClassNames.push(
-      getClassName('bpk-accordion__content-container--expanded-on-dark'),
-    );
+    if (withDivider) {
+      contentClassNames.push(
+        getClassName('bpk-accordion__content-container--expanded-on-dark'),
+      );
+    }
     titleTextClassNames.push(
       getClassName('bpk-accordion__title-text--on-dark'),
     );
@@ -97,15 +101,17 @@ const BpkAccordionItem = (props: Props) => {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--on-dark'),
     );
-    titleClassNames.push(
-      getClassName('bpk-accordion__title--collapsed-on-dark'),
-    );
+    if (withDivider) {
+      titleClassNames.push(
+        getClassName('bpk-accordion__title--collapsed-on-dark'),
+      );
+    }
     titleTextClassNames.push(
       getClassName('bpk-accordion__title-text--on-dark'),
     );
   }
 
-  if (!expanded && !onDark) {
+  if (!expanded && !onDark && withDivider) {
     titleClassNames.push(getClassName('bpk-accordion__title--collapsed'));
   }
 

@@ -30,6 +30,7 @@ import {
   WithDarkBackgroundExample,
   WithSeoContentExample,
   WithSeoContentOnDarkExample,
+  SingleItemExampleWithoutDivider,
 } from './examples';
 
 export default {
@@ -57,5 +58,7 @@ export const WithBoldTitles = WithBoldTitlesExample;
 export const WithDarkBackground = WithDarkBackgroundExample;
 export const WithContent = WithSeoContentExample;
 export const WithSeoContentOnDark = WithSeoContentOnDarkExample;
+
+export const WithoutDivider = SingleItemExampleWithoutDivider;
 
 export const VisualTest = SingleItemExample;
