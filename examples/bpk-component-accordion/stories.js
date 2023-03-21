@@ -59,3 +59,4 @@ export const WithContent = WithSeoContentExample;
 export const WithSeoContentOnDark = WithSeoContentOnDarkExample;
 
 export const VisualTest = SingleItemExample;
+export const VisualTestOnDark = WithDarkBackgroundExample;
