@@ -62,3 +62,4 @@ export const WithSeoContentOnDark = WithSeoContentOnDarkExample;
 export const WithoutDivider = SingleItemExampleWithoutDivider;
 
 export const VisualTest = SingleItemExample;
+export const VisualTestOnDark = WithDarkBackgroundExample;
