@@ -27,8 +27,8 @@ import BpkOverlay, {
 
 import STYLES from './examples.module.scss';
 
-const EDI_IMAGE_SRC =
-  'https://images.unsplash.com/photo-1506377585622-bedcbb027afc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80';
+const IMAGE_SRC =
+  'https://content.skyscnr.com/m/1c8c6338a92a7a94/original/matt-hardy-6ArTTluciuA-unsplash.jpg';
 
 const getClassName = cssModules(STYLES);
 
@@ -40,8 +40,8 @@ const SolidExamples = () => (
           <div className={getClassName('bpk-overlay-stories__overlay-story')}>
             <BpkOverlay overlayType={OVERLAY_TYPES.solid} overlayLevel={level}>
               <BpkImage
-                src={EDI_IMAGE_SRC}
-                altText="Edinburgh skyline"
+                src={IMAGE_SRC}
+                altText="Ocean Ripple by Matt Hardy"
                 aspectRatio={1.8}
               />
             </BpkOverlay>
@@ -66,8 +66,8 @@ const TopExamples = () => (
           <div className={getClassName('bpk-overlay-stories__overlay-story')}>
             <BpkOverlay overlayType={OVERLAY_TYPES.top} overlayLevel={level}>
               <BpkImage
-                src={EDI_IMAGE_SRC}
-                altText="Edinburgh skyline"
+                src={IMAGE_SRC}
+                altText="Ocean Ripple by Matt Hardy"
                 aspectRatio={1.8}
               />
             </BpkOverlay>
@@ -92,8 +92,8 @@ const BottomExamples = () => (
           <div className={getClassName('bpk-overlay-stories__overlay-story')}>
             <BpkOverlay overlayType={OVERLAY_TYPES.bottom} overlayLevel={level}>
               <BpkImage
-                src={EDI_IMAGE_SRC}
-                altText="Edinburgh skyline"
+                src={IMAGE_SRC}
+                altText="Ocean Ripple by Matt Hardy"
                 aspectRatio={1.8}
               />
             </BpkOverlay>
@@ -118,8 +118,8 @@ const LeftExamples = () => (
           <div className={getClassName('bpk-overlay-stories__overlay-story')}>
             <BpkOverlay overlayType={OVERLAY_TYPES.left} overlayLevel={level}>
               <BpkImage
-                src={EDI_IMAGE_SRC}
-                altText="Edinburgh skyline"
+                src={IMAGE_SRC}
+                altText="Ocean Ripple by Matt Hardy"
                 aspectRatio={1.8}
               />
             </BpkOverlay>
@@ -144,8 +144,8 @@ const RightExamples = () => (
           <div className={getClassName('bpk-overlay-stories__overlay-story')}>
             <BpkOverlay overlayType={OVERLAY_TYPES.right} overlayLevel={level}>
               <BpkImage
-                src={EDI_IMAGE_SRC}
-                altText="Edinburgh skyline"
+                src={IMAGE_SRC}
+                altText="Ocean Ripple by Matt Hardy"
                 aspectRatio={1.8}
               />
             </BpkOverlay>
@@ -169,8 +169,8 @@ const VignetteExample = () => (
       overlayLevel={OVERLAY_LEVELS.high}
     >
       <BpkImage
-        src={EDI_IMAGE_SRC}
-        altText="Edinburgh skyline"
+        src={IMAGE_SRC}
+        altText="Ocean Ripple by Matt Hardy"
         aspectRatio={1.8}
       />
     </BpkOverlay>
@@ -187,14 +187,14 @@ const WithForegroundContentExample = () => (
     foregroundContent={
       <div className={getClassName('bpk-overlay-stories__foreground')}>
         <BpkText textStyle={TEXT_STYLES.xl}>
-          Visit Edinburgh, Scotland&apos;s illustrious capital
+          Take a break from the city and relax in pure bliss
         </BpkText>
       </div>
     }
   >
     <BpkImage
-      src={EDI_IMAGE_SRC}
-      altText="Edinburgh skyline"
+      src={IMAGE_SRC}
+      altText="Ocean Ripple by Matt Hardy"
       aspectRatio={1.8}
     />
   </BpkOverlay>

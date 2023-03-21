@@ -18,7 +18,6 @@
 
 import {
   SimpleSliderExample,
-  SimpleLargeSliderExample,
   TimeSliderExample,
   SimpleSliderWithStepsExample,
   RangeSliderExample,
@@ -31,8 +30,6 @@ export default {
 };
 
 export const SimpleSlider = SimpleSliderExample;
-
-export const SimpleLargeSlider = SimpleLargeSliderExample;
 
 export const TimeSlider = TimeSliderExample;
 

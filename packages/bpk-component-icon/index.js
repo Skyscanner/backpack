@@ -20,7 +20,6 @@ import {
   iconSizeSm,
   iconSizeLg,
   privateButtonLineHeight,
-  privateButtonLargeLineHeight,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import withAlignment from './src/withAlignment';
@@ -33,11 +32,7 @@ function withButtonAlignment(WrappedComponent) {
 }
 
 function withLargeButtonAlignment(WrappedComponent) {
-  return withAlignment(
-    WrappedComponent,
-    privateButtonLargeLineHeight,
-    iconSizeLg,
-  );
+  return withAlignment(WrappedComponent, privateButtonLineHeight, iconSizeLg);
 }
 
 export {
