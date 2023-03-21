@@ -32,11 +32,11 @@ type Props = { children: Node, className: ?string };
 export const BpkAccordionContext = createContext({ onDark: false });
 
 const BpkAccordion = (props: Props) => {
-  const { children, className, ...rest } = props;
+  const { children, className, onDark, ...rest } = props;
 
   const classNames = getClassName(
     'bpk-accordion',
-    props.onDark && 'bpk-accordion--on-dark',
+    onDark && 'bpk-accordion--on-dark',
     className,
   );
 
