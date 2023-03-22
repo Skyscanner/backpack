@@ -41,7 +41,7 @@ const BpkAccordion = (props: Props) => {
   );
 
   return (
-    <BpkAccordionContext.Provider value={{ onDark: props.onDark }}>
+    <BpkAccordionContext.Provider value={{ onDark }}>
       {/* // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
       <dl className={classNames} {...rest}>
         {children}
