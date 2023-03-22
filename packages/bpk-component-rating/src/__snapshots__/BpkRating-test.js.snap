@@ -24,7 +24,7 @@ exports[`BpkRating should correctly handling values higher than 5 when rating sc
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
+        class="bpk-text bpk-text--label-1 bpk-rating__title--with-subtitle"
       >
         Smashing
       </span>
@@ -63,7 +63,7 @@ exports[`BpkRating should correctly handling values higher than 10 when rating s
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
+        class="bpk-text bpk-text--label-1 bpk-rating__title--with-subtitle"
       >
         Amazing
       </span>
@@ -102,7 +102,7 @@ exports[`BpkRating should correctly handling values lower than 0 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
+        class="bpk-text bpk-text--label-1 bpk-rating__title--with-subtitle"
       >
         Low
       </span>
@@ -141,7 +141,7 @@ exports[`BpkRating should correctly when value is string type 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
+        class="bpk-text bpk-text--label-1 bpk-rating__title--with-subtitle"
       >
         Wonderful
       </span>
@@ -174,7 +174,7 @@ exports[`BpkRating should not show scale with showScale=false correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
+        class="bpk-text bpk-text--label-1 bpk-rating__title--with-subtitle"
       >
         Awesome
       </span>
@@ -213,7 +213,7 @@ exports[`BpkRating should render correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
+        class="bpk-text bpk-text--label-1 bpk-rating__title--with-subtitle"
       >
         Excellent
       </span>
@@ -252,7 +252,7 @@ exports[`BpkRating should render large size correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--heading-5 bpk-rating__title--large"
+        class="bpk-text bpk-text--heading-5 bpk-rating__title--with-subtitle bpk-rating__title--large"
       >
         Excellent
       </span>
@@ -324,7 +324,7 @@ exports[`BpkRating should render showScale rating correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
+        class="bpk-text bpk-text--label-1 bpk-rating__title--with-subtitle"
       >
         Average
       </span>
@@ -396,7 +396,7 @@ exports[`BpkRating should render zero to ten scale rating correctly 1`] = `
     >
       <span
         aria-hidden="true"
-        class="bpk-text bpk-text--label-1"
+        class="bpk-text bpk-text--label-1 bpk-rating__title--with-subtitle"
       >
         Excellent
       </span>
