@@ -27,6 +27,9 @@ import {
   CustomTitleTextStyleExample,
   WithIconsExample,
   WithBoldTitlesExample,
+  WithDarkBackgroundExample,
+  WithSeoContentExample,
+  WithSeoContentOnDarkExample,
 } from './examples';
 
 export default {
@@ -51,4 +54,9 @@ export const WithIcons = WithIconsExample;
 
 export const WithBoldTitles = WithBoldTitlesExample;
 
+export const WithDarkBackground = WithDarkBackgroundExample;
+export const WithContent = WithSeoContentExample;
+export const WithSeoContentOnDark = WithSeoContentOnDarkExample;
+
 export const VisualTest = SingleItemExample;
+export const VisualTestOnDark = WithDarkBackgroundExample;

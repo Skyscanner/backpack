@@ -22,6 +22,7 @@ import { render } from '@testing-library/react';
 
 import StopsIcon from '../../bpk-component-icon/sm/stops';
 
+import { BpkAccordionContext } from './BpkAccordion';
 import BpkAccordionItem from './BpkAccordionItem';
 
 describe('BpkAccordionItem', () => {
@@ -104,6 +105,18 @@ describe('BpkAccordionItem', () => {
       >
         My accordion content
       </BpkAccordionItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with onDark set', () => {
+    const { asFragment } = render(
+      <BpkAccordionContext.Provider value={{ onDark: true }}>
+        <BpkAccordionItem id="my-accordion" title="My accordion item">
+          My accordion content
+        </BpkAccordionItem>
+        ,
+      </BpkAccordionContext.Provider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

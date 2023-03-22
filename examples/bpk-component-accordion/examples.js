@@ -23,9 +23,11 @@ import {
   colorPanjin,
   iconSizeSm,
   lineHeightBase,
+  surfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
+import BpkText from '../../packages/bpk-component-text';
 import { withAlignment } from '../../packages/bpk-component-icon';
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
 import TimeIcon from '../../packages/bpk-component-icon/sm/time';
@@ -153,6 +155,16 @@ const AirportsContent = () => (
       />
     </CheckboxWrapper>
   </form>
+);
+
+const SeoTextContent = () => (
+  <BpkText>
+    Synth umami, whatever tacos vape retro selvage venmo cred kale chips photo
+    booth neutra mlkshk. Cold-pressed banh mi williamsburg deep v master cleanse
+    woke vinyl slow-carb glossier man braid bitters iceland venmo 8-bit
+    vexillologist. Fashion axe air plant shabby chic bushwick man braid. Vice
+    fam typewriter iPhone selfies tattooed.
+  </BpkText>
 );
 
 const SingleItemExample = () => (
@@ -303,6 +315,67 @@ const WithBoldTitlesExample = () => (
   </SingleItemAccordion>
 );
 
+const WithDarkBackgroundExample = () => (
+  <div style={{ backgroundColor: surfaceContrastDay }}>
+    <SingleItemAccordion onDark>
+      <BpkAccordionItem
+        id="stops"
+        title="Stops"
+        initiallyExpanded
+        textStyle="label-1"
+      >
+        <StopsContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem id="airlines" title="Airlines" textStyle="heading-4">
+        <AirlinesContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem id="airports" title="Airports" textStyle="heading-3">
+        <AirportsContent />
+      </BpkAccordionItem>
+    </SingleItemAccordion>
+  </div>
+);
+
+const WithSeoContentOnDarkExample = () => (
+  <div style={{ backgroundColor: surfaceContrastDay }}>
+    <SingleItemAccordion onDark>
+      <BpkAccordionItem
+        id="travel"
+        title="Join 100 million savvy travellers as you compare flights, hotels and cars from hundreds of providers. Here’s how."
+        textStyle="heading-5"
+      >
+        <SeoTextContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem
+        id="travel-2"
+        title="Our international sites"
+        textStyle="heading-3"
+      >
+        <SeoTextContent />
+      </BpkAccordionItem>
+    </SingleItemAccordion>
+  </div>
+);
+
+const WithSeoContentExample = () => (
+  <SingleItemAccordion>
+    <BpkAccordionItem
+      id="travel"
+      title="Join 100 million savvy travellers as you compare flights, hotels and cars from hundreds of providers. Here’s how."
+      textStyle="heading-5"
+    >
+      <SeoTextContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem
+      id="travel-2"
+      title="Our international sites"
+      textStyle="heading-3"
+    >
+      <SeoTextContent />
+    </BpkAccordionItem>
+  </SingleItemAccordion>
+);
+
 export {
   SingleItemExample,
   SingleItemExampleInitiallyExpandedExample,
@@ -312,4 +385,7 @@ export {
   CustomTitleTextStyleExample,
   WithIconsExample,
   WithBoldTitlesExample,
+  WithDarkBackgroundExample,
+  WithSeoContentExample,
+  WithSeoContentOnDarkExample,
 };
