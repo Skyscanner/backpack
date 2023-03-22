@@ -49,20 +49,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: Publishing
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-        with:
-          ref: main
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.13.0'
-          registry-url: 'https://registry.npmjs.org'
-
-      - run: npm ci
-
       - name: Update Supernova docs
-        run: supernova publish-documentation --apiKey=$SUPERNOVA_API_KEY --designSystemid=$DESIGN_SYSTEM_ID
+        run: npx @supernovaio/cli publish-documentation --apiKey=$SUPERNOVA_API_KEY --designSystemid=$DESIGN_SYSTEM_ID
         env:
           SUPERNOVA_API_KEY: ${{ secrets.SUPERNOVA_API_KEY }}
           DESIGN_SYSTEM_ID: ${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
