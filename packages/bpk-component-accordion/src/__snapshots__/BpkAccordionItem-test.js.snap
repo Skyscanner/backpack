@@ -470,7 +470,7 @@ exports[`BpkAccordionItem should render correctly with no divider 1`] = `
           class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default bpk-accordion__title-text bpk-accordion__title-text--on-dark"
           >
             My accordion item
           </span>
@@ -481,7 +481,7 @@ exports[`BpkAccordionItem should render correctly with no divider 1`] = `
               style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
-                class="bpk-accordion__item-expand-icon"
+                class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--on-dark"
                 height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
