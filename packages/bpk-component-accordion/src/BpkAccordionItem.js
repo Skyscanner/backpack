@@ -46,7 +46,7 @@ type Props = {
 };
 
 const BpkAccordionItem = (props: Props) => {
-  const { onDark, withDivider } = useContext(BpkAccordionContext);
+  const { divider, onDark } = useContext(BpkAccordionContext);
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
   const titleTextClassNames = [getClassName('bpk-accordion__title-text')];
   const titleClassNames = [getClassName('bpk-accordion__title')];
@@ -73,7 +73,7 @@ const BpkAccordionItem = (props: Props) => {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--flipped'),
     );
-    if (withDivider) {
+    if (divider) {
       contentClassNames.push(
         getClassName('bpk-accordion__content-container--expanded'),
       );
@@ -87,7 +87,7 @@ const BpkAccordionItem = (props: Props) => {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--on-dark'),
     );
-    if (withDivider) {
+    if (divider) {
       contentClassNames.push(
         getClassName('bpk-accordion__content-container--expanded-on-dark'),
       );
@@ -101,7 +101,7 @@ const BpkAccordionItem = (props: Props) => {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--on-dark'),
     );
-    if (withDivider) {
+    if (divider) {
       titleClassNames.push(
         getClassName('bpk-accordion__title--collapsed-on-dark'),
       );
@@ -111,7 +111,7 @@ const BpkAccordionItem = (props: Props) => {
     );
   }
 
-  if (!expanded && !onDark && withDivider) {
+  if (!expanded && !onDark && divider) {
     titleClassNames.push(getClassName('bpk-accordion__title--collapsed'));
   }
 

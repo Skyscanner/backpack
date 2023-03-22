@@ -85,7 +85,7 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 | children        | node     | true     | -             |
 | className       | string   | false    | null          |
 | onDark          | bool     | false    | false         |
-| withDivider     | bool     | false    | true          |
+| divider         | bool     | false    | true          |
 
 ### BpkAccordionItem
 

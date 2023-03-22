@@ -377,7 +377,7 @@ const WithSeoContentExample = () => (
 );
 
 const SingleItemExampleWithoutDivider = () => (
-  <SingleItemAccordion withDivider={false}>
+  <SingleItemAccordion divider={false}>
     <BpkAccordionItem id="stops" title="Stops" initiallyExpanded>
       <StopsContent />
     </BpkAccordionItem>
