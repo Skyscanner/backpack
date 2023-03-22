@@ -111,7 +111,19 @@ describe('BpkAccordionItem', () => {
 
   it('should render correctly with onDark set', () => {
     const { asFragment } = render(
-      <BpkAccordionContext.Provider value={{ onDark: true }}>
+      <BpkAccordionContext.Provider value={{ onDark: true, divider: true }}>
+        <BpkAccordionItem id="my-accordion" title="My accordion item">
+          My accordion content
+        </BpkAccordionItem>
+        ,
+      </BpkAccordionContext.Provider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with no divider', () => {
+    const { asFragment } = render(
+      <BpkAccordionContext.Provider value={{ onDark: true, divider: false }}>
         <BpkAccordionItem id="my-accordion" title="My accordion item">
           My accordion content
         </BpkAccordionItem>

@@ -80,11 +80,12 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 
 ### BpkAccordion
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | node     | true     | -             |
-| className | string   | false    | null          |
-| onDark    | bool     | false    | false         |
+| Property        | PropType | Required | Default Value |
+| --------------- | -------- | -------- | ------------- |
+| children        | node     | true     | -             |
+| className       | string   | false    | null          |
+| onDark          | bool     | false    | false         |
+| divider         | bool     | false    | true          |
 
 ### BpkAccordionItem
 
