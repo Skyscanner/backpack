@@ -21,6 +21,7 @@ import {
   SmallWithTrailingTextExample,
   SmallWithLeadingAndTrailingTextExample,
   SmallWithPreviousPriceExample,
+  SmallWithPreviousPriceLeadingTextExample,
   SmallRightExample,
   SmallRightWithTrailingTextExample,
   SmallRightWithLeadingandTrailingTextExample,
@@ -29,6 +30,7 @@ import {
   LargeWithTrailingTextExample,
   LargeWithLeadingAndTrailingTextExample,
   LargeWithPreviousPriceExample,
+  LargeWithPreviousPriceLeadingTextExample,
   LargeLongPriceExample,
   MixedExample,
 } from './examples';
@@ -42,6 +44,8 @@ export const SmallWithTrailingText = SmallWithTrailingTextExample;
 export const SmallWithLeadingAndTrailingText =
   SmallWithLeadingAndTrailingTextExample;
 export const SmallWithPreviousPrice = SmallWithPreviousPriceExample;
+export const SmallWithPreviousPriceLeadingText =
+  SmallWithPreviousPriceLeadingTextExample;
 export const SmallRight = SmallRightExample;
 export const SmallRightWithTrailingText = SmallRightWithTrailingTextExample;
 export const SmallRightWithLeadingandTrailingText =
@@ -52,6 +56,8 @@ export const LargeWithTrailingText = LargeWithTrailingTextExample;
 export const LargeWithLeadingAndTrailingText =
   LargeWithLeadingAndTrailingTextExample;
 export const LargeWithPreviousPrice = LargeWithPreviousPriceExample;
+export const LargeWithPreviousPriceLeadingText =
+  LargeWithPreviousPriceLeadingTextExample;
 export const LargeLongPrice = LargeLongPriceExample;
 
 export const VisualTest = MixedExample;
