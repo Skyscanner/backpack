@@ -123,7 +123,7 @@
     "bpk-mixins": "^40.2.1",
     "bpk-stylesheets": "^9.0.8",
     "core-js": "^3.0.0",
-    "css-loader": "^1.0.0",
+    "css-loader": "^6.7.3",
     "d3-scale": "^4.0.2",
     "danger": "^11.2.0",
     "date-fns": "^2.28.0",
