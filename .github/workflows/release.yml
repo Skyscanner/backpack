@@ -50,7 +50,7 @@ jobs:
     environment: Publishing
     steps:
       - name: Update Supernova docs
-        run: npx @supernovaio/cli publish-documentation --apiKey=$SUPERNOVA_API_KEY --designSystemid=$DESIGN_SYSTEM_ID
+        run: npx @supernovaio/cli publish-documentation --apiKey=$SUPERNOVA_API_KEY --designSystemId=$DESIGN_SYSTEM_ID
         env:
           SUPERNOVA_API_KEY: ${{ secrets.SUPERNOVA_API_KEY }}
           DESIGN_SYSTEM_ID: ${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
