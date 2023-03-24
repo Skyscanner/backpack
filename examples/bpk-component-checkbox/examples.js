@@ -29,6 +29,8 @@ import {
   BpkDarkExampleWrapper,
 } from '../../packages/bpk-storybook-utils';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
+import BpkText from '../../packages/bpk-component-text';
+import BpkLink from '../../packages/bpk-component-link';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
@@ -82,6 +84,40 @@ const DefaultExample = () => (
     <StatefulCheckbox id="bunol" name="bunol" label="Buñol" />
   </div>
 );
+
+const LinksExample = () => {
+  const abiskoLabel = (
+    <BpkText>
+      Travel to <BpkLink href="#">Abisko</BpkLink>
+    </BpkText>
+  );
+
+  const bunolLabel = (
+    <BpkText>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      Travel to <a href="#">Buñol</a>
+    </BpkText>
+  );
+
+  const abiskoAndBunolLabel = (
+    <BpkText>
+      Travel to <BpkLink href="#">Abisko</BpkLink> and{' '}
+      <BpkLink href="#">Buñol</BpkLink>
+    </BpkText>
+  );
+
+  return (
+    <div>
+      <StatefulCheckbox id="abisko" name="abisko" label={abiskoLabel} />
+      <StatefulCheckbox id="bunol" name="bunol" label={bunolLabel} />
+      <StatefulCheckbox
+        id="abisko-and-bunol"
+        name="abisko-and-bunol"
+        label={abiskoAndBunolLabel}
+      />
+    </div>
+  );
+};
 
 const IndeterminateExample = () => (
   <div>
@@ -188,6 +224,7 @@ const MixedExample = () => (
 
 export {
   DefaultExample,
+  LinksExample,
   IndeterminateExample,
   InvalidExample,
   MultilineExample,

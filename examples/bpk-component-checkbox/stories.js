@@ -20,6 +20,7 @@
 
 import {
   DefaultExample,
+  LinksExample,
   IndeterminateExample,
   InvalidExample,
   MultilineExample,
@@ -35,6 +36,7 @@ export default {
 };
 
 export const Default = DefaultExample;
+export const Links = LinksExample;
 export const Indeterminate = IndeterminateExample;
 export const Invalid = InvalidExample;
 export const Multiline = MultilineExample;
