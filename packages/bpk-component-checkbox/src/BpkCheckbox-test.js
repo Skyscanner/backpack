@@ -20,6 +20,8 @@
 
 import { render } from '@testing-library/react';
 
+import BpkLink from '../../bpk-component-link';
+
 import BpkCheckbox from './BpkCheckbox';
 
 describe('BpkCheckbox', () => {
@@ -115,6 +117,19 @@ describe('BpkCheckbox', () => {
     const { asFragment } = render(
       <BpkCheckbox name="checkbox" label="Prefer directs" required disabled />,
     );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should apply aria-hidden to all label text except links', () => {
+    const exampleLabel = (
+      <span>
+        This text contains a <BpkLink href="#">link</BpkLink>.
+      </span>
+    );
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label={exampleLabel} id="checkbox" />,
+    );
+
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,5 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BpkCheckbox should apply aria-hidden to all label text except links 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox"
+    for="checkbox"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="This text contains a link."
+      class="bpk-checkbox__input"
+      data-indeterminate="false"
+      id="checkbox"
+      name="checkbox"
+      type="checkbox"
+    />
+    <label
+      class="bpk-checkbox__label"
+    >
+      <span
+        aria-hidden="true"
+      >
+        This text contains a 
+      </span>
+      <a
+        class="bpk-link"
+        href="#"
+      >
+        link
+      </a>
+      <span
+        aria-hidden="true"
+      >
+        .
+      </span>
+    </label>
+  </label>
+</DocumentFragment>
+`;
+
 exports[`BpkCheckbox should render as disabled when required and disabled 1`] = `
 <DocumentFragment>
   <label
@@ -14,12 +53,15 @@ exports[`BpkCheckbox should render as disabled when required and disabled 1`] = 
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -37,12 +79,15 @@ exports[`BpkCheckbox should render correctly 1`] = `
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -60,12 +105,15 @@ exports[`BpkCheckbox should render correctly with a small label 1`] = `
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label bpk-checkbox__label--small"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -84,12 +132,15 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -108,12 +159,15 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -122,6 +176,7 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox"
+    for="checkbox"
   >
     <input
       aria-invalid="false"
@@ -132,12 +187,15 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -155,12 +213,15 @@ exports[`BpkCheckbox should render correctly with indeterminate attribute 1`] = 
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -179,12 +240,15 @@ exports[`BpkCheckbox should render correctly with indeterminate state when both 
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -202,17 +266,20 @@ exports[`BpkCheckbox should render correctly with required attribute 1`] = `
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
       <span
         class="bpk-checkbox__asterisk"
       >
         *
       </span>
-    </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -230,12 +297,15 @@ exports[`BpkCheckbox should render correctly with valid=false attribute 1`] = `
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -254,12 +324,15 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
       type="checkbox"
       value="my-value"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;
@@ -277,12 +350,15 @@ exports[`BpkCheckbox should render correctly with white attribute 1`] = `
       name="checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
+    <label
       class="bpk-checkbox__label"
     >
-      Prefer directs
-    </span>
+      <span
+        aria-hidden="true"
+      >
+        Prefer directs
+      </span>
+    </label>
   </label>
 </DocumentFragment>
 `;

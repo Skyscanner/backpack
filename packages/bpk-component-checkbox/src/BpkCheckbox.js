@@ -23,6 +23,10 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+import {
+  reduceLabelNodeToString,
+  selectivelyHideNonLinkElements,
+} from './accessibilityFunctions';
 import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -38,6 +42,7 @@ type Props = {
   valid: ?boolean,
   checked: boolean,
   indeterminate: boolean,
+  id: string | '',
 };
 
 const BpkCheckbox = (props: Props) => {
@@ -45,6 +50,7 @@ const BpkCheckbox = (props: Props) => {
     checked,
     className,
     disabled,
+    id,
     indeterminate,
     label,
     name,
@@ -78,14 +84,15 @@ const BpkCheckbox = (props: Props) => {
   );
 
   return (
-    <label className={classNames}>
+    <label htmlFor={id || null} className={classNames}>
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="checkbox"
         className={inputClasses}
         name={name}
+        id={id}
         disabled={disabled}
-        aria-label={label}
+        aria-label={reduceLabelNodeToString(label)}
         aria-invalid={isInvalid}
         data-indeterminate={indeterminate}
         ref={(e) => {
@@ -96,13 +103,12 @@ const BpkCheckbox = (props: Props) => {
         checked={checked}
         {...rest}
       />
-
-      <span className={labelClassNames} aria-hidden="true">
-        {label}
+      <label className={labelClassNames}>
+        {selectivelyHideNonLinkElements(label)}
         {!disabled && required && (
           <span className={getClassName('bpk-checkbox__asterisk')}>*</span>
         )}
-      </span>
+      </label>
     </label>
   );
 };
