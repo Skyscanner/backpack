@@ -7,6 +7,9 @@ defaults:
   run:
     shell: bash -l {0}
 
+env: 
+  CACHE_NAME: node-modules-cache
+
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -17,48 +20,61 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set the correct npm version
-        run: nvm install && nvm use
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
 
-      - name: Install dependencies from npm
-        run: |
-          nvm use
-          npm ci
+      - name: Restore Cache
+        uses: actions/cache/restore@v3.2.6
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Build Backpack
-        run: |
-          nvm use
-          npm run build
+        run: npm run build
 
       - name: Confirm the build hasn't changed any files
         run: ./scripts/check-pristine-state package-lock.json
 
       - name: Run typecheck
-        run: |
-          nvm use
-          npm run typecheck
+        run: npm run typecheck
 
       - name: Run tests
-        run: |
-          nvm use
-          npm test
+        run: npm test
 
-      - name: Danger
-        run: npm run danger
-        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  VisualTests: 
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v3.2.6
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Build Storybook
-        run: |
-          nvm use
-          npm run storybook:dist
+        run: npm run build && npm run storybook:dist
 
       - name: Run visual tests
         id: visualTests
-        run: |
-          nvm use
-          npm run jest:visual-tests
+        run: npm run jest:visual-tests
 
       - name: Upload failed visual tests (if necessary)
         uses: actions/upload-artifact@v3
@@ -90,3 +106,33 @@ jobs:
               repo: context.repo.repo,
               body: "Visual regression tests failed 😢. You can download the failure diffs from the 'Artifacts' section of the failed CI run. To update the tests, run `npm run jest:visual-tests:update` locally."
             })
+
+
+  Danger:
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+      pull-requests: write
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v3.2.6
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Danger
+        run: npm run danger
+        if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

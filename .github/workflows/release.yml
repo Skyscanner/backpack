@@ -8,19 +8,46 @@ defaults:
   run:
     shell: bash -l {0}
 
+env: 
+  CACHE_NAME: node-modules-cache
+
 jobs:
+  Create-NPM-Cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Upload to Cache
+        uses: actions/cache@v3.2.6
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
+        run: npm ci
+
   Build:
-      name: Build
-      permissions:
-        statuses: write
-        pull-requests: write
-      uses: ./.github/workflows/_build.yml
+    name: Build
+    needs: [Create-NPM-Cache]
+    permissions:
+      statuses: write
+      pull-requests: write
+    uses: ./.github/workflows/_build.yml
 
   ReleaseWeb:
     name: Release @skyscanner/backpack-web to NPM
     runs-on: ubuntu-latest
     environment: Publishing
-    needs: [Build]
+    needs: [Create-NPM-Cache, Build]
     steps:
     - name: Checkout source code
       uses: actions/checkout@v3
@@ -29,10 +56,17 @@ jobs:
     
     - uses: actions/setup-node@v3
       with:
-        node-version: '16.13.0'
+        node-version-file: ".nvmrc"
         registry-url: 'https://registry.npmjs.org'
 
-    - run: npm ci
+    - name: Restore Cache
+      uses: actions/cache/restore@v3.2.6
+      id: npm-cache
+      with:
+        path: |
+          node_modules/
+          packages/node_modules/
+        key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
     
     - run: npm run build
 
