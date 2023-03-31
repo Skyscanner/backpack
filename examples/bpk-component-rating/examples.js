@@ -178,6 +178,34 @@ const TitleOnlyExample = () => (
   </div>
 );
 
+const SubtitleOnlyExample = () => (
+  <div>
+    <BpkRating ariaLabel="2,420 reviews" value={4.8} subtitle="2,420 reviews" />
+    <br />
+    <BpkRating
+      ariaLabel="818 reviews"
+      value={4.5}
+      subtitle="818 reviews"
+      showScale={false}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="2,420 reviews"
+      value={4.8}
+      subtitle="2,420 reviews"
+      size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="818 reviews"
+      value={4.5}
+      subtitle="818 reviews"
+      size={RATING_SIZES.large}
+      showScale={false}
+    />
+  </div>
+);
+
 const ZeroToTenScaleExample = () => (
   <div>
     <BpkRating
@@ -258,6 +286,8 @@ const MixedExample = () => (
     <br />
     <BpkRating ariaLabel="4.5 Great" title={TripImageTitle} value={4.5} />
     <br />
+    <BpkRating ariaLabel="2,420 reviews" subtitle="2,420 reviews" value={2.3} />
+    <br />
     <BpkRating
       ariaLabel="2.3 Bad"
       title="Bad"
@@ -280,6 +310,13 @@ const MixedExample = () => (
       size={RATING_SIZES.large}
     />
     <br />
+    <BpkRating
+      ariaLabel="2,420 reviews"
+      subtitle="2,420 reviews"
+      value={2.3}
+      size={RATING_SIZES.large}
+    />
+    <br />
   </div>
 );
 
@@ -288,6 +325,7 @@ export {
   LargeSizeExample,
   ShowScaleExample,
   TitleOnlyExample,
+  SubtitleOnlyExample,
   ZeroToTenScaleExample,
   MixedExample,
 };

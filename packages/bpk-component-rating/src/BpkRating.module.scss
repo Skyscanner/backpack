@@ -59,28 +59,25 @@ $bpk-spacing-v2: true;
   }
 
   &__title {
+    &--with-subtitle {
+      padding-right: bpk-spacing-md();
+
+      @include bpk-rtl {
+        padding-right: 0;
+        padding-left: bpk-spacing-md();
+      }
+    }
+
     &--large {
       padding-top: $bpk-one-pixel-rem;
     }
   }
 
   &__subtitle {
-    padding-left: bpk-spacing-md();
     color: $bpk-text-secondary-day;
 
-    @include bpk-rtl {
-      padding-right: bpk-spacing-md();
-      padding-left: 0;
-    }
-
     &--large {
-      padding-top: $bpk-one-pixel-rem;
-      padding-left: 0;
-
-      @include bpk-rtl {
-        padding-right: 0;
-        padding-left: 0;
-      }
+      // padding-top: $bpk-one-pixel-rem;
     }
   }
 }

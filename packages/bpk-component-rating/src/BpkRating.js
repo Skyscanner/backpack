@@ -51,7 +51,7 @@ type Props = {
   showScale: ?boolean,
   size: $Values<typeof RATING_SIZES>,
   subtitle: ?string,
-  title: string | Node,
+  title: ?string | Node,
   value: string | number,
 };
 
@@ -71,7 +71,7 @@ const BpkRating = (props: Props) => {
   const classNames = getClassName(
     'bpk-rating',
     className,
-    size === RATING_SIZES.large && subtitle && 'bpk-rating--large',
+    size === RATING_SIZES.large && title && subtitle && 'bpk-rating--large',
   );
   const valueStyles = getClassName('bpk-rating__value');
   const scaleStyles = getClassName('bpk-rating__scale');
@@ -80,6 +80,7 @@ const BpkRating = (props: Props) => {
     size === RATING_SIZES.large && 'bpk-rating__text-wrapper--large',
   );
   const titleStyles = getClassName(
+    subtitle && 'bpk-rating__title--with-subtitle',
     size === RATING_SIZES.large && 'bpk-rating__title--large',
   );
   const subtitleStyles = getClassName(
@@ -132,14 +133,16 @@ const BpkRating = (props: Props) => {
       </BpkText>
 
       <div className={textWrapperStyles}>
-        <BpkText
-          textStyle={titleTextSize}
-          className={titleStyles}
-          tagName="span"
-          aria-hidden="true"
-        >
-          {title}
-        </BpkText>
+        {title && (
+          <BpkText
+            textStyle={titleTextSize}
+            className={titleStyles}
+            tagName="span"
+            aria-hidden="true"
+          >
+            {title}
+          </BpkText>
+        )}
 
         {subtitle && (
           <BpkText
@@ -158,13 +161,13 @@ const BpkRating = (props: Props) => {
 
 BpkRating.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   className: PropTypes.string,
   ratingScale: PropTypes.oneOf(Object.keys(RATING_SCALES)),
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
   subtitle: PropTypes.string,
   showScale: PropTypes.bool,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };
 
 BpkRating.defaultProps = {
@@ -173,6 +176,7 @@ BpkRating.defaultProps = {
   size: RATING_SIZES.base,
   subtitle: null,
   showScale: true,
+  title: null,
 };
 
 export default BpkRating;
