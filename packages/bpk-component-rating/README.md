@@ -35,6 +35,13 @@ export default () => (
     value={2.3}
   />
 
+  // Subtitle only rating
+  <BpkRating
+    ariaLabel="4.8 2,420 reviews"
+    value={4.8}
+    subtitle="2,420 reviews"
+  />
+
   // Show scale rating
   <BpkRating
     ariaLabel="3.8 Good 530 reviews"
@@ -68,8 +75,8 @@ export default () => (
 | Property  | PropType              | Required | Default Value     |
 | --------- | --------------------- | -------- | ----------------- |
 | ariaLabel | string                | true     | -                 |
-| title     | oneOfType(string, node) | true     | -                 |
 | value     | oneOfType(string, number) | true     | -               |
+| title     | oneOfType(string, node) | false     | -                 |
 | className | string                | false    | null              |
 | ratingScale | oneOf(RATING_SCALES) | false    | RATING_SCALES.zeroToFive |
 | size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |

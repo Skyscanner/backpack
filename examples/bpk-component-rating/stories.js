@@ -22,6 +22,7 @@ import {
   LargeSizeExample,
   ShowScaleExample,
   TitleOnlyExample,
+  SubtitleOnlyExample,
   ZeroToTenScaleExample,
   MixedExample,
 } from './examples';
@@ -36,6 +37,7 @@ export const LargeSizeRatings = LargeSizeExample;
 export const ShowScaleRatings = ShowScaleExample;
 
 export const TitleOnlyRatings = TitleOnlyExample;
+export const SubtitleOnlyRatings = SubtitleOnlyExample;
 
 export const ZeroToTenScaleRatings = ZeroToTenScaleExample;
 
