@@ -39,6 +39,7 @@ If you're using a SPA framework like `react-router-dom` or `Next.js` to navigate
 | blank     | bool     | false    | false         |
 | rel       | string   | false    | null          |
 | alternate | bool     | false    | false         |
+| ref       | any      | false    | null          |
 
 ### BpkButtonLink
 
