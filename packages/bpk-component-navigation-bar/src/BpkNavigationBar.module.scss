@@ -32,15 +32,14 @@ $bpk-spacing-v2: true;
   @include bpk-themeable-property(
     background-color,
     --bpk-navigation-bar-background-color,
-    $bpk-core-accent-day
+    $bpk-surface-default-day
   );
-  @include bpk-border-bottom-sm($bpk-line-day);
 
   &__title {
     @include bpk-themeable-property(
       color,
       --bpk-navigation-bar-title-color,
-      $bpk-text-primary-inverse-day
+      $bpk-text-primary-day
     );
   }
 
@@ -73,5 +72,7 @@ $bpk-spacing-v2: true;
     position: sticky;
     top: 0;
     z-index: $bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
+
+    @include bpk-box-shadow-sm;
   }
 }
