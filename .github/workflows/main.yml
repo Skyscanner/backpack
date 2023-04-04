@@ -14,6 +14,7 @@ defaults:
 
 env: 
   CACHE_NAME: node-modules-cache
+  BUILD_CACHE_NAME: build-cache
 
 jobs:
   Create-NPM-Cache:
@@ -38,16 +39,8 @@ jobs:
       - name: Install dependencies
         if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
         run: npm ci
-
-  Build:
-    name: Build
-    needs: [Create-NPM-Cache]
-    permissions:
-      statuses: write
-      pull-requests: write
-    uses: ./.github/workflows/_build.yml
-
-  StorybookDeploy:
+  
+  Create-Build-Cache:
     runs-on: ubuntu-latest
     needs: [Create-NPM-Cache]
     steps:
@@ -57,8 +50,8 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
-      
-      - name: Restore Cache
+
+      - name: Restore NPM Cache
         uses: actions/cache/restore@v3.2.6
         id: npm-cache
         with:
@@ -66,11 +59,54 @@ jobs:
             node_modules/
             packages/node_modules/
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+      
+      - name: Upload dist-storybook to Cache
+        uses: actions/cache@v3.2.6
+        id: storybook-dist-cache
+        with:
+          path: |
+            dist-storybook/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
 
-      - name: Build Backpack for Storybook
+      - name: Create build cache
+        if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
         run: |
           npm run build
           npm run storybook:dist
+
+  Build:
+    permissions:
+      statuses: write
+      pull-requests: write
+    needs: [Create-NPM-Cache, Create-Build-Cache]
+    uses: ./.github/workflows/_build.yml
+
+  StorybookDeploy:
+    runs-on: ubuntu-latest
+    needs: [Create-NPM-Cache, Create-Build-Cache]
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Restore npm Cache
+        uses: actions/cache/restore@v3.2.6
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+      
+      - name: Restore Cache
+        uses: actions/cache/restore@v3.2.6
+        id: storybook-dist-cache
+        with:
+          path: dist-storybook/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
       
       - name: Deploy Storybook for main
         uses: peaceiris/actions-gh-pages@v3
