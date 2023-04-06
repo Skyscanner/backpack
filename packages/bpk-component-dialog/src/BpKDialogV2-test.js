@@ -23,15 +23,15 @@ import '@testing-library/jest-dom';
 
 import BpkDialogV2 from './BpkDialogV2';
 
-describe('Dialog', () => {
+describe('BpkDialogV2', () => {
   const props = {
-    id: 'dialog-element',
-    ariaLabelledby: 'dialog-aria',
+    id: 'bpk-dialog-element',
+    ariaLabelledby: 'bpk-dialog-label-my-dialog',
+    closeLabel: 'bpk-dialog-button-close',
     isOpen: true,
-    closeLabel: 'button-close',
     onClose: jest.fn(),
+    title: 'Backpack Dialog Element',
     showHeader: true,
-    title: 'Dialog Element',
   };
 
   beforeEach(() => {
@@ -40,24 +40,38 @@ describe('Dialog', () => {
 
   describe('is supported', () => {
     it('should render correctly with content', () => {
-      const { baseElement } = render(
+      const { asFragment } = render(
         <BpkDialogV2 {...props}>
           <div>Content</div>
         </BpkDialogV2>,
       );
 
-      expect(baseElement).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
-    it('should call on Close if showHeader is set to true', () => {
+    it('should call on Close when clicking on button-close', () => {
       render(
         <BpkDialogV2 {...props}>
           <div>Content</div>
         </BpkDialogV2>,
       );
-      fireEvent.click(screen.getByTitle('button-close'));
+      fireEvent.click(screen.getByTitle('bpk-dialog-button-close'));
 
       expect(props.onClose).toHaveBeenCalledTimes(1);
+    });
+
+    it('should close the dialog when clicking outside the dialog', () => {
+      render(
+        <>
+          <div data-testid="page" />
+          <BpkDialogV2 {...props}>
+            <div>Content</div>
+          </BpkDialogV2>
+        </>,
+      );
+      fireEvent.click(screen.getByTestId('page'));
+
+      expect(screen.queryByRole('Dialog')).toBeNull();
     });
 
     it('should not render title and close button if showHeader is set to false', () => {

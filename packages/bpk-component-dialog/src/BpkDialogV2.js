@@ -42,17 +42,6 @@ type DialogProps = {
   isDialogOpen: boolean,
 };
 
-const dialogSupported = typeof HTMLDialogElement === 'function';
-
-const setPageProperties = ({ isDialogOpen }: DialogProps) => {
-  document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
-
-  if (!dialogSupported) {
-    document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
-    document.body.style.width = isDialogOpen ? '100%' : 'auto';
-  }
-};
-
 const BpkDialogV2 = (props: Props) => {
   const {
     ariaLabelledby,
@@ -64,6 +53,17 @@ const BpkDialogV2 = (props: Props) => {
     showHeader,
     title,
   } = props;
+
+  const dialogSupported = typeof HTMLDialogElement === 'function';
+
+  const setPageProperties = ({ isDialogOpen }: DialogProps) => {
+    document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
+
+    if (!dialogSupported) {
+      document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
+      document.body.style.width = isDialogOpen ? '100%' : 'auto';
+    }
+  };
 
   const ref = useRef<HTMLDialogElement>(null);
 
@@ -88,7 +88,7 @@ const BpkDialogV2 = (props: Props) => {
 
     setPageProperties({ isDialogOpen: isOpen });
     return () => setPageProperties({ isDialogOpen: false });
-  }, [isOpen]);
+  }, [id, isOpen]);
 
   return isOpen ? (
     <div className={getClassName('wrapper', dialogSupported ? '' : 'polyfill')}>
@@ -101,24 +101,24 @@ const BpkDialogV2 = (props: Props) => {
       )}
       <dialog
         id={id}
-        className={getClassName('dialog')}
+        className={getClassName('bpk-dialog')}
         onClose={onClose}
         aria-labelledby={ariaLabelledby}
         data-open={isOpen}
         ref={ref}
       >
         {showHeader && (
-          <div className={getClassName('title')}>
-            <h2 className={getClassName('heading')}>{title}</h2>
+          <div className={getClassName('bpk-dialog__title')}>
+            <h2 className={getClassName('bpk-dialog__heading')}>{title}</h2>
 
             <BpkCloseButton
-              className={getClassName('close-button')}
+              className={getClassName('bpk-dialog__close-button')}
               label={closeLabel}
               onClick={onClose}
             />
           </div>
         )}
-        <div className={getClassName('container')}>{children}</div>
+        <div className={getClassName('bpk-dialog__container')}>{children}</div>
       </dialog>
     </div>
   ) : null;

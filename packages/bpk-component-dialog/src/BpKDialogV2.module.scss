@@ -62,7 +62,7 @@
   }
 }
 
-.dialog {
+.bpk-dialog {
   max-width: 100%;
   max-height: 100%;
   padding: 0;
@@ -76,43 +76,43 @@
     max-width: none;
     max-height: 90vh;
   }
-}
 
-.dialog::backdrop {
-  position: fixed;
-  background: $bpk-scrim-background-color;
-  opacity: $bpk-scrim-opacity;
-  inset: 0;
-  inset-block-end: 0;
-  inset-inline: 0;
-  inset-inline-end: 0;
-}
+  &::backdrop {
+    position: fixed;
+    background: $bpk-scrim-background-color;
+    opacity: $bpk-scrim-opacity;
+    inset: 0;
+    inset-block-end: 0;
+    inset-inline: 0;
+    inset-inline-end: 0;
+  }
 
-.dialog::-webkit-scrollbar {
-  display: none;
-}
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-.title {
-  display: flex;
-  min-height: $bpk-one-pixel-rem * 48;
-  padding: $bpk-spacing-md;
-  justify-content: center;
-  align-items: center;
-  background-color: $bpk-color-white;
-  border-block-end: $bpk-input-border;
-}
+  &__heading {
+    @include bpk-text;
+    @include bpk-text--base;
+    @include bpk-text--bold;
+  }
 
-.heading {
-  @include bpk-text;
-  @include bpk-text--base;
-  @include bpk-text--bold;
-}
+  &__title {
+    display: flex;
+    min-height: $bpk-one-pixel-rem * 48;
+    padding: $bpk-spacing-md;
+    justify-content: center;
+    align-items: center;
+    background-color: $bpk-color-white;
+    border-block-end: $bpk-input-border;
+  }
 
-.container {
-  padding: $bpk-spacing-none;
-}
+  &__container {
+    padding: $bpk-spacing-none;
+  }
 
-.close-button {
-  position: absolute;
-  right: $bpk-modal-content-padding;
+  &__close-button {
+    position: absolute;
+    right: $bpk-modal-content-padding;
+  }
 }
