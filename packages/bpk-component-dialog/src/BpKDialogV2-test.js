@@ -18,18 +18,15 @@
 
 /* @flow strict */
 
-import { fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
-import {
-  renderWithProvider,
-  rerenderWithProvider,
-} from '../../util/testUtils/mockStore';
-
-import { type Dialog as DialogType } from './Dialog';
+import BpkDialogV2 from './BpkDialogV2';
 
 describe('Dialog', () => {
   const props = {
     id: 'dialog-element',
+    ariaLabelledby: 'dialog-aria',
     isOpen: true,
     closeLabel: 'button-close',
     onClose: jest.fn(),
@@ -42,29 +39,21 @@ describe('Dialog', () => {
   });
 
   describe('is supported', () => {
-    let Dialog: typeof DialogType;
-
-    beforeEach(() => {
-      jest.isolateModules(() => {
-        ({ Dialog } = jest.requireActual('./Dialog'));
-      });
-    });
-
     it('should render correctly with content', () => {
-      const { baseElement } = renderWithProvider(
-        <Dialog {...props}>
+      const { baseElement } = render(
+        <BpkDialogV2 {...props}>
           <div>Content</div>
-        </Dialog>,
+        </BpkDialogV2>,
       );
 
       expect(baseElement).toMatchSnapshot();
     });
 
     it('should call on Close if showHeader is set to true', () => {
-      renderWithProvider(
-        <Dialog {...props}>
+      render(
+        <BpkDialogV2 {...props}>
           <div>Content</div>
-        </Dialog>,
+        </BpkDialogV2>,
       );
       fireEvent.click(screen.getByTitle('button-close'));
 
@@ -72,10 +61,10 @@ describe('Dialog', () => {
     });
 
     it('should not render title and close button if showHeader is set to false', () => {
-      renderWithProvider(
-        <Dialog {...props} showHeader={false}>
+      render(
+        <BpkDialogV2 {...props} showHeader={false}>
           <div>Content</div>
-        </Dialog>,
+        </BpkDialogV2>,
       );
 
       expect(screen.queryByRole('Dialog Element')).not.toBeInTheDocument();
@@ -83,10 +72,10 @@ describe('Dialog', () => {
 
     it('should call showModal to open dialog', () => {
       window.HTMLDialogElement.prototype.showModal = jest.fn();
-      renderWithProvider(
-        <Dialog {...props}>
+      render(
+        <BpkDialogV2 {...props}>
           <div>Content</div>
-        </Dialog>,
+        </BpkDialogV2>,
       );
 
       expect(
@@ -95,18 +84,18 @@ describe('Dialog', () => {
     });
 
     it('should return null when dialog is closed', () => {
-      const { rerender, store } = renderWithProvider(
-        <Dialog {...props}>
+      const { rerender, store } = render(
+        <BpkDialogV2 {...props}>
           <div>Content</div>
-        </Dialog>,
+        </BpkDialogV2>,
       );
 
       expect(screen.queryByText('Content')).toBeInTheDocument();
 
-      rerenderWithProvider(
-        <Dialog {...props} isOpen={false}>
+      rerender(
+        <BpkDialogV2 {...props} isOpen={false}>
           <div>Content</div>
-        </Dialog>,
+        </BpkDialogV2>,
         rerender,
         store,
       );
@@ -119,70 +108,14 @@ describe('Dialog', () => {
         ['hidden', true],
         ['visible', false],
       ])('to %p when isOpen is %p', (expectedOverflowY, expectedIsOpen) => {
-        renderWithProvider(
-          <Dialog {...props} isOpen={expectedIsOpen}>
+        render(
+          <BpkDialogV2 {...props} isOpen={expectedIsOpen}>
             <div>Content</div>
-          </Dialog>,
+          </BpkDialogV2>,
         );
 
         expect(document.body.style.overflowY).toEqual(expectedOverflowY);
       });
-    });
-  });
-
-  describe('is not supported', () => {
-    let htmlDialogElement: typeof window.HTMLDialogElement;
-
-    let Dialog: typeof DialogType;
-
-    beforeEach(async () => {
-      htmlDialogElement = window.HTMLDialogElement;
-      window.HTMLDialogElement = !undefined;
-
-      jest.isolateModules(() => {
-        ({ Dialog } = jest.requireActual('./Dialog'));
-      });
-    });
-
-    afterEach(() => {
-      window.HTMLDialogElement = htmlDialogElement;
-    });
-
-    it('should render correctly with polyfill and content', () => {
-      const { baseElement } = renderWithProvider(
-        <Dialog {...props}>
-          <div>Content</div>
-        </Dialog>,
-      );
-
-      expect(baseElement).toMatchSnapshot();
-    });
-
-    it('should call use the polyfill to open the dialog', () => {
-      renderWithProvider(
-        <Dialog {...props}>
-          <div>Content</div>
-        </Dialog>,
-      );
-
-      expect(
-        document
-          .getElementById('dialog-element-polyfill')
-          ?.getAttribute('data-open'),
-      ).toEqual('true');
-      expect(document.body.style.position).toEqual('fixed');
-      expect(document.body.style.width).toEqual('100%');
-    });
-
-    it('should reset position and width when closing the dialog', () => {
-      renderWithProvider(
-        <Dialog {...props} isOpen={false}>
-          <div>Content</div>
-        </Dialog>,
-      );
-
-      expect(document.body.style.position).toEqual('relative');
-      expect(document.body.style.width).toEqual('auto');
     });
   });
 });

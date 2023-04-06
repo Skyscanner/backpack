@@ -27,7 +27,7 @@ import STYLES from './BpKDialogV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
+export type Props = {
   id: string | undefined,
   ariaLabelledby: string,
   children: Node,
