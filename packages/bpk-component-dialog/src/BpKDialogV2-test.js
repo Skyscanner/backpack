@@ -141,59 +141,59 @@ describe('BpkDialogV2', () => {
     });
   });
 
-  // describe('is not supported', () => {
-  //   let htmlDialogElement: typeof window.HTMLDialogElement;
+  describe('is not supported', () => {
+    let htmlDialogElement: typeof window.HTMLDialogElement;
 
-  //   let BpkDialogV2: typeof DialogType;
+    let BpkDialogV2: typeof DialogType;
 
-  //   beforeEach(async () => {
-  //     htmlDialogElement = window.HTMLDialogElement;
-  //     window.HTMLDialogElement = undefined!;
+    beforeEach(async () => {
+      htmlDialogElement = window.HTMLDialogElement;
+      window.HTMLDialogElement = undefined;
 
-  //     jest.isolateModules(() => {
-  //       ({ BpkDialogV2 } = jest.requireActual('./BpkDialogV2'));
-  //     });
-  //   });
+      jest.isolateModules(() => {
+        ({ BpkDialogV2 } = jest.requireActual('./BpkDialogV2'));
+      });
+    });
 
-  //   afterEach(() => {
-  //     window.HTMLDialogElement = htmlDialogElement;
-  //   });
+    afterEach(() => {
+      window.HTMLDialogElement = htmlDialogElement;
+    });
 
-  //   it('should render correctly with polyfill and content', () => {
-  //     const { baseElement } = render(
-  //       <BpkDialogV2 {...props}>
-  //         <div>Content</div>
-  //       </BpkDialogV2>,
-  //     );
+    it('should render correctly with polyfill and content', () => {
+      const { asFragment } = render(
+        <BpkDialogV2 {...props}>
+          <div>Content</div>
+        </BpkDialogV2>,
+      );
 
-  //     expect(baseElement).toMatchSnapshot();
-  //   });
+      expect(asFragment()).toMatchSnapshot();
+    });
 
-  //   it('should call use the polyfill to open the dialog', () => {
-  //     render(
-  //       <BpkDialogV2 {...props}>
-  //         <div>Content</div>
-  //       </BpkDialogV2>,
-  //     );
+    it('should call use the polyfill to open the dialog', () => {
+      render(
+        <BpkDialogV2 {...props}>
+          <div>Content</div>
+        </BpkDialogV2>,
+      );
 
-  //     expect(
-  //       document
-  //         .getElementById('dialog-element-polyfill')
-  //         ?.getAttribute('data-open'),
-  //     ).toEqual('true');
-  //     expect(document.body.style.position).toEqual('fixed');
-  //     expect(document.body.style.width).toEqual('100%');
-  //   });
+      expect(
+        document
+          .getElementById('bpk-dialog-element-polyfill')
+          ?.getAttribute('data-open'),
+      ).toEqual('true');
+      expect(document.body.style.position).toEqual('fixed');
+      expect(document.body.style.width).toEqual('100%');
+    });
 
-  //   it('should reset position and width when closing the dialog', () => {
-  //     render(
-  //       <BpkDialogV2 {...props} isOpen={false}>
-  //         <div>Content</div>
-  //       </BpkDialogV2>,
-  //     );
+    it('should reset position and width when closing the dialog', () => {
+      render(
+        <BpkDialogV2 {...props} isOpen={false}>
+          <div>Content</div>
+        </BpkDialogV2>,
+      );
 
-  //     expect(document.body.style.position).toEqual('relative');
-  //     expect(document.body.style.width).toEqual('auto');
-  //   });
-  // });
+      expect(document.body.style.position).toEqual('relative');
+      expect(document.body.style.width).toEqual('auto');
+    });
+  });
 });

@@ -42,6 +42,17 @@ type DialogProps = {
   isDialogOpen: boolean,
 };
 
+const dialogSupported = typeof HTMLDialogElement === 'function';
+
+const setPageProperties = ({ isDialogOpen }: DialogProps) => {
+  document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
+
+  if (!dialogSupported) {
+    document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
+    document.body.style.width = isDialogOpen ? '100%' : 'auto';
+  }
+};
+
 export const BpkDialogV2 = (props: Props) => {
   const {
     ariaLabelledby,
@@ -53,17 +64,6 @@ export const BpkDialogV2 = (props: Props) => {
     showHeader,
     title,
   } = props;
-
-  const dialogSupported = typeof HTMLDialogElement === 'function';
-
-  const setPageProperties = ({ isDialogOpen }: DialogProps) => {
-    document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
-
-    if (!dialogSupported) {
-      document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
-      document.body.style.width = isDialogOpen ? '100%' : 'auto';
-    }
-  };
 
   const ref = useRef<HTMLDialogElement>(null);
 
