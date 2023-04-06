@@ -21,11 +21,6 @@
 import BpkDialog from './src/BpkDialog';
 import { HEADER_ICON_TYPES, type Props } from './src/common-types';
 
-import BpkDialogV2, { type Props as BpkDialogV2Props } from './src/BpkDialogV2';
-
 export type BpkDialogProps = Props;
 export default BpkDialog;
 export { HEADER_ICON_TYPES };
-
-export type { BpkDialogV2Props };
-export default BpkDialogV2;
