@@ -42,7 +42,7 @@ type DialogProps = {
   isDialogOpen: boolean,
 };
 
-const BpkDialogV2 = (props: Props) => {
+export const BpkDialogV2 = (props: Props) => {
   const {
     ariaLabelledby,
     children,
@@ -144,5 +144,3 @@ BpkDialogV2.defaultProps = {
   title: '',
   showHeader: false,
 };
-
-export default BpkDialogV2;

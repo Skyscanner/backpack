@@ -32,6 +32,10 @@
     inset-block-end: 0;
     inset-inline: 0;
     inset-inline-end: 0;
+
+    &:not([data-open='true']) {
+      display: none;
+    }
   }
 
   .bpk-dialog {
@@ -55,10 +59,7 @@
       transform: translateY(-50%);
     }
 
-    &:not([data-open='true']),
-    &:not([data-open='true']) {
-      display: none;
-    }
+    &: not([data-open= 'true']);
   }
 }
 

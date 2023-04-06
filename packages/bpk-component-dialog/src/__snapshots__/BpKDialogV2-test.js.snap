@@ -3,7 +3,7 @@
 exports[`BpkDialogV2 is supported should render correctly with content 1`] = `
 <DocumentFragment>
   <div
-    class="wrapper"
+    class="bpk-dialog-wrapper"
   >
     <dialog
       aria-labelledby="bpk-dialog-label-my-dialog"

@@ -21,7 +21,7 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import BpkDialogV2 from './BpkDialogV2';
+import { type BpkDialogV2 as DialogType } from './BpkDialogV2';
 
 describe('BpkDialogV2', () => {
   const props = {
@@ -39,6 +39,14 @@ describe('BpkDialogV2', () => {
   });
 
   describe('is supported', () => {
+    let BpkDialogV2: typeof DialogType;
+
+    beforeEach(() => {
+      jest.isolateModules(() => {
+        ({ BpkDialogV2 } = jest.requireActual('./BpkDialogV2'));
+      });
+    });
+
     it('should render correctly with content', () => {
       const { asFragment } = render(
         <BpkDialogV2 {...props}>
