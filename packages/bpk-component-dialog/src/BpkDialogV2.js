@@ -91,11 +91,16 @@ const BpkDialogV2 = (props: Props) => {
   }, [id, isOpen]);
 
   return isOpen ? (
-    <div className={getClassName('wrapper', dialogSupported ? '' : 'polyfill')}>
+    <div
+      className={getClassName(
+        'bpk-dialog-wrapper',
+        dialogSupported ? '' : 'bpk-dialog-polyfill',
+      )}
+    >
       {!dialogSupported && (
         <div
           id={`${id}-polyfill`}
-          className={getClassName('backdrop')}
+          className={getClassName('bpk-dialog-backdrop')}
           data-open={isOpen}
         />
       )}

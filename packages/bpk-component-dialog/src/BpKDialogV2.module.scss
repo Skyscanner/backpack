@@ -18,8 +18,8 @@
 
 @import '~bpk-mixins/index.scss';
 
-.wrapper.polyfill {
-  .backdrop {
+.bpk-dialog-wrapper.bpk-dialog-polyfill {
+  .bpk-dialog-backdrop {
     position: fixed;
     top: 0;
     right: 0;
@@ -34,7 +34,7 @@
     inset-inline-end: 0;
   }
 
-  .dialog {
+  .bpk-dialog {
     position: fixed;
     top: 0;
     right: 0;
@@ -54,11 +54,11 @@
       height: fit-content;
       transform: translateY(-50%);
     }
-  }
 
-  .dialog:not([data-open='true']),
-  .backdrop:not([data-open='true']) {
-    display: none;
+    &:not([data-open='true']),
+    &:not([data-open='true']) {
+      display: none;
+    }
   }
 }
 
