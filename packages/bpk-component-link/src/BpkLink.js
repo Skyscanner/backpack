@@ -17,9 +17,9 @@
  */
 
 /* @flow strict */
-
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
+import { forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -40,7 +40,7 @@ type Props = {
   alternate: boolean,
 };
 
-const BpkLink = (props: Props) => {
+const BpkLink = forwardRef((props: Props, ref) => {
   const {
     alternate,
     blank,
@@ -72,12 +72,13 @@ const BpkLink = (props: Props) => {
       onClick={onClick}
       target={target}
       rel={rel}
+      ref={ref}
       {...rest}
     >
       {children}
     </a>
   );
-};
+});
 
 BpkLink.propTypes = {
   children: PropTypes.oneOfType([
