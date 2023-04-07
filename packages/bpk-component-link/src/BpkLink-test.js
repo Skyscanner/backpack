@@ -19,13 +19,27 @@
 /* @flow strict */
 
 import { render } from '@testing-library/react';
+import { createRef } from 'react';
 
 import BpkLink, { themeAttributes } from './BpkLink';
 
 describe('BpkLink', () => {
   it('should render correctly with a "href" attribute', () => {
     const { asFragment } = render(<BpkLink href="#">Link</BpkLink>);
+
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render with a ref forwarded', () => {
+    const myRef = createRef();
+
+    render(
+      <BpkLink ref={myRef} href="#">
+        Link
+      </BpkLink>,
+    );
+
+    expect(myRef.current).not.toBeNull();
   });
 
   it('should render correctly with a "className" attribute', () => {
