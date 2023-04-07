@@ -10,6 +10,7 @@ defaults:
 
 env: 
   CACHE_NAME: node-modules-cache
+  BUILD_CACHE_NAME: build-cache
 
 jobs:
   Create-NPM-Cache:
@@ -35,12 +36,39 @@ jobs:
         if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
         run: npm ci
 
-  Build:
-    name: Build
+  Create-Build-Cache:
+    runs-on: ubuntu-latest
     needs: [Create-NPM-Cache]
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Restore NPM Cache
+        uses: actions/cache/restore@v3.2.6
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+      
+      - name: Upload dist-storybook to Cache
+        uses: actions/cache@v3.2.6
+        id: storybook-dist-cache
+        with:
+          path: |
+            dist-storybook/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+
+  Build:
     permissions:
       statuses: write
       pull-requests: write
+    needs: [Create-NPM-Cache, Create-Build-Cache]
     uses: ./.github/workflows/_build.yml
 
   ReleaseWeb:

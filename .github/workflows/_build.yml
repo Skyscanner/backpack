@@ -9,6 +9,7 @@ defaults:
 
 env: 
   CACHE_NAME: node-modules-cache
+  BUILD_CACHE_NAME: build-cache
 
 jobs:
   Build:
@@ -69,8 +70,15 @@ jobs:
             packages/node_modules/
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Build Storybook
-        run: npm run build && npm run storybook:dist
+      - name: Restore Cache
+        uses: actions/cache/restore@v3.2.6
+        id: storybook-dist-cache
+        with:
+          path: dist-storybook/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+
+      - name: Build Backpack
+        run: npm run build
 
       - name: Run visual tests
         id: visualTests
