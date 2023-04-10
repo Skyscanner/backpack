@@ -58,7 +58,8 @@ class MyComponent extends Component {
 **NOTE:** Events used to bubble up from the portal into the parent component. Due to the way React works, events do not
 bubble up into the component in the DOM where the portal is rendered (i.e. render target), but instead they bubble up
 into the parent component in the shadow DOM, that is the component where you added the `Portal` in your React code. To
-avoid confusion and bugs caused by this behaviour, we have prevented click and
+avoid confusion and bugs caused by this behaviour, we have prevented mouse and keyboard events from bubbling up outside
+the portal.
 
 ### Props
 
