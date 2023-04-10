@@ -263,10 +263,15 @@ class Portal extends Component {
       return null;
     }
 
+    const stopPropagationHandler = (e) => e.stopPropagation();
+
     return createPortal(
       <div
-        onClick={(e) => e.stopPropagation()}
-        onKeyDown={(e) => e.stopPropagation()}
+        onClick={stopPropagationHandler}
+        onMouseDown={stopPropagationHandler}
+        onMouseUp={stopPropagationHandler}
+        onKeyDown={stopPropagationHandler}
+        onKeyUp={stopPropagationHandler}
         tabIndex={-1}
         role="none"
       >

@@ -26,30 +26,28 @@ class MyComponent extends Component {
     this.state = {
       isOpen: false,
     };
-
   }
 
   onOpen = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
   onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
   render() {
     return (
       <div>
         <BpkButton onClick={this.onOpen}>Open portal</BpkButton>
-        <Portal
-          isOpen={this.state.isOpen}
-          onClose={this.onClose}
-        >
-          <div>I'm now appended to <BpkCode>document.body</BpkCode></div>
+        <Portal isOpen={this.state.isOpen} onClose={this.onClose}>
+          <div>
+            I'm now appended to <BpkCode>document.body</BpkCode>
+          </div>
         </Portal>
       </div>
     );
@@ -57,19 +55,24 @@ class MyComponent extends Component {
 }
 ```
 
+**NOTE:** Events used to bubble up from the portal into the parent component. Due to the way React works, events do not
+bubble up into the component in the DOM where the portal is rendered (i.e. render target), but instead they bubble up
+into the parent component in the shadow DOM, that is the component where you added the `Portal` in your React code. To
+avoid confusion and bugs caused by this behaviour, we have prevented click and
+
 ### Props
 
-| Property              | PropType                | Required | Default Value |
-| --------------------- | ----------------------- | -------- | ------------- |
-| children              | node                    | true     | -             |
-| isOpen                | bool                    | true     | -             |
-| beforeClose           | func                    | false    | null          |
-| onClose               | func                    | false    | noop          |
-| onOpen                | func                    | false    | noop          |
-| onRender              | func                    | false    | noop          |
-| renderTarget          | func                    | false    | null          |
-| target                | oneOf([function, node]) | false    | null          |
-| closeOnEscPressed     | bool                    | false    | true          |
+| Property          | PropType                | Required | Default Value |
+| ----------------- | ----------------------- | -------- | ------------- |
+| children          | node                    | true     | -             |
+| isOpen            | bool                    | true     | -             |
+| beforeClose       | func                    | false    | null          |
+| onClose           | func                    | false    | noop          |
+| onOpen            | func                    | false    | noop          |
+| onRender          | func                    | false    | noop          |
+| renderTarget      | func                    | false    | null          |
+| target            | oneOf([function, node]) | false    | null          |
+| closeOnEscPressed | bool                    | false    | true          |
 
 ## `cssModules.js`
 
@@ -86,9 +89,7 @@ const getClassName = cssModules(STYLES);
 
 const MyComponent = (props) => (
   <div className={getClassName('MyComponent')}>
-    <div className={getClassName('MyComponent__inner')}>
-      {props.children}
-    </div>
+    <div className={getClassName('MyComponent__inner')}>{props.children}</div>
   </div>
 );
 ```
@@ -97,9 +98,7 @@ With CSS modules:
 
 ```html
 <div class="_35WloynrPDta8fhSfoHEgE">
-  <div class="_1ghNYY7jOYzUneVCT4piQ9">
-    Some text.
-  </div>
+  <div class="_1ghNYY7jOYzUneVCT4piQ9">Some text.</div>
 </div>
 ```
 
@@ -107,9 +106,7 @@ Without CSS modules:
 
 ```html
 <div class="MyComponent">
-  <div class="MyComponent__inner">
-    Some text.
-  </div>
+  <div class="MyComponent__inner">Some text.</div>
 </div>
 ```
 
@@ -123,8 +120,13 @@ import STYLES from './MyComponent.scss';
 const getClassNames = cssModules(STYLES);
 
 const MyComponent = (props) => (
-  <div className={getClassName('MyComponent', props.disabled && 'MyComponent--disabled')}>
-   {props.children}
+  <div
+    className={getClassName(
+      'MyComponent',
+      props.disabled && 'MyComponent--disabled',
+    )}
+  >
+    {props.children}
   </div>
 );
 ```
