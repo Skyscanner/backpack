@@ -18,6 +18,14 @@
 
 @import '~bpk-mixins/index.scss';
 
+@mixin header {
+  display: flex;
+  flex-wrap: nowrap;
+  min-height: bpk-spacing-lg();
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .bpk-dialog-wrapper.bpk-dialog-polyfill {
   .bpk-dialog-backdrop {
     position: fixed;
@@ -47,7 +55,8 @@
 
 .bpk-dialog {
   max-width: 100%;
-  height: 100%;
+  height: 100vh;
+  max-height: 100vh;
   margin: 0 auto;
   padding: 0;
   border: none;
@@ -82,29 +91,35 @@
     display: none;
   }
 
-  &__heading {
+  &__header-with-title {
+    padding: bpk-spacing-base();
+    border-block-end: $bpk-input-border;
+
+    @include header;
+  }
+
+  &__header-without-title {
+    padding-block-start: bpk-spacing-base();
+    padding-inline-end: bpk-spacing-base();
+
+    @include header;
+  }
+
+  &__header-with-title-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    padding-inline-end: bpk-spacing-base();
+
     @include bpk-text;
     @include bpk-text--base;
     @include bpk-text--bold;
   }
 
-  &__title {
-    display: flex;
-    min-height: $bpk-one-pixel-rem * 48;
-    padding: $bpk-spacing-md;
-    justify-content: center;
-    align-items: center;
-    background-color: $bpk-color-white;
-    border-block-end: $bpk-input-border;
-  }
-
   &__container {
     padding: bpk-spacing-base();
-  }
-
-  &__close-button {
-    position: absolute;
-    inset-block-start: $bpk-modal-content-padding;
-    inset-inline-end: $bpk-modal-content-padding;
   }
 }

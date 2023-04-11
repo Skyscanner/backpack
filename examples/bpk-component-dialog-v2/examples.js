@@ -39,6 +39,7 @@ const Paragraph = withDefaultProps(BpkText, {
 
 type Props = {
   children: Node,
+  showHeader: boolean,
 };
 
 type State = {
@@ -48,6 +49,7 @@ type State = {
 class DialogContainer extends Component<Props, State> {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    showHeader: PropTypes.bool.isRequired,
   };
 
   constructor() {
@@ -84,11 +86,12 @@ class DialogContainer extends Component<Props, State> {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           title="Backpack Dialog Element"
-          showHeader
           getApplicationElement={() => document.getElementById('pagewrap')}
           renderTarget={() => document.getElementById('dialog-container')}
+          {...this.props}
         >
           {this.props.children}
+          <BpkButton onClick={this.onClose}>Close</BpkButton>
         </BpkDialogV2>
       </div>
     );
@@ -96,11 +99,19 @@ class DialogContainer extends Component<Props, State> {
 }
 
 const DefaultExample = () => (
-  <DialogContainer>
+  <DialogContainer showHeader>
     <Paragraph>
       This is a default dialog. You can put anything you want in here.
     </Paragraph>
   </DialogContainer>
 );
 
-export default DefaultExample;
+const HeaderWithoutTitle = () => (
+  <DialogContainer showHeader={false}>
+    <Paragraph>
+      This is a dialog with a flare view added as the header.
+    </Paragraph>
+  </DialogContainer>
+);
+
+export { DefaultExample, HeaderWithoutTitle };

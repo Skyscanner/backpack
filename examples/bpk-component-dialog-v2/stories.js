@@ -18,10 +18,11 @@
 
 /* @flow strict */
 
-import DefaultExample from './examples';
+import { DefaultExample, HeaderWithoutTitle } from './examples';
 
 export default {
   title: 'bpk-component-dialog-v2',
 };
 
 export const Default = DefaultExample;
+export const WithoutTitle = HeaderWithoutTitle;

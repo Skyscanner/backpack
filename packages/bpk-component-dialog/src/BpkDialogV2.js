@@ -35,7 +35,7 @@ export type Props = {
   isOpen: boolean,
   onClose: (event: SyntheticEvent<>) => void | null,
   title: ?string | null,
-  showHeader: ?boolean | undefined,
+  showHeader: boolean,
 };
 
 type DialogProps = {
@@ -90,6 +90,12 @@ export const BpkDialogV2 = (props: Props) => {
     return () => setPageProperties({ isDialogOpen: false });
   }, [id, isOpen]);
 
+  const closeButton = (
+    <div>
+      <BpkCloseButton label={closeLabel} onClick={onClose} />
+    </div>
+  );
+
   return isOpen ? (
     <div
       className={getClassName(
@@ -112,14 +118,20 @@ export const BpkDialogV2 = (props: Props) => {
         data-open={isOpen}
         ref={ref}
       >
-        {showHeader && (
-          <div className={getClassName('bpk-dialog__title')}>
-            <h2 className={getClassName('bpk-dialog__heading')}>{title}</h2>
-            <BpkCloseButton
-              className={getClassName('bpk-dialog__close-button')}
-              label={closeLabel}
-              onClick={onClose}
-            />
+        {showHeader ? (
+          <div className={getClassName('bpk-dialog__header-with-title')}>
+            <div
+              className={getClassName(
+                'bpk-dialog__header-with-title-container',
+              )}
+            >
+              <h2 className={getClassName('bpk-dialog__title')}>{title}</h2>
+            </div>
+            {closeButton}
+          </div>
+        ) : (
+          <div className={getClassName('bpk-dialog__header-without-title')}>
+            {closeButton}
           </div>
         )}
         <div className={getClassName('bpk-dialog__container')}>{children}</div>
@@ -135,11 +147,10 @@ BpkDialogV2.propTypes = {
   closeLabel: PropTypes.string.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  showHeader: PropTypes.bool.isRequired,
   title: PropTypes.string,
-  showHeader: PropTypes.bool,
 };
 
 BpkDialogV2.defaultProps = {
   title: '',
-  showHeader: false,
 };
