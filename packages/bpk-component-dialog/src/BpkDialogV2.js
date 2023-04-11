@@ -33,7 +33,7 @@ export type Props = {
   children: Node,
   closeLabel: string,
   isOpen: boolean,
-  onClose: () => void,
+  onClose: (event: SyntheticEvent<>) => void | null,
   title: ?string | null,
   showHeader: ?boolean | undefined,
 };
@@ -115,7 +115,6 @@ export const BpkDialogV2 = (props: Props) => {
         {showHeader && (
           <div className={getClassName('bpk-dialog__title')}>
             <h2 className={getClassName('bpk-dialog__heading')}>{title}</h2>
-
             <BpkCloseButton
               className={getClassName('bpk-dialog__close-button')}
               label={closeLabel}
