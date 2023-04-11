@@ -22,6 +22,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkDialog from './BpkDialog';
+import { BpkDialogV2 } from './BpkDialogV2';
 
 describe('BpkDialog accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
@@ -40,6 +41,29 @@ describe('BpkDialog accessibility tests', () => {
       >
         Dialog content inside a custom target
       </BpkDialog>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('BpkDialogV2 accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const customRenderTarget = document.createElement('div');
+
+    const { container } = render(
+      <BpkDialogV2
+        id="bpk-dialog-element"
+        ariaLabelledby="bpk-dialog-label-my-dialog"
+        closeLabel="bpk-dialog-button-close"
+        isOpen
+        onClose={jest.fn()}
+        title="Backpack Dialog Element"
+        showHeader
+        renderTarget={() => customRenderTarget}
+      >
+        Dialog content inside a custom target
+      </BpkDialogV2>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

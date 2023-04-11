@@ -57,7 +57,7 @@ describe('BpkDialogV2', () => {
       expect(asFragment()).toMatchSnapshot();
     });
 
-    it('should call on Close when clicking on button-close', () => {
+    it('should call on Close when closing the dialog', () => {
       render(
         <BpkDialogV2 {...props}>
           <div>Content</div>
@@ -185,7 +185,32 @@ describe('BpkDialogV2', () => {
       expect(document.body.style.width).toEqual('100%');
     });
 
-    it('should reset position and width when closing the dialog', () => {
+    it('should call on Close when closing the dialog', () => {
+      render(
+        <BpkDialogV2 {...props}>
+          <div>Content</div>
+        </BpkDialogV2>,
+      );
+      fireEvent.click(screen.getByTitle('bpk-dialog-button-close'));
+
+      expect(props.onClose).toHaveBeenCalledTimes(1);
+    });
+
+    it('should close the dialog when clicking outside the dialog', () => {
+      render(
+        <>
+          <div data-testid="page" />
+          <BpkDialogV2 {...props}>
+            <div>Content</div>
+          </BpkDialogV2>
+        </>,
+      );
+      fireEvent.click(screen.getByTestId('page'));
+
+      expect(screen.queryByRole('Dialog')).toBeNull();
+    });
+
+    it('should reset position and width when dialog is closed', () => {
       render(
         <BpkDialogV2 {...props} isOpen={false}>
           <div>Content</div>
