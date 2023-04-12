@@ -263,7 +263,22 @@ class Portal extends Component {
       return null;
     }
 
-    return createPortal(children, portalElement);
+    const stopPropagationHandler = (e) => e.stopPropagation();
+
+    return createPortal(
+      <div
+        onClick={stopPropagationHandler}
+        onMouseDown={stopPropagationHandler}
+        onMouseUp={stopPropagationHandler}
+        onKeyDown={stopPropagationHandler}
+        onKeyUp={stopPropagationHandler}
+        tabIndex={-1}
+        role="none"
+      >
+        {children}
+      </div>,
+      portalElement,
+    );
   }
 }
 

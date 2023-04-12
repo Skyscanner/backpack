@@ -6,55 +6,60 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-drawer__container"
+      role="none"
+      tabindex="-1"
     >
       <div
-        class="bpk-scrim"
-        role="presentation"
-      />
-      <section
-        aria-labelledby="bpk-drawer-heading-my-drawer"
-        class="bpk-drawer bpk-drawer--entering"
-        id="my-drawer"
-        role="dialog"
-        tabindex="-1"
+        class="bpk-scrim-content bpk-drawer__container"
       >
-        <header
-          class="bpk-drawer__header"
-        >
-          <h2
-            class="bpk-drawer__heading"
-            id="bpk-drawer-heading-my-drawer"
-          >
-            Drawer title
-          </h2>
-           
-          <button
-            aria-label="Close"
-            class="bpk-close-button bpk-drawer__close-button"
-            title="Close"
-            type="button"
-          >
-            <svg
-              class="bpk-close-button__icon"
-              height="16"
-              style="width: 1rem; height: 1rem;"
-              viewBox="0 0 24 24"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-              />
-            </svg>
-          </button>
-        </header>
         <div
-          class="bpk-drawer__content"
+          class="bpk-scrim"
+          role="presentation"
+        />
+        <section
+          aria-labelledby="bpk-drawer-heading-my-drawer"
+          class="bpk-drawer bpk-drawer--entering"
+          id="my-drawer"
+          role="dialog"
+          tabindex="-1"
         >
-          Drawer content
-        </div>
-      </section>
+          <header
+            class="bpk-drawer__header"
+          >
+            <h2
+              class="bpk-drawer__heading"
+              id="bpk-drawer-heading-my-drawer"
+            >
+              Drawer title
+            </h2>
+             
+            <button
+              aria-label="Close"
+              class="bpk-close-button bpk-drawer__close-button"
+              title="Close"
+              type="button"
+            >
+              <svg
+                class="bpk-close-button__icon"
+                height="16"
+                style="width: 1rem; height: 1rem;"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                />
+              </svg>
+            </button>
+          </header>
+          <div
+            class="bpk-drawer__content"
+          >
+            Drawer content
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </div>

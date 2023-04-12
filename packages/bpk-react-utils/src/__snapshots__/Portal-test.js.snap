@@ -7,8 +7,13 @@ exports[`Portal should render correctly with renderTarget 1`] = `<div />`;
 exports[`Portal should render correctly with renderTarget 2`] = `
 <div>
   <div>
-    <div>
-      My portal content
+    <div
+      role="none"
+      tabindex="-1"
+    >
+      <div>
+        My portal content
+      </div>
     </div>
   </div>
 </div>

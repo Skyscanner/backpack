@@ -149,8 +149,13 @@ describe('Portal', () => {
           Not a portal
         </h1>
         <div>
-          <div>
-            My portal content
+          <div
+            role="none"
+            tabindex="-1"
+          >
+            <div>
+              My portal content
+            </div>
           </div>
         </div>
       </div>
@@ -194,8 +199,13 @@ describe('Portal', () => {
           id="render-target"
         >
           <div>
-            <div>
-              My portal content
+            <div
+              role="none"
+              tabindex="-1"
+            >
+              <div>
+                My portal content
+              </div>
             </div>
           </div>
         </div>
@@ -743,8 +753,13 @@ describe('Portal', () => {
       <body>
         <div />
         <div>
-          <div>
-            My portal content
+          <div
+            role="none"
+            tabindex="-1"
+          >
+            <div>
+              My portal content
+            </div>
           </div>
         </div>
       </body>
