@@ -6,44 +6,49 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-dialog__container"
+      role="none"
+      tabindex="-1"
     >
       <div
-        class="bpk-scrim"
-        role="presentation"
-      />
-      <section
-        aria-label="example dialog to showcase component"
-        class="bpk-dialog-inner"
-        id="my-modal"
-        role="dialog"
-        tabindex="-1"
+        class="bpk-scrim-content bpk-dialog__container"
       >
         <div
-          class="bpk-dialog-inner__content"
+          class="bpk-scrim"
+          role="presentation"
+        />
+        <section
+          aria-label="example dialog to showcase component"
+          class="bpk-dialog-inner"
+          id="my-modal"
+          role="dialog"
+          tabindex="-1"
         >
-          <button
-            aria-label="Close"
-            class="bpk-close-button bpk-dialog__close-button"
-            title="Close"
-            type="button"
+          <div
+            class="bpk-dialog-inner__content"
           >
-            <svg
-              class="bpk-close-button__icon"
-              height="16"
-              style="width: 1rem; height: 1rem;"
-              viewBox="0 0 24 24"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-label="Close"
+              class="bpk-close-button bpk-dialog__close-button"
+              title="Close"
+              type="button"
             >
-              <path
-                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-              />
-            </svg>
-          </button>
-          Dialog content inside a custom target
-        </div>
-      </section>
+              <svg
+                class="bpk-close-button__icon"
+                height="16"
+                style="width: 1rem; height: 1rem;"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                />
+              </svg>
+            </button>
+            Dialog content inside a custom target
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </div>
@@ -55,25 +60,30 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-dialog__container"
+      role="none"
+      tabindex="-1"
     >
       <div
-        class="bpk-scrim"
-        role="presentation"
-      />
-      <section
-        aria-label="example dialog to showcase component"
-        class="bpk-dialog-inner"
-        id="my-modal"
-        role="dialog"
-        tabindex="-1"
+        class="bpk-scrim-content bpk-dialog__container"
       >
         <div
-          class="bpk-dialog-inner__content"
+          class="bpk-scrim"
+          role="presentation"
+        />
+        <section
+          aria-label="example dialog to showcase component"
+          class="bpk-dialog-inner"
+          id="my-modal"
+          role="dialog"
+          tabindex="-1"
         >
-          Dialog content inside a custom target
-        </div>
-      </section>
+          <div
+            class="bpk-dialog-inner__content"
+          >
+            Dialog content inside a custom target
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </div>
@@ -85,39 +95,44 @@ exports[`BpkDialog should render default icon dialog correctly 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-dialog__container"
+      role="none"
+      tabindex="-1"
     >
       <div
-        class="bpk-scrim"
-        role="presentation"
-      />
-      <section
-        aria-label="example dialog to showcase component"
-        class="bpk-dialog-inner"
-        id="my-modal"
-        role="dialog"
-        tabindex="-1"
+        class="bpk-scrim-content bpk-dialog__container"
       >
         <div
-          class="bpk-dialog-inner__content bpk-dialog--with-icon"
+          class="bpk-scrim"
+          role="presentation"
+        />
+        <section
+          aria-label="example dialog to showcase component"
+          class="bpk-dialog-inner"
+          id="my-modal"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            class="bpk-dialog__icon bpk-dialog__icon--primary"
+            class="bpk-dialog-inner__content bpk-dialog--with-icon"
           >
-            <svg
-              height="24"
-              style="width: 1.5rem; height: 1.5rem;"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="bpk-dialog__icon bpk-dialog__icon--primary"
             >
-              <path
-                d="M20.713 5.793a1 1 0 010 1.414l-11 11a1 1 0 01-1.414 0l-5-5a1 1 0 011.39-1.439l.024.025 4.293 4.293L19.3 5.793a1 1 0 011.414 0z"
-              />
-            </svg>
+              <svg
+                height="24"
+                style="width: 1.5rem; height: 1.5rem;"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.713 5.793a1 1 0 010 1.414l-11 11a1 1 0 01-1.414 0l-5-5a1 1 0 011.39-1.439l.024.025 4.293 4.293L19.3 5.793a1 1 0 011.414 0z"
+                />
+              </svg>
+            </div>
+            Dialog content inside a custom target
           </div>
-          Dialog content inside a custom target
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
 </div>
@@ -129,39 +144,44 @@ exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-dialog__container"
+      role="none"
+      tabindex="-1"
     >
       <div
-        class="bpk-scrim"
-        role="presentation"
-      />
-      <section
-        aria-label="example dialog to showcase component"
-        class="bpk-dialog-inner"
-        id="my-modal"
-        role="dialog"
-        tabindex="-1"
+        class="bpk-scrim-content bpk-dialog__container"
       >
         <div
-          class="bpk-dialog-inner__content bpk-dialog--with-icon"
+          class="bpk-scrim"
+          role="presentation"
+        />
+        <section
+          aria-label="example dialog to showcase component"
+          class="bpk-dialog-inner"
+          id="my-modal"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            class="bpk-dialog__icon bpk-dialog__icon--destructive"
+            class="bpk-dialog-inner__content bpk-dialog--with-icon"
           >
-            <svg
-              height="24"
-              style="width: 1.5rem; height: 1.5rem;"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="bpk-dialog__icon bpk-dialog__icon--destructive"
             >
-              <path
-                d="M5 4a1 1 0 000 2h14a1 1 0 000-2zm13.91 4.083a1 1 0 00-.914-1.08Q17.955 7 17.913 7H6.087a1 1 0 00-1 1q0 .041.003.083L6 19a3.226 3.226 0 003 3h6a3.226 3.226 0 003-3zM8 3.79V4h8v-.147a.864.864 0 00-.324-.699A6.097 6.097 0 0012 2a6.08 6.08 0 00-3.74 1.179.77.77 0 00-.26.61z"
-              />
-            </svg>
+              <svg
+                height="24"
+                style="width: 1.5rem; height: 1.5rem;"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 4a1 1 0 000 2h14a1 1 0 000-2zm13.91 4.083a1 1 0 00-.914-1.08Q17.955 7 17.913 7H6.087a1 1 0 00-1 1q0 .041.003.083L6 19a3.226 3.226 0 003 3h6a3.226 3.226 0 003-3zM8 3.79V4h8v-.147a.864.864 0 00-.324-.699A6.097 6.097 0 0012 2a6.08 6.08 0 00-3.74 1.179.77.77 0 00-.26.61z"
+                />
+              </svg>
+            </div>
+            Dialog content inside a custom target
           </div>
-          Dialog content inside a custom target
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
 </div>
@@ -173,39 +193,44 @@ exports[`BpkDialog should render warning icon dialog correctly 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-dialog__container"
+      role="none"
+      tabindex="-1"
     >
       <div
-        class="bpk-scrim"
-        role="presentation"
-      />
-      <section
-        aria-label="example dialog to showcase component"
-        class="bpk-dialog-inner"
-        id="my-modal"
-        role="dialog"
-        tabindex="-1"
+        class="bpk-scrim-content bpk-dialog__container"
       >
         <div
-          class="bpk-dialog-inner__content bpk-dialog--with-icon"
+          class="bpk-scrim"
+          role="presentation"
+        />
+        <section
+          aria-label="example dialog to showcase component"
+          class="bpk-dialog-inner"
+          id="my-modal"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            class="bpk-dialog__icon bpk-dialog__icon--warning"
+            class="bpk-dialog-inner__content bpk-dialog--with-icon"
           >
-            <svg
-              height="24"
-              style="width: 1.5rem; height: 1.5rem;"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="bpk-dialog__icon bpk-dialog__icon--warning"
             >
-              <path
-                d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm.993 14.116a1 1 0 01-1.986.001L11 16l-.002-5.001.007-.117a1 1 0 011.986 0l.007.117L13 16zm-.995-7.12a.999.999 0 010-1.997h.063a.999.999 0 11-.063 1.997z"
-              />
-            </svg>
+              <svg
+                height="24"
+                style="width: 1.5rem; height: 1.5rem;"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm.993 14.116a1 1 0 01-1.986.001L11 16l-.002-5.001.007-.117a1 1 0 011.986 0l.007.117L13 16zm-.995-7.12a.999.999 0 010-1.997h.063a.999.999 0 11-.063 1.997z"
+                />
+              </svg>
+            </div>
+            Dialog content inside a custom target
           </div>
-          Dialog content inside a custom target
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
 </div>
@@ -217,83 +242,88 @@ exports[`BpkDialog should render with flare dialog 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-dialog__container"
+      role="none"
+      tabindex="-1"
     >
       <div
-        class="bpk-scrim"
-        role="presentation"
-      />
-      <section
-        aria-label="example dialog to showcase component"
-        class="bpk-dialog-inner"
-        id="my-modal"
-        role="dialog"
-        tabindex="-1"
+        class="bpk-scrim-content bpk-dialog__container"
       >
         <div
-          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog-inner__flare"
+          class="bpk-scrim"
+          role="presentation"
+        />
+        <section
+          aria-label="example dialog to showcase component"
+          class="bpk-dialog-inner"
+          id="my-modal"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            class="bpk-content-bubble__container"
+            class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog-inner__flare"
           >
             <div
-              class="bpk-content-bubble__content-wrapper"
-            />
-            <div
-              class="bpk-flare-bar__container bpk-content-bubble__pointer"
+              class="bpk-content-bubble__container"
             >
-              <svg
-                class="bpk-flare-bar__curve"
-                viewBox="0 0 14832 55"
+              <div
+                class="bpk-content-bubble__content-wrapper"
+              />
+              <div
+                class="bpk-flare-bar__container bpk-content-bubble__pointer"
               >
-                <path
-                  d="M7501.307 8.517l-68.043 39.341c-10.632 6.185-23.795 6.185-34.528 0l-68.144-39.34c-8.91-5.173-18.988-8.215-29.316-8.518H0v55h14832V0H7530.671a63.604 63.604 0 00-29.364 8.517z"
-                />
-              </svg>
-              <svg
-                class="bpk-flare-bar__rounded-corner"
-                viewBox="0 0 75 75"
-              >
-                <path
-                  d="M0 0v75h75C37.5 75 0 37.5 0 0z"
-                />
-              </svg>
-              <svg
-                class="bpk-flare-bar__rounded-corner bpk-flare-bar__rounded-corner--trailing"
-                viewBox="0 0 75 75"
-              >
-                <path
-                  d="M0 0v75h75C37.5 75 0 37.5 0 0z"
-                />
-              </svg>
+                <svg
+                  class="bpk-flare-bar__curve"
+                  viewBox="0 0 14832 55"
+                >
+                  <path
+                    d="M7501.307 8.517l-68.043 39.341c-10.632 6.185-23.795 6.185-34.528 0l-68.144-39.34c-8.91-5.173-18.988-8.215-29.316-8.518H0v55h14832V0H7530.671a63.604 63.604 0 00-29.364 8.517z"
+                  />
+                </svg>
+                <svg
+                  class="bpk-flare-bar__rounded-corner"
+                  viewBox="0 0 75 75"
+                >
+                  <path
+                    d="M0 0v75h75C37.5 75 0 37.5 0 0z"
+                  />
+                </svg>
+                <svg
+                  class="bpk-flare-bar__rounded-corner bpk-flare-bar__rounded-corner--trailing"
+                  viewBox="0 0 75 75"
+                >
+                  <path
+                    d="M0 0v75h75C37.5 75 0 37.5 0 0z"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="bpk-dialog-inner__content"
-        >
-          <button
-            aria-label=""
-            class="bpk-close-button bpk-dialog__close-button"
-            title=""
-            type="button"
+          <div
+            class="bpk-dialog-inner__content"
           >
-            <svg
-              class="bpk-close-button__icon"
-              height="16"
-              style="width: 1rem; height: 1rem;"
-              viewBox="0 0 24 24"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-label=""
+              class="bpk-close-button bpk-dialog__close-button"
+              title=""
+              type="button"
             >
-              <path
-                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-              />
-            </svg>
-          </button>
-          Dialog content inside a custom target
-        </div>
-      </section>
+              <svg
+                class="bpk-close-button__icon"
+                height="16"
+                style="width: 1rem; height: 1rem;"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                />
+              </svg>
+            </button>
+            Dialog content inside a custom target
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </div>
@@ -305,83 +335,88 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-dialog__container"
+      role="none"
+      tabindex="-1"
     >
       <div
-        class="bpk-scrim"
-        role="presentation"
-      />
-      <section
-        aria-label="example dialog to showcase component"
-        class="bpk-dialog-inner"
-        id="my-modal"
-        role="dialog"
-        tabindex="-1"
+        class="bpk-scrim-content bpk-dialog__container"
       >
         <div
-          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog-inner__flare my-className"
+          class="bpk-scrim"
+          role="presentation"
+        />
+        <section
+          aria-label="example dialog to showcase component"
+          class="bpk-dialog-inner"
+          id="my-modal"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            class="bpk-content-bubble__container"
+            class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog-inner__flare my-className"
           >
             <div
-              class="bpk-content-bubble__content-wrapper"
-            />
-            <div
-              class="bpk-flare-bar__container bpk-content-bubble__pointer"
+              class="bpk-content-bubble__container"
             >
-              <svg
-                class="bpk-flare-bar__curve"
-                viewBox="0 0 14832 55"
+              <div
+                class="bpk-content-bubble__content-wrapper"
+              />
+              <div
+                class="bpk-flare-bar__container bpk-content-bubble__pointer"
               >
-                <path
-                  d="M7501.307 8.517l-68.043 39.341c-10.632 6.185-23.795 6.185-34.528 0l-68.144-39.34c-8.91-5.173-18.988-8.215-29.316-8.518H0v55h14832V0H7530.671a63.604 63.604 0 00-29.364 8.517z"
-                />
-              </svg>
-              <svg
-                class="bpk-flare-bar__rounded-corner"
-                viewBox="0 0 75 75"
-              >
-                <path
-                  d="M0 0v75h75C37.5 75 0 37.5 0 0z"
-                />
-              </svg>
-              <svg
-                class="bpk-flare-bar__rounded-corner bpk-flare-bar__rounded-corner--trailing"
-                viewBox="0 0 75 75"
-              >
-                <path
-                  d="M0 0v75h75C37.5 75 0 37.5 0 0z"
-                />
-              </svg>
+                <svg
+                  class="bpk-flare-bar__curve"
+                  viewBox="0 0 14832 55"
+                >
+                  <path
+                    d="M7501.307 8.517l-68.043 39.341c-10.632 6.185-23.795 6.185-34.528 0l-68.144-39.34c-8.91-5.173-18.988-8.215-29.316-8.518H0v55h14832V0H7530.671a63.604 63.604 0 00-29.364 8.517z"
+                  />
+                </svg>
+                <svg
+                  class="bpk-flare-bar__rounded-corner"
+                  viewBox="0 0 75 75"
+                >
+                  <path
+                    d="M0 0v75h75C37.5 75 0 37.5 0 0z"
+                  />
+                </svg>
+                <svg
+                  class="bpk-flare-bar__rounded-corner bpk-flare-bar__rounded-corner--trailing"
+                  viewBox="0 0 75 75"
+                >
+                  <path
+                    d="M0 0v75h75C37.5 75 0 37.5 0 0z"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="bpk-dialog-inner__content"
-        >
-          <button
-            aria-label=""
-            class="bpk-close-button bpk-dialog__close-button"
-            title=""
-            type="button"
+          <div
+            class="bpk-dialog-inner__content"
           >
-            <svg
-              class="bpk-close-button__icon"
-              height="16"
-              style="width: 1rem; height: 1rem;"
-              viewBox="0 0 24 24"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-label=""
+              class="bpk-close-button bpk-dialog__close-button"
+              title=""
+              type="button"
             >
-              <path
-                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-              />
-            </svg>
-          </button>
-          Dialog content inside a custom target
-        </div>
-      </section>
+              <svg
+                class="bpk-close-button__icon"
+                height="16"
+                style="width: 1rem; height: 1rem;"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                />
+              </svg>
+            </button>
+            Dialog content inside a custom target
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </div>
