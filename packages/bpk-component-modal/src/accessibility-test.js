@@ -22,6 +22,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkModal from './BpkModal';
+import { BpkModalV2 } from './BpkModalV2';
 
 describe('BpkModal accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
@@ -41,6 +42,29 @@ describe('BpkModal accessibility tests', () => {
       >
         Modal content inside a custom target
       </BpkModal>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('BpkModalV2 accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const customRenderTarget = document.createElement('div');
+
+    const { container } = render(
+      <BpkModalV2
+        id="bpk-modal-element"
+        ariaLabelledby="bpk-modal-label-my-dialog"
+        closeLabel="bpk-modal-button-close"
+        isOpen
+        onClose={jest.fn()}
+        title="Backpack Dialog Element"
+        showHeader
+        renderTarget={() => customRenderTarget}
+      >
+        Dialog content inside a custom target
+      </BpkModalV2>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
