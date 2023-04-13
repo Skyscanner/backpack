@@ -32,10 +32,13 @@ export type Props = {
   ariaLabelledby: string,
   children: Node,
   closeLabel: string,
+  fullScreenOnDesktop: boolean,
   isOpen: boolean,
+  noFullScreenOnMobile: boolean,
   onClose: (event: SyntheticEvent<>) => void | null,
+  padded: boolean,
   title: ?string | null,
-  showHeader: boolean,
+  wide: boolean,
 };
 
 type DialogProps = {
@@ -58,11 +61,14 @@ export const BpkModalV2 = (props: Props) => {
     ariaLabelledby,
     children,
     closeLabel,
+    fullScreenOnDesktop,
     id,
     isOpen,
+    noFullScreenOnMobile,
     onClose,
-    showHeader,
+    padded,
     title,
+    wide,
   } = props;
 
   const ref = useRef<HTMLDialogElement>(null);
@@ -86,6 +92,25 @@ export const BpkModalV2 = (props: Props) => {
     return () => setPageProperties({ isDialogOpen: false });
   }, [id, isOpen]);
 
+  const classNames = [getClassName('bpk-modal')];
+  const contentClassNames = [getClassName('bpk-modal_container')];
+
+  if (fullScreenOnDesktop) {
+    classNames.push(getClassName('bpk-modal--full-screen-desktop'));
+    contentClassNames.push(
+      getClassName('bpk-modal__container--full-screen-desktop'),
+    );
+  }
+  if (noFullScreenOnMobile) {
+    classNames.push(getClassName('bpk-modal--no-full-screen-mobile'));
+  }
+  if (padded) {
+    contentClassNames.push(getClassName('bpk-modal__container--padded'));
+  }
+  if (wide) {
+    classNames.push(getClassName('bpk-modal--wide'));
+  }
+
   const closeButton = (
     <div>
       <BpkCloseButton label={closeLabel} onClick={onClose} />
@@ -108,13 +133,13 @@ export const BpkModalV2 = (props: Props) => {
       )}
       <dialog
         id={id}
-        className={getClassName('bpk-modal')}
+        className={classNames.join(' ')}
         onClose={onClose}
         aria-labelledby={ariaLabelledby}
         data-open={isOpen}
         ref={ref}
       >
-        {showHeader ? (
+        {title ? (
           <div className={getClassName('bpk-modal__header-title')}>
             <div className={getClassName('bpk-modal__header-title-container')}>
               <h2 className={getClassName('bpk-modal__title')}>{title}</h2>
@@ -126,23 +151,30 @@ export const BpkModalV2 = (props: Props) => {
             {closeButton}
           </div>
         )}
-        <div className={getClassName('bpk-modal__container')}>{children}</div>
+        <div className={contentClassNames.join(' ')}>{children}</div>
       </dialog>
     </div>
   ) : null;
 };
 
 BpkModalV2.propTypes = {
-  id: PropTypes.string.isRequired,
   ariaLabelledby: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   closeLabel: PropTypes.string.isRequired,
+  fullScreenOnDesktop: PropTypes.bool,
+  id: PropTypes.string.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  showHeader: PropTypes.bool.isRequired,
+  noFullScreenOnMobile: PropTypes.bool,
+  padded: PropTypes.bool,
   title: PropTypes.string,
+  wide: PropTypes.bool,
 };
 
 BpkModalV2.defaultProps = {
+  fullScreenOnDesktop: false,
+  noFullScreenOnMobile: false,
+  padded: true,
   title: '',
+  wide: false,
 };

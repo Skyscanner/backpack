@@ -21,9 +21,18 @@
 import {
   DefaultExample,
   LongTitleExample,
-  HeaderWithoutTitle,
+  HeaderNoTitleExample,
   OverflowingExample,
-  OverflowingExampleWithoutTitle,
+  OverflowingNoTitleExample,
+  WideExample,
+  WideNoTitleExample,
+  NoPaddingExample,
+  NoPaddingNoTitleExample,
+  FullScreenOnDesktopExample,
+  FullScreenOnDesktopNoTitleExample,
+  NoFullScreenOnMobileExample,
+  NoFullScreenOnMobileNoTitleExample,
+  NestedExample,
 } from './examples';
 
 export default {
@@ -32,6 +41,15 @@ export default {
 
 export const Default = DefaultExample;
 export const LongTitle = LongTitleExample;
-export const WithoutTitle = HeaderWithoutTitle;
-export const OverflowingContent = OverflowingExample;
-export const OverflowingContentWithoutTitle = OverflowingExampleWithoutTitle;
+export const NoTitle = HeaderNoTitleExample;
+export const Overflowing = OverflowingExample;
+export const OverflowingNoTitle = OverflowingNoTitleExample;
+export const Wide = WideExample;
+export const WideNoTitle = WideNoTitleExample;
+export const NoPadding = NoPaddingExample;
+export const NoPaddingNoTitle = NoPaddingNoTitleExample;
+export const FullScreenOnDesktop = FullScreenOnDesktopExample;
+export const FullScreenOnDesktopNoTitle = FullScreenOnDesktopNoTitleExample;
+export const NoFullScreenOnMobile = NoFullScreenOnMobileExample;
+export const NoFullScreenOnMobileNoTitle = NoFullScreenOnMobileNoTitleExample;
+export const Nested = NestedExample;
