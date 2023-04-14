@@ -45,7 +45,8 @@
     "storybook:dist": "build-storybook -c .storybook -o dist-storybook",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -101,6 +102,8 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/register": "^7.18.9",
+    "@percy/cli": "^1.20.0",
+    "@percy/storybook": "^4.3.5",
     "@skyscanner/bpk-foundations-web": "^15.2.0",
     "@skyscanner/bpk-svgs": "^16.3.0",
     "@skyscanner/stylelint-config-skyscanner": "^7.0.0",
