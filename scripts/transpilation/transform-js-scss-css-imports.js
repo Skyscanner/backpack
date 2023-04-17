@@ -49,7 +49,7 @@ console.log('');
 const findReplaces = [{ find: '.module.scss', replace: '.module.css' }];
 
 const jsFiles = execSync(
-  'find dist -name "*.js" -o -name "*.jsx" | grep -v node_modules',
+  'find dist -name "*.js" -o -name "*.jsx" -name "*.ts" -o -name "*.tsx" | grep -v node_modules',
 )
   .toString()
   .split('\n')
