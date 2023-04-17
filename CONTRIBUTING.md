@@ -155,7 +155,7 @@ Any follow-up changes to experimental components will not be considered breaking
 
 Each Bpk component has a corresponding README file which contains information about the component such as usage examples and API documentation. Our components' full documentation is at [skyscanner.design](https://www.skyscanner.design). New experimental components should have a README file, but don’t need to be published to [skyscanner.design](https://www.skyscanner.design). Instead, when an experiment has run and is considered successful and so the change is stable, documentation can be published.
 
-For changes to existing components, make sure the API documentation is updated to indicate if when something is experimental.
+For changes to existing components, make sure the API documentation is updated to indicate if something is experimental.
 </details>
 
 <details>
