@@ -71,9 +71,6 @@ module.exports = {
           !!(
             fileName.includes('-test') ||
             fileName.includes('-Test') ||
-            fileName.includes('dist') ||
-            fileName.includes('dist-storybook') ||
-            fileName.includes('examples') ||
             /\/node_modules\//.test(fileName)
           ),
       ],
