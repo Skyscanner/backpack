@@ -7,6 +7,7 @@ You want to help us enable Skyscanner to create beautiful, coherent products at 
 * [Prerequisites](#prerequisites)
 * [Getting started](#getting-started)
 * [Adding a new component](#adding-a-new-component)
+* [Experimental changes](#experimental-changes)
 * [How to](#how-to)
 
 ## Prerequisites
@@ -121,6 +122,75 @@ When creating (S)CSS files, follow the CSS Module naming convention by using the
 ### Documentation
 
 See our design system documentation at [skyscanner.design](https://www.skyscanner.design).
+
+## Experimental changes
+
+Want to run A/B experiments on features that entail changes to Backpack components? Continue reading below 👇
+
+<details>
+<summary>When is a component change considered experimental?</summary>
+
+If the component or change you want to contribute to Backpack is not stable and it depends on the results of an experiment then it is considered experimental.
+
+</details>
+
+<details>
+<summary>What do you need to do to mark a component or part of a component as experimental?</summary>
+
+This will depend on what kind of change you are contributing.
+
+**Patch and minor changes**
+
+For patch and minor changes, you should use JSDoc annotations. JSDoc is a widely used and supported tool in the JavaScript ecosystem that allows developers to document their code. JSDoc comments will be visible in most IDEs.
+
+**Major**
+
+For major changes, you should create a new experimental V2 component. If the experiment is successful, the old component should be deprecated.
+
+Any follow-up changes to experimental components will not be considered breaking.
+</details>
+
+<details>
+<summary>When should documentation be created and published?</summary>
+
+Each Bpk component has a corresponding README file which contains information about the component such as usage examples and API documentation. Our components' full documentation is at [skyscanner.design](https://www.skyscanner.design). New experimental components should have a README file, but don’t need to be published to [skyscanner.design](https://www.skyscanner.design). Instead, when an experiment has run and is considered successful and so the change is stable, documentation can be published.
+
+For changes to existing components, make sure the API documentation is updated to indicate if when something is experimental.
+</details>
+
+<details>
+<summary>How long does experimentation code live in Backpack?</summary>
+
+Experimentation code should be cleaned up at most 2 weeks after an experiment has completed. In the case of a successful experiment, annotations should be removed and documentation should be published. In the case of an unsuccessful experiment, the code should be removed altogether.
+</details>
+
+<details>
+<summary>Examples</summary>
+
+Here’s an end-to-end example on how to add an experimental prop to a Bpk component:
+
+1. Reach out to Koala with the proposed change
+2. Contribute code changes. Make sure the API table is updated too!
+```typescript
+type Props = {
+	text: string,
+	color: string,
+	/**
+   * @experimental This prop is experimental and subject to change.
+	 * Use with caution.
+   */
+	sparkles?: boolean
+}
+const BpkText = ({text, color, sparkles}: Props) => {
+    ...
+}
+```
+3. Released by Koala
+4. Adopt changes in project
+5. Run experiment
+    - if experiment is successful, publish documentation (only Koala members) and remove experimental code.
+    - if experiment is unsuccessful and further iterations are needed, repeat from step 2. Otherwise, remove experimental code. That’s all!
+</details>
 
 ## How to
 
