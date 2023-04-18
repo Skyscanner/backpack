@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-accordion{margin:0}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-accordion{margin:0}.bpk-accordion--on-dark{color:#fff}
