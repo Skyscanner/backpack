@@ -57,10 +57,4 @@ const BpkAriaLive = ({
   return <div aria-live={politenessSetting} className={classNames} {...rest} />;
 };
 
-BpkAriaLive.defaultProps = {
-  className: null,
-  politenessSetting: POLITENESS_SETTINGS.polite,
-  visible: false,
-};
-
 export default BpkAriaLive;
