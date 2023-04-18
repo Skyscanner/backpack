@@ -29,18 +29,17 @@ export const POLITENESS_SETTINGS = {
   off: 'off',
   polite: 'polite',
   assertive: 'assertive',
-}; // as const; // Temp disabling TS types due to non TS projects compatibility.
+} as const;
 
-// Temp disabling TS types due to non TS projects compatibility.
-// export type PolitenessSetting =
-//   typeof POLITENESS_SETTINGS[keyof typeof POLITENESS_SETTINGS];
+export type PolitenessSetting =
+  (typeof POLITENESS_SETTINGS)[keyof typeof POLITENESS_SETTINGS];
 
 export type Props = {
-  children: ReactElement | string,
-  politenessSetting?: $Keys<typeof POLITENESS_SETTINGS>, // PolitenessSetting,
-  visible?: boolean,
-  className?: string | null,
-  [rest: string]: any, // Inexact rest. See decisions/inexact-rest.md
+  children: ReactElement | string;
+  politenessSetting?: PolitenessSetting;
+  visible?: boolean;
+  className?: string | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkAriaLive = ({

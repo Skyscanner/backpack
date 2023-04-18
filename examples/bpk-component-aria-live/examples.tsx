@@ -18,9 +18,11 @@
 /* @flow strict */
 
 import { Component } from 'react';
-import type { Node } from 'react';
+import type { ReactElement } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkChip from '../../packages/bpk-component-chip';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkFieldset from '../../packages/bpk-component-fieldset';
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkSwitch from '../../packages/bpk-component-switch';
@@ -34,50 +36,49 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const AriaLiveDemo = (props: {
-  preamble: ?Node,
-  children: Node,
-  className: ?string,
-  style: ?{},
-  visible: boolean,
-}) => {
-  const { children, className, preamble, style, visible, ...rest } = props;
+type Props = {
+  preamble?: ReactElement | null;
+  children: ReactElement;
+  className?: string | null;
+  style?: {} | null;
+  visible: Boolean;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+};
 
-  return (
-    <div
-      className={getClassName('bpk-storybook-aria-live-demo', className)}
-      style={style}
+const AriaLiveDemo = ({
+  children,
+  className = null,
+  preamble = null,
+  style = null,
+  visible = false,
+  ...rest
+}: Props) => (
+  <div
+    className={getClassName('bpk-storybook-aria-live-demo', className)}
+    style={style}
+  >
+    <p>
+      <strong>ARIA live region:</strong>
+    </p>
+    <p>
+      {visible
+        ? 'This content is relevant to everyone, not just assistive technologies, so it is permanently visible.'
+        : 'This would usually be visually hidden, and only visible to assistive technologies. It is visible here for demo purposes.'}
+    </p>
+    {preamble}
+    <BpkAriaLive
+      {...rest}
+      visible
+      politenessSetting={ARIA_LIVE_POLITENESS_SETTINGS.assertive}
     >
-      <p>
-        <strong>ARIA live region:</strong>
-      </p>
-      <p>
-        {visible
-          ? 'This content is relevant to everyone, not just assistive technologies, so it is permanently visible.'
-          : 'This would usually be visually hidden, and only visible to assistive technologies. It is visible here for demo purposes.'}
-      </p>
-      {preamble}
-      <BpkAriaLive
-        {...rest}
-        visible
-        politenessSetting={ARIA_LIVE_POLITENESS_SETTINGS.assertive}
-      >
-        {children}
-      </BpkAriaLive>
-    </div>
-  );
-};
-
-AriaLiveDemo.defaultProps = {
-  preamble: null,
-  className: null,
-  visible: false,
-  style: null,
-};
+      {children}
+    </BpkAriaLive>
+  </div>
+);
 
 class SelectExample extends Component<
   {},
-  { destination: string, direct: boolean },
+  { destination: string; direct: boolean }
 > {
   constructor() {
     super();
@@ -166,9 +167,9 @@ class SelectExample extends Component<
 class ChipsExample extends Component<
   {},
   {
-    categories: { Flights: boolean, Hotels: boolean, 'Car hire': boolean },
-    updates: Array<string>,
-  },
+    categories: { Flights: boolean; Hotels: boolean; 'Car hire': boolean };
+    updates: string[];
+  }
 > {
   constructor() {
     super();
