@@ -147,7 +147,7 @@ jobs:
 
       - name: Percy Test
         run: npm run percy-test
-        if: github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
+        if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
