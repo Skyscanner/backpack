@@ -20,9 +20,7 @@
 import { Component } from 'react';
 import type { ReactElement } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkChip from '../../packages/bpk-component-chip';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkFieldset from '../../packages/bpk-component-fieldset';
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkSwitch from '../../packages/bpk-component-switch';
