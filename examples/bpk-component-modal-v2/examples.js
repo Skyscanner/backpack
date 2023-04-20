@@ -39,7 +39,6 @@ const Paragraph = withDefaultProps(BpkText, {
 
 type Props = {
   children: Node,
-  wrapperProps: ?Object,
 };
 
 type State = {
@@ -105,11 +104,6 @@ const content = [
 class ModalContainer extends Component<Props, State> {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  };
-
-  static defaultProps = {
-    wrapperProps: null,
   };
 
   constructor() {
@@ -133,25 +127,23 @@ class ModalContainer extends Component<Props, State> {
   };
 
   render() {
-    const { children, wrapperProps, ...rest } = this.props;
-
     return (
-      <div id="modal-container" {...wrapperProps}>
+      <div id="modal-container">
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
+          <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
         </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkModalV2
-          ariaLabelledby="bpk-modal-label-my-modal"
-          closeLabel="Close modal"
-          getApplicationElement={() => document.getElementById('pagewrap')}
-          id="bpk-modal-element"
+          id="bpk-modal"
+          ariaLabelledby="bpk-modal-label-my-dialog"
+          closeLabel="bpk-modal-button-close"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
+          getApplicationElement={() => document.getElementById('pagewrap')}
           renderTarget={() => document.getElementById('dialog-container')}
-          {...rest}
+          {...this.props}
         >
-          {children}
+          {this.props.children}
         </BpkModalV2>
       </div>
     );
@@ -161,7 +153,8 @@ class ModalContainer extends Component<Props, State> {
 const DefaultExample = () => (
   <ModalContainer title="Modal Title">
     <Paragraph>
-      This is a default dialog. You can put anything you want in here.
+      This is a default modal using the HTML dialog element. You can put
+      anything you want in here.
     </Paragraph>
   </ModalContainer>
 );
@@ -169,7 +162,8 @@ const DefaultExample = () => (
 const LongTitleExample = () => (
   <ModalContainer title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third.">
     <Paragraph>
-      This is a default dialog. You can put anything you want in here.
+      This is a default modal using the HTML dialog element. You can put
+      anything you want in here.
     </Paragraph>
   </ModalContainer>
 );
@@ -177,8 +171,8 @@ const LongTitleExample = () => (
 const HeaderNoTitleExample = () => (
   <ModalContainer>
     <Paragraph>
-      This is a default dialog without a header. You can put anything you want
-      in here.
+      This is a default modal using the HTML dialog element without a header.
+      You can put anything you want in here.
     </Paragraph>
   </ModalContainer>
 );
@@ -248,15 +242,42 @@ const NestedExample = () => (
     This is a full-screen modal. You can put anything you want in here,
     including other modals!
     <ModalContainer
-      closeLabel="Close modal"
-      id="inner-modal"
-      title="Inner modal title"
-      renderTarget={() => document.getElementById('inner-modal-container')}
-      wrapperProps={{ id: 'inner-modal-container' }}
+      id="bpk-inner-modal"
+      closeLabel="bpk-inner-modal-button-close"
+      title="Inner Modal Title"
+      nested
     >
-      This is a default modal. You can put anything you want in here.
+      <Paragraph>
+        This is an inner default modal using the HTML dialog element. You can
+        put anything you want in here.
+      </Paragraph>
     </ModalContainer>
   </ModalContainer>
+);
+
+const MultipleModalsExample = () => (
+  <>
+    <ModalContainer title="Modal Title 1">
+      <Paragraph>
+        Modal 1: This is a default modal using the HTML dialog element. You can
+        put anything you want in here.
+      </Paragraph>
+    </ModalContainer>
+    <br />
+    <ModalContainer title="Modal Title 2">
+      <Paragraph>
+        Modal 2: This is a default modal using the HTML dialog element. You can
+        put anything you want in here.
+      </Paragraph>
+    </ModalContainer>
+    <br />
+    <ModalContainer title="Modal Title 3">
+      <Paragraph>
+        Modal 3: This is a default modal using the HTML dialog element. You can
+        put anything you want in here.
+      </Paragraph>
+    </ModalContainer>
+  </>
 );
 
 export {
@@ -274,4 +295,5 @@ export {
   NoFullScreenOnMobileExample,
   NoFullScreenOnMobileNoTitleExample,
   NestedExample,
+  MultipleModalsExample,
 };

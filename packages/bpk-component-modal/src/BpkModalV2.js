@@ -77,11 +77,10 @@ export const BpkModalV2 = (props: Props) => {
     if (isOpen) {
       ref.current?.showModal?.();
 
-      const dialog = document.getElementById(`${id}`);
-
+      const dialog = document.getElementById(id);
       if (dialog) {
         dialog.addEventListener('click', (event) =>
-          event.target?.id === `${id}` ? ref.current?.close?.() : null,
+          event.target?.id === id ? ref.current?.close?.() : null,
         );
       }
     } else {

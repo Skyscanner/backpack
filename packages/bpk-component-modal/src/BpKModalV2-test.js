@@ -82,14 +82,26 @@ describe('BpkModalV2', () => {
       expect(screen.queryByRole('Dialog')).toBeNull();
     });
 
-    it('should not render title and close button if showHeader is set to false', () => {
+    it('should not close the dialog when clicking inside the dialog', () => {
       render(
-        <BpkModalV2 {...props} showHeader={false}>
+        <BpkModalV2 {...props}>
+          <div>Content</div>
+        </BpkModalV2>,
+      );
+      fireEvent.click(document.getElementById('bpk-modal-element'));
+
+      expect(document.getElementById('bpk-modal-element')).toBeInTheDocument();
+    });
+
+    it('should not render title if title is set to empty string', () => {
+      render(
+        <BpkModalV2 {...props} title="">
           <div>Content</div>
         </BpkModalV2>,
       );
 
       expect(screen.queryByRole('Dialog Element')).not.toBeInTheDocument();
+      expect(document.getElementsByClassName('bpk-close-button')).toBeTruthy();
     });
 
     it('should call showModal to open dialog', () => {
@@ -123,6 +135,61 @@ describe('BpkModalV2', () => {
       );
 
       expect(screen.queryByRole('Dialog')).toBeNull();
+    });
+
+    it('should set up the correct className when fullScreenOnDesktop is true', () => {
+      render(
+        <BpkModalV2 {...props} fullScreenOnDesktop>
+          <div>Content</div>
+        </BpkModalV2>,
+      );
+
+      expect(document.getElementById('bpk-modal-element')).toHaveClass(
+        'bpk-modal bpk-modal--full-screen-desktop',
+      );
+      expect(
+        document.getElementsByClassName(
+          'bpk-modal_container bpk-modal__container--full-screen-desktop',
+        ),
+      ).toBeTruthy();
+    });
+
+    it('should set up the correct classNames when noFullScreenOnMobile is true', () => {
+      render(
+        <BpkModalV2 {...props} noFullScreenOnMobile>
+          <div>Content</div>
+        </BpkModalV2>,
+      );
+
+      expect(document.getElementById('bpk-modal-element')).toHaveClass(
+        'bpk-modal bpk-modal--no-full-screen-mobile',
+      );
+    });
+
+    it('should set up the correct className when padded is false', () => {
+      render(
+        <BpkModalV2 {...props} padded={false}>
+          <div>Content</div>
+        </BpkModalV2>,
+      );
+
+      expect(
+        document.getElementsByClassName(
+          'bpk-modal_container bpk-modal__container--padded',
+        ),
+      ).toBeTruthy();
+    });
+
+    it('should set up the correct className when wide is true', () => {
+      render(
+        <BpkModalV2 {...props} wide>
+          <div>Content</div>
+        </BpkModalV2>,
+      );
+
+      expect(document.getElementById('bpk-modal-element')).toHaveClass(
+        'bpk-modal bpk-modal--wide',
+      );
     });
 
     describe('setOverflowY', () => {

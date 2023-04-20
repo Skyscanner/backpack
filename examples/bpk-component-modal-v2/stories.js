@@ -33,6 +33,7 @@ import {
   NoFullScreenOnMobileExample,
   NoFullScreenOnMobileNoTitleExample,
   NestedExample,
+  MultipleModalsExample,
 } from './examples';
 
 export default {
@@ -53,3 +54,4 @@ export const FullScreenOnDesktopNoTitle = FullScreenOnDesktopNoTitleExample;
 export const NoFullScreenOnMobile = NoFullScreenOnMobileExample;
 export const NoFullScreenOnMobileNoTitle = NoFullScreenOnMobileNoTitleExample;
 export const Nested = NestedExample;
+export const MultipleModals = MultipleModalsExample;
