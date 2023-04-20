@@ -75,15 +75,6 @@
 
   @include bpk-box-shadow-xl;
 
-  &--no-full-screen-mobile {
-    width: 90vw;
-    max-width: none;
-    height: fit-content;
-    max-height: 90vh;
-
-    @include center-dialog;
-  }
-
   @include bpk-breakpoint-above-mobile {
     width: $bpk-modal-max-width;
     max-width: none;
@@ -101,6 +92,20 @@
 
     &--wide {
       width: $bpk-modal-wide-max-width;
+    }
+  }
+
+  &--no-full-screen-mobile {
+    width: 90vw;
+    max-width: none;
+    height: fit-content;
+    max-height: 90vh;
+
+    @include center-dialog;
+
+    @include bpk-breakpoint-above-mobile {
+      width: $bpk-modal-max-width;
+      max-width: none;
     }
   }
 
