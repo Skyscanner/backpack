@@ -130,7 +130,7 @@ class ModalContainer extends Component<Props, State> {
     return (
       <div id="modal-container">
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
+          <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkModalV2
@@ -242,10 +242,9 @@ const NestedExample = () => (
     This is a full-screen modal. You can put anything you want in here,
     including other modals!
     <ModalContainer
-      id="bpk-inner-modal"
-      closeLabel="bpk-inner-modal-button-close"
+      id="bpk-modal-inner"
       title="Inner Modal Title"
-      nested
+      noFullScreenOnMobile
     >
       <Paragraph>
         This is an inner default modal using the HTML dialog element. You can
