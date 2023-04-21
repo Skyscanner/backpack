@@ -16,11 +16,16 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { ReactElement } from 'react';
 
 import { isBefore, isSameDay } from './date-utils';
 
-const DateType = () => (props) => {
+type Props = {
+  endDate: Date;
+  startDate: Date;
+};
+
+const DateType = () => (props: Props) => {
   const { endDate, startDate } = props;
 
   // No range selected
@@ -48,45 +53,35 @@ const DateType = () => (props) => {
   return null;
 };
 
-const CALENDAR_SELECTION_TYPE = {
+export const CALENDAR_SELECTION_TYPE = {
   single: 'single',
   range: 'range',
+} as const;
+
+export type SelectionConfigurationSingle = {
+  type: typeof CALENDAR_SELECTION_TYPE.single;
+  date: Date | null;
 };
 
-const SelectionConfigurationSingle = PropTypes.shape({
-  type: PropTypes.oneOf([CALENDAR_SELECTION_TYPE.single]),
-  date: PropTypes.instanceOf(Date),
-});
-
-const SelectionConfigurationRange = PropTypes.shape({
-  type: PropTypes.oneOf([CALENDAR_SELECTION_TYPE.range]),
-  startDate: DateType(),
-  endDate: DateType(),
-});
-
-const SelectionConfiguration = PropTypes.oneOfType([
-  SelectionConfigurationSingle,
-  SelectionConfigurationRange,
-]);
-
-const WeekDay = PropTypes.shape({
-  name: PropTypes.string,
-  nameAbbr: PropTypes.string,
-  index: PropTypes.number,
-  isWeekend: PropTypes.bool,
-});
-
-const WeekDayKey = PropTypes.string;
-const DaysOfWeek = PropTypes.arrayOf(WeekDay);
-const DateModifiers = PropTypes.objectOf(PropTypes.func);
-const ReactComponent = PropTypes.oneOfType([PropTypes.string, PropTypes.func]);
-
-export { CALENDAR_SELECTION_TYPE };
-export default {
-  SelectionConfiguration,
-  DateModifiers,
-  DaysOfWeek,
-  ReactComponent,
-  WeekDay,
-  WeekDayKey,
+export type SelectionConfigurationRange = {
+  type: typeof CALENDAR_SELECTION_TYPE.range;
+  startDate: Date;
+  endDate: Date;
 };
+
+export type SelectionConfiguration =
+  | SelectionConfigurationSingle
+  | SelectionConfigurationRange;
+
+export type WeekDay = {
+  name: string;
+  nameAbbr: string;
+  index: number;
+  isWeekend: boolean;
+  [key: string]: any;
+};
+
+export type WeekDayKey = string;
+export type DaysOfWeek = WeekDay[];
+export type DateModifiers = { [key: string]: Function };
+export type ReactComponent = string | ((props: any) => ReactElement);

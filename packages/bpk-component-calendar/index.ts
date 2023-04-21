@@ -20,7 +20,6 @@ import BpkCalendarContainer, {
   withCalendarState,
 } from './src/BpkCalendarContainer';
 import BpkCalendarGrid, {
-  propTypes as BpkCalendarGridPropTypes,
   BpkCalendarGridWithTransition,
 } from './src/BpkCalendarGrid';
 import BpkCalendarGridHeader from './src/BpkCalendarGridHeader';
@@ -28,12 +27,14 @@ import BpkCalendarNav from './src/BpkCalendarNav';
 import BpkCalendarDate, {
   ROW_TYPES,
   SELECTION_TYPES,
-  propTypes as BpkCalendarDatePropTypes,
 } from './src/BpkCalendarDate';
 import composeCalendar from './src/composeCalendar';
+import { CALENDAR_SELECTION_TYPE } from './src/custom-proptypes';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CustomPropTypes, {
-  CALENDAR_SELECTION_TYPE,
-} from './src/custom-proptypes';
+  BpkCalendarGridPropTypes,
+  BpkCalendarDatePropTypes,
+} from './src/custom-proptypes-legacy';
 import * as DateUtils from './src/date-utils';
 import themeAttributes from './src/themeAttributes';
 
@@ -44,7 +45,6 @@ export {
   BpkCalendarGridHeader,
   BpkCalendarNav,
   BpkCalendarDate,
-  CustomPropTypes,
   DateUtils,
   CALENDAR_SELECTION_TYPE,
   ROW_TYPES,
@@ -52,7 +52,8 @@ export {
   composeCalendar,
   withCalendarState,
   themeAttributes,
-  BpkCalendarDatePropTypes,
-  BpkCalendarGridPropTypes,
   BpkCalendarGridWithTransition,
+  CustomPropTypes,
+  BpkCalendarGridPropTypes,
+  BpkCalendarDatePropTypes,
 };

@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import {
   calendarDaySize,
   calendarDaySpacing,
@@ -23,7 +24,7 @@ import {
 
 const CSS_UNIT_REGEX = /(^[+-]?(?:\d*\.)?\d+)(.+)/i;
 
-const splitToken = (value) => {
+const splitToken = (value: string) => {
   const match = value.match(CSS_UNIT_REGEX);
   if (!match) {
     throw new Error(
@@ -43,11 +44,12 @@ export const getCalendarGridWidth = (multiplier = 1) => {
       `'calendarDaySize' and 'calendarDaySpacing' must use the same unit. Got ${sizeUnit} and ${spacingUnit}`,
     );
   }
+  // @ts-expect-error TS doesn't correctly read the size and spacing values type i.e. numbers as returned by parseFloat
   const width = multiplier * (7 * (sizeValue + 2 * spacingValue));
   return `${width}${sizeUnit}`;
 };
 
-export const getTransformStyles = (transformValue) => {
+export const getTransformStyles = (transformValue: string) => {
   const transform = `translateX(${transformValue})`;
   return {
     transform,

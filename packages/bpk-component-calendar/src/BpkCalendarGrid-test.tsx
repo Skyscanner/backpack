@@ -19,13 +19,14 @@
 import PropTypes from 'prop-types';
 import { render, screen } from '@testing-library/react';
 import { addMonths, isWeekend } from 'date-fns';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import {
   colorMonteverde,
   colorPanjin,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import userEvent from '@testing-library/user-event';
 
-import { weekDays, formatDateFull, formatMonth } from '../test-utils';
+import { formatDateFull } from '../test-utils';
 
 import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarDate from './BpkCalendarDate';
@@ -35,10 +36,8 @@ describe('BpkCalendarGrid', () => {
     const { asFragment } = render(
       <BpkCalendarGrid
         month={new Date('2016-10')}
-        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarDate}
-        daysOfWeek={weekDays}
         weekStartsOn={3}
         minDate={new Date('2016-01')}
         maxDate={addMonths(new Date('2016-01'), 12)}
@@ -54,10 +53,8 @@ describe('BpkCalendarGrid', () => {
     const { asFragment } = render(
       <BpkCalendarGrid
         month={new Date('2016-10')}
-        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarDate}
-        daysOfWeek={weekDays}
         weekStartsOn={1}
         dateModifiers={modifiers}
         minDate={new Date('2016-01')}
@@ -68,7 +65,7 @@ describe('BpkCalendarGrid', () => {
   });
 
   it('should render correctly with a custom date component', () => {
-    const MyCustomDate = (props) => {
+    const MyCustomDate = (props: any) => {
       const cx = {
         backgroundColor: colorPanjin,
         width: '50%',
@@ -87,10 +84,8 @@ describe('BpkCalendarGrid', () => {
     const { asFragment } = render(
       <BpkCalendarGrid
         month={new Date('2016-10')}
-        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={MyCustomDate}
-        daysOfWeek={weekDays}
         weekStartsOn={1}
         minDate={new Date('2016-01')}
         maxDate={addMonths(new Date('2016-01'), 12)}
@@ -105,10 +100,8 @@ describe('BpkCalendarGrid', () => {
     render(
       <BpkCalendarGrid
         month={new Date('2016-10')}
-        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarDate}
-        daysOfWeek={weekDays}
         weekStartsOn={0}
         onDateClick={onDateClick}
         minDate={new Date('2016-01')}
@@ -130,12 +123,9 @@ describe('BpkCalendarGrid', () => {
     const { asFragment } = render(
       <BpkCalendarGrid
         month={new Date('2016-10')}
-        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarDate}
-        daysOfWeek={weekDays}
         weekStartsOn={0}
-        weekDayKey="nameNarrow"
         minDate={new Date('2016-01')}
         maxDate={addMonths(new Date('2016-01'), 12)}
       />,

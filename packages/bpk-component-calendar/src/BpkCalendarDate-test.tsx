@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { ReactElement } from 'react';
+import { render, RenderOptions } from '@testing-library/react';
 
 import BpkCalendarDate from './BpkCalendarDate';
 
@@ -34,7 +35,7 @@ describe('BpkCalendarDate', () => {
 
   it('should render a disabled button', () => {
     const { asFragment } = render(
-      <BpkCalendarDate date={new Date(2010, 1, 15)} disabled />,
+      <BpkCalendarDate date={new Date(2010, 1, 15)} isBlocked />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -50,8 +51,8 @@ describe('BpkCalendarDate', () => {
     const { asFragment } = render(
       <BpkCalendarDate
         date={new Date(2010, 1, 15)}
-        onClick={() => null}
-        onKeyDown={() => null}
+        onClick={() => {}}
+        onDateKeyDown={() => {}}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

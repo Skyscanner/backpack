@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar-nav"
+  >
+    <div
+      style="display: table-row;"
+    >
+      <div
+        class="bpk-calendar-nav__nudger"
+      >
+        <button
+          class="bpk-calendar-nav__button"
+          disabled=""
+          id="myCalendarNav_month_nudger_previous"
+          type="button"
+        >
+          <svg
+            class="bpk-calendar-nav__icon"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.5 17.293V6.707a1.632 1.632 0 00-2.701-1.296l-5.724 5.081a1.75 1.75 0 00-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 002.75-1.251z"
+            />
+          </svg>
+          <span
+            class="bpk-calendar-nav__text--hidden"
+          >
+            Go to previous month
+          </span>
+        </button>
+      </div>
+      <div
+        class="bpk-calendar-nav__month"
+      >
+        <label
+          class="bpk-calendar-nav__text--hidden"
+          for="myCalendarNav_select"
+        >
+          Change month
+        </label>
+        <select
+          aria-invalid="false"
+          class="bpk-select"
+          disabled=""
+          id="myCalendarNav_select"
+          name="months"
+        >
+          <option
+            value="2010-02"
+          >
+            February 2010
+          </option>
+          <option
+            value="2010-03"
+          >
+            March 2010
+          </option>
+        </select>
+      </div>
+      <div
+        class="bpk-calendar-nav__nudger"
+      >
+        <button
+          class="bpk-calendar-nav__button"
+          disabled=""
+          id="myCalendarNav_month_nudger_next"
+          type="button"
+        >
+          <svg
+            class="bpk-calendar-nav__icon"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.5 17.293V6.707a1.632 1.632 0 012.701-1.296l5.724 5.081a1.75 1.75 0 01.121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 01-2.75-1.251z"
+            />
+          </svg>
+          <span
+            class="bpk-calendar-nav__text--hidden"
+          >
+            Go to next month
+          </span>
+        </button>
+      </div>
+      <div
+        aria-live="polite"
+        class="bpk-aria-live bpk-aria-live--invisible"
+      >
+        February 2010
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCalendarNav should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar-nav"
+  >
+    <div
+      style="display: table-row;"
+    >
+      <div
+        class="bpk-calendar-nav__nudger"
+      >
+        <button
+          class="bpk-calendar-nav__button"
+          disabled=""
+          id="myCalendarNav_month_nudger_previous"
+          type="button"
+        >
+          <svg
+            class="bpk-calendar-nav__icon"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.5 17.293V6.707a1.632 1.632 0 00-2.701-1.296l-5.724 5.081a1.75 1.75 0 00-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 002.75-1.251z"
+            />
+          </svg>
+          <span
+            class="bpk-calendar-nav__text--hidden"
+          >
+            Go to previous month
+          </span>
+        </button>
+      </div>
+      <div
+        class="bpk-calendar-nav__month"
+      >
+        <label
+          class="bpk-calendar-nav__text--hidden"
+          for="myCalendarNav_select"
+        >
+          Change month
+        </label>
+        <select
+          aria-invalid="false"
+          class="bpk-select"
+          id="myCalendarNav_select"
+          name="months"
+        >
+          <option
+            value="2010-02"
+          >
+            February 2010
+          </option>
+          <option
+            value="2010-03"
+          >
+            March 2010
+          </option>
+        </select>
+      </div>
+      <div
+        class="bpk-calendar-nav__nudger"
+      >
+        <button
+          class="bpk-calendar-nav__button"
+          id="myCalendarNav_month_nudger_next"
+          type="button"
+        >
+          <svg
+            class="bpk-calendar-nav__icon"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.5 17.293V6.707a1.632 1.632 0 012.701-1.296l5.724 5.081a1.75 1.75 0 01.121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 01-2.75-1.251z"
+            />
+          </svg>
+          <span
+            class="bpk-calendar-nav__text--hidden"
+          >
+            Go to next month
+          </span>
+        </button>
+      </div>
+      <div
+        aria-live="polite"
+        class="bpk-aria-live bpk-aria-live--invisible"
+      >
+        February 2010
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCalendarNav should use given previousMonth and nextMonth labels correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar-nav"
+  >
+    <div
+      style="display: table-row;"
+    >
+      <div
+        class="bpk-calendar-nav__nudger"
+      >
+        <button
+          class="bpk-calendar-nav__button"
+          disabled=""
+          id="myCalendarNav_month_nudger_previous"
+          type="button"
+        >
+          <svg
+            class="bpk-calendar-nav__icon"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.5 17.293V6.707a1.632 1.632 0 00-2.701-1.296l-5.724 5.081a1.75 1.75 0 00-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 002.75-1.251z"
+            />
+          </svg>
+          <span
+            class="bpk-calendar-nav__text--hidden"
+          >
+            Go to previous month
+          </span>
+        </button>
+      </div>
+      <div
+        class="bpk-calendar-nav__month"
+      >
+        <label
+          class="bpk-calendar-nav__text--hidden"
+          for="myCalendarNav_select"
+        >
+          Change month
+        </label>
+        <select
+          aria-invalid="false"
+          class="bpk-select"
+          disabled=""
+          id="myCalendarNav_select"
+          name="months"
+        >
+          <option
+            value="2010-02"
+          >
+            February 2010
+          </option>
+          <option
+            value="2010-03"
+          >
+            March 2010
+          </option>
+        </select>
+      </div>
+      <div
+        class="bpk-calendar-nav__nudger"
+      >
+        <button
+          class="bpk-calendar-nav__button"
+          disabled=""
+          id="myCalendarNav_month_nudger_next"
+          type="button"
+        >
+          <svg
+            class="bpk-calendar-nav__icon"
+            height="24"
+            style="width: 1.5rem; height: 1.5rem;"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.5 17.293V6.707a1.632 1.632 0 012.701-1.296l5.724 5.081a1.75 1.75 0 01.121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 01-2.75-1.251z"
+            />
+          </svg>
+          <span
+            class="bpk-calendar-nav__text--hidden"
+          >
+            Go to next month
+          </span>
+        </button>
+      </div>
+      <div
+        aria-live="polite"
+        class="bpk-aria-live bpk-aria-live--invisible"
+      >
+        February 2010
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -23,15 +23,16 @@ import startOfDay from 'date-fns/startOfDay';
 import { CALENDAR_SELECTION_TYPE, SELECTION_TYPES } from '..';
 
 import Week from './Week';
+import type { Props } from './Week';
 
 const mockDateComponent = jest.fn();
 
-const DummyDateComponent = (props) => {
+const DummyDateComponent = (props: any) => {
   mockDateComponent(props);
   return <div />;
 };
 
-const initialProps = {
+const initialProps: Props = {
   ...Week.defaultProps,
   DateComponent: DummyDateComponent,
   dateModifiers: {},
@@ -44,7 +45,7 @@ const initialProps = {
     new Date(1980, 5, 5),
     new Date(1980, 5, 6),
   ].map(startOfDay),
-  formatDateFull: (d) => d.toString(),
+  formatDateFull: (d: Date) => d.toString(),
   preventKeyboardFocus: false,
   markToday: true,
   markOutsideDays: true,

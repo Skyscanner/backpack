@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`composeCalendar should compose a nav, header, grid and date component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar bpk-calendar--fixed"
+  >
+    <nav
+      changemonthlabel="Change month"
+      id="myCalendar__bpk_calendar_nav"
+      maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      nextmonthlabel="Go to next month"
+      previousmonthlabel="Go to previous month"
+    />
+    <header
+      class="bpk-calendar__header"
+      daysofweek="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+      weekdaykey="nameAbbr"
+      weekstartson="1"
+    />
+    <grid
+      class=""
+      datecomponent="Date"
+      datemodifiers="[object Object]"
+      daysofweek="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+      maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      selectionconfiguration="[object Object]"
+      weekstartson="1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`composeCalendar should pass props to their respective components 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar bpk-calendar--fixed"
+  >
+    NavHeader
+    <div>
+      <h1>
+        Grid
+      </h1>
+      Date
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar"
+  >
+    <nav
+      changemonthlabel="Change month"
+      id="myCalendar__bpk_calendar_nav"
+      maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      nextmonthlabel="Go to next month"
+      previousmonthlabel="Go to previous month"
+    />
+    <header
+      class="bpk-calendar__header"
+      daysofweek="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+      weekdaykey="nameAbbr"
+      weekstartson="1"
+    />
+    <grid
+      class=""
+      datecomponent="Date"
+      datemodifiers="[object Object]"
+      daysofweek="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+      maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      selectionconfiguration="[object Object]"
+      weekstartson="1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`composeCalendar should render with custom className prop correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar my-custom-class bpk-calendar--fixed"
+  >
+    <nav
+      changemonthlabel="Change month"
+      id="myCalendar__bpk_calendar_nav"
+      maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      nextmonthlabel="Go to next month"
+      previousmonthlabel="Go to previous month"
+    />
+    <header
+      class="bpk-calendar__header"
+      daysofweek="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+      weekdaykey="nameAbbr"
+      weekstartson="1"
+    />
+    <grid
+      class=""
+      datecomponent="Date"
+      datemodifiers="[object Object]"
+      daysofweek="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+      maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      selectionconfiguration="[object Object]"
+      weekstartson="1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`composeCalendar should render without a header element 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar bpk-calendar--fixed"
+  >
+    <nav
+      changemonthlabel="Change month"
+      id="myCalendar__bpk_calendar_nav"
+      maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      nextmonthlabel="Go to next month"
+      previousmonthlabel="Go to previous month"
+    />
+    <grid
+      class="bpk-calendar__grid"
+      datecomponent="Date"
+      datemodifiers="[object Object]"
+      daysofweek="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+      maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      selectionconfiguration="[object Object]"
+      weekstartson="1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`composeCalendar should render without a nav or header element 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-calendar bpk-calendar--fixed"
+  >
+    <grid
+      class=""
+      datecomponent="Date"
+      datemodifiers="[object Object]"
+      daysofweek="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+      maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      selectionconfiguration="[object Object]"
+      weekstartson="1"
+    />
+  </div>
+</DocumentFragment>
+`;

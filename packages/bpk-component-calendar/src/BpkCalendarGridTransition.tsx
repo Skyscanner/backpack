@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import { Component } from 'react';
+import type { ComponentType, ElementType } from 'react';
+import { Component, ComponentProps } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import {
@@ -47,15 +48,46 @@ const transitionValues = {
   next: getCalendarGridWidth(-2),
 };
 
-const getFocusedDateForMonth = (month, currentFocusedDate, minDate, maxDate) =>
+const getFocusedDateForMonth = (
+  month: Date,
+  currentFocusedDate: Date | null,
+  minDate: Date,
+  maxDate: Date,
+) =>
   dateToBoundaries(
     setMonthYear(currentFocusedDate, month.getMonth(), month.getFullYear()),
     startOfDay(minDate),
     startOfDay(maxDate),
   );
 
-class BpkCalendarGridTransition extends Component {
-  constructor(props) {
+export type Props = DefaultProps & {
+  TransitionComponent: ElementType;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+};
+
+type DefaultProps = {
+  className: string | null;
+  month: Date;
+  focusedDate: Date | null;
+};
+
+type State = {
+  isTransitioning: boolean;
+  transitionValue: string;
+  currentMonth?: Date | null;
+  months: Date[];
+};
+
+class BpkCalendarGridTransition extends Component<Props, State> {
+  isTransitionEndSupportedVar: boolean;
+
+  static defaultProps: DefaultProps = {
+    className: null,
+    month: new Date(),
+    focusedDate: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.onMonthTransitionEnd = this.onMonthTransitionEnd.bind(this);
@@ -73,10 +105,10 @@ class BpkCalendarGridTransition extends Component {
       ],
     };
 
-    this.isTransitionEndSupported = isTransitionEndSupported();
+    this.isTransitionEndSupportedVar = isTransitionEndSupported();
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     const hasMonthChanged = !isSameMonth(this.props.month, nextProps.month);
 
     if (hasMonthChanged) {
@@ -150,8 +182,8 @@ class BpkCalendarGridTransition extends Component {
       isTransitioning && 'bpk-calendar-grid-transition__strip--transitioning',
     );
 
-    let min;
-    let max;
+    let min: Date;
+    let max: Date;
     if (rest.minDate && rest.maxDate) {
       ({ max, min } = getMonthRange(rest.minDate, rest.maxDate));
     }
@@ -197,26 +229,14 @@ class BpkCalendarGridTransition extends Component {
   }
 }
 
-BpkCalendarGridTransition.propTypes = {
-  TransitionComponent: PropTypes.elementType.isRequired,
-  className: PropTypes.string,
-  month: PropTypes.instanceOf(Date),
-  focusedDate: PropTypes.instanceOf(Date),
-};
-
-BpkCalendarGridTransition.defaultProps = {
-  className: null,
-  month: null,
-  focusedDate: null,
-};
-
-const addCalendarGridTransition = (TransitionComponent) => (props) =>
-  (
-    <BpkCalendarGridTransition
-      TransitionComponent={TransitionComponent}
-      {...props}
-    />
-  );
+const addCalendarGridTransition =
+  (TransitionComponent: ComponentType<any>) => (props: any) =>
+    (
+      <BpkCalendarGridTransition
+        TransitionComponent={TransitionComponent}
+        {...props}
+      />
+    );
 
 export default BpkCalendarGridTransition;
 export { addCalendarGridTransition };
