@@ -115,6 +115,42 @@ jobs:
               body: "Visual regression tests failed 😢. You can download the failure diffs from the 'Artifacts' section of the failed CI run. To update the tests, run `npm run jest:visual-tests:update` locally."
             })
 
+  PercyTests: 
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Restore Cache
+        uses: actions/cache/restore@v3.3.1
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v3.3.1
+        id: storybook-dist-cache
+        with:
+          path: dist-storybook/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+
+      - name: Percy Test
+        run: npm run percy-test
+        if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
 
   Danger:
     runs-on: ubuntu-latest
