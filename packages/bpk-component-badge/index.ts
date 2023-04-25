@@ -16,17 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
+import themeAttributes from './src/themeAttributes';
 
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
-
-import BpkBadge from './BpkBadge';
-
-describe('BpkBadge accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkBadge>Promociando</BpkBadge>);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export type BpkBadgeProps = Props;
+export default component;
+export { BADGE_TYPES, themeAttributes };
