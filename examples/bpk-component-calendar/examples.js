@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 import addMonths from 'date-fns/addMonths';
-import addDays from 'date-fns/addDays';
 import startOfDay from 'date-fns/startOfDay';
 
 import { action } from '../../packages/bpk-storybook-utils';
@@ -302,6 +301,7 @@ const FocusedDateInThePastExample = () => (
 
 const RangeDateCalendarExample = () => (
   <CalendarContainer
+    minDate={new Date(2020, 3, 1)}
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -312,8 +312,8 @@ const RangeDateCalendarExample = () => (
     nextMonthLabel="Go to next month"
     selectionConfiguration={{
       type: 'range',
-      startDate: new Date(),
-      endDate: addDays(new Date(), 5),
+      startDate: new Date(2020, 3, 19),
+      endDate: new Date(2020, 3, 25),
     }}
   />
 );
