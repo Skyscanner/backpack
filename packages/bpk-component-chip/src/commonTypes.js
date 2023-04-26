@@ -33,7 +33,7 @@ export type CommonProps = {
   disabled: boolean,
   onClick: (event: SyntheticEvent<>) => mixed,
   selected: boolean,
-  type: $Keys<typeof CHIP_TYPES>,
+  type: $Values<typeof CHIP_TYPES>,
   className: ?string,
   leadingAccessoryView: ?Node,
 };
@@ -47,7 +47,7 @@ export const COMMON_PROP_TYPES = {
   leadingAccessoryView: PropTypes.node,
   selected: PropTypes.bool,
   trailingAccessoryView: PropTypes.node,
-  type: PropTypes.oneOf(Object.keys(CHIP_TYPES)),
+  type: PropTypes.oneOf(Object.values(CHIP_TYPES)),
 };
 
 export const COMMON_DEFAULT_PROPS = {

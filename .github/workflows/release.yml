@@ -96,11 +96,11 @@ jobs:
           packages/node_modules/
         key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
     
-    - run: npm run build
+    - run: npm run transpile
 
     - name: Publish NPM package
       run: |
-        cd packages
+        cd dist
         npm version $RELEASE_VERSION --no-git-tag-version
         npm publish
       env:

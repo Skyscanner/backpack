@@ -329,7 +329,7 @@ const DockedExample = () => (
         <BpkInput
           id="input_outbound"
           name="input_outbound"
-          value={new Date().toLocaleDateString()}
+          value={new Date(2020, 3, 15).toLocaleDateString()}
           onChange={action('outbound date input changed')}
           className={getClassName('bpk-forms__date')}
           dockedMiddle
@@ -338,9 +338,7 @@ const DockedExample = () => (
         <BpkInput
           id="input_inbound"
           name="input_inbound"
-          value={new Date(
-            new Date().getTime() + 24 * 60 * 60 * 1000,
-          ).toLocaleDateString()}
+          value={new Date(2020, 3, 16).toLocaleDateString()}
           onChange={action('inbound date input changed')}
           className={getClassName('bpk-forms__date')}
           dockedLast
@@ -387,7 +385,7 @@ const DockedExample = () => (
         <BpkInput
           id="input_checkin"
           name="input_checkin"
-          value={new Date().toLocaleDateString()}
+          value={new Date(2020, 3, 15).toLocaleDateString()}
           onChange={action('checkin date input changed')}
           className={getClassName('bpk-forms__date')}
           dockedMiddle
@@ -396,9 +394,7 @@ const DockedExample = () => (
         <BpkInput
           id="input_checkout"
           name="input_checkout"
-          value={new Date(
-            new Date().getTime() + 24 * 60 * 60 * 1000,
-          ).toLocaleDateString()}
+          value={new Date(2020, 3, 16).toLocaleDateString()}
           onChange={action('checkout date input changed')}
           className={getClassName('bpk-forms__date')}
           dockedLast
