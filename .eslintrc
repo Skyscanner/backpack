@@ -110,12 +110,7 @@
         "allowRequiredDefaults": true
       }
     ],
-    "react/require-default-props": [
-      "error",
-      {
-        "forbidDefaultForRequired": false
-      }
-    ],
+    "react/require-default-props": "off",
     "react/prefer-stateless-function": [
       "error",
       {

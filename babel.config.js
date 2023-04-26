@@ -71,7 +71,8 @@ module.exports = {
           !!(
             fileName.includes('-test') ||
             fileName.includes('-Test') ||
-            /\/node_modules\//.test(fileName)
+            /\/node_modules\//.test(fileName) ||
+            fileName.includes('.d.ts')
           ),
       ],
     },
