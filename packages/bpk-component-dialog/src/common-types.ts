@@ -28,16 +28,12 @@ export type DialogInnerProps = {
   ariaLabel: string;
   id: string;
   children: ReactNode;
-  dialogRef?: (ref: HTMLElement) => void;
+  dialogRef: (ref: HTMLElement) => void;
+  getApplicationElement: () => HTMLElement;
   className?: string;
   contentClassName?: string;
   flare?: boolean;
   flareClassName?: string;
-};
-
-// Please remove this type when `withScrim` is flow-typed
-type ScrimProps = {
-  dialogRef?: () => HTMLElement;
 };
 
 export type Props = DialogInnerProps & {
@@ -48,5 +44,4 @@ export type Props = DialogInnerProps & {
   dismissible?: boolean;
   headerIcon?: ReactNode;
   headerIconType?: typeof HEADER_ICON_TYPES[keyof typeof HEADER_ICON_TYPES];
-  // [rest: string]: []; // Inexact rest. See decisions/inexact-rest.md
 };

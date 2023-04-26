@@ -39,6 +39,7 @@ describe('BpkDialog', () => {
         onClose={jest.fn()}
         closeLabel="Close"
         dialogRef={jest.fn()}
+        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
       >
@@ -58,6 +59,7 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
+        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
@@ -78,6 +80,7 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
+        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
@@ -99,6 +102,7 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
+        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
@@ -121,6 +125,7 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
+        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
@@ -143,6 +148,7 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
+        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         flare
@@ -163,6 +169,7 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
+        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         flare

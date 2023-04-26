@@ -32,6 +32,7 @@ describe('BpkDialog accessibility tests', () => {
         onClose={jest.fn()}
         closeLabel="Close"
         dialogRef={jest.fn()}
+        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
       >
