@@ -42,24 +42,24 @@ export const TEXT_ALIGN = {
   start: 'start',
   center: 'center',
   end: 'end',
-}; // as const; // Temp disabling TS types due to non TS projects compatibility.
+} as const;
 
 export type Props = {
-  className?: string | null,
-  contentId?: string | null,
-  tagline?: string | null,
-  headline: string,
-  subheading?: string | null,
+  className?: string | null;
+  contentId?: string | null;
+  tagline?: string | null;
+  headline: string;
+  subheading?: string | null;
   sponsor?: {
-    label: string,
-    logo: string,
-    altText: string,
-  } | null,
-  buttonText: string,
-  onClick: () => void,
-  invertVertically?: boolean,
-  textAlign: $Keys<typeof TEXT_ALIGN>, // typeof TEXT_ALIGN[keyof typeof TEXT_ALIGN]; // Temp disabling TS types due to non TS projects compatibility.
-  style?: {},
+    label: string;
+    logo: string;
+    altText: string;
+  } | null;
+  buttonText: string;
+  onClick: () => void;
+  invertVertically?: boolean;
+  textAlign: typeof TEXT_ALIGN[keyof typeof TEXT_ALIGN];
+  style?: {};
 };
 
 const constructAriaLabel = ({
@@ -70,7 +70,7 @@ const constructAriaLabel = ({
   tagline,
 }: Pick<
   Props,
-  'buttonText' | 'headline' | 'sponsor' | 'subheading' | 'tagline',
+  'buttonText' | 'headline' | 'sponsor' | 'subheading' | 'tagline'
 >) => {
   const text: string[] = [];
   const addText = (value?: string | null) => value && text.push(value);
@@ -107,6 +107,7 @@ const BpkGraphicPromo = ({
     event.stopPropagation();
     onClick();
   };
+
   const onKeyWrapper = (event: KeyboardEvent<HTMLElement>) =>
     isAccessibilityClick(event) && onClick();
 
@@ -197,16 +198,6 @@ const BpkGraphicPromo = ({
       </div>
     </div>
   );
-};
-
-BpkGraphicPromo.defaultProps = {
-  className: null,
-  contentId: null,
-  tagline: null,
-  subheading: null,
-  sponsor: null,
-  invertVertically: false,
-  style: {},
 };
 
 export default BpkGraphicPromo;
