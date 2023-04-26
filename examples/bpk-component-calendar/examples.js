@@ -302,6 +302,7 @@ const FocusedDateInThePastExample = () => (
 const RangeDateCalendarExample = () => (
   <CalendarContainer
     minDate={new Date(2020, 3, 1)}
+    selectTodaysDate={false}
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
