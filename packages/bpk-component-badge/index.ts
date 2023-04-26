@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
 import themeAttributes from './src/themeAttributes';
 

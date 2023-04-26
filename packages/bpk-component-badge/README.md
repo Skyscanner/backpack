@@ -8,7 +8,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-```js
+```tsx
 import BpkBadge, { BADGE_TYPES } from '@skyscanner/backpack-web/bpk-component-badge';
 
 export default () => (
