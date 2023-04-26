@@ -130,10 +130,12 @@ const DefaultExample = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
-    selectTodaysDate
-    // Subtract one day from today's date to make today selectable by default
-    minDate={DateUtils.addDays(new Date(), -1)}
-    maxDate={DateUtils.addMonths(new Date(), 12)}
+    minDate={new Date(2020, 3, 1)}
+    maxDate={new Date(2020, 6, 1)}
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(2020, 3, 15),
+    }}
   />
 );
 
