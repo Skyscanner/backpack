@@ -15,10 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkBoilerplate.module.scss';
@@ -26,10 +24,10 @@ import STYLES from './BpkBoilerplate.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  className: ?string,
+  className?: string | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
-const BpkBoilerplate = (props: Props) => {
-  const { className, ...rest } = props;
+const BpkBoilerplate = ({ className = null, ...rest }: Props) => {
   const classNames = getClassName('bpk-boilerplate', className);
 
   return (
@@ -38,10 +36,6 @@ const BpkBoilerplate = (props: Props) => {
       I am an example component.
     </div>
   );
-};
-
-BpkBoilerplate.propTypes = {
-  className: PropTypes.string,
 };
 
 BpkBoilerplate.defaultProps = {

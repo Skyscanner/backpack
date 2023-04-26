@@ -16,39 +16,14 @@
  * limitations under the License.
  */
 
-export declare const TEXT_ALIGN: {
-  readonly start: 'start';
-  readonly center: 'center';
-  readonly end: 'end';
-};
 export type Props = {
   className?: string | null;
-  contentId?: string | null;
-  tagline?: string | null;
-  headline: string;
-  subheading?: string | null;
-  sponsor?: {
-    label: string;
-    logo: string;
-    altText: string;
-  } | null;
-  buttonText: string;
-  onClick: () => void;
-  invertVertically?: boolean;
-  textAlign: typeof TEXT_ALIGN[keyof typeof TEXT_ALIGN];
-  style?: {};
+  [rest: string]: any;
 };
-declare const BpkGraphicPromo: ({
-  buttonText,
-  className,
-  contentId,
-  headline,
-  invertVertically,
-  onClick,
-  sponsor,
-  style,
-  subheading,
-  tagline,
-  textAlign,
-}: Props) => JSX.Element;
-export default BpkGraphicPromo;
+declare const BpkBoilerplate: {
+  ({ className, ...rest }: Props): JSX.Element;
+  defaultProps: {
+    className: null;
+  };
+};
+export default BpkBoilerplate;
