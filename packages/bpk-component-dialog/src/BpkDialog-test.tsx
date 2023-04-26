@@ -16,12 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import TickIcon from '../../bpk-component-icon/lg/tick';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import InfoIcon from '../../bpk-component-icon/lg/information-circle';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import TrashIcon from '../../bpk-component-icon/lg/trash';
 
 import BpkDialog from './BpkDialog';
@@ -38,7 +39,6 @@ describe('BpkDialog', () => {
         onClose={jest.fn()}
         closeLabel="Close"
         dialogRef={jest.fn()}
-        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
       >
@@ -58,7 +58,6 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
-        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
@@ -79,7 +78,6 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
-        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
@@ -101,7 +99,6 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
-        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
@@ -124,7 +121,6 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
-        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
@@ -147,7 +143,6 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
-        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         flare
@@ -168,7 +163,6 @@ describe('BpkDialog', () => {
         ariaLabel="example dialog to showcase component"
         onClose={jest.fn()}
         dialogRef={jest.fn()}
-        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
         flare

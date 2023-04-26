@@ -16,30 +16,29 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules, Portal } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 
 import BpkDialogInner from './BpkDialogInner';
-import { type Props, propTypes, defaultProps } from './common-types';
+import type { Props } from './common-types';
+import { HEADER_ICON_TYPES } from './common-types';
 import STYLES from './BpkDialog.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkDialog = (props: Props) => {
-  const {
-    children,
-    closeLabel,
-    dismissible,
-    headerIcon,
-    headerIconType,
-    isOpen,
-    onClose,
-    renderTarget,
-    ...rest
-  } = props;
-
+const BpkDialog = ({
+  children,
+  closeLabel = '',
+  dismissible = true,
+  headerIcon = null,
+  headerIconType = HEADER_ICON_TYPES.primary,
+  isOpen,
+  onClose = () => {},
+  renderTarget = () => null,
+  ...rest
+}: Props) => {
   const headerIconClassNames = getClassName(
     'bpk-dialog__icon',
     `bpk-dialog__icon--${headerIconType}`,
@@ -75,14 +74,6 @@ const BpkDialog = (props: Props) => {
       </BpkDialogInner>
     </Portal>
   );
-};
-
-BpkDialog.propTypes = {
-  ...propTypes,
-};
-
-BpkDialog.defaultProps = {
-  ...defaultProps,
 };
 
 export default BpkDialog;

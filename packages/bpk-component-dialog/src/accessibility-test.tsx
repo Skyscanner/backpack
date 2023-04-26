@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
@@ -34,7 +32,6 @@ describe('BpkDialog accessibility tests', () => {
         onClose={jest.fn()}
         closeLabel="Close"
         dialogRef={jest.fn()}
-        getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
       >

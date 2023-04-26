@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkDialog from './src/BpkDialog';
-import { HEADER_ICON_TYPES, type Props } from './src/common-types';
+import type { Props } from './src/common-types';
+import { HEADER_ICON_TYPES } from './src/common-types';
 
 export type BpkDialogProps = Props;
 export default BpkDialog;

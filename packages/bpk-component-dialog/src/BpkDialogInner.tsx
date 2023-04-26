@@ -16,17 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { withScrim } from '../../bpk-scrim-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkContentBubble } from '../../bpk-component-flare';
 
-import {
-  type DialogInnerProps as Props,
-  dialogInnerPropTypes,
-  dialogInnerDefaultProps,
-} from './common-types';
+import { type DialogInnerProps as Props } from './common-types';
 import STYLES from './BpkDialogInner.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -35,11 +32,11 @@ const BpkDialogInner = (props: Props) => {
   const {
     ariaLabel,
     children,
-    className,
+    className = null,
     contentClassName,
     dialogRef,
-    flare,
-    flareClassName,
+    flare = false,
+    flareClassName = null,
     id,
   } = props;
 
@@ -61,7 +58,7 @@ const BpkDialogInner = (props: Props) => {
     >
       <section
         id={id}
-        tabIndex="-1"
+        tabIndex={-1}
         role="dialog"
         aria-label={ariaLabel}
         className={classNames}
@@ -73,16 +70,5 @@ const BpkDialogInner = (props: Props) => {
     </TransitionInitialMount>
   );
 };
-
-export const propTypes = {
-  ...dialogInnerPropTypes,
-};
-
-export const defaultProps = {
-  ...dialogInnerDefaultProps,
-};
-
-BpkDialogInner.propTypes = { ...propTypes };
-BpkDialogInner.defaultProps = { ...defaultProps };
 
 export default withScrim(BpkDialogInner);
