@@ -15,12 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
+import type { SyntheticEvent } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ClearIcon from '../../bpk-component-icon/sm/close-circle';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { withButtonAlignment } from '../../bpk-component-icon';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkClearButton.module.scss';
@@ -30,14 +32,19 @@ const getClassName = cssModules(STYLES);
 const ClearButtonIcon = withButtonAlignment(ClearIcon);
 
 type Props = {
-  label: string,
-  onClick: (SyntheticInputEvent<HTMLButtonElement>) => mixed,
-  className: ?string,
+  label: string;
+  onClick: (event: SyntheticEvent<HTMLButtonElement>) => void | null;
+  className?: string | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const BpkClearButton = (props: Props) => {
+const BpkClearButton = ({
+  className = null,
+  label,
+  onClick,
+  ...rest
+}: Props) => {
   const classNames = [getClassName('bpk-clear-button')];
-  const { className, label, onClick, ...rest } = props;
 
   if (className) {
     classNames.push(className);
@@ -59,16 +66,6 @@ const BpkClearButton = (props: Props) => {
       />
     </button>
   );
-};
-
-BpkClearButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  className: PropTypes.string,
-};
-
-BpkClearButton.defaultProps = {
-  className: null,
 };
 
 export default BpkClearButton;

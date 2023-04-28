@@ -25,12 +25,19 @@ describe('clearablePropType', () => {
     const PROP_NAME = 'onClear';
 
     it('should not produce an error when "clearButtonMode" is not provided', () => {
-      const props = {};
+      const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
+      };
       expect(clearablePropType(props, PROP_NAME, COMPONENT_NAME)).toBeFalsy();
     });
 
     it('should not produce an error when "clearButtonMode={never}"', () => {
       const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
         clearButtonMode: CLEAR_BUTTON_MODES.never,
       };
       expect(clearablePropType(props, PROP_NAME, COMPONENT_NAME)).toBeFalsy();
@@ -38,6 +45,9 @@ describe('clearablePropType', () => {
 
     it('should produce an error when "clearButtonMode=always" and "onClear" is not provided', () => {
       const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
         clearButtonMode: CLEAR_BUTTON_MODES.always,
       };
       expect(
@@ -49,6 +59,9 @@ describe('clearablePropType', () => {
 
     it('should produce an error when "clearButtonMode=always" and "onClear" is null', () => {
       const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
         clearButtonMode: CLEAR_BUTTON_MODES.always,
         onClear: null,
       };
@@ -61,6 +74,9 @@ describe('clearablePropType', () => {
 
     it('should produce an error when "clearButtonMode=always" and "onClear" is not a function', () => {
       const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
         clearButtonMode: CLEAR_BUTTON_MODES.always,
         onClear: 'Hello world',
       };
@@ -76,12 +92,19 @@ describe('clearablePropType', () => {
     const PROP_NAME = 'clearButtonLabel';
 
     it('should not produce an error when "clearButtonMode" is not provided', () => {
-      const props = {};
+      const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
+      };
       expect(clearablePropType(props, PROP_NAME, COMPONENT_NAME)).toBeFalsy();
     });
 
     it('should not produce an error when "clearButtonMode=never"', () => {
       const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
         clearButtonMode: CLEAR_BUTTON_MODES.never,
       };
       expect(clearablePropType(props, PROP_NAME, COMPONENT_NAME)).toBeFalsy();
@@ -89,6 +112,9 @@ describe('clearablePropType', () => {
 
     it('should produce an error when "clearButtonMode=always" and "clearButtonLabel" is not provided', () => {
       const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
         clearButtonMode: CLEAR_BUTTON_MODES.always,
       };
       expect(
@@ -100,6 +126,9 @@ describe('clearablePropType', () => {
 
     it('should produce an error when "clearButtonMode=always" and "clearButtonLabel" is null', () => {
       const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
         clearButtonMode: CLEAR_BUTTON_MODES.always,
         clearButtonLabel: null,
       };
@@ -112,6 +141,9 @@ describe('clearablePropType', () => {
 
     it('should produce an error when "clearButtonMode=always" and "clearButtonLabel" is not a string', () => {
       const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
         clearButtonMode: CLEAR_BUTTON_MODES.always,
         clearButtonLabel: 42,
       };
@@ -127,6 +159,9 @@ describe('clearablePropType', () => {
     const PROP_NAME = 'foo';
     it('should produce no error when "clearButtonMode=always" but the prop name is neither clearButtonLabel or onClear', () => {
       const props = {
+        id: 'id',
+        name: 'name',
+        value: 'value',
         clearButtonMode: CLEAR_BUTTON_MODES.always,
         foo: 'bar',
       };

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import withOpenEvents from './withOpenEvents';
@@ -143,7 +143,7 @@ describe('withOpenEvents', () => {
     const input = screen.getByRole('textbox');
     fireEvent.keyDown(input, { keyCode: 13 });
 
-    expect(onOpen).toHaveBeenCalled();
+    waitFor(() => expect(onOpen).toHaveBeenCalled());
   });
 
   it('should open on "Space" key', () => {
@@ -163,6 +163,6 @@ describe('withOpenEvents', () => {
     const input = screen.getByRole('textbox');
     fireEvent.keyUp(input, { keyCode: 32 });
 
-    expect(onOpen).toHaveBeenCalled();
+    waitFor(() => expect(onOpen).toHaveBeenCalled());
   });
 });

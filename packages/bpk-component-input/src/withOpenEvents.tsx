@@ -17,8 +17,9 @@
  */
 
 import { Component } from 'react';
-import PropTypes from 'prop-types';
+import type { ComponentType, ReactElement, UIEvent } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
 
 import STYLES from './BpkInput.module.scss';
@@ -28,38 +29,79 @@ const getClassName = cssModules(STYLES);
 const KEYCODES = {
   ENTER: 13,
   SPACEBAR: 32,
+} as const;
+
+type WithOpenEventsProps = InputProps & {
+  isOpen?: boolean;
+  onOpen?: () => void;
+  hasTouchSupport?: boolean;
 };
 
-const handleKeyEvent = (keyCode, callback) => (e) => {
-  if (e.keyCode === keyCode) {
-    e.preventDefault();
-    callback();
-  }
+type InputProps = {
+  className?: string | null;
+  onClick?: (event: UIEvent) => void;
+  onFocus?: (event: UIEvent) => void;
+  onBlur?: (event: UIEvent) => void;
+  onTouchEnd?: (event: UIEvent) => void;
+  onKeyDown?: (event: UIEvent) => void;
+  onKeyUp?: (event: UIEvent) => void;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const withEventHandler = (fn, eventHandler) => (e) => {
-  fn(e);
-  if (eventHandler) {
-    eventHandler(e);
-  }
-};
+const handleKeyEvent =
+  (keyCode: number, callback: () => void) => (e: UIEvent) => {
+    if (e instanceof KeyboardEvent && e.keyCode === keyCode) {
+      e.preventDefault();
+      callback();
+    }
+  };
 
-const withOpenEvents = (InputComponent) => {
-  class WithOpenEvents extends Component {
-    constructor(props) {
+const withEventHandler =
+  (fn: (e: UIEvent) => void, eventHandler?: (e: UIEvent) => void) =>
+  (e: UIEvent) => {
+    fn(e);
+    if (eventHandler) {
+      eventHandler(e);
+    }
+  };
+
+const withOpenEvents = (InputComponent: ComponentType<any>) => {
+  class WithOpenEvents extends Component<WithOpenEventsProps> {
+    public static displayName: string;
+
+    focusCanOpen: boolean;
+
+    static defaultProps = {
+      // Custom props
+      isOpen: false,
+      hasTouchSupport: !!(
+        typeof window !== 'undefined' && 'ontouchstart' in window
+      ),
+      onOpen: () => {},
+      // Input props
+      className: null,
+      onClick: () => {},
+      onFocus: () => {},
+      onBlur: () => {},
+      onTouchEnd: () => {},
+      onKeyDown: () => {},
+      onKeyUp: () => {},
+    };
+
+    constructor(props: WithOpenEventsProps) {
       super(props);
 
       this.focusCanOpen = true;
     }
 
-    handleTouchEnd = (event) => {
+    handleTouchEnd = (e: UIEvent) => {
       // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
       // because a touch event is registered on one of the dates.
       // We can only run preventDefault when the input is already focused - otherwise it would never set
       // focus on it, and when closing the modal/popover focus would return to the previously focused
       // element (which is annoying if it's an autosuggest or another datepicker, for example).
-      if (document && event.target === document.activeElement) {
-        event.preventDefault();
+      if (document && e.target === document.activeElement) {
+        e.preventDefault();
         if (this.props.onOpen) {
           this.props.onOpen();
         }
@@ -82,7 +124,7 @@ const withOpenEvents = (InputComponent) => {
       }
     };
 
-    render() {
+    render(): ReactElement {
       const {
         className,
         hasTouchSupport,
@@ -103,16 +145,25 @@ const withOpenEvents = (InputComponent) => {
         classNames.push(className);
       }
 
-      const eventHandlers = {
-        onClick: withEventHandler(onOpen, onClick),
-        onKeyDown: withEventHandler(
-          handleKeyEvent(KEYCODES.ENTER, onOpen),
-          onKeyDown,
-        ),
-        onKeyUp: withEventHandler(
-          handleKeyEvent(KEYCODES.SPACEBAR, onOpen),
-          onKeyUp,
-        ),
+      type EventHandlers = {
+        onClick?: ReturnType<typeof withEventHandler>;
+        onKeyDown?: ReturnType<typeof withEventHandler>;
+        onKeyUp?: ReturnType<typeof withEventHandler>;
+        readOnly?: string;
+        'aria-readonly'?: boolean;
+        onTouchEnd?: ReturnType<typeof withEventHandler>;
+        onFocus?: ReturnType<typeof withEventHandler>;
+        onBlur?: ReturnType<typeof withEventHandler>;
+      };
+
+      const eventHandlers: EventHandlers = {
+        onClick: onOpen ? withEventHandler(onOpen, onClick) : undefined,
+        onKeyDown: onOpen
+          ? withEventHandler(handleKeyEvent(KEYCODES.ENTER, onOpen), onKeyDown)
+          : undefined,
+        onKeyUp: onOpen
+          ? withEventHandler(handleKeyEvent(KEYCODES.SPACEBAR, onOpen), onKeyUp)
+          : undefined,
       };
 
       if (hasTouchSupport) {
@@ -140,41 +191,6 @@ const withOpenEvents = (InputComponent) => {
       );
     }
   }
-
-  WithOpenEvents.propTypes = {
-    // Custom props
-    isOpen: PropTypes.bool,
-    hasTouchSupport: PropTypes.bool,
-    onOpen: PropTypes.func,
-    // Input props
-    className: PropTypes.string,
-    onClick: PropTypes.func,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    onTouchEnd: PropTypes.func,
-    onKeyDown: PropTypes.func,
-    onKeyUp: PropTypes.func,
-  };
-
-  WithOpenEvents.defaultProps = {
-    // Custom props
-    isOpen: false,
-    hasTouchSupport: !!(
-      typeof window !== 'undefined' &&
-      ('ontouchstart' in window ||
-        // eslint-disable-next-line no-undef
-        (window.DocumentTouch && document instanceof DocumentTouch))
-    ),
-    onOpen: null,
-    // Input props
-    className: null,
-    onClick: null,
-    onFocus: null,
-    onBlur: null,
-    onTouchEnd: null,
-    onKeyDown: null,
-    onKeyUp: null,
-  };
 
   WithOpenEvents.displayName = wrapDisplayName(
     InputComponent,

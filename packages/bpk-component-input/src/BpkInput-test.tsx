@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -211,8 +210,8 @@ describe('BpkInput', () => {
   });
 
   it('should expose input reference to parent components', () => {
-    let inputRef;
-    const storeInputReference = (ref) => {
+    let inputRef: HTMLInputElement;
+    const storeInputReference = (ref: HTMLInputElement) => {
       inputRef = ref;
     };
 
