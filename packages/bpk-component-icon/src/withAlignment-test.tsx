@@ -25,6 +25,7 @@ import {
   lineHeightXxl,
   iconSizeSm,
   iconSizeLg,
+  // @ts-expect-error Untyped import. We will need to review how these files are handled
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import withAlignment from './withAlignment';
@@ -42,7 +43,7 @@ describe('withAlignment', () => {
   it('should render correctly', () => {
     for (let l = 0; l < lineHeights.length; l += 1) {
       for (let i = 0; i < iconSizes.length; i += 1) {
-        const MyComponent = (props) => (
+        const MyComponent = (props: any) => (
           <div {...props}>
             test lineHeight {lineHeights[l]} and iconsSize {iconSizes[i]}
           </div>
@@ -60,7 +61,7 @@ describe('withAlignment', () => {
   });
 
   it('should keep wrapped-component styling', () => {
-    const FloatingComponent = (props) => (
+    const FloatingComponent = (props: any) => (
       <div {...props}>
         test lineHeight {lineHeightLg} and iconsSize {iconSizeSm}
       </div>

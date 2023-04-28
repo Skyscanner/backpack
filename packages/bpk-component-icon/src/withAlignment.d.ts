@@ -16,18 +16,13 @@
  * limitations under the License.
  */
 
-function requireAll(requireContext) {
-  const hash = {};
+import type { ComponentType } from 'react';
 
-  requireContext.keys().forEach((key) => {
-    const moduleName = key.replace('./', '').replace('.js', '');
-    hash[moduleName] = requireContext(key).default;
-  });
-
-  return hash;
-}
-
-module.exports = {
-  sm: requireAll(require.context('./sm', false, /\.js$/)),
-  lg: requireAll(require.context('./lg', false, /\.js$/)),
+export default function withAlignment(
+  Component: ComponentType,
+  objectHeight: string,
+  subjectHeight: string,
+): {
+  (props: any): JSX.Element;
+  displayName: any;
 };

@@ -15,20 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { render } from '@testing-library/react';
+// TODO: Work out the correct types for these to move away from 'any'.
 
-import withDescription from './withDescription';
+function requireAll(requireContext: any) {
+  const hash: any = {};
 
-// eslint-disable-next-line jsx-a11y/accessible-emoji
-const Heart = () => <span>❤️</span>;
-
-const DescribedHeart = withDescription(Heart, 'love');
-
-describe('withDescription', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<DescribedHeart />);
-    expect(asFragment()).toMatchSnapshot();
+  requireContext.keys().forEach((key: string) => {
+    const moduleName: any = key.replace('./', '').replace('.js', '');
+    hash[moduleName] = requireContext(key).default;
   });
-});
+
+  return hash;
+}
+
+const sm = requireAll(require.context('./sm', false, /\.js$/));
+const lg = requireAll(require.context('./lg', false, /\.js$/));
+
+export default sm;
+export { sm, lg };
