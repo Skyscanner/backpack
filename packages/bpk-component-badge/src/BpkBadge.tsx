@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import PropTypes from 'prop-types';
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkBadge.module.scss';
@@ -33,7 +32,7 @@ export const BADGE_TYPES = {
   outline: 'outline',
   strong: 'strong',
   brand: 'brand',
-};
+} as const;
 
 const getClassName = cssModules(STYLES);
 
@@ -48,15 +47,24 @@ const badgeTypeClassNames = {
   [BADGE_TYPES.brand]: getClassName('bpk-badge--brand'),
 };
 
+export type BadgeType = typeof BADGE_TYPES[keyof typeof BADGE_TYPES];
+
 export type Props = {
-  type: $Keys<typeof BADGE_TYPES>,
-  docked: ?string,
-  centered: boolean,
-  className: ?string,
+  type?: BadgeType;
+  docked?: 'right' | 'left' | null;
+  centered?: boolean;
+  className?: string | null;
+  children: string | ReactNode;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const BpkBadge = (props: Props) => {
-  const { centered, className, docked, type, ...rest } = props;
+const BpkBadge = ({
+  type = BADGE_TYPES.normal,
+  docked = null,
+  centered = false,
+  className = null,
+  ...rest
+}: Props) => {
   const classNames = getClassName(
     'bpk-badge',
     badgeTypeClassNames[type],
@@ -66,24 +74,7 @@ const BpkBadge = (props: Props) => {
     className,
   );
 
-  return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <span className={classNames} {...rest} />
-  );
-};
-
-BpkBadge.propTypes = {
-  type: PropTypes.oneOf(Object.keys(BADGE_TYPES)),
-  docked: PropTypes.oneOf(['right', 'left', null]),
-  centered: PropTypes.bool,
-  className: PropTypes.string,
-};
-
-BpkBadge.defaultProps = {
-  type: BADGE_TYPES.normal,
-  docked: null,
-  centered: false,
-  className: null,
+  return <span className={classNames} {...rest} />;
 };
 
 export default BpkBadge;
