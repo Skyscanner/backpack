@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+// @ts-nocheck
+
 import { CLEAR_BUTTON_MODES, clearablePropType } from './common-types';
 
 describe('clearablePropType', () => {

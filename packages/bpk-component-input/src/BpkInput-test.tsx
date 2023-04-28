@@ -226,6 +226,7 @@ describe('BpkInput', () => {
     );
 
     const input = screen.getByRole('textbox');
+    // @ts-ignore
     expect(input).toEqual(inputRef);
   });
 
