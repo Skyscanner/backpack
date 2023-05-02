@@ -167,7 +167,7 @@
     "sass-loader": "^10.2.1",
     "style-loader": "^2.0.0",
     "ts-migrate": "^0.1.35",
-    "typescript": "^4.9.3",
+    "typescript": "^5.0.4",
     "webpack": "^4.46.0"
   }
 }
