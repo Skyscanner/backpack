@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
+import themeAttributes from './src/themeAttributes';
 
-import BpkDialog from './src/BpkDialog';
-import { HEADER_ICON_TYPES, type Props } from './src/common-types';
-
-export type BpkDialogProps = Props;
-export default BpkDialog;
-export { HEADER_ICON_TYPES };
+export type BpkBadgeProps = Props;
+export default component;
+export { BADGE_TYPES, themeAttributes };

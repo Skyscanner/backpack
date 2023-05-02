@@ -16,11 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+/// <reference types="react" />
+import type { Props } from './common-types';
 
-import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes from './src/themeAttributes';
-
-export type BpkBadgeProps = Props;
-export default component;
-export { BADGE_TYPES, themeAttributes };
+declare const BpkDialog: ({
+  children,
+  closeLabel,
+  dismissible,
+  headerIcon,
+  headerIconType,
+  isOpen,
+  onClose,
+  renderTarget,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkDialog;
