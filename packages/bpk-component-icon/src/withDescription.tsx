@@ -29,7 +29,7 @@ export default function withDescription(
   Component: ComponentType<any>,
   description: string,
 ): ComponentType<any> {
-  const WithDescription = (props: [string]) => (
+  const WithDescription = (props: string[]) => (
     <span>
       <Component {...props} />
       <span className={getClassName('bpk-icon-description')}>
