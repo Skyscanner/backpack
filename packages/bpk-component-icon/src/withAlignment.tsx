@@ -16,12 +16,19 @@
  * limitations under the License.
  */
 
+import type { ComponentType } from 'react';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { wrapDisplayName } from '../../bpk-react-utils';
 
-export default function withAlignment(Component, objectHeight, subjectHeight) {
-  const WithAlignment = (props) => {
-    const objectHeightDecimal = `${objectHeight}`.replace('rem', '');
-    const subjectHeightDecimal = `${subjectHeight}`.replace('rem', '');
+export default function withAlignment(
+  Component: ComponentType,
+  objectHeight: string,
+  subjectHeight: string,
+) {
+  const WithAlignment = (props: any) => {
+    const objectHeightDecimal: any = `${objectHeight}`.replace('rem', '');
+    const subjectHeightDecimal: any = `${subjectHeight}`.replace('rem', '');
     const marginTopCalculated = `${
       Math.max(0, objectHeightDecimal - subjectHeightDecimal) / 2
     }rem`;
