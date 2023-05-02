@@ -16,11 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import BpkDialog from './src/BpkDialog';
-import { HEADER_ICON_TYPES, type Props } from './src/common-types';
-
-export type BpkDialogProps = Props;
-export default BpkDialog;
-export { HEADER_ICON_TYPES };
+/* eslint-disable no-underscore-dangle */
+declare const _default: any;
+export default _default;
