@@ -71,7 +71,7 @@ const withOpenEvents = (InputComponent: ComponentType<any>) => {
 
     focusCanOpen: boolean;
 
-    static defaultProps = {
+    static defaultProps: WithOpenEventsProps = {
       // Custom props
       isOpen: false,
       hasTouchSupport: !!(
@@ -94,14 +94,14 @@ const withOpenEvents = (InputComponent: ComponentType<any>) => {
       this.focusCanOpen = true;
     }
 
-    handleTouchEnd = (e: UIEvent) => {
+    handleTouchEnd = (event: UIEvent) => {
       // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
       // because a touch event is registered on one of the dates.
       // We can only run preventDefault when the input is already focused - otherwise it would never set
       // focus on it, and when closing the modal/popover focus would return to the previously focused
       // element (which is annoying if it's an autosuggest or another datepicker, for example).
-      if (document && e.target === document.activeElement) {
-        e.preventDefault();
+      if (document && event.target === document.activeElement) {
+        event.preventDefault();
         if (this.props.onOpen) {
           this.props.onOpen();
         }
