@@ -18,9 +18,11 @@
 
 import { render } from '@testing-library/react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallFlightIcon from '../../bpk-component-icon/sm/flight';
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';
+import type { BadgeType } from './BpkBadge';
 
 describe('BpkBadge', () => {
   it('should render correctly', () => {
@@ -60,7 +62,7 @@ describe('BpkBadge', () => {
   Object.keys(BADGE_TYPES).forEach((badgeType) => {
     it(`should render correctly with type="${badgeType}"`, () => {
       const { asFragment } = render(
-        <BpkBadge type={badgeType}>Promociando</BpkBadge>,
+        <BpkBadge type={badgeType as BadgeType}>Promociando</BpkBadge>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
