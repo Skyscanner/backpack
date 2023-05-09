@@ -15,13 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { ChipsExample, SelectExample } from './examples';
+import type { ComponentType } from 'react';
 
-export default {
-  title: 'bpk-component-aria-live',
-};
-
-export const Default = () => <ChipsExample />;
-export const Visible = () => <SelectExample />;
+export default function withDescription(
+  Component: ComponentType<any>,
+  description: string,
+): ComponentType<any>;

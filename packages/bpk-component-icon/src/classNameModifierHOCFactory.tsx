@@ -15,14 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import type { ComponentType } from 'react';
 
-import PropTypes from 'prop-types';
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { wrapDisplayName } from '../../bpk-react-utils';
 
-export default (displayName, classNamesToAdd = []) =>
-  (ComposedComponent) => {
-    const ClassNameModifierHOC = (props) => {
+export default (displayName: string, classNamesToAdd: string[] = []) =>
+  (ComposedComponent: ComponentType<any>) => {
+    const ClassNameModifierHOC = (props: {
+      className?: string | null;
+      [rest: string]: any;
+    }) => {
       let classNames = [];
       const { className, ...rest } = props;
 
@@ -34,14 +37,6 @@ export default (displayName, classNamesToAdd = []) =>
         : classNames;
 
       return <ComposedComponent className={classNames.join(' ')} {...rest} />;
-    };
-
-    ClassNameModifierHOC.propTypes = {
-      className: PropTypes.string,
-    };
-
-    ClassNameModifierHOC.defaultProps = {
-      className: null,
     };
 
     ClassNameModifierHOC.displayName = wrapDisplayName(
