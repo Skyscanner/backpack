@@ -27,7 +27,7 @@ class SearchButton extends React.Component {
 ### Replacement:
 
 ```
-import BpkButtonV2, { BUTTON_TYPES } from 'bpk-component-button';
+import { BpkButtonV2, BUTTON_TYPES } from 'bpk-component-button';
 
 class Toggle extends React.Component {
   render() {
