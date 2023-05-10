@@ -16,11 +16,21 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+// TODO: Work out the correct types for these to move away from 'any'.
 
-import BpkDialog from './src/BpkDialog';
-import { HEADER_ICON_TYPES, type Props } from './src/common-types';
+function requireAll(requireContext: any) {
+  const hash: any = {};
 
-export type BpkDialogProps = Props;
-export default BpkDialog;
-export { HEADER_ICON_TYPES };
+  requireContext.keys().forEach((key: string) => {
+    const moduleName: any = key.replace('./', '').replace('.js', '');
+    hash[moduleName] = requireContext(key).default;
+  });
+
+  return hash;
+}
+
+const sm = requireAll(require.context('./sm', false, /\.js$/));
+const lg = requireAll(require.context('./lg', false, /\.js$/));
+
+export default sm;
+export { sm, lg };

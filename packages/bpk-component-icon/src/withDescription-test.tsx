@@ -16,13 +16,17 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import { render } from '@testing-library/react';
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
+import withDescription from './withDescription';
 
-const getClassName = cssModules(STYLES);
+const Heart = () => <span>❤️</span>;
 
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+const DescribedHeart = withDescription(Heart, 'love');
+
+describe('withDescription', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(<DescribedHeart />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

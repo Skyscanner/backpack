@@ -15,20 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { render } from '@testing-library/react';
+import type { ComponentType } from 'react';
 
-import withDescription from './withDescription';
-
-// eslint-disable-next-line jsx-a11y/accessible-emoji
-const Heart = () => <span>❤️</span>;
-
-const DescribedHeart = withDescription(Heart, 'love');
-
-describe('withDescription', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<DescribedHeart />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+export default function withDescription(
+  Component: ComponentType<any>,
+  description: string,
+): ComponentType<any>;

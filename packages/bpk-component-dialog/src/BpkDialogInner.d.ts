@@ -15,13 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { ChipsExample, SelectExample } from './examples';
-
-export default {
-  title: 'bpk-component-aria-live',
-};
-
-export const Default = () => <ChipsExample />;
-export const Visible = () => <SelectExample />;
+/* eslint-disable no-underscore-dangle */
+declare const _default: any;
+export default _default;
