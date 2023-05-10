@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import type { ReactElement, UIEvent, ComponentType } from 'react';
+import type { ComponentType, ReactElement, UIEvent } from 'react';
 
-type Props = InputProps & {
+type WithOpenEventsProps = {
   isOpen?: boolean;
   onOpen?: () => void;
   hasTouchSupport?: boolean;
@@ -31,12 +31,13 @@ type InputProps = {
   onTouchEnd?: (event: UIEvent) => void;
   onKeyDown?: (event: UIEvent) => void;
   onKeyUp?: (event: UIEvent) => void;
-  [rest: string]: any;
 };
-declare const withOpenEvents: (InputComponent: ComponentType<any>) => {
-  new (props: Props): {
+declare const withOpenEvents: <P extends InputProps>(
+  InputComponent: ComponentType<P>,
+) => {
+  new (props: P & WithOpenEventsProps): {
     focusCanOpen: boolean;
-    handleTouchEnd: (e: UIEvent) => void;
+    handleTouchEnd: (event: UIEvent) => void;
     handleFocus: () => void;
     handleBlur: () => void;
     render(): ReactElement;
@@ -46,14 +47,13 @@ declare const withOpenEvents: (InputComponent: ComponentType<any>) => {
         | {}
         | ((
             prevState: Readonly<{}>,
-            props: Readonly<Props>, // eslint-disable-line no-shadow
+            props: Readonly<P & WithOpenEventsProps>, // eslint-disable-line no-shadow
           ) => {} | Pick<{}, K> | null)
         | Pick<{}, K>
         | null,
       callback?: (() => void) | undefined,
     ): void;
-    forceUpdate(callback?: (() => void) | undefined): void;
-    readonly props: Readonly<Props> &
+    readonly props: Readonly<P & WithOpenEventsProps> &
       Readonly<{
         children?: import('react').ReactNode;
       }>;
@@ -63,7 +63,7 @@ declare const withOpenEvents: (InputComponent: ComponentType<any>) => {
     };
     componentDidMount?(): void;
     shouldComponentUpdate?(
-      nextProps: Readonly<Props>,
+      nextProps: Readonly<P & WithOpenEventsProps>,
       nextState: Readonly<{}>,
       nextContext: any,
     ): boolean;
@@ -73,31 +73,31 @@ declare const withOpenEvents: (InputComponent: ComponentType<any>) => {
       errorInfo: import('react').ErrorInfo,
     ): void;
     getSnapshotBeforeUpdate?(
-      prevProps: Readonly<Props>,
+      prevProps: Readonly<P & WithOpenEventsProps>,
       prevState: Readonly<{}>,
     ): any;
     componentDidUpdate?(
-      prevProps: Readonly<Props>,
+      prevProps: Readonly<P & WithOpenEventsProps>,
       prevState: Readonly<{}>,
       snapshot?: any,
     ): void;
     componentWillMount?(): void;
     UNSAFE_componentWillMount?(): void;
     componentWillReceiveProps?(
-      nextProps: Readonly<Props>,
+      nextProps: Readonly<P & WithOpenEventsProps>,
       nextContext: any,
     ): void;
     UNSAFE_componentWillReceiveProps?(
-      nextProps: Readonly<Props>,
+      nextProps: Readonly<P & WithOpenEventsProps>,
       nextContext: any,
     ): void;
     componentWillUpdate?(
-      nextProps: Readonly<Props>,
+      nextProps: Readonly<P & WithOpenEventsProps>,
       nextState: Readonly<{}>,
       nextContext: any,
     ): void;
     UNSAFE_componentWillUpdate?(
-      nextProps: Readonly<Props>,
+      nextProps: Readonly<P & WithOpenEventsProps>,
       nextState: Readonly<{}>,
       nextContext: any,
     ): void;

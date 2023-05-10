@@ -49,14 +49,17 @@ type BaseProps = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-type PropsWithoutClearButonMode = BaseProps & {
-  clearButtonMode?: typeof CLEAR_BUTTON_MODES[keyof typeof CLEAR_BUTTON_MODES];
+export type PropsWithoutClearButonMode = BaseProps & {
+  clearButtonMode?: 'never';
   clearButtonLabel?: string | null;
-  onClear?: (e?: SyntheticEvent<HTMLButtonElement>) => void | null;
+  onClear?: ((e?: SyntheticEvent<HTMLButtonElement>) => void) | null;
 };
 
-type PropsWithClearButtonMode = BaseProps & {
-  clearButtonMode: typeof CLEAR_BUTTON_MODES[keyof typeof CLEAR_BUTTON_MODES];
+export type PropsWithClearButtonMode = BaseProps & {
+  clearButtonMode: typeof CLEAR_BUTTON_MODES[keyof Omit<
+    typeof CLEAR_BUTTON_MODES,
+    'never'
+  >];
   clearButtonLabel: string;
   onClear: (e?: SyntheticEvent<HTMLButtonElement>) => void;
 };

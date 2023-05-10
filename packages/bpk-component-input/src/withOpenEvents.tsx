@@ -31,7 +31,7 @@ const KEYCODES = {
   SPACEBAR: 32,
 } as const;
 
-type WithOpenEventsProps = InputProps & {
+type WithOpenEventsProps = {
   isOpen?: boolean;
   onOpen?: () => void;
   hasTouchSupport?: boolean;
@@ -45,33 +45,38 @@ type InputProps = {
   onTouchEnd?: (event: UIEvent) => void;
   onKeyDown?: (event: UIEvent) => void;
   onKeyUp?: (event: UIEvent) => void;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const handleKeyEvent =
-  (keyCode: number, callback: () => void) => (e: UIEvent) => {
+  (keyCode: number, callback?: () => void) => (e: UIEvent) => {
     if (e instanceof KeyboardEvent && e.keyCode === keyCode) {
       e.preventDefault();
-      callback();
+      if (callback) {
+        callback();
+      }
     }
   };
 
 const withEventHandler =
-  (fn: (e: UIEvent) => void, eventHandler?: (e: UIEvent) => void) =>
+  (fn?: (e: UIEvent) => void, eventHandler?: (e: UIEvent) => void) =>
   (e: UIEvent) => {
-    fn(e);
+    if (fn) {
+      fn(e);
+    }
     if (eventHandler) {
       eventHandler(e);
     }
   };
 
-const withOpenEvents = (InputComponent: ComponentType<any>) => {
-  class WithOpenEvents extends Component<WithOpenEventsProps> {
+const withOpenEvents = <P extends InputProps>(
+  InputComponent: ComponentType<P>,
+) => {
+  class WithOpenEvents extends Component<P & WithOpenEventsProps> {
     public static displayName: string;
 
     focusCanOpen: boolean;
 
-    static defaultProps: WithOpenEventsProps = {
+    static defaultProps = {
       // Custom props
       isOpen: false,
       hasTouchSupport: !!(
@@ -88,7 +93,7 @@ const withOpenEvents = (InputComponent: ComponentType<any>) => {
       onKeyUp: () => {},
     };
 
-    constructor(props: WithOpenEventsProps) {
+    constructor(props: P & WithOpenEventsProps) {
       super(props);
 
       this.focusCanOpen = true;
@@ -128,6 +133,7 @@ const withOpenEvents = (InputComponent: ComponentType<any>) => {
       const {
         className,
         hasTouchSupport,
+        isOpen,
         onBlur,
         onClick,
         onFocus,
@@ -138,32 +144,25 @@ const withOpenEvents = (InputComponent: ComponentType<any>) => {
         ...rest
       } = this.props;
 
-      delete rest.isOpen;
-
       const classNames = [getClassName('bpk-input--with-open-events')];
       if (className) {
         classNames.push(className);
       }
 
-      type EventHandlers = {
-        onClick?: ReturnType<typeof withEventHandler>;
-        onKeyDown?: ReturnType<typeof withEventHandler>;
-        onKeyUp?: ReturnType<typeof withEventHandler>;
+      type EventHandlers = Omit<InputProps, 'className'> & {
         readOnly?: string;
         'aria-readonly'?: boolean;
-        onTouchEnd?: ReturnType<typeof withEventHandler>;
-        onFocus?: ReturnType<typeof withEventHandler>;
-        onBlur?: ReturnType<typeof withEventHandler>;
       };
-
       const eventHandlers: EventHandlers = {
-        onClick: onOpen ? withEventHandler(onOpen, onClick) : undefined,
-        onKeyDown: onOpen
-          ? withEventHandler(handleKeyEvent(KEYCODES.ENTER, onOpen), onKeyDown)
-          : undefined,
-        onKeyUp: onOpen
-          ? withEventHandler(handleKeyEvent(KEYCODES.SPACEBAR, onOpen), onKeyUp)
-          : undefined,
+        onClick: withEventHandler(onOpen, onClick),
+        onKeyDown: withEventHandler(
+          handleKeyEvent(KEYCODES.ENTER, onOpen),
+          onKeyDown,
+        ),
+        onKeyUp: withEventHandler(
+          handleKeyEvent(KEYCODES.SPACEBAR, onOpen),
+          onKeyUp,
+        ),
       };
 
       if (hasTouchSupport) {
@@ -186,7 +185,7 @@ const withOpenEvents = (InputComponent: ComponentType<any>) => {
         <InputComponent
           className={classNames.join(' ')}
           {...eventHandlers}
-          {...rest}
+          {...(rest as P)}
         />
       );
     }
