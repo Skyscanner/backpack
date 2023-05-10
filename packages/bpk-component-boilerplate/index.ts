@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2018 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-module.exports = {
-  stories: ['../examples/**/stories.@(ts|tsx|js|jsx)'],
-  addons: [
-    '@storybook/addon-a11y',
-    '@storybook/addon-actions',
-    '@storybook/addon-viewport',
-  ],
-};
+import BpkBoilerplate, {
+  type Props as BpkBoilerplateProps,
+} from './src/BpkBoilerplate';
+
+export type { BpkBoilerplateProps };
+export default BpkBoilerplate;

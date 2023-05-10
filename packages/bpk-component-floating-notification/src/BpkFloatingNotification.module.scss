@@ -71,8 +71,10 @@
   }
 
   &__icon {
-    margin: bpk-spacing-sm() bpk-spacing-md() 0 bpk-spacing-sm();
+    margin-right: bpk-spacing-md();
+    margin-left: bpk-spacing-sm();
     flex-shrink: 0;
+    transform: translateY((bpk-spacing-sm()));
     text-align: bottom;
     fill: $bpk-text-on-dark-day;
   }

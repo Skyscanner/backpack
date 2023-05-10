@@ -48,14 +48,15 @@
     "prepare": "husky install",
     "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
     "ts-migrate": "ts-migrate",
-    "transpile": "npm run build && npm run transpile:sass && npm run transpile:js && npm run transform:js && npm run copy-css && npm run transpile:generate-package-json && npm run transpile:copy-readme",
+    "transpile": "npm run build && npm run transpile:sass && npm run transpile:js && npm run transform:js && npm run copy-css && npm run copy-types && npm run transpile:generate-package-json && npm run transpile:copy-readme",
     "transpile:clean": "rimraf ./dist",
-    "transpile:js": "BABEL_ENV=dev babel packages --out-dir dist --config-file ./babel.config.js",
+    "transpile:js": "BABEL_ENV=dev babel packages --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ./babel.config.js",
     "transform:js": "node scripts/transpilation/transform-js-scss-css-imports.js",
     "transpile:generate-package-json": "cp ./packages/package.json ./dist/",
     "transpile:copy-readme": "cp packages/README.md ./dist/",
     "transpile:sass": "backpack-node-sass --prefixComment=\"$(cat ./license.txt)\"",
-    "copy-css": "node scripts/transpilation/copy-css.js"
+    "copy-css": "node scripts/transpilation/copy-css.js",
+    "copy-types": "node scripts/transpilation/copy-types.js"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -116,8 +117,8 @@
     "@babel/register": "^7.18.9",
     "@percy/cli": "^1.20.0",
     "@percy/storybook": "^4.3.5",
-    "@skyscanner/bpk-foundations-web": "^15.2.0",
-    "@skyscanner/bpk-svgs": "^16.3.0",
+    "@skyscanner/bpk-foundations-web": "^15.3.0",
+    "@skyscanner/bpk-svgs": "^16.3.2",
     "@skyscanner/stylelint-config-skyscanner": "^7.0.0",
     "@storybook/addon-a11y": "^6.5.14",
     "@storybook/addon-actions": "^6.5.14",
@@ -139,8 +140,8 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "backpack-node-sass": "^0.9.0",
-    "bpk-mixins": "^40.2.1",
-    "bpk-stylesheets": "^9.0.8",
+    "bpk-mixins": "^40.3.1",
+    "bpk-stylesheets": "^9.0.10",
     "core-js": "^3.0.0",
     "css-loader": "^1.0.0",
     "d3-scale": "^4.0.2",
@@ -165,6 +166,7 @@
     "react-svg-loader": "^3.0.1",
     "sass-loader": "^10.2.1",
     "style-loader": "^2.0.0",
+    "ts-migrate": "^0.1.35",
     "typescript": "^4.9.3",
     "webpack": "^4.46.0"
   }

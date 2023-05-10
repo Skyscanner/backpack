@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2018 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,21 @@
  * limitations under the License.
  */
 
-module.exports = {
-  stories: ['../examples/**/stories.@(ts|tsx|js|jsx)'],
-  addons: [
-    '@storybook/addon-a11y',
-    '@storybook/addon-actions',
-    '@storybook/addon-viewport',
-  ],
-};
+// TODO: Work out the correct types for these to move away from 'any'.
+
+function requireAll(requireContext: any) {
+  const hash: any = {};
+
+  requireContext.keys().forEach((key: string) => {
+    const moduleName: any = key.replace('./', '').replace('.js', '');
+    hash[moduleName] = requireContext(key).default;
+  });
+
+  return hash;
+}
+
+const sm = requireAll(require.context('./sm', false, /\.js$/));
+const lg = requireAll(require.context('./lg', false, /\.js$/));
+
+export default sm;
+export { sm, lg };
