@@ -137,6 +137,7 @@ export default () => (
 | panEnabled            | bool                                                              | false    | true                             |
 | showControls          | bool                                                              | false    | true                             |
 | zoom                  | number                                                            | false    | 15                               |
+| mapId                 | String                                                            | false    | null                             |
 
 Note: One of `bounds` and `center` must be provided.
 

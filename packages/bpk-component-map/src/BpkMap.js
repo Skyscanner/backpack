@@ -132,6 +132,7 @@ const BpkMap = (props: Props) => {
       }
       zoom={zoom}
       options={{
+        // If you want to set style by mapId, you should remove the styles property: https://developers.google.com/maps/documentation/get-map-id#javascript
         mapId,
         gestureHandling,
         disableDefaultUI: !showControls,
