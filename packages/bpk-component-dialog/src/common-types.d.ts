@@ -27,8 +27,8 @@ export type DialogInnerProps = {
   ariaLabel: string;
   id: string;
   children: ReactNode;
-  dialogRef: (ref: HTMLElement) => void;
-  getApplicationElement: () => HTMLElement;
+  dialogRef?: (ref: HTMLElement) => void;
+  getApplicationElement: () => HTMLElement | null;
   className?: string;
   contentClassName?: string;
   flare?: boolean;
