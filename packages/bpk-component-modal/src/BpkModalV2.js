@@ -15,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { type Node, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import BpkCloseButton from '../../bpk-component-close-button';
-import { cssModules } from '../../bpk-react-utils';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules, withDefaultProps } from '../../bpk-react-utils';
 
 import STYLES from './BpKModalV2.module.scss';
 
@@ -40,6 +40,12 @@ export type Props = {
   title: ?string | null,
   wide: boolean,
 };
+
+const Heading = withDefaultProps(BpkText, {
+  textStyle: TEXT_STYLES.label1,
+  tagName: 'h2',
+  className: getClassName('bpk-modal__title'),
+});
 
 type DialogProps = {
   isDialogOpen: boolean,
@@ -71,7 +77,7 @@ export const BpkModalV2 = (props: Props) => {
     wide,
   } = props;
 
-  const ref = useRef<HTMLDialogElement>(null);
+  const ref = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -91,24 +97,18 @@ export const BpkModalV2 = (props: Props) => {
     return () => setPageProperties({ isDialogOpen: false });
   }, [id, isOpen]);
 
-  const classNames = [getClassName('bpk-modal')];
-  const contentClassNames = [getClassName('bpk-modal_container')];
+  const classNames = getClassName(
+    'bpk-modal',
+    fullScreenOnDesktop && 'bpk-modal--full-screen-desktop',
+    noFullScreenOnMobile && 'bpk-modal--no-full-screen-mobile',
+    wide && 'bpk-modal--wide',
+  );
 
-  if (fullScreenOnDesktop) {
-    classNames.push(getClassName('bpk-modal--full-screen-desktop'));
-    contentClassNames.push(
-      getClassName('bpk-modal__container--full-screen-desktop'),
-    );
-  }
-  if (noFullScreenOnMobile) {
-    classNames.push(getClassName('bpk-modal--no-full-screen-mobile'));
-  }
-  if (padded) {
-    contentClassNames.push(getClassName('bpk-modal__container--padded'));
-  }
-  if (wide) {
-    classNames.push(getClassName('bpk-modal--wide'));
-  }
+  const contentClassNames = getClassName(
+    'bpk-modal_container',
+    fullScreenOnDesktop && 'bpk-modal__container--full-screen-desktop',
+    padded && 'bpk-modal__container--padded',
+  );
 
   const closeButton = (
     <div>
@@ -132,7 +132,7 @@ export const BpkModalV2 = (props: Props) => {
       )}
       <dialog
         id={id}
-        className={classNames.join(' ')}
+        className={classNames}
         onClose={onClose}
         aria-labelledby={ariaLabelledby}
         data-open={isOpen}
@@ -141,7 +141,7 @@ export const BpkModalV2 = (props: Props) => {
         {title ? (
           <div className={getClassName('bpk-modal__header-title')}>
             <div className={getClassName('bpk-modal__header-title-container')}>
-              <h2 className={getClassName('bpk-modal__title')}>{title}</h2>
+              <Heading>{title}</Heading>
             </div>
             {closeButton}
           </div>
@@ -150,7 +150,7 @@ export const BpkModalV2 = (props: Props) => {
             {closeButton}
           </div>
         )}
-        <div className={contentClassNames.join(' ')}>{children}</div>
+        <div className={contentClassNames}>{children}</div>
       </dialog>
     </div>
   ) : null;
