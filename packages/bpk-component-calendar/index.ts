@@ -30,10 +30,9 @@ import BpkCalendarDate, {
 } from './src/BpkCalendarDate';
 import composeCalendar from './src/composeCalendar';
 import { CALENDAR_SELECTION_TYPE } from './src/custom-proptypes';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CustomPropTypes, {
   BpkCalendarGridPropTypes,
-  BpkCalendarDatePropTypes,
+  BpkCalendarDatePropTypes, // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from './src/custom-proptypes-legacy';
 import * as DateUtils from './src/date-utils';
 import themeAttributes from './src/themeAttributes';

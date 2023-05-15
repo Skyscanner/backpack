@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import {
   calendarDaySize,
-  calendarDaySpacing,
+  calendarDaySpacing, // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const CSS_UNIT_REGEX = /(^[+-]?(?:\d*\.)?\d+)(.+)/i;
