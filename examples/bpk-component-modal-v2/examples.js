@@ -130,15 +130,12 @@ class ModalContainer extends Component<Props, State> {
         <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkModalV2
           id="bpk-modal"
           ariaLabelledby="bpk-modal-label-my-dialog"
           closeLabel="bpk-modal-button-close"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
-          getApplicationElement={() => document.getElementById('pagewrap')}
-          renderTarget={() => document.getElementById('dialog-container')}
           {...this.props}
         >
           {this.props.children}
