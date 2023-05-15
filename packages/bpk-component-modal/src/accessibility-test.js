@@ -50,8 +50,6 @@ describe('BpkModal accessibility tests', () => {
 
 describe('BpkModalV2 accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const customRenderTarget = document.createElement('div');
-
     const { container } = render(
       <BpkModalV2
         id="bpk-modal-element"
@@ -60,10 +58,8 @@ describe('BpkModalV2 accessibility tests', () => {
         isOpen
         onClose={jest.fn()}
         title="Backpack Dialog Element"
-        showHeader
-        renderTarget={() => customRenderTarget}
       >
-        Dialog content inside a custom target
+        Dialog content
       </BpkModalV2>,
     );
     const results = await axe(container);
