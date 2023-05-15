@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import type { ComponentType } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
@@ -26,30 +26,29 @@ import type {
   DaysOfWeek,
   SelectionConfiguration,
   DateModifiers,
-  ReactComponent,
 } from './custom-proptypes';
 import STYLES from './BpkCalendar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  changeMonthLabel: string | null;
-  daysOfWeek: DaysOfWeek;
-  formatDateFull: (date: Date) => Date | string;
-  formatMonth: (date: Date) => Date | string;
-  id: string;
-  maxDate: Date;
-  minDate: Date;
+  changeMonthLabel?: string | null;
+  daysOfWeek: DaysOfWeek; // req
+  formatDateFull: (date: Date) => Date | string; // req
+  formatMonth: (date: Date) => Date | string; // req
+  id: string; // req
+  maxDate: Date; // req
+  minDate: Date; // req
   month: Date;
-  nextMonthLabel: string | null;
-  previousMonthLabel: string | null;
+  nextMonthLabel?: string | null;
+  previousMonthLabel?: string | null;
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-  className: string | null;
-  dateModifiers: DateModifiers;
-  fixedWidth: boolean;
-  focusedDate: Date | null;
-  markOutsideDays: boolean;
-  markToday: boolean;
+  className?: string | null;
+  dateModifiers?: DateModifiers;
+  fixedWidth?: boolean;
+  focusedDate?: Date | null;
+  markOutsideDays?: boolean;
+  markToday?: boolean;
   onMonthChange?: () => void;
   onDateClick?: () => void;
   onDateKeyDown?: () => void;
@@ -64,31 +63,31 @@ type Props = {
 };
 
 const composeCalendar = (
-  Nav: ComponentType<any> | null,
-  GridHeader: ComponentType<any> | null,
-  Grid: ComponentType<any>,
-  CalendarDate: ComponentType<any> | null,
+  Nav: ComponentType<any> | string | null,
+  GridHeader: ComponentType<any> | string | null,
+  Grid: ComponentType<any> | string,
+  CalendarDate: ComponentType<any> | string | null,
 ) => {
   const BpkCalendar = ({
     changeMonthLabel = null,
     className = null,
     dateModifiers = {},
-    dateProps = null,
+    dateProps = {},
     daysOfWeek,
     fixedWidth = true,
     focusedDate = null,
     formatDateFull,
     formatMonth,
     gridClassName = null,
-    gridProps = null,
-    headerProps = null,
+    gridProps = {},
+    headerProps = {},
     id,
     markOutsideDays = true,
     markToday = true,
     maxDate,
     minDate,
     month,
-    navProps = null,
+    navProps = {},
     nextMonthLabel = null,
     onDateClick = () => {},
     onDateKeyDown = () => {},

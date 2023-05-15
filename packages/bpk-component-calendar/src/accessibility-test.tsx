@@ -24,10 +24,6 @@ import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 import BpkCalendarContainer from './BpkCalendarContainer';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 
-const createNodeMock = () => ({
-  focus: () => null,
-});
-
 describe('BpkCalendar accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
@@ -44,10 +40,10 @@ describe('BpkCalendar accessibility tests', () => {
           type: CALENDAR_SELECTION_TYPE.single,
           date: new Date(2010, 1, 15),
         }}
+        month={new Date(2010, 1, 1)}
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
       />,
-      { createNodeMock },
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -67,12 +63,12 @@ describe('BpkCalendar accessibility tests', () => {
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.range,
           startDate: new Date(2010, 1, 16),
-          endDate: new Date(2020, 1, 20),
+          endDate: new Date(2010, 1, 20),
         }}
+        month={new Date(2010, 1, 1)}
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
       />,
-      { createNodeMock },
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

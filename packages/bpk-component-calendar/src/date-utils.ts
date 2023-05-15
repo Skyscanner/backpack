@@ -53,7 +53,7 @@ const ONE_HOUR_IN_MS = 60 * ONE_MINUTE_IN_MS;
 // To go aroud this problem we're mostly avoiding date objects and using UTC when that's not
 // possible.
 
-function utc(year: number, month: number, date: number) {
+function utc(year: number, month: number, date?: number) {
   return new Date(Date.UTC(year, month, date));
 }
 
@@ -62,7 +62,7 @@ function daysInMonth(year: number, month: number) {
   return new Date(year, month + 1, 0).getDate();
 }
 
-function dateAtStartOfDay(year: number, month: number, day: number) {
+function dateAtStartOfDay(year: number, month: number, day?: number) {
   const date = utc(year, month, day);
   const tzOffset = date.getTimezoneOffset();
 
@@ -78,7 +78,7 @@ function dateAtStartOfDay(year: number, month: number, day: number) {
   return date;
 }
 
-function addDay(year: number, month: number, day: number) {
+function addDay(year: number, month: number, day?: number) {
   const date = utc(year, month, day);
   date.setUTCDate(date.getUTCDate() + 1);
   return [date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()];

@@ -18,41 +18,6 @@
 
 import type { ReactElement } from 'react';
 
-import { isBefore, isSameDay } from './date-utils';
-
-type Props = {
-  endDate: Date;
-  startDate: Date;
-};
-
-const DateType = () => (props: Props) => {
-  const { endDate, startDate } = props;
-
-  // No range selected
-  if (!startDate && !endDate) {
-    return null;
-  }
-
-  // End date without a start date is not allowed
-  if (!startDate && endDate) {
-    return new Error(`Cannot specify \`endDate\` without \`startDate\`.`);
-  }
-
-  // Start date without an end date is always valid
-  if (startDate && !endDate) {
-    return null;
-  }
-
-  // Start date cannot be after end date
-  if (isBefore(endDate, startDate) && !isSameDay(endDate, startDate)) {
-    return new Error(
-      `Start date \`${startDate}\` cannot be after end date \`${endDate}\`.`,
-    );
-  }
-
-  return null;
-};
-
 export const CALENDAR_SELECTION_TYPE = {
   single: 'single',
   range: 'range',
@@ -65,8 +30,8 @@ export type SelectionConfigurationSingle = {
 
 export type SelectionConfigurationRange = {
   type: typeof CALENDAR_SELECTION_TYPE.range;
-  startDate: Date;
-  endDate: Date;
+  startDate: Date | null;
+  endDate: Date | null;
 };
 
 export type SelectionConfiguration =

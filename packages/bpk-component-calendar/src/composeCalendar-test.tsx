@@ -22,10 +22,6 @@ import { weekDays, formatMonth, formatDateFull } from '../test-utils';
 
 import composeCalendar from './composeCalendar';
 
-const createNodeMock = () => ({
-  focus: () => null,
-});
-
 const CalendarComponent = composeCalendar('Nav', 'Header', 'Grid', 'Date');
 
 const CustomCalendarComponent = composeCalendar(null, null, 'Grid', 'Date');
@@ -48,7 +44,6 @@ describe('composeCalendar', () => {
         maxDate={new Date(Date.UTC(2010, 2, 15))}
         month={new Date(Date.UTC(2010, 1, 15))}
       />,
-      { createNodeMock },
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -69,7 +64,6 @@ describe('composeCalendar', () => {
         month={new Date(Date.UTC(2010, 1, 15))}
         className="my-custom-class"
       />,
-      { createNodeMock },
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -90,7 +84,6 @@ describe('composeCalendar', () => {
         month={new Date(Date.UTC(2010, 1, 15))}
         fixedWidth={false}
       />,
-      { createNodeMock },
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -110,7 +103,6 @@ describe('composeCalendar', () => {
         maxDate={new Date(Date.UTC(2010, 2, 15))}
         month={new Date(Date.UTC(2010, 1, 15))}
       />,
-      { createNodeMock },
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -130,7 +122,6 @@ describe('composeCalendar', () => {
         maxDate={new Date(Date.UTC(2010, 2, 15))}
         month={new Date(Date.UTC(2010, 1, 15))}
       />,
-      { createNodeMock },
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -166,7 +157,6 @@ describe('composeCalendar', () => {
         gridProps={{ name: 'Grid' }}
         dateProps={{ name: 'Date' }}
       />,
-      { createNodeMock },
     );
     expect(asFragment()).toMatchSnapshot();
   });

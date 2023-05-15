@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { PureComponent, Component } from 'react';
+import { PureComponent } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
@@ -65,7 +65,7 @@ const WeekDayComponent = ({
 );
 
 class BpkCalendarGridHeader extends PureComponent<Props> {
-  static defaultProps: DefaultProps = {
+  static defaultProps = {
     className: null,
     weekDayKey: 'nameAbbr',
   };

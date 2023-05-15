@@ -218,19 +218,15 @@ const singleDateHandler = (props: Props, nextProps: Props) => {
  * @returns {Boolean} based on if the date has changed
  */
 const rangeDateHandler = (props: Props, nextProps: Props) => {
-  const currentSelectConfig =
+  const { endDate, startDate } =
     props.selectionConfiguration as SelectionConfigurationRange;
-  const nextSelectConfig =
+  const { endDate: nextEndDate, startDate: nextStartDate } =
     nextProps.selectionConfiguration as SelectionConfigurationRange;
 
-  const startDateChanged = !isSameDay(
-    currentSelectConfig.startDate,
-    currentSelectConfig.startDate,
-  );
-  const endDateChanged = !isSameDay(
-    nextSelectConfig.endDate,
-    nextSelectConfig.endDate,
-  );
+  const startDateChanged =
+    startDate && nextStartDate && !isSameDay(startDate, nextStartDate);
+  const endDateChanged =
+    endDate && nextEndDate && !isSameDay(endDate, nextEndDate);
 
   if (startDateChanged || endDateChanged) {
     return true;

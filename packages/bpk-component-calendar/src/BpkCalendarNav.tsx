@@ -26,7 +26,6 @@ import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
 import BpkSelect from '../../bpk-component-select';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAriaLive from '../../bpk-component-aria-live';
 
 import {
@@ -55,7 +54,7 @@ type Props = {
   month: Date;
   nextMonthLabel: string;
   previousMonthLabel: string;
-  onMonthChange: (
+  onMonthChange?: (
     event: MonthChangeEvent,
     options: { month: Date; source: string },
   ) => void;
@@ -69,13 +68,16 @@ const changeMonth =
     month,
     source,
   }: {
-    callback: Props['onMonthChange'];
+    callback: (
+      event: MonthChangeEvent,
+      options: { month: Date; source: string },
+    ) => void;
     max: Date;
     min: Date;
     month: Date;
     source: string;
   }) =>
-  (event: MouseEvent<HTMLButtonElement>) => {
+  (event: MonthChangeEvent) => {
     // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
     // PR: https://github.com/facebook/react/pull/8329 - unresolved as of 22/12/2016
     if (isWithinRange(month, { start: min, end: max })) {

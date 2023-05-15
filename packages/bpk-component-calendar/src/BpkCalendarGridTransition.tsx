@@ -17,7 +17,7 @@
  */
 
 import type { ComponentType, ElementType } from 'react';
-import { Component, ComponentProps } from 'react';
+import { Component } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules, isRTL } from '../../bpk-react-utils';
@@ -60,15 +60,15 @@ const getFocusedDateForMonth = (
     startOfDay(maxDate),
   );
 
-export type Props = DefaultProps & {
-  TransitionComponent: ElementType;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+export type Props = InjectedCalendarGridTransitionProps & {
+  className?: string | null;
+  month?: Date;
+  focusedDate?: Date | null;
+  [rest: string]: any;
 };
 
-type DefaultProps = {
-  className: string | null;
-  month: Date;
-  focusedDate: Date | null;
+type InjectedCalendarGridTransitionProps = {
+  TransitionComponent: ElementType;
 };
 
 type State = {
@@ -79,9 +79,9 @@ type State = {
 };
 
 class BpkCalendarGridTransition extends Component<Props, State> {
-  isTransitionEndSupportedVar: boolean;
+  isTransitionEndSupported: boolean;
 
-  static defaultProps: DefaultProps = {
+  static defaultProps = {
     className: null,
     month: new Date(),
     focusedDate: null,
@@ -89,6 +89,8 @@ class BpkCalendarGridTransition extends Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
+
+    const { month = new Date() } = props;
 
     this.onMonthTransitionEnd = this.onMonthTransitionEnd.bind(this);
 
@@ -98,23 +100,20 @@ class BpkCalendarGridTransition extends Component<Props, State> {
       // Used in a test so this is valid usage.
       // eslint-disable-next-line react/no-unused-state
       currentMonth: props.month,
-      months: [
-        addMonths(props.month, -1),
-        props.month,
-        addMonths(props.month, 1),
-      ],
+      months: [addMonths(month, -1), month, addMonths(month, 1)],
     };
 
-    this.isTransitionEndSupportedVar = isTransitionEndSupported();
+    this.isTransitionEndSupported = isTransitionEndSupported();
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps: Props) {
-    const hasMonthChanged = !isSameMonth(this.props.month, nextProps.month);
+  UNSAFE_componentWillReceiveProps({ month: nextMonth = new Date() }: Props) {
+    const { month = new Date() } = this.props;
+    const hasMonthChanged = !isSameMonth(month, nextMonth);
 
     if (hasMonthChanged) {
       const reverse = isRTL();
 
-      if (differenceInCalendarMonths(nextProps.month, this.props.month) === 1) {
+      if (differenceInCalendarMonths(nextMonth, month) === 1) {
         // Transition to next month
         this.setState({
           transitionValue: reverse
@@ -125,9 +124,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
         return;
       }
 
-      if (
-        differenceInCalendarMonths(nextProps.month, this.props.month) === -1
-      ) {
+      if (differenceInCalendarMonths(nextMonth, month) === -1) {
         // Transition to previous month
         this.setState({
           transitionValue: reverse
@@ -141,12 +138,8 @@ class BpkCalendarGridTransition extends Component<Props, State> {
       this.setState({
         // Used in a test so this is valid usage.
         // eslint-disable-next-line react/no-unused-state
-        currentMonth: nextProps.month,
-        months: [
-          addMonths(nextProps.month, -1),
-          nextProps.month,
-          addMonths(nextProps.month, 1),
-        ],
+        currentMonth: nextMonth,
+        months: [addMonths(nextMonth, -1), nextMonth, addMonths(nextMonth, 1)],
       });
     }
   }
@@ -161,7 +154,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
   }
 
   onMonthTransitionEnd() {
-    const { month } = this.props;
+    const { month = new Date() } = this.props;
 
     this.setState({
       transitionValue: transitionValues.current,
@@ -174,7 +167,12 @@ class BpkCalendarGridTransition extends Component<Props, State> {
   }
 
   render() {
-    const { TransitionComponent, className, focusedDate, ...rest } = this.props;
+    const {
+      TransitionComponent,
+      className = null,
+      focusedDate = null,
+      ...rest
+    } = this.props;
     const { isTransitioning, transitionValue } = this.state;
 
     const stripClassNames = getClassName(
@@ -230,11 +228,12 @@ class BpkCalendarGridTransition extends Component<Props, State> {
 }
 
 const addCalendarGridTransition =
-  (TransitionComponent: ComponentType<any>) => (props: any) =>
+  <P extends {}>(TransitionComponent: ComponentType<P>) =>
+  (props: Omit<P & Props, keyof InjectedCalendarGridTransitionProps>) =>
     (
       <BpkCalendarGridTransition
+        {...(props as P)}
         TransitionComponent={TransitionComponent}
-        {...props}
       />
     );
 
