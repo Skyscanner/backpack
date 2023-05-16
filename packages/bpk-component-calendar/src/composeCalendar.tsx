@@ -33,12 +33,12 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   changeMonthLabel?: string | null;
-  daysOfWeek: DaysOfWeek; // req
-  formatDateFull: (date: Date) => Date | string; // req
-  formatMonth: (date: Date) => Date | string; // req
-  id: string; // req
-  maxDate: Date; // req
-  minDate: Date; // req
+  daysOfWeek: DaysOfWeek;
+  formatDateFull: (date: Date) => Date | string;
+  formatMonth: (date: Date) => Date | string;
+  id: string;
+  maxDate: Date;
+  minDate: Date;
   month: Date;
   nextMonthLabel?: string | null;
   previousMonthLabel?: string | null;

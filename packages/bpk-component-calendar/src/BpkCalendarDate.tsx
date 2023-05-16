@@ -195,7 +195,7 @@ class BpkCalendarDate extends PureComponent<Props> {
         }}
         onKeyDown={onDateKeyDown}
         aria-pressed={isSelected}
-        ref={(button: HTMLButtonElement) => {
+        ref={(button: HTMLButtonElement | null) => {
           this.button = button;
         }}
         {...buttonProps}
