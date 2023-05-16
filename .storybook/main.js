@@ -17,7 +17,7 @@
  */
 
 module.exports = {
-  stories: ['../examples/**/stories.@(ts|js)'],
+  stories: ['../examples/**/stories.@(ts|tsx|js|jsx)'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',

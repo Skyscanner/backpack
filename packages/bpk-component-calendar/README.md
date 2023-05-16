@@ -147,7 +147,7 @@ withCalendarState(
 ## Props
 
 | Property               | PropType | Required        | Default Value                                        |
-| ---------------------- | -------- | --------------- | ---------------------------------------------------- |
+|------------------------|----------|-----------------|------------------------------------------------------|
 | daysOfWeek             | object   | true            | -                                                    |
 | formatDateFull         | func     | true            | -                                                    |
 | formatMonth            | func     | true            | -                                                    |
