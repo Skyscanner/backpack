@@ -97,7 +97,7 @@ const BpkPrice = (props: Props) => {
         )}
       </div>
       <div
-        className={isAlignRight && getClassName('bpk-price__column-container')}
+        className={getClassName(isAlignRight && 'bpk-price__column-container')}
       >
         <BpkText
           textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
