@@ -232,23 +232,6 @@ const NoFullScreenOnMobileNoTitleExample = () => (
   </ModalContainer>
 );
 
-const NestedExample = () => (
-  <ModalContainer title="Modal title" fullScreenOnDesktop>
-    This is a full-screen modal. You can put anything you want in here,
-    including other modals!
-    <ModalContainer
-      id="bpk-modal-inner"
-      title="Inner Modal Title"
-      noFullScreenOnMobile
-    >
-      <Paragraph>
-        This is an inner default modal using the HTML dialog element. You can
-        put anything you want in here.
-      </Paragraph>
-    </ModalContainer>
-  </ModalContainer>
-);
-
 const MultipleModalsExample = () => (
   <>
     <ModalContainer title="Modal Title 1">
@@ -288,6 +271,5 @@ export {
   FullScreenOnDesktopNoTitleExample,
   NoFullScreenOnMobileExample,
   NoFullScreenOnMobileNoTitleExample,
-  NestedExample,
   MultipleModalsExample,
 };

@@ -30,7 +30,6 @@ import {
   FullScreenOnDesktopNoTitleExample,
   NoFullScreenOnMobileExample,
   NoFullScreenOnMobileNoTitleExample,
-  NestedExample,
   MultipleModalsExample,
 } from './examples';
 
@@ -51,5 +50,4 @@ export const FullScreenOnDesktop = FullScreenOnDesktopExample;
 export const FullScreenOnDesktopNoTitle = FullScreenOnDesktopNoTitleExample;
 export const NoFullScreenOnMobile = NoFullScreenOnMobileExample;
 export const NoFullScreenOnMobileNoTitle = NoFullScreenOnMobileNoTitleExample;
-export const Nested = NestedExample;
 export const MultipleModals = MultipleModalsExample;
