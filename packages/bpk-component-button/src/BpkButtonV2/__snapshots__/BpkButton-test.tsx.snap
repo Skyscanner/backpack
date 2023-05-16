@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkButtonV2 should add only bpk specific classes if className prop is set to empty string 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary"
+    type="button"
+  >
+    My button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly a "large", "secondary" button 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--large bpk-button--secondary"
+    type="button"
+  >
+    My button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with "blank" and "rel" attributes 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-button bpk-button--primary"
+    href="#"
+    rel="rel-overwrite"
+    target="_blank"
+  >
+    My button
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with "blank" attribute 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-button bpk-button--primary"
+    href="#"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    My button
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with "disabled" and "href" attributes 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary"
+    disabled=""
+    type="button"
+  >
+    My button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with "rel" attribute 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-button bpk-button--primary"
+    href="#"
+    rel="rel-attr"
+    target=""
+  >
+    My button
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with a "disabled" attribute 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary"
+    disabled=""
+    type="button"
+  >
+    My button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with a "href" attribute 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-button bpk-button--primary"
+    href="#"
+    target=""
+  >
+    My button
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with an "iconOnly" attribute 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--icon-only bpk-button--primary"
+    type="button"
+  >
+    My button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with large size 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--large bpk-button--primary"
+    type="button"
+  >
+    My button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with type="destructive" 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--destructive"
+    type="button"
+  >
+    destructive button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with type="featured" 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--featured"
+    type="button"
+  >
+    featured button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with type="link" 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--link"
+    type="button"
+  >
+    link button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with type="linkOnDark" 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--linkOnDark"
+    type="button"
+  >
+    linkOnDark button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with type="primary" 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary"
+    type="button"
+  >
+    primary button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with type="primaryOnDark" 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primaryOnDark"
+    type="button"
+  >
+    primaryOnDark button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with type="primaryOnLight" 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primaryOnLight"
+    type="button"
+  >
+    primaryOnLight button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with type="secondary" 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--secondary"
+    type="button"
+  >
+    secondary button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should render correctly with type="secondaryOnDark" 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--secondaryOnDark"
+    type="button"
+  >
+    secondaryOnDark button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButtonV2 should respect the class names entered as a string 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary custom-class-1 custom-class-2"
+    type="button"
+  >
+    My button
+  </button>
+</DocumentFragment>
+`;
