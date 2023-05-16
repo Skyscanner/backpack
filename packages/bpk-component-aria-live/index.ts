@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2018 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-module.exports = {
-  stories: ['../examples/**/stories.@(ts|tsx|js|jsx)'],
-  addons: [
-    '@storybook/addon-a11y',
-    '@storybook/addon-actions',
-    '@storybook/addon-viewport',
-  ],
-};
+import BpkAriaLive, {
+  POLITENESS_SETTINGS as ARIA_LIVE_POLITENESS_SETTINGS,
+  type Props as BpkAriaLiveProps,
+} from './src/BpkAriaLive';
+
+export { ARIA_LIVE_POLITENESS_SETTINGS };
+export type { BpkAriaLiveProps };
+export default BpkAriaLive;

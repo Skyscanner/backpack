@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import {
   PrimaryExample,
   PrimaryOnDarkExample,
@@ -25,18 +23,9 @@ import {
   SecondaryExample,
   SecondaryOnDarkExample,
   DestructiveExample,
+  FeaturedExample,
   LinkExample,
   LinkOnDarkExample,
-  FeaturedExample,
-  ComponentButtonPrimaryExample,
-  ComponentButtonPrimaryOnDarkExample,
-  ComponentButtonPrimaryOnLightExample,
-  ComponentButtonSecondaryExample,
-  ComponentButtonSecondaryOnDarkExample,
-  ComponentButtonDestructiveExample,
-  ComponentButtonLinkExample,
-  ComponentButtonLinkOnDarkExample,
-  ComponentButtonFeaturedExample,
   MixedExample,
   AnchorTagsExample,
 } from './examples';
@@ -57,26 +46,12 @@ export const BpkButtonSecondaryOnDark = () => <SecondaryOnDarkExample />;
 
 export const BpkButtonDestructive = () => <DestructiveExample />;
 
+export const BpkButtonFeatured = () => <FeaturedExample />;
+
 export const BpkButtonLinkButton = () => <LinkExample />;
 
 export const BpkButtonLinkOnDarkButton = () => <LinkOnDarkExample />;
 
-export const BpkButtonFeatured = () => <FeaturedExample />;
-
-export const Primary = () => <ComponentButtonPrimaryExample />;
-export const PrimaryOnDark = () => <ComponentButtonPrimaryOnDarkExample />;
-
-export const PrimaryOnLight = () => <ComponentButtonPrimaryOnLightExample />;
-
-export const Secondary = () => <ComponentButtonSecondaryExample />;
-export const SecondaryOnDark = () => <ComponentButtonSecondaryOnDarkExample />;
-
-export const Destructive = () => <ComponentButtonDestructiveExample />;
-export const LinkButton = () => <ComponentButtonLinkExample />;
-
-export const LinkOnDarkButton = () => <ComponentButtonLinkOnDarkExample />;
-
-export const Featured = () => <ComponentButtonFeaturedExample />;
 export const Mixture = () => <MixedExample />;
 export const AnchorTags = () => <AnchorTagsExample />;
 

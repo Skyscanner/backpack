@@ -15,13 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { ChipsExample, SelectExample } from './examples';
+/// <reference types="react" />
+import type { Props } from './common-types';
 
-export default {
-  title: 'bpk-component-aria-live',
-};
-
-export const Default = () => <ChipsExample />;
-export const Visible = () => <SelectExample />;
+declare const BpkButtonV2: ({
+  blank,
+  children,
+  className,
+  disabled,
+  href,
+  iconOnly,
+  onClick,
+  rel: propRel,
+  size,
+  submit,
+  type,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkButtonV2;
