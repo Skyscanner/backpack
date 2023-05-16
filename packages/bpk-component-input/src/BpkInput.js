@@ -18,40 +18,24 @@
 
 /* @flow strict */
 
-import { Component } from 'react';
+import { Component, forwardRef, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
 import STYLES from './BpkInput.module.scss';
-import {
-  type Props,
-  propTypes,
-  defaultProps,
-  CLEAR_BUTTON_MODES,
-} from './common-types';
+import { CLEAR_BUTTON_MODES } from './common-types';
 
-type State = {
-  persistClearButton: boolean,
-};
 
 const getClassName = cssModules(STYLES);
 
-class BpkInput extends Component<Props, State> {
-  static propTypes = propTypes;
-
-  static defaultProps = defaultProps;
-
-  constructor(props: Props) {
-    super(props);
-
-    this.state = { persistClearButton: false };
-  }
-
-  render() {
+const BpkInput = forwardRef(
+  (props, forwardedRef) => {
     const classNames = [getClassName('bpk-input')];
     const containerClassNames = [getClassName('bpk-input__container')];
     const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
+    const [persistClearButton, setPersistClearButton] = useState(false)
+
     const {
       className,
       clearButtonLabel,
@@ -67,10 +51,9 @@ class BpkInput extends Component<Props, State> {
       valid,
       value,
       ...rest
-    } = this.props;
+    } = props;
 
-    // Used as a ref for focussing the input when cleared.
-    let ref = null;
+
 
     // Explicit check for false primitive value as undefined is
     // treated as neither valid nor invalid
@@ -95,7 +78,7 @@ class BpkInput extends Component<Props, State> {
       classNames.push(getClassName('bpk-input--clearable'));
       if (
         clearButtonMode === CLEAR_BUTTON_MODES.always ||
-        this.state.persistClearButton
+        persistClearButton
       ) {
         classNames.push(getClassName('bpk-input--persistent-clearable'));
         clearButtonClassNames.push(
@@ -128,12 +111,7 @@ class BpkInput extends Component<Props, State> {
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <input
         className={classNames.join(' ')}
-        ref={(input) => {
-          ref = input;
-          if (inputRef) {
-            inputRef(input);
-          }
-        }}
+        ref={forwardedRef}
         aria-invalid={isInvalid}
         value={value}
         name={name}
@@ -145,7 +123,7 @@ class BpkInput extends Component<Props, State> {
     // If we don't do this, then for `clearableWhileEditing` mode the mouseDown on the button will cause the input to lose focus,
     // which will hide the button. The `onClick` event cannot complete if the button is removed from the DOM but mouseUp!
     const onMouseDown = () => {
-      this.setState({ persistClearButton: true });
+      setPersistClearButton(true)
     };
 
     return clearable ? (
@@ -157,13 +135,13 @@ class BpkInput extends Component<Props, State> {
             label={clearButtonLabel || ''}
             onMouseDown={onMouseDown}
             onClick={(e) => {
-              if (ref) {
-                ref.focus();
+              if (forwardedRef) {
+                forwardedRef.focus();
               }
               if (onClear) {
                 e.target.name = name;
                 onClear(e);
-                this.setState({ persistClearButton: false });
+                persistClearButton(false)
               }
             }}
             className={clearButtonClassNames.join(' ')}
@@ -173,7 +151,7 @@ class BpkInput extends Component<Props, State> {
     ) : (
       renderedInput
     );
-  }
-}
+  })
+
 
 export default BpkInput;
