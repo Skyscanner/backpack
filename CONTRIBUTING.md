@@ -51,6 +51,10 @@ We recommend that you install [a plugin to your editor](https://eslint.org/docs/
 
 ## Getting started
 
+**All Backpack components are written in Typescript or are being gradually migrated to Typescript.**
+
+As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to a component also assist in the migration of the respective component. 
+
 ### Getting the code
 
 You should pull code down using the following command
@@ -110,6 +114,8 @@ All Sass mixins are defined in the [`bpk-mixins`](https://github.com/Skyscanner/
 If you add a new file of mixins, for example for a new *atom*, make sure you add the file to the imports in `_index.scss`.
 
 ### React component
+
+**All new components should be written in Typescript.**
 
 Use `bpk-component-boilerplate` to create a new skeleton React component. Once this is created, use existing components for code style inspiration.
 
