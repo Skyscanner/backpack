@@ -21,22 +21,26 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { BpkModalV2 } from './BpkModalV2';
+import BpkModal from './BpkModal';
 
-describe('BpkModalV2 accessibility tests', () => {
+describe('BpkModal accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
+    const customRenderTarget = document.createElement('div');
+
     const { container } = render(
-      <BpkModalV2
-        id="bpk-modal-element"
-        ariaLabelledby="bpk-modal-label-my-dialog"
-        closeLabel="bpk-modal-button-close"
-        isOpen
+      <BpkModal
+        id="my-modal"
+        title="Modal title"
         onClose={jest.fn()}
-        title="Backpack Dialog Element"
-        padded
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        isIphone={false}
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
       >
-        Dialog content
-      </BpkModalV2>,
+        Modal content inside a custom target
+      </BpkModal>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
