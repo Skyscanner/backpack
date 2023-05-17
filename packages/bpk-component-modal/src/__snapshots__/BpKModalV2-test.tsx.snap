@@ -51,7 +51,7 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
         </div>
       </div>
       <div
-        class="bpk-modal_container"
+        class="bpk-modal_container bpk-modal__container--padded"
       >
         <div>
           Content
@@ -108,7 +108,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
         </div>
       </div>
       <div
-        class="bpk-modal_container"
+        class="bpk-modal_container bpk-modal__container--padded"
       >
         <div>
           Content

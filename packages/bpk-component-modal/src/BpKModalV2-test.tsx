@@ -28,6 +28,7 @@ describe('BpkModalV2', () => {
     closeLabel: 'bpk-modal-button-close',
     isOpen: true,
     onClose: jest.fn(),
+    padded: true,
     title: 'Backpack Dialog Element',
     showHeader: true,
   };
