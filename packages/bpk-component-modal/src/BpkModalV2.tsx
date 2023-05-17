@@ -16,11 +16,14 @@
  * limitations under the License.
  */
 
-import { type Node, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules, withDefaultProps } from '../../bpk-react-utils';
 
 import STYLES from './BpKModalV2.module.scss';
@@ -28,17 +31,17 @@ import STYLES from './BpKModalV2.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  id: string | undefined,
-  ariaLabelledby: string,
-  children: Node,
-  closeLabel: string,
-  fullScreenOnDesktop: boolean,
-  isOpen: boolean,
-  noFullScreenOnMobile: boolean,
-  onClose: (event: SyntheticEvent<>) => void | null,
-  padded: boolean,
-  title: ?string | null,
-  wide: boolean,
+  id: string | undefined;
+  ariaLabelledby: string;
+  children: ReactNode;
+  closeLabel: string;
+  fullScreenOnDesktop?: boolean;
+  isOpen: boolean;
+  noFullScreenOnMobile?: boolean;
+  onClose: () => void | null;
+  padded?: boolean;
+  title?: string | null;
+  wide?: boolean;
 };
 
 const Heading = withDefaultProps(BpkText, {
@@ -48,7 +51,7 @@ const Heading = withDefaultProps(BpkText, {
 });
 
 type DialogProps = {
-  isDialogOpen: boolean,
+  isDialogOpen: boolean;
 };
 
 const dialogSupported = typeof HTMLDialogElement === 'function';
@@ -77,17 +80,21 @@ export const BpkModalV2 = (props: Props) => {
     wide,
   } = props;
 
-  const ref = useRef(null);
+  const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     if (isOpen) {
       ref.current?.showModal?.();
 
-      const dialog = document.getElementById(id);
+      const dialog = document.getElementById(`${id}`);
       if (dialog) {
-        dialog.addEventListener('click', (event) =>
-          event.target?.id === id ? ref.current?.close?.() : null,
-        );
+        dialog.addEventListener('click', (event: Event) => {
+          const { target } = event;
+
+          if (target instanceof HTMLElement && target.id === `${id}`) {
+            ref.current?.close?.();
+          }
+        });
       }
     } else {
       ref.current?.close?.();
@@ -154,26 +161,4 @@ export const BpkModalV2 = (props: Props) => {
       </dialog>
     </div>
   ) : null;
-};
-
-BpkModalV2.propTypes = {
-  ariaLabelledby: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  closeLabel: PropTypes.string.isRequired,
-  fullScreenOnDesktop: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  noFullScreenOnMobile: PropTypes.bool,
-  padded: PropTypes.bool,
-  title: PropTypes.string,
-  wide: PropTypes.bool,
-};
-
-BpkModalV2.defaultProps = {
-  fullScreenOnDesktop: false,
-  noFullScreenOnMobile: false,
-  padded: true,
-  title: '',
-  wide: false,
 };

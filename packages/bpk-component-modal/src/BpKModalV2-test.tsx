@@ -86,7 +86,7 @@ describe('BpkModalV2', () => {
           <div>Content</div>
         </BpkModalV2>,
       );
-      fireEvent.click(document.getElementById('bpk-modal-element'));
+      fireEvent.click(screen.getByText('Content'));
 
       expect(document.getElementById('bpk-modal-element')).toBeInTheDocument();
     });
@@ -116,6 +116,7 @@ describe('BpkModalV2', () => {
     });
 
     it('should return null when dialog is closed', () => {
+      // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
       const { rerender, store } = render(
         <BpkModalV2 {...props}>
           <div>Content</div>
@@ -128,6 +129,7 @@ describe('BpkModalV2', () => {
         <BpkModalV2 {...props} isOpen={false}>
           <div>Content</div>
         </BpkModalV2>,
+        // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
         rerender,
         store,
       );
@@ -213,7 +215,7 @@ describe('BpkModalV2', () => {
 
     beforeEach(async () => {
       htmlDialogElement = window.HTMLDialogElement;
-      window.HTMLDialogElement = undefined;
+      window.HTMLDialogElement = undefined!;
 
       jest.isolateModules(() => {
         ({ BpkModalV2 } = jest.requireActual('./BpkModalV2'));
