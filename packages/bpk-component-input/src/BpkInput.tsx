@@ -150,7 +150,7 @@ class BpkInput extends Component<Props, State> {
             tabIndex="-1"
             label={clearButtonLabel || ''}
             onMouseDown={onMouseDown}
-            onClick={(e: SyntheticEvent<HTMLButtonElement>) => {
+            onClick={(e) => {
               if (ref) {
                 ref.focus();
               }
