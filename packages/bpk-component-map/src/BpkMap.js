@@ -75,6 +75,7 @@ const BpkMap = (props: Props) => {
     children,
     className,
     greedyGestureHandling,
+    mapId,
     mapOptionStyles,
     mapRef,
     onRegionChange,
@@ -131,6 +132,8 @@ const BpkMap = (props: Props) => {
       }
       zoom={zoom}
       options={{
+        // If you want to set style by mapId, you should remove the styles property: https://developers.google.com/maps/documentation/get-map-id#javascript
+        mapId,
         gestureHandling,
         disableDefaultUI: !showControls,
         mapTypeControl: false,
@@ -189,6 +192,7 @@ BpkMap.propTypes = {
       stylers: PropTypes.arrayOf(PropTypes.object).isRequired,
     }),
   ),
+  mapId: PropTypes.string,
 };
 
 BpkMap.defaultProps = {
@@ -205,6 +209,7 @@ BpkMap.defaultProps = {
   zoom: 15,
   className: null,
   mapOptionStyles: null,
+  mapId: null,
 };
 
 export default BpkMap;
