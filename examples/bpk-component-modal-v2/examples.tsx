@@ -17,8 +17,8 @@
  */
 
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 import { Component, Children } from 'react';
-import type { Node } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkButton from '../../packages/bpk-component-button';
@@ -36,11 +36,7 @@ const Paragraph = withDefaultProps(BpkText, {
 });
 
 type Props = {
-  children: Node,
-};
-
-type State = {
-  isOpen: boolean,
+  children: ReactNode;
 };
 
 const content = [
@@ -99,14 +95,13 @@ const content = [
   </Paragraph>,
 ];
 
-class ModalContainer extends Component<Props, State> {
+class ModalContainer extends Component<Props, { isOpen: boolean }> {
   static propTypes = {
     children: PropTypes.node.isRequired,
   };
 
   constructor() {
     super();
-
     this.state = {
       isOpen: false,
     };
@@ -136,6 +131,7 @@ class ModalContainer extends Component<Props, State> {
           closeLabel="bpk-modal-button-close"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
+          padded
           {...this.props}
         >
           {this.props.children}
@@ -146,7 +142,7 @@ class ModalContainer extends Component<Props, State> {
 }
 
 const DefaultExample = () => (
-  <ModalContainer title="Modal Title" padded>
+  <ModalContainer title="Modal Title">
     <Paragraph>
       This is a default modal using the HTML dialog element. You can put
       anything you want in here.
@@ -155,10 +151,7 @@ const DefaultExample = () => (
 );
 
 const LongTitleExample = () => (
-  <ModalContainer
-    title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
-    padded
-  >
+  <ModalContainer title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third.">
     <Paragraph>
       This is a default modal using the HTML dialog element. You can put
       anything you want in here.
@@ -167,7 +160,7 @@ const LongTitleExample = () => (
 );
 
 const HeaderNoTitleExample = () => (
-  <ModalContainer padded>
+  <ModalContainer>
     <Paragraph>
       This is a default modal using the HTML dialog element without a header.
       You can put anything you want in here.
@@ -176,25 +169,25 @@ const HeaderNoTitleExample = () => (
 );
 
 const OverflowingExample = () => (
-  <ModalContainer title="Modal Title" padded>
+  <ModalContainer title="Modal Title">
     <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
 const OverflowingNoTitleExample = () => (
-  <ModalContainer padded>
+  <ModalContainer>
     <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
 const WideExample = () => (
-  <ModalContainer title="Modal title" padded wide>
+  <ModalContainer title="Modal title" wide>
     This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const WideNoTitleExample = () => (
-  <ModalContainer padded wide>
+  <ModalContainer wide>
     This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
@@ -212,46 +205,46 @@ const NoPaddingNoTitleExample = () => (
 );
 
 const FullScreenOnDesktopExample = () => (
-  <ModalContainer title="Modal title" padded fullScreenOnDesktop>
+  <ModalContainer title="Modal title" fullScreenOnDesktop>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const FullScreenOnDesktopNoTitleExample = () => (
-  <ModalContainer padded fullScreenOnDesktop>
+  <ModalContainer fullScreenOnDesktop>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoFullScreenOnMobileExample = () => (
-  <ModalContainer title="Modal title" padded noFullScreenOnMobile>
+  <ModalContainer title="Modal title" noFullScreenOnMobile>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoFullScreenOnMobileNoTitleExample = () => (
-  <ModalContainer padded noFullScreenOnMobile>
+  <ModalContainer noFullScreenOnMobile>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const MultipleModalsExample = () => (
   <>
-    <ModalContainer title="Modal Title 1" padded>
+    <ModalContainer title="Modal Title 1">
       <Paragraph>
         Modal 1: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
       </Paragraph>
     </ModalContainer>
     <br />
-    <ModalContainer title="Modal Title 2" padded>
+    <ModalContainer title="Modal Title 2">
       <Paragraph>
         Modal 2: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
       </Paragraph>
     </ModalContainer>
     <br />
-    <ModalContainer title="Modal Title 3" padded>
+    <ModalContainer title="Modal Title 3">
       <Paragraph>
         Modal 3: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
