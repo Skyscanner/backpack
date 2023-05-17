@@ -58,6 +58,7 @@ describe('BpkModalV2 accessibility tests', () => {
         isOpen
         onClose={jest.fn()}
         title="Backpack Dialog Element"
+        padded
       >
         Dialog content
       </BpkModalV2>,
