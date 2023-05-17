@@ -131,7 +131,6 @@ class ModalContainer extends Component<Props, { isOpen: boolean }> {
           closeLabel="bpk-modal-button-close"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
-          padded
           {...this.props}
         >
           {this.props.children}
@@ -193,13 +192,13 @@ const WideNoTitleExample = () => (
 );
 
 const NoPaddingExample = () => (
-  <ModalContainer title="Modal title">
+  <ModalContainer title="Modal title" padded>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoPaddingNoTitleExample = () => (
-  <ModalContainer>
+  <ModalContainer padded>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );

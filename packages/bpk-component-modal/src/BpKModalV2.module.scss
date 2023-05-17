@@ -157,9 +157,10 @@
 
   &__container {
     min-height: 100%;
+    padding: $bpk-modal-content-padding;
 
     &--padded {
-      padding: $bpk-modal-content-padding;
+      padding: 0;
     }
 
     &--full-screen-desktop {
