@@ -146,7 +146,7 @@ class ModalContainer extends Component<Props, State> {
 }
 
 const DefaultExample = () => (
-  <ModalContainer title="Modal Title">
+  <ModalContainer title="Modal Title" padded>
     <Paragraph>
       This is a default modal using the HTML dialog element. You can put
       anything you want in here.
@@ -155,7 +155,10 @@ const DefaultExample = () => (
 );
 
 const LongTitleExample = () => (
-  <ModalContainer title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third.">
+  <ModalContainer
+    title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
+    padded
+  >
     <Paragraph>
       This is a default modal using the HTML dialog element. You can put
       anything you want in here.
@@ -164,7 +167,7 @@ const LongTitleExample = () => (
 );
 
 const HeaderNoTitleExample = () => (
-  <ModalContainer>
+  <ModalContainer padded>
     <Paragraph>
       This is a default modal using the HTML dialog element without a header.
       You can put anything you want in here.
@@ -173,82 +176,82 @@ const HeaderNoTitleExample = () => (
 );
 
 const OverflowingExample = () => (
-  <ModalContainer title="Modal Title">
+  <ModalContainer title="Modal Title" padded>
     <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
 const OverflowingNoTitleExample = () => (
-  <ModalContainer>
+  <ModalContainer padded>
     <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
 const WideExample = () => (
-  <ModalContainer title="Modal title" wide>
+  <ModalContainer title="Modal title" padded wide>
     This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const WideNoTitleExample = () => (
-  <ModalContainer wide>
+  <ModalContainer padded wide>
     This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoPaddingExample = () => (
-  <ModalContainer title="Modal title" padded={false}>
+  <ModalContainer title="Modal title">
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoPaddingNoTitleExample = () => (
-  <ModalContainer padded={false}>
+  <ModalContainer>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const FullScreenOnDesktopExample = () => (
-  <ModalContainer title="Modal title" fullScreenOnDesktop>
+  <ModalContainer title="Modal title" padded fullScreenOnDesktop>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const FullScreenOnDesktopNoTitleExample = () => (
-  <ModalContainer fullScreenOnDesktop>
+  <ModalContainer padded fullScreenOnDesktop>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoFullScreenOnMobileExample = () => (
-  <ModalContainer title="Modal title" noFullScreenOnMobile>
+  <ModalContainer title="Modal title" padded noFullScreenOnMobile>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoFullScreenOnMobileNoTitleExample = () => (
-  <ModalContainer noFullScreenOnMobile>
+  <ModalContainer padded noFullScreenOnMobile>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const MultipleModalsExample = () => (
   <>
-    <ModalContainer title="Modal Title 1">
+    <ModalContainer title="Modal Title 1" padded>
       <Paragraph>
         Modal 1: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
       </Paragraph>
     </ModalContainer>
     <br />
-    <ModalContainer title="Modal Title 2">
+    <ModalContainer title="Modal Title 2" padded>
       <Paragraph>
         Modal 2: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
       </Paragraph>
     </ModalContainer>
     <br />
-    <ModalContainer title="Modal Title 3">
+    <ModalContainer title="Modal Title 3" padded>
       <Paragraph>
         Modal 3: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
