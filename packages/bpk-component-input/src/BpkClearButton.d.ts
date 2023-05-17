@@ -16,13 +16,8 @@
  * limitations under the License.
  */
 
-import type { SyntheticEvent } from 'react';
-
 type Props = {
   label: string;
-  onClick: (event: SyntheticEvent<HTMLButtonElement>) => void | null;
-  className?: string | null;
-  [rest: string]: any;
 };
 declare const BpkClearButton: ({
   className,

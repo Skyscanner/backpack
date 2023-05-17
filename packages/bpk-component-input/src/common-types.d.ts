@@ -69,7 +69,7 @@ export declare const propTypes: {
   id: PropTypes.Validator<string>;
   name: PropTypes.Validator<string>;
   value: PropTypes.Validator<string>;
-  type: PropTypes.Requireable<'number' | 'text' | 'email' | 'password' | 'tel'>;
+  type: PropTypes.Requireable<'number' | 'text' | 'tel' | 'email' | 'password'>;
   className: PropTypes.Requireable<string>;
   valid: PropTypes.Requireable<boolean>;
   large: PropTypes.Requireable<boolean>;

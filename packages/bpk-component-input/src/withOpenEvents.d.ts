@@ -53,6 +53,7 @@ declare const withOpenEvents: <P extends InputProps>(
         | null,
       callback?: (() => void) | undefined,
     ): void;
+    forceUpdate(callback?: (() => void) | undefined): void;
     readonly props: Readonly<P & WithOpenEventsProps> &
       Readonly<{
         children?: import('react').ReactNode;
@@ -106,14 +107,14 @@ declare const withOpenEvents: <P extends InputProps>(
   defaultProps: {
     isOpen: boolean;
     hasTouchSupport: boolean;
-    onOpen: () => void;
+    onOpen: null;
     className: null;
-    onClick: () => void;
-    onFocus: () => void;
-    onBlur: () => void;
-    onTouchEnd: () => void;
-    onKeyDown: () => void;
-    onKeyUp: () => void;
+    onClick: null;
+    onFocus: null;
+    onBlur: null;
+    onTouchEnd: null;
+    onKeyDown: null;
+    onKeyUp: null;
   };
   contextType?: import('react').Context<any> | undefined;
 };
