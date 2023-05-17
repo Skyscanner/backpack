@@ -82,15 +82,15 @@ const withOpenEvents = <P extends InputProps>(
       hasTouchSupport: !!(
         typeof window !== 'undefined' && 'ontouchstart' in window
       ),
-      onOpen: () => {},
+      onOpen: null,
       // Input props
       className: null,
-      onClick: () => {},
-      onFocus: () => {},
-      onBlur: () => {},
-      onTouchEnd: () => {},
-      onKeyDown: () => {},
-      onKeyUp: () => {},
+      onClick: null,
+      onFocus: null,
+      onBlur: null,
+      onTouchEnd: null,
+      onKeyDown: null,
+      onKeyUp: null,
     };
 
     constructor(props: P & WithOpenEventsProps) {
