@@ -1,0 +1,18 @@
+/*
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-button{display:inline-block;min-height:2.25rem;margin:0;padding:.375rem 1rem;border:0;border-radius:.5rem;text-align:center;text-decoration:none;cursor:pointer;vertical-align:middle;user-select:none;font-size:1rem;line-height:1.5rem;font-weight:700;color:#fff;color:var(--bpk-button-primary-text-color, #fff);background-color:#05203c;background-color:var(--bpk-button-primary-background-color, #05203c)}.bpk-no-touch-support .bpk-button:hover:not(:active):not(:disabled){color:#fff;color:var(--bpk-button-primary-hover-text-color, #fff);background-color:#154679;background-color:var(--bpk-button-primary-hover-background-color, #154679)}:global(.bpk-no-touch-support) .bpk-button:hover:not(:active):not(:disabled){color:#fff;color:var(--bpk-button-primary-hover-text-color, #fff);background-color:#154679;background-color:var(--bpk-button-primary-hover-background-color, #154679)}.bpk-button:active{color:#fff;color:var(--bpk-button-primary-active-text-color, #fff);background-color:#154679;background-color:var(--bpk-button-primary-active-background-color, #154679)}.bpk-button:disabled{background-color:#e0e3e5;color:rgba(0,0,0,0.2);cursor:not-allowed}.bpk-button--large{min-height:3rem;padding:.75rem 1rem}.bpk-button--icon-only{border-radius:.5rem;padding-right:.625rem;padding-left:.625rem;border-radius:.5rem}.bpk-button--large-icon-only{border-radius:.5rem;padding-right:.75rem;padding-left:.75rem;border-radius:.5rem}.bpk-button span>svg{display:block}.bpk-button svg{fill:currentcolor}

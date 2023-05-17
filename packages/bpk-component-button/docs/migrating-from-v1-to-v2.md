@@ -1,28 +1,24 @@
 # Migrating from v1 to v2
 
-Version 2 of `bpk-component-button` removes the `selected` prop. This guide walks through a few patterns that can be used as a replacement.
+Version 2 of `bpk-component-button` removes the individual boolean properties to define the type of button switching to a enum of types, using a `size` property to select the large variant of button and updates some of the API to align better with our platforms.
 
 ## Migrating
 
-### When used as a toggle
+### Selecting a button type
 
-If a *selected* button is being used as an on/off toggle, it can easily be replaced with a checkbox:
+When selecting the type of button to use the type is now defined through the `type` property and selecting the type from `BUTTON_TYPES` object to specify the available buttons.
+
+Object contains the following:  `primary`, `primaryOnDark`, `primaryOnLight`, `secondary`, `secondaryOnDark`, `destructive`, `featured`, `link`, `linkOnDark`
 
 ### Original:
 
 ```
 import BpkButton from 'bpk-component-button';
 
-class Toggle extends React.Component {
-  constructor() {
-    this.state = { includeBaggage: false };
-  }
-  toggleBaggage = () => {
-    this.setState({includeBaggage: !this.state.includeBaggage});
-  }
+class SearchButton extends React.Component {
   render() {
     return (
-      <BpkButton selected={this.state.includeBaggage} onClick={this.toggleBaggage}>Include Baggage</BpkButton>
+      <BpkButton secondary onClick={this.toggleBaggage}>Include Baggage</BpkButton>
     );
   }
 }
@@ -31,48 +27,32 @@ class Toggle extends React.Component {
 ### Replacement:
 
 ```
-import BpkCheckbox from 'bpk-component-checkbox';
+import { BpkButtonV2, BUTTON_TYPES } from 'bpk-component-button';
 
 class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { includeBaggage: false };
-  }
-  toggleBaggage = () => {
-    this.setState({ includeBaggage: !this.state.includeBaggage });
-  }
   render() {
     return (
-      <BpkCheckbox
-        checked={this.state.includeBaggage}
-        onChange={this.toggleBaggage}
-        label="Include Baggage"
-      />
+      <BpkButtonV2 type={BUTTON_TYPES.secondary} onClick={this.toogleBaggae}></BpkButtonV2>
     );
   }
 }
 ```
 
-### When used to show/hide UI elements.
+### Rendering a large button
 
-There are many replacement patterns that can handle showing and hiding UI elements.
-The simplest of these is to use a button, whose text changes to reflect the state.
+When wishing to render a large button the `large` property has been removed to be replaced with `size` and passing in a `SIZE_TYPES` to set the desired large size
+
+Object contains the following:  `small` (component default value) and `large`
 
 ### Original:
 
 ```
 import BpkButton from 'bpk-component-button';
 
-class Toggle extends React.Component {
-  constructor() {
-    this.state = { showMore: false };
-  }
-  toggleMore = () => {
-    this.setState({showMore: !this.state.showMore});
-  }
+class SearchButton extends React.Component {
   render() {
     return (
-      <BpkButton selected={this.state.showMore} onClick={this.toggleMore}>Expand</BpkButton>
+      <BpkButton large onClick={this.toggleBaggage}>Include Baggage</BpkButton>
     );
   }
 }
@@ -81,20 +61,12 @@ class Toggle extends React.Component {
 ### Replacement:
 
 ```
-import BpkButton from 'bpk-component-button';
+import BpkButtonV2, { SIZE_TYPES } from 'bpk-component-button';
 
 class Toggle extends React.Component {
-  constructor() {
-    this.state = { showMore: false };
-  }
-  toggleMore = () => {
-    this.setState({showMore: !this.state.showMore});
-  }
   render() {
     return (
-      <BpkButton onClick={this.toggleMore}>
-        { this.state.showMore ? 'Collapse' : 'Expand'}
-      </BpkButton>
+      <BpkButtonV2 size={SIZE_TYPES.large} onClick={this.toogleBaggae}></BpkButtonV2>
     );
   }
 }
