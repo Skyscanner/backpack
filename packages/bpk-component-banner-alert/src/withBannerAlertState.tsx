@@ -18,63 +18,48 @@
 /* @flow strict */
 
 import { Component } from 'react';
-import type { Node, ComponentType } from 'react';
-import PropTypes from 'prop-types';
+import type { ReactNode, ComponentType } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { wrapDisplayName } from '../../bpk-react-utils';
 
-import {
-  type OnDismissHandler,
-  type OnExpandToggleHandler,
-} from './common-types';
-import BpkBannertAlertExpandable from './BpkBannerAlertExpandable';
+import type { OnDismissHandler, OnExpandToggleHandler } from './common-types';
+import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
+import type { Props as BpkBannerAlertExpandableProps } from './BpkBannerAlertExpandable';
+import type { Props as BpkBannerAlertDismissableProps } from './BpkBannerAlertDismissable';
 
-const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
+type WithBannerAlertStateProps = {
+  onHide?: () => void;
+  hideAfter?: number | null;
+};
+
+type BpkBannerAlertProps = Partial<
+  BpkBannerAlertDismissableProps & BpkBannerAlertExpandableProps
+>;
+
+const withBannerAlertState = <
+  P extends WithBannerAlertStateProps & BpkBannerAlertProps,
+>(
+  WrappedComponent: ComponentType<P>,
+) => {
   type Props = {
-    onDismiss: OnDismissHandler,
-    onExpandToggle: OnExpandToggleHandler,
-    onHide: ?() => void,
-    expanded: boolean,
-    show: boolean,
-    hideAfter: ?number,
-    animateOnLeave: boolean,
-    children: Node,
+    onDismiss?: OnDismissHandler;
+    onExpandToggle?: OnExpandToggleHandler;
+    expanded?: boolean;
+    show?: boolean;
+    animateOnLeave?: boolean;
+    children?: ReactNode | null;
   };
 
   type State = {
-    expanded: boolean,
-    show: boolean,
+    expanded?: boolean;
+    show?: boolean;
   };
 
-  class component extends Component<Props, State> {
-    hideIntervalId: ?TimeoutID;
+  class component extends Component<P & Props, State> {
+    public static displayName: string;
 
-    static propTypes = {
-      onDismiss: PropTypes.func,
-      onExpandToggle: PropTypes.func,
-      onHide: PropTypes.func,
-      expanded: PropTypes.bool,
-      show: PropTypes.bool,
-      hideAfter: (
-        props: Object,
-        propName: string,
-        componentName: string,
-        ...rest: mixed[]
-      ) => {
-        if (
-          WrappedComponent === BpkBannertAlertExpandable &&
-          typeof props[propName] === 'number'
-        ) {
-          return new Error(
-            `Invalid prop \`${propName}\` supplied to ${componentName}. \`${propName}\` is not supported for expandable banner alerts.`,
-          );
-        }
-
-        return PropTypes.number(props, propName, componentName, ...rest);
-      },
-      animateOnLeave: PropTypes.bool,
-      children: PropTypes.node,
-    };
+    hideIntervalId?: ReturnType<typeof setTimeout> | null;
 
     static defaultProps = {
       onDismiss: null,
@@ -87,7 +72,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       children: null,
     };
 
-    constructor(props: Props) {
+    constructor(props: P & Props) {
       super(props);
 
       this.state = {
@@ -102,13 +87,13 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       const { hideAfter } = this.props;
 
       if (
-        WrappedComponent !== BpkBannertAlertExpandable &&
+        WrappedComponent !== BpkBannerAlertExpandable &&
         hideAfter &&
         hideAfter > 0
       ) {
         this.hideIntervalId = setTimeout(() => {
           this.onHide();
-        }, hideAfter * 1000);
+        }, (hideAfter as number) * 1000);
       }
     }
 
@@ -167,7 +152,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
           onDismiss={this.onDismiss}
           show={this.state.show}
           animateOnLeave={(hideAfter && hideAfter > 0) || animateOnLeave}
-          {...rest}
+          {...(rest as P)}
         >
           {children}
         </WrappedComponent>

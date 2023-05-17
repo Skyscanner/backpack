@@ -15,15 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
 import { Component } from 'react';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
 
 import STYLES from './BpkAnimateAndFade.module.scss';
@@ -33,31 +35,23 @@ const getClassName = cssModules(STYLES);
 const ANIMATION_DURATION = parseInt(durationSm, 10);
 
 type Props = {
-  animateOnEnter: boolean,
-  animateOnLeave: boolean,
-  children: Node,
-  show: boolean,
-  className: ?string,
+  animateOnEnter: boolean;
+  animateOnLeave: boolean;
+  children: ReactNode | string;
+  show: boolean;
+  className?: string | null;
 };
 
 type State = {
-  isExpanded: boolean,
-  visible: boolean,
-  initiateShow: boolean,
-  hideAnimationInProgress: boolean,
-  inDom: boolean,
+  isExpanded: boolean;
+  visible: boolean;
+  initiateShow: boolean;
+  hideAnimationInProgress: boolean;
+  inDom: boolean;
 };
 
 class AnimateAndFade extends Component<Props, State> {
   toggleImmediately: boolean;
-
-  static propTypes = {
-    animateOnEnter: PropTypes.bool,
-    animateOnLeave: PropTypes.bool,
-    children: PropTypes.node.isRequired,
-    show: PropTypes.bool.isRequired,
-    className: PropTypes.string,
-  };
 
   static defaultProps = {
     animateOnEnter: false,

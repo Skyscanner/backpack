@@ -15,37 +15,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
-import {
-  type CommonProps,
-  type OnDismissHandler,
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
-} from './common-types';
+import type { CommonProps, OnExpandToggleHandler } from './common-types';
 import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';
 
-type Props = {
-  ...$Exact<CommonProps>,
-  dismissButtonLabel: string,
-  onDismiss: OnDismissHandler,
+export type Props = CommonProps & {
+  children: ReactNode;
+  expanded?: boolean;
+  toggleButtonLabel: string;
+  onExpandToggle?: OnExpandToggleHandler;
 };
 
-const BpkBannerAlertDismissable = (props: Props) => (
+const BpkBannerAlertExpandable = ({
+  children,
+  expanded = false,
+  onExpandToggle = null,
+  ...rest
+}: Props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlertInner configuration={CONFIGURATION.DISMISSABLE} {...props} />
+  <BpkBannerAlertInner
+    configuration={CONFIGURATION.EXPANDABLE}
+    expanded={expanded}
+    onExpandToggle={onExpandToggle}
+    {...rest}
+  >
+    {children}
+  </BpkBannerAlertInner>
 );
 
-BpkBannerAlertDismissable.propTypes = {
-  ...COMMON_PROP_TYPES,
-  dismissButtonLabel: PropTypes.string.isRequired,
-  onDismiss: PropTypes.func,
-};
-BpkBannerAlertDismissable.defaultProps = {
-  ...COMMON_DEFAULT_PROPS,
-  onDismiss: null,
-};
-
-export default BpkBannerAlertDismissable;
+export default BpkBannerAlertExpandable;

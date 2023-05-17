@@ -15,21 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
-import {
-  CommonProps,
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
-} from './common-types';
+
+import type { CommonProps } from './common-types';
 import BpkBannerAlertInner from './BpkBannerAlertInner';
 
-type Props = {
-  ...$Exact<CommonProps>,
+const defaultProps = {
+  animateOnEnter: false,
+  animateOnLeave: false,
+  show: true,
+  icon: null,
 };
 
-const BpkBannerAlert = (props: Props) => <BpkBannerAlertInner {...props} />;
-
-BpkBannerAlert.propTypes = COMMON_PROP_TYPES;
-BpkBannerAlert.defaultProps = COMMON_DEFAULT_PROPS;
+const BpkBannerAlert = (props: CommonProps) => (
+  <BpkBannerAlertInner {...defaultProps} {...props} />
+);
 
 export default BpkBannerAlert;
