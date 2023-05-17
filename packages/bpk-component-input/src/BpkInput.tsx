@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import type { SyntheticEvent } from 'react';
 import { Component } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -64,7 +63,7 @@ class BpkInput extends Component<Props, State> {
     } = this.props;
 
     // Used as a ref for focussing the input when cleared.
-    let ref: HTMLElement | null = null;
+    let ref: HTMLInputElement | null = null;
 
     // Explicit check for false primitive value as undefined is
     // treated as neither valid nor invalid
@@ -147,7 +146,7 @@ class BpkInput extends Component<Props, State> {
         {renderedInput}
         {value.length > 0 && (
           <BpkClearButton
-            tabIndex="-1"
+            tabIndex={-1}
             label={clearButtonLabel || ''}
             onMouseDown={onMouseDown}
             onClick={(e) => {
@@ -155,8 +154,10 @@ class BpkInput extends Component<Props, State> {
                 ref.focus();
               }
               if (onClear) {
-                const target = e.target as HTMLButtonElement;
-                target.name = name;
+                if (e.target instanceof HTMLButtonElement) {
+                  const { target } = e;
+                  target.name = name;
+                }
                 onClear(e);
                 this.setState({ persistClearButton: false });
               }

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { SyntheticEvent } from 'react';
+import type { SyntheticEvent, ComponentProps } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ClearIcon from '../../bpk-component-icon/sm/close-circle';
@@ -30,19 +30,11 @@ const getClassName = cssModules(STYLES);
 
 const ClearButtonIcon = withButtonAlignment(ClearIcon);
 
-type Props = {
+interface Props extends ComponentProps<'button'> {
   label: string;
-  onClick: (event: SyntheticEvent<HTMLButtonElement>) => void | null;
-  className?: string | null;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
+}
 
-const BpkClearButton = ({
-  className = null,
-  label,
-  onClick,
-  ...rest
-}: Props) => {
+const BpkClearButton = ({ className, label, onClick, ...rest }: Props) => {
   const classNames = [getClassName('bpk-clear-button')];
 
   if (className) {
