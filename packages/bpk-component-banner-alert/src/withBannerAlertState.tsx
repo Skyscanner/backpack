@@ -15,48 +15,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { Component } from 'react';
-import type { ReactNode, ComponentType } from 'react';
+import type { ComponentType } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { wrapDisplayName } from '../../bpk-react-utils';
 
-import type { OnDismissHandler, OnExpandToggleHandler } from './common-types';
 import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
 import type { Props as BpkBannerAlertExpandableProps } from './BpkBannerAlertExpandable';
 import type { Props as BpkBannerAlertDismissableProps } from './BpkBannerAlertDismissable';
 
 type WithBannerAlertStateProps = {
   onHide?: () => void;
-  hideAfter?: number | null;
+  hideAfter?: number;
 };
 
 type BpkBannerAlertProps = Partial<
   BpkBannerAlertDismissableProps & BpkBannerAlertExpandableProps
 >;
 
-const withBannerAlertState = <
-  P extends WithBannerAlertStateProps & BpkBannerAlertProps,
->(
+const withBannerAlertState = <P extends BpkBannerAlertProps>(
   WrappedComponent: ComponentType<P>,
 ) => {
-  type Props = {
-    onDismiss?: OnDismissHandler;
-    onExpandToggle?: OnExpandToggleHandler;
-    expanded?: boolean;
-    show?: boolean;
-    animateOnLeave?: boolean;
-    children?: ReactNode | null;
-  };
-
   type State = {
     expanded?: boolean;
     show?: boolean;
   };
 
-  class component extends Component<P & Props, State> {
+  class component extends Component<P & WithBannerAlertStateProps, State> {
     public static displayName: string;
 
     hideIntervalId?: ReturnType<typeof setTimeout> | null;
@@ -72,7 +59,7 @@ const withBannerAlertState = <
       children: null,
     };
 
-    constructor(props: P & Props) {
+    constructor(props: P & WithBannerAlertStateProps) {
       super(props);
 
       this.state = {
@@ -93,7 +80,7 @@ const withBannerAlertState = <
       ) {
         this.hideIntervalId = setTimeout(() => {
           this.onHide();
-        }, (hideAfter as number) * 1000);
+        }, hideAfter * 1000);
       }
     }
 
@@ -145,7 +132,6 @@ const withBannerAlertState = <
       } = this.props;
 
       return (
-        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <WrappedComponent
           expanded={this.state.expanded}
           onExpandToggle={this.onExpandToggle}

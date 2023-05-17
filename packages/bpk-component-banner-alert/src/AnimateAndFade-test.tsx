@@ -45,13 +45,11 @@ describe('AnimateAndFade', () => {
     // Should be reinstated once the bug is fixed
     return;
     /* eslint-disable no-unreachable */
-    // $FlowFixMe[unreachable-code]
     const { asFragment } = render(
       <AnimateAndFade show animateOnEnter>
         {message}
       </AnimateAndFade>,
     );
-    // $FlowFixMe[unreachable-code]
     expect(asFragment()).toMatchSnapshot();
     /* eslint-enable */
   });

@@ -25,7 +25,6 @@ export type Props = CommonProps & {
 };
 
 const BpkBannerAlertDismissable = ({ onDismiss = null, ...rest }: Props) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlertInner
     configuration={CONFIGURATION.DISMISSABLE}
     onDismiss={onDismiss}

@@ -34,7 +34,6 @@ const BpkBannerAlertExpandable = ({
   onExpandToggle = null,
   ...rest
 }: Props) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlertInner
     configuration={CONFIGURATION.EXPANDABLE}
     expanded={expanded}
