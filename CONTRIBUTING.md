@@ -53,7 +53,7 @@ We recommend that you install [a plugin to your editor](https://eslint.org/docs/
 
 **All Backpack components are written in Typescript or are being gradually migrated to Typescript.**
 
-As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to a component also assist in the migration of the respective component. 
+As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to an existing component also migrate the respective component.
 
 ### Getting the code
 
