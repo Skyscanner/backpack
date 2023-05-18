@@ -74,6 +74,7 @@ type BpkAutoSuggestProps<T> = {
   renderBesideInput?: () => ReactElement;
   showClear?: boolean;
   theme?: Partial<BpkAutoSuggestTheme>;
+  highlightFirstSuggestion?: boolean;
 };
 
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
@@ -85,6 +86,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       enterKeyHint,
       getA11yResultsMessage,
       getSuggestionValue,
+      highlightFirstSuggestion,
       id,
       inputProps,
       isBanana,
@@ -304,6 +306,10 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
                   className={getClassName(
                     theme.suggestion,
                     highlightedIndex === index && theme.suggestionHighlighted,
+                    highlightFirstSuggestion &&
+                      index === 0 &&
+                      highlightedIndex === -1 &&
+                      theme.suggestionHighlighted,
                   )}
                 >
                   {renderSuggestion(suggestion)}

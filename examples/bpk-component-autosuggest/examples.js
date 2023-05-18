@@ -129,6 +129,7 @@ type Props = {
   isBanana: boolean,
   showClear: boolean,
   theme: { [key: string]: string },
+  highlightFirstSuggestion: boolean,
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -140,6 +141,7 @@ class AutosuggestExample extends Component<Props, State> {
     isBanana: false,
     showClear: false,
     theme: {},
+    highlightFirstSuggestion: false,
   };
 
   constructor() {
@@ -194,6 +196,7 @@ class AutosuggestExample extends Component<Props, State> {
         isBanana={this.props.isBanana}
         showClear={this.props.showClear}
         theme={this.props.theme}
+        highlightFirstSuggestion={this.props.highlightFirstSuggestion}
       />
     );
   }

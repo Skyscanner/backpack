@@ -51,6 +51,9 @@ export const SmallInput = () => (
   </div>
 );
 
+export const HighlightFirstSuggestion = () => (
+  <AutosuggestExample highlightFirstSuggestion />
+);
 export const Banana = () => (
   <AutosuggestExample isBanana showClear theme={{ ...STYLES }} includeIcon />
 );
