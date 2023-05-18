@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import {
   action,
   BpkDarkExampleWrapper,
@@ -29,17 +27,11 @@ import {
 } from '../../packages/bpk-component-icon';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
-import BpkButton, {
-  BpkButtonPrimary,
-  BpkButtonPrimaryOnDark,
-  BpkButtonPrimaryOnLight,
-  BpkButtonSecondary,
-  BpkButtonSecondaryOnDark,
-  BpkButtonDestructive,
-  BpkButtonLink,
-  BpkButtonLinkOnDark,
-  BpkButtonFeatured,
-} from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import {
+  BUTTON_TYPES,
+  SIZE_TYPES,
+} from '../../packages/bpk-component-button/src/BpkButtonV2/common-types';
 
 import STYLES from './BpkButtonStory.module.scss';
 
@@ -73,34 +65,36 @@ const ButtonStory = ({
       )}
     >
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped onClick={action('Button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped onClick={action('Button clicked')} {...rest}>
         Button <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         Disabled
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped large onClick={action('Button clicked')} {...rest}>
+      <Wrapped
+        size={SIZE_TYPES.large}
+        onClick={action('Button clicked')}
+        {...rest}
+      >
         Button
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped large onClick={action('Button clicked')} {...rest}>
+      <Wrapped
+        size={SIZE_TYPES.large}
+        onClick={action('Button clicked')}
+        {...rest}
+      >
         Button <AlignedLargeLongArrowRightIcon />
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped
-        large
+        size={SIZE_TYPES.large}
         disabled
         onClick={action('THIS SHOULD NEVER HAPPEN')}
         {...rest}
@@ -108,13 +102,16 @@ const ButtonStory = ({
         Disabled
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped iconOnly onClick={action('Button clicked')} {...rest}>
         <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped iconOnly large onClick={action('Button clicked')} {...rest}>
+      <Wrapped
+        iconOnly
+        size={SIZE_TYPES.large}
+        onClick={action('Button clicked')}
+        {...rest}
+      >
         <AlignedLargeLongArrowRightIcon />
       </Wrapped>
       &nbsp;
@@ -124,100 +121,85 @@ const ButtonStory = ({
 
 ButtonStory.defaultProps = { className: null };
 
-const PrimaryExample = () => <ButtonStory primary wrapped={BpkButton} />;
-const PrimaryOnDarkExample = () => (
+const PrimaryExample = (props: {}) => (
+  <ButtonStory wrapped={BpkButtonV2} {...props} />
+);
+const PrimaryOnDarkExample = (props: {}) => (
   <BpkDarkExampleWrapper>
-    <ButtonStory primaryOnDark wrapped={BpkButton} />
+    <ButtonStory
+      type={BUTTON_TYPES.primaryOnDark}
+      wrapped={BpkButtonV2}
+      {...props}
+    />
   </BpkDarkExampleWrapper>
 );
-const PrimaryOnLightExample = () => (
-  <ButtonStory primaryOnLight wrapped={BpkButton} />
+const PrimaryOnLightExample = (props: {}) => (
+  <ButtonStory
+    type={BUTTON_TYPES.primaryOnLight}
+    wrapped={BpkButtonV2}
+    {...props}
+  />
 );
-const SecondaryExample = () => <ButtonStory secondary wrapped={BpkButton} />;
-const SecondaryOnDarkExample = () => (
+const SecondaryExample = (props: {}) => (
+  <ButtonStory type={BUTTON_TYPES.secondary} wrapped={BpkButtonV2} {...props} />
+);
+const SecondaryOnDarkExample = (props: {}) => (
   <BpkDarkExampleWrapper>
-    <ButtonStory secondaryOnDark wrapped={BpkButton} />
+    <ButtonStory
+      type={BUTTON_TYPES.secondaryOnDark}
+      wrapped={BpkButtonV2}
+      {...props}
+    />
   </BpkDarkExampleWrapper>
 );
-const DestructiveExample = () => (
-  <ButtonStory destructive wrapped={BpkButton} />
+const DestructiveExample = (props: {}) => (
+  <ButtonStory
+    type={BUTTON_TYPES.destructive}
+    wrapped={BpkButtonV2}
+    {...props}
+  />
 );
-const LinkExample = () => <ButtonStory link wrapped={BpkButton} />;
-const LinkOnDarkExample = () => (
+const FeaturedExample = (props: {}) => (
+  <ButtonStory type={BUTTON_TYPES.featured} wrapped={BpkButtonV2} {...props} />
+);
+const LinkExample = (props: {}) => (
+  <ButtonStory type={BUTTON_TYPES.link} wrapped={BpkButtonV2} {...props} />
+);
+const LinkOnDarkExample = (props: {}) => (
   <BpkDarkExampleWrapper>
-    <ButtonStory linkOnDark wrapped={BpkButton} />
+    <ButtonStory
+      type={BUTTON_TYPES.linkOnDark}
+      wrapped={BpkButtonV2}
+      {...props}
+    />
   </BpkDarkExampleWrapper>
-);
-const FeaturedExample = () => <ButtonStory featured wrapped={BpkButton} />;
-
-const ComponentButtonPrimaryExample = (props: {}) => (
-  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-  <ButtonStory wrapped={BpkButtonPrimary} {...props} />
-);
-const ComponentButtonPrimaryOnDarkExample = (props: {}) => (
-  <BpkDarkExampleWrapper>
-    {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-    <ButtonStory wrapped={BpkButtonPrimaryOnDark} {...props} />
-  </BpkDarkExampleWrapper>
-);
-const ComponentButtonPrimaryOnLightExample = (props: {}) => (
-  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-  <ButtonStory wrapped={BpkButtonPrimaryOnLight} {...props} />
-);
-const ComponentButtonSecondaryExample = (props: {}) => (
-  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-  <ButtonStory wrapped={BpkButtonSecondary} {...props} />
-);
-const ComponentButtonSecondaryOnDarkExample = (props: {}) => (
-  <BpkDarkExampleWrapper>
-    {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-    <ButtonStory wrapped={BpkButtonSecondaryOnDark} {...props} />
-  </BpkDarkExampleWrapper>
-);
-const ComponentButtonDestructiveExample = (props: {}) => (
-  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-  <ButtonStory wrapped={BpkButtonDestructive} {...props} />
-);
-const ComponentButtonLinkExample = (props: {}) => (
-  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-  <ButtonStory wrapped={BpkButtonLink} {...props} />
-);
-const ComponentButtonLinkOnDarkExample = (props: {}) => (
-  <BpkDarkExampleWrapper>
-    {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-    <ButtonStory wrapped={BpkButtonLinkOnDark} {...props} />
-  </BpkDarkExampleWrapper>
-);
-const ComponentButtonFeaturedExample = (props: {}) => (
-  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-  <ButtonStory wrapped={BpkButtonFeatured} {...props} />
 );
 
 const MixedExample = () => (
   <>
-    <ComponentButtonPrimaryExample />
-    <ComponentButtonPrimaryOnDarkExample />
-    <ComponentButtonPrimaryOnLightExample />
-    <ComponentButtonSecondaryExample />
-    <ComponentButtonSecondaryOnDarkExample />
-    <ComponentButtonDestructiveExample />
-    <ComponentButtonLinkExample />
-    <ComponentButtonLinkOnDarkExample />
-    <ComponentButtonFeaturedExample />
+    <PrimaryExample />
+    <PrimaryOnDarkExample />
+    <PrimaryOnLightExample />
+    <SecondaryExample />
+    <SecondaryOnDarkExample />
+    <DestructiveExample />
+    <LinkExample />
+    <LinkOnDarkExample />
+    <FeaturedExample />
   </>
 );
 
 const AnchorTagsExample = () => (
   <>
-    <ComponentButtonPrimaryExample href="#" />
-    <ComponentButtonPrimaryOnDarkExample href="#" />
-    <ComponentButtonPrimaryOnLightExample href="#" />
-    <ComponentButtonSecondaryExample href="#" />
-    <ComponentButtonSecondaryOnDarkExample href="#" />
-    <ComponentButtonDestructiveExample href="#" />
-    <ComponentButtonLinkExample href="#" />
-    <ComponentButtonLinkOnDarkExample href="#" />
-    <ComponentButtonFeaturedExample href="#" />
+    <PrimaryExample href="#" />
+    <PrimaryOnDarkExample href="#" />
+    <PrimaryOnLightExample href="#" />
+    <SecondaryExample href="#" />
+    <SecondaryOnDarkExample href="#" />
+    <DestructiveExample href="#" />
+    <FeaturedExample href="#" />
+    <LinkExample href="#" />
+    <LinkOnDarkExample href="#" />
   </>
 );
 
@@ -228,18 +210,9 @@ export {
   SecondaryExample,
   SecondaryOnDarkExample,
   DestructiveExample,
+  FeaturedExample,
   LinkExample,
   LinkOnDarkExample,
-  FeaturedExample,
-  ComponentButtonPrimaryExample,
-  ComponentButtonPrimaryOnDarkExample,
-  ComponentButtonPrimaryOnLightExample,
-  ComponentButtonSecondaryExample,
-  ComponentButtonSecondaryOnDarkExample,
-  ComponentButtonDestructiveExample,
-  ComponentButtonLinkExample,
-  ComponentButtonLinkOnDarkExample,
-  ComponentButtonFeaturedExample,
   MixedExample,
   AnchorTagsExample,
 };
