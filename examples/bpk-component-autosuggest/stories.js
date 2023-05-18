@@ -18,6 +18,7 @@
 
 /* @flow strict */
 import AutosuggestExample from './examples';
+import STYLES from './bananaStyling.scss';
 
 export default {
   title: 'bpk-component-autosuggest',
@@ -48,4 +49,8 @@ export const SmallInput = () => (
   <div style={{ width: '80px' }}>
     <AutosuggestExample />
   </div>
+);
+
+export const Banana = () => (
+  <AutosuggestExample isBanana showClear theme={{ ...STYLES }} includeIcon />
 );

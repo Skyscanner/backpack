@@ -18,13 +18,12 @@
 
 /* @flow strict */
 
-import { Component } from 'react';
+import { Component, ReactNode } from 'react';
 
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
-import BpkAutosuggest, {
-  BpkAutosuggestSuggestion,
-} from '../../packages/bpk-component-autosuggest';
+import { BpkAutosuggestSuggestion } from '../../packages/bpk-component-autosuggest';
+import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest.tsx';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
@@ -127,6 +126,9 @@ type Props = {
   includeIcon: boolean,
   includeSubheading: boolean,
   includeTertiaryLabel: boolean,
+  isBanana: boolean,
+  showClear: boolean,
+  theme: { [key: string]: string },
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -135,24 +137,20 @@ class AutosuggestExample extends Component<Props, State> {
     includeIcon: false,
     includeSubheading: false,
     includeTertiaryLabel: false,
+    isBanana: false,
+    showClear: false,
+    theme: {},
   };
 
   constructor() {
     super();
 
     this.state = {
-      value: '',
       suggestions: [],
     };
   }
 
-  onChange = (e: SyntheticEvent<any>, { newValue }: { newValue: string }) => {
-    this.setState({
-      value: newValue,
-    });
-  };
-
-  onSuggestionsFetchRequested = ({ value }: { value: string }) => {
+  onSuggestionsFetchRequested = (value: string) => {
     this.setState({
       suggestions: getSuggestions(value, this.props.hanzi),
     });
@@ -165,16 +163,14 @@ class AutosuggestExample extends Component<Props, State> {
   };
 
   render() {
-    const { suggestions, value } = this.state;
+    const { suggestions } = this.state;
 
     const { includeIcon, includeSubheading, includeTertiaryLabel } = this.props;
 
     const inputProps = {
       id: 'my-autosuggest',
       name: 'my_autosuggest',
-      value,
       placeholder: 'Enter an office name',
-      onChange: this.onChange,
     };
 
     return (
@@ -195,6 +191,9 @@ class AutosuggestExample extends Component<Props, State> {
           />
         )}
         inputProps={inputProps}
+        isBanana={this.props.isBanana}
+        showClear={this.props.showClear}
+        theme={this.props.theme}
       />
     );
   }
