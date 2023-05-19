@@ -17,7 +17,13 @@
  */
 
 import { useEffect, forwardRef } from 'react';
-import type { KeyboardEvent, MouseEvent, ReactElement, HTMLProps } from 'react';
+import type {
+  KeyboardEvent,
+  MouseEvent,
+  ReactElement,
+  HTMLProps,
+  FocusEvent,
+} from 'react';
 import { useCombobox } from 'downshift';
 import type {
   UseComboboxState,
@@ -75,6 +81,7 @@ type BpkAutoSuggestProps<T> = {
   showClear?: boolean;
   theme?: Partial<BpkAutoSuggestTheme>;
   highlightFirstSuggestion?: boolean;
+  shouldRenderSuggestions?: (value?: string) => boolean;
 };
 
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
@@ -98,6 +105,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       onSuggestionsFetchRequested,
       renderBesideInput,
       renderSuggestion,
+      shouldRenderSuggestions,
       showClear,
       suggestions,
       theme: customTheme,
@@ -196,7 +204,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     }, []);
 
     const onClickOrKeydown = () => {
-      if (!isOpen && inputValue.length) {
+      if (
+        !isOpen &&
+        (typeof shouldRenderSuggestions !== 'function' ||
+          shouldRenderSuggestions(inputValue))
+      ) {
         onSuggestionsFetchRequested(inputValue);
         openMenu();
       } else {
@@ -226,6 +238,18 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
     };
 
+    const handleInputFocus = (event: FocusEvent<HTMLInputElement>) => {
+      if (
+        typeof shouldRenderSuggestions !== 'function' ||
+        shouldRenderSuggestions(inputValue)
+      ) {
+        onSuggestionsFetchRequested(inputValue);
+        openMenu();
+      }
+
+      inputProps.onFocus?.(event);
+    };
+
     const clearSuggestions = (e: MouseEvent) => {
       onSuggestionsClearRequested();
       e.stopPropagation();
@@ -234,7 +258,10 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     return (
       <div
-        className={getClassName(theme.container, isOpen && theme.containerOpen)}
+        className={getClassName(
+          theme.container,
+          suggestions.length && theme.containerOpen,
+        )}
       >
         {isBanana ? (
           <label
@@ -276,6 +303,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           <BpkInput
             {...getInputProps({
               onKeyDown,
+              onFocus: handleInputFocus,
               ref: forwardedRef,
               type: INPUT_TYPES.text,
               onClick: onClickOrKeydown,

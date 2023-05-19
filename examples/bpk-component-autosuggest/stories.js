@@ -17,6 +17,7 @@
  */
 
 /* @flow strict */
+
 import AutosuggestExample from './examples';
 import STYLES from './bananaStyling.scss';
 
@@ -54,6 +55,10 @@ export const SmallInput = () => (
 export const HighlightFirstSuggestion = () => (
   <AutosuggestExample highlightFirstSuggestion />
 );
+export const ShouldRenderSuggesions = () => (
+  <AutosuggestExample shouldRenderSuggestions={() => true} />
+);
+
 export const Banana = () => (
   <AutosuggestExample isBanana showClear theme={{ ...STYLES }} includeIcon />
 );
