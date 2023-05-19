@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkSelectableChip, {
   type Props as SelectableProps,
 } from './src/BpkSelectableChip';

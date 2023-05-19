@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
 import BpkDropdownChip from './BpkDropdownChip';
@@ -37,29 +35,25 @@ describe('BpkDropdownChip', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  Object.keys(CHIP_TYPES).forEach((chipType) => {
+  Object.values(CHIP_TYPES).forEach((chipType) => {
     it(`should render correctly with type="${chipType}"`, () => {
-      const { asFragment } = render(<TestChip type={CHIP_TYPES[chipType]} />);
+      const { asFragment } = render(<TestChip type={chipType} />);
       expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}" and selected`, () => {
-      const { asFragment } = render(
-        <TestChip type={CHIP_TYPES[chipType]} selected />,
-      );
+      const { asFragment } = render(<TestChip type={chipType} selected />);
       expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}" and disabled`, () => {
-      const { asFragment } = render(
-        <TestChip type={CHIP_TYPES[chipType]} disabled />,
-      );
+      const { asFragment } = render(<TestChip type={chipType} disabled />);
       expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}", selected and disabled`, () => {
       const { asFragment } = render(
-        <TestChip type={CHIP_TYPES[chipType]} selected disabled />,
+        <TestChip type={chipType} selected disabled />,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -67,7 +61,7 @@ describe('BpkDropdownChip', () => {
     it(`should render correctly with type="${chipType}" and a leading accessory view`, () => {
       const { asFragment } = render(
         <TestChip
-          type={CHIP_TYPES[chipType]}
+          type={chipType}
           leadingAccessoryView={<span>Leading</span>}
         />,
       );

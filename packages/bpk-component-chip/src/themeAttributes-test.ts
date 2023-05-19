@@ -16,15 +16,19 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import themeAttributes from './themeAttributes';
 
-export default [
-  'chipDefaultSelectedBackgroundColor',
-  'chipDefaultSelectedTextColor',
-  'chipOnDarkSelectedBackgroundColor',
-  'chipOnDarkSelectedTextColor',
-  'chipOnImageSelectedBackgroundColor',
-  'chipOnImageSelectedHoverBackgroundColor',
-  'chipOnImageSelectedActiveBackgroundColor',
-  'chipOnImageSelectedTextColor',
-];
+describe('themeAttributes', () => {
+  it('exports the expected attributes', () => {
+    expect(themeAttributes).toEqual([
+      'chipDefaultSelectedBackgroundColor',
+      'chipDefaultSelectedTextColor',
+      'chipOnDarkSelectedBackgroundColor',
+      'chipOnDarkSelectedTextColor',
+      'chipOnImageSelectedBackgroundColor',
+      'chipOnImageSelectedHoverBackgroundColor',
+      'chipOnImageSelectedActiveBackgroundColor',
+      'chipOnImageSelectedTextColor',
+    ]);
+  });
+});

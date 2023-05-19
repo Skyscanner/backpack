@@ -16,36 +16,35 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 /*
 The dropdown chip component is just a selectable chip component
 with a trailing accessory view of a chevron down icon.
 */
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDownIconSm from '../../bpk-component-icon/sm/chevron-down';
 
 import BpkSelectableChip from './BpkSelectableChip';
-import {
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
-  type CommonProps,
-} from './commonTypes';
+import type { CommonProps } from './commonTypes';
+import { CHIP_TYPES } from './commonTypes';
 
-export type Props = CommonProps;
+export interface Props extends CommonProps {}
 
-const BpkDropdownChip = (props: Props) => {
-  const { ...rest } = props;
-
-  return (
-    <BpkSelectableChip
-      {...rest}
-      trailingAccessoryView={<ChevronDownIconSm />}
-    />
-  );
-};
-
-BpkDropdownChip.propTypes = COMMON_PROP_TYPES;
-BpkDropdownChip.defaultProps = COMMON_DEFAULT_PROPS;
+const BpkDropdownChip = ({
+  disabled = false,
+  leadingAccessoryView = null,
+  selected = false,
+  type = CHIP_TYPES.default,
+  ...rest
+}: Props) => (
+  <BpkSelectableChip
+    disabled={disabled}
+    leadingAccessoryView={leadingAccessoryView}
+    selected={selected}
+    type={type}
+    {...rest}
+    trailingAccessoryView={<ChevronDownIconSm />}
+  />
+);
 
 export default BpkDropdownChip;

@@ -16,52 +16,47 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
-import BpkDismissibleChip from './BpkDismissibleChip';
+import type { Props } from './BpkSelectableChip';
+import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
 
 // Just a convenience wrapper that includes the default props so we don't
 // have to keep writing them for each test.
-const TestChip = ({ ...rest }) => (
-  <BpkDismissibleChip
-    onClick={() => null}
-    accessibilityLabel="Dismiss"
-    {...rest}
-  >
-    Dismiss me
-  </BpkDismissibleChip>
+const TestChip = ({
+  ...rest
+}: Omit<Props, 'onClick' | 'accessibilityLabel' | 'children'>) => (
+  <BpkSelectableChip onClick={() => null} accessibilityLabel="Toggle" {...rest}>
+    Toggle me
+  </BpkSelectableChip>
 );
 
-describe('BpkDismissibleChip', () => {
+describe('BpkSelectableChip', () => {
   it('should render correctly', () => {
     const { asFragment } = render(<TestChip />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it(`should override setting selected={true}, resulting in selected={false}`, () => {
-    const { asFragment } = render(<TestChip selected />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it(`should ignore setting a trailing accessory view, resulting in a close icon`, () => {
-    const { asFragment } = render(
-      <TestChip trailingAccessoryView={<span>trailing</span>} />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  Object.keys(CHIP_TYPES).forEach((chipType) => {
+  Object.values(CHIP_TYPES).forEach((chipType) => {
     it(`should render correctly with type="${chipType}"`, () => {
-      const { asFragment } = render(<TestChip type={CHIP_TYPES[chipType]} />);
+      const { asFragment } = render(<TestChip type={chipType} />);
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it(`should render correctly with type="${chipType}" and selected`, () => {
+      const { asFragment } = render(<TestChip type={chipType} selected />);
       expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}" and disabled`, () => {
+      const { asFragment } = render(<TestChip type={chipType} disabled />);
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it(`should render correctly with type="${chipType}", selected and disabled`, () => {
       const { asFragment } = render(
-        <TestChip type={CHIP_TYPES[chipType]} disabled />,
+        <TestChip type={chipType} selected disabled />,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -69,8 +64,29 @@ describe('BpkDismissibleChip', () => {
     it(`should render correctly with type="${chipType}" and a leading accessory view`, () => {
       const { asFragment } = render(
         <TestChip
-          type={CHIP_TYPES[chipType]}
+          type={chipType}
           leadingAccessoryView={<span>Leading</span>}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it(`should render correctly with type="${chipType}" and a trailing accessory view`, () => {
+      const { asFragment } = render(
+        <TestChip
+          type={chipType}
+          trailingAccessoryView={<span>Trailing</span>}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it(`should render correctly with type="${chipType}" and both a leading and trailing accessory view`, () => {
+      const { asFragment } = render(
+        <TestChip
+          type={chipType}
+          leadingAccessoryView={<span>Leading</span>}
+          trailingAccessoryView={<span>Trailing</span>}
         />,
       );
       expect(asFragment()).toMatchSnapshot();

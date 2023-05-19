@@ -16,21 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import themeAttributes from './themeAttributes';
-
-describe('themeAttributes', () => {
-  it('exports the expected attributes', () => {
-    expect(themeAttributes).toEqual([
-      'chipDefaultSelectedBackgroundColor',
-      'chipDefaultSelectedTextColor',
-      'chipOnDarkSelectedBackgroundColor',
-      'chipOnDarkSelectedTextColor',
-      'chipOnImageSelectedBackgroundColor',
-      'chipOnImageSelectedHoverBackgroundColor',
-      'chipOnImageSelectedActiveBackgroundColor',
-      'chipOnImageSelectedTextColor',
-    ]);
-  });
-});
+export default [
+  'chipDefaultSelectedBackgroundColor',
+  'chipDefaultSelectedTextColor',
+  'chipOnDarkSelectedBackgroundColor',
+  'chipOnDarkSelectedTextColor',
+  'chipOnImageSelectedBackgroundColor',
+  'chipOnImageSelectedHoverBackgroundColor',
+  'chipOnImageSelectedActiveBackgroundColor',
+  'chipOnImageSelectedTextColor',
+];
