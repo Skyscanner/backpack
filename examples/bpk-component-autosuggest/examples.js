@@ -146,6 +146,7 @@ type Props = {
   multiSection: boolean,
   renderSectionTitle: (section: any) => ReactNode,
   getSectionSuggestions: (section: any) => any[],
+  alwaysRenderSuggestions: boolean,
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -162,6 +163,7 @@ class AutosuggestExample extends Component<Props, State> {
     multiSection: false,
     renderSectionTitle: () => {},
     getSectionSuggestions: () => {},
+    alwaysRenderSuggestions: false,
   };
 
   constructor() {
@@ -224,6 +226,7 @@ class AutosuggestExample extends Component<Props, State> {
         multiSection={this.props.multiSection}
         renderSectionTitle={this.props.renderSectionTitle}
         getSectionSuggestions={this.props.getSectionSuggestions}
+        alwaysRenderSuggestions={this.props.alwaysRenderSuggestions}
       />
     );
   }

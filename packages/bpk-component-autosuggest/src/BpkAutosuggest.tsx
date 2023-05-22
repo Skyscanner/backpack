@@ -69,7 +69,10 @@ type BpkAutoSuggestProps<T> = {
   id: string;
   inputProps: HTMLProps<HTMLInputElement>;
   onSuggestionsClearRequested: () => void;
-  onSuggestionSelected: (data?: { inputValue: string; suggestion?: T }) => void;
+  onSuggestionSelected?: (data?: {
+    inputValue: string;
+    suggestion?: T;
+  }) => void;
   onSuggestionsFetchRequested: (value: string) => void;
   renderSuggestion: (suggestion: T) => ReactElement;
   suggestions: T[];
@@ -88,11 +91,13 @@ type BpkAutoSuggestProps<T> = {
   multiSection?: boolean;
   getSectionSuggestions?: (section: T) => T[];
   renderSectionTitle?: (section: T) => ReactElement;
+  alwaysRenderSuggestions?: boolean;
 };
 
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
   (
     {
+      alwaysRenderSuggestions,
       ariaLabels,
       defaultValue,
       enterKeyHint,
@@ -184,7 +189,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       onSelectedItemChange(changes) {
         if (changes.selectedItem) {
           setInputValue(getSuggestionValue(changes.selectedItem));
-          onSuggestionSelected({
+          onSuggestionSelected?.({
             suggestion: changes.selectedItem,
             inputValue,
           });
@@ -236,13 +241,13 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
 
       if (e.key === 'Enter' && suggestions.length) {
-        onSuggestionSelected({ suggestion: suggestions[0], inputValue });
+        onSuggestionSelected?.({ suggestion: suggestions[0], inputValue });
       }
 
       if (defaultValue) {
         onClickOrKeydown();
       } else if (suggestions.length === 0) {
-        onSuggestionSelected();
+        onSuggestionSelected?.();
       }
     };
 
@@ -299,6 +304,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           {renderSuggestions(getSectionSuggestions?.(section)!, index)}
         </section>
       ));
+
+    const showSuggestions = alwaysRenderSuggestions ? true : isOpen;
 
     return (
       <div
@@ -361,7 +368,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             theme.suggestionsContainer,
             theme.desktopSuggestionsContainer,
             multiSection && theme.sectionContainer,
-            isOpen && theme.suggestionsContainerOpen,
+            showSuggestions && theme.suggestionsContainerOpen,
           )}
         >
           <ul
@@ -371,7 +378,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
               theme.desktopSuggestionsList,
             )}
           >
-            {isOpen && multiSection
+            {showSuggestions && multiSection
               ? renderSections(suggestions)
               : renderSuggestions(suggestions)}
           </ul>

@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import AutosuggestExample from './examples';
-import STYLES from './bananaStyling.scss';
 
 export default {
   title: 'bpk-component-autosuggest',
@@ -59,10 +58,6 @@ export const ShouldRenderSuggesions = () => (
   <AutosuggestExample shouldRenderSuggestions={() => true} />
 );
 
-export const Banana = () => (
-  <AutosuggestExample isBanana showClear theme={{ ...STYLES }} includeIcon />
-);
-
 const renderSectionTitle = (section) => <div>{section.title}</div>;
 const getSectionSuggestions = (section) => section.suggestions;
 
@@ -87,4 +82,8 @@ export const WithSectionsAndHighlightFirstSuggestion = () => (
     includeTertiaryLabel
     highlightFirstSuggestion
   />
+);
+
+export const AlwaysRenderSuggestions = () => (
+  <AutosuggestExample alwaysRenderSuggestions />
 );
