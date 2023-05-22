@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode, FunctionComponent, SVGProps } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -28,19 +25,24 @@ import STYLES from './BpkAutosuggest.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  value: Node,
-  indent: boolean,
-  className: ?string,
-  icon: Function,
-  subHeading: ?Node,
-  tertiaryLabel: ?string,
+  value: ReactNode;
+  subHeading?: ReactNode;
+  tertiaryLabel?: string;
+  icon?: FunctionComponent<SVGProps<SVGSVGElement>>;
+  indent?: boolean;
+  className?: string;
 };
 
-const BpkSuggestion = (props: Props) => {
+const BpkSuggestion: FunctionComponent<Props> = ({
+  className,
+  icon: Icon,
+  indent,
+  subHeading,
+  tertiaryLabel,
+  value,
+  ...rest
+}: Props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
-  const { className, icon, indent, subHeading, tertiaryLabel, value, ...rest } =
-    props;
-  const Icon = icon;
 
   if (indent) {
     classNames.push(getClassName('bpk-autosuggest__suggestion--indent'));
@@ -50,9 +52,8 @@ const BpkSuggestion = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <section className={classNames.join(' ')} {...rest}>
-      {icon ? (
+      {Icon ? (
         <Icon className={getClassName('bpk-autosuggest__suggestion-icon')} />
       ) : null}
       <div className={getClassName('bpk-autosuggest__suggestion-content')}>
@@ -85,23 +86,6 @@ const BpkSuggestion = (props: Props) => {
       </div>
     </section>
   );
-};
-
-BpkSuggestion.propTypes = {
-  value: PropTypes.node.isRequired,
-  subHeading: PropTypes.node,
-  tertiaryLabel: PropTypes.string,
-  icon: PropTypes.func,
-  indent: PropTypes.bool,
-  className: PropTypes.string,
-};
-
-BpkSuggestion.defaultProps = {
-  subHeading: null,
-  tertiaryLabel: null,
-  icon: null,
-  indent: false,
-  className: null,
 };
 
 export default BpkSuggestion;
