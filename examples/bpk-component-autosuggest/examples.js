@@ -100,6 +100,17 @@ const dataHanzi = [
   },
 ];
 
+const sections = [
+  {
+    title: 'Recent searches',
+    suggestions: [offices[0]],
+  },
+  {
+    title: 'Popular locations',
+    suggestions: [...offices.slice(1)],
+  },
+];
+
 const getSuggestions = (value, hanzi) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
@@ -131,6 +142,9 @@ type Props = {
   theme: { [key: string]: string },
   highlightFirstSuggestion: boolean,
   shouldRenderSuggestions: (value: string) => boolean,
+  multiSection: boolean,
+  renderSectionTitle: (section: any) => ReactNode,
+  getSectionSuggestions: (section: any) => any[],
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -144,6 +158,9 @@ class AutosuggestExample extends Component<Props, State> {
     theme: {},
     highlightFirstSuggestion: false,
     shouldRenderSuggestions: () => {},
+    multiSection: false,
+    renderSectionTitle: () => {},
+    getSectionSuggestions: () => {},
   };
 
   constructor() {
@@ -156,7 +173,9 @@ class AutosuggestExample extends Component<Props, State> {
 
   onSuggestionsFetchRequested = (value: string) => {
     this.setState({
-      suggestions: getSuggestions(value, this.props.hanzi),
+      suggestions: this.props.multiSection
+        ? sections
+        : getSuggestions(value, this.props.hanzi),
     });
   };
 
@@ -200,6 +219,9 @@ class AutosuggestExample extends Component<Props, State> {
         theme={this.props.theme}
         highlightFirstSuggestion={this.props.highlightFirstSuggestion}
         shouldRenderSuggestions={this.props.shouldRenderSuggestions}
+        multiSection={this.props.multiSection}
+        renderSectionTitle={this.props.renderSectionTitle}
+        getSectionSuggestions={this.props.getSectionSuggestions}
       />
     );
   }

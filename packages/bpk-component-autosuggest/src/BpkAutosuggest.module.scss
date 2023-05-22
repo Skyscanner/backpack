@@ -154,6 +154,16 @@ $arrow-size: bpk-spacing-sm() * 3;
     }
   }
 
+  &__section-title {
+    padding: bpk-spacing-lg() 0 $bpk-spacing-xs $bpk-spacing-md;
+    background-color: $bpk-color-white;
+    color: $bpk-text-secondary-day;
+
+    @include bpk-text;
+    @include bpk-text-sm;
+    @include bpk-text--bold;
+  }
+
   &__banana-clear-button {
     margin: 0;
     padding: 0;
@@ -166,13 +176,13 @@ $arrow-size: bpk-spacing-sm() * 3;
       margin-right: bpk-spacing-md();
 
       @include bpk-rtl {
-       margin-right: 0;
-       margin-left: bpk-spacing-md();
+        margin-right: 0;
+        margin-left: bpk-spacing-md();
       }
     }
 
     svg {
-     fill: $bpk-text-secondary-day;
+      fill: $bpk-text-secondary-day;
     }
 
     &:hover {
@@ -186,5 +196,5 @@ $arrow-size: bpk-spacing-sm() * 3;
         fill: $bpk-core-primary-day;
       }
     }
-}
+  }
 }

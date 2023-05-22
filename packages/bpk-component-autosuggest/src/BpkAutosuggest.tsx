@@ -82,6 +82,9 @@ type BpkAutoSuggestProps<T> = {
   theme?: Partial<BpkAutoSuggestTheme>;
   highlightFirstSuggestion?: boolean;
   shouldRenderSuggestions?: (value?: string) => boolean;
+  multiSection: boolean;
+  getSectionSuggestions: (section: T) => T[];
+  renderSectionTitle: (section: T) => ReactElement;
 };
 
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
@@ -92,18 +95,21 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       defaultValue,
       enterKeyHint,
       getA11yResultsMessage,
+      getSectionSuggestions,
       getSuggestionValue,
       highlightFirstSuggestion,
       id,
       inputProps,
       isBanana,
       isDesktop,
+      multiSection,
       onClick,
       onLoad,
       onSuggestionSelected,
       onSuggestionsClearRequested,
       onSuggestionsFetchRequested,
       renderBesideInput,
+      renderSectionTitle,
       renderSuggestion,
       shouldRenderSuggestions,
       showClear,
@@ -256,6 +262,31 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       setInputValue('');
     };
 
+    const renderSuggestions = (items: any[]) =>
+      items.map((suggestion, index) => (
+        <li
+          key={Object.values(suggestion)[0]}
+          {...getItemProps({ item: suggestion, index })}
+          className={getClassName(
+            theme.suggestion,
+            highlightedIndex === index && theme.suggestionHighlighted,
+            highlightFirstSuggestion &&
+              index === 0 &&
+              highlightedIndex === -1 &&
+              theme.suggestionHighlighted,
+          )}
+        >
+          {renderSuggestion(suggestion)}
+        </li>
+      ));
+
+    const renderSections = (section: any) => (
+      <section key={section.title}>
+        <div className={theme.sectionTitle}>{renderSectionTitle(section)}</div>
+        {renderSuggestions(section.suggestions)}
+      </section>
+    );
+
     return (
       <div
         className={getClassName(
@@ -316,6 +347,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           className={getClassName(
             theme.suggestionsContainer,
             theme.desktopSuggestionsContainer,
+            multiSection && theme.sectionContainer,
             isOpen && theme.suggestionsContainerOpen,
           )}
         >
@@ -326,23 +358,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
               theme.desktopSuggestionsList,
             )}
           >
-            {isOpen &&
-              suggestions.map((suggestion, index) => (
-                <li
-                  key={suggestion.PlaceId}
-                  {...getItemProps({ item: suggestion, index })}
-                  className={getClassName(
-                    theme.suggestion,
-                    highlightedIndex === index && theme.suggestionHighlighted,
-                    highlightFirstSuggestion &&
-                      index === 0 &&
-                      highlightedIndex === -1 &&
-                      theme.suggestionHighlighted,
-                  )}
-                >
-                  {renderSuggestion(suggestion)}
-                </li>
-              ))}
+            {isOpen && multiSection
+              ? suggestions.map((suggestion) => renderSections(suggestion))
+              : renderSuggestions(suggestions)}
           </ul>
         </div>
       </div>
