@@ -63,18 +63,28 @@ export const Banana = () => (
   <AutosuggestExample isBanana showClear theme={{ ...STYLES }} includeIcon />
 );
 
-export const WithSections = () => {
-  const renderSectionTitle = (section) => <div>{section.title}</div>;
-  const getSectionSuggestions = (section) => section.suggestions;
+const renderSectionTitle = (section) => <div>{section.title}</div>;
+const getSectionSuggestions = (section) => section.suggestions;
 
-  return (
-    <AutosuggestExample
-      multiSection
-      renderSectionTitle={renderSectionTitle}
-      getSectionSuggestions={getSectionSuggestions}
-      includeIcon
-      includeSubheading
-      includeTertiaryLabel
-    />
-  );
-};
+export const WithSections = () => (
+  <AutosuggestExample
+    multiSection
+    renderSectionTitle={renderSectionTitle}
+    getSectionSuggestions={getSectionSuggestions}
+    includeIcon
+    includeSubheading
+    includeTertiaryLabel
+  />
+);
+
+export const WithSectionsAndHighlightFirstSuggestion = () => (
+  <AutosuggestExample
+    multiSection
+    renderSectionTitle={renderSectionTitle}
+    getSectionSuggestions={getSectionSuggestions}
+    includeIcon
+    includeSubheading
+    includeTertiaryLabel
+    highlightFirstSuggestion
+  />
+);

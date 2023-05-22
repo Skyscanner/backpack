@@ -264,32 +264,41 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       setInputValue('');
     };
 
-    const renderSuggestions = (items: any[]) =>
-      items.map((suggestion, index) => (
-        <li
-          key={Object.values(suggestion)[0]}
-          {...getItemProps({ item: suggestion, index })}
-          className={getClassName(
-            theme.suggestion,
-            highlightedIndex === index && theme.suggestionHighlighted,
-            highlightFirstSuggestion &&
-              index === 0 &&
-              highlightedIndex === -1 &&
-              theme.suggestionHighlighted,
-          )}
-        >
-          {renderSuggestion(suggestion)}
-        </li>
-      ));
+    const renderSuggestions = (items: any[], sectionIndex?: number) =>
+      items.map((suggestion, index) => {
+        const suggestionIndex = sectionIndex ? index + sectionIndex : index;
+        const isFirstSuggestion = sectionIndex
+          ? sectionIndex === 0 && index === 0
+          : index === 0;
 
-    const renderSections = (section: any) => (
-      <section key={section.title}>
-        <div className={theme.sectionTitle}>
-          {renderSectionTitle?.(section)}
-        </div>
-        {renderSuggestions(getSectionSuggestions?.(section)!)}
-      </section>
-    );
+        return (
+          <li
+            key={Object.values(suggestion)[0]}
+            {...getItemProps({ item: suggestion, index: suggestionIndex })}
+            className={getClassName(
+              theme.suggestion,
+              highlightedIndex === suggestionIndex &&
+                theme.suggestionHighlighted,
+              highlightFirstSuggestion &&
+                isFirstSuggestion &&
+                highlightedIndex === -1 &&
+                theme.suggestionHighlighted,
+            )}
+          >
+            {renderSuggestion(suggestion)}
+          </li>
+        );
+      });
+
+    const renderSections = (sections: any[]) =>
+      sections.map((section, index) => (
+        <section key={section.title}>
+          <div className={theme.sectionTitle}>
+            {renderSectionTitle?.(section)}
+          </div>
+          {renderSuggestions(getSectionSuggestions?.(section)!, index)}
+        </section>
+      ));
 
     return (
       <div
@@ -363,7 +372,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             )}
           >
             {isOpen && multiSection
-              ? suggestions.map((suggestion) => renderSections(suggestion))
+              ? renderSections(suggestions)
               : renderSuggestions(suggestions)}
           </ul>
         </div>
