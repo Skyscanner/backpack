@@ -137,16 +137,7 @@ class Autosuggest extends Component<{}, AutosuggestState> {
     };
   }
 
-  onChange = (
-    e: SyntheticInputEvent<HTMLElement>,
-    { newValue }: { newValue: string },
-  ) => {
-    this.setState({
-      value: newValue,
-    });
-  };
-
-  onSuggestionsFetchRequested = ({ value }: { value: string }) => {
+  onSuggestionsFetchRequested = (value: string) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
@@ -166,7 +157,6 @@ class Autosuggest extends Component<{}, AutosuggestState> {
       name: 'my_autosuggest',
       value,
       placeholder: 'Enter a destination name',
-      onChange: this.onChange,
     };
 
     return (
