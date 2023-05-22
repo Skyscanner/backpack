@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import ReactTestUtils from 'react-dom/test-utils';
+import { createRef } from 'react';
 import { render } from '@testing-library/react';
 
 import BpkAutosuggest from './BpkAutosuggest';
@@ -28,95 +28,65 @@ const onSuggestionsFetchRequested = () => null;
 const onSuggestionsClearRequested = () => null;
 const getSuggestionValue = (suggestion) => suggestion;
 const renderSuggestion = (suggestion) => <span>{suggestion}</span>;
-const inputProps = {
+
+const getRequiredProps = () => ({
+  suggestions,
+  onSuggestionsFetchRequested,
+  onSuggestionsClearRequested,
+  getSuggestionValue,
+  renderSuggestion,
+  inputProps: {
+    name: 'Origin',
+    value: 'Edinburgh',
+  },
+  ariaLabels: {
+    resultsList: 'suggestions list',
+  },
   id: 'origin',
-  name: 'Origin',
-  value: 'Edinburgh',
-  onChange: () => null,
-};
+});
 
 describe('BpkAutosuggest', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkAutosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
-      />,
-    );
+    const { asFragment } = render(<BpkAutosuggest {...getRequiredProps()} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an "alwaysRenderSuggestions" attribute', () => {
     const { asFragment } = render(
-      <BpkAutosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
-        alwaysRenderSuggestions
-      />,
+      <BpkAutosuggest {...getRequiredProps()} alwaysRenderSuggestions />,
     );
+
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should set the input reference', () => {
-    let inputRef;
+    const inputRef = createRef();
 
-    const storeAutosuggestReference = (ref) => {
-      inputRef = ref;
-    };
-
-    const tree = ReactTestUtils.renderIntoDocument(
-      <BpkAutosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={{ inputRef: storeAutosuggestReference, ...inputProps }}
-      />,
+    const { container } = render(
+      <BpkAutosuggest ref={inputRef} {...getRequiredProps()} />,
     );
 
-    const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
+    const input = container.querySelector('input');
 
-    expect(input).toEqual(inputRef);
+    expect(input).toEqual(inputRef.current);
   });
 
   it('should default autocomplete to off', () => {
-    const tree = ReactTestUtils.renderIntoDocument(
-      <BpkAutosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
-      />,
-    );
+    const { container } = render(<BpkAutosuggest {...getRequiredProps()} />);
 
-    const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
+    const input = container.querySelector('input');
     expect(input.autocomplete).toEqual('off');
   });
 
   it('should allow a consumer to override autocomplete', () => {
-    const tree = ReactTestUtils.renderIntoDocument(
+    const { container } = render(
       <BpkAutosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={{ autoComplete: 'on', ...inputProps }}
+        {...getRequiredProps()}
+        inputProps={{ autoComplete: 'on', ...getRequiredProps().inputProps }}
       />,
     );
 
-    const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
+    const input = container.querySelector('input');
     expect(input.autocomplete).toEqual('on');
   });
 });

@@ -3,66 +3,36 @@
 exports[`BpkAutosuggest should render correctly 1`] = `
 <DocumentFragment>
   <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-owns="react-autowhatever-1"
-    class="bpk-autosuggest__container"
-    role="combobox"
+    class="bpk-autosuggest__container bpk-autosuggest__container--open"
   >
     <input
+      aria-activedescendant=""
       aria-autocomplete="list"
-      aria-controls="react-autowhatever-1"
+      aria-controls="origin-menu"
+      aria-expanded="false"
       aria-invalid="false"
+      aria-labelledby="origin-label"
       autocomplete="off"
       class="bpk-input"
-      id="origin"
+      id="origin-input"
       name="Origin"
+      role="combobox"
       type="text"
       value="Edinburgh"
     />
     <div
       class="bpk-autosuggest__suggestions-container"
-      id="react-autowhatever-1"
-      role="listbox"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions" attribute 1`] = `
-<DocumentFragment>
-  <div
-    aria-expanded="true"
-    aria-haspopup="listbox"
-    aria-owns="react-autowhatever-1"
-    class="bpk-autosuggest__container bpk-autosuggest__container--open"
-    role="combobox"
-  >
-    <input
-      aria-autocomplete="list"
-      aria-controls="react-autowhatever-1"
-      aria-invalid="false"
-      autocomplete="off"
-      class="bpk-input"
-      id="origin"
-      name="Origin"
-      type="text"
-      value="Edinburgh"
-    />
-    <div
-      class="bpk-autosuggest__suggestions-container bpk-autosuggest__suggestions-container--open"
-      id="react-autowhatever-1"
-      role="listbox"
     >
       <ul
+        aria-label="suggestions list"
         class="bpk-autosuggest__suggestions-list"
+        id="origin-menu"
         role="listbox"
       >
         <li
           aria-selected="false"
           class="bpk-autosuggest__suggestion-item"
-          data-suggestion-index="0"
-          id="react-autowhatever-1--item-0"
+          id="origin-item-0"
           role="option"
         >
           <span>
@@ -72,8 +42,7 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         <li
           aria-selected="false"
           class="bpk-autosuggest__suggestion-item"
-          data-suggestion-index="1"
-          id="react-autowhatever-1--item-1"
+          id="origin-item-1"
           role="option"
         >
           <span>
@@ -83,8 +52,72 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         <li
           aria-selected="false"
           class="bpk-autosuggest__suggestion-item"
-          data-suggestion-index="2"
-          id="react-autowhatever-1--item-2"
+          id="origin-item-2"
+          role="option"
+        >
+          <span>
+            London
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-autosuggest__container bpk-autosuggest__container--open"
+  >
+    <input
+      aria-activedescendant=""
+      aria-autocomplete="list"
+      aria-controls="origin-menu"
+      aria-expanded="false"
+      aria-invalid="false"
+      aria-labelledby="origin-label"
+      autocomplete="off"
+      class="bpk-input"
+      id="origin-input"
+      name="Origin"
+      role="combobox"
+      type="text"
+      value="Edinburgh"
+    />
+    <div
+      class="bpk-autosuggest__suggestions-container bpk-autosuggest__suggestions-container--open"
+    >
+      <ul
+        aria-label="suggestions list"
+        class="bpk-autosuggest__suggestions-list"
+        id="origin-menu"
+        role="listbox"
+      >
+        <li
+          aria-selected="false"
+          class="bpk-autosuggest__suggestion-item"
+          id="origin-item-0"
+          role="option"
+        >
+          <span>
+            Edinburgh
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="bpk-autosuggest__suggestion-item"
+          id="origin-item-1"
+          role="option"
+        >
+          <span>
+            Glasgow
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="bpk-autosuggest__suggestion-item"
+          id="origin-item-2"
           role="option"
         >
           <span>

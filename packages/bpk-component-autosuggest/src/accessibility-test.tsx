@@ -24,7 +24,6 @@ import BpkAutosuggest from './BpkAutosuggest';
 const suggestions = ['Edinburgh', 'Glasgow', 'London'];
 const onSuggestionsFetchRequested = () => null;
 const onSuggestionsClearRequested = () => null;
-const onSuggestionSelected = () => null;
 const getSuggestionValue = (suggestion: any) => suggestion;
 const renderSuggestion = (suggestion: any) => <span>{suggestion}</span>;
 const inputProps = {
@@ -40,7 +39,6 @@ describe('BpkAutosuggest accessibility tests', () => {
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
-        onSuggestionSelected={onSuggestionSelected}
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
         inputProps={inputProps}
