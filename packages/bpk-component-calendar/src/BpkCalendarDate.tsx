@@ -59,7 +59,7 @@ type DefaultProps = {
   isSelected: boolean;
   isToday: boolean;
   modifiers: DateModifiers;
-  onClick: (date: Date) => void;
+  onClick: ((date: Date) => void) | null;
   onDateKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void;
   preventKeyboardFocus?: boolean;
   selectionType: SelectionTypes;
@@ -80,7 +80,7 @@ class BpkCalendarDate extends PureComponent<Props> {
     isSelected: false,
     isToday: false,
     modifiers: {},
-    onClick: () => {},
+    onClick: null,
     onDateKeyDown: () => {},
     preventKeyboardFocus: true,
     selectionType: SELECTION_TYPES.none,
