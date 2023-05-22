@@ -19,15 +19,15 @@
 /* @flow strict */
 
 import { createRef } from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import BpkAutosuggest from './BpkAutosuggest';
 
 const suggestions = ['Edinburgh', 'Glasgow', 'London'];
 const onSuggestionsFetchRequested = () => null;
 const onSuggestionsClearRequested = () => null;
-const getSuggestionValue = (suggestion) => suggestion;
-const renderSuggestion = (suggestion) => <span>{suggestion}</span>;
+const getSuggestionValue = (suggestion: any) => suggestion;
+const renderSuggestion = (suggestion: any) => <span>{suggestion}</span>;
 
 const getRequiredProps = () => ({
   suggestions,
@@ -38,6 +38,7 @@ const getRequiredProps = () => ({
   inputProps: {
     name: 'Origin',
     value: 'Edinburgh',
+    placeholder: 'Choose where to fly from',
   },
   ariaLabels: {
     resultsList: 'suggestions list',
@@ -60,33 +61,36 @@ describe('BpkAutosuggest', () => {
   });
 
   it('should set the input reference', () => {
-    const inputRef = createRef();
+    const inputRef = createRef<HTMLInputElement>();
 
-    const { container } = render(
-      <BpkAutosuggest ref={inputRef} {...getRequiredProps()} />,
+    render(<BpkAutosuggest ref={inputRef} {...getRequiredProps()} />);
+
+    const input: HTMLInputElement = screen.getByPlaceholderText(
+      'Choose where to fly from',
     );
-
-    const input = container.querySelector('input');
-
     expect(input).toEqual(inputRef.current);
   });
 
   it('should default autocomplete to off', () => {
-    const { container } = render(<BpkAutosuggest {...getRequiredProps()} />);
+    render(<BpkAutosuggest {...getRequiredProps()} />);
 
-    const input = container.querySelector('input');
+    const input: HTMLInputElement = screen.getByPlaceholderText(
+      'Choose where to fly from',
+    );
     expect(input.autocomplete).toEqual('off');
   });
 
   it('should allow a consumer to override autocomplete', () => {
-    const { container } = render(
+    render(
       <BpkAutosuggest
         {...getRequiredProps()}
         inputProps={{ autoComplete: 'on', ...getRequiredProps().inputProps }}
       />,
     );
 
-    const input = container.querySelector('input');
+    const input: HTMLInputElement = screen.getByPlaceholderText(
+      'Choose where to fly from',
+    );
     expect(input.autocomplete).toEqual('on');
   });
 });

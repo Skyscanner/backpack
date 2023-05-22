@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkAutosuggest should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-autosuggest__container bpk-autosuggest__container--open"
+  >
+    <input
+      aria-activedescendant=""
+      aria-autocomplete="list"
+      aria-controls="origin-menu"
+      aria-expanded="false"
+      aria-invalid="false"
+      aria-labelledby="origin-label"
+      autocomplete="off"
+      class="bpk-input"
+      id="origin-input"
+      name="Origin"
+      placeholder="Choose where to fly from"
+      role="combobox"
+      type="text"
+      value="Edinburgh"
+    />
+    <div
+      class="bpk-autosuggest__suggestions-container"
+    >
+      <ul
+        aria-label="suggestions list"
+        class="bpk-autosuggest__suggestions-list"
+        id="origin-menu"
+        role="listbox"
+      >
+        <li
+          aria-selected="false"
+          class="bpk-autosuggest__suggestion-item"
+          id="origin-item-0"
+          role="option"
+        >
+          <span>
+            Edinburgh
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="bpk-autosuggest__suggestion-item"
+          id="origin-item-1"
+          role="option"
+        >
+          <span>
+            Glasgow
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="bpk-autosuggest__suggestion-item"
+          id="origin-item-2"
+          role="option"
+        >
+          <span>
+            London
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-autosuggest__container bpk-autosuggest__container--open"
+  >
+    <input
+      aria-activedescendant=""
+      aria-autocomplete="list"
+      aria-controls="origin-menu"
+      aria-expanded="false"
+      aria-invalid="false"
+      aria-labelledby="origin-label"
+      autocomplete="off"
+      class="bpk-input"
+      id="origin-input"
+      name="Origin"
+      placeholder="Choose where to fly from"
+      role="combobox"
+      type="text"
+      value="Edinburgh"
+    />
+    <div
+      class="bpk-autosuggest__suggestions-container bpk-autosuggest__suggestions-container--open"
+    >
+      <ul
+        aria-label="suggestions list"
+        class="bpk-autosuggest__suggestions-list"
+        id="origin-menu"
+        role="listbox"
+      >
+        <li
+          aria-selected="false"
+          class="bpk-autosuggest__suggestion-item"
+          id="origin-item-0"
+          role="option"
+        >
+          <span>
+            Edinburgh
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="bpk-autosuggest__suggestion-item"
+          id="origin-item-1"
+          role="option"
+        >
+          <span>
+            Glasgow
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          class="bpk-autosuggest__suggestion-item"
+          id="origin-item-2"
+          role="option"
+        >
+          <span>
+            London
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
