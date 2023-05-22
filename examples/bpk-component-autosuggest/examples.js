@@ -199,6 +199,7 @@ class AutosuggestExample extends Component<Props, State> {
 
     return (
       <BpkAutosuggest
+        ariaLabels={{ resultsList: 'results' }}
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}

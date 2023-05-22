@@ -60,8 +60,11 @@ type BpkAutoSuggestTheme = {
 };
 
 type BpkAutoSuggestProps<T> = {
-  ariaLabel: string;
-  ariaLabelClear: string;
+  ariaLabels: {
+    resultsList?: string;
+    label?: string;
+    clearButton?: string;
+  };
   getSuggestionValue: (suggestion: T) => string;
   id: string;
   inputProps: HTMLProps<HTMLInputElement>;
@@ -82,16 +85,15 @@ type BpkAutoSuggestProps<T> = {
   theme?: Partial<BpkAutoSuggestTheme>;
   highlightFirstSuggestion?: boolean;
   shouldRenderSuggestions?: (value?: string) => boolean;
-  multiSection: boolean;
-  getSectionSuggestions: (section: T) => T[];
-  renderSectionTitle: (section: T) => ReactElement;
+  multiSection?: boolean;
+  getSectionSuggestions?: (section: T) => T[];
+  renderSectionTitle?: (section: T) => ReactElement;
 };
 
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
   (
     {
-      ariaLabel,
-      ariaLabelClear,
+      ariaLabels,
       defaultValue,
       enterKeyHint,
       getA11yResultsMessage,
@@ -282,8 +284,10 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     const renderSections = (section: any) => (
       <section key={section.title}>
-        <div className={theme.sectionTitle}>{renderSectionTitle(section)}</div>
-        {renderSuggestions(section.suggestions)}
+        <div className={theme.sectionTitle}>
+          {renderSectionTitle?.(section)}
+        </div>
+        {renderSuggestions(getSectionSuggestions?.(section)!)}
       </section>
     );
 
@@ -296,7 +300,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       >
         {isBanana ? (
           <label
-            {...getLabelProps({ 'aria-label': ariaLabel })}
+            {...getLabelProps({ 'aria-label': ariaLabels.label })}
             className={getClassName(theme.label, theme.desktopLabel)}
           >
             <div className={theme.inputTextWrapper}>
@@ -319,9 +323,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
               <div tabIndex={-1}>
                 <button
                   type="button"
-                  title={ariaLabelClear}
+                  title={ariaLabels.clearButton}
                   onClick={clearSuggestions}
-                  aria-label={ariaLabelClear}
+                  aria-label={ariaLabels.clearButton}
                   className={theme.clearButton}
                   data-testid="clear button"
                 >
@@ -352,7 +356,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           )}
         >
           <ul
-            {...getMenuProps()}
+            {...getMenuProps({ 'aria-label': ariaLabels.resultsList })}
             className={getClassName(
               theme.suggestionsList,
               theme.desktopSuggestionsList,

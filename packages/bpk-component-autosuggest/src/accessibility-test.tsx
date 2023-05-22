@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
@@ -26,32 +24,33 @@ import BpkAutosuggest from './BpkAutosuggest';
 const suggestions = ['Edinburgh', 'Glasgow', 'London'];
 const onSuggestionsFetchRequested = () => null;
 const onSuggestionsClearRequested = () => null;
-const getSuggestionValue = (suggestion) => suggestion;
-const renderSuggestion = (suggestion) => <span>{suggestion}</span>;
+const onSuggestionSelected = () => null;
+const getSuggestionValue = (suggestion: any) => suggestion;
+const renderSuggestion = (suggestion: any) => <span>{suggestion}</span>;
 const inputProps = {
-  id: 'origin',
   name: 'Origin',
   value: 'Edinburgh',
-  onChange: () => null,
+  placeholder: 'enter your origin',
 };
 
 describe('BpkAutosuggest accessibility tests', () => {
-  /*
-  This component isn't as accessible as it could be due to the underlying
-  library we use for it. At some point we plan to replace it, but for now
-  it won't pass the accessibility test.
-  */
-  it.skip('should not have programmatically-detectable accessibility issues', async () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkAutosuggest
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
+        onSuggestionSelected={onSuggestionSelected}
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
         inputProps={inputProps}
+        ariaLabels={{
+          resultsList: 'suggestions',
+        }}
+        id="origin"
       />,
     );
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
