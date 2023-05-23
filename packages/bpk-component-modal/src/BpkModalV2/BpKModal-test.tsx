@@ -19,9 +19,9 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { type BpkModalV2 as DialogType } from './BpkModalV2';
+import { type BpkModal as DialogType } from './BpkModal';
 
-describe('BpkModalV2', () => {
+describe('BpkModal', () => {
   const props = {
     id: 'bpk-modal-element',
     ariaLabelledby: 'bpk-modal-label-my-dialog',
@@ -37,19 +37,19 @@ describe('BpkModalV2', () => {
   });
 
   describe('is supported', () => {
-    let BpkModalV2: typeof DialogType;
+    let BpkModal: typeof DialogType;
 
     beforeEach(() => {
       jest.isolateModules(() => {
-        ({ BpkModalV2 } = jest.requireActual('./BpkModalV2'));
+        ({ BpkModal } = jest.requireActual('./BpkModal'));
       });
     });
 
     it('should render correctly with content', () => {
       const { asFragment } = render(
-        <BpkModalV2 {...props}>
+        <BpkModal {...props}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(asFragment()).toMatchSnapshot();
@@ -57,9 +57,9 @@ describe('BpkModalV2', () => {
 
     it('should call on Close when closing the dialog', () => {
       render(
-        <BpkModalV2 {...props}>
+        <BpkModal {...props}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
       fireEvent.click(screen.getByTitle('bpk-modal-button-close'));
 
@@ -70,9 +70,9 @@ describe('BpkModalV2', () => {
       render(
         <>
           <div data-testid="page" />
-          <BpkModalV2 {...props}>
+          <BpkModal {...props}>
             <div>Content</div>
-          </BpkModalV2>
+          </BpkModal>
         </>,
       );
       fireEvent.click(screen.getByTestId('page'));
@@ -82,9 +82,9 @@ describe('BpkModalV2', () => {
 
     it('should not close the dialog when clicking inside the dialog', () => {
       render(
-        <BpkModalV2 {...props}>
+        <BpkModal {...props}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
       fireEvent.click(screen.getByText('Content'));
 
@@ -93,9 +93,9 @@ describe('BpkModalV2', () => {
 
     it('should not render title if title is set to empty string', () => {
       render(
-        <BpkModalV2 {...props} title="">
+        <BpkModal {...props} title="">
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(screen.queryByRole('Dialog Element')).not.toBeInTheDocument();
@@ -105,9 +105,9 @@ describe('BpkModalV2', () => {
     it('should call showModal to open dialog', () => {
       window.HTMLDialogElement.prototype.showModal = jest.fn();
       render(
-        <BpkModalV2 {...props}>
+        <BpkModal {...props}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(
@@ -118,17 +118,17 @@ describe('BpkModalV2', () => {
     it('should return null when dialog is closed', () => {
       // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
       const { rerender, store } = render(
-        <BpkModalV2 {...props}>
+        <BpkModal {...props}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(screen.queryByText('Content')).toBeInTheDocument();
 
       rerender(
-        <BpkModalV2 {...props} isOpen={false}>
+        <BpkModal {...props} isOpen={false}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
         // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
         rerender,
         store,
@@ -139,9 +139,9 @@ describe('BpkModalV2', () => {
 
     it('should set up the correct className when fullScreenOnDesktop is true', () => {
       render(
-        <BpkModalV2 {...props} fullScreenOnDesktop>
+        <BpkModal {...props} fullScreenOnDesktop>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(document.getElementById('bpk-modal-element')).toHaveClass(
@@ -156,9 +156,9 @@ describe('BpkModalV2', () => {
 
     it('should set up the correct classNames when noFullScreenOnMobile is true', () => {
       render(
-        <BpkModalV2 {...props} noFullScreenOnMobile>
+        <BpkModal {...props} noFullScreenOnMobile>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(document.getElementById('bpk-modal-element')).toHaveClass(
@@ -168,9 +168,9 @@ describe('BpkModalV2', () => {
 
     it('should set up the correct className when padded is false', () => {
       render(
-        <BpkModalV2 {...props} padded={false}>
+        <BpkModal {...props} padded={false}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(
@@ -182,9 +182,9 @@ describe('BpkModalV2', () => {
 
     it('should set up the correct className when wide is true', () => {
       render(
-        <BpkModalV2 {...props} wide>
+        <BpkModal {...props} wide>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(document.getElementById('bpk-modal-element')).toHaveClass(
@@ -198,9 +198,9 @@ describe('BpkModalV2', () => {
         ['visible', false],
       ])('to %p when isOpen is %p', (expectedOverflowY, expectedIsOpen) => {
         render(
-          <BpkModalV2 {...props} isOpen={expectedIsOpen}>
+          <BpkModal {...props} isOpen={expectedIsOpen}>
             <div>Content</div>
-          </BpkModalV2>,
+          </BpkModal>,
         );
 
         expect(document.body.style.overflowY).toEqual(expectedOverflowY);
@@ -211,14 +211,14 @@ describe('BpkModalV2', () => {
   describe('is not supported', () => {
     let htmlDialogElement: typeof window.HTMLDialogElement;
 
-    let BpkModalV2: typeof DialogType;
+    let BpkModal: typeof DialogType;
 
     beforeEach(async () => {
       htmlDialogElement = window.HTMLDialogElement;
       window.HTMLDialogElement = undefined!;
 
       jest.isolateModules(() => {
-        ({ BpkModalV2 } = jest.requireActual('./BpkModalV2'));
+        ({ BpkModal } = jest.requireActual('./BpkModal'));
       });
     });
 
@@ -228,9 +228,9 @@ describe('BpkModalV2', () => {
 
     it('should render correctly with polyfill and content', () => {
       const { asFragment } = render(
-        <BpkModalV2 {...props}>
+        <BpkModal {...props}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(asFragment()).toMatchSnapshot();
@@ -238,9 +238,9 @@ describe('BpkModalV2', () => {
 
     it('should call use the polyfill to open the dialog', () => {
       render(
-        <BpkModalV2 {...props}>
+        <BpkModal {...props}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(
@@ -254,9 +254,9 @@ describe('BpkModalV2', () => {
 
     it('should call on Close when closing the dialog', () => {
       render(
-        <BpkModalV2 {...props}>
+        <BpkModal {...props}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
       fireEvent.click(screen.getByTitle('bpk-modal-button-close'));
 
@@ -267,9 +267,9 @@ describe('BpkModalV2', () => {
       render(
         <>
           <div data-testid="page" />
-          <BpkModalV2 {...props}>
+          <BpkModal {...props}>
             <div>Content</div>
-          </BpkModalV2>
+          </BpkModal>
         </>,
       );
       fireEvent.click(screen.getByTestId('page'));
@@ -279,9 +279,9 @@ describe('BpkModalV2', () => {
 
     it('should reset position and width when dialog is closed', () => {
       render(
-        <BpkModalV2 {...props} isOpen={false}>
+        <BpkModal {...props} isOpen={false}>
           <div>Content</div>
-        </BpkModalV2>,
+        </BpkModal>,
       );
 
       expect(document.body.style.position).toEqual('relative');

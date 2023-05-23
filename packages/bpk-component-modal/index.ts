@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-import { BpkModalV2, type Props as BpkModalV2Props } from './src/BpkModalV2';
+import {
+  BpkModalV2,
+  type Props as BpkModalV2Props,
+} from './src/BpkModalV2/BpkModal';
 
 export type { BpkModalV2Props };
 export default BpkModalV2;

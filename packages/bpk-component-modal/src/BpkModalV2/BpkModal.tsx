@@ -20,13 +20,13 @@ import type { ReactNode } from 'react';
 import { useEffect, useRef } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkCloseButton from '../../bpk-component-close-button';
+import BpkCloseButton from '../../../bpk-component-close-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { cssModules, withDefaultProps } from '../../bpk-react-utils';
+import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
 
-import STYLES from './BpKModalV2.module.scss';
+import STYLES from './BpKModal.module.scss';
 
 const getClassName = cssModules(STYLES);
 

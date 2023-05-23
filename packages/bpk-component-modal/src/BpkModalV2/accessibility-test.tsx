@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { BpkModalV2 } from './BpkModalV2';
+import { BpkModalV2 } from './BpkModal';
 
 describe('BpkModalV2 accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

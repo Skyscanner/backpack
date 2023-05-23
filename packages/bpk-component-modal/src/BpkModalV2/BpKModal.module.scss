@@ -143,9 +143,7 @@
   &__title {
     padding-inline-end: bpk-spacing-base();
 
-    @include bpk-text;
-    @include bpk-text--base;
-    @include bpk-text--bold;
+    @include bpk-label-1;
   }
 
   &__button-container {
