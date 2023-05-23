@@ -16,10 +16,9 @@ exports[`BpkAutosuggest should render correctly 1`] = `
       class="bpk-input"
       id="origin-input"
       name="Origin"
-      placeholder="Choose where to fly from"
       role="combobox"
       type="text"
-      value="Edinburgh"
+      value=""
     />
     <div
       class="bpk-autosuggest__suggestions-container"
@@ -29,38 +28,7 @@ exports[`BpkAutosuggest should render correctly 1`] = `
         class="bpk-autosuggest__suggestions-list"
         id="origin-menu"
         role="listbox"
-      >
-        <li
-          aria-selected="false"
-          class="bpk-autosuggest__suggestion-item"
-          id="origin-item-0"
-          role="option"
-        >
-          <span>
-            Edinburgh
-          </span>
-        </li>
-        <li
-          aria-selected="false"
-          class="bpk-autosuggest__suggestion-item"
-          id="origin-item-1"
-          role="option"
-        >
-          <span>
-            Glasgow
-          </span>
-        </li>
-        <li
-          aria-selected="false"
-          class="bpk-autosuggest__suggestion-item"
-          id="origin-item-2"
-          role="option"
-        >
-          <span>
-            London
-          </span>
-        </li>
-      </ul>
+      />
     </div>
   </div>
 </DocumentFragment>
@@ -82,10 +50,9 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
       class="bpk-input"
       id="origin-input"
       name="Origin"
-      placeholder="Choose where to fly from"
       role="combobox"
       type="text"
-      value="Edinburgh"
+      value=""
     />
     <div
       class="bpk-autosuggest__suggestions-container bpk-autosuggest__suggestions-container--open"

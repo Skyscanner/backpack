@@ -59,7 +59,7 @@ type BpkAutoSuggestTheme = {
   desktopSuggestionsList?: string;
 };
 
-type BpkAutoSuggestProps<T> = {
+export type BpkAutoSuggestProps<T> = {
   ariaLabels: {
     resultsList?: string;
     label?: string;
@@ -307,6 +307,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     const showSuggestions = alwaysRenderSuggestions ? true : isOpen;
 
+    const renderList = () =>
+      multiSection
+        ? renderSections(suggestions)
+        : renderSuggestions(suggestions);
+
     return (
       <div
         className={getClassName(
@@ -378,9 +383,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
               theme.desktopSuggestionsList,
             )}
           >
-            {showSuggestions && multiSection
-              ? renderSections(suggestions)
-              : renderSuggestions(suggestions)}
+            {showSuggestions && renderList()}
           </ul>
         </div>
       </div>
