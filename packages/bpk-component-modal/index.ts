@@ -17,9 +17,9 @@
  */
 
 import {
-  BpkModalV2,
-  type Props as BpkModalV2Props,
+  BpkModal,
+  type Props as BpkModalProps,
 } from './src/BpkModalV2/BpkModal';
 
-export type { BpkModalV2Props };
-export default BpkModalV2;
+export type { BpkModalProps };
+export default BpkModal;

@@ -23,7 +23,7 @@ import { Component, Children } from 'react';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkButton from '../../packages/bpk-component-button';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
-import { BpkModalV2 } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
+import { BpkModal } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
 
 import STYLES from './examples.module.scss';
 
@@ -125,7 +125,7 @@ class ModalContainer extends Component<Props, { isOpen: boolean }> {
         <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
-        <BpkModalV2
+        <BpkModal
           id="bpk-modal"
           ariaLabelledby="bpk-modal-label-my-dialog"
           closeLabel="bpk-modal-button-close"
@@ -134,7 +134,7 @@ class ModalContainer extends Component<Props, { isOpen: boolean }> {
           {...this.props}
         >
           {this.props.children}
-        </BpkModalV2>
+        </BpkModal>
       </div>
     );
   }
