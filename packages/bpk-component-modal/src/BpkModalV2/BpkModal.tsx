@@ -65,7 +65,7 @@ const setPageProperties = ({ isDialogOpen }: DialogProps) => {
   }
 };
 
-export const BpkModalV2 = (props: Props) => {
+export const BpkModal = (props: Props) => {
   const {
     ariaLabelledby,
     children,
