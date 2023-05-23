@@ -1,4 +1,4 @@
-# bpk-component-modal-v2
+# bpk-component-modal
 
 > Backpack modal component version 2.
 
@@ -40,7 +40,7 @@ class App extends Component {
         <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
-        <BpkModalV2
+        <BpkModal
           id="bpk-modal"
           ariaLabelledby="bpk-modal-label-my-dialog"
           closeLabel="bpk-modal-button-close"
@@ -53,7 +53,7 @@ class App extends Component {
           }
         >
           This is a modal. You can put anything you want in here.
-        </BpkModalV2>
+        </BpkModal>
       </div>
     );
   }
