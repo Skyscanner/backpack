@@ -252,11 +252,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     };
 
     const handleInputFocus = (event: FocusEvent<HTMLInputElement>) => {
-      if (
-        typeof shouldRenderSuggestions !== 'function' ||
-        shouldRenderSuggestions(inputValue)
-      ) {
-        onSuggestionsFetchRequested(inputValue);
+      if (shouldRenderSuggestions) {
+        shouldRenderSuggestions(inputValue);
         openMenu();
       }
 
@@ -276,9 +273,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           ? sectionIndex === 0 && index === 0
           : index === 0;
 
+        const key = index * 1000;
+
         return (
           <li
-            key={Object.values(suggestion)[0]}
+            key={key}
             {...getItemProps({ item: suggestion, index: suggestionIndex })}
             className={getClassName(
               theme.suggestion,
@@ -322,7 +321,10 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         {isBanana ? (
           <label
             {...getLabelProps({ 'aria-label': ariaLabels.label })}
-            className={getClassName(theme.label, theme.desktopLabel)}
+            className={getClassName(
+              theme.label,
+              isDesktop && theme.desktopLabel,
+            )}
           >
             <div className={theme.inputTextWrapper}>
               {renderBesideInput?.()}
@@ -371,7 +373,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         <div
           className={getClassName(
             theme.suggestionsContainer,
-            theme.desktopSuggestionsContainer,
+            isDesktop && theme.desktopSuggestionsContainer,
             multiSection && theme.sectionContainer,
             showSuggestions && theme.suggestionsContainerOpen,
           )}
@@ -380,7 +382,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             {...getMenuProps({ 'aria-label': ariaLabels.resultsList })}
             className={getClassName(
               theme.suggestionsList,
-              theme.desktopSuggestionsList,
+              isDesktop && theme.desktopSuggestionsList,
             )}
           >
             {showSuggestions && renderList()}
