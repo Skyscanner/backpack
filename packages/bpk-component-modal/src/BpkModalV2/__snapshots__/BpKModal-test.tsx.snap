@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkModal is not supported should render correctly with polyfill and content 1`] = `
+exports[`BpkModalV2 is not supported should render correctly with polyfill and content 1`] = `
 <DocumentFragment>
   <div
     class="bpk-modal-wrapper bpk-modal-polyfill"
@@ -62,7 +62,7 @@ exports[`BpkModal is not supported should render correctly with polyfill and con
 </DocumentFragment>
 `;
 
-exports[`BpkModal is supported should render correctly with content 1`] = `
+exports[`BpkModalV2 is supported should render correctly with content 1`] = `
 <DocumentFragment>
   <div
     class="bpk-modal-wrapper"
