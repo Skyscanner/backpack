@@ -109,7 +109,6 @@ const defaultTheme = {
   ),
   sectionContainer: getClassName('bpk-autosuggest__section-container'),
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
-  clearButton: getClassName('bpk-autosuggest__banana-clear-button'),
 };
 
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(

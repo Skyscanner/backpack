@@ -163,38 +163,4 @@ $arrow-size: bpk-spacing-sm() * 3;
     @include bpk-text-sm;
     @include bpk-text--bold;
   }
-
-  &__banana-clear-button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-    appearance: none;
-
-    @include bpk-breakpoint-small-tablet {
-      margin-right: bpk-spacing-md();
-
-      @include bpk-rtl {
-        margin-right: 0;
-        margin-left: bpk-spacing-md();
-      }
-    }
-
-    svg {
-      fill: $bpk-text-secondary-day;
-    }
-
-    &:hover {
-      svg {
-        fill: $bpk-text-secondary-day;
-      }
-    }
-
-    &:active {
-      svg {
-        fill: $bpk-core-primary-day;
-      }
-    }
-  }
 }
