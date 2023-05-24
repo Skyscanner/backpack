@@ -52,19 +52,17 @@ class MyComponent extends Component {
     super();
 
     this.state = {
-      value: '',
       suggestions: [],
     };
 
   }
 
-  onChange = (e, { newValue }) => {
-    this.setState({
-      value: newValue,
-    });
+  onInputValueChange = ({method, newValue}) => {
+    logEvent('input-value-changed', newValue)
   }
 
-  onSuggestionsFetchRequested = ({ value }) => {
+
+  onSuggestionsFetchRequested = (value) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
@@ -77,14 +75,12 @@ class MyComponent extends Component {
   }
 
   render() {
-    const { value, suggestions } = this.state;
+    const { suggestions } = this.state;
 
     const inputProps = {
       id: 'my-autosuggest',
       name: 'my-autosuggest',
       placeholder: 'Enter an office name',
-      value,
-      onChange: this.onChange,
     };
 
     return (
@@ -97,6 +93,7 @@ class MyComponent extends Component {
           getSuggestionValue={getSuggestionValue}
           renderSuggestion={renderSuggestion}
           inputProps={inputProps}
+          onInputValueChange={this.onInputValueChange}
         />
       </div>
     );
@@ -108,9 +105,35 @@ class MyComponent extends Component {
 
 *BpkAutosuggest:*
 
-[Please refer to `react-autosuggest`'s documentation for a full list of props](https://github.com/moroshko/react-autosuggest#props).
 
-**Note:** The `inputProps` object is passed directly to a [`BpkInput`](../bpk-component-input/README.md#props) component, so its prop types apply also.
+| Property                     | PropType                                           | Required | Default Value |
+| ---------------------------- | -------------------------------------------------- | -------- | ------------- |
+| ariaLabels                   | object                                             | true     | -             |
+| ariaLabels.resultsList       | string                                             | false    | undefined             |
+| getSuggestionValue           | function                                           | true     | -             |
+| id                           | string                                             | true     | -             |
+| inputProps                   | object                                             | true     | -             |
+| onSuggestionsClearRequested  | function                                           | true     | -             |
+| onSuggestionsFetchRequested  | function                                           | true     | -             |
+| renderSuggestion             | function                                           | true     | -             |
+| suggestions                  | array                                              | true     | -             |
+| ref                  | `React.Ref<HTMLInputElement>`                                              | false     | null             |
+| onSuggestionSelected         | function                                           | false    | undefined             |
+| onInputValueChance         | function                                           | false    | undefined             |
+| defaultValue                 | string                                             | false    | undefined |
+| getA11yResultsMessage        | function                                           | false    | undefined             |
+| theme                        | object                                             | false    | undefined             |
+| highlightFirstSuggestion     | boolean                                            | false    | false             |
+| shouldRenderSuggestions      | function                                           | false    | undefined             |
+| multiSection                 | boolean                                            | false    | false             |
+| getSectionSuggestions        | function                                           | false (true if multiSection)   | null             |
+| renderSectionTitle           | function                                           | false (true if multiSection)   | null             |
+| alwaysRenderSuggestions      | boolean                                            | false    | false             |
+
+
+
+
+**Note:** The `inputProps` object is passed directly to a [`BpkInput`](../bpk-component-input/README.md#props) component, so its prop types apply also. BpkAutosuggest is a forwardRef component which will pass the ref through to BpkInput via the ref prop.
 
 *BpkAutosuggestSuggestion:*
 
