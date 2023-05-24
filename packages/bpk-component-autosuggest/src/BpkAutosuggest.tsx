@@ -41,7 +41,7 @@ const getClassName = cssModules(STYLES);
 
 const ClearButtonIcon = withButtonAlignment(ClearIconLg);
 
-type BpkAutoSuggestTheme = {
+export type BpkAutoSuggestTheme = {
   container?: string;
   containerOpen?: string;
   suggestionsList?: string;
