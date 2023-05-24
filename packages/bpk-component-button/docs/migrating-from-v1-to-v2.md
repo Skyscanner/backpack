@@ -8,7 +8,7 @@ Version 2 of `bpk-component-button` removes the individual boolean properties to
 
 When selecting the type of button to use the type is now defined through the `type` property and selecting the type from `BUTTON_TYPES` object to specify the available buttons.
 
-Object contains the following:  `primary`, `primaryOnDark`, `primaryOnLight`, `secondary`, `secondaryOnDark`, `destructive`, `featured`, `link`, `linkOnDark`
+Object contains the following: `primary`, `primaryOnDark`, `primaryOnLight`, `secondary`, `secondaryOnDark`, `destructive`, `featured`, `link`, `linkOnDark`
 
 ### Original:
 
@@ -42,7 +42,7 @@ class Toggle extends React.Component {
 
 When wishing to render a large button the `large` property has been removed to be replaced with `size` and passing in a `SIZE_TYPES` to set the desired large size
 
-Object contains the following:  `small` (component default value) and `large`
+Object contains the following: `small` (component default value) and `large`
 
 ### Original:
 
@@ -61,7 +61,7 @@ class SearchButton extends React.Component {
 ### Replacement:
 
 ```
-import BpkButtonV2, { SIZE_TYPES } from 'bpk-component-button';
+import { BpkButtonV2, SIZE_TYPES } from 'bpk-component-button';
 
 class Toggle extends React.Component {
   render() {

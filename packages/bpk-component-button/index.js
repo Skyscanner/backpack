@@ -30,6 +30,8 @@ import BpkButtonLink from './src/BpkButtonLink';
 import BpkButtonLinkOnDark from './src/BpkButtonLinkOnDark';
 import BpkButtonFeatured from './src/BpkButtonFeatured';
 
+export { BUTTON_TYPES, SIZE_TYPES } from './src/BpkButtonV2/common-types';
+
 export {
   buttonThemeAttributes,
   primaryThemeAttributes,
