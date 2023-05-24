@@ -16,21 +16,12 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-const DIRECTIONS = {
-  LTR: 'ltr',
-  RTL: 'rtl',
-};
-
-const getDirection = () =>
-  (
-    (typeof document !== 'undefined' &&
-      document.documentElement !== null &&
-      document.documentElement.getAttribute('dir')) ||
-    DIRECTIONS.LTR
-  ).toLowerCase();
-
-const isRTL = () => getDirection() === DIRECTIONS.RTL;
-
-export default isRTL;
+export default (styles: { [key: string]: any } = {}) =>
+  (...classNames: Array<string | boolean | number | {} | null | undefined>) =>
+    classNames.reduce((className: string, currentClass) => {
+      if (currentClass && typeof currentClass === 'string') {
+        const realName = styles[currentClass] || currentClass;
+        return className ? `${className} ${realName}` : realName;
+      }
+      return className;
+    }, '');

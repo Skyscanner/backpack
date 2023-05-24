@@ -17,17 +17,71 @@
  */
 
 import { Component } from 'react';
+import type { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import assign from 'object-assign';
-import PropTypes from 'prop-types';
 
 const KEYCODES = {
   ESCAPE: 'Escape',
+} as const;
+
+type InteractionEvents = TouchEvent | MouseEvent | KeyboardEvent;
+
+type JSXElementWithRefProps = JSX.Element & {
+  ref: React.RefObject<HTMLElement>;
 };
 
-class Portal extends Component {
-  constructor() {
-    super();
+type Props = {
+  children: string | ReactNode;
+  isOpen: boolean;
+  beforeClose: ((arg0: () => void) => void) | null | undefined;
+  className: string | null | undefined;
+  onClose: (
+    arg0: InteractionEvents,
+    arg1: {
+      source: 'ESCAPE' | 'DOCUMENT_CLICK';
+    },
+  ) => void;
+  onOpen: (arg0: HTMLElement, arg1?: HTMLElement | null | undefined) => void;
+  onRender: (
+    arg0: HTMLElement | null | undefined,
+    arg1: HTMLElement | null | undefined,
+  ) => void;
+  style: {} | null | undefined;
+  renderTarget: null | HTMLElement | (() => null | HTMLElement);
+  target: null | HTMLElement | JSX.Element | (() => HTMLElement);
+  targetRef:
+    | ((arg0: null | Element | Text | undefined) => void)
+    | null
+    | undefined;
+  closeOnEscPressed: boolean;
+};
+
+type State = {
+  isVisible: boolean;
+};
+
+class Portal extends Component<Props, State> {
+  portalElement: null | HTMLDivElement;
+
+  shouldClose: boolean;
+
+  static defaultProps = {
+    beforeClose: null,
+    className: null,
+    onClose: () => null,
+    onOpen: () => null,
+    onRender: () => null,
+    style: null,
+    renderTarget: null,
+    target: null,
+    targetRef: null,
+    closeOnEscPressed: true,
+  };
+
+  constructor(props: Props) {
+    super(props);
 
     this.portalElement = null;
 
@@ -61,7 +115,7 @@ class Portal extends Component {
   // When the consumer updates `isOpen` to be `false`, we
   // call their beforeClose function so that they can trigger the close.
   // If they don't provide `beforeClose` we just call `close` directly.
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: Props) {
     if (this.props.isOpen) {
       if (!prevProps.isOpen) {
         this.open();
@@ -81,7 +135,7 @@ class Portal extends Component {
     this.close();
   }
 
-  onDocumentMouseDown(event) {
+  onDocumentMouseDown(event: MouseEvent | TouchEvent) {
     const clickEventProperties = this.getClickEventProperties(event);
     if (
       clickEventProperties.isNotLeftClick ||
@@ -95,7 +149,7 @@ class Portal extends Component {
     this.shouldClose = true;
   }
 
-  onDocumentMouseUp(event) {
+  onDocumentMouseUp(event: MouseEvent | TouchEvent) {
     const clickEventProperties = this.getClickEventProperties(event);
 
     if (
@@ -114,7 +168,7 @@ class Portal extends Component {
     }
   }
 
-  onDocumentKeyDown(event) {
+  onDocumentKeyDown(event: KeyboardEvent) {
     if (
       event.key === KEYCODES.ESCAPE &&
       this.props.isOpen &&
@@ -130,7 +184,8 @@ class Portal extends Component {
     this.shouldClose = false;
   }
 
-  getClickEventProperties(event) {
+  getClickEventProperties(event: MouseEvent | TouchEvent) {
+    // @ts-expect-error FIXME: TS2339: Property 'button' does not exist on type 'TouchEvent | MouseEvent'.
     const isNotLeftClick = event.button && event.button !== 0;
 
     const targetElement = this.getTargetElement();
@@ -155,7 +210,7 @@ class Portal extends Component {
   getTargetElement() {
     return typeof this.props.target === 'function'
       ? this.props.target()
-      : this.props.target?.ref.current;
+      : (this.props.target as JSXElementWithRefProps)?.ref.current;
   }
 
   getRenderTarget() {
@@ -179,8 +234,8 @@ class Portal extends Component {
       return;
     }
 
-    this.portalElement = document.createElement('div');
-    this.getRenderTarget().appendChild(this.portalElement);
+    const portalElement = document.createElement('div');
+    this.getRenderTarget().appendChild(portalElement);
 
     const passiveArgs = this.supportsPassiveEvents()
       ? { passive: true }
@@ -201,14 +256,16 @@ class Portal extends Component {
     document.addEventListener('keydown', this.onDocumentKeyDown, false);
 
     if (this.props.style) {
-      assign(this.portalElement.style, this.props.style);
+      assign(portalElement.style, this.props.style);
     }
 
     if (this.props.className) {
-      this.portalElement.className = this.props.className;
+      portalElement.className = this.props.className;
     }
+
+    this.portalElement = portalElement;
     this.setState({ isVisible: true }, () =>
-      this.props.onOpen(this.portalElement, this.getTargetElement()),
+      this.props.onOpen(portalElement, this.getTargetElement()),
     );
   }
 
@@ -245,6 +302,7 @@ class Portal extends Component {
           supportsPassiveOption = true;
         },
       });
+      // @ts-expect-error FIXME: TS2769: No overload matches this call.
       window.addEventListener('test', null, opts);
     } catch (e) {
       return false;
@@ -263,7 +321,9 @@ class Portal extends Component {
       return null;
     }
 
-    const stopPropagationHandler = (e) => e.stopPropagation();
+    const stopPropagationHandler = (
+      e: React.KeyboardEvent | React.MouseEvent | React.TouchEvent,
+    ) => e.stopPropagation();
 
     return createPortal(
       <div
@@ -281,33 +341,5 @@ class Portal extends Component {
     );
   }
 }
-
-Portal.propTypes = {
-  children: PropTypes.node.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  beforeClose: PropTypes.func,
-  className: PropTypes.string,
-  onClose: PropTypes.func,
-  onOpen: PropTypes.func,
-  onRender: PropTypes.func,
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  renderTarget: PropTypes.func,
-  target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
-  targetRef: PropTypes.func,
-  closeOnEscPressed: PropTypes.bool,
-};
-
-Portal.defaultProps = {
-  beforeClose: null,
-  className: null,
-  onClose: () => null,
-  onOpen: () => null,
-  onRender: () => null,
-  style: null,
-  renderTarget: null,
-  target: null,
-  targetRef: null,
-  closeOnEscPressed: true,
-};
 
 export default Portal;

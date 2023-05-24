@@ -53,7 +53,7 @@ describe('TransitionInitialMount accessibility tests', () => {
 
 describe('withDefaultProps accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const TestComponent = (props) => <div {...props} />;
+    const TestComponent = (props: any) => <div {...props} />;
 
     const Component = withDefaultProps(TestComponent, {
       a: 1,

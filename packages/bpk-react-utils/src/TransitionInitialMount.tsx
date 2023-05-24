@@ -16,11 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import assign from 'object-assign';
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
 
 // Object.assign() is used unpolyfilled in react-transition-group.
@@ -28,10 +27,10 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 Object.assign = assign;
 
 type Props = {
-  appearClassName: string,
-  appearActiveClassName: string,
-  transitionTimeout: number,
-  children: Node,
+  appearClassName: string;
+  appearActiveClassName: string;
+  transitionTimeout: number;
+  children: string | ReactNode;
 };
 
 const TransitionInitialMount = ({
@@ -52,12 +51,5 @@ const TransitionInitialMount = ({
     {children}
   </CSSTransition>
 );
-
-TransitionInitialMount.propTypes = {
-  children: PropTypes.node.isRequired,
-  appearClassName: PropTypes.string.isRequired,
-  appearActiveClassName: PropTypes.string.isRequired,
-  transitionTimeout: PropTypes.number.isRequired,
-};
 
 export default TransitionInitialMount;

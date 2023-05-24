@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { isDeviceIphone, isDeviceIpad, isDeviceIos } from './deviceDetection';
 
 describe('isIphone tests', () => {

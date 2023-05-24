@@ -16,16 +16,19 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+const DIRECTIONS = {
+  LTR: 'ltr',
+  RTL: 'rtl',
+} as const;
 
-const isDeviceIphone = () =>
-  /iPhone/i.test(
-    typeof window !== 'undefined' ? window.navigator.userAgent : '',
-  );
+const getDirection = () =>
+  (
+    (typeof document !== 'undefined' &&
+      document.documentElement !== null &&
+      document.documentElement.getAttribute('dir')) ||
+    DIRECTIONS.LTR
+  ).toLowerCase();
 
-const isDeviceIpad = () =>
-  /iPad/i.test(typeof window !== 'undefined' ? window.navigator.userAgent : '');
+const isRTL = () => getDirection() === DIRECTIONS.RTL;
 
-const isDeviceIos = () => isDeviceIphone() || isDeviceIpad();
-
-export { isDeviceIphone, isDeviceIpad, isDeviceIos };
+export default isRTL;
