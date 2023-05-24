@@ -1,6 +1,19 @@
 # bpk-component-modal
 
-> Backpack modal component version 2.
+> ## 🧪 Experimental Component: `BpkModalV2`
+>
+> ### Why a version 2?
+>
+> The `BpkModalV2` introduce the HTML `<dialog>` element to the bpk-component-modal in Backpack.
+>
+> This is a powerful solution for accessibility within a modal:
+> > *The native HTML `<dialog>` element should be used in creating modal dialogs as it provides usability and accessibility features that must be replicated if using other elements for a similar purpose* [Source: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog]
+>
+> ### Help and feedbacks
+>
+> As an experimental component and in order to improve it, we would like to hear about your issues/feedbacks.
+>
+> Contact: @Tony (Anthony Byledbal)
 
 ## Installation
 
