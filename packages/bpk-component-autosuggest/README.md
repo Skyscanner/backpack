@@ -129,6 +129,8 @@ class MyComponent extends Component {
 | getSectionSuggestions        | function                                           | false (true if multiSection)   | null             |
 | renderSectionTitle           | function                                           | false (true if multiSection)   | null             |
 | alwaysRenderSuggestions      | boolean                                            | false    | false             |
+| onLoad      | function                                            | false    | undefined             |
+| onClick      | function                                            | false    | undefined             |
 
 
 
