@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import PropTypes from 'prop-types';
-import { type Node } from 'react';
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkCardWrapper.module.scss';
@@ -28,21 +26,25 @@ import STYLES from './BpkCardWrapper.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  card: Node,
-  className: ?string,
-  backgroundColor: string,
-  header: Node,
+  card: ReactNode;
+  className?: string | null;
+  backgroundColor: string;
+  header: ReactNode;
 };
 
-const BpkCardWrapper = (props: Props) => {
-  const { backgroundColor, card, className, header } = props;
-
+const BpkCardWrapper = ({
+  backgroundColor,
+  card,
+  className = null,
+  header,
+}: Props) => {
   const classNames = getClassName('bpk-card-wrapper', className);
 
   return (
     <div
       className={classNames}
       style={{
+        // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
         '--background-color': backgroundColor,
       }}
     >
@@ -50,17 +52,6 @@ const BpkCardWrapper = (props: Props) => {
       <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>
     </div>
   );
-};
-
-BpkCardWrapper.propTypes = {
-  backgroundColor: PropTypes.string.isRequired,
-  card: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  header: PropTypes.node.isRequired,
-};
-
-BpkCardWrapper.defaultProps = {
-  className: null,
 };
 
 export default BpkCardWrapper;

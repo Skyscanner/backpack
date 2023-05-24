@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkCard.module.scss';
@@ -28,17 +26,24 @@ import STYLES from './BpkCard.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  children: Node,
-  className: ?string,
-  href: ?string,
-  padded: boolean,
-  blank: boolean,
-  atomic: boolean,
+  children: ReactNode | string;
+  className?: string | null;
+  href?: string | null;
+  padded?: boolean;
+  blank?: boolean;
+  atomic?: boolean;
+  [rest: string]: any;
 };
 
-const BpkCard = (props: Props) => {
-  const { atomic, blank, children, className, href, padded, ...rest } = props;
-
+const BpkCard = ({
+  atomic = true,
+  blank = false,
+  children,
+  className = null,
+  href = null,
+  padded = true,
+  ...rest
+}: Props) => {
   const classNames = getClassName(
     'bpk-card',
     atomic && !href && 'bpk-card--atomic-button',
@@ -46,7 +51,7 @@ const BpkCard = (props: Props) => {
     className,
   );
 
-  const atomicProps: { tabIndex: ?number, role: ?string } = {};
+  const atomicProps: { tabIndex?: number; role?: string } = {};
 
   if (href) {
     let blankProps = {};
@@ -89,23 +94,6 @@ const BpkCard = (props: Props) => {
       {children}
     </div>
   );
-};
-
-BpkCard.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  href: PropTypes.string,
-  padded: PropTypes.bool,
-  blank: PropTypes.bool,
-  atomic: PropTypes.bool,
-};
-
-BpkCard.defaultProps = {
-  className: null,
-  href: null,
-  padded: true,
-  blank: false,
-  atomic: true,
 };
 
 export default BpkCard;
