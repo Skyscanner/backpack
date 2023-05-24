@@ -17,9 +17,8 @@
  */
 
 /// <reference types="react" />
-import type { CommonProps } from './commonTypes';
+import type { CommonProps as Props } from './commonTypes';
 
-export interface Props extends CommonProps {}
 declare const BpkDismissibleChip: ({
   className,
   leadingAccessoryView,

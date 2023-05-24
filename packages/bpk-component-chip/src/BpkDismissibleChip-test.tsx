@@ -18,8 +18,8 @@
 
 import { render } from '@testing-library/react';
 
-import type { Props } from './BpkDismissibleChip';
 import BpkDismissibleChip from './BpkDismissibleChip';
+import type { CommonProps as Props } from './commonTypes';
 import { CHIP_TYPES } from './commonTypes';
 
 // Just a convenience wrapper that includes the default props so we don't

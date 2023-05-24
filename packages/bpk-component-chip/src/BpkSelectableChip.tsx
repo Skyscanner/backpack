@@ -56,7 +56,6 @@ const BpkSelectableChip = ({
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'
     <button
       aria-checked={role === 'button' ? undefined : selected}
       className={classNames}
