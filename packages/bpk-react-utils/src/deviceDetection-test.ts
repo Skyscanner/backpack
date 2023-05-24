@@ -32,7 +32,6 @@ describe('isIphone tests', () => {
   });
 
   it('should return true if an iPhone', () => {
-    // $FlowIssue[extra-arg] - The extra arg for accessType is valid as per the spec of Jest: https://jestjs.io/docs/jest-object#jestspyonobject-methodname-accesstype
     const platform = jest.spyOn(window.navigator, 'userAgent', 'get');
     platform.mockReturnValue('iPhone');
 
@@ -54,7 +53,6 @@ describe('isIpad tests', () => {
   });
 
   it('should return true if an iPad', () => {
-    // $FlowIssue[extra-arg] - The extra arg for accessType is valid as per the spec of Jest: https://jestjs.io/docs/jest-object#jestspyonobject-methodname-accesstype
     const platform = jest.spyOn(window.navigator, 'userAgent', 'get');
     platform.mockReturnValue('iPad');
 
@@ -72,7 +70,6 @@ describe('isIos tests', () => {
   });
 
   it('should return false by default', () => {
-    // $FlowIssue[extra-arg] - The extra arg for accessType is valid as per the spec of Jest: https://jestjs.io/docs/jest-object#jestspyonobject-methodname-accesstype
     const platform = jest.spyOn(window.navigator, 'userAgent', 'get');
     platform.mockReturnValue('Mac');
 
@@ -80,7 +77,6 @@ describe('isIos tests', () => {
   });
 
   it('should return true if an iPhone', () => {
-    // $FlowIssue[extra-arg] - The extra arg for accessType is valid as per the spec of Jest: https://jestjs.io/docs/jest-object#jestspyonobject-methodname-accesstype
     const platform = jest.spyOn(window.navigator, 'userAgent', 'get');
     platform.mockReturnValue('iPhone');
 
@@ -88,7 +84,6 @@ describe('isIos tests', () => {
   });
 
   it('should return true if an iPad', () => {
-    // $FlowIssue[extra-arg] - The extra arg for accessType is valid as per the spec of Jest: https://jestjs.io/docs/jest-object#jestspyonobject-methodname-accesstype
     const platform = jest.spyOn(window.navigator, 'userAgent', 'get');
     platform.mockReturnValue('iPad');
 
