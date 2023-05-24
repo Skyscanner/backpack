@@ -92,6 +92,24 @@ export type BpkAutoSuggestProps<T> = {
   getSectionSuggestions?: (section: T) => T[];
   renderSectionTitle?: (section: T) => ReactElement;
   alwaysRenderSuggestions?: boolean;
+  onInputValueChange?: (input: { method: string; newValue: string }) => void;
+};
+
+const defaultTheme = {
+  container: getClassName('bpk-autosuggest__container'),
+  containerOpen: getClassName('bpk-autosuggest__container--open'),
+  suggestionsContainer: getClassName('bpk-autosuggest__suggestions-container'),
+  suggestionsContainerOpen: getClassName(
+    'bpk-autosuggest__suggestions-container--open',
+  ),
+  suggestionsList: getClassName('bpk-autosuggest__suggestions-list'),
+  suggestion: getClassName('bpk-autosuggest__suggestion-item'),
+  suggestionHighlighted: getClassName(
+    'bpk-autosuggest__suggestion-item--highlighted',
+  ),
+  sectionContainer: getClassName('bpk-autosuggest__section-container'),
+  sectionTitle: getClassName('bpk-autosuggest__section-title'),
+  clearButton: getClassName('bpk-autosuggest__banana-clear-button'),
 };
 
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
@@ -111,6 +129,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       isDesktop,
       multiSection,
       onClick,
+      onInputValueChange,
       onLoad,
       onSuggestionSelected,
       onSuggestionsClearRequested,
@@ -125,25 +144,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     },
     forwardedRef,
   ) => {
-    const defaultTheme = {
-      container: getClassName('bpk-autosuggest__container'),
-      containerOpen: getClassName('bpk-autosuggest__container--open'),
-      suggestionsContainer: getClassName(
-        'bpk-autosuggest__suggestions-container',
-      ),
-      suggestionsContainerOpen: getClassName(
-        'bpk-autosuggest__suggestions-container--open',
-      ),
-      suggestionsList: getClassName('bpk-autosuggest__suggestions-list'),
-      suggestion: getClassName('bpk-autosuggest__suggestion-item'),
-      suggestionHighlighted: getClassName(
-        'bpk-autosuggest__suggestion-item--highlighted',
-      ),
-      sectionContainer: getClassName('bpk-autosuggest__section-container'),
-      sectionTitle: getClassName('bpk-autosuggest__section-title'),
-      clearButton: getClassName('bpk-autosuggest__banana-clear-button'),
-    };
-
     const theme = { ...defaultTheme, ...customTheme };
 
     function stateReducer(
@@ -178,6 +178,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         return suggestion ? getSuggestionValue(suggestion) : '';
       },
       async onInputValueChange(changes) {
+        onInputValueChange?.({
+          method: changes.type,
+          newValue: changes.inputValue ?? '',
+        });
+
         if (changes.inputValue?.length) {
           if (changes.isOpen) {
             onSuggestionsFetchRequested(changes.inputValue);
@@ -392,5 +397,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     );
   },
 );
+
+BpkAutosuggest.defaultProps = {
+  theme: defaultTheme,
+};
 
 export default BpkAutosuggest;
