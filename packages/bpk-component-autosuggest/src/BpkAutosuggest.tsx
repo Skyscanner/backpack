@@ -221,11 +221,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     }, []);
 
     const onClickOrKeydown = () => {
-      if (
-        !isOpen &&
-        (typeof shouldRenderSuggestions !== 'function' ||
-          shouldRenderSuggestions(inputValue))
-      ) {
+      if (shouldRenderSuggestions) {
+        shouldRenderSuggestions(inputValue);
+        openMenu();
+      }
+
+      if (!isOpen && inputValue.length) {
         onSuggestionsFetchRequested(inputValue);
         openMenu();
       } else {
