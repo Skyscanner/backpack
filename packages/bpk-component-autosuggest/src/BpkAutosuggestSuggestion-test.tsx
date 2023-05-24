@@ -20,6 +20,7 @@
 
 import { render } from '@testing-library/react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import FlightIcon from '../../bpk-component-icon/lg/flight';
 
 import BpkAutosuggestSuggestion from './BpkAutosuggestSuggestion';
