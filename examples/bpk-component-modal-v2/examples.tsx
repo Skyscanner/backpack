@@ -128,7 +128,7 @@ class ModalContainer extends Component<Props, { isOpen: boolean }> {
         <BpkModalV2
           id="bpk-modal"
           ariaLabelledby="bpk-modal-label-my-dialog"
-          closeLabel="bpk-modal-button-close"
+          closeLabel="Close button"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           {...this.props}
