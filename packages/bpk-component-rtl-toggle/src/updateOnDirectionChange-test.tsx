@@ -38,7 +38,10 @@ describe('BpkRtlToggle', () => {
     );
     expect(forceUpdateSpy).not.toHaveBeenCalled();
 
-    fireEvent(getHtmlElement(), new Event(DIRECTION_CHANGE_EVENT));
+    fireEvent(
+      getHtmlElement() as HTMLElement,
+      new Event(DIRECTION_CHANGE_EVENT),
+    );
 
     expect(forceUpdateSpy).toHaveBeenCalled();
   });

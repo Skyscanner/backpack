@@ -17,23 +17,38 @@
  */
 
 import { Component } from 'react';
-import PropTypes from 'prop-types';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 
 import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
 
-const getDirection = () => getHtmlElement().dir || DIRECTIONS.LTR;
-
-const setDirection = (direction) => {
+const getDirection = () => {
   const htmlElement = getHtmlElement();
-
-  htmlElement.dir = direction;
-  htmlElement.dispatchEvent(new Event(DIRECTION_CHANGE_EVENT));
+  return htmlElement instanceof HTMLElement ? htmlElement.dir : DIRECTIONS.LTR;
 };
 
-class BpkRtlToggle extends Component {
-  constructor(props) {
+const setDirection = (direction: string) => {
+  const htmlElement = getHtmlElement();
+
+  if (htmlElement instanceof HTMLElement) {
+    htmlElement.dir = direction;
+    htmlElement.dispatchEvent(new Event(DIRECTION_CHANGE_EVENT));
+  }
+};
+
+type State = {
+  direction: string;
+};
+
+type Props = {
+  className?: string | null;
+};
+
+type InteractionEvents = KeyboardEvent | MouseEvent | TouchEvent;
+
+class BpkRtlToggle extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -49,13 +64,13 @@ class BpkRtlToggle extends Component {
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = (e) => {
+  handleKeyDown = (e: KeyboardEvent) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'r') {
       this.toggleRtl(e);
     }
   };
 
-  toggleRtl = (e) => {
+  toggleRtl = (e: InteractionEvents) => {
     e.preventDefault();
 
     const direction =
@@ -81,13 +96,5 @@ class BpkRtlToggle extends Component {
     );
   }
 }
-
-BpkRtlToggle.propTypes = {
-  className: PropTypes.string,
-};
-
-BpkRtlToggle.defaultProps = {
-  className: null,
-};
 
 export default BpkRtlToggle;

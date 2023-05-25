@@ -16,28 +16,40 @@
  * limitations under the License.
  */
 
+import type { ComponentType } from 'react';
 import { Component } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { wrapDisplayName } from '../../bpk-react-utils';
 
 import { getHtmlElement, DIRECTION_CHANGE_EVENT } from './utils';
 
-const updateOnDirectionChange = (EnhancedComponent) => {
+const updateOnDirectionChange = (
+  EnhancedComponent: ComponentType<any> | string,
+) => {
   class UpdateOnDirectionChange extends Component {
+    public static displayName: string;
+
     componentDidMount() {
-      getHtmlElement().addEventListener(
-        DIRECTION_CHANGE_EVENT,
-        this.onDirectionChange,
-        false,
-      );
+      const htmlElement = getHtmlElement();
+      if (htmlElement instanceof HTMLElement) {
+        htmlElement.addEventListener(
+          DIRECTION_CHANGE_EVENT,
+          this.onDirectionChange,
+          false,
+        );
+      }
     }
 
     componentWillUnmount() {
-      getHtmlElement().removeEventListener(
-        DIRECTION_CHANGE_EVENT,
-        this.onDirectionChange,
-        false,
-      );
+      const htmlElement = getHtmlElement();
+      if (htmlElement instanceof HTMLElement) {
+        htmlElement.removeEventListener(
+          DIRECTION_CHANGE_EVENT,
+          this.onDirectionChange,
+          false,
+        );
+      }
     }
 
     onDirectionChange = () => {
