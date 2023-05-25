@@ -17,8 +17,11 @@
  */
 
 import { render } from '@testing-library/react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusScope from 'a11y-focus-scope';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusStore from 'a11y-focus-store';
+import type { ComponentType } from 'react';
 
 import withScrim from './withScrim';
 import {
@@ -47,8 +50,8 @@ jest.mock('./scroll-utils', () => ({
 
 describe('BpkScrim', () => {
   describe('render', () => {
-    let TestComponent;
-    let Component;
+    let TestComponent: ComponentType<any> | string;
+    let Component: ComponentType<any>;
 
     beforeEach(() => {
       TestComponent = 'TestComponent';
@@ -101,8 +104,8 @@ describe('BpkScrim', () => {
   });
 
   describe('componentDidMount', () => {
-    let TestComponent;
-    let Component;
+    let TestComponent: ComponentType<any> | string;
+    let Component: ComponentType<any>;
 
     beforeEach(() => {
       TestComponent = () => <div>TestComponent</div>;
@@ -142,8 +145,8 @@ describe('BpkScrim', () => {
   });
 
   describe('componentWillUnmount', () => {
-    let TestComponent;
-    let Component;
+    let TestComponent: ComponentType<any> | string;
+    let Component: ComponentType<any>;
 
     beforeEach(() => {
       TestComponent = () => <div>TestComponent</div>;
