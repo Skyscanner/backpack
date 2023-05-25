@@ -15,10 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCard from './BpkCard';
@@ -29,26 +29,27 @@ const getClassName = cssModules(STYLES);
 export const ORIENTATION = {
   horizontal: 'horizontal',
   vertical: 'vertical',
-};
+} as const;
 
 export type Props = {
-  primaryContent: Node,
-  secondaryContent: Node,
-  orientation: $Values<typeof ORIENTATION>,
-  href: ?string,
-  className: ?string,
-  isElevated: boolean,
+  primaryContent: ReactNode;
+  secondaryContent: ReactNode;
+  orientation?: typeof ORIENTATION[keyof typeof ORIENTATION];
+  href?: string | null;
+  className?: string | null;
+  isElevated?: boolean;
+  [rest: string]: any;
 };
-const BpkDividedCard = (props: Props) => {
-  const {
-    className,
-    href,
-    isElevated,
-    orientation,
-    primaryContent,
-    secondaryContent,
-    ...rest
-  } = props;
+
+const BpkDividedCard = ({
+  orientation = ORIENTATION.horizontal,
+  href = null,
+  className = null,
+  isElevated = true,
+  primaryContent,
+  secondaryContent,
+  ...rest
+}: Props) => {
   const isVertical = orientation === ORIENTATION.vertical;
   const classNames = getClassName(
     'bpk-divided-card',
@@ -78,22 +79,6 @@ const BpkDividedCard = (props: Props) => {
       </div>
     </BpkCard>
   );
-};
-
-BpkDividedCard.propTypes = {
-  primaryContent: PropTypes.node.isRequired,
-  secondaryContent: PropTypes.node.isRequired,
-  orientation: PropTypes.oneOf(Object.keys(ORIENTATION)),
-  href: PropTypes.string,
-  className: PropTypes.string,
-  isElevated: PropTypes.bool,
-};
-
-BpkDividedCard.defaultProps = {
-  orientation: ORIENTATION.horizontal,
-  href: null,
-  className: null,
-  isElevated: true,
 };
 
 export default BpkDividedCard;
