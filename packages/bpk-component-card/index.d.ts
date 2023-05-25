@@ -16,24 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkCard from './src/BpkCard';
+import BpkCardWrapper from './src/BpkCardWrapper';
+import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
 
-import { render } from '@testing-library/react';
-
-import TransitionInitialMount from './TransitionInitialMount';
-
-describe('TransitionInitialMount', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <TransitionInitialMount
-        appearClassName="block--appear"
-        appearActiveClassName="block--apear-active"
-        transitionTimeout={250}
-      >
-        <p>My transition</p>
-      </TransitionInitialMount>,
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+export { ORIENTATION, BpkDividedCard, BpkCardWrapper };
+export default BpkCard;

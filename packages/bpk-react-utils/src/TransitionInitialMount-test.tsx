@@ -16,21 +16,22 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
 
-const DIRECTIONS = {
-  LTR: 'ltr',
-  RTL: 'rtl',
-};
+import TransitionInitialMount from './TransitionInitialMount';
 
-const getDirection = () =>
-  (
-    (typeof document !== 'undefined' &&
-      document.documentElement !== null &&
-      document.documentElement.getAttribute('dir')) ||
-    DIRECTIONS.LTR
-  ).toLowerCase();
+describe('TransitionInitialMount', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(
+      <TransitionInitialMount
+        appearClassName="block--appear"
+        appearActiveClassName="block--apear-active"
+        transitionTimeout={250}
+      >
+        <p>My transition</p>
+      </TransitionInitialMount>,
+    );
 
-const isRTL = () => getDirection() === DIRECTIONS.RTL;
-
-export default isRTL;
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

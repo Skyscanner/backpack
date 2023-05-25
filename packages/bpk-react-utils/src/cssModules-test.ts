@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import cssModules from './cssModules';
 
 describe('cssModules', () => {

@@ -16,14 +16,12 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-export default (styles: {} = {}) =>
-  (...classNames: Array<?string | ?boolean | ?number | ?{}>) =>
-    classNames.reduce((className, currentClass) => {
-      if (currentClass && typeof currentClass === 'string') {
-        const realName = styles[currentClass] || currentClass;
-        return className ? `${className} ${realName}` : realName;
-      }
-      return className;
-    }, '');
+import type { ReactNode } from 'react';
+type Props = {
+    appearClassName: string;
+    appearActiveClassName: string;
+    transitionTimeout: number;
+    children: string | ReactNode;
+};
+declare const TransitionInitialMount: ({ appearActiveClassName, appearClassName, children, transitionTimeout, }: Props) => JSX.Element;
+export default TransitionInitialMount;

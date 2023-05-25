@@ -16,16 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-const isDeviceIphone = () =>
-  /iPhone/i.test(
-    typeof window !== 'undefined' ? window.navigator.userAgent : '',
-  );
-
-const isDeviceIpad = () =>
-  /iPad/i.test(typeof window !== 'undefined' ? window.navigator.userAgent : '');
-
-const isDeviceIos = () => isDeviceIphone() || isDeviceIpad();
-
+declare const isDeviceIphone: () => boolean;
+declare const isDeviceIpad: () => boolean;
+declare const isDeviceIos: () => boolean;
 export { isDeviceIphone, isDeviceIpad, isDeviceIos };

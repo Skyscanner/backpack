@@ -16,13 +16,24 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import type { ReactNode } from 'react';
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
-
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+type Props = {
+  children: ReactNode | string;
+  className?: string | null;
+  href?: string | null;
+  padded?: boolean;
+  blank?: boolean;
+  atomic?: boolean;
+  [rest: string]: any;
+};
+declare const BpkCard: ({
+  atomic,
+  blank,
+  children,
+  className,
+  href,
+  padded,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkCard;

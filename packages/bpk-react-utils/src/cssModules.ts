@@ -15,12 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkCard from './src/BpkCard';
-import BpkCardWrapper from './src/BpkCardWrapper';
-import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
-
-export { ORIENTATION, BpkDividedCard, BpkCardWrapper };
-
-export default BpkCard;
+export default (styles: { [key: string]: any } = {}) =>
+  (...classNames: Array<string | boolean | number | {} | null | undefined>) =>
+    classNames.reduce((className: string, currentClass) => {
+      if (currentClass && typeof currentClass === 'string') {
+        const realName = styles[currentClass] || currentClass;
+        return className ? `${className} ${realName}` : realName;
+      }
+      return className;
+    }, '');

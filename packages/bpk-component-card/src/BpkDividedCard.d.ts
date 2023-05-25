@@ -16,13 +16,28 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import type { ReactNode } from 'react';
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
-
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+export declare const ORIENTATION: {
+  readonly horizontal: 'horizontal';
+  readonly vertical: 'vertical';
+};
+export type Props = {
+  primaryContent: ReactNode;
+  secondaryContent: ReactNode;
+  orientation?: typeof ORIENTATION[keyof typeof ORIENTATION];
+  href?: string | null;
+  className?: string | null;
+  isElevated?: boolean;
+  [rest: string]: any;
+};
+declare const BpkDividedCard: ({
+  className,
+  href,
+  isElevated,
+  orientation,
+  primaryContent,
+  secondaryContent,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkDividedCard;

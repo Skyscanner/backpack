@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import isRTL from './isRTL';
 
 describe('isRTL undefined', () => {
@@ -38,19 +36,17 @@ describe('isRTL document defined', () => {
     writable: false,
   });
   it('should return true when documentElement direction attribute is `ltr`', () => {
-    // eslint-disable-next-line prefer-destructuring
-    const documentElement: ?HTMLElement = document.documentElement;
+    const { documentElement } = document;
     if (documentElement) {
-      documentElement.getAttribute.mockReturnValue('ltr');
+      (documentElement.getAttribute as jest.Mock).mockReturnValue('ltr');
     }
     expect(isRTL()).toBe(false);
   });
 
   it('should return true when documentElement direction attribute is `rtl`', () => {
-    // eslint-disable-next-line prefer-destructuring
-    const documentElement: ?HTMLElement = document.documentElement;
+    const { documentElement } = document;
     if (documentElement) {
-      documentElement.getAttribute.mockReturnValue('rtl');
+      (documentElement.getAttribute as jest.Mock).mockReturnValue('rtl');
     }
     expect(isRTL()).toBe(true);
   });

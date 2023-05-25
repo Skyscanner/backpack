@@ -16,13 +16,10 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import BpkCard from './src/BpkCard';
+import BpkCardWrapper from './src/BpkCardWrapper';
+import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
+export { ORIENTATION, BpkDividedCard, BpkCardWrapper };
 
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+export default BpkCard;
