@@ -23,7 +23,6 @@ import { useEffect, useRef } from 'react';
 import BpkCloseButton from '../../../bpk-component-close-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
 
 import STYLES from './BpKModal.module.scss';
