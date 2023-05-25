@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2022 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,7 @@
  * limitations under the License.
  */
 
-const wrapDisplayName = (Component, hoc) => {
-  if (!Component) {
-    return `${hoc}()`;
-  }
-
-  if (typeof Component === 'string') {
-    return `${hoc}(${Component})`;
-  }
-
-  return `${hoc}(${Component.displayName || Component.name || 'Component'})`;
-};
-
-export default wrapDisplayName;
+declare const isDeviceIphone: () => boolean;
+declare const isDeviceIpad: () => boolean;
+declare const isDeviceIos: () => boolean;
+export { isDeviceIphone, isDeviceIpad, isDeviceIos };

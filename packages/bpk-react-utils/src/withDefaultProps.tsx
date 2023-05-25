@@ -16,30 +16,32 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node, AbstractComponent } from 'react';
+import type { ReactNode, ComponentType } from 'react';
 
 import wrapDisplayName from './wrapDisplayName';
 
 type Props = {
-  children: ?Node,
-  className: ?string,
+  children?: ReactNode | string;
+  className?: string | null;
+  [rest: string]: any;
 };
 
 type DefaultProps = {
-  className?: ?string,
+  className?: string;
+  [rest: string]: any;
 };
 
 const withDefaultProps = (
-  WrappedComponent: AbstractComponent<any>,
+  WrappedComponent: ComponentType<any>,
   defaultProps: DefaultProps,
 ) => {
   const { className: defaultClassName, ...defaultRest } = defaultProps;
 
-  const component = (props: Props) => {
-    const { children, className: innerClassName, ...rest } = props;
+  const component = ({
+    children = null,
+    className: innerClassName = null,
+    ...rest
+  }: Props) => {
     const classNames = [];
 
     if (defaultClassName) {
@@ -50,7 +52,6 @@ const withDefaultProps = (
     }
 
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <WrappedComponent
         className={classNames.join(' ')}
         {...defaultRest}
@@ -59,15 +60,6 @@ const withDefaultProps = (
         {children}
       </WrappedComponent>
     );
-  };
-
-  component.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-  };
-  component.defaultProps = {
-    children: null,
-    className: null,
   };
 
   component.displayName = wrapDisplayName(WrappedComponent, 'withDefaultProps');

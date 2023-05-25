@@ -16,16 +16,12 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-const isDeviceIphone = () =>
-  /iPhone/i.test(
-    typeof window !== 'undefined' ? window.navigator.userAgent : '',
-  );
-
-const isDeviceIpad = () =>
-  /iPad/i.test(typeof window !== 'undefined' ? window.navigator.userAgent : '');
-
-const isDeviceIos = () => isDeviceIphone() || isDeviceIpad();
-
-export { isDeviceIphone, isDeviceIpad, isDeviceIos };
+export default (styles: { [key: string]: any } = {}) =>
+  (...classNames: Array<string | boolean | number | {} | null | undefined>) =>
+    classNames.reduce((className: string, currentClass) => {
+      if (currentClass && typeof currentClass === 'string') {
+        const realName = styles[currentClass] || currentClass;
+        return className ? `${className} ${realName}` : realName;
+      }
+      return className;
+    }, '');

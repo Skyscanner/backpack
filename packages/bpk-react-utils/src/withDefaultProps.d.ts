@@ -16,21 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-const DIRECTIONS = {
-  LTR: 'ltr',
-  RTL: 'rtl',
+import type { ReactNode, ComponentType } from 'react';
+type Props = {
+    children?: ReactNode | string;
+    className?: string | null;
+    [rest: string]: any;
 };
-
-const getDirection = () =>
-  (
-    (typeof document !== 'undefined' &&
-      document.documentElement !== null &&
-      document.documentElement.getAttribute('dir')) ||
-    DIRECTIONS.LTR
-  ).toLowerCase();
-
-const isRTL = () => getDirection() === DIRECTIONS.RTL;
-
-export default isRTL;
+type DefaultProps = {
+    className?: string;
+    [rest: string]: any;
+};
+declare const withDefaultProps: (WrappedComponent: ComponentType<any>, defaultProps: DefaultProps) => {
+    ({ children, className: innerClassName, ...rest }: Props): JSX.Element;
+    displayName: string;
+};
+export default withDefaultProps;

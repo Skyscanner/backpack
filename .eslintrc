@@ -21,6 +21,7 @@
       }
     }
   },
+  "ignorePatterns": ["packages/**/*.d.ts"],
   "rules": {
     // Temp adding this whilst migrating to the latest eslint & TS migration
     // Activate this when we run the migration scripts

@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,21 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import type { ComponentType } from 'react';
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
+const wrapDisplayName = (
+  Component: ComponentType<any> | string | null,
+  hoc: string,
+) => {
+  if (!Component) {
+    return `${hoc}()`;
+  }
 
-const getClassName = cssModules(STYLES);
+  if (typeof Component === 'string') {
+    return `${hoc}(${Component})`;
+  }
 
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+  return `${hoc}(${Component.displayName || Component.name || 'Component'})`;
+};
+
+export default wrapDisplayName;

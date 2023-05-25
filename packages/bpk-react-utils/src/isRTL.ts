@@ -16,13 +16,19 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+const DIRECTIONS = {
+  LTR: 'ltr',
+  RTL: 'rtl',
+} as const;
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
+const getDirection = () =>
+  (
+    (typeof document !== 'undefined' &&
+      document.documentElement !== null &&
+      document.documentElement.getAttribute('dir')) ||
+    DIRECTIONS.LTR
+  ).toLowerCase();
 
-const getClassName = cssModules(STYLES);
+const isRTL = () => getDirection() === DIRECTIONS.RTL;
 
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+export default isRTL;
