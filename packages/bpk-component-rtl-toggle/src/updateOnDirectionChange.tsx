@@ -19,7 +19,6 @@
 import type { ComponentType } from 'react';
 import { Component } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { wrapDisplayName } from '../../bpk-react-utils';
 
 import { getHtmlElement, DIRECTION_CHANGE_EVENT } from './utils';
