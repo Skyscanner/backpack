@@ -1,0 +1,168 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index.scss';
+
+@mixin center-dialog {
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: $bpk-border-radius-md;
+  inset-block-start: 50%;
+}
+
+@mixin header {
+  display: flex;
+  min-height: bpk-spacing-lg();
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bpk-modal-wrapper.bpk-modal-polyfill {
+  .bpk-modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-color: $bpk-scrim-day;
+    inset: 0;
+    inset-block-end: 0;
+    inset-inline: 0;
+    inset-inline-end: 0;
+  }
+
+  .bpk-modal {
+    position: fixed;
+    display: block;
+    z-index: 1;
+  }
+
+  .bpk-modal:not([data-open='true']),
+  .bpk-modal-backdrop:not([data-open='true']) {
+    display: none;
+  }
+}
+
+.bpk-modal {
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background: $bpk-canvas-contrast-day;
+  overflow-y: scroll;
+  inset-block-start: 0;
+  inset-inline: 0;
+  inset-inline-end: 0;
+  scrollbar-width: none;
+
+  @include bpk-box-shadow-xl;
+
+  @include bpk-breakpoint-above-mobile {
+    width: $bpk-modal-max-width;
+    max-width: none;
+    height: fit-content;
+    max-height: 90%;
+
+    @include center-dialog;
+
+    &--full-screen-desktop {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      border-radius: 0;
+    }
+
+    &--wide {
+      width: $bpk-modal-wide-max-width;
+    }
+  }
+
+  &--no-full-screen-mobile {
+    width: 90%;
+    max-width: none;
+    height: fit-content;
+    max-height: 90%;
+
+    @include center-dialog;
+
+    @include bpk-breakpoint-above-mobile {
+      width: $bpk-modal-max-width;
+      max-width: none;
+    }
+  }
+
+  &::backdrop {
+    position: fixed;
+    background-color: $bpk-scrim-day;
+    inset: 0;
+    inset-block-end: 0;
+    inset-inline: 0;
+    inset-inline-end: 0;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__header-title {
+    padding: bpk-spacing-base();
+    border-block-end: $bpk-input-border;
+
+    @include header;
+  }
+
+  &__header-title-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    padding-inline-end: bpk-spacing-base();
+
+    @include bpk-label-1;
+  }
+
+  &__button-container {
+    padding-block-start: bpk-spacing-base();
+    padding-inline-end: bpk-spacing-base();
+
+    @include header;
+  }
+
+  &__container {
+    min-height: 100%;
+    padding: $bpk-modal-content-padding;
+
+    &--padded {
+      padding: 0;
+    }
+
+    &--full-screen-desktop {
+      height: 100%;
+    }
+  }
+}

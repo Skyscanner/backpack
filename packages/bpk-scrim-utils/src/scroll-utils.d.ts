@@ -16,13 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import themeAttributes from './src/themeAttributes';
-import BpkModal, { type Props, propTypes, defaultProps } from './src/BpkModal';
-
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2 };
+export declare const storeScroll: () => void;
+export declare const restoreScroll: () => void;
+export declare const fixBody: () => void;
+export declare const unfixBody: () => void;
+export declare const lockScroll: () => void;
+export declare const unlockScroll: () => void;
