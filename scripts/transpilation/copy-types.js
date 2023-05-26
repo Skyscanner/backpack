@@ -30,11 +30,18 @@ const typeFiles = execSync(
 
 // eslint-disable-next-line array-callback-return
 typeFiles.map((typeFile) => {
-  const componentPath = typeFile.split('packages/');
+  let component;
+  const paths = typeFile.split('packages/');
   const regEx = new RegExp('/');
-  const component = componentPath[1].split(regEx);
+  const componentPath = paths[1].split(regEx);
 
-  execSync(`cp ${typeFile} dist/${component[0]}/${component[1]}`);
+  // V2 components are nested inside a folder
+  if (paths[1].match(/V2/)) {
+    component = `${componentPath[0]}/${componentPath[1]}/${componentPath[2]}`;
+  } else {
+    component = `${componentPath[0]}/${componentPath[1]}`;
+  }
+  execSync(`cp ${typeFile} dist/${component}`);
 });
 
 // eslint-disable-next-line no-console

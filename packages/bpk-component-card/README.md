@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ### BpkCard
 
-```js
+```tsx
 import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
 
 export default () => (
@@ -24,7 +24,7 @@ export default () => (
 
 ### BpkDividedCard
 
-```js
+```tsx
 import {
   BpkDividedCard,
   ORIENTATION,
@@ -50,7 +50,7 @@ export default () => (
 
 ### BpkCardWrapper
 
-```js
+```tsx
 import { BpkCardWrapper } from '@skyscanner/backpack-web/bpk-component-card';
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
