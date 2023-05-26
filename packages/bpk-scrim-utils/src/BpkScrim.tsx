@@ -16,13 +16,30 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import type { SyntheticEvent } from 'react';
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
+import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+
+import STYLES from './bpk-scrim.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+type Props = {
+  onClose?: (e?: SyntheticEvent) => void | null;
+};
+const BpkScrim = ({ onClose = () => {} }: Props) => (
+  <TransitionInitialMount
+    appearClassName={getClassName('bpk-scrim--appear')}
+    appearActiveClassName={getClassName('bpk-scrim--appear-active')}
+    transitionTimeout={200}
+  >
+    <div
+      role="presentation"
+      className={getClassName('bpk-scrim')}
+      onMouseDown={onClose}
+      onTouchStart={onClose}
+    />
+  </TransitionInitialMount>
+);
+
+export default BpkScrim;

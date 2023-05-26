@@ -17,6 +17,8 @@
  */
 
 /* @flow strict */
+
+// TODO: Remove this file once all BPK components have been migrated to TS
 import { type PropType } from 'prop-types';
 
 // We disable eslint on the below line because it breaks the flow type definitions and the FlowIssue comment below

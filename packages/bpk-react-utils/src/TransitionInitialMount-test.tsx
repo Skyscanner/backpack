@@ -16,13 +16,22 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import { render } from '@testing-library/react';
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
+import TransitionInitialMount from './TransitionInitialMount';
 
-const getClassName = cssModules(STYLES);
+describe('TransitionInitialMount', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(
+      <TransitionInitialMount
+        appearClassName="block--appear"
+        appearActiveClassName="block--apear-active"
+        transitionTimeout={250}
+      >
+        <p>My transition</p>
+      </TransitionInitialMount>,
+    );
 
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

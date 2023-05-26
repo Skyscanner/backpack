@@ -16,13 +16,6 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
-
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+import type { ComponentType } from 'react';
+declare const wrapDisplayName: (Component: ComponentType<any> | string | null, hoc: string) => string;
+export default wrapDisplayName;

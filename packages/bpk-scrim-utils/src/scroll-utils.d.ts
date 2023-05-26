@@ -16,13 +16,9 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
-
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+export declare const storeScroll: () => void;
+export declare const restoreScroll: () => void;
+export declare const fixBody: () => void;
+export declare const unfixBody: () => void;
+export declare const lockScroll: () => void;
+export declare const unlockScroll: () => void;

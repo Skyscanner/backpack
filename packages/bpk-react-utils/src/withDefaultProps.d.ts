@@ -16,13 +16,18 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
-
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+import type { ReactNode, ComponentType } from 'react';
+type Props = {
+    children?: ReactNode | string;
+    className?: string | null;
+    [rest: string]: any;
+};
+type DefaultProps = {
+    className?: string;
+    [rest: string]: any;
+};
+declare const withDefaultProps: (WrappedComponent: ComponentType<any>, defaultProps: DefaultProps) => {
+    ({ children, className: innerClassName, ...rest }: Props): JSX.Element;
+    displayName: string;
+};
+export default withDefaultProps;

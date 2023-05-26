@@ -16,13 +16,12 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
-
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+export default (styles: { [key: string]: any } = {}) =>
+  (...classNames: Array<string | boolean | number | {} | null | undefined>) =>
+    classNames.reduce((className: string, currentClass) => {
+      if (currentClass && typeof currentClass === 'string') {
+        const realName = styles[currentClass] || currentClass;
+        return className ? `${className} ${realName}` : realName;
+      }
+      return className;
+    }, '');

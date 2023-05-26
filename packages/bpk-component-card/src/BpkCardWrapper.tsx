@@ -16,29 +16,41 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkBoilerplate.module.scss';
+import STYLES from './BpkCardWrapper.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
+type Props = {
+  card: ReactNode;
   className?: string | null;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+  backgroundColor: string;
+  header: ReactNode;
 };
-const BpkBoilerplate = ({ className = null, ...rest }: Props) => {
-  const classNames = getClassName('bpk-boilerplate', className);
+
+const BpkCardWrapper = ({
+  backgroundColor,
+  card,
+  className = null,
+  header,
+}: Props) => {
+  const classNames = getClassName('bpk-card-wrapper', className);
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={classNames} {...rest}>
-      I am an example component.
+    <div
+      className={classNames}
+      style={{
+        // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
+        '--background-color': backgroundColor,
+      }}
+    >
+      <div className={getClassName('bpk-card-wrapper--header')}>{header}</div>
+      <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>
     </div>
   );
 };
 
-BpkBoilerplate.defaultProps = {
-  className: null,
-};
-
-export default BpkBoilerplate;
+export default BpkCardWrapper;

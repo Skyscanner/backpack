@@ -16,13 +16,12 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
-
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+import type { ReactNode } from 'react';
+type Props = {
+    appearClassName: string;
+    appearActiveClassName: string;
+    transitionTimeout: number;
+    children: string | ReactNode;
+};
+declare const TransitionInitialMount: ({ appearActiveClassName, appearClassName, children, transitionTimeout, }: Props) => JSX.Element;
+export default TransitionInitialMount;

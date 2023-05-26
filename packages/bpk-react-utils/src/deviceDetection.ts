@@ -16,13 +16,14 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+const isDeviceIphone = () =>
+  /iPhone/i.test(
+    typeof window !== 'undefined' ? window.navigator.userAgent : '',
+  );
 
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
+const isDeviceIpad = () =>
+  /iPad/i.test(typeof window !== 'undefined' ? window.navigator.userAgent : '');
 
-const getClassName = cssModules(STYLES);
+const isDeviceIos = () => isDeviceIphone() || isDeviceIpad();
 
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+export { isDeviceIphone, isDeviceIpad, isDeviceIos };

@@ -16,13 +16,7 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
-
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+declare const isDeviceIphone: () => boolean;
+declare const isDeviceIpad: () => boolean;
+declare const isDeviceIos: () => boolean;
+export { isDeviceIphone, isDeviceIpad, isDeviceIos };

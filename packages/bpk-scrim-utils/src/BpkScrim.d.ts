@@ -16,13 +16,9 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkIcon.module.scss';
-import classNameModifierHOCFactory from './classNameModifierHOCFactory';
-
-const getClassName = cssModules(STYLES);
-
-export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
-]);
+import type { SyntheticEvent } from 'react';
+type Props = {
+    onClose?: (e?: SyntheticEvent) => void | null;
+};
+declare const BpkScrim: ({ onClose }: Props) => JSX.Element;
+export default BpkScrim;
