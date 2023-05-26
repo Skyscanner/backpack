@@ -66,8 +66,9 @@ export type PropsWithClearButtonMode = BaseProps & {
 
 export type Props = PropsWithoutClearButonMode | PropsWithClearButtonMode;
 
+// TODO - this function should be removed once all input examples have been migrated to TS
 export const clearablePropType = (
-  props: Props,
+  props: any,
   propName: string,
   componentName: string,
 ) => {

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-// @ts-nocheck
+// TODO - this file should be removed once all input examples have been migrated to TS
 
 import { CLEAR_BUTTON_MODES, clearablePropType } from './common-types';
 
@@ -53,7 +53,7 @@ describe('clearablePropType', () => {
         clearButtonMode: CLEAR_BUTTON_MODES.always,
       };
       expect(
-        clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
+        clearablePropType(props, PROP_NAME, COMPONENT_NAME)?.toString(),
       ).toEqual(
         "Error: Invalid prop `onClear` supplied to `ExampleComponent`. When `clearButtonMode` is not 'never', `onClear` must be supplied.",
       );
@@ -68,7 +68,7 @@ describe('clearablePropType', () => {
         onClear: null,
       };
       expect(
-        clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
+        clearablePropType(props, PROP_NAME, COMPONENT_NAME)?.toString(),
       ).toEqual(
         "Error: Invalid prop `onClear` supplied to `ExampleComponent`. When `clearButtonMode` is not 'never', `onClear` must be supplied.",
       );
@@ -83,7 +83,7 @@ describe('clearablePropType', () => {
         onClear: 'Hello world',
       };
       expect(
-        clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
+        clearablePropType(props, PROP_NAME, COMPONENT_NAME)?.toString(),
       ).toEqual(
         'Error: Invalid prop `onClear` supplied to `ExampleComponent`. `onClear` must be a function.',
       );
@@ -120,7 +120,7 @@ describe('clearablePropType', () => {
         clearButtonMode: CLEAR_BUTTON_MODES.always,
       };
       expect(
-        clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
+        clearablePropType(props, PROP_NAME, COMPONENT_NAME)?.toString(),
       ).toEqual(
         "Error: Invalid prop `clearButtonLabel` supplied to `ExampleComponent`. When `clearButtonMode` is not 'never', `clearButtonLabel` must be supplied.",
       );
@@ -135,7 +135,7 @@ describe('clearablePropType', () => {
         clearButtonLabel: null,
       };
       expect(
-        clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
+        clearablePropType(props, PROP_NAME, COMPONENT_NAME)?.toString(),
       ).toEqual(
         "Error: Invalid prop `clearButtonLabel` supplied to `ExampleComponent`. When `clearButtonMode` is not 'never', `clearButtonLabel` must be supplied.",
       );
@@ -150,7 +150,7 @@ describe('clearablePropType', () => {
         clearButtonLabel: 42,
       };
       expect(
-        clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
+        clearablePropType(props, PROP_NAME, COMPONENT_NAME)?.toString(),
       ).toEqual(
         'Error: Invalid prop `clearButtonLabel` supplied to `ExampleComponent`. `clearButtonLabel` must be a string.',
       );
