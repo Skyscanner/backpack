@@ -26,8 +26,20 @@ const defaultProps = {
   icon: null,
 };
 
-const BpkBannerAlert = (props: CommonProps) => (
-  <BpkBannerAlertInner {...defaultProps} {...props} />
+const BpkBannerAlert = ({
+  animateOnEnter = false,
+  animateOnLeave = false,
+  icon = null,
+  show = true,
+  ...rest
+}: CommonProps) => (
+  <BpkBannerAlertInner
+    animateOnEnter={animateOnEnter}
+    animateOnLeave={animateOnLeave}
+    show={show}
+    icon={icon}
+    {...rest}
+  />
 );
 
 export default BpkBannerAlert;

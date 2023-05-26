@@ -19,5 +19,11 @@
 /// <reference types="react" />
 import type { CommonProps } from './common-types';
 
-declare const BpkBannerAlert: (props: CommonProps) => JSX.Element;
+declare const BpkBannerAlert: ({
+  animateOnEnter,
+  animateOnLeave,
+  icon,
+  show,
+  ...rest
+}: CommonProps) => JSX.Element;
 export default BpkBannerAlert;

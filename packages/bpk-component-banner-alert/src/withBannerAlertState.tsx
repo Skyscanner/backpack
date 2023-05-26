@@ -19,7 +19,6 @@
 import { Component } from 'react';
 import type { ComponentType } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { wrapDisplayName } from '../../bpk-react-utils';
 
 import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';

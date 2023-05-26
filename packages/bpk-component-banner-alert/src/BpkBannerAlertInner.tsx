@@ -35,7 +35,6 @@ import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import ChevronDownIcon from '../../bpk-component-icon/lg/chevron-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
