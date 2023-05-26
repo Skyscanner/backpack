@@ -19,7 +19,6 @@
 import type { ComponentType } from 'react';
 import { Component } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { isRTL } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';

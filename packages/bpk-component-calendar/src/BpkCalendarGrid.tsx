@@ -19,7 +19,6 @@
 import type { ElementType } from 'react';
 import { Component } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 
 import Week from './Week';

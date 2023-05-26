@@ -18,7 +18,6 @@
 
 import type { ComponentType } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';

@@ -19,7 +19,6 @@
 import type { KeyboardEvent } from 'react';
 import { PureComponent } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import type { DateModifiers } from './custom-proptypes';

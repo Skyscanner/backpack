@@ -19,7 +19,6 @@
 import type { ComponentType, ElementType } from 'react';
 import { Component } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import {
