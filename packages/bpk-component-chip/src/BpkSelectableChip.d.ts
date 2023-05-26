@@ -16,23 +16,24 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import BpkSelectableChip, {
-  type Props as SelectableProps,
-} from './src/BpkSelectableChip';
-import BpkDismissibleChip, {
-  type Props as DismissibleProps,
-} from './src/BpkDismissibleChip';
-import BpkDropdownChip, {
-  type Props as DropdownProps,
-} from './src/BpkDropdownChip';
-import { CHIP_TYPES } from './src/commonTypes';
-import themeAttributes from './src/themeAttributes';
+import type { CommonProps } from './commonTypes';
 
-export type BpkSelectableChipProps = SelectableProps;
-export type BpkDismissibleChipProps = DismissibleProps;
-export type BpkDropdownChipProps = DropdownProps;
-
+export interface Props extends CommonProps {
+  role?: string;
+  trailingAccessoryView?: ReactNode;
+}
+declare const BpkSelectableChip: ({
+  accessibilityLabel,
+  children,
+  className,
+  disabled,
+  leadingAccessoryView,
+  role,
+  selected,
+  trailingAccessoryView,
+  type,
+  ...rest
+}: Props) => JSX.Element;
 export default BpkSelectableChip;
-export { BpkDismissibleChip, BpkDropdownChip, CHIP_TYPES, themeAttributes };

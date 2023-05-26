@@ -192,7 +192,7 @@ exports[`BpkSelectableChip should render correctly with type="default", selected
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onDark" 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-dark" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -210,7 +210,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onDark" and a leading accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-dark" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -235,7 +235,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and a lead
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onDark" and a trailing accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-dark" and a trailing accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -260,7 +260,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and a trai
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onDark" and both a leading and trailing accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-dark" and both a leading and trailing accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -292,7 +292,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and both a
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onDark" and disabled 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-dark" and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -311,7 +311,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and disabl
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onDark" and selected 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-dark" and selected 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
@@ -329,7 +329,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark" and select
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onDark", selected and disabled 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-dark", selected and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
@@ -348,7 +348,7 @@ exports[`BpkSelectableChip should render correctly with type="onDark", selected 
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onImage" 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-image" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -366,7 +366,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onImage" and a leading accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-image" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -391,7 +391,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and a lea
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onImage" and a trailing accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-image" and a trailing accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -416,7 +416,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and a tra
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onImage" and both a leading and trailing accessory view 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-image" and both a leading and trailing accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -448,7 +448,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and both 
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onImage" and disabled 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-image" and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -467,7 +467,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and disab
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onImage" and selected 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-image" and selected 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
@@ -485,7 +485,7 @@ exports[`BpkSelectableChip should render correctly with type="onImage" and selec
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="onImage", selected and disabled 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-image", selected and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"

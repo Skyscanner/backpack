@@ -238,7 +238,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" and disa
 </DocumentFragment>
 `;
 
-exports[`BpkDismissibleChip should render correctly with type="onDark" 1`] = `
+exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
@@ -271,7 +271,7 @@ exports[`BpkDismissibleChip should render correctly with type="onDark" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkDismissibleChip should render correctly with type="onDark" and a leading accessory view 1`] = `
+exports[`BpkDismissibleChip should render correctly with type="on-dark" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
@@ -311,7 +311,7 @@ exports[`BpkDismissibleChip should render correctly with type="onDark" and a lea
 </DocumentFragment>
 `;
 
-exports[`BpkDismissibleChip should render correctly with type="onDark" and disabled 1`] = `
+exports[`BpkDismissibleChip should render correctly with type="on-dark" and disabled 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
@@ -344,7 +344,7 @@ exports[`BpkDismissibleChip should render correctly with type="onDark" and disab
 </DocumentFragment>
 `;
 
-exports[`BpkDismissibleChip should render correctly with type="onImage" 1`] = `
+exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
@@ -377,7 +377,7 @@ exports[`BpkDismissibleChip should render correctly with type="onImage" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkDismissibleChip should render correctly with type="onImage" and a leading accessory view 1`] = `
+exports[`BpkDismissibleChip should render correctly with type="on-image" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
@@ -417,7 +417,7 @@ exports[`BpkDismissibleChip should render correctly with type="onImage" and a le
 </DocumentFragment>
 `;
 
-exports[`BpkDismissibleChip should render correctly with type="onImage" and disabled 1`] = `
+exports[`BpkDismissibleChip should render correctly with type="on-image" and disabled 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"

@@ -240,7 +240,7 @@ exports[`BpkDropdownChip should render correctly with type="default", selected a
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onDark" 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-dark" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -273,7 +273,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onDark" and a leading accessory view 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-dark" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -313,7 +313,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark" and a leadin
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onDark" and disabled 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-dark" and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -347,7 +347,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark" and disabled
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onDark" and selected 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-dark" and selected 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
@@ -380,7 +380,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark" and selected
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onDark", selected and disabled 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-dark", selected and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
@@ -414,7 +414,7 @@ exports[`BpkDropdownChip should render correctly with type="onDark", selected an
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onImage" 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-image" 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -447,7 +447,7 @@ exports[`BpkDropdownChip should render correctly with type="onImage" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onImage" and a leading accessory view 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-image" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -487,7 +487,7 @@ exports[`BpkDropdownChip should render correctly with type="onImage" and a leadi
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onImage" and disabled 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-image" and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -521,7 +521,7 @@ exports[`BpkDropdownChip should render correctly with type="onImage" and disable
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onImage" and selected 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-image" and selected 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
@@ -554,7 +554,7 @@ exports[`BpkDropdownChip should render correctly with type="onImage" and selecte
 </DocumentFragment>
 `;
 
-exports[`BpkDropdownChip should render correctly with type="onImage", selected and disabled 1`] = `
+exports[`BpkDropdownChip should render correctly with type="on-image", selected and disabled 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"

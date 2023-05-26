@@ -16,44 +16,35 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
 import STYLES from './BpkSelectableChip.module.scss';
-import {
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
-  type CommonProps,
-} from './commonTypes';
+import type { CommonProps } from './commonTypes';
+import { CHIP_TYPES } from './commonTypes';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  ...CommonProps,
-  role: string,
-  selected: boolean,
-  trailingAccessoryView: ?Node,
-};
+export interface Props extends CommonProps {
+  role?: string;
+  trailingAccessoryView?: ReactNode;
+}
 
-const BpkSelectableChip = (props: Props) => {
-  const {
-    accessibilityLabel,
-    children,
-    className,
-    disabled,
-    leadingAccessoryView,
-    role,
-    selected,
-    trailingAccessoryView,
-    type,
-    ...rest
-  } = props;
-
+const BpkSelectableChip = ({
+  role = 'checkbox',
+  selected = false,
+  trailingAccessoryView = null,
+  className,
+  disabled = false,
+  leadingAccessoryView = null,
+  type = CHIP_TYPES.default,
+  accessibilityLabel,
+  children,
+  ...rest
+}: Props) => {
   const classNames = getClassName(
     'bpk-chip',
     `bpk-chip--${type}`,
@@ -64,9 +55,8 @@ const BpkSelectableChip = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'
     <button
-      aria-checked={role === 'button' ? null : selected}
+      aria-checked={role === 'button' ? undefined : selected}
       className={classNames}
       disabled={disabled}
       role={role}
@@ -87,20 +77,6 @@ const BpkSelectableChip = (props: Props) => {
       )}
     </button>
   );
-};
-
-BpkSelectableChip.propTypes = {
-  ...COMMON_PROP_TYPES,
-  role: PropTypes.string,
-  selected: PropTypes.bool,
-  trailingAccessoryView: PropTypes.node,
-};
-
-BpkSelectableChip.defaultProps = {
-  ...COMMON_DEFAULT_PROPS,
-  role: 'checkbox',
-  selected: false,
-  trailingAccessoryView: null,
 };
 
 export default BpkSelectableChip;

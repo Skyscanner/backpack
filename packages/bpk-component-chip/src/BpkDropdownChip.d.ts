@@ -16,15 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+/// <reference types="react" />
+import type { CommonProps as Props } from './commonTypes';
 
-export default [
-  'chipDefaultSelectedBackgroundColor',
-  'chipDefaultSelectedTextColor',
-  'chipOnDarkSelectedBackgroundColor',
-  'chipOnDarkSelectedTextColor',
-  'chipOnImageSelectedBackgroundColor',
-  'chipOnImageSelectedHoverBackgroundColor',
-  'chipOnImageSelectedActiveBackgroundColor',
-  'chipOnImageSelectedTextColor',
-];
+declare const BpkDropdownChip: ({
+  disabled,
+  leadingAccessoryView,
+  selected,
+  type,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkDropdownChip;

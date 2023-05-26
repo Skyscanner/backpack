@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 /*
 The dismissible chip component is just a selectable chip that's
 been hard coded to have disabled={false}, selected and a trailing
@@ -25,22 +23,22 @@ accessory view of a close icon.
 */
 
 import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
 
 import BpkSelectableChip from './BpkSelectableChip';
-import {
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
-  type CommonProps,
-} from './commonTypes';
+import type { CommonProps as Props } from './commonTypes';
+import { CHIP_TYPES } from './commonTypes';
 import STYLES from './BpkSelectableChip.module.scss';
-
-export type Props = CommonProps;
 
 const getClassName = cssModules(STYLES);
 
-const BpkDismissibleChip = (props: Props) => {
-  const { className, type, ...rest } = props;
+const BpkDismissibleChip = ({
+  className,
+  type = CHIP_TYPES.default,
+  leadingAccessoryView = null,
+  ...rest
+}: Props) => {
   const iconClassNames = getClassName(
     `bpk-chip--${type}-dismissible__trailing-accessory-view`,
   );
@@ -49,6 +47,7 @@ const BpkDismissibleChip = (props: Props) => {
   return (
     <BpkSelectableChip
       {...rest}
+      leadingAccessoryView={leadingAccessoryView}
       disabled={false}
       trailingAccessoryView={<CloseCircleIconSm className={iconClassNames} />}
       selected
@@ -58,8 +57,5 @@ const BpkDismissibleChip = (props: Props) => {
     />
   );
 };
-
-BpkDismissibleChip.propTypes = COMMON_PROP_TYPES;
-BpkDismissibleChip.defaultProps = COMMON_DEFAULT_PROPS;
 
 export default BpkDismissibleChip;
