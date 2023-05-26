@@ -16,9 +16,11 @@
  * limitations under the License.
  */
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusScope from 'a11y-focus-scope';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusStore from 'a11y-focus-store';
-import PropTypes from 'prop-types';
+import type { ComponentType, RefObject } from 'react';
 import { Component } from 'react';
 
 import {
@@ -38,20 +40,30 @@ import {
   unlockScroll,
 } from './scroll-utils';
 import STYLES from './bpk-scrim-content.module.scss';
-import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 
-const withScrim = (WrappedComponent) => {
-  class WithScrim extends Component {
-    static propTypes = {
-      getApplicationElement: PropTypes.func.isRequired,
-      onClose: onClosePropType,
-      isIphone: PropTypes.bool,
-      isIpad: PropTypes.bool,
-      containerClassName: PropTypes.string,
-      closeOnScrimClick: PropTypes.bool,
-    };
+type BaseProps = {
+  onClose?: () => void | null;
+  isIphone?: boolean;
+  isIpad?: boolean;
+};
+
+type HOCProps = {
+  getApplicationElement: () => HTMLElement;
+  containerClassName?: string;
+  closeOnScrimClick?: boolean;
+};
+
+type Props = HOCProps & BaseProps;
+
+const withScrim = <P extends BaseProps>(
+  WrappedComponent: ComponentType<P> | string,
+) => {
+  class WithScrim extends Component<P & Props> {
+    dialogElement?: RefObject<HTMLElement>;
+
+    public static displayName: string;
 
     static defaultProps = {
       onClose: null,
@@ -115,7 +127,7 @@ const withScrim = (WrappedComponent) => {
       focusStore.restoreFocus();
     }
 
-    dialogRef = (ref) => {
+    dialogRef = (ref: RefObject<HTMLElement>) => {
       this.dialogElement = ref;
     };
 
@@ -138,9 +150,9 @@ const withScrim = (WrappedComponent) => {
 
       return (
         <div className={classNames.join(' ')}>
-          <BpkScrim onClose={closeOnScrimClick ? onClose : null} />
+          <BpkScrim onClose={closeOnScrimClick ? onClose : undefined} />
           <WrappedComponent
-            {...rest}
+            {...(rest as P)}
             isIphone={isIphone}
             isIpad={isIpad}
             dialogRef={this.dialogRef}

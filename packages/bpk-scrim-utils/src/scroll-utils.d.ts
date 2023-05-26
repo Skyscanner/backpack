@@ -16,24 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-// eslint-disable-next-line import/prefer-default-export
-export const onClosePropType = (
-  props: Object,
-  propName: string,
-  componentName: string,
-): ?Error => {
-  const onCloseValue = props[propName];
-
-  if (
-    props.closeOnScrimClick &&
-    (!onCloseValue || typeof onCloseValue !== 'function')
-  ) {
-    return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must an onClose handler if closeOnScrimClick is true.`,
-    );
-  }
-
-  return null;
-};
+export declare const storeScroll: () => void;
+export declare const restoreScroll: () => void;
+export declare const fixBody: () => void;
+export declare const unfixBody: () => void;
+export declare const lockScroll: () => void;
+export declare const unlockScroll: () => void;
