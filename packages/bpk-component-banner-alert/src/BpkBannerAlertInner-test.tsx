@@ -15,10 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CurrencyIcon from '../../bpk-component-icon/sm/currency';
 
 import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';

@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ### Default
 
-```js
+```tsx
 import BpkBannerAlert, { ALERT_TYPES } from '@skyscanner/backpack-web/bpk-component-banner-alert';
 
 export default () => (
@@ -23,7 +23,7 @@ export default () => (
 
 ### Dismissable
 
-```js
+```tsx
 import { Component } from 'react';
 import { ALERT_TYPES, BpkBannerAlertDismissable } from '@skyscanner/backpack-web/bpk-component-banner-alert';
 
@@ -63,7 +63,7 @@ export default () => (
 
 ### withBannerAlertState(BpkBannerAlert)
 
-```js
+```tsx
 import { Component } from 'react';
 import { ALERT_TYPES, withBannerAlertState, BpkBannerAlertDismissable, BpkBannerAlertExpandable } from '@skyscanner/backpack-web/bpk-component-banner-alert';
 

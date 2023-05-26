@@ -15,34 +15,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 /* This is an internal component to Backpack that powers `BpkBannerAlert`,
  * `BpkBannerAlertDismissable` and `BpkBannerAlertExpandable`.
  */
 
-import PropTypes from 'prop-types';
-import type { Node, StatelessFunctionalComponent } from 'react';
+import type { ReactNode, FunctionComponent, SVGProps } from 'react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDownIcon from '../../bpk-component-icon/lg/chevron-down';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
-import {
-  type AlertTypeValue,
-  type CommonProps,
-  type OnDismissHandler,
-  type OnExpandToggleHandler,
-  ALERT_TYPES,
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
+import type {
+  AlertTypeValue,
+  CommonProps,
+  OnDismissHandler,
+  OnExpandToggleHandler,
 } from './common-types';
+import { ALERT_TYPES } from './common-types';
 import STYLES from './BpkBannerAlert.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -53,27 +55,29 @@ export const CONFIGURATION = {
   NONE: 'none',
   DISMISSABLE: 'dismissable',
   EXPANDABLE: 'expandable',
-};
+} as const;
 
 const getIconForType = (
   type: AlertTypeValue,
-  CustomIcon: ?StatelessFunctionalComponent<any>,
+  CustomIcon?: FunctionComponent<any> | null,
 ) => {
-  const classMap: { [AlertTypeValue]: string } = {
+  const classMap: { [K in AlertTypeValue]: string } = {
     [ALERT_TYPES.PRIMARY]: getClassName('bpk-banner-alert__primary-icon'),
     [ALERT_TYPES.SUCCESS]: getClassName('bpk-banner-alert__success-icon'),
     [ALERT_TYPES.WARN]: getClassName('bpk-banner-alert__warn-icon'),
     [ALERT_TYPES.ERROR]: getClassName('bpk-banner-alert__error-icon'),
     [ALERT_TYPES.NEUTRAL]: getClassName('bpk-banner-alert__neutral-icon'),
-  };
+  } as const;
   const className = classMap[type];
-  const componentMap: { [AlertTypeValue]: Node } = {
+  const componentMap: {
+    [K in AlertTypeValue]: FunctionComponent<SVGProps<SVGSVGElement>>;
+  } = {
     [ALERT_TYPES.PRIMARY]: InfoCircleIcon,
     [ALERT_TYPES.SUCCESS]: TickCircleIcon,
     [ALERT_TYPES.WARN]: InfoCircleIcon,
     [ALERT_TYPES.ERROR]: InfoCircleIcon,
     [ALERT_TYPES.NEUTRAL]: InfoCircleIcon,
-  };
+  } as const;
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
@@ -81,8 +85,8 @@ const getIconForType = (
 };
 
 type ToggleButtonProps = {
-  label: ?string,
-  expanded: boolean,
+  label?: string;
+  expanded: boolean;
 };
 
 const ToggleButton = (props: ToggleButtonProps) => {
@@ -104,48 +108,46 @@ const ToggleButton = (props: ToggleButtonProps) => {
   );
 };
 
-type Props = {
-  ...$Exact<CommonProps>,
-  configuration: $Values<typeof CONFIGURATION>,
+type Props = CommonProps & {
+  configuration?: typeof CONFIGURATION[keyof typeof CONFIGURATION];
 
   // Only relevant when configuration == CONFIGURATION.EXPANDABLE
-  children: Node,
-  expanded: boolean,
-  toggleButtonLabel: ?string,
-  onExpandToggle: OnExpandToggleHandler,
+  children?: ReactNode | string;
+  expanded?: boolean;
+  toggleButtonLabel?: string;
+  onExpandToggle?: OnExpandToggleHandler;
 
   // Only relevant when configuration == CONFIGURATION.DISMISSABLE
-  dismissButtonLabel: string,
-  onDismiss: OnDismissHandler,
+  dismissButtonLabel?: string;
+  onDismiss?: OnDismissHandler;
 };
 
-const BpkBannerAlertInner = (props: Props) => {
-  const {
-    animateOnEnter,
-    animateOnLeave,
-    bannerClassName,
-    children,
-    configuration,
-    dismissButtonLabel,
-    expanded,
-    icon,
-    message,
-    onDismiss,
-    onExpandToggle,
-    show,
-    toggleButtonLabel,
-    type,
-    ...rest
-  } = props;
+const BpkBannerAlertInner = ({
+  animateOnEnter = false,
+  animateOnLeave = false,
+  bannerClassName,
+  children = null,
+  configuration,
+  dismissButtonLabel = '',
+  expanded = false,
+  icon = null,
+  message,
+  onDismiss = null,
+  onExpandToggle = null,
+  show = true,
+  toggleButtonLabel = '',
+  type,
+  ...rest
+}: Props) => {
   const onBannerExpandToggle = () => {
-    if (props.onExpandToggle) {
-      props.onExpandToggle(!expanded);
+    if (onExpandToggle) {
+      onExpandToggle(!expanded);
     }
   };
 
   const onBannerDismiss = () => {
-    if (props.onDismiss) {
-      props.onDismiss();
+    if (onDismiss) {
+      onDismiss();
     }
   };
 
@@ -174,7 +176,6 @@ const BpkBannerAlertInner = (props: Props) => {
   // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
   // ToggleButton is focusable and works for this.
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <AnimateAndFade
       animateOnEnter={animateOnEnter}
       animateOnLeave={dismissable || animateOnLeave}
@@ -221,40 +222,6 @@ const BpkBannerAlertInner = (props: Props) => {
     </AnimateAndFade>
   );
   /* eslint-enable */
-};
-
-BpkBannerAlertInner.propTypes = {
-  ...COMMON_PROP_TYPES,
-  configuration: PropTypes.oneOf([
-    CONFIGURATION.NONE,
-    CONFIGURATION.DISMISSABLE,
-    CONFIGURATION.EXPANDABLE,
-  ]).isRequired,
-
-  // Only relevant when configuration == CONFIGURATION.EXPANDABLE
-  children: PropTypes.node,
-  expanded: PropTypes.bool,
-  toggleButtonLabel: PropTypes.string,
-  onExpandToggle: PropTypes.func,
-
-  // Only relevant when configuration == CONFIGURATION.DISMISSABLE
-  dismissButtonLabel: PropTypes.string,
-  onDismiss: PropTypes.func,
-};
-
-BpkBannerAlertInner.defaultProps = {
-  ...COMMON_DEFAULT_PROPS,
-  configuration: CONFIGURATION.NONE,
-
-  // Only relevant when configuration == CONFIGURATION.EXPANDABLE
-  children: null,
-  expanded: false,
-  toggleButtonLabel: null,
-  onExpandToggle: null,
-
-  // Only relevant when configuration == CONFIGURATION.DISMISSABLE
-  dismissButtonLabel: '',
-  onDismiss: null,
 };
 
 export default BpkBannerAlertInner;

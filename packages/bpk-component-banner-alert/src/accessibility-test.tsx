@@ -15,43 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { axe } from 'jest-axe';
+import { render } from '@testing-library/react';
 
 import BpkBannerAlert from './BpkBannerAlert';
 import { ALERT_TYPES } from './common-types';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
-describe('BpkBannerAlert', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
+describe('BpkBannerAlert accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
       <BpkBannerAlert type={ALERT_TYPES.SUCCESS} message={message} />,
     );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly hidden', () => {
-    const { asFragment } = render(
-      <BpkBannerAlert
-        show={false}
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with custom bannerClassName', () => {
-    render(
-      <BpkBannerAlert
-        bannerClassName="custom-banner-class-name"
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
-      />,
-    );
-    expect(screen.getByRole('alert')).toHaveClass('custom-banner-class-name');
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

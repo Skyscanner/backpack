@@ -15,37 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-
-import {
-  type CommonProps,
-  type OnDismissHandler,
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
-} from './common-types';
+import type { CommonProps, OnDismissHandler } from './common-types';
 import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';
 
-type Props = {
-  ...$Exact<CommonProps>,
-  dismissButtonLabel: string,
-  onDismiss: OnDismissHandler,
+export type Props = CommonProps & {
+  dismissButtonLabel: string;
+  onDismiss?: OnDismissHandler;
 };
 
-const BpkBannerAlertDismissable = (props: Props) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlertInner configuration={CONFIGURATION.DISMISSABLE} {...props} />
+const BpkBannerAlertDismissable = ({ onDismiss = null, ...rest }: Props) => (
+  <BpkBannerAlertInner
+    configuration={CONFIGURATION.DISMISSABLE}
+    onDismiss={onDismiss}
+    {...rest}
+  />
 );
-
-BpkBannerAlertDismissable.propTypes = {
-  ...COMMON_PROP_TYPES,
-  dismissButtonLabel: PropTypes.string.isRequired,
-  onDismiss: PropTypes.func,
-};
-BpkBannerAlertDismissable.defaultProps = {
-  ...COMMON_DEFAULT_PROPS,
-  onDismiss: null,
-};
 
 export default BpkBannerAlertDismissable;

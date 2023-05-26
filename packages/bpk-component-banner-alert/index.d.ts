@@ -15,22 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { axe } from 'jest-axe';
-import { render } from '@testing-library/react';
+import BpkBannerAlert from './src/BpkBannerAlert';
+import BpkBannerAlertDismissable from './src/BpkBannerAlertDismissable';
+import BpkBannerAlertExpandable from './src/BpkBannerAlertExpandable';
+import { ALERT_TYPES } from './src/common-types';
+import withBannerAlertState from './src/withBannerAlertState';
+import themeAttributes from './src/themeAttributes';
 
-import BpkBannerAlert from './BpkBannerAlert';
-import { ALERT_TYPES } from './common-types';
-
-const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
-
-describe('BpkBannerAlert accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkBannerAlert type={ALERT_TYPES.SUCCESS} message={message} />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export {
+  ALERT_TYPES,
+  BpkBannerAlertDismissable,
+  BpkBannerAlertExpandable,
+  withBannerAlertState,
+  themeAttributes,
+};
+export default BpkBannerAlert;

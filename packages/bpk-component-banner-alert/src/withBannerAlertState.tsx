@@ -15,66 +15,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { Component } from 'react';
-import type { Node, ComponentType } from 'react';
-import PropTypes from 'prop-types';
+import type { ComponentType } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
-import {
-  type OnDismissHandler,
-  type OnExpandToggleHandler,
-} from './common-types';
-import BpkBannertAlertExpandable from './BpkBannerAlertExpandable';
+import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
+import type { Props as BpkBannerAlertExpandableProps } from './BpkBannerAlertExpandable';
+import type { Props as BpkBannerAlertDismissableProps } from './BpkBannerAlertDismissable';
 
-const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
-  type Props = {
-    onDismiss: OnDismissHandler,
-    onExpandToggle: OnExpandToggleHandler,
-    onHide: ?() => void,
-    expanded: boolean,
-    show: boolean,
-    hideAfter: ?number,
-    animateOnLeave: boolean,
-    children: Node,
-  };
+type WithBannerAlertStateProps = {
+  onHide?: () => void;
+  hideAfter?: number;
+};
 
+type BpkBannerAlertProps = Partial<
+  BpkBannerAlertDismissableProps & BpkBannerAlertExpandableProps
+>;
+
+const withBannerAlertState = <P extends BpkBannerAlertProps>(
+  WrappedComponent: ComponentType<P>,
+) => {
   type State = {
-    expanded: boolean,
-    show: boolean,
+    expanded?: boolean;
+    show?: boolean;
   };
 
-  class component extends Component<Props, State> {
-    hideIntervalId: ?TimeoutID;
+  class component extends Component<P & WithBannerAlertStateProps, State> {
+    public static displayName: string;
 
-    static propTypes = {
-      onDismiss: PropTypes.func,
-      onExpandToggle: PropTypes.func,
-      onHide: PropTypes.func,
-      expanded: PropTypes.bool,
-      show: PropTypes.bool,
-      hideAfter: (
-        props: Object,
-        propName: string,
-        componentName: string,
-        ...rest: mixed[]
-      ) => {
-        if (
-          WrappedComponent === BpkBannertAlertExpandable &&
-          typeof props[propName] === 'number'
-        ) {
-          return new Error(
-            `Invalid prop \`${propName}\` supplied to ${componentName}. \`${propName}\` is not supported for expandable banner alerts.`,
-          );
-        }
-
-        return PropTypes.number(props, propName, componentName, ...rest);
-      },
-      animateOnLeave: PropTypes.bool,
-      children: PropTypes.node,
-    };
+    hideIntervalId?: ReturnType<typeof setTimeout> | null;
 
     static defaultProps = {
       onDismiss: null,
@@ -87,7 +58,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       children: null,
     };
 
-    constructor(props: Props) {
+    constructor(props: P & WithBannerAlertStateProps) {
       super(props);
 
       this.state = {
@@ -102,7 +73,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       const { hideAfter } = this.props;
 
       if (
-        WrappedComponent !== BpkBannertAlertExpandable &&
+        WrappedComponent !== BpkBannerAlertExpandable &&
         hideAfter &&
         hideAfter > 0
       ) {
@@ -160,14 +131,13 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       } = this.props;
 
       return (
-        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <WrappedComponent
           expanded={this.state.expanded}
           onExpandToggle={this.onExpandToggle}
           onDismiss={this.onDismiss}
           show={this.state.show}
           animateOnLeave={(hideAfter && hideAfter > 0) || animateOnLeave}
-          {...rest}
+          {...(rest as P)}
         >
           {children}
         </WrappedComponent>

@@ -15,25 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { render } from '@testing-library/react';
+import type { ReactNode } from 'react';
 
-import BpkBannerAlertDismissable from './BpkBannerAlertDismissable';
-import { ALERT_TYPES } from './common-types';
+import type { CommonProps, OnExpandToggleHandler } from './common-types';
 
-const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
-
-describe('BpkBannerAlertDismissable', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkBannerAlertDismissable
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
-        dismissButtonLabel="Dismiss"
-        onDismiss={jest.fn()}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+export type Props = CommonProps & {
+  children: ReactNode;
+  expanded?: boolean;
+  toggleButtonLabel: string;
+  onExpandToggle?: OnExpandToggleHandler;
+};
+declare const BpkBannerAlertExpandable: ({
+  children,
+  expanded,
+  onExpandToggle,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkBannerAlertExpandable;

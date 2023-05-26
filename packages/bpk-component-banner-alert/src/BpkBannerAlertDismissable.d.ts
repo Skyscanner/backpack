@@ -15,21 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
-import {
-  CommonProps,
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
-} from './common-types';
-import BpkBannerAlertInner from './BpkBannerAlertInner';
 
-type Props = {
-  ...$Exact<CommonProps>,
+/// <reference types="react" />
+import type { CommonProps, OnDismissHandler } from './common-types';
+
+export type Props = CommonProps & {
+  dismissButtonLabel: string;
+  onDismiss?: OnDismissHandler;
 };
-
-const BpkBannerAlert = (props: Props) => <BpkBannerAlertInner {...props} />;
-
-BpkBannerAlert.propTypes = COMMON_PROP_TYPES;
-BpkBannerAlert.defaultProps = COMMON_DEFAULT_PROPS;
-
-export default BpkBannerAlert;
+declare const BpkBannerAlertDismissable: ({
+  onDismiss,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkBannerAlertDismissable;
