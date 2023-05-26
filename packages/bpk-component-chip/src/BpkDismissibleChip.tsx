@@ -22,7 +22,6 @@ been hard coded to have disabled={false}, selected and a trailing
 accessory view of a close icon.
 */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
