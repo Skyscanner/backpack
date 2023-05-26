@@ -43,15 +43,21 @@ import STYLES from './bpk-scrim-content.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  getApplicationElement: () => HTMLElement;
+type BaseProps = {
   onClose?: () => void | null;
   isIphone?: boolean;
   isIpad?: boolean;
+};
+
+type HOCProps = {
+  getApplicationElement: () => HTMLElement;
   containerClassName?: string;
   closeOnScrimClick?: boolean;
 };
-const withScrim = <P extends Props>(
+
+type Props = HOCProps & BaseProps;
+
+const withScrim = <P extends BaseProps>(
   WrappedComponent: ComponentType<P> | string,
 ) => {
   class WithScrim extends Component<P & Props> {
