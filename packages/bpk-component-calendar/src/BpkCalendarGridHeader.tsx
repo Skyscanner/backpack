@@ -16,44 +16,59 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import { PureComponent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import CustomPropTypes from './custom-proptypes';
+import type {
+  DaysOfWeek,
+  ReactComponent,
+  WeekDay,
+  WeekDayKey,
+} from './custom-proptypes';
 import { orderDaysOfWeek } from './date-utils';
 import STYLES from './BpkCalendarGridHeader.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = DefaultProps & {
+  daysOfWeek: DaysOfWeek;
+  weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+};
+
+type DefaultProps = {
+  className?: string | null;
+  weekDayKey: WeekDayKey;
+};
+
+type WeekDayProps = {
+  Element: ReactComponent;
+  weekDay: WeekDay;
+  weekDayKey: WeekDayKey;
+};
+
 /*
   WeekDay - table header cells such as "Mon", "Tue", "Wed"...
 */
-const WeekDay = (props) => {
-  const { Element, weekDay, weekDayKey } = props;
+const WeekDayComponent = ({
+  Element,
+  weekDay,
+  weekDayKey = 'nameAbbr',
+}: WeekDayProps) => (
+  <Element
+    className={getClassName('bpk-calendar-header__weekday')}
+    title={weekDay.name}
+  >
+    <span>{weekDay[weekDayKey]}</span>
+  </Element>
+);
 
-  return (
-    <Element
-      className={getClassName('bpk-calendar-header__weekday')}
-      title={weekDay.name}
-    >
-      <span>{weekDay[weekDayKey]}</span>
-    </Element>
-  );
-};
+class BpkCalendarGridHeader extends PureComponent<Props> {
+  static defaultProps = {
+    className: null,
+    weekDayKey: 'nameAbbr',
+  };
 
-WeekDay.propTypes = {
-  Element: CustomPropTypes.ReactComponent.isRequired,
-  weekDay: CustomPropTypes.WeekDay.isRequired,
-  weekDayKey: CustomPropTypes.WeekDayKey,
-};
-
-WeekDay.defaultProps = {
-  weekDayKey: 'nameAbbr',
-};
-
-class BpkCalendarGridHeader extends PureComponent {
   render() {
     const { className, weekDayKey, weekStartsOn } = this.props;
 
@@ -68,7 +83,7 @@ class BpkCalendarGridHeader extends PureComponent {
       <header className={classNames.join(' ')} aria-hidden>
         <ol className={getClassName('bpk-calendar-header__week')}>
           {daysOfWeek.map((weekDay) => (
-            <WeekDay
+            <WeekDayComponent
               Element="li"
               key={weekDay.index}
               weekDay={weekDay}
@@ -80,17 +95,5 @@ class BpkCalendarGridHeader extends PureComponent {
     );
   }
 }
-
-BpkCalendarGridHeader.propTypes = {
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
-  weekStartsOn: PropTypes.number.isRequired,
-  className: PropTypes.string,
-  weekDayKey: CustomPropTypes.WeekDayKey,
-};
-
-BpkCalendarGridHeader.defaultProps = {
-  className: null,
-  weekDayKey: 'nameAbbr',
-};
 
 export default BpkCalendarGridHeader;

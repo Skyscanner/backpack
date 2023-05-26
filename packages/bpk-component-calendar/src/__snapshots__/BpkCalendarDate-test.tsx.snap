@@ -42,10 +42,10 @@ exports[`BpkCalendarDate should render a blocked button as disabled with aria-hi
 exports[`BpkCalendarDate should render a disabled button 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
+    aria-hidden="true"
     aria-label="15"
     aria-pressed="false"
-    class="bpk-calendar-date"
+    class="bpk-calendar-date bpk-calendar-date--blocked"
     disabled=""
     tabindex="-1"
     type="button"

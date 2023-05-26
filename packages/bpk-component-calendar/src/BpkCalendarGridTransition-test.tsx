@@ -22,8 +22,9 @@ import '@testing-library/jest-dom';
 import BpkCalendarGridTransition, {
   addCalendarGridTransition,
 } from './BpkCalendarGridTransition';
+import type { Props } from './BpkCalendarGridTransition';
 
-const MyComponent = (props) => <div>{JSON.stringify(props)}</div>;
+const MyComponent = (props: Props) => <div>{JSON.stringify(props)}</div>;
 const TransitioningMyComponent = addCalendarGridTransition(MyComponent);
 
 describe('BpkCalendar', () => {

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { ElementType } from 'react';
 import { Component } from 'react';
 
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
@@ -28,7 +28,8 @@ import {
   getCalendarMonthWeeks,
   isSameMonth,
 } from './date-utils';
-import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
+import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import STYLES from './BpkCalendarGrid.module.scss';
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 // This should be imported after `./BpkCalendarGrid.module.scss`.
@@ -43,11 +44,60 @@ import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 
 const getClassName = cssModules(STYLES);
 
+type DefaultProps = {
+  className: string | null;
+  dateModifiers: DateModifiers;
+  focusedDate: Date | null;
+  cellClassName: string | null;
+  isKeyboardFocusable: boolean;
+  markOutsideDays: boolean;
+  markToday: boolean;
+  maxDate: Date;
+  minDate: Date;
+  onDateClick: () => void;
+  onDateKeyDown: () => void;
+  preventKeyboardFocus: boolean;
+  selectionConfiguration: SelectionConfiguration;
+  ignoreOutsideDate: boolean;
+  dateProps: {};
+};
+
+type Props = DefaultProps & {
+  DateComponent: ElementType;
+  formatDateFull: (date: Date) => Date | string;
+  month: Date;
+  weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+};
+
+type State = {
+  calendarMonthWeeks: Date[][];
+};
 /*
   BpkCalendarGrid - the grid representing a whole month
 */
-class BpkCalendarGrid extends Component {
-  constructor(props) {
+class BpkCalendarGrid extends Component<Props, State> {
+  static defaultProps: DefaultProps = {
+    className: null,
+    dateModifiers: {},
+    focusedDate: null,
+    isKeyboardFocusable: true,
+    markOutsideDays: true,
+    markToday: true,
+    maxDate: addMonths(new Date(), 12),
+    minDate: new Date(),
+    onDateClick: () => {},
+    onDateKeyDown: () => {},
+    preventKeyboardFocus: false,
+    selectionConfiguration: {
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: null,
+    },
+    ignoreOutsideDate: false,
+    dateProps: {},
+    cellClassName: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     // We cache expensive calculations (and identities) in state
@@ -59,7 +109,7 @@ class BpkCalendarGrid extends Component {
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     // We cache expensive calculations (and identities) in state
     if (
       !isSameMonth(nextProps.month, this.props.month) ||
@@ -133,50 +183,6 @@ class BpkCalendarGrid extends Component {
     );
   }
 }
-
-export const propTypes = {
-  // Required
-  DateComponent: PropTypes.elementType.isRequired,
-  formatDateFull: PropTypes.func.isRequired,
-  month: PropTypes.instanceOf(Date).isRequired,
-  weekStartsOn: PropTypes.number.isRequired,
-  // Optional
-  className: PropTypes.string,
-  cellClassName: PropTypes.string,
-  dateModifiers: CustomPropTypes.DateModifiers,
-  focusedDate: PropTypes.instanceOf(Date),
-  isKeyboardFocusable: PropTypes.bool,
-  markOutsideDays: PropTypes.bool,
-  markToday: PropTypes.bool,
-  maxDate: PropTypes.instanceOf(Date),
-  minDate: PropTypes.instanceOf(Date),
-  onDateClick: PropTypes.func,
-  onDateKeyDown: PropTypes.func,
-  preventKeyboardFocus: PropTypes.bool,
-  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
-  ignoreOutsideDate: PropTypes.bool,
-  dateProps: PropTypes.object,
-};
-
-BpkCalendarGrid.propTypes = { ...propTypes };
-
-BpkCalendarGrid.defaultProps = {
-  className: null,
-  dateModifiers: {},
-  focusedDate: null,
-  isKeyboardFocusable: true,
-  markOutsideDays: true,
-  markToday: true,
-  maxDate: addMonths(new Date(), 12),
-  minDate: new Date(),
-  onDateClick: null,
-  onDateKeyDown: null,
-  preventKeyboardFocus: false,
-  selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
-  ignoreOutsideDate: false,
-  dateProps: null,
-  cellClassName: null,
-};
 
 // On iOS, having transitions causes accessibility issues, so we disable it (KOA-4467).
 const BpkCalendarGridWithTransition = isDeviceIos()

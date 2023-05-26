@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { ChangeEvent, MouseEvent } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 import BpkAriaLive from '../../bpk-component-aria-live';
@@ -37,9 +40,43 @@ import STYLES from './BpkCalendarNav.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type MonthChangeEvent =
+  | ChangeEvent<HTMLInputElement>
+  | MouseEvent<HTMLButtonElement>;
+
+type Props = {
+  changeMonthLabel: string;
+  formatMonth: (month: Date) => string;
+  id: string;
+  maxDate: Date;
+  minDate: Date;
+  month: Date;
+  nextMonthLabel: string;
+  previousMonthLabel: string;
+  onMonthChange?: (
+    event: MonthChangeEvent,
+    options: { month: Date; source: string },
+  ) => void;
+  disabled?: boolean;
+};
 const changeMonth =
-  ({ callback, max, min, month, source }) =>
-  (event) => {
+  ({
+    callback,
+    max,
+    min,
+    month,
+    source,
+  }: {
+    callback: (
+      event: MonthChangeEvent,
+      options: { month: Date; source: string },
+    ) => void;
+    max: Date;
+    min: Date;
+    month: Date;
+    source: string;
+  }) =>
+  (event: MonthChangeEvent) => {
     // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
     // PR: https://github.com/facebook/react/pull/8329 - unresolved as of 22/12/2016
     if (isWithinRange(month, { start: min, end: max })) {
@@ -48,20 +85,18 @@ const changeMonth =
     }
   };
 
-const BpkCalendarNav = (props) => {
-  const {
-    changeMonthLabel,
-    disabled,
-    formatMonth,
-    id,
-    maxDate,
-    minDate,
-    month,
-    nextMonthLabel,
-    onMonthChange,
-    previousMonthLabel,
-  } = props;
-
+const BpkCalendarNav = ({
+  changeMonthLabel,
+  disabled = false,
+  formatMonth,
+  id,
+  maxDate,
+  minDate,
+  month,
+  nextMonthLabel,
+  onMonthChange = () => {},
+  previousMonthLabel,
+}: Props) => {
   const baseMonth = startOfMonth(month);
   const { max, min } = getMonthRange(minDate, maxDate);
   const navigatableMonths = getMonthsInRange(minDate, maxDate);
@@ -106,7 +141,7 @@ const BpkCalendarNav = (props) => {
             name="months"
             value={formatIsoMonth(baseMonth)}
             disabled={disabled}
-            onChange={(event) => {
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
               event.persist();
               onMonthChange(event, {
                 month: parseIsoDate(event.target.value),
@@ -150,26 +185,6 @@ const BpkCalendarNav = (props) => {
       </div>
     </div>
   );
-};
-
-BpkCalendarNav.propTypes = {
-  // Required
-  changeMonthLabel: PropTypes.string.isRequired,
-  formatMonth: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  maxDate: PropTypes.instanceOf(Date).isRequired,
-  minDate: PropTypes.instanceOf(Date).isRequired,
-  month: PropTypes.instanceOf(Date).isRequired,
-  nextMonthLabel: PropTypes.string.isRequired,
-  previousMonthLabel: PropTypes.string.isRequired,
-  // Optional
-  onMonthChange: PropTypes.func,
-  disabled: PropTypes.bool,
-};
-
-BpkCalendarNav.defaultProps = {
-  onMonthChange: null,
-  disabled: false,
 };
 
 export default BpkCalendarNav;

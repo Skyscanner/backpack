@@ -20,10 +20,6 @@ import { render } from '@testing-library/react';
 
 import BpkCalendarDate from './BpkCalendarDate';
 
-const createNodeMock = () => ({
-  focus: () => null,
-});
-
 describe('BpkCalendarDate', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
@@ -34,7 +30,7 @@ describe('BpkCalendarDate', () => {
 
   it('should render a disabled button', () => {
     const { asFragment } = render(
-      <BpkCalendarDate date={new Date(2010, 1, 15)} disabled />,
+      <BpkCalendarDate date={new Date(2010, 1, 15)} isBlocked />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -50,8 +46,8 @@ describe('BpkCalendarDate', () => {
     const { asFragment } = render(
       <BpkCalendarDate
         date={new Date(2010, 1, 15)}
-        onClick={() => null}
-        onKeyDown={() => null}
+        onClick={() => {}}
+        onDateKeyDown={() => {}}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -60,9 +56,6 @@ describe('BpkCalendarDate', () => {
   it('should render a focused button with tabIndex', () => {
     const { asFragment } = render(
       <BpkCalendarDate date={new Date(2010, 1, 15)} isFocused />,
-      {
-        createNodeMock,
-      },
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -73,7 +66,6 @@ describe('BpkCalendarDate', () => {
         date={new Date(2010, 1, 15)}
         aria-label="Nothing happened on this day in 2010"
       />,
-      { createNodeMock },
     );
     expect(asFragment()).toMatchSnapshot();
   });

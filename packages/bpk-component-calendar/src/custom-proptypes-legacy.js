@@ -53,6 +53,15 @@ const CALENDAR_SELECTION_TYPE = {
   range: 'range',
 };
 
+export const SELECTION_TYPES = {
+  none: 'none',
+  single: 'single',
+  start: 'start',
+  middle: 'middle',
+  end: 'end',
+  sameDay: 'sameDay',
+};
+
 const SelectionConfigurationSingle = PropTypes.shape({
   type: PropTypes.oneOf([CALENDAR_SELECTION_TYPE.single]),
   date: PropTypes.instanceOf(Date),
@@ -81,7 +90,55 @@ const DaysOfWeek = PropTypes.arrayOf(WeekDay);
 const DateModifiers = PropTypes.objectOf(PropTypes.func);
 const ReactComponent = PropTypes.oneOfType([PropTypes.string, PropTypes.func]);
 
-export { CALENDAR_SELECTION_TYPE };
+const BpkCalendarGridPropTypes = {
+  // Required
+  DateComponent: PropTypes.elementType.isRequired,
+  formatDateFull: PropTypes.func.isRequired,
+  month: PropTypes.instanceOf(Date).isRequired,
+  weekStartsOn: PropTypes.number.isRequired,
+  // Optional
+  className: PropTypes.string,
+  cellClassName: PropTypes.string,
+  dateModifiers: DateModifiers,
+  focusedDate: PropTypes.instanceOf(Date),
+  isKeyboardFocusable: PropTypes.bool,
+  markOutsideDays: PropTypes.bool,
+  markToday: PropTypes.bool,
+  maxDate: PropTypes.instanceOf(Date),
+  minDate: PropTypes.instanceOf(Date),
+  onDateClick: PropTypes.func,
+  onDateKeyDown: PropTypes.func,
+  preventKeyboardFocus: PropTypes.bool,
+  selectionConfiguration: SelectionConfiguration,
+  ignoreOutsideDate: PropTypes.bool,
+  dateProps: PropTypes.object,
+};
+
+const BpkCalendarDatePropTypes = {
+  // Required
+  date: PropTypes.instanceOf(Date).isRequired,
+  // Optional
+  className: PropTypes.string,
+  isBlocked: PropTypes.bool,
+  isFocused: PropTypes.bool,
+  isKeyboardFocusable: PropTypes.bool,
+  isOutside: PropTypes.bool,
+  isSelected: PropTypes.bool,
+  isToday: PropTypes.bool,
+  modifiers: DateModifiers,
+  onClick: PropTypes.func,
+  onDateKeyDown: PropTypes.func,
+  preventKeyboardFocus: PropTypes.bool,
+  selectionType: PropTypes.oneOf(Object.keys(SELECTION_TYPES)),
+  style: PropTypes.object,
+};
+
+export {
+  CALENDAR_SELECTION_TYPE,
+  BpkCalendarGridPropTypes,
+  BpkCalendarDatePropTypes,
+};
+
 export default {
   SelectionConfiguration,
   DateModifiers,

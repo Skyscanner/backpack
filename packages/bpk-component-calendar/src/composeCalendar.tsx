@@ -16,49 +16,91 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { ComponentType } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import CustomPropTypes, { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+import type {
+  DaysOfWeek,
+  SelectionConfiguration,
+  DateModifiers,
+} from './custom-proptypes';
 import STYLES from './BpkCalendar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
-  const BpkCalendar = (props) => {
-    const classNames = [getClassName('bpk-calendar')];
+type Props = {
+  changeMonthLabel?: string | null;
+  daysOfWeek: DaysOfWeek;
+  formatDateFull: (date: Date) => Date | string;
+  formatMonth: (date: Date) => Date | string;
+  id: string;
+  maxDate: Date;
+  minDate: Date;
+  month: Date;
+  nextMonthLabel?: string | null;
+  previousMonthLabel?: string | null;
+  weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  className?: string | null;
+  dateModifiers?: DateModifiers;
+  fixedWidth?: boolean;
+  focusedDate?: Date | null;
+  markOutsideDays?: boolean;
+  markToday?: boolean;
+  onMonthChange?: () => void;
+  onDateClick?: () => void;
+  onDateKeyDown?: () => void;
+  preventKeyboardFocus?: boolean;
+  selectionConfiguration?: SelectionConfiguration;
+  gridClassName?: string | null;
+  weekDayKey?: string;
+  navProps?: {} | null;
+  headerProps?: {} | null;
+  gridProps?: {} | null;
+  dateProps?: {} | null;
+};
 
-    const {
-      changeMonthLabel,
-      className,
-      dateModifiers,
-      dateProps,
-      daysOfWeek,
-      fixedWidth,
-      focusedDate,
-      formatDateFull,
-      formatMonth,
-      gridClassName,
-      gridProps,
-      headerProps,
-      id,
-      markOutsideDays,
-      markToday,
-      maxDate,
-      minDate,
-      month,
-      navProps,
-      nextMonthLabel,
-      onDateClick,
-      onDateKeyDown,
-      onMonthChange,
-      preventKeyboardFocus,
-      previousMonthLabel,
-      selectionConfiguration,
-      weekDayKey,
-      weekStartsOn,
-    } = props;
+const composeCalendar = (
+  Nav: ComponentType<any> | string | null,
+  GridHeader: ComponentType<any> | string | null,
+  Grid: ComponentType<any> | string,
+  CalendarDate: ComponentType<any> | string | null,
+) => {
+  const BpkCalendar = ({
+    changeMonthLabel = null,
+    className = null,
+    dateModifiers = {},
+    dateProps = {},
+    daysOfWeek,
+    fixedWidth = true,
+    focusedDate = null,
+    formatDateFull,
+    formatMonth,
+    gridClassName = null,
+    gridProps = {},
+    headerProps = {},
+    id,
+    markOutsideDays = true,
+    markToday = true,
+    maxDate,
+    minDate,
+    month,
+    navProps = {},
+    nextMonthLabel = null,
+    onDateClick = () => {},
+    onDateKeyDown = () => {},
+    onMonthChange = () => {},
+    preventKeyboardFocus = false,
+    previousMonthLabel = null,
+    selectionConfiguration = {
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: null,
+    },
+    weekDayKey = 'nameAbbr',
+    weekStartsOn,
+  }: Props) => {
+    const classNames = [getClassName('bpk-calendar')];
 
     if (className) {
       classNames.push(className);
@@ -132,67 +174,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
         />
       </div>
     );
-  };
-
-  BpkCalendar.propTypes = {
-    // Required
-    changeMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
-    daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
-    formatDateFull: PropTypes.func.isRequired,
-    formatMonth: PropTypes.func.isRequired,
-    id: PropTypes.string.isRequired,
-    maxDate: PropTypes.instanceOf(Date).isRequired,
-    minDate: PropTypes.instanceOf(Date).isRequired,
-    month: PropTypes.instanceOf(Date).isRequired,
-    nextMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
-    previousMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
-    weekStartsOn: PropTypes.number.isRequired,
-    // Optional
-    className: PropTypes.string,
-    dateModifiers: CustomPropTypes.DateModifiers,
-    fixedWidth: PropTypes.bool,
-    focusedDate: PropTypes.instanceOf(Date),
-    markOutsideDays: PropTypes.bool,
-    markToday: PropTypes.bool,
-    onMonthChange: PropTypes.func,
-    onDateClick: PropTypes.func,
-    onDateKeyDown: PropTypes.func,
-    preventKeyboardFocus: PropTypes.bool,
-    selectionConfiguration: CustomPropTypes.SelectionConfiguration,
-    gridClassName: PropTypes.string,
-    weekDayKey: PropTypes.string,
-    /* eslint-disable react/forbid-prop-types */
-    navProps: PropTypes.object,
-    headerProps: PropTypes.object,
-    gridProps: PropTypes.object,
-    dateProps: PropTypes.object,
-    /* eslint-enable */
-  };
-
-  BpkCalendar.defaultProps = {
-    changeMonthLabel: null,
-    className: null,
-    dateModifiers: {},
-    fixedWidth: true,
-    focusedDate: null,
-    markOutsideDays: true,
-    markToday: true,
-    nextMonthLabel: null,
-    onMonthChange: () => null,
-    onDateClick: () => null,
-    onDateKeyDown: () => null,
-    preventKeyboardFocus: false,
-    previousMonthLabel: null,
-    selectionConfiguration: {
-      type: CALENDAR_SELECTION_TYPE.single,
-      date: null,
-    },
-    gridClassName: null,
-    weekDayKey: 'nameAbbr',
-    navProps: null,
-    headerProps: null,
-    gridProps: null,
-    dateProps: null,
   };
 
   return BpkCalendar;

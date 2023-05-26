@@ -22,7 +22,7 @@ import userEvent from '@testing-library/user-event';
 
 import BpkCalendarNav from './BpkCalendarNav';
 
-const formatMonth = (date) => format(date, 'MMMM yyyy');
+const formatMonth = (date: Date) => format(date, 'MMMM yyyy');
 
 describe('BpkCalendarNav', () => {
   it('should render correctly', () => {
