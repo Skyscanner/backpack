@@ -16,14 +16,10 @@
  * limitations under the License.
  */
 
-const DIRECTIONS = {
-  LTR: 'ltr',
-  RTL: 'rtl',
+declare const DIRECTIONS: {
+  readonly LTR: 'ltr';
+  readonly RTL: 'rtl';
 };
-
-const DIRECTION_CHANGE_EVENT = 'bpkchangedirection';
-
-const getHtmlElement = () =>
-  typeof document !== 'undefined' ? document.querySelector('html') : {};
-
+declare const DIRECTION_CHANGE_EVENT = 'bpkchangedirection';
+declare const getHtmlElement: () => HTMLElement | null | {};
 export { DIRECTIONS, DIRECTION_CHANGE_EVENT, getHtmlElement };

@@ -8,4 +8,4 @@ coverage
 backpack-android
 backpack-ios
 backpack-react-native
-.d.ts
+*.d.ts
