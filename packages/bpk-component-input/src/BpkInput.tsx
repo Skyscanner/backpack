@@ -16,30 +16,22 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { Component } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
 import STYLES from './BpkInput.module.scss';
-import {
-  type Props,
-  propTypes,
-  defaultProps,
-  CLEAR_BUTTON_MODES,
-} from './common-types';
+import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
+import type { Props } from './common-types';
 
 type State = {
-  persistClearButton: boolean,
+  persistClearButton: boolean;
 };
 
 const getClassName = cssModules(STYLES);
 
 class BpkInput extends Component<Props, State> {
-  static propTypes = propTypes;
-
   static defaultProps = defaultProps;
 
   constructor(props: Props) {
@@ -70,7 +62,7 @@ class BpkInput extends Component<Props, State> {
     } = this.props;
 
     // Used as a ref for focussing the input when cleared.
-    let ref = null;
+    let ref: HTMLInputElement | null = null;
 
     // Explicit check for false primitive value as undefined is
     // treated as neither valid nor invalid
@@ -128,7 +120,7 @@ class BpkInput extends Component<Props, State> {
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <input
         className={classNames.join(' ')}
-        ref={(input) => {
+        ref={(input: HTMLInputElement) => {
           ref = input;
           if (inputRef) {
             inputRef(input);
@@ -153,7 +145,7 @@ class BpkInput extends Component<Props, State> {
         {renderedInput}
         {value.length > 0 && (
           <BpkClearButton
-            tabIndex="-1"
+            tabIndex={-1}
             label={clearButtonLabel || ''}
             onMouseDown={onMouseDown}
             onClick={(e) => {
@@ -161,7 +153,10 @@ class BpkInput extends Component<Props, State> {
                 ref.focus();
               }
               if (onClear) {
-                e.target.name = name;
+                if (e.target instanceof HTMLButtonElement) {
+                  const { target } = e;
+                  target.name = name;
+                }
                 onClear(e);
                 this.setState({ persistClearButton: false });
               }

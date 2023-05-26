@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -76,6 +75,7 @@ describe('BpkInput', () => {
     // are missing. Swallow that as it's tested in customPropTypes-test.js.
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     const { asFragment } = render(
+      // @ts-ignore
       <BpkInput
         id="test"
         name="test"
@@ -92,6 +92,7 @@ describe('BpkInput', () => {
     // are missing. Swallow that as it's tested in customPropTypes-test.js.
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     const { asFragment } = render(
+      // @ts-ignore
       <BpkInput
         id="test"
         name="test"
@@ -211,8 +212,8 @@ describe('BpkInput', () => {
   });
 
   it('should expose input reference to parent components', () => {
-    let inputRef;
-    const storeInputReference = (ref) => {
+    let inputRef: HTMLInputElement;
+    const storeInputReference = (ref: HTMLInputElement) => {
       inputRef = ref;
     };
 
@@ -227,6 +228,7 @@ describe('BpkInput', () => {
     );
 
     const input = screen.getByRole('textbox');
+    // @ts-ignore
     expect(input).toEqual(inputRef);
   });
 

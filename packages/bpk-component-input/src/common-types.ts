@@ -16,15 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
+import type { SyntheticEvent } from 'react';
 
 export const CLEAR_BUTTON_MODES = {
   never: 'never',
   whileEditing: 'whileEditing',
   always: 'always',
-};
+} as const;
 
 export const INPUT_TYPES = {
   text: 'text',
@@ -32,32 +31,48 @@ export const INPUT_TYPES = {
   number: 'number',
   password: 'password',
   tel: 'tel',
+} as const;
+
+type BaseProps = {
+  id: string;
+  name: string;
+  value: string;
+  type?: typeof INPUT_TYPES[keyof typeof INPUT_TYPES];
+  className?: string | null;
+  valid?: boolean | null;
+  large?: boolean;
+  docked?: boolean;
+  dockedFirst?: boolean;
+  dockedMiddle?: boolean;
+  dockedLast?: boolean;
+  inputRef?: ((ref: HTMLInputElement) => void) | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-export type Props = {
-  id: string,
-  name: string,
-  value: string,
-  type: $Keys<typeof INPUT_TYPES>,
-  className: ?string,
-  valid: ?boolean,
-  large: boolean,
-  docked: boolean,
-  dockedFirst: boolean,
-  dockedMiddle: boolean,
-  dockedLast: boolean,
-  inputRef: ?(?HTMLInputElement) => mixed,
-  clearButtonMode: $Keys<typeof CLEAR_BUTTON_MODES>,
-  clearButtonLabel: ?string,
-  onClear: ?(event: SyntheticEvent<HTMLButtonElement>) => mixed,
+export type PropsWithoutClearButonMode = BaseProps & {
+  clearButtonMode?: 'never';
+  clearButtonLabel?: string | null;
+  onClear?: ((e?: SyntheticEvent<HTMLButtonElement>) => void) | null;
 };
 
+export type PropsWithClearButtonMode = BaseProps & {
+  clearButtonMode: typeof CLEAR_BUTTON_MODES[keyof Omit<
+    typeof CLEAR_BUTTON_MODES,
+    'never'
+  >];
+  clearButtonLabel: string;
+  onClear: (e?: SyntheticEvent<HTMLButtonElement>) => void;
+};
+
+export type Props = PropsWithoutClearButonMode | PropsWithClearButtonMode;
+
+// TODO - this function should be removed once all input examples have been migrated to TS
 export const clearablePropType = (
-  props: Props,
+  props: any,
   propName: string,
   componentName: string,
-): ?Error => {
-  const createError = (message) =>
+) => {
+  const createError = (message: string) =>
     new Error(
       `Invalid prop \`${propName}\` supplied to \`${componentName}\`. ${message}.`,
     );
