@@ -16,13 +16,20 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+/// <reference types="react" />
+import type { ReactNode } from 'react';
 
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import themeAttributes from './src/themeAttributes';
-import BpkModal, { type Props, propTypes, defaultProps } from './src/BpkModal';
-
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2 };
+export type Props = {
+  id: string | undefined;
+  ariaLabelledby: string;
+  children: ReactNode;
+  closeLabel: string;
+  fullScreenOnDesktop?: boolean;
+  isOpen: boolean;
+  noFullScreenOnMobile?: boolean;
+  onClose: () => void | null;
+  padded?: boolean;
+  title?: string | null;
+  wide?: boolean;
+};
+export declare const BpkModalV2: (props: Props) => JSX.Element | null;
