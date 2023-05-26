@@ -16,13 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import themeAttributes from './src/themeAttributes';
-import BpkModal, { type Props, propTypes, defaultProps } from './src/BpkModal';
-
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2 };
+import type { SyntheticEvent } from 'react';
+type Props = {
+    onClose?: (e?: SyntheticEvent) => void | null;
+};
+declare const BpkScrim: ({ onClose }: Props) => JSX.Element;
+export default BpkScrim;

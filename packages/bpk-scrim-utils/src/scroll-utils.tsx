@@ -31,7 +31,7 @@ const getScrollBarWidth = () => {
   const window = getWindow();
   const body = getBodyElement();
 
-  if (body === null && window === null) {
+  if (body === null || window === null) {
     return '';
   }
 

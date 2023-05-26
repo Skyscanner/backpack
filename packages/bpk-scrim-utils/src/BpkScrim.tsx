@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { SyntheticEvent } from 'react';
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
@@ -24,7 +24,10 @@ import STYLES from './bpk-scrim.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkScrim = (props) => (
+type Props = {
+  onClose?: (e?: SyntheticEvent) => void | null;
+};
+const BpkScrim = ({ onClose = () => {} }: Props) => (
   <TransitionInitialMount
     appearClassName={getClassName('bpk-scrim--appear')}
     appearActiveClassName={getClassName('bpk-scrim--appear-active')}
@@ -33,18 +36,10 @@ const BpkScrim = (props) => (
     <div
       role="presentation"
       className={getClassName('bpk-scrim')}
-      onMouseDown={props.onClose}
-      onTouchStart={props.onClose}
+      onMouseDown={onClose}
+      onTouchStart={onClose}
     />
   </TransitionInitialMount>
 );
-
-BpkScrim.propTypes = {
-  onClose: PropTypes.func,
-};
-
-BpkScrim.defaultProps = {
-  onClose: null,
-};
 
 export default BpkScrim;

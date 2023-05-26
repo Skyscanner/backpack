@@ -16,24 +16,20 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+/// <reference types="react" />
+import type { ReactNode } from 'react';
 
-// eslint-disable-next-line import/prefer-default-export
-export const onClosePropType = (
-  props: Object,
-  propName: string,
-  componentName: string,
-): ?Error => {
-  const onCloseValue = props[propName];
-
-  if (
-    props.closeOnScrimClick &&
-    (!onCloseValue || typeof onCloseValue !== 'function')
-  ) {
-    return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must an onClose handler if closeOnScrimClick is true.`,
-    );
-  }
-
-  return null;
+export type Props = {
+  id: string | undefined;
+  ariaLabelledby: string;
+  children: ReactNode;
+  closeLabel: string;
+  fullScreenOnDesktop?: boolean;
+  isOpen: boolean;
+  noFullScreenOnMobile?: boolean;
+  onClose: () => void | null;
+  padded?: boolean;
+  title?: string | null;
+  wide?: boolean;
 };
+export declare const BpkModalV2: (props: Props) => JSX.Element | null;
