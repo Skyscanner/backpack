@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import BpkButton from './src/BpkButton'; // eslint-disable-line import/no-cycle
+import BpkButtonV2 from './src/BpkButtonV2/BpkButton';
 import BpkButtonPrimary from './src/BpkButtonPrimary';
 import BpkButtonPrimaryOnDark from './src/BpkButtonPrimaryOnDark';
 import BpkButtonPrimaryOnLight from './src/BpkButtonPrimaryOnLight';
@@ -28,6 +29,8 @@ import BpkButtonDestructive from './src/BpkButtonDestructive';
 import BpkButtonLink from './src/BpkButtonLink';
 import BpkButtonLinkOnDark from './src/BpkButtonLinkOnDark';
 import BpkButtonFeatured from './src/BpkButtonFeatured';
+
+export { BUTTON_TYPES, SIZE_TYPES } from './src/BpkButtonV2/common-types';
 
 export {
   buttonThemeAttributes,
@@ -52,4 +55,5 @@ export {
   BpkButtonLink,
   BpkButtonLinkOnDark,
   BpkButtonFeatured,
+  BpkButtonV2,
 };
