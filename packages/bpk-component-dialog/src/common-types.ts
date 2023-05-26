@@ -39,7 +39,7 @@ export type DialogInnerProps = {
 export type Props = DialogInnerProps & {
   isOpen: boolean;
   renderTarget?: () => HTMLElement | null;
-  onClose: (event: SyntheticEvent) => void | null;
+  onClose: (event: TouchEvent | MouseEvent | KeyboardEvent) => void | null;
   closeLabel?: string;
   dismissible?: boolean;
   headerIcon?: ReactNode;

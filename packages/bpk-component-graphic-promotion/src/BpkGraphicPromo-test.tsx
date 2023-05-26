@@ -18,7 +18,6 @@
 
 import { fireEvent, render } from '@testing-library/react';
 
-// @ts-expect-error Untyped import. Not added as a stub declaration so consumers still have the suppression in their node_modules when shipped untranspiled.
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
