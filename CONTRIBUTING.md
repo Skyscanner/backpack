@@ -248,6 +248,24 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 </details>
 
 <details>
+<summary>Contribute breaking changes</summary>
+
+Anytime a change could break existing applications it's considered a breaking change. To make upgrading Backpack easier for consumers, breaking changes should follow a deprecation cycle.
+
+In most cases, it is recommended to create a V2 component and provide a migration guide. If your breaking change either
+- requires consumers to make multiple modifications to their code to adopt the changes (e.g. renaming or removing multiple props of an API), OR
+- involves a significant alteration of the structure or API of a component in a way that keeping both APIs within one component may make the code unreadable (e.g. rewriting a component to reduce the number of files from 20 to 5)
+then you should contribute your changes as a separate V2 component.
+
+Once the old component has been removed from the codebase and is no longer in use, the Koala team will run automated scripts to make the new component the default.
+
+If your breaking change doesn't require consumers to make many modifications or its usages are limited (around 10-20 usages across Skyscanner web repositories), and keeping both versions in one component doesn't affect the readability of it, you will not need to create a separate component.
+
+If you are unsure of the impact or scale of your change, reach out to Koala team and we will help you!
+
+</details>
+
+<details>
 <summary>Publish packages (Backpack squad members only)</summary>
 
 - Publish the latest draft on the [releases pages](https://github.com/Skyscanner/backpack/releases)
