@@ -51,6 +51,10 @@ We recommend that you install [a plugin to your editor](https://eslint.org/docs/
 
 ## Getting started
 
+**All Backpack components are written in Typescript or are being gradually migrated to Typescript.**
+
+As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to an existing component also migrate the respective component.
+
 ### Getting the code
 
 You should pull code down using the following command
@@ -111,6 +115,8 @@ If you add a new file of mixins, for example for a new *atom*, make sure you add
 
 ### React component
 
+**All new components should be written in Typescript.**
+
 Use `bpk-component-boilerplate` to create a new skeleton React component. Once this is created, use existing components for code style inspiration.
 
 We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
@@ -147,15 +153,19 @@ For patch and minor changes, you should use JSDoc annotations. JSDoc is a widely
 
 For major changes, you should create a new experimental V2 component. If the experiment is successful, the old component should be deprecated.
 
+The new component should be added in the same folder as the original component, further nested inside a folder which follows the `Bpk{ComponentName}V2` naming. For example, the full path for a new component `BpkButtonV2` should be `packages/bpk-component-button/src/BpkButtonV2/BpkButton.tsx`. The 2 components will then be exported in the `index.(js|ts)` file of `bpk-component-button`.
+
 Any follow-up changes to experimental components will not be considered breaking.
 </details>
 
 <details>
 <summary>When should documentation be created and published?</summary>
 
-Each Bpk component has a corresponding README file which contains information about the component such as usage examples and API documentation. Our components' full documentation is at [skyscanner.design](https://www.skyscanner.design). New experimental components should have a README file, but don’t need to be published to [skyscanner.design](https://www.skyscanner.design). Instead, when an experiment has run and is considered successful and so the change is stable, documentation can be published.
+Each Bpk component has a corresponding README file which contains information about the component such as usage examples and API documentation. Our components' full documentation is at [skyscanner.design](https://www.skyscanner.design). New experimental components should have a README file, but don’t need to be published to [skyscanner.design](https://www.skyscanner.design). Make sure the README file reflects the component is experimental! When an experiment has run and is considered successful and so the change is stable, documentation can be published.
 
 For changes to existing components, make sure the API documentation is updated to indicate if something is experimental.
+
+Major changes will often require a migration guide. If an experiment is considered succesful, you should add a migration guide within the docs folder located in the respective component folder.
 </details>
 
 <details>
@@ -234,6 +244,24 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 * `npm run lint:js` to lint JS.
 * `npm run lint:js:fix` to lint and try to automatically fix any errors.
 * `npm run lint:scss` to lint SCSS.
+
+</details>
+
+<details>
+<summary>Contribute breaking changes</summary>
+
+Anytime a change could break existing applications it's considered a breaking change. To make upgrading Backpack easier for consumers, breaking changes should follow a deprecation cycle.
+
+In most cases, it is recommended to create a V2 component and provide a migration guide. If your breaking change either
+- requires consumers to make multiple modifications to their code to adopt the changes (e.g. renaming or removing multiple props of an API), OR
+- involves a significant alteration of the structure or API of a component in a way that keeping both APIs within one component may make the code unreadable (e.g. rewriting a component to reduce the number of files from 20 to 5)
+then you should contribute your changes as a separate V2 component.
+
+Once the old component has been removed from the codebase and is no longer in use, the Koala team will run automated scripts to make the new component the default.
+
+If your breaking change doesn't require consumers to make many modifications or its usages are limited (around 10-20 usages across Skyscanner web repositories), and keeping both versions in one component doesn't affect the readability of it, you will not need to create a separate component.
+
+If you are unsure of the impact or scale of your change, reach out to Koala team and we will help you!
 
 </details>
 
