@@ -121,7 +121,7 @@
     "@skyscanner/bpk-svgs": "^16.3.2",
     "@skyscanner/stylelint-config-skyscanner": "^7.0.0",
     "@storybook/addon-a11y": "^6.5.14",
-    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-actions": "^7.0.18",
     "@storybook/addon-storyshots": "^6.5.14",
     "@storybook/addon-storyshots-puppeteer": "^6.5.14",
     "@storybook/addon-viewport": "^6.5.14",
