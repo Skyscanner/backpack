@@ -17,7 +17,7 @@
  */
 
 import { Component } from 'react';
-import type { ComponentType, ReactElement, UIEvent } from 'react';
+import type { ReactElement, UIEvent, HTMLProps, ComponentType } from 'react';
 
 import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
 
@@ -67,7 +67,7 @@ const withEventHandler =
     }
   };
 
-const withOpenEvents = <P extends InputProps>(
+const withOpenEvents = <P extends InputProps & HTMLProps<HTMLInputElement>>(
   InputComponent: ComponentType<P>,
 ) => {
   class WithOpenEvents extends Component<P & WithOpenEventsProps> {
