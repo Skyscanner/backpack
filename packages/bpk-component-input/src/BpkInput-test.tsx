@@ -18,6 +18,7 @@
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createRef } from 'react';
 
 import BpkInput from './BpkInput';
 import { INPUT_TYPES } from './common-types';
@@ -211,25 +212,15 @@ describe('BpkInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should expose input reference to parent components', () => {
-    let inputRef: HTMLInputElement;
-    const storeInputReference = (ref: HTMLInputElement) => {
-      inputRef = ref;
-    };
+  it('should set the input element', () => {
+    const ref = createRef<HTMLInputElement>();
 
     render(
-      <BpkInput
-        id="test"
-        name="test"
-        value=""
-        inputRef={storeInputReference}
-        onChange={() => {}}
-      />,
+      <BpkInput id="test" name="test" value="" ref={ref} onChange={() => {}} />,
     );
 
     const input = screen.getByRole('textbox');
-    // @ts-ignore
-    expect(input).toEqual(inputRef);
+    expect(input).toEqual(ref.current);
   });
 
   it('should call "onClear" when clearing', async () => {

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../packages/bpk-react-utils';
@@ -50,6 +50,7 @@ class ClearableInput extends Component {
 
   constructor(props) {
     super(props);
+    this.ref = createRef();
 
     this.state = {
       value: props.initialValue,
@@ -62,6 +63,7 @@ class ClearableInput extends Component {
 
   onClear = () => {
     this.setState({ value: '' });
+    this.ref.current.focus();
   };
 
   render() {
@@ -74,6 +76,7 @@ class ClearableInput extends Component {
         onChange={this.onChange}
         onClear={this.onClear}
         value={value}
+        ref={this.ref}
       />
     );
   }
