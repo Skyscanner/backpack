@@ -59,6 +59,7 @@ describe('BpkAutosuggest', () => {
         resultsList: 'suggestions list',
       },
       id: 'origin',
+      getA11yResultsMessage: (resultCount: number) => `${resultCount} results`,
     };
   });
   it('should render correctly', () => {
