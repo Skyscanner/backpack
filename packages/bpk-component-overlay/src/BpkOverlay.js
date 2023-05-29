@@ -27,46 +27,42 @@ import STYLES from './BpkOverlay.module.scss';
 const getClassName = cssModules(STYLES);
 
 export const OVERLAY_TYPES = {
-  solid: 'solid',
-  top: 'top',
-  bottom: 'bottom',
-  left: 'left',
-  right: 'right',
+  solidLow: 'solid-low',
+  solidMedium: 'solid-medium',
+  solidHigh: 'solid-high',
+  topLow: 'top-low',
+  topMedium: 'top-medium',
+  topHigh: 'top-high',
+  bottomLow: 'bottom-low',
+  bottomMedium: 'bottom-medium',
+  bottomHigh: 'bottom-high',
+  leftLow: 'left-low',
+  leftMedium: 'left-medium',
+  leftHigh: 'left-high',
+  rightLow: 'right-low',
+  rightMedium: 'right-medium',
+  rightHigh: 'right-high',
   vignette: 'vignette',
-};
-
-export const OVERLAY_LEVELS = {
-  low: 'low',
-  medium: 'medium',
-  high: 'high',
   off: 'off',
 };
 
 export type Props = {
   children: Node,
   overlayType: ?$Keys<typeof OVERLAY_TYPES>,
-  overlayLevel: ?$Keys<typeof OVERLAY_LEVELS>,
   className: ?string,
   foregroundContent: ?Node,
 };
 
 const BpkOverlay = (props: Props) => {
-  const {
-    children,
-    className,
-    foregroundContent,
-    overlayLevel,
-    overlayType,
-    ...rest
-  } = props;
+  const { children, className, foregroundContent, overlayType, ...rest } =
+    props;
 
   const wrapperClassNames = getClassName('bpk-overlay__wrapper', className);
   const overlayClassNames = getClassName(
     'bpk-overlay__overlay',
     overlayType !== null &&
-      (overlayType !== OVERLAY_TYPES.vignette
-        ? `bpk-overlay__overlay--${overlayType}-${overlayLevel}`
-        : `bpk-overlay__overlay--${overlayType}`),
+      overlayType !== OVERLAY_TYPES.off &&
+      `bpk-overlay__overlay--${overlayType}`,
   );
 
   return (
@@ -83,14 +79,12 @@ BpkOverlay.propTypes = {
   className: PropTypes.string,
   foregroundContent: PropTypes.node,
   overlayType: PropTypes.oneOf(Object.keys(OVERLAY_TYPES)),
-  overlayLevel: PropTypes.oneOf(Object.keys(OVERLAY_LEVELS)),
 };
 
 BpkOverlay.defaultProps = {
   className: null,
   foregroundContent: null,
-  overlayType: OVERLAY_TYPES.solid,
-  overlayLevel: OVERLAY_LEVELS.low,
+  overlayType: OVERLAY_TYPES.solidLow,
 };
 
 export default BpkOverlay;

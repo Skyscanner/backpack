@@ -19,7 +19,7 @@
 
 import { render } from '@testing-library/react';
 
-import BpkOverlay, { OVERLAY_LEVELS, OVERLAY_TYPES } from './BpkOverlay';
+import BpkOverlay, { OVERLAY_TYPES } from './BpkOverlay';
 
 describe('BpkOverlay', () => {
   it('should render correctly', () => {
@@ -41,16 +41,14 @@ describe('BpkOverlay', () => {
   });
 
   Object.keys(OVERLAY_TYPES).map((overlayType) =>
-    Object.keys(OVERLAY_LEVELS).map((overlayLevel) =>
-      it(`should render correctly with overlayType={${overlayType}} & overlayLevel={${overlayLevel}}`, () => {
-        const { asFragment } = render(
-          <BpkOverlay overlayType={overlayType} overlayLevel={overlayLevel}>
-            <span>Backpack</span>
-          </BpkOverlay>,
-        );
-        expect(asFragment()).toMatchSnapshot();
-      }),
-    ),
+    it(`should render correctly with overlayType={${overlayType}}`, () => {
+      const { asFragment } = render(
+        <BpkOverlay overlayType={overlayType}>
+          <span>Backpack</span>
+        </BpkOverlay>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    }),
   );
 
   it('should support custom class names', () => {
