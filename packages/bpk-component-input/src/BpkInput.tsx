@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
+import type { Ref } from 'react';
+import { useState, forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -25,26 +26,11 @@ import STYLES from './BpkInput.module.scss';
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
 import type { Props } from './common-types';
 
-type State = {
-  persistClearButton: boolean;
-};
+const getClassName = cssModules(STYLES); // Please import the necessary dependencies
 
-const getClassName = cssModules(STYLES);
-
-class BpkInput extends Component<Props, State> {
-  static defaultProps = defaultProps;
-
-  constructor(props: Props) {
-    super(props);
-
-    this.state = { persistClearButton: false };
-  }
-
-  render() {
-    const classNames = [getClassName('bpk-input')];
-    const containerClassNames = [getClassName('bpk-input__container')];
-    const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
-    const {
+const BpkInput = forwardRef<HTMLInputElement, Props>(
+  (
+    {
       className,
       clearButtonLabel,
       clearButtonMode,
@@ -52,17 +38,19 @@ class BpkInput extends Component<Props, State> {
       dockedFirst,
       dockedLast,
       dockedMiddle,
-      inputRef,
       large,
       name,
       onClear,
       valid,
       value,
       ...rest
-    } = this.props;
-
-    // Used as a ref for focussing the input when cleared.
-    let ref: HTMLInputElement | null = null;
+    },
+    forwardedRef,
+  ) => {
+    const classNames = [getClassName('bpk-input')];
+    const containerClassNames = [getClassName('bpk-input__container')];
+    const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
+    const [persistClearButton, setPersistClearButton] = useState(false);
 
     // Explicit check for false primitive value as undefined is
     // treated as neither valid nor invalid
@@ -85,10 +73,7 @@ class BpkInput extends Component<Props, State> {
     }
     if (clearable) {
       classNames.push(getClassName('bpk-input--clearable'));
-      if (
-        clearButtonMode === CLEAR_BUTTON_MODES.always ||
-        this.state.persistClearButton
-      ) {
+      if (clearButtonMode === CLEAR_BUTTON_MODES.always || persistClearButton) {
         classNames.push(getClassName('bpk-input--persistent-clearable'));
         clearButtonClassNames.push(
           getClassName('bpk-input__clear-button--persistent'),
@@ -117,15 +102,9 @@ class BpkInput extends Component<Props, State> {
     }
 
     const renderedInput = (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <input
         className={classNames.join(' ')}
-        ref={(input: HTMLInputElement) => {
-          ref = input;
-          if (inputRef) {
-            inputRef(input);
-          }
-        }}
+        ref={forwardedRef}
         aria-invalid={isInvalid}
         value={value}
         name={name}
@@ -134,10 +113,8 @@ class BpkInput extends Component<Props, State> {
     );
 
     // When we mouseDown, we should persist the clear button.
-    // If we don't do this, then for `clearableWhileEditing` mode the mouseDown on the button will cause the input to lose focus,
-    // which will hide the button. The `onClick` event cannot complete if the button is removed from the DOM but mouseUp!
     const onMouseDown = () => {
-      this.setState({ persistClearButton: true });
+      setPersistClearButton(true);
     };
 
     return clearable ? (
@@ -149,16 +126,13 @@ class BpkInput extends Component<Props, State> {
             label={clearButtonLabel || ''}
             onMouseDown={onMouseDown}
             onClick={(e) => {
-              if (ref) {
-                ref.focus();
-              }
               if (onClear) {
                 if (e.target instanceof HTMLButtonElement) {
                   const { target } = e;
                   target.name = name;
                 }
                 onClear(e);
-                this.setState({ persistClearButton: false });
+                setPersistClearButton(false);
               }
             }}
             className={clearButtonClassNames.join(' ')}
@@ -168,7 +142,9 @@ class BpkInput extends Component<Props, State> {
     ) : (
       renderedInput
     );
-  }
-}
+  },
+);
+
+BpkInput.defaultProps = defaultProps;
 
 export default BpkInput;

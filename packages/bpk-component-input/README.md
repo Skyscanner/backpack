@@ -11,7 +11,9 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```js
 import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from '@skyscanner/backpack-web/bpk-component-input';
 
-export default () => (
+export default () => {
+const inputRef = useRef<HtmlInputElement>(null)
+return (
   <BpkInput
     id="origin"
     type={INPUT_TYPES.text}
@@ -21,9 +23,14 @@ export default () => (
     placeholder="Country, city or airport"
     clearButtonMode={CLEAR_BUTTON_MODES.whileEditing}
     clearButtonLabel="Clear"
-    onClear={() => console.log('input cleared!')}
+    onClear={() => {
+      inputRef.current.focus()
+      console.log('input cleared!')
+      }}
+    ref={inputRef}
   />
 );
+}
 ```
 
 ## Props
@@ -39,7 +46,7 @@ export default () => (
 | dockedFirst      | bool                       | false               | false                    |
 | dockedLast       | bool                       | false               | false                    |
 | dockedMiddle     | bool                       | false               | false                    |
-| inputRef         | func                       | false               | null                     |
+| ref         | `React.ForwardedRef<HTMLInputElement>`                    | false               | null                     |
 | large            | bool                       | false               | false                    |
 | onClear          | func                       | if clearable={true} | null                     |
 | valid            | bool                       | false               | null                     |
