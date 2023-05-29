@@ -18,7 +18,6 @@
 
 import type { ReactNode, FunctionComponent, SVGProps } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkAutosuggest.module.scss';
@@ -32,6 +31,7 @@ type Props = {
   icon?: FunctionComponent<SVGProps<SVGSVGElement>>;
   indent?: boolean;
   className?: string;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkSuggestion: FunctionComponent<Props> = ({
