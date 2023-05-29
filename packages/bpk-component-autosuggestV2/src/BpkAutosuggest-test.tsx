@@ -285,6 +285,27 @@ describe('BpkAutosuggest', () => {
     expect(input.className).toBe('bpk-input');
   });
 
+  it('should call onLoad on render if passed as a prop and if not desktop', () => {
+    const onLoad = jest.fn();
+    render(<BpkAutosuggest {...requiredProps} onLoad={onLoad} />);
+
+    expect(onLoad).toHaveBeenCalled();
+  });
+
+  it('should call onLoad on input click if passed as prop and isDesktop', async () => {
+    const onLoad = jest.fn();
+    render(<BpkAutosuggest {...requiredProps} onLoad={onLoad} isDesktop />);
+
+    expect(onLoad).not.toHaveBeenCalled();
+
+    const input = screen.getByRole('combobox');
+    userEvent.click(input);
+
+    await waitFor(() => {
+      expect(onLoad).toHaveBeenCalled();
+    });
+  });
+
   describe('isBanana', () => {
     it('renders custom input', async () => {
       const { container } = render(
