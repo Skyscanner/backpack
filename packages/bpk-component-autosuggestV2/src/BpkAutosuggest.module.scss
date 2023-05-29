@@ -153,4 +153,12 @@ $arrow-size: bpk-spacing-sm() * 3;
       @include bpk-caption;
     }
   }
+
+  &__section-title {
+    padding: bpk-spacing-lg() 0 bpk-spacing-sm() bpk-spacing-base();
+    background-color: $bpk-color-white;
+    color: $bpk-text-secondary-day;
+
+    @include bpk-label-2;
+  }
 }

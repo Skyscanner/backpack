@@ -18,13 +18,13 @@
 
 /* @flow strict */
 
-import { Component } from 'react';
+import { Component, ReactNode } from 'react';
 
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
-} from '../../packages/bpk-component-autosuggest';
+} from '../../packages/bpk-component-autosuggestV2';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
@@ -101,6 +101,17 @@ const dataHanzi = [
   },
 ];
 
+const sections = [
+  {
+    title: 'Recent searches',
+    suggestions: [offices[0]],
+  },
+  {
+    title: 'Popular locations',
+    suggestions: [...offices.slice(1)],
+  },
+];
+
 const getSuggestions = (value, hanzi) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
@@ -127,6 +138,15 @@ type Props = {
   includeIcon: boolean,
   includeSubheading: boolean,
   includeTertiaryLabel: boolean,
+  isBanana: boolean,
+  showClear: boolean,
+  theme: { [key: string]: string },
+  highlightFirstSuggestion: boolean,
+  shouldRenderSuggestions: (value: string) => boolean,
+  multiSection: boolean,
+  renderSectionTitle: (section: any) => ReactNode,
+  getSectionSuggestions: (section: any) => any[],
+  alwaysRenderSuggestions: boolean,
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -135,26 +155,30 @@ class AutosuggestExample extends Component<Props, State> {
     includeIcon: false,
     includeSubheading: false,
     includeTertiaryLabel: false,
+    isBanana: false,
+    showClear: false,
+    theme: {},
+    highlightFirstSuggestion: false,
+    shouldRenderSuggestions: () => {},
+    multiSection: false,
+    renderSectionTitle: () => {},
+    getSectionSuggestions: () => {},
+    alwaysRenderSuggestions: false,
   };
 
   constructor() {
     super();
 
     this.state = {
-      value: '',
       suggestions: [],
     };
   }
 
-  onChange = (e: SyntheticEvent<any>, { newValue }: { newValue: string }) => {
+  onSuggestionsFetchRequested = (value: string) => {
     this.setState({
-      value: newValue,
-    });
-  };
-
-  onSuggestionsFetchRequested = ({ value }: { value: string }) => {
-    this.setState({
-      suggestions: getSuggestions(value, this.props.hanzi),
+      suggestions: this.props.multiSection
+        ? sections
+        : getSuggestions(value, this.props.hanzi),
     });
   };
 
@@ -165,20 +189,19 @@ class AutosuggestExample extends Component<Props, State> {
   };
 
   render() {
-    const { suggestions, value } = this.state;
+    const { suggestions } = this.state;
 
     const { includeIcon, includeSubheading, includeTertiaryLabel } = this.props;
 
     const inputProps = {
       id: 'my-autosuggest',
       name: 'my_autosuggest',
-      value,
       placeholder: 'Enter an office name',
-      onChange: this.onChange,
     };
 
     return (
       <BpkAutosuggest
+        ariaLabels={{ resultsList: 'results' }}
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
@@ -195,6 +218,15 @@ class AutosuggestExample extends Component<Props, State> {
           />
         )}
         inputProps={inputProps}
+        isBanana={this.props.isBanana}
+        showClear={this.props.showClear}
+        theme={this.props.theme}
+        highlightFirstSuggestion={this.props.highlightFirstSuggestion}
+        shouldRenderSuggestions={this.props.shouldRenderSuggestions}
+        multiSection={this.props.multiSection}
+        renderSectionTitle={this.props.renderSectionTitle}
+        getSectionSuggestions={this.props.getSectionSuggestions}
+        alwaysRenderSuggestions={this.props.alwaysRenderSuggestions}
       />
     );
   }

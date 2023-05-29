@@ -17,10 +17,11 @@
  */
 
 /* @flow strict */
+
 import AutosuggestExample from './examples';
 
 export default {
-  title: 'bpk-component-autosuggest',
+  title: 'bpk-component-autosuggestV2',
 };
 
 export const Example = () => <AutosuggestExample />;
@@ -48,4 +49,41 @@ export const SmallInput = () => (
   <div style={{ width: '80px' }}>
     <AutosuggestExample />
   </div>
+);
+
+export const HighlightFirstSuggestion = () => (
+  <AutosuggestExample highlightFirstSuggestion />
+);
+export const ShouldRenderSuggesions = () => (
+  <AutosuggestExample shouldRenderSuggestions={() => true} />
+);
+
+const renderSectionTitle = (section) => <div>{section.title}</div>;
+const getSectionSuggestions = (section) => section.suggestions;
+
+export const WithSections = () => (
+  <AutosuggestExample
+    multiSection
+    renderSectionTitle={renderSectionTitle}
+    getSectionSuggestions={getSectionSuggestions}
+    includeIcon
+    includeSubheading
+    includeTertiaryLabel
+  />
+);
+
+export const WithSectionsAndHighlightFirstSuggestion = () => (
+  <AutosuggestExample
+    multiSection
+    renderSectionTitle={renderSectionTitle}
+    getSectionSuggestions={getSectionSuggestions}
+    includeIcon
+    includeSubheading
+    includeTertiaryLabel
+    highlightFirstSuggestion
+  />
+);
+
+export const AlwaysRenderSuggestions = () => (
+  <AutosuggestExample alwaysRenderSuggestions />
 );

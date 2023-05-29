@@ -33,9 +33,7 @@ import type {
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ClearIconLg from '../../bpk-component-icon/lg/close-circle';
 import { withButtonAlignment } from '../../bpk-component-icon';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkAutosuggest.module.scss';
