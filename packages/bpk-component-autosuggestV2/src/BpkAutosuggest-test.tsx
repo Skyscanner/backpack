@@ -286,11 +286,13 @@ describe('BpkAutosuggest', () => {
     expect(input.className).toBe('bpk-input');
   });
 
-  it('should call onLoad on render if passed as a prop and if not desktop', () => {
+  it('should call onLoad on render if passed as a prop and if not desktop', async () => {
     const onLoad = jest.fn();
     render(<BpkAutosuggest {...requiredProps} onLoad={onLoad} />);
 
-    expect(onLoad).toHaveBeenCalled();
+    await waitFor(() => {
+      expect(onLoad).toHaveBeenCalled();
+    });
   });
 
   it('should call onLoad on input click if passed as prop and isDesktop', async () => {
