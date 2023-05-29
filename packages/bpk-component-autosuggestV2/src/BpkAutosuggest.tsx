@@ -214,7 +214,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     }, [defaultValue, setInputValue]);
 
     useEffect(() => {
-      if (isBanana && !isDesktop) {
+      if (!isDesktop) {
         onLoad?.(inputValue);
       }
       // fire track event on load and forget about it after. We don't want to track again when anything (inputValue) changes
@@ -236,7 +236,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
       // Desktop destination autosuggest lives on the homepage and is "loaded/interacted with" via clicking on it
       // Every other use case is within a new screen or modal so is interacted with via the user navigating into the modal/new screen
-      if (isBanana && isDesktop) {
+      if (isDesktop) {
         onLoad?.(inputValue);
       }
     };
