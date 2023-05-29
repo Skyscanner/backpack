@@ -155,12 +155,10 @@ $arrow-size: bpk-spacing-sm() * 3;
   }
 
   &__section-title {
-    padding: bpk-spacing-lg() 0 $bpk-spacing-xs $bpk-spacing-md;
+    padding: bpk-spacing-lg() 0 bpk-spacing-sm() bpk-spacing-base();
     background-color: $bpk-color-white;
     color: $bpk-text-secondary-day;
 
-    @include bpk-text;
-    @include bpk-text-sm;
-    @include bpk-text--bold;
+    @include bpk-label-2;
   }
 }
