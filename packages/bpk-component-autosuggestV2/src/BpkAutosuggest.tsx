@@ -77,9 +77,9 @@ export type BpkAutoSuggestProps<T> = {
   onSuggestionsFetchRequested: (value: string) => void;
   renderSuggestion: (suggestion: T) => ReactElement;
   suggestions: T[];
+  getA11yResultsMessage: (resultCount: number) => string;
   defaultValue?: string;
   enterKeyHint?: string;
-  getA11yResultsMessage?: (resultCount: number) => string;
   isBanana?: boolean;
   isDesktop?: boolean;
   onClick?: () => void;
@@ -201,7 +201,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
       },
       getA11yStatusMessage({ resultCount }) {
-        return getA11yResultsMessage?.(resultCount) ?? '';
+        return getA11yResultsMessage(resultCount) ?? '';
       },
       initialInputValue: defaultValue ?? '',
       id,

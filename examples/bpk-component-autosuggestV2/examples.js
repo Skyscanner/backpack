@@ -188,6 +188,13 @@ class AutosuggestExample extends Component<Props, State> {
     });
   };
 
+  getA11yResultsMessage = (resultCount: number) => {
+    if (resultCount > 0) {
+      return 'handle results being single or plural';
+    }
+    return 'no results available';
+  };
+
   render() {
     const { suggestions } = this.state;
 
@@ -206,6 +213,7 @@ class AutosuggestExample extends Component<Props, State> {
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
+        getA11yResultsMessage={this.getA11yResultsMessage}
         renderSuggestion={(suggestion) => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
