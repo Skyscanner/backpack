@@ -46,6 +46,7 @@ describe('BpkAutosuggest accessibility tests', () => {
           resultsList: 'suggestions',
         }}
         id="origin"
+        getA11yResultsMessage={(resultCount) => `${resultCount} results`}
       />,
     );
 
