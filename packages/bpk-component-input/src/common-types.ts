@@ -45,7 +45,6 @@ type BaseProps = {
   dockedFirst?: boolean;
   dockedMiddle?: boolean;
   dockedLast?: boolean;
-  inputRef?: ((ref: HTMLInputElement) => void) | null;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
@@ -122,7 +121,6 @@ export const propTypes = {
   dockedFirst: PropTypes.bool,
   dockedMiddle: PropTypes.bool,
   dockedLast: PropTypes.bool,
-  inputRef: PropTypes.func,
   clearButtonMode: PropTypes.oneOf(Object.keys(CLEAR_BUTTON_MODES)),
   clearButtonLabel: clearablePropType,
   onClear: clearablePropType,
@@ -137,7 +135,6 @@ export const defaultProps = {
   dockedFirst: false,
   dockedMiddle: false,
   dockedLast: false,
-  inputRef: null,
   clearButtonMode: CLEAR_BUTTON_MODES.never,
   clearButtonLabel: null,
   onClear: null,

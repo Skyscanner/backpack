@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import type { Ref } from 'react';
 import { useState, forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
