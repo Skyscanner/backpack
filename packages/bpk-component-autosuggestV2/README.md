@@ -142,8 +142,8 @@ class MyComponent extends Component {
 | Property          | PropType             | Required | Default Value |
 | ----------------- | -------------------- | -------- | ------------- |
 | value             | string               | true     | -             |
-| subHeading        | string               | false    | null          |
-| tertiaryLabel     | string               | false    | null          |
-| icon              | func                 | false    | null          |
+| subHeading        | string               | false    | undefined          |
+| tertiaryLabel     | string               | false    | undefined          |
+| icon              | func                 | false    | undefined          |
 | indent            | bool                 | false    | false         |
-| className         | string               | false    | null          |
+| className         | string               | false    | undefined          |
