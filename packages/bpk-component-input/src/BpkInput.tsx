@@ -25,7 +25,7 @@ import STYLES from './BpkInput.module.scss';
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
 import type { Props } from './common-types';
 
-const getClassName = cssModules(STYLES); // Please import the necessary dependencies
+const getClassName = cssModules(STYLES);
 
 const BpkInput = forwardRef<HTMLInputElement, Props>(
   (
