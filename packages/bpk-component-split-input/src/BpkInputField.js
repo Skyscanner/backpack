@@ -45,6 +45,9 @@ class BpkInputField extends Component {
           autoComplete="off"
           maxLength="1"
           aria-label={`${label} ${index}`}
+          inputRef={(input) => {
+            this.input = input;
+          }}
           value={value || ''}
           {...rest}
         />

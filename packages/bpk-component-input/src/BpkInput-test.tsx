@@ -212,6 +212,27 @@ describe('BpkInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should expose input reference to parent components', () => {
+    let inputRef: HTMLInputElement;
+    const storeInputReference = (ref: HTMLInputElement) => {
+      inputRef = ref;
+    };
+
+    render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        inputRef={storeInputReference}
+        onChange={() => {}}
+      />,
+    );
+
+    const input = screen.getByRole('textbox');
+    // @ts-ignore
+    expect(input).toEqual(inputRef);
+  });
+
   it('should set the input element', () => {
     const ref = createRef<HTMLInputElement>();
 

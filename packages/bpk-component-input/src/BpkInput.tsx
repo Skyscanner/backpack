@@ -37,6 +37,7 @@ const BpkInput = forwardRef<HTMLInputElement, Props>(
       dockedFirst,
       dockedLast,
       dockedMiddle,
+      inputRef,
       large,
       name,
       onClear,
@@ -50,6 +51,9 @@ const BpkInput = forwardRef<HTMLInputElement, Props>(
     const containerClassNames = [getClassName('bpk-input__container')];
     const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
     const [persistClearButton, setPersistClearButton] = useState(false);
+
+    // Used as a ref for focussing the input when cleared.
+    let ref: HTMLInputElement | null = null;
 
     // Explicit check for false primitive value as undefined is
     // treated as neither valid nor invalid
@@ -103,7 +107,15 @@ const BpkInput = forwardRef<HTMLInputElement, Props>(
     const renderedInput = (
       <input
         className={classNames.join(' ')}
-        ref={forwardedRef}
+        ref={
+          forwardedRef ||
+          ((input: HTMLInputElement) => {
+            ref = input;
+            if (inputRef) {
+              inputRef(input);
+            }
+          })
+        }
         aria-invalid={isInvalid}
         value={value}
         name={name}
@@ -126,6 +138,9 @@ const BpkInput = forwardRef<HTMLInputElement, Props>(
             onMouseDown={onMouseDown}
             onClick={(e) => {
               if (onClear) {
+                if (ref) {
+                  ref.focus();
+                }
                 if (e.target instanceof HTMLButtonElement) {
                   const { target } = e;
                   target.name = name;

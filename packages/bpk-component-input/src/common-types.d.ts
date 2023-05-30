@@ -42,6 +42,7 @@ type BaseProps = {
     dockedFirst?: boolean;
     dockedMiddle?: boolean;
     dockedLast?: boolean;
+    inputRef?: ((ref: HTMLInputElement) => void) | null;
     [rest: string]: any;
 };
 export type PropsWithoutClearButonMode = BaseProps & {
@@ -68,6 +69,7 @@ export declare const propTypes: {
     dockedFirst: PropTypes.Requireable<boolean>;
     dockedMiddle: PropTypes.Requireable<boolean>;
     dockedLast: PropTypes.Requireable<boolean>;
+    inputRef: PropTypes.Requireable<(...args: any[]) => any>;
     clearButtonMode: PropTypes.Requireable<string>;
     clearButtonLabel: (props: any, propName: string, componentName: string) => Error | null;
     onClear: (props: any, propName: string, componentName: string) => Error | null;
@@ -81,6 +83,7 @@ export declare const defaultProps: {
     dockedFirst: boolean;
     dockedMiddle: boolean;
     dockedLast: boolean;
+    inputRef: null;
     clearButtonMode: "never";
     clearButtonLabel: null;
     onClear: null;

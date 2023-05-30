@@ -33,6 +33,7 @@ declare class BpkInput extends Component<Props, State> {
     dockedFirst: boolean;
     dockedMiddle: boolean;
     dockedLast: boolean;
+    inputRef: null;
     clearButtonMode: 'never';
     clearButtonLabel: null;
     onClear: null;
