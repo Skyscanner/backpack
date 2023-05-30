@@ -159,6 +159,4 @@ const BpkInput = forwardRef<HTMLInputElement, Props>(
   },
 );
 
-BpkInput.defaultProps = defaultProps;
-
 export default BpkInput;
