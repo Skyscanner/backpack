@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -44,13 +44,13 @@ export const OVERLAY_TYPES = {
   rightHigh: 'right-high',
   vignette: 'vignette',
   off: 'off',
-};
+} as const;
 
 export type Props = {
-  children: Node,
-  overlayType: ?$Keys<typeof OVERLAY_TYPES>,
-  className: ?string,
-  foregroundContent: ?Node,
+  children: ReactNode;
+  overlayType?: keyof typeof OVERLAY_TYPES;
+  className?: string;
+  foregroundContent?: ReactNode;
 };
 
 const BpkOverlay = (props: Props) => {
@@ -76,9 +76,9 @@ const BpkOverlay = (props: Props) => {
 
 BpkOverlay.propTypes = {
   children: PropTypes.node.isRequired,
+  overlayType: PropTypes.oneOf(Object.keys(OVERLAY_TYPES)),
   className: PropTypes.string,
   foregroundContent: PropTypes.node,
-  overlayType: PropTypes.oneOf(Object.keys(OVERLAY_TYPES)),
 };
 
 BpkOverlay.defaultProps = {
