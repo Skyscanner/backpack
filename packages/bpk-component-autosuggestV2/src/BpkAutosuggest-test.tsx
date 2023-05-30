@@ -75,13 +75,13 @@ describe('BpkAutosuggest', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should set the input reference', () => {
+  it('should set the input reference', async () => {
     const inputRef = createRef<HTMLInputElement>();
 
     render(<BpkAutosuggest ref={inputRef} {...requiredProps} />);
 
     const input = screen.getByRole('combobox');
-    expect(input).toEqual(inputRef.current);
+    await waitFor(() => expect(input).toEqual(inputRef.current));
   });
 
   it('should default autocomplete to off', () => {
