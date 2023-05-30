@@ -38,7 +38,78 @@ this.autosuggestRef = React.createRef<HTMLInputElement>();
 
 * `renderInputComponent` is no longer a prop. The component renders a BpkInput component, any extension or modification of this can be done via the `inputProps` prop which is passed into the input or by extending or overriding the styling
 
-**Extending**
+**Before**
+
+```js
+  renderInputComponent: (
+    inputProps: Record<any, any> & {
+      className: string;
+      id: string;
+      value: string;
+    },
+  ) => React.ReactElement<typeof BpkInput> = (inputProps) => {
+    let value = null;
+    const shouldGetSuggestionValue =
+      (this.state.focused && this.props.searchPlaceId) ||
+      (!this.state.focused && !this.props.showStoredTextOnBlur);
+    if (
+      this.selectedValue &&
+      this.props.selectedSuggestion &&
+      shouldGetSuggestionValue
+    ) {
+      value = this.getSuggestionValue(this.props.selectedSuggestion);
+    }
+
+    const classes = [];
+    if (inputProps.className) {
+      classes.push(inputProps.className);
+    }
+    classes.push(STYLES['fsc-location-input']);
+
+    return BpkAutosuggest.defaultProps.renderInputComponent({
+      ...inputProps,
+      name: inputProps.id,
+      value: value == null ? inputProps.value : value,
+      dir: 'auto',
+      className: classes.join(' '),
+    });
+  };
+
+```
+
+**Replacement**
+
+```js
+
+this.theme = {
+  ...BpkAutosuggest.defaultProps.theme,
+  input: 'fsc-location-input',
+}
+
+const getDefaultValue = () => {
+  const shouldGetSuggestionValue =
+    (this.state.focused && this.props.searchPlaceId) ||
+    (!this.state.focused && !this.props.showStoredTextOnBlur);
+
+  if (this.selectedValue && this.props.selectedSuggestion && shouldGetSuggestionValue) {
+      return this.getSuggestionValue(this.props.selectedSuggestion);
+    }
+
+    return ''
+}
+
+<BpkAutosuggest
+  theme={this.theme}
+  defaultValue={getDefaultValue()}
+  inputProps={{
+    name: inputProps.id,
+    dir: 'auto',
+  }}
+>
+
+```
+
+**Extending Theme**
 
 ```js
 this.theme = {
@@ -50,7 +121,7 @@ this.theme = {
 
 ```
 
-**Overriding**
+**Overriding Theme**
 
 ```js
 this.theme = {
