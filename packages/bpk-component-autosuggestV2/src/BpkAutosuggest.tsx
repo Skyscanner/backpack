@@ -62,7 +62,7 @@ export type BpkAutoSuggestTheme = {
 
 export type BpkAutoSuggestProps<T> = {
   ariaLabels: {
-    resultsList?: string;
+    resultsList: string;
     label?: string;
     clearButton?: string;
   };

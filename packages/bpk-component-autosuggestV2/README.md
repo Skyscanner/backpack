@@ -109,7 +109,7 @@ class MyComponent extends Component {
 | Property                     | PropType                                           | Required | Default Value |
 | ---------------------------- | -------------------------------------------------- | -------- | ------------- |
 | ariaLabels                   | object                                             | true     | -             |
-| ariaLabels.resultsList       | string                                             | false    | undefined             |
+| ariaLabels.resultsList       | string                                             | true    | undefined             |
 | getSuggestionValue           | function                                           | true     | -             |
 | id                           | string                                             | true     | -             |
 | inputProps                   | object                                             | true     | -             |
