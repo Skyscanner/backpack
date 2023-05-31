@@ -40,7 +40,6 @@ describe('BpkCalendar accessibility tests', () => {
           type: CALENDAR_SELECTION_TYPE.single,
           date: new Date(2010, 1, 15),
         }}
-        month={new Date(2010, 1, 1)}
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
       />,
@@ -65,7 +64,6 @@ describe('BpkCalendar accessibility tests', () => {
           startDate: new Date(2010, 1, 16),
           endDate: new Date(2010, 1, 20),
         }}
-        month={new Date(2010, 1, 1)}
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
       />,
