@@ -17,7 +17,6 @@
  */
 /* @flow strict */
 
-import PropTypes from 'prop-types';
 import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -27,26 +26,48 @@ import STYLES from './BpkOverlay.module.scss';
 const getClassName = cssModules(STYLES);
 
 export const OVERLAY_TYPES = {
-  solidLow: 'solid-low',
-  solidMedium: 'solid-medium',
-  solidHigh: 'solid-high',
-  topLow: 'top-low',
-  topMedium: 'top-medium',
-  topHigh: 'top-high',
-  bottomLow: 'bottom-low',
-  bottomMedium: 'bottom-medium',
+  solidLow: 'solidLow',
+  solidMedium: 'solidMedium',
+  solidHigh: 'solidHigh',
+  topLow: 'topLow',
+  topMedium: 'topMedium',
+  topHigh: 'topHigh',
+  bottomLow: 'bottomLow',
+  bottomMedium: 'bottomMedium',
   bottomHigh: 'bottom-high',
-  leftLow: 'left-low',
-  leftMedium: 'left-medium',
-  leftHigh: 'left-high',
-  rightLow: 'right-low',
-  rightMedium: 'right-medium',
-  rightHigh: 'right-high',
+  leftLow: 'leftLow',
+  leftMedium: 'leftMedium',
+  leftHigh: 'leftHigh',
+  rightLow: 'rightLow',
+  rightMedium: 'rightMedium',
+  rightHigh: 'rightHigh',
   vignette: 'vignette',
   off: 'off',
 } as const;
 
-export type Props = {
+const overlayTypeClassSuffixes = {
+  [OVERLAY_TYPES.solidLow]: 'solid-low',
+  [OVERLAY_TYPES.solidMedium]: 'solid-medium',
+  [OVERLAY_TYPES.solidHigh]: 'solid-high',
+  [OVERLAY_TYPES.topLow]: 'top-low',
+  [OVERLAY_TYPES.topMedium]: 'top-medium',
+  [OVERLAY_TYPES.topHigh]: 'top-high',
+  [OVERLAY_TYPES.bottomLow]: 'bottom-low',
+  [OVERLAY_TYPES.bottomMedium]: 'bottom-medium',
+  [OVERLAY_TYPES.bottomHigh]: 'bottom-high',
+  [OVERLAY_TYPES.leftLow]: 'left-low',
+  [OVERLAY_TYPES.leftMedium]: 'left-medium',
+  [OVERLAY_TYPES.leftHigh]: 'left-high',
+  [OVERLAY_TYPES.rightLow]: 'right-low',
+  [OVERLAY_TYPES.rightMedium]: 'right-medium',
+  [OVERLAY_TYPES.rightHigh]: 'right-high',
+  [OVERLAY_TYPES.vignette]: 'vignette',
+  [OVERLAY_TYPES.off]: 'off',
+} as const;
+
+export type OverlayType = typeof OVERLAY_TYPES[keyof typeof OVERLAY_TYPES];
+
+type Props = {
   children: ReactNode;
   overlayType?: keyof typeof OVERLAY_TYPES;
   className?: string;
@@ -60,9 +81,10 @@ const BpkOverlay = (props: Props) => {
   const wrapperClassNames = getClassName('bpk-overlay__wrapper', className);
   const overlayClassNames = getClassName(
     'bpk-overlay__overlay',
-    overlayType !== null &&
-      overlayType !== OVERLAY_TYPES.off &&
-      `bpk-overlay__overlay--${overlayType}`,
+    overlayType !== null ||
+      (overlayType !== undefined &&
+        overlayType !== OVERLAY_TYPES.off &&
+        `bpk-overlay__overlay--${overlayTypeClassSuffixes[overlayType]}`),
   );
 
   return (
@@ -74,17 +96,10 @@ const BpkOverlay = (props: Props) => {
   );
 };
 
-BpkOverlay.propTypes = {
-  children: PropTypes.node.isRequired,
-  overlayType: PropTypes.oneOf(Object.keys(OVERLAY_TYPES)),
-  className: PropTypes.string,
-  foregroundContent: PropTypes.node,
-};
-
 BpkOverlay.defaultProps = {
+  overlayType: OVERLAY_TYPES.solidLow,
   className: null,
   foregroundContent: null,
-  overlayType: OVERLAY_TYPES.solidLow,
 };
 
 export default BpkOverlay;
