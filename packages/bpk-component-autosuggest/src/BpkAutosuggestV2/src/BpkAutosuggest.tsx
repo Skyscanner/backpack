@@ -31,10 +31,10 @@ import type {
 } from 'downshift';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import ClearIconLg from '../../bpk-component-icon/lg/close-circle';
-import { withButtonAlignment } from '../../bpk-component-icon';
-import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
-import { cssModules } from '../../bpk-react-utils';
+import ClearIconLg from '../../../../bpk-component-icon/lg/close-circle';
+import { withButtonAlignment } from '../../../../bpk-component-icon';
+import BpkInput, { INPUT_TYPES } from '../../../../bpk-component-input';
+import { cssModules } from '../../../../bpk-react-utils';
 
 import STYLES from './BpkAutosuggest.module.scss';
 
@@ -80,7 +80,7 @@ export type BpkAutoSuggestProps<T> = {
   getA11yResultsMessage: (resultCount: number) => string;
   defaultValue?: string;
   enterKeyHint?: string;
-  isBanana?: boolean;
+  withLabel?: boolean;
   isDesktop?: boolean;
   onClick?: () => void;
   onLoad?: (inputValue: string) => void;
@@ -125,7 +125,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       highlightFirstSuggestion,
       id,
       inputProps,
-      isBanana,
       isDesktop,
       multiSection,
       onClick,
@@ -141,6 +140,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       showClear,
       suggestions,
       theme: customTheme,
+      withLabel,
     },
     forwardedRef,
   ) => {
@@ -324,7 +324,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           suggestions.length && theme.containerOpen,
         )}
       >
-        {isBanana ? (
+        {withLabel ? (
           <label
             {...getLabelProps({ 'aria-label': ariaLabels.label })}
             className={getClassName(

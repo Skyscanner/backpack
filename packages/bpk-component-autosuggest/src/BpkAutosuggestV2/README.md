@@ -136,14 +136,3 @@ class MyComponent extends Component {
 
 
 **Note:** The `inputProps` object is passed directly to a [`BpkInput`](../bpk-component-input/README.md#props) component, so its prop types apply also. BpkAutosuggest is a forwardRef component which will pass the ref through to BpkInput via the ref prop.
-
-*BpkAutosuggestSuggestion:*
-
-| Property          | PropType             | Required | Default Value |
-| ----------------- | -------------------- | -------- | ------------- |
-| value             | string               | true     | -             |
-| subHeading        | string               | false    | undefined          |
-| tertiaryLabel     | string               | false    | undefined          |
-| icon              | func                 | false    | undefined          |
-| indent            | bool                 | false    | false         |
-| className         | string               | false    | undefined          |
