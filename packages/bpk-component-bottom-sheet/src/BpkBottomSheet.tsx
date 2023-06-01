@@ -19,8 +19,11 @@
 import type { ReactChild, ReactElement } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButton from '../../bpk-component-button';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
 import { BACKGROUND_ID, X_ID } from './constants';
