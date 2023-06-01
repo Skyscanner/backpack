@@ -57,8 +57,8 @@ type Props = {
 };
 
 type InjectedProps = {
-  onDateClick?: ((date: Date) => void) | null;
-  onDateKeyDown?: ((event: KeyboardEvent, asa: string) => void) | null;
+  onDateClick: ((date: Date) => void) | null;
+  onDateKeyDown: ((event: KeyboardEvent) => void) | null;
   month: Date;
 };
 
@@ -154,8 +154,8 @@ const getRawSelectedDate = (selectionConfig: SelectionConfiguration) => {
   return rawDate;
 };
 
-const withCalendarState = <P extends InjectedProps>(
-  Calendar: ComponentType<P>,
+const withCalendarState = <P extends {}>(
+  Calendar: ComponentType<P & InjectedProps>,
 ) => {
   class BpkCalendarContainer extends Component<CalendarProps<P>, State> {
     static defaultProps = {
@@ -366,12 +366,12 @@ const withCalendarState = <P extends InjectedProps>(
       return (
         <Calendar
           onMonthChange={this.handleMonthChange}
-          {...(calendarProps as P)}
           onDateClick={this.handleDateSelect}
-          onDateKeyDown={this.handleDateKeyDown}
           month={month}
+          onDateKeyDown={this.handleDateKeyDown}
           preventKeyboardFocus={this.state.preventKeyboardFocus}
           focusedDate={sanitisedFocusedDate}
+          {...(calendarProps as P)}
           minDate={sanitisedMinDate}
           maxDate={sanitisedMaxDate}
           selectionConfiguration={selectionConfiguration}

@@ -31,8 +31,8 @@ type Props = {
     initiallyFocusedDate: Date | null;
 };
 type InjectedProps = {
-    onDateClick?: ((date: Date) => void) | null;
-    onDateKeyDown?: ((event: KeyboardEvent, asa: string) => void) | null;
+    onDateClick: ((date: Date) => void) | null;
+    onDateKeyDown: ((event: KeyboardEvent) => void) | null;
     month: Date;
 };
 type CalendarProps<P> = Omit<P & Props, keyof InjectedProps>;
@@ -40,7 +40,7 @@ type State = {
     preventKeyboardFocus: boolean;
     focusedDate: Date;
 };
-declare const withCalendarState: <P extends InjectedProps>(Calendar: ComponentType<P>) => {
+declare const withCalendarState: <P extends {}>(Calendar: ComponentType<P & InjectedProps>) => {
     new (props: CalendarProps<P>): {
         UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<P>): void;
         handleDateFocus: (event: UIEvent, { date, source }: {
