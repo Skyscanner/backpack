@@ -23,7 +23,7 @@ type BaseProps = {
     isIpad?: boolean;
 };
 type HOCProps = {
-    getApplicationElement: () => HTMLElement;
+    getApplicationElement: () => HTMLElement | null;
     containerClassName?: string;
     closeOnScrimClick?: boolean;
 };

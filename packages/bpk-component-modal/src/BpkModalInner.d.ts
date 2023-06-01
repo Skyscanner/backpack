@@ -17,28 +17,23 @@
  */
 
 import type { ReactNode } from 'react';
-export declare const HEADER_ICON_TYPES: {
-    readonly primary: "primary";
-    readonly warning: "warning";
-    readonly destructive: "destructive";
-};
-export type DialogInnerProps = {
-    ariaLabel: string;
+export type Props = {
     id: string;
     children: ReactNode;
+    wide?: boolean;
+    isIphone: boolean;
+    showHeader?: boolean;
+    fullScreenOnMobile?: boolean;
+    fullScreen?: boolean;
+    padded?: boolean;
     dialogRef: (ref: HTMLElement | null | undefined) => void;
-    getApplicationElement: () => HTMLElement | null;
-    className?: string;
-    contentClassName?: string;
-    flare?: boolean;
-    flareClassName?: string;
-};
-export type Props = DialogInnerProps & {
-    isOpen: boolean;
-    renderTarget?: () => HTMLElement | null;
-    onClose: (event?: TouchEvent | MouseEvent | KeyboardEvent) => void | null;
+    onClose?: () => void;
+    className?: string | null;
+    contentClassName?: string | null;
+    title?: string | null;
     closeLabel?: string;
-    dismissible?: boolean;
-    headerIcon?: ReactNode;
-    headerIconType?: typeof HEADER_ICON_TYPES[keyof typeof HEADER_ICON_TYPES];
+    closeText?: string | null;
+    accessoryView?: ReactNode;
 };
+declare const BpkModalInner: ({ title, onClose, className, contentClassName, closeLabel, closeText, wide, showHeader, fullScreenOnMobile, fullScreen, padded, accessoryView, ...rest }: Props) => JSX.Element;
+export default BpkModalInner;
