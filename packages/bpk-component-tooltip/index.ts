@@ -16,21 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkTooltipPortal from './src/BpkTooltipPortal';
+import type { Props } from './src/BpkTooltipPortal';
+import { TOOLTIP_TYPES } from './src/constants';
 
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+export type BpkTooltipPortalProps = Props;
 
-import BpkTooltip from './BpkTooltip';
-
-describe('BpkTooltip accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkTooltip id="my-popover" aria-label="Tooltip">
-        My tooltip content
-      </BpkTooltip>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export default BpkTooltipPortal;
+export { TOOLTIP_TYPES };
