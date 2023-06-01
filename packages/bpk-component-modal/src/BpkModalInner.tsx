@@ -16,71 +16,84 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import PropTypes from 'prop-types';
-import type { Node, Element } from 'react';
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkModalInner.module.scss';
-import { titlePropType, onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  id: string,
-  children: Node,
-  wide: boolean,
-  isIphone: boolean,
-  showHeader: boolean,
-  fullScreenOnMobile: boolean,
-  fullScreen: boolean,
-  padded: boolean,
-  dialogRef: (ref: ?HTMLElement) => void,
-  onClose: (event: SyntheticEvent<>) => void,
-  className: ?string,
-  contentClassName: ?string,
-  title: ?string,
-  closeLabel: string,
-  closeText: ?string,
-  accessoryView: ?Element<any>,
+  id: string;
+  children: ReactNode;
+  wide?: boolean;
+  isIphone: boolean;
+  showHeader?: boolean;
+  fullScreenOnMobile?: boolean;
+  fullScreen?: boolean;
+  padded?: boolean;
+  dialogRef: (ref: HTMLElement | null | undefined) => void;
+  onClose?: () => void;
+  className?: string | null;
+  contentClassName?: string | null;
+  title?: string | null;
+  closeLabel?: string;
+  closeText?: string | null;
+  accessoryView?: ReactNode;
 };
 
-const BpkModalInner = (props: Props) => {
+const BpkModalInner = ({
+  title = null,
+  onClose = () => null,
+  className = null,
+  contentClassName = null,
+  closeLabel = '',
+  closeText = null,
+  wide = false,
+  showHeader = true,
+  fullScreenOnMobile = true,
+  fullScreen = false,
+  padded = true,
+  accessoryView = null,
+  ...rest
+}: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
   const navigationStyles = [getClassName('bpk-modal__navigation')];
 
-  if (props.wide) {
+  if (wide) {
     classNames.push(getClassName('bpk-modal--wide'));
   }
-  if (props.className) {
-    classNames.push(props.className);
+  if (className) {
+    classNames.push(className);
   }
 
-  if (props.fullScreen || props.isIphone) {
+  if (fullScreen || rest.isIphone) {
     classNames.push(getClassName('bpk-modal--full-screen'));
-  } else if (props.fullScreenOnMobile) {
+  } else if (fullScreenOnMobile) {
     classNames.push(getClassName('bpk-modal--full-screen-mobile'));
   }
 
-  if (props.padded) {
+  if (padded) {
     contentClassNames.push(getClassName('bpk-modal__content--padded'));
   }
 
-  if (props.contentClassName) {
-    contentClassNames.push(props.contentClassName);
+  if (contentClassName) {
+    contentClassNames.push(contentClassName);
   }
 
-  const headingId = `bpk-modal-heading-${props.id}`;
+  const headingId = `bpk-modal-heading-${rest.id}`;
 
-  const accessoryViewFinal = props.accessoryView ? (
+  const accessoryViewFinal = accessoryView ? (
     <span className={getClassName('bpk-modal__accessory-view')}>
-      {props.accessoryView}
+      {accessoryView}
     </span>
   ) : null;
 
@@ -91,14 +104,14 @@ const BpkModalInner = (props: Props) => {
       transitionTimeout={300}
     >
       <section
-        id={props.id}
-        tabIndex="-1"
+        id={rest.id}
+        tabIndex={-1}
         role="dialog"
-        aria-labelledby={props.showHeader ? headingId : null}
+        aria-labelledby={showHeader ? headingId : undefined}
         className={classNames.join(' ')}
-        ref={props.dialogRef}
+        ref={rest.dialogRef}
       >
-        {props.showHeader && (
+        {showHeader && (
           <header className={getClassName('bpk-modal__header')}>
             <BpkNavigationBar
               id={headingId}
@@ -108,71 +121,33 @@ const BpkModalInner = (props: Props) => {
                   id={headingId}
                   className={getClassName('bpk-modal__heading')}
                 >
-                  {props.title}
+                  {title}
                 </h2>
               }
               leadingButton={accessoryViewFinal}
               trailingButton={
-                props.closeText ? (
+                closeText ? (
                   <BpkButtonLink
                     className={getClassName('bpk-modal__close-button')}
-                    onClick={props.onClose}
+                    onClick={onClose}
                   >
-                    {/* $FlowIgnore[incompatible-type] this is perfectly good because we're already doing a null check above. THANKS FLOW */}
-                    {props.closeText}
+                    {closeText}
                   </BpkButtonLink>
                 ) : (
                   <BpkCloseButton
                     className={getClassName('bpk-modal__close-button')}
-                    label={props.closeLabel}
-                    onClick={props.onClose}
+                    label={closeLabel}
+                    onClick={onClose}
                   />
                 )
               }
             />
           </header>
         )}
-        <div className={contentClassNames.join(' ')}>{props.children}</div>
+        <div className={contentClassNames.join(' ')}>{rest.children}</div>
       </section>
     </TransitionInitialMount>
   );
 };
-
-export const propTypes = {
-  id: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  isIphone: PropTypes.bool.isRequired,
-  dialogRef: PropTypes.func.isRequired,
-  title: titlePropType,
-  onClose: onClosePropType,
-  className: PropTypes.string,
-  contentClassName: PropTypes.string,
-  closeLabel: PropTypes.string,
-  closeText: PropTypes.string,
-  wide: PropTypes.bool,
-  showHeader: PropTypes.bool,
-  fullScreenOnMobile: PropTypes.bool,
-  fullScreen: PropTypes.bool,
-  padded: PropTypes.bool,
-  accesoryView: PropTypes.func,
-};
-
-export const defaultProps = {
-  title: null,
-  onClose: () => null,
-  className: null,
-  contentClassName: null,
-  closeLabel: '',
-  closeText: null,
-  wide: false,
-  showHeader: true,
-  fullScreenOnMobile: true,
-  fullScreen: false,
-  padded: true,
-  accessoryView: null,
-};
-
-BpkModalInner.propTypes = { ...propTypes };
-BpkModalInner.defaultProps = { ...defaultProps };
 
 export default BpkModalInner;

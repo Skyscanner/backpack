@@ -47,10 +47,11 @@ type BaseProps = {
   onClose?: () => void | null;
   isIphone?: boolean;
   isIpad?: boolean;
+  [rest: string]: any;
 };
 
 type HOCProps = {
-  getApplicationElement: () => HTMLElement;
+  getApplicationElement: () => HTMLElement | null;
   containerClassName?: string;
   closeOnScrimClick?: boolean;
 };

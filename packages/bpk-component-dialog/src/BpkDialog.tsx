@@ -57,7 +57,7 @@ const BpkDialog = ({
         closeOnScrimClick={dismissible}
         containerClassName={getClassName('bpk-dialog__container')}
         contentClassName={
-          headerIcon ? getClassName('bpk-dialog--with-icon') : null
+          headerIcon ? getClassName('bpk-dialog--with-icon') : undefined
         }
         {...rest}
       >
