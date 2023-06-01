@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
+import type { TextStyle } from './BpkText';
 import BpkText, { WEIGHT_STYLES } from './BpkText';
 
 describe('BpkText', () => {
@@ -84,7 +83,10 @@ describe('BpkText', () => {
   ['xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach((textStyle) => {
     it(`should render correctly with weight="black" and supported textStyle="${textStyle}"`, () => {
       const { asFragment } = render(
-        <BpkText textStyle={textStyle} weight={WEIGHT_STYLES.black}>
+        <BpkText
+          textStyle={textStyle as TextStyle}
+          weight={WEIGHT_STYLES.black}
+        >
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
           et magnis dis parturient montes, nascetur ridiculus mus.
@@ -121,7 +123,7 @@ describe('BpkText', () => {
     (textStyle) => {
       it(`should render correctly with textStyle="${textStyle}"`, () => {
         const { asFragment } = render(
-          <BpkText textStyle={textStyle}>
+          <BpkText textStyle={textStyle as TextStyle}>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
             commodo ligula eget dolor. Aenean massa. Cum sociis natoque
             penatibus et magnis dis parturient montes, nascetur ridiculus mus.

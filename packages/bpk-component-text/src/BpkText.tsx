@@ -16,12 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
-
-import { cssModules, deprecated } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkText.module.scss';
 
@@ -55,18 +52,45 @@ export const TEXT_STYLES = {
   hero3: 'hero-3',
   hero4: 'hero-4',
   hero5: 'hero-5',
-};
+} as const;
 
 export const WEIGHT_STYLES = {
   regular: 'regular',
   bold: 'bold',
   black: 'black',
+} as const;
+
+export type Weight = typeof WEIGHT_STYLES[keyof typeof WEIGHT_STYLES];
+export type TextStyle = typeof TEXT_STYLES[keyof typeof TEXT_STYLES];
+export type Tag =
+  | 'span'
+  | 'p'
+  | 'text'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6';
+
+type Props = {
+  children: ReactNode;
+  textStyle?: TextStyle;
+  tagName?: Tag;
+  className?: string | null;
+  id?: string;
+  /** @deprecated Use a different "textStyle" to achieve the desired weight. */
+  bold?: boolean | null;
+  /** @deprecated Use a different "textStyle" to achieve the desired weight. */
+  weight?: Weight | null;
+  [rest: string]: any;
 };
 
-export type Weight = $Keys<typeof WEIGHT_STYLES>;
-export type TextStyle = $Values<typeof TEXT_STYLES>;
-
-const getWeight = (bold, weight, textStyle) => {
+const getWeight = (
+  bold: boolean | null | undefined,
+  weight: Weight | null | undefined,
+  textStyle: TextStyle,
+) => {
   if (bold || weight === WEIGHT_STYLES.bold) {
     return WEIGHT_STYLES.bold;
   }
@@ -79,26 +103,21 @@ const getWeight = (bold, weight, textStyle) => {
   return null;
 };
 
-type Props = {
-  children: Node,
-  textStyle: TextStyle,
-  tagName: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
-  className: ?string,
-  bold: ?boolean,
-  weight: ?Weight,
-};
-
-const BpkText = (props: Props) => {
-  const {
-    bold,
-    children,
-    className,
-    tagName: TagName,
-    textStyle,
-    weight,
-    ...rest
-  } = props;
-
+const BpkText = ({
+  textStyle = TEXT_STYLES.bodyDefault,
+  tagName: TagName = 'span',
+  className = null,
+  bold = null,
+  weight = null,
+  children,
+  ...rest
+}: Props) => {
+  if (bold) {
+    console.warn('Use a different "textStyle" to achieve the desired weight.');
+  }
+  if (weight) {
+    console.warn('Use a different "textStyle" to achieve the desired weight.');
+  }
   const validWeight = getWeight(bold, weight, textStyle);
 
   const classNames = getClassName(
@@ -109,44 +128,10 @@ const BpkText = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <TagName className={classNames} {...rest}>
       {children}
     </TagName>
   );
-};
-
-BpkText.propTypes = {
-  children: PropTypes.node.isRequired,
-  textStyle: PropTypes.oneOf(Object.values(TEXT_STYLES)),
-  tagName: PropTypes.oneOf([
-    'span',
-    'p',
-    'text',
-    'h1',
-    'h2',
-    'h3',
-    'h4',
-    'h5',
-    'h6',
-  ]),
-  className: PropTypes.string,
-  bold: deprecated(
-    PropTypes.bool,
-    'Use a different "textStyle" to achieve the desired weight.',
-  ),
-  weight: deprecated(
-    PropTypes.oneOf(Object.keys(WEIGHT_STYLES)),
-    'Use a different "textStyle" to achieve the desired weight.',
-  ),
-};
-
-BpkText.defaultProps = {
-  textStyle: TEXT_STYLES.bodyDefault,
-  tagName: 'span',
-  className: null,
-  bold: null,
-  weight: null,
 };
 
 export default BpkText;
