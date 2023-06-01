@@ -1,41 +1,28 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import type { ComponentType } from 'react';
 import type { SelectionConfiguration } from './custom-proptypes';
 type Props = {
     fixedWidth: boolean;
     maxDate: Date;
     minDate: Date;
-    onDateSelect?: (date: Date, newDate?: Date) => void;
-    onMonthChange?: (event: UIEvent, { month, source }: {
+    onDateSelect?: ((date: Date, newDate?: Date) => void) | null;
+    onMonthChange?: ((event: UIEvent, { month, source }: {
         month: Date;
         source: string;
-    }) => void;
+    }) => void) | null;
     selectionConfiguration: SelectionConfiguration;
     initiallyFocusedDate: Date | null;
 };
-type CalendarProps<P> = P & Props;
+type InjectedProps = {
+    onDateClick?: ((date: Date) => void) | null;
+    onDateKeyDown?: ((event: KeyboardEvent, asa: string) => void) | null;
+    month: Date;
+};
+type CalendarProps<P> = Omit<P & Props, keyof InjectedProps>;
 type State = {
     preventKeyboardFocus: boolean;
     focusedDate: Date;
 };
-declare const withCalendarState: <P extends {}>(Calendar: ComponentType<P>) => {
+declare const withCalendarState: <P extends InjectedProps>(Calendar: ComponentType<P>) => {
     new (props: CalendarProps<P>): {
         UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<P>): void;
         handleDateFocus: (event: UIEvent, { date, source }: {
@@ -75,8 +62,8 @@ declare const withCalendarState: <P extends {}>(Calendar: ComponentType<P>) => {
         fixedWidth: boolean;
         maxDate: Date;
         minDate: Date;
-        onDateSelect: () => void;
-        onMonthChange: () => void;
+        onDateSelect: null;
+        onMonthChange: null;
         selectionConfiguration: {
             type: "single";
             date: null;
@@ -104,9 +91,12 @@ declare const _default: {
         focusedDate?: Date | null | undefined;
         markOutsideDays?: boolean | undefined;
         markToday?: boolean | undefined;
-        onMonthChange?: (() => void) | undefined;
-        onDateClick?: (() => void) | undefined;
-        onDateKeyDown?: (() => void) | undefined;
+        onMonthChange?: ((event: UIEvent, { month, source }: {
+            month: Date;
+            source: string;
+        }) => void) | null | undefined;
+        onDateClick?: ((date: Date) => void) | null | undefined;
+        onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
         preventKeyboardFocus?: boolean | undefined;
         selectionConfiguration?: SelectionConfiguration | undefined;
         gridClassName?: string | null | undefined;
@@ -134,9 +124,12 @@ declare const _default: {
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
             markToday?: boolean | undefined;
-            onMonthChange?: (() => void) | undefined;
-            onDateClick?: (() => void) | undefined;
-            onDateKeyDown?: (() => void) | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            onDateClick?: ((date: Date) => void) | null | undefined;
+            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
             selectionConfiguration?: SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
@@ -176,9 +169,12 @@ declare const _default: {
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
             markToday?: boolean | undefined;
-            onMonthChange?: (() => void) | undefined;
-            onDateClick?: (() => void) | undefined;
-            onDateKeyDown?: (() => void) | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            onDateClick?: ((date: Date) => void) | null | undefined;
+            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
             selectionConfiguration?: SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
@@ -207,9 +203,12 @@ declare const _default: {
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
             markToday?: boolean | undefined;
-            onMonthChange?: (() => void) | undefined;
-            onDateClick?: (() => void) | undefined;
-            onDateKeyDown?: (() => void) | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            onDateClick?: ((date: Date) => void) | null | undefined;
+            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
             selectionConfiguration?: SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
@@ -244,9 +243,12 @@ declare const _default: {
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
             markToday?: boolean | undefined;
-            onMonthChange?: (() => void) | undefined;
-            onDateClick?: (() => void) | undefined;
-            onDateKeyDown?: (() => void) | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            onDateClick?: ((date: Date) => void) | null | undefined;
+            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
             selectionConfiguration?: SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
@@ -276,9 +278,12 @@ declare const _default: {
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
             markToday?: boolean | undefined;
-            onMonthChange?: (() => void) | undefined;
-            onDateClick?: (() => void) | undefined;
-            onDateKeyDown?: (() => void) | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            onDateClick?: ((date: Date) => void) | null | undefined;
+            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
             selectionConfiguration?: SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
@@ -306,9 +311,12 @@ declare const _default: {
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
             markToday?: boolean | undefined;
-            onMonthChange?: (() => void) | undefined;
-            onDateClick?: (() => void) | undefined;
-            onDateKeyDown?: (() => void) | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            onDateClick?: ((date: Date) => void) | null | undefined;
+            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
             selectionConfiguration?: SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
@@ -338,9 +346,12 @@ declare const _default: {
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
             markToday?: boolean | undefined;
-            onMonthChange?: (() => void) | undefined;
-            onDateClick?: (() => void) | undefined;
-            onDateKeyDown?: (() => void) | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            onDateClick?: ((date: Date) => void) | null | undefined;
+            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
             selectionConfiguration?: SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
@@ -368,9 +379,12 @@ declare const _default: {
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
             markToday?: boolean | undefined;
-            onMonthChange?: (() => void) | undefined;
-            onDateClick?: (() => void) | undefined;
-            onDateKeyDown?: (() => void) | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            onDateClick?: ((date: Date) => void) | null | undefined;
+            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
             selectionConfiguration?: SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
@@ -398,9 +412,12 @@ declare const _default: {
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
             markToday?: boolean | undefined;
-            onMonthChange?: (() => void) | undefined;
-            onDateClick?: (() => void) | undefined;
-            onDateKeyDown?: (() => void) | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            onDateClick?: ((date: Date) => void) | null | undefined;
+            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
             selectionConfiguration?: SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
@@ -415,8 +432,8 @@ declare const _default: {
         fixedWidth: boolean;
         maxDate: Date;
         minDate: Date;
-        onDateSelect: () => void;
-        onMonthChange: () => void;
+        onDateSelect: null;
+        onMonthChange: null;
         selectionConfiguration: {
             type: "single";
             date: null;
