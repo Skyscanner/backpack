@@ -81,10 +81,10 @@ const BpkOverlay = (props: Props) => {
   const wrapperClassNames = getClassName('bpk-overlay__wrapper', className);
   const overlayClassNames = getClassName(
     'bpk-overlay__overlay',
-    overlayType !== null ||
-      (overlayType !== undefined &&
-        overlayType !== OVERLAY_TYPES.off &&
-        `bpk-overlay__overlay--${overlayTypeClassSuffixes[overlayType]}`),
+    overlayType !== undefined &&
+      overlayType !== null &&
+      overlayType !== OVERLAY_TYPES.off &&
+      `bpk-overlay__overlay--${overlayTypeClassSuffixes[overlayType]}`,
   );
 
   return (
