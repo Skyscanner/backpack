@@ -40,7 +40,7 @@ describe('BpkOverlay', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  Object.keys(OVERLAY_TYPES).map((overlayType) =>
+  Object.values(OVERLAY_TYPES).map((overlayType) =>
     it(`should render correctly with overlayType={${overlayType}}`, () => {
       const { asFragment } = render(
         <BpkOverlay overlayType={overlayType}>
@@ -62,7 +62,7 @@ describe('BpkOverlay', () => {
 
   it('should support arbitrary props', () => {
     const { asFragment } = render(
-      <BpkOverlay testid="123">
+      <BpkOverlay>
         <span>Backpack</span>
       </BpkOverlay>,
     );
