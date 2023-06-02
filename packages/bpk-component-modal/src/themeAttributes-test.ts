@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import themeAttributes from './themeAttributes';
 
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import themeAttributes from './src/themeAttributes';
-import BpkModal, { type Props, propTypes, defaultProps } from './src/BpkModal';
-
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2 };
+describe('themeAttributes', () => {
+  it('should export the correct theme attributes', () => {
+    expect(themeAttributes).toEqual([
+      'linkColor',
+      'linkHoverColor',
+      'linkActiveColor',
+      'linkVisitedColor',
+    ]);
+  });
+});
