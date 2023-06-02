@@ -19,7 +19,6 @@
 import type { KeyboardEvent, MouseEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText from '../../bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButton from '../../bpk-component-button';
