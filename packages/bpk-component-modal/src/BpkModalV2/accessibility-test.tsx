@@ -30,6 +30,7 @@ describe('BpkModal accessibility tests', () => {
         closeLabel="bpk-modal-button-close"
         isOpen
         onClose={jest.fn()}
+        showHeader
         title="Backpack Dialog Element"
         padded
       >
