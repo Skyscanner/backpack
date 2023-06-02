@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import type { ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -67,7 +67,7 @@ const overlayTypeClassSuffixes = {
 
 export type OverlayType = typeof OVERLAY_TYPES[keyof typeof OVERLAY_TYPES];
 
-export type Props = {
+type Props = ComponentProps<'div'> & {
   children: ReactNode;
   overlayType?: OverlayType;
   className?: string;
