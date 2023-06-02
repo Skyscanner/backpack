@@ -34,7 +34,7 @@ export const OVERLAY_TYPES = {
   topHigh: 'topHigh',
   bottomLow: 'bottomLow',
   bottomMedium: 'bottomMedium',
-  bottomHigh: 'bottom-high',
+  bottomHigh: 'bottomHigh',
   leftLow: 'leftLow',
   leftMedium: 'leftMedium',
   leftHigh: 'leftHigh',
@@ -69,7 +69,7 @@ export type OverlayType = typeof OVERLAY_TYPES[keyof typeof OVERLAY_TYPES];
 
 type Props = {
   children: ReactNode;
-  overlayType?: keyof typeof OVERLAY_TYPES;
+  overlayType?: OverlayType;
   className?: string;
   foregroundContent?: ReactNode;
 };
@@ -88,7 +88,6 @@ const BpkOverlay = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div className={wrapperClassNames} {...rest}>
       {children}
       <div className={overlayClassNames}>{foregroundContent}</div>
