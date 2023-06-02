@@ -28,7 +28,7 @@ describe('BpkModalV2', () => {
     closeLabel: 'bpk-modal-button-close',
     isOpen: true,
     onClose: jest.fn(),
-    title: 'Backpack Dialog Element',
+    title: 'Modal with dialog element',
   };
 
   beforeEach(() => {
@@ -92,12 +92,12 @@ describe('BpkModalV2', () => {
 
     it('should render title correctly', () => {
       render(
-        <BpkModalV2 {...props} title="MyTitle">
+        <BpkModalV2 {...props}>
           <div>Content</div>
         </BpkModalV2>,
       );
 
-      expect(screen.getByText('MyTitle')).toBeInTheDocument();
+      expect(screen.getByText('Modal with dialog element')).toBeInTheDocument();
       expect(screen.getByTitle('bpk-modal-button-close')).toBeInTheDocument();
     });
 

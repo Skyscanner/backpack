@@ -168,7 +168,7 @@ export const BpkModalV2 = (props: Props) => {
         data-open={isOpen}
         ref={ref}
       >
-        {showHeader}
+        {showHeader()}
         <div className={contentClassNames}>{children}</div>
       </dialog>
     </div>

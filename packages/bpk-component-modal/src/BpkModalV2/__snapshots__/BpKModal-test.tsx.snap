@@ -25,7 +25,7 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
           <h2
             class="bpk-text bpk-text--label-1 bpk-modal__title"
           >
-            Backpack Dialog Element
+            Modal with dialog element
           </h2>
         </div>
         <div>
@@ -82,7 +82,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
           <h2
             class="bpk-text bpk-text--label-1 bpk-modal__title"
           >
-            Backpack Dialog Element
+            Modal with dialog element
           </h2>
         </div>
         <div>
