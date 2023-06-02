@@ -85,5 +85,6 @@ class App extends Component {
 | fullScreenOnMobile    | bool     | false    | false         |
 | noFullScreenOnMobile  | bool     | false    | false         |
 | padded                | bool     | false    | false         |
+| noHeader              | bool     | false    | false         |
 | title                 | string   | false    | ''            |
 | wide                  | bool     | false    | false         |

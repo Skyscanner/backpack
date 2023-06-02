@@ -39,6 +39,7 @@ export type Props = {
   noFullScreenOnMobile?: boolean;
   onClose: () => void | null;
   padded?: boolean;
+  noHeader?: boolean;
   title?: string | null;
   wide?: boolean;
 };
@@ -74,6 +75,7 @@ export const BpkModalV2 = (props: Props) => {
     id,
     isOpen,
     noFullScreenOnMobile,
+    noHeader,
     onClose,
     padded,
     title,
@@ -123,6 +125,27 @@ export const BpkModalV2 = (props: Props) => {
     </div>
   );
 
+  const showHeader = () => {
+    if (!noHeader) {
+      if (title) {
+        return (
+          <div className={getClassName('bpk-modal__header-title')}>
+            <div className={getClassName('bpk-modal__header-title-container')}>
+              <Heading>{title}</Heading>
+            </div>
+            {closeButton}
+          </div>
+        );
+      }
+      return (
+        <div className={getClassName('bpk-modal__button-container')}>
+          {closeButton}
+        </div>
+      );
+    }
+    return null;
+  };
+
   return isOpen ? (
     <div
       className={getClassName(
@@ -145,18 +168,7 @@ export const BpkModalV2 = (props: Props) => {
         data-open={isOpen}
         ref={ref}
       >
-        {title ? (
-          <div className={getClassName('bpk-modal__header-title')}>
-            <div className={getClassName('bpk-modal__header-title-container')}>
-              <Heading>{title}</Heading>
-            </div>
-            {closeButton}
-          </div>
-        ) : (
-          <div className={getClassName('bpk-modal__button-container')}>
-            {closeButton}
-          </div>
-        )}
+        {showHeader()}
         <div className={contentClassNames}>{children}</div>
       </dialog>
     </div>

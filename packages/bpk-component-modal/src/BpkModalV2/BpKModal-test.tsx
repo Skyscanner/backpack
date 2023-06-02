@@ -24,12 +24,11 @@ import { type BpkModalV2 as DialogType } from './BpkModal';
 describe('BpkModalV2', () => {
   const props = {
     id: 'bpk-modal-element',
-    ariaLabelledby: 'bpk-modal-label-my-dialog',
+    ariaLabelledby: 'bpk-modal-element',
     closeLabel: 'bpk-modal-button-close',
     isOpen: true,
     onClose: jest.fn(),
     title: 'Backpack Dialog Element',
-    showHeader: true,
   };
 
   beforeEach(() => {
@@ -91,15 +90,37 @@ describe('BpkModalV2', () => {
       expect(document.getElementById('bpk-modal-element')).toBeInTheDocument();
     });
 
-    it('should not render title if title is set to empty string', () => {
+    it('should render title correctly', () => {
       render(
-        <BpkModalV2 {...props} title="">
+        <BpkModalV2 {...props} title="MyTitle">
           <div>Content</div>
         </BpkModalV2>,
       );
 
-      expect(screen.queryByRole('Dialog Element')).not.toBeInTheDocument();
-      expect(document.getElementsByClassName('bpk-close-button')).toBeTruthy();
+      expect(screen.getByText('MyTitle')).toBeInTheDocument();
+      expect(screen.getByTitle('bpk-modal-button-close')).toBeInTheDocument();
+    });
+
+    it('should not render title when title does not exist', () => {
+      render(
+        <BpkModalV2 {...props}>
+          <div>Content</div>
+        </BpkModalV2>,
+      );
+
+      expect(screen.queryByText('MyTitle')).not.toBeInTheDocument();
+      expect(screen.getByTitle('bpk-modal-button-close')).toBeInTheDocument();
+    });
+
+    it('should not render header when true', () => {
+      render(
+        <BpkModalV2 {...props} noHeader>
+          <div>Content</div>
+        </BpkModalV2>,
+      );
+
+      expect(document.getElementById('bpk-modal-element')).toBeInTheDocument();
+      expect(screen.queryByRole('button')).toBeNull();
     });
 
     it('should call showModal to open dialog', () => {

@@ -11,7 +11,7 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
       id="bpk-modal-element-polyfill"
     />
     <dialog
-      aria-labelledby="bpk-modal-label-my-dialog"
+      aria-labelledby="bpk-modal-element"
       class="bpk-modal"
       data-open="true"
       id="bpk-modal-element"
@@ -68,7 +68,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
     class="bpk-modal-wrapper"
   >
     <dialog
-      aria-labelledby="bpk-modal-label-my-dialog"
+      aria-labelledby="bpk-modal-element"
       class="bpk-modal"
       data-open="true"
       id="bpk-modal-element"
