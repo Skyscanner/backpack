@@ -113,7 +113,7 @@ describe('BpkModalV2', () => {
       expect(screen.getByTitle('bpk-modal-button-close')).toBeInTheDocument();
     });
 
-    it('should not render header when true', () => {
+    it('should not render header when showHeader is false', () => {
       render(
         <BpkModalV2 {...props} showHeader={false}>
           <div>Content</div>
