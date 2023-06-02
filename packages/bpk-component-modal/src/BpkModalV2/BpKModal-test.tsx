@@ -28,6 +28,7 @@ describe('BpkModalV2', () => {
     closeLabel: 'bpk-modal-button-close',
     isOpen: true,
     onClose: jest.fn(),
+    showHeader: true,
     title: 'Modal with dialog element',
   };
 
@@ -114,7 +115,7 @@ describe('BpkModalV2', () => {
 
     it('should not render header when true', () => {
       render(
-        <BpkModalV2 {...props} noHeader>
+        <BpkModalV2 {...props} showHeader={false}>
           <div>Content</div>
         </BpkModalV2>,
       );

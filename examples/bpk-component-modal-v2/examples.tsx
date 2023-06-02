@@ -131,6 +131,7 @@ class ModalContainer extends Component<Props, { isOpen: boolean }> {
           closeLabel="Close modal"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
+          showHeader
           {...this.props}
         >
           {this.props.children}
@@ -228,7 +229,7 @@ const NoFullScreenOnMobileNoTitleExample = () => (
 );
 
 const NoHeaderExample = () => (
-  <ModalContainer noHeader>
+  <ModalContainer showHeader={false}>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );

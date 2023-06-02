@@ -39,9 +39,35 @@ export type Props = {
   noFullScreenOnMobile?: boolean;
   onClose: () => void | null;
   padded?: boolean;
-  noHeader?: boolean;
+  showHeader: boolean;
   title?: string | null;
   wide?: boolean;
+};
+
+const Header = ({
+  closeLabel,
+  onClose,
+  title,
+}: {
+  closeLabel: string;
+  onClose: () => void | null;
+  title?: string | null;
+}) => {
+  if (title) {
+    return (
+      <div className={getClassName('bpk-modal__header-title')}>
+        <div className={getClassName('bpk-modal__header-title-container')}>
+          <Heading>{title}</Heading>
+        </div>
+        <BpkCloseButton label={closeLabel} onClick={onClose} />
+      </div>
+    );
+  }
+  return (
+    <div className={getClassName('bpk-modal__button-container')}>
+      <BpkCloseButton label={closeLabel} onClick={onClose} />
+    </div>
+  );
 };
 
 const Heading = withDefaultProps(BpkText, {
@@ -75,9 +101,9 @@ export const BpkModalV2 = (props: Props) => {
     id,
     isOpen,
     noFullScreenOnMobile,
-    noHeader,
     onClose,
     padded,
+    showHeader,
     title,
     wide,
   } = props;
@@ -119,33 +145,6 @@ export const BpkModalV2 = (props: Props) => {
     padded && 'bpk-modal__container--padded',
   );
 
-  const closeButton = (
-    <div>
-      <BpkCloseButton label={closeLabel} onClick={onClose} />
-    </div>
-  );
-
-  const showHeader = () => {
-    if (!noHeader) {
-      if (title) {
-        return (
-          <div className={getClassName('bpk-modal__header-title')}>
-            <div className={getClassName('bpk-modal__header-title-container')}>
-              <Heading>{title}</Heading>
-            </div>
-            {closeButton}
-          </div>
-        );
-      }
-      return (
-        <div className={getClassName('bpk-modal__button-container')}>
-          {closeButton}
-        </div>
-      );
-    }
-    return null;
-  };
-
   return isOpen ? (
     <div
       className={getClassName(
@@ -168,7 +167,9 @@ export const BpkModalV2 = (props: Props) => {
         data-open={isOpen}
         ref={ref}
       >
-        {showHeader()}
+        {showHeader && (
+          <Header title={title} closeLabel={closeLabel} onClose={onClose} />
+        )}
         <div className={contentClassNames}>{children}</div>
       </dialog>
     </div>
