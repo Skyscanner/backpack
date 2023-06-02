@@ -50,6 +50,10 @@ export type Props = {
 };
 
 const BpkModalInner = ({
+  isIphone,
+  id,
+  dialogRef,
+  children,
   title = null,
   onClose = () => null,
   className = null,
@@ -75,7 +79,7 @@ const BpkModalInner = ({
     classNames.push(className);
   }
 
-  if (fullScreen || rest.isIphone) {
+  if (fullScreen || isIphone) {
     classNames.push(getClassName('bpk-modal--full-screen'));
   } else if (fullScreenOnMobile) {
     classNames.push(getClassName('bpk-modal--full-screen-mobile'));
@@ -89,7 +93,7 @@ const BpkModalInner = ({
     contentClassNames.push(contentClassName);
   }
 
-  const headingId = `bpk-modal-heading-${rest.id}`;
+  const headingId = `bpk-modal-heading-${id}`;
 
   const accessoryViewFinal = accessoryView ? (
     <span className={getClassName('bpk-modal__accessory-view')}>
@@ -104,12 +108,12 @@ const BpkModalInner = ({
       transitionTimeout={300}
     >
       <section
-        id={rest.id}
+        id={id}
         tabIndex={-1}
         role="dialog"
         aria-labelledby={showHeader ? headingId : undefined}
         className={classNames.join(' ')}
-        ref={rest.dialogRef}
+        ref={dialogRef}
       >
         {showHeader && (
           <header className={getClassName('bpk-modal__header')}>
@@ -144,7 +148,7 @@ const BpkModalInner = ({
             />
           </header>
         )}
-        <div className={contentClassNames.join(' ')}>{rest.children}</div>
+        <div className={contentClassNames.join(' ')}>{children}</div>
       </section>
     </TransitionInitialMount>
   );
