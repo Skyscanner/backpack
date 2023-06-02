@@ -16,12 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import BpkTooltipPortal, { type Props } from './src/BpkTooltipPortal';
-import { TOOLTIP_TYPES } from './src/constants';
-
-export type BpkTooltipPortalProps = Props;
-
-export default BpkTooltipPortal;
-export { TOOLTIP_TYPES };
+import type { ReactNode } from 'react';
+import { TOOLTIP_TYPES } from './constants';
+export type TooltipProps = {
+    id: string;
+    children: ReactNode | string;
+    type?: typeof TOOLTIP_TYPES[keyof typeof TOOLTIP_TYPES];
+    padded?: boolean;
+    className?: string | null;
+};
+declare const BpkTooltip: ({ children, className, id, padded, type, ...rest }: TooltipProps) => JSX.Element;
+export default BpkTooltip;

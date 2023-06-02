@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 export const ARROW_ID = 'js-bpk-popover-arrow';
 export const TOOLTIP_TYPES = {
   light: 'light',
   dark: 'dark',
-};
+} as const;
 
 export default { ARROW_ID, TOOLTIP_TYPES };
