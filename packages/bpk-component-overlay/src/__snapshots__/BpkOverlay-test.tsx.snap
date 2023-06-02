@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkOverlay should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with foregroundContent 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
+    >
+      <span>
+        Skyscanner
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={bottomHigh} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--bottom-high"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={bottomLow} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--bottom-low"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={bottomMedium} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--bottom-medium"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={leftHigh} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--left-high"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={leftLow} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--left-low"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={leftMedium} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--left-medium"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={off} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={rightHigh} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--right-high"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={rightLow} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--right-low"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={rightMedium} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--right-medium"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={solidHigh} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-high"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={solidLow} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={solidMedium} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-medium"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={topHigh} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--top-high"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={topLow} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--top-low"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={topMedium} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--top-medium"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={vignette} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--vignette"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should support arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper custom-classname"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
+    />
+  </div>
+</DocumentFragment>
+`;
