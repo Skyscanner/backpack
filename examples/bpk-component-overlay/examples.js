@@ -38,7 +38,10 @@ const SolidExamples = () => (
       OVERLAY_TYPES.solidMedium,
       OVERLAY_TYPES.solidHigh,
     ].map((overlayType) => (
-      <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+      <div
+        key={overlayType}
+        className={getClassName('bpk-overlay-stories__overlay-story')}
+      >
         <BpkOverlay overlayType={overlayType}>
           <BpkImage
             src={IMAGE_SRC}
@@ -60,7 +63,10 @@ const TopExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
     {[OVERLAY_TYPES.topLow, OVERLAY_TYPES.topMedium, OVERLAY_TYPES.topHigh].map(
       (overlayType) => (
-        <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+        <div
+          key={overlayType}
+          className={getClassName('bpk-overlay-stories__overlay-story')}
+        >
           <BpkOverlay overlayType={overlayType}>
             <BpkImage
               src={IMAGE_SRC}
@@ -86,7 +92,10 @@ const BottomExamples = () => (
       OVERLAY_TYPES.bottomMedium,
       OVERLAY_TYPES.bottomHigh,
     ].map((overlayType) => (
-      <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+      <div
+        key={overlayType}
+        className={getClassName('bpk-overlay-stories__overlay-story')}
+      >
         <BpkOverlay overlayType={overlayType}>
           <BpkImage
             src={IMAGE_SRC}
@@ -111,7 +120,10 @@ const LeftExamples = () => (
       OVERLAY_TYPES.leftMedium,
       OVERLAY_TYPES.leftHigh,
     ].map((overlayType) => (
-      <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+      <div
+        key={overlayType}
+        className={getClassName('bpk-overlay-stories__overlay-story')}
+      >
         <BpkOverlay overlayType={overlayType}>
           <BpkImage
             src={IMAGE_SRC}
@@ -136,7 +148,10 @@ const RightExamples = () => (
       OVERLAY_TYPES.rightMedium,
       OVERLAY_TYPES.rightHigh,
     ].map((overlayType) => (
-      <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+      <div
+        key={overlayType}
+        className={getClassName('bpk-overlay-stories__overlay-story')}
+      >
         <BpkOverlay overlayType={overlayType}>
           <BpkImage
             src={IMAGE_SRC}
