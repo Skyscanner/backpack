@@ -67,7 +67,7 @@ const overlayTypeClassSuffixes = {
 
 export type OverlayType = typeof OVERLAY_TYPES[keyof typeof OVERLAY_TYPES];
 
-type Props = ComponentProps<'div'> & {
+export type Props = ComponentProps<'div'> & {
   children: ReactNode;
   overlayType?: OverlayType;
   className?: string;
