@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 
 import type { TextStyle } from './BpkText';
-import BpkText, { WEIGHT_STYLES } from './BpkText';
+import BpkText from './BpkText';
 
 describe('BpkText', () => {
   it('should render correctly', () => {
@@ -31,20 +31,6 @@ describe('BpkText', () => {
       </BpkText>,
     );
     expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with deprecated `bold` prop', () => {
-    const consoleWarnFn = jest.fn();
-    jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
-    const { asFragment } = render(
-      <BpkText bold>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-    expect(consoleWarnFn.mock.calls.length).toBe(1);
   });
 
   it('should render correctly with tageName="h1", textStyle="xxl"', () => {
@@ -61,44 +47,6 @@ describe('BpkText', () => {
   it('should render correctly with tageName="text"', () => {
     const { asFragment } = render(
       <BpkText tagName="text">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with weight="bold"', () => {
-    const { asFragment } = render(
-      <BpkText weight={WEIGHT_STYLES.bold}>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  ['xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach((textStyle) => {
-    it(`should render correctly with weight="black" and supported textStyle="${textStyle}"`, () => {
-      const { asFragment } = render(
-        <BpkText
-          textStyle={textStyle as TextStyle}
-          weight={WEIGHT_STYLES.black}
-        >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
-
-  it('should not apply black styles when weight="black" and not an xl textStyle', () => {
-    const { asFragment } = render(
-      <BpkText weight={WEIGHT_STYLES.black}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
@@ -133,32 +81,4 @@ describe('BpkText', () => {
       });
     },
   );
-
-  it('should render correctly with deprecated `weight` prop', () => {
-    const consoleWarnFn = jest.fn();
-    jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
-    const { asFragment } = render(
-      <BpkText weight="bold">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-    expect(consoleWarnFn.mock.calls.length).toBe(1);
-  });
-
-  it('should render correctly with no `weight` prop', () => {
-    const consoleWarnFn = jest.fn();
-    jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
-    const { asFragment } = render(
-      <BpkText>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-    expect(consoleWarnFn.mock.calls.length).toBe(0);
-  });
 });

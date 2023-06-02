@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkText should not apply black styles when weight="black" and not an xl textStyle 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--body-default"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
 exports[`BpkText should pass down unknown props 1`] = `
 <DocumentFragment>
   <span
@@ -22,36 +12,6 @@ exports[`BpkText should pass down unknown props 1`] = `
 `;
 
 exports[`BpkText should render correctly 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--body-default"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
-exports[`BpkText should render correctly with deprecated \`bold\` prop 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--body-default bpk-text--bold"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
-exports[`BpkText should render correctly with deprecated \`weight\` prop 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--body-default bpk-text--bold"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
-exports[`BpkText should render correctly with no \`weight\` prop 1`] = `
 <DocumentFragment>
   <span
     class="bpk-text bpk-text--body-default"
@@ -165,66 +125,6 @@ exports[`BpkText should render correctly with textStyle="xxxxxl" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-text bpk-text--xxxxxl"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
-exports[`BpkText should render correctly with weight="black" and supported textStyle="xl" 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--xl bpk-text--black"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
-exports[`BpkText should render correctly with weight="black" and supported textStyle="xxl" 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--xxl bpk-text--black"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
-exports[`BpkText should render correctly with weight="black" and supported textStyle="xxxl" 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--xxxl bpk-text--black"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
-exports[`BpkText should render correctly with weight="black" and supported textStyle="xxxxl" 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--xxxxl bpk-text--black"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
-exports[`BpkText should render correctly with weight="black" and supported textStyle="xxxxxl" 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--xxxxxl bpk-text--black"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </span>
-</DocumentFragment>
-`;
-
-exports[`BpkText should render correctly with weight="bold" 1`] = `
-<DocumentFragment>
-  <span
-    class="bpk-text bpk-text--body-default bpk-text--bold"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </span>

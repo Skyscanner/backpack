@@ -1,3 +1,21 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import type { ReactNode } from 'react';
 export declare const TEXT_STYLES: {
     readonly xs: "xs";
@@ -28,12 +46,6 @@ export declare const TEXT_STYLES: {
     readonly hero4: "hero-4";
     readonly hero5: "hero-5";
 };
-export declare const WEIGHT_STYLES: {
-    readonly regular: "regular";
-    readonly bold: "bold";
-    readonly black: "black";
-};
-export type Weight = typeof WEIGHT_STYLES[keyof typeof WEIGHT_STYLES];
 export type TextStyle = typeof TEXT_STYLES[keyof typeof TEXT_STYLES];
 export type Tag = 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type Props = {
@@ -42,11 +54,7 @@ type Props = {
     tagName?: Tag;
     className?: string | null;
     id?: string;
-    /** @deprecated Use a different "textStyle" to achieve the desired weight. */
-    bold?: boolean | null;
-    /** @deprecated Use a different "textStyle" to achieve the desired weight. */
-    weight?: Weight | null;
     [rest: string]: any;
 };
-declare const BpkText: ({ textStyle, tagName: TagName, className, bold, weight, children, ...rest }: Props) => JSX.Element;
+declare const BpkText: ({ textStyle, tagName: TagName, className, children, ...rest }: Props) => JSX.Element;
 export default BpkText;
