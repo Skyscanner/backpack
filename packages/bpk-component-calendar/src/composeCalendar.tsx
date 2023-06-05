@@ -48,9 +48,14 @@ type Props = {
   focusedDate?: Date | null;
   markOutsideDays?: boolean;
   markToday?: boolean;
-  onMonthChange?: () => void;
-  onDateClick?: () => void;
-  onDateKeyDown?: () => void;
+  onMonthChange?:
+    | ((
+        event: UIEvent,
+        { month, source }: { month: Date; source: string },
+      ) => void)
+    | null;
+  onDateClick?: ((date: Date) => void) | null;
+  onDateKeyDown?: ((event: KeyboardEvent) => void) | null;
   preventKeyboardFocus?: boolean;
   selectionConfiguration?: SelectionConfiguration;
   gridClassName?: string | null;
@@ -88,9 +93,9 @@ const composeCalendar = (
     month,
     navProps = {},
     nextMonthLabel = null,
-    onDateClick = () => {},
-    onDateKeyDown = () => {},
-    onMonthChange = () => {},
+    onDateClick = null,
+    onDateKeyDown = null,
+    onMonthChange = null,
     preventKeyboardFocus = false,
     previousMonthLabel = null,
     selectionConfiguration = {

@@ -16,7 +16,14 @@
  * limitations under the License.
  */
 
-/// <reference types="react" />
-import type { Props } from './common-types';
-declare const BpkDialog: ({ children, closeLabel, dismissible, headerIcon, headerIconType, isOpen, onClose, renderTarget, ...rest }: Props) => JSX.Element;
-export default BpkDialog;
+import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
+import themeAttributes from './src/themeAttributes';
+import BpkModal from './src/BpkModal';
+import type { Props } from './src/BpkModal';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { propTypes, defaultProps } from './src/legacy-prop-types';
+
+export type BpkModalProps = Props;
+
+export default BpkModal;
+export { propTypes, defaultProps, themeAttributes, BpkModalV2 };

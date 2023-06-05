@@ -19,7 +19,6 @@
 import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
 import STYLES from './BpkSelectableChip.module.scss';

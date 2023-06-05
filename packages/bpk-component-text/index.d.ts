@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/// <reference types="react" />
-import type { Props } from './common-types';
-declare const BpkDialog: ({ children, closeLabel, dismissible, headerIcon, headerIconType, isOpen, onClose, renderTarget, ...rest }: Props) => JSX.Element;
-export default BpkDialog;
+import component, { TEXT_STYLES } from './src/BpkText';
+export default component;
+export { TEXT_STYLES };

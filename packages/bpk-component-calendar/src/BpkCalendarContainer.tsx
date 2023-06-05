@@ -45,16 +45,24 @@ type Props = {
   fixedWidth: boolean;
   maxDate: Date;
   minDate: Date;
-  onDateSelect?: (date: Date, newDate?: Date) => void;
-  onMonthChange?: (
-    event: UIEvent,
-    { month, source }: { month: Date; source: string },
-  ) => void;
+  onDateSelect?: ((date: Date, newDate?: Date) => void) | null;
+  onMonthChange?:
+    | ((
+        event: UIEvent,
+        { month, source }: { month: Date; source: string },
+      ) => void)
+    | null;
   selectionConfiguration: SelectionConfiguration;
   initiallyFocusedDate: Date | null;
 };
 
-type CalendarProps<P> = P & Props;
+type InjectedProps = {
+  onDateClick: ((date: Date) => void) | null;
+  onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+  month: Date;
+};
+
+type CalendarProps<P> = Omit<P & Props, keyof InjectedProps>;
 
 type State = {
   preventKeyboardFocus: boolean;
@@ -146,14 +154,16 @@ const getRawSelectedDate = (selectionConfig: SelectionConfiguration) => {
   return rawDate;
 };
 
-const withCalendarState = <P extends {}>(Calendar: ComponentType<P>) => {
+const withCalendarState = <P extends {}>(
+  Calendar: ComponentType<P & InjectedProps>,
+) => {
   class BpkCalendarContainer extends Component<CalendarProps<P>, State> {
     static defaultProps = {
       fixedWidth: true,
       maxDate: addMonths(new Date(), 12),
       minDate: new Date(),
-      onDateSelect: () => {},
-      onMonthChange: () => {},
+      onDateSelect: null,
+      onMonthChange: null,
       selectionConfiguration: {
         type: CALENDAR_SELECTION_TYPE.single,
         date: null,
@@ -355,10 +365,10 @@ const withCalendarState = <P extends {}>(Calendar: ComponentType<P>) => {
 
       return (
         <Calendar
-          onDateClick={this.handleDateSelect}
-          onDateKeyDown={this.handleDateKeyDown}
           onMonthChange={this.handleMonthChange}
+          onDateClick={this.handleDateSelect}
           month={month}
+          onDateKeyDown={this.handleDateKeyDown}
           preventKeyboardFocus={this.state.preventKeyboardFocus}
           focusedDate={sanitisedFocusedDate}
           {...(calendarProps as P)}

@@ -36,9 +36,12 @@ type Props = {
     focusedDate?: Date | null;
     markOutsideDays?: boolean;
     markToday?: boolean;
-    onMonthChange?: () => void;
-    onDateClick?: () => void;
-    onDateKeyDown?: () => void;
+    onMonthChange?: ((event: UIEvent, { month, source }: {
+        month: Date;
+        source: string;
+    }) => void) | null;
+    onDateClick?: ((date: Date) => void) | null;
+    onDateKeyDown?: ((event: KeyboardEvent) => void) | null;
     preventKeyboardFocus?: boolean;
     selectionConfiguration?: SelectionConfiguration;
     gridClassName?: string | null;

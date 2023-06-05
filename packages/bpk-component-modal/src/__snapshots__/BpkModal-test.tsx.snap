@@ -33,13 +33,11 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
               <h2
                 class="bpk-modal__heading"
                 id="bpk-modal-heading-my-modal"
-              >
-                Modal title
-              </h2>
+              />
               <button
-                aria-label="Close"
+                aria-label=""
                 class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-                title="Close"
+                title=""
                 type="button"
               >
                 <svg
