@@ -58,10 +58,14 @@
   margin-bottom: bpk-spacing-lg();
 }
 
-.bpk-title {
+.bpk-title-with-action {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  margin-inline: auto;
+}
+
+.bpk-title {
   margin-inline: auto;
 }
 

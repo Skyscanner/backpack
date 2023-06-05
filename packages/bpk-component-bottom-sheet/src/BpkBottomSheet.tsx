@@ -117,7 +117,11 @@ const BpkBottomSheet = ({
             <BpkText
               tagName="h2"
               textStyle={TEXT_STYLES.heading5}
-              className={getClassName('bpk-title')}
+              className={
+                action
+                  ? getClassName('bpk-title-with-action')
+                  : getClassName('bpk-title')
+              }
             >
               {title}
             </BpkText>

@@ -25,7 +25,10 @@ const DefaultExample = () => (
 );
 
 const WithTitleExample = () => (
-  <BpkBottomSheet closeButtonLabel="Close modal" title="Title">
+  <BpkBottomSheet
+    closeButtonLabel="Close modal"
+    title="Baggage Details for Virgin Atlantic"
+  >
     This is a bottom sheet with a title. You can put anything you want in here.
   </BpkBottomSheet>
 );
