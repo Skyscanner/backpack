@@ -16,7 +16,7 @@ export default () => (
   <div>
     { /* Basic example with tint */}
     <BpkOverlay
-      overlayType={OVERLAY_TYPES.solidHigh}
+      overlayType={OVERLAY_TYPES.solidLow}
     >
       <BpkText>Hotels in Canada</BpkText>
     </BpkOverlay>
@@ -44,4 +44,4 @@ export default () => (
 | children | Node | true | - |
 | className | string | false | null |
 | foregroundContent | Node | false | null |
-| overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.solidHigh |
+| overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.solidLow |
