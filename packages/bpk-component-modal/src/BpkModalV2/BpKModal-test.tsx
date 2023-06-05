@@ -28,7 +28,6 @@ describe('BpkModalV2', () => {
     closeLabel: 'bpk-modal-button-close',
     isOpen: true,
     onClose: jest.fn(),
-    showHeader: true,
   };
 
   beforeEach(() => {
