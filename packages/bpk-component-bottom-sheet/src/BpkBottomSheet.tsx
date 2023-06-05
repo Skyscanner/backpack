@@ -24,7 +24,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkText from '../../bpk-component-text';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
 import { BACKGROUND_ID, X_ID } from './constants';
@@ -117,7 +117,7 @@ const BpkBottomSheet = ({
           {title && (
             <BpkText
               tagName="h2"
-              textStyle={getClassName('heading5')}
+              textStyle={TEXT_STYLES.heading5}
               className={getClassName('bpk-title')}
             >
               {title}
@@ -126,7 +126,7 @@ const BpkBottomSheet = ({
           {action && (
             <BpkButtonLink
               onClick={() => action()}
-              textStyle={getClassName('heading5')}
+              textStyle={TEXT_STYLES.heading5}
               className={getClassName('bpk-action')}
             >
               {actionText}
