@@ -16,68 +16,53 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { createPopper } from '@popperjs/core';
-import PropTypes from 'prop-types';
 import { cloneElement, Component } from 'react';
-import type { Node, Element } from 'react';
+import type { ReactNode, ReactElement } from 'react';
 
 import { Portal, cssModules } from '../../bpk-react-utils';
 
-import BpkTooltip, {
-  propTypes as tooltipPropTypes,
-  defaultProps as tooltipDefaultProps,
-  type TooltipProps,
-} from './BpkTooltip';
+import BpkTooltip from './BpkTooltip';
+import type { TooltipProps } from './BpkTooltip';
 import STYLES from './BpkTooltip.module.scss';
+import { TOOLTIP_TYPES } from './constants';
 
 const getClassName = cssModules(STYLES);
 
 const hasTouchSupport = () =>
   !!(
     typeof window !== 'undefined' &&
-    ('ontouchstart' in window ||
-      (window.DocumentTouch && document instanceof window.DocumentTouch))
+    ('ontouchstart' in window || navigator.maxTouchPoints > 0)
   );
 
-export type Props = {
-  ...$Exact<TooltipProps>,
-  ariaLabel: string,
-  target: Element<any>,
-  children: Node,
-  placement: 'top' | 'right' | 'bottom' | 'left' | 'auto',
-  hideOnTouchDevices: boolean,
-  portalStyle: ?Object,
-  portalClassName: ?string,
-  renderTarget: ?() => HTMLElement,
-  popperModifiers: ?Array<Object>,
+export type Props = TooltipProps & {
+  ariaLabel: string;
+  target: ReactElement<any>;
+  children: ReactNode | string;
+  placement?: 'top' | 'right' | 'bottom' | 'left' | 'auto';
+  hideOnTouchDevices?: boolean;
+  portalStyle?: object;
+  portalClassName?: string;
+  renderTarget: null | (() => null | HTMLElement);
+  popperModifiers?: object[];
 };
 
 type State = {
-  isOpen: boolean,
+  isOpen: boolean;
 };
 
 class BpkTooltipPortal extends Component<Props, State> {
-  popper: ?typeof createPopper;
+  popper?: ReturnType<typeof createPopper> | null;
 
-  targetRef: ?HTMLElement;
-
-  static propTypes = {
-    ...tooltipPropTypes,
-    ariaLabel: PropTypes.string.isRequired,
-    target: PropTypes.node.isRequired,
-    children: PropTypes.node.isRequired,
-    placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left', 'auto']),
-    hideOnTouchDevices: PropTypes.bool,
-    portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    portalClassName: PropTypes.string,
-    renderTarget: PropTypes.func,
-    popperModifiers: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
-  };
+  targetRef?: Element | null;
 
   static defaultProps = {
-    ...tooltipDefaultProps,
+    // Disabling as the rule doesn't work when types are defined in a different file
+    /* eslint-disable react/default-props-match-prop-types */
+    className: null,
+    padded: true,
+    type: TOOLTIP_TYPES.light,
+    /* eslint-enable */
     placement: 'bottom',
     hideOnTouchDevices: true,
     portalStyle: null,
@@ -86,8 +71,8 @@ class BpkTooltipPortal extends Component<Props, State> {
     popperModifiers: null,
   };
 
-  constructor() {
-    super();
+  constructor(props: Props) {
+    super(props);
 
     this.state = {
       isOpen: false,
@@ -119,7 +104,10 @@ class BpkTooltipPortal extends Component<Props, State> {
     }
   }
 
-  onOpen = (tooltipElement: HTMLElement, targetElement: HTMLElement) => {
+  onOpen = (
+    tooltipElement: HTMLElement,
+    targetElement?: HTMLElement | null | undefined,
+  ) => {
     // The default modifiers for the popper
     // Note that GPU acceleration should be disabled otherwise Popper will use `translate3d`
     // which can cause blurriness in Safari and Chrome.
@@ -138,7 +126,7 @@ class BpkTooltipPortal extends Component<Props, State> {
       },
     ];
 
-    this.popper = createPopper(targetElement, tooltipElement, {
+    this.popper = createPopper(targetElement as HTMLElement, tooltipElement, {
       placement: this.props.placement,
       modifiers: this.props.popperModifiers
         ? [...this.props.popperModifiers, ...stdModifiers]
@@ -148,7 +136,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     this.popper.update();
   };
 
-  beforeClose = (done: () => mixed) => {
+  beforeClose = (done: () => void | null) => {
     if (this.popper) {
       this.popper.destroy();
       this.popper = null;

@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import component, { TEXT_STYLES } from './src/BpkText';
 
-import { themeAttributes as linkAttributes } from '../../bpk-component-link';
-
-export default [...linkAttributes];
+export default component;
+export { TEXT_STYLES };

@@ -16,12 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkTooltipPortal from './src/BpkTooltipPortal';
+import type { Props } from './src/BpkTooltipPortal';
+import { TOOLTIP_TYPES } from './src/constants';
 
-export const ARROW_ID = 'js-bpk-popover-arrow';
-export const TOOLTIP_TYPES = {
-  light: 'light',
-  dark: 'dark',
-};
+export type BpkTooltipPortalProps = Props;
 
-export default { ARROW_ID, TOOLTIP_TYPES };
+export default BpkTooltipPortal;
+export { TOOLTIP_TYPES };

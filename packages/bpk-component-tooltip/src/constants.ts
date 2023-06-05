@@ -16,17 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+export const ARROW_ID = 'js-bpk-popover-arrow';
+export const TOOLTIP_TYPES = {
+  light: 'light',
+  dark: 'dark',
+} as const;
 
-import themeAttributes from './themeAttributes';
-
-describe('themeAttributes', () => {
-  it('should export the correct theme attributes', () => {
-    expect(themeAttributes).toEqual([
-      'linkColor',
-      'linkHoverColor',
-      'linkActiveColor',
-      'linkVisitedColor',
-    ]);
-  });
-});
+export default { ARROW_ID, TOOLTIP_TYPES };

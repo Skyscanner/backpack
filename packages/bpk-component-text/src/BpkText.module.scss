@@ -128,12 +128,4 @@
   &--hero-5 {
     @include bpk-hero-5;
   }
-
-  &--bold {
-    @include bpk-text--bold;
-  }
-
-  &--black {
-    @include bpk-text--black;
-  }
 }

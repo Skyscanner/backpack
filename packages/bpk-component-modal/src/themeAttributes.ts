@@ -16,12 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { themeAttributes as linkAttributes } from '../../bpk-component-link';
 
-import BpkTooltipPortal, { type Props } from './src/BpkTooltipPortal';
-import { TOOLTIP_TYPES } from './src/constants';
-
-export type BpkTooltipPortalProps = Props;
-
-export default BpkTooltipPortal;
-export { TOOLTIP_TYPES };
+export default [...linkAttributes];

@@ -28,7 +28,7 @@ export type DialogInnerProps = {
   ariaLabel: string;
   id: string;
   children: ReactNode;
-  dialogRef?: (ref: HTMLElement) => void;
+  dialogRef: (ref: HTMLElement | null | undefined) => void;
   getApplicationElement: () => HTMLElement | null;
   className?: string;
   contentClassName?: string;
@@ -39,7 +39,7 @@ export type DialogInnerProps = {
 export type Props = DialogInnerProps & {
   isOpen: boolean;
   renderTarget?: () => HTMLElement | null;
-  onClose: (event: TouchEvent | MouseEvent | KeyboardEvent) => void | null;
+  onClose: (event?: TouchEvent | MouseEvent | KeyboardEvent) => void | null;
   closeLabel?: string;
   dismissible?: boolean;
   headerIcon?: ReactNode;
