@@ -9,38 +9,13 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-class BottomSheetContainer extends Component<Props, { isOpen: boolean }> {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
 
-  constructor() {
-    super();
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  onOpen = () => {
-    this.setState({
-      isOpen: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      isOpen: false,
-    });
-  };
-
-  render() {
-    return (
-      <BpkBottomSheet closeButtonLabel="Close modal" {...this.props}>
-        {this.props.children}
-      </BpkBottomSheet>
-    );
-  }
-}
+const DefaultExample = () => (
+  <BpkBottomSheet closeButtonLabel="Close modal">
+    This is a default bottom sheet. You can put anything you want in here.
+  </BpkBottomSheet>
+);
 ```
 
 ## Props

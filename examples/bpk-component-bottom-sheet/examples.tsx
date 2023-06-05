@@ -25,7 +25,7 @@ const DefaultExample = () => (
 );
 
 const WithTitleExample = () => (
-  <BpkBottomSheet closeButtonLabel="Close modal" title="Bottom Sheet Title">
+  <BpkBottomSheet closeButtonLabel="Close modal" title="Title">
     This is a bottom sheet with a title. You can put anything you want in here.
   </BpkBottomSheet>
 );
@@ -53,7 +53,7 @@ const WithTitleAndActionExample = () => (
   </BpkBottomSheet>
 );
 const WithNoCloseButtonExample = () => (
-  <BpkBottomSheet closeButtonLabel="Close modal" isClosable={false}>
+  <BpkBottomSheet isClosable={false}>
     This is a bottom sheet without a close button. It will still close if you
     click the background. You can put anything you want in here.
   </BpkBottomSheet>
