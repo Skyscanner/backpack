@@ -46,17 +46,28 @@
 
 .bpk-header {
   display: flex;
+  margin-bottom: bpk-spacing-lg();
   justify-content: flex-start;
+  align-items: baseline;
 }
 
 .bpk-closeIcon {
+  position: absolute;
+  width: 0;
+  height: 0;
   margin-bottom: bpk-spacing-lg();
 }
 
 .bpk-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   margin-inline: auto;
 }
 
 .bpk-action {
-  margin-inline-start: auto;
+  position: absolute;
+  right: bpk-spacing-lg();
+  min-height: auto;
+  padding: 0;
 }

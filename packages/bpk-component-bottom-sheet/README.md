@@ -8,6 +8,41 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
+```js
+class BottomSheetContainer extends Component<Props, { isOpen: boolean }> {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+  };
+
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false,
+    };
+  }
+
+  onOpen = () => {
+    this.setState({
+      isOpen: true,
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      isOpen: false,
+    });
+  };
+
+  render() {
+    return (
+      <BpkBottomSheet closeButtonLabel="Close modal" {...this.props}>
+        {this.props.children}
+      </BpkBottomSheet>
+    );
+  }
+}
+```
+
 ## Props
 
 | Property   | PropType | Required                                    | Default Value |

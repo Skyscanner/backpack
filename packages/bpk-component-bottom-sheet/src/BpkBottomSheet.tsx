@@ -22,12 +22,15 @@ import { useCallback, useEffect, useState } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButton from '../../bpk-component-button';
+import { BpkButtonLink } from '../../bpk-component-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import { BACKGROUND_ID, X_ID } from './constants';
-import STYLES from './BpkBottomSheet.scss';
+import STYLES from './BpkBottomSheet.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 type CommonProps = {
   backgroundClickHandler?: () => void;
@@ -97,33 +100,36 @@ const BpkBottomSheet = ({
     <>
       <div
         role="presentation"
-        className={STYLES.container}
+        className={getClassName('bpk-container')}
         onMouseDown={() => clickHandler(BACKGROUND_ID)}
         onTouchStart={() => clickHandler(BACKGROUND_ID)}
       />
 
-      <div className={STYLES.contentContainer}>
-        <div className={STYLES.header}>
+      <div className={getClassName('bpk-contentContainer')}>
+        <div className={getClassName('bpk-header')}>
           {isClosable && (
             <BpkCloseButton
               onClick={() => clickHandler(X_ID)}
               label={closeButtonLabel}
-              className={STYLES.closeIcon}
+              className={getClassName('bpk-closeIcon')}
             />
           )}
           {title && (
             <BpkText
               tagName="h2"
               textStyle={TEXT_STYLES.heading5}
-              className={STYLES.title}
+              className={getClassName('bpk-title')}
             >
               {title}
             </BpkText>
           )}
           {action && (
-            <BpkButton onClick={() => action()} className={STYLES.action}>
+            <BpkButtonLink
+              onClick={() => action()}
+              className={getClassName('bpk-action')}
+            >
               {actionText}
-            </BpkButton>
+            </BpkButtonLink>
           )}
         </div>
         {children}
