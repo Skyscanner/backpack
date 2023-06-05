@@ -38,7 +38,7 @@ export type Props = {
   noFullScreenOnMobile?: boolean;
   onClose: () => void | null;
   padded?: boolean;
-  showHeader: boolean;
+  showHeader?: boolean;
   title?: string | null;
   wide?: boolean;
 };
@@ -104,7 +104,7 @@ export const BpkModalV2 = (props: Props) => {
     noFullScreenOnMobile,
     onClose,
     padded,
-    showHeader,
+    showHeader = true,
     title,
     wide,
   } = props;
