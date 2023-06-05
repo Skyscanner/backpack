@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```js
 import BpkBottomSheet from '@skyscanner/backpack-web/bpk-component-bottom-sheet';
 
-const Example = () => (
+return (
   <BpkBottomSheet closeButtonLabel="Close modal">
     This is a bottom sheet. You can put anything you want in here.
   </BpkBottomSheet>
