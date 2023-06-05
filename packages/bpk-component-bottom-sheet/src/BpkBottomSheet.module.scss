@@ -72,6 +72,7 @@
 .bpk-action {
   position: absolute;
   right: bpk-spacing-lg();
+  line-height: $bpk-line-height-base * 0.82;
   min-height: auto;
   padding: 0;
 }
