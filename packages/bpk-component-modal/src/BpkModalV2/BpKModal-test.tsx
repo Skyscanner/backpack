@@ -29,7 +29,6 @@ describe('BpkModalV2', () => {
     isOpen: true,
     onClose: jest.fn(),
     showHeader: true,
-    title: 'Modal with dialog element',
   };
 
   beforeEach(() => {
@@ -47,7 +46,7 @@ describe('BpkModalV2', () => {
 
     it('should render correctly with content', () => {
       const { asFragment } = render(
-        <BpkModalV2 {...props}>
+        <BpkModalV2 {...props} title="Modal with dialog element">
           <div>Content</div>
         </BpkModalV2>,
       );
@@ -93,7 +92,7 @@ describe('BpkModalV2', () => {
 
     it('should render title correctly', () => {
       render(
-        <BpkModalV2 {...props}>
+        <BpkModalV2 {...props} title="Modal with dialog element">
           <div>Content</div>
         </BpkModalV2>,
       );
@@ -109,7 +108,9 @@ describe('BpkModalV2', () => {
         </BpkModalV2>,
       );
 
-      expect(screen.queryByText('MyTitle')).not.toBeInTheDocument();
+      expect(
+        screen.queryByText('Modal with dialog element'),
+      ).not.toBeInTheDocument();
       expect(screen.getByTitle('bpk-modal-button-close')).toBeInTheDocument();
     });
 
@@ -121,7 +122,7 @@ describe('BpkModalV2', () => {
       );
 
       expect(document.getElementById('bpk-modal-element')).toBeInTheDocument();
-      expect(screen.queryByRole('button')).toBeNull();
+      expect(document.getElementById('bpk-modal-element-title')).toBeNull();
     });
 
     it('should call showModal to open dialog', () => {

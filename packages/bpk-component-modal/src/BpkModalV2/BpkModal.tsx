@@ -45,16 +45,18 @@ export type Props = {
 
 const Header = ({
   closeLabel,
+  id,
   onClose,
   title,
 }: {
   closeLabel: string;
+  id: string | undefined;
   onClose: () => void | null;
   title?: string | null;
 }) => {
   if (title) {
     return (
-      <div className={getClassName('bpk-modal__header-title')}>
+      <div id={id} className={getClassName('bpk-modal__header-title')}>
         <div className={getClassName('bpk-modal__header-title-container')}>
           <Heading>{title}</Heading>
         </div>
@@ -167,7 +169,12 @@ export const BpkModalV2 = (props: Props) => {
         ref={ref}
       >
         {showHeader && (
-          <Header title={title} closeLabel={closeLabel} onClose={onClose} />
+          <Header
+            id={`${id}-title`}
+            title={title}
+            closeLabel={closeLabel}
+            onClose={onClose}
+          />
         )}
         <div className={contentClassNames}>{children}</div>
       </dialog>
