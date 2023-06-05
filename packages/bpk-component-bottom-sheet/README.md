@@ -9,11 +9,11 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
+import BpkBottomSheet from '@skyscanner/backpack-web/bpk-component-bottom-sheet';
 
-const DefaultExample = () => (
+const Example = () => (
   <BpkBottomSheet closeButtonLabel="Close modal">
-    This is a default bottom sheet. You can put anything you want in here.
+    This is a bottom sheet. You can put anything you want in here.
   </BpkBottomSheet>
 );
 ```
