@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 /* @flow strict */
+import PropTypes from 'prop-types';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
@@ -30,6 +31,14 @@ const IMAGE_SRC =
   'https://content.skyscnr.com/m/1c8c6338a92a7a94/original/matt-hardy-6ArTTluciuA-unsplash.jpg';
 
 const getClassName = cssModules(STYLES);
+
+const OverlayName = ({ overlayType }) => (
+  <BpkText textStyle={TEXT_STYLES.xl}>{overlayType}</BpkText>
+);
+
+OverlayName.propTypes = {
+  overlayType: PropTypes.objectOf(PropTypes.string),
+};
 
 const SolidExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
@@ -51,7 +60,7 @@ const SolidExamples = () => (
         </BpkOverlay>
         <div className={getClassName('bpk-overlay-stories__overlay--name')}>
           <BpkText textStyle={TEXT_STYLES.xl}>
-            {overlayType.charAt(0).toUpperCase() + overlayType.slice(1)}
+            {OverlayName({ overlayType })}
           </BpkText>
         </div>
       </div>
@@ -76,7 +85,7 @@ const TopExamples = () => (
           </BpkOverlay>
           <div className={getClassName('bpk-overlay-stories__overlay--name')}>
             <BpkText textStyle={TEXT_STYLES.xl}>
-              {overlayType.charAt(0).toUpperCase() + overlayType.slice(1)}
+              {OverlayName({ overlayType })}
             </BpkText>
           </div>
         </div>
@@ -105,7 +114,7 @@ const BottomExamples = () => (
         </BpkOverlay>
         <div className={getClassName('bpk-overlay-stories__overlay--name')}>
           <BpkText textStyle={TEXT_STYLES.xl}>
-            {overlayType.charAt(0).toUpperCase() + overlayType.slice(1)}
+            {OverlayName({ overlayType })}
           </BpkText>
         </div>
       </div>
@@ -133,7 +142,7 @@ const LeftExamples = () => (
         </BpkOverlay>
         <div className={getClassName('bpk-overlay-stories__overlay--name')}>
           <BpkText textStyle={TEXT_STYLES.xl}>
-            {overlayType.charAt(0).toUpperCase() + overlayType.slice(1)}
+            {OverlayName({ overlayType })}
           </BpkText>
         </div>
       </div>
@@ -161,7 +170,7 @@ const RightExamples = () => (
         </BpkOverlay>
         <div className={getClassName('bpk-overlay-stories__overlay--name')}>
           <BpkText textStyle={TEXT_STYLES.xl}>
-            {overlayType.charAt(0).toUpperCase() + overlayType.slice(1)}
+            {OverlayName({ overlayType })}
           </BpkText>
         </div>
       </div>
@@ -169,20 +178,25 @@ const RightExamples = () => (
   </div>
 );
 
-const VignetteExample = () => (
-  <div className={getClassName('bpk-overlay-stories__overlay-story')}>
-    <BpkOverlay overlayType={OVERLAY_TYPES.vignette}>
-      <BpkImage
-        src={IMAGE_SRC}
-        altText="Ocean Ripple by Matt Hardy"
-        aspectRatio={1.8}
-      />
-    </BpkOverlay>
-    <div className={getClassName('bpk-overlay-stories__overlay--name')}>
-      <BpkText textStyle={TEXT_STYLES.xl}>Vignette</BpkText>
+const VignetteExample = () => {
+  const overlayType = OVERLAY_TYPES.vignette;
+  return (
+    <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+      <BpkOverlay overlayType={overlayType}>
+        <BpkImage
+          src={IMAGE_SRC}
+          altText="Ocean Ripple by Matt Hardy"
+          aspectRatio={1.8}
+        />
+      </BpkOverlay>
+      <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+        <BpkText textStyle={TEXT_STYLES.xl}>
+          {OverlayName({ overlayType })}
+        </BpkText>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const WithForegroundContentExample = () => (
   <BpkOverlay
