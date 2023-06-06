@@ -60,9 +60,9 @@ describe('BpkOverlay', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support arbitrary props', () => {
+  it('should support standard div attributes', () => {
     const { asFragment } = render(
-      <BpkOverlay>
+      <BpkOverlay data-testid="123">
         <span>Backpack</span>
       </BpkOverlay>,
     );
