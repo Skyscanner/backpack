@@ -66,7 +66,6 @@ const BpkModalInner = ({
   fullScreen = false,
   padded = true,
   accessoryView = null,
-  ...rest
 }: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
