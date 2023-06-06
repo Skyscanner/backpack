@@ -231,7 +231,19 @@ Bear in mind that small, incremental pull requests are likely to be reviewed fas
 
 You can also run the tests in 'watch mode', which means the process will continually run and run tests every time files change. Use `npm run jest:watch` to do this.
 
-There are also visual regression tests, powered by [Storyshots](https://www.npmjs.com/package/@storybook/addon-storyshots) and [jest-image-snapshot](https://www.npmjs.com/package/jest-image-snapshot). Use `npm run jest:visual` to run these. They rely on the `dist-storybook` folder being populated with a pre-built Storybook first, which can be generated with `npm run storybook:dist`.
+There are also visual regression tests, powered by [Percy](https://www.percy.io/).
+
+These visual tests are run on CI. When a PR is raised, a build should be showing on the Percy Backpack dashboard. Head into this build/run and you should be able to view any differences as well as approve or reject the changes.
+
+> Skyscanner employees only
+
+You should also be able to locally run the tests with this command from the root dir, but you must have the PERCY_TOKEN environemnt variable set eg:
+
+`PERCY_TOKEN=123 npm run percy-test`
+
+You can get the Backpack PERCY_TOKEN value from the Project Settings page in Percy.
+
+The visual tests rely on the `dist-storybook` folder being populated with a pre-built Storybook first, which can be generated with `npm run storybook:dist`.
 
 Visual regression tests run on all Storybook stories titled _'Visual test'_.
 
