@@ -16,9 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import component, { TEXT_STYLES, WEIGHT_STYLES } from './src/BpkText';
-
-export default component;
-export { TEXT_STYLES, WEIGHT_STYLES };
+import type { ReactNode } from 'react';
+import { TOOLTIP_TYPES } from './constants';
+export type TooltipProps = {
+    id: string;
+    children: ReactNode | string;
+    type?: typeof TOOLTIP_TYPES[keyof typeof TOOLTIP_TYPES];
+    padded?: boolean;
+    className?: string | null;
+};
+declare const BpkTooltip: ({ children, className, id, padded, type, ...rest }: TooltipProps) => JSX.Element;
+export default BpkTooltip;

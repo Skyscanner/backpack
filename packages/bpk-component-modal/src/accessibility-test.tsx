@@ -16,17 +16,16 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
 import BpkModal from './BpkModal';
 
-describe('BpkModal', () => {
-  it('should render correctly in the given target if renderTarget is supplied', () => {
+describe('BpkModal accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
     const customRenderTarget = document.createElement('div');
 
-    const { asFragment } = render(
+    const { container } = render(
       <BpkModal
         id="my-modal"
         title="Modal title"
@@ -41,8 +40,7 @@ describe('BpkModal', () => {
         Modal content inside a custom target
       </BpkModal>,
     );
-
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
