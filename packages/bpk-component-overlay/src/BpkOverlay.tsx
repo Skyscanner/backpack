@@ -74,8 +74,13 @@ export type Props = ComponentProps<'div'> & {
 };
 
 const BpkOverlay = (props: Props) => {
-  const { children, className, foregroundContent, overlayType, ...rest } =
-    props;
+  const {
+    children,
+    className = null,
+    foregroundContent = null,
+    overlayType = OVERLAY_TYPES.solidLow,
+    ...rest
+  } = props;
 
   const wrapperClassNames = getClassName('bpk-overlay__wrapper', className);
   const overlayClassNames = getClassName(
@@ -92,12 +97,6 @@ const BpkOverlay = (props: Props) => {
       <div className={overlayClassNames}>{foregroundContent}</div>
     </div>
   );
-};
-
-BpkOverlay.defaultProps = {
-  overlayType: OVERLAY_TYPES.solidLow,
-  className: null,
-  foregroundContent: null,
 };
 
 export default BpkOverlay;
