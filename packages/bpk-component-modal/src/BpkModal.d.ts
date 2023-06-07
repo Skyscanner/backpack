@@ -16,17 +16,20 @@
  * limitations under the License.
  */
 
-/// <reference types="react" />
+import type { ReactNode } from 'react';
 import type { Props as ModalDialogProps } from './BpkModalInner';
-export type Props = ModalDialogProps & {
+export type Props = Partial<ModalDialogProps> & {
+    id: string;
+    children: ReactNode;
+    dialogRef?: (ref: HTMLElement | null | undefined) => void;
     isOpen: boolean;
     closeOnScrimClick?: boolean;
     closeOnEscPressed?: boolean;
     renderTarget?: null | HTMLElement | (() => null | HTMLElement);
-    onClose: (arg0: TouchEvent | MouseEvent | KeyboardEvent, arg1: {
+    onClose: (arg0?: TouchEvent | MouseEvent | KeyboardEvent, arg1?: {
         source: 'ESCAPE' | 'DOCUMENT_CLICK';
     }) => void;
     getApplicationElement: () => HTMLElement | null;
 };
-declare const BpkModal: ({ title, onClose, className, contentClassName, closeLabel, closeText, wide, showHeader, fullScreenOnMobile, fullScreen, padded, accessoryView, renderTarget, isIphone, closeOnScrimClick, closeOnEscPressed, isOpen, ...rest }: Props) => JSX.Element;
+declare const BpkModal: ({ title, onClose, className, contentClassName, closeLabel, closeText, wide, showHeader, fullScreenOnMobile, fullScreen, padded, accessoryView, renderTarget, isIphone, closeOnScrimClick, closeOnEscPressed, dialogRef, isOpen, ...rest }: Props) => JSX.Element;
 export default BpkModal;
