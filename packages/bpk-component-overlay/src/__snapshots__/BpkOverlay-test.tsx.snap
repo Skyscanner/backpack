@@ -318,3 +318,19 @@ exports[`BpkOverlay should support custom class names 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`BpkOverlay should support standard div attributes 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+    data-testid="123"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--solid-low"
+    />
+  </div>
+</DocumentFragment>
+`;
