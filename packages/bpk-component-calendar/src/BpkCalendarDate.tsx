@@ -50,19 +50,19 @@ export type Props = DefaultProps & {
 };
 
 type DefaultProps = {
-  className: string | null;
-  isBlocked: boolean;
-  isFocused: boolean;
-  isKeyboardFocusable: boolean;
-  isOutside: boolean;
-  isSelected: boolean;
-  isToday: boolean;
-  modifiers: DateModifiers;
-  onClick: ((date: Date) => void) | null;
-  onDateKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void;
+  className?: string | null;
+  isBlocked?: boolean;
+  isFocused?: boolean;
+  isKeyboardFocusable?: boolean;
+  isOutside?: boolean;
+  isSelected?: boolean;
+  isToday?: boolean;
+  modifiers?: DateModifiers;
+  onClick?: ((date: Date) => void) | null;
+  onDateKeyDown?: (event: KeyboardEvent<HTMLButtonElement>) => void;
   preventKeyboardFocus?: boolean;
-  selectionType: SelectionTypes;
-  style: {};
+  selectionType?: SelectionTypes;
+  style?: {};
 };
 
 const navigatedByMonthNudger = () =>
@@ -147,8 +147,8 @@ class BpkCalendarDate extends PureComponent<Props> {
 
     const classNames = [getClassName('bpk-calendar-date')];
 
-    Object.keys(modifiers).forEach((modifier) => {
-      if (modifiers[modifier](this.props)) {
+    Object.keys(modifiers!).forEach((modifier) => {
+      if (modifiers![modifier](this.props)) {
         classNames.push(
           getClassName(`bpk-calendar-date--modifier-${modifier}`),
         );

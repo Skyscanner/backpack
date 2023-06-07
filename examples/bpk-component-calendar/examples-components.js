@@ -289,12 +289,10 @@ class CalendarContainer extends Component {
 }
 
 CalendarContainer.propTypes = {
-  selectTodaysDate: PropTypes.bool,
   selectionConfiguration: CustomPropTypes.SelectionConfiguration,
 };
 
 CalendarContainer.defaultProps = {
-  selectTodaysDate: true,
   selectionConfiguration: {
     type: CALENDAR_SELECTION_TYPE.single,
     date: null,
