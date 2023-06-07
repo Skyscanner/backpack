@@ -31,7 +31,7 @@ const ScrimBpkModalInner = withScrim(BpkModalInner);
 export type Props = Partial<ModalDialogProps> & {
   id: string;
   children: ReactNode;
-  dialogRef?: (ref: HTMLElement | null | undefined) => void;
+  dialogRef?: (ref: HTMLElement | null | undefined) => void; // TODO - remove this in a later release as it is not being used. The dialogRef is injected in the withScrim HOC
   isOpen: boolean;
   closeOnScrimClick?: boolean;
   closeOnEscPressed?: boolean;
@@ -99,6 +99,7 @@ const BpkModal = ({
         showHeader={showHeader}
         padded={padded}
         accessoryView={accessoryView}
+        dialogRef={dialogRef}
         {...rest}
       />
     </Portal>
