@@ -20,9 +20,9 @@ import type { ElementType } from 'react';
 import { Component } from 'react';
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 type DefaultProps = {
-    className: string | null;
-    dateModifiers: DateModifiers;
-    focusedDate: Date | null;
+    className?: string | null;
+    dateModifiers?: DateModifiers;
+    focusedDate?: Date | null;
     cellClassName: string | null;
     isKeyboardFocusable: boolean;
     markOutsideDays: boolean;
@@ -36,7 +36,7 @@ type DefaultProps = {
     ignoreOutsideDate: boolean;
     dateProps: {};
 };
-type Props = DefaultProps & {
+export type Props = DefaultProps & {
     DateComponent: ElementType;
     formatDateFull: (date: Date) => Date | string;
     month: Date;
