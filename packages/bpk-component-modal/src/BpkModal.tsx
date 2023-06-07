@@ -36,7 +36,7 @@ export type Props = Partial<ModalDialogProps> & {
   closeOnScrimClick?: boolean;
   closeOnEscPressed?: boolean;
   renderTarget?: null | HTMLElement | (() => null | HTMLElement);
-  onClose: (
+  onClose?: (
     arg0?: TouchEvent | MouseEvent | KeyboardEvent,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
