@@ -35,5 +35,5 @@ export type Props = {
     closeText?: string | null;
     accessoryView?: ReactNode;
 };
-declare const BpkModalInner: ({ isIphone, id, dialogRef, children, title, onClose, className, contentClassName, closeLabel, closeText, wide, showHeader, fullScreenOnMobile, fullScreen, padded, accessoryView, ...rest }: Props) => JSX.Element;
+declare const BpkModalInner: ({ isIphone, id, dialogRef, children, title, onClose, className, contentClassName, closeLabel, closeText, wide, showHeader, fullScreenOnMobile, fullScreen, padded, accessoryView, }: Props) => JSX.Element;
 export default BpkModalInner;

@@ -15,9 +15,8 @@ import BpkOverlay, { OVERLAY_TYPES } from '@skyscanner/backpack-web/bpk-componen
 export default () => (
   <div>
     { /* Basic example with tint */}
-    <BpkOverlay 
-      overlayType={OVERLAY_TYPES.solid} 
-      overlayLevel={OVERLAY_LEVELS.high}
+    <BpkOverlay
+      overlayType={OVERLAY_TYPES.solidLow}
     >
       <BpkText>Hotels in Canada</BpkText>
     </BpkOverlay>
@@ -45,5 +44,4 @@ export default () => (
 | children | Node | true | - |
 | className | string | false | null |
 | foregroundContent | Node | false | null |
-| overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.solid |
-| overlayLevel | oneOf(OVERLAY_LEVELS) | false | OVERLAY_LEVELS.low |
+| overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.solidLow |
