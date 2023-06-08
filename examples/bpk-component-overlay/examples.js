@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 /* @flow strict */
+import PropTypes from 'prop-types';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkImage from '../../packages/bpk-component-image';
 import BpkOverlay, {
   OVERLAY_TYPES,
-  OVERLAY_LEVELS,
 } from '../../packages/bpk-component-overlay';
 
 import STYLES from './examples.module.scss';
@@ -32,158 +32,175 @@ const IMAGE_SRC =
 
 const getClassName = cssModules(STYLES);
 
+const OverlayName = ({ overlayType }) => (
+  <BpkText textStyle={TEXT_STYLES.xl}>{overlayType}</BpkText>
+);
+
+OverlayName.propTypes = {
+  overlayType: PropTypes.objectOf(PropTypes.string),
+};
+
 const SolidExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    {Object.keys(OVERLAY_LEVELS).map((level) => {
-      if (level !== OVERLAY_LEVELS.off) {
-        return (
-          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
-            <BpkOverlay overlayType={OVERLAY_TYPES.solid} overlayLevel={level}>
-              <BpkImage
-                src={IMAGE_SRC}
-                altText="Ocean Ripple by Matt Hardy"
-                aspectRatio={1.8}
-              />
-            </BpkOverlay>
-            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
-              <BpkText textStyle={TEXT_STYLES.xl}>
-                Solid {level.charAt(0).toUpperCase() + level.slice(1)}
-              </BpkText>
-            </div>
-          </div>
-        );
-      }
-      return null;
-    })}
+    {[
+      OVERLAY_TYPES.solidLow,
+      OVERLAY_TYPES.solidMedium,
+      OVERLAY_TYPES.solidHigh,
+    ].map((overlayType) => (
+      <div
+        key={overlayType}
+        className={getClassName('bpk-overlay-stories__overlay-story')}
+      >
+        <BpkOverlay overlayType={overlayType}>
+          <BpkImage
+            src={IMAGE_SRC}
+            altText="Ocean Ripple by Matt Hardy"
+            aspectRatio={1.8}
+          />
+        </BpkOverlay>
+        <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+          <BpkText textStyle={TEXT_STYLES.xl}>
+            {OverlayName({ overlayType })}
+          </BpkText>
+        </div>
+      </div>
+    ))}
   </div>
 );
 
 const TopExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    {Object.keys(OVERLAY_LEVELS).map((level) => {
-      if (level !== OVERLAY_LEVELS.off) {
-        return (
-          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
-            <BpkOverlay overlayType={OVERLAY_TYPES.top} overlayLevel={level}>
-              <BpkImage
-                src={IMAGE_SRC}
-                altText="Ocean Ripple by Matt Hardy"
-                aspectRatio={1.8}
-              />
-            </BpkOverlay>
-            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
-              <BpkText textStyle={TEXT_STYLES.xl}>
-                Top {level.charAt(0).toUpperCase() + level.slice(1)}
-              </BpkText>
-            </div>
+    {[OVERLAY_TYPES.topLow, OVERLAY_TYPES.topMedium, OVERLAY_TYPES.topHigh].map(
+      (overlayType) => (
+        <div
+          key={overlayType}
+          className={getClassName('bpk-overlay-stories__overlay-story')}
+        >
+          <BpkOverlay overlayType={overlayType}>
+            <BpkImage
+              src={IMAGE_SRC}
+              altText="Ocean Ripple by Matt Hardy"
+              aspectRatio={1.8}
+            />
+          </BpkOverlay>
+          <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+            <BpkText textStyle={TEXT_STYLES.xl}>
+              {OverlayName({ overlayType })}
+            </BpkText>
           </div>
-        );
-      }
-      return null;
-    })}
+        </div>
+      ),
+    )}
   </div>
 );
 
 const BottomExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    {Object.keys(OVERLAY_LEVELS).map((level) => {
-      if (level !== OVERLAY_LEVELS.off) {
-        return (
-          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
-            <BpkOverlay overlayType={OVERLAY_TYPES.bottom} overlayLevel={level}>
-              <BpkImage
-                src={IMAGE_SRC}
-                altText="Ocean Ripple by Matt Hardy"
-                aspectRatio={1.8}
-              />
-            </BpkOverlay>
-            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
-              <BpkText textStyle={TEXT_STYLES.xl}>
-                Bottom {level.charAt(0).toUpperCase() + level.slice(1)}
-              </BpkText>
-            </div>
-          </div>
-        );
-      }
-      return null;
-    })}
+    {[
+      OVERLAY_TYPES.bottomLow,
+      OVERLAY_TYPES.bottomMedium,
+      OVERLAY_TYPES.bottomHigh,
+    ].map((overlayType) => (
+      <div
+        key={overlayType}
+        className={getClassName('bpk-overlay-stories__overlay-story')}
+      >
+        <BpkOverlay overlayType={overlayType}>
+          <BpkImage
+            src={IMAGE_SRC}
+            altText="Ocean Ripple by Matt Hardy"
+            aspectRatio={1.8}
+          />
+        </BpkOverlay>
+        <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+          <BpkText textStyle={TEXT_STYLES.xl}>
+            {OverlayName({ overlayType })}
+          </BpkText>
+        </div>
+      </div>
+    ))}
   </div>
 );
 
 const LeftExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    {Object.keys(OVERLAY_LEVELS).map((level) => {
-      if (level !== OVERLAY_LEVELS.off) {
-        return (
-          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
-            <BpkOverlay overlayType={OVERLAY_TYPES.left} overlayLevel={level}>
-              <BpkImage
-                src={IMAGE_SRC}
-                altText="Ocean Ripple by Matt Hardy"
-                aspectRatio={1.8}
-              />
-            </BpkOverlay>
-            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
-              <BpkText textStyle={TEXT_STYLES.xl}>
-                Left {level.charAt(0).toUpperCase() + level.slice(1)}
-              </BpkText>
-            </div>
-          </div>
-        );
-      }
-      return null;
-    })}
+    {[
+      OVERLAY_TYPES.leftLow,
+      OVERLAY_TYPES.leftMedium,
+      OVERLAY_TYPES.leftHigh,
+    ].map((overlayType) => (
+      <div
+        key={overlayType}
+        className={getClassName('bpk-overlay-stories__overlay-story')}
+      >
+        <BpkOverlay overlayType={overlayType}>
+          <BpkImage
+            src={IMAGE_SRC}
+            altText="Ocean Ripple by Matt Hardy"
+            aspectRatio={1.8}
+          />
+        </BpkOverlay>
+        <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+          <BpkText textStyle={TEXT_STYLES.xl}>
+            {OverlayName({ overlayType })}
+          </BpkText>
+        </div>
+      </div>
+    ))}
   </div>
 );
 
 const RightExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
-    {Object.keys(OVERLAY_LEVELS).map((level) => {
-      if (level !== OVERLAY_LEVELS.off) {
-        return (
-          <div className={getClassName('bpk-overlay-stories__overlay-story')}>
-            <BpkOverlay overlayType={OVERLAY_TYPES.right} overlayLevel={level}>
-              <BpkImage
-                src={IMAGE_SRC}
-                altText="Ocean Ripple by Matt Hardy"
-                aspectRatio={1.8}
-              />
-            </BpkOverlay>
-            <div className={getClassName('bpk-overlay-stories__overlay--name')}>
-              <BpkText textStyle={TEXT_STYLES.xl}>
-                Right {level.charAt(0).toUpperCase() + level.slice(1)}
-              </BpkText>
-            </div>
-          </div>
-        );
-      }
-      return null;
-    })}
+    {[
+      OVERLAY_TYPES.rightLow,
+      OVERLAY_TYPES.rightMedium,
+      OVERLAY_TYPES.rightHigh,
+    ].map((overlayType) => (
+      <div
+        key={overlayType}
+        className={getClassName('bpk-overlay-stories__overlay-story')}
+      >
+        <BpkOverlay overlayType={overlayType}>
+          <BpkImage
+            src={IMAGE_SRC}
+            altText="Ocean Ripple by Matt Hardy"
+            aspectRatio={1.8}
+          />
+        </BpkOverlay>
+        <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+          <BpkText textStyle={TEXT_STYLES.xl}>
+            {OverlayName({ overlayType })}
+          </BpkText>
+        </div>
+      </div>
+    ))}
   </div>
 );
 
-const VignetteExample = () => (
-  <div className={getClassName('bpk-overlay-stories__overlay-story')}>
-    <BpkOverlay
-      overlayType={OVERLAY_TYPES.vignette}
-      overlayLevel={OVERLAY_LEVELS.high}
-    >
-      <BpkImage
-        src={IMAGE_SRC}
-        altText="Ocean Ripple by Matt Hardy"
-        aspectRatio={1.8}
-      />
-    </BpkOverlay>
-    <div className={getClassName('bpk-overlay-stories__overlay--name')}>
-      <BpkText textStyle={TEXT_STYLES.xl}>Vignette</BpkText>
+const VignetteExample = () => {
+  const overlayType = OVERLAY_TYPES.vignette;
+  return (
+    <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+      <BpkOverlay overlayType={overlayType}>
+        <BpkImage
+          src={IMAGE_SRC}
+          altText="Ocean Ripple by Matt Hardy"
+          aspectRatio={1.8}
+        />
+      </BpkOverlay>
+      <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+        <BpkText textStyle={TEXT_STYLES.xl}>
+          {OverlayName({ overlayType })}
+        </BpkText>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const WithForegroundContentExample = () => (
   <BpkOverlay
-    overlayType={OVERLAY_TYPES.solid}
-    overlayLevel={OVERLAY_LEVELS.high}
+    overlayType={OVERLAY_TYPES.solidHigh}
     foregroundContent={
       <div className={getClassName('bpk-overlay-stories__foreground')}>
         <BpkText textStyle={TEXT_STYLES.xl}>
