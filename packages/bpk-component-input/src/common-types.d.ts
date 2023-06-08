@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import type PropTypes from 'prop-types';
-import type { SyntheticEvent } from 'react';
+import PropTypes from 'prop-types';
+import type { ComponentProps, SyntheticEvent } from 'react';
 export declare const CLEAR_BUTTON_MODES: {
     readonly never: "never";
     readonly whileEditing: "whileEditing";
@@ -30,12 +30,11 @@ export declare const INPUT_TYPES: {
     readonly password: "password";
     readonly tel: "tel";
 };
-type BaseProps = {
+type BaseProps = ComponentProps<'input'> & {
     id: string;
     name: string;
     value: string;
     type?: typeof INPUT_TYPES[keyof typeof INPUT_TYPES];
-    className?: string | null;
     valid?: boolean | null;
     large?: boolean;
     docked?: boolean;
@@ -43,7 +42,6 @@ type BaseProps = {
     dockedMiddle?: boolean;
     dockedLast?: boolean;
     inputRef?: ((ref: HTMLInputElement) => void) | null;
-    [rest: string]: any;
 };
 export type PropsWithoutClearButonMode = BaseProps & {
     clearButtonMode?: 'never';
@@ -76,7 +74,6 @@ export declare const propTypes: {
 };
 export declare const defaultProps: {
     type: "text";
-    className: null;
     valid: null;
     large: boolean;
     docked: boolean;

@@ -16,106 +16,65 @@
  * limitations under the License.
  */
 
-import type { ComponentType, ReactElement, UIEvent } from 'react';
-
+import type { ComponentType, ReactElement, UIEvent, ComponentProps } from 'react';
 type WithOpenEventsProps = {
-  isOpen?: boolean;
-  onOpen?: () => void;
-  hasTouchSupport?: boolean;
+    isOpen?: boolean;
+    onOpen?: () => void;
+    hasTouchSupport?: boolean;
 };
-type InputProps = {
-  className?: string | null;
-  onClick?: (event: UIEvent) => void;
-  onFocus?: (event: UIEvent) => void;
-  onBlur?: (event: UIEvent) => void;
-  onTouchEnd?: (event: UIEvent) => void;
-  onKeyDown?: (event: UIEvent) => void;
-  onKeyUp?: (event: UIEvent) => void;
+type EventHandlers = {
+    onClick?: (event: UIEvent) => void;
+    onFocus?: (event: UIEvent) => void;
+    onBlur?: (event: UIEvent) => void;
+    onTouchEnd?: (event: UIEvent) => void;
+    onKeyDown?: (event: UIEvent) => void;
+    onKeyUp?: (event: UIEvent) => void;
+    readOnly?: string;
+    'aria-readonly'?: boolean;
 };
-declare const withOpenEvents: <P extends InputProps>(
-  InputComponent: ComponentType<P>,
-) => {
-  new (props: P & WithOpenEventsProps): {
-    focusCanOpen: boolean;
-    handleTouchEnd: (event: UIEvent) => void;
-    handleFocus: () => void;
-    handleBlur: () => void;
-    render(): ReactElement;
-    context: any;
-    setState<K extends never>(
-      state:
-        | {}
-        | ((
-            prevState: Readonly<{}>,
-            props: Readonly<P & WithOpenEventsProps>, // eslint-disable-line no-shadow
-          ) => {} | Pick<{}, K> | null)
-        | Pick<{}, K>
-        | null,
-      callback?: (() => void) | undefined,
-    ): void;
-    forceUpdate(callback?: (() => void) | undefined): void;
-    readonly props: Readonly<P & WithOpenEventsProps> &
-      Readonly<{
-        children?: import('react').ReactNode;
-      }>;
-    state: Readonly<{}>;
-    refs: {
-      [key: string]: import('react').ReactInstance;
+type InputProps = ComponentProps<'input'> & Omit<EventHandlers, 'readOnly' | 'aria-readonly'>;
+declare const withOpenEvents: <P extends object>(InputComponent: ComponentType<P>) => {
+    new (props: P & WithOpenEventsProps & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly">): {
+        focusCanOpen: boolean;
+        handleTouchEnd: (event: UIEvent) => void;
+        handleFocus: () => void;
+        handleBlur: () => void;
+        render(): ReactElement;
+        context: any;
+        setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<P & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly"> & WithOpenEventsProps>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
+        forceUpdate(callback?: (() => void) | undefined): void;
+        readonly props: Readonly<P & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly"> & WithOpenEventsProps> & Readonly<{
+            children?: import("react").ReactNode;
+        }>;
+        state: Readonly<{}>;
+        refs: {
+            [key: string]: import("react").ReactInstance;
+        };
+        componentDidMount?(): void;
+        shouldComponentUpdate?(nextProps: Readonly<P & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly"> & WithOpenEventsProps>, nextState: Readonly<{}>, nextContext: any): boolean;
+        componentWillUnmount?(): void;
+        componentDidCatch?(error: Error, errorInfo: import("react").ErrorInfo): void;
+        getSnapshotBeforeUpdate?(prevProps: Readonly<P & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly"> & WithOpenEventsProps>, prevState: Readonly<{}>): any;
+        componentDidUpdate?(prevProps: Readonly<P & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly"> & WithOpenEventsProps>, prevState: Readonly<{}>, snapshot?: any): void;
+        componentWillMount?(): void;
+        UNSAFE_componentWillMount?(): void;
+        componentWillReceiveProps?(nextProps: Readonly<P & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly"> & WithOpenEventsProps>, nextContext: any): void;
+        UNSAFE_componentWillReceiveProps?(nextProps: Readonly<P & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly"> & WithOpenEventsProps>, nextContext: any): void;
+        componentWillUpdate?(nextProps: Readonly<P & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly"> & WithOpenEventsProps>, nextState: Readonly<{}>, nextContext: any): void;
+        UNSAFE_componentWillUpdate?(nextProps: Readonly<P & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & Omit<EventHandlers, "aria-readonly" | "readOnly"> & WithOpenEventsProps>, nextState: Readonly<{}>, nextContext: any): void;
     };
-    componentDidMount?(): void;
-    shouldComponentUpdate?(
-      nextProps: Readonly<P & WithOpenEventsProps>,
-      nextState: Readonly<{}>,
-      nextContext: any,
-    ): boolean;
-    componentWillUnmount?(): void;
-    componentDidCatch?(
-      error: Error,
-      errorInfo: import('react').ErrorInfo,
-    ): void;
-    getSnapshotBeforeUpdate?(
-      prevProps: Readonly<P & WithOpenEventsProps>,
-      prevState: Readonly<{}>,
-    ): any;
-    componentDidUpdate?(
-      prevProps: Readonly<P & WithOpenEventsProps>,
-      prevState: Readonly<{}>,
-      snapshot?: any,
-    ): void;
-    componentWillMount?(): void;
-    UNSAFE_componentWillMount?(): void;
-    componentWillReceiveProps?(
-      nextProps: Readonly<P & WithOpenEventsProps>,
-      nextContext: any,
-    ): void;
-    UNSAFE_componentWillReceiveProps?(
-      nextProps: Readonly<P & WithOpenEventsProps>,
-      nextContext: any,
-    ): void;
-    componentWillUpdate?(
-      nextProps: Readonly<P & WithOpenEventsProps>,
-      nextState: Readonly<{}>,
-      nextContext: any,
-    ): void;
-    UNSAFE_componentWillUpdate?(
-      nextProps: Readonly<P & WithOpenEventsProps>,
-      nextState: Readonly<{}>,
-      nextContext: any,
-    ): void;
-  };
-  displayName: string;
-  defaultProps: {
-    isOpen: boolean;
-    hasTouchSupport: boolean;
-    onOpen: null;
-    className: null;
-    onClick: null;
-    onFocus: null;
-    onBlur: null;
-    onTouchEnd: null;
-    onKeyDown: null;
-    onKeyUp: null;
-  };
-  contextType?: import('react').Context<any> | undefined;
+    displayName: string;
+    defaultProps: {
+        isOpen: boolean;
+        hasTouchSupport: boolean;
+        onOpen: null;
+        onClick: null;
+        onFocus: null;
+        onBlur: null;
+        onTouchEnd: null;
+        onKeyDown: null;
+        onKeyUp: null;
+    };
+    contextType?: import("react").Context<any> | undefined;
 };
 export default withOpenEvents;
