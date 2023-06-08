@@ -113,11 +113,9 @@ export const BpkModalV2 = (props: Props) => {
 
   useEffect(() => {
     if (isOpen) {
-      const dialog = document.getElementById(`${id}`);
-
-      dialog?.classList.add('opening');
       ref.current?.showModal?.();
 
+      const dialog = document.getElementById(`${id}`);
       if (dialog) {
         dialog.addEventListener('click', (event: Event) => {
           const { target } = event;
