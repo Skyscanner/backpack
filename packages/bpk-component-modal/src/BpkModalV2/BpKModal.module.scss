@@ -18,13 +18,6 @@
 
 @import '~bpk-mixins/index.scss';
 
-@mixin center-dialog {
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: $bpk-border-radius-md;
-  inset-block-start: 50%;
-}
-
 @mixin header {
   display: flex;
   min-height: bpk-spacing-lg();
@@ -89,10 +82,6 @@
   overflow-y: scroll;
   scrollbar-width: none;
 
-  &[open] {
-    animation: bpk-modal-scale $bpk-duration-sm ease-out;
-  }
-
   @include bpk-box-shadow-xl;
 
   @include bpk-breakpoint-above-mobile {
@@ -113,13 +102,15 @@
     }
   }
 
+  &[open] {
+    animation: bpk-modal-scale $bpk-duration-sm ease-out;
+  }
+
   &--no-full-screen-mobile {
     width: 90%;
     max-width: none;
     height: fit-content;
     max-height: 90%;
-
-    @include center-dialog;
 
     @include bpk-breakpoint-above-mobile {
       width: $bpk-modal-max-width;
@@ -130,11 +121,11 @@
   &::backdrop {
     position: fixed;
     background-color: $bpk-scrim-day;
+    animation: bpk-modal-scrim $bpk-duration-sm ease-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
     inset-inline-end: 0;
-    animation: bpk-modal-scrim $bpk-duration-sm ease-out;
   }
 
   &::-webkit-scrollbar {
@@ -179,8 +170,4 @@
       height: 100%;
     }
   }
-}
-
-.opening {
-  opacity: 1;
 }
