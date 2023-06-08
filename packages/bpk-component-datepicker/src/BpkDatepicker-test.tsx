@@ -42,7 +42,7 @@ jest.mock('@popperjs/core', () => {
   };
 });
 
-const formatDate = (date) => format(date, 'dd/MM/yyyy');
+const formatDate = (date: Date) => format(date, 'dd/MM/yyyy');
 
 const inputProps = {
   onChange: () => null,
@@ -267,7 +267,7 @@ describe('BpkDatepicker', () => {
   });
 
   it('should open when the isOpen prop is changed from the outside', () => {
-    const getDatepicker = (isOpen) => (
+    const getDatepicker = (isOpen: boolean) => (
       <BpkDatepicker
         id="myDatepicker"
         closeButtonText="Close"

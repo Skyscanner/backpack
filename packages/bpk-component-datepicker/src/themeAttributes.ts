@@ -18,6 +18,7 @@
 
 import { themeAttributes as calendarAttributes } from '../../bpk-component-calendar';
 import { themeAttributes as modalAttributes } from '../../bpk-component-modal';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { themeAttributes as popoverAttributes } from '../../bpk-component-popover';
 
 export default [
