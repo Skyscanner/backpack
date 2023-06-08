@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
 import { withScrim } from '../../bpk-scrim-utils';
 import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
 
@@ -26,14 +28,17 @@ import type { Props as ModalDialogProps } from './BpkModalInner';
 const getClassName = cssModules(STYLES);
 const ScrimBpkModalInner = withScrim(BpkModalInner);
 
-export type Props = ModalDialogProps & {
+export type Props = Partial<ModalDialogProps> & {
+  id: string;
+  children: ReactNode;
+  dialogRef?: (ref: HTMLElement | null | undefined) => void; // TODO - remove this in a later release as it is not being used. The dialogRef is injected in the withScrim HOC
   isOpen: boolean;
   closeOnScrimClick?: boolean;
   closeOnEscPressed?: boolean;
   renderTarget?: null | HTMLElement | (() => null | HTMLElement);
-  onClose: (
-    arg0: TouchEvent | MouseEvent | KeyboardEvent,
-    arg1: {
+  onClose?: (
+    arg0?: TouchEvent | MouseEvent | KeyboardEvent,
+    arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void;
@@ -57,6 +62,7 @@ const BpkModal = ({
   isIphone = isDeviceIphone(),
   closeOnScrimClick = true,
   closeOnEscPressed = true,
+  dialogRef = () => null,
   isOpen,
   ...rest
 }: Props) => {
@@ -84,6 +90,16 @@ const BpkModal = ({
         closeOnScrimClick={closeOnScrimClick}
         containerClassName={containerClass.join(' ')}
         isIphone={isIphone}
+        title={title}
+        className={className}
+        contentClassName={contentClassName}
+        closeLabel={closeLabel}
+        closeText={closeText}
+        wide={wide}
+        showHeader={showHeader}
+        padded={padded}
+        accessoryView={accessoryView}
+        dialogRef={dialogRef}
         {...rest}
       />
     </Portal>

@@ -43,26 +43,21 @@ import STYLES from './bpk-scrim-content.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type BaseProps = {
+type Props = {
+  getApplicationElement: () => HTMLElement | null;
   onClose?: () => void | null;
   isIphone?: boolean;
   isIpad?: boolean;
+  containerClassName?: string;
+  closeOnScrimClick?: boolean;
   [rest: string]: any;
 };
 
-type HOCProps = {
-  getApplicationElement: () => HTMLElement | null;
-  containerClassName?: string;
-  closeOnScrimClick?: boolean;
-};
-
-type Props = HOCProps & BaseProps;
-
-const withScrim = <P extends BaseProps>(
+const withScrim = <P extends object>(
   WrappedComponent: ComponentType<P> | string,
 ) => {
-  class WithScrim extends Component<P & Props> {
-    dialogElement?: RefObject<HTMLElement>;
+  class WithScrim extends Component<Props & Omit<P, 'dialogRef'>> {
+    dialogElement?: HTMLElement | null | undefined;
 
     public static displayName: string;
 
@@ -128,7 +123,7 @@ const withScrim = <P extends BaseProps>(
       focusStore.restoreFocus();
     }
 
-    dialogRef = (ref: RefObject<HTMLElement>) => {
+    dialogRef = (ref: HTMLElement | null | undefined) => {
       this.dialogElement = ref;
     };
 
