@@ -17,4 +17,4 @@
  */
 
 export const BACKGROUND_ID = 'background';
-export const X_ID = 'x';
+export const CLOSE_ID = 'close';

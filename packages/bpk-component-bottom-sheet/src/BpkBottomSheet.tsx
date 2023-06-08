@@ -26,7 +26,7 @@ import { BpkButtonLink } from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
-import { BACKGROUND_ID, X_ID } from './constants';
+import { BACKGROUND_ID, CLOSE_ID } from './constants';
 import STYLES from './BpkBottomSheet.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -81,7 +81,7 @@ const BpkBottomSheet = ({
     (id: string) => {
       setIsOpen(false);
       genericClickHandler && genericClickHandler();
-      if (id === X_ID) {
+      if (id === CLOSE_ID) {
         closeClickHandler && closeClickHandler();
       }
       if (id === BACKGROUND_ID) {
@@ -108,7 +108,7 @@ const BpkBottomSheet = ({
         <div className={getClassName('bpk-header')}>
           {isClosable && (
             <BpkCloseButton
-              onClick={() => clickHandler(X_ID)}
+              onClick={() => clickHandler(CLOSE_ID)}
               label={closeButtonLabel}
               className={getClassName('bpk-closeIcon')}
             />
