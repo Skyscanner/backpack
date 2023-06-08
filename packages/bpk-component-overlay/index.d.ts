@@ -19,10 +19,9 @@
 
 import BpkOverlay, {
   OVERLAY_TYPES,
-  OVERLAY_LEVELS,
   type Props as BpkOverlayProps,
 } from './src/BpkOverlay';
 
 export type { BpkOverlayProps };
 export default BpkOverlay;
-export { OVERLAY_TYPES, OVERLAY_LEVELS };
+export { OVERLAY_TYPES };
