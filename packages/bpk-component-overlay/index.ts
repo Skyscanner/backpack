@@ -15,22 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow strict */
 
-/// <reference types="react" />
-import type { ReactNode } from 'react';
+import BpkOverlay, {
+  OVERLAY_TYPES,
+  type Props as BpkOverlayProps,
+} from './src/BpkOverlay';
 
-export type Props = {
-  id: string | undefined;
-  ariaLabelledby: string;
-  children: ReactNode;
-  closeLabel: string;
-  fullScreenOnDesktop?: boolean;
-  isOpen: boolean;
-  noFullScreenOnMobile?: boolean;
-  onClose: () => void | null;
-  padded?: boolean;
-  showHeader?: boolean;
-  title?: string | null;
-  wide?: boolean;
-};
-export declare const BpkModalV2: (props: Props) => JSX.Element | null;
+export type { BpkOverlayProps };
+export default BpkOverlay;
+export { OVERLAY_TYPES };

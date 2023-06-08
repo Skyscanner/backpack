@@ -38,8 +38,37 @@ export type Props = {
   noFullScreenOnMobile?: boolean;
   onClose: () => void | null;
   padded?: boolean;
+  showHeader?: boolean;
   title?: string | null;
   wide?: boolean;
+};
+
+const Header = ({
+  closeLabel,
+  id,
+  onClose,
+  title,
+}: {
+  closeLabel: string;
+  id: string | undefined;
+  onClose: () => void | null;
+  title?: string | null;
+}) => {
+  if (title) {
+    return (
+      <div id={id} className={getClassName('bpk-modal__header-title')}>
+        <div className={getClassName('bpk-modal__header-title-container')}>
+          <Heading>{title}</Heading>
+        </div>
+        <BpkCloseButton label={closeLabel} onClick={onClose} />
+      </div>
+    );
+  }
+  return (
+    <div className={getClassName('bpk-modal__button-container')}>
+      <BpkCloseButton label={closeLabel} onClick={onClose} />
+    </div>
+  );
 };
 
 const Heading = withDefaultProps(BpkText, {
@@ -75,6 +104,7 @@ export const BpkModalV2 = (props: Props) => {
     noFullScreenOnMobile,
     onClose,
     padded,
+    showHeader = true,
     title,
     wide,
   } = props;
@@ -116,12 +146,6 @@ export const BpkModalV2 = (props: Props) => {
     padded && 'bpk-modal__container--padded',
   );
 
-  const closeButton = (
-    <div>
-      <BpkCloseButton label={closeLabel} onClick={onClose} />
-    </div>
-  );
-
   return isOpen ? (
     <div
       className={getClassName(
@@ -144,17 +168,13 @@ export const BpkModalV2 = (props: Props) => {
         data-open={isOpen}
         ref={ref}
       >
-        {title ? (
-          <div className={getClassName('bpk-modal__header-title')}>
-            <div className={getClassName('bpk-modal__header-title-container')}>
-              <Heading>{title}</Heading>
-            </div>
-            {closeButton}
-          </div>
-        ) : (
-          <div className={getClassName('bpk-modal__button-container')}>
-            {closeButton}
-          </div>
+        {showHeader && (
+          <Header
+            id={`${id}-title`}
+            title={title}
+            closeLabel={closeLabel}
+            onClose={onClose}
+          />
         )}
         <div className={contentClassNames}>{children}</div>
       </dialog>
