@@ -38,7 +38,6 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        month={new Date(2010, 1, 15)}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
           date: new Date(2010, 1, 15),
@@ -61,7 +60,6 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        month={new Date(2010, 1, 15)}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.range,
           startDate: new Date(2010, 1, 16),
@@ -85,7 +83,6 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        month={new Date(2010, 1, 1)}
         initiallyFocusedDate={new Date(2010, 1, 28)}
       />,
     );
@@ -105,7 +102,6 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        month={new Date(2010, 1, 1)}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
           date: new Date(2010, 1, 15),
@@ -153,7 +149,6 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        month={new Date(2010, 1, 1)}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
           date: new Date(2010, 1, 15),
@@ -190,7 +185,6 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={minDate}
         maxDate={maxDate}
-        month={minDate}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
           date: initialSelectedDate,
@@ -220,7 +214,6 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={minDate}
         maxDate={maxDate}
-        month={minDate}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
           date: null,
@@ -254,7 +247,6 @@ describe('BpkCalendarContainer', () => {
         id="myCalendar"
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        month={new Date(2010, 1, 1)}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
           date: new Date(2010, 1, 15),
@@ -298,7 +290,6 @@ describe('BpkCalendarContainer', () => {
           type: CALENDAR_SELECTION_TYPE.single,
           date: origin,
         }}
-        month={new Date(2010, 2, 1)}
       />,
     );
 
@@ -342,13 +333,12 @@ describe('BpkCalendarContainer', () => {
       getDate(/15th March/i).classList.contains('bpk-calendar-date--focused'),
     ).toBe(true);
 
-    // TODO - tested in SB and works as expected, not sure why the test breaks. Needs more investigation to be re-enabled
-    // await fireEvent.keyDown(getDate(/15th March/i), { key: 'PageUp' });
-    // expect(
-    //   getDate(/15th February/i).classList.contains(
-    //     'bpk-calendar-date--focused',
-    //   ),
-    // ).toBe(true);
+    await fireEvent.keyDown(getDate(/15th March/i), { key: 'PageUp' });
+    expect(
+      getDate(/15th February/i).classList.contains(
+        'bpk-calendar-date--focused',
+      ),
+    ).toBe(true);
   });
 
   it('should change month on keyboard nav across month boundary', async () => {
@@ -375,7 +365,6 @@ describe('BpkCalendarContainer', () => {
           type: CALENDAR_SELECTION_TYPE.single,
           date: origin,
         }}
-        month={new Date(2010, 1, 1)}
         onMonthChange={onMonthChange}
       />,
     );

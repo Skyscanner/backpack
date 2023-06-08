@@ -51,10 +51,7 @@ type Props = {
   style: {} | null | undefined;
   renderTarget: null | HTMLElement | (() => null | HTMLElement);
   target: null | HTMLElement | JSX.Element | (() => HTMLElement);
-  targetRef:
-    | ((arg0: null | Element | Text | undefined) => void)
-    | null
-    | undefined;
+  targetRef: ((arg0: null | Element | undefined) => void) | null | undefined;
   closeOnEscPressed: boolean;
 };
 

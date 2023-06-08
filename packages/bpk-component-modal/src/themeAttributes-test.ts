@@ -16,7 +16,15 @@
  * limitations under the License.
  */
 
-/// <reference types="react" />
-import type { Props } from './common-types';
-declare const BpkDialog: ({ children, closeLabel, dismissible, headerIcon, headerIconType, isOpen, onClose, renderTarget, ...rest }: Props) => JSX.Element;
-export default BpkDialog;
+import themeAttributes from './themeAttributes';
+
+describe('themeAttributes', () => {
+  it('should export the correct theme attributes', () => {
+    expect(themeAttributes).toEqual([
+      'linkColor',
+      'linkHoverColor',
+      'linkActiveColor',
+      'linkVisitedColor',
+    ]);
+  });
+});

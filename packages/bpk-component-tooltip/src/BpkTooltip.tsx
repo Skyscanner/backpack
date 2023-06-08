@@ -16,16 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 /*
 This is the component for the tooltip that is displayed to users.
 
 The actual component that developers create (i.e. the default export from this package) is BpkTooltipPortal.
 */
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
@@ -35,16 +32,21 @@ import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 const getClassName = cssModules(STYLES);
 
 export type TooltipProps = {
-  id: string,
-  children: Node,
-  type: $Keys<typeof TOOLTIP_TYPES>,
-  padded: boolean,
-  className: ?string,
+  id: string;
+  children: ReactNode | string;
+  type?: typeof TOOLTIP_TYPES[keyof typeof TOOLTIP_TYPES];
+  padded?: boolean;
+  className?: string | null;
 };
 
-const BpkTooltip = (props: TooltipProps) => {
-  const { children, className, id, padded, type, ...rest } = props;
-
+const BpkTooltip = ({
+  children,
+  className = null,
+  id,
+  padded = true,
+  type = TOOLTIP_TYPES.light,
+  ...rest
+}: TooltipProps) => {
   const classNames = getClassName('bpk-tooltip', className);
 
   const innerClassNames = getClassName(
@@ -67,7 +69,7 @@ const BpkTooltip = (props: TooltipProps) => {
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <section
         id={id}
-        tabIndex="-1"
+        tabIndex={-1}
         role="dialog"
         className={classNames}
         {...rest}
@@ -83,22 +85,5 @@ const BpkTooltip = (props: TooltipProps) => {
     </TransitionInitialMount>
   );
 };
-
-export const propTypes = {
-  id: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  padded: PropTypes.bool,
-  type: PropTypes.oneOf(Object.keys(TOOLTIP_TYPES)),
-};
-
-export const defaultProps = {
-  className: null,
-  padded: true,
-  type: TOOLTIP_TYPES.light,
-};
-
-BpkTooltip.propTypes = { ...propTypes };
-BpkTooltip.defaultProps = { ...defaultProps };
 
 export default BpkTooltip;

@@ -16,31 +16,17 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkModal from './BpkModal';
+import BpkTooltip from './BpkTooltip';
 
-describe('BpkModal accessibility tests', () => {
+describe('BpkTooltip accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const customRenderTarget = document.createElement('div');
-
     const { container } = render(
-      <BpkModal
-        id="my-modal"
-        title="Modal title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        dialogRef={jest.fn()}
-        isIphone={false}
-        getApplicationElement={jest.fn()}
-        isOpen
-        renderTarget={() => customRenderTarget}
-      >
-        Modal content inside a custom target
-      </BpkModal>,
+      <BpkTooltip id="my-popover" aria-label="Tooltip">
+        My tooltip content
+      </BpkTooltip>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

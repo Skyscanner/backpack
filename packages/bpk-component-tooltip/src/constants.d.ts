@@ -16,21 +16,16 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
-
-import BpkTooltip from './BpkTooltip';
-
-describe('BpkTooltip accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkTooltip id="my-popover" aria-label="Tooltip">
-        My tooltip content
-      </BpkTooltip>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export declare const ARROW_ID = "js-bpk-popover-arrow";
+export declare const TOOLTIP_TYPES: {
+    readonly light: "light";
+    readonly dark: "dark";
+};
+declare const _default: {
+    ARROW_ID: string;
+    TOOLTIP_TYPES: {
+        readonly light: "light";
+        readonly dark: "dark";
+    };
+};
+export default _default;
