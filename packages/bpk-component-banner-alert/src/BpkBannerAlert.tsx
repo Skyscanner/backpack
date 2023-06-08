@@ -19,13 +19,6 @@
 import type { CommonProps } from './common-types';
 import BpkBannerAlertInner from './BpkBannerAlertInner';
 
-const defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  show: true,
-  icon: null,
-};
-
 const BpkBannerAlert = ({
   animateOnEnter = false,
   animateOnLeave = false,

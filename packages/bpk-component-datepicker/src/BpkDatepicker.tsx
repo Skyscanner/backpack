@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { createRef, Component, ReactElement, ComponentType } from 'react';
+import { createRef, Component } from 'react';
 
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
@@ -355,7 +355,6 @@ class BpkDatepicker extends Component<Props, State> {
           isMobile ? (
             <>
               {input}
-              {/* @ts-expect-error Added this due to a bug in the modal component */}
               <BpkModal
                 id={`${id}-modal`}
                 renderTarget={renderTarget}
