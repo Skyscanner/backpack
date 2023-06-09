@@ -22,6 +22,7 @@ import {
   WithActionExample,
   WithTitleAndActionExample,
   WithNoCloseButtonExample,
+  WithTitleAndNoCloseButtonExample,
 } from './examples';
 
 export default {
@@ -33,3 +34,4 @@ export const WithTitle = WithTitleExample;
 export const WithAction = WithActionExample;
 export const WithTitleAndAction = WithTitleAndActionExample;
 export const WithNoCloseButton = WithNoCloseButtonExample;
+export const WithTitleAndNoCloseButton = WithTitleAndNoCloseButtonExample;

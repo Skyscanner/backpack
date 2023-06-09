@@ -106,35 +106,31 @@ const BpkBottomSheet = ({
 
       <div className={getClassName('bpk-contentContainer')}>
         <div className={getClassName('bpk-header')}>
-          {isClosable && (
-            <BpkCloseButton
-              onClick={() => clickHandler(CLOSE_ID)}
-              label={closeButtonLabel}
-              className={getClassName('bpk-closeIcon')}
-            />
-          )}
-          {title && (
-            <BpkText
-              tagName="h2"
-              textStyle={TEXT_STYLES.heading5}
-              className={
-                action
-                  ? getClassName('bpk-title-with-action')
-                  : getClassName('bpk-title')
-              }
-            >
-              {title}
-            </BpkText>
-          )}
-          {action && (
-            <BpkButtonLink
-              onClick={() => action()}
-              textStyle={TEXT_STYLES.heading5}
-              className={getClassName('bpk-action')}
-            >
-              {actionText}
-            </BpkButtonLink>
-          )}
+          <div className={getClassName('bpk-close')}>
+            {isClosable && (
+              <BpkCloseButton
+                onClick={() => clickHandler(CLOSE_ID)}
+                label={closeButtonLabel}
+              />
+            )}
+          </div>
+          <div className={getClassName('bpk-title')}>
+            {title && (
+              <BpkText tagName="h2" textStyle={TEXT_STYLES.heading5}>
+                {title}
+              </BpkText>
+            )}
+          </div>
+          <div className={getClassName('bpk-action')}>
+            {action && (
+              <BpkButtonLink
+                onClick={() => action()}
+                textStyle={TEXT_STYLES.heading5}
+              >
+                {actionText}
+              </BpkButtonLink>
+            )}
+          </div>
         </div>
         {children}
       </div>

@@ -48,33 +48,20 @@ $height: $bpk-line-height-base * 0.82;
 
 .bpk-header {
   display: flex;
-  margin-bottom: bpk-spacing-lg();
   justify-content: flex-start;
   align-items: baseline;
 }
 
-.bpk-closeIcon {
-  position: absolute;
-  width: 0;
-  height: 0;
-  margin-bottom: bpk-spacing-lg();
-}
-
-.bpk-title-with-action {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-inline: auto;
+.bpk-close {
+  flex: 1;
+  text-align: start;
 }
 
 .bpk-title {
-  margin-inline: auto;
+  text-align: center;
 }
 
 .bpk-action {
-  position: absolute;
-  right: bpk-spacing-lg();
-  min-height: auto;
-  padding: 0;
-  line-height: $height;
+  flex: 1;
+  text-align: end;
 }

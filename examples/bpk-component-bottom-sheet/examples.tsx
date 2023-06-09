@@ -58,10 +58,18 @@ const WithNoCloseButtonExample = () => (
     click the background. You can put anything you want in here.
   </BpkBottomSheet>
 );
+
+const WithTitleAndNoCloseButtonExample = () => (
+  <BpkBottomSheet isClosable={false} title="Title">
+    This is a bottom sheet without a close button. It will still close if you
+    click the background. You can put anything you want in here.
+  </BpkBottomSheet>
+);
 export {
   DefaultExample,
   WithTitleExample,
   WithActionExample,
   WithTitleAndActionExample,
   WithNoCloseButtonExample,
+  WithTitleAndNoCloseButtonExample,
 };
