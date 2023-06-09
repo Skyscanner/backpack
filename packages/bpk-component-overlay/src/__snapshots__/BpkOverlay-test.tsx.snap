@@ -34,7 +34,7 @@ exports[`BpkOverlay should render correctly with foregroundContent 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={bottom} & overlayLevel={high} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={bottomHigh} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -49,7 +49,7 @@ exports[`BpkOverlay should render correctly with overlayType={bottom} & overlayL
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={bottom} & overlayLevel={low} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={bottomLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -64,7 +64,7 @@ exports[`BpkOverlay should render correctly with overlayType={bottom} & overlayL
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={bottom} & overlayLevel={medium} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={bottomMedium} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -79,22 +79,7 @@ exports[`BpkOverlay should render correctly with overlayType={bottom} & overlayL
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={bottom} & overlayLevel={off} 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-overlay__wrapper"
-  >
-    <span>
-      Backpack
-    </span>
-    <div
-      class="bpk-overlay__overlay bpk-overlay__overlay--bottom-off"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkOverlay should render correctly with overlayType={left} & overlayLevel={high} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={leftHigh} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -109,7 +94,7 @@ exports[`BpkOverlay should render correctly with overlayType={left} & overlayLev
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={left} & overlayLevel={low} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={leftLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -124,7 +109,7 @@ exports[`BpkOverlay should render correctly with overlayType={left} & overlayLev
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={left} & overlayLevel={medium} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={leftMedium} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -139,7 +124,7 @@ exports[`BpkOverlay should render correctly with overlayType={left} & overlayLev
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={left} & overlayLevel={off} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={off} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -148,13 +133,13 @@ exports[`BpkOverlay should render correctly with overlayType={left} & overlayLev
       Backpack
     </span>
     <div
-      class="bpk-overlay__overlay bpk-overlay__overlay--left-off"
+      class="bpk-overlay__overlay"
     />
   </div>
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={right} & overlayLevel={high} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={rightHigh} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -169,7 +154,7 @@ exports[`BpkOverlay should render correctly with overlayType={right} & overlayLe
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={right} & overlayLevel={low} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={rightLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -184,7 +169,7 @@ exports[`BpkOverlay should render correctly with overlayType={right} & overlayLe
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={right} & overlayLevel={medium} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={rightMedium} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -199,22 +184,7 @@ exports[`BpkOverlay should render correctly with overlayType={right} & overlayLe
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={right} & overlayLevel={off} 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-overlay__wrapper"
-  >
-    <span>
-      Backpack
-    </span>
-    <div
-      class="bpk-overlay__overlay bpk-overlay__overlay--right-off"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkOverlay should render correctly with overlayType={solid} & overlayLevel={high} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={solidHigh} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -229,7 +199,7 @@ exports[`BpkOverlay should render correctly with overlayType={solid} & overlayLe
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={solid} & overlayLevel={low} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={solidLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -244,7 +214,7 @@ exports[`BpkOverlay should render correctly with overlayType={solid} & overlayLe
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={solid} & overlayLevel={medium} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={solidMedium} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -259,22 +229,7 @@ exports[`BpkOverlay should render correctly with overlayType={solid} & overlayLe
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={solid} & overlayLevel={off} 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-overlay__wrapper"
-  >
-    <span>
-      Backpack
-    </span>
-    <div
-      class="bpk-overlay__overlay bpk-overlay__overlay--solid-off"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkOverlay should render correctly with overlayType={top} & overlayLevel={high} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={topHigh} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -289,7 +244,7 @@ exports[`BpkOverlay should render correctly with overlayType={top} & overlayLeve
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={top} & overlayLevel={low} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={topLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -304,7 +259,7 @@ exports[`BpkOverlay should render correctly with overlayType={top} & overlayLeve
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={top} & overlayLevel={medium} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={topMedium} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -319,22 +274,7 @@ exports[`BpkOverlay should render correctly with overlayType={top} & overlayLeve
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={top} & overlayLevel={off} 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-overlay__wrapper"
-  >
-    <span>
-      Backpack
-    </span>
-    <div
-      class="bpk-overlay__overlay bpk-overlay__overlay--top-off"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkOverlay should render correctly with overlayType={vignette} & overlayLevel={high} 1`] = `
+exports[`BpkOverlay should render correctly with overlayType={vignette} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
@@ -349,56 +289,10 @@ exports[`BpkOverlay should render correctly with overlayType={vignette} & overla
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should render correctly with overlayType={vignette} & overlayLevel={low} 1`] = `
+exports[`BpkOverlay should support custom class names 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-overlay__wrapper"
-  >
-    <span>
-      Backpack
-    </span>
-    <div
-      class="bpk-overlay__overlay bpk-overlay__overlay--vignette"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkOverlay should render correctly with overlayType={vignette} & overlayLevel={medium} 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-overlay__wrapper"
-  >
-    <span>
-      Backpack
-    </span>
-    <div
-      class="bpk-overlay__overlay bpk-overlay__overlay--vignette"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkOverlay should render correctly with overlayType={vignette} & overlayLevel={off} 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-overlay__wrapper"
-  >
-    <span>
-      Backpack
-    </span>
-    <div
-      class="bpk-overlay__overlay bpk-overlay__overlay--vignette"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkOverlay should support arbitrary props 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-overlay__wrapper"
-    testid="123"
+    class="bpk-overlay__wrapper custom-classname"
   >
     <span>
       Backpack
@@ -410,10 +304,11 @@ exports[`BpkOverlay should support arbitrary props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkOverlay should support custom class names 1`] = `
+exports[`BpkOverlay should support standard div attributes 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-overlay__wrapper custom-classname"
+    class="bpk-overlay__wrapper"
+    data-testid="123"
   >
     <span>
       Backpack

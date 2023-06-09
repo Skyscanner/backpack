@@ -23,7 +23,7 @@ import { Component, Children } from 'react';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkButton from '../../packages/bpk-component-button';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
-import { BpkModalV2 } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
+import { BpkModalV2 } from '../../packages/bpk-component-modal';
 
 import STYLES from './examples.module.scss';
 
@@ -161,8 +161,8 @@ const LongTitleExample = () => (
 const HeaderNoTitleExample = () => (
   <ModalContainer>
     <Paragraph>
-      This is a default modal using the HTML dialog element without a header.
-      You can put anything you want in here.
+      This is a modal using the HTML dialog element without a header. You can
+      put anything you want in here.
     </Paragraph>
   </ModalContainer>
 );
@@ -199,31 +199,41 @@ const NoPaddingExample = () => (
 
 const NoPaddingNoTitleExample = () => (
   <ModalContainer padded>
-    This is a default modal. You can put anything you want in here.
+    This is a modal without padding. You can put anything you want in here.
   </ModalContainer>
 );
 
 const FullScreenOnDesktopExample = () => (
   <ModalContainer title="Modal title" fullScreenOnDesktop>
-    This is a default modal. You can put anything you want in here.
+    This is a full screen modal for desktop. You can put anything you want in
+    here.
   </ModalContainer>
 );
 
 const FullScreenOnDesktopNoTitleExample = () => (
   <ModalContainer fullScreenOnDesktop>
-    This is a default modal. You can put anything you want in here.
+    This is a full screen modal for mobile without title. You can put anything
+    you want in here.
   </ModalContainer>
 );
 
 const NoFullScreenOnMobileExample = () => (
   <ModalContainer title="Modal title" noFullScreenOnMobile>
-    This is a default modal. You can put anything you want in here.
+    This is a no full screen modal for mobile. You can put anything you want in
+    here.
   </ModalContainer>
 );
 
 const NoFullScreenOnMobileNoTitleExample = () => (
   <ModalContainer noFullScreenOnMobile>
-    This is a default modal. You can put anything you want in here.
+    This is a no full screen modal for mobile without title. You can put
+    anything you want in here.
+  </ModalContainer>
+);
+
+const NoHeaderExample = () => (
+  <ModalContainer showHeader={false}>
+    This is a modal without header. You can put anything you want in here.
   </ModalContainer>
 );
 
@@ -266,5 +276,6 @@ export {
   FullScreenOnDesktopNoTitleExample,
   NoFullScreenOnMobileExample,
   NoFullScreenOnMobileNoTitleExample,
+  NoHeaderExample,
   MultipleModalsExample,
 };
