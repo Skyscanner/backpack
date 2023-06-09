@@ -56,6 +56,7 @@
     z-index: 0;
     margin: 0 auto;
     background-color: $bpk-scrim-day;
+    animation: bpk-modal-scrim $bpk-duration-sm ease-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
@@ -64,8 +65,12 @@
 
   .bpk-modal {
     position: fixed;
+    top: 50%;
+    left: 50%;
     display: block;
     z-index: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform $bpk-duration-sm ease-out $bpk-duration-sm;
   }
 
   .bpk-modal:not([data-open='true']),
