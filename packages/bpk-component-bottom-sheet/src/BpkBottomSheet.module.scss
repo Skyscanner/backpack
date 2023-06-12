@@ -22,6 +22,7 @@ $height: $bpk-line-height-base * 0.82;
 
 .bpk-container {
   position: absolute;
+  z-index: 1;
   background-color: $bpk-scrim-day;
   inset: 0;
 }
@@ -30,6 +31,7 @@ $height: $bpk-line-height-base * 0.82;
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 1;
   margin: 0 bpk-spacing-base();
   padding: bpk-spacing-base() bpk-spacing-lg() bpk-spacing-lg();
   border-radius: $bpk-border-radius-lg $bpk-border-radius-lg 0 0;
