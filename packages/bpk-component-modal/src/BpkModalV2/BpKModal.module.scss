@@ -56,7 +56,7 @@
     z-index: 0;
     margin: 0 auto;
     background-color: $bpk-scrim-day;
-    animation: bpk-modal-scrim $bpk-duration-sm ease-out;
+    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
@@ -70,7 +70,7 @@
     display: block;
     z-index: 1;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform $bpk-duration-sm ease-out $bpk-duration-sm;
+    transition: transform $bpk-duration-sm ease-in-out $bpk-duration-sm;
   }
 
   .bpk-modal:not([data-open='true']),
@@ -108,7 +108,7 @@
   }
 
   &[open] {
-    animation: bpk-modal-scale $bpk-duration-sm ease-out;
+    animation: bpk-modal-scale $bpk-duration-sm ease-in-out;
   }
 
   &--no-full-screen-mobile {
@@ -126,7 +126,7 @@
   &::backdrop {
     position: fixed;
     background-color: $bpk-scrim-day;
-    animation: bpk-modal-scrim $bpk-duration-sm ease-out;
+    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
