@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow */
-
-const BORDER_RADIUS_STYLES = { none: 'none', sm: 'sm' };
+const BORDER_RADIUS_STYLES = { none: 'none', sm: 'sm' } as const;
 
 export default BORDER_RADIUS_STYLES;

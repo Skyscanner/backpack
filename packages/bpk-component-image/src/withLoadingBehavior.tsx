@@ -15,27 +15,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
 
 import { Component } from 'react';
-import type { AbstractComponent } from 'react';
+import type { ComponentType } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
-type InjectedProps = {|
-  onLoad: () => mixed,
-  loading: boolean,
-|};
+type InjectedProps = {
+  onLoad: () => void;
+  loading: boolean;
+};
 
-export default function withLoadingBehavior<Config>(
-  WrappedComponent: AbstractComponent<{| ...Config, ...InjectedProps |}>,
-): AbstractComponent<Config> {
-  class WithLoadingBehavior<C: Config> extends Component<
-    C,
-    {| loading: boolean |},
+type State = {
+  loading: boolean;
+};
+
+export default function withLoadingBehavior<P extends object>(
+  WrappedComponent: ComponentType<P>,
+) {
+  class WithLoadingBehavior extends Component<
+    Omit<P, keyof InjectedProps>,
+    State
   > {
-    constructor() {
-      super();
+    public static displayName: string;
+
+    constructor(props: Omit<P, keyof InjectedProps>) {
+      super(props);
 
       this.state = {
         loading: true,
@@ -53,7 +58,7 @@ export default function withLoadingBehavior<Config>(
         <WrappedComponent
           onLoad={this.onLoad}
           loading={this.state.loading}
-          {...this.props}
+          {...(this.props as P)}
         />
       );
     }

@@ -19,7 +19,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import {
   spacingSm,
-  breakpoints as BREAKPOINTS,
+  breakpoints as BREAKPOINTS, // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkImage from './BpkImage';
