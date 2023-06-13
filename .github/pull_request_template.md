@@ -14,3 +14,4 @@ Remember to include the following changes:
 - [ ] Component `README.md`
 - [ ] Tests
 - [ ] Storybook examples created/updated
+- [ ] Migration guidelines added to the description of the PR. If the guide is lengthy, consider creating a new Markdown page inside the component's docs folder and link it here
