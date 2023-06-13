@@ -120,7 +120,7 @@ export const BpkModalV2 = (props: Props) => {
         dialog.addEventListener('click', (event: Event) => {
           const { target } = event;
 
-          if ((target as HTMLElement) && target === dialog) {
+          if (target instanceof HTMLElement && target.id === `${id}`) {
             ref.current?.close?.();
           }
         });
