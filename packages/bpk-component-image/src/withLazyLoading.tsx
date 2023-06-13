@@ -114,9 +114,10 @@ export default function withLazyLoading<P extends object>(
             return supportsPassiveOption;
           },
         });
-        const noop = function () {};
-        window.addEventListener('test', noop, opts);
-        window.removeEventListener('test', noop, opts);
+        // @ts-expect-error TODO: make this TS compliant
+        window.addEventListener('test', null, opts);
+        // @ts-expect-error TODO: make this TS compliant
+        window.removeEventListener('test');
       } catch (e) {
         return false;
       }
