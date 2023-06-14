@@ -138,7 +138,7 @@ export const BpkModalV2 = (props: Props) => {
 
     setPageProperties({ isDialogOpen: isOpen });
     return () => setPageProperties({ isDialogOpen: false });
-  }, [id, isOpen]);
+  }, [id, isOpen, onClose]);
 
   const classNames = getClassName(
     'bpk-modal',
