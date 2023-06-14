@@ -124,12 +124,7 @@ export const BpkModalV2 = (props: Props) => {
             const { target } = event;
 
             if (target === modal) {
-              if (modal === dialog) {
-                ref.current?.close?.();
-              }
-              if (modal === dialogWithPolyfill) {
-                onClose();
-              }
+              modal === dialog ? ref.current?.close?.() : onClose();
             }
           });
         }
