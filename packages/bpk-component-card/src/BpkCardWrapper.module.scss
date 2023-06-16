@@ -59,19 +59,11 @@
       transform: rotate(-45deg);
     }
   }
+
+  &:has(.bpk-card-wrapper--header:active) {
+    &::after {
+      box-shadow: $bpk-box-shadow-lg;
+      opacity: 1;
+    }
+  }
 }
-
-// 2 options
-// 1) remove box shadow when hovering on wrapper header
-// .bpk-card-wrapper:has(.bpk-card-wrapper--header:hover) {
-//   &::after {
-//     box-shadow: none;
-//   }
-// }
-
-// 2) add box shadow when wrapper header is active
-// .bpk-card-wrapper:has(.bpk-card-wrapper--header:hover) {
-//   &::after {
-//     opacity: 1 !important;
-//   }
-// }
