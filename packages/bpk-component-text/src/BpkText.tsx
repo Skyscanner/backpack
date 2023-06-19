@@ -54,7 +54,7 @@ export const TEXT_STYLES = {
   hero5: 'hero-5',
 } as const;
 
-export type TextStyle = typeof TEXT_STYLES[keyof typeof TEXT_STYLES];
+export type TextStyle = (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];
 export type Tag =
   | 'span'
   | 'p'
@@ -76,10 +76,10 @@ type Props = {
 };
 
 const BpkText = ({
-  textStyle = TEXT_STYLES.bodyDefault,
-  tagName: TagName = 'span',
-  className = null,
   children,
+  className = null,
+  tagName: TagName = 'span',
+  textStyle = TEXT_STYLES.bodyDefault,
   ...rest
 }: Props) => {
   const classNames = getClassName(
