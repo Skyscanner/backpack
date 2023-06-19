@@ -1,7 +1,7 @@
 # How we ignore linter and type checker rules
 
 ## Decision
-When ignoring `eslint`, `stylelint` or `Flow` rules inside files, specify the rules being ignored, along with a comment to explain why it's being ignored if appropriate.
+When ignoring `eslint` or `stylelint` rules inside files, specify the rules being ignored, along with a comment to explain why it's being ignored if appropriate.
 
 Disabling rules for entire files is discouraged. If it's necessary to do so, be sure to include a comment to explain the rationale.
 

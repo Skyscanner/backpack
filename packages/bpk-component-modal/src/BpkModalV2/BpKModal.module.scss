@@ -18,19 +18,32 @@
 
 @import '~bpk-mixins/index.scss';
 
-@mixin center-dialog {
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: $bpk-border-radius-md;
-  inset-block-start: 50%;
-}
-
 @mixin header {
   display: flex;
   min-height: bpk-spacing-lg();
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
+}
+
+@keyframes bpk-modal-scrim {
+  0% {
+    opacity: $bpk-modal-initial-opacity;
+  }
+
+  100% {
+    opacity: $bpk-modal-opacity;
+  }
+}
+
+@keyframes bpk-modal-scale {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .bpk-modal-wrapper.bpk-modal-polyfill {
@@ -41,7 +54,9 @@
     bottom: 0;
     left: 0;
     z-index: 0;
+    margin: 0 auto;
     background-color: $bpk-scrim-day;
+    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
@@ -50,8 +65,12 @@
 
   .bpk-modal {
     position: fixed;
+    top: 50%;
+    left: 50%;
     display: block;
     z-index: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform $bpk-duration-sm ease-in-out $bpk-duration-sm;
   }
 
   .bpk-modal:not([data-open='true']),
@@ -61,21 +80,11 @@
 }
 
 .bpk-modal {
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 100%;
-  margin: 0 auto;
   padding: 0;
   border: none;
-  background: $bpk-canvas-contrast-day;
+  border-radius: $bpk-border-radius-md;
+  background: $bpk-modal-background-color;
   overflow-y: scroll;
-  inset-block-start: 0;
-  inset-inline: 0;
-  inset-inline-end: 0;
   scrollbar-width: none;
 
   @include bpk-box-shadow-xl;
@@ -85,8 +94,6 @@
     max-width: none;
     height: fit-content;
     max-height: 90%;
-
-    @include center-dialog;
 
     &--full-screen-desktop {
       width: 100%;
@@ -100,13 +107,15 @@
     }
   }
 
+  &[open] {
+    animation: bpk-modal-scale $bpk-duration-sm ease-in-out;
+  }
+
   &--no-full-screen-mobile {
     width: 90%;
     max-width: none;
     height: fit-content;
     max-height: 90%;
-
-    @include center-dialog;
 
     @include bpk-breakpoint-above-mobile {
       width: $bpk-modal-max-width;
@@ -117,6 +126,7 @@
   &::backdrop {
     position: fixed;
     background-color: $bpk-scrim-day;
+    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;

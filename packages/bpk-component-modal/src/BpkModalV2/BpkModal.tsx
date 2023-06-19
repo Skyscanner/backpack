@@ -38,8 +38,37 @@ export type Props = {
   noFullScreenOnMobile?: boolean;
   onClose: () => void | null;
   padded?: boolean;
+  showHeader?: boolean;
   title?: string | null;
   wide?: boolean;
+};
+
+const Header = ({
+  closeLabel,
+  id,
+  onClose,
+  title,
+}: {
+  closeLabel: string;
+  id: string | undefined;
+  onClose: () => void | null;
+  title?: string | null;
+}) => {
+  if (title) {
+    return (
+      <div id={id} className={getClassName('bpk-modal__header-title')}>
+        <div className={getClassName('bpk-modal__header-title-container')}>
+          <Heading>{title}</Heading>
+        </div>
+        <BpkCloseButton label={closeLabel} onClick={onClose} />
+      </div>
+    );
+  }
+  return (
+    <div className={getClassName('bpk-modal__button-container')}>
+      <BpkCloseButton label={closeLabel} onClick={onClose} />
+    </div>
+  );
 };
 
 const Heading = withDefaultProps(BpkText, {
@@ -75,6 +104,7 @@ export const BpkModalV2 = (props: Props) => {
     noFullScreenOnMobile,
     onClose,
     padded,
+    showHeader = true,
     title,
     wide,
   } = props;
@@ -86,22 +116,29 @@ export const BpkModalV2 = (props: Props) => {
       ref.current?.showModal?.();
 
       const dialog = document.getElementById(`${id}`);
-      if (dialog) {
-        dialog.addEventListener('click', (event: Event) => {
-          const { target } = event;
+      const dialogWithPolyfill = document.getElementById(`${id}-polyfill`);
 
-          if (target instanceof HTMLElement && target.id === `${id}`) {
-            ref.current?.close?.();
-          }
-        });
-      }
+      const handleBackdropClick = (modal: HTMLElement | null) => {
+        if (modal) {
+          modal.addEventListener('click', (event: Event) => {
+            const { target } = event;
+
+            if (target === modal) {
+              modal === dialog ? ref.current?.close?.() : onClose();
+            }
+          });
+        }
+      };
+
+      handleBackdropClick(dialog);
+      handleBackdropClick(dialogWithPolyfill);
     } else {
       ref.current?.close?.();
     }
 
     setPageProperties({ isDialogOpen: isOpen });
     return () => setPageProperties({ isDialogOpen: false });
-  }, [id, isOpen]);
+  }, [id, isOpen, onClose]);
 
   const classNames = getClassName(
     'bpk-modal',
@@ -114,12 +151,6 @@ export const BpkModalV2 = (props: Props) => {
     'bpk-modal__container',
     fullScreenOnDesktop && 'bpk-modal__container--full-screen-desktop',
     padded && 'bpk-modal__container--padded',
-  );
-
-  const closeButton = (
-    <div>
-      <BpkCloseButton label={closeLabel} onClick={onClose} />
-    </div>
   );
 
   return isOpen ? (
@@ -144,17 +175,13 @@ export const BpkModalV2 = (props: Props) => {
         data-open={isOpen}
         ref={ref}
       >
-        {title ? (
-          <div className={getClassName('bpk-modal__header-title')}>
-            <div className={getClassName('bpk-modal__header-title-container')}>
-              <Heading>{title}</Heading>
-            </div>
-            {closeButton}
-          </div>
-        ) : (
-          <div className={getClassName('bpk-modal__button-container')}>
-            {closeButton}
-          </div>
+        {showHeader && (
+          <Header
+            id={`${id}-title`}
+            title={title}
+            closeLabel={closeLabel}
+            onClose={onClose}
+          />
         )}
         <div className={contentClassNames}>{children}</div>
       </dialog>

@@ -15,11 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 
-import BpkOverlay, { OVERLAY_LEVELS, OVERLAY_TYPES } from './BpkOverlay';
+import BpkOverlay, { OVERLAY_TYPES } from './BpkOverlay';
 
 describe('BpkOverlay', () => {
   it('should render correctly', () => {
@@ -40,17 +39,15 @@ describe('BpkOverlay', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  Object.keys(OVERLAY_TYPES).map((overlayType) =>
-    Object.keys(OVERLAY_LEVELS).map((overlayLevel) =>
-      it(`should render correctly with overlayType={${overlayType}} & overlayLevel={${overlayLevel}}`, () => {
-        const { asFragment } = render(
-          <BpkOverlay overlayType={overlayType} overlayLevel={overlayLevel}>
-            <span>Backpack</span>
-          </BpkOverlay>,
-        );
-        expect(asFragment()).toMatchSnapshot();
-      }),
-    ),
+  Object.values(OVERLAY_TYPES).map((overlayType) =>
+    it(`should render correctly with overlayType={${overlayType}}`, () => {
+      const { asFragment } = render(
+        <BpkOverlay overlayType={overlayType}>
+          <span>Backpack</span>
+        </BpkOverlay>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    }),
   );
 
   it('should support custom class names', () => {
@@ -62,9 +59,9 @@ describe('BpkOverlay', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support arbitrary props', () => {
+  it('should support standard div attributes', () => {
     const { asFragment } = render(
-      <BpkOverlay testid="123">
+      <BpkOverlay data-testid="123">
         <span>Backpack</span>
       </BpkOverlay>,
     );

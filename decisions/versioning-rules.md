@@ -23,7 +23,7 @@ A change is `minor` if:
 A change is `patch` if:
 - Only a dependency that a component uses needs an upgrade to improve functionality in the component.
 - Bug fixes.
-- Quality fixes such as `flow`, `eslint` or `prettier`.
+- Quality fixes such as `eslint` or `prettier`.
 
 ## Thinking
 [You can find out more about the benefits of `semver` on `semver.org`](https://semver.org/#why-use-semantic-versioning)

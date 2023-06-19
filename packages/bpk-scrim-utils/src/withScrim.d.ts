@@ -16,72 +16,70 @@
  * limitations under the License.
  */
 
-import type { ComponentType, RefObject } from 'react';
-type BaseProps = {
+import type { ComponentType } from 'react';
+type Props = {
+    getApplicationElement: () => HTMLElement | null;
     onClose?: () => void | null;
     isIphone?: boolean;
     isIpad?: boolean;
-    [rest: string]: any;
-};
-type HOCProps = {
-    getApplicationElement: () => HTMLElement | null;
     containerClassName?: string;
     closeOnScrimClick?: boolean;
+    [rest: string]: any;
 };
-declare const withScrim: <P extends BaseProps>(WrappedComponent: string | ComponentType<P>) => {
-    new (props: (P & HOCProps & BaseProps) | Readonly<P & HOCProps & BaseProps>): {
-        dialogElement?: RefObject<HTMLElement> | undefined;
+declare const withScrim: <P extends object>(WrappedComponent: string | ComponentType<P>) => {
+    new (props: (Props & Omit<P, "dialogRef">) | Readonly<Props & Omit<P, "dialogRef">>): {
+        dialogElement?: HTMLElement | null | undefined;
         componentDidMount(): void;
         componentWillUnmount(): void;
-        dialogRef: (ref: RefObject<HTMLElement>) => void;
+        dialogRef: (ref: HTMLElement | null | undefined) => void;
         render(): JSX.Element;
         context: any;
-        setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<P & HOCProps & BaseProps>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
+        setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<Props & Omit<P, "dialogRef">>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
         forceUpdate(callback?: (() => void) | undefined): void;
-        readonly props: Readonly<P & HOCProps & BaseProps> & Readonly<{
+        readonly props: Readonly<Props & Omit<P, "dialogRef">> & Readonly<{
             children?: import("react").ReactNode;
         }>;
         state: Readonly<{}>;
         refs: {
             [key: string]: import("react").ReactInstance;
         };
-        shouldComponentUpdate?(nextProps: Readonly<P & HOCProps & BaseProps>, nextState: Readonly<{}>, nextContext: any): boolean;
+        shouldComponentUpdate?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): boolean;
         componentDidCatch?(error: Error, errorInfo: import("react").ErrorInfo): void;
-        getSnapshotBeforeUpdate?(prevProps: Readonly<P & HOCProps & BaseProps>, prevState: Readonly<{}>): any;
-        componentDidUpdate?(prevProps: Readonly<P & HOCProps & BaseProps>, prevState: Readonly<{}>, snapshot?: any): void;
+        getSnapshotBeforeUpdate?(prevProps: Readonly<Props & Omit<P, "dialogRef">>, prevState: Readonly<{}>): any;
+        componentDidUpdate?(prevProps: Readonly<Props & Omit<P, "dialogRef">>, prevState: Readonly<{}>, snapshot?: any): void;
         componentWillMount?(): void;
         UNSAFE_componentWillMount?(): void;
-        componentWillReceiveProps?(nextProps: Readonly<P & HOCProps & BaseProps>, nextContext: any): void;
-        UNSAFE_componentWillReceiveProps?(nextProps: Readonly<P & HOCProps & BaseProps>, nextContext: any): void;
-        componentWillUpdate?(nextProps: Readonly<P & HOCProps & BaseProps>, nextState: Readonly<{}>, nextContext: any): void;
-        UNSAFE_componentWillUpdate?(nextProps: Readonly<P & HOCProps & BaseProps>, nextState: Readonly<{}>, nextContext: any): void;
+        componentWillReceiveProps?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextContext: any): void;
+        UNSAFE_componentWillReceiveProps?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextContext: any): void;
+        componentWillUpdate?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
+        UNSAFE_componentWillUpdate?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
     };
-    new (props: P & HOCProps & BaseProps, context: any): {
-        dialogElement?: RefObject<HTMLElement> | undefined;
+    new (props: Props & Omit<P, "dialogRef">, context: any): {
+        dialogElement?: HTMLElement | null | undefined;
         componentDidMount(): void;
         componentWillUnmount(): void;
-        dialogRef: (ref: RefObject<HTMLElement>) => void;
+        dialogRef: (ref: HTMLElement | null | undefined) => void;
         render(): JSX.Element;
         context: any;
-        setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<P & HOCProps & BaseProps>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
+        setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<Props & Omit<P, "dialogRef">>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
         forceUpdate(callback?: (() => void) | undefined): void;
-        readonly props: Readonly<P & HOCProps & BaseProps> & Readonly<{
+        readonly props: Readonly<Props & Omit<P, "dialogRef">> & Readonly<{
             children?: import("react").ReactNode;
         }>;
         state: Readonly<{}>;
         refs: {
             [key: string]: import("react").ReactInstance;
         };
-        shouldComponentUpdate?(nextProps: Readonly<P & HOCProps & BaseProps>, nextState: Readonly<{}>, nextContext: any): boolean;
+        shouldComponentUpdate?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): boolean;
         componentDidCatch?(error: Error, errorInfo: import("react").ErrorInfo): void;
-        getSnapshotBeforeUpdate?(prevProps: Readonly<P & HOCProps & BaseProps>, prevState: Readonly<{}>): any;
-        componentDidUpdate?(prevProps: Readonly<P & HOCProps & BaseProps>, prevState: Readonly<{}>, snapshot?: any): void;
+        getSnapshotBeforeUpdate?(prevProps: Readonly<Props & Omit<P, "dialogRef">>, prevState: Readonly<{}>): any;
+        componentDidUpdate?(prevProps: Readonly<Props & Omit<P, "dialogRef">>, prevState: Readonly<{}>, snapshot?: any): void;
         componentWillMount?(): void;
         UNSAFE_componentWillMount?(): void;
-        componentWillReceiveProps?(nextProps: Readonly<P & HOCProps & BaseProps>, nextContext: any): void;
-        UNSAFE_componentWillReceiveProps?(nextProps: Readonly<P & HOCProps & BaseProps>, nextContext: any): void;
-        componentWillUpdate?(nextProps: Readonly<P & HOCProps & BaseProps>, nextState: Readonly<{}>, nextContext: any): void;
-        UNSAFE_componentWillUpdate?(nextProps: Readonly<P & HOCProps & BaseProps>, nextState: Readonly<{}>, nextContext: any): void;
+        componentWillReceiveProps?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextContext: any): void;
+        UNSAFE_componentWillReceiveProps?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextContext: any): void;
+        componentWillUpdate?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
+        UNSAFE_componentWillUpdate?(nextProps: Readonly<Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
     };
     displayName: string;
     defaultProps: {
