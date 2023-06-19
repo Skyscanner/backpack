@@ -109,7 +109,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
 };
 
 type Props = CommonProps & {
-  configuration?: typeof CONFIGURATION[keyof typeof CONFIGURATION];
+  configuration?: (typeof CONFIGURATION)[keyof typeof CONFIGURATION];
 
   // Only relevant when configuration == CONFIGURATION.EXPANDABLE
   children?: ReactNode | string;
