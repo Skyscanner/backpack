@@ -73,27 +73,30 @@ const withScrim = <P extends object>(
       const { getApplicationElement, isIpad, isIphone } = this.props;
       const applicationElement = getApplicationElement();
 
-      // iPhones need to have the application element hidden
-      // and scrolling stored to prevent some weird display
-      // issues from happening.
-      if (isIphone && applicationElement) {
+      /**
+       * iPhones & iPads need to have the application element hidden
+       * and scrolling stored to prevent some iOS specific issues occuring
+       *
+       * Issue description:
+       * iOS safari does not prevent scrolling on the underlying content.
+       * Without the below fixes this results in users being able to scroll below any modal or dialog that uses withScrim.
+       *
+       * The fixes can be summaried here: https://markus.oberlehner.net/blog/simple-solution-to-prevent-body-scrolling-on-ios/
+       *
+       * The most dangerous of the fixes below is the fixBody, this function applies changes to the <body> style.
+       * This has the potential to override any custom styles already applied. The assumption here is that no one internally is making these changes to body.
+       *
+       * There is a corresponding set of functions in the componentWillUnmount block that deals with undoing these changes.
+       */
+      if (isIphone || isIpad) {
         storeScroll();
-        applicationElement.style.display = 'none';
-      } else {
-        // The method used for `lockScroll` does not prevent scrolling on iPad.
-        // On iPad we instead set `position: fixed` on `body` to prevent scrolling
-        // and resolve virtual keyboard issues.
-        if (isIpad) {
-          storeScroll();
-          fixBody();
-        } else {
-          lockScroll();
-        }
-        if (applicationElement) {
-          applicationElement.setAttribute('aria-hidden', 'true');
-        }
+        lockScroll();
+        fixBody();
       }
 
+      if (applicationElement) {
+        applicationElement.setAttribute('aria-hidden', 'true');
+      }
       focusStore.storeFocus();
       if (this.dialogElement) {
         focusScope.scopeFocus(this.dialogElement);
@@ -104,19 +107,14 @@ const withScrim = <P extends object>(
       const { getApplicationElement, isIpad, isIphone } = this.props;
       const applicationElement = getApplicationElement();
 
-      if (isIphone && applicationElement) {
-        applicationElement.style.display = '';
-        restoreScroll();
-      } else {
-        if (isIpad) {
-          unfixBody();
-          restoreScroll();
-        } else {
-          unlockScroll();
-        }
-        if (applicationElement) {
-          applicationElement.removeAttribute('aria-hidden');
-        }
+      if (isIphone || isIpad) {
+        setTimeout(restoreScroll, 0);
+        unlockScroll();
+        unfixBody();
+      }
+
+      if (applicationElement) {
+        applicationElement.removeAttribute('aria-hidden');
       }
 
       focusScope.unscopeFocus();
