@@ -4,8 +4,8 @@
   "license": "Apache-2.0",
   "private": true,
   "engines": {
-    "node": "^16.13.0",
-    "npm": "^8.1.0"
+    "node": "^18.16.0",
+    "npm": "^9.5.1"
   },
   "repository": {
     "type": "git",
@@ -39,8 +39,8 @@
     "postinstall": "(cd packages && npm install)",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
     "start": "npm run build && npm run storybook",
-    "storybook": "start-storybook -p 9001",
-    "storybook:dist": "build-storybook -c .storybook -o dist-storybook",
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 9001",
+    "storybook:dist": "NODE_OPTIONS=--openssl-legacy-provider build-storybook -c .storybook -o dist-storybook",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
     "prepare": "husky install",
