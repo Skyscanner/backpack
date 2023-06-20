@@ -74,7 +74,7 @@ const withScrim = <P extends object>(
       const applicationElement = getApplicationElement();
 
       /**
-       * iPhones & iPads need to have the application element hidden
+       * iPhones & iPads need to have a fixed body
        * and scrolling stored to prevent some iOS specific issues occuring
        *
        * Issue description:
