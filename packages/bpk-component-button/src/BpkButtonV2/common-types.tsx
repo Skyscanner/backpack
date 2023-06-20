@@ -35,8 +35,8 @@ export const SIZE_TYPES = {
   large: 'large',
 } as const;
 
-export type ButtonType = typeof BUTTON_TYPES[keyof typeof BUTTON_TYPES];
-export type SizeType = typeof SIZE_TYPES[keyof typeof SIZE_TYPES];
+export type ButtonType = (typeof BUTTON_TYPES)[keyof typeof BUTTON_TYPES];
+export type SizeType = (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
 
 export type Props = {
   children: string | ReactNode;

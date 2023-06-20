@@ -25,7 +25,7 @@ export const ALERT_TYPES = {
   NEUTRAL: 'neutral',
 } as const;
 
-export type AlertTypeValue = typeof ALERT_TYPES[keyof typeof ALERT_TYPES];
+export type AlertTypeValue = (typeof ALERT_TYPES)[keyof typeof ALERT_TYPES];
 
 export type CommonProps = {
   type: AlertTypeValue;

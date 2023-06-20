@@ -29,7 +29,7 @@ export const CHIP_TYPES = {
 interface ButtonProps extends Omit<ComponentProps<'button'>, 'type'> {
   onClick: (event: SyntheticEvent<HTMLButtonElement>) => void | null;
   children: ReactNode | string;
-  type?: typeof CHIP_TYPES[keyof typeof CHIP_TYPES]; // this is different from the native button type
+  type?: (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES]; // this is different from the native button type
 }
 export interface CommonProps extends ButtonProps {
   accessibilityLabel: string;

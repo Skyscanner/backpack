@@ -14,3 +14,4 @@ Remember to include the following changes:
 - [ ] Component `README.md`
 - [ ] Tests
 - [ ] Storybook examples created/updated
+- [ ] For breaking changes or deprecating components/properties, migration guides added to the description of the PR. If the guide has large changes, consider creating a new Markdown page inside the component's docs folder and link it here

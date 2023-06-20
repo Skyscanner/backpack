@@ -43,7 +43,7 @@ export const ROW_TYPES = {
 } as const;
 
 export type SelectionTypes =
-  typeof SELECTION_TYPES[keyof typeof SELECTION_TYPES];
+  (typeof SELECTION_TYPES)[keyof typeof SELECTION_TYPES];
 
 export type Props = DefaultProps & {
   date: Date;
