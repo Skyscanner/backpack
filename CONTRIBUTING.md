@@ -28,7 +28,6 @@ Conventions and squad decisions are kept in the [decisions folder](/decisions). 
 
 Backpack is developed using Node. The required Node version is specified in `.nvmrc`.
 
-This is enforced using a pre-install hook that calls out to [ensure-node-env](https://github.com/Skyscanner/ensure-node-env).
 
 If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com/isaacs/nave) to manage your Node environment, Backpack has built-in support for these. Just run `nvm use` or `nave auto` to install the correct Node version.
 
