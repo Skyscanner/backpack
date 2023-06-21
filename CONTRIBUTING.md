@@ -26,16 +26,12 @@ Conventions and squad decisions are kept in the [decisions folder](/decisions). 
 
 ### Installing Node
 
-Backpack is developed using Node, using the following versions:
+Backpack is developed using Node. The required Node version is specified in `.nvmrc`.
 
-* `LTS/Gallium` (Node ^16.13.0)
-* `^8.1.0` (npm)
-
-This is enforced using a pre-install hook that calls out to [ensure-node-env](https://github.com/Skyscanner/ensure-node-env).
 
 If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com/isaacs/nave) to manage your Node environment, Backpack has built-in support for these. Just run `nvm use` or `nave auto` to install the correct Node version.
 
-To install npm, use `npm install --global npm@^8.1.0`.
+To install npm, use `npm install --global npm@^<version>`. For example, `npm install --global npm@^9.5.1`.
 
 ### Android, iOS and React Native
 
@@ -231,7 +227,9 @@ Bear in mind that small, incremental pull requests are likely to be reviewed fas
 
 You can also run the tests in 'watch mode', which means the process will continually run and run tests every time files change. Use `npm run jest:watch` to do this.
 
-There are also visual regression tests, powered by [Storyshots](https://www.npmjs.com/package/@storybook/addon-storyshots) and [jest-image-snapshot](https://www.npmjs.com/package/jest-image-snapshot). Use `npm run jest:visual` to run these. They rely on the `dist-storybook` folder being populated with a pre-built Storybook first, which can be generated with `npm run storybook:dist`.
+There are also visual regression tests, powered by [Percy](https://www.percy.io/).
+
+These visual tests are run on CI. When a PR is raised, a build should be showing on the Percy Backpack dashboard. Head into this build/run and you should be able to view any differences there. Ask a member of the Koala team to approve the changes once you have confirmed it all looks as expected.
 
 Visual regression tests run on all Storybook stories titled _'Visual test'_.
 

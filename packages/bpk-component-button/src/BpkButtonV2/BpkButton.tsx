@@ -24,17 +24,17 @@ import COMMON_STYLES from './BpkButton.module.scss';
 const getCommonClassName = cssModules(COMMON_STYLES);
 
 const BpkButtonV2 = ({
-  children,
-  type = BUTTON_TYPES.primary,
-  size = SIZE_TYPES.small,
-  className = null,
-  href = null,
-  disabled = false,
-  onClick = () => {},
-  submit = false,
-  iconOnly = false,
   blank = false,
+  children,
+  className = null,
+  disabled = false,
+  href = null,
+  iconOnly = false,
+  onClick = () => {},
   rel: propRel = undefined,
+  size = SIZE_TYPES.small,
+  submit = false,
+  type = BUTTON_TYPES.primary,
   ...rest
 }: Props) => {
   const classNames = getCommonClassName(

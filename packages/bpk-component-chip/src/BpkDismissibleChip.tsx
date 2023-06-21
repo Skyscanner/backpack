@@ -35,8 +35,8 @@ const getClassName = cssModules(STYLES);
 
 const BpkDismissibleChip = ({
   className,
-  type = CHIP_TYPES.default,
   leadingAccessoryView = null,
+  type = CHIP_TYPES.default,
   ...rest
 }: Props) => {
   const iconClassNames = getClassName(

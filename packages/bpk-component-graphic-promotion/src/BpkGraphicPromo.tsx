@@ -56,7 +56,7 @@ export type Props = {
   buttonText: string;
   onClick: () => void;
   invertVertically?: boolean;
-  textAlign: typeof TEXT_ALIGN[keyof typeof TEXT_ALIGN];
+  textAlign: (typeof TEXT_ALIGN)[keyof typeof TEXT_ALIGN];
   style?: {};
 };
 

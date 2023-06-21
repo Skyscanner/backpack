@@ -46,7 +46,7 @@ const badgeTypeClassNames = {
   [BADGE_TYPES.brand]: getClassName('bpk-badge--brand'),
 };
 
-export type BadgeType = typeof BADGE_TYPES[keyof typeof BADGE_TYPES];
+export type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
 
 export type Props = {
   type?: BadgeType;
@@ -58,10 +58,10 @@ export type Props = {
 };
 
 const BpkBadge = ({
-  type = BADGE_TYPES.normal,
-  docked = null,
   centered = false,
   className = null,
+  docked = null,
+  type = BADGE_TYPES.normal,
   ...rest
 }: Props) => {
   const classNames = getClassName(
