@@ -18,7 +18,7 @@
 
 import { DateUtils } from '../../bpk-component-calendar';
 
-const getMonthsArray = (startDate, count) => {
+const getMonthsArray = (startDate: Date, count: number) => {
   const months = [];
 
   for (let i = 0; i < count + 1; i += 1) {
@@ -31,16 +31,16 @@ const getMonthsArray = (startDate, count) => {
 // Here we calculate the height of each calendar grid item in pixels, as the `react-window` API
 // requires that these are provided so that they can be efficiently rendered.
 const getMonthItemHeights = (
-  months,
-  weekStartsOn,
-  columnCount,
-  rowHeight,
-  baseMonthItemHeight,
-) => {
+  months: Date[],
+  weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+  columnCount: number,
+  rowHeight: number,
+  baseMonthItemHeight: number,
+): number[] => {
   const monthItemHeights = months.map((month) => {
     const firstDayOffset = (month.getDay() + 7 - weekStartsOn) % 7;
     const monthLength = DateUtils.daysInMonth(
-      month.getYear(),
+      month.getFullYear(),
       month.getMonth(),
     );
     const calendarGridSpaces = firstDayOffset + monthLength;
