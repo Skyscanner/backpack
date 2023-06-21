@@ -1,3 +1,5 @@
 version: 2
 discovery:
   user-agent: "percy-backpack"
+  allowed-hostnames:
+    - content.skyscnr.com
