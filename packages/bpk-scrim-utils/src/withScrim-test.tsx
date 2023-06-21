@@ -47,7 +47,7 @@ jest.mock('./scroll-utils', () => ({
   storeScroll: jest.fn(),
   unlockScroll: jest.fn(),
   fixBody: jest.fn(),
-  unfixBoxy: jest.fn(),
+  unfixBody: jest.fn(),
 }));
 
 describe('BpkScrim', () => {
