@@ -31,7 +31,7 @@ export const POLITENESS_SETTINGS = {
 } as const;
 
 export type PolitenessSetting =
-  typeof POLITENESS_SETTINGS[keyof typeof POLITENESS_SETTINGS];
+  (typeof POLITENESS_SETTINGS)[keyof typeof POLITENESS_SETTINGS];
 
 export type Props = {
   children: ReactElement | string;
