@@ -25,9 +25,11 @@ import type { ComponentType } from 'react';
 
 import withScrim from './withScrim';
 import {
+  fixBody,
   lockScroll,
   restoreScroll,
   storeScroll,
+  unfixBody,
   unlockScroll,
 } from './scroll-utils';
 
@@ -115,15 +117,24 @@ describe('BpkScrim', () => {
     });
 
     it('should mount correctly when is iPhone', () => {
+      const mockSetAttribute = jest.fn();
+      const mockRemoveAttribute = jest.fn();
       render(
         <Component
           onClose={jest.fn()}
-          getApplicationElement={jest.fn(() => ({ style: {} }))}
+          getApplicationElement={jest.fn(() => ({
+            style: {},
+            setAttribute: mockSetAttribute,
+            removeAttribute: mockRemoveAttribute,
+          }))}
           isIphone
         />,
       );
       expect(storeScroll).toHaveBeenCalled();
+      expect(lockScroll).toHaveBeenCalled();
+      expect(fixBody).toHaveBeenCalled();
       expect(focusStore.storeFocus).toHaveBeenCalled();
+      expect(mockSetAttribute).toHaveBeenCalledWith('aria-hidden', 'true');
     });
 
     it('should mount correctly when is not iPhone', () => {
@@ -155,19 +166,29 @@ describe('BpkScrim', () => {
       Component = withScrim(TestComponent);
     });
 
-    it('should unmount correctly when is iPhone', () => {
+    it('should unmount correctly when is iPhone', async () => {
+      const mockSetAttribute = jest.fn();
+      const mockRemoveAttribute = jest.fn();
       const { unmount } = render(
         <Component
           onClose={jest.fn()}
-          getApplicationElement={jest.fn(() => ({ style: {} }))}
+          getApplicationElement={jest.fn(() => ({
+            style: {},
+            setAttribute: mockSetAttribute,
+            removeAttribute: mockRemoveAttribute,
+          }))}
           isIphone
         />,
       );
       unmount();
 
-      expect(restoreScroll).toHaveBeenCalled();
+      expect(unlockScroll).toHaveBeenCalled();
+      expect(unfixBody).toHaveBeenCalled();
       expect(focusStore.restoreFocus).toHaveBeenCalled();
       expect(focusScope.unscopeFocus).toHaveBeenCalled();
+      expect(mockRemoveAttribute).toHaveBeenCalledWith('aria-hidden');
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      expect(restoreScroll).toHaveBeenCalled();
     });
 
     it('should unmount correctly when is not iPhone', () => {
