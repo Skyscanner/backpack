@@ -38,7 +38,6 @@ type BaseProps = ComponentProps<'input'> & {
   name: string;
   value: string;
   type?: (typeof INPUT_TYPES)[keyof typeof INPUT_TYPES];
-  className?: string | null;
   valid?: boolean | null;
   large?: boolean;
   docked?: boolean;
