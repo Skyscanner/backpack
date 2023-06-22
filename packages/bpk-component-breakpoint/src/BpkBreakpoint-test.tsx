@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
 import { BREAKPOINTS } from './BpkBreakpoint';
@@ -26,11 +24,11 @@ describe('BpkBreakpoint', () => {
   it('should render if the breakpoint is matched', () => {
     jest.resetModules();
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-    jest.mock('react-responsive', () => (props) => props.children(true));
+    jest.mock('react-responsive', () => (props: any) => props.children(true));
 
     const { asFragment } = render(
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {(matches) =>
+        {(matches: boolean) =>
           matches ? <div>matches</div> : <div>does not match</div>
         }
       </BpkBreakpoint>,
@@ -41,11 +39,11 @@ describe('BpkBreakpoint', () => {
   it('should render if the breakpoint is not matched', () => {
     jest.resetModules();
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-    jest.mock('react-responsive', () => (props) => props.children(false));
+    jest.mock('react-responsive', () => (props: any) => props.children(false));
 
     const { asFragment } = render(
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {(matches) =>
+        {(matches: boolean) =>
           matches ? <div>matches</div> : <div>does not match</div>
         }
       </BpkBreakpoint>,
@@ -55,25 +53,25 @@ describe('BpkBreakpoint', () => {
 
   describe('PropType validation', () => {
     let errorOrWarningSpy = jest.fn();
-    let oldError = null;
-    let oldWarning = null;
+    let oldError: any = null;
+    let oldWarning: any = null;
     let BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
 
     beforeEach(() => {
       jest.resetModules();
       BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-      jest.mock('react-responsive', () => (props) => props.children());
+      jest.mock('react-responsive', () => (props: any) => props.children());
 
       errorOrWarningSpy = jest.fn();
       oldError = window.console.error;
-      oldWarning = window.console.warning;
+      oldWarning = window.console.warn;
       window.console.error = errorOrWarningSpy;
-      window.console.warning = errorOrWarningSpy;
+      window.console.warn = errorOrWarningSpy;
     });
 
     afterEach(() => {
       window.console.error = oldError;
-      window.console.warning = oldWarning;
+      window.console.warn = oldWarning;
     });
 
     it("should not error if the 'query' prop is an allowed value", () => {

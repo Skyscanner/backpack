@@ -16,9 +16,21 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import BpkBreakpoint, { BREAKPOINTS } from './src/BpkBreakpoint';
+import BpkBreakpoint, { BREAKPOINTS } from './BpkBreakpoint';
 
-export { BREAKPOINTS };
-export default BpkBreakpoint;
+describe('BpkBreakpoint accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {(matches) =>
+          matches ? <div>matches</div> : <div>does not match</div>
+        }
+      </BpkBreakpoint>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
