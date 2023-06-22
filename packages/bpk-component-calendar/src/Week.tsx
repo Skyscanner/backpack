@@ -249,15 +249,15 @@ export type Props = DefaultProps & {
 };
 
 type DefaultProps = {
-  dateProps: {};
-  focusedDate: Date | number | null;
-  ignoreOutsideDate: boolean;
-  maxDate: Date | null;
-  minDate: Date | null;
-  onDateClick: () => void;
-  onDateKeyDown: () => void;
-  cellClassName: string | null;
-  selectionConfiguration: SelectionConfiguration;
+  dateProps?: {};
+  focusedDate?: Date | number | null;
+  ignoreOutsideDate?: boolean;
+  maxDate?: Date | null;
+  minDate?: Date | null;
+  onDateClick?: () => void;
+  onDateKeyDown?: () => void;
+  cellClassName?: string | null;
+  selectionConfiguration?: SelectionConfiguration;
 };
 
 /*
@@ -321,14 +321,14 @@ class Week extends Component<Props> {
     // of either the week we're rendering now or the next week we'll
     // render, component should update.
     if (
-      this.props.selectionConfiguration.type ===
+      this.props.selectionConfiguration?.type ===
         CALENDAR_SELECTION_TYPE.single &&
       this.props.selectionConfiguration.date
     ) {
       return singleDateHandler(this.props, nextProps);
     }
     if (
-      this.props.selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range
+      this.props.selectionConfiguration?.type === CALENDAR_SELECTION_TYPE.range
     ) {
       return rangeDateHandler(this.props, nextProps);
     }
@@ -400,17 +400,17 @@ class Week extends Component<Props> {
 
           const dateSelectionType = getSelectionType(
             date,
-            selectionConfiguration,
+            selectionConfiguration!,
             formatDateFull,
             month,
             weekStartsOn,
-            ignoreOutsideDate,
+            ignoreOutsideDate!,
           );
 
           return (
             <DateContainer
               className={cellClassName}
-              isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate}
+              isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate!}
               isBlocked={isBlocked}
               key={date.getDate()}
               selectionType={dateSelectionType}
@@ -424,7 +424,7 @@ class Week extends Component<Props> {
                 preventKeyboardFocus={preventKeyboardFocus}
                 isKeyboardFocusable={isKeyboardFocusable}
                 isFocused={focusedDate && isSameDay(date, focusedDate)}
-                isSelected={getSelectedDate(date, selectionConfiguration)}
+                isSelected={getSelectedDate(date, selectionConfiguration!)}
                 isBlocked={isBlocked}
                 isOutside={markOutsideDays && !isSameMonth(date, month)}
                 isToday={markToday && isToday(date)}

@@ -46,24 +46,24 @@ export type Props = Partial<ModalDialogProps> & {
 };
 
 const BpkModal = ({
-  title = null,
-  onClose = () => null,
-  className = null,
-  contentClassName = null,
-  closeLabel = '',
-  closeText = null,
-  wide = false,
-  showHeader = true,
-  fullScreenOnMobile = true,
-  fullScreen = false,
-  padded = true,
   accessoryView = null,
-  renderTarget = null,
-  isIphone = isDeviceIphone(),
-  closeOnScrimClick = true,
+  className = null,
+  closeLabel = '',
   closeOnEscPressed = true,
+  closeOnScrimClick = true,
+  closeText = null,
+  contentClassName = null,
   dialogRef = () => null,
+  fullScreen = false,
+  fullScreenOnMobile = true,
+  isIphone = isDeviceIphone(),
   isOpen,
+  onClose = () => null,
+  padded = true,
+  renderTarget = null,
+  showHeader = true,
+  title = null,
+  wide = false,
   ...rest
 }: Props) => {
   const containerClass = [getClassName('bpk-modal__container')];

@@ -388,7 +388,6 @@ class MultipleInputDatepicker extends Component {
             formatMonth={formatMonth}
             formatDateFull={formatDateFull}
             minDate={new Date(2020, 3, 1)}
-            selectTodaysDate={false}
             onClose={this.onClose}
             isOpen={this.state.isOpen}
             inputComponent={inputs}
@@ -629,7 +628,6 @@ const DefaultVisualExample = () => (
         date: new Date(2020, 3, 19),
       }}
       minDate={new Date(2020, 3, 1)}
-      selectTodaysDate={false}
       initiallyFocusedDate={new Date(2020, 3, 19)}
       isOpen
     />
@@ -656,7 +654,6 @@ const VisualRangeExample = () => (
         endDate: new Date(2020, 3, 15),
       }}
       minDate={new Date(2020, 3, 1)}
-      selectTodaysDate={false}
       isOpen
     />
   </div>

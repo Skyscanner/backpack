@@ -34,7 +34,7 @@ const getClassName = cssModules(STYLES);
 export type TooltipProps = {
   id: string;
   children: ReactNode | string;
-  type?: typeof TOOLTIP_TYPES[keyof typeof TOOLTIP_TYPES];
+  type?: (typeof TOOLTIP_TYPES)[keyof typeof TOOLTIP_TYPES];
   padded?: boolean;
   className?: string | null;
 };
