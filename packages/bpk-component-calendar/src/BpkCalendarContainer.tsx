@@ -42,9 +42,9 @@ import {
 } from './date-utils';
 
 type Props = {
-  fixedWidth: boolean;
-  maxDate: Date;
-  minDate: Date;
+  fixedWidth?: boolean;
+  maxDate?: Date;
+  minDate?: Date;
   onDateSelect?: ((date: Date, newDate?: Date) => void) | null;
   onMonthChange?:
     | ((
@@ -52,8 +52,8 @@ type Props = {
         { month, source }: { month: Date; source: string },
       ) => void)
     | null;
-  selectionConfiguration: SelectionConfiguration;
-  initiallyFocusedDate: Date | null;
+  selectionConfiguration?: SelectionConfiguration;
+  initiallyFocusedDate?: Date | null;
 };
 
 type InjectedProps = {
@@ -62,7 +62,9 @@ type InjectedProps = {
   month: Date;
 };
 
-type CalendarProps<P> = Omit<P & Props, keyof InjectedProps>;
+type CalendarProps<P> = Omit<P & Props, keyof InjectedProps> & {
+  [rest: string]: any;
+};
 
 type State = {
   preventKeyboardFocus: boolean;
@@ -79,8 +81,8 @@ const focusedDateHasChanged = <T extends {}>(
   currentProps: CalendarProps<T>,
   nextProps: CalendarProps<T>,
 ) => {
-  const currentSelectConfig = currentProps.selectionConfiguration;
-  const nextSelectConfig = nextProps.selectionConfiguration;
+  const currentSelectConfig = currentProps.selectionConfiguration!;
+  const nextSelectConfig = nextProps.selectionConfiguration!;
 
   const rawNextSelectedDate =
     nextSelectConfig.type === CALENDAR_SELECTION_TYPE.single
@@ -154,9 +156,7 @@ const getRawSelectedDate = (selectionConfig: SelectionConfiguration) => {
   return rawDate;
 };
 
-const withCalendarState = <P extends {}>(
-  Calendar: ComponentType<P & InjectedProps>,
-) => {
+const withCalendarState = <P extends object>(Calendar: ComponentType<P>) => {
   class BpkCalendarContainer extends Component<CalendarProps<P>, State> {
     static defaultProps = {
       fixedWidth: true,
@@ -174,11 +174,11 @@ const withCalendarState = <P extends {}>(
     constructor(props: CalendarProps<P>) {
       super(props);
 
-      const minDate = startOfDay(this.props.minDate);
-      const maxDate = startOfDay(this.props.maxDate);
+      const minDate = startOfDay(this.props.minDate!);
+      const maxDate = startOfDay(this.props.maxDate!);
 
       const rawSelectedDate = getRawSelectedDate(
-        this.props.selectionConfiguration,
+        this.props.selectionConfiguration!,
       );
 
       const { initiallyFocusedDate } = this.props;
@@ -187,7 +187,7 @@ const withCalendarState = <P extends {}>(
         preventKeyboardFocus: true,
         focusedDate: determineFocusedDate(
           rawSelectedDate[0],
-          initiallyFocusedDate,
+          initiallyFocusedDate!,
           minDate,
           maxDate,
         ),
@@ -196,11 +196,11 @@ const withCalendarState = <P extends {}>(
 
     UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<P>) {
       const rawNextSelectedDate = getRawSelectedDate(
-        nextProps.selectionConfiguration,
+        nextProps.selectionConfiguration!,
       );
 
-      const minDate = startOfDay(nextProps.minDate);
-      const maxDate = startOfDay(nextProps.maxDate);
+      const minDate = startOfDay(nextProps.minDate!);
+      const maxDate = startOfDay(nextProps.maxDate!);
       if (focusedDateHasChanged(this.props, nextProps)) {
         this.setState({
           focusedDate: dateToBoundaries(
@@ -219,8 +219,8 @@ const withCalendarState = <P extends {}>(
       const { onMonthChange } = this.props;
       const focusedDate = dateToBoundaries(
         date,
-        startOfDay(this.props.minDate),
-        startOfDay(this.props.maxDate),
+        startOfDay(this.props.minDate!),
+        startOfDay(this.props.maxDate!),
       );
       const didMonthChange = !isSameMonth(this.state.focusedDate, focusedDate);
 
@@ -244,11 +244,12 @@ const withCalendarState = <P extends {}>(
       if (onDateSelect) {
         const newDate = dateToBoundaries(
           date,
-          startOfDay(this.props.minDate),
-          startOfDay(this.props.maxDate),
+          startOfDay(this.props.minDate!),
+          startOfDay(this.props.maxDate!),
         );
 
         if (
+          selectionConfiguration &&
           selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
           selectionConfiguration.startDate &&
           !selectionConfiguration.endDate &&
@@ -353,8 +354,8 @@ const withCalendarState = <P extends {}>(
         ...calendarProps
       } = this.props;
 
-      const sanitisedMinDate = startOfDay(minDate);
-      const sanitisedMaxDate = startOfDay(maxDate);
+      const sanitisedMinDate = startOfDay(minDate!);
+      const sanitisedMaxDate = startOfDay(maxDate!);
 
       const sanitisedFocusedDate = dateToBoundaries(
         this.state.focusedDate,

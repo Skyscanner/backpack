@@ -38,19 +38,19 @@ export type Props = DefaultProps & {
     date: Date;
 };
 type DefaultProps = {
-    className: string | null;
-    isBlocked: boolean;
-    isFocused: boolean;
-    isKeyboardFocusable: boolean;
-    isOutside: boolean;
-    isSelected: boolean;
-    isToday: boolean;
-    modifiers: DateModifiers;
-    onClick: ((date: Date) => void) | null;
-    onDateKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void;
+    className?: string | null;
+    isBlocked?: boolean;
+    isFocused?: boolean;
+    isKeyboardFocusable?: boolean;
+    isOutside?: boolean;
+    isSelected?: boolean;
+    isToday?: boolean;
+    modifiers?: DateModifiers;
+    onClick?: ((date: Date) => void) | null;
+    onDateKeyDown?: (event: KeyboardEvent<HTMLButtonElement>) => void;
     preventKeyboardFocus?: boolean;
-    selectionType: SelectionTypes;
-    style: {};
+    selectionType?: SelectionTypes;
+    style?: {};
 };
 declare class BpkCalendarDate extends PureComponent<Props> {
     static defaultProps: DefaultProps;

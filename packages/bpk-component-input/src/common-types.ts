@@ -37,7 +37,7 @@ type BaseProps = {
   id: string;
   name: string;
   value: string;
-  type?: typeof INPUT_TYPES[keyof typeof INPUT_TYPES];
+  type?: (typeof INPUT_TYPES)[keyof typeof INPUT_TYPES];
   className?: string | null;
   valid?: boolean | null;
   large?: boolean;
@@ -56,7 +56,7 @@ export type PropsWithoutClearButonMode = BaseProps & {
 };
 
 export type PropsWithClearButtonMode = BaseProps & {
-  clearButtonMode: typeof CLEAR_BUTTON_MODES[keyof Omit<
+  clearButtonMode: (typeof CLEAR_BUTTON_MODES)[keyof Omit<
     typeof CLEAR_BUTTON_MODES,
     'never'
   >];

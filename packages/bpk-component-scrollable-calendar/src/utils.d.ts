@@ -16,21 +16,6 @@
  * limitations under the License.
  */
 
-import { PureComponent } from 'react';
-import type { DaysOfWeek, WeekDayKey } from './custom-proptypes';
-type Props = DefaultProps & {
-    daysOfWeek: DaysOfWeek;
-    weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-};
-type DefaultProps = {
-    className?: string | null;
-    weekDayKey?: WeekDayKey;
-};
-declare class BpkCalendarGridHeader extends PureComponent<Props> {
-    static defaultProps: {
-        className: null;
-        weekDayKey: string;
-    };
-    render(): JSX.Element;
-}
-export default BpkCalendarGridHeader;
+declare const getMonthsArray: (startDate: Date, count: number) => Date[];
+declare const getMonthItemHeights: (months: Date[], weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6, columnCount: number, rowHeight: number, baseMonthItemHeight: number) => number[];
+export { getMonthsArray, getMonthItemHeights };

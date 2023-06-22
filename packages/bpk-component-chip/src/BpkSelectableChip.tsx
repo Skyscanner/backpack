@@ -33,15 +33,15 @@ export interface Props extends CommonProps {
 }
 
 const BpkSelectableChip = ({
-  role = 'checkbox',
-  selected = false,
-  trailingAccessoryView = null,
+  accessibilityLabel,
+  children,
   className,
   disabled = false,
   leadingAccessoryView = null,
+  role = 'checkbox',
+  selected = false,
+  trailingAccessoryView = null,
   type = CHIP_TYPES.default,
-  accessibilityLabel,
-  children,
   ...rest
 }: Props) => {
   const classNames = getClassName(

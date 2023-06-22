@@ -43,5 +43,5 @@ export type Props = DialogInnerProps & {
   closeLabel?: string;
   dismissible?: boolean;
   headerIcon?: ReactNode;
-  headerIconType?: typeof HEADER_ICON_TYPES[keyof typeof HEADER_ICON_TYPES];
+  headerIconType?: (typeof HEADER_ICON_TYPES)[keyof typeof HEADER_ICON_TYPES];
 };

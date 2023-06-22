@@ -33,15 +33,15 @@ export type Props = DefaultProps & {
     [rest: string]: any;
 };
 type DefaultProps = {
-    dateProps: {};
-    focusedDate: Date | number | null;
-    ignoreOutsideDate: boolean;
-    maxDate: Date | null;
-    minDate: Date | null;
-    onDateClick: () => void;
-    onDateKeyDown: () => void;
-    cellClassName: string | null;
-    selectionConfiguration: SelectionConfiguration;
+    dateProps?: {};
+    focusedDate?: Date | number | null;
+    ignoreOutsideDate?: boolean;
+    maxDate?: Date | null;
+    minDate?: Date | null;
+    onDateClick?: () => void;
+    onDateKeyDown?: () => void;
+    cellClassName?: string | null;
+    selectionConfiguration?: SelectionConfiguration;
 };
 declare class Week extends Component<Props> {
     static defaultProps: DefaultProps;

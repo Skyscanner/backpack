@@ -16,21 +16,14 @@
  * limitations under the License.
  */
 
-import { PureComponent } from 'react';
-import type { DaysOfWeek, WeekDayKey } from './custom-proptypes';
-type Props = DefaultProps & {
-    daysOfWeek: DaysOfWeek;
+import type { ElementType } from 'react';
+import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
+type Props = Partial<BpkCalendarGridProps> & {
+    DateComponent: ElementType;
+    month: Date;
+    formatDateFull: (date: Date) => Date | string;
     weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+    formatMonth: (date: Date) => Date | string;
 };
-type DefaultProps = {
-    className?: string | null;
-    weekDayKey?: WeekDayKey;
-};
-declare class BpkCalendarGridHeader extends PureComponent<Props> {
-    static defaultProps: {
-        className: null;
-        weekDayKey: string;
-    };
-    render(): JSX.Element;
-}
-export default BpkCalendarGridHeader;
+declare const BpkScrollableCalendarGrid: ({ className, formatMonth, ignoreOutsideDate, month, ...rest }: Props) => JSX.Element;
+export default BpkScrollableCalendarGrid;

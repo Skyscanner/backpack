@@ -50,22 +50,22 @@ export type Props = {
 };
 
 const BpkModalInner = ({
-  isIphone,
-  id,
-  dialogRef,
+  accessoryView = null,
   children,
-  title = null,
-  onClose = () => null,
   className = null,
-  contentClassName = null,
   closeLabel = '',
   closeText = null,
-  wide = false,
-  showHeader = true,
-  fullScreenOnMobile = true,
+  contentClassName = null,
+  dialogRef,
   fullScreen = false,
+  fullScreenOnMobile = true,
+  id,
+  isIphone,
+  onClose = () => null,
   padded = true,
-  accessoryView = null,
+  showHeader = true,
+  title = null,
+  wide = false,
 }: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];

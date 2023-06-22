@@ -116,22 +116,29 @@ export const BpkModalV2 = (props: Props) => {
       ref.current?.showModal?.();
 
       const dialog = document.getElementById(`${id}`);
-      if (dialog) {
-        dialog.addEventListener('click', (event: Event) => {
-          const { target } = event;
+      const dialogWithPolyfill = document.getElementById(`${id}-polyfill`);
 
-          if (target instanceof HTMLElement && target.id === `${id}`) {
-            ref.current?.close?.();
-          }
-        });
-      }
+      const handleBackdropClick = (modal: HTMLElement | null) => {
+        if (modal) {
+          modal.addEventListener('click', (event: Event) => {
+            const { target } = event;
+
+            if (target === modal) {
+              modal === dialog ? ref.current?.close?.() : onClose();
+            }
+          });
+        }
+      };
+
+      handleBackdropClick(dialog);
+      handleBackdropClick(dialogWithPolyfill);
     } else {
       ref.current?.close?.();
     }
 
     setPageProperties({ isDialogOpen: isOpen });
     return () => setPageProperties({ isDialogOpen: false });
-  }, [id, isOpen]);
+  }, [id, isOpen, onClose]);
 
   const classNames = getClassName(
     'bpk-modal',

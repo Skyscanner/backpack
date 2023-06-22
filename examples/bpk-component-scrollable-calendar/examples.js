@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import { Component } from 'react';
 import startOfMonth from 'date-fns/startOfMonth';
 import endOfMonth from 'date-fns/endOfMonth';
@@ -111,12 +110,10 @@ export default class ScrollableCal extends Component {
   }
 }
 ScrollableCal.propTypes = {
-  selectTodaysDate: PropTypes.bool,
   selectionConfiguration: CustomPropTypes.SelectionConfiguration,
 };
 
 ScrollableCal.defaultProps = {
-  selectTodaysDate: true,
   selectionConfiguration: {
     type: CALENDAR_SELECTION_TYPE.single,
     date: new Date(),
@@ -147,7 +144,6 @@ const RangeExample = () => (
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
     markToday={false}
-    selectTodaysDate={false}
     minDate={new Date(2020, 3, 1)}
     maxDate={new Date(2020, 6, 1)}
     selectionConfiguration={{
@@ -165,7 +161,6 @@ const SplitWeekRangeExample = () => (
     formatDateFull={formatDateFull}
     daysOfWeek={weekDays}
     weekStartsOn={0}
-    selectTodaysDate={false}
     minDate={new Date(2020, 3, 1)}
     maxDate={new Date(2020, 6, 1)}
     selectionConfiguration={{
@@ -183,7 +178,6 @@ const WeekStartsOnSixExample = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
-    selectTodaysDate
     // Subtract one day from today's date to make today selectable by default
     minDate={DateUtils.addDays(new Date(), -1)}
     maxDate={DateUtils.addMonths(new Date(), 12)}
@@ -197,7 +191,6 @@ const WithFocusedDateExample = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
-    selectTodaysDate
     // Subtract one day from today's date to make today selectable by default
     minDate={DateUtils.addDays(new Date(), -1)}
     focusedDate={DateUtils.addMonths(new Date(), 11)}
@@ -213,7 +206,6 @@ const TallContainerExample = () => (
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       DateComponent={BpkScrollableCalendarDate}
-      selectTodaysDate
       // Subtract one day from today's date to make today selectable by default
       minDate={DateUtils.addDays(new Date(), -1)}
       maxDate={DateUtils.addMonths(new Date(), 12)}
@@ -229,7 +221,6 @@ const SingleMonthExample = () => (
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       DateComponent={BpkScrollableCalendarDate}
-      selectTodaysDate
       // Subtract one day from today's date to make today selectable by default
       minDate={startOfMonth(new Date())}
       maxDate={endOfMonth(new Date())}
@@ -265,7 +256,6 @@ const ScrollableCalendarGridListExample = () => (
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
     DateComponent={BpkScrollableCalendarDate}
-    selectTodaysDate
     minDate={DateUtils.addDays(new Date(), -1)}
     maxDate={DateUtils.addMonths(new Date(), 12)}
   />
@@ -278,7 +268,6 @@ const WeekStartsOnSundayExample = () => (
     formatDateFull={formatDateFull}
     daysOfWeek={weekDays}
     weekStartsOn={0}
-    selectTodaysDate
     minDate={DateUtils.addDays(new Date(), -1)}
     maxDate={DateUtils.addMonths(new Date(), 12)}
   />
@@ -291,7 +280,6 @@ const HonestWeekendExample = () => (
     formatDateFull={formatDateFull}
     daysOfWeek={weekDaysMoreWeekend}
     weekStartsOn={1}
-    selectTodaysDate
     minDate={DateUtils.addDays(new Date(), -1)}
     maxDate={DateUtils.addMonths(new Date(), 12)}
   />
@@ -304,7 +292,6 @@ const ArabicLocaleExample = () => (
     formatDateFull={formatDateFullArabic}
     daysOfWeek={weekDaysArabic}
     weekStartsOn={6}
-    selectTodaysDate
     minDate={DateUtils.addDays(new Date(), -1)}
     maxDate={DateUtils.addMonths(new Date(), 12)}
   />
@@ -317,7 +304,6 @@ const JapaneseLocaleExample = () => (
     formatDateFull={formatDateFullJapanese}
     daysOfWeek={weekDaysJapanese}
     weekStartsOn={0}
-    selectTodaysDate
     minDate={DateUtils.addDays(new Date(), -1)}
     maxDate={DateUtils.addMonths(new Date(), 12)}
   />
@@ -330,7 +316,6 @@ const DifferentMinMaxDatesExample = () => (
     formatDateFull={formatDateFull}
     daysOfWeek={weekDays}
     weekStartsOn={1}
-    selectTodaysDate
     minDate={new Date(2020, 4, 15)}
     maxDate={new Date(2020, 5, 15)}
   />
@@ -344,7 +329,6 @@ const DontMarkTodayExample = () => (
     daysOfWeek={weekDays}
     weekStartsOn={1}
     markToday={false}
-    selectTodaysDate
     minDate={DateUtils.addDays(new Date(), -1)}
     maxDate={DateUtils.addMonths(new Date(), 12)}
   />
@@ -358,7 +342,6 @@ const PastCalendarExample = () => (
     daysOfWeek={weekDays}
     weekStartsOn={1}
     markToday={false}
-    selectTodaysDate={false}
     minDate={new Date(2020, 3, 1)}
     maxDate={new Date(2020, 6, 1)}
   />
