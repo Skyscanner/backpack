@@ -72,6 +72,7 @@ describe('withLazyLoading', () => {
     expect(documentMock.addEventListener.mock.calls[0][0]).toEqual('scroll');
     expect(documentMock.addEventListener.mock.calls[0][2]).toEqual({
       capture: true,
+      passive: true,
     });
   });
 
@@ -89,6 +90,7 @@ describe('withLazyLoading', () => {
     expect(documentMock.removeEventListener.mock.calls[0][0]).toEqual('scroll');
     expect(documentMock.removeEventListener.mock.calls[0][2]).toEqual({
       capture: true,
+      passive: true,
     });
   });
 });
