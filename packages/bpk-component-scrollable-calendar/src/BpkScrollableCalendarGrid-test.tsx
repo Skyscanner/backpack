@@ -17,30 +17,28 @@
  */
 
 import PropTypes from 'prop-types';
-import isWeekend from 'date-fns/isWeekend';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { addMonths, isWeekend } from 'date-fns';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import { render } from '@testing-library/react';
 
-import { DateUtils } from '../../bpk-component-calendar';
-import { weekDays, formatDateFull, formatMonth } from '../test-utils';
+import { formatDateFull, formatMonth } from '../test-utils';
 
+import BpkCalendarScrollGrid from './BpkScrollableCalendarGrid';
 import BpkCalendarScrollDate from './BpkScrollableCalendarDate';
-import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
 
-const testDate = new Date(2010, 1, 15);
-
-describe('BpkCalendarScrollGridList', () => {
+describe('BpkCalendarScrollGrid', () => {
   it('should render correctly with no optional props set', () => {
     const { asFragment } = render(
-      <BpkScrollableCalendarGridList
-        minDate={DateUtils.addDays(testDate, -1)}
-        maxDate={DateUtils.addMonths(testDate, 12)}
-        month={testDate}
+      <BpkCalendarScrollGrid
+        month={new Date('2016-10')}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarScrollDate}
-        daysOfWeek={weekDays}
-        weekStartsOn={0}
+        weekStartsOn={1}
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -48,15 +46,14 @@ describe('BpkCalendarScrollGridList', () => {
 
   it('should render correctly with a different "weekStartsOn" attribute', () => {
     const { asFragment } = render(
-      <BpkScrollableCalendarGridList
-        minDate={DateUtils.addDays(testDate, -1)}
-        maxDate={DateUtils.addMonths(testDate, 12)}
-        month={testDate}
+      <BpkCalendarScrollGrid
+        month={new Date('2016-10')}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarScrollDate}
-        daysOfWeek={weekDays}
-        weekStartsOn={3}
+        weekStartsOn={5}
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -67,23 +64,22 @@ describe('BpkCalendarScrollGridList', () => {
       someClass: () => true,
     };
     const { asFragment } = render(
-      <BpkScrollableCalendarGridList
-        minDate={DateUtils.addDays(testDate, -1)}
-        maxDate={DateUtils.addMonths(testDate, 12)}
-        month={testDate}
+      <BpkCalendarScrollGrid
+        month={new Date('2016-10')}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarScrollDate}
-        daysOfWeek={weekDays}
         weekStartsOn={1}
         dateModifiers={modifiers}
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom date component', () => {
-    const MyCustomDate = (props) => {
+    const MyCustomDate = (props: any) => {
       const cx = {
         backgroundColor: colorPanjin,
         width: '50%',
@@ -100,17 +96,47 @@ describe('BpkCalendarScrollGridList', () => {
       date: PropTypes.instanceOf(Date).isRequired,
     };
     const { asFragment } = render(
-      <BpkScrollableCalendarGridList
-        minDate={DateUtils.addDays(testDate, -1)}
-        maxDate={DateUtils.addMonths(testDate, 12)}
-        month={testDate}
+      <BpkCalendarScrollGrid
+        month={new Date('2016-10')}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={MyCustomDate}
-        daysOfWeek={weekDays}
         weekStartsOn={1}
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should call the onDateClick callback', async () => {
+    const onDateClick = jest.fn();
+
+    render(
+      <BpkCalendarScrollGrid
+        month={new Date('2016-10')}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarScrollDate}
+        weekStartsOn={0}
+        onDateClick={onDateClick}
+        minDate={new Date('2016-01')}
+        maxDate={addMonths(new Date('2016-01'), 12)}
+      />,
+    );
+
+    expect(onDateClick.mock.calls.length).toBe(0);
+
+    const date1 = screen.getByRole('button', { name: /11th October/i });
+    await userEvent.click(date1);
+
+    expect(onDateClick.mock.calls.length).toBe(1);
+    expect(onDateClick.mock.calls[0][0]).toEqual(new Date(2016, 9, 11));
+
+    const date2 = screen.getByRole('button', { name: /12th October/i });
+    await userEvent.click(date2);
+
+    expect(onDateClick.mock.calls.length).toBe(2);
+    expect(onDateClick.mock.calls[1][0]).toEqual(new Date(2016, 9, 12));
   });
 });

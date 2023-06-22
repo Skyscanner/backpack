@@ -15,20 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { CALENDAR_SELECTION_TYPE } from '../bpk-component-calendar';
-
-import BpkScrollableCalendar from './src/BpkScrollableCalendar';
-import BpkScrollableCalendarDate from './src/BpkScrollableCalendarDate';
-import BpkScrollableCalendarGrid from './src/BpkScrollableCalendarGrid';
-import BpkScrollableCalendarGridList from './src/BpkScrollableCalendarGridList';
-
-export default BpkScrollableCalendar;
-
-export {
-  CALENDAR_SELECTION_TYPE,
-  BpkScrollableCalendarDate,
-  BpkScrollableCalendarGrid,
-  BpkScrollableCalendarGridList,
-};
+declare const getMonthsArray: (startDate: Date, count: number) => Date[];
+declare const getMonthItemHeights: (months: Date[], weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6, columnCount: number, rowHeight: number, baseMonthItemHeight: number) => number[];
+export { getMonthsArray, getMonthItemHeights };

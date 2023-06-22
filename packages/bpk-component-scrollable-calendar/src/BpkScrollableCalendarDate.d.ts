@@ -17,20 +17,16 @@
  */
 
 import { PureComponent } from 'react';
-import type { DaysOfWeek, WeekDayKey } from './custom-proptypes';
-type Props = DefaultProps & {
-    daysOfWeek: DaysOfWeek;
-    weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+import type { BpkCalendarDateProps } from '../../bpk-component-calendar';
+type Props = Partial<BpkCalendarDateProps> & {
+    date: Date;
+    isOutside?: boolean;
+    [rest: string]: any;
 };
-type DefaultProps = {
-    className?: string | null;
-    weekDayKey?: WeekDayKey;
-};
-declare class BpkCalendarGridHeader extends PureComponent<Props> {
+declare class BpkScrollableCalendarDate extends PureComponent<Props> {
     static defaultProps: {
-        className: null;
-        weekDayKey: string;
+        isOutside: boolean;
     };
-    render(): JSX.Element;
+    render(): JSX.Element | null;
 }
-export default BpkCalendarGridHeader;
+export default BpkScrollableCalendarDate;

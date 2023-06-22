@@ -22,10 +22,6 @@ import BpkScrollableCalendarDate from './BpkScrollableCalendarDate';
 
 const testDate = new Date(2010, 1, 15);
 
-const createNodeMock = () => ({
-  focus: () => null,
-});
-
 describe('BpkScrollableCalendarDate', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
@@ -55,9 +51,6 @@ describe('BpkScrollableCalendarDate', () => {
   it('should render a focused button with tabIndex', () => {
     const { asFragment } = render(
       <BpkScrollableCalendarDate date={testDate} isFocused />,
-      {
-        createNodeMock,
-      },
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -68,7 +61,6 @@ describe('BpkScrollableCalendarDate', () => {
         date={testDate}
         aria-label="Nothing happened on this day in 2010"
       />,
-      { createNodeMock },
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -76,9 +68,6 @@ describe('BpkScrollableCalendarDate', () => {
   it('should return null when isOutside is true', () => {
     const { asFragment } = render(
       <BpkScrollableCalendarDate date={testDate} isOutside />,
-      {
-        createNodeMock,
-      },
     );
     expect(asFragment()).toMatchSnapshot();
   });
