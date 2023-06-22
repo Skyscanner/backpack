@@ -89,7 +89,7 @@ type BpkImageProps = {
   aspectRatio: number;
   inView?: boolean;
   loading?: boolean;
-  borderRadiusStyle?: typeof BORDER_RADIUS_STYLES[keyof typeof BORDER_RADIUS_STYLES];
+  borderRadiusStyle?: (typeof BORDER_RADIUS_STYLES)[keyof typeof BORDER_RADIUS_STYLES];
   className?: string;
   onLoad?: (() => void) | null;
   style?: {};
