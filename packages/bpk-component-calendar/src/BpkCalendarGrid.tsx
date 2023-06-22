@@ -45,9 +45,9 @@ import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 const getClassName = cssModules(STYLES);
 
 type DefaultProps = {
-  className: string | null;
-  dateModifiers: DateModifiers;
-  focusedDate: Date | null;
+  className?: string | null;
+  dateModifiers?: DateModifiers;
+  focusedDate?: Date | null;
   cellClassName: string | null;
   isKeyboardFocusable: boolean;
   markOutsideDays: boolean;
@@ -62,7 +62,7 @@ type DefaultProps = {
   dateProps: {};
 };
 
-type Props = DefaultProps & {
+export type Props = DefaultProps & {
   DateComponent: ElementType;
   formatDateFull: (date: Date) => Date | string;
   month: Date;
@@ -163,7 +163,7 @@ class BpkCalendarGrid extends Component<Props, State> {
               onDateKeyDown={onDateKeyDown}
               formatDateFull={formatDateFull}
               DateComponent={DateComponent}
-              dateModifiers={dateModifiers}
+              dateModifiers={dateModifiers!}
               preventKeyboardFocus={preventKeyboardFocus}
               isKeyboardFocusable={isKeyboardFocusable}
               weekStartsOn={weekStartsOn}

@@ -16,16 +16,18 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import { Component } from 'react';
+import type { ElementType } from 'react';
 import { startOfDay, startOfMonth } from 'date-fns';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { VariableSizeList as List } from 'react-window';
 
 import { cssModules } from '../../bpk-react-utils';
 import {
+  CALENDAR_SELECTION_TYPE,
   DateUtils,
-  BpkCalendarGridPropTypes,
 } from '../../bpk-component-calendar';
+import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
@@ -42,8 +44,34 @@ const COLUMN_COUNT = 7;
 // Most calendar grids have 5 rows:
 const ESTIMATED_MONTH_ITEM_HEIGHT = BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT;
 
-class BpkScrollableCalendarGridList extends Component {
-  constructor(props) {
+type Props = Partial<BpkCalendarGridProps> & {
+  minDate: Date;
+  maxDate: Date;
+  DateComponent: ElementType;
+  formatDateFull: (date: Date) => Date | string;
+  month: Date;
+  weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  formatMonth: (date: Date) => Date | string;
+  focusedDate?: Date | null;
+};
+
+type State = {
+  months: Date[];
+  monthItemHeights: number[];
+  outerHeight: number;
+};
+
+class BpkScrollableCalendarGridList extends Component<Props, State> {
+  outerDiv: HTMLDivElement | null;
+
+  static defaultProps = {
+    // Disabling as the rule doesn't work when types are defined in a different file
+    /* eslint-disable react/default-props-match-prop-types */
+    className: null,
+    focusedDate: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.outerDiv = null;
@@ -93,7 +121,7 @@ class BpkScrollableCalendarGridList extends Component {
   getHtmlElement = () =>
     typeof document !== 'undefined' ? document.querySelector('html') : {};
 
-  getItemSize = (index) =>
+  getItemSize = (index: number) =>
     this.state.monthItemHeights[index] || ESTIMATED_MONTH_ITEM_HEIGHT;
 
   setComponentHeight = () => {
@@ -108,7 +136,7 @@ class BpkScrollableCalendarGridList extends Component {
     }
   };
 
-  rowRenderer = ({ index, style }) => (
+  rowRenderer = ({ index, style }: { index: number; style: {} }) => (
     <div style={style}>
       <BpkScrollableCalendarGrid
         onDateClick={this.props.onDateClick}
@@ -122,7 +150,7 @@ class BpkScrollableCalendarGridList extends Component {
     </div>
   );
 
-  calculateOffsetInPixels = (numberOfMonths) => {
+  calculateOffsetInPixels = (numberOfMonths: number) => {
     // The `react-window` API requires the scroll offset to be provided in pixels.
     // Here we use the pre-calculated item heights to find the correct pixel offset
     let result = 0;
@@ -134,8 +162,11 @@ class BpkScrollableCalendarGridList extends Component {
 
   render() {
     const { focusedDate, minDate, selectionConfiguration } = this.props;
-    const { date, startDate } = selectionConfiguration || {};
-    const selectedDate = focusedDate || date || startDate;
+    const date =
+      selectionConfiguration?.type === CALENDAR_SELECTION_TYPE.single
+        ? selectionConfiguration?.date
+        : selectionConfiguration?.startDate;
+    const selectedDate = focusedDate || date;
 
     return (
       <div
@@ -150,7 +181,9 @@ class BpkScrollableCalendarGridList extends Component {
         <List
           extraData={this.props}
           style={
-            this.getHtmlElement().dir === 'rtl' ? { direction: 'rtl' } : {}
+            (this.getHtmlElement() as HTMLElement).dir === 'rtl'
+              ? { direction: 'rtl' }
+              : {}
           }
           width="100%"
           height={this.state.outerHeight}
@@ -171,18 +204,5 @@ class BpkScrollableCalendarGridList extends Component {
     );
   }
 }
-
-BpkScrollableCalendarGridList.propTypes = {
-  className: PropTypes.string,
-  minDate: PropTypes.instanceOf(Date).isRequired,
-  maxDate: PropTypes.instanceOf(Date).isRequired,
-  focusedDate: PropTypes.instanceOf(Date),
-  ...BpkCalendarGridPropTypes,
-};
-
-BpkScrollableCalendarGridList.defaultProps = {
-  className: null,
-  focusedDate: null,
-};
 
 export default BpkScrollableCalendarGridList;

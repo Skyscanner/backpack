@@ -16,86 +16,11 @@
  * limitations under the License.
  */
 
-import type { ComponentType } from 'react';
-import type { SelectionConfiguration } from './custom-proptypes';
-type Props = {
-    fixedWidth?: boolean;
-    maxDate?: Date;
-    minDate?: Date;
-    onDateSelect?: ((date: Date, newDate?: Date) => void) | null;
-    onMonthChange?: ((event: UIEvent, { month, source }: {
-        month: Date;
-        source: string;
-    }) => void) | null;
-    selectionConfiguration?: SelectionConfiguration;
-    initiallyFocusedDate?: Date | null;
-};
-type InjectedProps = {
-    onDateClick: ((date: Date) => void) | null;
-    onDateKeyDown: ((event: KeyboardEvent) => void) | null;
-    month: Date;
-};
-type CalendarProps<P> = Omit<P & Props, keyof InjectedProps> & {
-    [rest: string]: any;
-};
-type State = {
-    preventKeyboardFocus: boolean;
-    focusedDate: Date;
-};
-declare const withCalendarState: <P extends object>(Calendar: ComponentType<P>) => {
-    new (props: CalendarProps<P>): {
-        UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<P>): void;
-        handleDateFocus: (event: UIEvent, { date, source }: {
-            date: Date;
-            source: string;
-        }) => void;
-        handleDateSelect: (date: Date) => void;
-        handleMonthChange: (event: UIEvent, { month, source }: {
-            month: Date;
-            source: string;
-        }) => void;
-        handleDateKeyDown: (event: KeyboardEvent) => void;
-        render(): JSX.Element;
-        context: any;
-        setState<K extends keyof State>(state: State | ((prevState: Readonly<State>, props: Readonly<CalendarProps<P>>) => State | Pick<State, K> | null) | Pick<State, K> | null, callback?: (() => void) | undefined): void;
-        forceUpdate(callback?: (() => void) | undefined): void;
-        readonly props: Readonly<CalendarProps<P>> & Readonly<{
-            children?: import("react").ReactNode;
-        }>;
-        state: Readonly<State>;
-        refs: {
-            [key: string]: import("react").ReactInstance;
-        };
-        componentDidMount?(): void;
-        shouldComponentUpdate?(nextProps: Readonly<CalendarProps<P>>, nextState: Readonly<State>, nextContext: any): boolean;
-        componentWillUnmount?(): void;
-        componentDidCatch?(error: Error, errorInfo: import("react").ErrorInfo): void;
-        getSnapshotBeforeUpdate?(prevProps: Readonly<CalendarProps<P>>, prevState: Readonly<State>): any;
-        componentDidUpdate?(prevProps: Readonly<CalendarProps<P>>, prevState: Readonly<State>, snapshot?: any): void;
-        componentWillMount?(): void;
-        UNSAFE_componentWillMount?(): void;
-        componentWillReceiveProps?(nextProps: Readonly<CalendarProps<P>>, nextContext: any): void;
-        componentWillUpdate?(nextProps: Readonly<CalendarProps<P>>, nextState: Readonly<State>, nextContext: any): void;
-        UNSAFE_componentWillUpdate?(nextProps: Readonly<CalendarProps<P>>, nextState: Readonly<State>, nextContext: any): void;
-    };
-    defaultProps: {
-        fixedWidth: boolean;
-        maxDate: Date;
-        minDate: Date;
-        onDateSelect: null;
-        onMonthChange: null;
-        selectionConfiguration: {
-            type: "single";
-            date: null;
-        };
-        initiallyFocusedDate: null;
-    };
-    contextType?: import("react").Context<any> | undefined;
-};
+/// <reference types="react" />
 declare const _default: {
-    new (props: CalendarProps<{
+    new (props: Omit<{
         changeMonthLabel?: string | null | undefined;
-        daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+        daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
         formatDateFull: (date: Date) => string | Date;
         formatMonth: (date: Date) => string | Date;
         id: string;
@@ -106,7 +31,7 @@ declare const _default: {
         previousMonthLabel?: string | null | undefined;
         weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
         className?: string | null | undefined;
-        dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+        dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
         fixedWidth?: boolean | undefined;
         focusedDate?: Date | null | undefined;
         markOutsideDays?: boolean | undefined;
@@ -118,17 +43,34 @@ declare const _default: {
         onDateClick?: ((date: Date) => void) | null | undefined;
         onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
         preventKeyboardFocus?: boolean | undefined;
-        selectionConfiguration?: SelectionConfiguration | undefined;
+        selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
         gridClassName?: string | null | undefined;
         weekDayKey?: string | undefined;
         navProps?: {} | null | undefined;
         headerProps?: {} | null | undefined;
         gridProps?: {} | null | undefined;
         dateProps?: {} | null | undefined;
-    }>): {
-        UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<{
+    } & {
+        fixedWidth?: boolean | undefined;
+        maxDate?: Date | undefined;
+        minDate?: Date | undefined;
+        onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+        onMonthChange?: ((event: UIEvent, { month, source }: {
+            month: Date;
+            source: string;
+        }) => void) | null | undefined;
+        selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+        initiallyFocusedDate?: Date | null | undefined;
+    }, keyof {
+        onDateClick: ((date: Date) => void) | null;
+        onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+        month: Date;
+    }> & {
+        [rest: string]: any;
+    }): {
+        UNSAFE_componentWillReceiveProps(nextProps: Omit<{
             changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+            daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
             formatDateFull: (date: Date) => string | Date;
             formatMonth: (date: Date) => string | Date;
             id: string;
@@ -139,7 +81,7 @@ declare const _default: {
             previousMonthLabel?: string | null | undefined;
             weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
             className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+            dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
             fixedWidth?: boolean | undefined;
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
@@ -151,14 +93,31 @@ declare const _default: {
             onDateClick?: ((date: Date) => void) | null | undefined;
             onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
             weekDayKey?: string | undefined;
             navProps?: {} | null | undefined;
             headerProps?: {} | null | undefined;
             gridProps?: {} | null | undefined;
             dateProps?: {} | null | undefined;
-        }>): void;
+        } & {
+            fixedWidth?: boolean | undefined;
+            maxDate?: Date | undefined;
+            minDate?: Date | undefined;
+            onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+            initiallyFocusedDate?: Date | null | undefined;
+        }, keyof {
+            onDateClick: ((date: Date) => void) | null;
+            onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+            month: Date;
+        }> & {
+            [rest: string]: any;
+        }): void;
         handleDateFocus: (event: UIEvent, { date, source }: {
             date: Date;
             source: string;
@@ -171,9 +130,18 @@ declare const _default: {
         handleDateKeyDown: (event: KeyboardEvent) => void;
         render(): JSX.Element;
         context: any;
-        setState<K extends keyof State>(state: State | ((prevState: Readonly<State>, props: Readonly<CalendarProps<{
+        setState<K extends keyof {
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }>(state: {
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        } | ((prevState: Readonly<{
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }>, props: Readonly<Omit<{
             changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+            daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
             formatDateFull: (date: Date) => string | Date;
             formatMonth: (date: Date) => string | Date;
             id: string;
@@ -184,7 +152,7 @@ declare const _default: {
             previousMonthLabel?: string | null | undefined;
             weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
             className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+            dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
             fixedWidth?: boolean | undefined;
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
@@ -196,18 +164,44 @@ declare const _default: {
             onDateClick?: ((date: Date) => void) | null | undefined;
             onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
             weekDayKey?: string | undefined;
             navProps?: {} | null | undefined;
             headerProps?: {} | null | undefined;
             gridProps?: {} | null | undefined;
             dateProps?: {} | null | undefined;
-        }>>) => State | Pick<State, K> | null) | Pick<State, K> | null, callback?: (() => void) | undefined): void;
+        } & {
+            fixedWidth?: boolean | undefined;
+            maxDate?: Date | undefined;
+            minDate?: Date | undefined;
+            onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+            initiallyFocusedDate?: Date | null | undefined;
+        }, keyof {
+            onDateClick: ((date: Date) => void) | null;
+            onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+            month: Date;
+        }> & {
+            [rest: string]: any;
+        }>) => {
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        } | Pick<{
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }, K> | null) | Pick<{
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }, K> | null, callback?: (() => void) | undefined): void;
         forceUpdate(callback?: (() => void) | undefined): void;
-        readonly props: Readonly<CalendarProps<{
+        readonly props: Readonly<Omit<{
             changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+            daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
             formatDateFull: (date: Date) => string | Date;
             formatMonth: (date: Date) => string | Date;
             id: string;
@@ -218,7 +212,7 @@ declare const _default: {
             previousMonthLabel?: string | null | undefined;
             weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
             className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+            dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
             fixedWidth?: boolean | undefined;
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
@@ -230,24 +224,44 @@ declare const _default: {
             onDateClick?: ((date: Date) => void) | null | undefined;
             onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
             weekDayKey?: string | undefined;
             navProps?: {} | null | undefined;
             headerProps?: {} | null | undefined;
             gridProps?: {} | null | undefined;
             dateProps?: {} | null | undefined;
-        }>> & Readonly<{
+        } & {
+            fixedWidth?: boolean | undefined;
+            maxDate?: Date | undefined;
+            minDate?: Date | undefined;
+            onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+            initiallyFocusedDate?: Date | null | undefined;
+        }, keyof {
+            onDateClick: ((date: Date) => void) | null;
+            onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+            month: Date;
+        }> & {
+            [rest: string]: any;
+        }> & Readonly<{
             children?: import("react").ReactNode;
         }>;
-        state: Readonly<State>;
+        state: Readonly<{
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }>;
         refs: {
             [key: string]: import("react").ReactInstance;
         };
         componentDidMount?(): void;
-        shouldComponentUpdate?(nextProps: Readonly<CalendarProps<{
+        shouldComponentUpdate?(nextProps: Readonly<Omit<{
             changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+            daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
             formatDateFull: (date: Date) => string | Date;
             formatMonth: (date: Date) => string | Date;
             id: string;
@@ -258,7 +272,7 @@ declare const _default: {
             previousMonthLabel?: string | null | undefined;
             weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
             className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+            dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
             fixedWidth?: boolean | undefined;
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
@@ -270,19 +284,39 @@ declare const _default: {
             onDateClick?: ((date: Date) => void) | null | undefined;
             onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
             weekDayKey?: string | undefined;
             navProps?: {} | null | undefined;
             headerProps?: {} | null | undefined;
             gridProps?: {} | null | undefined;
             dateProps?: {} | null | undefined;
-        }>>, nextState: Readonly<State>, nextContext: any): boolean;
+        } & {
+            fixedWidth?: boolean | undefined;
+            maxDate?: Date | undefined;
+            minDate?: Date | undefined;
+            onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+            initiallyFocusedDate?: Date | null | undefined;
+        }, keyof {
+            onDateClick: ((date: Date) => void) | null;
+            onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+            month: Date;
+        }> & {
+            [rest: string]: any;
+        }>, nextState: Readonly<{
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }>, nextContext: any): boolean;
         componentWillUnmount?(): void;
         componentDidCatch?(error: Error, errorInfo: import("react").ErrorInfo): void;
-        getSnapshotBeforeUpdate?(prevProps: Readonly<CalendarProps<{
+        getSnapshotBeforeUpdate?(prevProps: Readonly<Omit<{
             changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+            daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
             formatDateFull: (date: Date) => string | Date;
             formatMonth: (date: Date) => string | Date;
             id: string;
@@ -293,7 +327,7 @@ declare const _default: {
             previousMonthLabel?: string | null | undefined;
             weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
             className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+            dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
             fixedWidth?: boolean | undefined;
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
@@ -305,17 +339,37 @@ declare const _default: {
             onDateClick?: ((date: Date) => void) | null | undefined;
             onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
             weekDayKey?: string | undefined;
             navProps?: {} | null | undefined;
             headerProps?: {} | null | undefined;
             gridProps?: {} | null | undefined;
             dateProps?: {} | null | undefined;
-        }>>, prevState: Readonly<State>): any;
-        componentDidUpdate?(prevProps: Readonly<CalendarProps<{
+        } & {
+            fixedWidth?: boolean | undefined;
+            maxDate?: Date | undefined;
+            minDate?: Date | undefined;
+            onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+            initiallyFocusedDate?: Date | null | undefined;
+        }, keyof {
+            onDateClick: ((date: Date) => void) | null;
+            onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+            month: Date;
+        }> & {
+            [rest: string]: any;
+        }>, prevState: Readonly<{
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }>): any;
+        componentDidUpdate?(prevProps: Readonly<Omit<{
             changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+            daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
             formatDateFull: (date: Date) => string | Date;
             formatMonth: (date: Date) => string | Date;
             id: string;
@@ -326,7 +380,7 @@ declare const _default: {
             previousMonthLabel?: string | null | undefined;
             weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
             className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+            dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
             fixedWidth?: boolean | undefined;
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
@@ -338,19 +392,39 @@ declare const _default: {
             onDateClick?: ((date: Date) => void) | null | undefined;
             onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
             weekDayKey?: string | undefined;
             navProps?: {} | null | undefined;
             headerProps?: {} | null | undefined;
             gridProps?: {} | null | undefined;
             dateProps?: {} | null | undefined;
-        }>>, prevState: Readonly<State>, snapshot?: any): void;
+        } & {
+            fixedWidth?: boolean | undefined;
+            maxDate?: Date | undefined;
+            minDate?: Date | undefined;
+            onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+            initiallyFocusedDate?: Date | null | undefined;
+        }, keyof {
+            onDateClick: ((date: Date) => void) | null;
+            onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+            month: Date;
+        }> & {
+            [rest: string]: any;
+        }>, prevState: Readonly<{
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }>, snapshot?: any): void;
         componentWillMount?(): void;
         UNSAFE_componentWillMount?(): void;
-        componentWillReceiveProps?(nextProps: Readonly<CalendarProps<{
+        componentWillReceiveProps?(nextProps: Readonly<Omit<{
             changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+            daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
             formatDateFull: (date: Date) => string | Date;
             formatMonth: (date: Date) => string | Date;
             id: string;
@@ -361,7 +435,7 @@ declare const _default: {
             previousMonthLabel?: string | null | undefined;
             weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
             className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+            dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
             fixedWidth?: boolean | undefined;
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
@@ -373,17 +447,34 @@ declare const _default: {
             onDateClick?: ((date: Date) => void) | null | undefined;
             onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
             weekDayKey?: string | undefined;
             navProps?: {} | null | undefined;
             headerProps?: {} | null | undefined;
             gridProps?: {} | null | undefined;
             dateProps?: {} | null | undefined;
-        }>>, nextContext: any): void;
-        componentWillUpdate?(nextProps: Readonly<CalendarProps<{
+        } & {
+            fixedWidth?: boolean | undefined;
+            maxDate?: Date | undefined;
+            minDate?: Date | undefined;
+            onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+            initiallyFocusedDate?: Date | null | undefined;
+        }, keyof {
+            onDateClick: ((date: Date) => void) | null;
+            onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+            month: Date;
+        }> & {
+            [rest: string]: any;
+        }>, nextContext: any): void;
+        componentWillUpdate?(nextProps: Readonly<Omit<{
             changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+            daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
             formatDateFull: (date: Date) => string | Date;
             formatMonth: (date: Date) => string | Date;
             id: string;
@@ -394,7 +485,7 @@ declare const _default: {
             previousMonthLabel?: string | null | undefined;
             weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
             className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+            dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
             fixedWidth?: boolean | undefined;
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
@@ -406,17 +497,37 @@ declare const _default: {
             onDateClick?: ((date: Date) => void) | null | undefined;
             onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
             weekDayKey?: string | undefined;
             navProps?: {} | null | undefined;
             headerProps?: {} | null | undefined;
             gridProps?: {} | null | undefined;
             dateProps?: {} | null | undefined;
-        }>>, nextState: Readonly<State>, nextContext: any): void;
-        UNSAFE_componentWillUpdate?(nextProps: Readonly<CalendarProps<{
+        } & {
+            fixedWidth?: boolean | undefined;
+            maxDate?: Date | undefined;
+            minDate?: Date | undefined;
+            onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+            initiallyFocusedDate?: Date | null | undefined;
+        }, keyof {
+            onDateClick: ((date: Date) => void) | null;
+            onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+            month: Date;
+        }> & {
+            [rest: string]: any;
+        }>, nextState: Readonly<{
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }>, nextContext: any): void;
+        UNSAFE_componentWillUpdate?(nextProps: Readonly<Omit<{
             changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
+            daysOfWeek: import("../../bpk-component-calendar/src/custom-proptypes").DaysOfWeek;
             formatDateFull: (date: Date) => string | Date;
             formatMonth: (date: Date) => string | Date;
             id: string;
@@ -427,7 +538,7 @@ declare const _default: {
             previousMonthLabel?: string | null | undefined;
             weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
             className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
+            dateModifiers?: import("../../bpk-component-calendar/src/custom-proptypes").DateModifiers | undefined;
             fixedWidth?: boolean | undefined;
             focusedDate?: Date | null | undefined;
             markOutsideDays?: boolean | undefined;
@@ -439,14 +550,34 @@ declare const _default: {
             onDateClick?: ((date: Date) => void) | null | undefined;
             onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
             preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
             gridClassName?: string | null | undefined;
             weekDayKey?: string | undefined;
             navProps?: {} | null | undefined;
             headerProps?: {} | null | undefined;
             gridProps?: {} | null | undefined;
             dateProps?: {} | null | undefined;
-        }>>, nextState: Readonly<State>, nextContext: any): void;
+        } & {
+            fixedWidth?: boolean | undefined;
+            maxDate?: Date | undefined;
+            minDate?: Date | undefined;
+            onDateSelect?: ((date: Date, newDate?: Date | undefined) => void) | null | undefined;
+            onMonthChange?: ((event: UIEvent, { month, source }: {
+                month: Date;
+                source: string;
+            }) => void) | null | undefined;
+            selectionConfiguration?: import("../../bpk-component-calendar/src/custom-proptypes").SelectionConfiguration | undefined;
+            initiallyFocusedDate?: Date | null | undefined;
+        }, keyof {
+            onDateClick: ((date: Date) => void) | null;
+            onDateKeyDown: ((event: KeyboardEvent) => void) | null;
+            month: Date;
+        }> & {
+            [rest: string]: any;
+        }>, nextState: Readonly<{
+            preventKeyboardFocus: boolean;
+            focusedDate: Date;
+        }>, nextContext: any): void;
     };
     defaultProps: {
         fixedWidth: boolean;
@@ -463,4 +594,3 @@ declare const _default: {
     contextType?: import("react").Context<any> | undefined;
 };
 export default _default;
-export { withCalendarState };

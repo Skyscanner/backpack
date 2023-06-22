@@ -22,12 +22,14 @@ import BpkCalendarContainer, {
 import BpkCalendarGrid, {
   BpkCalendarGridWithTransition,
 } from './src/BpkCalendarGrid';
+import type { Props as BpkCalendarGridProps } from './src/BpkCalendarGrid';
 import BpkCalendarGridHeader from './src/BpkCalendarGridHeader';
 import BpkCalendarNav from './src/BpkCalendarNav';
 import BpkCalendarDate, {
   ROW_TYPES,
   SELECTION_TYPES,
 } from './src/BpkCalendarDate';
+import type { Props as BpkCalendarDateProps } from './src/BpkCalendarDate';
 import composeCalendar from './src/composeCalendar';
 import { CALENDAR_SELECTION_TYPE } from './src/custom-proptypes';
 import CustomPropTypes, {
@@ -55,4 +57,6 @@ export {
   CustomPropTypes,
   BpkCalendarGridPropTypes,
   BpkCalendarDatePropTypes,
+  BpkCalendarDateProps,
+  BpkCalendarGridProps,
 };

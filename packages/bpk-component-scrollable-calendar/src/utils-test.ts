@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { startOfDay, startOfMonth } from 'date-fns';
 
 import { getMonthsArray, getMonthItemHeights } from './utils';
