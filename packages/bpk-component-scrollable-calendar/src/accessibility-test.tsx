@@ -15,24 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import '@testing-library/jest-dom';
 import { DateUtils } from '../../bpk-component-calendar';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkScrollableCalendar from './BpkScrollableCalendar';
 
-const testDate = new Date(2010, 1, 15);
-const id = 'scrollableCalendar';
-
-describe('BpkScrollableCalendar', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
+describe('BpkScrollableCalendar accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const testDate = new Date(2010, 1, 15);
+    const { container } = render(
       <BpkScrollableCalendar
-        id={id}
+        id="scrollableCalendar"
         weekStartsOn={1}
         daysOfWeek={weekDays}
         formatMonth={formatMonth}
@@ -42,17 +39,20 @@ describe('BpkScrollableCalendar', () => {
         maxDate={DateUtils.addMonths(testDate, 12)}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 
-  it('should render ranges correctly', () => {
-    const { asFragment } = render(
+  it('should not have programmatically-detectable accessibility issues when in range mode', async () => {
+    const testDate = new Date(2010, 1, 15);
+    const { container } = render(
       <BpkScrollableCalendar
-        id={id}
+        id="scrollableCalendar"
         weekStartsOn={1}
         daysOfWeek={weekDays}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
+        markToday={false}
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
@@ -63,40 +63,7 @@ describe('BpkScrollableCalendar', () => {
         }}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should support custom class names', () => {
-    const { asFragment } = render(
-      <BpkScrollableCalendar
-        id={id}
-        weekStartsOn={1}
-        daysOfWeek={weekDays}
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        // Subtract one day from today's date to make today selectable by default
-        minDate={DateUtils.addDays(testDate, -1)}
-        maxDate={DateUtils.addMonths(testDate, 12)}
-        className="custom-classname"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should support arbitrary props', () => {
-    const { asFragment } = render(
-      <BpkScrollableCalendar
-        id={id}
-        weekStartsOn={1}
-        daysOfWeek={weekDays}
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        // Subtract one day from today's date to make today selectable by default
-        minDate={DateUtils.addDays(testDate, -1)}
-        maxDate={DateUtils.addMonths(testDate, 12)}
-        testid="123"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

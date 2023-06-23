@@ -16,20 +16,31 @@
  * limitations under the License.
  */
 
+import type { ElementType } from 'react';
+
 import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import {
-  BpkCalendarGrid,
-  BpkCalendarGridPropTypes,
-} from '../../bpk-component-calendar';
+import { BpkCalendarGrid } from '../../bpk-component-calendar';
+import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGrid.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkScrollableCalendarGrid = (props) => {
-  const { className, month, ...rest } = props;
-
+type Props = Partial<BpkCalendarGridProps> & {
+  DateComponent: ElementType;
+  month: Date;
+  formatDateFull: (date: Date) => Date | string;
+  weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  formatMonth: (date: Date) => Date | string;
+};
+const BpkScrollableCalendarGrid = ({
+  className,
+  formatMonth,
+  ignoreOutsideDate,
+  month,
+  ...rest
+}: Props) => {
   const classNames = getClassName('bpk-scrollable-calendar-grid', className);
 
   return (
@@ -39,15 +50,11 @@ const BpkScrollableCalendarGrid = (props) => {
         tagName="h1"
         textStyle={TEXT_STYLES.heading4}
       >
-        {props.formatMonth(month)}
+        {formatMonth(month)}
       </BpkText>
       <BpkCalendarGrid month={month} ignoreOutsideDate {...rest} />
     </div>
   );
-};
-
-BpkScrollableCalendarGrid.propTypes = {
-  ...BpkCalendarGridPropTypes,
 };
 
 export default BpkScrollableCalendarGrid;
