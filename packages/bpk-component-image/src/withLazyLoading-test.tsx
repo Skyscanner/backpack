@@ -21,12 +21,11 @@ import { render } from '@testing-library/react';
 import withLazyLoading from './withLazyLoading';
 
 const createDocumentMock = () => {
-  const mock = jest.fn();
-
-  mock.addEventListener = jest.fn();
-  mock.removeEventListener = jest.fn();
-  mock.documentElement = jest.fn();
-
+  const mock = {
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    documentElement: jest.fn(),
+  };
   return mock;
 };
 
@@ -34,6 +33,7 @@ describe('withLazyLoading', () => {
   it('should return the original component', () => {
     const documentMock = createDocumentMock();
     const MockImageComponent = () => <div>Fake Image</div>;
+    // @ts-expect-error withLazyLoading expects a type of document, but in the tests we just want to pass a mock
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     const { asFragment } = render(<LazyLoadedImage />);
@@ -45,11 +45,11 @@ describe('withLazyLoading', () => {
     const documentMock = createDocumentMock();
     const mockImageComponent = jest.fn();
 
-    const MockImageComponent = (props) => {
+    const MockImageComponent = (props: any) => {
       mockImageComponent(props);
       return <div>Fake Image</div>;
     };
-
+    // @ts-expect-error withLazyLoading expects a type of document, but in the tests we just want to pass a mock
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     render(<LazyLoadedImage />);
@@ -63,6 +63,7 @@ describe('withLazyLoading', () => {
     const documentMock = createDocumentMock();
 
     const MockImageComponent = () => <div>Fake Image</div>;
+    // @ts-expect-error withLazyLoading expects a type of document, but in the tests we just want to pass a mock
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     render(<LazyLoadedImage />);
@@ -71,6 +72,7 @@ describe('withLazyLoading', () => {
     expect(documentMock.addEventListener.mock.calls[0][0]).toEqual('scroll');
     expect(documentMock.addEventListener.mock.calls[0][2]).toEqual({
       capture: true,
+      passive: true,
     });
   });
 
@@ -78,6 +80,7 @@ describe('withLazyLoading', () => {
     const documentMock = createDocumentMock();
 
     const MockImageComponent = () => <div>Fake Image</div>;
+    // @ts-expect-error withLazyLoading expects a type of document, but in the tests we just want to pass a mock
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     const { unmount } = render(<LazyLoadedImage />);
@@ -87,6 +90,7 @@ describe('withLazyLoading', () => {
     expect(documentMock.removeEventListener.mock.calls[0][0]).toEqual('scroll');
     expect(documentMock.removeEventListener.mock.calls[0][2]).toEqual({
       capture: true,
+      passive: true,
     });
   });
 });

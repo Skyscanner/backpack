@@ -15,15 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { Component } from 'react';
-import type { Node } from 'react';
-import PropTypes from 'prop-types';
+import type { ReactNode, CSSProperties } from 'react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkSpinner } from '../../bpk-component-spinner';
 
 import STYLES from './BpkBackgroundImage.module.scss';
@@ -31,39 +32,22 @@ import STYLES from './BpkBackgroundImage.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type BpkBackgroundImageProps = {
-  children: Node,
-  aspectRatio: ?number,
-  inView: boolean,
-  loading: boolean,
-  src: string,
-  className: ?string,
-  onLoad: ?() => mixed,
-  style: ?{},
-  imageStyle: ?{
-    backgroundImage: ?string,
-  },
+  children?: ReactNode;
+  aspectRatio: number;
+  inView?: boolean;
+  loading?: boolean;
+  src: string;
+  className?: string;
+  onLoad?: (() => void) | null;
+  style?: {};
+  imageStyle?: CSSProperties;
 };
 
 class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
-  trackImg: ?Image;
-
-  startImageLoad: () => mixed;
-
-  onBackgroundImageLoad: () => mixed;
-
-  static propTypes = {
-    aspectRatio: PropTypes.number.isRequired,
-    src: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    inView: PropTypes.bool,
-    loading: PropTypes.bool,
-    onLoad: PropTypes.func,
-    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    imageStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  };
+  trackImg?: HTMLImageElement | null;
 
   static defaultProps = {
-    className: null,
+    className: '',
     inView: true,
     loading: false,
     onLoad: null,
@@ -108,7 +92,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     this.trackImg.onload = this.onBackgroundImageLoad;
   };
 
-  render(): Node {
+  render() {
     const { children, className, imageStyle, inView, loading, src, style } =
       this.props;
 
