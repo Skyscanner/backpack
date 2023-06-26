@@ -17,30 +17,25 @@
  */
 
 import { Component } from 'react';
-
 import type { Props } from './common-types';
-
 type State = {
-  persistClearButton: boolean;
+    persistClearButton: boolean;
 };
 declare class BpkInput extends Component<Props, State> {
-  static defaultProps: {
-    type: 'text';
-    className: null;
-    valid: null;
-    large: boolean;
-    docked: boolean;
-    dockedFirst: boolean;
-    dockedMiddle: boolean;
-    dockedLast: boolean;
-    inputRef: null;
-    clearButtonMode: 'never';
-    clearButtonLabel: null;
-    onClear: null;
-  };
-
-  constructor(props: Props);
-
-  render(): JSX.Element;
+    static defaultProps: {
+        type: "text";
+        valid: null;
+        large: boolean;
+        docked: boolean;
+        dockedFirst: boolean;
+        dockedMiddle: boolean;
+        dockedLast: boolean;
+        inputRef: null;
+        clearButtonMode: "never";
+        clearButtonLabel: null;
+        onClear: null;
+    };
+    constructor(props: Props);
+    render(): JSX.Element;
 }
 export default BpkInput;

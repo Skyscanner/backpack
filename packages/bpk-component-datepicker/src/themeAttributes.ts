@@ -16,10 +16,15 @@
  * limitations under the License.
  */
 
-import BpkInput from './src/BpkInput';
-import withOpenEvents from './src/withOpenEvents';
-import { propTypes, defaultProps, CLEAR_BUTTON_MODES, INPUT_TYPES, type Props } from './src/common-types';
-import themeAttributes from './src/themeAttributes';
-export default BpkInput;
-export type BpkInputProps = Props;
-export { propTypes, defaultProps, withOpenEvents, INPUT_TYPES, CLEAR_BUTTON_MODES, themeAttributes, };
+import { themeAttributes as calendarAttributes } from '../../bpk-component-calendar';
+import { themeAttributes as modalAttributes } from '../../bpk-component-modal';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { themeAttributes as popoverAttributes } from '../../bpk-component-popover';
+
+export default [
+  ...calendarAttributes,
+  ...popoverAttributes,
+  ...modalAttributes,
+].filter(
+  (attribute, index, attributes) => attributes.indexOf(attribute) === index,
+);

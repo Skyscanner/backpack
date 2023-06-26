@@ -16,13 +16,14 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import { createRef, Component } from 'react';
 
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPopover from '../../bpk-component-popover';
 import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import {
   composeCalendar,
@@ -30,10 +31,14 @@ import {
   BpkCalendarGrid,
   BpkCalendarDate,
   withCalendarState,
-  CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
   DateUtils,
   BpkCalendarNav,
+} from '../../bpk-component-calendar';
+import type {
+  DaysOfWeek,
+  ReactComponent,
+  SelectionConfiguration,
 } from '../../bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.module.scss';
@@ -51,17 +56,90 @@ const DefaultCalendar = withCalendarState(
   ),
 );
 
-class BpkDatepicker extends Component {
-  constructor(props) {
+type Props = {
+  // Required
+  changeMonthLabel: string;
+  closeButtonText: string;
+  daysOfWeek: DaysOfWeek;
+  formatDate: (date: Date) => string;
+  formatDateFull: (date: Date) => string;
+  formatMonth: (date: Date) => string;
+  id: string;
+  title: string;
+  getApplicationElement: () => HTMLElement | null;
+  nextMonthLabel: string;
+  previousMonthLabel: string;
+  weekStartsOn: number;
+  // Optional
+  calendarComponent: ReactComponent;
+  inputComponent: ReactComponent;
+  dateModifiers?: {};
+  fixedWidth?: boolean;
+  inputProps?: {};
+  markOutsideDays?: boolean;
+  markToday?: boolean;
+  maxDate?: Date;
+  minDate?: Date;
+  onDateSelect?: ((date: Date, newDate?: Date) => void) | null;
+  onMonthChange?:
+    | ((
+        event: UIEvent,
+        { month, source }: { month: Date; source: string },
+      ) => void)
+    | null;
+  onOpenChange?: (arg0: boolean) => void | null;
+  selectionConfiguration?: SelectionConfiguration;
+  initiallyFocusedDate?: Date;
+  renderTarget?: null | HTMLElement | (() => null | HTMLElement);
+  isOpen?: boolean;
+  valid?: boolean;
+  // Disabling this as if we set a default property for this value it causes the internal onClose function to stop working for default setup
+  // eslint-disable-next-line react/require-default-props
+  onClose?: () => void;
+};
+
+type State = {
+  isOpen: boolean;
+};
+
+class BpkDatepicker extends Component<Props, State> {
+  inputRef: React.RefObject<HTMLInputElement>;
+
+  static defaultProps = {
+    calendarComponent: DefaultCalendar,
+    inputComponent: null,
+    dateModifiers: {},
+    inputProps: {},
+    fixedWidth: true,
+    markOutsideDays: true,
+    markToday: DefaultCalendar.defaultProps.markToday,
+    maxDate: DefaultCalendar.defaultProps.maxDate,
+    minDate: DefaultCalendar.defaultProps.minDate,
+    nextMonthLabel: null,
+    onDateSelect: null,
+    onOpenChange: null,
+    onMonthChange: null,
+    previousMonthLabel: null,
+    selectionConfiguration: {
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: null,
+    },
+    initiallyFocusedDate: null,
+    renderTarget: null,
+    isOpen: false,
+    valid: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
-      isOpen: props.isOpen,
+      isOpen: props.isOpen!,
     };
     this.inputRef = createRef();
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     const { isOpen } = this.props;
 
     if (prevProps.isOpen !== isOpen && prevState.isOpen !== isOpen) {
@@ -97,7 +175,10 @@ class BpkDatepicker extends Component {
    * @param {Function} formatDateFull function supplied to format date
    * @returns {String} date string
    */
-  getLabel = (selectionConfiguration, formatDateFull) => {
+  getLabel = (
+    selectionConfiguration: SelectionConfiguration,
+    formatDateFull: (date: Date) => string,
+  ) => {
     if (
       selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
       selectionConfiguration.date
@@ -123,7 +204,10 @@ class BpkDatepicker extends Component {
    * @param {Function} formatDate function supplied to format date
    * @returns {String} date value
    */
-  getValue = (selectionConfiguration, formatDate) => {
+  getValue = (
+    selectionConfiguration: SelectionConfiguration,
+    formatDate: (date: Date) => string,
+  ) => {
     if (
       selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
       selectionConfiguration.date
@@ -143,7 +227,7 @@ class BpkDatepicker extends Component {
     return '';
   };
 
-  handleDateSelect = (startDate, endDate = null) => {
+  handleDateSelect = (startDate: Date, endDate: Date | null = null) => {
     const { maxDate, minDate, onClose, onDateSelect, selectionConfiguration } =
       this.props;
 
@@ -151,6 +235,7 @@ class BpkDatepicker extends Component {
     // or if its a range calendar we only want to close the calendar when a range is selected.
     // If a custom onClose function is provided then we don't want to run the internal version.
     if (
+      selectionConfiguration &&
       (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single ||
         (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
           endDate)) &&
@@ -162,16 +247,17 @@ class BpkDatepicker extends Component {
     if (onDateSelect) {
       const newStartDate = DateUtils.dateToBoundaries(
         startDate,
-        DateUtils.startOfDay(minDate),
-        DateUtils.startOfDay(maxDate),
+        DateUtils.startOfDay(minDate!),
+        DateUtils.startOfDay(maxDate!),
       );
       const newEndDate = DateUtils.dateToBoundaries(
         endDate,
-        DateUtils.startOfDay(minDate),
-        DateUtils.startOfDay(maxDate),
+        DateUtils.startOfDay(minDate!),
+        DateUtils.startOfDay(maxDate!),
       );
 
       if (
+        selectionConfiguration &&
         selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
         selectionConfiguration.startDate &&
         !selectionConfiguration.endDate &&
@@ -229,10 +315,10 @@ class BpkDatepicker extends Component {
         <Input
           id={id}
           name={`${id}_input`}
-          value={this.getValue(selectionConfiguration, formatDate)}
+          value={this.getValue(selectionConfiguration!, formatDate)}
           aria-live="assertive"
           aria-atomic="true"
-          aria-label={this.getLabel(selectionConfiguration, formatDateFull)}
+          aria-label={this.getLabel(selectionConfiguration!, formatDateFull)}
           onChange={() => null}
           onOpen={this.onOpen}
           isOpen={this.state.isOpen}
@@ -265,7 +351,7 @@ class BpkDatepicker extends Component {
 
     return (
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {(isMobile) =>
+        {(isMobile: boolean) =>
           isMobile ? (
             <>
               {input}
@@ -301,64 +387,5 @@ class BpkDatepicker extends Component {
     );
   }
 }
-
-BpkDatepicker.propTypes = {
-  // Required
-  changeMonthLabel: PropTypes.string.isRequired,
-  closeButtonText: PropTypes.string.isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
-  formatDate: PropTypes.func.isRequired,
-  formatDateFull: PropTypes.func.isRequired,
-  formatMonth: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  getApplicationElement: PropTypes.func.isRequired,
-  nextMonthLabel: PropTypes.string.isRequired,
-  previousMonthLabel: PropTypes.string.isRequired,
-  weekStartsOn: PropTypes.number.isRequired,
-  // Optional
-  calendarComponent: PropTypes.elementType,
-  inputComponent: PropTypes.elementType,
-  dateModifiers: CustomPropTypes.DateModifiers,
-  fixedWidth: PropTypes.bool,
-  inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  markOutsideDays: PropTypes.bool,
-  markToday: PropTypes.bool,
-  maxDate: PropTypes.instanceOf(Date),
-  minDate: PropTypes.instanceOf(Date),
-  onDateSelect: PropTypes.func,
-  onOpenChange: PropTypes.func,
-  onMonthChange: PropTypes.func,
-  selectionConfiguration: CustomPropTypes.SelectionConfiguration,
-  initiallyFocusedDate: PropTypes.instanceOf(Date),
-  renderTarget: PropTypes.func,
-  isOpen: PropTypes.bool,
-  valid: PropTypes.bool,
-  // Disabling this as if we set a default property for this value it causes the internal onClose function to stop working for default setup
-  // eslint-disable-next-line react/require-default-props
-  onClose: PropTypes.func,
-};
-
-BpkDatepicker.defaultProps = {
-  calendarComponent: DefaultCalendar,
-  inputComponent: null,
-  dateModifiers: DefaultCalendar.defaultProps.dateModifiers,
-  inputProps: {},
-  fixedWidth: true,
-  markOutsideDays: DefaultCalendar.defaultProps.markOutsideDays,
-  markToday: DefaultCalendar.defaultProps.markToday,
-  maxDate: DefaultCalendar.defaultProps.maxDate,
-  minDate: DefaultCalendar.defaultProps.minDate,
-  nextMonthLabel: null,
-  onDateSelect: null,
-  onOpenChange: null,
-  onMonthChange: null,
-  previousMonthLabel: null,
-  selectionConfiguration: { type: CALENDAR_SELECTION_TYPE.single, date: null },
-  initiallyFocusedDate: null,
-  renderTarget: null,
-  isOpen: false,
-  valid: null,
-};
 
 export default BpkDatepicker;
