@@ -16,14 +16,21 @@
  * limitations under the License.
  */
 
-import { themeAttributes as calendarAttributes } from '../../bpk-component-calendar';
-import { themeAttributes as modalAttributes } from '../../bpk-component-modal';
-import { themeAttributes as popoverAttributes } from '../../bpk-component-popover';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-export default [
-  ...calendarAttributes,
-  ...popoverAttributes,
-  ...modalAttributes,
-].filter(
-  (attribute, index, attributes) => attributes.indexOf(attribute) === index,
-);
+import BpkBreakpoint, { BREAKPOINTS } from './BpkBreakpoint';
+
+describe('BpkBreakpoint accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {(matches) =>
+          matches ? <div>matches</div> : <div>does not match</div>
+        }
+      </BpkBreakpoint>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

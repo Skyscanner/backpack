@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+const BORDER_RADIUS_STYLES = { none: 'none', sm: 'sm' } as const;
 
-import BpkBreakpoint, { BREAKPOINTS } from './src/BpkBreakpoint';
-
-export { BREAKPOINTS };
-export default BpkBreakpoint;
+export default BORDER_RADIUS_STYLES;

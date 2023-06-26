@@ -16,11 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import MediaQuery from 'react-responsive';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
 
 const BREAKPOINTS = {
@@ -32,36 +31,23 @@ const BREAKPOINTS = {
   TABLET_ONLY: TOKENS.breakpointQueryTabletOnly,
   ABOVE_MOBILE: TOKENS.breakpointQueryAboveMobile,
   ABOVE_TABLET: TOKENS.breakpointQueryAboveTablet,
-};
+  ABOVE_DESKTOP: TOKENS.breakpointQueryAboveDesktop,
+  DESKTOP_ONLY: TOKENS.breakpointQueryDesktopOnly,
+} as const;
 
 type Props = {
-  children: Node | ((matches: boolean) => mixed),
-  query: string | $Values<typeof BREAKPOINTS>,
-  legacy: boolean,
+  children: ReactNode | ((matches: boolean) => ReactNode | null);
+  query: string | (typeof BREAKPOINTS)[keyof typeof BREAKPOINTS];
+  legacy?: boolean;
 };
 
-const BpkBreakpoint = (props: Props) => {
-  const { children, query } = props;
-  return <MediaQuery query={query}>{children}</MediaQuery>;
-};
-
-const queryValidator = (props: Props, ...rest) => {
-  if (!props.legacy) {
-    return PropTypes.oneOf(
-      Object.keys(BREAKPOINTS).map((key) => BREAKPOINTS[key]),
-    ).isRequired(props, ...rest);
+const BpkBreakpoint = ({ children, legacy = false, query }: Props) => {
+  if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
+    console.warn(
+      `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
+    );
   }
-  return PropTypes.string.isRequired(props, ...rest);
-};
-
-BpkBreakpoint.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-  query: queryValidator, // eslint-disable-line react/require-default-props
-  legacy: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
-};
-
-BpkBreakpoint.defaultProps = {
-  legacy: false,
+  return <MediaQuery query={query}>{children}</MediaQuery>;
 };
 
 export { BREAKPOINTS };

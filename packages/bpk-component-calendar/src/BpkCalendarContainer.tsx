@@ -54,6 +54,8 @@ type Props = {
     | null;
   selectionConfiguration?: SelectionConfiguration;
   initiallyFocusedDate?: Date | null;
+  markToday?: boolean;
+  markOutsideDays?: boolean;
 };
 
 type InjectedProps = {
@@ -169,6 +171,8 @@ const withCalendarState = <P extends object>(Calendar: ComponentType<P>) => {
         date: null,
       },
       initiallyFocusedDate: null,
+      markToday: true,
+      markOutsideDays: true,
     };
 
     constructor(props: CalendarProps<P>) {

@@ -16,10 +16,19 @@
  * limitations under the License.
  */
 
-import BpkInput from './src/BpkInput';
-import withOpenEvents from './src/withOpenEvents';
-import { propTypes, defaultProps, CLEAR_BUTTON_MODES, INPUT_TYPES, type Props } from './src/common-types';
-import themeAttributes from './src/themeAttributes';
-export default BpkInput;
-export type BpkInputProps = Props;
-export { propTypes, defaultProps, withOpenEvents, INPUT_TYPES, CLEAR_BUTTON_MODES, themeAttributes, };
+import BpkImage from './src/BpkImage';
+import BpkBackgroundImage from './src/BpkBackgroundImage';
+import type { BpkBackgroundImageProps } from './src/BpkBackgroundImage';
+import withLazyLoading from './src/withLazyLoading';
+import withLoadingBehavior from './src/withLoadingBehavior';
+import BORDER_RADIUS_STYLES from './src/BpkImageBorderRadiusStyles';
+
+export type { BpkBackgroundImageProps };
+
+export default BpkImage;
+export {
+  BpkBackgroundImage,
+  withLazyLoading,
+  withLoadingBehavior,
+  BORDER_RADIUS_STYLES,
+};

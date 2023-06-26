@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-import BpkInput from './src/BpkInput';
-import withOpenEvents from './src/withOpenEvents';
-import { propTypes, defaultProps, CLEAR_BUTTON_MODES, INPUT_TYPES, type Props } from './src/common-types';
-import themeAttributes from './src/themeAttributes';
-export default BpkInput;
-export type BpkInputProps = Props;
-export { propTypes, defaultProps, withOpenEvents, INPUT_TYPES, CLEAR_BUTTON_MODES, themeAttributes, };
+declare const BORDER_RADIUS_STYLES: {
+    readonly none: "none";
+    readonly sm: "sm";
+};
+export default BORDER_RADIUS_STYLES;

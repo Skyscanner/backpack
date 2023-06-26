@@ -15,79 +15,63 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import type { Node, ComponentType } from 'react';
+import type { ComponentType } from 'react';
 import { Component } from 'react';
-import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
 type WithLazyLoadingProps = {
-  className: ?string,
-  style: ?{},
+  className?: string;
+  style?: {};
+  [rest: string]: any;
 };
 
 type WithLazyLoadingState = {
-  inView: boolean,
+  inView: boolean;
 };
 
-export default function withLazyLoading(
-  WrappedComponent: ComponentType<any>,
-  documentRef: typeof window,
-): ComponentType<any> {
+export default function withLazyLoading<P extends object>(
+  WrappedComponent: ComponentType<P>,
+  documentRef?: Document | null,
+) {
   class WithLazyLoading extends Component<
-    WithLazyLoadingProps,
-    WithLazyLoadingState,
+    Omit<P, 'inView'> & WithLazyLoadingProps,
+    WithLazyLoadingState
   > {
-    checkInView: () => void;
+    public static displayName: string;
 
-    element: ?HTMLElement;
+    element?: HTMLElement | null;
 
-    isInViewPort: () => boolean;
-
-    placeholderReference: string;
-
-    removeEventListeners: () => void;
-
-    setInView: () => void;
-
-    state: WithLazyLoadingState;
-
-    supportsPassiveEvents: () => boolean;
-
-    static propTypes = {
-      style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-      className: PropTypes.string,
-    };
+    placeholderReference?: string;
 
     static defaultProps = {
-      style: null,
-      className: null,
+      style: {},
+      className: '',
     };
 
-    constructor(): void {
-      super();
+    constructor(props: Omit<P, 'inView'> & WithLazyLoadingProps) {
+      super(props);
 
       this.state = {
         inView: false,
       };
     }
 
-    componentDidMount(): void {
-      documentRef.addEventListener('scroll', this.checkInView, {
+    componentDidMount() {
+      documentRef?.addEventListener('scroll', this.checkInView, {
         ...this.getPassiveArgs(),
       });
-      documentRef.addEventListener('resize', this.checkInView);
-      documentRef.addEventListener('orientationchange', this.checkInView);
-      documentRef.addEventListener('fullscreenchange', this.checkInView);
+      documentRef?.addEventListener('resize', this.checkInView);
+      documentRef?.addEventListener('orientationchange', this.checkInView);
+      documentRef?.addEventListener('fullscreenchange', this.checkInView);
       // call checkInView immediately incase the
       // component is already in view prior to scrolling
       this.checkInView();
     }
 
-    componentWillUnmount(): void {
+    componentWillUnmount() {
       this.removeEventListeners();
     }
 
@@ -98,19 +82,19 @@ export default function withLazyLoading(
       this.removeEventListeners();
     };
 
-    getPassiveArgs(): { capture: boolean } {
+    getPassiveArgs(): { capture: boolean; passive?: boolean } {
       return this.supportsPassiveEvents()
         ? { capture: true, passive: true }
         : { capture: true };
     }
 
     removeEventListeners = (): void => {
-      documentRef.removeEventListener('scroll', this.checkInView, {
+      documentRef?.removeEventListener('scroll', this.checkInView, {
         ...this.getPassiveArgs(),
       });
-      documentRef.removeEventListener('resize', this.checkInView);
-      documentRef.removeEventListener('orientationchange', this.checkInView);
-      documentRef.removeEventListener('fullscreenchange', this.checkInView);
+      documentRef?.removeEventListener('resize', this.checkInView);
+      documentRef?.removeEventListener('orientationchange', this.checkInView);
+      documentRef?.removeEventListener('fullscreenchange', this.checkInView);
     };
 
     checkInView = throttle(() => {
@@ -130,8 +114,9 @@ export default function withLazyLoading(
             return supportsPassiveOption;
           },
         });
-        window.addEventListener('test', null, opts);
-        window.removeEventListener('test');
+        const noop = function () {};
+        window.addEventListener('test', noop, opts);
+        window.removeEventListener('test', noop, opts);
       } catch (e) {
         return false;
       }
@@ -142,14 +127,12 @@ export default function withLazyLoading(
       if (!this.element) return false;
       const rect = this.element.getBoundingClientRect();
 
-      const viewPortHeight = Math.max(
-        window.innerHeight,
-        documentRef.documentElement.clientHeight,
-      );
-      const viewPortWidth = Math.max(
-        window.innerWidth,
-        documentRef.documentElement.clientWidth,
-      );
+      const viewPortHeight = documentRef
+        ? Math.max(window.innerHeight, documentRef.documentElement.clientHeight)
+        : -1;
+      const viewPortWidth = documentRef
+        ? Math.max(window.innerWidth, documentRef.documentElement.clientWidth)
+        : -1;
 
       return (
         rect.bottom >= 0 &&
@@ -159,7 +142,7 @@ export default function withLazyLoading(
       );
     };
 
-    render(): Node {
+    render() {
       const { className, style, ...rest } = this.props;
 
       return (
@@ -171,8 +154,7 @@ export default function withLazyLoading(
           style={style}
           className={className}
         >
-          {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-          <WrappedComponent inView={this.state.inView} {...rest} />
+          <WrappedComponent inView={this.state.inView} {...(rest as P)} />
         </div>
       );
     }

@@ -15,15 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { Component } from 'react';
-import type { Node } from 'react';
-import PropTypes from 'prop-types';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkSpinner } from '../../bpk-component-spinner';
 
 import STYLES from './BpkImage.module.scss';
@@ -32,25 +32,20 @@ import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 const getClassName = cssModules(STYLES);
 
 type ImageProps = {
-  altText: string,
-  hidden: ?boolean,
-  onImageLoad: () => mixed,
+  altText: string;
+  hidden?: boolean;
+  onImageLoad: () => void;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 class Image extends Component<ImageProps> {
-  img: ?HTMLImageElement;
-
-  static propTypes = {
-    altText: PropTypes.string.isRequired,
-    hidden: PropTypes.bool,
-    onImageLoad: PropTypes.func.isRequired,
-  };
+  img?: HTMLImageElement | null;
 
   static defaultProps = {
     hidden: false,
   };
 
-  constructor(props) {
+  constructor(props: ImageProps) {
     super(props);
     this.img = null;
   }
@@ -63,7 +58,7 @@ class Image extends Component<ImageProps> {
     }
   }
 
-  setImgRef = (el) => {
+  setImgRef = (el: HTMLImageElement) => {
     this.img = el;
   };
 
@@ -77,7 +72,6 @@ class Image extends Component<ImageProps> {
     }
 
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <img
         className={imgClassNames.join(' ')}
         alt={altText}
@@ -90,39 +84,24 @@ class Image extends Component<ImageProps> {
 }
 
 type BpkImageProps = {
-  altText: string,
-  aspectRatio: ?number,
-  inView: boolean,
-  loading: boolean,
-  src: string,
-  borderRadiusStyle: $Keys<typeof BORDER_RADIUS_STYLES>,
-  className: ?string,
-  onLoad: ?() => mixed,
-  style: ?{},
-  suppressHydrationWarning: boolean,
+  altText: string;
+  src: string;
+  aspectRatio: number;
+  inView?: boolean;
+  loading?: boolean;
+  borderRadiusStyle?: (typeof BORDER_RADIUS_STYLES)[keyof typeof BORDER_RADIUS_STYLES];
+  className?: string;
+  onLoad?: (() => void) | null;
+  style?: {};
+  suppressHydrationWarning?: boolean;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 class BpkImage extends Component<BpkImageProps> {
-  onImageLoad: () => mixed;
-
-  placeholder: ?HTMLElement;
-
-  static propTypes = {
-    altText: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-    aspectRatio: PropTypes.number.isRequired,
-    borderRadiusStyle: PropTypes.oneOf(Object.keys(BORDER_RADIUS_STYLES)),
-    className: PropTypes.string,
-    inView: PropTypes.bool,
-    loading: PropTypes.bool,
-    onLoad: PropTypes.func,
-    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    suppressHydrationWarning: PropTypes.bool,
-  };
+  placeholder?: HTMLElement | null;
 
   static defaultProps = {
     borderRadiusStyle: BORDER_RADIUS_STYLES.none,
-    className: null,
     inView: true,
     loading: false,
     onLoad: null,
@@ -136,14 +115,14 @@ class BpkImage extends Component<BpkImageProps> {
     }
   };
 
-  getAspectRatio = () => {
+  getAspectRatio = (): number => {
     if (this.props.aspectRatio) {
       return this.props.aspectRatio;
     }
     return 1;
   };
 
-  render(): Node {
+  render() {
     const {
       altText,
       aspectRatio,
@@ -167,7 +146,9 @@ class BpkImage extends Component<BpkImageProps> {
     if (borderRadiusStyle !== BORDER_RADIUS_STYLES.none) {
       classNames.push(
         getClassName(
-          `bpk-image--border-radius-${BORDER_RADIUS_STYLES[borderRadiusStyle]}`,
+          `bpk-image--border-radius-${
+            BORDER_RADIUS_STYLES[borderRadiusStyle!]
+          }`,
         ),
       );
     }
@@ -195,7 +176,6 @@ class BpkImage extends Component<BpkImageProps> {
             which seems to be enough to fix it.
           */}
           {inView && (
-            // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
             <Image
               hidden={loading}
               altText={altText}
@@ -218,7 +198,6 @@ class BpkImage extends Component<BpkImageProps> {
           )}
           {typeof window === 'undefined' && (!inView || loading) && (
             <noscript>
-              {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
               <Image
                 altText={altText}
                 onImageLoad={this.onImageLoad}

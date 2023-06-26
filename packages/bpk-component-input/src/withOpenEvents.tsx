@@ -17,7 +17,12 @@
  */
 
 import { Component } from 'react';
-import type { ComponentType, ReactElement, UIEvent } from 'react';
+import type {
+  ComponentType,
+  ReactElement,
+  UIEvent,
+  ComponentProps,
+} from 'react';
 
 import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
 
@@ -36,15 +41,19 @@ type WithOpenEventsProps = {
   hasTouchSupport?: boolean;
 };
 
-type InputProps = {
-  className?: string | null;
+type EventHandlers = {
   onClick?: (event: UIEvent) => void;
   onFocus?: (event: UIEvent) => void;
   onBlur?: (event: UIEvent) => void;
   onTouchEnd?: (event: UIEvent) => void;
   onKeyDown?: (event: UIEvent) => void;
   onKeyUp?: (event: UIEvent) => void;
+  readOnly?: string;
+  'aria-readonly'?: boolean;
 };
+
+type InputProps = ComponentProps<'input'> &
+  Omit<EventHandlers, 'readOnly' | 'aria-readonly'>;
 
 const handleKeyEvent =
   (keyCode: number, callback?: () => void) => (e: UIEvent) => {
@@ -67,10 +76,8 @@ const withEventHandler =
     }
   };
 
-const withOpenEvents = <P extends InputProps>(
-  InputComponent: ComponentType<P>,
-) => {
-  class WithOpenEvents extends Component<P & WithOpenEventsProps> {
+const withOpenEvents = <P extends object>(InputComponent: ComponentType<P>) => {
+  class WithOpenEvents extends Component<P & InputProps & WithOpenEventsProps> {
     public static displayName: string;
 
     focusCanOpen: boolean;
@@ -83,7 +90,6 @@ const withOpenEvents = <P extends InputProps>(
       ),
       onOpen: null,
       // Input props
-      className: null,
       onClick: null,
       onFocus: null,
       onBlur: null,
@@ -92,7 +98,7 @@ const withOpenEvents = <P extends InputProps>(
       onKeyUp: null,
     };
 
-    constructor(props: P & WithOpenEventsProps) {
+    constructor(props: P & WithOpenEventsProps & InputProps) {
       super(props);
 
       this.focusCanOpen = true;
@@ -148,10 +154,6 @@ const withOpenEvents = <P extends InputProps>(
         classNames.push(className);
       }
 
-      type EventHandlers = Omit<InputProps, 'className'> & {
-        readOnly?: string;
-        'aria-readonly'?: boolean;
-      };
       const eventHandlers: EventHandlers = {
         onClick: withEventHandler(onOpen, onClick),
         onKeyDown: withEventHandler(

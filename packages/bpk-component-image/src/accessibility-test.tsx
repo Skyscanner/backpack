@@ -18,6 +18,7 @@
 
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkImage from './BpkImage';

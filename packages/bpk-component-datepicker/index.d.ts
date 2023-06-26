@@ -16,23 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
-
-import BpkBreakpoint, { BREAKPOINTS } from './BpkBreakpoint';
-
-describe('BpkBreakpoint accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {(matches) =>
-          matches ? <div>matches</div> : <div>does not match</div>
-        }
-      </BpkBreakpoint>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+import { CALENDAR_SELECTION_TYPE } from '../bpk-component-calendar';
+import BpkDatepicker from './src/BpkDatepicker';
+import themeAttributes from './src/themeAttributes';
+export default BpkDatepicker;
+export { CALENDAR_SELECTION_TYPE, themeAttributes };
