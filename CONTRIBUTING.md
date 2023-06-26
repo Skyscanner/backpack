@@ -7,7 +7,7 @@ You want to help us enable Skyscanner to create beautiful, coherent products at 
 * [Prerequisites](#prerequisites)
 * [Getting started](#getting-started)
 * [Adding a new component](#adding-a-new-component)
-* [Experimental changes](#experimental-changes)
+* [Experimenting with Backpack components](#experimental-changes)
 * [How to](#how-to)
 
 ## Prerequisites
@@ -20,11 +20,7 @@ All files are released with the Apache 2.0 licence.
 
 If you are adding a new file it should have a header comment containing licence information from the following file: [license](./license.txt).
 
-### Decisions
-
-Conventions and squad decisions are kept in the [decisions folder](/decisions). We recommend familiarising yourself with these.
-
-### Installing Node
+### Environment
 
 Backpack is developed using Node. The required Node version is specified in `.nvmrc`.
 
@@ -33,75 +29,99 @@ If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com
 
 To install npm, use `npm install --global npm@^<version>`. For example, `npm install --global npm@^9.5.1`.
 
-### Android, iOS and React Native
-
-Backpack also supports React Native, plus native Android and iOS.
-
-They can be found at [backpack-android](https://github.com/skyscanner/backpack-android) and [backpack-ios](https://github.com/skyscanner/backpack-ios) and [backpack-react-native](https://github.com/skyscanner/backpack-react-native)
-
 ### Code style
 
 Backpack uses a combination of [ESLint](https://eslint.org) and [Prettier](https://prettier.io) to enforce coding styles. ESLint runs as a pre-commit hook, so it isn't possible to commit code that causes ESLint to fail.
 
 We recommend that you install [a plugin to your editor](https://eslint.org/docs/user-guide/integrations#editors) to run ESLint automatically, which will then show you any errors inline. You can even enable an option to fix ESLint errors automatically upon saving.
 
+### Android, iOS and React Native
+
+Backpack also supports React Native, plus native Android and iOS.
+
+They can be found at [backpack-android](https://github.com/skyscanner/backpack-android) and [backpack-ios](https://github.com/skyscanner/backpack-ios) and [backpack-react-native](https://github.com/skyscanner/backpack-react-native)
+
 ## Getting started
 
-**All Backpack components are written in Typescript or are being gradually migrated to Typescript.**
+Once you have a compatible environment as stated above, you can setup the project.
 
-As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to an existing component also migrate the respective component.
+1. Pull the code and create a new branch
 
-### Getting the code
-
-You should pull code down using the following command
-
-```
+```sh
 git clone https://github.com/YOUR_USERNAME/Backpack.git
+git checkout -b {BRANCH_NAME}
 ```
 
-### Install dependencies
+2. Install npm dependencies
 
-Run `npm install` to install dependencies from npm.
+```sh
+npm install
+```
 
-### Build the code
+3. Build icons
 
-Backpack's code depends on some things that must be built first, such as icon fonts, SVGs and tokens.
+```sh
+npm run build
+```
 
-Use `npm run build` to do this.
+4. Start the Storybook server, then go to [http://localhost:9001](http://localhost:9001) in a web browser to view it
 
-### Run the development environment
+```sh
+npm start
+```
 
-We use [Storybook](https://storybook.js.org/) for our development environment. Run `npm start` to start the Storybook server, then go to [http://localhost:9001](http://localhost:9001) in a web browser to view it.
+## Write your code
 
-## Adding icons
+Before you start writing code, we recommend familiarising yourself with the engineering convetions and squad decisions which are kept in the [decisions folder](/decisions).
 
-If you want to add icons, please discuss them with us first.
+### React components
 
-Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, just copy the correctly named SVG files to the `lg` and `sm` directories in [`@skyscanner/bpk-svgs/src/icons/`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-svgs/src/icons/) and then run `npm run build`.
+> **All Backpack components are written in Typescript or are being gradually migrated to Typescript.**
+>
+> As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to an existing component also migrate the respective component.
 
-## Adding a new component
+Our current supported React version is 17.0.2, please be mindful when using React features that may not yet be supported.
 
-If you want to add a new component, we will need the following:
+#### Adding a new component
 
-- Design (Figma file)
-- Associated tokens
-- Sass mixin(s)
-- React component
-- Stories
-- Tests
-- Documentation (Including main `README.md`)
+If you want to add a new component:
 
-### Design
+1. Reach out to Koala team on Slack to discuss and agree on the proposed change. Make sure to add to your message the design (Figma file) and include examples for each state e.g. disabled, expanded etc.
+2. Use `bpk-component-boilerplate` to create a new skeleton React component.
+3. Use existing components for code style inspiration. Here are some good examples to follow:
+    - [bpk-component-chip](./packages/bpk-component-chip/index.ts)
+    - TODO add more examples
+    
+    It's unlikely you will need to create a class component. If you are in doubt, have a look at the React guidelines for component and see if you can use a function component instead: [React component guidelines](https://react.dev/reference/react/Component)
+4. Create stories TODO refine
+5. Add tests TODO refine
+6. Update `README.md` TODO refine
 
-Figma is the preferred format for non-technical folks. We’d appreciate if you could provide an exact match of your component in Figma format together with folders for each state e.g. disabled, expanded etc.
+TODO: What are these???
 
-### Tokens
+We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
 
-Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) package.
+When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
 
-Tokens are defined in the `src/base` directory (with the exception of product-specific tokens, which are in other subdirectories). Tokens come in two layers: In `aliases.json`, all base tokens are defined with concrete values, such as colours, numbers and sizes. The other files then map those aliases to tokens for specific elements.
+--------- TODO
+#### Contribute breaking changes
 
-> You should probably not touch `aliases.json`, as our colour palette or grid rarely changes.
+Anytime a change could break existing applications it's considered a breaking change. To make upgrading Backpack easier for consumers, breaking changes should follow a deprecation cycle.
+
+In most cases, it is recommended to create a V2 component and provide a migration guide. If your breaking change either
+- requires consumers to make multiple modifications to their code to adopt the changes (e.g. renaming or removing multiple props of an API), OR
+- involves a significant alteration of the structure or API of a component in a way that keeping both APIs within one component may make the code unreadable (e.g. rewriting a component to reduce the number of files from 20 to 5)
+then you should contribute your changes as a separate V2 component.
+
+Once the old component has been removed from the codebase and is no longer in use, the Koala team will run automated scripts to make the new component the default.
+
+If your breaking change doesn't require consumers to make many modifications or its usages are limited (around 10-20 usages across Skyscanner web repositories), and keeping both versions in one component doesn't affect the readability of it, you will not need to create a separate component.
+
+If you are unsure of the impact or scale of your change, reach out to Koala team and we will help you!
+
+### Tokens and other foundational elements
+
+Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) package. Head over to the [`@skyscanner/bpk-foundations-web` contribution guidelines](https://github.com/Skyscanner/backpack-foundations/blob/main/CONTRIBUTING.md) if you'd like to contribute a token to Backpack.
 
 ### Sass mixins
 
@@ -109,23 +129,18 @@ All Sass mixins are defined in the [`bpk-mixins`](https://github.com/Skyscanner/
 
 If you add a new file of mixins, for example for a new *atom*, make sure you add the file to the imports in `_index.scss`.
 
-### React component
+### Adding icons
 
-**All new components should be written in Typescript.**
+If you want to add icons, please discuss them with us first.
 
-Use `bpk-component-boilerplate` to create a new skeleton React component. Once this is created, use existing components for code style inspiration.
+Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, just copy the correctly named SVG files to the `lg` and `sm` directories in [`@skyscanner/bpk-svgs/src/icons/`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-svgs/src/icons/) and then run `npm run build`.
 
-We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
 
-Our current supported React version is 17.0.2, please be mindful when using React features that may not yet be supported.
-
-When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
-
-### Documentation
+## Documentation
 
 See our design system documentation at [skyscanner.design](https://www.skyscanner.design).
 
-## Experimental changes
+## Experimenting with Backpack components
 
 Want to run A/B experiments on features that entail changes to Backpack components? Continue reading below 👇
 
@@ -242,24 +257,6 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 * `npm run lint:js` to lint JS.
 * `npm run lint:js:fix` to lint and try to automatically fix any errors.
 * `npm run lint:scss` to lint SCSS.
-
-</details>
-
-<details>
-<summary>Contribute breaking changes</summary>
-
-Anytime a change could break existing applications it's considered a breaking change. To make upgrading Backpack easier for consumers, breaking changes should follow a deprecation cycle.
-
-In most cases, it is recommended to create a V2 component and provide a migration guide. If your breaking change either
-- requires consumers to make multiple modifications to their code to adopt the changes (e.g. renaming or removing multiple props of an API), OR
-- involves a significant alteration of the structure or API of a component in a way that keeping both APIs within one component may make the code unreadable (e.g. rewriting a component to reduce the number of files from 20 to 5)
-then you should contribute your changes as a separate V2 component.
-
-Once the old component has been removed from the codebase and is no longer in use, the Koala team will run automated scripts to make the new component the default.
-
-If your breaking change doesn't require consumers to make many modifications or its usages are limited (around 10-20 usages across Skyscanner web repositories), and keeping both versions in one component doesn't affect the readability of it, you will not need to create a separate component.
-
-If you are unsure of the impact or scale of your change, reach out to Koala team and we will help you!
 
 </details>
 
