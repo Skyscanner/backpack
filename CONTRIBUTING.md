@@ -6,7 +6,8 @@ You want to help us enable Skyscanner to create beautiful, coherent products at 
 
 * [Prerequisites](#prerequisites)
 * [Getting started](#getting-started)
-* [Adding a new component](#adding-a-new-component)
+* [Write your code](#write-your-code)
+* [Design documentation](#design-documentation)
 * [Experimenting with Backpack components](#experimental-changes)
 * [How to](#how-to)
 
@@ -80,30 +81,36 @@ Before you start writing code, we recommend familiarising yourself with the engi
 >
 > As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to an existing component also migrate the respective component.
 
+#### React version
+
 Our current supported React version is 17.0.2, please be mindful when using React features that may not yet be supported.
 
-#### Adding a new component
+#### Design
+If you'd like to contribute a change to a React component, please first reach out to Koala team on Slack to discuss and agree on the proposed change. Make sure to add to your message the design (Figma file) and include examples for each state e.g. disabled, expanded etc. if applicable.
 
-If you want to add a new component:
+#### Example components
+Look at existing components for code style inspiration. Here are some good examples to follow:
+- [bpk-component-chip](./packages/bpk-component-chip/index.ts)
+- [bpk-component-button](./packages/bpk-component-button/src/BpkButtonV2/BpkButton.tsx)
 
-1. Reach out to Koala team on Slack to discuss and agree on the proposed change. Make sure to add to your message the design (Figma file) and include examples for each state e.g. disabled, expanded etc.
-2. Use `bpk-component-boilerplate` to create a new skeleton React component.
-3. Use existing components for code style inspiration. Here are some good examples to follow:
-    - [bpk-component-chip](./packages/bpk-component-chip/index.ts)
-    - TODO add more examples
-    
-    It's unlikely you will need to create a class component. If you are in doubt, have a look at the React guidelines for component and see if you can use a function component instead: [React component guidelines](https://react.dev/reference/react/Component)
-4. Create stories TODO refine
-5. Add tests TODO refine
-6. Update `README.md` TODO refine
-
-TODO: What are these???
+#### CSS
 
 We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
 
 When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
 
---------- TODO
+#### Adding a new component
+
+If you want to add a new component:
+
+1. Use `bpk-component-boilerplate` to create a new skeleton React component.
+2. It's unlikely you will need to create a class component. If you are in doubt, have a look at the React guidelines for component and see if you can use a function component instead: [React component guidelines](https://react.dev/reference/react/Component)
+3. Create stories with Storybook - each component has a set of stories living under `examples/bpk-component-{name}/stories.ts`. Stories should cover most visual variants of a component. Read more about stories [here](https://storybook.js.org/docs/react/writing-stories/introduction).
+4. Create tests
+    - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest`. These will then be picked up by Percy to run on CI.
+    - Unit tests - Unit tests live in the same folder with the component's code and rely on `jest` and `React Testing Library`
+5. Update `README.md` following the boilerplate format
+
 #### Contribute breaking changes
 
 Anytime a change could break existing applications it's considered a breaking change. To make upgrading Backpack easier for consumers, breaking changes should follow a deprecation cycle.
@@ -119,24 +126,11 @@ If your breaking change doesn't require consumers to make many modifications or 
 
 If you are unsure of the impact or scale of your change, reach out to Koala team and we will help you!
 
-### Tokens and other foundational elements
+### Foundation elements
 
-Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) package. Head over to the [`@skyscanner/bpk-foundations-web` contribution guidelines](https://github.com/Skyscanner/backpack-foundations/blob/main/CONTRIBUTING.md) if you'd like to contribute a token to Backpack.
+Our tokens, Sass mixins, and icons live in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) repository. Head over to the [`@skyscanner/bpk-foundations-web` contribution guidelines](https://github.com/Skyscanner/backpack-foundations/blob/main/CONTRIBUTING.md) if you'd like to contribute any changes to a foundation element.
 
-### Sass mixins
-
-All Sass mixins are defined in the [`bpk-mixins`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-mixins) package. The package also exposes the Sass variables from the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) package.
-
-If you add a new file of mixins, for example for a new *atom*, make sure you add the file to the imports in `_index.scss`.
-
-### Adding icons
-
-If you want to add icons, please discuss them with us first.
-
-Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, just copy the correctly named SVG files to the `lg` and `sm` directories in [`@skyscanner/bpk-svgs/src/icons/`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-svgs/src/icons/) and then run `npm run build`.
-
-
-## Documentation
+## Design documentation
 
 See our design system documentation at [skyscanner.design](https://www.skyscanner.design).
 
