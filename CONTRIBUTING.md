@@ -103,11 +103,11 @@ When creating (S)CSS files, follow the CSS Module naming convention by using the
 
 If you want to add a new component:
 
-1. Use `bpk-component-boilerplate` to create a new skeleton React component.
+1. Use `bpk-component-boilerplate` to create a new skeleton React component
 2. It's unlikely you will need to create a class component. If you are in doubt, have a look at the React guidelines for component and see if you can use a function component instead: [React component guidelines](https://react.dev/reference/react/Component)
-3. Create stories with Storybook - each component has a set of stories living under `examples/bpk-component-{name}/stories.ts`. Stories should cover most visual variants of a component. Read more about stories [here](https://storybook.js.org/docs/react/writing-stories/introduction).
+3. Create stories - each component has a set of stories living under `examples/bpk-component-{name}/stories.ts`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
 4. Create tests
-    - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest`. These will then be picked up by Percy to run on CI.
+    - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest` - these will then be picked up by Percy to run on CI
     - Unit tests - Unit tests live in the same folder with the component's code and rely on `jest` and `React Testing Library`
 5. Update `README.md` following the boilerplate format
 
