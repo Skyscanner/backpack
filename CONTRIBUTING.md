@@ -73,7 +73,7 @@ npm start
 
 ## Write your code
 
-Before you start writing code, we recommend familiarising yourself with the engineering convetions and squad decisions which are kept in the [decisions folder](/decisions).
+Before you start writing code, we recommend familiarising yourself with the engineering conventions and squad decisions which are kept in the [decisions folder](/decisions).
 
 ### React components
 
