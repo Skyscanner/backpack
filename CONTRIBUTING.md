@@ -8,7 +8,7 @@ You want to help us enable Skyscanner to create beautiful, coherent products at 
 * [Getting started](#getting-started)
 * [Write your code](#write-your-code)
 * [Design documentation](#design-documentation)
-* [Experimenting with Backpack components](#experimental-changes)
+* [Experimenting with Backpack components](#experimenting-with-backpack-components)
 * [How to](#how-to)
 
 ## Prerequisites
