@@ -109,11 +109,12 @@ If you want to add a new component:
 4. Create tests
     - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest` - these will then be picked up by Percy to run on CI
     - Unit tests - Unit tests live in the same folder with the component's code and rely on `jest` and `React Testing Library`
+    - Accessibility tests - Accessibility tests live in the same folder with the component's code and rely on `jest-axe` and `React Testing Library`
 5. Update `README.md` following the boilerplate format
 
 #### Contribute breaking changes
 
-Anytime a change could break existing applications it's considered a breaking change. To make upgrading Backpack easier for consumers, breaking changes should follow a deprecation cycle.
+Anytime a change could break existing applications it's considered a breaking change. To make upgrading Backpack easier for consumers, breaking changes should follow a deprecation cycle. You should also consider running an experiment before making the changes stable - read more about experiments with Backpack here: [Backpack experimentation guidelines](#experimenting-with-backpack-components).
 
 In most cases, it is recommended to create a V2 component and provide a migration guide. If your breaking change either
 - requires consumers to make multiple modifications to their code to adopt the changes (e.g. renaming or removing multiple props of an API), OR
@@ -128,7 +129,9 @@ If you are unsure of the impact or scale of your change, reach out to Koala team
 
 ### Foundation elements
 
-Our tokens, Sass mixins, and icons live in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) repository. Head over to the [`@skyscanner/bpk-foundations-web` contribution guidelines](https://github.com/Skyscanner/backpack-foundations/blob/main/CONTRIBUTING.md) if you'd like to contribute any changes to a foundation element.
+Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) package.
+
+All of our tokens, Sass mixins, and icons live in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) repository. Head over to the [`@skyscanner/bpk-foundations-web` contribution guidelines](https://github.com/Skyscanner/backpack-foundations/blob/main/CONTRIBUTING.md) if you'd like to contribute any changes to a foundation element.
 
 ## Design documentation
 
