@@ -156,6 +156,8 @@ describe('BpkScrim', () => {
       );
       expect(lockScroll).toHaveBeenCalled();
       expect(focusStore.storeFocus).toHaveBeenCalled();
+      expect(storeScroll).not.toHaveBeenCalled();
+      expect(fixBody).not.toHaveBeenCalled();
       expect(mockSetAttribute).toHaveBeenCalledWith('aria-hidden', 'true');
     });
   });
@@ -210,6 +212,8 @@ describe('BpkScrim', () => {
       unmount();
 
       expect(unlockScroll).toHaveBeenCalled();
+      expect(restoreScroll).not.toHaveBeenCalled();
+      expect(unfixBody).not.toHaveBeenCalled();
       expect(focusStore.storeFocus).toHaveBeenCalled();
       expect(focusScope.unscopeFocus).toHaveBeenCalled();
       expect(mockRemoveAttribute).toHaveBeenCalledWith('aria-hidden');
