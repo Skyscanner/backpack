@@ -95,8 +95,6 @@ const withScrim = <P extends object>(
       /**
        * lockScroll and the associated unlockScroll is how we control the scroll behaviour of the application when the scrim is active.
        * The desired behaviour is to prevent the user from scrolling content behind the scrim. The above iOS fixes are in place because lockScroll alone does not solve due to iOS specific issues.
-       *
-       * The lockScroll function is still called for iOS devices as it solves some scrolling issues. Without this applied for example, iPads have the ability to scroll the content behind the scrim once.
        */
 
       lockScroll();
