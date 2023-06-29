@@ -90,9 +90,9 @@ const withScrim = <P extends object>(
        */
       if (isIphone || isIpad) {
         storeScroll();
-        lockScroll();
         fixBody();
       }
+      lockScroll();
 
       if (applicationElement) {
         applicationElement.setAttribute('aria-hidden', 'true');
@@ -109,9 +109,10 @@ const withScrim = <P extends object>(
 
       if (isIphone || isIpad) {
         setTimeout(restoreScroll, 0);
-        unlockScroll();
         unfixBody();
       }
+
+      unlockScroll();
 
       if (applicationElement) {
         applicationElement.removeAttribute('aria-hidden');

@@ -52,6 +52,9 @@ jest.mock('./scroll-utils', () => ({
   unfixBody: jest.fn(),
 }));
 
+beforeEach(() => {
+  jest.resetAllMocks();
+});
 describe('BpkScrim', () => {
   describe('render', () => {
     let TestComponent: ComponentType<any> | string;
