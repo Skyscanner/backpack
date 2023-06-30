@@ -90,9 +90,14 @@ const withScrim = <P extends object>(
        */
       if (isIphone || isIpad) {
         storeScroll();
-        lockScroll();
         fixBody();
       }
+      /**
+       * lockScroll and the associated unlockScroll is how we control the scroll behaviour of the application when the scrim is active.
+       * The desired behaviour is to prevent the user from scrolling content behind the scrim. The above iOS fixes are in place because lockScroll alone does not solve due to iOS specific issues.
+       */
+
+      lockScroll();
 
       if (applicationElement) {
         applicationElement.setAttribute('aria-hidden', 'true');
@@ -109,9 +114,9 @@ const withScrim = <P extends object>(
 
       if (isIphone || isIpad) {
         setTimeout(restoreScroll, 0);
-        unlockScroll();
         unfixBody();
       }
+      unlockScroll();
 
       if (applicationElement) {
         applicationElement.removeAttribute('aria-hidden');
