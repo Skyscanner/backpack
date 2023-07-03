@@ -23,9 +23,8 @@ const sassFunctions = require('bpk-mixins/sass-functions');
 
 const postCssPlugins = require('../scripts/webpack/postCssPlugins');
 
-const { BPK_TOKENS, ENABLE_CSS_MODULES } = process.env;
+const { BPK_TOKENS } = process.env;
 const rootDir = path.resolve(__dirname, '../');
-const useCssModules = ENABLE_CSS_MODULES !== 'false';
 
 module.exports = ({ config }) => {
   config.module.rules.push({
@@ -56,14 +55,17 @@ module.exports = ({ config }) => {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
-          modules: useCssModules,
-          localIdentName: '[local]-[hash:base64:5]',
+          modules: {
+            localIdentName: '[local]-[hash:base64:5]',
+          },
         },
       },
       {
         loader: 'postcss-loader',
         options: {
-          plugins: postCssPlugins,
+          postcssOptions: {
+            plugins: [postCssPlugins],
+          },
         },
       },
     ],
@@ -78,14 +80,17 @@ module.exports = ({ config }) => {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
-          modules: useCssModules,
-          localIdentName: '[local]-[hash:base64:5]',
+          modules: {
+            localIdentName: '[local]-[hash:base64:5]',
+          },
         },
       },
       {
         loader: 'postcss-loader',
         options: {
-          plugins: postCssPlugins,
+          postcssOptions: {
+            plugins: [postCssPlugins],
+          },
         },
       },
       {
