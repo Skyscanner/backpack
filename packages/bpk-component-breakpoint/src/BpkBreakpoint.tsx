@@ -17,7 +17,6 @@
  */
 
 import type { ReactNode } from 'react';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import MediaQuery from 'react-responsive';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
