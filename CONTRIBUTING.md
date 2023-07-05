@@ -59,7 +59,7 @@ git checkout -b {BRANCH_NAME}
 npm install
 ```
 
-3. Build icons
+3. Build SVGs
 
 ```sh
 npm run build
@@ -77,9 +77,13 @@ Before you start writing code, we recommend familiarising yourself with the engi
 
 ### React components
 
-> **All Backpack components are written in Typescript or are being gradually migrated to Typescript.**
->
-> As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to an existing component also migrate the respective component.
+#### TypeScript
+
+**All Backpack components are written in Typescript or are being gradually migrated to Typescript.**
+
+> As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to an existing component also migrate the respective component to TypeScript.
+
+We also ship the type declaration files for all TypeScript components to ensure proper compatibility and usage of the components.
 
 #### React version
 
@@ -110,20 +114,21 @@ If you want to add a new component:
     - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest` - these will then be picked up by Percy to run on CI
     - Unit tests - Unit tests live in the same folder with the component's code and rely on `jest` and `React Testing Library`
     - Accessibility tests - Accessibility tests live in the same folder with the component's code and rely on `jest-axe` and `React Testing Library`
-5. Update `README.md` following the boilerplate format
+5. Add type declaration files within the same folder of the component to ensure proper compatibility and usage of the components
+6. Update `README.md` following the boilerplate format
 
 #### Contribute breaking changes
 
-Anytime a change could break existing applications it's considered a breaking change. To make upgrading Backpack easier for consumers, breaking changes should follow a deprecation cycle. You should also consider running an experiment before making the changes stable - read more about experiments with Backpack here: [Backpack experimentation guidelines](#experimenting-with-backpack-components).
+Anytime a change could break existing applications, it's considered a breaking change. To make upgrading Backpack easier for consumers, most breaking changes should follow a deprecation cycle. You should also consider running an experiment before making the changes stable - read more about experiments with Backpack here: [Backpack experimentation guidelines](#experimenting-with-backpack-components).
 
-In most cases, it is recommended to create a V2 component and provide a migration guide. If your breaking change either
-- requires consumers to make multiple modifications to their code to adopt the changes (e.g. renaming or removing multiple props of an API), OR
+In most cases, it is recommended to create a V2 component. If your breaking change either
+- requires consumers to make multiple modifications to their code to adopt the changes (e.g. renaming or removing multiple props of an API, large visual changes etc.), OR
 - involves a significant alteration of the structure or API of a component in a way that keeping both APIs within one component may make the code unreadable (e.g. rewriting a component to reduce the number of files from 20 to 5)
 then you should contribute your changes as a separate V2 component.
 
-Once the old component has been removed from the codebase and is no longer in use, the Koala team will run automated scripts to make the new component the default.
+If keeping both versions in one component does not affect its readability, you will not need to create a separate component. And finally, if your breaking change does not require consumers to make many modifications or its usages are limited (around 5-10 usages across Skyscanner web repositories) you will not need to follow a deprecation cycle.
 
-If your breaking change doesn't require consumers to make many modifications or its usages are limited (around 10-20 usages across Skyscanner web repositories), and keeping both versions in one component doesn't affect the readability of it, you will not need to create a separate component.
+Migration guides are required for all breaking changes.
 
 If you are unsure of the impact or scale of your change, reach out to Koala team and we will help you!
 
