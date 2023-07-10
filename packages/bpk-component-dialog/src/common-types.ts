@@ -37,6 +37,7 @@ export type DialogInnerProps = {
 };
 
 export type Props = DialogInnerProps & {
+  dialogRef?: (ref: HTMLElement | null | undefined) => void;
   isOpen: boolean;
   renderTarget?: () => HTMLElement | null;
   onClose: (event?: TouchEvent | MouseEvent | KeyboardEvent) => void | null;
