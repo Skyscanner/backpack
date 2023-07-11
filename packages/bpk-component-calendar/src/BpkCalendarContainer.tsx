@@ -62,6 +62,8 @@ type InjectedProps = {
   onDateClick: ((date: Date) => void) | null;
   onDateKeyDown: ((event: KeyboardEvent) => void) | null;
   month: Date;
+  minDate: Date;
+  maxDate: Date;
 };
 
 type CalendarProps<P> = Omit<P & Props, keyof InjectedProps> & {
