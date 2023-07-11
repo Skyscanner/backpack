@@ -52,14 +52,15 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              minimize: true,
               importLoaders: 1,
             },
           },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: postCssPlugins,
+              postcssOptions: {
+                plugins: [postCssPlugins],
+              },
             },
           },
           {
@@ -76,14 +77,15 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              minimize: true,
               importLoaders: 1,
             },
           },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: postCssPlugins,
+              postcssOptions: {
+                plugins: [postCssPlugins],
+              },
             },
           },
         ],

@@ -138,8 +138,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -1622,19 +1621,19 @@ body {
   font-size: 1rem;
   line-height: 1.3rem;
   /* stylelint-disable-line scale-unlimited/declaration-strict-value */ }
-  body.scaffold-font-size {
+  :global(body.scaffold-font-size) {
     font-size: 13px;
     /* stylelint-disable-line unit-disallowed-list, scale-unlimited/declaration-strict-value */ }
-  body.enable-font-smoothing {
+  :global(body.enable-font-smoothing) {
     -webkit-font-smoothing: antialiased; }
 
-.hidden,
-.hide {
+:global(.hidden),
+:global(.hide) {
   display: none !important;
   /* stylelint-disable-line declaration-no-important */ }
 
-.visuallyhidden,
-.visually-hidden {
+:global(.visuallyhidden),
+:global(.visually-hidden) {
   position: absolute;
   width: 1px;
   /* stylelint-disable-line unit-disallowed-list */
@@ -1647,9 +1646,9 @@ body {
   overflow: hidden;
   clip: rect(0 0 0 0); }
 
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
+:global(.visuallyhidden.focusable):active, :global(.visuallyhidden.focusable):focus,
+:global(.visually-hidden.focusable):active,
+:global(.visually-hidden.focusable):focus {
   position: static;
   width: auto;
   height: auto;
@@ -1657,14 +1656,14 @@ body {
   overflow: visible;
   clip: auto; }
 
-.invisible {
+:global(.invisible) {
   visibility: hidden; }
 
-.clearfix::before, .clearfix::after {
+:global(.clearfix)::before, :global(.clearfix)::after {
   content: '';
   display: table; }
 
-.clearfix::after {
+:global(.clearfix)::after {
   clear: both; }
 
 /* stylelint-enable */
