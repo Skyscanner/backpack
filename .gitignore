@@ -3,6 +3,7 @@
 .vscode
 .sass-cache
 /dist
+/dist-sassdoc
 /dist-storybook
 /dist-sassdoc
 /coverage
