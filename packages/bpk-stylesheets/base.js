@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);\n/*\n * Backpack - Skyscanner's Design System\n *\n * Copyright 2016 Skyscanner Ltd\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *   http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\n\n(() => {\n  if (typeof document === 'undefined') {\n    return;\n  }\n  const classNames = [];\n\n  // touch support\n  classNames.push('ontouchstart' in window ||\n  // eslint-disable-line no-undef\n  window.DocumentTouch && document instanceof DocumentTouch // eslint-disable-line no-undef\n  ? 'touch-support' : 'no-touch-support');\n\n  // add more feature tests here...\n\n  // eslint-disable-next-line no-undef\n  document.documentElement.className += ` ${classNames.map(className => `bpk-${className}`).join(' ')}`;\n})();\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./index.scss\");\n/*\n * Backpack - Skyscanner's Design System\n *\n * Copyright 2016 Skyscanner Ltd\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *   http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\n\n(() => {\n  if (typeof document === 'undefined') {\n    return;\n  }\n  const classNames = [];\n\n  // touch support\n  classNames.push('ontouchstart' in window ||\n  // eslint-disable-line no-undef\n  window.DocumentTouch && document instanceof DocumentTouch // eslint-disable-line no-undef\n  ? 'touch-support' : 'no-touch-support');\n\n  // add more feature tests here...\n\n  // eslint-disable-next-line no-undef\n  document.documentElement.className += ` ${classNames.map(className => `bpk-${className}`).join(' ')}`;\n})();\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -102,10 +102,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
 /*!********************!*\
   !*** ./index.scss ***!
   \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./index.scss?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./index.scss?");
 
 /***/ })
 
