@@ -3,7 +3,7 @@
 exports[`BpkSectionHeader should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-section-header__titleAndDesc"
+    class="bpk-section-header"
   >
     <div
       class="bpk-section-header__titleAndDesc"
@@ -21,7 +21,7 @@ exports[`BpkSectionHeader should render correctly 1`] = `
 exports[`BpkSectionHeader should render correctly with a "description" prop 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-section-header__titleAndDesc"
+    class="bpk-section-header"
   >
     <div
       class="bpk-section-header__titleAndDesc"
@@ -44,7 +44,7 @@ exports[`BpkSectionHeader should render correctly with a "description" prop 1`] 
 exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-section-header__titleAndDesc"
+    class="bpk-section-header"
   >
     <div
       class="bpk-section-header__titleAndDesc"
