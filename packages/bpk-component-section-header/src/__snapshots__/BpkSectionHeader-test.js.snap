@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSectionHeader should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-section-header__titleAndDesc"
+  >
+    <div
+      class="bpk-section-header__titleAndDesc"
+    >
+      <span
+        class="bpk-text bpk-text--heading-2"
+      >
+        Section title
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkSectionHeader should render correctly with a "description" prop 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-section-header__titleAndDesc"
+  >
+    <div
+      class="bpk-section-header__titleAndDesc"
+    >
+      <span
+        class="bpk-text bpk-text--heading-2"
+      >
+        Section title
+      </span>
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Section title description
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-section-header__titleAndDesc"
+  >
+    <div
+      class="bpk-section-header__titleAndDesc"
+    >
+      <span
+        class="bpk-text bpk-text--heading-2"
+      >
+        Section title
+      </span>
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Section title description
+      </span>
+    </div>
+    <button
+      type="button"
+    >
+      View more
+    </button>
+  </div>
+</DocumentFragment>
+`;
