@@ -6,7 +6,7 @@ exports[`BpkSectionHeader should render correctly 1`] = `
     class="bpk-section-header"
   >
     <div
-      class="bpk-section-header--titleAndDesc"
+      class="bpk-section-header--title-description"
     >
       <h2
         class="bpk-text bpk-text--body-default bpk-section-header--title"
@@ -24,7 +24,7 @@ exports[`BpkSectionHeader should render correctly with a "description" prop 1`] 
     class="bpk-section-header"
   >
     <div
-      class="bpk-section-header--titleAndDesc"
+      class="bpk-section-header--title-description"
     >
       <h2
         class="bpk-text bpk-text--body-default bpk-section-header--title"
@@ -47,7 +47,7 @@ exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
     class="bpk-section-header"
   >
     <div
-      class="bpk-section-header--titleAndDesc"
+      class="bpk-section-header--title-description"
     >
       <h2
         class="bpk-text bpk-text--body-default bpk-section-header--title"

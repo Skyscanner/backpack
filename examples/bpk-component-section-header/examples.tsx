@@ -65,7 +65,7 @@ const FullExample = () => (
 );
 
 const WithOnDarkExample = () => (
-  <div className={getClassName('bpk-section-header-examples__on-dark')}>
+  <div className={getClassName('bpk-section-header-examples--on-dark')}>
     <BpkSectionHeader
       title="Section title"
       description="Description about this section"

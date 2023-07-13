@@ -19,7 +19,7 @@
 @import '~bpk-mixins/index.scss';
 
 .bpk-section-header-examples {
-  &__on-dark {
+  &--on-dark {
     margin-top: bpk-spacing-lg();
     padding: bpk-spacing-base();
     background-color: $bpk-surface-contrast-day;
