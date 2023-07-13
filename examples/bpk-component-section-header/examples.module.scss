@@ -18,12 +18,16 @@
 
 @import '~bpk-mixins/index.scss';
 
-.bpk-component-section-header {
-  &--btn {
+.bpk-section-header-examples {
+  &__on-dark {
+    margin-top: bpk-spacing-lg();
+    padding: bpk-spacing-base();
+    background-color: $bpk-surface-contrast-day;
+  }
+
+  &--mixed {
     display: flex;
-    width: 36 * $bpk-one-pixel-rem;
-    height: 36 * $bpk-one-pixel-rem;
-    justify-content: center;
-    align-items: baseline;
+    grid-row-gap: $bpk-spacing-base;
+    flex-direction: column;
   }
 }

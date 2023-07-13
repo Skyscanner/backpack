@@ -17,28 +17,50 @@
  */
 
 /* @flow strict */
-
+import { createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkText from '../../bpk-component-text';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
 import STYLES from './BpkSectionHeader.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export const SECTION_TYPES = {
+  default: 'default',
+  onDark: 'onDark',
+} as const;
+
+export type SectionType = (typeof SECTION_TYPES)[keyof typeof SECTION_TYPES];
 
 type Props = {
   title: string;
   description?: string;
   button?: ReactNode;
+  type?: SectionType;
 };
 
-const getClassName = cssModules(STYLES);
-
-const BpkSectionHeader = (props: Props) => {
-  const { button, description, title } = props;
-
+const BpkSectionHeader = ({
+  button,
+  description,
+  title,
+  type = SECTION_TYPES.default,
+}: Props) => {
+  const onDark = type === SECTION_TYPES.onDark;
   return (
-    <div className={getClassName('bpk-section-header')}>
-      <div className={getClassName('bpk-section-header--titleAndDesc')}>
+    <div
+      className={getClassName(
+        'bpk-section-header',
+        onDark && 'bpk-section-header--on-dark',
+      )}
+    >
+      <div
+        className={getClassName(
+          'bpk-section-header--title-description',
+          onDark && 'bpk-section-header--title-description--on-dark',
+        )}
+      >
         <BpkText
           tagName="h2"
           className={getClassName('bpk-section-header--title')}

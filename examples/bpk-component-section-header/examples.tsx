@@ -18,33 +18,29 @@
 
 /* @flow strict */
 
-import BpkSectionHeader from '../../packages/bpk-component-section-header';
-import BpkButton from '../../packages/bpk-component-button';
+import { get } from 'lodash';
+
+import BpkSectionHeader, {
+  SECTION_TYPES,
+} from '../../packages/bpk-component-section-header';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
-import SmallLongArrowLeftIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import { withButtonAlignment } from '../../packages/bpk-component-icon/index';
-import { cssModules, isRTL } from '../../packages/bpk-react-utils';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
-const cls = cssModules(STYLES);
+const getClassName = cssModules(STYLES);
 
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(
   SmallLongArrowRightIcon,
 );
 
-const AlignedSmallLongArrowLeftIcon = withButtonAlignment(
-  SmallLongArrowLeftIcon,
-);
-
-const btnNode = <BpkButton CommonProps={{ blank: false }}>Action</BpkButton>;
+const btnNode = <BpkButtonV2>Action</BpkButtonV2>;
 const btnWithOnlyIconNode = (
-  <BpkButton
-    className={cls('bpk-component-section-header--btn')}
-    CommonProps={{ blank: false }}
-  >
+  <BpkButtonV2 iconOnly>
     <AlignedSmallLongArrowRightIcon />
-  </BpkButton>
+  </BpkButtonV2>
 );
 
 const DefaultExample = () => <BpkSectionHeader title="Section title" />;
@@ -68,6 +64,16 @@ const FullExample = () => (
   />
 );
 
+const WithOnDarkExample = () => (
+  <div className={getClassName('bpk-section-header-examples__on-dark')}>
+    <BpkSectionHeader
+      title="Section title"
+      description="Description about this section"
+      type={SECTION_TYPES.onDark}
+    />
+  </div>
+);
+
 const MobileExample = () => (
   <BpkSectionHeader
     title="Section title"
@@ -76,10 +82,22 @@ const MobileExample = () => (
   />
 );
 
+const MixedExample = () => (
+  <div className={getClassName('bpk-section-header-examples--mixed')}>
+    <DefaultExample />
+    <WithDescriptionExample />
+    <WithOnDarkExample />
+    <FullExample />
+    <MobileExample />
+  </div>
+);
+
 export {
   DefaultExample,
   WithDescriptionExample,
   WithButtonExample,
   FullExample,
   MobileExample,
+  MixedExample,
+  WithOnDarkExample,
 };

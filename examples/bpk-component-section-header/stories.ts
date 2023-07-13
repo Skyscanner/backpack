@@ -24,6 +24,8 @@ import {
   WithButtonExample,
   FullExample,
   MobileExample,
+  MixedExample,
+  WithOnDarkExample,
 } from './examples';
 
 export default {
@@ -40,12 +42,6 @@ export const FullProps = FullExample;
 
 export const ForMobile = MobileExample;
 
-export const VisualTestDefault = DefaultExample;
+export const WithOnDark = WithOnDarkExample;
 
-export const VisualTestWithDescription = WithDescriptionExample;
-
-export const VisualTestWithButton = WithButtonExample;
-
-export const VisualTestFullProps = FullExample;
-
-export const VisualTestMobile = MobileExample;
+export const VisualTest = MixedExample;

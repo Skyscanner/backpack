@@ -22,11 +22,21 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  background-color: transparent;
+  color: $bpk-text-primary-day;
 
-  &--titleAndDesc {
+  &--on-dark {
+    color: $bpk-text-on-dark-day;
+  }
+
+  &--title-description {
     display: flex;
     flex-direction: column;
     color: $bpk-text-primary-day;
+
+    &--on-dark {
+      color: $bpk-text-on-dark-day;
+    }
   }
 
   &--title {
