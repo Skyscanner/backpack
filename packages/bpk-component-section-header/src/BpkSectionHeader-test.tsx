@@ -20,6 +20,9 @@
 
 import { render } from '@testing-library/react';
 
+// @ts-ignore
+import BpkButton from '../../bpk-component-button';
+
 import BpkSectionHeader from './BpkSectionHeader';
 
 describe('BpkSectionHeader', () => {
@@ -43,7 +46,7 @@ describe('BpkSectionHeader', () => {
       <BpkSectionHeader
         title="Section title"
         description="Section title description"
-        button={<button type="button">View more</button>}
+        button={<BpkButton onClick={() => jest.fn()}>View more</BpkButton>}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

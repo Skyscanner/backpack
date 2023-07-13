@@ -18,35 +18,34 @@
 
 /* @flow strict */
 
-import BpkSectionHeader from '../../packages/bpk-component-section-header';
-
-const DefaultExample = () => <BpkSectionHeader title="Section title" />;
-
-const WithDescriptionExample = () => (
-  <BpkSectionHeader
-    title="Section title"
-    description="Description about this section"
-  />
-);
-
-const WithButtonExample = () => (
-  <BpkSectionHeader
-    title="Section title"
-    button={<button type="button">View more</button>}
-  />
-);
-
-const FullExample = () => (
-  <BpkSectionHeader
-    title="Section title"
-    description="Description about this section"
-    button={<button type="button">View more</button>}
-  />
-);
-
-export {
+import {
   DefaultExample,
   WithDescriptionExample,
   WithButtonExample,
   FullExample,
+  MobileExample,
+} from './examples';
+
+export default {
+  title: 'bpk-component-section-header',
 };
+
+export const Default = DefaultExample;
+
+export const WithDescription = WithDescriptionExample;
+
+export const WithButton = WithButtonExample;
+
+export const FullProps = FullExample;
+
+export const ForMobile = MobileExample;
+
+export const VisualTestDefault = DefaultExample;
+
+export const VisualTestWithDescription = WithDescriptionExample;
+
+export const VisualTestWithButton = WithButtonExample;
+
+export const VisualTestFullProps = FullExample;
+
+export const VisualTestMobile = MobileExample;

@@ -18,18 +18,17 @@
 
 /* @flow strict */
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import BpkText from '../../bpk-component-text';
 
 import STYLES from './BpkSectionHeader.module.scss';
 
 type Props = {
-  title: string,
-  description?: string,
-  button?: Node,
+  title: string;
+  description?: string;
+  button?: ReactNode;
 };
 
 const getClassName = cssModules(STYLES);
@@ -39,19 +38,18 @@ const BpkSectionHeader = (props: Props) => {
 
   return (
     <div className={getClassName('bpk-section-header')}>
-      <div className={getClassName('bpk-section-header__titleAndDesc')}>
-        <BpkText textStyle={TEXT_STYLES.heading2}>{title}</BpkText>
+      <div className={getClassName('bpk-section-header--titleAndDesc')}>
+        <BpkText
+          tagName="h2"
+          className={getClassName('bpk-section-header--title')}
+        >
+          {title}
+        </BpkText>
         {description && <BpkText>{description}</BpkText>}
       </div>
       {button}
     </div>
   );
-};
-
-BpkSectionHeader.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  button: PropTypes.node,
 };
 
 export default BpkSectionHeader;
