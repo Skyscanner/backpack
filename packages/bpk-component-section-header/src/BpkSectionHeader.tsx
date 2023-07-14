@@ -27,7 +27,7 @@ const getClassName = cssModules(STYLES);
 
 export const SECTION_TYPES = {
   default: 'default',
-  onDark: 'onDark',
+  onDark: 'on-dark',
 } as const;
 
 export type SectionType = (typeof SECTION_TYPES)[keyof typeof SECTION_TYPES];
@@ -44,32 +44,25 @@ const BpkSectionHeader = ({
   description,
   title,
   type = SECTION_TYPES.default,
-}: Props) => {
-  const onDark = type === SECTION_TYPES.onDark;
-  return (
+}: Props) => (
+  <div className={getClassName('bpk-section-header')}>
     <div
       className={getClassName(
-        'bpk-section-header',
-        onDark && 'bpk-section-header--on-dark',
+        'bpk-section-header__title-description',
+        `bpk-section-header__title-description--${type}`,
       )}
     >
-      <div
-        className={getClassName(
-          'bpk-section-header--title-description',
-          onDark && 'bpk-section-header--title-description--on-dark',
-        )}
+      <BpkText
+        tagName="h2"
+        className={getClassName('bpk-section-header__title')}
+        aria-label={title}
       >
-        <BpkText
-          tagName="h2"
-          className={getClassName('bpk-section-header--title')}
-        >
-          {title}
-        </BpkText>
-        {description && <BpkText>{description}</BpkText>}
-      </div>
-      {button}
+        {title}
+      </BpkText>
+      {description && <BpkText aria-label={description}>{description}</BpkText>}
     </div>
-  );
-};
+    {button}
+  </div>
+);
 
 export default BpkSectionHeader;

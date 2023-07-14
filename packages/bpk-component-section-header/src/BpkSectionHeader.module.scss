@@ -23,23 +23,21 @@
   justify-content: space-between;
   align-items: flex-start;
   background-color: transparent;
-  color: $bpk-text-primary-day;
 
-  &--on-dark {
-    color: $bpk-text-on-dark-day;
-  }
-
-  &--title-description {
+  &__title-description {
     display: flex;
     flex-direction: column;
-    color: $bpk-text-primary-day;
+
+    &--default {
+      color: $bpk-text-primary-day;
+    }
 
     &--on-dark {
       color: $bpk-text-on-dark-day;
     }
   }
 
-  &--title {
+  &__title {
     @include bpk-heading-2;
 
     @include bpk-breakpoint-mobile {

@@ -21,7 +21,7 @@ import { render } from '@testing-library/react';
 // @ts-ignore
 import { BpkButtonV2 } from '../../bpk-component-button';
 
-import BpkSectionHeader from './BpkSectionHeader';
+import BpkSectionHeader, { SECTION_TYPES } from './BpkSectionHeader';
 
 describe('BpkSectionHeader', () => {
   it('should render correctly', () => {
@@ -45,6 +45,18 @@ describe('BpkSectionHeader', () => {
         title="Section title"
         description="Section title description"
         button={<BpkButtonV2 onClick={() => jest.fn()}>Action</BpkButtonV2>}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with "type" prop', () => {
+    const { asFragment } = render(
+      <BpkSectionHeader
+        title="Section title"
+        description="Section title description"
+        button={<BpkButtonV2 onClick={() => jest.fn()}>Action</BpkButtonV2>}
+        type={SECTION_TYPES.onDark}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

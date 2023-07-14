@@ -61,7 +61,7 @@ const FullExample = () => (
 );
 
 const WithOnDarkExample = () => (
-  <div className={getClassName('bpk-section-header-examples--on-dark')}>
+  <div className={getClassName('bpk-section-header-examples__on-dark')}>
     <BpkSectionHeader
       title="Section title"
       description="Description about this section"
@@ -79,7 +79,7 @@ const MobileExample = () => (
 );
 
 const MixedExample = () => (
-  <div className={getClassName('bpk-section-header-examples--mixed')}>
+  <div className={getClassName('bpk-section-header-examples__mixed')}>
     <DefaultExample />
     <WithDescriptionExample />
     <WithOnDarkExample />

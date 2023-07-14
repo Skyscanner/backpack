@@ -25,7 +25,12 @@ import BpkSectionHeader from './BpkSectionHeader';
 
 describe('BpkSectionHeader accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkSectionHeader title="Section title" />);
+    const { container } = render(
+      <BpkSectionHeader
+        title="Section title"
+        description="Description about this section"
+      />,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
