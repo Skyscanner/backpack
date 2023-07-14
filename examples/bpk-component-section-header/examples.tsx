@@ -18,8 +18,6 @@
 
 /* @flow strict */
 
-import { get } from 'lodash';
-
 import BpkSectionHeader, {
   SECTION_TYPES,
 } from '../../packages/bpk-component-section-header';

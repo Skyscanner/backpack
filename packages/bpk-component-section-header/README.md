@@ -20,8 +20,9 @@ export default () => (
 
 ### BpkSectionHeader
 
-| Property              | PropType | Required | Default Value |
-| --------------------- |----------|----------| ------------- |
-| title              | string   | true     | -             |
-| description              | string   | false    | -             |
-| button              | node     | false    | -             |
+| Property    | PropType                   | Required | Default Value |
+|-------------|----------------------------|----------|---------------|
+| title       | string                     | true     | -             |
+| description | string                     | false    | -             |
+| button      | node                       | false    | -             |
+| type        | oneOf("default", "onDark") | false    | default       |
