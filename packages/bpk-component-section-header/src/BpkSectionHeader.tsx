@@ -17,11 +17,10 @@
  */
 
 /* @flow strict */
-import { createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import BpkText from '../../bpk-component-text';
 
 import STYLES from './BpkSectionHeader.module.scss';
 
