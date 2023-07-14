@@ -73,7 +73,7 @@ npm start
 
 ## Write your code
 
-Before you start writing code, we recommend familiarising yourself with the engineering conventions and squad decisions which are kept in the [decisions folder](/decisions).
+Before you start writing code, we recommend familiarising yourself with the engineering conventions and squad decisions which are kept in the [decisions folder](/decisions). You should also check out the start guidance at [skyscanner.design](https://www.skyscanner.design/latest/getting-started/about-backpack-pN209Wjo)
 
 ### React components
 
