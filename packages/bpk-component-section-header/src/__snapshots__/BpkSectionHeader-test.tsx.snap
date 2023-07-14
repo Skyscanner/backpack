@@ -61,10 +61,10 @@ exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
       </span>
     </div>
     <button
-      class="bpk-button"
+      class="bpk-button bpk-button--primary"
       type="button"
     >
-      View more
+      Action
     </button>
   </div>
 </DocumentFragment>

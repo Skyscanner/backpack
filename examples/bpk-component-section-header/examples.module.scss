@@ -27,7 +27,7 @@
 
   &--mixed {
     display: flex;
-    grid-row-gap: $bpk-spacing-base;
+    grid-row-gap: bpk-spacing-base();
     flex-direction: column;
   }
 }

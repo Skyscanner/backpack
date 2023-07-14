@@ -25,4 +25,4 @@ export default () => (
 | title       | string                     | true     | -             |
 | description | string                     | false    | -             |
 | button      | node                       | false    | -             |
-| type        | oneOf("default", "onDark") | false    | default       |
+| type        | oneOf(SECTION_TYPES.default, SECTION_TYPES.onDark) | false    | SECTION_TYPES.default       |

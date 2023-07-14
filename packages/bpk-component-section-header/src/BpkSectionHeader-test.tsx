@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
 // @ts-ignore
-import BpkButton from '../../bpk-component-button';
+import { BpkButtonV2 } from '../../bpk-component-button';
 
 import BpkSectionHeader from './BpkSectionHeader';
 
@@ -46,7 +44,7 @@ describe('BpkSectionHeader', () => {
       <BpkSectionHeader
         title="Section title"
         description="Section title description"
-        button={<BpkButton onClick={() => jest.fn()}>View more</BpkButton>}
+        button={<BpkButtonV2 onClick={() => jest.fn()}>Action</BpkButtonV2>}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

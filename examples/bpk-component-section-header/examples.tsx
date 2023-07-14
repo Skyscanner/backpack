@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkSectionHeader, {
   SECTION_TYPES,
 } from '../../packages/bpk-component-section-header';
