@@ -55,11 +55,10 @@ const BpkSectionHeader = ({
       <BpkText
         tagName="h2"
         className={getClassName('bpk-section-header__title')}
-        aria-label={title}
       >
         {title}
       </BpkText>
-      {description && <BpkText aria-label={description}>{description}</BpkText>}
+      {description && <BpkText>{description}</BpkText>}
     </div>
     {button}
   </div>

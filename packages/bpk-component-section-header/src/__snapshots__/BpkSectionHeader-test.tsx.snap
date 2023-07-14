@@ -9,7 +9,6 @@ exports[`BpkSectionHeader should render correctly 1`] = `
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
     >
       <h2
-        aria-label="Section title"
         class="bpk-text bpk-text--body-default bpk-section-header__title"
       >
         Section title
@@ -28,13 +27,11 @@ exports[`BpkSectionHeader should render correctly with "type" prop 1`] = `
       class="bpk-section-header__title-description bpk-section-header__title-description--on-dark"
     >
       <h2
-        aria-label="Section title"
         class="bpk-text bpk-text--body-default bpk-section-header__title"
       >
         Section title
       </h2>
       <span
-        aria-label="Section title description"
         class="bpk-text bpk-text--body-default"
       >
         Section title description
@@ -59,13 +56,11 @@ exports[`BpkSectionHeader should render correctly with a "description" prop 1`] 
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
     >
       <h2
-        aria-label="Section title"
         class="bpk-text bpk-text--body-default bpk-section-header__title"
       >
         Section title
       </h2>
       <span
-        aria-label="Section title description"
         class="bpk-text bpk-text--body-default"
       >
         Section title description
@@ -84,13 +79,11 @@ exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
     >
       <h2
-        aria-label="Section title"
         class="bpk-text bpk-text--body-default bpk-section-header__title"
       >
         Section title
       </h2>
       <span
-        aria-label="Section title description"
         class="bpk-text bpk-text--body-default"
       >
         Section title description
