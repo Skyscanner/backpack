@@ -34,11 +34,12 @@ export type DialogInnerProps = {
     flareClassName?: string;
 };
 export type Props = DialogInnerProps & {
+    dialogRef?: (ref: HTMLElement | null | undefined) => void;
     isOpen: boolean;
     renderTarget?: () => HTMLElement | null;
     onClose: (event?: TouchEvent | MouseEvent | KeyboardEvent) => void | null;
     closeLabel?: string;
     dismissible?: boolean;
     headerIcon?: ReactNode;
-    headerIconType?: typeof HEADER_ICON_TYPES[keyof typeof HEADER_ICON_TYPES];
+    headerIconType?: (typeof HEADER_ICON_TYPES)[keyof typeof HEADER_ICON_TYPES];
 };

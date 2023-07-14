@@ -21,6 +21,11 @@ import '@testing-library/jest-dom';
 
 import { type BpkModalV2 as DialogType } from './BpkModal';
 
+// this is needed so that we avoid importing multiple copies of React due to the isolateModules method
+// i.e. inside the BpkModal module as well as in the tests.
+// Importing multiple copies would result in an error, mocking it ensures tests are always running with the same React version
+jest.mock('react', () => jest.requireActual('react'));
+
 describe('BpkModalV2', () => {
   const props = {
     id: 'bpk-modal-element',
