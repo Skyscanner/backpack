@@ -23,4 +23,7 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-viewport',
   ],
+  core: {
+    builder: 'webpack5',
+  },
 };
