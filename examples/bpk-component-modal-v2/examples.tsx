@@ -262,6 +262,34 @@ const MultipleModalsExample = () => (
   </>
 );
 
+const NestedExample = () => (
+  <ModalContainer title="Modal title" fullScreenOnDesktop>
+    <Paragraph>
+      This is a full-screen modal. You can put anything you want in here,
+      including other modals!
+    </Paragraph>
+    <ModalContainer
+      title="Modal title 2"
+      id="bpk-modal-2"
+      ariaLabelledby="bpk-modal-label-my-dialog"
+      closeLabel="Close modal"
+      buttonLabel="Open another modal from this modal"
+      fullScreenOnDesktop
+    >
+      This is a default modal. You can put anything you want in here.
+      <ModalContainer
+        title="Modal title 3"
+        id="bpk-modal-3"
+        ariaLabelledby="bpk-modal-label-my-dialog"
+        closeLabel="Close modal"
+        buttonLabel="Open another modal from this modal"
+      >
+        This is a default modal. You can put anything you want in here.
+      </ModalContainer>
+    </ModalContainer>
+  </ModalContainer>
+);
+
 export {
   DefaultExample,
   LongTitleExample,
@@ -278,4 +306,5 @@ export {
   NoFullScreenOnMobileNoTitleExample,
   NoHeaderExample,
   MultipleModalsExample,
+  NestedExample,
 };

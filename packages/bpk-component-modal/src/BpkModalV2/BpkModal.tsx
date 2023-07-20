@@ -124,7 +124,7 @@ export const BpkModalV2 = (props: Props) => {
             const { target } = event;
 
             if (target === modal) {
-              modal === dialog ? ref.current?.close?.() : onClose();
+              onClose();
             }
           });
         }

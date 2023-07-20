@@ -18,12 +18,11 @@
 
 module.exports = {
   stories: ['../examples/**/stories.@(ts|tsx|js|jsx)'],
-  addons: [
-    '@storybook/addon-a11y',
-    '@storybook/addon-actions',
-    '@storybook/addon-viewport',
-  ],
+  addons: ['@storybook/addon-a11y', '@storybook/addon-actions', '@storybook/addon-viewport'],
   core: {
-    builder: 'webpack5',
+    builder: 'webpack5'
   },
+  docs: {
+    autodocs: true
+  }
 };

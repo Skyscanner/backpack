@@ -39,7 +39,7 @@
     "postinstall": "(cd packages && npm install)",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
     "start": "npm run build && npm run storybook",
-    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 9001",
+    "storybook": "start-storybook -p 9001",
     "storybook:dist": "NODE_OPTIONS=--openssl-legacy-provider build-storybook -c .storybook -o dist-storybook",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
