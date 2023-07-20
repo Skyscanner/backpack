@@ -19,31 +19,22 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkNudger from './BpkNudger';
+import BpkNudgerRow from './BpkNudgerRow';
 
-describe('BpkNudger accessibility tests', () => {
-  /*
-  This component's accessibility is lacking right now due to
-  use of a read only input. We should improve it soon and then
-  this test will become possible.
-  */
+describe('BpkNudgerRow accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <div>
-        <label id="label" htmlFor="nudger">
-          Nudger
-        </label>
-        <BpkNudger
-          id="nudger"
-          aria-labelledby="label"
-          min={1}
-          max={9}
-          value={2}
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-        />
-      </div>,
+      <BpkNudgerRow
+        nudgerId="nudger"
+        title="title"
+        subtitle="subtitle"
+        min={1}
+        max={9}
+        value={2}
+        onChange={() => null}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

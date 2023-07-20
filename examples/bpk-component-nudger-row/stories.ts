@@ -16,25 +16,14 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import { DefaultExample, WithSubtitleExample } from './examples';
 
-import STYLES from './BpkBoilerplate.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-export type Props = {
-  className?: string | null;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
-const BpkBoilerplate = ({ className = null, ...rest }: Props) => {
-  const classNames = getClassName('bpk-boilerplate', className);
-
-  return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={classNames} {...rest}>
-      I am an example component.
-    </div>
-  );
+export default {
+  title: 'bpk-component-nudger-row',
 };
 
-export default BpkBoilerplate;
+export const Default = DefaultExample;
+
+export const WithSubtitle = WithSubtitleExample;
+
+export const VisualTest = WithSubtitleExample;

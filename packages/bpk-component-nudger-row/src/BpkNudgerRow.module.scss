@@ -16,25 +16,20 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+@import '~bpk-mixins/index.scss';
 
-import STYLES from './BpkBoilerplate.module.scss';
+.bpk-nudger-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-const getClassName = cssModules(STYLES);
+  &__title-subtitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-export type Props = {
-  className?: string | null;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
-const BpkBoilerplate = ({ className = null, ...rest }: Props) => {
-  const classNames = getClassName('bpk-boilerplate', className);
-
-  return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={classNames} {...rest}>
-      I am an example component.
-    </div>
-  );
-};
-
-export default BpkBoilerplate;
+  &__subtitle {
+    color: $bpk-text-secondary-day;
+  }
+}
