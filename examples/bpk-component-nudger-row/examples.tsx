@@ -24,14 +24,14 @@ const DefaultExample = () => {
   const [value, setValue] = useState(1);
   return (
     <BpkNudgerRow
-      title="Title"
+      title="Adults"
       nudgerId="my-nudger"
       min={1}
       max={99}
       value={value}
       onChange={(val: number) => setValue(val)}
-      decreaseButtonLabel="Decrease"
-      increaseButtonLabel="Increase"
+      decreaseButtonLabel="Decrease number of adults"
+      increaseButtonLabel="Increase number of adults"
     />
   );
 };
@@ -40,15 +40,15 @@ const WithSubtitleExample = () => {
   const [value, setValue] = useState(1);
   return (
     <BpkNudgerRow
-      title="Title"
-      subtitle="Subtitle"
+      title="Adults"
+      subtitle="Aged 16+"
       nudgerId="my-nudger"
       min={1}
       max={99}
       value={value}
       onChange={(val: number) => setValue(val)}
-      decreaseButtonLabel="Decrease"
-      increaseButtonLabel="Increase"
+      decreaseButtonLabel="Decrease number of adults"
+      increaseButtonLabel="Increase number of adults"
     />
   );
 };

@@ -30,13 +30,28 @@ export default () => (
 
 | Property            	| PropType 	| Required 	| Default Value 	|
 |---------------------- |----------	|----------	|------------------ |
-| title               	| string   	| true     	| -             	|
 | nudgerId            	| string   	| true     	| -             	|
 | value               	| number   	| true     	| -             	|
-| decreaseButtonLabel 	| string   	| true     	| -             	|
-| increaseButtonLabel 	| string   	| true     	| -             	|
 | min                 	| number   	| true     	| -             	|
 | max                 	| number   	| true     	| -             	|
+| decreaseButtonLabel 	| string   	| true     	| -             	|
+| increaseButtonLabel 	| string   	| true     	| -             	|
 | onChange            	| function 	| true     	| -             	|
+| title               	| string   	| true     	| -             	|
 | subtitle            	| string   	| false    	| undefined     	|
 | className           	| string   	| false    	| null          	|
+
+
+### Prop Details
+
+#### title & subtitle
+
+Title and subtitle - The title and subtitle together make up the label for the nudger. This label will be read aloud as a whole by screen readers.
+
+#### decreaseButtonLabel
+
+Decrease button label - This is the label that will be read out when screen reader users tab to the decrease button. Make sure you use a descriptive label like "Decrease number of adults".
+
+#### increaseButtonLabel
+
+Increase button label - This is the label that will be read out when screen reader users tab to the increase button. Make sure you use a descriptive label like "Increase number of adults"

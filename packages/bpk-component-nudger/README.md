@@ -144,7 +144,9 @@ class App extends Component {
 | inputClassName      | string                        | false    | null          |
 | buttonType          | oneOf('secondary', 'secondaryOnDark') | false    | secondary     |
 
-### `compareValues`
+### Prop Details
+
+#### compareValues
 
 Given `a` and `b`:
 - If `a` is less than `b` then `compareValues(a, b)` should return a value less than `0`
@@ -155,14 +157,22 @@ We use this along with the `min` and `max` values to determine when we should di
 
 For integer numbers the following is a correct implementation `const compareValues = (a: number, b: number): number => a - b;`
 
-### `incrementValue` & `decrementValue`
+#### incrementValue & decrementValue
 
 Functions that handle the incrementing or decrementing of the current selected value.
 
-### `formatValue`
+#### formatValue
 
 A simple function that will allow you to set the format of the display value e.g. local dates or times.
 
-## Theme Props
+#### decreaseButtonLabel
+
+Decrease button label - This is the label that will be read out when screen reader users tab to the decrease button. Make sure you use a descriptive label like "Decrease number of adults".
+
+#### increaseButtonLabel
+
+Increase button label - This is the label that will be read out when screen reader users tab to the increase button. Make sure you use a descriptive label like "Increase number of adults"
+
+### Theme Props
 
 Same as [secondary button](/components/web/buttons#theme-props)
