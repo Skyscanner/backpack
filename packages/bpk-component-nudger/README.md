@@ -2,6 +2,8 @@
 
 > Backpack nudger component.
 
+When building features that use the `BpkNudger` component together with a label, we recommend using the [BpkNudgerRow](../bpk-component-nudger-row/README.md) instead. `BpkNudgerRow` combines the `BpkNudger` and `BpkLabel` into one component ensuring accessibility and visual consistency.
+
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
