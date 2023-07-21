@@ -16,25 +16,14 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkBoilerplate.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-export type Props = {
-  className?: string | null;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+export type CommonProps = {
+    id: string;
+    min: string | number;
+    max: string | number;
+    value: string | number;
+    onChange: (arg0: any) => (void | null);
+    className?: string | null;
+    increaseButtonLabel: string;
+    decreaseButtonLabel: string;
+    buttonType?: string;
 };
-const BpkBoilerplate = ({ className = null, ...rest }: Props) => {
-  const classNames = getClassName('bpk-boilerplate', className);
-
-  return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={classNames} {...rest}>
-      I am an example component.
-    </div>
-  );
-};
-
-export default BpkBoilerplate;
