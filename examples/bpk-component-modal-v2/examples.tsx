@@ -122,9 +122,7 @@ class ModalContainer extends Component<Props, { isOpen: boolean }> {
   render() {
     return (
       <div id="modal-container">
-        <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
-        </div>
+        <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         <BpkModalV2
           id="bpk-modal"
           ariaLabelledby="bpk-modal-label-my-dialog"
@@ -263,7 +261,7 @@ const MultipleModalsExample = () => (
 );
 
 const NestedExample = () => (
-  <ModalContainer title="Modal title" fullScreenOnDesktop>
+  <ModalContainer title="Modal title">
     <Paragraph>
       This is a full-screen modal. You can put anything you want in here,
       including other modals!
@@ -274,7 +272,6 @@ const NestedExample = () => (
       ariaLabelledby="bpk-modal-label-my-dialog"
       closeLabel="Close modal"
       buttonLabel="Open another modal from this modal"
-      fullScreenOnDesktop
     >
       This is a default modal. You can put anything you want in here.
       <ModalContainer
