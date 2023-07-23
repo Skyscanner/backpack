@@ -42,7 +42,7 @@ export type Props = {
   wide?: boolean;
 };
 
-const isCurentDialog = () => {
+const setCurentDialog = () => {
   Array.from(document.querySelectorAll('dialog')).forEach((d, index) => {
     d.setAttribute(
       'data-current',
@@ -67,7 +67,7 @@ const Header = ({
   useEffect(() => {
     const handleClick = () => {
       onClose();
-      isCurentDialog();
+      setCurentDialog();
     };
     document
       .getElementById(`${id}-close-button`)
@@ -147,7 +147,7 @@ export const BpkModalV2 = (props: Props) => {
         const { target } = event;
         if (target === dialog) {
           onClose();
-          isCurentDialog();
+          setCurentDialog();
         }
       };
 
@@ -159,14 +159,14 @@ export const BpkModalV2 = (props: Props) => {
             dialog.getAttribute('data-current') === 'true'
           ) {
             onClose();
-            isCurentDialog();
+            setCurentDialog();
           }
         }
       };
 
       if (isOpen) {
         dialog.showModal();
-        isCurentDialog();
+        setCurentDialog();
         dialog.addEventListener('click', handleOutsideClick);
         window.addEventListener('keydown', escapeKeyPress);
       }
