@@ -143,7 +143,7 @@ export const BpkModalV2 = (props: Props) => {
     const dialog = ref.current;
 
     if (dialog) {
-      const handleOutsideClick = (event: MouseEvent) => {
+      const handleBackdropClick = (event: MouseEvent) => {
         const { target } = event;
         if (target === dialog) {
           onClose();
@@ -167,7 +167,7 @@ export const BpkModalV2 = (props: Props) => {
       if (isOpen) {
         dialog.showModal();
         setCurentDialog();
-        dialog.addEventListener('click', handleOutsideClick);
+        dialog.addEventListener('click', handleBackdropClick);
         window.addEventListener('keydown', escapeKeyPress);
       }
     }
