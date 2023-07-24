@@ -22,6 +22,7 @@ import { useEffect, useRef } from 'react';
 import BpkCloseButton from '../../../bpk-component-close-button';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
+import BpkModal from '../BpkModal';
 
 import STYLES from './BpKModal.module.scss';
 
@@ -189,6 +190,9 @@ export const BpkModalV2 = (props: Props) => {
     padded && 'bpk-modal__container--padded',
   );
 
+  if (!dialogSupported) {
+    return 'Dialog not supported';
+  }
   return isOpen ? (
     <dialog
       aria-labelledby={ariaLabelledby}
