@@ -141,8 +141,6 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "backpack-node-sass": "^0.9.0",
-    "bpk-mixins": "^41.1.1",
-    "bpk-stylesheets": "^9.0.13",
     "core-js": "^3.0.0",
     "css-loader": "^5.2.7",
     "d3-scale": "^4.0.2",
