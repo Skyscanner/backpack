@@ -36,7 +36,6 @@ import {
   WeekExample,
   FocusedDateInThePastExample,
   RangeDateCalendarExample,
-  RangeDateCalendarExampleRTL,
 } from './examples';
 
 export default {
@@ -81,5 +80,3 @@ export const Week = WeekExample;
 export const VisualTest = FocusedDateInThePastExample;
 
 export const VisualTestRange = RangeDateCalendarExample;
-
-export const VisualTestRangeRTL = RangeDateCalendarExampleRTL;
