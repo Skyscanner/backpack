@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { secondaryThemeAttributes as themeAttributes } from '../../bpk-component-button/themeAttributes';
-
-export default themeAttributes;
+/// <reference types="react" />
+import { type CommonProps } from './common-types';
+declare const BpkNudger: ({ className, buttonType, ...rest }: CommonProps) => JSX.Element;
+export default BpkNudger;

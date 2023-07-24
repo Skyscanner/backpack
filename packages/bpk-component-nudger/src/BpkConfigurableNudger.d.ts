@@ -16,25 +16,14 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkBoilerplate.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-export type Props = {
-  className?: string | null;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+/// <reference types="react" />
+import { type CommonProps } from './common-types';
+type Props = CommonProps & {
+    inputClassName?: string | null;
+    formatValue: (arg0: any) => string;
+    incrementValue: (arg0: any) => string | number;
+    decrementValue: (arg0: any) => string | number;
+    compareValues: (arg0: any, arg1: any) => number;
 };
-const BpkBoilerplate = ({ className = null, ...rest }: Props) => {
-  const classNames = getClassName('bpk-boilerplate', className);
-
-  return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={classNames} {...rest}>
-      I am an example component.
-    </div>
-  );
-};
-
-export default BpkBoilerplate;
+declare const BpkConfigurableNudger: ({ buttonType, className, compareValues, decreaseButtonLabel, decrementValue, formatValue, id, increaseButtonLabel, incrementValue, inputClassName, max, min, onChange, value, ...rest }: Props) => JSX.Element;
+export default BpkConfigurableNudger;

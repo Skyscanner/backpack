@@ -17,22 +17,16 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-
-import BpkButtonSecondary from '../../bpk-component-button/BpkButtonSecondary';
-import BpkButtonSecondaryOnDark from '../../bpk-component-button/BpkButtonSecondaryOnDark';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import MinusIcon from '../../bpk-component-icon/sm/minus';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import PlusIcon from '../../bpk-component-icon/sm/plus';
 import { cssModules } from '../../bpk-react-utils';
 
-import {
-  type CommonProps,
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
-} from './common-types';
+import { type CommonProps } from './common-types';
 import STYLES from './BpkNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -40,34 +34,31 @@ const getClassName = cssModules(STYLES);
 const AlignedMinusIcon = withButtonAlignment(MinusIcon);
 const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 
-type Props<T> = {
-  ...$Exact<CommonProps<T>>,
-  inputClassName: ?string,
-  formatValue: (T) => string,
-  incrementValue: (T) => T,
-  decrementValue: (T) => T,
-  compareValues: (T, T) => number,
+type Props = CommonProps & {
+  inputClassName?: string | null;
+  formatValue: (arg0: any) => string;
+  incrementValue: (arg0: any) => string | number;
+  decrementValue: (arg0: any) => string | number;
+  compareValues: (arg0: any, arg1: any) => number;
 };
 
-const BpkConfigurableNudger = <T>(props: Props<T>) => {
-  const {
-    buttonType,
-    className,
-    compareValues,
-    decreaseButtonLabel,
-    decrementValue,
-    formatValue,
-    id,
-    increaseButtonLabel,
-    incrementValue,
-    inputClassName,
-    max,
-    min,
-    onChange,
-    value,
-    ...rest
-  } = props;
-
+const BpkConfigurableNudger = ({
+  buttonType = 'secondary',
+  className = null,
+  compareValues,
+  decreaseButtonLabel,
+  decrementValue,
+  formatValue,
+  id,
+  increaseButtonLabel,
+  incrementValue,
+  inputClassName = null,
+  max,
+  min,
+  onChange,
+  value,
+  ...rest
+}: Props) => {
   const classNames = getClassName('bpk-nudger', className);
 
   const maxButtonDisabled = compareValues(value, max) >= 0;
@@ -87,12 +78,10 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
     buttonType === 'secondaryOnDark' && 'bpk-nudger__input--secondary-on-dark',
   );
 
-  const ButtonComponent =
-    buttonType === 'secondary' ? BpkButtonSecondary : BpkButtonSecondaryOnDark;
-
   return (
     <div className={classNames}>
-      <ButtonComponent
+      <BpkButtonV2
+        type={BUTTON_TYPES[buttonType]}
         iconOnly
         onClick={() => onChange(decrementValue(value))}
         disabled={minButtonDisabled}
@@ -101,8 +90,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         className={getClassName('bpk-nudger__button')}
       >
         <AlignedMinusIcon className={minusIconClassNames} />
-      </ButtonComponent>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      </BpkButtonV2>
       <input
         type="text"
         aria-live="polite"
@@ -110,9 +98,11 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         value={formatValue(value)}
         id={id}
         className={inputStyles}
+        tabIndex={-1}
         {...rest}
       />
-      <ButtonComponent
+      <BpkButtonV2
+        type={BUTTON_TYPES[buttonType]}
         iconOnly
         onClick={() => onChange(incrementValue(value))}
         disabled={maxButtonDisabled}
@@ -121,26 +111,9 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         className={getClassName('bpk-nudger__button')}
       >
         <AlignedPlusIcon className={plusIconClassNames} />
-      </ButtonComponent>
+      </BpkButtonV2>
     </div>
   );
-};
-
-BpkConfigurableNudger.propTypes = {
-  ...COMMON_PROP_TYPES,
-  compareValues: PropTypes.func.isRequired,
-  decrementValue: PropTypes.func.isRequired,
-  formatValue: PropTypes.PropTypes.func.isRequired,
-  incrementValue: PropTypes.func.isRequired,
-  max: PropTypes.any.isRequired,
-  min: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-  inputClassName: PropTypes.string,
-};
-
-BpkConfigurableNudger.defaultProps = {
-  ...COMMON_DEFAULT_PROPS,
-  inputClassName: null,
 };
 
 export default BpkConfigurableNudger;

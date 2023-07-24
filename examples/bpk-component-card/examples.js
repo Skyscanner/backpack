@@ -24,7 +24,6 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../packages/bpk-react-utils';
-import BpkLink from '../../packages/bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkCard, {
   BpkDividedCard,
@@ -45,12 +44,18 @@ sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rho
 ante in, vestibulum nulla.`;
 const headerContent = (
   <div className={getClassName('bpk-card-examples__header')}>
-    <BpkText tagName="span">Here is header</BpkText>
+    <BpkText tagName="span" textStyle={TEXT_STYLES.label1}>
+      Wrapper title
+    </BpkText>
   </div>
 );
 const longContent = (
   <Fragment>
-    <BpkText tagName="h3" textStyle={TEXT_STYLES.bodyLongform}>
+    <BpkText
+      tagName="h3"
+      textStyle={TEXT_STYLES.heading5}
+      style={{ marginBottom: '8px' }}
+    >
       Let&#39;s explore
     </BpkText>
     <BpkText tagName="p">
@@ -58,7 +63,6 @@ const longContent = (
       prices across millions of flights, hotels and car hire options to create
       your perfect trip.
       <br />
-      <BpkLink href="http://www.skyscanner.net/">Go to Skyscanner</BpkLink>
     </BpkText>
   </Fragment>
 );
