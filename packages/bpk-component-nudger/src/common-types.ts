@@ -16,11 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import BpkNudger from './src/BpkNudger';
-import BpkConfigurableNudger from './src/BpkConfigurableNudger';
-import themeAttributes from './src/themeAttributes';
-
-export default BpkNudger;
-export { themeAttributes, BpkConfigurableNudger };
+export type CommonProps = {
+  id: string;
+  min: string | number;
+  max: string | number;
+  value: string | number;
+  onChange: (arg0: any) => void | null;
+  className?: string | null;
+  increaseButtonLabel: string;
+  decreaseButtonLabel: string;
+  buttonType?: string;
+};

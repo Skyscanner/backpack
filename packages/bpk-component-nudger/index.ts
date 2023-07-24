@@ -16,25 +16,9 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import BpkNudger from './src/BpkNudger';
+import BpkConfigurableNudger from './src/BpkConfigurableNudger';
+import themeAttributes from './src/themeAttributes';
 
-import STYLES from './BpkBoilerplate.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-export type Props = {
-  className?: string | null;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
-const BpkBoilerplate = ({ className = null, ...rest }: Props) => {
-  const classNames = getClassName('bpk-boilerplate', className);
-
-  return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div className={classNames} {...rest}>
-      I am an example component.
-    </div>
-  );
-};
-
-export default BpkBoilerplate;
+export default BpkNudger;
+export { themeAttributes, BpkConfigurableNudger };

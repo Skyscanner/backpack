@@ -57,25 +57,25 @@ describe('BpkNudger', () => {
   });
 
   it('should render as a configurable nudger correctly', () => {
-    const compareValues = (a, b) => {
+    const compareValues = (a: string, b: string) => {
       const options = ['economy', 'premium', 'business', 'first'];
       const [aIndex, bIndex] = [options.indexOf(a), options.indexOf(b)];
       return aIndex - bIndex;
     };
 
-    const incrementValue = (currentValue) => {
+    const incrementValue = (currentValue: string) => {
       const options = ['economy', 'premium', 'business', 'first'];
       const [aIndex] = [options.indexOf(currentValue) + 1];
       return options[aIndex];
     };
 
-    const decrementValue = (currentValue) => {
+    const decrementValue = (currentValue: string) => {
       const options = ['economy', 'premium', 'business', 'first'];
       const [aIndex] = [options.indexOf(currentValue) - 1];
       return options[aIndex];
     };
 
-    const formatValue = (a) => a.toString();
+    const formatValue = (a: number) => a.toString();
 
     const { asFragment } = render(
       <BpkConfigurableNudger
