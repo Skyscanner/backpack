@@ -80,3 +80,5 @@ export const Week = WeekExample;
 export const VisualTest = FocusedDateInThePastExample;
 
 export const VisualTestRange = RangeDateCalendarExample;
+
+export const VisualTestRangeRTL = RangeDateCalendarExample(true);

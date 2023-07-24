@@ -297,23 +297,25 @@ const FocusedDateInThePastExample = () => (
   />
 );
 
-const RangeDateCalendarExample = () => (
-  <CalendarContainer
-    minDate={new Date(2020, 3, 1)}
-    id="myCalendar"
-    formatMonth={formatMonth}
-    formatDateFull={formatDateFull}
-    daysOfWeek={weekDays}
-    weekStartsOn={1}
-    changeMonthLabel="Change month"
-    previousMonthLabel="Go to previous month"
-    nextMonthLabel="Go to next month"
-    selectionConfiguration={{
-      type: 'range',
-      startDate: new Date(2020, 3, 19),
-      endDate: new Date(2020, 3, 25),
-    }}
-  />
+const RangeDateCalendarExample = (isRTL = false) => (
+  <div style={{ direction: isRTL ? 'rtl' : 'ltr' }}>
+    <CalendarContainer
+      minDate={new Date(2020, 3, 1)}
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      weekStartsOn={1}
+      changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
+      selectionConfiguration={{
+        type: 'range',
+        startDate: new Date(2020, 3, 19),
+        endDate: new Date(2020, 3, 25),
+      }}
+    />
+  </div>
 );
 
 export {
