@@ -318,6 +318,8 @@ const RangeDateCalendarExample = (isRTL = false) => (
   </div>
 );
 
+const RangeDateCalendarExampleRTL = () => RangeDateCalendarExample(true);
+
 export {
   DefaultExample,
   CalendarNavExample,
@@ -338,4 +340,5 @@ export {
   WeekExample,
   FocusedDateInThePastExample,
   RangeDateCalendarExample,
+  RangeDateCalendarExampleRTL,
 };
