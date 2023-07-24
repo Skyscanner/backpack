@@ -110,7 +110,7 @@ type DialogProps = {
   isDialogOpen: boolean;
 };
 
-// TODO: this check if the browser support the HTML dialog element. We can remove it once we drop support as a business for Safari 14
+// TODO: this check if the browser support the HTML dialog element. We can remove it once we drop support as a business for Safari 14 > 15.3
 const dialogSupported = typeof HTMLDialogElement === 'function';
 
 const setPageProperties = ({ isDialogOpen }: DialogProps) => {
