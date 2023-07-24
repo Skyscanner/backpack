@@ -191,6 +191,7 @@ export const BpkModalV2 = (props: Props) => {
   );
 
   if (!dialogSupported) {
+    // TODO: Placeholder for new polyfill
     return 'Dialog not supported';
   }
   return isOpen ? (
