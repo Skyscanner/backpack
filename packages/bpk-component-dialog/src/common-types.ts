@@ -36,7 +36,7 @@ export type DialogInnerProps = {
   flareClassName?: string;
 };
 
-export type Props = DialogInnerProps & {
+export type Props = Omit<DialogInnerProps, 'dialogRef'> & {
   dialogRef?: (ref: HTMLElement | null | undefined) => void;
   isOpen: boolean;
   renderTarget?: () => HTMLElement | null;
