@@ -42,7 +42,7 @@ export type Props = {
   wide?: boolean;
 };
 
-const setCurentDialog = () => {
+const setCurrentDialog = () => {
   Array.from(document.querySelectorAll('dialog')).forEach((d, index) => {
     d.setAttribute(
       'data-current',
@@ -67,11 +67,16 @@ const Header = ({
   useEffect(() => {
     const handleClick = () => {
       onClose();
-      setCurentDialog();
+      setCurrentDialog();
     };
     document
       .getElementById(`${id}-close-button`)
       ?.addEventListener('click', handleClick);
+
+    return () =>
+      document
+        .getElementById(`${id}-close-button`)
+        ?.removeEventListener('click', handleClick);
   });
 
   if (title) {
@@ -142,38 +147,43 @@ export const BpkModalV2 = (props: Props) => {
   useEffect(() => {
     const dialog = ref.current;
 
-    if (dialog) {
-      const handleBackdropClick = (event: MouseEvent) => {
-        const { target } = event;
-        if (target === dialog) {
+    const handleBackdropClick = (event: MouseEvent) => {
+      const { target } = event;
+      if (target === dialog) {
+        onClose();
+        setCurrentDialog();
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        if (
+          dialog === document.getElementById(`${id}`) &&
+          dialog?.getAttribute('data-current') === 'true'
+        ) {
           onClose();
-          setCurentDialog();
+          setCurrentDialog();
         }
-      };
+      }
+    };
 
-      const escapeKeyPress = (event: KeyboardEvent) => {
-        if (event.key === 'Escape') {
-          event.preventDefault();
-          if (
-            dialog === document.getElementById(`${id}`) &&
-            dialog.getAttribute('data-current') === 'true'
-          ) {
-            onClose();
-            setCurentDialog();
-          }
-        }
-      };
-
+    if (dialog) {
       if (isOpen) {
         dialog.showModal();
-        setCurentDialog();
+        setCurrentDialog();
         dialog.addEventListener('click', handleBackdropClick);
-        window.addEventListener('keydown', escapeKeyPress);
+        window.addEventListener('keydown', handleKeyDown);
       }
     }
 
     setPageProperties({ isDialogOpen: isOpen });
-    return () => setPageProperties({ isDialogOpen: false });
+
+    return () => {
+      setPageProperties({ isDialogOpen: false });
+      dialog?.removeEventListener('click', handleBackdropClick);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [id, isOpen, onClose]);
 
   const classNames = getClassName(
