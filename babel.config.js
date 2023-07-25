@@ -31,6 +31,7 @@ module.exports = {
         targets: {
           node: 'current',
         },
+        modules: false,
       },
     ],
     // the option { runtime: 'automatic' } is passed to enable the new JSX transform where React is imported automatically
