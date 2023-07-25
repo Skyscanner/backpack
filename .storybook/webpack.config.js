@@ -19,8 +19,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const sassFunctions = require('bpk-mixins/sass-functions');
-
+const sassFunctions = require('../packages/bpk-mixins/sass-functions');
 const postCssPlugins = require('../scripts/webpack/postCssPlugins');
 
 const { BPK_TOKENS } = process.env;
@@ -104,11 +103,11 @@ module.exports = ({ config }) => {
         options: {
           additionalData: BPK_TOKENS
             ? fs.readFileSync(
-                path.join(
-                  rootDir,
-                  `node_modules/@skyscanner/bpk-foundations-web/tokens/${BPK_TOKENS}.scss`,
-                ),
-              )
+              path.join(
+                rootDir,
+                `node_modules/@skyscanner/bpk-foundations-web/tokens/${BPK_TOKENS}.scss`,
+              ),
+            )
             : '',
           sassOptions: {
             functions: sassFunctions,
