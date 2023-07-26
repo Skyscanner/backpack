@@ -10,7 +10,9 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { Component } from 'react';
-import BpkCalendar from '@skyscanner/backpack-web/bpk-component-calendar';
+import BpkCalendar, {
+  CALENDAR_SELECTION_TYPE,
+} from '@skyscanner/backpack-web/bpk-component-calendar';
 import BpkInput, {
   INPUT_TYPES,
 } from '@skyscanner/backpack-web/bpk-component-input';
@@ -147,7 +149,7 @@ withCalendarState(
 ## Props
 
 | Property               | PropType | Required        | Default Value                                        |
-|------------------------|----------|-----------------|------------------------------------------------------|
+| ---------------------- | -------- | --------------- | ---------------------------------------------------- |
 | daysOfWeek             | object   | true            | -                                                    |
 | formatDateFull         | func     | true            | -                                                    |
 | formatMonth            | func     | true            | -                                                    |
