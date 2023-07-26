@@ -24,25 +24,24 @@
  */
 
 module.exports = {
-  presets: [],
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+        },
+        modules: false,
+      },
+    ],
+    // the option { runtime: 'automatic' } is passed to enable the new JSX transform where React is imported automatically
+    ['@babel/preset-react', { runtime: 'automatic' }],
+    // TODO: Remove this once we have migrated all flow types.
+    '@babel/preset-flow',
+    '@babel/preset-typescript',
+  ],
   env: {
     dev: {
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            targets: {
-              node: 'current',
-            },
-            modules: false,
-          },
-        ],
-        // the option { runtime: 'automatic' } is passed to enable the new JSX transform where React is imported automatically
-        ['@babel/preset-react', { runtime: 'automatic' }],
-        // TODO: Remove this once we have migrated all flow types.
-        '@babel/preset-flow',
-        '@babel/preset-typescript',
-      ],
       plugins: [
         [
           'module-resolver',
