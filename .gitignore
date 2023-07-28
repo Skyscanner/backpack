@@ -5,7 +5,6 @@
 /dist
 /dist-sassdoc
 /dist-storybook
-/dist-sassdoc
 /coverage
 /packages/bpk-component-icon/*/
 /packages/bpk-component-flare/src/__generated__
