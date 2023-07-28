@@ -39,7 +39,7 @@ export default () => (
 
 *`MyComponent.scss`:*
 ```scss
-@import '~bpk-mixins/index.scss';
+@import '~@skyscanner/backpack-web/bpk-mixins/index.scss';
 
 .my-component {
   display: flex;
