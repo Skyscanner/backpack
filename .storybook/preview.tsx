@@ -15,6 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import { Preview } from '@storybook/react';
+
 import { spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import 'bpk-stylesheets';
@@ -30,7 +33,7 @@ import themeableAttributes from './themeableAttributes';
 
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
-const preview = {
+const preview: Preview = {
   decorators: [
     (story) => (
       <div style={{ padding: spacingBase }}>
