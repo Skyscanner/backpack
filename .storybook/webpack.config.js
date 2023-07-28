@@ -36,6 +36,11 @@ module.exports = ({ config }) => {
   });
   config.resolve.extensions.push('.tsx');
   config.resolve.extensions.push('.ts');
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    react: path.join(rootDir, 'node_modules/react'),
+    'react-dom': path.join(rootDir, 'node_modules/react-dom'),
+  };
   config.module.rules.push({
     test: /\.[jt]sx?$/,
     include: /node_modules\/@skyscanner\/bpk-svgs.*/,

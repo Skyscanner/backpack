@@ -15,12 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import { addDecorator } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
 
-import '../packages/bpk-stylesheets';
-import '../packages/bpk-stylesheets/font';
+import { Preview } from '@storybook/react';
+
+import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
+
+import 'bpk-stylesheets';
+import 'bpk-stylesheets/font';
 
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import BpkThemeToggle, {
@@ -32,17 +33,22 @@ import themeableAttributes from './themeableAttributes';
 
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
-addDecorator(withA11y);
-addDecorator((story) => (
-  <div style={{ padding: spacingBase }}>
-    <EnhancedThemeProvider themeAttributes={themeableAttributes}>
-      {story()}
-    </EnhancedThemeProvider>
-    <br />
-    <BpkRtlToggle />
-    <br />
-    <div style={{ width: '10rem' }}>
-      <BpkThemeToggle />
-    </div>
-  </div>
-));
+const preview: Preview = {
+  decorators: [
+    (story) => (
+      <div style={{ padding: TOKENS.spacingBase }}>
+        <EnhancedThemeProvider themeAttributes={themeableAttributes}>
+          {story()}
+        </EnhancedThemeProvider>
+        <br />
+        <BpkRtlToggle />
+        <br />
+        <div style={{ width: '10rem' }}>
+          <BpkThemeToggle />
+        </div>
+      </div>
+    ),
+  ],
+};
+
+export default preview;
