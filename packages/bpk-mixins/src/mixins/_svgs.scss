@@ -1,0 +1,265 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~@skyscanner/bpk-svgs/index.scss';
+@import '../bonds.scss';
+@import './utils.scss';
+
+@keyframes bpk-keyframe-spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+////
+/// @group svgs
+////
+
+/// Icon factory.
+///
+/// @param {variable} $spacing
+/// @param {key} $icon
+///
+/// @access private
+
+@mixin _bpk-icon-factory($map, $size, $icon) {
+  @if map_has_key($map, $icon) != true {
+    $err: (
+      'Could not find "' +
+        $icon +
+        '" icon. Refer to ' +
+        'https://skyscanner.design/latest/components/icon/overview.html' +
+        ' for the list of supported icons.'
+    );
+
+    @error $err;
+  }
+
+  content: '';
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background: url(map-get($map, $icon)) no-repeat;
+  background-size: cover;
+}
+
+/// Button alignment utility.
+///
+/// @access private
+
+@mixin _bpk-svg--align-to-button() {
+  vertical-align: text-bottom;
+}
+
+/// Large button alignment utility.
+///
+/// @access private
+
+@mixin _bpk-svg--align-to-large-button() {
+  margin-top: ($bpk-private-button-line-height - $bpk-icon-size-lg) / 2;
+  vertical-align: top;
+}
+
+/// Icon.
+///
+/// > **Note:** You will need to pass the sassFunction `encodebase64` to your node-sass process to use this mixin:
+/// >
+/// > ```js
+/// > var sass = require('node-sass');
+/// > var sassFunctions = require('bpk-mixins/sass-functions');
+/// > ...
+/// > sass.render({
+/// >   file: 'mysassfile.scss',
+/// >   functions: sassFunctions,
+/// > });
+/// > ```
+///
+/// @param {key} $icon
+/// @param {variable} $color
+/// @param {key} $size
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon(flight, $bpk-color-sky-gray-tint-02, large);
+///   }
+
+@mixin bpk-icon($icon, $color, $size: small) {
+  @if function-exists(encodebase64) != true {
+    $err: (
+      'Could not find encodebase64 function. Refer to ' +
+        'https://backpack.github.io/sassdoc/#svgs-mixin-bpk-icon' +
+        ' on how to provide it to node-sass.'
+    );
+
+    @error $err;
+  }
+
+  $icon-map: if($size == large, $bpk-icons-no-color-lg, $bpk-icons-no-color-sm);
+
+  @if map_has_key($icon-map, $icon) != true {
+    $err: (
+      'Could not find "' +
+        $icon +
+        '" icon. Refer to' +
+        'https://skyscanner.design/latest/components/icon/overview.html' +
+        ' for the list of supported icons.'
+    );
+
+    @error $err;
+  }
+
+  $icon-size: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
+
+  /* Disabling rule here as this method is for newer sass versions that we don't yet support */
+  /* stylelint-disable-next-line scss/no-global-function-names */
+  $raw-svg: map-get($icon-map, $icon);
+  $svg-string: str-replace($raw-svg, '$$COLOR$$', $color);
+  $datauri: 'data:image/svg+xml;base64,' + encodebase64($svg-string);
+
+  content: '';
+  display: inline-block;
+  width: $icon-size;
+  height: $icon-size;
+  background: url($datauri) no-repeat;
+  background-size: cover;
+}
+
+/// Align to button. Modifies the bpk-icon-sm mixin.
+///
+/// @require {mixin} bpk-icon-sm
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon-sm(flight-sky-gray-tint-02);
+///     @include bpk-icon-sm--align-to-button();
+///   }
+
+@mixin bpk-icon-sm--align-to-button() {
+  @include _bpk-svg--align-to-button;
+}
+
+/// Align to large button. Modifies the bpk-icon-lg mixin.
+///
+/// @require {mixin} bpk-icon-lg
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon-lg(flight-sky-gray-tint-02);
+///     @include bpk-icon-lg--align-to-large-button();
+///   }
+
+@mixin bpk-icon-lg--align-to-large-button() {
+  @include _bpk-svg--align-to-large-button;
+}
+
+/// RTL support. Modifies the bpk-icon-sm or bpk-icon-lg mixin.
+///
+/// @require {mixin} bpk-icon-sm
+/// @require {mixin} bpk-icon-lg
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon-sm(flight-sky-gray-tint-02);
+///     @include bpk-icon--rtl-support();
+///   }
+
+@mixin bpk-icon--rtl-support() {
+  @include bpk-rtl {
+    transform: scaleX(-1);
+  }
+}
+
+/// Small spinner.
+///
+/// @param {key} $spinner - The key of the desired SVG datauri from the $bpk-spinners map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner(spinner-sky-gray-tint-02);
+///   }
+
+@mixin bpk-spinner($spinner: '') {
+  width: bpk-spacing-base();
+  height: bpk-spacing-base();
+  animation: bpk-keyframe-spin 600ms linear infinite;
+
+  @if $spinner != '' {
+    content: '';
+    display: inline-block;
+    background: url(map-get($bpk-spinners, $spinner)) no-repeat;
+    background-size: cover;
+  }
+}
+
+/// Large spinner. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner(spinner-sky-gray-tint-02);
+///     @include bpk-spinner--lg();
+///   }
+
+@mixin bpk-spinner--lg() {
+  width: bpk-spacing-lg();
+  height: bpk-spacing-lg();
+}
+
+/// Extra large spinner. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner(spinner-sky-gray-tint-02);
+///     @include bpk-spinner--xl();
+///   }
+
+@mixin bpk-spinner--xl() {
+  width: bpk-spacing-xl();
+  height: bpk-spacing-xl();
+}
+
+/// Align spinner to button. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner();
+///     @include bpk-icon--align-to-button();
+///   }
+
+@mixin bpk-spinner--align-to-button() {
+  vertical-align: baseline;
+}
+
+/// Align spinner to large button. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner();
+///     @include bpk-spinner--align-to-large-button();
+///   }
+
+@mixin bpk-spinner--align-to-large-button() {
+  @include _bpk-svg--align-to-large-button;
+}

@@ -20,8 +20,8 @@ import { Preview } from '@storybook/react';
 
 import { spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import 'bpk-stylesheets';
-import 'bpk-stylesheets/font';
+import '../packages/bpk-stylesheets';
+import '../packages/bpk-stylesheets/font';
 
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import BpkThemeToggle, {

@@ -16,7 +16,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "gulp",
+    "build": "gulp && npm run build:stylesheets",
+    "build:stylesheets": "(cd packages/bpk-stylesheets && NODE_OPTIONS=--openssl-legacy-provider node build)",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-pristine": "node scripts/check-pristine-state",
@@ -39,6 +40,7 @@
     "postinstall": "(cd packages && npm install)",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
     "start": "npm run build && npm run storybook",
+    "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001",
     "storybook:dist": "NODE_OPTIONS=--openssl-legacy-provider storybook build -c .storybook -o dist-storybook",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
@@ -140,8 +142,6 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "backpack-node-sass": "^0.9.0",
-    "bpk-mixins": "^41.1.1",
-    "bpk-stylesheets": "^9.0.13",
     "core-js": "^3.0.0",
     "css-loader": "^5.2.7",
     "d3-scale": "^4.0.2",
@@ -157,6 +157,7 @@
     "jest-environment-jsdom": "^29.2.2",
     "lint-staged": "^13.1.0",
     "lodash": "^4.17.20",
+    "mini-css-extract-plugin": "^1.6.2",
     "node-sass": "^6.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^4.3.0",
@@ -170,6 +171,7 @@
     "style-loader": "^2.0.0",
     "ts-migrate": "^0.1.35",
     "typescript": "^4.9.3",
-    "webpack": "^5.88.1"
+    "webpack": "^5.88.1",
+    "wrapper-webpack-plugin": "^1.0.0"
   }
 }
