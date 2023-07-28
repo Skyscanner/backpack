@@ -15,8 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
-import { withA11y } from '@storybook/addon-a11y';
+import { spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import 'bpk-stylesheets';
 import 'bpk-stylesheets/font';
@@ -34,7 +33,7 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 const preview = {
   decorators: [
     (story) => (
-      <div style={{ padding: TOKENS.spacingBase }}>
+      <div style={{ padding: spacingBase }}>
         <EnhancedThemeProvider themeAttributes={themeableAttributes}>
           {story()}
         </EnhancedThemeProvider>
