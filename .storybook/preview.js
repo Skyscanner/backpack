@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
-import { addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 
 import 'bpk-stylesheets';
@@ -32,17 +31,22 @@ import themeableAttributes from './themeableAttributes';
 
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
-addDecorator(withA11y);
-addDecorator((story) => (
-  <div style={{ padding: TOKENS.spacingBase }}>
-    <EnhancedThemeProvider themeAttributes={themeableAttributes}>
-      {story()}
-    </EnhancedThemeProvider>
-    <br />
-    <BpkRtlToggle />
-    <br />
-    <div style={{ width: '10rem' }}>
-      <BpkThemeToggle />
-    </div>
-  </div>
-));
+const preview = {
+  decorators: [
+    (story) => (
+      <div style={{ padding: TOKENS.spacingBase }}>
+        <EnhancedThemeProvider themeAttributes={themeableAttributes}>
+          {story()}
+        </EnhancedThemeProvider>
+        <br />
+        <BpkRtlToggle />
+        <br />
+        <div style={{ width: '10rem' }}>
+          <BpkThemeToggle />
+        </div>
+      </div>
+    ),
+  ],
+};
+
+export default preview;
