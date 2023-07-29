@@ -156,7 +156,7 @@ const MyComponent = (props) => (
 ```
 
 ```scss
-@import '~bpk-mixins/index.scss';
+@import '~@skyscanner/backpack-web/bpk-mixins/index.scss';
 
 .my-transition-class {
   transition: opacity $bpk-duration-sm ease-in-out;

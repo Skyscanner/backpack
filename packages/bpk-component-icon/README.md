@@ -24,7 +24,7 @@ export default () => (
 
 *`icons.scss`:*
 ```scss
-@import '~bpk-mixins/index.scss';
+@import '~@skyscanner/backpack-web/bpk-mixins/index.scss';
 
 .abc-icon__flight {
   fill: currentColor; // see https://css-tricks.com/currentcolor/
