@@ -19,8 +19,8 @@ import { spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 
-import '../packages/bpk-stylesheets';
-import '../packages/bpk-stylesheets/font';
+import 'bpk-stylesheets';
+import 'bpk-stylesheets/font';
 
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import BpkThemeToggle, {
