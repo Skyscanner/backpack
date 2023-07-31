@@ -24,12 +24,11 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
     '@storybook/addon-viewport',
-    '@storybook/addon-docs'
+    '@storybook/addon-docs',
   ],
   framework: {
     name: '@storybook/react-webpack5',
-    options: {
-    }
+    options: {},
   },
   docs: {
     autodocs: false,
@@ -37,8 +36,8 @@ const config: StorybookConfig = {
   },
   typescript: {
     reactDocgenTypescriptOptions: {
-      shouldIncludePropTagMap: true
-    }
-  }
+      shouldIncludePropTagMap: true,
+    },
+  },
 };
 export default config;

@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import { Preview } from '@storybook/react';
-
+import type { Preview } from '@storybook/react';
 import { spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import '../packages/bpk-stylesheets';

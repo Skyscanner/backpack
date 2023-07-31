@@ -36,6 +36,7 @@ module.exports = ({ config }) => {
   });
   config.resolve.extensions.push('.tsx');
   config.resolve.extensions.push('.ts');
+  /* eslint-disable-next-line no-param-reassign */
   config.resolve.alias = {
     ...config.resolve.alias,
     react: path.join(rootDir, 'node_modules/react'),

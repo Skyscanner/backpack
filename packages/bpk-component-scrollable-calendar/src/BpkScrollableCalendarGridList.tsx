@@ -98,16 +98,16 @@ class BpkScrollableCalendarGridList extends Component<Props, State> {
     };
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.setComponentHeight();
     if (typeof document !== 'undefined') {
       window.addEventListener('resize', this.setComponentHeight);
       document.addEventListener('orientationchange', this.setComponentHeight);
       document.addEventListener('fullscreenchange', this.setComponentHeight);
     }
-  };
+  }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     if (typeof document !== 'undefined') {
       window.removeEventListener('resize', this.setComponentHeight);
       document.removeEventListener(
@@ -116,7 +116,7 @@ class BpkScrollableCalendarGridList extends Component<Props, State> {
       );
       document.removeEventListener('fullscreenchange', this.setComponentHeight);
     }
-  };
+  }
 
   getHtmlElement = () =>
     typeof document !== 'undefined' ? document.querySelector('html') : {};

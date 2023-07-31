@@ -93,7 +93,7 @@ type Props = {
   isOpen?: boolean;
   valid?: boolean;
   // Disabling this as if we set a default property for this value it causes the internal onClose function to stop working for default setup
-  // eslint-disable-next-line react/require-default-props
+
   onClose?: () => void;
 };
 

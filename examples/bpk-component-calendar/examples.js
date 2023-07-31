@@ -43,6 +43,9 @@ import {
 } from './test-utils';
 import CalendarContainer, { MonthViewCalendar } from './examples-components';
 
+/* eslint-disable-next-line react/prop-types */
+const DummyDateComponent = ({ date }) => <div>{date.toString()}</div>;
+
 const CalendarNavExample = () => (
   <BpkCalendarNav
     month={new Date()}
@@ -241,9 +244,6 @@ const CustomComposedCalendarExample = () => (
 );
 
 const WeekExample = () => {
-  // eslint-disable-next-line react/prop-types
-  const DummyDateComponent = ({ date }) => <div>{date.toString()}</div>;
-
   const weekProps = {
     ...Week.defaultProps,
     DateComponent: DummyDateComponent,

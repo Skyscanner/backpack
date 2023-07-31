@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* eslint-disable react/prop-types */
+
 import {
   BpkDataTable,
   BpkDataTableColumn,
@@ -79,6 +81,19 @@ const sortFunc = (rowA, rowB) => {
     return 0;
   }
   return deskA > deskB ? 1 : -1;
+};
+
+const LabelComponent = ({ label }) => <div> This is a {label} </div>;
+
+const CellRenderer = ({ cellData, rowData }) => {
+  if (rowData.name === 'Jose') {
+    return <div> Remote </div>;
+  }
+  return (
+    <div>
+      {cellData.office} - {cellData.desk}
+    </div>
+  );
 };
 
 const AutowidthExample = () => (
@@ -172,7 +187,7 @@ const HeaderRendererExample = () => (
       label="Numeric value"
       dataKey="numericValue"
       width={100}
-      headerRenderer={({ label }) => <div> This is a {label} </div>}
+      headerRenderer={LabelComponent}
     />
   </BpkDataTable>
 );
@@ -197,16 +212,7 @@ const CustomSortingExample = () => (
       label="Seat"
       dataKey="seat"
       width={100}
-      cellRenderer={({ cellData, rowData }) => {
-        if (rowData.name === 'Jose') {
-          return <div> Remote </div>;
-        }
-        return (
-          <div>
-            {cellData.office} - {cellData.desk}
-          </div>
-        );
-      }}
+      cellRenderer={CellRenderer}
     />
   </BpkDataTable>
 );
