@@ -24,7 +24,6 @@
   transition: opacity $bpk-duration-sm ease-in-out;
   border-radius: $bpk-border-radius-sm;
   color: $bpk-text-on-dark-day;
-  font-weight: bold;
   text-decoration: none;
   opacity: 0;
   overflow: hidden;
@@ -34,6 +33,7 @@
   // a user tabbing quickly has a chance to see that it appeared
   transition-delay: $bpk-duration-sm;
 
+  @include bpk-heading-5;
   @include bpk-themeable-property(
     background-color,
     --bpk-skip-link-background-color,

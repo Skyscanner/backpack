@@ -34,7 +34,8 @@ $bpk-spacing-v2: true;
   max-width: $bpk-modal-max-width;
   margin: auto;
   transform: scale(1);
-  transition: opacity $bpk-duration-sm ease-in-out,
+  transition:
+    opacity $bpk-duration-sm ease-in-out,
     transform $bpk-duration-sm ease-in-out;
   outline: 0;
   background-color: $bpk-modal-background-color;

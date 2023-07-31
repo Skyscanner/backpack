@@ -16,6 +16,7 @@
       "ignorePseudoClasses": ["global"]
     }],
     "function-url-quotes": null,
-    "scss/operator-no-newline-after": null
+    "scss/operator-no-newline-after": null,
+    "selector-not-notation": null
   }
 }

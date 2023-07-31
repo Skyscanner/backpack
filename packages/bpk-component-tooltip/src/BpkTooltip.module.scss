@@ -33,7 +33,8 @@ $dark-background-color: $bpk-surface-contrast-day;
 }
 
 .bpk-tooltip {
-  transition: opacity $bpk-duration-sm ease-in-out,
+  transition:
+    opacity $bpk-duration-sm ease-in-out,
     transform $bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
@@ -68,7 +69,8 @@ $dark-background-color: $bpk-surface-contrast-day;
 
   &--appear-active {
     transform: translate(0, 0);
-    transition: opacity $bpk-duration-sm ease-in-out,
+    transition:
+      opacity $bpk-duration-sm ease-in-out,
       transform $bpk-duration-sm ease-in-out;
     opacity: 1;
   }
