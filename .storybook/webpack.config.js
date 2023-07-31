@@ -19,7 +19,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const sassFunctions = require('../packages/bpk-mixins/sass-functions');
+const sassFunctions = require('bpk-mixins/sass-functions');
+
 const postCssPlugins = require('../scripts/webpack/postCssPlugins');
 
 const { BPK_TOKENS } = process.env;
