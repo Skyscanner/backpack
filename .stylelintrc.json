@@ -14,8 +14,6 @@
     }],
     "selector-pseudo-class-no-unknown": [true, {
       "ignorePseudoClasses": ["global"]
-    }],
-    "function-url-quotes": null,
-    "scss/operator-no-newline-after": null
+    }]
   }
 }
