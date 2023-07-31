@@ -39,5 +39,8 @@ const config: StorybookConfig = {
       shouldIncludePropTagMap: true,
     },
   },
+  features: {
+    storyStoreV7: false, // Opt out of on-demand story loading as that blocks percy from running tests
+  },
 };
 export default config;
