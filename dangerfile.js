@@ -26,9 +26,7 @@ const { danger, fail, markdown, warn } = require('danger');
 
 // Applies to js, css, scss and sh files that are not located in the dist folder.
 const shouldContainLicensingInformation = (filePath) =>
-  filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) &&
-  !filePath.includes('dist/') &&
-  !filePath.includes('base.js');
+  filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) && !filePath.includes('dist/');
 
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
