@@ -5,5 +5,7 @@ coverage
 /packages/bpk-component-flare/src/__generated__
 /packages/bpk-component-icon/sm
 /packages/bpk-component-icon/lg
-/packages/bpk-stylesheets/base.js
+backpack-android
+backpack-ios
+backpack-react-native
 *.d.ts
