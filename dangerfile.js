@@ -20,7 +20,7 @@
 
 // See http://danger.systems/js if you're not sure what this is.
 
-const fs = require('fs');
+const fs = require('node:fs');
 
 const { danger, fail, markdown, warn } = require('danger');
 
