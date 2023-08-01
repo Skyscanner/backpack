@@ -31,6 +31,7 @@ module.exports = {
         targets: {
           node: 'current',
         },
+        modules: false,
       },
     ],
     // the option { runtime: 'automatic' } is passed to enable the new JSX transform where React is imported automatically
@@ -38,11 +39,6 @@ module.exports = {
     // TODO: Remove this once we have migrated all flow types.
     '@babel/preset-flow',
     '@babel/preset-typescript',
-  ],
-  plugins: [
-    '@babel/plugin-proposal-object-rest-spread',
-    '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-proposal-private-methods',
   ],
   env: {
     dev: {
@@ -77,6 +73,21 @@ module.exports = {
       ],
     },
     test: {
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: {
+              node: 'current',
+            },
+          },
+        ],
+        // the option { runtime: 'automatic' } is passed to enable the new JSX transform where React is imported automatically
+        ['@babel/preset-react', { runtime: 'automatic' }],
+        // TODO: Remove this once we have migrated all flow types.
+        '@babel/preset-flow',
+        '@babel/preset-typescript',
+      ],
       // Prevent errors from require.context not existing when running Storyshots.
       plugins: ['require-context-hook'],
     },
