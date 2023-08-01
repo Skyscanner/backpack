@@ -20,9 +20,9 @@
 
 // See http://danger.systems/js if you're not sure what this is.
 
-const fs = require('fs');
+import fs from 'fs';
 
-const { danger, fail, markdown, warn } = require('danger');
+import { danger, fail, warn, markdown } from 'danger';
 
 // Applies to js, css, scss and sh files that are not located in the dist folder.
 const shouldContainLicensingInformation = (filePath) =>
