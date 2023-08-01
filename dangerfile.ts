@@ -20,12 +20,12 @@
 
 // See http://danger.systems/js if you're not sure what this is.
 
-import fs from 'fs';
+import * as fs from 'fs';
 
-import { danger, fail, warn, markdown } from 'danger';
+import { danger, fail, markdown, warn } from 'danger';
 
 // Applies to js, css, scss and sh files that are not located in the dist folder.
-const shouldContainLicensingInformation = (filePath) =>
+const shouldContainLicensingInformation = (filePath: string) =>
   filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) && !filePath.includes('dist/');
 
 const createdFiles = danger.git.created_files;
@@ -85,7 +85,7 @@ if (componentFilesModified && !typeFilesModified) {
 }
 
 // New files should include the Backpack license heading.
-const unlicensedFiles = createdFiles.filter((filePath) => {
+const unlicensedFiles = createdFiles.filter((filePath: string) => {
   if (shouldContainLicensingInformation(filePath)) {
     const fileContent = fs.readFileSync(filePath);
     return !fileContent.includes(
