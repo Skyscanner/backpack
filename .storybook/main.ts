@@ -39,8 +39,8 @@ const config: StorybookConfig = {
       shouldIncludePropTagMap: true,
     },
   },
-  features: {
-    storyStoreV7: false, // TODO: Remove this. Temporarily opt out of on-demand story loading as it blocks Percy from running tests
-  },
+  // features: {
+  //   storyStoreV7: false, // TODO: Remove this. Temporarily opt out of on-demand story loading as it blocks Percy from running tests
+  // },
 };
 export default config;

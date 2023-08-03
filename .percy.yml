@@ -3,3 +3,5 @@ discovery:
   user-agent: "percy-backpack"
   allowed-hostnames:
     - content.skyscnr.com
+snapshot:
+  enableJavascript: true
