@@ -47,6 +47,7 @@ $border-width: $bpk-one-pixel-rem * 2;
   }
 
   &__label {
+    /* stylelint-disable backpack/use-typography-styles */
     line-height: $height;
     margin-inline-end: bpk-spacing-md();
   }

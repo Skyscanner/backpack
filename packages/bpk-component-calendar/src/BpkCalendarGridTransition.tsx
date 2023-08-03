@@ -228,13 +228,12 @@ class BpkCalendarGridTransition extends Component<Props, State> {
 
 const addCalendarGridTransition =
   <P extends {}>(TransitionComponent: ComponentType<P>) =>
-  (props: Omit<P & Props, keyof InjectedCalendarGridTransitionProps>) =>
-    (
-      <BpkCalendarGridTransition
-        {...(props as P)}
-        TransitionComponent={TransitionComponent}
-      />
-    );
+  (props: Omit<P & Props, keyof InjectedCalendarGridTransitionProps>) => (
+    <BpkCalendarGridTransition
+      {...(props as P)}
+      TransitionComponent={TransitionComponent}
+    />
+  );
 
 export default BpkCalendarGridTransition;
 export { addCalendarGridTransition };

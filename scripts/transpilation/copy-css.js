@@ -30,8 +30,7 @@ const cssFiles = execSync('find packages -name "*.css" | grep -v node_modules')
 cssFiles.map((cssFile) => {
   let component;
   const paths = cssFile.split('packages/');
-  const regEx = new RegExp('/');
-  const componentPath = paths[1].split(regEx);
+  const componentPath = paths[1].split('/');
 
   // V2 components are nested inside a folder
   if (paths[1].match(/V2/)) {

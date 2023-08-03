@@ -82,9 +82,9 @@ class BpkHorizontalNav extends Component<Props> {
     this.selectedItemRef = null;
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.scrollSelectedIntoView(false);
-  };
+  }
 
   componentDidUpdate() {
     this.scrollSelectedIntoView(true);

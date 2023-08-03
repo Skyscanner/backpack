@@ -16,14 +16,31 @@
  * limitations under the License.
  */
 
-module.exports = {
+import type { StorybookConfig } from '@storybook/react-webpack5';
+
+const config: StorybookConfig = {
   stories: ['../examples/**/stories.@(ts|tsx|js|jsx)'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
     '@storybook/addon-viewport',
+    '@storybook/addon-docs',
   ],
-  core: {
-    builder: 'webpack5',
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
+  docs: {
+    autodocs: false,
+    defaultName: 'Documentation',
+  },
+  typescript: {
+    reactDocgenTypescriptOptions: {
+      shouldIncludePropTagMap: true,
+    },
+  },
+  features: {
+    storyStoreV7: false, // TODO: Remove this. Temporarily opt out of on-demand story loading as it blocks Percy from running tests
   },
 };
+export default config;

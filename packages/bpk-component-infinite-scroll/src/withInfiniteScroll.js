@@ -94,11 +94,8 @@ const withInfiniteScroll = <T: ExtendedProps>(
   ComponentToExtend: AbstractComponent<T>,
 ): AbstractComponent<PropsWithDefault & $Diff<T, ExtendedProps>> =>
   class WithInfiniteScroll extends Component<Props, State> {
-    handleIntersection: IntersectionObserverCallback;
 
     handleKeyPress: (e: SyntheticKeyboardEvent<HTMLButtonElement>) => void;
-
-    handleSeeMoreClick: (e: SyntheticEvent<HTMLButtonElement>) => void;
 
     observer: IntersectionObserver;
 
@@ -247,7 +244,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
       return Promise.resolve();
     };
 
-    handleSeeMoreClick = () => {
+    handleSeeMoreClick = (): void => {
       this.fetchItems().then((newState) => {
         this.setState(newState);
       });
