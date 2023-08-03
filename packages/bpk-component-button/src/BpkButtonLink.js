@@ -18,7 +18,11 @@
 
 /* @flow strict */
 
-import { Props as CommonProps, defaultProps, propTypes } from './common-types';
+import {
+  type Props as CommonProps,
+  defaultProps,
+  propTypes,
+} from './common-types';
 import BpkButtonBase, { cssModules } from './BpkButtonBase';
 import STYLES from './BpkButtonLink.module.scss';
 
