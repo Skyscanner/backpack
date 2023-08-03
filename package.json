@@ -157,7 +157,7 @@
     "jest-environment-jsdom": "^29.2.2",
     "lint-staged": "^13.1.0",
     "lodash": "^4.17.20",
-    "mini-css-extract-plugin": "^1.6.2",
+    "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^6.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^4.3.0",
@@ -173,6 +173,6 @@
     "ts-migrate": "^0.1.35",
     "typescript": "^4.9.3",
     "webpack": "^5.88.1",
-    "wrapper-webpack-plugin": "^1.0.0"
+    "wrapper-webpack-plugin": "^2.2.2"
   }
 }
