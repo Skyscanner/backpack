@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
 import { createContext, Node } from 'react';
 
