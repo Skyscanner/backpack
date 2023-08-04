@@ -36,6 +36,11 @@ export default {
   title: 'bpk-component-badge',
 };
 
+const VisualTestTemplate = (args) => {
+  document.documentElement.style.fontSize = args.fontSize;
+  return <MixedExample />;
+}
+
 export const Default = DefaultExample;
 export const Warning = WarningExample;
 export const Success = SuccessExample;
@@ -47,4 +52,12 @@ export const Outline = OutlineExample;
 export const Centered = CenteredExample;
 export const DockedRight = DockedLeadingExample;
 export const DockedLeft = DockedTrailingExample;
-export const VisualTest = MixedExample;
+
+export const VisualTest = VisualTestTemplate.bind({});
+VisualTest.args = {
+  fontSize: '16px'
+}
+export const WithZoomEnabled = VisualTestTemplate.bind({});
+WithZoomEnabled.args = {
+  fontSize: '32px'
+}
