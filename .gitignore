@@ -14,6 +14,3 @@ backpack.iml
 yarn.lock
 /packages/*/changelog.md
 .storybook/__image_snapshots__/__diff_output__
-
-# On postpublish, we clone and run some scripts on the backpack-docs repo. This ensures we don't accidentally commit it.
-backpack-docs
