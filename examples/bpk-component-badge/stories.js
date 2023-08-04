@@ -57,7 +57,7 @@ export const VisualTest = VisualTestTemplate.bind({});
 VisualTest.args = {
   fontSize: '16px'
 }
-export const WithZoomEnabled = VisualTestTemplate.bind({});
+export const VisualTestWithZoomEnabled = VisualTestTemplate.bind({});
 WithZoomEnabled.args = {
   fontSize: '32px'
 }
