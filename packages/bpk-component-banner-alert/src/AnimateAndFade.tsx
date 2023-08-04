@@ -90,7 +90,7 @@ class AnimateAndFade extends Component<Props, State> {
     if (this.state.initiateShow) {
       // React doesn't like us calling setState from componentDidUpdate as it can lead to an infinite re-renders.
       // I think it is ok here, however, as this will only happen conditionally (ie once)
-      // eslint-disable-next-line react/no-did-update-set-state
+
       this.setState({
         initiateShow: false,
         isExpanded: true,

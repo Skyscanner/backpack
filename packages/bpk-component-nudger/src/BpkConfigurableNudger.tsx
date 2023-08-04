@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 /*
  * Backpack - Skyscanner's Design System
  *

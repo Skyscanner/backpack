@@ -30,7 +30,7 @@ const splitToken = (value: string) => {
       `Invalid token value. Expecting a valid css unit, got ${value}`,
     );
   }
-  const [_, val, unit] = match; // eslint-disable-line no-unused-vars
+  const [_, val, unit] = match;
   return [parseFloat(val), unit];
 };
 

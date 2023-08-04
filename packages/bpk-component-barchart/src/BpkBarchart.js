@@ -304,7 +304,7 @@ class BpkBarchart extends Component<Props, State> {
 }
 
 BpkBarchart.propTypes = {
-  data: dataProp, // eslint-disable-line react/require-default-props
+  data: dataProp,
   xScaleDataKey: PropTypes.string.isRequired,
   yScaleDataKey: PropTypes.string.isRequired,
   xAxisLabel: PropTypes.string.isRequired,
