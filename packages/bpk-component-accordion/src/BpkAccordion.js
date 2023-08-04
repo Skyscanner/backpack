@@ -34,6 +34,7 @@ export const BpkAccordionContext = createContext({
   divider: true,
 });
 
+
 const BpkAccordion = (props: Props) => {
   const { children, className, divider, onDark, ...rest } = props;
 
