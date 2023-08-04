@@ -898,7 +898,8 @@ $bpk-spacing-v2: true;
 @mixin bpk-form-validation {
   position: relative;
   transform: translateY(-#{$bpk-spacing-sm});
-  transition: opacity $bpk-duration-sm ease-in-out,
+  transition:
+    opacity $bpk-duration-sm ease-in-out,
     transform $bpk-duration-sm ease-in-out;
   opacity: 0;
 

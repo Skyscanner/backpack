@@ -61,6 +61,7 @@
 ///   }
 @mixin bpk-panel--full-width {
   border-radius: 0;
-  box-shadow: $bpk-panel-border-color 0 #{-$bpk-one-pixel-rem} 0 0 inset,
+  box-shadow:
+    $bpk-panel-border-color 0 #{-$bpk-one-pixel-rem} 0 0 inset,
     $bpk-panel-border-color 0 $bpk-one-pixel-rem 0 0 inset;
 }
