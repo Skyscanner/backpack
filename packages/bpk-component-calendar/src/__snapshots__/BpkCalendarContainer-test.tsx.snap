@@ -21,6 +21,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="bpk-calendar-nav__icon"
               height="24"
               style="width: 1.5rem; height: 1.5rem;"
@@ -74,6 +75,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="bpk-calendar-nav__icon"
               height="24"
               style="width: 1.5rem; height: 1.5rem;"
@@ -1900,6 +1902,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="bpk-calendar-nav__icon"
               height="24"
               style="width: 1.5rem; height: 1.5rem;"
@@ -1953,6 +1956,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="bpk-calendar-nav__icon"
               height="24"
               style="width: 1.5rem; height: 1.5rem;"
@@ -3779,6 +3783,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="bpk-calendar-nav__icon"
               height="24"
               style="width: 1.5rem; height: 1.5rem;"
@@ -3832,6 +3837,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             type="button"
           >
             <svg
+              aria-hidden="true"
               class="bpk-calendar-nav__icon"
               height="24"
               style="width: 1.5rem; height: 1.5rem;"

@@ -21,6 +21,7 @@ exports[`withBannerAlertState(BpkBannerAlertDismissable) should render correctly
                 style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
+                  aria-hidden="true"
                   class="bpk-banner-alert__success-icon"
                   height="16"
                   style="width: 1rem; height: 1rem;"
@@ -49,6 +50,7 @@ exports[`withBannerAlertState(BpkBannerAlertDismissable) should render correctly
                 type="button"
               >
                 <svg
+                  aria-hidden="true"
                   class="bpk-close-button__icon"
                   height="16"
                   style="width: 1rem; height: 1rem;"
@@ -103,6 +105,7 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
                 style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
+                  aria-hidden="true"
                   class="bpk-banner-alert__success-icon"
                   height="16"
                   style="width: 1rem; height: 1rem;"
@@ -135,6 +138,7 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
                   style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                 >
                   <svg
+                    aria-hidden="true"
                     class="bpk-banner-alert__expand-icon"
                     height="24"
                     style="width: 1.5rem; height: 1.5rem;"
@@ -196,6 +200,7 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
                 style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
+                  aria-hidden="true"
                   class="bpk-banner-alert__success-icon"
                   height="16"
                   style="width: 1rem; height: 1rem;"
@@ -228,6 +233,7 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
                   style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                 >
                   <svg
+                    aria-hidden="true"
                     class="bpk-banner-alert__expand-icon bpk-banner-alert__expand-icon--flipped"
                     height="24"
                     style="width: 1.5rem; height: 1.5rem;"

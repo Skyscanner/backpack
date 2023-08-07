@@ -31,6 +31,7 @@ exports[`BpkDataTableHeader renders sort icon with down icon selected 1`] = `
       class="bpk-data-table-column__sort-icons"
     >
       <svg
+        aria-hidden="true"
         class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -43,6 +44,7 @@ exports[`BpkDataTableHeader renders sort icon with down icon selected 1`] = `
         />
       </svg>
       <svg
+        aria-hidden="true"
         class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -75,6 +77,7 @@ exports[`BpkDataTableHeader renders sort icon with up icon selected 1`] = `
       class="bpk-data-table-column__sort-icons"
     >
       <svg
+        aria-hidden="true"
         class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -87,6 +90,7 @@ exports[`BpkDataTableHeader renders sort icon with up icon selected 1`] = `
         />
       </svg>
       <svg
+        aria-hidden="true"
         class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -119,6 +123,7 @@ exports[`BpkDataTableHeader renders sort icons 1`] = `
       class="bpk-data-table-column__sort-icons"
     >
       <svg
+        aria-hidden="true"
         class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -131,6 +136,7 @@ exports[`BpkDataTableHeader renders sort icons 1`] = `
         />
       </svg>
       <svg
+        aria-hidden="true"
         class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
