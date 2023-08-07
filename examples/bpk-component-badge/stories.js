@@ -17,6 +17,8 @@
  */
 
 /* @flow strict */
+import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
+
 import {
   DefaultExample,
   WarningExample,
@@ -34,6 +36,7 @@ import {
 
 export default {
   title: 'bpk-component-badge',
+  component: BpkBadge,
 };
 
 // const VisualTestTemplate = (args) => {
@@ -53,6 +56,7 @@ export const Centered = CenteredExample;
 export const DockedRight = DockedLeadingExample;
 export const DockedLeft = DockedTrailingExample;
 export const VisualTest = MixedExample;
+
 
 VisualTest.parameters = {
   percy: {

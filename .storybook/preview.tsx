@@ -17,7 +17,7 @@
  */
 
 import type { Preview } from '@storybook/react';
-import { spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { spacingBase, surfaceContrastDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import 'bpk-stylesheets';
 import 'bpk-stylesheets/font';
@@ -34,7 +34,8 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
 const preview: Preview = {
   args: {
-    fontSize: '16px'
+    fontSize: '16px',
+    onDark: false
   },
   decorators: [
     (story, { args }) => {
@@ -42,7 +43,9 @@ const preview: Preview = {
       return (
         <div style={{ padding: spacingBase }}>
           <EnhancedThemeProvider themeAttributes={themeableAttributes}>
+            <div style={args.onDark ? {background: surfaceContrastDay, padding: '1rem'} : {}}>
             {story()}
+            </div>
           </EnhancedThemeProvider>
           <br />
           <BpkRtlToggle />

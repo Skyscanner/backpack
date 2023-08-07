@@ -18,10 +18,6 @@
 
 /* @flow strict */
 
-import { surfaceContrastDay,
-  // lineHeightBase, iconSizeSm
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
 import {
   BpkAccordion,
   BpkAccordionItem,
@@ -44,7 +40,7 @@ export default {
 
 const SingleItemAccordionTemplate = {
   render: ({ Content = BpkCheckbox, accordionItems, divider = true, onDark = false }) => (
-      <div style={onDark ? {background: surfaceContrastDay, padding: '1rem'} : null}>
+      <div>
       <SingleItemAccordion onDark={onDark} divider={divider}>
         {accordionItems.map((item) => (
           <BpkAccordionItem {...item}>
@@ -117,22 +113,6 @@ export const SingleItemAccordionDefaultExample = {
 //     }]
 //   }
 // }
-
-export const WithDarkBackground = {
-  ...SingleItemAccordionTemplate,
-  args: {
-    accordionItems: [{
-      id: 1,
-      title: 'bla',
-      initiallyExpanded: true
-    },
-    {
-      id: 2,
-      title: 'blabla',
-    }],
-    onDark: true
-  },
-}
 
 // export const WithContent = {
 //   ...SingleItemAccordionTemplate,
