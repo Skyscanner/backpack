@@ -33,20 +33,26 @@ import themeableAttributes from './themeableAttributes';
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
 const preview: Preview = {
+  args: {
+    fontSize: '16px'
+  },
   decorators: [
-    (story) => (
-      <div style={{ padding: spacingBase }}>
-        <EnhancedThemeProvider themeAttributes={themeableAttributes}>
-          {story()}
-        </EnhancedThemeProvider>
-        <br />
-        <BpkRtlToggle />
-        <br />
-        <div style={{ width: '10rem' }}>
-          <BpkThemeToggle />
+    (story, { args }) => {
+      document.documentElement.style.fontSize = args.fontSize;
+      return (
+        <div style={{ padding: spacingBase }}>
+          <EnhancedThemeProvider themeAttributes={themeableAttributes}>
+            {story()}
+          </EnhancedThemeProvider>
+          <br />
+          <BpkRtlToggle />
+          <br />
+          <div style={{ width: '10rem' }}>
+            <BpkThemeToggle />
+          </div>
         </div>
-      </div>
-    ),
+      )
+    }
   ],
 };
 

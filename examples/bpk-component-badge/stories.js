@@ -54,11 +54,11 @@ export const DockedRight = DockedLeadingExample;
 export const DockedLeft = DockedTrailingExample;
 export const VisualTest = MixedExample;
 
-// export const VisualTest = VisualTestTemplate.bind({});
-// VisualTest.args = {
-//   fontSize: '16px'
-// }
-// export const VisualTestWithZoomEnabled = VisualTestTemplate.bind({});
-// WithZoomEnabled.args = {
-//   fontSize: '32px'
-// }
+VisualTest.parameters = {
+  percy: {
+    name: 'Visual Test',
+    additionalSnapshots: [
+      { suffix: ' with Zoom Enabled', args: { fontSize: '32px' }}
+    ]
+  }
+}

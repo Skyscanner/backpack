@@ -43,9 +43,7 @@ export default {
 };
 
 const SingleItemAccordionTemplate = {
-  render: ({ Content = BpkCheckbox, accordionItems, divider = true, fontSize = '16px', onDark = false }) => {
-    document.documentElement.style.fontSize = fontSize;
-    return (
+  render: ({ Content = BpkCheckbox, accordionItems, divider = true, onDark = false }) => (
       <div style={onDark ? {background: surfaceContrastDay, padding: '1rem'} : null}>
       <SingleItemAccordion onDark={onDark} divider={divider}>
         {accordionItems.map((item) => (
@@ -55,13 +53,11 @@ const SingleItemAccordionTemplate = {
         ))}
       </SingleItemAccordion>
       </div>
-    );
-  },
+    ),
 };
 
 // const MultiItemAccordionTemplate = {
-//   render: ({ accordionItems, Content = BpkCheckbox, onDark = false, divider = true, fontSize = '16px' }) => {
-//     document.documentElement.style.fontSize = fontSize;
+//   render: ({ accordionItems, Content = BpkCheckbox, onDark = false, divider = true }) => {
 //     return (
 //       <div style={onDark ? {background: surfaceContrastDay, padding: '1rem'} : null}>
 //       <BpkAccordion onDark={onDark} divider={divider}>
