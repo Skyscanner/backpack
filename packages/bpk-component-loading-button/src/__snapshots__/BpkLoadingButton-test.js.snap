@@ -11,6 +11,7 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -37,6 +38,7 @@ exports[`BpkLoadingButton should render correctly 1`] = `
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -65,6 +67,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -92,6 +95,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -118,6 +122,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -148,6 +153,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -174,6 +180,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -200,6 +207,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "linkOnDark" 
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -226,6 +234,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "loading" att
       class="bpk-loading-button__icon bpk-loading-button__icon--large"
     >
       <svg
+        aria-hidden="true"
         class="bpk-spinner bpk-spinner--large bpk-spinner--dark bpk-spinner--align-to-large-button"
         height="24"
         width="24"
@@ -298,6 +307,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "loading" att
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -324,6 +334,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "primaryOnDar
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -350,6 +361,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "primaryOnLig
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -376,6 +388,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -402,6 +415,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondaryOnD
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -428,6 +442,7 @@ exports[`BpkLoadingButton should render correctly with a "destructive" attribute
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -457,6 +472,7 @@ exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -485,6 +501,7 @@ exports[`BpkLoadingButton should render correctly with a "featured" attribute 1`
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -513,6 +530,7 @@ exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = 
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -541,6 +559,7 @@ exports[`BpkLoadingButton should render correctly with a "icon" attribute 1`] = 
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -568,6 +587,7 @@ exports[`BpkLoadingButton should render correctly with a "iconDisabled" attribut
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -597,6 +617,7 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
         style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
         <svg
+          aria-hidden="true"
           height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
@@ -614,6 +635,7 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -646,6 +668,7 @@ exports[`BpkLoadingButton should render correctly with a "iconOnly" attribute 1`
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -673,6 +696,7 @@ exports[`BpkLoadingButton should render correctly with a "iconPosition=leading" 
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -702,6 +726,7 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"
@@ -728,6 +753,7 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -756,6 +782,7 @@ exports[`BpkLoadingButton should render correctly with a "linkOnDark" attribute 
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -784,6 +811,7 @@ exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`]
       class="bpk-loading-button__icon"
     >
       <svg
+        aria-hidden="true"
         class="bpk-spinner bpk-spinner--dark bpk-spinner--align-to-button"
         height="16"
         width="16"
@@ -900,6 +928,7 @@ exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`]
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -928,6 +957,7 @@ exports[`BpkLoadingButton should render correctly with a "primaryOnDark" attribu
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -956,6 +986,7 @@ exports[`BpkLoadingButton should render correctly with a "primaryOnLight" attrib
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -984,6 +1015,7 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -1012,6 +1044,7 @@ exports[`BpkLoadingButton should render correctly with a "secondaryOnDark" attri
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="16"
         style="width: 1rem; height: 1rem;"
@@ -1040,6 +1073,7 @@ exports[`BpkLoadingButton should respect the class names entered as a string 1`]
       style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon--rtl-support"
         height="24"
         style="width: 1.5rem; height: 1.5rem;"

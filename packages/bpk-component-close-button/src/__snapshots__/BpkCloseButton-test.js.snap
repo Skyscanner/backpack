@@ -9,6 +9,7 @@ exports[`BpkCloseButton should render correctly 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="bpk-close-button__icon"
       height="16"
       style="width: 1rem; height: 1rem;"
@@ -33,6 +34,7 @@ exports[`BpkCloseButton should render correctly with a custom className 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="bpk-close-button__icon"
       height="16"
       style="width: 1rem; height: 1rem;"
@@ -57,6 +59,7 @@ exports[`BpkCloseButton should render correctly with a custom icon 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="bpk-close-button__icon"
       height="16"
       style="width: 1rem; height: 1rem;"
