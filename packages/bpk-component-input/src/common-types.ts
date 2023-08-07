@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import type { SyntheticEvent } from 'react';
+import type { ComponentProps, SyntheticEvent } from 'react';
 
 export const CLEAR_BUTTON_MODES = {
   never: 'never',
@@ -33,12 +33,11 @@ export const INPUT_TYPES = {
   tel: 'tel',
 } as const;
 
-type BaseProps = {
+type BaseProps = ComponentProps<'input'> & {
   id: string;
   name: string;
   value: string;
   type?: (typeof INPUT_TYPES)[keyof typeof INPUT_TYPES];
-  className?: string | null;
   valid?: boolean | null;
   large?: boolean;
   docked?: boolean;
@@ -46,7 +45,6 @@ type BaseProps = {
   dockedMiddle?: boolean;
   dockedLast?: boolean;
   inputRef?: ((ref: HTMLInputElement) => void) | null;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 export type PropsWithoutClearButonMode = BaseProps & {
@@ -130,7 +128,6 @@ export const propTypes = {
 
 export const defaultProps = {
   type: INPUT_TYPES.text,
-  className: null,
   valid: null,
   large: false,
   docked: false,

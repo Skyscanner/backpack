@@ -24,7 +24,7 @@ type Props = DefaultProps & {
 };
 type DefaultProps = {
     className?: string | null;
-    weekDayKey: WeekDayKey;
+    weekDayKey?: WeekDayKey;
 };
 declare class BpkCalendarGridHeader extends PureComponent<Props> {
     static defaultProps: {

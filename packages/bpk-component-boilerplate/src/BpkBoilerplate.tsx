@@ -30,15 +30,10 @@ const BpkBoilerplate = ({ className = null, ...rest }: Props) => {
   const classNames = getClassName('bpk-boilerplate', className);
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div className={classNames} {...rest}>
       I am an example component.
     </div>
   );
-};
-
-BpkBoilerplate.defaultProps = {
-  className: null,
 };
 
 export default BpkBoilerplate;

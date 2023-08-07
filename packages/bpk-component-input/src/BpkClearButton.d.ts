@@ -16,13 +16,9 @@
  * limitations under the License.
  */
 
-type Props = {
-  label: string;
-};
-declare const BpkClearButton: ({
-  className,
-  label,
-  onClick,
-  ...rest
-}: Props) => JSX.Element;
+import type { ComponentProps } from 'react';
+interface Props extends ComponentProps<'button'> {
+    label: string;
+}
+declare const BpkClearButton: ({ className, label, onClick, ...rest }: Props) => JSX.Element;
 export default BpkClearButton;

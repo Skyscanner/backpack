@@ -19,28 +19,34 @@
 import type { ComponentType } from 'react';
 import type { SelectionConfiguration } from './custom-proptypes';
 type Props = {
-    fixedWidth: boolean;
-    maxDate: Date;
-    minDate: Date;
+    fixedWidth?: boolean;
+    maxDate?: Date;
+    minDate?: Date;
     onDateSelect?: ((date: Date, newDate?: Date) => void) | null;
     onMonthChange?: ((event: UIEvent, { month, source }: {
         month: Date;
         source: string;
     }) => void) | null;
-    selectionConfiguration: SelectionConfiguration;
-    initiallyFocusedDate: Date | null;
+    selectionConfiguration?: SelectionConfiguration;
+    initiallyFocusedDate?: Date | null;
+    markToday?: boolean;
+    markOutsideDays?: boolean;
 };
 type InjectedProps = {
     onDateClick: ((date: Date) => void) | null;
     onDateKeyDown: ((event: KeyboardEvent) => void) | null;
     month: Date;
+    minDate: Date;
+    maxDate: Date;
 };
-type CalendarProps<P> = Omit<P & Props, keyof InjectedProps>;
+type CalendarProps<P> = Omit<P & Props, keyof InjectedProps> & {
+    [rest: string]: any;
+};
 type State = {
     preventKeyboardFocus: boolean;
     focusedDate: Date;
 };
-declare const withCalendarState: <P extends {}>(Calendar: ComponentType<P & InjectedProps>) => {
+declare const withCalendarState: <P extends object>(Calendar: ComponentType<P>) => {
     new (props: CalendarProps<P>): {
         UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<P>): void;
         handleDateFocus: (event: UIEvent, { date, source }: {
@@ -87,6 +93,8 @@ declare const withCalendarState: <P extends {}>(Calendar: ComponentType<P & Inje
             date: null;
         };
         initiallyFocusedDate: null;
+        markToday: boolean;
+        markOutsideDays: boolean;
     };
     contextType?: import("react").Context<any> | undefined;
 };
@@ -457,6 +465,8 @@ declare const _default: {
             date: null;
         };
         initiallyFocusedDate: null;
+        markToday: boolean;
+        markOutsideDays: boolean;
     };
     contextType?: import("react").Context<any> | undefined;
 };

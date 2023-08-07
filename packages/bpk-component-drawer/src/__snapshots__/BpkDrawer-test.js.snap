@@ -40,6 +40,7 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
               type="button"
             >
               <svg
+                aria-hidden="true"
                 class="bpk-close-button__icon"
                 height="16"
                 style="width: 1rem; height: 1rem;"

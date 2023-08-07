@@ -153,6 +153,7 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="bpk-close-button__icon"
           height="16"
           style="width: 1rem; height: 1rem;"

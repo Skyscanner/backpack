@@ -18,6 +18,7 @@ exports[`BpkDropdownChip should render correctly 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -51,6 +52,7 @@ exports[`BpkDropdownChip should render correctly with a "className" attribute 1`
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -84,6 +86,7 @@ exports[`BpkDropdownChip should render correctly with type="default" 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -124,6 +127,7 @@ exports[`BpkDropdownChip should render correctly with type="default" and a leadi
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -158,6 +162,7 @@ exports[`BpkDropdownChip should render correctly with type="default" and disable
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -191,6 +196,7 @@ exports[`BpkDropdownChip should render correctly with type="default" and selecte
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -225,6 +231,7 @@ exports[`BpkDropdownChip should render correctly with type="default", selected a
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -258,6 +265,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -298,6 +306,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and a leadi
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -332,6 +341,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and disable
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -365,6 +375,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and selecte
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -399,6 +410,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark", selected a
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -432,6 +444,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" 1`] = `
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -472,6 +485,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and a lead
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -506,6 +520,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and disabl
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -539,6 +554,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and select
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
@@ -573,6 +589,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image", selected 
       class="bpk-chip__trailing-accessory-view"
     >
       <svg
+        aria-hidden="true"
         height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"

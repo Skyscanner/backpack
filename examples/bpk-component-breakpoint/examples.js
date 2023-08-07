@@ -75,6 +75,11 @@ const DefaultExample = () => (
         <MediaQueryStatus isActive={isActive}>TABLET ONLY</MediaQueryStatus>
       )}
     </BpkBreakpoint>
+    <BpkBreakpoint query={BREAKPOINTS.DESKTOP_ONLY}>
+      {(isActive) => (
+        <MediaQueryStatus isActive={isActive}>DESKTOP ONLY</MediaQueryStatus>
+      )}
+    </BpkBreakpoint>
     <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
       {(isActive) => (
         <MediaQueryStatus isActive={isActive}>ABOVE MOBILE</MediaQueryStatus>
@@ -83,6 +88,11 @@ const DefaultExample = () => (
     <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
       {(isActive) => (
         <MediaQueryStatus isActive={isActive}>ABOVE TABLET</MediaQueryStatus>
+      )}
+    </BpkBreakpoint>
+    <BpkBreakpoint query={BREAKPOINTS.ABOVE_DESKTOP}>
+      {(isActive) => (
+        <MediaQueryStatus isActive={isActive}>ABOVE DESKTOP</MediaQueryStatus>
       )}
     </BpkBreakpoint>
   </div>

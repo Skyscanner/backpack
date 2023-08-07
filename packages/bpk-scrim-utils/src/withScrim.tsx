@@ -20,7 +20,7 @@
 import focusScope from 'a11y-focus-scope';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusStore from 'a11y-focus-store';
-import type { ComponentType, RefObject } from 'react';
+import type { ComponentType } from 'react';
 import { Component } from 'react';
 
 import {
@@ -73,27 +73,35 @@ const withScrim = <P extends object>(
       const { getApplicationElement, isIpad, isIphone } = this.props;
       const applicationElement = getApplicationElement();
 
-      // iPhones need to have the application element hidden
-      // and scrolling stored to prevent some weird display
-      // issues from happening.
-      if (isIphone && applicationElement) {
+      /**
+       * iPhones & iPads need to have a fixed body
+       * and scrolling stored to prevent some iOS specific issues occuring
+       *
+       * Issue description:
+       * iOS safari does not prevent scrolling on the underlying content.
+       * Without the below fixes this results in users being able to scroll below any modal or dialog that uses withScrim.
+       *
+       * The fixes can be summaried here: https://markus.oberlehner.net/blog/simple-solution-to-prevent-body-scrolling-on-ios/
+       *
+       * The most dangerous of the fixes below is the fixBody, this function applies changes to the <body> style.
+       * This has the potential to override any custom styles already applied. The assumption here is that no one internally is making these changes to body.
+       *
+       * There is a corresponding set of functions in the componentWillUnmount block that deals with undoing these changes.
+       */
+      if (isIphone || isIpad) {
         storeScroll();
-        applicationElement.style.display = 'none';
-      } else {
-        // The method used for `lockScroll` does not prevent scrolling on iPad.
-        // On iPad we instead set `position: fixed` on `body` to prevent scrolling
-        // and resolve virtual keyboard issues.
-        if (isIpad) {
-          storeScroll();
-          fixBody();
-        } else {
-          lockScroll();
-        }
-        if (applicationElement) {
-          applicationElement.setAttribute('aria-hidden', 'true');
-        }
+        fixBody();
       }
+      /**
+       * lockScroll and the associated unlockScroll is how we control the scroll behaviour of the application when the scrim is active.
+       * The desired behaviour is to prevent the user from scrolling content behind the scrim. The above iOS fixes are in place because lockScroll alone does not solve due to iOS specific issues.
+       */
 
+      lockScroll();
+
+      if (applicationElement) {
+        applicationElement.setAttribute('aria-hidden', 'true');
+      }
       focusStore.storeFocus();
       if (this.dialogElement) {
         focusScope.scopeFocus(this.dialogElement);
@@ -104,19 +112,14 @@ const withScrim = <P extends object>(
       const { getApplicationElement, isIpad, isIphone } = this.props;
       const applicationElement = getApplicationElement();
 
-      if (isIphone && applicationElement) {
-        applicationElement.style.display = '';
-        restoreScroll();
-      } else {
-        if (isIpad) {
-          unfixBody();
-          restoreScroll();
-        } else {
-          unlockScroll();
-        }
-        if (applicationElement) {
-          applicationElement.removeAttribute('aria-hidden');
-        }
+      if (isIphone || isIpad) {
+        setTimeout(restoreScroll, 0);
+        unfixBody();
+      }
+      unlockScroll();
+
+      if (applicationElement) {
+        applicationElement.removeAttribute('aria-hidden');
       }
 
       focusScope.unscopeFocus();

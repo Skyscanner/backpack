@@ -396,12 +396,12 @@ describe('Portal', () => {
     );
 
     expect(onCloseSpy.mock.calls).toMatchInlineSnapshot(`
-      Array [
-        Array [
+      [
+        [
           MouseEvent {
             "isTrusted": false,
           },
-          Object {
+          {
             "source": "DOCUMENT_CLICK",
           },
         ],
@@ -583,7 +583,7 @@ describe('Portal', () => {
       </Portal>,
     );
 
-    expect(handler.mock.calls).toMatchInlineSnapshot('Array []');
+    expect(handler.mock.calls).toMatchInlineSnapshot('[]');
 
     jest.clearAllMocks();
     rerender(
@@ -598,11 +598,11 @@ describe('Portal', () => {
     );
 
     expect(handler.mock.calls).toMatchInlineSnapshot(`
-      Array [
-        Array [
+      [
+        [
           "onRender",
         ],
-        Array [
+        [
           "onOpen",
         ],
       ]
@@ -623,11 +623,11 @@ describe('Portal', () => {
     );
 
     expect(handler.mock.calls).toMatchInlineSnapshot(`
-      Array [
-        Array [
+      [
+        [
           "onRender",
         ],
-        Array [
+        [
           "onOpen",
         ],
       ]

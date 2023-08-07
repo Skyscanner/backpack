@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import gulp from 'gulp';
+const gulp = require('gulp');
 
 const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
 

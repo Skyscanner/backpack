@@ -38,13 +38,13 @@ type Props = DefaultProps & {
 
 type DefaultProps = {
   className?: string | null;
-  weekDayKey: WeekDayKey;
+  weekDayKey?: WeekDayKey;
 };
 
 type WeekDayProps = {
   Element: ReactComponent;
   weekDay: WeekDay;
-  weekDayKey: WeekDayKey;
+  weekDayKey?: WeekDayKey;
 };
 
 /*

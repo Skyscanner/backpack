@@ -22,6 +22,7 @@ $bpk-spacing-v2: true;
 .bpk-content-card {
   &--link {
     color: inherit;
+    /* stylelint-disable backpack/use-typography-styles */
     font: inherit;
     text-decoration: inherit;
   }

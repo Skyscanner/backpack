@@ -55,10 +55,12 @@ import { formatMonth, formatDateFull, weekDays } from './test-utils';
 
 const LeftIcon = withButtonAlignment(withRtlSupport(SmallLongArrowLeftIcon));
 const RightIcon = withButtonAlignment(withRtlSupport(SmallLongArrowRightIcon));
-const withDirection = (Nav, direction) => (props) =>
-  <Nav {...props} direction={direction} />;
-const withPrices = (DateComponent, prices) => (props) =>
-  <DateComponent {...props} prices={prices} />;
+const withDirection = (Nav, direction) => (props) => (
+  <Nav {...props} direction={direction} />
+);
+const withPrices = (DateComponent, prices) => (props) => (
+  <DateComponent {...props} prices={prices} />
+);
 
 const prices = [
   125, 56, 75, 57, 78, 92, 133, 90, 148, 80, 122, 67, 70, 123, 77, 66, 64, 56,
@@ -289,12 +291,10 @@ class CalendarContainer extends Component {
 }
 
 CalendarContainer.propTypes = {
-  selectTodaysDate: PropTypes.bool,
   selectionConfiguration: CustomPropTypes.SelectionConfiguration,
 };
 
 CalendarContainer.defaultProps = {
-  selectTodaysDate: true,
   selectionConfiguration: {
     type: CALENDAR_SELECTION_TYPE.single,
     date: null,

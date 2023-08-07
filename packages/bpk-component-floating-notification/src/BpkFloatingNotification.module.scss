@@ -27,7 +27,8 @@
   max-width: bpk-spacing-xxl() * 10;
   margin: auto;
   padding: bpk-spacing-lg();
-  transition: opacity $bpk-duration-base ease-in-out,
+  transition:
+    opacity $bpk-duration-base ease-in-out,
     transform $bpk-duration-base ease-in-out;
   border-radius: $bpk-border-radius-md;
   background: $bpk-core-primary-day;

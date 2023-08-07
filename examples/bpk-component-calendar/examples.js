@@ -43,6 +43,9 @@ import {
 } from './test-utils';
 import CalendarContainer, { MonthViewCalendar } from './examples-components';
 
+/* eslint-disable-next-line react/prop-types */
+const DummyDateComponent = ({ date }) => <div>{date.toString()}</div>;
+
 const CalendarNavExample = () => (
   <BpkCalendarNav
     month={new Date()}
@@ -107,7 +110,6 @@ const MinDateInThePastExample = () => (
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
     minDate={new Date(2011, 1, 1)}
-    selectTodaysDate={false}
     initiallyFocusedDate={new Date()}
   />
 );
@@ -242,9 +244,6 @@ const CustomComposedCalendarExample = () => (
 );
 
 const WeekExample = () => {
-  // eslint-disable-next-line react/prop-types
-  const DummyDateComponent = ({ date }) => <div>{date.toString()}</div>;
-
   const weekProps = {
     ...Week.defaultProps,
     DateComponent: DummyDateComponent,
@@ -286,7 +285,6 @@ const WeekExample = () => {
 const FocusedDateInThePastExample = () => (
   <CalendarContainer
     minDate={new Date(2020, 3, 1)}
-    selectTodaysDate={false}
     initiallyFocusedDate={new Date(2020, 3, 19)}
     id="myCalendar"
     formatMonth={formatMonth}
@@ -302,7 +300,6 @@ const FocusedDateInThePastExample = () => (
 const RangeDateCalendarExample = () => (
   <CalendarContainer
     minDate={new Date(2020, 3, 1)}
-    selectTodaysDate={false}
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
