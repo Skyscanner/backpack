@@ -21,6 +21,7 @@ exports[`BpkBannerAlert should render correctly 1`] = `
                 style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
                 <svg
+                  aria-hidden="true"
                   class="bpk-banner-alert__success-icon"
                   height="16"
                   style="width: 1rem; height: 1rem;"
