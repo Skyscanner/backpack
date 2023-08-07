@@ -29,6 +29,7 @@ exports[`BpkModalInner should render correctly 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
             height="16"
             style="width: 1rem; height: 1rem;"
@@ -81,6 +82,7 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
             height="16"
             style="width: 1rem; height: 1rem;"
@@ -133,6 +135,7 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
             height="16"
             style="width: 1rem; height: 1rem;"
@@ -185,6 +188,7 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
             height="16"
             style="width: 1rem; height: 1rem;"
@@ -237,6 +241,7 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
             height="16"
             style="width: 1rem; height: 1rem;"
@@ -289,6 +294,7 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
             height="16"
             style="width: 1rem; height: 1rem;"
@@ -354,6 +360,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
             height="16"
             style="width: 1rem; height: 1rem;"
@@ -445,6 +452,7 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
             height="16"
             style="width: 1rem; height: 1rem;"
@@ -497,6 +505,7 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
             height="16"
             style="width: 1rem; height: 1rem;"

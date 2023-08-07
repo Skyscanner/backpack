@@ -32,6 +32,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -44,6 +45,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -76,6 +78,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -88,6 +91,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -120,6 +124,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -132,6 +137,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -243,6 +249,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -255,6 +262,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -287,6 +295,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -299,6 +308,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -331,6 +341,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -343,6 +354,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -454,6 +466,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -466,6 +479,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -498,6 +512,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -510,6 +525,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -542,6 +558,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -554,6 +571,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -665,6 +683,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -677,6 +696,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -709,6 +729,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -721,6 +742,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -753,6 +775,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -765,6 +788,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -876,6 +900,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -888,6 +913,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -920,6 +946,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -932,6 +959,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -964,6 +992,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -976,6 +1005,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1087,6 +1117,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1099,6 +1130,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1131,6 +1163,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1143,6 +1176,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1175,6 +1209,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1187,6 +1222,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1298,6 +1334,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1310,6 +1347,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1342,6 +1380,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1354,6 +1393,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1386,6 +1426,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1398,6 +1439,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1509,6 +1551,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1521,6 +1564,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1553,6 +1597,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1565,6 +1610,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1597,6 +1643,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"
@@ -1609,6 +1656,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
               height="16"
               style="width: 1rem; height: 1rem;"

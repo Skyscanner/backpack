@@ -12,6 +12,7 @@ exports[`BpkClearButton should render correctly 1`] = `
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-clear-button__icon"
         focusable="false"
         height="16"
@@ -41,6 +42,7 @@ exports[`BpkClearButton should render correctly with a custom class 1`] = `
       style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
+        aria-hidden="true"
         class="bpk-clear-button__icon"
         focusable="false"
         height="16"

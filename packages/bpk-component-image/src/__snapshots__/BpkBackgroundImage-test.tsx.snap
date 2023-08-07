@@ -62,6 +62,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
         class="bpk-image__spinner"
       >
         <svg
+          aria-hidden="true"
           class="bpk-spinner bpk-spinner--dark"
           height="16"
           width="16"
