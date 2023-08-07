@@ -118,4 +118,4 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 
 * `accordionColor`,
 * `accordionHoverColor`,
-* `accordionActiveColor`,
+* `accordionActiveColor`
