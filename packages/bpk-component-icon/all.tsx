@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-// TODO: Work out the correct types for these to move away from 'any'.
+// TODO: Work out the correct types for these to move away from 'any'
 
 function requireAll(requireContext: any) {
   const hash: any = {};

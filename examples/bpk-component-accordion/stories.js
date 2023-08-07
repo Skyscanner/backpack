@@ -39,7 +39,20 @@ export default {
 };
 
 const SingleItemAccordionTemplate = {
-  render: ({ Content = BpkCheckbox, accordionItems, divider = true, onDark = false }) => (
+  render: (
+    { Content = BpkCheckbox,
+      accordionItems = [{
+        id: 1,
+        title: 'bla',
+        initiallyExpanded: true
+      },
+      {
+        id: 2,
+        title: 'blabla',
+      }],
+      divider = true,
+      onDark = false
+    }) => (
       <div>
       <SingleItemAccordion onDark={onDark} divider={divider}>
         {accordionItems.map((item) => (
@@ -193,27 +206,24 @@ export const SingleItemAccordionDefaultExample = {
 //   }
 // }
 
-export const WithZoomEnabled = {
+export const VisualTestOnDark = {
   ...SingleItemAccordionTemplate,
   args: {
-    accordionItems: [{
-      id: 1,
-      title: 'bla',
-      initiallyExpanded: true
-    },
-    {
-      id: 2,
-      title: 'blabla',
-    }],
+    onDark: true
+  },
+}
+
+export const VisualTestWithZoomEnabled = {
+  ...SingleItemAccordionTemplate,
+  args: {
     fontSize: '32px'
   },
 }
 
-
 export const VisualTest = SingleItemAccordionDefaultExample;
 VisualTest.parameters = {
   percy: {
-    name: 'Visual Test',
+    name: 'A snapshot',
     additionalSnapshots: [
       { suffix: ' on Dark', args: { onDark: true }},
       { suffix: ' with Zoom Enabled', args: { fontSize: '32px' }}

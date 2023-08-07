@@ -60,7 +60,7 @@ export const VisualTest = MixedExample;
 
 VisualTest.parameters = {
   percy: {
-    name: 'Visual Test',
+    name: 'A snapshot',
     additionalSnapshots: [
       { suffix: ' with Zoom Enabled', args: { fontSize: '32px' }}
     ]
