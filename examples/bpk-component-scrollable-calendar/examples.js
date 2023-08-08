@@ -20,7 +20,7 @@ import { Component } from 'react';
 import startOfMonth from 'date-fns/startOfMonth';
 import endOfMonth from 'date-fns/endOfMonth';
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import {
   DateUtils,
   CustomPropTypes,

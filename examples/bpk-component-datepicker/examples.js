@@ -27,7 +27,7 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../packages/bpk-react-utils';
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import {
   weekDays,
   formatMonth,

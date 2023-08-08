@@ -30,7 +30,7 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkButton from '../../packages/bpk-component-button';
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import {
   withButtonAlignment,
   withRtlSupport,

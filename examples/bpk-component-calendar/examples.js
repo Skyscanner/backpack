@@ -18,7 +18,7 @@
 import addMonths from 'date-fns/addMonths';
 import startOfDay from 'date-fns/startOfDay';
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import BpkText from '../../packages/bpk-component-text';
 import {
   BpkCalendarGrid,

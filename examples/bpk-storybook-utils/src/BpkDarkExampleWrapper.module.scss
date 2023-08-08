@@ -15,30 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { cssModules } from '../../bpk-react-utils';
+@import '../../../packages/bpk-mixins/index.scss';
 
-import STYLES from './BpkDarkExampleWrapper.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
-  const { padded, ...rest } = props;
-  return (
-    /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-    <div
-      className={getClassName(
-        'bpk-dark-example-wrapper',
-        padded && 'bpk-dark-example-wrapper--padded',
-      )}
-      {...rest}
-    />
+.bpk-dark-example-wrapper {
+  @include bpk-border-radius-sm;
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-docs-sidebar-background,
+    $bpk-core-primary-day
   );
-};
 
-BpkDarkExampleWrapper.defaultProps = {
-  padded: false,
-};
-
-export default BpkDarkExampleWrapper;
+  &--padded {
+    padding: $bpk-spacing-md;
+  }
+}
