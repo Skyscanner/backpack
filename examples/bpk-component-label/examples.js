@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import { BpkDarkExampleWrapper } from '../../packages/bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 import BpkLabel from '../../packages/bpk-component-label';
 
 const DefaultExample = () => <BpkLabel htmlFor="origin">Origin</BpkLabel>;

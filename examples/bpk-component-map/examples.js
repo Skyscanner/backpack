@@ -21,7 +21,7 @@ import { Component } from 'react';
 import type { Node } from 'react';
 import PropTypes from 'prop-types';
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import BpkText from '../../packages/bpk-component-text';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import LandmarkIconSm from '../../packages/bpk-component-icon/sm/landmark';

@@ -20,7 +20,7 @@
 import PropTypes from 'prop-types';
 import { cloneElement, Component } from 'react';
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';

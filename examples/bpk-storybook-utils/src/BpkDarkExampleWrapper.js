@@ -15,14 +15,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /* @flow strict */
 
-import { action } from '../bpk-storybook-utils';
-import BpkCloseButton from '../../packages/bpk-component-close-button';
+import { cssModules } from '../../../packages/bpk-react-utils';
 
-const DefaultExample = () => (
-  <BpkCloseButton label="Close" onClick={action('Close button clicked')} />
-);
+import STYLES from './BpkDarkExampleWrapper.module.scss';
 
-export default DefaultExample;
+const getClassName = cssModules(STYLES);
+
+const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
+  const { padded, ...rest } = props;
+  return (
+    /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
+    <div
+      className={getClassName(
+        'bpk-dark-example-wrapper',
+        padded && 'bpk-dark-example-wrapper--padded',
+      )}
+      {...rest}
+    />
+  );
+};
+
+BpkDarkExampleWrapper.defaultProps = {
+  padded: false,
+};
+
+export default BpkDarkExampleWrapper;

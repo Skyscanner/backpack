@@ -19,7 +19,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import BpkSelect from '../../packages/bpk-component-select';
 
 class StatefulBpkSelect extends Component {

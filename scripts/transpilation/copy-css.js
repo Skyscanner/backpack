@@ -21,7 +21,7 @@ const { execSync } = require('child_process');
 // eslint-disable-next-line no-console
 console.log('Copying CSS files...');
 
-const cssFiles = execSync('find packages -name "*.css" | grep -v node_modules')
+const cssFiles = execSync('find packages -name "*.css" | grep -v node_modules | grep -v "bpk-stylesheets"')
   .toString()
   .split('\n')
   .filter((s) => s !== '');
