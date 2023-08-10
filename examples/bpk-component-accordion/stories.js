@@ -223,7 +223,7 @@ export const VisualTestWithZoomEnabled = {
 export const VisualTest = SingleItemAccordionDefaultExample;
 VisualTest.parameters = {
   percy: {
-    name: 'A snapshot',
+    name: 'Visual Test - single',
     additionalSnapshots: [
       { suffix: ' on Dark', args: { onDark: true }},
       { suffix: ' with Zoom Enabled', args: { fontSize: '32px' }}
