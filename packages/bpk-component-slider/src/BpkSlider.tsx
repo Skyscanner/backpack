@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import Slider from 'react-slider';
 import PropTypes from 'prop-types';
 
@@ -25,7 +26,12 @@ import STYLES from './BpkSlider.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkSlider = (props) => {
+type Props = {
+  className?: string | null;
+  [rest: string]: any;
+}
+
+const BpkSlider = (props: Props) => {
   const { className, ...rest } = props;
   const invert = isRTL();
   const classNames = [getClassName('bpk-slider')];
@@ -45,6 +51,7 @@ const BpkSlider = (props) => {
     <Slider
       {...rest}
       withTracks
+      snapDragDisabled={false}
       invert={invert}
       className={classNames.join(' ')}
       thumbClassName={thumbClassNames.join(' ')}

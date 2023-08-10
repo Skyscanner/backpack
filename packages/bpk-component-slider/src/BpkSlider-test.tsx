@@ -20,49 +20,33 @@ import { render } from '@testing-library/react';
 
 import BpkSlider from './BpkSlider';
 
-const createNodeMock = () => document.createElement('div');
-
 describe('BpkSlider', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkSlider min={0} max={100} value={25} />, {
-      createNodeMock,
-    });
+    const { asFragment } = render(<BpkSlider min={0} max={100} value={25} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
     const { asFragment } = render(
-      <BpkSlider min={0} max={100} value={25} className="my-slider" />,
-      { createNodeMock },
-    );
+      <BpkSlider min={0} max={100} value={25} className="my-slider" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "step" attribute', () => {
     const { asFragment } = render(
-      <BpkSlider min={0} max={100} value={2} step={10} />,
-      {
-        createNodeMock,
-      },
-    );
+      <BpkSlider min={0} max={100} value={2} step={10} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a range of values', () => {
     const { asFragment } = render(
-      <BpkSlider min={0} max={100} value={[10, 90]} />,
-      {
-        createNodeMock,
-      },
-    );
+      <BpkSlider min={0} max={100} value={[10, 90]} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a minimum distance between controls', () => {
     const { asFragment } = render(
-      <BpkSlider min={0} max={100} value={[10, 90]} minDistance={20} />,
-      { createNodeMock },
-    );
+      <BpkSlider min={0} max={100} value={[10, 90]} minDistance={20} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
