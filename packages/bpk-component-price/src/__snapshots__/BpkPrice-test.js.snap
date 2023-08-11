@@ -42,6 +42,27 @@ exports[`large left view should support custom class names 1`] = `
 </DocumentFragment>
 `;
 
+exports[`large left view should support custom leading class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class="leading-classname"
+    />
+    <div
+      class=""
+    >
+      <span
+        class="bpk-text bpk-text--xxl bpk-price__price bpk-price__spacing"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`large left view should support leading text attribute 1`] = `
 <DocumentFragment>
   <div
@@ -211,6 +232,27 @@ exports[`small left view should support custom class names 1`] = `
 </DocumentFragment>
 `;
 
+exports[`small left view should support custom leading class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class="leading-classname"
+    />
+    <div
+      class=""
+    >
+      <span
+        class="bpk-text bpk-text--heading-4 bpk-price__price bpk-price__spacing"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`small left view should support leading text attribute 1`] = `
 <DocumentFragment>
   <div
@@ -366,6 +408,27 @@ exports[`small right view should support custom class names 1`] = `
   >
     <div
       class="bpk-price__leading--right"
+    />
+    <div
+      class="bpk-price__column-container"
+    >
+      <span
+        class="bpk-text bpk-text--heading-4 bpk-price__price"
+      >
+        £1,830
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`small right view should support custom leading class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price bpk-price--right"
+  >
+    <div
+      class="bpk-price__leading--right leading-classname"
     />
     <div
       class="bpk-price__column-container"
