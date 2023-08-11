@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import {
   BpkTable,
   BpkTableBody,

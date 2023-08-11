@@ -26,7 +26,7 @@ import {
 import {
   action,
   BpkDarkExampleWrapper,
-} from '../../packages/bpk-storybook-utils';
+} from '../bpk-storybook-utils';
 import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
 
 const LinkExample = () => (

@@ -1,0 +1,107 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+$base-url: 'https://js.skyscnr.com/sttc/bpk-fonts';
+
+@font-face {
+  font-family: 'Skyscanner Relative';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('#{$base-url}/SkyscannerRelative-Book-f9356ad6.woff2') format('woff2'),
+    url('#{$base-url}/SkyscannerRelative-Book-46f9f429.woff') format('woff'),
+    url('#{$base-url}/SkyscannerRelative-Book-ab1dbcbe.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Skyscanner Relative';
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url('#{$base-url}/SkyscannerRelative-Italic-10532ac3.woff2') format('woff2'),
+    url('#{$base-url}/SkyscannerRelative-Italic-db5d0ac5.woff') format('woff'),
+    url('#{$base-url}/SkyscannerRelative-Italic-8eec3f3a.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Skyscanner Relative';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url('#{$base-url}/SkyscannerRelative-Medium-c08dc28b.woff2') format('woff2'),
+    url('#{$base-url}/SkyscannerRelative-Medium-865e167a.woff') format('woff'),
+    url('#{$base-url}/SkyscannerRelative-Medium-d0ae478a.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Skyscanner Relative';
+  font-style: italic;
+  font-weight: 500;
+  src:
+    url('#{$base-url}/SkyscannerRelative-MediumItalic-81517f37.woff2')
+      format('woff2'),
+    url('#{$base-url}/SkyscannerRelative-MediumItalic-bbdb6b0c.woff')
+      format('woff'),
+    url('#{$base-url}/SkyscannerRelative-MediumItalic-226fe64c.ttf')
+      format('ttf');
+}
+
+@font-face {
+  font-family: 'Skyscanner Relative';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('#{$base-url}/SkyscannerRelative-Bold-8545937e.woff2') format('woff2'),
+    url('#{$base-url}/SkyscannerRelative-Bold-a099c9f7.woff') format('woff'),
+    url('#{$base-url}/SkyscannerRelative-Bold-ec4cc5a7.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Skyscanner Relative';
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url('#{$base-url}/SkyscannerRelative-BoldItalic-01b5d138.woff2')
+      format('woff2'),
+    url('#{$base-url}/SkyscannerRelative-BoldItalic-4d6d36e3.woff')
+      format('woff'),
+    url('#{$base-url}/SkyscannerRelative-BoldItalic-dc9284dc.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Skyscanner Relative';
+  font-style: normal;
+  font-weight: 900;
+  src:
+    url('#{$base-url}/SkyscannerRelative-Black-bb3c9434.woff2') format('woff2'),
+    url('#{$base-url}/SkyscannerRelative-Black-bba2eb55.woff') format('woff'),
+    url('#{$base-url}/SkyscannerRelative-Black-314703cc.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Skyscanner Relative';
+  font-style: italic;
+  font-weight: 900;
+  src:
+    url('#{$base-url}/SkyscannerRelative-BlackItalic-c2149c91.woff2')
+      format('woff2'),
+    url('#{$base-url}/SkyscannerRelative-BlackItalic-a34cd594.woff')
+      format('woff'),
+    url('#{$base-url}/SkyscannerRelative-BlackItalic-7e516ee5.ttf')
+      format('ttf');
+}

@@ -15,30 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { cssModules } from '../../bpk-react-utils';
+// We disable eslint here as this package is listed as a peerDep so consumers are required to install this when using this package.
+// eslint-disable-next-line import/no-unresolved
+const nodeSass = require('node-sass');
 
-import STYLES from './BpkDarkExampleWrapper.module.scss';
+module.exports = {
+  'encodebase64($string)': (str) => {
+    const buffer = Buffer.from(str.getValue());
 
-const getClassName = cssModules(STYLES);
-
-const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
-  const { padded, ...rest } = props;
-  return (
-    /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-    <div
-      className={getClassName(
-        'bpk-dark-example-wrapper',
-        padded && 'bpk-dark-example-wrapper--padded',
-      )}
-      {...rest}
-    />
-  );
+    return nodeSass.types.String(buffer.toString('base64'));
+  },
 };
-
-BpkDarkExampleWrapper.defaultProps = {
-  padded: false,
-};
-
-export default BpkDarkExampleWrapper;

@@ -23,7 +23,7 @@ import { Component } from 'react';
 import {
   action,
   BpkDarkExampleWrapper,
-} from '../../packages/bpk-storybook-utils';
+} from '../bpk-storybook-utils';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,

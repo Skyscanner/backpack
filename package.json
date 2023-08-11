@@ -16,7 +16,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "gulp",
+    "build": "gulp && npm run build:sass && npm run build:stylesheets",
+    "build:sass": "backpack-node-sass --prefixComment=\"$(cat ./license.txt)\" && rm packages/bpk-stylesheets/index.css",
+    "build:stylesheets": "(cd packages/bpk-stylesheets && NODE_OPTIONS=--openssl-legacy-provider node build)",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-pristine": "node scripts/check-pristine-state",
@@ -41,20 +43,23 @@
     "start": "npm run build && npm run storybook",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001",
     "storybook:dist": "NODE_OPTIONS=--openssl-legacy-provider storybook build -c .storybook -o dist-storybook",
+    "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
     "prepare": "husky install",
     "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
     "ts-migrate": "ts-migrate",
-    "transpile": "npm run build && npm run transpile:sass && npm run transpile:js && npm run transform:js && npm run copy-css && npm run copy-types && npm run transpile:generate-package-json && npm run transpile:copy-readme",
+    "transpile": "npm run build && npm run transpile:js-tasks && npm run transpile:copy",
     "transpile:clean": "rimraf ./dist",
-    "transpile:js": "BABEL_ENV=dev babel packages --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ./babel.config.js",
+    "transpile:js-tasks": "npm run transpile:js && npm run transform:js",
+    "transpile:js": "BABEL_ENV=dev babel packages --ignore ./packages/bpk-storybook-utils,./packages/bpk-mixins,./packages/bpk-stylesheets --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ./babel.config.js",
     "transform:js": "node scripts/transpilation/transform-js-scss-css-imports.js",
-    "transpile:generate-package-json": "cp ./packages/package.json ./dist/",
-    "transpile:copy-readme": "cp packages/README.md ./dist/",
-    "transpile:sass": "backpack-node-sass --prefixComment=\"$(cat ./license.txt)\"",
-    "copy-css": "node scripts/transpilation/copy-css.js",
-    "copy-types": "node scripts/transpilation/copy-types.js"
+    "transpile:copy": "npm run transpile:copy-css && npm run transpile:copy-types && npm run transpile:copy-utils && npm run transpile:copy-package-json && npm run transpile:copy-readme",
+    "transpile:copy-css": "node scripts/transpilation/copy-css.js",
+    "transpile:copy-types": "node scripts/transpilation/copy-types.js",
+    "transpile:copy-utils": "node scripts/transpilation/copy-utils.js",
+    "transpile:copy-package-json": "cp ./packages/package.json ./dist/",
+    "transpile:copy-readme": "cp packages/README.md ./dist/"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -140,8 +145,6 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "backpack-node-sass": "^0.9.0",
-    "bpk-mixins": "^41.2.1",
-    "bpk-stylesheets": "^9.0.15",
     "core-js": "^3.0.0",
     "css-loader": "^5.2.7",
     "d3-scale": "^4.0.2",
@@ -157,6 +160,7 @@
     "jest-environment-jsdom": "^29.2.2",
     "lint-staged": "^13.1.0",
     "lodash": "^4.17.20",
+    "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^6.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^4.3.0",
@@ -166,10 +170,12 @@
     "react-dom": "17.0.2",
     "react-svg-loader": "^3.0.1",
     "sass-loader": "^10.4.1",
+    "sassdoc": "^2.7.0",
     "storybook": "^7.1.1",
     "style-loader": "^2.0.0",
     "ts-migrate": "^0.1.35",
     "typescript": "^4.9.3",
-    "webpack": "^5.88.1"
+    "webpack": "^5.88.1",
+    "wrapper-webpack-plugin": "^2.2.2"
   }
 }
