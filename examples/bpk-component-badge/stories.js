@@ -39,10 +39,7 @@ export default {
   component: BpkBadge,
 };
 
-// const VisualTestTemplate = (args) => {
-//   document.documentElement.style.fontSize = args.fontSize;
-//   return <MixedExample />;
-// }
+const Template = (args) => <MixedExample {...args} />;
 
 export const Default = DefaultExample;
 export const Warning = WarningExample;
@@ -56,13 +53,14 @@ export const Centered = CenteredExample;
 export const DockedRight = DockedLeadingExample;
 export const DockedLeft = DockedTrailingExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoomEnabled = MixedExample;
 
+export const VisualTestZoomEnabled = Template.bind({});
 
-VisualTest.parameters = {
-  percy: {
-    name: 'A snapshot',
-    additionalSnapshots: [
-      { suffix: ' with Zoom Enabled', args: { fontSize: '32px' }}
-    ]
-  }
+VisualTestWithZoomEnabled.args = {
+  fontSize: '32px'
+}
+
+VisualTestZoomEnabled.args = {
+  fontSize: '32px'
 }
