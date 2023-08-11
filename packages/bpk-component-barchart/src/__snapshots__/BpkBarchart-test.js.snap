@@ -98,7 +98,7 @@ exports[`BpkBarchart should render correctly 1`] = `
             </mask>
           </defs>
           <g
-            transform="translate(86, 6)"
+            transform="translate(80, 0)"
           >
             <g
               aria-hidden="true"
@@ -107,87 +107,75 @@ exports[`BpkBarchart should render correctly 1`] = `
               transform="translate(0, 0)"
             >
               <g
-                transform="translate(0, -58)"
+                transform="translate(0, -40)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   0
                 </text>
               </g>
               <g
-                transform="translate(0, -52)"
+                transform="translate(0, -36)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   50
                 </text>
               </g>
               <g
-                transform="translate(0, -45)"
+                transform="translate(0, -31)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   100
                 </text>
               </g>
               <g
-                transform="translate(0, -39)"
+                transform="translate(0, -27)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   150
                 </text>
               </g>
               <g
-                transform="translate(0, -32)"
+                transform="translate(0, -22)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   200
                 </text>
               </g>
               <g
-                transform="translate(0, -26)"
+                transform="translate(0, -18)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   250
-                </text>
-              </g>
-              <g
-                transform="translate(0, -19)"
-              >
-                <text
-                  class="bpk-chart__axis-tick-text"
-                  dy="0.32em"
-                  x="-6"
-                  y="0"
-                >
-                  300
                 </text>
               </g>
               <g
@@ -196,19 +184,31 @@ exports[`BpkBarchart should render correctly 1`] = `
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -9)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="0"
                   y="0"
                 >
                   350
                 </text>
               </g>
               <g
-                transform="translate(0, -6)"
+                transform="translate(0, -4)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   400
@@ -217,7 +217,7 @@ exports[`BpkBarchart should render correctly 1`] = `
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                transform="translate(-66, -29) rotate(-90)"
+                transform="translate(-60, -20) rotate(-90)"
               >
                 Average price (£)
               </text>
@@ -226,10 +226,10 @@ exports[`BpkBarchart should render correctly 1`] = `
               aria-hidden="true"
               class="bpk-chart__axis"
               text-anchor="middle"
-              transform="translate(0, -58)"
+              transform="translate(0, -40)"
             >
               <g
-                transform="translate(-11, 0)"
+                transform="translate(-10, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -240,7 +240,7 @@ exports[`BpkBarchart should render correctly 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-32, 0)"
+                transform="translate(-30, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -251,7 +251,7 @@ exports[`BpkBarchart should render correctly 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-53, 0)"
+                transform="translate(-50, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -262,7 +262,7 @@ exports[`BpkBarchart should render correctly 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-74, 0)"
+                transform="translate(-70, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -275,8 +275,8 @@ exports[`BpkBarchart should render correctly 1`] = `
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                x="-43"
-                y="46"
+                x="-40"
+                y="40"
               >
                 Month
               </text>
@@ -284,15 +284,15 @@ exports[`BpkBarchart should render correctly 1`] = `
             <g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-22, -19)"
+                transform="translate(-20, -13)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -301,22 +301,22 @@ exports[`BpkBarchart should render correctly 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-43, -13)"
+                transform="translate(-40, -9)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -325,22 +325,22 @@ exports[`BpkBarchart should render correctly 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-64, -4)"
+                transform="translate(-60, -3)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -349,22 +349,22 @@ exports[`BpkBarchart should render correctly 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-85, 0)"
+                transform="translate(-80, 0)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -373,7 +373,7 @@ exports[`BpkBarchart should render correctly 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
@@ -485,7 +485,7 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
             </mask>
           </defs>
           <g
-            transform="translate(86, 6)"
+            transform="translate(80, 0)"
           >
             <g
               aria-hidden="true"
@@ -494,87 +494,75 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
               transform="translate(0, 0)"
             >
               <g
-                transform="translate(0, -58)"
+                transform="translate(0, -40)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   0
                 </text>
               </g>
               <g
-                transform="translate(0, -52)"
+                transform="translate(0, -36)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   50
                 </text>
               </g>
               <g
-                transform="translate(0, -45)"
+                transform="translate(0, -31)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   100
                 </text>
               </g>
               <g
-                transform="translate(0, -39)"
+                transform="translate(0, -27)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   150
                 </text>
               </g>
               <g
-                transform="translate(0, -32)"
+                transform="translate(0, -22)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   200
                 </text>
               </g>
               <g
-                transform="translate(0, -26)"
+                transform="translate(0, -18)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   250
-                </text>
-              </g>
-              <g
-                transform="translate(0, -19)"
-              >
-                <text
-                  class="bpk-chart__axis-tick-text"
-                  dy="0.32em"
-                  x="-6"
-                  y="0"
-                >
-                  300
                 </text>
               </g>
               <g
@@ -583,19 +571,31 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -9)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="0"
                   y="0"
                 >
                   350
                 </text>
               </g>
               <g
-                transform="translate(0, -6)"
+                transform="translate(0, -4)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   400
@@ -604,7 +604,7 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                transform="translate(-66, -29) rotate(-90)"
+                transform="translate(-60, -20) rotate(-90)"
               >
                 Average price (£)
               </text>
@@ -613,10 +613,10 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
               aria-hidden="true"
               class="bpk-chart__axis"
               text-anchor="middle"
-              transform="translate(0, -58)"
+              transform="translate(0, -40)"
             >
               <g
-                transform="translate(-11, 0)"
+                transform="translate(-10, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -627,7 +627,7 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-32, 0)"
+                transform="translate(-30, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -638,7 +638,7 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-53, 0)"
+                transform="translate(-50, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -649,7 +649,7 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-74, 0)"
+                transform="translate(-70, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -662,8 +662,8 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                x="-43"
-                y="46"
+                x="-40"
+                y="40"
               >
                 Month
               </text>
@@ -671,15 +671,15 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
             <g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-22, -19)"
+                transform="translate(-20, -13)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -688,22 +688,22 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-43, -13)"
+                transform="translate(-40, -9)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -712,22 +712,22 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-64, -4)"
+                transform="translate(-60, -3)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -736,22 +736,22 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-85, 0)"
+                transform="translate(-80, 0)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -760,7 +760,7 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
@@ -872,7 +872,7 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
             </mask>
           </defs>
           <g
-            transform="translate(86, 6)"
+            transform="translate(80, 0)"
           >
             <g
               aria-hidden="true"
@@ -881,87 +881,75 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
               transform="translate(0, 0)"
             >
               <g
-                transform="translate(0, -58)"
+                transform="translate(0, -40)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   0
                 </text>
               </g>
               <g
-                transform="translate(0, -52)"
+                transform="translate(0, -36)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   50
                 </text>
               </g>
               <g
-                transform="translate(0, -45)"
+                transform="translate(0, -31)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   100
                 </text>
               </g>
               <g
-                transform="translate(0, -39)"
+                transform="translate(0, -27)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   150
                 </text>
               </g>
               <g
-                transform="translate(0, -32)"
+                transform="translate(0, -22)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   200
                 </text>
               </g>
               <g
-                transform="translate(0, -26)"
+                transform="translate(0, -18)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   250
-                </text>
-              </g>
-              <g
-                transform="translate(0, -19)"
-              >
-                <text
-                  class="bpk-chart__axis-tick-text"
-                  dy="0.32em"
-                  x="-6"
-                  y="0"
-                >
-                  300
                 </text>
               </g>
               <g
@@ -970,19 +958,31 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -9)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="0"
                   y="0"
                 >
                   350
                 </text>
               </g>
               <g
-                transform="translate(0, -6)"
+                transform="translate(0, -4)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   400
@@ -991,7 +991,7 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                transform="translate(-66, -29) rotate(-90)"
+                transform="translate(-60, -20) rotate(-90)"
               >
                 Average price (£)
               </text>
@@ -1000,10 +1000,10 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
               aria-hidden="true"
               class="bpk-chart__axis"
               text-anchor="middle"
-              transform="translate(0, -58)"
+              transform="translate(0, -40)"
             >
               <g
-                transform="translate(-11, 0)"
+                transform="translate(-10, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1014,7 +1014,7 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
                 </text>
               </g>
               <g
-                transform="translate(-32, 0)"
+                transform="translate(-30, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1025,7 +1025,7 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
                 </text>
               </g>
               <g
-                transform="translate(-53, 0)"
+                transform="translate(-50, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1036,7 +1036,7 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
                 </text>
               </g>
               <g
-                transform="translate(-74, 0)"
+                transform="translate(-70, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1049,8 +1049,8 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                x="-43"
-                y="46"
+                x="-40"
+                y="40"
               >
                 Month
               </text>
@@ -1058,15 +1058,15 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
             <g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-22, -19)"
+                transform="translate(-20, -13)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1075,22 +1075,22 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-43, -13)"
+                transform="translate(-40, -9)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1099,22 +1099,22 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-64, -4)"
+                transform="translate(-60, -3)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1123,22 +1123,22 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-85, 0)"
+                transform="translate(-80, 0)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1147,7 +1147,7 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
@@ -1259,7 +1259,7 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
             </mask>
           </defs>
           <g
-            transform="translate(86, 6)"
+            transform="translate(80, 0)"
           >
             <g
               aria-hidden="true"
@@ -1268,87 +1268,75 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
               transform="translate(0, 0)"
             >
               <g
-                transform="translate(0, -58)"
+                transform="translate(0, -40)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   0
                 </text>
               </g>
               <g
-                transform="translate(0, -52)"
+                transform="translate(0, -36)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   50
                 </text>
               </g>
               <g
-                transform="translate(0, -45)"
+                transform="translate(0, -31)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   100
                 </text>
               </g>
               <g
-                transform="translate(0, -39)"
+                transform="translate(0, -27)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   150
                 </text>
               </g>
               <g
-                transform="translate(0, -32)"
+                transform="translate(0, -22)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   200
                 </text>
               </g>
               <g
-                transform="translate(0, -26)"
+                transform="translate(0, -18)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   250
-                </text>
-              </g>
-              <g
-                transform="translate(0, -19)"
-              >
-                <text
-                  class="bpk-chart__axis-tick-text"
-                  dy="0.32em"
-                  x="-6"
-                  y="0"
-                >
-                  300
                 </text>
               </g>
               <g
@@ -1357,19 +1345,31 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -9)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="0"
                   y="0"
                 >
                   350
                 </text>
               </g>
               <g
-                transform="translate(0, -6)"
+                transform="translate(0, -4)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   400
@@ -1378,7 +1378,7 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                transform="translate(-66, -29) rotate(-90)"
+                transform="translate(-60, -20) rotate(-90)"
               >
                 Average price (£)
               </text>
@@ -1387,10 +1387,10 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
               aria-hidden="true"
               class="bpk-chart__axis"
               text-anchor="middle"
-              transform="translate(0, -58)"
+              transform="translate(0, -40)"
             >
               <g
-                transform="translate(-11, 0)"
+                transform="translate(-10, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1401,7 +1401,7 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
                 </text>
               </g>
               <g
-                transform="translate(-32, 0)"
+                transform="translate(-30, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1412,7 +1412,7 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
                 </text>
               </g>
               <g
-                transform="translate(-53, 0)"
+                transform="translate(-50, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1423,7 +1423,7 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
                 </text>
               </g>
               <g
-                transform="translate(-74, 0)"
+                transform="translate(-70, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1436,8 +1436,8 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                x="-43"
-                y="46"
+                x="-40"
+                y="40"
               >
                 Month
               </text>
@@ -1445,15 +1445,15 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
             <g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-22, -19)"
+                transform="translate(-20, -13)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1462,22 +1462,22 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-43, -13)"
+                transform="translate(-40, -9)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1486,22 +1486,22 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-64, -4)"
+                transform="translate(-60, -3)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1510,22 +1510,22 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-85, 0)"
+                transform="translate(-80, 0)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1534,7 +1534,7 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
@@ -1646,7 +1646,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
             </mask>
           </defs>
           <g
-            transform="translate(86, 6)"
+            transform="translate(80, 0)"
           >
             <g
               aria-hidden="true"
@@ -1655,99 +1655,87 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
               transform="translate(0, 0)"
             >
               <g
-                transform="translate(0, -58)"
+                transform="translate(0, -40)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   0
                 </text>
               </g>
               <g
-                transform="translate(0, -52)"
+                transform="translate(0, -36)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   10
                 </text>
               </g>
               <g
-                transform="translate(0, -46)"
+                transform="translate(0, -32)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   20
                 </text>
               </g>
               <g
-                transform="translate(0, -41)"
+                transform="translate(0, -28)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   30
                 </text>
               </g>
               <g
-                transform="translate(0, -35)"
+                transform="translate(0, -24)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   40
                 </text>
               </g>
               <g
-                transform="translate(0, -29)"
+                transform="translate(0, -20)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   50
                 </text>
               </g>
               <g
-                transform="translate(0, -23)"
+                transform="translate(0, -16)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   60
-                </text>
-              </g>
-              <g
-                transform="translate(0, -17)"
-              >
-                <text
-                  class="bpk-chart__axis-tick-text"
-                  dy="0.32em"
-                  x="-6"
-                  y="0"
-                >
-                  70
                 </text>
               </g>
               <g
@@ -1756,19 +1744,31 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
+                  y="0"
+                >
+                  70
+                </text>
+              </g>
+              <g
+                transform="translate(0, -8)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="0"
                   y="0"
                 >
                   80
                 </text>
               </g>
               <g
-                transform="translate(0, -6)"
+                transform="translate(0, -4)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   90
@@ -1780,7 +1780,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   100
@@ -1789,7 +1789,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                transform="translate(-66, -29) rotate(-90)"
+                transform="translate(-60, -20) rotate(-90)"
               >
                 Average price (£)
               </text>
@@ -1798,10 +1798,10 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
               aria-hidden="true"
               class="bpk-chart__axis"
               text-anchor="middle"
-              transform="translate(0, -58)"
+              transform="translate(0, -40)"
             >
               <g
-                transform="translate(-11, 0)"
+                transform="translate(-10, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1812,7 +1812,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-32, 0)"
+                transform="translate(-30, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1823,7 +1823,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-53, 0)"
+                transform="translate(-50, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1834,7 +1834,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-74, 0)"
+                transform="translate(-70, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -1847,8 +1847,8 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                x="-43"
-                y="46"
+                x="-40"
+                y="40"
               >
                 Month
               </text>
@@ -1856,15 +1856,15 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
             <g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-22, 119)"
+                transform="translate(-20, 82)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1873,22 +1873,22 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-43, 144)"
+                transform="translate(-40, 99)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1897,22 +1897,22 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-64, 184)"
+                transform="translate(-60, 127)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1921,22 +1921,22 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-85, 202)"
+                transform="translate(-80, 139)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -1945,7 +1945,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
@@ -2057,7 +2057,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
             </mask>
           </defs>
           <g
-            transform="translate(86, 6)"
+            transform="translate(80, 0)"
           >
             <g
               aria-hidden="true"
@@ -2066,87 +2066,75 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
               transform="translate(0, 0)"
             >
               <g
-                transform="translate(0, -58)"
+                transform="translate(0, -40)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   0
                 </text>
               </g>
               <g
-                transform="translate(0, -52)"
+                transform="translate(0, -36)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   50
                 </text>
               </g>
               <g
-                transform="translate(0, -45)"
+                transform="translate(0, -31)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   100
                 </text>
               </g>
               <g
-                transform="translate(0, -39)"
+                transform="translate(0, -27)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   150
                 </text>
               </g>
               <g
-                transform="translate(0, -32)"
+                transform="translate(0, -22)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   200
                 </text>
               </g>
               <g
-                transform="translate(0, -26)"
+                transform="translate(0, -18)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   250
-                </text>
-              </g>
-              <g
-                transform="translate(0, -19)"
-              >
-                <text
-                  class="bpk-chart__axis-tick-text"
-                  dy="0.32em"
-                  x="-6"
-                  y="0"
-                >
-                  300
                 </text>
               </g>
               <g
@@ -2155,19 +2143,31 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
+                  y="0"
+                >
+                  300
+                </text>
+              </g>
+              <g
+                transform="translate(0, -9)"
+              >
+                <text
+                  class="bpk-chart__axis-tick-text"
+                  dy="0.32em"
+                  x="0"
                   y="0"
                 >
                   350
                 </text>
               </g>
               <g
-                transform="translate(0, -6)"
+                transform="translate(0, -4)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
                   dy="0.32em"
-                  x="-6"
+                  x="0"
                   y="0"
                 >
                   400
@@ -2176,7 +2176,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                transform="translate(-66, -29) rotate(-90)"
+                transform="translate(-60, -20) rotate(-90)"
               >
                 Average price (£)
               </text>
@@ -2185,10 +2185,10 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
               aria-hidden="true"
               class="bpk-chart__axis"
               text-anchor="middle"
-              transform="translate(0, -58)"
+              transform="translate(0, -40)"
             >
               <g
-                transform="translate(-11, 0)"
+                transform="translate(-10, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -2199,7 +2199,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-32, 0)"
+                transform="translate(-30, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -2210,7 +2210,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-53, 0)"
+                transform="translate(-50, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -2221,7 +2221,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                 </text>
               </g>
               <g
-                transform="translate(-74, 0)"
+                transform="translate(-70, 0)"
               >
                 <text
                   class="bpk-chart__axis-tick-text"
@@ -2234,8 +2234,8 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
               <text
                 class="bpk-chart__axis-label"
                 text-anchor="middle"
-                x="-43"
-                y="46"
+                x="-40"
+                y="40"
               >
                 Month
               </text>
@@ -2243,15 +2243,15 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
             <g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-22, -19)"
+                transform="translate(-20, -13)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -2259,22 +2259,22 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-43, -13)"
+                transform="translate(-40, -9)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -2282,22 +2282,22 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-64, -4)"
+                transform="translate(-60, -3)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -2305,22 +2305,22 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />
               </g>
               <g
                 class="bpk-barchart-bar"
-                transform="translate(-85, 0)"
+                transform="translate(-80, 0)"
               >
                 <rect
                   class="bpk-barchart-bar__rect"
                   height="0"
                   rx="4"
                   ry="4"
-                  width="13.65"
-                  x="3.675"
+                  width="13"
+                  x="3.5"
                   y="0"
                 />
                 <rect
@@ -2328,7 +2328,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
                   role="graphics-symbol"
-                  width="21"
+                  width="20"
                   x="0"
                   y="0"
                 />

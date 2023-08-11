@@ -35,10 +35,8 @@ exports[`BpkNudgerRow should render correctly 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-nudger__icon"
-            height="16"
             style="width: 1rem; height: 1rem;"
             viewBox="0 0 24 24"
-            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -68,10 +66,8 @@ exports[`BpkNudgerRow should render correctly 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-nudger__icon"
-            height="16"
             style="width: 1rem; height: 1rem;"
             viewBox="0 0 24 24"
-            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -125,10 +121,8 @@ exports[`BpkNudgerRow should render with subtitle prop 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-nudger__icon"
-            height="16"
             style="width: 1rem; height: 1rem;"
             viewBox="0 0 24 24"
-            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -158,10 +152,8 @@ exports[`BpkNudgerRow should render with subtitle prop 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-nudger__icon"
-            height="16"
             style="width: 1rem; height: 1rem;"
             viewBox="0 0 24 24"
-            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -210,10 +202,8 @@ exports[`BpkNudgerRow should support custom class names 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-nudger__icon"
-            height="16"
             style="width: 1rem; height: 1rem;"
             viewBox="0 0 24 24"
-            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -243,10 +233,8 @@ exports[`BpkNudgerRow should support custom class names 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-nudger__icon"
-            height="16"
             style="width: 1rem; height: 1rem;"
             viewBox="0 0 24 24"
-            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path

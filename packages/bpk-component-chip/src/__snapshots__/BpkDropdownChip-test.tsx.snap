@@ -19,10 +19,8 @@ exports[`BpkDropdownChip should render correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -53,10 +51,8 @@ exports[`BpkDropdownChip should render correctly with a "className" attribute 1`
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -87,10 +83,8 @@ exports[`BpkDropdownChip should render correctly with type="default" 1`] = `
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -128,10 +122,8 @@ exports[`BpkDropdownChip should render correctly with type="default" and a leadi
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -163,10 +155,8 @@ exports[`BpkDropdownChip should render correctly with type="default" and disable
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -197,10 +187,8 @@ exports[`BpkDropdownChip should render correctly with type="default" and selecte
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -232,10 +220,8 @@ exports[`BpkDropdownChip should render correctly with type="default", selected a
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -266,10 +252,8 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" 1`] = `
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -307,10 +291,8 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and a leadi
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -342,10 +324,8 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and disable
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -376,10 +356,8 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and selecte
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -411,10 +389,8 @@ exports[`BpkDropdownChip should render correctly with type="on-dark", selected a
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -445,10 +421,8 @@ exports[`BpkDropdownChip should render correctly with type="on-image" 1`] = `
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -486,10 +460,8 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and a lead
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -521,10 +493,8 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and disabl
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -555,10 +525,8 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and select
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -590,10 +558,8 @@ exports[`BpkDropdownChip should render correctly with type="on-image", selected 
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
