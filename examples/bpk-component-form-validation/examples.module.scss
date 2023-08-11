@@ -28,7 +28,7 @@
   }
 
   &__form {
-    margin-bottom: $bpk-spacing-sm;
+    margin-bottom: bpk-spacing-base();
 
     &--desktop-only {
       @include bpk-breakpoint-tablet {

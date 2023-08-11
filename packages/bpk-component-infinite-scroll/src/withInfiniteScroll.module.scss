@@ -21,5 +21,5 @@
 .bpk-sentinel {
   // this is necessary for when the user doesn't define a custom loading component
   width: 100%;
-  height: $bpk-spacing-base;
+  height: bpk-spacing-lg();
 }

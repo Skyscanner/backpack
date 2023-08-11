@@ -23,14 +23,14 @@
   overflow: hidden;
 
   &--active {
-    padding: $bpk-spacing-base;
+    padding: bpk-spacing-lg();
     color: $bpk-text-primary-inverse-day;
 
     @include bpk-apply-primary-color-to(background-color);
   }
 
   &--inactive {
-    padding: $bpk-spacing-base;
+    padding: bpk-spacing-lg();
     background-color: $bpk-surface-highlight-day;
   }
 }

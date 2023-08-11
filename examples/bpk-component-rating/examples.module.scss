@@ -18,8 +18,6 @@
 
 @import '../../packages/bpk-mixins/index.scss';
 
-$bpk-spacing-v2: true;
-
 .bpk-rating-story {
   &--img {
     height: bpk-spacing-base();
