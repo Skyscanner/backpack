@@ -25,7 +25,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-margin-leading($bpk-spacing-sm);
+///     @include bpk-margin-leading(bpk-spacing-base());
 ///   }
 @mixin bpk-margin-leading($margin, $resetOppositeMargin: true) {
   margin-left: $margin;
@@ -52,7 +52,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-margin-trailing($bpk-spacing-sm);
+///     @include bpk-margin-trailing(bpk-spacing-base());
 ///   }
 @mixin bpk-margin-trailing($margin, $resetOppositeMargin: true) {
   @if $resetOppositeMargin {

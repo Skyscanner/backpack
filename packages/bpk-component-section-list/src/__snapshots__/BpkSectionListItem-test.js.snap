@@ -20,9 +20,8 @@ exports[`BpkSectionListItem should render correctly with a "href" prop 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-section-list-item__chevron bpk-icon--rtl-support"
-      height="24"
       style="width: 1.5rem; height: 1.5rem;"
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -53,9 +52,8 @@ exports[`BpkSectionListItem should render correctly with an "onClick" prop 1`] =
     <svg
       aria-hidden="true"
       class="bpk-section-list-item__chevron bpk-icon--rtl-support"
-      height="24"
       style="width: 1.5rem; height: 1.5rem;"
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

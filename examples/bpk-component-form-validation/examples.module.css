@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpkdocs-forms-page__viewport-alert{display:none}@media (max-width: 64rem){.bpkdocs-forms-page__viewport-alert{display:block}}.bpkdocs-forms-page__form{margin-bottom:.75rem}@media (max-width: 64rem){.bpkdocs-forms-page__form--desktop-only{display:none}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpkdocs-forms-page__viewport-alert{display:none}@media (max-width: 64rem){.bpkdocs-forms-page__viewport-alert{display:block}}.bpkdocs-forms-page__form{margin-bottom:1rem}@media (max-width: 64rem){.bpkdocs-forms-page__form--desktop-only{display:none}}

@@ -17,10 +17,8 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -50,10 +48,8 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -83,10 +79,8 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -116,10 +110,8 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -149,10 +141,8 @@ exports[`BpkNudger should render correctly 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -182,10 +172,8 @@ exports[`BpkNudger should render correctly 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -215,10 +203,8 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -248,10 +234,8 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -282,10 +266,8 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon bpk-nudger__icon--disabled"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -315,10 +297,8 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -348,10 +328,8 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -382,10 +360,8 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon bpk-nudger__icon--disabled"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -416,10 +392,8 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon bpk-nudger__icon--disabled"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -449,10 +423,8 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -482,10 +454,8 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -516,10 +486,8 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
         <svg
           aria-hidden="true"
           class="bpk-nudger__icon bpk-nudger__icon--disabled"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path

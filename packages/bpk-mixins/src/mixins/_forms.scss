@@ -18,8 +18,6 @@
 
 @import '../bonds.scss';
 
-$bpk-spacing-v2: true;
-
 ////
 /// @group forms
 ////
@@ -897,7 +895,7 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-form-validation {
   position: relative;
-  transform: translateY(-#{$bpk-spacing-sm});
+  transform: translateY(-#{bpk-spacing-base()});
   transition:
     opacity $bpk-duration-sm ease-in-out,
     transform $bpk-duration-sm ease-in-out;

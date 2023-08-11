@@ -18,8 +18,6 @@
 
 @import '../../bpk-mixins/index.scss';
 
-$bpk-spacing-v2: true;
-
 .bpk-loading-button {
   $button-padding-x: bpk-spacing-base() * 2;
   $button-padding-y: bpk-spacing-lg() / 2;

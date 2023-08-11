@@ -239,11 +239,11 @@
   &::before {
     position: absolute;
     /* stylelint-disable-next-line function-calc-no-invalid */
-    top: calc((-#{$bpk-spacing-xxl} / 2) + 50%);
+    top: calc((-#{bpk-spacing-xxl() + bpk-spacing-sm()} / 2) + 50%);
     /* stylelint-disable-next-line function-calc-no-invalid */
-    left: calc((-#{$bpk-spacing-xxl} / 2) + 50%);
+    left: calc((-#{bpk-spacing-xxl() + bpk-spacing-sm()} / 2) + 50%);
     content: '';
-    width: $bpk-spacing-xxl;
-    height: $bpk-spacing-xxl;
+    width: bpk-spacing-xxl() + bpk-spacing-sm();
+    height: bpk-spacing-xxl() + bpk-spacing-sm();
   }
 }

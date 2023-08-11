@@ -46,8 +46,8 @@ export default () => (
 
   &__item {
     display: flex;
-    min-width: $bpk-spacing-xxl * 5;
-    height: $bpk-spacing-xxl * 5;
+    min-width: bpk-spacing-xxl() * 5;
+    height: bpk-spacing-xxl() * 5;
     justify-content: center;
     align-items: center;
     background-color: $bpk-color-sky-gray-tint-07;

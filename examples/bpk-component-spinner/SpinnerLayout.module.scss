@@ -24,7 +24,7 @@
 
   &__spinner {
     display: flex;
-    padding: $bpk-spacing-base;
+    padding: bpk-spacing-lg();
     justify-content: center;
 
     &--light {

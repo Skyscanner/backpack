@@ -35,7 +35,7 @@
   content: ' ';
   display: block;
   z-index: 1;
-  width: $bpk-spacing-xl;
+  width: bpk-spacing-xl();
   background-image: linear-gradient(
     $gradient-direction,
     rgba($gradient-color, 1),

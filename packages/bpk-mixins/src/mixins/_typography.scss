@@ -19,8 +19,6 @@
 @import '../bonds.scss';
 @import './borders.scss';
 
-$bpk-spacing-v2: true;
-
 ////
 /// @group typography
 ////
@@ -673,7 +671,7 @@ $bpk-spacing-v2: true;
 @mixin bpk-list {
   margin-top: bpk-spacing-base();
   margin-bottom: bpk-spacing-base();
-  padding-left: $bpk-spacing-base;
+  padding-left: bpk-spacing-lg();
 }
 
 /// Nested list. Modifies the bpk-list mixin.
@@ -910,7 +908,7 @@ $bpk-spacing-v2: true;
 
 @mixin bpk-code {
   display: inline;
-  padding: 0 $bpk-spacing-xs;
+  padding: 0 bpk-spacing-sm();
   background-color: $bpk-surface-highlight-day;
   color: $bpk-text-primary-day;
   text-align: left;
@@ -969,8 +967,8 @@ $bpk-spacing-v2: true;
 ///   }
 
 @mixin bpk-code__pre {
-  margin: 0 0 $bpk-spacing-sm;
-  padding: $bpk-spacing-base;
+  margin: 0 0 bpk-spacing-base();
+  padding: bpk-spacing-lg();
   background-color: $bpk-surface-highlight-day;
 
   @include bpk-border-radius-xs;

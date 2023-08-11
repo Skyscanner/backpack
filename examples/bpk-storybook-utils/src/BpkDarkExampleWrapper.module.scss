@@ -27,6 +27,6 @@
   );
 
   &--padded {
-    padding: $bpk-spacing-md;
+    padding: bpk-spacing-base();
   }
 }

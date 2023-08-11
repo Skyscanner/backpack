@@ -20,8 +20,6 @@
 /* stylelint-disable selector-max-compound-selectors */
 @import '../../bpk-mixins/index.scss';
 
-$bpk-spacing-v2: true;
-
 .bpk-content-cards {
   &--header-text {
     margin-bottom: bpk-spacing-base();

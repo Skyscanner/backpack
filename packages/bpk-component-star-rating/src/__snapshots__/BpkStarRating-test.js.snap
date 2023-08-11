@@ -10,10 +10,8 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -23,10 +21,8 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -36,10 +32,8 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -49,10 +43,8 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -62,10 +54,8 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -86,9 +76,8 @@ exports[`BpkStarRating should render correctly with "large" attribute 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--large bpk-star--filled bpk-icon--rtl-support"
-      height="24"
       style="width: 1.5rem; height: 1.5rem;"
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -98,9 +87,8 @@ exports[`BpkStarRating should render correctly with "large" attribute 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--large bpk-star--filled bpk-icon--rtl-support"
-      height="24"
       style="width: 1.5rem; height: 1.5rem;"
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -110,9 +98,8 @@ exports[`BpkStarRating should render correctly with "large" attribute 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--large bpk-star--filled bpk-icon--rtl-support"
-      height="24"
       style="width: 1.5rem; height: 1.5rem;"
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -122,9 +109,8 @@ exports[`BpkStarRating should render correctly with "large" attribute 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--large bpk-star--filled bpk-icon--rtl-support"
-      height="24"
       style="width: 1.5rem; height: 1.5rem;"
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -134,9 +120,8 @@ exports[`BpkStarRating should render correctly with "large" attribute 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--large bpk-star--filled bpk-icon--rtl-support"
-      height="24"
       style="width: 1.5rem; height: 1.5rem;"
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -157,10 +142,8 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -170,10 +153,8 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -183,10 +164,8 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -196,10 +175,8 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -209,10 +186,8 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -222,10 +197,8 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -235,10 +208,8 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -248,10 +219,8 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -272,10 +241,8 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -285,10 +252,8 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -298,10 +263,8 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -314,10 +277,8 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
       <svg
         aria-hidden="true"
         class="bpk-star bpk-star--half bpk-star--filled"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -328,10 +289,8 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -352,10 +311,8 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -365,10 +322,8 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -378,10 +333,8 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -391,10 +344,8 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -404,10 +355,8 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -428,10 +377,8 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -441,10 +388,8 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -454,10 +399,8 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -467,10 +410,8 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -480,10 +421,8 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -504,10 +443,8 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -517,10 +454,8 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -530,10 +465,8 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -546,10 +479,8 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
       <svg
         aria-hidden="true"
         class="bpk-star bpk-star--half bpk-star--filled"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -560,10 +491,8 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -584,10 +513,8 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -597,10 +524,8 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -610,10 +535,8 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -623,10 +546,8 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -636,10 +557,8 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
     <svg
       aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-icon--rtl-support"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

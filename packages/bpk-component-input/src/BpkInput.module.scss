@@ -18,8 +18,6 @@
 
 @import '../../bpk-mixins/index.scss';
 
-$bpk-spacing-v2: true;
-
 .bpk-input {
   @include bpk-input;
 

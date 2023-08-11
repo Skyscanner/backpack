@@ -27,10 +27,10 @@
 
   &__details {
     margin: 0;
-    margin-left: $bpk-spacing-base;
+    margin-left: bpk-spacing-lg();
 
     @include bpk-rtl {
-      margin-right: $bpk-spacing-base;
+      margin-right: bpk-spacing-lg();
       margin-left: 0;
     }
   }

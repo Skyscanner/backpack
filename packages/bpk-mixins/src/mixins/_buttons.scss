@@ -30,8 +30,6 @@
 ///     @include bpk-button();
 ///   }
 
-$bpk-spacing-v2: true;
-
 @mixin bpk-button {
   display: inline-block;
   min-height: $bpk-button-height;

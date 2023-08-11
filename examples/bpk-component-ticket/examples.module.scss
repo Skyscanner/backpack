@@ -60,16 +60,16 @@
   }
 
   &__from {
-    padding: 0 $bpk-spacing-base;
+    padding: 0 bpk-spacing-lg();
     text-align: right;
   }
 
   &__to {
-    padding: 0 $bpk-spacing-base;
+    padding: 0 bpk-spacing-lg();
   }
 
   &__duration {
-    padding: 0 $bpk-spacing-sm;
+    padding: 0 bpk-spacing-base();
   }
 
   &__time {

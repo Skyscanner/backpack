@@ -19,7 +19,7 @@
 @import '../../packages/bpk-mixins/index.scss';
 
 .bpk-heading {
-  margin-bottom: $bpk-spacing-sm;
+  margin-bottom: bpk-spacing-base();
 }
 
 $custom-color: $bpk-canvas-contrast-day;

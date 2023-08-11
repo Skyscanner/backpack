@@ -20,7 +20,7 @@
 
 .bpk-infinite-scroll-stories {
   &__fixed-panel {
-    height: $bpk-spacing-xxl * 10;
+    height: bpk-spacing-xxl() * 10;
     overflow-y: scroll;
   }
 
@@ -30,7 +30,7 @@
 
     li {
       display: flex;
-      height: $bpk-spacing-xxl * 2;
+      height: bpk-spacing-xxl() * 2;
       justify-content: center;
       align-items: center;
       background-color: $bpk-canvas-contrast-day;
@@ -40,7 +40,7 @@
 
   &__custom-component {
     display: flex;
-    padding: $bpk-spacing-sm 0;
+    padding: bpk-spacing-base() 0;
     justify-content: center;
   }
 }
