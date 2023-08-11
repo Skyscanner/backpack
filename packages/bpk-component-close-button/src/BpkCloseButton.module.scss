@@ -18,7 +18,7 @@
 
 @import '../../bpk-mixins/index.scss';
 
-$button-padding: $bpk-spacing-xs / 2;
+$button-padding: bpk-spacing-sm() / 2;
 
 .bpk-close-button {
   width: bpk-spacing-lg();

@@ -39,7 +39,7 @@
           transparent $bpk-one-pixel-rem
         )
         repeat left 0;
-      background-size: $bpk-spacing-xs $bpk-spacing-xs;
+      background-size: bpk-spacing-sm() bpk-spacing-sm();
       pointer-events: none;
     }
 
