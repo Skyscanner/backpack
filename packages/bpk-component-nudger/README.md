@@ -129,22 +129,25 @@ class App extends Component {
 
 ### BpkConfigurableNudger
 
-| Property            | PropType                      | Required | Default Value |
-| ------------------- | ----------------------------- | -------- | ------------- |
-| id                  | string                        | true     | -             |
-| decreaseButtonLabel | string                        | true     | -             |
-| increaseButtonLabel | string                        | true     | -             |
-| max                 | number                        | true     | -             |
-| min                 | number                        | true     | -             |
-| onChange            | func                          | true     | -             |
-| value               | number                        | true     | -             |
-| compareValues       | func                          | true     | -             |
-| incrementValue      | func                          | true     | -             |
-| decrementValue      | func                          | true     | -             |
-| formatValue         | func                          | true     | -             |
-| className           | string                        | false    | null          |
-| inputClassName      | string                        | false    | null          |
-| buttonType          | oneOf('secondary', 'secondaryOnDark') | false    | secondary     |
+| Property            	| PropType                              	| Required 	| Default Value 	|
+|---------------------	|---------------------------------------	|----------	|---------------	|
+| id                  	| string                                	| true     	| -             	|
+| decreaseButtonLabel 	| string                                	| true     	| -             	|
+| increaseButtonLabel 	| string                                	| true     	| -             	|
+| max                 	| number                                	| true     	| -             	|
+| min                 	| number                                	| true     	| -             	|
+| onChange            	| func                                  	| true     	| -             	|
+| value               	| number                                	| true     	| -             	|
+| compareValues       	| func                                  	| true     	| -             	|
+| incrementValue      	| func                                  	| true     	| -             	|
+| decrementValue      	| func                                  	| true     	| -             	|
+| formatValue         	| func                                  	| true     	| -             	|
+| className           	| string                                	| false    	| null          	|
+| inputClassName      	| string                                	| false    	| null          	|
+| buttonType          	| oneOf('secondary', 'secondaryOnDark') 	| false    	| secondary     	|
+| title               	| string                                	| false    	| undefined     	|
+| subtitle            	| string                                	| false    	| undefined     	|
+| icon                	| node                                  	| false    	| null          	|
 
 ### Prop Details
 
@@ -174,6 +177,10 @@ Decrease button label - This is the label that will be read out when screen read
 #### increaseButtonLabel
 
 Increase button label - This is the label that will be read out when screen reader users tab to the increase button. Make sure you use a descriptive label like "Increase number of adults"
+
+#### title & subtitle & icon
+
+Title and subtitle - The title and subtitle together make up the label for the nudger. This label will be read aloud as a whole by screen readers. Title is required if you want to pass a label and won't work without it.
 
 ### Theme Props
 

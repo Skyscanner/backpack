@@ -20,6 +20,7 @@
 
 import {
   DefaultExample,
+  WithLabelExample,
   LowerBoundExample,
   UpperBoundsExample,
   StatefulExample,
@@ -33,6 +34,9 @@ export default {
 };
 
 export const Default = DefaultExample;
+
+export const WithLabel = WithLabelExample;
+
 export const LowerBounds = LowerBoundExample;
 
 export const UpperBounds = UpperBoundsExample;

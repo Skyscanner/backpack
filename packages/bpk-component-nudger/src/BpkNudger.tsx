@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import { cssModules } from '../../bpk-react-utils';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkLabel from '../../bpk-component-label';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
 import { type CommonProps } from './common-types';
@@ -33,18 +34,47 @@ const formatValue = (currentValue: number): string => currentValue.toString();
 const BpkNudger = ({
   buttonType = 'secondary',
   className = null,
+  icon,
+  id,
+  subtitle,
+  title,
   ...rest
-}: CommonProps) => (
-  <BpkConfigurableNudger
-    inputClassName={getClassName('bpk-nudger__input--numeric')}
-    compareValues={compareValues}
-    incrementValue={incrementValue}
-    decrementValue={decrementValue}
-    formatValue={formatValue}
-    className={className}
-    buttonType={buttonType}
-    {...rest}
-  />
-);
+}: CommonProps) => {
+  
+  const classNames = getClassName(title && 'bpk-nudger__container');
+
+  return (
+    <div className={classNames}>
+      {title && (
+        <BpkLabel htmlFor={id} className={getClassName('bpk-nudger__label')}>
+          {icon}
+          <span
+            // For a11y on IOS, role='text' forces label to be read in full. More info: https://axesslab.com/text-splitting/
+            // eslint-disable-next-line jsx-a11y/aria-role
+            role="text"
+            className={getClassName('bpk-nudger__label--title-subtitle')}
+          >
+            <BpkText textStyle={TEXT_STYLES.heading5}>{title}</BpkText>
+            {subtitle && (
+              <BpkText className={getClassName('bpk-nudger__label--subtitle')}>
+                {subtitle}
+              </BpkText>
+            )}
+          </span>
+        </BpkLabel>
+      )}
+      <BpkConfigurableNudger
+        inputClassName={getClassName('bpk-nudger__input--numeric')}
+        compareValues={compareValues}
+        incrementValue={incrementValue}
+        decrementValue={decrementValue}
+        formatValue={formatValue}
+        className={className}
+        buttonType={buttonType}
+        id={id}
+        {...rest}
+      />
+    </div>
+  )};
 
 export default BpkNudger;

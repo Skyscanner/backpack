@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from "react";
+
 export type CommonProps = {
   id: string;
   min: string | number;
@@ -26,4 +28,7 @@ export type CommonProps = {
   increaseButtonLabel: string;
   decreaseButtonLabel: string;
   buttonType?: string;
+  title?: string;
+  subtitle?: string;
+  icon? : ReactNode;
 };
