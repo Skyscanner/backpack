@@ -64,9 +64,9 @@ describe('withInfiniteScroll', () => {
         currentOptions = options;
       }
 
-      observe() {} // eslint-disable-line class-methods-use-this
+      observe() {}  
 
-      unobserve() {} // eslint-disable-line class-methods-use-this
+      unobserve() {}  
     };
   });
 

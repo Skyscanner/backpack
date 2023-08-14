@@ -17,7 +17,7 @@
  */
 
 // We disable eslint here as this package is listed as a peerDep so consumers are required to install this when using this package.
-// eslint-disable-next-line import/no-unresolved
+ 
 const nodeSass = require('node-sass');
 
 module.exports = {

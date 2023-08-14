@@ -16,14 +16,18 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from "react";
 export type CommonProps = {
     id: string;
     min: string | number;
     max: string | number;
     value: string | number;
-    onChange: (arg0: any) => (void | null);
+    onChange: (arg0: any) => void | null;
     className?: string | null;
     increaseButtonLabel: string;
     decreaseButtonLabel: string;
     buttonType?: string;
+    title?: string;
+    subtitle?: string;
+    icon?: ReactNode;
 };
