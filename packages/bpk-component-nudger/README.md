@@ -2,8 +2,6 @@
 
 > Backpack nudger component.
 
-When building features that use the `BpkNudger` component together with a label, we recommend using the [BpkNudgerRow](../bpk-component-nudger-row/README.md) instead. `BpkNudgerRow` combines the `BpkNudger` and `BpkLabel` into one component ensuring accessibility and visual consistency.
-
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
@@ -178,9 +176,9 @@ Decrease button label - This is the label that will be read out when screen read
 
 Increase button label - This is the label that will be read out when screen reader users tab to the increase button. Make sure you use a descriptive label like "Increase number of adults"
 
-#### title & subtitle & icon
+#### title, subtitle, icon
 
-Title and subtitle - The title and subtitle together make up the label for the nudger. This label will be read aloud as a whole by screen readers. Title is required if you want to pass a label and won't work without it.
+Title, subtitle and icon together make up the label for the nudger. This label will be read aloud as a whole by screen readers. They all are optional props, however, if you wish to use a label then you will need to pass a title as the label will not work without it.
 
 ### Theme Props
 
