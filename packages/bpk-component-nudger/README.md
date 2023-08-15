@@ -113,17 +113,21 @@ class App extends Component {
 
 ### BpkNudger
 
-| Property            | PropType                      | Required | Default Value |
-| ------------------- | ----------------------------- | -------- | ------------- |
-| id                  | string                        | true     | -             |
-| decreaseButtonLabel | string                        | true     | -             |
-| increaseButtonLabel | string                        | true     | -             |
-| max                 | number                        | true     | -             |
-| min                 | number                        | true     | -             |
-| onChange            | func                          | true     | -             |
-| value               | number                        | true     | -             |
-| className           | string                        | false    | null          |
-| buttonType          | oneOf('secondary', 'secondaryOnDark') | false    | secondary     |
+| Property              | PropType                                | Required  | Default Value |
+| --------------------- | --------------------------------------- | --------- | ------------- |
+| id                    | string                                  | true      | -             |
+| decreaseButtonLabel   | string                                  | true      | -             |
+| increaseButtonLabel   | string                                  | true      | -             |
+| max                   | number                                  | true      | -             |
+| min                   | number                                  | true      | -             |
+| onChange              | func                                    | true      | -             |
+| value                 | number                                  | true      | -             |
+| className             | string                                  | false     | null          |
+| buttonType            | oneOf('secondary', 'secondaryOnDark')   | false     | secondary     |
+| title               	| string                                	| false    	| undefined     |
+| subtitle            	| string                                	| false    	| undefined     |
+| icon                	| node                                  	| false    	| null          |
+
 
 ### BpkConfigurableNudger
 
@@ -143,9 +147,6 @@ class App extends Component {
 | className           	| string                                	| false    	| null          	|
 | inputClassName      	| string                                	| false    	| null          	|
 | buttonType          	| oneOf('secondary', 'secondaryOnDark') 	| false    	| secondary     	|
-| title               	| string                                	| false    	| undefined     	|
-| subtitle            	| string                                	| false    	| undefined     	|
-| icon                	| node                                  	| false    	| null          	|
 
 ### Prop Details
 
