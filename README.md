@@ -62,7 +62,6 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-modal`](/packages/bpk-component-modal)
 [`bpk-component-navigation-bar`](/packages/bpk-component-navigation-bar)
 [`bpk-component-nudger`](/packages/bpk-component-nudger)
-[`bpk-component-nudger-row`](/packages/bpk-component-nudger-row)
 [`bpk-component-page-indicator`](/packages/bpk-component-page-indicator)
 [`bpk-component-pagination`](/packages/bpk-component-pagination)
 [`bpk-component-panel`](/packages/bpk-component-panel)

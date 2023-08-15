@@ -2,8 +2,6 @@
 
 > Backpack nudger component.
 
-When building features that use the `BpkNudger` component together with a label, we recommend using the [BpkNudgerRow](../bpk-component-nudger-row/README.md) instead. `BpkNudgerRow` combines the `BpkNudger` and `BpkLabel` into one component ensuring accessibility and visual consistency.
-
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
@@ -115,36 +113,40 @@ class App extends Component {
 
 ### BpkNudger
 
-| Property            | PropType                      | Required | Default Value |
-| ------------------- | ----------------------------- | -------- | ------------- |
-| id                  | string                        | true     | -             |
-| decreaseButtonLabel | string                        | true     | -             |
-| increaseButtonLabel | string                        | true     | -             |
-| max                 | number                        | true     | -             |
-| min                 | number                        | true     | -             |
-| onChange            | func                          | true     | -             |
-| value               | number                        | true     | -             |
-| className           | string                        | false    | null          |
-| buttonType          | oneOf('secondary', 'secondaryOnDark') | false    | secondary     |
+| Property              | PropType                                | Required  | Default Value |
+| --------------------- | --------------------------------------- | --------- | ------------- |
+| id                    | string                                  | true      | -             |
+| decreaseButtonLabel   | string                                  | true      | -             |
+| increaseButtonLabel   | string                                  | true      | -             |
+| max                   | number                                  | true      | -             |
+| min                   | number                                  | true      | -             |
+| onChange              | func                                    | true      | -             |
+| value                 | number                                  | true      | -             |
+| className             | string                                  | false     | null          |
+| buttonType            | oneOf('secondary', 'secondaryOnDark')   | false     | secondary     |
+| title               	| string                                	| false    	| undefined     |
+| subtitle            	| string                                	| false    	| undefined     |
+| icon                	| node                                  	| false    	| null          |
+
 
 ### BpkConfigurableNudger
 
-| Property            | PropType                      | Required | Default Value |
-| ------------------- | ----------------------------- | -------- | ------------- |
-| id                  | string                        | true     | -             |
-| decreaseButtonLabel | string                        | true     | -             |
-| increaseButtonLabel | string                        | true     | -             |
-| max                 | number                        | true     | -             |
-| min                 | number                        | true     | -             |
-| onChange            | func                          | true     | -             |
-| value               | number                        | true     | -             |
-| compareValues       | func                          | true     | -             |
-| incrementValue      | func                          | true     | -             |
-| decrementValue      | func                          | true     | -             |
-| formatValue         | func                          | true     | -             |
-| className           | string                        | false    | null          |
-| inputClassName      | string                        | false    | null          |
-| buttonType          | oneOf('secondary', 'secondaryOnDark') | false    | secondary     |
+| Property            	| PropType                              	| Required 	| Default Value 	|
+|---------------------	|---------------------------------------	|----------	|---------------	|
+| id                  	| string                                	| true     	| -             	|
+| decreaseButtonLabel 	| string                                	| true     	| -             	|
+| increaseButtonLabel 	| string                                	| true     	| -             	|
+| max                 	| number                                	| true     	| -             	|
+| min                 	| number                                	| true     	| -             	|
+| onChange            	| func                                  	| true     	| -             	|
+| value               	| number                                	| true     	| -             	|
+| compareValues       	| func                                  	| true     	| -             	|
+| incrementValue      	| func                                  	| true     	| -             	|
+| decrementValue      	| func                                  	| true     	| -             	|
+| formatValue         	| func                                  	| true     	| -             	|
+| className           	| string                                	| false    	| null          	|
+| inputClassName      	| string                                	| false    	| null          	|
+| buttonType          	| oneOf('secondary', 'secondaryOnDark') 	| false    	| secondary     	|
 
 ### Prop Details
 
@@ -174,6 +176,10 @@ Decrease button label - This is the label that will be read out when screen read
 #### increaseButtonLabel
 
 Increase button label - This is the label that will be read out when screen reader users tab to the increase button. Make sure you use a descriptive label like "Increase number of adults"
+
+#### title, subtitle, icon
+
+Title, subtitle and icon together make up the label for the nudger. This label will be read aloud as a whole by screen readers. They all are optional props, however, if you wish to use a label then you will need to pass a title as the label will not work without it.
 
 ### Theme Props
 
