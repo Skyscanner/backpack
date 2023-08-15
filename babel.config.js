@@ -54,12 +54,6 @@ module.exports = {
             },
           },
         ],
-        [
-          'css-modules-transform',
-          {
-            extractCss: './dist/index.css',
-          },
-        ],
         'inline-react-svg',
       ],
       ignore: [
