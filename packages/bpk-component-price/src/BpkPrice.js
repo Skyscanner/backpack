@@ -31,6 +31,10 @@ type Props = {
   align: $Values<typeof ALIGNS>,
   className: ?string,
   leadingText: ?string,
+  /**
+  * @experimental This prop is experimental and subject to change.
+  * Use with caution.
+  */
   leadingClassName: ?string,
   trailingText: ?string,
   previousPrice: ?string,
