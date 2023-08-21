@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
-
-$bpk-spacing-v2: true;
+@import '../../packages/bpk-mixins/index.scss';
 
 .bpk-navigation-bar-story {
   padding: $bpk-one-pixel-rem $bpk-one-pixel-rem bpk-spacing-xxl() * 2;

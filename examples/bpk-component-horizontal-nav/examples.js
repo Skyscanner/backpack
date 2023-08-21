@@ -26,7 +26,7 @@ import {
 
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkText from '../../packages/bpk-component-text';
-import { BpkDarkExampleWrapper } from '../../packages/bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
   HORIZONTAL_NAV_TYPES,

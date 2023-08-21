@@ -1,0 +1,1 @@
+(()=>{"use strict";(()=>{if("undefined"==typeof document)return;const o=[];o.push("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch?"touch-support":"no-touch-support"),document.documentElement.className+=` ${o.map((o=>`bpk-${o}`)).join(" ")}`})()})();

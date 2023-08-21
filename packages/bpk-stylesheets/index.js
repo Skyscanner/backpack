@@ -15,30 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import { cssModules } from '../../bpk-react-utils';
+import './index.scss';
 
-import STYLES from './BpkDarkExampleWrapper.module.scss';
+(() => {
+  if (typeof document === 'undefined') {
+    return;
+  }
 
-const getClassName = cssModules(STYLES);
+  const classNames = [];
 
-const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
-  const { padded, ...rest } = props;
-  return (
-    /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-    <div
-      className={getClassName(
-        'bpk-dark-example-wrapper',
-        padded && 'bpk-dark-example-wrapper--padded',
-      )}
-      {...rest}
-    />
+  // touch support
+  classNames.push(
+    'ontouchstart' in window ||  
+      (window.DocumentTouch && document instanceof DocumentTouch) // eslint-disable-line no-undef
+      ? 'touch-support'
+      : 'no-touch-support',
   );
-};
 
-BpkDarkExampleWrapper.defaultProps = {
-  padded: false,
-};
+  // add more feature tests here...
 
-export default BpkDarkExampleWrapper;
+   
+  document.documentElement.className += ` ${classNames
+    .map((className) => `bpk-${className}`)
+    .join(' ')}`;
+})();

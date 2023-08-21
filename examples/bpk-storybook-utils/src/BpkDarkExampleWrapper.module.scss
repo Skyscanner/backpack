@@ -16,9 +16,17 @@
  * limitations under the License.
  */
 
-import BpkNudgerRow, {
-  type Props as BpkNudgerRowProps,
-} from './src/BpkNudgerRow';
+@import '../../../packages/bpk-mixins/index.scss';
 
-export type { BpkNudgerRowProps };
-export default BpkNudgerRow;
+.bpk-dark-example-wrapper {
+  @include bpk-border-radius-sm;
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-docs-sidebar-background,
+    $bpk-core-primary-day
+  );
+
+  &--padded {
+    padding: bpk-spacing-base();
+  }
+}

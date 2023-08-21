@@ -16,6 +16,14 @@
  * limitations under the License.
  */
 
-import BpkNudgerRow, { type Props as BpkNudgerRowProps } from './src/BpkNudgerRow';
-export type { BpkNudgerRowProps };
-export default BpkNudgerRow;
+// We disable eslint here as this package is listed as a peerDep so consumers are required to install this when using this package.
+ 
+const nodeSass = require('node-sass');
+
+module.exports = {
+  'encodebase64($string)': (str) => {
+    const buffer = Buffer.from(str.getValue());
+
+    return nodeSass.types.String(buffer.toString('base64'));
+  },
+};

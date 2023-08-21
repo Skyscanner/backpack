@@ -62,7 +62,6 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-modal`](/packages/bpk-component-modal)
 [`bpk-component-navigation-bar`](/packages/bpk-component-navigation-bar)
 [`bpk-component-nudger`](/packages/bpk-component-nudger)
-[`bpk-component-nudger-row`](/packages/bpk-component-nudger-row)
 [`bpk-component-page-indicator`](/packages/bpk-component-page-indicator)
 [`bpk-component-pagination`](/packages/bpk-component-pagination)
 [`bpk-component-panel`](/packages/bpk-component-panel)
@@ -85,6 +84,8 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-ticket`](/packages/bpk-component-ticket)
 [`bpk-component-tooltip`](/packages/bpk-component-tooltip)
 [`bpk-react-utils`](/packages/bpk-react-utils)
+[`bpk-mixins`](/packages/bpk-mixins)
+[`bpk-stylesheets`](/packages/bpk-stylesheets)
 
 ## List of external packages
 
@@ -94,7 +95,5 @@ These are installed separately and installation information can be found in the 
 
 | Component                                                                                                                      | Version                                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`bpk-mixins`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-mixins)                               | [![npm version](https://badge.fury.io/js/bpk-mixins.svg)](http://badge.fury.io/js/bpk-mixins)                                                    |
-| [`bpk-stylesheets`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-stylesheets)                     | [![npm version](https://badge.fury.io/js/bpk-stylesheets.svg)](http://badge.fury.io/js/bpk-stylesheets)                                          |
 | [`@skyscanner/bpk-svgs`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-svgs)                       | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs)                       |
 | [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web) |

@@ -16,11 +16,10 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
 .bpk-skip-link {
-  display: inline-block;
-  padding: $bpk-spacing-sm;
+  padding: (12 * $bpk-one-pixel-rem) bpk-spacing-base();
   transition: opacity $bpk-duration-sm ease-in-out;
   border-radius: $bpk-border-radius-sm;
   color: $bpk-text-on-dark-day;

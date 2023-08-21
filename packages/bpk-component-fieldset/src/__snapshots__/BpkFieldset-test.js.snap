@@ -201,10 +201,8 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -269,10 +267,8 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -329,10 +325,8 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -396,10 +390,8 @@ exports[`BpkFieldset should render correctly with input component and "descripti
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -456,10 +448,8 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -521,10 +511,8 @@ exports[`BpkFieldset should render correctly with input component and "required"
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -581,10 +569,8 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -640,10 +626,8 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -724,10 +708,8 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -813,10 +795,8 @@ exports[`BpkFieldset should render correctly with select component and "required
               <svg
                 aria-hidden="true"
                 class="bpk-form-validation__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path

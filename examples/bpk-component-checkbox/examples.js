@@ -27,7 +27,7 @@ import {
 import {
   action,
   BpkDarkExampleWrapper,
-} from '../../packages/bpk-storybook-utils';
+} from '../bpk-storybook-utils';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita

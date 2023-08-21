@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../packages/bpk-mixins/index.scss';
 
 .bpk-stories-flight {
   margin-bottom: 2rem;
@@ -60,16 +60,16 @@
   }
 
   &__from {
-    padding: 0 $bpk-spacing-base;
+    padding: 0 bpk-spacing-lg();
     text-align: right;
   }
 
   &__to {
-    padding: 0 $bpk-spacing-base;
+    padding: 0 bpk-spacing-lg();
   }
 
   &__duration {
-    padding: 0 $bpk-spacing-sm;
+    padding: 0 bpk-spacing-base();
   }
 
   &__time {

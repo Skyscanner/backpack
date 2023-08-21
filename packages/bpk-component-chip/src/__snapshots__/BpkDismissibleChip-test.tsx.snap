@@ -19,10 +19,8 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
       <svg
         aria-hidden="true"
         class="bpk-chip--default-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -53,10 +51,8 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
       <svg
         aria-hidden="true"
         class="bpk-chip--default-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -87,10 +83,8 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
       <svg
         aria-hidden="true"
         class="bpk-chip--default-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -121,10 +115,8 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
       <svg
         aria-hidden="true"
         class="bpk-chip--default-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -155,10 +147,8 @@ exports[`BpkDismissibleChip should render correctly with type="default" 1`] = `
       <svg
         aria-hidden="true"
         class="bpk-chip--default-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -196,10 +186,8 @@ exports[`BpkDismissibleChip should render correctly with type="default" and a le
       <svg
         aria-hidden="true"
         class="bpk-chip--default-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -230,10 +218,8 @@ exports[`BpkDismissibleChip should render correctly with type="default" and disa
       <svg
         aria-hidden="true"
         class="bpk-chip--default-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -264,10 +250,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
       <svg
         aria-hidden="true"
         class="bpk-chip--on-dark-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -305,10 +289,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and a le
       <svg
         aria-hidden="true"
         class="bpk-chip--on-dark-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -339,10 +321,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and disa
       <svg
         aria-hidden="true"
         class="bpk-chip--on-dark-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -373,10 +353,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
       <svg
         aria-hidden="true"
         class="bpk-chip--on-image-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -414,10 +392,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and a l
       <svg
         aria-hidden="true"
         class="bpk-chip--on-image-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -448,10 +424,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and dis
       <svg
         aria-hidden="true"
         class="bpk-chip--on-image-dismissible__trailing-accessory-view"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

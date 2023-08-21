@@ -18,5 +18,5 @@
 
 /// <reference types="react" />
 import { type CommonProps } from './common-types';
-declare const BpkNudger: ({ className, buttonType, ...rest }: CommonProps) => JSX.Element;
+declare const BpkNudger: ({ buttonType, className, icon, id, subtitle, title, ...rest }: CommonProps) => JSX.Element;
 export default BpkNudger;

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
 .bpk-description-list {
   margin: 0;
@@ -27,10 +27,10 @@
 
   &__details {
     margin: 0;
-    margin-left: $bpk-spacing-base;
+    margin-left: bpk-spacing-lg();
 
     @include bpk-rtl {
-      margin-right: $bpk-spacing-base;
+      margin-right: bpk-spacing-lg();
       margin-left: 0;
     }
   }

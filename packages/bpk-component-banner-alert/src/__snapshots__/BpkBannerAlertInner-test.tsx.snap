@@ -23,10 +23,8 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__error-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -82,10 +80,8 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__error-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -141,10 +137,8 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__neutral-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -200,10 +194,8 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__primary-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -259,10 +251,8 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__success-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -318,10 +308,8 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__warn-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -377,10 +365,8 @@ exports[`BpkBannerAlertInner should render correctly with a custom banner-alert 
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__warn-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -437,10 +423,8 @@ exports[`BpkBannerAlertInner should render correctly with a custom class name 1`
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__warn-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -497,10 +481,8 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__success-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -535,9 +517,8 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
                   <svg
                     aria-hidden="true"
                     class="bpk-banner-alert__expand-icon"
-                    height="24"
                     style="width: 1.5rem; height: 1.5rem;"
-                    width="24"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -591,10 +572,8 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__warn-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -620,10 +599,8 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
                 <svg
                   aria-hidden="true"
                   class="bpk-close-button__icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -674,10 +651,8 @@ exports[`BpkBannerAlertInner should render correctly with arbitrary props 1`] = 
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__warn-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -734,10 +709,8 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__success-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -767,9 +740,8 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
                   <svg
                     aria-hidden="true"
                     class="bpk-banner-alert__expand-icon"
-                    height="24"
                     style="width: 1.5rem; height: 1.5rem;"
-                    width="24"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -823,10 +795,8 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
                 <svg
                   aria-hidden="true"
                   class="bpk-banner-alert__warn-icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -852,10 +822,8 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
                 <svg
                   aria-hidden="true"
                   class="bpk-close-button__icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path

@@ -19,13 +19,16 @@
 /* @flow strict */
 
 import { Component } from 'react';
+import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import {
   action,
   BpkDarkExampleWrapper,
-} from '../../packages/bpk-storybook-utils';
+} from '../bpk-storybook-utils';
 import BpkLabel from '../../packages/bpk-component-label';
 import { cssModules } from '../../packages/bpk-react-utils';
+import AccountIcon from '../../packages/bpk-component-icon/lg/account';
+import { withAlignment } from '../../packages/bpk-component-icon';
 import BpkNudger, {
   BpkConfigurableNudger,
 } from '../../packages/bpk-component-nudger';
@@ -33,6 +36,8 @@ import BpkNudger, {
 import STYLES from './BpkNudgerStory.module.scss';
 
 const getClassName = cssModules(STYLES);
+
+const AlignedAccountIcon = withAlignment(AccountIcon, lineHeightBase, iconSizeLg);
 
 class NudgerContainer extends Component<
   { id: string, buttonType: string },
@@ -154,6 +159,21 @@ const DefaultExample = () => (
   />
 );
 
+const WithLabelExample = () => (
+  <BpkNudger
+    id="my-nudger"
+    min={1}
+    max={99}
+    value={3}
+    onChange={action('change')}
+    decreaseButtonLabel="Decrease"
+    increaseButtonLabel="Increase"
+    title="Adults"
+    subtitle="Aged 16+"
+    icon={<AlignedAccountIcon />}
+  />
+);
+
 const LowerBoundExample = () => (
   <BpkNudger
     id="my-nudger"
@@ -193,6 +213,7 @@ const OnDarkExample = () => (
 const MixedExample = () => (
   <div>
     <DefaultExample />
+    <WithLabelExample />
     <ConfigurableExample />
     <OnDarkExample />
   </div>
@@ -200,6 +221,7 @@ const MixedExample = () => (
 
 export {
   DefaultExample,
+  WithLabelExample,
   LowerBoundExample,
   UpperBoundsExample,
   StatefulExample,

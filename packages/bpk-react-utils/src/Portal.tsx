@@ -289,7 +289,7 @@ class Portal extends Component<Props, State> {
 
   // This function is taken from modernizr
   // See https://github.com/modernizr/modernizr
-  // eslint-disable-next-line class-methods-use-this
+   
   supportsPassiveEvents() {
     let supportsPassiveOption = false;
     try {

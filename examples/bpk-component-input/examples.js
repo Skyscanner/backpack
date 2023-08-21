@@ -20,7 +20,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../packages/bpk-react-utils';
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import BpkLabel from '../../packages/bpk-component-label';
 import BpkBannerAlert, {
   ALERT_TYPES,

@@ -16,18 +16,41 @@
  * limitations under the License.
  */
 
-/// <reference types="react" />
-export type Props = {
-    title: string;
-    nudgerId: string;
-    value: number;
-    decreaseButtonLabel: string;
-    increaseButtonLabel: string;
-    min: number;
-    max: number;
-    onChange: (arg0: any) => (null | void);
-    subtitle?: string;
-    className?: string | null;
-};
-declare const BpkNudgerRow: ({ title, nudgerId, subtitle, decreaseButtonLabel, increaseButtonLabel, min, max, onChange, value, className }: Props) => JSX.Element;
-export default BpkNudgerRow;
+@import '../bonds.scss';
+
+////
+/// @group box-shadows
+////
+
+/// Small box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-sm();
+///   }
+
+@mixin bpk-box-shadow-sm {
+  box-shadow: $bpk-box-shadow-sm;
+}
+
+/// Large box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-lg();
+///   }
+
+@mixin bpk-box-shadow-lg {
+  box-shadow: $bpk-box-shadow-lg;
+}
+
+/// Extra large box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-xl();
+///   }
+
+@mixin bpk-box-shadow-xl {
+  box-shadow: $bpk-box-shadow-xl;
+}

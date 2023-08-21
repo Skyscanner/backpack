@@ -19,9 +19,7 @@
 // Use of stylelint-disable-next-line declaration-no-important in this file is to ensure that
 // the correct styles are applied for Internet Explorer 11 and are not overriden by system styles.
 
-@import '~bpk-mixins/index.scss';
-
-$bpk-spacing-v2: true;
+@import '../../bpk-mixins/index.scss';
 
 .bpk-select {
   @include bpk-select;

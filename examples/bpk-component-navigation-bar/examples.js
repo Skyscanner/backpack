@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from '../../packages/bpk-component-icon/sm/close';
