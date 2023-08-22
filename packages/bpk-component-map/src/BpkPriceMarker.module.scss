@@ -18,9 +18,12 @@
 
 @import '../../bpk-mixins/index.scss';
 
+$arrow-width: bpk-spacing-base();
+$arrow-height: bpk-spacing-base();
+
 .bpk-price-marker {
   display: flex;
-  padding: (bpk-spacing-sm() - $bpk-one-pixel-rem) bpk-spacing-md();
+  padding: $bpk-one-pixel-rem * 2 bpk-spacing-md();
   justify-content: center;
   align-items: center;
   border: $bpk-border-size-xl solid;
@@ -90,8 +93,13 @@
   &__wrapper {
     position: relative;
     display: flex;
+    padding: 0; // Prevent default <button> styling.
     flex-direction: column;
     align-items: center;
+    transform: translate(
+      calc(-50% - #{$bpk-border-size-xl}),
+      calc(-100% - #{$bpk-border-size-xl} - #{$arrow-height}/ 2)
+    );
     border: none;
     background: none;
   }
@@ -100,12 +108,12 @@
     position: absolute;
 
     // Position the arrow correctly under the price marker
-    top: 1.3rem;
+    top: 50%;
 
     // We want the arrow pointer to appear under the marker which is already
     z-index: -1;
-    width: bpk-spacing-base();
-    height: bpk-spacing-base();
+    width: $arrow-width;
+    height: $arrow-height;
     transform: rotate(45deg);
     border-radius: 25%;
     background-color: $bpk-core-accent-day;
@@ -128,7 +136,7 @@
 
     &-focused {
       // Position the arrow correctly under the price marker
-      top: 1.8rem;
+      top: 75%;
 
       @include bpk-themeable-property(
         background-color,
@@ -138,6 +146,8 @@
     }
 
     &-disabled {
+      top: 75%;
+
       // We want the arrow pointer to appear under the disabled marker which is already z-index: -2
       z-index: -3;
       background-color: $bpk-canvas-day;
