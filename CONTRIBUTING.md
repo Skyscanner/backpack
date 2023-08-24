@@ -54,6 +54,9 @@ We recommend that you install [a plugin to your editor](https://eslint.org/docs/
 **All Backpack components are written in Typescript or are being gradually migrated to Typescript.**
 
 As we're in the process of migrating all Backpack components to Typescript, we kindly request that engineers contributing changes to an existing component also migrate the respective component.
+```sh
+npm install --registry="https://registry.npmjs.org/"
+```
 
 ### Getting the code
 
@@ -209,7 +212,7 @@ const BpkText = ({text, color, sparkles}: Props) => {
 
 For anything non-trivial, we strongly recommend speaking to somebody from Backpack squad before starting work on a PR. This lets us pass on any advice or knowledge we already have about the work you're proposing. It might even be something we're already working on. After this, follow the steps below.
 
-1. If you are not a Skyscanner employee, [fork the repository](https://github.com/Skyscanner/backpack/fork). If you are a Skyscanner employee, please follow the "Engineering Contribution" guide in the Backpack space in Confluence to get push rights to this repository.
+1. If you are not a Skyscanner employee, [fork the repository](https://github.com/Skyscanner/backpack/fork). If you are a Skyscanner employee, please follow the "Engineering Contribution" guide in the Backpack space in Confluence to get push rights to this repository. This contains information about setting up your Github account such as how to get added to the Skyscanner organisation, or set an SSH key to swap between your GH Enterprise and public GH accounts.
 2. Create a new branch.
 3. Make your changes.
 4. Commit and push your new branch.
