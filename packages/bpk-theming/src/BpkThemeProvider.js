@@ -134,7 +134,7 @@ const themeAttributesPropType = (props, propName, componentName) => {
 BpkThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
   theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  themeAttributes: themeAttributesPropType, // eslint-disable-line react/require-default-props
+  themeAttributes: themeAttributesPropType,
   // (disabled because isRequired is inside the custom validator)
   component: PropTypes.elementType,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types

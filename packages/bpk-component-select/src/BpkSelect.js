@@ -110,7 +110,7 @@ BpkSelect.propTypes = {
   // In this case value is not required and nor should it be given a default value (as the linter thinks)
   // Prop types are not expressive enough (without a drastic increase in complexity of writing a custom validator) to encode this relationship. Equally, this wouldn't actually solve the linting issue (AFAIK).
   // As a solution, the require-default-props has been disabled for this line.
-  // eslint-disable-next-line react/require-default-props
+
   value: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,

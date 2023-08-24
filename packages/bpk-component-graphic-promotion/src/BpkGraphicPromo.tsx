@@ -19,7 +19,6 @@
 import type { KeyboardEvent, MouseEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText from '../../bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButton from '../../bpk-component-button';
@@ -57,7 +56,7 @@ export type Props = {
   buttonText: string;
   onClick: () => void;
   invertVertically?: boolean;
-  textAlign: typeof TEXT_ALIGN[keyof typeof TEXT_ALIGN];
+  textAlign: (typeof TEXT_ALIGN)[keyof typeof TEXT_ALIGN];
   style?: {};
 };
 

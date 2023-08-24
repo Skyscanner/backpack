@@ -12,11 +12,10 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -31,11 +30,10 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -50,11 +48,10 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -69,11 +66,10 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -88,11 +84,10 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -116,11 +111,10 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -135,11 +129,10 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -154,11 +147,10 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -173,11 +165,10 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -192,11 +183,10 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -220,10 +210,10 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon"
-        height="24"
         style="width: 1.5rem; height: 1.5rem;"
-        width="24"
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -238,10 +228,10 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon"
-        height="24"
         style="width: 1.5rem; height: 1.5rem;"
-        width="24"
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -256,10 +246,10 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon"
-        height="24"
         style="width: 1.5rem; height: 1.5rem;"
-        width="24"
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -274,10 +264,10 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon"
-        height="24"
         style="width: 1.5rem; height: 1.5rem;"
-        width="24"
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -292,10 +282,10 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        height="24"
         style="width: 1.5rem; height: 1.5rem;"
-        width="24"
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -319,11 +309,10 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -338,11 +327,10 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -357,11 +345,10 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -376,11 +363,10 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -395,11 +381,10 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -414,11 +399,10 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -433,11 +417,10 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -452,11 +435,10 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -480,11 +462,10 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -499,11 +480,10 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -518,11 +498,10 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -537,11 +516,10 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -556,11 +534,10 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -584,11 +561,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -603,11 +579,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -622,11 +597,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -641,11 +615,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -660,11 +633,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -688,11 +660,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -707,11 +678,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -726,11 +696,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -745,11 +714,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -764,11 +732,10 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -792,11 +759,10 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -811,11 +777,10 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -830,11 +795,10 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -849,11 +813,10 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -868,11 +831,10 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

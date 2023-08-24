@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, SyntheticEvent } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 
 export const BUTTON_TYPES = {
   primary: 'primary',
@@ -35,8 +35,8 @@ export const SIZE_TYPES = {
   large: 'large',
 } as const;
 
-export type ButtonType = typeof BUTTON_TYPES[keyof typeof BUTTON_TYPES];
-export type SizeType = typeof SIZE_TYPES[keyof typeof SIZE_TYPES];
+export type ButtonType = (typeof BUTTON_TYPES)[keyof typeof BUTTON_TYPES];
+export type SizeType = (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
 
 export type Props = {
   children: string | ReactNode;
@@ -45,7 +45,7 @@ export type Props = {
   className?: string | null;
   disabled?: boolean;
   iconOnly?: boolean;
-  onClick?: (event: SyntheticEvent) => void;
+  onClick?: (event: MouseEvent) => void;
   rel?: string | undefined;
   submit?: boolean;
   href?: string | null;

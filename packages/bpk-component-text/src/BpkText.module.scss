@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
 .bpk-text {
   @include bpk-text;
@@ -127,13 +127,5 @@
 
   &--hero-5 {
     @include bpk-hero-5;
-  }
-
-  &--bold {
-    @include bpk-text--bold;
-  }
-
-  &--black {
-    @include bpk-text--black;
   }
 }

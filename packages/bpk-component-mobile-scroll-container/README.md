@@ -39,15 +39,15 @@ export default () => (
 
 *`MyComponent.scss`:*
 ```scss
-@import '~bpk-mixins/index.scss';
+@import '~@skyscanner/backpack-web/bpk-mixins/index.scss';
 
 .my-component {
   display: flex;
 
   &__item {
     display: flex;
-    min-width: $bpk-spacing-xxl * 5;
-    height: $bpk-spacing-xxl * 5;
+    min-width: bpk-spacing-xxl() * 5;
+    height: bpk-spacing-xxl() * 5;
     justify-content: center;
     align-items: center;
     background-color: $bpk-color-sky-gray-tint-07;

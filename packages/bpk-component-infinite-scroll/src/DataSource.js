@@ -21,13 +21,11 @@
 class DataSource<T = any> {
   listeners: Array<() => mixed>;
 
-  triggerListeners: (...args: Array<any>) => void;
-
   constructor() {
     this.listeners = [];
   }
 
-  /* eslint-disable-next-line no-unused-vars, class-methods-use-this */
+  /* eslint-disable-next-line no-unused-vars */
   fetchItems(index: number, nElements: number): Promise<Array<T>> {
     throw new Error('Not implemented');
   }

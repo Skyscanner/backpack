@@ -15,13 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../packages/bpk-react-utils';
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import BpkLabel from '../../packages/bpk-component-label';
 import BpkBannerAlert, {
   ALERT_TYPES,
@@ -29,7 +28,6 @@ import BpkBannerAlert, {
 import BpkInput, {
   propTypes as inputPropTypes,
   defaultProps as inputDefaultProps,
-  type BpkInputProps,
   INPUT_TYPES,
   CLEAR_BUTTON_MODES,
 } from '../../packages/bpk-component-input';
@@ -38,18 +36,9 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  ...$Exact<$Diff<BpkInputProps, { value: string }>>,
-  initialValue: string,
-};
-
-type State = {
-  value: string,
-};
-
 const { value: valueProp, ...propTypes } = inputPropTypes;
 
-class ClearableInput extends Component<Props, State> {
+class ClearableInput extends Component {
   static propTypes = {
     ...propTypes,
     initialValue: PropTypes.string.isRequired,
@@ -59,7 +48,7 @@ class ClearableInput extends Component<Props, State> {
     ...inputDefaultProps,
   };
 
-  constructor(props: Props) {
+  constructor(props) {
     super(props);
 
     this.state = {

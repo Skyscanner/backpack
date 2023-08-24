@@ -17,11 +17,10 @@ exports[`BpkFormValidation should render correctly 1`] = `
             style="line-height: 1rem; display: inline-block; margin-top: 0.125rem; vertical-align: top;"
           >
             <svg
+              aria-hidden="true"
               class="bpk-form-validation__icon"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -56,11 +55,10 @@ exports[`BpkFormValidation should render correctly with "expanded" equal to fals
             style="line-height: 1rem; display: inline-block; margin-top: 0.125rem; vertical-align: top;"
           >
             <svg
+              aria-hidden="true"
               class="bpk-form-validation__icon"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

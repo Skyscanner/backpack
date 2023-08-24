@@ -113,38 +113,44 @@ class App extends Component {
 
 ### BpkNudger
 
-| Property            | PropType                      | Required | Default Value |
-| ------------------- | ----------------------------- | -------- | ------------- |
-| id                  | string                        | true     | -             |
-| decreaseButtonLabel | string                        | true     | -             |
-| increaseButtonLabel | string                        | true     | -             |
-| max                 | number                        | true     | -             |
-| min                 | number                        | true     | -             |
-| onChange            | func                          | true     | -             |
-| value               | number                        | true     | -             |
-| className           | string                        | false    | null          |
-| buttonType          | oneOf('secondary', 'secondaryOnDark') | false    | secondary     |
+| Property              | PropType                                | Required  | Default Value |
+| --------------------- | --------------------------------------- | --------- | ------------- |
+| id                    | string                                  | true      | -             |
+| decreaseButtonLabel   | string                                  | true      | -             |
+| increaseButtonLabel   | string                                  | true      | -             |
+| max                   | number                                  | true      | -             |
+| min                   | number                                  | true      | -             |
+| onChange              | func                                    | true      | -             |
+| value                 | number                                  | true      | -             |
+| className             | string                                  | false     | null          |
+| buttonType            | oneOf('secondary', 'secondaryOnDark')   | false     | secondary     |
+| title               	| string                                	| false    	| undefined     |
+| subtitle            	| string                                	| false    	| undefined     |
+| icon                	| node                                  	| false    	| null          |
+
 
 ### BpkConfigurableNudger
 
-| Property            | PropType                      | Required | Default Value |
-| ------------------- | ----------------------------- | -------- | ------------- |
-| id                  | string                        | true     | -             |
-| decreaseButtonLabel | string                        | true     | -             |
-| increaseButtonLabel | string                        | true     | -             |
-| max                 | number                        | true     | -             |
-| min                 | number                        | true     | -             |
-| onChange            | func                          | true     | -             |
-| value               | number                        | true     | -             |
-| compareValues       | func                          | true     | -             |
-| incrementValue      | func                          | true     | -             |
-| decrementValue      | func                          | true     | -             |
-| formatValue         | func                          | true     | -             |
-| className           | string                        | false    | null          |
-| inputClassName      | string                        | false    | null          |
-| buttonType          | oneOf('secondary', 'secondaryOnDark') | false    | secondary     |
+| Property            	| PropType                              	| Required 	| Default Value 	|
+|---------------------	|---------------------------------------	|----------	|---------------	|
+| id                  	| string                                	| true     	| -             	|
+| decreaseButtonLabel 	| string                                	| true     	| -             	|
+| increaseButtonLabel 	| string                                	| true     	| -             	|
+| max                 	| number                                	| true     	| -             	|
+| min                 	| number                                	| true     	| -             	|
+| onChange            	| func                                  	| true     	| -             	|
+| value               	| number                                	| true     	| -             	|
+| compareValues       	| func                                  	| true     	| -             	|
+| incrementValue      	| func                                  	| true     	| -             	|
+| decrementValue      	| func                                  	| true     	| -             	|
+| formatValue         	| func                                  	| true     	| -             	|
+| className           	| string                                	| false    	| null          	|
+| inputClassName      	| string                                	| false    	| null          	|
+| buttonType          	| oneOf('secondary', 'secondaryOnDark') 	| false    	| secondary     	|
 
-### `compareValues`
+### Prop Details
+
+#### compareValues
 
 Given `a` and `b`:
 - If `a` is less than `b` then `compareValues(a, b)` should return a value less than `0`
@@ -155,14 +161,26 @@ We use this along with the `min` and `max` values to determine when we should di
 
 For integer numbers the following is a correct implementation `const compareValues = (a: number, b: number): number => a - b;`
 
-### `incrementValue` & `decrementValue`
+#### incrementValue & decrementValue
 
 Functions that handle the incrementing or decrementing of the current selected value.
 
-### `formatValue`
+#### formatValue
 
 A simple function that will allow you to set the format of the display value e.g. local dates or times.
 
-## Theme Props
+#### decreaseButtonLabel
+
+Decrease button label - This is the label that will be read out when screen reader users tab to the decrease button. Make sure you use a descriptive label like "Decrease number of adults".
+
+#### increaseButtonLabel
+
+Increase button label - This is the label that will be read out when screen reader users tab to the increase button. Make sure you use a descriptive label like "Increase number of adults"
+
+#### title, subtitle, icon
+
+Title, subtitle and icon together make up the label for the nudger. This label will be read aloud as a whole by screen readers. They all are optional props, however, if you wish to use a label then you will need to pass a title as the label will not work without it.
+
+### Theme Props
 
 Same as [secondary button](/components/web/buttons#theme-props)

@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkImage should accept userland className 1`] = `
+<DocumentFragment>
+  <div
+    class="userland-classname"
+  >
+    <div
+      class="bpk-image bpk-image--no-background"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img"
+        src="./path/to/image.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkImage should accept userland styling 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image bpk-image--no-background"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img"
+        src="./path/to/image.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkImage should apply borderRadius 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image bpk-image--no-background bpk-image--border-radius-sm"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img"
+        src="./path/to/image.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkImage should call onLoadCallback 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image bpk-image--no-background"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img"
+        src="./path/to/image.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkImage should have !inView behavior 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image bpk-image--no-background"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkImage should have loading behavior 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img bpk-image__img--hidden"
+        src="./path/to/image.jpg"
+      />
+      <div
+        class="bpk-image__spinner"
+      >
+        <svg
+          aria-hidden="true"
+          class="bpk-spinner bpk-spinner--dark"
+          style="width: 1rem; height: 1rem;"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3 7H1a1 1 0 000 2h2a1 1 0 000-2z"
+            opacity=".45"
+          />
+          <path
+            d="M15 7h-2a1 1 0 100 2h2a1 1 0 100-2z"
+          />
+          <path
+            d="M7 13v2a1 1 0 102 0v-2a1 1 0 10-2 0z"
+            opacity=".3"
+          />
+          <path
+            d="M7 1v2a1 1 0 002 0V1a1 1 0 00-2 0z"
+            opacity=".65"
+          />
+          <path
+            d="M9.634 12.83l1 1.732a1 1 0 101.732-1l-1-1.732a1 1 0 00-1.732 1z"
+            opacity=".25"
+          />
+          <path
+            d="M3.634 2.438l1 1.732a1 1 0 101.732-1l-1-1.732a1 1 0 10-1.732 1z"
+            opacity=".55"
+          />
+          <path
+            d="M11.83 11.366l1.732 1a1 1 0 101-1.732l-1.732-1a1 1 0 10-1 1.732z"
+            opacity=".2"
+          />
+          <path
+            d="M1.438 5.366l1.732 1a1 1 0 101-1.732l-1.732-1a1 1 0 10-1 1.732z"
+            opacity=".5"
+          />
+          <path
+            d="M12.83 6.366l1.732-1a1 1 0 00-1-1.732l-1.732 1a1 1 0 001 1.732z"
+            opacity=".85"
+          />
+          <path
+            d="M2.438 12.366l1.732-1a1 1 0 10-1-1.732l-1.732 1a1 1 0 101 1.732z"
+            opacity=".4"
+          />
+          <path
+            d="M11.366 4.17l1-1.732a1 1 0 00-1.732-1l-1 1.732a1 1 0 001.732 1z"
+            opacity=".75"
+          />
+          <path
+            d="M5.366 14.562l1-1.732a1 1 0 10-1.732-1l-1 1.732a1 1 0 001.732 1z"
+            opacity=".35"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkImage should load even without onLoadCallback 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image bpk-image--no-background"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img"
+        src="./path/to/image.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkImage should render correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image bpk-image--no-background"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img"
+        src="./path/to/image.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkImage should support srcSet 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="bpk-image bpk-image--no-background"
+      style="height: 0px; padding-bottom: 66.66666666666667%;"
+    >
+      <img
+        alt="image description"
+        class="bpk-image__img"
+        sizes="(min-width: 80rem) 48rem, (min-width: 64rem) calc(100vw - 18rem), calc(100vw - 4.5rem)"
+        src="./path/to/image_1640.jpg"
+        srcset="./path/to/image_320px.jpg 320w, ./path/to/image_640px.jpg 640w, ./path/to/image_1640px.jpg 1640w, ./path/to/image_3200px.jpg 3200w"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

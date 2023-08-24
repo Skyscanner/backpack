@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
 .bpk-card-wrapper {
   @include bpk-card;
@@ -25,6 +25,7 @@
   &--header {
     border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
     background-color: var(--background-color);
+    cursor: default;
     overflow: hidden;
   }
 
@@ -56,6 +57,13 @@
     &::after {
       right: 0;
       transform: rotate(-45deg);
+    }
+  }
+
+  &:has(.bpk-card-wrapper--header:active) {
+    &::after {
+      box-shadow: $bpk-box-shadow-lg;
+      opacity: 1;
     }
   }
 }

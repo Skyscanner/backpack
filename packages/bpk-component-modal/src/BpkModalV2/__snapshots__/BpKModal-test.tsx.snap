@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkModalV2 is not supported should render correctly with polyfill and content 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-modal-wrapper bpk-modal-polyfill"
+  >
+    <div
+      class="bpk-modal-backdrop"
+      data-open="true"
+      id="bpk-modal-element-polyfill"
+    />
+    <dialog
+      aria-labelledby="bpk-modal-element"
+      class="bpk-modal"
+      data-open="true"
+      id="bpk-modal-element"
+    >
+      <div
+        class="bpk-modal__button-container"
+      >
+        <button
+          aria-label="bpk-modal-button-close"
+          class="bpk-close-button"
+          title="bpk-modal-button-close"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-close-button__icon"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="bpk-modal__container"
+      >
+        <div>
+          Content
+        </div>
+      </div>
+    </dialog>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkModalV2 is supported should render correctly with content 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-modal-wrapper"
+  >
+    <dialog
+      aria-labelledby="bpk-modal-element"
+      class="bpk-modal"
+      data-open="true"
+      id="bpk-modal-element"
+    >
+      <div
+        class="bpk-modal__header-title"
+        id="bpk-modal-element-title"
+      >
+        <div
+          class="bpk-modal__header-title-container"
+        >
+          <h2
+            class="bpk-text bpk-text--label-1 bpk-modal__title"
+          >
+            Modal with dialog element
+          </h2>
+        </div>
+        <button
+          aria-label="bpk-modal-button-close"
+          class="bpk-close-button"
+          title="bpk-modal-button-close"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-close-button__icon"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="bpk-modal__container"
+      >
+        <div>
+          Content
+        </div>
+      </div>
+    </dialog>
+  </div>
+</DocumentFragment>
+`;

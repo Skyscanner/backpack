@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
-
-$bpk-spacing-v2: true;
+@import '../../bpk-mixins/index.scss';
 
 .bpk-nudger {
   &__button {
@@ -34,7 +32,7 @@ $bpk-spacing-v2: true;
     vertical-align: middle;
 
     @include bpk-text;
-    @include bpk-subheading;
+    @include bpk-heading-5;
 
     &--secondary-on-dark {
       background-color: transparent;
@@ -45,6 +43,27 @@ $bpk-spacing-v2: true;
       $size: bpk-spacing-lg() + (bpk-spacing-md() * 2);
 
       width: $size;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__label {
+    display: flex;
+    gap: bpk-spacing-md();
+
+    &--title-subtitle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &--subtitle {
+      color: $bpk-text-secondary-day;
     }
   }
 }

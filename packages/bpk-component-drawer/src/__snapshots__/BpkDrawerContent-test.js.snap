@@ -26,11 +26,10 @@ exports[`BpkDrawerContent should render correctly 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="bpk-close-button__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -74,11 +73,10 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="bpk-close-button__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -122,11 +120,10 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="bpk-close-button__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -171,11 +168,10 @@ exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] 
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="bpk-close-button__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -219,11 +215,10 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
         type="button"
       >
         <svg
+          aria-hidden="true"
           class="bpk-close-button__icon"
-          height="16"
           style="width: 1rem; height: 1rem;"
           viewBox="0 0 24 24"
-          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path

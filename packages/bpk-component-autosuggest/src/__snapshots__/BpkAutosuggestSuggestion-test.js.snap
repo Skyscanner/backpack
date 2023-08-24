@@ -238,10 +238,10 @@ exports[`BpkAutosuggestSuggestion should render correctly with all available att
     class="bpk-autosuggest__suggestion bpk-autosuggest__suggestion--indent"
   >
     <svg
+      aria-hidden="true"
       class="bpk-autosuggest__suggestion-icon"
-      height="24"
       style="width: 1.5rem; height: 1.5rem;"
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -286,10 +286,10 @@ exports[`BpkAutosuggestSuggestion should render correctly with an "icon" attribu
     class="bpk-autosuggest__suggestion"
   >
     <svg
+      aria-hidden="true"
       class="bpk-autosuggest__suggestion-icon"
-      height="24"
       style="width: 1.5rem; height: 1.5rem;"
-      width="24"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

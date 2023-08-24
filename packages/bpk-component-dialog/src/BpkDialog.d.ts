@@ -18,16 +18,5 @@
 
 /// <reference types="react" />
 import type { Props } from './common-types';
-
-declare const BpkDialog: ({
-  children,
-  closeLabel,
-  dismissible,
-  headerIcon,
-  headerIconType,
-  isOpen,
-  onClose,
-  renderTarget,
-  ...rest
-}: Props) => JSX.Element;
+declare const BpkDialog: ({ children, closeLabel, dismissible, headerIcon, headerIconType, isOpen, onClose, renderTarget, ...rest }: Props) => JSX.Element;
 export default BpkDialog;

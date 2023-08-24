@@ -18,7 +18,6 @@
 
 import type { ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCard from './BpkCard';
@@ -34,7 +33,7 @@ export const ORIENTATION = {
 export type Props = {
   primaryContent: ReactNode;
   secondaryContent: ReactNode;
-  orientation?: typeof ORIENTATION[keyof typeof ORIENTATION];
+  orientation?: (typeof ORIENTATION)[keyof typeof ORIENTATION];
   href?: string | null;
   className?: string | null;
   isElevated?: boolean;
@@ -42,10 +41,10 @@ export type Props = {
 };
 
 const BpkDividedCard = ({
-  orientation = ORIENTATION.horizontal,
-  href = null,
   className = null,
+  href = null,
   isElevated = true,
+  orientation = ORIENTATION.horizontal,
   primaryContent,
   secondaryContent,
   ...rest

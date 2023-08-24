@@ -85,7 +85,8 @@ class App extends Component {
 | isOpen                | bool     | true     | -             |
 | onClose               | func     | true     | -             |
 | getApplicationElement | func     | true     | -             |
-| title                 | string   | true     | -             |
+| dialogRef             | func     | false    | () => null    |
+| title                 | string   | false    | null          |
 | accessoryView         | node     | false    | null          |
 | className             | string   | false    | null          |
 | contentClassName      | string   | false    | null          |

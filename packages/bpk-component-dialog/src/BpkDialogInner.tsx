@@ -17,7 +17,6 @@
  */
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { withScrim } from '../../bpk-scrim-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkContentBubble } from '../../bpk-component-flare';

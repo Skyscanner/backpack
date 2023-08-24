@@ -23,7 +23,7 @@ import userEvent from '@testing-library/user-event';
 import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
 
-const nextTick = () => new Promise((res) => setImmediate(res));
+const nextTick = () => new Promise((res) => setTimeout(res, 0));
 const mockDataSource = (data) => {
   const myDs = new ArrayDataSource(data);
   const mockFetch = myDs.fetchItems.bind(myDs);
@@ -64,9 +64,9 @@ describe('withInfiniteScroll', () => {
         currentOptions = options;
       }
 
-      observe() {} // eslint-disable-line class-methods-use-this
+      observe() {}  
 
-      unobserve() {} // eslint-disable-line class-methods-use-this
+      unobserve() {}  
     };
   });
 
