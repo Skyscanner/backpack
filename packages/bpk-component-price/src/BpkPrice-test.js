@@ -89,4 +89,11 @@ describe.each([
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should support custom leading class names', () => {
+    const { asFragment } = render(
+      <BpkPrice {...props} leadingClassName="leading-classname" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

@@ -31,6 +31,11 @@ type Props = {
   align: $Values<typeof ALIGNS>,
   className: ?string,
   leadingText: ?string,
+  /**
+  * @experimental This prop is experimental and subject to change.
+  * Use with caution.
+  */
+  leadingClassName: ?string,
   trailingText: ?string,
   previousPrice: ?string,
 };
@@ -41,6 +46,7 @@ const BpkPrice = (props: Props) => {
   const {
     align,
     className,
+    leadingClassName,
     leadingText,
     previousPrice,
     price,
@@ -66,6 +72,7 @@ const BpkPrice = (props: Props) => {
         className={getClassName(
           previousPrice && 'bpk-price__leading',
           isAlignRight && 'bpk-price__leading--right',
+          leadingClassName,
         )}
       >
         {previousPrice && (
@@ -131,6 +138,7 @@ BpkPrice.propTypes = {
   leadingText: PropTypes.string,
   trailingText: PropTypes.string,
   previousPrice: PropTypes.string,
+  leadingClassName: PropTypes.string,
 };
 
 BpkPrice.defaultProps = {
@@ -140,6 +148,7 @@ BpkPrice.defaultProps = {
   leadingText: null,
   trailingText: null,
   previousPrice: null,
+  leadingClassName: null,
 };
 
 export default BpkPrice;
