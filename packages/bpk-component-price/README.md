@@ -34,7 +34,7 @@ export default () => (
 | size          | oneOf(SIZES)  | false    | SIZES.small   |
 | align         | oneOf(ALIGNS) | false    | ALIGNS.left   |
 | leadingText   | string        | false    | null          |
-| leadingClassName   | string        | false    | null          |
+| leadingClassName (experimental)  | string        | false    | null          |
 | trailingText  | string        | false    | null          |
 | previousPrice | string        | false    | null          |
 | className     | string        | false    | null          |
