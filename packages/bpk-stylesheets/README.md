@@ -8,14 +8,16 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-```scss
-@import '~@skyscanner/backpack-web/bpk-stylesheets';
+Within your Javascript (usually the entrypoint or top-most JS file)
+
+```js
+import '@skyscanner/backpack-web/bpk-stylesheets';
 ```
 
 By default font rendering is not included if you need to include Skyscanner Relative in your styles, import it using the following:
 
-```scss
-@import '~@skyscanner/backpack-web/bpk-stylesheets/font';
+```js
+import '@skyscanner/backpack-web/bpk-stylesheets/font';
 ```
 
 ## Contributing
