@@ -41,34 +41,34 @@
       background-image: linear-gradient(
         to right,
         $bpk-surface-default-day 50%,
-        $bpk-surface-highlight-day 50%
+        $bpk-surface-subtle-day 50%
       );
 
       @include bpk-rtl {
         background-image: linear-gradient(
           to left,
           $bpk-surface-default-day 50%,
-          $bpk-surface-highlight-day 50%
+          $bpk-surface-subtle-day 50%
         );
       }
     }
 
     &--middle {
-      background-color: $bpk-surface-highlight-day;
+      background-color: $bpk-surface-subtle-day;
     }
 
     &--end {
       background-image: linear-gradient(
         to left,
         $bpk-surface-default-day 50%,
-        $bpk-surface-highlight-day 50%
+        $bpk-surface-subtle-day 50%
       );
 
       @include bpk-rtl {
         background-image: linear-gradient(
           to right,
           $bpk-surface-default-day 50%,
-          $bpk-surface-highlight-day 50%
+          $bpk-surface-subtle-day 50%
         );
       }
     }
