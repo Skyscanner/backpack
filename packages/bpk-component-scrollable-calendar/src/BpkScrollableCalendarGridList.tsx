@@ -144,7 +144,7 @@ const BpkScrollableCalendarGridList = ({ className = null, focusedDate = null, m
             className,
         )}
         >
-        <AutoSizer onResize={onResize}>
+        <AutoSizer onResize={onResize} defaultHeight={ESTIMATED_MONTH_ITEM_HEIGHT} defaultWidth="100%">
             {({ height, width }) => (
             <List
                 style={
