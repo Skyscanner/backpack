@@ -60,7 +60,7 @@ type Props = Partial<BpkCalendarGridProps> & {
   formatMonth: (date: Date) => Date | string;
   focusedDate?: Date | null;
   selectionConfiguration?: SelectionConfiguration;
-  className: string | null;
+  className?: string | null;
 };
 
 const BpkScrollableCalendarGridList = (props: Props) => {
