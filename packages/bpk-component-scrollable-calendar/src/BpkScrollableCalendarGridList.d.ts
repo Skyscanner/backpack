@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
 import type { ElementType } from 'react';
 import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 type Props = Partial<BpkCalendarGridProps> & {
@@ -29,28 +28,5 @@ type Props = Partial<BpkCalendarGridProps> & {
     formatMonth: (date: Date) => Date | string;
     focusedDate?: Date | null;
 };
-type State = {
-    months: Date[];
-    monthItemHeights: number[];
-    outerHeight: number;
-};
-declare class BpkScrollableCalendarGridList extends Component<Props, State> {
-    outerDiv: HTMLDivElement | null;
-    static defaultProps: {
-        className: null;
-        focusedDate: null;
-    };
-    constructor(props: Props);
-    componentDidMount: () => void;
-    componentWillUnmount: () => void;
-    getHtmlElement: () => {} | null;
-    getItemSize: (index: number) => number;
-    setComponentHeight: () => void;
-    rowRenderer: ({ index, style }: {
-        index: number;
-        style: {};
-    }) => JSX.Element;
-    calculateOffsetInPixels: (numberOfMonths: number) => number;
-    render(): JSX.Element;
-}
+declare const BpkScrollableCalendarGridList: ({ className, focusedDate, minDate, selectionConfiguration, ...props }: Props) => JSX.Element;
 export default BpkScrollableCalendarGridList;
