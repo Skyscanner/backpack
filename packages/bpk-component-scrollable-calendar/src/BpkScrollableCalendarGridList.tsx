@@ -46,6 +46,8 @@ const DEFAULT_ROOT_FONT_SIZE = 16;
 // Most calendar grids have 5 rows. Calculate height in px as this is what react-window expects.
 const ESTIMATED_MONTH_ITEM_HEIGHT =
   (BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT) * DEFAULT_ROOT_FONT_SIZE;
+// Minimum month item width (useful for server-side rendering. This value will be overridden with an accurate width after mounting.)
+const ESTIMATED_MONTH_ITEM_WIDTH = BASE_MONTH_ITEM_HEIGHT * 7 * DEFAULT_ROOT_FONT_SIZE;
 
 type Props = Partial<BpkCalendarGridProps> & {
   minDate: Date;
@@ -153,9 +155,9 @@ const BpkScrollableCalendarGridList = ({
       <AutoSizer
         onResize={onResize}
         defaultHeight={ESTIMATED_MONTH_ITEM_HEIGHT}
-        defaultWidth="100%"
+        defaultWidth={ESTIMATED_MONTH_ITEM_WIDTH}
       >
-        {({ height, width }) => (
+        {({ height, width }: { height: number | string, width: number | string}) => (
           <List
             style={
               (getHtmlElement() as HTMLElement).dir === 'rtl'

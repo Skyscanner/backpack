@@ -9,7 +9,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
       style="overflow: visible; height: 0px; width: 0px;"
     >
       <div
-        style="position: relative; height: 350px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
+        style="position: relative; height: 350px; width: 910px; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
           style="height: 4506px; width: 100%;"
@@ -1270,7 +1270,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
       style="overflow: visible; height: 0px; width: 0px;"
     >
       <div
-        style="position: relative; height: 350px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
+        style="position: relative; height: 350px; width: 910px; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
           style="height: 4506px; width: 100%;"
@@ -1885,7 +1885,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
       style="overflow: visible; height: 0px; width: 0px;"
     >
       <div
-        style="position: relative; height: 350px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
+        style="position: relative; height: 350px; width: 910px; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
           style="height: 4594px; width: 100%;"
@@ -3210,7 +3210,7 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
       style="overflow: visible; height: 0px; width: 0px;"
     >
       <div
-        style="position: relative; height: 350px; width: 100%; overflow: auto; will-change: transform; direction: ltr;"
+        style="position: relative; height: 350px; width: 910px; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
           style="height: 4550px; width: 100%;"
