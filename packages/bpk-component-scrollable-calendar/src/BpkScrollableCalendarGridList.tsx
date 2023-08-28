@@ -20,7 +20,7 @@ import { useRef, useState, useMemo, useEffect } from 'react';
 import type { ElementType } from 'react';
 import { startOfDay, startOfMonth } from 'date-fns';
 import { VariableSizeList as List } from 'react-window';
-import AutoSizer from "react-virtualized-auto-sizer";
+import AutoSizer from 'react-virtualized-auto-sizer';
 
 import { cssModules } from '../../bpk-react-utils';
 import {
@@ -44,7 +44,8 @@ const COLUMN_COUNT = 7;
 // Most browsers have by default 16px root font size
 const DEFAULT_ROOT_FONT_SIZE = 16;
 // Most calendar grids have 5 rows. Calculate height in px as this is what react-window expects.
-const ESTIMATED_MONTH_ITEM_HEIGHT = (BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT) * DEFAULT_ROOT_FONT_SIZE;
+const ESTIMATED_MONTH_ITEM_HEIGHT =
+  (BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT) * DEFAULT_ROOT_FONT_SIZE;
 
 type Props = Partial<BpkCalendarGridProps> & {
   minDate: Date;
@@ -57,120 +58,129 @@ type Props = Partial<BpkCalendarGridProps> & {
   focusedDate?: Date | null;
 };
 
-const BpkScrollableCalendarGridList = ({ className = null, focusedDate = null, minDate, selectionConfiguration, ...props}: Props) => {
-    const listRef = useRef(null);
-    const startDate = startOfDay(startOfMonth(minDate));
-    const endDate = startOfDay(startOfMonth(props.maxDate));
-    const monthsCount = DateUtils.differenceInCalendarMonths(
-        endDate,
-        startDate,
-    );
+const BpkScrollableCalendarGridList = ({
+  className = null,
+  focusedDate = null,
+  minDate,
+  selectionConfiguration,
+  ...props
+}: Props) => {
+  const listRef = useRef(null);
+  const startDate = startOfDay(startOfMonth(minDate));
+  const endDate = startOfDay(startOfMonth(props.maxDate));
+  const monthsCount = DateUtils.differenceInCalendarMonths(endDate, startDate);
 
-    const getInitialRootFontSize = () => parseFloat(getComputedStyle(document.documentElement).fontSize) || DEFAULT_ROOT_FONT_SIZE;
+  const getInitialRootFontSize = () =>
+    parseFloat(getComputedStyle(document.documentElement).fontSize) ||
+    DEFAULT_ROOT_FONT_SIZE;
 
-    // The `react-window` API requires the height in pixels to be specified
-    // To be able to scale text size, we use rem and then we get the root font size so that we can calculate the final value in px
-    const [rootFontSize, setRootFontSize] = useState(getInitialRootFontSize);
+  // The `react-window` API requires the height in pixels to be specified
+  // To be able to scale text size, we use rem and then we get the root font size so that we can calculate the final value in px
+  const [rootFontSize, setRootFontSize] = useState(getInitialRootFontSize);
 
-    const months = useMemo(
-        () => getMonthsArray(startDate, monthsCount),
-        [minDate, monthsCount]
-    )
+  const months = useMemo(
+    () => getMonthsArray(startDate, monthsCount),
+    [minDate, monthsCount],
+  );
 
-    const monthItemHeights = useMemo(
-        () => getMonthItemHeights(
+  const monthItemHeights = useMemo(
+    () =>
+      getMonthItemHeights(
         months,
         props.weekStartsOn,
         COLUMN_COUNT,
         ROW_HEIGHT * rootFontSize,
         BASE_MONTH_ITEM_HEIGHT * rootFontSize,
-    ), [rootFontSize, months, props.weekStartsOn]
-    )
+      ),
+    [rootFontSize, months, props.weekStartsOn],
+  );
 
-    useEffect(() => {
-        if (listRef.current) {
-            (listRef.current as List).resetAfterIndex(0);
-        }
-    }, [monthItemHeights])
+  useEffect(() => {
+    if (listRef.current) {
+      (listRef.current as List).resetAfterIndex(0);
+    }
+  }, [monthItemHeights]);
 
-    const getHtmlElement = () =>
-        typeof document !== 'undefined' ? document.querySelector('html') : {};
+  const getHtmlElement = () =>
+    typeof document !== 'undefined' ? document.querySelector('html') : {};
 
-    const getItemSize = (index: number) =>
-        monthItemHeights[index] || ESTIMATED_MONTH_ITEM_HEIGHT;
-    
+  const getItemSize = (index: number) =>
+    monthItemHeights[index] || ESTIMATED_MONTH_ITEM_HEIGHT;
 
-    const rowRenderer = ({ index, style }: { index: number; style: {} }) => (
-        <div style={style}>
-        <BpkScrollableCalendarGrid
-            onDateClick={props.onDateClick}
-            {...props}
-            minDate={minDate}
-            selectionConfiguration={selectionConfiguration}
-            month={months[index]}
-            focusedDate={focusedDate}
-            preventKeyboardFocus={props.preventKeyboardFocus}
-            aria-hidden={index !== 1}
-            className={getClassName('bpk-scrollable-calendar-grid-list__item')}
-        />
-        </div>
-    );
+  const rowRenderer = ({ index, style }: { index: number; style: {} }) => (
+    <div style={style}>
+      <BpkScrollableCalendarGrid
+        onDateClick={props.onDateClick}
+        {...props}
+        minDate={minDate}
+        selectionConfiguration={selectionConfiguration}
+        month={months[index]}
+        focusedDate={focusedDate}
+        preventKeyboardFocus={props.preventKeyboardFocus}
+        aria-hidden={index !== 1}
+        className={getClassName('bpk-scrollable-calendar-grid-list__item')}
+      />
+    </div>
+  );
 
-    const calculateOffsetInPixels = (numberOfMonths: number) => {
-        // The `react-window` API requires the scroll offset to be provided in pixels.
-        // Here we use the pre-calculated item heights to find the correct pixel offset
-        let result = 0;
-        for (let i = 0; i < numberOfMonths; i += 1) {
-        result += getItemSize(i);
-        }
-        return result;
-    };
+  const calculateOffsetInPixels = (numberOfMonths: number) => {
+    // The `react-window` API requires the scroll offset to be provided in pixels.
+    // Here we use the pre-calculated item heights to find the correct pixel offset
+    let result = 0;
+    for (let i = 0; i < numberOfMonths; i += 1) {
+      result += getItemSize(i);
+    }
+    return result;
+  };
 
-    const onResize = () => {        
-        const newRootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) || DEFAULT_ROOT_FONT_SIZE;
-        setRootFontSize(newRootFontSize);
-    };
+  const onResize = () => {
+    const newRootFontSize =
+      parseFloat(getComputedStyle(document.documentElement).fontSize) ||
+      DEFAULT_ROOT_FONT_SIZE;
+    setRootFontSize(newRootFontSize);
+  };
 
-    const date =
-      selectionConfiguration?.type === CALENDAR_SELECTION_TYPE.single
-        ? selectionConfiguration?.date
-        : selectionConfiguration?.startDate;
-    const selectedDate = focusedDate || date;
+  const date =
+    selectionConfiguration?.type === CALENDAR_SELECTION_TYPE.single
+      ? selectionConfiguration?.date
+      : selectionConfiguration?.startDate;
+  const selectedDate = focusedDate || date;
 
-    return (
-        <div
-        className={getClassName(
-            'bpk-scrollable-calendar-grid-list',
-            className,
-        )}
-        >
-        <AutoSizer onResize={onResize} defaultHeight={ESTIMATED_MONTH_ITEM_HEIGHT} defaultWidth="100%">
-            {({ height, width }) => (
-            <List
-                style={
-                (getHtmlElement() as HTMLElement).dir === 'rtl'
-                    ? { direction: 'rtl' }
-                    : {}
-                }
-                width={width}
-                height={height}
-                estimatedItemSize={ESTIMATED_MONTH_ITEM_HEIGHT}
-                itemSize={getItemSize}
-                itemCount={months.length}
-                overscanCount={1}
-                initialScrollOffset={calculateOffsetInPixels(
-                selectedDate
-                    ? DateUtils.differenceInCalendarMonths(selectedDate, minDate)
-                    : 0,
-                )}
-                ref={listRef}
-            >
-                {rowRenderer}
-            </List>
+  return (
+    <div
+      className={getClassName('bpk-scrollable-calendar-grid-list', className)}
+    >
+      <AutoSizer
+        onResize={onResize}
+        defaultHeight={ESTIMATED_MONTH_ITEM_HEIGHT}
+        defaultWidth="100%"
+      >
+        {({ height, width }) => (
+          <List
+            style={
+              (getHtmlElement() as HTMLElement).dir === 'rtl'
+                ? { direction: 'rtl' }
+                : {}
+            }
+            width={width}
+            height={height}
+            estimatedItemSize={ESTIMATED_MONTH_ITEM_HEIGHT}
+            itemSize={getItemSize}
+            itemCount={months.length}
+            overscanCount={1}
+            initialScrollOffset={calculateOffsetInPixels(
+              selectedDate
+                ? DateUtils.differenceInCalendarMonths(selectedDate, minDate)
+                : 0,
             )}
-        </AutoSizer>
-        </div>
-    );
-}
+            ref={listRef}
+          >
+            {rowRenderer}
+          </List>
+        )}
+      </AutoSizer>
+    </div>
+  );
+};
 
 export default BpkScrollableCalendarGridList;

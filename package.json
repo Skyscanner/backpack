@@ -39,7 +39,7 @@
     "lint:scss:fix": "stylelint 'packages/**/*.scss' --fix",
     "lint-staged": "lint-staged",
     "postinstall": "(cd packages && npm install)",
-    "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
+    "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
     "start": "npm run build && npm run storybook",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001",
     "storybook:dist": "NODE_OPTIONS=--openssl-legacy-provider storybook build -c .storybook -o dist-storybook",
