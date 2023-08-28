@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { PureComponent } from 'react';
-
 import { BpkCalendarDate } from '../../bpk-component-calendar';
 import type { BpkCalendarDateProps } from '../../bpk-component-calendar';
 
@@ -26,16 +24,9 @@ type Props = Partial<BpkCalendarDateProps> & {
   isOutside?: boolean;
   [rest: string]: any;
 };
-class BpkScrollableCalendarDate extends PureComponent<Props> {
-  static defaultProps = {
-    isOutside: false,
-  };
-
-  render() {
-    const { isOutside, ...rest } = this.props;
+const BpkScrollableCalendarDate = ({isOutside = false, ...rest}: Props) => 
     // Returning null when isOutside is true ensures only focused month displays in grid
-    return !isOutside ? <BpkCalendarDate {...rest} /> : null;
-  }
-}
+     !isOutside ? <BpkCalendarDate {...rest} /> : null
+
 
 export default BpkScrollableCalendarDate;

@@ -27,7 +27,8 @@ import {
   CALENDAR_SELECTION_TYPE,
   DateUtils,
 } from '../../bpk-component-calendar';
-import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
+import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-component-calendar';
+// import type { SelectionConfiguration } from '../../bpk-component-calendar/src/custom-proptypes';
 
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
@@ -58,18 +59,21 @@ type Props = Partial<BpkCalendarGridProps> & {
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
   formatMonth: (date: Date) => Date | string;
   focusedDate?: Date | null;
+  selectionConfiguration?: SelectionConfiguration;
+  className: string | null;
 };
 
-const BpkScrollableCalendarGridList = ({
-  className = null,
-  focusedDate = null,
-  minDate,
-  selectionConfiguration,
-  ...props
-}: Props) => {
+const BpkScrollableCalendarGridList = (props: Props) => {
+  const {
+    className = null,
+    focusedDate = null,
+    minDate,
+    selectionConfiguration,
+    ...rest
+  } = props;
   const listRef = useRef(null);
   const startDate = startOfDay(startOfMonth(minDate));
-  const endDate = startOfDay(startOfMonth(props.maxDate));
+  const endDate = startOfDay(startOfMonth(rest.maxDate));
   const monthsCount = DateUtils.differenceInCalendarMonths(endDate, startDate);
 
   const getInitialRootFontSize = () =>
@@ -89,12 +93,12 @@ const BpkScrollableCalendarGridList = ({
     () =>
       getMonthItemHeights(
         months,
-        props.weekStartsOn,
+        rest.weekStartsOn,
         COLUMN_COUNT,
         ROW_HEIGHT * rootFontSize,
         BASE_MONTH_ITEM_HEIGHT * rootFontSize,
       ),
-    [rootFontSize, months, props.weekStartsOn],
+    [rootFontSize, months, rest.weekStartsOn],
   );
 
   useEffect(() => {
@@ -109,21 +113,23 @@ const BpkScrollableCalendarGridList = ({
   const getItemSize = (index: number) =>
     monthItemHeights[index] || ESTIMATED_MONTH_ITEM_HEIGHT;
 
-  const rowRenderer = ({ index, style }: { index: number; style: {} }) => (
+  const rowRenderer = ({ index, style }: { index: number; style: {} }) => {
+    console.log(rest);
+    return (
     <div style={style}>
       <BpkScrollableCalendarGrid
-        onDateClick={props.onDateClick}
-        {...props}
+        onDateClick={rest.onDateClick}
+        {...rest}
         minDate={minDate}
         selectionConfiguration={selectionConfiguration}
         month={months[index]}
         focusedDate={focusedDate}
-        preventKeyboardFocus={props.preventKeyboardFocus}
+        preventKeyboardFocus={rest.preventKeyboardFocus}
         aria-hidden={index !== 1}
         className={getClassName('bpk-scrollable-calendar-grid-list__item')}
       />
     </div>
-  );
+  )};
 
   const calculateOffsetInPixels = (numberOfMonths: number) => {
     // The `react-window` API requires the scroll offset to be provided in pixels.
