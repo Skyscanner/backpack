@@ -17,7 +17,7 @@
  */
 
 import type { ElementType } from 'react';
-import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
+import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-component-calendar';
 type Props = Partial<BpkCalendarGridProps> & {
     minDate: Date;
     maxDate: Date;
@@ -27,6 +27,8 @@ type Props = Partial<BpkCalendarGridProps> & {
     weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
     formatMonth: (date: Date) => Date | string;
     focusedDate?: Date | null;
+    selectionConfiguration?: SelectionConfiguration;
+    className: string | null;
 };
-declare const BpkScrollableCalendarGridList: ({ className, focusedDate, minDate, selectionConfiguration, ...props }: Props) => JSX.Element;
+declare const BpkScrollableCalendarGridList: (props: Props) => JSX.Element;
 export default BpkScrollableCalendarGridList;
