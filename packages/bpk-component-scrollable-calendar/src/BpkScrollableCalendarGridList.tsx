@@ -28,7 +28,6 @@ import {
   DateUtils,
 } from '../../bpk-component-calendar';
 import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-component-calendar';
-// import type { SelectionConfiguration } from '../../bpk-component-calendar/src/custom-proptypes';
 
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
@@ -47,7 +46,7 @@ const DEFAULT_ROOT_FONT_SIZE = 16;
 // Most calendar grids have 5 rows. Calculate height in px as this is what react-window expects.
 const ESTIMATED_MONTH_ITEM_HEIGHT =
   (BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT) * DEFAULT_ROOT_FONT_SIZE;
-// Minimum month item width (useful for server-side rendering. This value will be overridden with an accurate width after mounting.)
+// Minimum month item width (useful for server-side rendering. This value will be overridden with an accurate width after mounting)
 const ESTIMATED_MONTH_ITEM_WIDTH = BASE_MONTH_ITEM_HEIGHT * 7 * DEFAULT_ROOT_FONT_SIZE;
 
 type Props = Partial<BpkCalendarGridProps> & {
@@ -102,6 +101,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
   );
 
   useEffect(() => {
+    // this is required by the react-window library in order to re-render the list whenever an item's size changes
     if (listRef.current) {
       (listRef.current as List).resetAfterIndex(0);
     }
@@ -113,9 +113,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
   const getItemSize = (index: number) =>
     monthItemHeights[index] || ESTIMATED_MONTH_ITEM_HEIGHT;
 
-  const rowRenderer = ({ index, style }: { index: number; style: {} }) => {
-    console.log(rest);
-    return (
+  const rowRenderer = ({ index, style }: { index: number; style: {} }) => (
     <div style={style}>
       <BpkScrollableCalendarGrid
         onDateClick={rest.onDateClick}
@@ -129,7 +127,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
         className={getClassName('bpk-scrollable-calendar-grid-list__item')}
       />
     </div>
-  )};
+  );
 
   const calculateOffsetInPixels = (numberOfMonths: number) => {
     // The `react-window` API requires the scroll offset to be provided in pixels.
