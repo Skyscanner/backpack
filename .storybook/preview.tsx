@@ -17,7 +17,6 @@
  */
 
 import type { Preview } from '@storybook/react';
-import { spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
@@ -35,7 +34,7 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 const preview: Preview = {
   decorators: [
     (story) => (
-      <div style={{ padding: spacingBase }}>
+      <div>
         <EnhancedThemeProvider themeAttributes={themeableAttributes}>
           {story()}
         </EnhancedThemeProvider>
