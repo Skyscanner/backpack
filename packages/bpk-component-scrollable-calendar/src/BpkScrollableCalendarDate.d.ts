@@ -16,17 +16,12 @@
  * limitations under the License.
  */
 
-import { PureComponent } from 'react';
+/// <reference types="react" />
 import type { BpkCalendarDateProps } from '../../bpk-component-calendar';
 type Props = Partial<BpkCalendarDateProps> & {
     date: Date;
     isOutside?: boolean;
     [rest: string]: any;
 };
-declare class BpkScrollableCalendarDate extends PureComponent<Props> {
-    static defaultProps: {
-        isOutside: boolean;
-    };
-    render(): JSX.Element | null;
-}
+declare const BpkScrollableCalendarDate: ({ isOutside, ...rest }: Props) => JSX.Element | null;
 export default BpkScrollableCalendarDate;
