@@ -17,10 +17,11 @@
  */
 /* @flow strict */
 
+const ROOT_FONT_SIZE_PX = 16;
 // TODO: Remove these functions once we want to change the API to match the react-table library API
 // To maintain backwards compatibility with the old API of BpkDataTable which takes columns as children
 // The `react-table` library however expects columns as an array of objects
-// eslint-disable-next-line import/prefer-default-export
+ 
 export const getColumns = (columns) =>
   columns.map((column) => {
     const { cellDataGetter, cellRenderer, headerRenderer } = column.props;
@@ -85,3 +86,13 @@ export const getColumns = (columns) =>
       width,
     };
   });
+
+export const pxToRem = (value: string | number) => {
+  let parsed = value;
+
+  if (typeof value === 'number') {
+    console.warn("Height in px is deprecated. Please pass the equivalent value in rem."); 
+    parsed = `${value / ROOT_FONT_SIZE_PX}rem`;
+  }
+  return parsed;
+}
