@@ -25,7 +25,7 @@ import STYLES from './withDescription.module.scss';
 const getClassName = cssModules(STYLES);
 
 export default function withDescription(
-  Component: ComponentType<any>,
+  Component: ComponentType<any> | string,
   description: string,
 ): ComponentType<any> {
   const WithDescription = (props: string[]) => (

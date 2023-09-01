@@ -20,7 +20,7 @@ import type { ComponentType } from 'react';
 import { wrapDisplayName } from '../../bpk-react-utils';
 
 export default (displayName: string, classNamesToAdd: string[] = []) =>
-  (ComposedComponent: ComponentType<any>) => {
+  (ComposedComponent: ComponentType<any> | string) => {
     const ClassNameModifierHOC = (props: {
       className?: string | null;
       [rest: string]: any;
