@@ -30,15 +30,15 @@ const rows = [
 describe('BpkDataTable accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkDataTable rows={rows} height={200}>
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTable rows={rows} height="12.5rem">
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
           flexGrow={1}
         />
-        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
       </BpkDataTable>,
     );
     const results = await axe(container);
