@@ -42,7 +42,7 @@ export type Props = {
   className?: string | null;
   disabled?: boolean;
   iconOnly?: boolean;
-  onClick?: (event: MouseEvent) => void;
+  onClick?: (event: MouseEvent<any>) => void;
   rel?: string | undefined;
   submit?: boolean;
   href?: string | null;
