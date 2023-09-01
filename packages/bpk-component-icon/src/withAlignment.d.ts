@@ -19,7 +19,7 @@
 import type { ComponentType } from 'react';
 
 export default function withAlignment(
-  Component: ComponentType,
+  Component: ComponentType | string,
   objectHeight: string,
   subjectHeight: string,
 ): {
