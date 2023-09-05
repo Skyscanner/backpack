@@ -55,7 +55,7 @@ const BpkSelectableChip = ({
 
   return (
     <button
-      aria-checked={role === 'button' ? undefined : selected}
+      aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
       className={classNames}
       disabled={disabled}
       role={role}
