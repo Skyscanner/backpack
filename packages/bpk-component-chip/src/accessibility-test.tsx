@@ -47,13 +47,15 @@ describe('BpkSelectableChip accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues when role=tab', async () => {
     const { container } = render(
-      <BpkSelectableChip
-        onClick={() => null}
-        accessibilityLabel="Tab"
-        role="tab"
-      >
-        Toggle me
-      </BpkSelectableChip>,
+      <div role="tablist">
+        <BpkSelectableChip
+          onClick={() => null}
+          accessibilityLabel="Tab"
+          role="tab"
+        >
+          Toggle me
+        </BpkSelectableChip>
+      </div>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
