@@ -49,4 +49,4 @@ export type WeekDay = {
 export type WeekDayKey = string;
 export type DaysOfWeek = WeekDay[];
 export type DateModifiers = { [key: string]: Function };
-export type ReactComponent = string | ((props: any) => ReactElement);
+export type ReactComponent = string | ((props: any) => ReactElement) | Element;
