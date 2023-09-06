@@ -17,6 +17,7 @@
  */
 
 import { createRef, Component } from 'react';
+import type {JSX, ReactElement} from 'react';
 
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
@@ -71,7 +72,7 @@ type Props = {
   weekStartsOn: number;
   // Optional
   calendarComponent: ReactComponent;
-  inputComponent: ReactComponent;
+  inputComponent: ReactElement | null;
   dateModifiers?: {};
   fixedWidth?: boolean;
   inputProps?: {};
