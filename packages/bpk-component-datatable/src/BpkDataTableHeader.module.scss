@@ -62,3 +62,16 @@ $bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
 .bpk-data-table-column__sort-icon--up {
   margin-bottom: -(bpk-spacing-sm());
 }
+
+.bpk-data-table-column__resizer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  z-index: 1;
+  width: '10px';
+  height: 100%;
+  transform: translateX(50%);
+  background: blue;
+  touch-action: none;
+}

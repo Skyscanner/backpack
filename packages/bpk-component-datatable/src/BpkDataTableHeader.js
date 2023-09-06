@@ -119,6 +119,10 @@ const BpkDataTableHeader = ({ column }: { column: ColumnType }) => {
         tabIndex={0}
       >
         {column.render('Header')}
+        <div
+          {...column.getResizerProps()}
+          className={getClassName('bpk-data-table-column__resizer')}
+        />
       </span>
       {!disableSortBy && (
         <div

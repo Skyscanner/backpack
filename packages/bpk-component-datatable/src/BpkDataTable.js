@@ -20,7 +20,7 @@
 import PropTypes from 'prop-types';
 import type { KeyboardEvent } from 'react';
 import { useMemo, useState } from 'react';
-import { useTable, useSortBy } from 'react-table';
+import { useTable, useSortBy, useResizeColumns } from 'react-table';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -110,6 +110,7 @@ const BpkDataTable = (props: Props) => {
         },
       },
       useSortBy,
+      useResizeColumns
     );
 
   const onRowClicked = (index: number) => {
