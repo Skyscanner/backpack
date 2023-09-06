@@ -1,0 +1,34 @@
+# bpk-component-save-button
+
+> Backpack save button component.
+
+## Installation
+
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
+
+## Usage
+
+```js
+import BpkSaveButton, {SIZE_TYPES, STYLE_TYPES} from '@skyscanner/backpack-web/bpk-component-save-button';
+
+export default () =>
+  <BpkSaveButton
+    checked={false}
+    accessibilityLabel="save button"
+    onCheckedChange={() => {
+      console.log('check change');
+    }}
+    size={SIZE_TYPES.small}
+    style={STYLE_TYPES.contained}
+  />;
+```
+
+## Props
+
+| Property           | PropType                                                               | Required | Default Value       |
+|--------------------|------------------------------------------------------------------------|----------|---------------------|
+| checked            | bool                                                                   | true     | -                   |
+| accessibilityLabel | string                                                                 | true     | -                   |
+| onCheckedChange    | func                                                                   | true     | -                   |
+| size               | oneOf(SIZE_TYPES.default, SIZE_TYPES.small)                            | false    | SIZE_TYPES.default  |
+| style              | oneOf(STYLE_TYPES.default, STYLE_TYPES.contained, STYLES_TYPES.onDark) | false    | STYLE_TYPES.default |

@@ -70,6 +70,7 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-progress`](/packages/bpk-component-progress)
 [`bpk-component-radio`](/packages/bpk-component-radio)
 [`bpk-component-rtl-toggle`](/packages/bpk-component-rtl-toggle)
+[`bpk-component-save-button`](/packages/bpk-component-save-button)
 [`bpk-component-section-header`](/packages/bpk-component-section-header)
 [`bpk-component-section-list`](/packages/bpk-component-section-list)
 [`bpk-component-select`](/packages/bpk-component-select)
