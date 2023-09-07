@@ -96,10 +96,13 @@
     color: $bpk-core-accent-day;
     opacity: 0;
 
-    &--show {
-      opacity: 1;
+    &--toggle {
       animation: heart-beat 1s 0s 1 ease-out;
       animation-fill-mode: forwards;
+    }
+
+    &--show {
+      opacity: 1;
 
       &:hover {
         color: $bpk-core-accent-day;

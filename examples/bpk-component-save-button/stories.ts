@@ -20,10 +20,12 @@ import {
   DefaultExample,
   ContainedExample,
   OnDarkExample,
+  CheckedExample,
   SmallDefaultExample,
   SmallContainedExample,
   SmallOnDarkExample,
   VisualTestExample,
+  SmallCheckedExample,
 } from './examples';
 
 export default {
@@ -33,7 +35,9 @@ export default {
 export const Default = DefaultExample;
 export const Contained = ContainedExample;
 export const OnDark = OnDarkExample;
+export const Checked = CheckedExample;
 export const SmallDefault = SmallDefaultExample;
 export const SmallContained = SmallContainedExample;
 export const SmallOnDark = SmallOnDarkExample;
+export const SmallChecked = SmallCheckedExample;
 export const VisualTest = VisualTestExample;

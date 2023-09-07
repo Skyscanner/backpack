@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+import type { MouseEvent } from 'react';
+import { useState } from 'react';
+
 import BpkButtonV2 from '../../bpk-component-button/src/BpkButtonV2/BpkButton';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkHeartIcon from '../../bpk-component-icon/lg/heart';
@@ -50,7 +53,7 @@ export type StyleType = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
 type Props = {
   checked: boolean;
   accessibilityLabel: string;
-  onCheckedChange: () => void;
+  onCheckedChange: (e: MouseEvent) => void;
   size?: SizeType;
   style?: StyleType;
 };
@@ -67,6 +70,7 @@ const BpkSaveButton = ({
   size = SIZE_TYPES.default,
   style = STYLE_TYPES.default,
 }: Props) => {
+  const [toggle, setToggle] = useState(false);
   const smallSize = size === SIZE_TYPES.small;
   const HeartIcon = smallSize ? AlignedHeartIconSm : AlignedHeartIcon;
   const HeartOutLineIcon = smallSize ? AlignedHeartOutlineIconSm : AlignedHeartOutlineIcon;
@@ -74,11 +78,15 @@ const BpkSaveButton = ({
     aria-label={accessibilityLabel}
     className={getClassName('bpk-save-button', smallSize && 'bpk-save-button__small', `bpk-save-button__${style}`,
     )}
-    onClick={onCheckedChange}
+    onClick={(e: MouseEvent) => {
+      setToggle(true);
+      onCheckedChange(e);
+    }}
     iconOnly
   >
       <HeartIcon className={getClassName('bpk-save-button__icon',
         'bpk-save-button__heartIcon',
+        toggle && checked && 'bpk-save-button__heartIcon--toggle',
         `bpk-save-button__heartIcon--${checked ? 'show' : 'hide'}`,
         `bpk-save-button__heartIcon--${style}`,
       )} />

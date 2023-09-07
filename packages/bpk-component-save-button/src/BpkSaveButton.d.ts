@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactNode, MouseEvent } from 'react';
 export declare const SIZE_TYPES: {
   default: 'default',
   small: 'small',
@@ -31,7 +31,7 @@ export type StyleType = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
 type Props = {
   checked: boolean;
   accessibilityLabel: string;
-  onCheckedChange: () => void;
+  onCheckedChange: (e: MouseEvent) => void;
   size?: SizeType;
   style?: StyleType;
 };
