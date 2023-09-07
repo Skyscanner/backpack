@@ -61,12 +61,12 @@ const AlignedHeartIconSm = withLargeButtonAlignment(BpkHeartIconSm);
 const AlignedHeartOutlineIconSm = withLargeButtonAlignment(BpkHeartOutlineIconSm);
 
 const BpkSaveButton = ({
-                         accessibilityLabel,
-                         checked,
-                         onCheckedChange,
-                         size = SIZE_TYPES.default,
-                         style = STYLE_TYPES.default,
-                       }: Props) => {
+  accessibilityLabel,
+  checked,
+  onCheckedChange,
+  size = SIZE_TYPES.default,
+  style = STYLE_TYPES.default,
+}: Props) => {
   const smallSize = size === SIZE_TYPES.small;
   const HeartIcon = smallSize ? AlignedHeartIconSm : AlignedHeartIcon;
   const HeartOutLineIcon = smallSize ? AlignedHeartOutlineIconSm : AlignedHeartOutlineIcon;

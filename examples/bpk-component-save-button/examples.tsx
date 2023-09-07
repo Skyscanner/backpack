@@ -27,9 +27,9 @@ type Props = {
   style?: StyleType;
 }
 const SaveButtonContainer = ({
-                               size,
-                               style,
-                             }: Props) => {
+  size,
+  style,
+}: Props) => {
   const [checked, setChecked] = useState(false);
 
   const onCheckedChange = () => {
@@ -43,8 +43,7 @@ const SaveButtonContainer = ({
     style={style}
   />;
 };
-const DefaultExample = () => <SaveButtonContainer
-/>;
+const DefaultExample = () => <SaveButtonContainer />;
 
 const ContainedExample = () => <BpkDarkExampleWrapper>
   <SaveButtonContainer
@@ -59,9 +58,7 @@ const OnDarkExample = () =>
     />
   </BpkDarkExampleWrapper>;
 
-const SmallDefaultExample = () => <SaveButtonContainer
-  size={SIZE_TYPES.small}
-/>;
+const SmallDefaultExample = () => <SaveButtonContainer size={SIZE_TYPES.small} />;
 
 const SmallContainedExample = () =>
   <BpkDarkExampleWrapper>
@@ -69,15 +66,15 @@ const SmallContainedExample = () =>
       size={SIZE_TYPES.small}
       style={STYLE_TYPES.contained}
     />
-  </BpkDarkExampleWrapper>
-;
+  </BpkDarkExampleWrapper>;
 
-const SmallOnDarkExample = () =>   <BpkDarkExampleWrapper>
-  <SaveButtonContainer
-    size={SIZE_TYPES.small}
-    style={STYLE_TYPES.onDark}
-  />
-</BpkDarkExampleWrapper>
+const SmallOnDarkExample = () =>
+  <BpkDarkExampleWrapper>
+    <SaveButtonContainer
+      size={SIZE_TYPES.small}
+      style={STYLE_TYPES.onDark}
+    />
+  </BpkDarkExampleWrapper>;
 
 const VisualTestExample = () =>
 <>
