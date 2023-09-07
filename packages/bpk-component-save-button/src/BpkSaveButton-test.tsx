@@ -21,34 +21,50 @@ import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from './BpkSaveButton';
 
 describe('BpkSaveButton', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkSaveButton checked={false} onCheckedChange={() => {}} accessibilityLabel="Click to save" />);
+    const { asFragment } = render(
+      <BpkSaveButton
+        checked={false}
+        onCheckedChange={() => {}}
+        accessibilityLabel="Click to save"
+      />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "checked" is true', () => {
-    const { asFragment } = render(<BpkSaveButton checked onCheckedChange={() => {}} accessibilityLabel="Click to remove save" />);
+    const { asFragment } = render(
+      <BpkSaveButton
+        checked
+        onCheckedChange={() => {}}
+        accessibilityLabel="Click to remove save"
+      />,
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "size" prop', () => {
-    const { asFragment } = render(<BpkSaveButton
-      checked={false}
-      onCheckedChange={() => {}}
-      accessibilityLabel="Click to save"
-      size={SIZE_TYPES.small}
-    />);
+    const { asFragment } = render(
+      <BpkSaveButton
+        checked={false}
+        onCheckedChange={() => {}}
+        accessibilityLabel="Click to save"
+        size={SIZE_TYPES.small}
+      />,
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "style" prop', () => {
-    const { asFragment } = render(<BpkSaveButton
-      checked={false}
-      onCheckedChange={() => {}}
-      accessibilityLabel="Click to save"
-      style={STYLE_TYPES.contained}
-    />);
+    const { asFragment } = render(
+      <BpkSaveButton
+        checked={false}
+        onCheckedChange={() => {}}
+        accessibilityLabel="Click to save"
+        style={STYLE_TYPES.contained}
+      />,
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });

@@ -19,4 +19,4 @@
 import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from './src/BpkSaveButton';
 
 export default BpkSaveButton;
-export { SIZE_TYPES, STYLE_TYPES};
+export { SIZE_TYPES, STYLE_TYPES };

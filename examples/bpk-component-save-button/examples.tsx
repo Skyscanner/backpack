@@ -17,8 +17,14 @@
  */
 import { useState } from 'react';
 
-import BpkSaveButton, { STYLE_TYPES, SIZE_TYPES } from '../../packages/bpk-component-save-button';
-import type { SizeType, StyleType } from '../../packages/bpk-component-save-button/src/BpkSaveButton';
+import BpkSaveButton, {
+  STYLE_TYPES,
+  SIZE_TYPES,
+} from '../../packages/bpk-component-save-button';
+import type {
+  SizeType,
+  StyleType,
+} from '../../packages/bpk-component-save-button/src/BpkSaveButton';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
@@ -26,79 +32,76 @@ type Props = {
   checked?: boolean;
   size?: SizeType;
   style?: StyleType;
-}
-const SaveButtonContainer = ({
-  checked = false,
-  size,
-  style,
-}: Props) => {
+};
+const SaveButtonContainer = ({ checked = false, size, style }: Props) => {
   const [checkedStatus, setCheckedStatus] = useState(checked);
 
   const onCheckedChange = () => {
     setCheckedStatus(!checkedStatus);
   };
 
-  return <BpkSaveButton
-    checked={checkedStatus} accessibilityLabel={`Click to ${checkedStatus ? 'remove save' : 'save'}`}
-    onCheckedChange={onCheckedChange}
-    size={size}
-    style={style}
-  />;
+  return (
+    <BpkSaveButton
+      checked={checkedStatus}
+      accessibilityLabel={`Click to ${checkedStatus ? 'remove save' : 'save'}`}
+      onCheckedChange={onCheckedChange}
+      size={size}
+      style={style}
+    />
+  );
 };
 const DefaultExample = () => <SaveButtonContainer />;
 
-const ContainedExample = () => <BpkDarkExampleWrapper>
-  <SaveButtonContainer
-    style={STYLE_TYPES.contained}
-  />
-</BpkDarkExampleWrapper>;
-
-const OnDarkExample = () =>
+const ContainedExample = () => (
   <BpkDarkExampleWrapper>
-    <SaveButtonContainer
-      style={STYLE_TYPES.onDark}
-    />
-  </BpkDarkExampleWrapper>;
+    <SaveButtonContainer style={STYLE_TYPES.contained} />
+  </BpkDarkExampleWrapper>
+);
 
-const CheckedExample = () => <SaveButtonContainer checked/>;
+const OnDarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <SaveButtonContainer style={STYLE_TYPES.onDark} />
+  </BpkDarkExampleWrapper>
+);
 
-const SmallDefaultExample = () => <SaveButtonContainer size={SIZE_TYPES.small} />;
+const CheckedExample = () => <SaveButtonContainer checked />;
 
-const SmallContainedExample = () =>
+const SmallDefaultExample = () => (
+  <SaveButtonContainer size={SIZE_TYPES.small} />
+);
+
+const SmallContainedExample = () => (
   <BpkDarkExampleWrapper>
     <SaveButtonContainer
       size={SIZE_TYPES.small}
       style={STYLE_TYPES.contained}
     />
-  </BpkDarkExampleWrapper>;
+  </BpkDarkExampleWrapper>
+);
 
-const SmallOnDarkExample = () =>
+const SmallOnDarkExample = () => (
   <BpkDarkExampleWrapper>
-    <SaveButtonContainer
-      size={SIZE_TYPES.small}
-      style={STYLE_TYPES.onDark}
-    />
-  </BpkDarkExampleWrapper>;
+    <SaveButtonContainer size={SIZE_TYPES.small} style={STYLE_TYPES.onDark} />
+  </BpkDarkExampleWrapper>
+);
 
-const SmallCheckedExample = () =>
-  <SaveButtonContainer
-    checked
-    size={SIZE_TYPES.small}
-/>;
+const SmallCheckedExample = () => (
+  <SaveButtonContainer checked size={SIZE_TYPES.small} />
+);
 
-
-const VisualTestExample = () =>
-<>
-  <DefaultExample />
-  <ContainedExample />
-  <OnDarkExample />
-  <CheckedExample/>
-  <br/>
-  <SmallDefaultExample />
-  <SmallContainedExample />
-  <SmallOnDarkExample />
-  <SmallCheckedExample/>
-</>;
+const VisualTestExample = () => (
+  <>
+    <DefaultExample />
+    <ContainedExample />
+    <OnDarkExample />
+    <CheckedExample />
+    <br />
+    <SmallDefaultExample />
+    <SmallContainedExample />
+    <SmallOnDarkExample />
+    <SmallCheckedExample />
+  </>
+);
 
 export {
   DefaultExample,
@@ -109,5 +112,5 @@ export {
   SmallContainedExample,
   SmallOnDarkExample,
   VisualTestExample,
-  SmallCheckedExample
+  SmallCheckedExample,
 };
