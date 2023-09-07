@@ -26,9 +26,10 @@ import {
 
 import { withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import BpkTooltip, {
+import {
   TOOLTIP_TYPES,
 } from '../../packages/bpk-component-tooltip';
+import BpkTooltip from '../../packages/bpk-component-tooltip/src/BpkTooltipV2/BpkTooltipV2';
 
 const wrapperStyle = {
   display: 'flex',
@@ -42,7 +43,7 @@ const Heading = withDefaultProps(BpkText, {
 });
 
 const HeadingComponent = forwardRef((props: { children: Node }, ref) => (
-  <div ref={ref}>
+  <div ref={ref} {...props}>
     <Heading>{props.children}</Heading>
   </div>
 ));
