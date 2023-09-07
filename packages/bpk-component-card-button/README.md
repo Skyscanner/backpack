@@ -31,7 +31,7 @@ export default () =>
 
 ## Props
 
-### BpkCard
+### BpkSaveButton
 
 | Property           | PropType                                                               | Required | Default Value       |
 |--------------------|------------------------------------------------------------------------|----------|---------------------|
