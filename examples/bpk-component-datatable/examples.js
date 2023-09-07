@@ -162,7 +162,7 @@ const CustomRowAndHeaderHeightsExample = () => (
     rowHeight="1.875rem"
     onRowClick={onRowClick}
   >
-    <BpkDataTableColumn label="Name" dataKey="name" width={300} />
+    <BpkDataTableColumn label="Name" dataKey="name" width="18.75rem" />
     <BpkDataTableColumn
       label="Description"
       dataKey="description"

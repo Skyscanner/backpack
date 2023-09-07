@@ -22,7 +22,7 @@ const ROOT_FONT_SIZE_PX = 16;
 export const pxToRem = (value: string | number) => {
   let parsed = value;
 
-  if (typeof value === 'number') {
+  if (typeof value === 'number' || (typeof value === 'string' && value.includes('px'))) {
     console.warn("Height in px is deprecated. Please pass the equivalent value in rem."); 
     parsed = `${value / ROOT_FONT_SIZE_PX}rem`;
   }
