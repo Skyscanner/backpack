@@ -29,7 +29,7 @@ import {
 } from './examples';
 
 export default {
-  title: 'bpk-component-save-button',
+  title: 'bpk-component-card-button',
 };
 
 export const Default = DefaultExample;

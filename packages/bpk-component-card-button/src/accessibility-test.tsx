@@ -15,8 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from './src/BpkSaveButton';
+import BpkSaveButton from './BpkSaveButton';
 
-export default BpkSaveButton;
-export { SIZE_TYPES, STYLE_TYPES };
+describe('BpkSaveButton accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkSaveButton
+        checked={false}
+        accessibilityLabel="Click to save"
+        onCheckedChange={() => {}}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

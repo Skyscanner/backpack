@@ -28,12 +28,10 @@ import BpkHeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
 import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
-import { withLargeButtonAlignment } from '../../bpk-component-icon';
-import { cssModules } from '../../bpk-react-utils';
+import { withLargeButtonAlignment } from '../../bpk-component-icon/index';
+import { cssModules } from '../../bpk-react-utils/index';
 
 import STYLES from './BpkSaveButton.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export const SIZE_TYPES = {
   default: 'default',
@@ -49,6 +47,8 @@ export const STYLE_TYPES = {
 } as const;
 
 export type StyleType = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
+
+const getClassName = cssModules(STYLES);
 
 type Props = {
   checked: boolean;

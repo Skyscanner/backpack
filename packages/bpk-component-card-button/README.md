@@ -1,6 +1,6 @@
-# bpk-component-save-button
+# bpk-component-card-button
 
-> Backpack save button component.
+> Backpack card button component.
 
 ## Installation
 
@@ -8,8 +8,14 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
+### BpkSaveButton
+
 ```js
-import BpkSaveButton, {SIZE_TYPES, STYLE_TYPES} from '@skyscanner/backpack-web/bpk-component-save-button';
+import {
+  BpkSaveButton,
+  SIZE_TYPES,
+  STYLE_TYPES
+} from '@skyscanner/backpack-web/bpk-component-card-button';
 
 export default () =>
   <BpkSaveButton
@@ -24,6 +30,8 @@ export default () =>
 ```
 
 ## Props
+
+### BpkCard
 
 | Property           | PropType                                                               | Required | Default Value       |
 |--------------------|------------------------------------------------------------------------|----------|---------------------|

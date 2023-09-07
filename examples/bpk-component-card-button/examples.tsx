@@ -17,14 +17,14 @@
  */
 import { useState } from 'react';
 
-import BpkSaveButton, {
-  STYLE_TYPES,
-  SIZE_TYPES,
-} from '../../packages/bpk-component-save-button';
 import type {
   SizeType,
-  StyleType,
-} from '../../packages/bpk-component-save-button/src/BpkSaveButton';
+  StyleType} from '../../packages/bpk-component-card-button';
+import {
+  BpkSaveButton,
+  STYLE_TYPES,
+  SIZE_TYPES
+} from '../../packages/bpk-component-card-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
