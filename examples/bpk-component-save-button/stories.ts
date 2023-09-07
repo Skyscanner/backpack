@@ -20,8 +20,10 @@ import {
   DefaultExample,
   ContainedExample,
   OnDarkExample,
-  SmallSizeExample,
-  VisualTestExample
+  SmallDefaultExample,
+  SmallContainedExample,
+  SmallOnDarkExample,
+  VisualTestExample,
 } from './examples';
 
 export default {
@@ -31,5 +33,7 @@ export default {
 export const Default = DefaultExample;
 export const Contained = ContainedExample;
 export const OnDark = OnDarkExample;
-export const Small = SmallSizeExample;
+export const SmallDefault = SmallDefaultExample;
+export const SmallContained = SmallContainedExample;
+export const SmallOnDark = SmallOnDarkExample;
 export const VisualTest = VisualTestExample;

@@ -37,7 +37,8 @@ const SaveButtonContainer = ({
   };
 
   return <BpkSaveButton
-    checked={checked} accessibilityLabel={`Click to ${checked ? 'remove save' : 'save'}`} onCheckedChange={onCheckedChange}
+    checked={checked} accessibilityLabel={`Click to ${checked ? 'remove save' : 'save'}`}
+    onCheckedChange={onCheckedChange}
     size={size}
     style={style}
   />;
@@ -58,21 +59,42 @@ const OnDarkExample = () =>
     />
   </BpkDarkExampleWrapper>;
 
-const SmallSizeExample = () => <SaveButtonContainer
+const SmallDefaultExample = () => <SaveButtonContainer
   size={SIZE_TYPES.small}
 />;
 
-const VisualTestExample = () => <>
+const SmallContainedExample = () =>
+  <BpkDarkExampleWrapper>
+    <SaveButtonContainer
+      size={SIZE_TYPES.small}
+      style={STYLE_TYPES.contained}
+    />
+  </BpkDarkExampleWrapper>
+;
+
+const SmallOnDarkExample = () =>   <BpkDarkExampleWrapper>
+  <SaveButtonContainer
+    size={SIZE_TYPES.small}
+    style={STYLE_TYPES.onDark}
+  />
+</BpkDarkExampleWrapper>
+
+const VisualTestExample = () =>
+<>
   <DefaultExample />
   <ContainedExample />
   <OnDarkExample />
-  <SmallSizeExample />
+  <SmallDefaultExample />
+  <SmallContainedExample />
+  <SmallOnDarkExample />
 </>;
 
 export {
   DefaultExample,
   ContainedExample,
   OnDarkExample,
-  SmallSizeExample,
+  SmallDefaultExample,
+  SmallContainedExample,
+  SmallOnDarkExample,
   VisualTestExample,
 };
