@@ -14,9 +14,9 @@ import BpkSaveButton, {SIZE_TYPES, STYLE_TYPES} from '@skyscanner/backpack-web/b
 export default () =>
   <BpkSaveButton
     checked={false}
-    accessibilityLabel="save button"
+    accessibilityLabel="Click to save"
     onCheckedChange={() => {
-      console.log('check change');
+      console.log('save status changed!');
     }}
     size={SIZE_TYPES.small}
     style={STYLE_TYPES.contained}
