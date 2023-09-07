@@ -16,14 +16,28 @@
  * limitations under the License.
  */
 
+/*
+  Checks if the current device is an iPhone as reported by the user agent.
+*/
 const isDeviceIphone = () =>
   /iPhone/i.test(
     typeof window !== 'undefined' ? window.navigator.userAgent : '',
   );
 
+/*
+  Checks if the current device is an iPad as reported by the user agent for older generation iPads
+  or by checking the number of touch points for newer generation iPads as in newer devices the user agent
+  reports as a Macintosh.
+*/
 const isDeviceIpad = () =>
-  /iPad/i.test(typeof window !== 'undefined' ? window.navigator.userAgent : '');
+  /iPad/i.test(typeof window !== 'undefined' ? window.navigator.userAgent : '') ||
+  window.navigator.maxTouchPoints &&
+  window.navigator.maxTouchPoints > 2 &&
+    /Macintosh/.test(window.navigator.userAgent);
 
+/*
+  Checks if the current device is an iOS device.  
+*/
 const isDeviceIos = () => isDeviceIphone() || isDeviceIpad();
 
 export { isDeviceIphone, isDeviceIpad, isDeviceIos };
