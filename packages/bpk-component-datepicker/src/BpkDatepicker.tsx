@@ -17,7 +17,7 @@
  */
 
 import { createRef, Component } from 'react';
-import type {JSX, ReactElement} from 'react';
+import type { ReactElement} from 'react';
 
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';

@@ -179,7 +179,7 @@ declare class BpkDatepicker extends Component<Props, State> {
                     source: string;
                 }) => void;
                 handleDateKeyDown: (event: KeyboardEvent) => void;
-                render(): globalThis.JSX.Element;
+                render(): JSX.Element;
                 context: any;
                 setState<K extends keyof {
                     preventKeyboardFocus: boolean;
@@ -719,6 +719,6 @@ declare class BpkDatepicker extends Component<Props, State> {
      */
     getValue: (selectionConfiguration: SelectionConfiguration, formatDate: (date: Date) => string) => string;
     handleDateSelect: (startDate: Date, endDate?: Date | null) => void;
-    render(): globalThis.JSX.Element;
+    render(): JSX.Element;
 }
 export default BpkDatepicker;
