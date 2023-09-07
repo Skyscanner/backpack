@@ -4,7 +4,7 @@ exports[`BpkSaveButton should render correctly 1`] = `
 <DocumentFragment>
   <button
     aria-label="Click to save"
-    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button"
+    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button bpk-save-button__default"
     type="button"
   >
     <span
@@ -12,7 +12,7 @@ exports[`BpkSaveButton should render correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__fullHeart bpk-save-button__fullHeart--hide"
+        class="bpk-save-button__icon bpk-save-button__heartIcon bpk-save-button__heartIcon--hide bpk-save-button__heartIcon--default"
         style="width: 1.5rem; height: 1.5rem;"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ exports[`BpkSaveButton should render correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__emptyHeart bpk-save-button__emptyHeart--show"
+        class="bpk-save-button__icon bpk-save-button__heartOutlineIcon bpk-save-button__heartOutlineIcon--show bpk-save-button__heartOutlineIcon--default"
         style="width: 1.5rem; height: 1.5rem;"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ exports[`BpkSaveButton should render correctly with "checked" is true 1`] = `
 <DocumentFragment>
   <button
     aria-label="Click to remove save"
-    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button"
+    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button bpk-save-button__default"
     type="button"
   >
     <span
@@ -53,7 +53,7 @@ exports[`BpkSaveButton should render correctly with "checked" is true 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__fullHeart bpk-save-button__fullHeart--show"
+        class="bpk-save-button__icon bpk-save-button__heartIcon bpk-save-button__heartIcon--show bpk-save-button__heartIcon--default"
         style="width: 1.5rem; height: 1.5rem;"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ exports[`BpkSaveButton should render correctly with "checked" is true 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__emptyHeart bpk-save-button__emptyHeart--hide"
+        class="bpk-save-button__icon bpk-save-button__heartOutlineIcon bpk-save-button__heartOutlineIcon--hide bpk-save-button__heartOutlineIcon--default"
         style="width: 1.5rem; height: 1.5rem;"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ exports[`BpkSaveButton should render correctly with a "size" prop 1`] = `
 <DocumentFragment>
   <button
     aria-label="Click to save"
-    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button bpk-save-button__small"
+    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button bpk-save-button__small bpk-save-button__default"
     type="button"
   >
     <span
@@ -94,7 +94,7 @@ exports[`BpkSaveButton should render correctly with a "size" prop 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__fullHeart bpk-save-button__fullHeart--hide"
+        class="bpk-save-button__icon bpk-save-button__heartIcon bpk-save-button__heartIcon--hide bpk-save-button__heartIcon--default"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@ exports[`BpkSaveButton should render correctly with a "size" prop 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__emptyHeart bpk-save-button__emptyHeart--show"
+        class="bpk-save-button__icon bpk-save-button__heartOutlineIcon bpk-save-button__heartOutlineIcon--show bpk-save-button__heartOutlineIcon--default"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ exports[`BpkSaveButton should render correctly with a "style" prop 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__fullHeart bpk-save-button__fullHeart--hide bpk-save-button__fullHeart--contained"
+        class="bpk-save-button__icon bpk-save-button__heartIcon bpk-save-button__heartIcon--hide bpk-save-button__heartIcon--contained"
         style="width: 1.5rem; height: 1.5rem;"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +150,7 @@ exports[`BpkSaveButton should render correctly with a "style" prop 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__emptyHeart bpk-save-button__emptyHeart--show bpk-save-button__emptyHeart--contained"
+        class="bpk-save-button__icon bpk-save-button__heartOutlineIcon bpk-save-button__heartOutlineIcon--show bpk-save-button__heartOutlineIcon--contained"
         style="width: 1.5rem; height: 1.5rem;"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"

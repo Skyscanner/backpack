@@ -68,25 +68,24 @@ const BpkSaveButton = ({
                          style = STYLE_TYPES.default,
                        }: Props) => {
   const smallSize = size === SIZE_TYPES.small;
-  const specialStyle = style !== STYLE_TYPES.default;
-  const FullHeart = smallSize ? AlignedHeartIconSm : AlignedHeartIcon;
-  const EmptyHeart = smallSize ? AlignedHeartOutlineIconSm : AlignedHeartOutlineIcon;
+  const HeartIcon = smallSize ? AlignedHeartIconSm : AlignedHeartIcon;
+  const HeartOutLineIcon = smallSize ? AlignedHeartOutlineIconSm : AlignedHeartOutlineIcon;
   return <BpkButtonV2
     aria-label={accessibilityLabel}
-    className={getClassName('bpk-save-button', smallSize && 'bpk-save-button__small', specialStyle && `bpk-save-button__${style}`,
+    className={getClassName('bpk-save-button', smallSize && 'bpk-save-button__small', `bpk-save-button__${style}`,
     )}
     onClick={onCheckedChange}
     iconOnly
   >
-      <FullHeart className={getClassName('bpk-save-button__icon',
-        'bpk-save-button__fullHeart',
-        `bpk-save-button__fullHeart--${checked ? 'show' : 'hide'}`,
-        specialStyle && `bpk-save-button__fullHeart--${style}`,
+      <HeartIcon className={getClassName('bpk-save-button__icon',
+        'bpk-save-button__heartIcon',
+        `bpk-save-button__heartIcon--${checked ? 'show' : 'hide'}`,
+        `bpk-save-button__heartIcon--${style}`,
       )} />
-      <EmptyHeart className={getClassName('bpk-save-button__icon',
-        'bpk-save-button__emptyHeart',
-        `bpk-save-button__emptyHeart--${checked ? 'hide' : 'show'}`,
-        specialStyle && `bpk-save-button__emptyHeart--${style}`,
+      <HeartOutLineIcon className={getClassName('bpk-save-button__icon',
+        'bpk-save-button__heartOutlineIcon',
+        `bpk-save-button__heartOutlineIcon--${checked ? 'hide' : 'show'}`,
+        `bpk-save-button__heartOutlineIcon--${style}`,
       )} />
   </BpkButtonV2>;
 };

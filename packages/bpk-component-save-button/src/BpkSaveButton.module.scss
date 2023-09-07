@@ -73,7 +73,7 @@
     }
   }
 
-  &__emptyHeart {
+  &__heartOutlineIcon {
     z-index: 1;
     opacity: 1;
 
@@ -91,7 +91,7 @@
     }
   }
 
-  &__fullHeart {
+  &__heartIcon {
     z-index: 2;
     color: $bpk-core-accent-day;
     opacity: 0;
