@@ -1,0 +1,18 @@
+/*
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}@keyframes heart-beat{0%,100%{transform:translate(-50%, -50%) scale(1)}10%{transform:translate(-50%, -50%) scale(1.4)}20%{transform:translate(-50%, -50%) scale(1.2)}30%{transform:translate(-50%, -50%) scale(1.3)}50%{transform:translate(-50%, -50%) scale(1.25)}70%{transform:translate(-50%, -50%) scale(1.25)}}.bpk-save-button{position:relative;width:2.5rem;height:2.5rem;padding:0.5rem;border-radius:50%;background-color:transparent}.bpk-no-touch-support .bpk-save-button:hover:not(:active):not(:disabled){background-color:transparent}:global(.bpk-no-touch-support) .bpk-save-button:hover:not(:active):not(:disabled){background-color:transparent}.bpk-save-button:active{background-color:transparent}.bpk-save-button__icon{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);color:#161616}.bpk-save-button__icon:hover{color:#161616}.bpk-save-button__emptyHeart{z-index:1;opacity:1}.bpk-save-button__emptyHeart--show:hover{transition:opacity 200ms ease-in-out;opacity:0}.bpk-save-button__emptyHeart--hide{opacity:0}.bpk-save-button__emptyHeart--onDark{color:#fff}.bpk-save-button__fullHeart{z-index:2;color:#0062e3;opacity:0}.bpk-save-button__fullHeart--show{opacity:1;animation:heart-beat 1s 0s 1 ease-out;animation-fill-mode:forwards}.bpk-save-button__fullHeart--show:hover{color:#0062e3}.bpk-save-button__fullHeart--hide:hover{transition:opacity 200ms ease-in-out;color:#161616;opacity:1}.bpk-save-button__fullHeart--onDark{color:#fff}.bpk-save-button__fullHeart--onDark:hover{color:#fff}.bpk-save-button__small{width:2rem;height:2rem;min-height:2rem}.bpk-save-button__contained{background-color:rgba(255,255,255,0.8)}.bpk-no-touch-support .bpk-save-button__contained:hover:not(:active):not(:disabled){background-color:rgba(255,255,255,0.8)}:global(.bpk-no-touch-support) .bpk-save-button__contained:hover:not(:active):not(:disabled){background-color:rgba(255,255,255,0.8)}.bpk-save-button__contained:active{background-color:rgba(255,255,255,0.8)}
