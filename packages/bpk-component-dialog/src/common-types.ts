@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, SyntheticEvent } from 'react';
+import type { ReactNode } from 'react';
 
 export const HEADER_ICON_TYPES = {
   primary: 'primary',
@@ -40,7 +40,7 @@ export type Props = Omit<DialogInnerProps, 'dialogRef'> & {
   dialogRef?: (ref: HTMLElement | null | undefined) => void;
   isOpen: boolean;
   renderTarget?: () => HTMLElement | null;
-  onClose: (event?: TouchEvent | MouseEvent | KeyboardEvent) => void | null;
+  onClose?: (event?: TouchEvent | MouseEvent | KeyboardEvent) => void | null;
   closeLabel?: string;
   dismissible?: boolean;
   headerIcon?: ReactNode;
