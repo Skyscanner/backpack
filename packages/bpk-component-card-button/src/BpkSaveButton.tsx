@@ -28,8 +28,8 @@ import BpkHeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
 import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
-import { withLargeButtonAlignment } from '../../bpk-component-icon/index';
-import { cssModules } from '../../bpk-react-utils/index';
+import { withLargeButtonAlignment } from '../../bpk-component-icon';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSaveButton.module.scss';
 

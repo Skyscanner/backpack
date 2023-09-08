@@ -19,11 +19,12 @@ import { useState } from 'react';
 
 import type {
   SizeType,
-  StyleType} from '../../packages/bpk-component-card-button';
+  StyleType,
+} from '../../packages/bpk-component-card-button/src/BpkSaveButton';
 import {
   BpkSaveButton,
   STYLE_TYPES,
-  SIZE_TYPES
+  SIZE_TYPES,
 } from '../../packages/bpk-component-card-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';

@@ -17,7 +17,7 @@
  */
 import { render } from '@testing-library/react';
 
-import BpkSaveButton, {SIZE_TYPES, STYLE_TYPES } from './BpkSaveButton';
+import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from './BpkSaveButton';
 
 describe('BpkSaveButton', () => {
   it('should render correctly', () => {

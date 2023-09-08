@@ -87,7 +87,7 @@
     }
 
     &--onDark {
-      color: $bpk-color-white;
+      color: $bpk-text-on-dark-day;
     }
   }
 
@@ -116,10 +116,10 @@
     }
 
     &--onDark {
-      color: $bpk-color-white;
+      color: $bpk-text-on-dark-day;
 
       &:hover {
-        color: $bpk-color-white;
+        color: $bpk-text-on-dark-day;
       }
     }
   }
