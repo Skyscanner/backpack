@@ -131,14 +131,14 @@
   }
 
   &__contained {
-    background-color: $bpk-private-map-marker-viewed-foreground-day;
+    background-color: $bpk-private-card-button-contained-color;
 
     @include bpk-hover {
-      background-color: $bpk-private-map-marker-viewed-foreground-day;
+      background-color: $bpk-private-card-button-contained-color;
     }
 
     &:active {
-      background-color: $bpk-private-map-marker-viewed-foreground-day;
+      background-color: $bpk-private-card-button-contained-color;
     }
   }
 }
