@@ -218,7 +218,7 @@ const CustomSortingExample = () => (
 );
 
 const WithColumnArrayExample = () => (
-  <BpkDataTable rows={rows} height="25rem" onRowClick={onRowClick} columns={
+  <BpkDataTable rows={complexRows} height="25rem" onRowClick={onRowClick} columns={
     [
       {
         label: 'Name',
@@ -230,18 +230,13 @@ const WithColumnArrayExample = () => (
         accessor: 'description',
         width: '6.25rem',
         flexGrow: 1,
+        Header: LabelComponent,
       },
       {
-        label: 'Location',
-        accessor: 'location',
+        label: 'Seat',
+        accessor: 'seat',
         width: '6.25rem',
         Cell: CellRenderer,
-      },
-      {
-        label: 'Numeric value',
-        accessor: 'numericValue',
-        width: '6.25rem',
-        Header: LabelComponent,
       },
     ]}
   />
