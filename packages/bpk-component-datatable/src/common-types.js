@@ -28,17 +28,17 @@ type CommonColumnProps = {
   headerClassName: ?string,
   headerStyle: ?{},
   label: ?string,
-  minWidth: ?number,
-  width: number,
+  minWidth: ?number | string,
+  width: number | string,
 };
 
 export type Props<Row> = {
   rows: Array<Row>,
   children: Node,
-  height: number,
-  width: ?number,
-  headerHeight: number,
-  rowHeight: number,
+  height: number | string,
+  width: ?number | string,
+  headerHeight: number | string,
+  rowHeight: number | string,
   className: ?string,
   defaultColumnSortIndex: number,
   headerClassName: ?string,

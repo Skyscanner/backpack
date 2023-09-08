@@ -28,7 +28,7 @@ import STYLES from './BpkDataTable.module.scss';
 import type { Props } from './common-types';
 import { SORT_DIRECTION_TYPES } from './sort-types';
 import BpkDataTableHeader from './BpkDataTableHeader';
-import { getColumns } from './utils';
+import { pxToRem, getColumns } from './utils';
 
 const getClassName = cssModules(STYLES);
 
@@ -139,7 +139,7 @@ const BpkDataTable = (props: Props) => {
   return (
     <div
       {...getTableProps({
-        style: { width, height },
+        style: { width: pxToRem(width), height: pxToRem(height) },
         className: classNames,
       })}
       {...restOfProps}
@@ -148,7 +148,7 @@ const BpkDataTable = (props: Props) => {
         {headerGroups.map((headerGroup) => (
           <div
             {...headerGroup.getHeaderGroupProps({
-              style: { height: headerHeight },
+              style: { height: pxToRem(headerHeight) },
               className: headerClassNames,
             })}
           >
@@ -177,7 +177,7 @@ const BpkDataTable = (props: Props) => {
               {...row.getRowProps({
                 style: {
                   ...rowStyle,
-                  height: rowHeight,
+                  height: pxToRem(rowHeight),
                 },
                 className: getRowClassNames(rowClassName, i),
               })}
@@ -225,8 +225,8 @@ BpkDataTable.propTypes = {
 
 BpkDataTable.defaultProps = {
   width: null,
-  headerHeight: 60,
-  rowHeight: 60,
+  headerHeight: '3.75rem',
+  rowHeight: '3.75rem',
   className: null,
   defaultColumnSortIndex: 0,
   sort: null,
