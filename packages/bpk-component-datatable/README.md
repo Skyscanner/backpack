@@ -115,9 +115,9 @@ export default () => (
 | children               | arrayOf(BpkDataTableColumn) | true     | -                    |
 | height                 | oneOfType(number, string)   | true     | -                    |
 | width                  | oneOfType(number, string)   | false    | full width of parent |
-| headerHeight           | oneOfType(number, string)   | false    | 60                   |
+| headerHeight           | oneOfType(number, string)   | false    | '3.75rem'            |
 | rowClassName           | string                      | false    | null                 |
-| rowHeight              | oneOfType(number, string)   | false    | 60                   |
+| rowHeight              | oneOfType(number, string)   | false    | '3.75rem'            |
 | rowStyle               | object                      | false    | {}                   |
 | onRowClick             | func                        | false    | null                 |
 | className              | string                      | false    | null                 |
@@ -132,7 +132,8 @@ export default () => (
 | Property               | PropType                    | Required | Default Value        |
 | ---------------------- | --------------------------- | -------- | -------------------- |
 | dataKey                | string                      | true     | -                    |
-| width                  | number                      | true     | -                    |
+| width                  | oneOfType(number, string)   | true     | -                    |
+| minWidth               | oneOfType(number, string)   | false    | undefined            |
 | flexGrow               | number                      | false    | 0                    |
 | label                  | string                      | false    | null                 |
 | headerRenderer         | func                        | false    | null                 |
@@ -146,6 +147,9 @@ export default () => (
 
 ### Prop Details
 
+#### width (BpkDataTable), height, headerHeight, rowHeight, width (BpkDataTableColumn), minWidth
+
+Please provide values for these props in `rem` to ensure data table is scalable.
 
 #### sort, sortBy, sortDirection
 

@@ -16,21 +16,9 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from "react";
+import BpkButtonV2 from './src/BpkButtonV2/BpkButton';
+export { BUTTON_TYPES, SIZE_TYPES } from './src/BpkButtonV2/common-types';
 
-import type { BUTTON_TYPES } from "../../bpk-component-button/src/BpkButtonV2/common-types";
-
-export type CommonProps = {
-  id: string;
-  min: string | number;
-  max: string | number;
-  value: string | number;
-  onChange: (arg0: any) => void | null;
-  className?: string | null;
-  increaseButtonLabel: string;
-  decreaseButtonLabel: string;
-  buttonType?: keyof typeof BUTTON_TYPES;
-  title?: string;
-  subtitle?: string;
-  icon? : ReactNode;
+export {
+  BpkButtonV2,
 };

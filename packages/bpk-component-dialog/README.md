@@ -85,7 +85,7 @@ class App extends Component {
 
 #### onClose
 
-This is required unless `dismissible` is false.
+This property is only required when `dismissible` is true.
 
 #### flareClassName
 
