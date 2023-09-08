@@ -32,7 +32,7 @@ const BpkDataTableColumn = (props: BpkDataTableColumnProps) => (
 
 BpkDataTableColumn.propTypes = {
   dataKey: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   className: PropTypes.string,
   disableSort: PropTypes.bool,
   defaultSortDirection: PropTypes.oneOf(Object.keys(SORT_DIRECTION_TYPES)),

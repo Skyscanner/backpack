@@ -57,7 +57,7 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
     expect(asFragment()).toMatchSnapshot();
-    expect(warningSpy.mock.calls.length).toBe(4);
+    expect(warningSpy.mock.calls.length).toBe(5);
   });
 
   it('should render correctly with multiple columns', () => {

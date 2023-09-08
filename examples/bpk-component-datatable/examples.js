@@ -217,6 +217,36 @@ const CustomSortingExample = () => (
   </BpkDataTable>
 );
 
+const WithColumnArrayExample = () => (
+  <BpkDataTable rows={rows} height="25rem" onRowClick={onRowClick} columns={
+    [
+      {
+        label: 'Name',
+        accessor: 'name',
+        width: '6.25rem',
+      },
+      {
+        label: 'Description',
+        accessor: 'description',
+        width: '6.25rem',
+        flexGrow: 1,
+      },
+      {
+        label: 'Location',
+        accessor: 'location',
+        width: '6.25rem',
+        Cell: CellRenderer,
+      },
+      {
+        label: 'Numeric value',
+        accessor: 'numericValue',
+        width: '6.25rem',
+        Header: LabelComponent,
+      },
+    ]}
+  />
+);
+
 export {
   AutowidthExample,
   NonHoverRowsExample,
@@ -225,4 +255,5 @@ export {
   CustomRowAndHeaderHeightsExample,
   HeaderRendererExample,
   CustomSortingExample,
+  WithColumnArrayExample,
 };
