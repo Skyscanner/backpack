@@ -31,7 +31,6 @@ import {
   defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
 } from './src/themeAttributes';
-// import { STYLE_TYPES } from './src/BpkPriceMarkerV2/BpkPriceMarker';
 
 export default BpkMap;
 export type BpkMapLatLong = LatLong;
