@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkMapMarker should render correctly with "status" attribute as "focused" 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="mock-overlay-view"
+    />
+    <button
+      class="bpk-price-marker__wrapper"
+      type="button"
+    >
+      <span
+        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-focused"
+      >
+        £120
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkMapMarker should render correctly with "status" attribute as "viewed" 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="mock-overlay-view"
+    />
+    <button
+      class="bpk-price-marker__wrapper"
+      type="button"
+    >
+      <span
+        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-viewed"
+      >
+        £120
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="mock-overlay-view"
+    />
+    <button
+      class="bpk-price-marker__wrapper"
+      testid="arbitrary value"
+      type="button"
+    >
+      <span
+        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default"
+      >
+        £120
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkMapMarker should render correctly with a "className" attribute 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="mock-overlay-view"
+    />
+    <button
+      class="bpk-price-marker__wrapper"
+      type="button"
+    >
+      <span
+        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default custom-class-1 custom-class-2"
+      >
+        £120
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkMapMarker should render correctly with a "onClick" attribute 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="mock-overlay-view"
+    />
+    <button
+      class="bpk-price-marker__wrapper"
+      type="button"
+    >
+      <span
+        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker--dynamic bpk-price-marker-default"
+      >
+        £120
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkMapMarker should render properly 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="mock-overlay-view"
+    />
+    <button
+      class="bpk-price-marker__wrapper"
+      type="button"
+    >
+      <span
+        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default"
+      >
+        £120
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkMapMarker should render properly with a icon 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="mock-overlay-view"
+    />
+    <button
+      class="bpk-price-marker__wrapper"
+      type="button"
+    >
+      <span
+        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default"
+      >
+        <span>
+          Icon
+        </span>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

@@ -27,6 +27,8 @@ import {
   WithAMarkerExample,
   WithIconMarkersExample,
   WithPriceMarkersExample,
+  WithPriceMarkersV2Example,
+  WithPriceMarkersV2OnDarkExample,
   MultipleMapsExample,
 } from './examples';
 
@@ -52,5 +54,9 @@ export const WithAMarker = WithAMarkerExample;
 export const IconMarkers = WithIconMarkersExample;
 
 export const PriceMarkers = WithPriceMarkersExample;
+
+export const PriceMarkersV2Default = WithPriceMarkersV2Example;
+
+export const PriceMarkersV2OnDark = WithPriceMarkersV2OnDarkExample
 
 export const MultiMaps = MultipleMapsExample;

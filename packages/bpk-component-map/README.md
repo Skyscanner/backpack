@@ -92,6 +92,61 @@ export default () => (
 );
 ```
 
+### BpkPriceMarkerV2
+
+BpkPriceMarker V2 version that is the BpkPriceMarker redesign.
+
+```js
+import BpkMap, { BpkPriceMarkerV2, PRICE_MARKER_STATUSES_V2, STYLE_TYPES } from '@skyscanner/backpack-web/bpk-component-map';
+
+export default () => (
+  <BpkMap
+    zoom={15}
+    showControls={false}
+    panEnabled={false}
+    center={{
+      latitude: 27.9881,
+      longitude: 86.925,
+    }}
+  >
+    <BpkPriceMarkerV2
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log("Price marker pressed.")
+      }}
+      status={PRICE_MARKER_STATUSES_V2.focused}
+    />
+    <BpkPriceMarkerV2
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log("Price marker pressed.")
+      }}
+      status={PRICE_MARKER_STATUSES_V2.focused}
+      style={STYLE_TYPES.onDark}
+    />
+    <BpkPriceMarker
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log("Price marker pressed.")
+      }}
+      status={PRICE_MARKER_STATUSES_V2.viewed}
+    />
+    <BpkPriceMarker
+      label={<AlignedLandmarkIconSm />}
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log("Price marker pressed.")
+      }}
+      status={PRICE_MARKER_STATUSES_V2.viewed}
+    />
+  </BpkMap>
+
+);
+```
+
 ## Accompanying HOCs
 
 ### withGoogleMapsScript
@@ -170,16 +225,28 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 ### BpkPriceMarker
 
-| Property       | PropType                                     | Required | Default Value |
-| -------------- | -------------------------------------------- | -------- | ------------- |
-| label          | string                                       | true     | -             |
+| Property       | PropType                               | Required | Default Value |
+|----------------| -------------------------------------- | -------- | ------------- |
+| label          | string                                 | true     | -             |
 | position       | shape({latitude: number, longitude: number}) | true     | -             |
-| arrowClassName | string                                       | false    | null          |
-| className      | string                                       | false    | null          |
-| disabled       | bool                                         | false    | false         |
-| onClick        | func                                         | false    | null          |
-| status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)                                        | false    | `PRICE_MARKER_STATUSES.default`             |
-| buttonProps    | object                                       | false    | null          |
+| arrowClassName | string                                 | false    | null          |
+| className      | string                                 | false    | null          |
+| disabled       | bool                                   | false    | false         |
+| onClick        | func                                   | false    | null          |
+| status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)                                  | false    | `PRICE_MARKER_STATUSES.default`             |
+| buttonProps    | object                                 | false    | null          |
+
+### BpkPriceMarkerV2
+
+| Property       | PropType                                    | Required | Default Value |
+| -------------- | ------------------------------------------- | -------- | ------------- |
+| label          | ReactNode | string                          | true     | -             |
+| position       | shape({latitude: number, longitude: number})| true     | -             |
+| className      | string                                      | false    | null          |
+| onClick        | func                                        | false    | null          |
+| status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)| false    | `PRICE_MARKER_STATUSES.default`             |
+| buttonProps    | { [key: string]: any }                      | false    | null          |
+| style          | oneOf(`STYLE_TYPES.default`, `STYLE_TYPES.onDark`)| false    | null          |
 
 ### BpkOverlayView
 

@@ -1,0 +1,18 @@
+/*
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-price-marker{display:flex;padding:0 0.5rem;height:1.5rem;justify-content:center;align-items:center;gap:0.5rem;border-radius:.5rem}.bpk-price-marker--dynamic{cursor:pointer}.bpk-price-marker-default{color:#161616;background-color:#fff}.bpk-price-marker-default--onDark{color:#010913;background-color:#fff}.bpk-price-marker-viewed{color:#161616;background-color:#cfe4ff}.bpk-price-marker-viewed--onDark{color:#010913;background-color:#cfe4ff}.bpk-price-marker-focused{color:#fff;background-color:#05203c}.bpk-price-marker-focused--onDark{color:#fff;background-color:#054184}.bpk-price-marker__wrapper{position:relative;display:flex;padding:0;flex-direction:column;align-items:center;border:none;background:none}

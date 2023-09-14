@@ -29,10 +29,13 @@ import FoodIconSm from '../../packages/bpk-component-icon/sm/food';
 import ParkingIconSm from '../../packages/bpk-component-icon/sm/parking';
 import HotelIconSm from '../../packages/bpk-component-icon/sm/hotels';
 import BpkMap, {
+  STYLE_TYPES,
   BpkOverlayView,
   BpkIconMarker,
   BpkPriceMarker,
+  BpkPriceMarkerV2,
   PRICE_MARKER_STATUSES,
+  PRICE_MARKER_STATUSES_V2,
   withGoogleMapsScript,
 } from '../../packages/bpk-component-map';
 
@@ -177,6 +180,63 @@ class StatefulBpkPriceMarker extends Component<
   }
 }
 
+class StatefulBpkPriceMarkerV2 extends Component<
+  { action: () => mixed, style: string },
+  PriceMarkerState,
+  > {
+  static defaultProps = {
+    action: () => null,
+  };
+
+  constructor(props: { action: () => mixed, style: string }) {
+    super(props);
+    this.state = {
+      selectedId: '2',
+      viewedVenues: ['1'],
+    };
+  }
+
+  getStatus = (id: string) => {
+    if (this.state.selectedId === id) {
+      return PRICE_MARKER_STATUSES_V2.focused;
+    }
+    if (this.state.viewedVenues.includes(id)) {
+      return PRICE_MARKER_STATUSES_V2.viewed;
+    }
+    return PRICE_MARKER_STATUSES_V2.default;
+  };
+
+  selectVenue = (id: string) => {
+    this.setState((prevState) => ({
+      selectedId: id,
+      viewedVenues: [...prevState.viewedVenues, id],
+    }));
+  };
+
+  render() {
+    return (
+      <StoryMap
+        zoom={15}
+        center={{ latitude: 55.944665, longitude: -3.1964903 }}
+      >
+        {venues.filter( venue=> venue.disabled === false).map((venue) => (
+          <BpkPriceMarkerV2
+            id={venue.id}
+            label={venue.price}
+            position={{ latitude: venue.latitude, longitude: venue.longitude }}
+            onClick={() => {
+              this.props.action();
+              this.selectVenue(venue.id);
+            }}
+            status={this.getStatus(venue.id)}
+            style={this.props.style}
+          />
+        ))}
+      </StoryMap>
+    );
+  }
+}
+
 class StatefulBpkIconMarker extends Component<
   { action: () => mixed },
   { selectedId: string },
@@ -290,6 +350,14 @@ const WithPriceMarkersExample = () => (
   <StatefulBpkPriceMarker action={action('Price marker clicked')} />
 );
 
+const WithPriceMarkersV2Example = () => (
+  <StatefulBpkPriceMarkerV2 action={action('Price marker clicked')} style={STYLE_TYPES.default}  />
+);
+
+const WithPriceMarkersV2OnDarkExample = () => (
+  <StatefulBpkPriceMarkerV2 action={action('Price marker clicked')} style={STYLE_TYPES.onDark} />
+);
+
 const MultipleMapsExample = () => (
   <>
     <span>first map:</span>
@@ -315,5 +383,7 @@ export {
   WithAMarkerExample,
   WithIconMarkersExample,
   WithPriceMarkersExample,
+  WithPriceMarkersV2Example,
+  WithPriceMarkersV2OnDarkExample,
   MultipleMapsExample,
 };
