@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
 import BpkPriceMarkerV2, { PRICE_MARKER_STATUSES } from './BpkPriceMarker';

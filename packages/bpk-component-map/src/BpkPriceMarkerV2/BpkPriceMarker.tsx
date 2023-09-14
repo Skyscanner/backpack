@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-
 import type { MouseEvent, ReactNode } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
@@ -80,9 +77,7 @@ const BpkPriceMarkerV2 = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkBasicMapMarker position={position} {...rest}>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
         className={markerWrapperClassNames}
