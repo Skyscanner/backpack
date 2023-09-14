@@ -35,6 +35,7 @@ export type Style = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
 
 type Props = {
   label: ReactNode | string,
+  accessibilityLabel: string,
   position: {
     latitude: number,
     longitude: number,

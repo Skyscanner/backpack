@@ -30,6 +30,7 @@ import {
   WithPriceMarkersV2Example,
   WithPriceMarkersV2OnDarkExample,
   MultipleMapsExample,
+  VisualTestExample,
 } from './examples';
 
 export default {
@@ -57,6 +58,8 @@ export const PriceMarkers = WithPriceMarkersExample;
 
 export const PriceMarkersV2Default = WithPriceMarkersV2Example;
 
-export const PriceMarkersV2OnDark = WithPriceMarkersV2OnDarkExample
+export const PriceMarkersV2OnDark = WithPriceMarkersV2OnDarkExample;
+
+export const VisualTest = VisualTestExample;
 
 export const MultiMaps = MultipleMapsExample;

@@ -230,6 +230,7 @@ class StatefulBpkPriceMarkerV2 extends Component<
             }}
             status={this.getStatus(venue.id)}
             style={this.props.style}
+            accessibilityLabel="Click the price marker"
           />
         ))}
       </StoryMap>
@@ -373,6 +374,13 @@ const MultipleMapsExample = () => (
   </>
 );
 
+const VisualTestExample = () => (
+  <>
+    <WithPriceMarkersV2Example/>
+    <WithPriceMarkersV2OnDarkExample/>
+  </>
+)
+
 export {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -386,4 +394,5 @@ export {
   WithPriceMarkersV2Example,
   WithPriceMarkersV2OnDarkExample,
   MultipleMapsExample,
+  VisualTestExample,
 };

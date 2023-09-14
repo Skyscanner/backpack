@@ -44,6 +44,7 @@ export type Style = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
 
 type Props = {
   label:  ReactNode | string,
+  accessibilityLabel: string,
   position: {
     latitude: number,
     longitude: number,
@@ -57,6 +58,7 @@ type Props = {
 
 const BpkPriceMarkerV2 = (props: Props) => {
   const {
+    accessibilityLabel,
     buttonProps,
     className,
     label,
@@ -77,7 +79,7 @@ const BpkPriceMarkerV2 = (props: Props) => {
   );
 
   return (
-    <BpkBasicMapMarker position={position} {...rest}>
+    <BpkBasicMapMarker position={position} aria-label={accessibilityLabel} {...rest}>
       <button
         type="button"
         className={markerWrapperClassNames}

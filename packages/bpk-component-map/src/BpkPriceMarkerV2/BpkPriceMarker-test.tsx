@@ -42,7 +42,7 @@ describe('BpkMapMarker', () => {
 
   it('should render properly', () => {
     const { asFragment } = render(
-      <BpkPriceMarkerV2 label="£120" position={position} />,
+      <BpkPriceMarkerV2 label="£120" position={position}   accessibilityLabel="Click the price marker" />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -50,7 +50,7 @@ describe('BpkMapMarker', () => {
   it('should render properly with a icon', () => {
     const icon = <span>Icon</span>;
     const { asFragment } = render(
-      <BpkPriceMarkerV2 label={icon} position={position} />,
+      <BpkPriceMarkerV2 label={icon} position={position} accessibilityLabel="Click the price marker"/>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -61,6 +61,7 @@ describe('BpkMapMarker', () => {
         label="£120"
         position={position}
         status={PRICE_MARKER_STATUSES.focused}
+        accessibilityLabel="Click the price marker"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -72,6 +73,7 @@ describe('BpkMapMarker', () => {
         label="£120"
         position={position}
         status={PRICE_MARKER_STATUSES.viewed}
+        accessibilityLabel="Click the price marker"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -84,6 +86,7 @@ describe('BpkMapMarker', () => {
         label="£120"
         position={position}
         className="custom-class-1 custom-class-2"
+        accessibilityLabel="Click the price marker"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -96,6 +99,7 @@ describe('BpkMapMarker', () => {
         label="£120"
         position={position}
         buttonProps={{ testId: 'arbitrary value' }}
+        accessibilityLabel="Click the price marker"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -109,6 +113,7 @@ describe('BpkMapMarker', () => {
         onClick={() => {
           alert('Marker clicked'); // eslint-disable-line no-alert
         }}
+        accessibilityLabel="Click the price marker"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
