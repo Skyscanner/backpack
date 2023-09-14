@@ -116,6 +116,7 @@ export default () => (
         console.log("Price marker pressed.")
       }}
       status={PRICE_MARKER_STATUSES_V2.focused}
+      accessibilityLabel="Price marker pressed."
     />
     <BpkPriceMarkerV2
       label="£120"
@@ -125,6 +126,7 @@ export default () => (
       }}
       status={PRICE_MARKER_STATUSES_V2.focused}
       style={STYLE_TYPES.onDark}
+      accessibilityLabel="Price marker pressed"
     />
     <BpkPriceMarkerV2
       label="£120"
@@ -133,6 +135,7 @@ export default () => (
         console.log("Price marker pressed.")
       }}
       status={PRICE_MARKER_STATUSES_V2.viewed}
+      accessibilityLabel="Have seen Price marker before"
     />
     <BpkPriceMarkerV2
       label={<AlignedLandmarkIconSm />}
@@ -141,6 +144,7 @@ export default () => (
         console.log("Price marker pressed.")
       }}
       status={PRICE_MARKER_STATUSES_V2.viewed}
+      accessibilityLabel="Have seen Price marker with icon before"
     />
   </BpkMap>
 );
@@ -224,16 +228,16 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 ### BpkPriceMarker
 
-| Property       | PropType                               | Required | Default Value |
-|----------------| -------------------------------------- | -------- | ------------- |
-| label          | string                                 | true     | -             |
+| Property       | PropType                                     | Required | Default Value |
+| -------------- | -------------------------------------------- | -------- | ------------- |
+| label          | string                                       | true     | -             |
 | position       | shape({latitude: number, longitude: number}) | true     | -             |
-| arrowClassName | string                                 | false    | null          |
-| className      | string                                 | false    | null          |
-| disabled       | bool                                   | false    | false         |
-| onClick        | func                                   | false    | null          |
-| status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)                                  | false    | `PRICE_MARKER_STATUSES.default`             |
-| buttonProps    | object                                 | false    | null          |
+| arrowClassName | string                                       | false    | null          |
+| className      | string                                       | false    | null          |
+| disabled       | bool                                         | false    | false         |
+| onClick        | func                                         | false    | null          |
+| status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)                                        | false    | `PRICE_MARKER_STATUSES.default`             |
+| buttonProps    | object                                       | false    | null          |
 
 ### BpkPriceMarkerV2
 
