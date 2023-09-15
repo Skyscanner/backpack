@@ -22,20 +22,20 @@ import { axe } from 'jest-axe';
 import BpkPriceMarkerV2 from './BpkPriceMarker';
 
 type Props = {
-  children: Node,
+  children: Node;
 };
 
 jest.mock('@react-google-maps/api', () => ({
   OverlayView: (props: Props) => (
     <div>
       <div className="mock-overlay-view" />
-      { }
+      {}
       {props.children}
     </div>
   ),
 }));
 
-describe('BpkMapMarker accessibility tests', () => {
+describe('BpkPriceMarkerV2 accessibility tests', () => {
   const position = {
     latitude: 41.386947,
     longitude: 2.170048,
@@ -46,7 +46,8 @@ describe('BpkMapMarker accessibility tests', () => {
       <BpkPriceMarkerV2
         label="£120"
         position={position}
-        accessibilityLabel="Click the price marker" />,
+        accessibilityLabel="Click the price marker"
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

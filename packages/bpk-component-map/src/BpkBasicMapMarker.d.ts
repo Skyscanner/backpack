@@ -19,11 +19,10 @@ import type { Node } from 'react';
 import { type LatLong } from './common-types';
 
 export type Props = {
-  children: Node,
-  position: LatLong,
-}
+  children: Node;
+  position: LatLong;
+};
 
-declare const BpkBasicMapMarker:({children, position}: Props) => JSX.Element;
+declare const BpkBasicMapMarker: ({ children, position }: Props) => JSX.Element;
 
-
-export default BpkBasicMapMarker
+export default BpkBasicMapMarker;

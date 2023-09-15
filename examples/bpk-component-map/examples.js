@@ -183,7 +183,7 @@ class StatefulBpkPriceMarker extends Component<
 class StatefulBpkPriceMarkerV2 extends Component<
   { action: () => mixed, style: string },
   PriceMarkerState,
-  > {
+> {
   static defaultProps = {
     action: () => null,
   };
@@ -219,20 +219,25 @@ class StatefulBpkPriceMarkerV2 extends Component<
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
-        {venues.filter( venue=> venue.disabled === false).map((venue) => (
-          <BpkPriceMarkerV2
-            id={venue.id}
-            label={venue.price}
-            position={{ latitude: venue.latitude, longitude: venue.longitude }}
-            onClick={() => {
-              this.props.action();
-              this.selectVenue(venue.id);
-            }}
-            status={this.getStatus(venue.id)}
-            style={this.props.style}
-            accessibilityLabel="Click the price marker"
-          />
-        ))}
+        {venues
+          .filter((venue) => venue.disabled === false)
+          .map((venue) => (
+            <BpkPriceMarkerV2
+              id={venue.id}
+              label={venue.price}
+              position={{
+                latitude: venue.latitude,
+                longitude: venue.longitude,
+              }}
+              onClick={() => {
+                this.props.action();
+                this.selectVenue(venue.id);
+              }}
+              status={this.getStatus(venue.id)}
+              style={this.props.style}
+              accessibilityLabel="Click the price marker"
+            />
+          ))}
       </StoryMap>
     );
   }
@@ -352,11 +357,14 @@ const WithPriceMarkersExample = () => (
 );
 
 const WithPriceMarkersV2Example = () => (
-  <StatefulBpkPriceMarkerV2 action={action('Price marker clicked')} style={STYLE_TYPES.default}  />
+  <StatefulBpkPriceMarkerV2 action={action('Price marker clicked')} />
 );
 
 const WithPriceMarkersV2OnDarkExample = () => (
-  <StatefulBpkPriceMarkerV2 action={action('Price marker clicked')} style={STYLE_TYPES.onDark} />
+  <StatefulBpkPriceMarkerV2
+    action={action('Price marker clicked')}
+    style={STYLE_TYPES.onDark}
+  />
 );
 
 const MultipleMapsExample = () => (
@@ -376,10 +384,10 @@ const MultipleMapsExample = () => (
 
 const VisualTestExample = () => (
   <>
-    <WithPriceMarkersV2Example/>
-    <WithPriceMarkersV2OnDarkExample/>
+    <WithPriceMarkersV2Example />
+    <WithPriceMarkersV2OnDarkExample />
   </>
-)
+);
 
 export {
   SimpleExample,

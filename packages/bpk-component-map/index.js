@@ -23,7 +23,10 @@ import BpkIconMarker, {
   type Props as IconMarkerProps,
 } from './src/BpkIconMarker';
 import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './src/BpkPriceMarker';
-import BpkPriceMarkerV2, { PRICE_MARKER_STATUSES as PRICE_MARKER_STATUSES_V2, STYLE_TYPES } from './src/BpkPriceMarkerV2/BpkPriceMarker';
+import BpkPriceMarkerV2, {
+  PRICE_MARKER_STATUSES as PRICE_MARKER_STATUSES_V2,
+  STYLE_TYPES,
+} from './src/BpkPriceMarkerV2/BpkPriceMarker';
 import BpkOverlayView from './src/BpkOverlayView';
 import withGoogleMapsScript from './src/withGoogleMapsScript';
 import { type LatLong } from './src/common-types';

@@ -21,20 +21,20 @@ import { render } from '@testing-library/react';
 import BpkPriceMarkerV2, { PRICE_MARKER_STATUSES } from './BpkPriceMarker';
 
 type Props = {
-  children: Node,
+  children: Node;
 };
 
 jest.mock('@react-google-maps/api', () => ({
   OverlayView: (props: Props) => (
     <div>
       <div className="mock-overlay-view" />
-      { }
+      {}
       {props.children}
     </div>
   ),
 }));
 
-describe('BpkMapMarker', () => {
+describe('BpkPriceMarkerV2', () => {
   const position = {
     latitude: 41.386947,
     longitude: 2.170048,
@@ -42,7 +42,11 @@ describe('BpkMapMarker', () => {
 
   it('should render properly', () => {
     const { asFragment } = render(
-      <BpkPriceMarkerV2 label="£120" position={position}   accessibilityLabel="Click the price marker" />,
+      <BpkPriceMarkerV2
+        label="£120"
+        position={position}
+        accessibilityLabel="Click the price marker"
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -50,7 +54,11 @@ describe('BpkMapMarker', () => {
   it('should render properly with a icon', () => {
     const icon = <span>Icon</span>;
     const { asFragment } = render(
-      <BpkPriceMarkerV2 label={icon} position={position} accessibilityLabel="Click the price marker"/>,
+      <BpkPriceMarkerV2
+        label={icon}
+        position={position}
+        accessibilityLabel="Click the price marker"
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -79,7 +87,6 @@ describe('BpkMapMarker', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-
   it('should render correctly with a "className" attribute', () => {
     const { asFragment } = render(
       <BpkPriceMarkerV2
@@ -91,7 +98,6 @@ describe('BpkMapMarker', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-
 
   it('should render correctly with a "buttonProps" attribute', () => {
     const { asFragment } = render(

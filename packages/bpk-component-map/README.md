@@ -241,16 +241,16 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 ### BpkPriceMarkerV2
 
-| Property  | PropType                                                                                                | Required  | Default Value |
-| --------- |---------------------------------------------------------------------------------------------------------|-----------| ------------- |
-| accessibilityLabel          | string                                                                                | true      | -             |
-| label     | ReactNode or string                                                                                     | true      | -             |
-| position  | shape({latitude: number, longitude: number})                                                            | true      | -             |
-| className | string                                                                                                  | false     | null          |
-| onClick   | func                                                                                                    | false     | null          |
-| status    | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`) | false     | `PRICE_MARKER_STATUSES.default`|
-| buttonProps | { [key: string]: string }                                                                             | false     | null          |
-| style     | oneOf(`STYLE_TYPES.default`, `STYLE_TYPES.onDark`)                                                      | false     | null          |
+| Property  | PropType                                                                                                | Required  | Default Value                   |
+| --------- |---------------------------------------------------------------------------------------------------------|-----------|---------------------------------|
+| accessibilityLabel          | string                                                                                | true      | -                               |
+| label     | ReactNode or string                                                                                     | true      | -                               |
+| position  | shape({latitude: number, longitude: number})                                                            | true      | -                               |
+| className | string                                                                                                  | false     | null                            |
+| onClick   | func                                                                                                    | false     | null                            |
+| status    | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`) | false     | `PRICE_MARKER_STATUSES.default` |
+| buttonProps | { [key: string]: string }                                                                             | false     | null                            |
+| style     | oneOf(`STYLE_TYPES.default`, `STYLE_TYPES.onDark`)                                                      | false     | `STYLE_TYPES.default`           |
 
 ### BpkOverlayView
 

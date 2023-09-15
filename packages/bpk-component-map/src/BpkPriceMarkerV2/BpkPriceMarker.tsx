@@ -19,12 +19,10 @@
 import type { MouseEvent, ReactNode } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../../bpk-component-text/src/BpkText';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
 
 import STYLES from './BpkPriceMarker.module.scss';
-
-
 
 const getClassName = cssModules(STYLES);
 export const PRICE_MARKER_STATUSES = {
@@ -33,7 +31,8 @@ export const PRICE_MARKER_STATUSES = {
   viewed: 'viewed',
 } as const;
 
-export type Status = (typeof PRICE_MARKER_STATUSES)[keyof typeof PRICE_MARKER_STATUSES];
+export type Status =
+  (typeof PRICE_MARKER_STATUSES)[keyof typeof PRICE_MARKER_STATUSES];
 
 export const STYLE_TYPES = {
   default: 'default',
@@ -43,17 +42,17 @@ export const STYLE_TYPES = {
 export type Style = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
 
 type Props = {
-  label:  ReactNode | string,
-  accessibilityLabel: string,
+  label: ReactNode | string;
+  accessibilityLabel: string;
   position: {
-    latitude: number,
-    longitude: number,
-  },
-  className?: string,
-  onClick?: (event: MouseEvent) => void,
-  buttonProps?: { [key: string]: string },
-  status?: Status,
-  style?: Style,
+    latitude: number;
+    longitude: number;
+  };
+  className?: string;
+  onClick?: (event: MouseEvent) => void;
+  buttonProps?: { [key: string]: string };
+  status?: Status;
+  style?: Style;
 };
 
 const BpkPriceMarkerV2 = (props: Props) => {
@@ -64,7 +63,7 @@ const BpkPriceMarkerV2 = (props: Props) => {
     label,
     onClick,
     position,
-    status =  PRICE_MARKER_STATUSES.default,
+    status = PRICE_MARKER_STATUSES.default,
     style = STYLE_TYPES.default,
     ...rest
   } = props;
@@ -74,22 +73,25 @@ const BpkPriceMarkerV2 = (props: Props) => {
   const classNames = getClassName(
     'bpk-price-marker',
     onClick && 'bpk-price-marker--dynamic',
-    style === STYLE_TYPES.onDark ? `bpk-price-marker-${status}--onDark`: `bpk-price-marker-${status}`,
+    style === STYLE_TYPES.onDark
+      ? `bpk-price-marker-${status}--onDark`
+      : `bpk-price-marker-${status}`,
     className,
   );
 
   return (
-    <BpkBasicMapMarker position={position} aria-label={accessibilityLabel} {...rest}>
+    <BpkBasicMapMarker
+      position={position}
+      aria-label={accessibilityLabel}
+      {...rest}
+    >
       <button
         type="button"
         className={markerWrapperClassNames}
         onClick={onClick}
         {...buttonProps}
       >
-        <BpkText
-          className={classNames}
-          textStyle={TEXT_STYLES.label2}
-        >
+        <BpkText className={classNames} textStyle={TEXT_STYLES.label2}>
           {label}
         </BpkText>
       </button>

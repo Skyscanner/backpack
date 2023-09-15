@@ -24,7 +24,8 @@ export const PRICE_MARKER_STATUSES = {
   viewed: 'viewed',
 } as const;
 
-export type Status = (typeof PRICE_MARKER_STATUSES)[keyof typeof PRICE_MARKER_STATUSES];
+export type Status =
+  (typeof PRICE_MARKER_STATUSES)[keyof typeof PRICE_MARKER_STATUSES];
 
 export const STYLE_TYPES = {
   default: 'default',
@@ -34,17 +35,17 @@ export const STYLE_TYPES = {
 export type Style = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
 
 type Props = {
-  label: ReactNode | string,
-  accessibilityLabel: string,
+  label: ReactNode | string;
+  accessibilityLabel: string;
   position: {
-    latitude: number,
-    longitude: number,
-  },
-  className?: string,
-  onClick?: (event: MouseEvent) => void,
-  buttonProps?: { [key: string]: string },
-  status?: Status,
-  style?: Style,
+    latitude: number;
+    longitude: number;
+  };
+  className?: string;
+  onClick?: (event: MouseEvent) => void;
+  buttonProps?: { [key: string]: string };
+  status?: Status;
+  style?: Style;
 };
 
 declare const BpkPriceMarkerV2: ({
@@ -57,4 +58,4 @@ declare const BpkPriceMarkerV2: ({
   style,
 }: Props) => JSX.Element;
 
-export default BpkPriceMarkerV2
+export default BpkPriceMarkerV2;
