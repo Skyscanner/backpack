@@ -22,7 +22,7 @@ import type { Node } from 'react';
 import PropTypes from 'prop-types';
 
 import { action } from '../bpk-storybook-utils';
-import BpkText from '../../packages/bpk-component-text';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import LandmarkIconSm from '../../packages/bpk-component-icon/sm/landmark';
 import FoodIconSm from '../../packages/bpk-component-icon/sm/food';
@@ -38,6 +38,11 @@ import BpkMap, {
   PRICE_MARKER_STATUSES_V2,
   withGoogleMapsScript,
 } from '../../packages/bpk-component-map';
+import { cssModules } from '../../packages/bpk-react-utils/index';
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkMapWithLoading = withGoogleMapsScript(BpkMap);
 
@@ -70,6 +75,32 @@ StoryMap.defaultProps = {
   language: '',
 };
 
+const rawPrice = '£151';
+
+const iconWithPriceNode = (
+  <div className={getClassName('pass-node-wrapper')}>
+    <AlignedLandmarkIconSm />
+    <BpkText
+      textStyle={TEXT_STYLES.label2}
+      className={getClassName('pass-node-wrapper-text')}
+    >
+      {rawPrice}
+    </BpkText>
+  </div>
+);
+
+const selectedIconWithPriceNode = (
+  <div className={getClassName('pass-node-wrapper')}>
+    <AlignedLandmarkIconSm className={getClassName('pass-node-wrapper-icon')} />
+    <BpkText
+      textStyle={TEXT_STYLES.label2}
+      className={getClassName('pass-node-wrapper-text')}
+    >
+      {rawPrice}
+    </BpkText>
+  </div>
+);
+
 const venues = [
   {
     id: '1',
@@ -79,6 +110,7 @@ const venues = [
     price: '£48',
     disabled: false,
     icon: <AlignedLandmarkIconSm />,
+    iconWithPrice: iconWithPriceNode,
   },
   {
     id: '2',
@@ -88,6 +120,7 @@ const venues = [
     price: '£151',
     disabled: false,
     icon: <AlignedFoodIconSm />,
+    iconWithPrice: selectedIconWithPriceNode,
   },
   {
     id: '3',
@@ -97,6 +130,7 @@ const venues = [
     price: '£62',
     disabled: false,
     icon: <AlignedHotelIconSm />,
+    iconWithPrice: iconWithPriceNode,
   },
   {
     id: '4',
@@ -106,6 +140,7 @@ const venues = [
     price: '£342',
     disabled: false,
     icon: <AlignedHotelIconSm />,
+    iconWithPrice: iconWithPriceNode,
   },
   {
     id: '5',
@@ -115,6 +150,7 @@ const venues = [
     price: 'Sold out',
     disabled: true,
     icon: <AlignedParkingIconSm />,
+    iconWithPrice: iconWithPriceNode,
   },
 ];
 
@@ -181,14 +217,18 @@ class StatefulBpkPriceMarker extends Component<
 }
 
 class StatefulBpkPriceMarkerV2 extends Component<
-  { action: () => mixed, style: string },
+  { action: () => mixed, style: string, iconWithPrice: boolean },
   PriceMarkerState,
 > {
   static defaultProps = {
     action: () => null,
   };
 
-  constructor(props: { action: () => mixed, style: string }) {
+  constructor(props: {
+    action: () => mixed,
+    style: string,
+    iconWithPrice: boolean,
+  }) {
     super(props);
     this.state = {
       selectedId: '2',
@@ -224,7 +264,9 @@ class StatefulBpkPriceMarkerV2 extends Component<
           .map((venue) => (
             <BpkPriceMarkerV2
               id={venue.id}
-              label={venue.price}
+              label={
+                this.props.iconWithPrice ? venue.iconWithPrice : venue.price
+              }
               position={{
                 latitude: venue.latitude,
                 longitude: venue.longitude,
@@ -357,13 +399,24 @@ const WithPriceMarkersExample = () => (
 );
 
 const WithPriceMarkersV2Example = () => (
-  <StatefulBpkPriceMarkerV2 action={action('Price marker clicked')} />
+  <StatefulBpkPriceMarkerV2
+    action={action('Price marker clicked')}
+    iconWithPrice={false}
+  />
 );
 
 const WithPriceMarkersV2OnDarkExample = () => (
   <StatefulBpkPriceMarkerV2
     action={action('Price marker clicked')}
     style={STYLE_TYPES.onDark}
+    iconWithPrice={false}
+  />
+);
+
+const WithIconPriceMarkersV2Example = () => (
+  <StatefulBpkPriceMarkerV2
+    action={action('Price marker clicked')}
+    iconWithPrice
   />
 );
 
@@ -385,6 +438,7 @@ const MultipleMapsExample = () => (
 const VisualTestExample = () => (
   <>
     <WithPriceMarkersV2Example />
+    <WithIconPriceMarkersV2Example />
     <WithPriceMarkersV2OnDarkExample />
   </>
 );
@@ -400,6 +454,7 @@ export {
   WithIconMarkersExample,
   WithPriceMarkersExample,
   WithPriceMarkersV2Example,
+  WithIconPriceMarkersV2Example,
   WithPriceMarkersV2OnDarkExample,
   MultipleMapsExample,
   VisualTestExample,
