@@ -122,8 +122,7 @@ const venues = [
   },
 ];
 
-const buildIconWithPriceNode = (selected: boolean, price: string) => {
-  return (
+const buildIconWithPriceNode = (selected: boolean, price: string) => (
     <div className={getClassName('pass-node-wrapper')}>
       <AlignedLandmarkIconSm
         className={selected ? getClassName('pass-node-wrapper-icon') : null}
@@ -136,7 +135,6 @@ const buildIconWithPriceNode = (selected: boolean, price: string) => {
       </BpkText>
     </div>
   );
-};
 
 type PriceMarkerState = {
   selectedId: string,
