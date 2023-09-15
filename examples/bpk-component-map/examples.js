@@ -37,7 +37,7 @@ import BpkMap, {
   PRICE_MARKER_STATUSES_V2,
   withGoogleMapsScript,
 } from '../../packages/bpk-component-map';
-import { cssModules } from '../../packages/bpk-react-utils/index';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
