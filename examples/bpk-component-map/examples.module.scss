@@ -23,11 +23,10 @@
   align-items: center;
 
   &-text {
-    padding-left:bpk-spacing-md() ;
+    padding-left:bpk-spacing-md();
   }
 
   &-icon {
     fill: $bpk-text-on-dark-day;
   }
-
 }
