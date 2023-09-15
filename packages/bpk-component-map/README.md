@@ -97,7 +97,7 @@ export default () => (
 BpkPriceMarker V2 version that is the BpkPriceMarker redesign.
 
 ```js
-import BpkMap, { BpkPriceMarkerV2, PRICE_MARKER_STATUSES_V2, STYLE_TYPES } from '@skyscanner/backpack-web/bpk-component-map';
+import BpkMap, { BpkPriceMarkerV2, PRICE_MARKER_STATUSES_V2 } from '@skyscanner/backpack-web/bpk-component-map';
 
 export default () => (
   <BpkMap
@@ -124,16 +124,6 @@ export default () => (
       onClick={() => {
         console.log("Price marker pressed.")
       }}
-      status={PRICE_MARKER_STATUSES_V2.focused}
-      style={STYLE_TYPES.onDark}
-      accessibilityLabel="Price marker pressed"
-    />
-    <BpkPriceMarkerV2
-      label="£120"
-      position={{ latitude: 27.9881, longitude: 86.925 }}
-      onClick={() => {
-        console.log("Price marker pressed.")
-      }}
       status={PRICE_MARKER_STATUSES_V2.viewed}
       accessibilityLabel="Have seen Price marker before"
     />
@@ -141,10 +131,9 @@ export default () => (
       label={<AlignedLandmarkIconSm />}
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
-        console.log("Price marker pressed.")
+        console.log("Click the Price marker with icon.")
       }}
-      status={PRICE_MARKER_STATUSES_V2.viewed}
-      accessibilityLabel="Have seen Price marker with icon before"
+      accessibilityLabel="Click the Price marker with icon"
     />
   </BpkMap>
 );
@@ -250,7 +239,6 @@ When using `withGoogleMapsScript`, some additional props are available:
 | onClick   | func                                                                                                    | false     | null                            |
 | status    | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`) | false     | `PRICE_MARKER_STATUSES.default` |
 | buttonProps | { [key: string]: string }                                                                             | false     | null                            |
-| style     | oneOf(`STYLE_TYPES.default`, `STYLE_TYPES.onDark`)                                                      | false     | `STYLE_TYPES.default`           |
 
 ### BpkOverlayView
 

@@ -29,7 +29,6 @@ import FoodIconSm from '../../packages/bpk-component-icon/sm/food';
 import ParkingIconSm from '../../packages/bpk-component-icon/sm/parking';
 import HotelIconSm from '../../packages/bpk-component-icon/sm/hotels';
 import BpkMap, {
-  STYLE_TYPES,
   BpkOverlayView,
   BpkIconMarker,
   BpkPriceMarker,
@@ -217,18 +216,14 @@ class StatefulBpkPriceMarker extends Component<
 }
 
 class StatefulBpkPriceMarkerV2 extends Component<
-  { action: () => mixed, style: string, iconWithPrice: boolean },
+  { action: () => mixed, iconWithPrice: boolean },
   PriceMarkerState,
 > {
   static defaultProps = {
     action: () => null,
   };
 
-  constructor(props: {
-    action: () => mixed,
-    style: string,
-    iconWithPrice: boolean,
-  }) {
+  constructor(props: { action: () => mixed, iconWithPrice: boolean }) {
     super(props);
     this.state = {
       selectedId: '2',
@@ -276,7 +271,6 @@ class StatefulBpkPriceMarkerV2 extends Component<
                 this.selectVenue(venue.id);
               }}
               status={this.getStatus(venue.id)}
-              style={this.props.style}
               accessibilityLabel="Click the price marker"
             />
           ))}
@@ -405,14 +399,6 @@ const WithPriceMarkersV2Example = () => (
   />
 );
 
-const WithPriceMarkersV2OnDarkExample = () => (
-  <StatefulBpkPriceMarkerV2
-    action={action('Price marker clicked')}
-    style={STYLE_TYPES.onDark}
-    iconWithPrice={false}
-  />
-);
-
 const WithIconPriceMarkersV2Example = () => (
   <StatefulBpkPriceMarkerV2
     action={action('Price marker clicked')}
@@ -439,7 +425,6 @@ const VisualTestExample = () => (
   <>
     <WithPriceMarkersV2Example />
     <WithIconPriceMarkersV2Example />
-    <WithPriceMarkersV2OnDarkExample />
   </>
 );
 
@@ -455,7 +440,6 @@ export {
   WithPriceMarkersExample,
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
-  WithPriceMarkersV2OnDarkExample,
   MultipleMapsExample,
   VisualTestExample,
 };

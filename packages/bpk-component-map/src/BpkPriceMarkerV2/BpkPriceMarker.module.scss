@@ -34,31 +34,16 @@
   &-default {
     background-color: $bpk-text-on-dark-day;
     color: $bpk-text-on-light-day;
-
-    &--onDark {
-      background-color: $bpk-text-on-dark-day;
-      color: $bpk-text-on-light-night;
-    }
   }
 
   &-viewed {
     background-color: $bpk-private-map-previous-selection-day;
     color: $bpk-text-on-light-day;
-
-    &--onDark {
-      background-color: $bpk-private-map-previous-selection-day;
-      color: $bpk-text-on-light-night;
-    }
   }
 
   &-focused {
     background-color: $bpk-core-primary-day;
     color: $bpk-text-on-dark-day;
-
-    &--onDark {
-      background-color: $bpk-core-primary-night;
-      color: $bpk-text-on-dark-day;
-    }
   }
 
   &__wrapper {

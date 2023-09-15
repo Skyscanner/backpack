@@ -29,7 +29,6 @@ import {
   WithPriceMarkersExample,
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
-  WithPriceMarkersV2OnDarkExample,
   MultipleMapsExample,
   VisualTestExample,
 } from './examples';
@@ -57,9 +56,7 @@ export const IconMarkers = WithIconMarkersExample;
 
 export const PriceMarkers = WithPriceMarkersExample;
 
-export const PriceMarkersV2Default = WithPriceMarkersV2Example;
-
-export const PriceMarkersV2OnDark = WithPriceMarkersV2OnDarkExample;
+export const PriceMarkersV2 = WithPriceMarkersV2Example;
 
 export const WithIconPriceMarkersV2 = WithIconPriceMarkersV2Example;
 
