@@ -74,32 +74,6 @@ StoryMap.defaultProps = {
   language: '',
 };
 
-const rawPrice = '£151';
-
-const iconWithPriceNode = (
-  <div className={getClassName('pass-node-wrapper')}>
-    <AlignedLandmarkIconSm />
-    <BpkText
-      textStyle={TEXT_STYLES.label2}
-      className={getClassName('pass-node-wrapper-text')}
-    >
-      {rawPrice}
-    </BpkText>
-  </div>
-);
-
-const selectedIconWithPriceNode = (
-  <div className={getClassName('pass-node-wrapper')}>
-    <AlignedLandmarkIconSm className={getClassName('pass-node-wrapper-icon')} />
-    <BpkText
-      textStyle={TEXT_STYLES.label2}
-      className={getClassName('pass-node-wrapper-text')}
-    >
-      {rawPrice}
-    </BpkText>
-  </div>
-);
-
 const venues = [
   {
     id: '1',
@@ -109,7 +83,6 @@ const venues = [
     price: '£48',
     disabled: false,
     icon: <AlignedLandmarkIconSm />,
-    iconWithPrice: iconWithPriceNode,
   },
   {
     id: '2',
@@ -119,7 +92,6 @@ const venues = [
     price: '£151',
     disabled: false,
     icon: <AlignedFoodIconSm />,
-    iconWithPrice: selectedIconWithPriceNode,
   },
   {
     id: '3',
@@ -129,7 +101,6 @@ const venues = [
     price: '£62',
     disabled: false,
     icon: <AlignedHotelIconSm />,
-    iconWithPrice: iconWithPriceNode,
   },
   {
     id: '4',
@@ -139,7 +110,6 @@ const venues = [
     price: '£342',
     disabled: false,
     icon: <AlignedHotelIconSm />,
-    iconWithPrice: iconWithPriceNode,
   },
   {
     id: '5',
@@ -149,9 +119,24 @@ const venues = [
     price: 'Sold out',
     disabled: true,
     icon: <AlignedParkingIconSm />,
-    iconWithPrice: iconWithPriceNode,
   },
 ];
+
+const buildIconWithPriceNode = (selected: boolean, price: string) => {
+  return (
+    <div className={getClassName('pass-node-wrapper')}>
+      <AlignedLandmarkIconSm
+        className={selected ? getClassName('pass-node-wrapper-icon') : null}
+      />
+      <BpkText
+        textStyle={TEXT_STYLES.label2}
+        className={getClassName('pass-node-wrapper-text')}
+      >
+        {price}
+      </BpkText>
+    </div>
+  );
+};
 
 type PriceMarkerState = {
   selectedId: string,
@@ -260,7 +245,12 @@ class StatefulBpkPriceMarkerV2 extends Component<
             <BpkPriceMarkerV2
               id={venue.id}
               label={
-                this.props.iconWithPrice ? venue.iconWithPrice : venue.price
+                this.props.iconWithPrice
+                  ? buildIconWithPriceNode(
+                      this.state.selectedId === venue.id,
+                      venue.price,
+                    )
+                  : venue.price
               }
               position={{
                 latitude: venue.latitude,
