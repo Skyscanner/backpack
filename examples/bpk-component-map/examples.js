@@ -209,7 +209,7 @@ class StatefulBpkPriceMarkerV2 extends Component<
     if (this.state.viewedVenues.includes(id)) {
       return MARKER_STATUSES.previous_selected;
     }
-    return MARKER_STATUSES.default;
+    return MARKER_STATUSES.unselected;
   };
 
   selectVenue = (id: string) => {
