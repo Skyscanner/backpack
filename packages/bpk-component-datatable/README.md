@@ -21,19 +21,25 @@ const rows = [
 const onRowClick = row => alert(JSON.stringify(row));
 
 export default () => (
-  <BpkDataTable rows={rows} height={'12.5rem'} onRowClick={onRowClick}>
-    <BpkDataTableColumn
-      label={'Name'}
-      dataKey={'name'}
-      width={'6.25rem'}
-    />
-    <BpkDataTableColumn
-      label={'Description'}
-      dataKey={'description'}
-      width={'6.25rem'}
-      flexGrow={1}
-    />
-  </BpkDataTable>
+  <BpkDataTable
+    rows={rows}
+    height={'12.5rem'}
+    onRowClick={onRowClick}
+    columns={
+    [
+      {
+        label: 'Name',
+        accessor: 'name',
+        width: '6.25rem',
+      },
+      {
+        label: 'Description',
+        accessor: 'description',
+        width: '6.25rem',
+        flexGrow: 1,
+      }
+    ]}
+  />
 );
 ```
 
@@ -81,29 +87,30 @@ export default () => (
     sort={sortFunction}
     sortBy={sortByValue}
     sortDirection={sortDirectionValue}
-  >
-    <BpkDataTableColumn
-      label="Name"
-      dataKey="name"
-      width={"6.25rem"}
+    columns={
+      [
+        {
+          label: 'Name',
+          accessor: 'name',
+          width: '6.25rem',
+        },
+        {
+          label: 'Description',
+          accessor: 'description',
+          width: '6.25rem',
+        },
+        {
+          label: 'Seat',
+          accessor: 'seat',
+          width: '6.25rem',
+          flexGrow: 1,
+          Cell: ({ cellData }) => (
+            <Fragment>
+              {cellData.office} - {cellData.desk}
+            </Fragment>
+          )}
+      ]}
     />
-    <BpkDataTableColumn
-      label="Description"
-      dataKey="description"
-      width={"6.25rem"}
-    />
-    <BpkDataTableColumn
-      label="Seat"
-      dataKey="seat"
-      width={"6.25rem"}
-      flexGrow={1}
-      cellRenderer={({ cellData }) => (
-        <Fragment>
-          {cellData.office} - {cellData.desk}
-        </Fragment>
-      )}
-    />
-  </BpkDataTable>
 );
 ```
 
