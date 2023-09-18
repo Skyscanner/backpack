@@ -14,12 +14,15 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import LandmarkIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/landmark';
+import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
 import BpkMap, {
   BpkIconMarker,
   BpkOverlayView,
 } from '@skyscanner/backpack-web/bpk-component-map';
 
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
+const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
+
 
 export default () => (
   <BpkMap
@@ -128,7 +131,8 @@ export default () => (
       accessibilityLabel="Have seen Price marker before"
     />
     <BpkPriceMarkerV2
-      label={<AlignedLandmarkIconSm />}
+      label="£120"
+      icon={<AlignedAirportsIconSm />}
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
         console.log("Click the Price marker with icon.")
@@ -230,15 +234,16 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 ### BpkPriceMarkerV2
 
-| Property  | PropType                                                                                                | Required  | Default Value                   |
-| --------- |---------------------------------------------------------------------------------------------------------|-----------|---------------------------------|
-| accessibilityLabel          | string                                                                                | true      | -                               |
-| label     | ReactNode or string                                                                                     | true      | -                               |
-| position  | shape({latitude: number, longitude: number})                                                            | true      | -                               |
-| className | string                                                                                                  | false     | null                            |
-| onClick   | func                                                                                                    | false     | null                            |
-| status    | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`) | false     | `PRICE_MARKER_STATUSES.default` |
-| buttonProps | { [key: string]: string }                                                                             | false     | null                            |
+| Property           | PropType                                                                                  | Required | Default Value                   |
+|--------------------|-------------------------------------------------------------------------------------------|----------|---------------------------------|
+| accessibilityLabel | string                                                                                    | true     | -                               |
+| label              | string                                                                                    | true     | -                               |
+| icon               | ReactNode                                                                                 | false    | -                               |
+| position           | shape({latitude: number, longitude: number})                                              | true     | -                               |
+| className          | string                                                                                    | false    | null                            |
+| onClick            | func                                                                                      | false    | null                            |
+| status             | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`) | false    | `PRICE_MARKER_STATUSES.default` |
+| buttonProps        | { [key: string]: string }                                                                 | false    | null                            |
 
 ### BpkOverlayView
 

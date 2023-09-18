@@ -10,11 +10,15 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "fo
       class="bpk-price-marker__wrapper"
       type="button"
     >
-      <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-focused"
+      <div
+        class="bpk-price-marker bpk-price-marker-focused bpk-price-marker--icon"
       >
-        £120
-      </span>
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -30,11 +34,15 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "vi
       class="bpk-price-marker__wrapper"
       type="button"
     >
-      <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-viewed"
+      <div
+        class="bpk-price-marker bpk-price-marker-viewed"
       >
-        £120
-      </span>
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -51,11 +59,15 @@ exports[`BpkPriceMarkerV2 should render correctly with a "buttonProps" attribute
       testid="arbitrary value"
       type="button"
     >
-      <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default"
+      <div
+        class="bpk-price-marker bpk-price-marker-default"
       >
-        £120
-      </span>
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -71,11 +83,15 @@ exports[`BpkPriceMarkerV2 should render correctly with a "className" attribute 1
       class="bpk-price-marker__wrapper"
       type="button"
     >
-      <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default custom-class-1 custom-class-2"
+      <div
+        class="bpk-price-marker bpk-price-marker-default custom-class-1 custom-class-2"
       >
-        £120
-      </span>
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -91,11 +107,15 @@ exports[`BpkPriceMarkerV2 should render correctly with a "onClick" attribute 1`]
       class="bpk-price-marker__wrapper"
       type="button"
     >
-      <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker--dynamic bpk-price-marker-default"
+      <div
+        class="bpk-price-marker bpk-price-marker--dynamic bpk-price-marker-default"
       >
-        £120
-      </span>
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -111,11 +131,15 @@ exports[`BpkPriceMarkerV2 should render properly 1`] = `
       class="bpk-price-marker__wrapper"
       type="button"
     >
-      <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default"
+      <div
+        class="bpk-price-marker bpk-price-marker-default"
       >
-        £120
-      </span>
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -131,13 +155,18 @@ exports[`BpkPriceMarkerV2 should render properly with a icon 1`] = `
       class="bpk-price-marker__wrapper"
       type="button"
     >
-      <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default"
+      <div
+        class="bpk-price-marker bpk-price-marker-default"
       >
         <span>
           Icon
         </span>
-      </span>
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>

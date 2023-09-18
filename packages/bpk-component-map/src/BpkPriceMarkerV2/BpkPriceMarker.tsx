@@ -35,7 +35,8 @@ export type Status =
   (typeof PRICE_MARKER_STATUSES)[keyof typeof PRICE_MARKER_STATUSES];
 
 type Props = {
-  label: ReactNode | string;
+  label: string;
+  icon?: ReactNode;
   accessibilityLabel: string;
   position: {
     latitude: number;
@@ -52,6 +53,7 @@ const BpkPriceMarkerV2 = (props: Props) => {
     accessibilityLabel,
     buttonProps,
     className,
+    icon,
     label,
     onClick,
     position,
@@ -66,6 +68,7 @@ const BpkPriceMarkerV2 = (props: Props) => {
     onClick && 'bpk-price-marker--dynamic',
     `bpk-price-marker-${status}`,
     className,
+    status === PRICE_MARKER_STATUSES.focused && 'bpk-price-marker--icon',
   );
 
   return (
@@ -80,9 +83,10 @@ const BpkPriceMarkerV2 = (props: Props) => {
         onClick={onClick}
         {...buttonProps}
       >
-        <BpkText className={classNames} textStyle={TEXT_STYLES.label2}>
-          {label}
-        </BpkText>
+        <div className={classNames}>
+          {icon}
+          <BpkText textStyle={TEXT_STYLES.label2}>{label}</BpkText>
+        </div>
       </button>
     </BpkBasicMapMarker>
   );

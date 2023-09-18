@@ -55,7 +55,8 @@ describe('BpkPriceMarkerV2', () => {
     const icon = <span>Icon</span>;
     const { asFragment } = render(
       <BpkPriceMarkerV2
-        label={icon}
+        label="£120"
+        icon={icon}
         position={position}
         accessibilityLabel="Click the price marker"
       />,

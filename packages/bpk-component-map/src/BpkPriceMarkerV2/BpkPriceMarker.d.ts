@@ -28,7 +28,8 @@ export type Status =
   (typeof PRICE_MARKER_STATUSES)[keyof typeof PRICE_MARKER_STATUSES];
 
 type Props = {
-  label: ReactNode | string;
+  label: string;
+  icon?: ReactNode;
   accessibilityLabel: string;
   position: {
     latitude: number;
