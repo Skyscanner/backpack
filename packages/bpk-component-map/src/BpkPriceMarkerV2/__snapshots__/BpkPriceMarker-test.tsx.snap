@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "focused" 1`] = `
+exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "previous_selected" 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -11,7 +11,7 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "fo
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-selected bpk-price-marker--icon"
+        class="bpk-price-marker bpk-price-marker-previous_selected"
       >
         <span
           class="bpk-text bpk-text--label-2"
@@ -24,7 +24,7 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "fo
 </DocumentFragment>
 `;
 
-exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "viewed" 1`] = `
+exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "selected" 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -35,7 +35,7 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "vi
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-previous_selected"
+        class="bpk-price-marker bpk-price-marker-selected bpk-price-marker--icon"
       >
         <span
           class="bpk-text bpk-text--label-2"
