@@ -100,7 +100,7 @@ export default () => (
 BpkPriceMarker V2 version that is the BpkPriceMarker redesign.
 
 ```js
-import BpkMap, { BpkPriceMarkerV2, PRICE_MARKER_STATUSES_V2 } from '@skyscanner/backpack-web/bpk-component-map';
+import BpkMap, { BpkPriceMarkerV2, MARKER_STATUSES } from '@skyscanner/backpack-web/bpk-component-map';
 
 export default () => (
   <BpkMap
@@ -118,7 +118,7 @@ export default () => (
       onClick={() => {
         console.log("Price marker pressed.")
       }}
-      status={PRICE_MARKER_STATUSES_V2.focused}
+      status={MARKER_STATUSES.selected}
       accessibilityLabel="Price marker pressed."
     />
     <BpkPriceMarkerV2
@@ -127,7 +127,7 @@ export default () => (
       onClick={() => {
         console.log("Price marker pressed.")
       }}
-      status={PRICE_MARKER_STATUSES_V2.viewed}
+      status={MARKER_STATUSES.previous_selected}
       accessibilityLabel="Have seen Price marker before"
     />
     <BpkPriceMarkerV2
@@ -234,16 +234,16 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 ### BpkPriceMarkerV2
 
-| Property           | PropType                                                                              | Required | Default Value               |
-|--------------------|---------------------------------------------------------------------------------------|----------|-----------------------------|
-| accessibilityLabel | string                                                                                | true     | -                           |
-| label              | string                                                                                | true     | -                           |
-| icon               | ReactNode                                                                             | false    | -                           |
-| position           | {latitude: number, longitude: number})                                                | true     | -                           |
-| className          | string                                                                                | false    | -                           |
-| onClick            | (event: MouseEvent) => void                                                           | false    | -                           |
-| status             | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`) | false    | `PRICE_MARKER_STATUSES.default` |
-| buttonProps        | { [key: string]: string }                                                             | false    | -                           |
+| Property           | PropType                                                                                             | Required | Default Value               |
+|--------------------|------------------------------------------------------------------------------------------------------|----------|-----------------------------|
+| accessibilityLabel | string                                                                                               | true     | -                           |
+| label              | string                                                                                               | true     | -                           |
+| icon               | ReactNode                                                                                            | false    | -                           |
+| position           | {latitude: number, longitude: number})                                                               | true     | -                           |
+| className          | string                                                                                               | false    | -                           |
+| onClick            | (event: MouseEvent) => void                                                                          | false    | -                           |
+| status             | oneOf(`MARKER_STATUSES.unselected`, `MARKER_STATUSES.selected`, `MARKER_STATUSES.previous_selected`) | false    | `PRICE_MARKER_STATUSES.unselected` |
+| buttonProps        | { [key: string]: string }                                                                            | false    | -                           |
 
 ### BpkOverlayView
 

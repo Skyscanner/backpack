@@ -18,14 +18,13 @@
 import type { Node } from 'react';
 import { MouseEvent, ReactNode } from 'react';
 
-export const PRICE_MARKER_STATUSES = {
-  default: 'default',
-  focused: 'focused',
-  viewed: 'viewed',
+export const MARKER_STATUSES = {
+  unselected: 'unselected',
+  selected: 'selected',
+  previous_selected: 'previous_selected',
 } as const;
 
-export type Status =
-  (typeof PRICE_MARKER_STATUSES)[keyof typeof PRICE_MARKER_STATUSES];
+export type Status = (typeof MARKER_STATUSES)[keyof typeof MARKER_STATUSES];
 
 type Props = {
   label: string;

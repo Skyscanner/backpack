@@ -25,14 +25,13 @@ import BpkBasicMapMarker from '../BpkBasicMapMarker';
 import STYLES from './BpkPriceMarker.module.scss';
 
 const getClassName = cssModules(STYLES);
-export const PRICE_MARKER_STATUSES = {
-  default: 'default',
-  focused: 'focused',
-  viewed: 'viewed',
+export const MARKER_STATUSES = {
+  unselected: 'unselected',
+  selected: 'selected',
+  previous_selected: 'previous_selected',
 } as const;
 
-export type Status =
-  (typeof PRICE_MARKER_STATUSES)[keyof typeof PRICE_MARKER_STATUSES];
+export type Status = (typeof MARKER_STATUSES)[keyof typeof MARKER_STATUSES];
 
 type Props = {
   label: string;
@@ -57,7 +56,7 @@ const BpkPriceMarkerV2 = (props: Props) => {
     label,
     onClick,
     position,
-    status = PRICE_MARKER_STATUSES.default,
+    status = MARKER_STATUSES.unselected,
     ...rest
   } = props;
 
@@ -68,7 +67,7 @@ const BpkPriceMarkerV2 = (props: Props) => {
     onClick && 'bpk-price-marker--dynamic',
     `bpk-price-marker-${status}`,
     className,
-    status === PRICE_MARKER_STATUSES.focused && 'bpk-price-marker--icon',
+    status === MARKER_STATUSES.selected && 'bpk-price-marker--icon',
   );
 
   return (

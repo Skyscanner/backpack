@@ -18,7 +18,7 @@
 
 import { render } from '@testing-library/react';
 
-import BpkPriceMarkerV2, { PRICE_MARKER_STATUSES } from './BpkPriceMarker';
+import BpkPriceMarkerV2, { MARKER_STATUSES } from './BpkPriceMarker';
 
 type Props = {
   children: Node;
@@ -64,24 +64,24 @@ describe('BpkPriceMarkerV2', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "status" attribute as "focused"', () => {
+  it('should render correctly with "status" attribute as "selected"', () => {
     const { asFragment } = render(
       <BpkPriceMarkerV2
         label="£120"
         position={position}
-        status={PRICE_MARKER_STATUSES.focused}
+        status={MARKER_STATUSES.selected}
         accessibilityLabel="Click the price marker"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "status" attribute as "viewed"', () => {
+  it('should render correctly with "status" attribute as "previous_selected"', () => {
     const { asFragment } = render(
       <BpkPriceMarkerV2
         label="£120"
         position={position}
-        status={PRICE_MARKER_STATUSES.viewed}
+        status={MARKER_STATUSES.previous_selected}
         accessibilityLabel="Click the price marker"
       />,
     );

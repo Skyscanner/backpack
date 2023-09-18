@@ -11,7 +11,7 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "fo
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-focused bpk-price-marker--icon"
+        class="bpk-price-marker bpk-price-marker-selected bpk-price-marker--icon"
       >
         <span
           class="bpk-text bpk-text--label-2"
@@ -35,7 +35,7 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "vi
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-viewed"
+        class="bpk-price-marker bpk-price-marker-previous_selected"
       >
         <span
           class="bpk-text bpk-text--label-2"
@@ -60,7 +60,7 @@ exports[`BpkPriceMarkerV2 should render correctly with a "buttonProps" attribute
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-default"
+        class="bpk-price-marker bpk-price-marker-unselected"
       >
         <span
           class="bpk-text bpk-text--label-2"
@@ -84,7 +84,7 @@ exports[`BpkPriceMarkerV2 should render correctly with a "className" attribute 1
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-default custom-class-1 custom-class-2"
+        class="bpk-price-marker bpk-price-marker-unselected custom-class-1 custom-class-2"
       >
         <span
           class="bpk-text bpk-text--label-2"
@@ -108,7 +108,7 @@ exports[`BpkPriceMarkerV2 should render correctly with a "onClick" attribute 1`]
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker--dynamic bpk-price-marker-default"
+        class="bpk-price-marker bpk-price-marker--dynamic bpk-price-marker-unselected"
       >
         <span
           class="bpk-text bpk-text--label-2"
@@ -132,7 +132,7 @@ exports[`BpkPriceMarkerV2 should render properly 1`] = `
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-default"
+        class="bpk-price-marker bpk-price-marker-unselected"
       >
         <span
           class="bpk-text bpk-text--label-2"
@@ -156,7 +156,7 @@ exports[`BpkPriceMarkerV2 should render properly with a icon 1`] = `
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-default"
+        class="bpk-price-marker bpk-price-marker-unselected"
       >
         <span>
           Icon

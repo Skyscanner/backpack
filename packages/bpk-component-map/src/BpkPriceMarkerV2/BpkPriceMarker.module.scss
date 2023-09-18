@@ -31,17 +31,17 @@
     cursor: pointer;
   }
 
-  &-default {
+  &-unselected {
     background-color: $bpk-text-on-dark-day;
     color: $bpk-text-on-light-day;
   }
 
-  &-viewed {
+  &-previous_selected {
     background-color: $bpk-private-map-previous-selection-day;
     color: $bpk-text-on-light-day;
   }
 
-  &-focused {
+  &-selected {
     background-color: $bpk-core-primary-day;
     color: $bpk-text-on-dark-day;
   }

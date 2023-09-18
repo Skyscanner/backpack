@@ -35,7 +35,7 @@ import BpkMap, {
   BpkPriceMarker,
   BpkPriceMarkerV2,
   PRICE_MARKER_STATUSES,
-  PRICE_MARKER_STATUSES_V2,
+  MARKER_STATUSES,
   withGoogleMapsScript,
 } from '../../packages/bpk-component-map';
 
@@ -204,12 +204,12 @@ class StatefulBpkPriceMarkerV2 extends Component<
 
   getStatus = (id: string) => {
     if (this.state.selectedId === id) {
-      return PRICE_MARKER_STATUSES_V2.focused;
+      return MARKER_STATUSES.selected;
     }
     if (this.state.viewedVenues.includes(id)) {
-      return PRICE_MARKER_STATUSES_V2.viewed;
+      return MARKER_STATUSES.previous_selected;
     }
-    return PRICE_MARKER_STATUSES_V2.default;
+    return MARKER_STATUSES.default;
   };
 
   selectVenue = (id: string) => {

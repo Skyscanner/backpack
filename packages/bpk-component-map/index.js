@@ -24,7 +24,7 @@ import BpkIconMarker, {
 } from './src/BpkIconMarker';
 import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './src/BpkPriceMarker';
 import BpkPriceMarkerV2, {
-  PRICE_MARKER_STATUSES as PRICE_MARKER_STATUSES_V2,
+  MARKER_STATUSES,
 } from './src/BpkPriceMarkerV2/BpkPriceMarker';
 import BpkOverlayView from './src/BpkOverlayView';
 import withGoogleMapsScript from './src/withGoogleMapsScript';
@@ -46,5 +46,5 @@ export {
   defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
   PRICE_MARKER_STATUSES,
-  PRICE_MARKER_STATUSES_V2,
+  MARKER_STATUSES,
 };
