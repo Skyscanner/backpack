@@ -234,16 +234,16 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 ### BpkPriceMarkerV2
 
-| Property           | PropType                                                                                             | Required | Default Value               |
-|--------------------|------------------------------------------------------------------------------------------------------|----------|-----------------------------|
-| accessibilityLabel | string                                                                                               | true     | -                           |
-| label              | string                                                                                               | true     | -                           |
-| icon               | ReactNode                                                                                            | false    | -                           |
-| position           | {latitude: number, longitude: number})                                                               | true     | -                           |
-| className          | string                                                                                               | false    | -                           |
-| onClick            | (event: MouseEvent) => void                                                                          | false    | -                           |
-| status             | oneOf(`MARKER_STATUSES.unselected`, `MARKER_STATUSES.selected`, `MARKER_STATUSES.previous_selected`) | false    | `PRICE_MARKER_STATUSES.unselected` |
-| buttonProps        | { [key: string]: string }                                                                            | false    | -                           |
+| Property           | PropType                                                                                            | Required | Default Value               |
+|--------------------|-----------------------------------------------------------------------------------------------------|----------|-----------------------------|
+| accessibilityLabel | string                                                                                              | true     | -                           |
+| label              | string                                                                                              | true     | -                           |
+| icon               | ReactNode                                                                                           | false    | -                           |
+| position           | {latitude: number, longitude: number}                                                               | true     | -                           |
+| className          | string                                                                                              | false    | -                           |
+| onClick            | func                                                                                                | false    | -                           |
+| status             | oneOf(`MARKER_STATUSES.unselected`, `MARKER_STATUSES.selected`, `MARKER_STATUSES.previous_selected`)| false    |`MARKER_STATUSES.unselected` |
+| buttonProps        | object                                                                                              | false    | -                           |
 
 ### BpkOverlayView
 

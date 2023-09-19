@@ -66,8 +66,8 @@ const BpkPriceMarkerV2 = (props: Props) => {
     'bpk-price-marker',
     onClick && 'bpk-price-marker--dynamic',
     `bpk-price-marker-${status}`,
+    icon && `bpk-price-marker-${status}--icon`,
     className,
-    status === MARKER_STATUSES.selected && 'bpk-price-marker--icon',
   );
 
   return (
