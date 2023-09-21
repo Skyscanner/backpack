@@ -200,7 +200,6 @@ class BpkTooltipPortal extends Component<Props, State> {
             renderTarget={renderTarget}
             className={classNames.join(' ')}
           >
-            {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
             <BpkTooltip padded={padded} {...rest}>
               {children}
             </BpkTooltip>

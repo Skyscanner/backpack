@@ -66,7 +66,6 @@ const BpkCard = ({
     }
 
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         className={classNames}
@@ -88,7 +87,6 @@ const BpkCard = ({
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div className={classNames} {...rest}>
       {children}
     </div>

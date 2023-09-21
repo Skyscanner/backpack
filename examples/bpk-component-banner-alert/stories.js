@@ -26,10 +26,15 @@ import {
   PrimaryExample,
   SuccessExample,
   SuccessLongMessageExample,
+  DismissableExample,
+  SuccessExpandableExample,
   SuccessAnimateOnEnterExample,
   SuccessWithReactRenderedMessageExample,
   WarnExample,
   ErrorExample,
+  SuccessDismissableBehaviourExample,
+  SuccessExpandableBehaviourExample,
+  SuccessAutomaticallyDismissedExample,
   SuccessCustomIconExample,
   DocsDefaultExample,
 } from './examples';
@@ -50,11 +55,19 @@ export const Neutral = NeutralExample;
 export const Primary = PrimaryExample;
 export const Success = SuccessExample;
 export const SuccessLongMessage = SuccessLongMessageExample;
+export const SuccessDismissable = DismissableExample;
+export const SuccessExpandable = SuccessExpandableExample;
 export const SuccessAnimateOnEnter = SuccessAnimateOnEnterExample;
 export const SuccessWithReactRenderedMessage =
   SuccessWithReactRenderedMessageExample;
 export const Warn = WarnExample;
 export const Error = ErrorExample;
+export const SuccessDismissableBehaviour = SuccessDismissableBehaviourExample;
+
+export const SuccessExpandableBehaviour = SuccessExpandableBehaviourExample;
+
+export const SuccessAutomaticallyDismissedAfter5Seconds =
+  SuccessAutomaticallyDismissedExample;
 export const SuccessWithCustomIcon = SuccessCustomIconExample;
 
 export const VisualTest = DocsDefaultExample;
