@@ -18,6 +18,10 @@
 
 /* @flow strict */
 
+import BpkNavigationBar from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBar';
+import BpkNavigationBarIconButton from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarIconButton';
+import BpkNavigationBarButtonLink from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarButtonLink';
+
 import {
   DefaultExample,
   LeadingIconOnlyExample,
@@ -29,6 +33,12 @@ import {
 
 export default {
   title: 'bpk-component-navigation-bar',
+  component: BpkNavigationBar,
+  subcomponents: {
+    BpkNavigationBarIconButton,
+    BpkNavigationBarButtonLink,
+  },
+  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

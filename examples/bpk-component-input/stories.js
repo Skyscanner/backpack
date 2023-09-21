@@ -17,6 +17,8 @@
  */
 /* @flow strict */
 
+import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
+
 import {
   TextExample,
   PlaceholderExample,
@@ -36,6 +38,8 @@ import {
 
 export default {
   title: 'bpk-component-input',
+  component: BpkInput,
+  tags: ['autodocs'],
 };
 
 export const TextValue = TextExample;

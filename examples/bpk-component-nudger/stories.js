@@ -18,6 +18,9 @@
 
 /* @flow strict */
 
+import BpkNudger from '../../packages/bpk-component-nudger/src/BpkNudger';
+import BpkConfigurableNudger from '../../packages/bpk-component-nudger/src/BpkConfigurableNudger';
+
 import {
   DefaultExample,
   WithLabelExample,
@@ -31,6 +34,9 @@ import {
 
 export default {
   title: 'bpk-component-nudger',
+  component: BpkNudger,
+  subcomponents: { BpkConfigurableNudger },
+  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

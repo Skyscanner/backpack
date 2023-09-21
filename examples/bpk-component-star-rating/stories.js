@@ -18,6 +18,11 @@
 
 /* @flow strict */
 
+import BpkStarRating from '../../packages/bpk-component-star-rating/src/BpkStarRating';
+import BpkStar from '../../packages/bpk-component-star-rating/src/BpkStar';
+import BpkInteractiveStarRating from '../../packages/bpk-component-star-rating/src/BpkInteractiveStarRating';
+import BpkInteractiveStar from '../../packages/bpk-component-star-rating/src/BpkInteractiveStar';
+
 import {
   FullExample,
   FullStarsExample,
@@ -34,6 +39,13 @@ import {
 
 export default {
   title: 'bpk-component-star-rating',
+  component: BpkStarRating,
+  subcomponents: {
+    BpkStar,
+    BpkInteractiveStarRating,
+    BpkInteractiveStar,
+  },
+  tags: ['autodocs'],
 };
 
 export const BpkStarExamples = FullExample;

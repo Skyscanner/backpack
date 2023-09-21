@@ -34,6 +34,13 @@ module.exports = ({ config }) => {
       presets: [['@babel/preset-env']],
     },
   });
+  config.module.rules.push({
+    test: /\.(js|jsx)?$/,
+    loader: 'babel-loader',
+    options: {
+      plugins: ['babel-plugin-react-docgen'],
+    },
+  });
   config.resolve.extensions.push('.tsx');
   config.resolve.extensions.push('.ts');
   /* eslint-disable-next-line no-param-reassign */

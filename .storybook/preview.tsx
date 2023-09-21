@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
+import { Title, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
 import type { Preview } from '@storybook/react';
-import { spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
@@ -34,20 +35,35 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
 const preview: Preview = {
   decorators: [
-    (story) => (
-      <div style={{ padding: spacingBase }}>
-        <EnhancedThemeProvider themeAttributes={themeableAttributes}>
-          {story()}
-        </EnhancedThemeProvider>
-        <br />
-        <BpkRtlToggle />
-        <br />
-        <div style={{ width: '10rem' }}>
-          <BpkThemeToggle />
+    (story, {args}) => {
+      return (
+        <div style={{ padding: '1rem' }}>
+          <EnhancedThemeProvider themeAttributes={themeableAttributes}>
+            {story()}
+          </EnhancedThemeProvider>
+          <br />
+          <BpkRtlToggle />
+          <br />
+          <div style={{ width: '10rem' }}>
+            <BpkThemeToggle />
+          </div>
         </div>
-      </div>
-    ),
+      )
+    }
   ],
+  parameters: {
+    docs: {
+      source: {
+        type: 'dynamic',
+      },
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable story={PRIMARY_STORY} />
+        </>
+      )
+    },
+  }
 };
 
 export default preview;
