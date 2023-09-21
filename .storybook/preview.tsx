@@ -35,21 +35,19 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
 const preview: Preview = {
   decorators: [
-    (story, {args}) => {
-      return (
-        <div style={{ padding: '1rem' }}>
-          <EnhancedThemeProvider themeAttributes={themeableAttributes}>
-            {story()}
-          </EnhancedThemeProvider>
-          <br />
-          <BpkRtlToggle />
-          <br />
-          <div style={{ width: '10rem' }}>
-            <BpkThemeToggle />
-          </div>
+    (story) => (
+      <div style={{ padding: '1rem' }}>
+        <EnhancedThemeProvider themeAttributes={themeableAttributes}>
+          {story()}
+        </EnhancedThemeProvider>
+        <br />
+        <BpkRtlToggle />
+        <br />
+        <div style={{ width: '10rem' }}>
+          <BpkThemeToggle />
         </div>
-      )
-    }
+      </div>
+    ),
   ],
   parameters: {
     docs: {
