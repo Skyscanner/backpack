@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Title, PRIMARY_STORY } from '@storybook/blocks';
+import { Title, Stories, PRIMARY_STORY } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';
 import type { Preview } from '@storybook/react';
 
@@ -58,6 +58,7 @@ const preview: Preview = {
         <>
           <Title />
           <ArgsTable story={PRIMARY_STORY} />
+          <Stories />
         </>
       )
     },
