@@ -38,6 +38,7 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-card`](/packages/bpk-component-card)
 [`bpk-component-checkbox`](/packages/bpk-component-checkbox)
 [`bpk-component-chip`](/packages/bpk-component-chip)
+[`bpk-component-chip-group`](/packages/bpk-component-chip-group)
 [`bpk-component-close-button`](/packages/bpk-component-close-button)
 [`bpk-component-code`](/packages/bpk-component-code)
 [`bpk-component-datatable`](/packages/bpk-component-datatable)
