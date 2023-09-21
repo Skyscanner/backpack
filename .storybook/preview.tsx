@@ -36,7 +36,7 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 const preview: Preview = {
   decorators: [
     (story) => (
-      <div style={{ padding: '1rem' }}>
+      <div>
         <EnhancedThemeProvider themeAttributes={themeableAttributes}>
           {story()}
         </EnhancedThemeProvider>
