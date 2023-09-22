@@ -21,6 +21,14 @@ import { axe } from 'jest-axe';
 
 import BpkSlider from './BpkSlider';
 
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 describe('BpkSlider accessibility tests', () => {
   /*
   Currently this test fails because the third-party library
