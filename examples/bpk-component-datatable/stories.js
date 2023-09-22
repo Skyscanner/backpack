@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+import BpkDataTable from '../../packages/bpk-component-datatable/src/BpkDataTable';
+import BpkDataTableColumn from '../../packages/bpk-component-datatable/src/BpkDataTableColumn';
+
 import {
   AutowidthExample,
   NonHoverRowsExample,
@@ -29,6 +32,9 @@ import {
 
 export default {
   title: 'bpk-component-datatable',
+  component: BpkDataTable,
+  subcomponents: { BpkDataTableColumn },
+  tags: ['autodocs'],
 };
 
 export const Autowidth = AutowidthExample;

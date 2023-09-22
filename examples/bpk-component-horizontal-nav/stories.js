@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+import BpkHorizontalNav from '../../packages/bpk-component-horizontal-nav/src/BpkHorizontalNav';
+import BpkHorizontalNavItem from '../../packages/bpk-component-horizontal-nav/src/BpkHorizontalNavItem';
+
 import {
   DefaultExample,
   ScrollToSelectedExample,
@@ -32,6 +35,9 @@ import {
 
 export default {
   title: 'bpk-component-horizontal-nav',
+  component: BpkHorizontalNav,
+  subcomponents: { BpkHorizontalNavItem },
+  tags: ['autodocs'],
 };
 
 export const Example = DefaultExample;

@@ -18,6 +18,10 @@
 
 /* @flow strict */
 
+import BpkSelectableChip from '../../packages/bpk-component-chip/src/BpkSelectableChip';
+import BpkDismissibleChip from '../../packages/bpk-component-chip/src/BpkDismissibleChip';
+import BpkDropdownChip from '../../packages/bpk-component-chip/src/BpkDropdownChip';
+
 import {
   AllTypesExample,
   AllSelectableChipsExample,
@@ -28,6 +32,12 @@ import {
 
 export default {
   title: 'bpk-component-chip',
+  component: BpkSelectableChip,
+  subcomponents: {
+    BpkDismissibleChip,
+    BpkDropdownChip,
+  },
+  tags: ['autodocs'],
 };
 
 export const AllTypes = AllTypesExample;

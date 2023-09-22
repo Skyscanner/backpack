@@ -18,6 +18,10 @@
 
 /* @flow strict */
 
+
+import BpkAccordion from '../../packages/bpk-component-accordion/src/BpkAccordion';
+import BpkAccordionItem from '../../packages/bpk-component-accordion/src/BpkAccordionItem';
+
 import {
   SingleItemExample,
   SingleItemExampleInitiallyExpandedExample,
@@ -35,6 +39,11 @@ import {
 
 export default {
   title: 'bpk-component-accordion',
+  component: BpkAccordion,
+  subcomponents: {
+    BpkAccordionItem,
+  },
+  tags: ['autodocs']
 };
 
 export const SingleItemOnly = SingleItemExample;

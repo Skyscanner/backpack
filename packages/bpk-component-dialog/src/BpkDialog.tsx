@@ -56,7 +56,6 @@ const BpkDialog = ({
       renderTarget={renderTarget}
       closeOnEscPressed={dismissible}
     >
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <BpkDialogInner
         onClose={onClose}
         closeOnScrimClick={dismissible}
