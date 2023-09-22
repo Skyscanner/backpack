@@ -24,6 +24,7 @@ import {
   CustomRowAndHeaderHeightsExample,
   HeaderRendererExample,
   CustomSortingExample,
+  WithColumnArrayExample,
 } from './examples';
 
 export default {
@@ -40,5 +41,7 @@ export const CustomRowAndHeaderHeights = CustomRowAndHeaderHeightsExample;
 export const CustomSorting = CustomSortingExample;
 
 export const CustomHeaderData = HeaderRendererExample;
+
+export const WithColumnArray = WithColumnArrayExample;
 
 export const VisualTest = AutowidthExample;

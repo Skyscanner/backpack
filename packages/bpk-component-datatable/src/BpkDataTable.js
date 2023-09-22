@@ -28,7 +28,7 @@ import STYLES from './BpkDataTable.module.scss';
 import type { Props } from './common-types';
 import { SORT_DIRECTION_TYPES } from './sort-types';
 import BpkDataTableHeader from './BpkDataTableHeader';
-import { pxToRem, getColumns } from './utils';
+import { pxToRem, getColumns, createColumnsSchema } from './utils';
 
 const getClassName = cssModules(STYLES);
 
@@ -41,6 +41,7 @@ const BpkDataTable = (props: Props) => {
   const {
     children,
     className,
+    columns: columnsData,
     defaultColumnSortIndex,
     headerClassName,
     headerHeight,
@@ -49,7 +50,7 @@ const BpkDataTable = (props: Props) => {
     rowClassName,
     rowHeight,
     rowStyle,
-    rows: data,
+    rows: rowsData,
     sort,
     sortBy,
     sortDirection,
@@ -84,7 +85,15 @@ const BpkDataTable = (props: Props) => {
     headerClassName,
   );
 
-  const columns = useMemo(() => getColumns(children), [children]);
+  const columns = useMemo(() => {
+    if (columnsData) {
+      return createColumnsSchema(columnsData);
+    } 
+      return getColumns(children);
+    
+  }, [children, columnsData]);
+
+  const data = useMemo(() => rowsData, [rowsData]);
 
   const { getTableBodyProps, getTableProps, headerGroups, prepareRow, rows } =
     useTable(
