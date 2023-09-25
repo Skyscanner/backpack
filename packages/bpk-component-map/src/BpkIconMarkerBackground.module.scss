@@ -42,8 +42,11 @@
   }
 
   &--selected {
-    fill: $bpk-surface-default-day;
-
+    @include bpk-themeable-property(
+      fill,
+      --bpk-icon-marker-default-selected-fill-color,
+      $bpk-surface-default-day
+    );
     @include bpk-themeable-property(
       stroke,
       --bpk-icon-marker-default-selected-color,

@@ -194,6 +194,7 @@ Icon markers:
 
 - `iconMarkerDefaultBackgroundColor`
 - `iconMarkerDefaultSelectedColor`
+- `iconMarkerDefaultSelectedFillColor`
 - `iconMarkerDefaultDisabledBackgroundColor`
 - `iconMarkerDefaultDisabledColor`
 

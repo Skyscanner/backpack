@@ -177,6 +177,7 @@ const generateTheme = ({
 
   iconMarkerDefaultBackgroundColor: primaryColor500,
   iconMarkerDefaultSelectedColor: primaryColor500,
+  iconMarkerDefaultSelectedFillColor: colorWhite,
   iconMarkerDefaultDisabledColor: primaryColor700,
   iconMarkerDefaultDisabledBackgroundColor: primaryColor300,
 

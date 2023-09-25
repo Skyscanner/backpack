@@ -19,6 +19,7 @@
 export const defaultIconMarkerThemeAttributes = [
   'iconMarkerDefaultBackgroundColor',
   'iconMarkerDefaultSelectedColor',
+  'iconMarkerDefaultSelectedFillColor',
   'iconMarkerDefaultDisabledColor',
   'iconMarkerDefaultDisabledBackgroundColor',
 ];

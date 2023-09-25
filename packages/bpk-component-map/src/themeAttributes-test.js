@@ -26,6 +26,7 @@ describe('themeAttributes', () => {
     expect(defaultIconMarkerThemeAttributes).toEqual([
       'iconMarkerDefaultBackgroundColor',
       'iconMarkerDefaultSelectedColor',
+      'iconMarkerDefaultSelectedFillColor',
       'iconMarkerDefaultDisabledColor',
       'iconMarkerDefaultDisabledBackgroundColor',
     ]);
