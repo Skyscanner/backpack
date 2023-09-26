@@ -94,6 +94,10 @@
         --bpk-icon-marker-default-selected-color,
         $bpk-status-success-spot-day
       );
+
+      > svg {
+        fill: $bpk-surface-default-day;
+      }
     }
   }
 }
