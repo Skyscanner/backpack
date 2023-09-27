@@ -36,6 +36,7 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-button`](/packages/bpk-component-button)
 [`bpk-component-calendar`](/packages/bpk-component-calendar)
 [`bpk-component-card`](/packages/bpk-component-card)
+[`bpk-component-card-list`](/packages/bpk-component-card-list)
 [`bpk-component-checkbox`](/packages/bpk-component-checkbox)
 [`bpk-component-chip`](/packages/bpk-component-chip)
 [`bpk-component-close-button`](/packages/bpk-component-close-button)
