@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import BpkProgress from '../../packages/bpk-component-progress/src/BpkProgress';
+
 import {
   DefaultExample,
   SmallExample,
@@ -27,6 +29,7 @@ import {
 
 export default {
   title: 'bpk-component-progress',
+  component: BpkProgress,
 };
 
 export const Default = DefaultExample;

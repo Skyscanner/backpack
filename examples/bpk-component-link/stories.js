@@ -37,7 +37,6 @@ export default {
   subcomponents: {
     BpkButtonLink
   },
-  tags: ['autodocs'],
 };
 
 export const Example = LinkExample;

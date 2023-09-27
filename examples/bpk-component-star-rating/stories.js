@@ -45,7 +45,6 @@ export default {
     BpkInteractiveStarRating,
     BpkInteractiveStar,
   },
-  tags: ['autodocs'],
 };
 
 export const BpkStarExamples = FullExample;

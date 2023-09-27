@@ -37,7 +37,6 @@ export default {
     BpkDismissibleChip,
     BpkDropdownChip,
   },
-  tags: ['autodocs'],
 };
 
 export const AllTypes = AllTypesExample;

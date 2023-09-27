@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkSlider from '../../packages/bpk-component-slider/src/BpkSlider';
+
 import {
   SimpleSliderExample,
   TimeSliderExample,
@@ -27,6 +29,7 @@ import {
 
 export default {
   title: 'bpk-component-slider',
+  component: BpkSlider,
 };
 
 export const SimpleSlider = SimpleSliderExample;

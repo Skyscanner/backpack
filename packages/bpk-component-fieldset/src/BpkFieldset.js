@@ -166,6 +166,9 @@ const labelPropType = (
 
 export const propTypes = {
   children: PropTypes.element.isRequired,
+  /**
+   * Required when `isCheckbox` is false.
+   */
   label: labelPropType,
   disabled: PropTypes.bool,
   valid: PropTypes.bool,

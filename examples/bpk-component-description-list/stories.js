@@ -29,7 +29,6 @@ export default {
     BpkDescriptionTerm,
     BpkDescriptionDetails,
   },
-  tags: ['autodocs'],
 };
 
 export const DescriptionList = DefaultExample;

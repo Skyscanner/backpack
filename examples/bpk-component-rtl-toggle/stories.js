@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import BpkRtlToggle from '../../packages/bpk-component-rtl-toggle';
+import BpkRtlToggle from '../../packages/bpk-component-rtl-toggle/src/BpkRtlToggle';
 
 export default {
   title: 'bpk-component-rtl-toggle',
+  component: BpkRtlToggle,
 };
 
 export const Example = () => <BpkRtlToggle />;

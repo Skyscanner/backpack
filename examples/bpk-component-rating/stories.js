@@ -17,6 +17,8 @@
  */
 /* @flow strict */
 
+import BpkRating from '../../packages/bpk-component-rating/src/BpkRating';
+
 import {
   DefaultExample,
   LargeSizeExample,
@@ -29,6 +31,7 @@ import {
 
 export default {
   title: 'bpk-component-rating',
+  component: BpkRating,
 };
 
 export const Default = DefaultExample;

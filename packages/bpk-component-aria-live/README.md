@@ -26,12 +26,6 @@ export default () => (
 
 ## Props
 
-| Property | PropType | Required | Default Value |
-| - | - | - | - |
-| className | string | false | null |
-| politenessSetting | oneOf([`ARIA_LIVE_POLITENESS_SETTINGS.off`, `ARIA_LIVE_POLITENESS_SETTINGS.polite`, `ARIA_LIVE_POLITENESS_SETTINGS.assertive`]) | false | `ARIA_LIVE_POLITENESS_SETTINGS.polite` |
-| visible | bool | false | false |
-
 `aria-relevant` and `aria-atomic` props can also be set.
 
 `aria-relevant` determines what sort of changes should be read out. By default it is `text` but can be `additions`, `removals` or `all`. [Read more about `aria-relevant` on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-relevant).

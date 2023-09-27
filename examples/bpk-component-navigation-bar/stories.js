@@ -38,7 +38,6 @@ export default {
     BpkNavigationBarIconButton,
     BpkNavigationBarButtonLink,
   },
-  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

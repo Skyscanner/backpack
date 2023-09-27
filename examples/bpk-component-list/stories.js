@@ -29,7 +29,6 @@ export default {
   subcomponents: {
     BpkListItem
   },
-  tags: ['autodocs'],
 };
 
 export const Unordered = UnorderedExample;

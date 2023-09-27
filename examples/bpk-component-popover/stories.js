@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import BpkPopover from '../../packages/bpk-component-popover/src/BpkPopover';
+
 import {
   DefaultExample,
   WithLabelAsTitleExample,
@@ -34,6 +36,7 @@ import {
 
 export default {
   title: 'bpk-component-popover',
+  component: BpkPopover,
 };
 
 export const Default = DefaultExample;

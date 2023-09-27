@@ -46,7 +46,6 @@ export default {
     BpkBannerAlertDismissable,
     BpkBannerAlertExpandable,
   },
-  tags: ['autodocs']
 };
 
 export const DocsDefault = DocsDefaultExample;

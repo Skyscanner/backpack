@@ -17,10 +17,13 @@
  */
 /* @flow strict */
 
+import BpkSkipLink from '../../packages/bpk-component-skip-link/src/BpkSkipLink';
+
 import { DefaultExample } from './examples';
 
 export default {
   title: 'bpk-component-skip-link',
+  component: BpkSkipLink,
 };
 
 export const Default = DefaultExample;

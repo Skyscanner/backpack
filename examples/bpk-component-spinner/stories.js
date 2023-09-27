@@ -31,7 +31,6 @@ export default {
     BpkLargeSpinner,
     BpkExtraLargeSpinner,
   },
-  tags: ['autodocs'],
 };
 
 export const Small = SmallExample;

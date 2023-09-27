@@ -21,11 +21,3 @@ export default () => (
   </BpkBreakpoint>
 );
 ```
-
-## Props
-
-| Property  | PropType               | Required | Default Value |
-| --------- | ---------------------- | -------- | ------------- |
-| children  | oneOfType(node, func)  | true     | -             |
-| query     | oneOf(BREAKPOINTS)     | true     | -             |
-| legacy    | bool                   | false    | false         |

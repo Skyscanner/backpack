@@ -36,7 +36,6 @@ export default {
   title: 'bpk-component-nudger',
   component: BpkNudger,
   subcomponents: { BpkConfigurableNudger },
-  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

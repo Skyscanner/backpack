@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import BpkDialog from '../../packages/bpk-component-dialog/src/BpkDialog';
+
 import {
   DefaultExample,
   WithIconExample,
@@ -27,6 +29,7 @@ import {
 
 export default {
   title: 'bpk-component-dialog',
+  component: BpkDialog,
 };
 
 export const Default = DefaultExample;

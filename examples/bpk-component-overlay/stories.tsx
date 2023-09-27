@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkOverlay from '../../packages/bpk-component-overlay/src/BpkOverlay';
+
 import {
   SolidExamples,
   TopExamples,
@@ -29,6 +31,7 @@ import {
 
 export default {
   title: 'bpk-component-overlay',
+  component: BpkOverlay,
 };
 
 export const Solid = SolidExamples;

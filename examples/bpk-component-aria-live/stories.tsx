@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
+import BpkAriaLive from '../../packages/bpk-component-aria-live/src/BpkAriaLive';
+
 import { ChipsExample, SelectExample } from './examples';
 
 export default {
   title: 'bpk-component-aria-live',
+  component: BpkAriaLive,
 };
 
 export const Default = () => <ChipsExample />;

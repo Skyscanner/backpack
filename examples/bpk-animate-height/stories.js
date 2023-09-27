@@ -17,10 +17,13 @@
  */
 
 /* @flow strict */
+import AnimateHeight from '../../packages/bpk-animate-height/src/AnimateHeight';
+
 import AnimateHeightExample from './examples';
 
 export default {
   title: 'bpk-animate-height',
+  component: AnimateHeight
 };
 
 export const Example = () => (

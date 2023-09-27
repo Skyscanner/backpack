@@ -38,7 +38,6 @@ export default {
   subcomponents: {
     BpkFlareBar,
   },
-  tags: ['autodocs'],
 };
 
 export const BpkFlareBarDefault = FlareBarExample;

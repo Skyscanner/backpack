@@ -36,12 +36,3 @@ export default () => (
   </div>
 );
 ```
-
-## Props
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children | Node | true | - |
-| className | string | false | null |
-| foregroundContent | Node | false | null |
-| overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.solidLow |

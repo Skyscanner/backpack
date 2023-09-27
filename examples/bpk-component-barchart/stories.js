@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import BpkBarchart from '../../packages/bpk-component-barchart/src/BpkBarchart';
+
 import {
   AxesAndGridlinesExample,
   DefaultExample,
@@ -33,6 +35,7 @@ import {
 
 export default {
   title: 'bpk-component-barchart',
+  component: BpkBarchart,
 };
 
 export const AxesAndGridlines = AxesAndGridlinesExample;

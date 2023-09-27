@@ -31,7 +31,6 @@ export default {
     BpkSectionListSection,
     BpkSectionListItem,
   },
-  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

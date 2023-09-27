@@ -29,7 +29,6 @@ export default {
   subcomponents: {
     BpkBreadcrumbItem
   },
-  tags: ['autodocs']
 };
 
 export const Default = DefaultExample;

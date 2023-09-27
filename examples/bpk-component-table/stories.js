@@ -35,7 +35,6 @@ export default {
     BpkTableHeadCell,
     BpkTableCell,
   },
-  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

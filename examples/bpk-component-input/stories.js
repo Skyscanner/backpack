@@ -17,6 +17,9 @@
  */
 /* @flow strict */
 
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+
 import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
 
 import {
@@ -39,7 +42,20 @@ import {
 export default {
   title: 'bpk-component-input',
   component: BpkInput,
-  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable of={PRIMARY_STORY} />
+          <Markdown>
+            {
+            `**Note:** Additionally, all native "input" attributes such as "placeholder" and "onChange" are supported.`}
+          </Markdown>
+        </>
+      )
+    },
+  },
 };
 
 export const TextValue = TextExample;

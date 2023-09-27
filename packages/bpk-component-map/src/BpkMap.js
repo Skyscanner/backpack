@@ -57,7 +57,13 @@ type Props = {
   panEnabled: boolean,
   showControls: boolean,
   zoom: number,
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
   bounds: ?Bounds,
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
   center: ?LatLong,
   children: ?Node,
   mapRef: ?(MapRef) => mixed,

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkScrollableCalendar from '../../packages/bpk-component-scrollable-calendar/src/BpkScrollableCalendar';
+
 import {
   DefaultExample,
   WeekStartsOnSixExample,
@@ -38,6 +40,7 @@ import {
 
 export default {
   title: 'bpk-component-scrollable-calendar',
+  component: BpkScrollableCalendar,
 };
 
 export const ScrollableCalendarDefault = DefaultExample;

@@ -28,13 +28,3 @@ export default () => (
   </div>
 );
 ```
-
-## Props
-
-*For BpkCode & BpkCodeBlock:*
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | Node     | true     | -             |
-| alternate | bool     | false    | false         |
-| className | string   | false    | null          |

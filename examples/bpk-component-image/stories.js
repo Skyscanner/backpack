@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+import { Title, PRIMARY_STORY, Markdown } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+
 import BpkImage from '../../packages/bpk-component-image/src/BpkImage';
 import BpkBackgroundImage from '../../packages/bpk-component-image/src/BpkBackgroundImage';
 
@@ -36,7 +39,19 @@ export default {
   title: 'bpk-component-image',
   component: BpkImage,
   subcomponents: { BpkBackgroundImage },
-  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable of={PRIMARY_STORY} />
+          <Markdown>
+            **Note:** All [standard img attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including srcSet are also supported.
+          </Markdown>
+        </>
+      )
+    },
+  },
 };
 
 export const Default = DefaultExample;

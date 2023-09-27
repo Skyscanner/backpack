@@ -44,7 +44,6 @@ export default {
     BpkDividedCard,
     BpkCardWrapper,
   },
-  tags: ['autodocs']
 };
 
 export const Default = DefaultExample;

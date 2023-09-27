@@ -26,24 +26,3 @@ export default MyComponent = () => (
   </div>
 )
 ```
-
-
-## Props
-
-### BpkContentBubble
-
-| Property         | PropType                                 | Required | Default Value |
-| ---------------- | ---------------------------------------- | -------- | ------------- |
-| className        | string                                   | false    | null          |
-| content          | node                                     | false    | null          |
-| contentClassName | string                                   | false    | null          |
-| flareProps       | object - see [BpkFlareBar](#bpkflarebar) | false    | null          |
-| showPointer      | bool                                     | false    | true          |
-
-### BpkFlareBar
-
-| Property     | PropType | Required | Default Value |
-| ------------ | -------- | -------- | ------------- |
-| className    | string   | false    | null          |
-| svgClassName | string   | false    | null          |
-

@@ -17,6 +17,8 @@
  */
 /* @flow strict */
 
+import BpkLabel from '../../packages/bpk-component-label/src/BpkLabel';
+
 import {
   DefaultExample,
   RequiredExample,
@@ -29,6 +31,7 @@ import {
 
 export default {
   title: 'bpk-component-label',
+  component: BpkLabel,
 };
 
 export const Example = DefaultExample;

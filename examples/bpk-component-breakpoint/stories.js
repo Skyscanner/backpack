@@ -17,10 +17,13 @@
  */
 
 /* @flow strict */
+import BpkBreakpoint from '../../packages/bpk-component-breakpoint/src/BpkBreakpoint';
+
 import DefaultExample from './examples';
 
 export default {
   title: 'bpk-component-breakpoint',
+  component: BpkBreakpoint,
 };
 
 export const Examples = DefaultExample;

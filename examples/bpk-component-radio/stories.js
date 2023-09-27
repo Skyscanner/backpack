@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import BpkRadio from '../../packages/bpk-component-radio/src/BpkRadio';
+
 import {
   DefaultExample,
   MultilineExample,
@@ -30,6 +32,7 @@ import {
 
 export default {
   title: 'bpk-component-radio',
+  component: BpkRadio,
 };
 
 export const Default = DefaultExample;

@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import BpkTicket from '../../packages/bpk-component-ticket/src/BpkTicket';
+
 import {
   DefaultExample,
   VerticalExample,
@@ -31,6 +33,7 @@ import {
 
 export default {
   title: 'bpk-component-ticket',
+  component: BpkTicket,
 };
 
 export const Default = DefaultExample;

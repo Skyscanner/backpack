@@ -18,10 +18,13 @@
 
 /* @flow strict */
 
+import BpkCloseButton from '../../packages/bpk-component-close-button/src/BpkCloseButton';
+
 import DefaultExample from './examples';
 
 export default {
   title: 'bpk-component-close-button',
+  component: BpkCloseButton,
 };
 
 export const Default = DefaultExample;

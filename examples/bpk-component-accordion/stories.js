@@ -43,7 +43,6 @@ export default {
   subcomponents: {
     BpkAccordionItem,
   },
-  tags: ['autodocs']
 };
 
 export const SingleItemOnly = SingleItemExample;

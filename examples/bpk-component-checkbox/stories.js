@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import BpkCheckbox from '../../packages/bpk-component-checkbox/src/BpkCheckbox';
+
 import {
   DefaultExample,
   IndeterminateExample,
@@ -32,6 +34,7 @@ import {
 
 export default {
   title: 'bpk-component-checkbox',
+  component: BpkCheckbox,
 };
 
 export const Default = DefaultExample;

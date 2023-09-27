@@ -66,10 +66,16 @@ const overlayTypeClassSuffixes = {
 
 export type OverlayType = (typeof OVERLAY_TYPES)[keyof typeof OVERLAY_TYPES];
 
-export type Props = ComponentProps<'div'> & {
+type BpkOverlayProps = {
+  /**
+   * **Required:** The content to be rendered within the overlay.
+   */
   children: ReactNode;
-  overlayType?: OverlayType;
   className?: string;
+};
+
+export type Props = BpkOverlayProps & ComponentProps<'div'> & {
+  overlayType?: OverlayType;
   foregroundContent?: ReactNode;
 };
 

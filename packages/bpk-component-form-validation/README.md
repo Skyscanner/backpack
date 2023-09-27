@@ -17,14 +17,3 @@ export default () => (
   </BpkFormValidation>,
 )
 ```
-
-## Props
-
-| Property       | PropType | Required | Default Value |
-| -------------- | -------- | -------- | ------------- |
-| children       | node     | true     | -             |
-| id             | string   | true     | -             |
-| expanded       | bool     | true     | -             |
-| isCheckbox     | bool     | false    | false         |
-| className      | string   | false    | null          |
-| containerProps | object   | false    | {}            |

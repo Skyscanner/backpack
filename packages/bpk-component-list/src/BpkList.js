@@ -62,6 +62,9 @@ BpkList.propTypes = {
   ]).isRequired,
   ordered: PropTypes.bool,
   className: PropTypes.string,
+  ariaLabel: PropTypes.string,
+  ariaLabelledby: PropTypes.string,
+  title: PropTypes.string,
 };
 
 BpkList.defaultProps = {

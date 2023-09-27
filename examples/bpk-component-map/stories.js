@@ -19,6 +19,7 @@
 
 import BpkMap from '../../packages/bpk-component-map/src/BpkMap';
 import BpkIconMarker from '../../packages/bpk-component-map/src/BpkIconMarker';
+import BpkPriceMarkerV2 from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarker';
 import BpkPriceMarker from '../../packages/bpk-component-map/src/BpkPriceMarker';
 import BpkOverlayView from '../../packages/bpk-component-map/src/BpkOverlayView';
 
@@ -44,9 +45,9 @@ export default {
   subcomponents: {
     BpkIconMarker,
     BpkPriceMarker,
+    BpkPriceMarkerV2,
     BpkOverlayView,
   },
-  tags: ['autodocs'],
 };
 export const Simple = SimpleExample;
 export const DragDisabledAndControlsHidden =

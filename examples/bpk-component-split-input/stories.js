@@ -17,6 +17,8 @@
  */
 /* @flow strict */
 
+import BpkSplitInput from '../../packages/bpk-component-split-input/src/BpkSplitInput';
+
 import {
   SplitInputExample,
   SplitInputSixDigitExample,
@@ -26,6 +28,7 @@ import {
 
 export default {
   title: 'bpk-component-split-input',
+  component: BpkSplitInput,
 };
 
 export const DefaultInput = SplitInputExample;

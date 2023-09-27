@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import BpkModal from '../../packages/bpk-component-modal/src/BpkModal';
+
 import {
   DefaultExample,
   WideExample,
@@ -35,6 +37,7 @@ import {
 
 export default {
   title: 'bpk-component-modal',
+  component: BpkModal,
 };
 
 export const Default = DefaultExample;

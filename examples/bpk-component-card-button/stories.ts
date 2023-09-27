@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkSaveButton from '../../packages/bpk-component-card-button/src/BpkSaveButton';
+
 import {
   DefaultExample,
   ContainedExample,
@@ -30,6 +32,7 @@ import {
 
 export default {
   title: 'bpk-component-card-button',
+  component: BpkSaveButton,
 };
 
 export const Default = DefaultExample;

@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+import BkpDrawer from '../../packages/bpk-component-drawer/src/BpkDrawer';
+
 import {
   DefaultExample,
   OverflowingExamples,
@@ -28,6 +30,7 @@ import {
 
 export default {
   title: 'bpk-component-drawer',
+  component: BkpDrawer,
 };
 
 export const Default = DefaultExample;

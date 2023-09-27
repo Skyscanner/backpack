@@ -17,6 +17,8 @@
  */
 /* @flow strict */
 
+import BpkFieldset from '../../packages/bpk-component-fieldset/src/BpkFieldset';
+
 import {
   InputExample,
   SelectExample,
@@ -36,6 +38,7 @@ import {
 
 export default {
   title: 'bpk-component-fieldset',
+  component: BpkFieldset,
 };
 
 export const Input = InputExample;

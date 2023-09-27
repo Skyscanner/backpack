@@ -17,10 +17,13 @@
  */
 /* @flow strict */
 
+import BpkSwitch from '../../packages/bpk-component-switch/src/BpkSwitch';
+
 import { DefaultExample, SmallExample, MixedExample } from './examples';
 
 export default {
   title: 'bpk-component-switch',
+  component: BpkSwitch,
 };
 
 export const Default = DefaultExample;
