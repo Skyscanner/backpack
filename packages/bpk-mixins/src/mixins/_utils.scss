@@ -20,6 +20,20 @@
 /// @group utils
 ////
 
+/// Standard focus indicator for elements.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-focus-indicator();
+///   }
+
+@mixin bpk-focus-indicator {
+  outline: ($bpk-one-pixel-rem * 2) solid $bpk-text-link-day !important; /* stylelint-disable-line declaration-no-important */
+  outline-offset: (
+    $bpk-one-pixel-rem * 2
+  ) !important; /* stylelint-disable-line declaration-no-important */
+}
+
 /// Hide visually and from screen readers.
 ///
 /// @example scss
