@@ -238,4 +238,7 @@ class BpkPopoverPortal extends Component<Props> {
   }
 }
 
+BpkPopoverPortal.propTypes = { ...propTypes };
+BpkPopoverPortal.defaultProps = { ...defaultProps };
+
 export default BpkPopoverPortal;

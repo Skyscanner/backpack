@@ -35,7 +35,7 @@ const KEYCODES = {
   SPACEBAR: 32,
 } as const;
 
-type WithOpenEventsProps = {
+export type WithOpenEventsProps = {
   isOpen?: boolean;
   onOpen?: () => void;
   hasTouchSupport?: boolean;
