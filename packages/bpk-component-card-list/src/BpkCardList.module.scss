@@ -18,8 +18,44 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-component-card-list {
-  &__header {
-    margin-bottom: bpk-spacing-base();
+.bpk-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: bpk-spacing-lg();
+
+  &--chip-group {
+    display: flex;
+    gap: bpk-spacing-md();
+  }
+
+  &--card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    // TODO: this needed?
+    gap: bpk-spacing-lg();
+
+    &--grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &--row {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: bpk-spacing-lg();
+    }
+
+    &--stack {
+      flex-direction: column;
+    }
+
+    &--card {
+      min-width: $bpk-one-pixel-rem * 241;
+      flex-grow: 1;
+    }
   }
 }

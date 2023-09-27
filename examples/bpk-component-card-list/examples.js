@@ -18,6 +18,7 @@
 /* @flow strict */
 
 // import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkCard from '../../packages/bpk-component-card';
 import BpkCardList from '../../packages/bpk-component-card-list';
 
 // import STYLES from './examples.module.scss';
@@ -26,7 +27,13 @@ import BpkCardList from '../../packages/bpk-component-card-list';
 
 const RowToRailExample = () => (
   <BpkCardList
-    cardList={[]}
+    cardList={[...Array(15).keys()].map((i) => (
+      <BpkCard href="#">
+        {/* <BpkImage aspectRatio={3000/2318} src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg" /> */}
+        TEST {i}
+      </BpkCard>
+    ))}
+    accessory='pagination'
     layoutDesktop="row"
     layoutMobile="rail"
     title="Card List Component"
@@ -35,7 +42,12 @@ const RowToRailExample = () => (
 
 const GridToRailExample = () => (
   <BpkCardList
-    cardList={[]}
+    cardList={[...Array(15).keys()].map((i) => (
+      <BpkCard href="#">
+        {/* <BpkImage aspectRatio={3000/2318} src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg" /> */}
+        TEST {i}
+      </BpkCard>
+    ))}
     layoutDesktop="grid"
     layoutMobile="rail"
     title="Card List Component"
@@ -44,7 +56,12 @@ const GridToRailExample = () => (
 
 const RowToStackExample = () => (
   <BpkCardList
-    cardList={[]}
+    cardList={[...Array(15).keys()].map((i) => (
+      <BpkCard href="#">
+        {/* <BpkImage aspectRatio={3000/2318} src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg" /> */}
+        TEST {i}
+      </BpkCard>
+    ))}
     layoutDesktop="row"
     layoutMobile="stack"
     title="Card List Component"
@@ -53,7 +70,13 @@ const RowToStackExample = () => (
 
 const GridToStackExample = () => (
   <BpkCardList
-    cardList={[]}
+    cardList={[...Array(15).keys()].map((i) => (
+      <BpkCard href="#">
+        {/* <BpkImage aspectRatio={3000/2318} src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg" /> */}
+        TEST {i}
+      </BpkCard>
+    ))}
+    accessory='expand'
     layoutDesktop="grid"
     layoutMobile="stack"
     title="Card List Component"

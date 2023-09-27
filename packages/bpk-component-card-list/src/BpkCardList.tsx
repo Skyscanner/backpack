@@ -16,49 +16,113 @@
  * limitations under the License.
  */
 
+import { useState } from 'react';
+
 import { cssModules } from '../../bpk-react-utils';
 import BpkSectionHeader from '../../bpk-component-section-header';
+import { BpkButtonV2 } from '../../bpk-component-button';
+import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 
 import STYLES from './BpkCardList.module.scss';
+import type { BpkAccessoryTypes } from './BpkAccessory';
+import BpkAccessory from './BpkAccessory';
 
 const getClassName = cssModules(STYLES);
 
 export type layoutDesktopProps = 'row' | 'grid';
 export type layoutMobileProps = 'rail' | 'stack';
-type Props = {
-  // accessory?: 'expand' | 'button' | 'pagination';
-  // buttonText?: string;
-  cardList: any[];
-  description?: string;
-  // expandText?: string;
-  initiallyShownCards?: number;
-  layoutDesktop: layoutDesktopProps;
-  layoutMobile: layoutMobileProps;
-  // onButtonClick?: Function;
-  title: string;
-};
 
 const MAX_ITEMS = 12; // MAX should be 12 for Desktop Grid and Mobile Stack
 const DEFAULT_ITEMS = 3;
 
-const BpkCardList = (props: Props) => {
-  const {
-    cardList,
-    description,
-    initiallyShownCards = 3,
-    layoutDesktop,
-    layoutMobile,
-    title,
-  } = props;
-  const classNames = getClassName('bpk-component-card-list');
+type BpkChipGroup = any;
+
+export type BpkCardListProps = {
+  title: string;
+  description?: string;
+  buttonText?: string;
+  onButtonClick?: () => void;
+  chipGroup?: BpkChipGroup;
+  cardList: JSX.Element[];
+  initiallyShownCards?: number;
+  layoutDesktop: 'row' | 'grid';
+  layoutMobile: 'rail' | 'stack';
+  accessory?: BpkAccessoryTypes;
+  expandString?: string;
+};
+
+const CARDS_PER_ROW = 3;
+
+const BpkCardList = ({
+  accessory,
+  buttonText,
+  cardList,
+  chipGroup,
+  description,
+  expandString,
+  initiallyShownCards = 3,
+  layoutDesktop,
+  layoutMobile,
+  onButtonClick,
+  title,
+}: BpkCardListProps) => {
+  const [cards, setCards] = useState(cardList.slice(0, initiallyShownCards));
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentLayout, setCurrentLayout] = useState();
+  const cardRows = [];
+
+  for (let i = 0; i < cards.length; i += CARDS_PER_ROW) {
+    cardRows.push(cards.slice(i, i + CARDS_PER_ROW));
+  }
+
+  const showContent = () => {
+    setCards(cardList);
+  };
+  const hideContent = () => {
+    setCards(cardList.slice(0, initiallyShownCards));
+  };
 
   return (
-    <div className={classNames}>
-      <div className={getClassName('bpk-component-card-list__header')}>
-        <BpkSectionHeader title={title} description={description} />
+    <div className={getClassName('bpk-card-list')}>
+      <BpkSectionHeader
+        title={title}
+        description={description}
+        button={buttonText && <BpkButtonV2>{buttonText}</BpkButtonV2>}
+      />
+      <div className={getClassName(`bpk-card-list--chip-group`)}>
+        {chipGroup}
+      </div>
+      {/* <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+
+      </BpkBreakpoint> */}
+      <div
+        className={getClassName(
+          'bpk-card-list--card-list',
+          `bpk-card-list--card-list--${layoutDesktop}`,
+        )}
+      >
+        {cardRows.map((row) => (
+          <div className={getClassName('bpk-card-list--card-list--row')}>
+            {row.map((card) => (
+              <div className={getClassName('bpk-card-list--card-list--card')}>
+                {card}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
 
-      <div>CARD LIST</div>
+      {!buttonText && accessory && (
+        <BpkAccessory
+          {...{
+            accessory,
+            currentIndex,
+            hideContent,
+            setCurrentIndex,
+            showContent,
+          }}
+        />
+      )}
     </div>
   );
 };
