@@ -21,29 +21,3 @@ export default () => (
   </BpkSectionList>
 );
 ```
-
-## Props
-
-### BpkSectionList
-
-| Property              | PropType                      | Required | Default Value |
-| --------------------- | ----------------------------- | -------- | ------------- |
-| children              | node                          | true     | -             |
-
-### BpkSectionListSection
-
-| Property              | PropType                      | Required | Default Value |
-| --------------------- | ----------------------------- | -------- | ------------- |
-| children              | node                          | true     | -             |
-| headerText            | string                        | false    | null          |
-
-
-### BpkSectionListItem
-
-| Property              | PropType                      | Required | Default Value |
-| --------------------- | ----------------------------- | -------- | ------------- |
-| children              | node                          | true     | -             |
-| blank                 | bool                          | false    | false         |
-| className             | string                        | false    | null          |
-| href                  | string                        | false    | null          |
-| onClick               | func                          | false    | null          |

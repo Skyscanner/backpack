@@ -15,14 +15,3 @@ export default () => (
   <BpkSectionHeader title="Section title" />
 );
 ```
-
-## Props
-
-### BpkSectionHeader
-
-| Property    | PropType                   | Required | Default Value |
-|-------------|----------------------------|----------|---------------|
-| title       | string                     | true     | -             |
-| description | string                     | false    | -             |
-| button      | node                       | false    | -             |
-| type        | oneOf(SECTION_TYPES.default, SECTION_TYPES.onDark) | false    | SECTION_TYPES.default       |

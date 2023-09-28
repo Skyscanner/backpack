@@ -17,6 +17,9 @@
  */
 /* @flow strict */
 
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+
 import BpkSwitch from '../../packages/bpk-component-switch/src/BpkSwitch';
 
 import { DefaultExample, SmallExample, MixedExample } from './examples';
@@ -24,6 +27,21 @@ import { DefaultExample, SmallExample, MixedExample } from './examples';
 export default {
   title: 'bpk-component-switch',
   component: BpkSwitch,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable of={PRIMARY_STORY} />
+          <Markdown>
+            {
+              `This component uses a hidden [input type="checkbox"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox), so it supports all the same properties as it (for example "checked").`
+            }
+          </Markdown>
+        </>
+      )
+    },
+  },
 };
 
 export const Default = DefaultExample;
