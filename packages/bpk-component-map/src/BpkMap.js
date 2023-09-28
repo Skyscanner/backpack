@@ -173,12 +173,18 @@ const BpkMap = (props: Props) => {
 };
 
 BpkMap.propTypes = {
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
   bounds: PropTypes.shape({
     south: PropTypes.number.isRequired,
     west: PropTypes.number.isRequired,
     north: PropTypes.number.isRequired,
     east: PropTypes.number.isRequired,
   }),
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
   center: LatLongPropType,
   children: PropTypes.node,
   greedyGestureHandling: PropTypes.bool,

@@ -170,6 +170,38 @@ export default () => (
 );
 ```
 
+## Props
+
+### BpkMap
+
+| Property              | PropType                                                                                        | Required | Default Value                    |
+| --------------------- | ----------------------------------------------------------------- | -------- | -------------------------------- |
+| bounds                | shape({north: number, east: number, south: number, west: number}) | false    | null                             |
+| center                | shape({latitude: number, longitude: number})                      | false    | null                             |
+| className             | string                                                            | false    | null                             |
+| greedyGestureHandling | bool                                                              | false    | false                            |
+| mapOptionStyles       | array                                                             | false    | null                             |
+| mapRef                | func                                                              | false    | null                             |
+| onRegionChange        | func                                                              | false    | null                             |
+| onZoom                | func                                                              | false    | null                             |
+| onTilesLoaded         | func                                                              | false    | null                             |
+| panEnabled            | bool                                                              | false    | true                             |
+| showControls          | bool                                                              | false    | true                             |
+| zoom                  | number                                                            | false    | 15                               |
+| mapId                 | string                                                            | false    | null                             |
+
+
+#### withGoogleMapsScript
+
+When using `withGoogleMapsScript`, some additional props are available:
+
+| Property                  | PropType | Required | Default Value                     |
+| ------------------------- | -------- | -------- | --------------------------------- |
+| googleMapsApiKey          | string   | true     | -                                 |
+| libraries                 | array    | false    | ['geometry', 'drawing', 'places'] |
+| loadingElement            | node     | false    | BpkSpinner                        |
+| preventGoogleFontsLoading | bool     | false    | false                             |
+
 ### BpkIconMarker
 
 `BpkIconMarker` only supports small icons from the Backpack icon set. Large icons should not be used with `BpkIconMarker`.

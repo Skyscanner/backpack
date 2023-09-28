@@ -204,5 +204,31 @@ class BpkHorizontalNav extends Component<Props> {
   }
 }
 
+BpkHorizontalNav.propTypes = {
+  children: PropTypes.node.isRequired,
+  /**
+   * Ensures that the selected item is within view when loaded on narrow-screened devices.
+   */
+  autoScrollToSelected: PropTypes.bool,
+  className: PropTypes.string,
+  leadingScrollIndicatorClassName: PropTypes.string,
+  /**
+   * When set to "false", the bottom border on the component isn't included. This refers 
+   * to the underline on the whole "BpkHorizontalNav", not the line that appears under the selected item.
+   */
+  showUnderline: PropTypes.bool,
+  trailingScrollIndicatorClassName: PropTypes.string,
+  type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
+}
+
+BpkHorizontalNav.defaultProps = {
+  autoScrollToSelected: false,
+  className: null,
+  leadingScrollIndicatorClassName: null,
+  showUnderline: true,
+  trailingScrollIndicatorClassName: null,
+  type: HORIZONTAL_NAV_TYPES.default,
+};
+
 export default BpkHorizontalNav;
 export { HORIZONTAL_NAV_TYPES };
