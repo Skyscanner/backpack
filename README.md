@@ -99,11 +99,3 @@ These are installed separately and installation information can be found in the 
 | [`@skyscanner/bpk-svgs`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-svgs)                       | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs)                       |
 | [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web) |
 
-Description-list
-Button v2
-drawer
-horizontal nav (check the other PR)
-infinite scroll
-map price marker v2
-
-Update label and description of the other PR; update type files?
