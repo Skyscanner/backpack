@@ -22,6 +22,7 @@ import { ArgsTable } from '@storybook/addon-docs';
 
 import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
 
+import { WithOpenEventsMock } from './stories-utils';
 import {
   TextExample,
   PlaceholderExample,
@@ -42,6 +43,9 @@ import {
 export default {
   title: 'bpk-component-input',
   component: BpkInput,
+  subcomponents: {
+    withOpenEvents: WithOpenEventsMock,
+  },
   parameters: {
     docs: {
       page: () => (

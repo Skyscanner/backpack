@@ -56,25 +56,6 @@ class BpkHorizontalNav extends Component<Props> {
 
   scrollRef: ?Element;
 
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    autoScrollToSelected: PropTypes.bool,
-    className: PropTypes.string,
-    leadingScrollIndicatorClassName: PropTypes.string,
-    showUnderline: PropTypes.bool,
-    trailingScrollIndicatorClassName: PropTypes.string,
-    type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
-  };
-
-  static defaultProps = {
-    autoScrollToSelected: false,
-    className: null,
-    leadingScrollIndicatorClassName: null,
-    showUnderline: true,
-    trailingScrollIndicatorClassName: null,
-    type: HORIZONTAL_NAV_TYPES.default,
-  };
-
   constructor(props: Props) {
     super(props);
 

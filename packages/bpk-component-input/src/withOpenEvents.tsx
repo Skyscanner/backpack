@@ -35,13 +35,13 @@ const KEYCODES = {
   SPACEBAR: 32,
 } as const;
 
-type WithOpenEventsProps = {
+export type WithOpenEventsProps = {
   /**
    * It is important you pass the `isOpen` prop, as it is necessary to work around an IE bug.
    */
   isOpen?: boolean;
   /**
-   *  The onOpen callback is called on the following events:
+   * The onOpen callback is called on the following events:
    * click
    * focus
    * touchend

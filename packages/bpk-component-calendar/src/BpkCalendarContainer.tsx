@@ -41,7 +41,7 @@ import {
   startOfMonth,
 } from './date-utils';
 
-type Props = {
+export type Props = {
   /**
    * If set to true (default), it sets a fixed width on the calendar container. This is necessary to support transitions and to create the right size for the Datepicker component.
    * If set to false, the calendar is of fluid width and will take up the space of its parent container.

@@ -18,7 +18,7 @@
 
 import type { ComponentType } from 'react';
 import type { DaysOfWeek, SelectionConfiguration, DateModifiers } from './custom-proptypes';
-type Props = {
+export type Props = {
     changeMonthLabel?: string | null;
     daysOfWeek: DaysOfWeek;
     formatDateFull: (date: Date) => Date | string;

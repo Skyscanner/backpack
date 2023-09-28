@@ -30,7 +30,7 @@ import STYLES from './BpkCalendar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
+export type Props = {
   changeMonthLabel?: string | null;
   /**
    * An array of objects describing the days of the week

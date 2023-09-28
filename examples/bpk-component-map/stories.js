@@ -23,6 +23,7 @@ import BpkPriceMarkerV2 from '../../packages/bpk-component-map/src/BpkPriceMarke
 import BpkPriceMarker from '../../packages/bpk-component-map/src/BpkPriceMarker';
 import BpkOverlayView from '../../packages/bpk-component-map/src/BpkOverlayView';
 
+import WithGoogleMapsScriptMock from './stories-utils';
 import {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -47,8 +48,10 @@ export default {
     BpkPriceMarker,
     BpkPriceMarkerV2,
     BpkOverlayView,
+    withGoogleMapsScript: WithGoogleMapsScriptMock
   },
 };
+
 export const Simple = SimpleExample;
 export const DragDisabledAndControlsHidden =
   DragDisabledAndHiddenControlsExample;

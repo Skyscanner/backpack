@@ -42,25 +42,6 @@ export type Props = {
 // React Component class.
 // eslint-disable-next-line react/prefer-stateless-function
 class BpkHorizontalNavItem extends Component<Props> {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-    disabled: PropTypes.bool,
-    href: PropTypes.string,
-    selected: PropTypes.bool,
-    spaceAround: PropTypes.bool,
-    type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
-  };
-
-  static defaultProps = {
-    className: null,
-    disabled: false,
-    href: null,
-    selected: false,
-    spaceAround: false,
-    type: HORIZONTAL_NAV_TYPES.default,
-  };
-
   render() {
     const {
       children,
