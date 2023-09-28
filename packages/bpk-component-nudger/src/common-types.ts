@@ -41,7 +41,7 @@ export type CommonProps = {
    * This is the label that will be read out when screen reader users tab to the decrease button. Make sure you use a descriptive label
    */
   decreaseButtonLabel: string;
-  buttonType?: (typeof BUTTON_TYPES)[keyof typeof BUTTON_TYPES];
+  buttonType?: keyof typeof BUTTON_TYPES;
   /**
    * Title, subtitle and icon together make up the label for the nudger.
    * This label will be read aloud as a whole by screen readers. They all are optional props, however, if you wish to use a label then you will need to pass a title as the label will not work without it.
