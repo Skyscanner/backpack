@@ -21,7 +21,7 @@ import BpkBannerAlert from '../../packages/bpk-component-banner-alert/src/BpkBan
 import BpkBannerAlertDismissable from '../../packages/bpk-component-banner-alert/src/BpkBannerAlertDismissable';
 import BpkBannerAlertExpandable from '../../packages/bpk-component-banner-alert/src/BpkBannerAlertExpandable';
 
-import withBannerAlertStateMock from './stories-utils';
+import { withBannerAlertStateMock } from './stories-utils';
 import {
   NeutralExample,
   PrimaryExample,

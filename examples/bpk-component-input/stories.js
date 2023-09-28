@@ -19,7 +19,7 @@
 
 import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
 
-import WithOpenEventsMock from './stories-utils';
+import { WithOpenEventsMock } from './stories-utils';
 import {
   TextExample,
   PlaceholderExample,

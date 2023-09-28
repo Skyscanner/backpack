@@ -27,4 +27,5 @@ import type { WithBannerAlertStateProps } from '../../packages/bpk-component-ban
 
 const withBannerAlertStateMock = (props: WithBannerAlertStateProps) => <div />;
 
-export default withBannerAlertStateMock;
+// eslint-disable-next-line import/prefer-default-export
+export { withBannerAlertStateMock };
