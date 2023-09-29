@@ -143,39 +143,8 @@ withCalendarState(
 ```
 
 > When implementing a replacement for any of the default calendar components, make sure it
-> implements the same API (props see below) and provides all the relevant accessibility
+> implements the same API and provides all the relevant accessibility
 > properties, such as ARIA attributes and `tabIndex`.
-
-## Props
-
-| Property               | PropType | Required        | Default Value                                        |
-| ---------------------- | -------- | --------------- | ---------------------------------------------------- |
-| daysOfWeek             | object   | true            | -                                                    |
-| formatDateFull         | func     | true            | -                                                    |
-| formatMonth            | func     | true            | -                                                    |
-| id                     | string   | true            | -                                                    |
-| weekStartsOn           | number   | true            | -                                                    |
-| changeMonthLabel       | string   | if Nav !== null | -                                                    |
-| nextMonthLabel         | string   | if Nav !== null | -                                                    |
-| previousMonthLabel     | string   | if Nav !== null | -                                                    |
-| className              | string   | false           | null                                                 |
-| fixedWidth             | bool     | false           | true                                                 |
-| gridClassName          | string   | false           | null                                                 |
-| initiallyFocusedDate   | Date     | false           | null                                                 |
-| markOutsideDays        | bool     | false           | true                                                 |
-| markToday              | bool     | false           | true                                                 |
-| maxDate                | Date     | false           | new Date() + 1 year                                  |
-| minDate                | Date     | false           | new Date()                                           |
-| onDateSelect           | func     | false           | null                                                 |
-| onMonthChange          | func     | false           | null                                                 |
-| selectionConfiguration | object   | false           | { type: CALENDAR_SELECTION_TYPE.single, date: null } |
-| navProps               | object   | false           | null                                                 |
-| headerProps            | object   | false           | null                                                 |
-| gridProps              | object   | false           | null                                                 |
-| dateProps              | object   | false           | null                                                 |
-| weekDayKey             | string   | false           | nameAbbr                                             |
-
-Some of the more complex props and props for sub-components are detailed below.
 
 ### BpkCalendarGridHeader
 

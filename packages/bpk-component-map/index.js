@@ -23,7 +23,7 @@ import BpkIconMarker, {
   type Props as IconMarkerProps,
 } from './src/BpkIconMarker';
 import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './src/BpkPriceMarker';
-import BpkPriceMarkerV2, {
+import { BpkPriceMarkerV2,
   MARKER_STATUSES,
 } from './src/BpkPriceMarkerV2/BpkPriceMarker';
 import BpkOverlayView from './src/BpkOverlayView';

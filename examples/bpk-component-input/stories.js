@@ -54,7 +54,8 @@ export default {
           <ArgsTable of={PRIMARY_STORY} />
           <Markdown>
             {
-            `**Note:** Additionally, all native "input" attributes such as "placeholder" and "onChange" are supported.`}
+            `**Note:** Additionally, all native \`input\` attributes such as \`placeholder\` and \`onChange\` are supported.`
+            }
           </Markdown>
         </>
       )

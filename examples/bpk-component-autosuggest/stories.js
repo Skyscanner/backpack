@@ -42,7 +42,7 @@ export default {
             `**BpkAutosuggest:**
             Please refer to react-autosuggest's
             documentation for a full list of [props](https://github.com/moroshko/react-autosuggest#props).
-            **Note:** The inputProps object is passed directly to a
+            **Note:** The \`inputProps\` object is passed directly to a
             [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`
             }
           </Markdown>

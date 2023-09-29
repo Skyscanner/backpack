@@ -35,7 +35,7 @@ export default {
           <ArgsTable of={PRIMARY_STORY} />
           <Markdown>
             {
-              `This component uses a hidden [input type="checkbox"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox), so it supports all the same properties as it (for example "checked").`
+              `This component uses a hidden [\`input type=checkbox\`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox), so it supports all the same properties as it (for example \`checked\`).`
             }
           </Markdown>
         </>

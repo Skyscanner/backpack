@@ -31,6 +31,9 @@ import STYLES from './BpkCalendar.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
+  /**
+   * **Required** if Nav !== null
+   */
   changeMonthLabel?: string | null;
   /**
    * An array of objects describing the days of the week
@@ -49,7 +52,13 @@ export type Props = {
   maxDate: Date;
   minDate: Date;
   month: Date;
+  /**
+   * **Required** if Nav !== null
+   */
   nextMonthLabel?: string | null;
+  /**
+   * **Required** if Nav !== null
+   */
   previousMonthLabel?: string | null;
   /**
    * First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.

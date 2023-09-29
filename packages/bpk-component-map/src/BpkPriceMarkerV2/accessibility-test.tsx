@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkPriceMarkerV2 from './BpkPriceMarker';
+import { BpkPriceMarkerV2 } from './BpkPriceMarker';
 
 type Props = {
   children: Node;

@@ -16,8 +16,11 @@
  * limitations under the License.
  */
 
-import BpkScrollableCalendar from '../../packages/bpk-component-scrollable-calendar/src/BpkScrollableCalendar';
+import BpkScrollableCalendarDateComponent from '../../packages/bpk-component-scrollable-calendar/src/BpkScrollableCalendarDate';
+import BpkScrollableCalendarGridComponent from '../../packages/bpk-component-scrollable-calendar/src/BpkScrollableCalendarGrid';
+import BpkScrollableCalendarGridListComponent from '../../packages/bpk-component-scrollable-calendar/src/BpkScrollableCalendarGridList';
 
+import { BpkScrollableCalendarMock } from './stories-utils';
 import {
   DefaultExample,
   WeekStartsOnSixExample,
@@ -40,7 +43,12 @@ import {
 
 export default {
   title: 'bpk-component-scrollable-calendar',
-  component: BpkScrollableCalendar,
+  component: BpkScrollableCalendarGridListComponent,
+  subcomponents: {
+    BpkScrollableCalendarDate: BpkScrollableCalendarDateComponent,
+    BpkScrollableCalendarGrid: BpkScrollableCalendarGridComponent,
+    BpkScrollableCalendar: BpkScrollableCalendarMock,
+  },
 };
 
 export const ScrollableCalendarDefault = DefaultExample;

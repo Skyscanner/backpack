@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import BpkPopover from '../../packages/bpk-component-popover/src/BpkPopover';
+import BpkPopover from '../../packages/bpk-component-popover/src/BpkPopoverPortal';
 
 import {
   DefaultExample,

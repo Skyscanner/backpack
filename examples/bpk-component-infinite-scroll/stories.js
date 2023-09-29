@@ -18,6 +18,7 @@
 
 /* @flow strict */
 
+import { WithInfiniteScrollMock as withInfiniteScroll } from './stories-utils';
 import {
   DefaultExample,
   StoppingAfterScrollsExample,
@@ -44,6 +45,7 @@ const withScrollReset = (story) => {
 
 export default {
   title: 'bpk-component-infinite-scroll',
+  component: withInfiniteScroll,
   decorators: [withScrollReset],
 };
 

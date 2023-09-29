@@ -46,7 +46,7 @@ export default {
           <Title />
           <ArgsTable of={PRIMARY_STORY} />
           <Markdown>
-            **Note:** All [standard img attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including srcSet are also supported.
+            {`**Note:** All [standard img attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including \`srcSet\` are also supported.`}
           </Markdown>
         </>
       )
