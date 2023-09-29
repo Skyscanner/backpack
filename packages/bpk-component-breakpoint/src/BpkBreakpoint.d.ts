@@ -30,6 +30,9 @@ declare const BREAKPOINTS: {
     readonly DESKTOP_ONLY: any;
 };
 type Props = {
+    /**
+     * The content to render when the breakpoint matches.
+     */
     children: ReactNode | ((matches: boolean) => ReactNode | null);
     query: string | (typeof BREAKPOINTS)[keyof typeof BREAKPOINTS];
     legacy?: boolean;
