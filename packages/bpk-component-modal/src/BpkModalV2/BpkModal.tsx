@@ -112,32 +112,28 @@ export const BpkModalV2 = (props: Props) => {
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
-    if (isOpen) {
-      ref.current?.showModal?.();
+    const dialog = ref.current;
 
-      const dialog = document.getElementById(`${id}`);
-      const dialogWithPolyfill = document.getElementById(`${id}-polyfill`);
+    const handleBackdropClick = (event: MouseEvent) => {
+      const { target } = event;
+      if (target === dialog) {
+        onClose();
+      }
+    };
 
-      const handleBackdropClick = (modal: HTMLElement | null) => {
-        if (modal) {
-          modal.addEventListener('click', (event: Event) => {
-            const { target } = event;
-
-            if (target === modal) {
-              modal === dialog ? ref.current?.close?.() : onClose();
-            }
-          });
-        }
-      };
-
-      handleBackdropClick(dialog);
-      handleBackdropClick(dialogWithPolyfill);
-    } else {
-      ref.current?.close?.();
+    if (dialog) {
+      if (isOpen) {
+        dialog.showModal();
+        dialog.addEventListener('click', handleBackdropClick);
+      }
     }
 
     setPageProperties({ isDialogOpen: isOpen });
-    return () => setPageProperties({ isDialogOpen: false });
+
+    return () => {
+      setPageProperties({ isDialogOpen: false });
+      dialog?.removeEventListener('click', handleBackdropClick);
+    };
   }, [id, isOpen, onClose]);
 
   const classNames = getClassName(
