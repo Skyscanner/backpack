@@ -139,7 +139,6 @@
 
   &__header-title {
     padding: bpk-spacing-base();
-    border-block-end: $bpk-input-border;
 
     @include header;
   }
