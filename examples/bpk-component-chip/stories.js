@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkSelectableChip from '../../packages/bpk-component-chip/src/BpkSelectableChip';
 import BpkDismissibleChip from '../../packages/bpk-component-chip/src/BpkDismissibleChip';

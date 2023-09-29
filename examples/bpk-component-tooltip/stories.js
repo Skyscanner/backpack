@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkTooltip from '../../packages/bpk-component-tooltip/src/BpkTooltipPortal';
 

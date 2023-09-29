@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 
 import BpkAccordion from '../../packages/bpk-component-accordion/src/BpkAccordion';

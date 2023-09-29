@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import BpkCard from '../../packages/bpk-component-card/src/BpkCard';
 import BpkDividedCard from '../../packages/bpk-component-card/src/BpkDividedCard';

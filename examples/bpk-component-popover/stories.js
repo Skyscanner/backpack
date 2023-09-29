@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkPopover from '../../packages/bpk-component-popover/src/BpkPopoverPortal';
 

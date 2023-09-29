@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkTicket from '../../packages/bpk-component-ticket/src/BpkTicket';
 

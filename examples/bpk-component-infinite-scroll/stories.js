@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import { WithInfiniteScrollMock as withInfiniteScroll } from './stories-utils';
 import {

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 import BpkBreakpoint from '../../packages/bpk-component-breakpoint/src/BpkBreakpoint';
 
 import DefaultExample from './examples';

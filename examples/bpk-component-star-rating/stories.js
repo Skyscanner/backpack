@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkStarRating from '../../packages/bpk-component-star-rating/src/BpkStarRating';
 import { BpkStarNonRtl } from '../../packages/bpk-component-star-rating/src/BpkStar';

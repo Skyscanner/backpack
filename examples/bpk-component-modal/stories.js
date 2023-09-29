@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkModal from '../../packages/bpk-component-modal/src/BpkModal';
 

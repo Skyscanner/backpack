@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkCheckbox from '../../packages/bpk-component-checkbox/src/BpkCheckbox';
 

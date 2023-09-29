@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkTextarea from '../../packages/bpk-component-textarea/src/BpkTextarea';
 

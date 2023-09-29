@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkPhoneInput from '../../packages/bpk-component-phone-input/src/BpkPhoneInput';
 

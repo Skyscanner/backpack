@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkCloseButton from '../../packages/bpk-component-close-button/src/BpkCloseButton';
 

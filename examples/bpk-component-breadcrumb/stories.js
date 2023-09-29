@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkBreadcrumb from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumb';
 import BpkBreadcrumbItem from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumbItem';

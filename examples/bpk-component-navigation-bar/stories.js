@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkNavigationBar from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBar';
 import BpkNavigationBarIconButton from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarIconButton';

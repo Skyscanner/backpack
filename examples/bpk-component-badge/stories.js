@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
 
 import {

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkDialog from '../../packages/bpk-component-dialog/src/BpkDialog';
 

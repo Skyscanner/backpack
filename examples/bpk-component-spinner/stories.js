@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkSpinner from '../../packages/bpk-component-spinner/src/BpkSpinner';
 import BpkLargeSpinner from '../../packages/bpk-component-spinner/src/BpkLargeSpinner';

@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BkpDrawer from '../../packages/bpk-component-drawer/src/BpkDrawer';
 
