@@ -129,8 +129,7 @@ export const BpkModalV2 = (props: Props) => {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        event.preventDefault();
-        onClose();
+          onClose();
       }
     };
 
