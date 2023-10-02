@@ -38,12 +38,10 @@ const preview: Preview = {
     (story, { args }) => {
       let root;
       try {
-        root = document?.querySelector(':root');  
+        root = document?.querySelector(':root');
+        (root as HTMLElement).style.setProperty('font-size', args.fontSize);
       } catch(e) {
-        root = null;
-      }
-      if (root) {
-        (root as HTMLElement).style.setProperty('font-size', args.fontSize)
+        console.error(e);
       }
       return (
         <div>
