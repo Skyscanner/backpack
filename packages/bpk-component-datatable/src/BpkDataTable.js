@@ -28,7 +28,7 @@ import STYLES from './BpkDataTable.module.scss';
 import type { Props } from './common-types';
 import { SORT_DIRECTION_TYPES } from './sort-types';
 import BpkDataTableHeader from './BpkDataTableHeader';
-import { getColumns } from './utils';
+import { pxToRem, getColumns, createColumnsSchema } from './utils';
 
 const getClassName = cssModules(STYLES);
 
@@ -41,6 +41,7 @@ const BpkDataTable = (props: Props) => {
   const {
     children,
     className,
+    columns: columnsData,
     defaultColumnSortIndex,
     headerClassName,
     headerHeight,
@@ -49,7 +50,7 @@ const BpkDataTable = (props: Props) => {
     rowClassName,
     rowHeight,
     rowStyle,
-    rows: data,
+    rows: rowsData,
     sort,
     sortBy,
     sortDirection,
@@ -84,7 +85,15 @@ const BpkDataTable = (props: Props) => {
     headerClassName,
   );
 
-  const columns = useMemo(() => getColumns(children), [children]);
+  const columns = useMemo(() => {
+    if (columnsData) {
+      return createColumnsSchema(columnsData);
+    } 
+      return getColumns(children);
+    
+  }, [children, columnsData]);
+
+  const data = useMemo(() => rowsData, [rowsData]);
 
   const { getTableBodyProps, getTableProps, headerGroups, prepareRow, rows } =
     useTable(
@@ -139,7 +148,7 @@ const BpkDataTable = (props: Props) => {
   return (
     <div
       {...getTableProps({
-        style: { width, height },
+        style: { width: pxToRem(width), height: pxToRem(height) },
         className: classNames,
       })}
       {...restOfProps}
@@ -148,7 +157,7 @@ const BpkDataTable = (props: Props) => {
         {headerGroups.map((headerGroup) => (
           <div
             {...headerGroup.getHeaderGroupProps({
-              style: { height: headerHeight },
+              style: { height: pxToRem(headerHeight) },
               className: headerClassNames,
             })}
           >
@@ -177,7 +186,7 @@ const BpkDataTable = (props: Props) => {
               {...row.getRowProps({
                 style: {
                   ...rowStyle,
-                  height: rowHeight,
+                  height: pxToRem(rowHeight),
                 },
                 className: getRowClassNames(rowClassName, i),
               })}
@@ -225,8 +234,8 @@ BpkDataTable.propTypes = {
 
 BpkDataTable.defaultProps = {
   width: null,
-  headerHeight: 60,
-  rowHeight: 60,
+  headerHeight: '3.75rem',
+  rowHeight: '3.75rem',
   className: null,
   defaultColumnSortIndex: 0,
   sort: null,

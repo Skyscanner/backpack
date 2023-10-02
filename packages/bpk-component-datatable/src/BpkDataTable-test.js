@@ -30,7 +30,20 @@ const rows = [
 ];
 
 describe('BpkDataTable', () => {
-  it('should render correctly with multiple columns', () => {
+  let warningSpy;
+  let oldWarning = null;
+
+  beforeEach(() => {
+    warningSpy = jest.fn();
+    oldWarning = window.console.warn;
+    window.console.warn = warningSpy;
+  });
+
+  afterEach(() => {
+    window.console.warn = oldWarning;
+  });
+
+  it('should render correctly with px height', () => {
     const { asFragment } = render(
       <BpkDataTable rows={rows} height={200}>
         <BpkDataTableColumn label="Name" dataKey="name" width={100} />
@@ -44,19 +57,36 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(warningSpy.mock.calls.length).toBe(5);
+  });
+
+  it('should render correctly with multiple columns', () => {
+    const { asFragment } = render(
+      <BpkDataTable rows={rows} height="12.5rem">
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width="6.25rem"
+          flexGrow={1}
+        />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
+      </BpkDataTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when "onRowClick" is set', () => {
     const { asFragment } = render(
-      <BpkDataTable rows={rows} height={200} onRowClick={() => {}}>
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTable rows={rows} height="12.5rem" onRowClick={() => {}}>
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
           flexGrow={1}
         />
-        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
       </BpkDataTable>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -64,15 +94,15 @@ describe('BpkDataTable', () => {
 
   it('should render correctly with no data; only headers', () => {
     const { asFragment } = render(
-      <BpkDataTable rows={[]} height={200}>
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTable rows={[]} height="12.5rem">
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
           flexGrow={1}
         />
-        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
       </BpkDataTable>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -80,15 +110,15 @@ describe('BpkDataTable', () => {
 
   it('should render correctly with a specified width', () => {
     const { asFragment } = render(
-      <BpkDataTable rows={rows} height={200} width={400}>
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTable rows={rows} height="12.5rem" width="25rem">
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
           flexGrow={1}
         />
-        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
       </BpkDataTable>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -98,17 +128,17 @@ describe('BpkDataTable', () => {
     const { asFragment } = render(
       <BpkDataTable
         rows={rows}
-        height={200}
+        height="12.5rem"
         rowClassName="custom-data-table__row"
       >
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
           flexGrow={1}
         />
-        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
       </BpkDataTable>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -118,21 +148,21 @@ describe('BpkDataTable', () => {
     const { asFragment } = render(
       <BpkDataTable
         rows={rows}
-        height={200}
+        height="12.5rem"
         rowClassName={({ index }) =>
           index % 2 === 0
             ? 'custom-data-table__row_even'
             : 'custom-data-table__row_odd'
         }
       >
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
           flexGrow={1}
         />
-        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
       </BpkDataTable>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -142,32 +172,32 @@ describe('BpkDataTable', () => {
     const { asFragment } = render(
       <BpkDataTable
         rows={rows}
-        height={200}
+        height="12.5rem"
         headerClassName="custom-data-table__header"
       >
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
           flexGrow={1}
         />
-        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
       </BpkDataTable>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
   it('should render correctly with a custom className', () => {
     const { asFragment } = render(
-      <BpkDataTable rows={rows} height={200} className="custom-data-table">
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTable rows={rows} height="12.5rem" className="custom-data-table">
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
           flexGrow={1}
         />
-        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
       </BpkDataTable>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -175,12 +205,12 @@ describe('BpkDataTable', () => {
 
   it('should sort rows if header is clicked', async () => {
     render(
-      <BpkDataTable rows={rows} height={200} width={400}>
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTable rows={rows} height="12.5rem" width="25rem">
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
         />
       </BpkDataTable>,
     );
@@ -210,12 +240,12 @@ describe('BpkDataTable', () => {
     render(
       <BpkDataTable
         rows={abcRows}
-        height={200}
-        width={400}
+        height="12.5rem"
+        width="25rem"
         defaultColumnSortIndex={1}
       >
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
+        <BpkDataTableColumn label="Letter" dataKey="letter" width="6.25rem" />
       </BpkDataTable>,
     );
 
@@ -245,12 +275,12 @@ describe('BpkDataTable', () => {
     render(
       <BpkDataTable
         rows={abcRows}
-        height={200}
-        width={400}
+        height="12.5rem"
+        width="25rem"
         defaultColumnSortIndex={1}
       >
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
+        <BpkDataTableColumn label="Letter" dataKey="letter" width="6.25rem" />
       </BpkDataTable>,
     );
 
@@ -272,17 +302,17 @@ describe('BpkDataTable', () => {
 
   it('should not sort rows if header with disableSort is clicked', async () => {
     render(
-      <BpkDataTable rows={rows} height={200} width={400}>
+      <BpkDataTable rows={rows} height="12.5rem" width="25rem">
         <BpkDataTableColumn
           label="Name"
           dataKey="name"
-          width={100}
+          width="6.25rem"
           disableSort
         />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
         />
       </BpkDataTable>,
     );
@@ -334,8 +364,8 @@ describe('BpkDataTable', () => {
     const getBpkDataTable = (rowsData, sortBy, sortDirection) => (
       <BpkDataTable
         rows={rowsData}
-        height={200}
-        width={400}
+        height="12.5rem"
+        width="25rem"
         sort={sortFunction}
         sortBy={sortBy}
         sortDirection={sortDirection}
@@ -343,18 +373,18 @@ describe('BpkDataTable', () => {
         <BpkDataTableColumn
           label="Name"
           dataKey="name"
-          width={100}
+          width="6.25rem"
           disableSort
         />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
         />
         <BpkDataTableColumn
           label="Seat"
           dataKey="seat"
-          width={100}
+          width="6.25rem"
           flexGrow={1}
           cellRenderer={({ cellData }) => (
             <Fragment>
@@ -393,15 +423,15 @@ describe('BpkDataTable', () => {
     render(
       <BpkDataTable
         rows={rows}
-        height={200}
-        width={400}
+        height="12.5rem"
+        width="25rem"
         onRowClick={onRowClick}
       >
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
         />
       </BpkDataTable>,
     );
@@ -425,12 +455,12 @@ describe('BpkDataTable', () => {
     render(
       <BpkDataTable
         rows={abcRows}
-        height={200}
-        width={400}
+        height="12.5rem"
+        width="25rem"
         onRowClick={onRowClick}
       >
-        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
-        <BpkDataTableColumn label="Number" dataKey="number" width={100} />
+        <BpkDataTableColumn label="Letter" dataKey="letter" width="6.25rem" />
+        <BpkDataTableColumn label="Number" dataKey="number" width="6.25rem" />
       </BpkDataTable>,
     );
 
@@ -444,12 +474,12 @@ describe('BpkDataTable', () => {
 
   it('should re-render when rows prop is updated', () => {
     const { rerender } = render(
-      <BpkDataTable rows={rows} height={200} width={400}>
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTable rows={rows} height="12.5rem" width="25rem">
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
         />
       </BpkDataTable>,
     );
@@ -458,12 +488,12 @@ describe('BpkDataTable', () => {
     ).toHaveLength(2);
 
     rerender(
-      <BpkDataTable rows={[]} height={200} width={400}>
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTable rows={[]} height="12.5rem" width="25rem">
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
         />
       </BpkDataTable>,
     );
@@ -472,12 +502,12 @@ describe('BpkDataTable', () => {
     ).toHaveLength(0);
 
     rerender(
-      <BpkDataTable rows={[rows[0]]} height={200} width={400}>
-        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTable rows={[rows[0]]} height="12.5rem" width="25rem">
+        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
-          width={100}
+          width="6.25rem"
         />
       </BpkDataTable>,
     );
@@ -495,15 +525,15 @@ describe('BpkDataTable', () => {
     render(
       <BpkDataTable
         rows={abcRows}
-        height={200}
-        width={400}
+        height="12.5rem"
+        width="25rem"
         defaultColumnSortIndex={1}
       >
-        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
+        <BpkDataTableColumn label="Letter" dataKey="letter" width="6.25rem" />
         <BpkDataTableColumn
           label="Number"
           dataKey="number"
-          width={100}
+          width="6.25rem"
           defaultSortDirection={SORT_DIRECTION_TYPES.DESC}
         />
       </BpkDataTable>,

@@ -18,6 +18,9 @@
 
 /* @flow strict */
 
+import BpkContentBubble from '../../packages/bpk-component-flare/src/BpkContentBubble';
+import BpkFlareBar from '../../packages/bpk-component-flare/src/BpkFlareBar';
+
 import {
   FlareBarExample,
   FlareBarRoundedExample,
@@ -31,6 +34,11 @@ import {
 
 export default {
   title: 'bpk-component-flare',
+  component: BpkContentBubble,
+  subcomponents: {
+    BpkFlareBar,
+  },
+  tags: ['autodocs'],
 };
 
 export const BpkFlareBarDefault = FlareBarExample;

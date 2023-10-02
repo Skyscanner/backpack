@@ -34,7 +34,7 @@ const BpkDialog = ({
   headerIcon = null,
   headerIconType = HEADER_ICON_TYPES.primary,
   isOpen,
-  onClose = () => {},
+  onClose,
   renderTarget = () => null,
   ...rest
 }: Props) => {
@@ -44,6 +44,11 @@ const BpkDialog = ({
   );
   const closeButtonClassNames = getClassName('bpk-dialog__close-button');
 
+  if(!onClose && dismissible === true) {
+    // eslint-disable-next-line no-console
+    console.warn('BpkDialog: dismissible is true but no onClose prop was provided. Dialog will not be dismissible.');
+  }
+
   return (
     <Portal
       isOpen={isOpen}
@@ -51,7 +56,6 @@ const BpkDialog = ({
       renderTarget={renderTarget}
       closeOnEscPressed={dismissible}
     >
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <BpkDialogInner
         onClose={onClose}
         closeOnScrimClick={dismissible}

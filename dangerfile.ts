@@ -71,7 +71,7 @@ if (componentSourceFilesModified && !snapshotsModified) {
 const componentFilesModified = fileChanges.some(
   (filePath) =>
     // packages/(one or more chars)/src/(one or more chars).(js or ts or tsx)
-    filePath.match(/packages\/.*bpk-component.+\/src\/.+\.(js|ts|tsx)$/) &&
+    filePath.match(/packages\/.*bpk-component.+\/src\/.+\.(ts|tsx)$/) &&
     !filePath.includes('-test.') &&
     !filePath.endsWith('.d.ts'),
 );

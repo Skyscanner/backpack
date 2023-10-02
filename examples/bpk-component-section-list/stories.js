@@ -18,10 +18,20 @@
 
 /* @flow strict */
 
+import BpkSectionList from '../../packages/bpk-component-section-list/src/BpkSectionList';
+import BpkSectionListSection from '../../packages/bpk-component-section-list/src/BpkSectionListSection';
+import BpkSectionListItem from '../../packages/bpk-component-section-list/src/BpkSectionListItem';
+
 import DefaultExample from './examples';
 
 export default {
   title: 'bpk-component-section-list',
+  component: BpkSectionList,
+  subcomponents: {
+    BpkSectionListSection,
+    BpkSectionListItem,
+  },
+  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

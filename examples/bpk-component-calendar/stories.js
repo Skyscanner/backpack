@@ -16,6 +16,12 @@
  * limitations under the License.
  */
 
+import BpkCalendarGridHeaderComponent from '../../packages/bpk-component-calendar/src/BpkCalendarGridHeader';
+import BpkCalendarGridComponent from '../../packages/bpk-component-calendar/src/BpkCalendarGrid';
+import BpkCalendarNavComponent from '../../packages/bpk-component-calendar/src/BpkCalendarNav';
+import BpkCalendarDateComponent from '../../packages/bpk-component-calendar/src/BpkCalendarDate';
+
+import { BpkCalendarContainerMock } from './stories-utils';
 import {
   DefaultExample,
   CalendarNavExample,
@@ -40,6 +46,14 @@ import {
 
 export default {
   title: 'bpk-component-calendar',
+  component: BpkCalendarGridComponent,
+  subcomponents: {
+    BpkCalendarNavComponent,
+    BpkCalendarGridHeaderComponent,
+    BpkCalendarDateComponent,
+    BpkCalendarContainer: BpkCalendarContainerMock
+  },
+  tags: ['autodocs']
 };
 
 export const BpkCalendarNav = CalendarNavExample;

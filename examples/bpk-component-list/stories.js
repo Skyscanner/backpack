@@ -18,10 +18,18 @@
 
 /* @flow strict */
 
+import BpkList from '../../packages/bpk-component-list/src/BpkList';
+import BpkListItem from '../../packages/bpk-component-list/src/BpkListItem';
+
 import { UnorderedExample, OrderedExample, NestedExample } from './examples';
 
 export default {
   title: 'bpk-component-list',
+  component: BpkList,
+  subcomponents: {
+    BpkListItem
+  },
+  tags: ['autodocs'],
 };
 
 export const Unordered = UnorderedExample;

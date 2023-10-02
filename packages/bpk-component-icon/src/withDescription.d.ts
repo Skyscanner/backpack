@@ -19,6 +19,6 @@
 import type { ComponentType } from 'react';
 
 export default function withDescription(
-  Component: ComponentType<any>,
+  Component: ComponentType<any> | string,
   description: string,
 ): ComponentType<any>;

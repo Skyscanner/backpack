@@ -14,12 +14,15 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import LandmarkIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/landmark';
+import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
 import BpkMap, {
   BpkIconMarker,
   BpkOverlayView,
 } from '@skyscanner/backpack-web/bpk-component-map';
 
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
+const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
+
 
 export default () => (
   <BpkMap
@@ -87,6 +90,54 @@ export default () => (
         console.log("Price marker pressed.")
       }}
       status={PRICE_MARKER_STATUSES.viewed}
+    />
+  </BpkMap>
+);
+```
+
+### BpkPriceMarkerV2
+
+BpkPriceMarker V2 version that is the BpkPriceMarker redesign.
+
+```js
+import BpkMap, { BpkPriceMarkerV2, MARKER_STATUSES } from '@skyscanner/backpack-web/bpk-component-map';
+
+export default () => (
+  <BpkMap
+    zoom={15}
+    showControls={false}
+    panEnabled={false}
+    center={{
+      latitude: 27.9881,
+      longitude: 86.925,
+    }}
+  >
+    <BpkPriceMarkerV2
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log("Price marker pressed.")
+      }}
+      status={MARKER_STATUSES.selected}
+      accessibilityLabel="Price marker pressed."
+    />
+    <BpkPriceMarkerV2
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log("Price marker pressed.")
+      }}
+      status={MARKER_STATUSES.previous_selected}
+      accessibilityLabel="Have seen Price marker before"
+    />
+    <BpkPriceMarkerV2
+      label="£120"
+      icon={<AlignedAirportsIconSm />}
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log("Click the Price marker with icon.")
+      }}
+      accessibilityLabel="Click the Price marker with icon"
     />
   </BpkMap>
 );
@@ -180,6 +231,19 @@ When using `withGoogleMapsScript`, some additional props are available:
 | onClick        | func                                         | false    | null          |
 | status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)                                        | false    | `PRICE_MARKER_STATUSES.default`             |
 | buttonProps    | object                                       | false    | null          |
+
+### BpkPriceMarkerV2
+
+| Property           | PropType                                                                                            | Required | Default Value               |
+|--------------------|-----------------------------------------------------------------------------------------------------|----------|-----------------------------|
+| accessibilityLabel | string                                                                                              | true     | -                           |
+| label              | string                                                                                              | true     | -                           |
+| icon               | ReactNode                                                                                           | false    | -                           |
+| position           | {latitude: number, longitude: number}                                                               | true     | -                           |
+| className          | string                                                                                              | false    | -                           |
+| onClick            | func                                                                                                | false    | -                           |
+| status             | oneOf(`MARKER_STATUSES.unselected`, `MARKER_STATUSES.selected`, `MARKER_STATUSES.previous_selected`)| false    |`MARKER_STATUSES.unselected` |
+| buttonProps        | object                                                                                              | false    | -                           |
 
 ### BpkOverlayView
 

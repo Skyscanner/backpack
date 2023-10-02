@@ -16,10 +16,20 @@
  * limitations under the License.
  */
 
+import BpkDescriptionList from '../../packages/bpk-component-description-list/src/BpkDescriptionList';
+import BpkDescriptionTerm from '../../packages/bpk-component-description-list/src/BpkDescriptionTerm';
+import BpkDescriptionDetails from '../../packages/bpk-component-description-list/src/BpkDescriptionDetails';
+
 import DefaultExample from './examples';
 
 export default {
   title: 'bpk-component-description-list',
+  component: BpkDescriptionList,
+  subcomponents: {
+    BpkDescriptionTerm,
+    BpkDescriptionDetails,
+  },
+  tags: ['autodocs'],
 };
 
 export const DescriptionList = DefaultExample;

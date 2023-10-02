@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+import BpkImage from '../../packages/bpk-component-image/src/BpkImage';
+import BpkBackgroundImage from '../../packages/bpk-component-image/src/BpkBackgroundImage';
+
 import {
   DefaultExample,
   RoundedCornersExample,
@@ -31,6 +34,9 @@ import {
 
 export default {
   title: 'bpk-component-image',
+  component: BpkImage,
+  subcomponents: { BpkBackgroundImage },
+  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

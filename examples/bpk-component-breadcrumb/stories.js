@@ -18,10 +18,18 @@
 
 /* @flow strict */
 
+import BpkBreadcrumb from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumb';
+import BpkBreadcrumbItem from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumbItem';
+
 import { DefaultExample, ExtremeExample } from './examples';
 
 export default {
+  component: BpkBreadcrumb,
   title: 'bpk-component-breadcrumb',
+  subcomponents: {
+    BpkBreadcrumbItem
+  },
+  tags: ['autodocs']
 };
 
 export const Default = DefaultExample;

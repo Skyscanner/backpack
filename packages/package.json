@@ -24,8 +24,8 @@
   "dependencies": {
     "@popperjs/core": "^2.11.5",
     "@react-google-maps/api": "^2.12.0",
-    "@skyscanner/bpk-foundations-web": "^17.0.0",
-    "@skyscanner/bpk-svgs": "^18.1.0",
+    "@skyscanner/bpk-foundations-web": "^17.2.0",
+    "@skyscanner/bpk-svgs": "^18.1.2",
     "a11y-focus-scope": "^1.1.3",
     "a11y-focus-store": "^1.0.0",
     "d3-path": "^2.0.0",
@@ -40,9 +40,10 @@
     "prop-types": "^15.7.2",
     "react-autosuggest": "^9.4.3",
     "react-responsive": "^9.0.2",
-    "react-slider": "^1.3.1",
+    "react-slider": "^2.0.6",
     "react-table": "^7.8.0",
     "react-transition-group": "^2.5.3",
+    "react-virtualized-auto-sizer": "^1.0.20",
     "react-window": "^1.8.7"
   },
   "peerDependencies": {

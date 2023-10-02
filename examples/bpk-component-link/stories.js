@@ -18,6 +18,9 @@
 
 /* @flow strict */
 
+import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
+import BpkButtonLink from '../../packages/bpk-component-link/src/BpkButtonLink';
+
 import {
   LinkExample,
   ButtonLinkExample,
@@ -30,6 +33,11 @@ import {
 
 export default {
   title: 'bpk-component-link',
+  component: BpkLink,
+  subcomponents: {
+    BpkButtonLink
+  },
+  tags: ['autodocs'],
 };
 
 export const Example = LinkExample;

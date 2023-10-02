@@ -18,6 +18,8 @@
 
 import type { ReactNode } from "react";
 
+import type { BUTTON_TYPES } from "../../bpk-component-button/src/BpkButtonV2/common-types";
+
 export type CommonProps = {
   id: string;
   min: string | number;
@@ -27,7 +29,7 @@ export type CommonProps = {
   className?: string | null;
   increaseButtonLabel: string;
   decreaseButtonLabel: string;
-  buttonType?: string;
+  buttonType?: keyof typeof BUTTON_TYPES;
   title?: string;
   subtitle?: string;
   icon? : ReactNode;

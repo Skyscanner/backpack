@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { Title, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
 import type { Preview } from '@storybook/react';
 
 import '../packages/bpk-stylesheets';
@@ -47,6 +49,19 @@ const preview: Preview = {
       </div>
     ),
   ],
+  parameters: {
+    docs: {
+      source: {
+        type: 'dynamic',
+      },
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable story={PRIMARY_STORY} />
+        </>
+      )
+    },
+  }
 };
 
 export default preview;

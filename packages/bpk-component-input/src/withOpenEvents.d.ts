@@ -17,7 +17,7 @@
  */
 
 import type { ComponentType, ReactElement, UIEvent, ComponentProps } from 'react';
-type WithOpenEventsProps = {
+export type WithOpenEventsProps = {
     isOpen?: boolean;
     onOpen?: () => void;
     hasTouchSupport?: boolean;

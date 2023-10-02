@@ -17,6 +17,9 @@
  */
 /* @flow strict */
 
+import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
+
+import { WithOpenEventsMock } from './stories-utils';
 import {
   TextExample,
   PlaceholderExample,
@@ -36,6 +39,11 @@ import {
 
 export default {
   title: 'bpk-component-input',
+  component: BpkInput,
+  subcomponents: {
+    withOpenEvents: WithOpenEventsMock,
+  },
+  tags: ['autodocs'],
 };
 
 export const TextValue = TextExample;

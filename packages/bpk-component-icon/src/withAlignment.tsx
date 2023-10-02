@@ -21,7 +21,7 @@ import type { ComponentType } from 'react';
 import { wrapDisplayName } from '../../bpk-react-utils';
 
 export default function withAlignment(
-  Component: ComponentType,
+  Component: ComponentType | string,
   objectHeight: string,
   subjectHeight: string,
 ) {

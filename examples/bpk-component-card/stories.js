@@ -17,6 +17,10 @@
  */
 /* @flow strict */
 
+import BpkCard from '../../packages/bpk-component-card/src/BpkCard';
+import BpkDividedCard from '../../packages/bpk-component-card/src/BpkDividedCard';
+import BpkCardWrapper from '../../packages/bpk-component-card/src/BpkCardWrapper';
+
 import {
   DefaultExample,
   WithHrefExample,
@@ -35,6 +39,12 @@ import {
 
 export default {
   title: 'bpk-component-card',
+  component: BpkCard,
+  subcomponents: {
+    BpkDividedCard,
+    BpkCardWrapper,
+  },
+  tags: ['autodocs']
 };
 
 export const Default = DefaultExample;

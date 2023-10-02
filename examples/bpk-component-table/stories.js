@@ -16,10 +16,26 @@
  * limitations under the License.
  */
 
+import BpkTable from '../../packages/bpk-component-table/src/BpkTable';
+import BpkTableHead from '../../packages/bpk-component-table/src/BpkTableHead';
+import BpkTableBody from '../../packages/bpk-component-table/src/BpkTableBody';
+import BpkTableRow from '../../packages/bpk-component-table/src/BpkTableRow';
+import BpkTableHeadCell from '../../packages/bpk-component-table/src/BpkTableHeadCell';
+import BpkTableCell from '../../packages/bpk-component-table/src/BpkTableCell';
+
 import DefaultExample from './examples';
 
 export default {
   title: 'bpk-component-table',
+  component: BpkTable,
+  subcomponents: {
+    BpkTableHead,
+    BpkTableBody,
+    BpkTableRow,
+    BpkTableHeadCell,
+    BpkTableCell,
+  },
+  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

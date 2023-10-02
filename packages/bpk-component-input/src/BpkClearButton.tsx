@@ -41,7 +41,6 @@ const BpkClearButton = ({ className, label, onClick, ...rest }: Props) => {
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <button
       type="button"
       title={label}

@@ -22,7 +22,7 @@ import type { ComponentType } from 'react';
 declare const _default: (
   displayName: string,
   classNamesToAdd?: string[],
-) => (ComposedComponent: ComponentType<any>) => {
+) => (ComposedComponent: ComponentType<any> | string) => {
   (props: {
     [rest: string]: any;
     className?: string | null | undefined;
