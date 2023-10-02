@@ -66,9 +66,9 @@
 
   &__button {
     min-height: 0;
-    margin: 0 0 auto auto;
     padding: 0;
     color: $bpk-text-on-dark-day;
+    margin-inline-start: auto;
   }
 
   &__icon {
@@ -81,6 +81,6 @@
   }
 
   &__text {
-    margin-right: bpk-spacing-md();
+    margin-inline-end: bpk-spacing-md();
   }
 }
