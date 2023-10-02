@@ -36,3 +36,7 @@ export const Unordered = UnorderedExample;
 export const Ordered = OrderedExample;
 export const Nested = NestedExample;
 export const VisualTest = NestedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};

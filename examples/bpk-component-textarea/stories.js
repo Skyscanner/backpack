@@ -37,3 +37,7 @@ export const Disabled = DisabledExample;
 export const Invalid = InvalidExample;
 export const Large = LargeExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};

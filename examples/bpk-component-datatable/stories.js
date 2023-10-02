@@ -51,3 +51,7 @@ export const CustomHeaderData = HeaderRendererExample;
 export const WithColumnArray = WithColumnArrayExample;
 
 export const VisualTest = AutowidthExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};

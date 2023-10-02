@@ -42,3 +42,7 @@ export const PaginationSinglePage = SinglePaginationExample;
 export const PaginationVisibleExample = VisibleRangeExample;
 
 export const VisualTest = DefaultPaginationExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};

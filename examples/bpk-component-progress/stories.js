@@ -33,3 +33,7 @@ export const Default = DefaultExample;
 export const Small = SmallExample;
 export const Stepped = SteppedExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};

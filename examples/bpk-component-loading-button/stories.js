@@ -60,3 +60,7 @@ export const AnchorTags = AnchorTagsExample;
 
 export const CustomIcon = CustomIconExample;
 export const VisualTest = VisualExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};

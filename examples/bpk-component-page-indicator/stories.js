@@ -33,3 +33,7 @@ export const ThreePages = ThreePagesExample;
 export const OverImage = OverImageExample;
 export const WithNav = WithNavExample;
 export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};

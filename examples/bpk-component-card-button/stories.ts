@@ -41,3 +41,7 @@ export const SmallContained = SmallContainedExample;
 export const SmallOnDark = SmallOnDarkExample;
 export const SmallChecked = SmallCheckedExample;
 export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};

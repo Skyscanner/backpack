@@ -55,3 +55,13 @@ export const RangeWithMultipleInputs = MultipleRangeInputExample;
 export const VisualTest = DefaultVisualExample;
 
 export const VisualTestRange = VisualRangeExample;
+
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};
+
+export const VisualTestRangeWithZoom = VisualTestRange.bind({});
+VisualTestRangeWithZoom.args = {
+  fontSize: '32px'
+};

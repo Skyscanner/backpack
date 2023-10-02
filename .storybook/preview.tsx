@@ -36,7 +36,12 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 const preview: Preview = {
   decorators: [
     (story, { args }) => {
-      var root = document.querySelector(':root');  
+      let root;
+      try {
+        root = document?.querySelector(':root');  
+      } catch(e) {
+        root = null;
+      }
       if (root) {
         (root as HTMLElement).style.setProperty('font-size', args.fontSize)
       }

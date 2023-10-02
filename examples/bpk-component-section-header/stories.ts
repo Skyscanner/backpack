@@ -43,3 +43,7 @@ export const ForMobile = MobileExample;
 export const WithOnDark = WithOnDarkExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};
