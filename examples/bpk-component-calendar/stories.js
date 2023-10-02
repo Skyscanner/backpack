@@ -21,6 +21,7 @@ import BpkCalendarGridComponent from '../../packages/bpk-component-calendar/src/
 import BpkCalendarNavComponent from '../../packages/bpk-component-calendar/src/BpkCalendarNav';
 import BpkCalendarDateComponent from '../../packages/bpk-component-calendar/src/BpkCalendarDate';
 
+import { BpkCalendarContainerMock } from './stories-utils';
 import {
   DefaultExample,
   CalendarNavExample,
@@ -50,6 +51,7 @@ export default {
     BpkCalendarNavComponent,
     BpkCalendarGridHeaderComponent,
     BpkCalendarDateComponent,
+    BpkCalendarContainer: BpkCalendarContainerMock
   },
   tags: ['autodocs']
 };

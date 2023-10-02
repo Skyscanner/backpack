@@ -41,7 +41,7 @@ import {
   startOfMonth,
 } from './date-utils';
 
-type Props = {
+export type Props = {
   fixedWidth?: boolean;
   maxDate?: Date;
   minDate?: Date;
