@@ -24,17 +24,3 @@ const Slider = () => (
 );
 
 ```
-
-## Props
-
-[Please refer to react-slider's documentation for a full list of props](https://zillow.github.io/react-slider/).
-
-> Note: When you're representing non-integer values (eg time, dates) please ensure you use `ariaLabel` and `ariaValuetext` to ensure that assistive technologies will be able to understand the value better.
-
-| Property                 | PropType                      | Required | Default Value |
-| ------------------------ | ----------------------------- | -------- | ------------- |
-| className                | string                        | false    | null          |
-
-## Theme Props
-
-* `sliderBarColor`

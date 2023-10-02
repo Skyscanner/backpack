@@ -29,8 +29,6 @@ import { Portal, cssModules } from '../../bpk-react-utils';
 import keyboardFocusScope from './keyboardFocusScope';
 import STYLES from './BpkPopover.module.scss';
 import BpkPopover, {
-  propTypes as popoverPropTypes,
-  defaultProps as popoverDefaultProps,
   type Props as PopoverProps,
 } from './BpkPopover';
 
@@ -47,37 +45,12 @@ export type Props = {
   popperModifiers: ?Array<Object>,
 };
 
-export const propTypes = {
-  ...popoverPropTypes,
-  target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-  portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  portalClassName: PropTypes.string,
-  renderTarget: PropTypes.func,
-  popperModifiers: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
-};
-
-export const defaultProps = {
-  ...popoverDefaultProps,
-  placement: 'bottom',
-  portalStyle: null,
-  portalClassName: null,
-  renderTarget: null,
-  popperModifiers: null,
-};
-
 class BpkPopoverPortal extends Component<Props> {
   popper: ?typeof createPopper;
 
   suppressRestoreFocus: boolean;
 
   previousTargetElement: ?HTMLElement;
-
-  static propTypes = propTypes;
-
-  static defaultProps = defaultProps;
 
   constructor() {
     super();
@@ -237,6 +210,52 @@ class BpkPopoverPortal extends Component<Props> {
     );
   }
 }
+
+const propTypes = {
+  // BpkPopover props - when migrating the popover to TS, we can import the type from BpkPopover
+  children: PropTypes.node.isRequired,
+  closeButtonText: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  closeButtonIcon: PropTypes.bool,
+  closeButtonProps: PropTypes.object,
+  labelAsTitle: PropTypes.bool,
+  padded: PropTypes.bool,
+
+  // BpkPopoverPortal additional props
+  /**
+   * In order to attach the popover to a regular DOM element, provide a function which returns it to `target`.
+   * `target` can be a DOM element with a `ref` attached to it or a function that returns a DOM element.
+   */
+  target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  portalStyle: PropTypes.object,  
+  portalClassName: PropTypes.string,
+  renderTarget: PropTypes.func,
+  /**
+   * Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js".
+   * You can achieve various behaviours such as allowing the popover to overflow the viewport etc.
+   */
+  popperModifiers: PropTypes.arrayOf(PropTypes.object),  
+};
+
+const defaultProps = {
+  // BpkPopover props - when migrating the popover to TS, we can import the type from BpkPopover
+  className: null,
+  closeButtonIcon: true,
+  closeButtonProps: null,
+  labelAsTitle: false,
+  padded: true,
+  // BpkPopoverPortal additional props
+  placement: 'bottom',
+  portalStyle: null,
+  portalClassName: null,
+  renderTarget: null,
+  popperModifiers: null,
+};
 
 BpkPopoverPortal.propTypes = { ...propTypes };
 BpkPopoverPortal.defaultProps = { ...defaultProps };

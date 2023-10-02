@@ -31,6 +31,11 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   dialingCode: string,
+  /**
+   * Note that `id`, `name` and `label` are required but more properties can be provided,
+   * e.g. `dialingCodeProps={{ id: 'id', name: 'name', label: 'label', className: 'some-class' }}`.
+   * All properties will be forwarded to the underlying `BpkSelect` component.
+   */
   dialingCodeProps: {
     id: string,
     name: string,
@@ -38,6 +43,11 @@ export type Props = {
     className?: string,
     wrapperClassName?: string,
   },
+  /**
+   * Each object **must** have a `code` and `description`, but can have more properties and those
+   * will be forwarded the the `option` element they represent.
+   * Note that, when using the `dialingCodeMask` option, all `dialingCodes` values must have a `numberPrefix` attribute.
+   */
   dialingCodes: Array<{
     code: string,
     description: string,

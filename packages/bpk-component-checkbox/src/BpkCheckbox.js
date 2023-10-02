@@ -37,6 +37,9 @@ type Props = {
   smallLabel: boolean,
   valid: ?boolean,
   checked: boolean,
+  /**
+   * The indeterminate prop is only a visual clue, it does not affect the checked state of the checkbox. If `indeterminate` is flagged then the checkbox will be displayed with a minus sign in the box.  This is used when there is a checkbox group and the parent displays this state when not all child checkboxes are selected.
+   */
   indeterminate: boolean,
 };
 

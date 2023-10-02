@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkTextarea from '../../packages/bpk-component-textarea/src/BpkTextarea';
 
 import {
   DefaultExample,
@@ -29,6 +30,7 @@ import {
 
 export default {
   title: 'bpk-component-textarea',
+  component: BpkTextarea,
 };
 
 export const Default = DefaultExample;

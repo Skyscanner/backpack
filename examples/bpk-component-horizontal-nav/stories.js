@@ -37,7 +37,6 @@ export default {
   title: 'bpk-component-horizontal-nav',
   component: BpkHorizontalNav,
   subcomponents: { BpkHorizontalNavItem },
-  tags: ['autodocs'],
 };
 
 export const Example = DefaultExample;

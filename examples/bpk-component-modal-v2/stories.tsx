@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { BpkModalV2 } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
+
 import {
   DefaultExample,
   LongTitleExample,
@@ -36,6 +38,7 @@ import {
 
 export default {
   title: 'bpk-component-modal-v2',
+  component: BpkModalV2,
 };
 
 export const Default = DefaultExample;

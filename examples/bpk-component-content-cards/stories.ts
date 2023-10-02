@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkContentCards from '../../packages/bpk-component-content-cards/src/BpkContentCards';
+
 import {
   WithOneCardExample,
   WithTwoCardsExample,
@@ -24,6 +26,7 @@ import {
 
 export default {
   title: 'bpk-component-content-cards',
+  component: BpkContentCards,
 };
 
 export const DefaultOneCard = WithOneCardExample;

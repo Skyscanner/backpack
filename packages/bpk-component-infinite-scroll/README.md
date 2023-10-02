@@ -155,29 +155,3 @@ Returns a subset of the array data.
 `updateData(newData)`
 
 Updates the internal array and triggers all listeners.
-
-## Props
-
-| Property                | PropType                         | Required | Default Value |
-| ----------------------- | -------------------------------- | -------- | ------------- |
-| dataSource              | instanceOf(DataSource)           | true     | -             |
-| elementsPerScroll       | number                           | false    | 5             |
-| initiallyLoadedElements | number                           | false    | 5             |
-| loaderMinDisplay        | oneOf(['small', 'half', 'full']) | false    | 'full'        |
-| onScroll                | func                             | false    | null          |
-| onScrollFinished        | func                             | false    | null          |
-| renderLoadingComponent  | func                             | false    | null          |
-| renderSeeMoreComponent  | func                             | false    | null          |
-| seeMoreAfter            | number                           | false    | null          |
-
-## `elementsPerScroll`
-
-How many more elements to load every time the user reaches the bottom of the list.
-
-## `initiallyLoadedElements`
-
-How many more elements to load every time the user reaches the bottom of the list.
-
-### `seeMoreAfter`
-
-`seeMoreAfter` is how many scrolls should happen before a 'See more' button is displayed. This only happens once.

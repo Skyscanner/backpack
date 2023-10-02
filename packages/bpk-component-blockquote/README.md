@@ -19,14 +19,3 @@ export default () => (
   </BpkBlockquote>
 );
 ```
-
-## Props
-
-| Property    | PropType | Required | Default Value |
-| ----------- | -------- | -------- | ------------- |
-| children    | -        | true     | -             |
-| extraSpace  | bool     | false    | false         |
-
-## Theme Props
-
-* `blockquoteBarColor`

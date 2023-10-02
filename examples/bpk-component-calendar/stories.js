@@ -48,12 +48,11 @@ export default {
   title: 'bpk-component-calendar',
   component: BpkCalendarGridComponent,
   subcomponents: {
-    BpkCalendarNavComponent,
-    BpkCalendarGridHeaderComponent,
-    BpkCalendarDateComponent,
+    BpkCalendarNav: BpkCalendarNavComponent,
+    BpkCalendarGridHeader: BpkCalendarGridHeaderComponent,
+    BpkCalendarDate: BpkCalendarDateComponent,
     BpkCalendarContainer: BpkCalendarContainerMock
   },
-  tags: ['autodocs']
 };
 
 export const BpkCalendarNav = CalendarNavExample;

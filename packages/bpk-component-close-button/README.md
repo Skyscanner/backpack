@@ -15,10 +15,3 @@ export default () => (
   <BpkCloseButton label="Close" onClick={() => console.log('click')} />
 );
 ```
-
-## Props
-
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| label    | string   | true     | -             |
-| onClick  | func     | true     | -             |

@@ -15,10 +15,3 @@ export default () => (
   <BpkGridToggle />
 );
 ```
-
-## Props
-
-| Property         | PropType | Required | Default Value |
-| ---------------- | -------- | -------- | ------------- |
-| className        | string   | false    | null          |
-| targetContainer  | string   | false    | 'body'        |

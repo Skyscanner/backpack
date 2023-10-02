@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
 import BpkButtonLink from '../../packages/bpk-component-link/src/BpkButtonLink';
@@ -37,7 +36,6 @@ export default {
   subcomponents: {
     BpkButtonLink
   },
-  tags: ['autodocs'],
 };
 
 export const Example = LinkExample;

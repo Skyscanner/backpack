@@ -15,13 +15,3 @@ export default () => (
   <BpkLabel htmlFor="origin">Origin</BpkLabel>
 )
 ```
-
-## Props
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | node     | true     | -             |
-| disabled  | bool     | false    | false         |
-| invalid   | bool     | false    | false         |
-| required  | bool     | false    | false         |
-| white     | bool     | false    | false         |

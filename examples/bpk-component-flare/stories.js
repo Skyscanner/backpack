@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkContentBubble from '../../packages/bpk-component-flare/src/BpkContentBubble';
 import BpkFlareBar from '../../packages/bpk-component-flare/src/BpkFlareBar';
@@ -38,7 +37,6 @@ export default {
   subcomponents: {
     BpkFlareBar,
   },
-  tags: ['autodocs'],
 };
 
 export const BpkFlareBarDefault = FlareBarExample;

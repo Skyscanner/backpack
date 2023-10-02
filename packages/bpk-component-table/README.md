@@ -45,18 +45,3 @@ export default () => (
   </BpkTable>
 );
 ```
-
-## Props
-
-> For `BpkTableHead`, `BpkTableBody`, `BpkTableRow` & `BpkTableCell` .
-
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| children | node     | true     | -             |
-
-> For `BpkTable` & `BpkTableHeadCell`.
-
-| Property               | PropType | Required | Default Value |
-| ---------------------- | -------- | -------- | ------------- |
-| children               | node     | true     | -             |
-
