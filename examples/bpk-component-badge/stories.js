@@ -48,3 +48,7 @@ export const Centered = CenteredExample;
 export const DockedRight = DockedLeadingExample;
 export const DockedLeft = DockedTrailingExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  fontSize: '32px'
+};

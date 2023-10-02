@@ -35,19 +35,24 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
 const preview: Preview = {
   decorators: [
-    (story) => (
-      <div>
-        <EnhancedThemeProvider themeAttributes={themeableAttributes}>
-          {story()}
-        </EnhancedThemeProvider>
-        <br />
-        <BpkRtlToggle />
-        <br />
-        <div style={{ width: '10rem' }}>
-          <BpkThemeToggle />
+    (story, { args }) => {
+      var root = document.querySelector(':root');  
+      if (root) {
+        (root as HTMLElement).style.setProperty('font-size', args.fontSize)
+      }
+      return (
+        <div>
+          <EnhancedThemeProvider themeAttributes={themeableAttributes}>
+            {story()}
+          </EnhancedThemeProvider>
+          <br />
+          <BpkRtlToggle />
+          <br />
+          <div style={{ width: '10rem' }}>
+            <BpkThemeToggle />
+          </div>
         </div>
-      </div>
-    ),
+    )},
   ],
   parameters: {
     docs: {
@@ -61,6 +66,9 @@ const preview: Preview = {
         </>
       )
     },
+  },
+  args: {
+    fontSize: '16px'
   }
 };
 
