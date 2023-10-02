@@ -20,7 +20,6 @@
 
 import { useRef, forwardRef } from 'react';
 import {
-  spacingSm,
   colorMonteverde,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -113,7 +112,7 @@ const NoPaddingExample = () => {
             borderBottomWidth: '5px',
             borderBottomColor: colorMonteverde,
             borderBottomStyle: 'solid',
-            padding: spacingSm,
+            padding: '.25rem',
           }}
         >
           Singapore Changi Airport

@@ -23,7 +23,6 @@ import debounce from 'lodash.debounce';
 import { Component } from 'react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import {
-  spacingXs,
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -48,7 +47,7 @@ import STYLES from './BpkBarchart.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const spacing = remToPx(spacingXs);
+const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
 const getMaxYValue = (
