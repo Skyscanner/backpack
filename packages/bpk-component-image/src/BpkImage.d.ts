@@ -21,10 +21,13 @@ import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 type BpkImageProps = {
     altText: string;
     src: string;
+    /**
+     * Note: The `aspectRatio` prop should be calculated as `width/height` of the original src image. It is used by the component to preserve space on screen while the image loads.
+     */
     aspectRatio: number;
     inView?: boolean;
     loading?: boolean;
-    borderRadiusStyle?: typeof BORDER_RADIUS_STYLES[keyof typeof BORDER_RADIUS_STYLES];
+    borderRadiusStyle?: (typeof BORDER_RADIUS_STYLES)[keyof typeof BORDER_RADIUS_STYLES];
     className?: string;
     onLoad?: (() => void) | null;
     style?: {};

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkList from '../../packages/bpk-component-list/src/BpkList';
 import BpkListItem from '../../packages/bpk-component-list/src/BpkListItem';
@@ -29,7 +28,6 @@ export default {
   subcomponents: {
     BpkListItem
   },
-  tags: ['autodocs'],
 };
 
 export const Unordered = UnorderedExample;

@@ -58,28 +58,28 @@ type Props = {
   getValueText: ?(number, number, number) => mixed,
 };
 
+const propTypes = {
+  max: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+  stepped: PropTypes.bool,
+  small: PropTypes.bool,
+  className: PropTypes.string,
+  onComplete: PropTypes.func,
+  onCompleteTransitionEnd: PropTypes.func,
+  getValueText: PropTypes.func,
+};
+
+const defaultProps = {
+  className: null,
+  stepped: false,
+  small: false,
+  onComplete: () => null,
+  onCompleteTransitionEnd: () => null,
+  getValueText: null,
+}
+
 class BpkProgress extends Component<Props> {
-  static propTypes = {
-    max: PropTypes.number.isRequired,
-    min: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-    stepped: PropTypes.bool,
-    small: PropTypes.bool,
-    className: PropTypes.string,
-    onComplete: PropTypes.func,
-    onCompleteTransitionEnd: PropTypes.func,
-    getValueText: PropTypes.func,
-  };
-
-  static defaultProps = {
-    className: null,
-    stepped: false,
-    small: false,
-    onComplete: () => null,
-    onCompleteTransitionEnd: () => null,
-    getValueText: null,
-  };
-
   componentDidUpdate(previousProps: Props) {
     const { max, value } = this.props;
     if (
@@ -153,6 +153,14 @@ class BpkProgress extends Component<Props> {
       </div>
     );
   }
+}
+
+BpkProgress.propTypes = {
+  ...propTypes,
+}
+
+BpkProgress.defaultProps = {
+  ...defaultProps,
 }
 
 export default BpkProgress;

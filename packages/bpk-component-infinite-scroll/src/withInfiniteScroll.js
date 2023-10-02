@@ -42,7 +42,13 @@ type ScrollFinishedEvent = {
 
 export type Props = {
   dataSource: DataSource<any>,
+  /**
+   * How many more elements to load every time the user reaches the bottom of the list.
+   */
   elementsPerScroll: number,
+  /**
+   * How many more elements to load every time the user reaches the bottom of the list.
+   */
   initiallyLoadedElements: number,
   loaderIntersectionTrigger: ?('small' | 'half' | 'full'),
   onScroll: ?(o: ScrollEvent) => void,
@@ -51,6 +57,9 @@ export type Props = {
   renderSeeMoreComponent: ?({
     onSeeMoreClick: (event: SyntheticEvent<any>) => mixed,
   }) => Element<any>,
+  /**
+   * `seeMoreAfter` is how many scrolls should happen before a 'See more' button is displayed. This only happens once.
+   */
   seeMoreAfter: ?number,
 };
 

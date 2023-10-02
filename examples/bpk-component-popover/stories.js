@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkPopover from '../../packages/bpk-component-popover/src/BpkPopoverPortal';
 
 import {
   DefaultExample,
@@ -34,6 +35,7 @@ import {
 
 export default {
   title: 'bpk-component-popover',
+  component: BpkPopover,
 };
 
 export const Default = DefaultExample;

@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
+
 import {
   DefaultExample,
   WarningExample,
@@ -34,6 +35,7 @@ import {
 
 export default {
   title: 'bpk-component-badge',
+  component: BpkBadge
 };
 
 export const Default = DefaultExample;

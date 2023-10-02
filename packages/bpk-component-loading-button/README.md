@@ -28,18 +28,3 @@ export default () => (
   </div>
 );
 ```
-
-## Props
-
-| Property     | PropType             | Required | Default Value          |
-| ------------ | -------------------- | -------- | ---------------------- |
-| children     | node                 | true     | -                      |
-| className    | string               | false    | null                   |
-| disabled     | bool                 | false    | false                  |
-| secondary    | bool                 | false    | false                  |
-| destructive  | bool                 | false    | false                  |
-| loading      | bool                 | false    | false                  |
-| iconOnly     | bool                 | false    | false                  |
-| icon         | element              | false    | null                   |
-| iconDisabled | element              | false    | null                   |
-| iconPosition | oneOf(ICON_POSITION) | false    | ICON_POSITION.TRAILING |

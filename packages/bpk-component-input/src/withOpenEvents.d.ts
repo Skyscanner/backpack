@@ -18,7 +18,19 @@
 
 import type { ComponentType, ReactElement, UIEvent, ComponentProps } from 'react';
 export type WithOpenEventsProps = {
+    /**
+     * It is important you pass the `isOpen` prop, as it is necessary to work around an IE bug.
+     */
     isOpen?: boolean;
+    /**
+     * The onOpen callback is called on the following events:
+     * click
+     * focus
+     * touchend
+     * keydown (Enter key)
+     * keyup (Space key)
+     * You can still attach custom handlers for these events as they will still be called. All other key events are prevented.
+     */
     onOpen?: () => void;
     hasTouchSupport?: boolean;
 };

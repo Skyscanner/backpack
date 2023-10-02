@@ -15,39 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { Node } from 'react';
-import { MouseEvent, ReactNode } from 'react';
 
-export const MARKER_STATUSES = {
-  unselected: 'unselected',
-  selected: 'selected',
-  previous_selected: 'previous_selected',
-} as const;
-
-export type Status = (typeof MARKER_STATUSES)[keyof typeof MARKER_STATUSES];
-
-type Props = {
-  label: string;
-  icon?: ReactNode;
-  accessibilityLabel: string;
-  position: {
-    latitude: number;
-    longitude: number;
-  };
-  className?: string;
-  onClick?: (event: MouseEvent) => void;
-  buttonProps?: { [key: string]: string };
-  status?: Status;
+import type { MouseEvent, ReactNode } from 'react';
+export declare const MARKER_STATUSES: {
+    readonly unselected: "unselected";
+    readonly selected: "selected";
+    readonly previous_selected: "previous_selected";
 };
-
-declare const BpkPriceMarkerV2: ({
-  label,
-  position,
-  className,
-  onClick,
-  buttonProps,
-  status,
-  style,
-}: Props) => JSX.Element;
-
-export default BpkPriceMarkerV2;
+export type Status = (typeof MARKER_STATUSES)[keyof typeof MARKER_STATUSES];
+type Props = {
+    label: string;
+    icon?: ReactNode;
+    accessibilityLabel: string;
+    position: {
+        latitude: number;
+        longitude: number;
+    };
+    className?: string;
+    onClick?: (event: MouseEvent) => void;
+    buttonProps?: {
+        [key: string]: string;
+    };
+    status?: Status;
+};
+export declare const BpkPriceMarkerV2: (props: Props) => JSX.Element;
+export {};

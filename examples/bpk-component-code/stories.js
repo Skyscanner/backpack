@@ -15,7 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
+import BpkCode from '../../packages/bpk-component-code/src/BpkCode';
+import BpkCodeBlock from '../../packages/bpk-component-code/src/BpkCodeBlock';
 
 import {
   InlineExample,
@@ -27,6 +29,10 @@ import {
 
 export default {
   title: 'bpk-component-code',
+  component: BpkCode,
+  subcomponents: {
+    BpkCodeBlock
+  },
 };
 
 export const Inline = InlineExample;

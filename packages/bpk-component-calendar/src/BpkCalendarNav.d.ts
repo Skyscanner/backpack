@@ -20,6 +20,10 @@ import type { ChangeEvent, MouseEvent } from 'react';
 type MonthChangeEvent = ChangeEvent<HTMLInputElement> | MouseEvent<HTMLButtonElement>;
 type Props = {
     changeMonthLabel: string;
+    /**
+     * A function to format a human-readable month, for example: "January 2018":
+     * If you just need to quickly prototype, use the following from [`date-fns`](https://date-fns.org/docs/format#usage)
+     */
     formatMonth: (month: Date) => string;
     id: string;
     maxDate: Date;

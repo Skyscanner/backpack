@@ -42,21 +42,3 @@ export default () => (
   </BpkSelect>
 );
 ```
-
-## Props
-
-| Property                  | PropType   | Required | Default Value |
-| ------------              | --------   | -------- | ------------- |
-| id                        | string     | true     | -             |
-| name                      | string     | true     | -             |
-| value                     | string     | false    | use [defaultValue](https://reactjs.org/docs/dom-elements.html#value)|
-| onChange                  | func       | false    | undefined     |
-| valid                     | bool       | false    | null          |
-| large                     | bool       | false    | false         |
-| disabled                  | bool       | false    | false         |
-| docked                    | bool       | false    | false         |
-| dockedFirst               | bool       | false    | false         |
-| dockedMiddle              | bool       | false    | false         |
-| dockedLast                | bool       | false    | false         |
-| image                     | node       | false    | null          |
-| wrapperClassName          | string     | false    | null          |

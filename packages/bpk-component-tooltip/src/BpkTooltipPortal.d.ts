@@ -21,7 +21,15 @@ import { Component } from 'react';
 import type { ReactNode, ReactElement } from 'react';
 import type { TooltipProps } from './BpkTooltip';
 export type Props = TooltipProps & {
+    /**
+     * Tooltips are invisible to assistive technologies such as screen readers.
+     * To improve accessibility, `ariaLabel` is required to describe the content of the tooltip to assistive technologies.
+     * The label will be used on the `target` element, so any existing `aria-label` attached to `target` will be overridden.
+     */
     ariaLabel: string;
+    /**
+     * "target" should be a DOM element with a "ref" attached to it.
+     */
     target: ReactElement<any>;
     children: ReactNode | string;
     placement?: 'top' | 'right' | 'bottom' | 'left' | 'auto';
@@ -29,6 +37,10 @@ export type Props = TooltipProps & {
     portalStyle?: object;
     portalClassName?: string;
     renderTarget: null | (() => null | HTMLElement);
+    /**
+     * Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js".
+     * You can achieve various behaviours such as allowing the tooltip to overflow the viewport etc.
+     */
     popperModifiers?: object[];
 };
 type State = {

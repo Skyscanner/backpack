@@ -30,11 +30,22 @@ export declare const INPUT_TYPES: {
     readonly password: "password";
     readonly tel: "tel";
 };
-type BaseProps = ComponentProps<'input'> & {
+type InputProps = {
+    /**
+     * **Required:** The id attribute of the input.
+     */
     id: string;
+    /**
+     * **Required:** The name attribute of the input.
+     */
     name: string;
+    /**
+     * **Required:** The value attribute of the input.
+     */
     value: string;
-    type?: typeof INPUT_TYPES[keyof typeof INPUT_TYPES];
+    type?: (typeof INPUT_TYPES)[keyof typeof INPUT_TYPES];
+};
+type BaseProps = InputProps & ComponentProps<'input'> & {
     valid?: boolean | null;
     large?: boolean;
     docked?: boolean;
@@ -49,7 +60,10 @@ export type PropsWithoutClearButonMode = BaseProps & {
     onClear?: ((e?: SyntheticEvent<HTMLButtonElement>) => void) | null;
 };
 export type PropsWithClearButtonMode = BaseProps & {
-    clearButtonMode: typeof CLEAR_BUTTON_MODES[keyof Omit<typeof CLEAR_BUTTON_MODES, 'never'>];
+    /**
+     * When `clearButtonMode` is set to `always`, validity icons will not appear.
+     */
+    clearButtonMode: (typeof CLEAR_BUTTON_MODES)[keyof Omit<typeof CLEAR_BUTTON_MODES, 'never'>];
     clearButtonLabel: string;
     onClear: (e?: SyntheticEvent<HTMLButtonElement>) => void;
 };

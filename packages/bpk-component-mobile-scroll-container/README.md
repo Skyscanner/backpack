@@ -58,14 +58,3 @@ export default () => (
   }
 }
 ```
-
-## Props
-
-| Property                    | PropType | Required | Default Value |
-| --------------------------- | -------- | -------- | ------------- |
-| children                    | node     | true     | -             |
-| className                   | string   | false    | null          |
-| leadingIndicatorClassName   | string   | false    | null          |
-| scrollerRef                 | func     | false    | null          |
-| trailingIndicatorClassName  | string   | false    | null          |
-| showScrollbar               | bool     | false    | false         |

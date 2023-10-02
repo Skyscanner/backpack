@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkLoadingButton from '../../packages/bpk-component-loading-button/src/BpkLoadingButton';
 
 import {
   DocsPrimaryExample,
@@ -37,6 +38,7 @@ import {
 
 export default {
   title: 'bpk-component-loading-button',
+  component: BpkLoadingButton,
 };
 
 export const DocsPrimary = DocsPrimaryExample;

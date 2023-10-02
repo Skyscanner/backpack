@@ -36,11 +36,16 @@ export declare const OVERLAY_TYPES: {
     readonly vignette: "vignette";
     readonly off: "off";
 };
-export type OverlayType = typeof OVERLAY_TYPES[keyof typeof OVERLAY_TYPES];
-export type Props = ComponentProps<'div'> & {
+export type OverlayType = (typeof OVERLAY_TYPES)[keyof typeof OVERLAY_TYPES];
+type BpkOverlayProps = {
+    /**
+     * **Required:** The content to be rendered within the overlay.
+     */
     children: ReactNode;
-    overlayType?: OverlayType;
     className?: string;
+};
+export type Props = BpkOverlayProps & ComponentProps<'div'> & {
+    overlayType?: OverlayType;
     foregroundContent?: ReactNode;
 };
 declare const BpkOverlay: (props: Props) => JSX.Element;

@@ -29,10 +29,19 @@ export type DialogInnerProps = {
   id: string;
   children: ReactNode;
   dialogRef: (ref: HTMLElement | null | undefined) => void;
+  /**
+   * Because this component uses a modal on mobile viewports, you need to let it know what 
+   * the root element of your application is by returning its DOM node via this prop
+   * This is to "hide" your application from screen readers whilst the dialog is open.
+   * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
+   */
   getApplicationElement: () => HTMLElement | null;
   className?: string;
   contentClassName?: string;
   flare?: boolean;
+  /**
+   * This will change the style of the default flare view. Should you wish to apply an image to the flare you would pass the image using the CSS property `background-image`.
+   */
   flareClassName?: string;
 };
 
@@ -40,6 +49,9 @@ export type Props = Omit<DialogInnerProps, 'dialogRef'> & {
   dialogRef?: (ref: HTMLElement | null | undefined) => void;
   isOpen: boolean;
   renderTarget?: () => HTMLElement | null;
+  /**
+   * This property is only required when `dismissible` is true.
+   */
   onClose?: (event?: TouchEvent | MouseEvent | KeyboardEvent) => void | null;
   closeLabel?: string;
   dismissible?: boolean;
