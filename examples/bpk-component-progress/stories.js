@@ -35,5 +35,5 @@ export const Stepped = SteppedExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  fontSize: '32px'
+  zoomEnabled: true
 };

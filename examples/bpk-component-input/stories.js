@@ -60,5 +60,5 @@ export const ManuallyDocked = ManuallyDockedExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  fontSize: '32px'
+  zoomEnabled: true
 };

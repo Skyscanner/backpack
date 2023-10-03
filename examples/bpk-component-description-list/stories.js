@@ -36,5 +36,5 @@ export const DescriptionList = DefaultExample;
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  fontSize: '32px'
+  zoomEnabled: true
 };

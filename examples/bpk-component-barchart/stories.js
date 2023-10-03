@@ -55,5 +55,5 @@ export const CustomYAxisDomain = CustomYAxisDomainExample;
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  fontSize: '32px'
+  zoomEnabled: true
 };

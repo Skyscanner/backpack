@@ -62,5 +62,5 @@ export const SplitInput = SplitInputExample;
 
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  fontSize: '32px'
+  zoomEnabled: true
 };

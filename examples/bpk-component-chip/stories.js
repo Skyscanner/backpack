@@ -48,5 +48,5 @@ export const RadioGroup = RadioGroupChipsExample;
 export const VisualTest = AllTypesExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  fontSize: '32px'
+  zoomEnabled: true
 };
