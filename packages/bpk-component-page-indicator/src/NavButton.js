@@ -20,7 +20,7 @@
 import PropTypes from 'prop-types';
 
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
-import BpkButton from '../../bpk-component-button';
+import {BUTTON_TYPES, BpkButtonV2} from '../../bpk-component-button';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 
@@ -46,9 +46,9 @@ const AlignedRightArrowIcon = withButtonAlignment(
 const NavButton = (props: Props) => {
   const { ariaLabel, currentIndex, direction, disabled, onClick } = props;
   return (
-    <BpkButton
+    <BpkButtonV2
       iconOnly
-      link
+      type={BUTTON_TYPES.link}
       onClick={(e) => {
         if (direction === DIRECTIONS.PREV) {
           onClick(e, currentIndex - 1, direction);
@@ -64,7 +64,7 @@ const NavButton = (props: Props) => {
       ) : (
         <AlignedRightArrowIcon />
       )}
-    </BpkButton>
+    </BpkButtonV2>
   );
 };
 
