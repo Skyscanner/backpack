@@ -36,12 +36,12 @@ const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 const preview: Preview = {
   decorators: [
     (story, { args }) => {
-      let root, fontSize;
+      let root;
       /**
        * We want to test all Backpack components at 200% text-only zoom, as well as the default 100% which corresponds to the browser (and Percy) root font size (16px)
        * Each component has a story with the zoomEnabled arg set to true, which will be used to test the 200% zoom
        */
-      fontSize = args.zoomEnabled ? '200%' : '100%';
+      const fontSize = args.zoomEnabled ? '200%' : '100%';
       try {
         root = document?.querySelector(':root');
         (root as HTMLElement).style.setProperty('font-size', fontSize);
