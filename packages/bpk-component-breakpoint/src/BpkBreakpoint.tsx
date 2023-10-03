@@ -34,6 +34,13 @@ const BREAKPOINTS = {
   DESKTOP_ONLY: breakpoints.breakpointQueryDesktopOnly,
 } as const;
 
+const canUseDOM = () =>
+  !!(
+    typeof window !== 'undefined' &&
+    window.document &&
+    window.document.createElement
+  );
+
 type Props = {
   /**
    * The content to render when the breakpoint matches.
@@ -41,15 +48,27 @@ type Props = {
   children: ReactNode | ((matches: boolean) => ReactNode | null);
   query: string | (typeof BREAKPOINTS)[keyof typeof BREAKPOINTS];
   legacy?: boolean;
+  matchSSR?: boolean;
 };
 
-const BpkBreakpoint = ({ children, legacy = false, query }: Props) => {
+const BpkBreakpoint = ({ children, legacy = false, matchSSR = false, query }: Props) => {
   if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
     console.warn(
       `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
     );
   }
-  return <MediaQuery query={query}>{children}</MediaQuery>;
+
+  if (canUseDOM()) {
+    return <MediaQuery query={query}>{children}</MediaQuery>;
+  }
+
+  // Below code is executed when running in SSR mode
+
+  if (typeof children === 'function') {
+    return children(matchSSR);
+  }
+  return matchSSR ? children : null;
+
 };
 
 export { BREAKPOINTS };
