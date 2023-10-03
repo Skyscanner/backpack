@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
 import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkImage, {
@@ -146,7 +144,7 @@ const BackgroundImageExample = () => (
     }}
     src={image}
   >
-    <div style={{ marginLeft: spacingSm, paddingTop: spacingSm }}>
+    <div style={{ marginLeft: '.25rem', paddingTop: '.25rem' }}>
       <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>
         Lorem ipsum dolor sit amet
       </BpkText>
@@ -165,7 +163,7 @@ const BackgroundImageWithLazyLoadingAndAnimationExample = () => (
     }}
     src={image}
   >
-    <div style={{ marginLeft: spacingSm, paddingTop: spacingSm }}>
+    <div style={{ marginLeft: '.25rem', paddingTop: '.25rem' }}>
       <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>
         Lorem ipsum dolor sit amet
       </BpkText>

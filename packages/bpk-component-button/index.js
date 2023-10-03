@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import BpkButton from './src/BpkButton'; // eslint-disable-line import/no-cycle
-import BpkButtonV2 from './src/BpkButtonV2/BpkButton';
+import { BpkButtonV2 } from './src/BpkButtonV2/BpkButton';
 import BpkButtonPrimary from './src/BpkButtonPrimary';
 import BpkButtonPrimaryOnDark from './src/BpkButtonPrimaryOnDark';
 import BpkButtonPrimaryOnLight from './src/BpkButtonPrimaryOnLight';

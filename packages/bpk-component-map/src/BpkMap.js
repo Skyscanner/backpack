@@ -57,7 +57,13 @@ type Props = {
   panEnabled: boolean,
   showControls: boolean,
   zoom: number,
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
   bounds: ?Bounds,
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
   center: ?LatLong,
   children: ?Node,
   mapRef: ?(MapRef) => mixed,
@@ -167,12 +173,18 @@ const BpkMap = (props: Props) => {
 };
 
 BpkMap.propTypes = {
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
   bounds: PropTypes.shape({
     south: PropTypes.number.isRequired,
     west: PropTypes.number.isRequired,
     north: PropTypes.number.isRequired,
     east: PropTypes.number.isRequired,
   }),
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
   center: LatLongPropType,
   children: PropTypes.node,
   greedyGestureHandling: PropTypes.bool,

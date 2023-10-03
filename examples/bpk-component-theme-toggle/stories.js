@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import BpkThemeToggle from '../../packages/bpk-component-theme-toggle';
+import BpkThemeToggle from '../../packages/bpk-component-theme-toggle/src/BpkThemeToggle';
 
 export default {
   title: 'bpk-component-theme-toggle',
+  component: BpkThemeToggle,
 };
 
 export const Example = () => <BpkThemeToggle />;

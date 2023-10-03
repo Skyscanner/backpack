@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkDialog from '../../packages/bpk-component-dialog/src/BpkDialog';
 
 import {
   DefaultExample,
@@ -27,6 +28,7 @@ import {
 
 export default {
   title: 'bpk-component-dialog',
+  component: BpkDialog,
 };
 
 export const Default = DefaultExample;

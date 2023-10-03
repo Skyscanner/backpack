@@ -50,6 +50,10 @@ body {
   }
 }
 
+:focus-visible {
+  @include bpk-focus-indicator;
+}
+
 :global(.hidden),
 :global(.hide) {
   @include bpk-hidden;

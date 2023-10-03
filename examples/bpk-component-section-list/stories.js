@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkSectionList from '../../packages/bpk-component-section-list/src/BpkSectionList';
 import BpkSectionListSection from '../../packages/bpk-component-section-list/src/BpkSectionListSection';
@@ -31,7 +30,6 @@ export default {
     BpkSectionListSection,
     BpkSectionListItem,
   },
-  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;

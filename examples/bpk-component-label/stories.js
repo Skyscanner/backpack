@@ -15,7 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
+import BpkLabel from '../../packages/bpk-component-label/src/BpkLabel';
 
 import {
   DefaultExample,
@@ -29,6 +30,7 @@ import {
 
 export default {
   title: 'bpk-component-label',
+  component: BpkLabel,
 };
 
 export const Example = DefaultExample;

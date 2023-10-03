@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkPrice from '../../packages/bpk-component-price/src/BpkPrice';
+
 import {
   SmallExample,
   SmallWithTrailingTextExample,
@@ -37,6 +39,7 @@ import {
 
 export default {
   title: 'bpk-component-price',
+  component: BpkPrice,
 };
 
 export const Small = SmallExample;

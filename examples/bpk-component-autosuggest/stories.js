@@ -16,11 +16,39 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+
+import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
+import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
+
 import AutosuggestExample from './examples';
 
 export default {
   title: 'bpk-component-autosuggest',
+  component: BpkAutosuggest,
+  subcomponents: {
+    BpkAutosuggestSuggestion
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable of={PRIMARY_STORY} />
+          <Markdown>
+            {
+            `**BpkAutosuggest:**
+            Please refer to react-autosuggest's
+            documentation for a full list of [props](https://github.com/moroshko/react-autosuggest#props).
+            **Note:** The \`inputProps\` object is passed directly to a
+            [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`
+            }
+          </Markdown>
+        </>
+      )
+    },
+  },
 };
 
 export const Example = () => <AutosuggestExample />;

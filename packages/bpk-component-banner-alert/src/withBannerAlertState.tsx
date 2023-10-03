@@ -25,7 +25,7 @@ import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
 import type { Props as BpkBannerAlertExpandableProps } from './BpkBannerAlertExpandable';
 import type { Props as BpkBannerAlertDismissableProps } from './BpkBannerAlertDismissable';
 
-type WithBannerAlertStateProps = {
+export type WithBannerAlertStateProps = {
   onHide?: () => void;
   hideAfter?: number;
 };

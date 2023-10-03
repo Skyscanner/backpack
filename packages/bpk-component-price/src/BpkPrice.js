@@ -32,9 +32,9 @@ type Props = {
   className: ?string,
   leadingText: ?string,
   /**
-  * @experimental This prop is experimental and subject to change.
-  * Use with caution.
-  */
+   * **Experimental** This prop is experimental and subject to change.
+   * Use with caution.
+   */
   leadingClassName: ?string,
   trailingText: ?string,
   previousPrice: ?string,

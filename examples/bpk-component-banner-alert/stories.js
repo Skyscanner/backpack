@@ -15,12 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import BpkBannerAlert from '../../packages/bpk-component-banner-alert/src/BpkBannerAlert';
 import BpkBannerAlertDismissable from '../../packages/bpk-component-banner-alert/src/BpkBannerAlertDismissable';
 import BpkBannerAlertExpandable from '../../packages/bpk-component-banner-alert/src/BpkBannerAlertExpandable';
 
+import { withBannerAlertStateMock } from './stories-utils';
 import {
   NeutralExample,
   PrimaryExample,
@@ -45,8 +45,8 @@ export default {
   subcomponents: {
     BpkBannerAlertDismissable,
     BpkBannerAlertExpandable,
+    withBannerAlertState: withBannerAlertStateMock,
   },
-  tags: ['autodocs']
 };
 
 export const DocsDefault = DocsDefaultExample;

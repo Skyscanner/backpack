@@ -18,26 +18,3 @@ export default () => (
   </BpkDescriptionList>
 );
 ```
-
-## Props
-
-### BpkDescriptionList
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| className | string   | false    | null          |
-
-### BpkDescriptionTerm
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| className | string   | false    | null          |
-
-### BpkDescriptionDetails
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| className | string   | false    | null          |

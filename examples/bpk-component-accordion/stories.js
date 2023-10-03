@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 
 import BpkAccordion from '../../packages/bpk-component-accordion/src/BpkAccordion';
 import BpkAccordionItem from '../../packages/bpk-component-accordion/src/BpkAccordionItem';
 
+import { WithSingleItemAccordionStateMock, WithAccordionItemStateMock } from './stories-utils';
 import {
   SingleItemExample,
   SingleItemExampleInitiallyExpandedExample,
@@ -42,8 +42,9 @@ export default {
   component: BpkAccordion,
   subcomponents: {
     BpkAccordionItem,
+    withSingleItemAccordionState: WithSingleItemAccordionStateMock,
+    withAccordionItemState: WithAccordionItemStateMock,
   },
-  tags: ['autodocs']
 };
 
 export const SingleItemOnly = SingleItemExample;

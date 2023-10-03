@@ -28,15 +28,3 @@ export default () =>
     style={STYLE_TYPES.contained}
   />;
 ```
-
-## Props
-
-### BpkSaveButton
-
-| Property           | PropType                                                               | Required | Default Value       |
-|--------------------|------------------------------------------------------------------------|----------|---------------------|
-| checked            | bool                                                                   | true     | -                   |
-| accessibilityLabel | string                                                                 | true     | -                   |
-| onCheckedChange    | func                                                                   | true     | -                   |
-| size               | oneOf(SIZE_TYPES.default, SIZE_TYPES.small)                            | false    | SIZE_TYPES.default  |
-| style              | oneOf(STYLE_TYPES.default, STYLE_TYPES.contained, STYLES_TYPES.onDark) | false    | STYLE_TYPES.default |

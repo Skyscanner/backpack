@@ -35,9 +35,16 @@ type Props = {
   animateOnExit: ?boolean,
   className: ?string,
   ctaText: ?string,
+  /**
+   * This prop controls the amount of time that the notification stays visible before the exit animation begins.
+   * The default value is 4 seconds (4000 milliseconds).
+   */
   hideAfter: ?number,
   icon: ?() => ReactElement,
   onClick: ?() => void,
+  /**
+   * Execute a function after the component has finished the exit animation.
+   */
   onExit: ?() => void,
   text: string,
 };

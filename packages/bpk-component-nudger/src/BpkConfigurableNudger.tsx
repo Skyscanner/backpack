@@ -34,9 +34,25 @@ const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 
 type Props = CommonProps & {
   inputClassName?: string | null;
+  /**
+   * A simple function that will allow you to set the format of the display value e.g. local dates or times. 
+   */
   formatValue: (arg0: any) => string;
+  /**
+   * Function that handle the incrementing of the current selected value.
+   */
   incrementValue: (arg0: any) => string | number;
+  /**
+   * Function that handle the decrementing of the current selected value.
+   */
   decrementValue: (arg0: any) => string | number;
+  /**
+   * Given `a` and `b`:
+   *   - If `a` is less than `b` then `compareValues(a, b)` should return a value less than `0`
+   *   - If  `a` and `b` are equal then `compareValues(a, b)` should return exactly `0`
+   *   - If `a` is greater than `b` then `compareValues(a, b)` should return a value greater than `0`
+   * We use this along with the `min` and `max` values to determine when we should disable the increment and decrement buttons. This is inspired by the `compareFunction` in [Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description)
+   */
   compareValues: (arg0: any, arg1: any) => number;
 };
 

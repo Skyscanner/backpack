@@ -19,11 +19,20 @@
 import { PureComponent } from 'react';
 import type { DaysOfWeek, WeekDayKey } from './custom-proptypes';
 type Props = DefaultProps & {
+    /**
+     * An array of objects describing the days of the week
+     */
     daysOfWeek: DaysOfWeek;
+    /**
+     * First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
+     */
     weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 };
 type DefaultProps = {
     className?: string | null;
+    /**
+     * Key to be used to pick the desired weekDay format from the `daysOfWeek` object, for example: `nameAbbr` or `nameNarrow`.
+     */
     weekDayKey?: WeekDayKey;
 };
 declare class BpkCalendarGridHeader extends PureComponent<Props> {

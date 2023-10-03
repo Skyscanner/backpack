@@ -66,12 +66,21 @@ type Props = {
   formatMonth: (date: Date) => string;
   id: string;
   title: string;
+  /**
+   * Because this component uses a modal on mobile viewports, you need to let it know what 
+   * the root element of your application is by returning its DOM node via this prop
+   * This is to "hide" your application from screen readers whilst the datepicker is open.
+   * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
+   */
   getApplicationElement: () => HTMLElement | null;
   nextMonthLabel: string;
   previousMonthLabel: string;
   weekStartsOn: number;
   // Optional
   calendarComponent: ReactComponent;
+  /**
+   * By default BpkInput. If passed, it should be a DOM node with a ref attached to it.
+   */
   inputComponent: ReactElement | null;
   dateModifiers?: {};
   fixedWidth?: boolean;

@@ -15,10 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
 
 import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
 
+import { WithOpenEventsMock } from './stories-utils';
 import {
   TextExample,
   PlaceholderExample,
@@ -39,7 +42,24 @@ import {
 export default {
   title: 'bpk-component-input',
   component: BpkInput,
-  tags: ['autodocs'],
+  subcomponents: {
+    withOpenEvents: WithOpenEventsMock,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable of={PRIMARY_STORY} />
+          <Markdown>
+            {
+            `**Note:** Additionally, all native \`input\` attributes such as \`placeholder\` and \`onChange\` are supported.`
+            }
+          </Markdown>
+        </>
+      )
+    },
+  },
 };
 
 export const TextValue = TextExample;

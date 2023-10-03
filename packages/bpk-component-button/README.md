@@ -32,19 +32,3 @@ export default () => (
   </div>
 );
 ```
-
-## Props
-
-| Property        | PropType             | Required | Default Value        |
-| --------------- | -------------------- | -------- | -------------------- |
-| children        | -                    | true     | -                    |
-| type            | oneOf(BUTTON_TYPES)  | false    | BUTTON_TYPES.primary |
-| size            | oneOf(SIZE_TYPES)    | false    | SIZE_TYPES.small     | 
-| className       | string               | false    | null                 |
-| disabled        | bool                 | false    | false                |
-| iconOnly        | bool                 | false    | false                |
-| onClick         | func                 | false    | null                 |
-| rel             | string               | false    | null                 |
-| submit          | bool                 | false    | false                |
-| href            | string               | false    | null                 |
-| blank           | bool                 | false    | false                |

@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkRadio from '../../packages/bpk-component-radio/src/BpkRadio';
 
 import {
   DefaultExample,
@@ -30,6 +31,7 @@ import {
 
 export default {
   title: 'bpk-component-radio',
+  component: BpkRadio,
 };
 
 export const Default = DefaultExample;

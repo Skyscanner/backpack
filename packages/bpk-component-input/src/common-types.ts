@@ -33,11 +33,24 @@ export const INPUT_TYPES = {
   tel: 'tel',
 } as const;
 
-type BaseProps = ComponentProps<'input'> & {
+// Declaring this type here as react docgen gets confused and reads them as native input types
+type InputProps = {
+  /**
+   * **Required:** The id attribute of the input.
+   */
   id: string;
+  /**
+   * **Required:** The name attribute of the input.
+   */
   name: string;
+  /**
+   * **Required:** The value attribute of the input.
+   */
   value: string;
   type?: (typeof INPUT_TYPES)[keyof typeof INPUT_TYPES];
+};
+
+type BaseProps = InputProps & ComponentProps<'input'> & {
   valid?: boolean | null;
   large?: boolean;
   docked?: boolean;
@@ -54,6 +67,9 @@ export type PropsWithoutClearButonMode = BaseProps & {
 };
 
 export type PropsWithClearButtonMode = BaseProps & {
+  /**
+   * When `clearButtonMode` is set to `always`, validity icons will not appear.
+   */
   clearButtonMode: (typeof CLEAR_BUTTON_MODES)[keyof Omit<
     typeof CLEAR_BUTTON_MODES,
     'never'
@@ -102,6 +118,7 @@ export const clearablePropType = (
   return null;
 };
 
+// TODO - this should be removed once all input examples have been migrated to TS
 export const propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -126,6 +143,7 @@ export const propTypes = {
   onClear: clearablePropType,
 };
 
+// TODO - this should be removed once all input examples have been migrated to TS
 export const defaultProps = {
   type: INPUT_TYPES.text,
   valid: null,

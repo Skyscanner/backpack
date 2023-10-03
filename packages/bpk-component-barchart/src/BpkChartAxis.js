@@ -21,7 +21,6 @@
 import type { Node } from 'react';
 import PropTypes from 'prop-types';
 import {
-  spacingXs,
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -34,7 +33,7 @@ import STYLES from './BpkChartAxis.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const spacing = remToPx(spacingXs);
+const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
 const getAxisConfig = ({ height, margin, orientation, scale, width }) => {

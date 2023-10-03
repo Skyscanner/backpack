@@ -19,13 +19,3 @@ export default () => (
   />
 );
 ```
-
-## Props
-
-| Property     | PropType             | Required  | Default Value    |
-| ------------ | -------------------- | --------- | ---------------- |
-| id           | string               | true      | -                |
-| name         | string               | true      | -                |
-| value        | string               | true      | -                |
-| valid        | bool                 | false     | null             |
-| large        | bool                 | false     | false            |

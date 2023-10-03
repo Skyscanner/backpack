@@ -61,6 +61,13 @@ type DefaultProps = {
   onClick?: ((date: Date) => void) | null;
   onDateKeyDown?: (event: KeyboardEvent<HTMLButtonElement>) => void;
   preventKeyboardFocus?: boolean;
+  /**
+   * This property determines which selected styles will be applied to the date cell. If using ranges use `start`, `middle` and `end` to apply the correct range styles.
+   *   - `SELECTION_TYPES.single` - When the date is selected individually i.e. Not as part of a range
+   *   - `SELECTION_TYPES.start` - When a start date is selected in a range calendar i.e. First date in the range
+   *   - `SELECTION_TYPES.middle` - When a date is in a range between start and end date i.e. Date in the middle of two dates
+   *   - `SELECTION_TYPES.end` - When an end date is selected in a range calendar i.e. Last date in the range
+   */
   selectionType?: SelectionTypes;
   style?: {};
 };

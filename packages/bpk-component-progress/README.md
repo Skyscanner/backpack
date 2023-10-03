@@ -33,21 +33,3 @@ const Steps = () => (
   />
 );
 ```
-
-## Props
-
-| Property                 | PropType                      | Required | Default Value |
-| ------------------------ | ----------------------------- | -------- | ------------- |
-| max                      | number                        | true     | -             |
-| min                      | number                        | true     | -             |
-| value                    | number                        | true     | -             |
-| className                | string                        | false    | null          |
-| getValueText             | func                          | false    | null          |
-| small                    | bool                          | false    | false         |
-| onComplete               | func                          | false    | null          |
-| onCompleteTransitionEnd  | func                          | false    | null          |
-| stepped                  | bool                          | false    | false         |
-
-## Theme props
-
-* `progressBarFillColor`

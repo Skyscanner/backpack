@@ -19,12 +19,3 @@ export default () => (
   </BpkPanel>
 );
 ```
-
-## Props
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| padded    | bool     | false    | true          |
-| fullWidth | bool     | false    | false         |
-| className | string   | false    | null          |
