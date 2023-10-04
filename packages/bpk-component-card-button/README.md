@@ -28,3 +28,7 @@ export default () =>
     style={STYLE_TYPES.contained}
   />;
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/card-button/web-l3E1ixIN#section-props-6c).

@@ -55,3 +55,7 @@ export default class App extends Component {
   }
 };
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/horizontal-navigation/web-xkQUB1Vp#section-props-eb).

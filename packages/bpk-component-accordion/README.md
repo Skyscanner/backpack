@@ -75,3 +75,7 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 </BpkAccordion>
 
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/accordion/web-sEshz9Z5#section-props-08).

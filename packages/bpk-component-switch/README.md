@@ -18,3 +18,7 @@ export default () => (
   </div>
 )
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/switch/web-9C2Ktc8M#section-props-37).

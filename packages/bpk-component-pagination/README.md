@@ -22,3 +22,8 @@ const Pagination = () => (
     pageLabel={(page, isSelected) => `page ${page}`}
   />
 );
+```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/pagination/web-5nr2G0qU#section-props-c7).

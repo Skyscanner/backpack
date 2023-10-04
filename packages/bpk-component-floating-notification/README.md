@@ -19,3 +19,7 @@ export default () => (
   />
 );
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/floating-notification/web-geJh3KtV#section-props-d3).

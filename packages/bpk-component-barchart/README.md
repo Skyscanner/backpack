@@ -31,3 +31,7 @@ export default () => (
   />
 );
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/bar-chart/web-833oDHBG#section-props-18).

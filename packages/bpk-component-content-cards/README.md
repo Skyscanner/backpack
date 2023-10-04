@@ -28,3 +28,7 @@ import BpkContentCards from '@skyscanner/backpack-web/bpk-component-content-card
 
 export default () => <BpkContentCards />;
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/content-cards/web-n7qSZpec#section-props-87).

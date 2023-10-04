@@ -21,3 +21,6 @@ export default () => (
   </BpkBreakpoint>
 );
 ```
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/breakpoint/web-5sPWfgsH#section-props-32).

@@ -15,3 +15,7 @@ export default () => (
   <BpkLabel htmlFor="origin">Origin</BpkLabel>
 )
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/form-label/web-1wnCejsA#section-props-d8).

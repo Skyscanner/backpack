@@ -57,3 +57,7 @@ class App extends Component {
   }
 }
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/dialog/web-V9liMfg8#section-props-9b).

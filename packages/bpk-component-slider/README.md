@@ -24,3 +24,7 @@ const Slider = () => (
 );
 
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/slider/web-aNXvlY7y#section-props-1e).

@@ -58,3 +58,7 @@ export default () => (
   }
 }
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/mobile-scroll-container/web-4MvMmFv1#section-props-7c).

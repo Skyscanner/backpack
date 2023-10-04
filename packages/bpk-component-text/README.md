@@ -58,3 +58,7 @@ export default () => (
   <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>My subhheading</BpkText>
 );
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/text/web-rHoUxcxq#section-props-44).

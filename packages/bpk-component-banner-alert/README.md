@@ -91,3 +91,7 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
   Lorem ipsum dolor sit amet.
 </BannerAlertExpandableState>
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/banner-alert/web-TyY0O2cu#section-props-12).

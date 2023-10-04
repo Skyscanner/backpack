@@ -157,3 +157,7 @@ in place while the rest of the grid transitions when changing months.
 
 The BpkCalendarDate component is used to render the content of a cell
 (a single day) inside the calendar grid.
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/calendar/web-DDIY8XIe#section-props-58).
