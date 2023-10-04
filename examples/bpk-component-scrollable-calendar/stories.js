@@ -87,5 +87,14 @@ export const BpkScrollableCalendarGrid = ScrollableCalendarGridExample;
 export const BpkScrollableCalendarGridList = ScrollableCalendarGridListExample;
 
 export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
 
 export const VisualTestRange = RangeExample;
+export const VisualTestRangeWithZoom = VisualTestRange.bind({});
+VisualTestRangeWithZoom.args = {
+  zoomEnabled: true
+};
+

@@ -30,3 +30,7 @@ export const Default = DefaultExample;
 export const WithForms = FormsExample;
 
 export const VisualTest = FormsExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

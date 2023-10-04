@@ -91,5 +91,12 @@ export const CustomComposedCalendarSafariDstBug =
 
 export const Week = WeekExample;
 export const VisualTest = FocusedDateInThePastExample;
-
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
 export const VisualTestRange = RangeDateCalendarExample;
+export const VisualTestRangeWithZoom = VisualTestRange.bind({});
+VisualTestRangeWithZoom.args = {
+  zoomEnabled: true
+};

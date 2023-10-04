@@ -58,3 +58,7 @@ export const DisabledItem = DisabledItemExample;
 
 export const Separators = SeparatorsExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

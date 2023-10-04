@@ -30,3 +30,7 @@ export default {
 
 export const DescriptionList = DefaultExample;
 export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

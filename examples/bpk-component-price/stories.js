@@ -64,3 +64,7 @@ export const LargeWithPreviousPriceLeadingText =
 export const LargeLongPrice = LargeLongPriceExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

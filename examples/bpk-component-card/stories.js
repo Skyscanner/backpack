@@ -64,3 +64,7 @@ export const DividedCardWrapper = DividedCardWrapperExample;
 export const WithClassNameWrapper = WithClassNameWrapperExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

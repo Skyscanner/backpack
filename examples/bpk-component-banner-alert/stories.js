@@ -71,3 +71,7 @@ export const SuccessAutomaticallyDismissedAfter5Seconds =
 export const SuccessWithCustomIcon = SuccessCustomIconExample;
 
 export const VisualTest = DocsDefaultExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

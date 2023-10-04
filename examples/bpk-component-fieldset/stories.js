@@ -61,3 +61,8 @@ export const DisabledCheckbox = DisabledCheckboxExample;
 export const VisualTest = MixedExample;
 
 export const SplitInput = SplitInputExample;
+
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

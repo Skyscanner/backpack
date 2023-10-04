@@ -44,3 +44,7 @@ export const SubtitleOnlyRatings = SubtitleOnlyExample;
 export const ZeroToTenScaleRatings = ZeroToTenScaleExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
