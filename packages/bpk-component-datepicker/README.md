@@ -116,3 +116,7 @@ const CustomPicker = () => (
 
 > **Theming:** In order to theme the modal, a `renderTarget` needs to be supplied as a function which returns a DOM node
 > in the scope of a `BpkThemeProvider`.
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/datepicker/web-QqbdTkly#section-props-91).

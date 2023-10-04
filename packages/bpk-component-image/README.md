@@ -105,3 +105,7 @@ export default () => (
 ## BpkBackgroundImage
 
 The background image component is useful for setting background images in CSS that can then contain other elements. It supports the same HOCs as `BpkImage`.
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/image/web-O1z3ATvN#section-props-f1).

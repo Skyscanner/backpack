@@ -155,3 +155,7 @@ Returns a subset of the array data.
 `updateData(newData)`
 
 Updates the internal array and triggers all listeners.
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/infinite-scroll/web-IH69EJRu#section-props-fa).

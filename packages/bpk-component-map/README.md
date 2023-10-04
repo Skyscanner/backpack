@@ -173,3 +173,7 @@ export default () => (
 ### BpkIconMarker
 
 `BpkIconMarker` only supports small icons from the Backpack icon set. Large icons should not be used with `BpkIconMarker`.
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/map/web-rj4ymUaL#section-props-0f).

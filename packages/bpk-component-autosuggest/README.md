@@ -103,3 +103,7 @@ class MyComponent extends Component {
   }
 }
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/autosuggest/web-1dnVX8RX#section-props-01).

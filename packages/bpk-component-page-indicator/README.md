@@ -24,3 +24,7 @@ export default () =>
     nextNavLabel='Next slide'
   />;
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/page-indicator/web-4FOtKGmR#section-props-c2).

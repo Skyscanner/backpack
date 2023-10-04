@@ -45,3 +45,7 @@ export default () => (
   </BpkTable>
 );
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/table/web-0i0MzMkj#section-props-3d).
