@@ -20,6 +20,7 @@ import type { ReactNode } from 'react';
 import MediaQuery from 'react-responsive';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { breakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { useEffect, useState } from 'react';
 
 const BREAKPOINTS = {
   SMALL_MOBILE: breakpoints.breakpointQuerySmallMobile,
@@ -34,13 +35,6 @@ const BREAKPOINTS = {
   DESKTOP_ONLY: breakpoints.breakpointQueryDesktopOnly,
 } as const;
 
-const canUseDOM = () =>
-  !!(
-    typeof window !== 'undefined' &&
-    window.document &&
-    window.document.createElement
-  );
-
 type Props = {
   /**
    * The content to render when the breakpoint matches.
@@ -51,14 +45,26 @@ type Props = {
   matchSSR?: boolean;
 };
 
-const BpkBreakpoint = ({ children, legacy = false, matchSSR = false, query }: Props) => {
+const BpkBreakpoint = ({
+  children,
+  legacy = false,
+  matchSSR = false,
+  query,
+}: Props) => {
+  const [isSSR, setIsSSR] = useState(true);
+
+  useEffect(() => {
+    // SSR does not execute hooks - if we run this code then we know we're not SSR'ing
+    setIsSSR(false);
+  }, []);
+
   if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
     console.warn(
       `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
     );
   }
 
-  if (canUseDOM()) {
+  if (!isSSR) {
     return <MediaQuery query={query}>{children}</MediaQuery>;
   }
 
@@ -68,7 +74,6 @@ const BpkBreakpoint = ({ children, legacy = false, matchSSR = false, query }: Pr
     return children(matchSSR);
   }
   return matchSSR ? children : null;
-
 };
 
 export { BREAKPOINTS };

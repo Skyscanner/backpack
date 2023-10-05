@@ -17,6 +17,7 @@
  */
 
 import { render } from '@testing-library/react';
+import ReactDOMServer from 'react-dom/server';
 
 import { BREAKPOINTS } from './BpkBreakpoint';
 
@@ -49,6 +50,69 @@ describe('BpkBreakpoint', () => {
       </BpkBreakpoint>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  describe('SSR mode', () => {
+    beforeEach(() => {
+      jest.mock('react-responsive', () => (props: any) => props.children(true));
+      jest.resetModules();
+    });
+
+    it('should render when matchSSR=true', () => {
+      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
+
+      const html = ReactDOMServer.renderToString(
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR>
+          {(matches: boolean) =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>,
+      );
+
+      expect(html).toMatchSnapshot();
+    });
+
+    it('should not render on SSR until hydrated when matchSSR=false', async () => {
+      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
+
+      const components = (
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR={false}>
+          {(matches: boolean) =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>
+      );
+
+      // Checking SSR
+      const html = ReactDOMServer.renderToString(components);
+
+      expect(html).toMatchSnapshot('server rendered');
+
+      const container = document.createElement('div');
+      document.body.appendChild(container);
+      container.innerHTML = html;
+
+      // Hydrating and CSR
+      const { asFragment } = render(components, { hydrate: true, container });
+
+      expect(asFragment()).toMatchSnapshot('hydrated');
+    });
+
+    it('should not render when matchSSR is not defined', () => {
+      // jest.resetModules();
+      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
+      // jest.mock('react-responsive', () => (props: any) => props.children(true));
+
+      const html = ReactDOMServer.renderToString(
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {(matches: boolean) =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>,
+      );
+
+      expect(html).toMatchSnapshot();
+    });
   });
 
   describe('PropType validation', () => {
@@ -87,7 +151,8 @@ describe('BpkBreakpoint', () => {
       render(
         <BpkBreakpoint query="A RANDOM STRING">{() => <div />}</BpkBreakpoint>,
       );
-      expect(errorOrWarningSpy.mock.calls.length).toBe(1);
+      // The BpkBreakpoint renders twice
+      expect(errorOrWarningSpy.mock.calls.length).toBe(2);
     });
 
     it("should not error if the 'query' prop is not an allowed value but 'legacy' prop is true", () => {
