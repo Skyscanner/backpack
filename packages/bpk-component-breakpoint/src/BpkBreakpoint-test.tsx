@@ -99,9 +99,7 @@ describe('BpkBreakpoint', () => {
     });
 
     it('should not render when matchSSR is not defined', () => {
-      // jest.resetModules();
       const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-      // jest.mock('react-responsive', () => (props: any) => props.children(true));
 
       const html = ReactDOMServer.renderToString(
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
