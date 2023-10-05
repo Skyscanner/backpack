@@ -211,7 +211,7 @@ class BpkPopoverPortal extends Component<Props> {
   }
 }
 
-const propTypes = {
+export const propTypes = {
   // BpkPopover props - when migrating the popover to TS, we can import the type from BpkPopover
   children: PropTypes.node.isRequired,
   closeButtonText: PropTypes.string.isRequired,
@@ -242,7 +242,7 @@ const propTypes = {
   popperModifiers: PropTypes.arrayOf(PropTypes.object),  
 };
 
-const defaultProps = {
+export const defaultProps = {
   // BpkPopover props - when migrating the popover to TS, we can import the type from BpkPopover
   className: null,
   closeButtonIcon: true,
