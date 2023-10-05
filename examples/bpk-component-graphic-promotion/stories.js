@@ -53,3 +53,7 @@ export const NonSponsoredCenterAligned = NonSponsoredCenterAlignedExample;
 export const NonSponsoredRightAligned = NonSponsoredRightAlignedExample;
 
 export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

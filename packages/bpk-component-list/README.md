@@ -26,3 +26,7 @@ export default () => (
   </BpkList>
 );
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/list/web-WFg1PM34#section-props-0a).

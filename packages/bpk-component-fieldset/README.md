@@ -50,3 +50,7 @@ class FieldsetContainer extends Component {
   }
 }
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/field-set/web-2Gep0TYD#section-props-c5).

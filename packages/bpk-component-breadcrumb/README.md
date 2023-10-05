@@ -33,3 +33,7 @@ export default class App extends Component {
 [JSON-LD](https://json-ld.org/) schema mark up can be used to
 add [structured data](https://developers.google.com/search/docs/guides/intro-structured-data)
 to the component to improve the SEO of the component through the `schemaMetaData` property.
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/breadcrumb/web-rxEpDVCn#section-props-2d).

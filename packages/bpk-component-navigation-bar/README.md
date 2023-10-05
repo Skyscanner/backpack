@@ -61,3 +61,7 @@ export default () => (
   </BpkNavigationBarButtonLink>
 )
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/navigation-bar/web-nBmynYpE#section-props-b0).

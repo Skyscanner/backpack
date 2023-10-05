@@ -78,3 +78,7 @@ export const Docked = DockedExample;
 export const ManuallyDocked = ManuallyDockedExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

@@ -30,3 +30,7 @@ export const Default = DefaultExample;
 export const ExampleWithAdditionalSpacingAboveAndBelow = ExtraSpaceExample;
 
 export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

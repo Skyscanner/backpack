@@ -45,4 +45,9 @@ export default {
 
 export const Default = DefaultExample;
 export const Small = SmallExample;
+
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

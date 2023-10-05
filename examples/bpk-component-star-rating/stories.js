@@ -65,3 +65,7 @@ export const ThreePointEightStarsRounded = ThreePointEightStarsRoundedExample;
 
 export const Interactive = InteractiveExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

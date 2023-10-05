@@ -34,3 +34,7 @@ You can pass `matchSSR` which will instruct the breakpoint to match any time it 
   <span>Mobile viewport is active AND we are rendering on the client-side</span>
 </BpkBreakpoint>
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/breakpoint/web-5sPWfgsH#section-props-32).

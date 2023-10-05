@@ -46,3 +46,7 @@ export const Required = RequiredExample;
 export const SmallLabel = SmallLabelExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

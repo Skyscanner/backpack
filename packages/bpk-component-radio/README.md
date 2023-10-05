@@ -23,3 +23,7 @@ export default () => (
 
 ## Progressive enhancement
 On Internet Explorer 11, radio buttons have the standard built-in appearance.
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/radio-button/web-CZUUQPeD#section-props-f5).

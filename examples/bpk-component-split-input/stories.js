@@ -37,3 +37,7 @@ export const SplitInputWithPlaceholder = SplitInputWithPlaceholderExample;
 
 export const SmallInput = SplitInputSmallExample;
 export const VisualTest = SplitInputExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

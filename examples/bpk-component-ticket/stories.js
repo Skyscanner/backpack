@@ -48,3 +48,7 @@ export const WithAHrefProp = WithHrefExample;
 export const DayView = DayViewExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

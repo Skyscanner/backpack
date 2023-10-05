@@ -26,3 +26,7 @@ export default MyComponent = () => (
   </div>
 )
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/flare/web-hovv3Opv#section-props-cb).

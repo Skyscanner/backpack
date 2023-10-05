@@ -52,3 +52,7 @@ export const ConfigurableNudger = ConfigurableExample;
 export const OnDarkNudger = OnDarkExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

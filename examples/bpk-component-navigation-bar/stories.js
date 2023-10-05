@@ -50,3 +50,7 @@ export const WithLogo = WithLogoExample;
 
 export const Sticky = StickyExample;
 export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

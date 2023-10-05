@@ -17,3 +17,7 @@ export default () => (
   </BpkFormValidation>,
 )
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/form-validation/web-XYQ2bj1a#section-props-de).
