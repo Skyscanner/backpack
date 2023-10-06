@@ -20,7 +20,6 @@ import type { ReactNode } from 'react';
 import MediaQuery from 'react-responsive';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { breakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import { useEffect, useState } from 'react';
 
 const BREAKPOINTS = {
   SMALL_MOBILE: breakpoints.breakpointQuerySmallMobile,
@@ -51,12 +50,12 @@ const BpkBreakpoint = ({
   matchSSR = false,
   query,
 }: Props) => {
-  const [isSSR, setIsSSR] = useState(true);
-
-  useEffect(() => {
-    // SSR does not execute hooks - if we run this code then we know we're not SSR'ing
-    setIsSSR(false);
-  }, []);
+  const isSSR = () =>
+    !(
+      typeof window !== 'undefined' &&
+      window.document &&
+      window.document.createElement
+    );
 
   if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
     console.warn(
@@ -64,7 +63,7 @@ const BpkBreakpoint = ({
     );
   }
 
-  if (!isSSR) {
+  if (!isSSR()) {
     return <MediaQuery query={query}>{children}</MediaQuery>;
   }
 

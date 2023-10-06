@@ -53,9 +53,29 @@ describe('BpkBreakpoint', () => {
   });
 
   describe('SSR mode', () => {
+    let windowSpy: any;
+
+    beforeAll(() => {});
+
     beforeEach(() => {
+      // The following spy/mock removes the createElement function to fool the BpkBreakpoint into
+      // thinking that is being rendered on server-side. Unfortunately react-testing-library has no
+      // better mechanism for this.
+      windowSpy = jest.spyOn(window, 'window', 'get');
+      windowSpy.mockImplementation(() => ({
+        document: {
+          createElement: undefined,
+        },
+      }));
+
+      // This mock replaces react-responsive to be a bypass that matches against any breakpoint
       jest.mock('react-responsive', () => (props: any) => props.children(true));
+
       jest.resetModules();
+    });
+
+    afterEach(() => {
+      jest.restoreAllMocks();
     });
 
     it('should render when matchSSR=true', () => {
@@ -85,6 +105,10 @@ describe('BpkBreakpoint', () => {
 
       // Checking SSR
       const html = ReactDOMServer.renderToString(components);
+
+      // Here we want to restore the window object - as we're now pretending to be
+      // on the browser.
+      windowSpy.mockRestore();
 
       expect(html).toMatchSnapshot('server rendered');
 
@@ -149,8 +173,7 @@ describe('BpkBreakpoint', () => {
       render(
         <BpkBreakpoint query="A RANDOM STRING">{() => <div />}</BpkBreakpoint>,
       );
-      // The BpkBreakpoint renders twice
-      expect(errorOrWarningSpy.mock.calls.length).toBe(2);
+      expect(errorOrWarningSpy.mock.calls.length).toBe(1);
     });
 
     it("should not error if the 'query' prop is not an allowed value but 'legacy' prop is true", () => {
