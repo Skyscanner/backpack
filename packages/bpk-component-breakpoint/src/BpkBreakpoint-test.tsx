@@ -55,8 +55,6 @@ describe('BpkBreakpoint', () => {
   describe('SSR mode', () => {
     let windowSpy: any;
 
-    beforeAll(() => {});
-
     beforeEach(() => {
       // The following spy/mock removes the createElement function to fool the BpkBreakpoint into
       // thinking that is being rendered on server-side. Unfortunately react-testing-library has no
