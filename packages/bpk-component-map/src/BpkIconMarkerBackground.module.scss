@@ -26,7 +26,7 @@
   @include bpk-themeable-property(
     fill,
     --bpk-icon-marker-default-background-color,
-    $bpk-status-success-spot-day
+    $bpk-marcomms-purple
   );
 
   &--interactive {
@@ -42,12 +42,12 @@
   }
 
   &--selected {
-    fill: $bpk-surface-default-day;
+    fill: $bpk-marcomms-dark-sky;
 
     @include bpk-themeable-property(
       stroke,
       --bpk-icon-marker-default-selected-color,
-      $bpk-status-success-spot-day
+      $bpk-marcomms-dark-sky
     );
   }
 }

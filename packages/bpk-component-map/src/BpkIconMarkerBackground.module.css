@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-icon-marker-background{position:absolute;top:0;left:0;fill:#0c838a;fill:var(--bpk-icon-marker-default-background-color, #0c838a)}.bpk-icon-marker-background--interactive{cursor:pointer}.bpk-icon-marker-background--disabled{fill:#d4fff2;fill:var(--bpk-icon-marker-default-disabled-background-color, #d4fff2)}.bpk-icon-marker-background--selected{fill:#fff;stroke:#0c838a;stroke:var(--bpk-icon-marker-default-selected-color, #0c838a)}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-icon-marker-background{position:absolute;top:0;left:0;fill:#8e47ba;fill:var(--bpk-icon-marker-default-background-color, #8e47ba)}.bpk-icon-marker-background--interactive{cursor:pointer}.bpk-icon-marker-background--disabled{fill:#d4fff2;fill:var(--bpk-icon-marker-default-disabled-background-color, #d4fff2)}.bpk-icon-marker-background--selected{fill:#05203c;stroke:#05203c;stroke:var(--bpk-icon-marker-default-selected-color, #05203c)}

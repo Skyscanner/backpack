@@ -92,7 +92,7 @@
       @include bpk-themeable-property(
         color,
         --bpk-icon-marker-default-selected-color,
-        $bpk-status-success-spot-day
+        $bpk-surface-default-day
       );
     }
   }
