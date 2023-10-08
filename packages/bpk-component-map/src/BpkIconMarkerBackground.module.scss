@@ -26,7 +26,7 @@
   @include bpk-themeable-property(
     fill,
     --bpk-icon-marker-default-background-color,
-    $bpk-marcomms-purple
+    $bpk-private-map-poi-pin-day
   );
 
   &--interactive {
@@ -42,12 +42,12 @@
   }
 
   &--selected {
-    fill: $bpk-marcomms-dark-sky;
+    fill: $bpk-core-primary-day;
 
     @include bpk-themeable-property(
       stroke,
       --bpk-icon-marker-default-selected-color,
-      $bpk-marcomms-dark-sky
+      $bpk-core-primary-day
     );
   }
 }
