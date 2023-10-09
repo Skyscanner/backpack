@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkButtonV2 from './src/BpkButtonV2/BpkButton';
+import { BpkButtonV2 } from './src/BpkButtonV2/BpkButton';
 export { BUTTON_TYPES, SIZE_TYPES } from './src/BpkButtonV2/common-types';
 
 export {
