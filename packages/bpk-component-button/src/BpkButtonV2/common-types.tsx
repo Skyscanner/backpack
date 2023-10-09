@@ -45,7 +45,7 @@ export type Props = {
   className?: string | null;
   disabled?: boolean;
   iconOnly?: boolean;
-  onClick?: (event: MouseEvent<HTMLButtonElement|HTMLAnchorElement>) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement & HTMLAnchorElement>) => void;
   rel?: string | undefined;
   submit?: boolean;
   href?: string | null;
