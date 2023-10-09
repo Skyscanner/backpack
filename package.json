@@ -150,7 +150,7 @@
     "d3-scale": "^4.0.2",
     "danger": "^11.2.0",
     "date-fns": "^2.28.0",
-    "eslint_d": "^9.1.1",
+    "eslint_d": "^13.0.0",
     "gulp": "^4.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-svgmin": "^4.1.0",
