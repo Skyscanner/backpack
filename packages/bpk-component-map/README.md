@@ -23,7 +23,6 @@ import BpkMap, {
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
 const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 
-
 export default () => (
   <BpkMap
     zoom={15}
@@ -49,7 +48,6 @@ export default () => (
       icon={<AlignedLandmarkIconSm />}
       position={{ latitude: 27.9881, longitude: 86.927 }}
       onClick={() => {}}
-      disabled
     />
     <BpkOverlayView position={{ latitude: 27.9881, longitude: 86.925 }}>
       <BpkText>Shibuya Crossing</BpkText>
@@ -63,7 +61,10 @@ export default () => (
 Price markers are used to display clickable prices on a map.
 
 ```js
-import BpkMap, { BpkPriceMarker, PRICE_MARKER_STATUSES } from '@skyscanner/backpack-web/bpk-component-map';
+import BpkMap, {
+  BpkPriceMarker,
+  PRICE_MARKER_STATUSES,
+} from '@skyscanner/backpack-web/bpk-component-map';
 
 export default () => (
   <BpkMap
@@ -79,7 +80,7 @@ export default () => (
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
-        console.log("Price marker pressed.")
+        console.log('Price marker pressed.');
       }}
       status={PRICE_MARKER_STATUSES.focused}
     />
@@ -87,7 +88,7 @@ export default () => (
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
-        console.log("Price marker pressed.")
+        console.log('Price marker pressed.');
       }}
       status={PRICE_MARKER_STATUSES.viewed}
     />
@@ -100,7 +101,10 @@ export default () => (
 BpkPriceMarker V2 version that is the BpkPriceMarker redesign.
 
 ```js
-import BpkMap, { BpkPriceMarkerV2, MARKER_STATUSES } from '@skyscanner/backpack-web/bpk-component-map';
+import BpkMap, {
+  BpkPriceMarkerV2,
+  MARKER_STATUSES,
+} from '@skyscanner/backpack-web/bpk-component-map';
 
 export default () => (
   <BpkMap
@@ -116,7 +120,7 @@ export default () => (
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
-        console.log("Price marker pressed.")
+        console.log('Price marker pressed.');
       }}
       status={MARKER_STATUSES.selected}
       accessibilityLabel="Price marker pressed."
@@ -125,7 +129,7 @@ export default () => (
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
-        console.log("Price marker pressed.")
+        console.log('Price marker pressed.');
       }}
       status={MARKER_STATUSES.previous_selected}
       accessibilityLabel="Have seen Price marker before"
@@ -135,7 +139,7 @@ export default () => (
       icon={<AlignedAirportsIconSm />}
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
-        console.log("Click the Price marker with icon.")
+        console.log('Click the Price marker with icon.');
       }}
       accessibilityLabel="Click the Price marker with icon"
     />
@@ -152,13 +156,15 @@ export default () => (
 If you intend to include multiple maps on one page, it's better to load the Google Maps JavaScript in this HOC, as it ensures that script will not be re-downloaded every time it's used.
 
 ```js
-import BpkMap, { withGoogleMapsScript } from '@skyscanner/backpack-web/bpk-component-map';
+import BpkMap, {
+  withGoogleMapsScript,
+} from '@skyscanner/backpack-web/bpk-component-map';
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 
 export default () => (
   <BpkMapWithScript
-    googleMapsApiKey='YOUR_API_KEY'
+    googleMapsApiKey="YOUR_API_KEY"
     zoom={15}
     center={{
       latitude: 27.9881,

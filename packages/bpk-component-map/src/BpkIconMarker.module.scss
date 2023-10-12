@@ -75,13 +75,13 @@
       cursor: pointer;
     }
 
-    &--disabled {
-      @include bpk-themeable-property(
-        color,
-        --bpk-icon-marker-default-disabled-color,
-        $bpk-status-success-spot-day
-      );
-    }
+    // &--disabled {
+    //   @include bpk-themeable-property(
+    //     color,
+    //     --bpk-icon-marker-default-disabled-color,
+    //     $bpk-status-success-spot-day
+    //   );
+    // }
 
     &--selected {
       // This ensures that the icon is positioned exactly in the
