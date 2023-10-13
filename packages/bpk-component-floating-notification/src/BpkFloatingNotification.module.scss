@@ -65,6 +65,7 @@
   }
 
   &__button {
+    min-width: fit-content;
     min-height: 0;
     padding: 0;
     color: $bpk-text-on-dark-day;

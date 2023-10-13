@@ -112,32 +112,45 @@ export const BpkModalV2 = (props: Props) => {
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
+    const dialog = document.getElementById(`${id}`);
+    const dialogWithPolyfill = document.getElementById(`${id}-polyfill`);
+
+    const handleBackdropClick = (modal: HTMLElement | null) => {
+      if (modal) {
+        modal.addEventListener('click', (event: Event) => {
+          const { target } = event;
+
+          if (target === modal) {
+            modal === dialog ? ref.current?.close?.() : onClose();
+          }
+        });
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+          onClose();
+      }
+    };
+
     if (isOpen) {
       ref.current?.showModal?.();
 
-      const dialog = document.getElementById(`${id}`);
-      const dialogWithPolyfill = document.getElementById(`${id}-polyfill`);
-
-      const handleBackdropClick = (modal: HTMLElement | null) => {
-        if (modal) {
-          modal.addEventListener('click', (event: Event) => {
-            const { target } = event;
-
-            if (target === modal) {
-              modal === dialog ? ref.current?.close?.() : onClose();
-            }
-          });
-        }
-      };
+      if (dialogWithPolyfill) {
+        handleBackdropClick(dialogWithPolyfill);
+        window.addEventListener('keydown', handleKeyDown);
+      }
 
       handleBackdropClick(dialog);
-      handleBackdropClick(dialogWithPolyfill);
     } else {
       ref.current?.close?.();
     }
 
     setPageProperties({ isDialogOpen: isOpen });
-    return () => setPageProperties({ isDialogOpen: false });
+    return () => {
+      setPageProperties({ isDialogOpen: false })
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [id, isOpen, onClose]);
 
   const classNames = getClassName(
