@@ -39,7 +39,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
       Saved
     </div>
     <button
-      class="bpk-button bpk-button--link bpk-floating-notification__button"
+      class="bpk-button bpk-button--link-on-dark bpk-floating-notification__button"
       type="button"
     >
       View

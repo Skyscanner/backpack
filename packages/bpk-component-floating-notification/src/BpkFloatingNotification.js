@@ -107,7 +107,7 @@ const BpkFloatingNotification = (props: Props) => {
         <BpkAriaLive aria-hidden>{text}</BpkAriaLive>
         {ctaText && (
           <BpkButtonV2
-            type={BUTTON_TYPES.link}
+            type={BUTTON_TYPES.linkOnDark}
             onClick={onClick}
             className={getClassName('bpk-floating-notification__button')}
           >
