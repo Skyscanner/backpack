@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import withScrim from './src/withScrim';
-import withScrimmedPortal from './src/withScrimmedPortal';
+import WithPortalScrimExample from './examples';
 
-export { withScrim, withScrimmedPortal };
 export default {
-  withScrim,
+  title: 'bpk-scrim-utils',
 };
+
+export const Example = WithPortalScrimExample;
+// export const ExampleWithCustomRenderTarget = WithCustomElementAndPortalScrimExample;

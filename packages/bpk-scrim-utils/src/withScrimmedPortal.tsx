@@ -16,10 +16,16 @@
  * limitations under the License.
  */
 
-import withScrim from './src/withScrim';
-import withScrimmedPortal from './src/withScrimmedPortal';
+import { createPortal } from 'react-dom';
 
-export { withScrim, withScrimmedPortal };
-export default {
-  withScrim,
-};
+import withScrim from './withScrim';
+
+const withScrimmedPortal = (WrappedComponent) => {
+    const Scrimmed = withScrim(WrappedComponent);
+
+    const component = (props) => createPortal(<Scrimmed {...props} />, document.body);
+    
+    return component;
+}
+
+export default withScrimmedPortal;
