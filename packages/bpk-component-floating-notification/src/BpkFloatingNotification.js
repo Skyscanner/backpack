@@ -88,7 +88,6 @@ const BpkFloatingNotification = (props: Props) => {
       timeout={400}
       appear={animateOnEnter}
       exit={animateOnExit}
-      unmountOnExit
       onExited={onExit}
     >
       <div className={classNames} {...rest}>
