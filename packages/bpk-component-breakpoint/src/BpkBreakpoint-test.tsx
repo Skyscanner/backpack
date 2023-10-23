@@ -17,6 +17,7 @@
  */
 
 import { render } from '@testing-library/react';
+import ReactDOMServer from 'react-dom/server';
 
 import { BREAKPOINTS } from './BpkBreakpoint';
 
@@ -49,6 +50,89 @@ describe('BpkBreakpoint', () => {
       </BpkBreakpoint>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  describe('SSR mode', () => {
+    let windowSpy: any;
+
+    beforeEach(() => {
+      // The following spy/mock removes the createElement function to fool the BpkBreakpoint into
+      // thinking that is being rendered on server-side. Unfortunately react-testing-library has no
+      // better mechanism for this.
+      windowSpy = jest.spyOn(window, 'window', 'get');
+      windowSpy.mockImplementation(() => ({
+        document: {
+          createElement: undefined,
+        },
+      }));
+
+      // This mock replaces react-responsive to be a bypass that matches against any breakpoint
+      jest.mock('react-responsive', () => (props: any) => props.children(true));
+
+      jest.resetModules();
+    });
+
+    afterEach(() => {
+      jest.restoreAllMocks();
+    });
+
+    it('should render when matchSSR=true', () => {
+      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
+
+      const html = ReactDOMServer.renderToString(
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR>
+          {(matches: boolean) =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>,
+      );
+
+      expect(html).toMatchSnapshot();
+    });
+
+    it('should not render on SSR until hydrated when matchSSR=false', async () => {
+      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
+
+      const components = (
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR={false}>
+          {(matches: boolean) =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>
+      );
+
+      // Checking SSR
+      const html = ReactDOMServer.renderToString(components);
+
+      // Here we want to restore the window object - as we're now pretending to be
+      // on the browser.
+      windowSpy.mockRestore();
+
+      expect(html).toMatchSnapshot('server rendered');
+
+      const container = document.createElement('div');
+      document.body.appendChild(container);
+      container.innerHTML = html;
+
+      // Hydrating and CSR
+      const { asFragment } = render(components, { hydrate: true, container });
+
+      expect(asFragment()).toMatchSnapshot('hydrated');
+    });
+
+    it('should not render when matchSSR is not defined', () => {
+      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
+
+      const html = ReactDOMServer.renderToString(
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {(matches: boolean) =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>,
+      );
+
+      expect(html).toMatchSnapshot();
+    });
   });
 
   describe('PropType validation', () => {
