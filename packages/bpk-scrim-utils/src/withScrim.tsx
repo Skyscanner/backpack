@@ -43,7 +43,7 @@ import STYLES from './bpk-scrim-content.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
+export type Props = {
   getApplicationElement: () => HTMLElement | null;
   onClose?: () => void | null;
   isIphone?: boolean;

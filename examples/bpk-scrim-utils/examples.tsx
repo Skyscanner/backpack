@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { withScrim, withScrimmedPortal } from '../../packages/bpk-scrim-utils';
+import { withScrimmedPortal } from '../../packages/bpk-scrim-utils';
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -44,7 +44,6 @@ const WithPortalScrimExample = () => (
             It should also not be possible to tab to it.
         </div>
         <DialogContentWithScrim
-            withPortal
             getApplicationElement={() => document.getElementById('pagewrap')}
             closeOnScrimClick={false}
             containerClassName={getClassName('bpk-scrim-utils-example__dialog-container')}
@@ -52,23 +51,24 @@ const WithPortalScrimExample = () => (
     </div>
 );
 
-// const WithCustomElementAndPortalScrimExample = () => {    
-//     return (
-//     <div>
-//         <div id="pagewrap">
-//             <div id="xyz">
-//                 This element should be hidden from AT by the scrim.
-//                 It should also not be possible to tab to it.
-//             </div>
-//             <DialogContentWithScrim
-//                 withPortal={true}
-//                 getApplicationElement={() => document.getElementById('pagewrap')}
-//                 closeOnScrimClick={false}
-//                 containerClassName={getClassName('bpk-scrim-utils-example__dialog-container')}
-//                 renderTarget={() => document.getElementById('xyz')}
-//             />
-//         </div>
-//     </div>
-// )}
+const WithCustomElementAndPortalScrimExample = () => (
+    <div>
+        <div id="portalElement">
+            Dialog attached here.
+        </div>
+        <div id="pagewrap">
+            <div>
+            This element should be hidden from AT by the scrim.
+            It should also not be possible to tab to it.
+            </div>
+            <DialogContentWithScrim
+                getApplicationElement={() => document.getElementById('pagewrap')}
+                closeOnScrimClick={false}
+                containerClassName={getClassName('bpk-scrim-utils-example__dialog-container')}
+                renderTarget={() => document.getElementById('portalElement')}
+            />
+        </div>
+    </div>
+)
 
-export default WithPortalScrimExample;
+export { WithPortalScrimExample, WithCustomElementAndPortalScrimExample };

@@ -16,16 +16,57 @@
  * limitations under the License.
  */
 
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import withScrim from './withScrim';
+import type { Props as ScrimProps } from './withScrim';
 
-const withScrimmedPortal = (WrappedComponent) => {
+type Props = ScrimProps & {
+    renderTarget?: () => HTMLElement;
+};
+
+const getPortalElement = (target: (() => HTMLElement) | undefined) => {
+    const portalElement = target && typeof target === 'function' ? target() : null;
+    
+    if (portalElement) {
+        return portalElement;
+    }
+    
+    if (document.body) {
+        return document.body;
+    }
+    throw new Error('Render target and fallback unavailable');
+}
+
+const withScrimmedPortal = (WrappedComponent: any) => {
     const Scrimmed = withScrim(WrappedComponent);
 
-    const component = (props) => createPortal(<Scrimmed {...props} />, document.body);
+    const ScrimmedComponent = ({ renderTarget, ...rest}: Props) => {
+        const node = useRef<HTMLDivElement | null>(null);
+
+        if (!node.current) {
+            node.current = document.createElement('div');
+        }
+
+        useEffect(() => {
+            const portalElement = getPortalElement(renderTarget);
+            
+            if (node.current) {
+                portalElement.appendChild(node.current);
+            }
+        
+            return () => {
+              if (node.current) {
+                portalElement.removeChild(node.current);
+              }
+            };
+          }, []);
+        
+        return createPortal(<Scrimmed {...rest} />, node.current);
+        }
     
-    return component;
+    return ScrimmedComponent;
 }
 
 export default withScrimmedPortal;
