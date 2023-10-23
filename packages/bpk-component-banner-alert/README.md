@@ -2,6 +2,8 @@
 
 > Backpack banner alert component.
 
+DEPRECATED!
+
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.

@@ -1,0 +1,151 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '../../bpk-mixins/index.scss';
+
+// TODO add $bpk-info-banner tokens to replace $bpk-banner-alert-*
+
+.bpk-info-banner {
+  background-color: $bpk-surface-default-day;
+  overflow: hidden;
+
+  @include bpk-border-radius-sm;
+
+  &--primary {
+    @include bpk-border-sm(
+      var(--bpk-info-banner-primary-color, $bpk-banner-alert-primary-color),
+      ''
+    );
+  }
+
+  &--success {
+    @include bpk-border-sm(
+      var(--bpk-info-banner-success-color, $bpk-banner-alert-success-color),
+      ''
+    );
+  }
+
+  &--warn {
+    @include bpk-border-sm(
+      var(--bpk-info-banner-warn-color, $bpk-banner-alert-warn-color),
+      ''
+    );
+  }
+
+  &--error {
+    @include bpk-border-sm(
+      var(--bpk-info-banner-error-color, $bpk-banner-alert-error-color),
+      ''
+    );
+  }
+
+  &--neutral {
+    @include bpk-border-sm($bpk-banner-alert-neutral-color, '');
+  }
+
+  &__header {
+    display: flex;
+    padding: bpk-spacing-md();
+    flex-direction: row;
+    align-items: center;
+
+    &--expandable {
+      cursor: pointer;
+
+      @include bpk-hover {
+        background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+      }
+
+      &:active {
+        background-color: $bpk-banner-alert-header-expandable-active-background-color;
+      }
+    }
+  }
+
+  // Make sure the items in the flexbox are display: inline-block; for older IE's
+  &__icon,
+  &__message,
+  &__toggle {
+    display: inline-block;
+  }
+
+  &__message {
+    padding: 0 bpk-spacing-md();
+    flex-grow: 1;
+  }
+
+  &__primary-icon {
+    @include bpk-themeable-property(
+      fill,
+      --bpk-info-banner-primary-color,
+      $bpk-banner-alert-primary-color
+    );
+  }
+
+  &__success-icon {
+    @include bpk-themeable-property(
+      fill,
+      --bpk-info-banner-success-color,
+      $bpk-banner-alert-success-color
+    );
+  }
+
+  &__warn-icon {
+    @include bpk-themeable-property(
+      fill,
+      --bpk-info-banner-warn-color,
+      $bpk-banner-alert-warn-color
+    );
+  }
+
+  &__error-icon {
+    @include bpk-themeable-property(
+      fill,
+      --bpk-info-banner-error-color,
+      $bpk-banner-alert-error-color
+    );
+  }
+
+  &__neutral-icon {
+    fill: $bpk-text-secondary-day;
+  }
+
+  &__toggle-button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    appearance: none;
+  }
+
+  &__expand-icon {
+    fill: $bpk-text-secondary-day;
+
+    &--flipped {
+      transform: scaleY(-1);
+    }
+  }
+
+  &__children-container {
+    padding: 0 bpk-spacing-xxl() bpk-spacing-md() bpk-spacing-xl();
+    color: $bpk-text-secondary-day;
+
+    @include bpk-text;
+    @include bpk-caption;
+  }
+}

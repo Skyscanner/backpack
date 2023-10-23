@@ -1,0 +1,18 @@
+/*
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-info-banner{background-color:#fff;overflow:hidden;border-radius:.5rem}.bpk-info-banner--primary{box-shadow:0 0 0 1px var(--bpk-info-banner-primary-color, #0062e3) }.bpk-info-banner--success{box-shadow:0 0 0 1px var(--bpk-info-banner-success-color, #0c838a) }.bpk-info-banner--warn{box-shadow:0 0 0 1px var(--bpk-info-banner-warn-color, #f55d42) }.bpk-info-banner--error{box-shadow:0 0 0 1px var(--bpk-info-banner-error-color, #e70866) }.bpk-info-banner--neutral{box-shadow:0 0 0 1px #c2c9cd }.bpk-info-banner__header{display:flex;padding:0.5rem;flex-direction:row;align-items:center}.bpk-info-banner__header--expandable{cursor:pointer}.bpk-no-touch-support .bpk-info-banner__header--expandable:hover:not(:active):not(:disabled){background-color:#eff1f2}:global(.bpk-no-touch-support) .bpk-info-banner__header--expandable:hover:not(:active):not(:disabled){background-color:#eff1f2}.bpk-info-banner__header--expandable:active{background-color:#eff1f2}.bpk-info-banner__icon,.bpk-info-banner__message,.bpk-info-banner__toggle{display:inline-block}.bpk-info-banner__message{padding:0 0.5rem;flex-grow:1}.bpk-info-banner__primary-icon{fill:#0062e3;fill:var(--bpk-info-banner-primary-color, #0062e3)}.bpk-info-banner__success-icon{fill:#0c838a;fill:var(--bpk-info-banner-success-color, #0c838a)}.bpk-info-banner__warn-icon{fill:#f55d42;fill:var(--bpk-info-banner-warn-color, #f55d42)}.bpk-info-banner__error-icon{fill:#e70866;fill:var(--bpk-info-banner-error-color, #e70866)}.bpk-info-banner__neutral-icon{fill:#545860}.bpk-info-banner__toggle-button{padding:0;border:0;background-color:transparent;cursor:pointer;appearance:none}.bpk-info-banner__expand-icon{fill:#545860}.bpk-info-banner__expand-icon--flipped{transform:scaleY(-1)}.bpk-info-banner__children-container{padding:0 2.5rem 0.5rem 2rem;color:#545860;margin:0;font-size:.75rem;line-height:1rem;font-weight:400}
