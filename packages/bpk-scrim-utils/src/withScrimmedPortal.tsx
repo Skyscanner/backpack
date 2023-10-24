@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type { ComponentType} from 'react';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -23,10 +24,10 @@ import withScrim from './withScrim';
 import type { Props as ScrimProps } from './withScrim';
 
 type Props = ScrimProps & {
-    renderTarget?: () => HTMLElement;
+    renderTarget?: (() => HTMLElement | null) | null;
 };
 
-const getPortalElement = (target: (() => HTMLElement) | undefined) => {
+const getPortalElement = (target: (() => HTMLElement | null) | null | undefined) => {
     const portalElement = target && typeof target === 'function' ? target() : null;
     
     if (portalElement) {
@@ -39,14 +40,14 @@ const getPortalElement = (target: (() => HTMLElement) | undefined) => {
     throw new Error('Render target and fallback unavailable');
 }
 
-const withScrimmedPortal = (WrappedComponent: any) => {
+const withScrimmedPortal = (WrappedComponent: ComponentType<ScrimProps>) => {
     const Scrimmed = withScrim(WrappedComponent);
 
     const ScrimmedComponent = ({ renderTarget, ...rest}: Props) => {
         const node = useRef<HTMLDivElement | null>(null);
 
         if (!node.current) {
-            node.current = document.createElement('div');
+            node.current = document.createElement('div');            
         }
 
         useEffect(() => {
