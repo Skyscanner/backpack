@@ -22,55 +22,55 @@ import BpkSmallTickIcon from '../../packages/bpk-component-icon/sm/tick-circle';
 import BpkSmallExclamationIcon from '../../packages/bpk-component-icon/sm/exclamation';
 import BpkSmallInfoCircleIcon from '../../packages/bpk-component-icon/sm/information-circle';
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
-import BpkBadge, { BADGE_TYPES } from '../../packages/bpk-component-badge/src/BpkBadgeV2/BpkBadge';
+import { BpkBadgeV2, BADGE_TYPES } from '../../packages/bpk-component-badge';
 
 import BadgeLayout from './BadgeLayout';
 
 const DefaultExample = () => (
   <BadgeLayout>
-    <BpkBadge>Normal</BpkBadge>
+    <BpkBadgeV2>Normal</BpkBadgeV2>
     &nbsp;
-    <BpkBadge>
+    <BpkBadgeV2>
       <BpkSmallTickIcon /> &nbsp;Normal
-    </BpkBadge>
+    </BpkBadgeV2>
   </BadgeLayout>
 );
 
 const WarningExample = () => (
   <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.warning}>
+    <BpkBadgeV2 type={BADGE_TYPES.warning}>
       <BpkSmallInfoCircleIcon /> &nbsp;Warning
-    </BpkBadge>
+    </BpkBadgeV2>
   </BadgeLayout>
 );
 
 const SuccessExample = () => (
   <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.success}>
+    <BpkBadgeV2 type={BADGE_TYPES.success}>
       <BpkSmallTickIcon />
       &nbsp;Success
-    </BpkBadge>
+    </BpkBadgeV2>
   </BadgeLayout>
 );
 
 const CriticalExample = () => (
   <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.critical}>
+    <BpkBadgeV2 type={BADGE_TYPES.critical}>
       <BpkSmallExclamationIcon />
       &nbsp;Critical
-    </BpkBadge>
+    </BpkBadgeV2>
   </BadgeLayout>
 );
 
 const InverseExample = () => (
   <BpkDarkExampleWrapper>
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.inverse}>Inverse</BpkBadge>
+      <BpkBadgeV2 type={BADGE_TYPES.inverse}>Inverse</BpkBadgeV2>
       &nbsp;
-      <BpkBadge type={BADGE_TYPES.inverse}>
+      <BpkBadgeV2 type={BADGE_TYPES.inverse}>
         <BpkSmallTickIcon />
         &nbsp;Inverse
-      </BpkBadge>
+      </BpkBadgeV2>
     </BadgeLayout>
   </BpkDarkExampleWrapper>
 );
@@ -78,35 +78,35 @@ const InverseExample = () => (
 const OutlineExample = () => (
   <BpkDarkExampleWrapper>
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.outline}>Outline</BpkBadge>
+      <BpkBadgeV2 type={BADGE_TYPES.outline}>Outline</BpkBadgeV2>
       &nbsp;
-      <BpkBadge type={BADGE_TYPES.outline}>
+      <BpkBadgeV2 type={BADGE_TYPES.outline}>
         <BpkSmallTickIcon />
         &nbsp;Outline
-      </BpkBadge>
+      </BpkBadgeV2>
     </BadgeLayout>
   </BpkDarkExampleWrapper>
 );
 
 const StrongExample = () => (
   <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.strong}>Strong</BpkBadge>
+    <BpkBadgeV2 type={BADGE_TYPES.strong}>Strong</BpkBadgeV2>
     &nbsp;
-    <BpkBadge type={BADGE_TYPES.strong}>
+    <BpkBadgeV2 type={BADGE_TYPES.strong}>
       <BpkSmallTickIcon />
       &nbsp;Strong
-    </BpkBadge>
+    </BpkBadgeV2>
   </BadgeLayout>
 );
 
 const BrandExample = () => (
   <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.brand}>Strong</BpkBadge>
+    <BpkBadgeV2 type={BADGE_TYPES.brand}>Strong</BpkBadgeV2>
     &nbsp;
-    <BpkBadge type={BADGE_TYPES.brand}>
+    <BpkBadgeV2 type={BADGE_TYPES.brand}>
       <BpkSmallTickIcon />
       &nbsp;Brand
-    </BpkBadge>
+    </BpkBadgeV2>
   </BadgeLayout>
 );
 
@@ -114,20 +114,20 @@ const CenteredExample = () => (
   <BadgeLayout>
     <div>
       The badge is aligned to the centre of this text.{' '}
-      <BpkBadge centered>Centered</BpkBadge>
+      <BpkBadgeV2 centered>Centered</BpkBadgeV2>
     </div>
   </BadgeLayout>
 );
 
 const DockedLeadingExample = () => (
   <BadgeLayout docked="left">
-    <BpkBadge docked="left">Advert</BpkBadge>
+    <BpkBadgeV2 docked="left">Advert</BpkBadgeV2>
   </BadgeLayout>
 );
 
 const DockedTrailingExample = () => (
   <BadgeLayout docked="right">
-    <BpkBadge docked="right">Advert</BpkBadge>
+    <BpkBadgeV2 docked="right">Advert</BpkBadgeV2>
   </BadgeLayout>
 );
 
