@@ -20,41 +20,42 @@ import { render } from '@testing-library/react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallFlightIcon from '../../../bpk-component-icon/sm/flight';
+import type { BadgeType } from '../BpkBadge';
+import { BADGE_TYPES } from '../BpkBadge';
 
-import BpkBadge, { BADGE_TYPES } from './BpkBadge';
-import type { BadgeType } from './BpkBadge';
+import BpkBadgeV2 from './BpkBadge';
 
 describe('BpkBadge', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkBadge>Promociando</BpkBadge>);
+    const { asFragment } = render(<BpkBadgeV2>Promociando</BpkBadgeV2>);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "centered"', () => {
-    const { asFragment } = render(<BpkBadge centered>Promociando</BpkBadge>);
+    const { asFragment } = render(<BpkBadgeV2 centered>Promociando</BpkBadgeV2>);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an icon', () => {
     const { asFragment } = render(
-      <BpkBadge>
+      <BpkBadgeV2>
         <BpkSmallFlightIcon />
         Promociando
-      </BpkBadge>,
+      </BpkBadgeV2>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "docked" attribute value equal to "right"', () => {
     const { asFragment } = render(
-      <BpkBadge docked="right">Promociando</BpkBadge>,
+      <BpkBadgeV2 docked="right">Promociando</BpkBadgeV2>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "docked" attribute value equal to "left"', () => {
     const { asFragment } = render(
-      <BpkBadge docked="left">Promociando</BpkBadge>,
+      <BpkBadgeV2 docked="left">Promociando</BpkBadgeV2>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -62,10 +63,10 @@ describe('BpkBadge', () => {
   Object.keys(BADGE_TYPES).forEach((badgeType) => {
     it(`should render correctly with type="${badgeType}"`, () => {
       const { asFragment } = render(
-        <BpkBadge type={badgeType as BadgeType}>
+        <BpkBadgeV2 type={badgeType as BadgeType}>
           <BpkSmallFlightIcon />
           Promociando
-        </BpkBadge>,
+        </BpkBadgeV2>,
       );
       expect(asFragment()).toMatchSnapshot();
     });

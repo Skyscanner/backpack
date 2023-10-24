@@ -16,22 +16,11 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-
 import { cssModules } from '../../../bpk-react-utils';
+import type { Props } from '../BpkBadge';
+import { BADGE_TYPES } from '../BpkBadge'
 
 import STYLES from './BpkBadge.module.scss';
-
-export const BADGE_TYPES = {
-  warning: 'warning',
-  success: 'success',
-  critical: 'critical',
-  normal: 'normal',
-  inverse: 'inverse',
-  outline: 'outline',
-  strong: 'strong',
-  brand: 'brand',
-} as const;
 
 const getClassName = cssModules(STYLES);
 
@@ -44,17 +33,6 @@ const badgeTypeClassNames = {
   [BADGE_TYPES.outline]: getClassName('bpk-badge-v2--outline'),
   [BADGE_TYPES.strong]: getClassName('bpk-badge-v2--strong'),
   [BADGE_TYPES.brand]: getClassName('bpk-badge-v2--brand'),
-};
-
-export type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
-
-export type Props = {
-  type?: BadgeType;
-  docked?: 'right' | 'left' | null;
-  centered?: boolean;
-  className?: string | null;
-  children: string | ReactNode;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkBadgeV2 = ({
