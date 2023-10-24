@@ -1,0 +1,67 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '../../../bpk-mixins/index.scss';
+
+.bpk-badge-v2 {
+  @include bpk-badge-v2;
+
+  &--centered {
+    @include bpk-badge-v2--centered;
+  }
+
+  &--docked-right {
+    @include bpk-badge-v2--docked-right;
+  }
+
+  &--docked-left {
+    @include bpk-badge-v2--docked-left;
+  }
+
+  &--warning {
+    @include bpk-badge-v2--warning;
+  }
+
+  &--success {
+    @include bpk-badge-v2--success;
+  }
+
+  &--critical {
+    @include bpk-badge-v2--critical;
+  }
+
+  &--normal {
+    @include bpk-badge-v2--normal;
+  }
+
+  &--inverse {
+    @include bpk-badge-v2--inverse;
+  }
+
+  &--outline {
+    @include bpk-badge-v2--outline;
+  }
+
+  &--strong {
+    @include bpk-badge-v2--strong;
+  }
+
+  &--brand {
+    @include bpk-badge-v2--brand;
+  }
+}

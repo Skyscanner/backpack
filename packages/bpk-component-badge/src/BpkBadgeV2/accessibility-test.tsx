@@ -16,21 +16,15 @@
  * limitations under the License.
  */
 
-@import 'src/bonds.scss';
-@import 'src/mixins/badges.scss';
-@import 'src/mixins/badges-v2.scss';
-@import 'src/mixins/borders.scss';
-@import 'src/mixins/breakpoints.scss';
-@import 'src/mixins/buttons.scss';
-@import 'src/mixins/cards.scss';
-@import 'src/mixins/chips.scss';
-@import 'src/mixins/forms.scss';
-@import 'src/mixins/layers.scss';
-@import 'src/mixins/margins.scss';
-@import 'src/mixins/panels.scss';
-@import 'src/mixins/radii.scss';
-@import 'src/mixins/scroll-indicators.scss';
-@import 'src/mixins/shadows.scss';
-@import 'src/mixins/svgs.scss';
-@import 'src/mixins/typography.scss';
-@import 'src/mixins/utils.scss';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+
+import BpkBadge from './BpkBadge';
+
+describe('BpkBadgeV2 accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(<BpkBadge>Promociando</BpkBadge>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
