@@ -23,7 +23,7 @@ import { createPortal } from 'react-dom';
 import withScrim from './withScrim';
 import type { Props as ScrimProps } from './withScrim';
 
-type Props = ScrimProps & {
+export type Props = ScrimProps & {
     renderTarget?: (() => HTMLElement | null) | null;
 };
 

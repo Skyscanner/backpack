@@ -16,6 +16,13 @@
  * limitations under the License.
  */
 
+
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+
+import BpkScrim from '../../packages/bpk-scrim-utils/src/BpkScrim';
+
+import { withScrimMock, withScrimmedPortalMock } from './stories.utils';
 import {
   WithPortalScrimExample,
   WithCustomElementAndPortalScrimExample
@@ -23,6 +30,22 @@ import {
 
 export default {
   title: 'bpk-scrim-utils',
+  component: BpkScrim,
+  subcomponents: { withScrimMock, withScrimmedPortalMock },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable of={PRIMARY_STORY} />
+          <Markdown>
+          {`\`withScrim\` sends all props it receives down to the component, except \`getApplicationElement\` and \`padded\`. It also adds some props that are used for a11y and closing the modal:
+          \`dialogRef\` should be set as the ref on the visible container on top of the scrim; it is used to set focus, \`onClose\` , \`isIphone\``}
+          </Markdown>
+        </>
+      )
+    }
+  }
 };
 
 export const Example = WithPortalScrimExample;
