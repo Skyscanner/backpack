@@ -32,7 +32,7 @@ export const SECTION_TYPES = {
 
 export type SectionType = (typeof SECTION_TYPES)[keyof typeof SECTION_TYPES];
 
-export type Props = {
+type Props = {
   title: string;
   description?: string;
   button?: ReactNode;

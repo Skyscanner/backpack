@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import BpkSectionHeader, { type Props } from './src/BpkSectionHeader';
+import BpkSectionHeader, { SECTION_TYPES } from './src/BpkSectionHeader';
 
 export default BpkSectionHeader;
-export type BpkSectionHeaderProps = Props;
