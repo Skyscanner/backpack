@@ -193,17 +193,10 @@
 ///     @include bpk-spinner(spinner-sky-gray-tint-02);
 ///   }
 
-@mixin bpk-spinner($spinner: '') {
+@mixin bpk-spinner() {
   width: bpk-spacing-base();
   height: bpk-spacing-base();
   animation: bpk-keyframe-spin 600ms linear infinite;
-
-  @if $spinner != '' {
-    content: '';
-    display: inline-block;
-    background: url(map-get($bpk-spinners, $spinner)) no-repeat;
-    background-size: cover;
-  }
 }
 
 /// Large spinner. Modifies the bpk-spinner mixin.
