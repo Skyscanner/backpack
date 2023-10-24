@@ -19,3 +19,4 @@
 import BpkSectionHeader, { SECTION_TYPES } from './src/BpkSectionHeader';
 
 export default BpkSectionHeader;
+export { SECTION_TYPES };
