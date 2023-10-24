@@ -87,8 +87,8 @@
 @mixin bpk-input--valid {
   padding-right: bpk-spacing-xl();
   background: $bpk-input-background
-    url(map-get($bpk-icons-sm, tick-circle-green-spot)) no-repeat right
-    bpk-spacing-md() center;
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMGM4MzhhICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTEyIDIyLjVDNi4yMDEgMjIuNSAxLjUgMTcuNzk5IDEuNSAxMlM2LjIwMSAxLjUgMTIgMS41IDIyLjUgNi4yMDEgMjIuNSAxMiAxNy43OTkgMjIuNSAxMiAyMi41em01LjU2LTEyLjQ0YTEuNSAxLjUgMCAwIDAtMi4xMi0yLjEybC00Ljk0IDQuOTM5LTEuOTQtMS45NGExLjUgMS41IDAgMCAwLTIuMTIgMi4xMjJsMyAzYTEuNSAxLjUgMCAwIDAgMi4xMiAwbDYtNnoiLz48L3N2Zz4=')
+    no-repeat right bpk-spacing-md() center;
   background-size: $bpk-icon-size-sm $bpk-icon-size-sm;
 
   @include bpk-rtl {
@@ -111,8 +111,8 @@
 @mixin bpk-input--invalid {
   padding-right: bpk-spacing-xl();
   background: $bpk-input-background
-    url(map-get($bpk-icons-sm, exclamation-circle-berry)) no-repeat right
-    bpk-spacing-md() center;
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjZTcwODY2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTEyIDEuNUExMC41IDEwLjUgMCAxIDAgMjIuNSAxMiAxMC41IDEwLjUgMCAwIDAgMTIgMS41ek0xMiAxOGExLjUgMS41IDAgMSAxIDEuNS0xLjVBMS41IDEuNSAwIDAgMSAxMiAxOHptMS41LTZhMS41IDEuNSAwIDAgMS0zIDBWNy41YTEuNSAxLjUgMCAwIDEgMyAweiIvPjwvc3ZnPg==')
+    no-repeat right bpk-spacing-md() center;
   background-size: $bpk-icon-size-sm $bpk-icon-size-sm;
 
   @include bpk-themeable-property(
@@ -337,8 +337,8 @@
   border: solid $bpk-one-pixel-rem $bpk-line-day;
   border-radius: $bpk-select-border-radius;
   background: $bpk-surface-default-day
-    url(map-get($bpk-icons-sm, arrow-down-charcoal)) no-repeat right
-    bpk-spacing-md() center;
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMTYxNjE2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUzNyA4LjI1SDcuNDYzYTEuMzU4IDEuMzU4IDAgMCAwLTEuMTEgMi4yNTFsNC4zNTQgNC43N2ExLjUzIDEuNTMgMCAwIDAgMi4xODQuMDRsNC43MTgtNC43N2ExLjM1NyAxLjM1NyAwIDAgMC0xLjA3Mi0yLjI5MXoiLz48L3N2Zz4=')
+    no-repeat right bpk-spacing-md() center;
   background-size: $bpk-input-height / 2;
   color: $bpk-text-primary-day;
   line-height: ($bpk-line-height-base - (2 * $bpk-select-border-width));
@@ -360,8 +360,8 @@
   &:disabled {
     border-color: $bpk-surface-highlight-day;
     background: $bpk-surface-default-day
-      url(map-get($bpk-icons-sm, arrow-down-black-alpha-20)) no-repeat right
-      bpk-spacing-md() center;
+      url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMDAwMDAwICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUzNyA4LjI1SDcuNDYzYTEuMzU4IDEuMzU4IDAgMCAwLTEuMTEgMi4yNTFsNC4zNTQgNC43N2ExLjUzIDEuNTMgMCAwIDAgMi4xODQuMDRsNC43MTgtNC43N2ExLjM1NyAxLjM1NyAwIDAgMC0xLjA3Mi0yLjI5MXoiLz48L3N2Zz4=')
+      no-repeat right bpk-spacing-md() center;
     background-size: $bpk-input-height / 2;
     color: $bpk-text-disabled-day;
     cursor: not-allowed;
@@ -383,8 +383,8 @@
   padding: bpk-spacing-md() bpk-spacing-base();
   padding-right: bpk-spacing-xxl();
   background: $bpk-surface-default-day
-    url(map-get($bpk-icons-sm, arrow-down-charcoal)) no-repeat right
-    bpk-spacing-base() center;
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMTYxNjE2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUzNyA4LjI1SDcuNDYzYTEuMzU4IDEuMzU4IDAgMCAwLTEuMTEgMi4yNTFsNC4zNTQgNC43N2ExLjUzIDEuNTMgMCAwIDAgMi4xODQuMDRsNC43MTgtNC43N2ExLjM1NyAxLjM1NyAwIDAgMC0xLjA3Mi0yLjI5MXoiLz48L3N2Zz4=')
+    no-repeat right bpk-spacing-base() center;
 
   @include bpk-rtl {
     padding-right: bpk-spacing-base();
@@ -489,8 +489,8 @@
 @mixin bpk-select--invalid {
   padding-right: bpk-spacing-xl();
   background: $bpk-surface-default-day
-    url(map-get($bpk-icons-sm, arrow-down-charcoal)) no-repeat right
-    bpk-spacing-md() center;
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMTYxNjE2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUzNyA4LjI1SDcuNDYzYTEuMzU4IDEuMzU4IDAgMCAwLTEuMTEgMi4yNTFsNC4zNTQgNC43N2ExLjUzIDEuNTMgMCAwIDAgMi4xODQuMDRsNC43MTgtNC43N2ExLjM1NyAxLjM1NyAwIDAgMC0xLjA3Mi0yLjI5MXoiLz48L3N2Zz4=')
+    no-repeat right bpk-spacing-md() center;
   background-size: $bpk-input-height / 2;
 
   @include bpk-themeable-property(
@@ -1003,8 +1003,8 @@
 @mixin bpk-textarea--invalid {
   padding-right: bpk-spacing-xl();
   background: $bpk-input-background
-    url(map-get($bpk-icons-sm, exclamation-circle-berry)) no-repeat right
-    bpk-spacing-md() center;
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjZTcwODY2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTEyIDEuNUExMC41IDEwLjUgMCAxIDAgMjIuNSAxMiAxMC41IDEwLjUgMCAwIDAgMTIgMS41ek0xMiAxOGExLjUgMS41IDAgMSAxIDEuNS0xLjVBMS41IDEuNSAwIDAgMSAxMiAxOHptMS41LTZhMS41IDEuNSAwIDAgMS0zIDBWNy41YTEuNSAxLjUgMCAwIDEgMyAweiIvPjwvc3ZnPg==')
+    no-repeat right bpk-spacing-md() center;
 
   @include bpk-themeable-property(
     border-color,
