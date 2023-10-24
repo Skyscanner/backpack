@@ -21,6 +21,7 @@ import { axe } from 'jest-axe';
 
 import BpkScrim from './BpkScrim';
 import withScrim from './withScrim';
+import withScrimmedPortal from './withScrimmedPortal';
 
 describe('BpkScrim accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
@@ -44,4 +45,18 @@ describe('withScrim accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+});
+
+describe('withScrimmedPortal accessibility tests', () => {
+  it('should not have programatically-detectable accessibility issues', async () => {
+    const WrappedComponent = (props: any) => <div {...props} />;
+    const Component = withScrimmedPortal(WrappedComponent);
+    const { container } = render(
+      <Component
+        getApplicationElement={jest.fn()}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  })
 });
