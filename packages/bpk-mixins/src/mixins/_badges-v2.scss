@@ -119,7 +119,7 @@
 ///   }
 
 @mixin bpk-badge--normal {
-  background-color: $bpk-canvas-contrast-day;
+  background-color: $bpk-private-badge-background-normal-day;
   color: $bpk-text-primary-day;
   fill: $bpk-text-primary-day;
 }
@@ -135,7 +135,7 @@
 ///   }
 
 @mixin bpk-badge--warning {
-  background-color: $bpk-canvas-contrast-day;
+  background-color: $bpk-private-badge-background-normal-day;
   color: $bpk-text-on-light-day;
   fill: $bpk-status-warning-spot-day;
 }
@@ -151,7 +151,7 @@
 ///   }
 
 @mixin bpk-badge--success {
-  background-color: $bpk-canvas-contrast-day;
+  background-color: $bpk-private-badge-background-normal-day;
   color: $bpk-text-on-light-day;
   fill: $bpk-status-success-spot-day;
 }
@@ -167,7 +167,7 @@
 ///   }
 
 @mixin bpk-badge--critical {
-  background-color: $bpk-canvas-contrast-day;
+  background-color: $bpk-private-badge-background-normal-day;
   color: $bpk-text-on-light-day;
   fill: $bpk-status-danger-spot-day;
 }
