@@ -18,8 +18,6 @@
 
 @import '../../bpk-mixins/index.scss';
 
-// TODO add $bpk-info-banner tokens to replace $bpk-banner-alert-*
-
 .bpk-info-banner {
   background-color: $bpk-surface-default-day;
   overflow: hidden;
@@ -28,27 +26,27 @@
 
   &--success {
     @include bpk-border-sm(
-      var(--bpk-info-banner-success-color, $bpk-banner-alert-success-color),
+      var(--bpk-info-banner-success-color, $bpk-info-banner-success-color),
       ''
     );
   }
 
   &--warning {
     @include bpk-border-sm(
-      var(--bpk-info-banner-warning-color, $bpk-banner-alert-warn-color),
+      var(--bpk-info-banner-warning-color, $bpk-info-banner-warning-color),
       ''
     );
   }
 
   &--error {
     @include bpk-border-sm(
-      var(--bpk-info-banner-error-color, $bpk-banner-alert-error-color),
+      var(--bpk-info-banner-error-color, $bpk-info-banner-error-color),
       ''
     );
   }
 
   &--info {
-    @include bpk-border-sm($bpk-banner-alert-neutral-color, '');
+    @include bpk-border-sm($bpk-info-banner-info-color, '');
   }
 
   &__header {
@@ -61,11 +59,11 @@
       cursor: pointer;
 
       @include bpk-hover {
-        background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+        background-color: $bpk-info-banner-header-expandable-hover-background-color;
       }
 
       &:active {
-        background-color: $bpk-banner-alert-header-expandable-active-background-color;
+        background-color: $bpk-info-banner-header-expandable-active-background-color;
       }
     }
   }
@@ -86,7 +84,7 @@
     @include bpk-themeable-property(
       fill,
       --bpk-info-banner-success-color,
-      $bpk-banner-alert-success-color
+      $bpk-info-banner-success-color
     );
   }
 
@@ -94,7 +92,7 @@
     @include bpk-themeable-property(
       fill,
       --bpk-info-banner-warn-color,
-      $bpk-banner-alert-warn-color
+      $bpk-info-banner-warning-color
     );
   }
 
@@ -102,7 +100,7 @@
     @include bpk-themeable-property(
       fill,
       --bpk-info-banner-error-color,
-      $bpk-banner-alert-error-color
+      $bpk-info-banner-error-color
     );
   }
 
