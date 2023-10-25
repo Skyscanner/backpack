@@ -2,7 +2,7 @@
 
 > Backpack banner alert component.
 
-DEPRECATED!
+# 👻 This component has been deprecated, and usages should be replaced with bpk-component-info-banner
 
 ## Installation
 
