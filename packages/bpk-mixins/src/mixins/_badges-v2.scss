@@ -18,6 +18,8 @@
 
 @import '../bonds.scss';
 @import 'typography.scss';
+@import 'radii.scss';
+@import 'utils.scss';
 
 ////
 /// @group badges
@@ -27,10 +29,10 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
+///     @include bpk-badge();
 ///   }
 
-@mixin bpk-badge-v2 {
+@mixin bpk-badge {
   display: inline-flex;
   padding: bpk-spacing-sm() bpk-spacing-md();
   align-items: center;
@@ -46,11 +48,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--centered();
+///     @include bpk-badge();
+///     @include bpk-badge--centered();
 ///   }
 
-@mixin bpk-badge-v2--centered {
+@mixin bpk-badge--centered {
   vertical-align: text-bottom;
 }
 
@@ -60,11 +62,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--docked-right();
+///     @include bpk-badge();
+///     @include bpk-badge--docked-right();
 ///   }
 
-@mixin bpk-badge-v2--docked-right {
+@mixin bpk-badge--docked-right {
   position: absolute;
   top: 0;
   right: 0;
@@ -86,11 +88,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--docked-left();
+///     @include bpk-badge();
+///     @include bpk-badge--docked-left();
 ///   }
 
-@mixin bpk-badge-v2--docked-left {
+@mixin bpk-badge--docked-left {
   position: absolute;
   top: 0;
   left: 0;
@@ -112,11 +114,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--normal();
+///     @include bpk-badge();
+///     @include bpk-badge--normal();
 ///   }
 
-@mixin bpk-badge-v2--normal {
+@mixin bpk-badge--normal {
   background-color: $bpk-canvas-contrast-day;
   color: $bpk-text-primary-day;
   fill: $bpk-text-primary-day;
@@ -128,11 +130,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--warning();
+///     @include bpk-badge();
+///     @include bpk-badge--warning();
 ///   }
 
-@mixin bpk-badge-v2--warning {
+@mixin bpk-badge--warning {
   background-color: $bpk-canvas-contrast-day;
   color: $bpk-text-on-light-day;
   fill: $bpk-status-warning-spot-day;
@@ -144,11 +146,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--success();
+///     @include bpk-badge();
+///     @include bpk-badge--success();
 ///   }
 
-@mixin bpk-badge-v2--success {
+@mixin bpk-badge--success {
   background-color: $bpk-canvas-contrast-day;
   color: $bpk-text-on-light-day;
   fill: $bpk-status-success-spot-day;
@@ -160,11 +162,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--critical();
+///     @include bpk-badge();
+///     @include bpk-badge--critical();
 ///   }
 
-@mixin bpk-badge-v2--critical {
+@mixin bpk-badge--critical {
   background-color: $bpk-canvas-contrast-day;
   color: $bpk-text-on-light-day;
   fill: $bpk-status-danger-spot-day;
@@ -176,11 +178,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--inverse();
+///     @include bpk-badge();
+///     @include bpk-badge--inverse();
 ///   }
 
-@mixin bpk-badge-v2--inverse {
+@mixin bpk-badge--inverse {
   background-color: $bpk-surface-default-day;
   color: $bpk-text-primary-day;
   fill: $bpk-text-primary-day;
@@ -192,11 +194,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--outline();
+///     @include bpk-badge();
+///     @include bpk-badge--outline();
 ///   }
 
-@mixin bpk-badge-v2--outline {
+@mixin bpk-badge--outline {
   background-color: transparent;
   color: $bpk-text-on-dark-day;
   box-shadow: inset 0 0 0 $bpk-border-size-sm $bpk-text-on-dark-day;
@@ -209,11 +211,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--strong();
+///     @include bpk-badge();
+///     @include bpk-badge--strong();
 ///   }
 
-@mixin bpk-badge-v2--strong {
+@mixin bpk-badge--strong {
   background-color: $bpk-core-primary-day;
   color: $bpk-text-on-dark-day;
   fill: $bpk-text-on-dark-day;
@@ -225,11 +227,11 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-badge-v2();
-///     @include bpk-badge-v2--brand();
+///     @include bpk-badge();
+///     @include bpk-badge--brand();
 ///   }
 
-@mixin bpk-badge-v2--brand {
+@mixin bpk-badge--brand {
   background-color: $bpk-core-accent-day;
   color: $bpk-text-primary-inverse-day;
   fill: $bpk-text-primary-inverse-day;

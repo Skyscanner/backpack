@@ -25,14 +25,14 @@ import STYLES from './BpkBadge.module.scss';
 const getClassName = cssModules(STYLES);
 
 const badgeTypeClassNames = {
-  [BADGE_TYPES.warning]: getClassName('bpk-badge-v2--warning'),
-  [BADGE_TYPES.success]: getClassName('bpk-badge-v2--success'),
-  [BADGE_TYPES.critical]: getClassName('bpk-badge-v2--critical'),
-  [BADGE_TYPES.normal]: getClassName('bpk-badge-v2--normal'),
-  [BADGE_TYPES.inverse]: getClassName('bpk-badge-v2--inverse'),
-  [BADGE_TYPES.outline]: getClassName('bpk-badge-v2--outline'),
-  [BADGE_TYPES.strong]: getClassName('bpk-badge-v2--strong'),
-  [BADGE_TYPES.brand]: getClassName('bpk-badge-v2--brand'),
+  [BADGE_TYPES.warning]: getClassName('bpk-badge--warning'),
+  [BADGE_TYPES.success]: getClassName('bpk-badge--success'),
+  [BADGE_TYPES.critical]: getClassName('bpk-badge--critical'),
+  [BADGE_TYPES.normal]: getClassName('bpk-badge--normal'),
+  [BADGE_TYPES.inverse]: getClassName('bpk-badge--inverse'),
+  [BADGE_TYPES.outline]: getClassName('bpk-badge--outline'),
+  [BADGE_TYPES.strong]: getClassName('bpk-badge--strong'),
+  [BADGE_TYPES.brand]: getClassName('bpk-badge--brand'),
 };
 
 const BpkBadgeV2 = ({
@@ -43,11 +43,11 @@ const BpkBadgeV2 = ({
   ...rest
 }: Props) => {
   const classNames = getClassName(
-    'bpk-badge-v2',
+    'bpk-badge',
     badgeTypeClassNames[type],
-    docked === 'right' && 'bpk-badge-v2--docked-right',
-    docked === 'left' && 'bpk-badge-v2--docked-left',
-    centered && 'bpk-badge-v2--centered',
+    docked === 'right' && 'bpk-badge--docked-right',
+    docked === 'left' && 'bpk-badge--docked-left',
+    centered && 'bpk-badge--centered',
     className,
   );
 
