@@ -26,13 +26,6 @@
 
   @include info-banner;
 
-  &--primary {
-    @include bpk-border-sm(
-      var(--bpk-info-banner-primary-color, $bpk-banner-alert-primary-color),
-      ''
-    );
-  }
-
   &--success {
     @include bpk-border-sm(
       var(--bpk-info-banner-success-color, $bpk-banner-alert-success-color),
@@ -87,14 +80,6 @@
   &__message {
     padding: 0 bpk-spacing-md();
     flex-grow: 1;
-  }
-
-  &__primary-icon {
-    @include bpk-themeable-property(
-      fill,
-      --bpk-info-banner-primary-color,
-      $bpk-banner-alert-primary-color
-    );
   }
 
   &__success-icon {

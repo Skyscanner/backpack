@@ -51,14 +51,6 @@ const NeutralExample = (props: {}) => (
     {...props}
   />
 );
-const PrimaryExample = (props: {}) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkInfoBanner
-    message="Primary alert"
-    type={ALERT_TYPES.PRIMARY}
-    {...props}
-  />
-);
 const SuccessExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner
@@ -128,9 +120,6 @@ const SuccessCustomIconExample = () => (
 const DocsDefaultExample = () => (
   <>
     <NeutralExample />
-    <PrimaryExample
-      className={getClassName('bpk-info-banner-examples__component')}
-    />
     <SuccessExample
       className={getClassName('bpk-info-banner-examples__component')}
     />
@@ -148,7 +137,6 @@ const DocsDefaultExample = () => (
 
 export {
   NeutralExample,
-  PrimaryExample,
   SuccessExample,
   SuccessLongMessageExample,
   SuccessExpandableExample,

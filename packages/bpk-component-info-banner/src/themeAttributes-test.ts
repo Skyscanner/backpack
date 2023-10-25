@@ -21,7 +21,6 @@ import { themeAttributes } from '../index';
 describe('rating component themeAttributes', () => {
   it('exports the expected attributes', () => {
     expect(themeAttributes).toEqual([
-      'bannerAlertPrimaryColor',
       'bannerAlertSuccessColor',
       'bannerAlertWarnColor',
       'bannerAlertErrorColor',

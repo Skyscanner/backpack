@@ -27,12 +27,6 @@ import { ALERT_TYPES } from './common-types';
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
 describe('BpkInfoBannerInner', () => {
-  it('should render correctly with "type" attribute equal to "primary"', () => {
-    const { asFragment } = render(
-      <BpkInfoBannerInner type={ALERT_TYPES.PRIMARY} message={message} />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
 
   it('should render correctly with "type" attribute equal to "success"', () => {
     const { asFragment } = render(

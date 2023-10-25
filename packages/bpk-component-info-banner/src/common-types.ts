@@ -18,7 +18,6 @@
 import type { FunctionComponent, ReactNode } from 'react';
 
 export const ALERT_TYPES = {
-  PRIMARY: 'primary',
   SUCCESS: 'success',
   WARN: 'warn',
   ERROR: 'error',

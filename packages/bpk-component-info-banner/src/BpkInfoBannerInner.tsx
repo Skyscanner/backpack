@@ -60,7 +60,6 @@ const getIconForType = (
   CustomIcon?: FunctionComponent<any> | null,
 ) => {
   const classMap: { [K in AlertTypeValue]: string } = {
-    [ALERT_TYPES.PRIMARY]: getClassName('bpk-info-banner__primary-icon'),
     [ALERT_TYPES.SUCCESS]: getClassName('bpk-info-banner__success-icon'),
     [ALERT_TYPES.WARN]: getClassName('bpk-info-banner__warn-icon'),
     [ALERT_TYPES.ERROR]: getClassName('bpk-info-banner__error-icon'),
@@ -70,7 +69,6 @@ const getIconForType = (
   const componentMap: {
     [K in AlertTypeValue]: FunctionComponent<SVGProps<SVGSVGElement>>;
   } = {
-    [ALERT_TYPES.PRIMARY]: InfoCircleIcon,
     [ALERT_TYPES.SUCCESS]: TickCircleIcon,
     [ALERT_TYPES.WARN]: InfoCircleIcon,
     [ALERT_TYPES.ERROR]: InfoCircleIcon,
