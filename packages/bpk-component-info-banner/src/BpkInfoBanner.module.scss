@@ -24,7 +24,7 @@
   background-color: $bpk-surface-default-day;
   overflow: hidden;
 
-  @include bpk-border-radius-sm;
+  @include info-banner;
 
   &--primary {
     @include bpk-border-sm(
