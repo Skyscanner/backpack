@@ -22,7 +22,7 @@ describe('rating component themeAttributes', () => {
   it('exports the expected attributes', () => {
     expect(themeAttributes).toEqual([
       'bannerAlertSuccessColor',
-      'bannerAlertWarnColor',
+      'bannerAlertWarningColor',
       'bannerAlertErrorColor',
     ]);
   });

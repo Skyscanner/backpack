@@ -61,18 +61,18 @@ const getIconForType = (
 ) => {
   const classMap: { [K in AlertTypeValue]: string } = {
     [ALERT_TYPES.SUCCESS]: getClassName('bpk-info-banner__success-icon'),
-    [ALERT_TYPES.WARN]: getClassName('bpk-info-banner__warn-icon'),
+    [ALERT_TYPES.WARNING]: getClassName('bpk-info-banner__warning-icon'),
     [ALERT_TYPES.ERROR]: getClassName('bpk-info-banner__error-icon'),
-    [ALERT_TYPES.NEUTRAL]: getClassName('bpk-info-banner__neutral-icon'),
+    [ALERT_TYPES.INFO]: getClassName('bpk-info-banner__info-icon'),
   } as const;
   const className = classMap[type];
   const componentMap: {
     [K in AlertTypeValue]: FunctionComponent<SVGProps<SVGSVGElement>>;
   } = {
     [ALERT_TYPES.SUCCESS]: TickCircleIcon,
-    [ALERT_TYPES.WARN]: InfoCircleIcon,
+    [ALERT_TYPES.WARNING]: InfoCircleIcon,
     [ALERT_TYPES.ERROR]: InfoCircleIcon,
-    [ALERT_TYPES.NEUTRAL]: InfoCircleIcon,
+    [ALERT_TYPES.INFO]: InfoCircleIcon,
   } as const;
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);

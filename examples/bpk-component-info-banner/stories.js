@@ -21,13 +21,13 @@ import BpkInfoBannerExpandable from '../../packages/bpk-component-info-banner/sr
 
 import { withBannerAlertStateMock } from './stories-utils';
 import {
-  NeutralExample,
+  InfoExample,
   SuccessExample,
   SuccessLongMessageExample,
   SuccessExpandableExample,
   SuccessAnimateOnEnterExample,
   SuccessWithReactRenderedMessageExample,
-  WarnExample,
+  WarningExample,
   ErrorExample,
   SuccessExpandableBehaviourExample,
   SuccessCustomIconExample,
@@ -45,14 +45,14 @@ export default {
 
 export const DocsDefault = DocsDefaultExample;
 
-export const Neutral = NeutralExample;
+export const Info = InfoExample;
 export const Success = SuccessExample;
 export const SuccessLongMessage = SuccessLongMessageExample;
 export const SuccessExpandable = SuccessExpandableExample;
 export const SuccessAnimateOnEnter = SuccessAnimateOnEnterExample;
 export const SuccessWithReactRenderedMessage =
   SuccessWithReactRenderedMessageExample;
-export const Warn = WarnExample;
+export const Warning = WarningExample;
 export const Error = ErrorExample;
 
 export const SuccessExpandableBehaviour = SuccessExpandableBehaviourExample;

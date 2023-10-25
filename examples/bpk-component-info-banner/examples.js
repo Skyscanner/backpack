@@ -43,11 +43,11 @@ const BpkInfoBannerExpandableState = withBannerAlertState(
   BpkInfoBannerExpandable,
 );
 
-const NeutralExample = (props: {}) => (
+const InfoExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner
-    message="Neutral alert"
-    type={ALERT_TYPES.NEUTRAL}
+    message="Info alert"
+    type={ALERT_TYPES.INFO}
     {...props}
   />
 );
@@ -92,9 +92,9 @@ const SuccessWithReactRenderedMessageExample = (props: {}) => (
     {...props}
   />
 );
-const WarnExample = (props: {}) => (
+const WarningExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkInfoBanner message="Warn alert" type={ALERT_TYPES.WARN} {...props} />
+  <BpkInfoBanner message="Warning alert" type={ALERT_TYPES.WARNING} {...props} />
 );
 const ErrorExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
@@ -119,14 +119,14 @@ const SuccessCustomIconExample = () => (
 
 const DocsDefaultExample = () => (
   <>
-    <NeutralExample />
+    <InfoExample />
     <SuccessExample
       className={getClassName('bpk-info-banner-examples__component')}
     />
     <SuccessWithReactRenderedMessageExample
       className={getClassName('bpk-info-banner-examples__component')}
     />
-    <WarnExample
+    <WarningExample
       className={getClassName('bpk-info-banner-examples__component')}
     />
     <ErrorExample
@@ -136,13 +136,13 @@ const DocsDefaultExample = () => (
 );
 
 export {
-  NeutralExample,
+  InfoExample,
   SuccessExample,
   SuccessLongMessageExample,
   SuccessExpandableExample,
   SuccessAnimateOnEnterExample,
   SuccessWithReactRenderedMessageExample,
-  WarnExample,
+  WarningExample,
   ErrorExample,
   SuccessExpandableBehaviourExample,
   SuccessCustomIconExample,

@@ -35,9 +35,9 @@ describe('BpkInfoBannerInner', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "type" attribute equal to "warn"', () => {
+  it('should render correctly with "type" attribute equal to "warning"', () => {
     const { asFragment } = render(
-      <BpkInfoBannerInner type={ALERT_TYPES.WARN} message={message} />,
+      <BpkInfoBannerInner type={ALERT_TYPES.WARNING} message={message} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -49,9 +49,9 @@ describe('BpkInfoBannerInner', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "type" attribute equal to "neutral"', () => {
+  it('should render correctly with "type" attribute equal to "info"', () => {
     const { asFragment } = render(
-      <BpkInfoBannerInner type={ALERT_TYPES.NEUTRAL} message={message} />,
+      <BpkInfoBannerInner type={ALERT_TYPES.INFO} message={message} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -91,7 +91,7 @@ describe('BpkInfoBannerInner', () => {
   it('should render correctly with a custom class name', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.WARNING}
         message={message}
         className="custom-class"
       />,
@@ -102,7 +102,7 @@ describe('BpkInfoBannerInner', () => {
   it('should render correctly with a custom banner-alert class name', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.WARNING}
         message={message}
         bannerClassName="custom-class"
       />,
@@ -113,7 +113,7 @@ describe('BpkInfoBannerInner', () => {
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.WARNING}
         message={message}
         id="custom-id"
         hidden="hidden"
@@ -125,7 +125,7 @@ describe('BpkInfoBannerInner', () => {
   it('should render correctly with show set false', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.WARNING}
         message={message}
         show={false}
       />,
@@ -140,7 +140,7 @@ describe('BpkInfoBannerInner', () => {
   it.skip('should render correctly with animateOnEnter', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.WARNING}
         message={message}
         animateOnEnter
       />,
@@ -151,7 +151,7 @@ describe('BpkInfoBannerInner', () => {
   it('should render correctly with animateOnLeave', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.WARNING}
         message={message}
         animateOnLeave
       />,

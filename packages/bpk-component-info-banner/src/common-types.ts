@@ -19,9 +19,9 @@ import type { FunctionComponent, ReactNode } from 'react';
 
 export const ALERT_TYPES = {
   SUCCESS: 'success',
-  WARN: 'warn',
+  WARNING: 'warning',
   ERROR: 'error',
-  NEUTRAL: 'neutral',
+  INFO: 'info',
 } as const;
 
 export type AlertTypeValue = (typeof ALERT_TYPES)[keyof typeof ALERT_TYPES];

@@ -33,9 +33,9 @@
     );
   }
 
-  &--warn {
+  &--warning {
     @include bpk-border-sm(
-      var(--bpk-info-banner-warn-color, $bpk-banner-alert-warn-color),
+      var(--bpk-info-banner-warning-color, $bpk-banner-alert-warn-color),
       ''
     );
   }
@@ -47,7 +47,7 @@
     );
   }
 
-  &--neutral {
+  &--info {
     @include bpk-border-sm($bpk-banner-alert-neutral-color, '');
   }
 
@@ -90,7 +90,7 @@
     );
   }
 
-  &__warn-icon {
+  &__warning-icon {
     @include bpk-themeable-property(
       fill,
       --bpk-info-banner-warn-color,
@@ -106,7 +106,7 @@
     );
   }
 
-  &__neutral-icon {
+  &__info-icon {
     fill: $bpk-text-secondary-day;
   }
 

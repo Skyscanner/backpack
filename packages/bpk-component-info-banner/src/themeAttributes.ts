@@ -18,6 +18,6 @@
 
 export default [
   'bannerAlertSuccessColor',
-  'bannerAlertWarnColor',
+  'bannerAlertWarningColor',
   'bannerAlertErrorColor',
 ];
