@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes from './src/themeAttributes';
-import BpkBadgeV2 from './src/BpkBadgeV2/BpkBadge';
-export type BpkBadgeProps = Props;
-export default component;
-export { BADGE_TYPES, themeAttributes, BpkBadgeV2 };
+/// <reference types="react" />
+import type { Props } from '../BpkBadge';
+declare const BpkBadgeV2: ({ centered, className, docked, type, ...rest }: Props) => JSX.Element;
+export default BpkBadgeV2;
