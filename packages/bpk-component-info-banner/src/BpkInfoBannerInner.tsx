@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-/* This is an internal component to Backpack that powers `BpkInfoBanner`,
- * `BpkInfoBannerDismissable` and `BpkInfoBannerExpandable`.
+/* This is an internal component to Backpack that powers `BpkInfoBanner`
+ * and `BpkInfoBannerExpandable`.
  */
 
 import type { ReactNode, FunctionComponent, SVGProps } from 'react';
@@ -41,7 +41,6 @@ import AnimateAndFade from './AnimateAndFade';
 import type {
   AlertTypeValue,
   CommonProps,
-  OnDismissHandler,
   OnExpandToggleHandler,
 } from './common-types';
 import { ALERT_TYPES } from './common-types';
@@ -53,7 +52,6 @@ const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 
 export const CONFIGURATION = {
   NONE: 'none',
-  DISMISSABLE: 'dismissable',
   EXPANDABLE: 'expandable',
 } as const;
 
@@ -116,10 +114,6 @@ type Props = CommonProps & {
   expanded?: boolean;
   toggleButtonLabel?: string;
   onExpandToggle?: OnExpandToggleHandler;
-
-  // Only relevant when configuration == CONFIGURATION.DISMISSABLE
-  dismissButtonLabel?: string;
-  onDismiss?: OnDismissHandler;
 };
 
 const BpkInfoBannerInner = ({
@@ -128,11 +122,9 @@ const BpkInfoBannerInner = ({
   bannerClassName,
   children = null,
   configuration,
-  dismissButtonLabel = '',
   expanded = false,
   icon = null,
   message,
-  onDismiss = null,
   onExpandToggle = null,
   show = true,
   toggleButtonLabel = '',
@@ -145,14 +137,7 @@ const BpkInfoBannerInner = ({
     }
   };
 
-  const onBannerDismiss = () => {
-    if (onDismiss) {
-      onDismiss();
-    }
-  };
-
   const isExpandable = configuration === CONFIGURATION.EXPANDABLE;
-  const dismissable = configuration === CONFIGURATION.DISMISSABLE;
   const showChildren = isExpandable && expanded;
 
   const headerClassNames = [getClassName('bpk-info-banner__header')];
@@ -178,7 +163,7 @@ const BpkInfoBannerInner = ({
   return (
     <AnimateAndFade
       animateOnEnter={animateOnEnter}
-      animateOnLeave={dismissable || animateOnLeave}
+      animateOnLeave={animateOnLeave}
       show={show}
       {...rest}
     >
@@ -197,16 +182,6 @@ const BpkInfoBannerInner = ({
           {isExpandable && (
             <span className={getClassName('bpk-info-banner__toggle')}>
               <ToggleButton expanded={expanded} label={toggleButtonLabel} />
-            </span>
-          )}
-          {dismissable && (
-            <span className={getClassName('bpk-info-banner__toggle')}>
-              <BpkCloseButton
-                className={getClassName('bpk-info-banner__toggle-button')}
-                onClick={onBannerDismiss}
-                aria-label={dismissButtonLabel}
-                label={dismissButtonLabel}
-              />
             </span>
           )}
         </div>

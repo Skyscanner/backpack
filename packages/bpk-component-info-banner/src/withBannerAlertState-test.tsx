@@ -20,7 +20,6 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ALERT_TYPES } from './common-types';
-import BpkInfoBannerDismissable from './BpkInfoBannerDismissable';
 import BpkInfoBannerExpandable from './BpkInfoBannerExpandable';
 import withBannerAlertState from './withBannerAlertState';
 
@@ -32,64 +31,9 @@ porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
 
-const BpkInfoBannerDismissableState = withBannerAlertState(
-  BpkInfoBannerDismissable,
-);
 const BpkInfoBannerExpandableState = withBannerAlertState(
   BpkInfoBannerExpandable,
 );
-describe('withBannerAlertState(BpkInfoBannerDismissable)', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkInfoBannerDismissableState
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
-        dismissButtonLabel="Dismiss"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should call provided `onDismiss`', async () => {
-    const onDismissMock = jest.fn();
-
-    render(
-      <BpkInfoBannerDismissableState
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
-        onDismiss={onDismissMock}
-        dismissButtonLabel="Dismiss"
-      />,
-    );
-
-    const dismissButton = screen.getByRole('button', { name: 'Dismiss' });
-
-    await userEvent.click(dismissButton);
-    expect(onDismissMock).toHaveBeenCalled();
-  });
-
-  it('should call provided `onHide` when hidding automatically', () => {
-    jest.useFakeTimers();
-    const onHideMock = jest.fn();
-
-    render(
-      <BpkInfoBannerDismissableState
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
-        hideAfter={3}
-        onHide={onHideMock}
-        dismissButtonLabel="Dismiss"
-      />,
-    );
-
-    jest.runAllTimers();
-
-    expect(onHideMock).toHaveBeenCalled();
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
-  });
-});
 
 describe('withBannerAlertState(BpkInfoBannerExpandable)', () => {
   it('should render correctly collapsed', () => {

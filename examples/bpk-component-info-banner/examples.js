@@ -17,17 +17,14 @@
  */
 /* @flow strict */
 
-import { Component } from 'react';
 import { fontWeightBold } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { action } from '../bpk-storybook-utils';
 import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
-import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
-import { BpkButtonPrimary } from '../../packages/bpk-component-button';
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkInfoBanner, {
   ALERT_TYPES,
-  withBannerAlertState, BpkInfoBannerDismissable, BpkInfoBannerExpandable
+  withBannerAlertState, BpkInfoBannerExpandable
 } from '../../packages/bpk-component-info-banner';
 
 import STYLES from './examples.module.scss';
@@ -41,67 +38,6 @@ nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fr
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
-
-type Props = {};
-type State = {
-  dismissed: boolean,
-  updates: Array<string>,
-};
-
-class BpkInfoBannerDismissableState extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      dismissed: false,
-      updates: [],
-    };
-  }
-
-  render() {
-    return (
-      <>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        <BpkInfoBannerDismissable
-          show={!this.state.dismissed}
-          dismissButtonLabel="Dismiss"
-          onDismiss={() => {
-            this.setState((prevState) => ({
-              dismissed: true,
-              updates: [...prevState.updates, 'Success alert dismissed'],
-            }));
-          }}
-          message="Neutral alert with dismiss option"
-          {...this.props}
-        />
-        {this.state.dismissed && (
-          <BpkButtonPrimary
-            className={getClassName('bpk-info-banner-examples__component')}
-            onClick={() => {
-              this.setState((prevState) => ({
-                dismissed: false,
-                updates: [...prevState.updates, 'Success alert added'],
-              }));
-            }}
-          >
-            Reset
-          </BpkButtonPrimary>
-        )}
-        <AriaLiveDemo
-          visible
-          className={getClassName('bpk-info-banner-examples__component')}
-        >
-          {this.state.updates.map((u) => (
-            <>
-              {u}
-              <br />
-            </>
-          ))}
-        </AriaLiveDemo>
-      </>
-    );
-  }
-}
 
 const BpkInfoBannerExpandableState = withBannerAlertState(
   BpkInfoBannerExpandable,
@@ -134,14 +70,6 @@ const SuccessExample = (props: {}) => (
 const SuccessLongMessageExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner message={longMessage} type={ALERT_TYPES.SUCCESS} {...props} />
-);
-const DismissableExample = () => (
-  <BpkInfoBannerDismissable
-    dismissButtonLabel="Dismiss"
-    message="Dimissable alert"
-    type={ALERT_TYPES.SUCCESS}
-    onDismiss={action('dismissed')}
-  />
 );
 const SuccessExpandableExample = () => (
   <BpkInfoBannerExpandable
@@ -180,13 +108,6 @@ const ErrorExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner message="Error alert" type={ALERT_TYPES.ERROR} {...props} />
 );
-const SuccessDismissableBehaviourExample = () => (
-  <BpkInfoBannerDismissableState
-    dismissButtonLabel="Dismiss"
-    message="Success alert with dismiss option"
-    type={ALERT_TYPES.SUCCESS}
-  />
-);
 const SuccessExpandableBehaviourExample = () => (
   <BpkInfoBannerExpandableState
     message="Success alert with more information"
@@ -195,14 +116,6 @@ const SuccessExpandableBehaviourExample = () => (
   >
     {longMessage}
   </BpkInfoBannerExpandableState>
-);
-const SuccessAutomaticallyDismissedExample = () => (
-  <BpkInfoBannerDismissableState
-    hideAfter={5}
-    message={message}
-    type={ALERT_TYPES.SUCCESS}
-    dismissButtonLabel="Dismiss"
-  />
 );
 const SuccessCustomIconExample = () => (
   <BpkInfoBanner
@@ -238,15 +151,12 @@ export {
   PrimaryExample,
   SuccessExample,
   SuccessLongMessageExample,
-  DismissableExample,
   SuccessExpandableExample,
   SuccessAnimateOnEnterExample,
   SuccessWithReactRenderedMessageExample,
   WarnExample,
   ErrorExample,
-  SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
-  SuccessAutomaticallyDismissedExample,
   SuccessCustomIconExample,
   DocsDefaultExample,
 };

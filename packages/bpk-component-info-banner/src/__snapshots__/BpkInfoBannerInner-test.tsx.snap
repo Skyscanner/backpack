@@ -495,7 +495,7 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
               class="bpk-info-banner__message"
             >
               <p>
-                All
+                All 
                 <span>
                   good
                 </span>
@@ -586,28 +586,6 @@ exports[`BpkInfoBannerInner should render correctly with animateOnLeave 1`] = `
               class="bpk-info-banner__message"
             >
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-            <span
-              class="bpk-info-banner__toggle"
-            >
-              <button
-                aria-label="Dismiss"
-                class="bpk-close-button bpk-info-banner__toggle-button"
-                title="Dismiss"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-close-button__icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-                  />
-                </svg>
-              </button>
             </span>
           </div>
           <div
@@ -763,85 +741,6 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
               >
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
               </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkInfoBannerInner should render correctly with dismissable option 1`] = `
-<DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
-      <div>
-        <section
-          class="bpk-info-banner bpk-info-banner--warn"
-          role="alert"
-        >
-          <div
-            class="bpk-info-banner__header"
-          >
-            <span
-              class="bpk-info-banner__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-info-banner__warn-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-info-banner__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-            <span
-              class="bpk-info-banner__toggle"
-            >
-              <button
-                aria-label="Dismiss"
-                class="bpk-close-button bpk-info-banner__toggle-button"
-                title="Dismiss"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-close-button__icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-                  />
-                </svg>
-              </button>
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
-          >
-            <div
-              style="display: none;"
-            >
-              <div
-                class="bpk-info-banner__children-container"
-              />
             </div>
           </div>
         </section>

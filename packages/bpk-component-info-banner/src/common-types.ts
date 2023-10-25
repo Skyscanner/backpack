@@ -42,5 +42,4 @@ export type OnExpandToggleHandler =
   | ((expanded: boolean) => void)
   | null
   | undefined;
-export type OnDismissHandler = (() => void) | null | undefined;
 export type OnHideHandler = (() => void) | null | undefined;

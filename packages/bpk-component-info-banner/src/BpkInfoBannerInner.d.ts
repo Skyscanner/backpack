@@ -20,13 +20,11 @@ import type { ReactNode } from 'react';
 
 import type {
   CommonProps,
-  OnDismissHandler,
   OnExpandToggleHandler,
 } from './common-types';
 
 export declare const CONFIGURATION: {
   readonly NONE: 'none';
-  readonly DISMISSABLE: 'dismissable';
   readonly EXPANDABLE: 'expandable';
 };
 type Props = CommonProps & {
@@ -35,8 +33,6 @@ type Props = CommonProps & {
   expanded?: boolean;
   toggleButtonLabel?: string;
   onExpandToggle?: OnExpandToggleHandler;
-  dismissButtonLabel?: string;
-  onDismiss?: OnDismissHandler;
 };
 declare const BpkInfoBannerInner: ({
   animateOnEnter,
@@ -44,11 +40,9 @@ declare const BpkInfoBannerInner: ({
   bannerClassName,
   children,
   configuration,
-  dismissButtonLabel,
   expanded,
   icon,
   message,
-  onDismiss,
   onExpandToggle,
   show,
   toggleButtonLabel,
