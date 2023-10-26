@@ -16,9 +16,19 @@
  * limitations under the License.
  */
 
-import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes from './src/themeAttributes';
-import BpkBadgeV2 from './src/BpkBadgeV2/BpkBadge';
-export type BpkBadgeProps = Props;
-export default component;
-export { BADGE_TYPES, themeAttributes, BpkBadgeV2 };
+@import '../../packages/bpk-mixins/index.scss';
+
+.bpk-badge-layout {
+  &__container {
+    position: relative;
+    display: flex;
+    min-height: bpk-spacing-xxl();
+    padding: bpk-spacing-lg();
+
+    &--light {
+      background-color: $bpk-canvas-contrast-day;
+
+      @include bpk-border-radius-xs;
+    }
+  }
+}
