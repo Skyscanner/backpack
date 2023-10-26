@@ -36,6 +36,7 @@ type Props = {
     children: ReactNode | ((matches: boolean) => ReactNode | null);
     query: string | (typeof BREAKPOINTS)[keyof typeof BREAKPOINTS];
     legacy?: boolean;
+    matchSSR?: boolean;
 };
 declare const BpkBreakpoint: ({ children, legacy, query }: Props) => JSX.Element;
 export { BREAKPOINTS };

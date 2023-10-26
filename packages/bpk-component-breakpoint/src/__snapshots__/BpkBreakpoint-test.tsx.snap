@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BpkBreakpoint SSR mode should not render on SSR until hydrated when matchSSR=false: hydrated 1`] = `
+<DocumentFragment>
+  <div
+    data-reactroot=""
+  >
+    matches
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkBreakpoint SSR mode should not render on SSR until hydrated when matchSSR=false: server rendered 1`] = `"<div data-reactroot="">does not match</div>"`;
+
+exports[`BpkBreakpoint SSR mode should not render when matchSSR is not defined 1`] = `"<div data-reactroot="">does not match</div>"`;
+
+exports[`BpkBreakpoint SSR mode should render when matchSSR=true 1`] = `"<div data-reactroot="">matches</div>"`;
+
 exports[`BpkBreakpoint should render if the breakpoint is matched 1`] = `
 <DocumentFragment>
   <div>
