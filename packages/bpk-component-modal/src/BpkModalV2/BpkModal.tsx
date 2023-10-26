@@ -134,6 +134,7 @@ export const BpkModalV2 = (props: Props) => {
     };
 
     if (isOpen) {
+      ref.current?.removeAttribute('open');
       ref.current?.showModal?.();
 
       if (dialogWithPolyfill) {
