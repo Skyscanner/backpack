@@ -27,7 +27,6 @@ import { ALERT_TYPES } from './common-types';
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
 describe('BpkInfoBannerInner', () => {
-
   it('should render correctly with "type" attribute equal to "success"', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner type={ALERT_TYPES.SUCCESS} message={message} />,

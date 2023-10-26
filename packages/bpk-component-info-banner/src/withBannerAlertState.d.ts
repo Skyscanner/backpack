@@ -19,94 +19,150 @@
 /// <reference types="node" />
 import type { ComponentType } from 'react';
 export type WithBannerAlertStateProps = {
-    onHide?: () => void;
-    hideAfter?: number;
+  onHide?: () => void;
+  hideAfter?: number;
 };
-declare const withBannerAlertState: <P extends Partial<import("./common-types").CommonProps & {
-    dismissButtonLabel: string;
-    onDismiss?: import("./common-types").OnDismissHandler;
-} & {
-    children: import("react").ReactNode;
-    expanded?: boolean | undefined;
-    toggleButtonLabel: string;
-    onExpandToggle?: import("./common-types").OnExpandToggleHandler;
-}>>(WrappedComponent: ComponentType<P>) => {
-    new (props: P & WithBannerAlertStateProps): {
-        hideIntervalId?: NodeJS.Timeout | null | undefined;
-        componentDidMount(): void;
-        componentWillUnmount(): void;
-        onExpandToggle: () => void;
-        onDismiss: () => void;
-        onHide: () => void;
-        render(): JSX.Element;
-        context: any;
-        setState<K extends keyof {
+declare const withBannerAlertState: <
+  P extends Partial<
+    import('./common-types').CommonProps & {
+      dismissButtonLabel: string;
+      onDismiss?: import('./common-types').OnDismissHandler;
+    } & {
+      children: import('react').ReactNode;
+      expanded?: boolean | undefined;
+      toggleButtonLabel: string;
+      onExpandToggle?: import('./common-types').OnExpandToggleHandler;
+    }
+  >,
+>(
+  WrappedComponent: ComponentType<P>,
+) => {
+  new (props: P & WithBannerAlertStateProps): {
+    hideIntervalId?: NodeJS.Timeout | null | undefined;
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    onExpandToggle: () => void;
+    onDismiss: () => void;
+    onHide: () => void;
+    render(): JSX.Element;
+    context: any;
+    setState<
+      K extends keyof {
+        expanded?: boolean | undefined;
+        show?: boolean | undefined;
+      },
+    >(
+      state:
+        | {
             expanded?: boolean | undefined;
             show?: boolean | undefined;
-        }>(state: {
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        } | ((prevState: Readonly<{
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        }>, props: Readonly<P & WithBannerAlertStateProps>) => {
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        } | Pick<{
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        }, K> | null) | Pick<{
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        }, K> | null, callback?: (() => void) | undefined): void;
-        forceUpdate(callback?: (() => void) | undefined): void;
-        readonly props: Readonly<P & WithBannerAlertStateProps> & Readonly<{
-            children?: import("react").ReactNode;
-        }>;
-        state: Readonly<{
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        }>;
-        refs: {
-            [key: string]: import("react").ReactInstance;
-        };
-        shouldComponentUpdate?(nextProps: Readonly<P & WithBannerAlertStateProps>, nextState: Readonly<{
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        }>, nextContext: any): boolean;
-        componentDidCatch?(error: Error, errorInfo: import("react").ErrorInfo): void;
-        getSnapshotBeforeUpdate?(prevProps: Readonly<P & WithBannerAlertStateProps>, prevState: Readonly<{
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        }>): any;
-        componentDidUpdate?(prevProps: Readonly<P & WithBannerAlertStateProps>, prevState: Readonly<{
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        }>, snapshot?: any): void;
-        componentWillMount?(): void;
-        UNSAFE_componentWillMount?(): void;
-        componentWillReceiveProps?(nextProps: Readonly<P & WithBannerAlertStateProps>, nextContext: any): void;
-        UNSAFE_componentWillReceiveProps?(nextProps: Readonly<P & WithBannerAlertStateProps>, nextContext: any): void;
-        componentWillUpdate?(nextProps: Readonly<P & WithBannerAlertStateProps>, nextState: Readonly<{
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        }>, nextContext: any): void;
-        UNSAFE_componentWillUpdate?(nextProps: Readonly<P & WithBannerAlertStateProps>, nextState: Readonly<{
-            expanded?: boolean | undefined;
-            show?: boolean | undefined;
-        }>, nextContext: any): void;
+          }
+        | ((
+            prevState: Readonly<{
+              expanded?: boolean | undefined;
+              show?: boolean | undefined;
+            }>,
+            props: Readonly<P & WithBannerAlertStateProps>,
+          ) =>
+            | {
+                expanded?: boolean | undefined;
+                show?: boolean | undefined;
+              }
+            | Pick<
+                {
+                  expanded?: boolean | undefined;
+                  show?: boolean | undefined;
+                },
+                K
+              >
+            | null)
+        | Pick<
+            {
+              expanded?: boolean | undefined;
+              show?: boolean | undefined;
+            },
+            K
+          >
+        | null,
+      callback?: (() => void) | undefined,
+    ): void;
+    forceUpdate(callback?: (() => void) | undefined): void;
+    readonly props: Readonly<P & WithBannerAlertStateProps> &
+      Readonly<{
+        children?: import('react').ReactNode;
+      }>;
+    state: Readonly<{
+      expanded?: boolean | undefined;
+      show?: boolean | undefined;
+    }>;
+    refs: {
+      [key: string]: import('react').ReactInstance;
     };
-    displayName: string;
-    defaultProps: {
-        onDismiss: null;
-        onExpandToggle: null;
-        onHide: null;
-        expanded: boolean;
-        show: boolean;
-        hideAfter: null;
-        animateOnLeave: boolean;
-        children: null;
-    };
-    contextType?: import("react").Context<any> | undefined;
+    shouldComponentUpdate?(
+      nextProps: Readonly<P & WithBannerAlertStateProps>,
+      nextState: Readonly<{
+        expanded?: boolean | undefined;
+        show?: boolean | undefined;
+      }>,
+      nextContext: any,
+    ): boolean;
+    componentDidCatch?(
+      error: Error,
+      errorInfo: import('react').ErrorInfo,
+    ): void;
+    getSnapshotBeforeUpdate?(
+      prevProps: Readonly<P & WithBannerAlertStateProps>,
+      prevState: Readonly<{
+        expanded?: boolean | undefined;
+        show?: boolean | undefined;
+      }>,
+    ): any;
+    componentDidUpdate?(
+      prevProps: Readonly<P & WithBannerAlertStateProps>,
+      prevState: Readonly<{
+        expanded?: boolean | undefined;
+        show?: boolean | undefined;
+      }>,
+      snapshot?: any,
+    ): void;
+    componentWillMount?(): void;
+    UNSAFE_componentWillMount?(): void;
+    componentWillReceiveProps?(
+      nextProps: Readonly<P & WithBannerAlertStateProps>,
+      nextContext: any,
+    ): void;
+    UNSAFE_componentWillReceiveProps?(
+      nextProps: Readonly<P & WithBannerAlertStateProps>,
+      nextContext: any,
+    ): void;
+    componentWillUpdate?(
+      nextProps: Readonly<P & WithBannerAlertStateProps>,
+      nextState: Readonly<{
+        expanded?: boolean | undefined;
+        show?: boolean | undefined;
+      }>,
+      nextContext: any,
+    ): void;
+    UNSAFE_componentWillUpdate?(
+      nextProps: Readonly<P & WithBannerAlertStateProps>,
+      nextState: Readonly<{
+        expanded?: boolean | undefined;
+        show?: boolean | undefined;
+      }>,
+      nextContext: any,
+    ): void;
+  };
+  displayName: string;
+  defaultProps: {
+    onDismiss: null;
+    onExpandToggle: null;
+    onHide: null;
+    expanded: boolean;
+    show: boolean;
+    hideAfter: null;
+    animateOnLeave: boolean;
+    children: null;
+  };
+  contextType?: import('react').Context<any> | undefined;
 };
 export default withBannerAlertState;

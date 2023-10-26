@@ -25,7 +25,7 @@ export declare const ALERT_TYPES: {
   readonly ERROR: 'error';
   readonly NEUTRAL: 'neutral';
 };
-export type AlertTypeValue = typeof ALERT_TYPES[keyof typeof ALERT_TYPES];
+export type AlertTypeValue = (typeof ALERT_TYPES)[keyof typeof ALERT_TYPES];
 export type CommonProps = {
   type: AlertTypeValue;
   message: ReactNode | string;

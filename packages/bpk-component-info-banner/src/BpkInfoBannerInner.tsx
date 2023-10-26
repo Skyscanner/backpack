@@ -139,10 +139,9 @@ const BpkInfoBannerInner = ({
   const showChildren = isExpandable && expanded;
 
   const headerClassNames = [getClassName('bpk-info-banner__header')];
-  const sectionClassNames = [
-    'bpk-info-banner',
-    `bpk-info-banner--${type}`,
-  ].map((sectionClassName) => getClassName(sectionClassName));
+  const sectionClassNames = ['bpk-info-banner', `bpk-info-banner--${type}`].map(
+    (sectionClassName) => getClassName(sectionClassName),
+  );
 
   if (bannerClassName) {
     sectionClassNames.push(bannerClassName);

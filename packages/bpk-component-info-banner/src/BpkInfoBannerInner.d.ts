@@ -18,17 +18,14 @@
 
 import type { ReactNode } from 'react';
 
-import type {
-  CommonProps,
-  OnExpandToggleHandler,
-} from './common-types';
+import type { CommonProps, OnExpandToggleHandler } from './common-types';
 
 export declare const CONFIGURATION: {
   readonly NONE: 'none';
   readonly EXPANDABLE: 'expandable';
 };
 type Props = CommonProps & {
-  configuration?: typeof CONFIGURATION[keyof typeof CONFIGURATION];
+  configuration?: (typeof CONFIGURATION)[keyof typeof CONFIGURATION];
   children?: ReactNode | string;
   expanded?: boolean;
   toggleButtonLabel?: string;
