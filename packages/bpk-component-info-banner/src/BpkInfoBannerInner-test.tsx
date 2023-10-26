@@ -22,7 +22,7 @@ import { render } from '@testing-library/react';
 import CurrencyIcon from '../../bpk-component-icon/sm/currency';
 
 import BpkInfoBannerInner, { CONFIGURATION } from './BpkInfoBannerInner';
-import { ALERT_TYPES } from './common-types';
+import { ALERT_TYPES, STYLE_TYPES } from './common-types';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
@@ -51,6 +51,17 @@ describe('BpkInfoBannerInner', () => {
   it('should render correctly with "type" attribute equal to "info"', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner type={ALERT_TYPES.INFO} message={message} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with "style" attribute equal to "onContrast"', () => {
+    const { asFragment } = render(
+      <BpkInfoBannerInner
+        style={STYLE_TYPES.ON_CONTRAST}
+        type={ALERT_TYPES.INFO}
+        message={message}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });

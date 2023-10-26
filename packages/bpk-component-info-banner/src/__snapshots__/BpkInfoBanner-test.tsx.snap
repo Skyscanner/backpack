@@ -8,7 +8,7 @@ exports[`BpkInfoBanner should render correctly 1`] = `
     <div>
       <div>
         <section
-          class="bpk-info-banner bpk-info-banner--success"
+          class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
           role="alert"
         >
           <div
@@ -67,7 +67,7 @@ exports[`BpkInfoBanner should render correctly with no type specified 1`] = `
     <div>
       <div>
         <section
-          class="bpk-info-banner bpk-info-banner--info"
+          class="bpk-info-banner bpk-info-banner--info bpk-info-banner--style-default"
           role="alert"
         >
           <div

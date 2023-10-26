@@ -18,7 +18,6 @@
 
 import type { CommonProps } from './common-types';
 import BpkInfoBannerInner from './BpkInfoBannerInner';
-import { ALERT_TYPES } from './common-types';
 
 const defaultProps = {
   animateOnEnter: false,
@@ -32,7 +31,6 @@ const BpkInfoBanner = ({
   animateOnLeave = false,
   icon = null,
   show = true,
-  type = ALERT_TYPES.INFO,
   ...rest
 }: CommonProps) => (
   <BpkInfoBannerInner
@@ -40,7 +38,6 @@ const BpkInfoBanner = ({
     animateOnLeave={animateOnLeave}
     show={show}
     icon={icon}
-    type={type}
     {...rest}
   />
 );

@@ -33,6 +33,7 @@ import {
   SuccessExpandableBehaviourExample,
   SuccessCustomIconExample,
   DocsDefaultExample,
+  OnContrastExample,
 } from './examples';
 
 export default {
@@ -55,6 +56,8 @@ export const SuccessWithReactRenderedMessage =
   SuccessWithReactRenderedMessageExample;
 export const Warning = WarningExample;
 export const Error = ErrorExample;
+
+export const OnContrast = OnContrastExample;
 
 export const SuccessExpandableBehaviour = SuccessExpandableBehaviourExample;
 

@@ -17,16 +17,22 @@
  */
 /* @flow strict */
 
-import { fontWeightBold } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  canvasContrastDay,
+  cardPadding,
+  fontWeightBold,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { action } from '../bpk-storybook-utils';
 import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkInfoBanner, {
   ALERT_TYPES,
-  withBannerAlertState,
   BpkInfoBannerExpandable,
+  STYLE_TYPES,
+  withBannerAlertState,
 } from '../../packages/bpk-component-info-banner';
+import BpkText from '../../packages/bpk-component-text';
 
 import STYLES from './examples.module.scss';
 
@@ -94,7 +100,7 @@ const SuccessWithReactRenderedMessageExample = (props: {}) => (
     {...props}
   />
 );
-const WarningExample = (props: {}) => (
+const WarningExample = (props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner
     message="Warning alert"
@@ -102,7 +108,7 @@ const WarningExample = (props: {}) => (
     {...props}
   />
 );
-const ErrorExample = (props: {}) => (
+const ErrorExample = (props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner message="Error alert" type={ALERT_TYPES.ERROR} {...props} />
 );
@@ -121,6 +127,79 @@ const SuccessCustomIconExample = () => (
     type={ALERT_TYPES.SUCCESS}
     icon={CurrencyIcon}
   />
+);
+
+const OnContrastExample = (props) => (
+  <div style={{ backgroundColor: canvasContrastDay, padding: cardPadding }}>
+    <BpkText
+      tagName="p"
+      className={getClassName('bpk-info-banner-examples__p')}
+    >
+      {message}
+    </BpkText>
+    <BpkInfoBanner
+      message="Info alert on contrast"
+      type={ALERT_TYPES.INFO}
+      style={STYLE_TYPES.ON_CONTRAST}
+      {...props}
+    />
+    <BpkText
+      tagName="p"
+      className={getClassName('bpk-info-banner-examples__p')}
+    >
+      {message}
+    </BpkText>
+    <BpkInfoBannerExpandableState
+      message="Expandable info alert on contrast"
+      style={STYLE_TYPES.ON_CONTRAST}
+      type={ALERT_TYPES.INFO}
+      toggleButtonLabel="View more"
+    >
+      {longMessage}
+    </BpkInfoBannerExpandableState>
+    <BpkText
+      tagName="p"
+      className={getClassName('bpk-info-banner-examples__p')}
+    >
+      {message}
+    </BpkText>
+    <BpkInfoBanner
+      message="Success alert on contrast"
+      type={ALERT_TYPES.SUCCESS}
+      style={STYLE_TYPES.ON_CONTRAST}
+      {...props}
+    />
+    <BpkText
+      tagName="p"
+      className={getClassName('bpk-info-banner-examples__p')}
+    >
+      {message}
+    </BpkText>
+    <BpkInfoBanner
+      message="Warning alert on contrast"
+      type={ALERT_TYPES.WARNING}
+      style={STYLE_TYPES.ON_CONTRAST}
+      {...props}
+    />
+    <BpkText
+      tagName="p"
+      className={getClassName('bpk-info-banner-examples__p')}
+    >
+      {message}
+    </BpkText>
+    <BpkInfoBanner
+      message="Error alert on contrast"
+      type={ALERT_TYPES.ERROR}
+      style={STYLE_TYPES.ON_CONTRAST}
+      {...props}
+    />
+    <BpkText
+      tagName="p"
+      className={getClassName('bpk-info-banner-examples__p')}
+    >
+      {message}
+    </BpkText>
+  </div>
 );
 
 const DocsDefaultExample = () => (
@@ -154,4 +233,5 @@ export {
   SuccessExpandableBehaviourExample,
   SuccessCustomIconExample,
   DocsDefaultExample,
+  OnContrastExample,
 };

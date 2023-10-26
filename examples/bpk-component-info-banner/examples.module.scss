@@ -22,4 +22,8 @@
   &__component {
     margin-top: bpk-spacing-base();
   }
+
+  &__p {
+    padding: bpk-spacing-base() 0;
+  }
 }

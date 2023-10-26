@@ -19,10 +19,17 @@
 @import '../../bpk-mixins/index.scss';
 
 .bpk-info-banner {
-  background-color: $bpk-surface-default-day;
   overflow: hidden;
 
   @include info-banner;
+
+  &--style-default {
+    background-color: $bpk-canvas-contrast-day;
+  }
+
+  &--style-onContrast {
+    background-color: $bpk-surface-default-day;
+  }
 
   &--success {
     @include bpk-border-sm(

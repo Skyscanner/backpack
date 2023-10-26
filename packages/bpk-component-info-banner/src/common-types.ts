@@ -24,16 +24,24 @@ export const ALERT_TYPES = {
   INFO: 'info',
 } as const;
 
+export const STYLE_TYPES = {
+  DEFAULT: 'default',
+  ON_CONTRAST: 'onContrast',
+};
+
 export type AlertTypeValue = (typeof ALERT_TYPES)[keyof typeof ALERT_TYPES];
 
+export type StyleTypeValue = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
+
 export type CommonProps = {
-  type?: AlertTypeValue;
+  type: AlertTypeValue;
   message: ReactNode | string;
   animateOnEnter?: boolean;
   animateOnLeave?: boolean;
   show?: boolean;
   bannerClassName?: string | null;
   icon?: FunctionComponent<any> | null;
+  style: StyleTypeValue;
   [rest: string]: any;
 };
 

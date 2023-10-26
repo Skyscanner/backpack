@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-info-banner-examples__component{margin-top:1rem}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-info-banner-examples__component{margin-top:1rem}.bpk-info-banner-examples__contrast-bg{background:#eff1f2}.bpk-info-banner-examples__p{padding:1rem 0}

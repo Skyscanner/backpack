@@ -18,12 +18,13 @@
 
 import BpkInfoBanner from './src/BpkInfoBanner';
 import BpkInfoBannerExpandable from './src/BpkInfoBannerExpandable';
-import { ALERT_TYPES } from './src/common-types';
+import { ALERT_TYPES, STYLE_TYPES } from './src/common-types';
 import withBannerAlertState from './src/withBannerAlertState';
 import themeAttributes from './src/themeAttributes';
 
 export {
   ALERT_TYPES,
+  STYLE_TYPES,
   BpkInfoBannerExpandable,
   withBannerAlertState,
   themeAttributes,

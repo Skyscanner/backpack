@@ -42,8 +42,9 @@ import type {
   AlertTypeValue,
   CommonProps,
   OnExpandToggleHandler,
+  StyleTypeValue,
 } from './common-types';
-import { ALERT_TYPES } from './common-types';
+import { ALERT_TYPES, STYLE_TYPES } from './common-types';
 import STYLES from './BpkInfoBanner.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -125,8 +126,9 @@ const BpkInfoBannerInner = ({
   message,
   onExpandToggle = null,
   show = true,
+  style = STYLE_TYPES.DEFAULT,
   toggleButtonLabel = '',
-  type,
+  type = ALERT_TYPES.INFO,
   ...rest
 }: Props) => {
   const onBannerExpandToggle = () => {
@@ -139,9 +141,11 @@ const BpkInfoBannerInner = ({
   const showChildren = isExpandable && expanded;
 
   const headerClassNames = [getClassName('bpk-info-banner__header')];
-  const sectionClassNames = ['bpk-info-banner', `bpk-info-banner--${type}`].map(
-    (sectionClassName) => getClassName(sectionClassName),
-  );
+  const sectionClassNames = [
+    'bpk-info-banner',
+    `bpk-info-banner--${type}`,
+    `bpk-info-banner--style-${style}`,
+  ].map((sectionClassName) => getClassName(sectionClassName));
 
   if (bannerClassName) {
     sectionClassNames.push(bannerClassName);
