@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import withScrim from './src/withScrim';
-import withScrimmedPortal from './src/withScrimmedPortal';
-
-export { withScrim, withScrimmedPortal };
-export default {
-  withScrim,
+import type { ComponentType } from 'react';
+import type { Props as ScrimProps } from './withScrim';
+type Props = ScrimProps & {
+    renderTarget?: (() => HTMLElement | null) | null;
 };
+declare const withScrimmedPortal: (WrappedComponent: ComponentType<ScrimProps>) => ({ renderTarget, ...rest }: Props) => import("react").ReactPortal;
+export default withScrimmedPortal;

@@ -18,230 +18,63 @@
 
 /// <reference types="react" />
 import withScrim from './src/withScrim';
-export { withScrim };
+import withScrimmedPortal from './src/withScrimmedPortal';
+export { withScrim, withScrimmedPortal };
 declare const _default: {
     withScrim: <P extends object>(WrappedComponent: string | import("react").ComponentType<P>) => {
-        new (props: ({
-            [rest: string]: any;
-            getApplicationElement: () => HTMLElement | null;
-            onClose?: (() => void | null) | undefined;
-            isIphone?: boolean | undefined;
-            isIpad?: boolean | undefined;
-            containerClassName?: string | undefined;
-            closeOnScrimClick?: boolean | undefined;
-        } & Omit<P, "dialogRef">) | Readonly<{
-            [rest: string]: any;
-            getApplicationElement: () => HTMLElement | null;
-            onClose?: (() => void | null) | undefined;
-            isIphone?: boolean | undefined;
-            isIpad?: boolean | undefined;
-            containerClassName?: string | undefined;
-            closeOnScrimClick?: boolean | undefined;
-        } & Omit<P, "dialogRef">>): {
+        new (props: (import("./src/withScrim").Props & Omit<P, "dialogRef">) | Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>): {
             dialogElement?: HTMLElement | null | undefined;
             componentDidMount(): void;
             componentWillUnmount(): void;
             dialogRef: (ref: HTMLElement | null | undefined) => void;
             render(): JSX.Element;
             context: any;
-            setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
+            setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
             forceUpdate(callback?: (() => void) | undefined): void;
-            readonly props: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">> & Readonly<{
+            readonly props: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">> & Readonly<{
                 children?: import("react").ReactNode;
             }>;
             state: Readonly<{}>;
             refs: {
                 [key: string]: import("react").ReactInstance;
             };
-            shouldComponentUpdate?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): boolean;
+            shouldComponentUpdate?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): boolean;
             componentDidCatch?(error: Error, errorInfo: import("react").ErrorInfo): void;
-            getSnapshotBeforeUpdate?(prevProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, prevState: Readonly<{}>): any;
-            componentDidUpdate?(prevProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, prevState: Readonly<{}>, snapshot?: any): void;
+            getSnapshotBeforeUpdate?(prevProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, prevState: Readonly<{}>): any;
+            componentDidUpdate?(prevProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, prevState: Readonly<{}>, snapshot?: any): void;
             componentWillMount?(): void;
             UNSAFE_componentWillMount?(): void;
-            componentWillReceiveProps?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextContext: any): void;
-            UNSAFE_componentWillReceiveProps?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextContext: any): void;
-            componentWillUpdate?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
-            UNSAFE_componentWillUpdate?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
+            componentWillReceiveProps?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextContext: any): void;
+            UNSAFE_componentWillReceiveProps?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextContext: any): void;
+            componentWillUpdate?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
+            UNSAFE_componentWillUpdate?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
         };
-        new (props: {
-            [rest: string]: any;
-            getApplicationElement: () => HTMLElement | null;
-            onClose?: (() => void | null) | undefined;
-            isIphone?: boolean | undefined;
-            isIpad?: boolean | undefined;
-            containerClassName?: string | undefined;
-            closeOnScrimClick?: boolean | undefined;
-        } & Omit<P, "dialogRef">, context: any): {
+        new (props: import("./src/withScrim").Props & Omit<P, "dialogRef">, context: any): {
             dialogElement?: HTMLElement | null | undefined;
             componentDidMount(): void;
             componentWillUnmount(): void;
             dialogRef: (ref: HTMLElement | null | undefined) => void;
             render(): JSX.Element;
             context: any;
-            setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
+            setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
             forceUpdate(callback?: (() => void) | undefined): void;
-            readonly props: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">> & Readonly<{
+            readonly props: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">> & Readonly<{
                 children?: import("react").ReactNode;
             }>;
             state: Readonly<{}>;
             refs: {
                 [key: string]: import("react").ReactInstance;
             };
-            shouldComponentUpdate?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): boolean;
+            shouldComponentUpdate?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): boolean;
             componentDidCatch?(error: Error, errorInfo: import("react").ErrorInfo): void;
-            getSnapshotBeforeUpdate?(prevProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, prevState: Readonly<{}>): any;
-            componentDidUpdate?(prevProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, prevState: Readonly<{}>, snapshot?: any): void;
+            getSnapshotBeforeUpdate?(prevProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, prevState: Readonly<{}>): any;
+            componentDidUpdate?(prevProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, prevState: Readonly<{}>, snapshot?: any): void;
             componentWillMount?(): void;
             UNSAFE_componentWillMount?(): void;
-            componentWillReceiveProps?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextContext: any): void;
-            UNSAFE_componentWillReceiveProps?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextContext: any): void;
-            componentWillUpdate?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
-            UNSAFE_componentWillUpdate?(nextProps: Readonly<{
-                [rest: string]: any;
-                getApplicationElement: () => HTMLElement | null;
-                onClose?: (() => void | null) | undefined;
-                isIphone?: boolean | undefined;
-                isIpad?: boolean | undefined;
-                containerClassName?: string | undefined;
-                closeOnScrimClick?: boolean | undefined;
-            } & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
+            componentWillReceiveProps?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextContext: any): void;
+            UNSAFE_componentWillReceiveProps?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextContext: any): void;
+            componentWillUpdate?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
+            UNSAFE_componentWillUpdate?(nextProps: Readonly<import("./src/withScrim").Props & Omit<P, "dialogRef">>, nextState: Readonly<{}>, nextContext: any): void;
         };
         displayName: string;
         defaultProps: {

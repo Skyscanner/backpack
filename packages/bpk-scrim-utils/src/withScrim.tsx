@@ -43,11 +43,23 @@ import STYLES from './bpk-scrim-content.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
+export type Props = {
+  /**
+   * The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work". 
+   */
   getApplicationElement: () => HTMLElement | null;
+  /**
+   * This is required unless `closeOnScrimClick` is false. It should be set as the `onClick` action on a button or a link.
+   */
   onClose?: () => void | null;
+  /**
+   * Can be used to apply iPhone only styles or behaviour, as it has different scrolling behaviour
+   */
   isIphone?: boolean;
   isIpad?: boolean;
+  /**
+   * It can be used to apply styles to the full-screen container into which the enriched component is inserted (e.g. `display: flex` or `display: grid`)
+   */
   containerClassName?: string;
   closeOnScrimClick?: boolean;
   [rest: string]: any;
