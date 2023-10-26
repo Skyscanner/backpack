@@ -31,6 +31,10 @@ describe('BpkInfoBanner', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+  it('should render correctly with no type specified', () => {
+    const { asFragment } = render(<BpkInfoBanner message={message} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
   it('should render correctly hidden', () => {
     const { asFragment } = render(

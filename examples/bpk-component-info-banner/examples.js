@@ -24,7 +24,8 @@ import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkInfoBanner, {
   ALERT_TYPES,
-  withBannerAlertState, BpkInfoBannerExpandable
+  withBannerAlertState,
+  BpkInfoBannerExpandable,
 } from '../../packages/bpk-component-info-banner';
 
 import STYLES from './examples.module.scss';
@@ -43,13 +44,14 @@ const BpkInfoBannerExpandableState = withBannerAlertState(
   BpkInfoBannerExpandable,
 );
 
+const DefaultExample = (props: {}) => (
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+  <BpkInfoBanner message="Default alert" {...props} />
+);
+
 const InfoExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkInfoBanner
-    message="Info alert"
-    type={ALERT_TYPES.INFO}
-    {...props}
-  />
+  <BpkInfoBanner message="Info alert" type={ALERT_TYPES.INFO} {...props} />
 );
 const SuccessExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
@@ -94,7 +96,11 @@ const SuccessWithReactRenderedMessageExample = (props: {}) => (
 );
 const WarningExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkInfoBanner message="Warning alert" type={ALERT_TYPES.WARNING} {...props} />
+  <BpkInfoBanner
+    message="Warning alert"
+    type={ALERT_TYPES.WARNING}
+    {...props}
+  />
 );
 const ErrorExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
@@ -136,6 +142,7 @@ const DocsDefaultExample = () => (
 );
 
 export {
+  DefaultExample,
   InfoExample,
   SuccessExample,
   SuccessLongMessageExample,

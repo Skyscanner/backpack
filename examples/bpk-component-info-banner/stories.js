@@ -21,6 +21,7 @@ import BpkInfoBannerExpandable from '../../packages/bpk-component-info-banner/sr
 
 import { withBannerAlertStateMock } from './stories-utils';
 import {
+  DefaultExample,
   InfoExample,
   SuccessExample,
   SuccessLongMessageExample,
@@ -44,7 +45,7 @@ export default {
 };
 
 export const DocsDefault = DocsDefaultExample;
-
+export const Default = DefaultExample;
 export const Info = InfoExample;
 export const Success = SuccessExample;
 export const SuccessLongMessage = SuccessLongMessageExample;
@@ -62,5 +63,5 @@ export const SuccessWithCustomIcon = SuccessCustomIconExample;
 export const VisualTest = DocsDefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };
