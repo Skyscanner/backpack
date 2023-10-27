@@ -64,14 +64,6 @@
 
     &--expandable {
       cursor: pointer;
-
-      @include bpk-hover {
-        background-color: $bpk-info-banner-header-expandable-hover-background-color;
-      }
-
-      &:active {
-        background-color: $bpk-info-banner-header-expandable-active-background-color;
-      }
     }
   }
 
