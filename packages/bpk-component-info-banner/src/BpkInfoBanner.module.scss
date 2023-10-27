@@ -83,7 +83,7 @@
   }
 
   &__message {
-    padding: 0 bpk-spacing-md();
+    padding: bpk-spacing-sm() bpk-spacing-md();
     flex-grow: 1;
   }
 
