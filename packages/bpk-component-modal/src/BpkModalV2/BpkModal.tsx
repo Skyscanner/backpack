@@ -134,6 +134,9 @@ export const BpkModalV2 = (props: Props) => {
     };
 
     if (isOpen) {
+      // There is a bug on older versions of browser using chromium (chrome, firefox, edge >114) where the dialog got an open attribute even before it is opened.
+      // Therefore, when trying to open it, it crashes and log an error mentioning the dialog has already an open attribute.
+      ref.current?.removeAttribute('open');
       ref.current?.showModal?.();
 
       if (dialogWithPolyfill) {
