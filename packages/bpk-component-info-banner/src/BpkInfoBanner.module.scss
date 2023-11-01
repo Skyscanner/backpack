@@ -60,11 +60,16 @@
     display: flex;
     padding: bpk-spacing-md();
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
 
     &--expandable {
       cursor: pointer;
     }
+  }
+
+  &__icon,
+  &__toggle {
+    padding: bpk-spacing-sm() / 2 0;
   }
 
   // Make sure the items in the flexbox are display: inline-block; for older IE's

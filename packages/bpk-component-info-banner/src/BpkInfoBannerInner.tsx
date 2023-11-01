@@ -32,7 +32,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import ChevronDownIcon from '../../bpk-component-icon/lg/chevron-down';
+import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import { cssModules } from '../../bpk-react-utils';
