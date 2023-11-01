@@ -31,30 +31,30 @@
     background-color: $bpk-surface-default-day;
   }
 
-  &--success {
-    @include bpk-border-sm(
-      var(--bpk-info-banner-success-color, $bpk-info-banner-success-color),
-      ''
-    );
-  }
+  // &--success {
+  //   @include bpk-border-sm(
+  //     var(--bpk-info-banner-success-color, $bpk-info-banner-success-color),
+  //     ''
+  //   );
+  // }
 
-  &--warning {
-    @include bpk-border-sm(
-      var(--bpk-info-banner-warning-color, $bpk-info-banner-warning-color),
-      ''
-    );
-  }
+  // &--warning {
+  //   @include bpk-border-sm(
+  //     var(--bpk-info-banner-warning-color, $bpk-info-banner-warning-color),
+  //     ''
+  //   );
+  // }
 
-  &--error {
-    @include bpk-border-sm(
-      var(--bpk-info-banner-error-color, $bpk-info-banner-error-color),
-      ''
-    );
-  }
+  // &--error {
+  //   @include bpk-border-sm(
+  //     var(--bpk-info-banner-error-color, $bpk-info-banner-error-color),
+  //     ''
+  //   );
+  // }
 
-  &--info {
-    @include bpk-border-sm($bpk-info-banner-info-color, '');
-  }
+  // &--info {
+  //   @include bpk-border-sm($bpk-info-banner-info-color, '');
+  // }
 
   &__header {
     display: flex;
