@@ -21,13 +21,67 @@ export default () => (
 );
 ```
 
+### Dismissable
+
+```tsx
+import { Component } from 'react';
+import { ALERT_TYPES, BpkInfoBannerDismissable } from '@skyscanner/backpack-web/bpk-component-banner-alert';
+
+class DismissableBpkInfoBanner extends Component {
+  constructor() {
+    super();
+
+
+    this.state = {
+      show: true,
+    };
+  }
+
+  setDismissed = () => {
+    this.setState({
+      show: false,
+    });
+  }
+
+  render() {
+    return (
+      <BpkInfoBannerDismissable
+        message="Successful banner with dismiss option."
+        type={ALERT_TYPES.SUCCESS}
+        onDismiss={this.setDismissed}
+        show={this.state.show}
+        dismissButtonLabel="Dismiss"
+      />
+    );
+  }
+}
+
+export default () => (
+  <DismissableBpkInfoBanner />
+);
+```
+
 ### withBannerAlertState(BpkInfoBanner)
 
 ```tsx
 import { Component } from 'react';
-import { ALERT_TYPES, withBannerAlertState, BpkInfoBannerExpandable } from '@skyscanner/backpack-web/bpk-component-info-banner';
+import { ALERT_TYPES, withBannerAlertState, BpkInfoBannerDismissable, BpkInfoBannerExpandable } from '@skyscanner/backpack-web/bpk-component-info-banner';
 
+const InfoBannerDismissableState = withBannerAlertState(BpkInfoBannerDismissable);
 const InfoBannerExpandableState = withBannerAlertState(BpkInfoBannerExpandable);
+
+<InfoBannerDismissableState
+  dismissButtonLabel="Dismiss"
+  message="Successful banner with dismiss option."
+  type={ALERT_TYPES.SUCCESS}
+/>
+
+<InfoBannerDismissableState
+  dismissButtonLabel="Dismiss"
+  message="Successful banner that will disappear after 5 seconds."
+  hideAfter={5}
+  type={ALERT_TYPES.SUCCESS}
+/>
 
 <InfoBannerExpandableState
   message="Successful banner with expandable option."

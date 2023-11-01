@@ -17,6 +17,7 @@
  */
 
 import BpkInfoBanner from '../../packages/bpk-component-info-banner/src/BpkInfoBanner';
+import BpkInfoBannerDismissable from '../../packages/bpk-component-info-banner/src/BpkInfoBannerDismissable';
 import BpkInfoBannerExpandable from '../../packages/bpk-component-info-banner/src/BpkInfoBannerExpandable';
 
 import { withBannerAlertStateMock } from './stories-utils';
@@ -25,12 +26,15 @@ import {
   InfoExample,
   SuccessExample,
   SuccessLongMessageExample,
+  DismissableExample,
   SuccessExpandableExample,
   SuccessAnimateOnEnterExample,
   SuccessWithReactRenderedMessageExample,
   WarningExample,
   ErrorExample,
+  SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
+  SuccessAutomaticallyDismissedExample,
   SuccessCustomIconExample,
   DocsDefaultExample,
   OnContrastExample,
@@ -40,6 +44,7 @@ export default {
   title: 'bpk-component-info-banner',
   component: BpkInfoBanner,
   subcomponents: {
+    BpkInfoBannerDismissable,
     BpkInfoBannerExpandable,
     withBannerAlertState: withBannerAlertStateMock,
   },
@@ -50,17 +55,21 @@ export const Default = DefaultExample;
 export const Info = InfoExample;
 export const Success = SuccessExample;
 export const SuccessLongMessage = SuccessLongMessageExample;
+export const SuccessDismissable = DismissableExample;
 export const SuccessExpandable = SuccessExpandableExample;
 export const SuccessAnimateOnEnter = SuccessAnimateOnEnterExample;
 export const SuccessWithReactRenderedMessage =
   SuccessWithReactRenderedMessageExample;
 export const Warning = WarningExample;
 export const Error = ErrorExample;
+export const SuccessDismissableBehaviour = SuccessDismissableBehaviourExample;
 
 export const OnContrast = OnContrastExample;
 
 export const SuccessExpandableBehaviour = SuccessExpandableBehaviourExample;
 
+export const SuccessAutomaticallyDismissedAfter5Seconds =
+  SuccessAutomaticallyDismissedExample;
 export const SuccessWithCustomIcon = SuccessCustomIconExample;
 
 export const VisualTest = DocsDefaultExample;

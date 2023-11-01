@@ -132,11 +132,25 @@ describe('BpkInfoBannerInner', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with dismissable option', () => {
+    const { asFragment } = render(
+      <BpkInfoBannerInner
+        type={ALERT_TYPES.WARN}
+        message={message}
+        configuration={CONFIGURATION.DISMISSABLE}
+        dismissButtonLabel="Dismiss"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly with show set false', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner
         type={ALERT_TYPES.WARNING}
         message={message}
+        configuration={CONFIGURATION.DISMISSABLE}
+        dismissButtonLabel="Dismiss"
         show={false}
       />,
     );
@@ -152,6 +166,8 @@ describe('BpkInfoBannerInner', () => {
       <BpkInfoBannerInner
         type={ALERT_TYPES.WARNING}
         message={message}
+        configuration={CONFIGURATION.DISMISSABLE}
+        dismissButtonLabel="Dismiss"
         animateOnEnter
       />,
     );
@@ -163,6 +179,8 @@ describe('BpkInfoBannerInner', () => {
       <BpkInfoBannerInner
         type={ALERT_TYPES.WARNING}
         message={message}
+        configuration={CONFIGURATION.DISMISSABLE}
+        dismissButtonLabel="Dismiss"
         animateOnLeave
       />,
     );

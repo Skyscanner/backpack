@@ -16,19 +16,15 @@
  * limitations under the License.
  */
 
-import BpkInfoBanner from './src/BpkInfoBanner';
-import BpkInfoBannerDismissable from './src/BpkInfoBannerDismissable';
-import BpkInfoBannerExpandable from './src/BpkInfoBannerExpandable';
-import { ALERT_TYPES, STYLE_TYPES } from './src/common-types';
-import withBannerAlertState from './src/withBannerAlertState';
-import themeAttributes from './src/themeAttributes';
+/// <reference types="react" />
+import type { CommonProps, OnDismissHandler } from './common-types';
 
-export {
-  ALERT_TYPES,
-  STYLE_TYPES,
-  BpkInfoBannerDismissable,
-  BpkInfoBannerExpandable,
-  withBannerAlertState,
-  themeAttributes,
+export type Props = CommonProps & {
+  dismissButtonLabel: string;
+  onDismiss?: OnDismissHandler;
 };
-export default BpkInfoBanner;
+declare const BpkInfoBannerDismissable: ({
+  onDismiss,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkInfoBannerDismissable;

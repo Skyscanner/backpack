@@ -16,19 +16,23 @@
  * limitations under the License.
  */
 
-import BpkInfoBanner from './src/BpkInfoBanner';
-import BpkInfoBannerDismissable from './src/BpkInfoBannerDismissable';
-import BpkInfoBannerExpandable from './src/BpkInfoBannerExpandable';
-import { ALERT_TYPES, STYLE_TYPES } from './src/common-types';
-import withBannerAlertState from './src/withBannerAlertState';
-import themeAttributes from './src/themeAttributes';
+import { render } from '@testing-library/react';
 
-export {
-  ALERT_TYPES,
-  STYLE_TYPES,
-  BpkInfoBannerDismissable,
-  BpkInfoBannerExpandable,
-  withBannerAlertState,
-  themeAttributes,
-};
-export default BpkInfoBanner;
+import BpkInfoBannerDismissable from './BpkInfoBannerDismissable';
+import { ALERT_TYPES } from './common-types';
+
+const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
+
+describe('BpkInfoBannerDismissable', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(
+      <BpkInfoBannerDismissable
+        type={ALERT_TYPES.SUCCESS}
+        message={message}
+        dismissButtonLabel="Dismiss"
+        onDismiss={jest.fn()}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
