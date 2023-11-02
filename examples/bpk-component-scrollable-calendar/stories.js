@@ -94,11 +94,10 @@ VisualTestWithZoom.args = {
 };
 
 export const VisualTestWithCustomHeight = DefaultExampleWithCustomHeight;
-export const VisualTestWithCustomHeightWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
+export const VisualTestWithCustomHeightWithZoom = VisualTestWithCustomHeight.bind({});
+VisualTestWithCustomHeightWithZoom.args = {
   zoomEnabled: true
 };
-
 
 export const VisualTestRange = RangeExample;
 export const VisualTestRangeWithZoom = VisualTestRange.bind({});
