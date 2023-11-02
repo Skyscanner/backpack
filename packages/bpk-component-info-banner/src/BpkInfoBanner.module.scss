@@ -19,6 +19,7 @@
 @import '../../bpk-mixins/index.scss';
 
 .bpk-info-banner {
+  padding: bpk-spacing-md() bpk-spacing-base();
   overflow: hidden;
 
   @include info-banner;
@@ -33,7 +34,8 @@
 
   &__header {
     display: flex;
-    padding: bpk-spacing-md() bpk-spacing-base();
+
+    // padding: bpk-spacing-md() bpk-spacing-base();
     flex-direction: row;
     align-items: flex-start;
 
@@ -104,10 +106,9 @@
   }
 
   &__children-container {
-    padding: 0 bpk-spacing-base() bpk-spacing-md() bpk-spacing-base();
-    color: $bpk-text-secondary-day;
+    color: $bpk-text-primary-day;
 
     @include bpk-text;
-    @include bpk-caption;
+    @include bpk-text-sm;
   }
 }
