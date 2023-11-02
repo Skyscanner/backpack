@@ -35,20 +35,6 @@ import { getMonthsArray, getMonthItemHeights } from './utils';
 
 const getClassName = cssModules(STYLES);
 
-// These constants are here to facilitate calculating the height
-// Row and month item heights are defined in rem to support text scaling
-const ROW_HEIGHT = 2.75;
-// This is the additional height of each grid without any rows.
-const BASE_MONTH_ITEM_HEIGHT = 8.125;
-const COLUMN_COUNT = 7;
-// Most browsers have by default 16px root font size
-const DEFAULT_ROOT_FONT_SIZE = 16;
-// Most calendar grids have 5 rows. Calculate height in px as this is what react-window expects.
-const ESTIMATED_MONTH_ITEM_HEIGHT =
-  (BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT) * DEFAULT_ROOT_FONT_SIZE;
-// Minimum month item width (useful for server-side rendering. This value will be overridden with an accurate width after mounting)
-const ESTIMATED_MONTH_ITEM_WIDTH = BASE_MONTH_ITEM_HEIGHT * 7 * DEFAULT_ROOT_FONT_SIZE;
-
 type Props = Partial<BpkCalendarGridProps> & {
   minDate: Date;
   maxDate: Date;
@@ -60,6 +46,7 @@ type Props = Partial<BpkCalendarGridProps> & {
   focusedDate?: Date | null;
   selectionConfiguration?: SelectionConfiguration;
   className?: string | null;
+  monthHeight?: number;
 };
 
 const BpkScrollableCalendarGridList = (props: Props) => {
@@ -67,6 +54,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
     className = null,
     focusedDate = null,
     minDate,
+    monthHeight = 8.125,
     selectionConfiguration,
     ...rest
   } = props;
@@ -74,6 +62,20 @@ const BpkScrollableCalendarGridList = (props: Props) => {
   const startDate = startOfDay(startOfMonth(minDate));
   const endDate = startOfDay(startOfMonth(rest.maxDate));
   const monthsCount = DateUtils.differenceInCalendarMonths(endDate, startDate);
+
+  // These constants are here to facilitate calculating the height
+  // Row and month item heights are defined in rem to support text scaling
+  const ROW_HEIGHT = 2.75;
+  // This is the additional height of each grid without any rows.
+  const BASE_MONTH_ITEM_HEIGHT = monthHeight;
+  const COLUMN_COUNT = 7;
+  // Most browsers have by default 16px root font size
+  const DEFAULT_ROOT_FONT_SIZE = 16;
+  // Most calendar grids have 5 rows. Calculate height in px as this is what react-window expects.
+  const ESTIMATED_MONTH_ITEM_HEIGHT =
+    (BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT) * DEFAULT_ROOT_FONT_SIZE;
+  // Minimum month item width (useful for server-side rendering. This value will be overridden with an accurate width after mounting)
+  const ESTIMATED_MONTH_ITEM_WIDTH = BASE_MONTH_ITEM_HEIGHT * 7 * DEFAULT_ROOT_FONT_SIZE;
 
   const getInitialRootFontSize = () =>
     parseFloat(getComputedStyle(document.documentElement).fontSize) ||

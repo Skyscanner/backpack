@@ -80,6 +80,22 @@ describe('BpkCalendarScrollGridList', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with a custom "monthHeight" attribute', () => {
+    const { asFragment } = render(
+      <BpkScrollableCalendarGridList
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        month={testDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarScrollDate}
+        weekStartsOn={0}
+        monthHeight={10}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly with a custom date component', () => {
     const MyCustomDate = (props: any) => {
       const cx = {
