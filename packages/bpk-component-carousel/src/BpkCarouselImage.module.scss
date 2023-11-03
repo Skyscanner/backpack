@@ -1,0 +1,28 @@
+@import '~bpk-mixins/index.scss';
+
+.bpk-carousel-image {
+  display: inline-flex;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  /* helps with flickering when cycle scroll */
+  /* stylelint-disable-next-line order/properties-order */
+  isolation: isolate;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: $bpk-border-radius-md;
+    object-fit: cover;
+
+    @include bpk-breakpoint-mobile {
+      border-radius: 0;
+      object-fit: contain;
+    }
+  }
+}

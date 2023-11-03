@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkCarousel should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-carousel-container"
+    data-testid="image-gallery-scroll-container"
+    role="list"
+  >
+    <div
+      class="bpk-carousel-image"
+      data-index="4"
+      role="listitem"
+    >
+      <img
+        alt=""
+        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+      />
+    </div>
+    <div
+      class="bpk-carousel-image"
+      data-index="0"
+      role="listitem"
+    >
+      <img
+        alt=""
+        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+      />
+    </div>
+    <div
+      class="bpk-carousel-image"
+      data-index="1"
+      role="listitem"
+    >
+      <img
+        alt=""
+        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+      />
+    </div>
+    <div
+      class="bpk-carousel-image"
+      data-index="2"
+      role="listitem"
+    >
+      <img
+        alt=""
+        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+      />
+    </div>
+    <div
+      class="bpk-carousel-image"
+      data-index="3"
+      role="listitem"
+    >
+      <img
+        alt=""
+        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+      />
+    </div>
+    <div
+      class="bpk-carousel-image"
+      data-index="4"
+      role="listitem"
+    >
+      <img
+        alt=""
+        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+      />
+    </div>
+    <div
+      class="bpk-carousel-image"
+      data-index="0"
+      role="listitem"
+    >
+      <img
+        alt=""
+        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+      />
+    </div>
+  </div>
+  <div
+    class="bpk-carousel-slides-indicator"
+  >
+    <div
+      class="bpk-carousel-slides-indicator__row"
+      style="--scroll-index: 0;"
+    >
+      <div
+        class="bpk-carousel-slides-indicator__dot  bpk-carousel-slides-indicator__active"
+      />
+      <div
+        class="bpk-carousel-slides-indicator__dot bpk-carousel-slides-indicator__siblingToActive "
+      />
+      <div
+        class="bpk-carousel-slides-indicator__dot  "
+      />
+      <div
+        class="bpk-carousel-slides-indicator__dot  "
+      />
+      <div
+        class="bpk-carousel-slides-indicator__dot  "
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

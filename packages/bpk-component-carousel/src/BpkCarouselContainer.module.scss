@@ -1,0 +1,19 @@
+@import '~bpk-mixins/index.scss';
+
+.bpk-carousel-container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid: 1fr / auto-flow 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  backface-visibility: hidden;
+  overscroll-behavior: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  user-select: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
