@@ -17,7 +17,7 @@
  */
 
 import type { ComponentType} from 'react';
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import withScrim from './withScrim';
@@ -25,48 +25,43 @@ import type { Props as ScrimProps } from './withScrim';
 
 export type Props = ScrimProps & {
     renderTarget?: (() => HTMLElement | null) | null;
+    isPortalReady?: boolean;
 };
 
 const getPortalElement = (target: (() => HTMLElement | null) | null | undefined) => {
     const portalElement = target && typeof target === 'function' ? target() : null;
-    
+
     if (portalElement) {
         return portalElement;
     }
-    
+
     if (document.body) {
         return document.body;
     }
     throw new Error('Render target and fallback unavailable');
 }
 
-const withScrimmedPortal = (WrappedComponent: ComponentType<ScrimProps>) => {
+const withScrimmedPortal = (WrappedComponent: ComponentType<Props>) => {
     const Scrimmed = withScrim(WrappedComponent);
+    let portalElement = document.body;
 
     const ScrimmedComponent = ({ renderTarget, ...rest}: Props) => {
+        const [isPortalReady, setIsPortalReady] = useState(false);
+
         const node = useRef<HTMLDivElement | null>(null);
 
         if (!node.current) {
-            node.current = document.createElement('div');            
+            node.current = document.createElement('div');
         }
 
         useEffect(() => {
-            const portalElement = getPortalElement(renderTarget);
-            
-            if (node.current) {
-                portalElement.appendChild(node.current);
-            }
-        
-            return () => {
-              if (node.current) {
-                portalElement.removeChild(node.current);
-              }
-            };
+            portalElement = getPortalElement(renderTarget);
+            setIsPortalReady(true);
           }, []);
-        
-        return createPortal(<Scrimmed {...rest} />, node.current);
-        }
-    
+
+        return createPortal(<Scrimmed {...rest} isPortalReady={isPortalReady} />, portalElement);
+    }
+
     return ScrimmedComponent;
 }
 

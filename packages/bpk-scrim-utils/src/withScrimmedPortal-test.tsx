@@ -16,9 +16,12 @@
  * limitations under the License.
  */
 
-import { render, within } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { render, within, screen } from '@testing-library/react';
+import { useEffect, useState } from 'react';
 
 import withScrimmedPortal from './withScrimmedPortal';
+import type { Props } from './withScrimmedPortal';
 
 describe('withScrimmedPortal', () => {
   it('renders the wrapped component inside a portal correctly with fallback to document.body', () => {
@@ -72,5 +75,34 @@ describe('withScrimmedPortal', () => {
 
     const hiddenElements = document.getElementById('pagewrap');
     expect(within(hiddenElements as HTMLElement).queryByText('Wrapped Component')).toBeNull();
+  });
+
+  it('notifies the child component when the portal is ready', () => {
+    const WrappedComponent = ({ isPortalReady }: Props) => {
+      const [portalStatus, setPortalStatus] = useState('');
+      useEffect(() => {
+        if (isPortalReady) {
+          setPortalStatus(`${portalStatus} portal is now ready`);
+        } else {
+          setPortalStatus(`${portalStatus} portal is not ready yet /`);
+        }
+      }, [isPortalReady]);
+
+      const content = `Wrapped Component /${portalStatus}`;
+
+      return <div>{content}</div>;
+    };
+
+    const ScrimmedComponent = withScrimmedPortal(WrappedComponent);
+    render(
+      <div id="pagewrap">
+        <div> Content hidden from AT</div>
+        <ScrimmedComponent
+          getApplicationElement={() => document.getElementById('pagewrap')}
+        />
+      </div>
+    );
+
+    expect(screen.getByText('Wrapped Component / portal is not ready yet / portal is now ready')).toBeInTheDocument();
   });
 });
