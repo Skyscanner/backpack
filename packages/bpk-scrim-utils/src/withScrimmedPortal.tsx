@@ -47,12 +47,6 @@ const withScrimmedPortal = (WrappedComponent: ComponentType<ScrimProps>) => {
     const ScrimmedComponent = ({ renderTarget, ...rest}: Props) => {
         const [isPortalReady, setIsPortalReady] = useState(false);
 
-        const node = useRef<HTMLDivElement | null>(null);
-
-        if (!node.current) {
-            node.current = document.createElement('div');
-        }
-
         useEffect(() => {
             portalElement = getPortalElement(renderTarget);
             setIsPortalReady(true);
