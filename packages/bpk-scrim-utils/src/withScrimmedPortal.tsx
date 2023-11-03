@@ -17,7 +17,7 @@
  */
 
 import type { ComponentType} from 'react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import withScrim from './withScrim';
