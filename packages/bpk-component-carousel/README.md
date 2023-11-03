@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkBoilerplate from '@skyscanner/backpack-web/bpk-component-carousel';
+import BpkCarousel from '@skyscanner/backpack-web/bpk-component-carousel';
 
 const imageChangeHandler = () => {
   console.log('Image Changed')
