@@ -42,13 +42,13 @@ const getPortalElement = (target: (() => HTMLElement | null) | null | undefined)
 
 const withScrimmedPortal = (WrappedComponent: ComponentType<ScrimProps>) => {
     const Scrimmed = withScrim(WrappedComponent);
-    let portalElement = document.body;
 
     const ScrimmedComponent = ({ renderTarget, ...rest}: Props) => {
+        const portalElement = getPortalElement(renderTarget);
+
         const [isPortalReady, setIsPortalReady] = useState(false);
 
         useEffect(() => {
-            portalElement = getPortalElement(renderTarget);
             setIsPortalReady(true);
           }, []);
 
