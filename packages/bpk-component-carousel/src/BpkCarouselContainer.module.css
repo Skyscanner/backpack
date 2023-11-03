@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-carousel-container{display:grid;width:100%;height:100%;grid:1fr / auto-flow 100%;border-radius:.75rem;overflow-x:auto;overflow-y:hidden;backface-visibility:hidden;overscroll-behavior:contain;scroll-snap-type:x mandatory;scrollbar-width:none;user-select:none}@media (max-width: 32.25rem){.bpk-carousel-container{border-radius:0}}.bpk-carousel-container::-webkit-scrollbar{display:none}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-carousel-container{display:grid;width:100%;height:100%;grid:1fr / auto-flow 100%;overflow-x:auto;overflow-y:hidden;backface-visibility:hidden;overscroll-behavior:contain;scroll-snap-type:x mandatory;scrollbar-width:none;user-select:none}.bpk-carousel-container::-webkit-scrollbar{display:none}

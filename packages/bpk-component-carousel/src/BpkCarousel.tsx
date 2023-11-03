@@ -18,16 +18,20 @@
 
 import { useRef, useState } from 'react';
 
+import BpkPageIndicator, { VARIANT } from '../../bpk-component-page-indicator';
+import { cssModules } from '../../bpk-react-utils';
 
 import { useScrollToInitialImage } from './utils';
 import BpkCarouselContainer from './BpkCarouselContainer';
-import BpkSlidesIndicator from './BpkCarouselSlidesIndicator';
 import type { Props } from './types';
+import STYLES from './BpkCarousel.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkCarousel = ({
   images,
   initialImageIndex = 0,
-  onImageChanged = null
+  onImageChanged = null,
 }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
@@ -36,17 +40,19 @@ const BpkCarousel = ({
 
   return (
     <>
-        <BpkCarouselContainer
-          images={images}
-          onVisible={updateShownImageIndex}
-          imagesRef={imagesRef}
-          onImageChanged={onImageChanged}
-        />
-      <BpkSlidesIndicator
-        length={images.length}
-        activeIndex={shownImageIndex}
+      <BpkCarouselContainer
+        images={images}
+        onVisible={updateShownImageIndex}
+        imagesRef={imagesRef}
+        onImageChanged={onImageChanged}
       />
-      </>
+      <BpkPageIndicator
+        currentIndex={shownImageIndex}
+        totalIndicators={images.length}
+        className={getClassName('bpk-carousel-slides-indicator')}
+        variant={VARIANT.overImage}
+      />
+    </>
   );
 };
 
