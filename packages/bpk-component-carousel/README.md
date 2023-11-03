@@ -1,4 +1,4 @@
-# bpk-component-boilerplate
+# bpk-component-carousel
 
 > Backpack carousel component.
 
