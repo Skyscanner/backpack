@@ -36,7 +36,6 @@ import {
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
   MultipleMapsExample,
-  VisualTestExample,
 } from './examples';
 
 export default {
@@ -73,7 +72,5 @@ export const PriceMarkers = WithPriceMarkersExample;
 export const PriceMarkersV2 = WithPriceMarkersV2Example;
 
 export const WithIconPriceMarkersV2 = WithIconPriceMarkersV2Example;
-
-export const VisualTest = VisualTestExample;
 
 export const MultiMaps = MultipleMapsExample;
