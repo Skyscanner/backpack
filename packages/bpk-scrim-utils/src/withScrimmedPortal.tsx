@@ -25,7 +25,6 @@ import type { Props as ScrimProps } from './withScrim';
 
 export type Props = ScrimProps & {
     renderTarget?: (() => HTMLElement | null) | null;
-    isPortalReady?: boolean;
 };
 
 const getPortalElement = (target: (() => HTMLElement | null) | null | undefined) => {
@@ -41,7 +40,7 @@ const getPortalElement = (target: (() => HTMLElement | null) | null | undefined)
     throw new Error('Render target and fallback unavailable');
 }
 
-const withScrimmedPortal = (WrappedComponent: ComponentType<Props>) => {
+const withScrimmedPortal = (WrappedComponent: ComponentType<ScrimProps>) => {
     const Scrimmed = withScrim(WrappedComponent);
     let portalElement = document.body;
 
