@@ -1,6 +1,4 @@
-import { render, screen, getAllByRole } from '@testing-library/react';
-import { axe } from 'jest-axe';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 import type { ReactNode } from 'react';
 
 import BpkCarousel from './BpkCarousel';
