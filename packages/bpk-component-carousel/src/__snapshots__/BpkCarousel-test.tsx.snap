@@ -13,8 +13,8 @@ exports[`BpkCarousel should render correctly 1`] = `
       role="listitem"
     >
       <img
-        alt=""
-        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+        alt="hotel bedroom"
+        src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg"
       />
     </div>
     <div
@@ -23,8 +23,8 @@ exports[`BpkCarousel should render correctly 1`] = `
       role="listitem"
     >
       <img
-        alt=""
-        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+        alt="hotel bedroom"
+        src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg"
       />
     </div>
     <div
@@ -33,8 +33,8 @@ exports[`BpkCarousel should render correctly 1`] = `
       role="listitem"
     >
       <img
-        alt=""
-        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+        alt="hotel bedroom"
+        src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg"
       />
     </div>
     <div
@@ -43,8 +43,8 @@ exports[`BpkCarousel should render correctly 1`] = `
       role="listitem"
     >
       <img
-        alt=""
-        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+        alt="hotel bedroom"
+        src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg"
       />
     </div>
     <div
@@ -53,8 +53,8 @@ exports[`BpkCarousel should render correctly 1`] = `
       role="listitem"
     >
       <img
-        alt=""
-        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+        alt="hotel bedroom"
+        src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg"
       />
     </div>
     <div
@@ -63,8 +63,8 @@ exports[`BpkCarousel should render correctly 1`] = `
       role="listitem"
     >
       <img
-        alt=""
-        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+        alt="hotel bedroom"
+        src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg"
       />
     </div>
     <div
@@ -73,8 +73,8 @@ exports[`BpkCarousel should render correctly 1`] = `
       role="listitem"
     >
       <img
-        alt=""
-        src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg"
+        alt="hotel bedroom"
+        src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg"
       />
     </div>
   </div>

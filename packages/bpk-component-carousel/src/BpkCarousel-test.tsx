@@ -10,7 +10,7 @@ describe('BpkCarousel', () => {
   let images: ReactNode[]
 
   const DemoImages = () => (
-    <img src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg" alt='' />
+    <img src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg" alt='hotel bedroom' />
   )
 
   function generateDemoImages(count: number) {

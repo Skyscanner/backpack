@@ -22,7 +22,7 @@ import { axe } from 'jest-axe';
 import BpkCarousel from './BpkCarousel';
 
 const DemoImages = () => (
-  <img src="https://url/WxH.jpg" alt='' />
+  <img src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg" alt='hotel bedroom' />
 )
 const images = [<DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />]
 

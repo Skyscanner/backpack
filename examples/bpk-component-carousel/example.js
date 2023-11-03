@@ -19,10 +19,10 @@
 import BpkCarousel from '../../packages/bpk-component-carousel'
 
 const DemoImages = () => (
-    <img src="https://d2xf5gjipzd8cd.cloudfront.net/available/949043373/949043373_343x132.jpg" alt='' />
+    <img src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg" alt='hotel bedroom' />
 )
 
-const imagesList = [<DemoImages />,<img src='https://d2xf5gjipzd8cd.cloudfront.net/available/758391025/758391025_343x132.jpg' alt='' />, <DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />]
+const imagesList = [<DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />]
 
 
 const DefaultExample = () => (
