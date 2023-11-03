@@ -106,6 +106,7 @@
   }
 
   &__children-container {
+    padding: bpk-spacing-sm() 0 bpk-spacing-md();
     color: $bpk-text-primary-day;
 
     @include bpk-text;
