@@ -97,7 +97,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
         months,
         rest.weekStartsOn,
         COLUMN_COUNT,
-        ROW_HEIGHT * rootFontSize,
+        rowHeight * rootFontSize,
         BASE_MONTH_ITEM_HEIGHT * rootFontSize,
       ),
     [rootFontSize, months, rest.weekStartsOn],
