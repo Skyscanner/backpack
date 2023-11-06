@@ -8,7 +8,7 @@ exports[`BpkInfoBannerDismissable should render correctly 1`] = `
     <div>
       <div>
         <section
-          class="bpk-info-banner bpk-info-banner--success"
+          class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
           role="alert"
         >
           <div
