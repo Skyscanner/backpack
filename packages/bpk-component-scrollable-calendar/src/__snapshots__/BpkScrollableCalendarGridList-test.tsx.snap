@@ -1261,7 +1261,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
 </DocumentFragment>
 `;
 
-exports[`BpkCalendarScrollGridList should render correctly with a custom "rowHeight" attribute 1`] = `
+exports[`BpkCalendarScrollGridList should render correctly with a custom "customRowHeight" attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-scrollable-calendar-grid-list"

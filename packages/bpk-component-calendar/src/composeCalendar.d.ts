@@ -71,7 +71,7 @@ export type Props = {
     preventKeyboardFocus?: boolean;
     selectionConfiguration?: SelectionConfiguration;
     gridClassName?: string | null;
-    rowHeight?: number;
+    customRowHeight?: number;
     /**
      * Key to be used to pick the desired weekDay format from the `daysOfWeek` object, for example: `nameAbbr` or `nameNarrow`.
      */

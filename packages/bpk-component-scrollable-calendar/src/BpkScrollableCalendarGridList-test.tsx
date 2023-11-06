@@ -80,7 +80,7 @@ describe('BpkCalendarScrollGridList', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a custom "rowHeight" attribute', () => {
+  it('should render correctly with a custom "customRowHeight" attribute', () => {
     const { asFragment } = render(
       <BpkScrollableCalendarGridList
         minDate={DateUtils.addDays(testDate, -1)}
@@ -90,7 +90,7 @@ describe('BpkCalendarScrollGridList', () => {
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarScrollDate}
         weekStartsOn={0}
-        rowHeight={3}
+        customRowHeight={3}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

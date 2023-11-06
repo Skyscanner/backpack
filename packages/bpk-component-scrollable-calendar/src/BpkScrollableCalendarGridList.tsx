@@ -55,15 +55,15 @@ type Props = Partial<BpkCalendarGridProps> & {
   focusedDate?: Date | null;
   selectionConfiguration?: SelectionConfiguration;
   className?: string | null;
-  rowHeight?: number;
+  customRowHeight?: number;
 };
 
 const BpkScrollableCalendarGridList = (props: Props) => {
   const {
     className = null,
+    customRowHeight = 2.75,
     focusedDate = null,
     minDate,
-    rowHeight = 2.75,
     selectionConfiguration,
     ...rest
   } = props;
@@ -73,7 +73,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
   const monthsCount = DateUtils.differenceInCalendarMonths(endDate, startDate);
 
   // Row and month item heights are defined in rem to support text scaling
-  const ROW_HEIGHT = rowHeight;
+  const ROW_HEIGHT = customRowHeight;
   // Most calendar grids have 5 rows. Calculate height in px as this is what react-window expects.
   const ESTIMATED_MONTH_ITEM_HEIGHT =
     (BASE_MONTH_ITEM_HEIGHT + 5 * ROW_HEIGHT) * DEFAULT_ROOT_FONT_SIZE;
