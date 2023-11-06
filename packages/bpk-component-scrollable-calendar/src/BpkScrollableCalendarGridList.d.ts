@@ -29,7 +29,7 @@ type Props = Partial<BpkCalendarGridProps> & {
     focusedDate?: Date | null;
     selectionConfiguration?: SelectionConfiguration;
     className?: string | null;
-    monthHeight?: number;
+    rowHeight?: number;
 };
 declare const BpkScrollableCalendarGridList: (props: Props) => JSX.Element;
 export default BpkScrollableCalendarGridList;

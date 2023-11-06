@@ -149,7 +149,7 @@ const DefaultExampleWithCustomHeight = () => (
       type: CALENDAR_SELECTION_TYPE.single,
       date: new Date(2020, 3, 15),
     }}
-    monthHeight={10}
+    rowHeight={3}
   />
 );
 

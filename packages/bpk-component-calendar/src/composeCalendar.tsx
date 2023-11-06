@@ -85,7 +85,7 @@ export type Props = {
   preventKeyboardFocus?: boolean;
   selectionConfiguration?: SelectionConfiguration;
   gridClassName?: string | null;
-  monthHeight?: number;
+  rowHeight?: number;
   /**
    * Key to be used to pick the desired weekDay format from the `daysOfWeek` object, for example: `nameAbbr` or `nameNarrow`.
    */
@@ -133,7 +133,6 @@ const composeCalendar = (
     maxDate,
     minDate,
     month,
-    monthHeight,
     navProps = {},
     nextMonthLabel = null,
     onDateClick = null,
@@ -141,6 +140,7 @@ const composeCalendar = (
     onMonthChange = null,
     preventKeyboardFocus = false,
     previousMonthLabel = null,
+    rowHeight,
     selectionConfiguration = {
       type: CALENDAR_SELECTION_TYPE.single,
       date: null,
@@ -218,7 +218,7 @@ const composeCalendar = (
           className={gridClasses.join(' ')}
           dateProps={dateProps}
           selectionConfiguration={selectionConfiguration}
-          monthHeight={monthHeight}
+          rowHeight={rowHeight}
           {...gridProps}
         />
       </div>

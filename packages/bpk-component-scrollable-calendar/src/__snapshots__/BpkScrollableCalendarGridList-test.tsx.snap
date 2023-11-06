@@ -1261,7 +1261,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
 </DocumentFragment>
 `;
 
-exports[`BpkCalendarScrollGridList should render correctly with a custom "monthHeight" attribute 1`] = `
+exports[`BpkCalendarScrollGridList should render correctly with a custom "rowHeight" attribute 1`] = `
 <DocumentFragment>
   <div
     class="bpk-scrollable-calendar-grid-list"
@@ -1270,13 +1270,13 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom "monthH
       style="overflow: visible; height: 0px; width: 0px;"
     >
       <div
-        style="position: relative; height: 380px; width: 1120px; overflow: auto; will-change: transform; direction: ltr;"
+        style="position: relative; height: 370px; width: 910px; overflow: auto; will-change: transform; direction: ltr;"
       >
         <div
-          style="height: 4940px; width: 100%;"
+          style="height: 4810px; width: 100%;"
         >
           <div
-            style="position: absolute; left: 0px; top: 0px; height: 380px; width: 100%;"
+            style="position: absolute; left: 0px; top: 0px; height: 370px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
@@ -1889,7 +1889,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom "monthH
             </div>
           </div>
           <div
-            style="position: absolute; left: 0px; top: 380px; height: 380px; width: 100%;"
+            style="position: absolute; left: 0px; top: 370px; height: 370px; width: 100%;"
           >
             <div
               class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"

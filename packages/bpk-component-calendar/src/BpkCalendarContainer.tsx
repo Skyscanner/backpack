@@ -66,7 +66,7 @@ export type Props = {
   initiallyFocusedDate?: Date | null;
   markToday?: boolean;
   markOutsideDays?: boolean;
-  monthHeight?: number;
+  rowHeight?: number;
 };
 
 type InjectedProps = {
