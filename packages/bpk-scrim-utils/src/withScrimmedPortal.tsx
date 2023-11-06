@@ -17,7 +17,7 @@
  */
 
 import type { ComponentType} from 'react';
-import { useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import withScrim from './withScrim';
@@ -29,11 +29,11 @@ export type Props = ScrimProps & {
 
 const getPortalElement = (target: (() => HTMLElement | null) | null | undefined) => {
     const portalElement = target && typeof target === 'function' ? target() : null;
-    
+
     if (portalElement) {
         return portalElement;
     }
-    
+
     if (document.body) {
         return document.body;
     }
@@ -44,29 +44,17 @@ const withScrimmedPortal = (WrappedComponent: ComponentType<ScrimProps>) => {
     const Scrimmed = withScrim(WrappedComponent);
 
     const ScrimmedComponent = ({ renderTarget, ...rest}: Props) => {
-        const node = useRef<HTMLDivElement | null>(null);
+        const portalElement = getPortalElement(renderTarget);
 
-        if (!node.current) {
-            node.current = document.createElement('div');            
-        }
+        const [isPortalReady, setIsPortalReady] = useState(false);
 
         useEffect(() => {
-            const portalElement = getPortalElement(renderTarget);
-            
-            if (node.current) {
-                portalElement.appendChild(node.current);
-            }
-        
-            return () => {
-              if (node.current) {
-                portalElement.removeChild(node.current);
-              }
-            };
+            setIsPortalReady(true);
           }, []);
-        
-        return createPortal(<Scrimmed {...rest} />, node.current);
-        }
-    
+
+        return createPortal(<Scrimmed {...rest} isPortalReady={isPortalReady} />, portalElement);
+    }
+
     return ScrimmedComponent;
 }
 
