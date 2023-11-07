@@ -56,7 +56,7 @@ type Props = Partial<BpkCalendarGridProps> & {
   selectionConfiguration?: SelectionConfiguration;
   className?: string | null;
   /**
-   * Use this prop to set the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
+   * Sets the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
    */
   customRowHeight?: number;
 };
