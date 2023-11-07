@@ -66,6 +66,9 @@ export type Props = {
   initiallyFocusedDate?: Date | null;
   markToday?: boolean;
   markOutsideDays?: boolean;
+  /**
+   * Use this prop to set the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
+   */
   customRowHeight?: number;
 };
 
