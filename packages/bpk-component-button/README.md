@@ -17,18 +17,18 @@ const AlignedArrowIcon = withButtonAlignment(withRtlSupport(ArrowIcon));
 
 export default () => (
   <div>
-    <BpkButton>Primary</BpkButton>
-    <BpkButton size={SIZE_TYPES.large}>Large primary</BpkButton>
-    <BpkButton type={BUTTON_TYPES.secondary}>Secondary</BpkButton>
-    <BpkButton type={BUTTON_TYPES.secondaryOnDark}>SecondaryOnDark</BpkButton>
-    <BpkButton type={BUTTON_TYPES.link}>Link</BpkButton>
-    <BpkButton type={BUTTON_TYPES.linkOnDark}>LinkOnDark</BpkButton>
-    <BpkButton type={BUTTON_TYPES.primaryOnDark}>PrimaryOnDark</BpkButton>
-    <BpkButton type={BUTTON_TYPES.primaryOnLight}>PrimaryOnLight</BpkButton>
-    <BpkButton iconOnly>
+    <BpkButtonV2>Primary</BpkButtonV2>
+    <BpkButtonV2 size={SIZE_TYPES.large}>Large primary</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.secondary}>Secondary</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.secondaryOnDark}>SecondaryOnDark</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.link}>Link</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>LinkOnDark</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.primaryOnDark}>PrimaryOnDark</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.primaryOnLight}>PrimaryOnLight</BpkButtonV2>
+    <BpkButtonV2 iconOnly>
       <AlignedArrowIcon />
       <span className="visually-hidden">Search</span>
-    </BpkButton>
+    </BpkButtonV2>
   </div>
 );
 ```
