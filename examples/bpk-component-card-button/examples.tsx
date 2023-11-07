@@ -120,7 +120,6 @@ const VisualTestExample = () => (
     <SmallContainedExample />
     <SmallOnDarkExample />
     <SmallCheckedExample />
-    <br />
   </>
 );
 
