@@ -35,7 +35,12 @@ type Props = {
   style?: StyleType;
   asyncWithError?: boolean;
 };
-const SaveButtonContainer = ({ asyncWithError = false, checked = false, size, style }: Props) => {
+const SaveButtonContainer = ({
+  asyncWithError = false,
+  checked = false,
+  size,
+  style,
+}: Props) => {
   const [checkedStatus, setCheckedStatus] = useState(checked);
 
   const onCheckedChange = () => {
@@ -47,7 +52,7 @@ const SaveButtonContainer = ({ asyncWithError = false, checked = false, size, st
       await Promise.reject(new Error('mocked example error'));
       setCheckedStatus(!checkedStatus);
     } catch (e) {
-      console.log('save button async error: ', e)// eslint-disable-line no-console
+      console.log('save button async error: ', e); // eslint-disable-line no-console
     }
   };
 
@@ -77,7 +82,9 @@ const OnDarkExample = () => (
 
 const CheckedExample = () => <SaveButtonContainer checked />;
 
-const AsyncWithErrorCheckedExample = () => <SaveButtonContainer checked asyncWithError />;
+const AsyncWithErrorCheckedExample = () => (
+  <SaveButtonContainer checked asyncWithError />
+);
 
 const SmallDefaultExample = () => (
   <SaveButtonContainer size={SIZE_TYPES.small} />

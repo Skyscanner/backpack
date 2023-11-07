@@ -88,7 +88,7 @@ const BpkSaveButton = ({
       )}
       onClick={(e: MouseEvent) => {
         onCheckedChange(e);
-        if(!checked) {
+        if (!checked) {
           setToggle(true);
         }
       }}
