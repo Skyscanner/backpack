@@ -64,24 +64,24 @@
   &__success-icon {
     @include bpk-themeable-property(
       fill,
-      --bpk-info-banner-success-color,
-      $bpk-info-banner-success-color
+      --bpk-private-info-banner-success-color,
+      $bpk-private-info-banner-success-color
     );
   }
 
   &__warning-icon {
     @include bpk-themeable-property(
       fill,
-      --bpk-info-banner-warn-color,
-      $bpk-info-banner-warning-color
+      --bpk-private-info-banner-warn-color,
+      $bpk-private-info-banner-warning-color
     );
   }
 
   &__error-icon {
     @include bpk-themeable-property(
       fill,
-      --bpk-info-banner-error-color,
-      $bpk-info-banner-error-color
+      --bpk-private-info-banner-error-color,
+      $bpk-private-info-banner-error-color
     );
   }
 
