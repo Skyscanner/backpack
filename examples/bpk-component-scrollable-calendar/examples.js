@@ -136,6 +136,24 @@ const DefaultExample = () => (
   />
 );
 
+const DefaultExampleWithCustomHeight = () => (
+  <ScrollableCal
+    weekStartsOn={1}
+    daysOfWeek={weekDays}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    DateComponent={BpkScrollableCalendarDate}
+    minDate={new Date(2020, 3, 1)}
+    maxDate={new Date(2020, 6, 1)}
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(2020, 3, 15),
+    }}
+    customRowHeight={3}
+  />
+);
+
+
 const RangeExample = () => (
   <ScrollableCal
     weekStartsOn={1}
@@ -349,6 +367,7 @@ const PastCalendarExample = () => (
 
 export {
   DefaultExample,
+  DefaultExampleWithCustomHeight,
   RangeExample,
   SplitWeekRangeExample,
   WeekStartsOnSixExample,
