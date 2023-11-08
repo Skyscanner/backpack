@@ -69,4 +69,4 @@ const BpkDialogInner = (props: Props) => {
   );
 };
 
-export default withScrim(BpkDialogInner);
+export default BpkDialogInner;

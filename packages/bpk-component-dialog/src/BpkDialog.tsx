@@ -24,6 +24,7 @@ import BpkDialogInner from './BpkDialogInner';
 import type { Props } from './common-types';
 import { HEADER_ICON_TYPES } from './common-types';
 import STYLES from './BpkDialog.module.scss';
+import { useEffect, useRef } from 'react';
 
 const getClassName = cssModules(STYLES);
 
@@ -44,21 +45,50 @@ const BpkDialog = ({
   );
   const closeButtonClassNames = getClassName('bpk-dialog__close-button');
 
-  if(!onClose && dismissible === true) {
-    // eslint-disable-next-line no-console
-    console.warn('BpkDialog: dismissible is true but no onClose prop was provided. Dialog will not be dismissible.');
+  // if(!onClose && dismissible === true) {
+  //   // eslint-disable-next-line no-console
+  //   console.warn('BpkDialog: dismissible is true but no onClose prop was provided. Dialog will not be dismissible.');
+  // }
+
+  const dialogRef = useRef(null)
+  console.log(dialogRef)
+
+
+
+  const clickCheck = (e) => {
+    if(dialogRef.current){
+      const rect = e.target.getBoundingClientRect();
+
+      const clickedInDialog = (
+          rect.top <= e.clientY &&
+          e.clientY <= rect.top + rect.height &&
+          rect.left <= e.clientX &&
+          e.clientX <= rect.left + rect.width
+      );
+  
+      if (clickedInDialog === false && dismissible)
+          e.target.close();
+    }
   }
 
+  if(dialogRef.current){
+    dialogRef.current.addEventListener("click", clickCheck)
+    dialogRef.current.showModal()
+  }
+
+  useEffect(() => {
+    if(isOpen){
+      dialogRef.current.showModal()
+    }
+
+    if(!isOpen){
+      dialogRef.current.close()
+    }
+  }, [isOpen])
+
   return (
-    <Portal
-      isOpen={isOpen}
-      onClose={onClose}
-      renderTarget={renderTarget}
-      closeOnEscPressed={dismissible}
-    >
+    <dialog ref={dialogRef} style={{border: "none"}}>
       <BpkDialogInner
-        onClose={onClose}
-        closeOnScrimClick={dismissible}
         containerClassName={getClassName('bpk-dialog__container')}
         contentClassName={
           headerIcon ? getClassName('bpk-dialog--with-icon') : undefined
@@ -66,16 +96,19 @@ const BpkDialog = ({
         {...rest}
       >
         {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
-        {dismissible && (
-          <BpkCloseButton
-            className={closeButtonClassNames}
-            label={closeLabel}
-            onClick={onClose}
-          />
-        )}
+        <form method='dialog'>
+          {dismissible && (
+            <BpkCloseButton
+              type={"submit"}
+              autoFocus
+              className={closeButtonClassNames}
+              label={closeLabel}
+            />
+          )}
+        </form>
         {children}
       </BpkDialogInner>
-    </Portal>
+    </dialog>
   );
 };
 
