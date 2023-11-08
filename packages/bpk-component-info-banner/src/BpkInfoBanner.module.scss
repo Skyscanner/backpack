@@ -47,13 +47,6 @@
     padding: bpk-spacing-sm() / 2 0;
   }
 
-  // Make sure the items in the flexbox are display: inline-block; for older IE's
-  &__icon,
-  &__message,
-  &__toggle {
-    display: inline-block;
-  }
-
   &__message {
     padding: bpk-spacing-sm() bpk-spacing-md();
     flex-grow: 1;
