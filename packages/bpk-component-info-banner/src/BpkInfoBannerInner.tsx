@@ -89,10 +89,10 @@ type ToggleButtonProps = {
 };
 
 const ToggleButton = (props: ToggleButtonProps) => {
-  const classNames = [getClassName('bpk-info-banner__expand-icon')];
-  if (props.expanded) {
-    classNames.push(getClassName('bpk-info-banner__expand-icon--flipped'));
-  }
+  const classNames = getClassName(
+    'bpk-info-banner__expand-icon',
+    props.expanded && 'bpk-info-banner__expand-icon--flipped'
+  );
 
   return (
     <button
@@ -102,7 +102,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <ExpandIcon className={classNames.join(' ')} />
+      <ExpandIcon className={classNames} />
     </button>
   );
 };
@@ -155,7 +155,6 @@ const BpkInfoBannerInner = ({
   const dismissable = configuration === CONFIGURATION.DISMISSABLE;
   const showChildren = isExpandable && expanded;
 
-  const headerClassNames = [getClassName('bpk-info-banner__header')];
   const sectionClassNames = [
     'bpk-info-banner',
     `bpk-info-banner--${type}`,
@@ -166,9 +165,10 @@ const BpkInfoBannerInner = ({
     sectionClassNames.push(bannerClassName);
   }
 
-  if (isExpandable) {
-    headerClassNames.push(getClassName('bpk-info-banner__header--expandable'));
-  }
+  const headerClassNames = getClassName(
+    'bpk-info-banner__header',
+    isExpandable && 'bpk-info-banner__header--expandable'
+  );
 
   /* eslint-disable
     jsx-a11y/no-static-element-interactions,
@@ -186,7 +186,7 @@ const BpkInfoBannerInner = ({
       <section className={sectionClassNames.join(' ')} role="alert">
         <div
           role={isExpandable ? 'button' : undefined}
-          className={headerClassNames.join(' ')}
+          className={headerClassNames}
           onClick={onBannerExpandToggle}
         >
           <span className={getClassName('bpk-info-banner__icon')}>
