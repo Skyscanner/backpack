@@ -41,6 +41,7 @@ export type Props = {
     initiallyFocusedDate?: Date | null;
     markToday?: boolean;
     markOutsideDays?: boolean;
+    customRowHeight?: number;
 };
 type InjectedProps = {
     onDateClick: ((date: Date) => void) | null;
@@ -105,6 +106,7 @@ declare const withCalendarState: <P extends object>(Calendar: ComponentType<P>) 
         initiallyFocusedDate: null;
         markToday: boolean;
         markOutsideDays: boolean;
+        customRowHeight?: number;
     };
     contextType?: import("react").Context<any> | undefined;
 };
@@ -157,6 +159,7 @@ declare const _default: {
         initiallyFocusedDate: null;
         markToday: boolean;
         markOutsideDays: boolean;
+        customRowHeight?: number;
     };
     contextType?: import("react").Context<any> | undefined;
 };

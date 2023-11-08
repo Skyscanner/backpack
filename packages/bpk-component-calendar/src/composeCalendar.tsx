@@ -86,6 +86,10 @@ export type Props = {
   selectionConfiguration?: SelectionConfiguration;
   gridClassName?: string | null;
   /**
+   * Sets the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
+   */
+  customRowHeight?: number;
+  /**
    * Key to be used to pick the desired weekDay format from the `daysOfWeek` object, for example: `nameAbbr` or `nameNarrow`.
    */
   weekDayKey?: string;
@@ -116,6 +120,7 @@ const composeCalendar = (
   const BpkCalendar = ({
     changeMonthLabel = null,
     className = null,
+    customRowHeight,
     dateModifiers = {},
     dateProps = {},
     daysOfWeek,
@@ -216,6 +221,7 @@ const composeCalendar = (
           className={gridClasses.join(' ')}
           dateProps={dateProps}
           selectionConfiguration={selectionConfiguration}
+          customRowHeight={customRowHeight}
           {...gridProps}
         />
       </div>
