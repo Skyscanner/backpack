@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkList from '../../packages/bpk-component-list/src/BpkList';
 import BpkListItem from '../../packages/bpk-component-list/src/BpkListItem';
@@ -29,10 +28,13 @@ export default {
   subcomponents: {
     BpkListItem
   },
-  tags: ['autodocs'],
 };
 
 export const Unordered = UnorderedExample;
 export const Ordered = OrderedExample;
 export const Nested = NestedExample;
 export const VisualTest = NestedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

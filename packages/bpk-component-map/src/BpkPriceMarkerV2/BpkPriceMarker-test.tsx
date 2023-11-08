@@ -18,7 +18,7 @@
 
 import { render } from '@testing-library/react';
 
-import BpkPriceMarkerV2, { MARKER_STATUSES } from './BpkPriceMarker';
+import { BpkPriceMarkerV2, MARKER_STATUSES } from './BpkPriceMarker';
 
 type Props = {
   children: Node;

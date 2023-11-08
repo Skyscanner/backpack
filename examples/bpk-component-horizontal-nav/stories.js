@@ -37,7 +37,6 @@ export default {
   title: 'bpk-component-horizontal-nav',
   component: BpkHorizontalNav,
   subcomponents: { BpkHorizontalNavItem },
-  tags: ['autodocs'],
 };
 
 export const Example = DefaultExample;
@@ -59,3 +58,7 @@ export const DisabledItem = DisabledItemExample;
 
 export const Separators = SeparatorsExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

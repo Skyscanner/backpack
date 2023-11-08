@@ -21,6 +21,7 @@ import BpkCalendarGridComponent from '../../packages/bpk-component-calendar/src/
 import BpkCalendarNavComponent from '../../packages/bpk-component-calendar/src/BpkCalendarNav';
 import BpkCalendarDateComponent from '../../packages/bpk-component-calendar/src/BpkCalendarDate';
 
+import { BpkCalendarContainerMock } from './stories-utils';
 import {
   DefaultExample,
   CalendarNavExample,
@@ -47,11 +48,11 @@ export default {
   title: 'bpk-component-calendar',
   component: BpkCalendarGridComponent,
   subcomponents: {
-    BpkCalendarNavComponent,
-    BpkCalendarGridHeaderComponent,
-    BpkCalendarDateComponent,
+    BpkCalendarNav: BpkCalendarNavComponent,
+    BpkCalendarGridHeader: BpkCalendarGridHeaderComponent,
+    BpkCalendarDate: BpkCalendarDateComponent,
+    BpkCalendarContainer: BpkCalendarContainerMock
   },
-  tags: ['autodocs']
 };
 
 export const BpkCalendarNav = CalendarNavExample;
@@ -90,5 +91,12 @@ export const CustomComposedCalendarSafariDstBug =
 
 export const Week = WeekExample;
 export const VisualTest = FocusedDateInThePastExample;
-
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
 export const VisualTestRange = RangeDateCalendarExample;
+export const VisualTestRangeWithZoom = VisualTestRange.bind({});
+VisualTestRangeWithZoom.args = {
+  zoomEnabled: true
+};

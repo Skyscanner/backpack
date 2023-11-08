@@ -27,7 +27,6 @@ import { withRtlSupport } from '../../packages/bpk-component-icon';
 import LandmarkIconSm from '../../packages/bpk-component-icon/sm/landmark';
 import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
 import FoodIconSm from '../../packages/bpk-component-icon/sm/food';
-import ParkingIconSm from '../../packages/bpk-component-icon/sm/parking';
 import HotelIconSm from '../../packages/bpk-component-icon/sm/hotels';
 import BpkMap, {
   BpkOverlayView,
@@ -45,7 +44,6 @@ const AlignedHotelIconSm = withRtlSupport(HotelIconSm);
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
 const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
-const AlignedParkingIconSm = withRtlSupport(ParkingIconSm);
 
 type Props = { children: ?Node, language: string };
 
@@ -78,7 +76,6 @@ const venues = [
     latitude: 55.9469995,
     longitude: -3.1905666,
     price: '£48',
-    disabled: false,
     icon: <AlignedLandmarkIconSm />,
     airportsIcon: <AlignedAirportsIconSm />,
   },
@@ -88,7 +85,6 @@ const venues = [
     latitude: 55.9439643,
     longitude: -3.1938768,
     price: '£151',
-    disabled: false,
     icon: <AlignedFoodIconSm />,
     airportsIcon: <AlignedAirportsIconSm />,
   },
@@ -98,7 +94,6 @@ const venues = [
     latitude: 55.9432205,
     longitude: -3.1955874,
     price: '£62',
-    disabled: false,
     icon: <AlignedHotelIconSm />,
     airportsIcon: <AlignedAirportsIconSm />,
   },
@@ -108,18 +103,7 @@ const venues = [
     latitude: 55.9450573,
     longitude: -3.1996687,
     price: '£342',
-    disabled: false,
     icon: <AlignedHotelIconSm />,
-    airportsIcon: <AlignedAirportsIconSm />,
-  },
-  {
-    id: '5',
-    name: 'Kolkata Springs Hotel',
-    latitude: 55.943621,
-    longitude: -3.192098,
-    price: 'Sold out',
-    disabled: true,
-    icon: <AlignedParkingIconSm />,
     airportsIcon: <AlignedAirportsIconSm />,
   },
 ];
@@ -278,13 +262,13 @@ class StatefulBpkIconMarker extends Component<
       >
         {venues.map((venue) => (
           <BpkIconMarker
+            key={venue.id}
             position={{ latitude: venue.latitude, longitude: venue.longitude }}
             onClick={() => {
               this.props.action();
               this.selectVenue(venue.id);
             }}
             icon={venue.icon}
-            disabled={venue.disabled}
             selected={this.state.selectedId === venue.id}
           />
         ))}

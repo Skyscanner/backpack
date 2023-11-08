@@ -19,7 +19,7 @@
 import type { MouseEvent } from 'react';
 import { useState } from 'react';
 
-import BpkButtonV2 from '../../bpk-component-button/src/BpkButtonV2/BpkButton';
+import { BpkButtonV2 } from '../../bpk-component-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkHeartIcon from '../../bpk-component-icon/lg/heart';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -87,8 +87,10 @@ const BpkSaveButton = ({
         `bpk-save-button__${style}`,
       )}
       onClick={(e: MouseEvent) => {
-        setToggle(true);
         onCheckedChange(e);
+        if (!checked) {
+          setToggle(true);
+        }
       }}
       iconOnly
     >

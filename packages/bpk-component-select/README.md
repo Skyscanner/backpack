@@ -45,18 +45,4 @@ export default () => (
 
 ## Props
 
-| Property                  | PropType   | Required | Default Value |
-| ------------              | --------   | -------- | ------------- |
-| id                        | string     | true     | -             |
-| name                      | string     | true     | -             |
-| value                     | string     | false    | use [defaultValue](https://reactjs.org/docs/dom-elements.html#value)|
-| onChange                  | func       | false    | undefined     |
-| valid                     | bool       | false    | null          |
-| large                     | bool       | false    | false         |
-| disabled                  | bool       | false    | false         |
-| docked                    | bool       | false    | false         |
-| dockedFirst               | bool       | false    | false         |
-| dockedMiddle              | bool       | false    | false         |
-| dockedLast                | bool       | false    | false         |
-| image                     | node       | false    | null          |
-| wrapperClassName          | string     | false    | null          |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/select/web-qxijsk6z#section-props-12).

@@ -29,7 +29,13 @@ export type Props = Partial<ModalDialogProps> & {
     onClose?: (arg0?: TouchEvent | MouseEvent | KeyboardEvent, arg1?: {
         source: 'ESCAPE' | 'DOCUMENT_CLICK';
     }) => void;
+    /**
+     * Because this component uses a modal on mobile viewports, you need to let it know what
+     * the root element of your application is by returning its DOM node via this prop
+     * This is to "hide" your application from screen readers whilst the modal is open.
+     * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
+     */
     getApplicationElement: () => HTMLElement | null;
 };
-declare const BpkModal: ({ title, onClose, className, contentClassName, closeLabel, closeText, wide, showHeader, fullScreenOnMobile, fullScreen, padded, accessoryView, renderTarget, isIphone, closeOnScrimClick, closeOnEscPressed, dialogRef, isOpen, ...rest }: Props) => JSX.Element;
+declare const BpkModal: ({ accessoryView, className, closeLabel, closeOnEscPressed, closeOnScrimClick, closeText, contentClassName, dialogRef, fullScreen, fullScreenOnMobile, isIphone, isOpen, onClose, padded, renderTarget, showHeader, title, wide, ...rest }: Props) => JSX.Element;
 export default BpkModal;

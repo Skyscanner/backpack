@@ -18,8 +18,6 @@
 
 import { Fragment } from 'react';
 import {
-  spacingXs,
-  spacingSm,
   onePixelRem,
   colorSkyGrayTint06,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -39,7 +37,7 @@ const getClassName = cssModules(STYLES);
 const Separator = () => (
   <span
     style={{
-      padding: `${spacingXs} ${spacingSm}`,
+      padding: '.25rem .25rem',
     }}
   >
     <span

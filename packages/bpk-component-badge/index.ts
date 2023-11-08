@@ -18,7 +18,10 @@
 
 import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
 import themeAttributes from './src/themeAttributes';
+import BpkBadgeV2 from './src/BpkBadgeV2/BpkBadge';
+
+;
 
 export type BpkBadgeProps = Props;
 export default component;
-export { BADGE_TYPES, themeAttributes };
+export { BADGE_TYPES, themeAttributes, BpkBadgeV2 };

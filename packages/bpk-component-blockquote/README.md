@@ -22,11 +22,4 @@ export default () => (
 
 ## Props
 
-| Property    | PropType | Required | Default Value |
-| ----------- | -------- | -------- | ------------- |
-| children    | -        | true     | -             |
-| extraSpace  | bool     | false    | false         |
-
-## Theme Props
-
-* `blockquoteBarColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/blockquote/web-s5htWiTy#section-props-25).

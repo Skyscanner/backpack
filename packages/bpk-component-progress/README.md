@@ -36,18 +36,4 @@ const Steps = () => (
 
 ## Props
 
-| Property                 | PropType                      | Required | Default Value |
-| ------------------------ | ----------------------------- | -------- | ------------- |
-| max                      | number                        | true     | -             |
-| min                      | number                        | true     | -             |
-| value                    | number                        | true     | -             |
-| className                | string                        | false    | null          |
-| getValueText             | func                          | false    | null          |
-| small                    | bool                          | false    | false         |
-| onComplete               | func                          | false    | null          |
-| onCompleteTransitionEnd  | func                          | false    | null          |
-| stepped                  | bool                          | false    | false         |
-
-## Theme props
-
-* `progressBarFillColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/progress-bar/web-KLzAeRrW#section-props-ef).

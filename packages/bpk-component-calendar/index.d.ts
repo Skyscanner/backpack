@@ -30,4 +30,4 @@ import CustomPropTypes, { BpkCalendarGridPropTypes, BpkCalendarDatePropTypes } f
 import * as DateUtils from './src/date-utils';
 import themeAttributes from './src/themeAttributes';
 export default BpkCalendarContainer;
-export { BpkCalendarGrid, BpkCalendarGridHeader, BpkCalendarNav, BpkCalendarDate, DateUtils, CALENDAR_SELECTION_TYPE, DaysOfWeek, ReactComponent, WeekDay, WeekDayKey, SelectionConfiguration, ROW_TYPES, SELECTION_TYPES, composeCalendar, withCalendarState, themeAttributes, BpkCalendarGridWithTransition, CustomPropTypes, BpkCalendarGridPropTypes, BpkCalendarDatePropTypes, BpkCalendarGridProps, BpkCalendarDateProps };
+export { BpkCalendarGrid, BpkCalendarGridHeader, BpkCalendarNav, BpkCalendarDate, DateUtils, CALENDAR_SELECTION_TYPE, DaysOfWeek, ReactComponent, WeekDay, WeekDayKey, SelectionConfiguration, ROW_TYPES, SELECTION_TYPES, composeCalendar, withCalendarState, themeAttributes, BpkCalendarGridWithTransition, CustomPropTypes, BpkCalendarGridPropTypes, BpkCalendarDatePropTypes, BpkCalendarDateProps, BpkCalendarGridProps, };

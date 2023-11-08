@@ -18,7 +18,11 @@
 
 import type { ComponentType } from 'react';
 import type { SelectionConfiguration } from './custom-proptypes';
-type Props = {
+export type Props = {
+    /**
+     * If set to true (default), it sets a fixed width on the calendar container. This is necessary to support transitions and to create the right size for the Datepicker component.
+     * If set to false, the calendar is of fluid width and will take up the space of its parent container.
+     */
     fixedWidth?: boolean;
     maxDate?: Date;
     minDate?: Date;
@@ -27,10 +31,17 @@ type Props = {
         month: Date;
         source: string;
     }) => void) | null;
+    /**
+     * An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
+     */
     selectionConfiguration?: SelectionConfiguration;
+    /**
+     * Sets the date that is focused initially, this prop has no effect if `selectionConfiguration` is specified in which case the date specified in this prop is focused. If no selected date is set and `initiallyFocusedDate` is not set the focused date is the `minDate`(defaults to today if it has not been explicitly set).
+     */
     initiallyFocusedDate?: Date | null;
     markToday?: boolean;
     markOutsideDays?: boolean;
+    customRowHeight?: number;
 };
 type InjectedProps = {
     onDateClick: ((date: Date) => void) | null;
@@ -95,76 +106,13 @@ declare const withCalendarState: <P extends object>(Calendar: ComponentType<P>) 
         initiallyFocusedDate: null;
         markToday: boolean;
         markOutsideDays: boolean;
+        customRowHeight?: number;
     };
     contextType?: import("react").Context<any> | undefined;
 };
 declare const _default: {
-    new (props: CalendarProps<{
-        changeMonthLabel?: string | null | undefined;
-        daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-        formatDateFull: (date: Date) => string | Date;
-        formatMonth: (date: Date) => string | Date;
-        id: string;
-        maxDate: Date;
-        minDate: Date;
-        month: Date;
-        nextMonthLabel?: string | null | undefined;
-        previousMonthLabel?: string | null | undefined;
-        weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-        className?: string | null | undefined;
-        dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-        fixedWidth?: boolean | undefined;
-        focusedDate?: Date | null | undefined;
-        markOutsideDays?: boolean | undefined;
-        markToday?: boolean | undefined;
-        onMonthChange?: ((event: UIEvent, { month, source }: {
-            month: Date;
-            source: string;
-        }) => void) | null | undefined;
-        onDateClick?: ((date: Date) => void) | null | undefined;
-        onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-        preventKeyboardFocus?: boolean | undefined;
-        selectionConfiguration?: SelectionConfiguration | undefined;
-        gridClassName?: string | null | undefined;
-        weekDayKey?: string | undefined;
-        navProps?: {} | null | undefined;
-        headerProps?: {} | null | undefined;
-        gridProps?: {} | null | undefined;
-        dateProps?: {} | null | undefined;
-    }>): {
-        UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<{
-            changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-            formatDateFull: (date: Date) => string | Date;
-            formatMonth: (date: Date) => string | Date;
-            id: string;
-            maxDate: Date;
-            minDate: Date;
-            month: Date;
-            nextMonthLabel?: string | null | undefined;
-            previousMonthLabel?: string | null | undefined;
-            weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-            className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-            fixedWidth?: boolean | undefined;
-            focusedDate?: Date | null | undefined;
-            markOutsideDays?: boolean | undefined;
-            markToday?: boolean | undefined;
-            onMonthChange?: ((event: UIEvent, { month, source }: {
-                month: Date;
-                source: string;
-            }) => void) | null | undefined;
-            onDateClick?: ((date: Date) => void) | null | undefined;
-            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-            preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
-            gridClassName?: string | null | undefined;
-            weekDayKey?: string | undefined;
-            navProps?: {} | null | undefined;
-            headerProps?: {} | null | undefined;
-            gridProps?: {} | null | undefined;
-            dateProps?: {} | null | undefined;
-        }>): void;
+    new (props: CalendarProps<import("./composeCalendar").Props>): {
+        UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<import("./composeCalendar").Props>): void;
         handleDateFocus: (event: UIEvent, { date, source }: {
             date: Date;
             source: string;
@@ -177,73 +125,9 @@ declare const _default: {
         handleDateKeyDown: (event: KeyboardEvent) => void;
         render(): JSX.Element;
         context: any;
-        setState<K extends keyof State>(state: State | ((prevState: Readonly<State>, props: Readonly<CalendarProps<{
-            changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-            formatDateFull: (date: Date) => string | Date;
-            formatMonth: (date: Date) => string | Date;
-            id: string;
-            maxDate: Date;
-            minDate: Date;
-            month: Date;
-            nextMonthLabel?: string | null | undefined;
-            previousMonthLabel?: string | null | undefined;
-            weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-            className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-            fixedWidth?: boolean | undefined;
-            focusedDate?: Date | null | undefined;
-            markOutsideDays?: boolean | undefined;
-            markToday?: boolean | undefined;
-            onMonthChange?: ((event: UIEvent, { month, source }: {
-                month: Date;
-                source: string;
-            }) => void) | null | undefined;
-            onDateClick?: ((date: Date) => void) | null | undefined;
-            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-            preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
-            gridClassName?: string | null | undefined;
-            weekDayKey?: string | undefined;
-            navProps?: {} | null | undefined;
-            headerProps?: {} | null | undefined;
-            gridProps?: {} | null | undefined;
-            dateProps?: {} | null | undefined;
-        }>>) => State | Pick<State, K> | null) | Pick<State, K> | null, callback?: (() => void) | undefined): void;
+        setState<K extends keyof State>(state: State | ((prevState: Readonly<State>, props: Readonly<CalendarProps<import("./composeCalendar").Props>>) => State | Pick<State, K> | null) | Pick<State, K> | null, callback?: (() => void) | undefined): void;
         forceUpdate(callback?: (() => void) | undefined): void;
-        readonly props: Readonly<CalendarProps<{
-            changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-            formatDateFull: (date: Date) => string | Date;
-            formatMonth: (date: Date) => string | Date;
-            id: string;
-            maxDate: Date;
-            minDate: Date;
-            month: Date;
-            nextMonthLabel?: string | null | undefined;
-            previousMonthLabel?: string | null | undefined;
-            weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-            className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-            fixedWidth?: boolean | undefined;
-            focusedDate?: Date | null | undefined;
-            markOutsideDays?: boolean | undefined;
-            markToday?: boolean | undefined;
-            onMonthChange?: ((event: UIEvent, { month, source }: {
-                month: Date;
-                source: string;
-            }) => void) | null | undefined;
-            onDateClick?: ((date: Date) => void) | null | undefined;
-            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-            preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
-            gridClassName?: string | null | undefined;
-            weekDayKey?: string | undefined;
-            navProps?: {} | null | undefined;
-            headerProps?: {} | null | undefined;
-            gridProps?: {} | null | undefined;
-            dateProps?: {} | null | undefined;
-        }>> & Readonly<{
+        readonly props: Readonly<CalendarProps<import("./composeCalendar").Props>> & Readonly<{
             children?: import("react").ReactNode;
         }>;
         state: Readonly<State>;
@@ -251,208 +135,16 @@ declare const _default: {
             [key: string]: import("react").ReactInstance;
         };
         componentDidMount?(): void;
-        shouldComponentUpdate?(nextProps: Readonly<CalendarProps<{
-            changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-            formatDateFull: (date: Date) => string | Date;
-            formatMonth: (date: Date) => string | Date;
-            id: string;
-            maxDate: Date;
-            minDate: Date;
-            month: Date;
-            nextMonthLabel?: string | null | undefined;
-            previousMonthLabel?: string | null | undefined;
-            weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-            className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-            fixedWidth?: boolean | undefined;
-            focusedDate?: Date | null | undefined;
-            markOutsideDays?: boolean | undefined;
-            markToday?: boolean | undefined;
-            onMonthChange?: ((event: UIEvent, { month, source }: {
-                month: Date;
-                source: string;
-            }) => void) | null | undefined;
-            onDateClick?: ((date: Date) => void) | null | undefined;
-            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-            preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
-            gridClassName?: string | null | undefined;
-            weekDayKey?: string | undefined;
-            navProps?: {} | null | undefined;
-            headerProps?: {} | null | undefined;
-            gridProps?: {} | null | undefined;
-            dateProps?: {} | null | undefined;
-        }>>, nextState: Readonly<State>, nextContext: any): boolean;
+        shouldComponentUpdate?(nextProps: Readonly<CalendarProps<import("./composeCalendar").Props>>, nextState: Readonly<State>, nextContext: any): boolean;
         componentWillUnmount?(): void;
         componentDidCatch?(error: Error, errorInfo: import("react").ErrorInfo): void;
-        getSnapshotBeforeUpdate?(prevProps: Readonly<CalendarProps<{
-            changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-            formatDateFull: (date: Date) => string | Date;
-            formatMonth: (date: Date) => string | Date;
-            id: string;
-            maxDate: Date;
-            minDate: Date;
-            month: Date;
-            nextMonthLabel?: string | null | undefined;
-            previousMonthLabel?: string | null | undefined;
-            weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-            className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-            fixedWidth?: boolean | undefined;
-            focusedDate?: Date | null | undefined;
-            markOutsideDays?: boolean | undefined;
-            markToday?: boolean | undefined;
-            onMonthChange?: ((event: UIEvent, { month, source }: {
-                month: Date;
-                source: string;
-            }) => void) | null | undefined;
-            onDateClick?: ((date: Date) => void) | null | undefined;
-            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-            preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
-            gridClassName?: string | null | undefined;
-            weekDayKey?: string | undefined;
-            navProps?: {} | null | undefined;
-            headerProps?: {} | null | undefined;
-            gridProps?: {} | null | undefined;
-            dateProps?: {} | null | undefined;
-        }>>, prevState: Readonly<State>): any;
-        componentDidUpdate?(prevProps: Readonly<CalendarProps<{
-            changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-            formatDateFull: (date: Date) => string | Date;
-            formatMonth: (date: Date) => string | Date;
-            id: string;
-            maxDate: Date;
-            minDate: Date;
-            month: Date;
-            nextMonthLabel?: string | null | undefined;
-            previousMonthLabel?: string | null | undefined;
-            weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-            className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-            fixedWidth?: boolean | undefined;
-            focusedDate?: Date | null | undefined;
-            markOutsideDays?: boolean | undefined;
-            markToday?: boolean | undefined;
-            onMonthChange?: ((event: UIEvent, { month, source }: {
-                month: Date;
-                source: string;
-            }) => void) | null | undefined;
-            onDateClick?: ((date: Date) => void) | null | undefined;
-            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-            preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
-            gridClassName?: string | null | undefined;
-            weekDayKey?: string | undefined;
-            navProps?: {} | null | undefined;
-            headerProps?: {} | null | undefined;
-            gridProps?: {} | null | undefined;
-            dateProps?: {} | null | undefined;
-        }>>, prevState: Readonly<State>, snapshot?: any): void;
+        getSnapshotBeforeUpdate?(prevProps: Readonly<CalendarProps<import("./composeCalendar").Props>>, prevState: Readonly<State>): any;
+        componentDidUpdate?(prevProps: Readonly<CalendarProps<import("./composeCalendar").Props>>, prevState: Readonly<State>, snapshot?: any): void;
         componentWillMount?(): void;
         UNSAFE_componentWillMount?(): void;
-        componentWillReceiveProps?(nextProps: Readonly<CalendarProps<{
-            changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-            formatDateFull: (date: Date) => string | Date;
-            formatMonth: (date: Date) => string | Date;
-            id: string;
-            maxDate: Date;
-            minDate: Date;
-            month: Date;
-            nextMonthLabel?: string | null | undefined;
-            previousMonthLabel?: string | null | undefined;
-            weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-            className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-            fixedWidth?: boolean | undefined;
-            focusedDate?: Date | null | undefined;
-            markOutsideDays?: boolean | undefined;
-            markToday?: boolean | undefined;
-            onMonthChange?: ((event: UIEvent, { month, source }: {
-                month: Date;
-                source: string;
-            }) => void) | null | undefined;
-            onDateClick?: ((date: Date) => void) | null | undefined;
-            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-            preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
-            gridClassName?: string | null | undefined;
-            weekDayKey?: string | undefined;
-            navProps?: {} | null | undefined;
-            headerProps?: {} | null | undefined;
-            gridProps?: {} | null | undefined;
-            dateProps?: {} | null | undefined;
-        }>>, nextContext: any): void;
-        componentWillUpdate?(nextProps: Readonly<CalendarProps<{
-            changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-            formatDateFull: (date: Date) => string | Date;
-            formatMonth: (date: Date) => string | Date;
-            id: string;
-            maxDate: Date;
-            minDate: Date;
-            month: Date;
-            nextMonthLabel?: string | null | undefined;
-            previousMonthLabel?: string | null | undefined;
-            weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-            className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-            fixedWidth?: boolean | undefined;
-            focusedDate?: Date | null | undefined;
-            markOutsideDays?: boolean | undefined;
-            markToday?: boolean | undefined;
-            onMonthChange?: ((event: UIEvent, { month, source }: {
-                month: Date;
-                source: string;
-            }) => void) | null | undefined;
-            onDateClick?: ((date: Date) => void) | null | undefined;
-            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-            preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
-            gridClassName?: string | null | undefined;
-            weekDayKey?: string | undefined;
-            navProps?: {} | null | undefined;
-            headerProps?: {} | null | undefined;
-            gridProps?: {} | null | undefined;
-            dateProps?: {} | null | undefined;
-        }>>, nextState: Readonly<State>, nextContext: any): void;
-        UNSAFE_componentWillUpdate?(nextProps: Readonly<CalendarProps<{
-            changeMonthLabel?: string | null | undefined;
-            daysOfWeek: import("./custom-proptypes").DaysOfWeek;
-            formatDateFull: (date: Date) => string | Date;
-            formatMonth: (date: Date) => string | Date;
-            id: string;
-            maxDate: Date;
-            minDate: Date;
-            month: Date;
-            nextMonthLabel?: string | null | undefined;
-            previousMonthLabel?: string | null | undefined;
-            weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-            className?: string | null | undefined;
-            dateModifiers?: import("./custom-proptypes").DateModifiers | undefined;
-            fixedWidth?: boolean | undefined;
-            focusedDate?: Date | null | undefined;
-            markOutsideDays?: boolean | undefined;
-            markToday?: boolean | undefined;
-            onMonthChange?: ((event: UIEvent, { month, source }: {
-                month: Date;
-                source: string;
-            }) => void) | null | undefined;
-            onDateClick?: ((date: Date) => void) | null | undefined;
-            onDateKeyDown?: ((event: KeyboardEvent) => void) | null | undefined;
-            preventKeyboardFocus?: boolean | undefined;
-            selectionConfiguration?: SelectionConfiguration | undefined;
-            gridClassName?: string | null | undefined;
-            weekDayKey?: string | undefined;
-            navProps?: {} | null | undefined;
-            headerProps?: {} | null | undefined;
-            gridProps?: {} | null | undefined;
-            dateProps?: {} | null | undefined;
-        }>>, nextState: Readonly<State>, nextContext: any): void;
+        componentWillReceiveProps?(nextProps: Readonly<CalendarProps<import("./composeCalendar").Props>>, nextContext: any): void;
+        componentWillUpdate?(nextProps: Readonly<CalendarProps<import("./composeCalendar").Props>>, nextState: Readonly<State>, nextContext: any): void;
+        UNSAFE_componentWillUpdate?(nextProps: Readonly<CalendarProps<import("./composeCalendar").Props>>, nextState: Readonly<State>, nextContext: any): void;
     };
     defaultProps: {
         fixedWidth: boolean;
@@ -467,6 +159,7 @@ declare const _default: {
         initiallyFocusedDate: null;
         markToday: boolean;
         markOutsideDays: boolean;
+        customRowHeight?: number;
     };
     contextType?: import("react").Context<any> | undefined;
 };

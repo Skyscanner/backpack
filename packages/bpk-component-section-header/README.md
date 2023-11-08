@@ -18,11 +18,4 @@ export default () => (
 
 ## Props
 
-### BpkSectionHeader
-
-| Property    | PropType                   | Required | Default Value |
-|-------------|----------------------------|----------|---------------|
-| title       | string                     | true     | -             |
-| description | string                     | false    | -             |
-| button      | node                       | false    | -             |
-| type        | oneOf(SECTION_TYPES.default, SECTION_TYPES.onDark) | false    | SECTION_TYPES.default       |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/section-header/web-NtxldMJ6#section-props-04).

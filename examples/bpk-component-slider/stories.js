@@ -16,6 +16,11 @@
  * limitations under the License.
  */
 
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+
+import BpkSlider from '../../packages/bpk-component-slider/src/BpkSlider';
+
 import {
   SimpleSliderExample,
   TimeSliderExample,
@@ -27,6 +32,24 @@ import {
 
 export default {
   title: 'bpk-component-slider',
+  component: BpkSlider,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable of={PRIMARY_STORY} />
+          <Markdown>
+            {
+              `[Please refer to react-slider's documentation for a full list of props](https://zillow.github.io/react-slider/).
+              **Note:** When you're representing non-integer values (eg time, dates) please ensure you use \`ariaLabel\` and \`ariaValuetext\` to ensure that assistive technologies will be able to understand the value better.
+              `
+            }
+          </Markdown>
+        </>
+      )
+    },
+  },
 };
 
 export const SimpleSlider = SimpleSliderExample;
@@ -41,3 +64,7 @@ export const RangeSliderWithMinimumDistance =
   RangeSliderWithMinimumDistanceExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

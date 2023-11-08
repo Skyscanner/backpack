@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkNavigationBar from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBar';
 import BpkNavigationBarIconButton from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarIconButton';
@@ -38,7 +37,6 @@ export default {
     BpkNavigationBarIconButton,
     BpkNavigationBarButtonLink,
   },
-  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;
@@ -52,3 +50,7 @@ export const WithLogo = WithLogoExample;
 
 export const Sticky = StickyExample;
 export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkPagination from '../../packages/bpk-component-pagination/src/BpkPagination';
+
 import {
   DefaultPaginationExample,
   FivePagesPaginationExample,
@@ -27,6 +29,7 @@ import {
 
 export default {
   title: 'bpk-component-pagination',
+  component: BpkPagination,
 };
 
 export const PaginationDefault = DefaultPaginationExample;
@@ -42,3 +45,7 @@ export const PaginationSinglePage = SinglePaginationExample;
 export const PaginationVisibleExample = VisibleRangeExample;
 
 export const VisualTest = DefaultPaginationExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

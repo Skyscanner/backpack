@@ -32,9 +32,19 @@ const getClassName = cssModules(STYLES);
 const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
 
 type Props = {
+  id: string,
+  children: Node,
   isOpen: boolean,
   onClose: () => mixed,
+  title: string,
+  getApplicationElement: () => mixed,
   renderTarget: ?() => mixed,
+  dialogRef: ?() => mixed,
+  className: ?string,
+  contentClassName: ?string,
+  closeLabel: ?string,
+  closeText: ?string,
+  hideTitle: ?boolean,
 };
 
 type State = {
@@ -42,10 +52,6 @@ type State = {
 };
 
 class BpkDrawer extends Component<Props, State> {
-  static defaultProps = {
-    renderTarget: null,
-  };
-
   constructor() {
     super();
 
@@ -89,9 +95,33 @@ class BpkDrawer extends Component<Props, State> {
 }
 
 BpkDrawer.propTypes = {
+  id: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  /**
+   * **Note:** In order to "hide" your application from screen readers whilst the drawer is open you need to let it know what
+   * the root element for your application is by returning it's DOM node via the function passed to the
+   * `getApplicationElement` prop (see the example above). The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
+   */
+  getApplicationElement: PropTypes.func.isRequired,
   renderTarget: PropTypes.func,
+  dialogRef: PropTypes.func,
+  className: PropTypes.string,
+  contentClassName: PropTypes.string,
+  closeLabel: PropTypes.string,
+  closeText: PropTypes.string,
+  hideTitle: PropTypes.bool,
+};
+
+BpkDrawer.defaultProps = {
+  renderTarget: null,
+  className: null,
+  contentClassName: null,
+  closeLabel: null,
+  closeText: null,
+  hideTitle: false,
 };
 
 export default BpkDrawer;

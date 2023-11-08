@@ -24,26 +24,4 @@ export default () => (
 
 ## Props
 
-### BpkSectionList
-
-| Property              | PropType                      | Required | Default Value |
-| --------------------- | ----------------------------- | -------- | ------------- |
-| children              | node                          | true     | -             |
-
-### BpkSectionListSection
-
-| Property              | PropType                      | Required | Default Value |
-| --------------------- | ----------------------------- | -------- | ------------- |
-| children              | node                          | true     | -             |
-| headerText            | string                        | false    | null          |
-
-
-### BpkSectionListItem
-
-| Property              | PropType                      | Required | Default Value |
-| --------------------- | ----------------------------- | -------- | ------------- |
-| children              | node                          | true     | -             |
-| blank                 | bool                          | false    | false         |
-| className             | string                        | false    | null          |
-| href                  | string                        | false    | null          |
-| onClick               | func                          | false    | null          |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/section-list/web-rRcMai5c#section-props-0c).

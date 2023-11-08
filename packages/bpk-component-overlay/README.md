@@ -39,9 +39,4 @@ export default () => (
 
 ## Props
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children | Node | true | - |
-| className | string | false | null |
-| foregroundContent | Node | false | null |
-| overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.solidLow |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/overlay/web-akXtflyq#section-props-bd).

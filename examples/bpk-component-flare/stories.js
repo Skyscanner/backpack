@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkContentBubble from '../../packages/bpk-component-flare/src/BpkContentBubble';
 import BpkFlareBar from '../../packages/bpk-component-flare/src/BpkFlareBar';
@@ -38,7 +37,6 @@ export default {
   subcomponents: {
     BpkFlareBar,
   },
-  tags: ['autodocs'],
 };
 
 export const BpkFlareBarDefault = FlareBarExample;
@@ -58,3 +56,7 @@ export const BpkContentBubbleFixedHeight = ContentBubbleFixedHeightExample;
 export const BpkContentBubblePointerHidden = ContentBubblePointerHiddenExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

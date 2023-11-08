@@ -86,6 +86,9 @@ class Image extends Component<ImageProps> {
 type BpkImageProps = {
   altText: string;
   src: string;
+  /**
+   * Note: The `aspectRatio` prop should be calculated as `width/height` of the original src image. It is used by the component to preserve space on screen while the image loads.
+   */
   aspectRatio: number;
   inView?: boolean;
   loading?: boolean;

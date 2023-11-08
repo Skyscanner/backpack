@@ -33,19 +33,34 @@ type Props = {
   checked?: boolean;
   size?: SizeType;
   style?: StyleType;
+  asyncWithError?: boolean;
 };
-const SaveButtonContainer = ({ checked = false, size, style }: Props) => {
+const SaveButtonContainer = ({
+  asyncWithError = false,
+  checked = false,
+  size,
+  style,
+}: Props) => {
   const [checkedStatus, setCheckedStatus] = useState(checked);
 
   const onCheckedChange = () => {
     setCheckedStatus(!checkedStatus);
   };
 
+  const onSyncCheckedChange = async () => {
+    try {
+      await Promise.reject(new Error('mocked example error'));
+      setCheckedStatus(!checkedStatus);
+    } catch (e) {
+      console.log('save button async error: ', e); // eslint-disable-line no-console
+    }
+  };
+
   return (
     <BpkSaveButton
       checked={checkedStatus}
       accessibilityLabel={`Click to ${checkedStatus ? 'remove save' : 'save'}`}
-      onCheckedChange={onCheckedChange}
+      onCheckedChange={asyncWithError ? onSyncCheckedChange : onCheckedChange}
       size={size}
       style={style}
     />
@@ -66,6 +81,10 @@ const OnDarkExample = () => (
 );
 
 const CheckedExample = () => <SaveButtonContainer checked />;
+
+const AsyncWithErrorCheckedExample = () => (
+  <SaveButtonContainer checked asyncWithError />
+);
 
 const SmallDefaultExample = () => (
   <SaveButtonContainer size={SIZE_TYPES.small} />
@@ -114,4 +133,5 @@ export {
   SmallOnDarkExample,
   VisualTestExample,
   SmallCheckedExample,
+  AsyncWithErrorCheckedExample,
 };

@@ -66,35 +66,6 @@ export default class App extends Component {
 }
 ```
 
-### BpkScrollableCalendarGridList
+## Props
 
-This component is the main scrollable grid of months for the scrollable calendar.
-It is composed of `BpkScrollableCalendarGrid` elements. It uses all the same props
-as `BpkCalendarGrid`, but in addition `minDate` and `maxDate` are required to build
-the actual list.
-
-[Please refer to the props of BpkCalendarGrid here](../bpk-component-calendar/README.md#bpkcalendargrid).
-
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| maxDate  | Date     | true     | -             |
-| minDate  | Date     | true     | -             |
-
-### BpkScrollableCalendarGrid
-
-The BpkScrollableCalendarGrid component displays a month as a table.
-Above this table it displays the month's name in a `BpkText`. When
-used with `BpkScrollableCalendarDate`, it only displays days from
-that specific month. It is built on top of BpkCalendarGrid and
-uses the same props.
-
-[Please refer to the props of BpkCalendarGrid here](../bpk-component-calendar/README.md#bpkcalendargrid).
-
-### BpkScrollableCalendarDate
-
-The BpkScrollableCalendarDate component is used to render the content of a cell
-(a single day) inside the calendar grid. It is built on top of BpkCalendarDate
-and uses the same props. The only difference is that when isOutside is true,
-null is returned in order to only display of specific month in the calendar grid.
-
-[Please refer to the props of BpkCalendarDate here](../bpk-component-calendar/README.md#bpkcalendardate).
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/scrollable-calendar/web-d4kJ1LSd#section-props-00).

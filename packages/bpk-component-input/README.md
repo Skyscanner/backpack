@@ -26,49 +26,9 @@ export default () => (
 );
 ```
 
-## Props
-
-| Property         | PropType             | Required                  | Default Value            |
-| ---------------- | -------------------------- | ------------------- | ------------------------ |
-| id               | string                     | true                | -                        |
-| name             | string                     | true                | -                        |
-| type             | INPUT_TYPES (one of)       | false               | INPUT_TYPES.text         |
-| value            | string                     | true                | -                        |
-| clearButtonMode  | CLEAR_BUTTON_MODES (one of)| false               | CLEAR_BUTTON_MODES.never |
-| clearButtonLabel | string                     | if clearable={true} | null                     |
-| dockedFirst      | bool                       | false               | false                    |
-| dockedLast       | bool                       | false               | false                    |
-| dockedMiddle     | bool                       | false               | false                    |
-| inputRef         | func                       | false               | null                     |
-| large            | bool                       | false               | false                    |
-| onClear          | func                       | if clearable={true} | null                     |
-| valid            | bool                       | false               | null                     |
-
-Additionally, all native `<input />` attributes such as `placeholder` and `onChange` are supported.
-
-**Note:** When `clearButtonMode` is set to `always`, validity icons will not appear.
-
 ### withOpenEvents
 
 The `withOpenEvents` higher-order component encapsulates input event handlers for opening popovers or modals.
-
-The `onOpen` callback is called on the following events:
-
-* click
-* focus
-* touchend
-* keydown (Enter key)
-* keyup (Space key)
-
-You can still attach custom handlers for these events as they will still be called. All other key events are prevented.
-
-> It is important you pass the `isOpen` prop, as it is necessary to work around an IE bug.
-
-| Property        | PropType             | Required  | Default Value       |
-| --------------- | -------------------- | --------- | ------------------- |
-| isOpen          | bool                 | false     | false               |
-| onOpen          | func                 | false     | null                |
-| hasTouchSupport | bool                 | false     | (feature detection) |
 
 ```js
 import BpkInput, { withOpenEvents } from '@skyscanner/backpack-web/bpk-component-input';
@@ -115,3 +75,7 @@ export default () => {
   }
 }
 ```
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/text-input/web-nRg9O75F#section-input-props-51).

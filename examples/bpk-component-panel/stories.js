@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkPanel from '../../packages/bpk-component-panel/src/BpkPanel';
+
 import {
   DefaultExample,
   WithoutPaddingExample,
@@ -25,6 +27,7 @@ import {
 
 export default {
   title: 'bpk-component-panel',
+  component: BpkPanel,
 };
 
 export const Default = DefaultExample;
@@ -33,3 +36,7 @@ export const WithoutPadding = WithoutPaddingExample;
 export const FullWidth = FullWidthExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

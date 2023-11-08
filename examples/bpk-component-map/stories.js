@@ -15,13 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import BpkMap from '../../packages/bpk-component-map/src/BpkMap';
 import BpkIconMarker from '../../packages/bpk-component-map/src/BpkIconMarker';
+import { BpkPriceMarkerV2 } from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarker';
 import BpkPriceMarker from '../../packages/bpk-component-map/src/BpkPriceMarker';
 import BpkOverlayView from '../../packages/bpk-component-map/src/BpkOverlayView';
 
+import WithGoogleMapsScriptMock from './stories-utils';
 import {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -35,7 +36,6 @@ import {
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
   MultipleMapsExample,
-  VisualTestExample,
 } from './examples';
 
 export default {
@@ -44,10 +44,12 @@ export default {
   subcomponents: {
     BpkIconMarker,
     BpkPriceMarker,
+    BpkPriceMarkerV2,
     BpkOverlayView,
+    withGoogleMapsScript: WithGoogleMapsScriptMock
   },
-  tags: ['autodocs'],
 };
+
 export const Simple = SimpleExample;
 export const DragDisabledAndControlsHidden =
   DragDisabledAndHiddenControlsExample;
@@ -70,7 +72,5 @@ export const PriceMarkers = WithPriceMarkersExample;
 export const PriceMarkersV2 = WithPriceMarkersV2Example;
 
 export const WithIconPriceMarkersV2 = WithIconPriceMarkersV2Example;
-
-export const VisualTest = VisualTestExample;
 
 export const MultiMaps = MultipleMapsExample;

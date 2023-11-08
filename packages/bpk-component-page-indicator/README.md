@@ -27,15 +27,4 @@ export default () =>
 
 ## Props
 
-| Property        | PropType                                  | Required | Default Value   |
-|-----------------|-------------------------------------------|----------|-----------------|
-| currentIndex    | number                                    | true     | -               |
-| totalIndicators | number                                    | true     | -               |
-| indicatorLabel  | string                                    | true     | -               |
-| prevNavLabel    | string                                    | true     | -               |
-| nextNavLabel    | string                                    | true     | -               |
-| className       | string                                    | false    | null            |
-| showNav         | bool                                      | false    | false           |
-| variant         | oneOf(VARIANT.default, VARIANT.overImage) | false    | VARIANT.default |
-| onClick         | func                                      | false    | null            |
-
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/page-indicator/web-4FOtKGmR#section-props-c2).

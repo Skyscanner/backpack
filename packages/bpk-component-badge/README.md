@@ -22,15 +22,4 @@ export default () => (
 
 ## Props
 
-| Property  | PropType                                                                                                                                                 | Required | Default Value       |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------| -------- | ------------------- |
-| centered  | bool                                                                                                                                                     | false    | null                |
-| className | string                                                                                                                                                   | false    | null                |
-| docked    | oneOf('left', 'right')                                                                                                                                   | false    | null                |
-| type      | oneOf(BADGE_TYPES.normal, BADGE_TYPES.warning, BADGE_TYPES.success, BADGE_TYPES.critical, BADGE_TYPES.light, BADGE_TYPES.inverse, BADGE_TYPES.outline, BADGE_TYPES.strong, BADGE_TYPES.brand)| false    | BADGE_TYPES.normal |
-
-## Theme props
-
-* `badgeBackgroundColor`
-* `badgeSuccessBackgroundColor`
-* `badgeDestructiveBackgroundColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/badge/web-vDRH571D#section-props-0c).

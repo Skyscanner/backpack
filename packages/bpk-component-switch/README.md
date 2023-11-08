@@ -21,14 +21,4 @@ export default () => (
 
 ## Props
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| label     | Node     | true     | -             |
-| className | string   | false    | null          |
-| small     | boolean  | false    | false         |
-
-This component uses a hidden [`<input type="checkbox" />`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox), so it supports all the same properties as it (for example `checked`).
-
-## Theme props
-
-* `switchCheckedColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/switch/web-9C2Ktc8M#section-props-37).

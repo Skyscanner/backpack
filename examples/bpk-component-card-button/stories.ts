@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkSaveButton from '../../packages/bpk-component-card-button/src/BpkSaveButton';
+
 import {
   DefaultExample,
   ContainedExample,
@@ -26,18 +28,25 @@ import {
   SmallOnDarkExample,
   VisualTestExample,
   SmallCheckedExample,
+  AsyncWithErrorCheckedExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-card-button',
+  component: BpkSaveButton,
 };
 
 export const Default = DefaultExample;
 export const Contained = ContainedExample;
 export const OnDark = OnDarkExample;
 export const Checked = CheckedExample;
+export const AsyncWithErrorChecked = AsyncWithErrorCheckedExample;
 export const SmallDefault = SmallDefaultExample;
 export const SmallContained = SmallContainedExample;
 export const SmallOnDark = SmallOnDarkExample;
 export const SmallChecked = SmallCheckedExample;
 export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

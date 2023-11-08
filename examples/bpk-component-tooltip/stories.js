@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkTooltip from '../../packages/bpk-component-tooltip/src/BpkTooltipPortal';
 
 import {
   DefaultExample,
@@ -30,6 +31,7 @@ import {
 
 export default {
   title: 'bpk-component-tooltip',
+  component: BpkTooltip,
 };
 
 export const Default = DefaultExample;

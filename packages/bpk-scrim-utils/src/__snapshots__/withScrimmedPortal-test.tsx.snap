@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withScrimmedPortal renders the wrapped component inside a portal correctly with fallback to document.body 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div>
+    <div
+      aria-hidden="true"
+      id="pagewrap"
+    >
+      <div>
+         Content hidden from AT
+      </div>
+    </div>
+  </div>
+  <div
+    class="bpk-scrim-content"
+  >
+    <div
+      class="bpk-scrim"
+      role="presentation"
+    />
+    <div>
+      Dialog content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`withScrimmedPortal renders the wrapped component inside a portal with renderTarget provided 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div>
+    <div>
+      <div
+        aria-hidden="true"
+        id="pagewrap"
+      >
+        <div>
+           Content hidden from AT
+        </div>
+      </div>
+      <div
+        id="modal-container"
+      >
+        <div
+          class="bpk-scrim-content"
+        >
+          <div
+            class="bpk-scrim"
+            role="presentation"
+          />
+          <div>
+            Wrapped Component
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -20,4 +20,14 @@ import 'jest-axe/extend-expect';
 import 'raf/polyfill';
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 
+// The below is a workaround to the problem were calling resetModules causes react to be required twice.
+// further details can be found here: https://github.com/jestjs/jest/issues/8987#issuecomment-584898030
+let mockActualReact;
+jest.doMock('react', () => {
+  if (!mockActualReact) {
+    mockActualReact = jest.requireActual('react');
+  }
+  return mockActualReact;
+});
+
 registerRequireContextHook();

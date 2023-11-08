@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkRadio from '../../packages/bpk-component-radio/src/BpkRadio';
 
 import {
   DefaultExample,
@@ -30,6 +31,7 @@ import {
 
 export default {
   title: 'bpk-component-radio',
+  component: BpkRadio,
 };
 
 export const Default = DefaultExample;
@@ -42,3 +44,7 @@ export const DisabledChecked = DisabledCheckedExample;
 export const DisabledUnchecked = DisabledUncheckedExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

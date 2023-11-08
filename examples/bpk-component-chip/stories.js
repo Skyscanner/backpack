@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkSelectableChip from '../../packages/bpk-component-chip/src/BpkSelectableChip';
 import BpkDismissibleChip from '../../packages/bpk-component-chip/src/BpkDismissibleChip';
@@ -37,7 +36,6 @@ export default {
     BpkDismissibleChip,
     BpkDropdownChip,
   },
-  tags: ['autodocs'],
 };
 
 export const AllTypes = AllTypesExample;
@@ -46,3 +44,7 @@ export const AllDropdownTypes = AllDropdownChipsExample;
 export const AllDismissibleTypes = AllDismissibleChipsExample;
 export const RadioGroup = RadioGroupChipsExample;
 export const VisualTest = AllTypesExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

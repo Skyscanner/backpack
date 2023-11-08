@@ -47,7 +47,7 @@ type Props = {
   status?: Status;
 };
 
-const BpkPriceMarkerV2 = (props: Props) => {
+export const BpkPriceMarkerV2 = (props: Props) => {
   const {
     accessibilityLabel,
     buttonProps,
@@ -90,5 +90,3 @@ const BpkPriceMarkerV2 = (props: Props) => {
     </BpkBasicMapMarker>
   );
 };
-
-export default BpkPriceMarkerV2;

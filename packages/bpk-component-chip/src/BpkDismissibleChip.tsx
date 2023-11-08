@@ -33,12 +33,14 @@ import STYLES from './BpkSelectableChip.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type BpkDismissibleChipProps = Omit<Props, 'disabled' | 'selected'>;
+
 const BpkDismissibleChip = ({
   className,
   leadingAccessoryView = null,
   type = CHIP_TYPES.default,
   ...rest
-}: Props) => {
+}: BpkDismissibleChipProps) => {
   const iconClassNames = getClassName(
     `bpk-chip--${type}-dismissible__trailing-accessory-view`,
   );

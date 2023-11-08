@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkSectionHeader from '../../packages/bpk-component-section-header/src/BpkSectionHeader';
+
 import {
   DefaultExample,
   WithDescriptionExample,
@@ -28,6 +30,7 @@ import {
 
 export default {
   title: 'bpk-component-section-header',
+  component: BpkSectionHeader,
 };
 
 export const Default = DefaultExample;
@@ -43,3 +46,7 @@ export const ForMobile = MobileExample;
 export const WithOnDark = WithOnDarkExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

@@ -47,6 +47,9 @@ export type Props = {
   tagline?: string | null;
   headline: string;
   subheading?: string | null;
+  /**
+   * An object that groups together all the sponsor related properties. This should only be provided if the graphic promo is sponsored, in which case all of the object's properties are required.
+   */
   sponsor?: {
     label: string;
     logo: string;

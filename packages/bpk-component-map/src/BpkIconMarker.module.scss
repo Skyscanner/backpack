@@ -75,14 +75,6 @@
       cursor: pointer;
     }
 
-    &--disabled {
-      @include bpk-themeable-property(
-        color,
-        --bpk-icon-marker-default-disabled-color,
-        $bpk-status-success-spot-day
-      );
-    }
-
     &--selected {
       // This ensures that the icon is positioned exactly in the
       // centre of the marker.
@@ -92,7 +84,7 @@
       @include bpk-themeable-property(
         color,
         --bpk-icon-marker-default-selected-color,
-        $bpk-status-success-spot-day
+        $bpk-surface-default-day
       );
     }
   }

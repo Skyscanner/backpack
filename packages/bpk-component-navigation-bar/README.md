@@ -35,22 +35,6 @@ export default () => (
 )
 ```
 
-#### Props
-
-| Property              | PropType | Required | Default Value    |
-| --------------------- | -------- | -------- | ---------------- |
-| id                    | string   | true     | -                |
-| title                 | node     | true     | -                |
-| className             | string   | false    | null             |
-| leadingButton         | element  | false    | null             |
-| trailingButton        | element  | false    | null             |
-| sticky                | bool     | false    | false            |
-
-#### Theme props
-
-* `navigationBarBackgroundColor`
-* `navigationBarTitleColor`
-
 ### BpkNavigationBarIconButton
 
 ```js
@@ -66,21 +50,6 @@ export default () => (
 )
 ```
 
-#### Props
-
-| Property              | PropType | Required | Default Value    |
-| --------------------- | -------- | -------- | ---------------- |
-| icon                  | func     | true     | -                |
-| onClick               | func     | true     | -                |
-| label                 | string     | true     | -              |
-| className             | string   | false    | null             |
-
-#### Theme props
-
-* `navigationBarIconButtonColor`
-* `navigationBarIconButtonActiveColor`
-* `navigationBarIconButtonHoverColor`
-
 ### BpkNavigationBarButtonLink
 
 ```js
@@ -93,17 +62,6 @@ export default () => (
 )
 ```
 
-#### Props
+## Props
 
-| Property              | PropType | Required | Default Value    |
-| --------------------- | -------- | -------- | ---------------- |
-| children              | node     | true     | -                |
-| onClick               | func     | true     | -                |
-| className             | string   | false    | null             |
-
-#### Theme props
-
-* `navigationBarButtonLinkColor`
-* `navigationBarButtonLinkActiveColor`
-* `navigationBarButtonLinkHoverColor`
-* `navigationBarButtonLinkVisitedColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/navigation-bar/web-nBmynYpE#section-props-b0).

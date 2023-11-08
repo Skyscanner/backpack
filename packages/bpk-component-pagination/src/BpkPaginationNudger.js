@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkButton from '../../bpk-component-button';
+import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 import { withRtlSupport } from '../../bpk-component-icon';
 import ArrowLeftIcon from '../../bpk-component-icon/sm/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/sm/arrow-right';
@@ -45,8 +45,8 @@ const BpkPaginationNudger = (props) => {
   const { disabled, forward, label, onNudge } = props;
 
   return (
-    <BpkButton
-      link
+    <BpkButtonV2
+      type={BUTTON_TYPES.link}
       onClick={onNudge}
       disabled={disabled}
       className={getClassName('bpk-pagination-nudger')}
@@ -55,7 +55,7 @@ const BpkPaginationNudger = (props) => {
       <span className={getClassName('bpk-pagination-nudger__text--hidden')}>
         {label}
       </span>
-    </BpkButton>
+    </BpkButtonV2>
   );
 };
 

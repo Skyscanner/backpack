@@ -92,60 +92,6 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
 </BannerAlertExpandableState>
 ```
 
-
 ## Props
 
-### BpkBannerAlert
-
-| Property           | PropType               | Required | Default Value |
-| ------------------ | ---------------------- | -------- | ------------- |
-| type               | ALERT_TYPES (one of)   | true     | -             |
-| message            | node                   | true     | -             |
-| animateOnEnter     | bool                   | false    | false         |
-| animateOnLeave     | bool                   | false    | false         |
-| bannerClassName    | string                 | false    | null          |
-| icon               | BpkIcon                | false    | null          |
-| show               | bool                   | false    | true          |
-
-### BpkBannerAlertDismissable
-
-| Property           | PropType               | Required | Default Value |
-| ------------------ | ---------------------- | -------- | ------------- |
-| type               | ALERT_TYPES (one of)   | true     | -             |
-| message            | node                   | true     | -             |
-| dismissButtonLabel | string                 | true     | -             |
-| animateOnEnter     | bool                   | false    | false         |
-| animateOnLeave     | bool                   | false    | false         |
-| bannerClassName    | string                 | false    | null          |
-| icon               | BpkIcon                | false    | null          |
-| onDismiss          | func                   | false    | null          |
-| show               | bool                   | false    | true          |
-
-### BpkBannerAlertExpandable
-
-| Property           | PropType               | Required | Default Value |
-| ------------------ | ---------------------- | -------- | ------------- |
-| type               | ALERT_TYPES (one of)   | true     | -             |
-| message            | node                   | true     | -             |
-| toggleButtonLabel  | string                 | true     | -             |
-| animateOnEnter     | bool                   | false    | false         |
-| animateOnLeave     | bool                   | false    | false         |
-| bannerClassName    | string                 | false    | null          |
-| expanded           | bool                   | false    | false         |
-| icon               | BpkIcon                | false    | null          |
-| onExpandToggle     | func                   | false    | null          |
-| show               | bool                   | false    | true          |
-
-### withBannerAlertState(BpkBannerAlert)
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| hideAfter | number   | false    | null          |
-| onHide    | func     | false    | null          |
-
-## Theme Props
-
-* `bannerAlertPrimaryColor`
-* `bannerAlertSuccessColor`
-* `bannerAlertWarnColor`
-* `bannerAlertErrorColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/banner-alert/web-TyY0O2cu#section-props-12).

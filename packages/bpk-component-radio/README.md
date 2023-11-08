@@ -21,20 +21,9 @@ export default () => (
 );
 ```
 
-## Props
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| name      | string   | true     | -             |
-| label     | node     | true     | -             |
-| ariaLabel | string   | false    | props.label   |
-| disabled  | bool     | false    | false         |
-| white     | bool     | false    | false         |
-| valid     | bool     | false    | null          |
-
-## Theme Props
-
-+ `radioCheckedColor`
-
 ## Progressive enhancement
 On Internet Explorer 11, radio buttons have the standard built-in appearance.
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/radio-button/web-CZUUQPeD#section-props-f5).

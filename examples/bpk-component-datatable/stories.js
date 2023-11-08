@@ -17,7 +17,6 @@
  */
 
 import BpkDataTable from '../../packages/bpk-component-datatable/src/BpkDataTable';
-import BpkDataTableColumn from '../../packages/bpk-component-datatable/src/BpkDataTableColumn';
 
 import {
   AutowidthExample,
@@ -33,8 +32,6 @@ import {
 export default {
   title: 'bpk-component-datatable',
   component: BpkDataTable,
-  subcomponents: { BpkDataTableColumn },
-  tags: ['autodocs'],
 };
 
 export const Autowidth = AutowidthExample;
@@ -51,3 +48,7 @@ export const CustomHeaderData = HeaderRendererExample;
 export const WithColumnArray = WithColumnArrayExample;
 
 export const VisualTest = AutowidthExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

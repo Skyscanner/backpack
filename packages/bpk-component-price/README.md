@@ -28,13 +28,4 @@ export default () => (
 
 ## Props
 
-| Property      | PropType      | Required | Default Value |
-| ------------- | ------------- | -------- | ------------- |
-| price         | string        | true     | -             |
-| size          | oneOf(SIZES)  | false    | SIZES.small   |
-| align         | oneOf(ALIGNS) | false    | ALIGNS.left   |
-| leadingText   | string        | false    | null          |
-| leadingClassName (experimental)  | string        | false    | null          |
-| trailingText  | string        | false    | null          |
-| previousPrice | string        | false    | null          |
-| className     | string        | false    | null          |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/price/web-5agxi50w#section-props-ea).

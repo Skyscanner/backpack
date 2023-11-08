@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
+
 import {
   DefaultExample,
   WarningExample,
@@ -34,6 +35,7 @@ import {
 
 export default {
   title: 'bpk-component-badge',
+  component: BpkBadge
 };
 
 export const Default = DefaultExample;
@@ -48,3 +50,7 @@ export const Centered = CenteredExample;
 export const DockedRight = DockedLeadingExample;
 export const DockedLeft = DockedTrailingExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

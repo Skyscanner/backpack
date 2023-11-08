@@ -19,29 +19,28 @@ const Box = props => (
 const BoxWithScrim = withScrim(Box);
 ```
 
-`withScrim` sends all props it receives down to the component, except `getApplicationElement` and `padded`. It also adds some props that are used for a11y and closing the modal:
+The version using a [React portal](https://react.dev/reference/react-dom/createPortal) renders the wrapped component in a different part of the DOM. It also provides an `isPortalReady` prop to notify when the component inside the portal is ready to be used. This may be necessary to interact with the content of the component in a `useEffect` hook, for example to set the focus on mount.
 
-* `dialogRef` should be set as the ref on the visible container on top of the scrim; it is used to set focus
-* `onClose` should be set as the `onClick` action on a button or a link
-* `isIphone` can be used to apply iPhone only styles or behaviour, as it has different scrolling behaviour
+```js
+import { withScrimmedPortal } from '@skyscanner/backpack-web/bpk-scrim-utils';
 
-`containerClassName` can be used to apply styles to the full-screen container into which the enriched component is inserted
-(e.g. `display: flex` or `display: grid`)
+const Box = props => {
+  const dialogRef = useRef(null);
+  const { isPortalReady, onClose } = props;
 
-> **Note:** the `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
+  useEffect(() => {
+    if (isPortalReady) {
+      dialogRef.current?.focus();
+    }
+  }, [isPortalReady]);
 
-### Props
+  return (
+    <div>
+      <BpkButton ref={dialogRef} onClick={onClose}>Close</BpkButton>
+      Hello in a portal
+    </div>
+  );
+};
 
-| Property              | PropType | Required | Default Value                                                                    |
-| --------------------- | -------- | -------- | -------------------------------------------------------------------------------- |
-| onClose               | func     | true     | See prop details                                                                 |
-| getApplicationElement | func     | true     | -                                                                                |
-| isIphone              | bool     | false    | `/iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '')` |
-| containerClassName    | string   | false    | ''                                                                               |
-| closeOnScrimClick     | bool     | false    | true                                                                             |
-
-### Prop Details
-
-#### onClose
-
-This is required unless `closeOnScrimClick` is false.
+const BoxWithScrimmedPortal = withScrimmedPortal(Box);
+```

@@ -27,23 +27,6 @@ export default MyComponent = () => (
 )
 ```
 
-
 ## Props
 
-### BpkContentBubble
-
-| Property         | PropType                                 | Required | Default Value |
-| ---------------- | ---------------------------------------- | -------- | ------------- |
-| className        | string                                   | false    | null          |
-| content          | node                                     | false    | null          |
-| contentClassName | string                                   | false    | null          |
-| flareProps       | object - see [BpkFlareBar](#bpkflarebar) | false    | null          |
-| showPointer      | bool                                     | false    | true          |
-
-### BpkFlareBar
-
-| Property     | PropType | Required | Default Value |
-| ------------ | -------- | -------- | ------------- |
-| className    | string   | false    | null          |
-| svgClassName | string   | false    | null          |
-
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/flare/web-hovv3Opv#section-props-cb).

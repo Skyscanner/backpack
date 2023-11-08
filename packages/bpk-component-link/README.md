@@ -29,38 +29,4 @@ If you're using a SPA framework like `react-router-dom` or `Next.js` to navigate
 
 ## Props
 
-### BpkLink
-
-| Property  | PropType | Required | Default Value |
-| --------  | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| href      | string   | true     | -             |
-| onClick   | func     | false    | null          |
-| blank     | bool     | false    | false         |
-| rel       | string   | false    | null          |
-| alternate | bool     | false    | false         |
-| ref       | any      | false    | null          |
-
-### BpkButtonLink
-
-| Property  | PropType | Required | Default Value |
-| --------  | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| onClick   | func     | true     | -             |
-| alternate | bool     | false    | false         |
-
-## Theme props
-
-For both BpkLink and BpkButtonLink the following theme attributes are required.
-
-* `linkColor`
-* `linkHoverColor`
-* `linkActiveColor`
-* `linkVisitedColor`
-
-Alternate:
-
-* `linkAlternateColor`
-* `linkAlternateHoverColor`
-* `linkAlternateActiveColor`
-* `linkAlternateVisitedColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/link/web-tBkgNmHW#section-props-02).

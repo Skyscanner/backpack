@@ -22,7 +22,7 @@ import { useEffect, useState, ReactElement } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import BpkAriaLive from '../../bpk-component-aria-live';
-import BpkButton from '../../bpk-component-button';
+import {BUTTON_TYPES, BpkButtonV2} from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -35,9 +35,16 @@ type Props = {
   animateOnExit: ?boolean,
   className: ?string,
   ctaText: ?string,
+  /**
+   * This prop controls the amount of time that the notification stays visible before the exit animation begins.
+   * The default value is 4 seconds (4000 milliseconds).
+   */
   hideAfter: ?number,
   icon: ?() => ReactElement,
   onClick: ?() => void,
+  /**
+   * Execute a function after the component has finished the exit animation.
+   */
   onExit: ?() => void,
   text: string,
 };
@@ -81,7 +88,6 @@ const BpkFloatingNotification = (props: Props) => {
       timeout={400}
       appear={animateOnEnter}
       exit={animateOnExit}
-      unmountOnExit
       onExited={onExit}
     >
       <div className={classNames} {...rest}>
@@ -99,13 +105,13 @@ const BpkFloatingNotification = (props: Props) => {
         </BpkText>
         <BpkAriaLive aria-hidden>{text}</BpkAriaLive>
         {ctaText && (
-          <BpkButton
-            link
+          <BpkButtonV2
+            type={BUTTON_TYPES.linkOnDark}
             onClick={onClick}
             className={getClassName('bpk-floating-notification__button')}
           >
             {ctaText}
-          </BpkButton>
+          </BpkButtonV2>
         )}
       </div>
     </CSSTransition>

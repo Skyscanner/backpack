@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkGraphicPromotion from '../../packages/bpk-component-graphic-promotion/src/BpkGraphicPromo';
+
 import {
   VisualTestExample,
   DefaultExample,
@@ -32,6 +34,7 @@ import {
 
 export default {
   title: 'bpk-component-graphic-promotion',
+  component: BpkGraphicPromotion,
 };
 
 export const DefaultNoBackgroundImage = NoStyleExample;
@@ -50,3 +53,7 @@ export const NonSponsoredCenterAligned = NonSponsoredCenterAlignedExample;
 export const NonSponsoredRightAligned = NonSponsoredRightAlignedExample;
 
 export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

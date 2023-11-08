@@ -102,38 +102,10 @@ export default () => (
 );
 ```
 
-## Props
-
-| Property                  | PropType                    | Required | Default Value             |
-| ------------------------- | --------------------------- | -------- | ------------------------- |
-| altText                   | string                      | true     | -                         |
-| src                       | string                      | true     | -                         |
-| aspectRatio               | number                      | true     | -                         |
-| borderRadiusStyle         | oneOf(BORDER_RADIUS_STYLES) | false    | BORDER_RADIUS_STYLES.none |
-| className                 | string                      | false    | ''                        |
-| inView                    | bool                        | false    | true                      |
-| loading                   | bool                        | false    | false                     |
-| onLoad                    | func                        | false    | null                      |
-| style                     | object                      | false    | {}                        |
-| suppressHydrationWarnings | bool                        | false    | false                     |
-
-Note: The `aspectRatio` prop should be calculated as `width/height` of the original src image. It is used by the component to preserve space on screen while the image loads.
-
-Note: All [standard `img` attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including `srcSet` are also supported.
-
 ## BpkBackgroundImage
 
 The background image component is useful for setting background images in CSS that can then contain other elements. It supports the same HOCs as `BpkImage`.
 
-### BpkBackgroundImage props
+## Props
 
-| Property    | PropType | Required | Default Value |
-| ----------- | -------- | -------- | ------------- |
-| src         | string   | true     | -             |
-| aspectRatio | number   | true     | -             |
-| className   | string   | false    | null          |
-| inView      | bool     | false    | true          |
-| loading     | bool     | false    | false         |
-| onLoad      | func     | false    | null          |
-| style       | object   | false    | {}            |
-| imageStyle  | object   | false    | {}            |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/image/web-O1z3ATvN#section-props-f1).

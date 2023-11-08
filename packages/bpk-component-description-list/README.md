@@ -21,23 +21,4 @@ export default () => (
 
 ## Props
 
-### BpkDescriptionList
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| className | string   | false    | null          |
-
-### BpkDescriptionTerm
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| className | string   | false    | null          |
-
-### BpkDescriptionDetails
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| className | string   | false    | null          |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/description-list/web-mwdpSFBP#section-props-95).

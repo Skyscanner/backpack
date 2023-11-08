@@ -29,20 +29,4 @@ export default () => (
 
 ## Props
 
-### BpkList
-
-| Property       | PropType | Required | Default Value |
-| -------------- | -------- | -------- | ------------- |
-| children       | -        | true     | -             |
-| ordered        | bool     | false    | false         |
-| className      | string   | false    | null          |
-| ariaLabel      | string   | false    | null          |
-| ariaLabelledby | string   | false    | null          |
-| title          | string   | false    | null          |
-
-### BpkListItem
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| className | string   | false    | null          |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/list/web-WFg1PM34#section-props-0a).

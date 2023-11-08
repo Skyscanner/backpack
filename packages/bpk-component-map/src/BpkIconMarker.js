@@ -33,7 +33,6 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   icon: Node,
   position: LatLong,
-  disabled: boolean,
   selected: boolean,
   className: ?string,
   onClick: ?(event: SyntheticEvent<>) => mixed,
@@ -41,16 +40,8 @@ export type Props = {
 };
 
 const BpkIconMarker = (props: Props) => {
-  const {
-    buttonProps,
-    className,
-    disabled,
-    icon,
-    onClick,
-    position,
-    selected,
-    ...rest
-  } = props;
+  const { buttonProps, className, icon, onClick, position, selected, ...rest } =
+    props;
 
   const wrapperClassNames = getClassName(
     'bpk-icon-marker__wrapper',
@@ -60,8 +51,7 @@ const BpkIconMarker = (props: Props) => {
 
   const iconClassNames = getClassName(
     'bpk-icon-marker__icon',
-    onClick && !disabled && 'bpk-icon-marker__icon--interactive',
-    disabled && 'bpk-icon-marker__icon--disabled',
+    onClick && 'bpk-icon-marker__icon--interactive',
     selected && 'bpk-icon-marker__icon--selected',
   );
 
@@ -73,12 +63,10 @@ const BpkIconMarker = (props: Props) => {
         type="button"
         className={wrapperClassNames}
         onClick={onClick}
-        disabled={disabled}
         {...buttonProps}
       >
         <BpkIconMarkerBackground
-          disabled={disabled}
-          interactive={onClick !== null && !disabled}
+          interactive={onClick !== null}
           selected={selected}
         />
         <div className={iconClassNames}>{icon}</div>
@@ -91,7 +79,6 @@ BpkIconMarker.propTypes = {
   icon: PropTypes.node.isRequired,
   position: LatLongPropType.isRequired,
   className: PropTypes.string,
-  disabled: PropTypes.bool,
   onClick: PropTypes.func,
   selected: PropTypes.bool,
   buttonProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -99,7 +86,6 @@ BpkIconMarker.propTypes = {
 
 BpkIconMarker.defaultProps = {
   className: null,
-  disabled: false,
   onClick: null,
   selected: false,
   buttonProps: null,

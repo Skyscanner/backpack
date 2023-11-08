@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import BpkNudger from '../../packages/bpk-component-nudger/src/BpkNudger';
 import BpkConfigurableNudger from '../../packages/bpk-component-nudger/src/BpkConfigurableNudger';
@@ -36,7 +35,6 @@ export default {
   title: 'bpk-component-nudger',
   component: BpkNudger,
   subcomponents: { BpkConfigurableNudger },
-  tags: ['autodocs'],
 };
 
 export const Default = DefaultExample;
@@ -54,3 +52,7 @@ export const ConfigurableNudger = ConfigurableExample;
 export const OnDarkNudger = OnDarkExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

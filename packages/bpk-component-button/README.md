@@ -17,34 +17,22 @@ const AlignedArrowIcon = withButtonAlignment(withRtlSupport(ArrowIcon));
 
 export default () => (
   <div>
-    <BpkButton>Primary</BpkButton>
-    <BpkButton size={SIZE_TYPES.large}>Large primary</BpkButton>
-    <BpkButton type={BUTTON_TYPES.secondary}>Secondary</BpkButton>
-    <BpkButton type={BUTTON_TYPES.secondaryOnDark}>SecondaryOnDark</BpkButton>
-    <BpkButton type={BUTTON_TYPES.link}>Link</BpkButton>
-    <BpkButton type={BUTTON_TYPES.linkOnDark}>LinkOnDark</BpkButton>
-    <BpkButton type={BUTTON_TYPES.primaryOnDark}>PrimaryOnDark</BpkButton>
-    <BpkButton type={BUTTON_TYPES.primaryOnLight}>PrimaryOnLight</BpkButton>
-    <BpkButton iconOnly>
+    <BpkButtonV2>Primary</BpkButtonV2>
+    <BpkButtonV2 size={SIZE_TYPES.large}>Large primary</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.secondary}>Secondary</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.secondaryOnDark}>SecondaryOnDark</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.link}>Link</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>LinkOnDark</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.primaryOnDark}>PrimaryOnDark</BpkButtonV2>
+    <BpkButtonV2 type={BUTTON_TYPES.primaryOnLight}>PrimaryOnLight</BpkButtonV2>
+    <BpkButtonV2 iconOnly>
       <AlignedArrowIcon />
       <span className="visually-hidden">Search</span>
-    </BpkButton>
+    </BpkButtonV2>
   </div>
 );
 ```
 
 ## Props
 
-| Property        | PropType             | Required | Default Value        |
-| --------------- | -------------------- | -------- | -------------------- |
-| children        | -                    | true     | -                    |
-| type            | oneOf(BUTTON_TYPES)  | false    | BUTTON_TYPES.primary |
-| size            | oneOf(SIZE_TYPES)    | false    | SIZE_TYPES.small     | 
-| className       | string               | false    | null                 |
-| disabled        | bool                 | false    | false                |
-| iconOnly        | bool                 | false    | false                |
-| onClick         | func                 | false    | null                 |
-| rel             | string               | false    | null                 |
-| submit          | bool                 | false    | false                |
-| href            | string               | false    | null                 |
-| blank           | bool                 | false    | false                |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/button/web-eI5EFTLO#section-button-props-48).

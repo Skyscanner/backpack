@@ -16,10 +16,32 @@
  * limitations under the License.
  */
 
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+
+import BpkAriaLive from '../../packages/bpk-component-aria-live/src/BpkAriaLive';
+
 import { ChipsExample, SelectExample } from './examples';
 
 export default {
   title: 'bpk-component-aria-live',
+  component: BpkAriaLive,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable of={PRIMARY_STORY} />
+          <Markdown>
+            {`**Note:** \`aria-relevant\` and \`aria-atomic\` props can also be set.
+            \`aria-relevant\` determines what sort of changes should be read out. By default it is \`text\` but can be \`additions\`, \`removals\` or \`all\`. [Read more about \`aria-relevant\` on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-relevant).
+            \`aria-atomic\` is a boolean which determines whether changes should be read out, or the whole region should be read out. [Read more about \`aria-atomic\` on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#Use_Case:_Clock).
+            `}
+          </Markdown>
+        </>
+      )
+    }
+  }
 };
 
 export const Default = () => <ChipsExample />;
