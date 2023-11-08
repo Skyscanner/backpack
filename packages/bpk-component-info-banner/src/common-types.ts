@@ -41,7 +41,7 @@ export type CommonProps = {
   show?: boolean;
   bannerClassName?: string | null;
   icon?: FunctionComponent<any> | null;
-  style: StyleTypeValue;
+  style?: StyleTypeValue;
   [rest: string]: any;
 };
 
