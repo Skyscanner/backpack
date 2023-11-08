@@ -13,6 +13,7 @@ type Props = {
   hideContent: () => void;
   setCurrentIndex: (index: number) => void;
   showContent: () => void;
+  totalIndicators: number;
 }
 const BpkAccessory = ({
   accessory,
@@ -20,6 +21,7 @@ const BpkAccessory = ({
   hideContent,
   setCurrentIndex,
   showContent,
+  totalIndicators,
 }: Props) => {
   if (accessory === 'expand') {
     // {<BpkAccessory type={accessory} showAllCards={showCards} />
@@ -29,7 +31,7 @@ const BpkAccessory = ({
     return (
       <BpkPageIndicator
         currentIndex={currentIndex}
-        totalIndicators={4}
+        totalIndicators={totalIndicators}
         indicatorLabel=""
         prevNabLabel=""
         nextNavLabel=""

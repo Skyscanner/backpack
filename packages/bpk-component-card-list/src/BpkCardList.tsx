@@ -51,8 +51,6 @@ export type BpkCardListProps = {
   expandString?: string;
 };
 
-const CARDS_PER_ROW = 3;
-
 const BpkCardList = ({
   accessory,
   buttonText,
@@ -60,26 +58,26 @@ const BpkCardList = ({
   chipGroup,
   description,
   expandString,
-  initiallyShownCards = 3,
+  initiallyShownCards = DEFAULT_ITEMS,
   layoutDesktop,
   layoutMobile,
   onButtonClick,
   title,
 }: BpkCardListProps) => {
-  const [cards, setCards] = useState(cardList.slice(0, initiallyShownCards));
+  const [visibleCards, setVisibleCards] = useState(
+    cardList.slice(0, initiallyShownCards),
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentLayout, setCurrentLayout] = useState();
-  const cardRows = [];
 
-  for (let i = 0; i < cards.length; i += CARDS_PER_ROW) {
-    cardRows.push(cards.slice(i, i + CARDS_PER_ROW));
-  }
+  const cards = visibleCards.map((card) => (
+    <div className={getClassName('bpk-card-list--card-list--card')}>{card}</div>
+  ));
 
   const showContent = () => {
-    setCards(cardList);
+    setVisibleCards(cardList);
   };
   const hideContent = () => {
-    setCards(cardList.slice(0, initiallyShownCards));
+    setVisibleCards(cardList.slice(0, initiallyShownCards));
   };
 
   return (
@@ -92,25 +90,30 @@ const BpkCardList = ({
       <div className={getClassName(`bpk-card-list--chip-group`)}>
         {chipGroup}
       </div>
-      {/* <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
 
-      </BpkBreakpoint> */}
-      <div
-        className={getClassName(
-          'bpk-card-list--card-list',
-          `bpk-card-list--card-list--${layoutDesktop}`,
-        )}
-      >
-        {cardRows.map((row) => (
-          <div className={getClassName('bpk-card-list--card-list--row')}>
-            {row.map((card) => (
-              <div className={getClassName('bpk-card-list--card-list--card')}>
-                {card}
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {(isActive) =>
+          isActive ? (
+            <div
+              className={getClassName(
+                'bpk-card-list--card-list',
+                `bpk-card-list--card-list--${layoutMobile}`,
+              )}
+            >
+              {cards}
+            </div>
+          ) : (
+            <div
+              className={getClassName(
+                'bpk-card-list--card-list',
+                `bpk-card-list--card-list--${layoutDesktop}`,
+              )}
+            >
+              {cards}
+            </div>
+          )
+        }
+      </BpkBreakpoint>
 
       {!buttonText && accessory && (
         <BpkAccessory
@@ -120,6 +123,7 @@ const BpkCardList = ({
             hideContent,
             setCurrentIndex,
             showContent,
+            totalIndicators: cardList.length
           }}
         />
       )}

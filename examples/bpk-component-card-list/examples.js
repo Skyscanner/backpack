@@ -48,6 +48,7 @@ const GridToRailExample = () => (
         TEST {i}
       </BpkCard>
     ))}
+    accessory='expand'
     layoutDesktop="grid"
     layoutMobile="rail"
     title="Card List Component"
