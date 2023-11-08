@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import {
   canvasContrastDay,
@@ -68,7 +67,6 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
   render() {
     return (
       <>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkInfoBannerDismissable
           show={!this.state.dismissed}
           dismissButtonLabel="Dismiss"
@@ -115,16 +113,13 @@ const BpkInfoBannerExpandableState = withBannerAlertState(
 );
 
 const DefaultExample = (props: {}) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner message="Default alert" {...props} />
 );
 
 const InfoExample = (props: {}) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner message="Info alert" type={ALERT_TYPES.INFO} {...props} />
 );
 const SuccessExample = (props: {}) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner
     message="Success alert"
     type={ALERT_TYPES.SUCCESS}
@@ -132,7 +127,6 @@ const SuccessExample = (props: {}) => (
   />
 );
 const SuccessLongMessageExample = (props: {}) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner message={longMessage} type={ALERT_TYPES.SUCCESS} {...props} />
 );
 const DismissableExample = () => (
@@ -161,7 +155,6 @@ const SuccessAnimateOnEnterExample = () => (
   />
 );
 const SuccessWithReactRenderedMessageExample = (props: {}) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner
     message={
       <span style={{ fontWeight: fontWeightBold }}>
@@ -173,7 +166,6 @@ const SuccessWithReactRenderedMessageExample = (props: {}) => (
   />
 );
 const WarningExample = (props) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner
     message="Warning alert"
     type={ALERT_TYPES.WARNING}
@@ -181,7 +173,6 @@ const WarningExample = (props) => (
   />
 );
 const ErrorExample = (props) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkInfoBanner message="Error alert" type={ALERT_TYPES.ERROR} {...props} />
 );
 const SuccessDismissableBehaviourExample = () => (
