@@ -135,7 +135,7 @@ describe('BpkInfoBannerInner', () => {
   it('should render correctly with dismissable option', () => {
     const { asFragment } = render(
       <BpkInfoBannerInner
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.WARNING}
         message={message}
         configuration={CONFIGURATION.DISMISSABLE}
         dismissButtonLabel="Dismiss"
