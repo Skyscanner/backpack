@@ -25,7 +25,10 @@ import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 
 import STYLES from './BpkCardList.module.scss';
 import type { BpkAccessoryTypes } from './BpkAccessory';
-import BpkAccessory from './BpkAccessory';
+import BpkCardListGrid from './BpkCardListGrid';
+import BpkCardListStack from './BpkCardListStack';
+import BpkCardListRow from './BpkCardListRow';
+import BpkCardListRail from './BpkCardListRail';
 
 const getClassName = cssModules(STYLES);
 
@@ -91,42 +94,35 @@ const BpkCardList = ({
         {chipGroup}
       </div>
 
-      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {(isActive) =>
-          isActive ? (
-            <div
-              className={getClassName(
-                'bpk-card-list--card-list',
-                `bpk-card-list--card-list--${layoutMobile}`,
-              )}
-            >
-              {cards}
-            </div>
-          ) : (
-            <div
-              className={getClassName(
-                'bpk-card-list--card-list',
-                `bpk-card-list--card-list--${layoutDesktop}`,
-              )}
-            >
-              {cards}
-            </div>
-          )
-        }
-      </BpkBreakpoint>
+      <div className={getClassName('bpk-card-list--card-list')}>
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {(isActive) => {
+            if (isActive) {
+              return layoutMobile === 'rail' ? (
+                <BpkCardListRail>{cards}</BpkCardListRail>
+              ) : (
+                <BpkCardListStack expandString={expandString}>
+                  {cards}
+                </BpkCardListStack>
+              );
+            }
 
-      {!buttonText && accessory && (
-        <BpkAccessory
-          {...{
-            accessory,
-            currentIndex,
-            hideContent,
-            setCurrentIndex,
-            showContent,
-            totalIndicators: cardList.length
+            return layoutDesktop === 'grid' ? (
+              <BpkCardListGrid
+                accessory={accessory}
+                buttonText={buttonText}
+                expandString={expandString}
+                showContent={showContent}
+                hideContent={hideContent}
+              >
+                {cards}
+              </BpkCardListGrid>
+            ) : (
+              <BpkCardListRow>{cards}</BpkCardListRow>
+            );
           }}
-        />
-      )}
+        </BpkBreakpoint>
+      </div>
     </div>
   );
 };
