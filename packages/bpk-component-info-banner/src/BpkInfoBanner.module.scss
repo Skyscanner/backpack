@@ -34,8 +34,6 @@
 
   &__header {
     display: flex;
-
-    // padding: bpk-spacing-md() bpk-spacing-base();
     flex-direction: row;
     align-items: flex-start;
 
@@ -62,27 +60,15 @@
   }
 
   &__success-icon {
-    @include bpk-themeable-property(
-      fill,
-      --bpk-private-info-banner-success-color,
-      $bpk-private-info-banner-success-color
-    );
+    fill: $bpk-private-info-banner-success-color;
   }
 
   &__warning-icon {
-    @include bpk-themeable-property(
-      fill,
-      --bpk-private-info-banner-warn-color,
-      $bpk-private-info-banner-warning-color
-    );
+    fill: $bpk-private-info-banner-warning-color;
   }
 
   &__error-icon {
-    @include bpk-themeable-property(
-      fill,
-      --bpk-private-info-banner-error-color,
-      $bpk-private-info-banner-error-color
-    );
+    fill: $bpk-private-info-banner-error-color;
   }
 
   &__info-icon {
@@ -109,7 +95,6 @@
     padding: bpk-spacing-sm() 0 bpk-spacing-md();
     color: $bpk-text-primary-day;
 
-    @include bpk-text;
-    @include bpk-text-sm;
+    @include bpk-footnote;
   }
 }
