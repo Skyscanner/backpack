@@ -1,6 +1,6 @@
-# bpk-component-banner-alert
+# bpk-component-info-banner
 
-> Backpack banner alert component.
+> Backpack info banner component.
 
 ## Installation
 
@@ -25,7 +25,7 @@ export default () => (
 
 ```tsx
 import { Component } from 'react';
-import { ALERT_TYPES, BpkInfoBannerDismissable } from '@skyscanner/backpack-web/bpk-component-banner-alert';
+import { ALERT_TYPES, BpkInfoBannerDismissable } from '@skyscanner/backpack-web/bpk-component-info-banner';
 
 class DismissableBpkInfoBanner extends Component {
   constructor() {
