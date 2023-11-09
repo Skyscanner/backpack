@@ -49,13 +49,8 @@ const BpkDialog = ({
     console.warn('BpkDialog: dismissible is true but no onClose prop was provided. Dialog will not be dismissible.');
   }
 
+  if(!isOpen){return null};
   return (
-    <Portal
-      isOpen={isOpen}
-      onClose={onClose}
-      renderTarget={renderTarget}
-      closeOnEscPressed={dismissible}
-    >
       <BpkDialogInner
         onClose={onClose}
         closeOnScrimClick={dismissible}
@@ -75,7 +70,6 @@ const BpkDialog = ({
         )}
         {children}
       </BpkDialogInner>
-    </Portal>
   );
 };
 

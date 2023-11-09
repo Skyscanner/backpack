@@ -111,9 +111,9 @@ const withScrim = <P extends object>(
 
       lockScroll();
 
-      if (applicationElement) {
-        applicationElement.setAttribute('aria-hidden', 'true');
-      }
+      // if (applicationElement) {
+      //   applicationElement.setAttribute('aria-hidden', 'true');
+      // }
       focusStore.storeFocus();
       if (this.dialogElement) {
         focusScope.scopeFocus(this.dialogElement);

@@ -57,7 +57,8 @@ const BpkDialogInner = (props: Props) => {
       <section
         id={id}
         tabIndex={-1}
-        role="dialog"
+        role="alertdialog"
+        aria-modal="true"
         aria-label={ariaLabel}
         className={classNames}
         ref={dialogRef}

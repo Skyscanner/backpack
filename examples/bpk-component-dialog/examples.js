@@ -88,23 +88,27 @@ class DialogContainer extends Component<Props, State> {
       <div id="dialog-container">
         <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget urna gravida, ultrices nulla vel, viverra ex. Aliquam faucibus lacus dolor, eget pretium arcu facilisis nec. Quisque vitae risus sit amet arcu porta ultricies eget non leo. Donec convallis eu leo id ultricies. Pellentesque mattis risus eu nisl vehicula, a facilisis massa pretium. Pellentesque vel lectus a nisl viverra aliquam. Phasellus volutpat, mauris eu tristique pretium, enim lectus maximus mauris, efficitur mollis diam velit in nulla. Duis finibus ligula id efficitur condimentum. Donec tristique, nibh elementum ornare gravida, est nisl egestas mi, vitae mattis libero neque at quam. Ut consectetur, velit a pellentesque imperdiet, enim dui egestas eros, a auctor nisi diam id lectus. Aliquam ligula velit, euismod ut placerat id, congue vel nunc. Aliquam ac sodales ligula, sed congue quam. Morbi ac varius lectus, ut placerat est. Phasellus non augue quam.
+          <BpkDialog
+            closeLabel="Close dialog"
+            id="my-dialog"
+            ariaLabel="example dialog to showcase component"
+            className="my-classname"
+            isOpen={this.state.isOpen}
+            onClose={this.onClose}
+            getApplicationElement={() => document.getElementById('pagewrap')}
+            renderTarget={() => document.getElementById('dialog-container')}
+            headerIcon
+            {...this.props}
+          >
+            {this.props.children}
+            <BpkButton onClick={this.onClose}>Close</BpkButton>
+
+        </BpkDialog>
+
         </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        <BpkDialog
-          closeLabel="Close dialog"
-          id="my-dialog"
-          ariaLabel="example dialog to showcase component"
-          className="my-classname"
-          isOpen={this.state.isOpen}
-          onClose={this.onClose}
-          getApplicationElement={() => document.getElementById('pagewrap')}
-          renderTarget={() => document.getElementById('dialog-container')}
-          headerIcon
-          {...this.props}
-        >
-          {this.props.children}
-          <BpkButton onClick={this.onClose}>Close</BpkButton>
-        </BpkDialog>
+        
       </div>
     );
   }
