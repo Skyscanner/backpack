@@ -16,9 +16,17 @@
  * limitations under the License.
  */
 
-import BpkBoilerplate, {
-  type Props as BpkBoilerplateProps,
-} from './src/BpkBoilerplate';
+import BpkInfoBanner from './src/BpkInfoBanner';
+import BpkInfoBannerDismissable from './src/BpkInfoBannerDismissable';
+import BpkInfoBannerExpandable from './src/BpkInfoBannerExpandable';
+import { ALERT_TYPES, STYLE_TYPES } from './src/common-types';
+import withBannerAlertState from './src/withBannerAlertState';
 
-export type { BpkBoilerplateProps };
-export default BpkBoilerplate;
+export {
+  ALERT_TYPES,
+  STYLE_TYPES,
+  BpkInfoBannerDismissable,
+  BpkInfoBannerExpandable,
+  withBannerAlertState,
+};
+export default BpkInfoBanner;
