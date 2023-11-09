@@ -155,15 +155,12 @@ const BpkInfoBannerInner = ({
   const dismissable = configuration === CONFIGURATION.DISMISSABLE;
   const showChildren = isExpandable && expanded;
 
-  const sectionClassNames = [
+  const sectionClassNames = getClassName(
     'bpk-info-banner',
-    `bpk-info-banner--${type}`,
-    `bpk-info-banner--style-${style}`,
-  ].map((sectionClassName) => getClassName(sectionClassName));
-
-  if (bannerClassName) {
-    sectionClassNames.push(bannerClassName);
-  }
+   `bpk-info-banner--${type}`,
+   `bpk-info-banner--style-${style}`,
+   bannerClassName && bannerClassName
+   );
 
   const headerClassNames = getClassName(
     'bpk-info-banner__header',
@@ -183,7 +180,7 @@ const BpkInfoBannerInner = ({
       show={show}
       {...rest}
     >
-      <section className={sectionClassNames.join(' ')} role="alert">
+      <section className={sectionClassNames} role="alert">
         <div
           role={isExpandable ? 'button' : undefined}
           className={headerClassNames}
