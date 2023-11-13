@@ -18,12 +18,14 @@
 
 import BpkCarousel from '../../packages/bpk-component-carousel'
 
-const DemoImages = () => (
-    <img src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg" alt='hotel bedroom' />
-)
+const imageUrls = [
+  "https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg",
+  "https://content.skyscnr.com/m/183e7ddaaca13b16/original/Carousel-placeholder-2.jpg",
+  "https://content.skyscnr.com/m/f8b42e98e2b79a6/original/Carousel-placeholder-3.jpg",
+  "https://content.skyscnr.com/m/51c4c9dd04c8dc95/original/Carousel-placeholder-1.jpg"
+]
 
-const imagesList = [<DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />]
-
+const imagesList = imageUrls.map(url => <img src={url} alt='hotel bedroom' />)
 
 const DefaultExample = () => (
   <BpkCarousel images={imagesList} initialImageIndex={1}/>
