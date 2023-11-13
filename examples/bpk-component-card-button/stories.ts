@@ -28,6 +28,7 @@ import {
   SmallOnDarkExample,
   VisualTestExample,
   SmallCheckedExample,
+  AsyncWithErrorCheckedExample,
 } from './examples';
 
 export default {
@@ -39,6 +40,7 @@ export const Default = DefaultExample;
 export const Contained = ContainedExample;
 export const OnDark = OnDarkExample;
 export const Checked = CheckedExample;
+export const AsyncWithErrorChecked = AsyncWithErrorCheckedExample;
 export const SmallDefault = SmallDefaultExample;
 export const SmallContained = SmallContainedExample;
 export const SmallOnDark = SmallOnDarkExample;

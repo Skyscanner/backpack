@@ -14,17 +14,15 @@ exports[`withScrimmedPortal renders the wrapped component inside a portal correc
       </div>
     </div>
   </div>
-  <div>
+  <div
+    class="bpk-scrim-content"
+  >
     <div
-      class="bpk-scrim-content"
-    >
-      <div
-        class="bpk-scrim"
-        role="presentation"
-      />
-      <div>
-        Dialog content
-      </div>
+      class="bpk-scrim"
+      role="presentation"
+    />
+    <div>
+      Dialog content
     </div>
   </div>
 </body>
@@ -47,17 +45,15 @@ exports[`withScrimmedPortal renders the wrapped component inside a portal with r
       <div
         id="modal-container"
       >
-        <div>
+        <div
+          class="bpk-scrim-content"
+        >
           <div
-            class="bpk-scrim-content"
-          >
-            <div
-              class="bpk-scrim"
-              role="presentation"
-            />
-            <div>
-              Wrapped Component
-            </div>
+            class="bpk-scrim"
+            role="presentation"
+          />
+          <div>
+            Wrapped Component
           </div>
         </div>
       </div>
