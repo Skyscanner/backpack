@@ -225,7 +225,12 @@ const BpkInfoBannerInner = ({
             {children}
           </div>
           {isExpandable && action && (
-            <BpkButtonLink className={getClassName('bpk-info-banner__expandable-action')} onClick={action.callback}>{action.title}</BpkButtonLink>
+            <BpkButtonLink
+              className={getClassName('bpk-info-banner__expandable-action')}
+              onClick={action.callback}
+            >
+              {action.title}
+            </BpkButtonLink>
           )}
         </BpkAnimateHeight>
       </section>
