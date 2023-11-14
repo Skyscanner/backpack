@@ -22,7 +22,9 @@
   padding: bpk-spacing-md() bpk-spacing-base();
   overflow: hidden;
 
-  @include info-banner;
+  @include bpk-border-radius-sm;
+  @include bpk-text;
+  @include bpk-footnote;
 
   &--style-default {
     background-color: $bpk-private-info-banner-default-day;
