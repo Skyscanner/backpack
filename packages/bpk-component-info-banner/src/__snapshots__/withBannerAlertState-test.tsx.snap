@@ -68,7 +68,7 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
               style="display: none;"
             >
               <div
-                class="bpk-info-banner__children-container"
+                class="bpk-info-banner__children-container--no-action"
               />
             </div>
           </div>
@@ -153,7 +153,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
               style="display: none;"
             >
               <div
-                class="bpk-info-banner__children-container"
+                class="bpk-info-banner__children-container--no-action"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
@@ -243,7 +243,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
           >
             <div>
               <div
-                class="bpk-info-banner__children-container"
+                class="bpk-info-banner__children-container--no-action"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis

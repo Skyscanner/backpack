@@ -68,7 +68,7 @@ exports[`BpkInfoBannerDismissable should render correctly 1`] = `
               style="display: none;"
             >
               <div
-                class="bpk-info-banner__children-container"
+                class="bpk-info-banner__children-container--no-action"
               />
             </div>
           </div>
