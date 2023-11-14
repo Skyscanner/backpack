@@ -25,11 +25,11 @@
   @include info-banner;
 
   &--style-default {
-    background-color: $bpk-canvas-contrast-day;
+    background-color: $bpk-private-info-banner-default-day;
   }
 
   &--style-onContrast {
-    background-color: $bpk-surface-default-day;
+    background-color: $bpk-private-info-banner-on-contrast-day;
   }
 
   &__header {
@@ -53,15 +53,15 @@
   }
 
   &__success-icon {
-    fill: $bpk-private-info-banner-success-color;
+    fill: $bpk-private-info-banner-success-day;
   }
 
   &__warning-icon {
-    fill: $bpk-private-info-banner-warning-color;
+    fill: $bpk-private-info-banner-warning-day;
   }
 
   &__error-icon {
-    fill: $bpk-private-info-banner-error-color;
+    fill: $bpk-private-info-banner-error-day;
   }
 
   &__info-icon {
