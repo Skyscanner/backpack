@@ -87,9 +87,20 @@
   }
 
   &__children-container {
-    padding: bpk-spacing-sm() 0 bpk-spacing-md();
     color: $bpk-text-primary-day;
 
     @include bpk-footnote;
+
+    &--with-action {
+      padding: bpk-spacing-sm() 0 bpk-spacing-sm();
+    }
+
+    &--no-action {
+      padding: bpk-spacing-sm() 0 bpk-spacing-md();
+    }
+  }
+
+  &__expandable-action {
+    padding-bottom: bpk-spacing-sm();
   }
 }

@@ -28,6 +28,7 @@ import {
   SuccessLongMessageExample,
   DismissableExample,
   SuccessExpandableExample,
+  SuccessExpandableWithActionExample,
   SuccessAnimateOnEnterExample,
   SuccessWithReactRenderedMessageExample,
   WarningExample,
@@ -57,6 +58,7 @@ export const Success = SuccessExample;
 export const SuccessLongMessage = SuccessLongMessageExample;
 export const SuccessDismissable = DismissableExample;
 export const SuccessExpandable = SuccessExpandableExample;
+export const SuccessExpandableWithAction = SuccessExpandableWithActionExample;
 export const SuccessAnimateOnEnter = SuccessAnimateOnEnterExample;
 export const SuccessWithReactRenderedMessage =
   SuccessWithReactRenderedMessageExample;

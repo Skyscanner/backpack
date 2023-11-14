@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import type { CommonProps, OnExpandToggleHandler } from './common-types';
+import type { CommonProps, OnExpandToggleHandler, ExpandableBannerAction } from './common-types';
 import BpkInfoBannerInner, { CONFIGURATION } from './BpkInfoBannerInner';
 
 export type Props = CommonProps & {
@@ -26,15 +26,18 @@ export type Props = CommonProps & {
   expanded?: boolean;
   toggleButtonLabel: string;
   onExpandToggle?: OnExpandToggleHandler;
+  action?: ExpandableBannerAction;
 };
 
 const BpkInfoBannerExpandable = ({
+  action = null,
   children,
   expanded = false,
   onExpandToggle = null,
   ...rest
 }: Props) => (
   <BpkInfoBannerInner
+    action={action}
     configuration={CONFIGURATION.EXPANDABLE}
     expanded={expanded}
     onExpandToggle={onExpandToggle}

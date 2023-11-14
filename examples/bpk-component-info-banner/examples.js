@@ -191,6 +191,18 @@ const SuccessExpandableBehaviourExample = () => (
     {longMessage}
   </BpkInfoBannerExpandableState>
 );
+
+const SuccessExpandableWithActionExample = () => (
+  <BpkInfoBannerExpandableState
+    message="Success alert"
+    type={ALERT_TYPES.SUCCESS}
+    action={{title: "Sample Action", callback: () => alert('Hello from action')}}
+    toggleButtonLabel="View more"
+  >
+    {longMessage}
+  </BpkInfoBannerExpandableState>
+);
+
 const SuccessAutomaticallyDismissedExample = () => (
   <BpkInfoBannerDismissableState
     hideAfter={5}
@@ -305,6 +317,7 @@ export {
   SuccessLongMessageExample,
   DismissableExample,
   SuccessExpandableExample,
+  SuccessExpandableWithActionExample,
   SuccessAnimateOnEnterExample,
   SuccessWithReactRenderedMessageExample,
   WarningExample,

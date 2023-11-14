@@ -26,6 +26,8 @@ import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { BpkButtonLink } from '../../bpk-component-link';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
@@ -44,6 +46,7 @@ import type {
   OnDismissHandler,
   OnExpandToggleHandler,
   StyleTypeValue,
+  ExpandableBannerAction,
 } from './common-types';
 import { ALERT_TYPES, STYLE_TYPES } from './common-types';
 import STYLES from './BpkInfoBanner.module.scss';
@@ -108,6 +111,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
 };
 
 type Props = CommonProps & {
+  action?: ExpandableBannerAction;
   configuration?: (typeof CONFIGURATION)[keyof typeof CONFIGURATION];
 
   // Only relevant when configuration == CONFIGURATION.EXPANDABLE
@@ -122,6 +126,7 @@ type Props = CommonProps & {
 };
 
 const BpkInfoBannerInner = ({
+  action = null,
   animateOnEnter = false,
   animateOnLeave = false,
   bannerClassName,
@@ -166,6 +171,10 @@ const BpkInfoBannerInner = ({
     'bpk-info-banner__header',
     isExpandable && 'bpk-info-banner__header--expandable'
   );
+
+  const childrenContainerClassName = action && isExpandable
+    ? getClassName('bpk-info-banner__children-container--with-action')
+    : getClassName('bpk-info-banner__children-container--no-action')
 
   /* eslint-disable
     jsx-a11y/no-static-element-interactions,
@@ -212,9 +221,12 @@ const BpkInfoBannerInner = ({
           duration={parseInt(durationSm, 10)}
           height={showChildren ? 'auto' : 0}
         >
-          <div className={getClassName('bpk-info-banner__children-container')}>
+          <div className={childrenContainerClassName}>
             {children}
           </div>
+          {isExpandable && action && (
+            <BpkButtonLink className={getClassName('bpk-info-banner__expandable-action')} onClick={action.callback}>{action.title}</BpkButtonLink>
+          )}
         </BpkAnimateHeight>
       </section>
     </AnimateAndFade>
