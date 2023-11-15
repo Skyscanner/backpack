@@ -19,6 +19,7 @@
 import '@testing-library/jest-dom';
 import { render, within, screen } from '@testing-library/react';
 import { useEffect, useState } from 'react';
+import { renderToString } from 'react-dom/server';
 
 import withScrimmedPortal from './withScrimmedPortal';
 import type { Props } from './withScrimmedPortal';
@@ -104,5 +105,49 @@ describe('withScrimmedPortal', () => {
     );
 
     expect(screen.getByText('Wrapped Component / portal is not ready yet / portal is now ready')).toBeInTheDocument();
+  });
+
+  it('renders the wrapped component inside a portal correctly when runOnServer is false (default)', () => {
+    const DialogContent = () => <div>Dialog content</div>;
+    const ScrimmedComponent = withScrimmedPortal(DialogContent);
+
+    render(
+      <div id="pagewrap">
+        <div> Content hidden from AT</div>
+        <ScrimmedComponent
+          getApplicationElement={() => document.getElementById('pagewrap')}
+        />
+      </div>
+    );
+    expect(document.body).toMatchSnapshot();
+  });
+
+  it('renders the wrapped component inside a portal correctly when runOnServer is true', () => {
+    const DialogContent = () => <div>Dialog content</div>;
+    const ScrimmedComponent = withScrimmedPortal(DialogContent);
+
+    render(
+      <div id="pagewrap">
+        <div> Content hidden from AT</div>
+        <ScrimmedComponent
+          getApplicationElement={() => document.getElementById('pagewrap')}
+        />
+      </div>
+    );
+    expect(document.body).toMatchSnapshot();
+  });
+
+  it('throws an error when runOnServer is false and component is rendered on the server', () => {
+    const DialogContent = () => <div>Dialog content blablablabla</div>;
+    const ScrimmedComponent = withScrimmedPortal(DialogContent);
+
+    expect(() => renderToString(
+      <div id="pagewrap">
+        <div> Content hidden from AT</div>
+        <ScrimmedComponent
+          getApplicationElement={() => document.getElementById('pagewrap')}
+        />
+      </div>
+    )).toThrow();
   });
 });

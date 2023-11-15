@@ -21,10 +21,15 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import withScrim from './withScrim';
+import BpkScrim from './BpkScrim';
 import type { Props as ScrimProps } from './withScrim';
 
 export type Props = ScrimProps & {
     renderTarget?: (() => HTMLElement | null) | null;
+    /**
+     * If true, the component will run on both server and client.
+     */
+    runOnServer?: boolean;
 };
 
 const getPortalElement = (target: (() => HTMLElement | null) | null | undefined) => {
@@ -37,22 +42,34 @@ const getPortalElement = (target: (() => HTMLElement | null) | null | undefined)
     if (document.body) {
         return document.body;
     }
-    throw new Error('Render target and fallback unavailable');
+    throw new Error('Render target and fallback unavailable. The ScrimmedComponent uses a portal making it unsuitable for SSR. If you are trying to render on SSR, please pass the `runOnServer` prop.');
 }
 
 const withScrimmedPortal = (WrappedComponent: ComponentType<ScrimProps>) => {
     const Scrimmed = withScrim(WrappedComponent);
 
-    const ScrimmedComponent = ({ renderTarget, ...rest}: Props) => {
-        const portalElement = getPortalElement(renderTarget);
-
+    const ScrimmedComponent = ({ renderTarget, runOnServer = false, ...rest}: Props) => {
         const [isPortalReady, setIsPortalReady] = useState(false);
 
         useEffect(() => {
             setIsPortalReady(true);
           }, []);
 
-        return createPortal(<Scrimmed {...rest} isPortalReady={isPortalReady} />, portalElement);
+        /**
+         * The following code runs only on the client.
+         * If consumer passes runOnServer as false (meaning they want to render the component on client only), we render the component as normal.
+         * If consumer passes runOnServer as true (meaning they want to render the component on server and client), we render the component as normal once the component has been mounted.
+         * This is to ensure the snapshotted markup (initial render before the component has been mounted) is the same on both server and client.
+         */
+        if (!runOnServer || isPortalReady) {
+            const portalElement = getPortalElement(renderTarget);
+            return createPortal(<Scrimmed {...rest} isPortalReady={isPortalReady} />, portalElement);
+        }
+
+        /**
+         * The following code will run on both server and on the intial render on the client when consumers opts for both SSR and CSR i.e. by passing the `runOnServer` prop.
+         */
+        return <BpkScrim />;
     }
 
     return ScrimmedComponent;
