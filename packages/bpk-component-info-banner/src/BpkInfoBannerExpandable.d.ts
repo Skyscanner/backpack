@@ -25,8 +25,10 @@ export type Props = CommonProps & {
   expanded?: boolean;
   toggleButtonLabel: string;
   onExpandToggle?: OnExpandToggleHandler;
+  action?: ExpandableBannerAction;
 };
 declare const BpkInfoBannerExpandable: ({
+  action,
   children,
   expanded,
   onExpandToggle,
