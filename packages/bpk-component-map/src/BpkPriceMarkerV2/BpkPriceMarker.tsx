@@ -84,7 +84,7 @@ export const BpkPriceMarkerV2 = (props: Props) => {
       >
         <div className={classNames}>
           {icon}
-          <BpkText textStyle={TEXT_STYLES.label2}>{label}</BpkText>
+          <BpkText textStyle={TEXT_STYLES.label3}>{label}</BpkText>
         </div>
       </button>
     </BpkBasicMapMarker>
