@@ -26,7 +26,7 @@ import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkButtonLink } from '../../bpk-component-link';
+import BpkLink from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -225,12 +225,12 @@ const BpkInfoBannerInner = ({
             {children}
           </div>
           {isExpandable && action && (
-            <BpkButtonLink
+            <BpkLink
               className={getClassName('bpk-info-banner__expandable-action')}
               onClick={action.callback}
             >
               {action.title}
-            </BpkButtonLink>
+            </BpkLink>
           )}
         </BpkAnimateHeight>
       </section>
