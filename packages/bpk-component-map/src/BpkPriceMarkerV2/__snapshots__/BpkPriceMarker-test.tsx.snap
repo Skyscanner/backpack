@@ -14,7 +14,7 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "pr
         class="bpk-price-marker bpk-price-marker-previous_selected"
       >
         <span
-          class="bpk-text bpk-text--label-2"
+          class="bpk-text bpk-text--label-3"
         >
           £120
         </span>
@@ -38,7 +38,7 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "se
         class="bpk-price-marker bpk-price-marker-selected"
       >
         <span
-          class="bpk-text bpk-text--label-2"
+          class="bpk-text bpk-text--label-3"
         >
           £120
         </span>
@@ -63,7 +63,7 @@ exports[`BpkPriceMarkerV2 should render correctly with a "buttonProps" attribute
         class="bpk-price-marker bpk-price-marker-unselected"
       >
         <span
-          class="bpk-text bpk-text--label-2"
+          class="bpk-text bpk-text--label-3"
         >
           £120
         </span>
@@ -87,7 +87,7 @@ exports[`BpkPriceMarkerV2 should render correctly with a "className" attribute 1
         class="bpk-price-marker bpk-price-marker-unselected custom-class-1 custom-class-2"
       >
         <span
-          class="bpk-text bpk-text--label-2"
+          class="bpk-text bpk-text--label-3"
         >
           £120
         </span>
@@ -111,7 +111,7 @@ exports[`BpkPriceMarkerV2 should render correctly with a "onClick" attribute 1`]
         class="bpk-price-marker bpk-price-marker--dynamic bpk-price-marker-unselected"
       >
         <span
-          class="bpk-text bpk-text--label-2"
+          class="bpk-text bpk-text--label-3"
         >
           £120
         </span>
@@ -135,7 +135,7 @@ exports[`BpkPriceMarkerV2 should render properly 1`] = `
         class="bpk-price-marker bpk-price-marker-unselected"
       >
         <span
-          class="bpk-text bpk-text--label-2"
+          class="bpk-text bpk-text--label-3"
         >
           £120
         </span>
@@ -162,7 +162,7 @@ exports[`BpkPriceMarkerV2 should render properly with a icon 1`] = `
           Icon
         </span>
         <span
-          class="bpk-text bpk-text--label-2"
+          class="bpk-text bpk-text--label-3"
         >
           £120
         </span>
