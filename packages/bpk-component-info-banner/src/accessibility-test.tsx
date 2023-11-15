@@ -16,34 +16,20 @@
  * limitations under the License.
  */
 
-import type { CommonProps } from './common-types';
-import BpkBannerAlertInner from './BpkBannerAlertInner';
+import { axe } from 'jest-axe';
+import { render } from '@testing-library/react';
 
-const defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  show: true,
-  icon: null,
-};
+import BpkInfoBanner from './BpkInfoBanner';
+import { ALERT_TYPES } from './common-types';
 
-/**
- * @deprecated use bpk-component-info-banner instead
- * @returns {Component} a banner alert component
- */
-const BpkBannerAlert = ({
-  animateOnEnter = false,
-  animateOnLeave = false,
-  icon = null,
-  show = true,
-  ...rest
-}: CommonProps) => (
-  <BpkBannerAlertInner
-    animateOnEnter={animateOnEnter}
-    animateOnLeave={animateOnLeave}
-    show={show}
-    icon={icon}
-    {...rest}
-  />
-);
+const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
-export default BpkBannerAlert;
+describe('BpkInfoBanner accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkInfoBanner type={ALERT_TYPES.SUCCESS} message={message} />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

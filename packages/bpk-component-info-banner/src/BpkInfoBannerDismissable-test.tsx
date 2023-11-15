@@ -16,34 +16,23 @@
  * limitations under the License.
  */
 
-import type { CommonProps } from './common-types';
-import BpkBannerAlertInner from './BpkBannerAlertInner';
+import { render } from '@testing-library/react';
 
-const defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  show: true,
-  icon: null,
-};
+import BpkInfoBannerDismissable from './BpkInfoBannerDismissable';
+import { ALERT_TYPES } from './common-types';
 
-/**
- * @deprecated use bpk-component-info-banner instead
- * @returns {Component} a banner alert component
- */
-const BpkBannerAlert = ({
-  animateOnEnter = false,
-  animateOnLeave = false,
-  icon = null,
-  show = true,
-  ...rest
-}: CommonProps) => (
-  <BpkBannerAlertInner
-    animateOnEnter={animateOnEnter}
-    animateOnLeave={animateOnLeave}
-    show={show}
-    icon={icon}
-    {...rest}
-  />
-);
+const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
-export default BpkBannerAlert;
+describe('BpkInfoBannerDismissable', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(
+      <BpkInfoBannerDismissable
+        type={ALERT_TYPES.SUCCESS}
+        message={message}
+        dismissButtonLabel="Dismiss"
+        onDismiss={jest.fn()}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

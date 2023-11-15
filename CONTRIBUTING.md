@@ -59,6 +59,8 @@ git checkout -b {BRANCH_NAME}
 npm install --registry="https://registry.npmjs.org/"
 ```
 
+If you receive an error about `ValueError: invalid mode: 'rU' while trying to load binding.gyp`, try downgrading the default python version for your shell to python 3.9
+
 3. Build SVGs
 
 ```sh

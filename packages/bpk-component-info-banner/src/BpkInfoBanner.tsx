@@ -17,7 +17,7 @@
  */
 
 import type { CommonProps } from './common-types';
-import BpkBannerAlertInner from './BpkBannerAlertInner';
+import BpkInfoBannerInner from './BpkInfoBannerInner';
 
 const defaultProps = {
   animateOnEnter: false,
@@ -26,18 +26,14 @@ const defaultProps = {
   icon: null,
 };
 
-/**
- * @deprecated use bpk-component-info-banner instead
- * @returns {Component} a banner alert component
- */
-const BpkBannerAlert = ({
+const BpkInfoBanner = ({
   animateOnEnter = false,
   animateOnLeave = false,
   icon = null,
   show = true,
   ...rest
 }: CommonProps) => (
-  <BpkBannerAlertInner
+  <BpkInfoBannerInner
     animateOnEnter={animateOnEnter}
     animateOnLeave={animateOnLeave}
     show={show}
@@ -46,4 +42,4 @@ const BpkBannerAlert = ({
   />
 );
 
-export default BpkBannerAlert;
+export default BpkInfoBanner;

@@ -16,34 +16,14 @@
  * limitations under the License.
  */
 
+/// <reference types="react" />
 import type { CommonProps } from './common-types';
-import BpkBannerAlertInner from './BpkBannerAlertInner';
 
-const defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  show: true,
-  icon: null,
-};
-
-/**
- * @deprecated use bpk-component-info-banner instead
- * @returns {Component} a banner alert component
- */
-const BpkBannerAlert = ({
-  animateOnEnter = false,
-  animateOnLeave = false,
-  icon = null,
-  show = true,
+declare const BpkInfoBanner: ({
+  animateOnEnter,
+  animateOnLeave,
+  icon,
+  show,
   ...rest
-}: CommonProps) => (
-  <BpkBannerAlertInner
-    animateOnEnter={animateOnEnter}
-    animateOnLeave={animateOnLeave}
-    show={show}
-    icon={icon}
-    {...rest}
-  />
-);
-
-export default BpkBannerAlert;
+}: CommonProps) => JSX.Element;
+export default BpkInfoBanner;

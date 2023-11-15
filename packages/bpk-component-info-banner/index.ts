@@ -16,34 +16,17 @@
  * limitations under the License.
  */
 
-import type { CommonProps } from './common-types';
-import BpkBannerAlertInner from './BpkBannerAlertInner';
+import BpkInfoBanner from './src/BpkInfoBanner';
+import BpkInfoBannerDismissable from './src/BpkInfoBannerDismissable';
+import BpkInfoBannerExpandable from './src/BpkInfoBannerExpandable';
+import { ALERT_TYPES, STYLE_TYPES } from './src/common-types';
+import withBannerAlertState from './src/withBannerAlertState';
 
-const defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  show: true,
-  icon: null,
+export {
+  ALERT_TYPES,
+  STYLE_TYPES,
+  BpkInfoBannerDismissable,
+  BpkInfoBannerExpandable,
+  withBannerAlertState,
 };
-
-/**
- * @deprecated use bpk-component-info-banner instead
- * @returns {Component} a banner alert component
- */
-const BpkBannerAlert = ({
-  animateOnEnter = false,
-  animateOnLeave = false,
-  icon = null,
-  show = true,
-  ...rest
-}: CommonProps) => (
-  <BpkBannerAlertInner
-    animateOnEnter={animateOnEnter}
-    animateOnLeave={animateOnLeave}
-    show={show}
-    icon={icon}
-    {...rest}
-  />
-);
-
-export default BpkBannerAlert;
+export default BpkInfoBanner;
