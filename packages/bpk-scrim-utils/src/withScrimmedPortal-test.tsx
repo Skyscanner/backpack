@@ -17,7 +17,7 @@
  */
 
 import '@testing-library/jest-dom';
-import { render, within, screen } from '@testing-library/react';
+import { render, within, screen, isInaccessible } from '@testing-library/react';
 import { useEffect, useState } from 'react';
 import { renderToString } from 'react-dom/server';
 
@@ -26,27 +26,27 @@ import type { Props } from './withScrimmedPortal';
 
 describe('withScrimmedPortal', () => {
   it('renders the wrapped component inside a portal correctly with fallback to document.body', () => {
-    const DialogContent = () => <div>Dialog content</div>;
+    const DialogContent = () => <div data-testid="dialog-content">Dialog content</div>;
     const ScrimmedComponent = withScrimmedPortal(DialogContent);
 
     render(
       <div id="pagewrap">
-        <div> Content hidden from AT</div>
+        <div data-testid="hidden"> Content hidden from AT</div>
         <ScrimmedComponent
           getApplicationElement={() => document.getElementById('pagewrap')}
         />
       </div>
     );
-    expect(document.body).toMatchSnapshot();
+    expect(document.body).toContainElement(screen.getByTestId('dialog-content'));
   });
 
   it('renders the wrapped component inside a portal with renderTarget provided', () => {
-    const WrappedComponent = () => <div>Wrapped Component</div>;
-    const ScrimmedComponent = withScrimmedPortal(WrappedComponent);
+    const DialogContent = () => <div data-testid="dialog-content">Dialog content</div>;
+    const ScrimmedComponent = withScrimmedPortal(DialogContent);
       render(
         <div>
           <div id="pagewrap">
-            <div> Content hidden from AT</div>
+            <div data-testid="hidden"> Content hidden from AT</div>
             <ScrimmedComponent
               getApplicationElement={() => document.getElementById('pagewrap')}
               renderTarget={() => document.getElementById('modal-container')}
@@ -55,11 +55,13 @@ describe('withScrimmedPortal', () => {
           <div id="modal-container" />
        </div>
       );
-      expect(document.body).toMatchSnapshot();
+      expect(
+        document.getElementById('modal-container')
+      ).toContainElement(screen.getByTestId('dialog-content'));
   });
 
   it('renders the wrapped component outside the applicationElement', () => {
-    const WrappedComponent = () => <div>Wrapped Component</div>;
+    const WrappedComponent = () => <div data-testid="dialog-content">Wrapped Component</div>;
     const ScrimmedComponent = withScrimmedPortal(WrappedComponent);
     render(
       <div>
@@ -108,7 +110,7 @@ describe('withScrimmedPortal', () => {
   });
 
   it('renders the wrapped component inside a portal correctly when runOnServer is false (default)', () => {
-    const DialogContent = () => <div>Dialog content</div>;
+    const DialogContent = () => <div data-testid="dialog-content">Dialog content</div>;
     const ScrimmedComponent = withScrimmedPortal(DialogContent);
 
     render(
@@ -116,14 +118,15 @@ describe('withScrimmedPortal', () => {
         <div> Content hidden from AT</div>
         <ScrimmedComponent
           getApplicationElement={() => document.getElementById('pagewrap')}
+          runOnServer={false}
         />
       </div>
     );
-    expect(document.body).toMatchSnapshot();
+    expect(document.body).toContainElement(screen.getByTestId('dialog-content'));
   });
 
   it('renders the wrapped component inside a portal correctly when runOnServer is true', () => {
-    const DialogContent = () => <div>Dialog content</div>;
+    const DialogContent = () => <div data-testid="dialog-content">Dialog content</div>;
     const ScrimmedComponent = withScrimmedPortal(DialogContent);
 
     render(
@@ -131,14 +134,15 @@ describe('withScrimmedPortal', () => {
         <div> Content hidden from AT</div>
         <ScrimmedComponent
           getApplicationElement={() => document.getElementById('pagewrap')}
+          runOnServer
         />
       </div>
     );
-    expect(document.body).toMatchSnapshot();
+    expect(document.body).toContainElement(screen.getByTestId('dialog-content'));
   });
 
   it('throws an error when runOnServer is false and component is rendered on the server', () => {
-    const DialogContent = () => <div>Dialog content blablablabla</div>;
+    const DialogContent = () => <div>Dialog content</div>;
     const ScrimmedComponent = withScrimmedPortal(DialogContent);
 
     expect(() => renderToString(
@@ -146,6 +150,7 @@ describe('withScrimmedPortal', () => {
         <div> Content hidden from AT</div>
         <ScrimmedComponent
           getApplicationElement={() => document.getElementById('pagewrap')}
+          runOnServer={false}
         />
       </div>
     )).toThrow();
