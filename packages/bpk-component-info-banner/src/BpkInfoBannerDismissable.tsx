@@ -16,34 +16,20 @@
  * limitations under the License.
  */
 
-import type { CommonProps } from './common-types';
-import BpkBannerAlertInner from './BpkBannerAlertInner';
+import type { CommonProps, OnDismissHandler } from './common-types';
+import BpkInfoBannerInner, { CONFIGURATION } from './BpkInfoBannerInner';
 
-const defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  show: true,
-  icon: null,
+export type Props = CommonProps & {
+  dismissButtonLabel: string;
+  onDismiss?: OnDismissHandler;
 };
 
-/**
- * @deprecated use bpk-component-info-banner instead
- * @returns {Component} a banner alert component
- */
-const BpkBannerAlert = ({
-  animateOnEnter = false,
-  animateOnLeave = false,
-  icon = null,
-  show = true,
-  ...rest
-}: CommonProps) => (
-  <BpkBannerAlertInner
-    animateOnEnter={animateOnEnter}
-    animateOnLeave={animateOnLeave}
-    show={show}
-    icon={icon}
+const BpkInfoBannerDismissable = ({ onDismiss = null, ...rest }: Props) => (
+  <BpkInfoBannerInner
+    configuration={CONFIGURATION.DISMISSABLE}
+    onDismiss={onDismiss}
     {...rest}
   />
 );
 
-export default BpkBannerAlert;
+export default BpkInfoBannerDismissable;

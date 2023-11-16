@@ -16,34 +16,16 @@
  * limitations under the License.
  */
 
-import type { CommonProps } from './common-types';
-import BpkBannerAlertInner from './BpkBannerAlertInner';
-
-const defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  show: true,
-  icon: null,
-};
-
 /**
- * @deprecated use bpk-component-info-banner instead
- * @returns {Component} a banner alert component
+ * This file is a workaround for Storybook not supporting HOCs API table generation in v7 by creating mock components that can be used to generate the API table
+ * They plan on adding support in v8
+ * https://github.com/storybookjs/storybook/issues/12558#issuecomment-1288834879
+ * @todo remove this file once we upgrade to Storybook v8
  */
-const BpkBannerAlert = ({
-  animateOnEnter = false,
-  animateOnLeave = false,
-  icon = null,
-  show = true,
-  ...rest
-}: CommonProps) => (
-  <BpkBannerAlertInner
-    animateOnEnter={animateOnEnter}
-    animateOnLeave={animateOnLeave}
-    show={show}
-    icon={icon}
-    {...rest}
-  />
-);
 
-export default BpkBannerAlert;
+import type { WithBannerAlertStateProps } from '../../packages/bpk-component-info-banner/src/withBannerAlertState';
+
+const withBannerAlertStateMock = (props: WithBannerAlertStateProps) => <div />;
+
+// eslint-disable-next-line import/prefer-default-export
+export { withBannerAlertStateMock };
