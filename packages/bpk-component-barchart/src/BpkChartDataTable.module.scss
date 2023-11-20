@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/next/utils';
+@use '../../bpk-mixins/v2/utils';
 
 .bpk-chart-data-table {
   @include utils.bpk-visually-hidden;

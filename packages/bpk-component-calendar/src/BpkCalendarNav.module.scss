@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/svgs';
-@use '../../bpk-mixins/next/utils';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/svgs';
+@use '../../bpk-mixins/v2/utils';
 @use 'variables' as *;
 
 .bpk-calendar-nav {

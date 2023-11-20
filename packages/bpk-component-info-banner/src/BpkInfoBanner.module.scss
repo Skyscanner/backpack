@@ -17,9 +17,9 @@
  */
 
 @use 'sass:math';
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/radii';
-@use '../../bpk-mixins/next/typography';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/radii';
+@use '../../bpk-mixins/v2/typography';
 
 .bpk-info-banner {
   padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();

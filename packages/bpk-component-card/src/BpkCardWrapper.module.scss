@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/borders';
-@use '../../bpk-mixins/next/cards';
-@use '../../bpk-mixins/next/radii';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/borders';
+@use '../../bpk-mixins/v2/cards';
+@use '../../bpk-mixins/v2/radii';
 
 .bpk-card-wrapper {
   @include cards.bpk-card;

@@ -19,9 +19,9 @@
 /* stylelint-disable selector-class-pattern */
 /* stylelint-disable selector-max-compound-selectors */
 
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/breakpoints';
-@use '../../bpk-mixins/next/typography';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/breakpoints';
+@use '../../bpk-mixins/v2/typography';
 
 .bpk-content-cards {
   &--header-text {

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/next/buttons';
+@use '../../bpk-mixins/v2/buttons';
 
 .bpk-button--secondary-on-dark {
   @include buttons.bpk-button--secondary-on-dark;

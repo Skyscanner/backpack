@@ -17,9 +17,9 @@
  */
 
 @use 'sass:math';
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/shadows';
-@use '../../bpk-mixins/next/utils';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/shadows';
+@use '../../bpk-mixins/v2/utils';
 
 $slider-handle-size: tokens.bpk-spacing-base() + tokens.bpk-spacing-sm();
 $slider-handle-touch-size: tokens.bpk-spacing-xxl();

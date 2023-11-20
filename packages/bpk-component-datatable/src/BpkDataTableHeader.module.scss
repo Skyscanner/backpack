@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/typography';
-@use '../../bpk-mixins/next/utils';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/typography';
+@use '../../bpk-mixins/v2/utils';
 
 $bpk-margin-size-sort-icons: tokens.bpk-spacing-sm() + tokens.bpk-spacing-md();
 

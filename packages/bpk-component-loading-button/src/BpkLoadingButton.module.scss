@@ -17,7 +17,7 @@
  */
 
 @use 'sass:math';
-@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/v2/bonds' as tokens;
 
 .bpk-loading-button {
   $button-padding-x: tokens.bpk-spacing-base() * 2;

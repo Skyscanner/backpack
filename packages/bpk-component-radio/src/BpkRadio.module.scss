@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/forms';
-@use '../../bpk-mixins/next/utils';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/forms';
+@use '../../bpk-mixins/v2/utils';
 
 $bpk-radio-circle-size: tokens.$bpk-one-pixel-rem * 8;
 $bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);

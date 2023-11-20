@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/utils';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/utils';
 
 $arrow-width: tokens.bpk-spacing-base();
 $arrow-height: tokens.bpk-spacing-base();

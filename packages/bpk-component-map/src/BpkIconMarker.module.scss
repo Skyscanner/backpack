@@ -21,8 +21,8 @@
 /* stylelint-disable unit-disallowed-list */
 
 @use 'sass:math';
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/utils';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/utils';
 
 .bpk-icon-marker {
   $marker-width: 26px;

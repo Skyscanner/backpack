@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../../bpk-mixins/next/badges-v2' as badges;
+@use '../../../bpk-mixins/v2/badges-v2' as badges;
 
 .bpk-badge {
   @include badges.bpk-badge;

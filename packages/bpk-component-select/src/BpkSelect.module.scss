@@ -20,9 +20,9 @@
 // the correct styles are applied for Internet Explorer 11 and are not overriden by system styles.
 
 @use 'sass:math';
-@use '../../bpk-mixins/next/bonds' as tokens;
-@use '../../bpk-mixins/next/forms';
-@use '../../bpk-mixins/next/utils';
+@use '../../bpk-mixins/v2/bonds' as tokens;
+@use '../../bpk-mixins/v2/forms';
+@use '../../bpk-mixins/v2/utils';
 
 .bpk-select {
   @include forms.bpk-select;
