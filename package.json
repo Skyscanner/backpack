@@ -83,7 +83,7 @@
       }
     },
     "moduleNameMapper": {
-      "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",
+      "^.+\\.css$": "<rootDir>/scripts/stubs/styleStub.js",
       "^.+\\.(svg|png)$": "<rootDir>/scripts/stubs/fileStub.js",
       "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
       "@skyscanner/bpk-svgs/dist/svgs/^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js",
