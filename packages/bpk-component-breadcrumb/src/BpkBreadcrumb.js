@@ -24,7 +24,7 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkBreadcrumb.module.scss';
+import STYLES from './BpkBreadcrumb.module.css';
 
 const getClassName = cssModules(STYLES);
 

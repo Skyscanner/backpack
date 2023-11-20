@@ -45,7 +45,7 @@ import type {
   OnExpandToggleHandler,
 } from './common-types';
 import { ALERT_TYPES } from './common-types';
-import STYLES from './BpkBannerAlert.module.scss';
+import STYLES from './BpkBannerAlert.module.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import { type Props, propTypes, defaultProps } from './common-types';
-import COMMON_STYLES from './BpkButtonBase.module.scss';
+import COMMON_STYLES from './BpkButtonBase.module.css';
 
 // This was originally depended upon from the bpk-react-utils package, however
 // we decided to inline it in this particular component so as not to bloat the

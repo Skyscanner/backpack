@@ -29,7 +29,7 @@ import { cssModules } from '../../bpk-react-utils';
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center, remToPx } from './utils';
-import STYLES from './BpkChartAxis.module.scss';
+import STYLES from './BpkChartAxis.module.css';
 
 const getClassName = cssModules(STYLES);
 

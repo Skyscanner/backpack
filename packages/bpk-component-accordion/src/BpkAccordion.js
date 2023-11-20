@@ -23,7 +23,7 @@ import { createContext, Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkAccordion.module.scss';
+import STYLES from './BpkAccordion.module.css';
 
 const getClassName = cssModules(STYLES);
 

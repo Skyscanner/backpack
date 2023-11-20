@@ -24,7 +24,7 @@ import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6'
 import { cssModules } from '../../bpk-react-utils';
 
 import { remToPx } from './utils';
-import STYLES from './BpkBarchartBar.module.scss';
+import STYLES from './BpkBarchartBar.module.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -20,7 +20,7 @@ import { cssModules } from '../../../bpk-react-utils';
 import type { Props } from '../BpkBadge';
 import { BADGE_TYPES } from '../BpkBadge'
 
-import STYLES from './BpkBadge.module.scss';
+import STYLES from './BpkBadge.module.css';
 
 const getClassName = cssModules(STYLES);
 

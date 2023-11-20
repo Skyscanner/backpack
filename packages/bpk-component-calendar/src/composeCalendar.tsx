@@ -26,7 +26,7 @@ import type {
   SelectionConfiguration,
   DateModifiers,
 } from './custom-proptypes';
-import STYLES from './BpkCalendar.module.scss';
+import STYLES from './BpkCalendar.module.css';
 
 const getClassName = cssModules(STYLES);
 

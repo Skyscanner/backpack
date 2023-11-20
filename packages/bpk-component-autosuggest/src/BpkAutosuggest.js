@@ -23,7 +23,7 @@ import Autosuggest from 'react-autosuggest';
 import BpkInput from '../../bpk-component-input';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkAutosuggest.module.scss';
+import STYLES from './BpkAutosuggest.module.css';
 
 const getClassName = cssModules(STYLES);
 

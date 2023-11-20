@@ -20,7 +20,7 @@ import type { ReactElement } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkAriaLive.module.scss';
+import STYLES from './BpkAriaLive.module.css';
 
 const getClassName = cssModules(STYLES);
 

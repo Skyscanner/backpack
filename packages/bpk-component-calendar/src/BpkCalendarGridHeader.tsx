@@ -27,7 +27,7 @@ import type {
   WeekDayKey,
 } from './custom-proptypes';
 import { orderDaysOfWeek } from './date-utils';
-import STYLES from './BpkCalendarGridHeader.module.scss';
+import STYLES from './BpkCalendarGridHeader.module.css';
 
 const getClassName = cssModules(STYLES);
 

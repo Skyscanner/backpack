@@ -28,7 +28,7 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
 import { BpkAccordionContext } from './BpkAccordion';
-import STYLES from './BpkAccordionItem.module.scss';
+import STYLES from './BpkAccordionItem.module.css';
 
 const getClassName = cssModules(STYLES);
 

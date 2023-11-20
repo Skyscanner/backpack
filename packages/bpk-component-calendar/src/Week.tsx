@@ -37,10 +37,10 @@ import type {
   SelectionConfigurationSingle,
   SelectionConfigurationRange,
 } from './custom-proptypes';
-// TODO: Move this to `Week.scss`
-// This should be using its own css file as `BpkCalendarGrid` is also importing `BpkCalendarGrid.module.scss`
+// TODO: Move this to `Week.css`
+// This should be using its own css file as `BpkCalendarGrid` is also importing `BpkCalendarGrid.module.css`
 // and the order of css imports can break the component.
-import STYLES from './BpkCalendarGrid.module.scss';
+import STYLES from './BpkCalendarGrid.module.css';
 import { SELECTION_TYPES } from './BpkCalendarDate';
 
 const getClassName = cssModules(STYLES);

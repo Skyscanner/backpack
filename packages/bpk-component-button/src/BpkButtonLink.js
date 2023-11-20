@@ -24,7 +24,7 @@ import {
   propTypes,
 } from './common-types';
 import BpkButtonBase, { cssModules } from './BpkButtonBase';
-import STYLES from './BpkButtonLink.module.scss';
+import STYLES from './BpkButtonLink.module.css';
 
 const getClassName = cssModules(STYLES);
 
