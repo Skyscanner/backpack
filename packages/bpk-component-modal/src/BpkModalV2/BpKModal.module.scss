@@ -16,11 +16,14 @@
  * limitations under the License.
  */
 
-@import '../../../bpk-mixins/index.scss';
+@use '../../../bpk-mixins/next/bonds' as tokens;
+@use '../../../bpk-mixins/next/breakpoints';
+@use '../../../bpk-mixins/next/shadows';
+@use '../../../bpk-mixins/next/typography';
 
 @mixin header {
   display: flex;
-  min-height: bpk-spacing-lg();
+  min-height: tokens.bpk-spacing-lg();
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
@@ -28,11 +31,11 @@
 
 @keyframes bpk-modal-scrim {
   0% {
-    opacity: $bpk-modal-initial-opacity;
+    opacity: tokens.$bpk-modal-initial-opacity;
   }
 
   100% {
-    opacity: $bpk-modal-opacity;
+    opacity: tokens.$bpk-modal-opacity;
   }
 }
 
@@ -51,8 +54,8 @@
     position: fixed;
     z-index: 0;
     margin: 0 auto;
-    background-color: $bpk-scrim-day;
-    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
+    background-color: tokens.$bpk-scrim-day;
+    animation: bpk-modal-scrim tokens.$bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
@@ -66,7 +69,8 @@
     display: block;
     z-index: 1;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform $bpk-duration-sm ease-in-out $bpk-duration-sm;
+    transition: transform tokens.$bpk-duration-sm ease-in-out
+      tokens.$bpk-duration-sm;
   }
 
   .bpk-modal:not([data-open='true']),
@@ -82,18 +86,18 @@
   max-height: 100%;
   padding: 0;
   border: none;
-  background: $bpk-modal-background-color;
+  background: tokens.$bpk-modal-background-color;
   overflow-y: scroll;
   scrollbar-width: none;
 
-  @include bpk-box-shadow-xl;
+  @include shadows.bpk-box-shadow-xl;
 
-  @include bpk-breakpoint-above-mobile {
-    width: $bpk-modal-max-width;
+  @include breakpoints.bpk-breakpoint-above-mobile {
+    width: tokens.$bpk-modal-max-width;
     max-width: none;
     height: fit-content;
     max-height: 90%;
-    border-radius: $bpk-border-radius-md;
+    border-radius: tokens.$bpk-border-radius-md;
 
     &--full-screen-desktop {
       width: 100%;
@@ -103,12 +107,12 @@
     }
 
     &--wide {
-      width: $bpk-modal-wide-max-width;
+      width: tokens.$bpk-modal-wide-max-width;
     }
   }
 
   &[open] {
-    animation: bpk-modal-scale $bpk-duration-sm ease-in-out;
+    animation: bpk-modal-scale tokens.$bpk-duration-sm ease-in-out;
   }
 
   &--no-full-screen-mobile {
@@ -117,16 +121,16 @@
     height: fit-content;
     max-height: 90%;
 
-    @include bpk-breakpoint-above-mobile {
-      width: $bpk-modal-max-width;
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      width: tokens.$bpk-modal-max-width;
       max-width: none;
     }
   }
 
   &::backdrop {
     position: fixed;
-    background-color: $bpk-scrim-day;
-    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
+    background-color: tokens.$bpk-scrim-day;
+    animation: bpk-modal-scrim tokens.$bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
@@ -138,7 +142,7 @@
   }
 
   &__header-title {
-    padding: bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
 
     @include header;
   }
@@ -150,21 +154,21 @@
   }
 
   &__title {
-    padding-inline-end: bpk-spacing-base();
+    padding-inline-end: tokens.bpk-spacing-base();
 
-    @include bpk-label-1;
+    @include typography.bpk-label-1;
   }
 
   &__button-container {
-    padding-block-start: bpk-spacing-base();
-    padding-inline-end: bpk-spacing-base();
+    padding-block-start: tokens.bpk-spacing-base();
+    padding-inline-end: tokens.bpk-spacing-base();
 
     @include header;
   }
 
   &__container {
     min-height: 100%;
-    padding: $bpk-modal-content-padding;
+    padding: tokens.$bpk-modal-content-padding;
 
     &--padded {
       padding: 0;

@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/breakpoints';
 
 @mixin fullscreen() {
   display: flex;
@@ -25,7 +26,7 @@
 
 .bpk-modal__container {
   display: flex;
-  padding: bpk-spacing-lg();
+  padding: tokens.bpk-spacing-lg();
 
   // IE11 and below hack for buggy flexbox support
   @media screen\0 {
@@ -33,7 +34,7 @@
   }
 
   &--full-screen-mobile {
-    @include bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
       @include fullscreen;
     }
   }

@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/typography';
 
 .bpk-nudger {
   &__button {
@@ -25,22 +26,22 @@
 
   &__input {
     display: inline-block;
-    padding: bpk-spacing-md() 0;
+    padding: tokens.bpk-spacing-md() 0;
     border: none;
-    color: $bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
     text-align: center;
     vertical-align: middle;
 
-    @include bpk-text;
-    @include bpk-heading-5;
+    @include typography.bpk-text;
+    @include typography.bpk-heading-5;
 
     &--secondary-on-dark {
       background-color: transparent;
-      color: $bpk-text-on-dark-day;
+      color: tokens.$bpk-text-on-dark-day;
     }
 
     &--numeric {
-      $size: bpk-spacing-lg() + (bpk-spacing-md() * 2);
+      $size: tokens.bpk-spacing-lg() + (tokens.bpk-spacing-md() * 2);
 
       width: $size;
     }
@@ -54,7 +55,7 @@
 
   &__label {
     display: flex;
-    gap: bpk-spacing-md();
+    gap: tokens.bpk-spacing-md();
 
     &--title-subtitle {
       display: flex;
@@ -63,7 +64,7 @@
     }
 
     &--subtitle {
-      color: $bpk-text-secondary-day;
+      color: tokens.$bpk-text-secondary-day;
     }
   }
 }

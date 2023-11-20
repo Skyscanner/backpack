@@ -16,17 +16,18 @@
 //  * limitations under the License.
 //  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/utils';
 
 .bpk-icon-marker-background {
   position: absolute;
   top: 0;
   left: 0;
 
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     fill,
     --bpk-icon-marker-default-background-color,
-    $bpk-private-map-poi-pin-day
+    tokens.$bpk-private-map-poi-pin-day
   );
 
   &--interactive {
@@ -34,20 +35,20 @@
   }
 
   &--disabled {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       fill,
       --bpk-icon-marker-default-disabled-background-color,
-      $bpk-status-success-fill-day
+      tokens.$bpk-status-success-fill-day
     );
   }
 
   &--selected {
-    fill: $bpk-core-primary-day;
+    fill: tokens.$bpk-core-primary-day;
 
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       stroke,
       --bpk-icon-marker-default-selected-color,
-      $bpk-core-primary-day
+      tokens.$bpk-core-primary-day
     );
   }
 }

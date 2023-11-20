@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/panels';
 
 .bpk-panel {
-  @include bpk-panel;
+  @include panels.bpk-panel;
 
   &--padded {
-    @include bpk-panel--padded;
+    @include panels.bpk-panel--padded;
   }
 
   &--full-width {
-    @include bpk-panel--full-width;
+    @include panels.bpk-panel--full-width;
   }
 }
