@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/buttons';
 
 .bpk-button {
   &--link {
-    @include bpk-button--link;
+    @include buttons.bpk-button--link;
   }
 }

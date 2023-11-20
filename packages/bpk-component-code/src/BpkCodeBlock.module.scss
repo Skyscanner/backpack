@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/typography';
 
 .bpk-code {
   &--block {
-    @include bpk-code--block;
+    @include typography.bpk-code--block;
   }
 
   &__pre {
-    @include bpk-code__pre;
+    @include typography.bpk-code__pre;
 
     &--alternate {
-      @include bpk-code__pre--alternate;
+      @include typography.bpk-code__pre--alternate;
     }
   }
 }

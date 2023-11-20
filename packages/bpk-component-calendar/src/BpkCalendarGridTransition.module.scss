@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
-@import 'variables.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use 'variables' as *;
 
 .bpk-calendar-grid-transition {
   position: relative;
@@ -36,7 +36,7 @@
 
     &--transitioning {
       z-index: 1;
-      transition: transform $bpk-duration-sm ease-in-out;
+      transition: transform tokens.$bpk-duration-sm ease-in-out;
     }
   }
 

@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
-@import 'variables.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/typography';
+@use 'variables' as *;
 
 .bpk-calendar-header {
   display: table;
@@ -33,18 +34,18 @@
     list-style: none;
     text-align: center;
 
-    @include bpk-text;
-    @include bpk-caption;
+    @include typography.bpk-text;
+    @include typography.bpk-caption;
   }
 
   &__weekday {
     display: table-cell;
-    height: $bpk-calendar-day-size;
-    padding: 0 $bpk-calendar-day-spacing;
+    height: tokens.$bpk-calendar-day-size;
+    padding: 0 tokens.$bpk-calendar-day-spacing;
     box-shadow: $shadow-bottom;
     vertical-align: middle;
     box-sizing: content-box;
 
-    @include bpk-footnote;
+    @include typography.bpk-footnote;
   }
 }

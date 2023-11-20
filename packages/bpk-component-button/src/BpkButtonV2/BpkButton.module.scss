@@ -16,58 +16,59 @@
  * limitations under the License.
  */
 
-@import '../../../bpk-mixins/index.scss';
+@use '../../../bpk-mixins/next/bonds' as tokens;
+@use '../../../bpk-mixins/next/buttons';
 
 .bpk-button {
-  @include bpk-button;
+  @include buttons.bpk-button;
 
   &--large {
-    @include bpk-button--large;
+    @include buttons.bpk-button--large;
   }
 
   &--icon-only {
-    border-radius: $bpk-button-border-radius;
+    border-radius: tokens.$bpk-button-border-radius;
 
-    @include bpk-button--icon-only;
+    @include buttons.bpk-button--icon-only;
   }
 
   &--large-icon-only {
-    border-radius: $bpk-button-border-radius;
+    border-radius: tokens.$bpk-button-border-radius;
 
-    @include bpk-button--large-icon-only;
+    @include buttons.bpk-button--large-icon-only;
   }
 
   &--destructive {
-    @include bpk-button--secondary;
-    @include bpk-button--destructive;
+    @include buttons.bpk-button--secondary;
+    @include buttons.bpk-button--destructive;
   }
 
   &--featured {
-    @include bpk-button--featured;
+    @include buttons.bpk-button--featured;
   }
 
   &--link {
-    @include bpk-button--link;
+    @include buttons.bpk-button--link;
   }
 
   &--link-on-dark {
-    @include bpk-button--link-on-dark;
+    @include buttons.bpk-button--link-on-dark;
   }
 
   &--primary-on-dark {
-    @include bpk-button--primary-on-dark;
+    @include buttons.bpk-button--primary-on-dark;
   }
 
   &--primary-on-light {
-    @include bpk-button--primary-on-light;
+    @include buttons.bpk-button--primary-on-light;
   }
 
   &--secondary {
-    @include bpk-button--secondary;
+    @include buttons.bpk-button--secondary;
   }
 
   &--secondary-on-dark {
-    @include bpk-button--secondary-on-dark;
+    @include buttons.bpk-button--secondary-on-dark;
   }
 
   /* stylelint-disable selector-max-compound-selectors */
