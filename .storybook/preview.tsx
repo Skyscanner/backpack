@@ -20,8 +20,8 @@ import { Title, PRIMARY_STORY } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';
 import type { Preview } from '@storybook/react';
 
-import '../packages/bpk-stylesheets';
-import '../packages/bpk-stylesheets/font';
+import '../packages/bpk-stylesheets/base.css';
+import '../packages/bpk-stylesheets/font.css';
 
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import BpkThemeToggle, {

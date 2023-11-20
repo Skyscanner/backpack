@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-declare module '*.scss' {
+declare module '*.css' {
   declare const styles: { [className: string]: string };
   export default styles;
 }
