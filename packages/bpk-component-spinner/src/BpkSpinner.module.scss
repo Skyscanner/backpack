@@ -16,41 +16,43 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/svgs';
+@use '../../bpk-mixins/next/utils';
 
 .bpk-spinner {
-  @include bpk-spinner;
+  @include svgs.bpk-spinner;
 
   &--primary {
     // Post colour adoption/rollout we will require to move the 'primary' style to be the same as dark and make dark (moving to primary/defautl) and light the only options
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       fill,
       --bpk-spinner-primary-color,
-      $bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
   }
 
   &--light {
-    fill: $bpk-text-on-dark-day;
+    fill: tokens.$bpk-text-on-dark-day;
   }
 
   &--dark {
-    fill: $bpk-text-primary-day;
+    fill: tokens.$bpk-text-primary-day;
   }
 
   &--large {
-    @include bpk-spinner--lg;
+    @include svgs.bpk-spinner--lg;
   }
 
   &--extra-large {
-    @include bpk-spinner--xl;
+    @include svgs.bpk-spinner--xl;
   }
 
   &--align-to-button {
-    @include bpk-spinner--align-to-button;
+    @include svgs.bpk-spinner--align-to-button;
   }
 
   &--align-to-large-button {
-    @include bpk-spinner--align-to-large-button;
+    @include svgs.bpk-spinner--align-to-large-button;
   }
 }

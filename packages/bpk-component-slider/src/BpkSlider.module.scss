@@ -16,11 +16,14 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use 'sass:math';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/shadows';
+@use '../../bpk-mixins/next/utils';
 
-$slider-handle-size: bpk-spacing-base() + bpk-spacing-sm();
-$slider-handle-touch-size: bpk-spacing-xxl();
-$slider-bar-height: bpk-spacing-sm();
+$slider-handle-size: tokens.bpk-spacing-base() + tokens.bpk-spacing-sm();
+$slider-handle-touch-size: tokens.bpk-spacing-xxl();
+$slider-bar-height: tokens.bpk-spacing-sm();
 
 .bpk-slider {
   height: $slider-handle-size;
@@ -33,10 +36,10 @@ $slider-bar-height: bpk-spacing-sm();
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: $bpk-core-accent-day;
+    background-color: tokens.$bpk-core-accent-day;
     cursor: pointer;
 
-    @include bpk-box-shadow-sm;
+    @include shadows.bpk-box-shadow-sm;
 
     &::after {
       position: absolute;
@@ -48,37 +51,37 @@ $slider-bar-height: bpk-spacing-sm();
 
     &--active {
       transform: scale(1.2) translate3d(0, 0, 0);
-      background-color: $bpk-private-slider-selected-day;
+      background-color: tokens.$bpk-private-slider-selected-day;
     }
   }
 
   &__bar {
-    top: calc(50% - #{$slider-bar-height / 2});
+    top: calc(50% - #{math.div($slider-bar-height, 2)});
     height: $slider-bar-height;
-    border-radius: $bpk-border-radius-sm;
-    background-color: $bpk-line-day;
+    border-radius: tokens.$bpk-border-radius-sm;
+    background-color: tokens.$bpk-line-day;
   }
 
   // stylelint-disable-next-line selector-attribute-quotes
   > div[class$='0'] {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-slider-bar-color,
-      $bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
   }
 
   &--range {
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='0'] {
-      background-color: $bpk-line-day;
+      background-color: tokens.$bpk-line-day;
     }
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='1'] {
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         background-color,
         --bpk-slider-bar-color,
-        $bpk-core-accent-day
+        tokens.$bpk-core-accent-day
       );
     }
   }

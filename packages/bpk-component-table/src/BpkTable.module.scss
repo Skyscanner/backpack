@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/typography';
 
 .bpk-table {
-  @include bpk-table;
+  @include typography.bpk-table;
 
   &__cell {
-    @include bpk-table__cell;
+    @include typography.bpk-table__cell;
 
     &--head {
-      @include bpk-table__cell--head;
+      @include typography.bpk-table__cell--head;
     }
   }
 }
