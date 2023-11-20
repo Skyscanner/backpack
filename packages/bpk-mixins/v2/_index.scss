@@ -1,0 +1,20 @@
+@forward 'badges';
+@forward 'badges-v2';
+@forward 'bonds';
+@forward 'borders';
+@forward 'breakpoints';
+@forward 'buttons';
+@forward 'cards';
+@forward 'chips';
+@forward 'forms';
+@forward 'layers';
+@forward 'margins';
+@forward 'panels';
+@forward 'radii';
+@forward 'scroll-indicators';
+@forward 'shadows';
+@forward 'svgs';
+@forward 'typography';
+@forward 'utils';
+
+@warn 'Using re-export is not recommended as it could make your build slower. Consider importing only partials that you actually use';
