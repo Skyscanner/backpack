@@ -16,32 +16,34 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/forms';
+@use '../../bpk-mixins/next/utils';
 
 .bpk-label {
-  @include bpk-label;
+  @include forms.bpk-label;
 
   &--white {
-    @include bpk-label--white;
+    @include forms.bpk-label--white;
   }
 
   &--invalid {
-    @include bpk-label--invalid;
+    @include forms.bpk-label--invalid;
   }
 
   &--disabled {
-    @include bpk-label--disabled;
+    @include forms.bpk-label--disabled;
 
     &--white {
-      color: $bpk-text-disabled-on-dark-day;
+      color: tokens.$bpk-text-disabled-on-dark-day;
     }
   }
 
   &__asterisk {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-form-validation-text-color,
-      $bpk-form-validation-color
+      tokens.$bpk-form-validation-color
     );
   }
 }

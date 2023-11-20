@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/typography';
 
 .bpk-link {
-  @include bpk-link;
+  @include typography.bpk-link;
 
   &--active {
-    @include bpk-link--active;
+    @include typography.bpk-link--active;
   }
 
   &--alternate {
-    @include bpk-link--alternate;
+    @include typography.bpk-link--alternate;
   }
 }

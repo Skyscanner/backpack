@@ -16,22 +16,23 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/utils';
 
 .bpk-clear-button {
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $bpk-text-secondary-day;
+  color: tokens.$bpk-text-secondary-day;
   cursor: pointer;
   appearance: none;
 
-  @include bpk-hover {
-    color: $bpk-text-primary-day;
+  @include utils.bpk-hover {
+    color: tokens.$bpk-text-primary-day;
   }
 
   &:active {
-    color: $bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
   }
 
   &__icon {

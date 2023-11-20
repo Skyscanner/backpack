@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
-@import './BpkImage.module.scss';
+@use './BpkImage.module.scss' as *;
 
 .bpk-background-image {
   @include bpk-image;

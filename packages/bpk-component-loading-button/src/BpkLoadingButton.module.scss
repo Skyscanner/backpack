@@ -16,16 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use 'sass:math';
+@use '../../bpk-mixins/next/bonds' as tokens;
 
 .bpk-loading-button {
-  $button-padding-x: bpk-spacing-base() * 2;
-  $button-padding-y: bpk-spacing-lg() / 2;
-  $button-large-padding-y: bpk-spacing-lg();
-  $button-icon-only-padding-x: $bpk-button-height - $bpk-icon-size-sm; // this is in order to ensure icons are centred in icon-only buttons
+  $button-padding-x: tokens.bpk-spacing-base() * 2;
+  $button-padding-y: math.div(tokens.bpk-spacing-lg(), 2);
+  $button-large-padding-y: tokens.bpk-spacing-lg();
+  $button-icon-only-padding-x: tokens.$bpk-button-height -
+    tokens.$bpk-icon-size-sm; // this is in order to ensure icons are centred in icon-only buttons
   /* stylelint-disable-next-line scss/operator-no-newline-after */
-  $button-large-icon-only-padding-x: $bpk-button-large-height -
-    $bpk-icon-size-lg; // this is in order to ensure icons are centred in icon-only buttons
+  $button-large-icon-only-padding-x: tokens.$bpk-button-large-height -
+    tokens.$bpk-icon-size-lg; // this is in order to ensure icons are centred in icon-only buttons
 
   position: relative;
   overflow: hidden;

@@ -16,32 +16,37 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/borders';
+@use '../../bpk-mixins/next/breakpoints';
+@use '../../bpk-mixins/next/shadows';
+@use '../../bpk-mixins/next/typography';
+@use '../../bpk-mixins/next/utils';
 
 .bpk-drawer {
   position: fixed;
   right: 0;
   display: flex;
-  z-index: $bpk-zindex-drawer;
+  z-index: tokens.$bpk-zindex-drawer;
   width: 90%;
-  max-width: 50 * bpk-spacing-md();
+  max-width: 50 * tokens.bpk-spacing-md();
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
-  transition: transform $bpk-duration-sm ease;
+  transition: transform tokens.$bpk-duration-sm ease;
   outline: 0;
-  background: $bpk-surface-default-day;
+  background: tokens.$bpk-surface-default-day;
   overflow-y: scroll;
 
-  @include bpk-box-shadow-xl;
+  @include shadows.bpk-box-shadow-xl;
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     right: auto;
     left: 0;
     transform: translate(-100%);
   }
 
-  @include bpk-breakpoint-mobile {
+  @include breakpoints.bpk-breakpoint-mobile {
     width: 100%;
     max-width: 100%;
   }
@@ -50,55 +55,55 @@
   &--entered {
     transform: translate(0);
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       transform: translate(0);
     }
   }
 
   &--exiting {
-    transition: transform $bpk-duration-xs ease;
+    transition: transform tokens.$bpk-duration-xs ease;
   }
 
   &--exiting,
   &--exited {
     transform: translate(100%);
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       transform: translate(-100%);
     }
   }
 
   &__header {
     display: flex;
-    min-height: #{2 * bpk-spacing-base() + bpk-spacing-base()}; // keep height the same if visually hidden title
-    padding: bpk-spacing-base();
+    min-height: #{2 * tokens.bpk-spacing-base() + tokens.bpk-spacing-base()}; // keep height the same if visually hidden title
+    padding: tokens.bpk-spacing-base();
     justify-content: space-between;
     align-items: center;
     flex: 0 0;
 
-    @include bpk-border-bottom-sm($bpk-line-day);
+    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
 
   &__heading {
-    @include bpk-text;
-    @include bpk-label-1;
+    @include typography.bpk-text;
+    @include typography.bpk-label-1;
 
     &--visually-hidden {
-      @include bpk-visually-hidden;
+      @include utils.bpk-visually-hidden;
     }
   }
 
   &__close-button {
     float: right;
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       float: left;
     }
   }
 
   &__content {
     height: 100%;
-    padding: bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
     flex: 1 1 100%;
     overflow-y: auto;
   }

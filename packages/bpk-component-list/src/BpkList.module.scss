@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/typography';
 
 .bpk-list {
-  @include bpk-list;
+  @include typography.bpk-list;
 
   &__item {
-    @include bpk-list-item;
+    @include typography.bpk-list-item;
   }
 
   & & {
-    @include bpk-list--nested;
+    @include typography.bpk-list--nested;
 
     /* stylelint-disable selector-max-compound-selectors */
 

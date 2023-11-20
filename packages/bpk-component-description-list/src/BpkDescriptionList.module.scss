@@ -16,21 +16,23 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
+@use '../../bpk-mixins/next/typography';
+@use '../../bpk-mixins/next/utils';
 
 .bpk-description-list {
   margin: 0;
 
   &__term {
-    @include bpk-label-1;
+    @include typography.bpk-label-1;
   }
 
   &__details {
     margin: 0;
-    margin-left: bpk-spacing-lg();
+    margin-left: tokens.bpk-spacing-lg();
 
-    @include bpk-rtl {
-      margin-right: bpk-spacing-lg();
+    @include utils.bpk-rtl {
+      margin-right: tokens.bpk-spacing-lg();
       margin-left: 0;
     }
   }

@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
 
 .bpk-sentinel {
   // this is necessary for when the user doesn't define a custom loading component
   width: 100%;
-  height: bpk-spacing-lg();
+  height: tokens.bpk-spacing-lg();
 }
