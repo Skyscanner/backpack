@@ -25,7 +25,7 @@ import BpkSmallArrowUpIcon from '../../bpk-component-icon/sm/arrow-up';
 import { withRtlSupport } from '../../bpk-component-icon';
 
 import { SORT_DIRECTION_TYPES } from './sort-types';
-import STYLES from './BpkDataTableHeader.module.scss';
+import STYLES from './BpkDataTableHeader.module.css';
 import { type ColumnType } from './common-types';
 
 const DownIcon = withRtlSupport(BpkSmallArrowDownIcon);

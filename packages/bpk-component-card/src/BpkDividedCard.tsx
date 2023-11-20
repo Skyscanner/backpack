@@ -21,7 +21,7 @@ import type { ReactNode } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCard from './BpkCard';
-import STYLES from './BpkDividedCard.module.scss';
+import STYLES from './BpkDividedCard.module.css';
 
 const getClassName = cssModules(STYLES);
 

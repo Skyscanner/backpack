@@ -23,7 +23,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 import BpkDialogInner from './BpkDialogInner';
 import type { Props } from './common-types';
 import { HEADER_ICON_TYPES } from './common-types';
-import STYLES from './BpkDialog.module.scss';
+import STYLES from './BpkDialog.module.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -31,7 +31,7 @@ import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
 import { withLargeButtonAlignment } from '../../bpk-component-icon';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSaveButton.module.scss';
+import STYLES from './BpkSaveButton.module.css';
 
 export const SIZE_TYPES = {
   default: 'default',

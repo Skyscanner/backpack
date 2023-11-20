@@ -22,7 +22,7 @@ import { Component } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 import { BpkButtonLink } from '../../bpk-component-link';
 
-import STYLES from './BpkGridToggle.module.scss';
+import STYLES from './BpkGridToggle.module.css';
 
 const getClassName = cssModules(STYLES);
 

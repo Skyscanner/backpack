@@ -24,7 +24,7 @@ import { useTable, useSortBy } from 'react-table';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkDataTable.module.scss';
+import STYLES from './BpkDataTable.module.css';
 import type { Props } from './common-types';
 import { SORT_DIRECTION_TYPES } from './sort-types';
 import BpkDataTableHeader from './BpkDataTableHeader';
@@ -88,9 +88,9 @@ const BpkDataTable = (props: Props) => {
   const columns = useMemo(() => {
     if (columnsData) {
       return createColumnsSchema(columnsData);
-    } 
+    }
       return getColumns(children);
-    
+
   }, [children, columnsData]);
 
   const data = useMemo(() => rowsData, [rowsData]);

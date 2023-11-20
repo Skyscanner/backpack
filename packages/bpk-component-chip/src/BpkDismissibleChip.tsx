@@ -29,7 +29,7 @@ import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
 import BpkSelectableChip from './BpkSelectableChip';
 import type { CommonProps as Props } from './commonTypes';
 import { CHIP_TYPES } from './commonTypes';
-import STYLES from './BpkSelectableChip.module.scss';
+import STYLES from './BpkSelectableChip.module.css';
 
 const getClassName = cssModules(STYLES);
 

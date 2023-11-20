@@ -20,7 +20,7 @@ import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkCardWrapper.module.scss';
+import STYLES from './BpkCardWrapper.module.css';
 
 const getClassName = cssModules(STYLES);
 

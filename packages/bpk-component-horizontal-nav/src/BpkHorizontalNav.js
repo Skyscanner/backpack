@@ -24,7 +24,7 @@ import type { Node } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 
-import STYLES from './BpkHorizontalNav.module.scss';
+import STYLES from './BpkHorizontalNav.module.css';
 
 const getClassName = cssModules(STYLES);
 
@@ -194,7 +194,7 @@ BpkHorizontalNav.propTypes = {
   className: PropTypes.string,
   leadingScrollIndicatorClassName: PropTypes.string,
   /**
-   * When set to "false", the bottom border on the component isn't included. This refers 
+   * When set to "false", the bottom border on the component isn't included. This refers
    * to the underline on the whole "BpkHorizontalNav", not the line that appears under the selected item.
    */
   showUnderline: PropTypes.bool,

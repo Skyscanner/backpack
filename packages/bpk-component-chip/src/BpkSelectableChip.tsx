@@ -21,7 +21,7 @@ import type { ReactNode } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
-import STYLES from './BpkSelectableChip.module.scss';
+import STYLES from './BpkSelectableChip.module.css';
 import type { CommonProps } from './commonTypes';
 import { CHIP_TYPES } from './commonTypes';
 
