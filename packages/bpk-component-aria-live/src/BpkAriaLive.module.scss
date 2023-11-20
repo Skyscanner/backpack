@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/utils';
 
 .bpk-aria-live {
   &--invisible {
-    @include bpk-visually-hidden;
+    @include utils.bpk-visually-hidden;
   }
 }

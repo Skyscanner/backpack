@@ -16,52 +16,52 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/badges';
 
 .bpk-badge {
-  @include bpk-badge;
+  @include badges.bpk-badge;
 
   &--centered {
-    @include bpk-badge--centered;
+    @include badges.bpk-badge--centered;
   }
 
   &--docked-right {
-    @include bpk-badge--docked-right;
+    @include badges.bpk-badge--docked-right;
   }
 
   &--docked-left {
-    @include bpk-badge--docked-left;
+    @include badges.bpk-badge--docked-left;
   }
 
   &--warning {
-    @include bpk-badge--warning;
+    @include badges.bpk-badge--warning;
   }
 
   &--success {
-    @include bpk-badge--success;
+    @include badges.bpk-badge--success;
   }
 
   &--critical {
-    @include bpk-badge--critical;
+    @include badges.bpk-badge--critical;
   }
 
   &--normal {
-    @include bpk-badge--normal;
+    @include badges.bpk-badge--normal;
   }
 
   &--inverse {
-    @include bpk-badge--inverse;
+    @include badges.bpk-badge--inverse;
   }
 
   &--outline {
-    @include bpk-badge--outline;
+    @include badges.bpk-badge--outline;
   }
 
   &--strong {
-    @include bpk-badge--strong;
+    @include badges.bpk-badge--strong;
   }
 
   &--brand {
-    @include bpk-badge--brand;
+    @include badges.bpk-badge--brand;
   }
 }

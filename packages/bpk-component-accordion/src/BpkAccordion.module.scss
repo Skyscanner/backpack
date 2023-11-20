@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
 
 .bpk-accordion {
   margin: 0;
 
   &--on-dark {
-    color: $bpk-text-on-dark-day;
+    color: tokens.$bpk-text-on-dark-day;
   }
 }

@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/next/bonds' as tokens;
 
 .bpk-chart {
   &__grid-line {
     shape-rendering: crispedges;
-    stroke: $bpk-line-day;
+    stroke: tokens.$bpk-line-day;
   }
 }
