@@ -16,14 +16,41 @@
  * limitations under the License.
  */
 
-// We disable eslint here as this package is listed as a peerDep so consumers are required to install this when using this package.
- 
-const nodeSass = require('node-sass');
+@use 'bonds' as tokens;
 
-module.exports = {
-  'encodebase64($string)': (str) => {
-    const buffer = Buffer.from(str.getValue());
+////
+/// @group box-shadows
+////
 
-    return nodeSass.types.String(buffer.toString('base64'));
-  },
-};
+/// Small box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-sm();
+///   }
+
+@mixin bpk-box-shadow-sm {
+  box-shadow: tokens.$bpk-box-shadow-sm;
+}
+
+/// Large box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-lg();
+///   }
+
+@mixin bpk-box-shadow-lg {
+  box-shadow: tokens.$bpk-box-shadow-lg;
+}
+
+/// Extra large box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-xl();
+///   }
+
+@mixin bpk-box-shadow-xl {
+  box-shadow: tokens.$bpk-box-shadow-xl;
+}
