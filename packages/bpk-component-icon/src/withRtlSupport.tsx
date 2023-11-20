@@ -18,7 +18,7 @@
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkIcon.module.scss';
+import STYLES from './BpkIcon.module.css';
 import classNameModifierHOCFactory from './classNameModifierHOCFactory';
 
 const getClassName = cssModules(STYLES);

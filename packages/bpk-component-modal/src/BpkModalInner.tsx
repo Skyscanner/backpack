@@ -26,7 +26,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkModalInner.module.scss';
+import STYLES from './BpkModalInner.module.css';
 
 const getClassName = cssModules(STYLES);
 

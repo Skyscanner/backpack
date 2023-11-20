@@ -22,7 +22,7 @@ import { cssModules } from '../../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
 
-import STYLES from './BpkPriceMarker.module.scss';
+import STYLES from './BpkPriceMarker.module.css';
 
 const getClassName = cssModules(STYLES);
 export const MARKER_STATUSES = {

@@ -21,7 +21,7 @@ import type { ReactNode } from 'react';
 import { withScrim } from '../../bpk-scrim-utils';
 import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
 
-import STYLES from './BpkModal.module.scss';
+import STYLES from './BpkModal.module.css';
 import BpkModalInner from './BpkModalInner';
 import type { Props as ModalDialogProps } from './BpkModalInner';
 
@@ -43,7 +43,7 @@ export type Props = Partial<ModalDialogProps> & {
     },
   ) => void;
   /**
-   * Because this component uses a modal on mobile viewports, you need to let it know what 
+   * Because this component uses a modal on mobile viewports, you need to let it know what
    * the root element of your application is by returning its DOM node via this prop
    * This is to "hide" your application from screen readers whilst the modal is open.
    * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".

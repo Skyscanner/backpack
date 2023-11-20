@@ -49,7 +49,7 @@ import type {
   ExpandableBannerAction,
 } from './common-types';
 import { ALERT_TYPES, STYLE_TYPES } from './common-types';
-import STYLES from './BpkInfoBanner.module.scss';
+import STYLES from './BpkInfoBanner.module.css';
 
 const getClassName = cssModules(STYLES);
 

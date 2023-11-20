@@ -28,7 +28,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import './intersection-observer';
 import DataSource from './DataSource';
-import STYLES from './withInfiniteScroll.module.scss';
+import STYLES from './withInfiniteScroll.module.css';
 
 const getClassNames = cssModules(STYLES);
 

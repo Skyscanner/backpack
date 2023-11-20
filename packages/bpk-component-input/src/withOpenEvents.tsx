@@ -26,7 +26,7 @@ import type {
 
 import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
 
-import STYLES from './BpkInput.module.scss';
+import STYLES from './BpkInput.module.css';
 
 const getClassName = cssModules(STYLES);
 

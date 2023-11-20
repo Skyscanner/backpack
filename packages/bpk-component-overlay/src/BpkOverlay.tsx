@@ -20,7 +20,7 @@ import type { ComponentProps, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkOverlay.module.scss';
+import STYLES from './BpkOverlay.module.css';
 
 const getClassName = cssModules(STYLES);
 

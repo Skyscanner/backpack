@@ -32,7 +32,7 @@ import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
 import ArrowIconLg from '../../bpk-component-icon/lg/long-arrow-right';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkLoadingButton.module.scss';
+import STYLES from './BpkLoadingButton.module.css';
 
 const getClassName = cssModules(STYLES);
 

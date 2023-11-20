@@ -22,7 +22,7 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkLabel.module.scss';
+import STYLES from './BpkLabel.module.css';
 
 const getClassName = cssModules(STYLES);
 

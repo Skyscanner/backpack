@@ -26,7 +26,7 @@ import { GoogleMap } from '@react-google-maps/api';
 import { cssModules } from '../../bpk-react-utils';
 
 import { LatLongPropType, type LatLong } from './common-types';
-import STYLES from './BpkMap.module.scss';
+import STYLES from './BpkMap.module.css';
 
 const getClassName = cssModules(STYLES);
 

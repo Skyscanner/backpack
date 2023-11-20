@@ -20,7 +20,7 @@ import type { ComponentType } from 'react';
 
 import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
 
-import STYLES from './withDescription.module.scss';
+import STYLES from './withDescription.module.css';
 
 const getClassName = cssModules(STYLES);
 

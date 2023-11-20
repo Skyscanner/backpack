@@ -25,7 +25,7 @@ import { Component } from 'react';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
-import STYLES from './BpkMobileScrollContainer.module.scss';
+import STYLES from './BpkMobileScrollContainer.module.css';
 
 const getClassName = cssModules(STYLES);
 
@@ -103,7 +103,7 @@ const propTypes = {
   className: PropTypes.string,
   leadingIndicatorClassName: PropTypes.string,
   trailingIndicatorClassName: PropTypes.string,
-  style: PropTypes.object,  
+  style: PropTypes.object,
   showScrollbar: PropTypes.bool,
 };
 

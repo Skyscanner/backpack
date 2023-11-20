@@ -26,7 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkSpinner } from '../../bpk-component-spinner';
 
-import STYLES from './BpkImage.module.scss';
+import STYLES from './BpkImage.module.css';
 import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
 const getClassName = cssModules(STYLES);

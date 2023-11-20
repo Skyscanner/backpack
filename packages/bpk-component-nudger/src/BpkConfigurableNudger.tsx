@@ -25,7 +25,7 @@ import PlusIcon from '../../bpk-component-icon/sm/plus';
 import { cssModules } from '../../bpk-react-utils';
 
 import { type CommonProps } from './common-types';
-import STYLES from './BpkNudger.module.scss';
+import STYLES from './BpkNudger.module.css';
 
 const getClassName = cssModules(STYLES);
 
@@ -35,7 +35,7 @@ const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 type Props = CommonProps & {
   inputClassName?: string | null;
   /**
-   * A simple function that will allow you to set the format of the display value e.g. local dates or times. 
+   * A simple function that will allow you to set the format of the display value e.g. local dates or times.
    */
   formatValue: (arg0: any) => string;
   /**

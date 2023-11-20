@@ -21,7 +21,7 @@ import { Component } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
-import STYLES from './BpkInput.module.scss';
+import STYLES from './BpkInput.module.css';
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
 import type { Props } from './common-types';
 

@@ -24,7 +24,7 @@ import BpkCloseButton from '../../../bpk-component-close-button';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
 
-import STYLES from './BpKModal.module.scss';
+import STYLES from './BpKModal.module.css';
 
 const getClassName = cssModules(STYLES);
 

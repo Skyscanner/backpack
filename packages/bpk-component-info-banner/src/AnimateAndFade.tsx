@@ -27,7 +27,7 @@ import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
 
-import STYLES from './BpkAnimateAndFade.module.scss';
+import STYLES from './BpkAnimateAndFade.module.css';
 
 const getClassName = cssModules(STYLES);
 

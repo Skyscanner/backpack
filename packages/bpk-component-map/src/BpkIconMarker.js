@@ -26,7 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkIconMarkerBackground from './BpkIconMarkerBackground';
 import { LatLongPropType, type LatLong } from './common-types';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
-import STYLES from './BpkIconMarker.module.scss';
+import STYLES from './BpkIconMarker.module.css';
 
 const getClassName = cssModules(STYLES);
 

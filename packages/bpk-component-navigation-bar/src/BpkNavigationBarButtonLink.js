@@ -25,7 +25,7 @@ import PropTypes from 'prop-types';
 import { BpkButtonLink } from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkNavigationBarButtonLink.module.scss';
+import STYLES from './BpkNavigationBarButtonLink.module.css';
 
 const getClassName = cssModules(STYLES);
 

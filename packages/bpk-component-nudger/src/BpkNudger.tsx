@@ -23,7 +23,7 @@ import BpkLabel from '../../bpk-component-label';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
 import { type CommonProps } from './common-types';
-import STYLES from './BpkNudger.module.scss';
+import STYLES from './BpkNudger.module.css';
 
 const getClassName = cssModules(STYLES);
 const compareValues = (a: number, b: number): number => a - b;
@@ -40,7 +40,7 @@ const BpkNudger = ({
   title,
   ...rest
 }: CommonProps) => {
-  
+
   const classNames = getClassName(title && 'bpk-nudger__container');
 
   return (
