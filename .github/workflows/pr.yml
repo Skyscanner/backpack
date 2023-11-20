@@ -130,7 +130,7 @@ jobs:
         publish_branch: main
 
     - name: Link to the pull request build
-      uses: actions/github-script@v6
+      uses: actions/github-script@v7
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
       with:
         script: |
