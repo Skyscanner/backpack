@@ -80,13 +80,13 @@ describe('withScrimmedPortal', () => {
     expect(within(hiddenElements as HTMLElement).queryByText('Wrapped Component')).toBeNull();
   });
 
-  it('notifies the child component when the portal is ready', () => {
+  it('notifies the child component when the portal is ready on client', () => {
     const WrappedComponent = ({ isPortalReady }: Props) => {
       const [portalStatus, setPortalStatus] = useState('');
       useEffect(() => {
         if (isPortalReady) {
           setPortalStatus(`${portalStatus} portal is now ready`);
-        } else {
+        } else {          
           setPortalStatus(`${portalStatus} portal is not ready yet /`);
         }
       }, [isPortalReady]);
@@ -106,53 +106,20 @@ describe('withScrimmedPortal', () => {
       </div>
     );
 
-    expect(screen.getByText('Wrapped Component / portal is not ready yet / portal is now ready')).toBeInTheDocument();
+    expect(screen.getByText('Wrapped Component / portal is now ready')).toBeInTheDocument();
   });
 
-  it('renders the wrapped component inside a portal correctly when runOnServer is false (default)', () => {
-    const DialogContent = () => <div data-testid="dialog-content">Dialog content</div>;
-    const ScrimmedComponent = withScrimmedPortal(DialogContent);
-
-    render(
-      <div id="pagewrap">
-        <div> Content hidden from AT</div>
-        <ScrimmedComponent
-          getApplicationElement={() => document.getElementById('pagewrap')}
-          runOnServer={false}
-        />
-      </div>
-    );
-    expect(document.body).toContainElement(screen.getByTestId('dialog-content'));
-  });
-
-  it('renders the wrapped component inside a portal correctly when runOnServer is true', () => {
-    const DialogContent = () => <div data-testid="dialog-content">Dialog content</div>;
-    const ScrimmedComponent = withScrimmedPortal(DialogContent);
-
-    render(
-      <div id="pagewrap">
-        <div> Content hidden from AT</div>
-        <ScrimmedComponent
-          getApplicationElement={() => document.getElementById('pagewrap')}
-          runOnServer
-        />
-      </div>
-    );
-    expect(document.body).toContainElement(screen.getByTestId('dialog-content'));
-  });
-
-  it('throws an error when runOnServer is false and component is rendered on the server', () => {
-    const DialogContent = () => <div>Dialog content</div>;
-    const ScrimmedComponent = withScrimmedPortal(DialogContent);
+  it('renders on the server', () => {
+    const WrappedComponent = () => <div data-testid="dialog-content">Wrapped Component</div>;
+    const ScrimmedComponent = withScrimmedPortal(WrappedComponent);
 
     expect(() => renderToString(
       <div id="pagewrap">
         <div> Content hidden from AT</div>
         <ScrimmedComponent
           getApplicationElement={() => document.getElementById('pagewrap')}
-          runOnServer={false}
         />
       </div>
-    )).toThrow();
+    )).not.toThrow();
   });
 });
