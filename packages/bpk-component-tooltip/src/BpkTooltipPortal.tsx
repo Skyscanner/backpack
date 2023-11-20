@@ -24,7 +24,7 @@ import { Portal, cssModules } from '../../bpk-react-utils';
 
 import BpkTooltip from './BpkTooltip';
 import type { TooltipProps } from './BpkTooltip';
-import STYLES from './BpkTooltip.module.scss';
+import STYLES from './BpkTooltip.module.css';
 import { TOOLTIP_TYPES } from './constants';
 
 const getClassName = cssModules(STYLES);

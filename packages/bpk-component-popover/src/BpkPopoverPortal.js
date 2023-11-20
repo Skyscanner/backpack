@@ -27,7 +27,7 @@ import focusStore from 'a11y-focus-store';
 import { Portal, cssModules } from '../../bpk-react-utils';
 
 import keyboardFocusScope from './keyboardFocusScope';
-import STYLES from './BpkPopover.module.scss';
+import STYLES from './BpkPopover.module.css';
 import BpkPopover, {
   type Props as PopoverProps,
 } from './BpkPopover';
@@ -232,14 +232,14 @@ export const propTypes = {
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   isOpen: PropTypes.bool.isRequired,
   placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-  portalStyle: PropTypes.object,  
+  portalStyle: PropTypes.object,
   portalClassName: PropTypes.string,
   renderTarget: PropTypes.func,
   /**
    * Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js".
    * You can achieve various behaviours such as allowing the popover to overflow the viewport etc.
    */
-  popperModifiers: PropTypes.arrayOf(PropTypes.object),  
+  popperModifiers: PropTypes.arrayOf(PropTypes.object),
 };
 
 export const defaultProps = {

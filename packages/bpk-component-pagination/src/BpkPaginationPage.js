@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkPaginationPage.module.scss';
+import STYLES from './BpkPaginationPage.module.css';
 
 const getClassName = cssModules(STYLES);
 

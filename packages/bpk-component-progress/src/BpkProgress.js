@@ -24,7 +24,7 @@ import clamp from 'lodash.clamp';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkProgress.module.scss';
+import STYLES from './BpkProgress.module.css';
 
 const getClassName = cssModules(STYLES);
 

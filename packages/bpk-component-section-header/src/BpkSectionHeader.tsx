@@ -21,7 +21,7 @@ import type { ReactNode } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 import BpkText from '../../bpk-component-text';
 
-import STYLES from './BpkSectionHeader.module.scss';
+import STYLES from './BpkSectionHeader.module.css';
 
 const getClassName = cssModules(STYLES);
 

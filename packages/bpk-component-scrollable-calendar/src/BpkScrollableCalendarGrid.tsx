@@ -23,7 +23,7 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { BpkCalendarGrid } from '../../bpk-component-calendar';
 import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 
-import STYLES from './BpkScrollableCalendarGrid.module.scss';
+import STYLES from './BpkScrollableCalendarGrid.module.css';
 
 const getClassName = cssModules(STYLES);
 

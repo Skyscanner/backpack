@@ -23,7 +23,7 @@ import XlSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/xl';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSpinner.module.scss';
+import STYLES from './BpkSpinner.module.css';
 import SPINNER_TYPES from './spinnerTypes';
 
 const getClassName = cssModules(STYLES);

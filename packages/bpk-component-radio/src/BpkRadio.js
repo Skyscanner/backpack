@@ -23,7 +23,7 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkRadio.module.scss';
+import STYLES from './BpkRadio.module.css';
 
 const getClassName = cssModules(STYLES);
 

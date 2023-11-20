@@ -20,7 +20,7 @@ import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkText.module.scss';
+import STYLES from './BpkText.module.css';
 
 const getClassName = cssModules(STYLES);
 

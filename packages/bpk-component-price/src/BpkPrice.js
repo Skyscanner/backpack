@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
-import STYLES from './BpkPrice.module.scss';
+import STYLES from './BpkPrice.module.css';
 import { SIZES, ALIGNS } from './common-types';
 
 type Props = {

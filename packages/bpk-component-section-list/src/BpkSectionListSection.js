@@ -25,7 +25,7 @@ import { Children } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
-import STYLES from './BpkSectionListSection.module.scss';
+import STYLES from './BpkSectionListSection.module.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
-import STYLES from './BpkSlider.module.scss';
+import STYLES from './BpkSlider.module.css';
 
 const getClassName = cssModules(STYLES);
 

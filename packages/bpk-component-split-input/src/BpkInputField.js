@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
 import BpkInput from '../../bpk-component-input';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkInputField.module.scss';
+import STYLES from './BpkInputField.module.css';
 
 const getClassName = cssModules(STYLES);
 
