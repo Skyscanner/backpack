@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/bpk-mixins/next/bonds' as tokens;
 
 .bpk-info-banner-examples {
   &__component {
-    margin-top: bpk-spacing-base();
+    margin-top: tokens.bpk-spacing-base();
   }
 
   &__p {
-    padding: bpk-spacing-base() 0;
+    padding: tokens.bpk-spacing-base() 0;
   }
 }

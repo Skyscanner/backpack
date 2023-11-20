@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/bpk-mixins/next/bonds' as tokens;
+@use '../../packages/bpk-mixins/next/utils';
 
 .bpk-fieldsets {
   &__container {
@@ -24,12 +25,12 @@
   }
 
   &__fieldset {
-    margin-right: bpk-spacing-sm();
+    margin-right: tokens.bpk-spacing-sm();
     flex: 1;
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       margin-right: 0;
-      margin-left: bpk-spacing-sm();
+      margin-left: tokens.bpk-spacing-sm();
     }
   }
 
@@ -37,7 +38,7 @@
     margin-top: 1rem;
     text-align: right;
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       text-align: left;
     }
   }

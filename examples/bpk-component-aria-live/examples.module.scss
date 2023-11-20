@@ -16,23 +16,25 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/bpk-mixins/next/bonds' as tokens;
+@use '../../packages/bpk-mixins/next/borders';
+@use '../../packages/bpk-mixins/next/radii';
 
 .bpk-storybook-aria-live-demo {
-  padding: bpk-spacing-base();
-  background: $bpk-canvas-contrast-day;
-  color: $bpk-text-primary-day;
+  padding: tokens.bpk-spacing-base();
+  background: tokens.$bpk-canvas-contrast-day;
+  color: tokens.$bpk-text-primary-day;
 
-  @include bpk-border-sm($bpk-line-day);
-  @include bpk-border-radius-sm;
+  @include borders.bpk-border-sm(tokens.$bpk-line-day);
+  @include radii.bpk-border-radius-sm;
 
   &__chips-wrapper {
-    margin-bottom: bpk-spacing-base();
+    margin-bottom: tokens.bpk-spacing-base();
   }
 
   &__select-wrapper {
     display: flex;
-    margin-bottom: bpk-spacing-base();
+    margin-bottom: tokens.bpk-spacing-base();
     justify-content: space-between;
     align-items: center;
   }
@@ -46,16 +48,16 @@
   }
 
   &__chip {
-    margin-right: bpk-spacing-base();
-    margin-bottom: bpk-spacing-base();
+    margin-right: tokens.bpk-spacing-base();
+    margin-bottom: tokens.bpk-spacing-base();
   }
 
   &__aria-live {
-    margin-top: bpk-spacing-base();
+    margin-top: tokens.bpk-spacing-base();
   }
 
   > p {
-    margin-top: $bpk-spacing-none;
-    margin-bottom: bpk-spacing-base();
+    margin-top: tokens.$bpk-spacing-none;
+    margin-bottom: tokens.bpk-spacing-base();
   }
 }

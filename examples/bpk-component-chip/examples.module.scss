@@ -16,36 +16,36 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/bpk-mixins/next/bonds' as tokens;
 
 .bpk-chip-examples {
   &__container {
-    padding-top: bpk-spacing-lg();
+    padding-top: tokens.bpk-spacing-lg();
 
     &:last-child {
-      padding-bottom: bpk-spacing-xl();
+      padding-bottom: tokens.bpk-spacing-xl();
     }
   }
 
   &__chip {
-    margin-right: bpk-spacing-md();
+    margin-right: tokens.bpk-spacing-md();
   }
 
   &__on-dark {
-    margin-top: bpk-spacing-lg();
-    padding: bpk-spacing-base();
-    background-color: $bpk-core-primary-day;
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-core-primary-day;
   }
 
   &__default {
-    margin-top: bpk-spacing-lg();
-    padding: bpk-spacing-base();
-    background-color: $bpk-surface-default-day;
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-surface-default-day;
   }
 
   &__on-image {
-    margin-top: bpk-spacing-lg();
-    padding: bpk-spacing-base();
-    background-color: $bpk-surface-highlight-day;
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-surface-highlight-day;
   }
 }
