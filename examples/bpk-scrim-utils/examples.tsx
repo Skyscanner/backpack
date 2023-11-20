@@ -20,7 +20,7 @@ import { withScrimmedPortal } from '../../packages/bpk-scrim-utils';
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.scss';
+import STYLES from './examples.css';
 
 const getClassName = cssModules(STYLES);
 

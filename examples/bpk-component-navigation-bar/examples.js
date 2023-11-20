@@ -28,7 +28,7 @@ import BpkNavigationBar, {
   BpkNavigationBarIconButton,
 } from '../../packages/bpk-component-navigation-bar';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 import AirlineLogo from './AirlineLogo';
 
 const getClassNames = cssModules(STYLES);

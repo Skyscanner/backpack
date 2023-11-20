@@ -25,7 +25,7 @@ import BpkButton from '../../packages/bpk-component-button';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import { BpkModalV2 } from '../../packages/bpk-component-modal';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

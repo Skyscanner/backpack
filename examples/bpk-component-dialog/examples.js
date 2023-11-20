@@ -32,7 +32,7 @@ import BpkDialog, {
   HEADER_ICON_TYPES,
 } from '../../packages/bpk-component-dialog';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

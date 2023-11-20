@@ -24,7 +24,7 @@ import BpkPageIndicator, {
 import { BpkBackgroundImage } from '../../packages/bpk-component-image';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

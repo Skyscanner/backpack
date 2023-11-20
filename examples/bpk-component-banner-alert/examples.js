@@ -32,7 +32,7 @@ import BpkBannerAlert, {
   BpkBannerAlertExpandable,
 } from '../../packages/bpk-component-banner-alert';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

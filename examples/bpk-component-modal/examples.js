@@ -37,7 +37,7 @@ import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkModal from '../../packages/bpk-component-modal';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const ArrowIconWithRtl = withAlignment(
   withRtlSupport(ArrowIcon),

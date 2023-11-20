@@ -21,7 +21,7 @@ import BpkGraphicPromo, {
 } from '../../packages/bpk-component-graphic-promotion';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const contentId = 'graphic-promo-content';
 const getClassName = cssModules(STYLES);

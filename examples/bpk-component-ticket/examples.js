@@ -29,7 +29,7 @@ import {
 } from '../../packages/bpk-component-icon';
 import BpkTicket from '../../packages/bpk-component-ticket';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

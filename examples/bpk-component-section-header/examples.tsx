@@ -24,7 +24,7 @@ import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-a
 import { withButtonAlignment } from '../../packages/bpk-component-icon/index';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

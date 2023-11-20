@@ -33,7 +33,7 @@ import {
   SIZE_TYPES,
 } from '../../packages/bpk-component-button/src/BpkButtonV2/common-types';
 
-import STYLES from './BpkButtonStory.module.scss';
+import STYLES from './BpkButtonStory.module.css';
 
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(
   withRtlSupport(SmallLongArrowRightIcon),

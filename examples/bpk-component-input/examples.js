@@ -32,7 +32,7 @@ import BpkInput, {
   CLEAR_BUTTON_MODES,
 } from '../../packages/bpk-component-input';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -33,7 +33,7 @@ import BpkNudger, {
   BpkConfigurableNudger,
 } from '../../packages/bpk-component-nudger';
 
-import STYLES from './BpkNudgerStory.module.scss';
+import STYLES from './BpkNudgerStory.module.css';
 
 const getClassName = cssModules(STYLES);
 

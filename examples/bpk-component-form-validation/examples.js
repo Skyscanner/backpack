@@ -27,7 +27,7 @@ import BpkInput from '../../packages/bpk-component-input';
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkFormValidation from '../../packages/bpk-component-form-validation';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

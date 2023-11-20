@@ -53,7 +53,7 @@ import {
 import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
 import BpkDatepicker from '../../packages/bpk-component-datepicker';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

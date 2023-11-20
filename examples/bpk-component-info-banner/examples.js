@@ -36,7 +36,7 @@ import BpkInfoBanner, {
 } from '../../packages/bpk-component-info-banner';
 import BpkText from '../../packages/bpk-component-text';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

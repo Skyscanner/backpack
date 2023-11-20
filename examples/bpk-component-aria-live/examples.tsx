@@ -30,7 +30,7 @@ import BpkAriaLive, {
   ARIA_LIVE_POLITENESS_SETTINGS,
 } from '../../packages/bpk-component-aria-live';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

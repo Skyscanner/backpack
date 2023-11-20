@@ -37,7 +37,7 @@ import BpkBarchart, {
 } from '../../packages/bpk-component-barchart';
 
 import { withSelectedState } from './hocs';
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

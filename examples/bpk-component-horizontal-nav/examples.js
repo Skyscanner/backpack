@@ -30,7 +30,7 @@ import BpkHorizontalNav, {
   HORIZONTAL_NAV_TYPES,
 } from '../../packages/bpk-component-horizontal-nav';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

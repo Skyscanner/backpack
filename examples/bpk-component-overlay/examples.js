@@ -25,7 +25,7 @@ import BpkOverlay, {
   OVERLAY_TYPES,
 } from '../../packages/bpk-component-overlay';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const IMAGE_SRC =
   'https://content.skyscnr.com/m/1c8c6338a92a7a94/original/matt-hardy-6ArTTluciuA-unsplash.jpg';

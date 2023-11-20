@@ -21,7 +21,7 @@
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -37,7 +37,7 @@ import {
   COMMON_DEFAULT_PROPS,
 } from '../../packages/bpk-component-chip/src/commonTypes';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

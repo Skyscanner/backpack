@@ -36,7 +36,7 @@ import BpkLoadingButton, {
   ICON_POSITION,
 } from '../../packages/bpk-component-loading-button';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

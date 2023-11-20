@@ -33,7 +33,7 @@ import withInfiniteScroll, {
   DataSource,
 } from '../../packages/bpk-component-infinite-scroll';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

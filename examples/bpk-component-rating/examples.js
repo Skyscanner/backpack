@@ -23,7 +23,7 @@ import BpkRating, {
   RATING_SCALES,
 } from '../../packages/bpk-component-rating';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -25,7 +25,7 @@ import {
   BpkContentBubble,
 } from '../../packages/bpk-component-flare';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

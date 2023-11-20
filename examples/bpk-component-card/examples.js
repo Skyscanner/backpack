@@ -31,7 +31,7 @@ import BpkCard, {
   ORIENTATION,
 } from '../../packages/bpk-component-card';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

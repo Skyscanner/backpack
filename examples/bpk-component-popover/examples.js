@@ -28,7 +28,7 @@ import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
 import BpkPopover from '../../packages/bpk-component-popover';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

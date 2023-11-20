@@ -24,7 +24,7 @@ import BpkButton from '../../packages/bpk-component-button';
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkProgress from '../../packages/bpk-component-progress';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 

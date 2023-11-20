@@ -26,7 +26,7 @@ import BpkButton from '../../packages/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkDrawer from '../../packages/bpk-component-drawer';
 
-import STYLES from './examples.module.scss';
+import STYLES from './examples.module.css';
 
 const getClassName = cssModules(STYLES);
 
