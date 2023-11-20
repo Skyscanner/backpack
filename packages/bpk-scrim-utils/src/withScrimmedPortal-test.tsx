@@ -80,7 +80,7 @@ describe('withScrimmedPortal', () => {
     expect(within(hiddenElements as HTMLElement).queryByText('Wrapped Component')).toBeNull();
   });
 
-  it('notifies the child component when the portal is ready on client', () => {
+  it('notifies the child component when the portal is ready', () => {
     const WrappedComponent = ({ isPortalReady }: Props) => {
       const [portalStatus, setPortalStatus] = useState('');
       useEffect(() => {
@@ -108,8 +108,10 @@ describe('withScrimmedPortal', () => {
 
     expect(screen.getByText('Wrapped Component / portal is now ready')).toBeInTheDocument();
   });
+});
 
-  it('renders on the server', () => {
+describe('Server Side Rendering', () => {
+  it('renders without crashing', () => {
     const WrappedComponent = () => <div data-testid="dialog-content">Wrapped Component</div>;
     const ScrimmedComponent = withScrimmedPortal(WrappedComponent);
 
