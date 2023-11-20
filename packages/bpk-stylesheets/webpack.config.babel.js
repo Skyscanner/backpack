@@ -73,6 +73,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
+              modules: 'global',
             },
           },
           {
@@ -98,6 +99,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
+              modules: 'global',
             },
           },
           {
