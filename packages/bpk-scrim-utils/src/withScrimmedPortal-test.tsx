@@ -17,7 +17,7 @@
  */
 
 import '@testing-library/jest-dom';
-import { render, within, screen, isInaccessible } from '@testing-library/react';
+import { render, within, screen } from '@testing-library/react';
 import { useEffect, useState } from 'react';
 import { renderToString } from 'react-dom/server';
 
@@ -37,7 +37,11 @@ describe('withScrimmedPortal', () => {
         />
       </div>
     );
+
+    const hiddenElements = document.getElementById('pagewrap');
+
     expect(document.body).toContainElement(screen.getByTestId('dialog-content'));
+    expect(within(hiddenElements as HTMLElement).queryByText('Wrapped Component')).toBeNull();
   });
 
   it('renders the wrapped component inside a portal with renderTarget provided', () => {
@@ -55,29 +59,12 @@ describe('withScrimmedPortal', () => {
           <div id="modal-container" />
        </div>
       );
+      const hiddenElements = document.getElementById('pagewrap');
+
       expect(
         document.getElementById('modal-container')
       ).toContainElement(screen.getByTestId('dialog-content'));
-  });
-
-  it('renders the wrapped component outside the applicationElement', () => {
-    const WrappedComponent = () => <div data-testid="dialog-content">Wrapped Component</div>;
-    const ScrimmedComponent = withScrimmedPortal(WrappedComponent);
-    render(
-      <div>
-        <div id="pagewrap">
-          <div> Content hidden from AT</div>
-          <ScrimmedComponent
-            getApplicationElement={() => document.getElementById('pagewrap')}
-            renderTarget={() => document.getElementById('modal-container')}
-          />
-        </div>
-        <div id="modal-container" />
-      </div>
-    );
-
-    const hiddenElements = document.getElementById('pagewrap');
-    expect(within(hiddenElements as HTMLElement).queryByText('Wrapped Component')).toBeNull();
+      expect(within(hiddenElements as HTMLElement).queryByText('Wrapped Component')).toBeNull();
   });
 
   it('notifies the child component when the portal is ready', () => {
