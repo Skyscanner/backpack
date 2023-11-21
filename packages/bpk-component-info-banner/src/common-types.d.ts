@@ -19,26 +19,32 @@
 import type { FunctionComponent, ReactNode } from 'react';
 
 export declare const ALERT_TYPES: {
-  readonly PRIMARY: 'primary';
-  readonly SUCCESS: 'success';
-  readonly WARN: 'warn';
-  readonly ERROR: 'error';
-  readonly NEUTRAL: 'neutral';
+  readonly SUCCESS: 'success',
+  readonly WARNING: 'warning',
+  readonly ERROR: 'error',
+  readonly INFO: 'info',
+};
+export declare const STYLE_TYPES: {
+  readonly DEFAULT: 'default',
+  readonly ON_CONTRAST: 'onContrast',
 };
 export type AlertTypeValue = (typeof ALERT_TYPES)[keyof typeof ALERT_TYPES];
+export type StyleTypeValue = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
 export type CommonProps = {
-  type: AlertTypeValue;
+  type?: AlertTypeValue;
   message: ReactNode | string;
   animateOnEnter?: boolean;
   animateOnLeave?: boolean;
   show?: boolean;
   bannerClassName?: string | null;
   icon?: FunctionComponent<any> | null;
+  style?: StyleTypeValue;
   [rest: string]: any;
 };
 export type OnExpandToggleHandler =
   | ((expanded: boolean) => void)
   | null
   | undefined;
+export type ExpandableBannerAction = { title: string, callback: () => void } | null | undefined;
 export type OnDismissHandler = (() => void) | null | undefined;
 export type OnHideHandler = (() => void) | null | undefined;
