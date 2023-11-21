@@ -1,0 +1,11 @@
+@import '../../../bpk-mixins/index.scss';
+
+.bpk-card-list--row {
+  display: flex;
+  flex-direction: row;
+  gap: bpk-spacing-lg();
+
+  > * {
+    flex-grow: 1;
+  }
+}

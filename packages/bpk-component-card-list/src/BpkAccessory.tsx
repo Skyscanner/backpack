@@ -14,7 +14,7 @@ type Props = {
   setCurrentIndex: (index: number) => void;
   showContent: () => void;
   totalIndicators: number;
-}
+};
 const BpkAccessory = ({
   accessory,
   currentIndex,
@@ -36,7 +36,11 @@ const BpkAccessory = ({
         prevNabLabel=""
         nextNavLabel=""
         showNav
-        onClick={(e: MouseEvent<HTMLButtonElement>, newIndex: number, direction: string) => {
+        onClick={(
+          e: MouseEvent<HTMLButtonElement>,
+          newIndex: number,
+          direction: string,
+        ) => {
           setCurrentIndex(newIndex);
         }}
       />
