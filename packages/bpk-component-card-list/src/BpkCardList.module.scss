@@ -30,21 +30,14 @@
 
   &--card-list {
     display: flex;
-    flex-direction: row;
-    // flex-wrap: wrap;
-
-    // TODO: this needed?
+    flex-direction: column;
     gap: bpk-spacing-lg();
-
-    &--grid {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
 
     &--row {
       display: flex;
       width: 100%;
       flex-direction: row;
+
       // flex-wrap: wrap;
       gap: bpk-spacing-lg();
 
