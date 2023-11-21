@@ -1,0 +1,8 @@
+@import '../../bpk-mixins/index.scss';
+
+.bpk-card-list-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: bpk-spacing-lg();
+}

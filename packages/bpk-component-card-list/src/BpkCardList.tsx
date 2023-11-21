@@ -51,7 +51,7 @@ export type BpkCardListProps = {
   layoutDesktop: 'row' | 'grid';
   layoutMobile: 'rail' | 'stack';
   accessory?: BpkAccessoryTypes;
-  expandString?: string;
+  expandText?: string;
 };
 
 const BpkCardList = ({
@@ -60,7 +60,7 @@ const BpkCardList = ({
   cardList,
   chipGroup,
   description,
-  expandString,
+  expandText,
   initiallyShownCards = DEFAULT_ITEMS,
   layoutDesktop,
   layoutMobile,
@@ -70,7 +70,6 @@ const BpkCardList = ({
   const [visibleCards, setVisibleCards] = useState(
     cardList.slice(0, initiallyShownCards),
   );
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const cards = visibleCards.map((card) => (
     <div className={getClassName('bpk-card-list--card-list--card')}>{card}</div>
@@ -90,9 +89,9 @@ const BpkCardList = ({
         description={description}
         button={buttonText && <BpkButtonV2>{buttonText}</BpkButtonV2>}
       />
-      <div className={getClassName(`bpk-card-list--chip-group`)}>
+      {/* <div className={getClassName(`bpk-card-list--chip-group`)}>
         {chipGroup}
-      </div>
+      </div> */}
 
       <div className={getClassName('bpk-card-list--card-list')}>
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
@@ -101,7 +100,13 @@ const BpkCardList = ({
               return layoutMobile === 'rail' ? (
                 <BpkCardListRail>{cards}</BpkCardListRail>
               ) : (
-                <BpkCardListStack expandString={expandString}>
+                <BpkCardListStack
+                  accessory={accessory}
+                  buttonText={buttonText}
+                  expandText={expandText}
+                  showContent={showContent}
+                  hideContent={hideContent}
+                >
                   {cards}
                 </BpkCardListStack>
               );
@@ -111,7 +116,7 @@ const BpkCardList = ({
               <BpkCardListGrid
                 accessory={accessory}
                 buttonText={buttonText}
-                expandString={expandString}
+                expandText={expandText}
                 showContent={showContent}
                 hideContent={hideContent}
               >

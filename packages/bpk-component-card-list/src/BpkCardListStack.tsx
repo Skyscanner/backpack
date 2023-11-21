@@ -1,6 +1,3 @@
-import { BpkButtonV2 } from '../../bpk-component-button';
-import { cssModules } from '../../bpk-react-utils';
-
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -18,7 +15,10 @@ import { cssModules } from '../../bpk-react-utils';
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import STYLES from './BpkCardList.module.scss';
+import { BpkButtonV2 } from '../../bpk-component-button';
+import { cssModules } from '../../bpk-react-utils';
+
+import STYLES from './BpkCardListStack.module.scss';
 import BpkExpand from './BpkExpand';
 
 const getClassName = cssModules(STYLES);
@@ -26,12 +26,13 @@ const getClassName = cssModules(STYLES);
 const BpkCardListStack = ({
   accessory, // EXPAND OR BUTTON
   buttonText,
-  cardList,
+  children,
+  expandText,
   hideContent,
   showContent,
 }: any) => (
   <>
-    <div className={getClassName('bpk-card-list--stack')}>{cardList}</div>
+    <div className={getClassName('bpk-card-list-stack')}>{children}</div>
 
     {!buttonText &&
       (accessory === 'expand' ? (

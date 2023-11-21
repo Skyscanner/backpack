@@ -18,7 +18,7 @@ import { cssModules } from '../../bpk-react-utils';
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import STYLES from './BpkCardList.module.scss';
+import STYLES from './BpkCardListGrid.module.scss';
 import BpkExpand from './BpkExpand';
 
 const getClassName = cssModules(STYLES);
@@ -26,12 +26,13 @@ const getClassName = cssModules(STYLES);
 const BpkCardListGrid = ({
   accessory, // EXPAND OR BUTTON
   buttonText,
-  cardList,
+  children,
+  expandText,
   hideContent,
-  showContent,
+  showContent
 }: any) => (
   <>
-    <div className={getClassName('bpk-card-list--grid')}>{cardList}</div>
+    <div className={getClassName('bpk-card-list-grid')}>{children}</div>
 
     {!buttonText &&
       (accessory === 'expand' ? (
