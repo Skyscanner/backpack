@@ -161,7 +161,7 @@
     "lint-staged": "^15.0.2",
     "lodash": "^4.17.20",
     "mini-css-extract-plugin": "^2.7.6",
-    "node-sass": "^6.0.1",
+    "node-sass": "^9.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^4.3.0",
     "prop-types": "^15.7.2",
