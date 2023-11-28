@@ -119,6 +119,7 @@ const BpkCardList = ({
                 expandText={expandText}
                 showContent={showContent}
                 hideContent={hideContent}
+                cardList={cardList}
               >
                 {cards}
               </BpkCardListGrid>

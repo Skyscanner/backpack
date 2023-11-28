@@ -2,7 +2,16 @@
 
 .bpk-card-list-grid {
   display: flex;
+  min-width: $bpk-one-pixel-rem * 281;
+  padding: $bpk-one-pixel-rem * 5; // TODO: remove
   flex-direction: row;
   flex-wrap: wrap;
+  overflow-y: hidden;
   gap: bpk-spacing-lg();
+
+  &--card {
+    min-width: $bpk-one-pixel-rem * 281;
+    flex-grow: 1;
+    scroll-snap-align: start;
+  }
 }
