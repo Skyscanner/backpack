@@ -22,6 +22,7 @@ import { debounce } from 'lodash';
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkExpand from '../BpkExpand';
+import type { BpkAccessoryTypes } from '../BpkAccessory';
 
 import STYLES from './BpkCardListGrid.module.scss';
 
@@ -30,14 +31,21 @@ const getClassName = cssModules(STYLES);
 const DEBOUNCE_TIME = 100;
 const DEFAULT_ITEMS = 3;
 
+type BpkCardListGridProps = {
+  accessory?: BpkAccessoryTypes;
+  buttonText?: string;
+  cardList: JSX.Element[];
+  expandText?: string;
+  initiallyShownCards?: number;
+}
+
 const BpkCardListGrid = ({
-  accessory, // EXPAND OR BUTTON
+  accessory,
   buttonText,
   cardList,
-  children,
   expandText,
   initiallyShownCards = DEFAULT_ITEMS,
-}: any) => {
+}: BpkCardListGridProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 

@@ -117,12 +117,8 @@ const BpkCardList = ({
                 accessory={accessory}
                 buttonText={buttonText}
                 expandText={expandText}
-                showContent={showContent}
-                hideContent={hideContent}
                 cardList={cardList}
-              >
-                {cards}
-              </BpkCardListGrid>
+              />
             ) : (
               <BpkCardListRow
                 accessory={accessory === 'pagination' && !buttonText}
