@@ -28,7 +28,6 @@ import STYLES from './BpkCardListGrid.module.scss';
 const getClassName = cssModules(STYLES);
 
 const DEBOUNCE_TIME = 100;
-const MIN_CARD_WIDTH = 281;
 const DEFAULT_ITEMS = 3;
 
 const BpkCardListGrid = ({
@@ -37,57 +36,32 @@ const BpkCardListGrid = ({
   cardList,
   children,
   expandText,
+  initiallyShownCards = DEFAULT_ITEMS,
 }: any) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const [containerWidth, setContainerWidth] = useState(0);
+  const [cardHeight, setCardHeight] = useState(0);
   const [showAll, setShowAll] = useState(false);
-  // const [visibleCards, setVisibleCards] = useState([]);
 
   const showContent = () => {
-    if (containerRef.current) {
-      containerRef.current.style.height = `auto`;
-    }
     setShowAll(true);
-  }
+  };
 
   const hideContent = () => {
-    if (containerRef.current) {
-      containerRef.current.style.height = `${(cardRef.current?.clientHeight || 0) + 15}px`;
-    }
     setShowAll(false);
-  }
-
-  /*
-  Calculate the number of cards that can be displayed on a page
-  The +2 is to avoid the calculation error caused by clientWidth in rounding
-  */
-  const calculateNumberOfDisplay = (): number =>
-    Math.floor((containerWidth + 2) / MIN_CARD_WIDTH);
-
-  // The number of cards that can be displayed on a page
-  let numberOfDisplay = calculateNumberOfDisplay();
+  };
 
   const debouncedGetWidth = debounce(() => {
     if (!containerRef.current) {
       return;
     }
-    // Get the latest width of the container and card
-    setContainerWidth(containerRef.current?.clientWidth || 0);
-    if (containerRef.current) {
-      containerRef.current.style.height = `${(cardRef.current?.clientHeight || 0) + 15}px`;
-    }
 
-    // Recalculate and initialize component position
-    numberOfDisplay = calculateNumberOfDisplay();
+    setCardHeight(cardRef.current?.clientHeight || 0);
   }, DEBOUNCE_TIME);
 
   useEffect(() => {
-    setContainerWidth(containerRef.current?.clientWidth || 0);
-    if(containerRef.current) {
-      containerRef.current.style.height = `${(cardRef.current?.clientHeight || 0) + 15}px`;
-    }
+    setCardHeight(cardRef.current?.clientHeight || 0);
   }, []);
 
   // Listen for screen width
@@ -98,23 +72,27 @@ const BpkCardListGrid = ({
     };
   });
 
-  const cards = cardList.map((card: any, index: number) => {
-    if (index === 0) {
-      return (<div ref={cardRef} className={getClassName('bpk-card-list-grid--card')}>{card}</div>)
-    }
-    return (
-      <div className={getClassName('bpk-card-list-grid--card')}>{card}</div>
-    )
-  });
-
+  const cards = cardList.map((card: any, index: number) => (
+    <div
+      ref={cardRef}
+      className={getClassName('bpk-card-list-grid--card')}
+      style={{
+        flexBasis: `${Math.floor((1 / initiallyShownCards) * 100) - 1}%`,
+      }}
+    >
+      {card}
+    </div>
+  ));
 
   return (
     <>
-      <div ref={containerRef} className={getClassName('bpk-card-list-grid')}>
-        {/* {cards.slice(
-          0,
-          numberOfDisplay < DEFAULT_ITEMS ? numberOfDisplay : DEFAULT_ITEMS,
-        )} */}
+      <div
+        ref={containerRef}
+        className={getClassName('bpk-card-list-grid')}
+        style={{
+          height: showAll ? 'auto' : `${cardHeight + 15}px`,
+        }}
+      >
         {cards}
       </div>
 
