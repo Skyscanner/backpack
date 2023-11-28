@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-card-list-grid{display:flex;flex-direction:row;flex-wrap:wrap;gap:1.5rem;min-width:17.5625rem}.bpk-card-list-grid--card{min-width:17.5625rem;flex-grow:1;scroll-snap-align:start}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-card-list-grid{display:flex;min-width:17.5625rem;padding:.3125rem;flex-direction:row;flex-wrap:wrap;overflow-y:hidden;gap:1.5rem}.bpk-card-list-grid--card{min-width:17.5625rem;flex-grow:1;scroll-snap-align:start}

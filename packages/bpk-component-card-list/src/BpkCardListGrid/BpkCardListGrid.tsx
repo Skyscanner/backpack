@@ -19,11 +19,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { debounce } from 'lodash';
 
-import { BpkButtonV2 } from '../../bpk-component-button';
-import { cssModules } from '../../bpk-react-utils';
+import { BpkButtonV2 } from '../../../bpk-component-button';
+import { cssModules } from '../../../bpk-react-utils';
+import BpkExpand from '../BpkExpand';
 
 import STYLES from './BpkCardListGrid.module.scss';
-import BpkExpand from './BpkExpand';
 
 const getClassName = cssModules(STYLES);
 
