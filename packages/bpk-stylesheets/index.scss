@@ -16,13 +16,8 @@
  * limitations under the License.
  */
 
-@layer reset, theme, utility;
-
-@layer reset {
+@layer base {
   @import '~normalize.css';
-}
-
-@layer theme {
   @import '../bpk-mixins/index.scss';
 
   // stylelint-disable-next-line selector-max-type
@@ -55,11 +50,6 @@
       -webkit-font-smoothing: antialiased;
     }
   }
-}
-
-@layer utility {
-  /* stylelint-disable-next-line no-duplicate-at-import-rules, no-invalid-position-at-import-rule */
-  @import '../bpk-mixins/index.scss';
 
   :focus-visible {
     @include bpk-focus-indicator;
