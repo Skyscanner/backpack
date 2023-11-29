@@ -16,65 +16,74 @@
  * limitations under the License.
  */
 
-@import '~normalize.css';
-@import '../bpk-mixins/index.scss';
+@layer reset, theme, utility;
 
-// stylelint-disable-next-line selector-max-type
-html {
-  font-size: $bpk-font-size-root;
-  box-sizing: border-box;
+@layer reset {
+  @import '~normalize.css';
 }
 
-* {
-  box-sizing: inherit;
+@layer theme {
+  // stylelint-disable-next-line selector-max-type
+  html {
+    font-size: $bpk-font-size-root;
+    box-sizing: border-box;
+  }
 
-  &::before,
-  &::after {
+  * {
     box-sizing: inherit;
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
+  }
+
+  /* stylelint-disable selector-class-pattern */
+  body {
+    color: $bpk-font-color-base;
+    font-family: $bpk-font-family-base;
+    font-size: $bpk-font-size-base;
+    line-height: 1.3rem; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
+
+    :global(&.scaffold-font-size) {
+      font-size: 13px; /* stylelint-disable-line unit-disallowed-list, scale-unlimited/declaration-strict-value */
+    }
+
+    :global(&.enable-font-smoothing) {
+      -webkit-font-smoothing: antialiased;
+    }
   }
 }
 
-/* stylelint-disable selector-class-pattern */
-body {
-  color: $bpk-font-color-base;
-  font-family: $bpk-font-family-base;
-  font-size: $bpk-font-size-base;
-  line-height: 1.3rem; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
+@layer utility {
+  @import '../bpk-mixins/index.scss';
 
-  :global(&.scaffold-font-size) {
-    font-size: 13px; /* stylelint-disable-line unit-disallowed-list, scale-unlimited/declaration-strict-value */
+  :focus-visible {
+    @include bpk-focus-indicator;
   }
-
-  :global(&.enable-font-smoothing) {
-    -webkit-font-smoothing: antialiased;
+  
+  :global(.hidden),
+  :global(.hide) {
+    @include bpk-hidden;
   }
-}
-
-:focus-visible {
-  @include bpk-focus-indicator;
-}
-
-:global(.hidden),
-:global(.hide) {
-  @include bpk-hidden;
-}
-
-:global(.visuallyhidden),
-:global(.visually-hidden) {
-  @include bpk-visually-hidden;
-}
-
-:global(.visuallyhidden.focusable),
-:global(.visually-hidden.focusable) {
-  @include bpk-visually-hidden--focusable;
-}
-
-:global(.invisible) {
-  @include bpk-invisible;
-}
-
-:global(.clearfix) {
-  @include bpk-clearfix;
+  
+  :global(.visuallyhidden),
+  :global(.visually-hidden) {
+    @include bpk-visually-hidden;
+  }
+  
+  :global(.visuallyhidden.focusable),
+  :global(.visually-hidden.focusable) {
+    @include bpk-visually-hidden--focusable;
+  }
+  
+  :global(.invisible) {
+    @include bpk-invisible;
+  }
+  
+  :global(.clearfix) {
+    @include bpk-clearfix;
+  }
 }
 
 /* stylelint-enable */

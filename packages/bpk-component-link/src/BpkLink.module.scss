@@ -15,17 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@layer component, utility;
 
-@import '../../bpk-mixins/index.scss';
-
-.bpk-link {
-  @include bpk-link;
-
-  &--active {
-    @include bpk-link--active;
+@layer component {
+  .bpk-link {
+    @include bpk-link;
+  
+    &--active {
+      @include bpk-link--active;
+    }
+  
+    &--alternate {
+      @include bpk-link--alternate;
+    }
   }
+}
 
-  &--alternate {
-    @include bpk-link--alternate;
-  }
+@layer utility {
+  @import '../../bpk-mixins/index.scss';
 }
