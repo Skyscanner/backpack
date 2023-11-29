@@ -23,6 +23,8 @@
 }
 
 @layer theme {
+  @import '../bpk-mixins/index.scss';
+
   // stylelint-disable-next-line selector-max-type
   html {
     font-size: $bpk-font-size-root;
@@ -56,31 +58,32 @@
 }
 
 @layer utility {
+  /* stylelint-disable-next-line no-duplicate-at-import-rules, no-invalid-position-at-import-rule */
   @import '../bpk-mixins/index.scss';
 
   :focus-visible {
     @include bpk-focus-indicator;
   }
-  
+
   :global(.hidden),
   :global(.hide) {
     @include bpk-hidden;
   }
-  
+
   :global(.visuallyhidden),
   :global(.visually-hidden) {
     @include bpk-visually-hidden;
   }
-  
+
   :global(.visuallyhidden.focusable),
   :global(.visually-hidden.focusable) {
     @include bpk-visually-hidden--focusable;
   }
-  
+
   :global(.invisible) {
     @include bpk-invisible;
   }
-  
+
   :global(.clearfix) {
     @include bpk-clearfix;
   }
