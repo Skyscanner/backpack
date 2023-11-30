@@ -18,7 +18,7 @@
 
 /* stylelint-disable */
 
-@import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins-next';
 
 
   .bpk-input-field {
@@ -26,12 +26,12 @@
     max-width: 3*bpk-spacing-xxl();
     margin-right: bpk-spacing-sm();
     align-items: center;
-  
+
     input {
       text-align: center;
     }
   }
-  
+
   .bpk-input-field:last-child {
     margin-right: $bpk-spacing-none;
   }

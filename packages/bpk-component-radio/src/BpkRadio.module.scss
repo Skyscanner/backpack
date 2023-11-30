@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins-next';
 
 $bpk-radio-circle-size: $bpk-one-pixel-rem * 8;
 $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins-next';
 
 .bpk-button--destructive {
   @include bpk-button--secondary;
