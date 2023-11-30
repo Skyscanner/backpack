@@ -2,18 +2,22 @@
 
 > Sass mixins and variables for Backpack.
 
-## Installation
-
-```sh
-npm install bpk-mixins --save-dev
-```
-
 ## Usage
 
+### node-sass
 ```scss
 @import '~@skyscanner/backpack-web/bpk-mixins/index';
 
 .bpk-my-component {
   @include bpk-button;
+}
+```
+
+### sass or sass-embedded
+```scss
+@use '@skyscanner/backpack-web/bpk-mixins-next' as mixins;
+
+.bpk-my-component {
+  @include mixins.bpk-button;
 }
 ```

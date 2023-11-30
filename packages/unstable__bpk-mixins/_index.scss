@@ -16,14 +16,23 @@
  * limitations under the License.
  */
 
-// We disable eslint here as this package is listed as a peerDep so consumers are required to install this when using this package.
- 
-const nodeSass = require('node-sass');
+@forward 'tokens';
+@forward 'badges';
+@forward 'borders';
+@forward 'breakpoints';
+@forward 'buttons';
+@forward 'cards';
+@forward 'chips';
+@forward 'forms';
+@forward 'icons';
+@forward 'layers';
+@forward 'margins';
+@forward 'panels';
+@forward 'radii';
+@forward 'scroll-indicators';
+@forward 'shadows';
+@forward 'spinners';
+@forward 'typography';
+@forward 'utils';
 
-module.exports = {
-  'encodebase64($string)': (str) => {
-    const buffer = Buffer.from(str.getValue());
-
-    return nodeSass.types.String(buffer.toString('base64'));
-  },
-};
+@warn "You're using blank import of all mixins. This might affect performance of your build tool and your bundle size. \nConsider switching to more granular imports, e.g. @use '@skyscanner/backpack-web/bpk-mixins/buttons'";

@@ -1,0 +1,102 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@use 'tokens.scss';
+@use 'icons.scss';
+@use 'utils.scss';
+
+@keyframes bpk-keyframe-spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+/// Small spinner.
+///
+/// @param {key} $spinner - The key of the desired SVG datauri from the $bpk-spinners map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner(spinner-sky-gray-tint-02);
+///   }
+
+@mixin bpk-spinner() {
+  width: tokens.bpk-spacing-base();
+  height: tokens.bpk-spacing-base();
+  animation: bpk-keyframe-spin 600ms linear infinite;
+}
+
+/// Large spinner. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner(spinner-sky-gray-tint-02);
+///     @include bpk-spinner--lg();
+///   }
+
+@mixin bpk-spinner--lg() {
+  width: tokens.bpk-spacing-lg();
+  height: tokens.bpk-spacing-lg();
+}
+
+/// Extra large spinner. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner(spinner-sky-gray-tint-02);
+///     @include bpk-spinner--xl();
+///   }
+
+@mixin bpk-spinner--xl() {
+  width: tokens.bpk-spacing-xl();
+  height: tokens.bpk-spacing-xl();
+}
+
+/// Align spinner to button. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner();
+///     @include bpk-icon--align-to-button();
+///   }
+
+@mixin bpk-spinner--align-to-button() {
+  vertical-align: baseline;
+}
+
+/// Align spinner to large button. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner();
+///     @include bpk-spinner--align-to-large-button();
+///   }
+
+@mixin bpk-spinner--align-to-large-button() {
+  @include icons.bpk-icon-lg--align-to-large-button;
+}

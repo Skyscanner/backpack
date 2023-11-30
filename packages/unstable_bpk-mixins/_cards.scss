@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
-@import '../bonds.scss';
-@import 'radii.scss';
-@import 'shadows.scss';
-@import 'utils.scss';
+/* stylelint-disable at-rule-disallowed-list */
+
+@use 'bonds.scss';
+@use 'radii.scss';
+@use 'shadows.scss';
+@use 'utils.scss';
 
 ////
 /// @group cards
@@ -35,15 +37,15 @@
 @mixin bpk-card {
   position: relative;
   display: block;
-  background-color: $bpk-card-background-color;
-  color: $bpk-text-primary-day;
+  background-color: bonds.$bpk-card-background-color;
+  color: bonds.$bpk-text-primary-day;
   text-decoration: none;
   cursor: pointer;
 
-  @include bpk-box-shadow-sm;
-  @include bpk-border-radius-md;
+  @include shadows.bpk-box-shadow-sm;
+  @include radii.bpk-border-radius-md;
 
-  @include bpk-hover {
+  @include utils.bpk-hover {
     &::after {
       opacity: 1;
     }
@@ -59,12 +61,12 @@
     bottom: 0;
     left: 0;
     content: '';
-    transition: opacity $bpk-duration-sm ease-in-out;
+    transition: opacity bonds.$bpk-duration-sm ease-in-out;
     opacity: 0;
     pointer-events: none; // To prevent the pseudo element absorbing click events
 
-    @include bpk-box-shadow-lg;
-    @include bpk-border-radius-md;
+    @include shadows.bpk-box-shadow-lg;
+    @include radii.bpk-border-radius-md;
 
     // pointer-events doesn't work on ie
     @media screen\0 {
@@ -88,5 +90,5 @@
 ///   }
 
 @mixin bpk-card--padded {
-  padding: $bpk-card-padding;
+  padding: bonds.$bpk-card-padding;
 }

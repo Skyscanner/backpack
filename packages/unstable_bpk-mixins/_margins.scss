@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-@import 'utils.scss';
+/* stylelint-disable at-rule-disallowed-list */
+
+@use 'utils.scss';
 
 /// RTL aware leading margin
 ///
@@ -36,7 +38,7 @@
     margin-right: 0;
   }
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     @if $resetOppositeMargin {
       margin-left: 0;
     }
@@ -63,7 +65,7 @@
 
   margin-right: $margin;
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     margin-left: $margin;
 
     @if $resetOppositeMargin {

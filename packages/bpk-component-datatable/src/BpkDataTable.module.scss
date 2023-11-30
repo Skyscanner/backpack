@@ -62,20 +62,20 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
       background-color: $bpk-canvas-contrast-day;
       cursor: pointer;
 
-      @include bpk-datatable-border-left;
+      @include bpk-datatable-border-left($bpk-border-size-datatable);
 
       @include bpk-rtl {
-        @include bpk-datatable-border-right;
+        @include bpk-datatable-border-right($bpk-border-size-datatable);
       }
     }
 
     &--selected {
       background-color: $bpk-status-warning-fill-day;
 
-      @include bpk-datatable-border-left;
+      @include bpk-datatable-border-left($bpk-border-size-datatable);
 
       @include bpk-rtl {
-        @include bpk-datatable-border-right;
+        @include bpk-datatable-border-right($bpk-border-size-datatable);
       }
     }
   }
