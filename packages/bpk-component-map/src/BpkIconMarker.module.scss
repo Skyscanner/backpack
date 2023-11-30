@@ -20,7 +20,8 @@
 
 /* stylelint-disable unit-disallowed-list */
 
-@import '../../bpk-mixins-next';
+@use 'sass:math';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-icon-marker {
   $marker-width: 26px;
@@ -34,23 +35,23 @@
 
     // set top and left properties s.t. the marker pin points to the correct coordinates.
     // otherwise the top-left corner of the marker would correspond to the exact coordinates making the location slightly inaccurate
-    top: -$marker-height;
-    left: -$marker-width / 2;
+    top: -1 * $marker-height;
+    left: -1 * $marker-width * 0.5;
     z-index: 1;
-    padding: $marker-height / 2 $marker-width / 2;
+    padding: $marker-height * 0.5 $marker-width * 0.5;
     border: none; // Prevent default <button> styling.
     background: none; // Prevent default <button> styling.
 
     &--selected {
-      top: -$selected-marker-height;
-      left: -$selected-marker-width / 2;
+      top: -1 * $selected-marker-height;
+      left: -1 * $selected-marker-width * 0.5;
       z-index: 2;
-      padding: $selected-marker-height / 2 $selected-marker-width / 2;
+      padding: $selected-marker-height * 0.5 $selected-marker-width * 0.5;
     }
   }
 
   &__icon {
-    $bpk-icon-size-sm-px: ($bpk-icon-size-sm / 1rem) * 16px;
+    $bpk-icon-size-sm-px: math.div(mixins.$bpk-icon-size-sm, 1rem) * 16px;
 
     // icon container is positioned relative to the wrapper
     position: absolute;
@@ -58,8 +59,8 @@
     // This ensures that the icon is positioned exactly in the
     // centre of the marker.
     top: 4.8px;
-    left: ($marker-width - $bpk-icon-size-sm-px) / 2;
-    color: $bpk-surface-default-day;
+    left: ($marker-width - $bpk-icon-size-sm-px) * 0.5;
+    color: mixins.$bpk-surface-default-day;
 
     > svg {
       position: absolute;
@@ -80,12 +81,12 @@
       // This ensures that the icon is positioned exactly in the
       // centre of the marker.
       top: 8px;
-      left: ($selected-marker-width - $bpk-icon-size-sm-px) / 2;
+      left: ($selected-marker-width - $bpk-icon-size-sm-px) * 0.5;
 
-      @include bpk-themeable-property(
+      @include mixins.bpk-themeable-property(
         color,
         --bpk-icon-marker-default-selected-color,
-        $bpk-surface-default-day
+        mixins.$bpk-surface-default-day
       );
     }
   }

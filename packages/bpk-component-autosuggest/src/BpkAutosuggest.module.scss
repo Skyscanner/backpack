@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
-$arrow-size: bpk-spacing-sm() * 3;
+$arrow-size: mixins.bpk-spacing-sm() * 3;
 
 .bpk-autosuggest {
   &__container--open {
@@ -32,9 +32,9 @@ $arrow-size: bpk-spacing-sm() * 3;
       position: absolute;
       top: 100%;
       display: block;
-      z-index: $bpk-zindex-autosuggest;
+      z-index: mixins.$bpk-zindex-autosuggest;
       width: 100%;
-      margin-top: bpk-spacing-md() + bpk-spacing-sm();
+      margin-top: mixins.bpk-spacing-md() + mixins.bpk-spacing-sm();
 
       &::before {
         position: absolute;
@@ -42,10 +42,11 @@ $arrow-size: bpk-spacing-sm() * 3;
         left: 50%;
         content: ' ';
         display: block;
-        margin-bottom: -$bpk-one-pixel-rem;
-        margin-left: -((bpk-spacing-sm() * 3) + $bpk-one-pixel-rem);
-        border: ($arrow-size + $bpk-one-pixel-rem) solid transparent;
-        border-bottom-color: $bpk-surface-highlight-day;
+        margin-bottom: -1 * (mixins.$bpk-one-pixel-rem);
+        margin-left: -1 *
+            ((mixins.bpk-spacing-sm() * 3) + mixins.$bpk-one-pixel-rem);
+        border: ($arrow-size + mixins.$bpk-one-pixel-rem) solid transparent;
+        border-bottom-color: mixins.$bpk-surface-highlight-day;
         pointer-events: none;
       }
 
@@ -55,10 +56,10 @@ $arrow-size: bpk-spacing-sm() * 3;
         left: 50%;
         content: ' ';
         display: block;
-        margin-bottom: -$bpk-one-pixel-rem;
-        margin-left: -(bpk-spacing-md() + bpk-spacing-sm());
+        margin-bottom: -1 * (mixins.$bpk-one-pixel-rem);
+        margin-left: -1 * (mixins.bpk-spacing-md() + mixins.bpk-spacing-sm());
         border: $arrow-size solid transparent;
-        border-bottom-color: $bpk-surface-default-day;
+        border-bottom-color: mixins.$bpk-surface-default-day;
         pointer-events: none;
       }
     }
@@ -71,46 +72,46 @@ $arrow-size: bpk-spacing-sm() * 3;
     list-style: none;
     overflow: hidden;
 
-    @include bpk-layer;
+    @include mixins.bpk-layer;
   }
 
   &__suggestion-item {
     cursor: pointer;
 
-    @include bpk-text;
-    @include bpk-body-default;
+    @include mixins.bpk-text;
+    @include mixins.bpk-body-default;
 
     &:not(:last-child) {
-      @include bpk-border-bottom-sm($bpk-line-day);
+      @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day);
     }
 
     &:active {
-      background-color: $bpk-canvas-contrast-day;
+      background-color: mixins.$bpk-canvas-contrast-day;
     }
 
     &--highlighted {
-      background-color: $bpk-canvas-contrast-day;
+      background-color: mixins.$bpk-canvas-contrast-day;
     }
   }
 
   &__suggestion {
     display: table;
     width: 100%;
-    padding: bpk-spacing-base();
+    padding: mixins.bpk-spacing-base();
 
     &--indent {
-      padding-left: bpk-spacing-xl();
+      padding-left: mixins.bpk-spacing-xl();
     }
 
     &-icon {
       display: table-cell;
-      margin-right: bpk-spacing-md();
+      margin-right: mixins.bpk-spacing-md();
       vertical-align: top;
-      fill: $bpk-text-secondary-day;
+      fill: mixins.$bpk-text-secondary-day;
 
-      @include bpk-rtl {
+      @include mixins.bpk-rtl {
         margin-right: 0;
-        margin-left: bpk-spacing-md();
+        margin-left: mixins.bpk-spacing-md();
       }
     }
 
@@ -137,19 +138,19 @@ $arrow-size: bpk-spacing-sm() * 3;
       width: 100%;
       vertical-align: top;
 
-      @include bpk-text;
-      @include bpk-caption;
+      @include mixins.bpk-text;
+      @include mixins.bpk-caption;
     }
 
     &-tertiary-label {
       display: table-cell;
       align-self: center;
-      color: $bpk-text-secondary-day;
+      color: mixins.$bpk-text-secondary-day;
       vertical-align: top;
       word-break: keep-all;
 
-      @include bpk-text;
-      @include bpk-caption;
+      @include mixins.bpk-text;
+      @include mixins.bpk-caption;
     }
   }
 }

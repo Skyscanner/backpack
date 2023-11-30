@@ -16,21 +16,21 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-description-list {
   margin: 0;
 
   &__term {
-    @include bpk-label-1;
+    @include mixins.bpk-label-1;
   }
 
   &__details {
     margin: 0;
-    margin-left: bpk-spacing-lg();
+    margin-left: mixins.bpk-spacing-lg();
 
-    @include bpk-rtl {
-      margin-right: bpk-spacing-lg();
+    @include mixins.bpk-rtl {
+      margin-right: mixins.bpk-spacing-lg();
       margin-left: 0;
     }
   }

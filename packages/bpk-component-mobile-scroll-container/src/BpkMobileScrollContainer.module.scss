@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-mobile-scroll-container {
   position: relative;
   overflow: hidden;
 
   &--left-indicator {
-    @include bpk-scroll-indicator-left($bpk-color-white);
+    @include mixins.bpk-scroll-indicator-left(mixins.$bpk-color-white);
   }
 
   &--right-indicator {
-    @include bpk-scroll-indicator-right($bpk-color-white);
+    @include mixins.bpk-scroll-indicator-right(mixins.$bpk-color-white);
   }
 
   &__scroller {

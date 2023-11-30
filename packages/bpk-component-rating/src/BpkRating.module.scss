@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-rating {
   display: flex;
@@ -29,14 +29,14 @@
 
   &__value {
     display: flex;
-    padding-right: bpk-spacing-md();
+    padding-right: mixins.bpk-spacing-md();
     justify-content: center;
     align-items: baseline;
-    color: $bpk-text-primary-day;
+    color: mixins.$bpk-text-primary-day;
 
-    @include bpk-rtl {
+    @include mixins.bpk-rtl {
       padding-right: 0;
-      padding-left: bpk-spacing-md();
+      padding-left: mixins.bpk-spacing-md();
       direction: ltr;
     }
   }
@@ -54,26 +54,26 @@
   }
 
   &__scale {
-    color: $bpk-text-secondary-day;
+    color: mixins.$bpk-text-secondary-day;
   }
 
   &__title {
     &--with-subtitle {
-      padding-right: bpk-spacing-md();
+      padding-right: mixins.bpk-spacing-md();
 
-      @include bpk-rtl {
+      @include mixins.bpk-rtl {
         padding-right: 0;
-        padding-left: bpk-spacing-md();
+        padding-left: mixins.bpk-spacing-md();
       }
     }
 
     &--large {
-      padding-top: $bpk-one-pixel-rem;
+      padding-top: mixins.$bpk-one-pixel-rem;
     }
   }
 
   &__subtitle {
-    color: $bpk-text-secondary-day;
+    color: mixins.$bpk-text-secondary-day;
 
     &--large {
       // padding-top: $bpk-one-pixel-rem;

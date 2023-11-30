@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-scrim {
   position: fixed;
@@ -24,13 +24,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: $bpk-zindex-scrim;
-  transition: opacity $bpk-duration-sm ease-in-out;
-  background-color: $bpk-scrim-day;
+  z-index: mixins.$bpk-zindex-scrim;
+  transition: opacity mixins.$bpk-duration-sm ease-in-out;
+  background-color: mixins.$bpk-scrim-day;
   overflow: hidden;
 
   &--full-screen {
-    @include bpk-breakpoint-mobile {
+    @include mixins.bpk-breakpoint-mobile {
       opacity: 1;
     }
   }

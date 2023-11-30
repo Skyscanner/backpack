@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
-$bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
+$bpk-margin-size-sort-icons: mixins.bpk-spacing-sm() + mixins.bpk-spacing-md();
 
 .bpk-data-table-column__header {
   display: flex;
   height: 100%;
-  margin: bpk-spacing-base();
+  margin: mixins.bpk-spacing-base();
   flex-direction: row;
   align-items: center;
-  outline-offset: -(bpk-spacing-sm());
+  outline-offset: -1 * (mixins.bpk-spacing-sm());
 
-  @include bpk-label-2;
+  @include mixins.bpk-label-2;
 
   &:hover {
     cursor: pointer;
@@ -38,27 +38,27 @@ $bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
 .bpk-data-table-column__sort-icons {
   margin: 0 0 0 $bpk-margin-size-sort-icons;
 
-  @include bpk-rtl {
+  @include mixins.bpk-rtl {
     margin: 0 $bpk-margin-size-sort-icons 0 0;
   }
 }
 
 .bpk-data-table-column__sort-icon {
   display: block;
-  fill: $bpk-line-day;
+  fill: mixins.$bpk-line-day;
 
   &:hover {
-    fill: $bpk-line-day;
+    fill: mixins.$bpk-line-day;
   }
 
   &--selected {
     &,
     &:hover {
-      fill: $bpk-core-accent-day;
+      fill: mixins.$bpk-core-accent-day;
     }
   }
 }
 
 .bpk-data-table-column__sort-icon--up {
-  margin-bottom: -(bpk-spacing-sm());
+  margin-bottom: -1 * (mixins.bpk-spacing-sm());
 }

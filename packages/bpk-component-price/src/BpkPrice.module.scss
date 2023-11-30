@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-price {
   display: flex;
   flex-direction: column;
-  color: $bpk-text-secondary-day;
+  color: mixins.$bpk-text-secondary-day;
 
   &--right {
     text-align: right;
 
-    @include bpk-rtl {
+    @include mixins.bpk-rtl {
       text-align: left;
     }
   }
@@ -45,7 +45,7 @@
   }
 
   &__separator {
-    margin: 0 bpk-spacing-sm();
+    margin: 0 mixins.bpk-spacing-sm();
   }
 
   &__column-container {
@@ -54,17 +54,17 @@
   }
 
   &__price {
-    color: $bpk-text-primary-day;
+    color: mixins.$bpk-text-primary-day;
     word-break: break-all;
   }
 
   &__spacing::after {
     content: '';
-    margin-right: bpk-spacing-sm();
+    margin-right: mixins.bpk-spacing-sm();
 
-    @include bpk-rtl {
+    @include mixins.bpk-rtl {
       margin-right: unset;
-      margin-left: bpk-spacing-sm();
+      margin-left: mixins.bpk-spacing-sm();
     }
   }
 

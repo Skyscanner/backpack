@@ -19,105 +19,105 @@
 // Use of stylelint-disable-next-line declaration-no-important in this file is to ensure that
 // the correct styles are applied for Internet Explorer 11 and are not overriden by system styles.
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-select {
-  @include bpk-select;
+  @include mixins.bpk-select;
 
   &--large {
-    @include bpk-select--large;
+    @include mixins.bpk-select--large;
   }
 
   &--docked {
-    @include bpk-select--docked;
+    @include mixins.bpk-select--docked;
 
     &-first {
-      @include bpk-select--docked-first-child;
+      @include mixins.bpk-select--docked-first-child;
     }
 
     &-middle {
-      @include bpk-select--docked-middle-child;
+      @include mixins.bpk-select--docked-middle-child;
     }
 
     &-last {
-      @include bpk-select--docked-last-child;
+      @include mixins.bpk-select--docked-last-child;
     }
   }
 
   &--invalid {
-    @include bpk-select--invalid;
+    @include mixins.bpk-select--invalid;
   }
 
   &--with-image {
-    padding-left: bpk-spacing-xxl();
+    padding-left: mixins.bpk-spacing-xxl();
 
-    @include bpk-rtl {
-      padding-right: bpk-spacing-xxl();
-      padding-left: bpk-spacing-xxl();
+    @include mixins.bpk-rtl {
+      padding-right: mixins.bpk-spacing-xxl();
+      padding-left: mixins.bpk-spacing-xxl();
 
       @media screen\0 {
         /* stylelint-disable-next-line declaration-no-important */
-        padding-right: bpk-spacing-xxl() !important;
+        padding-right: mixins.bpk-spacing-xxl() !important;
         /* stylelint-disable-next-line declaration-no-important */
-        padding-left: bpk-spacing-base() !important;
+        padding-left: mixins.bpk-spacing-base() !important;
       }
     }
 
     @media screen\0 {
       /* stylelint-disable-next-line declaration-no-important */
-      padding-left: bpk-spacing-xxl() !important;
+      padding-left: mixins.bpk-spacing-xxl() !important;
     }
   }
 
   &--with-image-large {
-    padding-left: bpk-spacing-xxl() + bpk-spacing-base();
+    padding-left: mixins.bpk-spacing-xxl() + mixins.bpk-spacing-base();
 
-    @include bpk-rtl {
-      padding-right: bpk-spacing-xxl() + bpk-spacing-base();
-      padding-left: bpk-spacing-xxl();
+    @include mixins.bpk-rtl {
+      padding-right: mixins.bpk-spacing-xxl() + mixins.bpk-spacing-base();
+      padding-left: mixins.bpk-spacing-xxl();
 
       @media screen\0 {
-        padding-right: bpk-spacing-xxl() + bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
+        padding-right: mixins.bpk-spacing-xxl() + mixins.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
         /* stylelint-disable-next-line declaration-no-important */
-        padding-left: bpk-spacing-base() !important;
+        padding-left: mixins.bpk-spacing-base() !important;
       }
     }
 
     @media screen\0 {
-      padding-left: bpk-spacing-xxl() + bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
+      padding-left: mixins.bpk-spacing-xxl() + mixins.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
     }
   }
 }
 
-$select-image-width: 24 * $bpk-one-pixel-rem;
-$select-image-height: 16 * $bpk-one-pixel-rem;
-$select-image-large-width: 32 * $bpk-one-pixel-rem;
-$select-image-large-height: 24 * $bpk-one-pixel-rem;
+$select-image-width: 24 * mixins.$bpk-one-pixel-rem;
+$select-image-height: 16 * mixins.$bpk-one-pixel-rem;
+$select-image-large-width: 32 * mixins.$bpk-one-pixel-rem;
+$select-image-large-height: 24 * mixins.$bpk-one-pixel-rem;
 
 .bpk-select-wrapper {
   position: relative;
 
   &__image {
     position: absolute;
-    top: ($bpk-input-height - $select-image-height) / 2;
-    left: bpk-spacing-md();
+    top: (mixins.$bpk-input-height - $select-image-height) * 0.5;
+    left: mixins.bpk-spacing-md();
     width: $select-image-width;
     height: $select-image-height;
     pointer-events: none;
 
-    @include bpk-rtl {
-      right: bpk-spacing-md();
+    @include mixins.bpk-rtl {
+      right: mixins.bpk-spacing-md();
       left: auto;
     }
 
     &--large {
-      top: ($bpk-input-large-height - $select-image-large-height) / 2;
-      left: bpk-spacing-base();
+      top: (mixins.$bpk-input-large-height - $select-image-large-height) * 0.5;
+      left: mixins.bpk-spacing-base();
       width: $select-image-large-width;
       height: $select-image-large-height;
 
-      @include bpk-rtl {
-        right: bpk-spacing-base();
+      @include mixins.bpk-rtl {
+        right: mixins.bpk-spacing-base();
         left: auto;
       }
     }

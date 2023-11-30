@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-content-card {
   &--link {
@@ -28,60 +28,62 @@
 
   &--horizontal {
     display: grid;
-    column-gap: bpk-spacing-xxl();
-    grid-template-columns: minmax(min(10%, 50%), $bpk-one-pixel-rem * 620) 40%;
+    column-gap: mixins.bpk-spacing-xxl();
+    grid-template-columns:
+        minmax(min(10%, 50%), mixins.$bpk-one-pixel-rem * 620)
+        40%;
     align-items: center;
 
-    @include bpk-breakpoint-mobile {
+    @include mixins.bpk-breakpoint-mobile {
       grid-template-columns: 1fr;
     }
   }
 
   &--horizontal &--image-container {
     width: 100%;
-    height: $bpk-one-pixel-rem * 420;
+    height: mixins.$bpk-one-pixel-rem * 420;
 
-    @include bpk-breakpoint-mobile {
-      max-height: $bpk-one-pixel-rem * 180;
-      margin-bottom: bpk-spacing-base();
+    @include mixins.bpk-breakpoint-mobile {
+      max-height: mixins.$bpk-one-pixel-rem * 180;
+      margin-bottom: mixins.bpk-spacing-base();
     }
 
-    @include bpk-breakpoint-tablet {
+    @include mixins.bpk-breakpoint-tablet {
       height: 100%;
     }
   }
 
   &--vertical &--image {
-    height: $bpk-one-pixel-rem * 460;
-    margin-bottom: bpk-spacing-base();
+    height: mixins.$bpk-one-pixel-rem * 460;
+    margin-bottom: mixins.bpk-spacing-base();
 
-    @include bpk-breakpoint-small-tablet {
+    @include mixins.bpk-breakpoint-small-tablet {
       width: 100%;
       height: auto;
-      max-height: $bpk-one-pixel-rem * 260;
+      max-height: mixins.$bpk-one-pixel-rem * 260;
     }
 
-    @include bpk-breakpoint-mobile {
-      max-height: $bpk-one-pixel-rem * 180;
+    @include mixins.bpk-breakpoint-mobile {
+      max-height: mixins.$bpk-one-pixel-rem * 180;
     }
   }
 
   &--headline {
-    margin-bottom: bpk-spacing-sm();
+    margin-bottom: mixins.bpk-spacing-sm();
 
-    @include bpk-heading-4;
+    @include mixins.bpk-heading-4;
   }
 
   &--description {
-    color: $bpk-text-secondary-day;
+    color: mixins.$bpk-text-secondary-day;
 
-    @include bpk-body-default;
+    @include mixins.bpk-body-default;
   }
 
   &--image {
     width: 100%;
     height: 100%;
-    border-radius: $bpk-border-radius-md;
+    border-radius: mixins.$bpk-border-radius-md;
     object-fit: cover;
   }
 }

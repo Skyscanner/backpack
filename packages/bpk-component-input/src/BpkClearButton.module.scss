@@ -16,22 +16,22 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-clear-button {
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $bpk-text-secondary-day;
+  color: mixins.$bpk-text-secondary-day;
   cursor: pointer;
   appearance: none;
 
-  @include bpk-hover {
-    color: $bpk-text-primary-day;
+  @include mixins.bpk-hover {
+    color: mixins.$bpk-text-primary-day;
   }
 
   &:active {
-    color: $bpk-text-primary-day;
+    color: mixins.$bpk-text-primary-day;
   }
 
   &__icon {

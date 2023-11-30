@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 @mixin aspect-ratio($ratio) {
   padding-top: $ratio;
@@ -68,20 +68,20 @@
 }
 
 .bpk-card {
-  @include bpk-card;
+  @include mixins.bpk-card;
 }
 
 .bpk-graphic-promo {
   max-width: 76.5rem;
   margin-right: auto;
   margin-left: auto;
-  background-color: $bpk-surface-contrast-day;
+  background-color: mixins.$bpk-surface-contrast-day;
   background-position: center;
   background-size: cover;
-  color: $bpk-text-on-dark-day;
+  color: mixins.$bpk-text-on-dark-day;
   box-shadow: none;
 
-  @include bpk-breakpoint-small-tablet {
+  @include mixins.bpk-breakpoint-small-tablet {
     @include aspect-ratio(133%);
   }
 
@@ -97,36 +97,36 @@
 
     @include content-alignment;
 
-    @include bpk-breakpoint-above-tablet {
+    @include mixins.bpk-breakpoint-above-tablet {
       height: 28.75rem;
 
-      @include bpk-margin-leading(bpk-spacing-xxxl(), false);
-      @include bpk-margin-trailing(bpk-spacing-xxl(), false);
+      @include mixins.bpk-margin-leading(mixins.bpk-spacing-xxxl(), false);
+      @include mixins.bpk-margin-trailing(mixins.bpk-spacing-xxl(), false);
 
       /* adjusting for 1.5rem difference between margins */
       &--center > * {
-        @include bpk-margin-trailing(bpk-spacing-lg());
+        @include mixins.bpk-margin-trailing(mixins.bpk-spacing-lg());
       }
     }
 
-    @include bpk-breakpoint-tablet {
+    @include mixins.bpk-breakpoint-tablet {
       height: 22.5rem;
 
-      @include bpk-margin-leading(bpk-spacing-xxl(), false);
-      @include bpk-margin-trailing(bpk-spacing-xl(), false);
+      @include mixins.bpk-margin-leading(mixins.bpk-spacing-xxl(), false);
+      @include mixins.bpk-margin-trailing(mixins.bpk-spacing-xl(), false);
 
       /* adjusting for 1.5rem difference between margins */
       &--center > * {
-        @include bpk-margin-trailing(bpk-spacing-md());
+        @include mixins.bpk-margin-trailing(mixins.bpk-spacing-md());
       }
     }
 
-    @include bpk-breakpoint-small-tablet {
-      padding: bpk-spacing-xl();
+    @include mixins.bpk-breakpoint-small-tablet {
+      padding: mixins.bpk-spacing-xl();
       justify-content: space-between;
 
       @include reset-alignment;
-      @include bpk-margin-leading(0);
+      @include mixins.bpk-margin-leading(0);
       @include fill-parent;
 
       &--inverted {
@@ -134,72 +134,72 @@
       }
 
       > * {
-        @include bpk-margin-leading(0);
+        @include mixins.bpk-margin-leading(0);
       }
     }
 
-    @include bpk-breakpoint-small-mobile {
-      padding: bpk-spacing-lg();
+    @include mixins.bpk-breakpoint-small-mobile {
+      padding: mixins.bpk-spacing-lg();
     }
   }
 
   &__tagline {
-    margin-bottom: bpk-spacing-md();
+    margin-bottom: mixins.bpk-spacing-md();
 
-    @include bpk-heading-5;
+    @include mixins.bpk-heading-5;
 
-    @include bpk-breakpoint-tablet {
-      @include bpk-label-1;
+    @include mixins.bpk-breakpoint-tablet {
+      @include mixins.bpk-label-1;
     }
 
-    @include bpk-breakpoint-small-tablet {
-      @include bpk-subheading;
+    @include mixins.bpk-breakpoint-small-tablet {
+      @include mixins.bpk-subheading;
     }
 
-    @include bpk-breakpoint-small-mobile {
-      @include bpk-label-1;
+    @include mixins.bpk-breakpoint-small-mobile {
+      @include mixins.bpk-label-1;
     }
   }
 
   &__headline {
-    @include bpk-breakpoint-above-tablet {
-      @include bpk-hero-5;
+    @include mixins.bpk-breakpoint-above-tablet {
+      @include mixins.bpk-hero-5;
 
       &:not(:last-child) {
-        margin-bottom: bpk-spacing-md();
+        margin-bottom: mixins.bpk-spacing-md();
       }
     }
 
-    @include bpk-breakpoint-tablet {
-      @include bpk-heading-1;
+    @include mixins.bpk-breakpoint-tablet {
+      @include mixins.bpk-heading-1;
 
       &:not(:last-child) {
-        margin-bottom: bpk-spacing-md();
+        margin-bottom: mixins.bpk-spacing-md();
       }
     }
 
-    @include bpk-breakpoint-small-tablet {
-      margin-bottom: bpk-spacing-md();
+    @include mixins.bpk-breakpoint-small-tablet {
+      margin-bottom: mixins.bpk-spacing-md();
     }
 
-    @include bpk-breakpoint-mobile {
-      @include bpk-heading-2;
+    @include mixins.bpk-breakpoint-mobile {
+      @include mixins.bpk-heading-2;
     }
   }
 
   &__subheading {
-    @include bpk-body-default;
+    @include mixins.bpk-body-default;
 
-    @include bpk-breakpoint-tablet {
-      @include bpk-heading-5;
+    @include mixins.bpk-breakpoint-tablet {
+      @include mixins.bpk-heading-5;
     }
 
-    @include bpk-breakpoint-small-tablet {
-      @include bpk-heading-3;
+    @include mixins.bpk-breakpoint-small-tablet {
+      @include mixins.bpk-heading-3;
     }
 
-    @include bpk-breakpoint-mobile {
-      @include bpk-heading-5;
+    @include mixins.bpk-breakpoint-mobile {
+      @include mixins.bpk-heading-5;
     }
   }
 
@@ -210,15 +210,15 @@
 
     @include text-alignment;
 
-    @include bpk-breakpoint-above-tablet {
+    @include mixins.bpk-breakpoint-above-tablet {
       width: 22.5rem;
     }
 
-    @include bpk-breakpoint-tablet {
+    @include mixins.bpk-breakpoint-tablet {
       width: 20rem;
     }
 
-    @include bpk-breakpoint-small-tablet {
+    @include mixins.bpk-breakpoint-small-tablet {
       width: initial;
 
       @include reset-alignment;
@@ -227,29 +227,29 @@
 
   &__sponsor-content {
     display: flex;
-    margin-bottom: bpk-spacing-base();
+    margin-bottom: mixins.bpk-spacing-base();
     flex-direction: column;
 
-    @include bpk-breakpoint-small-tablet {
+    @include mixins.bpk-breakpoint-small-tablet {
       margin-bottom: initial;
     }
   }
 
   &__sponsor-label {
-    margin-bottom: bpk-spacing-sm();
+    margin-bottom: mixins.bpk-spacing-sm();
 
-    @include bpk-label-1;
+    @include mixins.bpk-label-1;
 
-    @include bpk-breakpoint-small-tablet {
-      margin-bottom: bpk-spacing-md();
+    @include mixins.bpk-breakpoint-small-tablet {
+      margin-bottom: mixins.bpk-spacing-md();
 
-      @include bpk-heading-3;
+      @include mixins.bpk-heading-3;
     }
 
-    @include bpk-breakpoint-small-mobile {
-      margin-bottom: bpk-spacing-sm();
+    @include mixins.bpk-breakpoint-small-mobile {
+      margin-bottom: mixins.bpk-spacing-sm();
 
-      @include bpk-label-1;
+      @include mixins.bpk-label-1;
     }
   }
 
@@ -261,9 +261,9 @@
   }
 
   &__cta {
-    margin-top: bpk-spacing-xl();
+    margin-top: mixins.bpk-spacing-xl();
 
-    @include bpk-breakpoint-small-tablet {
+    @include mixins.bpk-breakpoint-small-tablet {
       display: none;
     }
   }

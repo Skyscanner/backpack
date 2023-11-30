@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
-$dot-size: bpk-spacing-md();
-$dot-margin: bpk-spacing-sm();
+$dot-size: mixins.bpk-spacing-md();
+$dot-margin: mixins.bpk-spacing-sm();
 $displayed-total: 5;
 /* stylelint-disable-next-line scss/operator-no-newline-after */
 $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total *
@@ -52,10 +52,10 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
       )
     );
     /* stylelint-enable scss/operator-no-newline-after */
-    transition: transform $bpk-duration-sm ease-in-out;
+    transition: transform mixins.$bpk-duration-sm ease-in-out;
     white-space: nowrap;
 
-    @include bpk-rtl {
+    @include mixins.bpk-rtl {
       --direction: 1;
     }
   }
@@ -70,20 +70,20 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     margin-inline: $dot-margin;
 
     &--default {
-      background-color: $bpk-line-day;
+      background-color: mixins.$bpk-line-day;
     }
 
     &--overImage {
-      background-color: $bpk-line-on-dark-day;
+      background-color: mixins.$bpk-line-on-dark-day;
     }
 
     &--active {
       &-default {
-        background-color: $bpk-text-secondary-day;
+        background-color: mixins.$bpk-text-secondary-day;
       }
 
       &-overImage {
-        background-color: $bpk-text-on-dark-day;
+        background-color: mixins.$bpk-text-on-dark-day;
       }
     }
   }

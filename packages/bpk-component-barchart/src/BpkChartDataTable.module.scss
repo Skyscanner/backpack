@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-chart-data-table {
-  @include bpk-visually-hidden;
+  @include mixins.bpk-visually-hidden;
 
   thead,
   tbody {
-    @include bpk-visually-hidden;
+    @include mixins.bpk-visually-hidden;
   }
 }

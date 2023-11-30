@@ -16,15 +16,15 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-horizontal-nav {
   &--show-default-underline {
-    @include bpk-border-bottom-sm($bpk-line-day, '');
+    @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day, '');
   }
 
   &--show-light-underline {
-    @include bpk-border-bottom-sm($bpk-line-day, '');
+    @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day, '');
   }
 
   &__list {

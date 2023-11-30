@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 @keyframes heart-beat {
   0%,
@@ -47,13 +47,13 @@
 
 .bpk-save-button {
   position: relative;
-  width: bpk-spacing-xxl();
-  height: bpk-spacing-xxl();
-  padding: bpk-spacing-md();
+  width: mixins.bpk-spacing-xxl();
+  height: mixins.bpk-spacing-xxl();
+  padding: mixins.bpk-spacing-md();
   border-radius: 50%;
   background-color: transparent;
 
-  @include bpk-hover {
+  @include mixins.bpk-hover {
     background-color: transparent;
   }
 
@@ -66,10 +66,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: $bpk-text-on-light-day;
+    color: mixins.$bpk-text-on-light-day;
 
-    @include bpk-hover {
-      color: $bpk-text-on-light-day;
+    @include mixins.bpk-hover {
+      color: mixins.$bpk-text-on-light-day;
     }
   }
 
@@ -78,8 +78,8 @@
     opacity: 1;
 
     &--show {
-      @include bpk-hover {
-        transition: opacity $bpk-duration-sm ease-in-out;
+      @include mixins.bpk-hover {
+        transition: opacity mixins.$bpk-duration-sm ease-in-out;
         opacity: 0;
       }
     }
@@ -89,13 +89,13 @@
     }
 
     &--onDark {
-      color: $bpk-text-on-dark-day;
+      color: mixins.$bpk-text-on-dark-day;
     }
   }
 
   &__heartIcon {
     z-index: 2;
-    color: $bpk-core-accent-day;
+    color: mixins.$bpk-core-accent-day;
     opacity: 0;
 
     &--toggle {
@@ -106,43 +106,43 @@
     &--show {
       opacity: 1;
 
-      @include bpk-hover {
-        color: $bpk-core-accent-day;
+      @include mixins.bpk-hover {
+        color: mixins.$bpk-core-accent-day;
       }
     }
 
     &--hide {
-      @include bpk-hover {
-        transition: opacity $bpk-duration-sm ease-in-out;
-        color: $bpk-text-on-light-day;
+      @include mixins.bpk-hover {
+        transition: opacity mixins.$bpk-duration-sm ease-in-out;
+        color: mixins.$bpk-text-on-light-day;
         opacity: 1;
       }
     }
 
     &--onDark {
-      color: $bpk-text-on-dark-day;
+      color: mixins.$bpk-text-on-dark-day;
 
-      @include bpk-hover {
-        color: $bpk-text-on-dark-day;
+      @include mixins.bpk-hover {
+        color: mixins.$bpk-text-on-dark-day;
       }
     }
   }
 
   &__small {
-    width: bpk-spacing-xl();
-    height: bpk-spacing-xl();
-    min-height: bpk-spacing-xl();
+    width: mixins.bpk-spacing-xl();
+    height: mixins.bpk-spacing-xl();
+    min-height: mixins.bpk-spacing-xl();
   }
 
   &__contained {
-    background-color: $bpk-private-card-button-contained-color;
+    background-color: mixins.$bpk-private-card-button-contained-color;
 
-    @include bpk-hover {
-      background-color: $bpk-private-card-button-contained-color;
+    @include mixins.bpk-hover {
+      background-color: mixins.$bpk-private-card-button-contained-color;
     }
 
     &:active {
-      background-color: $bpk-private-card-button-contained-color;
+      background-color: mixins.$bpk-private-card-button-contained-color;
     }
   }
 }

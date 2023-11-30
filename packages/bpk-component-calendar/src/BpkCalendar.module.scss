@@ -16,25 +16,25 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
-@import 'variables.scss';
+@use '../../bpk-mixins-next' as mixins;
+@use 'variables.scss';
 
 .bpk-calendar {
   display: flex;
   width: 100%;
   flex-direction: column;
 
-  @include bpk-border-radius-sm;
+  @include mixins.bpk-border-radius-sm;
 
   &--fixed {
-    width: $calendar-width;
+    width: variables.$calendar-width;
   }
 
   &__header {
-    margin-top: bpk-spacing-lg();
+    margin-top: mixins.bpk-spacing-lg();
   }
 
   &__grid {
-    margin-top: bpk-spacing-lg();
+    margin-top: mixins.bpk-spacing-lg();
   }
 }

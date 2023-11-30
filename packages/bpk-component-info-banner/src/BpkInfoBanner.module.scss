@@ -16,22 +16,22 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-info-banner {
-  padding: bpk-spacing-md() bpk-spacing-base();
+  padding: mixins.bpk-spacing-md() mixins.bpk-spacing-base();
   overflow: hidden;
 
-  @include bpk-border-radius-sm;
-  @include bpk-text;
-  @include bpk-footnote;
+  @include mixins.bpk-border-radius-sm;
+  @include mixins.bpk-text;
+  @include mixins.bpk-footnote;
 
   &--style-default {
-    background-color: $bpk-private-info-banner-default-day;
+    background-color: mixins.$bpk-private-info-banner-default-day;
   }
 
   &--style-onContrast {
-    background-color: $bpk-private-info-banner-on-contrast-day;
+    background-color: mixins.$bpk-private-info-banner-on-contrast-day;
   }
 
   &__header {
@@ -46,28 +46,28 @@
 
   &__icon,
   &__toggle {
-    padding: bpk-spacing-sm() / 2 0;
+    padding: mixins.bpk-spacing-sm() * 0.5 0;
   }
 
   &__message {
-    padding: bpk-spacing-sm() bpk-spacing-md();
+    padding: mixins.bpk-spacing-sm() mixins.bpk-spacing-md();
     flex-grow: 1;
   }
 
   &__success-icon {
-    fill: $bpk-private-info-banner-success-day;
+    fill: mixins.$bpk-private-info-banner-success-day;
   }
 
   &__warning-icon {
-    fill: $bpk-private-info-banner-warning-day;
+    fill: mixins.$bpk-private-info-banner-warning-day;
   }
 
   &__error-icon {
-    fill: $bpk-private-info-banner-error-day;
+    fill: mixins.$bpk-private-info-banner-error-day;
   }
 
   &__info-icon {
-    fill: $bpk-text-secondary-day;
+    fill: mixins.$bpk-text-secondary-day;
   }
 
   &__toggle-button {
@@ -79,7 +79,7 @@
   }
 
   &__expand-icon {
-    fill: $bpk-text-secondary-day;
+    fill: mixins.$bpk-text-secondary-day;
 
     &--flipped {
       transform: scaleY(-1);
@@ -87,20 +87,20 @@
   }
 
   &__children-container {
-    color: $bpk-text-primary-day;
+    color: mixins.$bpk-text-primary-day;
 
-    @include bpk-footnote;
+    @include mixins.bpk-footnote;
 
     &--with-action {
-      padding: bpk-spacing-sm() 0 bpk-spacing-sm();
+      padding: mixins.bpk-spacing-sm() 0 mixins.bpk-spacing-sm();
     }
 
     &--no-action {
-      padding: bpk-spacing-sm() 0 bpk-spacing-md();
+      padding: mixins.bpk-spacing-sm() 0 mixins.bpk-spacing-md();
     }
   }
 
   &__expandable-action {
-    padding-bottom: bpk-spacing-sm();
+    padding-bottom: mixins.bpk-spacing-sm();
   }
 }

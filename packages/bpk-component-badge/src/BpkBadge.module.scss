@@ -16,52 +16,52 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-badge {
-  @include bpk-badge;
+  @include mixins.bpk-badge;
 
   &--centered {
-    @include bpk-badge--centered;
+    @include mixins.bpk-badge--centered;
   }
 
   &--docked-right {
-    @include bpk-badge--docked-right;
+    @include mixins.bpk-badge--docked-right;
   }
 
   &--docked-left {
-    @include bpk-badge--docked-left;
+    @include mixins.bpk-badge--docked-left;
   }
 
   &--warning {
-    @include bpk-badge--warning;
+    @include mixins.bpk-badge--warning;
   }
 
   &--success {
-    @include bpk-badge--success;
+    @include mixins.bpk-badge--success;
   }
 
   &--critical {
-    @include bpk-badge--critical;
+    @include mixins.bpk-badge--critical;
   }
 
   &--normal {
-    @include bpk-badge--normal;
+    @include mixins.bpk-badge--normal;
   }
 
   &--inverse {
-    @include bpk-badge--inverse;
+    @include mixins.bpk-badge--inverse;
   }
 
   &--outline {
-    @include bpk-badge--outline;
+    @include mixins.bpk-badge--outline;
   }
 
   &--strong {
-    @include bpk-badge--strong;
+    @include mixins.bpk-badge--strong;
   }
 
   &--brand {
-    @include bpk-badge--brand;
+    @include mixins.bpk-badge--brand;
   }
 }

@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@import '../../../bpk-mixins-next';
+@use '../../../bpk-mixins-next' as mixins;
 
 @mixin header {
   display: flex;
-  min-height: bpk-spacing-lg();
+  min-height: mixins.bpk-spacing-lg();
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
@@ -28,11 +28,11 @@
 
 @keyframes bpk-modal-scrim {
   0% {
-    opacity: $bpk-modal-initial-opacity;
+    opacity: mixins.$bpk-modal-initial-opacity;
   }
 
   100% {
-    opacity: $bpk-modal-opacity;
+    opacity: mixins.$bpk-modal-opacity;
   }
 }
 
@@ -51,8 +51,8 @@
     position: fixed;
     z-index: 0;
     margin: 0 auto;
-    background-color: $bpk-scrim-day;
-    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
+    background-color: mixins.$bpk-scrim-day;
+    animation: bpk-modal-scrim mixins.$bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
@@ -66,7 +66,8 @@
     display: block;
     z-index: 1;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform $bpk-duration-sm ease-in-out $bpk-duration-sm;
+    transition: transform mixins.$bpk-duration-sm ease-in-out
+        mixins.$bpk-duration-sm;
   }
 
   .bpk-modal:not([data-open='true']),
@@ -82,18 +83,18 @@
   max-height: 100%;
   padding: 0;
   border: none;
-  background: $bpk-modal-background-color;
+  background: mixins.$bpk-modal-background-color;
   overflow-y: scroll;
   scrollbar-width: none;
 
-  @include bpk-box-shadow-xl;
+  @include mixins.bpk-box-shadow-xl;
 
-  @include bpk-breakpoint-above-mobile {
-    width: $bpk-modal-max-width;
+  @include mixins.bpk-breakpoint-above-mobile {
+    width: mixins.$bpk-modal-max-width;
     max-width: none;
     height: fit-content;
     max-height: 90%;
-    border-radius: $bpk-border-radius-md;
+    border-radius: mixins.$bpk-border-radius-md;
 
     &--full-screen-desktop {
       width: 100%;
@@ -103,13 +104,13 @@
     }
 
     &--wide {
-      width: $bpk-modal-wide-max-width;
+      width: mixins.$bpk-modal-wide-max-width;
       max-width: 100%;
     }
   }
 
   &[open] {
-    animation: bpk-modal-scale $bpk-duration-sm ease-in-out;
+    animation: bpk-modal-scale mixins.$bpk-duration-sm ease-in-out;
   }
 
   &--no-full-screen-mobile {
@@ -118,16 +119,16 @@
     height: fit-content;
     max-height: 90%;
 
-    @include bpk-breakpoint-above-mobile {
-      width: $bpk-modal-max-width;
+    @include mixins.bpk-breakpoint-above-mobile {
+      width: mixins.$bpk-modal-max-width;
       max-width: none;
     }
   }
 
   &::backdrop {
     position: fixed;
-    background-color: $bpk-scrim-day;
-    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
+    background-color: mixins.$bpk-scrim-day;
+    animation: bpk-modal-scrim mixins.$bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
@@ -139,7 +140,7 @@
   }
 
   &__header-title {
-    padding: bpk-spacing-base();
+    padding: mixins.bpk-spacing-base();
 
     @include header;
   }
@@ -151,21 +152,21 @@
   }
 
   &__title {
-    padding-inline-end: bpk-spacing-base();
+    padding-inline-end: mixins.bpk-spacing-base();
 
-    @include bpk-label-1;
+    @include mixins.bpk-label-1;
   }
 
   &__button-container {
-    padding-block-start: bpk-spacing-base();
-    padding-inline-end: bpk-spacing-base();
+    padding-block-start: mixins.bpk-spacing-base();
+    padding-inline-end: mixins.bpk-spacing-base();
 
     @include header;
   }
 
   &__container {
     min-height: 100%;
-    padding: $bpk-modal-content-padding;
+    padding: mixins.$bpk-modal-content-padding;
 
     &--padded {
       padding: 0;

@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-textarea {
-  @include bpk-textarea;
+  @include mixins.bpk-textarea;
 
   &--invalid {
-    @include bpk-textarea--invalid;
+    @include mixins.bpk-textarea--invalid;
   }
 
   &--large {
-    @include bpk-textarea--large;
+    @include mixins.bpk-textarea--large;
   }
 }

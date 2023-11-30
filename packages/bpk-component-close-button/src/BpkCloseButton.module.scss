@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
-$button-padding: bpk-spacing-sm() / 2;
+$button-padding: mixins.bpk-spacing-sm() * 0.5;
 
 .bpk-close-button {
-  width: bpk-spacing-lg();
-  height: bpk-spacing-lg();
+  width: mixins.bpk-spacing-lg();
+  height: mixins.bpk-spacing-lg();
 
   // The margin here is used to ensure that the icon is aligned to
   // the leading or trailing edge of its parent container
@@ -31,18 +31,18 @@ $button-padding: bpk-spacing-sm() / 2;
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $bpk-text-secondary-day;
+  color: mixins.$bpk-text-secondary-day;
   cursor: pointer;
   appearance: none;
 
-  @include bpk-touch-tappable;
+  @include mixins.bpk-touch-tappable;
 
-  @include bpk-hover {
-    color: $bpk-text-primary-day;
+  @include mixins.bpk-hover {
+    color: mixins.$bpk-text-primary-day;
   }
 
   &:active {
-    color: $bpk-text-primary-day;
+    color: mixins.$bpk-text-primary-day;
   }
 
   &__icon {

@@ -16,61 +16,70 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-banner-alert {
-  background-color: $bpk-surface-default-day;
+  background-color: mixins.$bpk-surface-default-day;
   overflow: hidden;
 
-  @include bpk-border-radius-sm;
+  @include mixins.bpk-border-radius-sm;
 
   &--primary {
-    @include bpk-border-sm(
-      var(--bpk-banner-alert-primary-color, $bpk-banner-alert-primary-color),
-      ''
-    );
-  }
+    @include mixins.bpk-border-sm(
+        var(
+          --bpk-banner-alert-primary-color,
+          mixins.$bpk-banner-alert-primary-color
+      ),
+        ''
+      );
+    }
 
   &--success {
-    @include bpk-border-sm(
-      var(--bpk-banner-alert-success-color, $bpk-banner-alert-success-color),
-      ''
-    );
-  }
+    @include mixins.bpk-border-sm(
+        var(
+          --bpk-banner-alert-success-color,
+          mixins.$bpk-banner-alert-success-color
+      ),
+        ''
+      );
+    }
 
   &--warn {
-    @include bpk-border-sm(
-      var(--bpk-banner-alert-warn-color, $bpk-banner-alert-warn-color),
+    @include mixins.bpk-border-sm(
+      var(--bpk-banner-alert-warn-color, mixins.$bpk-banner-alert-warn-color),
       ''
     );
   }
 
   &--error {
-    @include bpk-border-sm(
-      var(--bpk-banner-alert-error-color, $bpk-banner-alert-error-color),
-      ''
-    );
-  }
+    @include mixins.bpk-border-sm(
+        var(
+          --bpk-banner-alert-error-color,
+          mixins.$bpk-banner-alert-error-color
+      ),
+        ''
+      );
+    }
 
   &--neutral {
-    @include bpk-border-sm($bpk-banner-alert-neutral-color, '');
+    @include mixins.bpk-border-sm(mixins.$bpk-banner-alert-neutral-color, '');
   }
 
   &__header {
     display: flex;
-    padding: bpk-spacing-md();
+    padding: mixins.bpk-spacing-md();
     flex-direction: row;
     align-items: center;
 
     &--expandable {
       cursor: pointer;
 
-      @include bpk-hover {
-        background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+      @include mixins.bpk-hover {
+        background-color: mixins.$bpk-banner-alert-header-expandable-hover-background-color;
       }
 
       &:active {
-        background-color: $bpk-banner-alert-header-expandable-active-background-color;
+        background-color: mixins.$bpk-banner-alert-header-expandable-active-background-color;
       }
     }
   }
@@ -83,44 +92,44 @@
   }
 
   &__message {
-    padding: 0 bpk-spacing-md();
+    padding: 0 mixins.bpk-spacing-md();
     flex-grow: 1;
   }
 
   &__primary-icon {
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       fill,
       --bpk-banner-alert-primary-color,
-      $bpk-banner-alert-primary-color
+      mixins.$bpk-banner-alert-primary-color
     );
   }
 
   &__success-icon {
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       fill,
       --bpk-banner-alert-success-color,
-      $bpk-banner-alert-success-color
+      mixins.$bpk-banner-alert-success-color
     );
   }
 
   &__warn-icon {
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       fill,
       --bpk-banner-alert-warn-color,
-      $bpk-banner-alert-warn-color
+      mixins.$bpk-banner-alert-warn-color
     );
   }
 
   &__error-icon {
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       fill,
       --bpk-banner-alert-error-color,
-      $bpk-banner-alert-error-color
+      mixins.$bpk-banner-alert-error-color
     );
   }
 
   &__neutral-icon {
-    fill: $bpk-text-secondary-day;
+    fill: mixins.$bpk-text-secondary-day;
   }
 
   &__toggle-button {
@@ -132,7 +141,7 @@
   }
 
   &__expand-icon {
-    fill: $bpk-text-secondary-day;
+    fill: mixins.$bpk-text-secondary-day;
 
     &--flipped {
       transform: scaleY(-1);
@@ -140,10 +149,11 @@
   }
 
   &__children-container {
-    padding: 0 bpk-spacing-xxl() bpk-spacing-md() bpk-spacing-xl();
-    color: $bpk-text-secondary-day;
+    padding: 0 mixins.bpk-spacing-xxl() mixins.bpk-spacing-md()
+        mixins.bpk-spacing-xl();
+    color: mixins.$bpk-text-secondary-day;
 
-    @include bpk-text;
-    @include bpk-caption;
+    @include mixins.bpk-text;
+    @include mixins.bpk-caption;
   }
 }

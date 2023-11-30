@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-nudger {
   @include bpk-rtl {
@@ -30,22 +30,22 @@
 
   &__input {
     display: inline-block;
-    padding: bpk-spacing-md() 0;
+    padding: mixins.bpk-spacing-md() 0;
     border: none;
-    color: $bpk-text-primary-day;
+    color: mixins.$bpk-text-primary-day;
     text-align: center;
     vertical-align: middle;
 
-    @include bpk-text;
-    @include bpk-heading-5;
+    @include mixins.bpk-text;
+    @include mixins.bpk-heading-5;
 
     &--secondary-on-dark {
       background-color: transparent;
-      color: $bpk-text-on-dark-day;
+      color: mixins.$bpk-text-on-dark-day;
     }
 
     &--numeric {
-      $size: bpk-spacing-lg() + (bpk-spacing-md() * 2);
+      $size: mixins.bpk-spacing-lg() + (mixins.bpk-spacing-md() * 2);
 
       width: $size;
     }
@@ -59,7 +59,7 @@
 
   &__label {
     display: flex;
-    gap: bpk-spacing-md();
+    gap: mixins.bpk-spacing-md();
 
     &--title-subtitle {
       display: flex;
@@ -68,7 +68,7 @@
     }
 
     &--subtitle {
-      color: $bpk-text-secondary-day;
+      color: mixins.$bpk-text-secondary-day;
     }
   }
 }

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-button--secondary {
-  @include bpk-button--secondary;
+  @include mixins.bpk-button--secondary;
 }

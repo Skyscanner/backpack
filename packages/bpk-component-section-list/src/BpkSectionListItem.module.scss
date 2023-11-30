@@ -16,37 +16,37 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-section-list-item {
   $root: &;
 
   display: flex;
   width: 100%;
-  min-height: bpk-spacing-xl() * 2;
-  padding: bpk-spacing-md() bpk-spacing-base();
+  min-height: mixins.bpk-spacing-xl() * 2;
+  padding: mixins.bpk-spacing-md() mixins.bpk-spacing-base();
   justify-content: space-between;
   align-items: center;
   border: none;
-  background-color: $bpk-surface-default-day;
-  color: $bpk-text-primary-day;
+  background-color: mixins.$bpk-surface-default-day;
+  color: mixins.$bpk-text-primary-day;
   text-decoration: none;
 
-  @include bpk-border-bottom-sm($bpk-line-day);
+  @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day);
 
   &--interactive {
     cursor: pointer;
   }
 
   &__chevron {
-    fill: $bpk-text-secondary-day;
+    fill: mixins.$bpk-text-secondary-day;
 
     #{$root}:hover & {
-      fill: $bpk-text-primary-day;
+      fill: mixins.$bpk-text-primary-day;
     }
 
     #{$root}:active & {
-      fill: $bpk-text-primary-day;
+      fill: mixins.$bpk-text-primary-day;
     }
   }
 }

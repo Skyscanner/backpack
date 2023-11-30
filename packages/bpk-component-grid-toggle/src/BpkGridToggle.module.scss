@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-vertical-grid {
   &--on {
@@ -35,11 +35,11 @@
       height: auto;
       background: linear-gradient(
           to bottom,
-          rgba($bpk-status-danger-spot-day, 0.3) 0,
-          transparent $bpk-one-pixel-rem
+          rgba(mixins.$bpk-status-danger-spot-day, 0.3) 0,
+          transparent mixins.$bpk-one-pixel-rem
         )
         repeat left 0;
-      background-size: bpk-spacing-sm() bpk-spacing-sm();
+      background-size: mixins.bpk-spacing-sm() mixins.bpk-spacing-sm();
       pointer-events: none;
     }
 

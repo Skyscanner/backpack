@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 $min-vertical-width: 240;
 $max-vertical-width: 720;
@@ -29,14 +29,14 @@ $fixed-secondary-width: 216;
   align-items: stretch;
 
   &--vertical {
-    min-width: $bpk-one-pixel-rem * $min-vertical-width;
-    max-width: $bpk-one-pixel-rem * $max-vertical-width;
+    min-width: mixins.$bpk-one-pixel-rem * $min-vertical-width;
+    max-width: mixins.$bpk-one-pixel-rem * $max-vertical-width;
     flex-direction: column;
   }
 
   &--horizontal {
-    min-width: $bpk-one-pixel-rem * $min-horizontal-width;
-    min-height: $bpk-one-pixel-rem * $min-horizontal-height;
+    min-width: mixins.$bpk-one-pixel-rem * $min-horizontal-width;
+    min-height: mixins.$bpk-one-pixel-rem * $min-horizontal-height;
   }
 
   &__primary {
@@ -47,15 +47,15 @@ $fixed-secondary-width: 216;
 
   &__secondary {
     &--vertical {
-      border-top: $bpk-input-border;
+      border-top: mixins.$bpk-input-border;
     }
 
     &--horizontal {
-      width: $bpk-one-pixel-rem * $fixed-secondary-width;
-      border-left: $bpk-input-border;
+      width: mixins.$bpk-one-pixel-rem * $fixed-secondary-width;
+      border-left: mixins.$bpk-input-border;
 
-      @include bpk-rtl {
-        border-right: $bpk-input-border;
+      @include mixins.bpk-rtl {
+        border-right: mixins.$bpk-input-border;
         border-left: unset;
       }
     }

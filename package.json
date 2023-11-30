@@ -16,10 +16,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "gulp && npm run build:sass && npm run build:stylesheets",
+    "build": "run-s build:*",
+    "build:gulp": "gulp",
+    "build:mixins-v2": "./scripts/scss/generate-v2.sh",
     "build:sass": "node scripts/scss/styles-prod.js && rm packages/bpk-stylesheets/index.css",
     "build:stylesheets": "(cd packages/bpk-stylesheets && node build)",
-    "build:mixins-v2": "./scripts/scss/generate-v2.sh",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-pristine": "node scripts/check-pristine-state",

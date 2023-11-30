@@ -18,18 +18,18 @@
 
 /* stylelint-disable */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 
   .bpk-split-input {
-    @include bpk-body-default;
+    @include mixins.bpk-body-default;
     display: flex;
     width: 100%;
-    padding-top: bpk-spacing-sm();
+    padding-top: mixins.bpk-spacing-sm();
     flex-direction: row;
     align-items: center;
     direction: ltr;
-  
+
     &__textbox {
       display: flex;
       align-items: center;

@@ -16,22 +16,22 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
-$bpk-border-size-datatable: $bpk-border-size-xl * 2;
+$bpk-border-size-datatable: mixins.$bpk-border-size-xl * 2;
 
 @mixin bpk-datatable-border-left() {
-  @include _bpk-border-left(
+  @include mixins.bpk-border-left(
     $bpk-border-size-datatable,
-    $bpk-core-accent-day,
+    mixins.$bpk-core-accent-day,
     inset
   );
 }
 
 @mixin bpk-datatable-border-right() {
-  @include _bpk-border-right(
+  @include mixins.bpk-border-right(
     $bpk-border-size-datatable,
-    $bpk-core-accent-day,
+    mixins.$bpk-core-accent-day,
     inset
   );
 }
@@ -47,41 +47,41 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: $bpk-border-size-sm solid $bpk-line-day;
+    border: mixins.$bpk-border-size-sm solid mixins.$bpk-line-day;
     border-bottom: none;
-    outline-offset: -(4 * $bpk-one-pixel-rem);
-    color: $bpk-text-primary-day;
+    outline-offset: -1 * (4 * mixins.$bpk-one-pixel-rem);
+    color: mixins.$bpk-text-primary-day;
 
-    @include bpk-footnote;
+    @include mixins.bpk-footnote;
 
     &:last-child:not(.bpk-data-table__header-row) {
-      border-bottom: $bpk-border-size-sm solid $bpk-line-day;
+      border-bottom: mixins.$bpk-border-size-sm solid mixins.$bpk-line-day;
     }
 
     &--clickable:not(.bpk-data-table__header-row):hover {
-      background-color: $bpk-canvas-contrast-day;
+      background-color: mixins.$bpk-canvas-contrast-day;
       cursor: pointer;
 
       @include bpk-datatable-border-left($bpk-border-size-datatable);
 
-      @include bpk-rtl {
+      @include mixins.bpk-rtl {
         @include bpk-datatable-border-right($bpk-border-size-datatable);
       }
     }
 
     &--selected {
-      background-color: $bpk-status-warning-fill-day;
+      background-color: mixins.$bpk-status-warning-fill-day;
 
       @include bpk-datatable-border-left($bpk-border-size-datatable);
 
-      @include bpk-rtl {
+      @include mixins.bpk-rtl {
         @include bpk-datatable-border-right($bpk-border-size-datatable);
       }
     }
   }
 
   &__cell {
-    margin: bpk-spacing-base();
+    margin: mixins.bpk-spacing-base();
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-button--primary-on-light {
-  @include bpk-button--primary-on-light;
+  @include mixins.bpk-button--primary-on-light;
 }

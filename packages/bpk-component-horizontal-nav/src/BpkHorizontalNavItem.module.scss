@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-horizontal-nav {
   &__item {
@@ -32,7 +32,8 @@
   &__link {
     display: inline-block;
     display: flex;
-    padding: (bpk-spacing-base() - (2 * $bpk-one-pixel-rem)) bpk-spacing-lg();
+    padding: (mixins.bpk-spacing-base() - (2 * mixins.$bpk-one-pixel-rem))
+        mixins.bpk-spacing-lg();
     border: 0;
     border-radius: 0;
     background: none;
@@ -41,70 +42,74 @@
     fill: currentcolor;
 
     &--default {
-      @include bpk-themeable-property(
+      @include mixins.bpk-themeable-property(
         color,
         --bpk-horizontal-nav-link-color,
-        $bpk-text-secondary-day
+        mixins.$bpk-text-secondary-day
       );
 
-      @include bpk-hover {
-        @include bpk-border-bottom-xl($bpk-surface-highlight-day);
-        @include bpk-themeable-property(
+      @include mixins.bpk-hover {
+        @include mixins.bpk-border-bottom-xl(
+            mixins.$bpk-surface-highlight-day
+        );
+          @include mixins.bpk-themeable-property(
           color,
           --bpk-horizontal-nav-link-hover-color,
-          $bpk-text-secondary-day
+          mixins.$bpk-text-secondary-day
         );
       }
 
       &:active {
-        @include bpk-border-bottom-xl($bpk-line-day);
-        @include bpk-themeable-property(
+        @include mixins.bpk-border-bottom-xl(mixins.$bpk-line-day);
+        @include mixins.bpk-themeable-property(
           color,
           --bpk-horizontal-nav-link-active-color,
-          $bpk-text-secondary-day
+          mixins.$bpk-text-secondary-day
         );
       }
 
       &-disabled {
-        color: $bpk-text-disabled-day;
+        color: mixins.$bpk-text-disabled-day;
         cursor: not-allowed;
 
         &:active {
-          color: $bpk-text-disabled-day;
+          color: mixins.$bpk-text-disabled-day;
           box-shadow: unset;
         }
       }
 
       &-selected {
-        @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
-        @include bpk-border-bottom-xl(
+        @include mixins.bpk-border-bottom-xl(
+            mixins.$bpk-horizontal-nav-bar-selected-color
+        );
+          @include mixins.bpk-border-bottom-xl(
           var(
             --bpk-horizontal-nav-bar-selected-color,
-            $bpk-horizontal-nav-bar-selected-color
+            mixins.$bpk-horizontal-nav-bar-selected-color
           )
         );
-        @include bpk-themeable-property(
+        @include mixins.bpk-themeable-property(
           color,
           --bpk-horizontal-nav-link-selected-color,
-          $bpk-text-link-day
+          mixins.$bpk-text-link-day
         );
 
-        @include bpk-hover {
-          @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
-          @include bpk-border-bottom-xl(
+        @include mixins.bpk-hover {
+          @include mixins.bpk-border-bottom-xl(mixins.$bpk-horizontal-nav-bar-selected-color);
+          @include mixins.bpk-border-bottom-xl(
             var(
               --bpk-horizontal-nav-bar-selected-color,
-              $bpk-horizontal-nav-bar-selected-color
+              mixins.$bpk-horizontal-nav-bar-selected-color
             )
           );
         }
 
         &:active {
-          @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
-          @include bpk-border-bottom-xl(
+          @include mixins.bpk-border-bottom-xl(mixins.$bpk-horizontal-nav-bar-selected-color);
+          @include mixins.bpk-border-bottom-xl(
             var(
               --bpk-horizontal-nav-bar-selected-color,
-              $bpk-horizontal-nav-bar-selected-color
+              mixins.$bpk-horizontal-nav-bar-selected-color
             )
           );
         }
@@ -112,37 +117,37 @@
     }
 
     &--light {
-      color: $bpk-text-on-dark-day;
+      color: mixins.$bpk-text-on-dark-day;
 
-      @include bpk-hover {
-        @include bpk-border-bottom-xl($bpk-text-on-dark-day);
+      @include mixins.bpk-hover {
+        @include mixins.bpk-border-bottom-xl(mixins.$bpk-text-on-dark-day);
       }
 
       &:active {
-        @include bpk-border-bottom-xl($bpk-text-on-dark-day);
+        @include mixins.bpk-border-bottom-xl(mixins.$bpk-text-on-dark-day);
       }
 
       &-disabled {
-        color: $bpk-text-disabled-day;
+        color: mixins.$bpk-text-disabled-day;
         cursor: not-allowed;
 
         &:active {
-          color: $bpk-text-disabled-day;
+          color: mixins.$bpk-text-disabled-day;
           box-shadow: unset;
         }
       }
 
       &-selected {
-        color: $bpk-text-on-dark-day;
+        color: mixins.$bpk-text-on-dark-day;
 
-        @include bpk-border-bottom-xl($bpk-text-on-dark-day);
+        @include mixins.bpk-border-bottom-xl(mixins.$bpk-text-on-dark-day);
 
-        @include bpk-hover {
-          @include bpk-border-bottom-xl($bpk-text-on-dark-day);
+        @include mixins.bpk-hover {
+          @include mixins.bpk-border-bottom-xl(mixins.$bpk-text-on-dark-day);
         }
 
         &:active {
-          @include bpk-border-bottom-xl($bpk-text-on-dark-day);
+          @include mixins.bpk-border-bottom-xl(mixins.$bpk-text-on-dark-day);
         }
       }
     }

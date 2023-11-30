@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
-$slider-handle-size: bpk-spacing-base() + bpk-spacing-sm();
-$slider-handle-touch-size: bpk-spacing-xxl();
-$slider-bar-height: bpk-spacing-sm();
+$slider-handle-size: mixins.bpk-spacing-base() + mixins.bpk-spacing-sm();
+$slider-handle-touch-size: mixins.bpk-spacing-xxl();
+$slider-bar-height: mixins.bpk-spacing-sm();
 
 .bpk-slider {
   height: $slider-handle-size;
@@ -33,10 +33,10 @@ $slider-bar-height: bpk-spacing-sm();
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: $bpk-core-accent-day;
+    background-color: mixins.$bpk-core-accent-day;
     cursor: pointer;
 
-    @include bpk-box-shadow-sm;
+    @include mixins.bpk-box-shadow-sm;
 
     &::after {
       position: absolute;
@@ -48,37 +48,37 @@ $slider-bar-height: bpk-spacing-sm();
 
     &--active {
       transform: scale(1.2) translate3d(0, 0, 0);
-      background-color: $bpk-private-slider-selected-day;
+      background-color: mixins.$bpk-private-slider-selected-day;
     }
   }
 
   &__bar {
-    top: calc(50% - #{$slider-bar-height / 2});
+    top: calc(50% - #{$slider-bar-height * 0.5});
     height: $slider-bar-height;
-    border-radius: $bpk-border-radius-sm;
-    background-color: $bpk-line-day;
+    border-radius: mixins.$bpk-border-radius-sm;
+    background-color: mixins.$bpk-line-day;
   }
 
   // stylelint-disable-next-line selector-attribute-quotes
   > div[class$='0'] {
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       background-color,
       --bpk-slider-bar-color,
-      $bpk-core-accent-day
+      mixins.$bpk-core-accent-day
     );
   }
 
   &--range {
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='0'] {
-      background-color: $bpk-line-day;
+      background-color: mixins.$bpk-line-day;
     }
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='1'] {
-      @include bpk-themeable-property(
+      @include mixins.bpk-themeable-property(
         background-color,
         --bpk-slider-bar-color,
-        $bpk-core-accent-day
+        mixins.$bpk-core-accent-day
       );
     }
   }

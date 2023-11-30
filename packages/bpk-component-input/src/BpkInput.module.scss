@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-input {
-  @include bpk-input;
+  @include mixins.bpk-input;
 
   &__container {
-    @include bpk-input__container;
+    @include mixins.bpk-input__container;
   }
 
   &__clear-button {
     display: none;
 
-    @include bpk-input__clear-button;
+    @include mixins.bpk-input__clear-button;
 
     &--persistent {
       display: inherit;
@@ -36,15 +36,15 @@
   }
 
   &--valid {
-    @include bpk-input--valid;
+    @include mixins.bpk-input--valid;
   }
 
   &--invalid {
-    @include bpk-input--invalid;
+    @include mixins.bpk-input--invalid;
   }
 
   &--clearable {
-    @include bpk-input--clearable;
+    @include mixins.bpk-input--clearable;
 
     // Display the clear button when a clearable input is focused.
     &:focus + .bpk-input__clear-button {
@@ -53,28 +53,28 @@
   }
 
   &--large {
-    @include bpk-input--large;
+    @include mixins.bpk-input--large;
   }
 
   // When persistent, set background to override any validity icons
   // appearing and make the clear button always display.
   &--persistent-clearable {
-    background: $bpk-input-background;
+    background: mixins.$bpk-input-background;
   }
 
   &--docked {
-    @include bpk-input--docked;
+    @include mixins.bpk-input--docked;
 
     &-first {
-      @include bpk-input--docked-first-child;
+      @include mixins.bpk-input--docked-first-child;
     }
 
     &-middle {
-      @include bpk-input--docked-middle-child;
+      @include mixins.bpk-input--docked-middle-child;
     }
 
     &-last {
-      @include bpk-input--docked-last-child;
+      @include mixins.bpk-input--docked-last-child;
     }
   }
 

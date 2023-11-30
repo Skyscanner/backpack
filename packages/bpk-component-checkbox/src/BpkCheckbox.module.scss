@@ -16,48 +16,48 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-checkbox {
-  @include bpk-checkbox;
+  @include mixins.bpk-checkbox;
 
   &__label {
-    @include bpk-checkbox__label;
+    @include mixins.bpk-checkbox__label;
 
     &--small {
-      @include bpk-checkbox__label--small;
+      @include mixins.bpk-checkbox__label--small;
     }
   }
 
   &--white {
-    @include bpk-checkbox--white;
+    @include mixins.bpk-checkbox--white;
   }
 
   &--disabled {
-    @include bpk-checkbox--disabled;
+    @include mixins.bpk-checkbox--disabled;
 
     &--white {
-      color: $bpk-text-disabled-on-dark-day;
+      color: mixins.$bpk-text-disabled-on-dark-day;
     }
   }
 
   &--invalid {
-    @include bpk-checkbox--invalid;
+    @include mixins.bpk-checkbox--invalid;
   }
 
   &__input {
-    @include bpk-checkbox__input;
+    @include mixins.bpk-checkbox__input;
 
     &-indeterminate {
       &::before {
         position: absolute;
-        top: bpk-spacing-sm() + $bpk-one-pixel-rem;
-        left: bpk-spacing-sm() / 2;
+        top: mixins.bpk-spacing-sm() + mixins.$bpk-one-pixel-rem;
+        left: mixins.bpk-spacing-sm() * 0.5;
         content: '';
-        width: bpk-spacing-xxl() / 4;
-        height: bpk-spacing-sm() - $bpk-one-pixel-rem;
-        border-radius: $bpk-border-size-lg;
-        background-color: $bpk-surface-default-day;
+        width: mixins.bpk-spacing-xxl() * 0.25;
+        height: mixins.bpk-spacing-sm() - mixins.$bpk-one-pixel-rem;
+        border-radius: mixins.$bpk-border-size-lg;
+        background-color: mixins.$bpk-surface-default-day;
       }
     }
 
@@ -66,11 +66,11 @@
     }
 
     &-white {
-      background-color: $bpk-surface-default-day;
+      background-color: mixins.$bpk-surface-default-day;
     }
   }
 
   &__asterisk {
-    color: $bpk-status-danger-spot-day;
+    color: mixins.$bpk-status-danger-spot-day;
   }
 }

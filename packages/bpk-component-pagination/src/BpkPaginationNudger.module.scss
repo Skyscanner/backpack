@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-pagination-nudger {
   display: flex;
-  width: bpk-spacing-xl() + bpk-spacing-sm();
-  height: bpk-spacing-xl() + bpk-spacing-sm();
-  padding: $bpk-one-pixel-rem * 10;
+  width: mixins.bpk-spacing-xl() + mixins.bpk-spacing-sm();
+  height: mixins.bpk-spacing-xl() + mixins.bpk-spacing-sm();
+  padding: mixins.$bpk-one-pixel-rem * 10;
 
   &__text {
     &--hidden {
-      @include bpk-visually-hidden;
+      @include mixins.bpk-visually-hidden;
     }
   }
 }

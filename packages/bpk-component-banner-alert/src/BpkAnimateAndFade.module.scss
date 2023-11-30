@@ -16,15 +16,15 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-animate-and-fade {
   $invisible: 0.01;
 
   &--enter {
-    transition: opacity $bpk-duration-sm ease-in-out;
+    transition: opacity mixins.$bpk-duration-sm ease-in-out;
     opacity: $invisible;
-    transition-delay: $bpk-duration-sm;
+    transition-delay: mixins.$bpk-duration-sm;
   }
 
   &--enter-active {
@@ -32,19 +32,19 @@
   }
 
   &--leave {
-    transition: opacity $bpk-duration-sm ease-in-out;
+    transition: opacity mixins.$bpk-duration-sm ease-in-out;
     opacity: 1;
   }
 
   &--leave-active {
-    transition: opacity $bpk-duration-sm ease-in-out;
+    transition: opacity mixins.$bpk-duration-sm ease-in-out;
     opacity: $invisible;
   }
 
   &--appear {
-    transition: opacity $bpk-duration-sm ease-in-out;
+    transition: opacity mixins.$bpk-duration-sm ease-in-out;
     opacity: $invisible;
-    transition-delay: $bpk-duration-sm;
+    transition-delay: mixins.$bpk-duration-sm;
   }
 
   &--appear-active {

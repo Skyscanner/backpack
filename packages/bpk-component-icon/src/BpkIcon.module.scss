@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-icon {
   &--align-to-button {
-    @include bpk-icon-sm--align-to-button;
+    @include mixins.bpk-icon-sm--align-to-button;
   }
 
   &--align-to-large-button {
-    @include bpk-icon-lg--align-to-large-button;
+    @include mixins.bpk-icon-lg--align-to-large-button;
   }
 
   &--rtl-support {
-    @include bpk-icon--rtl-support;
+    @include mixins.bpk-icon--rtl-support;
   }
 }

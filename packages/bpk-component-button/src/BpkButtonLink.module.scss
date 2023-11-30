@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-button {
   &--link {
-    @include bpk-button--link;
+    @include mixins.bpk-button--link;
   }
 }

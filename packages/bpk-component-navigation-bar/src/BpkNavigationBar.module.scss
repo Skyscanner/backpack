@@ -16,21 +16,21 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-navigation-bar {
   position: relative;
   display: flex;
-  min-height: bpk-spacing-xl() + bpk-spacing-lg();
-  padding: bpk-spacing-base();
+  min-height: mixins.bpk-spacing-xl() + mixins.bpk-spacing-lg();
+  padding: mixins.bpk-spacing-base();
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  @include bpk-themeable-property(
+  @include mixins.bpk-themeable-property(
     background-color,
     --bpk-navigation-bar-background-color,
-    $bpk-surface-default-day
+    mixins.$bpk-surface-default-day
   );
 
   &--on-dark {
@@ -38,10 +38,10 @@
   }
 
   &__title {
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       color,
       --bpk-navigation-bar-title-color,
-      $bpk-text-primary-day
+      mixins.$bpk-text-primary-day
     );
 
     &--on-dark {
@@ -53,32 +53,32 @@
   &__trailing-item {
     position: absolute;
 
-    @include bpk-label-2;
+    @include mixins.bpk-label-2;
   }
 
   &__leading-item {
-    left: bpk-spacing-base();
+    left: mixins.bpk-spacing-base();
 
-    @include bpk-rtl {
-      right: bpk-spacing-base();
+    @include mixins.bpk-rtl {
+      right: mixins.bpk-spacing-base();
       left: auto;
     }
   }
 
   &__trailing-item {
-    right: bpk-spacing-base();
+    right: mixins.bpk-spacing-base();
 
-    @include bpk-rtl {
+    @include mixins.bpk-rtl {
       right: auto;
-      left: bpk-spacing-base();
+      left: mixins.bpk-spacing-base();
     }
   }
 
   &__sticky {
     position: sticky;
     top: 0;
-    z-index: $bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
+    z-index: mixins.$bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
 
-    @include bpk-box-shadow-sm;
+    @include mixins.bpk-box-shadow-sm;
   }
 }

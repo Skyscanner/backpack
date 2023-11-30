@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-content-bubble {
   &__pointer {
@@ -34,10 +34,11 @@
     background-size: cover;
 
     &--rounded {
-      border-radius: $bpk-flare-corner-radius;
+      border-radius: mixins.$bpk-flare-corner-radius;
 
       &--with-pointer {
-        border-radius: $bpk-flare-corner-radius $bpk-flare-corner-radius 0 0;
+        border-radius: mixins.$bpk-flare-corner-radius
+          mixins.$bpk-flare-corner-radius 0 0;
       }
     }
   }

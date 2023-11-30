@@ -16,105 +16,108 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-calendar-date {
-  width: $bpk-calendar-day-size;
-  height: $bpk-calendar-day-size;
+  width: mixins.$bpk-calendar-day-size;
+  height: mixins.$bpk-calendar-day-size;
   padding: 0;
   border: none;
-  border-radius: $bpk-border-radius-lg;
+  border-radius: mixins.$bpk-border-radius-lg;
   background-color: transparent;
   text-align: center;
   cursor: pointer;
   appearance: none;
   box-sizing: border-box;
 
-  @include bpk-label-1;
-  @include bpk-themeable-property(
+  @include mixins.bpk-label-1;
+  @include mixins.bpk-themeable-property(
     color,
     --bpk-calendar-date-text-color,
-    $bpk-text-primary-day
+    mixins.$bpk-text-primary-day
   );
 
-  @include bpk-hover {
+  @include mixins.bpk-hover {
     &:not(.bpk-calendar-date--selected) {
-      background-color: $bpk-canvas-contrast-day;
+      background-color: mixins.$bpk-canvas-contrast-day;
 
-      @include bpk-themeable-property(
+      @include mixins.bpk-themeable-property(
         color,
         --bpk-calendar-date-text-hover-color,
-        $bpk-text-primary-day
+        mixins.$bpk-text-primary-day
       );
     }
   }
 
   &:not(.bpk-calendar-date--selected):active {
-    background-color: $bpk-canvas-contrast-day;
+    background-color: mixins.$bpk-canvas-contrast-day;
 
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       color,
       --bpk-calendar-date-text-active-color,
-      $bpk-text-primary-day
+      mixins.$bpk-text-primary-day
     );
   }
 
   &--outside {
     background-color: transparent;
-    color: $bpk-text-disabled-day;
+    color: mixins.$bpk-text-disabled-day;
   }
 
   &--selected {
     cursor: default;
 
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       color,
       --bpk-calendar-date-text-selected-color,
-      $bpk-text-primary-inverse-day
+      mixins.$bpk-text-primary-inverse-day
     );
   }
 
   &--middle {
-    background-color: $bpk-surface-subtle-day;
-    color: $bpk-text-primary-day;
+    background-color: mixins.$bpk-surface-subtle-day;
+    color: mixins.$bpk-text-primary-day;
   }
 
   &--single {
-    background-color: $bpk-core-accent-day;
+    background-color: mixins.$bpk-core-accent-day;
   }
 
   &--start {
-    background-color: $bpk-core-accent-day;
+    background-color: mixins.$bpk-core-accent-day;
   }
 
   &--end {
-    background-color: $bpk-core-accent-day;
+    background-color: mixins.$bpk-core-accent-day;
   }
 
   &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
-    box-shadow: 0 0 0 2px $bpk-core-accent-day inset;
+    box-shadow: 0 0 0 2px mixins.$bpk-core-accent-day inset;
     box-shadow: 0 0 0 2px
-      var(--bpk-calendar-date-focused-border-color, $bpk-core-accent-day) inset;
+      var(
+          --bpk-calendar-date-focused-border-color,
+          mixins.$bpk-core-accent-day
+        ) inset;
 
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       color,
       --bpk-calendar-date-text-focus-color,
-      $bpk-core-accent-day
+      mixins.$bpk-core-accent-day
     );
   }
 
   &:disabled,
   &--blocked {
     background-color: transparent;
-    color: $bpk-text-disabled-day;
+    color: mixins.$bpk-text-disabled-day;
     cursor: not-allowed;
 
-    @include bpk-hover {
-      color: $bpk-text-disabled-day;
+    @include mixins.bpk-hover {
+      color: mixins.$bpk-text-disabled-day;
     }
 
     &:active {
-      color: $bpk-text-disabled-day;
+      color: mixins.$bpk-text-disabled-day;
     }
   }
 }

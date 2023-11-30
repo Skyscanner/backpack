@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-section-list-section {
   margin: 0;
@@ -25,9 +25,9 @@
 
   &__header {
     display: flex;
-    min-height: bpk-spacing-xl();
-    padding: bpk-spacing-md() bpk-spacing-base();
+    min-height: mixins.bpk-spacing-xl();
+    padding: mixins.bpk-spacing-md() mixins.bpk-spacing-base();
     align-items: center;
-    background-color: $bpk-surface-highlight-day;
+    background-color: mixins.$bpk-surface-highlight-day;
   }
 }

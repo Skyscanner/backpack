@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-fieldset {
   margin: 0;
@@ -25,13 +25,13 @@
 
   &__description {
     display: block;
-    margin-top: bpk-spacing-md();
-    color: $bpk-text-secondary-day;
+    margin-top: mixins.bpk-spacing-md();
+    color: mixins.$bpk-text-secondary-day;
 
-    @include bpk-caption;
+    @include mixins.bpk-caption;
   }
 
   &__label {
-    margin-bottom: bpk-spacing-sm();
+    margin-bottom: mixins.bpk-spacing-sm();
   }
 }

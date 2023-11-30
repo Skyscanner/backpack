@@ -16,29 +16,29 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-form-validation {
-  @include bpk-form-validation;
+  @include mixins.bpk-form-validation;
 
   &__container {
-    @include bpk-form-validation__container;
+    @include mixins.bpk-form-validation__container;
   }
 
   &__icon {
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       fill,
       --bpk-form-validation-icon-fill,
-      $bpk-form-validation-color
+      mixins.$bpk-form-validation-color
     );
-    @include bpk-margin-trailing(bpk-spacing-sm());
+    @include mixins.bpk-margin-trailing(mixins.bpk-spacing-sm());
   }
 
   &--appear {
-    @include bpk-form-validation--appear;
+    @include mixins.bpk-form-validation--appear;
   }
 
   &--is-checkbox {
-    @include bpk-form-validation--is-checkbox;
+    @include mixins.bpk-form-validation--is-checkbox;
   }
 }

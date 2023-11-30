@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-list {
-  @include bpk-list;
+  @include mixins.bpk-list;
 
   &__item {
-    @include bpk-list-item;
+    @include mixins.bpk-list-item;
   }
 
   & & {
-    @include bpk-list--nested;
+    @include mixins.bpk-list--nested;
 
     /* stylelint-disable selector-max-compound-selectors */
 

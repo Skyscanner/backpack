@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-phone-input {
   display: flex;
-  column-gap: bpk-spacing-md();
+  column-gap: mixins.bpk-spacing-md();
 
-  @include bpk-breakpoint-mobile {
+  @include mixins.bpk-breakpoint-mobile {
     flex-wrap: wrap;
 
     &__phone-number {
       width: 100%;
-      margin-top: bpk-spacing-base();
+      margin-top: mixins.bpk-spacing-base();
     }
   }
 
@@ -36,6 +36,6 @@
   }
 
   &__label {
-    margin-bottom: bpk-spacing-md();
+    margin-bottom: mixins.bpk-spacing-md();
   }
 }

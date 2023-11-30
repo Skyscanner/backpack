@@ -16,32 +16,32 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-label {
-  @include bpk-label;
+  @include mixins.bpk-label;
 
   &--white {
-    @include bpk-label--white;
+    @include mixins.bpk-label--white;
   }
 
   &--invalid {
-    @include bpk-label--invalid;
+    @include mixins.bpk-label--invalid;
   }
 
   &--disabled {
-    @include bpk-label--disabled;
+    @include mixins.bpk-label--disabled;
 
     &--white {
-      color: $bpk-text-disabled-on-dark-day;
+      color: mixins.$bpk-text-disabled-on-dark-day;
     }
   }
 
   &__asterisk {
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       color,
       --bpk-form-validation-text-color,
-      $bpk-form-validation-color
+      mixins.$bpk-form-validation-color
     );
   }
 }

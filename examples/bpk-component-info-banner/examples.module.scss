@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins-next';
+@use '../../packages/bpk-mixins-next' as *;
 
 .bpk-info-banner-examples {
   &__component {

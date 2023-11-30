@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-code {
   &--block {
-    @include bpk-code--block;
+    @include mixins.bpk-code--block;
   }
 
   &__pre {
-    @include bpk-code__pre;
+    @include mixins.bpk-code__pre;
 
     &--alternate {
-      @include bpk-code__pre--alternate;
+      @include mixins.bpk-code__pre--alternate;
     }
   }
 }

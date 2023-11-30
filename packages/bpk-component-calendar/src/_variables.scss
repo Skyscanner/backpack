@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
-$shadow-bottom: 0 1px 0 0 $bpk-line-day; /* stylelint-disable-line unit-disallowed-list */
-$calendar-width: 7 * ($bpk-calendar-day-size + (2 * $bpk-calendar-day-spacing));
+$shadow-bottom: 0 1px 0 0 mixins.$bpk-line-day; /* stylelint-disable-line unit-disallowed-list */
+$calendar-width: 7 *
+  (mixins.$bpk-calendar-day-size + (2 * mixins.$bpk-calendar-day-spacing));

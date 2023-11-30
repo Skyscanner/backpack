@@ -18,25 +18,25 @@
 
 /* @flow strict */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-button {
-  @include bpk-button;
+  @include mixins.bpk-button;
 
   &--large {
-    @include bpk-button--large;
+    @include mixins.bpk-button--large;
   }
 
   &--icon-only {
-    border-radius: $bpk-button-border-radius;
+    border-radius: mixins.$bpk-button-border-radius;
 
-    @include bpk-button--icon-only;
+    @include mixins.bpk-button--icon-only;
   }
 
   &--large-icon-only {
-    border-radius: $bpk-button-border-radius;
+    border-radius: mixins.$bpk-button-border-radius;
 
-    @include bpk-button--large-icon-only;
+    @include mixins.bpk-button--large-icon-only;
   }
 
   /* stylelint-disable selector-max-compound-selectors */

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-scrollable-calendar-grid {
   width: 100%;
@@ -24,6 +24,6 @@
   border-spacing: 0;
 
   &__title {
-    margin-top: bpk-spacing-lg();
+    margin-top: mixins.bpk-spacing-lg();
   }
 }

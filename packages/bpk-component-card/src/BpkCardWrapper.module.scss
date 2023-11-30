@@ -16,14 +16,15 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-card-wrapper {
-  @include bpk-card;
-  @include bpk-border-lg(var(--background-color), '');
+  @include mixins.bpk-card;
+  @include mixins.bpk-border-lg(var(--background-color), '');
 
   &--header {
-    border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
+    border-radius: mixins.$bpk-border-radius-sm mixins.$bpk-border-radius-sm 0
+        0;
     background-color: var(--background-color);
     cursor: default;
     overflow: hidden;
@@ -31,7 +32,8 @@
 
   &--content {
     position: relative;
-    border-radius: 0 0 $bpk-border-radius-md $bpk-border-radius-md;
+    border-radius: 0 0 mixins.$bpk-border-radius-md
+        mixins.$bpk-border-radius-md;
     overflow: hidden;
 
     &::before,
@@ -40,13 +42,13 @@
       top: 0;
       content: ' ';
       z-index: 2;
-      width: bpk-spacing-lg();
-      height: bpk-spacing-lg();
+      width: mixins.bpk-spacing-lg();
+      height: mixins.bpk-spacing-lg();
       background-color: transparent;
-      box-shadow: bpk-spacing-base() 0 0 0 var(--background-color);
+      box-shadow: mixins.bpk-spacing-base() 0 0 0 var(--background-color);
       overflow: hidden;
 
-      @include bpk-border-radius-md;
+      @include mixins.bpk-border-radius-md;
     }
 
     &::before {
@@ -62,7 +64,7 @@
 
   &:has(.bpk-card-wrapper--header:active) {
     &::after {
-      box-shadow: $bpk-box-shadow-lg;
+      box-shadow: mixins.$bpk-box-shadow-lg;
       opacity: 1;
     }
   }

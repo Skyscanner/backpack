@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-sentinel {
   // this is necessary for when the user doesn't define a custom loading component
   width: 100%;
-  height: bpk-spacing-lg();
+  height: mixins.bpk-spacing-lg();
 }

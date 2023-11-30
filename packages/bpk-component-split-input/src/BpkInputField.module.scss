@@ -18,13 +18,13 @@
 
 /* stylelint-disable */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 
   .bpk-input-field {
     display: flex;
-    max-width: 3*bpk-spacing-xxl();
-    margin-right: bpk-spacing-sm();
+    max-width: 3*mixins.bpk-spacing-xxl();
+    margin-right: mixins.bpk-spacing-sm();
     align-items: center;
 
     input {
@@ -33,5 +33,5 @@
   }
 
   .bpk-input-field:last-child {
-    margin-right: $bpk-spacing-none;
+    margin-right: mixins.$bpk-spacing-none;
   }

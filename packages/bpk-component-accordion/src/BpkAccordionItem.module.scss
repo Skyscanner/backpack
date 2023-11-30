@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-accordion {
   &__title {
     height: auto;
 
     &--collapsed {
-      @include bpk-border-bottom-sm($bpk-line-day);
+      @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day);
 
       &-on-dark {
-        @include bpk-border-bottom-sm($bpk-line-on-dark-day);
+        @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-on-dark-day);
       }
     }
   }
@@ -36,12 +36,12 @@
     padding: 0;
     border: 0;
     background-color: transparent;
-    color: $bpk-text-primary-day;
+    color: mixins.$bpk-text-primary-day;
     text-align: left;
     cursor: pointer;
     appearance: none;
 
-    @include bpk-rtl {
+    @include mixins.bpk-rtl {
       text-align: right;
     }
   }
@@ -49,7 +49,7 @@
   &__flex-container {
     display: inline-flex;
     width: 100%;
-    margin: (bpk-spacing-base()) 0;
+    margin: mixins.bpk-spacing-base() 0;
     flex-direction: row;
   }
 
@@ -58,7 +58,7 @@
     flex-grow: 1;
 
     &--on-dark {
-      color: $bpk-canvas-day;
+      color: mixins.$bpk-canvas-day;
     }
   }
 
@@ -67,18 +67,18 @@
   }
 
   &__leading-icon {
-    @include bpk-margin-trailing(bpk-spacing-md(), true);
+    @include mixins.bpk-margin-trailing(mixins.bpk-spacing-md(), true);
   }
 
   &__item-expand-icon {
-    fill: $bpk-text-primary-day;
+    fill: mixins.$bpk-text-primary-day;
 
     &--flipped {
       transform: scaleY(-1);
     }
 
     &--on-dark {
-      fill: $bpk-canvas-day;
+      fill: mixins.$bpk-canvas-day;
     }
   }
 
@@ -86,14 +86,14 @@
     margin: 0;
 
     &--expanded {
-      padding-bottom: bpk-spacing-base();
+      padding-bottom: mixins.bpk-spacing-base();
 
-      @include bpk-border-bottom-sm($bpk-line-day);
+      @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day);
 
       &-on-dark {
-        padding-bottom: bpk-spacing-base();
+        padding-bottom: mixins.bpk-spacing-base();
 
-        @include bpk-border-bottom-sm($bpk-line-on-dark-day);
+        @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-on-dark-day);
       }
     }
   }

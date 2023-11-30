@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins-next';
+@use '../../packages/bpk-mixins-next' as *;
 
 .bpk-button-story-wrapper {
   padding: bpk-spacing-sm() 0;

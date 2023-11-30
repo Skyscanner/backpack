@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-table {
-  @include bpk-table;
+  @include mixins.bpk-table;
 
   &__cell {
-    @include bpk-table__cell;
+    @include mixins.bpk-table__cell;
 
     &--head {
-      @include bpk-table__cell--head;
+      @include mixins.bpk-table__cell--head;
     }
   }
 }

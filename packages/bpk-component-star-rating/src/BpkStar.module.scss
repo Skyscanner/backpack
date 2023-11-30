@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 @mixin large-star {
-  width: $bpk-icon-size-lg;
-  height: $bpk-icon-size-lg;
+  width: mixins.$bpk-icon-size-lg;
+  height: mixins.$bpk-icon-size-lg;
   vertical-align: bottom;
 }
 
 .bpk-star {
   display: inline-block;
   vertical-align: text-bottom;
-  fill: $bpk-text-disabled-day;
+  fill: mixins.$bpk-text-disabled-day;
 
   &--large {
     @include large-star;
@@ -39,17 +39,17 @@
   }
 
   &--filled {
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       fill,
       --bpk-star-rating-filled-color,
-      $bpk-status-warning-spot-day
+      mixins.$bpk-status-warning-spot-day
     );
   }
 
   &__container {
     display: inline-block;
-    width: $bpk-icon-size-sm;
-    height: $bpk-icon-size-sm;
+    width: mixins.$bpk-icon-size-sm;
+    height: mixins.$bpk-icon-size-sm;
 
     &--half-star {
       position: relative;

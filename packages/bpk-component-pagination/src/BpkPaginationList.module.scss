@@ -16,21 +16,21 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-pagination-page-list {
   display: flex;
   margin: 0;
-  padding: 0 bpk-spacing-md();
+  padding: 0 mixins.bpk-spacing-md();
   align-items: baseline;
   list-style: none;
 
   &__item {
-    margin-right: bpk-spacing-md();
+    margin-right: mixins.bpk-spacing-md();
 
-    @include bpk-rtl {
+    @include mixins.bpk-rtl {
       margin-right: 0;
-      margin-left: bpk-spacing-md();
+      margin-left: mixins.bpk-spacing-md();
 
       &:last-child {
         margin-left: 0;

@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-progress {
   position: relative;
-  height: bpk-spacing-base();
-  border-radius: $bpk-border-radius-md;
-  background-color: $bpk-surface-highlight-day;
+  height: mixins.bpk-spacing-base();
+  border-radius: mixins.$bpk-border-radius-md;
+  background-color: mixins.$bpk-surface-highlight-day;
   overflow: hidden;
 
   &--small {
-    height: bpk-spacing-md();
-    border-radius: $bpk-border-radius-xs;
+    height: mixins.bpk-spacing-md();
+    border-radius: mixins.$bpk-border-radius-xs;
   }
 
   &__value {
@@ -38,13 +38,13 @@
     left: 0;
     content: ' ';
     width: 0%;
-    transition: width $bpk-duration-base ease-in-out;
-    border-radius: $bpk-border-radius-sm;
+    transition: width mixins.$bpk-duration-base ease-in-out;
+    border-radius: mixins.$bpk-border-radius-sm;
 
-    @include bpk-themeable-property(
+    @include mixins.bpk-themeable-property(
       background-color,
       --bpk-progress-bar-fill-color,
-      $bpk-core-accent-day
+      mixins.$bpk-core-accent-day
     );
 
     &--stepped {
@@ -56,7 +56,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 2 * $bpk-one-pixel-rem;
-    background: $bpk-canvas-day;
+    width: 2 * mixins.$bpk-one-pixel-rem;
+    background: mixins.$bpk-canvas-day;
   }
 }

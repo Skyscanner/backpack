@@ -16,28 +16,28 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-floating-notification {
   position: absolute;
   right: 0;
-  bottom: bpk-spacing-xl();
+  bottom: mixins.bpk-spacing-xl();
   left: 0;
   display: flex;
-  max-width: bpk-spacing-xxl() * 10;
+  max-width: mixins.bpk-spacing-xxl() * 10;
   margin: auto;
-  padding: bpk-spacing-lg();
+  padding: mixins.bpk-spacing-lg();
   transition:
-    opacity $bpk-duration-base ease-in-out,
-    transform $bpk-duration-base ease-in-out;
-  border-radius: $bpk-border-radius-md;
-  background: $bpk-core-primary-day;
-  color: $bpk-text-on-dark-day;
-  box-shadow: $bpk-box-shadow-xl, $bpk-box-shadow-lg;
+    opacity mixins.$bpk-duration-base ease-in-out,
+    transform mixins.$bpk-duration-base ease-in-out;
+  border-radius: mixins.$bpk-border-radius-md;
+  background: mixins.$bpk-core-primary-day;
+  color: mixins.$bpk-text-on-dark-day;
+  box-shadow: mixins.$bpk-box-shadow-xl, mixins.$bpk-box-shadow-lg;
 
-  @include bpk-breakpoint-mobile {
+  @include mixins.bpk-breakpoint-mobile {
     max-width: 100%;
-    padding: bpk-spacing-base();
+    padding: mixins.bpk-spacing-base();
   }
 
   &--leave {
@@ -45,7 +45,7 @@
     opacity: 1;
 
     &-active {
-      transform: translateY(bpk-spacing-xl());
+      transform: translateY(mixins.bpk-spacing-xl());
       opacity: 0;
     }
 
@@ -55,7 +55,7 @@
   }
 
   &--appear {
-    transform: translateY(bpk-spacing-xl());
+    transform: translateY(mixins.bpk-spacing-xl());
     opacity: 0;
 
     &-active {
@@ -67,21 +67,21 @@
   &__button {
     min-height: 0;
     padding: 0;
-    color: $bpk-text-on-dark-day;
+    color: mixins.$bpk-text-on-dark-day;
     margin-inline-start: auto;
     word-break: keep-all;
   }
 
   &__icon {
-    margin-right: bpk-spacing-md();
-    margin-left: bpk-spacing-sm();
+    margin-right: mixins.bpk-spacing-md();
+    margin-left: mixins.bpk-spacing-sm();
     flex-shrink: 0;
-    transform: translateY((bpk-spacing-sm()));
+    transform: translateY((mixins.bpk-spacing-sm()));
     text-align: bottom;
-    fill: $bpk-text-on-dark-day;
+    fill: mixins.$bpk-text-on-dark-day;
   }
 
   &__text {
-    margin-inline-end: bpk-spacing-md();
+    margin-inline-end: mixins.bpk-spacing-md();
   }
 }

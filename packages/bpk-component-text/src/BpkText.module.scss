@@ -16,116 +16,116 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-text {
-  @include bpk-text;
+  @include mixins.bpk-text;
 
   &--xs {
-    @include bpk-text--xs;
+    @include mixins.bpk-text--xs;
   }
 
   &--sm {
-    @include bpk-text--sm;
+    @include mixins.bpk-text--sm;
   }
 
   &--base {
-    @include bpk-text--base;
+    @include mixins.bpk-text--base;
   }
 
   &--lg {
-    @include bpk-text--lg;
+    @include mixins.bpk-text--lg;
   }
 
   &--xl {
-    @include bpk-text--xl;
+    @include mixins.bpk-text--xl;
   }
 
   &--xxl {
-    @include bpk-text--xxl;
+    @include mixins.bpk-text--xxl;
   }
 
   &--xxxl {
-    @include bpk-text--xxxl;
+    @include mixins.bpk-text--xxxl;
   }
 
   &--xxxxl {
-    @include bpk-text--xxxxl;
+    @include mixins.bpk-text--xxxxl;
   }
 
   &--xxxxxl {
-    @include bpk-text--xxxxxl;
+    @include mixins.bpk-text--xxxxxl;
   }
 
   &--caption {
-    @include bpk-caption;
+    @include mixins.bpk-caption;
   }
 
   &--footnote {
-    @include bpk-footnote;
+    @include mixins.bpk-footnote;
   }
 
   &--label-1 {
-    @include bpk-label-1;
+    @include mixins.bpk-label-1;
   }
 
   &--label-2 {
-    @include bpk-label-2;
+    @include mixins.bpk-label-2;
   }
 
   &--label-3 {
-    @include bpk-label-3;
+    @include mixins.bpk-label-3;
   }
 
   &--body-default {
-    @include bpk-body-default;
+    @include mixins.bpk-body-default;
   }
 
   &--body-longform {
-    @include bpk-body-longform;
+    @include mixins.bpk-body-longform;
   }
 
   &--subheading {
-    @include bpk-subheading;
+    @include mixins.bpk-subheading;
   }
 
   &--heading-1 {
-    @include bpk-heading-1;
+    @include mixins.bpk-heading-1;
   }
 
   &--heading-2 {
-    @include bpk-heading-2;
+    @include mixins.bpk-heading-2;
   }
 
   &--heading-3 {
-    @include bpk-heading-3;
+    @include mixins.bpk-heading-3;
   }
 
   &--heading-4 {
-    @include bpk-heading-4;
+    @include mixins.bpk-heading-4;
   }
 
   &--heading-5 {
-    @include bpk-heading-5;
+    @include mixins.bpk-heading-5;
   }
 
   &--hero-1 {
-    @include bpk-hero-1;
+    @include mixins.bpk-hero-1;
   }
 
   &--hero-2 {
-    @include bpk-hero-2;
+    @include mixins.bpk-hero-2;
   }
 
   &--hero-3 {
-    @include bpk-hero-3;
+    @include mixins.bpk-hero-3;
   }
 
   &--hero-4 {
-    @include bpk-hero-4;
+    @include mixins.bpk-hero-4;
   }
 
   &--hero-5 {
-    @include bpk-hero-5;
+    @include mixins.bpk-hero-5;
   }
 }

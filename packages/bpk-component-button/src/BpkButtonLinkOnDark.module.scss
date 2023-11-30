@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins-next';
+@use '../../bpk-mixins-next' as mixins;
 
 .bpk-button--link-on-dark {
-  @include bpk-button--link-on-dark;
+  @include mixins.bpk-button--link-on-dark;
 }
