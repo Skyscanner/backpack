@@ -31,6 +31,7 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-banner-alert`](/packages/bpk-component-banner-alert)
 [`bpk-component-barchart`](/packages/bpk-component-barchart)
 [`bpk-component-blockquote`](/packages/bpk-component-blockquote)
+['bpk-component-bottom-sheet](/packages/bpk-component-bottom-sheet)
 [`bpk-component-breadcrumb`](/packages/bpk-component-breadcrumb)
 [`bpk-component-breakpoint`](/packages/bpk-component-breakpoint)
 [`bpk-component-button`](/packages/bpk-component-button)
