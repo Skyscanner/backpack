@@ -72,9 +72,9 @@ const BpkBottomSheetInner = ({
   const headingId = `bpk-modal-heading-${id}`;
 
   return <TransitionInitialMount
-  appearClassName={getClassName()}
-  appearActiveClassName={getClassName()}
-  transitionTimeout={300}
+  appearClassName={getClassName('bpk-bottom-sheet--appear')}
+  appearActiveClassName={getClassName('bpk-bottom-sheet--appear-active')}
+  transitionTimeout={240}
  >
   <section
     id={id}

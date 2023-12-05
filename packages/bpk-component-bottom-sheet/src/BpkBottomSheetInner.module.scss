@@ -69,14 +69,33 @@ $close-button-width: bpk-spacing-lg() + #{$close-button-padding};
     }
   }
 
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
   &--appear {
-    transform: scale(0.9);
-    opacity: $bpk-modal-initial-opacity;
+    animation-duration: 0.24s;
+    animation-name: slide-up;
+    animation-timing-function: cubic-bezier(0.075, 0.165, 0.85, 1);
+
+    @include bpk-breakpoint-above-mobile {
+      transform: scale(0.9);
+      opacity: $bpk-modal-initial-opacity;
+      animation: none;
+    }
   }
 
   &--appear-active {
-    transform: scale(1);
-    opacity: $bpk-modal-opacity;
+    @include bpk-breakpoint-above-mobile {
+      transform: scale(1);
+      opacity: $bpk-modal-opacity;
+    }
   }
 
   &--header {
