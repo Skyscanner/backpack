@@ -22,10 +22,8 @@ import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet/src/BpkBot
 import {
   DefaultExample,
   OverflowingExample,
-  LongTitleExample,
   NoHeaderExample,
   ActionButtonExample,
-  LongTitleActionExample,
   WideExample
 } from './examples';
 
@@ -37,12 +35,8 @@ export default {
 export const Default = DefaultExample;
 export const Overflowing = OverflowingExample;
 
-export const LongTitle = LongTitleExample;
-
 export const NoHeader = NoHeaderExample;
 
 export const ActionButton = ActionButtonExample;
-
-export const LongTitleAction = LongTitleActionExample;
 
 export const Wide = WideExample;

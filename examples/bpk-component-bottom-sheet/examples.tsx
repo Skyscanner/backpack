@@ -165,15 +165,6 @@ const OverflowingExample = () => (
   </BottomSheetContainer>
 );
 
-const LongTitleExample = () => (
-  <BottomSheetContainer
-    title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
-    closeLabel="Close Bottom Sheet"
-  >
-    This is a default bottom sheet. You can put anything you want in here.
-  </BottomSheetContainer>
-);
-
 const NoHeaderExample = () => (
   <BottomSheetContainer
     closeLabel="Close Bottom Sheet"
@@ -188,17 +179,6 @@ const ActionButtonExample = () => (
   </BottomSheetContainer>
 );
 
-const LongTitleActionExample = () => (
-  <BottomSheetContainer
-    title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
-    closeLabel="Close Bottom Sheet"
-    actionText="Action"
-    onAction={action('Action clicked')}
-  >
-    This is a default bottom sheet. You can put anything you want in here.
-  </BottomSheetContainer>
-);
-
 const WideExample = () => (
   <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" wide>
     This is a wide bottom sheet.
@@ -209,9 +189,7 @@ const WideExample = () => (
 export {
   DefaultExample,
   OverflowingExample,
-  LongTitleExample,
   NoHeaderExample,
   ActionButtonExample,
-  LongTitleActionExample,
   WideExample
 };

@@ -17,6 +17,9 @@
  */
 @import '../../bpk-mixins/index.scss';
 
+$close-button-padding: bpk-spacing-base();
+$close-button-width: bpk-spacing-lg() + #{$close-button-padding};
+
 .bpk-bottom-sheet {
   z-index: $bpk-zindex-modal;
   width: 100%;
@@ -87,6 +90,13 @@
   }
 
   &--heading {
+    width: calc(
+      100% - ((#{$close-button-width}) * 2)
+    ); // Treat title as if it was always surrounded by close and action to center align it
+
+    margin-right: auto;
+    text-align: center;
+
     @include bpk-text;
     @include bpk-label-1;
   }
@@ -105,8 +115,9 @@
   &--action-button {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     right: auto;
+    width: calc(#{$close-button-width});
 
-    @include bpk-margin-leading(bpk-spacing-base());
+    @include bpk-margin-leading(bpk-spacing-sm());
 
     @include bpk-rtl {
       left: auto;
