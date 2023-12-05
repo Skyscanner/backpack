@@ -1,0 +1,18 @@
+/*
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-bottom-sheet{z-index:1100;width:100%;max-width:32rem;margin:auto;transform:scale(1);transition:opacity 200ms ease-in-out,transform 200ms ease-in-out;outline:0;background-color:#fff;opacity:1;overflow:hidden;-webkit-tap-highlight-color:transparent;box-shadow:0px 12px 50px 0px rgba(37,32,31,0.25);border-radius:.5rem}@media (max-width: 32rem){.bpk-bottom-sheet{height:fit-content;max-height:90%;margin-bottom:0;border-radius:.75rem .75rem 0 0;overflow-x:hidden;overflow-y:scroll;-ms-overflow-style:none;scrollbar-width:none}.bpk-bottom-sheet::-webkit-scrollbar{display:none}}.bpk-bottom-sheet--content{padding:1rem;flex:1;overflow-y:auto}@media (min-width: 32.0625rem){.bpk-bottom-sheet--wide{max-width:64rem}}.bpk-bottom-sheet--appear{transform:scale(0.9);opacity:0}.bpk-bottom-sheet--appear-active{transform:scale(1);opacity:1}.bpk-bottom-sheet--header{box-shadow:0 -1px 0 0 #c2c9cd inset}.bpk-bottom-sheet--navigation{display:flex;justify-content:space-between;background-color:#fff}.bpk-bottom-sheet--heading{margin:0;font-size:1rem;line-height:1.5rem;font-weight:700}.bpk-bottom-sheet--close-button{position:relative;left:auto;margin-right:1rem}html[dir='rtl'] .bpk-bottom-sheet--close-button{right:auto;margin-left:1rem}.bpk-bottom-sheet--action-button{position:relative;right:auto;margin-left:1rem;margin-right:0}html[dir='rtl'] .bpk-bottom-sheet--action-button{margin-left:0;margin-right:1rem}html[dir='rtl'] .bpk-bottom-sheet--action-button{left:auto}
