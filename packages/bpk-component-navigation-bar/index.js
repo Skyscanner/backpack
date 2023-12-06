@@ -20,6 +20,7 @@
 
 import BpkNavigationBar, {
   type Props as BpkNavigationBarProps,
+  BAR_STYLES,
 } from './src/BpkNavigationBar';
 import BpkNavigationBarIconButton, {
   type Props as BpkNavigationBarIconButtonProps,
@@ -38,5 +39,6 @@ export {
   BpkNavigationBarIconButton,
   BpkNavigationBarButtonLink,
   themeAttributes,
+  BAR_STYLES,
 };
 export default BpkNavigationBar;

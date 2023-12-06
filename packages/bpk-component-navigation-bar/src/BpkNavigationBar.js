@@ -29,6 +29,12 @@ import STYLES from './BpkNavigationBar.module.scss';
 
 const getClassNames = cssModules(STYLES);
 
+export const BAR_STYLES = {
+  'default': 'default',
+  onDark: 'on-dark',
+};
+export type BarStyle = $Values<BAR_STYLES>
+
 export type Props = {
   id: string,
   title: Node,
@@ -36,15 +42,17 @@ export type Props = {
   leadingButton: ?Element<any>,
   trailingButton: ?Element<any>,
   sticky: ?boolean,
+  barStyle: ?BarStyle,
 };
 
-const cloneWithClass = (elem: Element<any>, newStyle: string) => {
-  const className = getClassNames(elem.props.className, newStyle);
+const cloneWithClasses = (elem: Element<any>, ...newStyles: string) => {
+  const className = getClassNames(elem.props.className, ...newStyles);
   return cloneElement(elem, { ...elem.props, className });
 };
 
 const BpkNavigationBar = (props: Props) => {
   const {
+    barStyle,
     className,
     id,
     leadingButton,
@@ -65,18 +73,26 @@ const BpkNavigationBar = (props: Props) => {
       aria-labelledby={titleId}
       className={getClassNames(
         'bpk-navigation-bar',
+        `bpk-navigation-bar--${barStyle}`,
         sticky && 'bpk-navigation-bar__sticky',
         className,
       )}
       {...rest}
     >
       {leadingButton &&
-        cloneWithClass(leadingButton, 'bpk-navigation-bar__leading-item')}
+        cloneWithClasses(
+          leadingButton,
+          'bpk-navigation-bar__leading-item',
+          `bpk-navigation-bar__leading-item--${barStyle}`,
+        )}
       {typeof title === 'string' ? (
         <BpkText
           id={titleId}
           textStyle={TEXT_STYLES.heading5}
-          className={getClassNames('bpk-navigation-bar__title')}
+          className={getClassNames(
+            'bpk-navigation-bar__title',
+            `bpk-navigation-bar__title--${barStyle}`,
+          )}
         >
           {title}
         </BpkText>
@@ -84,7 +100,11 @@ const BpkNavigationBar = (props: Props) => {
         title
       )}
       {trailingButton &&
-        cloneWithClass(trailingButton, 'bpk-navigation-bar__trailing-item')}
+        cloneWithClasses(
+          trailingButton,
+          'bpk-navigation-bar__trailing-item',
+          `bpk-navigation-bar__trailing-item--${barStyle}`,
+        )}
     </nav>
   );
 };
@@ -103,6 +123,7 @@ BpkNavigationBar.defaultProps = {
   leadingButton: null,
   trailingButton: null,
   sticky: false,
+  barStyle: BAR_STYLES.default,
 };
 
 export default BpkNavigationBar;

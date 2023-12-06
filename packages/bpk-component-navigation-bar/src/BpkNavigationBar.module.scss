@@ -33,12 +33,28 @@
     $bpk-surface-default-day
   );
 
+  &--on-dark {
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-navigation-bar-on-dark-background-color,
+      $bpk-surface-contrast-day
+    );
+  }
+
   &__title {
     @include bpk-themeable-property(
       color,
       --bpk-navigation-bar-title-color,
       $bpk-text-primary-day
     );
+
+    &--on-dark {
+      @include bpk-themeable-property(
+        color,
+        --bpk-navigation-bar-on-dark-title-color,
+        $bpk-text-primary-inverse-day
+      );
+    }
   }
 
   &__leading-item,

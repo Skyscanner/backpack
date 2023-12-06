@@ -26,6 +26,7 @@ import { BpkButtonLink } from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationBarButtonLink.module.scss';
+import { BAR_STYLES, BarStyle } from './BpkNavigationBar';
 
 const getClassName = cssModules(STYLES);
 
@@ -33,16 +34,22 @@ export type Props = {
   children: Node,
   onClick: (event: SyntheticEvent<>) => void,
   className: ?string,
+  barStyle: ?BarStyle,
 };
 
 const BpkNavigationBarButtonLink = ({
+  barStyle,
   children,
   className,
   ...rest
 }: Props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkButtonLink
-    className={getClassName('bpk-navigation-bar-button-link', className)}
+    className={getClassName(
+      'bpk-navigation-bar-button-link',
+      `bpk-navigation-bar-button-link--${barStyle}`,
+      className
+    )}
     {...rest}
   >
     {children}
@@ -57,6 +64,7 @@ BpkNavigationBarButtonLink.propTypes = {
 
 BpkNavigationBarButtonLink.defaultProps = {
   className: null,
+  barStyle: BAR_STYLES.default,
 };
 
 export default BpkNavigationBarButtonLink;

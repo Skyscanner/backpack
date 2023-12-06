@@ -28,6 +28,9 @@ import {
   WithLinksExample,
   WithLogoExample,
   StickyExample,
+  OnDarkExample,
+  WithLinksOnDarkExample,
+  VisualTestExample,
 } from './examples';
 
 export default {
@@ -40,6 +43,7 @@ export default {
 };
 
 export const Default = DefaultExample;
+export const OnDark = OnDarkExample;
 export const LeadingIconOnly = LeadingIconOnlyExample;
 
 export const TrailingIconOnly = TrailingIconOnlyExample;
@@ -47,9 +51,10 @@ export const TrailingIconOnly = TrailingIconOnlyExample;
 export const WithLinks = WithLinksExample;
 
 export const WithLogo = WithLogoExample;
+export const WithLinksOnDark = WithLinksOnDarkExample;
 
 export const Sticky = StickyExample;
-export const VisualTest = DefaultExample;
+export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
   zoomEnabled: true

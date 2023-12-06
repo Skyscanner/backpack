@@ -26,6 +26,7 @@ import BpkIconButton from '../../bpk-component-close-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationBarIconButton.module.scss';
+import { BAR_STYLES, BarStyle } from './BpkNavigationBar';
 
 const getClassName = cssModules(STYLES);
 
@@ -34,13 +35,18 @@ export type Props = {
   label: string,
   onClick: (event: SyntheticEvent<>) => mixed,
   className: ?string,
+  barStyle: ?BarStyle,
 };
 
-const BpkNavigationBarIconButton = ({ className, icon, ...rest }: Props) => (
+const BpkNavigationBarIconButton = ({ barStyle, className, icon, ...rest }: Props) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkIconButton
     customIcon={icon}
-    className={getClassName('bpk-navigation-bar-icon-button', className)}
+    className={getClassName(
+      'bpk-navigation-bar-icon-button',
+      `bpk-navigation-bar-icon-button--${barStyle}`,
+      className
+    )}
     {...rest}
   />
 );
@@ -54,6 +60,7 @@ BpkNavigationBarIconButton.propTypes = {
 
 BpkNavigationBarIconButton.defaultProps = {
   className: null,
+  barStyle: BAR_STYLES.default,
 };
 
 export default BpkNavigationBarIconButton;

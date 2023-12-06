@@ -20,7 +20,7 @@
 
 import { render } from '@testing-library/react';
 
-import BpkNavigationBar from './BpkNavigationBar';
+import BpkNavigationBar, { BAR_STYLES } from './BpkNavigationBar';
 import BpkNavigationIconButton from './BpkNavigationBarIconButton';
 
 describe('BpkNavigationBar', () => {
@@ -109,6 +109,14 @@ describe('BpkNavigationBar', () => {
   it('should render correctly when sticky', () => {
     const { asFragment } = render(
       <BpkNavigationBar id="test" title="test" sticky />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with on-dark style', () => {
+    const { asFragment } = render(
+      <BpkNavigationBar id="test" title="test" barStyle={BAR_STYLES.onDark} />,
     );
 
     expect(asFragment()).toMatchSnapshot();
