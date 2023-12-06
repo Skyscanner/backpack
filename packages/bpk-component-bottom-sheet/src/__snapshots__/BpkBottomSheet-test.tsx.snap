@@ -17,7 +17,7 @@ exports[`BpkBottomSheet should render correctly in the given target if renderTar
           role="presentation"
         />
         <section
-          aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+          aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
           class="bpk-bottom-sheet"
           id="my-bottom-sheet"
           role="dialog"
@@ -27,7 +27,7 @@ exports[`BpkBottomSheet should render correctly in the given target if renderTar
             class="bpk-bottom-sheet--header"
           >
             <nav
-              aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+              aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
               class="bpk-navigation-bar bpk-bottom-sheet--navigation"
             >
               <button
@@ -50,7 +50,7 @@ exports[`BpkBottomSheet should render correctly in the given target if renderTar
               </button>
               <h2
                 class="bpk-bottom-sheet--heading"
-                id="bpk-modal-heading-my-bottom-sheet"
+                id="bpk-bottom-sheet-heading-my-bottom-sheet"
               >
                 Bottom Sheet title
               </h2>

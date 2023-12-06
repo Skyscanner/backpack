@@ -69,7 +69,7 @@ const BpkBottomSheetInner = ({
     contentClassNames.push(contentClassName)
   }
 
-  const headingId = `bpk-modal-heading-${id}`;
+  const headingId = `bpk-bottom-sheet-heading-${id}`;
 
   return <TransitionInitialMount
   appearClassName={getClassName('bpk-bottom-sheet--appear')}
@@ -114,7 +114,6 @@ const BpkBottomSheetInner = ({
           <div
             className={getClassName('bpk-bottom-sheet--action-button')}
            />
-
         }
       />
     </header>

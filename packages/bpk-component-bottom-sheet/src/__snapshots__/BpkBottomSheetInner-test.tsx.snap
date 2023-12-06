@@ -3,7 +3,7 @@
 exports[`BpkBottomSheetInner should render correctly 1`] = `
 <DocumentFragment>
   <section
-    aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+    aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
     class="bpk-bottom-sheet"
     id="my-bottom-sheet"
     role="dialog"
@@ -13,7 +13,7 @@ exports[`BpkBottomSheetInner should render correctly 1`] = `
       class="bpk-bottom-sheet--header"
     >
       <nav
-        aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+        aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
         class="bpk-navigation-bar bpk-bottom-sheet--navigation"
       >
         <button
@@ -36,7 +36,7 @@ exports[`BpkBottomSheetInner should render correctly 1`] = `
         </button>
         <h2
           class="bpk-bottom-sheet--heading"
-          id="bpk-modal-heading-my-bottom-sheet"
+          id="bpk-bottom-sheet-heading-my-bottom-sheet"
         >
           Bottom sheet title
         </h2>
@@ -57,7 +57,7 @@ exports[`BpkBottomSheetInner should render correctly 1`] = `
 exports[`BpkBottomSheetInner should render correctly when it has a className 1`] = `
 <DocumentFragment>
   <section
-    aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+    aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
     class="bpk-bottom-sheet my-classname"
     id="my-bottom-sheet"
     role="dialog"
@@ -67,7 +67,7 @@ exports[`BpkBottomSheetInner should render correctly when it has a className 1`]
       class="bpk-bottom-sheet--header"
     >
       <nav
-        aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+        aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
         class="bpk-navigation-bar bpk-bottom-sheet--navigation"
       >
         <button
@@ -90,7 +90,7 @@ exports[`BpkBottomSheetInner should render correctly when it has a className 1`]
         </button>
         <h2
           class="bpk-bottom-sheet--heading"
-          id="bpk-modal-heading-my-bottom-sheet"
+          id="bpk-bottom-sheet-heading-my-bottom-sheet"
         >
           Bottom sheet title
         </h2>
@@ -111,7 +111,7 @@ exports[`BpkBottomSheetInner should render correctly when it has a className 1`]
 exports[`BpkBottomSheetInner should render correctly with a custom content classname 1`] = `
 <DocumentFragment>
   <section
-    aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+    aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
     class="bpk-bottom-sheet"
     id="my-bottom-sheet"
     role="dialog"
@@ -121,7 +121,7 @@ exports[`BpkBottomSheetInner should render correctly with a custom content class
       class="bpk-bottom-sheet--header"
     >
       <nav
-        aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+        aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
         class="bpk-navigation-bar bpk-bottom-sheet--navigation"
       >
         <button
@@ -144,7 +144,7 @@ exports[`BpkBottomSheetInner should render correctly with a custom content class
         </button>
         <h2
           class="bpk-bottom-sheet--heading"
-          id="bpk-modal-heading-my-bottom-sheet"
+          id="bpk-bottom-sheet-heading-my-bottom-sheet"
         >
           Bottom sheet title
         </h2>
@@ -165,7 +165,7 @@ exports[`BpkBottomSheetInner should render correctly with a custom content class
 exports[`BpkBottomSheetInner should render correctly with actionText prop 1`] = `
 <DocumentFragment>
   <section
-    aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+    aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
     class="bpk-bottom-sheet"
     id="my-bottom-sheet"
     role="dialog"
@@ -175,7 +175,7 @@ exports[`BpkBottomSheetInner should render correctly with actionText prop 1`] = 
       class="bpk-bottom-sheet--header"
     >
       <nav
-        aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+        aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
         class="bpk-navigation-bar bpk-bottom-sheet--navigation"
       >
         <button
@@ -198,7 +198,7 @@ exports[`BpkBottomSheetInner should render correctly with actionText prop 1`] = 
         </button>
         <h2
           class="bpk-bottom-sheet--heading"
-          id="bpk-modal-heading-my-bottom-sheet"
+          id="bpk-bottom-sheet-heading-my-bottom-sheet"
         >
           Bottom sheet title
         </h2>
@@ -222,7 +222,7 @@ exports[`BpkBottomSheetInner should render correctly with actionText prop 1`] = 
 exports[`BpkBottomSheetInner should render correctly with wide prop 1`] = `
 <DocumentFragment>
   <section
-    aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+    aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
     class="bpk-bottom-sheet bpk-bottom-sheet--wide"
     id="my-bottom-sheet"
     role="dialog"
@@ -232,7 +232,7 @@ exports[`BpkBottomSheetInner should render correctly with wide prop 1`] = `
       class="bpk-bottom-sheet--header"
     >
       <nav
-        aria-labelledby="bpk-modal-heading-my-bottom-sheet"
+        aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
         class="bpk-navigation-bar bpk-bottom-sheet--navigation"
       >
         <button
@@ -255,7 +255,7 @@ exports[`BpkBottomSheetInner should render correctly with wide prop 1`] = `
         </button>
         <h2
           class="bpk-bottom-sheet--heading"
-          id="bpk-modal-heading-my-bottom-sheet"
+          id="bpk-bottom-sheet-heading-my-bottom-sheet"
         >
           Bottom sheet title
         </h2>
