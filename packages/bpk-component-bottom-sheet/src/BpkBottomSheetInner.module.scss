@@ -82,7 +82,7 @@ $close-button-width: bpk-spacing-lg() + #{$close-button-padding};
   &--appear {
     animation-duration: 0.24s;
     animation-name: slide-up;
-    animation-timing-function: cubic-bezier(0.075, 0.165, 0.85, 1);
+    animation-timing-function: ease-in-out;
 
     @include bpk-breakpoint-above-mobile {
       transform: scale(0.9);
