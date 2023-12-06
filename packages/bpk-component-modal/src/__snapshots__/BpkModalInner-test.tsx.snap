@@ -14,7 +14,7 @@ exports[`BpkModalInner should render correctly 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <h2
           class="bpk-modal__heading"
@@ -24,7 +24,7 @@ exports[`BpkModalInner should render correctly 1`] = `
         </h2>
         <button
           aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           title="Close"
           type="button"
         >
@@ -65,7 +65,7 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <h2
           class="bpk-modal__heading"
@@ -75,7 +75,7 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
         </h2>
         <button
           aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           title="Close"
           type="button"
         >
@@ -116,7 +116,7 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <h2
           class="bpk-modal__heading"
@@ -126,7 +126,7 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
         </h2>
         <button
           aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           title="Close"
           type="button"
         >
@@ -167,7 +167,7 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <h2
           class="bpk-modal__heading"
@@ -177,7 +177,7 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
         </h2>
         <button
           aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           title="Close"
           type="button"
         >
@@ -218,7 +218,7 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <h2
           class="bpk-modal__heading"
@@ -228,7 +228,7 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
         </h2>
         <button
           aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           title="Close"
           type="button"
         >
@@ -269,7 +269,7 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <h2
           class="bpk-modal__heading"
@@ -279,7 +279,7 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
         </h2>
         <button
           aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           title="Close"
           type="button"
         >
@@ -320,13 +320,13 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <span
-          class="bpk-modal__accessory-view bpk-navigation-bar__leading-item"
+          class="bpk-modal__accessory-view bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
         >
           <button
-            class="bpk-link bpk-navigation-bar-button-link bpk-modal__leading-button"
+            class="bpk-link bpk-navigation-bar-button-link bpk-navigation-bar-button-link--default bpk-modal__leading-button"
             label="Close"
             type="button"
           >
@@ -343,7 +343,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
         </h2>
         <button
           aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           title="Close"
           type="button"
         >
@@ -384,7 +384,7 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <h2
           class="bpk-modal__heading"
@@ -393,7 +393,7 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
           Modal title
         </h2>
         <button
-          class="bpk-link bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-link bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           type="button"
         >
           Dismiss
@@ -423,7 +423,7 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <h2
           class="bpk-modal__heading"
@@ -433,7 +433,7 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
         </h2>
         <button
           aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           title="Close"
           type="button"
         >
@@ -474,7 +474,7 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
         <h2
           class="bpk-modal__heading"
@@ -484,7 +484,7 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
         </h2>
         <button
           aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
           title="Close"
           type="button"
         >

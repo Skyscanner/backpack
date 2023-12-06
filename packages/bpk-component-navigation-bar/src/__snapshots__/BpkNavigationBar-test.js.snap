@@ -4,10 +4,10 @@ exports[`BpkNavigationBar should render correctly 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="test-bpk-navigation-bar-title"
-    class="bpk-navigation-bar"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
       id="test-bpk-navigation-bar-title"
     >
       test
@@ -20,10 +20,10 @@ exports[`BpkNavigationBar should render correctly when sticky 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="test-bpk-navigation-bar-title"
-    class="bpk-navigation-bar bpk-navigation-bar__sticky"
+    class="bpk-navigation-bar bpk-navigation-bar--default bpk-navigation-bar__sticky"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
       id="test-bpk-navigation-bar-title"
     >
       test
@@ -36,18 +36,18 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
 <DocumentFragment>
   <nav
     aria-labelledby="test-bpk-navigation-bar-title"
-    class="bpk-navigation-bar"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
   >
     <button
       aria-label="test"
-      class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__leading-item"
+      class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
       title="test"
       type="button"
     >
       <span />
     </button>
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
       id="test-bpk-navigation-bar-title"
     >
       test
@@ -60,17 +60,17 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
 <DocumentFragment>
   <nav
     aria-labelledby="test-bpk-navigation-bar-title"
-    class="bpk-navigation-bar"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
       id="test-bpk-navigation-bar-title"
     >
       test
     </span>
     <button
       aria-label="test"
-      class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__trailing-item"
+      class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
       title="test"
       type="button"
     >
@@ -84,14 +84,14 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
 <DocumentFragment>
   <nav
     aria-labelledby="test"
-    class="bpk-navigation-bar"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
   >
     <span>
       test
     </span>
     <button
       aria-label="test"
-      class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__trailing-item"
+      class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
       title="test"
       type="button"
     >
@@ -105,11 +105,11 @@ exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="test-bpk-navigation-bar-title"
-    class="bpk-navigation-bar"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
     testid="arbitrary value"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
       id="test-bpk-navigation-bar-title"
     >
       test
@@ -122,10 +122,26 @@ exports[`BpkNavigationBar should render correctly with custom class 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="test-bpk-navigation-bar-title"
-    class="bpk-navigation-bar my-custom-class"
+    class="bpk-navigation-bar bpk-navigation-bar--default my-custom-class"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title"
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
+      id="test-bpk-navigation-bar-title"
+    >
+      test
+    </span>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`BpkNavigationBar should render correctly with on-dark style 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="test-bpk-navigation-bar-title"
+    class="bpk-navigation-bar bpk-navigation-bar--on-dark"
+  >
+    <span
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--on-dark"
       id="test-bpk-navigation-bar-title"
     >
       test
