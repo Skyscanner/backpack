@@ -21,13 +21,22 @@
 export default [
   'navigationBarBackgroundColor',
   'navigationBarTitleColor',
+  'navigationBarOnDarkBackgroundColor',
+  'navigationBarOnDarkTitleColor',
 
   'navigationBarButtonLinkColor',
   'navigationBarButtonLinkActiveColor',
   'navigationBarButtonLinkHoverColor',
   'navigationBarButtonLinkVisitedColor',
+  'navigationBarButtonLinkOnDarkColor',
+  'navigationBarButtonLinkOnDarkActiveColor',
+  'navigationBarButtonLinkOnDarkHoverColor',
+  'navigationBarButtonLinkOnDarkVisitedColor',
 
   'navigationBarIconButtonColor',
   'navigationBarIconButtonActiveColor',
   'navigationBarIconButtonHoverColor',
+  'navigationBarIconButtonOnDarkColor',
+  'navigationBarIconButtonOnDarkActiveColor',
+  'navigationBarIconButtonOnDarkHoverColor',
 ];

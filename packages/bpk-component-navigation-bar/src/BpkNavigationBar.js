@@ -116,6 +116,7 @@ BpkNavigationBar.propTypes = {
   leadingButton: PropTypes.element,
   trailingButton: PropTypes.element,
   sticky: PropTypes.bool,
+  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
 };
 
 BpkNavigationBar.defaultProps = {

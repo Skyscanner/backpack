@@ -60,6 +60,7 @@ BpkNavigationBarButtonLink.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
+  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
 };
 
 BpkNavigationBarButtonLink.defaultProps = {

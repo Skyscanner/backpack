@@ -56,6 +56,7 @@ BpkNavigationBarIconButton.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
+  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
 };
 
 BpkNavigationBarIconButton.defaultProps = {
