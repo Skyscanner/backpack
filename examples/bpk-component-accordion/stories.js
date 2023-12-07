@@ -78,3 +78,7 @@ export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
   zoomEnabled: true
 };
+export const VisualTestOnDarkWithZoom = VisualTestOnDark.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
