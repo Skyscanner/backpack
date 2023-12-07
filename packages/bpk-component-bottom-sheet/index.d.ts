@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-import themeAttributes from './src/themeAttributes';
 import BpkBottomSheet from './src/BpkBottomSheet';
 import type { Props } from './src/BpkBottomSheet';
-export type BpkBottomSheetprops = Props;
+export type BpkBottomSheetProps = Props;
 export default BpkBottomSheet;
-export { themeAttributes };
