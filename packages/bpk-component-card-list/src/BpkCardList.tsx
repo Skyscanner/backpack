@@ -25,10 +25,10 @@ import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 
 import STYLES from './BpkCardList.module.scss';
 import type { BpkAccessoryTypes } from './BpkAccessory';
+import BpkCardListGrid from './BpkCardListGrid/BpkCardListGrid';
+import BpkCardListRail from './BpkCardListRail/BpkCardListRail';
 import BpkCardListRow from './BpkCardListRow/BpkCardListRow';
-import BpkCardListGrid from './BpkCardListGrid';
 import BpkCardListStack from './BpkCardListStack';
-import BpkCardListRail from './BpkCardListRail';
 
 const getClassName = cssModules(STYLES);
 
@@ -67,6 +67,7 @@ const BpkCardList = ({
   onButtonClick,
   title,
 }: BpkCardListProps) => {
+  const allCards = cardList.slice(0, MAX_ITEMS);
   const [visibleCards, setVisibleCards] = useState(
     cardList.slice(0, initiallyShownCards),
   );
@@ -89,9 +90,12 @@ const BpkCardList = ({
         description={description}
         button={buttonText && <BpkButtonV2>{buttonText}</BpkButtonV2>}
       />
-      {/* <div className={getClassName(`bpk-card-list--chip-group`)}>
-        {chipGroup}
-      </div> */}
+
+      {chipGroup && (
+        <div className={getClassName(`bpk-card-list--chip-group`)}>
+          {chipGroup}
+        </div>
+      )}
 
       <div className={getClassName('bpk-card-list--card-list')}>
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
@@ -124,7 +128,7 @@ const BpkCardList = ({
                 accessory={accessory === 'pagination' && !buttonText}
                 numberOfCardsToShow={initiallyShownCards}
               >
-                {cardList}
+                {allCards}
               </BpkCardListRow>
             );
           }}

@@ -1,11 +1,32 @@
 @import '../../../bpk-mixins/index.scss';
 
-.bpk-card-list--row {
-  display: flex;
-  flex-direction: row;
-  gap: bpk-spacing-lg();
+.bpk-card-list-row {
+  position: relative;
 
-  > * {
-    flex-grow: 1;
+  .bpk-card-list-row__cards {
+    display: flex;
+    overflow: hidden;
+    margin-inline: 0 - 1.5 * bpk-spacing-md();
+  }
+
+  .bpk-card-list-row__card {
+    padding: bpk-spacing-sm();
+    flex-shrink: 0;
+
+    @include bpk-breakpoint-above-tablet {
+      width: calc(100% / 3);
+    }
+
+    @include bpk-breakpoint-tablet {
+      width: 50%;
+    }
+
+    @include bpk-breakpoint-small-tablet-only {
+      width: 100%;
+    }
+
+    @include bpk-breakpoint-mobile {
+      display: none;
+    }
   }
 }

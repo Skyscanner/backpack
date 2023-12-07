@@ -20,6 +20,7 @@
 // import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkCard from '../../packages/bpk-component-card';
 import BpkCardList from '../../packages/bpk-component-card-list';
+import BpkImage from '../../packages/bpk-component-image';
 
 // import STYLES from './examples.module.scss';
 
@@ -29,11 +30,14 @@ const RowToRailExample = () => (
   <BpkCardList
     cardList={[...Array(15).keys()].map((i) => (
       <BpkCard href="#">
-        {/* <BpkImage aspectRatio={3000/2318} src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg" /> */}
+        <BpkImage
+          aspectRatio={3000 / 2318}
+          src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg"
+        />
         TEST {i}
       </BpkCard>
     ))}
-    accessory='pagination'
+    accessory="pagination"
     layoutDesktop="row"
     layoutMobile="rail"
     title="Card List Component"
@@ -48,7 +52,7 @@ const GridToRailExample = () => (
         TEST {i}
       </BpkCard>
     ))}
-    accessory='expand'
+    accessory="expand"
     layoutDesktop="grid"
     layoutMobile="rail"
     title="Card List Component"
@@ -77,7 +81,7 @@ const GridToStackExample = () => (
         TEST {i}
       </BpkCard>
     ))}
-    accessory='expand'
+    accessory="expand"
     layoutDesktop="grid"
     layoutMobile="stack"
     title="Card List Component"

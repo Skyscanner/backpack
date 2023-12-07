@@ -1,0 +1,7 @@
+@import '../../../bpk-mixins/index.scss';
+
+.bpk-card-list--rail {
+  &_card {
+    padding: bpk-spacing-sm();
+  }
+}
