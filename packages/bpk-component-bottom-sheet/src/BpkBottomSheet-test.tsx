@@ -22,6 +22,23 @@ import { renderToString } from 'react-dom/server';
 import BpkBottomSheet from './BpkBottomSheet';
 
 describe('BpkBottomSheet', () => {
+  it('renders without crashing', () => {
+    const customRenderTarget = document.createElement('div');
+
+    expect(() => renderToString(
+      <BpkBottomSheet
+        id="my-bottom-sheet"
+        title="Bottom Sheet title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
+      >
+        Bottom Sheet content inside a custom target
+      </BpkBottomSheet>
+    )).not.toThrow();
+  });
   it('should render correctly in the given target if renderTarget is supplied', () => {
     const customRenderTarget = document.createElement('div');
     const { asFragment } = render(
@@ -40,25 +57,5 @@ describe('BpkBottomSheet', () => {
 
     expect(asFragment()).toMatchSnapshot();
     expect(customRenderTarget).toMatchSnapshot();
-  });
-});
-
-describe('Server Side Rendering', () => {
-  it('renders without crashing', () => {
-    const WrappedComponent = () => <div data-testid="dialog-content">Wrapped Component</div>;
-
-    expect(() => renderToString(
-      <div id="pagewrap">
-        <div> Content hidden from AT</div>
-        <BpkBottomSheet
-          id="my-bottom-sheet"
-          isOpen
-          onClose={jest.fn()}
-          getApplicationElement={() => document.getElementById('pagewrap')}
-        >
-          {WrappedComponent}
-        </BpkBottomSheet>
-      </div>
-    )).not.toThrow();
   });
 });
