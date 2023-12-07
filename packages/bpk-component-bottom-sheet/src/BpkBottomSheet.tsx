@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import { Portal, cssModules } from "../../bpk-react-utils";
 import { withScrim } from "../../bpk-scrim-utils";
@@ -60,16 +60,24 @@ const BpkBottomSheet = ({
   title = '',
   wide = false,
   ...rest
-}: Props) => (
-    <Portal
+}: Props) => {
+  const [ exiting, setExitting ] = useState(false);
+  const handleClose = () => {
+    setExitting(true)
+    setTimeout(() => {
+      onClose()
+      setExitting(false)
+    }, 240)
+  }
+  return  <Portal
       isOpen={isOpen}
-      onClose={onClose}
+      onClose={handleClose}
       closeOnEscPressed={closeOnEscPressed}
       renderTarget={renderTarget}
       >
       <ScrimBpkBottomSheetInner
         id={id}
-        onClose={onClose}
+        onClose={handleClose}
         closeOnScrimClick={closeOnScrimClick}
         containerClassName={getClassName('bpk-bottom-sheet--container')}
         title={title}
@@ -79,9 +87,10 @@ const BpkBottomSheet = ({
         actionText={actionText}
         onAction={onAction}
         wide={wide}
+        exiting={exiting}
         {...rest}
       />
     </Portal>
-  )
+}
 
 export default BpkBottomSheet

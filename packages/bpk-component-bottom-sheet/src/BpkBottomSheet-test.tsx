@@ -17,6 +17,7 @@
  */
 
 import { render } from '@testing-library/react';
+import { renderToString } from 'react-dom/server';
 
 import BpkBottomSheet from './BpkBottomSheet';
 
@@ -39,5 +40,25 @@ describe('BpkBottomSheet', () => {
 
     expect(asFragment()).toMatchSnapshot();
     expect(customRenderTarget).toMatchSnapshot();
+  });
+});
+
+describe('Server Side Rendering', () => {
+  it('renders without crashing', () => {
+    const WrappedComponent = () => <div data-testid="dialog-content">Wrapped Component</div>;
+
+    expect(() => renderToString(
+      <div id="pagewrap">
+        <div> Content hidden from AT</div>
+        <BpkBottomSheet
+          id="my-bottom-sheet"
+          isOpen
+          onClose={jest.fn()}
+          getApplicationElement={() => document.getElementById('pagewrap')}
+        >
+          {WrappedComponent}
+        </BpkBottomSheet>
+      </div>
+    )).not.toThrow();
   });
 });

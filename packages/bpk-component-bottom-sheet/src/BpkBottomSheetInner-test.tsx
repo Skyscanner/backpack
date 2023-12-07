@@ -28,6 +28,7 @@ describe('BpkBottomSheetInner', () => {
         title="Bottom sheet title"
         closeLabel="Close"
         onClose={jest.fn()}
+        exiting={false}
       >
         Bottom sheet content
       </BpkBottomSheetInner>,
@@ -43,6 +44,7 @@ describe('BpkBottomSheetInner', () => {
         closeLabel="Close"
         onClose={jest.fn()}
         className="my-classname"
+        exiting={false}
       >
         Bottom sheet content
       </BpkBottomSheetInner>,
@@ -58,6 +60,7 @@ describe('BpkBottomSheetInner', () => {
         closeLabel="Close"
         onClose={jest.fn()}
         contentClassName="my-classname"
+        exiting={false}
       >
         Bottom sheet content
       </BpkBottomSheetInner>,
@@ -73,6 +76,7 @@ describe('BpkBottomSheetInner', () => {
         closeLabel="Close"
         onClose={jest.fn()}
         wide
+        exiting={false}
       >
         Bottom sheet content
       </BpkBottomSheetInner>,
@@ -88,6 +92,7 @@ describe('BpkBottomSheetInner', () => {
         onClose={jest.fn()}
         actionText="Dismiss"
         onAction={jest.fn()}
+        exiting={false}
       >
         Bottom sheet content
       </BpkBottomSheetInner>,

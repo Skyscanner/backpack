@@ -15,7 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactNode } from "react";
+import { type ReactNode } from "react";
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import CSSTransition from 'react-transition-group/CSSTransition';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
@@ -23,7 +25,7 @@ import { BpkButtonLink } from '../../bpk-component-link';
 import BpkCloseButton from '../../bpk-component-close-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
-import { TransitionInitialMount, cssModules } from "../../bpk-react-utils";
+import { cssModules } from "../../bpk-react-utils";
 
 import STYLES from './BpkBottomSheetInner.module.scss';
 
@@ -40,6 +42,7 @@ type Props = {
   onClose: () => void;
   title?: string;
   wide?: boolean;
+  exiting: boolean;
 }
 
 const BpkBottomSheetInner = ({
@@ -48,6 +51,7 @@ const BpkBottomSheetInner = ({
   className = '',
   closeLabel = '',
   contentClassName = '',
+  exiting,
   id,
   onAction = () => null,
   onClose,
@@ -71,11 +75,18 @@ const BpkBottomSheetInner = ({
 
   const headingId = `bpk-bottom-sheet-heading-${id}`;
 
-  return <TransitionInitialMount
-  appearClassName={getClassName('bpk-bottom-sheet--appear')}
-  appearActiveClassName={getClassName('bpk-bottom-sheet--appear-active')}
-  transitionTimeout={240}
- >
+  return <CSSTransition
+    classNames={{
+      appear: getClassName('bpk-bottom-sheet--appear'),
+      appearActive: getClassName('bpk-bottom-sheet--appear-active'),
+      exit: getClassName('bpk-bottom-sheet--exit')
+    }}
+    in={!exiting}
+    appear={!exiting}
+    out={exiting}
+    exit={exiting}
+    timeout={{appear: 240, exit: 240}}
+  >
   <section
     id={id}
     tabIndex={-1}
@@ -119,7 +130,7 @@ const BpkBottomSheetInner = ({
     </header>
     <div className={contentClassNames.join(' ')}>{children}</div>
   </section>
- </TransitionInitialMount>
+ </CSSTransition>
 }
 
 export default BpkBottomSheetInner;
