@@ -34,11 +34,7 @@
   );
 
   &--on-dark {
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-navigation-bar-on-dark-background-color,
-      $bpk-surface-contrast-day
-    );
+    background-color: $bpk-surface-contrast-day;
   }
 
   &__title {
@@ -49,11 +45,7 @@
     );
 
     &--on-dark {
-      @include bpk-themeable-property(
-        color,
-        --bpk-navigation-bar-on-dark-title-color,
-        $bpk-text-primary-inverse-day
-      );
+      color: $bpk-text-primary-inverse-day;
     }
   }
 

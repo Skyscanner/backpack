@@ -42,26 +42,14 @@
   }
 
   &--on-dark {
-    @include bpk-themeable-property(
-      color,
-      --bpk-navigation-bar-icon-button-on-dark-color,
-      $bpk-text-primary-inverse-day
-    );
+    color: $bpk-text-primary-inverse-day;
 
     @include bpk-hover {
-      @include bpk-themeable-property(
-        color,
-        --bpk-navigation-bar-icon-button-on-dark-hover-color,
-        $bpk-text-primary-inverse-day
-      );
+      color: $bpk-text-primary-inverse-day;
     }
 
     &:active {
-      @include bpk-themeable-property(
-        color,
-        --bpk-navigation-bar-icon-button-on-dark-active-color,
-        $bpk-text-primary-inverse-day
-      );
+      color: $bpk-text-primary-inverse-day;
     }
   }
 }
