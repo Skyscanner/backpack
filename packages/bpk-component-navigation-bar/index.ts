@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkNavigationBar, {
   type Props as BpkNavigationBarProps,
   BAR_STYLES,

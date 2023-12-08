@@ -44,7 +44,9 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
       title="test"
       type="button"
     >
-      <span />
+      <span
+        class="bpk-close-button__icon"
+      />
     </button>
     <span
       class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
@@ -74,7 +76,9 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
       title="test"
       type="button"
     >
-      <span />
+      <span
+        class="bpk-close-button__icon"
+      />
     </button>
   </nav>
 </DocumentFragment>
@@ -95,25 +99,10 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
       title="test"
       type="button"
     >
-      <span />
+      <span
+        class="bpk-close-button__icon"
+      />
     </button>
-  </nav>
-</DocumentFragment>
-`;
-
-exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
-<DocumentFragment>
-  <nav
-    aria-labelledby="test-bpk-navigation-bar-title"
-    class="bpk-navigation-bar bpk-navigation-bar--default"
-    testid="arbitrary value"
-  >
-    <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-      id="test-bpk-navigation-bar-title"
-    >
-      test
-    </span>
   </nav>
 </DocumentFragment>
 `;

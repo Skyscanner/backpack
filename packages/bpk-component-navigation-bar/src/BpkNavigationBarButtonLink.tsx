@@ -16,26 +16,24 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import type { Node } from 'react';
+import type { ComponentProps, MouseEvent, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
-// TODO: close button is not really only a close button, we should rename and update the import here
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationBarButtonLink.module.scss';
-import { BAR_STYLES, BarStyle } from './BpkNavigationBar';
+import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  children: Node,
-  onClick: (event: SyntheticEvent<>) => void,
-  className: ?string,
-  barStyle: ?BarStyle,
-};
+export interface Props extends ComponentProps<BpkButtonLink> {
+  children: ReactNode,
+  onClick: (event: MouseEvent<HTMLElement>) => void,
+  className?: string,
+  barStyle?: BarStyle,
+}
 
 const BpkNavigationBarButtonLink = ({
   barStyle,
@@ -43,7 +41,6 @@ const BpkNavigationBarButtonLink = ({
   className,
   ...rest
 }: Props) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkButtonLink
     className={getClassName(
       'bpk-navigation-bar-button-link',

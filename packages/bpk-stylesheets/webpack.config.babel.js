@@ -48,7 +48,7 @@ ${TEXT.replace(/^/gm, ' * ')}
 module.exports = {
   mode: 'production',
   entry: {
-    base: './index.js',
+    base: './index.ts',
   },
 
   output: {

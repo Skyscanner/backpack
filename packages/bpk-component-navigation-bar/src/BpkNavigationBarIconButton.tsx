@@ -16,30 +16,28 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import type { ComponentType } from 'react';
+import type { ComponentType, MouseEvent, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
-// TODO: close button is not really only a close button, we should rename and update the import here
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkIconButton from '../../bpk-component-close-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationBarIconButton.module.scss';
-import { BAR_STYLES, BarStyle } from './BpkNavigationBar';
+import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
 const getClassName = cssModules(STYLES);
 
 export type Props = {
   icon: ComponentType<any>,
   label: string,
-  onClick: (event: SyntheticEvent<>) => mixed,
-  className: ?string,
-  barStyle: ?BarStyle,
+  onClick: (event: MouseEvent<HTMLElement>) => void,
+  className?: string,
+  barStyle?: BarStyle,
+  children?: ReactNode,
 };
 
 const BpkNavigationBarIconButton = ({ barStyle, className, icon, ...rest }: Props) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkIconButton
     customIcon={icon}
     className={getClassName(

@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import type { Node, Element } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { cloneElement } from 'react';
 import PropTypes from 'prop-types';
 
@@ -33,19 +31,19 @@ export const BAR_STYLES = {
   'default': 'default',
   onDark: 'on-dark',
 };
-export type BarStyle = $Values<BAR_STYLES>
+export type BarStyle = (typeof BAR_STYLES)[keyof typeof BAR_STYLES]
 
 export type Props = {
   id: string,
-  title: Node,
-  className: ?string,
-  leadingButton: ?Element<any>,
-  trailingButton: ?Element<any>,
-  sticky: ?boolean,
-  barStyle: ?BarStyle,
+  title: ReactNode,
+  className?: string,
+  leadingButton?: ReactElement | null,
+  trailingButton?: ReactElement | null,
+  sticky?: boolean,
+  barStyle?: BarStyle,
 };
 
-const cloneWithClasses = (elem: Element<any>, ...newStyles: string) => {
+const cloneWithClasses = (elem: ReactElement, ...newStyles: string[]) => {
   const className = getClassNames(elem.props.className, ...newStyles);
   return cloneElement(elem, { ...elem.props, className });
 };
@@ -68,7 +66,6 @@ const BpkNavigationBar = (props: Props) => {
     typeof title === 'string' ? `${id}-bpk-navigation-bar-title` : id;
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <nav
       aria-labelledby={titleId}
       className={getClassNames(
@@ -111,7 +108,7 @@ const BpkNavigationBar = (props: Props) => {
 
 BpkNavigationBar.propTypes = {
   id: PropTypes.string.isRequired,
-  title: PropTypes.node.isRequired,
+  title: PropTypes.oneOf([PropTypes.node, PropTypes.string]).isRequired,
   className: PropTypes.string,
   leadingButton: PropTypes.element,
   trailingButton: PropTypes.element,

@@ -16,24 +16,15 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import BpkNavigationIconButton from './BpkNavigationBarIconButton';
+import BpkNavigationBar from './BpkNavigationBar';
 
-describe('BpkNavigationIconButton', () => {
-  const Icon = (props) => <span {...props} />;
-
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkNavigationIconButton
-        icon={Icon}
-        label="test"
-        onClick={() => {}}
-        className="some-class"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
+describe('BpkNavigationBar accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(<BpkNavigationBar id="test" title="test" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
