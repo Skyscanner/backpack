@@ -5,7 +5,7 @@ Use [Pascal case](http://wiki.c2.com/?PascalCase) for files that export componen
 
 ## Examples
 
-* `index.ts`
+* `index.js`
 * `styles.js`
 * `button-utils.js`
 * `BpkButton.js`
