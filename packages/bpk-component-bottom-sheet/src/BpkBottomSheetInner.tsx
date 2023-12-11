@@ -59,8 +59,6 @@ const BpkBottomSheetInner = ({
     wide && 'bpk-bottom-sheet--wide'
     );
 
-  const contentClassNames = getClassName('bpk-bottom-sheet--content');
-
   const headingId = `bpk-bottom-sheet-heading-${id}`;
 
   return <CSSTransition
@@ -116,7 +114,7 @@ const BpkBottomSheetInner = ({
         }
       />
     </header>
-    <div className={contentClassNames}>{children}</div>
+    <div className={getClassName('bpk-bottom-sheet--content')}>{children}</div>
   </section>
  </CSSTransition>
 }
