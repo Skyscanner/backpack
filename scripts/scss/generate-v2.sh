@@ -48,7 +48,8 @@ sass-migrator --load-path=node_modules division packages/bpk-mixins-next/*.scss
 
 printf "👉 Forwarding everything...\n"
 
-# Migrate _index.scss to new syntax
-sass-migrator --load-path=node_modules module --forward=all packages/bpk-mixins-next/_index.scss
+rm packages/bpk-mixins-next/_index.scss
+
+cp scripts/scss/_index.template.scss packages/bpk-mixins-next/_index.scss
 
 printf "✅  New mixins generated. Import them from bpk-mixins-next using '@use' notation \n"
