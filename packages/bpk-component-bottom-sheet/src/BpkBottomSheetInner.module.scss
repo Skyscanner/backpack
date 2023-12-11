@@ -46,7 +46,7 @@ $close-button-width: bpk-spacing-lg() + #{$close-button-padding};
     height: fit-content;
     max-height: 90%;
     margin-bottom: 0;
-    border-radius: $bpk-border-radius-md $bpk-border-radius-md 0 0;
+    border-radius: $bpk-border-radius-lg $bpk-border-radius-lg 0 0;
     overflow-x: hidden;
     overflow-y: scroll;
     -ms-overflow-style: none;
