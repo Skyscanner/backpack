@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/src/bonds';
-@use '../../bpk-mixins-next/src/mixins/borders';
-@use '../../bpk-mixins-next/src/mixins/typography';
-@use '../../bpk-mixins-next/src/mixins/utils';
+@use '../../bpk-mixins-nextbonds/bonds';
+@use '../../bpk-mixins-next/borders';
+@use '../../bpk-mixins-next/typography';
+@use '../../bpk-mixins-next/utils';
 
 $bpk-border-size-datatable: bonds.$bpk-border-size-xl * 2;
 

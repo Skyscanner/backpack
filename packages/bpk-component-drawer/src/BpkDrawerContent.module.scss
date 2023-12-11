@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/src/bonds';
-@use '../../bpk-mixins-next/src/mixins/borders';
-@use '../../bpk-mixins-next/src/mixins/breakpoints';
-@use '../../bpk-mixins-next/src/mixins/shadows';
-@use '../../bpk-mixins-next/src/mixins/typography';
-@use '../../bpk-mixins-next/src/mixins/utils';
+@use '../../bpk-mixins-nextbonds/bonds';
+@use '../../bpk-mixins-next/borders';
+@use '../../bpk-mixins-next/breakpoints';
+@use '../../bpk-mixins-next/shadows';
+@use '../../bpk-mixins-next/typography';
+@use '../../bpk-mixins-next/utils';
 
 .bpk-drawer {
   position: fixed;

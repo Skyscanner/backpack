@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../../bpk-mixins-next/src/bonds';
-@use '../../../bpk-mixins-next/src/mixins/breakpoints';
-@use '../../../bpk-mixins-next/src/mixins/shadows';
-@use '../../../bpk-mixins-next/src/mixins/typography';
+@use '../../../bpk-mixins-nextbonds/bonds';
+@use '../../../bpk-mixins-next/breakpoints';
+@use '../../../bpk-mixins-next/shadows';
+@use '../../../bpk-mixins-next/typography';
 
 @mixin header {
   display: flex;

@@ -28,9 +28,9 @@ printf "📋 Copying mixins to new location...\n"
 
 cp -r packages/bpk-mixins packages/bpk-mixins-next
 
-rm packages/bpk-mixins-next/src/_bonds.scss
+rm packages/bpk-mixins-next/_bonds.scss
 
-cp scripts/scss/_bonds.template.scss packages/bpk-mixins-next/src/_bonds.scss
+cp scripts/scss/_bonds.template.scss packages/bpk-mixins-next/_bonds.scss
 
 printf "✅  Done! \n \n"
 
@@ -40,11 +40,11 @@ printf "⚙️ Running sass-migrator...\n"
 # Migrate all other files to new syntax
 printf "👉 Applying new module resolution...\n"
 
-sass-migrator --load-path=node_modules module packages/bpk-mixins-next/src/**/*.scss
+sass-migrator --load-path=node_modules module packages/bpk-mixins-next/*.scss
 
 printf "👉 Applying new division rules...\n"
 
-sass-migrator --load-path=node_modules division packages/bpk-mixins-next/src/**/*.scss
+sass-migrator --load-path=node_modules division packages/bpk-mixins-next/*.scss
 
 printf "👉 Forwarding everything...\n"
 

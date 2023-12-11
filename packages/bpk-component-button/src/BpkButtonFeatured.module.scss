@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/src/mixins/buttons';
+@use '../../bpk-mixins-next/buttons';
 
 .bpk-button--featured {
   @include buttons.bpk-button--featured;

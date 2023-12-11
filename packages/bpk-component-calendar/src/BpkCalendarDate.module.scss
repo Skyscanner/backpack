@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/src/bonds';
-@use '../../bpk-mixins-next/src/mixins/typography';
-@use '../../bpk-mixins-next/src/mixins/utils';
+@use '../../bpk-mixins-nextbonds/bonds';
+@use '../../bpk-mixins-next/typography';
+@use '../../bpk-mixins-next/utils';
 
 .bpk-calendar-date {
   width: bonds.$bpk-calendar-day-size;

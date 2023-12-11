@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/src/bonds';
-@use '../../bpk-mixins-next/src/mixins/scroll-indicators';
+@use '../../bpk-mixins-nextbonds/bonds';
+@use '../../bpk-mixins-next/scroll-indicators';
 
 .bpk-mobile-scroll-container {
   position: relative;

@@ -6,7 +6,7 @@
 
 ### node-sass
 ```scss
-@import '~@skyscanner/backpack-web/bpk-mixins/index';
+@import '~@skyscanner/backpack-web/bpk-mixins';
 
 .bpk-my-component {
   @include bpk-button;
@@ -14,10 +14,12 @@
 ```
 
 ### sass or sass-embedded
+
+With modern tooling we recommend that you use granular import
 ```scss
-@use '@skyscanner/backpack-web/bpk-mixins-next' as mixins;
+@use '@skyscanner/backpack-web/bpk-mixins-next/buttons';
 
 .bpk-my-component {
-  @include mixins.bpk-button;
+  @include buttons.bpk-button;
 }
 ```

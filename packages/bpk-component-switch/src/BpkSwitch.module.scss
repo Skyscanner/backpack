@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/src/bonds';
-@use '../../bpk-mixins-next/src/mixins/shadows';
-@use '../../bpk-mixins-next/src/mixins/utils';
+@use '../../bpk-mixins-nextbonds/bonds';
+@use '../../bpk-mixins-next/shadows';
+@use '../../bpk-mixins-next/utils';
 
 $height: bonds.bpk-spacing-xl();
 $width: bonds.bpk-spacing-sm() * 13;

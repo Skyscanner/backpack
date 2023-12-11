@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/src/bonds';
-@use '../../bpk-mixins-next/src/mixins/borders';
+@use '../../bpk-mixins-nextbonds/bonds';
+@use '../../bpk-mixins-next/borders';
 
 .bpk-horizontal-nav {
   &--show-default-underline {
