@@ -16,116 +16,118 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-text {
-  @include bpk-text;
+  .bpk-text {
+    @include bpk-text;
 
-  &--xs {
-    @include bpk-text--xs;
-  }
+    &--xs {
+      @include bpk-text--xs;
+    }
 
-  &--sm {
-    @include bpk-text--sm;
-  }
+    &--sm {
+      @include bpk-text--sm;
+    }
 
-  &--base {
-    @include bpk-text--base;
-  }
+    &--base {
+      @include bpk-text--base;
+    }
 
-  &--lg {
-    @include bpk-text--lg;
-  }
+    &--lg {
+      @include bpk-text--lg;
+    }
 
-  &--xl {
-    @include bpk-text--xl;
-  }
+    &--xl {
+      @include bpk-text--xl;
+    }
 
-  &--xxl {
-    @include bpk-text--xxl;
-  }
+    &--xxl {
+      @include bpk-text--xxl;
+    }
 
-  &--xxxl {
-    @include bpk-text--xxxl;
-  }
+    &--xxxl {
+      @include bpk-text--xxxl;
+    }
 
-  &--xxxxl {
-    @include bpk-text--xxxxl;
-  }
+    &--xxxxl {
+      @include bpk-text--xxxxl;
+    }
 
-  &--xxxxxl {
-    @include bpk-text--xxxxxl;
-  }
+    &--xxxxxl {
+      @include bpk-text--xxxxxl;
+    }
 
-  &--caption {
-    @include bpk-caption;
-  }
+    &--caption {
+      @include bpk-caption;
+    }
 
-  &--footnote {
-    @include bpk-footnote;
-  }
+    &--footnote {
+      @include bpk-footnote;
+    }
 
-  &--label-1 {
-    @include bpk-label-1;
-  }
+    &--label-1 {
+      @include bpk-label-1;
+    }
 
-  &--label-2 {
-    @include bpk-label-2;
-  }
+    &--label-2 {
+      @include bpk-label-2;
+    }
 
-  &--label-3 {
-    @include bpk-label-3;
-  }
+    &--label-3 {
+      @include bpk-label-3;
+    }
 
-  &--body-default {
-    @include bpk-body-default;
-  }
+    &--body-default {
+      @include bpk-body-default;
+    }
 
-  &--body-longform {
-    @include bpk-body-longform;
-  }
+    &--body-longform {
+      @include bpk-body-longform;
+    }
 
-  &--subheading {
-    @include bpk-subheading;
-  }
+    &--subheading {
+      @include bpk-subheading;
+    }
 
-  &--heading-1 {
-    @include bpk-heading-1;
-  }
+    &--heading-1 {
+      @include bpk-heading-1;
+    }
 
-  &--heading-2 {
-    @include bpk-heading-2;
-  }
+    &--heading-2 {
+      @include bpk-heading-2;
+    }
 
-  &--heading-3 {
-    @include bpk-heading-3;
-  }
+    &--heading-3 {
+      @include bpk-heading-3;
+    }
 
-  &--heading-4 {
-    @include bpk-heading-4;
-  }
+    &--heading-4 {
+      @include bpk-heading-4;
+    }
 
-  &--heading-5 {
-    @include bpk-heading-5;
-  }
+    &--heading-5 {
+      @include bpk-heading-5;
+    }
 
-  &--hero-1 {
-    @include bpk-hero-1;
-  }
+    &--hero-1 {
+      @include bpk-hero-1;
+    }
 
-  &--hero-2 {
-    @include bpk-hero-2;
-  }
+    &--hero-2 {
+      @include bpk-hero-2;
+    }
 
-  &--hero-3 {
-    @include bpk-hero-3;
-  }
+    &--hero-3 {
+      @include bpk-hero-3;
+    }
 
-  &--hero-4 {
-    @include bpk-hero-4;
-  }
+    &--hero-4 {
+      @include bpk-hero-4;
+    }
 
-  &--hero-5 {
-    @include bpk-hero-5;
+    &--hero-5 {
+      @include bpk-hero-5;
+    }
   }
 }
