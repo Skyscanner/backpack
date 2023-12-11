@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
 import { Component, Children } from 'react';
 import type { ReactNode } from 'react';
 
@@ -102,9 +99,6 @@ class BottomSheetContainer extends Component<
     isOpen: boolean,
   }
 > {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  };
 
   constructor() {
     super();
@@ -131,18 +125,17 @@ class BottomSheetContainer extends Component<
       this.props;
 
     return (
-      <div id="modal-container">
+      <div id="bottom-sheet-container">
         <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>
             Open bottom sheet
           </BpkButton>
-          {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
           <BpkBottomSheet
-            id="my-modal"
-            className="my-classname"
+            id="my-bottom-sheet"
             isOpen={this.state.isOpen}
             onClose={this.onClose}
             getApplicationElement={() => document.getElementById('pagewrap')}
+            renderTarget={() => document.getElementById('bottom-sheet-container')}
             {...rest}
           >
             {children}

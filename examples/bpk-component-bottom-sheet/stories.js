@@ -17,7 +17,7 @@
  */
 
 
-import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet/src/BpkBottomSheet';
+import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
 
 import {
   DefaultExample,

@@ -20,11 +20,9 @@ import type { ReactNode } from 'react';
 import type { Props as BottomSheetProps } from './BpkBottomSheet';
 export type Props = Partial<BottomSheetProps> & {
   children: ReactNode;
-  className?: string;
   closeLabel?: string;
   closeOnEscPressed?: boolean;
   closeOnScrimClick?: boolean;
-  contentClassName?: string;
   id: string;
   isOpen: boolean;
   onClose: () => void;
@@ -38,5 +36,5 @@ export type Props = Partial<BottomSheetProps> & {
   getApplicationElement: () => HTMLElement | null;
   renderTarget?: null | HTMLElement | (() => null | HTMLElement);
 };
-declare const BpkBottomSheet: ({ className, closeLabel, closeOnEscPressed, closeOnScrimClick, contentClassName, id, isOpen, onClose, title, renderTarget, ...rest }: Props) => JSX.Element;
+declare const BpkBottomSheet: ({ closeLabel, closeOnEscPressed, closeOnScrimClick, id, isOpen, onClose, title, renderTarget, ...rest }: Props) => JSX.Element;
 export default BpkBottomSheet;

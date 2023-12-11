@@ -34,9 +34,7 @@ const getClassName = cssModules(STYLES);
 type Props = {
   actionText?: string;
   children: ReactNode;
-  className?: string;
   closeLabel?: string;
-  contentClassName?: string;
   id: string;
   onAction?: () => void;
   onClose: () => void;
@@ -48,9 +46,7 @@ type Props = {
 const BpkBottomSheetInner = ({
   actionText = '',
   children,
-  className = '',
   closeLabel = '',
-  contentClassName = '',
   exiting,
   id,
   onAction = () => null,
@@ -58,20 +54,12 @@ const BpkBottomSheetInner = ({
   title = '',
   wide = false
 }: Props) => {
-  const classNames = [getClassName('bpk-bottom-sheet')];
+  const classNames = getClassName(
+    'bpk-bottom-sheet',
+    wide && 'bpk-bottom-sheet--wide'
+    );
 
-  if (wide) {
-    classNames.push(getClassName('bpk-bottom-sheet--wide'))
-  }
-  if (className) {
-    classNames.push(className);
-  }
-
-  const contentClassNames = [getClassName('bpk-bottom-sheet--content')]
-
-  if (contentClassName) {
-    contentClassNames.push(contentClassName)
-  }
+  const contentClassNames = getClassName('bpk-bottom-sheet--content');
 
   const headingId = `bpk-bottom-sheet-heading-${id}`;
 
@@ -92,7 +80,7 @@ const BpkBottomSheetInner = ({
     tabIndex={-1}
     role="dialog"
     aria-labelledby={headingId}
-    className={classNames.join(' ')}
+    className={classNames}
   >
     <header className={getClassName('bpk-bottom-sheet--header')}>
       <BpkNavigationBar
@@ -128,7 +116,7 @@ const BpkBottomSheetInner = ({
         }
       />
     </header>
-    <div className={contentClassNames.join(' ')}>{children}</div>
+    <div className={contentClassNames}>{children}</div>
   </section>
  </CSSTransition>
 }

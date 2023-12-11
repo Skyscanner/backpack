@@ -30,11 +30,9 @@ const ScrimBpkBottomSheetInner = withScrim(BpkBottomSheetInner)
 export type Props = {
   actionText?: string;
   children: ReactNode;
-  className?: string;
   closeLabel?: string;
   closeOnEscPressed?: boolean;
   closeOnScrimClick?: boolean;
-  contentClassName?: string;
   id: string;
   isOpen: boolean;
   onAction?: () => void;
@@ -47,11 +45,9 @@ export type Props = {
 
 const BpkBottomSheet = ({
   actionText = '',
-  className = '',
   closeLabel = '',
   closeOnEscPressed = false,
   closeOnScrimClick = false,
-  contentClassName = '',
   id,
   isOpen,
   onAction = () => null,
@@ -81,8 +77,6 @@ const BpkBottomSheet = ({
         closeOnScrimClick={closeOnScrimClick}
         containerClassName={getClassName('bpk-bottom-sheet--container')}
         title={title}
-        className={className}
-        contentClassName={contentClassName}
         closeLabel={closeLabel}
         actionText={actionText}
         onAction={onAction}

@@ -19,12 +19,10 @@
 import type { ReactNode } from 'react';
 export type Props = {
   children: ReactNode;
-  className?: string;
   closeLabel?: string;
-  contentClassName?: string;
   id: string;
   onClose: () => void;
   title?: string;
 };
-declare const BpkBottomSheetInner: ({ children, className, closeLabel, contentClassName, id, onClose, title, }: Props) => JSX.Element;
+declare const BpkBottomSheetInner: ({ children, closeLabel, id, onClose, title, }: Props) => JSX.Element;
 export default BpkBottomSheetInner;

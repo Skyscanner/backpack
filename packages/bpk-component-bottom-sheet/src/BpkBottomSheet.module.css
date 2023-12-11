@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-bottom-sheet--container{display:flex;padding:1.5rem}@media (max-width: 32rem){.bpk-bottom-sheet--container{padding:0;overflow:hidden}}@media screen\0 {.bpk-bottom-sheet--container{display:block}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-bottom-sheet--container{display:flex;padding:1.5rem}@media (max-width: 32rem){.bpk-bottom-sheet--container{padding:0;overflow:hidden}}

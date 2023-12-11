@@ -26,10 +26,5 @@
       padding: 0;
       overflow: hidden;
     }
-
-    // IE11 and below hack for buggy flexbox support
-    @media screen\0 {
-      display: block;
-    }
   }
 }

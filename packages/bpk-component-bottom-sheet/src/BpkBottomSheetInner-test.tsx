@@ -36,38 +36,6 @@ describe('BpkBottomSheetInner', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly when it has a className', () => {
-    const { asFragment } = render(
-      <BpkBottomSheetInner
-        id="my-bottom-sheet"
-        title="Bottom sheet title"
-        closeLabel="Close"
-        onClose={jest.fn()}
-        className="my-classname"
-        exiting={false}
-      >
-        Bottom sheet content
-      </BpkBottomSheetInner>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with a custom content classname', () => {
-    const { asFragment } = render(
-      <BpkBottomSheetInner
-        id="my-bottom-sheet"
-        title="Bottom sheet title"
-        closeLabel="Close"
-        onClose={jest.fn()}
-        contentClassName="my-classname"
-        exiting={false}
-      >
-        Bottom sheet content
-      </BpkBottomSheetInner>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with wide prop', () => {
     const { asFragment } = render(
       <BpkBottomSheetInner
