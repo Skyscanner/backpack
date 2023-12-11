@@ -16,15 +16,16 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/borders';
 
 .bpk-horizontal-nav {
   &--show-default-underline {
-    @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day, '');
+    @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day, '');
   }
 
   &--show-light-underline {
-    @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day, '');
+    @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day, '');
   }
 
   &__list {

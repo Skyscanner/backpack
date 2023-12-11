@@ -16,21 +16,22 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-pagination-page-list {
   display: flex;
   margin: 0;
-  padding: 0 mixins.bpk-spacing-md();
+  padding: 0 bonds.bpk-spacing-md();
   align-items: baseline;
   list-style: none;
 
   &__item {
-    margin-right: mixins.bpk-spacing-md();
+    margin-right: bonds.bpk-spacing-md();
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       margin-right: 0;
-      margin-left: mixins.bpk-spacing-md();
+      margin-left: bonds.bpk-spacing-md();
 
       &:last-child {
         margin-left: 0;

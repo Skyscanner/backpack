@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/breakpoints';
+@use '../../bpk-mixins-next/src/mixins/typography';
 
 .bpk-content-card {
   &--link {
@@ -28,62 +30,62 @@
 
   &--horizontal {
     display: grid;
-    column-gap: mixins.bpk-spacing-xxl();
+    column-gap: bonds.bpk-spacing-xxl();
     grid-template-columns:
-        minmax(min(10%, 50%), mixins.$bpk-one-pixel-rem * 620)
+        minmax(min(10%, 50%), bonds.$bpk-one-pixel-rem * 620)
         40%;
     align-items: center;
 
-    @include mixins.bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
       grid-template-columns: 1fr;
     }
   }
 
   &--horizontal &--image-container {
     width: 100%;
-    height: mixins.$bpk-one-pixel-rem * 420;
+    height: bonds.$bpk-one-pixel-rem * 420;
 
-    @include mixins.bpk-breakpoint-mobile {
-      max-height: mixins.$bpk-one-pixel-rem * 180;
-      margin-bottom: mixins.bpk-spacing-base();
+    @include breakpoints.bpk-breakpoint-mobile {
+      max-height: bonds.$bpk-one-pixel-rem * 180;
+      margin-bottom: bonds.bpk-spacing-base();
     }
 
-    @include mixins.bpk-breakpoint-tablet {
+    @include breakpoints.bpk-breakpoint-tablet {
       height: 100%;
     }
   }
 
   &--vertical &--image {
-    height: mixins.$bpk-one-pixel-rem * 460;
-    margin-bottom: mixins.bpk-spacing-base();
+    height: bonds.$bpk-one-pixel-rem * 460;
+    margin-bottom: bonds.bpk-spacing-base();
 
-    @include mixins.bpk-breakpoint-small-tablet {
+    @include breakpoints.bpk-breakpoint-small-tablet {
       width: 100%;
       height: auto;
-      max-height: mixins.$bpk-one-pixel-rem * 260;
+      max-height: bonds.$bpk-one-pixel-rem * 260;
     }
 
-    @include mixins.bpk-breakpoint-mobile {
-      max-height: mixins.$bpk-one-pixel-rem * 180;
+    @include breakpoints.bpk-breakpoint-mobile {
+      max-height: bonds.$bpk-one-pixel-rem * 180;
     }
   }
 
   &--headline {
-    margin-bottom: mixins.bpk-spacing-sm();
+    margin-bottom: bonds.bpk-spacing-sm();
 
-    @include mixins.bpk-heading-4;
+    @include typography.bpk-heading-4;
   }
 
   &--description {
-    color: mixins.$bpk-text-secondary-day;
+    color: bonds.$bpk-text-secondary-day;
 
-    @include mixins.bpk-body-default;
+    @include typography.bpk-body-default;
   }
 
   &--image {
     width: 100%;
     height: 100%;
-    border-radius: mixins.$bpk-border-radius-md;
+    border-radius: bonds.$bpk-border-radius-md;
     object-fit: cover;
   }
 }

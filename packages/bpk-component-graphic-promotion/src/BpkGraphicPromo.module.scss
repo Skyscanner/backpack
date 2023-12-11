@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/breakpoints';
+@use '../../bpk-mixins-next/src/mixins/cards';
+@use '../../bpk-mixins-next/src/mixins/margins';
+@use '../../bpk-mixins-next/src/mixins/typography';
 
 @mixin aspect-ratio($ratio) {
   padding-top: $ratio;
@@ -68,20 +72,20 @@
 }
 
 .bpk-card {
-  @include mixins.bpk-card;
+  @include cards.bpk-card;
 }
 
 .bpk-graphic-promo {
   max-width: 76.5rem;
   margin-right: auto;
   margin-left: auto;
-  background-color: mixins.$bpk-surface-contrast-day;
+  background-color: bonds.$bpk-surface-contrast-day;
   background-position: center;
   background-size: cover;
-  color: mixins.$bpk-text-on-dark-day;
+  color: bonds.$bpk-text-on-dark-day;
   box-shadow: none;
 
-  @include mixins.bpk-breakpoint-small-tablet {
+  @include breakpoints.bpk-breakpoint-small-tablet {
     @include aspect-ratio(133%);
   }
 
@@ -97,36 +101,36 @@
 
     @include content-alignment;
 
-    @include mixins.bpk-breakpoint-above-tablet {
+    @include breakpoints.bpk-breakpoint-above-tablet {
       height: 28.75rem;
 
-      @include mixins.bpk-margin-leading(mixins.bpk-spacing-xxxl(), false);
-      @include mixins.bpk-margin-trailing(mixins.bpk-spacing-xxl(), false);
+      @include margins.bpk-margin-leading(bonds.bpk-spacing-xxxl(), false);
+      @include margins.bpk-margin-trailing(bonds.bpk-spacing-xxl(), false);
 
       /* adjusting for 1.5rem difference between margins */
       &--center > * {
-        @include mixins.bpk-margin-trailing(mixins.bpk-spacing-lg());
+        @include margins.bpk-margin-trailing(bonds.bpk-spacing-lg());
       }
     }
 
-    @include mixins.bpk-breakpoint-tablet {
+    @include breakpoints.bpk-breakpoint-tablet {
       height: 22.5rem;
 
-      @include mixins.bpk-margin-leading(mixins.bpk-spacing-xxl(), false);
-      @include mixins.bpk-margin-trailing(mixins.bpk-spacing-xl(), false);
+      @include margins.bpk-margin-leading(bonds.bpk-spacing-xxl(), false);
+      @include margins.bpk-margin-trailing(bonds.bpk-spacing-xl(), false);
 
       /* adjusting for 1.5rem difference between margins */
       &--center > * {
-        @include mixins.bpk-margin-trailing(mixins.bpk-spacing-md());
+        @include margins.bpk-margin-trailing(bonds.bpk-spacing-md());
       }
     }
 
-    @include mixins.bpk-breakpoint-small-tablet {
-      padding: mixins.bpk-spacing-xl();
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      padding: bonds.bpk-spacing-xl();
       justify-content: space-between;
 
       @include reset-alignment;
-      @include mixins.bpk-margin-leading(0);
+      @include margins.bpk-margin-leading(0);
       @include fill-parent;
 
       &--inverted {
@@ -134,72 +138,72 @@
       }
 
       > * {
-        @include mixins.bpk-margin-leading(0);
+        @include margins.bpk-margin-leading(0);
       }
     }
 
-    @include mixins.bpk-breakpoint-small-mobile {
-      padding: mixins.bpk-spacing-lg();
+    @include breakpoints.bpk-breakpoint-small-mobile {
+      padding: bonds.bpk-spacing-lg();
     }
   }
 
   &__tagline {
-    margin-bottom: mixins.bpk-spacing-md();
+    margin-bottom: bonds.bpk-spacing-md();
 
-    @include mixins.bpk-heading-5;
+    @include typography.bpk-heading-5;
 
-    @include mixins.bpk-breakpoint-tablet {
-      @include mixins.bpk-label-1;
+    @include breakpoints.bpk-breakpoint-tablet {
+      @include typography.bpk-label-1;
     }
 
-    @include mixins.bpk-breakpoint-small-tablet {
-      @include mixins.bpk-subheading;
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      @include typography.bpk-subheading;
     }
 
-    @include mixins.bpk-breakpoint-small-mobile {
-      @include mixins.bpk-label-1;
+    @include breakpoints.bpk-breakpoint-small-mobile {
+      @include typography.bpk-label-1;
     }
   }
 
   &__headline {
-    @include mixins.bpk-breakpoint-above-tablet {
-      @include mixins.bpk-hero-5;
+    @include breakpoints.bpk-breakpoint-above-tablet {
+      @include typography.bpk-hero-5;
 
       &:not(:last-child) {
-        margin-bottom: mixins.bpk-spacing-md();
+        margin-bottom: bonds.bpk-spacing-md();
       }
     }
 
-    @include mixins.bpk-breakpoint-tablet {
-      @include mixins.bpk-heading-1;
+    @include breakpoints.bpk-breakpoint-tablet {
+      @include typography.bpk-heading-1;
 
       &:not(:last-child) {
-        margin-bottom: mixins.bpk-spacing-md();
+        margin-bottom: bonds.bpk-spacing-md();
       }
     }
 
-    @include mixins.bpk-breakpoint-small-tablet {
-      margin-bottom: mixins.bpk-spacing-md();
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      margin-bottom: bonds.bpk-spacing-md();
     }
 
-    @include mixins.bpk-breakpoint-mobile {
-      @include mixins.bpk-heading-2;
+    @include breakpoints.bpk-breakpoint-mobile {
+      @include typography.bpk-heading-2;
     }
   }
 
   &__subheading {
-    @include mixins.bpk-body-default;
+    @include typography.bpk-body-default;
 
-    @include mixins.bpk-breakpoint-tablet {
-      @include mixins.bpk-heading-5;
+    @include breakpoints.bpk-breakpoint-tablet {
+      @include typography.bpk-heading-5;
     }
 
-    @include mixins.bpk-breakpoint-small-tablet {
-      @include mixins.bpk-heading-3;
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      @include typography.bpk-heading-3;
     }
 
-    @include mixins.bpk-breakpoint-mobile {
-      @include mixins.bpk-heading-5;
+    @include breakpoints.bpk-breakpoint-mobile {
+      @include typography.bpk-heading-5;
     }
   }
 
@@ -210,15 +214,15 @@
 
     @include text-alignment;
 
-    @include mixins.bpk-breakpoint-above-tablet {
+    @include breakpoints.bpk-breakpoint-above-tablet {
       width: 22.5rem;
     }
 
-    @include mixins.bpk-breakpoint-tablet {
+    @include breakpoints.bpk-breakpoint-tablet {
       width: 20rem;
     }
 
-    @include mixins.bpk-breakpoint-small-tablet {
+    @include breakpoints.bpk-breakpoint-small-tablet {
       width: initial;
 
       @include reset-alignment;
@@ -227,29 +231,29 @@
 
   &__sponsor-content {
     display: flex;
-    margin-bottom: mixins.bpk-spacing-base();
+    margin-bottom: bonds.bpk-spacing-base();
     flex-direction: column;
 
-    @include mixins.bpk-breakpoint-small-tablet {
+    @include breakpoints.bpk-breakpoint-small-tablet {
       margin-bottom: initial;
     }
   }
 
   &__sponsor-label {
-    margin-bottom: mixins.bpk-spacing-sm();
+    margin-bottom: bonds.bpk-spacing-sm();
 
-    @include mixins.bpk-label-1;
+    @include typography.bpk-label-1;
 
-    @include mixins.bpk-breakpoint-small-tablet {
-      margin-bottom: mixins.bpk-spacing-md();
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      margin-bottom: bonds.bpk-spacing-md();
 
-      @include mixins.bpk-heading-3;
+      @include typography.bpk-heading-3;
     }
 
-    @include mixins.bpk-breakpoint-small-mobile {
-      margin-bottom: mixins.bpk-spacing-sm();
+    @include breakpoints.bpk-breakpoint-small-mobile {
+      margin-bottom: bonds.bpk-spacing-sm();
 
-      @include mixins.bpk-label-1;
+      @include typography.bpk-label-1;
     }
   }
 
@@ -261,9 +265,9 @@
   }
 
   &__cta {
-    margin-top: mixins.bpk-spacing-xl();
+    margin-top: bonds.bpk-spacing-xl();
 
-    @include mixins.bpk-breakpoint-small-tablet {
+    @include breakpoints.bpk-breakpoint-small-tablet {
       display: none;
     }
   }

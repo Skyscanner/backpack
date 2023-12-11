@@ -44,7 +44,7 @@
 ///
 /// @access private
 
-@mixin _bpk-border-right($size, $color, $inset) {
+@mixin bpk-border-right($size, $color, $inset) {
   $offset-x: if($inset == inset, -#{$size}, $size);
 
   box-shadow: $offset-x 0 0 0 $color #{$inset};
@@ -64,7 +64,7 @@
 ///
 /// @access private
 
-@mixin _bpk-border-left($size, $color, $inset) {
+@mixin bpk-border-left($size, $color, $inset) {
   $offset-x: if($inset == inset, $size, -#{$size});
 
   box-shadow: $offset-x 0 0 0 $color #{$inset};
@@ -106,7 +106,7 @@
 ///   }
 
 @mixin bpk-border-right-sm($color, $inset: inset) {
-  @include _bpk-border-right($bpk-border-size-sm, $color, $inset);
+  @include bpk-border-right($bpk-border-size-sm, $color, $inset);
 }
 
 /// Small "1px" bottom border.
@@ -132,7 +132,7 @@
 ///   }
 
 @mixin bpk-border-left-sm($color, $inset: inset) {
-  @include _bpk-border-left($bpk-border-size-sm, $color, $inset);
+  @include bpk-border-left($bpk-border-size-sm, $color, $inset);
 }
 
 /// Large "2px" border.
@@ -171,7 +171,7 @@
 ///   }
 
 @mixin bpk-border-right-lg($color, $inset: inset) {
-  @include _bpk-border-right($bpk-border-size-lg, $color, $inset);
+  @include bpk-border-right($bpk-border-size-lg, $color, $inset);
 }
 
 /// Large "2px" bottom border.
@@ -197,7 +197,7 @@
 ///   }
 
 @mixin bpk-border-left-lg($color, $inset: inset) {
-  @include _bpk-border-left($bpk-border-size-lg, $color, $inset);
+  @include bpk-border-left($bpk-border-size-lg, $color, $inset);
 }
 
 /// Extra large "3px" border.
@@ -236,7 +236,7 @@
 ///   }
 
 @mixin bpk-border-right-xl($color, $inset: inset) {
-  @include _bpk-border-right($bpk-border-size-xl, $color, $inset);
+  @include bpk-border-right($bpk-border-size-xl, $color, $inset);
 }
 
 /// Extra large "3px" bottom border.
@@ -262,21 +262,5 @@
 ///   }
 
 @mixin bpk-border-left-xl($color, $inset: inset) {
-  @include _bpk-border-left($bpk-border-size-xl, $color, $inset);
-}
-
-@mixin bpk-datatable-border-left($bpk-border-size-datatable) {
-  @include _bpk-border-left(
-    $bpk-border-size-datatable,
-    $bpk-core-accent-day,
-    inset
-  );
-}
-
-@mixin bpk-datatable-border-right($bpk-border-size-datatable) {
-  @include _bpk-border-right(
-    $bpk-border-size-datatable,
-    $bpk-core-accent-day,
-    inset
-  );
+  @include bpk-border-left($bpk-border-size-xl, $color, $inset);
 }

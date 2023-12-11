@@ -16,17 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-price {
   display: flex;
   flex-direction: column;
-  color: mixins.$bpk-text-secondary-day;
+  color: bonds.$bpk-text-secondary-day;
 
   &--right {
     text-align: right;
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       text-align: left;
     }
   }
@@ -45,7 +46,7 @@
   }
 
   &__separator {
-    margin: 0 mixins.bpk-spacing-sm();
+    margin: 0 bonds.bpk-spacing-sm();
   }
 
   &__column-container {
@@ -54,17 +55,17 @@
   }
 
   &__price {
-    color: mixins.$bpk-text-primary-day;
+    color: bonds.$bpk-text-primary-day;
     word-break: break-all;
   }
 
   &__spacing::after {
     content: '';
-    margin-right: mixins.bpk-spacing-sm();
+    margin-right: bonds.bpk-spacing-sm();
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       margin-right: unset;
-      margin-left: mixins.bpk-spacing-sm();
+      margin-left: bonds.bpk-spacing-sm();
     }
   }
 

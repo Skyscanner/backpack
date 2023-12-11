@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
-$dot-size: mixins.bpk-spacing-md();
-$dot-margin: mixins.bpk-spacing-sm();
+$dot-size: bonds.bpk-spacing-md();
+$dot-margin: bonds.bpk-spacing-sm();
 $displayed-total: 5;
 /* stylelint-disable-next-line scss/operator-no-newline-after */
 $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total *
@@ -52,10 +53,10 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
       )
     );
     /* stylelint-enable scss/operator-no-newline-after */
-    transition: transform mixins.$bpk-duration-sm ease-in-out;
+    transition: transform bonds.$bpk-duration-sm ease-in-out;
     white-space: nowrap;
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       --direction: 1;
     }
   }
@@ -70,20 +71,20 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     margin-inline: $dot-margin;
 
     &--default {
-      background-color: mixins.$bpk-line-day;
+      background-color: bonds.$bpk-line-day;
     }
 
     &--overImage {
-      background-color: mixins.$bpk-line-on-dark-day;
+      background-color: bonds.$bpk-line-on-dark-day;
     }
 
     &--active {
       &-default {
-        background-color: mixins.$bpk-text-secondary-day;
+        background-color: bonds.$bpk-text-secondary-day;
       }
 
       &-overImage {
-        background-color: mixins.$bpk-text-on-dark-day;
+        background-color: bonds.$bpk-text-on-dark-day;
       }
     }
   }

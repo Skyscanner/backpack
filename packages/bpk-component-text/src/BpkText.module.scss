@@ -16,116 +16,116 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/mixins/typography';
 
 .bpk-text {
-  @include mixins.bpk-text;
+  @include typography.bpk-text;
 
   &--xs {
-    @include mixins.bpk-text--xs;
+    @include typography.bpk-text--xs;
   }
 
   &--sm {
-    @include mixins.bpk-text--sm;
+    @include typography.bpk-text--sm;
   }
 
   &--base {
-    @include mixins.bpk-text--base;
+    @include typography.bpk-text--base;
   }
 
   &--lg {
-    @include mixins.bpk-text--lg;
+    @include typography.bpk-text--lg;
   }
 
   &--xl {
-    @include mixins.bpk-text--xl;
+    @include typography.bpk-text--xl;
   }
 
   &--xxl {
-    @include mixins.bpk-text--xxl;
+    @include typography.bpk-text--xxl;
   }
 
   &--xxxl {
-    @include mixins.bpk-text--xxxl;
+    @include typography.bpk-text--xxxl;
   }
 
   &--xxxxl {
-    @include mixins.bpk-text--xxxxl;
+    @include typography.bpk-text--xxxxl;
   }
 
   &--xxxxxl {
-    @include mixins.bpk-text--xxxxxl;
+    @include typography.bpk-text--xxxxxl;
   }
 
   &--caption {
-    @include mixins.bpk-caption;
+    @include typography.bpk-caption;
   }
 
   &--footnote {
-    @include mixins.bpk-footnote;
+    @include typography.bpk-footnote;
   }
 
   &--label-1 {
-    @include mixins.bpk-label-1;
+    @include typography.bpk-label-1;
   }
 
   &--label-2 {
-    @include mixins.bpk-label-2;
+    @include typography.bpk-label-2;
   }
 
   &--label-3 {
-    @include mixins.bpk-label-3;
+    @include typography.bpk-label-3;
   }
 
   &--body-default {
-    @include mixins.bpk-body-default;
+    @include typography.bpk-body-default;
   }
 
   &--body-longform {
-    @include mixins.bpk-body-longform;
+    @include typography.bpk-body-longform;
   }
 
   &--subheading {
-    @include mixins.bpk-subheading;
+    @include typography.bpk-subheading;
   }
 
   &--heading-1 {
-    @include mixins.bpk-heading-1;
+    @include typography.bpk-heading-1;
   }
 
   &--heading-2 {
-    @include mixins.bpk-heading-2;
+    @include typography.bpk-heading-2;
   }
 
   &--heading-3 {
-    @include mixins.bpk-heading-3;
+    @include typography.bpk-heading-3;
   }
 
   &--heading-4 {
-    @include mixins.bpk-heading-4;
+    @include typography.bpk-heading-4;
   }
 
   &--heading-5 {
-    @include mixins.bpk-heading-5;
+    @include typography.bpk-heading-5;
   }
 
   &--hero-1 {
-    @include mixins.bpk-hero-1;
+    @include typography.bpk-hero-1;
   }
 
   &--hero-2 {
-    @include mixins.bpk-hero-2;
+    @include typography.bpk-hero-2;
   }
 
   &--hero-3 {
-    @include mixins.bpk-hero-3;
+    @include typography.bpk-hero-3;
   }
 
   &--hero-4 {
-    @include mixins.bpk-hero-4;
+    @include typography.bpk-hero-4;
   }
 
   &--hero-5 {
-    @include mixins.bpk-hero-5;
+    @include typography.bpk-hero-5;
   }
 }

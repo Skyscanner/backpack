@@ -16,36 +16,39 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/shadows';
+@use '../../bpk-mixins-next/src/mixins/utils';
+@use '../../bpk-mixins-next/src/mixins/typography';
 
 .bpk-navigation-bar {
   position: relative;
   display: flex;
-  min-height: mixins.bpk-spacing-xl() + mixins.bpk-spacing-lg();
-  padding: mixins.bpk-spacing-base();
+  min-height: bonds.bpk-spacing-xl() + bonds.bpk-spacing-lg();
+  padding: bonds.bpk-spacing-base();
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  @include mixins.bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-navigation-bar-background-color,
-    mixins.$bpk-surface-default-day
+    bonds.$bpk-surface-default-day
   );
 
   &--on-dark {
-    background-color: $bpk-surface-contrast-day;
+    background-color: bonds.$bpk-surface-contrast-day;
   }
 
   &__title {
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-navigation-bar-title-color,
-      mixins.$bpk-text-primary-day
+      bonds.$bpk-text-primary-day
     );
 
     &--on-dark {
-      color: $bpk-text-primary-inverse-day;
+      color: bonds.$bpk-text-primary-inverse-day;
     }
   }
 
@@ -53,32 +56,32 @@
   &__trailing-item {
     position: absolute;
 
-    @include mixins.bpk-label-2;
+    @include typography.bpk-label-2;
   }
 
   &__leading-item {
-    left: mixins.bpk-spacing-base();
+    left: bonds.bpk-spacing-base();
 
-    @include mixins.bpk-rtl {
-      right: mixins.bpk-spacing-base();
+    @include utils.bpk-rtl {
+      right: bonds.bpk-spacing-base();
       left: auto;
     }
   }
 
   &__trailing-item {
-    right: mixins.bpk-spacing-base();
+    right: bonds.bpk-spacing-base();
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       right: auto;
-      left: mixins.bpk-spacing-base();
+      left: bonds.bpk-spacing-base();
     }
   }
 
   &__sticky {
     position: sticky;
     top: 0;
-    z-index: mixins.$bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
+    z-index: bonds.$bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
 
-    @include mixins.bpk-box-shadow-sm;
+    @include shadows.bpk-box-shadow-sm;
   }
 }

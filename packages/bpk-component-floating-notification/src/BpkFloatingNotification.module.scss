@@ -16,28 +16,29 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/breakpoints';
 
 .bpk-floating-notification {
   position: absolute;
   right: 0;
-  bottom: mixins.bpk-spacing-xl();
+  bottom: bonds.bpk-spacing-xl();
   left: 0;
   display: flex;
-  max-width: mixins.bpk-spacing-xxl() * 10;
+  max-width: bonds.bpk-spacing-xxl() * 10;
   margin: auto;
-  padding: mixins.bpk-spacing-lg();
+  padding: bonds.bpk-spacing-lg();
   transition:
-    opacity mixins.$bpk-duration-base ease-in-out,
-    transform mixins.$bpk-duration-base ease-in-out;
-  border-radius: mixins.$bpk-border-radius-md;
-  background: mixins.$bpk-core-primary-day;
-  color: mixins.$bpk-text-on-dark-day;
-  box-shadow: mixins.$bpk-box-shadow-xl, mixins.$bpk-box-shadow-lg;
+    opacity bonds.$bpk-duration-base ease-in-out,
+    transform bonds.$bpk-duration-base ease-in-out;
+  border-radius: bonds.$bpk-border-radius-md;
+  background: bonds.$bpk-core-primary-day;
+  color: bonds.$bpk-text-on-dark-day;
+  box-shadow: bonds.$bpk-box-shadow-xl, bonds.$bpk-box-shadow-lg;
 
-  @include mixins.bpk-breakpoint-mobile {
+  @include breakpoints.bpk-breakpoint-mobile {
     max-width: 100%;
-    padding: mixins.bpk-spacing-base();
+    padding: bonds.bpk-spacing-base();
   }
 
   &--leave {
@@ -45,7 +46,7 @@
     opacity: 1;
 
     &-active {
-      transform: translateY(mixins.bpk-spacing-xl());
+      transform: translateY(bonds.bpk-spacing-xl());
       opacity: 0;
     }
 
@@ -55,7 +56,7 @@
   }
 
   &--appear {
-    transform: translateY(mixins.bpk-spacing-xl());
+    transform: translateY(bonds.bpk-spacing-xl());
     opacity: 0;
 
     &-active {
@@ -67,21 +68,21 @@
   &__button {
     min-height: 0;
     padding: 0;
-    color: mixins.$bpk-text-on-dark-day;
+    color: bonds.$bpk-text-on-dark-day;
     margin-inline-start: auto;
     word-break: keep-all;
   }
 
   &__icon {
-    margin-right: mixins.bpk-spacing-md();
-    margin-left: mixins.bpk-spacing-sm();
+    margin-right: bonds.bpk-spacing-md();
+    margin-left: bonds.bpk-spacing-sm();
     flex-shrink: 0;
-    transform: translateY((mixins.bpk-spacing-sm()));
+    transform: translateY(bonds.bpk-spacing-sm());
     text-align: bottom;
-    fill: mixins.$bpk-text-on-dark-day;
+    fill: bonds.$bpk-text-on-dark-day;
   }
 
   &__text {
-    margin-inline-end: mixins.bpk-spacing-md();
+    margin-inline-end: bonds.bpk-spacing-md();
   }
 }

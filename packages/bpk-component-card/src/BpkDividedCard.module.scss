@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 $min-vertical-width: 240;
 $max-vertical-width: 720;
@@ -29,14 +30,14 @@ $fixed-secondary-width: 216;
   align-items: stretch;
 
   &--vertical {
-    min-width: mixins.$bpk-one-pixel-rem * $min-vertical-width;
-    max-width: mixins.$bpk-one-pixel-rem * $max-vertical-width;
+    min-width: bonds.$bpk-one-pixel-rem * $min-vertical-width;
+    max-width: bonds.$bpk-one-pixel-rem * $max-vertical-width;
     flex-direction: column;
   }
 
   &--horizontal {
-    min-width: mixins.$bpk-one-pixel-rem * $min-horizontal-width;
-    min-height: mixins.$bpk-one-pixel-rem * $min-horizontal-height;
+    min-width: bonds.$bpk-one-pixel-rem * $min-horizontal-width;
+    min-height: bonds.$bpk-one-pixel-rem * $min-horizontal-height;
   }
 
   &__primary {
@@ -47,15 +48,15 @@ $fixed-secondary-width: 216;
 
   &__secondary {
     &--vertical {
-      border-top: mixins.$bpk-input-border;
+      border-top: bonds.$bpk-input-border;
     }
 
     &--horizontal {
-      width: mixins.$bpk-one-pixel-rem * $fixed-secondary-width;
-      border-left: mixins.$bpk-input-border;
+      width: bonds.$bpk-one-pixel-rem * $fixed-secondary-width;
+      border-left: bonds.$bpk-input-border;
 
-      @include mixins.bpk-rtl {
-        border-right: mixins.$bpk-input-border;
+      @include utils.bpk-rtl {
+        border-right: bonds.$bpk-input-border;
         border-left: unset;
       }
     }

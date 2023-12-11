@@ -16,17 +16,20 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/borders';
+@use '../../bpk-mixins-next/src/mixins/margins';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-accordion {
   &__title {
     height: auto;
 
     &--collapsed {
-      @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day);
+      @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day);
 
       &-on-dark {
-        @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-on-dark-day);
+        @include borders.bpk-border-bottom-sm(bonds.$bpk-line-on-dark-day);
       }
     }
   }
@@ -36,12 +39,12 @@
     padding: 0;
     border: 0;
     background-color: transparent;
-    color: mixins.$bpk-text-primary-day;
+    color: bonds.$bpk-text-primary-day;
     text-align: left;
     cursor: pointer;
     appearance: none;
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       text-align: right;
     }
   }
@@ -49,7 +52,7 @@
   &__flex-container {
     display: inline-flex;
     width: 100%;
-    margin: mixins.bpk-spacing-base() 0;
+    margin: bonds.bpk-spacing-base() 0;
     flex-direction: row;
   }
 
@@ -58,7 +61,7 @@
     flex-grow: 1;
 
     &--on-dark {
-      color: mixins.$bpk-canvas-day;
+      color: bonds.$bpk-canvas-day;
     }
   }
 
@@ -67,18 +70,18 @@
   }
 
   &__leading-icon {
-    @include mixins.bpk-margin-trailing(mixins.bpk-spacing-md(), true);
+    @include margins.bpk-margin-trailing(bonds.bpk-spacing-md(), true);
   }
 
   &__item-expand-icon {
-    fill: mixins.$bpk-text-primary-day;
+    fill: bonds.$bpk-text-primary-day;
 
     &--flipped {
       transform: scaleY(-1);
     }
 
     &--on-dark {
-      fill: mixins.$bpk-canvas-day;
+      fill: bonds.$bpk-canvas-day;
     }
   }
 
@@ -86,14 +89,14 @@
     margin: 0;
 
     &--expanded {
-      padding-bottom: mixins.bpk-spacing-base();
+      padding-bottom: bonds.bpk-spacing-base();
 
-      @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day);
+      @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day);
 
       &-on-dark {
-        padding-bottom: mixins.bpk-spacing-base();
+        padding-bottom: bonds.bpk-spacing-base();
 
-        @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-on-dark-day);
+        @include borders.bpk-border-bottom-sm(bonds.$bpk-line-on-dark-day);
       }
     }
   }

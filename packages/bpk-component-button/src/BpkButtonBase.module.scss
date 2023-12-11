@@ -16,27 +16,26 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/buttons';
 
 .bpk-button {
-  @include mixins.bpk-button;
+  @include buttons.bpk-button;
 
   &--large {
-    @include mixins.bpk-button--large;
+    @include buttons.bpk-button--large;
   }
 
   &--icon-only {
-    border-radius: mixins.$bpk-button-border-radius;
+    border-radius: bonds.$bpk-button-border-radius;
 
-    @include mixins.bpk-button--icon-only;
+    @include buttons.bpk-button--icon-only;
   }
 
   &--large-icon-only {
-    border-radius: mixins.$bpk-button-border-radius;
+    border-radius: bonds.$bpk-button-border-radius;
 
-    @include mixins.bpk-button--large-icon-only;
+    @include buttons.bpk-button--large-icon-only;
   }
 
   /* stylelint-disable selector-max-compound-selectors */

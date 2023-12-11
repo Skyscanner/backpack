@@ -16,48 +16,50 @@
 * limitations under the License.
 */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/radii';
+@use '../../bpk-mixins-next/src/mixins/shadows';
 
 .bpk-dialog-inner {
-  z-index: mixins.$bpk-zindex-modal;
+  z-index: bonds.$bpk-zindex-modal;
   width: 100%;
-  max-width: mixins.$bpk-modal-max-width;
+  max-width: bonds.$bpk-modal-max-width;
   margin: auto;
   transform: scale(1);
   transition:
-    opacity mixins.$bpk-duration-sm ease-in-out,
-    transform mixins.$bpk-duration-sm ease-in-out;
+    opacity bonds.$bpk-duration-sm ease-in-out,
+    transform bonds.$bpk-duration-sm ease-in-out;
   outline: 0;
-  background-color: mixins.$bpk-modal-background-color;
-  opacity: mixins.$bpk-modal-opacity;
+  background-color: bonds.$bpk-modal-background-color;
+  opacity: bonds.$bpk-modal-opacity;
 
   // FIX: Prevents ugly flickering when tapping inside the dialog in Mobile Safari
   -webkit-tap-highlight-color: transparent;
 
-  @include mixins.bpk-box-shadow-xl;
-  @include mixins.bpk-border-radius-sm;
+  @include shadows.bpk-box-shadow-xl;
+  @include radii.bpk-border-radius-sm;
 
   &--appear {
     transform: scale(0.9);
-    opacity: mixins.$bpk-modal-initial-opacity;
+    opacity: bonds.$bpk-modal-initial-opacity;
   }
 
   &--appear-active {
     transform: scale(1);
-    opacity: mixins.$bpk-modal-opacity;
+    opacity: bonds.$bpk-modal-opacity;
   }
 
   &__content {
-    padding: mixins.$bpk-modal-content-padding;
+    padding: bonds.$bpk-modal-content-padding;
     flex: 1;
     overflow-y: auto;
   }
 
   &__flare {
-    height: mixins.bpk-spacing-lg() * 10;
+    height: bonds.bpk-spacing-lg() * 10;
 
     // We inherit radius from the outer modal so they match and align correctly to the container.
     border-radius: inherit;
-    background-color: mixins.$bpk-surface-contrast-day;
+    background-color: bonds.$bpk-surface-contrast-day;
   }
 }

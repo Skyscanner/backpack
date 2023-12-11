@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
 
 .bpk-loading-button {
-  $button-padding-x: mixins.bpk-spacing-base() * 2;
-  $button-padding-y: mixins.bpk-spacing-lg() * 0.5;
-  $button-large-padding-y: mixins.bpk-spacing-lg();
-  $button-icon-only-padding-x: mixins.$bpk-button-height -
-      mixins.$bpk-icon-size-sm; // this is in order to ensure icons are centred in icon-only buttons
+  $button-padding-x: bonds.bpk-spacing-base() * 2;
+  $button-padding-y: bonds.bpk-spacing-lg() * 0.5;
+  $button-large-padding-y: bonds.bpk-spacing-lg();
+  $button-icon-only-padding-x: bonds.$bpk-button-height -
+    bonds.$bpk-icon-size-sm; // this is in order to ensure icons are centred in icon-only buttons
   /* stylelint-disable-next-line scss/operator-no-newline-after */
-  $button-large-icon-only-padding-x: mixins.$bpk-button-large-height -
-    mixins.$bpk-icon-size-lg; // this is in order to ensure icons are centred in icon-only buttons
+  $button-large-icon-only-padding-x: bonds.$bpk-button-large-height -
+    bonds.$bpk-icon-size-lg; // this is in order to ensure icons are centred in icon-only buttons
 
   position: relative;
   overflow: hidden;

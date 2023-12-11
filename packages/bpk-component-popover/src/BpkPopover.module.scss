@@ -16,30 +16,34 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/borders';
+@use '../../bpk-mixins-next/src/mixins/breakpoints';
+@use '../../bpk-mixins-next/src/mixins/layers';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
-$arrow-size: mixins.bpk-spacing-lg();
-$arrow-inset-margin: -1 * (mixins.$bpk-one-pixel-rem * 11);
+$arrow-size: bonds.bpk-spacing-lg();
+$arrow-inset-margin: -1 * (bonds.$bpk-one-pixel-rem * 11);
 
 .bpk-popover-portal {
-  z-index: mixins.$bpk-zindex-popover;
+  z-index: bonds.$bpk-zindex-popover;
 
-  @include mixins.bpk-breakpoint-mobile {
-    margin-right: mixins.bpk-spacing-base();
-    margin-left: mixins.bpk-spacing-base();
+  @include breakpoints.bpk-breakpoint-mobile {
+    margin-right: bonds.bpk-spacing-base();
+    margin-left: bonds.bpk-spacing-base();
   }
 }
 
 .bpk-popover {
-  transition: opacity mixins.$bpk-duration-sm ease-in-out;
+  transition: opacity bonds.$bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
 
-  @include mixins.bpk-layer;
+  @include layers.bpk-layer;
 
-  @include mixins.bpk-breakpoint-above-mobile {
-    max-width: mixins.$bpk-breakpoint-mobile;
-    transition: opacity mixins.$bpk-duration-xs ease-in-out;
+  @include breakpoints.bpk-breakpoint-above-mobile {
+    max-width: bonds.$bpk-breakpoint-mobile;
+    transition: opacity bonds.$bpk-duration-xs ease-in-out;
   }
 
   &--appear {
@@ -51,35 +55,35 @@ $arrow-inset-margin: -1 * (mixins.$bpk-one-pixel-rem * 11);
   }
 
   &__arrow {
-    position: aboslute;
+    position: absolute;
     width: $arrow-size;
     height: $arrow-size;
     transform: rotate(45deg);
-    border: mixins.$bpk-one-pixel-rem solid transparent;
+    border: bonds.$bpk-one-pixel-rem solid transparent;
     background: inherit;
 
     .bpk-popover-portal[data-popper-placement='top'] & {
       bottom: $arrow-inset-margin;
-      border-right-color: mixins.$bpk-surface-highlight-day;
-      border-bottom-color: mixins.$bpk-surface-highlight-day;
+      border-right-color: bonds.$bpk-surface-highlight-day;
+      border-bottom-color: bonds.$bpk-surface-highlight-day;
     }
 
     .bpk-popover-portal[data-popper-placement='right'] & {
       left: $arrow-inset-margin;
-      border-bottom-color: mixins.$bpk-surface-highlight-day;
-      border-left-color: mixins.$bpk-surface-highlight-day;
+      border-bottom-color: bonds.$bpk-surface-highlight-day;
+      border-left-color: bonds.$bpk-surface-highlight-day;
     }
 
     .bpk-popover-portal[data-popper-placement='bottom'] & {
       top: $arrow-inset-margin;
-      border-top-color: mixins.$bpk-surface-highlight-day;
-      border-left-color: mixins.$bpk-surface-highlight-day;
+      border-top-color: bonds.$bpk-surface-highlight-day;
+      border-left-color: bonds.$bpk-surface-highlight-day;
     }
 
     .bpk-popover-portal[data-popper-placement='left'] & {
       right: $arrow-inset-margin;
-      border-top-color: mixins.$bpk-surface-highlight-day;
-      border-right-color: mixins.$bpk-surface-highlight-day;
+      border-top-color: bonds.$bpk-surface-highlight-day;
+      border-right-color: bonds.$bpk-surface-highlight-day;
     }
 
     &[data-hide] {
@@ -89,37 +93,37 @@ $arrow-inset-margin: -1 * (mixins.$bpk-one-pixel-rem * 11);
 
   &__body {
     &--padded {
-      padding: mixins.bpk-spacing-base();
+      padding: bonds.bpk-spacing-base();
     }
   }
 
   &__header {
     display: flex;
-    padding: mixins.bpk-spacing-base();
+    padding: bonds.bpk-spacing-base();
     justify-content: space-between;
 
-    @include mixins.bpk-border-bottom-sm(mixins.$bpk-surface-highlight-day);
+    @include borders.bpk-border-bottom-sm(bonds.$bpk-surface-highlight-day);
   }
 
   &__label {
-    @include mixins.bpk-visually-hidden;
+    @include utils.bpk-visually-hidden;
   }
 
   &__close-button {
     float: right;
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       float: left;
     }
   }
 
   &__footer {
-    padding: mixins.bpk-spacing-md() mixins.bpk-spacing-base();
+    padding: bonds.bpk-spacing-md() bonds.bpk-spacing-base();
     text-align: right;
 
-    @include mixins.bpk-border-top-sm(mixins.$bpk-surface-highlight-day);
+    @include borders.bpk-border-top-sm(bonds.$bpk-surface-highlight-day);
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       text-align: left;
     }
   }

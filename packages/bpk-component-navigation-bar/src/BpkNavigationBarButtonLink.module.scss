@@ -16,52 +16,53 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-navigation-bar-button-link {
-  @include mixins.bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-navigation-bar-button-link-color,
-    mixins.$bpk-text-primary-day
+    bonds.$bpk-text-primary-day
   );
 
-  @include mixins.bpk-hover {
-    @include mixins.bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-navigation-bar-button-link-hover-color,
-      mixins.$bpk-text-primary-day
+      bonds.$bpk-text-primary-day
     );
   }
 
   &:active {
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-navigation-bar-button-link-active-color,
-      mixins.$bpk-text-primary-day
+      bonds.$bpk-text-primary-day
     );
   }
 
   &:visited {
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-navigation-bar-button-link-visited-color,
-      mixins.$bpk-text-primary-day
+      bonds.$bpk-text-primary-day
     );
   }
 
   &--on-dark {
-    color: $bpk-text-primary-inverse-day;
+    color: bonds.$bpk-text-primary-inverse-day;
 
-    @include bpk-hover {
-      color: $bpk-text-primary-inverse-day;
+    @include utils.bpk-hover {
+      color: bonds.$bpk-text-primary-inverse-day;
     }
 
     &:active {
-      color: $bpk-text-primary-inverse-day;
+      color: bonds.$bpk-text-primary-inverse-day;
     }
 
     &:visited {
-      color: $bpk-text-primary-inverse-day;
+      color: bonds.$bpk-text-primary-inverse-day;
     }
   }
 }

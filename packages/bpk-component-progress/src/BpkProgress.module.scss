@@ -16,18 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-progress {
   position: relative;
-  height: mixins.bpk-spacing-base();
-  border-radius: mixins.$bpk-border-radius-md;
-  background-color: mixins.$bpk-surface-highlight-day;
+  height: bonds.bpk-spacing-base();
+  border-radius: bonds.$bpk-border-radius-md;
+  background-color: bonds.$bpk-surface-highlight-day;
   overflow: hidden;
 
   &--small {
-    height: mixins.bpk-spacing-md();
-    border-radius: mixins.$bpk-border-radius-xs;
+    height: bonds.bpk-spacing-md();
+    border-radius: bonds.$bpk-border-radius-xs;
   }
 
   &__value {
@@ -37,14 +38,14 @@
     bottom: 0;
     left: 0;
     content: ' ';
-    width: 0%;
-    transition: width mixins.$bpk-duration-base ease-in-out;
-    border-radius: mixins.$bpk-border-radius-sm;
+    width: 0;
+    transition: width bonds.$bpk-duration-base ease-in-out;
+    border-radius: bonds.$bpk-border-radius-sm;
 
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-progress-bar-fill-color,
-      mixins.$bpk-core-accent-day
+      bonds.$bpk-core-accent-day
     );
 
     &--stepped {
@@ -56,7 +57,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 2 * mixins.$bpk-one-pixel-rem;
-    background: mixins.$bpk-canvas-day;
+    width: 2 * bonds.$bpk-one-pixel-rem;
+    background: bonds.$bpk-canvas-day;
   }
 }

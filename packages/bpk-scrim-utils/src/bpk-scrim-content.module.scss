@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
 
 .bpk-scrim-content {
   position: fixed;
@@ -24,7 +24,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: mixins.$bpk-zindex-scrim;
+  z-index: bonds.$bpk-zindex-scrim;
   overflow: auto;
   overflow-x: hidden;
   overflow-y: auto;

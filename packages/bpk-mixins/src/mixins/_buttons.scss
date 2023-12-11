@@ -320,7 +320,7 @@
   }
 }
 
-/// Destructive button. Modifies the bpk-button & bpk-button--secondary mixins.
+/// Destructive button. Modifies the bpk-button & bpk-button--secondary lib.
 ///
 /// @require {mixin} bpk-button
 /// @require {mixin} bpk-button--secondary
@@ -421,7 +421,7 @@
   }
 }
 
-/// Link on dark button. Modifies the bpk-button & bpk-button--link mixins.
+/// Link on dark button. Modifies the bpk-button & bpk-button--link lib.
 ///
 /// @require {mixin} bpk-button
 
@@ -490,7 +490,7 @@
   border-radius: $bpk-button-border-radius;
 }
 
-/// Large icon-only button. Modifies the bpk-button & bpk-button--large mixins.
+/// Large icon-only button. Modifies the bpk-button & bpk-button--large lib.
 ///
 /// @require {mixin} bpk-button
 /// @require {mixin} bpk-button--large

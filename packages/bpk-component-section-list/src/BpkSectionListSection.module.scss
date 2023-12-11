@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
 
 .bpk-section-list-section {
   margin: 0;
@@ -25,9 +25,9 @@
 
   &__header {
     display: flex;
-    min-height: mixins.bpk-spacing-xl();
-    padding: mixins.bpk-spacing-md() mixins.bpk-spacing-base();
+    min-height: bonds.bpk-spacing-xl();
+    padding: bonds.bpk-spacing-md() bonds.bpk-spacing-base();
     align-items: center;
-    background-color: mixins.$bpk-surface-highlight-day;
+    background-color: bonds.$bpk-surface-highlight-day;
   }
 }

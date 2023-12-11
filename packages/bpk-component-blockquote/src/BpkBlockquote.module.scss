@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/mixins/typography';
 
 .bpk-blockquote {
-  @include mixins.bpk-blockquote;
+  @include typography.bpk-blockquote;
 }
 
 .bpk-blockquote--extra-spacing {
-  @include mixins.bpk-blockquote--extra-spacing;
+  @include typography.bpk-blockquote--extra-spacing;
 }

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
 
 .bpk-overlay {
   &__wrapper {
@@ -35,20 +35,20 @@
     border-radius: inherit;
 
     &--tint {
-      background: rgba(mixins.$bpk-color-sky-blue-shade-03, 0.56);
+      background: rgba(bonds.$bpk-color-sky-blue-shade-03, 0.56);
     }
 
     &--solid {
       &-low {
-        background: rgba(mixins.$bpk-text-primary-day, 0.15);
+        background: rgba(bonds.$bpk-text-primary-day, 0.15);
       }
 
       &-medium {
-        background: rgba(mixins.$bpk-text-primary-day, 0.3);
+        background: rgba(bonds.$bpk-text-primary-day, 0.3);
       }
 
       &-high {
-        background: rgba(mixins.$bpk-text-primary-day, 0.4);
+        background: rgba(bonds.$bpk-text-primary-day, 0.4);
       }
     }
 
@@ -56,24 +56,24 @@
       &-low {
         background: linear-gradient(
           180deg,
-          rgba(mixins.$bpk-text-primary-day, 0.15) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0) 100%
+          rgba(bonds.$bpk-text-primary-day, 0.15) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0) 100%
         );
       }
 
       &-medium {
         background: linear-gradient(
           180deg,
-          rgba(mixins.$bpk-text-primary-day, 0.3) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0) 100%
+          rgba(bonds.$bpk-text-primary-day, 0.3) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0) 100%
         );
       }
 
       &-high {
         background: linear-gradient(
           180deg,
-          rgba(mixins.$bpk-text-primary-day, 0.4) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0) 100%
+          rgba(bonds.$bpk-text-primary-day, 0.4) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0) 100%
         );
       }
     }
@@ -82,24 +82,24 @@
       &-low {
         background: linear-gradient(
           180deg,
-          rgba(mixins.$bpk-text-primary-day, 0) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0.15) 100%
+          rgba(bonds.$bpk-text-primary-day, 0) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0.15) 100%
         );
       }
 
       &-medium {
         background: linear-gradient(
           180deg,
-          rgba(mixins.$bpk-text-primary-day, 0) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0.3) 100%
+          rgba(bonds.$bpk-text-primary-day, 0) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0.3) 100%
         );
       }
 
       &-high {
         background: linear-gradient(
           180deg,
-          rgba(mixins.$bpk-text-primary-day, 0) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0.4) 100%
+          rgba(bonds.$bpk-text-primary-day, 0) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0.4) 100%
         );
       }
     }
@@ -108,24 +108,24 @@
       &-low {
         background: linear-gradient(
           90deg,
-          rgba(mixins.$bpk-text-primary-day, 0.15) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0) 98.5%
+          rgba(bonds.$bpk-text-primary-day, 0.15) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0) 98.5%
         );
       }
 
       &-medium {
         background: linear-gradient(
           90deg,
-          rgba(mixins.$bpk-text-primary-day, 0.3) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0) 98.5%
+          rgba(bonds.$bpk-text-primary-day, 0.3) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0) 98.5%
         );
       }
 
       &-high {
         background: linear-gradient(
           90deg,
-          rgba(mixins.$bpk-text-primary-day, 0.4) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0) 98.5%
+          rgba(bonds.$bpk-text-primary-day, 0.4) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0) 98.5%
         );
       }
     }
@@ -134,30 +134,30 @@
       &-low {
         background: linear-gradient(
           90deg,
-          rgba(mixins.$bpk-text-primary-day, 0) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0.15) 98.5%
+          rgba(bonds.$bpk-text-primary-day, 0) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0.15) 98.5%
         );
       }
 
       &-medium {
         background: linear-gradient(
           90deg,
-          rgba(mixins.$bpk-text-primary-day, 0) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0.3) 98.5%
+          rgba(bonds.$bpk-text-primary-day, 0) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0.3) 98.5%
         );
       }
 
       &-high {
         background: linear-gradient(
           90deg,
-          rgba(mixins.$bpk-text-primary-day, 0) 0%,
-          rgba(mixins.$bpk-text-primary-day, 0.4) 98.5%
+          rgba(bonds.$bpk-text-primary-day, 0) 0%,
+          rgba(bonds.$bpk-text-primary-day, 0.4) 98.5%
         );
       }
     }
 
     &--vignette {
-      box-shadow: inset 0 0 50px rgba(mixins.$bpk-text-primary-day, 0.12);
+      box-shadow: inset 0 0 50px rgba(bonds.$bpk-text-primary-day, 0.12);
     }
   }
 }

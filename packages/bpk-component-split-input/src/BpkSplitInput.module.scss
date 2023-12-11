@@ -18,14 +18,15 @@
 
 /* stylelint-disable */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/typography';
 
 
   .bpk-split-input {
-    @include mixins.bpk-body-default;
+    @include typography.bpk-body-default;
     display: flex;
     width: 100%;
-    padding-top: mixins.bpk-spacing-sm();
+    padding-top: bonds.bpk-spacing-sm();
     flex-direction: row;
     align-items: center;
     direction: ltr;

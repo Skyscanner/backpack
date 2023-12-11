@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/shadows';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
-$height: mixins.bpk-spacing-xl();
-$width: mixins.bpk-spacing-sm() * 13;
-$border-width: mixins.$bpk-one-pixel-rem * 2;
+$height: bonds.bpk-spacing-xl();
+$width: bonds.bpk-spacing-sm() * 13;
+$border-width: bonds.$bpk-one-pixel-rem * 2;
 
 .bpk-switch {
   position: relative;
@@ -33,10 +35,10 @@ $border-width: mixins.$bpk-one-pixel-rem * 2;
     opacity: 0;
 
     &:checked ~ .bpk-switch__switch {
-      @include mixins.bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         background,
         --bpk-switch-checked-color,
-        mixins.$bpk-core-accent-day
+        bonds.$bpk-core-accent-day
       );
 
       &::before {
@@ -48,7 +50,7 @@ $border-width: mixins.$bpk-one-pixel-rem * 2;
   &__label {
     /* stylelint-disable backpack/use-typography-styles */
     line-height: $height;
-    margin-inline-end: mixins.bpk-spacing-md();
+    margin-inline-end: bonds.bpk-spacing-md();
   }
 
   // The 'track'.
@@ -58,9 +60,9 @@ $border-width: mixins.$bpk-one-pixel-rem * 2;
     display: block;
     min-width: $width;
     height: $height;
-    transition: background mixins.$bpk-duration-sm linear;
+    transition: background bonds.$bpk-duration-sm linear;
     border-radius: $height * 0.5;
-    background: mixins.$bpk-text-disabled-day;
+    background: bonds.$bpk-text-disabled-day;
     cursor: pointer;
 
     // The 'handle'.
@@ -72,20 +74,20 @@ $border-width: mixins.$bpk-one-pixel-rem * 2;
       display: block;
       width: $height - ($border-width * 2);
       height: $height - ($border-width * 2);
-      transition: left mixins.$bpk-duration-sm ease-out;
+      transition: left bonds.$bpk-duration-sm ease-out;
       border-radius: 50%;
-      background: mixins.$bpk-text-on-dark-day;
+      background: bonds.$bpk-text-on-dark-day;
 
-      @include mixins.bpk-box-shadow-sm;
+      @include shadows.bpk-box-shadow-sm;
     }
 
     &--small {
-      min-width: mixins.bpk-spacing-xxl();
-      height: mixins.bpk-spacing-sm() * 5;
+      min-width: bonds.bpk-spacing-xxl();
+      height: bonds.bpk-spacing-sm() * 5;
 
       &::before {
-        width: mixins.bpk-spacing-base();
-        height: mixins.bpk-spacing-base();
+        width: bonds.bpk-spacing-base();
+        height: bonds.bpk-spacing-base();
       }
     }
   }

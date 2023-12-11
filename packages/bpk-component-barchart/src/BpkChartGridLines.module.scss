@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
 
 .bpk-chart {
   &__grid-line {
     shape-rendering: crispedges;
-    stroke: mixins.$bpk-line-day;
+    stroke: bonds.$bpk-line-day;
   }
 }

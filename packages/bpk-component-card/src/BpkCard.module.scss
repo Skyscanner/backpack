@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/mixins/cards';
 
 .bpk-card {
-  @include mixins.bpk-card;
+  @include cards.bpk-card;
 
   &--atomic-button {
     width: 100%;
@@ -33,6 +33,6 @@
   }
 
   &--padded {
-    @include mixins.bpk-card--padded;
+    @include cards.bpk-card--padded;
   }
 }

@@ -16,19 +16,21 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/typography';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
-$bpk-margin-size-sort-icons: mixins.bpk-spacing-sm() + mixins.bpk-spacing-md();
+$bpk-margin-size-sort-icons: bonds.bpk-spacing-sm() + bonds.bpk-spacing-md();
 
 .bpk-data-table-column__header {
   display: flex;
   height: 100%;
-  margin: mixins.bpk-spacing-base();
+  margin: bonds.bpk-spacing-base();
   flex-direction: row;
   align-items: center;
-  outline-offset: -1 * (mixins.bpk-spacing-sm());
+  outline-offset: -1 * (bonds.bpk-spacing-sm());
 
-  @include mixins.bpk-label-2;
+  @include typography.bpk-label-2;
 
   &:hover {
     cursor: pointer;
@@ -38,27 +40,27 @@ $bpk-margin-size-sort-icons: mixins.bpk-spacing-sm() + mixins.bpk-spacing-md();
 .bpk-data-table-column__sort-icons {
   margin: 0 0 0 $bpk-margin-size-sort-icons;
 
-  @include mixins.bpk-rtl {
+  @include utils.bpk-rtl {
     margin: 0 $bpk-margin-size-sort-icons 0 0;
   }
 }
 
 .bpk-data-table-column__sort-icon {
   display: block;
-  fill: mixins.$bpk-line-day;
+  fill: bonds.$bpk-line-day;
 
   &:hover {
-    fill: mixins.$bpk-line-day;
+    fill: bonds.$bpk-line-day;
   }
 
   &--selected {
     &,
     &:hover {
-      fill: mixins.$bpk-core-accent-day;
+      fill: bonds.$bpk-core-accent-day;
     }
   }
 }
 
 .bpk-data-table-column__sort-icon--up {
-  margin-bottom: -1 * (mixins.bpk-spacing-sm());
+  margin-bottom: -1 * (bonds.bpk-spacing-sm());
 }

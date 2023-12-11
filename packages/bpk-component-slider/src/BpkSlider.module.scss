@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/shadows';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
-$slider-handle-size: mixins.bpk-spacing-base() + mixins.bpk-spacing-sm();
-$slider-handle-touch-size: mixins.bpk-spacing-xxl();
-$slider-bar-height: mixins.bpk-spacing-sm();
+$slider-handle-size: bonds.bpk-spacing-base() + bonds.bpk-spacing-sm();
+$slider-handle-touch-size: bonds.bpk-spacing-xxl();
+$slider-bar-height: bonds.bpk-spacing-sm();
 
 .bpk-slider {
   height: $slider-handle-size;
@@ -33,10 +35,10 @@ $slider-bar-height: mixins.bpk-spacing-sm();
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: mixins.$bpk-core-accent-day;
+    background-color: bonds.$bpk-core-accent-day;
     cursor: pointer;
 
-    @include mixins.bpk-box-shadow-sm;
+    @include shadows.bpk-box-shadow-sm;
 
     &::after {
       position: absolute;
@@ -48,37 +50,37 @@ $slider-bar-height: mixins.bpk-spacing-sm();
 
     &--active {
       transform: scale(1.2) translate3d(0, 0, 0);
-      background-color: mixins.$bpk-private-slider-selected-day;
+      background-color: bonds.$bpk-private-slider-selected-day;
     }
   }
 
   &__bar {
     top: calc(50% - #{$slider-bar-height * 0.5});
     height: $slider-bar-height;
-    border-radius: mixins.$bpk-border-radius-sm;
-    background-color: mixins.$bpk-line-day;
+    border-radius: bonds.$bpk-border-radius-sm;
+    background-color: bonds.$bpk-line-day;
   }
 
   // stylelint-disable-next-line selector-attribute-quotes
   > div[class$='0'] {
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-slider-bar-color,
-      mixins.$bpk-core-accent-day
+      bonds.$bpk-core-accent-day
     );
   }
 
   &--range {
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='0'] {
-      background-color: mixins.$bpk-line-day;
+      background-color: bonds.$bpk-line-day;
     }
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='1'] {
-      @include mixins.bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         background-color,
         --bpk-slider-bar-color,
-        mixins.$bpk-core-accent-day
+        bonds.$bpk-core-accent-day
       );
     }
   }

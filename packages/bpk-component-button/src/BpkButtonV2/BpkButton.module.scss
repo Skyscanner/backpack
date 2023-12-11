@@ -16,58 +16,59 @@
  * limitations under the License.
  */
 
-@use '../../../bpk-mixins-next' as mixins;
+@use '../../../bpk-mixins-next/src/bonds';
+@use '../../../bpk-mixins-next/src/mixins/buttons';
 
 .bpk-button {
-  @include mixins.bpk-button;
+  @include buttons.bpk-button;
 
   &--large {
-    @include mixins.bpk-button--large;
+    @include buttons.bpk-button--large;
   }
 
   &--icon-only {
-    border-radius: mixins.$bpk-button-border-radius;
+    border-radius: bonds.$bpk-button-border-radius;
 
-    @include mixins.bpk-button--icon-only;
+    @include buttons.bpk-button--icon-only;
   }
 
   &--large-icon-only {
-    border-radius: mixins.$bpk-button-border-radius;
+    border-radius: bonds.$bpk-button-border-radius;
 
-    @include mixins.bpk-button--large-icon-only;
+    @include buttons.bpk-button--large-icon-only;
   }
 
   &--destructive {
-    @include mixins.bpk-button--secondary;
-    @include mixins.bpk-button--destructive;
+    @include buttons.bpk-button--secondary;
+    @include buttons.bpk-button--destructive;
   }
 
   &--featured {
-    @include mixins.bpk-button--featured;
+    @include buttons.bpk-button--featured;
   }
 
   &--link {
-    @include mixins.bpk-button--link;
+    @include buttons.bpk-button--link;
   }
 
   &--link-on-dark {
-    @include mixins.bpk-button--link-on-dark;
+    @include buttons.bpk-button--link-on-dark;
   }
 
   &--primary-on-dark {
-    @include mixins.bpk-button--primary-on-dark;
+    @include buttons.bpk-button--primary-on-dark;
   }
 
   &--primary-on-light {
-    @include mixins.bpk-button--primary-on-light;
+    @include buttons.bpk-button--primary-on-light;
   }
 
   &--secondary {
-    @include mixins.bpk-button--secondary;
+    @include buttons.bpk-button--secondary;
   }
 
   &--secondary-on-dark {
-    @include mixins.bpk-button--secondary-on-dark;
+    @include buttons.bpk-button--secondary-on-dark;
   }
 
   /* stylelint-disable selector-max-compound-selectors */

@@ -16,32 +16,37 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/borders';
+@use '../../bpk-mixins-next/src/mixins/breakpoints';
+@use '../../bpk-mixins-next/src/mixins/shadows';
+@use '../../bpk-mixins-next/src/mixins/typography';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-drawer {
   position: fixed;
   right: 0;
   display: flex;
-  z-index: mixins.$bpk-zindex-drawer;
+  z-index: bonds.$bpk-zindex-drawer;
   width: 90%;
-  max-width: 50 * mixins.bpk-spacing-md();
+  max-width: 50 * bonds.bpk-spacing-md();
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
-  transition: transform mixins.$bpk-duration-sm ease;
+  transition: transform bonds.$bpk-duration-sm ease;
   outline: 0;
-  background: mixins.$bpk-surface-default-day;
+  background: bonds.$bpk-surface-default-day;
   overflow-y: scroll;
 
-  @include mixins.bpk-box-shadow-xl;
+  @include shadows.bpk-box-shadow-xl;
 
-  @include mixins.bpk-rtl {
+  @include utils.bpk-rtl {
     right: auto;
     left: 0;
     transform: translate(-100%);
   }
 
-  @include mixins.bpk-breakpoint-mobile {
+  @include breakpoints.bpk-breakpoint-mobile {
     width: 100%;
     max-width: 100%;
   }
@@ -50,55 +55,55 @@
   &--entered {
     transform: translate(0);
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       transform: translate(0);
     }
   }
 
   &--exiting {
-    transition: transform mixins.$bpk-duration-xs ease;
+    transition: transform bonds.$bpk-duration-xs ease;
   }
 
   &--exiting,
   &--exited {
     transform: translate(100%);
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       transform: translate(-100%);
     }
   }
 
   &__header {
     display: flex;
-    min-height: #{2 * mixins.bpk-spacing-base() + mixins.bpk-spacing-base()}; // keep height the same if visually hidden title
-    padding: mixins.bpk-spacing-base();
+    min-height: #{2 * bonds.bpk-spacing-base() + bonds.bpk-spacing-base()}; // keep height the same if visually hidden title
+    padding: bonds.bpk-spacing-base();
     justify-content: space-between;
     align-items: center;
     flex: 0 0;
 
-    @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day);
+    @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day);
   }
 
   &__heading {
-    @include mixins.bpk-text;
-    @include mixins.bpk-label-1;
+    @include typography.bpk-text;
+    @include typography.bpk-label-1;
 
     &--visually-hidden {
-      @include mixins.bpk-visually-hidden;
+      @include utils.bpk-visually-hidden;
     }
   }
 
   &__close-button {
     float: right;
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       float: left;
     }
   }
 
   &__content {
     height: 100%;
-    padding: mixins.bpk-spacing-base();
+    padding: bonds.bpk-spacing-base();
     flex: 1 1 100%;
     overflow-y: auto;
   }

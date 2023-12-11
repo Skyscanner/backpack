@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/breakpoints';
+@use '../../bpk-mixins-next/src/mixins/typography';
 
 .bpk-section-header {
   display: flex;
@@ -29,19 +31,19 @@
     flex-direction: column;
 
     &--default {
-      color: mixins.$bpk-text-primary-day;
+      color: bonds.$bpk-text-primary-day;
     }
 
     &--on-dark {
-      color: mixins.$bpk-text-on-dark-day;
+      color: bonds.$bpk-text-on-dark-day;
     }
   }
 
   &__title {
-    @include mixins.bpk-heading-2;
+    @include typography.bpk-heading-2;
 
-    @include mixins.bpk-breakpoint-mobile {
-      @include mixins.bpk-heading-3;
+    @include breakpoints.bpk-breakpoint-mobile {
+      @include typography.bpk-heading-3;
     }
   }
 }

@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
-@use 'variables.scss';
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/icons';
+@use '../../bpk-mixins-next/src/mixins/utils';
+@use 'variables' as *;
 
 .bpk-calendar-nav {
   display: table;
@@ -29,7 +31,7 @@
 
   &__nudger {
     display: table-cell;
-    padding: 0 mixins.$bpk-calendar-day-spacing;
+    padding: 0 bonds.$bpk-calendar-day-spacing;
     text-align: center;
     vertical-align: middle;
     box-sizing: border-box;
@@ -37,53 +39,53 @@
 
   &__button {
     width: 100%;
-    height: mixins.$bpk-input-height;
-    padding: mixins.bpk-spacing-md() - (2 * mixins.$bpk-one-pixel-rem) 0;
+    height: bonds.$bpk-input-height;
+    padding: bonds.bpk-spacing-md() - (2 * bonds.$bpk-one-pixel-rem) 0;
     border: none;
     background: none;
     cursor: pointer;
     appearance: none;
 
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-calendar-nudger-icon-color,
-      mixins.$bpk-text-primary-day
+      bonds.$bpk-text-primary-day
     );
 
-    @include mixins.bpk-hover {
-      @include mixins.bpk-themeable-property(
+    @include utils.bpk-hover {
+      @include utils.bpk-themeable-property(
         color,
         --bpk-calendar-nudger-icon-hover-color,
-        mixins.$bpk-text-primary-day
+        bonds.$bpk-text-primary-day
       );
     }
 
     &:active {
-      @include mixins.bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         color,
         --bpk-calendar-nudger-icon-active-color,
-        mixins.$bpk-text-primary-day
+        bonds.$bpk-text-primary-day
       );
     }
 
     .bpk-calendar-nav__icon {
       fill: currentcolor;
 
-      @include mixins.bpk-icon--rtl-support;
+      @include icons.bpk-icon--rtl-support;
     }
 
     &:disabled {
       cursor: not-allowed;
 
       .bpk-calendar-nav__icon {
-        fill: mixins.$bpk-text-disabled-day;
+        fill: bonds.$bpk-text-disabled-day;
       }
     }
   }
 
   &__text {
     &--hidden {
-      @include mixins.bpk-visually-hidden;
+      @include utils.bpk-visually-hidden;
     }
   }
 }

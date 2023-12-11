@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 @keyframes heart-beat {
   0%,
@@ -47,13 +48,13 @@
 
 .bpk-save-button {
   position: relative;
-  width: mixins.bpk-spacing-xxl();
-  height: mixins.bpk-spacing-xxl();
-  padding: mixins.bpk-spacing-md();
+  width: bonds.bpk-spacing-xxl();
+  height: bonds.bpk-spacing-xxl();
+  padding: bonds.bpk-spacing-md();
   border-radius: 50%;
   background-color: transparent;
 
-  @include mixins.bpk-hover {
+  @include utils.bpk-hover {
     background-color: transparent;
   }
 
@@ -66,10 +67,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: mixins.$bpk-text-on-light-day;
+    color: bonds.$bpk-text-on-light-day;
 
-    @include mixins.bpk-hover {
-      color: mixins.$bpk-text-on-light-day;
+    @include utils.bpk-hover {
+      color: bonds.$bpk-text-on-light-day;
     }
   }
 
@@ -78,8 +79,8 @@
     opacity: 1;
 
     &--show {
-      @include mixins.bpk-hover {
-        transition: opacity mixins.$bpk-duration-sm ease-in-out;
+      @include utils.bpk-hover {
+        transition: opacity bonds.$bpk-duration-sm ease-in-out;
         opacity: 0;
       }
     }
@@ -89,13 +90,13 @@
     }
 
     &--onDark {
-      color: mixins.$bpk-text-on-dark-day;
+      color: bonds.$bpk-text-on-dark-day;
     }
   }
 
   &__heartIcon {
     z-index: 2;
-    color: mixins.$bpk-core-accent-day;
+    color: bonds.$bpk-core-accent-day;
     opacity: 0;
 
     &--toggle {
@@ -106,43 +107,43 @@
     &--show {
       opacity: 1;
 
-      @include mixins.bpk-hover {
-        color: mixins.$bpk-core-accent-day;
+      @include utils.bpk-hover {
+        color: bonds.$bpk-core-accent-day;
       }
     }
 
     &--hide {
-      @include mixins.bpk-hover {
-        transition: opacity mixins.$bpk-duration-sm ease-in-out;
-        color: mixins.$bpk-text-on-light-day;
+      @include utils.bpk-hover {
+        transition: opacity bonds.$bpk-duration-sm ease-in-out;
+        color: bonds.$bpk-text-on-light-day;
         opacity: 1;
       }
     }
 
     &--onDark {
-      color: mixins.$bpk-text-on-dark-day;
+      color: bonds.$bpk-text-on-dark-day;
 
-      @include mixins.bpk-hover {
-        color: mixins.$bpk-text-on-dark-day;
+      @include utils.bpk-hover {
+        color: bonds.$bpk-text-on-dark-day;
       }
     }
   }
 
   &__small {
-    width: mixins.bpk-spacing-xl();
-    height: mixins.bpk-spacing-xl();
-    min-height: mixins.bpk-spacing-xl();
+    width: bonds.bpk-spacing-xl();
+    height: bonds.bpk-spacing-xl();
+    min-height: bonds.bpk-spacing-xl();
   }
 
   &__contained {
-    background-color: mixins.$bpk-private-card-button-contained-color;
+    background-color: bonds.$bpk-private-card-button-contained-color;
 
-    @include mixins.bpk-hover {
-      background-color: mixins.$bpk-private-card-button-contained-color;
+    @include utils.bpk-hover {
+      background-color: bonds.$bpk-private-card-button-contained-color;
     }
 
     &:active {
-      background-color: mixins.$bpk-private-card-button-contained-color;
+      background-color: bonds.$bpk-private-card-button-contained-color;
     }
   }
 }

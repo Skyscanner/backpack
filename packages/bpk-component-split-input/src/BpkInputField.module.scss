@@ -16,15 +16,13 @@
  * limitations under the License.
  */
 
-/* stylelint-disable */
-
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
 
 
   .bpk-input-field {
     display: flex;
-    max-width: 3*mixins.bpk-spacing-xxl();
-    margin-right: mixins.bpk-spacing-sm();
+    max-width: 3 * bonds.bpk-spacing-xxl();
+    margin-right: bonds.bpk-spacing-sm();
     align-items: center;
 
     input {
@@ -33,5 +31,5 @@
   }
 
   .bpk-input-field:last-child {
-    margin-right: mixins.$bpk-spacing-none;
+    margin-right: bonds.$bpk-spacing-none;
   }

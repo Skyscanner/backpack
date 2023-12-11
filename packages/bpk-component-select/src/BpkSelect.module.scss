@@ -19,105 +19,107 @@
 // Use of stylelint-disable-next-line declaration-no-important in this file is to ensure that
 // the correct styles are applied for Internet Explorer 11 and are not overriden by system styles.
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/forms';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-select {
-  @include mixins.bpk-select;
+  @include forms.bpk-select;
 
   &--large {
-    @include mixins.bpk-select--large;
+    @include forms.bpk-select--large;
   }
 
   &--docked {
-    @include mixins.bpk-select--docked;
+    @include forms.bpk-select--docked;
 
     &-first {
-      @include mixins.bpk-select--docked-first-child;
+      @include forms.bpk-select--docked-first-child;
     }
 
     &-middle {
-      @include mixins.bpk-select--docked-middle-child;
+      @include forms.bpk-select--docked-middle-child;
     }
 
     &-last {
-      @include mixins.bpk-select--docked-last-child;
+      @include forms.bpk-select--docked-last-child;
     }
   }
 
   &--invalid {
-    @include mixins.bpk-select--invalid;
+    @include forms.bpk-select--invalid;
   }
 
   &--with-image {
-    padding-left: mixins.bpk-spacing-xxl();
+    padding-left: bonds.bpk-spacing-xxl();
 
-    @include mixins.bpk-rtl {
-      padding-right: mixins.bpk-spacing-xxl();
-      padding-left: mixins.bpk-spacing-xxl();
+    @include utils.bpk-rtl {
+      padding-right: bonds.bpk-spacing-xxl();
+      padding-left: bonds.bpk-spacing-xxl();
 
       @media screen\0 {
         /* stylelint-disable-next-line declaration-no-important */
-        padding-right: mixins.bpk-spacing-xxl() !important;
+        padding-right: bonds.bpk-spacing-xxl() !important;
         /* stylelint-disable-next-line declaration-no-important */
-        padding-left: mixins.bpk-spacing-base() !important;
+        padding-left: bonds.bpk-spacing-base() !important;
       }
     }
 
     @media screen\0 {
       /* stylelint-disable-next-line declaration-no-important */
-      padding-left: mixins.bpk-spacing-xxl() !important;
+      padding-left: bonds.bpk-spacing-xxl() !important;
     }
   }
 
   &--with-image-large {
-    padding-left: mixins.bpk-spacing-xxl() + mixins.bpk-spacing-base();
+    padding-left: bonds.bpk-spacing-xxl() + bonds.bpk-spacing-base();
 
-    @include mixins.bpk-rtl {
-      padding-right: mixins.bpk-spacing-xxl() + mixins.bpk-spacing-base();
-      padding-left: mixins.bpk-spacing-xxl();
+    @include utils.bpk-rtl {
+      padding-right: bonds.bpk-spacing-xxl() + bonds.bpk-spacing-base();
+      padding-left: bonds.bpk-spacing-xxl();
 
       @media screen\0 {
-        padding-right: mixins.bpk-spacing-xxl() + mixins.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
+        padding-right: bonds.bpk-spacing-xxl() + bonds.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
         /* stylelint-disable-next-line declaration-no-important */
-        padding-left: mixins.bpk-spacing-base() !important;
+        padding-left: bonds.bpk-spacing-base() !important;
       }
     }
 
     @media screen\0 {
-      padding-left: mixins.bpk-spacing-xxl() + mixins.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
+      padding-left: bonds.bpk-spacing-xxl() + bonds.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
     }
   }
 }
 
-$select-image-width: 24 * mixins.$bpk-one-pixel-rem;
-$select-image-height: 16 * mixins.$bpk-one-pixel-rem;
-$select-image-large-width: 32 * mixins.$bpk-one-pixel-rem;
-$select-image-large-height: 24 * mixins.$bpk-one-pixel-rem;
+$select-image-width: 24 * bonds.$bpk-one-pixel-rem;
+$select-image-height: 16 * bonds.$bpk-one-pixel-rem;
+$select-image-large-width: 32 * bonds.$bpk-one-pixel-rem;
+$select-image-large-height: 24 * bonds.$bpk-one-pixel-rem;
 
 .bpk-select-wrapper {
   position: relative;
 
   &__image {
     position: absolute;
-    top: (mixins.$bpk-input-height - $select-image-height) * 0.5;
-    left: mixins.bpk-spacing-md();
+    top: (bonds.$bpk-input-height - $select-image-height) * 0.5;
+    left: bonds.bpk-spacing-md();
     width: $select-image-width;
     height: $select-image-height;
     pointer-events: none;
 
-    @include mixins.bpk-rtl {
-      right: mixins.bpk-spacing-md();
+    @include utils.bpk-rtl {
+      right: bonds.bpk-spacing-md();
       left: auto;
     }
 
     &--large {
-      top: (mixins.$bpk-input-large-height - $select-image-large-height) * 0.5;
-      left: mixins.bpk-spacing-base();
+      top: (bonds.$bpk-input-large-height - $select-image-large-height) * 0.5;
+      left: bonds.bpk-spacing-base();
       width: $select-image-large-width;
       height: $select-image-large-height;
 
-      @include mixins.bpk-rtl {
-        right: mixins.bpk-spacing-base();
+      @include utils.bpk-rtl {
+        right: bonds.bpk-spacing-base();
         left: auto;
       }
     }

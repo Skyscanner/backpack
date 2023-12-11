@@ -16,22 +16,27 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/borders';
+@use '../../bpk-mixins-next/src/mixins/typography';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
-$bpk-border-size-datatable: mixins.$bpk-border-size-xl * 2;
+$bpk-border-size-datatable: bonds.$bpk-border-size-xl * 2;
+
+$bpk-border-size-datatable: bonds.$bpk-border-size-xl * 2;
 
 @mixin bpk-datatable-border-left() {
-  @include mixins.bpk-border-left(
+  @include borders.bpk-border-left(
     $bpk-border-size-datatable,
-    mixins.$bpk-core-accent-day,
+    bonds.$bpk-core-accent-day,
     inset
   );
 }
 
 @mixin bpk-datatable-border-right() {
-  @include mixins.bpk-border-right(
+  @include borders.bpk-border-right(
     $bpk-border-size-datatable,
-    mixins.$bpk-core-accent-day,
+    bonds.$bpk-core-accent-day,
     inset
   );
 }
@@ -47,41 +52,41 @@ $bpk-border-size-datatable: mixins.$bpk-border-size-xl * 2;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: mixins.$bpk-border-size-sm solid mixins.$bpk-line-day;
+    border: bonds.$bpk-border-size-sm solid bonds.$bpk-line-day;
     border-bottom: none;
-    outline-offset: -1 * (4 * mixins.$bpk-one-pixel-rem);
-    color: mixins.$bpk-text-primary-day;
+    outline-offset: -1 * (4 * bonds.$bpk-one-pixel-rem);
+    color: bonds.$bpk-text-primary-day;
 
-    @include mixins.bpk-footnote;
+    @include typography.bpk-footnote;
 
     &:last-child:not(.bpk-data-table__header-row) {
-      border-bottom: mixins.$bpk-border-size-sm solid mixins.$bpk-line-day;
+      border-bottom: bonds.$bpk-border-size-sm solid bonds.$bpk-line-day;
     }
 
     &--clickable:not(.bpk-data-table__header-row):hover {
-      background-color: mixins.$bpk-canvas-contrast-day;
+      background-color: bonds.$bpk-canvas-contrast-day;
       cursor: pointer;
 
-      @include bpk-datatable-border-left($bpk-border-size-datatable);
+      @include bpk-datatable-border-left;
 
-      @include mixins.bpk-rtl {
-        @include bpk-datatable-border-right($bpk-border-size-datatable);
+      @include utils.bpk-rtl {
+        @include bpk-datatable-border-right;
       }
     }
 
     &--selected {
-      background-color: mixins.$bpk-status-warning-fill-day;
+      background-color: bonds.$bpk-status-warning-fill-day;
 
-      @include bpk-datatable-border-left($bpk-border-size-datatable);
+      @include bpk-datatable-border-left;
 
-      @include mixins.bpk-rtl {
-        @include bpk-datatable-border-right($bpk-border-size-datatable);
+      @include utils.bpk-rtl {
+        @include bpk-datatable-border-right;
       }
     }
   }
 
   &__cell {
-    margin: mixins.bpk-spacing-base();
+    margin: bonds.bpk-spacing-base();
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

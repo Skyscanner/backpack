@@ -16,18 +16,23 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/scroll-indicators';
 
 .bpk-mobile-scroll-container {
   position: relative;
   overflow: hidden;
 
   &--left-indicator {
-    @include mixins.bpk-scroll-indicator-left(mixins.$bpk-color-white);
+    @include scroll-indicators.bpk-scroll-indicator-left(
+      bonds.$bpk-color-white
+  );
   }
 
   &--right-indicator {
-    @include mixins.bpk-scroll-indicator-right(mixins.$bpk-color-white);
+    @include scroll-indicators.bpk-scroll-indicator-right(
+      bonds.$bpk-color-white
+  );
   }
 
   &__scroller {

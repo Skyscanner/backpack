@@ -21,7 +21,8 @@
 /* stylelint-disable unit-disallowed-list */
 
 @use 'sass:math';
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-icon-marker {
   $marker-width: 26px;
@@ -51,7 +52,7 @@
   }
 
   &__icon {
-    $bpk-icon-size-sm-px: math.div(mixins.$bpk-icon-size-sm, 1rem) * 16px;
+    $bpk-icon-size-sm-px: math.div(bonds.$bpk-icon-size-sm, 1rem) * 16px;
 
     // icon container is positioned relative to the wrapper
     position: absolute;
@@ -60,7 +61,7 @@
     // centre of the marker.
     top: 4.8px;
     left: ($marker-width - $bpk-icon-size-sm-px) * 0.5;
-    color: mixins.$bpk-surface-default-day;
+    color: bonds.$bpk-surface-default-day;
 
     > svg {
       position: absolute;
@@ -83,10 +84,10 @@
       top: 8px;
       left: ($selected-marker-width - $bpk-icon-size-sm-px) * 0.5;
 
-      @include mixins.bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         color,
         --bpk-icon-marker-default-selected-color,
-        mixins.$bpk-surface-default-day
+        bonds.$bpk-surface-default-day
       );
     }
   }

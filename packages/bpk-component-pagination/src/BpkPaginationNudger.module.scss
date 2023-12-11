@@ -16,17 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-pagination-nudger {
   display: flex;
-  width: mixins.bpk-spacing-xl() + mixins.bpk-spacing-sm();
-  height: mixins.bpk-spacing-xl() + mixins.bpk-spacing-sm();
-  padding: mixins.$bpk-one-pixel-rem * 10;
+  width: bonds.bpk-spacing-xl() + bonds.bpk-spacing-sm();
+  height: bonds.bpk-spacing-xl() + bonds.bpk-spacing-sm();
+  padding: bonds.$bpk-one-pixel-rem * 10;
 
   &__text {
     &--hidden {
-      @include mixins.bpk-visually-hidden;
+      @include utils.bpk-visually-hidden;
     }
   }
 }

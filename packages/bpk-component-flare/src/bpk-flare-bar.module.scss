@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/breakpoints';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-flare-bar {
   &__container {
@@ -27,11 +29,11 @@
     // By using `display: flex` we ensure that this container is the nearest block container
     display: flex;
     min-width: 10rem;
-    height: mixins.$bpk-flare-height-desktop;
+    height: bonds.$bpk-flare-height-desktop;
     overflow: hidden;
 
-    @include mixins.bpk-breakpoint-mobile {
-      height: mixins.$bpk-flare-height-mobile;
+    @include breakpoints.bpk-breakpoint-mobile {
+      height: bonds.$bpk-flare-height-mobile;
     }
   }
 
@@ -40,29 +42,29 @@
     // stylelint-disable-next-line unit-disallowed-list
     bottom: -1px;
     width: 700rem; // required for correct behaviour in IE
-    height: mixins.$bpk-flare-height-desktop;
+    height: bonds.$bpk-flare-height-desktop;
     margin-left: 50%;
     transform: translateX(-50%);
-    fill: mixins.$bpk-surface-default-day;
+    fill: bonds.$bpk-surface-default-day;
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       margin-right: 50%;
       transform: translateX(50%);
     }
 
-    @include mixins.bpk-breakpoint-mobile {
-      height: mixins.$bpk-flare-height-mobile;
+    @include breakpoints.bpk-breakpoint-mobile {
+      height: bonds.$bpk-flare-height-mobile;
     }
   }
 
   &__rounded-corner {
     position: absolute;
     // stylelint-disable-next-line unit-disallowed-list
-    bottom: calc(#{mixins.bpk-spacing-lg()} - 1px);
+    bottom: calc(#{bonds.bpk-spacing-lg()} - 1px);
     left: 0;
-    width: mixins.$bpk-flare-corner-radius;
-    height: mixins.$bpk-flare-corner-radius;
-    fill: mixins.$bpk-surface-default-day;
+    width: bonds.$bpk-flare-corner-radius;
+    height: bonds.$bpk-flare-corner-radius;
+    fill: bonds.$bpk-surface-default-day;
 
     &--trailing {
       right: 0;

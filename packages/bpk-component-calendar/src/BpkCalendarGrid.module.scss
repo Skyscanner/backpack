@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
-@use 'variables.scss';
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
+@use 'variables' as *;
 
 .bpk-calendar-grid {
   width: 100%;
@@ -30,7 +31,7 @@
   }
 
   &__caption {
-    @include mixins.bpk-visually-hidden;
+    @include utils.bpk-visually-hidden;
   }
 
   &__date {
@@ -40,35 +41,35 @@
     &--start {
       background-image: linear-gradient(
         to right,
-        mixins.$bpk-surface-default-day 50%,
-        mixins.$bpk-surface-subtle-day 50%
+        bonds.$bpk-surface-default-day 50%,
+        bonds.$bpk-surface-subtle-day 50%
       );
 
-      @include mixins.bpk-rtl {
+      @include utils.bpk-rtl {
         background-image: linear-gradient(
           to left,
-          mixins.$bpk-surface-default-day 50%,
-          mixins.$bpk-surface-subtle-day 50%
+          bonds.$bpk-surface-default-day 50%,
+          bonds.$bpk-surface-subtle-day 50%
         );
       }
     }
 
     &--middle {
-      background-color: mixins.$bpk-surface-subtle-day;
+      background-color: bonds.$bpk-surface-subtle-day;
     }
 
     &--end {
       background-image: linear-gradient(
         to left,
-        mixins.$bpk-surface-default-day 50%,
-        mixins.$bpk-surface-subtle-day 50%
+        bonds.$bpk-surface-default-day 50%,
+        bonds.$bpk-surface-subtle-day 50%
       );
 
-      @include mixins.bpk-rtl {
+      @include utils.bpk-rtl {
         background-image: linear-gradient(
           to right,
-          mixins.$bpk-surface-default-day 50%,
-          mixins.$bpk-surface-subtle-day 50%
+          bonds.$bpk-surface-default-day 50%,
+          bonds.$bpk-surface-subtle-day 50%
         );
       }
     }
@@ -76,6 +77,6 @@
 
   &__week {
     display: flex;
-    padding-top: mixins.bpk-spacing-lg();
+    padding-top: bonds.bpk-spacing-lg();
   }
 }

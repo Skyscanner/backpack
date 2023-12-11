@@ -16,12 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-dialog {
   &__container {
     display: flex;
-    padding: mixins.bpk-spacing-lg();
+    padding: bonds.bpk-spacing-lg();
 
     // IE11 and below hack for buggy flexbox support
     @media screen\0 {
@@ -31,20 +32,20 @@
 
   &__close-button {
     float: right;
-    margin: 0 0 mixins.bpk-spacing-base() mixins.bpk-spacing-base();
+    margin: 0 0 bonds.bpk-spacing-base() bonds.bpk-spacing-base();
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       float: left;
-      margin: 0 mixins.bpk-spacing-base() mixins.bpk-spacing-base() 0;
+      margin: 0 bonds.bpk-spacing-base() bonds.bpk-spacing-base() 0;
     }
   }
 
   &--with-icon {
-    margin-top: mixins.bpk-spacing-xl();
+    margin-top: bonds.bpk-spacing-xl();
   }
 
   &__icon {
-    $size: mixins.bpk-spacing-md() * 7;
+    $size: bonds.bpk-spacing-md() * 7;
 
     position: absolute;
     top: 0;
@@ -56,24 +57,24 @@
     margin-left: -1 * $size * 0.5;
     justify-content: center;
     align-items: center;
-    border: (mixins.$bpk-border-size-lg * 2) mixins.$bpk-surface-default-day
+    border: (bonds.$bpk-border-size-lg * 2) bonds.$bpk-surface-default-day
         solid;
     border-radius: 50%;
 
     &--primary {
-      background-color: mixins.$bpk-core-accent-day;
+      background-color: bonds.$bpk-core-accent-day;
     }
 
     &--warning {
-      background-color: mixins.$bpk-status-warning-spot-day;
+      background-color: bonds.$bpk-status-warning-spot-day;
     }
 
     &--destructive {
-      background-color: mixins.$bpk-status-danger-spot-day;
+      background-color: bonds.$bpk-status-danger-spot-day;
     }
 
     > svg {
-      fill: mixins.$bpk-text-primary-inverse-day;
+      fill: bonds.$bpk-text-primary-inverse-day;
     }
   }
 }

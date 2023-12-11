@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/typography';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-skip-link {
-  padding: (12 * mixins.$bpk-one-pixel-rem) mixins.bpk-spacing-base();
-  transition: opacity mixins.$bpk-duration-sm ease-in-out;
-  border-radius: mixins.$bpk-border-radius-sm;
-  color: mixins.$bpk-text-on-dark-day;
+  padding: (12 * bonds.$bpk-one-pixel-rem) bonds.bpk-spacing-base();
+  transition: opacity bonds.$bpk-duration-sm ease-in-out;
+  border-radius: bonds.$bpk-border-radius-sm;
+  color: bonds.$bpk-text-on-dark-day;
   text-decoration: none;
   opacity: 0;
   overflow: hidden;
@@ -30,13 +32,13 @@
 
   // We want the skiplink to remain visible for a short period of time after it is blurred so that
   // a user tabbing quickly has a chance to see that it appeared
-  transition-delay: mixins.$bpk-duration-sm;
+  transition-delay: bonds.$bpk-duration-sm;
 
-  @include mixins.bpk-heading-5;
-  @include mixins.bpk-themeable-property(
+  @include typography.bpk-heading-5;
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-skip-link-background-color,
-    mixins.$bpk-status-danger-spot-day
+    bonds.$bpk-status-danger-spot-day
   );
 
   &:focus-within,
@@ -44,6 +46,6 @@
     // When the skip-link becomes focused we want there to be no delay or animation
     transition: none;
     opacity: 1;
-    transition-delay: 0;
+    transition-delay: 0s;
   }
 }

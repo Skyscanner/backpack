@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/breakpoints';
 
 .bpk-scrim {
   position: fixed;
@@ -24,13 +25,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: mixins.$bpk-zindex-scrim;
-  transition: opacity mixins.$bpk-duration-sm ease-in-out;
-  background-color: mixins.$bpk-scrim-day;
+  z-index: bonds.$bpk-zindex-scrim;
+  transition: opacity bonds.$bpk-duration-sm ease-in-out;
+  background-color: bonds.$bpk-scrim-day;
   overflow: hidden;
 
   &--full-screen {
-    @include mixins.bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
       opacity: 1;
     }
   }

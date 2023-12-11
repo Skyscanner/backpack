@@ -16,41 +16,43 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/spinners';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-spinner {
-  @include mixins.bpk-spinner;
+  @include spinners.bpk-spinner;
 
   &--primary {
     // Post colour adoption/rollout we will require to move the 'primary' style to be the same as dark and make dark (moving to primary/defautl) and light the only options
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       fill,
       --bpk-spinner-primary-color,
-      mixins.$bpk-core-accent-day
+      bonds.$bpk-core-accent-day
     );
   }
 
   &--light {
-    fill: mixins.$bpk-text-on-dark-day;
+    fill: bonds.$bpk-text-on-dark-day;
   }
 
   &--dark {
-    fill: mixins.$bpk-text-primary-day;
+    fill: bonds.$bpk-text-primary-day;
   }
 
   &--large {
-    @include mixins.bpk-spinner--lg;
+    @include spinners.bpk-spinner--lg;
   }
 
   &--extra-large {
-    @include mixins.bpk-spinner--xl;
+    @include spinners.bpk-spinner--xl;
   }
 
   &--align-to-button {
-    @include mixins.bpk-spinner--align-to-button;
+    @include spinners.bpk-spinner--align-to-button;
   }
 
   &--align-to-large-button {
-    @include mixins.bpk-spinner--align-to-large-button;
+    @include spinners.bpk-spinner--align-to-large-button;
   }
 }

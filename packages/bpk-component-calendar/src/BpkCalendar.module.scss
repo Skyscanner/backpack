@@ -16,25 +16,26 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
-@use 'variables.scss';
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/radii';
+@use 'variables' as *;
 
 .bpk-calendar {
   display: flex;
   width: 100%;
   flex-direction: column;
 
-  @include mixins.bpk-border-radius-sm;
+  @include radii.bpk-border-radius-sm;
 
   &--fixed {
-    width: variables.$calendar-width;
+    width: $calendar-width;
   }
 
   &__header {
-    margin-top: mixins.bpk-spacing-lg();
+    margin-top: bonds.bpk-spacing-lg();
   }
 
   &__grid {
-    margin-top: mixins.bpk-spacing-lg();
+    margin-top: bonds.bpk-spacing-lg();
   }
 }

@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/typography';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-nudger {
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     display: flex;
     flex-direction: row-reverse;
   }
@@ -30,22 +32,22 @@
 
   &__input {
     display: inline-block;
-    padding: mixins.bpk-spacing-md() 0;
+    padding: bonds.bpk-spacing-md() 0;
     border: none;
-    color: mixins.$bpk-text-primary-day;
+    color: bonds.$bpk-text-primary-day;
     text-align: center;
     vertical-align: middle;
 
-    @include mixins.bpk-text;
-    @include mixins.bpk-heading-5;
+    @include typography.bpk-text;
+    @include typography.bpk-heading-5;
 
     &--secondary-on-dark {
       background-color: transparent;
-      color: mixins.$bpk-text-on-dark-day;
+      color: bonds.$bpk-text-on-dark-day;
     }
 
     &--numeric {
-      $size: mixins.bpk-spacing-lg() + (mixins.bpk-spacing-md() * 2);
+      $size: bonds.bpk-spacing-lg() + (bonds.bpk-spacing-md() * 2);
 
       width: $size;
     }
@@ -59,7 +61,7 @@
 
   &__label {
     display: flex;
-    gap: mixins.bpk-spacing-md();
+    gap: bonds.bpk-spacing-md();
 
     &--title-subtitle {
       display: flex;
@@ -68,7 +70,7 @@
     }
 
     &--subtitle {
-      color: mixins.$bpk-text-secondary-day;
+      color: bonds.$bpk-text-secondary-day;
     }
   }
 }

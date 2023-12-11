@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
-@use 'variables.scss';
+@use '../../bpk-mixins-next/src/bonds';
+@use 'variables' as *;
 
 .bpk-calendar-grid-transition {
   position: relative;
@@ -25,23 +25,23 @@
 
   &__dummy {
     display: inline-block;
-    width: variables.$calendar-width;
+    width: $calendar-width;
   }
 
   &__strip {
     left: 0;
     display: block;
     z-index: 0;
-    width: 3 * variables.$calendar-width;
+    width: 3 * $calendar-width;
 
     &--transitioning {
       z-index: 1;
-      transition: transform mixins.$bpk-duration-sm ease-in-out;
+      transition: transform bonds.$bpk-duration-sm ease-in-out;
     }
   }
 
   &__grid {
     display: inline-table;
-    width: variables.$calendar-width;
+    width: $calendar-width;
   }
 }

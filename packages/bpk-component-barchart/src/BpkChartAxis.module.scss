@@ -16,22 +16,23 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/typography';
 
 .bpk-chart {
   &__axis-tick {
     &-text {
-      fill: mixins.$bpk-text-secondary-day;
+      fill: bonds.$bpk-text-secondary-day;
 
-      @include mixins.bpk-text;
-      @include mixins.bpk-caption;
+      @include typography.bpk-text;
+      @include typography.bpk-caption;
     }
   }
 
   &__axis-label {
-    fill: mixins.$bpk-text-secondary-day;
+    fill: bonds.$bpk-text-secondary-day;
 
-    @include mixins.bpk-text;
-    @include mixins.bpk-caption;
+    @include typography.bpk-text;
+    @include typography.bpk-caption;
   }
 }

@@ -16,7 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/borders';
+@use '../../bpk-mixins-next/src/mixins/breakpoints';
+@use '../../bpk-mixins-next/src/mixins/margins';
+@use '../../bpk-mixins-next/src/mixins/radii';
+@use '../../bpk-mixins-next/src/mixins/shadows';
+@use '../../bpk-mixins-next/src/mixins/typography';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 @mixin fullscreen() {
   display: flex;
@@ -27,17 +34,17 @@
 }
 
 .bpk-modal {
-  z-index: mixins.$bpk-zindex-modal;
+  z-index: bonds.$bpk-zindex-modal;
   width: 100%;
-  max-width: mixins.$bpk-modal-max-width;
+  max-width: bonds.$bpk-modal-max-width;
   margin: auto;
   transform: scale(1);
   transition:
-    opacity mixins.$bpk-duration-sm ease-in-out,
-    transform mixins.$bpk-duration-sm ease-in-out;
+    opacity bonds.$bpk-duration-sm ease-in-out,
+    transform bonds.$bpk-duration-sm ease-in-out;
   outline: 0;
-  background-color: mixins.$bpk-modal-background-color;
-  opacity: mixins.$bpk-modal-opacity;
+  background-color: bonds.$bpk-modal-background-color;
+  opacity: bonds.$bpk-modal-opacity;
 
   // required to prevent the header extending beyond the rounded corners
   overflow: hidden;
@@ -45,11 +52,11 @@
   // FIX: Prevents ugly flickering when tapping inside the modal in Mobile Safari
   -webkit-tap-highlight-color: transparent;
 
-  @include mixins.bpk-box-shadow-xl;
-  @include mixins.bpk-border-radius-sm;
+  @include shadows.bpk-box-shadow-xl;
+  @include radii.bpk-border-radius-sm;
 
   &--full-screen-mobile {
-    @include mixins.bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
       @include fullscreen;
     }
   }
@@ -61,43 +68,43 @@
   }
 
   &--wide {
-    @include mixins.bpk-breakpoint-above-mobile {
-      max-width: mixins.$bpk-modal-wide-max-width;
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      max-width: bonds.$bpk-modal-wide-max-width;
     }
   }
 
   &--appear {
     transform: scale(0.9);
-    opacity: mixins.$bpk-modal-initial-opacity;
+    opacity: bonds.$bpk-modal-initial-opacity;
   }
 
   &--appear-active {
     transform: scale(1);
-    opacity: mixins.$bpk-modal-opacity;
+    opacity: bonds.$bpk-modal-opacity;
   }
 
   &__header {
-    @include mixins.bpk-border-bottom-sm(mixins.$bpk-line-day);
+    @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day);
   }
 
   &__navigation {
     display: flex;
     justify-content: space-between;
-    background-color: mixins.$bpk-modal-background-color;
+    background-color: bonds.$bpk-modal-background-color;
   }
 
   &__heading {
-    @include mixins.bpk-text;
-    @include mixins.bpk-label-1;
+    @include typography.bpk-text;
+    @include typography.bpk-label-1;
   }
 
   &__close-button {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     right: auto;
 
-    @include mixins.bpk-margin-leading(mixins.bpk-spacing-base());
+    @include margins.bpk-margin-leading(bonds.bpk-spacing-base());
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       left: auto;
     }
   }
@@ -105,11 +112,11 @@
   &__accessory-view {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     left: auto;
-    margin-right: mixins.bpk-spacing-base();
+    margin-right: bonds.bpk-spacing-base();
 
-    @include mixins.bpk-rtl {
+    @include utils.bpk-rtl {
       right: auto;
-      margin-left: mixins.bpk-spacing-base();
+      margin-left: bonds.bpk-spacing-base();
     }
   }
 
@@ -118,7 +125,7 @@
     overflow-y: auto;
 
     &--padded {
-      padding: mixins.$bpk-modal-content-padding;
+      padding: bonds.$bpk-modal-content-padding;
     }
   }
 }

@@ -16,70 +16,74 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/borders';
+@use '../../bpk-mixins-next/src/mixins/radii';
+@use '../../bpk-mixins-next/src/mixins/typography';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-banner-alert {
-  background-color: mixins.$bpk-surface-default-day;
+  background-color: bonds.$bpk-surface-default-day;
   overflow: hidden;
 
-  @include mixins.bpk-border-radius-sm;
+  @include radii.bpk-border-radius-sm;
 
   &--primary {
-    @include mixins.bpk-border-sm(
+    @include borders.bpk-border-sm(
         var(
           --bpk-banner-alert-primary-color,
-          mixins.$bpk-banner-alert-primary-color
+          bonds.$bpk-banner-alert-primary-color
       ),
         ''
       );
     }
 
   &--success {
-    @include mixins.bpk-border-sm(
+    @include borders.bpk-border-sm(
         var(
           --bpk-banner-alert-success-color,
-          mixins.$bpk-banner-alert-success-color
+          bonds.$bpk-banner-alert-success-color
       ),
         ''
       );
     }
 
   &--warn {
-    @include mixins.bpk-border-sm(
-      var(--bpk-banner-alert-warn-color, mixins.$bpk-banner-alert-warn-color),
+    @include borders.bpk-border-sm(
+      var(--bpk-banner-alert-warn-color, bonds.$bpk-banner-alert-warn-color),
       ''
     );
   }
 
   &--error {
-    @include mixins.bpk-border-sm(
+    @include borders.bpk-border-sm(
         var(
           --bpk-banner-alert-error-color,
-          mixins.$bpk-banner-alert-error-color
+          bonds.$bpk-banner-alert-error-color
       ),
         ''
       );
     }
 
   &--neutral {
-    @include mixins.bpk-border-sm(mixins.$bpk-banner-alert-neutral-color, '');
+    @include borders.bpk-border-sm(bonds.$bpk-banner-alert-neutral-color, '');
   }
 
   &__header {
     display: flex;
-    padding: mixins.bpk-spacing-md();
+    padding: bonds.bpk-spacing-md();
     flex-direction: row;
     align-items: center;
 
     &--expandable {
       cursor: pointer;
 
-      @include mixins.bpk-hover {
-        background-color: mixins.$bpk-banner-alert-header-expandable-hover-background-color;
+      @include utils.bpk-hover {
+        background-color: bonds.$bpk-banner-alert-header-expandable-hover-background-color;
       }
 
       &:active {
-        background-color: mixins.$bpk-banner-alert-header-expandable-active-background-color;
+        background-color: bonds.$bpk-banner-alert-header-expandable-active-background-color;
       }
     }
   }
@@ -92,44 +96,44 @@
   }
 
   &__message {
-    padding: 0 mixins.bpk-spacing-md();
+    padding: 0 bonds.bpk-spacing-md();
     flex-grow: 1;
   }
 
   &__primary-icon {
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       fill,
       --bpk-banner-alert-primary-color,
-      mixins.$bpk-banner-alert-primary-color
+      bonds.$bpk-banner-alert-primary-color
     );
   }
 
   &__success-icon {
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       fill,
       --bpk-banner-alert-success-color,
-      mixins.$bpk-banner-alert-success-color
+      bonds.$bpk-banner-alert-success-color
     );
   }
 
   &__warn-icon {
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       fill,
       --bpk-banner-alert-warn-color,
-      mixins.$bpk-banner-alert-warn-color
+      bonds.$bpk-banner-alert-warn-color
     );
   }
 
   &__error-icon {
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       fill,
       --bpk-banner-alert-error-color,
-      mixins.$bpk-banner-alert-error-color
+      bonds.$bpk-banner-alert-error-color
     );
   }
 
   &__neutral-icon {
-    fill: mixins.$bpk-text-secondary-day;
+    fill: bonds.$bpk-text-secondary-day;
   }
 
   &__toggle-button {
@@ -141,7 +145,7 @@
   }
 
   &__expand-icon {
-    fill: mixins.$bpk-text-secondary-day;
+    fill: bonds.$bpk-text-secondary-day;
 
     &--flipped {
       transform: scaleY(-1);
@@ -149,11 +153,11 @@
   }
 
   &__children-container {
-    padding: 0 mixins.bpk-spacing-xxl() mixins.bpk-spacing-md()
-        mixins.bpk-spacing-xl();
-    color: mixins.$bpk-text-secondary-day;
+    padding: 0 bonds.bpk-spacing-xxl() bonds.bpk-spacing-md()
+        bonds.bpk-spacing-xl();
+    color: bonds.$bpk-text-secondary-day;
 
-    @include mixins.bpk-text;
-    @include mixins.bpk-caption;
+    @include typography.bpk-text;
+    @include typography.bpk-caption;
   }
 }

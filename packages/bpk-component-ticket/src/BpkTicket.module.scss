@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/radii';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 @mixin hidden-box-shadow-after {
   z-index: 0;
@@ -32,30 +34,29 @@
     z-index: -1;
     transition: opacity 200ms ease-in-out;
     border-radius: inherit;
-    box-shadow: mixins.$bpk-box-shadow-sm;
+    box-shadow: bonds.$bpk-box-shadow-sm;
     opacity: 0;
     pointer-events: none; // To prevent the pseudo element absorbing click events
   }
 }
 
 .bpk-ticket {
-  $ticket-padding: mixins.bpk-spacing-base();
+  $ticket-padding: bonds.bpk-spacing-base();
 
   position: relative;
-  display: block;
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  flex: none;
-  color: mixins.$bpk-text-primary-day;
+    flex-direction: row;
+    align-items: stretch;
+    flex: none;
+    color: bonds.$bpk-text-primary-day;
   text-decoration: none;
-  box-shadow: mixins.$bpk-box-shadow-sm;
+  box-shadow: bonds.$bpk-box-shadow-sm;
   cursor: pointer;
 
-  @include mixins.bpk-border-radius-md;
+  @include radii.bpk-border-radius-md;
   @include hidden-box-shadow-after;
 
-  @include mixins.bpk-hover {
+  @include utils.bpk-hover {
     &::after {
       opacity: 1;
     }
@@ -71,23 +72,23 @@
 
   &__paper {
     position: relative;
-    background-color: mixins.$bpk-card-background-color;
+    background-color: bonds.$bpk-card-background-color;
   }
 
   @mixin main-styles {
     &--horizontal {
-      border-radius: mixins.$bpk-border-radius-md 0 0
-          mixins.$bpk-border-radius-md;
+      border-radius: bonds.$bpk-border-radius-md 0 0
+          bonds.$bpk-border-radius-md;
 
-      @include mixins.bpk-rtl {
-        border-radius: 0 mixins.$bpk-border-radius-md
-            mixins.$bpk-border-radius-md 0;
+      @include utils.bpk-rtl {
+        border-radius: 0 bonds.$bpk-border-radius-md
+            bonds.$bpk-border-radius-md 0;
       }
     }
 
     &--vertical {
-      border-radius: mixins.$bpk-border-radius-md mixins.$bpk-border-radius-md
-          0 0;
+      border-radius: bonds.$bpk-border-radius-md bonds.$bpk-border-radius-md 0
+          0;
     }
   }
 
@@ -111,22 +112,22 @@
   @mixin stub-styles {
     &--horizontal {
       min-width: 30%;
-      border-radius: 0 mixins.$bpk-border-radius-md
-          mixins.$bpk-border-radius-md 0;
-      box-shadow: inset mixins.$bpk-one-pixel-rem 0 0 mixins.$bpk-line-day;
+      border-radius: 0 bonds.$bpk-border-radius-md bonds.$bpk-border-radius-md
+          0;
+      box-shadow: inset bonds.$bpk-one-pixel-rem 0 0 bonds.$bpk-line-day;
 
-      @include mixins.bpk-rtl {
-        border-radius: mixins.$bpk-border-radius-md 0 0
-            mixins.$bpk-border-radius-md;
-        box-shadow: inset (-1 * (mixins.$bpk-one-pixel-rem)) 0 0
-            mixins.$bpk-line-day;
+      @include utils.bpk-rtl {
+        border-radius: bonds.$bpk-border-radius-md 0 0
+            bonds.$bpk-border-radius-md;
+        box-shadow: inset (-1 * bonds.$bpk-one-pixel-rem) 0 0
+            bonds.$bpk-line-day;
       }
     }
 
     &--vertical {
-      border-radius: 0 0 mixins.$bpk-border-radius-md
-          mixins.$bpk-border-radius-md;
-      box-shadow: inset 0 mixins.$bpk-one-pixel-rem 0 mixins.$bpk-line-day;
+      border-radius: 0 0 bonds.$bpk-border-radius-md
+          bonds.$bpk-border-radius-md;
+      box-shadow: inset 0 bonds.$bpk-one-pixel-rem 0 bonds.$bpk-line-day;
     }
   }
 

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
 
 .bpk-vertical-grid {
   &--on {
@@ -35,11 +35,11 @@
       height: auto;
       background: linear-gradient(
           to bottom,
-          rgba(mixins.$bpk-status-danger-spot-day, 0.3) 0,
-          transparent mixins.$bpk-one-pixel-rem
+          rgba(bonds.$bpk-status-danger-spot-day, 0.3) 0,
+          transparent bonds.$bpk-one-pixel-rem
         )
         repeat left 0;
-      background-size: mixins.bpk-spacing-sm() mixins.bpk-spacing-sm();
+      background-size: bonds.bpk-spacing-sm() bonds.bpk-spacing-sm();
       pointer-events: none;
     }
 

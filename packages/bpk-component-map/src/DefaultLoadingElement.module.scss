@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
 
 .bpk-map-default-loading-element {
   display: flex;
@@ -24,5 +24,5 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-  background-color: mixins.$bpk-surface-highlight-day;
+  background-color: bonds.$bpk-surface-highlight-day;
 }

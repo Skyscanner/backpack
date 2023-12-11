@@ -17,77 +17,12 @@
  */
 
 @import '../bonds.scss';
+@import './icons.scss';
 @import './utils.scss';
 
 @keyframes bpk-keyframe-spin {
   100% {
     transform: rotate(1turn);
-  }
-}
-
-////
-/// @group svgs
-////
-
-/// Button alignment utility.
-///
-/// @access private
-
-@mixin _bpk-svg--align-to-button() {
-  vertical-align: text-bottom;
-}
-
-/// Large button alignment utility.
-///
-/// @access private
-
-@mixin _bpk-svg--align-to-large-button() {
-  margin-top: ($bpk-private-button-line-height - $bpk-icon-size-lg) / 2;
-  vertical-align: top;
-}
-
-/// Align to button. Modifies the bpk-icon-sm mixin.
-///
-/// @require {mixin} bpk-icon-sm
-///
-/// @example scss
-///   .selector {
-///     @include bpk-icon-sm(flight-sky-gray-tint-02);
-///     @include bpk-icon-sm--align-to-button();
-///   }
-
-@mixin bpk-icon-sm--align-to-button() {
-  @include _bpk-svg--align-to-button;
-}
-
-/// Align to large button. Modifies the bpk-icon-lg mixin.
-///
-/// @require {mixin} bpk-icon-lg
-///
-/// @example scss
-///   .selector {
-///     @include bpk-icon-lg(flight-sky-gray-tint-02);
-///     @include bpk-icon-lg--align-to-large-button();
-///   }
-
-@mixin bpk-icon-lg--align-to-large-button() {
-  @include _bpk-svg--align-to-large-button;
-}
-
-/// RTL support. Modifies the bpk-icon-sm or bpk-icon-lg mixin.
-///
-/// @require {mixin} bpk-icon-sm
-/// @require {mixin} bpk-icon-lg
-///
-/// @example scss
-///   .selector {
-///     @include bpk-icon-sm(flight-sky-gray-tint-02);
-///     @include bpk-icon--rtl-support();
-///   }
-
-@mixin bpk-icon--rtl-support() {
-  @include bpk-rtl {
-    transform: scaleX(-1);
   }
 }
 
@@ -161,5 +96,5 @@
 ///   }
 
 @mixin bpk-spinner--align-to-large-button() {
-  @include _bpk-svg--align-to-large-button;
+  @include bpk-icon-lg--align-to-large-button;
 }

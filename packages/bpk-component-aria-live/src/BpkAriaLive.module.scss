@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/mixins/utils' as utils;
 
 .bpk-aria-live {
   &--invisible {
-    @include mixins.bpk-visually-hidden;
+    @include utils.bpk-visually-hidden;
   }
 }

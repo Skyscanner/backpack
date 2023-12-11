@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
 
 .bpk-accordion {
   margin: 0;
 
   &--on-dark {
-    color: mixins.$bpk-text-on-dark-day;
+    color: bonds.$bpk-text-on-dark-day;
   }
 }

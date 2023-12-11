@@ -16,40 +16,41 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-barchart-bar {
-  @include mixins.bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     fill,
     --bpk-barchart-bar-background-color,
-    mixins.$bpk-line-day
+    bonds.$bpk-line-day
   );
 
   &--interactive:not(.bpk-barchart-bar--selected) {
     cursor: pointer;
 
-    @include mixins.bpk-hover {
-      @include mixins.bpk-themeable-property(
+    @include utils.bpk-hover {
+      @include utils.bpk-themeable-property(
         fill,
         --bpk-barchart-bar-hover-background-color,
-        mixins.$bpk-core-primary-day
+        bonds.$bpk-core-primary-day
       );
     }
 
     &:active {
-      @include mixins.bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         fill,
         --bpk-barchart-bar-active-background-color,
-        mixins.$bpk-core-accent-day
+        bonds.$bpk-core-accent-day
       );
     }
   }
 
   &--selected {
-    @include mixins.bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       fill,
       --bpk-barchart-bar-selected-background-color,
-      mixins.$bpk-core-accent-day
+      bonds.$bpk-core-accent-day
     );
   }
 

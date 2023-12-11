@@ -16,52 +16,52 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/mixins/badges';
 
 .bpk-badge {
-  @include mixins.bpk-badge;
+  @include badges.bpk-badge;
 
   &--centered {
-    @include mixins.bpk-badge--centered;
+    @include badges.bpk-badge--centered;
   }
 
   &--docked-right {
-    @include mixins.bpk-badge--docked-right;
+    @include badges.bpk-badge--docked-right;
   }
 
   &--docked-left {
-    @include mixins.bpk-badge--docked-left;
+    @include badges.bpk-badge--docked-left;
   }
 
   &--warning {
-    @include mixins.bpk-badge--warning;
+    @include badges.bpk-badge--warning;
   }
 
   &--success {
-    @include mixins.bpk-badge--success;
+    @include badges.bpk-badge--success;
   }
 
   &--critical {
-    @include mixins.bpk-badge--critical;
+    @include badges.bpk-badge--critical;
   }
 
   &--normal {
-    @include mixins.bpk-badge--normal;
+    @include badges.bpk-badge--normal;
   }
 
   &--inverse {
-    @include mixins.bpk-badge--inverse;
+    @include badges.bpk-badge--inverse;
   }
 
   &--outline {
-    @include mixins.bpk-badge--outline;
+    @include badges.bpk-badge--outline;
   }
 
   &--strong {
-    @include mixins.bpk-badge--strong;
+    @include badges.bpk-badge--strong;
   }
 
   &--brand {
-    @include mixins.bpk-badge--brand;
+    @include badges.bpk-badge--brand;
   }
 }

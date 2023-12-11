@@ -16,15 +16,16 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/layers';
 
-$arrow-size: mixins.bpk-spacing-md();
-$arrow-inset-margin: -1 * (mixins.$bpk-one-pixel-rem * 3);
-$light-arrow-border-color: mixins.$bpk-line-day;
-$dark-background-color: mixins.$bpk-surface-contrast-day;
+$arrow-size: bonds.bpk-spacing-md();
+$arrow-inset-margin: -1 * (bonds.$bpk-one-pixel-rem * 3);
+$light-arrow-border-color: bonds.$bpk-line-day;
+$dark-background-color: bonds.$bpk-surface-contrast-day;
 
 .bpk-tooltip-portal {
-  z-index: mixins.$bpk-zindex-tooltip;
+  z-index: bonds.$bpk-zindex-tooltip;
 
   &--target {
     display: inline-block;
@@ -33,8 +34,8 @@ $dark-background-color: mixins.$bpk-surface-contrast-day;
 
 .bpk-tooltip {
   transition:
-    opacity mixins.$bpk-duration-sm ease-in-out,
-    transform mixins.$bpk-duration-sm ease-in-out;
+    opacity bonds.$bpk-duration-sm ease-in-out,
+    transform bonds.$bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
 
@@ -69,19 +70,19 @@ $dark-background-color: mixins.$bpk-surface-contrast-day;
   &--appear-active {
     transform: translate(0, 0);
     transition:
-      opacity mixins.$bpk-duration-sm ease-in-out,
-      transform mixins.$bpk-duration-sm ease-in-out;
+      opacity bonds.$bpk-duration-sm ease-in-out,
+      transform bonds.$bpk-duration-sm ease-in-out;
     opacity: 1;
   }
 
   &__arrow {
-    position: aboslute;
+    position: absolute;
     width: $arrow-size;
     height: $arrow-size;
     transform: rotate(45deg);
-    border: mixins.$bpk-one-pixel-rem solid transparent;
+    border: bonds.$bpk-one-pixel-rem solid transparent;
     background: inherit;
-    background-color: mixins.$bpk-surface-default-day;
+    background-color: bonds.$bpk-surface-default-day;
 
     .bpk-tooltip-portal[data-popper-placement='top'] & {
       bottom: $arrow-inset-margin;
@@ -135,16 +136,16 @@ $dark-background-color: mixins.$bpk-surface-contrast-day;
   &__inner {
     overflow: hidden;
 
-    @include mixins.bpk-layer;
+    @include layers.bpk-layer;
 
     &--padded {
-      padding: mixins.bpk-spacing-md() mixins.bpk-spacing-base();
+      padding: bonds.bpk-spacing-md() bonds.bpk-spacing-base();
     }
 
     &--dark {
-      color: mixins.$bpk-text-primary-inverse-day;
+      color: bonds.$bpk-text-primary-inverse-day;
 
-      @include mixins.bpk-layer(
+      @include layers.bpk-layer(
           $dark-background-color,
           $dark-background-color
         );

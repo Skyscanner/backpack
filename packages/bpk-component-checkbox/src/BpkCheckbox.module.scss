@@ -16,48 +16,49 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/forms';
 
 .bpk-checkbox {
-  @include mixins.bpk-checkbox;
+  @include forms.bpk-checkbox;
 
   &__label {
-    @include mixins.bpk-checkbox__label;
+    @include forms.bpk-checkbox__label;
 
     &--small {
-      @include mixins.bpk-checkbox__label--small;
+      @include forms.bpk-checkbox__label--small;
     }
   }
 
   &--white {
-    @include mixins.bpk-checkbox--white;
+    @include forms.bpk-checkbox--white;
   }
 
   &--disabled {
-    @include mixins.bpk-checkbox--disabled;
+    @include forms.bpk-checkbox--disabled;
 
     &--white {
-      color: mixins.$bpk-text-disabled-on-dark-day;
+      color: bonds.$bpk-text-disabled-on-dark-day;
     }
   }
 
   &--invalid {
-    @include mixins.bpk-checkbox--invalid;
+    @include forms.bpk-checkbox--invalid;
   }
 
   &__input {
-    @include mixins.bpk-checkbox__input;
+    @include forms.bpk-checkbox__input;
 
     &-indeterminate {
       &::before {
         position: absolute;
-        top: mixins.bpk-spacing-sm() + mixins.$bpk-one-pixel-rem;
-        left: mixins.bpk-spacing-sm() * 0.5;
+        top: bonds.bpk-spacing-sm() + bonds.$bpk-one-pixel-rem;
+        left: bonds.bpk-spacing-sm() * 0.5;
         content: '';
-        width: mixins.bpk-spacing-xxl() * 0.25;
-        height: mixins.bpk-spacing-sm() - mixins.$bpk-one-pixel-rem;
-        border-radius: mixins.$bpk-border-size-lg;
-        background-color: mixins.$bpk-surface-default-day;
+        width: bonds.bpk-spacing-xxl() * 0.25;
+        height: bonds.bpk-spacing-sm() - bonds.$bpk-one-pixel-rem;
+        border-radius: bonds.$bpk-border-size-lg;
+        background-color: bonds.$bpk-surface-default-day;
       }
     }
 
@@ -66,11 +67,11 @@
     }
 
     &-white {
-      background-color: mixins.$bpk-surface-default-day;
+      background-color: bonds.$bpk-surface-default-day;
     }
   }
 
   &__asterisk {
-    color: mixins.$bpk-status-danger-spot-day;
+    color: bonds.$bpk-status-danger-spot-day;
   }
 }

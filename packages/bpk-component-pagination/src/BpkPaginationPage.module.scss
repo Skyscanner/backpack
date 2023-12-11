@@ -16,42 +16,45 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next' as mixins;
+@use '../../bpk-mixins-next/src/bonds';
+@use '../../bpk-mixins-next/src/mixins/borders';
+@use '../../bpk-mixins-next/src/mixins/typography';
+@use '../../bpk-mixins-next/src/mixins/utils';
 
 .bpk-pagination-page {
-  min-width: mixins.$bpk-button-height;
-  height: mixins.$bpk-button-height;
-  padding: 0 mixins.$bpk-one-pixel-rem * 16;
-  border-radius: mixins.$bpk-border-radius-xs * 2;
-  color: mixins.$bpk-text-primary-day;
+  min-width: bonds.$bpk-button-height;
+  height: bonds.$bpk-button-height;
+  padding: 0 bonds.$bpk-one-pixel-rem * 16;
+  border-radius: bonds.$bpk-border-radius-xs * 2;
+  color: bonds.$bpk-text-primary-day;
 
-  @include mixins.bpk-border-sm(
-    var(--bpk-pagination-selected-background-color, mixins.$bpk-line-day)
+  @include borders.bpk-border-sm(
+    var(--bpk-pagination-selected-background-color, bonds.$bpk-line-day)
   );
-  @include mixins.bpk-label-1;
+  @include typography.bpk-label-1;
 
-  @include mixins.bpk-hover {
+  @include utils.bpk-hover {
     background-color: transparent;
 
-    @include mixins.bpk-border-sm(mixins.$bpk-core-primary-day);
+    @include borders.bpk-border-sm(bonds.$bpk-core-primary-day);
   }
 
   &:active {
     background-color: transparent;
 
-    @include mixins.bpk-border-sm(mixins.$bpk-core-primary-day);
+    @include borders.bpk-border-sm(bonds.$bpk-core-primary-day);
   }
 }
 
 .bpk-pagination-page--selected {
-  color: mixins.$bpk-text-primary-inverse-day;
+  color: bonds.$bpk-text-primary-inverse-day;
   box-shadow: none;
 
-  @include mixins.bpk-hover {
-    color: mixins.$bpk-text-primary-day;
+  @include utils.bpk-hover {
+    color: bonds.$bpk-text-primary-day;
   }
 
   &:active {
-    color: mixins.$bpk-text-primary-day;
+    color: bonds.$bpk-text-primary-day;
   }
 }
