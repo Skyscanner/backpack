@@ -15,9 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-@use '../../bpk-mixins-next/src/bonds';
-@use '../../bpk-mixins-next/src/mixins/breakpoints';
+@use '../../bpk-mixins-next/bonds';
+@use '../../bpk-mixins-next/breakpoints';
 
 .bpk-phone-input {
   display: flex;

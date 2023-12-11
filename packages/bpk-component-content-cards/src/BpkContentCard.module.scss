@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/src/bonds';
-@use '../../bpk-mixins-next/src/mixins/breakpoints';
-@use '../../bpk-mixins-next/src/mixins/typography';
+@use '../../bpk-mixins-next/bonds';
+@use '../../bpk-mixins-next/breakpoints';
+@use '../../bpk-mixins-next/typography';
 
 .bpk-content-card {
   &--link {
