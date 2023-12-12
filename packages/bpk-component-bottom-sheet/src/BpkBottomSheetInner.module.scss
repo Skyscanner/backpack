@@ -141,6 +141,7 @@ $close-button-width: bpk-spacing-lg() * 2;
 
     @include bpk-rtl {
       right: auto;
+      margin-right: calc(-#{bpk-spacing-sm()} / 2);
       margin-left: bpk-spacing-lg();
     }
   }
