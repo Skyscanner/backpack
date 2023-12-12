@@ -17,8 +17,7 @@
  */
 @import '../../bpk-mixins/index.scss';
 
-$close-button-padding: bpk-spacing-base();
-$close-button-width: bpk-spacing-lg() + #{$close-button-padding};
+$close-button-width: bpk-spacing-lg() * 2;
 
 .bpk-bottom-sheet {
   z-index: $bpk-zindex-modal;
@@ -138,11 +137,11 @@ $close-button-width: bpk-spacing-lg() + #{$close-button-padding};
   &--close-button {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     left: auto;
-    margin-right: bpk-spacing-base();
+    margin-right: bpk-spacing-lg();
 
     @include bpk-rtl {
       right: auto;
-      margin-left: bpk-spacing-base();
+      margin-left: bpk-spacing-lg();
     }
   }
 
@@ -150,6 +149,7 @@ $close-button-width: bpk-spacing-lg() + #{$close-button-padding};
     position: relative; // Override position: absolute coming from BpkNavigationBar
     right: auto;
     width: calc(#{$close-button-width});
+    word-break: break-all;
 
     @include bpk-margin-leading(bpk-spacing-sm());
 
