@@ -17,6 +17,7 @@
  */
 
 import type { ComponentProps, MouseEvent, ReactNode } from 'react';
+import PropTypes from 'prop-types';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
@@ -53,5 +54,12 @@ const BpkNavigationBarButtonLink = ({
   </BpkButtonLink>
 );
 
+
+BpkNavigationBarButtonLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
+};
 
 export default BpkNavigationBarButtonLink;

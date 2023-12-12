@@ -50,5 +50,12 @@ const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, 
   />
 );
 
+BpkNavigationBarIconButton.propTypes = {
+  icon: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
+};
 
 export default BpkNavigationBarIconButton;

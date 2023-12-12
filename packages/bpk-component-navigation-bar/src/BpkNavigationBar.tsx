@@ -107,5 +107,14 @@ const BpkNavigationBar = (props: Props) => {
   );
 };
 
+BpkNavigationBar.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  leadingButton: PropTypes.element,
+  trailingButton: PropTypes.element,
+  sticky: PropTypes.bool,
+  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
+};
 
 export default BpkNavigationBar;
