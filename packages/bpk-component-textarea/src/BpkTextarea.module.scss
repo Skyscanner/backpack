@@ -16,16 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-textarea {
-  @include bpk-textarea;
+  .bpk-textarea {
+    @include bpk-textarea;
 
-  &--invalid {
-    @include bpk-textarea--invalid;
-  }
+    &--invalid {
+      @include bpk-textarea--invalid;
+    }
 
-  &--large {
-    @include bpk-textarea--large;
+    &--large {
+      @include bpk-textarea--large;
+    }
   }
 }

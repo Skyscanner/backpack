@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-button--link-on-dark {
-  @include bpk-button--link-on-dark;
+  .bpk-button--link-on-dark {
+    @include bpk-button--link-on-dark;
+  }
 }

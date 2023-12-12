@@ -16,32 +16,34 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-label {
-  @include bpk-label;
-
-  &--white {
-    @include bpk-label--white;
-  }
-
-  &--invalid {
-    @include bpk-label--invalid;
-  }
-
-  &--disabled {
-    @include bpk-label--disabled;
+  .bpk-label {
+    @include bpk-label;
 
     &--white {
-      color: $bpk-text-disabled-on-dark-day;
+      @include bpk-label--white;
     }
-  }
 
-  &__asterisk {
-    @include bpk-themeable-property(
-      color,
-      --bpk-form-validation-text-color,
-      $bpk-form-validation-color
-    );
+    &--invalid {
+      @include bpk-label--invalid;
+    }
+
+    &--disabled {
+      @include bpk-label--disabled;
+
+      &--white {
+        color: $bpk-text-disabled-on-dark-day;
+      }
+    }
+
+    &__asterisk {
+      @include bpk-themeable-property(
+        color,
+        --bpk-form-validation-text-color,
+        $bpk-form-validation-color
+      );
+    }
   }
 }

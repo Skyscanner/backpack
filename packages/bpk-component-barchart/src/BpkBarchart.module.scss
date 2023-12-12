@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
-.bpk-barchart {
-  width: 100%;
+@layer component {
+  .bpk-barchart {
+    width: 100%;
+  }
 }

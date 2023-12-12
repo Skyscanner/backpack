@@ -16,41 +16,43 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-spinner {
-  @include bpk-spinner;
+  .bpk-spinner {
+    @include bpk-spinner;
 
-  &--primary {
-    // Post colour adoption/rollout we will require to move the 'primary' style to be the same as dark and make dark (moving to primary/defautl) and light the only options
-    @include bpk-themeable-property(
-      fill,
-      --bpk-spinner-primary-color,
-      $bpk-core-accent-day
-    );
-  }
+    &--primary {
+      // Post colour adoption/rollout we will require to move the 'primary' style to be the same as dark and make dark (moving to primary/defautl) and light the only options
+      @include bpk-themeable-property(
+        fill,
+        --bpk-spinner-primary-color,
+        $bpk-core-accent-day
+      );
+    }
 
-  &--light {
-    fill: $bpk-text-on-dark-day;
-  }
+    &--light {
+      fill: $bpk-text-on-dark-day;
+    }
 
-  &--dark {
-    fill: $bpk-text-primary-day;
-  }
+    &--dark {
+      fill: $bpk-text-primary-day;
+    }
 
-  &--large {
-    @include bpk-spinner--lg;
-  }
+    &--large {
+      @include bpk-spinner--lg;
+    }
 
-  &--extra-large {
-    @include bpk-spinner--xl;
-  }
+    &--extra-large {
+      @include bpk-spinner--xl;
+    }
 
-  &--align-to-button {
-    @include bpk-spinner--align-to-button;
-  }
+    &--align-to-button {
+      @include bpk-spinner--align-to-button;
+    }
 
-  &--align-to-large-button {
-    @include bpk-spinner--align-to-large-button;
+    &--align-to-large-button {
+      @include bpk-spinner--align-to-large-button;
+    }
   }
 }

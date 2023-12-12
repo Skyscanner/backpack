@@ -16,66 +16,68 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
-@import 'variables.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
+  @import 'variables.scss';
 
-.bpk-calendar-grid {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-
-  &--animating {
-    z-index: 1;
-    transition: transform 0.2s ease-in-out;
-  }
-
-  &__caption {
-    @include bpk-visually-hidden;
-  }
-
-  &__date {
+  .bpk-calendar-grid {
     width: 100%;
-    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
 
-    &--start {
-      background-image: linear-gradient(
-        to right,
-        $bpk-surface-default-day 50%,
-        $bpk-surface-subtle-day 50%
-      );
-
-      @include bpk-rtl {
-        background-image: linear-gradient(
-          to left,
-          $bpk-surface-default-day 50%,
-          $bpk-surface-subtle-day 50%
-        );
-      }
+    &--animating {
+      z-index: 1;
+      transition: transform 0.2s ease-in-out;
     }
 
-    &--middle {
-      background-color: $bpk-surface-subtle-day;
+    &__caption {
+      @include bpk-visually-hidden;
     }
 
-    &--end {
-      background-image: linear-gradient(
-        to left,
-        $bpk-surface-default-day 50%,
-        $bpk-surface-subtle-day 50%
-      );
+    &__date {
+      width: 100%;
+      text-align: center;
 
-      @include bpk-rtl {
+      &--start {
         background-image: linear-gradient(
           to right,
           $bpk-surface-default-day 50%,
           $bpk-surface-subtle-day 50%
         );
+
+        @include bpk-rtl {
+          background-image: linear-gradient(
+            to left,
+            $bpk-surface-default-day 50%,
+            $bpk-surface-subtle-day 50%
+          );
+        }
+      }
+
+      &--middle {
+        background-color: $bpk-surface-subtle-day;
+      }
+
+      &--end {
+        background-image: linear-gradient(
+          to left,
+          $bpk-surface-default-day 50%,
+          $bpk-surface-subtle-day 50%
+        );
+
+        @include bpk-rtl {
+          background-image: linear-gradient(
+            to right,
+            $bpk-surface-default-day 50%,
+            $bpk-surface-subtle-day 50%
+          );
+        }
       }
     }
-  }
 
-  &__week {
-    display: flex;
-    padding-top: bpk-spacing-lg();
+    &__week {
+      display: flex;
+      padding-top: bpk-spacing-lg();
+    }
   }
 }

@@ -19,111 +19,113 @@
 // Use of stylelint-disable-next-line declaration-no-important in this file is to ensure that
 // the correct styles are applied for Internet Explorer 11 and are not overriden by system styles.
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-select {
-  @include bpk-select;
-
-  &--large {
-    @include bpk-select--large;
-  }
-
-  &--docked {
-    @include bpk-select--docked;
-
-    &-first {
-      @include bpk-select--docked-first-child;
-    }
-
-    &-middle {
-      @include bpk-select--docked-middle-child;
-    }
-
-    &-last {
-      @include bpk-select--docked-last-child;
-    }
-  }
-
-  &--invalid {
-    @include bpk-select--invalid;
-  }
-
-  &--with-image {
-    padding-left: bpk-spacing-xxl();
-
-    @include bpk-rtl {
-      padding-right: bpk-spacing-xxl();
-      padding-left: bpk-spacing-xxl();
-
-      @media screen\0 {
-        /* stylelint-disable-next-line declaration-no-important */
-        padding-right: bpk-spacing-xxl() !important;
-        /* stylelint-disable-next-line declaration-no-important */
-        padding-left: bpk-spacing-base() !important;
-      }
-    }
-
-    @media screen\0 {
-      /* stylelint-disable-next-line declaration-no-important */
-      padding-left: bpk-spacing-xxl() !important;
-    }
-  }
-
-  &--with-image-large {
-    padding-left: bpk-spacing-xxl() + bpk-spacing-base();
-
-    @include bpk-rtl {
-      padding-right: bpk-spacing-xxl() + bpk-spacing-base();
-      padding-left: bpk-spacing-xxl();
-
-      @media screen\0 {
-        padding-right: bpk-spacing-xxl() + bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
-        /* stylelint-disable-next-line declaration-no-important */
-        padding-left: bpk-spacing-base() !important;
-      }
-    }
-
-    @media screen\0 {
-      padding-left: bpk-spacing-xxl() + bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
-    }
-  }
-}
-
-$select-image-width: 24 * $bpk-one-pixel-rem;
-$select-image-height: 16 * $bpk-one-pixel-rem;
-$select-image-large-width: 32 * $bpk-one-pixel-rem;
-$select-image-large-height: 24 * $bpk-one-pixel-rem;
-
-.bpk-select-wrapper {
-  position: relative;
-
-  &__image {
-    position: absolute;
-    top: ($bpk-input-height - $select-image-height) / 2;
-    left: bpk-spacing-md();
-    width: $select-image-width;
-    height: $select-image-height;
-    pointer-events: none;
-
-    @include bpk-rtl {
-      right: bpk-spacing-md();
-      left: auto;
-    }
+  .bpk-select {
+    @include bpk-select;
 
     &--large {
-      top: ($bpk-input-large-height - $select-image-large-height) / 2;
-      left: bpk-spacing-base();
-      width: $select-image-large-width;
-      height: $select-image-large-height;
+      @include bpk-select--large;
+    }
 
-      @include bpk-rtl {
-        right: bpk-spacing-base();
-        left: auto;
+    &--docked {
+      @include bpk-select--docked;
+
+      &-first {
+        @include bpk-select--docked-first-child;
+      }
+
+      &-middle {
+        @include bpk-select--docked-middle-child;
+      }
+
+      &-last {
+        @include bpk-select--docked-last-child;
       }
     }
 
-    &--disabled {
-      opacity: 0.5;
+    &--invalid {
+      @include bpk-select--invalid;
+    }
+
+    &--with-image {
+      padding-left: bpk-spacing-xxl();
+
+      @include bpk-rtl {
+        padding-right: bpk-spacing-xxl();
+        padding-left: bpk-spacing-xxl();
+
+        @media screen\0 {
+          /* stylelint-disable-next-line declaration-no-important */
+          padding-right: bpk-spacing-xxl() !important;
+          /* stylelint-disable-next-line declaration-no-important */
+          padding-left: bpk-spacing-base() !important;
+        }
+      }
+
+      @media screen\0 {
+        /* stylelint-disable-next-line declaration-no-important */
+        padding-left: bpk-spacing-xxl() !important;
+      }
+    }
+
+    &--with-image-large {
+      padding-left: bpk-spacing-xxl() + bpk-spacing-base();
+
+      @include bpk-rtl {
+        padding-right: bpk-spacing-xxl() + bpk-spacing-base();
+        padding-left: bpk-spacing-xxl();
+
+        @media screen\0 {
+          padding-right: bpk-spacing-xxl() + bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
+          /* stylelint-disable-next-line declaration-no-important */
+          padding-left: bpk-spacing-base() !important;
+        }
+      }
+
+      @media screen\0 {
+        padding-left: bpk-spacing-xxl() + bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
+      }
+    }
+  }
+
+  $select-image-width: 24 * $bpk-one-pixel-rem;
+  $select-image-height: 16 * $bpk-one-pixel-rem;
+  $select-image-large-width: 32 * $bpk-one-pixel-rem;
+  $select-image-large-height: 24 * $bpk-one-pixel-rem;
+
+  .bpk-select-wrapper {
+    position: relative;
+
+    &__image {
+      position: absolute;
+      top: ($bpk-input-height - $select-image-height) / 2;
+      left: bpk-spacing-md();
+      width: $select-image-width;
+      height: $select-image-height;
+      pointer-events: none;
+
+      @include bpk-rtl {
+        right: bpk-spacing-md();
+        left: auto;
+      }
+
+      &--large {
+        top: ($bpk-input-large-height - $select-image-large-height) / 2;
+        left: bpk-spacing-base();
+        width: $select-image-large-width;
+        height: $select-image-large-height;
+
+        @include bpk-rtl {
+          right: bpk-spacing-base();
+          left: auto;
+        }
+      }
+
+      &--disabled {
+        opacity: 0.5;
+      }
     }
   }
 }

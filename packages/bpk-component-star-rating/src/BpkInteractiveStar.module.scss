@@ -16,51 +16,53 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-@keyframes star-dust {
-  0% {
-    transform: scale(1);
-  }
+  @keyframes star-dust {
+    0% {
+      transform: scale(1);
+    }
 
-  50% {
-    transform: scale(0.5);
-  }
+    50% {
+      transform: scale(0.5);
+    }
 
-  100% {
-    transform: scale(1);
-  }
-}
-
-.bpk-interactive-star {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  appearance: none;
-
-  @include bpk-hover {
-    .bpk-interactive-star__icon {
-      transform: rotate(10deg) scale(1.2);
-
-      &--selected {
-        transform: rotate(0deg) scale(1);
-      }
+    100% {
+      transform: scale(1);
     }
   }
 
-  &--selected {
-    cursor: default;
-  }
+  .bpk-interactive-star {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    appearance: none;
 
-  &__icon {
-    transform: rotate(0deg) scale(1);
-    transition: transform $bpk-duration-sm ease-in-out;
+    @include bpk-hover {
+      .bpk-interactive-star__icon {
+        transform: rotate(10deg) scale(1.2);
+
+        &--selected {
+          transform: rotate(0deg) scale(1);
+        }
+      }
+    }
 
     &--selected {
-      animation-duration: 300ms;
-      animation-name: star-dust;
+      cursor: default;
+    }
+
+    &__icon {
+      transform: rotate(0deg) scale(1);
+      transition: transform $bpk-duration-sm ease-in-out;
+
+      &--selected {
+        animation-duration: 300ms;
+        animation-name: star-dust;
+      }
     }
   }
 }

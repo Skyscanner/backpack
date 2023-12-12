@@ -16,23 +16,25 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-card {
-  @include bpk-card;
+  .bpk-card {
+    @include bpk-card;
 
-  &--atomic-button {
-    width: 100%;
-    padding: 0;
-    border: none;
-    background: none;
-    color: inherit;
-    text-align: inherit;
-    cursor: pointer;
-    appearance: none;
-  }
+    &--atomic-button {
+      width: 100%;
+      padding: 0;
+      border: none;
+      background: none;
+      color: inherit;
+      text-align: inherit;
+      cursor: pointer;
+      appearance: none;
+    }
 
-  &--padded {
-    @include bpk-card--padded;
+    &--padded {
+      @include bpk-card--padded;
+    }
   }
 }

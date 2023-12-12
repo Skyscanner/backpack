@@ -16,255 +16,257 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-@mixin aspect-ratio($ratio) {
-  padding-top: $ratio;
-  box-sizing: border-box;
-}
-
-@mixin fill-parent {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 100%;
-}
-
-@mixin content-alignment {
-  &--start {
-    align-items: start;
+  @mixin aspect-ratio($ratio) {
+    padding-top: $ratio;
+    box-sizing: border-box;
   }
 
-  &--center {
-    align-items: center;
+  @mixin fill-parent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
   }
 
-  &--end {
-    align-items: end;
-  }
-}
+  @mixin content-alignment {
+    &--start {
+      align-items: start;
+    }
 
-@mixin text-alignment {
-  &--start {
+    &--center {
+      align-items: center;
+    }
+
+    &--end {
+      align-items: end;
+    }
+  }
+
+  @mixin text-alignment {
+    &--start {
+      align-items: start;
+      text-align: start;
+    }
+
+    &--center {
+      align-items: center;
+      text-align: center;
+    }
+
+    &--end {
+      align-items: start;
+      text-align: start;
+    }
+  }
+
+  @mixin reset-alignment {
     align-items: start;
     text-align: start;
   }
 
-  &--center {
-    align-items: center;
-    text-align: center;
+  .bpk-card {
+    @include bpk-card;
   }
 
-  &--end {
-    align-items: start;
-    text-align: start;
-  }
-}
-
-@mixin reset-alignment {
-  align-items: start;
-  text-align: start;
-}
-
-.bpk-card {
-  @include bpk-card;
-}
-
-.bpk-graphic-promo {
-  max-width: 76.5rem;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: $bpk-surface-contrast-day;
-  background-position: center;
-  background-size: cover;
-  color: $bpk-text-on-dark-day;
-  box-shadow: none;
-
-  @include bpk-breakpoint-small-tablet {
-    @include aspect-ratio(133%);
-  }
-
-  /* remove shadow and hightlights from Backpack Card */
-  &::after {
-    display: none;
-  }
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    @include content-alignment;
-
-    @include bpk-breakpoint-above-tablet {
-      height: 28.75rem;
-
-      @include bpk-margin-leading(bpk-spacing-xxxl(), false);
-      @include bpk-margin-trailing(bpk-spacing-xxl(), false);
-
-      /* adjusting for 1.5rem difference between margins */
-      &--center > * {
-        @include bpk-margin-trailing(bpk-spacing-lg());
-      }
-    }
-
-    @include bpk-breakpoint-tablet {
-      height: 22.5rem;
-
-      @include bpk-margin-leading(bpk-spacing-xxl(), false);
-      @include bpk-margin-trailing(bpk-spacing-xl(), false);
-
-      /* adjusting for 1.5rem difference between margins */
-      &--center > * {
-        @include bpk-margin-trailing(bpk-spacing-md());
-      }
-    }
+  .bpk-graphic-promo {
+    max-width: 76.5rem;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: $bpk-surface-contrast-day;
+    background-position: center;
+    background-size: cover;
+    color: $bpk-text-on-dark-day;
+    box-shadow: none;
 
     @include bpk-breakpoint-small-tablet {
-      padding: bpk-spacing-xl();
-      justify-content: space-between;
+      @include aspect-ratio(133%);
+    }
 
-      @include reset-alignment;
-      @include bpk-margin-leading(0);
-      @include fill-parent;
+    /* remove shadow and hightlights from Backpack Card */
+    &::after {
+      display: none;
+    }
 
-      &--inverted {
-        flex-direction: column-reverse;
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include content-alignment;
+
+      @include bpk-breakpoint-above-tablet {
+        height: 28.75rem;
+
+        @include bpk-margin-leading(bpk-spacing-xxxl(), false);
+        @include bpk-margin-trailing(bpk-spacing-xxl(), false);
+
+        /* adjusting for 1.5rem difference between margins */
+        &--center > * {
+          @include bpk-margin-trailing(bpk-spacing-lg());
+        }
       }
 
-      > * {
+      @include bpk-breakpoint-tablet {
+        height: 22.5rem;
+
+        @include bpk-margin-leading(bpk-spacing-xxl(), false);
+        @include bpk-margin-trailing(bpk-spacing-xl(), false);
+
+        /* adjusting for 1.5rem difference between margins */
+        &--center > * {
+          @include bpk-margin-trailing(bpk-spacing-md());
+        }
+      }
+
+      @include bpk-breakpoint-small-tablet {
+        padding: bpk-spacing-xl();
+        justify-content: space-between;
+
+        @include reset-alignment;
         @include bpk-margin-leading(0);
+        @include fill-parent;
+
+        &--inverted {
+          flex-direction: column-reverse;
+        }
+
+        > * {
+          @include bpk-margin-leading(0);
+        }
+      }
+
+      @include bpk-breakpoint-small-mobile {
+        padding: bpk-spacing-lg();
       }
     }
 
-    @include bpk-breakpoint-small-mobile {
-      padding: bpk-spacing-lg();
-    }
-  }
-
-  &__tagline {
-    margin-bottom: bpk-spacing-md();
-
-    @include bpk-heading-5;
-
-    @include bpk-breakpoint-tablet {
-      @include bpk-label-1;
-    }
-
-    @include bpk-breakpoint-small-tablet {
-      @include bpk-subheading;
-    }
-
-    @include bpk-breakpoint-small-mobile {
-      @include bpk-label-1;
-    }
-  }
-
-  &__headline {
-    @include bpk-breakpoint-above-tablet {
-      @include bpk-hero-5;
-
-      &:not(:last-child) {
-        margin-bottom: bpk-spacing-md();
-      }
-    }
-
-    @include bpk-breakpoint-tablet {
-      @include bpk-heading-1;
-
-      &:not(:last-child) {
-        margin-bottom: bpk-spacing-md();
-      }
-    }
-
-    @include bpk-breakpoint-small-tablet {
-      margin-bottom: bpk-spacing-md();
-    }
-
-    @include bpk-breakpoint-mobile {
-      @include bpk-heading-2;
-    }
-  }
-
-  &__subheading {
-    @include bpk-body-default;
-
-    @include bpk-breakpoint-tablet {
-      @include bpk-heading-5;
-    }
-
-    @include bpk-breakpoint-small-tablet {
-      @include bpk-heading-3;
-    }
-
-    @include bpk-breakpoint-mobile {
-      @include bpk-heading-5;
-    }
-  }
-
-  &__promo-content,
-  &__sponsor-content {
-    display: flex;
-    flex-direction: column;
-
-    @include text-alignment;
-
-    @include bpk-breakpoint-above-tablet {
-      width: 22.5rem;
-    }
-
-    @include bpk-breakpoint-tablet {
-      width: 20rem;
-    }
-
-    @include bpk-breakpoint-small-tablet {
-      width: initial;
-
-      @include reset-alignment;
-    }
-  }
-
-  &__sponsor-content {
-    display: flex;
-    margin-bottom: bpk-spacing-base();
-    flex-direction: column;
-
-    @include bpk-breakpoint-small-tablet {
-      margin-bottom: initial;
-    }
-  }
-
-  &__sponsor-label {
-    margin-bottom: bpk-spacing-sm();
-
-    @include bpk-label-1;
-
-    @include bpk-breakpoint-small-tablet {
+    &__tagline {
       margin-bottom: bpk-spacing-md();
 
-      @include bpk-heading-3;
+      @include bpk-heading-5;
+
+      @include bpk-breakpoint-tablet {
+        @include bpk-label-1;
+      }
+
+      @include bpk-breakpoint-small-tablet {
+        @include bpk-subheading;
+      }
+
+      @include bpk-breakpoint-small-mobile {
+        @include bpk-label-1;
+      }
     }
 
-    @include bpk-breakpoint-small-mobile {
+    &__headline {
+      @include bpk-breakpoint-above-tablet {
+        @include bpk-hero-5;
+
+        &:not(:last-child) {
+          margin-bottom: bpk-spacing-md();
+        }
+      }
+
+      @include bpk-breakpoint-tablet {
+        @include bpk-heading-1;
+
+        &:not(:last-child) {
+          margin-bottom: bpk-spacing-md();
+        }
+      }
+
+      @include bpk-breakpoint-small-tablet {
+        margin-bottom: bpk-spacing-md();
+      }
+
+      @include bpk-breakpoint-mobile {
+        @include bpk-heading-2;
+      }
+    }
+
+    &__subheading {
+      @include bpk-body-default;
+
+      @include bpk-breakpoint-tablet {
+        @include bpk-heading-5;
+      }
+
+      @include bpk-breakpoint-small-tablet {
+        @include bpk-heading-3;
+      }
+
+      @include bpk-breakpoint-mobile {
+        @include bpk-heading-5;
+      }
+    }
+
+    &__promo-content,
+    &__sponsor-content {
+      display: flex;
+      flex-direction: column;
+
+      @include text-alignment;
+
+      @include bpk-breakpoint-above-tablet {
+        width: 22.5rem;
+      }
+
+      @include bpk-breakpoint-tablet {
+        width: 20rem;
+      }
+
+      @include bpk-breakpoint-small-tablet {
+        width: initial;
+
+        @include reset-alignment;
+      }
+    }
+
+    &__sponsor-content {
+      display: flex;
+      margin-bottom: bpk-spacing-base();
+      flex-direction: column;
+
+      @include bpk-breakpoint-small-tablet {
+        margin-bottom: initial;
+      }
+    }
+
+    &__sponsor-label {
       margin-bottom: bpk-spacing-sm();
 
       @include bpk-label-1;
+
+      @include bpk-breakpoint-small-tablet {
+        margin-bottom: bpk-spacing-md();
+
+        @include bpk-heading-3;
+      }
+
+      @include bpk-breakpoint-small-mobile {
+        margin-bottom: bpk-spacing-sm();
+
+        @include bpk-label-1;
+      }
     }
-  }
 
-  &__sponsor-logo {
-    width: auto;
-    max-width: 9.25rem;
-    height: auto;
-    max-height: 3.75rem;
-  }
+    &__sponsor-logo {
+      width: auto;
+      max-width: 9.25rem;
+      height: auto;
+      max-height: 3.75rem;
+    }
 
-  &__cta {
-    margin-top: bpk-spacing-xl();
+    &__cta {
+      margin-top: bpk-spacing-xl();
 
-    @include bpk-breakpoint-small-tablet {
-      display: none;
+      @include bpk-breakpoint-small-tablet {
+        display: none;
+      }
     }
   }
 }

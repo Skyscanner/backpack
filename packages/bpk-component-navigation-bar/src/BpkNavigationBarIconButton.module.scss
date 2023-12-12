@@ -16,28 +16,30 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-navigation-bar-icon-button {
-  @include bpk-themeable-property(
-    color,
-    --bpk-navigation-bar-icon-button-color,
-    $bpk-text-primary-day
-  );
-
-  @include bpk-hover {
+  .bpk-navigation-bar-icon-button {
     @include bpk-themeable-property(
       color,
-      --bpk-navigation-bar-icon-button-hover-color,
+      --bpk-navigation-bar-icon-button-color,
       $bpk-text-primary-day
     );
-  }
 
-  &:active {
-    @include bpk-themeable-property(
-      color,
-      --bpk-navigation-bar-icon-button-active-color,
-      $bpk-text-primary-day
-    );
+    @include bpk-hover {
+      @include bpk-themeable-property(
+        color,
+        --bpk-navigation-bar-icon-button-hover-color,
+        $bpk-text-primary-day
+      );
+    }
+
+    &:active {
+      @include bpk-themeable-property(
+        color,
+        --bpk-navigation-bar-icon-button-active-color,
+        $bpk-text-primary-day
+      );
+    }
   }
 }

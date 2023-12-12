@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-chart-data-table {
-  @include bpk-visually-hidden;
-
-  thead,
-  tbody {
+  .bpk-chart-data-table {
     @include bpk-visually-hidden;
+
+    thead,
+    tbody {
+      @include bpk-visually-hidden;
+    }
   }
 }

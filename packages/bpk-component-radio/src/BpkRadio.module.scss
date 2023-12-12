@@ -16,69 +16,71 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-$bpk-radio-circle-size: $bpk-one-pixel-rem * 8;
-$bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
+  $bpk-radio-circle-size: $bpk-one-pixel-rem * 8;
+  $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
 
-.bpk-radio {
-  @include bpk-radio;
-
-  &--white {
-    @include bpk-radio--white;
-  }
-
-  &--disabled {
-    @include bpk-radio--disabled;
+  .bpk-radio {
+    @include bpk-radio;
 
     &--white {
-      color: $bpk-text-disabled-on-dark-day;
-    }
-  }
-
-  &--invalid {
-    @include bpk-radio--invalid;
-  }
-
-  &__input {
-    @include bpk-radio__input;
-
-    &:disabled {
-      cursor: inherit;
+      @include bpk-radio--white;
     }
 
-    &:checked {
-      + .bpk-radio__circle {
-        display: block;
+    &--disabled {
+      @include bpk-radio--disabled;
+
+      &--white {
+        color: $bpk-text-disabled-on-dark-day;
       }
+    }
+
+    &--invalid {
+      @include bpk-radio--invalid;
+    }
+
+    &__input {
+      @include bpk-radio__input;
 
       &:disabled {
+        cursor: inherit;
+      }
+
+      &:checked {
         + .bpk-radio__circle {
           display: block;
-          background: $bpk-text-disabled-day;
+        }
+
+        &:disabled {
+          + .bpk-radio__circle {
+            display: block;
+            background: $bpk-text-disabled-day;
+          }
         }
       }
     }
-  }
 
-  &__circle {
-    position: absolute;
-    top: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
-    left: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
-    display: none;
-    width: $bpk-radio-circle-size;
-    height: $bpk-radio-circle-size;
-    border-radius: 50%;
+    &__circle {
+      position: absolute;
+      top: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
+      left: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
+      display: none;
+      width: $bpk-radio-circle-size;
+      height: $bpk-radio-circle-size;
+      border-radius: 50%;
 
-    @include bpk-themeable-property(
-      background,
-      --bpk-radio-checked-color,
-      $bpk-text-link-day
-    );
+      @include bpk-themeable-property(
+        background,
+        --bpk-radio-checked-color,
+        $bpk-text-link-day
+      );
 
-    @include bpk-rtl {
-      right: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
-      left: auto;
+      @include bpk-rtl {
+        right: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
+        left: auto;
+      }
     }
   }
 }

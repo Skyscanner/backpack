@@ -16,74 +16,76 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
-@import 'variables.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
+  @import 'variables.scss';
 
-.bpk-calendar-nav {
-  display: table;
+  .bpk-calendar-nav {
+    display: table;
 
-  &__month {
-    display: table-cell;
-    text-align: center;
-  }
+    &__month {
+      display: table-cell;
+      text-align: center;
+    }
 
-  &__nudger {
-    display: table-cell;
-    padding: 0 $bpk-calendar-day-spacing;
-    text-align: center;
-    vertical-align: middle;
-    box-sizing: border-box;
-  }
+    &__nudger {
+      display: table-cell;
+      padding: 0 $bpk-calendar-day-spacing;
+      text-align: center;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
 
-  &__button {
-    width: 100%;
-    height: $bpk-input-height;
-    padding: bpk-spacing-md() - (2 * $bpk-one-pixel-rem) 0;
-    border: none;
-    background: none;
-    cursor: pointer;
-    appearance: none;
+    &__button {
+      width: 100%;
+      height: $bpk-input-height;
+      padding: bpk-spacing-md() - (2 * $bpk-one-pixel-rem) 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      appearance: none;
 
-    @include bpk-themeable-property(
-      color,
-      --bpk-calendar-nudger-icon-color,
-      $bpk-text-primary-day
-    );
-
-    @include bpk-hover {
       @include bpk-themeable-property(
         color,
-        --bpk-calendar-nudger-icon-hover-color,
+        --bpk-calendar-nudger-icon-color,
         $bpk-text-primary-day
       );
-    }
 
-    &:active {
-      @include bpk-themeable-property(
-        color,
-        --bpk-calendar-nudger-icon-active-color,
-        $bpk-text-primary-day
-      );
-    }
+      @include bpk-hover {
+        @include bpk-themeable-property(
+          color,
+          --bpk-calendar-nudger-icon-hover-color,
+          $bpk-text-primary-day
+        );
+      }
 
-    .bpk-calendar-nav__icon {
-      fill: currentcolor;
-
-      @include bpk-icon--rtl-support;
-    }
-
-    &:disabled {
-      cursor: not-allowed;
+      &:active {
+        @include bpk-themeable-property(
+          color,
+          --bpk-calendar-nudger-icon-active-color,
+          $bpk-text-primary-day
+        );
+      }
 
       .bpk-calendar-nav__icon {
-        fill: $bpk-text-disabled-day;
+        fill: currentcolor;
+
+        @include bpk-icon--rtl-support;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+
+        .bpk-calendar-nav__icon {
+          fill: $bpk-text-disabled-day;
+        }
       }
     }
-  }
 
-  &__text {
-    &--hidden {
-      @include bpk-visually-hidden;
+    &__text {
+      &--hidden {
+        @include bpk-visually-hidden;
+      }
     }
   }
 }

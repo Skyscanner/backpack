@@ -16,111 +16,113 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-$arrow-size: bpk-spacing-lg();
-$arrow-inset-margin: -($bpk-one-pixel-rem * 11);
+  $arrow-size: bpk-spacing-lg();
+  $arrow-inset-margin: -($bpk-one-pixel-rem * 11);
 
-.bpk-popover-portal {
-  z-index: $bpk-zindex-popover;
+  .bpk-popover-portal {
+    z-index: $bpk-zindex-popover;
 
-  @include bpk-breakpoint-mobile {
-    margin-right: bpk-spacing-base();
-    margin-left: bpk-spacing-base();
-  }
-}
-
-.bpk-popover {
-  transition: opacity $bpk-duration-sm ease-in-out;
-  outline: 0;
-  opacity: 1;
-
-  @include bpk-layer;
-
-  @include bpk-breakpoint-above-mobile {
-    max-width: $bpk-breakpoint-mobile;
-    transition: opacity $bpk-duration-xs ease-in-out;
+    @include bpk-breakpoint-mobile {
+      margin-right: bpk-spacing-base();
+      margin-left: bpk-spacing-base();
+    }
   }
 
-  &--appear {
-    opacity: 0;
-  }
-
-  &--appear-active {
+  .bpk-popover {
+    transition: opacity $bpk-duration-sm ease-in-out;
+    outline: 0;
     opacity: 1;
-  }
 
-  &__arrow {
-    position: aboslute;
-    width: $arrow-size;
-    height: $arrow-size;
-    transform: rotate(45deg);
-    border: $bpk-one-pixel-rem solid transparent;
-    background: inherit;
+    @include bpk-layer;
 
-    .bpk-popover-portal[data-popper-placement='top'] & {
-      bottom: $arrow-inset-margin;
-      border-right-color: $bpk-surface-highlight-day;
-      border-bottom-color: $bpk-surface-highlight-day;
+    @include bpk-breakpoint-above-mobile {
+      max-width: $bpk-breakpoint-mobile;
+      transition: opacity $bpk-duration-xs ease-in-out;
     }
 
-    .bpk-popover-portal[data-popper-placement='right'] & {
-      left: $arrow-inset-margin;
-      border-bottom-color: $bpk-surface-highlight-day;
-      border-left-color: $bpk-surface-highlight-day;
+    &--appear {
+      opacity: 0;
     }
 
-    .bpk-popover-portal[data-popper-placement='bottom'] & {
-      top: $arrow-inset-margin;
-      border-top-color: $bpk-surface-highlight-day;
-      border-left-color: $bpk-surface-highlight-day;
+    &--appear-active {
+      opacity: 1;
     }
 
-    .bpk-popover-portal[data-popper-placement='left'] & {
-      right: $arrow-inset-margin;
-      border-top-color: $bpk-surface-highlight-day;
-      border-right-color: $bpk-surface-highlight-day;
+    &__arrow {
+      position: aboslute;
+      width: $arrow-size;
+      height: $arrow-size;
+      transform: rotate(45deg);
+      border: $bpk-one-pixel-rem solid transparent;
+      background: inherit;
+
+      .bpk-popover-portal[data-popper-placement='top'] & {
+        bottom: $arrow-inset-margin;
+        border-right-color: $bpk-surface-highlight-day;
+        border-bottom-color: $bpk-surface-highlight-day;
+      }
+
+      .bpk-popover-portal[data-popper-placement='right'] & {
+        left: $arrow-inset-margin;
+        border-bottom-color: $bpk-surface-highlight-day;
+        border-left-color: $bpk-surface-highlight-day;
+      }
+
+      .bpk-popover-portal[data-popper-placement='bottom'] & {
+        top: $arrow-inset-margin;
+        border-top-color: $bpk-surface-highlight-day;
+        border-left-color: $bpk-surface-highlight-day;
+      }
+
+      .bpk-popover-portal[data-popper-placement='left'] & {
+        right: $arrow-inset-margin;
+        border-top-color: $bpk-surface-highlight-day;
+        border-right-color: $bpk-surface-highlight-day;
+      }
+
+      &[data-hide] {
+        visibility: hidden;
+      }
     }
 
-    &[data-hide] {
-      visibility: hidden;
+    &__body {
+      &--padded {
+        padding: bpk-spacing-base();
+      }
     }
-  }
 
-  &__body {
-    &--padded {
+    &__header {
+      display: flex;
       padding: bpk-spacing-base();
+      justify-content: space-between;
+
+      @include bpk-border-bottom-sm($bpk-surface-highlight-day);
     }
-  }
 
-  &__header {
-    display: flex;
-    padding: bpk-spacing-base();
-    justify-content: space-between;
-
-    @include bpk-border-bottom-sm($bpk-surface-highlight-day);
-  }
-
-  &__label {
-    @include bpk-visually-hidden;
-  }
-
-  &__close-button {
-    float: right;
-
-    @include bpk-rtl {
-      float: left;
+    &__label {
+      @include bpk-visually-hidden;
     }
-  }
 
-  &__footer {
-    padding: bpk-spacing-md() bpk-spacing-base();
-    text-align: right;
+    &__close-button {
+      float: right;
 
-    @include bpk-border-top-sm($bpk-surface-highlight-day);
+      @include bpk-rtl {
+        float: left;
+      }
+    }
 
-    @include bpk-rtl {
-      text-align: left;
+    &__footer {
+      padding: bpk-spacing-md() bpk-spacing-base();
+      text-align: right;
+
+      @include bpk-border-top-sm($bpk-surface-highlight-day);
+
+      @include bpk-rtl {
+        text-align: left;
+      }
     }
   }
 }

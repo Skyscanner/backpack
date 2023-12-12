@@ -16,36 +16,38 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-navigation-bar-button-link {
-  @include bpk-themeable-property(
-    color,
-    --bpk-navigation-bar-button-link-color,
-    $bpk-text-primary-day
-  );
-
-  @include bpk-hover {
+  .bpk-navigation-bar-button-link {
     @include bpk-themeable-property(
       color,
-      --bpk-navigation-bar-button-link-hover-color,
+      --bpk-navigation-bar-button-link-color,
       $bpk-text-primary-day
     );
-  }
 
-  &:active {
-    @include bpk-themeable-property(
-      color,
-      --bpk-navigation-bar-button-link-active-color,
-      $bpk-text-primary-day
-    );
-  }
+    @include bpk-hover {
+      @include bpk-themeable-property(
+        color,
+        --bpk-navigation-bar-button-link-hover-color,
+        $bpk-text-primary-day
+      );
+    }
 
-  &:visited {
-    @include bpk-themeable-property(
-      color,
-      --bpk-navigation-bar-button-link-visited-color,
-      $bpk-text-primary-day
-    );
+    &:active {
+      @include bpk-themeable-property(
+        color,
+        --bpk-navigation-bar-button-link-active-color,
+        $bpk-text-primary-day
+      );
+    }
+
+    &:visited {
+      @include bpk-themeable-property(
+        color,
+        --bpk-navigation-bar-button-link-visited-color,
+        $bpk-text-primary-day
+      );
+    }
   }
 }
