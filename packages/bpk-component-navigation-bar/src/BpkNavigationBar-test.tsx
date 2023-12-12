@@ -38,6 +38,14 @@ describe('BpkNavigationBar', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with arbitrary props', () => {
+    const { asFragment } = render(
+      <BpkNavigationBar id="test" title="test" testid="arbitrary value" />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly with a "leadingButton" attribute', () => {
     const { asFragment } = render(
       <BpkNavigationBar

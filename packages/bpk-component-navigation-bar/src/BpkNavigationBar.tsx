@@ -41,6 +41,7 @@ export type Props = {
   trailingButton?: ReactElement | null,
   sticky?: boolean,
   barStyle?: BarStyle,
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const cloneWithClasses = (elem: ReactElement, ...newStyles: string[]) => {
@@ -50,11 +51,11 @@ const cloneWithClasses = (elem: ReactElement, ...newStyles: string[]) => {
 
 const BpkNavigationBar = (props: Props) => {
   const {
-    barStyle,
+    barStyle = BAR_STYLES.default,
     className,
     id,
     leadingButton,
-    sticky,
+    sticky = false,
     title,
     trailingButton,
     ...rest
@@ -106,22 +107,5 @@ const BpkNavigationBar = (props: Props) => {
   );
 };
 
-BpkNavigationBar.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.oneOf([PropTypes.node, PropTypes.string]).isRequired,
-  className: PropTypes.string,
-  leadingButton: PropTypes.element,
-  trailingButton: PropTypes.element,
-  sticky: PropTypes.bool,
-  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
-};
-
-BpkNavigationBar.defaultProps = {
-  className: null,
-  leadingButton: null,
-  trailingButton: null,
-  sticky: false,
-  barStyle: BAR_STYLES.default,
-};
 
 export default BpkNavigationBar;

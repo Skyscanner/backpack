@@ -35,9 +35,10 @@ export type Props = {
   className?: string,
   barStyle?: BarStyle,
   children?: ReactNode,
+  [rest: string]: any, // Inexact rest. See decisions/inexact-rest.md
 };
 
-const BpkNavigationBarIconButton = ({ barStyle, className, icon, ...rest }: Props) => (
+const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, icon, ...rest }: Props) => (
   <BpkIconButton
     customIcon={icon}
     className={getClassName(
@@ -49,17 +50,5 @@ const BpkNavigationBarIconButton = ({ barStyle, className, icon, ...rest }: Prop
   />
 );
 
-BpkNavigationBarIconButton.propTypes = {
-  icon: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
-};
-
-BpkNavigationBarIconButton.defaultProps = {
-  className: null,
-  barStyle: BAR_STYLES.default,
-};
 
 export default BpkNavigationBarIconButton;
