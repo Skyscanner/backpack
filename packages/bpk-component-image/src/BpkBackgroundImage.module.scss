@@ -15,10 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@layer component;
 
 @layer component {
   @import '../../bpk-mixins/index.scss';
-  @import './BpkImage.module.scss';
+  @import './bpkImageMixins.scss';
 
   .bpk-background-image {
     @include bpk-image;
