@@ -124,7 +124,7 @@ $close-button-width: bpk-spacing-lg() * 2;
 
   &--heading {
     width: calc(
-      100% - ((#{$close-button-width}) * 2)
+      100% - ((#{$close-button-width}) * 2 + #{bpk-spacing-sm()} / 2)
     ); // Treat title as if it was always surrounded by close and action to center align it
 
     margin-right: auto;
@@ -148,13 +148,15 @@ $close-button-width: bpk-spacing-lg() * 2;
   &--action-button {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     right: auto;
-    width: calc(#{$close-button-width});
+    width: calc(#{$close-button-width} - (#{bpk-spacing-sm()}));
+    margin-right: calc(#{bpk-spacing-sm()} / 2);
+    margin-left: calc(#{bpk-spacing-sm()});
     word-break: break-all;
-
-    @include bpk-margin-leading(bpk-spacing-sm());
 
     @include bpk-rtl {
       left: auto;
+      margin-right: calc(#{bpk-spacing-sm()});
+      margin-left: calc(#{bpk-spacing-sm()} / 2);
     }
   }
 }
