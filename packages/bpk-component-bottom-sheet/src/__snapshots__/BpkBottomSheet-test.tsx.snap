@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkBottomSheet should render correctly in the given target if renderTarget is supplied 1`] = `<DocumentFragment />`;
+
+exports[`BpkBottomSheet should render correctly in the given target if renderTarget is supplied 2`] = `
+<div>
+  <div>
+    <div
+      role="none"
+      tabindex="-1"
+    >
+      <div
+        class="bpk-scrim-content bpk-bottom-sheet--container"
+      >
+        <div
+          class="bpk-scrim"
+          role="presentation"
+        />
+        <section
+          aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
+          class="bpk-bottom-sheet"
+          id="my-bottom-sheet"
+          role="dialog"
+          tabindex="-1"
+        >
+          <header
+            class="bpk-bottom-sheet--header"
+          >
+            <nav
+              aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
+              class="bpk-navigation-bar bpk-bottom-sheet--navigation"
+            >
+              <button
+                aria-label="Close"
+                class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item"
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="bpk-close-button__icon"
+                  style="width: 1rem; height: 1rem;"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                  />
+                </svg>
+              </button>
+              <h2
+                class="bpk-bottom-sheet--heading"
+                id="bpk-bottom-sheet-heading-my-bottom-sheet"
+              >
+                Bottom Sheet title
+              </h2>
+              <div
+                class="bpk-bottom-sheet--action-button bpk-navigation-bar__trailing-item"
+              />
+            </nav>
+          </header>
+          <div
+            class="bpk-bottom-sheet--content"
+          >
+            Bottom Sheet content inside a custom target
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+`;
