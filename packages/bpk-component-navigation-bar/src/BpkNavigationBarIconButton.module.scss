@@ -40,4 +40,16 @@
       $bpk-text-primary-day
     );
   }
+
+  &--on-dark {
+    color: $bpk-text-primary-inverse-day;
+
+    @include bpk-hover {
+      color: $bpk-text-primary-inverse-day;
+    }
+
+    &:active {
+      color: $bpk-text-primary-inverse-day;
+    }
+  }
 }

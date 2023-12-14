@@ -28,11 +28,11 @@ exports[`BpkBottomSheet should render correctly in the given target if renderTar
           >
             <nav
               aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
-              class="bpk-navigation-bar bpk-bottom-sheet--navigation"
+              class="bpk-navigation-bar bpk-navigation-bar--default bpk-bottom-sheet--navigation"
             >
               <button
                 aria-label="Close"
-                class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item"
+                class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
                 title="Close"
                 type="button"
               >
@@ -55,7 +55,7 @@ exports[`BpkBottomSheet should render correctly in the given target if renderTar
                 Bottom Sheet title
               </h2>
               <div
-                class="bpk-bottom-sheet--action-button bpk-navigation-bar__trailing-item"
+                class="bpk-bottom-sheet--action-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
               />
             </nav>
           </header>

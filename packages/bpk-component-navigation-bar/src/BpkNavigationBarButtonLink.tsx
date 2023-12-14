@@ -16,47 +16,50 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import type { Node } from 'react';
+import type { ComponentProps, MouseEvent, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
-// TODO: close button is not really only a close button, we should rename and update the import here
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationBarButtonLink.module.scss';
+import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  children: Node,
-  onClick: (event: SyntheticEvent<>) => void,
-  className: ?string,
-};
+export interface Props extends ComponentProps<BpkButtonLink> {
+  children: ReactNode,
+  onClick: (event: MouseEvent<HTMLElement>) => void,
+  className?: string,
+  barStyle?: BarStyle,
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+}
 
 const BpkNavigationBarButtonLink = ({
+  barStyle = BAR_STYLES.default,
   children,
   className,
   ...rest
 }: Props) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkButtonLink
-    className={getClassName('bpk-navigation-bar-button-link', className)}
+    className={getClassName(
+      'bpk-navigation-bar-button-link',
+      `bpk-navigation-bar-button-link--${barStyle}`,
+      className
+    )}
     {...rest}
   >
     {children}
   </BpkButtonLink>
 );
 
+
 BpkNavigationBarButtonLink.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
-};
-
-BpkNavigationBarButtonLink.defaultProps = {
-  className: null,
+  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
 };
 
 export default BpkNavigationBarButtonLink;

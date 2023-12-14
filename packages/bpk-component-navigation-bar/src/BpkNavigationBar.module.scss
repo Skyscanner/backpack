@@ -33,12 +33,20 @@
     $bpk-surface-default-day
   );
 
+  &--on-dark {
+    background-color: $bpk-surface-contrast-day;
+  }
+
   &__title {
     @include bpk-themeable-property(
       color,
       --bpk-navigation-bar-title-color,
       $bpk-text-primary-day
     );
+
+    &--on-dark {
+      color: $bpk-text-primary-inverse-day;
+    }
   }
 
   &__leading-item,
