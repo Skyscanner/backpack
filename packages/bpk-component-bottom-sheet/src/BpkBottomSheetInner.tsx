@@ -68,7 +68,6 @@ const BpkBottomSheetInner = ({
     }}
     in={!exiting}
     appear={!exiting}
-    out={exiting}
     exit={exiting}
     timeout={{appear: 240, exit: 240}}
   >
