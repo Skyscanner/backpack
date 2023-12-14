@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
-@layer base, component, utility;
+@layer reset, base, component, utility;
+
+@layer reset {
+  @import '~normalize.css';
+}
 
 @layer base {
-  @import '~normalize.css';
   @import '../bpk-mixins/index.scss';
 
   // stylelint-disable-next-line selector-max-type
