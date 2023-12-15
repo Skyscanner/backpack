@@ -3,7 +3,7 @@
 exports[`BpkNavigationButtonLink should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-link bpk-navigation-bar-button-link some-class"
+    class="bpk-link bpk-navigation-bar-button-link bpk-navigation-bar-button-link--default some-class"
     type="button"
   >
     Test

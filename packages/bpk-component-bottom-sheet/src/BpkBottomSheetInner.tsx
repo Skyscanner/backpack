@@ -23,7 +23,6 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import { BpkButtonLink } from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { cssModules } from "../../bpk-react-utils";
 
@@ -69,7 +68,6 @@ const BpkBottomSheetInner = ({
     }}
     in={!exiting}
     appear={!exiting}
-    out={exiting}
     exit={exiting}
     timeout={{appear: 240, exit: 240}}
   >
