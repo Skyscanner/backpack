@@ -17,7 +17,6 @@
  */
 
 import type { ComponentType, MouseEvent, ReactNode } from 'react';
-import PropTypes from 'prop-types';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkIconButton from '../../bpk-component-close-button';
@@ -49,13 +48,5 @@ const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, 
     {...rest}
   />
 );
-
-BpkNavigationBarIconButton.propTypes = {
-  icon: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
-};
 
 export default BpkNavigationBarIconButton;
