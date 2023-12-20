@@ -67,3 +67,8 @@
     }
   }
 }
+
+[dir='rtl'] .bpk-nudger {
+  display: flex;
+  flex-direction: row-reverse;
+}
