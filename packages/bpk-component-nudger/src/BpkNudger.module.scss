@@ -19,6 +19,11 @@
 @import '../../bpk-mixins/index.scss';
 
 .bpk-nudger {
+  @include bpk-rtl {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
   &__button {
     position: relative;
   }
@@ -66,9 +71,4 @@
       color: $bpk-text-secondary-day;
     }
   }
-}
-
-[dir='rtl'] .bpk-nudger {
-  display: flex;
-  flex-direction: row-reverse;
 }
