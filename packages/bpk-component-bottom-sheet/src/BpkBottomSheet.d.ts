@@ -25,7 +25,12 @@ export type Props = Partial<BottomSheetProps> & {
   closeOnScrimClick?: boolean;
   id: string;
   isOpen: boolean;
-  onClose: () => void;
+  onClose: (
+    arg0?: TouchEvent | MouseEvent | KeyboardEvent,
+    arg1?: {
+      source: 'ESCAPE' | 'DOCUMENT_CLICK';
+    },
+  ) => void;
   title?: string;
   /**
    * Because this component uses a modal on mobile viewports, you need to let it know what
