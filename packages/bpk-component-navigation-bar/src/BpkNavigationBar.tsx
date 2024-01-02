@@ -18,7 +18,6 @@
 
 import type { ReactElement, ReactNode } from 'react';
 import { cloneElement } from 'react';
-import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -105,16 +104,6 @@ const BpkNavigationBar = (props: Props) => {
         )}
     </nav>
   );
-};
-
-BpkNavigationBar.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  leadingButton: PropTypes.element,
-  trailingButton: PropTypes.element,
-  sticky: PropTypes.bool,
-  barStyle: PropTypes.oneOf(Object.values(BAR_STYLES)),
 };
 
 export default BpkNavigationBar;

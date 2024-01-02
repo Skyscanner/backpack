@@ -20,6 +20,11 @@
   @import '../../bpk-mixins/index.scss';
 
   .bpk-nudger {
+    @include bpk-rtl {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
     &__button {
       position: relative;
     }

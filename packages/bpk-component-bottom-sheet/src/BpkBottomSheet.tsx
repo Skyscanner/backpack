@@ -36,7 +36,12 @@ export type Props = {
   id: string;
   isOpen: boolean;
   onAction?: () => void;
-  onClose: () => void;
+  onClose: (
+    arg0?: TouchEvent | MouseEvent | KeyboardEvent,
+    arg1?: {
+      source: 'ESCAPE' | 'DOCUMENT_CLICK';
+    },
+  ) => void;
   title?: string;
   wide?: boolean;
   getApplicationElement: () => HTMLElement | null;
@@ -58,10 +63,15 @@ const BpkBottomSheet = ({
   ...rest
 }: Props) => {
   const [ exiting, setExitting ] = useState(false);
-  const handleClose = () => {
+  const handleClose = (
+    arg0?: TouchEvent | MouseEvent | KeyboardEvent,
+    arg1?: {
+      source: 'ESCAPE' | 'DOCUMENT_CLICK';
+    },
+) => {
     setExitting(true)
     setTimeout(() => {
-      onClose()
+      onClose(arg0, arg1)
       setExitting(false)
     }, 240)
   }
