@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-@layer component {
+@layer component-3, component-2, component-1;
+
+@layer component-1 {
   @import '../../bpk-mixins/index.scss';
 
   .bpk-navigation-bar {
