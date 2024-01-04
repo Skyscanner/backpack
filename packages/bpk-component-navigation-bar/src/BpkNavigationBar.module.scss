@@ -64,6 +64,10 @@
         right: bpk-spacing-base();
         left: auto;
       }
+
+      &--on-dark {
+        color: $bpk-text-on-dark-day;
+      }
     }
 
     &__trailing-item {
@@ -72,6 +76,10 @@
       @include bpk-rtl {
         right: auto;
         left: bpk-spacing-base();
+      }
+
+      &--on-dark {
+        color: $bpk-text-on-dark-day;
       }
     }
 
