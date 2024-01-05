@@ -1,18 +1,37 @@
 /*
  * Backpack - Skyscanner's Design System
- * 
+ *
  * Copyright 2016 Skyscanner Ltd
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-chip-group-container{display:flex;white-space:nowrap}.bpk-chip-group{display:flex;gap:0.5rem}.bpk-chip-group--rail{flex-wrap:nowrap}.bpk-chip-group--wrap{flex-wrap:wrap}.bpk-sticky-chip{padding-inline-end:0.5rem;margin-inline-end:0.5rem;box-shadow:-1px 0 0 0 #c2c9cd inset}html[dir='rtl'] .bpk-sticky-chip{box-shadow:1px 0 0 0 #c2c9cd inset}.bpk-sticky-chip--on-dark{box-shadow:-1px 0 0 0 rgba(255,255,255,0.5) inset}html[dir='rtl'] .bpk-sticky-chip--on-dark{box-shadow:1px 0 0 0 rgba(255,255,255,0.5) inset}
+ */
+
+@import '../../bpk-mixins/index.scss';
+
+.bpk-chip-group-nudger {
+  display: none;
+
+  @include bpk-breakpoint-desktop-only {
+    display: block;
+  }
+
+  &--leading {
+    margin-inline-end: bpk-spacing-md();
+
+  }
+
+  &--trailing {
+    margin-inline-start: bpk-spacing-md();
+
+  }
+}

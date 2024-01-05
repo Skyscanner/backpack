@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
 .bpk-chip-group-container {
   display: flex;
+  align-items: center;
   white-space: nowrap;
 }
 

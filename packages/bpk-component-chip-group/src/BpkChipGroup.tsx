@@ -19,9 +19,11 @@
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkChipGroup.module.scss';
-import { ReactElement, SyntheticEvent, useCallback, useState } from 'react';
+import { ReactElement, SyntheticEvent, useCallback, useRef, useState } from 'react';
 import BpkSelectableChip, { CHIP_TYPES } from '../../bpk-component-chip';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
+import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
+import { Nudger } from './Nudger';
 
 const getClassName = cssModules(STYLES);
 
@@ -30,6 +32,7 @@ export const CHIP_GROUP_TYPES = {
   wrap: 'wrap',
 }
 export type ChipGroupType = (typeof CHIP_GROUP_TYPES)[keyof typeof CHIP_GROUP_TYPES];
+export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
 
 export type ChipItem = {
   text: string;
@@ -45,7 +48,7 @@ type Props = {
   // children: Node;
   type: ChipGroupType;
   chips: ChipItem[];
-  chipStyle: (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
+  chipStyle: ChipStyleType;
   stickyChip?: ChipItem;
   onClick?: (selected: boolean[]) => void;
 };
@@ -53,6 +56,8 @@ type Props = {
 
 
 const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, chipStyle = CHIP_TYPES.default, onClick, stickyChip }: Props) => {
+  const scrollContainerRef = useRef();
+
   const connectedChips = chips.map((chip, index) => ({
     ...chip,
     onClick: (event: SyntheticEvent<HTMLButtonElement>) => {
@@ -102,10 +107,11 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, c
   }
 
   const wrapRailInScroll = (children: ReactElement) =>
-    type === CHIP_GROUP_TYPES.rail ? <BpkMobileScrollContainer>{children}</BpkMobileScrollContainer> : children;
+    type === CHIP_GROUP_TYPES.rail ? <BpkMobileScrollContainer scrollerRef={(el) => {scrollContainerRef.current = el}}>{children}</BpkMobileScrollContainer> : children;
 
   return (
     <div className={containerClassnames}>
+      {type === CHIP_GROUP_TYPES.rail && <Nudger leading chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} /> }
       {type === CHIP_GROUP_TYPES.rail && stickyChip &&
         <div className={stickyChipClassnames}>
           {renderChipItem(stickyChip)}
@@ -116,8 +122,8 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, c
           {connectedChips.map(chip => renderChipItem(chip))}
         </div>
       )}
+      {type === CHIP_GROUP_TYPES.rail && <Nudger chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} /> }
     </div>
-
   );
 };
 
@@ -169,20 +175,11 @@ export const BpkChipGroupSingleSelect = ({ chips, onClick, ...rest }: SingleSele
         });
       }
     },
-  }))
+  }));
 
   return (
     <BpkChipGroup chips={connectedChips} {...rest} />
   );
-};
-
-
-
-
-BpkChipGroup.defaultProps = {
-  className: null,
-  type: CHIP_GROUP_TYPES.rail,
-  chipStyle: CHIP_TYPES.default,
 };
 
 export default BpkChipGroup;
