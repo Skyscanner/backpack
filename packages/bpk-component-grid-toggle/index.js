@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import component from './src/BpkGridToggle';
+import BpkGridToggle from './src/BpkGridToggle';
 
-export default component;
+export default BpkGridToggle;
