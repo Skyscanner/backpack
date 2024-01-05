@@ -1,4 +1,6 @@
 version: 2
+snapshot:
+  enable-javascript: true
 discovery:
   user-agent: "percy-backpack"
   allowed-hostnames:
