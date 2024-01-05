@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkGridToggle from '../../packages/bpk-component-grid-toggle/src/BpkGridToggle';
+import BpkGridToggle from '../../packages/bpk-component-grid-toggle';
 
 import DefaultExample from './examples';
 
