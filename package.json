@@ -47,7 +47,7 @@
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
     "prepare": "husky install",
-    "percy-test": "percy storybook -v ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
+    "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
     "ts-migrate": "ts-migrate",
     "transpile": "npm run build && npm run transpile:js-tasks && npm run transpile:copy",
     "transpile:clean": "rimraf ./dist",
