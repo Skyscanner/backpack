@@ -20,8 +20,7 @@ import type { KeyboardEvent, MouseEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 import BpkText from '../../bpk-component-text';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButton from '../../bpk-component-button';
+import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 
 import STYLES from './BpkGraphicPromo.module.scss';
 
@@ -48,6 +47,9 @@ export type Props = {
   tagline?: string | null;
   headline: string;
   subheading?: string | null;
+  /**
+   * An object that groups together all the sponsor related properties. This should only be provided if the graphic promo is sponsored, in which case all of the object's properties are required.
+   */
   sponsor?: {
     label: string;
     logo: string;
@@ -184,14 +186,14 @@ const BpkGraphicPromo = ({
               {subheading}
             </BpkText>
           )}
-          <BpkButton
-            primaryOnDark
+          <BpkButtonV2
+            type={BUTTON_TYPES.primaryOnDark}
             className={getClassName('bpk-graphic-promo__cta')}
             onClick={onClickWrapper}
             tabIndex={-1} /* button is not focusable for accessibility */
           >
             {buttonText}
-          </BpkButton>
+          </BpkButtonV2>
         </div>
       </div>
     </div>

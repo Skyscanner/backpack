@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../packages/bpk-mixins/index.scss';
 
 .bpkdocs-forms-page {
   &__viewport-alert {
@@ -28,7 +28,7 @@
   }
 
   &__form {
-    margin-bottom: $bpk-spacing-sm;
+    margin-bottom: bpk-spacing-base();
 
     &--desktop-only {
       @include bpk-breakpoint-tablet {

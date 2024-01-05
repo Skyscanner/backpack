@@ -66,7 +66,6 @@ const BpkTooltip = ({
       appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
       transitionTimeout={200}
     >
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <section
         id={id}
         tabIndex={-1}

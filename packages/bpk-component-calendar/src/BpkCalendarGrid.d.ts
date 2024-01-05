@@ -32,14 +32,23 @@ type DefaultProps = {
     onDateClick: () => void;
     onDateKeyDown: () => void;
     preventKeyboardFocus: boolean;
+    /**
+     * An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
+     */
     selectionConfiguration: SelectionConfiguration;
     ignoreOutsideDate: boolean;
     dateProps: {};
 };
 export type Props = DefaultProps & {
     DateComponent: ElementType;
+    /**
+     * A function to format a full, human-readable date, for example: "Monday, 8th January 2018".
+     */
     formatDateFull: (date: Date) => Date | string;
     month: Date;
+    /**
+     * First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
+     */
     weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 };
 type State = {
@@ -53,8 +62,14 @@ declare class BpkCalendarGrid extends Component<Props, State> {
 }
 declare const BpkCalendarGridWithTransition: typeof BpkCalendarGrid | ((props: Omit<DefaultProps & {
     DateComponent: ElementType;
+    /**
+     * A function to format a full, human-readable date, for example: "Monday, 8th January 2018".
+     */
     formatDateFull: (date: Date) => Date | string;
     month: Date;
+    /**
+     * First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
+     */
     weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 } & {
     TransitionComponent: ElementType<any>;

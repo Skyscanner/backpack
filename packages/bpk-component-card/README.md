@@ -72,32 +72,4 @@ export default () => (
 
 ## Props
 
-### BpkCard
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| className | string   | false    | null          |
-| href      | string   | false    | null          |
-| atomic    | bool     | false    | true          |
-| padded    | bool     | false    | true          |
-
-### BpkDividedCard
-
-| Property         | PropType                                            | Required | Default Value          |
-| ---------------- | --------------------------------------------------- | -------- | ---------------------- |
-| primaryContent   | node                                                | true     | -                      |
-| secondaryContent | node                                                | true     | -                      |
-| orientation      | oneOf(ORIENTATION.horizontal, ORIENTATION.vertical) | false    | ORIENTATION.horizontal |
-| href             | string                                              | false    | null                   |
-| className        | string                                              | false    | null                   |
-| isElevated       | bool                                                | false    | true                   |
-
-### BpkCardWrapper
-
-| Property        | PropType | Required | Default Value |
-| --------------- | -------- | -------- | ------------- |
-| backgroundColor | string   | true     | null          |
-| card            | node     | true     | -             |
-| header          | node     | true     | -             |
-| className       | string   | false    | null          |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/card/web-h8uWtPZZ#section-props-64).

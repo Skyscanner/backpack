@@ -22,10 +22,19 @@ export default () => (
 );
 ```
 
+### Server Side Render (SSR) Support
+
+You can pass `matchSSR` which will instruct the breakpoint to match any time it is rendered on the server.
+
+```js
+<BpkBreakpoint query={BREAKPOINTS.TABLET} matchSSR>
+  <span>Tablet viewport is active OR we are rendering on the server-side</span>
+</BpkBreakpoint>
+<BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+  <span>Mobile viewport is active AND we are rendering on the client-side</span>
+</BpkBreakpoint>
+```
+
 ## Props
 
-| Property  | PropType               | Required | Default Value |
-| --------- | ---------------------- | -------- | ------------- |
-| children  | oneOfType(node, func)  | true     | -             |
-| query     | oneOf(BREAKPOINTS)     | true     | -             |
-| legacy    | bool                   | false    | false         |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/breakpoint/web-5sPWfgsH#section-props-32).

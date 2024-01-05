@@ -33,7 +33,10 @@ export type Props = {
     title?: string | null;
     closeLabel?: string;
     closeText?: string | null;
+    /**
+     * The accessory view allows for icons and actions to be placed in front of the main title inside the modal header. To be used with `BpkNavigationBarButtonLink`
+     */
     accessoryView?: ReactNode;
 };
-declare const BpkModalInner: ({ isIphone, id, dialogRef, children, title, onClose, className, contentClassName, closeLabel, closeText, wide, showHeader, fullScreenOnMobile, fullScreen, padded, accessoryView, }: Props) => JSX.Element;
+declare const BpkModalInner: ({ accessoryView, children, className, closeLabel, closeText, contentClassName, dialogRef, fullScreen, fullScreenOnMobile, id, isIphone, onClose, padded, showHeader, title, wide, }: Props) => JSX.Element;
 export default BpkModalInner;

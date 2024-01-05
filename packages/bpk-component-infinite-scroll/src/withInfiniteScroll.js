@@ -42,7 +42,13 @@ type ScrollFinishedEvent = {
 
 export type Props = {
   dataSource: DataSource<any>,
+  /**
+   * How many more elements to load every time the user reaches the bottom of the list.
+   */
   elementsPerScroll: number,
+  /**
+   * How many more elements to load every time the user reaches the bottom of the list.
+   */
   initiallyLoadedElements: number,
   loaderIntersectionTrigger: ?('small' | 'half' | 'full'),
   onScroll: ?(o: ScrollEvent) => void,
@@ -51,6 +57,9 @@ export type Props = {
   renderSeeMoreComponent: ?({
     onSeeMoreClick: (event: SyntheticEvent<any>) => mixed,
   }) => Element<any>,
+  /**
+   * `seeMoreAfter` is how many scrolls should happen before a 'See more' button is displayed. This only happens once.
+   */
   seeMoreAfter: ?number,
 };
 
@@ -94,11 +103,8 @@ const withInfiniteScroll = <T: ExtendedProps>(
   ComponentToExtend: AbstractComponent<T>,
 ): AbstractComponent<PropsWithDefault & $Diff<T, ExtendedProps>> =>
   class WithInfiniteScroll extends Component<Props, State> {
-    handleIntersection: IntersectionObserverCallback;
 
     handleKeyPress: (e: SyntheticKeyboardEvent<HTMLButtonElement>) => void;
-
-    handleSeeMoreClick: (e: SyntheticEvent<HTMLButtonElement>) => void;
 
     observer: IntersectionObserver;
 
@@ -247,7 +253,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
       return Promise.resolve();
     };
 
-    handleSeeMoreClick = () => {
+    handleSeeMoreClick = (): void => {
       this.fetchItems().then((newState) => {
         this.setState(newState);
       });

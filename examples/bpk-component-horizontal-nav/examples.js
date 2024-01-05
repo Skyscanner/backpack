@@ -18,15 +18,13 @@
 
 import { Fragment } from 'react';
 import {
-  spacingXs,
-  spacingSm,
   onePixelRem,
   colorSkyGrayTint06,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 import BpkText from '../../packages/bpk-component-text';
-import { BpkDarkExampleWrapper } from '../../packages/bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
   HORIZONTAL_NAV_TYPES,
@@ -39,7 +37,7 @@ const getClassName = cssModules(STYLES);
 const Separator = () => (
   <span
     style={{
-      padding: `${spacingXs} ${spacingSm}`,
+      padding: '.25rem .25rem',
     }}
   >
     <span

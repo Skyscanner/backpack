@@ -44,4 +44,20 @@ describe('BpkSelectableChip accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have programmatically-detectable accessibility issues when role=tab', async () => {
+    const { container } = render(
+      <div role="tablist">
+        <BpkSelectableChip
+          onClick={() => null}
+          accessibilityLabel="Tab"
+          role="tab"
+        >
+          Toggle me
+        </BpkSelectableChip>
+      </div>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

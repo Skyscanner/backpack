@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-button-story-wrapper{padding:.375rem 0}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-button-story-wrapper{padding:0.25rem 0}

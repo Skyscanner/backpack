@@ -15,7 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
+import BpkRating from '../../packages/bpk-component-rating/src/BpkRating';
 
 import {
   DefaultExample,
@@ -29,6 +30,7 @@ import {
 
 export default {
   title: 'bpk-component-rating',
+  component: BpkRating,
 };
 
 export const Default = DefaultExample;
@@ -42,3 +44,7 @@ export const SubtitleOnlyRatings = SubtitleOnlyExample;
 export const ZeroToTenScaleRatings = ZeroToTenScaleExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

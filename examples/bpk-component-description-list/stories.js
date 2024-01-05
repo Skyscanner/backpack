@@ -16,11 +16,21 @@
  * limitations under the License.
  */
 
+import { BpkDescriptionList, BpkDescriptionDetailsMock, BpkDescriptionTermMock } from './stories-utils'; 
 import DefaultExample from './examples';
 
 export default {
   title: 'bpk-component-description-list',
+  component: BpkDescriptionList,
+  subcomponents: {
+    BpkDescriptionTerm: BpkDescriptionTermMock,
+    BpkDescriptionDetails: BpkDescriptionDetailsMock,
+  },
 };
 
 export const DescriptionList = DefaultExample;
 export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

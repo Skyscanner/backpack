@@ -71,68 +71,6 @@ class App extends Component {
 }
 ```
 
-> **Theming:** In order to theme the modal, a `renderTarget` needs to be supplied as a function which returns a DOM node
-  in the scope of a `BpkThemeProvider`.
-
 ## Props
 
-| Property              | PropType                                  | Required | Default Value |
-| --------------------- | ----------------------------------------- | -------- | ------------- |
-| children              | node                                      | true     | -             |
-| closeButtonText       | string                                    | true     | -             |
-| id                    | string                                    | true     | -             |
-| isOpen                | bool                                      | true     | -             |
-| label                 | string                                    | true     | -             |
-| onClose               | func                                      | true     | -             |
-| target                | element or func                           | true     | -             |
-| closeButtonIcon       | bool                                      | false    | true          |
-| closeButtonProps      | object                                    | false    | null          |
-| labelAsTitle          | bool                                      | false    | false         |
-| padded                | bool                                      | false    | true          |
-| placement             | oneOf(['top', 'right', 'bottom', 'left']) | false    | 'bottom'      |
-| popperModifiers       | arrayOf(object)                           | false    | null          |
-| portalClassName       | string                                    | false    | null          |
-| portalStyle           | object                                    | false    | null          |
-| renderTarget          | func                                      | false    | null          |
-
-In order to attach the popover to a regular DOM element, provide a function which returns it to `target`:
-
-```js
-<BpkPopover
-  id="my-popover"
-  target={() => document.getElementById('mydiv')}
-  onClose={this.closePopover}
-  isOpen={this.state.isOpen}
-  label="My popover"
-  closeButtonText="Close"
->
-  <BpkText>My popover content</BpkText>
-</BpkPopover>
-```
-
-### Prop Details
-
-#### onClose
-
-```js
-const onClose = (event, {
-  source: <string>, // One of `DOCUMENT_CLICK`, `CLOSE_BUTTON`, `CLOSE_LINK`, `ESCAPE`
-}) => {
-  ...
-}
-```
-
-#### popperModifiers
-
-Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the popover to overflow the viewport etc.
-
-#### target
-
-`target` can be a DOM element with a `ref` attached to it or a function that returns a DOM element.
-
-## Theme Props
-
-* `linkColor`
-* `linkHoverColor`
-* `linkActiveColor`
-* `linkVisitedColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/popover/web-ViBRNHX6#section-props-e0).

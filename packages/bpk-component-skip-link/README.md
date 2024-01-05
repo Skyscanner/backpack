@@ -16,12 +16,4 @@ export default () => <BpkSkipLink href="#main" label="Skip to main content" />;
 
 ## Props
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| className | string   | false    | null          |
-| label     | string   | true     | -             |
-| href      | string   | true     | -             |
-
-## Theme Props
-
-- `skipLinkBackgroundColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/skip-link/web-xYpbV1AB#section-props-19).

@@ -26,6 +26,10 @@ const defaultProps = {
   icon: null,
 };
 
+/**
+ * @deprecated use bpk-component-info-banner instead
+ * @returns {Component} a banner alert component
+ */
 const BpkBannerAlert = ({
   animateOnEnter = false,
   animateOnLeave = false,

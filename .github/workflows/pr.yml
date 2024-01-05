@@ -20,15 +20,15 @@ jobs:
   Create-NPM-Cache:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Upload to Cache
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v3.3.2
         id: npm-cache
         with:
           path: |
@@ -44,15 +44,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Create-NPM-Cache]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore NPM Cache
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v3.3.2
         id: npm-cache
         with:
           path: |
@@ -61,7 +61,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
       
       - name: Upload dist-storybook to Cache
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v3.3.2
         id: storybook-dist-cache
         with:
           path: |
@@ -87,15 +87,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Create-NPM-Cache, Create-Build-Cache]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version-file: ".nvmrc"
         registry-url: 'https://registry.npmjs.org'
 
     - name: Restore npm Cache
-      uses: actions/cache/restore@v3.3.1
+      uses: actions/cache/restore@v3.3.2
       id: npm-cache
       with:
         path: |
@@ -104,7 +104,7 @@ jobs:
         key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
 
     - name: Restore Cache
-      uses: actions/cache/restore@v3.3.1
+      uses: actions/cache/restore@v3.3.2
       id: storybook-dist-cache
       with:
         path: dist-storybook/
@@ -130,7 +130,7 @@ jobs:
         publish_branch: main
 
     - name: Link to the pull request build
-      uses: actions/github-script@v6
+      uses: actions/github-script@v7
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
       with:
         script: |

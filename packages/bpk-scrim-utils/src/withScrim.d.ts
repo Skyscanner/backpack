@@ -17,7 +17,7 @@
  */
 
 import type { ComponentType } from 'react';
-type Props = {
+export type Props = {
     getApplicationElement: () => HTMLElement | null;
     onClose?: () => void | null;
     isIphone?: boolean;

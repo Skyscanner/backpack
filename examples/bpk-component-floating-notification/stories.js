@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkFloatingNotification from '../../packages/bpk-component-floating-notification/src/BpkFloatingNotification';
+
 import {
   CtaIconLongTextExample,
   CtaExample,
@@ -26,6 +28,7 @@ import {
 
 export default {
   title: 'bpk-component-floating-notification',
+  component: BpkFloatingNotification,
 };
 
 export const Default = DefaultExample;
@@ -36,3 +39,7 @@ export const WithCta = CtaExample;
 export const WithCtaIconAndLongText = CtaIconLongTextExample;
 
 export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

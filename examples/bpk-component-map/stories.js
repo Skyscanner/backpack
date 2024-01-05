@@ -15,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
+import BpkMap from '../../packages/bpk-component-map/src/BpkMap';
+import BpkIconMarker from '../../packages/bpk-component-map/src/BpkIconMarker';
+import { BpkPriceMarkerV2 } from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarker';
+import BpkPriceMarker from '../../packages/bpk-component-map/src/BpkPriceMarker';
+import BpkOverlayView from '../../packages/bpk-component-map/src/BpkOverlayView';
+
+import WithGoogleMapsScriptMock from './stories-utils';
 import {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -27,11 +33,21 @@ import {
   WithAMarkerExample,
   WithIconMarkersExample,
   WithPriceMarkersExample,
+  WithPriceMarkersV2Example,
+  WithIconPriceMarkersV2Example,
   MultipleMapsExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-map',
+  component: BpkMap,
+  subcomponents: {
+    BpkIconMarker,
+    BpkPriceMarker,
+    BpkPriceMarkerV2,
+    BpkOverlayView,
+    withGoogleMapsScript: WithGoogleMapsScriptMock
+  },
 };
 
 export const Simple = SimpleExample;
@@ -52,5 +68,9 @@ export const WithAMarker = WithAMarkerExample;
 export const IconMarkers = WithIconMarkersExample;
 
 export const PriceMarkers = WithPriceMarkersExample;
+
+export const PriceMarkersV2 = WithPriceMarkersV2Example;
+
+export const WithIconPriceMarkersV2 = WithIconPriceMarkersV2Example;
 
 export const MultiMaps = MultipleMapsExample;

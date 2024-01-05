@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkDatepicker from '../../packages/bpk-component-datepicker/src/BpkDatepicker';
+
 import {
   DefaultExample,
   RangeExample,
@@ -33,6 +35,7 @@ import {
 
 export default {
   title: 'bpk-component-datepicker',
+  component: BpkDatepicker,
 };
 
 export const Default = DefaultExample;
@@ -55,3 +58,13 @@ export const RangeWithMultipleInputs = MultipleRangeInputExample;
 export const VisualTest = DefaultVisualExample;
 
 export const VisualTestRange = VisualRangeExample;
+
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
+
+export const VisualTestRangeWithZoom = VisualTestRange.bind({});
+VisualTestRangeWithZoom.args = {
+  zoomEnabled: true
+};

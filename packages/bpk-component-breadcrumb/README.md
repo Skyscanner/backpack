@@ -36,21 +36,4 @@ to the component to improve the SEO of the component through the `schemaMetaData
 
 ## Props
 
-### BpkBreadcrumb
-
-| Property           | PropType                             | Required | Default Value |
-| ------------------ | ------------------------------------ | -------- | ------------- |
-| children           | node                                 | true     | -             |
-| label              | string                               | true     | -             |
-| schemaMetaData     | array({url: string, label: string})  | false    | null          |
-
-
-
-### BpkBreadcrumbItem
-
-| Property           | PropType                   | Required | Default Value |
-| ------------------ | -------------------------- | -------- | ------------- |
-| children           | node                       | true     | -             |
-| href               | string                     | false    | null          |
-| active             | bool                       | false    | false         |
-| linkProps          | object                     | false    | null          |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/breadcrumb/web-rxEpDVCn#section-props-2d).

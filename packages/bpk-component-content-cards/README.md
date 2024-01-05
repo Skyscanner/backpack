@@ -31,7 +31,4 @@ export default () => <BpkContentCards />;
 
 ## Props
 
-| Property                                                                                                         | PropType                                                                                                           | Required                                                                                               | Default Value |
-| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------- |
-| heading                                                                                                          | string                                                                                                             | true                                                                                                   |               |
-| cards <ul><li>image</li><ul><li>url</li><li>alt</li></ul><li>headline</li><li>description</li><li>href</li></ul> | Array <ul><li>Object</li><ul><li>string</li><li>string</li></ul><li>string</li><li>string</li><li>string</li></ul> | true <ul><li>true</li><ul><li>true</li><li>false</li></ul><li>true</li><li>true</li><li>true</li></ul> | ""            |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/content-cards/web-n7qSZpec#section-props-87).

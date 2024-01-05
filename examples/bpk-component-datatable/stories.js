@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkDataTable from '../../packages/bpk-component-datatable/src/BpkDataTable';
+
 import {
   AutowidthExample,
   NonHoverRowsExample,
@@ -24,10 +26,12 @@ import {
   CustomRowAndHeaderHeightsExample,
   HeaderRendererExample,
   CustomSortingExample,
+  WithColumnArrayExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-datatable',
+  component: BpkDataTable,
 };
 
 export const Autowidth = AutowidthExample;
@@ -41,4 +45,10 @@ export const CustomSorting = CustomSortingExample;
 
 export const CustomHeaderData = HeaderRendererExample;
 
+export const WithColumnArray = WithColumnArrayExample;
+
 export const VisualTest = AutowidthExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, SyntheticEvent } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 
 export const BUTTON_TYPES = {
   primary: 'primary',
@@ -45,7 +45,7 @@ export type Props = {
   className?: string | null;
   disabled?: boolean;
   iconOnly?: boolean;
-  onClick?: (event: SyntheticEvent) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement & HTMLAnchorElement>) => void;
   rel?: string | undefined;
   submit?: boolean;
   href?: string | null;

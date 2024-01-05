@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../../bpk-mixins/index.scss';
 
 @mixin header {
   display: flex;
@@ -49,10 +49,6 @@
 .bpk-modal-wrapper.bpk-modal-polyfill {
   .bpk-modal-backdrop {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     z-index: 0;
     margin: 0 auto;
     background-color: $bpk-scrim-day;
@@ -80,9 +76,12 @@
 }
 
 .bpk-modal {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: 100%;
   padding: 0;
   border: none;
-  border-radius: $bpk-border-radius-md;
   background: $bpk-modal-background-color;
   overflow-y: scroll;
   scrollbar-width: none;
@@ -94,6 +93,7 @@
     max-width: none;
     height: fit-content;
     max-height: 90%;
+    border-radius: $bpk-border-radius-md;
 
     &--full-screen-desktop {
       width: 100%;
@@ -104,6 +104,7 @@
 
     &--wide {
       width: $bpk-modal-wide-max-width;
+      max-width: 100%;
     }
   }
 
@@ -139,7 +140,6 @@
 
   &__header-title {
     padding: bpk-spacing-base();
-    border-block-end: $bpk-input-border;
 
     @include header;
   }

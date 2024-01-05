@@ -16,12 +16,20 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkSpinner from '../../packages/bpk-component-spinner/src/BpkSpinner';
+import BpkLargeSpinner from '../../packages/bpk-component-spinner/src/BpkLargeSpinner';
+import BpkExtraLargeSpinner from '../../packages/bpk-component-spinner/src/BpkExtraLargeSpinner';
 
 import { SmallExample, LargeExample, ExtraLargeExample } from './examples';
 
 export default {
   title: 'bpk-component-spinner',
+  component: BpkSpinner,
+  subcomponents: {
+    BpkLargeSpinner,
+    BpkExtraLargeSpinner,
+  },
 };
 
 export const Small = SmallExample;

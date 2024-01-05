@@ -22,10 +22,4 @@ export default () => (
 
 ## Props
 
-| Property     | PropType             | Required  | Default Value    |
-| ------------ | -------------------- | --------- | ---------------- |
-| id           | string               | true      | -                |
-| name         | string               | true      | -                |
-| value        | string               | true      | -                |
-| valid        | bool                 | false     | null             |
-| large        | bool                 | false     | false            |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/text-input/web-nRg9O75F#section-textarea-props-5a).

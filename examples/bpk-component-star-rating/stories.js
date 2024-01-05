@@ -16,8 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
+import BpkStarRating from '../../packages/bpk-component-star-rating/src/BpkStarRating';
+import { BpkStarNonRtl } from '../../packages/bpk-component-star-rating/src/BpkStar';
+import BpkInteractiveStarRating from '../../packages/bpk-component-star-rating/src/BpkInteractiveStarRating';
+import BpkInteractiveStar from '../../packages/bpk-component-star-rating/src/BpkInteractiveStar';
+
+import WithInteractiveStarRatingStateMock from './stories-utils';
 import {
   FullExample,
   FullStarsExample,
@@ -34,6 +39,13 @@ import {
 
 export default {
   title: 'bpk-component-star-rating',
+  component: BpkStarRating,
+  subcomponents: {
+    BpkStar: BpkStarNonRtl,
+    BpkInteractiveStarRating,
+    BpkInteractiveStar,
+    withInteractiveStarRatingState: WithInteractiveStarRatingStateMock
+  },
 };
 
 export const BpkStarExamples = FullExample;
@@ -53,3 +65,7 @@ export const ThreePointEightStarsRounded = ThreePointEightStarsRoundedExample;
 
 export const Interactive = InteractiveExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

@@ -33,33 +33,4 @@ const App = () => (
 
 ## Props
 
-| Property              | PropType                                       | Required | Default Value       |
-| --------------------- | ---------------------------------------------- | -------- | ------------------- |
-| ariaLabel             | string                                         | true     | -                   |
-| id                    | string                                         | true     | -                   |
-| children              | node                                           | true     | -                   |
-| target                | node                                           | true     | -                   |
-| hideOnTouchDevices    | bool                                           | false    | true                |
-| placement             | oneOf(['top', 'right', 'bottom', 'left'])      | false    | 'bottom'            |
-| padded                | bool                                           | false    | true                |
-| portalStyle           | object                                         | false    | null                |
-| portalClassName       | string                                         | false    | null                |
-| popperModifiers       | arrayOf(object)                                | false    | null                |
-| renderTarget          | func                                           | false    | null                |
-| type                  | oneOf(`TOOLTIP_TYPES.light`, `TOOLTIP_TYPES.dark`) | false    | `TOOLTIP_TYPES.light` |
-
-### Prop Details
-
-#### `ariaLabel`
-
-Tooltips are invisible to assistive technologies such as screen readers. To improve accessibility, `ariaLabel` is required to describe the content of the tooltip to assistive technologies.
-
-The label will be used on the `target` element, so any existing `aria-label` attached to `target` will be overridden.
-
-#### `popperModifiers`
-
-Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the tooltip to overflow the viewport etc.
-
-#### target
-
-`target` should be a DOM element with a `ref` attached to it.
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/tooltip/web-drGKsdVv#section-props-7a).

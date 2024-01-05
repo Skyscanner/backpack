@@ -15,13 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@import '~bpk-mixins/index.scss';
-
-$bpk-spacing-v2: true;
+@import '../../bpk-mixins/index.scss';
 
 .bpk-content-card {
   &--link {
     color: inherit;
+    /* stylelint-disable backpack/use-typography-styles */
     font: inherit;
     text-decoration: inherit;
   }

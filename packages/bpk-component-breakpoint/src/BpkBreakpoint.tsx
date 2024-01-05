@@ -17,37 +17,62 @@
  */
 
 import type { ReactNode } from 'react';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import MediaQuery from 'react-responsive';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import TOKENS from '@skyscanner/bpk-foundations-web/tokens/base.common';
+import { breakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const BREAKPOINTS = {
-  SMALL_MOBILE: TOKENS.breakpointQuerySmallMobile,
-  MOBILE: TOKENS.breakpointQueryMobile,
-  SMALL_TABLET: TOKENS.breakpointQuerySmallTablet,
-  SMALL_TABLET_ONLY: TOKENS.breakpointQuerySmallTabletOnly,
-  TABLET: TOKENS.breakpointQueryTablet,
-  TABLET_ONLY: TOKENS.breakpointQueryTabletOnly,
-  ABOVE_MOBILE: TOKENS.breakpointQueryAboveMobile,
-  ABOVE_TABLET: TOKENS.breakpointQueryAboveTablet,
-  ABOVE_DESKTOP: TOKENS.breakpointQueryAboveDesktop,
-  DESKTOP_ONLY: TOKENS.breakpointQueryDesktopOnly,
+  SMALL_MOBILE: breakpoints.breakpointQuerySmallMobile,
+  MOBILE: breakpoints.breakpointQueryMobile,
+  SMALL_TABLET: breakpoints.breakpointQuerySmallTablet,
+  SMALL_TABLET_ONLY: breakpoints.breakpointQuerySmallTabletOnly,
+  TABLET: breakpoints.breakpointQueryTablet,
+  TABLET_ONLY: breakpoints.breakpointQueryTabletOnly,
+  ABOVE_MOBILE: breakpoints.breakpointQueryAboveMobile,
+  ABOVE_TABLET: breakpoints.breakpointQueryAboveTablet,
+  ABOVE_DESKTOP: breakpoints.breakpointQueryAboveDesktop,
+  DESKTOP_ONLY: breakpoints.breakpointQueryDesktopOnly,
 } as const;
 
 type Props = {
+  /**
+   * The content to render when the breakpoint matches.
+   */
   children: ReactNode | ((matches: boolean) => ReactNode | null);
   query: string | (typeof BREAKPOINTS)[keyof typeof BREAKPOINTS];
   legacy?: boolean;
+  matchSSR?: boolean;
 };
 
-const BpkBreakpoint = ({ children, legacy = false, query }: Props) => {
+const BpkBreakpoint = ({
+  children,
+  legacy = false,
+  matchSSR = false,
+  query,
+}: Props) => {
+  const isSSR = () =>
+    !(
+      typeof window !== 'undefined' &&
+      window.document &&
+      window.document.createElement
+    );
+
   if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
     console.warn(
       `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
     );
   }
-  return <MediaQuery query={query}>{children}</MediaQuery>;
+
+  if (!isSSR()) {
+    return <MediaQuery query={query}>{children}</MediaQuery>;
+  }
+
+  // Below code is executed when running in SSR mode
+
+  if (typeof children === 'function') {
+    return children(matchSSR);
+  }
+  return matchSSR ? children : null;
 };
 
 export { BREAKPOINTS };

@@ -18,7 +18,7 @@
 import addMonths from 'date-fns/addMonths';
 import startOfDay from 'date-fns/startOfDay';
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import BpkText from '../../packages/bpk-component-text';
 import {
   BpkCalendarGrid,
@@ -42,6 +42,9 @@ import {
   weekDays,
 } from './test-utils';
 import CalendarContainer, { MonthViewCalendar } from './examples-components';
+
+/* eslint-disable-next-line react/prop-types */
+const DummyDateComponent = ({ date }) => <div>{date.toString()}</div>;
 
 const CalendarNavExample = () => (
   <BpkCalendarNav
@@ -241,9 +244,6 @@ const CustomComposedCalendarExample = () => (
 );
 
 const WeekExample = () => {
-  // eslint-disable-next-line react/prop-types
-  const DummyDateComponent = ({ date }) => <div>{date.toString()}</div>;
-
   const weekProps = {
     ...Week.defaultProps,
     DateComponent: DummyDateComponent,

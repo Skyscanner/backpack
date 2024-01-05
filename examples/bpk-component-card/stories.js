@@ -15,7 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
+import BpkCard from '../../packages/bpk-component-card/src/BpkCard';
+import BpkDividedCard from '../../packages/bpk-component-card/src/BpkDividedCard';
+import BpkCardWrapper from '../../packages/bpk-component-card/src/BpkCardWrapper';
 
 import {
   DefaultExample,
@@ -35,6 +38,11 @@ import {
 
 export default {
   title: 'bpk-component-card',
+  component: BpkCard,
+  subcomponents: {
+    BpkDividedCard,
+    BpkCardWrapper,
+  },
 };
 
 export const Default = DefaultExample;
@@ -56,3 +64,7 @@ export const DividedCardWrapper = DividedCardWrapperExample;
 export const WithClassNameWrapper = WithClassNameWrapperExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

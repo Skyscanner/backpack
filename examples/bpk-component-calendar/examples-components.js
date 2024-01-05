@@ -30,7 +30,7 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkButton from '../../packages/bpk-component-button';
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import {
   withButtonAlignment,
   withRtlSupport,
@@ -55,10 +55,12 @@ import { formatMonth, formatDateFull, weekDays } from './test-utils';
 
 const LeftIcon = withButtonAlignment(withRtlSupport(SmallLongArrowLeftIcon));
 const RightIcon = withButtonAlignment(withRtlSupport(SmallLongArrowRightIcon));
-const withDirection = (Nav, direction) => (props) =>
-  <Nav {...props} direction={direction} />;
-const withPrices = (DateComponent, prices) => (props) =>
-  <DateComponent {...props} prices={prices} />;
+const withDirection = (Nav, direction) => (props) => (
+  <Nav {...props} direction={direction} />
+);
+const withPrices = (DateComponent, prices) => (props) => (
+  <DateComponent {...props} prices={prices} />
+);
 
 const prices = [
   125, 56, 75, 57, 78, 92, 133, 90, 148, 80, 122, 67, 70, 123, 77, 66, 64, 56,

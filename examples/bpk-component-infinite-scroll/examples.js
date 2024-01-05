@@ -20,7 +20,7 @@
 
 import PropTypes from 'prop-types';
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import BpkButton from '../../packages/bpk-component-button';
 import { BpkList, BpkListItem } from '../../packages/bpk-component-list';
 import {

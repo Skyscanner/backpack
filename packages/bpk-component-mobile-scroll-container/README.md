@@ -39,15 +39,15 @@ export default () => (
 
 *`MyComponent.scss`:*
 ```scss
-@import '~bpk-mixins/index.scss';
+@import '~@skyscanner/backpack-web/bpk-mixins/index.scss';
 
 .my-component {
   display: flex;
 
   &__item {
     display: flex;
-    min-width: $bpk-spacing-xxl * 5;
-    height: $bpk-spacing-xxl * 5;
+    min-width: bpk-spacing-xxl() * 5;
+    height: bpk-spacing-xxl() * 5;
     justify-content: center;
     align-items: center;
     background-color: $bpk-color-sky-gray-tint-07;
@@ -61,11 +61,4 @@ export default () => (
 
 ## Props
 
-| Property                    | PropType | Required | Default Value |
-| --------------------------- | -------- | -------- | ------------- |
-| children                    | node     | true     | -             |
-| className                   | string   | false    | null          |
-| leadingIndicatorClassName   | string   | false    | null          |
-| scrollerRef                 | func     | false    | null          |
-| trailingIndicatorClassName  | string   | false    | null          |
-| showScrollbar               | bool     | false    | false         |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/mobile-scroll-container/web-4MvMmFv1#section-props-7c).

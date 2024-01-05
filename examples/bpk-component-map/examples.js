@@ -21,18 +21,20 @@ import { Component } from 'react';
 import type { Node } from 'react';
 import PropTypes from 'prop-types';
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import BpkText from '../../packages/bpk-component-text';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import LandmarkIconSm from '../../packages/bpk-component-icon/sm/landmark';
+import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
 import FoodIconSm from '../../packages/bpk-component-icon/sm/food';
-import ParkingIconSm from '../../packages/bpk-component-icon/sm/parking';
 import HotelIconSm from '../../packages/bpk-component-icon/sm/hotels';
 import BpkMap, {
   BpkOverlayView,
   BpkIconMarker,
   BpkPriceMarker,
+  BpkPriceMarkerV2,
   PRICE_MARKER_STATUSES,
+  MARKER_STATUSES,
   withGoogleMapsScript,
 } from '../../packages/bpk-component-map';
 
@@ -40,8 +42,8 @@ const BpkMapWithLoading = withGoogleMapsScript(BpkMap);
 
 const AlignedHotelIconSm = withRtlSupport(HotelIconSm);
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
+const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
-const AlignedParkingIconSm = withRtlSupport(ParkingIconSm);
 
 type Props = { children: ?Node, language: string };
 
@@ -74,8 +76,8 @@ const venues = [
     latitude: 55.9469995,
     longitude: -3.1905666,
     price: '£48',
-    disabled: false,
     icon: <AlignedLandmarkIconSm />,
+    airportsIcon: <AlignedAirportsIconSm />,
   },
   {
     id: '2',
@@ -83,8 +85,8 @@ const venues = [
     latitude: 55.9439643,
     longitude: -3.1938768,
     price: '£151',
-    disabled: false,
     icon: <AlignedFoodIconSm />,
+    airportsIcon: <AlignedAirportsIconSm />,
   },
   {
     id: '3',
@@ -92,8 +94,8 @@ const venues = [
     latitude: 55.9432205,
     longitude: -3.1955874,
     price: '£62',
-    disabled: false,
     icon: <AlignedHotelIconSm />,
+    airportsIcon: <AlignedAirportsIconSm />,
   },
   {
     id: '4',
@@ -101,17 +103,8 @@ const venues = [
     latitude: 55.9450573,
     longitude: -3.1996687,
     price: '£342',
-    disabled: false,
     icon: <AlignedHotelIconSm />,
-  },
-  {
-    id: '5',
-    name: 'Kolkata Springs Hotel',
-    latitude: 55.943621,
-    longitude: -3.192098,
-    price: 'Sold out',
-    disabled: true,
-    icon: <AlignedParkingIconSm />,
+    airportsIcon: <AlignedAirportsIconSm />,
   },
 ];
 
@@ -177,6 +170,71 @@ class StatefulBpkPriceMarker extends Component<
   }
 }
 
+class StatefulBpkPriceMarkerV2 extends Component<
+  { action: () => mixed, airportsIconWithPrice: boolean },
+  PriceMarkerState,
+> {
+  static defaultProps = {
+    action: () => null,
+  };
+
+  constructor(props: { action: () => mixed, airportsIconWithPrice: boolean }) {
+    super(props);
+    this.state = {
+      selectedId: '2',
+      viewedVenues: ['1'],
+    };
+  }
+
+  getStatus = (id: string) => {
+    if (this.state.selectedId === id) {
+      return MARKER_STATUSES.selected;
+    }
+    if (this.state.viewedVenues.includes(id)) {
+      return MARKER_STATUSES.previous_selected;
+    }
+    return MARKER_STATUSES.unselected;
+  };
+
+  selectVenue = (id: string) => {
+    this.setState((prevState) => ({
+      selectedId: id,
+      viewedVenues: [...prevState.viewedVenues, id],
+    }));
+  };
+
+  render() {
+    return (
+      <StoryMap
+        zoom={15}
+        center={{ latitude: 55.944665, longitude: -3.1964903 }}
+      >
+        {venues
+          .filter((venue) => venue.disabled === false)
+          .map((venue) => (
+            <BpkPriceMarkerV2
+              id={venue.id}
+              label={venue.price}
+              icon={
+                this.props.airportsIconWithPrice ? venue.airportsIcon : null
+              }
+              position={{
+                latitude: venue.latitude,
+                longitude: venue.longitude,
+              }}
+              onClick={() => {
+                this.props.action();
+                this.selectVenue(venue.id);
+              }}
+              status={this.getStatus(venue.id)}
+              accessibilityLabel="Click the price marker"
+            />
+          ))}
+      </StoryMap>
+    );
+  }
+}
+
 class StatefulBpkIconMarker extends Component<
   { action: () => mixed },
   { selectedId: string },
@@ -204,13 +262,13 @@ class StatefulBpkIconMarker extends Component<
       >
         {venues.map((venue) => (
           <BpkIconMarker
+            key={venue.id}
             position={{ latitude: venue.latitude, longitude: venue.longitude }}
             onClick={() => {
               this.props.action();
               this.selectVenue(venue.id);
             }}
             icon={venue.icon}
-            disabled={venue.disabled}
             selected={this.state.selectedId === venue.id}
           />
         ))}
@@ -290,6 +348,20 @@ const WithPriceMarkersExample = () => (
   <StatefulBpkPriceMarker action={action('Price marker clicked')} />
 );
 
+const WithPriceMarkersV2Example = () => (
+  <StatefulBpkPriceMarkerV2
+    action={action('Price marker clicked')}
+    airportsIconWithPrice={false}
+  />
+);
+
+const WithIconPriceMarkersV2Example = () => (
+  <StatefulBpkPriceMarkerV2
+    action={action('Price marker clicked')}
+    airportsIconWithPrice
+  />
+);
+
 const MultipleMapsExample = () => (
   <>
     <span>first map:</span>
@@ -305,6 +377,13 @@ const MultipleMapsExample = () => (
   </>
 );
 
+const VisualTestExample = () => (
+  <>
+    <WithPriceMarkersV2Example />
+    <WithIconPriceMarkersV2Example />
+  </>
+);
+
 export {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -315,5 +394,8 @@ export {
   WithAMarkerExample,
   WithIconMarkersExample,
   WithPriceMarkersExample,
+  WithPriceMarkersV2Example,
+  WithIconPriceMarkersV2Example,
   MultipleMapsExample,
+  VisualTestExample,
 };

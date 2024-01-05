@@ -23,7 +23,6 @@ import debounce from 'lodash.debounce';
 import { Component } from 'react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import {
-  spacingXs,
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -48,7 +47,7 @@ import STYLES from './BpkBarchart.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const spacing = remToPx(spacingXs);
+const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
 const getMaxYValue = (
@@ -304,10 +303,26 @@ class BpkBarchart extends Component<Props, State> {
 }
 
 BpkBarchart.propTypes = {
-  data: dataProp, // eslint-disable-line react/require-default-props
+  /**
+   * **Required**
+   * An array of data points with a value for the x axis and y axis respectively.
+   * The keys for the x axis and y axis can be anything you choose.
+   * Specify the keys with the props `xScaleDataKey` and `yScaleDataKey`.
+   */
+  data: dataProp,
+  /**
+   * The key in each data point that holds the value for the x axis of that data point.
+   */
   xScaleDataKey: PropTypes.string.isRequired,
+  /**
+   * The key in each data point that holds the value for the y axis of that data point.
+   */
   yScaleDataKey: PropTypes.string.isRequired,
   xAxisLabel: PropTypes.string.isRequired,
+  /**
+   * Override the default y axis domain.  This is an array with two elements, the lower and upper domain.
+   * If either value is set to `null` the default value is used instead.
+   */
   yAxisLabel: PropTypes.string.isRequired,
   initialWidth: PropTypes.number.isRequired,
   initialHeight: PropTypes.number.isRequired,
@@ -315,6 +330,9 @@ BpkBarchart.propTypes = {
   className: PropTypes.string,
   leadingScrollIndicatorClassName: PropTypes.string,
   trailingScrollIndicatorClassName: PropTypes.string,
+  /**
+   * Values that are `outlierPercentage` percent above the mean of the whole dataset are considered outliers and rendered cut off instead of at their full height.
+   */
   outlierPercentage: PropTypes.number,
   showGridlines: PropTypes.bool,
   xAxisMargin: PropTypes.number,
@@ -329,6 +347,9 @@ BpkBarchart.propTypes = {
   onBarHover: PropTypes.func,
   onBarFocus: PropTypes.func,
   getBarLabel: PropTypes.func,
+  /**
+   * Must be a function which returns true based on the `point` argument
+   */
   getBarSelection: PropTypes.func,
   BarComponent: PropTypes.elementType,
   disableDataTable: PropTypes.bool,

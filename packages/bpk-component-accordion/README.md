@@ -78,44 +78,4 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 
 ## Props
 
-### BpkAccordion
-
-| Property        | PropType | Required | Default Value |
-| --------------- | -------- | -------- | ------------- |
-| children        | node     | true     | -             |
-| className       | string   | false    | null          |
-| onDark          | bool     | false    | false         |
-| divider         | bool     | false    | true          |
-
-### BpkAccordionItem
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | node     | true     | -             |
-| id        | string   | true     | -             |
-| title     | string   | true     | -             |
-| expanded  | bool     | false    | false         |
-| icon      | node     | false    | null          |
-| onClick   | func     | false    | () => null    |
-| tagName   | string   | false    | span          |
-| textStyle | string   | false    | "base"        |
-
-### withSingleItemAccordionState(BpkAccordion)
-
-| Property                       | PropType | Required | Default Value |
-| ------------------------------ | -------- | -------- | ------------- |
-| ~~expanded~~ initiallyExpanded | bool     | false    | false         |
-
-### withState(BpkAccordionItem)
-
-| Property                       | PropType | Required | Default Value |
-| ------------------------------ | -------- | -------- | ------------- |
-| ~~expanded~~ initiallyExpanded | bool     | false    | false         |
-
-## Prop Details
-
-## Theme Props
-
-* `accordionColor`,
-* `accordionHoverColor`,
-* `accordionActiveColor`,
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/accordion/web-sEshz9Z5#section-props-08).

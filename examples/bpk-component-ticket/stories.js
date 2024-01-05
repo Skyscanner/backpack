@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkTicket from '../../packages/bpk-component-ticket/src/BpkTicket';
 
 import {
   DefaultExample,
@@ -31,6 +32,7 @@ import {
 
 export default {
   title: 'bpk-component-ticket',
+  component: BpkTicket,
 };
 
 export const Default = DefaultExample;
@@ -46,3 +48,7 @@ export const WithAHrefProp = WithHrefExample;
 export const DayView = DayViewExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

@@ -3,9 +3,10 @@
 exports[`BpkExtraLargeSpinner should render correctly 1`] = `
 <DocumentFragment>
   <svg
+    aria-hidden="true"
     class="bpk-spinner bpk-spinner--extra-large bpk-spinner--dark"
-    height="32"
-    width="32"
+    style="width: 2rem; height: 2rem;"
+    viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -75,9 +76,10 @@ exports[`BpkExtraLargeSpinner should render correctly 1`] = `
 exports[`BpkExtraLargeSpinner should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
   <svg
+    aria-hidden="true"
     class="bpk-spinner bpk-spinner--extra-large bpk-spinner--dark my-custom-class"
-    height="32"
-    width="32"
+    style="width: 2rem; height: 2rem;"
+    viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -147,9 +149,10 @@ exports[`BpkExtraLargeSpinner should render correctly with a "className" attribu
 exports[`BpkExtraLargeSpinner should render correctly with type as light 1`] = `
 <DocumentFragment>
   <svg
+    aria-hidden="true"
     class="bpk-spinner bpk-spinner--extra-large bpk-spinner--light"
-    height="32"
-    width="32"
+    style="width: 2rem; height: 2rem;"
+    viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -219,9 +222,10 @@ exports[`BpkExtraLargeSpinner should render correctly with type as light 1`] = `
 exports[`BpkExtraLargeSpinner should render correctly with type as primary 1`] = `
 <DocumentFragment>
   <svg
+    aria-hidden="true"
     class="bpk-spinner bpk-spinner--extra-large bpk-spinner--primary"
-    height="32"
-    width="32"
+    style="width: 2rem; height: 2rem;"
+    viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path

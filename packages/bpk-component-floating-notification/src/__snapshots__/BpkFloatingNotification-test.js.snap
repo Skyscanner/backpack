@@ -39,7 +39,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
       Saved
     </div>
     <button
-      class="bpk-button bpk-button--link bpk-floating-notification__button"
+      class="bpk-button bpk-button--link-on-dark bpk-floating-notification__button"
       type="button"
     >
       View
@@ -58,10 +58,8 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
     >
       <svg
         aria-hidden="true"
-        height="16"
         style="width: 1rem; height: 1rem;"
         viewBox="0 0 24 24"
-        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

@@ -15,7 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
+import BpkSplitInput from '../../packages/bpk-component-split-input/src/BpkSplitInput';
 
 import {
   SplitInputExample,
@@ -26,6 +27,7 @@ import {
 
 export default {
   title: 'bpk-component-split-input',
+  component: BpkSplitInput,
 };
 
 export const DefaultInput = SplitInputExample;
@@ -35,3 +37,7 @@ export const SplitInputWithPlaceholder = SplitInputWithPlaceholderExample;
 
 export const SmallInput = SplitInputSmallExample;
 export const VisualTest = SplitInputExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

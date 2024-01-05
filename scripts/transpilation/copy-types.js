@@ -32,8 +32,7 @@ const typeFiles = execSync(
 typeFiles.map((typeFile) => {
   let component;
   const paths = typeFile.split('packages/');
-  const regEx = new RegExp('/');
-  const componentPath = paths[1].split(regEx);
+  const componentPath = paths[1].split('/');
 
   // V2 components are nested inside a folder
   if (paths[1].match(/V2/)) {

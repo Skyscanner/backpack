@@ -16,6 +16,12 @@
  * limitations under the License.
  */
 
+import BpkCalendarGridHeaderComponent from '../../packages/bpk-component-calendar/src/BpkCalendarGridHeader';
+import BpkCalendarGridComponent from '../../packages/bpk-component-calendar/src/BpkCalendarGrid';
+import BpkCalendarNavComponent from '../../packages/bpk-component-calendar/src/BpkCalendarNav';
+import BpkCalendarDateComponent from '../../packages/bpk-component-calendar/src/BpkCalendarDate';
+
+import { BpkCalendarContainerMock } from './stories-utils';
 import {
   DefaultExample,
   CalendarNavExample,
@@ -40,6 +46,13 @@ import {
 
 export default {
   title: 'bpk-component-calendar',
+  component: BpkCalendarGridComponent,
+  subcomponents: {
+    BpkCalendarNav: BpkCalendarNavComponent,
+    BpkCalendarGridHeader: BpkCalendarGridHeaderComponent,
+    BpkCalendarDate: BpkCalendarDateComponent,
+    BpkCalendarContainer: BpkCalendarContainerMock
+  },
 };
 
 export const BpkCalendarNav = CalendarNavExample;
@@ -78,5 +91,12 @@ export const CustomComposedCalendarSafariDstBug =
 
 export const Week = WeekExample;
 export const VisualTest = FocusedDateInThePastExample;
-
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
 export const VisualTestRange = RangeDateCalendarExample;
+export const VisualTestRangeWithZoom = VisualTestRange.bind({});
+VisualTestRangeWithZoom.args = {
+  zoomEnabled: true
+};

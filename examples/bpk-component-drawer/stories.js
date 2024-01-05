@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BkpDrawer from '../../packages/bpk-component-drawer/src/BpkDrawer';
 
 import {
   DefaultExample,
@@ -28,6 +29,7 @@ import {
 
 export default {
   title: 'bpk-component-drawer',
+  component: BkpDrawer,
 };
 
 export const Default = DefaultExample;

@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkNavigationBar from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBar';
+import BpkNavigationBarIconButton from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarIconButton';
+import BpkNavigationBarButtonLink from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarButtonLink';
 
 import {
   DefaultExample,
@@ -25,13 +28,22 @@ import {
   WithLinksExample,
   WithLogoExample,
   StickyExample,
+  OnDarkExample,
+  WithLinksOnDarkExample,
+  VisualTestExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-navigation-bar',
+  component: BpkNavigationBar,
+  subcomponents: {
+    BpkNavigationBarIconButton,
+    BpkNavigationBarButtonLink,
+  },
 };
 
 export const Default = DefaultExample;
+export const OnDark = OnDarkExample;
 export const LeadingIconOnly = LeadingIconOnlyExample;
 
 export const TrailingIconOnly = TrailingIconOnlyExample;
@@ -39,6 +51,11 @@ export const TrailingIconOnly = TrailingIconOnlyExample;
 export const WithLinks = WithLinksExample;
 
 export const WithLogo = WithLogoExample;
+export const WithLinksOnDark = WithLinksOnDarkExample;
 
 export const Sticky = StickyExample;
-export const VisualTest = DefaultExample;
+export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

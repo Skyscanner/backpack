@@ -26,11 +26,10 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
-            height="16"
             style="width: 1rem; height: 1rem;"
             viewBox="0 0 24 24"
-            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -82,11 +81,10 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-close-button__icon"
-            height="16"
             style="width: 1rem; height: 1rem;"
             viewBox="0 0 24 24"
-            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path

@@ -61,9 +61,4 @@ export default () => (
 
 ## Props
 
-| Property  | PropType                                 | Required | Default Value |
-| --------- | ---------------------------------------- | -------- | ------------- |
-| children  | -                                        | true     | -             |
-| textStyle | oneOf(TEXT_STYLES.caption, TEXT_STYLES.footnote, TEXT_STYLES.label1, TEXT_STYLES.label2, TEXT_STYLES.label3, TEXT_STYLES.bodyDefault, TEXT_STYLES.bodyLongform, TEXT_STYLES.subheading, TEXT_STYLES.heading1, TEXT_STYLES.heading2, TEXT_STYLES.heading3, TEXT_STYLES.heading4, TEXT_STYLES.heading5, TEXT_STYLES.hero1, TEXT_STYLES.hero2, TEXT_STYLES.hero3, TEXT_STYLES.hero4, TEXT_STYLES.hero5, TEXT_STYLES.xs, TEXT_STYLES.sm, TEXT_STYLES.base, TEXT_STYLES.lg, TEXT_STYLES.xl, TEXT_STYLES.xxl, TEXT_STYLES.xxxl, TEXT_STYLES.xxxxl, TEXT_STYLES.xxxxxl)    | false    | TEXT_STYLES.base  |
-| tagName   | 'span', 'p', 'text', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' | false    | 'span'        |
-| className | string                                   | false    | null          |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/text/web-rHoUxcxq#section-props-44).

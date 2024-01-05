@@ -28,7 +28,7 @@ import STYLES from './BpkDataTable.module.scss';
 import type { Props } from './common-types';
 import { SORT_DIRECTION_TYPES } from './sort-types';
 import BpkDataTableHeader from './BpkDataTableHeader';
-import { getColumns } from './utils';
+import { pxToRem, getColumns, createColumnsSchema } from './utils';
 
 const getClassName = cssModules(STYLES);
 
@@ -41,6 +41,7 @@ const BpkDataTable = (props: Props) => {
   const {
     children,
     className,
+    columns: columnsData,
     defaultColumnSortIndex,
     headerClassName,
     headerHeight,
@@ -49,7 +50,7 @@ const BpkDataTable = (props: Props) => {
     rowClassName,
     rowHeight,
     rowStyle,
-    rows: data,
+    rows: rowsData,
     sort,
     sortBy,
     sortDirection,
@@ -84,7 +85,15 @@ const BpkDataTable = (props: Props) => {
     headerClassName,
   );
 
-  const columns = useMemo(() => getColumns(children), [children]);
+  const columns = useMemo(() => {
+    if (columnsData) {
+      return createColumnsSchema(columnsData);
+    } 
+      return getColumns(children);
+    
+  }, [children, columnsData]);
+
+  const data = useMemo(() => rowsData, [rowsData]);
 
   const { getTableBodyProps, getTableProps, headerGroups, prepareRow, rows } =
     useTable(
@@ -139,7 +148,7 @@ const BpkDataTable = (props: Props) => {
   return (
     <div
       {...getTableProps({
-        style: { width, height },
+        style: { width: pxToRem(width), height: pxToRem(height) },
         className: classNames,
       })}
       {...restOfProps}
@@ -148,7 +157,7 @@ const BpkDataTable = (props: Props) => {
         {headerGroups.map((headerGroup) => (
           <div
             {...headerGroup.getHeaderGroupProps({
-              style: { height: headerHeight },
+              style: { height: pxToRem(headerHeight) },
               className: headerClassNames,
             })}
           >
@@ -177,7 +186,7 @@ const BpkDataTable = (props: Props) => {
               {...row.getRowProps({
                 style: {
                   ...rowStyle,
-                  height: rowHeight,
+                  height: pxToRem(rowHeight),
                 },
                 className: getRowClassNames(rowClassName, i),
               })}
@@ -208,25 +217,75 @@ const BpkDataTable = (props: Props) => {
     </div>
   );
 };
-
 BpkDataTable.propTypes = {
   rows: PropTypes.arrayOf(Object).isRequired,
-  children: PropTypes.node.isRequired,
+  /**
+   * @deprecated Use the columns prop instead to pass the columns to the BpkDataTable component.
+   */
+  children: PropTypes.node,
+  /**
+   * Array of objects describing the columns of the table.
+   * Note: Header and Cell props are functions to format the header and cell data respectively and should implement the following signatures:
+   * ```Header: function({disableSortBy, accessor, label})```,
+   * ```Cell: function({rowData, rowIndex, accessor, columnIndex, cellData})```
+   */
+  columns: PropTypes.arrayOf(
+    PropTypes.shape({
+      accessor: PropTypes.string.isRequired,
+      Header: PropTypes.func,
+      disableSortBy: PropTypes.bool,
+      width: PropTypes.string,
+      minWidth: PropTypes.string,
+      flexGrow: PropTypes.number,
+      className: PropTypes.string,
+      headerClassName: PropTypes.string,
+      headerStyle: {},
+      Cell: PropTypes.func,
+      label: PropTypes.string,
+      style: {},
+      defaultSortDirection: PropTypes.oneOf(Object.keys(SORT_DIRECTION_TYPES)),
+    }),
+  ),
+  /**
+   * Table height. Please provide this value in rem.
+   */
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  /**
+   * Table width. Please provide this value in rem.
+   * If not provided, the table will expand to fill the available space.
+   */
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Height of the header row. Please provide this value in rem.
+   */
   headerHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Height of each row. Please provide this value in rem.
+   */
   rowHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   className: PropTypes.string,
+  /**
+   * The data will be sorted by default based on this column.
+   */
   defaultColumnSortIndex: PropTypes.number,
+  /**
+   * For custom sorting, pass a sort function.
+   */
   sort: PropTypes.func,
+  /**
+   * Use sortBy to specify which column the custom sorting will be applied to.
+   */
   sortBy: PropTypes.string,
+  /**
+   * Use sortDirection to set the direction of sorting. By default, it will be ascending.
+   */
   sortDirection: PropTypes.oneOf(Object.keys(SORT_DIRECTION_TYPES)),
 };
 
 BpkDataTable.defaultProps = {
   width: null,
-  headerHeight: 60,
-  rowHeight: 60,
+  headerHeight: '3.75rem',
+  rowHeight: '3.75rem',
   className: null,
   defaultColumnSortIndex: 0,
   sort: null,

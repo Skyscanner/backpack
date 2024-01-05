@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../packages/bpk-mixins/index.scss';
 
 .bpk-storybook-aria-live-demo {
-  padding: $bpk-spacing-sm;
+  padding: bpk-spacing-base();
   background: $bpk-canvas-contrast-day;
   color: $bpk-text-primary-day;
 
@@ -27,12 +27,12 @@
   @include bpk-border-radius-sm;
 
   &__chips-wrapper {
-    margin-bottom: $bpk-spacing-sm;
+    margin-bottom: bpk-spacing-base();
   }
 
   &__select-wrapper {
     display: flex;
-    margin-bottom: $bpk-spacing-sm;
+    margin-bottom: bpk-spacing-base();
     justify-content: space-between;
     align-items: center;
   }
@@ -46,12 +46,12 @@
   }
 
   &__chip {
-    margin-right: $bpk-spacing-sm;
-    margin-bottom: $bpk-spacing-sm;
+    margin-right: bpk-spacing-base();
+    margin-bottom: bpk-spacing-base();
   }
 
   &__aria-live {
-    margin-top: $bpk-spacing-sm;
+    margin-top: bpk-spacing-base();
   }
 
   > p {

@@ -19,15 +19,15 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v3.3.2
         id: npm-cache
         with:
           path: |
@@ -54,15 +54,15 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v3.3.2
         id: npm-cache
         with:
           path: |
@@ -71,7 +71,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v3.3.2
         id: storybook-dist-cache
         with:
           path: dist-storybook/
@@ -91,15 +91,15 @@ jobs:
       pull-requests: write
     
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v3.3.2
         id: npm-cache
         with:
           path: |

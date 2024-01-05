@@ -117,7 +117,6 @@ class BpkInput extends Component<Props, State> {
     }
 
     const renderedInput = (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <input
         className={classNames.join(' ')}
         ref={(input: HTMLInputElement) => {

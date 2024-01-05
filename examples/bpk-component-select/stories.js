@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkSelect from '../../packages/bpk-component-select/src/BpkSelect';
+
 import {
   DefaultExample,
   InvalidExample,
@@ -33,6 +35,7 @@ import {
 
 export default {
   title: 'bpk-component-select',
+  component: BpkSelect,
 };
 
 export const Example = DefaultExample;
@@ -51,3 +54,7 @@ export const ManuallyDockedWithImages = ManuallyDockedWithImagesExample;
 export const WithImage = WithImageExample;
 export const WithImageLarge = WithImageLargeExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

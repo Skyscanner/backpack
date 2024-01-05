@@ -28,7 +28,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
           >
             <nav
               aria-labelledby="bpk-modal-heading-my-modal"
-              class="bpk-navigation-bar bpk-modal__navigation"
+              class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
             >
               <h2
                 class="bpk-modal__heading"
@@ -38,16 +38,15 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
               </h2>
               <button
                 aria-label="Close"
-                class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+                class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
                 title="Close"
                 type="button"
               >
                 <svg
+                  aria-hidden="true"
                   class="bpk-close-button__icon"
-                  height="16"
                   style="width: 1rem; height: 1rem;"
                   viewBox="0 0 24 24"
-                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path

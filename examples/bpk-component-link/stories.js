@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
+import BpkButtonLink from '../../packages/bpk-component-link/src/BpkButtonLink';
 
 import {
   LinkExample,
@@ -30,6 +32,10 @@ import {
 
 export default {
   title: 'bpk-component-link',
+  component: BpkLink,
+  subcomponents: {
+    BpkButtonLink
+  },
 };
 
 export const Example = LinkExample;
@@ -43,3 +49,7 @@ export const Combined = CombinedExample;
 export const CombinedAlternative = CombinedAlternativeExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

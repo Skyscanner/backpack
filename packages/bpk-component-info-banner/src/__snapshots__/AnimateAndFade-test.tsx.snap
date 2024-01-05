@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimateAndFade should render correctly 1`] = `<DocumentFragment />`;
+
+exports[`AnimateAndFade should render correctly when shown 1`] = `
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`AnimateAndFade should render correctly with userland className 1`] = `
+<DocumentFragment>
+  <div
+    class="userland-class-name"
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

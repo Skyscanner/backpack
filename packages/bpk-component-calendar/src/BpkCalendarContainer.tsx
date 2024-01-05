@@ -41,7 +41,11 @@ import {
   startOfMonth,
 } from './date-utils';
 
-type Props = {
+export type Props = {
+  /**
+   * If set to true (default), it sets a fixed width on the calendar container. This is necessary to support transitions and to create the right size for the Datepicker component.
+   * If set to false, the calendar is of fluid width and will take up the space of its parent container.
+   */
   fixedWidth?: boolean;
   maxDate?: Date;
   minDate?: Date;
@@ -52,16 +56,28 @@ type Props = {
         { month, source }: { month: Date; source: string },
       ) => void)
     | null;
+  /**
+   * An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
+   */
   selectionConfiguration?: SelectionConfiguration;
+  /**
+   * Sets the date that is focused initially, this prop has no effect if `selectionConfiguration` is specified in which case the date specified in this prop is focused. If no selected date is set and `initiallyFocusedDate` is not set the focused date is the `minDate`(defaults to today if it has not been explicitly set).
+   */
   initiallyFocusedDate?: Date | null;
   markToday?: boolean;
   markOutsideDays?: boolean;
+  /**
+   * Sets the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
+   */
+  customRowHeight?: number;
 };
 
 type InjectedProps = {
   onDateClick: ((date: Date) => void) | null;
   onDateKeyDown: ((event: KeyboardEvent) => void) | null;
   month: Date;
+  minDate: Date;
+  maxDate: Date;
 };
 
 type CalendarProps<P> = Omit<P & Props, keyof InjectedProps> & {

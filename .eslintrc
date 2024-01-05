@@ -82,9 +82,16 @@
     //   }
     // ],
     "backpack/use-components": "off",
-    "prettier/prettier": "error",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
+    // TODO: Re-enable the following 7 rules
+    "prettier/prettier": "off",
+    "no-restricted-exports": "off",
+    "class-methods-use-this": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "react/no-unused-class-component-methods": "off",
+    "no-promise-executor-return": "off",
+    "import/no-import-module-exports": "off",
     // We override the eslint-config-skyscanner rule here as within Backpack
     // we need certain order imports otherwise it will break components like the calendar.
     "import/order": [

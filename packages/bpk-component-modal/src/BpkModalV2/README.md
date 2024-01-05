@@ -72,19 +72,3 @@ class App extends Component {
   }
 }
 ```
-
-## Props
-
-| Property              | PropType | Required | Default Value |
-| --------------------- | -------- | -------- | ------------- |
-| id                    | string   | true     | -             |
-| children              | node     | true     | -             |
-| closeLabel            | string   | true     | -             |
-| isOpen                | bool     | true     | -             |
-| onClose               | func     | true     | -             |
-| fullScreenOnMobile    | bool     | false    | false         |
-| noFullScreenOnMobile  | bool     | false    | false         |
-| padded                | bool     | false    | false         |
-| showHeader            | bool     | false    | true          |
-| title                 | string   | false    | ''            |
-| wide                  | bool     | false    | false         |

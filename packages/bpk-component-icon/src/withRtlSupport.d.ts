@@ -18,7 +18,7 @@
 
 // eslint-disable-next-line no-underscore-dangle
 declare const _default: (
-  ComposedComponent: import('react').ComponentType<any>,
+    ComposedComponent: string | import("react").ComponentType<any>,
 ) => {
   (props: {
     [rest: string]: any;

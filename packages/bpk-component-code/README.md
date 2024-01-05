@@ -31,10 +31,4 @@ export default () => (
 
 ## Props
 
-*For BpkCode & BpkCodeBlock:*
-
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | Node     | true     | -             |
-| alternate | bool     | false    | false         |
-| className | string   | false    | null          |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/code/web-YrqbgBny#section-props-80).

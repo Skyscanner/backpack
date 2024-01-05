@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 
-import BpkButton from '../../bpk-component-button';
+import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPaginationPage.module.scss';
@@ -34,15 +34,15 @@ const BpkPaginationPage = (props) => {
   }
 
   return (
-    <BpkButton
-      primaryOnDark={!isSelected}
+    <BpkButtonV2
+      type={!isSelected ? BUTTON_TYPES.primaryOnDark : BUTTON_TYPES.primary}
       onClick={onSelect}
       className={classNames.join(' ')}
       aria-label={pageLabel(page, isSelected)}
       aria-current={isSelected}
     >
       <span>{page}</span>
-    </BpkButton>
+    </BpkButtonV2>
   );
 };
 

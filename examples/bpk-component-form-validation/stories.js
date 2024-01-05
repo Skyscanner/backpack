@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
+import BpkFormValidation from '../../packages/bpk-component-form-validation/src/BpkFormValidation';
+
 import { DefaultExample, FormsExample } from './examples';
 
 export default {
   title: 'bpk-component-form-validation',
+  component: BpkFormValidation,
 };
 
 export const Default = DefaultExample;
@@ -27,3 +30,7 @@ export const Default = DefaultExample;
 export const WithForms = FormsExample;
 
 export const VisualTest = FormsExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

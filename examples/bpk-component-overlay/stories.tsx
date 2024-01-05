@@ -15,7 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
+import BpkOverlay from '../../packages/bpk-component-overlay/src/BpkOverlay';
 
 import {
   SolidExamples,
@@ -30,6 +31,7 @@ import {
 
 export default {
   title: 'bpk-component-overlay',
+  component: BpkOverlay,
 };
 
 export const Solid = SolidExamples;
@@ -42,3 +44,7 @@ export const Vignette = VignetteExample;
 export const WithForegroundContent = WithForegroundContentExample;
 
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

@@ -9,11 +9,10 @@ exports[`BpkInteractiveStar should render correctly with a selected full star 1`
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -33,11 +32,10 @@ exports[`BpkInteractiveStar should render correctly with empty star 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="bpk-star bpk-interactive-star__icon"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -57,11 +55,10 @@ exports[`BpkInteractiveStar should render correctly with full star 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="true"
       class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-      height="16"
       style="width: 1rem; height: 1rem;"
       viewBox="0 0 24 24"
-      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

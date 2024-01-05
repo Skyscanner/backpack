@@ -19,15 +19,11 @@
 /* @flow strict */
 
 import { Component } from 'react';
-import {
-  spacingXs,
-  spacingSm,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import {
   action,
   BpkDarkExampleWrapper,
-} from '../../packages/bpk-storybook-utils';
+} from '../bpk-storybook-utils';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
@@ -64,7 +60,7 @@ class StatefulCheckbox extends Component<Props, State> {
 
   render() {
     return (
-      <div style={{ padding: spacingXs }}>
+      <div style={{ padding: '.25rem' }}>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkCheckbox
           checked={this.state.isChecked}
@@ -86,7 +82,7 @@ const DefaultExample = () => (
 const IndeterminateExample = () => (
   <div>
     <StatefulCheckbox id="places" name="places" label="Places" indeterminate />
-    <div style={{ marginLeft: spacingSm }}>
+    <div style={{ marginLeft: '.25rem' }}>
       <StatefulCheckbox id="abisko" name="abisko" label="Abisko" isChecked />
       <StatefulCheckbox id="bunol" name="bunol" label="Buñol" />
     </div>

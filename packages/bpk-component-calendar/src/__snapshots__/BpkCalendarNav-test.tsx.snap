@@ -18,10 +18,10 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            height="24"
             style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -73,10 +73,10 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            height="24"
             style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -119,10 +119,10 @@ exports[`BpkCalendarNav should render correctly 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            height="24"
             style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -172,10 +172,10 @@ exports[`BpkCalendarNav should render correctly 1`] = `
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            height="24"
             style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -218,10 +218,10 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            height="24"
             style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -273,10 +273,10 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
           type="button"
         >
           <svg
+            aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            height="24"
             style="width: 1.5rem; height: 1.5rem;"
-            width="24"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path

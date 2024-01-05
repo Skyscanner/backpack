@@ -33,11 +33,10 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
               type="button"
             >
               <svg
+                aria-hidden="true"
                 class="bpk-close-button__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -119,9 +118,9 @@ exports[`BpkDialog should render default icon dialog correctly 2`] = `
               class="bpk-dialog__icon bpk-dialog__icon--primary"
             >
               <svg
-                height="24"
+                aria-hidden="true"
                 style="width: 1.5rem; height: 1.5rem;"
-                width="24"
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -168,9 +167,9 @@ exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
               class="bpk-dialog__icon bpk-dialog__icon--destructive"
             >
               <svg
-                height="24"
+                aria-hidden="true"
                 style="width: 1.5rem; height: 1.5rem;"
-                width="24"
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -217,9 +216,9 @@ exports[`BpkDialog should render warning icon dialog correctly 2`] = `
               class="bpk-dialog__icon bpk-dialog__icon--warning"
             >
               <svg
-                height="24"
+                aria-hidden="true"
                 style="width: 1.5rem; height: 1.5rem;"
-                width="24"
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -308,11 +307,10 @@ exports[`BpkDialog should render with flare dialog 2`] = `
               type="button"
             >
               <svg
+                aria-hidden="true"
                 class="bpk-close-button__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -401,11 +399,10 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
               type="button"
             >
               <svg
+                aria-hidden="true"
                 class="bpk-close-button__icon"
-                height="16"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path

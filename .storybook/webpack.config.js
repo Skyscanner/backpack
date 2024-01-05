@@ -19,15 +19,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const sassFunctions = require('bpk-mixins/sass-functions');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const sassFunctions = require('../packages/bpk-mixins/sass-functions');
 const postCssPlugins = require('../scripts/webpack/postCssPlugins');
 
-const { BPK_TOKENS, ENABLE_CSS_MODULES } = process.env;
+const { BPK_TOKENS } = process.env;
 const rootDir = path.resolve(__dirname, '../');
-const useCssModules = ENABLE_CSS_MODULES !== 'false';
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
+  config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
     test: /\.[jt]sx?$/,
     exclude: /node_modules\/(?!bpk-).*/,
@@ -36,8 +38,21 @@ module.exports = ({ config }) => {
       presets: [['@babel/preset-env']],
     },
   });
+  config.module.rules.push({
+    test: /\.(js|jsx)?$/,
+    loader: 'babel-loader',
+    options: {
+      plugins: ['babel-plugin-react-docgen'],
+    },
+  });
   config.resolve.extensions.push('.tsx');
   config.resolve.extensions.push('.ts');
+  /* eslint-disable-next-line no-param-reassign */
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    react: path.join(rootDir, 'node_modules/react'),
+    'react-dom': path.join(rootDir, 'node_modules/react-dom'),
+  };
   config.module.rules.push({
     test: /\.[jt]sx?$/,
     include: /node_modules\/@skyscanner\/bpk-svgs.*/,
@@ -50,20 +65,23 @@ module.exports = ({ config }) => {
     test: /\.css/,
     use: [
       {
-        loader: 'style-loader',
+        loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
       },
       {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
-          modules: useCssModules,
-          localIdentName: '[local]-[hash:base64:5]',
+          modules: {
+            localIdentName: '[local]-[hash:base64:5]',
+          },
         },
       },
       {
         loader: 'postcss-loader',
         options: {
-          plugins: postCssPlugins,
+          postcssOptions: {
+            plugins: [postCssPlugins],
+          },
         },
       },
     ],
@@ -72,20 +90,23 @@ module.exports = ({ config }) => {
     test: /\.scss$/,
     use: [
       {
-        loader: 'style-loader',
+        loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
       },
       {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
-          modules: useCssModules,
-          localIdentName: '[local]-[hash:base64:5]',
+          modules: {
+            localIdentName: '[local]-[hash:base64:5]',
+          },
         },
       },
       {
         loader: 'postcss-loader',
         options: {
-          plugins: postCssPlugins,
+          postcssOptions: {
+            plugins: [postCssPlugins],
+          },
         },
       },
       {

@@ -25,7 +25,6 @@ import {
   BpkContentBubble,
 } from '../../packages/bpk-component-flare';
 
-// eslint-disable-next-line import/order
 import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);

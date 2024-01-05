@@ -4,7 +4,6 @@ exports[`BpkImage should accept userland className 1`] = `
 <DocumentFragment>
   <div
     class="userland-classname"
-    style="width: .75rem;"
   >
     <div
       class="bpk-image bpk-image--no-background"
@@ -22,9 +21,7 @@ exports[`BpkImage should accept userland className 1`] = `
 
 exports[`BpkImage should accept userland styling 1`] = `
 <DocumentFragment>
-  <div
-    style="width: .75rem;"
-  >
+  <div>
     <div
       class="bpk-image bpk-image--no-background"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
@@ -100,114 +97,58 @@ exports[`BpkImage should have loading behavior 1`] = `
         class="bpk-image__spinner"
       >
         <svg
+          aria-hidden="true"
           class="bpk-spinner bpk-spinner--dark"
-          height="16"
-          width="16"
+          style="width: 1rem; height: 1rem;"
+          viewBox="0 0 16 16"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect
-            height="2"
+          <path
+            d="M3 7H1a1 1 0 000 2h2a1 1 0 000-2z"
             opacity=".45"
-            rx="1"
-            width="4"
-            y="7"
           />
-          <rect
-            height="2"
-            rx="1"
-            width="4"
-            x="12"
-            y="7"
+          <path
+            d="M15 7h-2a1 1 0 100 2h2a1 1 0 100-2z"
           />
-          <rect
-            height="2"
+          <path
+            d="M7 13v2a1 1 0 102 0v-2a1 1 0 10-2 0z"
             opacity=".3"
-            rx="1"
-            transform="rotate(-90 7 16)"
-            width="4"
-            x="7"
-            y="16"
           />
-          <rect
-            height="2"
+          <path
+            d="M7 1v2a1 1 0 002 0V1a1 1 0 00-2 0z"
             opacity=".65"
-            rx="1"
-            transform="rotate(-90 7 4)"
-            width="4"
-            x="7"
-            y="4"
           />
-          <rect
-            height="2"
+          <path
+            d="M9.634 12.83l1 1.732a1 1 0 101.732-1l-1-1.732a1 1 0 00-1.732 1z"
             opacity=".25"
-            rx="1"
-            transform="rotate(-120 11.134 15.428)"
-            width="4"
-            x="11.134"
-            y="15.428"
           />
-          <rect
-            height="2"
+          <path
+            d="M3.634 2.438l1 1.732a1 1 0 101.732-1l-1-1.732a1 1 0 10-1.732 1z"
             opacity=".55"
-            rx="1"
-            transform="rotate(-120 5.134 5.036)"
-            width="4"
-            x="5.134"
-            y="5.036"
           />
-          <rect
-            height="2"
+          <path
+            d="M11.83 11.366l1.732 1a1 1 0 101-1.732l-1.732-1a1 1 0 10-1 1.732z"
             opacity=".2"
-            rx="1"
-            transform="rotate(-150 14.428 12.866)"
-            width="4"
-            x="14.428"
-            y="12.866"
           />
-          <rect
-            height="2"
+          <path
+            d="M1.438 5.366l1.732 1a1 1 0 101-1.732l-1.732-1a1 1 0 10-1 1.732z"
             opacity=".5"
-            rx="1"
-            transform="rotate(-150 4.036 6.866)"
-            width="4"
-            x="4.036"
-            y="6.866"
           />
-          <rect
-            height="2"
+          <path
+            d="M12.83 6.366l1.732-1a1 1 0 00-1-1.732l-1.732 1a1 1 0 001 1.732z"
             opacity=".85"
-            rx="1"
-            transform="rotate(150 15.428 4.866)"
-            width="4"
-            x="15.428"
-            y="4.866"
           />
-          <rect
-            height="2"
+          <path
+            d="M2.438 12.366l1.732-1a1 1 0 10-1-1.732l-1.732 1a1 1 0 101 1.732z"
             opacity=".4"
-            rx="1"
-            transform="rotate(150 5.036 10.866)"
-            width="4"
-            x="5.036"
-            y="10.866"
           />
-          <rect
-            height="2"
+          <path
+            d="M11.366 4.17l1-1.732a1 1 0 00-1.732-1l-1 1.732a1 1 0 001.732 1z"
             opacity=".75"
-            rx="1"
-            transform="rotate(120 12.866 1.572)"
-            width="4"
-            x="12.866"
-            y="1.572"
           />
-          <rect
-            height="2"
+          <path
+            d="M5.366 14.562l1-1.732a1 1 0 10-1.732-1l-1 1.732a1 1 0 001.732 1z"
             opacity=".35"
-            rx="1"
-            transform="rotate(120 6.866 11.964)"
-            width="4"
-            x="6.866"
-            y="11.964"
           />
         </svg>
       </div>

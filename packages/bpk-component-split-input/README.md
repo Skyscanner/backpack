@@ -25,15 +25,4 @@ export default () => (
 
 ## Props
 
-
-| Property         | PropType                   | Required            | Default Value            |
-| ---------------- | -------------------------- | ------------------- | ------------------------ |
-| id               | string                     | true                | -                        |
-| name             | string                     | true                | -                        |
-| type             | INPUT_TYPES (one of)       | false               | INPUT_TYPES.number       |
-| inputLength      | number                     | false               | 4                        |
-| placeholder      | string                     | false               | -                        |
-| label            | string                     | true                | -                        |
-| large            | bool                       | false               | true                     |
-| onChange         | bool                       | true                | -                        |
-| onSubmit         | bool                       | true                | -                        |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/split-input/web-dTSkmYDv#section-props-2d).

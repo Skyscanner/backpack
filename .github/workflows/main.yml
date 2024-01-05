@@ -20,15 +20,15 @@ jobs:
   Create-NPM-Cache:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Upload to Cache
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v3.3.2
         id: npm-cache
         with:
           path: |
@@ -44,15 +44,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Create-NPM-Cache]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore NPM Cache
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v3.3.2
         id: npm-cache
         with:
           path: |
@@ -61,7 +61,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
       
       - name: Upload dist-storybook to Cache
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v3.3.2
         id: storybook-dist-cache
         with:
           path: |
@@ -86,15 +86,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Create-NPM-Cache, Create-Build-Cache]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore npm Cache
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v3.3.2
         id: npm-cache
         with:
           path: |
@@ -103,7 +103,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
       
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v3.3.2
         id: storybook-dist-cache
         with:
           path: dist-storybook/
@@ -117,6 +117,40 @@ jobs:
           publish_dir: dist-storybook/
           keep_files: false
           external_repository: backpack/storybook
+          publish_branch: main
+  
+  SassDocDeploy:
+    runs-on: ubuntu-latest
+    needs: [Create-NPM-Cache, Create-Build-Cache]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Restore npm Cache
+        uses: actions/cache/restore@v3.3.2
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Build Sass docs
+        if: github.ref == 'refs/heads/main'
+        run:  npm run sassdoc
+  
+      - name: Deploy Sass docs to backpack.github.io, if on main branch
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_dir: dist-sassdoc/
+          keep_files: false
+          external_repository: backpack/sassdoc
           publish_branch: main
 
   ReleaseDraft:

@@ -18,9 +18,9 @@
 
 if (typeof window === 'undefined') {
   global.IntersectionObserver = class {
-    observe() {} // eslint-disable-line class-methods-use-this
+    observe() {}  
 
-    unobserve() {} // eslint-disable-line class-methods-use-this
+    unobserve() {}  
   };
 } else {
   require('intersection-observer'); /* eslint-disable-line global-require */

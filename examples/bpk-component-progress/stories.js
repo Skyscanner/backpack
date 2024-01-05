@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkProgress from '../../packages/bpk-component-progress/src/BpkProgress';
 
 import {
   DefaultExample,
@@ -27,9 +28,14 @@ import {
 
 export default {
   title: 'bpk-component-progress',
+  component: BpkProgress,
 };
 
 export const Default = DefaultExample;
 export const Small = SmallExample;
 export const Stepped = SteppedExample;
 export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

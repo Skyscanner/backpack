@@ -22,13 +22,4 @@ export default () => (
 
 ## Props
 
-| Property      | PropType | Required | Default Value |
-| ------------- | -------- | -------- | ------------- |
-| children      | node     | true     | -             |
-| stub          | node     | true     | -             |
-| href          | string   | false    | null          |
-| padded        | bool     | false    | true          |
-| vertical      | bool     | false    | false         |
-| stubProps     | object   | false    | {}            |
-| stubClassName | string   | false    | null          |
-
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/ticket/web-zhKrMwmS#section-props-75).

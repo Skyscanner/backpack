@@ -16,14 +16,24 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkBreadcrumb from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumb';
+import BpkBreadcrumbItem from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumbItem';
 
 import { DefaultExample, ExtremeExample } from './examples';
 
 export default {
+  component: BpkBreadcrumb,
   title: 'bpk-component-breadcrumb',
+  subcomponents: {
+    BpkBreadcrumbItem
+  },
 };
 
 export const Default = DefaultExample;
 export const Extreme = ExtremeExample;
 export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

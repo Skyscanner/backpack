@@ -22,16 +22,4 @@ export default () => (
 
 ## Props
 
-| Property | PropType                          | Required | Default Value |
-| -------- | --------------------------------- | -------- | ------------- |
-| type     | oneOf('primary', 'light', 'dark') | false    | 'dark'        |
-
-> `BpkSpinner` & `BpkLargeSpinner` only
-
-| Property      | PropType | Required | Default Value |
-| ------------- | -------- | -------- | ------------- |
-| alignToButton | bool     | false    | false         |
-
-## Theme Props
-
-* `spinnerPrimaryColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/spinner/web-4rLnGgUT#section-props-27).

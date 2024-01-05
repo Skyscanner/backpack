@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
-
-$bpk-spacing-v2: true;
+@import '../../bpk-mixins/index.scss';
 
 .bpk-calendar-date {
   width: $bpk-calendar-day-size;
@@ -77,7 +75,7 @@ $bpk-spacing-v2: true;
   }
 
   &--middle {
-    background-color: $bpk-surface-highlight-day;
+    background-color: $bpk-surface-subtle-day;
     color: $bpk-text-primary-day;
   }
 

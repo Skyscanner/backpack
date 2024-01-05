@@ -58,7 +58,6 @@ const BpkDividedCard = ({
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkCard className={classNames} href={href} padded={false} {...rest}>
       <div
         className={getClassName(

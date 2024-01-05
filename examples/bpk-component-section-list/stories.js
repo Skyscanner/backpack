@@ -16,13 +16,25 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+import BpkSectionList from '../../packages/bpk-component-section-list/src/BpkSectionList';
+import BpkSectionListSection from '../../packages/bpk-component-section-list/src/BpkSectionListSection';
+import BpkSectionListItem from '../../packages/bpk-component-section-list/src/BpkSectionListItem';
 
 import DefaultExample from './examples';
 
 export default {
   title: 'bpk-component-section-list',
+  component: BpkSectionList,
+  subcomponents: {
+    BpkSectionListSection,
+    BpkSectionListItem,
+  },
 };
 
 export const Default = DefaultExample;
 export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

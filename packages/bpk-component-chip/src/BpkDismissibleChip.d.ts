@@ -18,11 +18,6 @@
 
 /// <reference types="react" />
 import type { CommonProps as Props } from './commonTypes';
-
-declare const BpkDismissibleChip: ({
-  className,
-  leadingAccessoryView,
-  type,
-  ...rest
-}: Props) => JSX.Element;
+type BpkDismissibleChipProps = Omit<Props, 'disabled' | 'selected'>;
+declare const BpkDismissibleChip: ({ className, leadingAccessoryView, type, ...rest }: BpkDismissibleChipProps) => JSX.Element;
 export default BpkDismissibleChip;

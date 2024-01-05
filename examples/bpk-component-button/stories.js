@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { BpkButtonV2 } from '../../packages/bpk-component-button/src/BpkButtonV2/BpkButton';
+
 import {
   PrimaryExample,
   PrimaryOnDarkExample,
@@ -32,6 +34,7 @@ import {
 
 export default {
   title: 'bpk-component-button',
+  component: BpkButtonV2,
 };
 
 export const BpkButtonPrimary = () => <PrimaryExample />;
@@ -56,3 +59,7 @@ export const Mixture = () => <MixedExample />;
 export const AnchorTags = () => <AnchorTagsExample />;
 
 export const VisualTest = () => <MixedExample />;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

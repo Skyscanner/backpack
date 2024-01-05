@@ -22,7 +22,6 @@ import type { ReactNode } from 'react';
 import { BpkButtonLink } from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
@@ -46,6 +45,9 @@ export type Props = {
   title?: string | null;
   closeLabel?: string;
   closeText?: string | null;
+  /**
+   * The accessory view allows for icons and actions to be placed in front of the main title inside the modal header. To be used with `BpkNavigationBarButtonLink`
+   */
   accessoryView?: ReactNode;
 };
 

@@ -14,12 +14,14 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import LandmarkIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/landmark';
+import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
 import BpkMap, {
   BpkIconMarker,
   BpkOverlayView,
 } from '@skyscanner/backpack-web/bpk-component-map';
 
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
+const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 
 export default () => (
   <BpkMap
@@ -46,7 +48,6 @@ export default () => (
       icon={<AlignedLandmarkIconSm />}
       position={{ latitude: 27.9881, longitude: 86.927 }}
       onClick={() => {}}
-      disabled
     />
     <BpkOverlayView position={{ latitude: 27.9881, longitude: 86.925 }}>
       <BpkText>Shibuya Crossing</BpkText>
@@ -60,7 +61,10 @@ export default () => (
 Price markers are used to display clickable prices on a map.
 
 ```js
-import BpkMap, { BpkPriceMarker, PRICE_MARKER_STATUSES } from '@skyscanner/backpack-web/bpk-component-map';
+import BpkMap, {
+  BpkPriceMarker,
+  PRICE_MARKER_STATUSES,
+} from '@skyscanner/backpack-web/bpk-component-map';
 
 export default () => (
   <BpkMap
@@ -76,7 +80,7 @@ export default () => (
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
-        console.log("Price marker pressed.")
+        console.log('Price marker pressed.');
       }}
       status={PRICE_MARKER_STATUSES.focused}
     />
@@ -84,9 +88,60 @@ export default () => (
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
-        console.log("Price marker pressed.")
+        console.log('Price marker pressed.');
       }}
       status={PRICE_MARKER_STATUSES.viewed}
+    />
+  </BpkMap>
+);
+```
+
+### BpkPriceMarkerV2
+
+BpkPriceMarker V2 version that is the BpkPriceMarker redesign.
+
+```js
+import BpkMap, {
+  BpkPriceMarkerV2,
+  MARKER_STATUSES,
+} from '@skyscanner/backpack-web/bpk-component-map';
+
+export default () => (
+  <BpkMap
+    zoom={15}
+    showControls={false}
+    panEnabled={false}
+    center={{
+      latitude: 27.9881,
+      longitude: 86.925,
+    }}
+  >
+    <BpkPriceMarkerV2
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log('Price marker pressed.');
+      }}
+      status={MARKER_STATUSES.selected}
+      accessibilityLabel="Price marker pressed."
+    />
+    <BpkPriceMarkerV2
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log('Price marker pressed.');
+      }}
+      status={MARKER_STATUSES.previous_selected}
+      accessibilityLabel="Have seen Price marker before"
+    />
+    <BpkPriceMarkerV2
+      label="£120"
+      icon={<AlignedAirportsIconSm />}
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log('Click the Price marker with icon.');
+      }}
+      accessibilityLabel="Click the Price marker with icon"
     />
   </BpkMap>
 );
@@ -101,13 +156,15 @@ export default () => (
 If you intend to include multiple maps on one page, it's better to load the Google Maps JavaScript in this HOC, as it ensures that script will not be re-downloaded every time it's used.
 
 ```js
-import BpkMap, { withGoogleMapsScript } from '@skyscanner/backpack-web/bpk-component-map';
+import BpkMap, {
+  withGoogleMapsScript,
+} from '@skyscanner/backpack-web/bpk-component-map';
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 
 export default () => (
   <BpkMapWithScript
-    googleMapsApiKey='YOUR_API_KEY'
+    googleMapsApiKey="YOUR_API_KEY"
     zoom={15}
     center={{
       latitude: 27.9881,
@@ -119,91 +176,10 @@ export default () => (
 );
 ```
 
-## Props
-
-### BpkMap
-
-| Property              | PropType                                                                                        | Required | Default Value                    |
-| --------------------- | ----------------------------------------------------------------- | -------- | -------------------------------- |
-| bounds                | shape({north: number, east: number, south: number, west: number}) | false    | null                             |
-| center                | shape({latitude: number, longitude: number})                      | false    | null                             |
-| className             | string                                                            | false    | null                             |
-| greedyGestureHandling | bool                                                              | false    | false                            |
-| mapOptionStyles       | array                                                             | false    | null                             |
-| mapRef                | func                                                              | false    | null                             |
-| onRegionChange        | func                                                              | false    | null                             |
-| onZoom                | func                                                              | false    | null                             |
-| onTilesLoaded         | func                                                              | false    | null                             |
-| panEnabled            | bool                                                              | false    | true                             |
-| showControls          | bool                                                              | false    | true                             |
-| zoom                  | number                                                            | false    | 15                               |
-| mapId                 | string                                                            | false    | null                             |
-
-Note: One of `bounds` and `center` must be provided.
-
-#### withGoogleMapsScript
-
-When using `withGoogleMapsScript`, some additional props are available:
-
-| Property                  | PropType | Required | Default Value                     |
-| ------------------------- | -------- | -------- | --------------------------------- |
-| googleMapsApiKey          | string   | true     | -                                 |
-| libraries                 | array    | false    | ['geometry', 'drawing', 'places'] |
-| loadingElement            | node     | false    | BpkSpinner                        |
-| preventGoogleFontsLoading | bool     | false    | false                             |
-
 ### BpkIconMarker
-
-| Property       | PropType                                     | Required | Default Value        |
-| -------------- | -------------------------------------------- | -------- | -------------------- |
-| icon           | node                                         | true     | -                    |
-| position       | shape({latitude: number, longitude: number}) | true     | -                    |
-| className      | string                                       | false    | null                 |
-| disabled       | bool                                         | false    | false                |
-| onClick        | func                                         | false    | null                 |
-| selected       | bool                                         | false    | false                |
-| buttonProps    | object                                       | false    | null                 |
-
-#### `icon`
 
 `BpkIconMarker` only supports small icons from the Backpack icon set. Large icons should not be used with `BpkIconMarker`.
 
-### BpkPriceMarker
+## Props
 
-| Property       | PropType                                     | Required | Default Value |
-| -------------- | -------------------------------------------- | -------- | ------------- |
-| label          | string                                       | true     | -             |
-| position       | shape({latitude: number, longitude: number}) | true     | -             |
-| arrowClassName | string                                       | false    | null          |
-| className      | string                                       | false    | null          |
-| disabled       | bool                                         | false    | false         |
-| onClick        | func                                         | false    | null          |
-| status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)                                        | false    | `PRICE_MARKER_STATUSES.default`             |
-| buttonProps    | object                                       | false    | null          |
-
-### BpkOverlayView
-
-| Property | PropType                                     | Required | Default Value |
-| -------- | -------------------------------------------- | -------- | ------------- |
-| children | node                                         | true     | -             |
-| position | shape({latitude: number, longitude: number}) | true     | -             |
-
-## Theme Props
-
-Icon markers:
-
-- `iconMarkerDefaultBackgroundColor`
-- `iconMarkerDefaultSelectedColor`
-- `iconMarkerDefaultDisabledBackgroundColor`
-- `iconMarkerDefaultDisabledColor`
-
-Price markers:
-
-- `priceMarkerBackgroundColor`
-
-- `priceMarkerSelectedBorderColor`
-- `priceMarkerSelectedColor`
-
-- `priceMarkerViewedBackgroundColor`
-- `priceMarkerViewedBorderColor`
-- `priceMarkerViewedColor`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/map/web-rj4ymUaL#section-props-0f).

@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
+import BpkGridToggle from '../../packages/bpk-component-grid-toggle';
+
 import DefaultExample from './examples';
 
 export default {
   title: 'bpk-component-grid-toggle',
+  component: BpkGridToggle,
 };
 
 export const Example = DefaultExample;

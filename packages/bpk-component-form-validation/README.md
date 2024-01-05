@@ -20,11 +20,4 @@ export default () => (
 
 ## Props
 
-| Property       | PropType | Required | Default Value |
-| -------------- | -------- | -------- | ------------- |
-| children       | node     | true     | -             |
-| id             | string   | true     | -             |
-| expanded       | bool     | true     | -             |
-| isCheckbox     | bool     | false    | false         |
-| className      | string   | false    | null          |
-| containerProps | object   | false    | {}            |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/form-validation/web-XYQ2bj1a#section-props-de).

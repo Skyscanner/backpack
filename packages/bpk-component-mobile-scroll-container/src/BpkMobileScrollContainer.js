@@ -96,31 +96,31 @@ type State = {
   scrollIndicatorClassName: ?string,
 };
 
+const propTypes = {
+  children: PropTypes.node.isRequired,
+  scrollerRef: PropTypes.func,
+  innerContainerTagName: PropTypes.string,
+  className: PropTypes.string,
+  leadingIndicatorClassName: PropTypes.string,
+  trailingIndicatorClassName: PropTypes.string,
+  style: PropTypes.object,  
+  showScrollbar: PropTypes.bool,
+};
+
+const defaultProps = {
+  scrollerRef: null,
+  innerContainerTagName: 'div',
+  className: null,
+  leadingIndicatorClassName: null,
+  trailingIndicatorClassName: null,
+  style: null,
+  showScrollbar: false,
+};
+
 class BpkMobileScrollContainer extends Component<Props, State> {
   innerEl: ?HTMLElement;
 
   scrollerEl: ?HTMLElement;
-
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    scrollerRef: PropTypes.func,
-    innerContainerTagName: PropTypes.string,
-    className: PropTypes.string,
-    leadingIndicatorClassName: PropTypes.string,
-    trailingIndicatorClassName: PropTypes.string,
-    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    showScrollbar: PropTypes.bool,
-  };
-
-  static defaultProps = {
-    scrollerRef: null,
-    innerContainerTagName: 'div',
-    className: null,
-    leadingIndicatorClassName: null,
-    trailingIndicatorClassName: null,
-    style: null,
-    showScrollbar: false,
-  };
 
   constructor() {
     super();
@@ -235,6 +235,12 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     );
   }
 }
+BpkMobileScrollContainer.propTypes = {
+  ...propTypes,
+};
+BpkMobileScrollContainer.defaultProps = {
+  ...defaultProps,
+};
 
 export default BpkMobileScrollContainer;
 export { computeScrollBarAwareHeight, computeScrollIndicatorClassName };

@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { action } from '../../packages/bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from '../../packages/bpk-component-icon/sm/close';
@@ -26,6 +26,7 @@ import { cssModules } from '../../packages/bpk-react-utils';
 import BpkNavigationBar, {
   BpkNavigationBarButtonLink,
   BpkNavigationBarIconButton,
+  BAR_STYLES,
 } from '../../packages/bpk-component-navigation-bar';
 
 import STYLES from './examples.module.scss';
@@ -51,6 +52,32 @@ const DefaultExample = () => (
           onClick={action('close clicked')}
           icon={CloseIcon}
           label="close"
+        />
+      }
+    />
+  </div>
+);
+
+const OnDarkExample = () => (
+  <div className={getClassNames('bpk-navigation-bar-story')}>
+    <BpkNavigationBar
+      id="test"
+      title="Backpack"
+      barStyle={BAR_STYLES.onDark}
+      leadingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('back clicked')}
+          icon={ArrowIconWithRtl}
+          label="back"
+          barStyle={BAR_STYLES.onDark}
+        />
+      }
+      trailingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('close clicked')}
+          icon={CloseIcon}
+          label="close"
+          barStyle={BAR_STYLES.onDark}
         />
       }
     />
@@ -131,6 +158,32 @@ const WithLogoExample = () => (
   </div>
 );
 
+const WithLinksOnDarkExample = () => (
+  <div className={getClassNames('bpk-navigation-bar-story')}>
+    <BpkNavigationBar
+      id="test"
+      title="Backpack"
+      barStyle={BAR_STYLES.onDark}
+      leadingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('back clicked')}
+          icon={ArrowIconWithRtl}
+          label="back"
+          barStyle={BAR_STYLES.onDark}
+        />
+      }
+      trailingButton={
+        <BpkNavigationBarButtonLink
+          barStyle={BAR_STYLES.onDark}
+          onClick={action('done clicked')}
+        >
+          Done
+        </BpkNavigationBarButtonLink>
+      }
+    />
+  </div>
+);
+
 const StickyExample = () => {
   const items = [];
   for (let i = 0; i < 5; i += 1) {
@@ -181,11 +234,22 @@ const StickyExample = () => {
   );
 };
 
+const VisualTestExample = () => (
+  <div className={getClassNames('bpk-navigation-bar-story')}>
+    <DefaultExample />
+    <OnDarkExample />
+    <WithLinksOnDarkExample />
+  </div>
+)
+
 export {
   DefaultExample,
+  OnDarkExample,
   LeadingIconOnlyExample,
   TrailingIconOnlyExample,
   WithLinksExample,
   WithLogoExample,
+  WithLinksOnDarkExample,
   StickyExample,
+  VisualTestExample
 };

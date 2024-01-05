@@ -5,19 +5,19 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
   <div
     class="bpk-data-table"
     role="table"
-    style="height: 200px;"
+    style="height: 12.5rem;"
   >
     <div>
       <div
         class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
       >
         <div
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Name"
@@ -32,11 +32,10 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -44,11 +43,10 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -61,7 +59,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           <span
             aria-label="Description"
@@ -76,11 +74,10 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -88,11 +85,10 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -105,7 +101,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Bla"
@@ -120,11 +116,10 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -132,11 +127,10 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -153,27 +147,27 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
       <div
         class="bpk-data-table__row bpk-data-table__row--clickable"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Jose
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Software Engineer
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -181,27 +175,27 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
       <div
         class="bpk-data-table__row bpk-data-table__row--clickable"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Rolf
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Some guy
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -216,19 +210,19 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
   <div
     class="bpk-data-table custom-data-table"
     role="table"
-    style="height: 200px;"
+    style="height: 12.5rem;"
   >
     <div>
       <div
         class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
       >
         <div
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Name"
@@ -243,11 +237,10 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -255,11 +248,10 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -272,7 +264,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           <span
             aria-label="Description"
@@ -287,11 +279,10 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -299,11 +290,10 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -316,7 +306,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Bla"
@@ -331,11 +321,10 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -343,11 +332,10 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -364,27 +352,27 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
       <div
         class="bpk-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Jose
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Software Engineer
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -392,27 +380,27 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
       <div
         class="bpk-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Rolf
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Some guy
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -427,19 +415,19 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
   <div
     class="bpk-data-table"
     role="table"
-    style="height: 200px;"
+    style="height: 12.5rem;"
   >
     <div>
       <div
         class="bpk-data-table__row bpk-data-table__header-row custom-data-table__header"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
       >
         <div
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Name"
@@ -454,11 +442,10 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -466,11 +453,10 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -483,7 +469,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           <span
             aria-label="Description"
@@ -498,11 +484,10 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -510,11 +495,10 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -527,7 +511,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Bla"
@@ -542,11 +526,10 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -554,11 +537,10 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -575,27 +557,27 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
       <div
         class="bpk-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Jose
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Software Engineer
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -603,27 +585,27 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
       <div
         class="bpk-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Rolf
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Some guy
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -638,19 +620,19 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
   <div
     class="bpk-data-table"
     role="table"
-    style="height: 200px;"
+    style="height: 12.5rem;"
   >
     <div>
       <div
         class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
       >
         <div
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Name"
@@ -665,11 +647,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -677,11 +658,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -694,7 +674,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           <span
             aria-label="Description"
@@ -709,11 +689,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -721,11 +700,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -738,7 +716,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Bla"
@@ -753,11 +731,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -765,11 +742,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -786,27 +762,27 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
       <div
         class="bpk-data-table__row custom-data-table__row_even"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Jose
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Software Engineer
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -814,27 +790,27 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
       <div
         class="bpk-data-table__row custom-data-table__row_odd"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Rolf
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Some guy
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -849,19 +825,19 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
   <div
     class="bpk-data-table"
     role="table"
-    style="height: 200px;"
+    style="height: 12.5rem;"
   >
     <div>
       <div
         class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
       >
         <div
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Name"
@@ -876,11 +852,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -888,11 +863,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -905,7 +879,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           <span
             aria-label="Description"
@@ -920,11 +894,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -932,11 +905,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -949,7 +921,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Bla"
@@ -964,11 +936,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -976,11 +947,10 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -997,27 +967,27 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
       <div
         class="bpk-data-table__row custom-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Jose
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Software Engineer
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -1025,27 +995,27 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
       <div
         class="bpk-data-table__row custom-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Rolf
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Some guy
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -1060,19 +1030,19 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
   <div
     class="bpk-data-table"
     role="table"
-    style="width: 400px; height: 200px;"
+    style="width: 25rem; height: 12.5rem;"
   >
     <div>
       <div
         class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
       >
         <div
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Name"
@@ -1087,11 +1057,10 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1099,11 +1068,10 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1116,7 +1084,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           <span
             aria-label="Description"
@@ -1131,11 +1099,10 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1143,11 +1110,10 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1160,7 +1126,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Bla"
@@ -1175,11 +1141,10 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1187,11 +1152,10 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1208,27 +1172,27 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       <div
         class="bpk-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Jose
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Software Engineer
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -1236,27 +1200,27 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       <div
         class="bpk-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Rolf
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Some guy
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -1271,19 +1235,19 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
   <div
     class="bpk-data-table"
     role="table"
-    style="height: 200px;"
+    style="height: 12.5rem;"
   >
     <div>
       <div
         class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
       >
         <div
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Name"
@@ -1298,11 +1262,10 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1310,11 +1273,10 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1327,7 +1289,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           <span
             aria-label="Description"
@@ -1342,11 +1304,10 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1354,11 +1315,10 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1371,7 +1331,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Bla"
@@ -1386,11 +1346,10 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1398,11 +1357,10 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1419,27 +1377,27 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
       <div
         class="bpk-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Jose
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Software Engineer
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -1447,27 +1405,27 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
       <div
         class="bpk-data-table__row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
         tabindex="0"
       >
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Rolf
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           Some guy
         </div>
         <div
           class="bpk-data-table__cell"
           role="cell"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           Bla
         </div>
@@ -1482,19 +1440,19 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
   <div
     class="bpk-data-table"
     role="table"
-    style="height: 200px;"
+    style="height: 12.5rem;"
   >
     <div>
       <div
         class="bpk-data-table__row bpk-data-table__header-row"
         role="row"
-        style="height: 60px;"
+        style="height: 3.75rem;"
       >
         <div
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Name"
@@ -1509,11 +1467,10 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1521,11 +1478,10 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1538,7 +1494,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 1;"
+          style="width: 6.25rem; flex-grow: 1;"
         >
           <span
             aria-label="Description"
@@ -1553,11 +1509,10 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1565,11 +1520,10 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1582,7 +1536,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
           class="bpk-data-table-column__header"
           colspan="1"
           role="columnheader"
-          style="width: 100px; flex-grow: 0;"
+          style="width: 6.25rem; flex-grow: 0;"
         >
           <span
             aria-label="Bla"
@@ -1597,11 +1551,10 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
             class="bpk-data-table-column__sort-icons"
           >
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1609,11 +1562,10 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               />
             </svg>
             <svg
+              aria-hidden="true"
               class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-              height="16"
               style="width: 1rem; height: 1rem;"
               viewBox="0 0 24 24"
-              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -1627,6 +1579,211 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
     <div
       role="rowgroup"
     />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkDataTable should render correctly with px height 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-data-table"
+    role="table"
+    style="height: 12.5rem;"
+  >
+    <div>
+      <div
+        class="bpk-data-table__row bpk-data-table__header-row"
+        role="row"
+        style="height: 3.75rem;"
+      >
+        <div
+          class="bpk-data-table-column__header"
+          colspan="1"
+          role="columnheader"
+          style="width: 6.25rem; flex-grow: 0;"
+        >
+          <span
+            aria-label="Name"
+            aria-pressed="true"
+            role="button"
+            tabindex="0"
+          >
+            Name
+          </span>
+          <div
+            aria-hidden="true"
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              aria-hidden="true"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
+              />
+            </svg>
+            <svg
+              aria-hidden="true"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="bpk-data-table-column__header"
+          colspan="1"
+          role="columnheader"
+          style="width: 6.25rem; flex-grow: 1;"
+        >
+          <span
+            aria-label="Description"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
+          >
+            Description
+          </span>
+          <div
+            aria-hidden="true"
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              aria-hidden="true"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
+              />
+            </svg>
+            <svg
+              aria-hidden="true"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="bpk-data-table-column__header"
+          colspan="1"
+          role="columnheader"
+          style="width: 6.25rem; flex-grow: 0;"
+        >
+          <span
+            aria-label="Bla"
+            aria-pressed="false"
+            role="button"
+            tabindex="0"
+          >
+            Bla
+          </span>
+          <div
+            aria-hidden="true"
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              aria-hidden="true"
+              class="bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
+              />
+            </svg>
+            <svg
+              aria-hidden="true"
+              class="bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      role="rowgroup"
+    >
+      <div
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 3.75rem;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 6.25rem; flex-grow: 0;"
+        >
+          Jose
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 6.25rem; flex-grow: 1;"
+        >
+          Software Engineer
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 6.25rem; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
+      <div
+        class="bpk-data-table__row"
+        role="row"
+        style="height: 3.75rem;"
+        tabindex="0"
+      >
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 6.25rem; flex-grow: 0;"
+        >
+          Rolf
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 6.25rem; flex-grow: 1;"
+        >
+          Some guy
+        </div>
+        <div
+          class="bpk-data-table__cell"
+          role="cell"
+          style="width: 6.25rem; flex-grow: 0;"
+        >
+          Bla
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

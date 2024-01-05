@@ -53,20 +53,6 @@ describe('BpkIconMarker', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a "disabled" attribute', () => {
-    const { asFragment } = render(
-      <BpkIconMarker position={position} icon={icon} disabled />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with both a "selected" and "disabled" attribute (disabled takes precedence)', () => {
-    const { asFragment } = render(
-      <BpkIconMarker position={position} icon={icon} selected disabled />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with a "className" attribute', () => {
     const { asFragment } = render(
       <BpkIconMarker

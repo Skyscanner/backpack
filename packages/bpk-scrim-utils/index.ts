@@ -17,8 +17,9 @@
  */
 
 import withScrim from './src/withScrim';
+import withScrimmedPortal from './src/withScrimmedPortal';
 
-export { withScrim };
+export { withScrim, withScrimmedPortal };
 export default {
   withScrim,
 };

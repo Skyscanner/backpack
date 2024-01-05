@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../packages/bpk-mixins/index.scss';
 
 .bpk-overlay-stories {
   display: flex;
@@ -25,7 +25,7 @@
   &__overlay-story {
     display: flex;
     width: 100%;
-    padding: $bpk-spacing-md;
+    padding: bpk-spacing-base();
     flex-direction: column;
     align-items: center;
   }

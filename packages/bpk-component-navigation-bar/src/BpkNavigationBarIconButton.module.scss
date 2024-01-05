@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
 .bpk-navigation-bar-icon-button {
   @include bpk-themeable-property(
@@ -39,5 +39,17 @@
       --bpk-navigation-bar-icon-button-active-color,
       $bpk-text-primary-day
     );
+  }
+
+  &--on-dark {
+    color: $bpk-text-primary-inverse-day;
+
+    @include bpk-hover {
+      color: $bpk-text-primary-inverse-day;
+    }
+
+    &:active {
+      color: $bpk-text-primary-inverse-day;
+    }
   }
 }
