@@ -60,7 +60,6 @@ const BpkBreadcrumbItem = (props: Props) => {
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <BpkLink
           href={href}
-          className={getClassName('bpk-breadcrumb-item__link')}
           {...linkProps}
         >
           {children}

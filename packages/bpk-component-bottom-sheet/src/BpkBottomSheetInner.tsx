@@ -25,6 +25,7 @@ import { BpkButtonLink } from '../../bpk-component-link';
 import BpkCloseButton from '../../bpk-component-close-button';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { cssModules } from "../../bpk-react-utils";
+import BpkText from "../../bpk-component-text/src/BpkText";
 
 import STYLES from './BpkBottomSheetInner.module.scss';
 
@@ -81,18 +82,17 @@ const BpkBottomSheetInner = ({
     <header className={getClassName('bpk-bottom-sheet--header')}>
       <BpkNavigationBar
         id={headingId}
-        className={getClassName('bpk-bottom-sheet--navigation')}
         title={
-          <h2
+          <BpkText
             id={headingId}
-            className={getClassName('bpk-bottom-sheet--heading')}
+            textStyle="label-1"
+            tagName="h2"
           >
             {title}
-          </h2>
+          </BpkText>
         }
         leadingButton={
           <BpkCloseButton
-            className={getClassName('bpk-bottom-sheet--close-button')}
             label={closeLabel}
             onClick={onClose}
           />
@@ -100,15 +100,12 @@ const BpkBottomSheetInner = ({
         trailingButton={
           actionText && onAction ? (
             <BpkButtonLink
-              className={getClassName('bpk-bottom-sheet--action-button')}
               onClick={onAction}
             >
               {actionText}
             </BpkButtonLink>
           ) :
-          <div
-            className={getClassName('bpk-bottom-sheet--action-button')}
-           />
+          null
         }
       />
     </header>

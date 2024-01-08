@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@layer reset, base, component, utility;
+@layer reset, base, component, utility, override;
 
 @layer reset {
   @import '~normalize.css';

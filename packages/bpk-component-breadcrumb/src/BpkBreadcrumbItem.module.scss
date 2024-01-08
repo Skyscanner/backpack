@@ -16,25 +16,25 @@
  * limitations under the License.
  */
 
-@layer component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer component {
   .bpk-breadcrumb-item {
     display: flex;
     align-items: center;
     white-space: nowrap;
 
-    &__link {
-      @include bpk-text;
-    }
-
-    &__active-item {
-      color: $bpk-text-secondary-day;
-    }
-
     &__arrow {
       margin: 0 bpk-spacing-sm();
       fill: $bpk-text-disabled-day;
+    }
+  }
+}
+
+@layer override {
+  .bpk-breadcrumb-item {
+    &__active-item {
+      color: $bpk-text-secondary-day;
     }
   }
 }
