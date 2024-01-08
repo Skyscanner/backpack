@@ -1,5 +1,8 @@
 ### BpkDataTable - migrating to @skyscanner/backpack v32.
 
+There are 2 breaking changes as part of the latest release:
+
+#### `BpkDataTableColumn` is removed.
 **NEW PROP:** `columns` to replace `BpkDataTableColumn` children.
 Pass `columns` prop as an array of objects instead of passing the columns as children.
 
@@ -66,3 +69,6 @@ The schema differs from the old `BpkDataTableColumn` as follows:
 - `dataKey` renamed to `accessor`
 - `headerRenderer` is removed. Use the `Header` prop instead to pass a function that formats the header value. If you pass a function, it will receive the `disableSortBy`, `accessor`, and `label` props of the column. Must return valid JSX.
 - `cellRenderer` and `cellDataGetter` are removed. Use the `Cell` prop instead to pass a function that formats the column value. It will receive the `rowData` and `rowIndex` of the cell's row, `accessor` and `columnIndex` of the cell's column, `cellData` props. Must return valid JSX.
+
+#### All heights and widths should  be passed in rem
+All height and width properties should be using `rem` values.
