@@ -1,4 +1,4 @@
-### BpkDataTable
+### BpkDataTable - migrating to @skyscanner/backpack v32.
 
 **NEW PROP:** `columns` to replace `BpkDataTableColumn` children.
 Pass `columns` prop as an array of objects instead of passing the columns as children.
@@ -10,6 +10,7 @@ export default () => (
       label={'Name'}
       dataKey={'name'}
       width={{"6.25rem"}}
+      disableSort
     />
     <BpkDataTableColumn
       label={'Description'}
@@ -31,7 +32,10 @@ export default () => (
     onRowClick={onRowClick}
     columns={[
       {
-        ...
+        label: 'name',
+        accessor: 'name',
+        width: '6.25rem',
+        disableSortBy: true
       },
       ...
     ]}
