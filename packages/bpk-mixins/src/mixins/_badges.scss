@@ -18,6 +18,8 @@
 
 @import '../bonds.scss';
 @import 'typography.scss';
+@import 'radii.scss';
+@import 'utils.scss';
 
 ////
 /// @group badges
@@ -37,7 +39,7 @@
 
   @include bpk-border-radius-xs;
   @include bpk-text;
-  @include bpk-caption;
+  @include bpk-footnote;
 }
 
 /// Centered badge. Modifies the bpk-badge mixin.
@@ -117,7 +119,7 @@
 ///   }
 
 @mixin bpk-badge--normal {
-  background-color: $bpk-surface-highlight-day;
+  background-color: $bpk-private-badge-background-normal-day;
   color: $bpk-text-primary-day;
   fill: $bpk-text-primary-day;
 }
@@ -133,9 +135,9 @@
 ///   }
 
 @mixin bpk-badge--warning {
-  background-color: $bpk-status-warning-fill-day;
+  background-color: $bpk-private-badge-background-normal-day;
   color: $bpk-text-on-light-day;
-  fill: $bpk-text-on-light-day;
+  fill: $bpk-status-warning-spot-day;
 }
 
 /// Success badge. Modifies the bpk-badge mixin.
@@ -149,9 +151,9 @@
 ///   }
 
 @mixin bpk-badge--success {
-  background-color: $bpk-status-success-fill-day;
+  background-color: $bpk-private-badge-background-normal-day;
   color: $bpk-text-on-light-day;
-  fill: $bpk-text-on-light-day;
+  fill: $bpk-status-success-spot-day;
 }
 
 /// Critical badge. Modifies the bpk-badge mixin.
@@ -165,9 +167,9 @@
 ///   }
 
 @mixin bpk-badge--critical {
-  background-color: $bpk-status-danger-fill-day;
+  background-color: $bpk-private-badge-background-normal-day;
   color: $bpk-text-on-light-day;
-  fill: $bpk-text-on-light-day;
+  fill: $bpk-status-danger-spot-day;
 }
 
 /// Inverse badge. Modifies the bpk-badge mixin.
