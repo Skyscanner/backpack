@@ -9,7 +9,7 @@ exports[`BpkInfoBannerDismissable should render correctly 1`] = `
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
