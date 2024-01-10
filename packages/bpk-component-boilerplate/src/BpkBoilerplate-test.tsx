@@ -26,7 +26,7 @@ describe('BpkBoilerplate', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support custom class names', () => {
+  it('should not support custom class names', () => {
     const { asFragment } = render(
       <BpkBoilerplate className="custom-classname" />,
     );

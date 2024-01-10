@@ -25,10 +25,15 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
-const BpkBoilerplate = ({ ...rest }: Props) => (
-    <div className='bpk-boilerplate' {...rest}>
+const BpkBoilerplate = ({ ...rest }: Props) => {
+
+  // eslint-disable-next-line no-param-reassign
+  delete rest.className;
+
+  return (
+    <div className={getClassName('bpk-boilerplate')} {...rest}>
       I am an example component.
     </div>
-  );
+  )};
 
 export default BpkBoilerplate;

@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BpkBoilerplate should not support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-boilerplate"
+  >
+    I am an example component.
+  </div>
+</DocumentFragment>
+`;
+
 exports[`BpkBoilerplate should render correctly 1`] = `
 <DocumentFragment>
   <div
@@ -15,16 +25,6 @@ exports[`BpkBoilerplate should support arbitrary props 1`] = `
   <div
     class="bpk-boilerplate"
     testid="123"
-  >
-    I am an example component.
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkBoilerplate should support custom class names 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-boilerplate custom-classname"
   >
     I am an example component.
   </div>
