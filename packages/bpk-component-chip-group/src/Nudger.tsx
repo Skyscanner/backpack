@@ -17,16 +17,15 @@
  */
 
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
-import { CHIP_GROUP_TYPES, ChipStyleType } from './BpkChipGroup';
+import type { ChipStyleType } from './BpkChipGroup';
 import { CHIP_TYPES } from '../../bpk-component-chip';
-import ArrowLeft from '../../bpk-component-icon/sm/long-arrow-left.js';
-import ArrowRight from '../../bpk-component-icon/sm/long-arrow-right.js';
+import ArrowLeft from '../../bpk-component-icon/sm/long-arrow-left';
+import ArrowRight from '../../bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment } from '../../bpk-component-icon/index';
 
 import STYLES from './Nudger.module.scss';
 import { cssModules, isRTL } from '../../bpk-react-utils/index';
-import { useEffect, useState } from 'react';
-import { debounce } from 'lodash';
+import { RefObject, useEffect, useState } from 'react';
 
 const getClassName = cssModules(STYLES);
 
@@ -39,8 +38,9 @@ const CHIP_STYLE_TO_BUTTON_STYLE = {
 
 
 type Props = {
-  chipStyle: ChipStyleType,
-  leading: boolean,
+  chipStyle: ChipStyleType;
+  scrollContainerRef: RefObject<HTMLElement>;
+  leading?: boolean;
 }
 
 
@@ -49,10 +49,10 @@ const AlignedRightArrowIcon = withButtonAlignment(ArrowRight);
 
 const SCROLL_DISTANCE = 100;
 
-export const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContainerRef}: Props) => {
+const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContainerRef}: Props) => {
   const classNames = getClassName(
     'bpk-chip-group-nudger',
-    `bpk-chip-group-nudger-${leading ? "leading" : "trailing"}`
+    `bpk-chip-group-nudger--${leading ? "leading" : "trailing"}`
   )
 
   const [show, setShow] = useState(false);
@@ -66,8 +66,7 @@ export const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollC
         return;
       }
 
-      const { offsetWidth, scrollLeft, scrollWidth } = scrollContainerRef.current || {};
-
+      const { offsetWidth, scrollLeft, scrollWidth } = scrollContainerRef.current;
       const scrollValue = rtl ? -Math.floor(scrollLeft) : Math.ceil(scrollLeft);
       const showLeadingIndicator = scrollValue > 0;
       const showTrailingIndicator = scrollValue < scrollWidth - offsetWidth;
@@ -75,7 +74,7 @@ export const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollC
       setShow((leading && showLeadingIndicator) || (!leading && showTrailingIndicator))
     }, 100);
     return () => clearInterval(interval);
-  }, [leading, rtl]);
+  }, [leading, rtl, scrollContainerRef]);
 
   return show && (
       <BpkButtonV2
@@ -84,13 +83,17 @@ export const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollC
         iconOnly
         disabled={!show}
         onClick={() => {
-          scrollContainerRef.current.scrollBy({
-            left: isLeft ? -SCROLL_DISTANCE : SCROLL_DISTANCE,
-            behavior: 'smooth',
-          })
+          if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollBy({
+              left: isLeft ? -SCROLL_DISTANCE : SCROLL_DISTANCE,
+              behavior: 'smooth',
+            });
+          }
         }}
       >
         {isLeft ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
       </BpkButtonV2>
   );
 }
+
+export default Nudger;

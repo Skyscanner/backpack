@@ -19,11 +19,10 @@
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkChipGroup.module.scss';
-import { ReactElement, SyntheticEvent, useCallback, useRef, useState } from 'react';
+import { ReactElement, useRef, useState } from 'react';
 import BpkSelectableChip, { CHIP_TYPES } from '../../bpk-component-chip';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
-import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
-import { Nudger } from './Nudger';
+import Nudger from './Nudger';
 
 const getClassName = cssModules(STYLES);
 
@@ -34,45 +33,32 @@ export const CHIP_GROUP_TYPES = {
 export type ChipGroupType = (typeof CHIP_GROUP_TYPES)[keyof typeof CHIP_GROUP_TYPES];
 export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
 
-export type ChipItem = {
+export type SingleSelectChipItem = {
   text: string;
-  accessibilityLabel: string
-  selected?: boolean;
-  onClick?: (selected: boolean, index: number, event: SyntheticEvent<HTMLButtonElement>) => void;
-  component?: () => ReactElement;  // TODO Component<BpkSelectableChip>
+  accessibilityLabel?: string;
   rest: [string: any];
 };
 
-type Props = {
+export type ChipItem = {
+  component?: () => ReactElement;  // TODO Component<BpkSelectableChip>
+  onClick?: (selected: boolean, index: number) => void;
+  selected?: boolean;
+} & SingleSelectChipItem;
+
+
+export type CommonProps = {
   className?: string | null;
-  // children: Node;
   type: ChipGroupType;
-  chips: ChipItem[];
-  chipStyle: ChipStyleType;
-  stickyChip?: ChipItem;
-  onClick?: (selected: boolean[]) => void;
+  style?: ChipStyleType;
 };
 
+export type ChipGroupProps = {
+  chips: ChipItem[];
+  stickyChip?: ChipItem;
+} & CommonProps;
 
-
-const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, chipStyle = CHIP_TYPES.default, onClick, stickyChip }: Props) => {
+const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, style = CHIP_TYPES.default, stickyChip }: ChipGroupProps) => {
   const scrollContainerRef = useRef();
-
-  const connectedChips = chips.map((chip, index) => ({
-    ...chip,
-    onClick: (event: SyntheticEvent<HTMLButtonElement>) => {
-      const nextSelected = chips.map(chip => Boolean(chip.selected))
-      nextSelected[index] = !nextSelected[index];
-
-      if (chip.onClick) {
-        chip.onClick(nextSelected[index], index, event);
-      }
-      if (onClick) {
-        onClick(nextSelected);
-      }
-    },
-  }));
-
 
   const containerClassnames = getClassName(
     className,
@@ -86,32 +72,32 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, c
 
   const stickyChipClassnames = getClassName(
     'bpk-sticky-chip',
-    `bpk-sticky-chip--${chipStyle}`,
+    `bpk-sticky-chip--${style}`,
   );
 
-  const renderChipItem = ({text, accessibilityLabel, selected, onClick, component, ...rest}: ChipItem) => {
-    const Chip = component ?? BpkSelectableChip;
-
-    return (
-      <Chip
-        key={text}
-        selected={selected ?? false}
-        type={chipStyle}
-        accessibilityLabel={accessibilityLabel}
-        onClick={onClick ?? (() => {})}
-        {...rest}
-      >
-        {text}
-      </Chip>
-    );
-  }
+  const renderChipItem = ({text, accessibilityLabel, selected, onClick, component: Component = BpkSelectableChip, ...rest}: ChipItem, index: number) => (
+    <Component
+      key={text}
+      selected={selected ?? false}
+      type={style}
+      accessibilityLabel={accessibilityLabel || text}
+      onClick={() => {
+        if (onClick) {
+          onClick(!selected, index)
+        }
+      }}
+      {...rest}
+    >
+      {text}
+    </Component>
+  );
 
   const wrapRailInScroll = (children: ReactElement) =>
     type === CHIP_GROUP_TYPES.rail ? <BpkMobileScrollContainer scrollerRef={(el) => {scrollContainerRef.current = el}}>{children}</BpkMobileScrollContainer> : children;
 
   return (
     <div className={containerClassnames}>
-      {type === CHIP_GROUP_TYPES.rail && <Nudger leading chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} /> }
+      {type === CHIP_GROUP_TYPES.rail && <Nudger leading chipStyle={style} scrollContainerRef={scrollContainerRef} /> }
       {type === CHIP_GROUP_TYPES.rail && stickyChip &&
         <div className={stickyChipClassnames}>
           {renderChipItem(stickyChip)}
@@ -119,67 +105,35 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, c
       }
       {wrapRailInScroll(
         <div className={chipGroupClassNames}>
-          {connectedChips.map(chip => renderChipItem(chip))}
+          {chips.map(renderChipItem)}
         </div>
       )}
-      {type === CHIP_GROUP_TYPES.rail && <Nudger chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} /> }
+      {type === CHIP_GROUP_TYPES.rail && <Nudger chipStyle={style} scrollContainerRef={scrollContainerRef} /> }
     </div>
   );
 };
 
-
-
-export const BpkChipGroupMultiSelect = ({ chips, onClick, ...rest }: Props) => {
-  const [selected, setSelected] = useState(chips.map(c => Boolean(c.selected)));
+export const BpkChipGroupState = ({ chips, ...rest }: ChipGroupProps) => {
+  const [selectedChips, setSelectedChips] = useState(chips.map(c => Boolean(c.selected)));
 
   const statefulChips = chips.map((chip, index) => ({
     ...chip,
-    selected: selected[index],
+    selected: selectedChips[index],
+    onClick: (selected: boolean, selectedIndex: number) => {
+      if (chip.onClick) {
+        chip.onClick(selected, selectedIndex);
+      }
+
+      const nextSelectedChips = [...selectedChips]
+      nextSelectedChips[selectedIndex] = selected;
+      setSelectedChips(nextSelectedChips);
+    },
   }))
 
-  const clickHandler = (selectedChips: boolean[]) => {
-    setSelected(selectedChips);
-    if (onClick) {
-      onClick(selectedChips);
-    }
-  }
-
   return (
-    <BpkChipGroup onClick={clickHandler} chips={statefulChips} {...rest} />
+    <BpkChipGroup chips={statefulChips} {...rest} />
   );
 };
 
-
-export type SingleSelectProps = {
-  onClick?: (selected: ChipItem) => void,
-} & Props;
-
-
-export const BpkChipGroupSingleSelect = ({ chips, onClick, ...rest }: SingleSelectProps) => {
-  const [selectedIndex, setSelectedIndex] = useState(chips.findIndex(c => Boolean(c.selected)));
-
-  const connectedChips = chips.map((chip, index) => ({
-    ...chip,
-    selected: index === selectedIndex,
-    onClick: (selected: boolean, index: number, event: SyntheticEvent<HTMLButtonElement>) => {
-      setSelectedIndex(selected ? index : -1);
-
-      if (chip.onClick) {
-        chip.onClick(selected, index, event);
-      }
-
-      if (onClick) {
-        onClick({
-          ...chip,
-          selected,
-        });
-      }
-    },
-  }));
-
-  return (
-    <BpkChipGroup chips={connectedChips} {...rest} />
-  );
-};
 
 export default BpkChipGroup;

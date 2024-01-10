@@ -17,10 +17,17 @@
  */
 
 import BpkChipGroup, {
-  type Props as BpkChipGroupProps,
+  type ChipGroupProps,
+  BpkChipGroupState,
   CHIP_GROUP_TYPES,
 } from './src/BpkChipGroup';
 
-export type { BpkChipGroupProps };
-export { CHIP_GROUP_TYPES };
+import {
+  type SingleSelectProps,
+  BpkChipGroupSingleSelect,
+  BpkChipGroupSingleSelectState,
+} from './src/BpkChipGroupSingleSelect';
+
+export type { ChipGroupProps, SingleSelectProps };
+export { BpkChipGroupState, CHIP_GROUP_TYPES, BpkChipGroupSingleSelect , BpkChipGroupSingleSelectState};
 export default BpkChipGroup;

@@ -1,4 +1,4 @@
-# bpk-component-boilerplate
+# bpk-component-chip-group
 
 > Backpack example component.
 

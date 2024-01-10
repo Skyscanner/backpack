@@ -17,12 +17,8 @@
  */
 
 
-import BpkSelectableChip from '../../packages/bpk-component-chip';
-import BpkChipGroup, { CHIP_GROUP_TYPES } from '../../packages/bpk-component-chip-group';
-import {
-  BpkChipGroupMultiSelect,
-  BpkChipGroupSingleSelect,
-} from '../../packages/bpk-component-chip-group/src/BpkChipGroup';
+import { BpkDismissibleChip, BpkDropdownChip } from '../../packages/bpk-component-chip';
+import BpkChipGroup, { BpkChipGroupState, BpkChipGroupSingleSelectState, CHIP_GROUP_TYPES } from '../../packages/bpk-component-chip-group';
 import { useState } from 'react';
 import FilterIconSm from '../../packages/bpk-component-icon/sm/filter';
 
@@ -30,63 +26,39 @@ import FilterIconSm from '../../packages/bpk-component-icon/sm/filter';
 const chips = [
   {
     text: 'London',
-    accessibilityLabel: 'London',
-    onClick: () => {},
   },
   {
     text: 'Berlin',
-    accessibilityLabel: 'Berlin',
-    onClick: () => {},
   },
   {
     text: 'Florence',
-    accessibilityLabel: 'Florence',
-    onClick: () => {},
   },
   {
     text: 'Stockholm',
-    accessibilityLabel: 'Stockholm',
-    onClick: () => {},
   },
   {
     text: 'Copenhagen',
-    accessibilityLabel: 'Copenhagen',
-    onClick: () => {},
   },
   {
     text: 'Salzburg',
-    accessibilityLabel: 'Salzburg',
-    onClick: () => {},
   },
   {
     text: 'Graz',
-    accessibilityLabel: 'Graz',
-    onClick: () => {},
   },
   {
     text: 'Lanzarote',
-    accessibilityLabel: 'Lanzarote',
-    onClick: () => {},
   },
   {
     text: 'Valencia',
-    accessibilityLabel: 'Valencia',
-    onClick: () => {},
   },
   {
     text: 'Reykjavik',
-    accessibilityLabel: 'Copenhagen',
-    onClick: () => {},
   },
   {
     text: 'Tallinn',
-    accessibilityLabel: 'Tallinn',
-    onClick: () => {},
   },
   {
     text: 'Sofia',
-    accessibilityLabel: 'Sofia',
-    onClick: () => {},
   },
 ]
 
@@ -95,39 +67,35 @@ export const BpkChipGroupWrapping = () => {
 
   return (
     <div>
-      <BpkChipGroupMultiSelect
+      <BpkChipGroupState
         type={CHIP_GROUP_TYPES.wrap}
         chips={chips}
       >
-      </BpkChipGroupMultiSelect>
+      </BpkChipGroupState>
     </div>
   );
 };
 
 export const BpkSingleChipGroupWrapping = () => {
-  // const [selected]
-
   return (
     <div>
-      <BpkChipGroupSingleSelect
+      <BpkChipGroupSingleSelectState
         type={CHIP_GROUP_TYPES.wrap}
         chips={chips}
       >
-      </BpkChipGroupSingleSelect>
+      </BpkChipGroupSingleSelectState>
     </div>
   );
 };
 
 
 export const BpkChipGroupRail = () => {
-
   return (
     <div>
-      <BpkChipGroupMultiSelect
+      <BpkChipGroupState
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
-      >
-      </BpkChipGroupMultiSelect>
+      />
     </div>
   );
 };
@@ -135,50 +103,24 @@ export const BpkChipGroupRail = () => {
 
 export const BpkChipGroupSticky = () => {
 
-  // const chips = [
-  //   {
-  //     text: 'London',
-  //     accessibilityLabel: 'London',
-  //     onClick: () => {},
-  //   },
-  //   {
-  //     text: 'Berlin',
-  //     accessibilityLabel: 'Berlin',
-  //     onClick: () => {},
-  //   },
-  //   {
-  //     text: 'Florence',
-  //     accessibilityLabel: 'Florence',
-  //     onClick: () => {},
-  //   },
-  //   {
-  //     text: 'Stockholm',
-  //     accessibilityLabel: 'Stockholm',
-  //     onClick: () => {},
-  //   },
-  //   {
-  //     text: 'Copenhagen',
-  //     accessibilityLabel: 'Copenhagen',
-  //     onClick: () => {},
-  //   },
-  // ]
-
   const stickyChip = {
     text: 'Sort & Filter',
-    accessibilityLabel: 'Sort & Filter',
     leadingAccessoryView: <FilterIconSm />
-    // onClick: () => {},
   }
 
   return (
     <div>
-      <BpkChipGroupMultiSelect
+      <BpkChipGroupState
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
-        onClick={(selected) => setSelected(selected)}
         stickyChip={stickyChip}
-      >
-      </BpkChipGroupMultiSelect>
+      />
+      {/*TODO*/}
+      {/*<BpkChipGroupState*/}
+      {/*  type={CHIP_GROUP_TYPES.rail}*/}
+      {/*  chips={chips}*/}
+      {/*  stickyChip={{...stickyChip, text: undefined}}*/}
+      {/*/>*/}
     </div>
   );
 };
