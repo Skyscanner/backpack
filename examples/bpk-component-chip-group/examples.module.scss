@@ -1,0 +1,31 @@
+
+@import '../../packages/bpk-mixins/index.scss';
+
+.bpk-chip-group-examples {
+  &__fixed-width {
+    width: 300 * $bpk-one-pixel-rem;
+  }
+
+  &__contrast {
+    padding: bpk-spacing-base();
+    background-color: $bpk-canvas-contrast-day;
+  }
+
+  &__dark {
+    padding: bpk-spacing-base();
+    background-color: $bpk-surface-contrast-day;
+  }
+
+  &__image {
+    padding: bpk-spacing-base();
+    background-image: url('https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg');
+  }
+
+  &__mixed-container {
+    h2 {
+      margin-top: bpk-spacing-xl();
+      margin-bottom: bpk-spacing-md();
+    }
+  }
+}
+

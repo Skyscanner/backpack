@@ -37,7 +37,7 @@
   }
 }
 
-.bpk-sticky-chip {
+.bpk-sticky-chip-container {
   padding-inline-end: bpk-spacing-md();
   margin-inline-end: bpk-spacing-md();
   @include bpk-border-right-sm($bpk-line-day);
@@ -52,5 +52,38 @@
     @include bpk-rtl {
       @include bpk-border-left-sm($bpk-line-on-dark-day);
     }
+  }
+}
+
+@include bpk-breakpoint-tablet {
+  // TODO: Should this be a new chip component type without text?
+  .bpk-sticky-chip {
+    padding-inline-start: bpk-spacing-md();
+    padding-inline-end: 0;
+
+    // TODO: better way to do this? Hide all contents of the chip except the leading icon.
+    span:not(:nth-of-type(1)) {
+      display: none;
+    }
+  }
+}
+
+.bpk-chip-group-scroller-left-indicator {
+  &--on-dark {
+    @include bpk-scroll-indicator-left($bpk-surface-contrast-day);
+  }
+
+  &--on-image::before {
+    display: none;
+  }
+}
+
+.bpk-chip-group-scroller-right-indicator {
+  &--on-dark {
+    @include bpk-scroll-indicator-right($bpk-surface-contrast-day);
+  }
+
+  &--on-image::after {
+    display: none;
   }
 }

@@ -1,29 +1,32 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2022 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-export type Props = {
-  className?: string | null;
-  [rest: string]: any;
+import { ReactElement, ReactNode } from 'react';
+import { type BpkSelectableChipProps, CHIP_TYPES } from '../../bpk-component-chip';
+export declare const CHIP_GROUP_TYPES: {
+    rail: string;
+    wrap: string;
 };
-declare const BpkBoilerplate: {
-  ({ className, ...rest }: Props): JSX.Element;
-  defaultProps: {
-    className: null;
-  };
+export type ChipGroupType = (typeof CHIP_GROUP_TYPES)[keyof typeof CHIP_GROUP_TYPES];
+export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
+export type SingleSelectChipItem = {
+    text: string;
+    accessibilityLabel?: string;
+    leadingAccessoryView?: ReactNode;
+    className?: string;
+    [rest: string]: any;
 };
-export default BpkBoilerplate;
+export type ChipItem = {
+    component?: (props: BpkSelectableChipProps) => ReactElement;
+    onClick?: (selected: boolean, index: number) => void;
+    selected?: boolean;
+} & SingleSelectChipItem;
+export type CommonProps = {
+    type: ChipGroupType;
+    className?: string | null;
+    style?: ChipStyleType;
+};
+export type ChipGroupProps = {
+    chips: ChipItem[];
+    stickyChip?: ChipItem;
+} & CommonProps;
+declare const BpkChipGroup: ({ className, chips, type, style, stickyChip }: ChipGroupProps) => JSX.Element;
+export declare const BpkChipGroupState: ({ chips, ...rest }: ChipGroupProps) => JSX.Element;
+export default BpkChipGroup;

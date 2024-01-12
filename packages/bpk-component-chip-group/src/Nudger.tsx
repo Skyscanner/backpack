@@ -19,13 +19,15 @@
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import type { ChipStyleType } from './BpkChipGroup';
 import { CHIP_TYPES } from '../../bpk-component-chip';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowLeft from '../../bpk-component-icon/sm/long-arrow-left';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowRight from '../../bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment } from '../../bpk-component-icon/index';
 
 import STYLES from './Nudger.module.scss';
 import { cssModules, isRTL } from '../../bpk-react-utils/index';
-import { RefObject, useEffect, useState } from 'react';
+import { MutableRefObject, useEffect, useState } from 'react';
 
 const getClassName = cssModules(STYLES);
 
@@ -39,7 +41,7 @@ const CHIP_STYLE_TO_BUTTON_STYLE = {
 
 type Props = {
   chipStyle: ChipStyleType;
-  scrollContainerRef: RefObject<HTMLElement>;
+  scrollContainerRef: MutableRefObject<HTMLElement | null>;
   leading?: boolean;
 }
 
@@ -50,11 +52,6 @@ const AlignedRightArrowIcon = withButtonAlignment(ArrowRight);
 const SCROLL_DISTANCE = 100;
 
 const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContainerRef}: Props) => {
-  const classNames = getClassName(
-    'bpk-chip-group-nudger',
-    `bpk-chip-group-nudger--${leading ? "leading" : "trailing"}`
-  )
-
   const [show, setShow] = useState(false);
 
   const rtl = isRTL();
@@ -76,7 +73,13 @@ const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContaine
     return () => clearInterval(interval);
   }, [leading, rtl, scrollContainerRef]);
 
-  return show && (
+  const classNames = getClassName(
+    'bpk-chip-group-nudger',
+    `bpk-chip-group-nudger--${leading ? "leading" : "trailing"}`,
+    !show && `bpk-chip-group-nudger--hidden`,
+  )
+
+  return (
       <BpkButtonV2
         className={classNames}
         type={CHIP_STYLE_TO_BUTTON_STYLE[chipStyle]}

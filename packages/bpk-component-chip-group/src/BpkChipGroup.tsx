@@ -16,13 +16,16 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
+import { cssModules, isRTL } from '../../bpk-react-utils';
 import STYLES from './BpkChipGroup.module.scss';
-import { ReactElement, useRef, useState } from 'react';
-import BpkSelectableChip, { CHIP_TYPES } from '../../bpk-component-chip';
+import { ReactElement, ReactNode, useRef, useState } from 'react';
+import BpkSelectableChip, { type BpkSelectableChipProps, CHIP_TYPES } from '../../bpk-component-chip';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import Nudger from './Nudger';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import FilterIconSm from '../../../packages/bpk-component-icon/sm/filter';
+import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 
 const getClassName = cssModules(STYLES);
 
@@ -36,19 +39,20 @@ export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
 export type SingleSelectChipItem = {
   text: string;
   accessibilityLabel?: string;
-  rest: [string: any];
+  leadingAccessoryView?: ReactNode;
+  className?: string;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 export type ChipItem = {
-  component?: () => ReactElement;  // TODO Component<BpkSelectableChip>
+  component?: (props: BpkSelectableChipProps) => ReactElement;
   onClick?: (selected: boolean, index: number) => void;
   selected?: boolean;
 } & SingleSelectChipItem;
 
-
 export type CommonProps = {
-  className?: string | null;
   type: ChipGroupType;
+  className?: string | null;
   style?: ChipStyleType;
 };
 
@@ -58,7 +62,7 @@ export type ChipGroupProps = {
 } & CommonProps;
 
 const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, style = CHIP_TYPES.default, stickyChip }: ChipGroupProps) => {
-  const scrollContainerRef = useRef();
+  const scrollContainerRef = useRef<HTMLElement | null>(null);
 
   const containerClassnames = getClassName(
     className,
@@ -70,9 +74,24 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, s
     `bpk-chip-group--${type}`,
   );
 
+  const stickyChipContainerClassnames = getClassName(
+    'bpk-sticky-chip-container',
+    `bpk-sticky-chip-container--${style}`,
+  );
+
   const stickyChipClassnames = getClassName(
     'bpk-sticky-chip',
-    `bpk-sticky-chip--${style}`,
+    stickyChip && stickyChip.className,
+  );
+
+  const scrollContainerLeftIndicator = getClassName(
+    'bpk-chip-group-scroller-left-indicator',
+    `bpk-chip-group-scroller-left-indicator--${style}`,
+  );
+
+  const scrollContainerRightIndicator = getClassName(
+    'bpk-chip-group-scroller-right-indicator',
+    `bpk-chip-group-scroller-right-indicator--${style}`,
   );
 
   const renderChipItem = ({text, accessibilityLabel, selected, onClick, component: Component = BpkSelectableChip, ...rest}: ChipItem, index: number) => (
@@ -83,7 +102,7 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, s
       accessibilityLabel={accessibilityLabel || text}
       onClick={() => {
         if (onClick) {
-          onClick(!selected, index)
+          onClick(!selected, index);
         }
       }}
       {...rest}
@@ -91,24 +110,43 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, s
       {text}
     </Component>
   );
-
   const wrapRailInScroll = (children: ReactElement) =>
-    type === CHIP_GROUP_TYPES.rail ? <BpkMobileScrollContainer scrollerRef={(el) => {scrollContainerRef.current = el}}>{children}</BpkMobileScrollContainer> : children;
+    type === CHIP_GROUP_TYPES.rail ? (
+      <BpkMobileScrollContainer
+        scrollerRef={(el: HTMLElement) => {scrollContainerRef.current = el}}
+        leadingIndicatorClassName={isRTL() ? scrollContainerRightIndicator : scrollContainerLeftIndicator}
+        trailingIndicatorClassName={isRTL() ? scrollContainerLeftIndicator : scrollContainerRightIndicator}
+      >
+        {children}
+      </BpkMobileScrollContainer>
+    ) : children;
 
   return (
     <div className={containerClassnames}>
-      {type === CHIP_GROUP_TYPES.rail && <Nudger leading chipStyle={style} scrollContainerRef={scrollContainerRef} /> }
+      {type === CHIP_GROUP_TYPES.rail && (
+        <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
+          <Nudger leading chipStyle={style} scrollContainerRef={scrollContainerRef} />
+        </BpkBreakpoint>
+      )}
       {type === CHIP_GROUP_TYPES.rail && stickyChip &&
-        <div className={stickyChipClassnames}>
-          {renderChipItem(stickyChip)}
+        <div className={stickyChipContainerClassnames}>
+          {renderChipItem({
+            ...stickyChip,
+            leadingAccessoryView: <FilterIconSm />,
+            className: stickyChipClassnames,
+          }, -1)}
         </div>
       }
       {wrapRailInScroll(
         <div className={chipGroupClassNames}>
-          {chips.map(renderChipItem)}
+          {chips.map((chip, index) => chip && renderChipItem(chip, index))}
         </div>
       )}
-      {type === CHIP_GROUP_TYPES.rail && <Nudger chipStyle={style} scrollContainerRef={scrollContainerRef} /> }
+      {type === CHIP_GROUP_TYPES.rail && (
+        <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
+          <Nudger chipStyle={style} scrollContainerRef={scrollContainerRef} />
+        </BpkBreakpoint>
+      )}
     </div>
   );
 };
@@ -116,7 +154,7 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, s
 export const BpkChipGroupState = ({ chips, ...rest }: ChipGroupProps) => {
   const [selectedChips, setSelectedChips] = useState(chips.map(c => Boolean(c.selected)));
 
-  const statefulChips = chips.map((chip, index) => ({
+  const statefulChips = chips.map((chip, index) => chip && ({
     ...chip,
     selected: selectedChips[index],
     onClick: (selected: boolean, selectedIndex: number) => {
@@ -130,9 +168,7 @@ export const BpkChipGroupState = ({ chips, ...rest }: ChipGroupProps) => {
     },
   }))
 
-  return (
-    <BpkChipGroup chips={statefulChips} {...rest} />
-  );
+  return <BpkChipGroup chips={statefulChips} {...rest} />
 };
 
 

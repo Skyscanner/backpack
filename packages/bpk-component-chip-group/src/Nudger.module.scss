@@ -19,18 +19,15 @@
 @import '../../bpk-mixins/index.scss';
 
 .bpk-chip-group-nudger {
-  display: none;
-
-  @include bpk-breakpoint-desktop-only {
-    display: block;
-  }
-
   &--leading {
     margin-inline-end: bpk-spacing-md();
-
   }
 
   &--trailing {
     margin-inline-start: bpk-spacing-md();
+  }
+
+  &--hidden {
+    display: none;
   }
 }

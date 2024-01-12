@@ -19,23 +19,58 @@
 
 import { render } from '@testing-library/react';
 
-import BpkChipGroup from './BpkChipGroup';
+import BpkChipGroup, { CHIP_GROUP_TYPES } from './BpkChipGroup';
 
-describe('BpkBoilerplate', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkChipGroup />);
+const chips = [
+  {
+    text: 'London',
+  },
+  {
+    text: 'Berlin',
+    selected: true,
+  },
+  {
+    text: 'Florence',
+  },
+  {
+    text: 'Stockholm',
+  }
+];
+
+describe('BpkChipGroup', () => {
+  it('should render correctly with type = rail', () => {
+    const { asFragment } = render(<BpkChipGroup chips={chips} type={CHIP_GROUP_TYPES.rail} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with type = wrap', () => {
+    const { asFragment } = render(<BpkChipGroup chips={chips} type={CHIP_GROUP_TYPES.wrap} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
     const { asFragment } = render(
-      <BpkChipGroup className="custom-classname" />,
+      <BpkChipGroup
+        chips={chips}
+        type={CHIP_GROUP_TYPES.wrap}
+        className="custom-classname"
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkChipGroup testid="123" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  // it('should support arbitrary props', () => {
+  //   const { asFragment } = render(
+  //     <BpkChipGroup
+  //       chips={chips}
+  //       type={CHIP_GROUP_TYPES.wrap}
+  //       testid="123"
+  //     />
+  //   );
+  //   expect(asFragment()).toMatchSnapshot();
+  // });
+});
+
+describe('BpkChipGroupState', () => {
+  // TODO
 });

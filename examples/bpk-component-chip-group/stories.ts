@@ -16,12 +16,16 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import {
   BpkChipGroupRail,
   BpkChipGroupWrapping,
-  BpkChipGroupSticky, BpkSingleChipGroupWrapping,
+  BpkChipGroupSticky,
+  BpkSingleChipGroupWrapping,
+  OnDarkChipGroup,
+  OnImageChipGroup,
+  MixedExample,
+  AllChipTypesGroup,
+  OnContrastChipGroup,
 } from './examples';
 
 export default {
@@ -32,3 +36,12 @@ export const WrappedChipGroup = BpkChipGroupWrapping;
 export const SingleSelectChipGroup = BpkSingleChipGroupWrapping;
 export const RailChipGroup = BpkChipGroupRail;
 export const StickyChipGroup = BpkChipGroupSticky;
+export const OnContrast = OnContrastChipGroup;
+export const OnDark = OnDarkChipGroup;
+export const OnImage = OnImageChipGroup;
+export const AllChipTypes = AllChipTypesGroup;
+export const VisualTest = MixedExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

@@ -15,16 +15,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkChipGroup from './BpkChipGroup';
+import BpkChipGroup, { CHIP_GROUP_TYPES } from './BpkChipGroup';
 
-describe('BpkBoilerplate accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkChipGroup />);
+const chips = [
+  {
+    text: 'London',
+  },
+  {
+    text: 'Berlin',
+    selected: true,
+  },
+  {
+    text: 'Florence',
+  },
+  {
+    text: 'Stockholm',
+    disabled: true,
+  }
+];
+
+describe('BpkChipGroup accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues when type = rail', async () => {
+    const { container } = render(
+      <BpkChipGroup
+        chips={chips}
+        type={CHIP_GROUP_TYPES.rail}
+      />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues when type = wrap', async () => {
+    const { container } = render(
+      <BpkChipGroup
+        chips={chips}
+        type={CHIP_GROUP_TYPES.wrap}
+      />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
