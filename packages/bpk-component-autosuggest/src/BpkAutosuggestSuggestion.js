@@ -36,7 +36,7 @@ type Props = {
   tertiaryLabel: ?string,
 };
 
-const BpkSuggestion = (props: Props) => {
+const BpkAutosuggestSuggestion = (props: Props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
   const { className, icon, indent, subHeading, tertiaryLabel, value, ...rest } =
     props;
@@ -87,7 +87,7 @@ const BpkSuggestion = (props: Props) => {
   );
 };
 
-BpkSuggestion.propTypes = {
+BpkAutosuggestSuggestion.propTypes = {
   value: PropTypes.node.isRequired,
   subHeading: PropTypes.node,
   tertiaryLabel: PropTypes.string,
@@ -96,7 +96,7 @@ BpkSuggestion.propTypes = {
   className: PropTypes.string,
 };
 
-BpkSuggestion.defaultProps = {
+BpkAutosuggestSuggestion.defaultProps = {
   subHeading: null,
   tertiaryLabel: null,
   icon: null,
@@ -104,4 +104,4 @@ BpkSuggestion.defaultProps = {
   className: null,
 };
 
-export default BpkSuggestion;
+export default BpkAutosuggestSuggestion;

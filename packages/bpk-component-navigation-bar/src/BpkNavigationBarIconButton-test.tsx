@@ -16,13 +16,22 @@
  * limitations under the License.
  */
 
-import BpkGridToggle from '../../packages/bpk-component-grid-toggle';
+import { render } from '@testing-library/react';
 
-import DefaultExample from './examples';
+import BpkNavigationIconButton from './BpkNavigationBarIconButton';
 
-export default {
-  title: 'bpk-component-grid-toggle',
-  component: BpkGridToggle,
-};
+describe('BpkNavigationIconButton', () => {
+  const Icon = (props: {[key: string]: any}) => <span {...props} />;
 
-export const Example = DefaultExample;
+  it('should render correctly', () => {
+    const { asFragment } = render(
+      <BpkNavigationIconButton
+        icon={Icon}
+        label="test"
+        onClick={() => {}}
+        className="some-class"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

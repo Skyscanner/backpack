@@ -16,23 +16,16 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
-import BpkNavigationIconButton from './BpkNavigationBarIconButton';
+import BpkNavigationBarButtonLink from './BpkNavigationBarButtonLink';
 
-describe('BpkNavigationIconButton', () => {
-  const Icon = (props) => <span {...props} />;
-
+describe('BpkNavigationButtonLink', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkNavigationIconButton
-        icon={Icon}
-        label="test"
-        onClick={() => {}}
-        className="some-class"
-      />,
+      <BpkNavigationBarButtonLink onClick={() => {}} className="some-class">
+        Test
+      </BpkNavigationBarButtonLink>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

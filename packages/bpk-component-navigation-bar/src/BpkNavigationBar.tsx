@@ -16,11 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import type { Node, Element } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { cloneElement } from 'react';
-import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -29,26 +26,35 @@ import STYLES from './BpkNavigationBar.module.scss';
 
 const getClassNames = cssModules(STYLES);
 
+export const BAR_STYLES = {
+  'default': 'default',
+  onDark: 'on-dark',
+};
+export type BarStyle = (typeof BAR_STYLES)[keyof typeof BAR_STYLES]
+
 export type Props = {
   id: string,
-  title: Node,
-  className: ?string,
-  leadingButton: ?Element<any>,
-  trailingButton: ?Element<any>,
-  sticky: ?boolean,
+  title: ReactNode,
+  className?: string,
+  leadingButton?: ReactElement | null,
+  trailingButton?: ReactElement | null,
+  sticky?: boolean,
+  barStyle?: BarStyle,
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const cloneWithClass = (elem: Element<any>, newStyle: string) => {
-  const className = getClassNames(elem.props.className, newStyle);
+const cloneWithClasses = (elem: ReactElement, ...newStyles: string[]) => {
+  const className = getClassNames(elem.props.className, ...newStyles);
   return cloneElement(elem, { ...elem.props, className });
 };
 
 const BpkNavigationBar = (props: Props) => {
   const {
+    barStyle = BAR_STYLES.default,
     className,
     id,
     leadingButton,
-    sticky,
+    sticky = false,
     title,
     trailingButton,
     ...rest
@@ -60,23 +66,30 @@ const BpkNavigationBar = (props: Props) => {
     typeof title === 'string' ? `${id}-bpk-navigation-bar-title` : id;
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <nav
       aria-labelledby={titleId}
       className={getClassNames(
         'bpk-navigation-bar',
+        `bpk-navigation-bar--${barStyle}`,
         sticky && 'bpk-navigation-bar__sticky',
         className,
       )}
       {...rest}
     >
       {leadingButton &&
-        cloneWithClass(leadingButton, 'bpk-navigation-bar__leading-item')}
+        cloneWithClasses(
+          leadingButton,
+          'bpk-navigation-bar__leading-item',
+          `bpk-navigation-bar__leading-item--${barStyle}`,
+        )}
       {typeof title === 'string' ? (
         <BpkText
           id={titleId}
           textStyle={TEXT_STYLES.heading5}
-          className={getClassNames('bpk-navigation-bar__title')}
+          className={getClassNames(
+            'bpk-navigation-bar__title',
+            `bpk-navigation-bar__title--${barStyle}`,
+          )}
         >
           {title}
         </BpkText>
@@ -84,25 +97,13 @@ const BpkNavigationBar = (props: Props) => {
         title
       )}
       {trailingButton &&
-        cloneWithClass(trailingButton, 'bpk-navigation-bar__trailing-item')}
+        cloneWithClasses(
+          trailingButton,
+          'bpk-navigation-bar__trailing-item',
+          `bpk-navigation-bar__trailing-item--${barStyle}`,
+        )}
     </nav>
   );
-};
-
-BpkNavigationBar.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  leadingButton: PropTypes.element,
-  trailingButton: PropTypes.element,
-  sticky: PropTypes.bool,
-};
-
-BpkNavigationBar.defaultProps = {
-  className: null,
-  leadingButton: null,
-  trailingButton: null,
-  sticky: false,
 };
 
 export default BpkNavigationBar;

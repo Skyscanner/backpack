@@ -15,18 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@import '../../bpk-mixins/index.scss';
 
-/* @flow strict */
+.bpk-bottom-sheet {
+  &--container {
+    display: flex;
+    padding: bpk-spacing-lg();
 
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
-
-import BpkNavigationBar from './BpkNavigationBar';
-
-describe('BpkNavigationBar accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkNavigationBar id="test" title="test" />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+    @include bpk-breakpoint-mobile {
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+}

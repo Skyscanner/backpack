@@ -16,13 +16,27 @@
  * limitations under the License.
  */
 
-import BpkGridToggle from '../../packages/bpk-component-grid-toggle';
 
-import DefaultExample from './examples';
+import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
+
+import {
+  DefaultExample,
+  OverflowingExample,
+  NoHeaderExample,
+  ActionButtonExample,
+  WideExample
+} from './examples';
 
 export default {
-  title: 'bpk-component-grid-toggle',
-  component: BpkGridToggle,
+  title: 'bpk-component-bottom-sheet',
+  component: BpkBottomSheet,
 };
 
-export const Example = DefaultExample;
+export const Default = DefaultExample;
+export const Overflowing = OverflowingExample;
+
+export const NoHeader = NoHeaderExample;
+
+export const ActionButton = ActionButtonExample;
+
+export const Wide = WideExample;

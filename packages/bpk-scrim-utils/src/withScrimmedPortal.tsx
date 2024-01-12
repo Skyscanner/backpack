@@ -21,6 +21,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import withScrim from './withScrim';
+import BpkScrim from './BpkScrim';
 import type { Props as ScrimProps } from './withScrim';
 
 export type Props = ScrimProps & {
@@ -37,22 +38,34 @@ const getPortalElement = (target: (() => HTMLElement | null) | null | undefined)
     if (document.body) {
         return document.body;
     }
-    throw new Error('Render target and fallback unavailable');
+    throw new Error('Render target and fallback unavailable.');
 }
 
 const withScrimmedPortal = (WrappedComponent: ComponentType<ScrimProps>) => {
     const Scrimmed = withScrim(WrappedComponent);
 
     const ScrimmedComponent = ({ renderTarget, ...rest}: Props) => {
-        const portalElement = getPortalElement(renderTarget);
-
         const [isPortalReady, setIsPortalReady] = useState(false);
 
         useEffect(() => {
             setIsPortalReady(true);
           }, []);
 
-        return createPortal(<Scrimmed {...rest} isPortalReady={isPortalReady} />, portalElement);
+        /**
+         * The following code runs only on the client - only once the component has been mounted.
+         */
+        if (isPortalReady) {
+            const portalElement = getPortalElement(renderTarget);
+            return createPortal(<Scrimmed {...rest} isPortalReady={isPortalReady} />, portalElement);
+        }
+
+        /**
+         * The following code will run on both server and on the intial render on the client.
+         * This is to ensure the snapshotted markup (initial render before the component has been mounted) is the same on both server and client.
+         * This is the recommended approach from React for those cases that require rendering something different on the server and the client
+         * https://react.dev/reference/react-dom/hydrate#handling-different-client-and-server-content
+         */
+        return <BpkScrim />;
     }
 
     return ScrimmedComponent;

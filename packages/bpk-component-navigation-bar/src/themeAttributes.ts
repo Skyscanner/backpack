@@ -16,13 +16,16 @@
  * limitations under the License.
  */
 
-import BpkGridToggle from '../../packages/bpk-component-grid-toggle';
+export default [
+  'navigationBarBackgroundColor',
+  'navigationBarTitleColor',
 
-import DefaultExample from './examples';
+  'navigationBarButtonLinkColor',
+  'navigationBarButtonLinkActiveColor',
+  'navigationBarButtonLinkHoverColor',
+  'navigationBarButtonLinkVisitedColor',
 
-export default {
-  title: 'bpk-component-grid-toggle',
-  component: BpkGridToggle,
-};
-
-export const Example = DefaultExample;
+  'navigationBarIconButtonColor',
+  'navigationBarIconButtonActiveColor',
+  'navigationBarIconButtonHoverColor',
+];

@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
-import BpkGridToggle from '../../packages/bpk-component-grid-toggle';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import DefaultExample from './examples';
+import BpkNavigationBar from './BpkNavigationBar';
 
-export default {
-  title: 'bpk-component-grid-toggle',
-  component: BpkGridToggle,
-};
-
-export const Example = DefaultExample;
+describe('BpkNavigationBar accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(<BpkNavigationBar id="test" title="test" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

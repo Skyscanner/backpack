@@ -16,18 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+@import '../../packages/bpk-mixins/index.scss';
 
-export default [
-  'navigationBarBackgroundColor',
-  'navigationBarTitleColor',
-
-  'navigationBarButtonLinkColor',
-  'navigationBarButtonLinkActiveColor',
-  'navigationBarButtonLinkHoverColor',
-  'navigationBarButtonLinkVisitedColor',
-
-  'navigationBarIconButtonColor',
-  'navigationBarIconButtonActiveColor',
-  'navigationBarIconButtonHoverColor',
-];
+.bpk-bottom-sheet-paragraph {
+  margin-bottom: bpk-spacing-md();
+}

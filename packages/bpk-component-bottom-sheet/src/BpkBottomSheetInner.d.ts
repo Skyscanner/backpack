@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-import BpkGridToggle from '../../packages/bpk-component-grid-toggle';
-
-import DefaultExample from './examples';
-
-export default {
-  title: 'bpk-component-grid-toggle',
-  component: BpkGridToggle,
+import type { ReactNode } from 'react';
+export type Props = {
+  children: ReactNode;
+  closeLabel?: string;
+  id: string;
+  onClose: () => void;
+  title?: string;
 };
-
-export const Example = DefaultExample;
+declare const BpkBottomSheetInner: ({ children, closeLabel, id, onClose, title, }: Props) => JSX.Element;
+export default BpkBottomSheetInner;
