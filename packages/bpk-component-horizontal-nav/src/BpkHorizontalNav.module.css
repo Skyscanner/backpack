@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-horizontal-nav--show-default-underline{box-shadow:0 1px 0 0 #c2c9cd }.bpk-horizontal-nav--show-light-underline{box-shadow:0 1px 0 0 #c2c9cd }.bpk-horizontal-nav__list{display:flex;margin:0;padding:0;align-items:stretch;list-style-type:none}
+@layer{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-horizontal-nav--show-default-underline{box-shadow:0 1px 0 0 #c2c9cd }.bpk-horizontal-nav--show-light-underline{box-shadow:0 1px 0 0 #c2c9cd }.bpk-horizontal-nav__list{display:flex;margin:0;padding:0;align-items:stretch;list-style-type:none}}
