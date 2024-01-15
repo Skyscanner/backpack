@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-@layer reset, base, component, utility;
+@layer bpk-reset, bpk-base, bpk-component, bpk-utility;
 
-@layer reset {
+@layer bpk-reset {
   @import '~normalize.css';
 }
 
-@layer base {
+@layer bpk-base {
   @import '../bpk-mixins/index.scss';
 
   // stylelint-disable-next-line selector-max-type
