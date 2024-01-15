@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@layer component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-clear-button{padding:0;border:0;background-color:transparent;color:#545860;cursor:pointer;appearance:none}.bpk-no-touch-support .bpk-clear-button:hover:not(:active):not(:disabled){color:#161616}:global(.bpk-no-touch-support) .bpk-clear-button:hover:not(:active):not(:disabled){color:#161616}.bpk-clear-button:active{color:#161616}.bpk-clear-button__icon{fill:currentcolor}}
+@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-clear-button{padding:0;border:0;background-color:transparent;color:#545860;cursor:pointer;appearance:none}.bpk-no-touch-support .bpk-clear-button:hover:not(:active):not(:disabled){color:#161616}:global(.bpk-no-touch-support) .bpk-clear-button:hover:not(:active):not(:disabled){color:#161616}.bpk-clear-button:active{color:#161616}.bpk-clear-button__icon{fill:currentcolor}}

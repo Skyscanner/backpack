@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@layer component {
+@layer bpk-component {
   @import '../../bpk-mixins/index.scss';
 
   $arrow-size: bpk-spacing-sm() * 3;

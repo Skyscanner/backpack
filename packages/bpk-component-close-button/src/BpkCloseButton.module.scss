@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@layer component {
+@layer bpk-component {
   @import '../../bpk-mixins/index.scss';
 
   $button-padding: bpk-spacing-sm() / 2;

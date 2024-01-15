@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@layer component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-label{display:block;color:#161616;font-size:.75rem;font-weight:700;line-height:1rem}.bpk-label--white{color:#fff}.bpk-label--invalid{color:#e70866;color:var(--bpk-form-validation-text-color, #e70866)}.bpk-label--disabled{color:rgba(0,0,0,0.2);cursor:not-allowed}.bpk-label--disabled--white{color:rgba(255,255,255,0.5)}.bpk-label__asterisk{color:#e70866;color:var(--bpk-form-validation-text-color, #e70866)}}
+@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-label{display:block;color:#161616;font-size:.75rem;font-weight:700;line-height:1rem}.bpk-label--white{color:#fff}.bpk-label--invalid{color:#e70866;color:var(--bpk-form-validation-text-color, #e70866)}.bpk-label--disabled{color:rgba(0,0,0,0.2);cursor:not-allowed}.bpk-label--disabled--white{color:rgba(255,255,255,0.5)}.bpk-label__asterisk{color:#e70866;color:var(--bpk-form-validation-text-color, #e70866)}}

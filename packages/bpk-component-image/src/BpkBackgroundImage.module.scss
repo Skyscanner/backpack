@@ -15,9 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@layer component;
+@layer bpk-component;
 
-@layer component {
+@layer bpk-component {
   @import '../../bpk-mixins/index.scss';
   @import './bpkImageMixins.scss';
 
