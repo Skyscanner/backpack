@@ -18,9 +18,9 @@
 
 /* @flow strict */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer bpk-component {
   .bpk-button {
     @include bpk-button;
 

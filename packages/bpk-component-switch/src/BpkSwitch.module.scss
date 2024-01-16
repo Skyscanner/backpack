@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer bpk-component {
   $height: bpk-spacing-xl();
   $width: bpk-spacing-sm() * 13;
   $border-width: $bpk-one-pixel-rem * 2;

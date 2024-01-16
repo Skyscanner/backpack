@@ -20,9 +20,9 @@
 
 /* stylelint-disable unit-disallowed-list */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer bpk-component {
   .bpk-icon-marker {
     $marker-width: 26px;
     $marker-height: 32px;

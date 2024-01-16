@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
-  @import 'variables.scss';
+@import '../../bpk-mixins/index.scss';
+@import 'variables.scss';
 
+@layer bpk-component {
   .bpk-calendar-grid {
     width: 100%;
     border-collapse: separate;

@@ -18,9 +18,9 @@
 
 /* stylelint-disable */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer bpk-component {
   .bpk-split-input {
     @include bpk-body-default;
     display: flex;
