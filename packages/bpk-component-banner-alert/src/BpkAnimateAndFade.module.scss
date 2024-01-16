@@ -16,38 +16,40 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-animate-and-fade {
-  $invisible: 0.01;
+  .bpk-animate-and-fade {
+    $invisible: 0.01;
 
-  &--enter {
-    transition: opacity $bpk-duration-sm ease-in-out;
-    opacity: $invisible;
-    transition-delay: $bpk-duration-sm;
-  }
+    &--enter {
+      transition: opacity $bpk-duration-sm ease-in-out;
+      opacity: $invisible;
+      transition-delay: $bpk-duration-sm;
+    }
 
-  &--enter-active {
-    opacity: 1;
-  }
+    &--enter-active {
+      opacity: 1;
+    }
 
-  &--leave {
-    transition: opacity $bpk-duration-sm ease-in-out;
-    opacity: 1;
-  }
+    &--leave {
+      transition: opacity $bpk-duration-sm ease-in-out;
+      opacity: 1;
+    }
 
-  &--leave-active {
-    transition: opacity $bpk-duration-sm ease-in-out;
-    opacity: $invisible;
-  }
+    &--leave-active {
+      transition: opacity $bpk-duration-sm ease-in-out;
+      opacity: $invisible;
+    }
 
-  &--appear {
-    transition: opacity $bpk-duration-sm ease-in-out;
-    opacity: $invisible;
-    transition-delay: $bpk-duration-sm;
-  }
+    &--appear {
+      transition: opacity $bpk-duration-sm ease-in-out;
+      opacity: $invisible;
+      transition-delay: $bpk-duration-sm;
+    }
 
-  &--appear-active {
-    opacity: 1;
+    &--appear-active {
+      opacity: 1;
+    }
   }
 }

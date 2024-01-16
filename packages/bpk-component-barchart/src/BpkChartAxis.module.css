@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-chart__axis-tick-text{fill:#545860;margin:0;font-size:.75rem;line-height:1rem;font-weight:400}.bpk-chart__axis-label{fill:#545860;margin:0;font-size:.75rem;line-height:1rem;font-weight:400}
+@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-chart__axis-tick-text{fill:#545860;margin:0;font-size:.75rem;line-height:1rem;font-weight:400}.bpk-chart__axis-label{fill:#545860;margin:0;font-size:.75rem;line-height:1rem;font-weight:400}}

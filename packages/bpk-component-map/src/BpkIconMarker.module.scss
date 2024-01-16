@@ -19,73 +19,76 @@
 // Disable unit-disallowed-list in this file as we don't want icon markers to scale on maps
 
 /* stylelint-disable unit-disallowed-list */
-@import '../../bpk-mixins/index.scss';
 
-.bpk-icon-marker {
-  $marker-width: 26px;
-  $marker-height: 32px;
-  $selected-marker-width: 32px;
-  $selected-marker-height: 40px;
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-  &__wrapper {
-    // icon button is positioned relative to the containing div element rendered by OverlayView
-    position: absolute;
+  .bpk-icon-marker {
+    $marker-width: 26px;
+    $marker-height: 32px;
+    $selected-marker-width: 32px;
+    $selected-marker-height: 40px;
 
-    // set top and left properties s.t. the marker pin points to the correct coordinates.
-    // otherwise the top-left corner of the marker would correspond to the exact coordinates making the location slightly inaccurate
-    top: -$marker-height;
-    left: -$marker-width / 2;
-    z-index: 1;
-    padding: $marker-height / 2 $marker-width / 2;
-    border: none; // Prevent default <button> styling.
-    background: none; // Prevent default <button> styling.
-
-    &--selected {
-      top: -$selected-marker-height;
-      left: -$selected-marker-width / 2;
-      z-index: 2;
-      padding: $selected-marker-height / 2 $selected-marker-width / 2;
-    }
-  }
-
-  &__icon {
-    $bpk-icon-size-sm-px: ($bpk-icon-size-sm / 1rem) * 16px;
-
-    // icon container is positioned relative to the wrapper
-    position: absolute;
-
-    // This ensures that the icon is positioned exactly in the
-    // centre of the marker.
-    top: 4.8px;
-    left: ($marker-width - $bpk-icon-size-sm-px) / 2;
-    color: $bpk-surface-default-day;
-
-    > svg {
+    &__wrapper {
+      // icon button is positioned relative to the containing div element rendered by OverlayView
       position: absolute;
 
-      // icons are normally scalable, but we don't want them to scale on maps as they could make it clunky hard to visually data on map
-      /* stylelint-disable-next-line declaration-no-important */
-      width: $bpk-icon-size-sm-px !important;
-      /* stylelint-disable-next-line declaration-no-important */
-      height: $bpk-icon-size-sm-px !important;
-      fill: currentcolor;
+      // set top and left properties s.t. the marker pin points to the correct coordinates.
+      // otherwise the top-left corner of the marker would correspond to the exact coordinates making the location slightly inaccurate
+      top: -$marker-height;
+      left: -$marker-width / 2;
+      z-index: 1;
+      padding: $marker-height / 2 $marker-width / 2;
+      border: none; // Prevent default <button> styling.
+      background: none; // Prevent default <button> styling.
+
+      &--selected {
+        top: -$selected-marker-height;
+        left: -$selected-marker-width / 2;
+        z-index: 2;
+        padding: $selected-marker-height / 2 $selected-marker-width / 2;
+      }
     }
 
-    &--interactive {
-      cursor: pointer;
-    }
+    &__icon {
+      $bpk-icon-size-sm-px: ($bpk-icon-size-sm / 1rem) * 16px;
 
-    &--selected {
+      // icon container is positioned relative to the wrapper
+      position: absolute;
+
       // This ensures that the icon is positioned exactly in the
       // centre of the marker.
-      top: 8px;
-      left: ($selected-marker-width - $bpk-icon-size-sm-px) / 2;
+      top: 4.8px;
+      left: ($marker-width - $bpk-icon-size-sm-px) / 2;
+      color: $bpk-surface-default-day;
 
-      @include bpk-themeable-property(
-        color,
-        --bpk-icon-marker-default-selected-color,
-        $bpk-surface-default-day
-      );
+      > svg {
+        position: absolute;
+
+        // icons are normally scalable, but we don't want them to scale on maps as they could make it clunky hard to visually data on map
+        /* stylelint-disable-next-line declaration-no-important */
+        width: $bpk-icon-size-sm-px !important;
+        /* stylelint-disable-next-line declaration-no-important */
+        height: $bpk-icon-size-sm-px !important;
+        fill: currentcolor;
+      }
+
+      &--interactive {
+        cursor: pointer;
+      }
+
+      &--selected {
+        // This ensures that the icon is positioned exactly in the
+        // centre of the marker.
+        top: 8px;
+        left: ($selected-marker-width - $bpk-icon-size-sm-px) / 2;
+
+        @include bpk-themeable-property(
+          color,
+          --bpk-icon-marker-default-selected-color,
+          $bpk-surface-default-day
+        );
+      }
     }
   }
 }
