@@ -192,13 +192,13 @@ const WideNoTitleExample = () => (
 );
 
 const NoPaddingExample = () => (
-  <ModalContainer title="Modal title" padded>
+  <ModalContainer title="Modal title" removePadding>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoPaddingNoTitleExample = () => (
-  <ModalContainer padded>
+  <ModalContainer removePadding>
     This is a modal without padding. You can put anything you want in here.
   </ModalContainer>
 );

@@ -19,22 +19,22 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { BpkModalV2 } from './BpkModal';
+import { BpkModal } from './BpkModal';
 
 describe('BpkModal accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkModalV2
+      <BpkModal
         id="bpk-modal-element"
         ariaLabelledby="bpk-modal-label-my-dialog"
         closeLabel="bpk-modal-button-close"
         isOpen
         onClose={jest.fn()}
         title="Backpack Dialog Element"
-        padded
+        removePadding
       >
         Dialog content
-      </BpkModalV2>,
+      </BpkModal>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

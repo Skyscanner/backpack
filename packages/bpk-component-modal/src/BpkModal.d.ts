@@ -28,7 +28,7 @@ export type Props = {
   isOpen: boolean;
   noFullScreenOnMobile?: boolean;
   onClose: () => void | null;
-  padded?: boolean;
+  removePadding?: boolean;
   showHeader?: boolean;
   title?: string | null;
   wide?: boolean;

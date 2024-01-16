@@ -37,7 +37,7 @@ export type Props = {
   isOpen: boolean;
   noFullScreenOnMobile?: boolean;
   onClose: () => void | null;
-  padded?: boolean;
+  removePadding?: boolean;
   showHeader?: boolean;
   title?: string | null;
   wide?: boolean;
@@ -103,7 +103,7 @@ export const BpkModal = (props: Props) => {
     isOpen,
     noFullScreenOnMobile,
     onClose,
-    padded,
+    removePadding,
     showHeader = true,
     title,
     wide,
@@ -166,7 +166,7 @@ export const BpkModal = (props: Props) => {
   const contentClassNames = getClassName(
     'bpk-modal__container',
     fullScreenOnDesktop && 'bpk-modal__container--full-screen-desktop',
-    padded && 'bpk-modal__container--padded',
+    removePadding && 'bpk-modal__container--removePadding',
   );
 
   return isOpen ? (

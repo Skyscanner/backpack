@@ -193,16 +193,16 @@ describe('BpkModal', () => {
       );
     });
 
-    it('should set up the correct className when padded is false', () => {
+    it('should set up the correct className when removePadding is true', () => {
       render(
-        <BpkModal {...props} padded={false}>
+        <BpkModal {...props} removePadding>
           <div>Content</div>
         </BpkModal>,
       );
 
       expect(
         document.getElementsByClassName(
-          'bpk-modal_container bpk-modal__container--padded',
+          'bpk-modal_container bpk-modal__container--removePadding',
         ),
       ).toBeTruthy();
     });
