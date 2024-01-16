@@ -23,7 +23,7 @@ import { Component, Children } from 'react';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkButton from '../../packages/bpk-component-button';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
-import BpkModal from '../../packages/bpk-component-modal';
+import { BpkModal } from '../../packages/bpk-component-modal';
 
 import STYLES from './examples.module.scss';
 

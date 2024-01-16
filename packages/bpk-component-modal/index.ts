@@ -17,5 +17,6 @@
  */
 
 import { BpkModal } from './src/BpkModal';
+import themeAttributes from './src/themeAttributes';
 
-export default BpkModal;
+export { themeAttributes, BpkModal };

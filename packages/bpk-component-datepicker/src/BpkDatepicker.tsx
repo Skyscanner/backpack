@@ -20,7 +20,7 @@ import { createRef, Component } from 'react';
 import type { ReactElement} from 'react';
 
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
-import BpkModal from '../../bpk-component-modal';
+import { BpkModal } from '../../bpk-component-modal';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPopover from '../../bpk-component-popover';
 import { cssModules } from '../../bpk-react-utils';
@@ -67,7 +67,7 @@ type Props = {
   id: string;
   title: string;
   /**
-   * Because this component uses a modal on mobile viewports, you need to let it know what 
+   * Because this component uses a modal on mobile viewports, you need to let it know what
    * the root element of your application is by returning its DOM node via this prop
    * This is to "hide" your application from screen readers whilst the datepicker is open.
    * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
@@ -365,13 +365,12 @@ class BpkDatepicker extends Component<Props, State> {
             <>
               {input}
               <BpkModal
+                ariaLabelledby={title}
                 id={`${id}-modal`}
-                renderTarget={renderTarget}
                 onClose={this.props.onClose || this.onClose}
                 isOpen={this.state.isOpen}
                 title={title}
                 closeLabel={closeButtonText}
-                getApplicationElement={getApplicationElement}
               >
                 <Calendar {...calendarProps} fixedWidth={false} />
               </BpkModal>
