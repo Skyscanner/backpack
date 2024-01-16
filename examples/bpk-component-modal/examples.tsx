@@ -16,34 +16,17 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 import { Component, Children } from 'react';
-import type { Node, Element } from 'react';
-import {
-  lineHeightBase,
-  iconSizeSm,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
-import BpkButton from '../../packages/bpk-component-button';
-import { BpkNavigationBarButtonLink } from '../../packages/bpk-component-navigation-bar';
-import {
-  withAlignment,
-  withRtlSupport,
-} from '../../packages/bpk-component-icon';
-import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkButton from '../../packages/bpk-component-button';
+import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkModal from '../../packages/bpk-component-modal';
 
 import STYLES from './examples.module.scss';
 
-const ArrowIconWithRtl = withAlignment(
-  withRtlSupport(ArrowIcon),
-  lineHeightBase,
-  iconSizeSm,
-);
 const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
@@ -51,6 +34,10 @@ const Paragraph = withDefaultProps(BpkText, {
   tagName: 'p',
   className: getClassName('bpk-modal-paragraph'),
 });
+
+type Props = {
+  children: ReactNode;
+};
 
 const content = [
   <Paragraph>
@@ -108,33 +95,13 @@ const content = [
   </Paragraph>,
 ];
 
-class ModalContainer extends Component<
-  {
-    children: Node,
-    accessoryView: ?Element<any>,
-    buttonLabel: ?string,
-    wrapperProps: ?Object,
-  },
-  {
-    isOpen: boolean,
-  },
-> {
+class ModalContainer extends Component<Props, { isOpen: boolean }> {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    accessoryView: PropTypes.func,
-    buttonLabel: PropTypes.string,
-    wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  };
-
-  static defaultProps = {
-    accessoryView: null,
-    buttonLabel: null,
-    wrapperProps: null,
   };
 
   constructor() {
     super();
-
     this.state = {
       isOpen: false,
     };
@@ -153,156 +120,162 @@ class ModalContainer extends Component<
   };
 
   render() {
-    const { accessoryView, buttonLabel, children, wrapperProps, ...rest } =
-      this.props;
-
     return (
-      <div id="modal-container" {...wrapperProps}>
+      <div id="modal-container">
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>
-            {buttonLabel || 'Open modal'}
-          </BpkButton>
-          {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-          <BpkModal
-            id="my-modal"
-            className="my-classname"
-            isOpen={this.state.isOpen}
-            onClose={this.onClose}
-            getApplicationElement={() => document.getElementById('pagewrap')}
-            renderTarget={() => document.getElementById('modal-container')}
-            accessoryView={accessoryView}
-            {...rest}
-          >
-            {children}
-          </BpkModal>
+          <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
+        <BpkModal
+          id="bpk-modal"
+          ariaLabelledby="bpk-modal-label-my-dialog"
+          closeLabel="Close modal"
+          isOpen={this.state.isOpen}
+          onClose={this.onClose}
+          {...this.props}
+        >
+          {this.props.children}
+        </BpkModal>
       </div>
     );
   }
 }
 
 const DefaultExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal">
-    This is a default modal. You can put anything you want in here.
-  </ModalContainer>
-);
-
-const WideExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" wide>
-    This is a wide modal.
-  </ModalContainer>
-);
-
-const OverflowingExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal">
-    {Children.toArray(content)}
-  </ModalContainer>
-);
-
-const CloseButtonTextExample = () => (
-  <ModalContainer title="Modal title" closeText="Done">
-    This is a default modal. You can put anything you want in here.
+  <ModalContainer title="Modal Title">
+    <Paragraph>
+      This is a default modal using the HTML dialog element. You can put
+      anything you want in here.
+    </Paragraph>
   </ModalContainer>
 );
 
 const LongTitleExample = () => (
-  <ModalContainer
-    title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
-    closeText="Done"
-  >
-    This is a default modal. You can put anything you want in here.
+  <ModalContainer title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third.">
+    <Paragraph>
+      This is a default modal using the HTML dialog element. You can put
+      anything you want in here.
+    </Paragraph>
   </ModalContainer>
 );
 
-const NotFullScreenOnMobileExample = () => (
-  <ModalContainer
-    title="Modal title"
-    closeLabel="Close modal"
-    fullScreenOnMobile={false}
-  >
-    This is a default modal. You can put anything you want in here.
+const HeaderNoTitleExample = () => (
+  <ModalContainer>
+    <Paragraph>
+      This is a modal using the HTML dialog element without a header. You can
+      put anything you want in here.
+    </Paragraph>
   </ModalContainer>
 );
 
-const FullScreenExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen>
-    This is a default modal. You can put anything you want in here.
+const OverflowingExample = () => (
+  <ModalContainer title="Modal Title">
+    <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
-const FullScreenOverflowingExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen>
-    {Children.toArray(content)}
+const OverflowingNoTitleExample = () => (
+  <ModalContainer>
+    <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
-const NestedExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen>
-    This is a full-screen modal. You can put anything you want in here,
-    including other modals!
-    <ModalContainer
-      title="Inner modal title"
-      closeLabel="Close modal"
-      wrapperProps={{ id: 'inner-modal-container' }}
-      buttonLabel="Open another modal from this modal"
-      id="inner-modal"
-      renderTarget={() => document.getElementById('inner-modal-container')}
-    >
-      This is a default modal. You can put anything you want in here.
-    </ModalContainer>
+const WideExample = () => (
+  <ModalContainer title="Modal title" wide>
+    This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const NoHeaderExample = () => (
-  <ModalContainer
-    title="Modal title"
-    closeLabel="Close modal"
-    showHeader={false}
-  >
-    This is a default modal. You can put anything you want in here.
+const WideNoTitleExample = () => (
+  <ModalContainer wide>
+    This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoPaddingExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" padded={false}>
+  <ModalContainer title="Modal title" padded>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const WithAccessoryViewExample = () => (
-  <ModalContainer
-    title="Modal title"
-    closeLabel="Close modal"
-    accessoryView={
-      <BpkNavigationBarButtonLink
-        label="Close"
-        onClick={() => {}}
-        className={getClassName('bpk-modal__leading-button')}
-      >
-        <div>
-          <BpkText>
-            <ArrowIconWithRtl /> Back to results
-          </BpkText>
-        </div>
-      </BpkNavigationBarButtonLink>
-    }
-  >
-    The left hand button is intentally not functional. You can put anything you
-    want in here.
+const NoPaddingNoTitleExample = () => (
+  <ModalContainer padded>
+    This is a modal without padding. You can put anything you want in here.
   </ModalContainer>
+);
+
+const FullScreenOnDesktopExample = () => (
+  <ModalContainer title="Modal title" fullScreenOnDesktop>
+    This is a full screen modal for desktop. You can put anything you want in
+    here.
+  </ModalContainer>
+);
+
+const FullScreenOnDesktopNoTitleExample = () => (
+  <ModalContainer fullScreenOnDesktop>
+    This is a full screen modal for mobile without title. You can put anything
+    you want in here.
+  </ModalContainer>
+);
+
+const NoFullScreenOnMobileExample = () => (
+  <ModalContainer title="Modal title" noFullScreenOnMobile>
+    This is a no full screen modal for mobile. You can put anything you want in
+    here.
+  </ModalContainer>
+);
+
+const NoFullScreenOnMobileNoTitleExample = () => (
+  <ModalContainer noFullScreenOnMobile>
+    This is a no full screen modal for mobile without title. You can put
+    anything you want in here.
+  </ModalContainer>
+);
+
+const NoHeaderExample = () => (
+  <ModalContainer showHeader={false}>
+    This is a modal without header. You can put anything you want in here.
+  </ModalContainer>
+);
+
+const MultipleModalsExample = () => (
+  <>
+    <ModalContainer title="Modal Title 1">
+      <Paragraph>
+        Modal 1: This is a default modal using the HTML dialog element. You can
+        put anything you want in here.
+      </Paragraph>
+    </ModalContainer>
+    <br />
+    <ModalContainer title="Modal Title 2">
+      <Paragraph>
+        Modal 2: This is a default modal using the HTML dialog element. You can
+        put anything you want in here.
+      </Paragraph>
+    </ModalContainer>
+    <br />
+    <ModalContainer title="Modal Title 3">
+      <Paragraph>
+        Modal 3: This is a default modal using the HTML dialog element. You can
+        put anything you want in here.
+      </Paragraph>
+    </ModalContainer>
+  </>
 );
 
 export {
   DefaultExample,
-  WideExample,
-  OverflowingExample,
-  CloseButtonTextExample,
   LongTitleExample,
-  NotFullScreenOnMobileExample,
-  FullScreenExample,
-  FullScreenOverflowingExample,
-  NestedExample,
-  NoHeaderExample,
+  HeaderNoTitleExample,
+  OverflowingExample,
+  OverflowingNoTitleExample,
+  WideExample,
+  WideNoTitleExample,
   NoPaddingExample,
-  WithAccessoryViewExample,
+  NoPaddingNoTitleExample,
+  FullScreenOnDesktopExample,
+  FullScreenOnDesktopNoTitleExample,
+  NoFullScreenOnMobileExample,
+  NoFullScreenOnMobileNoTitleExample,
+  NoHeaderExample,
+  MultipleModalsExample,
 };

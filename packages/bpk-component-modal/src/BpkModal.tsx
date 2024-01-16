@@ -17,99 +17,190 @@
  */
 
 import type { ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 
-import { withScrim } from '../../bpk-scrim-utils';
-import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkCloseButton from '../../bpk-component-close-button';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules, withDefaultProps } from '../../bpk-react-utils';
 
-import STYLES from './BpkModal.module.scss';
-import BpkModalInner from './BpkModalInner';
-import type { Props as ModalDialogProps } from './BpkModalInner';
+import STYLES from './BpKModal.module.scss';
 
 const getClassName = cssModules(STYLES);
-const ScrimBpkModalInner = withScrim(BpkModalInner);
 
-export type Props = Partial<ModalDialogProps> & {
-  id: string;
+export type Props = {
+  id: string | undefined;
+  ariaLabelledby: string;
   children: ReactNode;
-  dialogRef?: (ref: HTMLElement | null | undefined) => void; // TODO - remove this in a later release as it is not being used. The dialogRef is injected in the withScrim HOC
+  closeLabel: string;
+  fullScreenOnDesktop?: boolean;
   isOpen: boolean;
-  closeOnScrimClick?: boolean;
-  closeOnEscPressed?: boolean;
-  renderTarget?: null | HTMLElement | (() => null | HTMLElement);
-  onClose?: (
-    arg0?: TouchEvent | MouseEvent | KeyboardEvent,
-    arg1?: {
-      source: 'ESCAPE' | 'DOCUMENT_CLICK';
-    },
-  ) => void;
-  /**
-   * Because this component uses a modal on mobile viewports, you need to let it know what 
-   * the root element of your application is by returning its DOM node via this prop
-   * This is to "hide" your application from screen readers whilst the modal is open.
-   * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
-   */
-  getApplicationElement: () => HTMLElement | null;
+  noFullScreenOnMobile?: boolean;
+  onClose: () => void | null;
+  padded?: boolean;
+  showHeader?: boolean;
+  title?: string | null;
+  wide?: boolean;
 };
 
-const BpkModal = ({
-  accessoryView = null,
-  className = null,
-  closeLabel = '',
-  closeOnEscPressed = true,
-  closeOnScrimClick = true,
-  closeText = null,
-  contentClassName = null,
-  dialogRef = () => null,
-  fullScreen = false,
-  fullScreenOnMobile = true,
-  isIphone = isDeviceIphone(),
-  isOpen,
-  onClose = () => null,
-  padded = true,
-  renderTarget = null,
-  showHeader = true,
-  title = null,
-  wide = false,
-  ...rest
-}: Props) => {
-  const containerClass = [getClassName('bpk-modal__container')];
-
-  if (fullScreen || isIphone) {
-    containerClass.push(getClassName('bpk-modal__container--full-screen'));
-  } else if (fullScreenOnMobile) {
-    containerClass.push(
-      getClassName('bpk-modal__container--full-screen-mobile'),
+const Header = ({
+  closeLabel,
+  id,
+  onClose,
+  title,
+}: {
+  closeLabel: string;
+  id: string | undefined;
+  onClose: () => void | null;
+  title?: string | null;
+}) => {
+  if (title) {
+    return (
+      <div id={id} className={getClassName('bpk-modal__header-title')}>
+        <div className={getClassName('bpk-modal__header-title-container')}>
+          <Heading>{title}</Heading>
+        </div>
+        <BpkCloseButton label={closeLabel} onClick={onClose} />
+      </div>
     );
   }
-
   return (
-    <Portal
-      isOpen={isOpen}
-      onClose={onClose}
-      renderTarget={renderTarget}
-      closeOnEscPressed={closeOnEscPressed}
-    >
-      <ScrimBpkModalInner
-        onClose={onClose}
-        fullScreenOnMobile={fullScreenOnMobile}
-        fullScreen={fullScreen}
-        closeOnScrimClick={closeOnScrimClick}
-        containerClassName={containerClass.join(' ')}
-        isIphone={isIphone}
-        title={title}
-        className={className}
-        contentClassName={contentClassName}
-        closeLabel={closeLabel}
-        closeText={closeText}
-        wide={wide}
-        showHeader={showHeader}
-        padded={padded}
-        accessoryView={accessoryView}
-        dialogRef={dialogRef}
-        {...rest}
-      />
-    </Portal>
+    <div className={getClassName('bpk-modal__button-container')}>
+      <BpkCloseButton label={closeLabel} onClick={onClose} />
+    </div>
   );
 };
 
-export default BpkModal;
+const Heading = withDefaultProps(BpkText, {
+  textStyle: TEXT_STYLES.label1,
+  tagName: 'h2',
+  className: getClassName('bpk-modal__title'),
+});
+
+type DialogProps = {
+  isDialogOpen: boolean;
+};
+
+// TODO: this check if the browser support the HTML dialog element. We can remove it once we drop support as a business for Safari 14
+const dialogSupported = typeof HTMLDialogElement === 'function';
+
+const setPageProperties = ({ isDialogOpen }: DialogProps) => {
+  document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
+
+  if (!dialogSupported) {
+    document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
+    document.body.style.width = isDialogOpen ? '100%' : 'auto';
+  }
+};
+
+export const BpkModal = (props: Props) => {
+  const {
+    ariaLabelledby,
+    children,
+    closeLabel,
+    fullScreenOnDesktop,
+    id,
+    isOpen,
+    noFullScreenOnMobile,
+    onClose,
+    padded,
+    showHeader = true,
+    title,
+    wide,
+  } = props;
+
+  const ref = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = document.getElementById(`${id}`);
+    const dialogWithPolyfill = document.getElementById(`${id}-polyfill`);
+
+    const handleBackdropClick = (modal: HTMLElement | null) => {
+      if (modal) {
+        modal.addEventListener('click', (event: Event) => {
+          const { target } = event;
+
+          if (target === modal) {
+            modal === dialog ? ref.current?.close?.() : onClose();
+          }
+        });
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+          onClose();
+      }
+    };
+
+    if (isOpen) {
+      // There is a bug on older versions of browser using chromium (chrome, firefox, edge >114) where the dialog got an open attribute even before it is opened.
+      // Therefore, when trying to open it, it crashes and log an error mentioning the dialog has already an open attribute.
+      ref.current?.removeAttribute('open');
+      ref.current?.showModal?.();
+
+      if (dialogWithPolyfill) {
+        handleBackdropClick(dialogWithPolyfill);
+        window.addEventListener('keydown', handleKeyDown);
+      }
+
+      handleBackdropClick(dialog);
+    } else {
+      ref.current?.close?.();
+    }
+
+    setPageProperties({ isDialogOpen: isOpen });
+    return () => {
+      setPageProperties({ isDialogOpen: false })
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [id, isOpen, onClose]);
+
+  const classNames = getClassName(
+    'bpk-modal',
+    fullScreenOnDesktop && 'bpk-modal--full-screen-desktop',
+    noFullScreenOnMobile && 'bpk-modal--no-full-screen-mobile',
+    wide && 'bpk-modal--wide',
+  );
+
+  const contentClassNames = getClassName(
+    'bpk-modal__container',
+    fullScreenOnDesktop && 'bpk-modal__container--full-screen-desktop',
+    padded && 'bpk-modal__container--padded',
+  );
+
+  return isOpen ? (
+    <div
+      className={getClassName(
+        'bpk-modal-wrapper',
+        dialogSupported ? '' : 'bpk-modal-polyfill',
+      )}
+    >
+      {!dialogSupported && (
+        <div
+          id={`${id}-polyfill`}
+          className={getClassName('bpk-modal-backdrop')}
+          data-open={isOpen}
+        />
+      )}
+      <dialog
+        id={id}
+        className={classNames}
+        onClose={onClose}
+        aria-labelledby={ariaLabelledby}
+        data-open={isOpen}
+        ref={ref}
+      >
+        {showHeader && (
+          <Header
+            id={`${id}-title`}
+            title={title}
+            closeLabel={closeLabel}
+            onClose={onClose}
+          />
+        )}
+        <div className={contentClassNames}>{children}</div>
+      </dialog>
+    </div>
+  ) : null;
+};

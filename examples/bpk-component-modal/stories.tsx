@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkModalV2 } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
+import { BpkModal } from '../../packages/bpk-component-modal/src/BpkModal';
 
 import {
   DefaultExample,
@@ -37,8 +37,8 @@ import {
 } from './examples';
 
 export default {
-  title: 'bpk-component-modal-v2',
-  component: BpkModalV2,
+  title: 'bpk-component-modal',
+  component: BpkModal,
 };
 
 export const Default = DefaultExample;

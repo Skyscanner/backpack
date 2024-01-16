@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-modal-paragraph{margin-bottom:0.5rem}.bpk-modal__leading-button{color:#0062e3;fill:#0062e3}.bpk-modal__leading-button :hover{color:#545860;fill:#545860}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-dialog-paragraph{margin-bottom:0.5rem}

@@ -18,16 +18,6 @@
 
 @import '../../packages/bpk-mixins/index.scss';
 
-.bpk-modal-paragraph {
+.bpk-dialog-paragraph {
   margin-bottom: bpk-spacing-md();
-}
-
-.bpk-modal__leading-button {
-  color: $bpk-text-link-day;
-  fill: $bpk-text-link-day;
-
-  :hover {
-    color: $bpk-text-secondary-day;
-    fill: $bpk-text-secondary-day;
-  }
 }
