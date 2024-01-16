@@ -16,18 +16,20 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-section-list-section {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  .bpk-section-list-section {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-  &__header {
-    display: flex;
-    min-height: bpk-spacing-xl();
-    padding: bpk-spacing-md() bpk-spacing-base();
-    align-items: center;
-    background-color: $bpk-surface-highlight-day;
+    &__header {
+      display: flex;
+      min-height: bpk-spacing-xl();
+      padding: bpk-spacing-md() bpk-spacing-base();
+      align-items: center;
+      background-color: $bpk-surface-highlight-day;
+    }
   }
 }

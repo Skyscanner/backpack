@@ -9,7 +9,7 @@ exports[`BpkInfoBannerInner should render correctly with "style" attribute equal
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--info bpk-info-banner--style-onContrast"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -66,7 +66,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--error bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -123,7 +123,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--error bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -180,7 +180,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--info bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -237,7 +237,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -294,7 +294,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -351,7 +351,7 @@ exports[`BpkInfoBannerInner should render correctly with a custom banner-alert c
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default custom-class"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -409,7 +409,7 @@ exports[`BpkInfoBannerInner should render correctly with a custom class name 1`]
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -466,7 +466,7 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header bpk-info-banner__header--expandable"
@@ -558,7 +558,7 @@ exports[`BpkInfoBannerInner should render correctly with animateOnLeave 1`] = `
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -637,7 +637,7 @@ exports[`BpkInfoBannerInner should render correctly with arbitrary props 1`] = `
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -694,7 +694,7 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header bpk-info-banner__header--expandable"
@@ -781,7 +781,7 @@ exports[`BpkInfoBannerInner should render correctly with dismissable option 1`] 
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"

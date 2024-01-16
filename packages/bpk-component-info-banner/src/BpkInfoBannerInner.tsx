@@ -45,7 +45,6 @@ import type {
   CommonProps,
   OnDismissHandler,
   OnExpandToggleHandler,
-  StyleTypeValue,
   ExpandableBannerAction,
 } from './common-types';
 import { ALERT_TYPES, STYLE_TYPES } from './common-types';
@@ -189,7 +188,7 @@ const BpkInfoBannerInner = ({
       show={show}
       {...rest}
     >
-      <section className={sectionClassNames} role="alert">
+      <section className={sectionClassNames} role="presentation">
         <div
           role={isExpandable ? 'button' : undefined}
           className={headerClassNames}

@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-button--secondary {
-  @include bpk-button--secondary;
+  .bpk-button--secondary {
+    @include bpk-button--secondary;
+  }
 }
