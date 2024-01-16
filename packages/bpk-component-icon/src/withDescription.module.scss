@@ -15,8 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@import '../../bpk-mixins/index.scss';
 
-.bpk-icon-description {
-  @include bpk-visually-hidden;
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
+
+  .bpk-icon-description {
+    @include bpk-visually-hidden;
+  }
 }
