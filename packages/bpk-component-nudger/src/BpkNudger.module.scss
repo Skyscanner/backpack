@@ -16,59 +16,61 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-nudger {
-  @include bpk-rtl {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  &__button {
-    position: relative;
-  }
-
-  &__input {
-    display: inline-block;
-    padding: bpk-spacing-md() 0;
-    border: none;
-    color: $bpk-text-primary-day;
-    text-align: center;
-    vertical-align: middle;
-
-    @include bpk-text;
-    @include bpk-heading-5;
-
-    &--secondary-on-dark {
-      background-color: transparent;
-      color: $bpk-text-on-dark-day;
-    }
-
-    &--numeric {
-      $size: bpk-spacing-lg() + (bpk-spacing-md() * 2);
-
-      width: $size;
-    }
-  }
-
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__label {
-    display: flex;
-    gap: bpk-spacing-md();
-
-    &--title-subtitle {
+  .bpk-nudger {
+    @include bpk-rtl {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      flex-direction: row-reverse;
     }
 
-    &--subtitle {
-      color: $bpk-text-secondary-day;
+    &__button {
+      position: relative;
+    }
+
+    &__input {
+      display: inline-block;
+      padding: bpk-spacing-md() 0;
+      border: none;
+      color: $bpk-text-primary-day;
+      text-align: center;
+      vertical-align: middle;
+
+      @include bpk-text;
+      @include bpk-heading-5;
+
+      &--secondary-on-dark {
+        background-color: transparent;
+        color: $bpk-text-on-dark-day;
+      }
+
+      &--numeric {
+        $size: bpk-spacing-lg() + (bpk-spacing-md() * 2);
+
+        width: $size;
+      }
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__label {
+      display: flex;
+      gap: bpk-spacing-md();
+
+      &--title-subtitle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &--subtitle {
+        color: $bpk-text-secondary-day;
+      }
     }
   }
 }

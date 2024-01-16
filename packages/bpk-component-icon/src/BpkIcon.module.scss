@@ -16,18 +16,20 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-icon {
-  &--align-to-button {
-    @include bpk-icon-sm--align-to-button;
-  }
+  .bpk-icon {
+    &--align-to-button {
+      @include bpk-icon-sm--align-to-button;
+    }
 
-  &--align-to-large-button {
-    @include bpk-icon-lg--align-to-large-button;
-  }
+    &--align-to-large-button {
+      @include bpk-icon-lg--align-to-large-button;
+    }
 
-  &--rtl-support {
-    @include bpk-icon--rtl-support;
+    &--rtl-support {
+      @include bpk-icon--rtl-support;
+    }
   }
 }

@@ -16,12 +16,14 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-blockquote {
-  @include bpk-blockquote;
-}
+  .bpk-blockquote {
+    @include bpk-blockquote;
+  }
 
-.bpk-blockquote--extra-spacing {
-  @include bpk-blockquote--extra-spacing;
+  .bpk-blockquote--extra-spacing {
+    @include bpk-blockquote--extra-spacing;
+  }
 }

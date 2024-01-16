@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-.bpk-map{height:100%}
+@layer bpk-component{.bpk-map{height:100%}}
