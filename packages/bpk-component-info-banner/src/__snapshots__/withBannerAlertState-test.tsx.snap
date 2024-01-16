@@ -9,7 +9,7 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header"
@@ -88,7 +88,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header bpk-info-banner__header--expandable"
@@ -180,7 +180,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
       <div>
         <section
           class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-          role="alert"
+          role="presentation"
         >
           <div
             class="bpk-info-banner__header bpk-info-banner__header--expandable"

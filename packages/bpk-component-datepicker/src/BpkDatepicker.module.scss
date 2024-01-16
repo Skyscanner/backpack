@@ -16,15 +16,17 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-datepicker {
-  &__calendar {
-    margin: 0 auto;
-  }
+  .bpk-datepicker {
+    &__calendar {
+      margin: 0 auto;
+    }
 
-  &__input {
-    display: inline-block;
-    width: 100%;
+    &__input {
+      display: inline-block;
+      width: 100%;
+    }
   }
 }

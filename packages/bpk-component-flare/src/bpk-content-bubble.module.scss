@@ -16,46 +16,48 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-content-bubble {
-  &__pointer {
-    width: 100%;
-    align-items: flex-end;
-    align-self: flex-end;
-  }
+  .bpk-content-bubble {
+    &__pointer {
+      width: 100%;
+      align-items: flex-end;
+      align-self: flex-end;
+    }
 
-  &__wrapper {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    background-position: 50% 60%;
-    background-size: cover;
+    &__wrapper {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      background-repeat: no-repeat;
+      background-position: 50% 60%;
+      background-size: cover;
 
-    &--rounded {
-      border-radius: $bpk-flare-corner-radius;
+      &--rounded {
+        border-radius: $bpk-flare-corner-radius;
 
-      &--with-pointer {
-        border-radius: $bpk-flare-corner-radius $bpk-flare-corner-radius 0 0;
+        &--with-pointer {
+          border-radius: $bpk-flare-corner-radius $bpk-flare-corner-radius 0 0;
+        }
       }
     }
-  }
 
-  &__container {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-  }
+    &__container {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+    }
 
-  &__content-wrapper {
-    display: flex;
+    &__content-wrapper {
+      display: flex;
 
-    // flex-direction is required because IE doesn't cope well with
-    // flex-row when the parent is flex-col
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 auto;
+      // flex-direction is required because IE doesn't cope well with
+      // flex-row when the parent is flex-col
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1 1 auto;
+    }
   }
 }

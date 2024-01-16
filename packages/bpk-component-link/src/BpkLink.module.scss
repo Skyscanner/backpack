@@ -16,16 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@layer bpk-component {
+  @import '../../bpk-mixins/index.scss';
 
-.bpk-link {
-  @include bpk-link;
+  .bpk-link {
+    @include bpk-link;
 
-  &--active {
-    @include bpk-link--active;
-  }
+    &--active {
+      @include bpk-link--active;
+    }
 
-  &--alternate {
-    @include bpk-link--alternate;
+    &--alternate {
+      @include bpk-link--alternate;
+    }
   }
 }
