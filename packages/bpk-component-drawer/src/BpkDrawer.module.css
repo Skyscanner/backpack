@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-drawer__container{position:fixed}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}@layer bpk-component{.bpk-drawer__container{position:fixed}}

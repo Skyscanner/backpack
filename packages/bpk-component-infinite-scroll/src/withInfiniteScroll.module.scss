@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer bpk-component {
   .bpk-sentinel {
     // this is necessary for when the user doesn't define a custom loading component
     width: 100%;

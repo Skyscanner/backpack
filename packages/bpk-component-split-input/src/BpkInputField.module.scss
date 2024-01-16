@@ -18,9 +18,9 @@
 
 /* stylelint-disable */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer bpk-component {
   .bpk-input-field {
     display: flex;
     max-width: 3*bpk-spacing-xxl();

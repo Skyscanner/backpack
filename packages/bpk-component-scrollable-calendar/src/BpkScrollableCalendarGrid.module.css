@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-scrollable-calendar-grid{width:100%;border-collapse:separate;border-spacing:0}.bpk-scrollable-calendar-grid__title{margin-top:1.5rem}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}@layer bpk-component{.bpk-scrollable-calendar-grid{width:100%;border-collapse:separate;border-spacing:0}.bpk-scrollable-calendar-grid__title{margin-top:1.5rem}}

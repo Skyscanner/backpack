@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
-  @import './bpkImageMixins.scss';
+@import '../../bpk-mixins/index.scss';
+@import './bpkImageMixins.scss';
 
+@layer bpk-component {
   .bpk-image {
     opacity: 1;
 

@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-split-input{font-size:1rem;line-height:1.5rem;font-weight:400;display:flex;width:100%;padding-top:0.25rem;flex-direction:row;align-items:center;direction:ltr}.bpk-split-input__textbox{display:flex;align-items:center}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}@layer bpk-component{.bpk-split-input{font-size:1rem;line-height:1.5rem;font-weight:400;display:flex;width:100%;padding-top:0.25rem;flex-direction:row;align-items:center;direction:ltr}.bpk-split-input__textbox{display:flex;align-items:center}}

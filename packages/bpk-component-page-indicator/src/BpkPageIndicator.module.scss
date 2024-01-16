@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer bpk-component {
   $dot-size: bpk-spacing-md();
   $dot-margin: bpk-spacing-sm();
   $displayed-total: 5;

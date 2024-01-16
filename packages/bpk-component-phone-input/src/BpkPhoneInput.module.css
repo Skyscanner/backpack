@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-phone-input{display:flex;column-gap:0.5rem}@media (max-width: 32rem){.bpk-phone-input{flex-wrap:wrap}.bpk-phone-input__phone-number{width:100%;margin-top:1rem}}.bpk-phone-input__phone-number{flex:auto}.bpk-phone-input__label{margin-bottom:0.5rem}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}@layer bpk-component{.bpk-phone-input{display:flex;column-gap:0.5rem}@media (max-width: 32rem){.bpk-phone-input{flex-wrap:wrap}.bpk-phone-input__phone-number{width:100%;margin-top:1rem}}.bpk-phone-input__phone-number{flex:auto}.bpk-phone-input__label{margin-bottom:0.5rem}}

@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
-  @import 'variables.scss';
+@import '../../bpk-mixins/index.scss';
+@import 'variables.scss';
 
+@layer bpk-component {
   .bpk-calendar-header {
     display: table;
     width: 100%;

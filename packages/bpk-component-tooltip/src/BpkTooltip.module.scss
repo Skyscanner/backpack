@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer bpk-component {
   $arrow-size: bpk-spacing-md();
   $arrow-inset-margin: -($bpk-one-pixel-rem * 3);
   $light-arrow-border-color: $bpk-line-day;

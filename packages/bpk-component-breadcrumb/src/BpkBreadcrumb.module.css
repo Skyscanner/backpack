@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-breadcrumb{display:flex;margin:0;padding:0;flex-wrap:wrap;list-style-type:none}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}@layer bpk-component{.bpk-breadcrumb{display:flex;margin:0;padding:0;flex-wrap:wrap;list-style-type:none}}

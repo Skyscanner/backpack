@@ -15,16 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 @import '../../bpk-mixins/index.scss';
 
-.bpk-bottom-sheet {
-  &--container {
-    display: flex;
-    padding: bpk-spacing-lg();
+@layer bpk-component {
+  .bpk-bottom-sheet {
+    &--container {
+      display: flex;
+      padding: bpk-spacing-lg();
 
-    @include bpk-breakpoint-mobile {
-      padding: 0;
-      overflow: hidden;
+      @include bpk-breakpoint-mobile {
+        padding: 0;
+        overflow: hidden;
+      }
     }
   }
 }

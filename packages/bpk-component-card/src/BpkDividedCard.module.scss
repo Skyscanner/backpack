@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
+@layer bpk-component {
   $min-vertical-width: 240;
   $max-vertical-width: 720;
   $min-horizontal-width: $max-vertical-width + 1;
