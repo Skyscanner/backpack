@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-/* stylelint-disable at-rule-disallowed-list */
+/* stylelint-disable at-rule-disallowed-list, scss/at-import-partial-extension */
 
-@import '~normalize.css';
+@import './normalize';
 @import '../bpk-mixins/index.scss';
 
 // stylelint-disable-next-line selector-max-type

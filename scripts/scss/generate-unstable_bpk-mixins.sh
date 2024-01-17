@@ -52,4 +52,6 @@ rm packages/unstable_bpk-mixins/_index.scss
 
 cp scripts/scss/_index.template.scss packages/unstable_bpk-mixins/_index.scss
 
+cp packages/node_modules/normalize.css/normalize.css packages/bpk-stylesheets/normalize.css
+
 printf "✅  New mixins generated. Import them from unstable_bpk-mixins using '@use' notation \n"
