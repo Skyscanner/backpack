@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* stylelint-disable at-rule-disallowed-list */
+
 @import '../node_modules/normalize.css/normalize.css';
 @import '../bpk-mixins/index.scss';
 
@@ -76,5 +78,5 @@ body {
 :global(.clearfix) {
   @include bpk-clearfix;
 }
-
-/* stylelint-enable */
+/* stylelint-enable selector-class-pattern */
+/* stylelint-enable at-rule-disallowed-list */
