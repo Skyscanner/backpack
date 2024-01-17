@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/bpk-mixins-next/bonds';
 
 .bpk-bottom-sheet-paragraph {
-  margin-bottom: bpk-spacing-md();
+  margin-bottom: bonds.bpk-spacing-md();
 }

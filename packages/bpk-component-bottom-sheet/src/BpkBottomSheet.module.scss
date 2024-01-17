@@ -16,14 +16,15 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins-next/bonds';
+@use '../../bpk-mixins-next/breakpoints';
 
 .bpk-bottom-sheet {
   &--container {
     display: flex;
-    padding: bpk-spacing-lg();
+    padding: bonds.bpk-spacing-lg();
 
-    @include bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
       padding: 0;
       overflow: hidden;
     }
