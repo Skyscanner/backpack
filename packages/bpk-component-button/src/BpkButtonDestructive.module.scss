@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/buttons';
+@use '../../unstable_bpk-mixins/buttons';
 
 .bpk-button--destructive {
   @include buttons.bpk-button--secondary;

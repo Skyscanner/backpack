@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/panels';
+@use '../../unstable_bpk-mixins/panels';
 
 .bpk-panel {
   @include panels.bpk-panel;

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/bonds';
-@use '../../bpk-mixins-next/layers';
+@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable_bpk-mixins/layers';
 
 $arrow-size: bonds.bpk-spacing-md();
 $arrow-inset-margin: -1 * (bonds.$bpk-one-pixel-rem * 3);

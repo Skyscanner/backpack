@@ -18,4 +18,4 @@ yarn.lock
 # Ignore css assets as these should be built on demand from sass
 *.css
 !packages/bpk-stylesheets/base.css
-/packages/bpk-mixins-next
+/packages/unstable_bpk-mixins

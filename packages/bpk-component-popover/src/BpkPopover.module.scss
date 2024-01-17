@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/bonds';
-@use '../../bpk-mixins-next/borders';
-@use '../../bpk-mixins-next/breakpoints';
-@use '../../bpk-mixins-next/layers';
-@use '../../bpk-mixins-next/utils';
+@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable_bpk-mixins/borders';
+@use '../../unstable_bpk-mixins/breakpoints';
+@use '../../unstable_bpk-mixins/layers';
+@use '../../unstable_bpk-mixins/utils';
 
 $arrow-size: bonds.bpk-spacing-lg();
 $arrow-inset-margin: -1 * (bonds.$bpk-one-pixel-rem * 11);

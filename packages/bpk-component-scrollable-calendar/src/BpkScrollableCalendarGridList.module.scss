@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/bonds';
+@use '../../unstable_bpk-mixins/bonds';
 
-$calendar-height: 7 *
-    (bonds.$bpk-calendar-day-size + bonds.bpk-spacing-lg());
+$calendar-height: 7 * (bonds.$bpk-calendar-day-size + bonds.bpk-spacing-lg());
 
 .bpk-scrollable-calendar-grid-list {
   position: relative;

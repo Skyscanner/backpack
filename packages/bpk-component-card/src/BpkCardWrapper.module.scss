@@ -16,18 +16,17 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/bonds';
-@use '../../bpk-mixins-next/borders';
-@use '../../bpk-mixins-next/cards';
-@use '../../bpk-mixins-next/radii';
+@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable_bpk-mixins/borders';
+@use '../../unstable_bpk-mixins/cards';
+@use '../../unstable_bpk-mixins/radii';
 
 .bpk-card-wrapper {
   @include cards.bpk-card;
   @include borders.bpk-border-lg(var(--background-color), '');
 
   &--header {
-    border-radius: bonds.$bpk-border-radius-sm bonds.$bpk-border-radius-sm 0
-        0;
+    border-radius: bonds.$bpk-border-radius-sm bonds.$bpk-border-radius-sm 0 0;
     background-color: var(--background-color);
     cursor: default;
     overflow: hidden;
@@ -35,8 +34,7 @@
 
   &--content {
     position: relative;
-    border-radius: 0 0 bonds.$bpk-border-radius-md
-        bonds.$bpk-border-radius-md;
+    border-radius: 0 0 bonds.$bpk-border-radius-md bonds.$bpk-border-radius-md;
     overflow: hidden;
 
     &::before,

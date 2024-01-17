@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/cards';
+@use '../../unstable_bpk-mixins/cards';
 
 .bpk-card {
   @include cards.bpk-card;

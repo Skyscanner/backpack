@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/bonds';
-@use '../../bpk-mixins-next/radii';
+@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable_bpk-mixins/radii';
 @use 'variables' as *;
 
 .bpk-calendar {

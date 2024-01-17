@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/bonds';
-@use '../../bpk-mixins-next/borders';
-@use '../../bpk-mixins-next/margins';
-@use '../../bpk-mixins-next/utils';
+@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable_bpk-mixins/borders';
+@use '../../unstable_bpk-mixins/margins';
+@use '../../unstable_bpk-mixins/utils';
 
 .bpk-accordion {
   &__title {

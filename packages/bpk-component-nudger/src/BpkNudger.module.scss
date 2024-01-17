@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/bonds';
-@use '../../bpk-mixins-next/typography';
-@use '../../bpk-mixins-next/utils';
+@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable_bpk-mixins/utils';
 
 .bpk-nudger {
   @include utils.bpk-rtl {

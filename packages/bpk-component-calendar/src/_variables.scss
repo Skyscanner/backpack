@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/bonds';
+@use '../../unstable_bpk-mixins/bonds';
 
 $shadow-bottom: 0 1px 0 0 bonds.$bpk-line-day; /* stylelint-disable-line unit-disallowed-list */
 $calendar-width: 7 *

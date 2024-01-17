@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins-next/bonds';
-@use '../../bpk-mixins-next/radii';
-@use '../../bpk-mixins-next/typography';
+@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable_bpk-mixins/radii';
+@use '../../unstable_bpk-mixins/typography';
 
 .bpk-info-banner {
   padding: bonds.bpk-spacing-md() bonds.bpk-spacing-base();
