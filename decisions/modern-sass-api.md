@@ -12,7 +12,7 @@ in the future we will switch the default API to the new one
 * For our own components we use `unstable_bpk-mixins`
   * These mixins must be imported with `@use` at-rule
   * Mixins partials must be used in a granular way (use only those partials that you need to build a particular component, see "Wrong" and "Correct" examples below)
-* If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Then run `npm run build:mixins-v2` to generate a new modern version of the package
+* If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Then run `npm run unstable_bpk-mixins` to generate a new modern version of the package
 
 ## Examples
 
