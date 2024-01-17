@@ -125,7 +125,7 @@
     "@skyscanner/bpk-svgs": "^19.0.0",
     "@skyscanner/stylelint-config-skyscanner": "^10.0.0",
     "@storybook/addon-a11y": "^7.6.8",
-    "@storybook/addon-actions": "^7.1.1",
+    "@storybook/addon-actions": "^7.6.8",
     "@storybook/addon-docs": "7.5.2",
     "@storybook/addon-viewport": "^7.6.8",
     "@storybook/react": "^7.6.8",
