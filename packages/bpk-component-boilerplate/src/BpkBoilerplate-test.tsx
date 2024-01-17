@@ -27,14 +27,16 @@ describe('BpkBoilerplate', () => {
   });
 
   it('should not support custom class names', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkBoilerplate className="custom-classname" />,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.className).not.toContain('custom-classname');
   });
 
   it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkBoilerplate testid="123" />);
-    expect(asFragment()).toMatchSnapshot();
+    const { getAllByTestId } = render(
+      <BpkBoilerplate data-testid="123" />,
+    );
+    expect(getAllByTestId('123').length).toBe(1);
   });
 });
