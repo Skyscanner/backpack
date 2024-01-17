@@ -16,21 +16,21 @@
 
 set -e
 
-printf "🧽 Wiping packages/bpk-mixins-next...\n"
+printf "🧽 Wiping packages/unstable_bpk-mixins...\n"
 
-if [ -d packages/bpk-mixins-next ]; then
-    rm -rf packages/bpk-mixins-next
+if [ -d packages/unstable_bpk-mixins ]; then
+    rm -rf packages/unstable_bpk-mixins
 fi
 
 printf "✅  Done! \n \n"
 
 printf "📋 Copying mixins to new location...\n"
 
-cp -r packages/bpk-mixins packages/bpk-mixins-next
+cp -r packages/bpk-mixins packages/unstable_bpk-mixins
 
-rm packages/bpk-mixins-next/_bonds.scss
+rm packages/unstable_bpk-mixins/_bonds.scss
 
-cp scripts/scss/_bonds.template.scss packages/bpk-mixins-next/_bonds.scss
+cp scripts/scss/_bonds.template.scss packages/unstable_bpk-mixins/_bonds.scss
 
 printf "✅  Done! \n \n"
 
@@ -40,16 +40,16 @@ printf "⚙️ Running sass-migrator...\n"
 # Migrate all other files to new syntax
 printf "👉 Applying new module resolution...\n"
 
-sass-migrator --load-path=node_modules module packages/bpk-mixins-next/*.scss
+sass-migrator --load-path=node_modules module packages/unstable_bpk-mixins/*.scss
 
 printf "👉 Applying new division rules...\n"
 
-sass-migrator --load-path=node_modules division packages/bpk-mixins-next/*.scss
+sass-migrator --load-path=node_modules division packages/unstable_bpk-mixins/*.scss
 
 printf "👉 Forwarding everything...\n"
 
-rm packages/bpk-mixins-next/_index.scss
+rm packages/unstable_bpk-mixins/_index.scss
 
-cp scripts/scss/_index.template.scss packages/bpk-mixins-next/_index.scss
+cp scripts/scss/_index.template.scss packages/unstable_bpk-mixins/_index.scss
 
-printf "✅  New mixins generated. Import them from bpk-mixins-next using '@use' notation \n"
+printf "✅  New mixins generated. Import them from unstable_bpk-mixins using '@use' notation \n"

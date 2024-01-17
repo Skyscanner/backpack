@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins-next' as *;
+@use '../../packages/unstable_bpk-mixins' as *;
 
 .bpk-nudger-secondary-on-dark {
   color: $bpk-text-on-dark-day;
