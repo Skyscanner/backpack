@@ -365,12 +365,12 @@ class BpkDatepicker extends Component<Props, State> {
             <>
               {input}
               <BpkModal
-                ariaLabelledby={title}
                 id={`${id}-modal`}
-                onClose={this.props.onClose || this.onClose}
-                isOpen={this.state.isOpen}
-                title={title}
+                ariaLabelledby={title}
                 closeLabel={closeButtonText}
+                isOpen={this.state.isOpen}
+                onClose={this.onClose}
+                title={title}
               >
                 <Calendar {...calendarProps} fixedWidth={false} />
               </BpkModal>
