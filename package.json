@@ -127,7 +127,7 @@
     "@storybook/addon-a11y": "^7.6.8",
     "@storybook/addon-actions": "^7.1.1",
     "@storybook/addon-docs": "7.5.2",
-    "@storybook/addon-viewport": "^7.1.1",
+    "@storybook/addon-viewport": "^7.6.8",
     "@storybook/react": "^7.6.8",
     "@storybook/react-webpack5": "^7.6.8",
     "@testing-library/jest-dom": "^6.1.3",
