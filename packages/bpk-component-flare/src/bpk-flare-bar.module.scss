@@ -18,56 +18,58 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-flare-bar {
-  &__container {
-    position: relative;
+@layer bpk-component {
+  .bpk-flare-bar {
+    &__container {
+      position: relative;
 
-    // when we use `margin: X%`, the percentage is proportional to the size of the nearest block container's width
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-    // By using `display: flex` we ensure that this container is the nearest block container
-    display: flex;
-    min-width: 10rem;
-    height: $bpk-flare-height-desktop;
-    overflow: hidden;
+      // when we use `margin: X%`, the percentage is proportional to the size of the nearest block container's width
+      // https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+      // By using `display: flex` we ensure that this container is the nearest block container
+      display: flex;
+      min-width: 10rem;
+      height: $bpk-flare-height-desktop;
+      overflow: hidden;
 
-    @include bpk-breakpoint-mobile {
-      height: $bpk-flare-height-mobile;
-    }
-  }
-
-  &__curve {
-    position: absolute;
-    // stylelint-disable-next-line unit-disallowed-list
-    bottom: -1px;
-    width: 700rem; // required for correct behaviour in IE
-    height: $bpk-flare-height-desktop;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    fill: $bpk-surface-default-day;
-
-    @include bpk-rtl {
-      margin-right: 50%;
-      transform: translateX(50%);
+      @include bpk-breakpoint-mobile {
+        height: $bpk-flare-height-mobile;
+      }
     }
 
-    @include bpk-breakpoint-mobile {
-      height: $bpk-flare-height-mobile;
+    &__curve {
+      position: absolute;
+      // stylelint-disable-next-line unit-disallowed-list
+      bottom: -1px;
+      width: 700rem; // required for correct behaviour in IE
+      height: $bpk-flare-height-desktop;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      fill: $bpk-surface-default-day;
+
+      @include bpk-rtl {
+        margin-right: 50%;
+        transform: translateX(50%);
+      }
+
+      @include bpk-breakpoint-mobile {
+        height: $bpk-flare-height-mobile;
+      }
     }
-  }
 
-  &__rounded-corner {
-    position: absolute;
-    // stylelint-disable-next-line unit-disallowed-list
-    bottom: calc(#{bpk-spacing-lg()} - 1px);
-    left: 0;
-    width: $bpk-flare-corner-radius;
-    height: $bpk-flare-corner-radius;
-    fill: $bpk-surface-default-day;
+    &__rounded-corner {
+      position: absolute;
+      // stylelint-disable-next-line unit-disallowed-list
+      bottom: calc(#{bpk-spacing-lg()} - 1px);
+      left: 0;
+      width: $bpk-flare-corner-radius;
+      height: $bpk-flare-corner-radius;
+      fill: $bpk-surface-default-day;
 
-    &--trailing {
-      right: 0;
-      left: auto;
-      transform: rotate(-90deg);
+      &--trailing {
+        right: 0;
+        left: auto;
+        transform: rotate(-90deg);
+      }
     }
   }
 }

@@ -18,35 +18,37 @@
 
 @import '../../bpk-mixins/index.scss';
 
-$button-padding: bpk-spacing-sm() / 2;
+@layer bpk-component {
+  $button-padding: bpk-spacing-sm() / 2;
 
-.bpk-close-button {
-  width: bpk-spacing-lg();
-  height: bpk-spacing-lg();
+  .bpk-close-button {
+    width: bpk-spacing-lg();
+    height: bpk-spacing-lg();
 
-  // The margin here is used to ensure that the icon is aligned to
-  // the leading or trailing edge of its parent container
-  margin-right: -#{$button-padding};
-  margin-left: -#{$button-padding};
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-  color: $bpk-text-secondary-day;
-  cursor: pointer;
-  appearance: none;
+    // The margin here is used to ensure that the icon is aligned to
+    // the leading or trailing edge of its parent container
+    margin-right: -#{$button-padding};
+    margin-left: -#{$button-padding};
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: $bpk-text-secondary-day;
+    cursor: pointer;
+    appearance: none;
 
-  @include bpk-touch-tappable;
+    @include bpk-touch-tappable;
 
-  @include bpk-hover {
-    color: $bpk-text-primary-day;
-  }
+    @include bpk-hover {
+      color: $bpk-text-primary-day;
+    }
 
-  &:active {
-    color: $bpk-text-primary-day;
-  }
+    &:active {
+      color: $bpk-text-primary-day;
+    }
 
-  &__icon {
-    vertical-align: -#{$button-padding};
-    fill: currentcolor;
+    &__icon {
+      vertical-align: -#{$button-padding};
+      fill: currentcolor;
+    }
   }
 }

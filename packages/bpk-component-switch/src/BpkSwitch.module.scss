@@ -18,74 +18,76 @@
 
 @import '../../bpk-mixins/index.scss';
 
-$height: bpk-spacing-xl();
-$width: bpk-spacing-sm() * 13;
-$border-width: $bpk-one-pixel-rem * 2;
+@layer bpk-component {
+  $height: bpk-spacing-xl();
+  $width: bpk-spacing-sm() * 13;
+  $border-width: $bpk-one-pixel-rem * 2;
 
-.bpk-switch {
-  position: relative;
-  display: flex;
-  align-items: center;
+  .bpk-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
 
-  // Checkbox is invisible so the switch element can be the visual element.
-  &__checkbox {
-    position: absolute;
-    opacity: 0;
+    // Checkbox is invisible so the switch element can be the visual element.
+    &__checkbox {
+      position: absolute;
+      opacity: 0;
 
-    &:checked ~ .bpk-switch__switch {
-      @include bpk-themeable-property(
-        background,
-        --bpk-switch-checked-color,
-        $bpk-core-accent-day
-      );
+      &:checked ~ .bpk-switch__switch {
+        @include bpk-themeable-property(
+          background,
+          --bpk-switch-checked-color,
+          $bpk-core-accent-day
+        );
 
-      &::before {
-        left: ($width - $height) + $border-width;
+        &::before {
+          left: ($width - $height) + $border-width;
+        }
       }
     }
-  }
 
-  &__label {
-    /* stylelint-disable backpack/use-typography-styles */
-    line-height: $height;
-    margin-inline-end: bpk-spacing-md();
-  }
-
-  // The 'track'.
-  &__switch {
-    position: relative;
-    float: right;
-    display: block;
-    width: $width;
-    height: $height;
-    transition: background $bpk-duration-sm linear;
-    border-radius: $height / 2;
-    background: $bpk-text-disabled-day;
-    cursor: pointer;
-
-    // The 'handle'.
-    &::before {
-      position: absolute;
-      top: $border-width;
-      left: $border-width;
-      content: '';
-      display: block;
-      width: $height - ($border-width * 2);
-      height: $height - ($border-width * 2);
-      transition: left $bpk-duration-sm ease-out;
-      border-radius: 50%;
-      background: $bpk-text-on-dark-day;
-
-      @include bpk-box-shadow-sm;
+    &__label {
+      /* stylelint-disable backpack/use-typography-styles */
+      line-height: $height;
+      margin-inline-end: bpk-spacing-md();
     }
 
-    &--small {
-      width: bpk-spacing-xxl();
-      height: bpk-spacing-sm() * 5;
+    // The 'track'.
+    &__switch {
+      position: relative;
+      float: right;
+      display: block;
+      width: $width;
+      height: $height;
+      transition: background $bpk-duration-sm linear;
+      border-radius: $height / 2;
+      background: $bpk-text-disabled-day;
+      cursor: pointer;
 
+      // The 'handle'.
       &::before {
-        width: bpk-spacing-base();
-        height: bpk-spacing-base();
+        position: absolute;
+        top: $border-width;
+        left: $border-width;
+        content: '';
+        display: block;
+        width: $height - ($border-width * 2);
+        height: $height - ($border-width * 2);
+        transition: left $bpk-duration-sm ease-out;
+        border-radius: 50%;
+        background: $bpk-text-on-dark-day;
+
+        @include bpk-box-shadow-sm;
+      }
+
+      &--small {
+        width: bpk-spacing-xxl();
+        height: bpk-spacing-sm() * 5;
+
+        &::before {
+          width: bpk-spacing-base();
+          height: bpk-spacing-base();
+        }
       }
     }
   }

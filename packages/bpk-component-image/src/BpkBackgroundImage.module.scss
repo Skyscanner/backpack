@@ -17,30 +17,32 @@
  */
 
 @import '../../bpk-mixins/index.scss';
-@import './BpkImage.module.scss';
+@import './bpkImageMixins.scss';
 
-.bpk-background-image {
-  @include bpk-image;
+@layer bpk-component {
+  .bpk-background-image {
+    @include bpk-image;
 
-  &__spinner {
-    @include bpk-image__spinner;
-  }
-
-  &__img {
-    opacity: 0;
-
-    @include bpk-image__img;
-
-    &--shown {
-      opacity: 1;
+    &__spinner {
+      @include bpk-image__spinner;
     }
-  }
 
-  &__content {
-    position: relative;
-  }
+    &__img {
+      opacity: 0;
 
-  &--no-background {
-    @include bpk-image--no-background;
+      @include bpk-image__img;
+
+      &--shown {
+        opacity: 1;
+      }
+    }
+
+    &__content {
+      position: relative;
+    }
+
+    &--no-background {
+      @include bpk-image--no-background;
+    }
   }
 }

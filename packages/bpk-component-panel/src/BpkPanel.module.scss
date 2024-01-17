@@ -18,14 +18,16 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-panel {
-  @include bpk-panel;
+@layer bpk-component {
+  .bpk-panel {
+    @include bpk-panel;
 
-  &--padded {
-    @include bpk-panel--padded;
-  }
+    &--padded {
+      @include bpk-panel--padded;
+    }
 
-  &--full-width {
-    @include bpk-panel--full-width;
+    &--full-width {
+      @include bpk-panel--full-width;
+    }
   }
 }

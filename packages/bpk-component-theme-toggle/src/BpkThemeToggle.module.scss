@@ -18,8 +18,10 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-theme-toggle {
-  &__label {
-    @include bpk-visually-hidden;
+@layer bpk-component {
+  .bpk-theme-toggle {
+    &__label {
+      @include bpk-visually-hidden;
+    }
   }
 }

@@ -18,16 +18,18 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-code {
-  &--block {
-    @include bpk-code--block;
-  }
+@layer bpk-component {
+  .bpk-code {
+    &--block {
+      @include bpk-code--block;
+    }
 
-  &__pre {
-    @include bpk-code__pre;
+    &__pre {
+      @include bpk-code__pre;
 
-    &--alternate {
-      @include bpk-code__pre--alternate;
+      &--alternate {
+        @include bpk-code__pre--alternate;
+      }
     }
   }
 }

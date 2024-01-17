@@ -18,6 +18,8 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-button--link-on-dark {
-  @include bpk-button--link-on-dark;
+@layer bpk-component {
+  .bpk-button--link-on-dark {
+    @include bpk-button--link-on-dark;
+  }
 }

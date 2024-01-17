@@ -15,20 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /* stylelint-disable */
+
 @import '../../bpk-mixins/index.scss';
 
-.bpk-input-field {
-  display: flex;
-  max-width: 3*bpk-spacing-xxl();
-  margin-right: bpk-spacing-sm();
-  align-items: center;
-
-  input {
-    text-align: center;
+@layer bpk-component {
+  .bpk-input-field {
+    display: flex;
+    max-width: 3*bpk-spacing-xxl();
+    margin-right: bpk-spacing-sm();
+    align-items: center;
+  
+    input {
+      text-align: center;
+    }
   }
-}
-
-.bpk-input-field:last-child {
-  margin-right: $bpk-spacing-none;
+  
+  .bpk-input-field:last-child {
+    margin-right: $bpk-spacing-none;
+  }
 }
