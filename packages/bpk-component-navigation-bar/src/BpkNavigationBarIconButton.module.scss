@@ -18,38 +18,40 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-navigation-bar-icon-button {
-  @include bpk-themeable-property(
-    color,
-    --bpk-navigation-bar-icon-button-color,
-    $bpk-text-primary-day
-  );
-
-  @include bpk-hover {
+@layer bpk-component {
+  .bpk-navigation-bar-icon-button {
     @include bpk-themeable-property(
       color,
-      --bpk-navigation-bar-icon-button-hover-color,
+      --bpk-navigation-bar-icon-button-color,
       $bpk-text-primary-day
     );
-  }
-
-  &:active {
-    @include bpk-themeable-property(
-      color,
-      --bpk-navigation-bar-icon-button-active-color,
-      $bpk-text-primary-day
-    );
-  }
-
-  &--on-dark {
-    color: $bpk-text-primary-inverse-day;
 
     @include bpk-hover {
-      color: $bpk-text-primary-inverse-day;
+      @include bpk-themeable-property(
+        color,
+        --bpk-navigation-bar-icon-button-hover-color,
+        $bpk-text-primary-day
+      );
     }
 
     &:active {
+      @include bpk-themeable-property(
+        color,
+        --bpk-navigation-bar-icon-button-active-color,
+        $bpk-text-primary-day
+      );
+    }
+
+    &--on-dark {
       color: $bpk-text-primary-inverse-day;
+
+      @include bpk-hover {
+        color: $bpk-text-primary-inverse-day;
+      }
+
+      &:active {
+        color: $bpk-text-primary-inverse-day;
+      }
     }
   }
 }

@@ -18,68 +18,70 @@
 
 @import '../../bpk-mixins/index.scss';
 
-$slider-handle-size: bpk-spacing-base() + bpk-spacing-sm();
-$slider-handle-touch-size: bpk-spacing-xxl();
-$slider-bar-height: bpk-spacing-sm();
+@layer bpk-component {
+  $slider-handle-size: bpk-spacing-base() + bpk-spacing-sm();
+  $slider-handle-touch-size: bpk-spacing-xxl();
+  $slider-bar-height: bpk-spacing-sm();
 
-.bpk-slider {
-  height: $slider-handle-size;
-  -webkit-tap-highlight-color: transparent;
-
-  &__handle {
-    display: flex;
-    width: $slider-handle-size;
+  .bpk-slider {
     height: $slider-handle-size;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: $bpk-core-accent-day;
-    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 
-    @include bpk-box-shadow-sm;
-
-    &::after {
-      position: absolute;
-      content: '';
-      width: $slider-handle-touch-size;
-      height: $slider-handle-touch-size;
+    &__handle {
+      display: flex;
+      width: $slider-handle-size;
+      height: $slider-handle-size;
+      justify-content: center;
+      align-items: center;
       border-radius: 50%;
+      background-color: $bpk-core-accent-day;
+      cursor: pointer;
+
+      @include bpk-box-shadow-sm;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: $slider-handle-touch-size;
+        height: $slider-handle-touch-size;
+        border-radius: 50%;
+      }
+
+      &--active {
+        transform: scale(1.2) translate3d(0, 0, 0);
+        background-color: $bpk-private-slider-selected-day;
+      }
     }
 
-    &--active {
-      transform: scale(1.2) translate3d(0, 0, 0);
-      background-color: $bpk-private-slider-selected-day;
-    }
-  }
-
-  &__bar {
-    top: calc(50% - #{$slider-bar-height / 2});
-    height: $slider-bar-height;
-    border-radius: $bpk-border-radius-sm;
-    background-color: $bpk-line-day;
-  }
-
-  // stylelint-disable-next-line selector-attribute-quotes
-  > div[class$='0'] {
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-slider-bar-color,
-      $bpk-core-accent-day
-    );
-  }
-
-  &--range {
-    // stylelint-disable-next-line selector-attribute-quotes
-    > div[class$='0'] {
+    &__bar {
+      top: calc(50% - #{$slider-bar-height / 2});
+      height: $slider-bar-height;
+      border-radius: $bpk-border-radius-sm;
       background-color: $bpk-line-day;
     }
+
     // stylelint-disable-next-line selector-attribute-quotes
-    > div[class$='1'] {
+    > div[class$='0'] {
       @include bpk-themeable-property(
         background-color,
         --bpk-slider-bar-color,
         $bpk-core-accent-day
       );
+    }
+
+    &--range {
+      // stylelint-disable-next-line selector-attribute-quotes
+      > div[class$='0'] {
+        background-color: $bpk-line-day;
+      }
+      // stylelint-disable-next-line selector-attribute-quotes
+      > div[class$='1'] {
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-slider-bar-color,
+          $bpk-core-accent-day
+        );
+      }
     }
   }
 }

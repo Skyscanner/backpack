@@ -18,47 +18,49 @@
 
 @import '../../bpk-mixins/index.scss';
 
-$bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
+@layer bpk-component {
+  $bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
 
-.bpk-data-table-column__header {
-  display: flex;
-  height: 100%;
-  margin: bpk-spacing-base();
-  flex-direction: row;
-  align-items: center;
-  outline-offset: -(bpk-spacing-sm());
+  .bpk-data-table-column__header {
+    display: flex;
+    height: 100%;
+    margin: bpk-spacing-base();
+    flex-direction: row;
+    align-items: center;
+    outline-offset: -(bpk-spacing-sm());
 
-  @include bpk-label-2;
+    @include bpk-label-2;
 
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.bpk-data-table-column__sort-icons {
-  margin: 0 0 0 $bpk-margin-size-sort-icons;
-
-  @include bpk-rtl {
-    margin: 0 $bpk-margin-size-sort-icons 0 0;
-  }
-}
-
-.bpk-data-table-column__sort-icon {
-  display: block;
-  fill: $bpk-line-day;
-
-  &:hover {
-    fill: $bpk-line-day;
-  }
-
-  &--selected {
-    &,
     &:hover {
-      fill: $bpk-core-accent-day;
+      cursor: pointer;
     }
   }
-}
 
-.bpk-data-table-column__sort-icon--up {
-  margin-bottom: -(bpk-spacing-sm());
+  .bpk-data-table-column__sort-icons {
+    margin: 0 0 0 $bpk-margin-size-sort-icons;
+
+    @include bpk-rtl {
+      margin: 0 $bpk-margin-size-sort-icons 0 0;
+    }
+  }
+
+  .bpk-data-table-column__sort-icon {
+    display: block;
+    fill: $bpk-line-day;
+
+    &:hover {
+      fill: $bpk-line-day;
+    }
+
+    &--selected {
+      &,
+      &:hover {
+        fill: $bpk-core-accent-day;
+      }
+    }
+  }
+
+  .bpk-data-table-column__sort-icon--up {
+    margin-bottom: -(bpk-spacing-sm());
+  }
 }

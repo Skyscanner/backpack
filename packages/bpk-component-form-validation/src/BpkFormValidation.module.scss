@@ -18,27 +18,29 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-form-validation {
-  @include bpk-form-validation;
+@layer bpk-component {
+  .bpk-form-validation {
+    @include bpk-form-validation;
 
-  &__container {
-    @include bpk-form-validation__container;
-  }
+    &__container {
+      @include bpk-form-validation__container;
+    }
 
-  &__icon {
-    @include bpk-themeable-property(
-      fill,
-      --bpk-form-validation-icon-fill,
-      $bpk-form-validation-color
-    );
-    @include bpk-margin-trailing(bpk-spacing-sm());
-  }
+    &__icon {
+      @include bpk-themeable-property(
+        fill,
+        --bpk-form-validation-icon-fill,
+        $bpk-form-validation-color
+      );
+      @include bpk-margin-trailing(bpk-spacing-sm());
+    }
 
-  &--appear {
-    @include bpk-form-validation--appear;
-  }
+    &--appear {
+      @include bpk-form-validation--appear;
+    }
 
-  &--is-checkbox {
-    @include bpk-form-validation--is-checkbox;
+    &--is-checkbox {
+      @include bpk-form-validation--is-checkbox;
+    }
   }
 }

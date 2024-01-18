@@ -18,27 +18,29 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@mixin fullscreen() {
-  display: flex;
-  padding: 0;
-}
-
-.bpk-modal__container {
-  display: flex;
-  padding: bpk-spacing-lg();
-
-  // IE11 and below hack for buggy flexbox support
-  @media screen\0 {
-    display: block;
+@layer bpk-component {
+  @mixin fullscreen() {
+    display: flex;
+    padding: 0;
   }
 
-  &--full-screen-mobile {
-    @include bpk-breakpoint-mobile {
+  .bpk-modal__container {
+    display: flex;
+    padding: bpk-spacing-lg();
+
+    // IE11 and below hack for buggy flexbox support
+    @media screen\0 {
+      display: block;
+    }
+
+    &--full-screen-mobile {
+      @include bpk-breakpoint-mobile {
+        @include fullscreen;
+      }
+    }
+
+    &--full-screen {
       @include fullscreen;
     }
-  }
-
-  &--full-screen {
-    @include fullscreen;
   }
 }

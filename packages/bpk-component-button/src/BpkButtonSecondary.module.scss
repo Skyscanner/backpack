@@ -18,6 +18,8 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-button--secondary {
-  @include bpk-button--secondary;
+@layer bpk-component {
+  .bpk-button--secondary {
+    @include bpk-button--secondary;
+  }
 }

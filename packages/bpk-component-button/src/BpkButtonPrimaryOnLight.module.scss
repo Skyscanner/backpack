@@ -18,6 +18,8 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-button--primary-on-light {
-  @include bpk-button--primary-on-light;
+@layer bpk-component {
+  .bpk-button--primary-on-light {
+    @include bpk-button--primary-on-light;
+  }
 }

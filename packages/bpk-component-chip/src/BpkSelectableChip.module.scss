@@ -18,6 +18,8 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-chip {
-  @include bpk-chip;
+@layer bpk-component {
+  .bpk-chip {
+    @include bpk-chip;
+  }
 }

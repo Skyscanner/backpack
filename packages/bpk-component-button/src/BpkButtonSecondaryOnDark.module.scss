@@ -18,6 +18,8 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-button--secondary-on-dark {
-  @include bpk-button--secondary-on-dark;
+@layer bpk-component {
+  .bpk-button--secondary-on-dark {
+    @include bpk-button--secondary-on-dark;
+  }
 }

@@ -18,61 +18,63 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-dialog {
-  &__container {
-    display: flex;
-    padding: bpk-spacing-lg();
+@layer bpk-component {
+  .bpk-dialog {
+    &__container {
+      display: flex;
+      padding: bpk-spacing-lg();
 
-    // IE11 and below hack for buggy flexbox support
-    @media screen\0 {
-      display: block;
-    }
-  }
-
-  &__close-button {
-    float: right;
-    margin: 0 0 bpk-spacing-base() bpk-spacing-base();
-
-    @include bpk-rtl {
-      float: left;
-      margin: 0 bpk-spacing-base() bpk-spacing-base() 0;
-    }
-  }
-
-  &--with-icon {
-    margin-top: bpk-spacing-xl();
-  }
-
-  &__icon {
-    $size: bpk-spacing-md() * 7;
-
-    position: absolute;
-    top: 0;
-    left: 50%;
-    display: flex;
-    width: $size;
-    height: $size;
-    margin-top: -$size / 2;
-    margin-left: -$size / 2;
-    justify-content: center;
-    align-items: center;
-    border: ($bpk-border-size-lg * 2) $bpk-surface-default-day solid;
-    border-radius: 50%;
-
-    &--primary {
-      background-color: $bpk-core-accent-day;
+      // IE11 and below hack for buggy flexbox support
+      @media screen\0 {
+        display: block;
+      }
     }
 
-    &--warning {
-      background-color: $bpk-status-warning-spot-day;
+    &__close-button {
+      float: right;
+      margin: 0 0 bpk-spacing-base() bpk-spacing-base();
+
+      @include bpk-rtl {
+        float: left;
+        margin: 0 bpk-spacing-base() bpk-spacing-base() 0;
+      }
     }
 
-    &--destructive {
-      background-color: $bpk-status-danger-spot-day;
+    &--with-icon {
+      margin-top: bpk-spacing-xl();
     }
 
-    > svg {
-      fill: $bpk-text-primary-inverse-day;
+    &__icon {
+      $size: bpk-spacing-md() * 7;
+
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: flex;
+      width: $size;
+      height: $size;
+      margin-top: -$size / 2;
+      margin-left: -$size / 2;
+      justify-content: center;
+      align-items: center;
+      border: ($bpk-border-size-lg * 2) $bpk-surface-default-day solid;
+      border-radius: 50%;
+
+      &--primary {
+        background-color: $bpk-core-accent-day;
+      }
+
+      &--warning {
+        background-color: $bpk-status-warning-spot-day;
+      }
+
+      &--destructive {
+        background-color: $bpk-status-danger-spot-day;
+      }
+
+      > svg {
+        fill: $bpk-text-primary-inverse-day;
+      }
     }
   }
 }
