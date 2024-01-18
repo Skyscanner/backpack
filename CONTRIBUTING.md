@@ -59,9 +59,13 @@ git checkout -b {BRANCH_NAME}
 npm install --registry="https://registry.npmjs.org/"
 ```
 
-If you receive an error about `ValueError: invalid mode: 'rU' while trying to load binding.gyp`, try downgrading the default python version for your shell to python 3.9
+3. Build a modern version of mixins for local development
 
-3. Build SVGs
+```sh
+npm run unstable_bpk-mixins
+```
+
+4. Build SVGs
 
 ```sh
 npm run build
@@ -104,6 +108,18 @@ Look at existing components for code style inspiration. Here are some good examp
 We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
 
 When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
+
+When creating or modifying SCSS files, follow these rules
+
+1. Use Modern SASS API
+   * Prefer `@use` instead of `@import`
+   * Prefer `math.div($a, $b)` instead of `$a / $b`. Add `@use sass:math` statement to the top of your file to make this function available
+   * Read more about [@use rule](https://sass-lang.com/documentation/at-rules/use/) and [SASS math functions](https://sass-lang.com/documentation/modules/math/)
+2. Use only what you need
+   * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../unstable_bpk-mixins/bonds'` statement only
+3. Use `unstable_bpk-mixins` for Backpack components development
+   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`, then execute `npm run unstable_bpk-mixins` command to make it available for Modern API
+   * Import mixins from `packages/unstable_bpk-mixins` only. Otherwise your code will break because Modern SASS API doesn't support `~` import syntax or slash division
 
 #### Adding a new component
 
