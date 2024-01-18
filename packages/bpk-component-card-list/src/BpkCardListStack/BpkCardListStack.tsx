@@ -15,11 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { BpkButtonV2 } from '../../bpk-component-button';
-import { cssModules } from '../../bpk-react-utils';
+import { BpkButtonV2 } from '../../../bpk-component-button';
+import { cssModules } from '../../../bpk-react-utils';
+import BpkExpand from '../BpkExpand';
 
 import STYLES from './BpkCardListStack.module.scss';
-import BpkExpand from './BpkExpand';
 
 const getClassName = cssModules(STYLES);
 

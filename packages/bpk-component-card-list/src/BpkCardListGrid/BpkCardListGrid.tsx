@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef, useState } from 'react';
-import { debounce } from 'lodash';
+import type { ReactElement } from 'react';
+import { useState } from 'react';
 
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
@@ -28,16 +28,15 @@ import STYLES from './BpkCardListGrid.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const DEBOUNCE_TIME = 100;
-const DEFAULT_ITEMS = 3;
+const DEFAULT_ITEMS = 4;
 
 type BpkCardListGridProps = {
   accessory?: BpkAccessoryTypes;
   buttonText?: string;
-  cardList: JSX.Element[];
+  cardList: ReactElement[];
   expandText?: string;
   initiallyShownCards?: number;
-}
+};
 
 const BpkCardListGrid = ({
   accessory,
@@ -46,10 +45,6 @@ const BpkCardListGrid = ({
   expandText,
   initiallyShownCards = DEFAULT_ITEMS,
 }: BpkCardListGridProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const [cardHeight, setCardHeight] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
   const showContent = () => {
@@ -60,48 +55,19 @@ const BpkCardListGrid = ({
     setShowAll(false);
   };
 
-  const debouncedGetWidth = debounce(() => {
-    if (!containerRef.current) {
-      return;
-    }
-
-    setCardHeight(cardRef.current?.clientHeight || 0);
-  }, DEBOUNCE_TIME);
-
-  useEffect(() => {
-    setCardHeight(cardRef.current?.clientHeight || 0);
-  }, []);
-
-  // Listen for screen width
-  useEffect(() => {
-    window.addEventListener('resize', debouncedGetWidth);
-    return () => {
-      window.removeEventListener('resize', debouncedGetWidth);
-    };
-  });
-
   const cards = cardList.map((card: any, index: number) => (
-    <div
-      ref={cardRef}
-      className={getClassName('bpk-card-list-grid--card')}
-      style={{
-        flexBasis: `${Math.floor((1 / initiallyShownCards) * 100) - 1}%`,
-      }}
-    >
-      {card}
-    </div>
+    <div className={getClassName('bpk-card-list-grid--card')}>{card}</div>
   ));
 
   return (
     <>
       <div
-        ref={containerRef}
-        className={getClassName('bpk-card-list-grid')}
-        style={{
-          height: showAll ? 'auto' : `${cardHeight + 15}px`,
-        }}
+        className={getClassName(
+          `bpk-card-list-grid`,
+          'flex-wrap'
+        )}
       >
-        {cards}
+        {!showAll ? cards.slice(0, initiallyShownCards) : cards}
       </div>
 
       {!buttonText &&
