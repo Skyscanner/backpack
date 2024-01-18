@@ -629,7 +629,6 @@ const DefaultVisualExample = () => (
       }}
       minDate={new Date(2020, 3, 1)}
       initiallyFocusedDate={new Date(2020, 3, 19)}
-      isOpen
     />
   </div>
 );
