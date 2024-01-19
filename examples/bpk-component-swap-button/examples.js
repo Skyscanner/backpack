@@ -23,7 +23,7 @@ import { action } from '../bpk-storybook-utils';
 const DefaultExample = () => (
 
   <div style={{ position: 'absolute', top:'20%', left:'20%' }}>
-  <BpkSwapButton label="Backpack" ariaLabel='Swap Button' ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
+  <BpkSwapButton ariaLabel='Swap Button' ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
   </div>
 );
 
