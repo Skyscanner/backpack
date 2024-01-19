@@ -11,5 +11,11 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```ts
 import BpkSwapButton from '@skyscanner/backpack-web/bpk-swap-button';
 
-export default () => <BpkSwapButton />;
+export default () =>
+  <BpkSwapButton
+    ariaLabel="Swap Button"
+    ariaLiveTextProps="Swapped"
+    onClick={() => {console.log('swap');
+    }}
+  />;
 ```
