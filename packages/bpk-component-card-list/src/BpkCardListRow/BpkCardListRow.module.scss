@@ -12,6 +12,7 @@
   .bpk-card-list-row__card {
     padding: bpk-spacing-sm();
     flex-shrink: 0;
+    text-wrap: wrap;
 
     @include bpk-breakpoint-above-tablet {
       width: calc(100% / 3);
