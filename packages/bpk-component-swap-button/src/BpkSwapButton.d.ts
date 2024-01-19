@@ -17,13 +17,13 @@
  */
 
 export type Props = {
-  className?: string | null;
-  [rest: string]: any;
+  ariaLabel: string;
+  ariaLiveTextProps: string;
+  onClick: () => void;
 };
-declare const BpkSwapButton: {
-  ({ className, ...rest }: Props): JSX.Element;
-  defaultProps: {
-    className: null;
-  };
-};
+declare const BpkSwapButton: ({
+  ariaLabel,
+  ariaLiveTextProps,
+  onClick,
+} : Props) => JSX.Element;
 export default BpkSwapButton;
