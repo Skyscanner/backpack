@@ -30,7 +30,7 @@
 
     :focus-visible {
       box-shadow:
-        0 0 0 (bpk-spacing-sm() / 2) $bpk-color-white,
+        0 0 0 (bpk-spacing-sm() / 2) $bpk-surface-elevated-day,
         0 0 0 bpk-spacing-sm() $bpk-text-link-day;
     }
 
@@ -43,7 +43,7 @@
       transition: transform $bpk-duration-base;
       border: $bpk-border-size-xl solid $bpk-core-primary-day;
       border-radius: 50%;
-      background-color: $bpk-color-white;
+      background-color: $bpk-surface-default-day;
 
       @include bpk-breakpoint-small-tablet {
         border: $bpk-border-size-lg solid $bpk-core-primary-day;
@@ -57,7 +57,6 @@
     &__icon {
       max-width: bpk-spacing-base();
       max-height: bpk-spacing-base();
-      outline-color: $bpk-color-white;
     }
   }
 }
