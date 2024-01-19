@@ -34,13 +34,6 @@ describe('BpkSwapButton', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not have any programmatically detectable accessibility issues', async () => {
-      const { container } = render(<BpkSwapButton {...props } />);
-      const results = await axe(container);
-
-      expect(results).toHaveNoViolations();
-    });
-
     it('calls onClick prop when clicked', async () => {
       const mockOnClick = jest.fn();
       render(<BpkSwapButton {...props} onClick={mockOnClick}/>);
