@@ -44,7 +44,6 @@ $close-button-width: bpk-spacing-lg() * 2;
     @include bpk-border-radius-sm;
 
     @include bpk-breakpoint-mobile {
-      height: fit-content;
       max-height: 90%;
       margin-bottom: 0;
       border-radius: $bpk-border-radius-lg $bpk-border-radius-lg 0 0;
