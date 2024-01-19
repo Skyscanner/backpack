@@ -1,6 +1,6 @@
-# bpk-component-boilerplate
+# bpk-component-swap-button
 
-> Backpack example component.
+> Backpack Swap Button component.
 
 ## Installation
 
