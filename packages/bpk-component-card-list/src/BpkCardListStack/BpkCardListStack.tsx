@@ -15,6 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import type { Dispatch, SetStateAction } from 'react';
+
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkExpand from '../BpkExpand';
@@ -23,20 +25,36 @@ import STYLES from './BpkCardListStack.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type BpkCardListStackProps = {
+  accessory: 'expand' | 'button';
+  children: any;
+  expandText?: string;
+  showContent: () => void;
+  hideContent: () => void;
+  collapsed: boolean;
+  setCollapsed: Dispatch<SetStateAction<boolean>>;
+};
+
 const BpkCardListStack = ({
-  accessory, // EXPAND OR BUTTON
-  buttonText,
+  accessory,
   children,
+  collapsed,
   expandText,
   hideContent,
+  setCollapsed,
   showContent,
-}: any) => (
+}: BpkCardListStackProps) => (
   <>
     <div className={getClassName('bpk-card-list-stack')}>{children}</div>
 
-    {!buttonText &&
+    {!expandText &&
       (accessory === 'expand' ? (
-        <BpkExpand showContent={showContent} hideContent={hideContent} />
+        <BpkExpand
+          showContent={showContent}
+          hideContent={hideContent}
+          collapsed={collapsed}
+          setCollapsed={setCollapsed}
+        />
       ) : (
         <BpkButtonV2>Action</BpkButtonV2>
       ))}

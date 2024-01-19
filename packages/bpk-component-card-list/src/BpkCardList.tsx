@@ -25,11 +25,10 @@ import { BpkButtonV2 } from '../../bpk-component-button';
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 
 import STYLES from './BpkCardList.module.scss';
-import type { BpkAccessoryTypes } from './BpkAccessory';
-import BpkCardListGrid from './BpkCardListGrid/BpkCardListGrid';
-import BpkCardListRail from './BpkCardListRail/BpkCardListRail';
-import BpkCardListRow from './BpkCardListRow/BpkCardListRow';
-import BpkCardListStack from './BpkCardListStack/BpkCardListStack';
+import BpkCardListGrid from './BpkCardListGrid';
+import BpkCardListRail from './BpkCardListRail';
+import BpkCardListRow from './BpkCardListRow';
+import BpkCardListStack from './BpkCardListStack';
 
 const getClassName = cssModules(STYLES);
 
@@ -40,11 +39,12 @@ const MAX_ITEMS = 12; // MAX should be 12 for Desktop Grid and Mobile Stack
 const DEFAULT_ITEMS = 3;
 
 type BpkChipGroup = any;
+type BpkAccessoryTypes = 'expand' | 'button' | 'pagination';
 
 export type BpkCardListProps = {
   title: string;
   description?: string;
-  buttonText?: string;
+  buttonText?: string; // For Button in Section Header
   onButtonClick?: () => void;
   chipGroup?: BpkChipGroup;
   cardList: ReactElement[];
@@ -72,6 +72,7 @@ const BpkCardList = ({
   const [visibleCards, setVisibleCards] = useState(
     cardList.slice(0, initiallyShownCards),
   );
+  const [collapsed, setCollapsed] = useState(true);
 
   const cards = visibleCards.map((card: ReactElement) => (
     <div className={getClassName('bpk-card-list--card-list--card')}>{card}</div>
@@ -89,7 +90,11 @@ const BpkCardList = ({
       <BpkSectionHeader
         title={title}
         description={description}
-        button={buttonText && <BpkButtonV2>{buttonText}</BpkButtonV2>}
+        button={
+          buttonText && (
+            <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
+          )
+        }
       />
 
       {chipGroup && (
@@ -107,10 +112,11 @@ const BpkCardList = ({
               ) : (
                 <BpkCardListStack
                   accessory={accessory}
-                  buttonText={buttonText}
                   expandText={expandText}
                   showContent={showContent}
                   hideContent={hideContent}
+                  collapsed={collapsed}
+                  setCollapsed={setCollapsed}
                 >
                   {cards}
                 </BpkCardListStack>
@@ -120,13 +126,16 @@ const BpkCardList = ({
             return layoutDesktop === 'grid' ? (
               <BpkCardListGrid
                 accessory={accessory}
-                buttonText={buttonText}
                 expandText={expandText}
-                cardList={cardList}
+                cardList={visibleCards}
+                showContent={showContent}
+                hideContent={hideContent}
+                collapsed={collapsed}
+                setCollapsed={setCollapsed}
               />
             ) : (
               <BpkCardListRow
-                accessory={accessory === 'pagination' && !buttonText}
+                accessory={accessory === 'pagination' && !expandText}
                 numberOfCardsToShow={initiallyShownCards}
               >
                 {allCards}

@@ -1,31 +1,33 @@
-import { useState } from 'react';
-
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import ChevronDown from '../../bpk-component-icon/sm/chevron-down';
+import ChevronDown from '../../../bpk-component-icon/sm/chevron-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import ChevronUp from '../../bpk-component-icon/sm/chevron-up';
-import { BUTTON_TYPES, BpkButtonV2 } from '../../bpk-component-button';
-import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
+import ChevronUp from '../../../bpk-component-icon/sm/chevron-up';
+import { BUTTON_TYPES, BpkButtonV2 } from '../../../bpk-component-button';
+import { withButtonAlignment, withRtlSupport } from '../../../bpk-component-icon';
 
 const AlignedChevronDownIcon = withButtonAlignment(withRtlSupport(ChevronDown));
 const AlignedChevronUpIcon = withButtonAlignment(withRtlSupport(ChevronUp));
 
-const BpkExpand = ({ hideContent, showContent }: any) => {
-  const [contentHidden, setContentHidden] = useState(true);
-
-  const buttonText = contentHidden ? 'Show More' : 'Show Less';
-  const buttonIcon = contentHidden ? (
+const BpkExpand = ({
+  collapsed,
+  hideContent,
+  setCollapsed,
+  showContent,
+}: any) => {
+  // TODO: pass a prop for both strings
+  const buttonText = collapsed ? 'Show More' : 'Show Less';
+  const buttonIcon = collapsed ? (
     <AlignedChevronDownIcon />
   ) : (
     <AlignedChevronUpIcon />
   );
   const buttonOnClick = () => {
-    if (contentHidden) {
+    if (collapsed) {
       showContent();
-      setContentHidden(false);
+      setCollapsed(false);
     } else {
       hideContent();
-      setContentHidden(true);
+      setCollapsed(true);
     }
   };
 

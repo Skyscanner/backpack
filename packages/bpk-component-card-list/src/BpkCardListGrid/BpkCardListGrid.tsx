@@ -16,63 +16,53 @@
  * limitations under the License.
  */
 
-import type { ReactElement } from 'react';
-import { useState } from 'react';
+import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkExpand from '../BpkExpand';
-import type { BpkAccessoryTypes } from '../BpkAccessory';
 
 import STYLES from './BpkCardListGrid.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const DEFAULT_ITEMS = 4;
-
 type BpkCardListGridProps = {
-  accessory?: BpkAccessoryTypes;
-  buttonText?: string;
+  accessory?: 'expand' | 'button';
   cardList: ReactElement[];
   expandText?: string;
-  initiallyShownCards?: number;
+  showContent: () => void;
+  hideContent: () => void;
+  collapsed: boolean;
+  setCollapsed: Dispatch<SetStateAction<boolean>>;
 };
 
 const BpkCardListGrid = ({
   accessory,
-  buttonText,
   cardList,
+  collapsed,
   expandText,
-  initiallyShownCards = DEFAULT_ITEMS,
+  hideContent,
+  setCollapsed,
+  showContent,
 }: BpkCardListGridProps) => {
-  const [showAll, setShowAll] = useState(false);
-
-  const showContent = () => {
-    setShowAll(true);
-  };
-
-  const hideContent = () => {
-    setShowAll(false);
-  };
-
   const cards = cardList.map((card: any, index: number) => (
     <div className={getClassName('bpk-card-list-grid--card')}>{card}</div>
   ));
 
   return (
     <>
-      <div
-        className={getClassName(
-          `bpk-card-list-grid`,
-          'flex-wrap'
-        )}
-      >
-        {!showAll ? cards.slice(0, initiallyShownCards) : cards}
+      <div className={getClassName(`bpk-card-list-grid`, 'flex-wrap')}>
+        {cards}
       </div>
 
-      {!buttonText &&
+      {!expandText &&
         (accessory === 'expand' ? (
-          <BpkExpand showContent={showContent} hideContent={hideContent} />
+          <BpkExpand
+            showContent={showContent}
+            hideContent={hideContent}
+            collapsed={collapsed}
+            setCollapsed={setCollapsed}
+          />
         ) : (
           <BpkButtonV2>Action</BpkButtonV2>
         ))}
