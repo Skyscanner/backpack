@@ -22,23 +22,18 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkAriaLive from '../../bpk-component-aria-live'
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import SwapVertical from '../../bpk-component-icon/sm/swap--vertical';
-import { BpkButtonV2 } from '../../bpk-component-button';
 
 import STYLES from './BpkSwapButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
+export type Props = {
   onClick: () => void,
   ariaLabel: string,
   ariaLiveTextProp: string,
-  className: string,
 }
 const BpkSwapButton = ( props: Props ) => {
-  const { ariaLabel, ariaLiveTextProp, className, onClick } = props;
-
-  const classNames = getClassName('bpk-swap-button', className);
-
+  const { ariaLabel, ariaLiveTextProp, onClick } = props;
 
   const [rotationDegree, setRotationDegree] = useState(0);
   const [ariaLiveText, setAriaLiveText] = useState('');
@@ -57,7 +52,7 @@ const BpkSwapButton = ( props: Props ) => {
   };
 
   return (
-    <div className={classNames}>
+    <div className={getClassName('bpk-swap-button')}>
       <button
         type="button"
         className={getClassName('bpk-swap-button__button')}

@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import { BpkSwapButton } from '../../packages/bpk-component-swap-button/src/BpkSwapButton';
+import BpkSwapButton from '../../packages/bpk-component-swap-button/src/BpkSwapButton';
 
-import { DefaultExample } from './examples'
+import DefaultExample from './examples'
 
 export default {
   title: 'bpk-component-swap-button',

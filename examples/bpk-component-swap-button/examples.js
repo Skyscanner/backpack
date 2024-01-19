@@ -18,9 +18,13 @@
 /* @flow strict */
 
 import BpkSwapButton from '../../packages/bpk-component-swap-button';
+import { action } from '../bpk-storybook-utils';
 
 const DefaultExample = () => (
-  <BpkSwapButton label="Backpack" />
+
+  <div style={{ position: 'absolute', top:'20%', left:'20%' }}>
+  <BpkSwapButton label="Backpack" ariaLabel='Swap Button' ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
+  </div>
 );
 
 export default DefaultExample ;
