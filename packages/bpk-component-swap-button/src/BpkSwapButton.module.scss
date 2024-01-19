@@ -26,10 +26,6 @@
 
     @include bpk-breakpoint-small-tablet {
       transform: rotate(0deg);
-
-      @include bpk-rtl {
-        right: auto;
-      }
     }
 
     :focus-visible {
