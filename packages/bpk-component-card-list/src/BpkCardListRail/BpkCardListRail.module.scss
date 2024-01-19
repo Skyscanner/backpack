@@ -1,7 +1,19 @@
 @import '../../../bpk-mixins/index.scss';
 
 .bpk-card-list--rail {
+  &_container {
+    display: flex;
+  }
+
   &_card {
-    padding: bpk-spacing-sm();
+    display: flex;
+    min-width: 100%;
+    padding: bpk-spacing-base();
+    justify-content: center;
+    align-items: center;
+
+    > * {
+      width: 100%;
+    }
   }
 }

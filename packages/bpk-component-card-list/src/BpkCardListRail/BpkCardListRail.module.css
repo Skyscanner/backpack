@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-card-list--rail_card{padding:0.25rem}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-card-list--rail_container{display:flex}.bpk-card-list--rail_card{display:flex;justify-content:center;align-items:center;min-width:100%;padding:1rem}.bpk-card-list--rail_card>*{width:100%}

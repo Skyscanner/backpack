@@ -37,7 +37,6 @@ let setVisibleIndexes: (array: number[]) => {};
 const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
   const numberOfCards = children.length;
   // TODO: need to update when width changes
-  const numberOfIndicators = Math.ceil(numberOfCards / numberOfCardsToShow);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -49,6 +48,12 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
 
   const calculateNumberOfDisplay = (): number =>
     Math.floor((containerWidth + 2) / cardWidth);
+
+  // TODO: how to incorporate the initiallyShownCards here?
+  let numberOfDisplay = calculateNumberOfDisplay();
+  const numberOfIndicators = Math.ceil(numberOfCards / numberOfDisplay);
+
+  const [indicators, setNumberOfIndicators] = useState(numberOfIndicators);
 
   const touchEnd = useCallback(
     (nextCardIndex: number): boolean =>
@@ -67,9 +72,6 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
       behavior: 'smooth',
     });
   };
-
-  // TODO: how to incorporate the initiallyShownCards here?
-  let numberOfDisplay = calculateNumberOfDisplay();
 
   const debouncedGetWidth = debounce(() => {
     if (!containerRef.current) {
@@ -97,8 +99,9 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
         setVisibleIndexes(
           Array.from(Array(numberOfDisplay), (_, i) => i + cardIndex),
         );
+      setNumberOfIndicators(Math.ceil(numberOfCards / numberOfDisplay));
     }
-  }, [cardIndex, numberOfDisplay]);
+  }, [cardIndex, numberOfDisplay, numberOfCards, indicators]);
 
   useEffect(() => {
     window.addEventListener('resize', debouncedGetWidth);
@@ -112,10 +115,10 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
       if (!containerWidth || !cardWidth) {
         return;
       }
+      setCurrentPageIndex(newIndex);
 
       if (direction === 'NEXT') {
         const nextCardIndex = cardIndex + numberOfDisplay;
-        setCurrentPageIndex(newIndex);
         if (touchEnd(nextCardIndex)) {
           setCardIndex(numberOfCards - numberOfDisplay);
         } else {
@@ -124,7 +127,6 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
       }
       if (direction === 'PREV') {
         const nextCardIndex = cardIndex - numberOfDisplay;
-        setCurrentPageIndex(newIndex);
         if (touchStart(nextCardIndex)) {
           setCardIndex(0);
         } else {

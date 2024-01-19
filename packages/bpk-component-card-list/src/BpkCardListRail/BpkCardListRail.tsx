@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -15,7 +16,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-ignore: TODO - fix
 import BpkMobileScrollContainer from '../../../bpk-component-mobile-scroll-container';
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -23,11 +23,18 @@ import STYLES from './BpkCardListRail.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCardListRail = ({ children }: any) => (
+const BpkCardListRail = ({ children }: { children: JSX.Element[] }) => (
   <BpkMobileScrollContainer>
-    {children.map((card: any) => (
-      <div className={getClassName('bpk-card-list--rail_card')}> {card}</div>
-    ))}
+    <div className={getClassName('bpk-card-list--rail_container')}>
+      {children.map((item: JSX.Element) => (
+        <div
+          key={item.key}
+          className={getClassName('bpk-card-list--rail_card')}
+        >
+          {item}
+        </div>
+      ))}
+    </div>
   </BpkMobileScrollContainer>
 );
 

@@ -26,21 +26,34 @@ import BpkImage from '../../packages/bpk-component-image';
 
 // const getClassName = cssModules(STYLES);
 
+const DealsCard = (index) => (
+  <BpkCard href="#">
+    <BpkImage
+      aspectRatio={3000 / 1600}
+      src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg"
+    />
+    {`Deals Card ${index}`}
+  </BpkCard>
+);
+
 const RowToRailExample = () => (
   <BpkCardList
-    cardList={[...Array(15).keys()].map((i) => (
-      <BpkCard href="#">
-        <BpkImage
-          aspectRatio={3000 / 2318}
-          src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg"
-        />
-        TEST {i}
-      </BpkCard>
-    ))}
+    cardList={[...Array(14).keys()].map((i) => DealsCard(i))}
     accessory="pagination"
     layoutDesktop="row"
     layoutMobile="rail"
     title="Card List Component"
+  />
+);
+
+const RowToRailWithHeaderButtonExample = () => (
+  <BpkCardList
+    cardList={[...Array(14).keys()].map((i) => DealsCard(i))}
+    accessory="pagination"
+    layoutDesktop="row"
+    layoutMobile="rail"
+    title="Card List Component"
+    buttonText="Header Button"
   />
 );
 
@@ -90,6 +103,7 @@ const GridToStackExample = () => (
 
 export {
   RowToRailExample,
+  RowToRailWithHeaderButtonExample,
   GridToRailExample,
   RowToStackExample,
   GridToStackExample,

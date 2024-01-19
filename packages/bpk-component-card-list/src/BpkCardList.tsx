@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactElement} from 'react';
+import type { ReactElement } from 'react';
 import { useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -103,7 +103,7 @@ const BpkCardList = ({
           {(isActive) => {
             if (isActive) {
               return layoutMobile === 'rail' ? (
-                <BpkCardListRail>{cards}</BpkCardListRail>
+                <BpkCardListRail>{allCards}</BpkCardListRail>
               ) : (
                 <BpkCardListStack
                   accessory={accessory}
