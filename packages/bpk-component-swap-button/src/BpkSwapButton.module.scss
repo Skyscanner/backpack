@@ -25,16 +25,10 @@
     transform: translateY(-50%) rotate(90deg);
 
     @include bpk-breakpoint-small-tablet {
-      top: 0;
-      right: bpk-spacing-lg();
       transform: rotate(0deg);
-      writing-mode: vertical-rl;
 
       @include bpk-rtl {
         right: auto;
-        left: bpk-spacing-lg();
-        margin-inline-end: -1 *
-          ((bpk-spacing-xxl() / 2) + (bpk-spacing-sm() / 2));
       }
     }
 
