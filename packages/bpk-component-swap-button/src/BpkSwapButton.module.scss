@@ -20,15 +20,9 @@
 
 @layer bpk-component {
   .bpk-swap-button {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
     width: bpk-spacing-xxl();
     height: bpk-spacing-xxl();
     transform: translateY(-50%) rotate(90deg);
-
-    // half the buttons width plus half the gap between origin and destination buttons
-    margin-inline-start: -1 * ((bpk-spacing-xxl() / 2) + (bpk-spacing-sm() / 2));
 
     @include bpk-breakpoint-small-tablet {
       top: 0;
