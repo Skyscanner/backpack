@@ -1,17 +1,14 @@
 @import '../../../bpk-mixins/index.scss';
 
 .bpk-card-list-grid {
-  display: flex;
-  min-width: $bpk-one-pixel-rem * 281;
-  padding: $bpk-one-pixel-rem * 5; // TODO: remove
-  flex-direction: row;
-  flex-wrap: wrap;
-  overflow-y: hidden;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax($bpk-one-pixel-rem * 281, 1fr)
+  );
   gap: bpk-spacing-lg();
 
   &--card {
     min-width: $bpk-one-pixel-rem * 281;
-    flex-grow: 1;
-    flex-shrink: 0;
   }
 }

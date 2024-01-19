@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type { ReactElement} from 'react';
 import { useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -28,7 +29,7 @@ import type { BpkAccessoryTypes } from './BpkAccessory';
 import BpkCardListGrid from './BpkCardListGrid/BpkCardListGrid';
 import BpkCardListRail from './BpkCardListRail/BpkCardListRail';
 import BpkCardListRow from './BpkCardListRow/BpkCardListRow';
-import BpkCardListStack from './BpkCardListStack';
+import BpkCardListStack from './BpkCardListStack/BpkCardListStack';
 
 const getClassName = cssModules(STYLES);
 
@@ -46,7 +47,7 @@ export type BpkCardListProps = {
   buttonText?: string;
   onButtonClick?: () => void;
   chipGroup?: BpkChipGroup;
-  cardList: JSX.Element[];
+  cardList: ReactElement[];
   initiallyShownCards?: number;
   layoutDesktop: 'row' | 'grid';
   layoutMobile: 'rail' | 'stack';
@@ -72,7 +73,7 @@ const BpkCardList = ({
     cardList.slice(0, initiallyShownCards),
   );
 
-  const cards = visibleCards.map((card) => (
+  const cards = visibleCards.map((card: ReactElement) => (
     <div className={getClassName('bpk-card-list--card-list--card')}>{card}</div>
   ));
 
