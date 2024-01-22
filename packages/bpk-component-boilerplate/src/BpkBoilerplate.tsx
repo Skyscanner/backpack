@@ -23,17 +23,17 @@ import STYLES from './BpkBoilerplate.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  className?: string | null;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
-const BpkBoilerplate = ({ className = null, ...rest }: Props) => {
-  const classNames = getClassName('bpk-boilerplate', className);
+const BpkBoilerplate = ({ ...rest }: Props) => {
+
+  // eslint-disable-next-line no-param-reassign
+  delete rest.className;
 
   return (
-    <div className={classNames} {...rest}>
+    <div className={getClassName('bpk-boilerplate')} {...rest}>
       I am an example component.
     </div>
-  );
-};
+  )};
 
 export default BpkBoilerplate;
