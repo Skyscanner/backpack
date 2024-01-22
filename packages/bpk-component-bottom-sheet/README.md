@@ -57,3 +57,4 @@ class App extends Component {
 }
 ```
 
+Ensure your body/children is accessible via Voice Over. You may need to specify the tabIndex of the elements.
