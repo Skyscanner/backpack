@@ -16,8 +16,6 @@
 * limitations under the License.
 */
 
-@use '../../packages/unstable_bpk-mixins' as *;
-
 .bpk-datepicker {
   &__container {
     display: flex;

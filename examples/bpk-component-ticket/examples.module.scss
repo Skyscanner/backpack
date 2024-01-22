@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable_bpk-mixins/typography';
 
 .bpk-stories-flight {
   margin-bottom: 2rem;
@@ -30,10 +31,10 @@
   }
 
   &__small {
-    color: $bpk-text-secondary-day;
+    color: bonds.$bpk-text-secondary-day;
 
-    @include bpk-text;
-    @include bpk-caption;
+    @include typography.bpk-text;
+    @include typography.bpk-caption;
   }
 
   &__logo {
@@ -42,8 +43,8 @@
   }
 
   &__price {
-    @include bpk-text;
-    @include bpk-heading-3;
+    @include typography.bpk-text;
+    @include typography.bpk-heading-3;
   }
 
   &__flight-overview {
@@ -60,20 +61,20 @@
   }
 
   &__from {
-    padding: 0 bpk-spacing-lg();
+    padding: 0 bonds.bpk-spacing-lg();
     text-align: right;
   }
 
   &__to {
-    padding: 0 bpk-spacing-lg();
+    padding: 0 bonds.bpk-spacing-lg();
   }
 
   &__duration {
-    padding: 0 bpk-spacing-base();
+    padding: 0 bonds.bpk-spacing-base();
   }
 
   &__time {
-    @include bpk-text;
-    @include bpk-subheading;
+    @include typography.bpk-text;
+    @include typography.bpk-subheading;
   }
 }

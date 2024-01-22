@@ -16,21 +16,22 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable_bpk-mixins/utils';
 
 .bpk-breakpoints-demo {
-  border-radius: $bpk-border-radius-xs;
+  border-radius: bonds.$bpk-border-radius-xs;
   overflow: hidden;
 
   &--active {
-    padding: bpk-spacing-lg();
-    color: $bpk-text-primary-inverse-day;
+    padding: bonds.bpk-spacing-lg();
+    color: bonds.$bpk-text-primary-inverse-day;
 
-    @include bpk-apply-primary-color-to(background-color);
+    @include utils.bpk-apply-primary-color-to(background-color);
   }
 
   &--inactive {
-    padding: bpk-spacing-lg();
-    background-color: $bpk-surface-highlight-day;
+    padding: bonds.bpk-spacing-lg();
+    background-color: bonds.$bpk-surface-highlight-day;
   }
 }

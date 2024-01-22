@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
 
 .bpk-loading-button-example-wrapper {
-  padding: bpk-spacing-sm() 0;
+  padding: bonds.bpk-spacing-sm() 0;
 }

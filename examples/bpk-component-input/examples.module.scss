@@ -16,22 +16,23 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable_bpk-mixins/breakpoints';
 
 .bpk-forms {
   &__viewport-alert {
     display: none;
 
-    @include bpk-breakpoint-tablet {
+    @include breakpoints.bpk-breakpoint-tablet {
       display: block;
     }
   }
 
   &__form {
-    margin-bottom: bpk-spacing-md();
+    margin-bottom: bonds.bpk-spacing-md();
 
     &--desktop-only {
-      @include bpk-breakpoint-tablet {
+      @include breakpoints.bpk-breakpoint-tablet {
         display: none;
       }
     }

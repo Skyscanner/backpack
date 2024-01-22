@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable_bpk-mixins/utils';
 
 .bpk-fieldsets {
   &__container {
@@ -24,12 +25,12 @@
   }
 
   &__fieldset {
-    margin-right: bpk-spacing-sm();
+    margin-right: bonds.bpk-spacing-sm();
     flex: 1;
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       margin-right: 0;
-      margin-left: bpk-spacing-sm();
+      margin-left: bonds.bpk-spacing-sm();
     }
   }
 
@@ -37,7 +38,7 @@
     margin-top: 1rem;
     text-align: right;
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       text-align: left;
     }
   }

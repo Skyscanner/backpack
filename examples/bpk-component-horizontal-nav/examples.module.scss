@@ -16,19 +16,20 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable_bpk-mixins/scroll-indicators';
 
-$custom-color: $bpk-status-success-fill-day;
+$custom-color: bonds.$bpk-status-success-fill-day;
 
 .bpk-horizontal-nav-custom-scrollers {
   background: $custom-color;
 
   &--leading {
-    @include bpk-scroll-indicator-left($custom-color);
+    @include scroll-indicators.bpk-scroll-indicator-left($custom-color);
   }
 
   &--trailing {
-    @include bpk-scroll-indicator-right($custom-color);
+    @include scroll-indicators.bpk-scroll-indicator-right($custom-color);
   }
 }
 

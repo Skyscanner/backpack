@@ -16,17 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../../packages/unstable_bpk-mixins' as *;
+@use '../../../packages/unstable_bpk-mixins/bonds';
+@use '../../../packages/unstable_bpk-mixins/radii';
+@use '../../../packages/unstable_bpk-mixins/utils';
 
 .bpk-dark-example-wrapper {
-  @include bpk-border-radius-sm;
-  @include bpk-themeable-property(
+  @include radii.bpk-border-radius-sm;
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-docs-sidebar-background,
-    $bpk-core-primary-day
+    bonds.$bpk-core-primary-day
   );
 
   &--padded {
-    padding: bpk-spacing-base();
+    padding: bonds.bpk-spacing-base();
   }
 }

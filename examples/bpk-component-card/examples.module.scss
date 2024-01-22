@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
 
 .bpk-card-examples {
   &__header {
     display: flex;
-    height: bpk-spacing-xxl();
-    padding: bpk-spacing-md();
+    height: bonds.bpk-spacing-xxl();
+    padding: bonds.bpk-spacing-md();
     justify-content: space-between;
     align-items: center;
-    color: $bpk-text-on-dark-day;
+    color: bonds.$bpk-text-on-dark-day;
   }
 
   &__wrapper {
-    width: bpk-spacing-md() * 41;
+    width: bonds.bpk-spacing-md() * 41;
   }
 }

@@ -18,7 +18,7 @@
 
 @use '../../unstable_bpk-mixins/bonds';
 @use '../../unstable_bpk-mixins/radii';
-@use 'variables' as *;
+@use 'variables';
 
 .bpk-calendar {
   display: flex;
@@ -28,7 +28,7 @@
   @include radii.bpk-border-radius-sm;
 
   &--fixed {
-    width: $calendar-width;
+    width: variables.$calendar-width;
   }
 
   &__header {

@@ -17,7 +17,7 @@
  */
 
 @use '../../unstable_bpk-mixins/bonds';
-@use 'variables' as *;
+@use 'variables';
 
 .bpk-calendar-grid-transition {
   position: relative;
@@ -25,14 +25,14 @@
 
   &__dummy {
     display: inline-block;
-    width: $calendar-width;
+    width: variables.$calendar-width;
   }
 
   &__strip {
     left: 0;
     display: block;
     z-index: 0;
-    width: 3 * $calendar-width;
+    width: 3 * variables.$calendar-width;
 
     &--transitioning {
       z-index: 1;
@@ -42,6 +42,6 @@
 
   &__grid {
     display: inline-table;
-    width: $calendar-width;
+    width: variables.$calendar-width;
   }
 }

@@ -16,13 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
 
 .bpk-navigation-bar-story {
-  padding: $bpk-one-pixel-rem $bpk-one-pixel-rem bpk-spacing-xxl() * 2;
-  background-color: $bpk-canvas-contrast-day;
+  padding: bonds.$bpk-one-pixel-rem bonds.$bpk-one-pixel-rem
+    bonds.bpk-spacing-xxl() * 2;
+  background-color: bonds.$bpk-canvas-contrast-day;
 
   > * {
-    margin-bottom: bpk-spacing-base();
+    margin-bottom: bonds.bpk-spacing-base();
   }
 }

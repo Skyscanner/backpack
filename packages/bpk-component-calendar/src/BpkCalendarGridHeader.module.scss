@@ -18,7 +18,7 @@
 
 @use '../../unstable_bpk-mixins/bonds';
 @use '../../unstable_bpk-mixins/typography';
-@use 'variables' as *;
+@use 'variables';
 
 .bpk-calendar-header {
   display: table;
@@ -42,7 +42,7 @@
     display: table-cell;
     height: bonds.$bpk-calendar-day-size;
     padding: 0 bonds.$bpk-calendar-day-spacing;
-    box-shadow: $shadow-bottom;
+    box-shadow: variables.$shadow-bottom;
     vertical-align: middle;
     box-sizing: content-box;
 

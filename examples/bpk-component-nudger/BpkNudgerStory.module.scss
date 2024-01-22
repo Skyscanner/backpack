@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
 
 .bpk-nudger-secondary-on-dark {
-  color: $bpk-text-on-dark-day;
+  color: bonds.$bpk-text-on-dark-day;
 }
 
 .bpk-nudger-configurable {

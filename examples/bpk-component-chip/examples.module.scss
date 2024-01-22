@@ -16,36 +16,36 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
 
 .bpk-chip-examples {
   &__container {
-    padding-top: bpk-spacing-lg();
+    padding-top: bonds.bpk-spacing-lg();
 
     &:last-child {
-      padding-bottom: bpk-spacing-xl();
+      padding-bottom: bonds.bpk-spacing-xl();
     }
   }
 
   &__chip {
-    margin-right: bpk-spacing-md();
+    margin-right: bonds.bpk-spacing-md();
   }
 
   &__on-dark {
-    margin-top: bpk-spacing-lg();
-    padding: bpk-spacing-base();
-    background-color: $bpk-core-primary-day;
+    margin-top: bonds.bpk-spacing-lg();
+    padding: bonds.bpk-spacing-base();
+    background-color: bonds.$bpk-core-primary-day;
   }
 
   &__default {
-    margin-top: bpk-spacing-lg();
-    padding: bpk-spacing-base();
-    background-color: $bpk-surface-default-day;
+    margin-top: bonds.bpk-spacing-lg();
+    padding: bonds.bpk-spacing-base();
+    background-color: bonds.$bpk-surface-default-day;
   }
 
   &__on-image {
-    margin-top: bpk-spacing-lg();
-    padding: bpk-spacing-base();
+    margin-top: bonds.bpk-spacing-lg();
+    padding: bonds.bpk-spacing-base();
     background-color: $bpk-surface-highlight-day;
   }
 }

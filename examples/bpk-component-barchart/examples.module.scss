@@ -16,22 +16,23 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins' as *;
+@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable_bpk-mixins/scroll-indicators';
 
 .bpk-heading {
-  margin-bottom: bpk-spacing-base();
+  margin-bottom: bonds.bpk-spacing-base();
 }
 
-$custom-color: $bpk-canvas-contrast-day;
+$custom-color: bonds.$bpk-canvas-contrast-day;
 
 .bpk-barchart-custom-scrollers {
   background: $custom-color;
 
   &--leading {
-    @include bpk-scroll-indicator-left($custom-color);
+    @include scroll-indicators.bpk-scroll-indicator-left($custom-color);
   }
 
   &--trailing {
-    @include bpk-scroll-indicator-right($custom-color);
+    @include scroll-indicators.bpk-scroll-indicator-right($custom-color);
   }
 }
