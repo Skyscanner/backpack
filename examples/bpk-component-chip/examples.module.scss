@@ -46,6 +46,6 @@
   &__on-image {
     margin-top: bonds.bpk-spacing-lg();
     padding: bonds.bpk-spacing-base();
-    background-color: $bpk-surface-highlight-day;
+    background-color: bonds.$bpk-surface-highlight-day;
   }
 }
