@@ -34,6 +34,7 @@ type Props = {
   actionText?: string;
   children: ReactNode;
   closeLabel?: string;
+  dialogRef: (ref: HTMLElement | null | undefined) => void;
   id: string;
   onAction?: () => void;
   onClose: () => void;
@@ -46,6 +47,7 @@ const BpkBottomSheetInner = ({
   actionText = '',
   children,
   closeLabel = '',
+  dialogRef,
   exiting,
   id,
   onAction = () => null,
@@ -77,6 +79,7 @@ const BpkBottomSheetInner = ({
     role="dialog"
     aria-labelledby={headingId}
     className={classNames}
+    ref={dialogRef}
   >
     <header className={getClassName('bpk-bottom-sheet--header')}>
       <BpkNavigationBar
