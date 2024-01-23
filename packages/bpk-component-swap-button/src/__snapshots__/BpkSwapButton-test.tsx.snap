@@ -23,10 +23,6 @@ exports[`BpkSwapButton should render correctly 1`] = `
         />
       </svg>
     </button>
-    <div
-      aria-live="polite"
-      class="bpk-aria-live bpk-aria-live--invisible"
-    />
   </div>
 </DocumentFragment>
 `;
