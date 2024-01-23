@@ -42,6 +42,7 @@ export type Props = {
 }
 const BpkSwapButton = ( props: Props ) => {
   const { ariaLabel, ariaLiveTextProp, onClick, swapButtonStyle = SWAPBUTTON_STYLES.surfaceContrast } = props;
+}
 
   const [rotationDegree, setRotationDegree] = useState(0);
   const [ariaLiveText, setAriaLiveText] = useState('');
@@ -78,4 +79,3 @@ const BpkSwapButton = ( props: Props ) => {
   );
 };
 export default BpkSwapButton;
-
