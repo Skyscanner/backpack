@@ -14,7 +14,6 @@ import BpkSwapButton from '@skyscanner/backpack-web/bpk-swap-button';
 export default () =>
   <BpkSwapButton
     ariaLabel="Swap Button"
-    ariaLiveTextProps="Swapped"
     onClick={() => {console.log('swap');
     }}
   />;
