@@ -18,7 +18,7 @@
 
 import BpkSwapButton from '../../packages/bpk-component-swap-button/src/BpkSwapButton';
 
-import DefaultExample from './examples'
+import { DefaultExample, CanvasDefaultExample, CanvasContrastExample } from './examples'
 
 export default {
   title: 'bpk-component-swap-button',
@@ -26,5 +26,9 @@ export default {
 };
 
 export const Default = DefaultExample;
+
+export const CanvasDefault = CanvasDefaultExample;
+
+export const CanvasContrast = CanvasContrastExample;
 
 export const VisualTest = DefaultExample;
