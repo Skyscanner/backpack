@@ -24,7 +24,6 @@ import BpkSwapButton from './BpkSwapButton';
 const props = {
   onClick: jest.fn(),
   ariaLabel: 'Swap Button',
-  ariaLiveTextProp: 'Swapped'
 };
 
 describe('BpkSwapButton', () => {

@@ -30,13 +30,11 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   onClick: () => void,
   ariaLabel: string,
-  ariaLiveTextProp: string,
 }
 const BpkSwapButton = ( props: Props ) => {
-  const { ariaLabel, ariaLiveTextProp, onClick } = props;
+  const { ariaLabel, onClick } = props;
 
   const [rotationDegree, setRotationDegree] = useState(0);
-  const [ariaLiveText, setAriaLiveText] = useState('');
 
   const handleRotation = () => {
     if (rotationDegree === 0) {
@@ -44,11 +42,6 @@ const BpkSwapButton = ( props: Props ) => {
     } else {
       setRotationDegree(0);
     }
-    setAriaLiveText(ariaLiveTextProp);
-    // without set timeout, the aria-live text would not change and screenreader would read out 'swapped' for the first time only.
-    setTimeout(() => {
-      setAriaLiveText('');
-    }, 250);
   };
 
   return (
@@ -65,7 +58,6 @@ const BpkSwapButton = ( props: Props ) => {
       >
         <SwapVertical className={getClassName('bpk-swap-button__icon')} />
       </button>
-      <BpkAriaLive>{ariaLiveText}</BpkAriaLive>
     </div>
   );
 };
