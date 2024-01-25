@@ -19,7 +19,6 @@
 import { useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkAriaLive from '../../bpk-component-aria-live'
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import SwapVertical from '../../bpk-component-icon/sm/swap--vertical';
 
@@ -27,12 +26,20 @@ import STYLES from './BpkSwapButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const SWAPBUTTON_STYLES = {
+  surfaceContrast: 'surface-contrast',
+  canvasDefault: 'canvas-default',
+  canvasContrast: 'canvas-contrast',
+};
+export type SwapButtonStyle = (typeof SWAPBUTTON_STYLES)[keyof typeof SWAPBUTTON_STYLES]
+
 export type Props = {
   onClick: () => void,
   ariaLabel: string,
+  swapButtonStyle?: SwapButtonStyle,
 }
 const BpkSwapButton = ( props: Props ) => {
-  const { ariaLabel, onClick } = props;
+  const { ariaLabel, onClick, swapButtonStyle = SWAPBUTTON_STYLES.surfaceContrast } = props;
 
   const [rotationDegree, setRotationDegree] = useState(0);
 
@@ -48,7 +55,7 @@ const BpkSwapButton = ( props: Props ) => {
     <div className={getClassName('bpk-swap-button')}>
       <button
         type="button"
-        className={getClassName('bpk-swap-button__button')}
+        className={getClassName('bpk-swap-button__button',`bpk-swap-button__button--${swapButtonStyle}`)}
         style={{ transform: `rotate(${rotationDegree}deg)` }}
         aria-label={ariaLabel}
         onClick={() => {

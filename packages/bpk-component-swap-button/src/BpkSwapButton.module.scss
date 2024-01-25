@@ -52,6 +52,15 @@
       @include bpk-hover {
         background-color: $bpk-surface-highlight-day;
       }
+
+      &--canvas-default {
+        border: $bpk-border-size-xl solid $bpk-canvas-day;
+        background-color: $bpk-canvas-contrast-day;
+      }
+
+      &--canvas-contrast {
+        border: $bpk-border-size-xl solid $bpk-canvas-contrast-day;
+      }
     }
 
     &__icon {

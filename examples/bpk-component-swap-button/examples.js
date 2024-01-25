@@ -17,8 +17,8 @@
  */
 /* @flow strict */
 
-import BpkSwapButton from '../../packages/bpk-component-swap-button';
-import { action } from '../bpk-storybook-utils';
+import BpkSwapButton, { SWAPBUTTON_STYLES } from '../../packages/bpk-component-swap-button';
+import { action, BpkDarkExampleWrapper} from '../bpk-storybook-utils';
 
 const DefaultExample = () => (
 
@@ -27,4 +27,19 @@ const DefaultExample = () => (
   </div>
 );
 
-export default DefaultExample ;
+const CanvasDefaultExample = () => (
+
+  <BpkDarkExampleWrapper padded style={{padding:'2rem'}} >
+  <BpkSwapButton swapButtonStyle={SWAPBUTTON_STYLES.canvasDefault} ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
+  </BpkDarkExampleWrapper>
+);
+const CanvasContrastExample = () => (
+  <div>
+  <BpkDarkExampleWrapper padded style={{padding:'2rem'}}>
+    <BpkSwapButton swapButtonStyle={SWAPBUTTON_STYLES.canvasContrast} ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
+  </BpkDarkExampleWrapper>
+  </div>
+
+);
+
+export {DefaultExample, CanvasDefaultExample, CanvasContrastExample} ;
