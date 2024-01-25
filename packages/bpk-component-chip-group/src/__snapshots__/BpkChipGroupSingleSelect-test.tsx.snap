@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkChipGroupSingleSelect should render correctly with type = rail 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-chip-group-container"
+  >
+    <div
+      class="bpk-mobile-scroll-container"
+      style="height: auto;"
+    >
+      <div
+        class="bpk-mobile-scroll-container__scroller"
+      >
+        <div
+          class="bpk-mobile-scroll-container__inner"
+        >
+          <div
+            aria-multiselectable="false"
+            aria-orientation="horizontal"
+            class="bpk-chip-group bpk-chip-group--rail"
+            role="listbox"
+          >
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="London"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                London
+              </span>
+            </button>
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="Berlin"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                Berlin
+              </span>
+            </button>
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="Florence"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                Florence
+              </span>
+            </button>
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="Stockholm"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                Stockholm
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkChipGroupSingleSelect should render correctly with type = wrap 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-chip-group-container"
+  >
+    <div
+      aria-multiselectable="false"
+      aria-orientation="horizontal"
+      class="bpk-chip-group bpk-chip-group--wrap"
+      role="listbox"
+    >
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="London"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          London
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Berlin"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Berlin
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Florence"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Florence
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Stockholm"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Stockholm
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkChipGroupSingleSelect should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="custom-classname bpk-chip-group-container"
+  >
+    <div
+      aria-multiselectable="false"
+      aria-orientation="horizontal"
+      class="bpk-chip-group bpk-chip-group--wrap"
+      role="listbox"
+    >
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="London"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          London
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Berlin"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Berlin
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Florence"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Florence
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Stockholm"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Stockholm
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

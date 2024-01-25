@@ -17,7 +17,8 @@
  */
 
 import { useState } from 'react';
-import BpkChipGroup, { ChipItem, SingleSelectChipItem, CommonProps } from './BpkChipGroup';
+
+import BpkChipGroup, { type ChipItem, type SingleSelectChipItem, type CommonProps } from './BpkChipGroup';
 
 export type SingleSelectProps = {
   chips: SingleSelectChipItem[];
@@ -38,11 +39,11 @@ const BpkChipGroupSingleSelect = ({ chips, onItemClick, selectedIndex, ...rest }
   }));
 
   return (
-    <BpkChipGroup chips={chipsWithSelection} {...rest} />
+    <BpkChipGroup chips={chipsWithSelection} _isSingleSelect {...rest} />
   );
 };
 
-export const BpkChipGroupSingleSelectState = ({ selectedIndex: defaultSelectedIndex = -1, onItemClick, ...rest }: SingleSelectProps) => {
+export const BpkChipGroupSingleSelectState = ({ onItemClick, selectedIndex: defaultSelectedIndex = -1, ...rest }: SingleSelectProps) => {
   const [selectedIndex, setSelectedIndex] = useState(defaultSelectedIndex);
 
   const onItemClickWithState = (item: ChipItem, selected: boolean, index: number) => {

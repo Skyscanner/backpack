@@ -20,6 +20,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkChipGroup, { CHIP_GROUP_TYPES } from './BpkChipGroup';
+import BpkChipGroupSingleSelect from './BpkChipGroupSingleSelect';
 
 const chips = [
   {
@@ -44,6 +45,7 @@ describe('BpkChipGroup accessibility tests', () => {
       <BpkChipGroup
         chips={chips}
         type={CHIP_GROUP_TYPES.rail}
+        ariaLabel="Select cities"
       />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -54,6 +56,33 @@ describe('BpkChipGroup accessibility tests', () => {
       <BpkChipGroup
         chips={chips}
         type={CHIP_GROUP_TYPES.wrap}
+        ariaLabel="Select cities"
+      />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('BpkChipGroupSingleSelect accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues when type = rail', async () => {
+    const { container } = render(
+      <BpkChipGroupSingleSelect
+        chips={chips}
+        type={CHIP_GROUP_TYPES.rail}
+        selectedIndex={1}
+        ariaLabel="Select a city"
+      />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues when type = wrap', async () => {
+    const { container } = render(
+      <BpkChipGroupSingleSelect
+        chips={chips}
+        type={CHIP_GROUP_TYPES.wrap}
+        selectedIndex={1}
+        ariaLabel="Select a city"
       />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();

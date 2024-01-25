@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import BpkChipGroup, { BpkChipGroupSingleSelect, BpkChipGroupState, BpkChipGroupSingleSelectState } from '../../packages/bpk-component-chip-group';
+
 import {
   BpkChipGroupRail,
   BpkChipGroupWrapping,
@@ -30,6 +32,13 @@ import {
 
 export default {
   title: 'bpk-component-chip-group',
+  component: BpkChipGroup,
+  subcomponents: {
+    'BpkChipGroupSingleSelect': BpkChipGroupSingleSelect,
+    'BpkChipGroupState': BpkChipGroupState,
+    'BpkChipGroupSingleSelectState': BpkChipGroupSingleSelectState,
+    // TODO: can we show the shape of ChipItem here?
+  },
 };
 
 export const WrappedChipGroup = BpkChipGroupWrapping;

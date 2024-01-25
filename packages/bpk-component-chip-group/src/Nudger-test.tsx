@@ -16,18 +16,11 @@
  * limitations under the License.
  */
 
-import BpkChipGroup, {
-  type ChipGroupProps,
-  BpkChipGroupState,
-  CHIP_GROUP_TYPES,
-  type ChipItem,
-  type SingleSelectChipItem,
-} from './src/BpkChipGroup';
-import BpkChipGroupSingleSelect, {
-  type SingleSelectProps,
-  BpkChipGroupSingleSelectState,
-} from './src/BpkChipGroupSingleSelect';
+describe('Nudger', () => {
 
-export type { ChipGroupProps, SingleSelectProps, ChipItem, SingleSelectChipItem };
-export { BpkChipGroupState, CHIP_GROUP_TYPES, BpkChipGroupSingleSelect , BpkChipGroupSingleSelectState};
-export default BpkChipGroup;
+  it('should render correctly', () => {
+    // TODO
+  });
+
+  // TODO
+});

@@ -1,0 +1,414 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkChipGroup should render correctly with all chip component types 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-chip-group-container"
+  >
+    <div
+      aria-multiselectable="true"
+      aria-orientation="horizontal"
+      class="bpk-chip-group bpk-chip-group--wrap"
+      role="listbox"
+    >
+      <button
+        class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+        role="button"
+        title="London"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          London
+        </span>
+        <span
+          class="bpk-chip__trailing-accessory-view"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-chip--default-dismissible__trailing-accessory-view"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+            />
+          </svg>
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Berlin"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Berlin
+        </span>
+        <span
+          class="bpk-chip__trailing-accessory-view"
+        >
+          <svg
+            aria-hidden="true"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+            />
+          </svg>
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Florence"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Florence
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkChipGroup should render correctly with sticky chip 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-chip-group-container"
+  >
+    <div
+      class="bpk-sticky-chip-container bpk-sticky-chip-container--default"
+    >
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default bpk-sticky-chip"
+        role="option"
+        title="Sort & Filter"
+        type="button"
+      >
+        <span
+          class="bpk-chip__leading-accessory-view"
+        >
+          <svg
+            aria-hidden="true"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M7.94 1.94A1.5 1.5 0 007.5 3v.75a.75.75 0 01-.75.75H3a1.5 1.5 0 000 3h3.75a.75.75 0 01.75.75V9a1.5 1.5 0 003 0V3a1.5 1.5 0 00-2.56-1.06zm.282 17.56H9a1.5 1.5 0 100-3H3a1.5 1.5 0 100 3h5.222zm6.998.22a.75.75 0 01.53-.22H21a1.5 1.5 0 100-3h-5.25a.75.75 0 01-.75-.75V15a1.5 1.5 0 10-3 0v6a1.5 1.5 0 103 0v-.75a.75.75 0 01.22-.53zM13.94 4.94A1.5 1.5 0 0015 7.5h6a1.5 1.5 0 000-3h-6a1.5 1.5 0 00-1.06.44z"
+            />
+          </svg>
+        </span>
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Sort & Filter
+        </span>
+      </button>
+    </div>
+    <div
+      class="bpk-mobile-scroll-container"
+      style="height: auto;"
+    >
+      <div
+        class="bpk-mobile-scroll-container__scroller"
+      >
+        <div
+          class="bpk-mobile-scroll-container__inner"
+        >
+          <div
+            aria-multiselectable="true"
+            aria-orientation="horizontal"
+            class="bpk-chip-group bpk-chip-group--rail"
+            role="listbox"
+          >
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="London"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                London
+              </span>
+            </button>
+            <button
+              aria-checked="true"
+              class="bpk-chip bpk-chip--default bpk-chip--default-selected"
+              role="option"
+              title="Berlin"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                Berlin
+              </span>
+            </button>
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="Florence"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                Florence
+              </span>
+            </button>
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="Stockholm"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                Stockholm
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkChipGroup should render correctly with type = rail 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-chip-group-container"
+  >
+    <div
+      class="bpk-mobile-scroll-container"
+      style="height: auto;"
+    >
+      <div
+        class="bpk-mobile-scroll-container__scroller"
+      >
+        <div
+          class="bpk-mobile-scroll-container__inner"
+        >
+          <div
+            aria-multiselectable="true"
+            aria-orientation="horizontal"
+            class="bpk-chip-group bpk-chip-group--rail"
+            role="listbox"
+          >
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="London"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                London
+              </span>
+            </button>
+            <button
+              aria-checked="true"
+              class="bpk-chip bpk-chip--default bpk-chip--default-selected"
+              role="option"
+              title="Berlin"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                Berlin
+              </span>
+            </button>
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="Florence"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                Florence
+              </span>
+            </button>
+            <button
+              aria-checked="false"
+              class="bpk-chip bpk-chip--default"
+              role="option"
+              title="Stockholm"
+              type="button"
+            >
+              <span
+                class="bpk-text bpk-text--footnote"
+              >
+                Stockholm
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkChipGroup should render correctly with type = wrap 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-chip-group-container"
+  >
+    <div
+      aria-multiselectable="true"
+      aria-orientation="horizontal"
+      class="bpk-chip-group bpk-chip-group--wrap"
+      role="listbox"
+    >
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="London"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          London
+        </span>
+      </button>
+      <button
+        aria-checked="true"
+        class="bpk-chip bpk-chip--default bpk-chip--default-selected"
+        role="option"
+        title="Berlin"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Berlin
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Florence"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Florence
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Stockholm"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Stockholm
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkChipGroup should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="custom-classname bpk-chip-group-container"
+  >
+    <div
+      aria-multiselectable="true"
+      aria-orientation="horizontal"
+      class="bpk-chip-group bpk-chip-group--wrap"
+      role="listbox"
+    >
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="London"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          London
+        </span>
+      </button>
+      <button
+        aria-checked="true"
+        class="bpk-chip bpk-chip--default bpk-chip--default-selected"
+        role="option"
+        title="Berlin"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Berlin
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Florence"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Florence
+        </span>
+      </button>
+      <button
+        aria-checked="false"
+        class="bpk-chip bpk-chip--default"
+        role="option"
+        title="Stockholm"
+        type="button"
+      >
+        <span
+          class="bpk-text bpk-text--footnote"
+        >
+          Stockholm
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

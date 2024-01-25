@@ -16,18 +16,19 @@
  * limitations under the License.
  */
 
+import { type MutableRefObject, useEffect, useState } from 'react';
+
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
-import type { ChipStyleType } from './BpkChipGroup';
 import { CHIP_TYPES } from '../../bpk-component-chip';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowLeft from '../../bpk-component-icon/sm/long-arrow-left';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowRight from '../../bpk-component-icon/sm/long-arrow-right';
+import { cssModules, isRTL } from '../../bpk-react-utils/index';
 import { withButtonAlignment } from '../../bpk-component-icon/index';
 
+import type { ChipStyleType } from './BpkChipGroup';
 import STYLES from './Nudger.module.scss';
-import { cssModules, isRTL } from '../../bpk-react-utils/index';
-import { MutableRefObject, useEffect, useState } from 'react';
 
 const getClassName = cssModules(STYLES);
 
@@ -40,7 +41,7 @@ const CHIP_STYLE_TO_BUTTON_STYLE = {
 
 
 type Props = {
-  chipStyle: ChipStyleType;
+  chipStyle?: ChipStyleType;
   scrollContainerRef: MutableRefObject<HTMLElement | null>;
   leading?: boolean;
 }
@@ -49,6 +50,7 @@ type Props = {
 const AlignedLeftArrowIcon = withButtonAlignment(ArrowLeft);
 const AlignedRightArrowIcon = withButtonAlignment(ArrowRight);
 
+// TODO: how many px to scroll on click?
 const SCROLL_DISTANCE = 100;
 
 const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContainerRef}: Props) => {

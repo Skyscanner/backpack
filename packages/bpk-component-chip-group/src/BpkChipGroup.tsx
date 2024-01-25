@@ -15,17 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import type { ReactElement, ReactNode} from 'react';
+import { useRef, useState } from 'react';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
-import STYLES from './BpkChipGroup.module.scss';
-import { ReactElement, ReactNode, useRef, useState } from 'react';
 import BpkSelectableChip, { type BpkSelectableChipProps, CHIP_TYPES } from '../../bpk-component-chip';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
-import Nudger from './Nudger';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import FilterIconSm from '../../../packages/bpk-component-icon/sm/filter';
+import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
+
+import Nudger from './Nudger';
+import STYLES from './BpkChipGroup.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -51,6 +53,8 @@ export type ChipItem = {
 } & SingleSelectChipItem;
 
 export type CommonProps = {
+  ariaLabel?: string;
+  ariaLabelledBy?: string;
   type: ChipGroupType;
   className?: string | null;
   style?: ChipStyleType;
@@ -59,10 +63,16 @@ export type CommonProps = {
 export type ChipGroupProps = {
   chips: ChipItem[];
   stickyChip?: ChipItem;
+  _isSingleSelect?: boolean; // TODO: is there a better way for internal only props?
 } & CommonProps;
 
-const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, style = CHIP_TYPES.default, stickyChip }: ChipGroupProps) => {
+const BpkChipGroup = ({ _isSingleSelect = false, ariaLabel, ariaLabelledBy, chips, className = null, stickyChip, style = CHIP_TYPES.default, type = CHIP_GROUP_TYPES.rail }: ChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
+
+  // TODO: is there a way in typescript to enforce this instead?
+  if ((!ariaLabel && !ariaLabelledBy) || (ariaLabel && ariaLabelledBy)) {
+    console.warn('BpkChipGroup: Exactly one of ariaLabel and ariaLabelledBy should be set')
+  }
 
   const containerClassnames = getClassName(
     className,
@@ -94,7 +104,7 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, s
     `bpk-chip-group-scroller-right-indicator--${style}`,
   );
 
-  const renderChipItem = ({text, accessibilityLabel, selected, onClick, component: Component = BpkSelectableChip, ...rest}: ChipItem, index: number) => (
+  const renderChipItem = ({ accessibilityLabel, component: Component = BpkSelectableChip, onClick, selected, text, ...rest }: ChipItem, index: number) => (
     <Component
       key={text}
       selected={selected ?? false}
@@ -105,11 +115,15 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, s
           onClick(!selected, index);
         }
       }}
+      role="option"
       {...rest}
     >
       {text}
     </Component>
   );
+
+  // TODO: Fix/remove the scroll indicator when style=CHIP_TYPES.onImage
+  // TODO: Fix shadows + focus indicators being cutoff when type = rail
   const wrapRailInScroll = (children: ReactElement) =>
     type === CHIP_GROUP_TYPES.rail ? (
       <BpkMobileScrollContainer
@@ -138,7 +152,13 @@ const BpkChipGroup = ({ className = null, chips, type = CHIP_GROUP_TYPES.rail, s
         </div>
       }
       {wrapRailInScroll(
-        <div className={chipGroupClassNames}>
+        <div className={chipGroupClassNames}
+         role="listbox"
+         aria-orientation="horizontal"
+         aria-multiselectable={!_isSingleSelect}
+         aria-label={ariaLabel}
+         aria-labelledby={ariaLabelledBy}
+        >
           {chips.map((chip, index) => chip && renderChipItem(chip, index))}
         </div>
       )}

@@ -17,13 +17,14 @@
  */
 
 
-import { BpkDismissibleChip, BpkDropdownChip, CHIP_TYPES } from '../../packages/bpk-component-chip';
-import { BpkChipGroupState, BpkChipGroupSingleSelectState, CHIP_GROUP_TYPES } from '../../packages/bpk-component-chip-group';
 import { useState } from 'react';
 
-import STYLES from './examples.module.scss';
+import { BpkDismissibleChip, BpkDropdownChip, CHIP_TYPES } from '../../packages/bpk-component-chip';
+import { BpkChipGroupState, BpkChipGroupSingleSelectState, CHIP_GROUP_TYPES } from '../../packages/bpk-component-chip-group';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text/index';
 import { cssModules } from '../../packages/bpk-react-utils/index';
+
+import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -68,43 +69,37 @@ const chips = [
 ];
 
 
-export const BpkChipGroupWrapping = () => {
-
-  return (
+export const BpkChipGroupWrapping = () => (
     <div className={getClassName('bpk-chip-group-examples__fixed-width')}>
       <BpkChipGroupState
         type={CHIP_GROUP_TYPES.wrap}
         chips={chips}
-      >
-      </BpkChipGroupState>
+        accessibilityLabel="Select cities"
+       />
     </div>
   );
-};
 
-export const BpkSingleChipGroupWrapping = () => {
-  return (
+export const BpkSingleChipGroupWrapping = () => (
     <div>
       <BpkChipGroupSingleSelectState
         type={CHIP_GROUP_TYPES.wrap}
         chips={chips}
         selectedIndex={0}
-      >
-      </BpkChipGroupSingleSelectState>
+        accessibilityLabel="Select a city"
+       />
     </div>
   );
-};
 
 
-export const BpkChipGroupRail = () => {
-  return (
+export const BpkChipGroupRail = () => (
     <div>
       <BpkChipGroupState
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
+        accessibilityLabel="Select cities"
       />
     </div>
   );
-};
 
 
 export const BpkChipGroupSticky = () => {
@@ -119,6 +114,7 @@ export const BpkChipGroupSticky = () => {
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
+        accessibilityLabel="Select cities"
       />
     </div>
   );
@@ -136,6 +132,7 @@ export const OnContrastChipGroup = () => {
         chips={chips}
         stickyChip={stickyChip}
         style={CHIP_TYPES.default}
+        accessibilityLabel="Select cities"
       />
     </div>
   );
@@ -154,6 +151,7 @@ export const OnDarkChipGroup = () => {
         chips={chips}
         stickyChip={stickyChip}
         style={CHIP_TYPES.onDark}
+        accessibilityLabel="Select cities"
       />
     </div>
   );
@@ -171,6 +169,7 @@ export const OnImageChipGroup = () => {
         chips={chips}
         stickyChip={stickyChip}
         style={CHIP_TYPES.onImage}
+        accessibilityLabel="Select cities"
       />
     </div>
   );
@@ -207,6 +206,7 @@ export const AllChipTypesGroup = () => {
     <BpkChipGroupState
       chips={allChips}
       type={CHIP_GROUP_TYPES.wrap}
+      accessibilityLabel="Select chips"
     />
   );
 };
