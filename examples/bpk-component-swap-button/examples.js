@@ -30,13 +30,13 @@ const DefaultExample = () => (
 const CanvasDefaultExample = () => (
 
   <BpkDarkExampleWrapper padded style={{padding:'2rem'}} >
-  <BpkSwapButton swapButtonStyle='canvas-default' ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
+  <BpkSwapButton swapButtonStyle={SWAPBUTTON_STYLES.canvasDefault} ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
   </BpkDarkExampleWrapper>
 );
 const CanvasContrastExample = () => (
   <div>
   <BpkDarkExampleWrapper padded style={{padding:'2rem'}}>
-    <BpkSwapButton swapButtonStyle='canvas-contrast' ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
+    <BpkSwapButton swapButtonStyle={SWAPBUTTON_STYLES.canvasContrast} ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
   </BpkDarkExampleWrapper>
   </div>
 
