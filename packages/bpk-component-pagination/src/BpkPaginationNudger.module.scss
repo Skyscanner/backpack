@@ -18,15 +18,17 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-pagination-nudger {
-  display: flex;
-  width: bpk-spacing-xl() + bpk-spacing-sm();
-  height: bpk-spacing-xl() + bpk-spacing-sm();
-  padding: $bpk-one-pixel-rem * 10;
+@layer bpk-component {
+  .bpk-pagination-nudger {
+    display: flex;
+    width: bpk-spacing-xl() + bpk-spacing-sm();
+    height: bpk-spacing-xl() + bpk-spacing-sm();
+    padding: $bpk-one-pixel-rem * 10;
 
-  &__text {
-    &--hidden {
-      @include bpk-visually-hidden;
+    &__text {
+      &--hidden {
+        @include bpk-visually-hidden;
+      }
     }
   }
 }

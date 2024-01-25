@@ -18,20 +18,22 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-chart {
-  &__axis-tick {
-    &-text {
+@layer bpk-component {
+  .bpk-chart {
+    &__axis-tick {
+      &-text {
+        fill: $bpk-text-secondary-day;
+
+        @include bpk-text;
+        @include bpk-caption;
+      }
+    }
+
+    &__axis-label {
       fill: $bpk-text-secondary-day;
 
       @include bpk-text;
       @include bpk-caption;
     }
-  }
-
-  &__axis-label {
-    fill: $bpk-text-secondary-day;
-
-    @include bpk-text;
-    @include bpk-caption;
   }
 }

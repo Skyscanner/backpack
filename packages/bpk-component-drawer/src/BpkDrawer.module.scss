@@ -18,6 +18,8 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-drawer__container {
-  position: fixed;
+@layer bpk-component {
+  .bpk-drawer__container {
+    position: fixed;
+  }
 }

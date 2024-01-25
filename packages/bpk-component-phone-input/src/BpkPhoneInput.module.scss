@@ -15,26 +15,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 @import '../../bpk-mixins/index.scss';
 
-.bpk-phone-input {
-  display: flex;
-  column-gap: bpk-spacing-md();
+@layer bpk-component {
+  .bpk-phone-input {
+    display: flex;
+    column-gap: bpk-spacing-md();
 
-  @include bpk-breakpoint-mobile {
-    flex-wrap: wrap;
+    @include bpk-breakpoint-mobile {
+      flex-wrap: wrap;
+
+      &__phone-number {
+        width: 100%;
+        margin-top: bpk-spacing-base();
+      }
+    }
 
     &__phone-number {
-      width: 100%;
-      margin-top: bpk-spacing-base();
+      flex: auto;
     }
-  }
 
-  &__phone-number {
-    flex: auto;
-  }
-
-  &__label {
-    margin-bottom: bpk-spacing-md();
+    &__label {
+      margin-bottom: bpk-spacing-md();
+    }
   }
 }

@@ -18,67 +18,69 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-navigation-bar {
-  position: relative;
-  display: flex;
-  min-height: bpk-spacing-xl() + bpk-spacing-lg();
-  padding: bpk-spacing-base();
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+@layer bpk-component {
+  .bpk-navigation-bar {
+    position: relative;
+    display: flex;
+    min-height: bpk-spacing-xl() + bpk-spacing-lg();
+    padding: bpk-spacing-base();
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
-  @include bpk-themeable-property(
-    background-color,
-    --bpk-navigation-bar-background-color,
-    $bpk-surface-default-day
-  );
-
-  &--on-dark {
-    background-color: $bpk-surface-contrast-day;
-  }
-
-  &__title {
     @include bpk-themeable-property(
-      color,
-      --bpk-navigation-bar-title-color,
-      $bpk-text-primary-day
+      background-color,
+      --bpk-navigation-bar-background-color,
+      $bpk-surface-default-day
     );
 
     &--on-dark {
-      color: $bpk-text-primary-inverse-day;
+      background-color: $bpk-surface-contrast-day;
     }
-  }
 
-  &__leading-item,
-  &__trailing-item {
-    position: absolute;
+    &__title {
+      @include bpk-themeable-property(
+        color,
+        --bpk-navigation-bar-title-color,
+        $bpk-text-primary-day
+      );
 
-    @include bpk-label-2;
-  }
-
-  &__leading-item {
-    left: bpk-spacing-base();
-
-    @include bpk-rtl {
-      right: bpk-spacing-base();
-      left: auto;
+      &--on-dark {
+        color: $bpk-text-primary-inverse-day;
+      }
     }
-  }
 
-  &__trailing-item {
-    right: bpk-spacing-base();
+    &__leading-item,
+    &__trailing-item {
+      position: absolute;
 
-    @include bpk-rtl {
-      right: auto;
+      @include bpk-label-2;
+    }
+
+    &__leading-item {
       left: bpk-spacing-base();
+
+      @include bpk-rtl {
+        right: bpk-spacing-base();
+        left: auto;
+      }
     }
-  }
 
-  &__sticky {
-    position: sticky;
-    top: 0;
-    z-index: $bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
+    &__trailing-item {
+      right: bpk-spacing-base();
 
-    @include bpk-box-shadow-sm;
+      @include bpk-rtl {
+        right: auto;
+        left: bpk-spacing-base();
+      }
+    }
+
+    &__sticky {
+      position: sticky;
+      top: 0;
+      z-index: $bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
+
+      @include bpk-box-shadow-sm;
+    }
   }
 }

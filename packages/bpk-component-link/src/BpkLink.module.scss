@@ -18,14 +18,16 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-link {
-  @include bpk-link;
+@layer bpk-component {
+  .bpk-link {
+    @include bpk-link;
 
-  &--active {
-    @include bpk-link--active;
-  }
+    &--active {
+      @include bpk-link--active;
+    }
 
-  &--alternate {
-    @include bpk-link--alternate;
+    &--alternate {
+      @include bpk-link--alternate;
+    }
   }
 }

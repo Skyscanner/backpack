@@ -9,24 +9,3 @@ exports[`BpkBoilerplate should render correctly 1`] = `
   </div>
 </DocumentFragment>
 `;
-
-exports[`BpkBoilerplate should support arbitrary props 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-boilerplate"
-    testid="123"
-  >
-    I am an example component.
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkBoilerplate should support custom class names 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-boilerplate custom-classname"
-  >
-    I am an example component.
-  </div>
-</DocumentFragment>
-`;

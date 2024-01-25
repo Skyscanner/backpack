@@ -18,125 +18,127 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@mixin hidden-box-shadow-after {
-  z-index: 0;
+@layer bpk-component {
+  @mixin hidden-box-shadow-after {
+    z-index: 0;
 
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: '';
-    display: block;
-    z-index: -1;
-    transition: opacity 200ms ease-in-out;
-    border-radius: inherit;
-    box-shadow: $bpk-box-shadow-sm;
-    opacity: 0;
-    pointer-events: none; // To prevent the pseudo element absorbing click events
-  }
-}
-
-.bpk-ticket {
-  $ticket-padding: bpk-spacing-base();
-
-  position: relative;
-  display: block;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  flex: none;
-  color: $bpk-text-primary-day;
-  text-decoration: none;
-  box-shadow: $bpk-box-shadow-sm;
-  cursor: pointer;
-
-  @include bpk-border-radius-md;
-  @include hidden-box-shadow-after;
-
-  @include bpk-hover {
     &::after {
-      opacity: 1;
-    }
-
-    .bpk-ticket__paper::after {
-      opacity: 1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      display: block;
+      z-index: -1;
+      transition: opacity 200ms ease-in-out;
+      border-radius: inherit;
+      box-shadow: $bpk-box-shadow-sm;
+      opacity: 0;
+      pointer-events: none; // To prevent the pseudo element absorbing click events
     }
   }
 
-  &--vertical {
-    flex-direction: column;
-  }
+  .bpk-ticket {
+    $ticket-padding: bpk-spacing-base();
 
-  &__paper {
     position: relative;
-    background-color: $bpk-card-background-color;
-  }
+    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex: none;
+    color: $bpk-text-primary-day;
+    text-decoration: none;
+    box-shadow: $bpk-box-shadow-sm;
+    cursor: pointer;
 
-  @mixin main-styles {
-    &--horizontal {
-      border-radius: $bpk-border-radius-md 0 0 $bpk-border-radius-md;
+    @include bpk-border-radius-md;
+    @include hidden-box-shadow-after;
 
-      @include bpk-rtl {
-        border-radius: 0 $bpk-border-radius-md $bpk-border-radius-md 0;
+    @include bpk-hover {
+      &::after {
+        opacity: 1;
+      }
+
+      .bpk-ticket__paper::after {
+        opacity: 1;
       }
     }
 
     &--vertical {
-      border-radius: $bpk-border-radius-md $bpk-border-radius-md 0 0;
+      flex-direction: column;
     }
-  }
 
-  &__main {
-    flex: 2 1 auto;
-
-    @include main-styles;
-
-    &--padded {
-      padding: $ticket-padding;
+    &__paper {
+      position: relative;
+      background-color: $bpk-card-background-color;
     }
-  }
 
-  &__main-inner {
-    height: 100%;
-    overflow: hidden;
-
-    @include main-styles;
-  }
-
-  @mixin stub-styles {
-    &--horizontal {
-      min-width: 30%;
-      border-radius: 0 $bpk-border-radius-md $bpk-border-radius-md 0;
-      box-shadow: inset $bpk-one-pixel-rem 0 0 $bpk-line-day;
-
-      @include bpk-rtl {
+    @mixin main-styles {
+      &--horizontal {
         border-radius: $bpk-border-radius-md 0 0 $bpk-border-radius-md;
-        box-shadow: inset (-$bpk-one-pixel-rem) 0 0 $bpk-line-day;
+
+        @include bpk-rtl {
+          border-radius: 0 $bpk-border-radius-md $bpk-border-radius-md 0;
+        }
+      }
+
+      &--vertical {
+        border-radius: $bpk-border-radius-md $bpk-border-radius-md 0 0;
       }
     }
 
-    &--vertical {
-      border-radius: 0 0 $bpk-border-radius-md $bpk-border-radius-md;
-      box-shadow: inset 0 $bpk-one-pixel-rem 0 $bpk-line-day;
+    &__main {
+      flex: 2 1 auto;
+
+      @include main-styles;
+
+      &--padded {
+        padding: $ticket-padding;
+      }
     }
-  }
 
-  &__stub {
-    flex: 1 1 auto;
+    &__main-inner {
+      height: 100%;
+      overflow: hidden;
 
-    @include stub-styles;
-
-    &--padded {
-      padding: $ticket-padding;
+      @include main-styles;
     }
-  }
 
-  &__stub-inner {
-    height: 100%;
-    overflow: hidden;
+    @mixin stub-styles {
+      &--horizontal {
+        min-width: 30%;
+        border-radius: 0 $bpk-border-radius-md $bpk-border-radius-md 0;
+        box-shadow: inset $bpk-one-pixel-rem 0 0 $bpk-line-day;
 
-    @include stub-styles;
+        @include bpk-rtl {
+          border-radius: $bpk-border-radius-md 0 0 $bpk-border-radius-md;
+          box-shadow: inset (-$bpk-one-pixel-rem) 0 0 $bpk-line-day;
+        }
+      }
+
+      &--vertical {
+        border-radius: 0 0 $bpk-border-radius-md $bpk-border-radius-md;
+        box-shadow: inset 0 $bpk-one-pixel-rem 0 $bpk-line-day;
+      }
+    }
+
+    &__stub {
+      flex: 1 1 auto;
+
+      @include stub-styles;
+
+      &--padded {
+        padding: $ticket-padding;
+      }
+    }
+
+    &__stub-inner {
+      height: 100%;
+      overflow: hidden;
+
+      @include stub-styles;
+    }
   }
 }

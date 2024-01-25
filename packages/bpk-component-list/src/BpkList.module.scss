@@ -18,20 +18,22 @@
 
 @import '../../bpk-mixins/index.scss';
 
-.bpk-list {
-  @include bpk-list;
+@layer bpk-component {
+  .bpk-list {
+    @include bpk-list;
 
-  &__item {
-    @include bpk-list-item;
-  }
+    &__item {
+      @include bpk-list-item;
+    }
 
-  & & {
-    @include bpk-list--nested;
+    & & {
+      @include bpk-list--nested;
 
-    /* stylelint-disable selector-max-compound-selectors */
+      /* stylelint-disable selector-max-compound-selectors */
 
-    > li {
-      margin-bottom: 0;
+      > li {
+        margin-bottom: 0;
+      }
     }
   }
 }
