@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import BpkSwapButton from '../../packages/bpk-component-swap-button';
+import BpkSwapButton, { SWAPBUTTON_STYLES } from '../../packages/bpk-component-swap-button';
 import { action, BpkDarkExampleWrapper} from '../bpk-storybook-utils';
 
 const DefaultExample = () => (
