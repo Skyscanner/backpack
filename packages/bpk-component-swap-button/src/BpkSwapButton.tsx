@@ -19,7 +19,6 @@
 import { useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkAriaLive from '../../bpk-component-aria-live'
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import SwapVertical from '../../bpk-component-icon/sm/swap--vertical';
 
@@ -37,11 +36,10 @@ export type SwapButtonStyle = (typeof SWAPBUTTON_STYLES)[keyof typeof SWAPBUTTON
 export type Props = {
   onClick: () => void,
   ariaLabel: string,
-  ariaLiveTextProp: string,
   swapButtonStyle?: SwapButtonStyle,
 }
 const BpkSwapButton = ( props: Props ) => {
-  const { ariaLabel, ariaLiveTextProp, onClick, swapButtonStyle = SWAPBUTTON_STYLES.surfaceContrast } = props;
+  const { ariaLabel, onClick, swapButtonStyle = SWAPBUTTON_STYLES.surfaceContrast } = props;
 
   const [rotationDegree, setRotationDegree] = useState(0);
 
