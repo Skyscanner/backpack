@@ -23,20 +23,20 @@ import { action, BpkDarkExampleWrapper} from '../bpk-storybook-utils';
 const DefaultExample = () => (
 
   <div style={{ marginTop:'25px', marginLeft:'25px' }}>
-  <BpkSwapButton ariaLabel='Swap Button' ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
+  <BpkSwapButton ariaLabel='Swap origin and destination' onClick={action('Button clicked')}/>
   </div>
 );
 
 const CanvasDefaultExample = () => (
 
   <BpkDarkExampleWrapper padded style={{padding:'2rem'}} >
-  <BpkSwapButton swapButtonStyle={SWAPBUTTON_STYLES.canvasDefault} ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
+  <BpkSwapButton ariaLabel='Swap origin and destination' swapButtonStyle={SWAPBUTTON_STYLES.canvasDefault} onClick={action('Button clicked')}/>
   </BpkDarkExampleWrapper>
 );
 const CanvasContrastExample = () => (
   <div>
   <BpkDarkExampleWrapper padded style={{padding:'2rem'}}>
-    <BpkSwapButton swapButtonStyle={SWAPBUTTON_STYLES.canvasContrast} ariaLiveTextProp='Swapped' onClick={action('Button clicked')}/>
+    <BpkSwapButton ariaLabel='Swap origin and destination' swapButtonStyle={SWAPBUTTON_STYLES.canvasContrast} onClick={action('Button clicked')}/>
   </BpkDarkExampleWrapper>
   </div>
 
