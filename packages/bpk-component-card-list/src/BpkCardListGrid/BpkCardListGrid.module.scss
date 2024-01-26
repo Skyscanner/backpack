@@ -7,8 +7,4 @@
     minmax($bpk-one-pixel-rem * 281, 1fr)
   );
   gap: bpk-spacing-lg();
-
-  &--card {
-    min-width: $bpk-one-pixel-rem * 281;
-  }
 }

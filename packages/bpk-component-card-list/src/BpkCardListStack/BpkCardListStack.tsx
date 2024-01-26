@@ -15,7 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { Dispatch, SetStateAction } from 'react';
+
+import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
@@ -25,40 +26,57 @@ import STYLES from './BpkCardListStack.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type BpkCardListStackProps = {
-  accessory: 'expand' | 'button';
-  children: any;
-  expandText?: string;
+interface BpkCardListStackBaseProps {
+  children: ReactElement[];
+  expandText: string;
+}
+
+type BpkCardListStackExpandModeProps = BpkCardListStackBaseProps & {
+  accessory: 'expand';
   showContent: () => void;
   hideContent: () => void;
   collapsed: boolean;
   setCollapsed: Dispatch<SetStateAction<boolean>>;
 };
 
-const BpkCardListStack = ({
-  accessory,
-  children,
-  collapsed,
-  expandText,
-  hideContent,
-  setCollapsed,
-  showContent,
-}: BpkCardListStackProps) => (
-  <>
-    <div className={getClassName('bpk-card-list-stack')}>{children}</div>
+type BpkCardListStackButtonModeProps = BpkCardListStackBaseProps & {
+  accessory: 'button';
+  onButtonClick: () => void;
+};
 
-    {!expandText &&
-      (accessory === 'expand' ? (
-        <BpkExpand
-          showContent={showContent}
-          hideContent={hideContent}
-          collapsed={collapsed}
-          setCollapsed={setCollapsed}
-        />
-      ) : (
-        <BpkButtonV2>Action</BpkButtonV2>
-      ))}
-  </>
-);
+type BpkCardListStackProps =
+  | BpkCardListStackExpandModeProps
+  | BpkCardListStackButtonModeProps;
+
+const BpkCardListStack = (props: BpkCardListStackProps) => {
+  const { accessory, children } = props;
+
+  let accessoryContent;
+  if (accessory === 'expand') {
+    const { collapsed, expandText, hideContent, setCollapsed, showContent } =
+      props;
+    accessoryContent = (
+      <BpkExpand
+        showContent={showContent}
+        hideContent={hideContent}
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
+      >
+        {expandText}
+      </BpkExpand>
+    );
+  } else if (accessory === 'button') {
+    const { expandText, onButtonClick } = props;
+    <BpkButtonV2 onClick={onButtonClick}>{expandText}</BpkButtonV2>;
+  }
+
+  return (
+    <>
+      <div className={getClassName('bpk-card-list-stack')}>{children}</div>
+
+      {accessoryContent}
+    </>
+  );
+};
 
 export default BpkCardListStack;

@@ -26,46 +26,58 @@ import STYLES from './BpkCardListGrid.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type BpkCardListGridProps = {
-  accessory?: 'expand' | 'button';
-  cardList: ReactElement[];
-  expandText?: string;
+interface BpkCardListGridBaseProps {
+  children: ReactElement[];
+  expandText: string;
+}
+
+type BpkCardListGridExpandModeProps = BpkCardListGridBaseProps & {
+  accessory: 'expand';
   showContent: () => void;
   hideContent: () => void;
   collapsed: boolean;
   setCollapsed: Dispatch<SetStateAction<boolean>>;
 };
 
-const BpkCardListGrid = ({
-  accessory,
-  cardList,
-  collapsed,
-  expandText,
-  hideContent,
-  setCollapsed,
-  showContent,
-}: BpkCardListGridProps) => {
-  const cards = cardList.map((card: any, index: number) => (
-    <div className={getClassName('bpk-card-list-grid--card')}>{card}</div>
-  ));
+type BpkCardListGridButtonModeProps = BpkCardListGridBaseProps & {
+  accessory: 'button';
+  onButtonClick: () => void;
+};
+
+type BpkCardListGridProps =
+  | BpkCardListGridExpandModeProps
+  | BpkCardListGridButtonModeProps;
+
+const BpkCardListGrid = (props: BpkCardListGridProps) => {
+  const { accessory, children } = props;
+
+  let accessoryContent;
+  if (accessory === 'expand') {
+    const { collapsed, expandText, hideContent, setCollapsed, showContent } =
+      props;
+    accessoryContent = (
+      <BpkExpand
+        showContent={showContent}
+        hideContent={hideContent}
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
+      >
+        {expandText}
+      </BpkExpand>
+    );
+  } else if (accessory === 'button') {
+    const { expandText, onButtonClick } = props;
+    accessoryContent = (
+      <BpkButtonV2 onClick={onButtonClick}>{expandText}</BpkButtonV2>
+    );
+  }
 
   return (
     <>
       <div className={getClassName(`bpk-card-list-grid`, 'flex-wrap')}>
-        {cards}
+        {children}
       </div>
-
-      {!expandText &&
-        (accessory === 'expand' ? (
-          <BpkExpand
-            showContent={showContent}
-            hideContent={hideContent}
-            collapsed={collapsed}
-            setCollapsed={setCollapsed}
-          />
-        ) : (
-          <BpkButtonV2>Action</BpkButtonV2>
-        ))}
+      {accessoryContent}
     </>
   );
 };
