@@ -16,14 +16,20 @@
  * limitations under the License.
  */
 
+export declare const SWAPBUTTON_STYLES: {
+    surfaceContrast: string;
+    canvasDefault: string;
+    canvasContrast: string;
+};
+export type SwapButtonStyle = (typeof SWAPBUTTON_STYLES)[keyof typeof SWAPBUTTON_STYLES];
 export type Props = {
-  ariaLabel: string;
-  ariaLiveTextProps: string;
-  onClick: () => void;
+    onClick: () => void;
+    ariaLabel: string;
+    swapButtonStyle?: SwapButtonStyle;
 };
 declare const BpkSwapButton: ({
-  ariaLabel,
-  ariaLiveTextProps,
-  onClick,
+    ariaLabel,
+    onClick,
+    swapButtonStyle,
 } : Props) => JSX.Element;
 export default BpkSwapButton;
