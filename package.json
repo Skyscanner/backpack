@@ -172,7 +172,7 @@
     "react-svg-loader": "^3.0.1",
     "sass-loader": "^13.3.3",
     "sassdoc": "^2.7.0",
-    "storybook": "^7.1.1",
+    "storybook": "^7.6.10",
     "style-loader": "^3.3.3",
     "ts-migrate": "^0.1.35",
     "typescript": "^5.2.2",
