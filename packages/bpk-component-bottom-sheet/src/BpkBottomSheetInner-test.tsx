@@ -71,4 +71,20 @@ describe('BpkBottomSheetInner', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly without title prop', () => {
+    const { asFragment } = render(
+      <BpkBottomSheetInner
+        id="my-bottom-sheet"
+        title=""
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        actionText="Dismiss"
+        onAction={jest.fn()}
+        exiting={false}
+      >
+        Bottom sheet content
+      </BpkBottomSheetInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
