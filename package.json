@@ -5,7 +5,7 @@
   "private": true,
   "engines": {
     "node": "^18.16.0",
-    "npm": "^9.5.1"
+    "npm": "^9.5.1 || ^10.2.5"
   },
   "repository": {
     "type": "git",
@@ -122,7 +122,7 @@
     "@percy/cli": "^1.27.7",
     "@percy/storybook": "^4.3.6",
     "@skyscanner/bpk-foundations-web": "^17.8.0",
-    "@skyscanner/bpk-svgs": "^19.0.0",
+    "@skyscanner/bpk-svgs": "^19.0.1",
     "@skyscanner/stylelint-config-skyscanner": "^10.0.0",
     "@storybook/addon-a11y": "^7.6.8",
     "@storybook/addon-actions": "^7.6.10",
@@ -145,7 +145,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-react-docgen": "^4.2.1",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "backpack-node-sass": "^1.1.1",
+    "backpack-node-sass": "^1.1.2",
     "core-js": "^3.0.0",
     "css-loader": "^6.9.0",
     "d3-scale": "^4.0.2",
