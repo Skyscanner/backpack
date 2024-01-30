@@ -106,6 +106,24 @@ if (unlicensedFiles.length > 0) {
   );
 }
 
+const newComponentContainsClass = createdFiles.filter((filePath: string) => {
+  if (filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) &&
+    !filePath.includes('dist/') &&
+    !filePath.includes('base.js')) {
+    const fileContent = fs.readFileSync(filePath);
+    return fileContent.includes('className?: string | null');
+  }
+  return false;
+});
+
+if (newComponentContainsClass.length > 0) {
+  fail(
+    `These new files implement overriding className which is restricted: ${newComponentContainsClass.join(
+      ', ',
+    )}. Please update this component to remove the className prop.`,
+  );
+}
+
 const nonModuleCssFiles = fileChanges.filter(
   (filePath) =>
     filePath.match(/bpk-component/) &&

@@ -26,6 +26,7 @@ describe('BpkBottomSheetInner', () => {
       <BpkBottomSheetInner
         id="my-bottom-sheet"
         title="Bottom sheet title"
+        dialogRef={jest.fn()}
         closeLabel="Close"
         onClose={jest.fn()}
         exiting={false}
@@ -42,6 +43,7 @@ describe('BpkBottomSheetInner', () => {
         id="my-bottom-sheet"
         title="Bottom sheet title"
         closeLabel="Close"
+        dialogRef={jest.fn()}
         onClose={jest.fn()}
         wide
         exiting={false}
@@ -57,6 +59,7 @@ describe('BpkBottomSheetInner', () => {
       <BpkBottomSheetInner
         id="my-bottom-sheet"
         title="Bottom sheet title"
+        dialogRef={jest.fn()}
         onClose={jest.fn()}
         actionText="Dismiss"
         onAction={jest.fn()}

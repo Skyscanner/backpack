@@ -1,4 +1,4 @@
-/*
+ /*
  * Backpack - Skyscanner's Design System
  *
  * Copyright 2016 Skyscanner Ltd
@@ -16,14 +16,15 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-export type Props = {
-  children: ReactNode;
-  closeLabel?: string;
-  dialogRef: (ref: HTMLElement | null | undefined) => void;
-  id: string;
-  onClose: () => void;
-  title?: string;
-};
-declare const BpkBottomSheetInner: ({ children, closeLabel, dialogRef, id, onClose, title, }: Props) => JSX.Element;
-export default BpkBottomSheetInner;
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+
+import BpkSwapButton from './BpkSwapButton';
+
+describe('BpkSwapButton accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(<BpkSwapButton onClick={jest.fn()} ariaLabel='swap button'/>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
