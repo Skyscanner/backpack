@@ -368,7 +368,7 @@ class BpkDatepicker extends Component<Props, State> {
                 id={`${id}-modal`}
                 ariaLabelledby={title}
                 closeLabel={closeButtonText}
-                isOpen
+                isOpen={this.state.isOpen}
                 onClose={this.onClose}
                 title={title}
               >

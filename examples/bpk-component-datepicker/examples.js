@@ -634,6 +634,8 @@ const DefaultVisualExample = () => (
   </div>
 );
 
+DefaultVisualExample.parameters = { percy: { waitForSelector: '#myDatepicker' } };
+
 const VisualRangeExample = () => (
     <div id="application-element">
       <CalendarContainer
