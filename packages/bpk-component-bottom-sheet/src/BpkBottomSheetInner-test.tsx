@@ -18,6 +18,7 @@
 
 import { render } from '@testing-library/react';
 
+import '@testing-library/jest-dom';
 import BpkBottomSheetInner from './BpkBottomSheetInner';
 
 describe('BpkBottomSheetInner', () => {
@@ -72,7 +73,7 @@ describe('BpkBottomSheetInner', () => {
   });
 
   it('should render correctly without title prop', () => {
-    const { asFragment } = render(
+    const { asFragment, container } = render(
       <BpkBottomSheetInner
         id="my-bottom-sheet"
         title=""
@@ -85,6 +86,10 @@ describe('BpkBottomSheetInner', () => {
         Bottom sheet content
       </BpkBottomSheetInner>,
     );
+
+    const titleElement = container.querySelector('h2');
+    expect(titleElement).not.toBeInTheDocument();
+
     expect(asFragment()).toMatchSnapshot();
   });
 });
