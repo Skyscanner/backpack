@@ -85,7 +85,7 @@ const BpkBottomSheetInner = ({
       <BpkNavigationBar
         id={headingId}
         className={getClassName('bpk-bottom-sheet--navigation')}
-        title={
+        title={title &&
           <h2
             id={headingId}
             className={getClassName('bpk-bottom-sheet--heading')}
