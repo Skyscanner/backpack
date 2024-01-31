@@ -361,7 +361,7 @@ class BpkDatepicker extends Component<Props, State> {
                 ariaLabelledby={title}
                 closeLabel={closeButtonText}
                 isOpen={this.state.isOpen}
-                onClose={this.onClose}
+                onClose={this.props.onClose || this.onClose}
                 title={title}
               >
                 <Calendar {...calendarProps} fixedWidth={false} />
