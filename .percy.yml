@@ -1,6 +1,4 @@
 version: 2
-storybook:
-  waitForTimeout: 3000
 snapshot:
   enable-javascript: true
 discovery:
