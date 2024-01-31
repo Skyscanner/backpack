@@ -175,7 +175,7 @@
     "storybook": "^7.6.10",
     "style-loader": "^3.3.3",
     "ts-migrate": "^0.1.35",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.3",
     "webpack": "^5.88.1",
     "wrapper-webpack-plugin": "^2.2.2"
   }
