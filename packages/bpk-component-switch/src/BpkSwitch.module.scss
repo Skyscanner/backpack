@@ -57,7 +57,7 @@
       position: relative;
       float: right;
       display: block;
-      width: $width;
+      min-width: $width;
       height: $height;
       transition: background $bpk-duration-sm linear;
       border-radius: $height / 2;
@@ -81,7 +81,7 @@
       }
 
       &--small {
-        width: bpk-spacing-xxl();
+        min-width: bpk-spacing-xxl();
         height: bpk-spacing-sm() * 5;
 
         &::before {
