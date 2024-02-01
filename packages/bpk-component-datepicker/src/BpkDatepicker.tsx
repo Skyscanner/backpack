@@ -128,7 +128,7 @@ class BpkDatepicker extends Component<Props, State> {
     },
     initiallyFocusedDate: null,
     renderTarget: null,
-    isOpen: false,
+    // isOpen: false,
     valid: null,
   };
 
@@ -351,6 +351,9 @@ class BpkDatepicker extends Component<Props, State> {
     };
 
     return (
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {(isMobile: boolean) =>
+          isMobile ? (
             <>
               {input}
               <BpkModal
@@ -364,6 +367,23 @@ class BpkDatepicker extends Component<Props, State> {
                 <Calendar {...calendarProps} fixedWidth={false} />
               </BpkModal>
             </>
+          ) : (
+            <BpkPopover
+              id={`${id}-popover`}
+              target={input}
+              renderTarget={renderTarget}
+              onClose={this.props.onClose || this.onClose}
+              isOpen={this.state.isOpen}
+              label={title}
+              closeButtonText={closeButtonText}
+              tabIndex={0}
+              {...rest}
+            >
+              <Calendar {...calendarProps} fixedWidth={fixedWidth} />
+            </BpkPopover>
+          )
+        }
+      </BpkBreakpoint>
     );
   }
 }
