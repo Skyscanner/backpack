@@ -16,27 +16,28 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import BpkBoilerplate from './BpkBoilerplate';
+import BpkSwapButton from './BpkSwapButton';
 
-describe('BpkBoilerplate', () => {
+const props = {
+  onClick: jest.fn(),
+  ariaLabel: 'Swap Button',
+};
+
+describe('BpkSwapButton', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkBoilerplate />);
+    const { asFragment } = render(<BpkSwapButton {...props }/>);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should not support custom class names', () => {
-    const { container } = render(
-      <BpkBoilerplate className="custom-classname" />,
-    );
-    expect(container.className).not.toContain('custom-classname');
-  });
+  it('calls onClick prop when clicked', async () => {
+    const mockOnClick = jest.fn();
+    render(<BpkSwapButton {...props} onClick={mockOnClick}/>);
 
-  it('should support arbitrary props', () => {
-    const { getAllByTestId } = render(
-      <BpkBoilerplate data-testid="123" />,
-    );
-    expect(getAllByTestId('123').length).toBe(1);
+    await userEvent.click(screen.getByRole('button'));
+
+    expect(mockOnClick).toHaveBeenCalled();
+    });
   });
-});

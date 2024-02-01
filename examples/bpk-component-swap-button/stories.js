@@ -16,14 +16,19 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-export type Props = {
-  children: ReactNode;
-  closeLabel?: string;
-  dialogRef: (ref: HTMLElement | null | undefined) => void;
-  id: string;
-  onClose: () => void;
-  title?: string;
+import BpkSwapButton from '../../packages/bpk-component-swap-button/src/BpkSwapButton';
+
+import { DefaultExample, CanvasDefaultExample, CanvasContrastExample } from './examples'
+
+export default {
+  title: 'bpk-component-swap-button',
+  component: BpkSwapButton,
 };
-declare const BpkBottomSheetInner: ({ children, closeLabel, dialogRef, id, onClose, title, }: Props) => JSX.Element;
-export default BpkBottomSheetInner;
+
+export const Default = DefaultExample;
+
+export const CanvasDefault = CanvasDefaultExample;
+
+export const CanvasContrast = CanvasContrastExample;
+
+export const VisualTest = DefaultExample;

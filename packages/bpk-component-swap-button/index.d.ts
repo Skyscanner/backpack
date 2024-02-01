@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-export type Props = {
-  children: ReactNode;
-  closeLabel?: string;
-  dialogRef: (ref: HTMLElement | null | undefined) => void;
-  id: string;
-  onClose: () => void;
-  title?: string;
-};
-declare const BpkBottomSheetInner: ({ children, closeLabel, dialogRef, id, onClose, title, }: Props) => JSX.Element;
-export default BpkBottomSheetInner;
+import BpkSwapButton, { type Props as BpkSwapButtonProps, SWAPBUTTON_STYLES } from './src/BpkSwapButton';
+export type { BpkSwapButtonProps };
+export default BpkSwapButton;
+export { SWAPBUTTON_STYLES };
