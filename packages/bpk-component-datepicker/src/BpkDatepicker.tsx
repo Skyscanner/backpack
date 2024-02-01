@@ -128,7 +128,7 @@ class BpkDatepicker extends Component<Props, State> {
     },
     initiallyFocusedDate: null,
     renderTarget: null,
-    isOpen: true,
+    isOpen: false,
     valid: null,
   };
 
