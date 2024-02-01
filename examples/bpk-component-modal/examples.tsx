@@ -263,10 +263,10 @@ const MultipleModalsExample = () => (
 );
 
 const ModalOpenByDefault = () => (
-  <ModalContainer isOpen>
+  <ModalContainer title="Modal Title" isOpen>
     This is a modal without header. You can put anything you want in here.
   </ModalContainer>
-)
+);
 
 export {
   DefaultExample,
