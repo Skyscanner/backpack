@@ -107,6 +107,7 @@ class CalendarContainer extends Component {
         <div id="application-element">
           <BpkDatepicker
             {...this.props}
+            isOpen
             onDateSelect={(startDate, endDate = null) => {
               if (this.props.selectionConfiguration.type === 'range') {
                 if (startDate && !endDate) {
