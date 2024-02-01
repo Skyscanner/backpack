@@ -34,6 +34,7 @@ import {
   NoFullScreenOnMobileNoTitleExample,
   NoHeaderExample,
   MultipleModalsExample,
+  ModalOpenByDefault,
 } from './examples';
 
 export default {
@@ -56,3 +57,8 @@ export const NoFullScreenOnMobile = NoFullScreenOnMobileExample;
 export const NoFullScreenOnMobileNoTitle = NoFullScreenOnMobileNoTitleExample;
 export const NoHeader = NoHeaderExample;
 export const MultipleModals = MultipleModalsExample;
+export const VisualTest = ModalOpenByDefault;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
