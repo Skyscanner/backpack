@@ -18,56 +18,54 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  $min-vertical-width: 240;
-  $max-vertical-width: 720;
-  $min-horizontal-width: $max-vertical-width + 1;
-  $min-horizontal-height: 292;
-  $fixed-secondary-width: 216;
+$min-vertical-width: 240;
+$max-vertical-width: 720;
+$min-horizontal-width: $max-vertical-width + 1;
+$min-horizontal-height: 292;
+$fixed-secondary-width: 216;
 
-  .bpk-divided-card {
-    display: flex;
-    align-items: stretch;
+.bpk-divided-card {
+  display: flex;
+  align-items: stretch;
 
+  &--vertical {
+    min-width: $bpk-one-pixel-rem * $min-vertical-width;
+    max-width: $bpk-one-pixel-rem * $max-vertical-width;
+    flex-direction: column;
+  }
+
+  &--horizontal {
+    min-width: $bpk-one-pixel-rem * $min-horizontal-width;
+    min-height: $bpk-one-pixel-rem * $min-horizontal-height;
+  }
+
+  &__primary {
+    &--horizontal {
+      flex: 1;
+    }
+  }
+
+  &__secondary {
     &--vertical {
-      min-width: $bpk-one-pixel-rem * $min-vertical-width;
-      max-width: $bpk-one-pixel-rem * $max-vertical-width;
-      flex-direction: column;
+      border-top: $bpk-input-border;
     }
 
     &--horizontal {
-      min-width: $bpk-one-pixel-rem * $min-horizontal-width;
-      min-height: $bpk-one-pixel-rem * $min-horizontal-height;
-    }
+      width: $bpk-one-pixel-rem * $fixed-secondary-width;
+      border-left: $bpk-input-border;
 
-    &__primary {
-      &--horizontal {
-        flex: 1;
+      @include bpk-rtl {
+        border-right: $bpk-input-border;
+        border-left: unset;
       }
     }
+  }
 
-    &__secondary {
-      &--vertical {
-        border-top: $bpk-input-border;
-      }
+  &--no-elevation {
+    box-shadow: none;
 
-      &--horizontal {
-        width: $bpk-one-pixel-rem * $fixed-secondary-width;
-        border-left: $bpk-input-border;
-
-        @include bpk-rtl {
-          border-right: $bpk-input-border;
-          border-left: unset;
-        }
-      }
-    }
-
-    &--no-elevation {
+    &::after {
       box-shadow: none;
-
-      &::after {
-        box-shadow: none;
-      }
     }
   }
 }

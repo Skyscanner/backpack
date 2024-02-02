@@ -18,12 +18,10 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-breadcrumb {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-    list-style-type: none;
-  }
+.bpk-breadcrumb {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  list-style-type: none;
 }

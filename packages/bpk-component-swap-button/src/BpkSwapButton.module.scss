@@ -18,54 +18,52 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-swap-button {
-    width: bpk-spacing-xxl();
-    height: bpk-spacing-xxl();
-    transform: translateY(-50%) rotate(90deg);
+.bpk-swap-button {
+  width: bpk-spacing-xxl();
+  height: bpk-spacing-xxl();
+  transform: translateY(-50%) rotate(90deg);
+
+  @include bpk-breakpoint-small-tablet {
+    transform: rotate(0deg);
+  }
+
+  :focus-visible {
+    box-shadow:
+      0 0 0 (bpk-spacing-sm() / 2) $bpk-surface-elevated-day,
+      0 0 0 bpk-spacing-sm() $bpk-text-link-day;
+  }
+
+  &__button {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: transform $bpk-duration-base;
+    border: $bpk-border-size-xl solid $bpk-core-primary-day;
+    border-radius: 50%;
+    background-color: $bpk-surface-default-day;
 
     @include bpk-breakpoint-small-tablet {
-      transform: rotate(0deg);
+      border: $bpk-border-size-lg solid $bpk-core-primary-day;
     }
 
-    :focus-visible {
-      box-shadow:
-        0 0 0 (bpk-spacing-sm() / 2) $bpk-surface-elevated-day,
-        0 0 0 bpk-spacing-sm() $bpk-text-link-day;
+    @include bpk-hover {
+      background-color: $bpk-surface-highlight-day;
     }
 
-    &__button {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-      transition: transform $bpk-duration-base;
-      border: $bpk-border-size-xl solid $bpk-core-primary-day;
-      border-radius: 50%;
-      background-color: $bpk-surface-default-day;
-
-      @include bpk-breakpoint-small-tablet {
-        border: $bpk-border-size-lg solid $bpk-core-primary-day;
-      }
-
-      @include bpk-hover {
-        background-color: $bpk-surface-highlight-day;
-      }
-
-      &--canvas-default {
-        border: $bpk-border-size-xl solid $bpk-canvas-day;
-        background-color: $bpk-canvas-contrast-day;
-      }
-
-      &--canvas-contrast {
-        border: $bpk-border-size-xl solid $bpk-canvas-contrast-day;
-      }
+    &--canvas-default {
+      border: $bpk-border-size-xl solid $bpk-canvas-day;
+      background-color: $bpk-canvas-contrast-day;
     }
 
-    &__icon {
-      max-width: bpk-spacing-base();
-      max-height: bpk-spacing-base();
+    &--canvas-contrast {
+      border: $bpk-border-size-xl solid $bpk-canvas-contrast-day;
     }
+  }
+
+  &__icon {
+    max-width: bpk-spacing-base();
+    max-height: bpk-spacing-base();
   }
 }

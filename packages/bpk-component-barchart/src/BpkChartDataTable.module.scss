@@ -18,13 +18,11 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-chart-data-table {
-    @include bpk-visually-hidden;
+.bpk-chart-data-table {
+  @include bpk-visually-hidden;
 
-    thead,
-    tbody {
-      @include bpk-visually-hidden;
-    }
+  thead,
+  tbody {
+    @include bpk-visually-hidden;
   }
 }

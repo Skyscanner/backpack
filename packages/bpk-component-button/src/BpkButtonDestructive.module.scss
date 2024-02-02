@@ -18,9 +18,7 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-button--destructive {
-    @include bpk-button--secondary;
-    @include bpk-button--destructive;
-  }
+.bpk-button--destructive {
+  @include bpk-button--secondary;
+  @include bpk-button--destructive;
 }

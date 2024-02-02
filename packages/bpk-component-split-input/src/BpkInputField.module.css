@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}@layer bpk-component{.bpk-input-field{display:flex;max-width:7.5rem;margin-right:0.25rem;align-items:center}.bpk-input-field input{text-align:center}.bpk-input-field:last-child{margin-right:0}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-input-field{display:flex;max-width:7.5rem;margin-right:0.25rem;align-items:center}.bpk-input-field input{text-align:center}.bpk-input-field:last-child{margin-right:0}

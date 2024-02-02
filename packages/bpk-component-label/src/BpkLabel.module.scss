@@ -18,32 +18,30 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-label {
-    @include bpk-label;
+.bpk-label {
+  @include bpk-label;
+
+  &--white {
+    @include bpk-label--white;
+  }
+
+  &--invalid {
+    @include bpk-label--invalid;
+  }
+
+  &--disabled {
+    @include bpk-label--disabled;
 
     &--white {
-      @include bpk-label--white;
+      color: $bpk-text-disabled-on-dark-day;
     }
+  }
 
-    &--invalid {
-      @include bpk-label--invalid;
-    }
-
-    &--disabled {
-      @include bpk-label--disabled;
-
-      &--white {
-        color: $bpk-text-disabled-on-dark-day;
-      }
-    }
-
-    &__asterisk {
-      @include bpk-themeable-property(
-        color,
-        --bpk-form-validation-text-color,
-        $bpk-form-validation-color
-      );
-    }
+  &__asterisk {
+    @include bpk-themeable-property(
+      color,
+      --bpk-form-validation-text-color,
+      $bpk-form-validation-color
+    );
   }
 }

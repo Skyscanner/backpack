@@ -18,22 +18,20 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-fieldset {
-    margin: 0;
-    padding: 0;
-    border: 0;
+.bpk-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
 
-    &__description {
-      display: block;
-      margin-top: bpk-spacing-md();
-      color: $bpk-text-secondary-day;
+  &__description {
+    display: block;
+    margin-top: bpk-spacing-md();
+    color: $bpk-text-secondary-day;
 
-      @include bpk-caption;
-    }
+    @include bpk-caption;
+  }
 
-    &__label {
-      margin-bottom: bpk-spacing-sm();
-    }
+  &__label {
+    margin-bottom: bpk-spacing-sm();
   }
 }

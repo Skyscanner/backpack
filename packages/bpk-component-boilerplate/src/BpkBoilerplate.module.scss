@@ -18,8 +18,6 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-boilerplate {
-    display: flex;
-  }
+.bpk-boilerplate {
+  display: flex;
 }

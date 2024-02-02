@@ -20,33 +20,31 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-button {
-    @include bpk-button;
+.bpk-button {
+  @include bpk-button;
 
-    &--large {
-      @include bpk-button--large;
-    }
+  &--large {
+    @include bpk-button--large;
+  }
 
-    &--icon-only {
-      border-radius: $bpk-button-border-radius;
+  &--icon-only {
+    border-radius: $bpk-button-border-radius;
 
-      @include bpk-button--icon-only;
-    }
+    @include bpk-button--icon-only;
+  }
 
-    &--large-icon-only {
-      border-radius: $bpk-button-border-radius;
+  &--large-icon-only {
+    border-radius: $bpk-button-border-radius;
 
-      @include bpk-button--large-icon-only;
-    }
+    @include bpk-button--large-icon-only;
+  }
 
-    /* stylelint-disable selector-max-compound-selectors */
-    span > svg {
-      display: block;
-    }
+  /* stylelint-disable selector-max-compound-selectors */
+  span > svg {
+    display: block;
+  }
 
-    svg {
-      fill: currentcolor;
-    }
+  svg {
+    fill: currentcolor;
   }
 }
