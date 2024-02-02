@@ -16,167 +16,163 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+ @import '../../../bpk-mixins/index.scss';
 
-@mixin header {
-  display: flex;
-  min-height: bpk-spacing-lg();
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: center;
-}
+ @mixin header {
+   display: flex;
+   min-height: bpk-spacing-lg();
+   flex-wrap: nowrap;
+   justify-content: flex-end;
+   align-items: center;
+ }
 
-@keyframes bpk-modal-scrim {
-  0% {
-    opacity: $bpk-modal-initial-opacity;
-  }
+ @keyframes bpk-modal-scrim {
+   0% {
+     opacity: $bpk-modal-initial-opacity;
+   }
 
-  100% {
-    opacity: $bpk-modal-opacity;
-  }
-}
+   100% {
+     opacity: $bpk-modal-opacity;
+   }
+ }
 
-@keyframes bpk-modal-scale {
-  0% {
-    transform: scale(0.9);
-  }
+ @keyframes bpk-modal-scale {
+   0% {
+     transform: scale(0.9);
+   }
 
-  100% {
-    transform: scale(1);
-  }
-}
+   100% {
+     transform: scale(1);
+   }
+ }
 
-.bpk-modal-wrapper.bpk-modal-polyfill {
-  .bpk-modal-backdrop {
-    position: fixed;
-    z-index: 0;
-    margin: 0 auto;
-    background-color: $bpk-scrim-day;
-    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
-    inset: 0;
-    inset-block-end: 0;
-    inset-inline: 0;
-    inset-inline-end: 0;
-  }
+ .bpk-modal-wrapper.bpk-modal-polyfill {
+   .bpk-modal-backdrop {
+     position: fixed;
+     z-index: 0;
+     margin: 0 auto;
+     background-color: $bpk-scrim-day;
+     animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
+     inset: 0;
+     inset-block-end: 0;
+     inset-inline: 0;
+     inset-inline-end: 0;
+   }
 
-  .bpk-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    display: block;
-    z-index: 1;
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform $bpk-duration-sm ease-in-out $bpk-duration-sm;
-  }
+   .bpk-modal {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     display: block;
+     z-index: 1;
+     transform: translate(-50%, -50%) scale(1);
+     transition: transform $bpk-duration-sm ease-in-out $bpk-duration-sm;
+   }
 
-  .bpk-modal:not([data-open='true']),
-  .bpk-modal-backdrop:not([data-open='true']) {
-    display: none;
-  }
-}
+   .bpk-modal:not([data-open='true']),
+   .bpk-modal-backdrop:not([data-open='true']) {
+     display: none;
+   }
+ }
 
-.bpk-modal {
-  width: 100%;
-  max-width: none;
-  height: 100%;
-  max-height: 100%;
-  padding: 0;
-  border: none;
-  background: $bpk-modal-background-color;
-  overflow-y: scroll;
-  scrollbar-width: none;
+ .bpk-modal {
+   width: 100%;
+   max-width: none;
+   height: 100%;
+   max-height: 100%;
+   padding: 0;
+   border: none;
+   background: $bpk-modal-background-color;
+   overflow-y: scroll;
+   scrollbar-width: none;
 
-  @include bpk-box-shadow-xl;
+   @include bpk-box-shadow-xl;
 
-  @include bpk-breakpoint-above-mobile {
-    width: $bpk-modal-max-width;
-    max-width: none;
-    height: fit-content;
-    max-height: 90%;
-    border-radius: $bpk-border-radius-md;
+   @include bpk-breakpoint-above-mobile {
+     width: $bpk-modal-max-width;
+     max-width: none;
+     height: fit-content;
+     max-height: 90%;
+     border-radius: $bpk-border-radius-md;
 
-    &--full-screen-desktop {
-      width: 100%;
-      height: 100%;
-      max-height: 100%;
-      border-radius: 0;
-    }
+     &--full-screen-desktop {
+       width: 100%;
+       height: 100%;
+       max-height: 100%;
+       border-radius: 0;
+     }
 
-    &--wide {
-      width: $bpk-modal-wide-max-width;
-      max-width: 100%;
-    }
-  }
+     &--wide {
+       width: $bpk-modal-wide-max-width;
+       max-width: 100%;
+     }
+   }
 
-  &[open] {
-    animation: bpk-modal-scale $bpk-duration-sm ease-in-out;
-  }
+   &[open] {
+     animation: bpk-modal-scale $bpk-duration-sm ease-in-out;
+   }
 
-  &--no-full-screen-mobile {
-    width: 90%;
-    max-width: none;
-    height: fit-content;
-    max-height: 90%;
+   &--no-full-screen-mobile {
+     width: 90%;
+     max-width: none;
+     height: fit-content;
+     max-height: 90%;
 
-    @include bpk-breakpoint-above-mobile {
-      width: $bpk-modal-max-width;
-      max-width: none;
-    }
-  }
+     @include bpk-breakpoint-above-mobile {
+       width: $bpk-modal-max-width;
+       max-width: none;
+     }
+   }
 
-  &::backdrop {
-    position: fixed;
-    background-color: $bpk-scrim-day;
-    animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
-    inset: 0;
-    inset-block-end: 0;
-    inset-inline: 0;
-    inset-inline-end: 0;
-  }
+   &::backdrop {
+     position: fixed;
+     background-color: $bpk-scrim-day;
+     animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
+     inset: 0;
+     inset-block-end: 0;
+     inset-inline: 0;
+     inset-inline-end: 0;
+   }
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+   &::-webkit-scrollbar {
+     display: none;
+   }
 
-  &__header-title {
-    padding: bpk-spacing-base();
+   &__header-title {
+     padding: bpk-spacing-base();
 
-    @include header;
-  }
+     @include header;
+   }
 
-  &__header-title-container {
-    display: flex;
-    width: 100%;
-    justify-content: flex-start;
-  }
+   &__header-title-container {
+     display: flex;
+     width: 100%;
+     justify-content: flex-start;
+   }
 
-  &__title {
-    padding-inline-end: bpk-spacing-base();
+   &__title {
+     padding-inline-end: bpk-spacing-base();
 
-    @include bpk-label-1;
-  }
+     @include bpk-label-1;
+   }
 
-  &__button-container {
-    padding-block-start: bpk-spacing-base();
-    padding-inline-end: bpk-spacing-base();
+   &__button-container {
+     padding-block-start: bpk-spacing-base();
+     padding-inline-end: bpk-spacing-base();
 
-    @include header;
-  }
+     @include header;
+   }
 
-  &__container {
-    min-height: 100%;
-    padding: $bpk-modal-content-padding;
+   &__container {
+     min-height: 100%;
+     padding: $bpk-modal-content-padding;
 
-    &--removePadding {
-      padding: 0;
-    }
+     &--padded {
+       padding: 0;
+     }
 
-    &--full-screen-desktop {
-      height: 100%;
-    }
-  }
-}
-
-&--full-screen {
-  @include fullscreen;
-}
+     &--full-screen-desktop {
+       height: 100%;
+     }
+   }
+ }
