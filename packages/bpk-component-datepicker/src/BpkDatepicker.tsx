@@ -75,7 +75,6 @@ type Props = {
    * By default BpkInput. If passed, it should be a DOM node with a ref attached to it.
    */
   inputComponent: ReactElement | null;
-  isOpen: boolean;
   dateModifiers?: {};
   fixedWidth?: boolean;
   inputProps?: {};
@@ -94,6 +93,7 @@ type Props = {
   selectionConfiguration?: SelectionConfiguration;
   initiallyFocusedDate?: Date;
   renderTarget?: null | HTMLElement | (() => null | HTMLElement);
+  isOpen?: boolean;
   valid?: boolean;
   // Disabling this as if we set a default property for this value it causes the internal onClose function to stop working for default setup
   onClose?: () => void;
@@ -135,7 +135,7 @@ class BpkDatepicker extends Component<Props, State> {
     super(props);
 
     this.state = {
-      isOpen: props.isOpen,
+      isOpen: props.isOpen!,
     };
     this.inputRef = createRef();
   }
@@ -287,7 +287,6 @@ class BpkDatepicker extends Component<Props, State> {
       initiallyFocusedDate,
       inputComponent,
       inputProps,
-      isOpen,
       markOutsideDays,
       markToday,
       maxDate,
@@ -306,6 +305,7 @@ class BpkDatepicker extends Component<Props, State> {
     // The following props are not used in render
     delete rest.onDateSelect;
     delete rest.onOpenChange;
+    delete rest.isOpen;
 
     const input = inputComponent || (
       <div
