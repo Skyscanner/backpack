@@ -18,10 +18,8 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-button {
-    &--link {
-      @include bpk-button--link;
-    }
+.bpk-button {
+  &--link {
+    @include bpk-button--link;
   }
 }

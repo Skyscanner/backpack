@@ -18,12 +18,10 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-blockquote {
-    @include bpk-blockquote;
-  }
+.bpk-blockquote {
+  @include bpk-blockquote;
+}
 
-  .bpk-blockquote--extra-spacing {
-    @include bpk-blockquote--extra-spacing;
-  }
+.bpk-blockquote--extra-spacing {
+  @include bpk-blockquote--extra-spacing;
 }

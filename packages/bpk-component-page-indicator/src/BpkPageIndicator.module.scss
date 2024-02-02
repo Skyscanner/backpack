@@ -18,74 +18,72 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  $dot-size: bpk-spacing-md();
-  $dot-margin: bpk-spacing-sm();
-  $displayed-total: 5;
-  /* stylelint-disable-next-line scss/operator-no-newline-after */
-  $container-width: $dot-size * $displayed-total + $dot-margin *
-    $displayed-total * 2;
+$dot-size: bpk-spacing-md();
+$dot-margin: bpk-spacing-sm();
+$displayed-total: 5;
+/* stylelint-disable-next-line scss/operator-no-newline-after */
+$container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total *
+  2;
 
-  .bpk-page-indicator {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.bpk-page-indicator {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 
-    &__showNav {
-      justify-content: space-between;
+  &__showNav {
+    justify-content: space-between;
+  }
+
+  &__container {
+    max-width: $container-width;
+    min-height: $dot-size;
+    overflow: hidden;
+  }
+
+  &__indicators-container {
+    --direction: -1;
+
+    /* stylelint-disable scss/operator-no-newline-after */
+    transform: translateX(
+      calc(
+        var(--direction) * var(--scroll-index, 0) * #{$dot-size + $dot-margin *
+          2}
+      )
+    );
+    /* stylelint-enable scss/operator-no-newline-after */
+    transition: transform $bpk-duration-sm ease-in-out;
+    white-space: nowrap;
+
+    @include bpk-rtl {
+      --direction: 1;
+    }
+  }
+
+  &__indicator {
+    display: inline-block;
+    width: $dot-size;
+    height: $dot-size;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    margin-inline: $dot-margin;
+
+    &--default {
+      background-color: $bpk-line-day;
     }
 
-    &__container {
-      max-width: $container-width;
-      min-height: $dot-size;
-      overflow: hidden;
+    &--overImage {
+      background-color: $bpk-line-on-dark-day;
     }
 
-    &__indicators-container {
-      --direction: -1;
-
-      /* stylelint-disable scss/operator-no-newline-after */
-      transform: translateX(
-        calc(
-          var(--direction) * var(--scroll-index, 0) * #{$dot-size + $dot-margin *
-            2}
-        )
-      );
-      /* stylelint-enable scss/operator-no-newline-after */
-      transition: transform $bpk-duration-sm ease-in-out;
-      white-space: nowrap;
-
-      @include bpk-rtl {
-        --direction: 1;
-      }
-    }
-
-    &__indicator {
-      display: inline-block;
-      width: $dot-size;
-      height: $dot-size;
-      padding: 0;
-      border: none;
-      border-radius: 50%;
-      margin-inline: $dot-margin;
-
-      &--default {
-        background-color: $bpk-line-day;
+    &--active {
+      &-default {
+        background-color: $bpk-text-secondary-day;
       }
 
-      &--overImage {
-        background-color: $bpk-line-on-dark-day;
-      }
-
-      &--active {
-        &-default {
-          background-color: $bpk-text-secondary-day;
-        }
-
-        &-overImage {
-          background-color: $bpk-text-on-dark-day;
-        }
+      &-overImage {
+        background-color: $bpk-text-on-dark-day;
       }
     }
   }

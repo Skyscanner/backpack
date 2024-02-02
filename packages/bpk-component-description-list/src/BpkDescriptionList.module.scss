@@ -18,22 +18,20 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-description-list {
+.bpk-description-list {
+  margin: 0;
+
+  &__term {
+    @include bpk-label-1;
+  }
+
+  &__details {
     margin: 0;
+    margin-left: bpk-spacing-lg();
 
-    &__term {
-      @include bpk-label-1;
-    }
-
-    &__details {
-      margin: 0;
-      margin-left: bpk-spacing-lg();
-
-      @include bpk-rtl {
-        margin-right: bpk-spacing-lg();
-        margin-left: 0;
-      }
+    @include bpk-rtl {
+      margin-right: bpk-spacing-lg();
+      margin-left: 0;
     }
   }
 }

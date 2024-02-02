@@ -18,8 +18,6 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-icon-description {
-    @include bpk-visually-hidden;
-  }
+.bpk-icon-description {
+  @include bpk-visually-hidden;
 }

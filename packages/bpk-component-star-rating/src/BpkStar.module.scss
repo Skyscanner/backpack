@@ -18,48 +18,46 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  @mixin large-star {
-    width: $bpk-icon-size-lg;
-    height: $bpk-icon-size-lg;
-    vertical-align: bottom;
+@mixin large-star {
+  width: $bpk-icon-size-lg;
+  height: $bpk-icon-size-lg;
+  vertical-align: bottom;
+}
+
+.bpk-star {
+  display: inline-block;
+  vertical-align: text-bottom;
+  fill: $bpk-text-disabled-day;
+
+  &--large {
+    @include large-star;
   }
 
-  .bpk-star {
+  &--half {
+    position: absolute;
+    left: 0;
+  }
+
+  &--filled {
+    @include bpk-themeable-property(
+      fill,
+      --bpk-star-rating-filled-color,
+      $bpk-status-warning-spot-day
+    );
+  }
+
+  &__container {
     display: inline-block;
-    vertical-align: text-bottom;
-    fill: $bpk-text-disabled-day;
+    width: $bpk-icon-size-sm;
+    height: $bpk-icon-size-sm;
+
+    &--half-star {
+      position: relative;
+      vertical-align: text-bottom;
+    }
 
     &--large {
       @include large-star;
-    }
-
-    &--half {
-      position: absolute;
-      left: 0;
-    }
-
-    &--filled {
-      @include bpk-themeable-property(
-        fill,
-        --bpk-star-rating-filled-color,
-        $bpk-status-warning-spot-day
-      );
-    }
-
-    &__container {
-      display: inline-block;
-      width: $bpk-icon-size-sm;
-      height: $bpk-icon-size-sm;
-
-      &--half-star {
-        position: relative;
-        vertical-align: text-bottom;
-      }
-
-      &--large {
-        @include large-star;
-      }
     }
   }
 }

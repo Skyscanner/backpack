@@ -18,15 +18,13 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-datepicker {
-    &__calendar {
-      margin: 0 auto;
-    }
+.bpk-datepicker {
+  &__calendar {
+    margin: 0 auto;
+  }
 
-    &__input {
-      display: inline-block;
-      width: 100%;
-    }
+  &__input {
+    display: inline-block;
+    width: 100%;
   }
 }
