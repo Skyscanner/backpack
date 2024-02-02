@@ -18,52 +18,50 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-badge {
-    @include bpk-badge;
+.bpk-badge {
+  @include bpk-badge;
 
-    &--centered {
-      @include bpk-badge--centered;
-    }
+  &--centered {
+    @include bpk-badge--centered;
+  }
 
-    &--docked-right {
-      @include bpk-badge--docked-right;
-    }
+  &--docked-right {
+    @include bpk-badge--docked-right;
+  }
 
-    &--docked-left {
-      @include bpk-badge--docked-left;
-    }
+  &--docked-left {
+    @include bpk-badge--docked-left;
+  }
 
-    &--warning {
-      @include bpk-badge--warning;
-    }
+  &--warning {
+    @include bpk-badge--warning;
+  }
 
-    &--success {
-      @include bpk-badge--success;
-    }
+  &--success {
+    @include bpk-badge--success;
+  }
 
-    &--critical {
-      @include bpk-badge--critical;
-    }
+  &--critical {
+    @include bpk-badge--critical;
+  }
 
-    &--normal {
-      @include bpk-badge--normal;
-    }
+  &--normal {
+    @include bpk-badge--normal;
+  }
 
-    &--inverse {
-      @include bpk-badge--inverse;
-    }
+  &--inverse {
+    @include bpk-badge--inverse;
+  }
 
-    &--outline {
-      @include bpk-badge--outline;
-    }
+  &--outline {
+    @include bpk-badge--outline;
+  }
 
-    &--strong {
-      @include bpk-badge--strong;
-    }
+  &--strong {
+    @include bpk-badge--strong;
+  }
 
-    &--brand {
-      @include bpk-badge--brand;
-    }
+  &--brand {
+    @include bpk-badge--brand;
   }
 }

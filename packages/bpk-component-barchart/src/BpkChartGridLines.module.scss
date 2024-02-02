@@ -18,11 +18,9 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-chart {
-    &__grid-line {
-      shape-rendering: crispedges;
-      stroke: $bpk-line-day;
-    }
+.bpk-chart {
+  &__grid-line {
+    shape-rendering: crispedges;
+    stroke: $bpk-line-day;
   }
 }

@@ -19,31 +19,29 @@
 @import '../../bpk-mixins/index.scss';
 @import 'variables.scss';
 
-@layer bpk-component {
-  .bpk-calendar-grid-transition {
-    position: relative;
-    overflow: hidden;
+.bpk-calendar-grid-transition {
+  position: relative;
+  overflow: hidden;
 
-    &__dummy {
-      display: inline-block;
-      width: $calendar-width;
+  &__dummy {
+    display: inline-block;
+    width: $calendar-width;
+  }
+
+  &__strip {
+    left: 0;
+    display: block;
+    z-index: 0;
+    width: 3 * $calendar-width;
+
+    &--transitioning {
+      z-index: 1;
+      transition: transform $bpk-duration-sm ease-in-out;
     }
+  }
 
-    &__strip {
-      left: 0;
-      display: block;
-      z-index: 0;
-      width: 3 * $calendar-width;
-
-      &--transitioning {
-        z-index: 1;
-        transition: transform $bpk-duration-sm ease-in-out;
-      }
-    }
-
-    &__grid {
-      display: inline-table;
-      width: $calendar-width;
-    }
+  &__grid {
+    display: inline-table;
+    width: $calendar-width;
   }
 }

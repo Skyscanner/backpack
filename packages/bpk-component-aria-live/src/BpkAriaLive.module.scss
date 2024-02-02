@@ -18,10 +18,8 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-aria-live {
-    &--invisible {
-      @include bpk-visually-hidden;
-    }
+.bpk-aria-live {
+  &--invisible {
+    @include bpk-visually-hidden;
   }
 }
