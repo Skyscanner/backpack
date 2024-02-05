@@ -15,24 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import {
-  GridToRailExample,
-  GridToStackExample,
-  GridToStackWithButtonExample,
-  RowToRailExample,
-  RowToRailWithHeaderButtonExample,
-  RowToStackExample,
-} from './examples';
+import BpkMobileScrollContainer from './src/BpkMobileScrollContainer';
 
-export default {
-  title: 'bpk-component-card-list',
-};
-
-export const GridToRail = GridToRailExample;
-export const GridToStack = GridToStackExample;
-export const GridToStackWithButton = GridToStackWithButtonExample;
-export const RowToRail = RowToRailExample;
-export const RowToRailWithHeaderButton = RowToRailWithHeaderButtonExample;
-export const RowToStack = RowToStackExample;
+export default BpkMobileScrollContainer;

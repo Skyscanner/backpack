@@ -127,12 +127,14 @@ const BpkCardList = ({
               <BpkCardListGrid
                 accessory={accessory}
                 expandText={expandText}
-                cardList={visibleCards}
+                cards={visibleCards}
                 showContent={showContent}
                 hideContent={hideContent}
                 collapsed={collapsed}
                 setCollapsed={setCollapsed}
-              />
+              >
+                {visibleCards}
+              </BpkCardListGrid>
             ) : (
               <BpkCardListRow
                 accessory={accessory === 'pagination' && !expandText}

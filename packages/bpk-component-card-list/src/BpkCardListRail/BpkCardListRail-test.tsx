@@ -15,24 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+import { render } from '@testing-library/react';
 
-import {
-  GridToRailExample,
-  GridToStackExample,
-  GridToStackWithButtonExample,
-  RowToRailExample,
-  RowToRailWithHeaderButtonExample,
-  RowToStackExample,
-} from './examples';
+import BpkCard from '../../../bpk-component-card';
 
-export default {
-  title: 'bpk-component-card-list',
-};
+import BpkCardListRail from './BpkCardListRail';
 
-export const GridToRail = GridToRailExample;
-export const GridToStack = GridToStackExample;
-export const GridToStackWithButton = GridToStackWithButtonExample;
-export const RowToRail = RowToRailExample;
-export const RowToRailWithHeaderButton = RowToRailWithHeaderButtonExample;
-export const RowToStack = RowToStackExample;
+describe('BpkCardListRail', () => {
+  it('should render cards correctly in the MobileScrollContainer', () => {
+    const { container } = render(
+      <BpkCardListRail>
+        <BpkCard>Card 1</BpkCard>
+        <BpkCard>Card 2</BpkCard>
+        <BpkCard>Card 3</BpkCard>
+      </BpkCardListRail>,
+    );
+
+    expect(container).toMatchSnapshot();
+    expect(
+      container.getElementsByClassName('bpk-card-list--rail_card'),
+    ).toHaveLength(3);
+  });
+});

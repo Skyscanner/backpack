@@ -15,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import {
   useCallback,
   useEffect,
   useRef,
   useState,
   type MouseEvent,
+  type ReactNode,
 } from 'react';
 import debounce from 'lodash/debounce';
 
@@ -35,9 +35,6 @@ const DEBOUNCE_TIME = 150;
 let setVisibleIndexes: (array: number[]) => {};
 
 const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
-  const numberOfCards = children.length;
-  // TODO: need to update when width changes
-
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -46,11 +43,8 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
   const [cardWidth, setCardWidth] = useState(0);
   const [pageIndex, setCurrentPageIndex] = useState(0);
 
-  const calculateNumberOfDisplay = (): number =>
-    Math.floor((containerWidth + 2) / cardWidth);
-
-  // TODO: how to incorporate the initiallyShownCards here?
-  let numberOfDisplay = calculateNumberOfDisplay();
+  const numberOfCards = children.length;
+  let numberOfDisplay = numberOfCardsToShow;
   const numberOfIndicators = Math.ceil(numberOfCards / numberOfDisplay);
 
   const [indicators, setNumberOfIndicators] = useState(numberOfIndicators);
@@ -79,7 +73,7 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
     }
     setContainerWidth(containerRef.current?.clientWidth || 0);
     setCardWidth(cardRef.current?.clientWidth || 0);
-    numberOfDisplay = calculateNumberOfDisplay();
+    numberOfDisplay = numberOfCardsToShow;
     setScrollPosition(0);
     setCardIndex(0);
   }, DEBOUNCE_TIME);
@@ -115,9 +109,9 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
       if (!containerWidth || !cardWidth) {
         return;
       }
-      setCurrentPageIndex(newIndex);
 
       if (direction === 'NEXT') {
+        setCurrentPageIndex(newIndex);
         const nextCardIndex = cardIndex + numberOfDisplay;
         if (touchEnd(nextCardIndex)) {
           setCardIndex(numberOfCards - numberOfDisplay);
@@ -126,12 +120,17 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
         }
       }
       if (direction === 'PREV') {
+        setCurrentPageIndex(newIndex);
         const nextCardIndex = cardIndex - numberOfDisplay;
         if (touchStart(nextCardIndex)) {
           setCardIndex(0);
         } else {
           setCardIndex(nextCardIndex);
         }
+      }
+      if (direction === 'INDICATORS') {
+        setCurrentPageIndex(newIndex);
+        setCardIndex(newIndex * numberOfDisplay);
       }
     },
     [
@@ -151,18 +150,19 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
         className={getClassName('bpk-card-list-row__cards')}
         ref={containerRef}
       >
-        {children.map((card: any, index: number) => (
+        {children.map((card: ReactNode, index: number) => (
           <div
             key={`card-${index + 1}`}
             className={getClassName('bpk-card-list-row__card')}
             ref={cardRef}
+            style={{ width: `calc(100% / ${numberOfDisplay})` }}
           >
             {card}
           </div>
         ))}
       </div>
 
-      {accessory && numberOfIndicators !== 1 && (
+      {accessory && numberOfIndicators > 1 && (
         <BpkPageIndicator
           currentIndex={pageIndex}
           totalIndicators={numberOfIndicators}
@@ -173,7 +173,7 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
           onClick={(
             e: MouseEvent<HTMLButtonElement>,
             newIndex: number,
-            direction: string,
+            direction: 'NEXT' | 'PREV' | 'INDICATORS',
           ) => {
             handleArrowClick(newIndex, direction);
           }}

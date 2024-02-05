@@ -32,3 +32,40 @@
     width: bpk-spacing-md() * 41;
   }
 }
+
+.bpk-destinationCard {
+  overflow: hidden;
+
+  .bpk-bottom {
+    display: flex;
+    padding: bpk-spacing-lg();
+    justify-content: space-between;
+  }
+
+  .bpk-column {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.bpk-internalLinkCard {
+  display: flex;
+  overflow: hidden;
+
+  .bpk-image {
+    flex: 0 0 5.5rem;
+  }
+
+  .bpk-info {
+    display: flex;
+    margin: auto bpk-spacing-lg();
+    flex-direction: column;
+  }
+
+  .bpk-verticalLinks {
+    &_bullet {
+      margin: 0 bpk-spacing-sm();
+      color: $bpk-core-accent-day;
+    }
+  }
+}

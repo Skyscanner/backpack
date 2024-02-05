@@ -10,24 +10,13 @@
   }
 
   .bpk-card-list-row__card {
-    padding: bpk-spacing-sm();
+    padding: bpk-spacing-lg() bpk-spacing-lg() bpk-spacing-lg() bpk-spacing-sm();
     flex-shrink: 0;
     text-wrap: wrap;
 
-    @include bpk-breakpoint-above-tablet {
-      width: calc(100% / 3);
-    }
-
-    @include bpk-breakpoint-tablet {
-      width: 50%;
-    }
-
-    @include bpk-breakpoint-small-tablet-only {
-      width: 100%;
-    }
-
     @include bpk-breakpoint-mobile {
       display: none;
+      padding: bpk-spacing-base() bpk-spacing-base() bpk-spacing-base();
     }
   }
 }

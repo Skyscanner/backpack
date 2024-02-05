@@ -37,15 +37,7 @@
       display: flex;
       width: 100%;
       flex-direction: row;
-
-      // flex-wrap: wrap;
       gap: bpk-spacing-lg();
-
-      // overflow-clip-margin: 20px;
-      // overflow-inline: auto;
-      // overflow-y: visible;
-      // scroll-snap-type: x mandatory;
-      // scroll-behavior: smooth;
     }
 
     &--stack {

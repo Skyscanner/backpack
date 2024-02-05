@@ -19,14 +19,11 @@
 
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkCard from '../../packages/bpk-component-card';
+import BpkImage from '../../packages/bpk-component-image';
 import BpkCardList from '../../packages/bpk-component-card-list';
-// import BpkImage, {
-//   BORDER_RADIUS_STYLES,
-// } from '../../packages/bpk-component-image';
+import BpkLink from '../../packages/bpk-component-link';
 
-// import STYLES from './examples.module.scss';
-
-// const getClassName = cssModules(STYLES);
+import STYLES from './examples.module.scss';
 
 const DealsCard = (i) => (
   <BpkCard atomic={false} onClick={() => null}>
@@ -45,69 +42,125 @@ const DealsCard = (i) => (
     </BpkText>
   </BpkCard>
 );
-const RowToRailExample = () => (
+const DestinationCard = (i) => (
+  <BpkCard href="/" className={STYLES['bpk-destinationCard']} padded={false}>
+    <BpkImage
+      aspectRatio={3000 / 1800}
+      src="https://content.skyscnr.com/7adba3a46af3ca29695f96937d19fcf1/GettyImages-149127892.jpg?crop=960px:640px&quality=100"
+    />
+
+    <div className={STYLES['bpk-bottom']}>
+      <div className={STYLES['bpk-column']}>
+        <BpkText textStyle={TEXT_STYLES.heading4}>
+          {`Destination Name ${i}`}
+        </BpkText>
+        <BpkText>Country</BpkText>
+      </div>
+
+      <div className={STYLES['bpk-column']}>
+        <BpkText>Direct</BpkText>
+        <BpkText textStyle={TEXT_STYLES.heading4}>£100</BpkText>
+      </div>
+    </div>
+  </BpkCard>
+);
+const InternalLinkCard = (i) => (
+  <BpkCard href="/" className={STYLES['bpk-internalLinkCard']} padded={false}>
+    <BpkImage
+      className={STYLES['bpk-image']}
+      aspectRatio={1000 / 1000}
+      src="https://content.skyscnr.com/fa0912c6ed6f75f0607dfc080359a021/amsterdam.jpg?crop=100px:100px&quality=90"
+    />
+
+    <div className={STYLES['bpk-info']}>
+      <BpkText
+        textStyle={TEXT_STYLES.heading5}
+      >{`Amsterdam Schiphol ${i}`}</BpkText>
+
+      <div className={STYLES['bpk-verticalLinks']}>
+        <BpkLink href="#">Flights</BpkLink>
+        <span aria-hidden className={STYLES['bpk-verticalLinks_bullet']}>
+          {'\u2022'}
+        </span>
+        <BpkLink href="#">Hotels</BpkLink>
+        <span aria-hidden className={STYLES['bpk-verticalLinks_bullet']}>
+          {'\u2022'}
+        </span>
+        <BpkLink href="#">Car Hire</BpkLink>
+      </div>
+    </div>
+  </BpkCard>
+);
+// const InternalLinkBlock = (i) => {
+//   <div className="InternalLinkBlock">
+//     <BpkLink href="#">Alicante Car Hire</BpkLink>
+//     <BpkLink href="#">Barcelona Car Hire</BpkLink>
+//     <BpkLink href="#">London Car Hire</BpkLink>
+//   </div>;
+// };
+
+const cards = (cardType) => [...Array(14).keys()].map((i) => cardType(i));
+
+const title = 'Must Vist Spots';
+const description =
+  'Check out these world-famous destinations perfect for visiting in spring.';
+
+const GridToRailExample = () => (
   <BpkCardList
-    cardList={[...Array(14).keys()].map((i) => DealsCard(i))}
-    accessory="pagination"
-    layoutDesktop="row"
+    cardList={cards(DealsCard)}
+    accessory="expand"
+    layoutDesktop="grid"
     layoutMobile="rail"
-    title="Card List Component"
+    title={title}
+  />
+);
+const GridToStackExample = () => (
+  <BpkCardList
+    cardList={cards(InternalLinkCard)}
+    accessory="expand"
+    layoutDesktop="grid"
+    layoutMobile="stack"
+    title={title}
+  />
+);
+const GridToStackWithButtonExample = () => (
+  <BpkCardList
+    cardList={cards(DestinationCard)}
+    accessory="button"
+    layoutDesktop="grid"
+    layoutMobile="stack"
+    title={title}
   />
 );
 
 const RowToRailWithHeaderButtonExample = () => (
   <BpkCardList
-    cardList={[...Array(14).keys()].map((i) => DealsCard(i))}
+    cardList={cards(DealsCard)}
     accessory="pagination"
     layoutDesktop="row"
     layoutMobile="rail"
-    title="Card List Component"
+    title={title}
+    description={description}
     buttonText="Header Button"
+    initiallyShownCards={4}
   />
 );
-
-const GridToRailExample = () => (
+const RowToRailExample = () => (
   <BpkCardList
-    cardList={[...Array(15).keys()].map((i) => (
-      <BpkCard href="#">
-        {/* <BpkImage aspectRatio={3000/2318} src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg" /> */}
-        TEST {i}
-      </BpkCard>
-    ))}
-    accessory="expand"
-    layoutDesktop="grid"
+    cardList={cards(DealsCard)}
+    accessory="pagination"
+    layoutDesktop="row"
     layoutMobile="rail"
-    title="Card List Component"
+    title={title}
   />
 );
-
 const RowToStackExample = () => (
   <BpkCardList
-    cardList={[...Array(15).keys()].map((i) => (
-      <BpkCard href="#">
-        {/* <BpkImage aspectRatio={3000/2318} src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg" /> */}
-        TEST {i}
-      </BpkCard>
-    ))}
+    cardList={cards(DestinationCard)}
     accessory="pagination"
     layoutDesktop="row"
     layoutMobile="stack"
-    title="Card List Component"
-  />
-);
-
-const GridToStackExample = () => (
-  <BpkCardList
-    cardList={[...Array(15).keys()].map((i) => (
-      <BpkCard href="#">
-        {/* <BpkImage aspectRatio={3000/2318} src="https://content.skyscnr.com/a6b22ca74949a4d05d9f9df2bc986479/GettyImages-178610078.jpg" /> */}
-        TEST {i}
-      </BpkCard>
-    ))}
-    accessory="expand"
-    layoutDesktop="grid"
-    layoutMobile="stack"
-    title="Card List Component"
+    title={title}
   />
 );
 
@@ -115,6 +168,7 @@ export {
   RowToRailExample,
   RowToRailWithHeaderButtonExample,
   GridToRailExample,
+  GridToStackWithButtonExample,
   RowToStackExample,
   GridToStackExample,
 };
