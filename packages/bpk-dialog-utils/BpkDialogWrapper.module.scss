@@ -1,0 +1,45 @@
+@import '../bpk-mixins/index.scss';
+
+@keyframes bpk-dialog-wrapper-scrim {
+  0% {
+    opacity: $bpk-modal-initial-opacity;
+  }
+
+  100% {
+    opacity: $bpk-modal-opacity;
+  }
+}
+
+.bpk-dialog-wrapper {
+  &--container {
+    padding: 0;
+    border: none;
+
+    &::backdrop {
+      position: fixed;
+      background-color: $bpk-scrim-day;
+      animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
+      inset: 0;
+      inset-block-end: 0;
+      inset-inline: 0;
+      inset-inline-end: 0;
+    }
+  }
+
+  &--backdrop {
+    position: fixed;
+    z-index: 0;
+    margin: 0 auto;
+    background-color: $bpk-scrim-day;
+    animation: bpk-dialog-wrapper-scrim $bpk-duration-sm ease-in-out;
+    inset: 0;
+    inset-block-end: 0;
+    inset-inline: 0;
+    inset-inline-end: 0;
+  }
+
+  &--contents {
+    min-height: 100%;
+    padding: 0;
+  }
+}
