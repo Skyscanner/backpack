@@ -19,26 +19,24 @@
 @import '../../bpk-mixins/index.scss';
 @import './bpkImageMixins.scss';
 
-@layer bpk-component {
-  .bpk-image {
-    opacity: 1;
+.bpk-image {
+  opacity: 1;
 
-    @include bpk-image;
+  @include bpk-image;
 
-    &__img {
-      @include bpk-image__img;
-    }
+  &__img {
+    @include bpk-image__img;
+  }
 
-    &__spinner {
-      @include bpk-image__spinner;
-    }
+  &__spinner {
+    @include bpk-image__spinner;
+  }
 
-    &--no-background {
-      @include bpk-image--no-background;
-    }
+  &--no-background {
+    @include bpk-image--no-background;
+  }
 
-    &--border-radius-sm {
-      @include bpk-border-radius-sm;
-    }
+  &--border-radius-sm {
+    @include bpk-border-radius-sm;
   }
 }

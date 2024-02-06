@@ -18,50 +18,48 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-loading-button {
-    $button-padding-x: bpk-spacing-base() * 2;
-    $button-padding-y: bpk-spacing-lg() / 2;
-    $button-large-padding-y: bpk-spacing-lg();
-    $button-icon-only-padding-x: $bpk-button-height - $bpk-icon-size-sm; // this is in order to ensure icons are centred in icon-only buttons
-    /* stylelint-disable-next-line scss/operator-no-newline-after */
-    $button-large-icon-only-padding-x: $bpk-button-large-height -
-      $bpk-icon-size-lg; // this is in order to ensure icons are centred in icon-only buttons
+.bpk-loading-button {
+  $button-padding-x: bpk-spacing-base() * 2;
+  $button-padding-y: bpk-spacing-lg() / 2;
+  $button-large-padding-y: bpk-spacing-lg();
+  $button-icon-only-padding-x: $bpk-button-height - $bpk-icon-size-sm; // this is in order to ensure icons are centred in icon-only buttons
+  /* stylelint-disable-next-line scss/operator-no-newline-after */
+  $button-large-icon-only-padding-x: $bpk-button-large-height -
+    $bpk-icon-size-lg; // this is in order to ensure icons are centred in icon-only buttons
 
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    &--link {
-      visibility: hidden;
+  &--link {
+    visibility: hidden;
+  }
+
+  &__icon {
+    position: absolute;
+    display: inline-flex;
+    visibility: visible;
+    z-index: 1;
+    width: calc(100% - #{$button-padding-x});
+    height: calc(100% - #{$button-padding-y});
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+
+    &--large {
+      height: calc(100% - #{$button-large-padding-y});
     }
 
-    &__icon {
-      position: absolute;
-      display: inline-flex;
-      visibility: visible;
-      z-index: 1;
-      width: calc(100% - #{$button-padding-x});
-      height: calc(100% - #{$button-padding-y});
-      justify-content: center;
-      align-items: center;
-      background-color: inherit;
+    &--icon-only {
+      width: calc(100% - #{$button-icon-only-padding-x});
+    }
 
-      &--large {
-        height: calc(100% - #{$button-large-padding-y});
-      }
+    &--large-icon-only {
+      width: calc(100% - #{$button-large-icon-only-padding-x});
+    }
 
-      &--icon-only {
-        width: calc(100% - #{$button-icon-only-padding-x});
-      }
-
-      &--large-icon-only {
-        width: calc(100% - #{$button-large-icon-only-padding-x});
-      }
-
-      &--link {
-        width: 100%;
-        background: unset;
-      }
+    &--link {
+      width: 100%;
+      background: unset;
     }
   }
 }

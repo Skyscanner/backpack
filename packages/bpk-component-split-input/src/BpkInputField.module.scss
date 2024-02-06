@@ -20,7 +20,7 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
+
   .bpk-input-field {
     display: flex;
     max-width: 3*bpk-spacing-xxl();
@@ -35,4 +35,3 @@
   .bpk-input-field:last-child {
     margin-right: $bpk-spacing-none;
   }
-}

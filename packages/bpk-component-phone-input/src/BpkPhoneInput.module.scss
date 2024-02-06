@@ -18,26 +18,24 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-phone-input {
-    display: flex;
-    column-gap: bpk-spacing-md();
+.bpk-phone-input {
+  display: flex;
+  column-gap: bpk-spacing-md();
 
-    @include bpk-breakpoint-mobile {
-      flex-wrap: wrap;
-
-      &__phone-number {
-        width: 100%;
-        margin-top: bpk-spacing-base();
-      }
-    }
+  @include bpk-breakpoint-mobile {
+    flex-wrap: wrap;
 
     &__phone-number {
-      flex: auto;
+      width: 100%;
+      margin-top: bpk-spacing-base();
     }
+  }
 
-    &__label {
-      margin-bottom: bpk-spacing-md();
-    }
+  &__phone-number {
+    flex: auto;
+  }
+
+  &__label {
+    margin-bottom: bpk-spacing-md();
   }
 }

@@ -18,55 +18,53 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-barchart-bar {
-    @include bpk-themeable-property(
-      fill,
-      --bpk-barchart-bar-background-color,
-      $bpk-line-day
-    );
+.bpk-barchart-bar {
+  @include bpk-themeable-property(
+    fill,
+    --bpk-barchart-bar-background-color,
+    $bpk-line-day
+  );
 
-    &--interactive:not(.bpk-barchart-bar--selected) {
-      cursor: pointer;
+  &--interactive:not(.bpk-barchart-bar--selected) {
+    cursor: pointer;
 
-      @include bpk-hover {
-        @include bpk-themeable-property(
-          fill,
-          --bpk-barchart-bar-hover-background-color,
-          $bpk-core-primary-day
-        );
-      }
-
-      &:active {
-        @include bpk-themeable-property(
-          fill,
-          --bpk-barchart-bar-active-background-color,
-          $bpk-core-accent-day
-        );
-      }
-    }
-
-    &--selected {
+    @include bpk-hover {
       @include bpk-themeable-property(
         fill,
-        --bpk-barchart-bar-selected-background-color,
-        $bpk-core-accent-day
+        --bpk-barchart-bar-hover-background-color,
+        $bpk-core-primary-day
       );
     }
 
-    &__rect {
-      fill: inherit;
-      shape-rendering: auto;
-
-      &--outlier {
-        // We expect this due as this is a dyanmically applied def in BpkBarchartDefs.js
-        /* stylelint-disable-next-line function-url-quotes */
-        mask: url(#bpk-barchart__def-mask);
-      }
+    &:active {
+      @include bpk-themeable-property(
+        fill,
+        --bpk-barchart-bar-active-background-color,
+        $bpk-core-accent-day
+      );
     }
+  }
 
-    &__tappable-area {
-      fill: transparent;
+  &--selected {
+    @include bpk-themeable-property(
+      fill,
+      --bpk-barchart-bar-selected-background-color,
+      $bpk-core-accent-day
+    );
+  }
+
+  &__rect {
+    fill: inherit;
+    shape-rendering: auto;
+
+    &--outlier {
+      // We expect this due as this is a dyanmically applied def in BpkBarchartDefs.js
+      /* stylelint-disable-next-line function-url-quotes */
+      mask: url(#bpk-barchart__def-mask);
     }
+  }
+
+  &__tappable-area {
+    fill: transparent;
   }
 }

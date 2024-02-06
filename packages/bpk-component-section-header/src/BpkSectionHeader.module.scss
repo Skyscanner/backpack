@@ -18,32 +18,30 @@
 
 @import '../../bpk-mixins/index.scss';
 
-@layer bpk-component {
-  .bpk-section-header {
+.bpk-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: transparent;
+
+  &__title-description {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    background-color: transparent;
+    flex-direction: column;
 
-    &__title-description {
-      display: flex;
-      flex-direction: column;
-
-      &--default {
-        color: $bpk-text-primary-day;
-      }
-
-      &--on-dark {
-        color: $bpk-text-on-dark-day;
-      }
+    &--default {
+      color: $bpk-text-primary-day;
     }
 
-    &__title {
-      @include bpk-heading-2;
+    &--on-dark {
+      color: $bpk-text-on-dark-day;
+    }
+  }
 
-      @include bpk-breakpoint-mobile {
-        @include bpk-heading-3;
-      }
+  &__title {
+    @include bpk-heading-2;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-heading-3;
     }
   }
 }
