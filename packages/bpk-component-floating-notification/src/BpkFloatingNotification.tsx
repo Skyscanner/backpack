@@ -57,12 +57,12 @@ const BpkFloatingNotification = (props: Props) => {
   const {
     animateOnEnter = true,
     animateOnExit = true,
-    className = null,
-    ctaText = null,
+    className,
+    ctaText,
     hideAfter = 4000,
     icon: Icon,
     onClick,
-    onExit = null,
+    onExit,
     text,
     ...rest
   } = props;
