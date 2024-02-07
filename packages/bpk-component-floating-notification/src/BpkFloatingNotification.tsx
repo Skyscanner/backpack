@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import type { ReactElement, MouseEvent } from 'react';
+import type { MouseEvent, FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
@@ -41,8 +41,8 @@ export type Props = {
    * The default value is 4 seconds (4000 milliseconds).
    */
   hideAfter?: number;
-  icon?: () => ReactElement;
-  onClick?: (e: MouseEvent) => void;
+  icon?: FunctionComponent;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   /**
    * Execute a function after the component has finished the exit animation.
    */
