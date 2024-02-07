@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactElement } from 'react';
-import { cloneElement, useState } from 'react';
+import { cloneElement, useState, Node } from 'react';
 
 import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
@@ -25,10 +24,10 @@ import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/infor
 import BpkButton from '../../packages/bpk-component-button';
 
 type Props = {
-  children: ReactElement;
+  children: Node,
 };
 
-const AlertContainer = ({ children }: Props): ReactElement => {
+const AlertContainer = ({ children }: Props): Node => {
   const [showAlert, setShowAlert] = useState(false);
 
   return (
