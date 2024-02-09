@@ -16,25 +16,28 @@
  * limitations under the License.
  */
 
-import type { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDown from '../../../bpk-component-icon/sm/chevron-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronUp from '../../../bpk-component-icon/sm/chevron-up';
 import { BUTTON_TYPES, BpkButtonV2 } from '../../../bpk-component-button';
-import { withButtonAlignment, withRtlSupport } from '../../../bpk-component-icon';
+import {
+  withButtonAlignment,
+  withRtlSupport,
+} from '../../../bpk-component-icon';
 
 const AlignedChevronDownIcon = withButtonAlignment(withRtlSupport(ChevronDown));
 const AlignedChevronUpIcon = withButtonAlignment(withRtlSupport(ChevronUp));
 
 type BpkExpandProps = {
-    children: string;
-    collapsed: boolean;
-    hideContent: () => void;
-    setCollapsed: Dispatch<SetStateAction<boolean>>;
-    showContent: () => void;
-}
+  children: ReactElement;
+  collapsed: boolean;
+  hideContent: () => void;
+  setCollapsed: Dispatch<SetStateAction<boolean>>;
+  showContent: () => void;
+};
 
 const BpkExpand = ({
   children,
@@ -59,7 +62,11 @@ const BpkExpand = ({
   };
 
   return (
-    <BpkButtonV2 data-testid="button" type={BUTTON_TYPES.link} onClick={() => buttonOnClick()}>
+    <BpkButtonV2
+      data-testid="button"
+      type={BUTTON_TYPES.link}
+      onClick={() => buttonOnClick()}
+    >
       {children}
       {buttonIcon}
     </BpkButtonV2>

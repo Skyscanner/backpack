@@ -16,6 +16,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import type { ReactElement } from 'react';
+
 import BpkMobileScrollContainer from '../../../bpk-component-mobile-scroll-container';
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -23,7 +25,11 @@ import STYLES from './BpkCardListRail.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCardListRail = ({ children }: { children: JSX.Element[] }) => (
+type BpkCardListRailProps = {
+  children: ReactElement[];
+};
+
+const BpkCardListRail = ({ children }: BpkCardListRailProps) => (
   <BpkMobileScrollContainer>
     <div className={getClassName('bpk-card-list--rail_container')}>
       {children.map((item: JSX.Element) => (

@@ -16,43 +16,23 @@
  * limitations under the License.
  */
 
-import type { Dispatch, ReactElement, SetStateAction } from 'react';
-
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkExpand from '../BpkExpand';
+import {
+  BpkAccessoryTypes,
+  type BpkCardListGridStackProps,
+} from '../common-types';
 
 import STYLES from './BpkCardListStack.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-interface BpkCardListStackBaseProps {
-  children: ReactElement[];
-  expandText: string;
-}
-
-type BpkCardListStackExpandModeProps = BpkCardListStackBaseProps & {
-  accessory: 'expand';
-  showContent: () => void;
-  hideContent: () => void;
-  collapsed: boolean;
-  setCollapsed: Dispatch<SetStateAction<boolean>>;
-};
-
-type BpkCardListStackButtonModeProps = BpkCardListStackBaseProps & {
-  accessory: 'button';
-  onButtonClick: () => void;
-};
-
-type BpkCardListStackProps =
-  | BpkCardListStackExpandModeProps
-  | BpkCardListStackButtonModeProps;
-
-const BpkCardListStack = (props: BpkCardListStackProps) => {
+const BpkCardListStack = (props: BpkCardListGridStackProps) => {
   const { accessory, children } = props;
 
   let accessoryContent;
-  if (accessory === 'expand') {
+  if (accessory === BpkAccessoryTypes.Expand) {
     const { collapsed, expandText, hideContent, setCollapsed, showContent } =
       props;
     accessoryContent = (
@@ -62,18 +42,19 @@ const BpkCardListStack = (props: BpkCardListStackProps) => {
         collapsed={collapsed}
         setCollapsed={setCollapsed}
       >
-        {expandText}
+        <>{expandText}</>
       </BpkExpand>
     );
-  } else if (accessory === 'button') {
-    const { expandText, onButtonClick } = props;
-    <BpkButtonV2 onClick={onButtonClick}>{expandText}</BpkButtonV2>;
+  } else if (accessory === BpkAccessoryTypes.Button) {
+    const { buttonText, onButtonClick } = props;
+    accessoryContent = (
+      <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
+    );
   }
 
   return (
     <>
       <div className={getClassName('bpk-card-list-stack')}>{children}</div>
-
       {accessoryContent}
     </>
   );

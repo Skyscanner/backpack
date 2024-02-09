@@ -16,43 +16,23 @@
  * limitations under the License.
  */
 
-import type { Dispatch, ReactElement, SetStateAction } from 'react';
-
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkExpand from '../BpkExpand';
+import {
+  BpkAccessoryTypes,
+  type BpkCardListGridStackProps,
+} from '../common-types';
 
 import STYLES from './BpkCardListGrid.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-interface BpkCardListGridBaseProps {
-  children: ReactElement[];
-  expandText: string;
-}
-
-type BpkCardListGridExpandModeProps = BpkCardListGridBaseProps & {
-  accessory: 'expand';
-  showContent: () => void;
-  hideContent: () => void;
-  collapsed: boolean;
-  setCollapsed: Dispatch<SetStateAction<boolean>>;
-};
-
-type BpkCardListGridButtonModeProps = BpkCardListGridBaseProps & {
-  accessory: 'button';
-  onButtonClick: () => void;
-};
-
-type BpkCardListGridProps =
-  | BpkCardListGridExpandModeProps
-  | BpkCardListGridButtonModeProps;
-
-const BpkCardListGrid = (props: BpkCardListGridProps) => {
+const BpkCardListGrid = (props: BpkCardListGridStackProps) => {
   const { accessory, children } = props;
 
   let accessoryContent;
-  if (accessory === 'expand') {
+  if (accessory === BpkAccessoryTypes.Expand) {
     const { collapsed, expandText, hideContent, setCollapsed, showContent } =
       props;
     accessoryContent = (
@@ -62,21 +42,19 @@ const BpkCardListGrid = (props: BpkCardListGridProps) => {
         collapsed={collapsed}
         setCollapsed={setCollapsed}
       >
-        {expandText}
+        <>{expandText}</>
       </BpkExpand>
     );
-  } else if (accessory === 'button') {
-    const { expandText, onButtonClick } = props;
+  } else if (accessory === BpkAccessoryTypes.Button) {
+    const { buttonText, onButtonClick } = props;
     accessoryContent = (
-      <BpkButtonV2 onClick={onButtonClick}>{expandText}</BpkButtonV2>
+      <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
     );
   }
 
   return (
     <>
-      <div className={getClassName(`bpk-card-list-grid`, 'flex-wrap')}>
-        {children}
-      </div>
+      <div className={getClassName(`bpk-card-list-grid`)}>{children}</div>
       {accessoryContent}
     </>
   );

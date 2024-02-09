@@ -29,46 +29,27 @@ import BpkCardListGrid from './BpkCardListGrid';
 import BpkCardListRail from './BpkCardListRail';
 import BpkCardListRow from './BpkCardListRow';
 import BpkCardListStack from './BpkCardListStack';
+import type { BpkCardListProps } from './common-types';
 
 const getClassName = cssModules(STYLES);
-
-export type layoutDesktopProps = 'row' | 'grid';
-export type layoutMobileProps = 'rail' | 'stack';
-
 const MAX_ITEMS = 12; // MAX should be 12 for Desktop Grid and Mobile Stack
 const DEFAULT_ITEMS = 3;
 
-type BpkChipGroup = any;
-type BpkAccessoryTypes = 'expand' | 'button' | 'pagination';
-
-export type BpkCardListProps = {
-  title: string;
-  description?: string;
-  buttonText?: string; // For Button in Section Header
-  onButtonClick?: () => void;
-  chipGroup?: BpkChipGroup;
-  cardList: ReactElement[];
-  initiallyShownCards?: number;
-  layoutDesktop: 'row' | 'grid';
-  layoutMobile: 'rail' | 'stack';
-  accessory?: BpkAccessoryTypes;
-  expandText?: string;
-};
-
-const BpkCardList = ({
-  accessory,
-  buttonText,
-  cardList,
-  chipGroup,
-  description,
-  expandText,
-  initiallyShownCards = DEFAULT_ITEMS,
-  layoutDesktop,
-  layoutMobile,
-  onButtonClick,
-  title,
-}: BpkCardListProps) => {
+const BpkCardList = (props: BpkCardListProps) => {
+  const {
+    buttonText,
+    cardList,
+    chipGroup,
+    description,
+    initiallyShownCards = DEFAULT_ITEMS,
+    layoutDesktop,
+    layoutMobile,
+    onButtonClick,
+    title
+  } = props;
   const allCards = cardList.slice(0, MAX_ITEMS);
+
+  // TODO: might be worth putting them under a HOC
   const [visibleCards, setVisibleCards] = useState(
     cardList.slice(0, initiallyShownCards),
   );
@@ -80,9 +61,14 @@ const BpkCardList = ({
 
   const showContent = () => {
     setVisibleCards(cardList);
+
+    onButtonClick?.();
   };
+
   const hideContent = () => {
     setVisibleCards(cardList.slice(0, initiallyShownCards));
+
+    onButtonClick?.();
   };
 
   return (
@@ -107,9 +93,11 @@ const BpkCardList = ({
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
           {(isActive) => {
             if (isActive) {
-              return layoutMobile === 'rail' ? (
-                <BpkCardListRail>{allCards}</BpkCardListRail>
-              ) : (
+              if (layoutMobile === 'rail') {
+                return <BpkCardListRail>{allCards}</BpkCardListRail>;
+              }
+              const {accessory, expandText} = props;
+              return (
                 <BpkCardListStack
                   accessory={accessory}
                   expandText={expandText}
@@ -117,31 +105,38 @@ const BpkCardList = ({
                   hideContent={hideContent}
                   collapsed={collapsed}
                   setCollapsed={setCollapsed}
+                  onButtonClick={onButtonClick}
                 >
                   {cards}
                 </BpkCardListStack>
               );
             }
 
-            return layoutDesktop === 'grid' ? (
+            if (layoutDesktop === 'row') {
+              const {accessory} = props;
+              return (
+                <BpkCardListRow
+                  accessory={accessory}
+                  numberOfCardsToShow={initiallyShownCards}
+                >
+                  {allCards}
+                </BpkCardListRow>
+              );
+            }
+
+            const {accessory, expandText} = props;
+            return (
               <BpkCardListGrid
                 accessory={accessory}
                 expandText={expandText}
-                cards={visibleCards}
                 showContent={showContent}
                 hideContent={hideContent}
                 collapsed={collapsed}
                 setCollapsed={setCollapsed}
+                onButtonClick={onButtonClick}
               >
                 {visibleCards}
               </BpkCardListGrid>
-            ) : (
-              <BpkCardListRow
-                accessory={accessory === 'pagination' && !expandText}
-                numberOfCardsToShow={initiallyShownCards}
-              >
-                {allCards}
-              </BpkCardListRow>
             );
           }}
         </BpkBreakpoint>

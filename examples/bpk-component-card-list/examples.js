@@ -17,11 +17,16 @@
  */
 /* @flow strict */
 
+import { useState } from 'react';
+
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkCard from '../../packages/bpk-component-card';
 import BpkImage from '../../packages/bpk-component-image';
 import BpkCardList from '../../packages/bpk-component-card-list';
-import BpkLink from '../../packages/bpk-component-link';
+// import BpkLink from '../../packages/bpk-component-link';
+// import BpkImage, {
+//   BORDER_RADIUS_STYLES,
+// } from '../../packages/bpk-component-image';
 
 import STYLES from './examples.module.scss';
 
@@ -64,33 +69,34 @@ const DestinationCard = (i) => (
     </div>
   </BpkCard>
 );
-const InternalLinkCard = (i) => (
-  <BpkCard href="/" className={STYLES['bpk-internalLinkCard']} padded={false}>
-    <BpkImage
-      className={STYLES['bpk-image']}
-      aspectRatio={1000 / 1000}
-      src="https://content.skyscnr.com/fa0912c6ed6f75f0607dfc080359a021/amsterdam.jpg?crop=100px:100px&quality=90"
-    />
 
-    <div className={STYLES['bpk-info']}>
-      <BpkText
-        textStyle={TEXT_STYLES.heading5}
-      >{`Amsterdam Schiphol ${i}`}</BpkText>
+// const InternalLinkCard = (i) => (
+//   <BpkCard href="/" className={STYLES['bpk-internalLinkCard']} padded={false}>
+//     <BpkImage
+//       className={STYLES['bpk-image']}
+//       aspectRatio={1000 / 1000}
+//       src="https://content.skyscnr.com/fa0912c6ed6f75f0607dfc080359a021/amsterdam.jpg?crop=100px:100px&quality=90"
+//     />
 
-      <div className={STYLES['bpk-verticalLinks']}>
-        <BpkLink href="#">Flights</BpkLink>
-        <span aria-hidden className={STYLES['bpk-verticalLinks_bullet']}>
-          {'\u2022'}
-        </span>
-        <BpkLink href="#">Hotels</BpkLink>
-        <span aria-hidden className={STYLES['bpk-verticalLinks_bullet']}>
-          {'\u2022'}
-        </span>
-        <BpkLink href="#">Car Hire</BpkLink>
-      </div>
-    </div>
-  </BpkCard>
-);
+//     <div className={STYLES['bpk-info']}>
+//       <BpkText
+//         textStyle={TEXT_STYLES.heading5}
+//       >{`Amsterdam Schiphol ${i}`}</BpkText>
+
+//       <div className={STYLES['bpk-verticalLinks']}>
+//         <BpkLink href="#">Flights</BpkLink>
+//         <span aria-hidden className={STYLES['bpk-verticalLinks_bullet']}>
+//           {'\u2022'}
+//         </span>
+//         <BpkLink href="#">Hotels</BpkLink>
+//         <span aria-hidden className={STYLES['bpk-verticalLinks_bullet']}>
+//           {'\u2022'}
+//         </span>
+//         <BpkLink href="#">Car Hire</BpkLink>
+//       </div>
+//     </div>
+//   </BpkCard>
+// );
 // const InternalLinkBlock = (i) => {
 //   <div className="InternalLinkBlock">
 //     <BpkLink href="#">Alicante Car Hire</BpkLink>
@@ -111,15 +117,6 @@ const GridToRailExample = () => (
     accessory="expand"
     layoutDesktop="grid"
     layoutMobile="rail"
-    title={title}
-  />
-);
-const GridToStackExample = () => (
-  <BpkCardList
-    cardList={cards(InternalLinkCard)}
-    accessory="expand"
-    layoutDesktop="grid"
-    layoutMobile="stack"
     title={title}
   />
 );
@@ -163,6 +160,28 @@ const RowToStackExample = () => (
     title={title}
   />
 );
+
+const GridToStackExample = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const expandText = "Show More";
+  const collapseText = "Show Less";
+
+  const onButtonClick = () => {
+    setCollapsed(!collapsed);
+  }
+
+  return (
+  <BpkCardList
+    cardList={[...Array(14).keys()].map((i) => DealsCard(i))}
+    accessory="expand"
+    layoutDesktop="grid"
+    layoutMobile="stack"
+    title="Card List Component"
+    initiallyShownCards={4}
+    expandText={collapsed ? expandText : collapseText}
+    onButtonClick={onButtonClick}
+  />
+)};
 
 export {
   RowToRailExample,

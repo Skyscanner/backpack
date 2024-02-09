@@ -21,12 +21,13 @@ import {
   useRef,
   useState,
   type MouseEvent,
-  type ReactNode,
+  type ReactElement,
 } from 'react';
 import debounce from 'lodash/debounce';
 
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import { cssModules, isRTL } from '../../../bpk-react-utils';
+import type { BpkAccessoryTypes } from '../common-types';
 
 import STYLES from './BpkCardListRow.module.scss';
 
@@ -34,7 +35,13 @@ const getClassName = cssModules(STYLES);
 const DEBOUNCE_TIME = 150;
 let setVisibleIndexes: (array: number[]) => {};
 
-const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
+type BpkCardListRowProps = {
+  children: ReactElement[];
+  numberOfCardsToShow: number;
+  accessory?: typeof BpkAccessoryTypes.Pagination;
+};
+
+const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: BpkCardListRowProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -150,7 +157,7 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: any) => {
         className={getClassName('bpk-card-list-row__cards')}
         ref={containerRef}
       >
-        {children.map((card: ReactNode, index: number) => (
+        {children.map((card, index) => (
           <div
             key={`card-${index + 1}`}
             className={getClassName('bpk-card-list-row__card')}
