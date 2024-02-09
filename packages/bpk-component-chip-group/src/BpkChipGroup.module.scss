@@ -29,6 +29,7 @@
   gap: bpk-spacing-md();
 
   &--rail {
+    padding: 2 * $bpk-one-pixel-rem 0;
     flex-wrap: nowrap;
   }
 
@@ -69,22 +70,9 @@
   }
 }
 
-.bpk-chip-group-scroller-left-indicator {
-  &--on-dark {
-    @include bpk-scroll-indicator-left($bpk-surface-contrast-day);
-  }
-
-  &--on-image::before {
-    display: none;
-  }
-}
-
-.bpk-chip-group-scroller-right-indicator {
-  &--on-dark {
-    @include bpk-scroll-indicator-right($bpk-surface-contrast-day);
-  }
-
-  &--on-image::after {
+.bpk-chip-group-scroller-indicator {
+  &::before,
+  &::after {
     display: none;
   }
 }

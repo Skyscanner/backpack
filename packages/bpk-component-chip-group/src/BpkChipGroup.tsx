@@ -18,7 +18,7 @@
 import type { ReactElement, ReactNode} from 'react';
 import { useRef, useState } from 'react';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 import BpkSelectableChip, { type BpkSelectableChipProps, CHIP_TYPES } from '../../bpk-component-chip';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
@@ -94,15 +94,7 @@ const BpkChipGroup = ({ _isSingleSelect = false, ariaLabel, ariaLabelledBy, chip
     stickyChip && stickyChip.className,
   );
 
-  const scrollContainerLeftIndicator = getClassName(
-    'bpk-chip-group-scroller-left-indicator',
-    `bpk-chip-group-scroller-left-indicator--${style}`,
-  );
-
-  const scrollContainerRightIndicator = getClassName(
-    'bpk-chip-group-scroller-right-indicator',
-    `bpk-chip-group-scroller-right-indicator--${style}`,
-  );
+  const scrollContainerIndicator = getClassName('bpk-chip-group-scroller-indicator');
 
   const renderChipItem = ({ accessibilityLabel, component: Component = BpkSelectableChip, onClick, selected, text, ...rest }: ChipItem, index: number) => (
     <Component
@@ -122,14 +114,13 @@ const BpkChipGroup = ({ _isSingleSelect = false, ariaLabel, ariaLabelledBy, chip
     </Component>
   );
 
-  // TODO: Fix/remove the scroll indicator when style=CHIP_TYPES.onImage
-  // TODO: Fix shadows + focus indicators being cutoff when type = rail
+  // TODO: Fix focus indicators being cutoff when type = rail
   const wrapRailInScroll = (children: ReactElement) =>
     type === CHIP_GROUP_TYPES.rail ? (
       <BpkMobileScrollContainer
         scrollerRef={(el: HTMLElement) => {scrollContainerRef.current = el}}
-        leadingIndicatorClassName={isRTL() ? scrollContainerRightIndicator : scrollContainerLeftIndicator}
-        trailingIndicatorClassName={isRTL() ? scrollContainerLeftIndicator : scrollContainerRightIndicator}
+        leadingIndicatorClassName={scrollContainerIndicator}
+        trailingIndicatorClassName={scrollContainerIndicator}
       >
         {children}
       </BpkMobileScrollContainer>
