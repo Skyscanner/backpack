@@ -1,0 +1,976 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkCardList should render correctly with grid, rail and button accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with grid, rail and expand accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+      <button
+        class="bpk-button bpk-button--link"
+        data-testid="button"
+        type="button"
+      >
+        Expand
+        <span
+          style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-icon--rtl-support"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with grid, rail and no accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with grid, stack and button accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with grid, stack and expand accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+      <button
+        class="bpk-button bpk-button--link"
+        data-testid="button"
+        type="button"
+      >
+        Expand
+        <span
+          style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-icon--rtl-support"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with grid, stack and no accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with header, grid, rail and expand accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+      <button
+        class="bpk-button bpk-button--link"
+        data-testid="button"
+        type="button"
+      >
+        Expand
+        <span
+          style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-icon--rtl-support"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with header, grid, rail and no accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with header, grid, stack and button accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with header, grid, stack and expand accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+      <button
+        class="bpk-button bpk-button--link"
+        data-testid="button"
+        type="button"
+      >
+        Expand
+        <span
+          style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-icon--rtl-support"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with header, grid, stack and no accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-grid"
+      >
+        <div>
+          Card 1
+        </div>
+        <div>
+          Card 2
+        </div>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with header, row, rail and no accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-row"
+      >
+        <div
+          class="bpk-card-list-row__cards"
+          data-testid="container"
+        >
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 1
+            </div>
+          </div>
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with header, row, rail and pagination accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-row"
+      >
+        <div
+          class="bpk-card-list-row__cards"
+          data-testid="container"
+        >
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 1
+            </div>
+          </div>
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 2
+            </div>
+          </div>
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with header, row, stack and no accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+      <button
+        class="bpk-button bpk-button--primary"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-row"
+      >
+        <div
+          class="bpk-card-list-row__cards"
+          data-testid="container"
+        >
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 1
+            </div>
+          </div>
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with row, rail and no accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-row"
+      >
+        <div
+          class="bpk-card-list-row__cards"
+          data-testid="container"
+        >
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 1
+            </div>
+          </div>
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with row, rail and pagination accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-row"
+      >
+        <div
+          class="bpk-card-list-row__cards"
+          data-testid="container"
+        >
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 1
+            </div>
+          </div>
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 2
+            </div>
+          </div>
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCardList should render correctly with row, stack and no accessory 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card-list"
+  >
+    <div
+      class="bpk-section-header"
+    >
+      <div
+        class="bpk-section-header__title-description bpk-section-header__title-description--default"
+      >
+        <h2
+          class="bpk-text bpk-text--body-default bpk-section-header__title"
+        >
+          Title
+        </h2>
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Description
+        </span>
+      </div>
+    </div>
+    <div
+      class="bpk-card-list--card-list"
+    >
+      <div
+        class="bpk-card-list-row"
+      >
+        <div
+          class="bpk-card-list-row__cards"
+          data-testid="container"
+        >
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 1
+            </div>
+          </div>
+          <div
+            class="bpk-card-list-row__card"
+            style="width: calc(100% / 3);"
+          >
+            <div>
+              Card 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

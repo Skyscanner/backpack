@@ -23,11 +23,6 @@
   flex-direction: column;
   gap: bpk-spacing-lg();
 
-  &--chip-group {
-    display: flex;
-    gap: bpk-spacing-md();
-  }
-
   &--card-list {
     display: flex;
     flex-direction: column;

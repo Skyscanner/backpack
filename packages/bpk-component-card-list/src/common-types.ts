@@ -21,7 +21,6 @@ import type { Dispatch, ReactElement, SetStateAction } from 'react';
 export type layoutDesktopProps = 'row' | 'grid';
 export type layoutMobileProps = 'rail' | 'stack';
 
-type BpkChipGroup = ReactElement;
 export const BpkAccessoryTypes = {
   Expand: 'expand',
   Button: 'button',
@@ -31,7 +30,6 @@ export const BpkAccessoryTypes = {
 type BpkCardListBaseProps = {
   title: string;
   description?: string;
-  chipGroup?: BpkChipGroup;
   cardList: ReactElement[];
   initiallyShownCards?: number;
   layoutDesktop: layoutDesktopProps;
@@ -191,173 +189,4 @@ const BpkCardListGridStackTest4: BpkCardListGridStackProps = {
   setCollapsed: () => {},
   accessory: undefined,
 
-};
-
-// Test cases
-// TODO: Remove
-// base + grid + stack + expand
-const test1: BpkCardListProps = {
-  title: 'title',
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'stack',
-  accessory: BpkAccessoryTypes.Expand,
-  expandText: 'expand',
-  onButtonClick: () => {},
-};
-
-// base + grid + stack + button
-const test2: BpkCardListProps = {
-  title: 'title',
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'stack',
-  accessory: BpkAccessoryTypes.Button,
-  buttonText: 'button',
-  onButtonClick: () => {},
-};
-
-// base + grid + stack + no accessory
-const test3: BpkCardListProps = {
-  title: 'title',
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'stack',
-};
-
-// base + grid + rail + expand
-const test4: BpkCardListProps = {
-  title: 'title',
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'rail',
-  accessory: BpkAccessoryTypes.Expand,
-  expandText: 'expand',
-  onButtonClick: () => {},
-};
-
-// base + grid + rail + button
-const test5: BpkCardListProps = {
-  title: 'title',
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'rail',
-  accessory: BpkAccessoryTypes.Button,
-  buttonText: 'button',
-  onButtonClick: () => {},
-};
-
-// base + grid + rail + no accessory
-const test6: BpkCardListProps = {
-  title: 'title',
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'rail',
-};
-
-// base + row + stack + no accessory
-const test7: BpkCardListProps = {
-  title: 'title',
-  cardList: [],
-  layoutDesktop: 'row',
-  layoutMobile: 'stack',
-};
-
-// base + row + rail + pagination
-const test8: BpkCardListProps = {
-  title: 'title',
-  cardList: [],
-  layoutDesktop: 'row',
-  layoutMobile: 'rail',
-  accessory: BpkAccessoryTypes.Pagination,
-};
-
-// base + row + rail + no accessory
-const test9: BpkCardListProps = {
-  title: 'title',
-  cardList: [],
-  layoutDesktop: 'row',
-  layoutMobile: 'rail',
-};
-
-// base + header + grid + stack + expand
-const test10: BpkCardListProps = {
-  title: 'title',
-  description: 'description',
-  buttonText: 'button',
-  onButtonClick: () => {},
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'stack',
-  accessory: BpkAccessoryTypes.Expand,
-  expandText: 'expand',
-};
-
-// base + header + grid + stack + no accessory
-const test11: BpkCardListProps = {
-  title: 'title',
-  description: 'description',
-  buttonText: 'button',
-  onButtonClick: () => {},
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'stack',
-};
-
-// base + header + grid + rail + expand
-const test12: BpkCardListProps = {
-  title: 'title',
-  description: 'description',
-  buttonText: 'button',
-  onButtonClick: () => {},
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'rail',
-  accessory: BpkAccessoryTypes.Expand,
-  expandText: 'expand',
-};
-
-// base + header + grid + rail + no accessory
-const test13: BpkCardListProps = {
-  title: 'title',
-  description: 'description',
-  buttonText: 'button',
-  onButtonClick: () => {},
-  cardList: [],
-  layoutDesktop: 'grid',
-  layoutMobile: 'rail',
-};
-
-// base + header + row + stack + no accessory
-const test14: BpkCardListProps = {
-  title: 'title',
-  description: 'description',
-  buttonText: 'button',
-  onButtonClick: () => {},
-  cardList: [],
-  layoutDesktop: 'row',
-  layoutMobile: 'stack',
-};
-
-// base + header + row + rail + pagination
-const test15: BpkCardListProps = {
-  title: 'title',
-  description: 'description',
-  buttonText: 'button',
-  onButtonClick: () => {},
-  cardList: [],
-  layoutDesktop: 'row',
-  layoutMobile: 'rail',
-  accessory: BpkAccessoryTypes.Pagination,
-};
-
-// base + header + row + rail + no accessory
-const test16: BpkCardListProps = {
-  title: 'title',
-  description: 'description',
-  buttonText: 'button',
-  onButtonClick: () => {},
-  cardList: [],
-  layoutDesktop: 'row',
-  layoutMobile: 'rail',
 };

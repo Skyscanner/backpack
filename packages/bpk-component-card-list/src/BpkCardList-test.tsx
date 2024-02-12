@@ -20,7 +20,101 @@ import { render } from '@testing-library/react';
 import BpkCardList from './BpkCardList';
 
 describe('BpkCardList', () => {
-  it('should render correctly', () => {
+  it('should render correctly with grid, stack and no accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        layoutDesktop="grid"
+        layoutMobile="stack"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with grid, stack and expand accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        initiallyShownCards={2}
+        accessory='expand'
+        expandText='Expand'
+        onButtonClick={jest.fn()}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with grid, stack and button accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        initiallyShownCards={2}
+        accessory='button'
+        buttonText='Button'
+        onButtonClick={jest.fn()}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with grid, rail and no accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        layoutDesktop="grid"
+        layoutMobile="rail"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with grid, rail and expand accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        layoutDesktop="grid"
+        layoutMobile="rail"
+        initiallyShownCards={2}
+        accessory='expand'
+        expandText='Expand'
+        onButtonClick={jest.fn()}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with grid, rail and button accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        layoutDesktop="grid"
+        layoutMobile="rail"
+        initiallyShownCards={2}
+        accessory='button'
+        buttonText='Button'
+        onButtonClick={jest.fn()}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with row, stack and no accessory', () => {
     const { asFragment } = render(
       <BpkCardList
         title="Title"
@@ -28,6 +122,145 @@ describe('BpkCardList', () => {
         cardList={[<div>Card 1</div>, <div>Card 2</div>]}
         layoutDesktop="row"
         layoutMobile="stack"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with row, rail and pagination accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        layoutDesktop="row"
+        layoutMobile="rail"
+        accessory='pagination'
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with row, rail and no accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        layoutDesktop="row"
+        layoutMobile="rail"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with header, grid, stack and expand accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        buttonText="Button"
+        onButtonClick={jest.fn()}
+        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        initiallyShownCards={2}
+        accessory='expand'
+        expandText='Expand'
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with header, grid, stack and no accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        buttonText="Button"
+        onButtonClick={jest.fn()}
+        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        layoutDesktop="grid"
+        layoutMobile="stack"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with header, grid, rail and expand accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        buttonText="Button"
+        onButtonClick={jest.fn()}
+        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        layoutDesktop="grid"
+        layoutMobile="rail"
+        initiallyShownCards={2}
+        accessory='expand'
+        expandText='Expand'
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with header, grid, rail and no accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        buttonText="Button"
+        onButtonClick={jest.fn()}
+        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        layoutDesktop="grid"
+        layoutMobile="rail"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with header, row, stack and no accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        buttonText="Button"
+        onButtonClick={jest.fn()}
+        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        layoutDesktop="row"
+        layoutMobile="stack"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with header, row, rail and pagination accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        buttonText="Button"
+        onButtonClick={jest.fn()}
+        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        layoutDesktop="row"
+        layoutMobile="rail"
+        accessory='pagination'
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with header, row, rail and no accessory', () => {
+    const { asFragment } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        buttonText="Button"
+        onButtonClick={jest.fn()}
+        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        layoutDesktop="row"
+        layoutMobile="rail"
       />,
     );
     expect(asFragment()).toMatchSnapshot();

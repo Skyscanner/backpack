@@ -39,7 +39,6 @@ const BpkCardList = (props: BpkCardListProps) => {
   const {
     buttonText,
     cardList,
-    chipGroup,
     description,
     initiallyShownCards = DEFAULT_ITEMS,
     layoutDesktop,
@@ -71,23 +70,17 @@ const BpkCardList = (props: BpkCardListProps) => {
     onButtonClick?.();
   };
 
+  const button = buttonText && (
+    <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
+  );
+  
   return (
     <div className={getClassName('bpk-card-list')}>
       <BpkSectionHeader
         title={title}
         description={description}
-        button={
-          buttonText && (
-            <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
-          )
-        }
+        button={button}
       />
-
-      {chipGroup && (
-        <div className={getClassName(`bpk-card-list--chip-group`)}>
-          {chipGroup}
-        </div>
-      )}
 
       <div className={getClassName('bpk-card-list--card-list')}>
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
