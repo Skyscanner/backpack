@@ -8,7 +8,7 @@ defaults:
   run:
     shell: bash -l {0}
 
-env: 
+env:
   CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
 
@@ -30,7 +30,7 @@ jobs:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Install dependencies
         if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
@@ -54,8 +54,8 @@ jobs:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
-      
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+
       - name: Upload dist-storybook to Cache
         uses: actions/cache@v4.0.0
         id: storybook-dist-cache
@@ -63,7 +63,7 @@ jobs:
           path: |
             dist-storybook/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
-      
+
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
         run: |
@@ -87,7 +87,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: main
-    
+
     - uses: actions/setup-node@v4
       with:
         node-version-file: ".nvmrc"
@@ -100,8 +100,8 @@ jobs:
         path: |
           node_modules/
           packages/node_modules/
-        key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
-    
+        key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+
     - run: npm run transpile
 
     - name: Publish NPM package
