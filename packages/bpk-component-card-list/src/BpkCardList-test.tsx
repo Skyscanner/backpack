@@ -23,14 +23,13 @@ describe('BpkCardList', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
       <BpkCardList
-        cardList={[]}
+        title="Title"
+        description="Description"
+        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
         layoutDesktop="row"
-        layoutMobile="rail"
-        title="Card List Component"
+        layoutMobile="stack"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
-
-  // TODO: test cases
 });

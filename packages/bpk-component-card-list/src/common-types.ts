@@ -38,11 +38,6 @@ type BpkCardListBaseProps = {
   layoutMobile: layoutMobileProps;
 };
 
-type HeaderProps = {
-  buttonText: string;
-  onButtonClick: () => void;
-};
-
 type GridProps = {
   layoutDesktop: 'grid';
   accessory?: typeof BpkAccessoryTypes.Expand | typeof BpkAccessoryTypes.Button;
@@ -62,27 +57,68 @@ type RailProps = {
   layoutMobile: 'rail';
 };
 
-type PaginationProps = {
-  accessory: typeof BpkAccessoryTypes.Pagination;
-};
-
-type ExpandProps = {
-  accessory: typeof BpkAccessoryTypes.Expand;
-  expandText: string;
-  onButtonClick?: () => void;
-};
-
 type ButtonProps = {
+  buttonText: string;
+  onButtonClick: () => void;
+};
+
+type NoAccessory = {
+  accessory?: undefined;
+};
+
+type ButtonAccessory = {
   accessory: typeof BpkAccessoryTypes.Button;
   buttonText: string;
   onButtonClick: () => void;
 };
 
+type PaginationAccessory = {
+  accessory: typeof BpkAccessoryTypes.Pagination;
+};
+
+type ExpandAccessory = {
+  accessory: typeof BpkAccessoryTypes.Expand;
+  expandText: string;
+  onButtonClick: () => void;
+};
+
+type DontGiveMe<T extends {}, O extends {}> = {
+  [Key in Exclude<keyof T, keyof O>]?: undefined;
+};
+
+type MaybeWithButtonProps<T> = T extends {}
+  ? (DontGiveMe<ButtonProps, T> & T) | (T & ButtonProps)
+  : never;
+
 export type BpkCardListProps = BpkCardListBaseProps &
-  (HeaderProps | ButtonProps | null | undefined) &
   (GridProps | RowProps) &
   (StackProps | RailProps) &
-  (PaginationProps | ExpandProps | null | undefined);
+  MaybeWithButtonProps<
+    NoAccessory | ButtonAccessory | PaginationAccessory | ExpandAccessory
+  >;
+/*
+  (
+    | (NoAccessory | ButtonAccessory | PaginationAccessory | ExpandAccessory)
+    | (NoAccessory & ButtonProps)
+    | (ButtonAccessory & ButtonProps)
+    | (PaginationAccessory & ButtonProps)
+    | (ExpandAccessory & ButtonProps)
+  );
+  */
+
+type VeryExplicitBpkCardListProps =
+  | (BpkCardListBaseProps & GridProps & RailProps & ButtonAccessory)
+  | (BpkCardListBaseProps & GridProps & RailProps & ExpandAccessory)
+  | (BpkCardListBaseProps & GridProps & RailProps & PaginationAccessory)
+  | (BpkCardListBaseProps & GridProps & RailProps)
+  | (BpkCardListBaseProps & GridProps & StackProps & ButtonAccessory)
+  | (BpkCardListBaseProps & GridProps & StackProps & ExpandAccessory)
+  | (BpkCardListBaseProps & GridProps & StackProps)
+  | (BpkCardListBaseProps & RowProps & RailProps & ExpandAccessory)
+  | (BpkCardListBaseProps & RowProps & RailProps & PaginationAccessory)
+  | (BpkCardListBaseProps & RowProps & RailProps)
+  | (BpkCardListBaseProps & RowProps & StackProps & ExpandAccessory)
+  | (BpkCardListBaseProps & RowProps & StackProps)
 
 interface BpkCardListGridStackBaseProps {
   children: ReactElement[];
@@ -107,25 +143,71 @@ type BpkCardListGridStackButtonModeProps = {
 export type BpkCardListGridStackProps = BpkCardListGridStackBaseProps &
   (
     | BpkCardListGridStackExpandModeProps
-    | BpkCardListGridStackButtonModeProps
-    | null
-    | undefined
+    | (BpkCardListGridStackButtonModeProps & { expandText?: undefined })
+    | (NoAccessory & { onButtonClick?: undefined; expandText?: undefined })
   );
 
 // Test cases
 // TODO: Remove
+// BpkCardListGridStackProps
+// base + expand
+const BpkCardListGridStackTest1: BpkCardListGridStackProps = {
+  children: [],
+  showContent: () => {},
+  hideContent: () => {},
+  collapsed: false,
+  setCollapsed: () => {},
+  accessory: BpkAccessoryTypes.Expand,
+  expandText: 'expand',
+  onButtonClick: () => {},
+};
+
+// base + button
+const BpkCardListGridStackTest2: BpkCardListGridStackProps = {
+  children: [],
+  showContent: () => {},
+  hideContent: () => {},
+  collapsed: false,
+  setCollapsed: () => {},
+  accessory: BpkAccessoryTypes.Button,
+  buttonText: 'button',
+  onButtonClick: () => {},
+};
+
+// base + no accessory
+const BpkCardListGridStackTest3: BpkCardListGridStackProps = {
+  children: [],
+  showContent: () => {},
+  hideContent: () => {},
+  collapsed: false,
+  setCollapsed: () => {},
+};
+
+const BpkCardListGridStackTest4: BpkCardListGridStackProps = {
+  children: [],
+  showContent: () => {},
+  hideContent: () => {},
+  collapsed: false,
+  setCollapsed: () => {},
+  accessory: undefined,
+
+};
+
+// Test cases
+// TODO: Remove
 // base + grid + stack + expand
-const test1 = {
+const test1: BpkCardListProps = {
   title: 'title',
   cardList: [],
   layoutDesktop: 'grid',
   layoutMobile: 'stack',
   accessory: BpkAccessoryTypes.Expand,
   expandText: 'expand',
+  onButtonClick: () => {},
 };
 
 // base + grid + stack + button
-const test2 = {
+const test2: BpkCardListProps = {
   title: 'title',
   cardList: [],
   layoutDesktop: 'grid',
@@ -136,7 +218,7 @@ const test2 = {
 };
 
 // base + grid + stack + no accessory
-const test3 = {
+const test3: BpkCardListProps = {
   title: 'title',
   cardList: [],
   layoutDesktop: 'grid',
@@ -144,17 +226,18 @@ const test3 = {
 };
 
 // base + grid + rail + expand
-const test4 = {
+const test4: BpkCardListProps = {
   title: 'title',
   cardList: [],
   layoutDesktop: 'grid',
   layoutMobile: 'rail',
   accessory: BpkAccessoryTypes.Expand,
   expandText: 'expand',
+  onButtonClick: () => {},
 };
 
 // base + grid + rail + button
-const test5 = {
+const test5: BpkCardListProps = {
   title: 'title',
   cardList: [],
   layoutDesktop: 'grid',
@@ -165,7 +248,7 @@ const test5 = {
 };
 
 // base + grid + rail + no accessory
-const test6 = {
+const test6: BpkCardListProps = {
   title: 'title',
   cardList: [],
   layoutDesktop: 'grid',
@@ -173,7 +256,7 @@ const test6 = {
 };
 
 // base + row + stack + no accessory
-const test7 = {
+const test7: BpkCardListProps = {
   title: 'title',
   cardList: [],
   layoutDesktop: 'row',
@@ -181,7 +264,7 @@ const test7 = {
 };
 
 // base + row + rail + pagination
-const test8 = {
+const test8: BpkCardListProps = {
   title: 'title',
   cardList: [],
   layoutDesktop: 'row',
@@ -190,7 +273,7 @@ const test8 = {
 };
 
 // base + row + rail + no accessory
-const test9 = {
+const test9: BpkCardListProps = {
   title: 'title',
   cardList: [],
   layoutDesktop: 'row',
@@ -198,7 +281,7 @@ const test9 = {
 };
 
 // base + header + grid + stack + expand
-const test10 = {
+const test10: BpkCardListProps = {
   title: 'title',
   description: 'description',
   buttonText: 'button',
@@ -211,7 +294,7 @@ const test10 = {
 };
 
 // base + header + grid + stack + no accessory
-const test11 = {
+const test11: BpkCardListProps = {
   title: 'title',
   description: 'description',
   buttonText: 'button',
@@ -222,7 +305,7 @@ const test11 = {
 };
 
 // base + header + grid + rail + expand
-const test12 = {
+const test12: BpkCardListProps = {
   title: 'title',
   description: 'description',
   buttonText: 'button',
@@ -235,7 +318,7 @@ const test12 = {
 };
 
 // base + header + grid + rail + no accessory
-const test13 = {
+const test13: BpkCardListProps = {
   title: 'title',
   description: 'description',
   buttonText: 'button',
@@ -246,7 +329,7 @@ const test13 = {
 };
 
 // base + header + row + stack + no accessory
-const test14 = {
+const test14: BpkCardListProps = {
   title: 'title',
   description: 'description',
   buttonText: 'button',
@@ -257,7 +340,7 @@ const test14 = {
 };
 
 // base + header + row + rail + pagination
-const test15 = {
+const test15: BpkCardListProps = {
   title: 'title',
   description: 'description',
   buttonText: 'button',
@@ -269,7 +352,7 @@ const test15 = {
 };
 
 // base + header + row + rail + no accessory
-const test16 = {
+const test16: BpkCardListProps = {
   title: 'title',
   description: 'description',
   buttonText: 'button',

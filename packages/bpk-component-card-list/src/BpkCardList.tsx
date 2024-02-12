@@ -29,7 +29,7 @@ import BpkCardListGrid from './BpkCardListGrid';
 import BpkCardListRail from './BpkCardListRail';
 import BpkCardListRow from './BpkCardListRow';
 import BpkCardListStack from './BpkCardListStack';
-import type { BpkCardListProps } from './common-types';
+import { BpkAccessoryTypes, type BpkCardListProps } from './common-types';
 
 const getClassName = cssModules(STYLES);
 const MAX_ITEMS = 12; // MAX should be 12 for Desktop Grid and Mobile Stack
@@ -45,7 +45,7 @@ const BpkCardList = (props: BpkCardListProps) => {
     layoutDesktop,
     layoutMobile,
     onButtonClick,
-    title
+    title,
   } = props;
   const allCards = cardList.slice(0, MAX_ITEMS);
 
@@ -96,16 +96,29 @@ const BpkCardList = (props: BpkCardListProps) => {
               if (layoutMobile === 'rail') {
                 return <BpkCardListRail>{allCards}</BpkCardListRail>;
               }
-              const {accessory, expandText} = props;
+              const { accessory } = props;
+
+              let modeProps = {};
+              if (accessory === BpkAccessoryTypes.Expand) {
+                modeProps = {
+                  accessory,
+                  expandText: props.expandText,
+                  onButtonClick: props.onButtonClick,
+                };
+              } else if (accessory === BpkAccessoryTypes.Button) {
+                modeProps = {
+                  accessory,
+                  buttonText: props.buttonText,
+                  onButtonClick: props.onButtonClick,
+                };
+              }
               return (
                 <BpkCardListStack
-                  accessory={accessory}
-                  expandText={expandText}
                   showContent={showContent}
                   hideContent={hideContent}
                   collapsed={collapsed}
                   setCollapsed={setCollapsed}
-                  onButtonClick={onButtonClick}
+                  {...modeProps}
                 >
                   {cards}
                 </BpkCardListStack>
@@ -113,7 +126,7 @@ const BpkCardList = (props: BpkCardListProps) => {
             }
 
             if (layoutDesktop === 'row') {
-              const {accessory} = props;
+              const { accessory } = props;
               return (
                 <BpkCardListRow
                   accessory={accessory}
@@ -124,16 +137,28 @@ const BpkCardList = (props: BpkCardListProps) => {
               );
             }
 
-            const {accessory, expandText} = props;
+            const { accessory } = props;
+            let accessoryProps = {};
+            if (accessory === BpkAccessoryTypes.Expand) {
+              accessoryProps = {
+                accessory,
+                expandText: props.expandText,
+                onButtonClick: props.onButtonClick,
+              };
+            } else if (accessory === BpkAccessoryTypes.Button) {
+              accessoryProps = {
+                accessory,
+                buttonText: props.buttonText,
+                onButtonClick: props.onButtonClick,
+              };
+            }
             return (
               <BpkCardListGrid
-                accessory={accessory}
-                expandText={expandText}
                 showContent={showContent}
                 hideContent={hideContent}
                 collapsed={collapsed}
                 setCollapsed={setCollapsed}
-                onButtonClick={onButtonClick}
+                {...accessoryProps}
               >
                 {visibleCards}
               </BpkCardListGrid>
