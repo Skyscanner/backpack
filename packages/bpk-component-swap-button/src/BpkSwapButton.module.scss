@@ -19,8 +19,6 @@
 @import '../../bpk-mixins/index.scss';
 
 .bpk-swap-button {
-  width: bpk-spacing-xxl();
-  height: bpk-spacing-xxl();
   transform: translateY(-50%) rotate(90deg);
 
   @include bpk-breakpoint-small-tablet {
@@ -35,8 +33,8 @@
 
   &__button {
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: bpk-spacing-xxl();
+    height: bpk-spacing-xxl();
     justify-content: center;
     align-items: center;
     transition: transform $bpk-duration-base;
@@ -52,6 +50,10 @@
       background-color: $bpk-surface-highlight-day;
     }
 
+    span {
+      line-height: $bpk-line-height-xs;
+    }
+
     &--canvas-default {
       border: $bpk-border-size-xl solid $bpk-canvas-day;
       background-color: $bpk-canvas-contrast-day;
@@ -60,10 +62,5 @@
     &--canvas-contrast {
       border: $bpk-border-size-xl solid $bpk-canvas-contrast-day;
     }
-  }
-
-  &__icon {
-    max-width: bpk-spacing-base();
-    max-height: bpk-spacing-base();
   }
 }
