@@ -20,6 +20,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
 
 import BpkFloatingNotification from './BpkFloatingNotification';
@@ -30,7 +31,7 @@ const props = {
 
 describe('BpkFloatingNotification accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkFloatingNotification />);
+    const { container } = render(<BpkFloatingNotification {...props} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

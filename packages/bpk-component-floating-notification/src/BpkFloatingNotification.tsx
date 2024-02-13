@@ -17,12 +17,13 @@
  */
 /* @flow strict */
 
-import PropTypes from 'prop-types';
-import { useEffect, useState, ReactElement } from 'react';
+import type { MouseEvent, FunctionComponent } from 'react';
+import { useEffect, useState } from 'react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { CSSTransition } from 'react-transition-group';
 
 import BpkAriaLive from '../../bpk-component-aria-live';
-import {BUTTON_TYPES, BpkButtonV2} from '../../bpk-component-button';
+import { BUTTON_TYPES, BpkButtonV2 } from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -30,34 +31,35 @@ import STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  animateOnEnter: ?boolean,
-  animateOnExit: ?boolean,
-  className: ?string,
-  ctaText: ?string,
+export type Props = {
+  animateOnEnter?: boolean;
+  animateOnExit?: boolean;
+  className?: string;
+  ctaText?: string;
   /**
    * This prop controls the amount of time that the notification stays visible before the exit animation begins.
    * The default value is 4 seconds (4000 milliseconds).
    */
-  hideAfter: ?number,
-  icon: ?() => ReactElement,
-  onClick: ?() => void,
+  hideAfter?: number;
+  icon?: FunctionComponent;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   /**
    * Execute a function after the component has finished the exit animation.
    */
-  onExit: ?() => void,
-  text: string,
+  onExit?: () => void;
+  text: string;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkFloatingNotification = (props: Props) => {
   const [showMessage, setShowMessage] = useState(true);
 
   const {
-    animateOnEnter,
-    animateOnExit,
+    animateOnEnter = true,
+    animateOnExit = true,
     className,
     ctaText,
-    hideAfter,
+    hideAfter = 4000,
     icon: Icon,
     onClick,
     onExit,
@@ -68,7 +70,7 @@ const BpkFloatingNotification = (props: Props) => {
   const classNames = getClassName('bpk-floating-notification', className);
 
   useEffect(() => {
-    let timer;
+    let timer: ReturnType<typeof setTimeout>;
     if (hideAfter) {
       timer = setTimeout(() => setShowMessage(false), hideAfter);
     }
@@ -116,29 +118,6 @@ const BpkFloatingNotification = (props: Props) => {
       </div>
     </CSSTransition>
   );
-};
-
-BpkFloatingNotification.propTypes = {
-  animateOnEnter: PropTypes.bool,
-  animateOnExit: PropTypes.bool,
-  className: PropTypes.string,
-  ctaText: PropTypes.string,
-  hideAfter: PropTypes.number,
-  icon: PropTypes.ReactElement,
-  onClick: PropTypes.func,
-  onExit: PropTypes.func,
-  text: PropTypes.string.isRequired,
-};
-
-BpkFloatingNotification.defaultProps = {
-  animateOnEnter: true,
-  animateOnExit: true,
-  className: null,
-  ctaText: null,
-  hideAfter: 4000,
-  icon: null,
-  onClick: null,
-  onExit: null,
 };
 
 export default BpkFloatingNotification;
