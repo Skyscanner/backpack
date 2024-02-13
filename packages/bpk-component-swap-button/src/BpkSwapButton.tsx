@@ -63,10 +63,11 @@ const BpkSwapButton = ( props: Props ) => {
           handleRotation();
         }}
       >
-        <SwapVertical className={getClassName('bpk-swap-button__icon')} />
+        <span>
+          <SwapVertical />
+        </span>
       </button>
     </div>
   );
 };
 export default BpkSwapButton;
-
