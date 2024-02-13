@@ -19,6 +19,12 @@
 @import '../../bpk-mixins/index.scss';
 
 .bpk-swap-button {
+  transform: rotate(90deg);
+
+  @include bpk-breakpoint-small-tablet {
+    transform: rotate(0deg);
+  }
+
   :focus-visible {
     box-shadow:
       0 0 0 (bpk-spacing-sm() / 2) $bpk-surface-elevated-day,
@@ -31,14 +37,12 @@
     height: bpk-spacing-xxl();
     justify-content: center;
     align-items: center;
-    transform: rotate(90deg);
     transition: transform $bpk-duration-base;
     border: $bpk-border-size-xl solid $bpk-core-primary-day;
     border-radius: 50%;
     background-color: $bpk-surface-default-day;
 
     @include bpk-breakpoint-small-tablet {
-      transform: rotate(0deg);
       border: $bpk-border-size-lg solid $bpk-core-primary-day;
     }
 
