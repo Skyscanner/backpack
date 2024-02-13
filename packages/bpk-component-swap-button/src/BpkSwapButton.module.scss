@@ -31,7 +31,7 @@
     height: bpk-spacing-xxl();
     justify-content: center;
     align-items: center;
-    transform: translateY(-50%) rotate(90deg);
+    transform: rotate(90deg);
     transition: transform $bpk-duration-base;
     border: $bpk-border-size-xl solid $bpk-core-primary-day;
     border-radius: 50%;
