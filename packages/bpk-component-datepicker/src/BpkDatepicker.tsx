@@ -93,7 +93,7 @@ type Props = {
   selectionConfiguration?: SelectionConfiguration;
   initiallyFocusedDate?: Date;
   renderTarget?: null | HTMLElement | (() => null | HTMLElement);
-  isOpen: boolean;
+  isOpen?: boolean;
   valid?: boolean;
   // Disabling this as if we set a default property for this value it causes the internal onClose function to stop working for default setup
   onClose?: () => void;
@@ -135,7 +135,7 @@ class BpkDatepicker extends Component<Props, State> {
     super(props);
 
     this.state = {
-      isOpen: props.isOpen,
+      isOpen: props.isOpen!,
     };
     this.inputRef = createRef();
   }
@@ -287,7 +287,6 @@ class BpkDatepicker extends Component<Props, State> {
       initiallyFocusedDate,
       inputComponent,
       inputProps,
-      isOpen,
       markOutsideDays,
       markToday,
       maxDate,
@@ -306,7 +305,7 @@ class BpkDatepicker extends Component<Props, State> {
     // The following props are not used in render
     delete rest.onDateSelect;
     delete rest.onOpenChange;
-    // delete rest.isOpen;
+    delete rest.isOpen;
 
     const input = inputComponent || (
       <div
@@ -360,7 +359,7 @@ class BpkDatepicker extends Component<Props, State> {
                 id={`${id}-modal`}
                 ariaLabelledby={title}
                 closeLabel={closeButtonText}
-                isOpen={this.state.isOpen}
+                isOpen
                 onClose={this.props.onClose || this.onClose}
                 title={title}
               >
