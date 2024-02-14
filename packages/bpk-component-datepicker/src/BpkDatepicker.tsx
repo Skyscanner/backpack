@@ -135,7 +135,7 @@ class BpkDatepicker extends Component<Props, State> {
     super(props);
 
     this.state = {
-      isOpen: props.isOpen!,
+      isOpen: true,
     };
     this.inputRef = createRef();
   }
@@ -359,7 +359,7 @@ class BpkDatepicker extends Component<Props, State> {
                 id={`${id}-modal`}
                 ariaLabelledby={title}
                 closeLabel={closeButtonText}
-                isOpen
+                isOpen={this.state.isOpen}
                 onClose={this.props.onClose || this.onClose}
                 title={title}
               >
