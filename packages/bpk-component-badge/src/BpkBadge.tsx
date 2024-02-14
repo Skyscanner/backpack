@@ -37,27 +37,25 @@ export type Props = {
   type?: BadgeType;
   docked?: 'right' | 'left' | null;
   centered?: boolean;
-  className?: string | null;
   children: string | ReactNode;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkBadge = ({
   centered = false,
-  className = null,
   docked = null,
   type = BADGE_TYPES.normal,
   ...rest
 }: Props) => {
-  let classNames = STYLES[type];
+  let className = STYLES[type];
   if(centered){
-    classNames = STYLES[`${type}-centered`];
+    className = STYLES[`${type}-centered`];
   }
   if(docked){
-    classNames = STYLES[`${type}-${docked}`];
+    className = STYLES[`${type}-${docked}`];
   }
 
-  return <span className={classNames} {...rest} />;
+  return <span className={className} {...rest} />;
 };
 
 export default BpkBadge;

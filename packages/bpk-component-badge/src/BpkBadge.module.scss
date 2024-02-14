@@ -18,7 +18,7 @@
 
 @import '../../bpk-mixins/index.scss';
 
-._base {
+.base {
   display: inline-flex;
   padding: bpk-spacing-sm() bpk-spacing-md();
   align-items: center;
@@ -27,43 +27,51 @@
   @include bpk-text;
   @include bpk-caption;
 }
-._warning {
+.warning {
+  composes: base;
   background-color: $bpk-status-warning-fill-day;
   color: $bpk-text-on-light-day;
   fill: $bpk-text-on-light-day;
 }
-._normal {
+.normal {
+  composes: base;
   background-color: $bpk-surface-highlight-day;
   color: $bpk-text-primary-day;
   fill: $bpk-text-primary-day;
 }
-._success {
+.success {
+  composes: base;
   background-color: $bpk-status-success-fill-day;
   color: $bpk-text-on-light-day;
   fill: $bpk-text-on-light-day;
 }
-._critical {
+.critical {
+  composes: base;
   background-color: $bpk-status-danger-fill-day;
   color: $bpk-text-on-light-day;
   fill: $bpk-text-on-light-day;
 }
-._inverse {
+.inverse {
+  composes: base;
   background-color: $bpk-surface-default-day;
   color: $bpk-text-primary-day;
   fill: $bpk-text-primary-day;
 }
-._outline {
+.outline {
+  composes: base;
   background-color: transparent;
   color: $bpk-text-on-dark-day;
   box-shadow: inset 0 0 0 $bpk-border-size-sm $bpk-text-on-dark-day;
   fill: $bpk-text-on-dark-day;
 }
-._strong {
+.strong {
+  composes: base;
   background-color: $bpk-core-primary-day;
   color: $bpk-text-on-dark-day;
   fill: $bpk-text-on-dark-day;
 }
-._brand {
+.brand {
+  composes: base;
   background-color: $bpk-core-accent-day;
   color: $bpk-text-primary-inverse-day;
   fill: $bpk-text-primary-inverse-day;
@@ -71,19 +79,14 @@
 
 $types: 'warning', 'normal', 'success', 'critical', 'inverse', 'outline', 'strong', 'brand';
 
-@each $type in $types {
-
-  .#{$type} {
-    composes: _base _#{$type};
-  }
-  
+@each $type in $types {  
   .#{$type}-centered {
-    composes: _base _#{$type};
+    composes: #{$type};
     vertical-align: text-bottom;
   }
   
   .#{$type}-right {
-    composes: _base _#{$type};
+    composes: #{$type};
     position: absolute;
     top: 0;
     right: 0;
@@ -100,7 +103,7 @@ $types: 'warning', 'normal', 'success', 'critical', 'inverse', 'outline', 'stron
   }
   
   .#{$type}-left {
-    composes: _base _#{$type};
+    composes: #{$type};
     position: absolute;
     top: 0;
     left: 0;
