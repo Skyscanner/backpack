@@ -18,8 +18,6 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkBadge.module.scss';
 
 export const BADGE_TYPES = {
@@ -32,19 +30,6 @@ export const BADGE_TYPES = {
   strong: 'strong',
   brand: 'brand',
 } as const;
-
-const getClassName = cssModules(STYLES);
-
-const badgeTypeClassNames = {
-  [BADGE_TYPES.warning]: getClassName('bpk-badge--warning'),
-  [BADGE_TYPES.success]: getClassName('bpk-badge--success'),
-  [BADGE_TYPES.critical]: getClassName('bpk-badge--critical'),
-  [BADGE_TYPES.normal]: getClassName('bpk-badge--normal'),
-  [BADGE_TYPES.inverse]: getClassName('bpk-badge--inverse'),
-  [BADGE_TYPES.outline]: getClassName('bpk-badge--outline'),
-  [BADGE_TYPES.strong]: getClassName('bpk-badge--strong'),
-  [BADGE_TYPES.brand]: getClassName('bpk-badge--brand'),
-};
 
 export type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
 
@@ -64,14 +49,13 @@ const BpkBadge = ({
   type = BADGE_TYPES.normal,
   ...rest
 }: Props) => {
-  const classNames = getClassName(
-    'bpk-badge',
-    badgeTypeClassNames[type],
-    docked === 'right' && 'bpk-badge--docked-right',
-    docked === 'left' && 'bpk-badge--docked-left',
-    centered && 'bpk-badge--centered',
-    className,
-  );
+  let classNames = STYLES[type];
+  if(centered){
+    classNames = STYLES[`${type}-centered`];
+  }
+  if(docked){
+    classNames = STYLES[`${type}-${docked}`];
+  }
 
   return <span className={classNames} {...rest} />;
 };
