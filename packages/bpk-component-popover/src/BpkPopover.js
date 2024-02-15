@@ -26,8 +26,9 @@ import { BpkButtonLink } from '../../bpk-component-link';
 import BpkCloseButton from '../../bpk-component-close-button';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkPopover.module.scss';
 import { ARROW_ID } from './constants';
+
+import STYLES from './BpkPopover.module.scss';
 
 const getClassName = cssModules(STYLES);
 

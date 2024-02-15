@@ -18,15 +18,17 @@
 
 import type { KeyboardEvent } from 'react';
 import { useMemo, useState } from 'react';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { useTable, useSortBy } from 'react-table';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkDataTable.module.scss';
 import { type BpkDataTableProps, SORT_DIRECTION_TYPES } from './common-types';
 import BpkDataTableHeader from './BpkDataTableHeader';
 import { createColumnsSchema } from './utils';
+
+import STYLES from './BpkDataTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 

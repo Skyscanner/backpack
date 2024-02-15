@@ -21,6 +21,7 @@
 import PropTypes from 'prop-types';
 import { Component, Children } from 'react';
 import type { Node, Element } from 'react';
+
 import {
   lineHeightBase,
   iconSizeSm,

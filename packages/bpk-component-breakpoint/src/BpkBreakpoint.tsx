@@ -18,6 +18,7 @@
 
 import { useState, useEffect } from 'react';
 import type { ReactElement, ReactNode } from 'react';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { breakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 

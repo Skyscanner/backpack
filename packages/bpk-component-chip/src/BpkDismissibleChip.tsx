@@ -27,8 +27,10 @@ import { cssModules } from '../../bpk-react-utils';
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
 
 import BpkSelectableChip from './BpkSelectableChip';
-import type { CommonProps as Props } from './commonTypes';
 import { CHIP_TYPES } from './commonTypes';
+
+import type { CommonProps as Props } from './commonTypes';
+
 import STYLES from './BpkSelectableChip.module.scss';
 
 const getClassName = cssModules(STYLES);

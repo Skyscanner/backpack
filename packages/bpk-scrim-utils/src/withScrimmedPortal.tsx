@@ -22,6 +22,7 @@ import { createPortal } from 'react-dom';
 
 import withScrim from './withScrim';
 import BpkScrim from './BpkScrim';
+
 import type { Props as ScrimProps } from './withScrim';
 
 export type Props = ScrimProps & {

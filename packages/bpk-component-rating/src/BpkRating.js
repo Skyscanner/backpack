@@ -19,13 +19,15 @@
 
 import type { Node } from 'react';
 import PropTypes from 'prop-types';
+
 import clamp from 'lodash.clamp';
 
 import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
-import STYLES from './BpkRating.module.scss';
 import { RATING_SIZES, RATING_SCALES } from './common-types';
+
+import STYLES from './BpkRating.module.scss';
 
 const getClassName = cssModules(STYLES);
 

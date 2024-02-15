@@ -17,6 +17,7 @@
  */
 
 import type { ComponentType } from 'react';
+
 import {
   iconSizeSm,
   iconSizeLg,

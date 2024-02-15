@@ -17,6 +17,7 @@
  */
 
 import { render, screen } from '@testing-library/react';
+
 import '@testing-library/jest-dom';
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
