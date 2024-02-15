@@ -62,7 +62,7 @@ npm install --registry="https://registry.npmjs.org/"
 3. Build a modern version of mixins for local development
 
 ```sh
-npm run unstable__bpk-mixins
+npm run build:unstable__bpk-mixins
 ```
 
 4. Build SVGs
