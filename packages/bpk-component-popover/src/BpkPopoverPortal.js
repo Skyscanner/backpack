@@ -230,7 +230,7 @@ export const propTypes = {
    * `target` can be a DOM element with a `ref` attached to it or a function that returns a DOM element.
    */
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
-  isOpen: PropTypes.bool,
+  isOpen: PropTypes.bool.isRequired,
   placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
   portalStyle: PropTypes.object,
   portalClassName: PropTypes.string,
