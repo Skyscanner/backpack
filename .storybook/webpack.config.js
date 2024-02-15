@@ -30,6 +30,12 @@ const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
   config.plugins.push(new MiniCssExtractPlugin());
+
+  const i = config.module.rules.findIndex(
+    rule => rule.test.toString() === '/\\.css$/',
+  );
+  config.module.rules.splice(i, 1);
+
   config.module.rules.push({
     test: /\.[jt]sx?$/,
     exclude: /node_modules\/(?!bpk-).*/,
@@ -62,19 +68,14 @@ module.exports = ({ config }) => {
     },
   });
   config.module.rules.push({
-    test: /\.css/,
+    test: /\.css$/,
     use: [
       {
-        loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+        loader: MiniCssExtractPlugin.loader,
       },
       {
         loader: 'css-loader',
-        options: {
-          importLoaders: 1,
-          modules: {
-            localIdentName: '[local]-[hash:base64:5]',
-          },
-        },
+        options: {modules: false}
       },
       {
         loader: 'postcss-loader',
@@ -89,15 +90,24 @@ module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.scss$/,
     use: [
-      {
-        loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-      },
+      // {
+      //   loader: MiniCssExtractPlugin.loader,
+      // },
       {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
           modules: {
-            localIdentName: '[local]-[hash:base64:5]',
+            localIdentName: '[hash:base64]',
+            localIdentHashFunction: 'md4',
+            localIdentContext: path.resolve(__dirname, "../packages/bpk-stylesheet"),
+            mode: (resourcePath, resourceQuery, resourceFragment) => {
+              if (/global.scss$/i.test(resourcePath)) {
+                return "global";
+              }
+
+              return "local";
+            },
           },
         },
       },

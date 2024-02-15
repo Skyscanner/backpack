@@ -22,6 +22,7 @@ import type { Preview } from '@storybook/react';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
+import '../packages/bpk-stylesheets/base.css';
 
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import BpkThemeToggle, {

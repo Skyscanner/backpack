@@ -73,7 +73,17 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: 'global',
+              modules: {
+                localIdentName: '[hash:base64]',
+                localIdentHashFunction: 'md4',
+                mode: (resourcePath, resourceQuery, resourceFragment) => {
+                  if (/global.scss$/i.test(resourcePath)) {
+                    return "global";
+                  }
+    
+                  return "local";
+                },
+              },
             },
           },
           {
