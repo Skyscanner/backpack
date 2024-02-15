@@ -230,16 +230,16 @@ export const propTypes = {
    * `target` can be a DOM element with a `ref` attached to it or a function that returns a DOM element.
    */
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
-  isOpen: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool,
   placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-  portalStyle: PropTypes.object,  
+  portalStyle: PropTypes.object,
   portalClassName: PropTypes.string,
   renderTarget: PropTypes.func,
   /**
    * Please refer to the [documentation](https://popper.js.org/docs/v2/modifiers/) for the underlying positioning library "Popper.js".
    * You can achieve various behaviours such as allowing the popover to overflow the viewport etc.
    */
-  popperModifiers: PropTypes.arrayOf(PropTypes.object),  
+  popperModifiers: PropTypes.arrayOf(PropTypes.object),
 };
 
 export const defaultProps = {

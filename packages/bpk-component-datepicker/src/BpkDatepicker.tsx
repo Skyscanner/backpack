@@ -127,7 +127,6 @@ class BpkDatepicker extends Component<Props, State> {
     },
     initiallyFocusedDate: null,
     renderTarget: null,
-    isOpen: false,
     valid: null,
   };
 
@@ -136,7 +135,7 @@ class BpkDatepicker extends Component<Props, State> {
 
     if (props.isOpen !== undefined) {
       this.state = {
-        isOpen: false,
+        isOpen: props.isOpen!,
       };
     }
     this.inputRef = createRef();
