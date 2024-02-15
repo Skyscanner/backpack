@@ -100,7 +100,7 @@ type Props = {
 };
 
 type State = {
-  isOpen: boolean;
+  propIsOpen: boolean;
 };
 
 class BpkDatepicker extends Component<Props, State> {
@@ -135,7 +135,7 @@ class BpkDatepicker extends Component<Props, State> {
     super(props);
 
     this.state = {
-      isOpen: props.isOpen!,
+      propIsOpen: props.isOpen!,
     };
     this.inputRef = createRef();
   }
@@ -143,7 +143,7 @@ class BpkDatepicker extends Component<Props, State> {
   componentDidUpdate(prevProps: Props, prevState: State) {
     const { isOpen } = this.props;
 
-    if (prevProps.isOpen !== isOpen && prevState.isOpen !== isOpen) {
+    if (prevProps.isOpen !== isOpen && prevState.propIsOpen !== isOpen) {
       if (isOpen) {
         this.onOpen();
       } else {
@@ -154,7 +154,7 @@ class BpkDatepicker extends Component<Props, State> {
 
   onOpen = () => {
     this.setState({
-      isOpen: true,
+      propIsOpen: true,
     });
     if (this.props.onOpenChange) {
       this.props.onOpenChange(true);
@@ -163,7 +163,7 @@ class BpkDatepicker extends Component<Props, State> {
 
   onClose = () => {
     this.setState({
-      isOpen: false,
+      propIsOpen: false,
     });
     if (this.props.onOpenChange) {
       this.props.onOpenChange(false);
@@ -321,7 +321,7 @@ class BpkDatepicker extends Component<Props, State> {
           aria-label={this.getLabel(selectionConfiguration!, formatDateFull)}
           onChange={() => null}
           onOpen={this.onOpen}
-          isOpen={this.state.isOpen}
+          isOpen={this.state.propIsOpen}
           valid={valid}
           {...inputProps}
         />
@@ -349,9 +349,6 @@ class BpkDatepicker extends Component<Props, State> {
       selectionConfiguration,
     };
 
-    console.log(this.state.isOpen)
-    console.log(this.props.isOpen)
-
     return (
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {(isMobile: boolean) =>
@@ -362,7 +359,7 @@ class BpkDatepicker extends Component<Props, State> {
                 id={`${id}-modal`}
                 ariaLabelledby={title}
                 closeLabel={closeButtonText}
-                isOpen={this.state.isOpen}
+                isOpen={this.state.propIsOpen}
                 onClose={this.props.onClose || this.onClose}
                 title={title}
               >
@@ -375,7 +372,7 @@ class BpkDatepicker extends Component<Props, State> {
               target={input}
               renderTarget={renderTarget}
               onClose={this.props.onClose || this.onClose}
-              isOpen={this.state.isOpen}
+              isOpen={this.state.propIsOpen}
               label={title}
               closeButtonText={closeButtonText}
               tabIndex={0}
