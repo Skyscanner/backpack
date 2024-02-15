@@ -16,61 +16,59 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
-  .bpk-price {
+.bpk-price {
+  display: flex;
+  flex-direction: column;
+  color: $bpk-text-secondary-day;
+
+  &--right {
+    text-align: right;
+
+    @include bpk-rtl {
+      text-align: left;
+    }
+  }
+
+  &__leading {
     display: flex;
-    flex-direction: column;
-    color: $bpk-text-secondary-day;
+    flex-direction: row;
 
     &--right {
-      text-align: right;
-
-      @include bpk-rtl {
-        text-align: left;
-      }
+      flex-direction: row-reverse;
     }
+  }
 
-    &__leading {
-      display: flex;
-      flex-direction: row;
+  &__previous-price {
+    text-decoration-line: line-through;
+  }
 
-      &--right {
-        flex-direction: row-reverse;
-      }
+  &__separator {
+    margin: 0 bpk-spacing-sm();
+  }
+
+  &__column-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price {
+    color: $bpk-text-primary-day;
+    word-break: break-all;
+  }
+
+  &__spacing::after {
+    content: '';
+    margin-right: bpk-spacing-sm();
+
+    @include bpk-rtl {
+      margin-right: unset;
+      margin-left: bpk-spacing-sm();
     }
+  }
 
-    &__previous-price {
-      text-decoration-line: line-through;
-    }
-
-    &__separator {
-      margin: 0 bpk-spacing-sm();
-    }
-
-    &__column-container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__price {
-      color: $bpk-text-primary-day;
-      word-break: break-all;
-    }
-
-    &__spacing::after {
-      content: '';
-      margin-right: bpk-spacing-sm();
-
-      @include bpk-rtl {
-        margin-right: unset;
-        margin-left: bpk-spacing-sm();
-      }
-    }
-
-    &__trailing {
-      white-space: nowrap;
-    }
+  &__trailing {
+    white-space: nowrap;
   }
 }

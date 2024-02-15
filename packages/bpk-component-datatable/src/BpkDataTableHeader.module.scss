@@ -16,51 +16,49 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
-  $bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
+$bpk-margin-size-sort-icons: bpk-spacing-sm() + bpk-spacing-md();
 
-  .bpk-data-table-column__header {
-    display: flex;
-    height: 100%;
-    margin: bpk-spacing-base();
-    flex-direction: row;
-    align-items: center;
-    outline-offset: -(bpk-spacing-sm());
+.bpk-data-table-column__header {
+  display: flex;
+  height: 100%;
+  margin: bpk-spacing-base();
+  flex-direction: row;
+  align-items: center;
+  outline-offset: -(bpk-spacing-sm());
 
-    @include bpk-label-2;
+  @include bpk-label-2;
 
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
   }
+}
 
-  .bpk-data-table-column__sort-icons {
-    margin: 0 0 0 $bpk-margin-size-sort-icons;
+.bpk-data-table-column__sort-icons {
+  margin: 0 0 0 $bpk-margin-size-sort-icons;
 
-    @include bpk-rtl {
-      margin: 0 $bpk-margin-size-sort-icons 0 0;
-    }
+  @include bpk-rtl {
+    margin: 0 $bpk-margin-size-sort-icons 0 0;
   }
+}
 
-  .bpk-data-table-column__sort-icon {
-    display: block;
+.bpk-data-table-column__sort-icon {
+  display: block;
+  fill: $bpk-line-day;
+
+  &:hover {
     fill: $bpk-line-day;
+  }
 
+  &--selected {
+    &,
     &:hover {
-      fill: $bpk-line-day;
-    }
-
-    &--selected {
-      &,
-      &:hover {
-        fill: $bpk-core-accent-day;
-      }
+      fill: $bpk-core-accent-day;
     }
   }
+}
 
-  .bpk-data-table-column__sort-icon--up {
-    margin-bottom: -(bpk-spacing-sm());
-  }
+.bpk-data-table-column__sort-icon--up {
+  margin-bottom: -(bpk-spacing-sm());
 }

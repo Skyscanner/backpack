@@ -16,74 +16,72 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
-  .bpk-content-card {
-    &--link {
-      color: inherit;
-      /* stylelint-disable backpack/use-typography-styles */
-      font: inherit;
-      text-decoration: inherit;
+.bpk-content-card {
+  &--link {
+    color: inherit;
+    /* stylelint-disable backpack/use-typography-styles */
+    font: inherit;
+    text-decoration: inherit;
+  }
+
+  &--horizontal {
+    display: grid;
+    column-gap: bpk-spacing-xxl();
+    grid-template-columns: minmax(min(10%, 50%), $bpk-one-pixel-rem * 620) 40%;
+    align-items: center;
+
+    @include bpk-breakpoint-mobile {
+      grid-template-columns: 1fr;
     }
+  }
 
-    &--horizontal {
-      display: grid;
-      column-gap: bpk-spacing-xxl();
-      grid-template-columns: minmax(min(10%, 50%), $bpk-one-pixel-rem * 620) 40%;
-      align-items: center;
+  &--horizontal &--image-container {
+    width: 100%;
+    height: $bpk-one-pixel-rem * 420;
 
-      @include bpk-breakpoint-mobile {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    &--horizontal &--image-container {
-      width: 100%;
-      height: $bpk-one-pixel-rem * 420;
-
-      @include bpk-breakpoint-mobile {
-        max-height: $bpk-one-pixel-rem * 180;
-        margin-bottom: bpk-spacing-base();
-      }
-
-      @include bpk-breakpoint-tablet {
-        height: 100%;
-      }
-    }
-
-    &--vertical &--image {
-      height: $bpk-one-pixel-rem * 460;
+    @include bpk-breakpoint-mobile {
+      max-height: $bpk-one-pixel-rem * 180;
       margin-bottom: bpk-spacing-base();
-
-      @include bpk-breakpoint-small-tablet {
-        width: 100%;
-        height: auto;
-        max-height: $bpk-one-pixel-rem * 260;
-      }
-
-      @include bpk-breakpoint-mobile {
-        max-height: $bpk-one-pixel-rem * 180;
-      }
     }
 
-    &--headline {
-      margin-bottom: bpk-spacing-sm();
-
-      @include bpk-heading-4;
-    }
-
-    &--description {
-      color: $bpk-text-secondary-day;
-
-      @include bpk-body-default;
-    }
-
-    &--image {
-      width: 100%;
+    @include bpk-breakpoint-tablet {
       height: 100%;
-      border-radius: $bpk-border-radius-md;
-      object-fit: cover;
     }
+  }
+
+  &--vertical &--image {
+    height: $bpk-one-pixel-rem * 460;
+    margin-bottom: bpk-spacing-base();
+
+    @include bpk-breakpoint-small-tablet {
+      width: 100%;
+      height: auto;
+      max-height: $bpk-one-pixel-rem * 260;
+    }
+
+    @include bpk-breakpoint-mobile {
+      max-height: $bpk-one-pixel-rem * 180;
+    }
+  }
+
+  &--headline {
+    margin-bottom: bpk-spacing-sm();
+
+    @include bpk-heading-4;
+  }
+
+  &--description {
+    color: $bpk-text-secondary-day;
+
+    @include bpk-body-default;
+  }
+
+  &--image {
+    width: 100%;
+    height: 100%;
+    border-radius: $bpk-border-radius-md;
+    object-fit: cover;
   }
 }

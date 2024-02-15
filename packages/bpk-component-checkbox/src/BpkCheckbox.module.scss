@@ -16,63 +16,61 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
-  .bpk-checkbox {
-    @include bpk-checkbox;
+.bpk-checkbox {
+  @include bpk-checkbox;
 
-    &__label {
-      @include bpk-checkbox__label;
+  &__label {
+    @include bpk-checkbox__label;
 
-      &--small {
-        @include bpk-checkbox__label--small;
-      }
+    &--small {
+      @include bpk-checkbox__label--small;
     }
+  }
+
+  &--white {
+    @include bpk-checkbox--white;
+  }
+
+  &--disabled {
+    @include bpk-checkbox--disabled;
 
     &--white {
-      @include bpk-checkbox--white;
+      color: $bpk-text-disabled-on-dark-day;
     }
+  }
 
-    &--disabled {
-      @include bpk-checkbox--disabled;
+  &--invalid {
+    @include bpk-checkbox--invalid;
+  }
 
-      &--white {
-        color: $bpk-text-disabled-on-dark-day;
-      }
-    }
+  &__input {
+    @include bpk-checkbox__input;
 
-    &--invalid {
-      @include bpk-checkbox--invalid;
-    }
-
-    &__input {
-      @include bpk-checkbox__input;
-
-      &-indeterminate {
-        &::before {
-          position: absolute;
-          top: bpk-spacing-sm() + $bpk-one-pixel-rem;
-          left: bpk-spacing-sm() / 2;
-          content: '';
-          width: bpk-spacing-xxl() / 4;
-          height: bpk-spacing-sm() - $bpk-one-pixel-rem;
-          border-radius: $bpk-border-size-lg;
-          background-color: $bpk-surface-default-day;
-        }
-      }
-
-      &:disabled {
-        cursor: inherit;
-      }
-
-      &-white {
+    &-indeterminate {
+      &::before {
+        position: absolute;
+        top: bpk-spacing-sm() + $bpk-one-pixel-rem;
+        left: bpk-spacing-sm() / 2;
+        content: '';
+        width: bpk-spacing-xxl() / 4;
+        height: bpk-spacing-sm() - $bpk-one-pixel-rem;
+        border-radius: $bpk-border-size-lg;
         background-color: $bpk-surface-default-day;
       }
     }
 
-    &__asterisk {
-      color: $bpk-status-danger-spot-day;
+    &:disabled {
+      cursor: inherit;
     }
+
+    &-white {
+      background-color: $bpk-surface-default-day;
+    }
+  }
+
+  &__asterisk {
+    color: $bpk-status-danger-spot-day;
   }
 }

@@ -18,8 +18,8 @@
 
 /* stylelint-disable */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
+
 
   .bpk-input-field {
     display: flex;
@@ -35,4 +35,3 @@
   .bpk-input-field:last-child {
     margin-right: $bpk-spacing-none;
   }
-}

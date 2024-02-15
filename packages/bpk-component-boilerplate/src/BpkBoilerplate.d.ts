@@ -17,13 +17,9 @@
  */
 
 export type Props = {
-  className?: string | null;
   [rest: string]: any;
 };
 declare const BpkBoilerplate: {
-  ({ className, ...rest }: Props): JSX.Element;
-  defaultProps: {
-    className: null;
-  };
+  ({ ...rest }: Props): JSX.Element;
 };
 export default BpkBoilerplate;

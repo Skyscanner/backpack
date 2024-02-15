@@ -20,7 +20,6 @@
 
 import {
   BpkDataTable,
-  BpkDataTableColumn,
 } from '../../packages/bpk-component-datatable';
 
 const rows = [
@@ -74,8 +73,8 @@ const complexRows = [
 const onRowClick = (row) => alert(JSON.stringify(row));
 
 const sortFunc = (rowA, rowB) => {
-  const deskA = rowA.values.seat.desk;
-  const deskB = rowB.values.seat.desk;
+  const deskA = rowA.seat.desk;
+  const deskB = rowB.seat.desk;
 
   if (deskA === deskB) {
     return 0;
@@ -97,61 +96,95 @@ const CellRenderer = ({ cellData, rowData }) => {
 };
 
 const AutowidthExample = () => (
-  <BpkDataTable rows={rows} height="25rem" onRowClick={onRowClick}>
-    <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
-    <BpkDataTableColumn
-      label="Description"
-      dataKey="description"
-      width="6.25rem"
-      flexGrow={1}
-    />
-    <BpkDataTableColumn label="Location" dataKey="location" width="6.25rem" />
-    <BpkDataTableColumn
-      label="Numeric value"
-      dataKey="numericValue"
-      width="6.25rem"
-    />
-  </BpkDataTable>
+  <BpkDataTable rows={rows} height="25rem" onRowClick={onRowClick}
+    columns={[
+      {
+        label: 'Name',
+        accessor: 'name',
+        width: '6.25rem',
+      },
+      {
+        label: 'Description',
+        accessor: 'description',
+        width: '6.25rem',
+        flexGrow: 1,
+      },
+      {
+        label: 'Location',
+        accessor: 'location',
+        width: '6.25rem',
+      },
+      {
+        label: 'Numeric value',
+        accessor: 'numericValue',
+        width: '6.25rem',
+      }
+    ]} />
 );
 
-const NonHoverRowsExample = () => (
-  <BpkDataTable rows={rows} height="18.75rem">
-    <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
-    <BpkDataTableColumn
-      label="Description"
-      dataKey="description"
-      width="6.25rem"
-      flexGrow={1}
-    />
-    <BpkDataTableColumn label="Location" dataKey="location" width="6.25rem" />
-  </BpkDataTable>
+const NonClickNonHoverRowsExample = () => (
+  <BpkDataTable rows={rows} height="18.75rem" columns={[
+    {
+      label: 'Name',
+      accessor: 'name',
+      width: '6.25rem',
+    },
+    {
+      label: 'Description',
+      accessor: 'description',
+      width: '6.25rem',
+      flexGrow: 1,
+    },
+    {
+      label: 'Location',
+      accessor: 'location',
+      width: '6.25rem',
+    }
+  ]} />
 );
 
 const FixedWidthExample = () => (
-  <BpkDataTable rows={rows} height="18.75rem" width="25rem" onRowClick={onRowClick}>
-    <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
-    <BpkDataTableColumn
-      label="Description"
-      dataKey="description"
-      width="6.25rem"
-      flexGrow={1}
-    />
-    <BpkDataTableColumn label="Location" dataKey="location" width="6.25rem" />
-  </BpkDataTable>
+  <BpkDataTable rows={rows} height="18.75rem" width="25rem" onRowClick={onRowClick}
+    columns={[
+      {
+        label: 'Name',
+        accessor: 'name',
+        width: '6.25rem',
+      },
+      {
+        label: 'Description',
+        accessor: 'description',
+        width: '6.25rem',
+        flexGrow: 1,
+      },
+      {
+        label: 'Location',
+        accessor: 'location',
+        width: '6.25rem',
+      }
+    ]} />
 );
 
 const DisabledSortExample = () => (
-  <BpkDataTable rows={rows} height="18.75rem" onRowClick={onRowClick}>
-    <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
-    <BpkDataTableColumn
-      label="Description (Disabled Sorting)"
-      dataKey="description"
-      width="6.25rem"
-      flexGrow={1}
-      disableSort
-    />
-    <BpkDataTableColumn label="Location" dataKey="location" width="6.25rem" />
-  </BpkDataTable>
+  <BpkDataTable rows={rows} height="18.75rem" onRowClick={onRowClick} columns={[
+    {
+      label: 'Name',
+      accessor: 'name',
+      width: '6.25rem',
+    },
+    {
+      label: 'Description (Disabled Sorting)',
+      accessor: 'description',
+      width: '6.25rem',
+      flexGrow: 1,
+      disableSort,
+    },
+    {
+      label: 'Location',
+      accessor: 'location',
+      width: '6.25rem',
+    }
+  ]} />
 );
 
 const CustomRowAndHeaderHeightsExample = () => (
@@ -161,60 +194,86 @@ const CustomRowAndHeaderHeightsExample = () => (
     headerHeight="5rem"
     rowHeight="1.875rem"
     onRowClick={onRowClick}
-  >
-    <BpkDataTableColumn label="Name" dataKey="name" width="18.75rem" />
-    <BpkDataTableColumn
-      label="Description"
-      dataKey="description"
-      width="6.25rem"
-      flexGrow={1}
-    />
-    <BpkDataTableColumn label="Location" dataKey="location" width="6.25rem" />
-  </BpkDataTable>
+    columns={
+      [
+        {
+          label: 'Name',
+          accessor: 'name',
+          width: '18.75rem',
+        },
+        {
+          label: 'Description',
+          accessor: 'description',
+          width: '6.25rem',
+          flexGrow: 1,
+        },
+        {
+          label: 'Location',
+          accessor: 'location',
+          width: '6.25rem',
+        }
+      ]
+    }
+  />
 );
 
 const HeaderRendererExample = () => (
-  <BpkDataTable rows={rows} height="25rem" onRowClick={onRowClick}>
-    <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
-    <BpkDataTableColumn
-      label="Description"
-      dataKey="description"
-      width="6.25rem"
-      flexGrow={1}
-    />
-    <BpkDataTableColumn label="Location" dataKey="location" width="6.25rem" />
-    <BpkDataTableColumn
-      label="Numeric value"
-      dataKey="numericValue"
-      width="6.25rem"
-      headerRenderer={LabelComponent}
-    />
-  </BpkDataTable>
+  <BpkDataTable rows={rows} height="25rem" onRowClick={onRowClick}
+  columns={[
+    {
+      label: 'Name',
+      accessor: 'name',
+      width: '6.25rem',
+    },
+    {
+      label: 'Description',
+      accessor: 'description',
+      width: '6.25rem',
+      flexGrow: 1,
+    },
+    {
+      label: 'Location',
+      accessor: 'location',
+      width: '6.25rem',
+    },
+    {
+      label: 'Numeric value',
+      accessor: 'numericValue',
+      width: '6.25rem',
+      headerRenderer: LabelComponent,
+    }
+  ]} />
 );
 
 const CustomSortingExample = () => (
   <BpkDataTable
     rows={complexRows}
+    columns={[
+      {
+        label: 'Name',
+        accessor: 'name',
+        width: '6.25rem',
+      },
+      {
+        label: 'Description',
+        accessor: 'description',
+        width: '6.25rem',
+        flexGrow: 1,
+        Header: LabelComponent,
+      },
+      {
+        label: 'Seat',
+        accessor: 'seat',
+        width: '6.25rem',
+        Cell: CellRenderer,
+      },
+    ]}
     height="25rem"
     onRowClick={onRowClick}
     sort={sortFunc}
     sortBy="seat"
     sortDirection="DESC"
-  >
-    <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
-    <BpkDataTableColumn
-      label="Description"
-      dataKey="description"
-      width="6.25rem"
-      flexGrow={1}
-    />
-    <BpkDataTableColumn
-      label="Seat"
-      dataKey="seat"
-      width="6.25rem"
-      cellRenderer={CellRenderer}
-    />
-  </BpkDataTable>
+  />   
 );
 
 const WithColumnArrayExample = () => (
@@ -244,7 +303,7 @@ const WithColumnArrayExample = () => (
 
 export {
   AutowidthExample,
-  NonHoverRowsExample,
+  NonClickNonHoverRowsExample,
   FixedWidthExample,
   DisabledSortExample,
   CustomRowAndHeaderHeightsExample,

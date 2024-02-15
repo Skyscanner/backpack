@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-boilerplate{display:flex}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-boilerplate{display:flex}

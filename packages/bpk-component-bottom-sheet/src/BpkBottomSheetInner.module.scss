@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 @import '../../bpk-mixins/index.scss';
 
 $close-button-width: bpk-spacing-lg() * 2;
@@ -42,6 +43,8 @@ $close-button-width: bpk-spacing-lg() * 2;
   @include bpk-border-radius-sm;
 
   @include bpk-breakpoint-mobile {
+    position: fixed;
+    bottom: 0;
     height: fit-content;
     max-height: 90%;
     margin-bottom: 0;

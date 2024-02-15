@@ -27,7 +27,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.2
+        uses: actions/cache/restore@v4.0.0
         id: npm-cache
         with:
           path: |
@@ -62,7 +62,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.2
+        uses: actions/cache/restore@v4.0.0
         id: npm-cache
         with:
           path: |
@@ -71,11 +71,11 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.2
+        uses: actions/cache/restore@v4.0.0
         id: storybook-dist-cache
         with:
           path: dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
 
       - name: Percy Test
         run: npm run percy-test
@@ -99,7 +99,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.2
+        uses: actions/cache/restore@v4.0.0
         id: npm-cache
         with:
           path: |

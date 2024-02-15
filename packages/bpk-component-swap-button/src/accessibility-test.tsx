@@ -1,4 +1,4 @@
-/*
+ /*
  * Backpack - Skyscanner's Design System
  *
  * Copyright 2016 Skyscanner Ltd
@@ -16,20 +16,15 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-// This file exists to break a cycle that would otherwise happen between
-// BpkDataTableColumn.js and common-types.js
+import BpkSwapButton from './BpkSwapButton';
 
-export const SORT_DIRECTION_TYPES = {
-  ASC: 'ASC',
-  DESC: 'DESC',
-};
-
-export type SortDirectionType = 'ASC' | ' DESC';
-
-export type SortProps = {
-  sortBy: ?string,
-  sortDirection: ?SortDirectionType,
-  sort: ?Function,
-};
+describe('BpkSwapButton accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(<BpkSwapButton onClick={jest.fn()} ariaLabel='swap button'/>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

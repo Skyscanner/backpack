@@ -16,25 +16,23 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
-  .bpk-breadcrumb-item {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
+.bpk-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 
-    &__link {
-      @include bpk-text;
-    }
+  &__link {
+    @include bpk-text;
+  }
 
-    &__active-item {
-      color: $bpk-text-secondary-day;
-    }
+  &__active-item {
+    color: $bpk-text-secondary-day;
+  }
 
-    &__arrow {
-      margin: 0 bpk-spacing-sm();
-      fill: $bpk-text-disabled-day;
-    }
+  &__arrow {
+    margin: 0 bpk-spacing-sm();
+    fill: $bpk-text-disabled-day;
   }
 }

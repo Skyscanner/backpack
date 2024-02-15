@@ -166,6 +166,14 @@ const NoHeaderExample = () => (
   </BottomSheetContainer>
 );
 
+const NoHeaderWithActionButtonExample = () => (
+  <BottomSheetContainer
+    closeLabel="Close Bottom Sheet" actionText="Action" onAction={action('Action clicked')}
+  >
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
 const ActionButtonExample = () => (
   <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" actionText="Action" onAction={action('Action clicked')}>
     This is a default bottom sheet. You can put anything you want in here.
@@ -183,6 +191,7 @@ export {
   DefaultExample,
   OverflowingExample,
   NoHeaderExample,
+  NoHeaderWithActionButtonExample,
   ActionButtonExample,
   WideExample
 };

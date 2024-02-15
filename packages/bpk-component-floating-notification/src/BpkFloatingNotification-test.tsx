@@ -20,6 +20,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
 
 import BpkFloatingNotification from './BpkFloatingNotification';

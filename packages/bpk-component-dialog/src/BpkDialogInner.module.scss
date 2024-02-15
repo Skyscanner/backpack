@@ -16,50 +16,48 @@
 * limitations under the License.
 */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
-  .bpk-dialog-inner {
-    z-index: $bpk-zindex-modal;
-    width: 100%;
-    max-width: $bpk-modal-max-width;
-    margin: auto;
+.bpk-dialog-inner {
+  z-index: $bpk-zindex-modal;
+  width: 100%;
+  max-width: $bpk-modal-max-width;
+  margin: auto;
+  transform: scale(1);
+  transition:
+    opacity $bpk-duration-sm ease-in-out,
+    transform $bpk-duration-sm ease-in-out;
+  outline: 0;
+  background-color: $bpk-modal-background-color;
+  opacity: $bpk-modal-opacity;
+
+  // FIX: Prevents ugly flickering when tapping inside the dialog in Mobile Safari
+  -webkit-tap-highlight-color: transparent;
+
+  @include bpk-box-shadow-xl;
+  @include bpk-border-radius-sm;
+
+  &--appear {
+    transform: scale(0.9);
+    opacity: $bpk-modal-initial-opacity;
+  }
+
+  &--appear-active {
     transform: scale(1);
-    transition:
-      opacity $bpk-duration-sm ease-in-out,
-      transform $bpk-duration-sm ease-in-out;
-    outline: 0;
-    background-color: $bpk-modal-background-color;
     opacity: $bpk-modal-opacity;
+  }
 
-    // FIX: Prevents ugly flickering when tapping inside the dialog in Mobile Safari
-    -webkit-tap-highlight-color: transparent;
+  &__content {
+    padding: $bpk-modal-content-padding;
+    flex: 1;
+    overflow-y: auto;
+  }
 
-    @include bpk-box-shadow-xl;
-    @include bpk-border-radius-sm;
+  &__flare {
+    height: bpk-spacing-lg() * 10;
 
-    &--appear {
-      transform: scale(0.9);
-      opacity: $bpk-modal-initial-opacity;
-    }
-
-    &--appear-active {
-      transform: scale(1);
-      opacity: $bpk-modal-opacity;
-    }
-
-    &__content {
-      padding: $bpk-modal-content-padding;
-      flex: 1;
-      overflow-y: auto;
-    }
-
-    &__flare {
-      height: bpk-spacing-lg() * 10;
-
-      // We inherit radius from the outer modal so they match and align correctly to the container.
-      border-radius: inherit;
-      background-color: $bpk-surface-contrast-day;
-    }
+    // We inherit radius from the outer modal so they match and align correctly to the container.
+    border-radius: inherit;
+    background-color: $bpk-surface-contrast-day;
   }
 }

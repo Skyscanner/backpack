@@ -16,36 +16,34 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../bpk-mixins/index.scss';
+@import '../../bpk-mixins/index.scss';
 
-  .bpk-skip-link {
-    padding: (12 * $bpk-one-pixel-rem) bpk-spacing-base();
-    transition: opacity $bpk-duration-sm ease-in-out;
-    border-radius: $bpk-border-radius-sm;
-    color: $bpk-text-on-dark-day;
-    text-decoration: none;
-    opacity: 0;
-    overflow: hidden;
-    pointer-events: none;
+.bpk-skip-link {
+  padding: (12 * $bpk-one-pixel-rem) bpk-spacing-base();
+  transition: opacity $bpk-duration-sm ease-in-out;
+  border-radius: $bpk-border-radius-sm;
+  color: $bpk-text-on-dark-day;
+  text-decoration: none;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
 
-    // We want the skiplink to remain visible for a short period of time after it is blurred so that
-    // a user tabbing quickly has a chance to see that it appeared
-    transition-delay: $bpk-duration-sm;
+  // We want the skiplink to remain visible for a short period of time after it is blurred so that
+  // a user tabbing quickly has a chance to see that it appeared
+  transition-delay: $bpk-duration-sm;
 
-    @include bpk-heading-5;
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-skip-link-background-color,
-      $bpk-status-danger-spot-day
-    );
+  @include bpk-heading-5;
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-skip-link-background-color,
+    $bpk-status-danger-spot-day
+  );
 
-    &:focus-within,
-    &:focus {
-      // When the skip-link becomes focused we want there to be no delay or animation
-      transition: none;
-      opacity: 1;
-      transition-delay: 0;
-    }
+  &:focus-within,
+  &:focus {
+    // When the skip-link becomes focused we want there to be no delay or animation
+    transition: none;
+    opacity: 1;
+    transition-delay: 0;
   }
 }

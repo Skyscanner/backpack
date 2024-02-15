@@ -16,68 +16,66 @@
  * limitations under the License.
  */
 
-@layer bpk-component {
-  @import '../../../bpk-mixins/index.scss';
+@import '../../../bpk-mixins/index.scss';
 
-  .bpk-button {
-    @include bpk-button;
+.bpk-button {
+  @include bpk-button;
 
-    &--large {
-      @include bpk-button--large;
-    }
+  &--large {
+    @include bpk-button--large;
+  }
 
-    &--icon-only {
-      border-radius: $bpk-button-border-radius;
+  &--icon-only {
+    border-radius: $bpk-button-border-radius;
 
-      @include bpk-button--icon-only;
-    }
+    @include bpk-button--icon-only;
+  }
 
-    &--large-icon-only {
-      border-radius: $bpk-button-border-radius;
+  &--large-icon-only {
+    border-radius: $bpk-button-border-radius;
 
-      @include bpk-button--large-icon-only;
-    }
+    @include bpk-button--large-icon-only;
+  }
 
-    &--destructive {
-      @include bpk-button--secondary;
-      @include bpk-button--destructive;
-    }
+  &--destructive {
+    @include bpk-button--secondary;
+    @include bpk-button--destructive;
+  }
 
-    &--featured {
-      @include bpk-button--featured;
-    }
+  &--featured {
+    @include bpk-button--featured;
+  }
 
-    &--link {
-      @include bpk-button--link;
-    }
+  &--link {
+    @include bpk-button--link;
+  }
 
-    &--link-on-dark {
-      @include bpk-button--link-on-dark;
-    }
+  &--link-on-dark {
+    @include bpk-button--link-on-dark;
+  }
 
-    &--primary-on-dark {
-      @include bpk-button--primary-on-dark;
-    }
+  &--primary-on-dark {
+    @include bpk-button--primary-on-dark;
+  }
 
-    &--primary-on-light {
-      @include bpk-button--primary-on-light;
-    }
+  &--primary-on-light {
+    @include bpk-button--primary-on-light;
+  }
 
-    &--secondary {
-      @include bpk-button--secondary;
-    }
+  &--secondary {
+    @include bpk-button--secondary;
+  }
 
-    &--secondary-on-dark {
-      @include bpk-button--secondary-on-dark;
-    }
+  &--secondary-on-dark {
+    @include bpk-button--secondary-on-dark;
+  }
 
-    /* stylelint-disable selector-max-compound-selectors */
-    span > svg {
-      display: block;
-    }
+  /* stylelint-disable selector-max-compound-selectors */
+  span > svg {
+    display: block;
+  }
 
-    svg {
-      fill: currentcolor;
-    }
+  svg {
+    fill: currentcolor;
   }
 }

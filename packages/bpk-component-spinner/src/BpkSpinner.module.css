@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@layer bpk-component{@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-spinner{width:1rem;height:1rem;animation:bpk-keyframe-spin 600ms linear infinite}.bpk-spinner--primary{fill:#0062e3;fill:var(--bpk-spinner-primary-color, #0062e3)}.bpk-spinner--light{fill:#fff}.bpk-spinner--dark{fill:#161616}.bpk-spinner--large{width:1.5rem;height:1.5rem}.bpk-spinner--extra-large{width:2rem;height:2rem}.bpk-spinner--align-to-button{vertical-align:baseline}.bpk-spinner--align-to-large-button{margin-top:0rem;vertical-align:top}}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-spinner{width:1rem;height:1rem;animation:bpk-keyframe-spin 600ms linear infinite}.bpk-spinner--primary{fill:#0062e3;fill:var(--bpk-spinner-primary-color, #0062e3)}.bpk-spinner--light{fill:#fff}.bpk-spinner--dark{fill:#161616}.bpk-spinner--large{width:1.5rem;height:1.5rem}.bpk-spinner--extra-large{width:2rem;height:2rem}.bpk-spinner--align-to-button{vertical-align:baseline}.bpk-spinner--align-to-large-button{margin-top:0rem;vertical-align:top}

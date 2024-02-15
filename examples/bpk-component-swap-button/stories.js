@@ -15,7 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkDataTable from './src/BpkDataTable';
-import BpkDataTableColumn from './src/BpkDataTableColumn';
 
-export { BpkDataTable, BpkDataTableColumn };
+import BpkSwapButton from '../../packages/bpk-component-swap-button/src/BpkSwapButton';
+
+import { DefaultExample, CanvasDefaultExample, CanvasContrastExample } from './examples'
+
+export default {
+  title: 'bpk-component-swap-button',
+  component: BpkSwapButton,
+};
+
+export const Default = DefaultExample;
+
+export const CanvasDefault = CanvasDefaultExample;
+
+export const CanvasContrast = CanvasContrastExample;
+
+export const VisualTest = DefaultExample;
