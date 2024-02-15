@@ -15,7 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkDataTable from './src/BpkDataTable';
-import BpkDataTableColumn from './src/BpkDataTableColumn';
 
-export { BpkDataTable, BpkDataTableColumn };
+import BpkDataTable from './src/BpkDataTable';
+
+export { BpkDataTable };
+export default BpkDataTable;

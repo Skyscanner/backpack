@@ -20,7 +20,7 @@ import BpkDataTable from '../../packages/bpk-component-datatable/src/BpkDataTabl
 
 import {
   AutowidthExample,
-  NonHoverRowsExample,
+  NonClickNonHoverRowsExample,
   FixedWidthExample,
   DisabledSortExample,
   CustomRowAndHeaderHeightsExample,
@@ -35,7 +35,7 @@ export default {
 };
 
 export const Autowidth = AutowidthExample;
-export const RowsNotHoverable = NonHoverRowsExample;
+export const RowsNotHoverableOrClickable = NonClickNonHoverRowsExample;
 
 export const FixedWidth = FixedWidthExample;
 export const DisabledSort = DisabledSortExample;
