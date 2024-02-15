@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
 @use 'variables';
 
 .bpk-calendar-header {
@@ -40,8 +40,8 @@
 
   &__weekday {
     display: table-cell;
-    height: bonds.$bpk-calendar-day-size;
-    padding: 0 bonds.$bpk-calendar-day-spacing;
+    height: tokens.$bpk-calendar-day-size;
+    padding: 0 tokens.$bpk-calendar-day-spacing;
     box-shadow: variables.$shadow-bottom;
     vertical-align: middle;
     box-sizing: content-box;

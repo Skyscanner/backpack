@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/forms';
-@use '../../unstable_bpk-mixins/margins';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
+@use '../../unstable__bpk-mixins/margins';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-form-validation {
   @include forms.bpk-form-validation;
@@ -32,9 +32,9 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-form-validation-icon-fill,
-      bonds.$bpk-form-validation-color
+      tokens.$bpk-form-validation-color
     );
-    @include margins.bpk-margin-trailing(bonds.bpk-spacing-sm());
+    @include margins.bpk-margin-trailing(tokens.bpk-spacing-sm());
   }
 
   &--appear {

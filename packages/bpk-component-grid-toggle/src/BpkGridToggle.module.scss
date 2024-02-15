@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable__bpk-mixins/tokens';
 
 .bpk-vertical-grid {
   &--on {
@@ -35,11 +35,11 @@
       height: auto;
       background: linear-gradient(
           to bottom,
-          rgba(bonds.$bpk-status-danger-spot-day, 0.3) 0,
-          transparent bonds.$bpk-one-pixel-rem
+          rgba(tokens.$bpk-status-danger-spot-day, 0.3) 0,
+          transparent tokens.$bpk-one-pixel-rem
         )
         repeat left 0;
-      background-size: bonds.bpk-spacing-sm() bonds.bpk-spacing-sm();
+      background-size: tokens.bpk-spacing-sm() tokens.bpk-spacing-sm();
       pointer-events: none;
     }
 

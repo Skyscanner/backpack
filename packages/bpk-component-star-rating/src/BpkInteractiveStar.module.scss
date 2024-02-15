@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 @keyframes star-dust {
   0% {
@@ -57,7 +57,7 @@
 
   &__icon {
     transform: rotate(0deg) scale(1);
-    transition: transform bonds.$bpk-duration-sm ease-in-out;
+    transition: transform tokens.$bpk-duration-sm ease-in-out;
 
     &--selected {
       animation-duration: 300ms;

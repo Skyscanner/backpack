@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable__bpk-mixins/tokens';
 
 .bpk-chart {
   &__grid-line {
     shape-rendering: crispedges;
-    stroke: bonds.$bpk-line-day;
+    stroke: tokens.$bpk-line-day;
   }
 }

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-text {
   @include typography.bpk-text;

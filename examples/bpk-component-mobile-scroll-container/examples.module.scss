@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
-@use '../../packages/unstable_bpk-mixins/scroll-indicators';
+@use '../../packages/unstable__bpk-mixins/tokens';
+@use '../../packages/unstable__bpk-mixins/scroll-indicators';
 
 .bpk-stories-mobile-scroll-container {
   &__leading-indicator {
     @include scroll-indicators.bpk-scroll-indicator-left(
-      bonds.$bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
   }
 
   &__trailing-indicator {
     @include scroll-indicators.bpk-scroll-indicator-right(
-      bonds.$bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
   }
 }
@@ -38,14 +38,14 @@
 
   &__item {
     display: flex;
-    min-width: bonds.bpk-spacing-xxl() * 5;
-    height: bonds.bpk-spacing-xxl() * 5;
+    min-width: tokens.bpk-spacing-xxl() * 5;
+    height: tokens.bpk-spacing-xxl() * 5;
     justify-content: center;
     align-items: center;
-    background-color: bonds.$bpk-canvas-contrast-day;
+    background-color: tokens.$bpk-canvas-contrast-day;
 
     &--alternate {
-      background-color: bonds.$bpk-surface-highlight-day;
+      background-color: tokens.$bpk-surface-highlight-day;
     }
   }
 }

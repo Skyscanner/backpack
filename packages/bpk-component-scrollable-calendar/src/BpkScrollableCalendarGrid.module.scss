@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable__bpk-mixins/tokens';
 
 .bpk-scrollable-calendar-grid {
   width: 100%;
@@ -24,6 +24,6 @@
   border-spacing: 0;
 
   &__title {
-    margin-top: bonds.bpk-spacing-lg();
+    margin-top: tokens.bpk-spacing-lg();
   }
 }

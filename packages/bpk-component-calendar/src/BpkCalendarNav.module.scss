@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/icons';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/icons';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-calendar-nav {
   display: table;
@@ -30,7 +30,7 @@
 
   &__nudger {
     display: table-cell;
-    padding: 0 bonds.$bpk-calendar-day-spacing;
+    padding: 0 tokens.$bpk-calendar-day-spacing;
     text-align: center;
     vertical-align: middle;
     box-sizing: border-box;
@@ -38,8 +38,8 @@
 
   &__button {
     width: 100%;
-    height: bonds.$bpk-input-height;
-    padding: bonds.bpk-spacing-md() - (2 * bonds.$bpk-one-pixel-rem) 0;
+    height: tokens.$bpk-input-height;
+    padding: tokens.bpk-spacing-md() - (2 * tokens.$bpk-one-pixel-rem) 0;
     border: none;
     background: none;
     cursor: pointer;
@@ -48,14 +48,14 @@
     @include utils.bpk-themeable-property(
       color,
       --bpk-calendar-nudger-icon-color,
-      bonds.$bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
 
     @include utils.bpk-hover {
       @include utils.bpk-themeable-property(
         color,
         --bpk-calendar-nudger-icon-hover-color,
-        bonds.$bpk-text-primary-day
+        tokens.$bpk-text-primary-day
       );
     }
 
@@ -63,7 +63,7 @@
       @include utils.bpk-themeable-property(
         color,
         --bpk-calendar-nudger-icon-active-color,
-        bonds.$bpk-text-primary-day
+        tokens.$bpk-text-primary-day
       );
     }
 
@@ -77,7 +77,7 @@
       cursor: not-allowed;
 
       .bpk-calendar-nav__icon {
-        fill: bonds.$bpk-text-disabled-day;
+        fill: tokens.$bpk-text-disabled-day;
       }
     }
   }

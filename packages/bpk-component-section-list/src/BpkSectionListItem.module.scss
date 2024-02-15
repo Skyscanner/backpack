@@ -16,38 +16,38 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
 
 .bpk-section-list-item {
   $root: &;
 
   display: flex;
   width: 100%;
-  min-height: bonds.bpk-spacing-xl() * 2;
-  padding: bonds.bpk-spacing-md() bonds.bpk-spacing-base();
+  min-height: tokens.bpk-spacing-xl() * 2;
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
   justify-content: space-between;
   align-items: center;
   border: none;
-  background-color: bonds.$bpk-surface-default-day;
-  color: bonds.$bpk-text-primary-day;
+  background-color: tokens.$bpk-surface-default-day;
+  color: tokens.$bpk-text-primary-day;
   text-decoration: none;
 
-  @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day);
+  @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
 
   &--interactive {
     cursor: pointer;
   }
 
   &__chevron {
-    fill: bonds.$bpk-text-secondary-day;
+    fill: tokens.$bpk-text-secondary-day;
 
     #{$root}:hover & {
-      fill: bonds.$bpk-text-primary-day;
+      fill: tokens.$bpk-text-primary-day;
     }
 
     #{$root}:active & {
-      fill: bonds.$bpk-text-primary-day;
+      fill: tokens.$bpk-text-primary-day;
     }
   }
 }

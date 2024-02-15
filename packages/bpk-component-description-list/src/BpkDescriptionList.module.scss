@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/typography';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-description-list {
   margin: 0;
@@ -29,10 +29,10 @@
 
   &__details {
     margin: 0;
-    margin-left: bonds.bpk-spacing-lg();
+    margin-left: tokens.bpk-spacing-lg();
 
     @include utils.bpk-rtl {
-      margin-right: bonds.bpk-spacing-lg();
+      margin-right: tokens.bpk-spacing-lg();
       margin-left: 0;
     }
   }

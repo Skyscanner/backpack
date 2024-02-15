@@ -16,20 +16,20 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/borders';
-@use '../../unstable_bpk-mixins/margins';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/margins';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-accordion {
   &__title {
     height: auto;
 
     &--collapsed {
-      @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day);
+      @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
 
       &-on-dark {
-        @include borders.bpk-border-bottom-sm(bonds.$bpk-line-on-dark-day);
+        @include borders.bpk-border-bottom-sm(tokens.$bpk-line-on-dark-day);
       }
     }
   }
@@ -39,7 +39,7 @@
     padding: 0;
     border: 0;
     background-color: transparent;
-    color: bonds.$bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
     text-align: left;
     cursor: pointer;
     appearance: none;
@@ -52,7 +52,7 @@
   &__flex-container {
     display: inline-flex;
     width: 100%;
-    margin: bonds.bpk-spacing-base() 0;
+    margin: tokens.bpk-spacing-base() 0;
     flex-direction: row;
   }
 
@@ -61,7 +61,7 @@
     flex-grow: 1;
 
     &--on-dark {
-      color: bonds.$bpk-canvas-day;
+      color: tokens.$bpk-canvas-day;
     }
   }
 
@@ -70,18 +70,18 @@
   }
 
   &__leading-icon {
-    @include margins.bpk-margin-trailing(bonds.bpk-spacing-md(), true);
+    @include margins.bpk-margin-trailing(tokens.bpk-spacing-md(), true);
   }
 
   &__item-expand-icon {
-    fill: bonds.$bpk-text-primary-day;
+    fill: tokens.$bpk-text-primary-day;
 
     &--flipped {
       transform: scaleY(-1);
     }
 
     &--on-dark {
-      fill: bonds.$bpk-canvas-day;
+      fill: tokens.$bpk-canvas-day;
     }
   }
 
@@ -89,14 +89,14 @@
     margin: 0;
 
     &--expanded {
-      padding-bottom: bonds.bpk-spacing-base();
+      padding-bottom: tokens.bpk-spacing-base();
 
-      @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day);
+      @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
 
       &-on-dark {
-        padding-bottom: bonds.bpk-spacing-base();
+        padding-bottom: tokens.bpk-spacing-base();
 
-        @include borders.bpk-border-bottom-sm(bonds.$bpk-line-on-dark-day);
+        @include borders.bpk-border-bottom-sm(tokens.$bpk-line-on-dark-day);
       }
     }
   }

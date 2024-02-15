@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/shadows';
-@use '../../unstable_bpk-mixins/utils';
-@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-navigation-bar {
   position: relative;
   display: flex;
-  min-height: bonds.bpk-spacing-xl() + bonds.bpk-spacing-lg();
-  padding: bonds.bpk-spacing-base();
+  min-height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-lg();
+  padding: tokens.bpk-spacing-base();
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -33,22 +33,22 @@
   @include utils.bpk-themeable-property(
     background-color,
     --bpk-navigation-bar-background-color,
-    bonds.$bpk-surface-default-day
+    tokens.$bpk-surface-default-day
   );
 
   &--on-dark {
-    background-color: bonds.$bpk-surface-contrast-day;
+    background-color: tokens.$bpk-surface-contrast-day;
   }
 
   &__title {
     @include utils.bpk-themeable-property(
       color,
       --bpk-navigation-bar-title-color,
-      bonds.$bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
 
     &--on-dark {
-      color: bonds.$bpk-text-primary-inverse-day;
+      color: tokens.$bpk-text-primary-inverse-day;
     }
   }
 
@@ -60,27 +60,27 @@
   }
 
   &__leading-item {
-    left: bonds.bpk-spacing-base();
+    left: tokens.bpk-spacing-base();
 
     @include utils.bpk-rtl {
-      right: bonds.bpk-spacing-base();
+      right: tokens.bpk-spacing-base();
       left: auto;
     }
   }
 
   &__trailing-item {
-    right: bonds.bpk-spacing-base();
+    right: tokens.bpk-spacing-base();
 
     @include utils.bpk-rtl {
       right: auto;
-      left: bonds.bpk-spacing-base();
+      left: tokens.bpk-spacing-base();
     }
   }
 
   &__sticky {
     position: sticky;
     top: 0;
-    z-index: bonds.$bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
+    z-index: tokens.$bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
 
     @include shadows.bpk-box-shadow-sm;
   }

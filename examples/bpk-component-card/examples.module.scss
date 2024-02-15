@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-card-examples {
   &__header {
     display: flex;
-    height: bonds.bpk-spacing-xxl();
-    padding: bonds.bpk-spacing-md();
+    height: tokens.bpk-spacing-xxl();
+    padding: tokens.bpk-spacing-md();
     justify-content: space-between;
     align-items: center;
-    color: bonds.$bpk-text-on-dark-day;
+    color: tokens.$bpk-text-on-dark-day;
   }
 
   &__wrapper {
-    width: bonds.bpk-spacing-md() * 41;
+    width: tokens.bpk-spacing-md() * 41;
   }
 }

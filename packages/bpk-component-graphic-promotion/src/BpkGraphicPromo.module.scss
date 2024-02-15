@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/breakpoints';
-@use '../../unstable_bpk-mixins/cards';
-@use '../../unstable_bpk-mixins/margins';
-@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/cards';
+@use '../../unstable__bpk-mixins/margins';
+@use '../../unstable__bpk-mixins/typography';
 
 @mixin aspect-ratio($ratio) {
   padding-top: $ratio;
@@ -79,10 +79,10 @@
   max-width: 76.5rem;
   margin-right: auto;
   margin-left: auto;
-  background-color: bonds.$bpk-surface-contrast-day;
+  background-color: tokens.$bpk-surface-contrast-day;
   background-position: center;
   background-size: cover;
-  color: bonds.$bpk-text-on-dark-day;
+  color: tokens.$bpk-text-on-dark-day;
   box-shadow: none;
 
   @include breakpoints.bpk-breakpoint-small-tablet {
@@ -104,29 +104,29 @@
     @include breakpoints.bpk-breakpoint-above-tablet {
       height: 28.75rem;
 
-      @include margins.bpk-margin-leading(bonds.bpk-spacing-xxxl(), false);
-      @include margins.bpk-margin-trailing(bonds.bpk-spacing-xxl(), false);
+      @include margins.bpk-margin-leading(tokens.bpk-spacing-xxxl(), false);
+      @include margins.bpk-margin-trailing(tokens.bpk-spacing-xxl(), false);
 
       /* adjusting for 1.5rem difference between margins */
       &--center > * {
-        @include margins.bpk-margin-trailing(bonds.bpk-spacing-lg());
+        @include margins.bpk-margin-trailing(tokens.bpk-spacing-lg());
       }
     }
 
     @include breakpoints.bpk-breakpoint-tablet {
       height: 22.5rem;
 
-      @include margins.bpk-margin-leading(bonds.bpk-spacing-xxl(), false);
-      @include margins.bpk-margin-trailing(bonds.bpk-spacing-xl(), false);
+      @include margins.bpk-margin-leading(tokens.bpk-spacing-xxl(), false);
+      @include margins.bpk-margin-trailing(tokens.bpk-spacing-xl(), false);
 
       /* adjusting for 1.5rem difference between margins */
       &--center > * {
-        @include margins.bpk-margin-trailing(bonds.bpk-spacing-md());
+        @include margins.bpk-margin-trailing(tokens.bpk-spacing-md());
       }
     }
 
     @include breakpoints.bpk-breakpoint-small-tablet {
-      padding: bonds.bpk-spacing-xl();
+      padding: tokens.bpk-spacing-xl();
       justify-content: space-between;
 
       @include reset-alignment;
@@ -143,12 +143,12 @@
     }
 
     @include breakpoints.bpk-breakpoint-small-mobile {
-      padding: bonds.bpk-spacing-lg();
+      padding: tokens.bpk-spacing-lg();
     }
   }
 
   &__tagline {
-    margin-bottom: bonds.bpk-spacing-md();
+    margin-bottom: tokens.bpk-spacing-md();
 
     @include typography.bpk-heading-5;
 
@@ -170,7 +170,7 @@
       @include typography.bpk-hero-5;
 
       &:not(:last-child) {
-        margin-bottom: bonds.bpk-spacing-md();
+        margin-bottom: tokens.bpk-spacing-md();
       }
     }
 
@@ -178,12 +178,12 @@
       @include typography.bpk-heading-1;
 
       &:not(:last-child) {
-        margin-bottom: bonds.bpk-spacing-md();
+        margin-bottom: tokens.bpk-spacing-md();
       }
     }
 
     @include breakpoints.bpk-breakpoint-small-tablet {
-      margin-bottom: bonds.bpk-spacing-md();
+      margin-bottom: tokens.bpk-spacing-md();
     }
 
     @include breakpoints.bpk-breakpoint-mobile {
@@ -231,7 +231,7 @@
 
   &__sponsor-content {
     display: flex;
-    margin-bottom: bonds.bpk-spacing-base();
+    margin-bottom: tokens.bpk-spacing-base();
     flex-direction: column;
 
     @include breakpoints.bpk-breakpoint-small-tablet {
@@ -240,18 +240,18 @@
   }
 
   &__sponsor-label {
-    margin-bottom: bonds.bpk-spacing-sm();
+    margin-bottom: tokens.bpk-spacing-sm();
 
     @include typography.bpk-label-1;
 
     @include breakpoints.bpk-breakpoint-small-tablet {
-      margin-bottom: bonds.bpk-spacing-md();
+      margin-bottom: tokens.bpk-spacing-md();
 
       @include typography.bpk-heading-3;
     }
 
     @include breakpoints.bpk-breakpoint-small-mobile {
-      margin-bottom: bonds.bpk-spacing-sm();
+      margin-bottom: tokens.bpk-spacing-sm();
 
       @include typography.bpk-label-1;
     }
@@ -265,7 +265,7 @@
   }
 
   &__cta {
-    margin-top: bonds.bpk-spacing-xl();
+    margin-top: tokens.bpk-spacing-xl();
 
     @include breakpoints.bpk-breakpoint-small-tablet {
       display: none;

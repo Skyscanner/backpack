@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/radii';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/utils';
 
 @mixin hidden-box-shadow-after {
   z-index: 0;
@@ -34,23 +34,23 @@
     z-index: -1;
     transition: opacity 200ms ease-in-out;
     border-radius: inherit;
-    box-shadow: bonds.$bpk-box-shadow-sm;
+    box-shadow: tokens.$bpk-box-shadow-sm;
     opacity: 0;
     pointer-events: none; // To prevent the pseudo element absorbing click events
   }
 }
 
 .bpk-ticket {
-  $ticket-padding: bonds.bpk-spacing-base();
+  $ticket-padding: tokens.bpk-spacing-base();
 
   position: relative;
   display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    flex: none;
-    color: bonds.$bpk-text-primary-day;
+  flex-direction: row;
+  align-items: stretch;
+  flex: none;
+  color: tokens.$bpk-text-primary-day;
   text-decoration: none;
-  box-shadow: bonds.$bpk-box-shadow-sm;
+  box-shadow: tokens.$bpk-box-shadow-sm;
   cursor: pointer;
 
   @include radii.bpk-border-radius-md;
@@ -72,23 +72,23 @@
 
   &__paper {
     position: relative;
-    background-color: bonds.$bpk-card-background-color;
+    background-color: tokens.$bpk-card-background-color;
   }
 
   @mixin main-styles {
     &--horizontal {
-      border-radius: bonds.$bpk-border-radius-md 0 0
-          bonds.$bpk-border-radius-md;
+      border-radius: tokens.$bpk-border-radius-md 0 0
+        tokens.$bpk-border-radius-md;
 
       @include utils.bpk-rtl {
-        border-radius: 0 bonds.$bpk-border-radius-md
-            bonds.$bpk-border-radius-md 0;
+        border-radius: 0 tokens.$bpk-border-radius-md
+          tokens.$bpk-border-radius-md 0;
       }
     }
 
     &--vertical {
-      border-radius: bonds.$bpk-border-radius-md bonds.$bpk-border-radius-md 0
-          0;
+      border-radius: tokens.$bpk-border-radius-md tokens.$bpk-border-radius-md 0
+        0;
     }
   }
 
@@ -112,22 +112,22 @@
   @mixin stub-styles {
     &--horizontal {
       min-width: 30%;
-      border-radius: 0 bonds.$bpk-border-radius-md bonds.$bpk-border-radius-md
-          0;
-      box-shadow: inset bonds.$bpk-one-pixel-rem 0 0 bonds.$bpk-line-day;
+      border-radius: 0 tokens.$bpk-border-radius-md tokens.$bpk-border-radius-md
+        0;
+      box-shadow: inset tokens.$bpk-one-pixel-rem 0 0 tokens.$bpk-line-day;
 
       @include utils.bpk-rtl {
-        border-radius: bonds.$bpk-border-radius-md 0 0
-            bonds.$bpk-border-radius-md;
-        box-shadow: inset (-1 * bonds.$bpk-one-pixel-rem) 0 0
-            bonds.$bpk-line-day;
+        border-radius: tokens.$bpk-border-radius-md 0 0
+          tokens.$bpk-border-radius-md;
+        box-shadow: inset (-1 * tokens.$bpk-one-pixel-rem) 0 0
+          tokens.$bpk-line-day;
       }
     }
 
     &--vertical {
-      border-radius: 0 0 bonds.$bpk-border-radius-md
-          bonds.$bpk-border-radius-md;
-      box-shadow: inset 0 bonds.$bpk-one-pixel-rem 0 bonds.$bpk-line-day;
+      border-radius: 0 0 tokens.$bpk-border-radius-md
+        tokens.$bpk-border-radius-md;
+      box-shadow: inset 0 tokens.$bpk-one-pixel-rem 0 tokens.$bpk-line-day;
     }
   }
 

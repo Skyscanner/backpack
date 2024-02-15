@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable__bpk-mixins/tokens';
 @use 'variables';
 
 .bpk-calendar-grid-transition {
@@ -36,7 +36,7 @@
 
     &--transitioning {
       z-index: 1;
-      transition: transform bonds.$bpk-duration-sm ease-in-out;
+      transition: transform tokens.$bpk-duration-sm ease-in-out;
     }
   }
 

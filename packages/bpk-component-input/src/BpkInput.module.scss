@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/forms';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
 
 .bpk-input {
   @include forms.bpk-input;
@@ -60,7 +60,7 @@
   // When persistent, set background to override any validity icons
   // appearing and make the clear button always display.
   &--persistent-clearable {
-    background: bonds.$bpk-input-background;
+    background: tokens.$bpk-input-background;
   }
 
   &--docked {

@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-chart {
   &__axis-tick {
     &-text {
-      fill: bonds.$bpk-text-secondary-day;
+      fill: tokens.$bpk-text-secondary-day;
 
       @include typography.bpk-text;
       @include typography.bpk-caption;
@@ -30,7 +30,7 @@
   }
 
   &__axis-label {
-    fill: bonds.$bpk-text-secondary-day;
+    fill: tokens.$bpk-text-secondary-day;
 
     @include typography.bpk-text;
     @include typography.bpk-caption;

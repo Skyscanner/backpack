@@ -19,13 +19,13 @@
 /* stylelint-disable selector-class-pattern */
 /* stylelint-disable selector-max-compound-selectors */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/breakpoints';
-@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-content-cards {
   &--header-text {
-    margin-bottom: bonds.bpk-spacing-base();
+    margin-bottom: tokens.bpk-spacing-base();
 
     @include typography.bpk-heading-2;
 
@@ -38,15 +38,15 @@
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
-      minmax(bonds.$bpk-one-pixel-rem * 50, 1fr)
+      minmax(tokens.$bpk-one-pixel-rem * 50, 1fr)
     );
     grid-auto-flow: column;
-    gap: bonds.bpk-spacing-lg();
+    gap: tokens.bpk-spacing-lg();
 
     @include breakpoints.bpk-breakpoint-small-tablet {
       grid-template-columns: 1fr;
       grid-auto-flow: row;
-      gap: bonds.bpk-spacing-lg();
+      gap: tokens.bpk-spacing-lg();
     }
   }
 }

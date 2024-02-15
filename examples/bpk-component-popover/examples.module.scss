@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-popover-paragraph {
-  margin-bottom: bonds.bpk-spacing-sm();
+  margin-bottom: tokens.bpk-spacing-sm();
 }
 
 .bpk-popover-spacer {
   display: flex;
-  height: 100 * bonds.$bpk-one-pixel-rem;
-  margin: 30 * bonds.$bpk-one-pixel-rem;
+  height: 100 * tokens.$bpk-one-pixel-rem;
+  margin: 30 * tokens.$bpk-one-pixel-rem;
   justify-content: space-around;
   align-items: flex-start;
 }

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-calendar-grid {
   width: 100%;
@@ -40,35 +40,35 @@
     &--start {
       background-image: linear-gradient(
         to right,
-        bonds.$bpk-surface-default-day 50%,
-        bonds.$bpk-surface-subtle-day 50%
+        tokens.$bpk-surface-default-day 50%,
+        tokens.$bpk-surface-subtle-day 50%
       );
 
       @include utils.bpk-rtl {
         background-image: linear-gradient(
           to left,
-          bonds.$bpk-surface-default-day 50%,
-          bonds.$bpk-surface-subtle-day 50%
+          tokens.$bpk-surface-default-day 50%,
+          tokens.$bpk-surface-subtle-day 50%
         );
       }
     }
 
     &--middle {
-      background-color: bonds.$bpk-surface-subtle-day;
+      background-color: tokens.$bpk-surface-subtle-day;
     }
 
     &--end {
       background-image: linear-gradient(
         to left,
-        bonds.$bpk-surface-default-day 50%,
-        bonds.$bpk-surface-subtle-day 50%
+        tokens.$bpk-surface-default-day 50%,
+        tokens.$bpk-surface-subtle-day 50%
       );
 
       @include utils.bpk-rtl {
         background-image: linear-gradient(
           to right,
-          bonds.$bpk-surface-default-day 50%,
-          bonds.$bpk-surface-subtle-day 50%
+          tokens.$bpk-surface-default-day 50%,
+          tokens.$bpk-surface-subtle-day 50%
         );
       }
     }
@@ -76,6 +76,6 @@
 
   &__week {
     display: flex;
-    padding-top: bonds.bpk-spacing-lg();
+    padding-top: tokens.bpk-spacing-lg();
   }
 }

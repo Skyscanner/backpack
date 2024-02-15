@@ -19,9 +19,9 @@
 // Use of stylelint-disable-next-line declaration-no-important in this file is to ensure that
 // the correct styles are applied for Internet Explorer 11 and are not overriden by system styles.
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/forms';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-select {
   @include forms.bpk-select;
@@ -51,75 +51,75 @@
   }
 
   &--with-image {
-    padding-left: bonds.bpk-spacing-xxl();
+    padding-left: tokens.bpk-spacing-xxl();
 
     @include utils.bpk-rtl {
-      padding-right: bonds.bpk-spacing-xxl();
-      padding-left: bonds.bpk-spacing-xxl();
+      padding-right: tokens.bpk-spacing-xxl();
+      padding-left: tokens.bpk-spacing-xxl();
 
       @media screen\0 {
         /* stylelint-disable-next-line declaration-no-important */
-        padding-right: bonds.bpk-spacing-xxl() !important;
+        padding-right: tokens.bpk-spacing-xxl() !important;
         /* stylelint-disable-next-line declaration-no-important */
-        padding-left: bonds.bpk-spacing-base() !important;
+        padding-left: tokens.bpk-spacing-base() !important;
       }
     }
 
     @media screen\0 {
       /* stylelint-disable-next-line declaration-no-important */
-      padding-left: bonds.bpk-spacing-xxl() !important;
+      padding-left: tokens.bpk-spacing-xxl() !important;
     }
   }
 
   &--with-image-large {
-    padding-left: bonds.bpk-spacing-xxl() + bonds.bpk-spacing-base();
+    padding-left: tokens.bpk-spacing-xxl() + tokens.bpk-spacing-base();
 
     @include utils.bpk-rtl {
-      padding-right: bonds.bpk-spacing-xxl() + bonds.bpk-spacing-base();
-      padding-left: bonds.bpk-spacing-xxl();
+      padding-right: tokens.bpk-spacing-xxl() + tokens.bpk-spacing-base();
+      padding-left: tokens.bpk-spacing-xxl();
 
       @media screen\0 {
-        padding-right: bonds.bpk-spacing-xxl() + bonds.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
+        padding-right: tokens.bpk-spacing-xxl() + tokens.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
         /* stylelint-disable-next-line declaration-no-important */
-        padding-left: bonds.bpk-spacing-base() !important;
+        padding-left: tokens.bpk-spacing-base() !important;
       }
     }
 
     @media screen\0 {
-      padding-left: bonds.bpk-spacing-xxl() + bonds.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
+      padding-left: tokens.bpk-spacing-xxl() + tokens.bpk-spacing-sm() !important; /* stylelint-disable-line declaration-no-important */
     }
   }
 }
 
-$select-image-width: 24 * bonds.$bpk-one-pixel-rem;
-$select-image-height: 16 * bonds.$bpk-one-pixel-rem;
-$select-image-large-width: 32 * bonds.$bpk-one-pixel-rem;
-$select-image-large-height: 24 * bonds.$bpk-one-pixel-rem;
+$select-image-width: 24 * tokens.$bpk-one-pixel-rem;
+$select-image-height: 16 * tokens.$bpk-one-pixel-rem;
+$select-image-large-width: 32 * tokens.$bpk-one-pixel-rem;
+$select-image-large-height: 24 * tokens.$bpk-one-pixel-rem;
 
 .bpk-select-wrapper {
   position: relative;
 
   &__image {
     position: absolute;
-    top: (bonds.$bpk-input-height - $select-image-height) * 0.5;
-    left: bonds.bpk-spacing-md();
+    top: (tokens.$bpk-input-height - $select-image-height) * 0.5;
+    left: tokens.bpk-spacing-md();
     width: $select-image-width;
     height: $select-image-height;
     pointer-events: none;
 
     @include utils.bpk-rtl {
-      right: bonds.bpk-spacing-md();
+      right: tokens.bpk-spacing-md();
       left: auto;
     }
 
     &--large {
-      top: (bonds.$bpk-input-large-height - $select-image-large-height) * 0.5;
-      left: bonds.bpk-spacing-base();
+      top: (tokens.$bpk-input-large-height - $select-image-large-height) * 0.5;
+      left: tokens.bpk-spacing-base();
       width: $select-image-large-width;
       height: $select-image-large-height;
 
       @include utils.bpk-rtl {
-        right: bonds.bpk-spacing-base();
+        right: tokens.bpk-spacing-base();
         left: auto;
       }
     }

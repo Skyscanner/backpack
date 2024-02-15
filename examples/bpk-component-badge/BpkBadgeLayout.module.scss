@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
-@use '../../packages/unstable_bpk-mixins/radii';
+@use '../../packages/unstable__bpk-mixins/tokens';
+@use '../../packages/unstable__bpk-mixins/radii';
 
 .bpk-badge-layout {
   &__container {
     position: relative;
     display: flex;
-    min-height: bonds.bpk-spacing-xxl();
-    padding: bonds.bpk-spacing-lg();
+    min-height: tokens.bpk-spacing-xxl();
+    padding: tokens.bpk-spacing-lg();
 
     &--light {
-      background-color: bonds.$bpk-canvas-contrast-day;
+      background-color: tokens.$bpk-canvas-contrast-day;
 
       @include radii.bpk-border-radius-xs;
     }

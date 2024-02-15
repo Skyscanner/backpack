@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/radii';
 @use 'variables';
 
 .bpk-calendar {
@@ -32,10 +32,10 @@
   }
 
   &__header {
-    margin-top: bonds.bpk-spacing-lg();
+    margin-top: tokens.bpk-spacing-lg();
   }
 
   &__grid {
-    margin-top: bonds.bpk-spacing-lg();
+    margin-top: tokens.bpk-spacing-lg();
   }
 }

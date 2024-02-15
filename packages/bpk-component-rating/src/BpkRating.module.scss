@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-rating {
   display: flex;
@@ -30,14 +30,14 @@
 
   &__value {
     display: flex;
-    padding-right: bonds.bpk-spacing-md();
+    padding-right: tokens.bpk-spacing-md();
     justify-content: center;
     align-items: baseline;
-    color: bonds.$bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
 
     @include utils.bpk-rtl {
       padding-right: 0;
-      padding-left: bonds.bpk-spacing-md();
+      padding-left: tokens.bpk-spacing-md();
       direction: ltr;
     }
   }
@@ -55,26 +55,26 @@
   }
 
   &__scale {
-    color: bonds.$bpk-text-secondary-day;
+    color: tokens.$bpk-text-secondary-day;
   }
 
   &__title {
     &--with-subtitle {
-      padding-right: bonds.bpk-spacing-md();
+      padding-right: tokens.bpk-spacing-md();
 
       @include utils.bpk-rtl {
         padding-right: 0;
-        padding-left: bonds.bpk-spacing-md();
+        padding-left: tokens.bpk-spacing-md();
       }
     }
 
     &--large {
-      padding-top: bonds.$bpk-one-pixel-rem;
+      padding-top: tokens.$bpk-one-pixel-rem;
     }
   }
 
   &__subtitle {
-    color: bonds.$bpk-text-secondary-day;
+    color: tokens.$bpk-text-secondary-day;
 
     &--large {
       // padding-top: $bpk-one-pixel-rem;

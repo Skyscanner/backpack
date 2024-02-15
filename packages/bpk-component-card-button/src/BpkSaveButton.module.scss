@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 @keyframes heart-beat {
   0%,
@@ -48,9 +48,9 @@
 
 .bpk-save-button {
   position: relative;
-  width: bonds.bpk-spacing-xxl();
-  height: bonds.bpk-spacing-xxl();
-  padding: bonds.bpk-spacing-md();
+  width: tokens.bpk-spacing-xxl();
+  height: tokens.bpk-spacing-xxl();
+  padding: tokens.bpk-spacing-md();
   border-radius: 50%;
   background-color: transparent;
 
@@ -67,10 +67,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: bonds.$bpk-text-on-light-day;
+    color: tokens.$bpk-text-on-light-day;
 
     @include utils.bpk-hover {
-      color: bonds.$bpk-text-on-light-day;
+      color: tokens.$bpk-text-on-light-day;
     }
   }
 
@@ -80,7 +80,7 @@
 
     &--show {
       @include utils.bpk-hover {
-        transition: opacity bonds.$bpk-duration-sm ease-in-out;
+        transition: opacity tokens.$bpk-duration-sm ease-in-out;
         opacity: 0;
       }
     }
@@ -90,13 +90,13 @@
     }
 
     &--onDark {
-      color: bonds.$bpk-text-on-dark-day;
+      color: tokens.$bpk-text-on-dark-day;
     }
   }
 
   &__heartIcon {
     z-index: 2;
-    color: bonds.$bpk-core-accent-day;
+    color: tokens.$bpk-core-accent-day;
     opacity: 0;
 
     &--toggle {
@@ -108,42 +108,42 @@
       opacity: 1;
 
       @include utils.bpk-hover {
-        color: bonds.$bpk-core-accent-day;
+        color: tokens.$bpk-core-accent-day;
       }
     }
 
     &--hide {
       @include utils.bpk-hover {
-        transition: opacity bonds.$bpk-duration-sm ease-in-out;
-        color: bonds.$bpk-text-on-light-day;
+        transition: opacity tokens.$bpk-duration-sm ease-in-out;
+        color: tokens.$bpk-text-on-light-day;
         opacity: 1;
       }
     }
 
     &--onDark {
-      color: bonds.$bpk-text-on-dark-day;
+      color: tokens.$bpk-text-on-dark-day;
 
       @include utils.bpk-hover {
-        color: bonds.$bpk-text-on-dark-day;
+        color: tokens.$bpk-text-on-dark-day;
       }
     }
   }
 
   &__small {
-    width: bonds.bpk-spacing-xl();
-    height: bonds.bpk-spacing-xl();
-    min-height: bonds.bpk-spacing-xl();
+    width: tokens.bpk-spacing-xl();
+    height: tokens.bpk-spacing-xl();
+    min-height: tokens.bpk-spacing-xl();
   }
 
   &__contained {
-    background-color: bonds.$bpk-private-card-button-contained-color;
+    background-color: tokens.$bpk-private-card-button-contained-color;
 
     @include utils.bpk-hover {
-      background-color: bonds.$bpk-private-card-button-contained-color;
+      background-color: tokens.$bpk-private-card-button-contained-color;
     }
 
     &:active {
-      background-color: bonds.$bpk-private-card-button-contained-color;
+      background-color: tokens.$bpk-private-card-button-contained-color;
     }
   }
 }

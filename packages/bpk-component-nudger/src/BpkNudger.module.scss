@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/typography';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-nudger {
   @include utils.bpk-rtl {
@@ -32,9 +32,9 @@
 
   &__input {
     display: inline-block;
-    padding: bonds.bpk-spacing-md() 0;
+    padding: tokens.bpk-spacing-md() 0;
     border: none;
-    color: bonds.$bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
     text-align: center;
     vertical-align: middle;
 
@@ -43,11 +43,11 @@
 
     &--secondary-on-dark {
       background-color: transparent;
-      color: bonds.$bpk-text-on-dark-day;
+      color: tokens.$bpk-text-on-dark-day;
     }
 
     &--numeric {
-      $size: bonds.bpk-spacing-lg() + (bonds.bpk-spacing-md() * 2);
+      $size: tokens.bpk-spacing-lg() + (tokens.bpk-spacing-md() * 2);
 
       width: $size;
     }
@@ -61,7 +61,7 @@
 
   &__label {
     display: flex;
-    gap: bonds.bpk-spacing-md();
+    gap: tokens.bpk-spacing-md();
 
     &--title-subtitle {
       display: flex;
@@ -70,7 +70,7 @@
     }
 
     &--subtitle {
-      color: bonds.$bpk-text-secondary-day;
+      color: tokens.$bpk-text-secondary-day;
     }
   }
 }

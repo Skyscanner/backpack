@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/forms';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-label {
   @include forms.bpk-label;
@@ -35,7 +35,7 @@
     @include forms.bpk-label--disabled;
 
     &--white {
-      color: bonds.$bpk-text-disabled-on-dark-day;
+      color: tokens.$bpk-text-disabled-on-dark-day;
     }
   }
 
@@ -43,7 +43,7 @@
     @include utils.bpk-themeable-property(
       color,
       --bpk-form-validation-text-color,
-      bonds.$bpk-form-validation-color
+      tokens.$bpk-form-validation-color
     );
   }
 }

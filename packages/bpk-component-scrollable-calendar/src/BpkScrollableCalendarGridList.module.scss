@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable__bpk-mixins/tokens';
 
-$calendar-height: 7 * (bonds.$bpk-calendar-day-size + bonds.bpk-spacing-lg());
+$calendar-height: 7 * (tokens.$bpk-calendar-day-size + tokens.bpk-spacing-lg());
 
 .bpk-scrollable-calendar-grid-list {
   position: relative;

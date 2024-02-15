@@ -16,52 +16,54 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-swap-button {
   transform: translateY(-50%) rotate(90deg);
 
-  @include bpk-breakpoint-small-tablet {
+  @include breakpoints.bpk-breakpoint-small-tablet {
     transform: rotate(0deg);
   }
 
   :focus-visible {
     box-shadow:
-      0 0 0 (bpk-spacing-sm() / 2) $bpk-surface-elevated-day,
-      0 0 0 bpk-spacing-sm() $bpk-text-link-day;
+      0 0 0 (tokens.bpk-spacing-sm() / 2) tokens.$bpk-surface-elevated-day,
+      0 0 0 tokens.bpk-spacing-sm() tokens.$bpk-text-link-day;
   }
 
   &__button {
     display: flex;
-    width: bpk-spacing-xxl();
-    height: bpk-spacing-xxl();
+    width: tokens.bpk-spacing-xxl();
+    height: tokens.bpk-spacing-xxl();
     justify-content: center;
     align-items: center;
-    transition: transform $bpk-duration-base;
-    border: $bpk-border-size-xl solid $bpk-core-primary-day;
+    transition: transform tokens.$bpk-duration-base;
+    border: tokens.$bpk-border-size-xl solid tokens.$bpk-core-primary-day;
     border-radius: 50%;
-    background-color: $bpk-surface-default-day;
+    background-color: tokens.$bpk-surface-default-day;
 
-    @include bpk-breakpoint-small-tablet {
-      border: $bpk-border-size-lg solid $bpk-core-primary-day;
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      border: tokens.$bpk-border-size-lg solid tokens.$bpk-core-primary-day;
     }
 
-    @include bpk-hover {
-      background-color: $bpk-surface-highlight-day;
+    @include utils.bpk-hover {
+      background-color: tokens.$bpk-surface-highlight-day;
     }
 
     span {
       display: inline-flex;
-      line-height: $bpk-line-height-xs;
+      line-height: tokens.$bpk-line-height-xs;
     }
 
     &--canvas-default {
-      border: $bpk-border-size-xl solid $bpk-canvas-day;
-      background-color: $bpk-canvas-contrast-day;
+      border: tokens.$bpk-border-size-xl solid tokens.$bpk-canvas-day;
+      background-color: tokens.$bpk-canvas-contrast-day;
     }
 
     &--canvas-contrast {
-      border: $bpk-border-size-xl solid $bpk-canvas-contrast-day;
+      border: tokens.$bpk-border-size-xl solid tokens.$bpk-canvas-contrast-day;
     }
   }
 }

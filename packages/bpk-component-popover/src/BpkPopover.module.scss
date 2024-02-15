@@ -16,34 +16,34 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/borders';
-@use '../../unstable_bpk-mixins/breakpoints';
-@use '../../unstable_bpk-mixins/layers';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/layers';
+@use '../../unstable__bpk-mixins/utils';
 
-$arrow-size: bonds.bpk-spacing-lg();
-$arrow-inset-margin: -1 * (bonds.$bpk-one-pixel-rem * 11);
+$arrow-size: tokens.bpk-spacing-lg();
+$arrow-inset-margin: -1 * (tokens.$bpk-one-pixel-rem * 11);
 
 .bpk-popover-portal {
-  z-index: bonds.$bpk-zindex-popover;
+  z-index: tokens.$bpk-zindex-popover;
 
   @include breakpoints.bpk-breakpoint-mobile {
-    margin-right: bonds.bpk-spacing-base();
-    margin-left: bonds.bpk-spacing-base();
+    margin-right: tokens.bpk-spacing-base();
+    margin-left: tokens.bpk-spacing-base();
   }
 }
 
 .bpk-popover {
-  transition: opacity bonds.$bpk-duration-sm ease-in-out;
+  transition: opacity tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
 
   @include layers.bpk-layer;
 
   @include breakpoints.bpk-breakpoint-above-mobile {
-    max-width: bonds.$bpk-breakpoint-mobile;
-    transition: opacity bonds.$bpk-duration-xs ease-in-out;
+    max-width: tokens.$bpk-breakpoint-mobile;
+    transition: opacity tokens.$bpk-duration-xs ease-in-out;
   }
 
   &--appear {
@@ -59,31 +59,31 @@ $arrow-inset-margin: -1 * (bonds.$bpk-one-pixel-rem * 11);
     width: $arrow-size;
     height: $arrow-size;
     transform: rotate(45deg);
-    border: bonds.$bpk-one-pixel-rem solid transparent;
+    border: tokens.$bpk-one-pixel-rem solid transparent;
     background: inherit;
 
     .bpk-popover-portal[data-popper-placement='top'] & {
       bottom: $arrow-inset-margin;
-      border-right-color: bonds.$bpk-surface-highlight-day;
-      border-bottom-color: bonds.$bpk-surface-highlight-day;
+      border-right-color: tokens.$bpk-surface-highlight-day;
+      border-bottom-color: tokens.$bpk-surface-highlight-day;
     }
 
     .bpk-popover-portal[data-popper-placement='right'] & {
       left: $arrow-inset-margin;
-      border-bottom-color: bonds.$bpk-surface-highlight-day;
-      border-left-color: bonds.$bpk-surface-highlight-day;
+      border-bottom-color: tokens.$bpk-surface-highlight-day;
+      border-left-color: tokens.$bpk-surface-highlight-day;
     }
 
     .bpk-popover-portal[data-popper-placement='bottom'] & {
       top: $arrow-inset-margin;
-      border-top-color: bonds.$bpk-surface-highlight-day;
-      border-left-color: bonds.$bpk-surface-highlight-day;
+      border-top-color: tokens.$bpk-surface-highlight-day;
+      border-left-color: tokens.$bpk-surface-highlight-day;
     }
 
     .bpk-popover-portal[data-popper-placement='left'] & {
       right: $arrow-inset-margin;
-      border-top-color: bonds.$bpk-surface-highlight-day;
-      border-right-color: bonds.$bpk-surface-highlight-day;
+      border-top-color: tokens.$bpk-surface-highlight-day;
+      border-right-color: tokens.$bpk-surface-highlight-day;
     }
 
     &[data-hide] {
@@ -93,16 +93,16 @@ $arrow-inset-margin: -1 * (bonds.$bpk-one-pixel-rem * 11);
 
   &__body {
     &--padded {
-      padding: bonds.bpk-spacing-base();
+      padding: tokens.bpk-spacing-base();
     }
   }
 
   &__header {
     display: flex;
-    padding: bonds.bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
     justify-content: space-between;
 
-    @include borders.bpk-border-bottom-sm(bonds.$bpk-surface-highlight-day);
+    @include borders.bpk-border-bottom-sm(tokens.$bpk-surface-highlight-day);
   }
 
   &__label {
@@ -118,10 +118,10 @@ $arrow-inset-margin: -1 * (bonds.$bpk-one-pixel-rem * 11);
   }
 
   &__footer {
-    padding: bonds.bpk-spacing-md() bonds.bpk-spacing-base();
+    padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
     text-align: right;
 
-    @include borders.bpk-border-top-sm(bonds.$bpk-surface-highlight-day);
+    @include borders.bpk-border-top-sm(tokens.$bpk-surface-highlight-day);
 
     @include utils.bpk-rtl {
       text-align: left;

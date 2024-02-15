@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/forms';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
+@use '../../unstable__bpk-mixins/utils';
 
-$bpk-radio-circle-size: bonds.$bpk-one-pixel-rem * 8;
-$bpk-radio-size: bonds.bpk-spacing-lg() - (bonds.$bpk-one-pixel-rem * 4);
+$bpk-radio-circle-size: tokens.$bpk-one-pixel-rem * 8;
+$bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
 
 .bpk-radio {
   @include forms.bpk-radio;
@@ -34,7 +34,7 @@ $bpk-radio-size: bonds.bpk-spacing-lg() - (bonds.$bpk-one-pixel-rem * 4);
     @include forms.bpk-radio--disabled;
 
     &--white {
-      color: bonds.$bpk-text-disabled-on-dark-day;
+      color: tokens.$bpk-text-disabled-on-dark-day;
     }
   }
 
@@ -57,7 +57,7 @@ $bpk-radio-size: bonds.bpk-spacing-lg() - (bonds.$bpk-one-pixel-rem * 4);
       &:disabled {
         + .bpk-radio__circle {
           display: block;
-          background: bonds.$bpk-text-disabled-day;
+          background: tokens.$bpk-text-disabled-day;
         }
       }
     }
@@ -65,8 +65,8 @@ $bpk-radio-size: bonds.bpk-spacing-lg() - (bonds.$bpk-one-pixel-rem * 4);
 
   &__circle {
     position: absolute;
-    top: bonds.bpk-spacing-md() - (bonds.$bpk-one-pixel-rem * 2);
-    left: bonds.bpk-spacing-md() - (bonds.$bpk-one-pixel-rem * 2);
+    top: tokens.bpk-spacing-md() - (tokens.$bpk-one-pixel-rem * 2);
+    left: tokens.bpk-spacing-md() - (tokens.$bpk-one-pixel-rem * 2);
     display: none;
     width: $bpk-radio-circle-size;
     height: $bpk-radio-circle-size;
@@ -75,11 +75,11 @@ $bpk-radio-size: bonds.bpk-spacing-lg() - (bonds.$bpk-one-pixel-rem * 4);
     @include utils.bpk-themeable-property(
       background,
       --bpk-radio-checked-color,
-      bonds.$bpk-text-link-day
+      tokens.$bpk-text-link-day
     );
 
     @include utils.bpk-rtl {
-      right: bonds.bpk-spacing-md() - (bonds.$bpk-one-pixel-rem * 2);
+      right: tokens.bpk-spacing-md() - (tokens.$bpk-one-pixel-rem * 2);
       left: auto;
     }
   }

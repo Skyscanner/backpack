@@ -16,8 +16,8 @@
 //  * limitations under the License.
 //  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-icon-marker-background {
   position: absolute;
@@ -27,7 +27,7 @@
   @include utils.bpk-themeable-property(
     fill,
     --bpk-icon-marker-default-background-color,
-    bonds.$bpk-private-map-poi-pin-day
+    tokens.$bpk-private-map-poi-pin-day
   );
 
   &--interactive {
@@ -38,17 +38,17 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-icon-marker-default-disabled-background-color,
-      bonds.$bpk-status-success-fill-day
+      tokens.$bpk-status-success-fill-day
     );
   }
 
   &--selected {
-    fill: bonds.$bpk-core-primary-day;
+    fill: tokens.$bpk-core-primary-day;
 
     @include utils.bpk-themeable-property(
       stroke,
       --bpk-icon-marker-default-selected-color,
-      bonds.$bpk-core-primary-day
+      tokens.$bpk-core-primary-day
     );
   }
 }

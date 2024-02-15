@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable__bpk-mixins/tokens';
 
 .bpk-content-bubble {
   &__pointer {
@@ -34,11 +34,11 @@
     background-size: cover;
 
     &--rounded {
-      border-radius: bonds.$bpk-flare-corner-radius;
+      border-radius: tokens.$bpk-flare-corner-radius;
 
       &--with-pointer {
-        border-radius: bonds.$bpk-flare-corner-radius
-          bonds.$bpk-flare-corner-radius 0 0;
+        border-radius: tokens.$bpk-flare-corner-radius
+          tokens.$bpk-flare-corner-radius 0 0;
       }
     }
   }

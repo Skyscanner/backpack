@@ -7,12 +7,12 @@ in the future we will switch the default API to the new one
 
 * Backpack is shipped with two versions of `bpk-mixins` package
   * `packages/bpk-mixins` that remains the stable option. It uses old SASS API and `@import` syntax
-  * `packages/unstable_bpk-mixins` is a modern SASS API version compatible with `sass` and `sass-embedded` packages, but not with `node-sass`
+  * `packages/unstable__bpk-mixins` is a modern SASS API version compatible with `sass` and `sass-embedded` packages, but not with `node-sass`
 * In the future the package using Old API will be deprecated and removed and the one using New API will be promoted to stable
-* For our own components we use `unstable_bpk-mixins`
+* For our own components we use `unstable__bpk-mixins`
   * These mixins must be imported with `@use` at-rule
   * Mixins partials must be used in a granular way (use only those partials that you need to build a particular component, see "Wrong" and "Correct" examples below)
-* If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Then run `npm run unstable_bpk-mixins` to generate a new modern version of the package
+* If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Then run `npm run unstable__bpk-mixins` to generate a new modern version of the package
 
 ## Examples
 
@@ -20,7 +20,7 @@ in the future we will switch the default API to the new one
 ```
 // BpkAwesomeComponent.module.scss
 
-@use '../unstable_bpk-mixins' as mixins;
+@use '../unstable__bpk-mixins' as mixins;
 
 .bpk-awesome-component {
   margin-right: mixins.bpk-spacing-md();
@@ -42,10 +42,10 @@ in the future we will switch the default API to the new one
 ```
 // BpkAwesomeComponent.module.scss
 
-@use '../unstable_bpk-mixins/bonds';
+@use '../unstable__bpk-mixins/tokens';
 
 .bpk-awesome-component {
-  margin-right: bonds.bpk-spacing-md();
+  margin-right: tokens.bpk-spacing-md();
 }
 ```
 

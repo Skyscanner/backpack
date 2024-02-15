@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/buttons';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/buttons';
 
 .bpk-button {
   @include buttons.bpk-button;
@@ -27,13 +27,13 @@
   }
 
   &--icon-only {
-    border-radius: bonds.$bpk-button-border-radius;
+    border-radius: tokens.$bpk-button-border-radius;
 
     @include buttons.bpk-button--icon-only;
   }
 
   &--large-icon-only {
-    border-radius: bonds.$bpk-button-border-radius;
+    border-radius: tokens.$bpk-button-border-radius;
 
     @include buttons.bpk-button--large-icon-only;
   }

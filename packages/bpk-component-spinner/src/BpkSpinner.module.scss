@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/spinners';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/spinners';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-spinner {
   @include spinners.bpk-spinner;
@@ -28,16 +28,16 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-spinner-primary-color,
-      bonds.$bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
   }
 
   &--light {
-    fill: bonds.$bpk-text-on-dark-day;
+    fill: tokens.$bpk-text-on-dark-day;
   }
 
   &--dark {
-    fill: bonds.$bpk-text-primary-day;
+    fill: tokens.$bpk-text-primary-day;
   }
 
   &--large {

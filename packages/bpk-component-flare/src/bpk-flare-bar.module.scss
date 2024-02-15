@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/breakpoints';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-flare-bar {
   &__container {
@@ -29,11 +29,11 @@
     // By using `display: flex` we ensure that this container is the nearest block container
     display: flex;
     min-width: 10rem;
-    height: bonds.$bpk-flare-height-desktop;
+    height: tokens.$bpk-flare-height-desktop;
     overflow: hidden;
 
     @include breakpoints.bpk-breakpoint-mobile {
-      height: bonds.$bpk-flare-height-mobile;
+      height: tokens.$bpk-flare-height-mobile;
     }
   }
 
@@ -42,10 +42,10 @@
     // stylelint-disable-next-line unit-disallowed-list
     bottom: -1px;
     width: 700rem; // required for correct behaviour in IE
-    height: bonds.$bpk-flare-height-desktop;
+    height: tokens.$bpk-flare-height-desktop;
     margin-left: 50%;
     transform: translateX(-50%);
-    fill: bonds.$bpk-surface-default-day;
+    fill: tokens.$bpk-surface-default-day;
 
     @include utils.bpk-rtl {
       margin-right: 50%;
@@ -53,18 +53,18 @@
     }
 
     @include breakpoints.bpk-breakpoint-mobile {
-      height: bonds.$bpk-flare-height-mobile;
+      height: tokens.$bpk-flare-height-mobile;
     }
   }
 
   &__rounded-corner {
     position: absolute;
     // stylelint-disable-next-line unit-disallowed-list
-    bottom: calc(#{bonds.bpk-spacing-lg()} - 1px);
+    bottom: calc(#{tokens.bpk-spacing-lg()} - 1px);
     left: 0;
-    width: bonds.$bpk-flare-corner-radius;
-    height: bonds.$bpk-flare-corner-radius;
-    fill: bonds.$bpk-surface-default-day;
+    width: tokens.$bpk-flare-corner-radius;
+    height: tokens.$bpk-flare-corner-radius;
+    fill: tokens.$bpk-surface-default-day;
 
     &--trailing {
       right: 0;

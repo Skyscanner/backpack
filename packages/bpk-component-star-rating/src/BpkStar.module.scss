@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 @mixin large-star {
-  width: bonds.$bpk-icon-size-lg;
-  height: bonds.$bpk-icon-size-lg;
+  width: tokens.$bpk-icon-size-lg;
+  height: tokens.$bpk-icon-size-lg;
   vertical-align: bottom;
 }
 
 .bpk-star {
   display: inline-block;
   vertical-align: text-bottom;
-  fill: bonds.$bpk-text-disabled-day;
+  fill: tokens.$bpk-text-disabled-day;
 
   &--large {
     @include large-star;
@@ -43,14 +43,14 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-star-rating-filled-color,
-      bonds.$bpk-status-warning-spot-day
+      tokens.$bpk-status-warning-spot-day
     );
   }
 
   &__container {
     display: inline-block;
-    width: bonds.$bpk-icon-size-sm;
-    height: bonds.$bpk-icon-size-sm;
+    width: tokens.$bpk-icon-size-sm;
+    height: tokens.$bpk-icon-size-sm;
 
     &--half-star {
       position: relative;

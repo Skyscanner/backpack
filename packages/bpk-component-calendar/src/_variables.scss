@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable__bpk-mixins/tokens';
 
-$shadow-bottom: 0 1px 0 0 bonds.$bpk-line-day; /* stylelint-disable-line unit-disallowed-list */
+$shadow-bottom: 0 1px 0 0 tokens.$bpk-line-day; /* stylelint-disable-line unit-disallowed-list */
 $calendar-width: 7 *
-  (bonds.$bpk-calendar-day-size + (2 * bonds.$bpk-calendar-day-spacing));
+  (tokens.$bpk-calendar-day-size + (2 * tokens.$bpk-calendar-day-spacing));

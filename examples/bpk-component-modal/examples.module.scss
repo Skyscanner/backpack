@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-modal-paragraph {
-  margin-bottom: bonds.bpk-spacing-md();
+  margin-bottom: tokens.bpk-spacing-md();
 }
 
 .bpk-modal__leading-button {
-  color: bonds.$bpk-text-link-day;
-  fill: bonds.$bpk-text-link-day;
+  color: tokens.$bpk-text-link-day;
+  fill: tokens.$bpk-text-link-day;
 
   :hover {
-    color: bonds.$bpk-text-secondary-day;
-    fill: bonds.$bpk-text-secondary-day;
+    color: tokens.$bpk-text-secondary-day;
+    fill: tokens.$bpk-text-secondary-day;
   }
 }

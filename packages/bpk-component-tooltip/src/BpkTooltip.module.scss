@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/layers';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/layers';
 
-$arrow-size: bonds.bpk-spacing-md();
-$arrow-inset-margin: -1 * (bonds.$bpk-one-pixel-rem * 3);
-$light-arrow-border-color: bonds.$bpk-line-day;
-$dark-background-color: bonds.$bpk-surface-contrast-day;
+$arrow-size: tokens.bpk-spacing-md();
+$arrow-inset-margin: -1 * (tokens.$bpk-one-pixel-rem * 3);
+$light-arrow-border-color: tokens.$bpk-line-day;
+$dark-background-color: tokens.$bpk-surface-contrast-day;
 
 .bpk-tooltip-portal {
-  z-index: bonds.$bpk-zindex-tooltip;
+  z-index: tokens.$bpk-zindex-tooltip;
 
   &--target {
     display: inline-block;
@@ -34,8 +34,8 @@ $dark-background-color: bonds.$bpk-surface-contrast-day;
 
 .bpk-tooltip {
   transition:
-    opacity bonds.$bpk-duration-sm ease-in-out,
-    transform bonds.$bpk-duration-sm ease-in-out;
+    opacity tokens.$bpk-duration-sm ease-in-out,
+    transform tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
 
@@ -70,8 +70,8 @@ $dark-background-color: bonds.$bpk-surface-contrast-day;
   &--appear-active {
     transform: translate(0, 0);
     transition:
-      opacity bonds.$bpk-duration-sm ease-in-out,
-      transform bonds.$bpk-duration-sm ease-in-out;
+      opacity tokens.$bpk-duration-sm ease-in-out,
+      transform tokens.$bpk-duration-sm ease-in-out;
     opacity: 1;
   }
 
@@ -80,9 +80,9 @@ $dark-background-color: bonds.$bpk-surface-contrast-day;
     width: $arrow-size;
     height: $arrow-size;
     transform: rotate(45deg);
-    border: bonds.$bpk-one-pixel-rem solid transparent;
+    border: tokens.$bpk-one-pixel-rem solid transparent;
     background: inherit;
-    background-color: bonds.$bpk-surface-default-day;
+    background-color: tokens.$bpk-surface-default-day;
 
     .bpk-tooltip-portal[data-popper-placement='top'] & {
       bottom: $arrow-inset-margin;
@@ -139,16 +139,13 @@ $dark-background-color: bonds.$bpk-surface-contrast-day;
     @include layers.bpk-layer;
 
     &--padded {
-      padding: bonds.bpk-spacing-md() bonds.bpk-spacing-base();
+      padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
     }
 
     &--dark {
-      color: bonds.$bpk-text-primary-inverse-day;
+      color: tokens.$bpk-text-primary-inverse-day;
 
-      @include layers.bpk-layer(
-          $dark-background-color,
-          $dark-background-color
-        );
+      @include layers.bpk-layer($dark-background-color, $dark-background-color);
     }
   }
 }

@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
 
 .bpk-bottom-sheet {
   &--container {
     display: flex;
-    padding: bonds.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-lg();
 
     @include breakpoints.bpk-breakpoint-mobile {
       padding: 0;

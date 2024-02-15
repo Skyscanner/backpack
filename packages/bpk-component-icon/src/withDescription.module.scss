@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-icon-description {
   @include utils.bpk-visually-hidden;

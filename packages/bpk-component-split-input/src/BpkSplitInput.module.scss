@@ -18,15 +18,15 @@
 
 /* stylelint-disable */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
 
 
   .bpk-split-input {
     @include typography.bpk-body-default;
     display: flex;
     width: 100%;
-    padding-top: bonds.bpk-spacing-sm();
+    padding-top: tokens.bpk-spacing-sm();
     flex-direction: row;
     align-items: center;
     direction: ltr;

@@ -15,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-page-indicator-examples {
   &__container {
     display: flex;
     width: 100%;
-    height: 80 * bonds.$bpk-one-pixel-rem;
+    height: 80 * tokens.$bpk-one-pixel-rem;
     justify-content: center;
     align-items: flex-end;
   }

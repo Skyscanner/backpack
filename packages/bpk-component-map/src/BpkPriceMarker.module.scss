@@ -16,36 +16,36 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-$arrow-width: bonds.bpk-spacing-base();
-$arrow-height: bonds.bpk-spacing-base();
+$arrow-width: tokens.bpk-spacing-base();
+$arrow-height: tokens.bpk-spacing-base();
 
 .bpk-price-marker {
   display: flex;
-  padding: bonds.$bpk-one-pixel-rem * 2 bonds.bpk-spacing-md();
+  padding: tokens.$bpk-one-pixel-rem * 2 tokens.bpk-spacing-md();
   justify-content: center;
   align-items: center;
-  border: bonds.$bpk-border-size-xl solid;
-  border-radius: bonds.$bpk-border-radius-sm;
+  border: tokens.$bpk-border-size-xl solid;
+  border-radius: tokens.$bpk-border-radius-sm;
 
   &--dynamic {
     cursor: pointer;
   }
 
   &-default {
-    color: bonds.$bpk-text-primary-inverse-day;
+    color: tokens.$bpk-text-primary-inverse-day;
 
     @include utils.bpk-themeable-property(
       border-color,
       --bpk-price-marker-background-color,
-      bonds.$bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
     @include utils.bpk-themeable-property(
       background-color,
       --bpk-price-marker-background-color,
-      bonds.$bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
   }
 
@@ -53,43 +53,43 @@ $arrow-height: bonds.bpk-spacing-base();
     @include utils.bpk-themeable-property(
       color,
       --bpk-price-marker-viewed-color,
-      rgba(bonds.$bpk-text-on-dark-day, 0.8)
+      rgba(tokens.$bpk-text-on-dark-day, 0.8)
     );
     @include utils.bpk-themeable-property(
       border-color,
       --bpk-price-marker-viewed-border-color,
-      bonds.$bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
     @include utils.bpk-themeable-property(
       background-color,
       --bpk-price-marker-viewed-background-color,
-      bonds.$bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
   }
 
   &-focused {
-    padding: (bonds.bpk-spacing-sm() + (bonds.$bpk-one-pixel-rem * 2))
-        bonds.bpk-spacing-md();
-    background-color: bonds.$bpk-surface-default-day;
+    padding: (tokens.bpk-spacing-sm() + (tokens.$bpk-one-pixel-rem * 2))
+      tokens.bpk-spacing-md();
+    background-color: tokens.$bpk-surface-default-day;
 
     @include utils.bpk-themeable-property(
       border-color,
       --bpk-price-marker-selected-border-color,
-      bonds.$bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
     @include utils.bpk-themeable-property(
       color,
       --bpk-price-marker-selected-color,
-      bonds.$bpk-text-link-day
+      tokens.$bpk-text-link-day
     );
   }
 
   &-disabled {
     // We want the disabled marker appear under any other markers that maybe rendered around it
     z-index: -2;
-    border-color: bonds.$bpk-canvas-day;
-    background-color: bonds.$bpk-canvas-day;
-    color: bonds.$bpk-text-disabled-day;
+    border-color: tokens.$bpk-canvas-day;
+    background-color: tokens.$bpk-canvas-day;
+    color: tokens.$bpk-text-disabled-day;
   }
 
   &__wrapper {
@@ -99,8 +99,8 @@ $arrow-height: bonds.bpk-spacing-base();
     flex-direction: column;
     align-items: center;
     transform: translate(
-      calc(-50% - #{bonds.$bpk-border-size-xl}),
-      calc(-100% - #{bonds.$bpk-border-size-xl} - #{$arrow-height}/ 2)
+      calc(-50% - #{tokens.$bpk-border-size-xl}),
+      calc(-100% - #{tokens.$bpk-border-size-xl} - #{$arrow-height}/ 2)
     );
     border: none;
     background: none;
@@ -118,13 +118,13 @@ $arrow-height: bonds.bpk-spacing-base();
     height: $arrow-height;
     transform: rotate(45deg);
     border-radius: 25%;
-    background-color: bonds.$bpk-core-accent-day;
+    background-color: tokens.$bpk-core-accent-day;
 
     &-default {
       @include utils.bpk-themeable-property(
         background-color,
         --bpk-price-marker-background-color,
-        bonds.$bpk-core-accent-day
+        tokens.$bpk-core-accent-day
       );
     }
 
@@ -132,7 +132,7 @@ $arrow-height: bonds.bpk-spacing-base();
       @include utils.bpk-themeable-property(
         background-color,
         --bpk-price-marker-viewed-border-color,
-        bonds.$bpk-core-accent-day
+        tokens.$bpk-core-accent-day
       );
     }
 
@@ -143,7 +143,7 @@ $arrow-height: bonds.bpk-spacing-base();
       @include utils.bpk-themeable-property(
         background-color,
         --bpk-price-marker-selected-border-color,
-        bonds.$bpk-core-accent-day
+        tokens.$bpk-core-accent-day
       );
     }
 
@@ -152,7 +152,7 @@ $arrow-height: bonds.bpk-spacing-base();
 
       // We want the arrow pointer to appear under the disabled marker which is already z-index: -2
       z-index: -3;
-      background-color: bonds.$bpk-canvas-day;
+      background-color: tokens.$bpk-canvas-day;
     }
   }
 }

@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-section-header-examples {
   &__on-dark {
-    margin-top: bonds.bpk-spacing-lg();
-    padding: bonds.bpk-spacing-base();
-    background-color: bonds.$bpk-surface-contrast-day;
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-surface-contrast-day;
   }
 
   &__mixed {
     display: flex;
-    grid-row-gap: bonds.bpk-spacing-base();
+    grid-row-gap: tokens.bpk-spacing-base();
     flex-direction: column;
   }
 }

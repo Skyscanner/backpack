@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-drawer-paragraph {
-  margin-bottom: bonds.bpk-spacing-md();
+  margin-bottom: tokens.bpk-spacing-md();
 }
 
 .bpk-drawer-content-container {

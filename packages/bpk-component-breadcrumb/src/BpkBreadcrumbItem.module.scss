@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-breadcrumb-item {
   display: flex;
@@ -29,11 +29,11 @@
   }
 
   &__active-item {
-    color: bonds.$bpk-text-secondary-day;
+    color: tokens.$bpk-text-secondary-day;
   }
 
   &__arrow {
-    margin: 0 bonds.bpk-spacing-sm();
-    fill: bonds.$bpk-text-disabled-day;
+    margin: 0 tokens.bpk-spacing-sm();
+    fill: tokens.$bpk-text-disabled-day;
   }
 }

@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-info-banner-examples {
   &__component {
-    margin-top: bonds.bpk-spacing-base();
+    margin-top: tokens.bpk-spacing-base();
   }
 
   &__p {
-    padding: bonds.bpk-spacing-base() 0;
+    padding: tokens.bpk-spacing-base() 0;
   }
 }

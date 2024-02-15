@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/shadows';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/utils';
 
-$height: bonds.bpk-spacing-xl();
-$width: bonds.bpk-spacing-sm() * 13;
-$border-width: bonds.$bpk-one-pixel-rem * 2;
+$height: tokens.bpk-spacing-xl();
+$width: tokens.bpk-spacing-sm() * 13;
+$border-width: tokens.$bpk-one-pixel-rem * 2;
 
 .bpk-switch {
   position: relative;
@@ -38,7 +38,7 @@ $border-width: bonds.$bpk-one-pixel-rem * 2;
       @include utils.bpk-themeable-property(
         background,
         --bpk-switch-checked-color,
-        bonds.$bpk-core-accent-day
+        tokens.$bpk-core-accent-day
       );
 
       &::before {
@@ -50,7 +50,7 @@ $border-width: bonds.$bpk-one-pixel-rem * 2;
   &__label {
     /* stylelint-disable backpack/use-typography-styles */
     line-height: $height;
-    margin-inline-end: bonds.bpk-spacing-md();
+    margin-inline-end: tokens.bpk-spacing-md();
   }
 
   // The 'track'.
@@ -60,9 +60,9 @@ $border-width: bonds.$bpk-one-pixel-rem * 2;
     display: block;
     min-width: $width;
     height: $height;
-    transition: background bonds.$bpk-duration-sm linear;
+    transition: background tokens.$bpk-duration-sm linear;
     border-radius: $height * 0.5;
-    background: bonds.$bpk-text-disabled-day;
+    background: tokens.$bpk-text-disabled-day;
     cursor: pointer;
 
     // The 'handle'.
@@ -74,20 +74,20 @@ $border-width: bonds.$bpk-one-pixel-rem * 2;
       display: block;
       width: $height - ($border-width * 2);
       height: $height - ($border-width * 2);
-      transition: left bonds.$bpk-duration-sm ease-out;
+      transition: left tokens.$bpk-duration-sm ease-out;
       border-radius: 50%;
-      background: bonds.$bpk-text-on-dark-day;
+      background: tokens.$bpk-text-on-dark-day;
 
       @include shadows.bpk-box-shadow-sm;
     }
 
     &--small {
-      min-width: bonds.bpk-spacing-xxl();
-      height: bonds.bpk-spacing-sm() * 5;
+      min-width: tokens.bpk-spacing-xxl();
+      height: tokens.bpk-spacing-sm() * 5;
 
       &::before {
-        width: bonds.bpk-spacing-base();
-        height: bonds.bpk-spacing-base();
+        width: tokens.bpk-spacing-base();
+        height: tokens.bpk-spacing-base();
       }
     }
   }

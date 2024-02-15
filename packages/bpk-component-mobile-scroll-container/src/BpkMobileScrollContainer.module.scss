@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/scroll-indicators';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/scroll-indicators';
 
 .bpk-mobile-scroll-container {
   position: relative;
@@ -25,13 +25,13 @@
 
   &--left-indicator {
     @include scroll-indicators.bpk-scroll-indicator-left(
-      bonds.$bpk-color-white
+      tokens.$bpk-color-white
     );
   }
 
   &--right-indicator {
     @include scroll-indicators.bpk-scroll-indicator-right(
-      bonds.$bpk-color-white
+      tokens.$bpk-color-white
     );
   }
 

@@ -16,20 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
+@use '../../unstable__bpk-mixins/tokens';
 
+.bpk-input-field {
+  display: flex;
+  max-width: 3 * tokens.bpk-spacing-xxl();
+  margin-right: tokens.bpk-spacing-sm();
+  align-items: center;
 
-  .bpk-input-field {
-    display: flex;
-    max-width: 3 * bonds.bpk-spacing-xxl();
-    margin-right: bonds.bpk-spacing-sm();
-    align-items: center;
-
-    input {
-      text-align: center;
-    }
+  input {
+    text-align: center;
   }
+}
 
-  .bpk-input-field:last-child {
-    margin-right: bonds.$bpk-spacing-none;
-  }
+.bpk-input-field:last-child {
+  margin-right: tokens.$bpk-spacing-none;
+}

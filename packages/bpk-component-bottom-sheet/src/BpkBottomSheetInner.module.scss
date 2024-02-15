@@ -16,28 +16,28 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/borders';
-@use '../../unstable_bpk-mixins/breakpoints';
-@use '../../unstable_bpk-mixins/radii';
-@use '../../unstable_bpk-mixins/shadows';
-@use '../../unstable_bpk-mixins/typography';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
-$close-button-width: bonds.bpk-spacing-lg() * 2;
+$close-button-width: tokens.bpk-spacing-lg() * 2;
 
 .bpk-bottom-sheet {
-  z-index: bonds.$bpk-zindex-modal;
+  z-index: tokens.$bpk-zindex-modal;
   width: 100%;
-  max-width: bonds.$bpk-modal-max-width;
+  max-width: tokens.$bpk-modal-max-width;
   margin: auto;
   transform: scale(1);
   transition:
-    opacity bonds.$bpk-duration-sm ease-in-out,
-    transform bonds.$bpk-duration-sm ease-in-out;
+    opacity tokens.$bpk-duration-sm ease-in-out,
+    transform tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
-  background-color: bonds.$bpk-modal-background-color;
-  opacity: bonds.$bpk-modal-opacity;
+  background-color: tokens.$bpk-modal-background-color;
+  opacity: tokens.$bpk-modal-opacity;
 
   // required to prevent the header extending beyond the rounded corners
   overflow: hidden;
@@ -54,7 +54,7 @@ $close-button-width: bonds.bpk-spacing-lg() * 2;
     height: fit-content;
     max-height: 90%;
     margin-bottom: 0;
-    border-radius: bonds.$bpk-border-radius-lg bonds.$bpk-border-radius-lg 0 0;
+    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
     overflow-x: hidden;
     overflow-y: scroll;
     -ms-overflow-style: none;
@@ -66,14 +66,14 @@ $close-button-width: bonds.bpk-spacing-lg() * 2;
   }
 
   &--content {
-    padding: bonds.$bpk-modal-content-padding;
+    padding: tokens.$bpk-modal-content-padding;
     flex: 1;
     overflow-y: auto;
   }
 
   &--wide {
     @include breakpoints.bpk-breakpoint-above-mobile {
-      max-width: bonds.$bpk-modal-wide-max-width;
+      max-width: tokens.$bpk-modal-wide-max-width;
     }
   }
 
@@ -94,7 +94,7 @@ $close-button-width: bonds.bpk-spacing-lg() * 2;
 
     @include breakpoints.bpk-breakpoint-above-mobile {
       transform: scale(0.9);
-      opacity: bonds.$bpk-modal-initial-opacity;
+      opacity: tokens.$bpk-modal-initial-opacity;
       animation: none;
     }
   }
@@ -102,7 +102,7 @@ $close-button-width: bonds.bpk-spacing-lg() * 2;
   &--appear-active {
     @include breakpoints.bpk-breakpoint-above-mobile {
       transform: scale(1);
-      opacity: bonds.$bpk-modal-opacity;
+      opacity: tokens.$bpk-modal-opacity;
     }
   }
 
@@ -120,20 +120,20 @@ $close-button-width: bonds.bpk-spacing-lg() * 2;
   &--header {
     position: sticky;
     top: 0;
-    z-index: bonds.$bpk-zindex-tooltip - 1;
+    z-index: tokens.$bpk-zindex-tooltip - 1;
 
-    @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day);
+    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
 
   &--navigation {
     display: flex;
     justify-content: space-between;
-    background-color: bonds.$bpk-modal-background-color;
+    background-color: tokens.$bpk-modal-background-color;
   }
 
   &--heading {
     width: calc(
-      100% - ((#{$close-button-width}) * 2 + #{bonds.bpk-spacing-sm() * 0.5})
+      100% - ((#{$close-button-width}) * 2 + #{tokens.bpk-spacing-sm() * 0.5})
     ); // Treat title as if it was always surrounded by close and action to center align it
 
     margin-right: auto;
@@ -146,27 +146,27 @@ $close-button-width: bonds.bpk-spacing-lg() * 2;
   &--close-button {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     left: auto;
-    margin-right: bonds.bpk-spacing-lg();
+    margin-right: tokens.bpk-spacing-lg();
 
     @include utils.bpk-rtl {
       right: auto;
-      margin-right: bonds.bpk-spacing-sm() * 0.5;
-      margin-left: bonds.bpk-spacing-lg();
+      margin-right: tokens.bpk-spacing-sm() * 0.5;
+      margin-left: tokens.bpk-spacing-lg();
     }
   }
 
   &--action-button {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     right: auto;
-    width: calc(#{$close-button-width} - (#{bonds.bpk-spacing-sm()}));
-    margin-right: bonds.bpk-spacing-sm() * 0.5;
-    margin-left: bonds.bpk-spacing-sm();
+    width: calc(#{$close-button-width} - (#{tokens.bpk-spacing-sm()}));
+    margin-right: tokens.bpk-spacing-sm() * 0.5;
+    margin-left: tokens.bpk-spacing-sm();
     word-break: break-all;
 
     @include utils.bpk-rtl {
       left: auto;
-      margin-right: bonds.bpk-spacing-sm();
-      margin-left: bonds.bpk-spacing-sm() * 0.5;
+      margin-right: tokens.bpk-spacing-sm();
+      margin-left: tokens.bpk-spacing-sm() * 0.5;
     }
   }
 }

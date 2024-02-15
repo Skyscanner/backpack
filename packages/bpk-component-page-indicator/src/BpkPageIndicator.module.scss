@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-$dot-size: bonds.bpk-spacing-md();
-$dot-margin: bonds.bpk-spacing-sm();
+$dot-size: tokens.bpk-spacing-md();
+$dot-margin: tokens.bpk-spacing-sm();
 $displayed-total: 5;
 /* stylelint-disable-next-line scss/operator-no-newline-after */
 $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total *
@@ -53,7 +53,7 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
       )
     );
     /* stylelint-enable scss/operator-no-newline-after */
-    transition: transform bonds.$bpk-duration-sm ease-in-out;
+    transition: transform tokens.$bpk-duration-sm ease-in-out;
     white-space: nowrap;
 
     @include utils.bpk-rtl {
@@ -71,20 +71,20 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     margin-inline: $dot-margin;
 
     &--default {
-      background-color: bonds.$bpk-line-day;
+      background-color: tokens.$bpk-line-day;
     }
 
     &--overImage {
-      background-color: bonds.$bpk-line-on-dark-day;
+      background-color: tokens.$bpk-line-on-dark-day;
     }
 
     &--active {
       &-default {
-        background-color: bonds.$bpk-text-secondary-day;
+        background-color: tokens.$bpk-text-secondary-day;
       }
 
       &-overImage {
-        background-color: bonds.$bpk-text-on-dark-day;
+        background-color: tokens.$bpk-text-on-dark-day;
       }
     }
   }

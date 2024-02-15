@@ -16,36 +16,36 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-chip-examples {
   &__container {
-    padding-top: bonds.bpk-spacing-lg();
+    padding-top: tokens.bpk-spacing-lg();
 
     &:last-child {
-      padding-bottom: bonds.bpk-spacing-xl();
+      padding-bottom: tokens.bpk-spacing-xl();
     }
   }
 
   &__chip {
-    margin-right: bonds.bpk-spacing-md();
+    margin-right: tokens.bpk-spacing-md();
   }
 
   &__on-dark {
-    margin-top: bonds.bpk-spacing-lg();
-    padding: bonds.bpk-spacing-base();
-    background-color: bonds.$bpk-core-primary-day;
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-core-primary-day;
   }
 
   &__default {
-    margin-top: bonds.bpk-spacing-lg();
-    padding: bonds.bpk-spacing-base();
-    background-color: bonds.$bpk-surface-default-day;
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-surface-default-day;
   }
 
   &__on-image {
-    margin-top: bonds.bpk-spacing-lg();
-    padding: bonds.bpk-spacing-base();
-    background-color: bonds.$bpk-surface-highlight-day;
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-surface-highlight-day;
   }
 }

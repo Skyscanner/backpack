@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-overlay-stories {
   display: flex;
@@ -25,14 +25,14 @@
   &__overlay-story {
     display: flex;
     width: 100%;
-    padding: bonds.bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
     flex-direction: column;
     align-items: center;
   }
 
   &__overlay--name {
-    padding-top: bonds.bpk-spacing-base();
-    color: bonds.$bpk-text-primary-day;
+    padding-top: tokens.bpk-spacing-base();
+    color: tokens.$bpk-text-primary-day;
   }
 
   &__foreground {
@@ -40,6 +40,6 @@
     height: 100%;
     justify-content: center;
     align-items: flex-end;
-    color: bonds.$bpk-text-primary-inverse-day;
+    color: tokens.$bpk-text-primary-inverse-day;
   }
 }

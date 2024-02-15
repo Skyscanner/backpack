@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/typography';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
-$bpk-margin-size-sort-icons: bonds.bpk-spacing-sm() + bonds.bpk-spacing-md();
+$bpk-margin-size-sort-icons: tokens.bpk-spacing-sm() + tokens.bpk-spacing-md();
 
 .bpk-data-table-column__header {
   display: flex;
   height: 100%;
-  margin: bonds.bpk-spacing-base();
+  margin: tokens.bpk-spacing-base();
   flex-direction: row;
   align-items: center;
-  outline-offset: -1 * (bonds.bpk-spacing-sm());
+  outline-offset: -1 * (tokens.bpk-spacing-sm());
 
   @include typography.bpk-label-2;
 
@@ -47,20 +47,20 @@ $bpk-margin-size-sort-icons: bonds.bpk-spacing-sm() + bonds.bpk-spacing-md();
 
 .bpk-data-table-column__sort-icon {
   display: block;
-  fill: bonds.$bpk-line-day;
+  fill: tokens.$bpk-line-day;
 
   &:hover {
-    fill: bonds.$bpk-line-day;
+    fill: tokens.$bpk-line-day;
   }
 
   &--selected {
     &,
     &:hover {
-      fill: bonds.$bpk-core-accent-day;
+      fill: tokens.$bpk-core-accent-day;
     }
   }
 }
 
 .bpk-data-table-column__sort-icon--up {
-  margin-bottom: -1 * (bonds.bpk-spacing-sm());
+  margin-bottom: -1 * (tokens.bpk-spacing-sm());
 }

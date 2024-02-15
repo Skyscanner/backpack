@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-rating-story {
   &--img {
-    height: bonds.bpk-spacing-base();
-    margin-right: -1 * (bonds.$bpk-one-pixel-rem * 6);
-    margin-bottom: bonds.$bpk-one-pixel-rem;
-    margin-left: -1 * (bonds.$bpk-one-pixel-rem * 6);
+    height: tokens.bpk-spacing-base();
+    margin-right: -1 * (tokens.$bpk-one-pixel-rem * 6);
+    margin-bottom: tokens.$bpk-one-pixel-rem;
+    margin-left: -1 * (tokens.$bpk-one-pixel-rem * 6);
     vertical-align: middle;
   }
 
   &--trip {
-    height: bonds.bpk-spacing-base();
+    height: tokens.bpk-spacing-base();
     vertical-align: middle;
   }
 }

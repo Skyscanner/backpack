@@ -62,7 +62,7 @@ npm install --registry="https://registry.npmjs.org/"
 3. Build a modern version of mixins for local development
 
 ```sh
-npm run unstable_bpk-mixins
+npm run unstable__bpk-mixins
 ```
 
 4. Build SVGs
@@ -116,10 +116,10 @@ When creating or modifying SCSS files, follow these rules
    * Prefer `math.div($a, $b)` instead of `$a / $b`. Add `@use sass:math` statement to the top of your file to make this function available
    * Read more about [@use rule](https://sass-lang.com/documentation/at-rules/use/) and [SASS math functions](https://sass-lang.com/documentation/modules/math/)
 2. Use only what you need
-   * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../unstable_bpk-mixins/bonds'` statement only
-3. Use `unstable_bpk-mixins` for Backpack components development
-   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`, then execute `npm run unstable_bpk-mixins` command to make it available for Modern API
-   * Import mixins from `packages/unstable_bpk-mixins` only. Otherwise your code will break because Modern SASS API doesn't support `~` import syntax or slash division
+   * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../unstable__bpk-mixins/tokens'` statement only
+3. Use `unstable__bpk-mixins` for Backpack components development
+   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`, then execute `npm run unstable__bpk-mixins` command to make it available for Modern API
+   * Import mixins from `packages/unstable__bpk-mixins` only. Otherwise your code will break because Modern SASS API doesn't support `~` import syntax or slash division
 
 #### Adding a new component
 

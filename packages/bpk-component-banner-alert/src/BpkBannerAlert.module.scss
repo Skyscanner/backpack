@@ -16,62 +16,59 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/borders';
-@use '../../unstable_bpk-mixins/radii';
-@use '../../unstable_bpk-mixins/typography';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-banner-alert {
-  background-color: bonds.$bpk-surface-default-day;
+  background-color: tokens.$bpk-surface-default-day;
   overflow: hidden;
 
   @include radii.bpk-border-radius-sm;
 
   &--primary {
     @include borders.bpk-border-sm(
-        var(
-          --bpk-banner-alert-primary-color,
-          bonds.$bpk-banner-alert-primary-color
+      var(
+        --bpk-banner-alert-primary-color,
+        tokens.$bpk-banner-alert-primary-color
       ),
-        ''
-      );
-    }
+      ''
+    );
+  }
 
   &--success {
     @include borders.bpk-border-sm(
-        var(
-          --bpk-banner-alert-success-color,
-          bonds.$bpk-banner-alert-success-color
+      var(
+        --bpk-banner-alert-success-color,
+        tokens.$bpk-banner-alert-success-color
       ),
-        ''
-      );
-    }
+      ''
+    );
+  }
 
   &--warn {
     @include borders.bpk-border-sm(
-      var(--bpk-banner-alert-warn-color, bonds.$bpk-banner-alert-warn-color),
+      var(--bpk-banner-alert-warn-color, tokens.$bpk-banner-alert-warn-color),
       ''
     );
   }
 
   &--error {
     @include borders.bpk-border-sm(
-        var(
-          --bpk-banner-alert-error-color,
-          bonds.$bpk-banner-alert-error-color
-      ),
-        ''
-      );
-    }
+      var(--bpk-banner-alert-error-color, tokens.$bpk-banner-alert-error-color),
+      ''
+    );
+  }
 
   &--neutral {
-    @include borders.bpk-border-sm(bonds.$bpk-banner-alert-neutral-color, '');
+    @include borders.bpk-border-sm(tokens.$bpk-banner-alert-neutral-color, '');
   }
 
   &__header {
     display: flex;
-    padding: bonds.bpk-spacing-md();
+    padding: tokens.bpk-spacing-md();
     flex-direction: row;
     align-items: center;
 
@@ -79,11 +76,11 @@
       cursor: pointer;
 
       @include utils.bpk-hover {
-        background-color: bonds.$bpk-banner-alert-header-expandable-hover-background-color;
+        background-color: tokens.$bpk-banner-alert-header-expandable-hover-background-color;
       }
 
       &:active {
-        background-color: bonds.$bpk-banner-alert-header-expandable-active-background-color;
+        background-color: tokens.$bpk-banner-alert-header-expandable-active-background-color;
       }
     }
   }
@@ -96,7 +93,7 @@
   }
 
   &__message {
-    padding: 0 bonds.bpk-spacing-md();
+    padding: 0 tokens.bpk-spacing-md();
     flex-grow: 1;
   }
 
@@ -104,7 +101,7 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-banner-alert-primary-color,
-      bonds.$bpk-banner-alert-primary-color
+      tokens.$bpk-banner-alert-primary-color
     );
   }
 
@@ -112,7 +109,7 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-banner-alert-success-color,
-      bonds.$bpk-banner-alert-success-color
+      tokens.$bpk-banner-alert-success-color
     );
   }
 
@@ -120,7 +117,7 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-banner-alert-warn-color,
-      bonds.$bpk-banner-alert-warn-color
+      tokens.$bpk-banner-alert-warn-color
     );
   }
 
@@ -128,12 +125,12 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-banner-alert-error-color,
-      bonds.$bpk-banner-alert-error-color
+      tokens.$bpk-banner-alert-error-color
     );
   }
 
   &__neutral-icon {
-    fill: bonds.$bpk-text-secondary-day;
+    fill: tokens.$bpk-text-secondary-day;
   }
 
   &__toggle-button {
@@ -145,7 +142,7 @@
   }
 
   &__expand-icon {
-    fill: bonds.$bpk-text-secondary-day;
+    fill: tokens.$bpk-text-secondary-day;
 
     &--flipped {
       transform: scaleY(-1);
@@ -153,9 +150,9 @@
   }
 
   &__children-container {
-    padding: 0 bonds.bpk-spacing-xxl() bonds.bpk-spacing-md()
-        bonds.bpk-spacing-xl();
-    color: bonds.$bpk-text-secondary-day;
+    padding: 0 tokens.bpk-spacing-xxl() tokens.bpk-spacing-md()
+      tokens.bpk-spacing-xl();
+    color: tokens.$bpk-text-secondary-day;
 
     @include typography.bpk-text;
     @include typography.bpk-caption;

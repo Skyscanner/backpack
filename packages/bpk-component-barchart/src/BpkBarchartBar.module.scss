@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-barchart-bar {
   @include utils.bpk-themeable-property(
     fill,
     --bpk-barchart-bar-background-color,
-    bonds.$bpk-line-day
+    tokens.$bpk-line-day
   );
 
   &--interactive:not(.bpk-barchart-bar--selected) {
@@ -33,7 +33,7 @@
       @include utils.bpk-themeable-property(
         fill,
         --bpk-barchart-bar-hover-background-color,
-        bonds.$bpk-core-primary-day
+        tokens.$bpk-core-primary-day
       );
     }
 
@@ -41,7 +41,7 @@
       @include utils.bpk-themeable-property(
         fill,
         --bpk-barchart-bar-active-background-color,
-        bonds.$bpk-core-accent-day
+        tokens.$bpk-core-accent-day
       );
     }
   }
@@ -50,7 +50,7 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-barchart-bar-selected-background-color,
-      bonds.$bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
   }
 

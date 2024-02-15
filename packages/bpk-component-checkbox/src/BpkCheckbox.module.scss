@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/forms';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
 
 .bpk-checkbox {
   @include forms.bpk-checkbox;
@@ -38,7 +38,7 @@
     @include forms.bpk-checkbox--disabled;
 
     &--white {
-      color: bonds.$bpk-text-disabled-on-dark-day;
+      color: tokens.$bpk-text-disabled-on-dark-day;
     }
   }
 
@@ -52,13 +52,13 @@
     &-indeterminate {
       &::before {
         position: absolute;
-        top: bonds.bpk-spacing-sm() + bonds.$bpk-one-pixel-rem;
-        left: bonds.bpk-spacing-sm() * 0.5;
+        top: tokens.bpk-spacing-sm() + tokens.$bpk-one-pixel-rem;
+        left: tokens.bpk-spacing-sm() * 0.5;
         content: '';
-        width: bonds.bpk-spacing-xxl() * 0.25;
-        height: bonds.bpk-spacing-sm() - bonds.$bpk-one-pixel-rem;
-        border-radius: bonds.$bpk-border-size-lg;
-        background-color: bonds.$bpk-surface-default-day;
+        width: tokens.bpk-spacing-xxl() * 0.25;
+        height: tokens.bpk-spacing-sm() - tokens.$bpk-one-pixel-rem;
+        border-radius: tokens.$bpk-border-size-lg;
+        background-color: tokens.$bpk-surface-default-day;
       }
     }
 
@@ -67,11 +67,11 @@
     }
 
     &-white {
-      background-color: bonds.$bpk-surface-default-day;
+      background-color: tokens.$bpk-surface-default-day;
     }
   }
 
   &__asterisk {
-    color: bonds.$bpk-status-danger-spot-day;
+    color: tokens.$bpk-status-danger-spot-day;
   }
 }

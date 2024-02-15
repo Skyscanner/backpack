@@ -16,21 +16,21 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-navigation-bar-icon-button {
   @include utils.bpk-themeable-property(
     color,
     --bpk-navigation-bar-icon-button-color,
-    bonds.$bpk-text-primary-day
+    tokens.$bpk-text-primary-day
   );
 
   @include utils.bpk-hover {
     @include utils.bpk-themeable-property(
       color,
       --bpk-navigation-bar-icon-button-hover-color,
-      bonds.$bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
   }
 
@@ -38,19 +38,19 @@
     @include utils.bpk-themeable-property(
       color,
       --bpk-navigation-bar-icon-button-active-color,
-      bonds.$bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
   }
 
   &--on-dark {
-    color: bonds.$bpk-text-primary-inverse-day;
+    color: tokens.$bpk-text-primary-inverse-day;
 
     @include utils.bpk-hover {
-      color: bonds.$bpk-text-primary-inverse-day;
+      color: tokens.$bpk-text-primary-inverse-day;
     }
 
     &:active {
-      color: bonds.$bpk-text-primary-inverse-day;
+      color: tokens.$bpk-text-primary-inverse-day;
     }
   }
 }

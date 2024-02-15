@@ -16,23 +16,23 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-clear-button {
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: bonds.$bpk-text-secondary-day;
+  color: tokens.$bpk-text-secondary-day;
   cursor: pointer;
   appearance: none;
 
   @include utils.bpk-hover {
-    color: bonds.$bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
   }
 
   &:active {
-    color: bonds.$bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
   }
 
   &__icon {

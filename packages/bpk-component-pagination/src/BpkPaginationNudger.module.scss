@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-pagination-nudger {
   display: flex;
-  width: bonds.bpk-spacing-xl() + bonds.bpk-spacing-sm();
-  height: bonds.bpk-spacing-xl() + bonds.bpk-spacing-sm();
-  padding: bonds.$bpk-one-pixel-rem * 10;
+  width: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
+  height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
+  padding: tokens.$bpk-one-pixel-rem * 10;
 
   &__text {
     &--hidden {

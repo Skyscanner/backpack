@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/buttons';
+@use '../../unstable__bpk-mixins/buttons';
 
 .bpk-button--primary-on-light {
   @include buttons.bpk-button--primary-on-light;

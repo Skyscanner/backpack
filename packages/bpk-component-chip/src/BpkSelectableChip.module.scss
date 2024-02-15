@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/chips';
+@use '../../unstable__bpk-mixins/chips';
 
 .bpk-chip {
   @include chips.bpk-chip;

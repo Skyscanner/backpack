@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable_bpk-mixins/bonds';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-bottom-sheet-paragraph {
-  margin-bottom: bonds.bpk-spacing-md();
+  margin-bottom: tokens.bpk-spacing-md();
 }

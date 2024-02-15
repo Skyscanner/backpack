@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/breakpoints';
-@use '../../unstable_bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-content-card {
   &--link {
@@ -30,10 +30,10 @@
 
   &--horizontal {
     display: grid;
-    column-gap: bonds.bpk-spacing-xxl();
+    column-gap: tokens.bpk-spacing-xxl();
     grid-template-columns:
-        minmax(min(10%, 50%), bonds.$bpk-one-pixel-rem * 620)
-        40%;
+      minmax(min(10%, 50%), tokens.$bpk-one-pixel-rem * 620)
+      40%;
     align-items: center;
 
     @include breakpoints.bpk-breakpoint-mobile {
@@ -43,11 +43,11 @@
 
   &--horizontal &--image-container {
     width: 100%;
-    height: bonds.$bpk-one-pixel-rem * 420;
+    height: tokens.$bpk-one-pixel-rem * 420;
 
     @include breakpoints.bpk-breakpoint-mobile {
-      max-height: bonds.$bpk-one-pixel-rem * 180;
-      margin-bottom: bonds.bpk-spacing-base();
+      max-height: tokens.$bpk-one-pixel-rem * 180;
+      margin-bottom: tokens.bpk-spacing-base();
     }
 
     @include breakpoints.bpk-breakpoint-tablet {
@@ -56,28 +56,28 @@
   }
 
   &--vertical &--image {
-    height: bonds.$bpk-one-pixel-rem * 460;
-    margin-bottom: bonds.bpk-spacing-base();
+    height: tokens.$bpk-one-pixel-rem * 460;
+    margin-bottom: tokens.bpk-spacing-base();
 
     @include breakpoints.bpk-breakpoint-small-tablet {
       width: 100%;
       height: auto;
-      max-height: bonds.$bpk-one-pixel-rem * 260;
+      max-height: tokens.$bpk-one-pixel-rem * 260;
     }
 
     @include breakpoints.bpk-breakpoint-mobile {
-      max-height: bonds.$bpk-one-pixel-rem * 180;
+      max-height: tokens.$bpk-one-pixel-rem * 180;
     }
   }
 
   &--headline {
-    margin-bottom: bonds.bpk-spacing-sm();
+    margin-bottom: tokens.bpk-spacing-sm();
 
     @include typography.bpk-heading-4;
   }
 
   &--description {
-    color: bonds.$bpk-text-secondary-day;
+    color: tokens.$bpk-text-secondary-day;
 
     @include typography.bpk-body-default;
   }
@@ -85,7 +85,7 @@
   &--image {
     width: 100%;
     height: 100%;
-    border-radius: bonds.$bpk-border-radius-md;
+    border-radius: tokens.$bpk-border-radius-md;
     object-fit: cover;
   }
 }

@@ -16,26 +16,26 @@
  * limitations under the License.
  */
 
-@use '../../unstable_bpk-mixins/bonds';
-@use '../../unstable_bpk-mixins/borders';
-@use '../../unstable_bpk-mixins/breakpoints';
-@use '../../unstable_bpk-mixins/shadows';
-@use '../../unstable_bpk-mixins/typography';
-@use '../../unstable_bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-drawer {
   position: fixed;
   right: 0;
   display: flex;
-  z-index: bonds.$bpk-zindex-drawer;
+  z-index: tokens.$bpk-zindex-drawer;
   width: 90%;
-  max-width: 50 * bonds.bpk-spacing-md();
+  max-width: 50 * tokens.bpk-spacing-md();
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
-  transition: transform bonds.$bpk-duration-sm ease;
+  transition: transform tokens.$bpk-duration-sm ease;
   outline: 0;
-  background: bonds.$bpk-surface-default-day;
+  background: tokens.$bpk-surface-default-day;
   overflow-y: scroll;
 
   @include shadows.bpk-box-shadow-xl;
@@ -61,7 +61,7 @@
   }
 
   &--exiting {
-    transition: transform bonds.$bpk-duration-xs ease;
+    transition: transform tokens.$bpk-duration-xs ease;
   }
 
   &--exiting,
@@ -75,13 +75,13 @@
 
   &__header {
     display: flex;
-    min-height: #{2 * bonds.bpk-spacing-base() + bonds.bpk-spacing-base()}; // keep height the same if visually hidden title
-    padding: bonds.bpk-spacing-base();
+    min-height: #{2 * tokens.bpk-spacing-base() + tokens.bpk-spacing-base()}; // keep height the same if visually hidden title
+    padding: tokens.bpk-spacing-base();
     justify-content: space-between;
     align-items: center;
     flex: 0 0;
 
-    @include borders.bpk-border-bottom-sm(bonds.$bpk-line-day);
+    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
 
   &__heading {
@@ -103,7 +103,7 @@
 
   &__content {
     height: 100%;
-    padding: bonds.bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
     flex: 1 1 100%;
     overflow-y: auto;
   }
