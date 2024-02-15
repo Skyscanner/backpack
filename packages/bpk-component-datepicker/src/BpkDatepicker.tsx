@@ -127,7 +127,7 @@ class BpkDatepicker extends Component<Props, State> {
     },
     initiallyFocusedDate: null,
     renderTarget: null,
-    isOpen: false,
+    // isOpen: false,
     valid: null,
   };
 
@@ -305,7 +305,7 @@ class BpkDatepicker extends Component<Props, State> {
     // The following props are not used in render
     delete rest.onDateSelect;
     delete rest.onOpenChange;
-    // delete rest.isOpen;
+    delete rest.isOpen;
 
     const input = inputComponent || (
       <div
@@ -348,6 +348,9 @@ class BpkDatepicker extends Component<Props, State> {
       initiallyFocusedDate,
       selectionConfiguration,
     };
+
+    console.log(this.state.isOpen)
+    console.log(this.props.isOpen)
 
     return (
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
