@@ -133,11 +133,9 @@ class BpkDatepicker extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    if (props.isOpen !== undefined) {
-      this.state = {
-        isOpen: props.isOpen!,
-      };
-    }
+    this.state = {
+      isOpen: props.isOpen!,
+    };
     this.inputRef = createRef();
   }
 
