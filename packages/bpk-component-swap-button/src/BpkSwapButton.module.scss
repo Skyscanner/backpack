@@ -29,7 +29,7 @@
 
   :focus-visible {
     box-shadow:
-      0 0 0 (tokens.bpk-spacing-sm() / 2) tokens.$bpk-surface-elevated-day,
+      0 0 0 (tokens.bpk-spacing-sm() * 0.5) tokens.$bpk-surface-elevated-day,
       0 0 0 tokens.bpk-spacing-sm() tokens.$bpk-text-link-day;
   }
 
