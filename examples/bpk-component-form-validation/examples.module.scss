@@ -16,22 +16,23 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/unstable__bpk-mixins/tokens';
+@use '../../packages/unstable__bpk-mixins/breakpoints';
 
 .bpkdocs-forms-page {
   &__viewport-alert {
     display: none;
 
-    @include bpk-breakpoint-tablet {
+    @include breakpoints.bpk-breakpoint-tablet {
       display: block;
     }
   }
 
   &__form {
-    margin-bottom: bpk-spacing-base();
+    margin-bottom: tokens.bpk-spacing-base();
 
     &--desktop-only {
-      @include bpk-breakpoint-tablet {
+      @include breakpoints.bpk-breakpoint-tablet {
         display: none;
       }
     }

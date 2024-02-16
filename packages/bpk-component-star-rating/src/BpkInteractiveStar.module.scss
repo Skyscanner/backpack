@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 @keyframes star-dust {
   0% {
@@ -40,7 +41,7 @@
   cursor: pointer;
   appearance: none;
 
-  @include bpk-hover {
+  @include utils.bpk-hover {
     .bpk-interactive-star__icon {
       transform: rotate(10deg) scale(1.2);
 
@@ -56,7 +57,7 @@
 
   &__icon {
     transform: rotate(0deg) scale(1);
-    transition: transform $bpk-duration-sm ease-in-out;
+    transition: transform tokens.$bpk-duration-sm ease-in-out;
 
     &--selected {
       animation-duration: 300ms;

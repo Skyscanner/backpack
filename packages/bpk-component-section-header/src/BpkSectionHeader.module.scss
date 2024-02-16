@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-section-header {
   display: flex;
@@ -29,19 +31,19 @@
     flex-direction: column;
 
     &--default {
-      color: $bpk-text-primary-day;
+      color: tokens.$bpk-text-primary-day;
     }
 
     &--on-dark {
-      color: $bpk-text-on-dark-day;
+      color: tokens.$bpk-text-on-dark-day;
     }
   }
 
   &__title {
-    @include bpk-heading-2;
+    @include typography.bpk-heading-2;
 
-    @include bpk-breakpoint-mobile {
-      @include bpk-heading-3;
+    @include breakpoints.bpk-breakpoint-mobile {
+      @include typography.bpk-heading-3;
     }
   }
 }

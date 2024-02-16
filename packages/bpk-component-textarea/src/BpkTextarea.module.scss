@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/forms';
 
 .bpk-textarea {
-  @include bpk-textarea;
+  @include forms.bpk-textarea;
 
   &--invalid {
-    @include bpk-textarea--invalid;
+    @include forms.bpk-textarea--invalid;
   }
 
   &--large {
-    @include bpk-textarea--large;
+    @include forms.bpk-textarea--large;
   }
 }

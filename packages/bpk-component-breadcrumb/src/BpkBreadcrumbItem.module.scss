@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-breadcrumb-item {
   display: flex;
@@ -24,15 +25,15 @@
   white-space: nowrap;
 
   &__link {
-    @include bpk-text;
+    @include typography.bpk-text;
   }
 
   &__active-item {
-    color: $bpk-text-secondary-day;
+    color: tokens.$bpk-text-secondary-day;
   }
 
   &__arrow {
-    margin: 0 bpk-spacing-sm();
-    fill: $bpk-text-disabled-day;
+    margin: 0 tokens.bpk-spacing-sm();
+    fill: tokens.$bpk-text-disabled-day;
   }
 }
