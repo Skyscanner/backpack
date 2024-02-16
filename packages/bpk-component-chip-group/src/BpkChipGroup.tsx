@@ -63,10 +63,10 @@ export type CommonProps = {
 export type ChipGroupProps = {
   chips: ChipItem[];
   stickyChip?: ChipItem;
-  _isSingleSelect?: boolean; // TODO: is there a better way for internal only props?
+  ariaMultiselectable?: boolean;
 } & CommonProps;
 
-const BpkChipGroup = ({ _isSingleSelect = false, ariaLabel, ariaLabelledBy, chips, className = null, stickyChip, style = CHIP_TYPES.default, type = CHIP_GROUP_TYPES.rail }: ChipGroupProps) => {
+const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, chips, className = null, stickyChip, style = CHIP_TYPES.default, type = CHIP_GROUP_TYPES.rail }: ChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
 
   // TODO: is there a way in typescript to enforce this instead?
@@ -146,7 +146,7 @@ const BpkChipGroup = ({ _isSingleSelect = false, ariaLabel, ariaLabelledBy, chip
         <div className={chipGroupClassNames}
          role="listbox"
          aria-orientation="horizontal"
-         aria-multiselectable={!_isSingleSelect}
+         aria-multiselectable={ariaMultiselectable}
          aria-label={ariaLabel}
          aria-labelledby={ariaLabelledBy}
         >

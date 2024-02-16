@@ -25,9 +25,10 @@ import BpkChipGroup, {
 } from './src/BpkChipGroup';
 import BpkChipGroupSingleSelect, {
   type SingleSelectProps,
+  type SingleSelectStateProps,
   BpkChipGroupSingleSelectState,
 } from './src/BpkChipGroupSingleSelect';
 
-export type { ChipGroupProps, SingleSelectProps, ChipItem, SingleSelectChipItem };
+export type { ChipGroupProps, SingleSelectProps, SingleSelectStateProps, ChipItem, SingleSelectChipItem };
 export { BpkChipGroupState, CHIP_GROUP_TYPES, BpkChipGroupSingleSelect , BpkChipGroupSingleSelectState};
 export default BpkChipGroup;

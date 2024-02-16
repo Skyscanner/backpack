@@ -39,11 +39,15 @@ const BpkChipGroupSingleSelect = ({ chips, onItemClick, selectedIndex, ...rest }
   }));
 
   return (
-    <BpkChipGroup chips={chipsWithSelection} _isSingleSelect {...rest} />
+    <BpkChipGroup chips={chipsWithSelection} ariaMultiselectable={false} {...rest} />
   );
 };
 
-export const BpkChipGroupSingleSelectState = ({ onItemClick, selectedIndex: defaultSelectedIndex = -1, ...rest }: SingleSelectProps) => {
+export type SingleSelectStateProps = {
+  initiallySelectedIndex?: number;
+} & Omit<SingleSelectProps, 'selectedIndex'>
+
+export const BpkChipGroupSingleSelectState = ({ onItemClick, selectedIndex: defaultSelectedIndex = -1, ...rest }: SingleSelectStateProps) => {
   const [selectedIndex, setSelectedIndex] = useState(defaultSelectedIndex);
 
   const onItemClickWithState = (item: ChipItem, selected: boolean, index: number) => {

@@ -67,10 +67,10 @@ const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContaine
 
       const { offsetWidth, scrollLeft, scrollWidth } = scrollContainerRef.current;
       const scrollValue = rtl ? -Math.floor(scrollLeft) : Math.ceil(scrollLeft);
-      const showLeadingIndicator = scrollValue > 0;
-      const showTrailingIndicator = scrollValue < scrollWidth - offsetWidth;
+      const showLeading = scrollValue > 0;
+      const showTrailing = scrollValue < scrollWidth - offsetWidth;
 
-      setShow((leading && showLeadingIndicator) || (!leading && showTrailingIndicator))
+      setShow((leading && showLeading) || (!leading && showTrailing))
     }, 100);
     return () => clearInterval(interval);
   }, [leading, rtl, scrollContainerRef]);

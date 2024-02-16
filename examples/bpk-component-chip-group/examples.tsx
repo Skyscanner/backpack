@@ -84,7 +84,7 @@ export const BpkSingleChipGroupWrapping = () => (
       <BpkChipGroupSingleSelectState
         type={CHIP_GROUP_TYPES.wrap}
         chips={chips}
-        selectedIndex={0}
+        initiallySelectedIndex={0}
         accessibilityLabel="Select a city"
        />
     </div>
@@ -105,7 +105,6 @@ export const BpkChipGroupRail = () => (
 export const BpkChipGroupSticky = () => {
   const stickyChip = {
     text: 'Sort & Filter',
-    // component: BpkDropdownChip
   }
 
   return (
