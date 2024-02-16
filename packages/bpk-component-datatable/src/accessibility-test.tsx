@@ -20,7 +20,6 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkDataTable from './BpkDataTable';
-import BpkDataTableColumn from './BpkDataTableColumn';
 
 const rows = [
   { name: 'Jose', description: 'Software Engineer', bla: 'Bla' },
@@ -30,16 +29,11 @@ const rows = [
 describe('BpkDataTable accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkDataTable rows={rows} height="12.5rem">
-        <BpkDataTableColumn label="Name" dataKey="name" width="6.25rem" />
-        <BpkDataTableColumn
-          label="Description"
-          dataKey="description"
-          width="6.25rem"
-          flexGrow={1}
-        />
-        <BpkDataTableColumn label="Bla" dataKey="bla" width="6.25rem" />
-      </BpkDataTable>,
+      <BpkDataTable rows={rows} height="12.5rem" columns={[
+        { label: 'Name', accessor: 'name', width: '6.25rem' },
+        { label: 'Description', accessor: 'description', width: '6.25rem', flexGrow: 1 },
+        { label: 'Bla', accessor: 'bla', width: '6.25rem' },
+      ]} />
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
