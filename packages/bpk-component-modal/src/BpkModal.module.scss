@@ -87,9 +87,9 @@
   overflow-y: scroll;
   scrollbar-width: none;
 
-  @include bpk-box-shadow-xl;
+  @include tokens.bpk-box-shadow-xl;
 
-  @include bpk-breakpoint-above-mobile {
+  @include tokens.bpk-breakpoint-above-mobile {
     width: tokens.$bpk-modal-max-width;
     max-width: none;
     height: fit-content;
@@ -119,7 +119,7 @@
     height: fit-content;
     max-height: 90%;
 
-    @include bpk-breakpoint-above-mobile {
+    @include tokens.bpk-breakpoint-above-mobile {
       width: tokens.$bpk-modal-max-width;
       max-width: none;
     }
@@ -142,7 +142,7 @@
   &__header-title {
     padding: bpk-spacing-base();
 
-    @include header;
+    @include tokens.header;
   }
 
   &__header-title-container {
@@ -154,14 +154,14 @@
   &__title {
     padding-inline-end: bpk-spacing-base();
 
-    @include bpk-label-1;
+    @include tokens.bpk-label-1;
   }
 
   &__button-container {
     padding-block-start: bpk-spacing-base();
     padding-inline-end: bpk-spacing-base();
 
-    @include header;
+    @include tokens.header;
   }
 
   &__container {
