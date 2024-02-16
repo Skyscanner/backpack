@@ -16,11 +16,53 @@
  * limitations under the License.
  */
 
-describe('Nudger', () => {
+import { render, screen } from '@testing-library/react';
+import type { MutableRefObject } from 'react';
+import userEvent from '@testing-library/user-event';
 
-  it('should render correctly', () => {
-    // TODO
+import { isRTL } from '../../bpk-react-utils/index';
+import { CHIP_TYPES } from '../../bpk-component-chip';
+
+import Nudger, { SCROLL_DISTANCE } from './Nudger';
+
+
+const mockIsRtl = jest.fn(() => false);
+
+jest.mock('../../bpk-react-utils/index', () => ({
+  ...jest.requireActual('../../bpk-react-utils/index'),
+  isRTL: () => mockIsRtl(),
+}));
+
+const mockScrollContainerRef = {
+  current: {
+    scrollBy: jest.fn(),
+    offsetWidth: 70,
+    scrollLeft: 10,
+    scrollWidth: 100,
+  },
+} as MutableRefObject<HTMLElement>;
+
+describe('Nudger', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
   });
 
-  // TODO
+  it.each([
+    [false, false],
+    [true, false],
+    [false, true],
+    [true, true],
+  ])('should render correctly when leading=%s and isRtl=%s', (leading, isRtl) => {
+    mockIsRtl.mockReturnValue(isRtl);
+
+    const { asFragment } = render(<Nudger scrollContainerRef={mockScrollContainerRef} leading={leading} />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly for onDark chip style', () => {
+    const { asFragment } = render(<Nudger scrollContainerRef={mockScrollContainerRef} chipStyle={CHIP_TYPES.onDark} />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

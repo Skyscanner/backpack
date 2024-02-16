@@ -47,8 +47,8 @@ export type SingleSelectStateProps = {
   initiallySelectedIndex?: number;
 } & Omit<SingleSelectProps, 'selectedIndex'>
 
-export const BpkChipGroupSingleSelectState = ({ onItemClick, selectedIndex: defaultSelectedIndex = -1, ...rest }: SingleSelectStateProps) => {
-  const [selectedIndex, setSelectedIndex] = useState(defaultSelectedIndex);
+export const BpkChipGroupSingleSelectState = ({ initiallySelectedIndex = -1, onItemClick, ...rest }: SingleSelectStateProps) => {
+  const [selectedIndex, setSelectedIndex] = useState(initiallySelectedIndex);
 
   const onItemClickWithState = (item: ChipItem, selected: boolean, index: number) => {
     if (onItemClick) {
