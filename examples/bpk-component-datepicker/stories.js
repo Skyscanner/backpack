@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { waitFor } from '@testing-library/react';
+
 import BpkDatepicker from '../../packages/bpk-component-datepicker/src/BpkDatepicker';
 
 import {
@@ -56,6 +58,12 @@ export const Invalid = InvalidExample;
 export const RangeWithMultipleInputs = MultipleRangeInputExample;
 
 export const VisualTest = DefaultVisualExample;
+
+VisualTest.parameters = {
+  percy: {
+    waitForSelector: "#myDatepicker-modal-title"
+  }
+}
 
 export const VisualTestRange = VisualRangeExample;
 
