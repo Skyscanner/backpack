@@ -16,19 +16,20 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/unstable__bpk-mixins/tokens';
+@use '../../packages/unstable__bpk-mixins/radii';
 
 .bpk-badge-layout {
   &__container {
     position: relative;
     display: flex;
-    min-height: bpk-spacing-xxl();
-    padding: bpk-spacing-lg();
+    min-height: tokens.bpk-spacing-xxl();
+    padding: tokens.bpk-spacing-lg();
 
     &--light {
-      background-color: $bpk-canvas-contrast-day;
+      background-color: tokens.$bpk-canvas-contrast-day;
 
-      @include bpk-border-radius-xs;
+      @include radii.bpk-border-radius-xs;
     }
   }
 }

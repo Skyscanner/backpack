@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../bpk-mixins/tokens';
 
 @mixin bpk-image__spinner {
   position: absolute;
@@ -27,12 +27,12 @@
   transform: translate(-50%, -50%);
 
   &--hidden {
-    transition: opacity $bpk-duration-base ease-in-out;
+    transition: opacity tokens.$bpk-duration-base ease-in-out;
     opacity: 0;
   }
 
   &--shown {
-    transition: opacity $bpk-duration-base ease-in-out;
+    transition: opacity tokens.$bpk-duration-base ease-in-out;
     opacity: 1;
   }
 }
@@ -45,7 +45,7 @@
   left: 0;
   display: block;
   width: 100%;
-  transition: opacity $bpk-duration-base ease-in-out;
+  transition: opacity tokens.$bpk-duration-base ease-in-out;
 
   &--hidden {
     opacity: 0;
@@ -60,8 +60,8 @@
   position: relative;
   display: block;
   max-width: 100%;
-  transition: background-color $bpk-duration-base ease-in-out;
-  background-color: $bpk-surface-highlight-day;
+  transition: background-color tokens.$bpk-duration-base ease-in-out;
+  background-color: tokens.$bpk-surface-highlight-day;
   overflow: hidden;
-  transition-delay: $bpk-duration-base;
+  transition-delay: tokens.$bpk-duration-base;
 }

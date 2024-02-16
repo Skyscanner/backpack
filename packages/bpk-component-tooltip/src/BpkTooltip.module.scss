@@ -16,15 +16,16 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/layers';
 
-$arrow-size: bpk-spacing-md();
-$arrow-inset-margin: -($bpk-one-pixel-rem * 3);
-$light-arrow-border-color: $bpk-line-day;
-$dark-background-color: $bpk-surface-contrast-day;
+$arrow-size: tokens.bpk-spacing-md();
+$arrow-inset-margin: -1 * (tokens.$bpk-one-pixel-rem * 3);
+$light-arrow-border-color: tokens.$bpk-line-day;
+$dark-background-color: tokens.$bpk-surface-contrast-day;
 
 .bpk-tooltip-portal {
-  z-index: $bpk-zindex-tooltip;
+  z-index: tokens.$bpk-zindex-tooltip;
 
   &--target {
     display: inline-block;
@@ -33,8 +34,8 @@ $dark-background-color: $bpk-surface-contrast-day;
 
 .bpk-tooltip {
   transition:
-    opacity $bpk-duration-sm ease-in-out,
-    transform $bpk-duration-sm ease-in-out;
+    opacity tokens.$bpk-duration-sm ease-in-out,
+    transform tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
 
@@ -69,19 +70,19 @@ $dark-background-color: $bpk-surface-contrast-day;
   &--appear-active {
     transform: translate(0, 0);
     transition:
-      opacity $bpk-duration-sm ease-in-out,
-      transform $bpk-duration-sm ease-in-out;
+      opacity tokens.$bpk-duration-sm ease-in-out,
+      transform tokens.$bpk-duration-sm ease-in-out;
     opacity: 1;
   }
 
   &__arrow {
-    position: aboslute;
+    position: absolute;
     width: $arrow-size;
     height: $arrow-size;
     transform: rotate(45deg);
-    border: $bpk-one-pixel-rem solid transparent;
+    border: tokens.$bpk-one-pixel-rem solid transparent;
     background: inherit;
-    background-color: $bpk-surface-default-day;
+    background-color: tokens.$bpk-surface-default-day;
 
     .bpk-tooltip-portal[data-popper-placement='top'] & {
       bottom: $arrow-inset-margin;
@@ -135,16 +136,16 @@ $dark-background-color: $bpk-surface-contrast-day;
   &__inner {
     overflow: hidden;
 
-    @include bpk-layer;
+    @include layers.bpk-layer;
 
     &--padded {
-      padding: bpk-spacing-md() bpk-spacing-base();
+      padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
     }
 
     &--dark {
-      color: $bpk-text-primary-inverse-day;
+      color: tokens.$bpk-text-primary-inverse-day;
 
-      @include bpk-layer($dark-background-color, $dark-background-color);
+      @include layers.bpk-layer($dark-background-color, $dark-background-color);
     }
   }
 }

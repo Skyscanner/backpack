@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/unstable__bpk-mixins/tokens';
+@use '../../packages/unstable__bpk-mixins/radii';
 
 .bpk-spinner-layout {
   display: flex;
@@ -24,13 +25,13 @@
 
   &__spinner {
     display: flex;
-    padding: bpk-spacing-lg();
+    padding: tokens.bpk-spacing-lg();
     justify-content: center;
 
     &--light {
-      background-color: $bpk-surface-contrast-day;
+      background-color: tokens.$bpk-surface-contrast-day;
 
-      @include bpk-border-radius-xs;
+      @include radii.bpk-border-radius-xs;
     }
   }
 }
