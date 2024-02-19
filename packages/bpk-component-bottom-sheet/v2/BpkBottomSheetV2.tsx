@@ -15,9 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactNode} from "react";
+import type { ReactNode } from "react";
 import { useState } from "react";
 
+import BpkBreakpoint, { BREAKPOINTS } from "../../bpk-component-breakpoint";
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -35,9 +36,16 @@ export type Props = {
   ariaLabelledby: string;
   children: ReactNode;
   closeLabel?: string;
+  closeOnEscPressed?: boolean;
+  closeOnScrimClick?: boolean;
   id: string;
   onAction?: () => void;
-  onClose: () => void;
+  onClose: (
+    arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent,
+    arg1?: {
+      source: 'ESCAPE' | 'DOCUMENT_CLICK';
+    },
+  ) => void;
   title?: string;
   wide?: boolean;
   isOpen: boolean;
@@ -48,6 +56,8 @@ export const BpkBottomSheetV2 = ({
   ariaLabelledby,
   children,
   closeLabel = '',
+  closeOnEscPressed = false,
+  closeOnScrimClick = false,
   id,
   isOpen,
   onAction = () => null,
@@ -57,66 +67,92 @@ export const BpkBottomSheetV2 = ({
 }: Props) => {
   const [exiting, setExiting] = useState(false);
 
-  const handleClose = () => {
+  const animationTimeout = 240;
+
+  const handleClose = (
+    timeout: number,
+    arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent,
+    arg1?: {
+      source: 'ESCAPE' | 'DOCUMENT_CLICK';
+    },
+  ) => {
     setExiting(true)
     setTimeout(() => {
-      onClose()
+      onClose(arg0, arg1)
       setExiting(false)
-    }, 240)
+    }, timeout)
   }
 
   const headingId = `bpk-bottom-sheet-v2-heading-${id}`;
+  const dialogClassName = getClassName(
+    'bpk-bottom-sheet-v2',
+    wide && 'bpk-bottom-sheet-v2--wide'
+    );
 
-  return <BpkDialogWrapper
-    ariaLabelledby={ariaLabelledby}
-    dialogClassName={getClassName('bpk-bottom-sheet-v2')}
-    id="test"
-    isOpen={isOpen}
-    onClose={handleClose}
-    exiting={exiting}
-    transitionClassNames={{
-      appear: getClassName('bpk-bottom-sheet-v2--appear'),
-      appearActive: getClassName('bpk-bottom-sheet-v2--appear-active'),
-      exit: getClassName('bpk-bottom-sheet-v2--exit')
-    }}
-    timeout={{appear: 240, exit: 240}}
-    >
-    <>
-      <header className={getClassName('bpk-bottom-sheet-v2--header')}>
-        <BpkNavigationBar
-          id={headingId}
-          className={getClassName('bpk-bottom-sheet-v2--navigation')}
-          title={title &&
-            <h2
-              id={headingId}
-              className={getClassName('bpk-bottom-sheet-v2--heading')}
-            >
-              {title}
-            </h2>
-          }
-          leadingButton={
-            <BpkCloseButton
-              className={getClassName('bpk-bottom-sheet-v2--close-button')}
-              label={closeLabel}
-              onClick={handleClose}
-            />
-          }
-          trailingButton={
-            actionText && onAction ? (
-              <BpkButtonLink
-                className={getClassName('bpk-bottom-sheet-v2--action-button')}
-                onClick={onAction}
+    return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
+      {(isAboveMobile: boolean) =>
+      <BpkDialogWrapper
+      ariaLabelledby={ariaLabelledby}
+      dialogClassName={dialogClassName}
+      id={id}
+      isOpen={isOpen}
+      onClose={(
+        arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent,
+        arg1?: {
+          source: 'ESCAPE' | 'DOCUMENT_CLICK';
+        }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
+      exiting={exiting}
+      transitionClassNames={{
+        appear: getClassName('bpk-bottom-sheet-v2--appear'),
+        appearActive: getClassName('bpk-bottom-sheet-v2--appear-active'),
+        exit: getClassName('bpk-bottom-sheet-v2--exit')
+      }}
+      closeOnEscPressed={closeOnEscPressed}
+      closeOnScrimClick={closeOnScrimClick}
+      timeout={{appear: animationTimeout, exit: isAboveMobile ? 0 : animationTimeout}}
+      >
+      <>
+        <header className={getClassName('bpk-bottom-sheet-v2--header')}>
+          <BpkNavigationBar
+            id={headingId}
+            className={getClassName('bpk-bottom-sheet-v2--navigation')}
+            title={title &&
+              <h2
+                id={headingId}
+                className={getClassName('bpk-bottom-sheet-v2--heading')}
               >
-                {actionText}
-              </BpkButtonLink>
-            ) :
-            <div
-              className={getClassName('bpk-bottom-sheet-v2--action-button')}
-            />
-          }
-        />
-      </header>
-      <div className={getClassName('bpk-bottom-sheet-v2--content')}>{children}</div>
-  </>
-  </BpkDialogWrapper>
+                {title}
+              </h2>
+            }
+            leadingButton={
+              <BpkCloseButton
+                className={getClassName('bpk-bottom-sheet-v2--close-button')}
+                label={closeLabel}
+                onClick={(
+                  arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent,
+                  arg1?: {
+                    source: 'ESCAPE' | 'DOCUMENT_CLICK';
+                  }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
+              />
+            }
+            trailingButton={
+              actionText && onAction ? (
+                <BpkButtonLink
+                  className={getClassName('bpk-bottom-sheet-v2--action-button')}
+                  onClick={onAction}
+                >
+                  {actionText}
+                </BpkButtonLink>
+              ) :
+              <div
+                className={getClassName('bpk-bottom-sheet-v2--action-button')}
+              />
+            }
+          />
+        </header>
+        <div className={getClassName('bpk-bottom-sheet-v2--content')}>{children}</div>
+    </>
+    </BpkDialogWrapper>
+  }
+  </BpkBreakpoint>
 }

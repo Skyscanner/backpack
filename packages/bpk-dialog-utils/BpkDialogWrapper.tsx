@@ -1,9 +1,9 @@
-import type { ReactNode} from "react";
+import type { ReactNode } from "react";
 import { useEffect, useRef } from "react";
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
 
 import { cssModules } from '../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import STYLES from './BpkDialogWrapper.module.scss';
 
@@ -12,10 +12,17 @@ const getClassName = cssModules(STYLES);
 export interface Props {
   ariaLabelledby: string;
   children: ReactNode;
+  closeOnEscPressed?: boolean;
+  closeOnScrimClick?: boolean;
   dialogClassName?: string;
   id: string | undefined;
   isOpen: boolean;
-  onClose: () => void | null;
+  onClose: (
+    arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent,
+    arg1?: {
+      source: 'ESCAPE' | 'DOCUMENT_CLICK';
+    },
+) => void | null;
   exiting?: boolean;
   transitionClassNames?: {
     appear?: string,
@@ -45,6 +52,8 @@ export const BpkDialogWrapper = (props: Props) => {
   const {
     ariaLabelledby,
     children,
+    closeOnEscPressed = false,
+    closeOnScrimClick = false,
     dialogClassName = '',
     exiting = false,
     id,
@@ -61,21 +70,23 @@ export const BpkDialogWrapper = (props: Props) => {
     const dialogWithPolyfill = document.getElementById(`${id}-polyfill`);
 
     const handleBackdropClick = (modal: HTMLElement | null) => {
-      if (modal) {
-        modal.addEventListener('click', (event: Event) => {
+      if (closeOnScrimClick && modal) {
+        modal.addEventListener('click', (event: MouseEvent | PointerEvent) => {
           const { target } = event;
 
           if (target === modal) {
-            modal === dialog ? ref.current?.close?.() : onClose();
+            onClose(event, {source: "DOCUMENT_CLICK"});
+            event.stopPropagation();
           }
         });
       }
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-          onClose();
+      if (closeOnEscPressed && event.key === 'Escape') {
+        onClose(event, {source: "ESCAPE"});
       }
+      event.stopPropagation();
     };
 
     if (isOpen) {
@@ -88,7 +99,6 @@ export const BpkDialogWrapper = (props: Props) => {
         handleBackdropClick(dialogWithPolyfill);
         window.addEventListener('keydown', handleKeyDown);
       }
-
       handleBackdropClick(dialog);
     } else {
       ref.current?.close?.();
@@ -99,7 +109,7 @@ export const BpkDialogWrapper = (props: Props) => {
       setPageProperties({ isDialogOpen: false })
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [id, isOpen, onClose]);
+  }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
 
   return isOpen ? (
     <div
@@ -125,7 +135,12 @@ export const BpkDialogWrapper = (props: Props) => {
         <dialog
           id={id}
           className={getClassName('bpk-dialog-wrapper--container', dialogClassName)}
-          onClose={onClose}
+          onCancel={(e) => {
+            e.preventDefault();
+            if (closeOnEscPressed) {
+              onClose(e.nativeEvent, {source: 'ESCAPE'})
+            }
+          }}
           aria-labelledby={ariaLabelledby}
           data-open={isOpen}
           ref={ref}

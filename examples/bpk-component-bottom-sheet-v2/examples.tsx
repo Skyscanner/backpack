@@ -134,8 +134,6 @@ class BottomSheetContainer extends Component<
             id="my-bottom-sheet"
             isOpen={this.state.isOpen}
             onClose={this.onClose}
-            getApplicationElement={() => document.getElementById('pagewrap')}
-            renderTarget={() => document.getElementById('bottom-sheet-container')}
             {...rest}
           >
             {children}
@@ -148,6 +146,18 @@ class BottomSheetContainer extends Component<
 
 const DefaultExample = () => (
   <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet">
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
+const BackdropClickCloseExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" closeOnScrimClick>
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
+const EscapeCloseExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" closeOnEscPressed>
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
@@ -188,6 +198,8 @@ const WideExample = () => (
 
 export {
   DefaultExample,
+  BackdropClickCloseExample,
+  EscapeCloseExample,
   OverflowingExample,
   NoHeaderExample,
   NoHeaderWithActionButtonExample,
