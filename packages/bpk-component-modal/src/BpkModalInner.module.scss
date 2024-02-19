@@ -16,7 +16,14 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/margins';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
 @mixin fullscreen() {
   display: flex;
@@ -27,17 +34,17 @@
 }
 
 .bpk-modal {
-  z-index: $bpk-zindex-modal;
+  z-index: tokens.$bpk-zindex-modal;
   width: 100%;
-  max-width: $bpk-modal-max-width;
+  max-width: tokens.$bpk-modal-max-width;
   margin: auto;
   transform: scale(1);
   transition:
-    opacity $bpk-duration-sm ease-in-out,
-    transform $bpk-duration-sm ease-in-out;
+    opacity tokens.$bpk-duration-sm ease-in-out,
+    transform tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
-  background-color: $bpk-modal-background-color;
-  opacity: $bpk-modal-opacity;
+  background-color: tokens.$bpk-modal-background-color;
+  opacity: tokens.$bpk-modal-opacity;
 
   // required to prevent the header extending beyond the rounded corners
   overflow: hidden;
@@ -45,11 +52,11 @@
   // FIX: Prevents ugly flickering when tapping inside the modal in Mobile Safari
   -webkit-tap-highlight-color: transparent;
 
-  @include bpk-box-shadow-xl;
-  @include bpk-border-radius-sm;
+  @include shadows.bpk-box-shadow-xl;
+  @include radii.bpk-border-radius-sm;
 
   &--full-screen-mobile {
-    @include bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
       @include fullscreen;
     }
   }
@@ -61,43 +68,43 @@
   }
 
   &--wide {
-    @include bpk-breakpoint-above-mobile {
-      max-width: $bpk-modal-wide-max-width;
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      max-width: tokens.$bpk-modal-wide-max-width;
     }
   }
 
   &--appear {
     transform: scale(0.9);
-    opacity: $bpk-modal-initial-opacity;
+    opacity: tokens.$bpk-modal-initial-opacity;
   }
 
   &--appear-active {
     transform: scale(1);
-    opacity: $bpk-modal-opacity;
+    opacity: tokens.$bpk-modal-opacity;
   }
 
   &__header {
-    @include bpk-border-bottom-sm($bpk-line-day);
+    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
 
   &__navigation {
     display: flex;
     justify-content: space-between;
-    background-color: $bpk-modal-background-color;
+    background-color: tokens.$bpk-modal-background-color;
   }
 
   &__heading {
-    @include bpk-text;
-    @include bpk-label-1;
+    @include typography.bpk-text;
+    @include typography.bpk-label-1;
   }
 
   &__close-button {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     right: auto;
 
-    @include bpk-margin-leading(bpk-spacing-base());
+    @include margins.bpk-margin-leading(tokens.bpk-spacing-base());
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       left: auto;
     }
   }
@@ -105,11 +112,11 @@
   &__accessory-view {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     left: auto;
-    margin-right: bpk-spacing-base();
+    margin-right: tokens.bpk-spacing-base();
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       right: auto;
-      margin-left: bpk-spacing-base();
+      margin-left: tokens.bpk-spacing-base();
     }
   }
 
@@ -118,7 +125,7 @@
     overflow-y: auto;
 
     &--padded {
-      padding: $bpk-modal-content-padding;
+      padding: tokens.$bpk-modal-content-padding;
     }
   }
 }

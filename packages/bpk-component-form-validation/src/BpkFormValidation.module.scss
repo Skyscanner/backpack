@@ -16,29 +16,32 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
+@use '../../unstable__bpk-mixins/margins';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-form-validation {
-  @include bpk-form-validation;
+  @include forms.bpk-form-validation;
 
   &__container {
-    @include bpk-form-validation__container;
+    @include forms.bpk-form-validation__container;
   }
 
   &__icon {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       fill,
       --bpk-form-validation-icon-fill,
-      $bpk-form-validation-color
+      tokens.$bpk-form-validation-color
     );
-    @include bpk-margin-trailing(bpk-spacing-sm());
+    @include margins.bpk-margin-trailing(tokens.bpk-spacing-sm());
   }
 
   &--appear {
-    @include bpk-form-validation--appear;
+    @include forms.bpk-form-validation--appear;
   }
 
   &--is-checkbox {
-    @include bpk-form-validation--is-checkbox;
+    @include forms.bpk-form-validation--is-checkbox;
   }
 }

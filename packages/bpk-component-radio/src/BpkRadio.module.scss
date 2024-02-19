@@ -16,32 +16,34 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
+@use '../../unstable__bpk-mixins/utils';
 
-$bpk-radio-circle-size: $bpk-one-pixel-rem * 8;
-$bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
+$bpk-radio-circle-size: tokens.$bpk-one-pixel-rem * 8;
+$bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
 
 .bpk-radio {
-  @include bpk-radio;
+  @include forms.bpk-radio;
 
   &--white {
-    @include bpk-radio--white;
+    @include forms.bpk-radio--white;
   }
 
   &--disabled {
-    @include bpk-radio--disabled;
+    @include forms.bpk-radio--disabled;
 
     &--white {
-      color: $bpk-text-disabled-on-dark-day;
+      color: tokens.$bpk-text-disabled-on-dark-day;
     }
   }
 
   &--invalid {
-    @include bpk-radio--invalid;
+    @include forms.bpk-radio--invalid;
   }
 
   &__input {
-    @include bpk-radio__input;
+    @include forms.bpk-radio__input;
 
     &:disabled {
       cursor: inherit;
@@ -55,7 +57,7 @@ $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
       &:disabled {
         + .bpk-radio__circle {
           display: block;
-          background: $bpk-text-disabled-day;
+          background: tokens.$bpk-text-disabled-day;
         }
       }
     }
@@ -63,21 +65,21 @@ $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
 
   &__circle {
     position: absolute;
-    top: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
-    left: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
+    top: tokens.bpk-spacing-md() - (tokens.$bpk-one-pixel-rem * 2);
+    left: tokens.bpk-spacing-md() - (tokens.$bpk-one-pixel-rem * 2);
     display: none;
     width: $bpk-radio-circle-size;
     height: $bpk-radio-circle-size;
     border-radius: 50%;
 
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background,
       --bpk-radio-checked-color,
-      $bpk-text-link-day
+      tokens.$bpk-text-link-day
     );
 
-    @include bpk-rtl {
-      right: bpk-spacing-md() - ($bpk-one-pixel-rem * 2);
+    @include utils.bpk-rtl {
+      right: tokens.bpk-spacing-md() - (tokens.$bpk-one-pixel-rem * 2);
       left: auto;
     }
   }

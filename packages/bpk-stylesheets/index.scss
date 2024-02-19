@@ -16,12 +16,16 @@
  * limitations under the License.
  */
 
-@import '~normalize.css';
-@import '../bpk-mixins/index.scss';
+/* stylelint-disable at-rule-disallowed-list, scss/at-import-partial-extension */
+
+@use '../bpk-mixins/tokens';
+@use '../bpk-mixins/utils';
+
+@import './normalize';
 
 // stylelint-disable-next-line selector-max-type
 html {
-  font-size: $bpk-font-size-root;
+  font-size: tokens.$bpk-font-size-root;
   box-sizing: border-box;
 }
 
@@ -36,9 +40,9 @@ html {
 
 /* stylelint-disable selector-class-pattern */
 body {
-  color: $bpk-font-color-base;
-  font-family: $bpk-font-family-base;
-  font-size: $bpk-font-size-base;
+  color: tokens.$bpk-font-color-base;
+  font-family: tokens.$bpk-font-family-base;
+  font-size: tokens.$bpk-font-size-base;
   line-height: 1.3rem; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
 
   :global(&.scaffold-font-size) {
@@ -51,30 +55,30 @@ body {
 }
 
 :focus-visible {
-  @include bpk-focus-indicator;
+  @include utils.bpk-focus-indicator;
 }
 
 :global(.hidden),
 :global(.hide) {
-  @include bpk-hidden;
+  @include utils.bpk-hidden;
 }
 
 :global(.visuallyhidden),
 :global(.visually-hidden) {
-  @include bpk-visually-hidden;
+  @include utils.bpk-visually-hidden;
 }
 
 :global(.visuallyhidden.focusable),
 :global(.visually-hidden.focusable) {
-  @include bpk-visually-hidden--focusable;
+  @include utils.bpk-visually-hidden--focusable;
 }
 
 :global(.invisible) {
-  @include bpk-invisible;
+  @include utils.bpk-invisible;
 }
 
 :global(.clearfix) {
-  @include bpk-clearfix;
+  @include utils.bpk-clearfix;
 }
-
-/* stylelint-enable */
+/* stylelint-enable selector-class-pattern */
+/* stylelint-enable at-rule-disallowed-list */

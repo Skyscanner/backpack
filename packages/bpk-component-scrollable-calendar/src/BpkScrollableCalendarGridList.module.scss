@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
-$calendar-height: 7 * ($bpk-calendar-day-size + bpk-spacing-lg());
+$calendar-height: 7 * (tokens.$bpk-calendar-day-size + tokens.bpk-spacing-lg());
 
 .bpk-scrollable-calendar-grid-list {
   position: relative;

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
 .bpk-map-default-loading-element {
   display: flex;
@@ -24,5 +24,5 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-  background-color: $bpk-surface-highlight-day;
+  background-color: tokens.$bpk-surface-highlight-day;
 }

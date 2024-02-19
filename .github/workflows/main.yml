@@ -66,7 +66,7 @@ jobs:
         with:
           path: |
             dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
 
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
@@ -107,7 +107,7 @@ jobs:
         id: storybook-dist-cache
         with:
           path: dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
       
       - name: Deploy Storybook for main
         uses: peaceiris/actions-gh-pages@v3
@@ -160,6 +160,6 @@ jobs:
       pull-requests: read
     steps:
       - name: Draft release notes
-        uses: release-drafter/release-drafter@v5
+        uses: release-drafter/release-drafter@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

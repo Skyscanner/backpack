@@ -21,7 +21,6 @@ const path = require('path');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const sassFunctions = require('../packages/bpk-mixins/sass-functions');
 const postCssPlugins = require('../scripts/webpack/postCssPlugins');
 
 const { BPK_TOKENS } = process.env;
@@ -120,9 +119,6 @@ module.exports = ({ config }) => {
                 ),
               )
             : '',
-          sassOptions: {
-            functions: sassFunctions,
-          },
         },
       },
     ],

@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-blockquote {
-  @include bpk-blockquote;
+  @include typography.bpk-blockquote;
 }
 
 .bpk-blockquote--extra-spacing {
-  @include bpk-blockquote--extra-spacing;
+  @include typography.bpk-blockquote--extra-spacing;
 }

@@ -16,19 +16,20 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/unstable__bpk-mixins/tokens';
+@use '../../packages/unstable__bpk-mixins/scroll-indicators';
 
-$custom-color: $bpk-status-success-fill-day;
+$custom-color: tokens.$bpk-status-success-fill-day;
 
 .bpk-horizontal-nav-custom-scrollers {
   background: $custom-color;
 
   &--leading {
-    @include bpk-scroll-indicator-left($custom-color);
+    @include scroll-indicators.bpk-scroll-indicator-left($custom-color);
   }
 
   &--trailing {
-    @include bpk-scroll-indicator-right($custom-color);
+    @include scroll-indicators.bpk-scroll-indicator-right($custom-color);
   }
 }
 
