@@ -1,12 +1,12 @@
-@import '../bpk-mixins/index.scss';
+@use '../unstable__bpk-mixins/tokens';
 
 @keyframes bpk-dialog-wrapper-scrim {
   0% {
-    opacity: $bpk-modal-initial-opacity;
+    opacity: tokens.$bpk-modal-initial-opacity;
   }
 
   100% {
-    opacity: $bpk-modal-opacity;
+    opacity: tokens.$bpk-modal-opacity;
   }
 }
 
@@ -17,8 +17,8 @@
 
     &::backdrop {
       position: fixed;
-      background-color: $bpk-scrim-day;
-      animation: bpk-modal-scrim $bpk-duration-sm ease-in-out;
+      background-color: tokens.$bpk-scrim-day;
+      animation: bpk-modal-scrim tokens.$bpk-duration-sm ease-in-out;
       inset: 0;
       inset-block-end: 0;
       inset-inline: 0;
@@ -30,8 +30,8 @@
     position: fixed;
     z-index: 0;
     margin: 0 auto;
-    background-color: $bpk-scrim-day;
-    animation: bpk-dialog-wrapper-scrim $bpk-duration-sm ease-in-out;
+    background-color: tokens.$bpk-scrim-day;
+    animation: bpk-dialog-wrapper-scrim tokens.$bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
     inset-inline: 0;
