@@ -17,6 +17,7 @@
  */
 
 import './index.scss';
+import '../bpk-component-badge/src/BpkBadge.module.scss';
 
 (() => {
   if (typeof document === 'undefined') {
