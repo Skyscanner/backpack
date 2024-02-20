@@ -74,6 +74,7 @@ module.exports = {
             options: {
               importLoaders: 1,
               modules: {
+                namedExport: true,
                 localIdentName: '[hash:base64]',
                 localIdentHashFunction: 'md4',
                 mode: (resourcePath, resourceQuery, resourceFragment) => {

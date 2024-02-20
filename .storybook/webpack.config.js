@@ -67,6 +67,7 @@ module.exports = ({ config }) => {
       presets: [['@babel/preset-env']],
     },
   });
+  // Handle direct css imports, ie the single stylesheet
   config.module.rules.push({
     test: /\.css$/,
     use: [
@@ -87,12 +88,53 @@ module.exports = ({ config }) => {
       },
     ],
   });
+  // We still want to load the adhoc styling from the example repo.
+  config.module.rules.push({
+    test: /(examples).*\.scss$/,
+    use: [
+      {
+        loader: MiniCssExtractPlugin.loader,
+      },
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+        },
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          postcssOptions: {
+            plugins: [postCssPlugins],
+          },
+        },
+      },
+      {
+        loader: 'sass-loader',
+        options: {
+          additionalData: BPK_TOKENS
+            ? fs.readFileSync(
+                path.join(
+                  rootDir,
+                  `node_modules/@skyscanner/bpk-foundations-web/tokens/${BPK_TOKENS}.scss`,
+                ),
+              )
+            : '',
+          sassOptions: {
+            functions: sassFunctions,
+          },
+        },
+      },
+    ],
+  });
+  // Ensure that `import STYLES from './' still generates a module that has the same hashed CSS Modules for use.
   config.module.rules.push({
     test: /\.scss$/,
+    exclude: /(examples).*\.scss$/,
     use: [
-      // {
-      //   loader: MiniCssExtractPlugin.loader,
-      // },
+      {
+        loader: path.resolve('./.storybook/passthrough-loader'),
+      },
       {
         loader: 'css-loader',
         options: {
@@ -101,13 +143,6 @@ module.exports = ({ config }) => {
             localIdentName: '[hash:base64]',
             localIdentHashFunction: 'md4',
             localIdentContext: path.resolve(__dirname, "../packages/bpk-stylesheet"),
-            mode: (resourcePath, resourceQuery, resourceFragment) => {
-              if (/global.scss$/i.test(resourcePath)) {
-                return "global";
-              }
-
-              return "local";
-            },
           },
         },
       },
