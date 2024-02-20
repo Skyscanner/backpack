@@ -16,15 +16,21 @@
  * limitations under the License.
  */
 
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import { BpkModalV3 } from './src/BpkModalV3/BpkModal';
-import themeAttributes from './src/themeAttributes';
-import BpkModal from './src/BpkModal';
-import type { Props } from './src/BpkModal';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { propTypes, defaultProps } from './src/legacy-prop-types';
+/// <reference types="react" />
+import type { ReactNode } from 'react';
 
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2, BpkModalV3 };
+export type Props = {
+  id: string | undefined;
+  ariaLabelledby: string;
+  children: ReactNode;
+  closeLabel: string;
+  fullScreenOnDesktop?: boolean;
+  isOpen: boolean;
+  noFullScreenOnMobile?: boolean;
+  onClose: () => void | null;
+  padded?: boolean;
+  showHeader?: boolean;
+  title?: string | null;
+  wide?: boolean;
+};
+export declare const BpkModalV2: (props: Props) => JSX.Element | null;
