@@ -69,8 +69,8 @@
     display: block;
     z-index: 1;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform tokens.$bpk-duration-sm
-      ease-in-out tokens.$bpk-duration-sm;
+    transition: transform tokens.$bpk-duration-sm ease-in-out
+      tokens.$bpk-duration-sm;
   }
 
   .bpk-modal:not([data-open='true']),
