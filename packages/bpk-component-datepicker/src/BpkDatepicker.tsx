@@ -135,7 +135,7 @@ class BpkDatepicker extends Component<Props, State> {
     super(props);
 
     this.state = {
-      propIsOpen: props.isOpen!,
+      propIsOpen: this.props.isOpen!,
     };
     this.inputRef = createRef();
   }
@@ -306,6 +306,9 @@ class BpkDatepicker extends Component<Props, State> {
     delete rest.onDateSelect;
     delete rest.onOpenChange;
     delete rest.isOpen;
+
+    console.log('state: ', this.state.propIsOpen)
+    console.log('prop: ', this.props.isOpen)
 
     const input = inputComponent || (
       <div
