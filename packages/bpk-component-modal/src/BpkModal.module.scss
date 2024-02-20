@@ -142,7 +142,7 @@
   }
 
   &__header-title {
-    padding: bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
 
     @include header;
   }
@@ -154,14 +154,14 @@
   }
 
   &__title {
-    padding-inline-end: bpk-spacing-base();
+    padding-inline-end: tokens.bpk-spacing-base();
 
     @include typography.bpk-label-1;
   }
 
   &__button-container {
-    padding-block-start: bpk-spacing-base();
-    padding-inline-end: bpk-spacing-base();
+    padding-block-start: tokens.bpk-spacing-base();
+    padding-inline-end: tokens.bpk-spacing-base();
 
     @include header;
   }
