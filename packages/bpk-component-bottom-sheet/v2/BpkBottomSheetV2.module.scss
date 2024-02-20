@@ -153,7 +153,7 @@ $close-button-width: tokens.bpk-spacing-lg() * 2;
     margin-left: calc(#{tokens.bpk-spacing-sm()});
     word-break: break-all;
 
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       left: auto;
       margin-right: calc(#{tokens.bpk-spacing-sm()});
       margin-left: calc(#{tokens.bpk-spacing-sm()} / 2);
