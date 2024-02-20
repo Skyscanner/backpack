@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import './base.css';
+import './index.scss';
 
 (() => {
   if (typeof document === 'undefined') {
