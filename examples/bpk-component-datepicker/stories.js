@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { waitFor } from '@testing-library/react';
-
 import BpkDatepicker from '../../packages/bpk-component-datepicker/src/BpkDatepicker';
 
 import {
