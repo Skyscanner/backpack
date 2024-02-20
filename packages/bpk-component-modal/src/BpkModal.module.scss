@@ -18,6 +18,8 @@
 
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/typography';
 
 @mixin header {
   display: flex;
@@ -87,9 +89,9 @@
   overflow-y: scroll;
   scrollbar-width: none;
 
-  @include tokens.bpk-box-shadow-xl;
+  @include shadows.bpk-box-shadow-xl;
 
-  @include tokens.bpk-breakpoint-above-mobile {
+  @include breakpoints.bpk-breakpoint-above-mobile {
     width: tokens.$bpk-modal-max-width;
     max-width: none;
     height: fit-content;
@@ -119,7 +121,7 @@
     height: fit-content;
     max-height: 90%;
 
-    @include tokens.bpk-breakpoint-above-mobile {
+    @include breakpoints.bpk-breakpoint-above-mobile {
       width: tokens.$bpk-modal-max-width;
       max-width: none;
     }
@@ -142,7 +144,7 @@
   &__header-title {
     padding: bpk-spacing-base();
 
-    @include tokens.header;
+    @include header;
   }
 
   &__header-title-container {
@@ -154,14 +156,14 @@
   &__title {
     padding-inline-end: bpk-spacing-base();
 
-    @include tokens.bpk-label-1;
+    @include typography.bpk-label-1;
   }
 
   &__button-container {
     padding-block-start: bpk-spacing-base();
     padding-inline-end: bpk-spacing-base();
 
-    @include tokens.header;
+    @include header;
   }
 
   &__container {
