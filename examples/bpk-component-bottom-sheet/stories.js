@@ -20,6 +20,8 @@ import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
 
 import {
   DefaultExample,
+  BackdropClickCloseExample,
+  EscapeCloseExample,
   OverflowingExample,
   NoHeaderExample,
   NoHeaderWithActionButtonExample,
@@ -33,6 +35,8 @@ export default {
 };
 
 export const Default = DefaultExample;
+export const BackdropClickClose = BackdropClickCloseExample;
+export const EscapeClose = EscapeCloseExample;
 export const Overflowing = OverflowingExample;
 
 export const NoHeader = NoHeaderExample;

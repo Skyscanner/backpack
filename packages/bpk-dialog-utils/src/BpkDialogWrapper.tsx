@@ -35,7 +35,7 @@ export interface Props {
   id: string | undefined;
   isOpen: boolean;
   onClose: (
-    arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent,
+    arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent | TouchEvent,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
