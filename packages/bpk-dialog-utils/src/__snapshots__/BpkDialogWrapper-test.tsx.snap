@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkDialogWrapper renders correctly with animation props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-dialog-wrapper"
+  >
+    <dialog
+      aria-labelledby="dialog-wrapper"
+      class="bpk-dialog-wrapper--container"
+      data-open="true"
+      id="dialog-wrapper"
+    >
+      <div
+        class="bpk-dialog-wrapper--contents"
+      >
+        Dialog content
+      </div>
+    </dialog>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkDialogWrapper renders correctly with class prop 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-dialog-wrapper"
+  >
+    <dialog
+      aria-labelledby="dialog-wrapper"
+      class="bpk-dialog-wrapper--container test-class"
+      data-open="true"
+      id="dialog-wrapper"
+    >
+      <div
+        class="bpk-dialog-wrapper--contents"
+      >
+        Dialog content
+      </div>
+    </dialog>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkDialogWrapper renders correctly with closeOnX props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-dialog-wrapper"
+  >
+    <dialog
+      aria-labelledby="dialog-wrapper"
+      class="bpk-dialog-wrapper--container"
+      data-open="true"
+      id="dialog-wrapper"
+    >
+      <div
+        class="bpk-dialog-wrapper--contents"
+      >
+        Dialog content
+      </div>
+    </dialog>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkDialogWrapper renders correctly with minimum prop 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-dialog-wrapper"
+  >
+    <dialog
+      aria-labelledby="dialog-wrapper"
+      class="bpk-dialog-wrapper--container"
+      data-open="true"
+      id="dialog-wrapper"
+    >
+      <div
+        class="bpk-dialog-wrapper--contents"
+      >
+        Dialog content
+      </div>
+    </dialog>
+  </div>
+</DocumentFragment>
+`;

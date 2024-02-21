@@ -15,21 +15,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { ReactNode } from 'react';
-import type { Props as BottomSheetProps } from './BpkBottomSheetV2';
-export type Props = Partial<BottomSheetProps> & {
-  actionText?: string;
+import type {Props as DialogWrapperProps} from './BpkDialogWrapper';
+export type Props = Partial<DialogWrapperProps> & {
   ariaLabelledby: string;
   children: ReactNode;
-  closeLabel?: string;
   closeOnEscPressed?: boolean;
   closeOnScrimClick?: boolean;
-  id: string;
+  dialogClassName?: string;
+  id: string | undefined;
   isOpen: boolean;
-  onAction?: () => void;
-  onClose: () => void;
-  title?: string;
-  wide?: boolean;
-};
-declare const BpkBottomSheetV2: ({ actionText, ariaLabelledby, children, closeLabel, closeOnEscPressed, closeOnScrimClick, id, isOpen, onAction, onClose, title, wide, ...rest }: Props) => JSX.Element;
-export default BpkBottomSheetV2;
+  onClose: (
+    arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent,
+    arg1?: {
+      source: 'ESCAPE' | 'DOCUMENT_CLICK';
+    },
+  ) => void | null;
+  exiting?: boolean;
+  transitionClassNames?: {
+    appear?: string,
+    appearActive?: string,
+    exit?: string
+  };
+  timeout?: {appear?: number, exit?: number};
+}
+
+declare const BpkDialogWrapper: ({ariaLabelledby, children, closeOnEscPressed, closeOnScrimClick, dialogClassName, id, isOpen, onClose, exiting, transitionClassNames, timeout}: Props) => JSX.Element;
+export default BpkDialogWrapper;
