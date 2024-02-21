@@ -307,7 +307,7 @@ class BpkDatepicker extends Component<Props, State> {
     // The following props are not used in render
     delete rest.onDateSelect;
     delete rest.onOpenChange;
-    // delete rest.isOpen;
+    delete rest.isOpen;
 
     console.log('state: ', this.state.propIsOpen)
     console.log('prop: ', this.props.isOpen)
