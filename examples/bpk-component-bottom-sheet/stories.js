@@ -27,6 +27,8 @@ import {
   NoHeaderWithActionButtonExample,
   ActionButtonExample,
   WideExample,
+  NestedExample,
+  MultipleBottomSheetsExample
 } from './examples';
 
 export default {
@@ -45,3 +47,7 @@ export const NoHeaderWithActionButton = NoHeaderWithActionButtonExample;
 export const ActionButton = ActionButtonExample;
 
 export const Wide = WideExample;
+
+export const Nested = NestedExample;
+
+export const MultipleBottomSheets = MultipleBottomSheetsExample;

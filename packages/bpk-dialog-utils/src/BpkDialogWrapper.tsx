@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 import type { ReactNode } from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
 
@@ -81,6 +81,7 @@ export const BpkDialogWrapper = (props: Props) => {
   } = props;
 
   const ref = useRef<HTMLDialogElement>(null);
+  const [dialogTarget, setDialogTarget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     const dialog = document.getElementById(`${id}`);
@@ -100,7 +101,9 @@ export const BpkDialogWrapper = (props: Props) => {
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (closeOnEscPressed && event.key === 'Escape') {
+      if (closeOnEscPressed
+        && event.key === 'Escape'
+        && (!dialogWithPolyfill || event.target === dialogWithPolyfill)) {
         onClose(event, {source: "ESCAPE"});
       }
       event.stopPropagation();
@@ -113,8 +116,11 @@ export const BpkDialogWrapper = (props: Props) => {
       ref.current?.showModal?.();
 
       if (dialogWithPolyfill) {
+        setDialogTarget(dialogWithPolyfill);
         handleBackdropClick(dialogWithPolyfill);
         window.addEventListener('keydown', handleKeyDown);
+      } else {
+        setDialogTarget(dialog);
       }
       handleBackdropClick(dialog);
     } else {
@@ -154,7 +160,7 @@ export const BpkDialogWrapper = (props: Props) => {
           className={getClassName('bpk-dialog-wrapper--container', dialogClassName)}
           onCancel={(e) => {
             e.preventDefault();
-            if (closeOnEscPressed) {
+            if (closeOnEscPressed && (!dialogTarget || e.target === dialogTarget)) {
               onClose(e.nativeEvent, {source: 'ESCAPE'})
             }
           }}
@@ -162,7 +168,12 @@ export const BpkDialogWrapper = (props: Props) => {
           data-open={isOpen}
           ref={ref}
         >
-          <div className={getClassName('bpk-dialog-wrapper--contents')}>{children}</div>
+          <div
+            className={getClassName('bpk-dialog-wrapper--contents')}
+            id={`${id}-contents`}
+          >
+            {children}
+          </div>
         </dialog>
       </CSSTransition>
     </div>

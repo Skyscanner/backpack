@@ -13,6 +13,7 @@ exports[`BpkBottomSheet renders correctly with action props 1`] = `
     >
       <div
         class="bpk-dialog-wrapper--contents"
+        id="my-bottom-sheet-contents"
       >
         <header
           class="bpk-bottom-sheet--header"
@@ -75,6 +76,7 @@ exports[`BpkBottomSheet renders correctly with minimum prop 1`] = `
     >
       <div
         class="bpk-dialog-wrapper--contents"
+        id="my-bottom-sheet-contents"
       >
         <header
           class="bpk-bottom-sheet--header"
@@ -134,6 +136,7 @@ exports[`BpkBottomSheet renders correctly with wide prop 1`] = `
     >
       <div
         class="bpk-dialog-wrapper--contents"
+        id="my-bottom-sheet-contents"
       >
         <header
           class="bpk-bottom-sheet--header"
