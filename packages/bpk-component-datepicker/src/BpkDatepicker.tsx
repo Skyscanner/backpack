@@ -309,9 +309,6 @@ class BpkDatepicker extends Component<Props, State> {
     delete rest.onOpenChange;
     delete rest.isOpen;
 
-    console.log('state: ', this.state.propIsOpen)
-    console.log('prop: ', this.props.isOpen)
-
     const input = inputComponent || (
       <div
         className={getClassName('bpk-datepicker__input')}
