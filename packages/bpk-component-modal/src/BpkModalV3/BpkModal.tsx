@@ -23,7 +23,7 @@ import { useEffect, useRef } from 'react';
 import BpkCloseButton from '../../../bpk-component-close-button';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
-import { BpkDialogWrapper } from '../../../bpk-dialog-utils/BpkDialogWrapper';
+import BpkDialogWrapper from '../../../bpk-dialog-utils';
 
 import STYLES from './BpKModal.module.scss';
 
