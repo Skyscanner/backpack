@@ -22,6 +22,8 @@ export type Props = Partial<BottomSheetProps> & {
   ariaLabelledby: string;
   children: ReactNode;
   closeLabel?: string;
+  closeOnEscPressed?: boolean;
+  closeOnScrimClick?: boolean;
   id: string;
   isOpen: boolean;
   onAction?: () => void;
@@ -29,5 +31,5 @@ export type Props = Partial<BottomSheetProps> & {
   title?: string;
   wide?: boolean;
 };
-declare const BpkBottomSheetV2: ({ actionText, ariaLabelledby, children, closeLabel, id, isOpen, onAction, onClose, title, wide, ...rest }: Props) => JSX.Element;
+declare const BpkBottomSheetV2: ({ actionText, ariaLabelledby, children, closeLabel, closeOnEscPressed, closeOnScrimClick, id, isOpen, onAction, onClose, title, wide, ...rest }: Props) => JSX.Element;
 export default BpkBottomSheetV2;
