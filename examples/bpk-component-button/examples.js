@@ -175,6 +175,10 @@ const LinkOnDarkExample = (props: {}) => (
   </BpkDarkExampleWrapper>
 );
 
+const FullWidthExample = (props: {}) => (
+  <BpkButtonV2 fullWidth {...props}>Full Width Button</BpkButtonV2>
+);
+
 const MixedExample = () => (
   <>
     <PrimaryExample />
@@ -186,6 +190,7 @@ const MixedExample = () => (
     <LinkExample />
     <LinkOnDarkExample />
     <FeaturedExample />
+    <FullWidthExample />
   </>
 );
 
@@ -215,4 +220,5 @@ export {
   LinkOnDarkExample,
   MixedExample,
   AnchorTagsExample,
+  FullWidthExample,
 };
