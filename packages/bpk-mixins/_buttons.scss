@@ -566,3 +566,18 @@
     color: $bpk-text-disabled-day;
   }
 }
+
+/// Full width button. Modifies the bpk-button to horizontally fill its container
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--full-width();
+///   }
+
+@mixin bpk-button--full-width {
+  display: block;
+  width: 100%;
+}

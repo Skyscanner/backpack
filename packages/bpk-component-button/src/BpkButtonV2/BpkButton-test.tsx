@@ -122,4 +122,14 @@ describe('BpkButtonV2', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should render with a class name if full width is added', () => {
+    const { container } = render(
+      <BpkButtonV2 fullWidth>
+        My button
+      </BpkButtonV2>,
+    );
+
+    expect(container?.firstElementChild?.classList?.contains('bpk-button--full-width')).toEqual(true);
+  });
 });
