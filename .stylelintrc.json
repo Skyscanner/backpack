@@ -1,5 +1,6 @@
 {
   "extends": "@skyscanner/stylelint-config-skyscanner",
+  "plugins": ["stylelint-no-unsupported-browser-features"],
   "rules": {
     "selector-class-pattern": [
       "(bpk|bpkdocs)(-[a-z0-9]+)+((__|--)[a-z0-9]+((-[a-z0-9]+)+)?(--)?([a-z0-9]+)+)?",
@@ -18,6 +19,15 @@
     }],
     "function-url-quotes": null,
     "scss/operator-no-newline-after": null,
-    "selector-not-notation": null
+    "selector-not-notation": null,
+    "plugin/no-unsupported-browser-features": [true, {
+      "ignore": [
+        "flexbox",
+        "css-nesting",
+        "css3-cursors"
+      ],
+      "ignorePartialSupport": true,
+      "severity": "error"
+    }]
   }
 }

@@ -1,6 +1,8 @@
 {
+  "plugins": ["compat"],
   "extends": [
-    "@skyscanner/eslint-config-skyscanner"
+    "@skyscanner/eslint-config-skyscanner",
+    "plugin:compat/recommended"
   ],
   "env": {
     "browser": true,
