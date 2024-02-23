@@ -20,7 +20,7 @@ import { useEffect, useRef, useState } from "react";
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
 
-import { cssModules } from '../../bpk-react-utils';
+import cssModules from '../cssModules';
 
 import STYLES from './BpkDialogWrapper.module.scss';
 

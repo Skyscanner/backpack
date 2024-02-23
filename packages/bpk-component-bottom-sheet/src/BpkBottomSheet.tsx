@@ -23,8 +23,7 @@ import BpkBreakpoint, { BREAKPOINTS } from "../../bpk-component-breakpoint";
 import { BpkButtonLink } from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-import BpkDialogWrapper from "../../bpk-dialog-utils";
-import { cssModules } from "../../bpk-react-utils";
+import { BpkDialogWrapper, cssModules } from "../../bpk-react-utils";
 import BpkNavigationBar from "../../bpk-component-navigation-bar";
 
 import STYLES from './BpkBottomSheet.module.scss';
