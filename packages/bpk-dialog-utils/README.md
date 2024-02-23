@@ -1,4 +1,4 @@
-# bpk-scrim-utils
+# bpk-dialog-utils
 
 > Higher order component that adds a scrim behind components, manages focus and handles appearing and disappearing animations
 

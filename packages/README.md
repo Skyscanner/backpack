@@ -83,7 +83,6 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-theming`](/packages/bpk-theming)
 [`bpk-component-ticket`](/packages/bpk-component-ticket)
 [`bpk-component-tooltip`](/packages/bpk-component-tooltip)
-[`bpk-dialog-utils`](/packages/bpk-dialog-utils/)
 [`bpk-react-utils`](/packages/bpk-react-utils)
 [`bpk-mixins`](/packages/bpk-mixins)
 [`bpk-stylesheets`](/packages/bpk-stylesheets)
