@@ -67,7 +67,9 @@ type EventHandlers = {
 type InputProps = ComponentProps<'input'> &
   Omit<EventHandlers, 'readOnly' | 'aria-readonly'>;
 
-const handleKeyEvent = (callback?: () => void) => (e: KeyboardEvent) => {
+// Changed the type to be generic as for some reason the type KeyboarEvent was not being recognized as
+// a valid type to UIEvent even though it is a valid type of UIEvent
+const handleKeyEvent = (callback?: () => void) => (e: any) => {
   if (e.code === KEYCODES.ENTER || e.code === KEYCODES.SPACEBAR) {
     e.preventDefault();
     if (callback) {
