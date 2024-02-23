@@ -18,16 +18,6 @@
 
 @use '../../packages/unstable__bpk-mixins/tokens';
 
-.bpk-modal-paragraph {
+.bpk-dialog-paragraph {
   margin-bottom: tokens.bpk-spacing-md();
-}
-
-.bpk-modal__leading-button {
-  color: tokens.$bpk-text-link-day;
-  fill: tokens.$bpk-text-link-day;
-
-  :hover {
-    color: tokens.$bpk-text-secondary-day;
-    fill: tokens.$bpk-text-secondary-day;
-  }
 }

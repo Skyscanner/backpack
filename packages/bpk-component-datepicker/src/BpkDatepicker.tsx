@@ -20,7 +20,7 @@ import { createRef, Component } from 'react';
 import type { ReactElement} from 'react';
 
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
-import BpkModal from '../../bpk-component-modal';
+import { BpkModal } from '../../bpk-component-modal';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPopover from '../../bpk-component-popover';
 import { cssModules } from '../../bpk-react-utils';
@@ -66,13 +66,6 @@ type Props = {
   formatMonth: (date: Date) => string;
   id: string;
   title: string;
-  /**
-   * Because this component uses a modal on mobile viewports, you need to let it know what 
-   * the root element of your application is by returning its DOM node via this prop
-   * This is to "hide" your application from screen readers whilst the datepicker is open.
-   * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
-   */
-  getApplicationElement: () => HTMLElement | null;
   nextMonthLabel: string;
   previousMonthLabel: string;
   weekStartsOn: number;
@@ -103,12 +96,11 @@ type Props = {
   isOpen?: boolean;
   valid?: boolean;
   // Disabling this as if we set a default property for this value it causes the internal onClose function to stop working for default setup
-
   onClose?: () => void;
 };
 
 type State = {
-  isOpen: boolean;
+  propIsOpen: boolean;
 };
 
 class BpkDatepicker extends Component<Props, State> {
@@ -142,16 +134,18 @@ class BpkDatepicker extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.state = {
-      isOpen: props.isOpen!,
-    };
+    if (props.isOpen !== undefined) {
+      this.state = {
+        propIsOpen: props.isOpen,
+      };
+    }
     this.inputRef = createRef();
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     const { isOpen } = this.props;
 
-    if (prevProps.isOpen !== isOpen && prevState.isOpen !== isOpen) {
+    if (prevProps.isOpen !== isOpen && prevState.propIsOpen !== isOpen) {
       if (isOpen) {
         this.onOpen();
       } else {
@@ -162,7 +156,7 @@ class BpkDatepicker extends Component<Props, State> {
 
   onOpen = () => {
     this.setState({
-      isOpen: true,
+      propIsOpen: true,
     });
     if (this.props.onOpenChange) {
       this.props.onOpenChange(true);
@@ -171,7 +165,7 @@ class BpkDatepicker extends Component<Props, State> {
 
   onClose = () => {
     this.setState({
-      isOpen: false,
+      propIsOpen: false,
     });
     if (this.props.onOpenChange) {
       this.props.onOpenChange(false);
@@ -291,7 +285,6 @@ class BpkDatepicker extends Component<Props, State> {
       formatDate,
       formatDateFull,
       formatMonth,
-      getApplicationElement,
       id,
       initiallyFocusedDate,
       inputComponent,
@@ -330,7 +323,7 @@ class BpkDatepicker extends Component<Props, State> {
           aria-label={this.getLabel(selectionConfiguration!, formatDateFull)}
           onChange={() => null}
           onOpen={this.onOpen}
-          isOpen={this.state.isOpen}
+          isOpen={this.state.propIsOpen}
           valid={valid}
           {...inputProps}
         />
@@ -366,12 +359,11 @@ class BpkDatepicker extends Component<Props, State> {
               {input}
               <BpkModal
                 id={`${id}-modal`}
-                renderTarget={renderTarget}
-                onClose={this.props.onClose || this.onClose}
-                isOpen={this.state.isOpen}
-                title={title}
+                ariaLabelledby={title}
                 closeLabel={closeButtonText}
-                getApplicationElement={getApplicationElement}
+                isOpen={this.state.propIsOpen}
+                onClose={this.props.onClose || this.onClose}
+                title={title}
               >
                 <Calendar {...calendarProps} fixedWidth={false} />
               </BpkModal>
@@ -382,7 +374,7 @@ class BpkDatepicker extends Component<Props, State> {
               target={input}
               renderTarget={renderTarget}
               onClose={this.props.onClose || this.onClose}
-              isOpen={this.state.isOpen}
+              isOpen={this.state.propIsOpen}
               label={title}
               closeButtonText={closeButtonText}
               tabIndex={0}

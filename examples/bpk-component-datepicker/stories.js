@@ -57,6 +57,12 @@ export const RangeWithMultipleInputs = MultipleRangeInputExample;
 
 export const VisualTest = DefaultVisualExample;
 
+VisualTest.parameters = {
+  percy: {
+    waitForSelector: "#myDatepicker-modal-title"
+  }
+}
+
 export const VisualTestRange = VisualRangeExample;
 
 export const VisualTestWithZoom = VisualTest.bind({});

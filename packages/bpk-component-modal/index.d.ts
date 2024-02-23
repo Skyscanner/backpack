@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
+import { BpkModal } from './src/BpkModal';
 import themeAttributes from './src/themeAttributes';
-import BpkModal from './src/BpkModal';
-import type { Props } from './src/BpkModal';
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-export type BpkModalProps = Props;
-export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2 };
+
+export { themeAttributes, BpkModal };

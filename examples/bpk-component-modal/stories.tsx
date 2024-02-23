@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkModalV2 } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
+import { BpkModal } from '../../packages/bpk-component-modal/src/BpkModal';
 
 import {
   DefaultExample,
@@ -34,11 +34,12 @@ import {
   NoFullScreenOnMobileNoTitleExample,
   NoHeaderExample,
   MultipleModalsExample,
+  ModalOpenByDefault,
 } from './examples';
 
 export default {
-  title: 'bpk-component-modal-v2',
-  component: BpkModalV2,
+  title: 'bpk-component-modal',
+  component: BpkModal,
 };
 
 export const Default = DefaultExample;
@@ -56,3 +57,8 @@ export const NoFullScreenOnMobile = NoFullScreenOnMobileExample;
 export const NoFullScreenOnMobileNoTitle = NoFullScreenOnMobileNoTitleExample;
 export const NoHeader = NoHeaderExample;
 export const MultipleModals = MultipleModalsExample;
+export const VisualTest = ModalOpenByDefault;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

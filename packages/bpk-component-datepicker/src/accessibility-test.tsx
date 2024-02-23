@@ -59,7 +59,6 @@ describe('BpkDatepicker accessibility tests', () => {
         changeMonthLabel="Change month"
         title="Departure date"
         weekStartsOn={1}
-        getApplicationElement={() => document.createElement('div')}
         formatDate={formatDate}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -85,7 +84,6 @@ describe('BpkDatepicker accessibility tests', () => {
         changeMonthLabel="Change month"
         title="Departure date"
         weekStartsOn={1}
-        getApplicationElement={() => document.createElement('div')}
         formatDate={formatDate}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}

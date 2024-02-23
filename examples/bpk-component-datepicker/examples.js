@@ -141,9 +141,6 @@ class CalendarContainer extends Component {
             }}
             selectionConfiguration={this.state.selectionConfiguration}
             onMonthChange={action('Changed month')}
-            getApplicationElement={() =>
-              document.getElementById('application-element')
-            }
             renderTarget={() => document.getElementById('datepicker-element')}
           />
         </div>
@@ -217,9 +214,6 @@ class ReturnDatepicker extends Component {
               previousMonthLabel="Go to previous month"
               nextMonthLabel="Go to next month"
               title="Departure date"
-              getApplicationElement={() =>
-                document.getElementById('application-element')
-              }
               renderTarget={() => document.getElementById('datepicker-element')}
               formatDate={formatDate}
               formatMonth={formatMonth}
@@ -254,9 +248,6 @@ class ReturnDatepicker extends Component {
               previousMonthLabel="Go to previous month"
               nextMonthLabel="Go to next month"
               title="Return date"
-              getApplicationElement={() =>
-                document.getElementById('application-element')
-              }
               renderTarget={() => document.getElementById('datepicker-element')}
               formatDate={formatDate}
               formatMonth={formatMonth}
@@ -416,9 +407,6 @@ class MultipleInputDatepicker extends Component {
             }}
             selectionConfiguration={this.state.selectionConfiguration}
             onMonthChange={action('Changed month')}
-            getApplicationElement={() =>
-              document.getElementById('application-element')
-            }
             renderTarget={() => document.getElementById('datepicker-element')}
           />
         </div>
