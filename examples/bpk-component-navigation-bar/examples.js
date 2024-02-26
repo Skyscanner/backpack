@@ -242,6 +242,82 @@ const VisualTestExample = () => (
   </div>
 )
 
+
+
+const TrailingComponent = () => <div style={{maxWidth: '200px'}} >hello, classname is not defined</div>;
+
+const BrokenClassesExample1 = () => (
+  <div>
+    <div>trailing button is a component without a className prop. Classes bpk-navigation-bar__trailing-item and bpk-navigation-bar__trailing-item-barStyle wont be passed</div>
+    <BpkNavigationBar
+      id="test"
+      title="Sticky"
+      sticky
+      leadingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('back clicked')}
+          icon={ArrowIconWithRtl}
+          label="back"
+        />
+      }
+      trailingButton={
+        <TrailingComponent />
+      }
+    />
+  </div>
+
+)
+
+// eslint-disable-next-line react/prop-types
+const TrailingComponentWithClassName = (props) => <div style={{maxWidth: '200px'}} >hello, classname is {props.className}</div>
+
+
+const BrokenClassesExample2 = () => (
+  <div>
+    <div>trailing button is a component with a className prop, but not assigned to a parent div (means, component has a className, but nothing is passed). Classes bpk-navigation-bar__trailing-item and bpk-navigation-bar__trailing-item-barStyle wont be passed</div>
+    <BpkNavigationBar
+      id="test"
+      title="Sticky"
+      sticky
+      leadingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('back clicked')}
+          icon={ArrowIconWithRtl}
+          label="back"
+        />
+      }
+      trailingButton={
+        <TrailingComponentWithClassName />
+      }
+    />
+  </div>
+)
+
+// eslint-disable-next-line react/prop-types
+const TrailingComponentWithClassNameApplied = (props) => <div style={{maxWidth: '200px'}} className={props.className}>hello, classname is {props.className}</div>
+
+
+const WorkingClassesExample = () => (
+  <div>
+    <div>trailing button is a component with a className prop and passed to the className to the parent div</div>
+    <BpkNavigationBar
+      id="test"
+      title="Sticky"
+      sticky
+      leadingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('back clicked')}
+          icon={ArrowIconWithRtl}
+          label="back"
+        />
+      }
+      trailingButton={
+        <TrailingComponentWithClassNameApplied />
+      }
+    />
+  </div>
+)
+
 export {
   DefaultExample,
   OnDarkExample,
@@ -251,5 +327,8 @@ export {
   WithLogoExample,
   WithLinksOnDarkExample,
   StickyExample,
-  VisualTestExample
+  VisualTestExample,
+  BrokenClassesExample1,
+  BrokenClassesExample2,
+  WorkingClassesExample
 };

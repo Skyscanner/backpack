@@ -31,6 +31,9 @@ import {
   OnDarkExample,
   WithLinksOnDarkExample,
   VisualTestExample,
+  BrokenClassesExample1,
+  BrokenClassesExample2,
+  WorkingClassesExample
 } from './examples';
 
 export default {
@@ -55,6 +58,11 @@ export const WithLinksOnDark = WithLinksOnDarkExample;
 
 export const Sticky = StickyExample;
 export const VisualTest = VisualTestExample;
+export const BrokenClasses1 = BrokenClassesExample1;
+export const BrokenClasses2 = BrokenClassesExample2;
+export const WorkingClasses = WorkingClassesExample;
+
+
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
   zoomEnabled: true
