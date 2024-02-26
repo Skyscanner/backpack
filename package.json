@@ -124,7 +124,7 @@
     "@skyscanner/bpk-foundations-web": "^17.8.0",
     "@skyscanner/bpk-svgs": "^19.0.1",
     "@skyscanner/stylelint-config-skyscanner": "^10.0.0",
-    "@storybook/addon-a11y": "^7.6.8",
+    "@storybook/addon-a11y": "^7.6.17",
     "@storybook/addon-actions": "^7.6.10",
     "@storybook/addon-docs": "7.6.12",
     "@storybook/addon-viewport": "^7.6.12",
