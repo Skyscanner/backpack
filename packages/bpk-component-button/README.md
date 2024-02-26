@@ -29,6 +29,7 @@ export default () => (
       <AlignedArrowIcon />
       <span className="visually-hidden">Search</span>
     </BpkButtonV2>
+    <BpkButtonV2 fullWidth>Full Width</BpkButtonV2>
   </div>
 );
 ```

@@ -71,6 +71,10 @@
     @include buttons.bpk-button--secondary-on-dark;
   }
 
+  &--full-width {
+    @include buttons.bpk-button--full-width;
+  }
+
   /* stylelint-disable selector-max-compound-selectors */
   span > svg {
     display: block;
