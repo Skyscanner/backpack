@@ -67,9 +67,7 @@ type EventHandlers = {
 type InputProps = ComponentProps<'input'> &
   Omit<EventHandlers, 'readOnly' | 'aria-readonly'>;
 
-// Changed the type to be generic as for some reason the type KeyboarEvent was not being recognized as
-// a valid type to UIEvent even though it is a valid type of UIEvent
-const handleKeyEvent = (callback?: () => void) => (e: any) => {
+const handleKeyEvent = (callback?: () => void) => (e: KeyboardEvent) => {
   if (e.code === KEYCODES.ENTER || e.code === KEYCODES.SPACEBAR) {
     e.preventDefault();
     if (callback) {
@@ -169,6 +167,8 @@ const withOpenEvents = <P extends object>(InputComponent: ComponentType<P>) => {
 
       const eventHandlers: EventHandlers = {
         onClick: withEventHandler(onOpen, onClick),
+        // @ts-expect-error for some reason the type KeyboardEvent was not being recognized as
+        // a valid type to UIEvent even though it is a valid subtype type of UIEvent
         onKeyDown: withEventHandler(handleKeyEvent(onOpen), onKeyDown),
       };
 
