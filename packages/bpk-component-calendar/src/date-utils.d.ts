@@ -1,40 +1,22 @@
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import startOfMonth from 'date-fns/startOfMonth';
-import endOfMonth from 'date-fns/endOfMonth';
-import lastDayOfMonth from 'date-fns/lastDayOfMonth';
-import getDay from 'date-fns/getDay';
-import isWithinRange from 'date-fns/isWithinInterval';
-import isToday from 'date-fns/isToday';
-import isSaturday from 'date-fns/isSaturday';
-import isSunday from 'date-fns/isSunday';
-import isSameDay from 'date-fns/isSameDay';
-import isSameWeek from 'date-fns/isSameWeek';
-import isSameMonth from 'date-fns/isSameMonth';
-import isBefore from 'date-fns/isBefore';
-import isAfter from 'date-fns/isAfter';
-import differenceInCalendarMonths from 'date-fns/differenceInCalendarMonths';
-import addDays from 'date-fns/addDays';
-import addMonths from 'date-fns/addMonths';
-import startOfDay from 'date-fns/startOfDay';
-import parseISO from 'date-fns/parseISO';
-import format from 'date-fns/format';
+import { startOfMonth } from 'date-fns/startOfMonth';
+import { endOfMonth } from 'date-fns/endOfMonth';
+import { lastDayOfMonth } from 'date-fns/lastDayOfMonth';
+import { getDay } from 'date-fns/getDay';
+import { isWithinInterval as isWithinRange } from 'date-fns/isWithinInterval';
+import { isToday } from 'date-fns/isToday';
+import { isSaturday } from 'date-fns/isSaturday';
+import { isSunday } from 'date-fns/isSunday';
+import { isSameDay } from 'date-fns/isSameDay';
+import { isSameWeek } from 'date-fns/isSameWeek';
+import { isSameMonth } from 'date-fns/isSameMonth';
+import { isBefore } from 'date-fns/isBefore';
+import { isAfter } from 'date-fns/isAfter';
+import { differenceInCalendarMonths } from 'date-fns/differenceInCalendarMonths';
+import { addDays } from 'date-fns/addDays';
+import { addMonths } from 'date-fns/addMonths';
+import { startOfDay } from 'date-fns/startOfDay';
+import { parseISO } from 'date-fns/parseISO';
+import { format } from 'date-fns/format';
 import type { DaysOfWeek } from './custom-proptypes';
 declare function daysInMonth(year: number, month: number): number;
 declare function getCalendarMonthWeeks(date: Date, weekStartsOn: number): Date[][];
