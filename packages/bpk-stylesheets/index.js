@@ -27,7 +27,7 @@ import './index.scss';
 
   // touch support
   classNames.push(
-    'ontouchstart' in window ||  
+    'ontouchstart' in window ||
       (window.DocumentTouch && document instanceof DocumentTouch) // eslint-disable-line no-undef
       ? 'touch-support'
       : 'no-touch-support',
@@ -35,7 +35,7 @@ import './index.scss';
 
   // add more feature tests here...
 
-   
+
   document.documentElement.className += ` ${classNames
     .map((className) => `bpk-${className}`)
     .join(' ')}`;
