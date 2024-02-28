@@ -40,7 +40,7 @@ export type Props = {
   id: string;
   onAction?: () => void;
   onClose: (
-    arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent | TouchEvent,
+    arg0?: Event,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
@@ -70,7 +70,7 @@ const BpkBottomSheet = ({
 
   const handleClose = (
     timeout: number,
-    arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent | TouchEvent,
+    arg0?: Event,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
@@ -96,7 +96,7 @@ const BpkBottomSheet = ({
       id={id}
       isOpen={isOpen}
       onClose={(
-        arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent | TouchEvent,
+        arg0?: Event,
         arg1?: {
           source: 'ESCAPE' | 'DOCUMENT_CLICK';
         }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
