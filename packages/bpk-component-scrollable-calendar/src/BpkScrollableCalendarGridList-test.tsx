@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import isWeekend from 'date-fns/isWeekend';
+import { isWeekend } from 'date-fns/isWeekend';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { render } from '@testing-library/react';
