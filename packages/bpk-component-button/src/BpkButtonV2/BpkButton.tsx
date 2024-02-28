@@ -29,6 +29,7 @@ export const BpkButtonV2 = ({
   children,
   className = null,
   disabled = false,
+  fullWidth = false,
   href = null,
   iconOnly = false,
   onClick = () => {},
@@ -44,6 +45,7 @@ export const BpkButtonV2 = ({
     iconOnly && 'bpk-button--icon-only',
     iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
     `bpk-button--${type}`,
+    fullWidth && 'bpk-button--full-width',
     className,
   );
 

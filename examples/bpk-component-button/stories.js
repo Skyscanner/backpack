@@ -30,6 +30,7 @@ import {
   LinkOnDarkExample,
   MixedExample,
   AnchorTagsExample,
+  FullWidthExample,
 } from './examples';
 
 export default {
@@ -63,3 +64,5 @@ export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
   zoomEnabled: true
 };
+
+export const FullWidth = () => <FullWidthExample />;
