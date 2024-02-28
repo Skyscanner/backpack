@@ -173,7 +173,7 @@
     "react-svg-loader": "^3.0.1",
     "sass-embedded": "^1.70.0",
     "sass-migrator": "^1.8.0",
-    "sass-loader": "^13.3.3",
+    "sass-loader": "^14.1.1",
     "sassdoc": "^2.7.0",
     "storybook": "^7.6.17",
     "style-loader": "^3.3.3",
