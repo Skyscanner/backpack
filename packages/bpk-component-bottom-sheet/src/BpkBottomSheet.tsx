@@ -128,7 +128,7 @@ const BpkBottomSheet = ({
                 className={getClassName('bpk-bottom-sheet--close-button')}
                 label={closeLabel}
                 onClick={(
-                  arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent,
+                  arg0?: Event,
                   arg1?: {
                     source: 'ESCAPE' | 'DOCUMENT_CLICK';
                   }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
