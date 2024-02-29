@@ -20,7 +20,7 @@
 
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import addMonths from 'date-fns/addMonths';
+import { addMonths } from 'date-fns/addMonths';
 import {
   colorWhite,
   colorPanjin,
