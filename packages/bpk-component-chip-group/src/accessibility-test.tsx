@@ -44,6 +44,9 @@ describe('BpkChipGroup accessibility tests', () => {
     const { container } = render(
       <BpkChipGroup
         chips={chips}
+        stickyChip={{
+          text: 'Sort & Filter'
+        }}
         type={CHIP_GROUP_TYPES.rail}
         ariaLabel="Select cities"
       />
@@ -70,6 +73,9 @@ describe('BpkChipGroupSingleSelect accessibility tests', () => {
     const { container } = render(
       <BpkChipGroupSingleSelect
         chips={chips}
+        stickyChip={{
+          text: 'Sort & Filter'
+        }}
         type={CHIP_GROUP_TYPES.rail}
         selectedIndex={1}
         ariaLabel="Select a city"
