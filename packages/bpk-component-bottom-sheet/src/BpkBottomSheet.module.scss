@@ -24,6 +24,12 @@
 @use '../../unstable__bpk-mixins/typography';
 @use '../../unstable__bpk-mixins/utils';
 
+@mixin animation-slide-up {
+  animation-duration: tokens.$bpk-duration-sm;
+  animation-name: slide-up;
+  animation-timing-function: ease-in-out;
+}
+
 $close-button-width: tokens.bpk-spacing-lg() * 2;
 
 .bpk-bottom-sheet {
@@ -66,9 +72,7 @@ $close-button-width: tokens.bpk-spacing-lg() * 2;
   }
 
   &--appear {
-    animation-duration: 0.24s;
-    animation-name: slide-up;
-    animation-timing-function: ease-in-out;
+    @include animation-slide-up;
 
     @include breakpoints.bpk-breakpoint-above-mobile {
       transform: scale(0.9);
@@ -86,9 +90,8 @@ $close-button-width: tokens.bpk-spacing-lg() * 2;
 
   &--exit {
     animation-direction: reverse;
-    animation-duration: 0.24s;
-    animation-name: slide-up;
-    animation-timing-function: ease-in-out;
+
+    @include animation-slide-up;
 
     @include breakpoints.bpk-breakpoint-above-mobile {
       animation: none;
