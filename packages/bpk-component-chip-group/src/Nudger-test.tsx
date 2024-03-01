@@ -16,14 +16,12 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import type { MutableRefObject } from 'react';
-import userEvent from '@testing-library/user-event';
 
-import { isRTL } from '../../bpk-react-utils/index';
 import { CHIP_TYPES } from '../../bpk-component-chip';
 
-import Nudger, { SCROLL_DISTANCE } from './Nudger';
+import Nudger from './Nudger';
 
 
 const mockIsRtl = jest.fn(() => false);

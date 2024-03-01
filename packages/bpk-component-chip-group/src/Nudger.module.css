@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-chip-group-nudger--leading{margin-inline-end:0.5rem}.bpk-chip-group-nudger--trailing{margin-inline-start:0.5rem}.bpk-chip-group-nudger--hidden{display:none}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-chip-group-nudger{position:absolute}.bpk-chip-group-nudger--leading{margin-inline-end:0.5rem}.bpk-chip-group-nudger--trailing{margin-inline-start:0.5rem}.bpk-chip-group-nudger--hidden{display:none}
