@@ -16,6 +16,7 @@ exports[`BpkChipGroupSingleSelect should render correctly with type = rail 1`] =
           class="bpk-mobile-scroll-container__inner"
         >
           <div
+            aria-label="Filter cities"
             aria-multiselectable="false"
             aria-orientation="horizontal"
             class="bpk-chip-group bpk-chip-group--rail"
@@ -87,6 +88,7 @@ exports[`BpkChipGroupSingleSelect should render correctly with type = wrap 1`] =
     class="bpk-chip-group-container"
   >
     <div
+      aria-label="Filter cities"
       aria-multiselectable="false"
       aria-orientation="horizontal"
       class="bpk-chip-group bpk-chip-group--wrap"
@@ -155,6 +157,7 @@ exports[`BpkChipGroupSingleSelect should support custom class names 1`] = `
     class="custom-classname bpk-chip-group-container"
   >
     <div
+      aria-label="a11y label"
       aria-multiselectable="false"
       aria-orientation="horizontal"
       class="bpk-chip-group bpk-chip-group--wrap"

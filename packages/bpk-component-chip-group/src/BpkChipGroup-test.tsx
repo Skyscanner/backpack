@@ -18,28 +18,34 @@
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import BpkSelectableChip, { BpkDismissibleChip, BpkDropdownChip } from '../../bpk-component-chip';
 
-import BpkChipGroup, { CHIP_GROUP_TYPES } from './BpkChipGroup';
+import BpkChipGroup, { BpkChipGroupState, CHIP_GROUP_TYPES } from './BpkChipGroup';
 
-const chips = [
-  {
-    text: 'London',
-  },
-  {
-    text: 'Berlin',
-    selected: true,
-  },
-  {
-    text: 'Florence',
-  },
-  {
-    text: 'Stockholm',
-  }
-];
+const defaultProps = {
+  type: CHIP_GROUP_TYPES.wrap,
+  ariaLabel: 'a11y label',
+}
 
 describe('BpkChipGroup', () => {
+  const chips = [
+    {
+      text: 'London',
+    },
+    {
+      text: 'Berlin',
+      selected: true,
+    },
+    {
+      text: 'Florence',
+    },
+    {
+      text: 'Stockholm',
+    }
+  ];
+
   it('should render correctly with type = rail', () => {
     const { asFragment } = render(<BpkChipGroup chips={chips} type={CHIP_GROUP_TYPES.rail} />);
     expect(asFragment()).toMatchSnapshot();
@@ -54,8 +60,8 @@ describe('BpkChipGroup', () => {
     const { asFragment } = render(
       <BpkChipGroup
         chips={chips}
-        type={CHIP_GROUP_TYPES.wrap}
         className="custom-classname"
+        {...defaultProps}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -69,6 +75,7 @@ describe('BpkChipGroup', () => {
         }}
         chips={chips}
         type={CHIP_GROUP_TYPES.rail}
+        ariaLabel="Filter cities"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -93,7 +100,7 @@ describe('BpkChipGroup', () => {
     const { asFragment } = render(
       <BpkChipGroup
         chips={alternativeChips}
-        type={CHIP_GROUP_TYPES.wrap}
+        {...defaultProps}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -116,7 +123,7 @@ describe('BpkChipGroup', () => {
             onClick,
           }
         ]}
-        type={CHIP_GROUP_TYPES.wrap}
+        {...defaultProps}
       />,
     );
 
@@ -125,17 +132,119 @@ describe('BpkChipGroup', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
     expect(onClick).toHaveBeenCalledWith(true, 1);
   });
-
-  it('should render nudger when on desktop', () => {
-    // TODO
-  });
-
-  it('should not render nudger when on mobile', () => {
-    // TODO
-  });
-
 });
 
 describe('BpkChipGroupState', () => {
-  // TODO
+  const chips = [
+    {
+      text: 'London',
+      onClick: jest.fn(),
+    },
+    {
+      text: 'Berlin',
+      onClick: jest.fn(),
+    }, {
+      text: 'New York',
+      onClick: jest.fn(),
+    }
+  ];
+
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+
+  it('should select a chip when clicked', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <BpkChipGroupState
+        chips={chips}
+        {...defaultProps}
+      />,
+    );
+
+    const chip = screen.getByRole('option', { name: 'Berlin' });
+    await user.click(chip);
+
+    expect(chip).toHaveClass('bpk-chip--default-selected');
+  });
+
+  it('should allow multiple chips to be selected', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <BpkChipGroupState
+        chips={chips}
+        {...defaultProps}
+      />,
+    );
+
+    const berlinChip = screen.getByRole('option', { name: 'Berlin' });
+    const londonChip = screen.getByRole('option', { name: 'London' });
+
+    await user.click(berlinChip);
+    await user.click(londonChip);
+
+    expect(berlinChip).toHaveClass('bpk-chip--default-selected');
+    expect(londonChip).toHaveClass('bpk-chip--default-selected');
+  });
+
+  it('should unselect a chip when selected and clicked', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <BpkChipGroupState
+        chips={chips}
+        {...defaultProps}
+      />,
+    );
+
+    const chip = screen.getByRole('option', { name: 'Berlin' });
+    await user.click(chip);
+
+    expect(chip).toHaveClass('bpk-chip--default-selected');
+
+    await user.click(chip);
+
+    expect(chip).not.toHaveClass('bpk-chip--default-selected');
+  });
+
+  it('should call onclick with the selected chip and index when clicked', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <BpkChipGroupState
+        chips={chips}
+        {...defaultProps}
+      />,
+    );
+
+    await user.click(screen.getByRole('option', { name: 'Berlin' }));
+
+    const { onClick } = chips[1];
+
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalledWith(true, 1);
+  });
+
+  it('should allow chips to be selected initially when passed in chips array', () => {
+    render(
+      <BpkChipGroupState
+        chips={[{
+          text: 'London',
+          onClick: jest.fn(),
+        },
+        {
+          text: 'Berlin',
+          onClick: jest.fn(),
+          selected: true,
+        }]}
+        {...defaultProps}
+      />,
+    );
+
+    const chip = screen.getByRole('option', { name: 'Berlin' });
+
+    expect(chip).toHaveClass('bpk-chip--default-selected');
+  });
 });

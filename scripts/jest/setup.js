@@ -17,6 +17,7 @@
  */
 
 import 'jest-axe/extend-expect';
+import '@testing-library/jest-dom';
 import 'raf/polyfill';
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 

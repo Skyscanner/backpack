@@ -6,6 +6,7 @@ exports[`BpkChipGroup should render correctly with all chip component types 1`] 
     class="bpk-chip-group-container"
   >
     <div
+      aria-label="a11y label"
       aria-multiselectable="true"
       aria-orientation="horizontal"
       class="bpk-chip-group bpk-chip-group--wrap"
@@ -131,6 +132,7 @@ exports[`BpkChipGroup should render correctly with sticky chip 1`] = `
           class="bpk-mobile-scroll-container__inner"
         >
           <div
+            aria-label="Filter cities"
             aria-multiselectable="true"
             aria-orientation="horizontal"
             class="bpk-chip-group bpk-chip-group--rail"
@@ -351,6 +353,7 @@ exports[`BpkChipGroup should support custom class names 1`] = `
     class="custom-classname bpk-chip-group-container"
   >
     <div
+      aria-label="a11y label"
       aria-multiselectable="true"
       aria-orientation="horizontal"
       class="bpk-chip-group bpk-chip-group--wrap"
