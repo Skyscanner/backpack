@@ -35,7 +35,7 @@
     &::backdrop {
       position: fixed;
       background-color: tokens.$bpk-scrim-day;
-      animation: bpk-modal-scrim tokens.$bpk-duration-sm ease-in-out;
+      animation: bpk-modal-scrim tokens.$bpk-duration-base ease-in-out;
       inset: 0;
       inset-block-end: 0;
       inset-inline: 0;
