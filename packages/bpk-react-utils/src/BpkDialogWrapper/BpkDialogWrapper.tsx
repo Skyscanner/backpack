@@ -138,7 +138,7 @@ export const BpkDialogWrapper = (props: Props) => {
     <div
       className={getClassName(
         'bpk-dialog-wrapper',
-        dialogSupported ? '' : 'bpk-dialog-wrapper--polyfill',
+        dialogSupported && 'bpk-dialog-wrapper--polyfill',
       )}
     >
       {!dialogSupported && (
