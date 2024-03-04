@@ -16,20 +16,18 @@
  * limitations under the License.
  */
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
 import mockCards from '../../testMocks';
 
 import BpkCardListRail from './BpkCardListRail';
 
-describe('BpkCardListRail', () => {
-  it('should render cards correctly in the MobileScrollContainer', () => {
+describe('BpkCardListRail accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkCardListRail>{mockCards(3)}</BpkCardListRail>,
+      <BpkCardListRail>{mockCards(12)}</BpkCardListRail>,
     );
-
-    expect(container).toMatchSnapshot();
-    expect(
-      container.getElementsByClassName('bpk-card-list--rail_card'),
-    ).toHaveLength(3);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

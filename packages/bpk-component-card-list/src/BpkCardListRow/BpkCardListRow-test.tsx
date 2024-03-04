@@ -21,8 +21,8 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkCard from '../../../bpk-component-card';
 import type { BpkAccessoryTypes } from '../common-types';
+import mockCards from '../../testMocks';
 
 import BpkCardListRow from './BpkCardListRow';
 
@@ -38,11 +38,6 @@ jest.mock('react', () => ({
 const mockScroll = jest.fn();
 
 describe('BpkCardListRow', () => {
-  const cards = (numberOfCards: number) =>
-    Array(numberOfCards)
-      .fill(null)
-      .map((k, v) => <BpkCard key={k}>{`Card ${v}`}</BpkCard>);
-
   const props = {
     accessory: 'pagination' as typeof BpkAccessoryTypes.Pagination,
     numberOfCardsToShow: 3,
@@ -75,7 +70,7 @@ describe('BpkCardListRow', () => {
     mockRef(1224, 'once');
     mockRef(408);
     const { container, getAllByRole } = render(
-      <BpkCardListRow {...props}>{cards(7)}</BpkCardListRow>,
+      <BpkCardListRow {...props}>{mockCards(7)}</BpkCardListRow>,
     );
 
     expect(container).toMatchSnapshot();
@@ -91,7 +86,7 @@ describe('BpkCardListRow', () => {
 
   it('should not render accessory when the number of indicators is 1', () => {
     const { container } = render(
-      <BpkCardListRow {...props}>{cards(2)}</BpkCardListRow>,
+      <BpkCardListRow {...props}>{mockCards(2)}</BpkCardListRow>,
     );
 
     expect(container.getElementsByClassName('bpk-page-indicator')).toHaveLength(
@@ -102,7 +97,7 @@ describe('BpkCardListRow', () => {
   it('should not render accessory when there is no accessory prop', () => {
     const { container } = render(
       <BpkCardListRow {...props} accessory={undefined}>
-        {cards(7)}
+        {mockCards(7)}
       </BpkCardListRow>,
     );
 
@@ -116,7 +111,7 @@ describe('BpkCardListRow', () => {
       mockRef(1224, 'once');
       mockRef(408);
       const { container } = render(
-        <BpkCardListRow {...props}>{cards(10)}</BpkCardListRow>,
+        <BpkCardListRow {...props}>{mockCards(10)}</BpkCardListRow>,
       );
 
       expect(
@@ -128,7 +123,7 @@ describe('BpkCardListRow', () => {
       mockRef(1224, 'once');
       mockRef(408);
       const { container } = render(
-        <BpkCardListRow {...props}>{cards(4)}</BpkCardListRow>,
+        <BpkCardListRow {...props}>{mockCards(4)}</BpkCardListRow>,
       );
       const prevArrow = screen.getByRole('button', { name: 'Previous' });
       const nextArrow = screen.getByRole('button', { name: 'Next' });
@@ -149,7 +144,7 @@ describe('BpkCardListRow', () => {
       mockRef(1224, 'once');
       mockRef(408);
       const { container } = render(
-        <BpkCardListRow {...props}>{cards(4)}</BpkCardListRow>,
+        <BpkCardListRow {...props}>{mockCards(4)}</BpkCardListRow>,
       );
       const indicator1 = screen.getByRole('button', { name: 'Go to slide 1' });
       const indicator2 = screen.getByRole('button', { name: 'Go to slide 2' });
