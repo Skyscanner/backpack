@@ -73,7 +73,7 @@ const BpkCardList = (props: BpkCardListProps) => {
   const button = buttonText && (
     <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
   );
-  
+
   return (
     <div className={getClassName('bpk-card-list')}>
       <BpkSectionHeader
@@ -122,7 +122,7 @@ const BpkCardList = (props: BpkCardListProps) => {
               const { accessory } = props;
               return (
                 <BpkCardListRow
-                  accessory={accessory}
+                  accessory={button ? undefined : accessory}
                   numberOfCardsToShow={initiallyShownCards}
                 >
                   {allCards}

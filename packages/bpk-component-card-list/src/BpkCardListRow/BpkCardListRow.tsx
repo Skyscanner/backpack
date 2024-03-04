@@ -41,7 +41,11 @@ type BpkCardListRowProps = {
   accessory?: typeof BpkAccessoryTypes.Pagination;
 };
 
-const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: BpkCardListRowProps) => {
+const BpkCardListRow = ({
+  accessory,
+  children,
+  numberOfCardsToShow,
+}: BpkCardListRowProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -83,6 +87,7 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: BpkCardLis
     numberOfDisplay = numberOfCardsToShow;
     setScrollPosition(0);
     setCardIndex(0);
+    setCurrentPageIndex(0);
   }, DEBOUNCE_TIME);
 
   useEffect(() => {
@@ -173,9 +178,9 @@ const BpkCardListRow = ({ accessory, children, numberOfCardsToShow }: BpkCardLis
         <BpkPageIndicator
           currentIndex={pageIndex}
           totalIndicators={numberOfIndicators}
-          indicatorLabel="" // TODO: confirm values
-          prevNavLabel="" // TODO: confirm values
-          nextNavLabel="" // TODO: confirm values
+          indicatorLabel="Go to slide" // TODO: confirm values
+          prevNavLabel="Previous" // TODO: confirm values
+          nextNavLabel="Next" // TODO: confirm values
           showNav
           onClick={(
             e: MouseEvent<HTMLButtonElement>,

@@ -430,59 +430,6 @@ exports[`BpkCardList should render correctly with header, grid, rail and no acce
 </DocumentFragment>
 `;
 
-exports[`BpkCardList should render correctly with header, grid, stack and button accessory 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-card-list"
-  >
-    <div
-      class="bpk-section-header"
-    >
-      <div
-        class="bpk-section-header__title-description bpk-section-header__title-description--default"
-      >
-        <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
-        >
-          Title
-        </h2>
-        <span
-          class="bpk-text bpk-text--body-default"
-        >
-          Description
-        </span>
-      </div>
-      <button
-        class="bpk-button bpk-button--primary"
-        type="button"
-      >
-        Button
-      </button>
-    </div>
-    <div
-      class="bpk-card-list--card-list"
-    >
-      <div
-        class="bpk-card-list-grid"
-      >
-        <div>
-          Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
-      </div>
-      <button
-        class="bpk-button bpk-button--primary"
-        type="button"
-      >
-        Button
-      </button>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`BpkCardList should render correctly with header, grid, stack and expand accessory 1`] = `
 <DocumentFragment>
   <div
@@ -594,12 +541,6 @@ exports[`BpkCardList should render correctly with header, grid, stack and no acc
           Card 2
         </div>
       </div>
-      <button
-        class="bpk-button bpk-button--primary"
-        type="button"
-      >
-        Button
-      </button>
     </div>
   </div>
 </DocumentFragment>

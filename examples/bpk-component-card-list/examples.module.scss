@@ -34,7 +34,11 @@
 }
 
 .bpk-destinationCard {
-  overflow: hidden;
+  .bpk-destinationCard-image {
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    overflow: hidden;
+  }
 
   .bpk-bottom {
     display: flex;

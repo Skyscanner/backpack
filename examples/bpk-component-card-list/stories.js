@@ -22,7 +22,7 @@ import {
   GridToStackExample,
   GridToStackWithButtonExample,
   RowToRailExample,
-  RowToRailWithHeaderButtonExample,
+  RowToRailWith4InitiallyShownCardsExmaple,
   RowToStackExample,
 } from './examples';
 
@@ -34,5 +34,6 @@ export const GridToRail = GridToRailExample;
 export const GridToStack = GridToStackExample;
 export const GridToStackWithButton = GridToStackWithButtonExample;
 export const RowToRail = RowToRailExample;
-export const RowToRailWithHeaderButton = RowToRailWithHeaderButtonExample;
+export const RowToRailWithHeaderButton =
+  RowToRailWith4InitiallyShownCardsExmaple;
 export const RowToStack = RowToStackExample;
