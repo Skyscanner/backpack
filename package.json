@@ -171,7 +171,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-svg-loader": "^3.0.1",
-    "sass-embedded": "^1.70.0",
+    "sass-embedded": "^1.71.1",
     "sass-migrator": "^1.8.0",
     "sass-loader": "^14.1.1",
     "sassdoc": "^2.7.0",
