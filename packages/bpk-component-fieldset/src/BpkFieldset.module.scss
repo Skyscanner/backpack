@@ -16,24 +16,23 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
 
-@layer bpk-component {
-  .bpk-fieldset {
-    margin: 0;
-    padding: 0;
-    border: 0;
+.bpk-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
 
-    &__description {
-      display: block;
-      margin-top: bpk-spacing-md();
-      color: $bpk-text-secondary-day;
+  &__description {
+    display: block;
+    margin-top: tokens.bpk-spacing-md();
+    color: tokens.$bpk-text-secondary-day;
 
-      @include bpk-caption;
-    }
+    @include typography.bpk-caption;
+  }
 
-    &__label {
-      margin-bottom: bpk-spacing-sm();
-    }
+  &__label {
+    margin-bottom: tokens.bpk-spacing-sm();
   }
 }

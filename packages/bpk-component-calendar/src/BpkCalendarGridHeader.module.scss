@@ -16,37 +16,36 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
-@import 'variables.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
+@use 'variables';
 
-@layer bpk-component {
-  .bpk-calendar-header {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
+.bpk-calendar-header {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 
-    &--table-head {
-      display: none;
-    }
+  &--table-head {
+    display: none;
+  }
 
-    &__week {
-      display: table-row;
-      list-style: none;
-      text-align: center;
+  &__week {
+    display: table-row;
+    list-style: none;
+    text-align: center;
 
-      @include bpk-text;
-      @include bpk-caption;
-    }
+    @include typography.bpk-text;
+    @include typography.bpk-caption;
+  }
 
-    &__weekday {
-      display: table-cell;
-      height: $bpk-calendar-day-size;
-      padding: 0 $bpk-calendar-day-spacing;
-      box-shadow: $shadow-bottom;
-      vertical-align: middle;
-      box-sizing: content-box;
+  &__weekday {
+    display: table-cell;
+    height: tokens.$bpk-calendar-day-size;
+    padding: 0 tokens.$bpk-calendar-day-spacing;
+    box-shadow: variables.$shadow-bottom;
+    vertical-align: middle;
+    box-sizing: content-box;
 
-      @include bpk-footnote;
-    }
+    @include typography.bpk-footnote;
   }
 }

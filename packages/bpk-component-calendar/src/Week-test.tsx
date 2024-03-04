@@ -18,7 +18,7 @@
 
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import startOfDay from 'date-fns/startOfDay';
+import { startOfDay } from 'date-fns/startOfDay';
 
 import { CALENDAR_SELECTION_TYPE, SELECTION_TYPES } from '..';
 

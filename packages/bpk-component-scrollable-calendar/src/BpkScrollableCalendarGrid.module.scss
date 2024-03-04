@@ -16,16 +16,14 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
-@layer bpk-component {
-  .bpk-scrollable-calendar-grid {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+.bpk-scrollable-calendar-grid {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
 
-    &__title {
-      margin-top: bpk-spacing-lg();
-    }
+  &__title {
+    margin-top: tokens.bpk-spacing-lg();
   }
 }

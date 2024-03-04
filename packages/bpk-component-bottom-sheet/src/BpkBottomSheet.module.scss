@@ -16,18 +16,17 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
 
-@layer bpk-component {
-  .bpk-bottom-sheet {
-    &--container {
-      display: flex;
-      padding: bpk-spacing-lg();
+.bpk-bottom-sheet {
+  &--container {
+    display: flex;
+    padding: tokens.bpk-spacing-lg();
 
-      @include bpk-breakpoint-mobile {
-        padding: 0;
-        overflow: hidden;
-      }
+    @include breakpoints.bpk-breakpoint-mobile {
+      padding: 0;
+      overflow: hidden;
     }
   }
 }

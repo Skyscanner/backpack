@@ -1,0 +1,583 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@import 'tokens.scss';
+@import 'typography.scss';
+@import 'utils.scss';
+
+////
+/// @group buttons
+////
+
+/// Standard button.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///   }
+
+@mixin bpk-button {
+  display: inline-block;
+  min-height: $bpk-button-height;
+  margin: 0;
+  padding: (6 * $bpk-one-pixel-rem) bpk-spacing-base();
+  border: 0;
+  border-radius: $bpk-button-border-radius;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+
+  @include bpk-label-1;
+  @include bpk-themeable-property(
+    color,
+    --bpk-button-primary-text-color,
+    $bpk-text-on-dark-day
+  );
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-button-primary-background-color,
+    $bpk-private-button-primary-normal-background-day
+  );
+
+  @include bpk-hover {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-primary-hover-text-color,
+      $bpk-text-on-dark-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-primary-hover-background-color,
+      $bpk-private-button-primary-pressed-background-day
+    );
+  }
+
+  &:active {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-primary-active-text-color,
+      $bpk-text-on-dark-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-primary-active-background-color,
+      $bpk-private-button-primary-pressed-background-day
+    );
+  }
+
+  &:disabled {
+    background-color: $bpk-private-button-disabled-background-day;
+    color: $bpk-text-disabled-day;
+    cursor: not-allowed;
+  }
+}
+
+/// Large button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--large();
+///   }
+
+@mixin bpk-button--large {
+  min-height: $bpk-button-large-height;
+  padding: (12 * $bpk-one-pixel-rem) bpk-spacing-base();
+}
+
+/// PrimaryOnDark button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--primary-on-dark();
+///   }
+
+@mixin bpk-button--primary-on-dark {
+  @include bpk-themeable-property(
+    color,
+    --bpk-button-primary-on-dark-text-color,
+    $bpk-text-on-light-day
+  );
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-button-primary-on-dark-background-color,
+    $bpk-private-button-primary-on-dark-normal-background-day
+  );
+
+  @include bpk-hover {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-primary-on-dark-hover-text-color,
+      $bpk-text-on-light-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-primary-on-dark-hover-background-color,
+      $bpk-private-button-primary-on-dark-pressed-background-day
+    );
+  }
+
+  &:active {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-primary-on-dark-active-text-color,
+      $bpk-text-on-light-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-primary-on-dark-active-background-color,
+      $bpk-private-button-primary-on-dark-pressed-background-day
+    );
+  }
+
+  &:disabled {
+    background-color: $bpk-private-button-primary-on-dark-disabled-background-day;
+    color: $bpk-private-button-primary-on-dark-disabled-foreground-day;
+  }
+}
+
+/// PrimaryOnLight button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--primary-on-light();
+///   }
+
+@mixin bpk-button--primary-on-light {
+  @include bpk-themeable-property(
+    color,
+    --bpk-button-primary-on-light-text-color,
+    $bpk-text-on-dark-night
+  );
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-button-primary-on-light-background-color,
+    $bpk-private-button-primary-on-light-normal-background-day
+  );
+
+  @include bpk-hover {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-primary-on-light-hover-text-color,
+      $bpk-text-on-dark-night
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-primary-on-light-hover-background-color,
+      $bpk-private-button-primary-on-light-pressed-background-day
+    );
+  }
+
+  &:active {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-primary-on-light-active-text-color,
+      $bpk-text-on-dark-night
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-primary-on-light-active-background-color,
+      $bpk-private-button-primary-on-light-pressed-background-day
+    );
+  }
+
+  &:disabled {
+    background-color: $bpk-private-button-primary-on-light-disabled-background-day;
+    color: $bpk-private-button-primary-on-light-disabled-foreground-day;
+  }
+}
+
+/// Secondary button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--secondary();
+///   }
+
+@mixin bpk-button--secondary {
+  @include bpk-themeable-property(
+    color,
+    --bpk-button-secondary-text-color,
+    $bpk-text-primary-day
+  );
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-button-secondary-background-color,
+    $bpk-private-button-secondary-normal-background-day
+  );
+
+  @include bpk-hover {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-secondary-hover-text-color,
+      $bpk-text-primary-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-secondary-hover-background-color,
+      $bpk-private-button-secondary-pressed-background-day
+    );
+  }
+
+  &:active {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-secondary-active-text-color,
+      $bpk-text-primary-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-secondary-active-background-color,
+      $bpk-private-button-secondary-pressed-background-day
+    );
+  }
+
+  &:disabled {
+    background-color: $bpk-private-button-disabled-background-day;
+    color: $bpk-text-disabled-day;
+  }
+}
+
+/// Secondary on dark button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--secondary-on-dark();
+///   }
+
+@mixin bpk-button--secondary-on-dark {
+  @include bpk-themeable-property(
+    color,
+    --bpk-button-secondary-on-dark-text-color,
+    $bpk-text-on-dark-day
+  );
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-button-secondary-on-dark-background-color,
+    $bpk-private-button-secondary-on-dark-normal-background-day
+  );
+
+  @include bpk-hover {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-secondary-on-dark-hover-text-color,
+      $bpk-text-on-dark-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-secondary-on-dark-hover-background-color,
+      $bpk-private-button-secondary-on-dark-pressed-background-day
+    );
+  }
+
+  &:active {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-secondary-on-dark-active-text-color,
+      $bpk-text-on-dark-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-secondary-on-dark-active-background-color,
+      $bpk-private-button-secondary-on-dark-pressed-background-day
+    );
+  }
+
+  &:disabled {
+    background-color: $bpk-private-button-secondary-on-dark-disabled-background-day;
+    color: $bpk-private-button-secondary-on-dark-disabled-foreground-day;
+  }
+}
+
+/// Destructive button. Modifies the bpk-button & bpk-button--secondary lib.
+///
+/// @require {mixin} bpk-button
+/// @require {mixin} bpk-button--secondary
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--secondary();
+///     @include bpk-button--destructive();
+///   }
+
+@mixin bpk-button--destructive {
+  @include bpk-themeable-property(
+    color,
+    --bpk-button-destructive-text-color,
+    $bpk-private-button-destructive-normal-foreground-day
+  );
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-button-destructive-background-color,
+    $bpk-private-button-destructive-normal-background-day
+  );
+
+  @include bpk-hover {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-destructive-hover-text-color,
+      $bpk-text-primary-inverse-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-destructive-hover-background-color,
+      $bpk-private-button-destructive-pressed-background-day
+    );
+  }
+
+  &:active {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-destructive-active-text-color,
+      $bpk-text-primary-inverse-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-destructive-active-background-color,
+      $bpk-private-button-destructive-pressed-background-day
+    );
+  }
+
+  &:disabled {
+    background-color: $bpk-private-button-disabled-background-day;
+    color: $bpk-text-disabled-day;
+  }
+}
+
+/// Link-style button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--link();
+///   }
+
+@mixin bpk-button--link {
+  $vertical-padding: $bpk-one-pixel-rem * 6;
+  $vertical-padding-large: $bpk-one-pixel-rem * 12;
+
+  background: none; /* stylelint-disable-line order/order, order/properties-order */
+  box-shadow: none;
+
+  @include bpk-link;
+
+  padding: $vertical-padding 0; /* stylelint-disable-line order/order, order/properties-order */
+  color: $bpk-private-button-link-normal-foreground-day;
+
+  @include bpk-hover {
+    background: none;
+    color: $bpk-private-button-link-pressed-foreground-day;
+    text-decoration: none;
+  }
+
+  &:active {
+    background: none;
+    color: $bpk-private-button-link-pressed-foreground-day;
+    text-decoration: none;
+  }
+
+  &:disabled {
+    background: none;
+    color: $bpk-text-disabled-day;
+    text-decoration: none;
+  }
+
+  &-large {
+    padding: $vertical-padding-large 0;
+  }
+}
+
+/// Link on dark button. Modifies the bpk-button & bpk-button--link lib.
+///
+/// @require {mixin} bpk-button
+
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--link-on-dark();
+///   }
+
+@mixin bpk-button--link-on-dark {
+  @include bpk-button--link;
+  @include bpk-themeable-property(
+    color,
+    --bpk-button-link-on-dark-text-color,
+    $bpk-private-button-link-on-dark-normal-foreground-day
+  );
+
+  @include bpk-hover {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-link-on-dark-hover-text-color,
+      $bpk-private-button-link-on-dark-pressed-foreground-day
+    );
+  }
+
+  &:active {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-link-on-dark-active-text-color,
+      $bpk-private-button-link-on-dark-pressed-foreground-day
+    );
+  }
+
+  &:visited {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-link-on-dark-text-color,
+      $bpk-private-button-link-on-dark-normal-foreground-day
+    );
+  }
+
+  &:disabled {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-link-on-dark-disabled-color,
+      $bpk-private-button-link-on-dark-disabled-foreground-day
+    );
+  }
+}
+
+/// Icon-only button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--icon-only();
+///   }
+
+@mixin bpk-button--icon-only {
+  $horizontal-padding: ($bpk-button-height - $bpk-icon-size-sm) / 2; // extra padding so that the width will be the same size as the size using sm icons
+
+  padding-right: $horizontal-padding;
+  padding-left: $horizontal-padding;
+  border-radius: $bpk-button-border-radius;
+}
+
+/// Large icon-only button. Modifies the bpk-button & bpk-button--large lib.
+///
+/// @require {mixin} bpk-button
+/// @require {mixin} bpk-button--large
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--large();
+///     @include bpk-button--large-icon-only();
+///   }
+
+@mixin bpk-button--large-icon-only {
+  $horizontal-padding: ($bpk-button-large-height - $bpk-icon-size-lg) / 2; // extra padding so that the width will be the same size as the size using lg icons
+
+  padding-right: $horizontal-padding;
+  padding-left: $horizontal-padding;
+  border-radius: $bpk-button-border-radius;
+}
+
+/// Featured button. Modifies the bpk-button
+///
+/// @require {mixin} bpk-button
+/// @require {mixin} bpk-button--large
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--featured();
+///   }
+
+@mixin bpk-button--featured {
+  @include bpk-themeable-property(
+    color,
+    --bpk-button-featured-text-color,
+    $bpk-text-primary-inverse-day
+  );
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-button-featured-background-color,
+    $bpk-private-button-featured-normal-background-day
+  );
+
+  @include bpk-hover {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-featured-hover-text-color,
+      $bpk-text-primary-inverse-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-featured-hover-background-color,
+      $bpk-private-button-featured-pressed-background-day
+    );
+  }
+
+  &:active {
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-featured-active-text-color,
+      $bpk-text-primary-inverse-day
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-button-featured-active-background-color,
+      $bpk-private-button-featured-pressed-background-day
+    );
+  }
+
+  &:disabled {
+    background-color: $bpk-private-button-disabled-background-day;
+    color: $bpk-text-disabled-day;
+  }
+}
+
+/// Full width button. Modifies the bpk-button to horizontally fill its container
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--full-width();
+///   }
+
+@mixin bpk-button--full-width {
+  display: block;
+  width: 100%;
+}

@@ -16,15 +16,13 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
-@layer bpk-component {
-  .bpk-map-default-loading-element {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    background-color: $bpk-surface-highlight-day;
-  }
+.bpk-map-default-loading-element {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background-color: tokens.$bpk-surface-highlight-day;
 }

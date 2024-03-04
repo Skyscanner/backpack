@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/buttons';
 
-@layer bpk-component {
-  .bpk-button {
-    &--link {
-      @include bpk-button--link;
-    }
+.bpk-button {
+  &--link {
+    @include buttons.bpk-button--link;
   }
 }

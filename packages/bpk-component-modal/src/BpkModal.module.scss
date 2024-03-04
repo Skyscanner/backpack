@@ -16,31 +16,30 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
 
-@layer bpk-component {
-  @mixin fullscreen() {
-    display: flex;
-    padding: 0;
+@mixin fullscreen() {
+  display: flex;
+  padding: 0;
+}
+
+.bpk-modal__container {
+  display: flex;
+  padding: tokens.bpk-spacing-lg();
+
+  // IE11 and below hack for buggy flexbox support
+  @media screen\0 {
+    display: block;
   }
 
-  .bpk-modal__container {
-    display: flex;
-    padding: bpk-spacing-lg();
-
-    // IE11 and below hack for buggy flexbox support
-    @media screen\0 {
-      display: block;
-    }
-
-    &--full-screen-mobile {
-      @include bpk-breakpoint-mobile {
-        @include fullscreen;
-      }
-    }
-
-    &--full-screen {
+  &--full-screen-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
       @include fullscreen;
     }
+  }
+
+  &--full-screen {
+    @include fullscreen;
   }
 }

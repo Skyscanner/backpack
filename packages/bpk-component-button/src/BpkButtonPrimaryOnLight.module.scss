@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/buttons';
 
-@layer bpk-component {
-  .bpk-button--primary-on-light {
-    @include bpk-button--primary-on-light;
-  }
+.bpk-button--primary-on-light {
+  @include buttons.bpk-button--primary-on-light;
 }

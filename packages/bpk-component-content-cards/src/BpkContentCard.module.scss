@@ -16,74 +16,76 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/typography';
 
-@layer bpk-component {
-  .bpk-content-card {
-    &--link {
-      color: inherit;
-      /* stylelint-disable backpack/use-typography-styles */
-      font: inherit;
-      text-decoration: inherit;
+.bpk-content-card {
+  &--link {
+    color: inherit;
+    /* stylelint-disable backpack/use-typography-styles */
+    font: inherit;
+    text-decoration: inherit;
+  }
+
+  &--horizontal {
+    display: grid;
+    column-gap: tokens.bpk-spacing-xxl();
+    grid-template-columns:
+      minmax(min(10%, 50%), tokens.$bpk-one-pixel-rem * 620)
+      40%;
+    align-items: center;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &--horizontal &--image-container {
+    width: 100%;
+    height: tokens.$bpk-one-pixel-rem * 420;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      max-height: tokens.$bpk-one-pixel-rem * 180;
+      margin-bottom: tokens.bpk-spacing-base();
     }
 
-    &--horizontal {
-      display: grid;
-      column-gap: bpk-spacing-xxl();
-      grid-template-columns: minmax(min(10%, 50%), $bpk-one-pixel-rem * 620) 40%;
-      align-items: center;
-
-      @include bpk-breakpoint-mobile {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    &--horizontal &--image-container {
-      width: 100%;
-      height: $bpk-one-pixel-rem * 420;
-
-      @include bpk-breakpoint-mobile {
-        max-height: $bpk-one-pixel-rem * 180;
-        margin-bottom: bpk-spacing-base();
-      }
-
-      @include bpk-breakpoint-tablet {
-        height: 100%;
-      }
-    }
-
-    &--vertical &--image {
-      height: $bpk-one-pixel-rem * 460;
-      margin-bottom: bpk-spacing-base();
-
-      @include bpk-breakpoint-small-tablet {
-        width: 100%;
-        height: auto;
-        max-height: $bpk-one-pixel-rem * 260;
-      }
-
-      @include bpk-breakpoint-mobile {
-        max-height: $bpk-one-pixel-rem * 180;
-      }
-    }
-
-    &--headline {
-      margin-bottom: bpk-spacing-sm();
-
-      @include bpk-heading-4;
-    }
-
-    &--description {
-      color: $bpk-text-secondary-day;
-
-      @include bpk-body-default;
-    }
-
-    &--image {
-      width: 100%;
+    @include breakpoints.bpk-breakpoint-tablet {
       height: 100%;
-      border-radius: $bpk-border-radius-md;
-      object-fit: cover;
     }
+  }
+
+  &--vertical &--image {
+    height: tokens.$bpk-one-pixel-rem * 460;
+    margin-bottom: tokens.bpk-spacing-base();
+
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      width: 100%;
+      height: auto;
+      max-height: tokens.$bpk-one-pixel-rem * 260;
+    }
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      max-height: tokens.$bpk-one-pixel-rem * 180;
+    }
+  }
+
+  &--headline {
+    margin-bottom: tokens.bpk-spacing-sm();
+
+    @include typography.bpk-heading-4;
+  }
+
+  &--description {
+    color: tokens.$bpk-text-secondary-day;
+
+    @include typography.bpk-body-default;
+  }
+
+  &--image {
+    width: 100%;
+    height: 100%;
+    border-radius: tokens.$bpk-border-radius-md;
+    object-fit: cover;
   }
 }

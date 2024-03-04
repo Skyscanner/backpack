@@ -16,32 +16,31 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
 
-@layer bpk-component {
-  .bpk-scrim {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: $bpk-zindex-scrim;
-    transition: opacity $bpk-duration-sm ease-in-out;
-    background-color: $bpk-scrim-day;
-    overflow: hidden;
+.bpk-scrim {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: tokens.$bpk-zindex-scrim;
+  transition: opacity tokens.$bpk-duration-sm ease-in-out;
+  background-color: tokens.$bpk-scrim-day;
+  overflow: hidden;
 
-    &--full-screen {
-      @include bpk-breakpoint-mobile {
-        opacity: 1;
-      }
+  &--full-screen {
+    @include breakpoints.bpk-breakpoint-mobile {
+      opacity: 1;
     }
+  }
 
-    &--appear {
-      opacity: 0;
-    }
+  &--appear {
+    opacity: 0;
+  }
 
-    &--appear-active {
-      opacity: 0.7;
-    }
+  &--appear-active {
+    opacity: 0.7;
   }
 }

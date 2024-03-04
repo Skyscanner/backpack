@@ -16,153 +16,157 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
-$close-button-width: bpk-spacing-lg() * 2;
+$close-button-width: tokens.bpk-spacing-lg() * 2;
 
-@layer bpk-component {
-  .bpk-bottom-sheet {
-    z-index: $bpk-zindex-modal;
-    width: 100%;
-    max-width: $bpk-modal-max-width;
-    margin: auto;
-    transform: scale(1);
-    transition:
-      opacity $bpk-duration-sm ease-in-out,
-      transform $bpk-duration-sm ease-in-out;
-    outline: 0;
-    background-color: $bpk-modal-background-color;
-    opacity: $bpk-modal-opacity;
+.bpk-bottom-sheet {
+  z-index: tokens.$bpk-zindex-modal;
+  width: 100%;
+  max-width: tokens.$bpk-modal-max-width;
+  margin: auto;
+  transform: scale(1);
+  transition:
+    opacity tokens.$bpk-duration-sm ease-in-out,
+    transform tokens.$bpk-duration-sm ease-in-out;
+  outline: 0;
+  background-color: tokens.$bpk-modal-background-color;
+  opacity: tokens.$bpk-modal-opacity;
 
-    // required to prevent the header extending beyond the rounded corners
-    overflow: hidden;
+  // required to prevent the header extending beyond the rounded corners
+  overflow: hidden;
 
-    // FIX: Prevents ugly flickering when tapping inside the modal in Mobile Safari
-    -webkit-tap-highlight-color: transparent;
+  // FIX: Prevents ugly flickering when tapping inside the modal in Mobile Safari
+  -webkit-tap-highlight-color: transparent;
 
-    @include bpk-box-shadow-xl;
-    @include bpk-border-radius-sm;
+  @include shadows.bpk-box-shadow-xl;
+  @include radii.bpk-border-radius-sm;
 
-    @include bpk-breakpoint-mobile {
-      position: fixed;
-      bottom: 0;
-      height: fit-content;
-      max-height: 90%;
-      margin-bottom: 0;
-      border-radius: $bpk-border-radius-lg $bpk-border-radius-lg 0 0;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+  @include breakpoints.bpk-breakpoint-mobile {
+    position: fixed;
+    bottom: 0;
+    height: fit-content;
+    max-height: 90%;
+    margin-bottom: 0;
+    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
-      &::-webkit-scrollbar {
-        display: none;
-      }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &--content {
+    padding: tokens.$bpk-modal-content-padding;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  &--wide {
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      max-width: tokens.$bpk-modal-wide-max-width;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
     }
 
-    &--content {
-      padding: $bpk-modal-content-padding;
-      flex: 1;
-      overflow-y: auto;
+    100% {
+      transform: translateY(0%);
     }
+  }
 
-    &--wide {
-      @include bpk-breakpoint-above-mobile {
-        max-width: $bpk-modal-wide-max-width;
-      }
+  &--appear {
+    animation-duration: 0.24s;
+    animation-name: slide-up;
+    animation-timing-function: ease-in-out;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      transform: scale(0.9);
+      opacity: tokens.$bpk-modal-initial-opacity;
+      animation: none;
     }
+  }
 
-    @keyframes slide-up {
-      0% {
-        transform: translateY(100%);
-      }
-
-      100% {
-        transform: translateY(0%);
-      }
+  &--appear-active {
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      transform: scale(1);
+      opacity: tokens.$bpk-modal-opacity;
     }
+  }
 
-    &--appear {
-      animation-duration: 0.24s;
-      animation-name: slide-up;
-      animation-timing-function: ease-in-out;
+  &--exit {
+    animation-direction: reverse;
+    animation-duration: 0.24s;
+    animation-name: slide-up;
+    animation-timing-function: ease-in-out;
 
-      @include bpk-breakpoint-above-mobile {
-        transform: scale(0.9);
-        opacity: $bpk-modal-initial-opacity;
-        animation: none;
-      }
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      animation: none;
     }
+  }
 
-    &--appear-active {
-      @include bpk-breakpoint-above-mobile {
-        transform: scale(1);
-        opacity: $bpk-modal-opacity;
-      }
-    }
+  &--header {
+    position: sticky;
+    top: 0;
+    z-index: tokens.$bpk-zindex-tooltip - 1;
 
-    &--exit {
-      animation-direction: reverse;
-      animation-duration: 0.24s;
-      animation-name: slide-up;
-      animation-timing-function: ease-in-out;
+    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
+  }
 
-      @include bpk-breakpoint-above-mobile {
-        animation: none;
-      }
-    }
+  &--navigation {
+    display: flex;
+    justify-content: space-between;
+    background-color: tokens.$bpk-modal-background-color;
+  }
 
-    &--header {
-      position: sticky;
-      top: 0;
-      z-index: $bpk-zindex-tooltip - 1;
+  &--heading {
+    width: calc(
+      100% - ((#{$close-button-width}) * 2 + #{tokens.bpk-spacing-sm() * 0.5})
+    ); // Treat title as if it was always surrounded by close and action to center align it
 
-      @include bpk-border-bottom-sm($bpk-line-day);
-    }
+    margin-right: auto;
+    text-align: center;
 
-    &--navigation {
-      display: flex;
-      justify-content: space-between;
-      background-color: $bpk-modal-background-color;
-    }
+    @include typography.bpk-text;
+    @include typography.bpk-label-1;
+  }
 
-    &--heading {
-      width: calc(
-        100% - ((#{$close-button-width}) * 2 + #{bpk-spacing-sm()} / 2)
-      ); // Treat title as if it was always surrounded by close and action to center align it
+  &--close-button {
+    position: relative; // Override position: absolute coming from BpkNavigationBar
+    left: auto;
+    margin-right: tokens.bpk-spacing-lg();
 
-      margin-right: auto;
-      text-align: center;
-
-      @include bpk-text;
-      @include bpk-label-1;
-    }
-
-    &--close-button {
-      position: relative; // Override position: absolute coming from BpkNavigationBar
-      left: auto;
-      margin-right: bpk-spacing-lg();
-
-      @include bpk-rtl {
-        right: auto;
-        margin-right: calc(-#{bpk-spacing-sm()} / 2);
-        margin-left: bpk-spacing-lg();
-      }
-    }
-
-    &--action-button {
-      position: relative; // Override position: absolute coming from BpkNavigationBar
+    @include utils.bpk-rtl {
       right: auto;
-      width: calc(#{$close-button-width} - (#{bpk-spacing-sm()}));
-      margin-right: calc(#{bpk-spacing-sm()} / 2);
-      margin-left: calc(#{bpk-spacing-sm()});
-      word-break: break-all;
+      margin-right: tokens.bpk-spacing-sm() * 0.5;
+      margin-left: tokens.bpk-spacing-lg();
+    }
+  }
 
-      @include bpk-rtl {
-        left: auto;
-        margin-right: calc(#{bpk-spacing-sm()});
-        margin-left: calc(#{bpk-spacing-sm()} / 2);
-      }
+  &--action-button {
+    position: relative; // Override position: absolute coming from BpkNavigationBar
+    right: auto;
+    width: calc(#{$close-button-width} - (#{tokens.bpk-spacing-sm()}));
+    margin-right: tokens.bpk-spacing-sm() * 0.5;
+    margin-left: tokens.bpk-spacing-sm();
+    word-break: break-all;
+
+    @include utils.bpk-rtl {
+      left: auto;
+      margin-right: tokens.bpk-spacing-sm();
+      margin-left: tokens.bpk-spacing-sm() * 0.5;
     }
   }
 }

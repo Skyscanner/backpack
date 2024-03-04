@@ -16,61 +16,61 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-nudger {
-    @include bpk-rtl {
+.bpk-nudger {
+  @include utils.bpk-rtl {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  &__button {
+    position: relative;
+  }
+
+  &__input {
+    display: inline-block;
+    padding: tokens.bpk-spacing-md() 0;
+    border: none;
+    color: tokens.$bpk-text-primary-day;
+    text-align: center;
+    vertical-align: middle;
+
+    @include typography.bpk-text;
+    @include typography.bpk-heading-5;
+
+    &--secondary-on-dark {
+      background-color: transparent;
+      color: tokens.$bpk-text-on-dark-day;
+    }
+
+    &--numeric {
+      $size: tokens.bpk-spacing-lg() + (tokens.bpk-spacing-md() * 2);
+
+      width: $size;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__label {
+    display: flex;
+    gap: tokens.bpk-spacing-md();
+
+    &--title-subtitle {
       display: flex;
-      flex-direction: row-reverse;
-    }
-
-    &__button {
-      position: relative;
-    }
-
-    &__input {
-      display: inline-block;
-      padding: bpk-spacing-md() 0;
-      border: none;
-      color: $bpk-text-primary-day;
-      text-align: center;
-      vertical-align: middle;
-
-      @include bpk-text;
-      @include bpk-heading-5;
-
-      &--secondary-on-dark {
-        background-color: transparent;
-        color: $bpk-text-on-dark-day;
-      }
-
-      &--numeric {
-        $size: bpk-spacing-lg() + (bpk-spacing-md() * 2);
-
-        width: $size;
-      }
-    }
-
-    &__container {
-      display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
     }
 
-    &__label {
-      display: flex;
-      gap: bpk-spacing-md();
-
-      &--title-subtitle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      &--subtitle {
-        color: $bpk-text-secondary-day;
-      }
+    &--subtitle {
+      color: tokens.$bpk-text-secondary-day;
     }
   }
 }

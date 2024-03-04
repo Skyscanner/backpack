@@ -16,44 +16,45 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-pagination-page {
-    min-width: $bpk-button-height;
-    height: $bpk-button-height;
-    padding: 0 $bpk-one-pixel-rem * 16;
-    border-radius: $bpk-border-radius-xs * 2;
-    color: $bpk-text-primary-day;
+.bpk-pagination-page {
+  min-width: tokens.$bpk-button-height;
+  height: tokens.$bpk-button-height;
+  padding: 0 tokens.$bpk-one-pixel-rem * 16;
+  border-radius: tokens.$bpk-border-radius-xs * 2;
+  color: tokens.$bpk-text-primary-day;
 
-    @include bpk-border-sm(
-      var(--bpk-pagination-selected-background-color, $bpk-line-day)
-    );
-    @include bpk-label-1;
+  @include borders.bpk-border-sm(
+    var(--bpk-pagination-selected-background-color, tokens.$bpk-line-day)
+  );
+  @include typography.bpk-label-1;
 
-    @include bpk-hover {
-      background-color: transparent;
+  @include utils.bpk-hover {
+    background-color: transparent;
 
-      @include bpk-border-sm($bpk-core-primary-day);
-    }
-
-    &:active {
-      background-color: transparent;
-
-      @include bpk-border-sm($bpk-core-primary-day);
-    }
+    @include borders.bpk-border-sm(tokens.$bpk-core-primary-day);
   }
 
-  .bpk-pagination-page--selected {
-    color: $bpk-text-primary-inverse-day;
-    box-shadow: none;
+  &:active {
+    background-color: transparent;
 
-    @include bpk-hover {
-      color: $bpk-text-primary-day;
-    }
+    @include borders.bpk-border-sm(tokens.$bpk-core-primary-day);
+  }
+}
 
-    &:active {
-      color: $bpk-text-primary-day;
-    }
+.bpk-pagination-page--selected {
+  color: tokens.$bpk-text-primary-inverse-day;
+  box-shadow: none;
+
+  @include utils.bpk-hover {
+    color: tokens.$bpk-text-primary-day;
+  }
+
+  &:active {
+    color: tokens.$bpk-text-primary-day;
   }
 }

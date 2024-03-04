@@ -16,24 +16,23 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
 
-@layer bpk-component {
-  .bpk-chart {
-    &__axis-tick {
-      &-text {
-        fill: $bpk-text-secondary-day;
+.bpk-chart {
+  &__axis-tick {
+    &-text {
+      fill: tokens.$bpk-text-secondary-day;
 
-        @include bpk-text;
-        @include bpk-caption;
-      }
+      @include typography.bpk-text;
+      @include typography.bpk-caption;
     }
+  }
 
-    &__axis-label {
-      fill: $bpk-text-secondary-day;
+  &__axis-label {
+    fill: tokens.$bpk-text-secondary-day;
 
-      @include bpk-text;
-      @include bpk-caption;
-    }
+    @include typography.bpk-text;
+    @include typography.bpk-caption;
   }
 }

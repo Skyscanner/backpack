@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-drawer-paragraph {
-  margin-bottom: bpk-spacing-md();
+  margin-bottom: tokens.bpk-spacing-md();
 }
 
 .bpk-drawer-content-container {

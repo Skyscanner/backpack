@@ -16,24 +16,22 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/typography';
 
-@layer bpk-component {
-  .bpk-list {
-    @include bpk-list;
+.bpk-list {
+  @include typography.bpk-list;
 
-    &__item {
-      @include bpk-list-item;
-    }
+  &__item {
+    @include typography.bpk-list-item;
+  }
 
-    & & {
-      @include bpk-list--nested;
+  & & {
+    @include typography.bpk-list--nested;
 
-      /* stylelint-disable selector-max-compound-selectors */
+    /* stylelint-disable selector-max-compound-selectors */
 
-      > li {
-        margin-bottom: 0;
-      }
+    > li {
+      margin-bottom: 0;
     }
   }
 }

@@ -16,49 +16,48 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-progress {
-    position: relative;
-    height: bpk-spacing-base();
-    border-radius: $bpk-border-radius-md;
-    background-color: $bpk-surface-highlight-day;
-    overflow: hidden;
+.bpk-progress {
+  position: relative;
+  height: tokens.bpk-spacing-base();
+  border-radius: tokens.$bpk-border-radius-md;
+  background-color: tokens.$bpk-surface-highlight-day;
+  overflow: hidden;
 
-    &--small {
-      height: bpk-spacing-md();
-      border-radius: $bpk-border-radius-xs;
+  &--small {
+    height: tokens.bpk-spacing-md();
+    border-radius: tokens.$bpk-border-radius-xs;
+  }
+
+  &__value {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+    width: 0;
+    transition: width tokens.$bpk-duration-base ease-in-out;
+    border-radius: tokens.$bpk-border-radius-sm;
+
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-progress-bar-fill-color,
+      tokens.$bpk-core-accent-day
+    );
+
+    &--stepped {
+      border-radius: 0;
     }
+  }
 
-    &__value {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      content: ' ';
-      width: 0%;
-      transition: width $bpk-duration-base ease-in-out;
-      border-radius: $bpk-border-radius-sm;
-
-      @include bpk-themeable-property(
-        background-color,
-        --bpk-progress-bar-fill-color,
-        $bpk-core-accent-day
-      );
-
-      &--stepped {
-        border-radius: 0;
-      }
-    }
-
-    &__step {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 2 * $bpk-one-pixel-rem;
-      background: $bpk-canvas-day;
-    }
+  &__step {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2 * tokens.$bpk-one-pixel-rem;
+    background: tokens.$bpk-canvas-day;
   }
 }

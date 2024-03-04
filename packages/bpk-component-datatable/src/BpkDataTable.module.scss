@@ -16,76 +16,77 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  $bpk-border-size-datatable: $bpk-border-size-xl * 2;
+$bpk-border-size-datatable: tokens.$bpk-border-size-xl * 2;
 
-  @mixin bpk-datatable-border-left() {
-    @include _bpk-border-left(
-      $bpk-border-size-datatable,
-      $bpk-core-accent-day,
-      inset
-    );
+@mixin bpk-datatable-border-left() {
+  @include borders.bpk-border-left(
+    $bpk-border-size-datatable,
+    tokens.$bpk-core-accent-day,
+    inset
+  );
+}
+
+@mixin bpk-datatable-border-right() {
+  @include borders.bpk-border-right(
+    $bpk-border-size-datatable,
+    tokens.$bpk-core-accent-day,
+    inset
+  );
+}
+
+.bpk-data-table {
+  width: 100%;
+
+  &__header-row {
+    overflow: hidden;
   }
 
-  @mixin bpk-datatable-border-right() {
-    @include _bpk-border-right(
-      $bpk-border-size-datatable,
-      $bpk-core-accent-day,
-      inset
-    );
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    border-bottom: none;
+    outline-offset: -1 * (4 * tokens.$bpk-one-pixel-rem);
+    color: tokens.$bpk-text-primary-day;
+
+    @include typography.bpk-footnote;
+
+    &:last-child:not(.bpk-data-table__header-row) {
+      border-bottom: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    }
+
+    &--clickable:not(.bpk-data-table__header-row):hover {
+      background-color: tokens.$bpk-canvas-contrast-day;
+      cursor: pointer;
+
+      @include bpk-datatable-border-left;
+
+      @include utils.bpk-rtl {
+        @include bpk-datatable-border-right;
+      }
+    }
+
+    &--selected {
+      background-color: tokens.$bpk-status-warning-fill-day;
+
+      @include bpk-datatable-border-left;
+
+      @include utils.bpk-rtl {
+        @include bpk-datatable-border-right;
+      }
+    }
   }
 
-  .bpk-data-table {
-    width: 100%;
-
-    &__header-row {
-      overflow: hidden;
-    }
-
-    &__row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      border: $bpk-border-size-sm solid $bpk-line-day;
-      border-bottom: none;
-      outline-offset: -(4 * $bpk-one-pixel-rem);
-      color: $bpk-text-primary-day;
-
-      @include bpk-footnote;
-
-      &:last-child:not(.bpk-data-table__header-row) {
-        border-bottom: $bpk-border-size-sm solid $bpk-line-day;
-      }
-
-      &--clickable:not(.bpk-data-table__header-row):hover {
-        background-color: $bpk-canvas-contrast-day;
-        cursor: pointer;
-
-        @include bpk-datatable-border-left;
-
-        @include bpk-rtl {
-          @include bpk-datatable-border-right;
-        }
-      }
-
-      &--selected {
-        background-color: $bpk-status-warning-fill-day;
-
-        @include bpk-datatable-border-left;
-
-        @include bpk-rtl {
-          @include bpk-datatable-border-right;
-        }
-      }
-    }
-
-    &__cell {
-      margin: bpk-spacing-base();
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
+  &__cell {
+    margin: tokens.bpk-spacing-base();
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }

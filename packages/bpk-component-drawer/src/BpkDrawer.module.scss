@@ -16,10 +16,6 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
-
-@layer bpk-component {
-  .bpk-drawer__container {
-    position: fixed;
-  }
+.bpk-drawer__container {
+  position: fixed;
 }

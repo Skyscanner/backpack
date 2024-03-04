@@ -16,68 +16,68 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-rating {
+.bpk-rating {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+
+  &--large {
+    align-items: center;
+  }
+
+  &__value {
     display: flex;
-    flex-flow: row nowrap;
+    padding-right: tokens.bpk-spacing-md();
+    justify-content: center;
     align-items: baseline;
+    color: tokens.$bpk-text-primary-day;
+
+    @include utils.bpk-rtl {
+      padding-right: 0;
+      padding-left: tokens.bpk-spacing-md();
+      direction: ltr;
+    }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    white-space: nowrap;
 
     &--large {
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
     }
+  }
 
-    &__value {
-      display: flex;
-      padding-right: bpk-spacing-md();
-      justify-content: center;
-      align-items: baseline;
-      color: $bpk-text-primary-day;
+  &__scale {
+    color: tokens.$bpk-text-secondary-day;
+  }
 
-      @include bpk-rtl {
+  &__title {
+    &--with-subtitle {
+      padding-right: tokens.bpk-spacing-md();
+
+      @include utils.bpk-rtl {
         padding-right: 0;
-        padding-left: bpk-spacing-md();
+        padding-left: tokens.bpk-spacing-md();
       }
     }
 
-    &__text-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
-      white-space: nowrap;
-
-      &--large {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    &--large {
+      padding-top: tokens.$bpk-one-pixel-rem;
     }
+  }
 
-    &__scale {
-      color: $bpk-text-secondary-day;
-    }
+  &__subtitle {
+    color: tokens.$bpk-text-secondary-day;
 
-    &__title {
-      &--with-subtitle {
-        padding-right: bpk-spacing-md();
-
-        @include bpk-rtl {
-          padding-right: 0;
-          padding-left: bpk-spacing-md();
-        }
-      }
-
-      &--large {
-        padding-top: $bpk-one-pixel-rem;
-      }
-    }
-
-    &__subtitle {
-      color: $bpk-text-secondary-day;
-
-      &--large {
-        // padding-top: $bpk-one-pixel-rem;
-      }
+    &--large {
+      // padding-top: $bpk-one-pixel-rem;
     }
   }
 }
