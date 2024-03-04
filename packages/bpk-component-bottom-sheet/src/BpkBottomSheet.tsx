@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactNode } from "react";
+import type { SyntheticEvent, ReactNode } from "react";
 import { useState } from "react";
 
 import BpkBreakpoint, { BREAKPOINTS } from "../../bpk-component-breakpoint";
@@ -40,7 +40,7 @@ export type Props = {
   id: string;
   onAction?: () => void;
   onClose: (
-    arg0?: Event,
+    arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
@@ -70,7 +70,7 @@ const BpkBottomSheet = ({
 
   const handleClose = (
     timeout: number,
-    arg0?: Event,
+    arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
@@ -96,7 +96,7 @@ const BpkBottomSheet = ({
       id={id}
       isOpen={isOpen}
       onClose={(
-        arg0?: Event,
+        arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
         arg1?: {
           source: 'ESCAPE' | 'DOCUMENT_CLICK';
         }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
@@ -128,7 +128,7 @@ const BpkBottomSheet = ({
                 className={getClassName('bpk-bottom-sheet--close-button')}
                 label={closeLabel}
                 onClick={(
-                  arg0?: Event,
+                  arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
                   arg1?: {
                     source: 'ESCAPE' | 'DOCUMENT_CLICK';
                   }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}

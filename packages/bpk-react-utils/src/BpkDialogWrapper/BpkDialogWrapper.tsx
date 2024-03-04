@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactNode } from "react";
+import type { SyntheticEvent, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
@@ -35,7 +35,7 @@ export interface Props {
   id: string | undefined;
   isOpen: boolean;
   onClose: (
-    arg0?: Event,
+    arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
@@ -161,7 +161,7 @@ export const BpkDialogWrapper = (props: Props) => {
           onCancel={(e) => {
             e.preventDefault();
             if (closeOnEscPressed && (!dialogTarget || e.target === dialogTarget)) {
-              onClose(e.nativeEvent, {source: 'ESCAPE'})
+              onClose(e, {source: 'ESCAPE'})
             }
           }}
           aria-labelledby={ariaLabelledby}
