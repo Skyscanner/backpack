@@ -176,7 +176,7 @@
     "sass-loader": "^14.1.1",
     "sassdoc": "^2.7.0",
     "storybook": "^7.6.17",
-    "style-loader": "^3.3.3",
+    "style-loader": "^3.3.4",
     "ts-migrate": "^0.1.35",
     "typescript": "^5.3.3",
     "webpack": "^5.90.3",
