@@ -136,9 +136,7 @@ const BpkBottomSheet = ({
                   {actionText}
                 </BpkButtonLink>
               ) :
-              <div
-                className={getClassName('bpk-bottom-sheet--action-button')}
-              />
+              <div/>
             }
           />
         </header>
