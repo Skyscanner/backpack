@@ -136,7 +136,7 @@ const BpkBottomSheet = ({
                   {actionText}
                 </BpkButtonLink>
               ) :
-              <div/>
+              null
             }
           />
         </header>

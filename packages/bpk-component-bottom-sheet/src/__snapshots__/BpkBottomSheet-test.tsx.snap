@@ -107,9 +107,6 @@ exports[`BpkBottomSheet renders correctly with minimum prop 1`] = `
               class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
               id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
             />
-            <div
-              class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-            />
           </nav>
         </header>
         <div
@@ -166,9 +163,6 @@ exports[`BpkBottomSheet renders correctly with wide prop 1`] = `
             <span
               class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
               id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
-            />
-            <div
-              class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
             />
           </nav>
         </header>
