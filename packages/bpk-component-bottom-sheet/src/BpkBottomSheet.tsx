@@ -25,6 +25,7 @@ import { BpkButtonLink } from '../../bpk-component-link';
 import BpkCloseButton from '../../bpk-component-close-button';
 import { BpkDialogWrapper, cssModules } from "../../bpk-react-utils";
 import BpkNavigationBar from "../../bpk-component-navigation-bar";
+import BpkText, { TEXT_STYLES } from "../../bpk-component-text/src/BpkText";
 
 import STYLES from './BpkBottomSheet.module.scss';
 
@@ -114,18 +115,11 @@ const BpkBottomSheet = ({
         <header className={getClassName('bpk-bottom-sheet--header')}>
           <BpkNavigationBar
             id={headingId}
-            className={getClassName('bpk-bottom-sheet--navigation')}
             title={title &&
-              <h2
-                id={headingId}
-                className={getClassName('bpk-bottom-sheet--heading')}
-              >
-                {title}
-              </h2>
+              <BpkText id={headingId} textStyle={TEXT_STYLES.label1} tagName="h2">{title}</BpkText>
             }
             leadingButton={
               <BpkCloseButton
-                className={getClassName('bpk-bottom-sheet--close-button')}
                 label={closeLabel}
                 onClick={(
                   arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
@@ -137,7 +131,6 @@ const BpkBottomSheet = ({
             trailingButton={
               actionText && onAction ? (
                 <BpkButtonLink
-                  className={getClassName('bpk-bottom-sheet--action-button')}
                   onClick={onAction}
                 >
                   {actionText}
