@@ -118,51 +118,6 @@ $close-button-width: tokens.bpk-spacing-lg() * 2;
     @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
 
-  &--navigation {
-    display: flex;
-    justify-content: space-between;
-    background-color: tokens.$bpk-modal-background-color;
-  }
-
-  &--heading {
-    width: calc(
-      100% - ((#{$close-button-width}) * 2 + #{tokens.bpk-spacing-sm()} / 2)
-    ); // Treat title as if it was always surrounded by close and action to center align it
-
-    margin-right: auto;
-    text-align: center;
-
-    @include typography.bpk-text;
-    @include typography.bpk-label-1;
-  }
-
-  &--close-button {
-    position: relative; // Override position: absolute coming from BpkNavigationBar
-    left: auto;
-    margin-right: tokens.bpk-spacing-lg();
-
-    @include utils.bpk-rtl {
-      right: auto;
-      margin-right: calc(-#{tokens.bpk-spacing-sm()} / 2);
-      margin-left: tokens.bpk-spacing-lg();
-    }
-  }
-
-  &--action-button {
-    position: relative; // Override position: absolute coming from BpkNavigationBar
-    right: auto;
-    width: calc(#{$close-button-width} - (#{tokens.bpk-spacing-sm()}));
-    margin-right: calc(#{tokens.bpk-spacing-sm()} / 2);
-    margin-left: calc(#{tokens.bpk-spacing-sm()});
-    word-break: break-all;
-
-    @include utils.bpk-rtl {
-      left: auto;
-      margin-right: calc(#{tokens.bpk-spacing-sm()});
-      margin-left: calc(#{tokens.bpk-spacing-sm()} / 2);
-    }
-  }
-
   @keyframes slide-up {
     0% {
       transform: translateY(100%);
