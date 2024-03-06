@@ -14,5 +14,5 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
+ */
 @keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-card-list--rail_container{display:flex}.bpk-card-list--rail_card{display:flex;min-width:100%;padding:1rem;justify-content:center;align-items:center;text-wrap:wrap}.bpk-card-list--rail_card>*{width:100%}

@@ -98,17 +98,28 @@ const title = 'Must-visit spots';
 const description =
   'Check out these world-famous destinations perfect for visiting in spring.';
 
-const GridToRailExample = () => (
-  <BpkCardList
-    cardList={cards(InternalLinkCard)}
-    accessory="expand"
-    layoutDesktop="grid"
-    layoutMobile="rail"
-    title={title}
-    description={description}
-    expandText="Show More"
-  />
-);
+const GridToRailExample = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const expandText = 'Show More';
+  const collapseText = 'Show Less';
+
+  const onButtonClick = () => {
+    setCollapsed(!collapsed);
+  };
+
+  return (
+    <BpkCardList
+      cardList={cards(InternalLinkCard)}
+      accessory="expand"
+      layoutDesktop="grid"
+      layoutMobile="rail"
+      title={title}
+      onButtonClick={onButtonClick}
+      description={description}
+      expandText={collapsed ? expandText : collapseText}
+    />
+  );
+};
 
 const GridToStackExample = () => {
   const [collapsed, setCollapsed] = useState(true);
@@ -142,7 +153,7 @@ const GridToStackWithButtonExample = () => (
     layoutMobile="stack"
     title={title}
     description={description}
-    buttonText="Click Me"
+    buttonText="Explore More"
   />
 );
 
@@ -155,6 +166,7 @@ const RowToRailWith4InitiallyShownCardsExmaple = () => (
     title={title}
     description={description}
     initiallyShownCards={4}
+    buttonText="Explore more"
   />
 );
 const RowToRailExample = () => (
