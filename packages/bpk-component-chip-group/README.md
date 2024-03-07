@@ -1,6 +1,6 @@
 # bpk-component-chip-group
 
-> Backpack example component.
+> Backpack chip group component.
 
 ## Installation
 
@@ -8,14 +8,31 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-```ts
-import BpkBoilerplate from '@skyscanner/backpack-web/bpk-component-code';
+```tsx
+import BpkChipGroup, { CHIP_GROUP_TYPES } from '@skyscanner/backpack-web/bpk-component-chip-group';
+import BpkSelectableChip, { CHIP_TYPES, BpkDropdownChip } from '@skyscanner/backpack-web/bpk-component-chip';
 
-export default () => <BpkBoilerplate />;
+export default () => (
+  <BpkChipGroup
+    type={CHIP_GROUP_TYPES.wrap}
+    ariaLabel="Filter cities"
+    chips={[{
+      text: 'London',
+    }, {
+      text: 'Berlin',
+      selected: true,
+    }, {
+      component: BpkDropdownChip,
+      text: 'More',
+      accessibilityLabel: 'Show more filters',
+      onClick: (selected) => console.log(`Open dropdown: ${selected}`),
+    }]}
+    style={CHIP_TYPES.onDark}
+  />
+);
 ```
 
 ## Props
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| className | string   | false    | null          |
+TODO: update to web tab
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/chip-group/compose-LwGOKNct).
