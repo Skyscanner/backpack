@@ -346,19 +346,23 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
-        <span
-          class="bpk-modal__accessory-view bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
         >
-          <button
-            class="bpk-link bpk-navigation-bar-button-link bpk-navigation-bar-button-link--default bpk-modal__leading-button"
-            label="Close"
-            type="button"
+          <span
+            class="bpk-modal__accessory-view"
           >
-            <div>
-              Testing
-            </div>
-          </button>
-        </span>
+            <button
+              class="bpk-link bpk-navigation-bar-button-link bpk-navigation-bar-button-link--default bpk-modal__leading-button"
+              label="Close"
+              type="button"
+            >
+              <div>
+                Testing
+              </div>
+            </button>
+          </span>
+        </div>
         <h2
           class="bpk-modal__heading"
           id="bpk-modal-heading-my-modal"

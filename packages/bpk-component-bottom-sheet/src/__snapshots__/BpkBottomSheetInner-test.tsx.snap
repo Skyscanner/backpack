@@ -16,24 +16,28 @@ exports[`BpkBottomSheetInner should render correctly 1`] = `
         aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
         class="bpk-navigation-bar bpk-navigation-bar--default bpk-bottom-sheet--navigation"
       >
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-bottom-sheet--close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
         <h2
           class="bpk-bottom-sheet--heading"
           id="bpk-bottom-sheet-heading-my-bottom-sheet"
@@ -74,24 +78,28 @@ exports[`BpkBottomSheetInner should render correctly with actionText prop 1`] = 
         aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
         class="bpk-navigation-bar bpk-navigation-bar--default bpk-bottom-sheet--navigation"
       >
-        <button
-          aria-label=""
-          class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
-          title=""
-          type="button"
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label=""
+            class="bpk-close-button bpk-bottom-sheet--close-button"
+            title=""
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
         <h2
           class="bpk-bottom-sheet--heading"
           id="bpk-bottom-sheet-heading-my-bottom-sheet"
@@ -135,24 +143,28 @@ exports[`BpkBottomSheetInner should render correctly with wide prop 1`] = `
         aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
         class="bpk-navigation-bar bpk-navigation-bar--default bpk-bottom-sheet--navigation"
       >
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-bottom-sheet--close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
         <h2
           class="bpk-bottom-sheet--heading"
           id="bpk-bottom-sheet-heading-my-bottom-sheet"
@@ -193,24 +205,28 @@ exports[`BpkBottomSheetInner should render correctly without title prop 1`] = `
         aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
         class="bpk-navigation-bar bpk-navigation-bar--default bpk-bottom-sheet--navigation"
       >
-        <button
-          aria-label=""
-          class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
-          title=""
-          type="button"
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label=""
+            class="bpk-close-button bpk-bottom-sheet--close-button"
+            title=""
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
         <span
           class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
           id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
