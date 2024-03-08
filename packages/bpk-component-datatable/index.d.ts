@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes from './src/themeAttributes';
-export type BpkBadgeProps = Props;
-export default component;
-export { BADGE_TYPES, themeAttributes };
+import BpkDataTable from './src/BpkDataTable';
+export { BpkDataTable };
+export default BpkDataTable;

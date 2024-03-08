@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes from './src/themeAttributes';
-export type BpkBadgeProps = Props;
-export default component;
-export { BADGE_TYPES, themeAttributes };
+/// <reference types="react" />
+import { type BpkDataTableProps } from './common-types';
+declare const BpkDataTable: (props: BpkDataTableProps) => JSX.Element;
+export default BpkDataTable;

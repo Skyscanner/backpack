@@ -58,7 +58,7 @@ const BpkSectionHeader = ({
       >
         {title}
       </BpkText>
-      {description && <BpkText>{description}</BpkText>}
+      {description && <BpkText className={getClassName('bpk-section-header__description')}>{description}</BpkText>}
     </div>
     {button}
   </div>

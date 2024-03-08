@@ -46,4 +46,8 @@
       @include typography.bpk-heading-3;
     }
   }
+
+  &__description {
+    padding-top: tokens.bpk-spacing-sm();
+  }
 }

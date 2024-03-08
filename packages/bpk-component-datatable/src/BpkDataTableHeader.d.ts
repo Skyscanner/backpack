@@ -16,8 +16,12 @@
  * limitations under the License.
  */
 
-import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes from './src/themeAttributes';
-export type BpkBadgeProps = Props;
-export default component;
-export { BADGE_TYPES, themeAttributes };
+/// <reference types="react" />
+/**
+ * Internal component to render the header of a column.
+ * @returns {JSX.Element} data table header component
+ */
+declare const BpkDataTableHeader: ({ column }: {
+    column: any;
+}) => JSX.Element;
+export default BpkDataTableHeader;
