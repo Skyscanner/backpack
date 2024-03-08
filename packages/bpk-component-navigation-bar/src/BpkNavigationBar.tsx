@@ -43,11 +43,6 @@ export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const cloneWithClasses = (elem: ReactElement, ...newStyles: string[]) => {
-  const className = getClassNames(elem.props.className, ...newStyles);
-  return cloneElement(elem, { ...elem.props, className });
-};
-
 const BpkNavigationBar = (props: Props) => {
   const {
     barStyle = BAR_STYLES.default,
@@ -76,12 +71,16 @@ const BpkNavigationBar = (props: Props) => {
       )}
       {...rest}
     >
-      {leadingButton &&
-        cloneWithClasses(
-          leadingButton,
-          'bpk-navigation-bar__leading-item',
-          `bpk-navigation-bar__leading-item--${barStyle}`,
-        )}
+      {leadingButton && (
+        <div
+          className={getClassNames(
+            'bpk-navigation-bar__leading-item',
+            `bpk-navigation-bar__leading-item--${barStyle}`,
+          )}
+        >
+          {leadingButton}
+        </div>
+      )}
       {typeof title === 'string' ? (
         <BpkText
           id={titleId}
