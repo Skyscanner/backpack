@@ -55,8 +55,12 @@ exports[`BpkBottomSheet should render correctly in the given target if renderTar
                 Bottom Sheet title
               </h2>
               <div
-                class="bpk-bottom-sheet--action-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-              />
+                class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+              >
+                <div
+                  class="bpk-bottom-sheet--action-button"
+                />
+              </div>
             </nav>
           </header>
           <div

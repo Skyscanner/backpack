@@ -70,16 +70,20 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
     >
       test
     </span>
-    <button
-      aria-label="test"
-      class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-      title="test"
-      type="button"
+    <div
+      class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
     >
-      <span
-        class="bpk-close-button__icon"
-      />
-    </button>
+      <button
+        aria-label="test"
+        class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default"
+        title="test"
+        type="button"
+      >
+        <span
+          class="bpk-close-button__icon"
+        />
+      </button>
+    </div>
   </nav>
 </DocumentFragment>
 `;
@@ -93,16 +97,20 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
     <span>
       test
     </span>
-    <button
-      aria-label="test"
-      class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-      title="test"
-      type="button"
+    <div
+      class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
     >
-      <span
-        class="bpk-close-button__icon"
-      />
-    </button>
+      <button
+        aria-label="test"
+        class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default"
+        title="test"
+        type="button"
+      >
+        <span
+          class="bpk-close-button__icon"
+        />
+      </button>
+    </div>
   </nav>
 </DocumentFragment>
 `;
