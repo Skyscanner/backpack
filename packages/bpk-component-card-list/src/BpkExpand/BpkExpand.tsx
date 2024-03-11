@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import type { Dispatch, ReactElement, SetStateAction } from 'react';
-
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDown from '../../../bpk-component-icon/sm/chevron-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -27,17 +25,10 @@ import {
   withButtonAlignment,
   withRtlSupport,
 } from '../../../bpk-component-icon';
+import type { BpkExpandProps } from '../common-types';
 
 const AlignedChevronDownIcon = withButtonAlignment(withRtlSupport(ChevronDown));
 const AlignedChevronUpIcon = withButtonAlignment(withRtlSupport(ChevronUp));
-
-type BpkExpandProps = {
-  children: ReactElement;
-  collapsed: boolean;
-  hideContent: () => void;
-  setCollapsed: Dispatch<SetStateAction<boolean>>;
-  showContent: () => void;
-};
 
 const BpkExpand = ({
   children,

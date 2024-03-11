@@ -88,29 +88,24 @@ export type BpkCardListProps = BpkCardListBaseProps &
   (HeaderButtonProps | NoHeaderButton) &
   (NoAccessory | ButtonAccessory | PaginationAccessory | ExpandAccessory);
 
-interface BpkCardListGridStackBaseProps {
+type BpkCardListGridStackBaseProps = {
   children: ReactElement[];
+};
+
+type BpkCardListGridStackExpandModeProps = {
   showContent: () => void;
   hideContent: () => void;
   collapsed: boolean;
   setCollapsed: Dispatch<SetStateAction<boolean>>;
-}
-
-type BpkCardListGridStackExpandModeProps = {
-  accessory: typeof BpkAccessoryTypes.Expand;
-  expandText: string;
-  onButtonClick: () => void;
-};
-
-type BpkCardListGridStackButtonModeProps = {
-  accessory: typeof BpkAccessoryTypes.Button;
-  buttonText: string;
-  onButtonClick: () => void;
-};
+} & ExpandAccessory;
 
 export type BpkCardListGridStackProps = BpkCardListGridStackBaseProps &
-  (
-    | BpkCardListGridStackExpandModeProps
-    | (BpkCardListGridStackButtonModeProps & { expandText?: undefined })
-    | (NoAccessory & { onButtonClick?: undefined; expandText?: undefined })
-  );
+  (BpkCardListGridStackExpandModeProps | ButtonAccessory | NoAccessory);
+
+export type BpkExpandProps = {
+  children: string | ReactElement;
+  collapsed: boolean;
+  hideContent: () => void;
+  setCollapsed: Dispatch<SetStateAction<boolean>>;
+  showContent: () => void;
+};

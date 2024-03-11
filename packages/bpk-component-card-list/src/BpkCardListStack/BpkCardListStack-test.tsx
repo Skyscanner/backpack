@@ -32,6 +32,7 @@ describe('BpkCardListStack', () => {
         hideContent={jest.fn()}
         collapsed
         setCollapsed={jest.fn()}
+        onButtonClick={jest.fn()}
       >
         {cards}
       </BpkCardListStack>,
@@ -45,7 +46,7 @@ describe('BpkCardListStack', () => {
     const { asFragment } = render(
       <BpkCardListStack
         accessory="button"
-        expandText="Show More"
+        buttonText="Show More"
         onButtonClick={jest.fn()}
       >
         {cards}
