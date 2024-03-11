@@ -7,7 +7,7 @@
   .bpk-card-list-row__cards {
     display: flex;
     overflow: hidden;
-    margin-inline: 0 - 1.5 * bpk-spacing-md();
+    margin-inline: 0 - 1.5 * tokens.bpk-spacing-md();
   }
 
   .bpk-card-list-row__card {
@@ -15,7 +15,7 @@
     flex-shrink: 0;
     text-wrap: wrap;
 
-    @include bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
       display: none;
       padding: bpk-spacing-base() bpk-spacing-base() bpk-spacing-base();
     }

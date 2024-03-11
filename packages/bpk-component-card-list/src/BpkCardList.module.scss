@@ -40,7 +40,7 @@
     }
 
     &--card {
-      min-width: $bpk-one-pixel-rem * 281;
+      min-width: tokens.$bpk-one-pixel-rem * 281;
       flex-grow: 1;
       scroll-snap-align: start;
     }

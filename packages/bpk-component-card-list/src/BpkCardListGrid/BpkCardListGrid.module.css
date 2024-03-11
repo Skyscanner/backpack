@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-card-list-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(17.5625rem, 1fr));gap:1.5rem}
+.bpk-card-list-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(17.5625rem, 1fr));gap:bpk-spacing-lg()}

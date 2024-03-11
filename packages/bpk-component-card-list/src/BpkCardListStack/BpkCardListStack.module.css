@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-card-list-stack{display:flex;flex-direction:column;gap:1rem}
+.bpk-card-list-stack{display:flex;flex-direction:column;gap:bpk-spacing-base()}
