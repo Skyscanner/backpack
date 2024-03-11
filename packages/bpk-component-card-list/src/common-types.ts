@@ -58,7 +58,11 @@ type RailProps = {
 type ButtonProps = {
   buttonText: string;
   onButtonClick: () => void;
+  href?: string;
 };
+
+type HeaderButtonProps = ButtonProps;
+type NoHeaderButton = Partial<ButtonProps>;
 
 type NoAccessory = {
   accessory?: undefined;
@@ -66,9 +70,7 @@ type NoAccessory = {
 
 type ButtonAccessory = {
   accessory: typeof BpkAccessoryTypes.Button;
-  buttonText: string;
-  onButtonClick: () => void;
-};
+} & ButtonProps;
 
 type PaginationAccessory = {
   accessory: typeof BpkAccessoryTypes.Pagination;
@@ -80,43 +82,11 @@ type ExpandAccessory = {
   onButtonClick: () => void;
 };
 
-type DontGiveMe<T extends {}, O extends {}> = {
-  [Key in Exclude<keyof T, keyof O>]?: undefined;
-};
-
-type MaybeWithButtonProps<T> = T extends {}
-  ? (DontGiveMe<ButtonProps, T> & T) | (T & ButtonProps)
-  : never;
-
 export type BpkCardListProps = BpkCardListBaseProps &
   (GridProps | RowProps) &
   (StackProps | RailProps) &
-  MaybeWithButtonProps<
-    NoAccessory | ButtonAccessory | PaginationAccessory | ExpandAccessory
-  >;
-/*
-  (
-    | (NoAccessory | ButtonAccessory | PaginationAccessory | ExpandAccessory)
-    | (NoAccessory & ButtonProps)
-    | (ButtonAccessory & ButtonProps)
-    | (PaginationAccessory & ButtonProps)
-    | (ExpandAccessory & ButtonProps)
-  );
-  */
-
-type VeryExplicitBpkCardListProps =
-  | (BpkCardListBaseProps & GridProps & RailProps & ButtonAccessory)
-  | (BpkCardListBaseProps & GridProps & RailProps & ExpandAccessory)
-  | (BpkCardListBaseProps & GridProps & RailProps & PaginationAccessory)
-  | (BpkCardListBaseProps & GridProps & RailProps)
-  | (BpkCardListBaseProps & GridProps & StackProps & ButtonAccessory)
-  | (BpkCardListBaseProps & GridProps & StackProps & ExpandAccessory)
-  | (BpkCardListBaseProps & GridProps & StackProps)
-  | (BpkCardListBaseProps & RowProps & RailProps & ExpandAccessory)
-  | (BpkCardListBaseProps & RowProps & RailProps & PaginationAccessory)
-  | (BpkCardListBaseProps & RowProps & RailProps)
-  | (BpkCardListBaseProps & RowProps & StackProps & ExpandAccessory)
-  | (BpkCardListBaseProps & RowProps & StackProps)
+  (HeaderButtonProps | NoHeaderButton) &
+  (NoAccessory | ButtonAccessory | PaginationAccessory | ExpandAccessory);
 
 interface BpkCardListGridStackBaseProps {
   children: ReactElement[];
@@ -144,49 +114,3 @@ export type BpkCardListGridStackProps = BpkCardListGridStackBaseProps &
     | (BpkCardListGridStackButtonModeProps & { expandText?: undefined })
     | (NoAccessory & { onButtonClick?: undefined; expandText?: undefined })
   );
-
-// Test cases
-// TODO: Remove
-// BpkCardListGridStackProps
-// base + expand
-const BpkCardListGridStackTest1: BpkCardListGridStackProps = {
-  children: [],
-  showContent: () => {},
-  hideContent: () => {},
-  collapsed: false,
-  setCollapsed: () => {},
-  accessory: BpkAccessoryTypes.Expand,
-  expandText: 'expand',
-  onButtonClick: () => {},
-};
-
-// base + button
-const BpkCardListGridStackTest2: BpkCardListGridStackProps = {
-  children: [],
-  showContent: () => {},
-  hideContent: () => {},
-  collapsed: false,
-  setCollapsed: () => {},
-  accessory: BpkAccessoryTypes.Button,
-  buttonText: 'button',
-  onButtonClick: () => {},
-};
-
-// base + no accessory
-const BpkCardListGridStackTest3: BpkCardListGridStackProps = {
-  children: [],
-  showContent: () => {},
-  hideContent: () => {},
-  collapsed: false,
-  setCollapsed: () => {},
-};
-
-const BpkCardListGridStackTest4: BpkCardListGridStackProps = {
-  children: [],
-  showContent: () => {},
-  hideContent: () => {},
-  collapsed: false,
-  setCollapsed: () => {},
-  accessory: undefined,
-
-};
