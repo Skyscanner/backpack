@@ -143,6 +143,7 @@ const BpkCardList = (props: BpkCardListProps) => {
                 accessory,
                 buttonText: props.buttonText,
                 onButtonClick: props.onButtonClick,
+                href: props.href,
               };
             }
             return (
