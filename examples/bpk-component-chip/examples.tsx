@@ -38,7 +38,7 @@ const getClassName = cssModules(STYLES);
 type StatefulSelectableChipProps = Omit<BpkSelectableChipProps, 'accessibilityLabel' | 'onClick'>;
 
 const StatefulSelectableChip = (props: StatefulSelectableChipProps) => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(props.selected);
 
   const toggleSelected = () => setSelected(!selected);
 
@@ -54,7 +54,7 @@ const StatefulSelectableChip = (props: StatefulSelectableChipProps) => {
 };
 
 const StatefulDropdownChip = (props: StatefulSelectableChipProps) => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(props.selected);
   const toggleSelected = () => setSelected(!selected);
 
   return (
@@ -70,7 +70,7 @@ const StatefulDropdownChip = (props: StatefulSelectableChipProps) => {
 
 
 const StatefulIconChip = (props: StatefulSelectableChipProps) => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(props.selected);
 
   const toggleSelected = () => setSelected(!selected);
 
