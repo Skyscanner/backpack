@@ -36,26 +36,6 @@ export interface CommonProps extends ButtonProps {
   disabled?: boolean;
   selected?: boolean;
   leadingAccessoryView?: ReactNode;
+  leadingAccessoryClassName?: string;
+  trailingAccessoryView?: ReactNode;
 }
-
-// TODO: Remove once chip examples have been migrated to TS
-export const COMMON_PROP_TYPES = {
-  accessibilityLabel: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  leadingAccessoryView: PropTypes.node,
-  selected: PropTypes.bool,
-  trailingAccessoryView: PropTypes.node,
-  type: PropTypes.oneOf(Object.values(CHIP_TYPES)),
-};
-
-// TODO: Remove once chip examples have been migrated to TS
-export const COMMON_DEFAULT_PROPS = {
-  disabled: false,
-  leadingAccessoryView: null,
-  selected: false,
-  trailingAccessoryView: null,
-  type: CHIP_TYPES.default,
-};

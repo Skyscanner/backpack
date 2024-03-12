@@ -18,21 +18,23 @@
 
 import { render } from '@testing-library/react';
 
-import type { Props } from './BpkSelectableChip';
-import BpkSelectableChip from './BpkSelectableChip';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import FilterIconSm from '../../bpk-component-icon/sm/filter';
+
+import type { BpkIconChipProps } from './BpkIconChip';
 import { CHIP_TYPES } from './commonTypes';
+import BpkIconChip from './BpkIconChip';
+
 
 // Just a convenience wrapper that includes the default props so we don't
 // have to keep writing them for each test.
 const TestChip = ({
-  ...rest
-}: Omit<Props, 'onClick' | 'accessibilityLabel' | 'children'>) => (
-  <BpkSelectableChip onClick={() => null} accessibilityLabel="Toggle" {...rest}>
-    Toggle me
-  </BpkSelectableChip>
+                    ...rest
+                  }: Omit<BpkIconChipProps, 'leadingAccessoryView' | 'onClick' | 'accessibilityLabel' | 'children'>) => (
+  <BpkIconChip leadingAccessoryView={<FilterIconSm />} onClick={() => null} accessibilityLabel="Filter" {...rest} />
 );
 
-describe('BpkSelectableChip', () => {
+describe('BpkIconChip', () => {
   it('should render correctly', () => {
     const { asFragment } = render(<TestChip />);
     expect(asFragment()).toMatchSnapshot();
@@ -57,48 +59,6 @@ describe('BpkSelectableChip', () => {
     it(`should render correctly with type="${chipType}", selected and disabled`, () => {
       const { asFragment } = render(
         <TestChip type={chipType} selected disabled />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it(`should render correctly with type="${chipType}" and a leading accessory view`, () => {
-      const { asFragment } = render(
-        <TestChip
-          type={chipType}
-          leadingAccessoryView={<span>Leading</span>}
-        />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it(`should render correctly with type="${chipType}" and a leading accessory view and custom leading accessory className`, () => {
-      const { asFragment } = render(
-        <TestChip
-          type={chipType}
-          leadingAccessoryView={<span>Leading</span>}
-          leadingAccessoryClassName="custom-accessory-classname"
-        />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it(`should render correctly with type="${chipType}" and a trailing accessory view`, () => {
-      const { asFragment } = render(
-        <TestChip
-          type={chipType}
-          trailingAccessoryView={<span>Trailing</span>}
-        />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it(`should render correctly with type="${chipType}" and both a leading and trailing accessory view`, () => {
-      const { asFragment } = render(
-        <TestChip
-          type={chipType}
-          leadingAccessoryView={<span>Leading</span>}
-          trailingAccessoryView={<span>Trailing</span>}
-        />,
       );
       expect(asFragment()).toMatchSnapshot();
     });

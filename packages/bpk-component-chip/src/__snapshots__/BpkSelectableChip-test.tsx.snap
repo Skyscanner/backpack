@@ -79,6 +79,31 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
 </DocumentFragment>
 `;
 
+exports[`BpkSelectableChip should render correctly with type="default" and a leading accessory view and custom leading accessory className 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view custom-accessory-classname"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`BpkSelectableChip should render correctly with type="default" and a trailing accessory view 1`] = `
 <DocumentFragment>
   <button
@@ -235,6 +260,31 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
 </DocumentFragment>
 `;
 
+exports[`BpkSelectableChip should render correctly with type="on-dark" and a leading accessory view and custom leading accessory className 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-dark"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view custom-accessory-classname"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`BpkSelectableChip should render correctly with type="on-dark" and a trailing accessory view 1`] = `
 <DocumentFragment>
   <button
@@ -377,6 +427,31 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
   >
     <span
       class="bpk-chip__leading-accessory-view"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    >
+      Toggle me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="on-image" and a leading accessory view and custom leading accessory className 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view custom-accessory-classname"
     >
       <span>
         Leading

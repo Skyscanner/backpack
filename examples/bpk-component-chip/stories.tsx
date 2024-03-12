@@ -20,13 +20,14 @@
 import BpkSelectableChip from '../../packages/bpk-component-chip/src/BpkSelectableChip';
 import BpkDismissibleChip from '../../packages/bpk-component-chip/src/BpkDismissibleChip';
 import BpkDropdownChip from '../../packages/bpk-component-chip/src/BpkDropdownChip';
+import BpkIconChip from '../../packages/bpk-component-chip/src/BpkIconChip';
 
 import {
   AllTypesExample,
   AllSelectableChipsExample,
   AllDropdownChipsExample,
   AllDismissibleChipsExample,
-  RadioGroupChipsExample,
+  RadioGroupChipsExample, AllIconChipsExample,
 } from './examples';
 
 export default {
@@ -35,11 +36,13 @@ export default {
   subcomponents: {
     BpkDismissibleChip,
     BpkDropdownChip,
+    BpkIconChip,
   },
 };
 
 export const AllTypes = AllTypesExample;
 export const AllSelectableTypes = AllSelectableChipsExample;
+export const AllIconOnlyTypes = AllIconChipsExample;
 export const AllDropdownTypes = AllDropdownChipsExample;
 export const AllDismissibleTypes = AllDismissibleChipsExample;
 export const RadioGroup = RadioGroupChipsExample;
