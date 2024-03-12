@@ -121,10 +121,6 @@ const BpkLoadingButton = (props: LoadingProps) => {
   const iconClassNames = getClassName(
     'bpk-loading-button__icon',
     large && 'bpk-loading-button__icon--large',
-    iconOnly &&
-      (large
-        ? 'bpk-loading-button__icon--large-icon-only'
-        : 'bpk-loading-button__icon--icon-only'),
     (link || linkOnDark) && 'bpk-loading-button__icon--link',
   );
 
@@ -134,15 +130,16 @@ const BpkLoadingButton = (props: LoadingProps) => {
       iconOnly={iconOnly}
       disabled={showBtnDisabled}
       large={large}
-      className={classNames}
       link={link}
       linkOnDark={linkOnDark}
       {...rest}
     >
       {loading && <span className={iconClassNames}>{loadingIcon}</span>}
+      <span className={loading && STYLES["content-invisible"]}>
       {child0}
       {child1}
       {child2}
+      </span>
     </BpkButton>
   );
 };
