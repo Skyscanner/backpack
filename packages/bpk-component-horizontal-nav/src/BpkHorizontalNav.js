@@ -34,6 +34,7 @@ const HORIZONTAL_NAV_TYPES = {
 };
 
 export type Props = {
+  ariaLabel: string,
   autoScrollToSelected: boolean,
   children: Node,
   showUnderline: boolean,
@@ -122,6 +123,7 @@ class BpkHorizontalNav extends Component<Props> {
 
   render() {
     const {
+      ariaLabel,
       autoScrollToSelected,
       children: rawChildren,
       className,
@@ -165,6 +167,7 @@ class BpkHorizontalNav extends Component<Props> {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <BpkMobileScrollContainer
+        ariaLabel={ariaLabel}
         innerContainerTagName="nav"
         className={classNames}
         leadingIndicatorClassName={leadingScrollIndicatorClassName}
@@ -186,6 +189,7 @@ class BpkHorizontalNav extends Component<Props> {
 }
 
 BpkHorizontalNav.propTypes = {
+  ariaLabel: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   /**
    * Ensures that the selected item is within view when loaded on narrow-screened devices.
@@ -194,7 +198,7 @@ BpkHorizontalNav.propTypes = {
   className: PropTypes.string,
   leadingScrollIndicatorClassName: PropTypes.string,
   /**
-   * When set to "false", the bottom border on the component isn't included. This refers 
+   * When set to "false", the bottom border on the component isn't included. This refers
    * to the underline on the whole "BpkHorizontalNav", not the line that appears under the selected item.
    */
   showUnderline: PropTypes.bool,

@@ -23,14 +23,14 @@ import BpkHorizontalNav from './BpkHorizontalNav';
 describe('BpkHorizontalNav', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav>My nav content.</BpkHorizontalNav>,
+      <BpkHorizontalNav ariaLabel="nav content">My nav content.</BpkHorizontalNav>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "type" prop', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav type="light">
+      <BpkHorizontalNav type="light" ariaLabel="nav content">
         <li>One</li>
         <li>Two</li>
         <li>Three</li>
@@ -41,7 +41,7 @@ describe('BpkHorizontalNav', () => {
 
   it('should render correctly with custom "className" prop', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav className="my-custom-class-name">
+      <BpkHorizontalNav className="my-custom-class-name" ariaLabel="nav content">
         My nav content.
       </BpkHorizontalNav>,
     );
@@ -50,7 +50,7 @@ describe('BpkHorizontalNav', () => {
 
   it('should render correctly with custom "leadingScrollIndicatorClassName" prop', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav leadingScrollIndicatorClassName="my-custom-class-name">
+      <BpkHorizontalNav leadingScrollIndicatorClassName="my-custom-class-name" ariaLabel="nav content">
         My nav content.
       </BpkHorizontalNav>,
     );
@@ -59,7 +59,7 @@ describe('BpkHorizontalNav', () => {
 
   it('should render correctly with custom "trailingScrollIndicatorClassName" prop', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav trailingScrollIndicatorClassName="my-custom-class-name">
+      <BpkHorizontalNav trailingScrollIndicatorClassName="my-custom-class-name" ariaLabel="nav content">
         My nav content.
       </BpkHorizontalNav>,
     );
@@ -68,7 +68,7 @@ describe('BpkHorizontalNav', () => {
 
   it('should render correctly with "showUnderline" set to false', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav showUnderline={false}>
+      <BpkHorizontalNav showUnderline={false} ariaLabel="nav content">
         My nav content.
       </BpkHorizontalNav>,
     );
@@ -80,6 +80,7 @@ describe('BpkHorizontalNav', () => {
       <BpkHorizontalNav
         data-arbitrary-1="arbirary-value-1"
         data-arbitrary-2="arbirary-value-2"
+        ariaLabel="nav content"
       >
         My nav content.
       </BpkHorizontalNav>,
