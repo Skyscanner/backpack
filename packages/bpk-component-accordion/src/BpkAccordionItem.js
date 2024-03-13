@@ -134,16 +134,19 @@ const BpkAccordionItem = (props: Props) => {
           className={getClassName('bpk-accordion__toggle-button')}
         >
           <span className={getClassName('bpk-accordion__flex-container')}>
-            <BpkText
-              textStyle={textStyle}
-              tagName={tagName}
-              className={titleTextClassNames.join(' ')}
-            >
-              {clonedIcon}
-              {title}
-            </BpkText>
+          <span className={titleTextClassNames.join(' ')}>
+              <BpkText
+                textStyle={textStyle}
+                tagName={tagName}
+              >
+                {clonedIcon}
+                {title}
+              </BpkText>
+            </span>
             <span className={getClassName('bpk-accordion__icon-wrapper')}>
-              <ExpandIcon className={iconClassNames.join(' ')} />
+              <span className={iconClassNames.join(' ')}>
+                <ExpandIcon />
+              </span>
             </span>
           </span>
         </button>
