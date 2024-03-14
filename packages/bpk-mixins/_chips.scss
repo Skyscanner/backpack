@@ -243,7 +243,7 @@
     padding-inline-start: bpk-spacing-md();
 
     &__leading-accessory-view {
-      @include bpk-margin-trailing(bpk-spacing-md());
+      @include bpk-margin-trailing(0);
     }
   }
 }
