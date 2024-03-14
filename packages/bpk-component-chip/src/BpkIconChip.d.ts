@@ -21,5 +21,5 @@ import type { CommonProps as Props } from './commonTypes';
 export type BpkIconChipProps = {
     leadingAccessoryView: ReactNode;
 } & Omit<Props, 'trailingAccessoryView' | 'leadingAccessoryView' | 'children'>;
-declare const BpkIconChip: ({ className, leadingAccessoryClassName, ...rest }: BpkIconChipProps) => JSX.Element;
+declare const BpkIconChip: ({ className, ...rest }: BpkIconChipProps) => JSX.Element;
 export default BpkIconChip;
