@@ -16,37 +16,38 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-$button-padding: bpk-spacing-sm() / 2;
+$button-padding: tokens.bpk-spacing-sm() * 0.5;
 
 .bpk-close-button {
-  width: bpk-spacing-lg();
-  height: bpk-spacing-lg();
+  width: tokens.bpk-spacing-lg();
+  height: tokens.bpk-spacing-lg();
 
   // The margin here is used to ensure that the icon is aligned to
   // the leading or trailing edge of its parent container
-  margin-right: -#{$button-padding};
-  margin-left: -#{$button-padding};
+  margin-right: -1 * $button-padding;
+  margin-left: -1 * $button-padding;
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $bpk-text-secondary-day;
+  color: tokens.$bpk-text-secondary-day;
   cursor: pointer;
   appearance: none;
 
-  @include bpk-touch-tappable;
+  @include utils.bpk-touch-tappable;
 
-  @include bpk-hover {
-    color: $bpk-text-primary-day;
+  @include utils.bpk-hover {
+    color: tokens.$bpk-text-primary-day;
   }
 
   &:active {
-    color: $bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
   }
 
   &__icon {
-    vertical-align: -#{$button-padding};
+    vertical-align: -1 * $button-padding;
     fill: currentcolor;
   }
 }

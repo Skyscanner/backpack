@@ -22,40 +22,78 @@ import { renderToString } from 'react-dom/server';
 import BpkBottomSheet from './BpkBottomSheet';
 
 describe('BpkBottomSheet', () => {
-  it('renders without crashing', () => {
-    const customRenderTarget = document.createElement('div');
-
+  it('renders without crashing with all props', () => {
     expect(() => renderToString(
       <BpkBottomSheet
-        id="my-bottom-sheet"
-        title="Bottom Sheet title"
-        onClose={jest.fn()}
+        actionText='Action'
+        ariaLabelledby='bottom-sheet'
         closeLabel="Close"
-        getApplicationElement={jest.fn()}
+        closeOnEscPressed
+        closeOnScrimClick
+        id="my-bottom-sheet"
         isOpen
-        renderTarget={() => customRenderTarget}
+        onAction={jest.fn()}
+        onClose={jest.fn()}
+        title="Bottom sheet title"
+        wide
       >
-        Bottom Sheet content inside a custom target
+        Bottom Sheet content
       </BpkBottomSheet>
     )).not.toThrow();
   });
-  it('should render correctly in the given target if renderTarget is supplied', () => {
-    const customRenderTarget = document.createElement('div');
+  it('renders without crashing with minimum props', () => {
+    expect(() => renderToString(
+      <BpkBottomSheet
+        ariaLabelledby='bottom-sheet'
+        id="my-bottom-sheet"
+        isOpen
+        onClose={jest.fn()}
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>
+    )).not.toThrow();
+  });
+  it('renders correctly with minimum prop', () => {
     const { asFragment } = render(
       <BpkBottomSheet
+        ariaLabelledby='bottom-sheet'
         id="my-bottom-sheet"
-        title="Bottom Sheet title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        getApplicationElement={jest.fn()}
         isOpen
-        renderTarget={() => customRenderTarget}
+        onClose={jest.fn()}
       >
-        Bottom Sheet content inside a custom target
+        Bottom Sheet content
       </BpkBottomSheet>
     );
-
     expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+  });
+  it('renders correctly with wide prop', () => {
+    const { asFragment } = render(
+      <BpkBottomSheet
+        ariaLabelledby='bottom-sheet'
+        id="my-bottom-sheet"
+        isOpen
+        onClose={jest.fn()}
+        wide
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it('renders correctly with action props', () => {
+    const { asFragment } = render(
+      <BpkBottomSheet
+        ariaLabelledby='bottom-sheet'
+        actionText='Action'
+        id="my-bottom-sheet"
+        isOpen
+        onAction={jest.fn()}
+        onClose={jest.fn()}
+        wide
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

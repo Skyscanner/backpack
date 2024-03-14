@@ -16,18 +16,19 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-progress {
   position: relative;
-  height: bpk-spacing-base();
-  border-radius: $bpk-border-radius-md;
-  background-color: $bpk-surface-highlight-day;
+  height: tokens.bpk-spacing-base();
+  border-radius: tokens.$bpk-border-radius-md;
+  background-color: tokens.$bpk-surface-highlight-day;
   overflow: hidden;
 
   &--small {
-    height: bpk-spacing-md();
-    border-radius: $bpk-border-radius-xs;
+    height: tokens.bpk-spacing-md();
+    border-radius: tokens.$bpk-border-radius-xs;
   }
 
   &__value {
@@ -37,14 +38,14 @@
     bottom: 0;
     left: 0;
     content: ' ';
-    width: 0%;
-    transition: width $bpk-duration-base ease-in-out;
-    border-radius: $bpk-border-radius-sm;
+    width: 0;
+    transition: width tokens.$bpk-duration-base ease-in-out;
+    border-radius: tokens.$bpk-border-radius-sm;
 
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-progress-bar-fill-color,
-      $bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
 
     &--stepped {
@@ -56,7 +57,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 2 * $bpk-one-pixel-rem;
-    background: $bpk-canvas-day;
+    width: 2 * tokens.$bpk-one-pixel-rem;
+    background: tokens.$bpk-canvas-day;
   }
 }

@@ -16,16 +16,115 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
+
+@mixin animation-slide-up {
+  animation-duration: tokens.$bpk-duration-sm;
+  animation-name: slide-up;
+  animation-timing-function: ease-in-out;
+}
+
+$close-button-width: tokens.bpk-spacing-lg() * 2;
 
 .bpk-bottom-sheet {
-  &--container {
-    display: flex;
-    padding: bpk-spacing-lg();
+  z-index: tokens.$bpk-zindex-modal;
+  width: 100%;
+  max-width: tokens.$bpk-modal-max-width;
+  margin: auto;
+  transform: scale(1);
+  transition:
+    opacity tokens.$bpk-duration-sm ease-in-out,
+    transform tokens.$bpk-duration-sm ease-in-out;
+  outline: 0;
+  background-color: tokens.$bpk-modal-background-color;
+  opacity: tokens.$bpk-modal-opacity;
 
-    @include bpk-breakpoint-mobile {
-      padding: 0;
-      overflow: hidden;
+  // required to prevent the header extending beyond the rounded corners
+  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  // FIX: Prevents ugly flickering when tapping inside the modal in Mobile Safari
+  -webkit-tap-highlight-color: transparent;
+
+  @include shadows.bpk-box-shadow-xl;
+  @include radii.bpk-border-radius-sm;
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    position: fixed;
+    bottom: 0;
+    height: fit-content;
+    max-height: 90%;
+    margin-bottom: 0;
+    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+    overflow-x: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &--appear {
+    @include animation-slide-up;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      transform: scale(0.9);
+      opacity: tokens.$bpk-modal-initial-opacity;
+      animation: none;
+    }
+  }
+
+  &--appear-active {
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      transform: scale(1);
+      opacity: tokens.$bpk-modal-opacity;
+    }
+  }
+
+  &--exit {
+    animation-direction: reverse;
+
+    @include animation-slide-up;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      animation: none;
+    }
+  }
+
+  &--content {
+    padding: tokens.$bpk-modal-content-padding;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  &--wide {
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      max-width: tokens.$bpk-modal-wide-max-width;
+    }
+  }
+
+  &--header {
+    position: sticky;
+    top: 0;
+    z-index: tokens.$bpk-zindex-tooltip - 1;
+
+    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0%);
     }
   }
 }

@@ -1,0 +1,265 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@import 'tokens.scss';
+
+////
+/// @group utils
+////
+
+/// Standard focus indicator for elements.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-focus-indicator();
+///   }
+
+@mixin bpk-focus-indicator {
+  outline: ($bpk-one-pixel-rem * 2) solid $bpk-text-link-day;
+  outline-offset: ($bpk-one-pixel-rem * 2);
+}
+
+/// Hide visually and from screen readers.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hidden();
+///   }
+
+@mixin bpk-hidden {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+/// Hide only visually, but have it available for screen readers:
+///
+/// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+///
+/// @example scss
+///   .selector {
+///     @include bpk-visually-hidden();
+///   }
+
+@mixin bpk-visually-hidden {
+  position: absolute;
+  width: 1px; /* stylelint-disable-line unit-disallowed-list */
+  height: 1px; /* stylelint-disable-line unit-disallowed-list */
+  margin: -1px; /* stylelint-disable-line unit-disallowed-list */
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/// Modifies the bpk-visually-hidden mixin to allow the element to be focusable when navigated to via the keyboard:
+///
+/// https://www.drupal.org/node/897638
+///
+/// @require {mixin} bpk-visually-hidden
+///
+/// @example scss
+///   .selector {
+///     @include bpk-visually-hidden();
+///     @include bpk-visually-hidden--focusable();
+///   }
+
+@mixin bpk-visually-hidden--focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+/// Hide visually and from screen readers, but maintain layout.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-invisible();
+///   }
+
+@mixin bpk-invisible {
+  visibility: hidden;
+}
+
+/// Clearfix: contain floats.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-clearfix();
+///   }
+
+@mixin bpk-clearfix {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+/// Target RTL specific styles.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-rtl() {
+///       /* RTL scss goes here */
+///     }
+///   }
+
+@mixin bpk-rtl {
+  html[dir='rtl'] & {
+    @content;
+  }
+}
+
+/// :hover pseudo selector wrapper which prevents styles displaying on touch devices
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hover() {
+///       /* Non-touch specific hover scss goes here */
+///     }
+///   }
+
+@mixin bpk-hover {
+  .bpk-no-touch-support &:hover:not(:active):not(:disabled) {
+    @content;
+  }
+
+  // Duplicating the above rule with `:global(...)` pseudo selector around the
+  // global `.bpk-no-touch-support` class to provide support for CSS modules.
+  // - when processed through css-loader, the `:global(...)` pseudo selector will be dropped
+  //   leaving a duplicate rule which in turn will be 'uglified' out - so no worries there
+  // - when processed through node-sass only, the `:global(...)` pseudo selector will be left
+  //   intact and ignored by all browsers
+  // stylelint-disable-next-line selector-pseudo-class-no-unknown
+  :global(.bpk-no-touch-support) &:hover:not(:active):not(:disabled) {
+    @content;
+  }
+}
+
+/// Target locale specific styles.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-locale('ja-JP') {
+///       /* ja-JP scss goes here */
+///     }
+///   }
+
+@mixin bpk-locale($locale) {
+  html[lang='#{$locale}'] &,
+  html[lang='#{to_lower_case($locale)}'] & {
+    @content;
+  }
+}
+
+/// Create a Backpack themeable property with
+/// fallback support for old browsers and when
+/// the CSS variable is not defined.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-themeable-property(color, --bpk-link-text-color, $fallback-text-color);
+///   }
+
+@mixin bpk-themeable-property($property, $variableName, $fallback) {
+  #{$property}: $fallback;
+  #{$property}: var($variableName, $fallback);
+}
+
+/// Create a property that uses the Backpack primary color blue-500.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-apply-primary-color-to(color);
+///   }
+@mixin bpk-apply-primary-color-to($property) {
+  @include bpk-themeable-property(
+    $property,
+    --bpk-primary-color,
+    $bpk-color-sky-blue
+  );
+}
+
+/// Replace part of a string with another string.
+///
+/// @param {string} $string - The string inside which the replacement should take place.
+/// @param {string} $search - The substring to be replaced.
+/// @param {string} $replace [''] - The string to replace $search.
+
+@function str-replace($string, $search, $replace: '') {
+  /* Disabling rule here as the recommendation method is for newer sass versions that we don't yet support */
+  /* stylelint-disable-next-line scss/no-global-function-names */
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}
+
+/// Increases the tappable area of the element to the
+/// minimum required for touch devices.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-touch-area;
+///   }
+
+@mixin bpk-touch-tappable {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    /* stylelint-disable-next-line function-calc-no-invalid */
+    top: calc((-#{bpk-spacing-xxl() + bpk-spacing-sm()} / 2) + 50%);
+    /* stylelint-disable-next-line function-calc-no-invalid */
+    left: calc((-#{bpk-spacing-xxl() + bpk-spacing-sm()} / 2) + 50%);
+    content: '';
+    width: bpk-spacing-xxl() + bpk-spacing-sm();
+    height: bpk-spacing-xxl() + bpk-spacing-sm();
+  }
+}

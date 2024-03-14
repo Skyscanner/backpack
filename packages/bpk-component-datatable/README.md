@@ -2,7 +2,7 @@
 
 > Backpack datatable component.
 
-If you get the following warning `BpkDataTableColumns is deprecated. Please pass an array of objects to the columns prop instead`, see [migration guide](./docs/migrating.md) for details on how to migrate to the latest version of datatable.
+To migrate to `@skyscanner/backpack-web` v32, see [migration guide](./docs/migrating.md) for details on how to migrate to the latest version of datatable.
 
 ## Installation
 
@@ -43,7 +43,7 @@ export default () => (
 );
 ```
 
-By default `BpkDataTable` sorts the column using the value of `dataKey`. For use cases where the data might more complex and requires custom sorting you can pass a `sort` function along with `sortBy` and `sortDirection`.
+By default `BpkDataTable` sorts the column alphanumerically using the value of the `accessor`. For use cases where the data in a column might more complex and requires custom sorting you can pass a `sort` function along with `sortBy` and `sortDirection`. This custom sort function will be applied to the column specified through the `sortBy` id.
 
 ```js
 import { Fragment } from 'react';

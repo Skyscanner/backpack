@@ -19,16 +19,18 @@
 /* stylelint-disable selector-class-pattern */
 /* stylelint-disable selector-max-compound-selectors */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/typography';
 
 .bpk-content-cards {
   &--header-text {
-    margin-bottom: bpk-spacing-base();
+    margin-bottom: tokens.bpk-spacing-base();
 
-    @include bpk-heading-2;
+    @include typography.bpk-heading-2;
 
-    @include bpk-breakpoint-mobile {
-      @include bpk-heading-3;
+    @include breakpoints.bpk-breakpoint-mobile {
+      @include typography.bpk-heading-3;
     }
   }
 
@@ -36,15 +38,15 @@
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
-      minmax($bpk-one-pixel-rem * 50, 1fr)
+      minmax(tokens.$bpk-one-pixel-rem * 50, 1fr)
     );
     grid-auto-flow: column;
-    gap: bpk-spacing-lg();
+    gap: tokens.bpk-spacing-lg();
 
-    @include bpk-breakpoint-small-tablet {
+    @include breakpoints.bpk-breakpoint-small-tablet {
       grid-template-columns: 1fr;
       grid-auto-flow: row;
-      gap: bpk-spacing-lg();
+      gap: tokens.bpk-spacing-lg();
     }
   }
 }

@@ -17,7 +17,7 @@
  */
 
 import { render, screen } from '@testing-library/react';
-import format from 'date-fns/format';
+import { format } from 'date-fns/format';
 import userEvent from '@testing-library/user-event';
 
 import BpkCalendarNav from './BpkCalendarNav';

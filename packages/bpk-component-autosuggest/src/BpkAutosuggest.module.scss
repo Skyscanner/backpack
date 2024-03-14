@@ -16,9 +16,13 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/layers';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
-$arrow-size: bpk-spacing-sm() * 3;
+$arrow-size: tokens.bpk-spacing-sm() * 3;
 
 .bpk-autosuggest {
   &__container--open {
@@ -32,9 +36,9 @@ $arrow-size: bpk-spacing-sm() * 3;
       position: absolute;
       top: 100%;
       display: block;
-      z-index: $bpk-zindex-autosuggest;
+      z-index: tokens.$bpk-zindex-autosuggest;
       width: 100%;
-      margin-top: bpk-spacing-md() + bpk-spacing-sm();
+      margin-top: tokens.bpk-spacing-md() + tokens.bpk-spacing-sm();
 
       &::before {
         position: absolute;
@@ -42,10 +46,11 @@ $arrow-size: bpk-spacing-sm() * 3;
         left: 50%;
         content: ' ';
         display: block;
-        margin-bottom: -$bpk-one-pixel-rem;
-        margin-left: -((bpk-spacing-sm() * 3) + $bpk-one-pixel-rem);
-        border: ($arrow-size + $bpk-one-pixel-rem) solid transparent;
-        border-bottom-color: $bpk-surface-highlight-day;
+        margin-bottom: -1 * tokens.$bpk-one-pixel-rem;
+        margin-left: -1 *
+          ((tokens.bpk-spacing-sm() * 3) + tokens.$bpk-one-pixel-rem);
+        border: ($arrow-size + tokens.$bpk-one-pixel-rem) solid transparent;
+        border-bottom-color: tokens.$bpk-surface-highlight-day;
         pointer-events: none;
       }
 
@@ -55,10 +60,10 @@ $arrow-size: bpk-spacing-sm() * 3;
         left: 50%;
         content: ' ';
         display: block;
-        margin-bottom: -$bpk-one-pixel-rem;
-        margin-left: -(bpk-spacing-md() + bpk-spacing-sm());
+        margin-bottom: -1 * tokens.$bpk-one-pixel-rem;
+        margin-left: -1 * (tokens.bpk-spacing-md() + tokens.bpk-spacing-sm());
         border: $arrow-size solid transparent;
-        border-bottom-color: $bpk-surface-default-day;
+        border-bottom-color: tokens.$bpk-surface-default-day;
         pointer-events: none;
       }
     }
@@ -71,46 +76,46 @@ $arrow-size: bpk-spacing-sm() * 3;
     list-style: none;
     overflow: hidden;
 
-    @include bpk-layer;
+    @include layers.bpk-layer;
   }
 
   &__suggestion-item {
     cursor: pointer;
 
-    @include bpk-text;
-    @include bpk-body-default;
+    @include typography.bpk-text;
+    @include typography.bpk-body-default;
 
     &:not(:last-child) {
-      @include bpk-border-bottom-sm($bpk-line-day);
+      @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
     }
 
     &:active {
-      background-color: $bpk-canvas-contrast-day;
+      background-color: tokens.$bpk-canvas-contrast-day;
     }
 
     &--highlighted {
-      background-color: $bpk-canvas-contrast-day;
+      background-color: tokens.$bpk-canvas-contrast-day;
     }
   }
 
   &__suggestion {
     display: table;
     width: 100%;
-    padding: bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
 
     &--indent {
-      padding-left: bpk-spacing-xl();
+      padding-left: tokens.bpk-spacing-xl();
     }
 
     &-icon {
       display: table-cell;
-      margin-right: bpk-spacing-md();
+      margin-right: tokens.bpk-spacing-md();
       vertical-align: top;
-      fill: $bpk-text-secondary-day;
+      fill: tokens.$bpk-text-secondary-day;
 
-      @include bpk-rtl {
+      @include utils.bpk-rtl {
         margin-right: 0;
-        margin-left: bpk-spacing-md();
+        margin-left: tokens.bpk-spacing-md();
       }
     }
 
@@ -137,19 +142,19 @@ $arrow-size: bpk-spacing-sm() * 3;
       width: 100%;
       vertical-align: top;
 
-      @include bpk-text;
-      @include bpk-caption;
+      @include typography.bpk-text;
+      @include typography.bpk-caption;
     }
 
     &-tertiary-label {
       display: table-cell;
       align-self: center;
-      color: $bpk-text-secondary-day;
+      color: tokens.$bpk-text-secondary-day;
       vertical-align: top;
       word-break: keep-all;
 
-      @include bpk-text;
-      @include bpk-caption;
+      @include typography.bpk-text;
+      @include typography.bpk-caption;
     }
   }
 }

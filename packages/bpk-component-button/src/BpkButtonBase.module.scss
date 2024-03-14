@@ -16,27 +16,26 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/buttons';
 
 .bpk-button {
-  @include bpk-button;
+  @include buttons.bpk-button;
 
   &--large {
-    @include bpk-button--large;
+    @include buttons.bpk-button--large;
   }
 
   &--icon-only {
-    border-radius: $bpk-button-border-radius;
+    border-radius: tokens.$bpk-button-border-radius;
 
-    @include bpk-button--icon-only;
+    @include buttons.bpk-button--icon-only;
   }
 
   &--large-icon-only {
-    border-radius: $bpk-button-border-radius;
+    border-radius: tokens.$bpk-button-border-radius;
 
-    @include bpk-button--large-icon-only;
+    @include buttons.bpk-button--large-icon-only;
   }
 
   /* stylelint-disable selector-max-compound-selectors */

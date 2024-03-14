@@ -1,0 +1,240 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@import 'tokens.scss';
+@import 'typography.scss';
+@import 'radii.scss';
+@import 'utils.scss';
+
+////
+/// @group badges
+////
+
+/// Standard badge.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///   }
+
+@mixin bpk-badge {
+  display: inline-flex;
+  padding: bpk-spacing-sm() bpk-spacing-md();
+  align-items: center;
+
+  @include bpk-border-radius-xs;
+  @include bpk-text;
+  @include bpk-footnote;
+}
+
+/// Centered badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--centered();
+///   }
+
+@mixin bpk-badge--centered {
+  vertical-align: text-bottom;
+}
+
+/// Right-docked badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--docked-right();
+///   }
+
+@mixin bpk-badge--docked-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  @include bpk-rtl {
+    right: inherit;
+    left: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: $bpk-border-radius-xs;
+  }
+}
+
+/// Left-docked badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--docked-left();
+///   }
+
+@mixin bpk-badge--docked-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+
+  @include bpk-rtl {
+    right: 0;
+    left: inherit;
+    border-bottom-left-radius: $bpk-border-radius-xs;
+    border-bottom-right-radius: 0;
+  }
+}
+
+/// Normal badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--normal();
+///   }
+
+@mixin bpk-badge--normal {
+  background-color: $bpk-private-badge-background-normal-day;
+  color: $bpk-text-primary-day;
+  fill: $bpk-text-primary-day;
+}
+
+/// Warning badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--warning();
+///   }
+
+@mixin bpk-badge--warning {
+  background-color: $bpk-private-badge-background-normal-day;
+  color: $bpk-text-on-light-day;
+  fill: $bpk-status-warning-spot-day;
+}
+
+/// Success badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--success();
+///   }
+
+@mixin bpk-badge--success {
+  background-color: $bpk-private-badge-background-normal-day;
+  color: $bpk-text-on-light-day;
+  fill: $bpk-status-success-spot-day;
+}
+
+/// Critical badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--critical();
+///   }
+
+@mixin bpk-badge--critical {
+  background-color: $bpk-private-badge-background-normal-day;
+  color: $bpk-text-on-light-day;
+  fill: $bpk-status-danger-spot-day;
+}
+
+/// Inverse badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--inverse();
+///   }
+
+@mixin bpk-badge--inverse {
+  background-color: $bpk-surface-default-day;
+  color: $bpk-text-primary-day;
+  fill: $bpk-text-primary-day;
+}
+
+/// Outline badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--outline();
+///   }
+
+@mixin bpk-badge--outline {
+  background-color: transparent;
+  color: $bpk-text-on-dark-day;
+  box-shadow: inset 0 0 0 $bpk-border-size-sm $bpk-text-on-dark-day;
+  fill: $bpk-text-on-dark-day;
+}
+
+/// Strong badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--strong();
+///   }
+
+@mixin bpk-badge--strong {
+  background-color: $bpk-core-primary-day;
+  color: $bpk-text-on-dark-day;
+  fill: $bpk-text-on-dark-day;
+}
+
+/// Brand badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--brand();
+///   }
+
+@mixin bpk-badge--brand {
+  background-color: $bpk-core-accent-day;
+  color: $bpk-text-primary-inverse-day;
+  fill: $bpk-text-primary-inverse-day;
+}

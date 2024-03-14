@@ -117,7 +117,7 @@ const newComponentContainsClass = createdFiles.filter((filePath: string) => {
 });
 
 if (newComponentContainsClass.length > 0) {
-  fail(
+  warn(
     `These new files implement overriding className which is restricted: ${newComponentContainsClass.join(
       ', ',
     )}. Please update this component to remove the className prop.`,

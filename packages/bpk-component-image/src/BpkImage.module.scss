@@ -16,27 +16,27 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
-@import './bpkImageMixins.scss';
+@use '../../unstable__bpk-mixins/radii';
+@use 'bpkImageMixins';
 
 .bpk-image {
   opacity: 1;
 
-  @include bpk-image;
+  @include bpkImageMixins.bpk-image;
 
   &__img {
-    @include bpk-image__img;
+    @include bpkImageMixins.bpk-image__img;
   }
 
   &__spinner {
-    @include bpk-image__spinner;
+    @include bpkImageMixins.bpk-image__spinner;
   }
 
   &--no-background {
-    @include bpk-image--no-background;
+    @include bpkImageMixins.bpk-image--no-background;
   }
 
   &--border-radius-sm {
-    @include bpk-border-radius-sm;
+    @include radii.bpk-border-radius-sm;
   }
 }
