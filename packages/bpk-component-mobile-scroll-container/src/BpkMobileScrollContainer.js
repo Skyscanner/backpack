@@ -109,7 +109,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  ariaLabel: '',
+  ariaLabel: null,
   scrollerRef: null,
   innerContainerTagName: 'div',
   className: null,
