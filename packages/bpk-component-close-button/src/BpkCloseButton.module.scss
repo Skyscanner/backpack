@@ -47,7 +47,7 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
   }
 
   &__icon {
-    vertical-align: -1 * $button-padding;
+    vertical-align: -2 * $button-padding;
     fill: currentcolor;
   }
 }
