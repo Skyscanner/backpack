@@ -87,4 +87,13 @@ describe('BpkHorizontalNav', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should render correctly when ariaLabel not passed', () => {
+    const { asFragment } = render(
+      <BpkHorizontalNav>
+        My nav content.
+      </BpkHorizontalNav>
+    )
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
