@@ -97,17 +97,19 @@ type State = {
 };
 
 const propTypes = {
+  ariaLabel: PropTypes.string,
   children: PropTypes.node.isRequired,
   scrollerRef: PropTypes.func,
   innerContainerTagName: PropTypes.string,
   className: PropTypes.string,
   leadingIndicatorClassName: PropTypes.string,
   trailingIndicatorClassName: PropTypes.string,
-  style: PropTypes.object,  
+  style: PropTypes.object,
   showScrollbar: PropTypes.bool,
 };
 
 const defaultProps = {
+  ariaLabel: '',
   scrollerRef: null,
   innerContainerTagName: 'div',
   className: null,
@@ -181,6 +183,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
   render() {
     const classNames = [getClassName('bpk-mobile-scroll-container')];
     const {
+      ariaLabel,
       children,
       className,
       innerContainerTagName,
@@ -223,6 +226,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
           className={scrollerClassNames}
         >
           <InnerContainer
+            aria-label={ariaLabel}
             ref={(el) => {
               this.innerEl = el;
             }}

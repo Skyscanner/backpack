@@ -10,6 +10,7 @@ exports[`BpkMobileScrollContainer should render correctly 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -29,6 +30,7 @@ exports[`BpkMobileScrollContainer should render correctly when showScrollbar is 
       class="bpk-mobile-scroll-container__scroller bpk-mobile-scroll-container__showScrollbar"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -48,6 +50,7 @@ exports[`BpkMobileScrollContainer should render correctly with a custom "classNa
       class="bpk-mobile-scroll-container__scroller"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -67,6 +70,7 @@ exports[`BpkMobileScrollContainer should render correctly with a custom "style" 
       class="bpk-mobile-scroll-container__scroller"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.

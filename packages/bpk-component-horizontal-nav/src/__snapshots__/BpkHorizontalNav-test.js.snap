@@ -10,6 +10,7 @@ exports[`BpkHorizontalNav should render correctly 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <nav
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <div
@@ -34,6 +35,7 @@ exports[`BpkHorizontalNav should render correctly with "showUnderline" set to fa
       class="bpk-mobile-scroll-container__scroller"
     >
       <nav
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <div
@@ -58,6 +60,7 @@ exports[`BpkHorizontalNav should render correctly with "type" prop 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <nav
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <div
@@ -104,6 +107,7 @@ exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <nav
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <div
@@ -128,6 +132,7 @@ exports[`BpkHorizontalNav should render correctly with custom "className" prop 1
       class="bpk-mobile-scroll-container__scroller"
     >
       <nav
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <div
@@ -152,6 +157,7 @@ exports[`BpkHorizontalNav should render correctly with custom "leadingScrollIndi
       class="bpk-mobile-scroll-container__scroller"
     >
       <nav
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <div
@@ -176,6 +182,7 @@ exports[`BpkHorizontalNav should render correctly with custom "trailingScrollInd
       class="bpk-mobile-scroll-container__scroller"
     >
       <nav
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <div

@@ -10,6 +10,7 @@ exports[`BpkBarchart should render correctly 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <table
@@ -397,6 +398,7 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <table
@@ -784,6 +786,7 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
       class="bpk-mobile-scroll-container__scroller"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <table
@@ -1171,6 +1174,7 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
       class="bpk-mobile-scroll-container__scroller"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <table
@@ -1558,6 +1562,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <table
@@ -1969,6 +1974,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <div
+        aria-label=""
         class="bpk-mobile-scroll-container__inner"
       >
         <table
