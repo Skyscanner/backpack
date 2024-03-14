@@ -189,7 +189,7 @@ class BpkHorizontalNav extends Component<Props> {
 }
 
 BpkHorizontalNav.propTypes = {
-  ariaLabel: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string,
   children: PropTypes.node.isRequired,
   /**
    * Ensures that the selected item is within view when loaded on narrow-screened devices.
@@ -207,6 +207,7 @@ BpkHorizontalNav.propTypes = {
 }
 
 BpkHorizontalNav.defaultProps = {
+  ariaLabel: '',
   autoScrollToSelected: false,
   className: null,
   leadingScrollIndicatorClassName: null,
