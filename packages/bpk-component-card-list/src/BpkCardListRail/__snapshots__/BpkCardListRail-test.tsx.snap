@@ -22,6 +22,16 @@ exports[`BpkCardListRail should render cards correctly in the MobileScrollContai
               class="bpk-card bpk-card--atomic-button bpk-card--padded"
               type="button"
             >
+              Card 0
+            </button>
+          </div>
+          <div
+            class="bpk-card-list--rail_card"
+          >
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
               Card 1
             </button>
           </div>
@@ -33,16 +43,6 @@ exports[`BpkCardListRail should render cards correctly in the MobileScrollContai
               type="button"
             >
               Card 2
-            </button>
-          </div>
-          <div
-            class="bpk-card-list--rail_card"
-          >
-            <button
-              class="bpk-card bpk-card--atomic-button bpk-card--padded"
-              type="button"
-            >
-              Card 3
             </button>
           </div>
         </div>

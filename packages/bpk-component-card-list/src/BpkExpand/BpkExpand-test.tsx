@@ -36,7 +36,7 @@ describe('BpkExpand', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call call support functions when button is clicked', async () => {
+  it('should call showContent function when collapsed and button is clicked', async () => {
     const hideContent = jest.fn();
     const setCollapsed = jest.fn();
     const showContent = jest.fn();
@@ -54,14 +54,33 @@ describe('BpkExpand', () => {
 
     expect(asFragment()).toMatchSnapshot();
 
-    await userEvent.click(getByTestId('button'))
+    await userEvent.click(getByTestId('button'));
 
-    expect(showContent).toHaveBeenCalled()
-    expect(setCollapsed).toHaveBeenCalledWith(false)
+    expect(showContent).toHaveBeenCalled();
+    expect(setCollapsed).toHaveBeenCalledWith(false);
+  });
 
-    await userEvent.click(getByTestId('button'))
+  it('should call hideContent function when not collapsed and button is clicked', async () => {
+    const hideContent = jest.fn();
+    const setCollapsed = jest.fn();
+    const showContent = jest.fn();
 
-    expect(hideContent).toHaveBeenCalled()
-    expect(setCollapsed).toHaveBeenCalledWith(true)
+    const { asFragment, getByTestId } = render(
+      <BpkExpand
+        collapsed={false}
+        hideContent={hideContent}
+        setCollapsed={setCollapsed}
+        showContent={showContent}
+      >
+        Show More
+      </BpkExpand>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+
+    await userEvent.click(getByTestId('button'));
+
+    expect(hideContent).toHaveBeenCalled();
+    expect(setCollapsed).toHaveBeenCalledWith(true);
   });
 });

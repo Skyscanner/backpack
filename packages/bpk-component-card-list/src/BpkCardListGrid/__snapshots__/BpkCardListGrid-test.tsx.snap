@@ -8,7 +8,9 @@ exports[`BpkCardListGrid should show button accessory 1`] = `
   <button
     class="bpk-button bpk-button--primary"
     type="button"
-  />
+  >
+    Show More
+  </button>
 </DocumentFragment>
 `;
 
