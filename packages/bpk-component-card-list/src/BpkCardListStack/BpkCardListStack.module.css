@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-.bpk-card-list-stack{display:flex;flex-direction:column;gap:bpk-spacing-base()}
+.bpk-card-list-stack{display:flex;flex-direction:column;gap:1rem}
