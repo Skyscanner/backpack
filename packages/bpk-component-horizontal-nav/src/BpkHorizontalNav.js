@@ -167,7 +167,7 @@ class BpkHorizontalNav extends Component<Props> {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <BpkMobileScrollContainer
-        aria-label={ariaLabel}
+        ariaLabel={ariaLabel}
         innerContainerTagName="nav"
         className={classNames}
         leadingIndicatorClassName={leadingScrollIndicatorClassName}
