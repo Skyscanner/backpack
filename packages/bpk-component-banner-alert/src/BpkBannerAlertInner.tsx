@@ -202,7 +202,6 @@ const BpkBannerAlertInner = ({
           {dismissable && (
             <span className={getClassName('bpk-banner-alert__toggle')}>
               <BpkCloseButton
-                className={getClassName('bpk-banner-alert__toggle-button')}
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
                 label={dismissButtonLabel}

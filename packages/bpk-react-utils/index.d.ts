@@ -25,7 +25,8 @@ import deprecated from './src/deprecated';
 import { isDeviceIphone, isDeviceIpad, isDeviceIos } from './src/deviceDetection';
 import withDefaultProps from './src/withDefaultProps';
 import isRTL from './src/isRTL';
-export { Portal, TransitionInitialMount, cssModules, deprecated, withDefaultProps, wrapDisplayName, isDeviceIphone, isDeviceIpad, isDeviceIos, isRTL, };
+import{ BpkDialogWrapper } from './src/BpkDialogWrapper/BpkDialogWrapper';
+export { Portal, TransitionInitialMount, cssModules, deprecated, withDefaultProps, wrapDisplayName, isDeviceIphone, isDeviceIpad, isDeviceIos, isRTL, BpkDialogWrapper };
 declare const _default: {
     Portal: typeof Portal;
     TransitionInitialMount: ({ appearActiveClassName, appearClassName, children, transitionTimeout, }: {
@@ -54,5 +55,39 @@ declare const _default: {
     isDeviceIpad: () => boolean;
     isDeviceIos: () => boolean;
     isRTL: () => boolean;
+    BpkDialogWrapper: ({
+      ariaLabelledby,
+      children,
+      closeOnEscPressed,
+      closeOnScrimClick,
+      dialogClassName,
+      exiting,
+      id,
+      isOpen,
+      onClose,
+      timeout,
+      transitionClassNames
+    }: {
+      ariaLabelledby: string;
+      children: import("react").ReactNode;
+      closeOnEscPressed?: boolean;
+      closeOnScrimClick?: boolean;
+      dialogClassName?: string;
+      id: string | undefined;
+      isOpen: boolean;
+      onClose: (
+        arg0?: Event | KeyboardEvent | MouseEvent | PointerEvent | TouchEvent,
+        arg1?: {
+          source: 'ESCAPE' | 'DOCUMENT_CLICK';
+        },
+    ) => void | null;
+      exiting?: boolean;
+      transitionClassNames?: {
+        appear?: string,
+        appearActive?: string,
+        exit?: string
+      };
+      timeout?: {appear?: number, exit?: number};
+    }) => JSX.Element;
 };
 export default _default;
