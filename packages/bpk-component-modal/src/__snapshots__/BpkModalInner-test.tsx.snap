@@ -22,24 +22,28 @@ exports[`BpkModalInner should render correctly 1`] = `
         >
           Modal title
         </h2>
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
     <div
@@ -73,24 +77,28 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
         >
           Modal title
         </h2>
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
     <div
@@ -124,24 +132,28 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
         >
           Modal title
         </h2>
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
     <div
@@ -175,24 +187,28 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
         >
           Modal title
         </h2>
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
     <div
@@ -226,24 +242,28 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
         >
           Modal title
         </h2>
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
     <div
@@ -277,24 +297,28 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
         >
           Modal title
         </h2>
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
     <div
@@ -322,43 +346,51 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
       >
-        <span
-          class="bpk-modal__accessory-view bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
         >
-          <button
-            class="bpk-link bpk-navigation-bar-button-link bpk-navigation-bar-button-link--default bpk-modal__leading-button"
-            label="Close"
-            type="button"
+          <span
+            class="bpk-modal__accessory-view"
           >
-            <div>
-              Testing
-            </div>
-          </button>
-        </span>
+            <button
+              class="bpk-link bpk-navigation-bar-button-link bpk-navigation-bar-button-link--default bpk-modal__leading-button"
+              label="Close"
+              type="button"
+            >
+              <div>
+                Testing
+              </div>
+            </button>
+          </span>
+        </div>
         <h2
           class="bpk-modal__heading"
           id="bpk-modal-heading-my-modal"
         >
           Modal title
         </h2>
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
     <div
@@ -392,12 +424,16 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
         >
           Modal title
         </h2>
-        <button
-          class="bpk-link bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          Dismiss
-        </button>
+          <button
+            class="bpk-link bpk-modal__close-button"
+            type="button"
+          >
+            Dismiss
+          </button>
+        </div>
       </nav>
     </header>
     <div
@@ -431,24 +467,28 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
         >
           Modal title
         </h2>
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
     <div
@@ -482,24 +522,28 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
         >
           Modal title
         </h2>
-        <button
-          aria-label="Close"
-          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
-          title="Close"
-          type="button"
+        <div
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
-          <svg
-            aria-hidden="true"
-            class="bpk-close-button__icon"
-            style="width: 1rem; height: 1rem;"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            <path
-              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-hidden="true"
+              class="bpk-close-button__icon"
+              style="width: 1rem; height: 1rem;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
     <div
