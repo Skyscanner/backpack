@@ -207,7 +207,7 @@ BpkHorizontalNav.propTypes = {
 }
 
 BpkHorizontalNav.defaultProps = {
-  ariaLabel: '',
+  ariaLabel: null,
   autoScrollToSelected: false,
   className: null,
   leadingScrollIndicatorClassName: null,

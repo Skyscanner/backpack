@@ -23,14 +23,14 @@ import BpkHorizontalNav from './BpkHorizontalNav';
 describe('BpkHorizontalNav', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav ariaLabel="nav content">My nav content.</BpkHorizontalNav>,
+      <BpkHorizontalNav>My nav content.</BpkHorizontalNav>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "type" prop', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav type="light" ariaLabel="nav content">
+      <BpkHorizontalNav type="light">
         <li>One</li>
         <li>Two</li>
         <li>Three</li>
@@ -41,7 +41,7 @@ describe('BpkHorizontalNav', () => {
 
   it('should render correctly with custom "className" prop', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav className="my-custom-class-name" ariaLabel="nav content">
+      <BpkHorizontalNav className="my-custom-class-name">
         My nav content.
       </BpkHorizontalNav>,
     );
@@ -50,7 +50,7 @@ describe('BpkHorizontalNav', () => {
 
   it('should render correctly with custom "leadingScrollIndicatorClassName" prop', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav leadingScrollIndicatorClassName="my-custom-class-name" ariaLabel="nav content">
+      <BpkHorizontalNav leadingScrollIndicatorClassName="my-custom-class-name">
         My nav content.
       </BpkHorizontalNav>,
     );
@@ -59,7 +59,7 @@ describe('BpkHorizontalNav', () => {
 
   it('should render correctly with custom "trailingScrollIndicatorClassName" prop', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav trailingScrollIndicatorClassName="my-custom-class-name" ariaLabel="nav content">
+      <BpkHorizontalNav trailingScrollIndicatorClassName="my-custom-class-name">
         My nav content.
       </BpkHorizontalNav>,
     );
@@ -68,7 +68,7 @@ describe('BpkHorizontalNav', () => {
 
   it('should render correctly with "showUnderline" set to false', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav showUnderline={false} ariaLabel="nav content">
+      <BpkHorizontalNav showUnderline={false}>
         My nav content.
       </BpkHorizontalNav>,
     );
@@ -88,9 +88,9 @@ describe('BpkHorizontalNav', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly when ariaLabel not passed', () => {
+  it('should render correctly with "ariaLabel" prop', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav>
+      <BpkHorizontalNav ariaLabel="nav content">
         My nav content.
       </BpkHorizontalNav>
     )

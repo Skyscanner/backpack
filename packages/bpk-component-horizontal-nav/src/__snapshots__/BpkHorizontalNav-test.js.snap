@@ -3,7 +3,6 @@
 exports[`BpkHorizontalNav should render correctly 1`] = `
 <DocumentFragment>
   <div
-    aria-label="nav content"
     class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
     style="height: auto;"
   >
@@ -25,10 +24,10 @@ exports[`BpkHorizontalNav should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkHorizontalNav should render correctly when ariaLabel not passed 1`] = `
+exports[`BpkHorizontalNav should render correctly with "ariaLabel" prop 1`] = `
 <DocumentFragment>
   <div
-    aria-label=""
+    aria-label="nav content"
     class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
     style="height: auto;"
   >
@@ -53,7 +52,6 @@ exports[`BpkHorizontalNav should render correctly when ariaLabel not passed 1`] 
 exports[`BpkHorizontalNav should render correctly with "showUnderline" set to false 1`] = `
 <DocumentFragment>
   <div
-    aria-label="nav content"
     class="bpk-mobile-scroll-container bpk-horizontal-nav"
     style="height: auto;"
   >
@@ -78,7 +76,6 @@ exports[`BpkHorizontalNav should render correctly with "showUnderline" set to fa
 exports[`BpkHorizontalNav should render correctly with "type" prop 1`] = `
 <DocumentFragment>
   <div
-    aria-label="nav content"
     class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-light-underline"
     style="height: auto;"
   >
@@ -150,7 +147,6 @@ exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
 exports[`BpkHorizontalNav should render correctly with custom "className" prop 1`] = `
 <DocumentFragment>
   <div
-    aria-label="nav content"
     class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline my-custom-class-name"
     style="height: auto;"
   >
@@ -175,7 +171,6 @@ exports[`BpkHorizontalNav should render correctly with custom "className" prop 1
 exports[`BpkHorizontalNav should render correctly with custom "leadingScrollIndicatorClassName" prop 1`] = `
 <DocumentFragment>
   <div
-    aria-label="nav content"
     class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
     style="height: auto;"
   >
@@ -200,7 +195,6 @@ exports[`BpkHorizontalNav should render correctly with custom "leadingScrollIndi
 exports[`BpkHorizontalNav should render correctly with custom "trailingScrollIndicatorClassName" prop 1`] = `
 <DocumentFragment>
   <div
-    aria-label="nav content"
     class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
     style="height: auto;"
   >
