@@ -19,26 +19,24 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkBottomSheet from './BpkBottomSheet';
+import { BpkDialogWrapper } from './BpkDialogWrapper';
 
-describe('BpkBottomSheet accessibility tests', () => {
+describe('BpkDialogWrapper accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkBottomSheet
-        actionText='Action'
-        ariaLabelledby='bottom-sheet-accessibility'
-        closeLabel="Close"
+      <BpkDialogWrapper
+        ariaLabelledby='dialog-wrapper'
         closeOnEscPressed
         closeOnScrimClick
-        id="my-bottom-sheet"
+        dialogClassName='test-class'
+        id="dialog-wrapper"
         isOpen
-        onAction={jest.fn()}
         onClose={jest.fn()}
-        title="Bottom sheet title"
-        wide
+        transitionClassNames={{appear: "appear-class", appearActive: "active-class", exit: "exit-class"}}
+        timeout={{appear: 0, exit: 0}}
       >
-        Bottom sheet content
-      </BpkBottomSheet>,
+        Dialog content
+      </BpkDialogWrapper>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
