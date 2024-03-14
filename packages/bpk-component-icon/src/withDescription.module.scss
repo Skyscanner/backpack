@@ -15,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@import '../../bpk-mixins/index.scss';
+
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-icon-description {
-  @include bpk-visually-hidden;
+  @include utils.bpk-visually-hidden;
 }

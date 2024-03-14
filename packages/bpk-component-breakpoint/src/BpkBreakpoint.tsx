@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { useState, type ReactNode, useEffect } from 'react';
 import MediaQuery from 'react-responsive';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { breakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -50,20 +50,19 @@ const BpkBreakpoint = ({
   matchSSR = false,
   query,
 }: Props) => {
-  const isSSR = () =>
-    !(
-      typeof window !== 'undefined' &&
-      window.document &&
-      window.document.createElement
-    );
+  const [isClient, setIsClient] = useState(false);
 
-  if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
-    console.warn(
-      `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
-    );
-  }
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
-  if (!isSSR()) {
+  if (isClient) {
+    if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
+      console.warn(
+        `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
+      );
+    }
+
     return <MediaQuery query={query}>{children}</MediaQuery>;
   }
 

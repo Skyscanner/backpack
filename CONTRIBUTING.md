@@ -59,7 +59,13 @@ git checkout -b {BRANCH_NAME}
 npm install --registry="https://registry.npmjs.org/"
 ```
 
-3. Build SVGs
+3. Build a modern version of mixins for local development
+
+```sh
+npm run build:unstable__bpk-mixins
+```
+
+4. Build SVGs
 
 ```sh
 npm run build
@@ -90,7 +96,7 @@ We also ship the type declaration files for all TypeScript components to ensure 
 Our current supported React version is 17.0.2, please be mindful when using React features that may not yet be supported.
 
 #### Design
-If you'd like to contribute a change to a React component, please first reach out to Koala team on Slack to discuss and agree on the proposed change. Make sure to add to your message the design (Figma file) and include examples for each state e.g. disabled, expanded etc. if applicable.
+If you'd like to contribute a change to a React component, please first reach out to the backpack team on Slack to discuss and agree on the proposed change. Make sure to add to your message the design (Figma file) and include examples for each state e.g. disabled, expanded etc. if applicable.
 
 #### Example components
 Look at existing components for code style inspiration. Here are some good examples to follow:
@@ -103,12 +109,25 @@ We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM
 
 When creating (S)CSS files, follow the CSS Module naming convention by using the `.module.(s)css` extension.
 
+When creating or modifying SCSS files, follow these rules
+
+1. Use Modern SASS API
+   * Prefer `@use` instead of `@import`
+   * Prefer `math.div($a, $b)` instead of `$a / $b`. Add `@use sass:math` statement to the top of your file to make this function available
+   * Read more about [@use rule](https://sass-lang.com/documentation/at-rules/use/) and [SASS math functions](https://sass-lang.com/documentation/modules/math/)
+2. Use only what you need
+   * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../unstable__bpk-mixins/tokens'` statement only
+3. Use `unstable__bpk-mixins` for Backpack components development
+   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`, then execute `npm run unstable__bpk-mixins` command to make it available for Modern API
+   * Import mixins from `packages/unstable__bpk-mixins` only. Otherwise your code will break because Modern SASS API doesn't support `~` import syntax or slash division
+
 #### Adding a new component
 
 If you want to add a new component:
 
 1. Use `bpk-component-boilerplate` to create a new skeleton React component
 2. Our components where possible are written as function components, familiarise yourself using [React component guidelines](https://react.dev/reference/react/Component) for more guidance
+    - **For new components we restrict the use of `className` and `style` props to avoid allowing overwriting the component's styles and to ensure consistency across our product.**
 3. Create stories - each component has a set of stories living under `examples/bpk-component-{name}/stories.ts`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
 4. Create tests
     - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest` - these will then be picked up by Percy to run on CI

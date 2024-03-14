@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-flare-stories {
-  padding: bpk-spacing-xl();
+  padding: tokens.bpk-spacing-xl();
 
   &__flare-bar {
     width: 100%;
     margin-bottom: 2rem;
 
     &--svg {
-      fill: $bpk-core-primary-day;
+      fill: tokens.$bpk-core-primary-day;
     }
   }
 
@@ -34,7 +34,7 @@
     width: 100%;
     max-width: 45rem;
     margin-bottom: 2rem;
-    background-color: $bpk-core-accent-day;
+    background-color: tokens.$bpk-core-accent-day;
 
     &--image {
       background-image: url('https://images.unsplash.com/photo-1556873992-0b43b3ac5ec1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=5730&q=80 5730w');
@@ -47,7 +47,7 @@
     }
 
     &--fixed-height {
-      height: bpk-spacing-xxl() * 5;
+      height: tokens.bpk-spacing-xxl() * 5;
 
       &--large {
         height: 45rem;
@@ -57,7 +57,7 @@
 
   &__content {
     max-width: 45rem;
-    margin: bpk-spacing-xl();
-    color: $bpk-text-primary-inverse-day;
+    margin: tokens.bpk-spacing-xl();
+    color: tokens.$bpk-text-primary-inverse-day;
   }
 }

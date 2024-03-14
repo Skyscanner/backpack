@@ -14,3 +14,8 @@ npm-debug.*
 yarn.lock
 /packages/*/changelog.md
 .storybook/__image_snapshots__/__diff_output__
+
+# Ignore css assets as these should be built on demand from sass
+*.css
+!packages/bpk-stylesheets/base.css
+/packages/unstable__bpk-mixins

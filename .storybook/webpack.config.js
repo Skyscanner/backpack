@@ -19,13 +19,16 @@
 const fs = require('fs');
 const path = require('path');
 
-const sassFunctions = require('../packages/bpk-mixins/sass-functions');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const postCssPlugins = require('../scripts/webpack/postCssPlugins');
 
 const { BPK_TOKENS } = process.env;
 const rootDir = path.resolve(__dirname, '../');
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
+  config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
     test: /\.[jt]sx?$/,
     exclude: /node_modules\/(?!bpk-).*/,
@@ -61,7 +64,7 @@ module.exports = ({ config }) => {
     test: /\.css/,
     use: [
       {
-        loader: 'style-loader',
+        loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
       },
       {
         loader: 'css-loader',
@@ -86,7 +89,7 @@ module.exports = ({ config }) => {
     test: /\.scss$/,
     use: [
       {
-        loader: 'style-loader',
+        loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
       },
       {
         loader: 'css-loader',
@@ -116,9 +119,6 @@ module.exports = ({ config }) => {
                 ),
               )
             : '',
-          sassOptions: {
-            functions: sassFunctions,
-          },
         },
       },
     ],

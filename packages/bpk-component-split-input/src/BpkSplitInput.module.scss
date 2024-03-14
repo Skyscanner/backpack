@@ -16,21 +16,23 @@
  * limitations under the License.
  */
 
- /* stylelint-disable */
+/* stylelint-disable */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
 
-.bpk-split-input {
-  @include bpk-body-default;
-  display: flex;
-  width: 100%;
-  padding-top: bpk-spacing-sm();
-  flex-direction: row;
-  align-items: center;
-  direction: ltr;
 
-  &__textbox {
+  .bpk-split-input {
+    @include typography.bpk-body-default;
     display: flex;
+    width: 100%;
+    padding-top: tokens.bpk-spacing-sm();
+    flex-direction: row;
     align-items: center;
+    direction: ltr;
+
+    &__textbox {
+      display: flex;
+      align-items: center;
+    }
   }
-}

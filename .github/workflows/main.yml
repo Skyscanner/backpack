@@ -28,7 +28,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Upload to Cache
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v4.0.1
         id: npm-cache
         with:
           path: |
@@ -52,7 +52,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore NPM Cache
-        uses: actions/cache/restore@v3.3.2
+        uses: actions/cache/restore@v4.0.1
         id: npm-cache
         with:
           path: |
@@ -61,12 +61,12 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
       
       - name: Upload dist-storybook to Cache
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v4.0.1
         id: storybook-dist-cache
         with:
           path: |
             dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
 
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
@@ -94,7 +94,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore npm Cache
-        uses: actions/cache/restore@v3.3.2
+        uses: actions/cache/restore@v4.0.1
         id: npm-cache
         with:
           path: |
@@ -103,11 +103,11 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
       
       - name: Restore Cache
-        uses: actions/cache/restore@v3.3.2
+        uses: actions/cache/restore@v4.0.1
         id: storybook-dist-cache
         with:
           path: dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
       
       - name: Deploy Storybook for main
         uses: peaceiris/actions-gh-pages@v3
@@ -131,7 +131,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore npm Cache
-        uses: actions/cache/restore@v3.3.2
+        uses: actions/cache/restore@v4.0.1
         id: npm-cache
         with:
           path: |
@@ -160,6 +160,6 @@ jobs:
       pull-requests: read
     steps:
       - name: Draft release notes
-        uses: release-drafter/release-drafter@v5
+        uses: release-drafter/release-drafter@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

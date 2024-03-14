@@ -1,5 +1,9 @@
 version: 2
+snapshot:
+  enable-javascript: true
 discovery:
   user-agent: "percy-backpack"
   allowed-hostnames:
     - content.skyscnr.com
+  launch-options:
+    timeout: 9000

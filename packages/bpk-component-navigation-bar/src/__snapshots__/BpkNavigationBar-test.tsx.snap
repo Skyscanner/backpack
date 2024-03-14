@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkNavigationBar should render correctly 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="test-bpk-navigation-bar-title"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
+  >
+    <span
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
+      id="test-bpk-navigation-bar-title"
+    >
+      test
+    </span>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`BpkNavigationBar should render correctly when sticky 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="test-bpk-navigation-bar-title"
+    class="bpk-navigation-bar bpk-navigation-bar--default bpk-navigation-bar__sticky"
+  >
+    <span
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
+      id="test-bpk-navigation-bar-title"
+    >
+      test
+    </span>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`BpkNavigationBar should render correctly with a "leadingButton" attribute 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="test-bpk-navigation-bar-title"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
+  >
+    <div
+      class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+    >
+      <button
+        aria-label="test"
+        class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default"
+        title="test"
+        type="button"
+      >
+        <span
+          class="bpk-close-button__icon"
+        />
+      </button>
+    </div>
+    <span
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
+      id="test-bpk-navigation-bar-title"
+    >
+      test
+    </span>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`BpkNavigationBar should render correctly with a "traillingButton" attribute 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="test-bpk-navigation-bar-title"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
+  >
+    <span
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
+      id="test-bpk-navigation-bar-title"
+    >
+      test
+    </span>
+    <div
+      class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+    >
+      <button
+        aria-label="test"
+        class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default"
+        title="test"
+        type="button"
+      >
+        <span
+          class="bpk-close-button__icon"
+        />
+      </button>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`BpkNavigationBar should render correctly with an element for the title attribute 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="test"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
+  >
+    <span>
+      test
+    </span>
+    <div
+      class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+    >
+      <button
+        aria-label="test"
+        class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default"
+        title="test"
+        type="button"
+      >
+        <span
+          class="bpk-close-button__icon"
+        />
+      </button>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="test-bpk-navigation-bar-title"
+    class="bpk-navigation-bar bpk-navigation-bar--default"
+    testid="arbitrary value"
+  >
+    <span
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
+      id="test-bpk-navigation-bar-title"
+    >
+      test
+    </span>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`BpkNavigationBar should render correctly with custom class 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="test-bpk-navigation-bar-title"
+    class="bpk-navigation-bar bpk-navigation-bar--default my-custom-class"
+  >
+    <span
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
+      id="test-bpk-navigation-bar-title"
+    >
+      test
+    </span>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`BpkNavigationBar should render correctly with on-dark style 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="test-bpk-navigation-bar-title"
+    class="bpk-navigation-bar bpk-navigation-bar--on-dark"
+  >
+    <span
+      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--on-dark"
+      id="test-bpk-navigation-bar-title"
+    >
+      test
+    </span>
+  </nav>
+</DocumentFragment>
+`;

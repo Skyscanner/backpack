@@ -28,7 +28,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Upload to Cache
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v4.0.1
         id: npm-cache
         with:
           path: |
@@ -52,7 +52,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore NPM Cache
-        uses: actions/cache/restore@v3.3.2
+        uses: actions/cache/restore@v4.0.1
         id: npm-cache
         with:
           path: |
@@ -61,12 +61,12 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
       
       - name: Upload dist-storybook to Cache
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v4.0.1
         id: storybook-dist-cache
         with:
           path: |
             dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
 
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
@@ -95,7 +95,7 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
 
     - name: Restore npm Cache
-      uses: actions/cache/restore@v3.3.2
+      uses: actions/cache/restore@v4.0.1
       id: npm-cache
       with:
         path: |
@@ -104,11 +104,11 @@ jobs:
         key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
 
     - name: Restore Cache
-      uses: actions/cache/restore@v3.3.2
+      uses: actions/cache/restore@v4.0.1
       id: storybook-dist-cache
       with:
         path: dist-storybook/
-        key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
+        key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
 
     - name: Prepare to deploy Storybook (pull request build)
       run: |
@@ -130,7 +130,7 @@ jobs:
         publish_branch: main
 
     - name: Link to the pull request build
-      uses: actions/github-script@v6
+      uses: actions/github-script@v7
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
       with:
         script: |

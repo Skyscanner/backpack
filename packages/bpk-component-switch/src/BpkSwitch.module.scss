@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/utils';
 
-$height: bpk-spacing-xl();
-$width: bpk-spacing-sm() * 13;
-$border-width: $bpk-one-pixel-rem * 2;
+$height: tokens.bpk-spacing-xl();
+$width: tokens.bpk-spacing-sm() * 13;
+$border-width: tokens.$bpk-one-pixel-rem * 2;
 
 .bpk-switch {
   position: relative;
@@ -33,10 +35,10 @@ $border-width: $bpk-one-pixel-rem * 2;
     opacity: 0;
 
     &:checked ~ .bpk-switch__switch {
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         background,
         --bpk-switch-checked-color,
-        $bpk-core-accent-day
+        tokens.$bpk-core-accent-day
       );
 
       &::before {
@@ -48,7 +50,7 @@ $border-width: $bpk-one-pixel-rem * 2;
   &__label {
     /* stylelint-disable backpack/use-typography-styles */
     line-height: $height;
-    margin-inline-end: bpk-spacing-md();
+    margin-inline-end: tokens.bpk-spacing-md();
   }
 
   // The 'track'.
@@ -56,11 +58,11 @@ $border-width: $bpk-one-pixel-rem * 2;
     position: relative;
     float: right;
     display: block;
-    width: $width;
+    min-width: $width;
     height: $height;
-    transition: background $bpk-duration-sm linear;
-    border-radius: $height / 2;
-    background: $bpk-text-disabled-day;
+    transition: background tokens.$bpk-duration-sm linear;
+    border-radius: $height * 0.5;
+    background: tokens.$bpk-text-disabled-day;
     cursor: pointer;
 
     // The 'handle'.
@@ -72,20 +74,20 @@ $border-width: $bpk-one-pixel-rem * 2;
       display: block;
       width: $height - ($border-width * 2);
       height: $height - ($border-width * 2);
-      transition: left $bpk-duration-sm ease-out;
+      transition: left tokens.$bpk-duration-sm ease-out;
       border-radius: 50%;
-      background: $bpk-text-on-dark-day;
+      background: tokens.$bpk-text-on-dark-day;
 
-      @include bpk-box-shadow-sm;
+      @include shadows.bpk-box-shadow-sm;
     }
 
     &--small {
-      width: bpk-spacing-xxl();
-      height: bpk-spacing-sm() * 5;
+      min-width: tokens.bpk-spacing-xxl();
+      height: tokens.bpk-spacing-sm() * 5;
 
       &::before {
-        width: bpk-spacing-base();
-        height: bpk-spacing-base();
+        width: tokens.bpk-spacing-base();
+        height: tokens.bpk-spacing-base();
       }
     }
   }
