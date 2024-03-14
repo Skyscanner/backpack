@@ -38,7 +38,6 @@ export type BpkIconChipProps = {
 
 const BpkIconChip = ({
  className,
- leadingAccessoryClassName,
  ...rest
 }: BpkIconChipProps) => {
   const classNames = getClassName(`bpk-chip--icon-only`, className);
@@ -47,10 +46,6 @@ const BpkIconChip = ({
     <BpkSelectableChip
       {...rest}
       className={classNames}
-      leadingAccessoryClassName={getClassName(
-        'bpk-chip--icon-only__leading-accessory-view',
-        leadingAccessoryClassName,
-      )}
       trailingAccessoryView={null}
     >
       {null}

@@ -79,7 +79,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="default" and a leading accessory view and custom leading accessory className 1`] = `
+exports[`BpkSelectableChip should render correctly with type="default" and a leading accessory view without children 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -89,7 +89,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
     type="button"
   >
     <span
-      class="bpk-chip__leading-accessory-view custom-accessory-classname"
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
     >
       <span>
         Leading
@@ -97,9 +97,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
+    />
   </button>
 </DocumentFragment>
 `;
@@ -260,7 +258,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="on-dark" and a leading accessory view and custom leading accessory className 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-dark" and a leading accessory view without children 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -270,7 +268,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
     type="button"
   >
     <span
-      class="bpk-chip__leading-accessory-view custom-accessory-classname"
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
     >
       <span>
         Leading
@@ -278,9 +276,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
+    />
   </button>
 </DocumentFragment>
 `;
@@ -441,7 +437,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
 </DocumentFragment>
 `;
 
-exports[`BpkSelectableChip should render correctly with type="on-image" and a leading accessory view and custom leading accessory className 1`] = `
+exports[`BpkSelectableChip should render correctly with type="on-image" and a leading accessory view without children 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
@@ -451,7 +447,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
     type="button"
   >
     <span
-      class="bpk-chip__leading-accessory-view custom-accessory-classname"
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
     >
       <span>
         Leading
@@ -459,9 +455,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-    >
-      Toggle me
-    </span>
+    />
   </button>
 </DocumentFragment>
 `;

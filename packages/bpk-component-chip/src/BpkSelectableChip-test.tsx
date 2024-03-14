@@ -71,12 +71,13 @@ describe('BpkSelectableChip', () => {
       expect(asFragment()).toMatchSnapshot();
     });
 
-    it(`should render correctly with type="${chipType}" and a leading accessory view and custom leading accessory className`, () => {
+    it(`should render correctly with type="${chipType}" and a leading accessory view without children`, () => {
       const { asFragment } = render(
-        <TestChip
+        <BpkSelectableChip
           type={chipType}
           leadingAccessoryView={<span>Leading</span>}
-          leadingAccessoryClassName="custom-accessory-classname"
+          accessibilityLabel="Toggle"
+          onClick={() => null}
         />,
       );
       expect(asFragment()).toMatchSnapshot();

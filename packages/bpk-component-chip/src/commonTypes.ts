@@ -25,10 +25,10 @@ export const CHIP_TYPES = {
   onImage: 'on-image',
 } as const;
 
-// onClick and children are already part of the button props, but we need to specify that they are required
+// onClick is already part of the button props, but we need to specify that they are required
 interface ButtonProps extends Omit<ComponentProps<'button'>, 'type'> {
   onClick: (event: SyntheticEvent<HTMLButtonElement>) => void | null;
-  children: ReactNode | string;
+  children?: ReactNode | string;
   type?: (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES]; // this is different from the native button type
 }
 export interface CommonProps extends ButtonProps {
@@ -36,6 +36,5 @@ export interface CommonProps extends ButtonProps {
   disabled?: boolean;
   selected?: boolean;
   leadingAccessoryView?: ReactNode;
-  leadingAccessoryClassName?: string;
   trailingAccessoryView?: ReactNode;
 }

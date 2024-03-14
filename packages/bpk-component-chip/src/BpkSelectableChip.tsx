@@ -37,7 +37,6 @@ const BpkSelectableChip = ({
   children,
   className,
   disabled = false,
-  leadingAccessoryClassName,
   leadingAccessoryView = null,
   role = 'checkbox',
   selected = false,
@@ -65,7 +64,12 @@ const BpkSelectableChip = ({
       {...rest}
     >
       {leadingAccessoryView && (
-        <span className={getClassName('bpk-chip__leading-accessory-view', leadingAccessoryClassName)}>
+        <span
+          className={getClassName(
+            'bpk-chip__leading-accessory-view',
+            !children && 'bpk-chip--icon-only__leading-accessory-view'
+          )}
+        >
           {leadingAccessoryView}
         </span>
       )}
