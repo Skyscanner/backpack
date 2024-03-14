@@ -43,7 +43,7 @@ exports[`withBannerAlertState(BpkBannerAlertDismissable) should render correctly
             >
               <button
                 aria-label="Dismiss"
-                class="bpk-close-button bpk-banner-alert__toggle-button"
+                class="bpk-close-button"
                 title="Dismiss"
                 type="button"
               >
