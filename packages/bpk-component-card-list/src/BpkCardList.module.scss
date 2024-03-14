@@ -21,18 +21,18 @@
 .bpk-card-list {
   display: flex;
   flex-direction: column;
-  gap: bpk-spacing-lg();
+  gap: tokens.bpk-spacing-lg();
 
   &--card-list {
     display: flex;
     flex-direction: column;
-    gap: bpk-spacing-lg();
+    gap: tokens.bpk-spacing-lg();
 
     &--row {
       display: flex;
       width: 100%;
       flex-direction: row;
-      gap: bpk-spacing-lg();
+      gap: tokens.bpk-spacing-lg();
     }
 
     &--stack {

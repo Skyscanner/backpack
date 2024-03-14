@@ -29,13 +29,15 @@
   }
 
   .bpk-card-list-row__card {
-    padding: 0 bpk-spacing-lg() bpk-spacing-lg() bpk-spacing-sm();
+    padding: 0 tokens.bpk-spacing-lg() tokens.bpk-spacing-lg()
+      tokens.bpk-spacing-sm();
     flex-shrink: 0;
     text-wrap: wrap;
 
     @include breakpoints.bpk-breakpoint-mobile {
       display: none;
-      padding: bpk-spacing-base() bpk-spacing-base() bpk-spacing-base();
+      padding: tokens.bpk-spacing-base() tokens.bpk-spacing-base()
+        tokens.bpk-spacing-base();
     }
   }
 }
