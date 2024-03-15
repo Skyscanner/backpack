@@ -27,7 +27,6 @@ exports[`BpkHorizontalNav should render correctly 1`] = `
 exports[`BpkHorizontalNav should render correctly with "ariaLabel" prop 1`] = `
 <DocumentFragment>
   <div
-    arialabel="nav content"
     class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
     style="height: auto;"
   >
@@ -35,6 +34,7 @@ exports[`BpkHorizontalNav should render correctly with "ariaLabel" prop 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <nav
+        aria-label="nav content"
         class="bpk-mobile-scroll-container__inner"
       >
         <div
@@ -144,7 +144,6 @@ exports[`BpkHorizontalNav should render correctly with "type" prop 1`] = `
 exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
   <div
-    arialabel="nav content"
     class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
     data-arbitrary-1="arbirary-value-1"
     data-arbitrary-2="arbirary-value-2"
@@ -154,6 +153,7 @@ exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
       class="bpk-mobile-scroll-container__scroller"
     >
       <nav
+        aria-label="nav content"
         class="bpk-mobile-scroll-container__inner"
       >
         <div
