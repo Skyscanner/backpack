@@ -25,7 +25,7 @@ import BpkHorizontalNavItem from './BpkHorizontalNavItem';
 describe('BpkHorizontalNav accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkHorizontalNav>
+      <BpkHorizontalNav ariaLabel="nav content">
         <BpkHorizontalNavItem>One</BpkHorizontalNavItem>,
         <BpkHorizontalNavItem>Two</BpkHorizontalNavItem>,
         <BpkHorizontalNavItem>Three</BpkHorizontalNavItem>,
