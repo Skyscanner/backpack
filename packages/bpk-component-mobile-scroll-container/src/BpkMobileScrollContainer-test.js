@@ -91,6 +91,28 @@ describe('BpkMobileScrollContainer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with ariaLabel prop', () => {
+    const { asFragment } = render(
+      <BpkMobileScrollContainer ariaLabel="my nav content">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkMobileScrollContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with ariaLabel prop set to null', () => {
+    const { asFragment } = render(
+      <BpkMobileScrollContainer ariaLabel={null}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkMobileScrollContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   describe('functions', () => {
     describe('computeScrollIndicatorClassName', () => {
       it('returns null if `scrollerEl is null', () => {
