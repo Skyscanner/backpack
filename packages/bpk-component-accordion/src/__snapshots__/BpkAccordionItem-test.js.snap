@@ -29,7 +29,7 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon"
             >
               <span
@@ -46,7 +46,7 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -98,7 +98,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon"
             >
               <span
@@ -115,7 +115,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -168,7 +168,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon"
             >
               <span
@@ -185,7 +185,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -237,7 +237,7 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
             >
               <span
@@ -254,7 +254,7 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -304,7 +304,7 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon"
             >
               <span
@@ -321,7 +321,7 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -373,7 +373,7 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon"
             >
               <span
@@ -390,7 +390,7 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -453,7 +453,7 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon"
             >
               <span
@@ -470,7 +470,7 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -522,7 +522,7 @@ exports[`BpkAccordionItem should render correctly with no divider 1`] = `
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--on-dark"
             >
               <span
@@ -539,7 +539,7 @@ exports[`BpkAccordionItem should render correctly with no divider 1`] = `
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -592,7 +592,7 @@ exports[`BpkAccordionItem should render correctly with onDark set 1`] = `
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--on-dark"
             >
               <span
@@ -609,7 +609,7 @@ exports[`BpkAccordionItem should render correctly with onDark set 1`] = `
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>

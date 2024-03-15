@@ -29,7 +29,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon"
             >
               <span
@@ -46,7 +46,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -98,7 +98,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon"
             >
               <span
@@ -115,7 +115,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>
@@ -167,7 +167,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           <span
             class="bpk-accordion__icon-wrapper"
           >
-            <span
+            <div
               class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
             >
               <span
@@ -184,7 +184,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
                   />
                 </svg>
               </span>
-            </span>
+            </div>
           </span>
         </span>
       </button>

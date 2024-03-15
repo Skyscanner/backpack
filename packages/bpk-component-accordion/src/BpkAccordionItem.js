@@ -144,9 +144,9 @@ const BpkAccordionItem = (props: Props) => {
               </BpkText>
             </span>
             <span className={getClassName('bpk-accordion__icon-wrapper')}>
-              <span className={iconClassNames.join(' ')}>
+              <div className={iconClassNames.join(' ')}>
                 <ExpandIcon />
-              </span>
+              </div>
             </span>
           </span>
         </button>
