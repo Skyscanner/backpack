@@ -33,7 +33,7 @@ jobs:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Build Backpack
         run: npm run build
@@ -68,7 +68,7 @@ jobs:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Restore Cache
         uses: actions/cache/restore@v4.0.1
@@ -105,7 +105,7 @@ jobs:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Danger
         run: npm run danger
