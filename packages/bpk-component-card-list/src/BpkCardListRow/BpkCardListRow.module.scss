@@ -29,8 +29,8 @@
   }
 
   .bpk-card-list-row__card {
-    padding: 0 tokens.bpk-spacing-lg() tokens.bpk-spacing-lg()
-      tokens.bpk-spacing-sm();
+    padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-lg()
+      tokens.bpk-spacing-lg() tokens.bpk-spacing-sm();
     flex-shrink: 0;
     text-wrap: wrap;
 

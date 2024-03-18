@@ -17,6 +17,8 @@
  */
 /* @flow strict */
 
+import BpkCardList from '../../packages/bpk-component-card-list/src/BpkCardList';
+
 import {
   GridToRailExample,
   GridToStackExample,
@@ -28,6 +30,7 @@ import {
 
 export default {
   title: 'bpk-component-card-list',
+  component: BpkCardList,
 };
 
 export const GridToRail = GridToRailExample;
