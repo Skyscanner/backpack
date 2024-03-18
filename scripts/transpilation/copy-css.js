@@ -33,7 +33,7 @@ cssFiles.map((cssFile) => {
   const componentPath = paths[1].split('/');
 
   // V2 components are nested inside a folder
-  if (paths[1].match(/V2/)) {
+  if (paths[1].match(/\/Bpk.*\//) || paths[1].match(/__generated__/)){
     component = `${componentPath[0]}/${componentPath[1]}/${componentPath[2]}`;
   } else {
     component = `${componentPath[0]}/${componentPath[1]}`;
