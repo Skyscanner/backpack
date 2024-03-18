@@ -39,7 +39,6 @@
     "object-assign": "^4.1.1",
     "prop-types": "^15.7.2",
     "react-autosuggest": "^9.4.3",
-    "react-responsive": "^9.0.2",
     "react-slider": "^2.0.6",
     "react-table": "^7.8.0",
     "react-virtualized-auto-sizer": "1.0.20",

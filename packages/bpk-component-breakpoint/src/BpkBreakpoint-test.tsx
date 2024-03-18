@@ -25,7 +25,7 @@ describe('BpkBreakpoint', () => {
   it('should render if the breakpoint is matched', () => {
     jest.resetModules();
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-    jest.mock('react-responsive', () => (props: any) => props.children(true));
+    jest.mock('./useMediaQuery', () => () => true);
 
     const { asFragment } = render(
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
@@ -40,7 +40,7 @@ describe('BpkBreakpoint', () => {
   it('should render if the breakpoint is not matched', () => {
     jest.resetModules();
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-    jest.mock('react-responsive', () => (props: any) => props.children(false));
+    jest.mock('./useMediaQuery', () => () => false);
 
     const { asFragment } = render(
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
@@ -53,21 +53,8 @@ describe('BpkBreakpoint', () => {
   });
 
   describe('SSR mode', () => {
-    let windowSpy: any;
-
     beforeEach(() => {
-      // The following spy/mock removes the createElement function to fool the BpkBreakpoint into
-      // thinking that is being rendered on server-side. Unfortunately react-testing-library has no
-      // better mechanism for this.
-      windowSpy = jest.spyOn(window, 'window', 'get');
-      windowSpy.mockImplementation(() => ({
-        document: {
-          createElement: undefined,
-        },
-      }));
-
-      // This mock replaces react-responsive to be a bypass that matches against any breakpoint
-      jest.mock('react-responsive', () => (props: any) => props.children(true));
+      jest.mock('./useMediaQuery', () => () => true);
 
       jest.resetModules();
     });
@@ -103,10 +90,6 @@ describe('BpkBreakpoint', () => {
 
       // Checking SSR
       const html = ReactDOMServer.renderToString(components);
-
-      // Here we want to restore the window object - as we're now pretending to be
-      // on the browser.
-      windowSpy.mockRestore();
 
       expect(html).toMatchSnapshot('server rendered');
 
@@ -144,7 +127,7 @@ describe('BpkBreakpoint', () => {
     beforeEach(() => {
       jest.resetModules();
       BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-      jest.mock('react-responsive', () => (props: any) => props.children());
+      jest.mock('./useMediaQuery', () => () => true);
 
       errorOrWarningSpy = jest.fn();
       oldError = window.console.error;

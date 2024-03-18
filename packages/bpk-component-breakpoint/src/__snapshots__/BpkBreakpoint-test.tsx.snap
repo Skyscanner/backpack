@@ -2,7 +2,9 @@
 
 exports[`BpkBreakpoint SSR mode should not render on SSR until hydrated when matchSSR=false: hydrated 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-reactroot=""
+  >
     matches
   </div>
 </DocumentFragment>
