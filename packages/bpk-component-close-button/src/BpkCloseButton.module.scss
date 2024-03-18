@@ -47,7 +47,10 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
   }
 
   &__icon {
-    vertical-align: -1.75 * $button-padding;
+    display: inherit;
+    /* stylelint-disable-next-line scale-unlimited/declaration-strict-value */
+    line-height: 0;
+    vertical-align: -1 * $button-padding;
     fill: currentcolor;
   }
 }

@@ -31,7 +31,7 @@ exports[`BpkModalInner should render correctly 1`] = `
             title="Close"
             type="button"
           >
-            <span
+            <div
               class="bpk-close-button__icon"
             >
               <svg
@@ -44,7 +44,7 @@ exports[`BpkModalInner should render correctly 1`] = `
                   d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </nav>
@@ -89,7 +89,7 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
             title="Close"
             type="button"
           >
-            <span
+            <div
               class="bpk-close-button__icon"
             >
               <svg
@@ -102,7 +102,7 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
                   d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </nav>
@@ -147,7 +147,7 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
             title="Close"
             type="button"
           >
-            <span
+            <div
               class="bpk-close-button__icon"
             >
               <svg
@@ -160,7 +160,7 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
                   d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </nav>
@@ -205,7 +205,7 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
             title="Close"
             type="button"
           >
-            <span
+            <div
               class="bpk-close-button__icon"
             >
               <svg
@@ -218,7 +218,7 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
                   d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </nav>
@@ -263,7 +263,7 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
             title="Close"
             type="button"
           >
-            <span
+            <div
               class="bpk-close-button__icon"
             >
               <svg
@@ -276,7 +276,7 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
                   d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </nav>
@@ -321,7 +321,7 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
             title="Close"
             type="button"
           >
-            <span
+            <div
               class="bpk-close-button__icon"
             >
               <svg
@@ -334,7 +334,7 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
                   d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </nav>
@@ -396,7 +396,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
             title="Close"
             type="button"
           >
-            <span
+            <div
               class="bpk-close-button__icon"
             >
               <svg
@@ -409,7 +409,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
                   d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </nav>
@@ -497,7 +497,7 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
             title="Close"
             type="button"
           >
-            <span
+            <div
               class="bpk-close-button__icon"
             >
               <svg
@@ -510,7 +510,7 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
                   d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </nav>
@@ -555,7 +555,7 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
             title="Close"
             type="button"
           >
-            <span
+            <div
               class="bpk-close-button__icon"
             >
               <svg
@@ -568,7 +568,7 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
                   d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </nav>

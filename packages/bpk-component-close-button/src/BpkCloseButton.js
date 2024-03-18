@@ -54,9 +54,9 @@ const BpkCloseButton = (props: Props) => {
       className={classNames.join(' ')}
       {...rest}
     >
-      <span className={getClassName('bpk-close-button__icon')}>
+      <div className={getClassName('bpk-close-button__icon')}>
         <Icon/>
-      </span>
+      </div>
     </button>
   );
 };

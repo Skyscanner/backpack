@@ -8,11 +8,11 @@ exports[`BpkNavigationIconButton should render correctly 1`] = `
     title="test"
     type="button"
   >
-    <span
+    <div
       class="bpk-close-button__icon"
     >
       <span />
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;

@@ -25,7 +25,7 @@ exports[`BpkDrawerContent should render correctly 1`] = `
         title="Close"
         type="button"
       >
-        <span
+        <div
           class="bpk-close-button__icon"
         >
           <svg
@@ -38,7 +38,7 @@ exports[`BpkDrawerContent should render correctly 1`] = `
               d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
             />
           </svg>
-        </span>
+        </div>
       </button>
     </header>
     <div
@@ -75,7 +75,7 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
         title="Close"
         type="button"
       >
-        <span
+        <div
           class="bpk-close-button__icon"
         >
           <svg
@@ -88,7 +88,7 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
               d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
             />
           </svg>
-        </span>
+        </div>
       </button>
     </header>
     <div
@@ -125,7 +125,7 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
         title="Close"
         type="button"
       >
-        <span
+        <div
           class="bpk-close-button__icon"
         >
           <svg
@@ -138,7 +138,7 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
               d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
             />
           </svg>
-        </span>
+        </div>
       </button>
     </header>
     <div
@@ -176,7 +176,7 @@ exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] 
         title="Close"
         type="button"
       >
-        <span
+        <div
           class="bpk-close-button__icon"
         >
           <svg
@@ -189,7 +189,7 @@ exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] 
               d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
             />
           </svg>
-        </span>
+        </div>
       </button>
     </header>
     <div
@@ -226,7 +226,7 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
         title="Close"
         type="button"
       >
-        <span
+        <div
           class="bpk-close-button__icon"
         >
           <svg
@@ -239,7 +239,7 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
               d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
             />
           </svg>
-        </span>
+        </div>
       </button>
     </header>
     <div
