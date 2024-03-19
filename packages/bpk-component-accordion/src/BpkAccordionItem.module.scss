@@ -74,6 +74,9 @@
   }
 
   &__item-expand-icon {
+    display: inherit;
+    /* stylelint-disable-next-line scale-unlimited/declaration-strict-value */
+    line-height: 0;
     fill: tokens.$bpk-text-primary-day;
 
     &--flipped {
