@@ -49,7 +49,9 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
       >
         <span
           class="bpk-close-button__icon"
-        />
+        >
+          <span />
+        </span>
       </button>
     </div>
     <span
@@ -85,7 +87,9 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
       >
         <span
           class="bpk-close-button__icon"
-        />
+        >
+          <span />
+        </span>
       </button>
     </div>
   </nav>
@@ -112,7 +116,9 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
       >
         <span
           class="bpk-close-button__icon"
-        />
+        >
+          <span />
+        </span>
       </button>
     </div>
   </nav>
