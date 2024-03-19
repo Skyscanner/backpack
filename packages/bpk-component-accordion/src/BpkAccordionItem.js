@@ -143,11 +143,11 @@ const BpkAccordionItem = (props: Props) => {
                 {title}
               </BpkText>
             </span>
-            <span className={getClassName('bpk-accordion__icon-wrapper')}>
+            <div className={getClassName('bpk-accordion__icon-wrapper')}>
               <div className={iconClassNames.join(' ')}>
                 <ExpandIcon />
               </div>
-            </span>
+            </div>
           </span>
         </button>
       </dt>
