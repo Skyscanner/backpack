@@ -38,7 +38,7 @@ export type Props = {
   ...$Exact<PopoverProps>,
   target: (() => ?HTMLElement) | Node,
   isOpen: boolean,
-  placement: ?('top' | 'right' | 'bottom' | 'left'),
+  placement: ?('top' | 'right' | 'bottom' | 'left' | 'bottom-start'),
   portalStyle: ?Object,
   portalClassName: ?string,
   renderTarget: ?() => ?HTMLElement,
