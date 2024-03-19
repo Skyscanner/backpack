@@ -26,7 +26,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
               My accordion item
             </span>
           </span>
-          <span
+          <div
             class="bpk-accordion__icon-wrapper"
           >
             <div
@@ -47,7 +47,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
                 </svg>
               </span>
             </div>
-          </span>
+          </div>
         </span>
       </button>
     </dt>
@@ -95,7 +95,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
               My accordion item
             </span>
           </span>
-          <span
+          <div
             class="bpk-accordion__icon-wrapper"
           >
             <div
@@ -116,7 +116,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
                 </svg>
               </span>
             </div>
-          </span>
+          </div>
         </span>
       </button>
     </dt>
@@ -164,7 +164,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
               My accordion item
             </span>
           </span>
-          <span
+          <div
             class="bpk-accordion__icon-wrapper"
           >
             <div
@@ -185,7 +185,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
                 </svg>
               </span>
             </div>
-          </span>
+          </div>
         </span>
       </button>
     </dt>
