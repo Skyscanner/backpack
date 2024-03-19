@@ -31,7 +31,7 @@ exports[`BpkBottomSheet renders correctly with action props 1`] = `
                 title=""
                 type="button"
               >
-                <div
+                <span
                   class="bpk-close-button__icon"
                 >
                   <svg
@@ -44,7 +44,7 @@ exports[`BpkBottomSheet renders correctly with action props 1`] = `
                       d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                     />
                   </svg>
-                </div>
+                </span>
               </button>
             </div>
             <span
@@ -105,7 +105,7 @@ exports[`BpkBottomSheet renders correctly with minimum prop 1`] = `
                 title=""
                 type="button"
               >
-                <div
+                <span
                   class="bpk-close-button__icon"
                 >
                   <svg
@@ -118,7 +118,7 @@ exports[`BpkBottomSheet renders correctly with minimum prop 1`] = `
                       d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                     />
                   </svg>
-                </div>
+                </span>
               </button>
             </div>
             <span
@@ -169,7 +169,7 @@ exports[`BpkBottomSheet renders correctly with wide prop 1`] = `
                 title=""
                 type="button"
               >
-                <div
+                <span
                   class="bpk-close-button__icon"
                 >
                   <svg
@@ -182,7 +182,7 @@ exports[`BpkBottomSheet renders correctly with wide prop 1`] = `
                       d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
                     />
                   </svg>
-                </div>
+                </span>
               </button>
             </div>
             <span

@@ -25,7 +25,7 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
           title="bpk-modal-button-close"
           type="button"
         >
-          <div
+          <span
             class="bpk-close-button__icon"
           >
             <svg
@@ -38,7 +38,7 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
                 d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
               />
             </svg>
-          </div>
+          </span>
         </button>
       </div>
       <div
@@ -83,7 +83,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
           title="bpk-modal-button-close"
           type="button"
         >
-          <div
+          <span
             class="bpk-close-button__icon"
           >
             <svg
@@ -96,7 +96,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
                 d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
               />
             </svg>
-          </div>
+          </span>
         </button>
       </div>
       <div
