@@ -31,8 +31,8 @@ import STYLES from './BpkInput.module.scss';
 const getClassName = cssModules(STYLES);
 
 const KEYCODES = {
-  ENTER: 13,
-  SPACEBAR: 32,
+  ENTER: 'Enter',
+  SPACEBAR: 'Space',
 } as const;
 
 export type WithOpenEventsProps = {
@@ -67,15 +67,14 @@ type EventHandlers = {
 type InputProps = ComponentProps<'input'> &
   Omit<EventHandlers, 'readOnly' | 'aria-readonly'>;
 
-const handleKeyEvent =
-  (keyCode: number, callback?: () => void) => (e: UIEvent) => {
-    if (e instanceof KeyboardEvent && e.keyCode === keyCode) {
-      e.preventDefault();
-      if (callback) {
-        callback();
-      }
+const handleKeyEvent = (callback?: () => void) => (e: KeyboardEvent) => {
+  if (e.code === KEYCODES.ENTER || e.code === KEYCODES.SPACEBAR) {
+    e.preventDefault();
+    if (callback) {
+      callback();
     }
-  };
+  }
+};
 
 const withEventHandler =
   (fn?: (e: UIEvent) => void, eventHandler?: (e: UIEvent) => void) =>
@@ -168,14 +167,9 @@ const withOpenEvents = <P extends object>(InputComponent: ComponentType<P>) => {
 
       const eventHandlers: EventHandlers = {
         onClick: withEventHandler(onOpen, onClick),
-        onKeyDown: withEventHandler(
-          handleKeyEvent(KEYCODES.ENTER, onOpen),
-          onKeyDown,
-        ),
-        onKeyUp: withEventHandler(
-          handleKeyEvent(KEYCODES.SPACEBAR, onOpen),
-          onKeyUp,
-        ),
+        // @ts-expect-error for some reason the type KeyboardEvent was not being recognized as
+        // a valid type to UIEvent even though it is a valid subtype type of UIEvent
+        onKeyDown: withEventHandler(handleKeyEvent(onOpen), onKeyDown),
       };
 
       if (hasTouchSupport) {

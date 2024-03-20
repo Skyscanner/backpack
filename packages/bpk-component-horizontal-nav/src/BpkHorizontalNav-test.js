@@ -80,10 +80,29 @@ describe('BpkHorizontalNav', () => {
       <BpkHorizontalNav
         data-arbitrary-1="arbirary-value-1"
         data-arbitrary-2="arbirary-value-2"
+        ariaLabel="nav content"
       >
         My nav content.
       </BpkHorizontalNav>,
     );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with "ariaLabel" prop', () => {
+    const { asFragment } = render(
+      <BpkHorizontalNav ariaLabel="nav content">
+        My nav content.
+      </BpkHorizontalNav>
+    )
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with "ariaLabel" prop set to null', () => {
+    const { asFragment } = render(
+      <BpkHorizontalNav ariaLabel={null}>
+        My nav content.
+      </BpkHorizontalNav>
+    )
     expect(asFragment()).toMatchSnapshot();
   });
 });

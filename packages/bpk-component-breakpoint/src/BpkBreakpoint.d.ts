@@ -18,26 +18,33 @@
 
 import type { ReactNode } from 'react';
 declare const BREAKPOINTS: {
-    readonly SMALL_MOBILE: any;
-    readonly MOBILE: any;
-    readonly SMALL_TABLET: any;
-    readonly SMALL_TABLET_ONLY: any;
-    readonly TABLET: any;
-    readonly TABLET_ONLY: any;
-    readonly ABOVE_MOBILE: any;
-    readonly ABOVE_TABLET: any;
-    readonly ABOVE_DESKTOP: any;
-    readonly DESKTOP_ONLY: any;
+  readonly SMALL_MOBILE: any;
+  readonly MOBILE: any;
+  readonly SMALL_TABLET: any;
+  readonly SMALL_TABLET_ONLY: any;
+  readonly TABLET: any;
+  readonly TABLET_ONLY: any;
+  readonly ABOVE_MOBILE: any;
+  readonly ABOVE_TABLET: any;
+  readonly ABOVE_DESKTOP: any;
+  readonly DESKTOP_ONLY: any;
 };
 type Props = {
-    /**
-     * The content to render when the breakpoint matches.
-     */
-    children: ReactNode | ((matches: boolean) => ReactNode | null);
-    query: string | (typeof BREAKPOINTS)[keyof typeof BREAKPOINTS];
-    legacy?: boolean;
-    matchSSR?: boolean;
+  /**
+   * The content to render when the breakpoint matches.
+   */
+  children: ReactNode | ((matches: boolean) => ReactNode | null);
+  query: string | (typeof BREAKPOINTS)[keyof typeof BREAKPOINTS];
+  legacy?: boolean;
+  matchSSR?: boolean;
 };
-declare const BpkBreakpoint: ({ children, legacy, query }: Props) => JSX.Element;
-export { BREAKPOINTS };
+declare const BpkBreakpoint: ({
+  children,
+  legacy,
+  query,
+}: Props) => JSX.Element;
+
+declare const useMediaQuery: (query: string) => boolean;
+
+export { BREAKPOINTS, useMediaQuery };
 export default BpkBreakpoint;
