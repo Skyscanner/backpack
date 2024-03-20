@@ -113,36 +113,31 @@ const BpkLoadingButton = (props: LoadingProps) => {
   const loadingIcon = getLoadingIcon(props);
 
   const classNames = getClassName(
-    loading && 'bpk-loading-button',
-    loading && (link || linkOnDark) && 'bpk-loading-button--link',
     className,
   );
 
   const iconClassNames = getClassName(
     'bpk-loading-button__icon',
-    large && 'bpk-loading-button__icon--large',
-    iconOnly &&
-      (large
-        ? 'bpk-loading-button__icon--large-icon-only'
-        : 'bpk-loading-button__icon--icon-only'),
     (link || linkOnDark) && 'bpk-loading-button__icon--link',
   );
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkButton
+      className={classNames}
       iconOnly={iconOnly}
       disabled={showBtnDisabled}
       large={large}
-      className={classNames}
       link={link}
       linkOnDark={linkOnDark}
       {...rest}
     >
       {loading && <span className={iconClassNames}>{loadingIcon}</span>}
+      <span className={loading && STYLES["content-invisible"]}>
       {child0}
       {child1}
       {child2}
+      </span>
     </BpkButton>
   );
 };
