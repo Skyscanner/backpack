@@ -15,12 +15,16 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
         type="button"
       >
         <span
-          class="bpk-accordion__flex-container bpk-accordion__title-text"
+          class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--body-default"
+            class="bpk-accordion__title-text"
           >
-            My accordion item
+            <span
+              class="bpk-text bpk-text--body-default"
+            >
+              My accordion item
+            </span>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
@@ -76,12 +80,16 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         type="button"
       >
         <span
-          class="bpk-accordion__flex-container bpk-accordion__title-text"
+          class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--body-default"
+            class="bpk-accordion__title-text"
           >
-            My accordion item
+            <span
+              class="bpk-text bpk-text--body-default"
+            >
+              My accordion item
+            </span>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
@@ -137,12 +145,16 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         type="button"
       >
         <span
-          class="bpk-accordion__flex-container bpk-accordion__title-text"
+          class="bpk-accordion__flex-container"
         >
           <span
-            class="bpk-text bpk-text--body-default"
+            class="bpk-accordion__title-text"
           >
-            My accordion item
+            <span
+              class="bpk-text bpk-text--body-default"
+            >
+              My accordion item
+            </span>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
