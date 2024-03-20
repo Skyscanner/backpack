@@ -49,6 +49,7 @@ const BpkSelectableChip = ({
     `bpk-chip--${type}`,
     disabled && 'bpk-chip--disabled',
     disabled && `bpk-chip--${type}-disabled`,
+    !children && 'bpk-chip--icon-only',
     !disabled && selected && `bpk-chip--${type}-selected`,
     className,
   );

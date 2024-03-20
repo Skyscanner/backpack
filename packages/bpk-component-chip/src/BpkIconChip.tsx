@@ -24,33 +24,20 @@ to match.
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-
 import BpkSelectableChip from './BpkSelectableChip';
 import type { CommonProps as Props } from './commonTypes';
-import STYLES from './BpkSelectableChip.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type BpkIconChipProps = {
   leadingAccessoryView: ReactNode;
 } & Omit<Props, 'trailingAccessoryView' | 'leadingAccessoryView' | 'children'>;
 
-const BpkIconChip = ({
- className,
- ...rest
-}: BpkIconChipProps) => {
-  const classNames = getClassName(`bpk-chip--icon-only`, className);
-
-  return (
+const BpkIconChip = (props: BpkIconChipProps) => (
     <BpkSelectableChip
-      {...rest}
-      className={classNames}
+      {...props}
       trailingAccessoryView={null}
     >
       {null}
     </BpkSelectableChip>
   );
-};
 
 export default BpkIconChip;
