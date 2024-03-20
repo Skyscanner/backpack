@@ -16,8 +16,27 @@
  * limitations under the License.
  */
 
-import BpkBreakpoint, { BREAKPOINTS } from './src/BpkBreakpoint';
-import useMediaQuery from './src/useMediaQuery';
+import { useState, useEffect } from 'react';
 
-export { BREAKPOINTS, useMediaQuery };
-export default BpkBreakpoint;
+const useMediaQuery = (query: string): boolean => {
+  const [matches, setMatches] = useState(
+    window.matchMedia ? window.matchMedia(query).matches : false,
+  );
+
+  useEffect(() => {
+    if (window.matchMedia) {
+      const media = window.matchMedia(query);
+      setMatches(media.matches);
+      const listener = () => {
+        setMatches(media.matches);
+      };
+      media.addEventListener('change', listener);
+      return () => media.removeEventListener('change', listener);
+    }
+    return undefined;
+  }, [query]);
+
+  return matches;
+};
+
+export default useMediaQuery;
