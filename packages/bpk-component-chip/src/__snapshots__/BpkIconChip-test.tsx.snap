@@ -129,7 +129,7 @@ exports[`BpkIconChip should render correctly with type="default" and selected 1`
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--icon-only"
+    class="bpk-chip bpk-chip--default bpk-chip--icon-only bpk-chip--default-selected"
     role="checkbox"
     title="Filter"
     type="button"
@@ -255,7 +255,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" and selected 1`
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--icon-only"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--icon-only bpk-chip--on-dark-selected"
     role="checkbox"
     title="Filter"
     type="button"
@@ -381,7 +381,7 @@ exports[`BpkIconChip should render correctly with type="on-image" and selected 1
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--icon-only"
+    class="bpk-chip bpk-chip--on-image bpk-chip--icon-only bpk-chip--on-image-selected"
     role="checkbox"
     title="Filter"
     type="button"

@@ -27,7 +27,8 @@ import {
   AllSelectableChipsExample,
   AllDropdownChipsExample,
   AllDismissibleChipsExample,
-  RadioGroupChipsExample, AllIconChipsExample,
+  RadioGroupChipsExample,
+  AllIconChipsExample,
 } from './examples';
 
 export default {

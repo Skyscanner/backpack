@@ -83,7 +83,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--default"
+    class="bpk-chip bpk-chip--default bpk-chip--icon-only"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -262,7 +262,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--on-dark"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--icon-only"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -441,7 +441,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--on-image"
+    class="bpk-chip bpk-chip--on-image bpk-chip--icon-only"
     role="checkbox"
     title="Toggle"
     type="button"
