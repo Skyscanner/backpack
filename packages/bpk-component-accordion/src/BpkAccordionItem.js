@@ -127,25 +127,25 @@ const BpkAccordionItem = (props: Props) => {
     <div id={id} {...rest}>
       <dt className={titleClassNames.join(' ')}>
         <button
-            type="button"
-            aria-expanded={expanded}
-            aria-controls={contentId}
-            onClick={onClick}
-            className={getClassName('bpk-accordion__toggle-button')}
-          >
-            <span className={`${getClassName('bpk-accordion__flex-container')} ${titleTextClassNames.join(' ')}`}>
-              <BpkText
-                textStyle={textStyle}
-                tagName={tagName}
-              >
-                {clonedIcon}
-                {title}
-              </BpkText>
-              <span className={`${getClassName('bpk-accordion__icon-wrapper')} ${iconClassNames.join(' ')}`}>
-                <ExpandIcon/>
+          type="button"
+          aria-expanded={expanded}
+          aria-controls={contentId}
+          onClick={onClick}
+          className={getClassName('bpk-accordion__toggle-button')}
+        >
+          <span className={`${getClassName('bpk-accordion__flex-container')} ${titleTextClassNames.join(' ')}`}>
+            <BpkText
+              textStyle={textStyle}
+              tagName={tagName}
+            >
+              {clonedIcon}
+              {title}
+            </BpkText>
+            <span className={`${getClassName('bpk-accordion__icon-wrapper')} ${iconClassNames.join(' ')}`}>
+              <ExpandIcon/>
               </span>
-            </span>
-          </button>
+          </span>
+        </button>
       </dt>
       <dd id={contentId} className={contentClassNames.join(' ')}>
         <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
