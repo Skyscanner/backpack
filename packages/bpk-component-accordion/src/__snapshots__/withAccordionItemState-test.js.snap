@@ -15,22 +15,21 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
         type="button"
       >
         <span
-          class="bpk-accordion__flex-container"
+          class="bpk-accordion__flex-container bpk-accordion__title-text"
         >
           <span
-            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default"
           >
             My accordion item
           </span>
           <span
-            class="bpk-accordion__icon-wrapper"
+            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
           >
             <span
               style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 aria-hidden="true"
-                class="bpk-accordion__item-expand-icon"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,22 +76,21 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         type="button"
       >
         <span
-          class="bpk-accordion__flex-container"
+          class="bpk-accordion__flex-container bpk-accordion__title-text"
         >
           <span
-            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default"
           >
             My accordion item
           </span>
           <span
-            class="bpk-accordion__icon-wrapper"
+            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
           >
             <span
               style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 aria-hidden="true"
-                class="bpk-accordion__item-expand-icon"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,22 +137,21 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         type="button"
       >
         <span
-          class="bpk-accordion__flex-container"
+          class="bpk-accordion__flex-container bpk-accordion__title-text"
         >
           <span
-            class="bpk-text bpk-text--body-default bpk-accordion__title-text"
+            class="bpk-text bpk-text--body-default"
           >
             My accordion item
           </span>
           <span
-            class="bpk-accordion__icon-wrapper"
+            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
           >
             <span
               style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
             >
               <svg
                 aria-hidden="true"
-                class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
                 style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
