@@ -19,14 +19,14 @@
 import { useEffect, useState } from 'react';
 
 const useMediaQuery = (query: string, matchSSR = false): boolean => {
-  const isClient = typeof window !== 'undefined' && window.matchMedia;
+  const isClient = typeof window !== 'undefined' && !!window.matchMedia;
 
   const [matches, setMatches] = useState(
     isClient ? window.matchMedia(query).matches : matchSSR,
   );
 
   useEffect(() => {
-    if (window.matchMedia) {
+    if (isClient) {
       const media = window.matchMedia(query);
       setMatches(media.matches);
       const listener = () => {
@@ -36,7 +36,7 @@ const useMediaQuery = (query: string, matchSSR = false): boolean => {
       return () => media.removeEventListener('change', listener);
     }
     return undefined;
-  }, [query]);
+  }, [query, isClient]);
 
   return matches;
 };
