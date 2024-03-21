@@ -24,7 +24,7 @@
 @use '../../unstable__bpk-mixins/typography';
 
 .headerText {
-  margin-top: inherit;
+  margin-top: 0;
   margin-bottom: tokens.bpk-spacing-base();
 
   @include typography.bpk-heading-2;
