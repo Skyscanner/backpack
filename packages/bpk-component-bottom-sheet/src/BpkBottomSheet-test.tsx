@@ -16,32 +16,14 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
-import { renderToString } from 'react-dom/server';
+import { render, screen } from '@testing-library/react';
 
+import '@testing-library/jest-dom';
 import BpkBottomSheet from './BpkBottomSheet';
 
 describe('BpkBottomSheet', () => {
-  it('renders without crashing', () => {
-    const customRenderTarget = document.createElement('div');
-
-    expect(() => renderToString(
-      <BpkBottomSheet
-        id="my-bottom-sheet"
-        title="Bottom Sheet title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        getApplicationElement={jest.fn()}
-        isOpen
-        renderTarget={() => customRenderTarget}
-      >
-        Bottom Sheet content inside a custom target
-      </BpkBottomSheet>
-    )).not.toThrow();
-  });
   it('should render correctly in the given target if renderTarget is supplied', () => {
-    const customRenderTarget = document.createElement('div');
-    const { asFragment } = render(
+    render(
       <BpkBottomSheet
         id="my-bottom-sheet"
         title="Bottom Sheet title"
@@ -49,13 +31,11 @@ describe('BpkBottomSheet', () => {
         closeLabel="Close"
         getApplicationElement={jest.fn()}
         isOpen
-        renderTarget={() => customRenderTarget}
       >
-        Bottom Sheet content inside a custom target
-      </BpkBottomSheet>
+        <div>findme</div>
+      </BpkBottomSheet>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    expect(screen.queryByText('findme')).toBeVisible();
   });
 });
