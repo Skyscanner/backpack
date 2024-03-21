@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const useMediaQuery = (query: string): boolean => {
+const useMediaQuery = (query: string, matchSSR = false): boolean => {
+  const isClient = typeof window !== 'undefined' && window.matchMedia;
+
   const [matches, setMatches] = useState(
-    window.matchMedia ? window.matchMedia(query).matches : false,
+    isClient ? window.matchMedia(query).matches : matchSSR,
   );
 
   useEffect(() => {
