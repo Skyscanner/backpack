@@ -15,46 +15,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { SyntheticEvent, ReactNode } from "react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
-import BpkBreakpoint, { BREAKPOINTS } from "../../bpk-component-breakpoint";
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkButtonLink } from '../../bpk-component-link';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkCloseButton from '../../bpk-component-close-button';
-import { BpkDialogWrapper, cssModules } from "../../bpk-react-utils";
-import BpkNavigationBar from "../../bpk-component-navigation-bar";
-import BpkText, { TEXT_STYLES } from "../../bpk-component-text/src/BpkText";
+import { Portal, cssModules } from "../../bpk-react-utils";
+import { withScrim } from "../../bpk-scrim-utils";
 
 import STYLES from './BpkBottomSheet.module.scss';
+import BpkBottomSheetInner from "./BpkBottomSheetInner";
+
 
 const getClassName = cssModules(STYLES);
+const ScrimBpkBottomSheetInner = withScrim(BpkBottomSheetInner)
 
 export type Props = {
   actionText?: string;
-  ariaLabelledby: string;
   children: ReactNode;
   closeLabel?: string;
   closeOnEscPressed?: boolean;
   closeOnScrimClick?: boolean;
   id: string;
+  isOpen: boolean;
   onAction?: () => void;
   onClose: (
-    arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
+    arg0?: TouchEvent | MouseEvent | KeyboardEvent,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void;
   title?: string;
   wide?: boolean;
-  isOpen: boolean;
+  getApplicationElement: () => HTMLElement | null;
+  renderTarget?: null | HTMLElement | (() => null | HTMLElement);
 }
 
 const BpkBottomSheet = ({
   actionText = '',
-  ariaLabelledby,
-  children,
   closeLabel = '',
   closeOnEscPressed = false,
   closeOnScrimClick = false,
@@ -62,89 +57,44 @@ const BpkBottomSheet = ({
   isOpen,
   onAction = () => null,
   onClose,
+  renderTarget,
   title = '',
-  wide = false
+  wide = false,
+  ...rest
 }: Props) => {
-  const [exiting, setExiting] = useState(false);
-
-  const animationTimeout = 240;
-
+  const [ exiting, setExitting ] = useState(false);
   const handleClose = (
-    timeout: number,
-    arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
+    arg0?: TouchEvent | MouseEvent | KeyboardEvent,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
-  ) => {
-    setExiting(true)
+) => {
+    setExitting(true)
     setTimeout(() => {
       onClose(arg0, arg1)
-      setExiting(false)
-    }, timeout)
+      setExitting(false)
+    }, 240)
   }
-
-  const headingId = `bpk-bottom-sheet-heading-${id}`;
-  const dialogClassName = getClassName(
-    'bpk-bottom-sheet',
-    wide && 'bpk-bottom-sheet--wide'
-    );
-
-    return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
-      {(isAboveMobile: boolean) =>
-      <BpkDialogWrapper
-      ariaLabelledby={ariaLabelledby}
-      dialogClassName={dialogClassName}
-      id={id}
+  return  <Portal
       isOpen={isOpen}
-      onClose={(
-        arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
-        arg1?: {
-          source: 'ESCAPE' | 'DOCUMENT_CLICK';
-        }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
-      exiting={exiting}
-      transitionClassNames={{
-        appear: getClassName('bpk-bottom-sheet--appear'),
-        appearActive: getClassName('bpk-bottom-sheet--appear-active'),
-        exit: getClassName('bpk-bottom-sheet--exit')
-      }}
+      onClose={handleClose}
       closeOnEscPressed={closeOnEscPressed}
-      closeOnScrimClick={closeOnScrimClick}
-      timeout={{appear: animationTimeout, exit: isAboveMobile ? 0 : animationTimeout}}
+      renderTarget={renderTarget}
       >
-      <>
-        <header className={getClassName('bpk-bottom-sheet--header')}>
-          <BpkNavigationBar
-            id={headingId}
-            title={title &&
-              <BpkText id={headingId} textStyle={TEXT_STYLES.label1} tagName="h2">{title}</BpkText>
-            }
-            leadingButton={
-              <BpkCloseButton
-                label={closeLabel}
-                onClick={(
-                  arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
-                  arg1?: {
-                    source: 'ESCAPE' | 'DOCUMENT_CLICK';
-                  }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
-              />
-            }
-            trailingButton={
-              actionText && onAction ? (
-                <BpkButtonLink
-                  onClick={onAction}
-                >
-                  {actionText}
-                </BpkButtonLink>
-              ) :
-              null
-            }
-          />
-        </header>
-        <div className={getClassName('bpk-bottom-sheet--content')}>{children}</div>
-    </>
-    </BpkDialogWrapper>
-  }
-  </BpkBreakpoint>
+      <ScrimBpkBottomSheetInner
+        id={id}
+        onClose={handleClose}
+        closeOnScrimClick={closeOnScrimClick}
+        containerClassName={getClassName('bpk-bottom-sheet--container')}
+        title={title}
+        closeLabel={closeLabel}
+        actionText={actionText}
+        onAction={onAction}
+        wide={wide}
+        exiting={exiting}
+        {...rest}
+      />
+    </Portal>
 }
 
-export default BpkBottomSheet;
+export default BpkBottomSheet

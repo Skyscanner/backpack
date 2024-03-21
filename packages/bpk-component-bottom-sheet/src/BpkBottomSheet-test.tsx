@@ -16,26 +16,46 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
+import { renderToString } from 'react-dom/server';
 
 import BpkBottomSheet from './BpkBottomSheet';
 
 describe('BpkBottomSheet', () => {
-  it('renders correctly with action props', () => {
-    render(
+  it('renders without crashing', () => {
+    const customRenderTarget = document.createElement('div');
+
+    expect(() => renderToString(
       <BpkBottomSheet
-        ariaLabelledby="bottom-sheet"
-        actionText="Action"
         id="my-bottom-sheet"
-        isOpen
-        onAction={jest.fn()}
+        title="Bottom Sheet title"
         onClose={jest.fn()}
-        wide
+        closeLabel="Close"
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
       >
-        <div>findme</div>
-      </BpkBottomSheet>,
+        Bottom Sheet content inside a custom target
+      </BpkBottomSheet>
+    )).not.toThrow();
+  });
+  it('should render correctly in the given target if renderTarget is supplied', () => {
+    const customRenderTarget = document.createElement('div');
+    const { asFragment } = render(
+      <BpkBottomSheet
+        id="my-bottom-sheet"
+        title="Bottom Sheet title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
+      >
+        Bottom Sheet content inside a custom target
+      </BpkBottomSheet>
     );
-    expect(screen.queryByText('findme')).toBeVisible();
+
+    expect(asFragment()).toMatchSnapshot();
+    expect(customRenderTarget).toMatchSnapshot();
   });
 });

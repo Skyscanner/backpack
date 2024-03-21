@@ -16,17 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/breakpoints';
-
-.bpk-bottom-sheet {
-  &--container {
-    display: flex;
-    padding: tokens.bpk-spacing-lg();
-
-    @include breakpoints.bpk-breakpoint-mobile {
-      padding: 0;
-      overflow: hidden;
-    }
-  }
-}
+import type { ReactNode } from 'react';
+export type Props = {
+  children: ReactNode;
+  closeLabel?: string;
+  dialogRef: (ref: HTMLElement | null | undefined) => void;
+  id: string;
+  onClose: () => void;
+  title?: string;
+};
+declare const BpkBottomSheetInner: ({ children, closeLabel, dialogRef, id, onClose, title, }: Props) => JSX.Element;
+export default BpkBottomSheetInner;

@@ -29,7 +29,6 @@ import {
 } from './src/deviceDetection';
 import withDefaultProps from './src/withDefaultProps';
 import isRTL from './src/isRTL';
-import{ BpkDialogWrapper } from './src/BpkDialogWrapper/BpkDialogWrapper';
 
 export {
   Portal,
@@ -42,7 +41,6 @@ export {
   isDeviceIpad,
   isDeviceIos,
   isRTL,
-  BpkDialogWrapper
 };
 export default {
   Portal,
@@ -55,5 +53,4 @@ export default {
   isDeviceIpad,
   isDeviceIos,
   isRTL,
-  BpkDialogWrapper
 };

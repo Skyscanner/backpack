@@ -15,18 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ReactNode } from 'react';
+
+import type { ReactNode } from 'react';
 import type { Props as BottomSheetProps } from './BpkBottomSheet';
 export type Props = Partial<BottomSheetProps> & {
-  actionText?: string;
-  ariaLabelledby: string;
   children: ReactNode;
   closeLabel?: string;
   closeOnEscPressed?: boolean;
   closeOnScrimClick?: boolean;
   id: string;
   isOpen: boolean;
-  onAction?: () => void;
   onClose: (
     arg0?: TouchEvent | MouseEvent | KeyboardEvent,
     arg1?: {
@@ -34,7 +32,14 @@ export type Props = Partial<BottomSheetProps> & {
     },
   ) => void;
   title?: string;
-  wide?: boolean;
+  /**
+   * Because this component uses a modal on mobile viewports, you need to let it know what
+   * the root element of your application is by returning its DOM node via this prop
+   * This is to "hide" your application from screen readers whilst the modal is open.
+   * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
+  */
+  getApplicationElement: () => HTMLElement | null;
+  renderTarget?: null | HTMLElement | (() => null | HTMLElement);
 };
-declare const BpkBottomSheet: ({ actionText, ariaLabelledby, children, closeLabel, closeOnEscPressed, closeOnScrimClick, id, isOpen, onAction, onClose, title, wide, ...rest }: Props) => JSX.Element;
+declare const BpkBottomSheet: ({ closeLabel, closeOnEscPressed, closeOnScrimClick, id, isOpen, onClose, title, renderTarget, ...rest }: Props) => JSX.Element;
 export default BpkBottomSheet;

@@ -23,21 +23,21 @@ import BpkBottomSheet from './BpkBottomSheet';
 
 describe('BpkBottomSheet accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
+    const customRenderTarget = document.createElement('div');
+
     const { container } = render(
       <BpkBottomSheet
-        actionText='Action'
-        ariaLabelledby='bottom-sheet-accessibility'
-        closeLabel="Close"
-        closeOnEscPressed
-        closeOnScrimClick
         id="my-bottom-sheet"
-        isOpen
-        onAction={jest.fn()}
-        onClose={jest.fn()}
         title="Bottom sheet title"
-        wide
+        onClose={jest.fn()}
+        closeLabel="Close"
+        actionText='Action'
+        onAction={jest.fn()}
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
       >
-        Bottom sheet content
+        Bottom sheet content inside a custom target
       </BpkBottomSheet>,
     );
     const results = await axe(container);

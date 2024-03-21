@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkBottomSheetInner should render correctly 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
+    class="bpk-bottom-sheet"
+    id="my-bottom-sheet"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-bottom-sheet--header"
+    >
+      <nav
+        aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-bottom-sheet--navigation"
+      >
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-close-button__icon"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+        <h2
+          class="bpk-bottom-sheet--heading"
+          id="bpk-bottom-sheet-heading-my-bottom-sheet"
+        >
+          Bottom sheet title
+        </h2>
+        <div
+          class="bpk-bottom-sheet--action-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
+        />
+      </nav>
+    </header>
+    <div
+      class="bpk-bottom-sheet--content"
+    >
+      Bottom sheet content
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkBottomSheetInner should render correctly with actionText prop 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
+    class="bpk-bottom-sheet"
+    id="my-bottom-sheet"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-bottom-sheet--header"
+    >
+      <nav
+        aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-bottom-sheet--navigation"
+      >
+        <button
+          aria-label=""
+          class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+          title=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-close-button__icon"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+        <h2
+          class="bpk-bottom-sheet--heading"
+          id="bpk-bottom-sheet-heading-my-bottom-sheet"
+        >
+          Bottom sheet title
+        </h2>
+        <button
+          class="bpk-link bpk-bottom-sheet--action-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
+          type="button"
+        >
+          Dismiss
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-bottom-sheet--content"
+    >
+      Bottom sheet content
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkBottomSheetInner should render correctly with wide prop 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
+    class="bpk-bottom-sheet bpk-bottom-sheet--wide"
+    id="my-bottom-sheet"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-bottom-sheet--header"
+    >
+      <nav
+        aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-bottom-sheet--navigation"
+      >
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-close-button__icon"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+        <h2
+          class="bpk-bottom-sheet--heading"
+          id="bpk-bottom-sheet-heading-my-bottom-sheet"
+        >
+          Bottom sheet title
+        </h2>
+        <div
+          class="bpk-bottom-sheet--action-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
+        />
+      </nav>
+    </header>
+    <div
+      class="bpk-bottom-sheet--content"
+    >
+      Bottom sheet content
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkBottomSheetInner should render correctly without title prop 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet"
+    class="bpk-bottom-sheet"
+    id="my-bottom-sheet"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-bottom-sheet--header"
+    >
+      <nav
+        aria-labelledby="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
+        class="bpk-navigation-bar bpk-navigation-bar--default bpk-bottom-sheet--navigation"
+      >
+        <button
+          aria-label=""
+          class="bpk-close-button bpk-bottom-sheet--close-button bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+          title=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="bpk-close-button__icon"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+        <span
+          class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
+          id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
+        />
+        <button
+          class="bpk-link bpk-bottom-sheet--action-button bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item--default"
+          type="button"
+        >
+          Dismiss
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-bottom-sheet--content"
+    >
+      Bottom sheet content
+    </div>
+  </section>
+</DocumentFragment>
+`;
