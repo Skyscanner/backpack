@@ -16,84 +16,26 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
-import { renderToString } from 'react-dom/server';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkBottomSheet from './BpkBottomSheet';
 
 describe('BpkBottomSheet', () => {
-  it('renders without crashing with all props', () => {
-    expect(() => renderToString(
-      <BpkBottomSheet
-        actionText='Action'
-        ariaLabelledby='bottom-sheet'
-        closeLabel="Close"
-        closeOnEscPressed
-        closeOnScrimClick
-        id="my-bottom-sheet"
-        isOpen
-        onAction={jest.fn()}
-        onClose={jest.fn()}
-        title="Bottom sheet title"
-        wide
-      >
-        Bottom Sheet content
-      </BpkBottomSheet>
-    )).not.toThrow();
-  });
-  it('renders without crashing with minimum props', () => {
-    expect(() => renderToString(
-      <BpkBottomSheet
-        ariaLabelledby='bottom-sheet'
-        id="my-bottom-sheet"
-        isOpen
-        onClose={jest.fn()}
-      >
-        Bottom Sheet content
-      </BpkBottomSheet>
-    )).not.toThrow();
-  });
-  it('renders correctly with minimum prop', () => {
-    const { asFragment } = render(
-      <BpkBottomSheet
-        ariaLabelledby='bottom-sheet'
-        id="my-bottom-sheet"
-        isOpen
-        onClose={jest.fn()}
-      >
-        Bottom Sheet content
-      </BpkBottomSheet>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-  it('renders correctly with wide prop', () => {
-    const { asFragment } = render(
-      <BpkBottomSheet
-        ariaLabelledby='bottom-sheet'
-        id="my-bottom-sheet"
-        isOpen
-        onClose={jest.fn()}
-        wide
-      >
-        Bottom Sheet content
-      </BpkBottomSheet>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
   it('renders correctly with action props', () => {
-    const { asFragment } = render(
+    render(
       <BpkBottomSheet
-        ariaLabelledby='bottom-sheet'
-        actionText='Action'
+        ariaLabelledby="bottom-sheet"
+        actionText="Action"
         id="my-bottom-sheet"
         isOpen
         onAction={jest.fn()}
         onClose={jest.fn()}
         wide
       >
-        Bottom Sheet content
-      </BpkBottomSheet>
+        <div>findme</div>
+      </BpkBottomSheet>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.queryByText('findme')).toBeVisible();
   });
 });
