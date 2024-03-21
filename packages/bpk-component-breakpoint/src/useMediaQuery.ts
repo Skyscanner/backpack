@@ -16,17 +16,15 @@
  * limitations under the License.
  */
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const useMediaQuery = (query: string, matchSSR = false): boolean => {
-  const isClient = typeof window !== 'undefined' && !!window.matchMedia;
-
+const useMediaQuery = (query: string): boolean => {
   const [matches, setMatches] = useState(
-    isClient ? window.matchMedia(query).matches : matchSSR,
+    window.matchMedia ? window.matchMedia(query).matches : false,
   );
 
   useEffect(() => {
-    if (isClient) {
+    if (window.matchMedia) {
       const media = window.matchMedia(query);
       setMatches(media.matches);
       const listener = () => {
@@ -36,7 +34,7 @@ const useMediaQuery = (query: string, matchSSR = false): boolean => {
       return () => media.removeEventListener('change', listener);
     }
     return undefined;
-  }, [query, isClient]);
+  }, [query]);
 
   return matches;
 };

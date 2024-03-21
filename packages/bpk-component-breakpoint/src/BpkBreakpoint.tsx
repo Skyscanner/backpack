@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import { useState, useEffect } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { breakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -51,18 +52,32 @@ const BpkBreakpoint = ({
   matchSSR = false,
   query,
 }: Props) => {
-  const matches = useMediaQuery(query, matchSSR);
+  const [isClient, setIsClient] = useState(false);
+  const matches = useMediaQuery(query);
 
-  if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
-    console.warn(
-      `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
-    );
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (isClient) {
+    if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
+      console.warn(
+        `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
+      );
+    }
+
+    if (typeof children === 'function') {
+      return children(matches) as ReactElement;
+    }
+    return matches ? (children as ReactElement) : null;
   }
+
+  // Below code is executed when running in SSR mode
 
   if (typeof children === 'function') {
-    return children(matches) as ReactElement;
+    return children(matchSSR);
   }
-  return matches ? (children as ReactElement) : null;
+  return matchSSR ? children : null;
 };
 
 export { BREAKPOINTS };
