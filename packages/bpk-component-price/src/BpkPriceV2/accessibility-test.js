@@ -17,9 +17,22 @@
  */
 /* @flow strict */
 
-import BpkPriceV2 from './src/BpkPriceV2/BpkPrice';
-import BpkPrice from './src/BpkPrice';
-import { SIZES, ALIGNS } from './src/common-types';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-export default BpkPrice;
-export { SIZES, ALIGNS, BpkPriceV2 };
+import BpkPrice from './BpkPrice';
+
+describe('BpkPrice accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkPrice
+        price="£1,830"
+        previousPrice="£2,000"
+        leadingText="Web only deal"
+        trailingText="per day"
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
