@@ -23,11 +23,18 @@
 @use '../../unstable__bpk-mixins/breakpoints';
 @use '../../unstable__bpk-mixins/typography';
 
-.bpk-content-cards {
-  &--header {
-    margin-bottom: tokens.bpk-spacing-base();
-  }
+.headerText {
+  margin-top: inherit;
+  margin-bottom: tokens.bpk-spacing-base();
 
+  @include typography.bpk-heading-2;
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    @include typography.bpk-heading-3;
+  }
+}
+
+.bpk-content-cards {
   &--layout {
     display: grid;
     grid-template-columns: repeat(

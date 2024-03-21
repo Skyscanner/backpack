@@ -17,13 +17,7 @@
  */
 /* eslint react/no-array-index-key: 0 */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
-import BpkBreakpoint, {
-  BREAKPOINTS,
-} from "../../bpk-component-breakpoint";
 
 import BpkContentCard from './BpkContentCard';
 import STYLES from './BpkContentCards.module.scss';
@@ -50,25 +44,7 @@ const BpkContentCards = ({ cards, heading }: Props) => {
 
   return (
     <div>
-      <div className={getClassName('bpk-content-cards--header')}>
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-            {isActive => (isActive ?
-              <BpkText
-                tagName="h3"
-                textStyle={TEXT_STYLES.heading3}
-              >
-                {heading}
-              </BpkText>
-            :
-              <BpkText
-                tagName="h2"
-                textStyle={TEXT_STYLES.heading2}
-              >
-                {heading}
-              </BpkText>
-            )}
-        </BpkBreakpoint>
-      </div>
+      <h2 className={STYLES.headerText}>{heading}</h2>
       <div role="list" className={getClassName('bpk-content-cards--layout')}>
         {cards.map((card, index) => (
           <div role="listitem" key={index}>
