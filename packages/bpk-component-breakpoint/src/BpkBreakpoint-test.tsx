@@ -22,64 +22,34 @@ import ReactDOMServer from 'react-dom/server';
 import { BREAKPOINTS } from './BpkBreakpoint';
 
 describe('BpkBreakpoint', () => {
-  describe('children as component', () => {
-    it('should render when breakpoint matches', () => {
-      jest.resetModules();
-      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-      jest.mock('./useMediaQuery', () => () => true);
+  it('should render if the breakpoint is matched', () => {
+    jest.resetModules();
+    const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
+    jest.mock('./useMediaQuery', () => () => true);
 
-      const { asFragment } = render(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          <div>matches</div>
-        </BpkBreakpoint>,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it('should not render when breakpoint does not match', () => {
-      jest.resetModules();
-      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-      jest.mock('./useMediaQuery', () => () => false);
-
-      const { asFragment } = render(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          <div>matches</div>
-        </BpkBreakpoint>,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
+    const { asFragment } = render(
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {(matches: boolean) =>
+          matches ? <div>matches</div> : <div>does not match</div>
+        }
+      </BpkBreakpoint>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  describe('children as a callback function', () => {
-    it('should call function with matches=false if the breakpoint is not matched', () => {
-      jest.resetModules();
-      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-      jest.mock('./useMediaQuery', () => () => false);
+  it('should render if the breakpoint is not matched', () => {
+    jest.resetModules();
+    const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
+    jest.mock('./useMediaQuery', () => () => false);
 
-      const { asFragment } = render(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          {(matches: boolean) =>
-            matches ? <div>matches</div> : <div>does not match</div>
-          }
-        </BpkBreakpoint>,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it('should call function with matches=true if the breakpoint is matched', () => {
-      jest.resetModules();
-      const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
-      jest.mock('./useMediaQuery', () => () => true);
-
-      const { asFragment } = render(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          {(matches: boolean) =>
-            matches ? <div>matches</div> : <div>does not match</div>
-          }
-        </BpkBreakpoint>,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
+    const { asFragment } = render(
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {(matches: boolean) =>
+          matches ? <div>matches</div> : <div>does not match</div>
+        }
+      </BpkBreakpoint>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('SSR mode', () => {
@@ -93,40 +63,58 @@ describe('BpkBreakpoint', () => {
       jest.restoreAllMocks();
     });
 
-    it('should pass matchSSR=true to useMediaQuery when matchSSR=true', () => {
-      const mockUseMediaQuery = jest.fn();
-      jest.mock('./useMediaQuery', () => mockUseMediaQuery);
+    it('should render when matchSSR=true', () => {
       const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
 
-      ReactDOMServer.renderToString(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR />,
+      const html = ReactDOMServer.renderToString(
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR>
+          {(matches: boolean) =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>,
       );
 
-      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, true);
+      expect(html).toMatchSnapshot();
     });
 
-    it('should pass matchSSR=false to useMediaQuery when matchSSR=false', () => {
-      const mockUseMediaQuery = jest.fn();
-      jest.mock('./useMediaQuery', () => mockUseMediaQuery);
+    it('should not render on SSR until hydrated when matchSSR=false', async () => {
       const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
 
-      ReactDOMServer.renderToString(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR={false} />,
+      const components = (
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR={false}>
+          {(matches: boolean) =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>
       );
 
-      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, false);
+      // Checking SSR
+      const html = ReactDOMServer.renderToString(components);
+
+      expect(html).toMatchSnapshot('server rendered');
+
+      const container = document.createElement('div');
+      document.body.appendChild(container);
+      container.innerHTML = html;
+
+      // Hydrating and CSR
+      const { asFragment } = render(components, { hydrate: true, container });
+
+      expect(asFragment()).toMatchSnapshot('hydrated');
     });
 
-    it('should pass matchSSR=false to useMediaQuery when matchSSR not defined', () => {
-      const mockUseMediaQuery = jest.fn();
-      jest.mock('./useMediaQuery', () => mockUseMediaQuery);
+    it('should not render when matchSSR is not defined', () => {
       const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
 
-      ReactDOMServer.renderToString(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE} />,
+      const html = ReactDOMServer.renderToString(
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {(matches: boolean) =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>,
       );
 
-      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, false);
+      expect(html).toMatchSnapshot();
     });
   });
 
