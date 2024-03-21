@@ -173,7 +173,7 @@ BpkAccordionItem.defaultProps = {
   expanded: false,
   icon: null,
   onClick: () => null,
-  tagName: 'span',
+  tagName: 'h3',
   textStyle: TEXT_STYLES.bodyDefault,
 };
 
