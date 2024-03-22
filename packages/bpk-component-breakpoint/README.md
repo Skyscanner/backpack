@@ -24,19 +24,20 @@ export default () => (
 
 ### Server Side Render (SSR) Support
 
-You can pass `matchSSR` which will instruct the breakpoint to match any time it is rendered on the server.
+You can pass `matchSSR` which will instruct the breakpoint to match any time it is rendered on the server. You can use
+this to estimate what breakpoint is likely to match on the client-side.
 
 ```js
-<BpkBreakpoint query={BREAKPOINTS.TABLET} matchSSR>
+<BpkBreakpoint query={BREAKPOINTS.TABLET} matchSSR={isTablet}>
   <span>Tablet viewport is active OR we are rendering on the server-side</span>
 </BpkBreakpoint>
-<BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+<BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR={isMobilePhone}>
   <span>Mobile viewport is active AND we are rendering on the client-side</span>
 </BpkBreakpoint>
 ```
 
 If you match to a different breakpoint when rendering on the server, than what is matched to in the traveller's browser,
-then React will print a warning saying there is a mismatch. This is expected and is a side-effect of our approach.
+then React will print a warning saying there is a mismatch.
 
 ## Props
 
