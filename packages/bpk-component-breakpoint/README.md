@@ -35,6 +35,9 @@ You can pass `matchSSR` which will instruct the breakpoint to match any time it 
 </BpkBreakpoint>
 ```
 
+If you match to a different breakpoint when rendering on the server, than what is matched to in the traveller's browser,
+then React will print a warning saying there is a mismatch. This is expected and is a side-effect of our approach.
+
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/breakpoint/web-5sPWfgsH#section-props-32).
