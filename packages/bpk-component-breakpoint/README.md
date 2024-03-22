@@ -39,6 +39,40 @@ this to estimate what breakpoint is likely to match on the client-side.
 If you match to a different breakpoint when rendering on the server, than what is matched to in the traveller's browser,
 then React will print a warning saying there is a mismatch.
 
+### Testing
+
+When writing tests for any components that use BpkBreakpoint, you will have to mock either the `BpkBreakpoint` component
+or the underlying `useMediaQuery`. This is because the `window.matchMedia` function that we rely on does not exist in
+the jest testing environment.
+
+A mock were you only wanted your mobile BpkBreakpoint to render:
+```js
+import { useMediaQuery } from '@skyscanner/backpack-web/bpk-component-breakpoint';
+
+jest.mock('@skyscanner/backpack-web/bpk-component-breakpoint', () => {
+  __esModule: true,
+  ...jest.requireActual('@skyscanner/backpack-web/bpk-component-breakpoint'),
+  useMediaQuery: jest.fn(),
+});
+describe('tests', () => {
+  it('my test', () => {
+    (useMediaQuery as jest.Mock).mockImplementation(
+      (query: string) => query === BREAKPOINTS.MOBILE,
+    );
+  })
+})
+```
+
+A simpler mock were you want all BpkBreakpoints to render:
+```js
+jest.mock('@skyscanner/backpack-web/bpk-component-breakpoint', () => {
+  __esModule: true,
+  ...jest.requireActual('@skyscanner/backpack-web/bpk-component-breakpoint'),
+  useMediaQuery: () => true,
+});
+```
+
+
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/breakpoint/web-5sPWfgsH#section-props-32).
