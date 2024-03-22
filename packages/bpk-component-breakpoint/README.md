@@ -28,6 +28,8 @@ You can pass `matchSSR` which will instruct the breakpoint to match any time it 
 this to estimate what breakpoint is likely to match on the client-side.
 
 ```js
+import { isTablet, isMobilePhone } from 'some-device-detection';
+
 <BpkBreakpoint query={BREAKPOINTS.TABLET} matchSSR={isTablet}>
   <span>Tablet viewport is active OR we are rendering on the server-side</span>
 </BpkBreakpoint>
