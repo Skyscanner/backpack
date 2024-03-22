@@ -47,7 +47,7 @@ the jest testing environment.
 
 A mock were you only wanted your mobile BpkBreakpoint to render:
 ```js
-import { useMediaQuery } from '@skyscanner/backpack-web/bpk-component-breakpoint';
+import { useMediaQuery, BREAKPOINTS } from '@skyscanner/backpack-web/bpk-component-breakpoint';
 
 jest.mock('@skyscanner/backpack-web/bpk-component-breakpoint', () => {
   __esModule: true,
