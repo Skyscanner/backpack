@@ -17,36 +17,31 @@
  */
 
 import { renderHook } from '@testing-library/react-hooks';
+import '@testing-library/jest-dom';
+import { renderToString } from 'react-dom/server';
 
 import useMediaQuery from './useMediaQuery';
 
 describe('useMediaQuery', () => {
   describe('SSR mode', () => {
-    // @ts-ignore
-    window.matchMedia = undefined;
+    const DummyComponent = ({ matchSSR }: { matchSSR?: boolean }) => {
+      const matches = useMediaQuery('(min-width: 768px)', matchSSR);
+      return <div>{matches ? 'matches' : 'no match'}</div>;
+    };
 
     it('should match when matchSSR=true', () => {
-      const view = renderHook(() => useMediaQuery('(min-width: 768px)', true));
-
-      expect(view.result.all.length).toBe(1);
-
-      expect(view.result.all[0]).toBe(true);
+      const html = renderToString(<DummyComponent matchSSR />);
+      expect(html).toMatchSnapshot();
     });
 
     it('should not match when matchSSR=false', () => {
-      const view = renderHook(() => useMediaQuery('(min-width: 768px)', false));
-
-      expect(view.result.all.length).toBe(1);
-
-      expect(view.result.all[0]).toBe(false);
+      const html = renderToString(<DummyComponent matchSSR={false} />);
+      expect(html).toMatchSnapshot();
     });
 
     it('should not match when matchSSR not explicitly set', () => {
-      const view = renderHook(() => useMediaQuery('(min-width: 768px)'));
-
-      expect(view.result.all.length).toBe(1);
-
-      expect(view.result.all[0]).toBe(false);
+      const html = renderToString(<DummyComponent />);
+      expect(html).toMatchSnapshot();
     });
   });
 
