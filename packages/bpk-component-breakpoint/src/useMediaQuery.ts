@@ -33,7 +33,7 @@ const useMediaQuery = (query: string, matchSSR = false): boolean => {
     };
     media.addEventListener('change', listener);
     return () => media.removeEventListener('change', listener);
-  }, [query, isClient]);
+  }, [query]);
 
   return matches;
 };
