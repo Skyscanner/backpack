@@ -24,9 +24,7 @@
 @use '../../unstable__bpk-mixins/typography';
 
 .headerText {
-  margin-bottom: tokens.bpk-spacing-base();
-
-  @include typography.bpk-text;
+  @include typography.bpk-paragraph;
   @include typography.bpk-heading-2;
 
   @include breakpoints.bpk-breakpoint-mobile {
