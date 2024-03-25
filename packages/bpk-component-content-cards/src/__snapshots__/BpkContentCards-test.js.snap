@@ -3,7 +3,9 @@
 exports[`Content Card widget renders correctly with 1 card 1`] = `
 <DocumentFragment>
   <div>
-    <h2>
+    <h2
+      class="bpk-content-cards--header-text"
+    >
       Header for the component
     </h2>
     <div
@@ -51,7 +53,9 @@ exports[`Content Card widget renders correctly with 1 card 1`] = `
 exports[`Content Card widget renders correctly with 2 cards 1`] = `
 <DocumentFragment>
   <div>
-    <h2>
+    <h2
+      class="bpk-content-cards--header-text"
+    >
       Header for the component
     </h2>
     <div
@@ -132,7 +136,9 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
 exports[`Content Card widget renders correctly with 3 cards 1`] = `
 <DocumentFragment>
   <div>
-    <h2>
+    <h2
+      class="bpk-content-cards--header-text"
+    >
       Header for the component
     </h2>
     <div

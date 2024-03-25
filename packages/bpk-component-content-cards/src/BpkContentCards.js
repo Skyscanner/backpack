@@ -45,7 +45,7 @@ const BpkContentCards = ({ cards, heading }: Props) => {
 
   return (
     <div>
-      <h2 className={STYLES.headerText}>{heading}</h2>
+      <h2 className={getClassName('bpk-content-cards--header-text')}>{heading}</h2>
       <div role="list" className={getClassName('bpk-content-cards--layout')}>
         {cards.map((card, index) => (
           <div role="listitem" key={index}>

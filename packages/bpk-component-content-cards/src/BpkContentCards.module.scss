@@ -23,16 +23,16 @@
 @use '../../unstable__bpk-mixins/breakpoints';
 @use '../../unstable__bpk-mixins/typography';
 
-.headerText {
-  @include typography.bpk-paragraph;
-  @include typography.bpk-heading-2;
-
-  @include breakpoints.bpk-breakpoint-mobile {
-    @include typography.bpk-heading-3;
-  }
-}
-
 .bpk-content-cards {
+  &--header-text {
+    @include typography.bpk-paragraph;
+    @include typography.bpk-heading-2;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      @include typography.bpk-heading-3;
+    }
+  }
+
   &--layout {
     display: grid;
     grid-template-columns: repeat(
