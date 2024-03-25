@@ -21,6 +21,7 @@
  */
 
 import type { ReactNode, FunctionComponent, SVGProps } from 'react';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -38,13 +39,15 @@ import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
+import { ALERT_TYPES } from './common-types';
+
 import type {
   AlertTypeValue,
   CommonProps,
   OnDismissHandler,
   OnExpandToggleHandler,
 } from './common-types';
-import { ALERT_TYPES } from './common-types';
+
 import STYLES from './BpkBannerAlert.module.scss';
 
 const getClassName = cssModules(STYLES);

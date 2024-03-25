@@ -16,16 +16,19 @@
  * limitations under the License.
  */
 
-import { createPopper } from '@popperjs/core';
 import { cloneElement, Component } from 'react';
 import type { ReactNode, ReactElement } from 'react';
+
+import { createPopper } from '@popperjs/core';
 
 import { Portal, cssModules } from '../../bpk-react-utils';
 
 import BpkTooltip from './BpkTooltip';
-import type { TooltipProps } from './BpkTooltip';
-import STYLES from './BpkTooltip.module.scss';
 import { TOOLTIP_TYPES } from './constants';
+
+import type { TooltipProps } from './BpkTooltip';
+
+import STYLES from './BpkTooltip.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -19,12 +19,14 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+
 import LgSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/lg';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSpinner.module.scss';
 import SPINNER_TYPES from './spinnerTypes';
+
+import STYLES from './BpkSpinner.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -18,6 +18,7 @@
 /* @flow strict */
 
 import { Component } from 'react';
+
 import { fontWeightBold } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { action } from '../bpk-storybook-utils';

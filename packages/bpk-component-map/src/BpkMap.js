@@ -21,11 +21,13 @@
 import type { Node } from 'react';
 import { useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
+
 import { GoogleMap } from '@react-google-maps/api';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import { LatLongPropType, type LatLong } from './common-types';
+
 import STYLES from './BpkMap.module.scss';
 
 const getClassName = cssModules(STYLES);

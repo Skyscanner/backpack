@@ -22,7 +22,6 @@ import { Component } from 'react';
 import { isRTL } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
-import type { SelectionConfiguration } from './custom-proptypes';
 import BpkCalendarNav from './BpkCalendarNav';
 import { BpkCalendarGridWithTransition } from './BpkCalendarGrid';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
@@ -40,6 +39,8 @@ import {
   startOfDay,
   startOfMonth,
 } from './date-utils';
+
+import type { SelectionConfiguration } from './custom-proptypes';
 
 export type Props = {
   /**

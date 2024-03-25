@@ -20,6 +20,7 @@
 
 import { type Props, defaultProps, propTypes } from './common-types';
 import BpkButtonBase, { cssModules } from './BpkButtonBase';
+
 import STYLES from './BpkButtonFeatured.module.scss';
 
 const getClassName = cssModules(STYLES);

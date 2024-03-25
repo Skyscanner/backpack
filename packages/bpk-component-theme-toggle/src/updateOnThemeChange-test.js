@@ -17,6 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
+
 import { render, fireEvent } from '@testing-library/react';
 
 import updateOnThemeChange from './updateOnThemeChange';
