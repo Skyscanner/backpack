@@ -9,6 +9,20 @@ updates:
   versioning-strategy: increase
   allow:
     - dependency-type: "direct"
+  groups:
+    babel:
+      patterns:
+        - "@babel*"
+        - "babel*"
+    storybook:
+      patterns:
+        - "@storybook*"
+        - "storybook*"
+    testing-library:
+      patterns:
+        - "@testing-library*"
+        - "testing-library*"
+        - "jest*"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
