@@ -22,8 +22,9 @@ import type { ComponentProps, MouseEvent, ReactNode } from 'react';
 import { BpkButtonLink } from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkNavigationBarButtonLink.module.scss';
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
+
+import STYLES from './BpkNavigationBarButtonLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 

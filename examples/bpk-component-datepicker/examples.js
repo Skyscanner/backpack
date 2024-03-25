@@ -18,7 +18,9 @@
 
 import { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
+
 import { memoize } from 'lodash';
+
 import {
   colorSagano,
   colorBagan,

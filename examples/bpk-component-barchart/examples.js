@@ -19,8 +19,10 @@
 /* @flow strict */
 
 import { number } from 'prop-types';
-import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import { scaleLinear, scaleBand } from 'd3-scale';
+
+import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
@@ -37,6 +39,7 @@ import BpkBarchart, {
 } from '../../packages/bpk-component-barchart';
 
 import { withSelectedState } from './hocs';
+
 import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);

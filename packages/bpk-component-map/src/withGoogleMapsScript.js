@@ -19,6 +19,7 @@
 
 import type { ComponentType } from 'react';
 import PropTypes from 'prop-types';
+
 import { useJsApiLoader } from '@react-google-maps/api';
 
 import DefaultLoadingElement from './DefaultLoadingElement';

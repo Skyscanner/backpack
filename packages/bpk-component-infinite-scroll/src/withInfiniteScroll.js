@@ -21,6 +21,7 @@
 import { Component } from 'react';
 import type { Element, Config, AbstractComponent } from 'react';
 import PropTypes from 'prop-types';
+
 import omit from 'lodash/omit';
 import extend from 'lodash/extend';
 
@@ -28,6 +29,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import './intersection-observer';
 import DataSource from './DataSource';
+
 import STYLES from './withInfiniteScroll.module.scss';
 
 const getClassNames = cssModules(STYLES);

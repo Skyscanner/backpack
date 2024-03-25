@@ -17,11 +17,13 @@
  */
 
 import '@testing-library/jest-dom';
-import { render, within, screen } from '@testing-library/react';
 import { useEffect, useState } from 'react';
 import { renderToString } from 'react-dom/server';
 
+import { render, within, screen } from '@testing-library/react';
+
 import withScrimmedPortal from './withScrimmedPortal';
+
 import type { Props } from './withScrimmedPortal';
 
 describe('withScrimmedPortal', () => {

@@ -18,19 +18,21 @@
 
 /* @flow strict */
 
-import { createPopper } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 import { Component } from 'react';
+
+import { createPopper } from '@popperjs/core';
 import focusStore from 'a11y-focus-store';
 
 import { Portal, cssModules } from '../../bpk-react-utils';
 
 import keyboardFocusScope from './keyboardFocusScope';
-import STYLES from './BpkPopover.module.scss';
 import BpkPopover, {
   type Props as PopoverProps,
 } from './BpkPopover';
+
+import STYLES from './BpkPopover.module.scss';
 
 const getClassName = cssModules(STYLES);
 

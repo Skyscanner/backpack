@@ -17,10 +17,6 @@
  */
 import { useState } from 'react';
 
-import type {
-  SizeType,
-  StyleType,
-} from '../../packages/bpk-component-card-button/src/BpkSaveButton';
 import {
   BpkSaveButton,
   STYLE_TYPES,
@@ -28,6 +24,11 @@ import {
 } from '../../packages/bpk-component-card-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+
+import type {
+  SizeType,
+  StyleType,
+} from '../../packages/bpk-component-card-button/src/BpkSaveButton';
 
 type Props = {
   checked?: boolean;

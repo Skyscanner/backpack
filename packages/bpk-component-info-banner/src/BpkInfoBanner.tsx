@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-import type { CommonProps } from './common-types';
 import BpkInfoBannerInner from './BpkInfoBannerInner';
+
+import type { CommonProps } from './common-types';
 
 const BpkInfoBanner = ({
   animateOnEnter = false,

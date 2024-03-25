@@ -20,6 +20,7 @@
 
 import type { Node } from 'react';
 import PropTypes from 'prop-types';
+
 import {
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -29,6 +30,7 @@ import { cssModules } from '../../bpk-react-utils';
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center, remToPx } from './utils';
+
 import STYLES from './BpkChartAxis.module.scss';
 
 const getClassName = cssModules(STYLES);

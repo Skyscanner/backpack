@@ -17,6 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
+
 import {
   lineHeightSm,
   iconSizeSm,
