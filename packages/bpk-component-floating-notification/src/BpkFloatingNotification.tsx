@@ -19,6 +19,7 @@
 
 import type { MouseEvent, FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { CSSTransition } from 'react-transition-group';
 

@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
 import ReactDOMServer from 'react-dom/server';
+
+import { render } from '@testing-library/react';
 
 import { BREAKPOINTS } from './BpkBreakpoint';
 

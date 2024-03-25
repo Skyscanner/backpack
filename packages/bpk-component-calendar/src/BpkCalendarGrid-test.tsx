@@ -17,13 +17,15 @@
  */
 
 import PropTypes from 'prop-types';
+
 import { render, screen } from '@testing-library/react';
 import { addMonths, isWeekend } from 'date-fns';
+import userEvent from '@testing-library/user-event';
+
 import {
   colorMonteverde,
   colorPanjin, // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import userEvent from '@testing-library/user-event';
 
 import { formatDateFull } from '../test-utils';
 

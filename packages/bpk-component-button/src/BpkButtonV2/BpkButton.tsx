@@ -17,8 +17,10 @@
  */
 import { cssModules } from '../../../bpk-react-utils';
 
-import type { Props } from './common-types';
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
+
+import type { Props } from './common-types';
+
 import COMMON_STYLES from './BpkButton.module.scss';
 
 const getCommonClassName = cssModules(COMMON_STYLES);
