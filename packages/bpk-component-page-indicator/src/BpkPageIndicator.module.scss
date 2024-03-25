@@ -70,6 +70,10 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     border-radius: 50%;
     margin-inline: $dot-margin;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     &--default {
       background-color: tokens.$bpk-line-day;
     }
@@ -85,6 +89,11 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
 
       &-overImage {
         background-color: tokens.$bpk-text-on-dark-day;
+      }
+
+      &-default,
+      &-overImage {
+        pointer-events: none;
       }
     }
   }
