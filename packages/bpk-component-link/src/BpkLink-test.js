@@ -18,8 +18,9 @@
 
 /* @flow strict */
 
-import { render } from '@testing-library/react';
 import { createRef } from 'react';
+
+import { render } from '@testing-library/react';
 
 import BpkLink, { themeAttributes } from './BpkLink';
 

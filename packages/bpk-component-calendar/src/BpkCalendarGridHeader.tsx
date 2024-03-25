@@ -20,13 +20,15 @@ import { PureComponent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+import { orderDaysOfWeek } from './date-utils';
+
 import type {
   DaysOfWeek,
   ReactComponent,
   WeekDay,
   WeekDayKey,
 } from './custom-proptypes';
-import { orderDaysOfWeek } from './date-utils';
+
 import STYLES from './BpkCalendarGridHeader.module.scss';
 
 const getClassName = cssModules(STYLES);

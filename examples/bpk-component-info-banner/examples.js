@@ -16,12 +16,13 @@
  * limitations under the License.
  */
 
+import { Component } from 'react';
+
 import {
   canvasContrastDay,
   cardPadding,
   fontWeightBold,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import { Component } from 'react';
 
 import { action } from '../bpk-storybook-utils';
 import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';

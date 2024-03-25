@@ -19,9 +19,11 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import debounce from 'lodash.debounce';
 import { Component } from 'react';
+
+import debounce from 'lodash.debounce';
 import { scaleLinear, scaleBand } from 'd3-scale';
+
 import {
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -43,6 +45,7 @@ import {
   applyMarginRTLTransform,
 } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
+
 import STYLES from './BpkBarchart.module.scss';
 
 const getClassName = cssModules(STYLES);

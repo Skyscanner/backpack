@@ -21,9 +21,11 @@ import type { ReactNode } from 'react';
 import { withScrim } from '../../bpk-scrim-utils';
 import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
 
-import STYLES from './BpkModal.module.scss';
 import BpkModalInner from './BpkModalInner';
+
 import type { Props as ModalDialogProps } from './BpkModalInner';
+
+import STYLES from './BpkModal.module.scss';
 
 const getClassName = cssModules(STYLES);
 const ScrimBpkModalInner = withScrim(BpkModalInner);

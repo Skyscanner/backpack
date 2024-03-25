@@ -25,6 +25,7 @@ import PlusIcon from '../../bpk-component-icon/sm/plus';
 import { cssModules } from '../../bpk-react-utils';
 
 import { type CommonProps } from './common-types';
+
 import STYLES from './BpkNudger.module.scss';
 
 const getClassName = cssModules(STYLES);

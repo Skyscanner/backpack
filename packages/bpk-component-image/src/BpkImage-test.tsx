@@ -17,6 +17,7 @@
  */
 
 import { render, screen, fireEvent } from '@testing-library/react';
+
 import {
   spacingSm,
   breakpoints as BREAKPOINTS, // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.

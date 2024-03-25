@@ -16,12 +16,13 @@
  * limitations under the License.
  */
 
+import type { ComponentType } from 'react';
+import { Component } from 'react';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusScope from 'a11y-focus-scope';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusStore from 'a11y-focus-store';
-import type { ComponentType } from 'react';
-import { Component } from 'react';
 
 import {
   cssModules,
@@ -39,13 +40,14 @@ import {
   unfixBody,
   unlockScroll,
 } from './scroll-utils';
+
 import STYLES from './bpk-scrim-content.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 export type Props = {
   /**
-   * The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work". 
+   * The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
    */
   getApplicationElement: () => HTMLElement | null;
   /**

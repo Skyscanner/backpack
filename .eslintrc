@@ -92,21 +92,6 @@
     "react/no-unused-class-component-methods": "off",
     "no-promise-executor-return": "off",
     "import/no-import-module-exports": "off",
-    // We override the eslint-config-skyscanner rule here as within Backpack
-    // we need certain order imports otherwise it will break components like the calendar.
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "parent",
-          "sibling",
-          "index"
-        ],
-        "newlines-between": "always"
-      }
-    ],
     // This is superceded by jsx-a11y/label-has-associated-control
     "jsx-a11y/label-has-for": "off",
     // We want to keep prop-types alongside typescript types so we relax this rule to allow us to specify defaults for

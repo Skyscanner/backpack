@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-import type { CommonProps } from './common-types';
 import BpkBannerAlertInner from './BpkBannerAlertInner';
+
+import type { CommonProps } from './common-types';
 
 const defaultProps = {
   animateOnEnter: false,

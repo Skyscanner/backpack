@@ -23,6 +23,7 @@ import BpkLabel from '../../bpk-component-label';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
 import { type CommonProps } from './common-types';
+
 import STYLES from './BpkNudger.module.scss';
 
 const getClassName = cssModules(STYLES);

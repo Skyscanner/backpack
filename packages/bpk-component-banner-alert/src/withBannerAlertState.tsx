@@ -22,6 +22,7 @@ import type { ComponentType } from 'react';
 import { wrapDisplayName } from '../../bpk-react-utils';
 
 import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
+
 import type { Props as BpkBannerAlertExpandableProps } from './BpkBannerAlertExpandable';
 import type { Props as BpkBannerAlertDismissableProps } from './BpkBannerAlertDismissable';
 
