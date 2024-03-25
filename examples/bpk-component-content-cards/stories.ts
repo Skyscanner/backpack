@@ -34,3 +34,5 @@ export const DefaultOneCard = WithOneCardExample;
 export const DefaultTwoCards = WithTwoCardsExample;
 
 export const DefaultThreeCards = WithThreeCardsExample;
+
+export const VisualTestThreeCards = WithThreeCardsExample;
