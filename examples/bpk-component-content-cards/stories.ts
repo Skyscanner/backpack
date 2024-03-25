@@ -35,10 +35,4 @@ export const DefaultTwoCards = WithTwoCardsExample;
 
 export const DefaultThreeCards = WithThreeCardsExample;
 
-export const VisualTestOneCard = WithOneCardExample;
-export const VisualTestWithZoom = VisualTestOneCard.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
-export const VisualTestTwoCards = WithTwoCardsExample;
 export const VisualTestThreeCards = WithThreeCardsExample;
