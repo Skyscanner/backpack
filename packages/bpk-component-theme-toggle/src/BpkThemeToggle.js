@@ -22,9 +22,10 @@ import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkThemeToggle.module.scss';
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
+
+import STYLES from './BpkThemeToggle.module.scss';
 
 const inputId = 'theme-select';
 const getClassName = cssModules(STYLES);

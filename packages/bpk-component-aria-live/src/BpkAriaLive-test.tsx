@@ -19,6 +19,7 @@
 import { render } from '@testing-library/react';
 
 import BpkAriaLive, { POLITENESS_SETTINGS } from './BpkAriaLive';
+
 import type { PolitenessSetting } from './BpkAriaLive';
 
 describe('BpkAriaLive', () => {

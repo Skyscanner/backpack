@@ -18,6 +18,7 @@
 /* @flow strict */
 
 import { Fragment } from 'react';
+
 import {
   coreAccentDay,
   surfaceHighlightDay,

@@ -22,6 +22,7 @@ import { withScrim } from '../../bpk-scrim-utils';
 import { BpkContentBubble } from '../../bpk-component-flare';
 
 import { type DialogInnerProps as Props } from './common-types';
+
 import STYLES from './BpkDialogInner.module.scss';
 
 const getClassName = cssModules(STYLES);

@@ -31,17 +31,19 @@ import {
   endOfMonth,
 } from './date-utils';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+import { SELECTION_TYPES } from './BpkCalendarDate';
+
 import type {
   DateModifiers,
   SelectionConfiguration,
   SelectionConfigurationSingle,
   SelectionConfigurationRange,
 } from './custom-proptypes';
+
 // TODO: Move this to `Week.scss`
 // This should be using its own css file as `BpkCalendarGrid` is also importing `BpkCalendarGrid.module.scss`
 // and the order of css imports can break the component.
 import STYLES from './BpkCalendarGrid.module.scss';
-import { SELECTION_TYPES } from './BpkCalendarDate';
 
 const getClassName = cssModules(STYLES);
 

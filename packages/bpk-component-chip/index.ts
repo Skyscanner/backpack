@@ -22,9 +22,10 @@ import BpkSelectableChip, {
 import BpkDismissibleChip from './src/BpkDismissibleChip';
 import BpkDropdownChip from './src/BpkDropdownChip';
 import BpkIconChip from './src/BpkIconChip';
-import type { CommonProps } from './src/commonTypes';
 import { CHIP_TYPES } from './src/commonTypes';
 import themeAttributes from './src/themeAttributes';
+
+import type { CommonProps } from './src/commonTypes';
 
 export type BpkSelectableChipProps = SelectableProps;
 export type BpkDismissibleChipProps = CommonProps;

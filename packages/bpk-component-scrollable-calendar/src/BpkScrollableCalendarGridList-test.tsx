@@ -17,10 +17,12 @@
  */
 
 import PropTypes from 'prop-types';
+
 import { isWeekend } from 'date-fns/isWeekend';
+import { render } from '@testing-library/react';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import { render } from '@testing-library/react';
 
 import { DateUtils } from '../../bpk-component-calendar';
 import { formatDateFull, formatMonth } from '../test-utils';

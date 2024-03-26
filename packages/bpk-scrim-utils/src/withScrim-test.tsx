@@ -16,12 +16,13 @@
  * limitations under the License.
  */
 
+import type { ComponentType } from 'react';
+
 import { render } from '@testing-library/react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusScope from 'a11y-focus-scope';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusStore from 'a11y-focus-store';
-import type { ComponentType } from 'react';
 
 import withScrim from './withScrim';
 import {

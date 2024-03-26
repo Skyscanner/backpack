@@ -18,9 +18,10 @@
 
 import { render } from '@testing-library/react';
 
-import type { Props } from './BpkSelectableChip';
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
+
+import type { Props } from './BpkSelectableChip';
 
 // Just a convenience wrapper that includes the default props so we don't
 // have to keep writing them for each test.

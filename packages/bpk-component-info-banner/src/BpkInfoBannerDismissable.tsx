@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-import type { CommonProps, OnDismissHandler } from './common-types';
 import BpkInfoBannerInner, { CONFIGURATION } from './BpkInfoBannerInner';
+
+import type { CommonProps, OnDismissHandler } from './common-types';
 
 export type Props = CommonProps & {
   dismissButtonLabel: string;
