@@ -29,13 +29,15 @@
   }
 
   &__active-item {
+    margin-top: tokens.bpk-spacing-base() * 0.125;
     color: tokens.$bpk-text-secondary-day;
   }
 
   &__arrow {
     display: flex;
-    margin: 0 tokens.bpk-spacing-sm();
-    line-height: tokens.$bpk-line-height-xs;
+    margin-top: tokens.bpk-spacing-base() * 0.1;
+    margin-right: tokens.bpk-spacing-sm();
+    margin-left: tokens.bpk-spacing-sm();
     fill: tokens.$bpk-text-disabled-day;
   }
 }
