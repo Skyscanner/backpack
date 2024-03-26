@@ -25,6 +25,7 @@ to match.
 import type { ReactNode } from 'react';
 
 import BpkSelectableChip from './BpkSelectableChip';
+
 import type { CommonProps as Props } from './commonTypes';
 
 export type BpkIconChipProps = {
