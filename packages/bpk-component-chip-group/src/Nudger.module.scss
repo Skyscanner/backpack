@@ -16,15 +16,15 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
 .bpk-chip-group-nudger {
   &--leading {
-    margin-inline-end: bpk-spacing-md();
+    margin-inline-end: tokens.bpk-spacing-md();
   }
 
   &--trailing {
-    margin-inline-start: bpk-spacing-md();
+    margin-inline-start: tokens.bpk-spacing-md();
   }
 
   &--hidden {

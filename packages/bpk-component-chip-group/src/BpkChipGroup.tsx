@@ -19,7 +19,7 @@ import type { ReactElement, ReactNode} from 'react';
 import { useRef, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkSelectableChip, { type BpkSelectableChipProps, CHIP_TYPES } from '../../bpk-component-chip';
+import BpkSelectableChip, { BpkIconChip, type BpkSelectableChipProps, CHIP_TYPES } from '../../bpk-component-chip';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -27,6 +27,7 @@ import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 
 import Nudger from './Nudger';
+
 import STYLES from './BpkChipGroup.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -89,11 +90,6 @@ const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, c
     `bpk-sticky-chip-container--${style}`,
   );
 
-  const stickyChipClassnames = getClassName(
-    'bpk-sticky-chip',
-    stickyChip && stickyChip.className,
-  );
-
   const scrollContainerIndicator = getClassName('bpk-chip-group-scroller-indicator');
 
   const renderChipItem = ({ accessibilityLabel, component: Component = BpkSelectableChip, onClick, selected, text, ...rest }: ChipItem, index: number) => (
@@ -135,13 +131,17 @@ const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, c
       )}
       {type === CHIP_GROUP_TYPES.rail && stickyChip &&
         <div className={stickyChipContainerClassnames}>
-          {renderChipItem({
-            ...stickyChip,
-            leadingAccessoryView: <FilterIconSm />,
-            className: stickyChipClassnames,
-          }, -1)}
+          <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
+            {(isDesktop) => renderChipItem({
+              ...stickyChip,
+              component: isDesktop ? BpkSelectableChip : BpkIconChip,
+              leadingAccessoryView: <FilterIconSm />,
+            }, -1)}
+          </BpkBreakpoint>
         </div>
       }
+
+
       {wrapRailInScroll(
         <div className={chipGroupClassNames}
          role="listbox"

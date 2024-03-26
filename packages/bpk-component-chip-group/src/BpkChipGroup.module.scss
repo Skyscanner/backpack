@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-chip-group-container {
   display: flex;
@@ -26,10 +28,10 @@
 
 .bpk-chip-group {
   display: flex;
-  gap: bpk-spacing-md();
+  gap: tokens.bpk-spacing-md();
 
   &--rail {
-    padding: 4 * $bpk-one-pixel-rem 0;
+    padding: 4 * tokens.$bpk-one-pixel-rem 0;
     flex-wrap: nowrap;
   }
 
@@ -39,33 +41,20 @@
 }
 
 .bpk-sticky-chip-container {
-  margin-inline-end: bpk-spacing-md();
-  padding-inline-end: bpk-spacing-md();
+  margin-inline-end: tokens.bpk-spacing-md();
+  padding-inline-end: tokens.bpk-spacing-md();
 
-  @include bpk-border-right-sm($bpk-line-day);
+  @include borders.bpk-border-right-sm(tokens.$bpk-line-day);
 
-  @include bpk-rtl {
-    @include bpk-border-left-sm($bpk-line-day);
+  @include utils.bpk-rtl {
+    @include borders.bpk-border-left-sm(tokens.$bpk-line-day);
   }
 
   &--on-dark {
-    @include bpk-border-right-sm($bpk-line-on-dark-day);
+    @include borders.bpk-border-right-sm(tokens.$bpk-line-on-dark-day);
 
-    @include bpk-rtl {
-      @include bpk-border-left-sm($bpk-line-on-dark-day);
-    }
-  }
-}
-
-@include bpk-breakpoint-tablet {
-  // TODO: Should this be a new chip component type without text?
-  .bpk-sticky-chip {
-    padding-inline-end: 0;
-    padding-inline-start: bpk-spacing-md();
-
-    // TODO: better way to do this? Hide all contents of the chip except the leading icon.
-    span:not(:nth-of-type(1)) {
-      display: none;
+    @include utils.bpk-rtl {
+      @include borders.bpk-border-left-sm(tokens.$bpk-line-on-dark-day);
     }
   }
 }
