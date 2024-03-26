@@ -12,6 +12,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import BpkSelectableChip, {
   BpkDismissibleChip,
   BpkDropdownChip,
+  BpkIconChip
   CHIP_TYPES,
 } from '@skyscanner/backpack-web/bpk-component-chip';
 import BeachIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/beach';
@@ -81,6 +82,14 @@ export default () => (
     >
       Dismiss me
     </BpkDismissibleChip>
+    <BpkIconChip
+      accessibilityLabel="Press to toggle chip"
+      selected={false}
+      onClick={() => {
+        /* Use state to set 'selected={true}' */
+      }}
+      leadingAccessoryView={<BeachIconSm />}
+    />
   </div>
 );
 ```

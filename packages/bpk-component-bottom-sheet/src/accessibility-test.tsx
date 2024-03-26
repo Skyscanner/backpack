@@ -20,7 +20,8 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkBottomSheet from './BpkBottomSheet';
-
+// mock breakpoint to always match
+jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
 describe('BpkBottomSheet accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(

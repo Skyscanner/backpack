@@ -17,21 +17,9 @@
  */
 
 import type { ReactNode } from 'react';
-import type { CommonProps } from './commonTypes';
-export interface Props extends CommonProps {
-  role?: string;
-  trailingAccessoryView?: ReactNode;
-}
-declare const BpkSelectableChip: ({
-  accessibilityLabel,
-  children,
-  className,
-  disabled,
-  leadingAccessoryView,
-  role,
-  selected,
-  trailingAccessoryView,
-  type,
-  ...rest
-}: Props) => JSX.Element;
-export default BpkSelectableChip;
+import type { CommonProps as Props } from './commonTypes';
+export type BpkIconChipProps = {
+    leadingAccessoryView: ReactNode;
+} & Omit<Props, 'trailingAccessoryView' | 'leadingAccessoryView' | 'children'>;
+declare const BpkIconChip: ({ className, ...rest }: BpkIconChipProps) => JSX.Element;
+export default BpkIconChip;

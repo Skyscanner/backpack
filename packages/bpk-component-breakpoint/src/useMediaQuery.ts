@@ -16,24 +16,23 @@
  * limitations under the License.
  */
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const useMediaQuery = (query: string): boolean => {
+const useMediaQuery = (query: string, matchSSR = false): boolean => {
+  const isClient = typeof window !== 'undefined' && !!window.matchMedia;
+
   const [matches, setMatches] = useState(
-    window.matchMedia ? window.matchMedia(query).matches : false,
+    isClient ? window.matchMedia(query).matches : matchSSR,
   );
 
   useEffect(() => {
-    if (window.matchMedia) {
-      const media = window.matchMedia(query);
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+    const listener = () => {
       setMatches(media.matches);
-      const listener = () => {
-        setMatches(media.matches);
-      };
-      media.addEventListener('change', listener);
-      return () => media.removeEventListener('change', listener);
-    }
-    return undefined;
+    };
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
   }, [query]);
 
   return matches;
