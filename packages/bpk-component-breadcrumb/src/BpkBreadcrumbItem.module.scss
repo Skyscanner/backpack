@@ -33,8 +33,9 @@
   }
 
   &__arrow {
+    display: flex;
     margin: 0 tokens.bpk-spacing-sm();
-    line-height: tokens.$bpk-line-height-lg;
+    line-height: tokens.$bpk-line-height-xs;
     fill: tokens.$bpk-text-disabled-day;
   }
 }
