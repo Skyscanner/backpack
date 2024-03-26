@@ -16,22 +16,26 @@
  * limitations under the License.
  */
 
+/*
+The icon chip component is just a selectable chip that's
+been hard coded to have no text or trailing icon and padding/margin
+to match.
+*/
+
 import type { ReactNode } from 'react';
-import type { CommonProps } from './commonTypes';
-export interface Props extends CommonProps {
-  role?: string;
-  trailingAccessoryView?: ReactNode;
-}
-declare const BpkSelectableChip: ({
-  accessibilityLabel,
-  children,
-  className,
-  disabled,
-  leadingAccessoryView,
-  role,
-  selected,
-  trailingAccessoryView,
-  type,
-  ...rest
-}: Props) => JSX.Element;
-export default BpkSelectableChip;
+
+import BpkSelectableChip from './BpkSelectableChip';
+
+import type { CommonProps as Props } from './commonTypes';
+
+export type BpkIconChipProps = {
+  leadingAccessoryView: ReactNode;
+} & Omit<Props, 'trailingAccessoryView' | 'leadingAccessoryView' | 'children'>;
+
+const BpkIconChip = (props: BpkIconChipProps) => (
+    <BpkSelectableChip {...props}>
+      {null}
+    </BpkSelectableChip>
+  );
+
+export default BpkIconChip;
