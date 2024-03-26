@@ -15,10 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { renderToString } from 'react-dom/server';
+import '@testing-library/jest-dom';
 
 import { renderHook } from '@testing-library/react-hooks';
-import '@testing-library/jest-dom';
-import { renderToString } from 'react-dom/server';
 
 import useMediaQuery from './useMediaQuery';
 
