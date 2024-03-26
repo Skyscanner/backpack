@@ -16,13 +16,11 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
-@layer bpk-component {
-  .bpk-chart {
-    &__grid-line {
-      shape-rendering: crispedges;
-      stroke: $bpk-line-day;
-    }
+.bpk-chart {
+  &__grid-line {
+    shape-rendering: crispedges;
+    stroke: tokens.$bpk-line-day;
   }
 }

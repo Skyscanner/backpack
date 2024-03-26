@@ -18,6 +18,7 @@
 
 import { useRef, useState, useMemo, useEffect } from 'react';
 import type { ElementType } from 'react';
+
 import { startOfDay, startOfMonth } from 'date-fns';
 import { VariableSizeList as List } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -27,11 +28,13 @@ import {
   CALENDAR_SELECTION_TYPE,
   DateUtils,
 } from '../../bpk-component-calendar';
+
+import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
+import { getMonthsArray, getMonthItemHeights } from './utils';
+
 import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
-import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
-import { getMonthsArray, getMonthItemHeights } from './utils';
 
 const getClassName = cssModules(STYLES);
 

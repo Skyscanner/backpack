@@ -16,135 +16,134 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  @keyframes heart-beat {
-    0%,
-    100% {
-      transform: translate(-50%, -50%) scale(1);
-    }
+@keyframes heart-beat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 
-    10% {
-      transform: translate(-50%, -50%) scale(1.4);
-    }
+  10% {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
 
-    20% {
-      transform: translate(-50%, -50%) scale(1.2);
-    }
+  20% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
 
-    30% {
-      transform: translate(-50%, -50%) scale(1.3);
-    }
+  30% {
+    transform: translate(-50%, -50%) scale(1.3);
+  }
 
-    50% {
-      transform: translate(-50%, -50%) scale(1.25);
-    }
+  50% {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
 
-    70% {
-      transform: translate(-50%, -50%) scale(1.25);
+  70% {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+}
+
+.bpk-save-button {
+  position: relative;
+  width: tokens.bpk-spacing-xxl();
+  height: tokens.bpk-spacing-xxl();
+  padding: tokens.bpk-spacing-md();
+  border-radius: 50%;
+  background-color: transparent;
+
+  @include utils.bpk-hover {
+    background-color: transparent;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: tokens.$bpk-text-on-light-day;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-on-light-day;
     }
   }
 
-  .bpk-save-button {
-    position: relative;
-    width: bpk-spacing-xxl();
-    height: bpk-spacing-xxl();
-    padding: bpk-spacing-md();
-    border-radius: 50%;
-    background-color: transparent;
+  &__heartOutlineIcon {
+    z-index: 1;
+    opacity: 1;
 
-    @include bpk-hover {
-      background-color: transparent;
+    &--show {
+      @include utils.bpk-hover {
+        transition: opacity tokens.$bpk-duration-sm ease-in-out;
+        opacity: 0;
+      }
+    }
+
+    &--hide {
+      opacity: 0;
+    }
+
+    &--onDark {
+      color: tokens.$bpk-text-on-dark-day;
+    }
+  }
+
+  &__heartIcon {
+    z-index: 2;
+    color: tokens.$bpk-core-accent-day;
+    opacity: 0;
+
+    &--toggle {
+      animation: heart-beat 1s 0s 1 ease-out;
+      animation-fill-mode: forwards;
+    }
+
+    &--show {
+      opacity: 1;
+
+      @include utils.bpk-hover {
+        color: tokens.$bpk-core-accent-day;
+      }
+    }
+
+    &--hide {
+      @include utils.bpk-hover {
+        transition: opacity tokens.$bpk-duration-sm ease-in-out;
+        color: tokens.$bpk-text-on-light-day;
+        opacity: 1;
+      }
+    }
+
+    &--onDark {
+      color: tokens.$bpk-text-on-dark-day;
+
+      @include utils.bpk-hover {
+        color: tokens.$bpk-text-on-dark-day;
+      }
+    }
+  }
+
+  &__small {
+    width: tokens.bpk-spacing-xl();
+    height: tokens.bpk-spacing-xl();
+    min-height: tokens.bpk-spacing-xl();
+  }
+
+  &__contained {
+    background-color: tokens.$bpk-private-card-button-contained-color;
+
+    @include utils.bpk-hover {
+      background-color: tokens.$bpk-private-card-button-contained-color;
     }
 
     &:active {
-      background-color: transparent;
-    }
-
-    &__icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: $bpk-text-on-light-day;
-
-      @include bpk-hover {
-        color: $bpk-text-on-light-day;
-      }
-    }
-
-    &__heartOutlineIcon {
-      z-index: 1;
-      opacity: 1;
-
-      &--show {
-        @include bpk-hover {
-          transition: opacity $bpk-duration-sm ease-in-out;
-          opacity: 0;
-        }
-      }
-
-      &--hide {
-        opacity: 0;
-      }
-
-      &--onDark {
-        color: $bpk-text-on-dark-day;
-      }
-    }
-
-    &__heartIcon {
-      z-index: 2;
-      color: $bpk-core-accent-day;
-      opacity: 0;
-
-      &--toggle {
-        animation: heart-beat 1s 0s 1 ease-out;
-        animation-fill-mode: forwards;
-      }
-
-      &--show {
-        opacity: 1;
-
-        @include bpk-hover {
-          color: $bpk-core-accent-day;
-        }
-      }
-
-      &--hide {
-        @include bpk-hover {
-          transition: opacity $bpk-duration-sm ease-in-out;
-          color: $bpk-text-on-light-day;
-          opacity: 1;
-        }
-      }
-
-      &--onDark {
-        color: $bpk-text-on-dark-day;
-
-        @include bpk-hover {
-          color: $bpk-text-on-dark-day;
-        }
-      }
-    }
-
-    &__small {
-      width: bpk-spacing-xl();
-      height: bpk-spacing-xl();
-      min-height: bpk-spacing-xl();
-    }
-
-    &__contained {
-      background-color: $bpk-private-card-button-contained-color;
-
-      @include bpk-hover {
-        background-color: $bpk-private-card-button-contained-color;
-      }
-
-      &:active {
-        background-color: $bpk-private-card-button-contained-color;
-      }
+      background-color: tokens.$bpk-private-card-button-contained-color;
     }
   }
 }

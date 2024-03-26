@@ -25,6 +25,8 @@ import STYLES from './examples.module.scss';
 
 const contentId = 'graphic-promo-content';
 const getClassName = cssModules(STYLES);
+const graphicPromoClassName = getClassName('bpk-graphic-promotion-example');
+
 const sponsor = {
   label: 'Sponsored',
   logo: 'https://js.skyscnr.com/sttc/bpk-content/skyland-a76916b4.png',
@@ -56,7 +58,7 @@ const DefaultExample = () => (
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
-    className={getClassName(STYLES.graphicPromo)}
+    className={graphicPromoClassName}
     style={style}
     textAlign={TEXT_ALIGN.start}
   />
@@ -70,7 +72,7 @@ const CenterAlignedExample = () => (
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
-    className={getClassName(STYLES.graphicPromo)}
+    className={graphicPromoClassName}
     style={style}
     textAlign={TEXT_ALIGN.center}
   />
@@ -84,7 +86,7 @@ const RightAlignedExample = () => (
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
-    className={getClassName(STYLES.graphicPromo)}
+    className={graphicPromoClassName}
     style={style}
     textAlign={TEXT_ALIGN.end}
   />
@@ -98,7 +100,7 @@ const InvertedPortraitExample = () => (
     sponsor={sponsor}
     buttonText={buttonText}
     onClick={onClick}
-    className={getClassName(STYLES.graphicPromo)}
+    className={graphicPromoClassName}
     style={style}
     textAlign={TEXT_ALIGN.start}
     invertVertically
@@ -110,7 +112,7 @@ const MinimalisticExample = () => (
     headline={headline}
     sponsor={sponsor}
     buttonText={buttonText}
-    className={getClassName(STYLES.graphicPromo)}
+    className={graphicPromoClassName}
     style={style}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}
@@ -122,7 +124,7 @@ const MinimalisticRightAlignedExample = () => (
     headline={headline}
     subheading={subheading}
     buttonText={buttonText}
-    className={getClassName(STYLES.graphicPromo)}
+    className={graphicPromoClassName}
     style={style}
     onClick={onClick}
     textAlign={TEXT_ALIGN.end}
@@ -145,7 +147,7 @@ const NonSponsoredExample = () => (
     headline={headline}
     subheading={subheading}
     buttonText={buttonText}
-    className={getClassName(STYLES.graphicPromo)}
+    className={graphicPromoClassName}
     style={style}
     onClick={onClick}
     textAlign={TEXT_ALIGN.start}
@@ -158,7 +160,7 @@ const NonSponsoredCenterAlignedExample = () => (
     headline={headline}
     subheading={subheading}
     buttonText={buttonText}
-    className={getClassName(STYLES.graphicPromo)}
+    className={graphicPromoClassName}
     style={style}
     onClick={onClick}
     textAlign={TEXT_ALIGN.center}
@@ -171,7 +173,7 @@ const NonSponsoredRightAlignedExample = () => (
     headline={headline}
     subheading={subheading}
     buttonText={buttonText}
-    className={getClassName(STYLES.graphicPromo)}
+    className={graphicPromoClassName}
     style={style}
     onClick={onClick}
     textAlign={TEXT_ALIGN.end}
@@ -187,7 +189,7 @@ const VisualTestExample = () => (
       sponsor={sponsor}
       buttonText={buttonText}
       onClick={onClick}
-      className={getClassName(STYLES.graphicPromo)}
+      className={graphicPromoClassName}
       textAlign={TEXT_ALIGN.start}
     />
     <BpkGraphicPromo
@@ -197,7 +199,7 @@ const VisualTestExample = () => (
       sponsor={sponsor}
       buttonText={buttonText}
       onClick={onClick}
-      className={getClassName(STYLES.graphicPromo)}
+      className={graphicPromoClassName}
       textAlign={TEXT_ALIGN.center}
     />
     <BpkGraphicPromo
@@ -207,7 +209,7 @@ const VisualTestExample = () => (
       sponsor={sponsor}
       buttonText={buttonText}
       onClick={onClick}
-      className={getClassName(STYLES.graphicPromo)}
+      className={graphicPromoClassName}
       textAlign={TEXT_ALIGN.end}
     />
     <BpkGraphicPromo
@@ -217,7 +219,7 @@ const VisualTestExample = () => (
       sponsor={sponsor}
       buttonText={buttonText}
       onClick={onClick}
-      className={getClassName(STYLES.graphicPromo)}
+      className={graphicPromoClassName}
       textAlign={TEXT_ALIGN.start}
       invertVertically
     />
@@ -225,7 +227,7 @@ const VisualTestExample = () => (
       headline={headline}
       sponsor={sponsor}
       buttonText={buttonText}
-      className={getClassName(STYLES.graphicPromo)}
+      className={graphicPromoClassName}
       onClick={onClick}
       textAlign={TEXT_ALIGN.start}
     />
@@ -233,7 +235,7 @@ const VisualTestExample = () => (
       headline={headline}
       subheading={subheading}
       buttonText={buttonText}
-      className={getClassName(STYLES.graphicPromo)}
+      className={graphicPromoClassName}
       onClick={onClick}
       textAlign={TEXT_ALIGN.end}
     />
@@ -242,7 +244,7 @@ const VisualTestExample = () => (
       headline={headline}
       subheading={subheading}
       buttonText={buttonText}
-      className={getClassName(STYLES.graphicPromo)}
+      className={graphicPromoClassName}
       onClick={onClick}
       textAlign={TEXT_ALIGN.start}
     />
@@ -251,7 +253,7 @@ const VisualTestExample = () => (
       headline={headline}
       subheading={subheading}
       buttonText={buttonText}
-      className={getClassName(STYLES.graphicPromo)}
+      className={graphicPromoClassName}
       onClick={onClick}
       textAlign={TEXT_ALIGN.center}
     />
@@ -260,7 +262,7 @@ const VisualTestExample = () => (
       headline={headline}
       subheading={subheading}
       buttonText={buttonText}
-      className={getClassName(STYLES.graphicPromo)}
+      className={graphicPromoClassName}
       onClick={onClick}
       textAlign={TEXT_ALIGN.end}
     />

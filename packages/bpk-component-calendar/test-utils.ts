@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import format from 'date-fns/format';
+import { format } from 'date-fns/format';
 
 export const formatDateFull = (date: Date) =>
   format(date, 'EEEE, do MMMM yyyy');

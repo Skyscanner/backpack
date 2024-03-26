@@ -16,74 +16,73 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
 
-@layer bpk-component {
-  .bpk-floating-notification {
-    position: absolute;
-    right: 0;
-    bottom: bpk-spacing-xl();
-    left: 0;
-    display: flex;
-    max-width: bpk-spacing-xxl() * 10;
-    margin: auto;
-    padding: bpk-spacing-lg();
-    transition:
-      opacity $bpk-duration-base ease-in-out,
-      transform $bpk-duration-base ease-in-out;
-    border-radius: $bpk-border-radius-md;
-    background: $bpk-core-primary-day;
-    color: $bpk-text-on-dark-day;
-    box-shadow: $bpk-box-shadow-xl, $bpk-box-shadow-lg;
+.bpk-floating-notification {
+  position: absolute;
+  right: 0;
+  bottom: tokens.bpk-spacing-xl();
+  left: 0;
+  display: flex;
+  max-width: tokens.bpk-spacing-xxl() * 10;
+  margin: auto;
+  padding: tokens.bpk-spacing-lg();
+  transition:
+    opacity tokens.$bpk-duration-base ease-in-out,
+    transform tokens.$bpk-duration-base ease-in-out;
+  border-radius: tokens.$bpk-border-radius-md;
+  background: tokens.$bpk-core-primary-day;
+  color: tokens.$bpk-text-on-dark-day;
+  box-shadow: tokens.$bpk-box-shadow-xl, tokens.$bpk-box-shadow-lg;
 
-    @include bpk-breakpoint-mobile {
-      max-width: 100%;
-      padding: bpk-spacing-base();
+  @include breakpoints.bpk-breakpoint-mobile {
+    max-width: 100%;
+    padding: tokens.bpk-spacing-base();
+  }
+
+  &--leave {
+    transform: translateY(0);
+    opacity: 1;
+
+    &-active {
+      transform: translateY(tokens.bpk-spacing-xl());
+      opacity: 0;
     }
 
-    &--leave {
+    &-done {
+      opacity: 0;
+    }
+  }
+
+  &--appear {
+    transform: translateY(tokens.bpk-spacing-xl());
+    opacity: 0;
+
+    &-active {
       transform: translateY(0);
       opacity: 1;
-
-      &-active {
-        transform: translateY(bpk-spacing-xl());
-        opacity: 0;
-      }
-
-      &-done {
-        opacity: 0;
-      }
     }
+  }
 
-    &--appear {
-      transform: translateY(bpk-spacing-xl());
-      opacity: 0;
+  &__button {
+    min-height: 0;
+    padding: 0;
+    color: tokens.$bpk-text-on-dark-day;
+    margin-inline-start: auto;
+    word-break: keep-all;
+  }
 
-      &-active {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
+  &__icon {
+    margin-right: tokens.bpk-spacing-md();
+    margin-left: tokens.bpk-spacing-sm();
+    flex-shrink: 0;
+    transform: translateY(tokens.bpk-spacing-sm());
+    text-align: bottom;
+    fill: tokens.$bpk-text-on-dark-day;
+  }
 
-    &__button {
-      min-height: 0;
-      padding: 0;
-      color: $bpk-text-on-dark-day;
-      margin-inline-start: auto;
-      word-break: keep-all;
-    }
-
-    &__icon {
-      margin-right: bpk-spacing-md();
-      margin-left: bpk-spacing-sm();
-      flex-shrink: 0;
-      transform: translateY((bpk-spacing-sm()));
-      text-align: bottom;
-      fill: $bpk-text-on-dark-day;
-    }
-
-    &__text {
-      margin-inline-end: bpk-spacing-md();
-    }
+  &__text {
+    margin-inline-end: tokens.bpk-spacing-md();
   }
 }

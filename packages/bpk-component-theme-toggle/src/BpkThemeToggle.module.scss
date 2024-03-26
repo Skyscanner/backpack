@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-theme-toggle {
-    &__label {
-      @include bpk-visually-hidden;
-    }
+.bpk-theme-toggle {
+  &__label {
+    @include utils.bpk-visually-hidden;
   }
 }

@@ -17,12 +17,10 @@
  */
 /* eslint react/no-array-index-key: 0 */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkText from '../../bpk-component-text';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkContentCard from './BpkContentCard';
+
 import STYLES from './BpkContentCards.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -47,12 +45,7 @@ const BpkContentCards = ({ cards, heading }: Props) => {
 
   return (
     <div>
-      <BpkText
-        tagName="h2"
-        className={getClassName('bpk-content-cards--header-text')}
-      >
-        {heading}
-      </BpkText>
+      <h2 className={getClassName('bpk-content-cards--header-text')}>{heading}</h2>
       <div role="list" className={getClassName('bpk-content-cards--layout')}>
         {cards.map((card, index) => (
           <div role="listitem" key={index}>

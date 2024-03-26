@@ -16,71 +16,72 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/typography';
 
-@layer bpk-component {
-  .bpk-navigation-bar {
-    position: relative;
-    display: flex;
-    min-height: bpk-spacing-xl() + bpk-spacing-lg();
-    padding: bpk-spacing-base();
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.bpk-navigation-bar {
+  position: relative;
+  display: flex;
+  min-height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-lg();
+  padding: tokens.bpk-spacing-base();
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-navigation-bar-background-color,
-      $bpk-surface-default-day
+  @include utils.bpk-themeable-property(
+    background-color,
+    --bpk-navigation-bar-background-color,
+    tokens.$bpk-surface-default-day
+  );
+
+  &--on-dark {
+    background-color: tokens.$bpk-surface-contrast-day;
+  }
+
+  &__title {
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-navigation-bar-title-color,
+      tokens.$bpk-text-primary-day
     );
 
     &--on-dark {
-      background-color: $bpk-surface-contrast-day;
+      color: tokens.$bpk-text-primary-inverse-day;
     }
+  }
 
-    &__title {
-      @include bpk-themeable-property(
-        color,
-        --bpk-navigation-bar-title-color,
-        $bpk-text-primary-day
-      );
+  &__leading-item,
+  &__trailing-item {
+    position: absolute;
 
-      &--on-dark {
-        color: $bpk-text-primary-inverse-day;
-      }
+    @include typography.bpk-label-2;
+  }
+
+  &__leading-item {
+    left: tokens.bpk-spacing-base();
+
+    @include utils.bpk-rtl {
+      right: tokens.bpk-spacing-base();
+      left: auto;
     }
+  }
 
-    &__leading-item,
-    &__trailing-item {
-      position: absolute;
+  &__trailing-item {
+    right: tokens.bpk-spacing-base();
 
-      @include bpk-label-2;
+    @include utils.bpk-rtl {
+      right: auto;
+      left: tokens.bpk-spacing-base();
     }
+  }
 
-    &__leading-item {
-      left: bpk-spacing-base();
+  &__sticky {
+    position: sticky;
+    top: 0;
+    z-index: tokens.$bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
 
-      @include bpk-rtl {
-        right: bpk-spacing-base();
-        left: auto;
-      }
-    }
-
-    &__trailing-item {
-      right: bpk-spacing-base();
-
-      @include bpk-rtl {
-        right: auto;
-        left: bpk-spacing-base();
-      }
-    }
-
-    &__sticky {
-      position: sticky;
-      top: 0;
-      z-index: $bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
-
-      @include bpk-box-shadow-sm;
-    }
+    @include shadows.bpk-box-shadow-sm;
   }
 }

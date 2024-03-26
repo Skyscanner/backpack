@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-nudger-secondary-on-dark {
-  color: $bpk-text-on-dark-day;
+  color: tokens.$bpk-text-on-dark-day;
 }
 
 .bpk-nudger-configurable {

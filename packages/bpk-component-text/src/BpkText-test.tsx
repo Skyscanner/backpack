@@ -18,8 +18,9 @@
 
 import { render } from '@testing-library/react';
 
-import type { TextStyle } from './BpkText';
 import BpkText from './BpkText';
+
+import type { TextStyle } from './BpkText';
 
 describe('BpkText', () => {
   it('should render correctly', () => {

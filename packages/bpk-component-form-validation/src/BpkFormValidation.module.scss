@@ -16,31 +16,32 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
+@use '../../unstable__bpk-mixins/margins';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-form-validation {
-    @include bpk-form-validation;
+.bpk-form-validation {
+  @include forms.bpk-form-validation;
 
-    &__container {
-      @include bpk-form-validation__container;
-    }
+  &__container {
+    @include forms.bpk-form-validation__container;
+  }
 
-    &__icon {
-      @include bpk-themeable-property(
-        fill,
-        --bpk-form-validation-icon-fill,
-        $bpk-form-validation-color
-      );
-      @include bpk-margin-trailing(bpk-spacing-sm());
-    }
+  &__icon {
+    @include utils.bpk-themeable-property(
+      fill,
+      --bpk-form-validation-icon-fill,
+      tokens.$bpk-form-validation-color
+    );
+    @include margins.bpk-margin-trailing(tokens.bpk-spacing-sm());
+  }
 
-    &--appear {
-      @include bpk-form-validation--appear;
-    }
+  &--appear {
+    @include forms.bpk-form-validation--appear;
+  }
 
-    &--is-checkbox {
-      @include bpk-form-validation--is-checkbox;
-    }
+  &--is-checkbox {
+    @include forms.bpk-form-validation--is-checkbox;
   }
 }

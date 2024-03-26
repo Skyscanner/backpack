@@ -1,0 +1,221 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@import 'tokens.scss';
+
+////
+/// @group breakpoints
+////
+
+/// @alias bpk-grid__container
+
+@mixin bpk-container {
+  @include bpk-grid__container;
+}
+
+/// Breakpoint to target up to and including small mobile viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-small-mobile {
+///       /* small mobile viewport scss goes here */
+///     }
+///
+///     /* larger mobile, tablet & desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-small-mobile {
+  @media #{$bpk-breakpoint-query-small-mobile} {
+    @content;
+  }
+}
+
+/// Breakpoint to target up to and including mobile viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-mobile {
+///       /* up to and including mobile viewport scss goes here */
+///     }
+///
+///     /* tablet & desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-mobile {
+  @media #{$bpk-breakpoint-query-mobile} {
+    @content;
+  }
+}
+
+/// Breakpoint to target up to and including small tablet viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-small-tablet {
+///       /* up to and including small tablet viewport scss goes here */
+///     }
+///
+///     /* larger tablet & desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-small-tablet {
+  @media #{$bpk-breakpoint-query-small-tablet} {
+    @content;
+  }
+}
+
+/// Breakpoint to target up to and including tablet viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-tablet {
+///       /* mobile & tablet viewport scss goes here */
+///     }
+///
+///     /* desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-tablet {
+  @media #{$bpk-breakpoint-query-tablet} {
+    @content;
+  }
+}
+
+/// Breakpoint to target only small tablet viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-small-tablet-only {
+///       /* small tablet viewport scss goes here */
+///     }
+///
+///     /* mobile, larger tablet & desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-small-tablet-only {
+  @media #{$bpk-breakpoint-query-small-tablet-only} {
+    @content;
+  }
+}
+
+/// Breakpoint to target only tablet viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-tablet-only {
+///       /* tablet viewport scss goes here */
+///     }
+///
+///     /* mobile & desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-tablet-only {
+  @media #{$bpk-breakpoint-query-tablet-only} {
+    @content;
+  }
+}
+
+/// Breakpoint to target tablet & desktop viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-above-mobile {
+///       /* tablet & desktop viewport scss goes here */
+///     }
+///
+///     /* mobile viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-above-mobile {
+  @media #{$bpk-breakpoint-query-above-mobile} {
+    @content;
+  }
+}
+
+/// Breakpoint to target desktop viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-above-tablet {
+///       /* desktop viewport scss goes here */
+///     }
+///
+///     /* mobile & tablet viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-above-tablet {
+  @media #{$bpk-breakpoint-query-above-tablet} {
+    @content;
+  }
+}
+
+/// Breakpoint to target large desktop viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-above-desktop {
+///       /* large desktop viewport scss goes here */
+///     }
+///
+///     /* mobile, tablet, desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-above-desktop {
+  @media #{$bpk-breakpoint-query-above-desktop} {
+    @content;
+  }
+}
+
+/// Breakpoint to target only desktop viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-desktop-only {
+///       /* desktop viewport scss goes here */
+///     }
+///
+///     /* mobile, tablet & large desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-desktop-only {
+  @media #{$bpk-breakpoint-query-desktop-only} {
+    @content;
+  }
+}

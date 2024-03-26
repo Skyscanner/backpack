@@ -16,27 +16,26 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-clear-button {
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    color: $bpk-text-secondary-day;
-    cursor: pointer;
-    appearance: none;
+.bpk-clear-button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: tokens.$bpk-text-secondary-day;
+  cursor: pointer;
+  appearance: none;
 
-    @include bpk-hover {
-      color: $bpk-text-primary-day;
-    }
+  @include utils.bpk-hover {
+    color: tokens.$bpk-text-primary-day;
+  }
 
-    &:active {
-      color: $bpk-text-primary-day;
-    }
+  &:active {
+    color: tokens.$bpk-text-primary-day;
+  }
 
-    &__icon {
-      fill: currentcolor;
-    }
+  &__icon {
+    fill: currentcolor;
   }
 }

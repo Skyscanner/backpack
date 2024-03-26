@@ -16,23 +16,19 @@
  * limitations under the License.
  */
 
-/* stylelint-disable */
+@use '../../unstable__bpk-mixins/tokens';
 
-@import '../../bpk-mixins/index.scss';
+.bpk-input-field {
+  display: flex;
+  max-width: 3 * tokens.bpk-spacing-xxl();
+  margin-right: tokens.bpk-spacing-sm();
+  align-items: center;
 
-@layer bpk-component {
-  .bpk-input-field {
-    display: flex;
-    max-width: 3*bpk-spacing-xxl();
-    margin-right: bpk-spacing-sm();
-    align-items: center;
-  
-    input {
-      text-align: center;
-    }
+  input {
+    text-align: center;
   }
-  
-  .bpk-input-field:last-child {
-    margin-right: $bpk-spacing-none;
-  }
+}
+
+.bpk-input-field:last-child {
+  margin-right: tokens.$bpk-spacing-none;
 }

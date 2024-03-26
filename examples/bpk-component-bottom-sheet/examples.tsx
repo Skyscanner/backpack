@@ -94,6 +94,8 @@ const content = [
 class BottomSheetContainer extends Component<
   {
     children: ReactNode,
+    isComponentOpen?: boolean,
+    id?: string
   },
   {
     isOpen: boolean,
@@ -106,6 +108,14 @@ class BottomSheetContainer extends Component<
     this.state = {
       isOpen: false,
     };
+  }
+
+  componentDidMount(): void {
+    if (this.props?.isComponentOpen) {
+      this.setState({
+        isOpen: true
+      })
+    }
   }
 
   onOpen = () => {
@@ -121,7 +131,7 @@ class BottomSheetContainer extends Component<
   };
 
   render() {
-    const { children, ...rest } =
+    const { children, id, ...rest } =
       this.props;
 
     return (
@@ -131,11 +141,9 @@ class BottomSheetContainer extends Component<
             Open bottom sheet
           </BpkButton>
           <BpkBottomSheet
-            id="my-bottom-sheet"
+            id={id || "my-bottom-sheet"}
             isOpen={this.state.isOpen}
             onClose={this.onClose}
-            getApplicationElement={() => document.getElementById('pagewrap')}
-            renderTarget={() => document.getElementById('bottom-sheet-container')}
             {...rest}
           >
             {children}
@@ -148,6 +156,18 @@ class BottomSheetContainer extends Component<
 
 const DefaultExample = () => (
   <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet">
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
+const BackdropClickCloseExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" closeOnScrimClick>
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
+const EscapeCloseExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" closeOnEscPressed>
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
@@ -166,6 +186,14 @@ const NoHeaderExample = () => (
   </BottomSheetContainer>
 );
 
+const NoHeaderWithActionButtonExample = () => (
+  <BottomSheetContainer
+    closeLabel="Close Bottom Sheet" actionText="Action" onAction={action('Action clicked')}
+  >
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
 const ActionButtonExample = () => (
   <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" actionText="Action" onAction={action('Action clicked')}>
     This is a default bottom sheet. You can put anything you want in here.
@@ -178,11 +206,72 @@ const WideExample = () => (
   </BottomSheetContainer>
 );
 
+const NestedExample = () => (
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    wide
+    closeOnEscPressed
+    closeOnScrimClick
+    >
+      Outer Bottom Sheet
+    <BottomSheetContainer
+      title="Inner Bottom Sheet"
+      closeLabel="Close Inner Bottom Sheet"
+      id="inner-bottom-sheet"
+      closeOnEscPressed
+      closeOnScrimClick
+    >
+      Inner Bottom Sheet
+    </BottomSheetContainer>
+  </BottomSheetContainer>
+);
+
+const MultipleBottomSheetsExample = () => (
+  <>
+    <BottomSheetContainer
+      title="Bottom Sheet 1"
+      closeLabel="Bottom Sheet 1"
+      isComponentOpen
+      closeOnEscPressed
+      closeOnScrimClick
+      id="bottom-sheet-1"
+      wide
+    >
+      This is a bottom sheet 1.
+    </BottomSheetContainer>
+    <BottomSheetContainer
+      title="Bottom Sheet 2"
+      closeLabel="Bottom Sheet 2"
+      isComponentOpen
+      closeOnEscPressed
+      closeOnScrimClick
+      id="bottom-sheet-2"
+    >
+      This is a bottom sheet 2.
+    </BottomSheetContainer>
+    <BottomSheetContainer
+      title="Bottom Sheet 3"
+      closeLabel="Bottom Sheet 3"
+      isComponentOpen
+      closeOnEscPressed
+      closeOnScrimClick
+      id="bottom-sheet-3"
+    >
+      This is a bottom sheet 3.
+    </BottomSheetContainer>
+  </>
+)
 
 export {
   DefaultExample,
+  BackdropClickCloseExample,
+  EscapeCloseExample,
   OverflowingExample,
   NoHeaderExample,
+  NoHeaderWithActionButtonExample,
   ActionButtonExample,
-  WideExample
+  WideExample,
+  NestedExample,
+  MultipleBottomSheetsExample
 };

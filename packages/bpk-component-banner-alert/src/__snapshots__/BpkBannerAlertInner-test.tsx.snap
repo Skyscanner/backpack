@@ -592,21 +592,24 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
             >
               <button
                 aria-label="Dismiss"
-                class="bpk-close-button bpk-banner-alert__toggle-button"
+                class="bpk-close-button"
                 title="Dismiss"
                 type="button"
               >
-                <svg
-                  aria-hidden="true"
+                <span
                   class="bpk-close-button__icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden="true"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                    />
+                  </svg>
+                </span>
               </button>
             </span>
           </div>
@@ -815,21 +818,24 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
             >
               <button
                 aria-label="Dismiss"
-                class="bpk-close-button bpk-banner-alert__toggle-button"
+                class="bpk-close-button"
                 title="Dismiss"
                 type="button"
               >
-                <svg
-                  aria-hidden="true"
+                <span
                   class="bpk-close-button__icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-                  />
-                </svg>
+                  <svg
+                    aria-hidden="true"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                    />
+                  </svg>
+                </span>
               </button>
             </span>
           </div>

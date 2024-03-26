@@ -16,143 +16,143 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  $arrow-width: bpk-spacing-base();
-  $arrow-height: bpk-spacing-base();
+$arrow-width: tokens.bpk-spacing-base();
+$arrow-height: tokens.bpk-spacing-base();
 
-  .bpk-price-marker {
+.bpk-price-marker {
+  display: flex;
+  padding: tokens.$bpk-one-pixel-rem * 2 tokens.bpk-spacing-md();
+  justify-content: center;
+  align-items: center;
+  border: tokens.$bpk-border-size-xl solid;
+  border-radius: tokens.$bpk-border-radius-sm;
+
+  &--dynamic {
+    cursor: pointer;
+  }
+
+  &-default {
+    color: tokens.$bpk-text-primary-inverse-day;
+
+    @include utils.bpk-themeable-property(
+      border-color,
+      --bpk-price-marker-background-color,
+      tokens.$bpk-core-accent-day
+    );
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-price-marker-background-color,
+      tokens.$bpk-core-accent-day
+    );
+  }
+
+  &-viewed {
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-price-marker-viewed-color,
+      rgba(tokens.$bpk-text-on-dark-day, 0.8)
+    );
+    @include utils.bpk-themeable-property(
+      border-color,
+      --bpk-price-marker-viewed-border-color,
+      tokens.$bpk-core-accent-day
+    );
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-price-marker-viewed-background-color,
+      tokens.$bpk-core-accent-day
+    );
+  }
+
+  &-focused {
+    padding: (tokens.bpk-spacing-sm() + (tokens.$bpk-one-pixel-rem * 2))
+      tokens.bpk-spacing-md();
+    background-color: tokens.$bpk-surface-default-day;
+
+    @include utils.bpk-themeable-property(
+      border-color,
+      --bpk-price-marker-selected-border-color,
+      tokens.$bpk-core-accent-day
+    );
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-price-marker-selected-color,
+      tokens.$bpk-text-link-day
+    );
+  }
+
+  &-disabled {
+    // We want the disabled marker appear under any other markers that maybe rendered around it
+    z-index: -2;
+    border-color: tokens.$bpk-canvas-day;
+    background-color: tokens.$bpk-canvas-day;
+    color: tokens.$bpk-text-disabled-day;
+  }
+
+  &__wrapper {
+    position: relative;
     display: flex;
-    padding: $bpk-one-pixel-rem * 2 bpk-spacing-md();
-    justify-content: center;
+    padding: 0; // Prevent default <button> styling.
+    flex-direction: column;
     align-items: center;
-    border: $bpk-border-size-xl solid;
-    border-radius: $bpk-border-radius-sm;
+    transform: translate(
+      calc(-50% - #{tokens.$bpk-border-size-xl}),
+      calc(-100% - #{tokens.$bpk-border-size-xl} - #{$arrow-height}/ 2)
+    );
+    border: none;
+    background: none;
+  }
 
-    &--dynamic {
-      cursor: pointer;
-    }
+  &__arrow {
+    position: absolute;
+
+    // Position the arrow correctly under the price marker
+    top: 50%;
+
+    // We want the arrow pointer to appear under the marker which is already
+    z-index: -1;
+    width: $arrow-width;
+    height: $arrow-height;
+    transform: rotate(45deg);
+    border-radius: 25%;
+    background-color: tokens.$bpk-core-accent-day;
 
     &-default {
-      color: $bpk-text-primary-inverse-day;
-
-      @include bpk-themeable-property(
-        border-color,
-        --bpk-price-marker-background-color,
-        $bpk-core-accent-day
-      );
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         background-color,
         --bpk-price-marker-background-color,
-        $bpk-core-accent-day
+        tokens.$bpk-core-accent-day
       );
     }
 
     &-viewed {
-      @include bpk-themeable-property(
-        color,
-        --bpk-price-marker-viewed-color,
-        rgba($bpk-text-on-dark-day, 0.8)
-      );
-      @include bpk-themeable-property(
-        border-color,
-        --bpk-price-marker-viewed-border-color,
-        $bpk-core-accent-day
-      );
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         background-color,
-        --bpk-price-marker-viewed-background-color,
-        $bpk-core-accent-day
+        --bpk-price-marker-viewed-border-color,
+        tokens.$bpk-core-accent-day
       );
     }
 
     &-focused {
-      padding: (bpk-spacing-sm() + ($bpk-one-pixel-rem * 2)) bpk-spacing-md();
-      background-color: $bpk-surface-default-day;
+      // Position the arrow correctly under the price marker
+      top: 75%;
 
-      @include bpk-themeable-property(
-        border-color,
+      @include utils.bpk-themeable-property(
+        background-color,
         --bpk-price-marker-selected-border-color,
-        $bpk-core-accent-day
-      );
-      @include bpk-themeable-property(
-        color,
-        --bpk-price-marker-selected-color,
-        $bpk-text-link-day
+        tokens.$bpk-core-accent-day
       );
     }
 
     &-disabled {
-      // We want the disabled marker appear under any other markers that maybe rendered around it
-      z-index: -2;
-      border-color: $bpk-canvas-day;
-      background-color: $bpk-canvas-day;
-      color: $bpk-text-disabled-day;
-    }
+      top: 75%;
 
-    &__wrapper {
-      position: relative;
-      display: flex;
-      padding: 0; // Prevent default <button> styling.
-      flex-direction: column;
-      align-items: center;
-      transform: translate(
-        calc(-50% - #{$bpk-border-size-xl}),
-        calc(-100% - #{$bpk-border-size-xl} - #{$arrow-height}/ 2)
-      );
-      border: none;
-      background: none;
-    }
-
-    &__arrow {
-      position: absolute;
-
-      // Position the arrow correctly under the price marker
-      top: 50%;
-
-      // We want the arrow pointer to appear under the marker which is already
-      z-index: -1;
-      width: $arrow-width;
-      height: $arrow-height;
-      transform: rotate(45deg);
-      border-radius: 25%;
-      background-color: $bpk-core-accent-day;
-
-      &-default {
-        @include bpk-themeable-property(
-          background-color,
-          --bpk-price-marker-background-color,
-          $bpk-core-accent-day
-        );
-      }
-
-      &-viewed {
-        @include bpk-themeable-property(
-          background-color,
-          --bpk-price-marker-viewed-border-color,
-          $bpk-core-accent-day
-        );
-      }
-
-      &-focused {
-        // Position the arrow correctly under the price marker
-        top: 75%;
-
-        @include bpk-themeable-property(
-          background-color,
-          --bpk-price-marker-selected-border-color,
-          $bpk-core-accent-day
-        );
-      }
-
-      &-disabled {
-        top: 75%;
-
-        // We want the arrow pointer to appear under the disabled marker which is already z-index: -2
-        z-index: -3;
-        background-color: $bpk-canvas-day;
-      }
+      // We want the arrow pointer to appear under the disabled marker which is already z-index: -2
+      z-index: -3;
+      background-color: tokens.$bpk-canvas-day;
     }
   }
 }

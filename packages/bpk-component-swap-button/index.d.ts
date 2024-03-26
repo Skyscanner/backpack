@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-import BpkSwapButton, {
-  type Props as BpkSwapButtonProps,
-} from './src/BpkSwapButton.tsx';
-
+import BpkSwapButton, { type Props as BpkSwapButtonProps, SWAPBUTTON_STYLES } from './src/BpkSwapButton';
 export type { BpkSwapButtonProps };
 export default BpkSwapButton;
+export { SWAPBUTTON_STYLES };

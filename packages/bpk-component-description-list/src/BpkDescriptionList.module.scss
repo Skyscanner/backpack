@@ -16,24 +16,24 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-description-list {
+.bpk-description-list {
+  margin: 0;
+
+  &__term {
+    @include typography.bpk-label-1;
+  }
+
+  &__details {
     margin: 0;
+    margin-left: tokens.bpk-spacing-lg();
 
-    &__term {
-      @include bpk-label-1;
-    }
-
-    &__details {
-      margin: 0;
-      margin-left: bpk-spacing-lg();
-
-      @include bpk-rtl {
-        margin-right: bpk-spacing-lg();
-        margin-left: 0;
-      }
+    @include utils.bpk-rtl {
+      margin-right: tokens.bpk-spacing-lg();
+      margin-left: 0;
     }
   }
 }

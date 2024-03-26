@@ -28,10 +28,13 @@ import {
   getCalendarMonthWeeks,
   isSameMonth,
 } from './date-utils';
-import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
-import STYLES from './BpkCalendarGrid.module.scss';
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
+
+import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
+
+import STYLES from './BpkCalendarGrid.module.scss';
+
 // This should be imported after `./BpkCalendarGrid.module.scss`.
 // Because of how css specificity works the class `bpk-calendar-grid-transition__grid` needs to be defined
 // after `bpk-calendar-grid` (defined by BpkCalendarGrid.module.scss) so it can override width and display of the calendar

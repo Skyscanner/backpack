@@ -16,22 +16,20 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
-@layer bpk-component {
-  $calendar-height: 7 * ($bpk-calendar-day-size + bpk-spacing-lg());
+$calendar-height: 7 * (tokens.$bpk-calendar-day-size + tokens.bpk-spacing-lg());
 
-  .bpk-scrollable-calendar-grid-list {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: $calendar-height;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+.bpk-scrollable-calendar-grid-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: $calendar-height;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 
-    &__item {
-      display: inline-table;
-    }
+  &__item {
+    display: inline-table;
   }
 }

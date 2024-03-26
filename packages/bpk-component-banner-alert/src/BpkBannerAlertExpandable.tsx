@@ -18,8 +18,9 @@
 
 import type { ReactNode } from 'react';
 
-import type { CommonProps, OnExpandToggleHandler } from './common-types';
 import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';
+
+import type { CommonProps, OnExpandToggleHandler } from './common-types';
 
 export type Props = CommonProps & {
   children: ReactNode;

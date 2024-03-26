@@ -17,6 +17,7 @@
  */
 
 import BpkBreakpoint, { BREAKPOINTS } from './src/BpkBreakpoint';
+import useMediaQuery from './src/useMediaQuery';
 
-export { BREAKPOINTS };
+export { BREAKPOINTS, useMediaQuery };
 export default BpkBreakpoint;

@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
-@layer bpk-component {
-  .bpk-sentinel {
-    // this is necessary for when the user doesn't define a custom loading component
-    width: 100%;
-    height: bpk-spacing-lg();
-  }
+.bpk-sentinel {
+  // this is necessary for when the user doesn't define a custom loading component
+  width: 100%;
+  height: tokens.bpk-spacing-lg();
 }

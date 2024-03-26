@@ -16,38 +16,36 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
-@layer bpk-component {
-  .bpk-vertical-grid {
-    &--on {
-      position: relative;
+.bpk-vertical-grid {
+  &--on {
+    position: relative;
 
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      display: block;
+      z-index: 9999;
+      width: auto;
+      height: auto;
+      background: linear-gradient(
+          to bottom,
+          rgba(tokens.$bpk-status-danger-spot-day, 0.3) 0,
+          transparent tokens.$bpk-one-pixel-rem
+        )
+        repeat left 0;
+      background-size: tokens.bpk-spacing-sm() tokens.bpk-spacing-sm();
+      pointer-events: none;
+    }
+
+    &:active {
       &::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        content: '';
-        display: block;
-        z-index: 9999;
-        width: auto;
-        height: auto;
-        background: linear-gradient(
-            to bottom,
-            rgba($bpk-status-danger-spot-day, 0.3) 0,
-            transparent $bpk-one-pixel-rem
-          )
-          repeat left 0;
-        background-size: bpk-spacing-sm() bpk-spacing-sm();
-        pointer-events: none;
-      }
-
-      &:active {
-        &::after {
-          display: none;
-        }
+        display: none;
       }
     }
   }

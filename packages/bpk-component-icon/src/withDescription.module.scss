@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-icon-description {
-    @include bpk-visually-hidden;
-  }
+.bpk-icon-description {
+  @include utils.bpk-visually-hidden;
 }

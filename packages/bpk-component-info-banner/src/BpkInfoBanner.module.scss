@@ -16,93 +16,93 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/typography';
 
-@layer bpk-component {
-  .bpk-info-banner {
-    padding: bpk-spacing-md() bpk-spacing-base();
-    overflow: hidden;
+.bpk-info-banner {
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+  overflow: hidden;
 
-    @include bpk-border-radius-sm;
-    @include bpk-text;
-    @include bpk-footnote;
+  @include radii.bpk-border-radius-sm;
+  @include typography.bpk-text;
+  @include typography.bpk-footnote;
 
-    &--style-default {
-      background-color: $bpk-private-info-banner-default-day;
-    }
+  &--style-default {
+    background-color: tokens.$bpk-private-info-banner-default-day;
+  }
 
-    &--style-onContrast {
-      background-color: $bpk-private-info-banner-on-contrast-day;
-    }
+  &--style-onContrast {
+    background-color: tokens.$bpk-private-info-banner-on-contrast-day;
+  }
 
-    &__header {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 
-      &--expandable {
-        cursor: pointer;
-      }
-    }
-
-    &__icon,
-    &__toggle {
-      padding: bpk-spacing-sm() / 2 0;
-    }
-
-    &__message {
-      padding: bpk-spacing-sm() bpk-spacing-md();
-      flex-grow: 1;
-    }
-
-    &__success-icon {
-      fill: $bpk-private-info-banner-success-day;
-    }
-
-    &__warning-icon {
-      fill: $bpk-private-info-banner-warning-day;
-    }
-
-    &__error-icon {
-      fill: $bpk-private-info-banner-error-day;
-    }
-
-    &__info-icon {
-      fill: $bpk-text-secondary-day;
-    }
-
-    &__toggle-button {
-      padding: 0;
-      border: 0;
-      background-color: transparent;
+    &--expandable {
       cursor: pointer;
-      appearance: none;
+    }
+  }
+
+  &__icon,
+  &__toggle {
+    padding: tokens.bpk-spacing-sm() * 0.5 0;
+  }
+
+  &__message {
+    padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-md();
+    flex-grow: 1;
+  }
+
+  &__success-icon {
+    fill: tokens.$bpk-private-info-banner-success-day;
+  }
+
+  &__warning-icon {
+    fill: tokens.$bpk-private-info-banner-warning-day;
+  }
+
+  &__error-icon {
+    fill: tokens.$bpk-private-info-banner-error-day;
+  }
+
+  &__info-icon {
+    fill: tokens.$bpk-text-secondary-day;
+  }
+
+  &__toggle-button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    appearance: none;
+  }
+
+  &__expand-icon {
+    fill: tokens.$bpk-text-secondary-day;
+
+    &--flipped {
+      transform: scaleY(-1);
+    }
+  }
+
+  &__children-container {
+    color: tokens.$bpk-text-primary-day;
+
+    @include typography.bpk-footnote;
+
+    &--with-action {
+      padding: tokens.bpk-spacing-sm() 0 tokens.bpk-spacing-sm();
     }
 
-    &__expand-icon {
-      fill: $bpk-text-secondary-day;
-
-      &--flipped {
-        transform: scaleY(-1);
-      }
+    &--no-action {
+      padding: tokens.bpk-spacing-sm() 0 tokens.bpk-spacing-md();
     }
+  }
 
-    &__children-container {
-      color: $bpk-text-primary-day;
-
-      @include bpk-footnote;
-
-      &--with-action {
-        padding: bpk-spacing-sm() 0 bpk-spacing-sm();
-      }
-
-      &--no-action {
-        padding: bpk-spacing-sm() 0 bpk-spacing-md();
-      }
-    }
-
-    &__expandable-action {
-      padding-bottom: bpk-spacing-sm();
-    }
+  &__expandable-action {
+    padding-bottom: tokens.bpk-spacing-sm();
   }
 }

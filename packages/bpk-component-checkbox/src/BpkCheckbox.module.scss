@@ -16,63 +16,62 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/forms';
 
-@layer bpk-component {
-  .bpk-checkbox {
-    @include bpk-checkbox;
+.bpk-checkbox {
+  @include forms.bpk-checkbox;
 
-    &__label {
-      @include bpk-checkbox__label;
+  &__label {
+    @include forms.bpk-checkbox__label;
 
-      &--small {
-        @include bpk-checkbox__label--small;
-      }
+    &--small {
+      @include forms.bpk-checkbox__label--small;
     }
+  }
+
+  &--white {
+    @include forms.bpk-checkbox--white;
+  }
+
+  &--disabled {
+    @include forms.bpk-checkbox--disabled;
 
     &--white {
-      @include bpk-checkbox--white;
+      color: tokens.$bpk-text-disabled-on-dark-day;
     }
+  }
 
-    &--disabled {
-      @include bpk-checkbox--disabled;
+  &--invalid {
+    @include forms.bpk-checkbox--invalid;
+  }
 
-      &--white {
-        color: $bpk-text-disabled-on-dark-day;
+  &__input {
+    @include forms.bpk-checkbox__input;
+
+    &-indeterminate {
+      &::before {
+        position: absolute;
+        top: tokens.bpk-spacing-sm() + tokens.$bpk-one-pixel-rem;
+        left: tokens.bpk-spacing-sm() * 0.5;
+        content: '';
+        width: tokens.bpk-spacing-xxl() * 0.25;
+        height: tokens.bpk-spacing-sm() - tokens.$bpk-one-pixel-rem;
+        border-radius: tokens.$bpk-border-size-lg;
+        background-color: tokens.$bpk-surface-default-day;
       }
     }
 
-    &--invalid {
-      @include bpk-checkbox--invalid;
+    &:disabled {
+      cursor: inherit;
     }
 
-    &__input {
-      @include bpk-checkbox__input;
-
-      &-indeterminate {
-        &::before {
-          position: absolute;
-          top: bpk-spacing-sm() + $bpk-one-pixel-rem;
-          left: bpk-spacing-sm() / 2;
-          content: '';
-          width: bpk-spacing-xxl() / 4;
-          height: bpk-spacing-sm() - $bpk-one-pixel-rem;
-          border-radius: $bpk-border-size-lg;
-          background-color: $bpk-surface-default-day;
-        }
-      }
-
-      &:disabled {
-        cursor: inherit;
-      }
-
-      &-white {
-        background-color: $bpk-surface-default-day;
-      }
+    &-white {
+      background-color: tokens.$bpk-surface-default-day;
     }
+  }
 
-    &__asterisk {
-      color: $bpk-status-danger-spot-day;
-    }
+  &__asterisk {
+    color: tokens.$bpk-status-danger-spot-day;
   }
 }

@@ -16,19 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-pagination-nudger {
-    display: flex;
-    width: bpk-spacing-xl() + bpk-spacing-sm();
-    height: bpk-spacing-xl() + bpk-spacing-sm();
-    padding: $bpk-one-pixel-rem * 10;
+.bpk-pagination-nudger {
+  display: flex;
+  width: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
+  height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
+  padding: tokens.$bpk-one-pixel-rem * 10;
 
-    &__text {
-      &--hidden {
-        @include bpk-visually-hidden;
-      }
+  &__text {
+    &--hidden {
+      @include utils.bpk-visually-hidden;
     }
   }
 }

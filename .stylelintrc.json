@@ -7,6 +7,7 @@
         "resolveNestedSelectors": true
       }
     ],
+    "at-rule-disallowed-list": ["import"],
     "unit-disallowed-list": [["px"], {
       "ignoreProperties": {
         "px": ["box-shadow"]

@@ -20,7 +20,9 @@
 
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
+
 import Transition from 'react-transition-group/Transition';
+
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../bpk-react-utils';

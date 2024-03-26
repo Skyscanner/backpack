@@ -17,8 +17,10 @@
  */
 import { cssModules } from '../../../bpk-react-utils';
 
-import type { Props } from './common-types';
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
+
+import type { Props } from './common-types';
+
 import COMMON_STYLES from './BpkButton.module.scss';
 
 const getCommonClassName = cssModules(COMMON_STYLES);
@@ -29,6 +31,7 @@ export const BpkButtonV2 = ({
   children,
   className = null,
   disabled = false,
+  fullWidth = false,
   href = null,
   iconOnly = false,
   onClick = () => {},
@@ -44,6 +47,7 @@ export const BpkButtonV2 = ({
     iconOnly && 'bpk-button--icon-only',
     iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
     `bpk-button--${type}`,
+    fullWidth && 'bpk-button--full-width',
     className,
   );
 

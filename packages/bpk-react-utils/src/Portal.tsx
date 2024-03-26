@@ -19,6 +19,7 @@
 import { Component } from 'react';
 import type { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import assign from 'object-assign';
 

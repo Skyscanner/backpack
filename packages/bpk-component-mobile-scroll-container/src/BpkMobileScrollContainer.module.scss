@@ -16,39 +16,42 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/scroll-indicators';
 
-@layer bpk-component {
-  .bpk-mobile-scroll-container {
-    position: relative;
-    overflow: hidden;
+.bpk-mobile-scroll-container {
+  position: relative;
+  overflow: hidden;
 
-    &--left-indicator {
-      @include bpk-scroll-indicator-left($bpk-color-white);
-    }
+  &--left-indicator {
+    @include scroll-indicators.bpk-scroll-indicator-left(
+      tokens.$bpk-color-white
+    );
+  }
 
-    &--right-indicator {
-      @include bpk-scroll-indicator-right($bpk-color-white);
-    }
+  &--right-indicator {
+    @include scroll-indicators.bpk-scroll-indicator-right(
+      tokens.$bpk-color-white
+    );
+  }
 
-    &__scroller {
-      white-space: nowrap;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      -ms-overflow-style: -ms-autohiding-scrollbar;
+  &__scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 
-      &:not(.bpk-mobile-scroll-container__showScrollbar) {
-        scrollbar-width: none;
+    &:not(.bpk-mobile-scroll-container__showScrollbar) {
+      scrollbar-width: none;
 
-        &::-webkit-scrollbar {
-          display: none;
-        }
+      &::-webkit-scrollbar {
+        display: none;
       }
     }
+  }
 
-    &__inner {
-      width: 100%;
-    }
+  &__inner {
+    width: 100%;
   }
 }

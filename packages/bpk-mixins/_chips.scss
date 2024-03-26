@@ -1,0 +1,249 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@import 'tokens.scss';
+@import 'borders.scss';
+@import 'margins.scss';
+@import 'shadows.scss';
+@import 'utils.scss';
+
+@mixin bpk-chip {
+  display: inline-flex;
+  height: bpk-spacing-xl();
+  padding: 0 bpk-spacing-base();
+  align-items: center;
+  border: none;
+  border-radius: $bpk-border-radius-xs * 2;
+  cursor: pointer;
+
+  &__leading-accessory-view {
+    display: inline-flex;
+    fill: currentcolor;
+
+    @include bpk-margin-trailing(bpk-spacing-md());
+  }
+
+  &__trailing-accessory-view {
+    display: inline-flex;
+    fill: currentcolor;
+
+    @include bpk-margin-leading(bpk-spacing-md(), false);
+    @include bpk-margin-trailing(-1 * bpk-spacing-md(), false);
+  }
+
+  &--on-dark {
+    background-color: transparent;
+    color: $bpk-text-on-dark-day;
+
+    @include bpk-border-sm($bpk-line-on-dark-day);
+
+    @include bpk-hover {
+      @include bpk-border-sm($bpk-surface-default-day);
+    }
+
+    &:active:not(:disabled) {
+      @include bpk-border-sm($bpk-surface-default-day);
+    }
+
+    &-selected {
+      @include bpk-themeable-property(
+        color,
+        --bpk-chip-on-dark-selected-text-color,
+        $bpk-text-on-light-day
+      );
+      @include bpk-themeable-property(
+        background-color,
+        --bpk-chip-on-dark-selected-background-color,
+        $bpk-surface-default-day
+      );
+      @include bpk-border-sm(transparent);
+
+      @include bpk-hover {
+        @include bpk-border-sm(transparent);
+      }
+
+      &:active:not(:disabled) {
+        @include bpk-border-sm(transparent);
+      }
+    }
+
+    &-dismissible {
+      @include bpk-hover {
+        svg {
+          fill: currentcolor;
+        }
+      }
+
+      &:active:not(:disabled) {
+        svg {
+          fill: currentcolor;
+        }
+      }
+
+      &__trailing-accessory-view {
+        fill: $bpk-text-secondary-day;
+      }
+    }
+
+    &-disabled {
+      @include bpk-border-sm(transparent);
+    }
+  }
+
+  &--default {
+    background-color: transparent;
+    color: $bpk-text-primary-day;
+
+    @include bpk-border-sm($bpk-line-day);
+
+    @include bpk-hover {
+      @include bpk-border-sm($bpk-core-primary-day);
+    }
+
+    &:active:not(:disabled) {
+      @include bpk-border-sm($bpk-core-primary-day);
+    }
+
+    &-selected {
+      @include bpk-themeable-property(
+        color,
+        --bpk-chip-default-selected-text-color,
+        $bpk-text-on-dark-day
+      );
+      @include bpk-themeable-property(
+        background-color,
+        --bpk-chip-default-selected-background-color,
+        $bpk-core-primary-day
+      );
+      @include bpk-border-sm(transparent);
+
+      @include bpk-hover {
+        @include bpk-border-sm(transparent);
+      }
+
+      &:active:not(:disabled) {
+        @include bpk-border-sm(transparent);
+      }
+    }
+
+    &-dismissible {
+      @include bpk-hover {
+        svg {
+          fill: currentcolor;
+        }
+      }
+
+      &:active:not(:disabled) {
+        svg {
+          fill: currentcolor;
+        }
+      }
+
+      &__trailing-accessory-view {
+        fill: $bpk-text-disabled-on-dark-day;
+      }
+    }
+
+    &-disabled {
+      @include bpk-border-sm(transparent);
+    }
+  }
+
+  &--on-image {
+    background-color: $bpk-surface-default-day;
+    color: $bpk-text-primary-day;
+
+    @include bpk-box-shadow-sm;
+
+    @include bpk-hover {
+      background-color: $bpk-canvas-contrast-day;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $bpk-canvas-contrast-day;
+    }
+
+    &-selected {
+      @include bpk-themeable-property(
+        color,
+        --bpk-chip-on-image-selected-text-color,
+        $bpk-text-on-dark-day
+      );
+      @include bpk-themeable-property(
+        background-color,
+        --bpk-chip-on-image-selected-background-color,
+        $bpk-core-primary-day
+      );
+
+      @include bpk-hover {
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-chip-on-image-selected-hover-background-color,
+          $bpk-core-primary-day
+        );
+      }
+
+      &:active:not(:disabled) {
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-chip-on-image-selected-active-background-color,
+          $bpk-core-primary-day
+        );
+      }
+    }
+
+    &-dismissible {
+      @include bpk-hover {
+        svg {
+          fill: currentcolor;
+        }
+      }
+
+      &:active:not(:disabled) {
+        svg {
+          fill: currentcolor;
+        }
+      }
+
+      &__trailing-accessory-view {
+        fill: $bpk-text-disabled-on-dark-day;
+      }
+    }
+
+    &-disabled {
+      @include bpk-box-shadow-sm;
+    }
+  }
+
+  &--disabled {
+    background-color: $bpk-private-chip-disabled-background-day;
+    color: $bpk-text-disabled-day;
+    cursor: not-allowed;
+  }
+
+  &--icon-only {
+    padding-inline-end: bpk-spacing-md();
+    padding-inline-start: bpk-spacing-md();
+
+    &__leading-accessory-view {
+      @include bpk-margin-trailing(0);
+    }
+  }
+}

@@ -16,72 +16,72 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  $slider-handle-size: bpk-spacing-base() + bpk-spacing-sm();
-  $slider-handle-touch-size: bpk-spacing-xxl();
-  $slider-bar-height: bpk-spacing-sm();
+$slider-handle-size: tokens.bpk-spacing-base() + tokens.bpk-spacing-sm();
+$slider-handle-touch-size: tokens.bpk-spacing-xxl();
+$slider-bar-height: tokens.bpk-spacing-sm();
 
-  .bpk-slider {
+.bpk-slider {
+  height: $slider-handle-size;
+  -webkit-tap-highlight-color: transparent;
+
+  &__handle {
+    display: flex;
+    width: $slider-handle-size;
     height: $slider-handle-size;
-    -webkit-tap-highlight-color: transparent;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: tokens.$bpk-core-accent-day;
+    cursor: pointer;
 
-    &__handle {
-      display: flex;
-      width: $slider-handle-size;
-      height: $slider-handle-size;
-      justify-content: center;
-      align-items: center;
+    @include shadows.bpk-box-shadow-sm;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: $slider-handle-touch-size;
+      height: $slider-handle-touch-size;
       border-radius: 50%;
-      background-color: $bpk-core-accent-day;
-      cursor: pointer;
-
-      @include bpk-box-shadow-sm;
-
-      &::after {
-        position: absolute;
-        content: '';
-        width: $slider-handle-touch-size;
-        height: $slider-handle-touch-size;
-        border-radius: 50%;
-      }
-
-      &--active {
-        transform: scale(1.2) translate3d(0, 0, 0);
-        background-color: $bpk-private-slider-selected-day;
-      }
     }
 
-    &__bar {
-      top: calc(50% - #{$slider-bar-height / 2});
-      height: $slider-bar-height;
-      border-radius: $bpk-border-radius-sm;
-      background-color: $bpk-line-day;
+    &--active {
+      transform: scale(1.2) translate3d(0, 0, 0);
+      background-color: tokens.$bpk-private-slider-selected-day;
     }
+  }
 
+  &__bar {
+    top: calc(50% - #{$slider-bar-height * 0.5});
+    height: $slider-bar-height;
+    border-radius: tokens.$bpk-border-radius-sm;
+    background-color: tokens.$bpk-line-day;
+  }
+
+  // stylelint-disable-next-line selector-attribute-quotes
+  > div[class$='0'] {
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-slider-bar-color,
+      tokens.$bpk-core-accent-day
+    );
+  }
+
+  &--range {
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='0'] {
-      @include bpk-themeable-property(
+      background-color: tokens.$bpk-line-day;
+    }
+    // stylelint-disable-next-line selector-attribute-quotes
+    > div[class$='1'] {
+      @include utils.bpk-themeable-property(
         background-color,
         --bpk-slider-bar-color,
-        $bpk-core-accent-day
+        tokens.$bpk-core-accent-day
       );
-    }
-
-    &--range {
-      // stylelint-disable-next-line selector-attribute-quotes
-      > div[class$='0'] {
-        background-color: $bpk-line-day;
-      }
-      // stylelint-disable-next-line selector-attribute-quotes
-      > div[class$='1'] {
-        @include bpk-themeable-property(
-          background-color,
-          --bpk-slider-bar-color,
-          $bpk-core-accent-day
-        );
-      }
     }
   }
 }

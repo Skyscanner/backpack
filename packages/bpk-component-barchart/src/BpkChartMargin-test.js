@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import { render } from '@testing-library/react';
+
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkChartMargin from './BpkChartMargin';

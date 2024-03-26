@@ -71,6 +71,9 @@ export type Props = {
     preventKeyboardFocus?: boolean;
     selectionConfiguration?: SelectionConfiguration;
     gridClassName?: string | null;
+    /**
+     * Sets the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
+     */
     customRowHeight?: number;
     /**
      * Key to be used to pick the desired weekDay format from the `daysOfWeek` object, for example: `nameAbbr` or `nameNarrow`.
@@ -93,5 +96,5 @@ export type Props = {
      */
     dateProps?: {} | null;
 };
-declare const composeCalendar: (Nav: ComponentType<any> | string | null, GridHeader: ComponentType<any> | string | null, Grid: ComponentType<any> | string, CalendarDate: ComponentType<any> | string | null) => ({ changeMonthLabel, className, dateModifiers, dateProps, daysOfWeek, fixedWidth, focusedDate, formatDateFull, formatMonth, gridClassName, gridProps, headerProps, id, markOutsideDays, markToday, maxDate, minDate, month, navProps, nextMonthLabel, onDateClick, onDateKeyDown, onMonthChange, preventKeyboardFocus, previousMonthLabel, selectionConfiguration, weekDayKey, weekStartsOn, }: Props) => JSX.Element;
+declare const composeCalendar: (Nav: ComponentType<any> | string | null, GridHeader: ComponentType<any> | string | null, Grid: ComponentType<any> | string, CalendarDate: ComponentType<any> | string | null) => ({ changeMonthLabel, className, customRowHeight, dateModifiers, dateProps, daysOfWeek, fixedWidth, focusedDate, formatDateFull, formatMonth, gridClassName, gridProps, headerProps, id, markOutsideDays, markToday, maxDate, minDate, month, navProps, nextMonthLabel, onDateClick, onDateKeyDown, onMonthChange, preventKeyboardFocus, previousMonthLabel, selectionConfiguration, weekDayKey, weekStartsOn, }: Props) => JSX.Element;
 export default composeCalendar;

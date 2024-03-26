@@ -15,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import addMonths from 'date-fns/addMonths';
-import startOfDay from 'date-fns/startOfDay';
+import { addMonths } from 'date-fns/addMonths';
+import { startOfDay } from 'date-fns/startOfDay';
 
 import { action } from '../bpk-storybook-utils';
 import BpkText from '../../packages/bpk-component-text';

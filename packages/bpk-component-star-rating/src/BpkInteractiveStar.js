@@ -23,6 +23,7 @@ import PropTypes from 'prop-types';
 import { cssModules } from '../../bpk-react-utils';
 
 import { BpkStarNonRtl, STAR_TYPES } from './BpkStar';
+
 import STYLES from './BpkInteractiveStar.module.scss';
 
 const getClassName = cssModules(STYLES);

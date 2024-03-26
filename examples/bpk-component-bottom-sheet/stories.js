@@ -16,15 +16,19 @@
  * limitations under the License.
  */
 
-
 import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
 
 import {
   DefaultExample,
+  BackdropClickCloseExample,
+  EscapeCloseExample,
   OverflowingExample,
   NoHeaderExample,
+  NoHeaderWithActionButtonExample,
   ActionButtonExample,
-  WideExample
+  WideExample,
+  NestedExample,
+  MultipleBottomSheetsExample
 } from './examples';
 
 export default {
@@ -33,10 +37,17 @@ export default {
 };
 
 export const Default = DefaultExample;
+export const BackdropClickClose = BackdropClickCloseExample;
+export const EscapeClose = EscapeCloseExample;
 export const Overflowing = OverflowingExample;
 
 export const NoHeader = NoHeaderExample;
+export const NoHeaderWithActionButton = NoHeaderWithActionButtonExample;
 
 export const ActionButton = ActionButtonExample;
 
 export const Wide = WideExample;
+
+export const Nested = NestedExample;
+
+export const MultipleBottomSheets = MultipleBottomSheetsExample;

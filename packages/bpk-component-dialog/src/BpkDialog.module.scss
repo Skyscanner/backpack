@@ -16,65 +16,65 @@
  * limitations under the License.
  */
 
-@import '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
 
-@layer bpk-component {
-  .bpk-dialog {
-    &__container {
-      display: flex;
-      padding: bpk-spacing-lg();
+.bpk-dialog {
+  &__container {
+    display: flex;
+    padding: tokens.bpk-spacing-lg();
 
-      // IE11 and below hack for buggy flexbox support
-      @media screen\0 {
-        display: block;
-      }
+    // IE11 and below hack for buggy flexbox support
+    @media screen\0 {
+      display: block;
+    }
+  }
+
+  &__close-button {
+    float: right;
+    margin: 0 0 tokens.bpk-spacing-base() tokens.bpk-spacing-base();
+
+    @include utils.bpk-rtl {
+      float: left;
+      margin: 0 tokens.bpk-spacing-base() tokens.bpk-spacing-base() 0;
+    }
+  }
+
+  &--with-icon {
+    margin-top: tokens.bpk-spacing-xl();
+  }
+
+  &__icon {
+    $size: tokens.bpk-spacing-md() * 7;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    width: $size;
+    height: $size;
+    margin-top: -1 * $size * 0.5;
+    margin-left: -1 * $size * 0.5;
+    justify-content: center;
+    align-items: center;
+    border: (tokens.$bpk-border-size-lg * 2) tokens.$bpk-surface-default-day
+      solid;
+    border-radius: 50%;
+
+    &--primary {
+      background-color: tokens.$bpk-core-accent-day;
     }
 
-    &__close-button {
-      float: right;
-      margin: 0 0 bpk-spacing-base() bpk-spacing-base();
-
-      @include bpk-rtl {
-        float: left;
-        margin: 0 bpk-spacing-base() bpk-spacing-base() 0;
-      }
+    &--warning {
+      background-color: tokens.$bpk-status-warning-spot-day;
     }
 
-    &--with-icon {
-      margin-top: bpk-spacing-xl();
+    &--destructive {
+      background-color: tokens.$bpk-status-danger-spot-day;
     }
 
-    &__icon {
-      $size: bpk-spacing-md() * 7;
-
-      position: absolute;
-      top: 0;
-      left: 50%;
-      display: flex;
-      width: $size;
-      height: $size;
-      margin-top: -$size / 2;
-      margin-left: -$size / 2;
-      justify-content: center;
-      align-items: center;
-      border: ($bpk-border-size-lg * 2) $bpk-surface-default-day solid;
-      border-radius: 50%;
-
-      &--primary {
-        background-color: $bpk-core-accent-day;
-      }
-
-      &--warning {
-        background-color: $bpk-status-warning-spot-day;
-      }
-
-      &--destructive {
-        background-color: $bpk-status-danger-spot-day;
-      }
-
-      > svg {
-        fill: $bpk-text-primary-inverse-day;
-      }
+    > svg {
+      fill: tokens.$bpk-text-primary-inverse-day;
     }
   }
 }

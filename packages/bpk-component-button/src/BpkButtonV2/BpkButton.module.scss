@@ -16,68 +16,71 @@
  * limitations under the License.
  */
 
-@import '../../../bpk-mixins/index.scss';
+@use '../../../unstable__bpk-mixins/tokens';
+@use '../../../unstable__bpk-mixins/buttons';
 
-@layer bpk-component {
-  .bpk-button {
-    @include bpk-button;
+.bpk-button {
+  @include buttons.bpk-button;
 
-    &--large {
-      @include bpk-button--large;
-    }
+  &--large {
+    @include buttons.bpk-button--large;
+  }
 
-    &--icon-only {
-      border-radius: $bpk-button-border-radius;
+  &--icon-only {
+    border-radius: tokens.$bpk-button-border-radius;
 
-      @include bpk-button--icon-only;
-    }
+    @include buttons.bpk-button--icon-only;
+  }
 
-    &--large-icon-only {
-      border-radius: $bpk-button-border-radius;
+  &--large-icon-only {
+    border-radius: tokens.$bpk-button-border-radius;
 
-      @include bpk-button--large-icon-only;
-    }
+    @include buttons.bpk-button--large-icon-only;
+  }
 
-    &--destructive {
-      @include bpk-button--secondary;
-      @include bpk-button--destructive;
-    }
+  &--destructive {
+    @include buttons.bpk-button--secondary;
+    @include buttons.bpk-button--destructive;
+  }
 
-    &--featured {
-      @include bpk-button--featured;
-    }
+  &--featured {
+    @include buttons.bpk-button--featured;
+  }
 
-    &--link {
-      @include bpk-button--link;
-    }
+  &--link {
+    @include buttons.bpk-button--link;
+  }
 
-    &--link-on-dark {
-      @include bpk-button--link-on-dark;
-    }
+  &--link-on-dark {
+    @include buttons.bpk-button--link-on-dark;
+  }
 
-    &--primary-on-dark {
-      @include bpk-button--primary-on-dark;
-    }
+  &--primary-on-dark {
+    @include buttons.bpk-button--primary-on-dark;
+  }
 
-    &--primary-on-light {
-      @include bpk-button--primary-on-light;
-    }
+  &--primary-on-light {
+    @include buttons.bpk-button--primary-on-light;
+  }
 
-    &--secondary {
-      @include bpk-button--secondary;
-    }
+  &--secondary {
+    @include buttons.bpk-button--secondary;
+  }
 
-    &--secondary-on-dark {
-      @include bpk-button--secondary-on-dark;
-    }
+  &--secondary-on-dark {
+    @include buttons.bpk-button--secondary-on-dark;
+  }
 
-    /* stylelint-disable selector-max-compound-selectors */
-    span > svg {
-      display: block;
-    }
+  &--full-width {
+    @include buttons.bpk-button--full-width;
+  }
 
-    svg {
-      fill: currentcolor;
-    }
+  /* stylelint-disable selector-max-compound-selectors */
+  span > svg {
+    display: block;
+  }
+
+  svg {
+    fill: currentcolor;
   }
 }
