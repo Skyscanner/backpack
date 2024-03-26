@@ -33,8 +33,8 @@
   }
 
   &__arrow {
-    line-height: 16px;
     margin: 0 tokens.bpk-spacing-sm();
+    line-height: $bpk-line-height-xs;
     fill: tokens.$bpk-text-disabled-day;
   }
 }

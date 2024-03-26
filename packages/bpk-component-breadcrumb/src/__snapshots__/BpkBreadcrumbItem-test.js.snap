@@ -5,23 +5,31 @@ exports[`BpkBreadcrumbItem should render correctly 1`] = `
   <li
     class="bpk-breadcrumb-item"
   >
-    <a
-      class="bpk-link bpk-breadcrumb-item__link"
-      href="https://skyscanner.design/"
+    <span
+      class="bpk-breadcrumb-item__link"
     >
-      Backpack
-    </a>
-    <svg
-      aria-hidden="true"
-      class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-      style="width: 1rem; height: 1rem;"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      <a
+        class="bpk-link"
+        href="https://skyscanner.design/"
+      >
+        Backpack
+      </a>
+    </span>
+    <span
+      class="bpk-breadcrumb-item__arrow"
     >
-      <path
-        d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
-      />
-    </svg>
+      <svg
+        aria-hidden="true"
+        class="bpk-icon--rtl-support"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
+        />
+      </svg>
+    </span>
   </li>
 </DocumentFragment>
 `;
@@ -32,11 +40,18 @@ exports[`BpkBreadcrumbItem should render correctly with a "active" prop 1`] = `
     class="bpk-breadcrumb-item"
   >
     <span
-      aria-current="page"
-      class="bpk-text bpk-text--body-default bpk-breadcrumb-item__active-item"
+      class="bpk-breadcrumb-item__active-item"
     >
-      Backpack
+      <span
+        aria-current="page"
+        class="bpk-text bpk-text--body-default"
+      >
+        Backpack
+      </span>
     </span>
+    <span
+      class="bpk-breadcrumb-item__arrow"
+    />
   </li>
 </DocumentFragment>
 `;
@@ -46,23 +61,31 @@ exports[`BpkBreadcrumbItem should render correctly with a custom class name 1`] 
   <li
     class="bpk-breadcrumb-item my-custom-class"
   >
-    <a
-      class="bpk-link bpk-breadcrumb-item__link"
-      href="https://skyscanner.design/"
+    <span
+      class="bpk-breadcrumb-item__link"
     >
-      Backpack
-    </a>
-    <svg
-      aria-hidden="true"
-      class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-      style="width: 1rem; height: 1rem;"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      <a
+        class="bpk-link"
+        href="https://skyscanner.design/"
+      >
+        Backpack
+      </a>
+    </span>
+    <span
+      class="bpk-breadcrumb-item__arrow"
     >
-      <path
-        d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
-      />
-    </svg>
+      <svg
+        aria-hidden="true"
+        class="bpk-icon--rtl-support"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
+        />
+      </svg>
+    </span>
   </li>
 </DocumentFragment>
 `;
@@ -73,23 +96,31 @@ exports[`BpkBreadcrumbItem should render correctly with arbitrary props 1`] = `
     class="bpk-breadcrumb-item"
     testid="arbitrary value"
   >
-    <a
-      class="bpk-link bpk-breadcrumb-item__link"
-      href="https://skyscanner.design/"
+    <span
+      class="bpk-breadcrumb-item__link"
     >
-      Backpack
-    </a>
-    <svg
-      aria-hidden="true"
-      class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-      style="width: 1rem; height: 1rem;"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      <a
+        class="bpk-link"
+        href="https://skyscanner.design/"
+      >
+        Backpack
+      </a>
+    </span>
+    <span
+      class="bpk-breadcrumb-item__arrow"
     >
-      <path
-        d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
-      />
-    </svg>
+      <svg
+        aria-hidden="true"
+        class="bpk-icon--rtl-support"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
+        />
+      </svg>
+    </span>
   </li>
 </DocumentFragment>
 `;
@@ -99,24 +130,32 @@ exports[`BpkBreadcrumbItem should render correctly with with "linkProps" attribu
   <li
     class="bpk-breadcrumb-item"
   >
-    <a
-      class="bpk-link bpk-breadcrumb-item__link"
-      href="https://skyscanner.design/"
-      testid="arbitrary value"
+    <span
+      class="bpk-breadcrumb-item__link"
     >
-      Backpack
-    </a>
-    <svg
-      aria-hidden="true"
-      class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-      style="width: 1rem; height: 1rem;"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      <a
+        class="bpk-link"
+        href="https://skyscanner.design/"
+        testid="arbitrary value"
+      >
+        Backpack
+      </a>
+    </span>
+    <span
+      class="bpk-breadcrumb-item__arrow"
     >
-      <path
-        d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
-      />
-    </svg>
+      <svg
+        aria-hidden="true"
+        class="bpk-icon--rtl-support"
+        style="width: 1rem; height: 1rem;"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
+        />
+      </svg>
+    </span>
   </li>
 </DocumentFragment>
 `;
