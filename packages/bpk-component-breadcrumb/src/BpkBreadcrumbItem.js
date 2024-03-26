@@ -49,28 +49,30 @@ const BpkBreadcrumbItem = (props: Props) => {
     <li className={getClassName('bpk-breadcrumb-item', className)} {...rest}>
       {active ? (
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-        <BpkText
-          className={getClassName('bpk-breadcrumb-item__active-item')}
-          aria-current="page"
-          {...linkProps}
-        >
-          {children}
-        </BpkText>
+        <span className={getClassName('bpk-breadcrumb-item__active-item')}>
+          <BpkText
+            aria-current="page"
+            {...linkProps}
+          >
+            {children}
+          </BpkText>
+        </span>
       ) : (
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-        <BpkLink
-          href={href}
-          className={getClassName('bpk-breadcrumb-item__link')}
-          {...linkProps}
-        >
-          {children}
-        </BpkLink>
+        <span className={getClassName('bpk-breadcrumb-item__link')}>
+          <BpkLink
+            href={href}
+            {...linkProps}
+          >
+            {children}
+          </BpkLink>
+        </span>
       )}
-      {!active && (
-        <RtlSupportedArrowRight
-          className={getClassName('bpk-breadcrumb-item__arrow')}
-        />
-      )}
+      <span className={getClassName('bpk-breadcrumb-item__arrow')}>
+        {!active && (
+          <RtlSupportedArrowRight/>
+        )}
+      </span>
     </li>
   );
 };

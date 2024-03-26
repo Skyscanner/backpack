@@ -33,6 +33,7 @@
   }
 
   &__arrow {
+    line-height: 16px;
     margin: 0 tokens.bpk-spacing-sm();
     fill: tokens.$bpk-text-disabled-day;
   }
