@@ -79,6 +79,29 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
 </DocumentFragment>
 `;
 
+exports[`BpkSelectableChip should render correctly with type="default" and a leading accessory view without children 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default bpk-chip--icon-only"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
 exports[`BpkSelectableChip should render correctly with type="default" and a trailing accessory view 1`] = `
 <DocumentFragment>
   <button
@@ -235,6 +258,29 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
 </DocumentFragment>
 `;
 
+exports[`BpkSelectableChip should render correctly with type="on-dark" and a leading accessory view without children 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--icon-only"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
 exports[`BpkSelectableChip should render correctly with type="on-dark" and a trailing accessory view 1`] = `
 <DocumentFragment>
   <button
@@ -387,6 +433,29 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
     >
       Toggle me
     </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="on-image" and a leading accessory view without children 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image bpk-chip--icon-only"
+    role="checkbox"
+    title="Toggle"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <span>
+        Leading
+      </span>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
   </button>
 </DocumentFragment>
 `;
