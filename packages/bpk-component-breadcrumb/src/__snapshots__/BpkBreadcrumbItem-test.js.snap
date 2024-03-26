@@ -42,12 +42,7 @@ exports[`BpkBreadcrumbItem should render correctly with a "active" prop 1`] = `
     <span
       class="bpk-breadcrumb-item__active-item"
     >
-      <span
-        aria-current="page"
-        class="bpk-text bpk-text--body-default"
-      >
-        Backpack
-      </span>
+      Backpack
     </span>
     <span
       class="bpk-breadcrumb-item__arrow"
