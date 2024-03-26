@@ -21,7 +21,8 @@ import { renderToString } from 'react-dom/server';
 import { render } from '@testing-library/react';
 
 import BpkBottomSheet from './BpkBottomSheet';
-
+// mock breakpoint to always match
+jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
 describe('BpkBottomSheet', () => {
   it('renders without crashing with all props', () => {
     expect(() => renderToString(
