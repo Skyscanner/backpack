@@ -21,6 +21,9 @@ import { axe } from 'jest-axe';
 
 import BpkBreakpoint, { BREAKPOINTS } from './BpkBreakpoint';
 
+// mock breakpoint to always match
+jest.mock('./useMediaQuery', () => jest.fn(() => true));
+
 describe('BpkBreakpoint accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(

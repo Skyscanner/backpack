@@ -17,10 +17,47 @@
  */
 
 import { renderHook } from '@testing-library/react-hooks';
+import '@testing-library/jest-dom';
+import { renderToString } from 'react-dom/server';
 
 import useMediaQuery from './useMediaQuery';
 
 describe('useMediaQuery', () => {
+  describe('SSR mode', () => {
+    const DummyComponent = ({ matchSSR }: { matchSSR?: boolean }) => {
+      const matches = useMediaQuery('(min-width: 768px)', matchSSR);
+      return <div>{matches ? 'matches' : 'no match'}</div>;
+    };
+
+    it('should match when matchSSR=true', () => {
+      const html = renderToString(<DummyComponent matchSSR />);
+      expect(html).toMatchSnapshot();
+    });
+
+    it('should not match when matchSSR=false', () => {
+      const html = renderToString(<DummyComponent matchSSR={false} />);
+      expect(html).toMatchSnapshot();
+    });
+
+    it('should not match when matchSSR not explicitly set', () => {
+      const html = renderToString(<DummyComponent />);
+      expect(html).toMatchSnapshot();
+    });
+  });
+
+  it('should call addEventListener', () => {
+    const mockAddEventListener = jest.fn();
+    window.matchMedia = jest.fn().mockImplementation(() => ({
+      matches: true,
+      addEventListener: mockAddEventListener,
+      removeEventListener: jest.fn(),
+    }));
+
+    renderHook(() => useMediaQuery('(min-width: 768px)'));
+
+    expect(mockAddEventListener).toHaveBeenCalledTimes(1);
+  });
+
   it('should return true if media query matches', () => {
     window.matchMedia = jest.fn().mockImplementation(() => ({
       matches: true,
