@@ -26,6 +26,7 @@
 
   &__link {
     @include typography.bpk-text;
+    margin-top: tokens.bpk-spacing-base() * 0.125;
   }
 
   &__active-item {
