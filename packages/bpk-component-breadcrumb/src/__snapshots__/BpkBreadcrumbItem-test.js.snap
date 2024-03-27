@@ -5,7 +5,7 @@ exports[`BpkBreadcrumbItem should render correctly 1`] = `
   <li
     class="bpk-breadcrumb-item"
   >
-    <div
+    <span
       class="bpk-breadcrumb-item__link"
     >
       <a
@@ -14,8 +14,8 @@ exports[`BpkBreadcrumbItem should render correctly 1`] = `
       >
         Backpack
       </a>
-    </div>
-    <div
+    </span>
+    <span
       class="bpk-breadcrumb-item__arrow"
     >
       <svg
@@ -29,7 +29,7 @@ exports[`BpkBreadcrumbItem should render correctly 1`] = `
           d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
         />
       </svg>
-    </div>
+    </span>
   </li>
 </DocumentFragment>
 `;
@@ -39,12 +39,12 @@ exports[`BpkBreadcrumbItem should render correctly with a "active" prop 1`] = `
   <li
     class="bpk-breadcrumb-item"
   >
-    <div
+    <span
       class="bpk-breadcrumb-item__active-item"
     >
       Backpack
-    </div>
-    <div
+    </span>
+    <span
       class="bpk-breadcrumb-item__arrow"
     />
   </li>
@@ -56,7 +56,7 @@ exports[`BpkBreadcrumbItem should render correctly with a custom class name 1`] 
   <li
     class="bpk-breadcrumb-item my-custom-class"
   >
-    <div
+    <span
       class="bpk-breadcrumb-item__link"
     >
       <a
@@ -65,8 +65,8 @@ exports[`BpkBreadcrumbItem should render correctly with a custom class name 1`] 
       >
         Backpack
       </a>
-    </div>
-    <div
+    </span>
+    <span
       class="bpk-breadcrumb-item__arrow"
     >
       <svg
@@ -80,7 +80,7 @@ exports[`BpkBreadcrumbItem should render correctly with a custom class name 1`] 
           d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
         />
       </svg>
-    </div>
+    </span>
   </li>
 </DocumentFragment>
 `;
@@ -91,7 +91,7 @@ exports[`BpkBreadcrumbItem should render correctly with arbitrary props 1`] = `
     class="bpk-breadcrumb-item"
     testid="arbitrary value"
   >
-    <div
+    <span
       class="bpk-breadcrumb-item__link"
     >
       <a
@@ -100,8 +100,8 @@ exports[`BpkBreadcrumbItem should render correctly with arbitrary props 1`] = `
       >
         Backpack
       </a>
-    </div>
-    <div
+    </span>
+    <span
       class="bpk-breadcrumb-item__arrow"
     >
       <svg
@@ -115,7 +115,7 @@ exports[`BpkBreadcrumbItem should render correctly with arbitrary props 1`] = `
           d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
         />
       </svg>
-    </div>
+    </span>
   </li>
 </DocumentFragment>
 `;
@@ -125,7 +125,7 @@ exports[`BpkBreadcrumbItem should render correctly with with "linkProps" attribu
   <li
     class="bpk-breadcrumb-item"
   >
-    <div
+    <span
       class="bpk-breadcrumb-item__link"
     >
       <a
@@ -135,8 +135,8 @@ exports[`BpkBreadcrumbItem should render correctly with with "linkProps" attribu
       >
         Backpack
       </a>
-    </div>
-    <div
+    </span>
+    <span
       class="bpk-breadcrumb-item__arrow"
     >
       <svg
@@ -150,7 +150,7 @@ exports[`BpkBreadcrumbItem should render correctly with with "linkProps" attribu
           d="M8.25 7.463v9.074a1.358 1.358 0 002.251 1.11l4.77-4.354a1.53 1.53 0 00.04-2.184l-4.77-4.718A1.357 1.357 0 008.25 7.463z"
         />
       </svg>
-    </div>
+    </span>
   </li>
 </DocumentFragment>
 `;
