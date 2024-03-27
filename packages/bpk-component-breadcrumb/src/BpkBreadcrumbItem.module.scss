@@ -37,7 +37,7 @@ $icon-height: 16px;
   }
 
   &__arrow {
-    margin: tokens.bpk-spacing-sm() / 8 tokens.bpk-spacing-sm() 0;
+    margin: 0 tokens.bpk-spacing-sm();
     line-height: $icon-height;
     fill: tokens.$bpk-text-disabled-day;
   }
