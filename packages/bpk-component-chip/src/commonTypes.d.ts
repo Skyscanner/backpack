@@ -26,7 +26,7 @@ export declare const CHIP_TYPES: {
 };
 interface ButtonProps extends Omit<ComponentProps<'button'>, 'type'> {
   onClick: (event: SyntheticEvent<HTMLButtonElement>) => void | null;
-  children: ReactNode | string;
+  children?: ReactNode | string;
   type?: typeof CHIP_TYPES[keyof typeof CHIP_TYPES];
 }
 export interface CommonProps extends ButtonProps {

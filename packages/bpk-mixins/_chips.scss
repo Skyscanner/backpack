@@ -237,4 +237,13 @@
     color: $bpk-text-disabled-day;
     cursor: not-allowed;
   }
+
+  &--icon-only {
+    padding-inline-end: bpk-spacing-md();
+    padding-inline-start: bpk-spacing-md();
+
+    &__leading-accessory-view {
+      @include bpk-margin-trailing(0);
+    }
+  }
 }

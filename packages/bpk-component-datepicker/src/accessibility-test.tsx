@@ -26,7 +26,8 @@ import {
 } from '../../bpk-component-calendar/test-utils';
 import { format } from '../../bpk-component-calendar/src/date-utils';
 import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
-
+// mock breakpoint to always match
+jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
 jest.mock('@popperjs/core', () => {
   const originalModule = jest.requireActual('@popperjs/core');
   return {
