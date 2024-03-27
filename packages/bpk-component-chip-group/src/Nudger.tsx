@@ -28,6 +28,7 @@ import { cssModules, isRTL } from '../../bpk-react-utils/index';
 import { withButtonAlignment } from '../../bpk-component-icon/index';
 
 import type { ChipStyleType } from './BpkChipGroup';
+
 import STYLES from './Nudger.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -51,10 +52,11 @@ const AlignedLeftArrowIcon = withButtonAlignment(ArrowLeft);
 const AlignedRightArrowIcon = withButtonAlignment(ArrowRight);
 
 // TODO: how many px to scroll on click?
-const SCROLL_DISTANCE = 100;
+const SCROLL_DISTANCE = 150;
 
 const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContainerRef}: Props) => {
   const [show, setShow] = useState(false);
+  const [enabled, setEnabled] = useState(true);
 
   const rtl = isRTL();
   const isLeft = (leading && !rtl) || (!leading && rtl);
@@ -70,7 +72,8 @@ const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContaine
       const showLeading = scrollValue > 0;
       const showTrailing = scrollValue < scrollWidth - offsetWidth;
 
-      setShow((leading && showLeading) || (!leading && showTrailing))
+      setEnabled((leading && showLeading) || (!leading && showTrailing))
+      setShow(showLeading || showTrailing);
     }, 100);
     return () => clearInterval(interval);
   }, [leading, rtl, scrollContainerRef]);
@@ -86,7 +89,7 @@ const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContaine
         className={classNames}
         type={CHIP_STYLE_TO_BUTTON_STYLE[chipStyle]}
         iconOnly
-        disabled={!show}
+        disabled={!show || !enabled}
         onClick={() => {
           if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollBy({

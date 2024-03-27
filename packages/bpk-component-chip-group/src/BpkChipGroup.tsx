@@ -53,13 +53,19 @@ export type ChipItem = {
   selected?: boolean;
 } & SingleSelectChipItem;
 
+type AccessibilityLabels = {
+  ariaLabel: string;
+  ariaLabelledBy?: never;
+} | {
+  ariaLabel?: never;
+  ariaLabelledBy: string;
+};
+
 export type CommonProps = {
-  ariaLabel?: string;
-  ariaLabelledBy?: string;
   type: ChipGroupType;
   className?: string | null;
   style?: ChipStyleType;
-};
+} & AccessibilityLabels;
 
 export type ChipGroupProps = {
   chips: ChipItem[];
@@ -69,11 +75,6 @@ export type ChipGroupProps = {
 
 const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, chips, className = null, stickyChip, style = CHIP_TYPES.default, type = CHIP_GROUP_TYPES.rail }: ChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
-
-  // TODO: is there a way in typescript to enforce this instead?
-  if ((!ariaLabel && !ariaLabelledBy) || (ariaLabel && ariaLabelledBy)) {
-    console.warn('BpkChipGroup: Exactly one of ariaLabel and ariaLabelledBy should be set')
-  }
 
   const containerClassnames = getClassName(
     className,
@@ -140,8 +141,6 @@ const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, c
           </BpkBreakpoint>
         </div>
       }
-
-
       {wrapRailInScroll(
         <div className={chipGroupClassNames}
          role="listbox"
