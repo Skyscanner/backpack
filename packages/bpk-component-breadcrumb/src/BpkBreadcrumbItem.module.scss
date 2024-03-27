@@ -24,7 +24,7 @@ $icon-height: 16px;
 
 .bpk-breadcrumb-item {
   display: flex;
-  margin-top: tokens.bpk-spacing-sm() / 4;
+  margin-top: tokens.bpk-spacing-sm() / 2;
   align-items: center;
   white-space: nowrap;
 
@@ -37,7 +37,7 @@ $icon-height: 16px;
   }
 
   &__arrow {
-    margin: tokens.bpk-spacing-sm() / 2 tokens.bpk-spacing-sm() 0;
+    margin: tokens.bpk-spacing-sm() / 8 tokens.bpk-spacing-sm() 0;
     line-height: $icon-height;
     fill: tokens.$bpk-text-disabled-day;
   }
