@@ -83,17 +83,14 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
     }
 
     &--active {
-      &-default,
-      &-overImage {
-        pointer-events: none;
-      }
-
       &-default {
         background-color: tokens.$bpk-text-secondary-day;
+        pointer-events: none;
       }
 
       &-overImage {
         background-color: tokens.$bpk-text-on-dark-day;
+        pointer-events: none;
       }
     }
   }
