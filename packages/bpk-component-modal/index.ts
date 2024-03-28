@@ -19,6 +19,7 @@
 import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
 import themeAttributes from './src/themeAttributes';
 import BpkModal from './src/BpkModal';
+import { MODAL_STYLING } from './src/BpkModalInner';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { propTypes, defaultProps } from './src/legacy-prop-types';
 
@@ -27,4 +28,4 @@ import type { Props } from './src/BpkModal';
 export type BpkModalProps = Props;
 
 export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2 };
+export { propTypes, defaultProps, themeAttributes, BpkModalV2, MODAL_STYLING };

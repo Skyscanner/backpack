@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkModal from '../../packages/bpk-component-modal/src/BpkModal';
 
 import {
@@ -32,6 +31,7 @@ import {
   NoHeaderExample,
   NoPaddingExample,
   WithAccessoryViewExample,
+  ContrastExample,
 } from './examples';
 
 export default {
@@ -58,3 +58,4 @@ export const NoHeader = NoHeaderExample;
 export const NoPadding = NoPaddingExample;
 
 export const WithAccessoryView = WithAccessoryViewExample;
+export const Contrast = ContrastExample;

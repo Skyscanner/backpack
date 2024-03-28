@@ -22,7 +22,9 @@ import type { ReactNode } from 'react';
 import { BpkButtonLink } from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-import BpkNavigationBar from '../../bpk-component-navigation-bar';
+import BpkNavigationBar, {
+  BAR_STYLES,
+} from '../../bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkModalInner.module.scss';
@@ -45,11 +47,18 @@ export type Props = {
   title?: string | null;
   closeLabel?: string;
   closeText?: string | null;
+  modalStyle?: ModalStyle;
   /**
    * The accessory view allows for icons and actions to be placed in front of the main title inside the modal header. To be used with `BpkNavigationBarButtonLink`
    */
   accessoryView?: ReactNode;
 };
+
+export const MODAL_STYLING = {
+  default: 'default',
+  surfaceContrast: 'surface-contrast',
+};
+export type ModalStyle = (typeof MODAL_STYLING)[keyof typeof MODAL_STYLING];
 
 const BpkModalInner = ({
   accessoryView = null,
@@ -63,6 +72,7 @@ const BpkModalInner = ({
   fullScreenOnMobile = true,
   id,
   isIphone,
+  modalStyle = MODAL_STYLING.default,
   onClose = () => null,
   padded = true,
   showHeader = true,
@@ -72,6 +82,8 @@ const BpkModalInner = ({
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
   const navigationStyles = [getClassName('bpk-modal__navigation')];
+
+  classNames.push(getClassName(`bpk-modal__modal-style--${modalStyle}`));
 
   if (wide) {
     classNames.push(getClassName('bpk-modal--wide'));
@@ -119,6 +131,11 @@ const BpkModalInner = ({
         {showHeader && (
           <header className={getClassName('bpk-modal__header')}>
             <BpkNavigationBar
+              barStyle={
+                modalStyle === MODAL_STYLING.surfaceContrast
+                  ? BAR_STYLES.onDark
+                  : BAR_STYLES.default
+              }
               id={headingId}
               className={navigationStyles.join(' ')}
               title={
@@ -133,14 +150,24 @@ const BpkModalInner = ({
               trailingButton={
                 closeText ? (
                   <BpkButtonLink
-                    className={getClassName('bpk-modal__close-button')}
+                    className={[
+                      getClassName('bpk-modal__close-button'),
+                      getClassName(
+                        `bpk-modal__close-button-style--${modalStyle}`,
+                      ),
+                    ].join(' ')}
                     onClick={onClose}
                   >
                     {closeText}
                   </BpkButtonLink>
                 ) : (
                   <BpkCloseButton
-                    className={getClassName('bpk-modal__close-button')}
+                    className={[
+                      getClassName('bpk-modal__close-button'),
+                      getClassName(
+                        `bpk-modal__close-button-style--${modalStyle}`,
+                      ),
+                    ].join(' ')}
                     label={closeLabel}
                     onClick={onClose}
                   />
