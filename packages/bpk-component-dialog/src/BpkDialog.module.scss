@@ -32,11 +32,13 @@
 
   &__close-button {
     float: right;
-    margin: 0 0 tokens.bpk-spacing-base() tokens.bpk-spacing-base();
+    margin: 0 calc(tokens.bpk-spacing-sm() / 2) tokens.bpk-spacing-base()
+      tokens.bpk-spacing-base();
 
     @include utils.bpk-rtl {
       float: left;
-      margin: 0 tokens.bpk-spacing-base() tokens.bpk-spacing-base() 0;
+      margin: 0 tokens.bpk-spacing-base() tokens.bpk-spacing-base()
+        calc(tokens.bpk-spacing-sm() / 2);
     }
   }
 
