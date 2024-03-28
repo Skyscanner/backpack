@@ -20,11 +20,11 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
           <span
             class="bpk-accordion__title-text"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
@@ -85,11 +85,11 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           <span
             class="bpk-accordion__title-text"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
@@ -150,11 +150,11 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           <span
             class="bpk-accordion__title-text"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"

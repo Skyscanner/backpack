@@ -20,11 +20,11 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
           <span
             class="bpk-accordion__title-text"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
@@ -85,11 +85,11 @@ exports[`BpkAccordionItem should render correctly 1`] = `
           <span
             class="bpk-accordion__title-text"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
@@ -151,11 +151,11 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
           <span
             class="bpk-accordion__title-text"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
@@ -216,11 +216,11 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
           <span
             class="bpk-accordion__title-text"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
@@ -344,11 +344,11 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
           <span
             class="bpk-accordion__title-text"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--xl"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
@@ -409,7 +409,7 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
           <span
             class="bpk-accordion__title-text"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               <svg
@@ -424,7 +424,7 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
                 />
               </svg>
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
@@ -485,11 +485,11 @@ exports[`BpkAccordionItem should render correctly with no divider 1`] = `
           <span
             class="bpk-accordion__title-text bpk-accordion__title-text--on-dark"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--on-dark"
@@ -551,11 +551,11 @@ exports[`BpkAccordionItem should render correctly with onDark set 1`] = `
           <span
             class="bpk-accordion__title-text bpk-accordion__title-text--on-dark"
           >
-            <span
+            <h3
               class="bpk-text bpk-text--body-default"
             >
               My accordion item
-            </span>
+            </h3>
           </span>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--on-dark"
