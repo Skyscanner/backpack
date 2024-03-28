@@ -85,7 +85,7 @@
 
   &__modal-style {
     &--surface-contrast {
-      background-color: tokens.$bpk-modal-surface-contrast;
+      background-color: tokens.$bpk-surface-contrast-day;
       color: tokens.$bpk-text-primary-dark-color;
     }
   }
@@ -112,6 +112,11 @@
 
     @include utils.bpk-rtl {
       left: auto;
+    }
+
+    &-style--surface-contrast {
+      background-color: tokens.$bpk-surface-contrast-day;
+      color: tokens.$bpk-text-primary-dark-color;
     }
   }
 

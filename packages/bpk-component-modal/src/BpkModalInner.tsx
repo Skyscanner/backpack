@@ -150,14 +150,24 @@ const BpkModalInner = ({
               trailingButton={
                 closeText ? (
                   <BpkButtonLink
-                    className={getClassName('bpk-modal__close-button')}
+                    className={[
+                      getClassName('bpk-modal__close-button'),
+                      getClassName(
+                        `bpk-modal__close-button-style--${modalStyle}`,
+                      ),
+                    ].join(' ')}
                     onClick={onClose}
                   >
                     {closeText}
                   </BpkButtonLink>
                 ) : (
                   <BpkCloseButton
-                    className={getClassName('bpk-modal__close-button')}
+                    className={[
+                      getClassName('bpk-modal__close-button'),
+                      getClassName(
+                        `bpk-modal__close-button-style--${modalStyle}`,
+                      ),
+                    ].join(' ')}
                     label={closeLabel}
                     onClick={onClose}
                   />
