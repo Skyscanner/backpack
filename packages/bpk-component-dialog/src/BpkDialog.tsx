@@ -46,9 +46,11 @@ const BpkDialog = ({
   );
   const closeButtonClassNames = getClassName('bpk-dialog__close-button');
 
-  if(!onClose && dismissible === true) {
+  if (!onClose && dismissible === true) {
     // eslint-disable-next-line no-console
-    console.warn('BpkDialog: dismissible is true but no onClose prop was provided. Dialog will not be dismissible.');
+    console.warn(
+      'BpkDialog: dismissible is true but no onClose prop was provided. Dialog will not be dismissible.',
+    );
   }
 
   return (
@@ -69,11 +71,9 @@ const BpkDialog = ({
       >
         {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
         {dismissible && (
-          <BpkCloseButton
-            className={closeButtonClassNames}
-            label={closeLabel}
-            onClick={onClose}
-          />
+          <span className={closeButtonClassNames}>
+            <BpkCloseButton label={closeLabel} onClick={onClose} />
+          </span>
         )}
         {children}
       </BpkDialogInner>
