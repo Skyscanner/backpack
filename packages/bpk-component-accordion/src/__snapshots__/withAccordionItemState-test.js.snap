@@ -14,10 +14,10 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
         class="bpk-accordion__toggle-button"
         type="button"
       >
-        <span
+        <div
           class="bpk-accordion__flex-container"
         >
-          <span
+          <div
             class="bpk-accordion__title-text"
           >
             <h3
@@ -25,7 +25,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
             >
               My accordion item
             </h3>
-          </span>
+          </div>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
           >
@@ -44,7 +44,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
               </svg>
             </span>
           </span>
-        </span>
+        </div>
       </button>
     </dt>
     <dd
@@ -79,10 +79,10 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         class="bpk-accordion__toggle-button"
         type="button"
       >
-        <span
+        <div
           class="bpk-accordion__flex-container"
         >
-          <span
+          <div
             class="bpk-accordion__title-text"
           >
             <h3
@@ -90,7 +90,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
             >
               My accordion item
             </h3>
-          </span>
+          </div>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
           >
@@ -109,7 +109,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
               </svg>
             </span>
           </span>
-        </span>
+        </div>
       </button>
     </dt>
     <dd
@@ -144,10 +144,10 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         class="bpk-accordion__toggle-button"
         type="button"
       >
-        <span
+        <div
           class="bpk-accordion__flex-container"
         >
-          <span
+          <div
             class="bpk-accordion__title-text"
           >
             <h3
@@ -155,7 +155,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
             >
               My accordion item
             </h3>
-          </span>
+          </div>
           <span
             class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
           >
@@ -174,7 +174,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
               </svg>
             </span>
           </span>
-        </span>
+        </div>
       </button>
     </dt>
     <dd
