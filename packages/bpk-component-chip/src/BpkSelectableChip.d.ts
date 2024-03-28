@@ -17,9 +17,7 @@
  */
 
 import type { ReactNode } from 'react';
-
 import type { CommonProps } from './commonTypes';
-
 export interface Props extends CommonProps {
   role?: string;
   trailingAccessoryView?: ReactNode;

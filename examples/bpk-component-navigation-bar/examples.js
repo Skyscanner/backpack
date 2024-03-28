@@ -29,8 +29,9 @@ import BpkNavigationBar, {
   BAR_STYLES,
 } from '../../packages/bpk-component-navigation-bar';
 
-import STYLES from './examples.module.scss';
 import AirlineLogo from './AirlineLogo';
+
+import STYLES from './examples.module.scss';
 
 const getClassNames = cssModules(STYLES);
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);

@@ -24,6 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
 
 import BpkFloatingNotification from './BpkFloatingNotification';
+
 import STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);

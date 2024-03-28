@@ -21,11 +21,13 @@ import type { ComponentType } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+
 import type {
   DaysOfWeek,
   SelectionConfiguration,
   DateModifiers,
 } from './custom-proptypes';
+
 import STYLES from './BpkCalendar.module.scss';
 
 const getClassName = cssModules(STYLES);

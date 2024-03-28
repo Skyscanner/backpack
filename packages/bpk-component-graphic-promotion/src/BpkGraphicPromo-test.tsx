@@ -21,7 +21,9 @@ import { fireEvent, render } from '@testing-library/react';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
+
 import type { Props } from './BpkGraphicPromo';
+
 import STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);

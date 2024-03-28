@@ -21,9 +21,11 @@ import { Component } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
-import STYLES from './BpkInput.module.scss';
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
+
 import type { Props } from './common-types';
+
+import STYLES from './BpkInput.module.scss';
 
 type State = {
   persistClearButton: boolean;

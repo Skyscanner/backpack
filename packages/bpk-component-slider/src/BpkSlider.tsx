@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
+import PropTypes from 'prop-types';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import Slider from 'react-slider';
-import PropTypes from 'prop-types';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 

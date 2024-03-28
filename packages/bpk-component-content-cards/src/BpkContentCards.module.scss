@@ -25,8 +25,7 @@
 
 .bpk-content-cards {
   &--header-text {
-    margin-bottom: tokens.bpk-spacing-base();
-
+    @include typography.bpk-paragraph;
     @include typography.bpk-heading-2;
 
     @include breakpoints.bpk-breakpoint-mobile {

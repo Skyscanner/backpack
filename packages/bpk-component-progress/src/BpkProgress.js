@@ -20,6 +20,7 @@
 
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+
 import clamp from 'lodash.clamp';
 
 import { cssModules } from '../../bpk-react-utils';

@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import { Component } from 'react';
+
 import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import {
