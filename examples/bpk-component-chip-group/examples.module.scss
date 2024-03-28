@@ -16,19 +16,32 @@
  * limitations under the License.
  */
 
-import 'jest-axe/extend-expect';
-import '@testing-library/jest-dom';
-import 'raf/polyfill';
-import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
+@import '../../packages/bpk-mixins/index.scss';
 
-// The below is a workaround to the problem were calling resetModules causes react to be required twice.
-// further details can be found here: https://github.com/jestjs/jest/issues/8987#issuecomment-584898030
-let mockActualReact;
-jest.doMock('react', () => {
-  if (!mockActualReact) {
-    mockActualReact = jest.requireActual('react');
+.bpk-chip-group-examples {
+  &__fixed-width {
+    width: 300 * $bpk-one-pixel-rem;
   }
-  return mockActualReact;
-});
 
-registerRequireContextHook();
+  &__contrast {
+    padding: bpk-spacing-base();
+    background-color: $bpk-canvas-contrast-day;
+  }
+
+  &__dark {
+    padding: bpk-spacing-base();
+    background-color: $bpk-surface-contrast-day;
+  }
+
+  &__image {
+    padding: bpk-spacing-base();
+    background-image: url('https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg');
+  }
+
+  &__mixed-container {
+    h2 {
+      margin-top: bpk-spacing-xl();
+      margin-bottom: bpk-spacing-md();
+    }
+  }
+}
