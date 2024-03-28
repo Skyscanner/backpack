@@ -20,11 +20,10 @@
 @use '../../unstable__bpk-mixins/typography';
 
 /* stylelint-disable unit-disallowed-list */
-$icon-height: 16px;
+$icon-height: 0;
 
 .bpk-breadcrumb-item {
   display: flex;
-  margin-top: tokens.bpk-spacing-sm() / 8;
   align-items: center;
   white-space: nowrap;
 

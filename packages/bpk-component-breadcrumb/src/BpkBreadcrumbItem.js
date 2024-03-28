@@ -22,6 +22,7 @@ import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
 import BpkLink from '../../bpk-component-link';
+import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 import { withRtlSupport } from '../../bpk-component-icon';
 import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
@@ -47,25 +48,31 @@ const BpkBreadcrumbItem = (props: Props) => {
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <li className={getClassName('bpk-breadcrumb-item', className)} {...rest}>
       {active ? (
-        <span className={getClassName('bpk-breadcrumb-item__active-item')}>
-          {children}
-        </span>
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+        <div className={getClassName('bpk-breadcrumb-item__active-item')}>
+          <BpkText
+            aria-current="page"
+            {...linkProps}
+          >
+            {children}
+          </BpkText>
+        </div>
       ) : (
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-        <span className={getClassName('bpk-breadcrumb-item__link')}>
+        <div className={getClassName('bpk-breadcrumb-item__link')}>
           <BpkLink
             href={href}
             {...linkProps}
           >
             {children}
           </BpkLink>
-        </span>
+        </div>
       )}
-      <span className={getClassName('bpk-breadcrumb-item__arrow')}>
+      <div className={getClassName('bpk-breadcrumb-item__arrow')}>
         {!active && (
           <RtlSupportedArrowRight/>
         )}
-      </span>
+      </div>
     </li>
   );
 };
