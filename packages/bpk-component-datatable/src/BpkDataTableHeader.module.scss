@@ -62,5 +62,5 @@ $bpk-margin-size-sort-icons: tokens.bpk-spacing-sm() + tokens.bpk-spacing-md();
 }
 
 .bpk-data-table-column__sort-icon--up {
-  margin-bottom: -1 * (tokens.bpk-spacing-sm());
+  margin-bottom: -1.75 * (tokens.bpk-spacing-sm());
 }
