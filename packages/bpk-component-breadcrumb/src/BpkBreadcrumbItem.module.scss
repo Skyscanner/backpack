@@ -19,8 +19,7 @@
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/typography';
 
-/* stylelint-disable unit-disallowed-list */
-$icon-height: 0;
+$icon-height: tokens.$bpk-line-height-xs / 2;
 
 .bpk-breadcrumb-item {
   display: flex;
