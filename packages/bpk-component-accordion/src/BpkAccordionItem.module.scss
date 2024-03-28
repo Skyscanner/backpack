@@ -57,7 +57,7 @@
   }
 
   &__title-text {
-    display: inline-block;
+    display: inherit;
     flex-grow: 1;
 
     &--on-dark {
