@@ -117,6 +117,10 @@
     &-style--surface-contrast {
       background-color: tokens.$bpk-surface-contrast-day;
       color: tokens.$bpk-text-primary-dark-color;
+
+      @include utils.bpk-hover {
+        color: tokens.$bpk-text-primary-dark-color;
+      }
     }
   }
 
