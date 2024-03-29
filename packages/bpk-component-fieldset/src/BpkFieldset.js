@@ -117,7 +117,7 @@ const BpkFieldset = (props: Props) => {
     <fieldset className={classNames.join(' ')} {...rest}>
       {!isCheckbox && (
         <BpkLabel
-          className={getClassName('bpk-fieldset__label')}
+          // className={getClassName('bpk-fieldset__label')}
           htmlFor={childId}
           required={required}
           disabled={disabled}
