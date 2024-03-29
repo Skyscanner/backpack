@@ -33,27 +33,31 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
               Drawer title
             </h2>
              
-            <button
-              aria-label="Close"
-              class="bpk-close-button bpk-drawer__close-button"
-              title="Close"
-              type="button"
+            <div
+              class="bpk-drawer__close-button"
             >
-              <span
-                class="bpk-close-button__icon"
+              <button
+                aria-label="Close"
+                class="bpk-close-button"
+                title="Close"
+                type="button"
               >
-                <svg
-                  aria-hidden="true"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="bpk-close-button__icon"
                 >
-                  <path
-                    d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
-                  />
-                </svg>
-              </span>
-            </button>
+                  <svg
+                    aria-hidden="true"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
           </header>
           <div
             class="bpk-drawer__content"
