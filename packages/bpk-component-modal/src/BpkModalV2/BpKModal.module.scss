@@ -20,6 +20,7 @@
 @use '../../../unstable__bpk-mixins/breakpoints';
 @use '../../../unstable__bpk-mixins/shadows';
 @use '../../../unstable__bpk-mixins/typography';
+@use '../../../unstable__bpk-mixins/utils';
 
 @mixin header {
   display: flex;
@@ -146,6 +147,19 @@
     padding: tokens.bpk-spacing-base();
 
     @include header;
+
+    &-style--surface-contrast {
+      background-color: tokens.$bpk-surface-contrast-day;
+      color: tokens.$bpk-text-primary-dark-color;
+    }
+  }
+
+  &__close-button-style--surface-contrast {
+    color: tokens.$bpk-text-primary-dark-color;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-primary-dark-color;
+    }
   }
 
   &__header-title-container {
@@ -165,6 +179,11 @@
     padding-inline-end: tokens.bpk-spacing-base();
 
     @include header;
+
+    &-style--surface-contrast {
+      background-color: tokens.$bpk-surface-contrast-day;
+      color: tokens.$bpk-text-primary-dark-color;
+    }
   }
 
   &__container {
@@ -177,6 +196,11 @@
 
     &--full-screen-desktop {
       height: 100%;
+    }
+
+    &--surface-contrast {
+      background-color: tokens.$bpk-surface-contrast-day;
+      color: tokens.$bpk-text-primary-dark-color;
     }
   }
 }

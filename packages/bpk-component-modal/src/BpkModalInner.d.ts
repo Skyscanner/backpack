@@ -17,6 +17,7 @@
  */
 
 import type { ReactNode } from 'react';
+import { ModalStyle } from './BpkModalInner';
 export type Props = {
     id: string;
     children: ReactNode;
@@ -33,6 +34,7 @@ export type Props = {
     title?: string | null;
     closeLabel?: string;
     closeText?: string | null;
+    modalStyle?: ModalStyle;
     /**
      * The accessory view allows for icons and actions to be placed in front of the main title inside the modal header. To be used with `BpkNavigationBarButtonLink`
      */
