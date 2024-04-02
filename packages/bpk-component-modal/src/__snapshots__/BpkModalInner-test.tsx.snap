@@ -4,7 +4,7 @@ exports[`BpkModalInner should render correctly 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal bpk-modal--full-screen-mobile"
+    class="bpk-modal bpk-modal__modal-style--default bpk-modal--full-screen-mobile"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -27,7 +27,7 @@ exports[`BpkModalInner should render correctly 1`] = `
         >
           <button
             aria-label="Close"
-            class="bpk-close-button bpk-modal__close-button"
+            class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
             title="Close"
             type="button"
           >
@@ -62,7 +62,7 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal bpk-modal--full-screen"
+    class="bpk-modal bpk-modal__modal-style--default bpk-modal--full-screen"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -85,7 +85,7 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
         >
           <button
             aria-label="Close"
-            class="bpk-close-button bpk-modal__close-button"
+            class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
             title="Close"
             type="button"
           >
@@ -120,7 +120,7 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal"
+    class="bpk-modal bpk-modal__modal-style--default"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -143,7 +143,7 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
         >
           <button
             aria-label="Close"
-            class="bpk-close-button bpk-modal__close-button"
+            class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
             title="Close"
             type="button"
           >
@@ -178,7 +178,7 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal my-classname bpk-modal--full-screen-mobile"
+    class="bpk-modal bpk-modal__modal-style--default my-classname bpk-modal--full-screen-mobile"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -201,7 +201,7 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
         >
           <button
             aria-label="Close"
-            class="bpk-close-button bpk-modal__close-button"
+            class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
             title="Close"
             type="button"
           >
@@ -236,7 +236,7 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal bpk-modal--full-screen"
+    class="bpk-modal bpk-modal__modal-style--default bpk-modal--full-screen"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -259,7 +259,7 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
         >
           <button
             aria-label="Close"
-            class="bpk-close-button bpk-modal__close-button"
+            class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
             title="Close"
             type="button"
           >
@@ -294,7 +294,7 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal bpk-modal--full-screen-mobile"
+    class="bpk-modal bpk-modal__modal-style--default bpk-modal--full-screen-mobile"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -317,7 +317,7 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
         >
           <button
             aria-label="Close"
-            class="bpk-close-button bpk-modal__close-button"
+            class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
             title="Close"
             type="button"
           >
@@ -352,7 +352,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal bpk-modal--full-screen-mobile"
+    class="bpk-modal bpk-modal__modal-style--default bpk-modal--full-screen-mobile"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -392,7 +392,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
         >
           <button
             aria-label="Close"
-            class="bpk-close-button bpk-modal__close-button"
+            class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
             title="Close"
             type="button"
           >
@@ -427,7 +427,7 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal bpk-modal--full-screen-mobile"
+    class="bpk-modal bpk-modal__modal-style--default bpk-modal--full-screen-mobile"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -449,7 +449,7 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
           <button
-            class="bpk-link bpk-modal__close-button"
+            class="bpk-link bpk-modal__close-button bpk-modal__close-button-style--default"
             type="button"
           >
             Dismiss
@@ -470,7 +470,7 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal bpk-modal--full-screen-mobile"
+    class="bpk-modal bpk-modal__modal-style--default bpk-modal--full-screen-mobile"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -493,7 +493,7 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
         >
           <button
             aria-label="Close"
-            class="bpk-close-button bpk-modal__close-button"
+            class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
             title="Close"
             type="button"
           >
@@ -528,7 +528,7 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
 <DocumentFragment>
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
-    class="bpk-modal bpk-modal--wide bpk-modal--full-screen-mobile"
+    class="bpk-modal bpk-modal__modal-style--default bpk-modal--wide bpk-modal--full-screen-mobile"
     id="my-modal"
     role="dialog"
     tabindex="-1"
@@ -551,7 +551,7 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
         >
           <button
             aria-label="Close"
-            class="bpk-close-button bpk-modal__close-button"
+            class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
             title="Close"
             type="button"
           >

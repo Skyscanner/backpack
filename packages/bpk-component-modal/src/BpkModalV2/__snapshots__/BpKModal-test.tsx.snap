@@ -17,11 +17,11 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
       id="bpk-modal-element"
     >
       <div
-        class="bpk-modal__button-container"
+        class="bpk-modal__button-container bpk-modal__button-container-style--default"
       >
         <button
           aria-label="bpk-modal-button-close"
-          class="bpk-close-button"
+          class="bpk-close-button bpk-modal__close-button-style--default"
           title="bpk-modal-button-close"
           type="button"
         >
@@ -65,7 +65,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
       id="bpk-modal-element"
     >
       <div
-        class="bpk-modal__header-title"
+        class="bpk-modal__header-title bpk-modal__header-title-style--default"
         id="bpk-modal-element-title"
       >
         <div
@@ -79,7 +79,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
         </div>
         <button
           aria-label="bpk-modal-button-close"
-          class="bpk-close-button"
+          class="bpk-close-button bpk-modal__close-button-style--default"
           title="bpk-modal-button-close"
           type="button"
         >
