@@ -51,7 +51,7 @@ type Props = {
 const AlignedLeftArrowIcon = withButtonAlignment(ArrowLeft);
 const AlignedRightArrowIcon = withButtonAlignment(ArrowRight);
 
-// TODO: how many px to scroll on click?
+// Chosen based on feeling good with the example stories
 const SCROLL_DISTANCE = 150;
 
 const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContainerRef}: Props) => {
