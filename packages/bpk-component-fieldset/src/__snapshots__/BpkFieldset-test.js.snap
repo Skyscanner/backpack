@@ -34,12 +34,16 @@ exports[`BpkFieldset should render as disabled when input component is disabled 
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-label--disabled bpk-fieldset__label"
-      for="name_input"
+    <div
+      class="bpk-fieldset__label"
     >
-      Name
-    </label>
+      <label
+        class="bpk-label bpk-label--disabled"
+        for="name_input"
+      >
+        Name
+      </label>
+    </div>
     <input
       aria-invalid="false"
       aria-required="true"
@@ -60,12 +64,16 @@ exports[`BpkFieldset should render as disabled when select component is disabled
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-label--disabled bpk-fieldset__label"
-      for="fruits_select"
+    <div
+      class="bpk-fieldset__label"
     >
-      Fruits
-    </label>
+      <label
+        class="bpk-label bpk-label--disabled"
+        for="fruits_select"
+      >
+        Fruits
+      </label>
+    </div>
     <select
       aria-invalid="false"
       aria-required="true"
@@ -110,12 +118,16 @@ exports[`BpkFieldset should render correctly when disabled with input component 
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-label--disabled bpk-fieldset__label"
-      for="name_input"
+    <div
+      class="bpk-fieldset__label"
     >
-      Name
-    </label>
+      <label
+        class="bpk-label bpk-label--disabled"
+        for="name_input"
+      >
+        Name
+      </label>
+    </div>
     <input
       aria-invalid="false"
       aria-required="false"
@@ -136,12 +148,16 @@ exports[`BpkFieldset should render correctly when disabled with input component 
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-label--invalid bpk-label--disabled bpk-fieldset__label"
-      for="name_input"
+    <div
+      class="bpk-fieldset__label"
     >
-      Name
-    </label>
+      <label
+        class="bpk-label bpk-label--invalid bpk-label--disabled"
+        for="name_input"
+      >
+        Name
+      </label>
+    </div>
     <input
       aria-describedby="name_input_validation_message"
       aria-invalid="true"
@@ -290,12 +306,16 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-fieldset__label"
-      for="name_input"
+    <div
+      class="bpk-fieldset__label"
     >
-      Name
-    </label>
+      <label
+        class="bpk-label"
+        for="name_input"
+      >
+        Name
+      </label>
+    </div>
     <input
       aria-invalid="false"
       aria-required="false"
@@ -348,12 +368,16 @@ exports[`BpkFieldset should render correctly with input component and "descripti
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-fieldset__label"
-      for="name_input"
+    <div
+      class="bpk-fieldset__label"
     >
-      Name
-    </label>
+      <label
+        class="bpk-label"
+        for="name_input"
+      >
+        Name
+      </label>
+    </div>
     <input
       aria-describedby="name_input_description"
       aria-invalid="false"
@@ -413,12 +437,16 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-fieldset__label"
-      for="name_input"
+    <div
+      class="bpk-fieldset__label"
     >
-      Name
-    </label>
+      <label
+        class="bpk-label"
+        for="name_input"
+      >
+        Name
+      </label>
+    </div>
     <input
       aria-invalid="false"
       aria-required="false"
@@ -471,17 +499,21 @@ exports[`BpkFieldset should render correctly with input component and "required"
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-fieldset__label"
-      for="name_input"
+    <div
+      class="bpk-fieldset__label"
     >
-      Name
-      <span
-        class="bpk-label__asterisk"
+      <label
+        class="bpk-label"
+        for="name_input"
       >
-        *
-      </span>
-    </label>
+        Name
+        <span
+          class="bpk-label__asterisk"
+        >
+          *
+        </span>
+      </label>
+    </div>
     <input
       aria-invalid="false"
       aria-required="true"
@@ -534,12 +566,16 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-fieldset__label"
-      for="name_input"
+    <div
+      class="bpk-fieldset__label"
     >
-      Name
-    </label>
+      <label
+        class="bpk-label"
+        for="name_input"
+      >
+        Name
+      </label>
+    </div>
     <input
       aria-invalid="false"
       aria-required="false"
@@ -592,12 +628,16 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-label--invalid bpk-fieldset__label"
-      for="name_input"
+    <div
+      class="bpk-fieldset__label"
     >
-      Name
-    </label>
+      <label
+        class="bpk-label bpk-label--invalid"
+        for="name_input"
+      >
+        Name
+      </label>
+    </div>
     <input
       aria-describedby="name_input_validation_message"
       aria-invalid="true"
@@ -649,12 +689,16 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-fieldset__label"
-      for="fruits_select"
+    <div
+      class="bpk-fieldset__label"
     >
-      Fruits
-    </label>
+      <label
+        class="bpk-label"
+        for="fruits_select"
+      >
+        Fruits
+      </label>
+    </div>
     <select
       aria-invalid="false"
       aria-required="false"
@@ -731,17 +775,21 @@ exports[`BpkFieldset should render correctly with select component and "required
   <fieldset
     class="bpk-fieldset"
   >
-    <label
-      class="bpk-label bpk-fieldset__label"
-      for="fruits_select"
+    <div
+      class="bpk-fieldset__label"
     >
-      Fruits
-      <span
-        class="bpk-label__asterisk"
+      <label
+        class="bpk-label"
+        for="fruits_select"
       >
-        *
-      </span>
-    </label>
+        Fruits
+        <span
+          class="bpk-label__asterisk"
+        >
+          *
+        </span>
+      </label>
+    </div>
     <select
       aria-invalid="false"
       aria-required="true"
