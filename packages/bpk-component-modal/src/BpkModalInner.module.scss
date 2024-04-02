@@ -83,6 +83,13 @@
     opacity: tokens.$bpk-modal-opacity;
   }
 
+  &__modal-style {
+    &--surface-contrast {
+      background-color: tokens.$bpk-surface-contrast-day;
+      color: tokens.$bpk-text-primary-dark-color;
+    }
+  }
+
   &__header {
     @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
@@ -90,7 +97,6 @@
   &__navigation {
     display: flex;
     justify-content: space-between;
-    background-color: tokens.$bpk-modal-background-color;
   }
 
   &__heading {
@@ -106,6 +112,15 @@
 
     @include utils.bpk-rtl {
       left: auto;
+    }
+
+    &-style--surface-contrast {
+      background-color: tokens.$bpk-surface-contrast-day;
+      color: tokens.$bpk-text-primary-dark-color;
+
+      @include utils.bpk-hover {
+        color: tokens.$bpk-text-primary-dark-color;
+      }
     }
   }
 

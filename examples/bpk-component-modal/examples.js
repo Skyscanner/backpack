@@ -36,7 +36,7 @@ import {
 } from '../../packages/bpk-component-icon';
 import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import BpkModal from '../../packages/bpk-component-modal';
+import BpkModal, { MODAL_STYLING } from '../../packages/bpk-component-modal';
 
 import STYLES from './examples.module.scss';
 
@@ -188,6 +188,16 @@ const DefaultExample = () => (
   </ModalContainer>
 );
 
+const ContrastExample = () => (
+  <ModalContainer
+    title="Modal title"
+    closeLabel="Close modal"
+    modalStyle={MODAL_STYLING.surfaceContrast}
+  >
+    This is a contrast modal. You can put anything you want in here.
+  </ModalContainer>
+);
+
 const WideExample = () => (
   <ModalContainer title="Modal title" closeLabel="Close modal" wide>
     This is a wide modal.
@@ -306,4 +316,5 @@ export {
   NoHeaderExample,
   NoPaddingExample,
   WithAccessoryViewExample,
+  ContrastExample,
 };
