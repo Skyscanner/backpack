@@ -23,6 +23,9 @@ import { useEffect, useRef } from 'react';
 import BpkCloseButton from '../../../bpk-component-close-button';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
+import { MODAL_STYLING } from '../BpkModalInner';
+
+import type { ModalStyle } from '../BpkModalInner';
 
 import STYLES from './BpKModal.module.scss';
 
@@ -41,32 +44,56 @@ export type Props = {
   showHeader?: boolean;
   title?: string | null;
   wide?: boolean;
+  modalStyle?: ModalStyle;
 };
 
 const Header = ({
   closeLabel,
   id,
+  modalStyle,
   onClose,
   title,
 }: {
   closeLabel: string;
   id: string | undefined;
+  modalStyle: string;
   onClose: () => void | null;
   title?: string | null;
 }) => {
   if (title) {
     return (
-      <div id={id} className={getClassName('bpk-modal__header-title')}>
+      <div
+        id={id}
+        className={[
+          getClassName('bpk-modal__header-title'),
+          getClassName(`bpk-modal__header-title-style--${modalStyle}`),
+        ].join(' ')}
+      >
         <div className={getClassName('bpk-modal__header-title-container')}>
           <Heading>{title}</Heading>
         </div>
-        <BpkCloseButton label={closeLabel} onClick={onClose} />
+        <BpkCloseButton
+          className={getClassName(
+            `bpk-modal__close-button-style--${modalStyle}`,
+          )}
+          label={closeLabel}
+          onClick={onClose}
+        />
       </div>
     );
   }
   return (
-    <div className={getClassName('bpk-modal__button-container')}>
-      <BpkCloseButton label={closeLabel} onClick={onClose} />
+    <div
+      className={[
+        getClassName('bpk-modal__button-container'),
+        getClassName(`bpk-modal__button-container-style--${modalStyle}`),
+      ].join(' ')}
+    >
+      <BpkCloseButton
+        className={getClassName(`bpk-modal__close-button-style--${modalStyle}`)}
+        label={closeLabel}
+        onClick={onClose}
+      />
     </div>
   );
 };
@@ -101,6 +128,7 @@ export const BpkModalV2 = (props: Props) => {
     fullScreenOnDesktop,
     id,
     isOpen,
+    modalStyle = MODAL_STYLING.default,
     noFullScreenOnMobile,
     onClose,
     padded,
@@ -129,7 +157,7 @@ export const BpkModalV2 = (props: Props) => {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-          onClose();
+        onClose();
       }
     };
 
@@ -151,7 +179,7 @@ export const BpkModalV2 = (props: Props) => {
 
     setPageProperties({ isDialogOpen: isOpen });
     return () => {
-      setPageProperties({ isDialogOpen: false })
+      setPageProperties({ isDialogOpen: false });
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [id, isOpen, onClose]);
@@ -167,6 +195,8 @@ export const BpkModalV2 = (props: Props) => {
     'bpk-modal__container',
     fullScreenOnDesktop && 'bpk-modal__container--full-screen-desktop',
     padded && 'bpk-modal__container--padded',
+    modalStyle === MODAL_STYLING.surfaceContrast &&
+      'bpk-modal__container--surface-contrast',
   );
 
   return isOpen ? (
@@ -197,6 +227,7 @@ export const BpkModalV2 = (props: Props) => {
             title={title}
             closeLabel={closeLabel}
             onClose={onClose}
+            modalStyle={modalStyle}
           />
         )}
         <div className={contentClassNames}>{children}</div>
