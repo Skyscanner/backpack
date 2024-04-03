@@ -124,11 +124,12 @@ const BpkDrawerContent = (props: Props) => {
             {closeText ? (
               <BpkButtonLink onClick={onClose}>{closeText}</BpkButtonLink>
             ) : (
-              <BpkCloseButton
-                className={getClassName('bpk-drawer__close-button')}
-                label={closeLabel}
-                onClick={onClose}
-              />
+              <div className={getClassName('bpk-drawer__close-button')}>
+                <BpkCloseButton
+                  label={closeLabel}
+                  onClick={onClose}
+                />
+              </div>
             )}
           </header>
           <div className={contentClassNames.join(' ')}>{children}</div>
