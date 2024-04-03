@@ -10,7 +10,7 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
       tabindex="-1"
     >
       <div
-        class="bpk-scrim-content bpk-drawer__container"
+        class="bpk-scrim-content"
       >
         <div
           class="bpk-scrim"
