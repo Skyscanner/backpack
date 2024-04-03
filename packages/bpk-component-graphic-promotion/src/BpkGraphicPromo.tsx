@@ -170,7 +170,6 @@ const BpkGraphicPromo = ({
             </span>
           )}
           <span
-            // tagName="h2"
             className={getClassName('bpk-graphic-promo__headline')}
           >
             {headline}
