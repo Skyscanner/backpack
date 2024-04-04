@@ -166,6 +166,8 @@
   }
 
   &__headline {
+    @include typography.bpk-text;
+
     @include breakpoints.bpk-breakpoint-above-tablet {
       @include typography.bpk-hero-5;
 
@@ -192,6 +194,7 @@
   }
 
   &__subheading {
+    @include typography.bpk-text;
     @include typography.bpk-body-default;
 
     @include breakpoints.bpk-breakpoint-tablet {
