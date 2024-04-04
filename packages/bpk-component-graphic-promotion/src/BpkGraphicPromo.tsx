@@ -19,7 +19,6 @@
 import type { KeyboardEvent, MouseEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkText from '../../bpk-component-text';
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 
 import STYLES from './BpkGraphicPromo.module.scss';
@@ -149,12 +148,11 @@ const BpkGraphicPromo = ({
         <div className={getTextClasses('bpk-graphic-promo__sponsor-content')}>
           {sponsor && (
             <>
-              <BpkText
-                tagName="span"
+              <span
                 className={getClassName('bpk-graphic-promo__sponsor-label')}
               >
                 {sponsor.label}
-              </BpkText>
+              </span>
               <img
                 className={getClassName('bpk-graphic-promo__sponsor-logo')}
                 alt={sponsor.altText}
@@ -165,26 +163,23 @@ const BpkGraphicPromo = ({
         </div>
         <div className={getTextClasses('bpk-graphic-promo__promo-content')}>
           {!sponsor && tagline && (
-            <BpkText
-              tagName="span"
+            <span
               className={getClassName('bpk-graphic-promo__tagline')}
             >
               {tagline}
-            </BpkText>
+            </span>
           )}
-          <BpkText
-            tagName="h2"
+          <h2
             className={getClassName('bpk-graphic-promo__headline')}
           >
             {headline}
-          </BpkText>
+          </h2>
           {subheading && (
-            <BpkText
-              tagName="p"
+            <p
               className={getClassName('bpk-graphic-promo__subheading')}
             >
               {subheading}
-            </BpkText>
+            </p>
           )}
           <BpkButtonV2
             type={BUTTON_TYPES.primaryOnDark}
