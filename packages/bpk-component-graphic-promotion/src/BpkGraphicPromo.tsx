@@ -169,17 +169,17 @@ const BpkGraphicPromo = ({
               {tagline}
             </span>
           )}
-          <span
+          <h2
             className={getClassName('bpk-graphic-promo__headline')}
           >
             {headline}
-          </span>
+          </h2>
           {subheading && (
-            <span
+            <p
               className={getClassName('bpk-graphic-promo__subheading')}
             >
               {subheading}
-            </span>
+            </p>
           )}
           <BpkButtonV2
             type={BUTTON_TYPES.primaryOnDark}

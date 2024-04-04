@@ -25,16 +25,16 @@ exports[`BpkGraphicPromo should display the tagline and no sponsor for non-spons
         >
           Tagline
         </span>
-        <span
+        <h2
           class="bpk-graphic-promo__headline"
         >
           Ride your wave
-        </span>
-        <span
+        </h2>
+        <p
           class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
-        </span>
+        </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
@@ -79,11 +79,11 @@ exports[`BpkGraphicPromo should not display tagline or subheading when not provi
       <div
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
-        <span
+        <h2
           class="bpk-graphic-promo__headline"
         >
           Ride your wave
-        </span>
+        </h2>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
@@ -128,16 +128,16 @@ exports[`BpkGraphicPromo should render as expected without a content ID 1`] = `
       <div
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
-        <span
+        <h2
           class="bpk-graphic-promo__headline"
         >
           Ride your wave
-        </span>
-        <span
+        </h2>
+        <p
           class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
-        </span>
+        </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
@@ -182,16 +182,16 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
       <div
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--center"
       >
-        <span
+        <h2
           class="bpk-graphic-promo__headline"
         >
           Ride your wave
-        </span>
-        <span
+        </h2>
+        <p
           class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
-        </span>
+        </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
@@ -236,16 +236,16 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
       <div
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
-        <span
+        <h2
           class="bpk-graphic-promo__headline"
         >
           Ride your wave
-        </span>
-        <span
+        </h2>
+        <p
           class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
-        </span>
+        </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
@@ -290,16 +290,16 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
       <div
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--end"
       >
-        <span
+        <h2
           class="bpk-graphic-promo__headline"
         >
           Ride your wave
-        </span>
-        <span
+        </h2>
+        <p
           class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
-        </span>
+        </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
@@ -344,16 +344,16 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
       <div
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
-        <span
+        <h2
           class="bpk-graphic-promo__headline"
         >
           Ride your wave
-        </span>
-        <span
+        </h2>
+        <p
           class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
-        </span>
+        </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
@@ -398,16 +398,16 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
       <div
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
-        <span
+        <h2
           class="bpk-graphic-promo__headline"
         >
           Ride your wave
-        </span>
-        <span
+        </h2>
+        <p
           class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
-        </span>
+        </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
           tabindex="-1"
