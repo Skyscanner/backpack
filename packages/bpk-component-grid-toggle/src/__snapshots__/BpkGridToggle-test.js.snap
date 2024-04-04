@@ -2,24 +2,30 @@
 
 exports[`BpkGridToggle should render correctly 1`] = `
 <DocumentFragment>
-  <button
-    class="bpk-link"
-    title="Keyboard Shortcut: ctrl + cmd + g"
-    type="button"
-  >
-    Baseline grid on
-  </button>
+  <span>
+    <button
+      class="bpk-link"
+      title="Keyboard Shortcut: ctrl + cmd + g"
+      type="button"
+    >
+      Baseline grid on
+    </button>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkGridToggle should render correctly with the className prop 1`] = `
 <DocumentFragment>
-  <button
-    class="bpk-link foo"
-    title="Keyboard Shortcut: ctrl + cmd + g"
-    type="button"
+  <span
+    class="foo"
   >
-    Baseline grid on
-  </button>
+    <button
+      class="bpk-link"
+      title="Keyboard Shortcut: ctrl + cmd + g"
+      type="button"
+    >
+      Baseline grid on
+    </button>
+  </span>
 </DocumentFragment>
 `;
