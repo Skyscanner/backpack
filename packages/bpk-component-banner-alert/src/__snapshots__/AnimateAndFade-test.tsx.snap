@@ -26,7 +26,6 @@ exports[`AnimateAndFade should render correctly with userland className 1`] = `
     class="userland-class-name"
   >
     <div
-      class="userland-class-name"
       style="height: auto; overflow: visible; transition: height 200ms ease;"
     >
       <div>

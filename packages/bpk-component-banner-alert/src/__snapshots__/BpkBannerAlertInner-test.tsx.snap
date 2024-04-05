@@ -419,7 +419,6 @@ exports[`BpkBannerAlertInner should render correctly with a custom class name 1`
     class="custom-class"
   >
     <div
-      class="custom-class"
       style="height: auto; overflow: visible; transition: height 200ms ease;"
     >
       <div>

@@ -40,7 +40,7 @@ type Props = {
   animateOnLeave: boolean;
   children: ReactNode | string;
   show: boolean;
-  className?: string | null;
+  className?: string | undefined;
 };
 
 type State = {
@@ -57,7 +57,6 @@ class AnimateAndFade extends Component<Props, State> {
   static defaultProps = {
     animateOnEnter: false,
     animateOnLeave: false,
-    className: null,
   };
 
   constructor(props: Props) {
@@ -141,7 +140,6 @@ class AnimateAndFade extends Component<Props, State> {
     return this.state.inDom ? (
       <div className={className}>
         <BpkAnimateHeight
-          className={className}
           onAnimationComplete={this.onAnimateHeightComplete}
           duration={ANIMATION_DURATION}
           height={this.state.isExpanded ? 'auto' : 0}
