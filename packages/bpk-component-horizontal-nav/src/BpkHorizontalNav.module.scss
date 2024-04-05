@@ -20,6 +20,8 @@
 @use '../../unstable__bpk-mixins/borders';
 
 .bpk-horizontal-nav {
+  position: relative;
+
   &--show-default-underline {
     @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day, '');
   }
