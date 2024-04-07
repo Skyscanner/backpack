@@ -1,0 +1,49 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
+
+.bpk-skeleton {
+  width: tokens.$bpk-one-pixel-rem * 96;
+  height: tokens.$bpk-one-pixel-rem * 96;
+  background: tokens.$bpk-surface-highlight-day;
+  background-image: linear-gradient(
+    to right,
+    tokens.$bpk-private-skeleton-shimmer-start-end-day 7.08%,
+    tokens.$bpk-private-skeleton-shimmer-center-day 49.22%,
+    tokens.$bpk-private-skeleton-shimmer-start-end-day 100%
+  );
+  background-repeat: no-repeat;
+  animation: shimmer-anim tokens.$bpk-duration-base * 4 infinite linear;
+  animation-direction: normal;
+
+  @include utils.bpk-rtl {
+    animation-direction: reverse;
+  }
+}
+
+@keyframes shimmer-anim {
+  0% {
+    background-position: -24rem 0;
+  }
+
+  100% {
+    background-position: 24rem 0;
+  }
+}

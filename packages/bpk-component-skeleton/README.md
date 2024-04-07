@@ -1,0 +1,15 @@
+# bpk-component-boilerplate
+
+> Backpack skeleton component.
+
+## Installation
+
+Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
+
+## Usage
+
+```ts
+import BpkBoilerplate from '@skyscanner/backpack-web/bpk-component-code';
+
+export default () => <BpkBoilerplate />;
+```
