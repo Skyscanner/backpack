@@ -37,6 +37,8 @@ import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import ChevronUpIcon from '../../bpk-component-icon/sm/chevron-up';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -56,6 +58,7 @@ import STYLES from './BpkInfoBanner.module.scss';
 const getClassName = cssModules(STYLES);
 
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
+const ContractIcon = withButtonAlignment(ChevronUpIcon);
 
 export const CONFIGURATION = {
   NONE: 'none',
@@ -94,10 +97,7 @@ type ToggleButtonProps = {
 };
 
 const ToggleButton = (props: ToggleButtonProps) => {
-  const classNames = getClassName(
-    'bpk-info-banner__expand-icon',
-    props.expanded && 'bpk-info-banner__expand-icon--flipped'
-  );
+  const classNames = getClassName('bpk-info-banner__expand-icon');
 
   return (
     <button
@@ -107,7 +107,9 @@ const ToggleButton = (props: ToggleButtonProps) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <div className={classNames}><ExpandIcon/></div>
+      <div className={classNames}>
+        {props.expanded ? <ExpandIcon/> : <ContractIcon/>}
+      </div>
     </button>
   );
 };
