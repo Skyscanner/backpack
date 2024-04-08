@@ -16,26 +16,17 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
-import BpkBaseSkeleton from './BpkBaseSkeleton';
-import getCustomStyles from './utils';
-
 import type { CUSTOM_SIZE_TYPE } from './common-types';
 
-import STYLES from './BpkImageSkeleton.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-export const IMAGE_SKELETON_STYLE = {
+export declare const IMAGE_SKELETON_STYLE: {
   rounded: 'rounded',
   default: 'default',
-} as const;
+};
 export type ImageSkeletonStyle = (typeof IMAGE_SKELETON_STYLE)[keyof typeof IMAGE_SKELETON_STYLE];
 
-export const IMAGE_SIZE_TYPES = {
+export declare const IMAGE_SIZE_TYPES : {
   default: 'default',
-} as const;
+};
 
 export type ImageSizeType = (typeof IMAGE_SIZE_TYPES)[keyof typeof IMAGE_SIZE_TYPES] | CUSTOM_SIZE_TYPE;
 
@@ -46,29 +37,11 @@ type Props = {
   ariaLabel?: string;
 };
 
-const BpkImageSkeleton = ({
+declare const BpkImageSkeleton: ({
   ariaLabel,
   className,
-  size = IMAGE_SIZE_TYPES.default,
-  style = IMAGE_SKELETON_STYLE.default
- }: Props) => {
-  const classNames = [getClassName('bpk-image-skeleton__default-size')];
-  let styleObj;
-
-  if(typeof size === 'object') {
-    styleObj = getCustomStyles(size);
-  }
-
-  if(style === IMAGE_SKELETON_STYLE.rounded) {
-    classNames.push(getClassName('bpk-image-skeleton__round-style'));
-  }
-
-  if (className) {
-    classNames.push(className);
-  }
-
-  return (
-    <BpkBaseSkeleton className={classNames.join(' ')} ariaLabel={ariaLabel} styleObj={styleObj} />
-  )};
+  size,
+  style,
+ }: Props) => JSX.Element
 
 export default BpkImageSkeleton;

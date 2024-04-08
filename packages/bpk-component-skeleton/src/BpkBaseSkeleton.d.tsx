@@ -16,7 +16,19 @@
  * limitations under the License.
  */
 
-export type CUSTOM_SIZE_TYPE = {
-  width: string | number;
-  height: string | number;
-}
+type Props = {
+  className: string;
+  ariaLabel?: string;
+  styleObj?: {
+    width: string;
+    height: string;
+  };
+};
+
+declare const BpkBaseSkeleton: ({
+  ariaLabel,
+  className,
+  styleObj
+ }: Props) => JSX.Element;
+
+export default BpkBaseSkeleton;

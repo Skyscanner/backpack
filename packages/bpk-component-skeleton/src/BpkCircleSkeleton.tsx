@@ -32,10 +32,10 @@ export const CIRCLE_SIZE_TYPES = {
   default: 'default',
 } as const;
 
-export type SizeType = (typeof CIRCLE_SIZE_TYPES)[keyof typeof CIRCLE_SIZE_TYPES] | CUSTOM_SIZE_TYPE;
+export type CircleSizeType = (typeof CIRCLE_SIZE_TYPES)[keyof typeof CIRCLE_SIZE_TYPES] | CUSTOM_SIZE_TYPE;
 
 type Props = {
-  size?: SizeType,
+  size?: CircleSizeType,
   className?: string;
   ariaLabel?: string;
 };

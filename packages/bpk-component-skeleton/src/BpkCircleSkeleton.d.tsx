@@ -16,7 +16,25 @@
  * limitations under the License.
  */
 
-export type CUSTOM_SIZE_TYPE = {
-  width: string | number;
-  height: string | number;
-}
+import type { CUSTOM_SIZE_TYPE } from './common-types';
+
+export declare const CIRCLE_SIZE_TYPES : {
+  small: 'small',
+  default: 'default',
+};
+
+export type CircleSizeType = (typeof CIRCLE_SIZE_TYPES)[keyof typeof CIRCLE_SIZE_TYPES] | CUSTOM_SIZE_TYPE;
+
+type Props = {
+  size?: CircleSizeType,
+  className?: string;
+  ariaLabel?: string;
+};
+
+declare const BpkCircleSkeleton: ({
+  ariaLabel,
+  className,
+  size
+ }: Props) => JSX.Element;
+
+export default BpkCircleSkeleton;

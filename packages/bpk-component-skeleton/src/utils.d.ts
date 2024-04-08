@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-export type CUSTOM_SIZE_TYPE = {
-  width: string | number;
-  height: string | number;
-}
+import type { CUSTOM_SIZE_TYPE } from './common-types';
+
+declare const getCustomStyles: ({ height, width }: CUSTOM_SIZE_TYPE) => { width: string, height: string };
+
+export default getCustomStyles;
