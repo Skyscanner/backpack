@@ -2,55 +2,57 @@
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "error" 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--error"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
-          >
-            <span
-              class="bpk-banner-alert__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__error-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--error"
+            role="alert"
           >
             <div
-              style="display: none;"
+              class="bpk-banner-alert__header"
+            >
+              <span
+                class="bpk-banner-alert__icon"
+              >
+                <span
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="bpk-banner-alert__error-icon"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -59,55 +61,57 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "error" and "icon" equal to CurrencyIcon 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--error"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
-          >
-            <span
-              class="bpk-banner-alert__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__error-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 10.5c5.8 0 10.5-2.015 10.5-4.5S17.8 1.5 12 1.5C6.201 1.5 1.5 3.515 1.5 6s4.701 4.5 10.5 4.5zM1.658 12.83a1.5 1.5 0 012.012-.673l.001.001C4.886 12.766 7.628 13.5 12 13.5s7.114-.734 8.33-1.342a1.5 1.5 0 011.36 2.674l-.02.01c-1.785.892-5.042 1.658-9.67 1.658s-7.886-.766-9.67-1.658a1.5 1.5 0 01-.673-2.012l.001-.001zm2.012 5.328a1.5 1.5 0 00-1.36 2.674l.02.01C4.113 21.734 7.371 22.5 12 22.5s7.886-.766 9.67-1.658a1.5 1.5 0 10-1.32-2.694l-.02.01c-1.216.608-3.958 1.342-8.33 1.342s-7.114-.734-8.33-1.342z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--error"
+            role="alert"
           >
             <div
-              style="display: none;"
+              class="bpk-banner-alert__header"
+            >
+              <span
+                class="bpk-banner-alert__icon"
+              >
+                <span
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="bpk-banner-alert__error-icon"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 10.5c5.8 0 10.5-2.015 10.5-4.5S17.8 1.5 12 1.5C6.201 1.5 1.5 3.515 1.5 6s4.701 4.5 10.5 4.5zM1.658 12.83a1.5 1.5 0 012.012-.673l.001.001C4.886 12.766 7.628 13.5 12 13.5s7.114-.734 8.33-1.342a1.5 1.5 0 011.36 2.674l-.02.01c-1.785.892-5.042 1.658-9.67 1.658s-7.886-.766-9.67-1.658a1.5 1.5 0 01-.673-2.012l.001-.001zm2.012 5.328a1.5 1.5 0 00-1.36 2.674l.02.01C4.113 21.734 7.371 22.5 12 22.5s7.886-.766 9.67-1.658a1.5 1.5 0 10-1.32-2.694l-.02.01c-1.216.608-3.958 1.342-8.33 1.342s-7.114-.734-8.33-1.342z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -116,55 +120,57 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "neutral" 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--neutral"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
-          >
-            <span
-              class="bpk-banner-alert__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__neutral-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--neutral"
+            role="alert"
           >
             <div
-              style="display: none;"
+              class="bpk-banner-alert__header"
+            >
+              <span
+                class="bpk-banner-alert__icon"
+              >
+                <span
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="bpk-banner-alert__neutral-icon"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -173,55 +179,57 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "primary" 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--primary"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
-          >
-            <span
-              class="bpk-banner-alert__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__primary-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--primary"
+            role="alert"
           >
             <div
-              style="display: none;"
+              class="bpk-banner-alert__header"
+            >
+              <span
+                class="bpk-banner-alert__icon"
+              >
+                <span
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="bpk-banner-alert__primary-icon"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -230,55 +238,57 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "success" 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--success"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
-          >
-            <span
-              class="bpk-banner-alert__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__success-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--success"
+            role="alert"
           >
             <div
-              style="display: none;"
+              class="bpk-banner-alert__header"
+            >
+              <span
+                class="bpk-banner-alert__icon"
+              >
+                <span
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="bpk-banner-alert__success-icon"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -287,55 +297,57 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "warn" 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--warn"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
-          >
-            <span
-              class="bpk-banner-alert__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__warn-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--warn"
+            role="alert"
           >
             <div
-              style="display: none;"
+              class="bpk-banner-alert__header"
+            >
+              <span
+                class="bpk-banner-alert__icon"
+              >
+                <span
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="bpk-banner-alert__warn-icon"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -344,55 +356,57 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
 
 exports[`BpkBannerAlertInner should render correctly with a custom banner-alert class name 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--warn custom-class"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
-          >
-            <span
-              class="bpk-banner-alert__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__warn-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--warn custom-class"
+            role="alert"
           >
             <div
-              style="display: none;"
+              class="bpk-banner-alert__header"
+            >
+              <span
+                class="bpk-banner-alert__icon"
+              >
+                <span
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="bpk-banner-alert__warn-icon"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -403,54 +417,57 @@ exports[`BpkBannerAlertInner should render correctly with a custom class name 1`
 <DocumentFragment>
   <div
     class="custom-class"
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
   >
-    <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--warn"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
-          >
-            <span
-              class="bpk-banner-alert__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__warn-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--warn"
+            role="alert"
           >
             <div
-              style="display: none;"
+              class="bpk-banner-alert__header"
+            >
+              <span
+                class="bpk-banner-alert__icon"
+              >
+                <span
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="bpk-banner-alert__warn-icon"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -459,90 +476,92 @@ exports[`BpkBannerAlertInner should render correctly with a custom class name 1`
 
 exports[`BpkBannerAlertInner should render correctly with a element based message 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--success"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
-            role="button"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--success"
+            role="alert"
           >
-            <span
-              class="bpk-banner-alert__icon"
+            <div
+              class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
+              role="button"
             >
               <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__success-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              <p>
-                All 
-                <span>
-                  good
-                </span>
-              </p>
-            </span>
-            <span
-              class="bpk-banner-alert__toggle"
-            >
-              <button
-                aria-expanded="false"
-                aria-label="View more"
-                class="bpk-banner-alert__toggle-button"
-                title="View more"
-                type="button"
+                class="bpk-banner-alert__icon"
               >
                 <span
                   style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                 >
                   <svg
                     aria-hidden="true"
-                    class="bpk-banner-alert__expand-icon"
-                    style="width: 1.5rem; height: 1.5rem;"
+                    class="bpk-banner-alert__success-icon"
+                    style="width: 1rem; height: 1rem;"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M4.287 7.8a1 1 0 011.414 0l6.293 6.292L18.287 7.8a1 1 0 111.438 1.39l-.024.024-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z"
+                      d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
                     />
                   </svg>
                 </span>
-              </button>
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
-          >
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                <p>
+                  All 
+                  <span>
+                    good
+                  </span>
+                </p>
+              </span>
+              <span
+                class="bpk-banner-alert__toggle"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-label="View more"
+                  class="bpk-banner-alert__toggle-button"
+                  title="View more"
+                  type="button"
+                >
+                  <span
+                    style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="bpk-banner-alert__expand-icon"
+                      style="width: 1.5rem; height: 1.5rem;"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.287 7.8a1 1 0 011.414 0l6.293 6.292L18.287 7.8a1 1 0 111.438 1.39l-.024.024-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </span>
+            </div>
             <div
-              style="display: none;"
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
+                style="display: none;"
               >
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                <div
+                  class="bpk-banner-alert__children-container"
+                >
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -551,80 +570,82 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
 
 exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--warn"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--warn"
+            role="alert"
           >
-            <span
-              class="bpk-banner-alert__icon"
+            <div
+              class="bpk-banner-alert__header"
             >
               <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__warn-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-            <span
-              class="bpk-banner-alert__toggle"
-            >
-              <button
-                aria-label="Dismiss"
-                class="bpk-close-button"
-                title="Dismiss"
-                type="button"
+                class="bpk-banner-alert__icon"
               >
                 <span
-                  class="bpk-close-button__icon"
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                 >
                   <svg
                     aria-hidden="true"
+                    class="bpk-banner-alert__warn-icon"
                     style="width: 1rem; height: 1rem;"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                      d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
                     />
                   </svg>
                 </span>
-              </button>
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
-          >
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+              <span
+                class="bpk-banner-alert__toggle"
+              >
+                <button
+                  aria-label="Dismiss"
+                  class="bpk-close-button"
+                  title="Dismiss"
+                  type="button"
+                >
+                  <span
+                    class="bpk-close-button__icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      style="width: 1rem; height: 1rem;"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </span>
+            </div>
             <div
-              style="display: none;"
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -633,55 +654,57 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
 
 exports[`BpkBannerAlertInner should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--warn"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
-          >
-            <span
-              class="bpk-banner-alert__icon"
-            >
-              <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__warn-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--warn"
+            role="alert"
           >
             <div
-              style="display: none;"
+              class="bpk-banner-alert__header"
+            >
+              <span
+                class="bpk-banner-alert__icon"
+              >
+                <span
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="bpk-banner-alert__warn-icon"
+                    style="width: 1rem; height: 1rem;"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -690,85 +713,87 @@ exports[`BpkBannerAlertInner should render correctly with arbitrary props 1`] = 
 
 exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--success"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
-            role="button"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--success"
+            role="alert"
           >
-            <span
-              class="bpk-banner-alert__icon"
+            <div
+              class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
+              role="button"
             >
               <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__success-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-            <span
-              class="bpk-banner-alert__toggle"
-            >
-              <button
-                aria-expanded="false"
-                aria-label="View more"
-                class="bpk-banner-alert__toggle-button"
-                title="View more"
-                type="button"
+                class="bpk-banner-alert__icon"
               >
                 <span
                   style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                 >
                   <svg
                     aria-hidden="true"
-                    class="bpk-banner-alert__expand-icon"
-                    style="width: 1.5rem; height: 1.5rem;"
+                    class="bpk-banner-alert__success-icon"
+                    style="width: 1rem; height: 1rem;"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M4.287 7.8a1 1 0 011.414 0l6.293 6.292L18.287 7.8a1 1 0 111.438 1.39l-.024.024-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z"
+                      d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
                     />
                   </svg>
                 </span>
-              </button>
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
-          >
-            <div
-              style="display: none;"
-            >
-              <div
-                class="bpk-banner-alert__children-container"
+              </span>
+              <span
+                class="bpk-banner-alert__message"
               >
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+              <span
+                class="bpk-banner-alert__toggle"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-label="View more"
+                  class="bpk-banner-alert__toggle-button"
+                  title="View more"
+                  type="button"
+                >
+                  <span
+                    style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="bpk-banner-alert__expand-icon"
+                      style="width: 1.5rem; height: 1.5rem;"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.287 7.8a1 1 0 011.414 0l6.293 6.292L18.287 7.8a1 1 0 111.438 1.39l-.024.024-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </span>
+            </div>
+            <div
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+            >
+              <div
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                >
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -777,80 +802,82 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
 
 exports[`BpkBannerAlertInner should render correctly with dismissable option 1`] = `
 <DocumentFragment>
-  <div
-    style="height: auto; overflow: visible; transition: height 200ms ease;"
-  >
-    <div>
+  <div>
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
       <div>
-        <section
-          class="bpk-banner-alert bpk-banner-alert--warn"
-          role="alert"
-        >
-          <div
-            class="bpk-banner-alert__header"
+        <div>
+          <section
+            class="bpk-banner-alert bpk-banner-alert--warn"
+            role="alert"
           >
-            <span
-              class="bpk-banner-alert__icon"
+            <div
+              class="bpk-banner-alert__header"
             >
               <span
-                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="bpk-banner-alert__warn-icon"
-                  style="width: 1rem; height: 1rem;"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span
-              class="bpk-banner-alert__message"
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </span>
-            <span
-              class="bpk-banner-alert__toggle"
-            >
-              <button
-                aria-label="Dismiss"
-                class="bpk-close-button"
-                title="Dismiss"
-                type="button"
+                class="bpk-banner-alert__icon"
               >
                 <span
-                  class="bpk-close-button__icon"
+                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                 >
                   <svg
                     aria-hidden="true"
+                    class="bpk-banner-alert__warn-icon"
                     style="width: 1rem; height: 1rem;"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                      d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zM12 6a1.498 1.498 0 11-1.498 1.498A1.498 1.498 0 0112 6zm1.493 10.676a1.5 1.5 0 01-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 012.98 0l.01.175.003 4.501z"
                     />
                   </svg>
                 </span>
-              </button>
-            </span>
-          </div>
-          <div
-            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
-          >
+              </span>
+              <span
+                class="bpk-banner-alert__message"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </span>
+              <span
+                class="bpk-banner-alert__toggle"
+              >
+                <button
+                  aria-label="Dismiss"
+                  class="bpk-close-button"
+                  title="Dismiss"
+                  type="button"
+                >
+                  <span
+                    class="bpk-close-button__icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      style="width: 1rem; height: 1rem;"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.587 3.467a1.5 1.5 0 10-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 002.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 002.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 00-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </span>
+            </div>
             <div
-              style="display: none;"
+              style="height: 0px; overflow: hidden; transition: height 200ms ease;"
             >
               <div
-                class="bpk-banner-alert__children-container"
-              />
+                style="display: none;"
+              >
+                <div
+                  class="bpk-banner-alert__children-container"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
