@@ -18,6 +18,7 @@
 
 /// <reference types="react" />
 import type { ReactNode } from 'react';
+import { ModalStyle } from '../BpkModalInner';
 
 export type Props = {
   id: string | undefined;
@@ -32,5 +33,6 @@ export type Props = {
   showHeader?: boolean;
   title?: string | null;
   wide?: boolean;
+  modalStyle?: ModalStyle;
 };
 export declare const BpkModalV2: (props: Props) => JSX.Element | null;

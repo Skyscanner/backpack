@@ -21,17 +21,17 @@ exports[`BpkGraphicPromo should display the tagline and no sponsor for non-spons
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__tagline"
+          class="bpk-graphic-promo__tagline"
         >
           Tagline
         </span>
         <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+          class="bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
+          class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -66,7 +66,7 @@ exports[`BpkGraphicPromo should not display tagline or subheading when not provi
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
       >
         <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+          class="bpk-graphic-promo__sponsor-label"
         >
           Sponsored
         </span>
@@ -80,7 +80,7 @@ exports[`BpkGraphicPromo should not display tagline or subheading when not provi
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+          class="bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
@@ -115,7 +115,7 @@ exports[`BpkGraphicPromo should render as expected without a content ID 1`] = `
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
       >
         <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+          class="bpk-graphic-promo__sponsor-label"
         >
           Sponsored
         </span>
@@ -129,12 +129,12 @@ exports[`BpkGraphicPromo should render as expected without a content ID 1`] = `
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+          class="bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
+          class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -169,7 +169,7 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--center"
       >
         <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+          class="bpk-graphic-promo__sponsor-label"
         >
           Sponsored
         </span>
@@ -183,12 +183,12 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--center"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+          class="bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
+          class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -223,7 +223,7 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
       >
         <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+          class="bpk-graphic-promo__sponsor-label"
         >
           Sponsored
         </span>
@@ -237,12 +237,12 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+          class="bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
+          class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -277,7 +277,7 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--end"
       >
         <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+          class="bpk-graphic-promo__sponsor-label"
         >
           Sponsored
         </span>
@@ -291,12 +291,12 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--end"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+          class="bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
+          class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -331,7 +331,7 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
       >
         <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+          class="bpk-graphic-promo__sponsor-label"
         >
           Sponsored
         </span>
@@ -345,12 +345,12 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+          class="bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
+          class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>
@@ -385,7 +385,7 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
         class="bpk-graphic-promo__sponsor-content bpk-graphic-promo__sponsor-content--start"
       >
         <span
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__sponsor-label"
+          class="bpk-graphic-promo__sponsor-label"
         >
           Sponsored
         </span>
@@ -399,12 +399,12 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
         class="bpk-graphic-promo__promo-content bpk-graphic-promo__promo-content--start"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__headline"
+          class="bpk-graphic-promo__headline"
         >
           Ride your wave
         </h2>
         <p
-          class="bpk-text bpk-text--body-default bpk-graphic-promo__subheading"
+          class="bpk-graphic-promo__subheading"
         >
           Portugal and 6 more countries have just been added to the UK travel green list
         </p>

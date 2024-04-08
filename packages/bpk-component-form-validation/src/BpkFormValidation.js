@@ -57,9 +57,9 @@ const BpkFormValidation = (props) => {
     >
       <div className={getClassName('bpk-form-validation__container')}>
         <div className={classNames} {...rest}>
-          <AlignedExclamationIcon
-            className={getClassName('bpk-form-validation__icon')}
-          />
+          <span className={getClassName('bpk-form-validation__icon')}>
+            <AlignedExclamationIcon />
+          </span>
           {children}
         </div>
       </div>
