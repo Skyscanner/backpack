@@ -85,7 +85,7 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
-  return <AlignedIcon className={className} />;
+  return <div className={className}><AlignedIcon/></div>;
 };
 
 type ToggleButtonProps = {
@@ -107,7 +107,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <ExpandIcon className={classNames} />
+      <div className={classNames}><ExpandIcon/></div>
     </button>
   );
 };
@@ -211,7 +211,6 @@ const BpkInfoBannerInner = ({
           {dismissable && (
             <span className={getClassName('bpk-info-banner__toggle')}>
               <BpkCloseButton
-                className={getClassName('bpk-info-banner__toggle-button')}
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
                 label={dismissButtonLabel}
@@ -228,7 +227,6 @@ const BpkInfoBannerInner = ({
           </div>
           {isExpandable && action && (
             <BpkLink
-              className={getClassName('bpk-info-banner__expandable-action')}
               onClick={action.callback}
             >
               {action.title}
