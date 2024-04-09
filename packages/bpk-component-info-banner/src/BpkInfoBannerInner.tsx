@@ -108,7 +108,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
       title={props.label}
     >
       <div className={classNames}>
-        {props.expanded ? <ExpandIcon/> : <ContractIcon/>}
+        {props.expanded ? <ExpandIcon/> : <CollapseIcon/>}
       </div>
     </button>
   );
