@@ -18,21 +18,24 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
               <span
                 class="bpk-info-banner__icon"
               >
-                <span
-                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                <div
+                  class="bpk-info-banner__success-icon"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="bpk-info-banner__success-icon"
-                    style="width: 1rem; height: 1rem;"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                   >
-                    <path
-                      d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
-                    />
-                  </svg>
-                </span>
+                    <svg
+                      aria-hidden="true"
+                      style="width: 1rem; height: 1rem;"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </span>
               <span
                 class="bpk-info-banner__message"
@@ -44,7 +47,7 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
               >
                 <button
                   aria-label="Dismiss"
-                  class="bpk-close-button bpk-info-banner__toggle-button"
+                  class="bpk-close-button"
                   title="Dismiss"
                   type="button"
                 >
@@ -103,21 +106,24 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
               <span
                 class="bpk-info-banner__icon"
               >
-                <span
-                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                <div
+                  class="bpk-info-banner__success-icon"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="bpk-info-banner__success-icon"
-                    style="width: 1rem; height: 1rem;"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                   >
-                    <path
-                      d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
-                    />
-                  </svg>
-                </span>
+                    <svg
+                      aria-hidden="true"
+                      style="width: 1rem; height: 1rem;"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </span>
               <span
                 class="bpk-info-banner__message"
@@ -134,21 +140,24 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
                   title="View more"
                   type="button"
                 >
-                  <span
-                    style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                  <div
+                    class="bpk-info-banner__expand-icon"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="bpk-info-banner__expand-icon"
-                      style="width: 1rem; height: 1rem;"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                     >
-                      <path
-                        d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
-                      />
-                    </svg>
-                  </span>
+                      <svg
+                        aria-hidden="true"
+                        style="width: 1rem; height: 1rem;"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 </button>
               </span>
             </div>
@@ -197,21 +206,24 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
               <span
                 class="bpk-info-banner__icon"
               >
-                <span
-                  style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                <div
+                  class="bpk-info-banner__success-icon"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="bpk-info-banner__success-icon"
-                    style="width: 1rem; height: 1rem;"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                   >
-                    <path
-                      d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
-                    />
-                  </svg>
-                </span>
+                    <svg
+                      aria-hidden="true"
+                      style="width: 1rem; height: 1rem;"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm5.56-12.44a1.5 1.5 0 00-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 00-2.12 2.122l3 3a1.5 1.5 0 002.12 0l6-6z"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </span>
               <span
                 class="bpk-info-banner__message"
@@ -228,21 +240,24 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
                   title="View more"
                   type="button"
                 >
-                  <span
-                    style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+                  <div
+                    class="bpk-info-banner__expand-icon"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="bpk-info-banner__expand-icon bpk-info-banner__expand-icon--flipped"
-                      style="width: 1rem; height: 1rem;"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
                     >
-                      <path
-                        d="M19.113 8.095a1.496 1.496 0 010 2.008l-6.397 5.948a1 1 0 01-1.358.003l-6.532-6.01a1.427 1.427 0 01.138-1.949 1.572 1.572 0 011.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 012.104 0z"
-                      />
-                    </svg>
-                  </span>
+                      <svg
+                        aria-hidden="true"
+                        style="width: 1rem; height: 1rem;"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.887 15.905a1.496 1.496 0 010-2.008l6.397-5.948a1 1 0 011.358-.004l6.532 6.012a1.427 1.427 0 01-.138 1.948 1.572 1.572 0 01-1.997.103L11.96 11.37l-4.97 4.535a1.72 1.72 0 01-2.104 0z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 </button>
               </span>
             </div>
