@@ -67,8 +67,7 @@ const WeekDayComponent = ({
   weekDayKey = 'nameAbbr',
 }: WeekDayProps) => (
   <Element
-    // The below className is inline ignored here as the component name is very generic (Element) and could easily be added in additional locations within Backpack
-    // Element is also a dom element, rather than a react component & so className usage is safe.
+    // TODO: className to be removed
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     className={getClassName('bpk-calendar-header__weekday')}
     title={weekDay.name}

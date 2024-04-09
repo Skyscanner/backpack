@@ -35,7 +35,7 @@ export default (displayName: string, classNamesToAdd: string[] = []) =>
         ? classNames.concat(classNamesToAdd)
         : classNames;
 
-      // The below className is inline ignored here as the component name is very generic (ComposedComponent) and could easily be added in additional locations within Backpack
+      // TODO: className to be removed
       // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       return <ComposedComponent className={classNames.join(' ')} {...rest} />;
     };

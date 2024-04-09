@@ -231,8 +231,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
             ref={(el) => {
               this.innerEl = el;
             }}
-            // The below className is inline ignored here as the component name is very generic (InnerContainer) and could easily be added in additional locations within Backpack
-            // InnerContainer is also a dom element, rather than a react component & so className usage is safe.
+            // TODO: className to be removed
             // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={getClassName('bpk-mobile-scroll-container__inner')}
           >

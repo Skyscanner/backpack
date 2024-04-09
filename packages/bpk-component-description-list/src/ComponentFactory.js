@@ -33,7 +33,7 @@ const buildComponent = (TagName, baseClassName) => {
     }
 
     return (
-      // The below className is inline ignored here as the component name is very generic (TagName) and could easily be added in additional locations within Backpack
+      // TODO: className to be removed
       // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       <TagName className={classNames.join(' ')} {...rest}>
         {children}
