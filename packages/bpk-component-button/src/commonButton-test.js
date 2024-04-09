@@ -18,12 +18,32 @@
 
 import { render } from '@testing-library/react';
 
-const commonButtonTests = (ButtonToTest) => {
-  describe('ButtonToTest', () => {
-    it('should render correctly', () => {
+import BpkButtonDestructive from './BpkButtonDestructive';
+import BpkButtonFeatured from './BpkButtonFeatured'
+import BpkButtonLink from './BpkButtonLink'
+import BpkButtonLinkOnDark from './BpkButtonLinkOnDark'
+import BpkButtonPrimary from './BpkButtonPrimary'
+import BpkButtonPrimaryOnDark from './BpkButtonPrimaryOnDark'
+import BpkButtonPrimaryOnLight from './BpkButtonPrimaryOnLight'
+import BpkButtonSecondary from './BpkButtonSecondary'
+import BpkButtonSecondaryOnDark from './BpkButtonSecondaryOnDark'
+
+  describe.each([
+    {name: "BpkButtonDestructive", ButtonToTest: BpkButtonDestructive},
+    {name: "BpkButtonFeatured", ButtonToTest: BpkButtonFeatured},
+    {name: "BpkButtonLink", ButtonToTest: BpkButtonLink},
+    {name: "BpkButtonLinkOnDark", ButtonToTest: BpkButtonLinkOnDark},
+    {name: "BpkButtonPrimary", ButtonToTest: BpkButtonPrimary},
+    {name: "BpkButtonPrimaryOnDark", ButtonToTest: BpkButtonPrimaryOnDark},
+    {name: "BpkButtonPrimaryOnLight", ButtonToTest: BpkButtonPrimaryOnLight},
+    {name: "BpkButtonSecondary", ButtonToTest: BpkButtonSecondary},
+    {name: "BpkButtonSecondaryOnDark", ButtonToTest: BpkButtonSecondaryOnDark},
+  ])('$name', ({ButtonToTest}) => {
+  
+    it("should render correctly", () => {
       const { asFragment } = render(<ButtonToTest>My button</ButtonToTest>);
       expect(asFragment()).toMatchSnapshot();
-    });
+    })
 
     it('should render correctly with a "href" attribute', () => {
       const { asFragment } = render(
@@ -108,8 +128,7 @@ const commonButtonTests = (ButtonToTest) => {
       expect(asFragment()).toMatchSnapshot();
     });
   });
-};
 
 // We export these to reuse them in other tests for buttons.
-// eslint-disable-next-line jest/no-export
-export default commonButtonTests;
+ 
+// export default commonButtonTests;

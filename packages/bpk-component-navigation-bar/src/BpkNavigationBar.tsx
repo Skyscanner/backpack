@@ -85,6 +85,8 @@ const BpkNavigationBar = (props: Props) => {
         <BpkText
           id={titleId}
           textStyle={TEXT_STYLES.heading5}
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassNames(
             'bpk-navigation-bar__title',
             `bpk-navigation-bar__title--${barStyle}`,

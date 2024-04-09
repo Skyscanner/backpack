@@ -85,6 +85,8 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
+  // TODO: className to be removed
+  // eslint-disable-next-line @skyscanner/rules/forbid-component-props
   return <AlignedIcon className={className} />;
 };
 
@@ -107,7 +109,10 @@ const ToggleButton = (props: ToggleButtonProps) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <ExpandIcon className={classNames} />
+      <ExpandIcon 
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      className={classNames} />
     </button>
   );
 };
@@ -211,6 +216,8 @@ const BpkInfoBannerInner = ({
           {dismissable && (
             <span className={getClassName('bpk-info-banner__toggle')}>
               <BpkCloseButton
+                // TODO: className to be removed
+                // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                 className={getClassName('bpk-info-banner__toggle-button')}
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
@@ -228,6 +235,8 @@ const BpkInfoBannerInner = ({
           </div>
           {isExpandable && action && (
             <BpkLink
+              // TODO: className to be removed
+              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
               className={getClassName('bpk-info-banner__expandable-action')}
               onClick={action.callback}
             >

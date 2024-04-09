@@ -89,6 +89,8 @@ const BpkPriceMarker = (props: Props) => {
         {...buttonProps}
       >
         <BpkText
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={classNames}
           textStyle={
             status === PRICE_MARKER_STATUSES.focused

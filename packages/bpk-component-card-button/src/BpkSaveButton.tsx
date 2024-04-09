@@ -81,6 +81,8 @@ const BpkSaveButton = ({
   return (
     <BpkButtonV2
       aria-label={accessibilityLabel}
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName(
         'bpk-save-button',
         smallSize && 'bpk-save-button__small',
@@ -95,6 +97,8 @@ const BpkSaveButton = ({
       iconOnly
     >
       <HeartIcon
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName(
           'bpk-save-button__icon',
           'bpk-save-button__heartIcon',
@@ -104,6 +108,8 @@ const BpkSaveButton = ({
         )}
       />
       <HeartOutLineIcon
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName(
           'bpk-save-button__icon',
           'bpk-save-button__heartOutlineIcon',

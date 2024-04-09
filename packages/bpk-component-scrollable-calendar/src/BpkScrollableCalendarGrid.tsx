@@ -47,6 +47,8 @@ const BpkScrollableCalendarGrid = ({
   return (
     <div className={classNames}>
       <BpkText
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-scrollable-calendar-grid__title')}
         tagName="h1"
         textStyle={TEXT_STYLES.heading4}
