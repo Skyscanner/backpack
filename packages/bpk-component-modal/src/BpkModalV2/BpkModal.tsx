@@ -70,7 +70,9 @@ const Header = ({
         ].join(' ')}
       >
         <div className={getClassName('bpk-modal__header-title-container')}>
-          <Heading>{title}</Heading>
+          <span className={getClassName('bpk-modal__title')}>
+            <Heading>{title}</Heading>
+          </span>
         </div>
         <BpkCloseButton
           className={getClassName(
@@ -101,7 +103,6 @@ const Header = ({
 const Heading = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.label1,
   tagName: 'h2',
-  className: getClassName('bpk-modal__title'),
 });
 
 type DialogProps = {
