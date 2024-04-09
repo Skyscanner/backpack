@@ -19,11 +19,11 @@
 import type { KeyboardEvent } from 'react';
 
 import { withRtlSupport } from '../../bpk-component-icon';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallArrowDownIcon from '../../bpk-component-icon/sm/arrow-down';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallArrowUpIcon from '../../bpk-component-icon/sm/arrow-up';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import { SORT_DIRECTION_TYPES } from './common-types';
 

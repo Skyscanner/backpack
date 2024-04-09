@@ -31,10 +31,10 @@ import BpkAnimateHeight from '../../bpk-animate-height';
 import BpkCloseButton from '../../bpk-component-close-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDownIcon from '../../bpk-component-icon/lg/chevron-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
 
