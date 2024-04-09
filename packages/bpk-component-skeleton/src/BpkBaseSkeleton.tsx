@@ -43,7 +43,7 @@ const BpkBaseSkeleton = ({
   }
 
   return (
-    <div aria-label={ariaLabel} className={classNames.join(' ')} style={styleObj}  />
+    <div role="status" aria-label={ariaLabel} className={classNames.join(' ')} style={styleObj}  />
   )};
 
 export default BpkBaseSkeleton;
