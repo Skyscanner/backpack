@@ -105,7 +105,6 @@ const Header = ({
 const Heading = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.label1,
   tagName: 'h2',
-  className: getClassName('bpk-modal__title'),
 });
 
 type DialogProps = {

@@ -88,18 +88,17 @@ const BpkPriceMarker = (props: Props) => {
         disabled={disabled}
         {...buttonProps}
       >
-        <BpkText
-          // TODO: className to be removed
-          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={classNames}
-          textStyle={
-            status === PRICE_MARKER_STATUSES.focused
-              ? TEXT_STYLES.label1
-              : TEXT_STYLES.label2
-          }
-        >
-          {label}
-        </BpkText>
+        <span className={classNames}>
+          <BpkText
+            textStyle={
+              status === PRICE_MARKER_STATUSES.focused
+                ? TEXT_STYLES.label1
+                : TEXT_STYLES.label2
+            }
+          >
+            {label}
+          </BpkText>
+        </span>
         <div className={arrowClassNames} />
       </button>
     </BpkBasicMapMarker>
