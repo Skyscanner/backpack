@@ -16,7 +16,12 @@
  * limitations under the License.
  */
 
-import BpkBaseSkeleton from '../../packages/bpk-component-skeleton/src/BpkBaseSkeleton';
+import {
+  BpkBodyTextSkeleton,
+  BpkCircleSkeleton,
+  BpkHeadlineSkeleton,
+  BpkImageSkeleton,
+} from '../../packages/bpk-component-skeleton/index';
 
 import {
   BaseSkeletonExample,
@@ -40,10 +45,16 @@ import {
 
 export default {
   title: 'bpk-component-skeleton',
-  component: BpkBaseSkeleton,
+  component: BpkImageSkeleton,
+  subcomponents: {
+    BpkBodyTextSkeleton,
+    BpkCircleSkeleton,
+    BpkHeadlineSkeleton,
+  },
 };
 
 export const Base = BaseSkeletonExample;
+
 export const ImageDefaultSizeWithDefaultStyle = ImageDefaultSizeWithDefaultStyleExample;
 export const ImageDefaultSizeWithRoundedStyle = ImageDefaultSizeWithRoundedStyleExample;
 export const ImageCustomNumberSizeWithDefaultStyle = ImageCustomNumberSizeWithDefaultStyleExample;
