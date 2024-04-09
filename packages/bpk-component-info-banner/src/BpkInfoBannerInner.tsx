@@ -58,7 +58,7 @@ import STYLES from './BpkInfoBanner.module.scss';
 const getClassName = cssModules(STYLES);
 
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
-const ContractIcon = withButtonAlignment(ChevronUpIcon);
+const CollapseIcon = withButtonAlignment(ChevronUpIcon);
 
 export const CONFIGURATION = {
   NONE: 'none',
