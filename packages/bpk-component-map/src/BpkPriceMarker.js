@@ -88,16 +88,17 @@ const BpkPriceMarker = (props: Props) => {
         disabled={disabled}
         {...buttonProps}
       >
-        <BpkText
-          className={classNames}
-          textStyle={
-            status === PRICE_MARKER_STATUSES.focused
-              ? TEXT_STYLES.label1
-              : TEXT_STYLES.label2
-          }
-        >
-          {label}
-        </BpkText>
+        <span className={classNames}>
+          <BpkText
+            textStyle={
+              status === PRICE_MARKER_STATUSES.focused
+                ? TEXT_STYLES.label1
+                : TEXT_STYLES.label2
+            }
+          >
+            {label}
+          </BpkText>
+        </span>
         <div className={arrowClassNames} />
       </button>
     </BpkBasicMapMarker>
