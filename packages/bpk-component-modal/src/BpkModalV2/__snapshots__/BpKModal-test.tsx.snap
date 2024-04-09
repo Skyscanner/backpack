@@ -71,15 +71,11 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
         <div
           class="bpk-modal__header-title-container"
         >
-          <span
-            class="bpk-modal__title"
+          <h2
+            class="bpk-text bpk-text--label-1"
           >
-            <h2
-              class="bpk-text bpk-text--label-1"
-            >
-              Modal with dialog element
-            </h2>
-          </span>
+            Modal with dialog element
+          </h2>
         </div>
         <button
           aria-label="bpk-modal-button-close"

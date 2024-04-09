@@ -70,9 +70,7 @@ const Header = ({
         ].join(' ')}
       >
         <div className={getClassName('bpk-modal__header-title-container')}>
-          <span className={getClassName('bpk-modal__title')}>
-            <Heading>{title}</Heading>
-          </span>
+          <Heading>{title}</Heading>
         </div>
         <BpkCloseButton
           className={getClassName(
