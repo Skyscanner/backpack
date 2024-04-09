@@ -21,11 +21,11 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
+import { withRtlSupport } from '../../bpk-component-icon';
+import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
 import BpkLink from '../../bpk-component-link';
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import { withRtlSupport } from '../../bpk-component-icon';
-import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
 
 import STYLES from './BpkBreadcrumbItem.module.scss';
 

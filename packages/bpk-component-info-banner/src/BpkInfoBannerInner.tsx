@@ -25,19 +25,19 @@ import type { ReactNode, FunctionComponent, SVGProps } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { withButtonAlignment } from '../../bpk-component-icon';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkLink from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
+import { withButtonAlignment } from '../../bpk-component-icon';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
+import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
+import BpkLink from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';

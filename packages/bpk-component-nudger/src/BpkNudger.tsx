@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
 import { type CommonProps } from './common-types';

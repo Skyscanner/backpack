@@ -25,9 +25,9 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { BpkSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkSpinner } from '../../bpk-component-spinner';
 
 import STYLES from './BpkBackgroundImage.module.scss';
 

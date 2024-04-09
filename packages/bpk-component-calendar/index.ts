@@ -19,15 +19,15 @@
 import BpkCalendarContainer, {
   withCalendarState,
 } from './src/BpkCalendarContainer';
+import BpkCalendarDate, {
+  ROW_TYPES,
+  SELECTION_TYPES,
+} from './src/BpkCalendarDate';
 import BpkCalendarGrid, {
   BpkCalendarGridWithTransition,
 } from './src/BpkCalendarGrid';
 import BpkCalendarGridHeader from './src/BpkCalendarGridHeader';
 import BpkCalendarNav from './src/BpkCalendarNav';
-import BpkCalendarDate, {
-  ROW_TYPES,
-  SELECTION_TYPES,
-} from './src/BpkCalendarDate';
 import composeCalendar from './src/composeCalendar';
 import { CALENDAR_SELECTION_TYPE } from './src/custom-proptypes';
 import CustomPropTypes, {
@@ -37,6 +37,8 @@ import CustomPropTypes, {
 import * as DateUtils from './src/date-utils';
 import themeAttributes from './src/themeAttributes';
 
+import type { Props as BpkCalendarDateProps } from './src/BpkCalendarDate';
+import type { Props as BpkCalendarGridProps } from './src/BpkCalendarGrid';
 import type {
   DaysOfWeek,
   ReactComponent,
@@ -44,8 +46,6 @@ import type {
   WeekDayKey,
   SelectionConfiguration,
 } from './src/custom-proptypes';
-import type { Props as BpkCalendarDateProps } from './src/BpkCalendarDate';
-import type { Props as BpkCalendarGridProps } from './src/BpkCalendarGrid';
 
 export default BpkCalendarContainer;
 

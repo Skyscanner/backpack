@@ -19,8 +19,8 @@
 import type { ReactElement, ReactNode } from 'react';
 import { cloneElement } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationBar.module.scss';
 

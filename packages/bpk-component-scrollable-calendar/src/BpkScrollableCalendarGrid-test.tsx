@@ -27,8 +27,8 @@ import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { formatDateFull, formatMonth } from '../test-utils';
 
-import BpkCalendarScrollGrid from './BpkScrollableCalendarGrid';
 import BpkCalendarScrollDate from './BpkScrollableCalendarDate';
+import BpkCalendarScrollGrid from './BpkScrollableCalendarGrid';
 
 describe('BpkCalendarScrollGrid', () => {
   it('should render correctly with no optional props set', () => {

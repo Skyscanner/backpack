@@ -18,8 +18,8 @@
 
 
 import BpkSectionList from '../../packages/bpk-component-section-list/src/BpkSectionList';
-import BpkSectionListSection from '../../packages/bpk-component-section-list/src/BpkSectionListSection';
 import BpkSectionListItem from '../../packages/bpk-component-section-list/src/BpkSectionListItem';
+import BpkSectionListSection from '../../packages/bpk-component-section-list/src/BpkSectionListSection';
 
 import DefaultExample from './examples';
 

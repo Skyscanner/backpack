@@ -21,8 +21,8 @@ import PropTypes from 'prop-types';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
+import withInfiniteScroll from './withInfiniteScroll';
 
 const nextTick = () => new Promise((res) => setTimeout(res, 0));
 const mockDataSource = (data) => {

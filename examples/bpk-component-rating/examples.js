@@ -17,11 +17,11 @@
  */
 /* @flow strict */
 
-import { cssModules } from '../../packages/bpk-react-utils';
 import BpkRating, {
   RATING_SIZES,
   RATING_SCALES,
 } from '../../packages/bpk-component-rating';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 
 import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';

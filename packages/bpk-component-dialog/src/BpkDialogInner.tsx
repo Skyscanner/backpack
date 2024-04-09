@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
+import { BpkContentBubble } from '../../bpk-component-flare';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkContentBubble } from '../../bpk-component-flare';
 
 import { type DialogInnerProps as Props } from './common-types';
 

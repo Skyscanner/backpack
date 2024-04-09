@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { BpkDescriptionList, BpkDescriptionDetailsMock, BpkDescriptionTermMock } from './stories-utils'; 
 import DefaultExample from './examples';
+import { BpkDescriptionList, BpkDescriptionDetailsMock, BpkDescriptionTermMock } from './stories-utils'; 
 
 export default {
   title: 'bpk-component-description-list',

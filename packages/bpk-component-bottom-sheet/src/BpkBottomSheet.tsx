@@ -20,12 +20,12 @@ import { useState } from "react";
 
 import BpkBreakpoint, { BREAKPOINTS } from "../../bpk-component-breakpoint";
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkButtonLink } from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-import { BpkDialogWrapper, cssModules } from "../../bpk-react-utils";
+import { BpkButtonLink } from '../../bpk-component-link';
 import BpkNavigationBar from "../../bpk-component-navigation-bar";
 import BpkText, { TEXT_STYLES } from "../../bpk-component-text/src/BpkText";
+import { BpkDialogWrapper, cssModules } from "../../bpk-react-utils";
 
 import STYLES from './BpkBottomSheet.module.scss';
 

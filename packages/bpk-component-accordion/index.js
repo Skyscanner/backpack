@@ -20,8 +20,8 @@
 
 import BpkAccordion from './src/BpkAccordion';
 import BpkAccordionItem from './src/BpkAccordionItem';
-import withSingleItemAccordionState from './src/withSingleItemAccordionState';
 import withAccordionItemState from './src/withAccordionItemState';
+import withSingleItemAccordionState from './src/withSingleItemAccordionState';
 
 export {
   BpkAccordion,

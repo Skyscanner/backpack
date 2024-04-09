@@ -21,8 +21,8 @@ import PropTypes from 'prop-types';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
+import withInfiniteScroll from './withInfiniteScroll';
 
 describe('withInfiniteScroll accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

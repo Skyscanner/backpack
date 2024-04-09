@@ -19,9 +19,9 @@
 import { render } from '@testing-library/react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import InfoIcon from '../../bpk-component-icon/lg/information-circle';
 import TickIcon from '../../bpk-component-icon/lg/tick';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import InfoIcon from '../../bpk-component-icon/lg/information-circle';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import TrashIcon from '../../bpk-component-icon/lg/trash';
 

@@ -21,8 +21,8 @@ import PropTypes from 'prop-types';
 import type { Element } from 'react';
 import { cloneElement } from 'react';
 
-import BpkLabel from '../../bpk-component-label';
 import BpkFormValidation from '../../bpk-component-form-validation';
+import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkFieldset.module.scss';

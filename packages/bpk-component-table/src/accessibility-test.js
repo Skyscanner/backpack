@@ -22,11 +22,11 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkTable from './BpkTable';
-import BpkTableHead from './BpkTableHead';
-import BpkTableRow from './BpkTableRow';
-import BpkTableHeadCell from './BpkTableHeadCell';
-import BpkTableCell from './BpkTableCell';
 import BpkTableBody from './BpkTableBody';
+import BpkTableCell from './BpkTableCell';
+import BpkTableHead from './BpkTableHead';
+import BpkTableHeadCell from './BpkTableHeadCell';
+import BpkTableRow from './BpkTableRow';
 
 describe('BpkTable accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
