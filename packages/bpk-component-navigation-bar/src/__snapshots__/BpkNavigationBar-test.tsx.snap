@@ -7,10 +7,14 @@ exports[`BpkNavigationBar should render correctly 1`] = `
     class="bpk-navigation-bar bpk-navigation-bar--default"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-      id="test-bpk-navigation-bar-title"
+      class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
-      test
+      <span
+        class="bpk-text bpk-text--heading-5"
+        id="test-bpk-navigation-bar-title"
+      >
+        test
+      </span>
     </span>
   </nav>
 </DocumentFragment>
@@ -23,10 +27,14 @@ exports[`BpkNavigationBar should render correctly when sticky 1`] = `
     class="bpk-navigation-bar bpk-navigation-bar--default bpk-navigation-bar__sticky"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-      id="test-bpk-navigation-bar-title"
+      class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
-      test
+      <span
+        class="bpk-text bpk-text--heading-5"
+        id="test-bpk-navigation-bar-title"
+      >
+        test
+      </span>
     </span>
   </nav>
 </DocumentFragment>
@@ -55,10 +63,14 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
       </button>
     </div>
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-      id="test-bpk-navigation-bar-title"
+      class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
-      test
+      <span
+        class="bpk-text bpk-text--heading-5"
+        id="test-bpk-navigation-bar-title"
+      >
+        test
+      </span>
     </span>
   </nav>
 </DocumentFragment>
@@ -71,10 +83,14 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
     class="bpk-navigation-bar bpk-navigation-bar--default"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-      id="test-bpk-navigation-bar-title"
+      class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
-      test
+      <span
+        class="bpk-text bpk-text--heading-5"
+        id="test-bpk-navigation-bar-title"
+      >
+        test
+      </span>
     </span>
     <div
       class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
@@ -133,10 +149,14 @@ exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
     testid="arbitrary value"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-      id="test-bpk-navigation-bar-title"
+      class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
-      test
+      <span
+        class="bpk-text bpk-text--heading-5"
+        id="test-bpk-navigation-bar-title"
+      >
+        test
+      </span>
     </span>
   </nav>
 </DocumentFragment>
@@ -149,10 +169,14 @@ exports[`BpkNavigationBar should render correctly with custom class 1`] = `
     class="bpk-navigation-bar bpk-navigation-bar--default my-custom-class"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-      id="test-bpk-navigation-bar-title"
+      class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
-      test
+      <span
+        class="bpk-text bpk-text--heading-5"
+        id="test-bpk-navigation-bar-title"
+      >
+        test
+      </span>
     </span>
   </nav>
 </DocumentFragment>
@@ -165,10 +189,14 @@ exports[`BpkNavigationBar should render correctly with on-dark style 1`] = `
     class="bpk-navigation-bar bpk-navigation-bar--on-dark"
   >
     <span
-      class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--on-dark"
-      id="test-bpk-navigation-bar-title"
+      class="bpk-navigation-bar__title bpk-navigation-bar__title--on-dark"
     >
-      test
+      <span
+        class="bpk-text bpk-text--heading-5"
+        id="test-bpk-navigation-bar-title"
+      >
+        test
+      </span>
     </span>
   </nav>
 </DocumentFragment>
