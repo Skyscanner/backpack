@@ -17,7 +17,6 @@
  */
 
 import type { ReactElement, ReactNode } from 'react';
-import { cloneElement } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -82,16 +81,17 @@ const BpkNavigationBar = (props: Props) => {
         </div>
       )}
       {typeof title === 'string' ? (
-        <BpkText
-          id={titleId}
-          textStyle={TEXT_STYLES.heading5}
-          className={getClassNames(
-            'bpk-navigation-bar__title',
-            `bpk-navigation-bar__title--${barStyle}`,
-          )}
-        >
-          {title}
-        </BpkText>
+        <span className={getClassNames(
+          'bpk-navigation-bar__title',
+          `bpk-navigation-bar__title--${barStyle}`,
+        )}>
+          <BpkText
+            id={titleId}
+            textStyle={TEXT_STYLES.heading5}
+          >
+            {title}
+          </BpkText>
+        </span>
       ) : (
         title
       )}
