@@ -48,9 +48,13 @@ exports[`BpkBottomSheet renders correctly with action props 1`] = `
               </button>
             </div>
             <span
-              class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-              id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
-            />
+              class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
+            >
+              <span
+                class="bpk-text bpk-text--heading-5"
+                id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
+              />
+            </span>
             <div
               class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
             >
@@ -122,9 +126,13 @@ exports[`BpkBottomSheet renders correctly with minimum prop 1`] = `
               </button>
             </div>
             <span
-              class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-              id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
-            />
+              class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
+            >
+              <span
+                class="bpk-text bpk-text--heading-5"
+                id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
+              />
+            </span>
           </nav>
         </header>
         <div
@@ -186,9 +194,13 @@ exports[`BpkBottomSheet renders correctly with wide prop 1`] = `
               </button>
             </div>
             <span
-              class="bpk-text bpk-text--heading-5 bpk-navigation-bar__title bpk-navigation-bar__title--default"
-              id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
-            />
+              class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
+            >
+              <span
+                class="bpk-text bpk-text--heading-5"
+                id="bpk-bottom-sheet-heading-my-bottom-sheet-bpk-navigation-bar-title"
+              />
+            </span>
           </nav>
         </header>
         <div
