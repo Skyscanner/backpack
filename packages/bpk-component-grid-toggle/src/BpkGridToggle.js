@@ -19,8 +19,8 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import { BpkButtonLink } from '../../bpk-component-link';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkGridToggle.module.scss';
 

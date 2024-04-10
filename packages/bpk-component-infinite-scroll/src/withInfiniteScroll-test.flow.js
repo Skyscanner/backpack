@@ -20,8 +20,8 @@
 
 import { Component, Fragment } from 'react';
 
-import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
+import withInfiniteScroll from './withInfiniteScroll';
 
 const elementsArray = [];
 

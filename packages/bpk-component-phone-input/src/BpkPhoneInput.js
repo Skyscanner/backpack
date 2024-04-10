@@ -20,10 +20,10 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
 import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPhoneInput.module.scss';
 

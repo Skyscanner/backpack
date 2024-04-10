@@ -21,20 +21,20 @@
 import { Component } from 'react';
 
 import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
-import {
   withButtonAlignment,
   withLargeButtonAlignment,
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
-import BaggageIconSm from '../../packages/bpk-component-icon/sm/baggage';
 import BaggageIconLg from '../../packages/bpk-component-icon/lg/baggage';
-import { cssModules } from '../../packages/bpk-react-utils';
+import BaggageIconSm from '../../packages/bpk-component-icon/sm/baggage';
 import BpkLoadingButton, {
   ICON_POSITION,
 } from '../../packages/bpk-component-loading-button';
+import { cssModules } from '../../packages/bpk-react-utils';
+import {
+  action,
+  BpkDarkExampleWrapper,
+} from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

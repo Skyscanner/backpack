@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import wrapDisplayName from './src/wrapDisplayName';
+import{ BpkDialogWrapper } from './src/BpkDialogWrapper/BpkDialogWrapper';
 import Portal from './src/Portal';
 import TransitionInitialMount from './src/TransitionInitialMount';
 import cssModules from './src/cssModules';
@@ -27,9 +27,9 @@ import {
   isDeviceIpad,
   isDeviceIos,
 } from './src/deviceDetection';
-import withDefaultProps from './src/withDefaultProps';
 import isRTL from './src/isRTL';
-import{ BpkDialogWrapper } from './src/BpkDialogWrapper/BpkDialogWrapper';
+import withDefaultProps from './src/withDefaultProps';
+import wrapDisplayName from './src/wrapDisplayName';
 
 export {
   Portal,

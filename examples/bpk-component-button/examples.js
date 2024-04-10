@@ -16,22 +16,22 @@
  * limitations under the License.
  */
 
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
-import {
-  withButtonAlignment,
-  withLargeButtonAlignment,
-  withRtlSupport,
-} from '../../packages/bpk-component-icon';
-import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
-import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import {
   BUTTON_TYPES,
   SIZE_TYPES,
 } from '../../packages/bpk-component-button/src/BpkButtonV2/common-types';
+import {
+  withButtonAlignment,
+  withLargeButtonAlignment,
+  withRtlSupport,
+} from '../../packages/bpk-component-icon';
+import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
+import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
+import {
+  action,
+  BpkDarkExampleWrapper,
+} from '../bpk-storybook-utils';
 
 import STYLES from './BpkButtonStory.module.scss';
 

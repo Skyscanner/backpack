@@ -22,11 +22,11 @@ import PropTypes from 'prop-types';
 import { Component, createRef } from 'react';
 import type { Node } from 'react';
 
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkButton from '../../packages/bpk-component-button';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
 import BpkPopover from '../../packages/bpk-component-popover';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

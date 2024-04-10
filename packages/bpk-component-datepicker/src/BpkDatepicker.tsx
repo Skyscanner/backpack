@@ -19,11 +19,6 @@
 import { createRef, Component } from 'react';
 import type { ReactElement} from 'react';
 
-import BpkInput, { withOpenEvents } from '../../bpk-component-input';
-import BpkModal from '../../bpk-component-modal';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkPopover from '../../bpk-component-popover';
-import { cssModules } from '../../bpk-react-utils';
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import {
   composeCalendar,
@@ -35,6 +30,11 @@ import {
   DateUtils,
   BpkCalendarNav,
 } from '../../bpk-component-calendar';
+import BpkInput, { withOpenEvents } from '../../bpk-component-input';
+import BpkModal from '../../bpk-component-modal';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkPopover from '../../bpk-component-popover';
+import { cssModules } from '../../bpk-react-utils';
 
 import type {
   DaysOfWeek,

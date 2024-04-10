@@ -20,15 +20,15 @@
 
 // TODO: remove this once we update the Chart implementation to accept values
 // other than pixels
-/* eslint-disable backpack/use-tokens */
+ 
 
 import { render, fireEvent, screen } from '@testing-library/react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 
 import data from '../data.json';
 
-import BpkBarchartBars from './BpkBarchartBars';
 import BpkBarchartBar from './BpkBarchartBar';
+import BpkBarchartBars from './BpkBarchartBars';
 
 const margin = {
   top: 10,

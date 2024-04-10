@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import { withButtonAlignment } from '../../packages/bpk-component-icon/index';
+import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import BpkSectionHeader, {
   SECTION_TYPES,
 } from '../../packages/bpk-component-section-header';
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
-import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
-import { withButtonAlignment } from '../../packages/bpk-component-icon/index';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';

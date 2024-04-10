@@ -23,8 +23,8 @@
  * @todo remove this file once we upgrade to Storybook v8
  */
 
-import type { Props as composeProps } from '../../packages/bpk-component-calendar/src/composeCalendar';
 import type { Props as bpkCalendarContainerProps } from '../../packages/bpk-component-calendar/src/BpkCalendarContainer';
+import type { Props as composeProps } from '../../packages/bpk-component-calendar/src/composeCalendar';
 
 const BpkCalendarContainerMock = (props: composeProps & bpkCalendarContainerProps) => <div />;
 

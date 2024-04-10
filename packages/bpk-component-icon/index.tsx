@@ -26,8 +26,8 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import withAlignment from './src/withAlignment';
-import withRtlSupport from './src/withRtlSupport';
 import withDescription from './src/withDescription';
+import withRtlSupport from './src/withRtlSupport';
 
 // Wrapper functions to provide backwards compatibility
 function withButtonAlignment(WrappedComponent: ComponentType<any>) {

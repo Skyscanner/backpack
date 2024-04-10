@@ -21,9 +21,9 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';
 import { withRtlSupport } from '../../bpk-component-icon';
+import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSectionListItem.module.scss';
 

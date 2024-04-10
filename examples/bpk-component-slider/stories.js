@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 
 import BpkSlider from '../../packages/bpk-component-slider/src/BpkSlider';
 

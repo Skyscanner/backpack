@@ -19,8 +19,8 @@
 import PropTypes from 'prop-types';
 
 import { render, screen } from '@testing-library/react';
-import { addMonths, isWeekend } from 'date-fns';
 import userEvent from '@testing-library/user-event';
+import { addMonths, isWeekend } from 'date-fns';
 
 import {
   colorMonteverde,
@@ -29,8 +29,8 @@ import {
 
 import { formatDateFull } from '../test-utils';
 
-import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarDate from './BpkCalendarDate';
+import BpkCalendarGrid from './BpkCalendarGrid';
 
 describe('BpkCalendarGrid', () => {
   it('should render correctly with a different "weekStartsOn" attribute', () => {

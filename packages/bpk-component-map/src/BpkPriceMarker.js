@@ -20,11 +20,11 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import { cssModules } from '../../bpk-react-utils';
 
-import { LatLongPropType, type LatLong } from './common-types';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
+import { LatLongPropType, type LatLong } from './common-types';
 
 import STYLES from './BpkPriceMarker.module.scss';
 

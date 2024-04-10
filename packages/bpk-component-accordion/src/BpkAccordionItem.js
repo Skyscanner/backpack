@@ -22,10 +22,10 @@ import PropTypes from 'prop-types';
 import { Node, Element, useContext, cloneElement } from 'react';
 
 import AnimateHeight from '../../bpk-animate-height';
+import { withButtonAlignment } from '../../bpk-component-icon';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import { withButtonAlignment } from '../../bpk-component-icon';
 
 import { BpkAccordionContext } from './BpkAccordion';
 

@@ -18,12 +18,12 @@
 /* @flow strict */
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../packages/bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkImage from '../../packages/bpk-component-image';
 import BpkOverlay, {
   OVERLAY_TYPES,
 } from '../../packages/bpk-component-overlay';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
