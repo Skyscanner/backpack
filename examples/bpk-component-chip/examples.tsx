@@ -18,11 +18,6 @@
 
 import { useState } from 'react';
 
-import { cssModules } from '../../packages/bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import FaceHappyIconSm from '../../packages/bpk-component-icon/sm/face--happy';
-import FilterIconSm from '../../packages/bpk-component-icon/sm/filter';
-import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
 import BpkSelectableChip, {
   type BpkSelectableChipProps,
   CHIP_TYPES,
@@ -30,6 +25,11 @@ import BpkSelectableChip, {
   BpkDropdownChip,
   BpkIconChip,
 } from '../../packages/bpk-component-chip';
+import FaceHappyIconSm from '../../packages/bpk-component-icon/sm/face--happy';
+import FilterIconSm from '../../packages/bpk-component-icon/sm/filter';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules } from '../../packages/bpk-react-utils';
+import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
 
 import STYLES from './examples.module.scss';
 

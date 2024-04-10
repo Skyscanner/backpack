@@ -18,6 +18,7 @@
 
 import type { ChangeEvent, MouseEvent } from 'react';
 
+import BpkAriaLive from '../../bpk-component-aria-live';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -25,7 +26,6 @@ import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
-import BpkAriaLive from '../../bpk-component-aria-live';
 
 import {
   addMonths,

@@ -20,15 +20,15 @@
 import { Component } from 'react';
 import type { ReactElement } from 'react';
 
+import BpkAriaLive, {
+  ARIA_LIVE_POLITENESS_SETTINGS,
+} from '../../packages/bpk-component-aria-live';
 import BpkChip from '../../packages/bpk-component-chip';
+import { BpkCode } from '../../packages/bpk-component-code';
 import BpkFieldset from '../../packages/bpk-component-fieldset';
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkSwitch from '../../packages/bpk-component-switch';
 import { cssModules } from '../../packages/bpk-react-utils';
-import { BpkCode } from '../../packages/bpk-component-code';
-import BpkAriaLive, {
-  ARIA_LIVE_POLITENESS_SETTINGS,
-} from '../../packages/bpk-component-aria-live';
 
 import STYLES from './examples.module.scss';
 

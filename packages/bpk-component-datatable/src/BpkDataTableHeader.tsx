@@ -18,12 +18,12 @@
 
 import type { KeyboardEvent } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { withRtlSupport } from '../../bpk-component-icon';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallArrowDownIcon from '../../bpk-component-icon/sm/arrow-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallArrowUpIcon from '../../bpk-component-icon/sm/arrow-up';
-import { withRtlSupport } from '../../bpk-component-icon';
+import { cssModules } from '../../bpk-react-utils';
 
 import { SORT_DIRECTION_TYPES } from './common-types';
 

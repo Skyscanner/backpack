@@ -22,8 +22,8 @@ import { axe } from 'jest-axe';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkImage from './BpkImage';
 import BpkBackgroundImage from './BpkBackgroundImage';
+import BpkImage from './BpkImage';
 
 describe('BpkImage accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

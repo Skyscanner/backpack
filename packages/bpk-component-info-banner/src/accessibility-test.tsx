@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { axe } from 'jest-axe';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
 import BpkInfoBanner from './BpkInfoBanner';
 import { ALERT_TYPES } from './common-types';

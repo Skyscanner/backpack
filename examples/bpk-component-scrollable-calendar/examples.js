@@ -18,10 +18,9 @@
 
 import { Component } from 'react';
 
-import { startOfMonth } from 'date-fns/startOfMonth';
 import { endOfMonth } from 'date-fns/endOfMonth';
+import { startOfMonth } from 'date-fns/startOfMonth';
 
-import { action } from '../bpk-storybook-utils';
 import {
   DateUtils,
   CustomPropTypes,
@@ -32,6 +31,7 @@ import BpkScrollableCalendar, {
   BpkScrollableCalendarGrid,
   BpkScrollableCalendarGridList,
 } from '../../packages/bpk-component-scrollable-calendar';
+import { action } from '../bpk-storybook-utils';
 
 import {
   formatDateFull,

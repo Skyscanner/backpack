@@ -20,7 +20,7 @@
 
 // TODO: remove this once we update the Chart implementation to accept values
 // other than pixels
-/* eslint-disable backpack/use-tokens */
+ 
 
 import { render } from '@testing-library/react';
 import { scaleLinear, scaleBand } from 'd3-scale';

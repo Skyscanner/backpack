@@ -18,8 +18,8 @@
 
 const path = require('path');
 
-const WrapperPlugin = require('wrapper-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WrapperPlugin = require('wrapper-webpack-plugin');
 
 const postCssPlugins = require('../../scripts/webpack/postCssPlugins');
 

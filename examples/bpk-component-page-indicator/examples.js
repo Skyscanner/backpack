@@ -18,10 +18,10 @@
 
 import { useState } from 'react';
 
+import { BpkBackgroundImage } from '../../packages/bpk-component-image';
 import BpkPageIndicator, {
   VARIANT,
 } from '../../packages/bpk-component-page-indicator';
-import { BpkBackgroundImage } from '../../packages/bpk-component-image';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';

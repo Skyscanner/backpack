@@ -18,8 +18,8 @@
 
 /* @flow strict */
 
-import BpkLink from './src/BpkLink';
 import BpkButtonLink from './src/BpkButtonLink';
+import BpkLink from './src/BpkLink';
 import themeAttributes, {
   linkAlternateThemeAttributes,
 } from './src/themeAttributes';

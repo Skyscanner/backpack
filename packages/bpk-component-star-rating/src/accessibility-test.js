@@ -21,8 +21,8 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkStarRating from './BpkStarRating';
 import BpkInteractiveStarRating from './BpkInteractiveStarRating';
+import BpkStarRating from './BpkStarRating';
 
 describe('BpkStarRating accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
+import { Component, createRef } from 'react';
 
 import { memoize } from 'lodash';
 
@@ -28,20 +28,6 @@ import {
   colorSkyGray,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules } from '../../packages/bpk-react-utils';
-import { action } from '../bpk-storybook-utils';
-import {
-  weekDays,
-  formatMonth,
-  formatDateFull,
-} from '../../packages/bpk-component-calendar/test-utils';
-import {
-  format,
-  dateToBoundaries,
-  addMonths,
-  addDays,
-  startOfDay,
-} from '../../packages/bpk-component-calendar/src/date-utils';
 import {
   BpkCalendarNav,
   BpkCalendarGridHeader,
@@ -52,8 +38,22 @@ import {
   CALENDAR_SELECTION_TYPE,
   BpkCalendarGrid,
 } from '../../packages/bpk-component-calendar';
-import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
+import {
+  format,
+  dateToBoundaries,
+  addMonths,
+  addDays,
+  startOfDay,
+} from '../../packages/bpk-component-calendar/src/date-utils';
+import {
+  weekDays,
+  formatMonth,
+  formatDateFull,
+} from '../../packages/bpk-component-calendar/test-utils';
 import BpkDatepicker from '../../packages/bpk-component-datepicker';
+import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
+import { cssModules } from '../../packages/bpk-react-utils';
+import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

@@ -20,14 +20,14 @@ import { useRef, useState, useMemo, useEffect } from 'react';
 import type { ElementType } from 'react';
 
 import { startOfDay, startOfMonth } from 'date-fns';
-import { VariableSizeList as List } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
+import { VariableSizeList as List } from 'react-window';
 
-import { cssModules } from '../../bpk-react-utils';
 import {
   CALENDAR_SELECTION_TYPE,
   DateUtils,
 } from '../../bpk-component-calendar';
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
 import { getMonthsArray, getMonthItemHeights } from './utils';
