@@ -128,7 +128,3 @@ import BpkButtonSecondaryOnDark from './BpkButtonSecondaryOnDark'
       expect(asFragment()).toMatchSnapshot();
     });
   });
-
-// We export these to reuse them in other tests for buttons.
- 
-// export default commonButtonTests;
