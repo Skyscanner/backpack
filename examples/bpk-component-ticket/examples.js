@@ -20,14 +20,14 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../packages/bpk-react-utils';
 import BpkButton from '../../packages/bpk-component-button';
-import ArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import {
   withButtonAlignment,
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
+import ArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import BpkTicket from '../../packages/bpk-component-ticket';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

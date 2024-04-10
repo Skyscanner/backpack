@@ -21,9 +21,9 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { BpkButtonLink } from '../../bpk-component-link';
 import BpkCloseButton from '../../bpk-component-close-button';
+import { BpkButtonLink } from '../../bpk-component-link';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import { ARROW_ID } from './constants';

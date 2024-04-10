@@ -17,13 +17,13 @@
  */
 /* @flow strict */
 
-import type { Node } from 'react';
 import PropTypes from 'prop-types';
+import type { Node } from 'react';
 
 import clamp from 'lodash.clamp';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import { RATING_SIZES, RATING_SCALES } from './common-types';
 

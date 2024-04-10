@@ -18,8 +18,8 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSectionHeader.module.scss';
 

@@ -18,8 +18,8 @@
 
 
 import BpkNavigationBar from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBar';
-import BpkNavigationBarIconButton from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarIconButton';
 import BpkNavigationBarButtonLink from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarButtonLink';
+import BpkNavigationBarIconButton from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarIconButton';
 
 import {
   DefaultExample,

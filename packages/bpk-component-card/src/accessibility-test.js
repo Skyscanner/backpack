@@ -24,8 +24,8 @@ import { axe } from 'jest-axe';
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkCard from './BpkCard';
-import BpkDividedCard from './BpkDividedCard';
 import BpkCardWrapper from './BpkCardWrapper';
+import BpkDividedCard from './BpkDividedCard';
 
 describe('BpkCard accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

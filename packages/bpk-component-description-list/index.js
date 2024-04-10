@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
+import BpkDescriptionDetails from './src/BpkDescriptionDetails';
 import BpkDescriptionList from './src/BpkDescriptionList';
 import BpkDescriptionTerm from './src/BpkDescriptionTerm';
-import BpkDescriptionDetails from './src/BpkDescriptionDetails';
 
 export { BpkDescriptionList, BpkDescriptionTerm, BpkDescriptionDetails };

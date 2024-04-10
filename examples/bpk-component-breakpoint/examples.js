@@ -20,10 +20,10 @@
 
 import type { Node } from 'react';
 
-import { cssModules } from '../../packages/bpk-react-utils';
 import BpkBreakpoint, {
   BREAKPOINTS,
 } from '../../packages/bpk-component-breakpoint';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

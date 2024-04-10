@@ -24,19 +24,19 @@ import { scaleLinear, scaleBand } from 'd3-scale';
 
 import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle';
-import { remToPx } from '../../packages/bpk-component-barchart/src/utils';
-import {
-  ORIENTATION_X,
-  ORIENTATION_Y,
-} from '../../packages/bpk-component-barchart/src/orientation';
 import BpkBarchart, {
   BpkChartGridLines,
   BpkChartAxis,
   BpkChartMargin,
 } from '../../packages/bpk-component-barchart';
+import {
+  ORIENTATION_X,
+  ORIENTATION_Y,
+} from '../../packages/bpk-component-barchart/src/orientation';
+import { remToPx } from '../../packages/bpk-component-barchart/src/utils';
+import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import { withSelectedState } from './hocs';
 
@@ -57,8 +57,8 @@ const data = require('./data.json');
 
 const margin = {
   top: 0,
-  left: 40, // eslint-disable-line backpack/use-tokens
-  bottom: 40, // eslint-disable-line backpack/use-tokens
+  left: 40,  
+  bottom: 40,  
   right: 0,
 };
 

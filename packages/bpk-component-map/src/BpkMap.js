@@ -18,9 +18,9 @@
 
 /* @flow strict */
 
+import PropTypes from 'prop-types';
 import type { Node } from 'react';
 import { useCallback, useRef } from 'react';
-import PropTypes from 'prop-types';
 
 import { GoogleMap } from '@react-google-maps/api';
 

@@ -18,16 +18,16 @@
 
 /* @flow strict */
 
-import { action } from '../bpk-storybook-utils';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
-import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from '../../packages/bpk-component-icon/sm/close';
-import { cssModules } from '../../packages/bpk-react-utils';
+import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import BpkNavigationBar, {
   BpkNavigationBarButtonLink,
   BpkNavigationBarIconButton,
   BAR_STYLES,
 } from '../../packages/bpk-component-navigation-bar';
+import { cssModules } from '../../packages/bpk-react-utils';
+import { action } from '../bpk-storybook-utils';
 
 import AirlineLogo from './AirlineLogo';
 

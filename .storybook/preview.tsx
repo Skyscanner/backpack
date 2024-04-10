@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { Title, PRIMARY_STORY } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';
+import { Title, PRIMARY_STORY } from '@storybook/blocks';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';

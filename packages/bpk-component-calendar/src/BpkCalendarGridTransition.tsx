@@ -22,11 +22,6 @@ import { Component } from 'react';
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import {
-  getCalendarGridWidth,
-  getTransformStyles,
-  isTransitionEndSupported,
-} from './utils';
-import {
   addMonths,
   isSameMonth,
   formatIsoMonth,
@@ -37,6 +32,11 @@ import {
   isWithinRange,
   getMonthRange,
 } from './date-utils';
+import {
+  getCalendarGridWidth,
+  getTransformStyles,
+  isTransitionEndSupported,
+} from './utils';
 
 import STYLES from './BpkCalendarGridTransition.module.scss';
 

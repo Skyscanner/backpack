@@ -21,17 +21,17 @@ import { Component } from 'react';
 
 import { fontWeightBold } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { action } from '../bpk-storybook-utils';
-import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
-import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
-import { BpkButtonPrimary } from '../../packages/bpk-component-button';
-import { cssModules } from '../../packages/bpk-react-utils';
 import BpkBannerAlert, {
   ALERT_TYPES,
   withBannerAlertState,
   BpkBannerAlertDismissable,
   BpkBannerAlertExpandable,
 } from '../../packages/bpk-component-banner-alert';
+import { BpkButtonPrimary } from '../../packages/bpk-component-button';
+import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
+import { cssModules } from '../../packages/bpk-react-utils';
+import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
+import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import BpkImage from './src/BpkImage';
 import BpkBackgroundImage from './src/BpkBackgroundImage';
+import BpkImage from './src/BpkImage';
+import BORDER_RADIUS_STYLES from './src/BpkImageBorderRadiusStyles';
 import withLazyLoading from './src/withLazyLoading';
 import withLoadingBehavior from './src/withLoadingBehavior';
-import BORDER_RADIUS_STYLES from './src/BpkImageBorderRadiusStyles';
 
 import type { BpkBackgroundImageProps } from './src/BpkBackgroundImage';
 

@@ -21,15 +21,15 @@ import { Component } from 'react';
 
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 
+import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import Week from './Week';
+import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import {
   addMonths,
   formatIsoDate,
   getCalendarMonthWeeks,
   isSameMonth,
 } from './date-utils';
-import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
-import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 
