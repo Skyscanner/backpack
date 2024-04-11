@@ -49,6 +49,28 @@ const HeadlineDefaultSizeExample = () => <BpkHeadlineSkeleton size={SIZE_TYPES.d
 const HeadlineLargeSizeExample = () => <BpkHeadlineSkeleton size={SIZE_TYPES.large} ariaLabel='loading' />
 const HeadlineCustomSizeExample = () => <BpkHeadlineSkeleton size={{width: 18, height: 1.5}} ariaLabel='loading' />
 
+const CombinedComponentExample = () => 
+  <>
+    <ImageDefaultSizeWithDefaultStyleExample /><br />
+    <ImageDefaultSizeWithRoundedStyleExample /><br />
+    <ImageCustomNumberSizeWithDefaultStyleExample /><br />
+    <ImageCustomStringSizeWithRoundedStyleExample /><br />
+
+    <BodyTextSmallSizeExample /><br />
+    <BodyTextDefaultSizeExample /><br />
+    <BodyTextLargeSizeExample /><br />
+    <BodyTextCustomSizeExample /><br />
+
+    <CircleSmallSizeExample /><br />
+    <CircleDefaultSizeExample /><br />
+    <CircleCustomSizeExample /><br />
+
+    <HeadlineSmallSizeExample /><br />
+    <HeadlineDefaultSizeExample /><br />
+    <HeadlineLargeSizeExample /><br />
+    <HeadlineCustomSizeExample /><br />
+  </>
+
 /* eslint-enable backpack/use-tokens */
 export {
   BaseSkeletonExample,
@@ -67,4 +89,5 @@ export {
   HeadlineDefaultSizeExample,
   HeadlineLargeSizeExample,
   HeadlineCustomSizeExample,
+  CombinedComponentExample,
 };

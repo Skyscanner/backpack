@@ -40,6 +40,7 @@ import {
   HeadlineDefaultSizeExample,
   HeadlineLargeSizeExample,
   HeadlineCustomSizeExample,
+  CombinedComponentExample,
 } from './examples';
 
 export default {
@@ -72,3 +73,5 @@ export const HeadlineSmallSize = HeadlineSmallSizeExample;
 export const HeadlineDefaultSize = HeadlineDefaultSizeExample;
 export const HeadlineLargeSize = HeadlineLargeSizeExample;
 export const HeadlineCustomSize =HeadlineCustomSizeExample;
+
+export const CombinedComponent = CombinedComponentExample;
