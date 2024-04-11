@@ -21,6 +21,8 @@ import { Component } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+import { SELECTION_TYPES } from './BpkCalendarDate';
+import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import {
   isSameDay,
   isSameWeek,
@@ -30,8 +32,6 @@ import {
   startOfMonth,
   endOfMonth,
 } from './date-utils';
-import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
-import { SELECTION_TYPES } from './BpkCalendarDate';
 
 import type {
   DateModifiers,

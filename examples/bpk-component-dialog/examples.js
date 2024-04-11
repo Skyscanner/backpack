@@ -22,15 +22,15 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 import type { Node } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkButton from '../../packages/bpk-component-button';
-import TickIcon from '../../packages/bpk-component-icon/lg/tick';
-import InfoIcon from '../../packages/bpk-component-icon/lg/information-circle';
-import TrashIcon from '../../packages/bpk-component-icon/lg/trash';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkDialog, {
   HEADER_ICON_TYPES,
 } from '../../packages/bpk-component-dialog';
+import InfoIcon from '../../packages/bpk-component-icon/lg/information-circle';
+import TickIcon from '../../packages/bpk-component-icon/lg/tick';
+import TrashIcon from '../../packages/bpk-component-icon/lg/trash';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

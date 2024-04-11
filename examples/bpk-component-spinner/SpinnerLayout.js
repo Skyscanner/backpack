@@ -22,8 +22,8 @@ import PropTypes from 'prop-types';
 import type { Node } from 'react';
 import { Children } from 'react';
 
-import { cssModules } from '../../packages/bpk-react-utils';
 import { SPINNER_TYPES } from '../../packages/bpk-component-spinner';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './SpinnerLayout.module.scss';
 

@@ -20,12 +20,12 @@ import BpkNavigationBar, {
   type Props as BpkNavigationBarProps,
   BAR_STYLES,
 } from './src/BpkNavigationBar';
-import BpkNavigationBarIconButton, {
-  type Props as BpkNavigationBarIconButtonProps,
-} from './src/BpkNavigationBarIconButton';
 import BpkNavigationBarButtonLink, {
   type Props as BpkNavigationBarButtonLinkProps,
 } from './src/BpkNavigationBarButtonLink';
+import BpkNavigationBarIconButton, {
+  type Props as BpkNavigationBarIconButtonProps,
+} from './src/BpkNavigationBarIconButton';
 import themeAttributes from './src/themeAttributes';
 
 export type {

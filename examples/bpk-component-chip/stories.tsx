@@ -17,10 +17,10 @@
  */
 
 
-import BpkSelectableChip from '../../packages/bpk-component-chip/src/BpkSelectableChip';
 import BpkDismissibleChip from '../../packages/bpk-component-chip/src/BpkDismissibleChip';
 import BpkDropdownChip from '../../packages/bpk-component-chip/src/BpkDropdownChip';
 import BpkIconChip from '../../packages/bpk-component-chip/src/BpkIconChip';
+import BpkSelectableChip from '../../packages/bpk-component-chip/src/BpkSelectableChip';
 
 import {
   AllTypesExample,

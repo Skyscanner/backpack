@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-const fs = require('fs');
 const { execSync } = require('child_process');
+const fs = require('fs');
 
 const updateImports = (file, findReplaces) =>
   new Promise((resolve, reject) => {

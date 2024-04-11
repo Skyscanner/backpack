@@ -25,9 +25,9 @@ import Transition from 'react-transition-group/Transition';
 
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules } from '../../bpk-react-utils';
-import { BpkButtonLink } from '../../bpk-component-link';
 import BpkCloseButton from '../../bpk-component-close-button';
+import { BpkButtonLink } from '../../bpk-component-link';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkDrawerContent.module.scss';
 

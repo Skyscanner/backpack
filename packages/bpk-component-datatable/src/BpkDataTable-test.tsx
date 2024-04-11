@@ -23,8 +23,8 @@ import { Fragment } from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
-import { SORT_DIRECTION_TYPES } from './common-types';
 import BpkDataTable from './BpkDataTable';
+import { SORT_DIRECTION_TYPES } from './common-types';
 
 const rows = [
   { name: 'Jose', description: 'Software Engineer', bla: 'Bla' },

@@ -27,16 +27,16 @@ import {
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkButton from '../../packages/bpk-component-button';
-import { BpkNavigationBarButtonLink } from '../../packages/bpk-component-navigation-bar';
 import {
   withAlignment,
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
 import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkModal, { MODAL_STYLING } from '../../packages/bpk-component-modal';
+import { BpkNavigationBarButtonLink } from '../../packages/bpk-component-navigation-bar';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

@@ -18,11 +18,11 @@
 
 /* @flow strict */
 
-import BpkSmallTickIcon from '../../packages/bpk-component-icon/sm/tick-circle';
+import BpkBadge, { BADGE_TYPES } from '../../packages/bpk-component-badge';
 import BpkSmallExclamationIcon from '../../packages/bpk-component-icon/sm/exclamation';
 import BpkSmallHelpCircleIcon from '../../packages/bpk-component-icon/sm/help-circle';
+import BpkSmallTickIcon from '../../packages/bpk-component-icon/sm/tick-circle';
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
-import BpkBadge, { BADGE_TYPES } from '../../packages/bpk-component-badge';
 
 import BadgeLayout from './BadgeLayout';
 
