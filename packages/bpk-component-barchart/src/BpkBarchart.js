@@ -21,30 +21,30 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import debounce from 'lodash.debounce';
 import { scaleLinear, scaleBand } from 'd3-scale';
+import debounce from 'lodash.debounce';
 
 import {
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
+import { cssModules } from '../../bpk-react-utils';
 
-import BpkBarchartDefs from './BpkBarchartDefs';
-import BpkBarchartBars from './BpkBarchartBars';
-import BpkChartDataTable from './BpkChartDataTable';
-import BpkChartMargin from './BpkChartMargin';
-import BpkChartAxis from './BpkChartAxis';
-import BpkChartGridLines from './BpkChartGridLines';
 import BpkBarchartBar from './BpkBarchartBar';
-import dataProp from './customPropTypes';
-import { identity, remToPx } from './utils';
+import BpkBarchartBars from './BpkBarchartBars';
+import BpkBarchartDefs from './BpkBarchartDefs';
+import BpkChartAxis from './BpkChartAxis';
+import BpkChartDataTable from './BpkChartDataTable';
+import BpkChartGridLines from './BpkChartGridLines';
+import BpkChartMargin from './BpkChartMargin';
 import {
   applyArrayRTLTransform,
   applyMarginRTLTransform,
 } from './RTLtransforms';
+import dataProp from './customPropTypes';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
+import { identity, remToPx } from './utils';
 
 import STYLES from './BpkBarchart.module.scss';
 

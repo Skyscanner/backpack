@@ -25,8 +25,6 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkButton from '../../packages/bpk-component-button';
-import { BpkList, BpkListItem } from '../../packages/bpk-component-list';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import {
   withAlignment,
   withButtonAlignment,
@@ -34,9 +32,11 @@ import {
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
 import { sm, lg } from '../../packages/bpk-component-icon/all';
+import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
 import SearchIcon from '../../packages/bpk-component-icon/lg/search';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
-import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
+import { BpkList, BpkListItem } from '../../packages/bpk-component-list';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
 const AlignedBaseArrow = withAlignment(
   SmallLongArrowRightIcon,

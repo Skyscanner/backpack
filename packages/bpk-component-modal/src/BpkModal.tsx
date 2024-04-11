@@ -18,8 +18,8 @@
 
 import type { ReactNode } from 'react';
 
-import { withScrim } from '../../bpk-scrim-utils';
 import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
+import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkModalInner, { MODAL_STYLING } from './BpkModalInner';
 

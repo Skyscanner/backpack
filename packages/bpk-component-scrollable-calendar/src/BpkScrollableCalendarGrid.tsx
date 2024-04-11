@@ -18,9 +18,9 @@
 
 import type { ElementType } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { BpkCalendarGrid } from '../../bpk-component-calendar';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 

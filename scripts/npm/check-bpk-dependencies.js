@@ -18,8 +18,8 @@
 
 /* eslint-disable no-console */
 
-const fs = require('fs');
 const { execSync } = require('child_process');
+const fs = require('fs');
 
 const errors = [];
 

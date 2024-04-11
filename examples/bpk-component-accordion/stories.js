@@ -21,7 +21,6 @@
 import BpkAccordion from '../../packages/bpk-component-accordion/src/BpkAccordion';
 import BpkAccordionItem from '../../packages/bpk-component-accordion/src/BpkAccordionItem';
 
-import { WithSingleItemAccordionStateMock, WithAccordionItemStateMock } from './stories-utils';
 import {
   SingleItemExample,
   SingleItemExampleInitiallyExpandedExample,
@@ -36,6 +35,7 @@ import {
   WithSeoContentOnDarkExample,
   SingleItemExampleWithoutDivider,
 } from './examples';
+import { WithSingleItemAccordionStateMock, WithAccordionItemStateMock } from './stories-utils';
 
 export default {
   title: 'bpk-component-accordion',

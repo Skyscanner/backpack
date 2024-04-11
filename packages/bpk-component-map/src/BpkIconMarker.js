@@ -18,14 +18,14 @@
 
 /* @flow strict */
 
-import type { Node } from 'react';
 import PropTypes from 'prop-types';
+import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+import BpkBasicMapMarker from './BpkBasicMapMarker';
 import BpkIconMarkerBackground from './BpkIconMarkerBackground';
 import { LatLongPropType, type LatLong } from './common-types';
-import BpkBasicMapMarker from './BpkBasicMapMarker';
 
 import STYLES from './BpkIconMarker.module.scss';
 

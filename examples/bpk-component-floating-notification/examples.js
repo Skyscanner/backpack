@@ -18,10 +18,10 @@
 
 import { cloneElement, useState, Node } from 'react';
 
+import BpkButton from '../../packages/bpk-component-button';
 import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
-import BpkButton from '../../packages/bpk-component-button';
 
 type Props = {
   children: Node,

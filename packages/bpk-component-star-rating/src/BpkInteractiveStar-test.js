@@ -20,8 +20,8 @@
 
 import { render } from '@testing-library/react';
 
-import { STAR_TYPES } from './BpkStar';
 import BpkInteractiveStar from './BpkInteractiveStar';
+import { STAR_TYPES } from './BpkStar';
 
 describe('BpkInteractiveStar', () => {
   it('should render correctly with empty star', () => {

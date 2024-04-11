@@ -20,8 +20,8 @@
 
 import { render } from '@testing-library/react';
 
-import SPINNER_TYPES from './spinnerTypes';
 import BpkExtraLargeSpinner from './BpkExtraLargeSpinner';
+import SPINNER_TYPES from './spinnerTypes';
 
 describe('BpkExtraLargeSpinner', () => {
   it('should render correctly', () => {

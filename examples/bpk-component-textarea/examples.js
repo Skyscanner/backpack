@@ -18,9 +18,9 @@
 
 /* @flow strict */
 
-import { action } from '../bpk-storybook-utils';
 import BpkLabel from '../../packages/bpk-component-label';
 import BpkTextarea from '../../packages/bpk-component-textarea';
+import { action } from '../bpk-storybook-utils';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate repellat assumenda
 necessitatibus reiciendis, porro temporibus expedita excepturi! Nostrum pariatur odit porro, dolorem dignissimos

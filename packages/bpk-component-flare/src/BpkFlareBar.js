@@ -20,8 +20,8 @@ import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import Pointer from './__generated__/js/pointer';
 import CornerRadius from './__generated__/js/corner-radius';
+import Pointer from './__generated__/js/pointer';
 
 import STYLES from './bpk-flare-bar.module.scss';
 

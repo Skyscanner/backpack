@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import { cssModules, Portal } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
+import { cssModules, Portal } from '../../bpk-react-utils';
 
 import BpkDialogInner from './BpkDialogInner';
 import { HEADER_ICON_TYPES } from './common-types';

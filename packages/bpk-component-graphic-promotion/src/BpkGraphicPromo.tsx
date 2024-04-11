@@ -18,8 +18,8 @@
 
 import type { KeyboardEvent, MouseEvent } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkGraphicPromo.module.scss';
 

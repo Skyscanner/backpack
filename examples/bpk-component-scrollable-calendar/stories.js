@@ -20,7 +20,6 @@ import BpkScrollableCalendarDateComponent from '../../packages/bpk-component-scr
 import BpkScrollableCalendarGridComponent from '../../packages/bpk-component-scrollable-calendar/src/BpkScrollableCalendarGrid';
 import BpkScrollableCalendarGridListComponent from '../../packages/bpk-component-scrollable-calendar/src/BpkScrollableCalendarGridList';
 
-import { BpkScrollableCalendarMock } from './stories-utils';
 import {
   DefaultExample,
   WeekStartsOnSixExample,
@@ -41,6 +40,7 @@ import {
   SplitWeekRangeExample,
   DefaultExampleWithCustomHeight,
 } from './examples';
+import { BpkScrollableCalendarMock } from './stories-utils';
 
 export default {
   title: 'bpk-component-scrollable-calendar',

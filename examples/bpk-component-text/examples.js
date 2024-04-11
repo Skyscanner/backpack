@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { withDefaultProps } from '../../packages/bpk-react-utils';
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.bodyLongform,

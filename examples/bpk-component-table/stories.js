@@ -17,11 +17,11 @@
  */
 
 import BpkTable from '../../packages/bpk-component-table/src/BpkTable';
-import BpkTableHead from '../../packages/bpk-component-table/src/BpkTableHead';
 import BpkTableBody from '../../packages/bpk-component-table/src/BpkTableBody';
-import BpkTableRow from '../../packages/bpk-component-table/src/BpkTableRow';
-import BpkTableHeadCell from '../../packages/bpk-component-table/src/BpkTableHeadCell';
 import BpkTableCell from '../../packages/bpk-component-table/src/BpkTableCell';
+import BpkTableHead from '../../packages/bpk-component-table/src/BpkTableHead';
+import BpkTableHeadCell from '../../packages/bpk-component-table/src/BpkTableHeadCell';
+import BpkTableRow from '../../packages/bpk-component-table/src/BpkTableRow';
 
 import DefaultExample from './examples';
 

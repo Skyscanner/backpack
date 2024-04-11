@@ -22,14 +22,14 @@ import PropTypes from 'prop-types';
 import type { Node, Element } from 'react';
 
 import BpkButton from '../../bpk-component-button';
-import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
   withRtlSupport,
 } from '../../bpk-component-icon';
-import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
 import ArrowIconLg from '../../bpk-component-icon/lg/long-arrow-right';
+import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
+import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkLoadingButton.module.scss';

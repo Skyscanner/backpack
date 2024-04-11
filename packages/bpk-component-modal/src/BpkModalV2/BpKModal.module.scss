@@ -168,12 +168,6 @@
     justify-content: flex-start;
   }
 
-  &__title {
-    padding-inline-end: tokens.bpk-spacing-base();
-
-    @include typography.bpk-label-1;
-  }
-
   &__button-container {
     padding-block-start: tokens.bpk-spacing-base();
     padding-inline-end: tokens.bpk-spacing-base();

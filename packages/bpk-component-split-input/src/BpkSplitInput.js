@@ -17,11 +17,11 @@
  */
 /* @flow strict */
 
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Component } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import { INPUT_TYPES } from '../../bpk-component-input';
+import { cssModules } from '../../bpk-react-utils';
 
 import InputField from './BpkInputField';
 
