@@ -190,6 +190,8 @@ const withOpenEvents = <P extends object>(InputComponent: ComponentType<P>) => {
 
       return (
         <InputComponent
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={classNames.join(' ')}
           {...eventHandlers}
           {...(rest as P)}

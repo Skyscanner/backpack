@@ -64,6 +64,8 @@ const BpkSectionListItem = (props: Props) => {
       >
         {children}
         <BpkLargeChevronRightIconWithRtlSupport
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName('bpk-section-list-item__chevron')}
         />
       </a>
@@ -81,6 +83,8 @@ const BpkSectionListItem = (props: Props) => {
       >
         {children}
         <BpkLargeChevronRightIconWithRtlSupport
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName('bpk-section-list-item__chevron')}
         />
       </button>

@@ -102,9 +102,15 @@ const BpkConfigurableNudger = ({
         disabled={minButtonDisabled}
         title={decreaseButtonLabel}
         aria-controls={id}
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-nudger__button')}
       >
-        <AlignedMinusIcon className={minusIconClassNames} />
+        
+        <AlignedMinusIcon 
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={minusIconClassNames} />
       </BpkButtonV2>
       <input
         type="text"
@@ -123,9 +129,14 @@ const BpkConfigurableNudger = ({
         disabled={maxButtonDisabled}
         title={increaseButtonLabel}
         aria-controls={id}
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-nudger__button')}
       >
-        <AlignedPlusIcon className={plusIconClassNames} />
+        <AlignedPlusIcon 
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={plusIconClassNames} />
       </BpkButtonV2>
     </div>
   );
