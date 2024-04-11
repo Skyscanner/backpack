@@ -21,8 +21,8 @@ import { render } from '@testing-library/react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
 
-import { CHIP_TYPES } from './commonTypes';
 import BpkIconChip from './BpkIconChip';
+import { CHIP_TYPES } from './commonTypes';
 
 import type { BpkIconChipProps } from './BpkIconChip';
 

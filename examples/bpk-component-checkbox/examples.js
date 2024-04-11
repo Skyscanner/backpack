@@ -20,11 +20,11 @@
 
 import { Component } from 'react';
 
+import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import {
   action,
   BpkDarkExampleWrapper,
 } from '../bpk-storybook-utils';
-import BpkCheckbox from '../../packages/bpk-component-checkbox';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!

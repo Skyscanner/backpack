@@ -18,8 +18,8 @@
 
 /* @flow strict */
 
-import type { Node } from 'react';
 import PropTypes from 'prop-types';
+import type { Node } from 'react';
 
 type Props = {
   children: Node,

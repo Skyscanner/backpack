@@ -23,11 +23,11 @@ import {
   colorSkyGrayTint04,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
 import {
   action,
   BpkDarkExampleWrapper,
 } from '../bpk-storybook-utils';
-import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
 
 const LinkExample = () => (
   <div>

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const autoprefixer = require('autoprefixer');
+const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
 
 module.exports = () => [
   postCssFlexbugsFixes,

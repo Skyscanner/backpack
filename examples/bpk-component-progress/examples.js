@@ -21,8 +21,8 @@
 import { Component } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
-import { cssModules } from '../../packages/bpk-react-utils';
 import BpkProgress from '../../packages/bpk-component-progress';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

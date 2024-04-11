@@ -19,8 +19,8 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import withOpenEvents from './withOpenEvents';
 import BpkInput from './BpkInput';
+import withOpenEvents from './withOpenEvents';
 
 const Input = withOpenEvents(BpkInput);
 

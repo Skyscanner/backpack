@@ -28,7 +28,7 @@ describe('BpkTableRow', () => {
       <table>
         <tbody>
           <BpkTableRow>
-            <td />
+            <td aria-label="test" />
           </BpkTableRow>
         </tbody>
       </table>,
@@ -41,7 +41,7 @@ describe('BpkTableRow', () => {
       <table>
         <tbody>
           <BpkTableRow className="my-custom-class">
-            <td />
+            <td aria-label="test" />
           </BpkTableRow>
         </tbody>
       </table>,
@@ -54,7 +54,7 @@ describe('BpkTableRow', () => {
       <table>
         <tbody>
           <BpkTableRow id="my-custom-id" data-foo="bar">
-            <td />
+            <td aria-label="test" />
           </BpkTableRow>
         </tbody>
       </table>,

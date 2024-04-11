@@ -19,8 +19,8 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkFlareBar from './BpkFlareBar';
 import BpkContentBubble from './BpkContentBubble';
+import BpkFlareBar from './BpkFlareBar';
 
 describe('BpkFlareBar accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

@@ -19,9 +19,9 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { ALERT_TYPES } from './common-types';
 import BpkBannerAlertDismissable from './BpkBannerAlertDismissable';
 import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
+import { ALERT_TYPES } from './common-types';
 import withBannerAlertState from './withBannerAlertState';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
