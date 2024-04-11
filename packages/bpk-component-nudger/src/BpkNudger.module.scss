@@ -64,9 +64,10 @@
     gap: tokens.bpk-spacing-md();
 
     &--title-subtitle {
-      display: flex;
+      display: inline-flex;
       flex-direction: column;
       justify-content: space-between;
+      margin-left: tokens.bpk-spacing-md();
     }
 
     &--subtitle {
