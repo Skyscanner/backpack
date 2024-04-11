@@ -36,8 +36,12 @@ const BpkButtonPrimaryOnDark = (props: Props) => {
   const classNamesFinal = classNames.join(' ');
 
   return (
+    <BpkButtonBase 
+    // TODO: className to be removed
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+    className={classNamesFinal} 
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <BpkButtonBase className={classNamesFinal} {...rest} />
+    {...rest} />
   );
 };
 

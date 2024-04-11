@@ -54,6 +54,8 @@ const BpkSlider = (props: Props) => {
       withTracks
       snapDragDisabled={false}
       invert={invert}
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames.join(' ')}
       thumbClassName={thumbClassNames.join(' ')}
       thumbActiveClassName={getClassName('bpk-slider__handle--active')}

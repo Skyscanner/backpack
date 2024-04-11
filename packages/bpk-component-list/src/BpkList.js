@@ -48,6 +48,8 @@ const BpkList = (props: Props) => {
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
       title={title}
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames}
     >
       {children}

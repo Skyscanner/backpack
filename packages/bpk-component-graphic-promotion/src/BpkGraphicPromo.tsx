@@ -183,6 +183,8 @@ const BpkGraphicPromo = ({
           )}
           <BpkButtonV2
             type={BUTTON_TYPES.primaryOnDark}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={getClassName('bpk-graphic-promo__cta')}
             onClick={onClickWrapper}
             tabIndex={-1} /* button is not focusable for accessibility */

@@ -89,6 +89,8 @@ class BpkRtlToggle extends Component<Props, State> {
       <BpkButtonLink
         title="Keyboard Shortcut: ctrl + cmd + r"
         onClick={this.toggleRtl}
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={className}
       >
         RTL {onOrOff}

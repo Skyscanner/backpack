@@ -59,6 +59,8 @@ const BpkDividedCard = ({
   );
 
   return (
+    // TODO: className to be removed
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <BpkCard className={classNames} href={href} padded={false} {...rest}>
       <div
         className={getClassName(

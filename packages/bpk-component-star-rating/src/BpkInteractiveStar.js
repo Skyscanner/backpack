@@ -64,8 +64,14 @@ const BpkInteractiveStar = (props: Props) => {
       aria-pressed={selected}
       type="button"
     >
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
-      <BpkStarNonRtl className={iconClassNames} type={type} {...rest} />
+      <BpkStarNonRtl
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={iconClassNames} 
+        type={type} 
+        /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */
+        {...rest} 
+      />
     </button>
   );
 };
