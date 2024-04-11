@@ -40,7 +40,6 @@ import {
   HeadlineDefaultSizeExample,
   HeadlineLargeSizeExample,
   HeadlineCustomSizeExample,
-  VisualTestExample,
 } from './examples';
 
 export default {
@@ -73,9 +72,3 @@ export const HeadlineSmallSize = HeadlineSmallSizeExample;
 export const HeadlineDefaultSize = HeadlineDefaultSizeExample;
 export const HeadlineLargeSize = HeadlineLargeSizeExample;
 export const HeadlineCustomSize =HeadlineCustomSizeExample;
-
-export const VisualTest = VisualTestExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};

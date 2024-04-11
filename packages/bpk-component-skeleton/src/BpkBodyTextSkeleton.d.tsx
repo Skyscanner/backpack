@@ -28,7 +28,7 @@ export type BodyTextSizeType = (typeof BODY_TEXT_SIZE_TYPES)[keyof typeof BODY_T
 
 type Props = {
   size?: BodyTextSizeType,
-  className?: string;
+  className?: string | null;
   ariaLabel?: string;
 };
 

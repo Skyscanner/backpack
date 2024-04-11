@@ -32,18 +32,11 @@ type Props = {
 };
 
 const BpkBaseSkeleton = ({
-  ariaLabel,
+  ariaLabel = '',
   className,
-  styleObj
- }: Props) => {
-
-  const classNames = [getClassName('bpk-skeleton')];
-  if (className) {
-    classNames.push(className);
-  }
-
-  return (
-    <div role="status" aria-label={ariaLabel} className={classNames.join(' ')} style={styleObj}  />
-  )};
+  styleObj = undefined,
+ }: Props) => (
+    <div role="status" aria-label={ariaLabel} className={getClassName('bpk-skeleton', className)} style={styleObj}  />
+  );
 
 export default BpkBaseSkeleton;

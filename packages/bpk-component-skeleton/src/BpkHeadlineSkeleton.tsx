@@ -37,13 +37,13 @@ export type HeadlineSizeType = (typeof HEADLINE_SIZE_TYPES)[keyof typeof HEADLIN
 
 type Props = {
   size?: HeadlineSizeType,
-  className?: string;
+  className?: string | null;
   ariaLabel?: string;
 };
 
 const BpkHeadlineSkeleton = ({
-  ariaLabel,
-  className,
+  ariaLabel = '',
+  className = null,
   size = HEADLINE_SIZE_TYPES.default
  }: Props) => {
   const classNames = [getClassName('bpk-headline-skeleton')];

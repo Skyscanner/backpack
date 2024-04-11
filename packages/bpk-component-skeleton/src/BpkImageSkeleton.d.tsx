@@ -33,7 +33,7 @@ export type ImageSizeType = (typeof IMAGE_SIZE_TYPES)[keyof typeof IMAGE_SIZE_TY
 type Props = {
   style?: ImageSkeletonStyle,
   size?: ImageSizeType,
-  className?: string;
+  className?: string | null;
   ariaLabel?: string;
 };
 

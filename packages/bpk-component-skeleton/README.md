@@ -19,28 +19,30 @@ import {
 } from '@skyscanner/backpack-web/bpk-component-skeleton';
 
 export default () => (
-  <BpkImageSkeleton
-    style={IMAGE_SKELETON_STYLE.rounded}
-    size={{width: '7rem', height: '6rem'}}
-    ariaLabel="loading"
-  />
+  <div>
+    <BpkImageSkeleton
+      style={IMAGE_SKELETON_STYLE.rounded}
+      size={{width: '7rem', height: '6rem'}}
+      ariaLabel="loading"
+    />
 
-  <BpkBodyTextSkeleton
-    size={SIZE_TYPES.large}
-    ariaLabel="loading"
-    className="custom-class"
-  />
+    <BpkBodyTextSkeleton
+      size={SIZE_TYPES.large}
+      ariaLabel="loading"
+      className="custom-class"
+    />
 
-  <BpkCircleSkeleton
-    size={SIZE_TYPES.small}
-    ariaLabel="loading"
-    className="custom-class"
-  />
+    <BpkCircleSkeleton
+      size={SIZE_TYPES.small}
+      ariaLabel="loading"
+      className="custom-class"
+    />
 
-   <BpkHeadlineSkeleton
-    size={SIZE_TYPES.small}
-    ariaLabel="loading"
-    className="custom-class"
-  />
+    <BpkHeadlineSkeleton
+      size={SIZE_TYPES.small}
+      ariaLabel="loading"
+      className="custom-class"
+    />
+  </div>
 );
 ```

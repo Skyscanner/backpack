@@ -36,13 +36,13 @@ export type CircleSizeType = (typeof CIRCLE_SIZE_TYPES)[keyof typeof CIRCLE_SIZE
 
 type Props = {
   size?: CircleSizeType,
-  className?: string;
+  className?: string | null;
   ariaLabel?: string;
 };
 
 const BpkCircleSkeleton = ({
-  ariaLabel,
-  className,
+  ariaLabel = '',
+  className = null,
   size = CIRCLE_SIZE_TYPES.default
  }: Props) => {
   const classNames = [getClassName('bpk-circle-skeleton')];

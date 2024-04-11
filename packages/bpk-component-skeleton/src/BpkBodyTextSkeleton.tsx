@@ -37,13 +37,13 @@ export type BodyTextSizeType = (typeof BODY_TEXT_SIZE_TYPES)[keyof typeof BODY_T
 
 type Props = {
   size?: BodyTextSizeType,
-  className?: string;
+  className?: string | null;
   ariaLabel?: string;
 };
 
 const BpkBodyTextSkeleton = ({
-  ariaLabel,
-  className,
+  ariaLabel = '',
+  className = null,
   size = BODY_TEXT_SIZE_TYPES.default
  }: Props) => {
   const classNames = [getClassName('bpk-body-text-skeleton')];

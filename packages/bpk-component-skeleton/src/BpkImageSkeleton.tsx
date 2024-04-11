@@ -42,13 +42,13 @@ export type ImageSizeType = (typeof IMAGE_SIZE_TYPES)[keyof typeof IMAGE_SIZE_TY
 type Props = {
   style?: ImageSkeletonStyle,
   size?: ImageSizeType,
-  className?: string;
+  className?: string | null;
   ariaLabel?: string;
 };
 
 const BpkImageSkeleton = ({
-  ariaLabel,
-  className,
+  ariaLabel = '',
+  className = null,
   size = IMAGE_SIZE_TYPES.default,
   style = IMAGE_SKELETON_STYLE.default
  }: Props) => {

@@ -30,7 +30,7 @@
     tokens.$bpk-private-skeleton-shimmer-start-end-day 100%
   );
   background-repeat: no-repeat;
-  animation: shimmer-anim tokens.$bpk-duration-base * 4 infinite linear;
+  animation: shimmer-animation tokens.$bpk-duration-base * 4 infinite linear;
   animation-direction: normal;
 
   @include utils.bpk-rtl {
@@ -38,7 +38,7 @@
   }
 }
 
-@keyframes shimmer-anim {
+@keyframes shimmer-animation {
   0% {
     background-position: -24rem 0;
   }
