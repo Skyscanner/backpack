@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import BpkBaseSkeleton from '../../packages/bpk-component-skeleton/src/BpkBaseSkeleton';
 import {
   BpkImageSkeleton, 
   BpkBodyTextSkeleton, 
@@ -25,6 +24,7 @@ import {
   SIZE_TYPES, 
   IMAGE_SKELETON_STYLE 
 } from '../../packages/bpk-component-skeleton';
+import BpkBaseSkeleton from '../../packages/bpk-component-skeleton/src/BpkBaseSkeleton';
 
 /* eslint-disable backpack/use-tokens */
 const BaseSkeletonExample = () => <BpkBaseSkeleton className='' />;

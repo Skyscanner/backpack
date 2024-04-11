@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import BpkImageSkeleton, { IMAGE_SKELETON_STYLE, IMAGE_SIZE_TYPES } from './src/BpkImageSkeleton';
 import BpkBodyTextSkeleton, { BODY_TEXT_SIZE_TYPES } from './src/BpkBodyTextSkeleton';
 import BpkCircleSkeleton, { CIRCLE_SIZE_TYPES } from './src/BpkCircleSkeleton';
 import BpkHeadlineSkeleton, { HEADLINE_SIZE_TYPES } from './src/BpkHeadlineSkeleton';
+import BpkImageSkeleton, { IMAGE_SKELETON_STYLE, IMAGE_SIZE_TYPES } from './src/BpkImageSkeleton';
 
 const SIZE_TYPES = {
   ...IMAGE_SIZE_TYPES,
