@@ -18,12 +18,12 @@
 
 /* @flow strict */
 
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import type { Element, Config, AbstractComponent } from 'react';
-import PropTypes from 'prop-types';
 
-import omit from 'lodash/omit';
 import extend from 'lodash/extend';
+import omit from 'lodash/omit';
 
 import { cssModules } from '../../bpk-react-utils';
 

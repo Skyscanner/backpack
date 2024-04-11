@@ -19,9 +19,9 @@
 
 import { render } from '@testing-library/react';
 
-import BpkSelect from '../../bpk-component-select';
 import BpkCheckbox from '../../bpk-component-checkbox';
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
+import BpkSelect from '../../bpk-component-select';
 
 import BpkFieldset, { propTypes } from './BpkFieldset';
 

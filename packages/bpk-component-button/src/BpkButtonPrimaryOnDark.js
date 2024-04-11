@@ -18,8 +18,8 @@
 
 /* @flow strict */
 
-import { type Props, defaultProps, propTypes } from './common-types';
 import BpkButtonBase, { cssModules } from './BpkButtonBase';
+import { type Props, defaultProps, propTypes } from './common-types';
 
 import STYLES from './BpkButtonPrimaryOnDark.module.scss';
 

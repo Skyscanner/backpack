@@ -19,11 +19,11 @@
 import { Component, Children } from 'react';
 import type { ReactNode } from 'react';
 
-import { action } from '../bpk-storybook-utils';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
 import BpkButton from '../../packages/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
+import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

@@ -72,6 +72,18 @@ describe('BpkSelectableChip', () => {
       expect(asFragment()).toMatchSnapshot();
     });
 
+    it(`should render correctly with type="${chipType}" and a leading accessory view without children`, () => {
+      const { asFragment } = render(
+        <BpkSelectableChip
+          type={chipType}
+          leadingAccessoryView={<span>Leading</span>}
+          accessibilityLabel="Toggle"
+          onClick={() => null}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
     it(`should render correctly with type="${chipType}" and a trailing accessory view`, () => {
       const { asFragment } = render(
         <TestChip

@@ -21,8 +21,8 @@
 // it only prevents it leaving due to keyboard events.
 // Clicks outside the target element will move focus as normal.
 
-import tabbable from 'tabbable';
 import focusin from 'focusin';
+import tabbable from 'tabbable';
 
 let polyfilled = false;
 let focusTrapped = false;

@@ -18,8 +18,8 @@
 
 /* @flow strict */
 
-import { cssModules } from '../../packages/bpk-react-utils';
 import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

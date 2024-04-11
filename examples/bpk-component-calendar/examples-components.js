@@ -18,8 +18,8 @@
 
 /* eslint-disable react/prop-types */
 
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Component } from 'react';
 
 import { addMonths } from 'date-fns/addMonths';
 
@@ -32,13 +32,6 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkButton from '../../packages/bpk-component-button';
-import { action } from '../bpk-storybook-utils';
-import {
-  withButtonAlignment,
-  withRtlSupport,
-} from '../../packages/bpk-component-icon';
-import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
-import SmallLongArrowLeftIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import BpkCalendar, {
   BpkCalendarGrid,
   BpkCalendarGridHeader,
@@ -52,6 +45,13 @@ import {
   startOfDay,
   addDays,
 } from '../../packages/bpk-component-calendar/src/date-utils';
+import {
+  withButtonAlignment,
+  withRtlSupport,
+} from '../../packages/bpk-component-icon';
+import SmallLongArrowLeftIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
+import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
+import { action } from '../bpk-storybook-utils';
 
 import { formatMonth, formatDateFull, weekDays } from './test-utils';
 

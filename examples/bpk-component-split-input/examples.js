@@ -17,10 +17,10 @@
  */
 /* @flow strict */
 
+import BpkLabel from '../../packages/bpk-component-label';
 import BpkSplitInput, {
   INPUT_TYPES,
 } from '../../packages/bpk-component-split-input';
-import BpkLabel from '../../packages/bpk-component-label';
 import { action } from '../bpk-storybook-utils';
 
 const SplitInputExample = () => (

@@ -18,8 +18,8 @@
 
 /* @flow strict */
 
-import BpkFlareBar from './src/BpkFlareBar';
 import BpkContentBubble from './src/BpkContentBubble';
+import BpkFlareBar from './src/BpkFlareBar';
 
 export default BpkFlareBar;
 export { BpkFlareBar, BpkContentBubble };

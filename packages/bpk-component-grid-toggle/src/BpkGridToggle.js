@@ -19,8 +19,8 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import { BpkButtonLink } from '../../bpk-component-link';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkGridToggle.module.scss';
 
@@ -72,13 +72,14 @@ class BpkGridToggle extends Component {
     const onOrOff = gridEnabled ? 'off' : 'on';
 
     return (
-      <BpkButtonLink
-        title="Keyboard Shortcut: ctrl + cmd + g"
-        onClick={this.toggleGrid}
-        className={className}
-      >
-        Baseline grid {onOrOff}
-      </BpkButtonLink>
+      <span className={className}>
+        <BpkButtonLink
+          title="Keyboard Shortcut: ctrl + cmd + g"
+          onClick={this.toggleGrid}
+        >
+          Baseline grid {onOrOff}
+        </BpkButtonLink>
+      </span>
     );
   }
 }

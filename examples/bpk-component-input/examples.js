@@ -16,12 +16,9 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Component } from 'react';
 
-import { cssModules } from '../../packages/bpk-react-utils';
-import { action } from '../bpk-storybook-utils';
-import BpkLabel from '../../packages/bpk-component-label';
 import BpkBannerAlert, {
   ALERT_TYPES,
 } from '../../packages/bpk-component-banner-alert';
@@ -31,6 +28,9 @@ import BpkInput, {
   INPUT_TYPES,
   CLEAR_BUTTON_MODES,
 } from '../../packages/bpk-component-input';
+import BpkLabel from '../../packages/bpk-component-label';
+import { cssModules } from '../../packages/bpk-react-utils';
+import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

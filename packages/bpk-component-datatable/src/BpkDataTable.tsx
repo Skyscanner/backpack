@@ -24,8 +24,8 @@ import { useTable, useSortBy } from 'react-table';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import { type BpkDataTableProps, SORT_DIRECTION_TYPES } from './common-types';
 import BpkDataTableHeader from './BpkDataTableHeader';
+import { type BpkDataTableProps, SORT_DIRECTION_TYPES } from './common-types';
 import { createColumnsSchema } from './utils';
 
 import STYLES from './BpkDataTable.module.scss';

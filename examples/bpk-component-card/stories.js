@@ -17,8 +17,8 @@
  */
 
 import BpkCard from '../../packages/bpk-component-card/src/BpkCard';
-import BpkDividedCard from '../../packages/bpk-component-card/src/BpkDividedCard';
 import BpkCardWrapper from '../../packages/bpk-component-card/src/BpkCardWrapper';
+import BpkDividedCard from '../../packages/bpk-component-card/src/BpkDividedCard';
 
 import {
   DefaultExample,

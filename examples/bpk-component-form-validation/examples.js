@@ -20,12 +20,12 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
-import BpkSelect from '../../packages/bpk-component-select';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
-import BpkTextarea from '../../packages/bpk-component-textarea';
-import BpkInput from '../../packages/bpk-component-input';
-import { cssModules } from '../../packages/bpk-react-utils';
 import BpkFormValidation from '../../packages/bpk-component-form-validation';
+import BpkInput from '../../packages/bpk-component-input';
+import BpkSelect from '../../packages/bpk-component-select';
+import BpkTextarea from '../../packages/bpk-component-textarea';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
