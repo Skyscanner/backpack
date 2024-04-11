@@ -137,6 +137,8 @@ const BpkModalInner = ({
                   : BAR_STYLES.default
               }
               id={headingId}
+              // TODO: className to be removed
+              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
               className={navigationStyles.join(' ')}
               title={
                 <h2
@@ -150,6 +152,8 @@ const BpkModalInner = ({
               trailingButton={
                 closeText ? (
                   <BpkButtonLink
+                    // TODO: className to be removed
+                    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                     className={[
                       getClassName('bpk-modal__close-button'),
                       getClassName(
@@ -162,6 +166,8 @@ const BpkModalInner = ({
                   </BpkButtonLink>
                 ) : (
                   <BpkCloseButton
+                    // TODO: className to be removed
+                    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                     className={[
                       getClassName('bpk-modal__close-button'),
                       getClassName(

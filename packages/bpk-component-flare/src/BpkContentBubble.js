@@ -73,6 +73,8 @@ const BpkContentBubble = (props) => {
         {showPointer && (
           <BpkFlareBar
             rounded={rounded}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={getClassName('bpk-content-bubble__pointer')}
             {...flareProps}
           />

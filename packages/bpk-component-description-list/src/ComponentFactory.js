@@ -33,6 +33,8 @@ const buildComponent = (TagName, baseClassName) => {
     }
 
     return (
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       <TagName className={classNames.join(' ')} {...rest}>
         {children}
       </TagName>

@@ -84,6 +84,8 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
+  // TODO: className to be removed
+  // eslint-disable-next-line @skyscanner/rules/forbid-component-props
   return <AlignedIcon className={className} />;
 };
 
@@ -106,7 +108,10 @@ const ToggleButton = (props: ToggleButtonProps) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <ExpandIcon className={classNames.join(' ')} />
+      <ExpandIcon 
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      className={classNames.join(' ')} />
     </button>
   );
 };

@@ -33,10 +33,14 @@ const AlignedArrowRightIcon = withRtlSupport(ArrowRightIcon);
 const nudgerIcon = (forward) =>
   forward ? (
     <AlignedArrowRightIcon
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName('bpk-pagination-nudger__icon')}
     />
   ) : (
     <AlignedArrowLeftIcon
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName('bpk-pagination-nudger__icon')}
     />
   );
@@ -49,6 +53,8 @@ const BpkPaginationNudger = (props) => {
       type={BUTTON_TYPES.link}
       onClick={onNudge}
       disabled={disabled}
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName('bpk-pagination-nudger')}
     >
       {nudgerIcon(forward)}
