@@ -411,6 +411,8 @@ class Week extends Component<Props> {
 
           return (
             <DateContainer
+              // TODO: className to be removed
+              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
               className={cellClassName}
               isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate!}
               isBlocked={isBlocked}

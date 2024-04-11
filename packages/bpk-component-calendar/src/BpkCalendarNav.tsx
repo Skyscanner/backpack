@@ -127,7 +127,10 @@ const BpkCalendarNav = ({
               disabled || !isWithinRange(prevMonth, { start: min, end: max })
             }
           >
-            <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
+            <ArrowLeftIcon 
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+            className={getClassName('bpk-calendar-nav__icon')} />
             <span className={getClassName('bpk-calendar-nav__text--hidden')}>
               {previousMonthLabel}
             </span>
@@ -179,6 +182,8 @@ const BpkCalendarNav = ({
             }
           >
             <ArrowRightIcon
+              // TODO: className to be removed
+              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
               className={getClassName('bpk-calendar-nav__icon')}
             />
             <span className={getClassName('bpk-calendar-nav__text--hidden')}>

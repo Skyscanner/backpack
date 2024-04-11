@@ -54,11 +54,17 @@ const BpkSectionHeader = ({
     >
       <BpkText
         tagName="h2"
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-section-header__title')}
       >
         {title}
       </BpkText>
-      {description && <BpkText className={getClassName('bpk-section-header__description')}>{description}</BpkText>}
+      {description && <BpkText 
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={getClassName('bpk-section-header__description')}>{description}
+      </BpkText>}
     </div>
     {button}
   </div>

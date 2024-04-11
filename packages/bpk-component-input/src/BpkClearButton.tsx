@@ -51,6 +51,8 @@ const BpkClearButton = ({ className, label, onClick, ...rest }: Props) => {
     >
       <ClearButtonIcon
         focusable="false" // prevents focus on IE11
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-clear-button__icon')}
       />
     </button>
