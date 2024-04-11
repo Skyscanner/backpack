@@ -50,22 +50,22 @@ const BpkNudger = ({
         <div className={getClassName('bpk-nudger__label')}>
           <BpkLabel htmlFor={id}>
             {icon}
-            <span
-              // For a11y on IOS, role='text' forces label to be read in full. More info: https://axesslab.com/text-splitting/
-              // eslint-disable-next-line jsx-a11y/aria-role
-              role="text"
-              className={getClassName('bpk-nudger__label--title-subtitle')}
-            >
-              <BpkText textStyle={TEXT_STYLES.heading5}>{title}</BpkText>
-              {subtitle && (
-                <span className={getClassName('bpk-nudger__label--subtitle')}>
-                  <BpkText>
-                    {subtitle}
-                  </BpkText>
-                </span>
-              )}
-            </span>
           </BpkLabel>
+          <span
+            // For a11y on IOS, role='text' forces label to be read in full. More info: https://axesslab.com/text-splitting/
+            // eslint-disable-next-line jsx-a11y/aria-role
+            role="text"
+            className={getClassName('bpk-nudger__label--title-subtitle')}
+          >
+            <BpkText textStyle={TEXT_STYLES.heading5}>{title}</BpkText>
+            {subtitle && (
+              <span className={getClassName('bpk-nudger__label--subtitle')}>
+                <BpkText>
+                  {subtitle}
+                </BpkText>
+              </span>
+            )}
+          </span>
         </div>
       )}
       <BpkConfigurableNudger
