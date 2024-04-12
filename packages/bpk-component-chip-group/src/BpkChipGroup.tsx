@@ -59,7 +59,6 @@ export type SingleSelectChipItem = {
   text: string;
   accessibilityLabel?: string;
   leadingAccessoryView?: ReactNode;
-  className?: string;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
@@ -73,7 +72,6 @@ export type ChipItem = {
 export type CommonProps = {
   ariaLabel?: string;
   type?: ChipGroupType;
-  className?: string | null;
   chipStyle?: ChipStyleType;
 };
 
@@ -89,16 +87,12 @@ const BpkChipGroup = ({
   ariaMultiselectable = true,
   chipStyle = CHIP_TYPES.default,
   chips,
-  className,
   stickyChip,
   type = CHIP_GROUP_TYPES.rail,
 }: ChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
 
-  const containerClassnames = getClassName(
-    className,
-    'bpk-chip-group-container',
-  )
+  const containerClassnames = getClassName('bpk-chip-group-container')
 
   const chipGroupClassNames = getClassName(
     'bpk-chip-group',

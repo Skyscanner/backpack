@@ -54,17 +54,6 @@ describe('BpkChipGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should support custom class names', () => {
-    const { asFragment } = render(
-      <BpkChipGroup
-        chips={chips}
-        className="custom-classname"
-        {...defaultProps}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with sticky chip', () => {
     const { asFragment } = render(
       <BpkChipGroup

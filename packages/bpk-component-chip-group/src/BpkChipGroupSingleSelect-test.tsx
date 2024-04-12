@@ -100,17 +100,6 @@ describe('BpkChipGroupSingleSelect', () => {
     expect(screen.getByRole('option', { name: 'London' })).not.toHaveClass('bpk-chip--default-selected')
     expect(screen.getByRole('option', { name: 'Florence' })).not.toHaveClass('bpk-chip--default-selected')
   });
-
-  it('should support custom class names', () => {
-    const { asFragment } = render(
-      <BpkChipGroupSingleSelect
-        chips={chips}
-        className="custom-classname"
-        {...defaultProps}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
 });
 
 describe('BpkChipGroupSingleSelectState', () => {

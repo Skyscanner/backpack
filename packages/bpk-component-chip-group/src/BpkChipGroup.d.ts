@@ -35,7 +35,6 @@ export type SingleSelectChipItem = {
     text: string;
     accessibilityLabel?: string;
     leadingAccessoryView?: ReactNode;
-    className?: string;
     [rest: string]: any;
 };
 export type ChipItem = {
@@ -47,7 +46,6 @@ export type ChipItem = {
 export type CommonProps = {
     ariaLabel?: string;
     type?: ChipGroupType;
-    className?: string | null;
     chipStyle?: ChipStyleType;
 };
 export type ChipGroupProps = {
@@ -55,6 +53,6 @@ export type ChipGroupProps = {
     stickyChip?: ChipItem;
     ariaMultiselectable?: boolean;
 } & CommonProps;
-declare const BpkChipGroup: ({ ariaLabel, ariaMultiselectable, chipStyle, chips, className, stickyChip, type, }: ChipGroupProps) => JSX.Element;
+declare const BpkChipGroup: ({ ariaLabel, ariaMultiselectable, chipStyle, chips, stickyChip, type, }: ChipGroupProps) => JSX.Element;
 export declare const BpkChipGroupState: ({ chips, ...rest }: ChipGroupProps) => JSX.Element;
 export default BpkChipGroup;
