@@ -67,6 +67,21 @@ export default () => (
     value={9.9}
     ratingScale={RATING_SCALES.zeroToTen}
   />
+
+  // With a React Node element as the title
+  <BpkRating
+    ariaLabel="3 Average 1,230 reviews"
+    value={3}
+    title={
+      <BpkStarRating
+        rating={3}
+        ratingLabel={(rating: number, maxRating: number) =>
+          `Rated ${rating} out of ${maxRating} stars`
+        }
+      />
+    }
+    subtitle="1,230 reviews"
+  />
 );
 ```
 
