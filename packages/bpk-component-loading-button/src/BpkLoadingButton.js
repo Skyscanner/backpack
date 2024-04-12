@@ -134,6 +134,8 @@ const BpkLoadingButton = (props: LoadingProps) => {
       iconOnly={iconOnly}
       disabled={showBtnDisabled}
       large={large}
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames}
       link={link}
       linkOnDark={linkOnDark}

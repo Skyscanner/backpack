@@ -197,6 +197,8 @@ class BpkPopoverPortal extends Component<Props> {
         {typeof target !== 'function' && target}
         <Portal
           beforeClose={this.beforeClose}
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={classNames.join(' ')}
           isOpen={isOpen}
           onClose={this.onClose}

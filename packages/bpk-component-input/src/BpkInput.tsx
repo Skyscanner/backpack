@@ -162,6 +162,8 @@ class BpkInput extends Component<Props, State> {
                 this.setState({ persistClearButton: false });
               }
             }}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={clearButtonClassNames.join(' ')}
           />
         )}

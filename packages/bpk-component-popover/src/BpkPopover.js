@@ -120,6 +120,8 @@ const BpkPopover = (props: Props) => {
             &nbsp;
             {closeButtonIcon ? (
               <BpkCloseButton
+                // TODO: className to be removed
+                // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                 className={getClassName('bpk-popover__close-button')}
                 label={closeButtonText}
                 onClick={bindEventSource(

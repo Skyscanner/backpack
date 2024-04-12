@@ -53,7 +53,11 @@ const BpkAutosuggestSuggestion = (props: Props) => {
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <section className={classNames.join(' ')} {...rest}>
       {icon ? (
-        <Icon className={getClassName('bpk-autosuggest__suggestion-icon')} />
+        <Icon
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+          className={getClassName('bpk-autosuggest__suggestion-icon')}
+        />
       ) : null}
       <div className={getClassName('bpk-autosuggest__suggestion-content')}>
         <div className={getClassName('bpk-autosuggest__suggestion-inner')}>
