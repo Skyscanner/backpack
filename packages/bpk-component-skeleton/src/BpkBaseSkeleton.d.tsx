@@ -18,7 +18,7 @@
 
 type Props = {
   className: string;
-  ariaLabel?: string;
+  ariaLabel: string;
   styleObj?: {
     width: string;
     height: string;

@@ -18,21 +18,20 @@
 
 import { cssModules } from '../../bpk-react-utils';
 
+import type { CUSTOM_SIZE_TYPE } from './common-types';
+
 import STYLES from './BpkBaseSkeleton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 type Props = {
   className: string;
-  ariaLabel?: string;
-  styleObj?: {
-    width: string;
-    height: string;
-  };
+  ariaLabel: string;
+  styleObj?: CUSTOM_SIZE_TYPE;
 };
 
 const BpkBaseSkeleton = ({
-  ariaLabel = '',
+  ariaLabel,
   className,
   styleObj = undefined,
  }: Props) => (

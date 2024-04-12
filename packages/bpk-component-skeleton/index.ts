@@ -16,23 +16,11 @@
  * limitations under the License.
  */
 
-import BpkBodyTextSkeleton, { BODY_TEXT_SIZE_TYPES } from './src/BpkBodyTextSkeleton';
-import BpkCircleSkeleton, { CIRCLE_SIZE_TYPES } from './src/BpkCircleSkeleton';
-import BpkHeadlineSkeleton, { HEADLINE_SIZE_TYPES } from './src/BpkHeadlineSkeleton';
-import BpkImageSkeleton, { IMAGE_SKELETON_STYLE, IMAGE_SIZE_TYPES } from './src/BpkImageSkeleton';
-
-const SIZE_TYPES = {
-  ...IMAGE_SIZE_TYPES,
-  ...BODY_TEXT_SIZE_TYPES,
-  ...CIRCLE_SIZE_TYPES,
-  ...HEADLINE_SIZE_TYPES,
-}
+import BpkSkeleton, { SIZE_TYPES, SKELETON_TYPES, IMAGE_SKELETON_STYLE } from "./src/BpkSkeleton";
 
 export {
-  BpkImageSkeleton,
-  BpkBodyTextSkeleton,
-  BpkCircleSkeleton,
-  BpkHeadlineSkeleton,
-  SIZE_TYPES, 
-  IMAGE_SKELETON_STYLE
+  SIZE_TYPES,
+  SKELETON_TYPES,
+  IMAGE_SKELETON_STYLE,
 }
+export default BpkSkeleton;

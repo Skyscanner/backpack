@@ -16,62 +16,25 @@
  * limitations under the License.
  */
 
-import {
-  BpkBodyTextSkeleton,
-  BpkCircleSkeleton,
-  BpkHeadlineSkeleton,
-  BpkImageSkeleton,
-} from '../../packages/bpk-component-skeleton/index';
+import BpkSkeleton from '../../packages/bpk-component-skeleton';
 
 import {
-  BaseSkeletonExample,
-  ImageDefaultSizeWithDefaultStyleExample,
-  ImageDefaultSizeWithRoundedStyleExample,
-  ImageCustomNumberSizeWithDefaultStyleExample,
-  ImageCustomStringSizeWithRoundedStyleExample,
-  BodyTextSmallSizeExample,
-  BodyTextDefaultSizeExample,
-  BodyTextLargeSizeExample,
-  BodyTextCustomSizeExample,
-  CircleSmallSizeExample,
-  CircleDefaultSizeExample,
-  CircleCustomSizeExample,
-  HeadlineSmallSizeExample,
-  HeadlineDefaultSizeExample,
-  HeadlineLargeSizeExample,
-  HeadlineCustomSizeExample,
+  ImageSkeletonExample,
+  BodyTextSkeletonExample,
+  CircleSkeletonExample,
+  HeadlineSkeletonExample,
   CombinedComponentExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-skeleton',
-  component: BpkImageSkeleton,
-  subcomponents: {
-    BpkBodyTextSkeleton,
-    BpkCircleSkeleton,
-    BpkHeadlineSkeleton,
-  },
+  component: BpkSkeleton,
 };
 
-export const Base = BaseSkeletonExample;
 
-export const ImageDefaultSizeWithDefaultStyle = ImageDefaultSizeWithDefaultStyleExample;
-export const ImageDefaultSizeWithRoundedStyle = ImageDefaultSizeWithRoundedStyleExample;
-export const ImageCustomNumberSizeWithDefaultStyle = ImageCustomNumberSizeWithDefaultStyleExample;
-export const ImageCustomStringSizeWithRoundedStyle = ImageCustomStringSizeWithRoundedStyleExample;
-
-export const BodyTextSmallSize = BodyTextSmallSizeExample;
-export const BodyTextDefaultSize = BodyTextDefaultSizeExample;
-export const BodyTextLargeSize = BodyTextLargeSizeExample;
-export const BodyTextCustomSize = BodyTextCustomSizeExample;
-
-export const CircleSmallSize = CircleSmallSizeExample;
-export const CircleDefaultSize = CircleDefaultSizeExample;
-export const CircleCustomSize = CircleCustomSizeExample;
-
-export const HeadlineSmallSize = HeadlineSmallSizeExample;
-export const HeadlineDefaultSize = HeadlineDefaultSizeExample;
-export const HeadlineLargeSize = HeadlineLargeSizeExample;
-export const HeadlineCustomSize =HeadlineCustomSizeExample;
+export const ImageSkeleton = ImageSkeletonExample;
+export const BodyTextSkeleton = BodyTextSkeletonExample;
+export const CircleSkeleton = CircleSkeletonExample;
+export const HeadlineSkeleton = HeadlineSkeletonExample;
 
 export const CombinedComponent = CombinedComponentExample;

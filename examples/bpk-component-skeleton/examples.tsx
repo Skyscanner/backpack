@@ -16,78 +16,79 @@
  * limitations under the License.
  */
 
-import {
-  BpkImageSkeleton, 
-  BpkBodyTextSkeleton, 
-  BpkCircleSkeleton,
-  BpkHeadlineSkeleton,
+import BpkSkeleton, {
+  SKELETON_TYPES,
   SIZE_TYPES, 
   IMAGE_SKELETON_STYLE 
 } from '../../packages/bpk-component-skeleton';
-import BpkBaseSkeleton from '../../packages/bpk-component-skeleton/src/BpkBaseSkeleton';
 
-/* eslint-disable backpack/use-tokens */
-const BaseSkeletonExample = () => <BpkBaseSkeleton className='' />;
+const ImageDefaultSizeWithDefaultStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} ariaLabel='loading' />
+const ImageDefaultSizeWithRoundedStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} ariaLabel='loading' style={IMAGE_SKELETON_STYLE.rounded} />
+const ImageCustomStringSizeWithRoundedStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} size={{width: '7rem', height: '7rem'}} ariaLabel='loading' style={IMAGE_SKELETON_STYLE.rounded} />
 
-const ImageDefaultSizeWithDefaultStyleExample = () => <BpkImageSkeleton ariaLabel='loading' />
-const ImageDefaultSizeWithRoundedStyleExample = () => <BpkImageSkeleton ariaLabel='loading' style={IMAGE_SKELETON_STYLE.rounded} />
-const ImageCustomNumberSizeWithDefaultStyleExample = () => <BpkImageSkeleton size={{width: 7, height: 6}} ariaLabel='loading' />
-const ImageCustomStringSizeWithRoundedStyleExample = () => <BpkImageSkeleton size={{width: '7rem', height: '6rem'}} ariaLabel='loading' style={IMAGE_SKELETON_STYLE.rounded} />
+const BodyTextSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.small} ariaLabel='loading' />
+const BodyTextDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.default} ariaLabel='loading' />
+const BodyTextLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.large} ariaLabel='loading' />
+const BodyTextCustomSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={{width: '16rem', height: '0.5rem'}} ariaLabel='loading' />
 
-const BodyTextSmallSizeExample = () => <BpkBodyTextSkeleton size={SIZE_TYPES.small} ariaLabel='loading' />
-const BodyTextDefaultSizeExample = () => <BpkBodyTextSkeleton size={SIZE_TYPES.default} ariaLabel='loading' />
-const BodyTextLargeSizeExample = () => <BpkBodyTextSkeleton size={SIZE_TYPES.large} ariaLabel='loading' />
-const BodyTextCustomSizeExample = () => <BpkBodyTextSkeleton size={{width: 16, height: 1}} ariaLabel='loading' />
+const CircleSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} size={SIZE_TYPES.small} ariaLabel='loading'/>;
+const CircleDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} ariaLabel='loading' />;
+const CircleCustomSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} size={{width: '5rem', height: '5rem'}} ariaLabel='loading' />;
 
-const CircleSmallSizeExample = () => <BpkCircleSkeleton size={SIZE_TYPES.small} ariaLabel='loading'/>;
-const CircleDefaultSizeExample = () => <BpkCircleSkeleton ariaLabel='loading' />;
-const CircleCustomSizeExample = () => <BpkCircleSkeleton size={{width: 5, height: 5}} ariaLabel='loading' />;
+const HeadlineSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.small} ariaLabel='loading' />
+const HeadlineDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.default} ariaLabel='loading' />
+const HeadlineLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.large} ariaLabel='loading' />
+const HeadlineCustomSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={{width: '5rem', height: '2.5rem'}} ariaLabel='loading' />
 
+const ImageSkeletonExample = () => 
+  <div style={{display: "flex", justifyContent: "space-around", alignItems: "flex-end", width: "30rem"}}>
+    <ImageDefaultSizeWithDefaultStyleExample />
+    <ImageDefaultSizeWithRoundedStyleExample />
+    <ImageCustomStringSizeWithRoundedStyleExample />
+  </div>
 
-const HeadlineSmallSizeExample = () => <BpkHeadlineSkeleton size={SIZE_TYPES.small} ariaLabel='loading' />
-const HeadlineDefaultSizeExample = () => <BpkHeadlineSkeleton size={SIZE_TYPES.default} ariaLabel='loading' />
-const HeadlineLargeSizeExample = () => <BpkHeadlineSkeleton size={SIZE_TYPES.large} ariaLabel='loading' />
-const HeadlineCustomSizeExample = () => <BpkHeadlineSkeleton size={{width: 18, height: 1.5}} ariaLabel='loading' />
-
-const CombinedComponentExample = () => 
-  <>
-    <ImageDefaultSizeWithDefaultStyleExample /><br />
-    <ImageDefaultSizeWithRoundedStyleExample /><br />
-    <ImageCustomNumberSizeWithDefaultStyleExample /><br />
-    <ImageCustomStringSizeWithRoundedStyleExample /><br />
-
+const BodyTextSkeletonExample = () => 
+  <div style={{display: "flex", flexDirection: "column", justifyContent: "space-around", width: "30rem"}}>
     <BodyTextSmallSizeExample /><br />
     <BodyTextDefaultSizeExample /><br />
     <BodyTextLargeSizeExample /><br />
     <BodyTextCustomSizeExample /><br />
+  </div>
 
+const CircleSkeletonExample = () => 
+  <div style={{display: "flex", justifyContent: "space-around", alignItems: "flex-end", width: "30rem"}}>
     <CircleSmallSizeExample /><br />
     <CircleDefaultSizeExample /><br />
     <CircleCustomSizeExample /><br />
+  </div>
 
+const HeadlineSkeletonExample = () => 
+<div style={{display: "flex", justifyContent: "space-around", alignItems: "flex-end", width: "38rem"}}>
     <HeadlineSmallSizeExample /><br />
     <HeadlineDefaultSizeExample /><br />
     <HeadlineLargeSizeExample /><br />
     <HeadlineCustomSizeExample /><br />
+  </div>
+
+const CombinedComponentExample = () => 
+  <>
+    <h2>ImageSkeleton</h2>
+    <ImageSkeletonExample />
+
+    <h2>BodyTextSkeleton</h2>
+    <BodyTextSkeletonExample />
+
+    <h2>CircleSkeleton</h2>
+    <CircleSkeletonExample />
+
+    <h2>HeadlineSkeleton</h2>
+    <HeadlineSkeletonExample />
   </>
 
-/* eslint-enable backpack/use-tokens */
 export {
-  BaseSkeletonExample,
-  ImageDefaultSizeWithDefaultStyleExample,
-  ImageDefaultSizeWithRoundedStyleExample,
-  ImageCustomNumberSizeWithDefaultStyleExample,
-  ImageCustomStringSizeWithRoundedStyleExample,
-  BodyTextSmallSizeExample,
-  BodyTextDefaultSizeExample,
-  BodyTextLargeSizeExample,
-  BodyTextCustomSizeExample,
-  CircleSmallSizeExample,
-  CircleDefaultSizeExample,
-  CircleCustomSizeExample,
-  HeadlineSmallSizeExample,
-  HeadlineDefaultSizeExample,
-  HeadlineLargeSizeExample,
-  HeadlineCustomSizeExample,
+  ImageSkeletonExample,
+  BodyTextSkeletonExample,
+  CircleSkeletonExample,
+  HeadlineSkeletonExample,
   CombinedComponentExample,
 };
