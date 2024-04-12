@@ -74,7 +74,6 @@ const BpkNudger = ({
         incrementValue={incrementValue}
         decrementValue={decrementValue}
         formatValue={formatValue}
-        className={className}
         buttonType={buttonType}
         id={id}
         {...rest}
