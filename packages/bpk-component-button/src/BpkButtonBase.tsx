@@ -122,4 +122,3 @@ const BpkButton = (props: Props & {type?: ValueOf<typeof BUTTON_TYPES>}) => {
 };
 
 export default BpkButton;
-export const cssModules = () => {}
