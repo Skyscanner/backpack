@@ -74,6 +74,9 @@ const BpkNudger = ({
         incrementValue={incrementValue}
         decrementValue={decrementValue}
         formatValue={formatValue}
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={className}
         buttonType={buttonType}
         id={id}
         {...rest}
