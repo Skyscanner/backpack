@@ -21,11 +21,11 @@ import { type MutableRefObject, useEffect, useState } from 'react';
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { CHIP_TYPES } from '../../bpk-component-chip';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { withButtonAlignment } from '../../bpk-component-icon/index';
 import ArrowLeft from '../../bpk-component-icon/sm/long-arrow-left';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowRight from '../../bpk-component-icon/sm/long-arrow-right';
 import { cssModules, isRTL } from '../../bpk-react-utils/index';
-import { withButtonAlignment } from '../../bpk-component-icon/index';
 
 import type { ChipStyleType } from './BpkChipGroup';
 
@@ -85,8 +85,8 @@ const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContaine
   )
 
   return (
+    <div className={classNames}>
       <BpkButtonV2
-        className={classNames}
         type={CHIP_STYLE_TO_BUTTON_STYLE[chipStyle]}
         iconOnly
         disabled={!show || !enabled}
@@ -101,6 +101,7 @@ const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContaine
       >
         {isLeft ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
       </BpkButtonV2>
+    </div>
   );
 }
 
