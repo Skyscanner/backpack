@@ -73,9 +73,6 @@ describe('BpkChipGroupSingleSelect accessibility tests', () => {
     const { container } = render(
       <BpkChipGroupSingleSelect
         chips={chips}
-        stickyChip={{
-          text: 'Sort & Filter'
-        }}
         type={CHIP_GROUP_TYPES.rail}
         selectedIndex={1}
         ariaLabel="Select a city"

@@ -28,6 +28,7 @@ import {
   MixedExample,
   AllChipTypesGroup,
   OnContrastChipGroup,
+  StateManagement,
 } from './examples';
 
 export default {
@@ -49,6 +50,7 @@ export const OnContrast = OnContrastChipGroup;
 export const OnDark = OnDarkChipGroup;
 export const OnImage = OnImageChipGroup;
 export const AllChipTypes = AllChipTypesGroup;
+export const ExampleStateManagement = StateManagement;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {

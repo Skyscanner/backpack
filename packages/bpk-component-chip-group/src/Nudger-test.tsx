@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
 import type { MutableRefObject } from 'react';
+
+import { render } from '@testing-library/react';
 
 import { CHIP_TYPES } from '../../bpk-component-chip';
 
@@ -33,7 +34,7 @@ jest.mock('../../bpk-react-utils/index', () => ({
 
 const mockScrollContainerRef = {
   current: {
-    scrollBy: jest.fn(),
+    scrollBy: jest.fn() as (options?: any) => void,
     offsetWidth: 70,
     scrollLeft: 10,
     scrollWidth: 100,

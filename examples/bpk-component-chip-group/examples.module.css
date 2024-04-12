@@ -14,5 +14,5 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-chip-group-examples__fixed-width{width:18.75rem}.bpk-chip-group-examples__contrast{padding:1rem;background-color:#eff1f2}.bpk-chip-group-examples__dark{padding:1rem;background-color:#05203c}.bpk-chip-group-examples__image{padding:1rem;background-image:url("https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg")}.bpk-chip-group-examples__mixed-container h2{margin-top:2rem;margin-bottom:0.5rem}
+ */
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-chip-group-examples__fixed-width{width:18.75rem}.bpk-chip-group-examples__contrast{padding:1rem;background-color:#eff3f8}.bpk-chip-group-examples__dark{padding:1rem;background-color:#05203c}.bpk-chip-group-examples__image{padding:1rem;background-image:url("https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg")}.bpk-chip-group-examples__mixed-container h2{margin-top:2rem;margin-bottom:.5rem}

@@ -19,8 +19,13 @@
 
 import { useState } from 'react';
 
-import { BpkDismissibleChip, BpkDropdownChip, CHIP_TYPES } from '../../packages/bpk-component-chip';
-import { BpkChipGroupState, BpkChipGroupSingleSelectState, CHIP_GROUP_TYPES } from '../../packages/bpk-component-chip-group';
+import { CHIP_TYPES } from '../../packages/bpk-component-chip';
+import BpkChipGroup, {
+  BpkChipGroupState,
+  BpkChipGroupSingleSelectState,
+  CHIP_GROUP_TYPES,
+  CHIP_COMPONENT,
+} from '../../packages/bpk-component-chip-group';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text/index';
 import { cssModules } from '../../packages/bpk-react-utils/index';
 
@@ -74,7 +79,7 @@ export const BpkChipGroupWrapping = () => (
       <BpkChipGroupState
         type={CHIP_GROUP_TYPES.wrap}
         chips={chips}
-        accessibilityLabel="Select cities"
+        ariaLabel="Select cities"
        />
     </div>
   );
@@ -85,7 +90,7 @@ export const BpkSingleChipGroupWrapping = () => (
         type={CHIP_GROUP_TYPES.wrap}
         chips={chips}
         initiallySelectedIndex={0}
-        accessibilityLabel="Select a city"
+        ariaLabel="Select a city"
        />
     </div>
   );
@@ -96,7 +101,7 @@ export const BpkChipGroupRail = () => (
       <BpkChipGroupState
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
-        accessibilityLabel="Select cities"
+        ariaLabel="Select cities"
       />
     </div>
   );
@@ -113,7 +118,7 @@ export const BpkChipGroupSticky = () => {
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
-        accessibilityLabel="Select cities"
+        ariaLabel="Select cities"
       />
     </div>
   );
@@ -130,8 +135,8 @@ export const OnContrastChipGroup = () => {
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
-        style={CHIP_TYPES.default}
-        accessibilityLabel="Select cities"
+        chipStyle={CHIP_TYPES.default}
+        ariaLabel="Select cities"
       />
     </div>
   );
@@ -149,8 +154,8 @@ export const OnDarkChipGroup = () => {
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
-        style={CHIP_TYPES.onDark}
-        accessibilityLabel="Select cities"
+        chipStyle={CHIP_TYPES.onDark}
+        ariaLabel="Select cities"
       />
     </div>
   );
@@ -167,8 +172,8 @@ export const OnImageChipGroup = () => {
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
-        style={CHIP_TYPES.onImage}
-        accessibilityLabel="Select cities"
+        chipStyle={CHIP_TYPES.onImage}
+        ariaLabel="Select cities"
       />
     </div>
   );
@@ -183,14 +188,15 @@ export const AllChipTypesGroup = () => {
       text: 'Disabled',
       disabled: true,
     },
-    !dismissed && {
-      text: 'Dismissable',
+    {
+      text: 'Dismissible',
       onClick: () => setDismissed(true),
-      component: BpkDismissibleChip,
+      component: CHIP_COMPONENT.dismissible,
+      hidden: dismissed,
     },
     {
       text: 'Dropdown',
-      component: BpkDropdownChip,
+      component: CHIP_COMPONENT.dropdown,
     },
     {
       text: 'Selectable',
@@ -205,7 +211,43 @@ export const AllChipTypesGroup = () => {
     <BpkChipGroupState
       chips={allChips}
       type={CHIP_GROUP_TYPES.wrap}
-      accessibilityLabel="Select chips"
+      ariaLabel="Select chips"
+    />
+  );
+};
+
+
+export const StateManagement = () => {
+  const [route, setRoute] = useState('flights');
+
+  return (
+    <BpkChipGroup
+      type={CHIP_GROUP_TYPES.rail}
+      ariaLabel="Filter your search"
+      ariaMultiselectable={false}
+      chips={[{
+        text: 'Flights',
+        selected: route === 'flights',
+        onClick: () => setRoute('flights'),
+      }, {
+        text: 'Car Hire',
+        selected: route === 'cars',
+        onClick: () => setRoute('cars'),
+      }, {
+        text: 'Hotels',
+        selected: route === 'hotels',
+        onClick: () => setRoute('hotels'),
+      }, {
+        text: 'Trains',
+        selected: route === 'trains',
+        onClick: () => setRoute('trains'),
+      }, {
+        component: CHIP_COMPONENT.dropdown,
+        text: 'More',
+        accessibilityLabel: 'Show more filter options',
+        // eslint-disable-next-line no-console
+        onClick: (selected) => console.log(`Open dropdown: ${selected}`),
+      }]}
     />
   );
 };
@@ -244,6 +286,10 @@ export const MixedExample = () => (
       Single Select Group
     </BpkText>
     <BpkSingleChipGroupWrapping />
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+      State example
+    </BpkText>
+    <StateManagement />
     <br />
   </div>
 )

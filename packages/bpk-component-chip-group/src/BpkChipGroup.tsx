@@ -19,7 +19,7 @@ import type { ReactElement, ReactNode} from 'react';
 import { useRef, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-import BpkSelectableChip, { BpkIconChip, type BpkSelectableChipProps, CHIP_TYPES } from '../../bpk-component-chip';
+import BpkSelectableChip, { BpkDismissibleChip, BpkIconChip, BpkDropdownChip, CHIP_TYPES } from '../../bpk-component-chip';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -35,9 +35,27 @@ const getClassName = cssModules(STYLES);
 export const CHIP_GROUP_TYPES = {
   rail: 'rail',
   wrap: 'wrap',
+};
+
+
+export const CHIP_COMPONENT = {
+  selectable: 'selectable',
+  dismissible: 'dismissible',
+  dropdown: 'dropdown',
+  icon: 'icon',
+};
+
+const CHIP_COMPONENT_MAP = {
+  [CHIP_COMPONENT.selectable]: BpkSelectableChip,
+  [CHIP_COMPONENT.dismissible]: BpkDismissibleChip,
+  [CHIP_COMPONENT.dropdown]: BpkDropdownChip,
+  [CHIP_COMPONENT.icon]: BpkIconChip,
 }
+
 export type ChipGroupType = (typeof CHIP_GROUP_TYPES)[keyof typeof CHIP_GROUP_TYPES];
 export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
+export type ChipComponentType = (typeof CHIP_COMPONENT)[keyof typeof CHIP_COMPONENT];
+
 
 export type SingleSelectChipItem = {
   text: string;
@@ -48,24 +66,19 @@ export type SingleSelectChipItem = {
 };
 
 export type ChipItem = {
-  component?: (props: BpkSelectableChipProps) => ReactElement;
+  component?: ChipComponentType;
   onClick?: (selected: boolean, index: number) => void;
   selected?: boolean;
+  hidden?: boolean;
 } & SingleSelectChipItem;
 
-type AccessibilityLabels = {
-  ariaLabel: string;
-  ariaLabelledBy?: never;
-} | {
-  ariaLabel?: never;
-  ariaLabelledBy: string;
-};
-
 export type CommonProps = {
-  type: ChipGroupType;
+  ariaLabel?: string;
+  ariaLabelledBy?: string;
+  type?: ChipGroupType;
   className?: string | null;
-  style?: ChipStyleType;
-} & AccessibilityLabels;
+  chipStyle?: ChipStyleType;
+};
 
 export type ChipGroupProps = {
   chips: ChipItem[];
@@ -73,7 +86,22 @@ export type ChipGroupProps = {
   ariaMultiselectable?: boolean;
 } & CommonProps;
 
-const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, chips, className = null, stickyChip, style = CHIP_TYPES.default, type = CHIP_GROUP_TYPES.rail }: ChipGroupProps) => {
+
+const BpkChipGroup = ({
+  ariaLabel,
+  ariaLabelledBy,
+  ariaMultiselectable = true,
+  chipStyle = CHIP_TYPES.default,
+  chips,
+  className,
+  stickyChip,
+  type = CHIP_GROUP_TYPES.rail,
+}: ChipGroupProps) => {
+  if ((ariaLabel && ariaLabelledBy) || (!ariaLabel && !ariaLabelledBy)) {
+    // eslint-disable-next-line no-console
+    console.warn("BpkChipGroup: Bad combination of aria props. Exactly one of props ariaLabel or ariaLabelledBy should be used.")
+  }
+
   const scrollContainerRef = useRef<HTMLElement | null>(null);
 
   const containerClassnames = getClassName(
@@ -88,28 +116,41 @@ const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, c
 
   const stickyChipContainerClassnames = getClassName(
     'bpk-sticky-chip-container',
-    `bpk-sticky-chip-container--${style}`,
+    `bpk-sticky-chip-container--${chipStyle}`,
   );
 
   const scrollContainerIndicator = getClassName('bpk-chip-group-scroller-indicator');
 
-  const renderChipItem = ({ accessibilityLabel, component: Component = BpkSelectableChip, onClick, selected, text, ...rest }: ChipItem, index: number) => (
-    <Component
-      key={text}
-      selected={selected ?? false}
-      type={style}
-      accessibilityLabel={accessibilityLabel || text}
-      onClick={() => {
-        if (onClick) {
-          onClick(!selected, index);
-        }
-      }}
-      role="option"
-      {...rest}
-    >
-      {text}
-    </Component>
-  );
+  const renderChipItem = ({
+    accessibilityLabel,
+    component = CHIP_COMPONENT.selectable,
+    hidden = false,
+    leadingAccessoryView = null,
+    onClick,
+    selected,
+    text,
+    ...rest
+  }: ChipItem, index: number) => {
+    const Component = CHIP_COMPONENT_MAP[component];
+    return !hidden && (
+      <Component
+        key={text}
+        selected={selected ?? false}
+        type={chipStyle}
+        accessibilityLabel={accessibilityLabel || text}
+        onClick={() => {
+          if (onClick) {
+            onClick(!selected, index);
+          }
+        }}
+        role="option"
+        leadingAccessoryView={leadingAccessoryView}
+        {...rest}
+      >
+        {text}
+      </Component>
+    );
+  }
 
   // TODO: Fix focus indicators being cutoff when type = rail
   const wrapRailInScroll = (children: ReactElement) =>
@@ -127,7 +168,7 @@ const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, c
     <div className={containerClassnames}>
       {type === CHIP_GROUP_TYPES.rail && (
         <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-          <Nudger leading chipStyle={style} scrollContainerRef={scrollContainerRef} />
+          <Nudger leading chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
         </BpkBreakpoint>
       )}
       {type === CHIP_GROUP_TYPES.rail && stickyChip &&
@@ -135,7 +176,7 @@ const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, c
           <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
             {(isDesktop) => renderChipItem({
               ...stickyChip,
-              component: isDesktop ? BpkSelectableChip : BpkIconChip,
+              component: isDesktop ? CHIP_COMPONENT.selectable : CHIP_COMPONENT.icon,
               leadingAccessoryView: <FilterIconSm />,
             }, -1)}
           </BpkBreakpoint>
@@ -149,12 +190,12 @@ const BpkChipGroup = ({ ariaLabel, ariaLabelledBy, ariaMultiselectable = true, c
          aria-label={ariaLabel}
          aria-labelledby={ariaLabelledBy}
         >
-          {chips.map((chip, index) => chip && renderChipItem(chip, index))}
+          {chips.map((chip, index) => renderChipItem(chip, index))}
         </div>
       )}
       {type === CHIP_GROUP_TYPES.rail && (
         <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-          <Nudger chipStyle={style} scrollContainerRef={scrollContainerRef} />
+          <Nudger chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
         </BpkBreakpoint>
       )}
     </div>

@@ -20,9 +20,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import BpkSelectableChip, { BpkDismissibleChip, BpkDropdownChip } from '../../bpk-component-chip';
-
-import BpkChipGroup, { BpkChipGroupState, CHIP_GROUP_TYPES } from './BpkChipGroup';
+import BpkChipGroup, { BpkChipGroupState, CHIP_COMPONENT, CHIP_GROUP_TYPES } from './BpkChipGroup';
 
 const defaultProps = {
   type: CHIP_GROUP_TYPES.wrap,
@@ -47,12 +45,12 @@ describe('BpkChipGroup', () => {
   ];
 
   it('should render correctly with type = rail', () => {
-    const { asFragment } = render(<BpkChipGroup chips={chips} type={CHIP_GROUP_TYPES.rail} />);
+    const { asFragment } = render(<BpkChipGroup {...defaultProps} chips={chips} type={CHIP_GROUP_TYPES.rail} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with type = wrap', () => {
-    const { asFragment } = render(<BpkChipGroup chips={chips} type={CHIP_GROUP_TYPES.wrap} />);
+    const { asFragment } = render(<BpkChipGroup {...defaultProps} chips={chips} type={CHIP_GROUP_TYPES.wrap} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -85,15 +83,15 @@ describe('BpkChipGroup', () => {
     const alternativeChips = [
       {
         text: 'London',
-        component: BpkDismissibleChip,
+        component: CHIP_COMPONENT.dismissible,
       },
       {
         text: 'Berlin',
-        component: BpkDropdownChip,
+        component: CHIP_COMPONENT.dropdown,
       },
       {
         text: 'Florence',
-        component: BpkSelectableChip,
+        component: CHIP_COMPONENT.selectable,
       },
     ];
 
