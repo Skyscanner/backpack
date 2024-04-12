@@ -18,12 +18,12 @@
 
 /* @flow strict */
 
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
 import {
   BpkFlareBar,
   BpkContentBubble,
 } from '../../packages/bpk-component-flare';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

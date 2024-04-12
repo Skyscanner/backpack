@@ -21,9 +21,9 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';
 import { withRtlSupport } from '../../bpk-component-icon';
+import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSectionListItem.module.scss';
 
@@ -64,6 +64,8 @@ const BpkSectionListItem = (props: Props) => {
       >
         {children}
         <BpkLargeChevronRightIconWithRtlSupport
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName('bpk-section-list-item__chevron')}
         />
       </a>
@@ -81,6 +83,8 @@ const BpkSectionListItem = (props: Props) => {
       >
         {children}
         <BpkLargeChevronRightIconWithRtlSupport
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName('bpk-section-list-item__chevron')}
         />
       </button>

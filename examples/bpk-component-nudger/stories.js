@@ -17,8 +17,8 @@
  */
 
 
-import BpkNudger from '../../packages/bpk-component-nudger/src/BpkNudger';
 import BpkConfigurableNudger from '../../packages/bpk-component-nudger/src/BpkConfigurableNudger';
+import BpkNudger from '../../packages/bpk-component-nudger/src/BpkNudger';
 
 import {
   DefaultExample,

@@ -41,6 +41,8 @@ export type Props = {
 const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, icon, ...rest }: Props) => (
   <BpkIconButton
     customIcon={icon}
+    // TODO: className to be removed
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     className={getClassName(
       'bpk-navigation-bar-icon-button',
       `bpk-navigation-bar-icon-button--${barStyle}`,

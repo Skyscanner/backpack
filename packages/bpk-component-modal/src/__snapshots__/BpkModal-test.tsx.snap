@@ -18,7 +18,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
         />
         <section
           aria-labelledby="bpk-modal-heading-my-modal"
-          class="bpk-modal bpk-modal--full-screen-mobile"
+          class="bpk-modal bpk-modal__modal-style--default bpk-modal--full-screen-mobile"
           id="my-modal"
           role="dialog"
           tabindex="-1"
@@ -41,7 +41,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
               >
                 <button
                   aria-label="Close"
-                  class="bpk-close-button bpk-modal__close-button"
+                  class="bpk-close-button bpk-modal__close-button bpk-modal__close-button-style--default"
                   title="Close"
                   type="button"
                 >

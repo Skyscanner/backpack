@@ -18,12 +18,12 @@
 
 import type { KeyboardEvent } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { withRtlSupport } from '../../bpk-component-icon';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallArrowDownIcon from '../../bpk-component-icon/sm/arrow-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallArrowUpIcon from '../../bpk-component-icon/sm/arrow-up';
-import { withRtlSupport } from '../../bpk-component-icon';
+import { cssModules } from '../../bpk-react-utils';
 
 import { SORT_DIRECTION_TYPES } from './common-types';
 
@@ -44,7 +44,7 @@ const KEYCODES = {
  * Internal component to render the header of a column.
  * @returns {JSX.Element} data table header component
  */
-const BpkDataTableHeader = ({ column }: { column: any }) => {  
+const BpkDataTableHeader = ({ column }: { column: any }) => {
   const {
     defaultSortDirection,
     disableSortBy,
@@ -141,14 +141,16 @@ const BpkDataTableHeader = ({ column }: { column: any }) => {
           key="sort"
           aria-hidden
         >
-          <UpIcon
-            onClick={() => column.toggleSortBy(false)}
-            className={upIconClassNames}
-          />
-          <DownIcon
-            onClick={() => column.toggleSortBy(true)}
-            className={downIconClassNames}
-          />
+          <div className={upIconClassNames}>
+            <UpIcon
+              onClick={() => column.toggleSortBy(false)}
+            />
+          </div>
+          <div className={downIconClassNames}>
+            <DownIcon
+              onClick={() => column.toggleSortBy(true)}
+            />
+          </div>
         </div>
       )}
     </div>

@@ -20,8 +20,8 @@ import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import BpkPaginationPage from './BpkPaginationPage';
 import BpkPaginationBreak from './BpkPaginationBreak';
+import BpkPaginationPage from './BpkPaginationPage';
 
 import STYLES from './BpkPaginationList.module.scss';
 

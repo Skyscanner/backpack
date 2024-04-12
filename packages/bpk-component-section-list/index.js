@@ -19,8 +19,8 @@
 /* @flow strict */
 
 import BpkSectionList from './src/BpkSectionList';
-import BpkSectionListSection from './src/BpkSectionListSection';
 import BpkSectionListItem from './src/BpkSectionListItem';
+import BpkSectionListSection from './src/BpkSectionListSection';
 
 export default BpkSectionList;
 export { BpkSectionListSection, BpkSectionListItem };

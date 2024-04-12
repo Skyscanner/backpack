@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 import { renderToString } from 'react-dom/server';
-import '@testing-library/jest-dom';
 
 import { renderHook } from '@testing-library/react-hooks';
+import '@testing-library/jest-dom';
 
 import useMediaQuery from './useMediaQuery';
 

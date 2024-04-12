@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
-import { withScrim } from '../../bpk-scrim-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkContentBubble } from '../../bpk-component-flare';
+import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { withScrim } from '../../bpk-scrim-utils';
 
 import { type DialogInnerProps as Props } from './common-types';
 
@@ -63,7 +63,10 @@ const BpkDialogInner = (props: Props) => {
         className={classNames}
         ref={dialogRef}
       >
-        {flare && <BpkContentBubble className={flareClassNames} />}
+        {flare && <BpkContentBubble 
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={flareClassNames} />}
         <div className={contentClassNames}>{children}</div>
       </section>
     </TransitionInitialMount>

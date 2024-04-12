@@ -18,12 +18,12 @@
 
 import type { ReactNode } from 'react';
 
-import { withScrim } from '../../bpk-scrim-utils';
 import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
+import { withScrim } from '../../bpk-scrim-utils';
 
-import BpkModalInner from './BpkModalInner';
+import BpkModalInner, { MODAL_STYLING } from './BpkModalInner';
 
-import type { Props as ModalDialogProps } from './BpkModalInner';
+import type { Props as ModalDialogProps, ModalStyle } from './BpkModalInner';
 
 import STYLES from './BpkModal.module.scss';
 
@@ -38,6 +38,8 @@ export type Props = Partial<ModalDialogProps> & {
   closeOnScrimClick?: boolean;
   closeOnEscPressed?: boolean;
   renderTarget?: null | HTMLElement | (() => null | HTMLElement);
+  modalStyle?: ModalStyle;
+
   onClose?: (
     arg0?: TouchEvent | MouseEvent | KeyboardEvent,
     arg1?: {
@@ -45,7 +47,7 @@ export type Props = Partial<ModalDialogProps> & {
     },
   ) => void;
   /**
-   * Because this component uses a modal on mobile viewports, you need to let it know what 
+   * Because this component uses a modal on mobile viewports, you need to let it know what
    * the root element of your application is by returning its DOM node via this prop
    * This is to "hide" your application from screen readers whilst the modal is open.
    * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
@@ -66,6 +68,7 @@ const BpkModal = ({
   fullScreenOnMobile = true,
   isIphone = isDeviceIphone(),
   isOpen,
+  modalStyle = MODAL_STYLING.default,
   onClose = () => null,
   padded = true,
   renderTarget = null,
@@ -99,6 +102,8 @@ const BpkModal = ({
         containerClassName={containerClass.join(' ')}
         isIphone={isIphone}
         title={title}
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={className}
         contentClassName={contentClassName}
         closeLabel={closeLabel}
@@ -108,6 +113,7 @@ const BpkModal = ({
         padded={padded}
         accessoryView={accessoryView}
         dialogRef={dialogRef}
+        modalStyle={modalStyle}
         {...rest}
       />
     </Portal>

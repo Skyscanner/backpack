@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import { Title, PRIMARY_STORY, Markdown } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';
+import { Title, PRIMARY_STORY, Markdown } from '@storybook/blocks';
 
-import BpkImage from '../../packages/bpk-component-image/src/BpkImage';
 import BpkBackgroundImage from '../../packages/bpk-component-image/src/BpkBackgroundImage';
+import BpkImage from '../../packages/bpk-component-image/src/BpkImage';
 
 import {
   DefaultExample,

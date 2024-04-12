@@ -20,10 +20,10 @@ import PropTypes from 'prop-types';
 import type { ReactNode } from 'react';
 import { Component, Children } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkButton from '../../packages/bpk-component-button';
+import { BpkModalV2, MODAL_STYLING } from '../../packages/bpk-component-modal';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
-import { BpkModalV2 } from '../../packages/bpk-component-modal';
 
 import STYLES from './examples.module.scss';
 
@@ -146,6 +146,16 @@ const DefaultExample = () => (
       This is a default modal using the HTML dialog element. You can put
       anything you want in here.
     </Paragraph>
+  </ModalContainer>
+);
+
+const ContrastExample = () => (
+  <ModalContainer
+    title="Modal title"
+    closeLabel="Close modal"
+    modalStyle={MODAL_STYLING.surfaceContrast}
+  >
+    This is a contrast modal. You can put anything you want in here.
   </ModalContainer>
 );
 
@@ -278,4 +288,5 @@ export {
   NoFullScreenOnMobileNoTitleExample,
   NoHeaderExample,
   MultipleModalsExample,
+  ContrastExample,
 };

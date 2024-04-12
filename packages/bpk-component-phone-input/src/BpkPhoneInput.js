@@ -20,10 +20,10 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
 import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPhoneInput.module.scss';
 
@@ -152,6 +152,8 @@ const BpkPhoneInput = (props: Props) => {
         <BpkLabel
           htmlFor={dialingCodeProps.id}
           disabled={disabled}
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName('bpk-phone-input__label')}
         >
           {dialingCodeProps.label}
@@ -160,6 +162,8 @@ const BpkPhoneInput = (props: Props) => {
         <BpkSelect
           {...commonProps}
           {...dialingCodeProps}
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName(dialingCodeProps.className)}
           wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
           value={dialingCode}
@@ -177,6 +181,8 @@ const BpkPhoneInput = (props: Props) => {
         <BpkLabel
           htmlFor={id}
           disabled={disabled}
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName('bpk-phone-input__label')}
         >
           {label}
@@ -190,6 +196,8 @@ const BpkPhoneInput = (props: Props) => {
           value={displayValue}
           type={INPUT_TYPES.tel}
           onChange={handleChange}
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName(className)}
         />
       </div>

@@ -21,12 +21,12 @@ import { Component } from 'react';
 
 import { isRTL } from '../../bpk-react-utils';
 
-import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
-import BpkCalendarNav from './BpkCalendarNav';
+import BpkCalendarDate from './BpkCalendarDate';
 import { BpkCalendarGridWithTransition } from './BpkCalendarGrid';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
-import BpkCalendarDate from './BpkCalendarDate';
+import BpkCalendarNav from './BpkCalendarNav';
 import composeCalendar from './composeCalendar';
+import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import {
   addDays,
   addMonths,

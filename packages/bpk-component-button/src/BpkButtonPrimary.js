@@ -18,8 +18,8 @@
 
 /* @flow strict */
 
-import { type Props, defaultProps, propTypes } from './common-types';
 import BpkButtonBase from './BpkButtonBase';
+import { type Props, defaultProps, propTypes } from './common-types';
 
 // TODO: BpkButtonBase has the primary button style as it wasn't removed to
 // avoid a breaking change in the mixin. Review after this is tested.

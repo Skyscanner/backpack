@@ -22,9 +22,9 @@ been hard coded to have disabled={false}, selected and a trailing
 accessory view of a close icon.
 */
 
-import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
@@ -53,10 +53,15 @@ const BpkDismissibleChip = ({
       {...rest}
       leadingAccessoryView={leadingAccessoryView}
       disabled={false}
-      trailingAccessoryView={<CloseCircleIconSm className={iconClassNames} />}
+      trailingAccessoryView={<CloseCircleIconSm 
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={iconClassNames} />}
       selected
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames}
     />
   );

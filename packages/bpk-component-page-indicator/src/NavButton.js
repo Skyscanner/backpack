@@ -19,8 +19,8 @@
 
 import PropTypes from 'prop-types';
 
-import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import {BUTTON_TYPES, BpkButtonV2} from '../../bpk-component-button';
+import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 

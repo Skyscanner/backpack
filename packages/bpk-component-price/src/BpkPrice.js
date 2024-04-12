@@ -19,8 +19,8 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import { SIZES, ALIGNS } from './common-types';
 
@@ -78,6 +78,8 @@ const BpkPrice = (props: Props) => {
       >
         {previousPrice && (
           <BpkText
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={getClassName('bpk-price__previous-price')}
             textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
             tagName="span"
@@ -89,6 +91,8 @@ const BpkPrice = (props: Props) => {
           <BpkText
             textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
             tagName="span"
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={getClassName('bpk-price__separator')}
           >
             &#67871;
@@ -109,6 +113,8 @@ const BpkPrice = (props: Props) => {
       >
         <BpkText
           textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
+          // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName(
             'bpk-price__price',
             !isAlignRight && 'bpk-price__spacing',
@@ -121,6 +127,8 @@ const BpkPrice = (props: Props) => {
           <BpkText
             textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
             tagName="span"
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={getClassName('bpk-price__trailing')}
           >
             {trailingText}

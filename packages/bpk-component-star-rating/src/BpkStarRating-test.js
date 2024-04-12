@@ -20,11 +20,11 @@
 
 import { render } from '@testing-library/react';
 
+import { STAR_TYPES } from './BpkStar';
 import BpkStarRating, {
   getTypeByRating,
   ROUNDING_TYPES,
 } from './BpkStarRating';
-import { STAR_TYPES } from './BpkStar';
 
 describe('BpkStarRating', () => {
   it('should render correctly if you give it more than the max rating allowed', () => {

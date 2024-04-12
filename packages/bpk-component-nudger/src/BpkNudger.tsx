@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
 import { type CommonProps } from './common-types';
@@ -47,6 +47,8 @@ const BpkNudger = ({
   return (
     <div className={classNames}>
       {title && (
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         <BpkLabel htmlFor={id} className={getClassName('bpk-nudger__label')}>
           {icon}
           <span
@@ -57,6 +59,8 @@ const BpkNudger = ({
           >
             <BpkText textStyle={TEXT_STYLES.heading5}>{title}</BpkText>
             {subtitle && (
+              // TODO: className to be removed
+              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
               <BpkText className={getClassName('bpk-nudger__label--subtitle')}>
                 {subtitle}
               </BpkText>
@@ -70,6 +74,8 @@ const BpkNudger = ({
         incrementValue={incrementValue}
         decrementValue={decrementValue}
         formatValue={formatValue}
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={className}
         buttonType={buttonType}
         id={id}

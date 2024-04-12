@@ -5,7 +5,9 @@ exports[`BpkTableRow should render correctly 1`] = `
   <table>
     <tbody>
       <tr>
-        <td />
+        <td
+          aria-label="test"
+        />
       </tr>
     </tbody>
   </table>
@@ -20,7 +22,9 @@ exports[`BpkTableRow should render correctly with arbitrary props 1`] = `
         data-foo="bar"
         id="my-custom-id"
       >
-        <td />
+        <td
+          aria-label="test"
+        />
       </tr>
     </tbody>
   </table>
@@ -34,7 +38,9 @@ exports[`BpkTableRow should render correctly with custom class 1`] = `
       <tr
         class="my-custom-class"
       >
-        <td />
+        <td
+          aria-label="test"
+        />
       </tr>
     </tbody>
   </table>

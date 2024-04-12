@@ -27,10 +27,10 @@ import focusStore from 'a11y-focus-store';
 
 import { Portal, cssModules } from '../../bpk-react-utils';
 
-import keyboardFocusScope from './keyboardFocusScope';
 import BpkPopover, {
   type Props as PopoverProps,
 } from './BpkPopover';
+import keyboardFocusScope from './keyboardFocusScope';
 
 import STYLES from './BpkPopover.module.scss';
 
@@ -197,6 +197,8 @@ class BpkPopoverPortal extends Component<Props> {
         {typeof target !== 'function' && target}
         <Portal
           beforeClose={this.beforeClose}
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={classNames.join(' ')}
           isOpen={isOpen}
           onClose={this.onClose}

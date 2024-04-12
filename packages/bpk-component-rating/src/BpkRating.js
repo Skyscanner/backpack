@@ -17,13 +17,13 @@
  */
 /* @flow strict */
 
-import type { Node } from 'react';
 import PropTypes from 'prop-types';
+import type { Node } from 'react';
 
 import clamp from 'lodash.clamp';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import { RATING_SIZES, RATING_SCALES } from './common-types';
 
@@ -117,6 +117,8 @@ const BpkRating = (props: Props) => {
       <BpkText
         textStyle={valueTextSize}
         tagName="span"
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={valueStyles}
         aria-hidden="true"
       >
@@ -125,6 +127,8 @@ const BpkRating = (props: Props) => {
         {showScale && (
           <BpkText
             textStyle={scaleTextSize}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={scaleStyles}
             tagName="span"
             aria-hidden="true"
@@ -138,6 +142,8 @@ const BpkRating = (props: Props) => {
         {title && (
           <BpkText
             textStyle={titleTextSize}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={titleStyles}
             tagName="span"
             aria-hidden="true"
@@ -148,6 +154,8 @@ const BpkRating = (props: Props) => {
 
         {subtitle && (
           <BpkText
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={subtitleStyles}
             textStyle={subtitleTextSize}
             tagName="span"

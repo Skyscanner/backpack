@@ -20,13 +20,13 @@
 
 import PropTypes from 'prop-types';
 
-import SmallIcon from '../../bpk-component-icon/sm/star';
-import LargeIcon from '../../bpk-component-icon/lg/star';
-import OutlineSmallIcon from '../../bpk-component-icon/sm/star-outline';
-import OutlineLargeIcon from '../../bpk-component-icon/lg/star-outline';
-import HalfSmallIcon from '../../bpk-component-icon/sm/star-half';
-import HalfLargeIcon from '../../bpk-component-icon/lg/star-half';
 import { withRtlSupport } from '../../bpk-component-icon';
+import LargeIcon from '../../bpk-component-icon/lg/star';
+import HalfLargeIcon from '../../bpk-component-icon/lg/star-half';
+import OutlineLargeIcon from '../../bpk-component-icon/lg/star-outline';
+import SmallIcon from '../../bpk-component-icon/sm/star';
+import HalfSmallIcon from '../../bpk-component-icon/sm/star-half';
+import OutlineSmallIcon from '../../bpk-component-icon/sm/star-outline';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkStar.module.scss';
@@ -81,17 +81,28 @@ const BpkStar = (props: Props) => {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       <span className={containerClassNames} {...rest}>
-        <HalfIcon className={halfIconClassNames} />
+        <HalfIcon 
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={halfIconClassNames} />
       </span>
     );
   }
 
   return type === STAR_TYPES.FULL ? (
+    <Icon 
+    // TODO: className to be removed
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+    className={iconClassNames} 
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <Icon className={iconClassNames} {...rest} />
+    {...rest} />
   ) : (
+    <OutlineIcon 
+    // TODO: className to be removed
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+    className={iconClassNames} 
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <OutlineIcon className={iconClassNames} {...rest} />
+    {...rest} />
   );
 };
 

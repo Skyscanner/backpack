@@ -18,9 +18,9 @@
 
 import type { ComponentProps } from 'react';
 
+import { withButtonAlignment } from '../../bpk-component-icon';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ClearIcon from '../../bpk-component-icon/sm/close-circle';
-import { withButtonAlignment } from '../../bpk-component-icon';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkClearButton.module.scss';
@@ -51,6 +51,8 @@ const BpkClearButton = ({ className, label, onClick, ...rest }: Props) => {
     >
       <ClearButtonIcon
         focusable="false" // prevents focus on IE11
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-clear-button__icon')}
       />
     </button>

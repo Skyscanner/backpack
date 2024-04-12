@@ -22,17 +22,17 @@ import { Component } from 'react';
 
 import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { withAlignment } from '../../packages/bpk-component-icon';
+import AccountIcon from '../../packages/bpk-component-icon/lg/account';
+import BpkLabel from '../../packages/bpk-component-label';
+import BpkNudger, {
+  BpkConfigurableNudger,
+} from '../../packages/bpk-component-nudger';
+import { cssModules } from '../../packages/bpk-react-utils';
 import {
   action,
   BpkDarkExampleWrapper,
 } from '../bpk-storybook-utils';
-import BpkLabel from '../../packages/bpk-component-label';
-import { cssModules } from '../../packages/bpk-react-utils';
-import AccountIcon from '../../packages/bpk-component-icon/lg/account';
-import { withAlignment } from '../../packages/bpk-component-icon';
-import BpkNudger, {
-  BpkConfigurableNudger,
-} from '../../packages/bpk-component-nudger';
 
 import STYLES from './BpkNudgerStory.module.scss';
 

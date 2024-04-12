@@ -18,6 +18,7 @@
 
 import type { ChangeEvent, MouseEvent } from 'react';
 
+import BpkAriaLive from '../../bpk-component-aria-live';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -25,7 +26,6 @@ import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
-import BpkAriaLive from '../../bpk-component-aria-live';
 
 import {
   addMonths,
@@ -127,7 +127,10 @@ const BpkCalendarNav = ({
               disabled || !isWithinRange(prevMonth, { start: min, end: max })
             }
           >
-            <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
+            <ArrowLeftIcon 
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+            className={getClassName('bpk-calendar-nav__icon')} />
             <span className={getClassName('bpk-calendar-nav__text--hidden')}>
               {previousMonthLabel}
             </span>
@@ -179,6 +182,8 @@ const BpkCalendarNav = ({
             }
           >
             <ArrowRightIcon
+              // TODO: className to be removed
+              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
               className={getClassName('bpk-calendar-nav__icon')}
             />
             <span className={getClassName('bpk-calendar-nav__text--hidden')}>
