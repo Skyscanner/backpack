@@ -41,16 +41,16 @@ const BpkNudger = ({
   title,
   ...rest
 }: CommonProps) => {
-  
+
   const classNames = getClassName(title && 'bpk-nudger__container');
 
   return (
     <div className={classNames}>
       {title && (
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        <BpkLabel htmlFor={id} className={getClassName('bpk-nudger__label')}>
-          {icon}
+        <div className={getClassName('bpk-nudger__label')}>
+          <BpkLabel htmlFor={id}>
+            {icon}
+          </BpkLabel>
           <span
             // For a11y on IOS, role='text' forces label to be read in full. More info: https://axesslab.com/text-splitting/
             // eslint-disable-next-line jsx-a11y/aria-role
@@ -59,14 +59,14 @@ const BpkNudger = ({
           >
             <BpkText textStyle={TEXT_STYLES.heading5}>{title}</BpkText>
             {subtitle && (
-              // TODO: className to be removed
-              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-              <BpkText className={getClassName('bpk-nudger__label--subtitle')}>
-                {subtitle}
-              </BpkText>
+              <span className={getClassName('bpk-nudger__label--subtitle')}>
+                <BpkText>
+                  {subtitle}
+                </BpkText>
+              </span>
             )}
           </span>
-        </BpkLabel>
+        </div>
       )}
       <BpkConfigurableNudger
         inputClassName={getClassName('bpk-nudger__input--numeric')}
