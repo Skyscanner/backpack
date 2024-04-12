@@ -53,10 +53,15 @@ const BpkDismissibleChip = ({
       {...rest}
       leadingAccessoryView={leadingAccessoryView}
       disabled={false}
-      trailingAccessoryView={<CloseCircleIconSm className={iconClassNames} />}
+      trailingAccessoryView={<CloseCircleIconSm 
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={iconClassNames} />}
       selected
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames}
     />
   );

@@ -127,6 +127,26 @@
       }
     ],
     // Temp setting this to warn whilst migration to TS is in progress.
-    "no-undef": "warn"
-  }
+    "no-undef": "warn",
+    "@skyscanner/rules/forbid-component-props": [
+      "error",
+      {
+        "forbid": [
+          {
+            "propName": "className",
+            "message":
+              "Prop {{prop}} is forbidden. See ./decisions/className.md"
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*test*", "*examples*"],
+      "rules": {
+        "@skyscanner/rules/forbid-component-props": ["off"]
+      }
+    }
+  ]
 }

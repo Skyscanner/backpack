@@ -46,8 +46,15 @@ const BpkSpinner = (props: Props) => {
     className,
   );
 
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  return <SmSpinner className={classNames} {...rest} />;
+  return (
+    <SmSpinner
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      className={classNames}
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    />
+  );
 };
 
 BpkSpinner.propTypes = {
