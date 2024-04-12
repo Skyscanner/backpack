@@ -28,6 +28,9 @@
 
 .bpk-chip-group {
   display: flex;
+  margin: 0;
+  padding: 0;
+  border: none;
   gap: tokens.bpk-spacing-md();
 
   &--rail {

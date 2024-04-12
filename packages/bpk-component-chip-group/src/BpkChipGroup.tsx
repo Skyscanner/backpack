@@ -37,7 +37,6 @@ export const CHIP_GROUP_TYPES = {
   wrap: 'wrap',
 };
 
-
 export const CHIP_COMPONENT = {
   selectable: 'selectable',
   dismissible: 'dismissible',
@@ -56,7 +55,6 @@ export type ChipGroupType = (typeof CHIP_GROUP_TYPES)[keyof typeof CHIP_GROUP_TY
 export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
 export type ChipComponentType = (typeof CHIP_COMPONENT)[keyof typeof CHIP_COMPONENT];
 
-
 export type SingleSelectChipItem = {
   text: string;
   accessibilityLabel?: string;
@@ -74,7 +72,6 @@ export type ChipItem = {
 
 export type CommonProps = {
   ariaLabel?: string;
-  ariaLabelledBy?: string;
   type?: ChipGroupType;
   className?: string | null;
   chipStyle?: ChipStyleType;
@@ -89,7 +86,6 @@ export type ChipGroupProps = {
 
 const BpkChipGroup = ({
   ariaLabel,
-  ariaLabelledBy,
   ariaMultiselectable = true,
   chipStyle = CHIP_TYPES.default,
   chips,
@@ -97,11 +93,6 @@ const BpkChipGroup = ({
   stickyChip,
   type = CHIP_GROUP_TYPES.rail,
 }: ChipGroupProps) => {
-  if ((ariaLabel && ariaLabelledBy) || (!ariaLabel && !ariaLabelledBy)) {
-    // eslint-disable-next-line no-console
-    console.warn("BpkChipGroup: Bad combination of aria props. Exactly one of props ariaLabel or ariaLabelledBy should be used.")
-  }
-
   const scrollContainerRef = useRef<HTMLElement | null>(null);
 
   const containerClassnames = getClassName(
@@ -143,7 +134,7 @@ const BpkChipGroup = ({
             onClick(!selected, index);
           }
         }}
-        role="option"
+        role={ariaMultiselectable ? 'checkbox' : 'radio'}
         leadingAccessoryView={leadingAccessoryView}
         {...rest}
       >
@@ -152,7 +143,6 @@ const BpkChipGroup = ({
     );
   }
 
-  // TODO: Fix focus indicators being cutoff when type = rail
   const wrapRailInScroll = (children: ReactElement) =>
     type === CHIP_GROUP_TYPES.rail ? (
       <BpkMobileScrollContainer
@@ -175,23 +165,22 @@ const BpkChipGroup = ({
         <div className={stickyChipContainerClassnames}>
           <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
             {(isDesktop) => renderChipItem({
-              ...stickyChip,
+              role: 'button',
               component: isDesktop ? CHIP_COMPONENT.selectable : CHIP_COMPONENT.icon,
               leadingAccessoryView: <FilterIconSm />,
+              ...stickyChip,
             }, -1)}
           </BpkBreakpoint>
         </div>
       }
       {wrapRailInScroll(
-        <div className={chipGroupClassNames}
-         role="listbox"
-         aria-orientation="horizontal"
-         aria-multiselectable={ariaMultiselectable}
-         aria-label={ariaLabel}
-         aria-labelledby={ariaLabelledBy}
+        <fieldset
+          className={chipGroupClassNames}
+          role={ariaMultiselectable ? 'group' : 'radiogroup'}
         >
+          {ariaLabel && <legend className='visually-hidden'>{ariaLabel}</legend>}
           {chips.map((chip, index) => renderChipItem(chip, index))}
-        </div>
+        </fieldset>,
       )}
       {type === CHIP_GROUP_TYPES.rail && (
         <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
@@ -217,10 +206,9 @@ export const BpkChipGroupState = ({ chips, ...rest }: ChipGroupProps) => {
       nextSelectedChips[selectedIndex] = selected;
       setSelectedChips(nextSelectedChips);
     },
-  }))
+  }));
 
   return <BpkChipGroup chips={statefulChips} {...rest} />
 };
-
 
 export default BpkChipGroup;
