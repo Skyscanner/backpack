@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { CHIP_GROUP_TYPES } from './BpkChipGroup';
 import BpkChipGroupSingleSelect, { BpkChipGroupSingleSelectState } from './BpkChipGroupSingleSelect';
@@ -96,9 +96,9 @@ describe('BpkChipGroupSingleSelect', () => {
       />,
     );
 
-    expect(screen.getByRole('option', { name: 'Berlin' })).toHaveClass('bpk-chip--default-selected')
-    expect(screen.getByRole('option', { name: 'London' })).not.toHaveClass('bpk-chip--default-selected')
-    expect(screen.getByRole('option', { name: 'Florence' })).not.toHaveClass('bpk-chip--default-selected')
+    expect(screen.getByRole('radio', { name: 'Berlin' })).toHaveClass('bpk-chip--default-selected')
+    expect(screen.getByRole('radio', { name: 'London' })).not.toHaveClass('bpk-chip--default-selected')
+    expect(screen.getByRole('radio', { name: 'Florence' })).not.toHaveClass('bpk-chip--default-selected')
   });
 });
 
@@ -125,7 +125,7 @@ describe('BpkChipGroupSingleSelectState', () => {
       />,
     );
 
-    const chip = screen.getByRole('option', { name: 'Berlin' });
+    const chip = screen.getByRole('radio', { name: 'Berlin' });
 
     await user.click(chip);
 
@@ -142,13 +142,13 @@ describe('BpkChipGroupSingleSelectState', () => {
       />,
     );
 
-    const berlinChip = screen.getByRole('option', { name: 'Berlin' });
+    const berlinChip = screen.getByRole('radio', { name: 'Berlin' });
 
     await user.click(berlinChip);
 
     expect(berlinChip).toHaveClass('bpk-chip--default-selected');
 
-    const londonChip = screen.getByRole('option', { name: 'London' });
+    const londonChip = screen.getByRole('radio', { name: 'London' });
 
     await user.click(londonChip);
 
@@ -166,7 +166,7 @@ describe('BpkChipGroupSingleSelectState', () => {
       />,
     );
 
-    const chip = screen.getByRole('option', { name: 'Berlin' });
+    const chip = screen.getByRole('radio', { name: 'Berlin' });
 
     await user.click(chip);
 
@@ -190,7 +190,7 @@ describe('BpkChipGroupSingleSelectState', () => {
       />,
     );
 
-    await user.click(screen.getByRole('option', { name: 'Berlin' }));
+    await user.click(screen.getByRole('radio', { name: 'Berlin' }));
 
     expect(onItemClick).toHaveBeenCalledTimes(1);
     expect(onItemClick).toHaveBeenCalledWith(chips[1], true, 1);
@@ -205,7 +205,7 @@ describe('BpkChipGroupSingleSelectState', () => {
       />,
     );
 
-    const chip = screen.getByRole('option', { name: 'Berlin' });
+    const chip = screen.getByRole('radio', { name: 'Berlin' });
 
     expect(chip).toHaveClass('bpk-chip--default-selected');
   });

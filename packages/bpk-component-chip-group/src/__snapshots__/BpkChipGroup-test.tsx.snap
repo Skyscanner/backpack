@@ -5,13 +5,15 @@ exports[`BpkChipGroup should render correctly with all chip component types 1`] 
   <div
     class="bpk-chip-group-container"
   >
-    <div
-      aria-label="a11y label"
-      aria-multiselectable="true"
-      aria-orientation="horizontal"
+    <fieldset
       class="bpk-chip-group bpk-chip-group--wrap"
-      role="listbox"
+      role="group"
     >
+      <legend
+        class="visually-hidden"
+      >
+        a11y label
+      </legend>
       <button
         class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
         role="button"
@@ -42,7 +44,7 @@ exports[`BpkChipGroup should render correctly with all chip component types 1`] 
       <button
         aria-checked="false"
         class="bpk-chip bpk-chip--default"
-        role="option"
+        role="checkbox"
         title="Berlin"
         type="button"
       >
@@ -69,7 +71,7 @@ exports[`BpkChipGroup should render correctly with all chip component types 1`] 
       <button
         aria-checked="false"
         class="bpk-chip bpk-chip--default"
-        role="option"
+        role="checkbox"
         title="Florence"
         type="button"
       >
@@ -79,7 +81,7 @@ exports[`BpkChipGroup should render correctly with all chip component types 1`] 
           Florence
         </span>
       </button>
-    </div>
+    </fieldset>
   </div>
 </DocumentFragment>
 `;
@@ -284,16 +286,19 @@ exports[`BpkChipGroup should render correctly with type = wrap 1`] = `
   <div
     class="bpk-chip-group-container"
   >
-    <div
-      aria-multiselectable="true"
-      aria-orientation="horizontal"
+    <fieldset
       class="bpk-chip-group bpk-chip-group--wrap"
-      role="listbox"
+      role="group"
     >
+      <legend
+        class="visually-hidden"
+      >
+        a11y label
+      </legend>
       <button
         aria-checked="false"
         class="bpk-chip bpk-chip--default"
-        role="option"
+        role="checkbox"
         title="London"
         type="button"
       >
@@ -306,7 +311,7 @@ exports[`BpkChipGroup should render correctly with type = wrap 1`] = `
       <button
         aria-checked="true"
         class="bpk-chip bpk-chip--default bpk-chip--default-selected"
-        role="option"
+        role="checkbox"
         title="Berlin"
         type="button"
       >
@@ -319,7 +324,7 @@ exports[`BpkChipGroup should render correctly with type = wrap 1`] = `
       <button
         aria-checked="false"
         class="bpk-chip bpk-chip--default"
-        role="option"
+        role="checkbox"
         title="Florence"
         type="button"
       >
@@ -332,7 +337,7 @@ exports[`BpkChipGroup should render correctly with type = wrap 1`] = `
       <button
         aria-checked="false"
         class="bpk-chip bpk-chip--default"
-        role="option"
+        role="checkbox"
         title="Stockholm"
         type="button"
       >
@@ -342,76 +347,7 @@ exports[`BpkChipGroup should render correctly with type = wrap 1`] = `
           Stockholm
         </span>
       </button>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkChipGroup should support custom class names 1`] = `
-<DocumentFragment>
-  <div
-    class="custom-classname bpk-chip-group-container"
-  >
-    <div
-      aria-label="a11y label"
-      aria-multiselectable="true"
-      aria-orientation="horizontal"
-      class="bpk-chip-group bpk-chip-group--wrap"
-      role="listbox"
-    >
-      <button
-        aria-checked="false"
-        class="bpk-chip bpk-chip--default"
-        role="option"
-        title="London"
-        type="button"
-      >
-        <span
-          class="bpk-text bpk-text--footnote"
-        >
-          London
-        </span>
-      </button>
-      <button
-        aria-checked="true"
-        class="bpk-chip bpk-chip--default bpk-chip--default-selected"
-        role="option"
-        title="Berlin"
-        type="button"
-      >
-        <span
-          class="bpk-text bpk-text--footnote"
-        >
-          Berlin
-        </span>
-      </button>
-      <button
-        aria-checked="false"
-        class="bpk-chip bpk-chip--default"
-        role="option"
-        title="Florence"
-        type="button"
-      >
-        <span
-          class="bpk-text bpk-text--footnote"
-        >
-          Florence
-        </span>
-      </button>
-      <button
-        aria-checked="false"
-        class="bpk-chip bpk-chip--default"
-        role="option"
-        title="Stockholm"
-        type="button"
-      >
-        <span
-          class="bpk-text bpk-text--footnote"
-        >
-          Stockholm
-        </span>
-      </button>
-    </div>
+    </fieldset>
   </div>
 </DocumentFragment>
 `;

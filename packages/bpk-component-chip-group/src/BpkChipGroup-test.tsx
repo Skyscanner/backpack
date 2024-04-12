@@ -150,7 +150,7 @@ describe('BpkChipGroupState', () => {
       />,
     );
 
-    const chip = screen.getByRole('option', { name: 'Berlin' });
+    const chip = screen.getByRole('checkbox', { name: 'Berlin' });
     await user.click(chip);
 
     expect(chip).toHaveClass('bpk-chip--default-selected');
@@ -166,8 +166,8 @@ describe('BpkChipGroupState', () => {
       />,
     );
 
-    const berlinChip = screen.getByRole('option', { name: 'Berlin' });
-    const londonChip = screen.getByRole('option', { name: 'London' });
+    const berlinChip = screen.getByRole('checkbox', { name: 'Berlin' });
+    const londonChip = screen.getByRole('checkbox', { name: 'London' });
 
     await user.click(berlinChip);
     await user.click(londonChip);
@@ -186,7 +186,7 @@ describe('BpkChipGroupState', () => {
       />,
     );
 
-    const chip = screen.getByRole('option', { name: 'Berlin' });
+    const chip = screen.getByRole('checkbox', { name: 'Berlin' });
     await user.click(chip);
 
     expect(chip).toHaveClass('bpk-chip--default-selected');
@@ -206,7 +206,7 @@ describe('BpkChipGroupState', () => {
       />,
     );
 
-    await user.click(screen.getByRole('option', { name: 'Berlin' }));
+    await user.click(screen.getByRole('checkbox', { name: 'Berlin' }));
 
     const { onClick } = chips[1];
 
@@ -230,7 +230,7 @@ describe('BpkChipGroupState', () => {
       />,
     );
 
-    const chip = screen.getByRole('option', { name: 'Berlin' });
+    const chip = screen.getByRole('checkbox', { name: 'Berlin' });
 
     expect(chip).toHaveClass('bpk-chip--default-selected');
   });

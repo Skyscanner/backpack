@@ -1,235 +1,151 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nudger should render correctly 1`] = `
-<DocumentFragment>
-  <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
-    disabled=""
-    type="button"
-  >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-    >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
-        />
-      </svg>
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`Nudger should render correctly for chip style: default 1`] = `
-<DocumentFragment>
-  <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
-    disabled=""
-    type="button"
-  >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-    >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
-        />
-      </svg>
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`Nudger should render correctly for chip style: on-dark 1`] = `
-<DocumentFragment>
-  <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
-    disabled=""
-    type="button"
-  >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-    >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
-        />
-      </svg>
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`Nudger should render correctly for chip style: on-image 1`] = `
-<DocumentFragment>
-  <button
-    class="bpk-button bpk-button--icon-only bpk-button--primary-on-dark bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
-    disabled=""
-    type="button"
-  >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-    >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
-        />
-      </svg>
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
 exports[`Nudger should render correctly for onDark chip style 1`] = `
 <DocumentFragment>
-  <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
-    disabled=""
-    type="button"
+  <div
+    class="bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
   >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    <button
+      class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark"
+      disabled=""
+      type="button"
     >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
-        <path
-          clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
-        />
-      </svg>
-    </span>
-  </button>
+        <svg
+          aria-hidden="true"
+          style="width: 1rem; height: 1rem;"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Nudger should render correctly when leading=false and isRtl=false 1`] = `
 <DocumentFragment>
-  <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
-    disabled=""
-    type="button"
+  <div
+    class="bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
   >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    <button
+      class="bpk-button bpk-button--icon-only bpk-button--secondary"
+      disabled=""
+      type="button"
     >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
-        <path
-          clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
-        />
-      </svg>
-    </span>
-  </button>
+        <svg
+          aria-hidden="true"
+          style="width: 1rem; height: 1rem;"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Nudger should render correctly when leading=false and isRtl=true 1`] = `
 <DocumentFragment>
-  <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
-    disabled=""
-    type="button"
+  <div
+    class="bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
   >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    <button
+      class="bpk-button bpk-button--icon-only bpk-button--secondary"
+      disabled=""
+      type="button"
     >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
-        <path
-          clip-rule="evenodd"
-          d="M21 12a1.5 1.5 0 01-1.5 1.5H8.121l4.94 4.94a1.5 1.5 0 01-2.122 2.12l-7.5-7.5a1.5 1.5 0 010-2.12l7.5-7.5a1.5 1.5 0 012.122 2.12L8.12 10.5H19.5A1.5 1.5 0 0121 12z"
-        />
-      </svg>
-    </span>
-  </button>
+        <svg
+          aria-hidden="true"
+          style="width: 1rem; height: 1rem;"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M21 12a1.5 1.5 0 01-1.5 1.5H8.121l4.94 4.94a1.5 1.5 0 01-2.122 2.12l-7.5-7.5a1.5 1.5 0 010-2.12l7.5-7.5a1.5 1.5 0 012.122 2.12L8.12 10.5H19.5A1.5 1.5 0 0121 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Nudger should render correctly when leading=true and isRtl=false 1`] = `
 <DocumentFragment>
-  <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-chip-group-nudger bpk-chip-group-nudger--leading bpk-chip-group-nudger--hidden"
-    disabled=""
-    type="button"
+  <div
+    class="bpk-chip-group-nudger bpk-chip-group-nudger--leading bpk-chip-group-nudger--hidden"
   >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    <button
+      class="bpk-button bpk-button--icon-only bpk-button--secondary"
+      disabled=""
+      type="button"
     >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
-        <path
-          clip-rule="evenodd"
-          d="M21 12a1.5 1.5 0 01-1.5 1.5H8.121l4.94 4.94a1.5 1.5 0 01-2.122 2.12l-7.5-7.5a1.5 1.5 0 010-2.12l7.5-7.5a1.5 1.5 0 012.122 2.12L8.12 10.5H19.5A1.5 1.5 0 0121 12z"
-        />
-      </svg>
-    </span>
-  </button>
+        <svg
+          aria-hidden="true"
+          style="width: 1rem; height: 1rem;"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M21 12a1.5 1.5 0 01-1.5 1.5H8.121l4.94 4.94a1.5 1.5 0 01-2.122 2.12l-7.5-7.5a1.5 1.5 0 010-2.12l7.5-7.5a1.5 1.5 0 012.122 2.12L8.12 10.5H19.5A1.5 1.5 0 0121 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Nudger should render correctly when leading=true and isRtl=true 1`] = `
 <DocumentFragment>
-  <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-chip-group-nudger bpk-chip-group-nudger--leading bpk-chip-group-nudger--hidden"
-    disabled=""
-    type="button"
+  <div
+    class="bpk-chip-group-nudger bpk-chip-group-nudger--leading bpk-chip-group-nudger--hidden"
   >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    <button
+      class="bpk-button bpk-button--icon-only bpk-button--secondary"
+      disabled=""
+      type="button"
     >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
       >
-        <path
-          clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
-        />
-      </svg>
-    </span>
-  </button>
+        <svg
+          aria-hidden="true"
+          style="width: 1rem; height: 1rem;"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
 </DocumentFragment>
 `;
