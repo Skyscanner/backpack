@@ -1,0 +1,80 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
+
+.bpk-skeleton {
+  &__image {
+    width: tokens.$bpk-one-pixel-rem * 96;
+    height: tokens.$bpk-one-pixel-rem * 96;
+
+    &--rounded {
+      border-radius: tokens.$bpk-border-radius-sm;
+    }
+  }
+
+  &__headline {
+    width: tokens.$bpk-one-pixel-rem * 80;
+    border-radius: tokens.$bpk-border-radius-xs;
+
+    &--small {
+      height: tokens.$bpk-one-pixel-rem * 8;
+      border-radius: tokens.$bpk-border-radius-xs * 0.5;
+    }
+
+    &--default {
+      height: tokens.$bpk-one-pixel-rem * 16;
+      border-radius: tokens.$bpk-border-radius-xs;
+    }
+
+    &--large {
+      height: tokens.$bpk-one-pixel-rem * 32;
+      border-radius: tokens.$bpk-border-radius-xs;
+    }
+  }
+
+  &__circle {
+    border-radius: 50%;
+
+    &--small {
+      width: tokens.$bpk-one-pixel-rem * 32;
+      height: tokens.$bpk-one-pixel-rem * 32;
+    }
+
+    &--default {
+      width: tokens.$bpk-one-pixel-rem * 48;
+      height: tokens.$bpk-one-pixel-rem * 48;
+    }
+  }
+  &__bodyText {
+    height: tokens.$bpk-one-pixel-rem * 8;
+    border-radius: tokens.$bpk-border-radius-xs * 0.5;
+
+    &--small {
+      width: tokens.$bpk-one-pixel-rem * 114;
+    }
+
+    &--default {
+      width: tokens.$bpk-one-pixel-rem * 171;
+    }
+
+    &--large {
+      width: tokens.$bpk-one-pixel-rem * 200;
+    }
+  }
+}
