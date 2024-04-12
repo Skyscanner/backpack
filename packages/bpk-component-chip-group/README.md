@@ -47,6 +47,7 @@ const VerticalsExample = () => {
     <BpkChipGroup
       type={CHIP_GROUP_TYPES.rail}
       ariaLabel="Filter your search"
+      ariaMultiselectable={false}
       chips={[{
         text: 'Flights',
         selected: route === 'flights',
