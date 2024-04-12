@@ -85,7 +85,7 @@ const BpkSkeleton = (props: ComponentProps) => {
   }
 
   return (
-    <BpkBaseSkeleton className={classNames.join(' ')} ariaLabel={ariaLabel} styleObj={styleObj} />
+    <BpkBaseSkeleton skeletonStyle={classNames.join(' ')} ariaLabel={ariaLabel} styleObj={styleObj} />
   )
 };
 

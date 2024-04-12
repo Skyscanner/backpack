@@ -25,17 +25,17 @@ import STYLES from './BpkBaseSkeleton.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  className: string;
+  skeletonStyle: string;
   ariaLabel: string;
   styleObj?: CUSTOM_SIZE_TYPE;
 };
 
 const BpkBaseSkeleton = ({
   ariaLabel,
-  className,
+  skeletonStyle,
   styleObj = undefined,
  }: Props) => (
-    <div role="status" aria-label={ariaLabel} className={getClassName('bpk-skeleton', className)} style={styleObj}  />
+    <div role="status" aria-label={ariaLabel} className={getClassName('bpk-skeleton', skeletonStyle)} style={styleObj}  />
   );
 
 export default BpkBaseSkeleton;
