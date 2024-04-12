@@ -16,6 +16,31 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactChildren, SyntheticEvent } from 'react';
 
-export { default } from './src/BpkButtonFeatured';
+export type Props = {
+  children: ReactChildren,
+  href?: string,
+  className?: string,
+  disabled: boolean,
+  onClick?: (event: SyntheticEvent) => unknown,
+  submit: boolean,
+  large: boolean,
+  iconOnly: boolean,
+  blank: boolean,
+  rel?: string,
+};
+
+const defaultProps = {
+  href: null,
+  className: null,
+  disabled: false,
+  onClick: null,
+  submit: false,
+  large: false,
+  iconOnly: false,
+  blank: false,
+  rel: null,
+};
+
+export { defaultProps };

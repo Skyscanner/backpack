@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import BpkButton, {type Props} from './src/BpkButton';
 
-/* @flow strict */
-
-export { default } from './src/BpkButtonLink';
+const BpkButtonLinkOnDark = (props: Props) => <BpkButton {...props} linkOnDark />
+export default BpkButtonLinkOnDark;

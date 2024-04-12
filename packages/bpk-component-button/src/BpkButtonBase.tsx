@@ -16,24 +16,15 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import { type Props, propTypes, defaultProps } from './common-types';
+import { BUTTON_TYPES } from './BpkButtonV2/common-types';
+
+import type { Props } from './common-types';
 
 import COMMON_STYLES from './BpkButtonBase.module.scss';
 
-// This was originally depended upon from the bpk-react-utils package, however
-// we decided to inline it in this particular component so as not to bloat the
-// the bundles of consumers who are not yet on webpack 2
-// We'll revisit this again soon.
-const cssModules =
-  (styles: {} = {}) =>
-  (className: string) =>
-    styles[className] ? styles[className] : className;
-
-const getCommonClassName = cssModules(COMMON_STYLES);
-
-const BpkButton = (props: Props) => {
+type ValueOf<T> = T[keyof T];
+const BpkButton = (props: Props & {type?: ValueOf<typeof BUTTON_TYPES>}) => {
   const {
     blank,
     children,
@@ -45,20 +36,47 @@ const BpkButton = (props: Props) => {
     onClick,
     rel: propRel,
     submit,
+    type,
     ...rest
   } = props;
 
-  const classNames = [getCommonClassName('bpk-button')];
+  const classNames = [];
+  if(type === undefined){
+    classNames.push(COMMON_STYLES['bpk-button']);
+
+  }
+  if(type === BUTTON_TYPES.featured){
+    classNames.push(COMMON_STYLES.featured);
+  }
+  if(type === BUTTON_TYPES.destructive){
+    classNames.push(COMMON_STYLES.destructive);
+  }
+  if(type === BUTTON_TYPES.link){
+    classNames.push(COMMON_STYLES.link);
+  }
+  if(type === BUTTON_TYPES.linkOnDark){
+    classNames.push(COMMON_STYLES.linkOnDark);
+  }
+  if(type === BUTTON_TYPES.primaryOnDark){
+    classNames.push(COMMON_STYLES.primaryOnDark);
+  }
+  if(type === BUTTON_TYPES.primaryOnLight){
+    classNames.push(COMMON_STYLES.primaryOnDark);
+  }
+  if(type === BUTTON_TYPES.secondary){
+    classNames.push(COMMON_STYLES.secondary);
+  }
+  if(type === BUTTON_TYPES.secondaryOnDark){
+    classNames.push(COMMON_STYLES.secondaryOnDark);
+  }
 
   if (large) {
-    classNames.push(getCommonClassName('bpk-button--large'));
+    classNames.push(COMMON_STYLES['bpk-button--large']);
   }
 
   if (iconOnly) {
     classNames.push(
-      getCommonClassName(
-        large ? 'bpk-button--large-icon-only' : 'bpk-button--icon-only',
-      ),
+      COMMON_STYLES[large ? 'bpk-button--large-icon-only' : 'bpk-button--icon-only'],
     );
   }
   if (className) {
@@ -72,12 +90,11 @@ const BpkButton = (props: Props) => {
 
   if (!disabled && href) {
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         className={classNameFinal}
         onClick={onClick}
-        target={target}
+        target={target || undefined}
         rel={rel}
         {...rest}
       >
@@ -88,10 +105,10 @@ const BpkButton = (props: Props) => {
 
   const buttonType = submit ? 'submit' : 'button';
 
-  /* eslint-disable react/button-has-type */
+
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <button
+      // eslint-disable-next-line react/button-has-type
       type={buttonType}
       disabled={disabled}
       className={classNameFinal}
@@ -101,11 +118,8 @@ const BpkButton = (props: Props) => {
       {children}
     </button>
   );
-  /* eslint-enable */
+
 };
 
-BpkButton.propTypes = { ...propTypes };
-BpkButton.defaultProps = { ...defaultProps };
-
 export default BpkButton;
-export { cssModules };
+export const cssModules = () => {}

@@ -16,16 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkButton, {type Props} from './src/BpkButton';
 
-import BpkButtonBase from './BpkButtonBase';
-import { type Props, defaultProps, propTypes } from './common-types';
-
-// TODO: BpkButtonBase has the primary button style as it wasn't removed to
-// avoid a breaking change in the mixin. Review after this is tested.
-const BpkButtonPrimary = (props: Props) => <BpkButtonBase {...props} />;
-
-BpkButtonPrimary.propTypes = { ...propTypes };
-BpkButtonPrimary.defaultProps = { ...defaultProps };
-
-export default BpkButtonPrimary;
+const BpkButtonLink = (props: Props) => <BpkButton {...props} link />
+export default BpkButtonLink;
