@@ -370,15 +370,19 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
           <span
             class="bpk-modal__accessory-view"
           >
-            <button
-              class="bpk-link bpk-navigation-bar-button-link bpk-navigation-bar-button-link--default bpk-modal__leading-button"
-              label="Close"
-              type="button"
+            <span
+              class="bpk-modal__leading-button"
             >
-              <div>
-                Testing
-              </div>
-            </button>
+              <button
+                class="bpk-link"
+                label="Close"
+                type="button"
+              >
+                <div>
+                  Testing
+                </div>
+              </button>
+            </span>
           </span>
         </div>
         <h2
