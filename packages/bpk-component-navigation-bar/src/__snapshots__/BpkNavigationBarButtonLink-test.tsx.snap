@@ -2,11 +2,15 @@
 
 exports[`BpkNavigationButtonLink should render correctly 1`] = `
 <DocumentFragment>
-  <button
-    class="bpk-link bpk-navigation-bar-button-link bpk-navigation-bar-button-link--default some-class"
-    type="button"
+  <span
+    class="some-class"
   >
-    Test
-  </button>
+    <button
+      class="bpk-link"
+      type="button"
+    >
+      Test
+    </button>
+  </span>
 </DocumentFragment>
 `;
