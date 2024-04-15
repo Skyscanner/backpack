@@ -48,13 +48,13 @@ const BpkLargeSpinner = (props: Props) => {
   );
 
   return (
-    <LgSpinner
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={classNames}
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-      {...rest}
-    />
+    <span className={classNames}>
+      <LgSpinner
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+        {...rest}
+      />
+    </span>
+
   );
 };
 
