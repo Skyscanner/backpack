@@ -135,7 +135,7 @@
           {
             "propName": "className",
             "message":
-              "Prop {{prop}} is forbidden. See ./decisions/className.md"
+              "Prop {{prop}} is forbidden. See https://github.com/Skyscanner/eslint-plugin-rules?tab=readme-ov-file#forbid-component-props"
           }
         ]
       }
