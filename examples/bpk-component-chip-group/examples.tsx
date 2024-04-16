@@ -189,6 +189,17 @@ export const OnImageChipGroup = () => {
   );
 };
 
+export const BpkChipGroupWithLabel = () => (
+     <div className={getClassName('bpk-chip-group-examples__with-label')}>
+       <BpkChipGroupState
+         type={CHIP_GROUP_TYPES.rail}
+         chips={chips}
+         chipStyle={CHIP_TYPES.default}
+         label='Filter'
+         ariaLabel="Select cities to filter by"
+       />
+     </div>
+   );
 
 export const AllChipTypesGroup = () => {
   const [dismissed, setDismissed] = useState(false);
@@ -286,6 +297,10 @@ export const MixedExample = () => (
       On Image
     </BpkText>
     <OnImageChipGroup />
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+      With Label
+    </BpkText>
+    <BpkChipGroupWithLabel />
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
       Wrapped
     </BpkText>
