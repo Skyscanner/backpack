@@ -29,7 +29,7 @@ export type Props = {
   max: number
   min: number
   minDistance?: number,
-  step: number
+  step?: number
   onChange: (value: number[] | number) => void
   onAfterChange?: (value: number[] | number ) => void
   value: number[] | number
@@ -48,7 +48,7 @@ const BpkSlider = ({ ariaLabel, ariaValuetext, max, min, minDistance, onAfterCha
       defaultValue={defaultValue}
       min={min}
       max={max}
-      step={step}
+      step={step || 1}
       onValueChange={onChange}
       onValueCommit={onAfterChange}
       inverted={invert}

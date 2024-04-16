@@ -41,6 +41,47 @@ exports[`BpkSlider should render correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkSlider should render correctly with a "step" attribute 1`] = `
+<DocumentFragment>
+  <span
+    aria-disabled="false"
+    class="bpk-slider"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
+  >
+    <span
+      class="bpk-slider__track"
+      data-orientation="horizontal"
+    >
+      <span
+        class="bpk-slider__range"
+        data-orientation="horizontal"
+        style="left: 0%; right: 75%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(25% + 0px);"
+    >
+      <span
+        aria-label="min"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="25"
+        aria-valuetext="0"
+        class="bpk-slider__thumb"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
 exports[`BpkSlider should render correctly with a minimum distance between controls 1`] = `
 <DocumentFragment>
   <span

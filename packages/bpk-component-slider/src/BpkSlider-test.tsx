@@ -34,7 +34,6 @@ describe('BpkSlider', () => {
     min: 0,
     max: 100,
     value: 25,
-    step: 10,
     onChange: jest.fn(),
     onAfterChange: jest.fn(),
     ariaLabel: ['min', 'max'],
@@ -45,6 +44,12 @@ describe('BpkSlider', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with a "step" attribute', () => {
+    const { asFragment } = render(
+      <BpkSlider {...defaultProps} step={10} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 
   it('should render correctly with a range of values', () => {
     const { asFragment } = render(
