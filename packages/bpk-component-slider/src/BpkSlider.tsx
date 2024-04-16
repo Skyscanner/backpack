@@ -33,7 +33,7 @@ type Props = {
   onAfterChange: () => void
   value: number[] | number
   ariaLabel: string[]
-  ariaValueText?: string[]
+  ariaValueText: string[]
 }
 
 const BpkSlider = ({ariaLabel, ariaValueText, max, min, onAfterChange, onChange, step, value}: Props) => {
@@ -54,10 +54,11 @@ const BpkSlider = ({ariaLabel, ariaValueText, max, min, onAfterChange, onChange,
       <Slider.Track className={getClassName('bpk-slider__track')}>
         <Slider.Range className={getClassName('bpk-slider__range')} />
       </Slider.Track>
-      {defaultValue.map((el, index) => (
+      {defaultValue.map((index) => (
         <Slider.Thumb
+          key={ariaLabel[index]}
           aria-label={ariaLabel[index]}
-          aria-valuetext={ariaValueText ? ariaValueText[index] : `Value: ${el}`}
+          aria-valuetext={ariaValueText[index]}
           className={getClassName('bpk-slider__thumb')}
         />
       ))}
