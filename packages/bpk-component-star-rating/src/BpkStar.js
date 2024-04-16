@@ -81,28 +81,27 @@ const BpkStar = (props: Props) => {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       <span className={containerClassNames} {...rest}>
-        <HalfIcon 
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={halfIconClassNames} />
+        <span className={halfIconClassNames}>
+          <HalfIcon />
+        </span>
       </span>
     );
   }
 
   return type === STAR_TYPES.FULL ? (
-    <Icon 
-    // TODO: className to be removed
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    className={iconClassNames} 
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    {...rest} />
+    <span className={iconClassNames} >
+      <Icon 
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+      {...rest} />
+    </span>
+
   ) : (
-    <OutlineIcon 
-    // TODO: className to be removed
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    className={iconClassNames} 
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    {...rest} />
+    <span className={iconClassNames} >
+      <OutlineIcon 
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+      {...rest} />
+    </span>
+
   );
 };
 
