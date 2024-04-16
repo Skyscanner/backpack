@@ -19,9 +19,10 @@
 import { type MutableRefObject } from 'react';
 import type { ChipStyleType } from './BpkChipGroup';
 type Props = {
+    ariaLabel: string;
     chipStyle?: ChipStyleType;
     scrollContainerRef: MutableRefObject<HTMLElement | null>;
     leading?: boolean;
 };
-declare const Nudger: ({ chipStyle, leading, scrollContainerRef }: Props) => JSX.Element;
+declare const Nudger: ({ ariaLabel, chipStyle, leading, scrollContainerRef }: Props) => JSX.Element;
 export default Nudger;

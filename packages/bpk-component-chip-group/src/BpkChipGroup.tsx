@@ -73,8 +73,9 @@ export type CommonProps = {
   ariaLabel?: string;
   type?: ChipGroupType;
   chipStyle?: ChipStyleType;
+  // only required when type = rail
   leadingNudgerLabel?: string;
-  trailingNudgerLabel?: stirng;
+  trailingNudgerLabel?: string;
 };
 
 export type ChipGroupProps = {
@@ -89,9 +90,9 @@ const BpkChipGroup = ({
   ariaMultiselectable = true,
   chipStyle = CHIP_TYPES.default,
   chips,
-  leadingNudgerLabel,
+  leadingNudgerLabel = '',
   stickyChip,
-  trailingNudgerLabel,
+  trailingNudgerLabel = '',
   type = CHIP_GROUP_TYPES.rail,
 }: ChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);

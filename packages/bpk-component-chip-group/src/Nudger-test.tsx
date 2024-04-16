@@ -54,13 +54,13 @@ describe('Nudger', () => {
   ])('should render correctly when leading=%s and isRtl=%s', (leading, isRtl) => {
     mockIsRtl.mockReturnValue(isRtl);
 
-    const { asFragment } = render(<Nudger scrollContainerRef={mockScrollContainerRef} leading={leading} />);
+    const { asFragment } = render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} leading={leading} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly for onDark chip style', () => {
-    const { asFragment } = render(<Nudger scrollContainerRef={mockScrollContainerRef} chipStyle={CHIP_TYPES.onDark} />);
+    const { asFragment } = render(<Nudger ariaLabel="scroll" scrollContainerRef={mockScrollContainerRef} chipStyle={CHIP_TYPES.onDark} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

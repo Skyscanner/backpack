@@ -47,12 +47,14 @@ export type CommonProps = {
     ariaLabel?: string;
     type?: ChipGroupType;
     chipStyle?: ChipStyleType;
+    leadingNudgerLabel?: string;
+    trailingNudgerLabel?: string;
 };
 export type ChipGroupProps = {
     chips: ChipItem[];
     stickyChip?: ChipItem;
     ariaMultiselectable?: boolean;
 } & CommonProps;
-declare const BpkChipGroup: ({ ariaLabel, ariaMultiselectable, chipStyle, chips, stickyChip, type, }: ChipGroupProps) => JSX.Element;
+declare const BpkChipGroup: ({ ariaLabel, ariaMultiselectable, chipStyle, chips, leadingNudgerLabel, stickyChip, trailingNudgerLabel, type, }: ChipGroupProps) => JSX.Element;
 export declare const BpkChipGroupState: ({ chips, ...rest }: ChipGroupProps) => JSX.Element;
 export default BpkChipGroup;

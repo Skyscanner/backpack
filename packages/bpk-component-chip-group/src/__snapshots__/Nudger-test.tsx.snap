@@ -8,6 +8,7 @@ exports[`Nudger should render correctly for onDark chip style 1`] = `
     <button
       class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark"
       disabled=""
+      title="scroll"
       type="button"
     >
       <span
@@ -38,6 +39,7 @@ exports[`Nudger should render correctly when leading=false and isRtl=false 1`] =
     <button
       class="bpk-button bpk-button--icon-only bpk-button--secondary"
       disabled=""
+      title="nudge"
       type="button"
     >
       <span
@@ -68,6 +70,7 @@ exports[`Nudger should render correctly when leading=false and isRtl=true 1`] = 
     <button
       class="bpk-button bpk-button--icon-only bpk-button--secondary"
       disabled=""
+      title="nudge"
       type="button"
     >
       <span
@@ -98,6 +101,7 @@ exports[`Nudger should render correctly when leading=true and isRtl=false 1`] = 
     <button
       class="bpk-button bpk-button--icon-only bpk-button--secondary"
       disabled=""
+      title="nudge"
       type="button"
     >
       <span
@@ -128,6 +132,7 @@ exports[`Nudger should render correctly when leading=true and isRtl=true 1`] = `
     <button
       class="bpk-button bpk-button--icon-only bpk-button--secondary"
       disabled=""
+      title="nudge"
       type="button"
     >
       <span

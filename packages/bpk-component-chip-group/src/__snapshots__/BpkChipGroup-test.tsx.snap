@@ -264,6 +264,7 @@ exports[`BpkChipGroup should render correctly with type = rail 1`] = `
       <button
         class="bpk-button bpk-button--icon-only bpk-button--secondary"
         disabled=""
+        title=""
         type="button"
       >
         <span
@@ -364,6 +365,7 @@ exports[`BpkChipGroup should render correctly with type = rail 1`] = `
       <button
         class="bpk-button bpk-button--icon-only bpk-button--secondary"
         disabled=""
+        title=""
         type="button"
       >
         <span
