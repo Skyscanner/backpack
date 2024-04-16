@@ -30,8 +30,8 @@ type Props = {
   min: number
   minDistance?: number,
   step: number
-  onChange: () => void
-  onAfterChange: () => void
+  onChange: (value: number[] | number) => void
+  onAfterChange?: (value: number[] | number ) => void
   value: number[] | number
   ariaLabel: string[]
   ariaValuetext?: string[]
@@ -41,8 +41,6 @@ type Props = {
 const BpkSlider = ({ariaLabel, ariaValuetext, max, min, minDistance, onAfterChange, onChange, step, value, ...rest}: Props) => {
   const invert = isRTL();
   const defaultValue = Array.isArray(value) ? value : [value]
-
-
 
   return (
     <Slider.Root
