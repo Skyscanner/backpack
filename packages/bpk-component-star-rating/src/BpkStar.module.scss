@@ -26,8 +26,9 @@
 }
 
 .bpk-star {
-  // CLASSES HERE
   display: inline-block;
+  width: tokens.$bpk-icon-size-sm;
+  height: tokens.$bpk-icon-size-sm;
   vertical-align: text-bottom;
   fill: tokens.$bpk-text-disabled-day;
 
