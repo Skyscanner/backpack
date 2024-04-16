@@ -1,3 +1,4 @@
+/* eslint-disable @skyscanner/rules/forbid-component-props */
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -16,10 +17,7 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import Slider from 'react-slider';
+import * as Slider from '@radix-ui/react-slider';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
@@ -28,48 +26,44 @@ import STYLES from './BpkSlider.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  className?: string | null;
-  [rest: string]: any;
+  max: number
+  min: number
+  step: number
+  onChange: () => void
+  onAfterChange: () => void
+  value: number[] | number
+  ariaLabel: string[]
+  ariaValueText?: string[]
 }
 
-const BpkSlider = (props: Props) => {
-  const { className, ...rest } = props;
+const BpkSlider = ({ariaLabel, ariaValueText, max, min, onAfterChange, onChange, step, value}: Props) => {
   const invert = isRTL();
-  const classNames = [getClassName('bpk-slider')];
-  const thumbClassNames = [getClassName('bpk-slider__handle')];
-  const trackClassNames = [getClassName('bpk-slider__bar')];
-
-  const isRange = (rest.value || rest.defaultValue || []).length > 1;
-
-  if (isRange) {
-    classNames.push(getClassName('bpk-slider--range'));
-  }
-  if (className) {
-    classNames.push(getClassName(className));
-  }
+  const defaultValue = Array.isArray(value) ? value : [value]
 
   return (
-    <Slider
-      {...rest}
-      withTracks
-      snapDragDisabled={false}
-      invert={invert}
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={classNames.join(' ')}
-      thumbClassName={thumbClassNames.join(' ')}
-      thumbActiveClassName={getClassName('bpk-slider__handle--active')}
-      trackClassName={trackClassNames.join(' ')}
-    />
-  );
+    <Slider.Root
+      className={getClassName('bpk-slider')}
+      defaultValue={defaultValue}
+      min={min}
+      max={max}
+      step={step}
+      onValueChange={onChange}
+      onValueCommit={onAfterChange}
+      inverted={invert}
+    >
+      <Slider.Track className={getClassName('bpk-slider__track')}>
+        <Slider.Range className={getClassName('bpk-slider__range')} />
+      </Slider.Track>
+      {defaultValue.map((el, index) => (
+        <Slider.Thumb
+          aria-label={ariaLabel[index]}
+          aria-valuetext={ariaValueText ? ariaValueText[index] : `Value: ${el}`}
+          className={getClassName('bpk-slider__thumb')}
+        />
+      ))}
+      </Slider.Root>
+    );
 };
 
-BpkSlider.propTypes = {
-  className: PropTypes.string,
-};
-
-BpkSlider.defaultProps = {
-  className: null,
-};
 
 export default BpkSlider;
