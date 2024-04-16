@@ -25,7 +25,7 @@ import STYLES from './BpkSlider.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
+export type Props = {
   max: number
   min: number
   minDistance?: number,
@@ -38,7 +38,7 @@ type Props = {
   [rest: string]: any;
 }
 
-const BpkSlider = ({ariaLabel, ariaValuetext, max, min, minDistance, onAfterChange, onChange, step, value, ...rest}: Props) => {
+const BpkSlider = ({ ariaLabel, ariaValuetext, max, min, minDistance, onAfterChange, onChange, step, value, ...rest }: Props) => {
   const invert = isRTL();
   const defaultValue = Array.isArray(value) ? value : [value]
 
