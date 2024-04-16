@@ -84,14 +84,9 @@ class BpkThemeToggle extends Component {
     const { ...rest } = this.props;
     return (
       <div {...rest}>
-        <BpkLabel
-          // TODO: className to be removed
-          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={getClassName('bpk-theme-toggle__label')}
-          htmlFor={inputId}
-        >
-          Change theme
-        </BpkLabel>
+        <span className={getClassName('bpk-theme-toggle__label')}>
+          <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
+        </span>
         <BpkSelect
           id={inputId}
           name={inputId}
