@@ -29,27 +29,29 @@ import STYLES from './BpkNavigationBarIconButton.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  icon: ComponentType<any>,
-  label: string,
-  onClick: (event: MouseEvent<HTMLElement>) => void,
-  className?: string,
-  barStyle?: BarStyle,
-  children?: ReactNode,
-  [rest: string]: any, // Inexact rest. See decisions/inexact-rest.md
+  icon: ComponentType<any>;
+  label: string;
+  onClick: (event: MouseEvent<HTMLElement>) => void;
+  className?: string;
+  barStyle?: BarStyle;
+  children?: ReactNode;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, icon, ...rest }: Props) => (
-  <span className={className}>
-    <BpkCloseButton
-      customIcon={icon}
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={getClassName(
-        'bpk-navigation-bar-icon-button',
-        `bpk-navigation-bar-icon-button--${barStyle}`,
-      )}
-      {...rest}
-    />
+const BpkNavigationBarIconButton = ({
+  barStyle = BAR_STYLES.default,
+  className,
+  icon,
+  ...rest
+}: Props) => (
+  <span
+    className={getClassName(
+      'bpk-navigation-bar-icon-button',
+      `bpk-navigation-bar-icon-button--${barStyle}`,
+      className
+    )}
+  >
+    <BpkCloseButton customIcon={icon} {...rest} />
   </span>
 );
 
