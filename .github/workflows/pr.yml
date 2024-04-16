@@ -120,7 +120,7 @@ jobs:
         PR_NUMBER: ${{ github.event.pull_request.number }}
 
     - name: Deploy Storybook to backpack.github.io/storybook-prs
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
       with:
         personal_token: ${{ secrets.DEPLOY_TOKEN }}
