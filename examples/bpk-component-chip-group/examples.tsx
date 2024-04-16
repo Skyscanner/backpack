@@ -102,6 +102,8 @@ export const BpkChipGroupRail = () => (
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         ariaLabel="Select cities"
+        leadingNudgerLabel="Scroll back"
+        trailingNudgerLabel="Scroll forward"
       />
     </div>
   );
@@ -119,6 +121,8 @@ export const BpkChipGroupSticky = () => {
         chips={chips}
         stickyChip={stickyChip}
         ariaLabel="Select cities"
+        leadingNudgerLabel="Scroll back"
+        trailingNudgerLabel="Scroll forward"
       />
     </div>
   );
@@ -137,6 +141,8 @@ export const OnContrastChipGroup = () => {
         stickyChip={stickyChip}
         chipStyle={CHIP_TYPES.default}
         ariaLabel="Select cities"
+        leadingNudgerLabel="Scroll back"
+        trailingNudgerLabel="Scroll forward"
       />
     </div>
   );
@@ -156,6 +162,8 @@ export const OnDarkChipGroup = () => {
         stickyChip={stickyChip}
         chipStyle={CHIP_TYPES.onDark}
         ariaLabel="Select cities"
+        leadingNudgerLabel="Scroll back"
+        trailingNudgerLabel="Scroll forward"
       />
     </div>
   );
@@ -174,6 +182,8 @@ export const OnImageChipGroup = () => {
         stickyChip={stickyChip}
         chipStyle={CHIP_TYPES.onImage}
         ariaLabel="Select cities"
+        leadingNudgerLabel="Scroll back"
+        trailingNudgerLabel="Scroll forward"
       />
     </div>
   );
@@ -225,6 +235,8 @@ export const StateManagement = () => {
       type={CHIP_GROUP_TYPES.rail}
       ariaLabel="Filter your search"
       ariaMultiselectable={false}
+      leadingNudgerLabel="Scroll back"
+      trailingNudgerLabel="Scroll forward"
       chips={[{
         text: 'Flights',
         selected: route === 'flights',

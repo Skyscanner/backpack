@@ -28,6 +28,14 @@ const defaultProps = {
 }
 
 describe('BpkChipGroup', () => {
+  beforeEach(() => {
+    window.matchMedia = jest.fn().mockImplementation(() => ({
+      matches: true,
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+    }));
+  });
+
   const chips = [
     {
       text: 'London',
@@ -63,6 +71,8 @@ describe('BpkChipGroup', () => {
         chips={chips}
         type={CHIP_GROUP_TYPES.rail}
         ariaLabel="Filter cities"
+        leadingNudgerLabel="Scroll back"
+        trailingNudgerLabel="Scroll forward"
       />,
     );
     expect(asFragment()).toMatchSnapshot();

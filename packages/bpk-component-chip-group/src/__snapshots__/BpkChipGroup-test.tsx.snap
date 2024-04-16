@@ -92,12 +92,37 @@ exports[`BpkChipGroup should render correctly with sticky chip 1`] = `
     class="bpk-chip-group-container"
   >
     <div
+      class="bpk-chip-group-nudger bpk-chip-group-nudger--leading bpk-chip-group-nudger--hidden"
+    >
+      <button
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        disabled=""
+        title="Scroll back"
+        type="button"
+      >
+        <span
+          style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+        >
+          <svg
+            aria-hidden="true"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M21 12a1.5 1.5 0 01-1.5 1.5H8.121l4.94 4.94a1.5 1.5 0 01-2.122 2.12l-7.5-7.5a1.5 1.5 0 010-2.12l7.5-7.5a1.5 1.5 0 012.122 2.12L8.12 10.5H19.5A1.5 1.5 0 0121 12z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
       class="bpk-sticky-chip-container bpk-sticky-chip-container--default"
     >
       <button
-        aria-checked="false"
-        class="bpk-chip bpk-chip--default bpk-sticky-chip"
-        role="option"
+        class="bpk-chip bpk-chip--default"
+        role="button"
         title="Sort & Filter"
         type="button"
       >
@@ -133,17 +158,19 @@ exports[`BpkChipGroup should render correctly with sticky chip 1`] = `
         <div
           class="bpk-mobile-scroll-container__inner"
         >
-          <div
-            aria-label="Filter cities"
-            aria-multiselectable="true"
-            aria-orientation="horizontal"
+          <fieldset
             class="bpk-chip-group bpk-chip-group--rail"
-            role="listbox"
+            role="group"
           >
+            <legend
+              class="visually-hidden"
+            >
+              Filter cities
+            </legend>
             <button
               aria-checked="false"
               class="bpk-chip bpk-chip--default"
-              role="option"
+              role="checkbox"
               title="London"
               type="button"
             >
@@ -156,7 +183,7 @@ exports[`BpkChipGroup should render correctly with sticky chip 1`] = `
             <button
               aria-checked="true"
               class="bpk-chip bpk-chip--default bpk-chip--default-selected"
-              role="option"
+              role="checkbox"
               title="Berlin"
               type="button"
             >
@@ -169,7 +196,7 @@ exports[`BpkChipGroup should render correctly with sticky chip 1`] = `
             <button
               aria-checked="false"
               class="bpk-chip bpk-chip--default"
-              role="option"
+              role="checkbox"
               title="Florence"
               type="button"
             >
@@ -182,7 +209,7 @@ exports[`BpkChipGroup should render correctly with sticky chip 1`] = `
             <button
               aria-checked="false"
               class="bpk-chip bpk-chip--default"
-              role="option"
+              role="checkbox"
               title="Stockholm"
               type="button"
             >
@@ -192,9 +219,35 @@ exports[`BpkChipGroup should render correctly with sticky chip 1`] = `
                 Stockholm
               </span>
             </button>
-          </div>
+          </fieldset>
         </div>
       </div>
+    </div>
+    <div
+      class="bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
+    >
+      <button
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        disabled=""
+        title="Scroll forward"
+        type="button"
+      >
+        <span
+          style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+        >
+          <svg
+            aria-hidden="true"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -206,6 +259,31 @@ exports[`BpkChipGroup should render correctly with type = rail 1`] = `
     class="bpk-chip-group-container"
   >
     <div
+      class="bpk-chip-group-nudger bpk-chip-group-nudger--leading bpk-chip-group-nudger--hidden"
+    >
+      <button
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        disabled=""
+        type="button"
+      >
+        <span
+          style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+        >
+          <svg
+            aria-hidden="true"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M21 12a1.5 1.5 0 01-1.5 1.5H8.121l4.94 4.94a1.5 1.5 0 01-2.122 2.12l-7.5-7.5a1.5 1.5 0 010-2.12l7.5-7.5a1.5 1.5 0 012.122 2.12L8.12 10.5H19.5A1.5 1.5 0 0121 12z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
       class="bpk-mobile-scroll-container"
       style="height: auto;"
     >
@@ -215,16 +293,19 @@ exports[`BpkChipGroup should render correctly with type = rail 1`] = `
         <div
           class="bpk-mobile-scroll-container__inner"
         >
-          <div
-            aria-multiselectable="true"
-            aria-orientation="horizontal"
+          <fieldset
             class="bpk-chip-group bpk-chip-group--rail"
-            role="listbox"
+            role="group"
           >
+            <legend
+              class="visually-hidden"
+            >
+              a11y label
+            </legend>
             <button
               aria-checked="false"
               class="bpk-chip bpk-chip--default"
-              role="option"
+              role="checkbox"
               title="London"
               type="button"
             >
@@ -237,7 +318,7 @@ exports[`BpkChipGroup should render correctly with type = rail 1`] = `
             <button
               aria-checked="true"
               class="bpk-chip bpk-chip--default bpk-chip--default-selected"
-              role="option"
+              role="checkbox"
               title="Berlin"
               type="button"
             >
@@ -250,7 +331,7 @@ exports[`BpkChipGroup should render correctly with type = rail 1`] = `
             <button
               aria-checked="false"
               class="bpk-chip bpk-chip--default"
-              role="option"
+              role="checkbox"
               title="Florence"
               type="button"
             >
@@ -263,7 +344,7 @@ exports[`BpkChipGroup should render correctly with type = rail 1`] = `
             <button
               aria-checked="false"
               class="bpk-chip bpk-chip--default"
-              role="option"
+              role="checkbox"
               title="Stockholm"
               type="button"
             >
@@ -273,9 +354,34 @@ exports[`BpkChipGroup should render correctly with type = rail 1`] = `
                 Stockholm
               </span>
             </button>
-          </div>
+          </fieldset>
         </div>
       </div>
+    </div>
+    <div
+      class="bpk-chip-group-nudger bpk-chip-group-nudger--trailing bpk-chip-group-nudger--hidden"
+    >
+      <button
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        disabled=""
+        type="button"
+      >
+        <span
+          style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+        >
+          <svg
+            aria-hidden="true"
+            style="width: 1rem; height: 1rem;"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 </DocumentFragment>

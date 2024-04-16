@@ -73,6 +73,8 @@ export type CommonProps = {
   ariaLabel?: string;
   type?: ChipGroupType;
   chipStyle?: ChipStyleType;
+  leadingNudgerLabel?: string;
+  trailingNudgerLabel?: stirng;
 };
 
 export type ChipGroupProps = {
@@ -87,7 +89,9 @@ const BpkChipGroup = ({
   ariaMultiselectable = true,
   chipStyle = CHIP_TYPES.default,
   chips,
+  leadingNudgerLabel,
   stickyChip,
+  trailingNudgerLabel,
   type = CHIP_GROUP_TYPES.rail,
 }: ChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
@@ -152,7 +156,7 @@ const BpkChipGroup = ({
     <div className={containerClassnames}>
       {type === CHIP_GROUP_TYPES.rail && (
         <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-          <Nudger leading chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
+          <Nudger leading ariaLabel={leadingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
         </BpkBreakpoint>
       )}
       {type === CHIP_GROUP_TYPES.rail && stickyChip &&
@@ -178,7 +182,7 @@ const BpkChipGroup = ({
       )}
       {type === CHIP_GROUP_TYPES.rail && (
         <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-          <Nudger chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
+          <Nudger ariaLabel={trailingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
         </BpkBreakpoint>
       )}
     </div>

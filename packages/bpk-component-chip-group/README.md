@@ -48,6 +48,8 @@ const VerticalsExample = () => {
       type={CHIP_GROUP_TYPES.rail}
       ariaLabel="Filter your search"
       ariaMultiselectable={false}
+      leadingNudgerLabel="Scroll back"
+      trailingNudgerLabel="Scroll forward"
       chips={[{
         text: 'Flights',
         selected: route === 'flights',
@@ -84,6 +86,8 @@ const StatefulExample = () => (
   <BpkChipGroupState
     type={CHIP_GROUP_TYPES.rail}
     ariaLabel="Filter cities"
+    leadingNudgerLabel="Scroll back"
+    trailingNudgerLabel="Scroll forward"
     chips={[{
       text: 'London',
     }, {

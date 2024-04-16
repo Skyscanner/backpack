@@ -40,6 +40,14 @@ const chips = [
 ];
 
 describe('BpkChipGroup accessibility tests', () => {
+  beforeEach(() => {
+    window.matchMedia = jest.fn().mockImplementation(() => ({
+      matches: true,
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+    }));
+  });
+
   it('should not have programmatically-detectable accessibility issues when type = rail', async () => {
     const { container } = render(
       <BpkChipGroup
@@ -49,6 +57,8 @@ describe('BpkChipGroup accessibility tests', () => {
         }}
         type={CHIP_GROUP_TYPES.rail}
         ariaLabel="Select cities"
+        leadingNudgerLabel="Scroll back"
+        trailingNudgerLabel="Scroll forward"
       />
     );
     const results = await axe(container);
@@ -76,6 +86,8 @@ describe('BpkChipGroupSingleSelect accessibility tests', () => {
         type={CHIP_GROUP_TYPES.rail}
         selectedIndex={1}
         ariaLabel="Select a city"
+        leadingNudgerLabel="Scroll back"
+        trailingNudgerLabel="Scroll forward"
       />
     );
     const results = await axe(container);

@@ -28,6 +28,14 @@ const defaultProps = {
 }
 
 describe('BpkChipGroupSingleSelect', () => {
+  beforeEach(() => {
+    window.matchMedia = jest.fn().mockImplementation(() => ({
+      matches: true,
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+    }));
+  });
+
   const chips = [
     {
       text: 'London',
@@ -44,7 +52,15 @@ describe('BpkChipGroupSingleSelect', () => {
   ];
 
   it('should render correctly with type = rail', () => {
-    const { asFragment } = render(<BpkChipGroupSingleSelect chips={chips} type={CHIP_GROUP_TYPES.rail} ariaLabel="Filter cities" />);
+    const { asFragment } = render(
+      <BpkChipGroupSingleSelect
+        chips={chips}
+        type={CHIP_GROUP_TYPES.rail}
+        ariaLabel="Filter cities"
+        leadingNudgerLabel="Scroll back"
+        trailingNudgerLabel="Scroll forward"
+      />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 

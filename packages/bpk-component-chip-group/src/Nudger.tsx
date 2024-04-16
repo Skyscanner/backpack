@@ -42,6 +42,7 @@ const CHIP_STYLE_TO_BUTTON_STYLE = {
 
 
 type Props = {
+  ariaLabel: string;
   chipStyle?: ChipStyleType;
   scrollContainerRef: MutableRefObject<HTMLElement | null>;
   leading?: boolean;
@@ -54,7 +55,12 @@ const AlignedRightArrowIcon = withButtonAlignment(ArrowRight);
 // Chosen based on feeling good with the example stories
 const SCROLL_DISTANCE = 150;
 
-const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContainerRef}: Props) => {
+const Nudger = ({
+  ariaLabel,
+  chipStyle = CHIP_TYPES.default,
+  leading = false,
+  scrollContainerRef
+}: Props) => {
   const [show, setShow] = useState(false);
   const [enabled, setEnabled] = useState(true);
 
@@ -87,6 +93,7 @@ const Nudger = ({chipStyle = CHIP_TYPES.default, leading = false, scrollContaine
   return (
     <div className={classNames}>
       <BpkButtonV2
+        title={ariaLabel}
         type={CHIP_STYLE_TO_BUTTON_STYLE[chipStyle]}
         iconOnly
         disabled={!show || !enabled}
