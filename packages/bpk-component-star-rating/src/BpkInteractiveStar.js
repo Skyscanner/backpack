@@ -64,14 +64,13 @@ const BpkInteractiveStar = (props: Props) => {
       aria-pressed={selected}
       type="button"
     >
-      <BpkStarNonRtl
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={iconClassNames} 
-        type={type} 
-        /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */
-        {...rest} 
-      />
+      <div className={iconClassNames} >
+        <BpkStarNonRtl
+          type={type} 
+          /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */
+          {...rest} 
+        />
+      </div>
     </button>
   );
 };
