@@ -25,18 +25,32 @@ $slider-handle-touch-size: tokens.bpk-spacing-xxl();
 $slider-bar-height: tokens.bpk-spacing-sm();
 
 .bpk-slider {
-  height: $slider-handle-size;
+  position: relative;
+  display: flex;
+  align-items: center;
   -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+  user-select: none;
 
-  &__handle {
-    display: flex;
+  &__track {
+    position: relative;
+    height: $slider-bar-height;
+    flex-grow: 1;
+    background-color: tokens.$bpk-line-day;
+  }
+
+  &__range {
+    position: absolute;
+    height: 100%;
+    background-color: tokens.$bpk-core-accent-day;
+  }
+
+  &__thumb {
+    display: block;
     width: $slider-handle-size;
     height: $slider-handle-size;
-    justify-content: center;
-    align-items: center;
     border-radius: 50%;
     background-color: tokens.$bpk-core-accent-day;
-    cursor: pointer;
 
     @include shadows.bpk-box-shadow-sm;
 
@@ -48,40 +62,9 @@ $slider-bar-height: tokens.bpk-spacing-sm();
       border-radius: 50%;
     }
 
-    &--active {
+    &:active {
       transform: scale(1.2) translate3d(0, 0, 0);
       background-color: tokens.$bpk-private-slider-selected-day;
-    }
-  }
-
-  &__bar {
-    top: calc(50% - #{$slider-bar-height * 0.5});
-    height: $slider-bar-height;
-    border-radius: tokens.$bpk-border-radius-sm;
-    background-color: tokens.$bpk-line-day;
-  }
-
-  // stylelint-disable-next-line selector-attribute-quotes
-  > div[class$='0'] {
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-slider-bar-color,
-      tokens.$bpk-core-accent-day
-    );
-  }
-
-  &--range {
-    // stylelint-disable-next-line selector-attribute-quotes
-    > div[class$='0'] {
-      background-color: tokens.$bpk-line-day;
-    }
-    // stylelint-disable-next-line selector-attribute-quotes
-    > div[class$='1'] {
-      @include utils.bpk-themeable-property(
-        background-color,
-        --bpk-slider-bar-color,
-        tokens.$bpk-core-accent-day
-      );
     }
   }
 }
