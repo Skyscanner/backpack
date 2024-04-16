@@ -28,17 +28,21 @@ const getClassName = cssModules(STYLES);
 type Props = {
   max: number
   min: number
+  minDistance?: number,
   step: number
   onChange: () => void
   onAfterChange: () => void
   value: number[] | number
   ariaLabel: string[]
-  ariaValueText: string[]
+  ariaValuetext?: string[]
+  [rest: string]: any;
 }
 
-const BpkSlider = ({ariaLabel, ariaValueText, max, min, onAfterChange, onChange, step, value}: Props) => {
+const BpkSlider = ({ariaLabel, ariaValuetext, max, min, minDistance, onAfterChange, onChange, step, value, ...rest}: Props) => {
   const invert = isRTL();
   const defaultValue = Array.isArray(value) ? value : [value]
+
+
 
   return (
     <Slider.Root
@@ -50,18 +54,20 @@ const BpkSlider = ({ariaLabel, ariaValueText, max, min, onAfterChange, onChange,
       onValueChange={onChange}
       onValueCommit={onAfterChange}
       inverted={invert}
+      minStepsBetweenThumbs={minDistance}
+      {...rest}
     >
       <Slider.Track className={getClassName('bpk-slider__track')}>
         <Slider.Range className={getClassName('bpk-slider__range')} />
       </Slider.Track>
-      {defaultValue.map((index) => (
-        <Slider.Thumb
-          key={ariaLabel[index]}
-          aria-label={ariaLabel[index]}
-          aria-valuetext={ariaValueText[index]}
-          className={getClassName('bpk-slider__thumb')}
-        />
-      ))}
+      {defaultValue.map((val,index) => (
+          <Slider.Thumb
+            key={ariaLabel[index]}
+            aria-label={ariaLabel[index]}
+            aria-valuetext={ariaValuetext ? ariaValuetext[index] : val.toString()}
+            className={getClassName('bpk-slider__thumb')}
+          />
+        ))}
       </Slider.Root>
     );
 };

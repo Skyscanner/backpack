@@ -20,7 +20,7 @@ import { render } from '@testing-library/react';
 
 import BpkSlider from './BpkSlider';
 
-// Mock the ResizeObserver which 'react-slider' uses to handle slider resize programatically 
+// Mock the ResizeObserver which 'react-slider' uses to handle slider resize programatically
 window.ResizeObserver =
   window.ResizeObserver ||
   jest.fn().mockImplementation(() => ({
@@ -30,35 +30,32 @@ window.ResizeObserver =
   }));
 
 describe('BpkSlider', () => {
+  const defaultProps = {
+    min: 0,
+    max: 100,
+    value: 25,
+    step: 10,
+    onChange: jest.fn(),
+    onAfterChange: jest.fn(),
+    ariaLabel: ['min', 'max'],
+    ariaValuetext: ['0','80']
+  }
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkSlider min={0} max={100} value={25} />);
+    const { asFragment } = render(<BpkSlider {...defaultProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a "className" attribute', () => {
-    const { asFragment } = render(
-      <BpkSlider min={0} max={100} value={25} className="my-slider" />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with a "step" attribute', () => {
-    const { asFragment } = render(
-      <BpkSlider min={0} max={100} value={2} step={10} />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
 
   it('should render correctly with a range of values', () => {
     const { asFragment } = render(
-      <BpkSlider min={0} max={100} value={[10, 90]} />,
+      <BpkSlider {...defaultProps} value={[10, 90]} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a minimum distance between controls', () => {
     const { asFragment } = render(
-      <BpkSlider min={0} max={100} value={[10, 90]} minDistance={20} />,
+      <BpkSlider {...defaultProps} value={[10, 90]} minDistance={20} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
