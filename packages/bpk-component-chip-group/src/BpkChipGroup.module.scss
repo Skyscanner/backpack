@@ -42,6 +42,10 @@
   &--wrap {
     flex-wrap: wrap;
   }
+
+  &--withLabel {
+    padding-inline-start: tokens.bpk-spacing-base();
+  }
 }
 
 .bpk-sticky-chip-container {
