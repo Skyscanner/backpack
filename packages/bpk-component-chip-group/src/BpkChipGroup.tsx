@@ -102,11 +102,11 @@ const BpkChipGroup = ({
 
   const containerClassnames = getClassName('bpk-chip-group-container')
 
-  const chipGroupClassNames = [getClassName(
+  const chipGroupClassNames = getClassName(
     'bpk-chip-group',
     `bpk-chip-group--${type}`,
-    label && 'bpk-chip-group--withLabel'
-  )];
+    label && 'bpk-chip-group--with-label'
+  );
 
   const stickyChipContainerClassnames = getClassName(
     'bpk-sticky-chip-container',
