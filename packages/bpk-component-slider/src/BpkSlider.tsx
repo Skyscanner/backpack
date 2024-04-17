@@ -42,6 +42,22 @@ const BpkSlider = ({ ariaLabel, ariaValuetext, max, min, minDistance, onAfterCha
   const invert = isRTL();
   const defaultValue = Array.isArray(value) ? value : [value]
 
+  const processSliderValues = (sliderValues: number[], callback?: (val: number | number[]) => void) => {
+  const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
+  if (callback) {
+    callback(val);
+   }
+  };
+
+  const handleOnChange = (sliderValues: number[]) => {
+    processSliderValues(sliderValues, onChange);
+  };
+
+  const handleOnAfterChange = (sliderValues: number[]) => {
+    processSliderValues(sliderValues, onAfterChange);
+  };
+
+
   return (
     <Slider.Root
       className={getClassName('bpk-slider')}
@@ -49,8 +65,8 @@ const BpkSlider = ({ ariaLabel, ariaValuetext, max, min, minDistance, onAfterCha
       min={min}
       max={max}
       step={step || 1}
-      onValueChange={onChange}
-      onValueCommit={onAfterChange}
+      onValueChange={handleOnChange}
+      onValueCommit={handleOnAfterChange}
       inverted={invert}
       minStepsBetweenThumbs={minDistance}
       {...rest}
