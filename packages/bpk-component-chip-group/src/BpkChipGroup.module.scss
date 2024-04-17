@@ -30,6 +30,7 @@
   display: flex;
   margin: 0;
   padding: 0;
+  align-items: baseline;
   border: none;
   gap: tokens.bpk-spacing-md();
 
@@ -40,6 +41,10 @@
 
   &--wrap {
     flex-wrap: wrap;
+  }
+
+  &--with-label {
+    padding-inline-start: tokens.bpk-spacing-base();
   }
 }
 

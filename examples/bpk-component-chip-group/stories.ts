@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
-import BpkChipGroup, { BpkChipGroupSingleSelect, BpkChipGroupState, BpkChipGroupSingleSelectState } from '../../packages/bpk-component-chip-group';
+import BpkChipGroup, {
+  BpkChipGroupSingleSelect,
+  BpkChipGroupState,
+  BpkChipGroupSingleSelectState,
+} from '../../packages/bpk-component-chip-group';
 
 import {
   BpkChipGroupRail,
@@ -25,6 +29,7 @@ import {
   BpkSingleChipGroupWrapping,
   OnDarkChipGroup,
   OnImageChipGroup,
+  BpkChipGroupWithLabel,
   MixedExample,
   AllChipTypesGroup,
   OnContrastChipGroup,
@@ -35,9 +40,9 @@ export default {
   title: 'bpk-component-chip-group',
   component: BpkChipGroup,
   subcomponents: {
-    'BpkChipGroupSingleSelect': BpkChipGroupSingleSelect,
-    'BpkChipGroupState': BpkChipGroupState,
-    'BpkChipGroupSingleSelectState': BpkChipGroupSingleSelectState,
+    BpkChipGroupSingleSelect,
+    BpkChipGroupState,
+    BpkChipGroupSingleSelectState,
     // TODO: can we show the shape of ChipItem here?
   },
 };
@@ -49,10 +54,11 @@ export const StickyChipGroup = BpkChipGroupSticky;
 export const OnContrast = OnContrastChipGroup;
 export const OnDark = OnDarkChipGroup;
 export const OnImage = OnImageChipGroup;
+export const WithLabel = BpkChipGroupWithLabel;
 export const AllChipTypes = AllChipTypesGroup;
 export const ExampleStateManagement = StateManagement;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

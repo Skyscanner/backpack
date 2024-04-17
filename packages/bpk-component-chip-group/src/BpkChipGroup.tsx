@@ -24,6 +24,7 @@ import BpkSelectableChip, { BpkDismissibleChip, BpkIconChip, BpkDropdownChip, CH
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
 import Nudger from './Nudger';
@@ -70,6 +71,7 @@ export type ChipItem = {
 } & SingleSelectChipItem;
 
 export type CommonProps = {
+  label?: string;
   ariaLabel?: string;
   type?: ChipGroupType;
   chipStyle?: ChipStyleType;
@@ -90,6 +92,7 @@ const BpkChipGroup = ({
   ariaMultiselectable = true,
   chipStyle = CHIP_TYPES.default,
   chips,
+  label,
   leadingNudgerLabel = '',
   stickyChip,
   trailingNudgerLabel = '',
@@ -102,6 +105,7 @@ const BpkChipGroup = ({
   const chipGroupClassNames = getClassName(
     'bpk-chip-group',
     `bpk-chip-group--${type}`,
+    label && 'bpk-chip-group--with-label'
   );
 
   const stickyChipContainerClassnames = getClassName(
@@ -178,6 +182,7 @@ const BpkChipGroup = ({
           role={ariaMultiselectable ? 'group' : 'radiogroup'}
         >
           {ariaLabel && <legend className='visually-hidden'>{ariaLabel}</legend>}
+          {label && <BpkText textStyle={TEXT_STYLES.footnote} aria-hidden>{label}</BpkText>}
           {chips.map((chip, index) => renderChipItem(chip, index))}
         </fieldset>,
       )}
