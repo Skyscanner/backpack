@@ -27,6 +27,7 @@ $slider-bar-height: tokens.bpk-spacing-sm();
 .bpk-slider {
   position: relative;
   display: flex;
+  height: $slider-handle-size;
   align-items: center;
   -webkit-tap-highlight-color: transparent;
   touch-action: none;
