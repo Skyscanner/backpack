@@ -81,26 +81,26 @@ const BpkStar = (props: Props) => {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       <span className={containerClassNames} {...rest}>
-        <span className={halfIconClassNames}>
+        <div className={halfIconClassNames}>
           <HalfIcon />
-        </span>
+        </div>
       </span>
     );
   }
 
   return type === STAR_TYPES.FULL ? (
-    <span className={iconClassNames} >
+    <div className={iconClassNames} >
       <Icon 
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       {...rest} />
-    </span>
+    </div>
 
   ) : (
-    <span className={iconClassNames} >
+    <div className={iconClassNames} >
       <OutlineIcon 
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       {...rest} />
-    </span>
+    </div>
 
   );
 };
