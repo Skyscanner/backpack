@@ -14,7 +14,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -27,7 +27,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -39,7 +39,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -52,7 +52,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -64,7 +64,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       <div
         class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -77,7 +77,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -89,7 +89,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -102,7 +102,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -114,7 +114,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -127,7 +127,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -148,7 +148,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -161,7 +161,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -173,7 +173,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -186,7 +186,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -198,7 +198,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -211,7 +211,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -223,7 +223,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -236,7 +236,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -248,7 +248,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -261,7 +261,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -282,7 +282,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--large bpk-star--filled"
         >
           <svg
@@ -295,7 +295,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
               d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -307,7 +307,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--large bpk-star--filled"
         >
           <svg
@@ -320,7 +320,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
               d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -332,7 +332,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--large bpk-star--filled"
         >
           <svg
@@ -345,7 +345,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
               d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -357,7 +357,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--large bpk-star--filled"
         >
           <svg
@@ -370,7 +370,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
               d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -382,7 +382,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       <div
         class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <div
+        <span
           class="bpk-star bpk-star--large bpk-star--filled"
         >
           <svg
@@ -395,7 +395,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
               d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -416,7 +416,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -429,7 +429,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -441,7 +441,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -454,7 +454,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -466,7 +466,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -479,7 +479,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -491,7 +491,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -504,7 +504,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -516,7 +516,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       <div
         class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -529,7 +529,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -541,7 +541,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -554,7 +554,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -566,7 +566,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -579,7 +579,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -591,7 +591,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -604,7 +604,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -625,7 +625,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -638,7 +638,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -650,7 +650,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -663,7 +663,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -675,7 +675,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -688,7 +688,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -700,7 +700,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -713,7 +713,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -725,7 +725,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -738,7 +738,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -759,7 +759,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -772,7 +772,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -784,7 +784,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -797,7 +797,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -809,7 +809,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       <div
         class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -822,7 +822,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -834,7 +834,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -847,7 +847,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -859,7 +859,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -872,7 +872,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -893,7 +893,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -906,7 +906,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -918,7 +918,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -931,7 +931,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -943,7 +943,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -956,7 +956,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -968,7 +968,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -981,7 +981,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -993,7 +993,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star"
         >
           <svg
@@ -1006,7 +1006,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
               d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -1027,7 +1027,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -1040,7 +1040,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -1052,7 +1052,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -1065,7 +1065,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -1077,7 +1077,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -1090,7 +1090,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -1102,7 +1102,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -1115,7 +1115,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
     <button
@@ -1127,7 +1127,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       <div
         class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <div
+        <span
           class="bpk-star bpk-star--filled"
         >
           <svg
@@ -1140,7 +1140,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
               d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
