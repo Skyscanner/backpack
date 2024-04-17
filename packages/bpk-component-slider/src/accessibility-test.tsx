@@ -59,7 +59,7 @@ describe('BpkSlider accessibility tests', () => {
   });
 
   it('should not have programmatically-detectable accessibility issues when using a range slider', async () => {
-    const { container, debug } = render(
+    const { container } = render(
       <div>
         <label id="range-label" htmlFor="range-slider">
           Range Slider
@@ -75,7 +75,6 @@ describe('BpkSlider accessibility tests', () => {
       </div>,
     );
 
-    debug()
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
