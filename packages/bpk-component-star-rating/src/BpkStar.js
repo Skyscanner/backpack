@@ -80,10 +80,8 @@ const BpkStar = (props: Props) => {
   if (type === STAR_TYPES.HALF) {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-      <span className={containerClassNames} {...rest}>
-        <span className={halfIconClassNames}>
-          <HalfIcon />
-        </span>
+      <span className={[containerClassNames, halfIconClassNames]} {...rest}>
+        <HalfIcon />
       </span>
     );
   }

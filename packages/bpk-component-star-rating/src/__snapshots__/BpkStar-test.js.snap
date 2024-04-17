@@ -60,22 +60,18 @@ exports[`BpkStar should render correctly with a large full star 1`] = `
 exports[`BpkStar should render correctly with a large half star 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-star__container bpk-star__container--half-star bpk-star__container--large bpk-icon--rtl-support"
+    class="bpk-star__container bpk-star__container--half-star bpk-star__container--large bpk-icon--rtl-support,bpk-star bpk-star--half bpk-star--filled"
   >
-    <span
-      class="bpk-star bpk-star--half bpk-star--filled"
+    <svg
+      aria-hidden="true"
+      style="width: 1.5rem; height: 1.5rem;"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        aria-hidden="true"
-        style="width: 1.5rem; height: 1.5rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M21.773 10.386a.795.795 0 00-.416-1.338l-5.476-.83a1 1 0 01-.755-.563l-2.454-5.217a.734.734 0 00-1.344 0L8.875 7.655a1 1 0 01-.755.563l-5.477.829a.795.795 0 00-.416 1.339l3.993 4.07a1 1 0 01.273.863l-.948 5.761a.757.757 0 001.087.828l4.885-2.695a1 1 0 01.966 0l4.885 2.695a.757.757 0 001.087-.827l-.943-5.763a1 1 0 01.272-.862zm-5.417 2.671a3 3 0 00-.818 2.584l.535 3.268-2.623-1.447a3 3 0 00-1.45-.374V5.71l1.316 2.796a3 3 0 002.266 1.69l3.115.471z"
-        />
-      </svg>
-    </span>
+      <path
+        d="M21.773 10.386a.795.795 0 00-.416-1.338l-5.476-.83a1 1 0 01-.755-.563l-2.454-5.217a.734.734 0 00-1.344 0L8.875 7.655a1 1 0 01-.755.563l-5.477.829a.795.795 0 00-.416 1.339l3.993 4.07a1 1 0 01.273.863l-.948 5.761a.757.757 0 001.087.828l4.885-2.695a1 1 0 01.966 0l4.885 2.695a.757.757 0 001.087-.827l-.943-5.763a1 1 0 01.272-.862zm-5.417 2.671a3 3 0 00-.818 2.584l.535 3.268-2.623-1.447a3 3 0 00-1.45-.374V5.71l1.316 2.796a3 3 0 002.266 1.69l3.115.471z"
+      />
+    </svg>
   </span>
 </DocumentFragment>
 `;
@@ -121,22 +117,18 @@ exports[`BpkStar should render correctly with full star 1`] = `
 exports[`BpkStar should render correctly with half star 1`] = `
 <DocumentFragment>
   <span
-    class="bpk-star__container bpk-star__container--half-star bpk-icon--rtl-support"
+    class="bpk-star__container bpk-star__container--half-star bpk-icon--rtl-support,bpk-star bpk-star--half bpk-star--filled"
   >
-    <span
-      class="bpk-star bpk-star--half bpk-star--filled"
+    <svg
+      aria-hidden="true"
+      style="width: 1rem; height: 1rem;"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M22.262 10.305a.835.835 0 00-.437-1.406l-5.75-.87a1.048 1.048 0 01-.793-.591L12.706 1.96a.772.772 0 00-1.412 0L8.718 7.438a1.05 1.05 0 01-.793.592l-5.75.87a.834.834 0 00-.436 1.406l4.192 4.273a1.05 1.05 0 01.286.905l-.995 6.05a.795.795 0 001.142.869l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.991-6.051a1.05 1.05 0 01.287-.905zm-5.72 1.55l-.611.624a4.05 4.05 0 00-1.104 3.488l.113.69a.45.45 0 01-.662.466l-.322-.177a4.047 4.047 0 00-1.506-.479.493.493 0 01-.45-.475V8.84a.297.297 0 01.566-.126 4.05 4.05 0 003.06 2.281l.662.1a.45.45 0 01.254.76z"
-        />
-      </svg>
-    </span>
+      <path
+        d="M22.262 10.305a.835.835 0 00-.437-1.406l-5.75-.87a1.048 1.048 0 01-.793-.591L12.706 1.96a.772.772 0 00-1.412 0L8.718 7.438a1.05 1.05 0 01-.793.592l-5.75.87a.834.834 0 00-.436 1.406l4.192 4.273a1.05 1.05 0 01.286.905l-.995 6.05a.795.795 0 001.142.869l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.991-6.051a1.05 1.05 0 01.287-.905zm-5.72 1.55l-.611.624a4.05 4.05 0 00-1.104 3.488l.113.69a.45.45 0 01-.662.466l-.322-.177a4.047 4.047 0 00-1.506-.479.493.493 0 01-.45-.475V8.84a.297.297 0 01.566-.126 4.05 4.05 0 003.06 2.281l.662.1a.45.45 0 01.254.76z"
+      />
+    </svg>
   </span>
 </DocumentFragment>
 `;
