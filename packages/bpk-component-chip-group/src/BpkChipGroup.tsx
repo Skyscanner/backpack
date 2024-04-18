@@ -36,14 +36,14 @@ const getClassName = cssModules(STYLES);
 export const CHIP_GROUP_TYPES = {
   rail: 'rail',
   wrap: 'wrap',
-};
+} as const;
 
 export const CHIP_COMPONENT = {
   selectable: 'selectable',
   dismissible: 'dismissible',
   dropdown: 'dropdown',
   icon: 'icon',
-};
+} as const;
 
 const CHIP_COMPONENT_MAP = {
   [CHIP_COMPONENT.selectable]: BpkSelectableChip,
@@ -78,14 +78,22 @@ export type CommonProps = {
   // only required when type = rail
   leadingNudgerLabel?: string;
   trailingNudgerLabel?: string;
-};
-
-export type ChipGroupProps = {
   chips: ChipItem[];
   stickyChip?: ChipItem;
   ariaMultiselectable?: boolean;
-} & CommonProps;
+};
 
+export type RailChipGroupProps = {
+  type: "rail"
+  leadingNudgerLabel?: string;
+  trailingNudgerLabel?: string;
+};
+
+export type WrapChipGroupProps = {
+  type: "wrap"
+};
+
+export type ChipGroupProps = (RailChipGroupProps | WrapChipGroupProps) & CommonProps;
 
 const BpkChipGroup = ({
   ariaLabel,
