@@ -26,14 +26,17 @@ const useMediaQuery = (query: string, matchSSR = false): boolean => {
   );
 
   useEffect(() => {
-    const media = window.matchMedia(query);
-    setMatches(media.matches);
-    const listener = () => {
+    if(isClient){
+      const media = window.matchMedia(query);
       setMatches(media.matches);
-    };
-    media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
-  }, [query]);
+      const listener = () => {
+        setMatches(media.matches);
+      };
+      media.addEventListener('change', listener);
+      return () => media.removeEventListener('change', listener);
+    }
+    return () => {}
+  }, [query, isClient]);
 
   return matches;
 };
