@@ -32,7 +32,7 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: tokens.$bpk-text-secondary-day;
+  color: tokens.$bpk-text-primary-day;
   cursor: pointer;
   appearance: none;
 
@@ -49,5 +49,17 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
   &__icon {
     vertical-align: -1.75 * $button-padding;
     fill: currentcolor;
+  }
+
+  &--on-dark {
+    color: tokens.$bpk-text-primary-inverse-day;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-primary-inverse-day;
+    }
+
+    &:active {
+      color: tokens.$bpk-text-primary-inverse-day;
+    }
   }
 }

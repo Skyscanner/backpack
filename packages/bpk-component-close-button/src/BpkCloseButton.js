@@ -33,11 +33,12 @@ type Props = {
   onClick: (event: SyntheticEvent<>) => mixed,
   className: ?string,
   customIcon: ?StatelessFunctionalComponent<any>,
+  onDark: Boolean,
 };
 
 const BpkCloseButton = (props: Props) => {
-  const classNames = [getClassName('bpk-close-button')];
-  const { className, customIcon, label, onClick, ...rest } = props;
+  const { className, customIcon, label, onClick, onDark, ...rest } = props;
+  const classNames = [getClassName('bpk-close-button', onDark && 'bpk-close-button--on-dark')];
   const Icon = customIcon || CloseIcon;
 
   if (className) {
@@ -66,11 +67,13 @@ BpkCloseButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
   customIcon: PropTypes.func,
+  onDark: PropTypes.Boolean,
 };
 
 BpkCloseButton.defaultProps = {
   className: null,
   customIcon: null,
+  onDark: false,
 };
 
 export default BpkCloseButton;
