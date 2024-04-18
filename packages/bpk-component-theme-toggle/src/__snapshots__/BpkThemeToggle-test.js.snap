@@ -3,12 +3,16 @@
 exports[`BpkThemeToggle should render correctly 1`] = `
 <DocumentFragment>
   <div>
-    <label
-      class="bpk-label bpk-theme-toggle__label"
-      for="theme-select"
+    <span
+      class="bpk-theme-toggle__label"
     >
-      Change theme
-    </label>
+      <label
+        class="bpk-label"
+        for="theme-select"
+      >
+        Change theme
+      </label>
+    </span>
     <select
       aria-invalid="false"
       class="bpk-select"
