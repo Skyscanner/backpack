@@ -26,7 +26,7 @@ const useMediaQuery = (query: string, matchSSR = false): boolean => {
   );
 
   useEffect(() => {
-    if(isClient){
+    if (isClient) {
       const media = window.matchMedia(query);
       setMatches(media.matches);
       const listener = () => {
@@ -35,7 +35,7 @@ const useMediaQuery = (query: string, matchSSR = false): boolean => {
       media.addEventListener('change', listener);
       return () => media.removeEventListener('change', listener);
     }
-    return () => {}
+    return () => {};
   }, [query, isClient]);
 
   return matches;
