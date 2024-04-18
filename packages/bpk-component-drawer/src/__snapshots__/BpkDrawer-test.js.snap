@@ -38,12 +38,12 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
             >
               <button
                 aria-label="Close"
-                class="bpk-close-button"
+                class="bpk_close_button__default"
                 title="Close"
                 type="button"
               >
                 <span
-                  class="bpk-close-button__icon"
+                  class="bpk_close_button__icon"
                 >
                   <svg
                     aria-hidden="true"

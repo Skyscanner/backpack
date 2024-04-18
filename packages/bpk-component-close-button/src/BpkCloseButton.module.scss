@@ -22,28 +22,21 @@
 $button-padding: tokens.bpk-spacing-sm() * 0.5;
 
 .bpk-close-button {
-  width: tokens.bpk-spacing-lg();
-  height: tokens.bpk-spacing-lg();
+  &__common {
+    width: tokens.bpk-spacing-lg();
+    height: tokens.bpk-spacing-lg();
 
-  // The margin here is used to ensure that the icon is aligned to
-  // the leading or trailing edge of its parent container
-  margin-right: -1 * $button-padding;
-  margin-left: -1 * $button-padding;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-  color: tokens.$bpk-text-primary-day;
-  cursor: pointer;
-  appearance: none;
+    // The margin here is used to ensure that the icon is aligned to
+    // the leading or trailing edge of its parent container
+    margin-right: -1 * $button-padding;
+    margin-left: -1 * $button-padding;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    appearance: none;
 
-  @include utils.bpk-touch-tappable;
-
-  @include utils.bpk-hover {
-    color: tokens.$bpk-text-primary-day;
-  }
-
-  &:active {
-    color: tokens.$bpk-text-primary-day;
+    @include utils.bpk-touch-tappable;
   }
 
   &__icon {
@@ -51,8 +44,22 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
     fill: currentcolor;
   }
 
-  &--on-dark {
+  &__default {
+    color: tokens.$bpk-text-primary-day;
+    composes: bpk-close-button__common;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-primary-day;
+    }
+
+    &:active {
+      color: tokens.$bpk-text-primary-day;
+    }
+  }
+
+  &__onDark {
     color: tokens.$bpk-text-primary-inverse-day;
+    composes: bpk-close-button__common;
 
     @include utils.bpk-hover {
       color: tokens.$bpk-text-primary-inverse-day;
