@@ -36,35 +36,35 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
   appearance: none;
 
   @include utils.bpk-touch-tappable;
+
+  &__default {
+    color: tokens.$bpk-text-primary-day;
+    composes: bpk-close-button;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-primary-day;
+    }
+
+    &:active {
+      color: tokens.$bpk-text-primary-day;
+    }
+  }
+
+  &__onDark {
+    color: tokens.$bpk-text-primary-inverse-day;
+    composes: bpk-close-button;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-primary-inverse-day;
+    }
+
+    &:active {
+      color: tokens.$bpk-text-primary-inverse-day;
+    }
+  }
 }
 
 .bpk-close-button-icon {
   vertical-align: -1.75 * $button-padding;
   fill: currentcolor;
-}
-
-.bpk-close-button__default {
-  color: tokens.$bpk-text-primary-day;
-  composes: bpk-close-button;
-
-  @include utils.bpk-hover {
-    color: tokens.$bpk-text-primary-day;
-  }
-
-  &:active {
-    color: tokens.$bpk-text-primary-day;
-  }
-}
-
-.bpk-close-button__onDark {
-  color: tokens.$bpk-text-primary-inverse-day;
-  composes: bpk-close-button;
-
-  @include utils.bpk-hover {
-    color: tokens.$bpk-text-primary-inverse-day;
-  }
-
-  &:active {
-    color: tokens.$bpk-text-primary-inverse-day;
-  }
 }
