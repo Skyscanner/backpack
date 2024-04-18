@@ -26,27 +26,41 @@ import STYLES from './BpkSlider.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  max: number
-  min: number
-  minDistance?: number,
-  step?: number
-  onChange: (value: number[] | number) => void
-  onAfterChange?: (value: number[] | number ) => void
-  value: number[] | number
-  ariaLabel: string[]
-  ariaValuetext?: string[]
+  max: number;
+  min: number;
+  minDistance?: number;
+  step?: number;
+  onChange: (value: number[] | number) => void;
+  onAfterChange?: (value: number[] | number) => void;
+  value: number[] | number;
+  ariaLabel: string[];
+  ariaValuetext?: string[];
   [rest: string]: any;
-}
+};
 
-const BpkSlider = ({ ariaLabel, ariaValuetext, max, min, minDistance, onAfterChange, onChange, step, value, ...rest }: Props) => {
+const BpkSlider = ({
+  ariaLabel,
+  ariaValuetext,
+  max,
+  min,
+  minDistance,
+  onAfterChange,
+  onChange,
+  step,
+  value,
+  ...rest
+}: Props) => {
   const invert = isRTL();
-  const defaultValue = Array.isArray(value) ? value : [value]
+  const currentValue = Array.isArray(value) ? value : [value];
 
-  const processSliderValues = (sliderValues: number[], callback?: (val: number | number[]) => void) => {
-  const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
-  if (callback) {
-    callback(val);
-   }
+  const processSliderValues = (
+    sliderValues: number[],
+    callback?: (val: number | number[]) => void,
+  ) => {
+    const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
+    if (callback) {
+      callback(val);
+    }
   };
 
   const handleOnChange = (sliderValues: number[]) => {
@@ -57,11 +71,10 @@ const BpkSlider = ({ ariaLabel, ariaValuetext, max, min, minDistance, onAfterCha
     processSliderValues(sliderValues, onAfterChange);
   };
 
-
   return (
     <Slider.Root
       className={getClassName('bpk-slider')}
-      defaultValue={defaultValue}
+      defaultValue={currentValue}
       min={min}
       max={max}
       step={step || 1}
@@ -74,17 +87,17 @@ const BpkSlider = ({ ariaLabel, ariaValuetext, max, min, minDistance, onAfterCha
       <Slider.Track className={getClassName('bpk-slider__track')}>
         <Slider.Range className={getClassName('bpk-slider__range')} />
       </Slider.Track>
-      {defaultValue.map((val,index) => (
-          <Slider.Thumb
-            key={ariaLabel[index]}
-            aria-label={ariaLabel[index]}
-            aria-valuetext={ariaValuetext ? ariaValuetext[index] : val.toString()}
-            className={getClassName('bpk-slider__thumb')}
-          />
-        ))}
-      </Slider.Root>
-    );
+      {currentValue.map((val, index) => (
+        <Slider.Thumb
+          key={ariaLabel[index]}
+          aria-label={ariaLabel[index]}
+          aria-valuetext={ariaValuetext ? ariaValuetext[index] : val.toString()}
+          className={getClassName('bpk-slider__thumb')}
+          aria-valuenow={currentValue[index]}
+        />
+      ))}
+    </Slider.Root>
+  );
 };
-
 
 export default BpkSlider;
