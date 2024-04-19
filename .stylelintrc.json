@@ -16,8 +16,17 @@
     "selector-pseudo-class-no-unknown": [true, {
       "ignorePseudoClasses": ["global"]
     }],
+    "property-no-unknown": [
+      true,
+      {
+          "ignoreProperties": [
+              "composes"
+          ]
+      }
+    ],
     "function-url-quotes": null,
     "scss/operator-no-newline-after": null,
     "selector-not-notation": null
   }
 }
+
