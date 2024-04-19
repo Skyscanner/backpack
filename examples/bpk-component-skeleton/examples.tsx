@@ -21,69 +21,74 @@ import BpkSkeleton, {
   SIZE_TYPES, 
   IMAGE_SKELETON_STYLE 
 } from '../../packages/bpk-component-skeleton';
+import { cssModules } from '../../packages/bpk-react-utils';
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const ImageDefaultSizeWithDefaultStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} ariaLabel='loading' />
 const ImageDefaultSizeWithRoundedStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} ariaLabel='loading' style={IMAGE_SKELETON_STYLE.rounded} />
-const ImageCustomStringSizeWithRoundedStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} size={{width: '7rem', height: '7rem'}} ariaLabel='loading' style={IMAGE_SKELETON_STYLE.rounded} />
 
 const BodyTextSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.small} ariaLabel='loading' />
 const BodyTextDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.default} ariaLabel='loading' />
 const BodyTextLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.large} ariaLabel='loading' />
-const BodyTextCustomSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={{width: '16rem', height: '0.5rem'}} ariaLabel='loading' />
 
 const CircleSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} size={SIZE_TYPES.small} ariaLabel='loading'/>;
 const CircleDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} ariaLabel='loading' />;
-const CircleCustomSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} size={{width: '5rem', height: '5rem'}} ariaLabel='loading' />;
 
 const HeadlineSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.small} ariaLabel='loading' />
 const HeadlineDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.default} ariaLabel='loading' />
 const HeadlineLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.large} ariaLabel='loading' />
-const HeadlineCustomSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={{width: '5rem', height: '2.5rem'}} ariaLabel='loading' />
 
 const ImageSkeletonExample = () => 
-  <div style={{display: "flex", justifyContent: "space-around", alignItems: "flex-end", width: "30rem"}}>
-    <ImageDefaultSizeWithDefaultStyleExample />
+  <div className={getClassName('bpk-image-skeleton-layout')}>
     <ImageDefaultSizeWithRoundedStyleExample />
-    <ImageCustomStringSizeWithRoundedStyleExample />
+    <ImageDefaultSizeWithDefaultStyleExample />
   </div>
 
 const BodyTextSkeletonExample = () => 
-  <div style={{display: "flex", flexDirection: "column", justifyContent: "space-around", width: "30rem"}}>
-    <BodyTextSmallSizeExample /><br />
-    <BodyTextDefaultSizeExample /><br />
-    <BodyTextLargeSizeExample /><br />
-    <BodyTextCustomSizeExample /><br />
+  <div className={getClassName('bpk-body-text-skeleton-layout')}>
+    <BodyTextDefaultSizeExample />
+    <BodyTextLargeSizeExample />
+    <BodyTextSmallSizeExample />
   </div>
 
 const CircleSkeletonExample = () => 
-  <div style={{display: "flex", justifyContent: "space-around", alignItems: "flex-end", width: "30rem"}}>
-    <CircleSmallSizeExample /><br />
-    <CircleDefaultSizeExample /><br />
-    <CircleCustomSizeExample /><br />
+  <div className={getClassName('bpk-circle-skeleton-layout')}>
+    <CircleSmallSizeExample />
+    <CircleDefaultSizeExample />
   </div>
 
 const HeadlineSkeletonExample = () => 
-<div style={{display: "flex", justifyContent: "space-around", alignItems: "flex-end", width: "38rem"}}>
-    <HeadlineSmallSizeExample /><br />
-    <HeadlineDefaultSizeExample /><br />
-    <HeadlineLargeSizeExample /><br />
-    <HeadlineCustomSizeExample /><br />
+  <div className={getClassName('bpk-headline-skeleton-layout')}>
+    <HeadlineSmallSizeExample />
+    <HeadlineDefaultSizeExample />
+    <HeadlineLargeSizeExample />
   </div>
 
 const CombinedComponentExample = () => 
-  <>
-    <h2>ImageSkeleton</h2>
-    <ImageSkeletonExample />
+  <div className={getClassName('bpk-combined-skeleton-layout')}>
+    <div>
+      <h2>ImageSkeleton</h2>
+      <ImageSkeletonExample />
+    </div>
 
-    <h2>BodyTextSkeleton</h2>
-    <BodyTextSkeletonExample />
+    <div>
+      <h2>HeadlineSkeleton</h2>
+      <HeadlineSkeletonExample />
+    </div>
 
-    <h2>CircleSkeleton</h2>
-    <CircleSkeletonExample />
+    <div>
+      <h2>CircleSkeleton</h2>
+      <CircleSkeletonExample />
+    </div>
 
-    <h2>HeadlineSkeleton</h2>
-    <HeadlineSkeletonExample />
-  </>
+    <div>
+      <h2>BodyTextSkeleton</h2>
+      <BodyTextSkeletonExample />
+    </div>
+  </div>
 
 export {
   ImageSkeletonExample,
