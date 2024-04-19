@@ -68,7 +68,7 @@ const HeadlineSkeletonExample = () =>
   </div>
 
 const CombinedComponentExample = () => 
-  <div className={getClassName('bpk-combined-skeleton-layout')}>
+  <div>
     <div>
       <h2>ImageSkeleton</h2>
       <ImageSkeletonExample />
