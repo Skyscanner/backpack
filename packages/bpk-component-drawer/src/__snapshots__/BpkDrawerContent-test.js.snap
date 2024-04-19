@@ -24,12 +24,12 @@ exports[`BpkDrawerContent should render correctly 1`] = `
       >
         <button
           aria-label="Close"
-          class="bpk-close-button"
+          class="bpk-close-button__default"
           title="Close"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <svg
               aria-hidden="true"
@@ -78,12 +78,12 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
       >
         <button
           aria-label="Close"
-          class="bpk-close-button"
+          class="bpk-close-button__default"
           title="Close"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <svg
               aria-hidden="true"
@@ -132,12 +132,12 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
       >
         <button
           aria-label="Close"
-          class="bpk-close-button"
+          class="bpk-close-button__default"
           title="Close"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <svg
               aria-hidden="true"
@@ -187,12 +187,12 @@ exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] 
       >
         <button
           aria-label="Close"
-          class="bpk-close-button"
+          class="bpk-close-button__default"
           title="Close"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <svg
               aria-hidden="true"
@@ -241,12 +241,12 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
       >
         <button
           aria-label="Close"
-          class="bpk-close-button"
+          class="bpk-close-button__default"
           title="Close"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <svg
               aria-hidden="true"

@@ -20,13 +20,8 @@ import type { ComponentType, MouseEvent, ReactNode } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-import { cssModules } from '../../bpk-react-utils';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
-
-import STYLES from './BpkNavigationBarIconButton.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type Props = {
   icon: ComponentType<any>,
@@ -42,12 +37,7 @@ const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, 
   <span className={className}>
     <BpkCloseButton
       customIcon={icon}
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={getClassName(
-        'bpk-navigation-bar-icon-button',
-        `bpk-navigation-bar-icon-button--${barStyle}`,
-      )}
+      onDark={barStyle === BAR_STYLES.onDark}
       {...rest}
     />
   </span>
