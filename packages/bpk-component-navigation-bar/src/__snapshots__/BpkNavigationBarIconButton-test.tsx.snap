@@ -7,12 +7,12 @@ exports[`BpkNavigationIconButton should render correctly 1`] = `
   >
     <button
       aria-label="test"
-      class="bpk_close_button__default"
+      class="bpk-close-button__default"
       title="test"
       type="button"
     >
       <span
-        class="bpk_close_button__icon"
+        class="bpk-close-button-icon"
       >
         <span />
       </span>

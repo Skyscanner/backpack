@@ -4,12 +4,12 @@ exports[`BpkCloseButton should render correctly 1`] = `
 <DocumentFragment>
   <button
     aria-label="Close"
-    class="bpk_close_button__default"
+    class="bpk-close-button__default"
     title="Close"
     type="button"
   >
     <span
-      class="bpk_close_button__icon"
+      class="bpk-close-button-icon"
     >
       <svg
         aria-hidden="true"
@@ -30,12 +30,12 @@ exports[`BpkCloseButton should render correctly with a custom className 1`] = `
 <DocumentFragment>
   <button
     aria-label="Close"
-    class="bpk_close_button__default my-custom-classname"
+    class="bpk-close-button__default my-custom-classname"
     title="Close"
     type="button"
   >
     <span
-      class="bpk_close_button__icon"
+      class="bpk-close-button-icon"
     >
       <svg
         aria-hidden="true"
@@ -56,12 +56,12 @@ exports[`BpkCloseButton should render correctly with a custom icon 1`] = `
 <DocumentFragment>
   <button
     aria-label="Close"
-    class="bpk_close_button__default"
+    class="bpk-close-button__default"
     title="Close"
     type="button"
   >
     <span
-      class="bpk_close_button__icon"
+      class="bpk-close-button-icon"
     >
       <svg
         aria-hidden="true"

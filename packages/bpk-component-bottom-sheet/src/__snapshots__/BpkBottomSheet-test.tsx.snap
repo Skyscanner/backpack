@@ -27,12 +27,12 @@ exports[`BpkBottomSheet renders correctly with action props 1`] = `
             >
               <button
                 aria-label=""
-                class="bpk_close_button__default"
+                class="bpk-close-button__default"
                 title=""
                 type="button"
               >
                 <span
-                  class="bpk_close_button__icon"
+                  class="bpk-close-button-icon"
                 >
                   <svg
                     aria-hidden="true"
@@ -105,12 +105,12 @@ exports[`BpkBottomSheet renders correctly with minimum prop 1`] = `
             >
               <button
                 aria-label=""
-                class="bpk_close_button__default"
+                class="bpk-close-button__default"
                 title=""
                 type="button"
               >
                 <span
-                  class="bpk_close_button__icon"
+                  class="bpk-close-button-icon"
                 >
                   <svg
                     aria-hidden="true"
@@ -173,12 +173,12 @@ exports[`BpkBottomSheet renders correctly with wide prop 1`] = `
             >
               <button
                 aria-label=""
-                class="bpk_close_button__default"
+                class="bpk-close-button__default"
                 title=""
                 type="button"
               >
                 <span
-                  class="bpk_close_button__icon"
+                  class="bpk-close-button-icon"
                 >
                   <svg
                     aria-hidden="true"

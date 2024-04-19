@@ -47,12 +47,12 @@ exports[`BpkInfoBannerDismissable should render correctly 1`] = `
               >
                 <button
                   aria-label="Dismiss"
-                  class="bpk_close_button__default"
+                  class="bpk-close-button__default"
                   title="Dismiss"
                   type="button"
                 >
                   <span
-                    class="bpk_close_button__icon"
+                    class="bpk-close-button-icon"
                   >
                     <svg
                       aria-hidden="true"
