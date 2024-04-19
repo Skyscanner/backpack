@@ -32,6 +32,9 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
   padding: 0;
   border: 0;
   background-color: transparent;
+
+  // allows the icon to centre itself
+  font-size: tokens.bpk-spacing-lg();
   cursor: pointer;
   appearance: none;
 
@@ -65,6 +68,5 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
 }
 
 .bpk-close-button-icon {
-  vertical-align: -1.75 * $button-padding;
   fill: currentcolor;
 }
