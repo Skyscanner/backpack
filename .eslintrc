@@ -138,8 +138,7 @@
               "Prop {{prop}} is forbidden. See https://github.com/Skyscanner/eslint-plugin-rules?tab=readme-ov-file#forbid-component-props",
             "allowedFor": ["InnerContainer"]
           }
-        ],
-        
+        ]
       }
     ]
   },
