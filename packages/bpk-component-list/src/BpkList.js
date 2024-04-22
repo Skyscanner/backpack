@@ -40,20 +40,18 @@ const BpkList = (props: Props) => {
   const { ariaLabel, ariaLabelledby, children, className, ordered, title } =
     props;
 
-  const TagName: any = ordered ? 'ol' : 'ul';
+  const ListElements: any = ordered ? 'ol' : 'ul';
   const classNames: string = getClassName('bpk-list', className);
 
   return (
-    <TagName
+    <ListElements
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
       title={title}
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames}
     >
       {children}
-    </TagName>
+    </ListElements>
   );
 };
 
