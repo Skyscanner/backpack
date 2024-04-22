@@ -102,8 +102,6 @@ const BpkModal = ({
         containerClassName={containerClass.join(' ')}
         isIphone={isIphone}
         title={title}
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={className}
         contentClassName={contentClassName}
         closeLabel={closeLabel}
