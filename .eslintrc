@@ -135,7 +135,10 @@
           {
             "propName": "className",
             "message":
-              "Prop {{prop}} is forbidden. See https://github.com/Skyscanner/eslint-plugin-rules?tab=readme-ov-file#forbid-component-props"
+              "Prop {{prop}} is forbidden. See https://github.com/Skyscanner/eslint-plugin-rules?tab=readme-ov-file#forbid-component-props",
+            "allowedFor": [
+              "InnerContainer" // allowed for a prop that is passed down in the BpkMobileScrollContainer to a generated element
+            ]
           }
         ]
       }
