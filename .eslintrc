@@ -137,7 +137,8 @@
             "message":
               "Prop {{prop}} is forbidden. See https://github.com/Skyscanner/eslint-plugin-rules?tab=readme-ov-file#forbid-component-props",
             "allowedFor": [
-              "InnerContainer" // allowed for a prop that is passed down in the BpkMobileScrollContainer to a generated element
+              "InnerContainer", // allowed for a prop that is passed down in the BpkMobileScrollContainer to a generated element
+              "Slider" // allowed for a prop that is passd in BpkSlider down to the react-slider component.
             ]
           }
         ]
