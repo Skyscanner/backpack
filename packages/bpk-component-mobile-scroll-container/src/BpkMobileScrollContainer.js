@@ -231,8 +231,6 @@ class BpkMobileScrollContainer extends Component<Props, State> {
             ref={(el) => {
               this.innerEl = el;
             }}
-            // className prop is allowed as this is a generated element.
-            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={getClassName('bpk-mobile-scroll-container__inner')}
           >
             {children}
