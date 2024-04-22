@@ -53,7 +53,7 @@ const BpkSectionHeader = ({
       )}
     >
       <span className={getClassName('bpk-section-header__title')}>
-        <BpkText tagName="h2">{title}</BpkText>
+        <BpkText textStyle='xxl' tagName="h2">{title}</BpkText>
       </span>
       {description && (
         <span className={getClassName('bpk-section-header__description')}>
