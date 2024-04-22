@@ -8,11 +8,15 @@ exports[`BpkSectionHeader should render correctly 1`] = `
     <div
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
     >
-      <h2
-        class="bpk-text bpk-text--body-default bpk-section-header__title"
+      <span
+        class="bpk-section-header__title"
       >
-        Section title
-      </h2>
+        <h2
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title
+        </h2>
+      </span>
     </div>
   </div>
 </DocumentFragment>
@@ -26,15 +30,23 @@ exports[`BpkSectionHeader should render correctly with "type" prop 1`] = `
     <div
       class="bpk-section-header__title-description bpk-section-header__title-description--on-dark"
     >
-      <h2
-        class="bpk-text bpk-text--body-default bpk-section-header__title"
-      >
-        Section title
-      </h2>
       <span
-        class="bpk-text bpk-text--body-default bpk-section-header__description"
+        class="bpk-section-header__title"
       >
-        Section title description
+        <h2
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title
+        </h2>
+      </span>
+      <span
+        class="bpk-section-header__description"
+      >
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title description
+        </span>
       </span>
     </div>
     <button
@@ -55,15 +67,23 @@ exports[`BpkSectionHeader should render correctly with a "description" prop 1`] 
     <div
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
     >
-      <h2
-        class="bpk-text bpk-text--body-default bpk-section-header__title"
-      >
-        Section title
-      </h2>
       <span
-        class="bpk-text bpk-text--body-default bpk-section-header__description"
+        class="bpk-section-header__title"
       >
-        Section title description
+        <h2
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title
+        </h2>
+      </span>
+      <span
+        class="bpk-section-header__description"
+      >
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title description
+        </span>
       </span>
     </div>
   </div>
@@ -78,15 +98,23 @@ exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
     <div
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
     >
-      <h2
-        class="bpk-text bpk-text--body-default bpk-section-header__title"
-      >
-        Section title
-      </h2>
       <span
-        class="bpk-text bpk-text--body-default bpk-section-header__description"
+        class="bpk-section-header__title"
       >
-        Section title description
+        <h2
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title
+        </h2>
+      </span>
+      <span
+        class="bpk-section-header__description"
+      >
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title description
+        </span>
       </span>
     </div>
     <button
