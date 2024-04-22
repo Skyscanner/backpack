@@ -11,15 +11,3 @@ exports[`BpkRtlToggle should render correctly 1`] = `
   </button>
 </DocumentFragment>
 `;
-
-exports[`BpkRtlToggle should render correctly with the className prop 1`] = `
-<DocumentFragment>
-  <button
-    class="bpk-link foo"
-    title="Keyboard Shortcut: ctrl + cmd + r"
-    type="button"
-  >
-    RTL on
-  </button>
-</DocumentFragment>
-`;
