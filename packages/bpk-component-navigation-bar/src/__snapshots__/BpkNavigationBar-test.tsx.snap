@@ -52,12 +52,12 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
       <span>
         <button
           aria-label="test"
-          class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default"
+          class="bpk-close-button__default"
           title="test"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <span />
           </span>
@@ -100,12 +100,12 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
       <span>
         <button
           aria-label="test"
-          class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default"
+          class="bpk-close-button__default"
           title="test"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <span />
           </span>
@@ -131,12 +131,12 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
       <span>
         <button
           aria-label="test"
-          class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default"
+          class="bpk-close-button__default"
           title="test"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <span />
           </span>

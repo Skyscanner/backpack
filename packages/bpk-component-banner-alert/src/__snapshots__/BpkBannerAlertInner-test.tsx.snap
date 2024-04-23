@@ -612,12 +612,12 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
               >
                 <button
                   aria-label="Dismiss"
-                  class="bpk-close-button"
+                  class="bpk-close-button__default"
                   title="Dismiss"
                   type="button"
                 >
                   <span
-                    class="bpk-close-button__icon"
+                    class="bpk-close-button-icon"
                   >
                     <svg
                       aria-hidden="true"
@@ -844,12 +844,12 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
               >
                 <button
                   aria-label="Dismiss"
-                  class="bpk-close-button"
+                  class="bpk-close-button__default"
                   title="Dismiss"
                   type="button"
                 >
                   <span
-                    class="bpk-close-button__icon"
+                    class="bpk-close-button-icon"
                   >
                     <svg
                       aria-hidden="true"

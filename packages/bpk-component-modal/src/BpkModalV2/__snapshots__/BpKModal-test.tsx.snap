@@ -21,12 +21,12 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
       >
         <button
           aria-label="bpk-modal-button-close"
-          class="bpk-close-button bpk-modal__close-button-style--default"
+          class="bpk-close-button__default bpk-modal__close-button-style--default"
           title="bpk-modal-button-close"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <svg
               aria-hidden="true"
@@ -79,12 +79,12 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
         </div>
         <button
           aria-label="bpk-modal-button-close"
-          class="bpk-close-button bpk-modal__close-button-style--default"
+          class="bpk-close-button__default bpk-modal__close-button-style--default"
           title="bpk-modal-button-close"
           type="button"
         >
           <span
-            class="bpk-close-button__icon"
+            class="bpk-close-button-icon"
           >
             <svg
               aria-hidden="true"
