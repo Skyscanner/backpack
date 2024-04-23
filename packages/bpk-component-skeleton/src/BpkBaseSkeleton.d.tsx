@@ -18,7 +18,6 @@
 
 type Props = {
   skeletonStyle: string;
-  ariaLabel: string;
   styleObj?: {
     width: string;
     height: string;
@@ -26,7 +25,6 @@ type Props = {
 };
 
 declare const BpkBaseSkeleton: ({
-  ariaLabel,
   skeletonStyle,
   styleObj
  }: Props) => JSX.Element;

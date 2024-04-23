@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-import BpkSkeleton, { SIZE_TYPES, SKELETON_TYPES, IMAGE_SKELETON_STYLE } from "./src/BpkSkeleton";
+import BpkSkeleton from "./src/BpkSkeleton";
 
-export {
-  SIZE_TYPES,
-  SKELETON_TYPES,
-  IMAGE_SKELETON_STYLE,
-}
+export { SIZE_TYPES, SKELETON_TYPES, IMAGE_SKELETON_STYLE } from './src/common-types';
 export default BpkSkeleton;

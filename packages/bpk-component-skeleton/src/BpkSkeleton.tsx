@@ -19,73 +19,28 @@
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkBaseSkeleton from './BpkBaseSkeleton';
+import { SKELETON_TYPES, IMAGE_SKELETON_STYLE, SIZE_TYPES } from './common-types';
 
-import type { CUSTOM_SIZE_TYPE } from './common-types';
+import type { ComponentProps} from './common-types';
 
 import STYLES from './BpkSkeleton.module.scss';
 
+
 const getClassName = cssModules(STYLES);
 
-export const SIZE_TYPES = {
-  small: 'small',
-  default: 'default',
-  large: 'large',
-} as const;
-
-export type SizeType = (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES] | CUSTOM_SIZE_TYPE;
-
-export const SKELETON_TYPES = {
-  image: 'image',
-  bodyText: 'bodyText',
-  circle: 'circle',
-  headline: 'headline',
-} as const;
-
-export type SkeletonType = (typeof SKELETON_TYPES)[keyof typeof SKELETON_TYPES];
-
-export const IMAGE_SKELETON_STYLE = {
-  rounded: 'rounded',
-  default: 'default',
-} as const;
-export type ImageSkeletonStyle = (typeof IMAGE_SKELETON_STYLE)[keyof typeof IMAGE_SKELETON_STYLE];
-
-type SizeMap = {
-  [SKELETON_TYPES.image]: (typeof SIZE_TYPES)['default'];
-  [SKELETON_TYPES.bodyText]: (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
-  [SKELETON_TYPES.circle]: Exclude<(typeof SIZE_TYPES)[keyof typeof SIZE_TYPES], 'large'>
-  [SKELETON_TYPES.headline]: (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
-};
-
-type ComponentProps = {
-  type: Extract<SkeletonType, 'image'>
-  size?: SizeMap['image'] | CUSTOM_SIZE_TYPE;
-  ariaLabel: string;
-  style?: ImageSkeletonStyle;
-} | {
-  type: Exclude<keyof SizeMap, 'image'>;
-  size?: SizeMap[keyof SizeMap] | CUSTOM_SIZE_TYPE;
-  ariaLabel: string;
-};
-
 const BpkSkeleton = (props: ComponentProps) => {
-  const { ariaLabel, size, type } = props;
-  const classNames:string[] = [getClassName(`bpk-skeleton__${type}`)];
-  let styleObj;
+  const { size, type } = props;
 
-  if(typeof size === 'object') {
-    styleObj = size;
-  } else {
-    classNames.push(getClassName(`bpk-skeleton__${type}--${size}`))
-  }
-
-  if(type === SKELETON_TYPES.image) {
-    if(props.style === IMAGE_SKELETON_STYLE.rounded) {
-      classNames.push(getClassName('bpk-skeleton__image--rounded'));
-    }
-  }
+  const isImageRounded = type === SKELETON_TYPES.image && props.style === IMAGE_SKELETON_STYLE.rounded;
+  const classNames: string = getClassName(
+      `bpk-skeleton__${type}`,
+      typeof size !== 'object' && `bpk-skeleton__${type}--${size}`,
+      isImageRounded && 'bpk-skeleton__image--rounded'
+   );
+  const styleObj = typeof size === 'object' ? size : undefined;
 
   return (
-    <BpkBaseSkeleton skeletonStyle={classNames.join(' ')} ariaLabel={ariaLabel} styleObj={styleObj} />
+    <BpkBaseSkeleton skeletonStyle={classNames} styleObj={styleObj} />
   )
 };
 

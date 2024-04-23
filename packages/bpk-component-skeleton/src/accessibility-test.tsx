@@ -23,7 +23,7 @@ import BpkSkeleton ,{ SIZE_TYPES, SKELETON_TYPES, IMAGE_SKELETON_STYLE } from '.
 
 describe('BpkImageSkeleton accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkSkeleton type={SKELETON_TYPES.image} size={SIZE_TYPES.default} ariaLabel='loading' style={IMAGE_SKELETON_STYLE.rounded} />);
+    const { container } = render(<BpkSkeleton type={SKELETON_TYPES.image} size={SIZE_TYPES.default} style={IMAGE_SKELETON_STYLE.rounded} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

@@ -26,16 +26,14 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   skeletonStyle: string;
-  ariaLabel: string;
   styleObj?: CUSTOM_SIZE_TYPE;
 };
 
 const BpkBaseSkeleton = ({
-  ariaLabel,
   skeletonStyle,
   styleObj = undefined,
  }: Props) => (
-    <div role="status" aria-label={ariaLabel} className={getClassName('bpk-skeleton', skeletonStyle)} style={styleObj}  />
+    <div className={getClassName('bpk-skeleton', skeletonStyle)} style={styleObj}  />
   );
 
 export default BpkBaseSkeleton;

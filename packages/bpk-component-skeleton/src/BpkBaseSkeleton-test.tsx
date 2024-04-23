@@ -23,22 +23,15 @@ import BpkBaseSkeleton from './BpkBaseSkeleton';
 
 describe('BpkBaseSkeleton', () => {
   it('renders with default props', () => {
-    const { container } = render(<BpkBaseSkeleton ariaLabel='Test skeleton' skeletonStyle="custom-class" />);
+    const { container } = render(<BpkBaseSkeleton skeletonStyle="custom-class" />);
     const skeletonElement = container.querySelector('.bpk-skeleton');
     expect(skeletonElement).toBeInTheDocument();
     expect(skeletonElement).toHaveAttribute('class', 'bpk-skeleton custom-class');
   });
 
-  it('renders with aria-label when provided', () => {
-    const { container } = render(<BpkBaseSkeleton skeletonStyle="custom-class" ariaLabel="Test label" />);
-    const skeletonElement = container.querySelector('.bpk-skeleton');
-    expect(skeletonElement).toBeInTheDocument();
-    expect(skeletonElement).toHaveAttribute('aria-label', 'Test label');
-  });
-
   it('renders with custom styles when provided', () => {
     const customStyles = { width: '100px', height: '50px' };
-    const { container } = render(<BpkBaseSkeleton ariaLabel='Test skeleton' skeletonStyle="custom-class" styleObj={customStyles} />);
+    const { container } = render(<BpkBaseSkeleton skeletonStyle="custom-class" styleObj={customStyles} />);
     const skeletonElement = container.querySelector('.bpk-skeleton');
     expect(skeletonElement).toBeInTheDocument();
     expect(skeletonElement).toHaveStyle('width: 100px; height: 50px;');

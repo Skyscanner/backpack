@@ -27,19 +27,19 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const ImageDefaultSizeWithDefaultStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} ariaLabel='loading' />
-const ImageDefaultSizeWithRoundedStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} ariaLabel='loading' style={IMAGE_SKELETON_STYLE.rounded} />
+const ImageDefaultSizeWithDefaultStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} />
+const ImageDefaultSizeWithRoundedStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} style={IMAGE_SKELETON_STYLE.rounded} />
 
-const BodyTextSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.small} ariaLabel='loading' />
-const BodyTextDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.default} ariaLabel='loading' />
-const BodyTextLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.large} ariaLabel='loading' />
+const BodyTextSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.small} />
+const BodyTextDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.default} />
+const BodyTextLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.large} />
 
-const CircleSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} size={SIZE_TYPES.small} ariaLabel='loading'/>;
-const CircleDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} ariaLabel='loading' />;
+const CircleSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} size={SIZE_TYPES.small} />;
+const CircleDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} />;
 
-const HeadlineSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.small} ariaLabel='loading' />
-const HeadlineDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.default} ariaLabel='loading' />
-const HeadlineLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.large} ariaLabel='loading' />
+const HeadlineSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.small} />
+const HeadlineDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.default} />
+const HeadlineLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.large} />
 
 const ImageSkeletonExample = () => 
   <div className={getClassName('bpk-image-skeleton-layout')}>
