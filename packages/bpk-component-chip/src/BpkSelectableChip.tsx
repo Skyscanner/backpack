@@ -31,15 +31,14 @@ const getClassName = cssModules(STYLES);
 
 export interface Props extends CommonProps {
   role?: string;
-  dismissibleStyle: boolean;
   trailingAccessoryView?: ReactNode;
 }
 
 const BpkSelectableChip = ({
   accessibilityLabel,
   children,
+  className,
   disabled = false,
-  dismissibleStyle = false,
   leadingAccessoryView = null,
   role = 'checkbox',
   selected = false,
@@ -54,36 +53,39 @@ const BpkSelectableChip = ({
     disabled && `bpk-chip--${type}-disabled`,
     !children && 'bpk-chip--icon-only',
     !disabled && selected && `bpk-chip--${type}-selected`,
-    dismissibleStyle && `bpk-chip--${type}-dismissible`,
   );
 
   return (
-    <button
-      aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
-      className={classNames}
-      disabled={disabled}
-      role={role}
-      title={accessibilityLabel}
-      type="button"
-      {...rest}
-    >
-      {leadingAccessoryView && (
-        <span
-          className={getClassName(
-            'bpk-chip__leading-accessory-view',
-            !children && 'bpk-chip--icon-only__leading-accessory-view'
-          )}
-        >
-          {leadingAccessoryView}
-        </span>
-      )}
-      <BpkText textStyle={TEXT_STYLES.footnote}>{children}</BpkText>
-      {trailingAccessoryView && (
-        <span className={getClassName('bpk-chip__trailing-accessory-view')}>
-          {trailingAccessoryView}
-        </span>
-      )}
-    </button>
+    <div className={getClassName(className)}>
+      <button
+        aria-checked={
+          role === 'button' || role === 'tab' ? undefined : selected
+        }
+        className={classNames}
+        disabled={disabled}
+        role={role}
+        title={accessibilityLabel}
+        type="button"
+        {...rest}
+      >
+        {leadingAccessoryView && (
+          <span
+            className={getClassName(
+              'bpk-chip__leading-accessory-view',
+              !children && 'bpk-chip--icon-only__leading-accessory-view',
+            )}
+          >
+            {leadingAccessoryView}
+          </span>
+        )}
+        <BpkText textStyle={TEXT_STYLES.footnote}>{children}</BpkText>
+        {trailingAccessoryView && (
+          <span className={getClassName('bpk-chip__trailing-accessory-view')}>
+            {trailingAccessoryView}
+          </span>
+        )}
+      </button>
+    </div>
   );
 };
 
