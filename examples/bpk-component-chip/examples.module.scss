@@ -28,6 +28,7 @@
   }
 
   &__chip {
+    display: inline-flex;
     margin-right: tokens.bpk-spacing-md();
   }
 

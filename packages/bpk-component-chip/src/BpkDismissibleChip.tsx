@@ -43,27 +43,25 @@ const BpkDismissibleChip = ({
   type = CHIP_TYPES.default,
   ...rest
 }: BpkDismissibleChipProps) => {
-  const iconClassNames = getClassName(
-    `bpk-chip--${type}-dismissible__trailing-accessory-view`,
-  );
-  const classNames = getClassName(`bpk-chip--${type}-dismissible`, className);
+  const chipClassName = getClassName(`bpk-chip--${type}-dismissible`);
 
   return (
-    <BpkSelectableChip
-      {...rest}
-      leadingAccessoryView={leadingAccessoryView}
-      disabled={false}
-      trailingAccessoryView={<CloseCircleIconSm 
+    <div className={className}>
+      <BpkSelectableChip
+        {...rest}
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={iconClassNames} />}
-      selected
-      type={type}
-      role="button" // Override role="checkbox" because this chip is not selectable.
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={classNames}
-    />
+        className={chipClassName}
+        leadingAccessoryView={leadingAccessoryView}
+        disabled={false}
+        trailingAccessoryView={
+          <CloseCircleIconSm fill={type === CHIP_TYPES.default || type === CHIP_TYPES.onImage ? '#ffffff80' : '#626971'} />
+        }
+        selected
+        type={type}
+        role="button" // Override role="checkbox" because this chip is not selectable.
+      />
+    </div>
   );
 };
 
