@@ -42,7 +42,6 @@ type BpkDismissibleChipProps = Props;
 const BpkDismissibleChip = ({
   children,
   className,
-  disabled = false,
   leadingAccessoryView = null,
   selected = true,
   type = CHIP_TYPES.default,
@@ -52,17 +51,14 @@ const BpkDismissibleChip = ({
   const classNames = getClassName(
     'bpk-chip',
     `bpk-chip--${type}`,
-    disabled && 'bpk-chip--disabled',
-    disabled && `bpk-chip--${type}-disabled`,
     !children && 'bpk-chip--icon-only',
-    !disabled && selected && `bpk-chip--${type}-selected`,
+    selected && `bpk-chip--${type}-selected`,
     `bpk-chip--${type}-dismissible`,
   );
 
   return (
     <div className={getClassName(className)}>
       <button
-        disabled={false}
         type="button"
         className={classNames}
         {...rest}
