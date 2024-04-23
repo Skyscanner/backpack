@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactElement, ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { useRef, useState } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
@@ -70,60 +70,31 @@ export type ChipItem = {
   hidden?: boolean;
 } & SingleSelectChipItem;
 
+export type InternalProps = {
+  chipGroupClassNames: string
+};
+
 export type CommonProps = {
   label?: string;
   ariaLabel?: string;
-  type?: ChipGroupType;
   chipStyle?: ChipStyleType;
-  // only required when type = rail
-  leadingNudgerLabel?: string;
-  trailingNudgerLabel?: string;
   chips: ChipItem[];
-  stickyChip?: ChipItem;
   ariaMultiselectable?: boolean;
 };
 
 export type RailChipGroupProps = {
-  type: "rail"
+  stickyChip?: ChipItem;
   leadingNudgerLabel?: string;
   trailingNudgerLabel?: string;
-};
+} & CommonProps;
 
 export type WrapChipGroupProps = {
-  type: "wrap"
-};
+} & CommonProps;
 
-export type ChipGroupProps = (RailChipGroupProps | WrapChipGroupProps) & CommonProps;
+export type ChipGroupProps = (RailChipGroupProps & { type: typeof CHIP_GROUP_TYPES.rail } | WrapChipGroupProps & { type: typeof CHIP_GROUP_TYPES.wrap });
 
-const BpkChipGroup = ({
-  ariaLabel,
-  ariaMultiselectable = true,
-  chipStyle = CHIP_TYPES.default,
-  chips,
-  label,
-  leadingNudgerLabel = '',
-  stickyChip,
-  trailingNudgerLabel = '',
-  type = CHIP_GROUP_TYPES.rail,
-}: ChipGroupProps) => {
-  const scrollContainerRef = useRef<HTMLElement | null>(null);
-
-  const containerClassnames = getClassName('bpk-chip-group-container')
-
-  const chipGroupClassNames = getClassName(
-    'bpk-chip-group',
-    `bpk-chip-group--${type}`,
-    label && 'bpk-chip-group--with-label'
-  );
-
-  const stickyChipContainerClassnames = getClassName(
-    'bpk-sticky-chip-container',
-    `bpk-sticky-chip-container--${chipStyle}`,
-  );
-
-  const scrollContainerIndicator = getClassName('bpk-chip-group-scroller-indicator');
-
-  const renderChipItem = ({
+const Chip = ({ ariaMultiselectable, chipIndex, chipItem, chipStyle }: { chipIndex: number, chipItem: ChipItem, chipStyle: ChipStyleType, ariaMultiselectable: boolean }, index: number) => {
+  const {
     accessibilityLabel,
     component = CHIP_COMPONENT.selectable,
     hidden = false,
@@ -132,76 +103,138 @@ const BpkChipGroup = ({
     selected,
     text,
     ...rest
-  }: ChipItem, index: number) => {
-    const Component = CHIP_COMPONENT_MAP[component];
-    return !hidden && (
-      <Component
-        key={text}
-        selected={selected ?? false}
-        type={chipStyle}
-        accessibilityLabel={accessibilityLabel || text}
-        onClick={() => {
-          if (onClick) {
-            onClick(!selected, index);
-          }
-        }}
-        role={ariaMultiselectable ? 'checkbox' : 'radio'}
-        leadingAccessoryView={leadingAccessoryView}
-        {...rest}
-      >
-        {text}
-      </Component>
-    );
-  }
+  } = chipItem;
+  const Component = CHIP_COMPONENT_MAP[component];
+  return hidden ? null : (
+    <Component
+      key={text}
+      selected={selected ?? false}
+      type={chipStyle}
+      accessibilityLabel={accessibilityLabel || text}
+      onClick={() => {
+        if (onClick) {
+          onClick(!selected, chipIndex);
+        }
+      }}
+      role={ariaMultiselectable ? 'checkbox' : 'radio'}
+      leadingAccessoryView={leadingAccessoryView}
+      {...rest}
+    >
+      {text}
+    </Component>
+  );
+}
 
-  const wrapRailInScroll = (children: ReactElement) =>
-    type === CHIP_GROUP_TYPES.rail ? (
-      <BpkMobileScrollContainer
-        scrollerRef={(el: HTMLElement) => {scrollContainerRef.current = el}}
-        leadingIndicatorClassName={scrollContainerIndicator}
-        trailingIndicatorClassName={scrollContainerIndicator}
-      >
-        {children}
-      </BpkMobileScrollContainer>
-    ) : children;
+const ChipGroupContent = (
+  { ariaLabel,
+    ariaMultiselectable,
+    chipGroupClassNames,
+    chipStyle,
+    chips,
+    label }:
+    {
+      chipGroupClassNames: string,
+      ariaMultiselectable: boolean,
+      ariaLabel?: string,
+      label?: string,
+      chips: ChipItem[],
+      chipStyle: ChipStyleType
+    }) => (
+  <fieldset
+    className={chipGroupClassNames}
+    role={ariaMultiselectable ? 'group' : 'radiogroup'}
+  >
+    {ariaLabel && <legend className='visually-hidden'>{ariaLabel}</legend>}
+    {label && <BpkText textStyle={TEXT_STYLES.footnote} aria-hidden>{label}</BpkText>}
+    {chips.map((chip, index) => <Chip chipItem={chip} chipStyle={chipStyle} ariaMultiselectable={ariaMultiselectable} chipIndex={index} />)}
+  </fieldset>
+);
+
+const RailChipGroup = ({
+  ariaLabel,
+  ariaMultiselectable = true,
+  chipGroupClassNames,
+  chipStyle = CHIP_TYPES.default,
+  chips,
+  label,
+  leadingNudgerLabel = '',
+  stickyChip,
+  trailingNudgerLabel = '',
+}: RailChipGroupProps & InternalProps) => {
+  const scrollContainerRef = useRef<HTMLElement | null>(null);
+
+  const stickyChipContainerClassnames = getClassName(
+    'bpk-sticky-chip-container',
+    `bpk-sticky-chip-container--${chipStyle}`,
+  );
+
+  const scrollContainerIndicator = getClassName('bpk-chip-group-scroller-indicator');
 
   return (
-    <div className={containerClassnames}>
-      {type === CHIP_GROUP_TYPES.rail && (
-        <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-          <Nudger leading ariaLabel={leadingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
-        </BpkBreakpoint>
-      )}
-      {type === CHIP_GROUP_TYPES.rail && stickyChip &&
+    <>
+      <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
+        <Nudger leading ariaLabel={leadingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
+      </BpkBreakpoint>
+      {stickyChip &&
         <div className={stickyChipContainerClassnames}>
           <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-            {(isDesktop) => renderChipItem({
-              role: 'button',
-              component: isDesktop ? CHIP_COMPONENT.selectable : CHIP_COMPONENT.icon,
-              leadingAccessoryView: <FilterIconSm />,
-              ...stickyChip,
-            }, -1)}
+            {(isDesktop) =>
+              <Chip chipItem={({
+                role: 'button',
+                component: isDesktop ? CHIP_COMPONENT.selectable : CHIP_COMPONENT.icon,
+                leadingAccessoryView: <FilterIconSm />,
+                ...stickyChip,
+              })} chipStyle={chipStyle} ariaMultiselectable={ariaMultiselectable} chipIndex={-1} />
+            }
           </BpkBreakpoint>
         </div>
       }
-      {wrapRailInScroll(
-        <fieldset
-          className={chipGroupClassNames}
-          role={ariaMultiselectable ? 'group' : 'radiogroup'}
-        >
-          {ariaLabel && <legend className='visually-hidden'>{ariaLabel}</legend>}
-          {label && <BpkText textStyle={TEXT_STYLES.footnote} aria-hidden>{label}</BpkText>}
-          {chips.map((chip, index) => renderChipItem(chip, index))}
-        </fieldset>,
-      )}
-      {type === CHIP_GROUP_TYPES.rail && (
-        <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-          <Nudger ariaLabel={trailingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
-        </BpkBreakpoint>
-      )}
-    </div>
+      <BpkMobileScrollContainer
+        scrollerRef={(el: HTMLElement) => { scrollContainerRef.current = el }}
+        leadingIndicatorClassName={scrollContainerIndicator}
+        trailingIndicatorClassName={scrollContainerIndicator}
+      >
+        <ChipGroupContent ariaLabel={ariaLabel}
+          ariaMultiselectable={ariaMultiselectable}
+          chipGroupClassNames={chipGroupClassNames}
+          chipStyle={chipStyle}
+          chips={chips}
+          label={label} />
+      </BpkMobileScrollContainer>
+      <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
+        <Nudger ariaLabel={trailingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
+      </BpkBreakpoint>
+    </>
   );
 };
+
+const WrapChipGroup = ({
+  ariaLabel,
+  ariaMultiselectable = true,
+  chipGroupClassNames,
+  chipStyle = CHIP_TYPES.default,
+  chips,
+  label,
+}: WrapChipGroupProps & InternalProps) =>
+  <ChipGroupContent ariaLabel={ariaLabel}
+    ariaMultiselectable={ariaMultiselectable}
+    chipGroupClassNames={chipGroupClassNames}
+    chipStyle={chipStyle}
+    chips={chips}
+    label={label} />;
+
+const BpkChipGroup = ({ label, type, ...rest }: ChipGroupProps) => {
+  const containerClassnames = getClassName('bpk-chip-group-container')
+  const chipGroupClassNames = getClassName(
+    'bpk-chip-group',
+    `bpk-chip-group--${type}`,
+    label && 'bpk-chip-group--with-label'
+  );
+
+  return <div className={containerClassnames}>
+    {type === CHIP_GROUP_TYPES.rail ? <RailChipGroup chipGroupClassNames={chipGroupClassNames} label={label} {...rest} /> : <WrapChipGroup chipGroupClassNames={chipGroupClassNames} label={label} {...rest} />}
+  </div>
+}
 
 export const BpkChipGroupState = ({ chips, ...rest }: ChipGroupProps) => {
   const [selectedChips, setSelectedChips] = useState(chips.map(c => Boolean(c.selected)));
