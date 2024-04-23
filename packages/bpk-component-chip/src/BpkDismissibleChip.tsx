@@ -40,6 +40,7 @@ const getClassName = cssModules(STYLES);
 type BpkDismissibleChipProps = Omit<Props, 'disabled' | 'selected'>;
 
 const BpkDismissibleChip = ({
+  accessibilityLabel,
   children,
   className,
   leadingAccessoryView = null,
@@ -58,6 +59,7 @@ const BpkDismissibleChip = ({
   return (
     <div className={getClassName(className)}>
       <button
+        title={accessibilityLabel}
         type="button"
         className={classNames}
         {...rest}
