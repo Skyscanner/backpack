@@ -448,7 +448,7 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
           </tbody>
         </table>
         <svg
-          class="bpk-barchart my-custom-class-name"
+          class="my-custom-class-name"
           height="0"
           width="0"
           xmlns="http://www.w3.org/2000/svg"
