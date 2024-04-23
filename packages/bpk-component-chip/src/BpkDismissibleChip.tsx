@@ -37,13 +37,12 @@ import STYLES from './BpkSelectableChip.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type BpkDismissibleChipProps = Props;
+type BpkDismissibleChipProps = Omit<Props, 'disabled' | 'selected'>;
 
 const BpkDismissibleChip = ({
   children,
   className,
   leadingAccessoryView = null,
-  selected = true,
   type = CHIP_TYPES.default,
   ...rest
 }: BpkDismissibleChipProps) => {
@@ -51,9 +50,9 @@ const BpkDismissibleChip = ({
   const classNames = getClassName(
     'bpk-chip',
     `bpk-chip--${type}`,
-    !children && 'bpk-chip--icon-only',
-    selected && `bpk-chip--${type}-selected`,
     `bpk-chip--${type}-dismissible`,
+    `bpk-chip--${type}-selected`,
+    !children && 'bpk-chip--icon-only',
   );
 
   return (
