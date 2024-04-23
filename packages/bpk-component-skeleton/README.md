@@ -17,8 +17,8 @@ import BpkSkeleton, {
 
 export default () => (
   <div>
-    <BpkSkeleton type={SKELETON_TYPES.image} size={{width: '7rem', height: '6rem'}} ariaLabel='loading' style={IMAGE_SKELETON_STYLE.rounded} />
-    <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.small} ariaLabel='loading' />
+    <BpkSkeleton type={SKELETON_TYPES.image} size={{width: '7rem', height: '6rem'}} style={IMAGE_SKELETON_STYLE.rounded} />
+    <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.small} />
   </div>
 );
 ```
