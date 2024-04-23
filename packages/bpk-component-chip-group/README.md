@@ -151,5 +151,4 @@ const SingleSelectStateExample = () => (
 
 ## Props
 
-[//]: # (TODO: this update to web tab)
-Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/chip-group/compose-LwGOKNct).
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/chip-group/web-4eQsMvYv).
