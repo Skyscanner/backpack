@@ -40,6 +40,7 @@
   }
 
   &__title {
+    @include typography.bpk-text;
     @include typography.bpk-heading-2;
 
     @include breakpoints.bpk-breakpoint-mobile {
