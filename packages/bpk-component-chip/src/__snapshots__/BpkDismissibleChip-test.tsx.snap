@@ -6,8 +6,8 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+      class="bpk-chip bpk-chip--default bpk-chip--default-dismissible bpk-chip--default-selected"
+      title="Dismiss"
       trailingaccessoryview="[object Object]"
       type="button"
     >
@@ -42,8 +42,8 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+      class="bpk-chip bpk-chip--default bpk-chip--default-dismissible bpk-chip--default-selected"
+      title="Dismiss"
       type="button"
     >
       <span
@@ -77,8 +77,8 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+      class="bpk-chip bpk-chip--default bpk-chip--default-dismissible bpk-chip--default-selected"
+      title="Dismiss"
       type="button"
     >
       <span
@@ -112,8 +112,8 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
     class="custom-class"
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+      class="bpk-chip bpk-chip--default bpk-chip--default-dismissible bpk-chip--default-selected"
+      title="Dismiss"
       type="button"
     >
       <span
@@ -147,8 +147,8 @@ exports[`BpkDismissibleChip should render correctly with type="default" 1`] = `
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+      class="bpk-chip bpk-chip--default bpk-chip--default-dismissible bpk-chip--default-selected"
+      title="Dismiss"
       type="button"
     >
       <span
@@ -182,8 +182,8 @@ exports[`BpkDismissibleChip should render correctly with type="default" and a le
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+      class="bpk-chip bpk-chip--default bpk-chip--default-dismissible bpk-chip--default-selected"
+      title="Dismiss"
       type="button"
     >
       <span
@@ -224,8 +224,9 @@ exports[`BpkDismissibleChip should render correctly with type="default" and disa
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled bpk-chip--default-dismissible"
+      class="bpk-chip bpk-chip--default bpk-chip--default-dismissible bpk-chip--default-selected"
+      disabled=""
+      title="Dismiss"
       type="button"
     >
       <span
@@ -259,8 +260,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
+      class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-dismissible bpk-chip--on-dark-selected"
+      title="Dismiss"
       type="button"
     >
       <span
@@ -294,8 +295,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and a le
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
+      class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-dismissible bpk-chip--on-dark-selected"
+      title="Dismiss"
       type="button"
     >
       <span
@@ -336,8 +337,9 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and disa
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled bpk-chip--on-dark-dismissible"
+      class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-dismissible bpk-chip--on-dark-selected"
+      disabled=""
+      title="Dismiss"
       type="button"
     >
       <span
@@ -371,8 +373,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
+      class="bpk-chip bpk-chip--on-image bpk-chip--on-image-dismissible bpk-chip--on-image-selected"
+      title="Dismiss"
       type="button"
     >
       <span
@@ -406,8 +408,8 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and a l
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
+      class="bpk-chip bpk-chip--on-image bpk-chip--on-image-dismissible bpk-chip--on-image-selected"
+      title="Dismiss"
       type="button"
     >
       <span
@@ -448,8 +450,9 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and dis
     class=""
   >
     <button
-      accessibilitylabel="Dismiss"
-      class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled bpk-chip--on-image-dismissible"
+      class="bpk-chip bpk-chip--on-image bpk-chip--on-image-dismissible bpk-chip--on-image-selected"
+      disabled=""
+      title="Dismiss"
       type="button"
     >
       <span
