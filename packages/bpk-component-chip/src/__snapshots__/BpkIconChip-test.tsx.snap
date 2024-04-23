@@ -35,7 +35,7 @@ exports[`BpkIconChip should render correctly with a "className" attribute 1`] = 
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--default bpk-chip--icon-only custom-class"
+    class="custom-class"
     role="checkbox"
     title="Filter"
     type="button"

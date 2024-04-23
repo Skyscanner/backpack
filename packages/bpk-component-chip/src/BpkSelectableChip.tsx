@@ -31,14 +31,15 @@ const getClassName = cssModules(STYLES);
 
 export interface Props extends CommonProps {
   role?: string;
+  dismissibleStyle: boolean;
   trailingAccessoryView?: ReactNode;
 }
 
 const BpkSelectableChip = ({
   accessibilityLabel,
   children,
-  className,
   disabled = false,
+  dismissibleStyle = false,
   leadingAccessoryView = null,
   role = 'checkbox',
   selected = false,
@@ -53,7 +54,7 @@ const BpkSelectableChip = ({
     disabled && `bpk-chip--${type}-disabled`,
     !children && 'bpk-chip--icon-only',
     !disabled && selected && `bpk-chip--${type}-selected`,
-    className,
+    dismissibleStyle && `bpk-chip--${type}-dismissible`,
   );
 
   return (

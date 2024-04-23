@@ -22,7 +22,7 @@ exports[`BpkSelectableChip should render correctly with a "className" attribute 
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="bpk-chip bpk-chip--default custom-class"
+    class="custom-class"
     role="checkbox"
     title="Toggle"
     type="button"

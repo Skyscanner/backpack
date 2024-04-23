@@ -24,16 +24,12 @@ accessory view of a close icon.
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps as Props } from './commonTypes';
 
-import STYLES from './BpkSelectableChip.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type BpkDismissibleChipProps = Omit<Props, 'disabled' | 'selected'>;
 
@@ -42,27 +38,27 @@ const BpkDismissibleChip = ({
   leadingAccessoryView = null,
   type = CHIP_TYPES.default,
   ...rest
-}: BpkDismissibleChipProps) => {
-  const chipClassName = getClassName(`bpk-chip--${type}-dismissible`);
-
-  return (
-    <div className={className}>
-      <BpkSelectableChip
-        {...rest}
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={chipClassName}
-        leadingAccessoryView={leadingAccessoryView}
-        disabled={false}
-        trailingAccessoryView={
-          <CloseCircleIconSm fill={type === CHIP_TYPES.default || type === CHIP_TYPES.onImage ? '#ffffff80' : '#626971'} />
-        }
-        selected
-        type={type}
-        role="button" // Override role="checkbox" because this chip is not selectable.
-      />
-    </div>
-  );
-};
+}: BpkDismissibleChipProps) => (
+  <div className={className}>
+    <BpkSelectableChip
+      {...rest}
+      leadingAccessoryView={leadingAccessoryView}
+      disabled={false}
+      dismissibleStyle
+      trailingAccessoryView={
+        <CloseCircleIconSm
+          fill={
+            type === CHIP_TYPES.default || type === CHIP_TYPES.onImage
+              ? '#ffffff80'
+              : '#626971'
+          }
+        />
+      }
+      selected
+      type={type}
+      role="button" // Override role="checkbox" because this chip is not selectable.
+    />
+  </div>
+);
 
 export default BpkDismissibleChip;
