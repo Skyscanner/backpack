@@ -21,6 +21,7 @@ The dismissible chip component is just a selectable chip that's
 been hard coded to have disabled={false}, selected and a trailing
 accessory view of a close icon.
 */
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { chipColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
