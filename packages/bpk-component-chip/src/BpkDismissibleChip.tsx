@@ -21,14 +21,13 @@ The dismissible chip component is just a selectable chip that's
 been hard coded to have disabled={false}, selected and a trailing
 accessory view of a close icon.
 */
-
-import type { ReactNode } from 'react';
+import { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
+import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps as Props } from './commonTypes';
@@ -40,58 +39,30 @@ const getClassName = cssModules(STYLES);
 type BpkDismissibleChipProps = Omit<Props, 'disabled' | 'selected'>;
 
 const BpkDismissibleChip = ({
-  accessibilityLabel,
-  children,
   className,
   leadingAccessoryView = null,
   type = CHIP_TYPES.default,
   ...rest
 }: BpkDismissibleChipProps) => {
-
-  const classNames = getClassName(
-    'bpk-chip',
-    `bpk-chip--${type}`,
-    `bpk-chip--${type}-dismissible`,
-    `bpk-chip--${type}-selected`,
-    !children && 'bpk-chip--icon-only',
-  );
+  const classNames = getClassName(`bpk-chip--${type}-dismissible`, className);
 
   return (
-    <div className={getClassName(className)}>
-      <button
-        title={accessibilityLabel}
-        type="button"
-        className={classNames}
-        {...rest}
-      >
-        {leadingAccessoryView && (
-          <span
-            className={getClassName(
-              'bpk-chip__leading-accessory-view',
-              !children && 'bpk-chip--icon-only__leading-accessory-view',
-            )}
-          >
-            {leadingAccessoryView}
-          </span>
-        )}
-        <BpkText textStyle={TEXT_STYLES.footnote}>{children}</BpkText>
-
-        <span
-          className={getClassName(
-            'bpk-chip__trailing-accessory-view',
-            `bpk-chip--${type}-dismissible__trailing-accessory-view`,
-          )}
-        >
-          <CloseCircleIconSm
-            fill={
-              type === CHIP_TYPES.default || type === CHIP_TYPES.onImage
-                ? '#ffffff80'
-                : '#626971'
-            }
-          />
-        </span>
-      </button>
-    </div>
+    <BpkSelectableChip
+      {...rest}
+      leadingAccessoryView={leadingAccessoryView}
+      disabled={false}
+      trailingAccessoryView={<CloseCircleIconSm 
+        fill={
+          type === CHIP_TYPES.default || type === CHIP_TYPES.onImage
+            ? textColors.textDisabledOnDarkDay
+            :  textColors.textSecondaryDay } />}
+      selected
+      type={type}
+      role="button" // Override role="checkbox" because this chip is not selectable.
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      className={classNames}
+    />
   );
 };
 
