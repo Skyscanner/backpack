@@ -61,9 +61,7 @@ const BpkSelectableChip = ({
 
   return (
     <button
-      aria-checked={
-        role === 'button' || role === 'tab' ? undefined : selected
-      }
+      aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
       className={classNames}
       disabled={disabled}
       role={role}
@@ -75,7 +73,7 @@ const BpkSelectableChip = ({
         <span
           className={getClassName(
             'bpk-chip__leading-accessory-view',
-            !children && 'bpk-chip--icon-only__leading-accessory-view',
+            !children && 'bpk-chip--icon-only__leading-accessory-view'
           )}
         >
           {leadingAccessoryView}

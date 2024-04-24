@@ -59,8 +59,6 @@ const BpkDismissibleChip = ({
       selected
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames}
     />
   );
