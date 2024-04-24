@@ -54,8 +54,8 @@ const BpkDismissibleChip = ({
       trailingAccessoryView={<CloseCircleIconSm 
         fill={
           type === CHIP_TYPES.default || type === CHIP_TYPES.onImage
-            ? chipColors.privateChipOnDarkOnDismissIconDay
-            :  chipColors.privateChipOnDarkOnDismissIconNight } />}
+            ? chipColors.privateChipOnDarkOnDismissIconNight
+            :  chipColors.privateChipOnDarkOnDismissIconDay } />}
       selected
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
