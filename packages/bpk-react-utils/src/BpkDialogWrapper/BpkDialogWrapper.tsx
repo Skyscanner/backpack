@@ -136,12 +136,7 @@ export const BpkDialogWrapper = (props: Props) => {
   }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
 
   return isOpen ? (
-    <div
-      className={getClassName(
-        'bpk-dialog-wrapper',
-        !dialogSupported && 'bpk-dialog-wrapper--polyfill',
-      )}
-    >
+    <div>
       {!dialogSupported && (
         <div
           id={`${id}-polyfill`}

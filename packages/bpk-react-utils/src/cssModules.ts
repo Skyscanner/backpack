@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-export default (styles: { [key: string]: any } = {}) =>
-  (...classNames: Array<string | boolean | number | {} | null | undefined>) =>
-    classNames.reduce((className: string, currentClass) => {
+export default <T extends { [key: string]: string}, K extends keyof T & string>(styles: T) =>
+  (...classNames: K[]) =>
+    classNames.reduce((className, currentClass) => {
       if (currentClass && typeof currentClass === 'string') {
         const realName = styles[currentClass] || currentClass;
         return className ? `${className} ${realName}` : realName;
