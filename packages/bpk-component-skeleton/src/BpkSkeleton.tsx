@@ -29,7 +29,7 @@ import STYLES from './BpkSkeleton.module.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkSkeleton = (props: ComponentProps) => {
-  const { size, type } = props;
+  const { size = SIZE_TYPES.default, type } = props;
 
   const isImageRounded = type === SKELETON_TYPES.image && props.style === IMAGE_SKELETON_STYLE.rounded;
   const classNames: string = getClassName(
@@ -43,10 +43,5 @@ const BpkSkeleton = (props: ComponentProps) => {
     <BpkBaseSkeleton skeletonStyle={classNames} styleObj={styleObj} />
   )
 };
-
-BpkSkeleton.defaultProps = {
-  size: SIZE_TYPES.default,
-  style: IMAGE_SKELETON_STYLE.default,
-}
 
 export default BpkSkeleton;
