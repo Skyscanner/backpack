@@ -30,7 +30,7 @@ import STYLES from './BpkSelectableChip.module.scss';
 const getClassName = cssModules(STYLES);
 
 export interface Props extends CommonProps {
-  dismissibleStyle?: boolean;
+  dismissible?: boolean;
   role?: string;
   trailingAccessoryView?: ReactNode;
 }
@@ -40,7 +40,7 @@ const BpkSelectableChip = ({
   children,
   className,
   disabled = false,
-  dismissibleStyle = false,
+  dismissible = false,
   leadingAccessoryView = null,
   role = 'checkbox',
   selected = false,
@@ -55,7 +55,7 @@ const BpkSelectableChip = ({
     disabled && `bpk-chip--${type}-disabled`,
     !children && 'bpk-chip--icon-only',
     !disabled && selected && `bpk-chip--${type}-selected`,
-    dismissibleStyle && `bpk-chip--${type}-dismissible`,
+    dismissible && `bpk-chip--${type}-dismissible`,
     className
   );
 

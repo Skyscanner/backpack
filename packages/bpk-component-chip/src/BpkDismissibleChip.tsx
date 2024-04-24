@@ -52,6 +52,7 @@ const BpkDismissibleChip = ({
       {...rest}
       leadingAccessoryView={leadingAccessoryView}
       disabled={false}
+      dismissible
       trailingAccessoryView={<CloseCircleIconSm 
         fill={
           type === CHIP_TYPES.default || type === CHIP_TYPES.onImage

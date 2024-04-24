@@ -3,7 +3,7 @@
 exports[`BpkDismissibleChip should ignore setting a trailing accessory view, resulting in a close icon 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -35,7 +35,7 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
 exports[`BpkDismissibleChip should override setting selected={true}, resulting in selected={false} 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -67,7 +67,7 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
 exports[`BpkDismissibleChip should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -99,7 +99,7 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
 exports[`BpkDismissibleChip should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible custom-class"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible custom-class"
     role="button"
     title="Dismiss"
     type="button"
@@ -131,7 +131,7 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
 exports[`BpkDismissibleChip should render correctly with type="default" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -163,7 +163,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" 1`] = `
 exports[`BpkDismissibleChip should render correctly with type="default" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -202,7 +202,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" and a le
 exports[`BpkDismissibleChip should render correctly with type="default" and disabled 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -234,7 +234,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" and disa
 exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible bpk-chip--on-dark-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -266,7 +266,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
 exports[`BpkDismissibleChip should render correctly with type="on-dark" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible bpk-chip--on-dark-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -305,7 +305,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and a le
 exports[`BpkDismissibleChip should render correctly with type="on-dark" and disabled 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible bpk-chip--on-dark-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -337,7 +337,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and disa
 exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible bpk-chip--on-image-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -369,7 +369,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
 exports[`BpkDismissibleChip should render correctly with type="on-image" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible bpk-chip--on-image-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -408,7 +408,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and a l
 exports[`BpkDismissibleChip should render correctly with type="on-image" and disabled 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible bpk-chip--on-image-dismissible"
     role="button"
     title="Dismiss"
     type="button"
