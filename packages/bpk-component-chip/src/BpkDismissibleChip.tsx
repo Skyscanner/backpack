@@ -21,7 +21,7 @@ The dismissible chip component is just a selectable chip that's
 been hard coded to have disabled={false}, selected and a trailing
 accessory view of a close icon.
 */
-import { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { chipColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
@@ -54,8 +54,8 @@ const BpkDismissibleChip = ({
       trailingAccessoryView={<CloseCircleIconSm 
         fill={
           type === CHIP_TYPES.default || type === CHIP_TYPES.onImage
-            ? textColors.textDisabledOnDarkDay
-            :  textColors.textSecondaryDay } />}
+            ? chipColors.privateChipOnDarkOnDismissIconDay
+            :  chipColors.privateChipOnDarkOnDismissIconNight } />}
       selected
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
