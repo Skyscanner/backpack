@@ -27,6 +27,7 @@ export default () => (
   <BpkMap
     zoom={15}
     showControls={false}
+    scaleControl={false}
     panEnabled={false}
     center={{
       latitude: 27.9881,
@@ -70,6 +71,7 @@ export default () => (
   <BpkMap
     zoom={15}
     showControls={false}
+    scaleControl={false}
     panEnabled={false}
     center={{
       latitude: 27.9881,
@@ -110,6 +112,7 @@ export default () => (
   <BpkMap
     zoom={15}
     showControls={false}
+    scaleControl={false}
     panEnabled={false}
     center={{
       latitude: 27.9881,
@@ -171,6 +174,7 @@ export default () => (
       longitude: 86.925,
     }}
     showControls={false}
+    scaleControl={false}
     panEnabled={false}
   />
 );
