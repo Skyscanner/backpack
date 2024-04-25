@@ -25,6 +25,7 @@
   bottom: tokens.bpk-spacing-xl();
   left: 0;
   display: flex;
+  z-index: 2;
   max-width: tokens.bpk-spacing-xxl() * 10;
   margin: auto;
   padding: tokens.bpk-spacing-lg();

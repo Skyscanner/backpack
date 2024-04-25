@@ -151,6 +151,7 @@ const BpkMap = (props: Props) => {
         clickableIcons: false,
         // https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle
         styles: mapOptionStyles,
+        scaleControl: true,
       }}
       onDragEnd={() => {
         if (ref && ref.current && onRegionChange) {
