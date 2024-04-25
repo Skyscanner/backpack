@@ -9,7 +9,7 @@ exports[`BpkSectionHeader should render correctly 1`] = `
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
     >
       <h2
-        class="bpk-text bpk-text--body-default bpk-section-header__title"
+        class="bpk-section-header__title"
       >
         Section title
       </h2>
@@ -27,14 +27,18 @@ exports[`BpkSectionHeader should render correctly with "type" prop 1`] = `
       class="bpk-section-header__title-description bpk-section-header__title-description--on-dark"
     >
       <h2
-        class="bpk-text bpk-text--body-default bpk-section-header__title"
+        class="bpk-section-header__title"
       >
         Section title
       </h2>
       <span
-        class="bpk-text bpk-text--body-default bpk-section-header__description"
+        class="bpk-section-header__description"
       >
-        Section title description
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title description
+        </span>
       </span>
     </div>
     <button
@@ -56,14 +60,18 @@ exports[`BpkSectionHeader should render correctly with a "description" prop 1`] 
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
     >
       <h2
-        class="bpk-text bpk-text--body-default bpk-section-header__title"
+        class="bpk-section-header__title"
       >
         Section title
       </h2>
       <span
-        class="bpk-text bpk-text--body-default bpk-section-header__description"
+        class="bpk-section-header__description"
       >
-        Section title description
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title description
+        </span>
       </span>
     </div>
   </div>
@@ -79,14 +87,18 @@ exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
     >
       <h2
-        class="bpk-text bpk-text--body-default bpk-section-header__title"
+        class="bpk-section-header__title"
       >
         Section title
       </h2>
       <span
-        class="bpk-text bpk-text--body-default bpk-section-header__description"
+        class="bpk-section-header__description"
       >
-        Section title description
+        <span
+          class="bpk-text bpk-text--body-default"
+        >
+          Section title description
+        </span>
       </span>
     </div>
     <button
