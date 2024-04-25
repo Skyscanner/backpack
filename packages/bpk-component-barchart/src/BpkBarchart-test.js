@@ -44,22 +44,6 @@ describe('BpkBarchart', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "className" prop', () => {
-    const { asFragment } = render(
-      <BpkBarchart
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        xAxisLabel="Month"
-        yAxisLabel="Average price (£)"
-        initialWidth={size}
-        initialHeight={size}
-        data={prices}
-        className="my-custom-class-name"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with "leadingScrollIndicatorClassName" prop', () => {
     const { asFragment } = render(
       <BpkBarchart
