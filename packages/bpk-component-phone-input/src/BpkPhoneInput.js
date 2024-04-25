@@ -187,19 +187,21 @@ const BpkPhoneInput = (props: Props) => {
         >
           {label}
         </BpkLabel>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        <BpkInput
-          {...commonProps}
-          {...rest}
-          id={id}
-          name={name}
-          value={displayValue}
-          type={INPUT_TYPES.tel}
-          onChange={handleChange}
-          // TODO: className to be removed
-          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={getClassName(className)}
-        />
+        {/* <span className={getClassName(className)}> */}
+          {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+          <BpkInput
+            {...commonProps}
+            {...rest}
+            id={id}
+            name={name}
+            value={displayValue}
+            type={INPUT_TYPES.tel}
+            onChange={handleChange}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+            // className={getClassName(className)}
+          />
+        {/* </span> */}
       </div>
     </span>
   );
