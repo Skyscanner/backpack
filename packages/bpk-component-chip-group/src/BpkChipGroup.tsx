@@ -93,7 +93,7 @@ export type WrapChipGroupProps = {
 
 export type ChipGroupProps = (RailChipGroupProps & { type: typeof CHIP_GROUP_TYPES.rail } | WrapChipGroupProps & { type: typeof CHIP_GROUP_TYPES.wrap });
 
-const Chip = ({ ariaMultiselectable, chipIndex, chipItem, chipStyle }: { chipIndex: number, chipItem: ChipItem, chipStyle: ChipStyleType, ariaMultiselectable: boolean }, index: number) => {
+const Chip = ({ ariaMultiselectable, chipIndex, chipItem, chipStyle }: { chipIndex: number, chipItem: ChipItem, chipStyle: ChipStyleType, ariaMultiselectable: boolean }) => {
   const {
     accessibilityLabel,
     component = CHIP_COMPONENT.selectable,

@@ -18,14 +18,13 @@
 
 import { useState } from 'react';
 
-import BpkChipGroup, { type ChipItem, type SingleSelectChipItem, type CommonProps } from './BpkChipGroup';
+import BpkChipGroup, { type ChipItem, type SingleSelectChipItem, type ChipGroupProps } from './BpkChipGroup';
 
 export type SingleSelectProps = {
   chips: SingleSelectChipItem[];
   selectedIndex?: number;
   onItemClick?: (item: SingleSelectChipItem, selected: boolean, index: number) => void,
-} & CommonProps;
-
+} & ChipGroupProps;
 
 const BpkChipGroupSingleSelect = ({ chips, onItemClick, selectedIndex, ...rest }: SingleSelectProps) => {
   const chipsWithSelection = chips.map((chip, index) => chip && ({
