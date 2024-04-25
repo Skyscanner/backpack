@@ -52,7 +52,7 @@ exports[`BpkPhoneInput should render correctly 1`] = `
       </div>
       <input
         aria-invalid="false"
-        class="bpk-input"
+        class="bpk-input fancy-input"
         id="phone-input-id"
         name="Telephone input"
         type="tel"
@@ -116,7 +116,7 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
       </div>
       <input
         aria-invalid="false"
-        class="bpk-input"
+        class="bpk-input fancy-input"
         disabled=""
         id="phone-input-id"
         name="Telephone input"
@@ -180,7 +180,7 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
       </div>
       <input
         aria-invalid="false"
-        class="bpk-input bpk-input--large"
+        class="bpk-input bpk-input--large fancy-input"
         id="phone-input-id"
         name="Telephone input"
         type="tel"
@@ -243,7 +243,7 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
       </div>
       <input
         aria-invalid="false"
-        class="bpk-input bpk-input--valid"
+        class="bpk-input bpk-input--valid fancy-input"
         id="phone-input-id"
         name="Telephone input"
         type="tel"
@@ -307,7 +307,7 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
       </div>
       <input
         aria-invalid="false"
-        class="bpk-input"
+        class="bpk-input fancy-input"
         id="phone-input-id"
         name="Telephone input"
         type="tel"
@@ -378,7 +378,7 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
       </div>
       <input
         aria-invalid="false"
-        class="bpk-input"
+        class="bpk-input fancy-input"
         id="phone-input-id"
         name="Telephone input"
         type="tel"
@@ -441,7 +441,7 @@ exports[`BpkPhoneInput should render correctly with the "dialingCodeMask" attrib
       </div>
       <input
         aria-invalid="false"
-        class="bpk-input"
+        class="bpk-input fancy-input"
         id="phone-input-id"
         name="Telephone input"
         type="tel"
