@@ -74,7 +74,6 @@ type Props = {
   onTilesLoaded: ?() => void,
   className: ?string,
   mapOptionStyles: ?Array<MapOptionStyle>,
-  scaleControl: ?boolean,
 };
 
 const BpkMap = (props: Props) => {
@@ -91,7 +90,6 @@ const BpkMap = (props: Props) => {
     onTilesLoaded,
     onZoom,
     panEnabled,
-    scaleControl,
     showControls,
     zoom,
   } = props;
@@ -153,7 +151,7 @@ const BpkMap = (props: Props) => {
         clickableIcons: false,
         // https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle
         styles: mapOptionStyles,
-        scaleControl,
+        scaleControl: true,
       }}
       onDragEnd={() => {
         if (ref && ref.current && onRegionChange) {
@@ -199,7 +197,6 @@ BpkMap.propTypes = {
   onZoom: PropTypes.func,
   panEnabled: PropTypes.bool,
   showControls: PropTypes.bool,
-  scaleControl: PropTypes.bool,
   onTilesLoaded: PropTypes.func,
   zoom: PropTypes.number,
   mapOptionStyles: PropTypes.arrayOf(
@@ -228,7 +225,6 @@ BpkMap.defaultProps = {
   className: null,
   mapOptionStyles: null,
   mapId: null,
-  scaleControl: false,
 };
 
 export default BpkMap;

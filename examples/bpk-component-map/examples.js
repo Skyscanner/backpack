@@ -291,10 +291,6 @@ const SimpleExample = () => (
   <StoryMap zoom={15} center={{ latitude: 55.944357, longitude: -3.1967116 }} />
 );
 
-const withScaleControlExample = () => (
-  <StoryMap zoom={15} center={{ latitude: 55.944357, longitude: -3.1967116 }} scaleControl />
-);
-
 const DragDisabledAndHiddenControlsExample = () => (
   <StoryMap
     center={{ latitude: 55.944357, longitude: -3.1967116 }}
@@ -402,5 +398,4 @@ export {
   WithIconPriceMarkersV2Example,
   MultipleMapsExample,
   VisualTestExample,
-  withScaleControlExample,
 };
