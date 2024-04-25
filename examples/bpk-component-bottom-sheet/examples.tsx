@@ -22,17 +22,15 @@ import type { ReactNode } from 'react';
 import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
 import BpkButton from '../../packages/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import { getClassName, withDefaultProps } from '../../packages/bpk-react-utils';
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.bodyDefault,
   tagName: 'p',
-  className: getClassName('bpk-bottom-sheet-paragraph'),
+  className: getClassName(STYLES["bpk-bottom-sheet-paragraph"]),
 });
 
 const content = [

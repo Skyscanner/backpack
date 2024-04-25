@@ -21,7 +21,7 @@ import type { ReactNode, ReactElement } from 'react';
 
 import { createPopper } from '@popperjs/core';
 
-import { Portal, cssModules } from '../../bpk-react-utils';
+import { Portal, getClassName } from '../../bpk-react-utils';
 
 import BpkTooltip from './BpkTooltip';
 import { TOOLTIP_TYPES } from './constants';
@@ -29,8 +29,6 @@ import { TOOLTIP_TYPES } from './constants';
 import type { TooltipProps } from './BpkTooltip';
 
 import STYLES from './BpkTooltip.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const hasTouchSupport = () =>
   !!(
@@ -187,7 +185,7 @@ class BpkTooltipPortal extends Component<Props, State> {
       ...rest
     } = this.props;
 
-    const classNames = [getClassName('bpk-tooltip-portal')];
+    const classNames = [getClassName(STYLES["bpk-tooltip-portal"])];
     const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
 
     const targetWithAccessibilityProps = cloneElement(target, {

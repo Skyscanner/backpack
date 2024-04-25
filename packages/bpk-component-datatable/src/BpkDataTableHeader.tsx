@@ -23,7 +23,7 @@ import { withRtlSupport } from '../../bpk-component-icon';
 import BpkSmallArrowDownIcon from '../../bpk-component-icon/sm/arrow-down';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallArrowUpIcon from '../../bpk-component-icon/sm/arrow-up';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import { SORT_DIRECTION_TYPES } from './common-types';
 
@@ -31,8 +31,6 @@ import STYLES from './BpkDataTableHeader.module.scss';
 
 const DownIcon = withRtlSupport(BpkSmallArrowDownIcon);
 const UpIcon = withRtlSupport(BpkSmallArrowUpIcon);
-
-const getClassName = cssModules(STYLES);
 
 const KEYCODES = {
   ENTER: 13,
@@ -98,23 +96,23 @@ const BpkDataTableHeader = ({ column }: { column: any }) => {
   };
 
   const headerClassNames = getClassName(
-    'bpk-data-table-column__header',
+    STYLES["bpk-data-table-column__header"],
     headerClassName,
   );
   const upIconClassNames = getClassName(
-    'bpk-data-table-column__sort-icon--up',
-    'bpk-data-table-column__sort-icon',
-    isSorted && !isSortedDesc && 'bpk-data-table-column__sort-icon--selected',
+    STYLES["bpk-data-table-column__sort-icon--up"],
+    STYLES["bpk-data-table-column__sort-icon"],
+    isSorted && !isSortedDesc && STYLES["bpk-data-table-column__sort-icon--selected"],
   );
 
   const downIconClassNames = getClassName(
-    'bpk-data-table-column__sort-icon--down',
-    'bpk-data-table-column__sort-icon',
-    isSorted && isSortedDesc && 'bpk-data-table-column__sort-icon--selected',
+    STYLES["bpk-data-table-column__sort-icon--down"],
+    STYLES["bpk-data-table-column__sort-icon"],
+    isSorted && isSortedDesc && STYLES["bpk-data-table-column__sort-icon--selected"],
   );
 
   return (
-    <div
+    (<div
       {...column.getHeaderProps({
         style: {
           width,
@@ -137,7 +135,7 @@ const BpkDataTableHeader = ({ column }: { column: any }) => {
       </span>
       {!disableSortBy && (
         <div
-          className={getClassName('bpk-data-table-column__sort-icons')}
+          className={getClassName(STYLES["bpk-data-table-column__sort-icons"])}
           key="sort"
           aria-hidden
         >
@@ -153,7 +151,7 @@ const BpkDataTableHeader = ({ column }: { column: any }) => {
           </div>
         </div>
       )}
-    </div>
+    </div>)
   );
 };
 

@@ -22,11 +22,9 @@ import { Component } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
 import BpkProgress from '../../packages/bpk-component-progress';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 class ProgressContainer extends Component<{}, { progress: number }> {
   constructor() {
@@ -40,7 +38,7 @@ class ProgressContainer extends Component<{}, { progress: number }> {
   render() {
     const { progress } = this.state;
     return (
-      <div className={getClassName('bpkdocs-progress-container__flex')}>
+      (<div className={getClassName(STYLES["bpkdocs-progress-container__flex"])}>
         <BpkButton
           secondary
           onClick={() => this.setState({ progress: 0 })}
@@ -48,19 +46,17 @@ class ProgressContainer extends Component<{}, { progress: number }> {
         >
           Reset
         </BpkButton>
-        &nbsp;
         <BpkButton
           onClick={() => this.setState({ progress: progress + 50 })}
           disabled={progress === 100}
         >
           Go!
         </BpkButton>
-        &nbsp;
-        <div className={getClassName('bpkdocs-progress-container__flex-grow')}>
+        <div className={getClassName(STYLES["bpkdocs-progress-container__flex-grow"])}>
           {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
           <BpkProgress min={0} max={100} value={progress} {...this.props} />
         </div>
-      </div>
+      </div>)
     );
   }
 }
@@ -82,7 +78,7 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
 
   render() {
     return (
-      <div>
+      (<div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkProgress
           min={0}
@@ -92,7 +88,7 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
           {...this.props}
         />
         <br />
-        <div className={getClassName('bpkdocs-progress-container__flex')}>
+        <div className={getClassName(STYLES["bpkdocs-progress-container__flex"])}>
           <BpkButton
             secondary
             onClick={() => this.setProgress(this.state.progress - 1)}
@@ -108,7 +104,7 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
             Continue
           </BpkButton>
         </div>
-      </div>
+      </div>)
     );
   }
 }

@@ -23,16 +23,14 @@ import { Component, Children } from 'react';
 import BpkButton from '../../packages/bpk-component-button';
 import { BpkModalV2, MODAL_STYLING } from '../../packages/bpk-component-modal';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import { getClassName, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.bodyDefault,
   tagName: 'p',
-  className: getClassName('bpk-modal-paragraph'),
+  className: getClassName(STYLES["bpk-modal-paragraph"]),
 });
 
 type Props = {

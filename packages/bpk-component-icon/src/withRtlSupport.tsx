@@ -16,14 +16,12 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import classNameModifierHOCFactory from './classNameModifierHOCFactory';
 
 import STYLES from './BpkIcon.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 export default classNameModifierHOCFactory('withRtlSupport', [
-  getClassName('bpk-icon--rtl-support'),
+  getClassName(STYLES["bpk-icon--rtl-support"]),
 ]);

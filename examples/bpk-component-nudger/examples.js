@@ -28,15 +28,13 @@ import BpkLabel from '../../packages/bpk-component-label';
 import BpkNudger, {
   BpkConfigurableNudger,
 } from '../../packages/bpk-component-nudger';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import {
   action,
   BpkDarkExampleWrapper,
 } from '../bpk-storybook-utils';
 
 import STYLES from './BpkNudgerStory.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const AlignedAccountIcon = withAlignment(AccountIcon, lineHeightBase, iconSizeLg);
 
@@ -60,7 +58,7 @@ class NudgerContainer extends Component<
     const { buttonType, id } = this.props;
 
     const labelClassName = getClassName(
-      buttonType === 'secondaryOnDark' && 'bpk-nudger-secondary-on-dark',
+      buttonType === 'secondaryOnDark' && STYLES["bpk-nudger-secondary-on-dark"],
     );
 
     return (
@@ -124,7 +122,7 @@ class ConfigurableNudgerContainer extends Component<{}, { value: string }> {
 
   render() {
     return (
-      <div>
+      (<div>
         <BpkLabel id="traveller-label" htmlFor="nudger">
           Traveller Class
         </BpkLabel>
@@ -141,9 +139,9 @@ class ConfigurableNudgerContainer extends Component<{}, { value: string }> {
           incrementValue={incrementValue}
           decrementValue={decrementValue}
           formatValue={formatValue}
-          inputClassName={getClassName('bpk-nudger-configurable')}
+          inputClassName={getClassName(STYLES["bpk-nudger-configurable"])}
         />
-      </div>
+      </div>)
     );
   }
 }

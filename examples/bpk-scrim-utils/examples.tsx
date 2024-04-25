@@ -17,19 +17,17 @@
  */
 
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import { withScrimmedPortal } from '../../packages/bpk-scrim-utils';
 
 import STYLES from './examples.scss';
-
-const getClassName = cssModules(STYLES);
 
 const DialogContent = () => (
     <section
         tabIndex={-1}
         role="dialog"
-        className={getClassName('bpk-scrim-utils-example__dialog')}>
-        <div className={getClassName('bpk-scrim-utils-example__dialog-content')}>
+        className={getClassName(STYLES["bpk-scrim-utils-example__dialog"])}>
+        <div className={getClassName(STYLES["bpk-scrim-utils-example__dialog-content"])}>
             <div>Dialog content here.</div>
             <BpkButtonV2>Some button</BpkButtonV2>
         </div>
@@ -46,7 +44,7 @@ const WithPortalScrimExample = () => (
         <DialogContentWithScrim
             getApplicationElement={() => document.getElementById('pagewrap')}
             closeOnScrimClick={false}
-            containerClassName={getClassName('bpk-scrim-utils-example__dialog-container')}
+            containerClassName={getClassName(STYLES["bpk-scrim-utils-example__dialog-container"])}
         />
     </div>
 );
@@ -64,7 +62,7 @@ const WithCustomElementAndPortalScrimExample = () => (
             <DialogContentWithScrim
                 getApplicationElement={() => document.getElementById('pagewrap')}
                 closeOnScrimClick={false}
-                containerClassName={getClassName('bpk-scrim-utils-example__dialog-container')}
+                containerClassName={getClassName(STYLES["bpk-scrim-utils-example__dialog-container"])}
                 renderTarget={() => document.getElementById('portalElement')}
             />
         </div>

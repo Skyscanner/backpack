@@ -18,7 +18,7 @@
 
 import type { ComponentType } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 
@@ -29,8 +29,6 @@ import type {
 } from './custom-proptypes';
 
 import STYLES from './BpkCalendar.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type Props = {
   /**
@@ -153,27 +151,27 @@ const composeCalendar = (
     weekDayKey = 'nameAbbr',
     weekStartsOn,
   }: Props) => {
-    const classNames = [getClassName('bpk-calendar')];
+    const classNames = [getClassName(STYLES["bpk-calendar"])];
 
     if (className) {
       classNames.push(className);
     }
     if (fixedWidth) {
-      classNames.push(getClassName('bpk-calendar--fixed'));
+      classNames.push(getClassName(STYLES["bpk-calendar--fixed"]));
     }
 
     const headerClasses = [];
     // If the Nav is present add `bpk-calendar__header` which
     // adds spacing between the nav and header.
     if (Nav) {
-      headerClasses.push(getClassName('bpk-calendar__header'));
+      headerClasses.push(getClassName(STYLES["bpk-calendar__header"]));
     }
 
     const gridClasses = [];
     // If the GridHeader is not present add `bpk-calendar__grid` which
     // adds spacing between the nav and grid.
     if (!GridHeader && Nav) {
-      gridClasses.push(getClassName('bpk-calendar__grid'));
+      gridClasses.push(getClassName(STYLES["bpk-calendar__grid"]));
     }
     if (gridClassName) {
       gridClasses.push(gridClassName);

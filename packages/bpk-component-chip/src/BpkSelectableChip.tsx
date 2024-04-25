@@ -19,15 +19,13 @@
 import type { ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps } from './commonTypes';
 
 import STYLES from './BpkSelectableChip.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export interface Props extends CommonProps {
   role?: string;
@@ -47,17 +45,17 @@ const BpkSelectableChip = ({
   ...rest
 }: Props) => {
   const classNames = getClassName(
-    'bpk-chip',
-    `bpk-chip--${type}`,
-    disabled && 'bpk-chip--disabled',
-    disabled && `bpk-chip--${type}-disabled`,
-    !children && 'bpk-chip--icon-only',
-    !disabled && selected && `bpk-chip--${type}-selected`,
+    STYLES["bpk-chip"],
+    STYLES[`bpk-chip--${type}`],
+    disabled && STYLES["bpk-chip--disabled"],
+    disabled && STYLES[`bpk-chip--${type}-disabled`],
+    !children && STYLES["bpk-chip--icon-only"],
+    !disabled && selected && STYLES[`bpk-chip--${type}-selected`],
     className,
   );
 
   return (
-    <button
+    (<button
       aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
       className={classNames}
       disabled={disabled}
@@ -69,8 +67,8 @@ const BpkSelectableChip = ({
       {leadingAccessoryView && (
         <span
           className={getClassName(
-            'bpk-chip__leading-accessory-view',
-            !children && 'bpk-chip--icon-only__leading-accessory-view'
+            STYLES["bpk-chip__leading-accessory-view"],
+            !children && STYLES["bpk-chip--icon-only__leading-accessory-view"]
           )}
         >
           {leadingAccessoryView}
@@ -78,11 +76,11 @@ const BpkSelectableChip = ({
       )}
       <BpkText textStyle={TEXT_STYLES.footnote}>{children}</BpkText>
       {trailingAccessoryView && (
-        <span className={getClassName('bpk-chip__trailing-accessory-view')}>
+        <span className={getClassName(STYLES["bpk-chip__trailing-accessory-view"])}>
           {trailingAccessoryView}
         </span>
       )}
-    </button>
+    </button>)
   );
 };
 

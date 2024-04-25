@@ -18,13 +18,11 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkCard from './BpkCard';
 
 import STYLES from './BpkDividedCard.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export const ORIENTATION = {
   horizontal: 'horizontal',
@@ -52,19 +50,19 @@ const BpkDividedCard = ({
 }: Props) => {
   const isVertical = orientation === ORIENTATION.vertical;
   const classNames = getClassName(
-    'bpk-divided-card',
-    isVertical ? 'bpk-divided-card--vertical' : 'bpk-divided-card--horizontal',
-    !isElevated && 'bpk-divided-card--no-elevation',
+    STYLES["bpk-divided-card"],
+    isVertical ? STYLES["bpk-divided-card--vertical"] : STYLES["bpk-divided-card--horizontal"],
+    !isElevated && STYLES["bpk-divided-card--no-elevation"],
     className,
   );
 
   return (
     // TODO: className to be removed
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <BpkCard className={classNames} href={href} padded={false} {...rest}>
+    (<BpkCard className={classNames} href={href} padded={false} {...rest}>
       <div
         className={getClassName(
-          !isVertical && 'bpk-divided-card__primary--horizontal',
+          !isVertical && STYLES["bpk-divided-card__primary--horizontal"],
         )}
       >
         {primaryContent}
@@ -72,13 +70,13 @@ const BpkDividedCard = ({
       <div
         className={getClassName(
           isVertical
-            ? 'bpk-divided-card__secondary--vertical'
-            : 'bpk-divided-card__secondary--horizontal',
+            ? STYLES["bpk-divided-card__secondary--vertical"]
+            : STYLES["bpk-divided-card__secondary--horizontal"],
         )}
       >
         {secondaryContent}
       </div>
-    </BpkCard>
+    </BpkCard>)
   );
 };
 

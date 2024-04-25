@@ -18,21 +18,19 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkPanel.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const BpkPanel = (props) => {
-  const classNames = [getClassName('bpk-panel')];
+  const classNames = [getClassName(STYLES["bpk-panel"])];
   const { children, className, fullWidth, padded, ...rest } = props;
 
   if (padded) {
-    classNames.push(getClassName('bpk-panel--padded'));
+    classNames.push(getClassName(STYLES["bpk-panel--padded"]));
   }
   if (fullWidth) {
-    classNames.push(getClassName('bpk-panel--full-width'));
+    classNames.push(getClassName(STYLES["bpk-panel--full-width"]));
   }
   if (className) {
     classNames.push(className);

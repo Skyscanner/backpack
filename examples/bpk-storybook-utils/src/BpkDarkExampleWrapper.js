@@ -17,23 +17,21 @@
  */
 /* @flow strict */
 
-import { cssModules } from '../../../packages/bpk-react-utils';
+import { getClassName } from '../../../packages/bpk-react-utils';
 
 import STYLES from './BpkDarkExampleWrapper.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
   const { padded, ...rest } = props;
   return (
     /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-    <div
+    (<div
       className={getClassName(
-        'bpk-dark-example-wrapper',
-        padded && 'bpk-dark-example-wrapper--padded',
+        STYLES["bpk-dark-example-wrapper"],
+        padded && STYLES["bpk-dark-example-wrapper--padded"],
       )}
       {...rest}
-    />
+    />)
   );
 };
 

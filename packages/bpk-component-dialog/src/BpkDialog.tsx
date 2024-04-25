@@ -18,7 +18,7 @@
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-import { cssModules, Portal } from '../../bpk-react-utils';
+import { getClassName, Portal } from '../../bpk-react-utils';
 
 import BpkDialogInner from './BpkDialogInner';
 import { HEADER_ICON_TYPES } from './common-types';
@@ -26,8 +26,6 @@ import { HEADER_ICON_TYPES } from './common-types';
 import type { Props } from './common-types';
 
 import STYLES from './BpkDialog.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const BpkDialog = ({
   children,
@@ -41,10 +39,10 @@ const BpkDialog = ({
   ...rest
 }: Props) => {
   const headerIconClassNames = getClassName(
-    'bpk-dialog__icon',
-    `bpk-dialog__icon--${headerIconType}`,
+    STYLES["bpk-dialog__icon"],
+    STYLES[`bpk-dialog__icon--${headerIconType}`],
   );
-  const closeButtonClassNames = getClassName('bpk-dialog__close-button');
+  const closeButtonClassNames = getClassName(STYLES["bpk-dialog__close-button"]);
 
   if (!onClose && dismissible === true) {
     // eslint-disable-next-line no-console
@@ -54,7 +52,7 @@ const BpkDialog = ({
   }
 
   return (
-    <Portal
+    (<Portal
       isOpen={isOpen}
       onClose={onClose}
       renderTarget={renderTarget}
@@ -63,9 +61,9 @@ const BpkDialog = ({
       <BpkDialogInner
         onClose={onClose}
         closeOnScrimClick={dismissible}
-        containerClassName={getClassName('bpk-dialog__container')}
+        containerClassName={getClassName(STYLES["bpk-dialog__container"])}
         contentClassName={
-          headerIcon ? getClassName('bpk-dialog--with-icon') : undefined
+          headerIcon ? getClassName(STYLES["bpk-dialog--with-icon"]) : undefined
         }
         {...rest}
       >
@@ -77,7 +75,7 @@ const BpkDialog = ({
         )}
         {children}
       </BpkDialogInner>
-    </Portal>
+    </Portal>)
   );
 };
 

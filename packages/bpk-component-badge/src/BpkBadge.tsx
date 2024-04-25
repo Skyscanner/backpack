@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkBadge.module.scss';
 
@@ -33,17 +33,15 @@ export const BADGE_TYPES = {
   brand: 'brand',
 } as const;
 
-const getClassName = cssModules(STYLES);
-
 const badgeTypeClassNames = {
-  [BADGE_TYPES.warning]: getClassName('bpk-badge--warning'),
-  [BADGE_TYPES.success]: getClassName('bpk-badge--success'),
-  [BADGE_TYPES.critical]: getClassName('bpk-badge--critical'),
-  [BADGE_TYPES.normal]: getClassName('bpk-badge--normal'),
-  [BADGE_TYPES.inverse]: getClassName('bpk-badge--inverse'),
-  [BADGE_TYPES.outline]: getClassName('bpk-badge--outline'),
-  [BADGE_TYPES.strong]: getClassName('bpk-badge--strong'),
-  [BADGE_TYPES.brand]: getClassName('bpk-badge--brand'),
+  [BADGE_TYPES.warning]: getClassName(STYLES["bpk-badge--warning"]),
+  [BADGE_TYPES.success]: getClassName(STYLES["bpk-badge--success"]),
+  [BADGE_TYPES.critical]: getClassName(STYLES["bpk-badge--critical"]),
+  [BADGE_TYPES.normal]: getClassName(STYLES["bpk-badge--normal"]),
+  [BADGE_TYPES.inverse]: getClassName(STYLES["bpk-badge--inverse"]),
+  [BADGE_TYPES.outline]: getClassName(STYLES["bpk-badge--outline"]),
+  [BADGE_TYPES.strong]: getClassName(STYLES["bpk-badge--strong"]),
+  [BADGE_TYPES.brand]: getClassName(STYLES["bpk-badge--brand"]),
 };
 
 export type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
@@ -65,11 +63,11 @@ const BpkBadge = ({
   ...rest
 }: Props) => {
   const classNames = getClassName(
-    'bpk-badge',
+    STYLES["bpk-badge"],
     badgeTypeClassNames[type],
-    docked === 'right' && 'bpk-badge--docked-right',
-    docked === 'left' && 'bpk-badge--docked-left',
-    centered && 'bpk-badge--centered',
+    docked === 'right' && STYLES["bpk-badge--docked-right"],
+    docked === 'left' && STYLES["bpk-badge--docked-left"],
+    centered && STYLES["bpk-badge--centered"],
     className,
   );
 

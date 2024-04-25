@@ -25,11 +25,9 @@ import { BpkButtonLink } from '../../bpk-component-link';
 import BpkNavigationBar, {
   BAR_STYLES,
 } from '../../bpk-component-navigation-bar';
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { TransitionInitialMount, getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkModalInner.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type Props = {
   id: string;
@@ -79,27 +77,27 @@ const BpkModalInner = ({
   title = null,
   wide = false,
 }: Props) => {
-  const classNames = [getClassName('bpk-modal')];
-  const contentClassNames = [getClassName('bpk-modal__content')];
-  const navigationStyles = [getClassName('bpk-modal__navigation')];
+  const classNames = [getClassName(STYLES["bpk-modal"])];
+  const contentClassNames = [getClassName(STYLES["bpk-modal__content"])];
+  const navigationStyles = [getClassName(STYLES["bpk-modal__navigation"])];
 
-  classNames.push(getClassName(`bpk-modal__modal-style--${modalStyle}`));
+  classNames.push(getClassName(STYLES[`bpk-modal__modal-style--${modalStyle}`]));
 
   if (wide) {
-    classNames.push(getClassName('bpk-modal--wide'));
+    classNames.push(getClassName(STYLES["bpk-modal--wide"]));
   }
   if (className) {
     classNames.push(className);
   }
 
   if (fullScreen || isIphone) {
-    classNames.push(getClassName('bpk-modal--full-screen'));
+    classNames.push(getClassName(STYLES["bpk-modal--full-screen"]));
   } else if (fullScreenOnMobile) {
-    classNames.push(getClassName('bpk-modal--full-screen-mobile'));
+    classNames.push(getClassName(STYLES["bpk-modal--full-screen-mobile"]));
   }
 
   if (padded) {
-    contentClassNames.push(getClassName('bpk-modal__content--padded'));
+    contentClassNames.push(getClassName(STYLES["bpk-modal__content--padded"]));
   }
 
   if (contentClassName) {
@@ -109,15 +107,15 @@ const BpkModalInner = ({
   const headingId = `bpk-modal-heading-${id}`;
 
   const accessoryViewFinal = accessoryView ? (
-    <span className={getClassName('bpk-modal__accessory-view')}>
+    <span className={getClassName(STYLES["bpk-modal__accessory-view"])}>
       {accessoryView}
     </span>
   ) : null;
 
   return (
-    <TransitionInitialMount
-      appearClassName={getClassName('bpk-modal--appear')}
-      appearActiveClassName={getClassName('bpk-modal--appear-active')}
+    (<TransitionInitialMount
+      appearClassName={getClassName(STYLES["bpk-modal--appear"])}
+      appearActiveClassName={getClassName(STYLES["bpk-modal--appear-active"])}
       transitionTimeout={300}
     >
       <section
@@ -129,7 +127,7 @@ const BpkModalInner = ({
         ref={dialogRef}
       >
         {showHeader && (
-          <header className={getClassName('bpk-modal__header')}>
+          <header className={getClassName(STYLES["bpk-modal__header"])}>
             <BpkNavigationBar
               barStyle={
                 modalStyle === MODAL_STYLING.surfaceContrast
@@ -143,7 +141,7 @@ const BpkModalInner = ({
               title={
                 <h2
                   id={headingId}
-                  className={getClassName('bpk-modal__heading')}
+                  className={getClassName(STYLES["bpk-modal__heading"])}
                 >
                   {title}
                 </h2>
@@ -155,9 +153,9 @@ const BpkModalInner = ({
                     // TODO: className to be removed
                     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                     className={[
-                      getClassName('bpk-modal__close-button'),
+                      getClassName(STYLES["bpk-modal__close-button"]),
                       getClassName(
-                        `bpk-modal__close-button-style--${modalStyle}`,
+                        STYLES[`bpk-modal__close-button-style--${modalStyle}`],
                       ),
                     ].join(' ')}
                     onClick={onClose}
@@ -169,9 +167,9 @@ const BpkModalInner = ({
                     // TODO: className to be removed
                     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                     className={[
-                      getClassName('bpk-modal__close-button'),
+                      getClassName(STYLES["bpk-modal__close-button"]),
                       getClassName(
-                        `bpk-modal__close-button-style--${modalStyle}`,
+                        STYLES[`bpk-modal__close-button-style--${modalStyle}`],
                       ),
                     ].join(' ')}
                     label={closeLabel}
@@ -184,7 +182,7 @@ const BpkModalInner = ({
         )}
         <div className={contentClassNames.join(' ')}>{children}</div>
       </section>
-    </TransitionInitialMount>
+    </TransitionInitialMount>)
   );
 };
 

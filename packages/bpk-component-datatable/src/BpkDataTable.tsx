@@ -22,15 +22,13 @@ import { useMemo, useState } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { useTable, useSortBy } from 'react-table';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkDataTableHeader from './BpkDataTableHeader';
 import { type BpkDataTableProps, SORT_DIRECTION_TYPES } from './common-types';
 import { createColumnsSchema } from './utils';
 
 import STYLES from './BpkDataTable.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const KEYCODES = {
   ENTER: 13,
@@ -59,17 +57,17 @@ const BpkDataTable = (props: BpkDataTableProps) => {
 
   const [rowSelected, updateRowSelected] = useState<number | undefined>(undefined);
 
-  const classNames = getClassName('bpk-data-table', className);
+  const classNames = getClassName(STYLES["bpk-data-table"], className);
 
   const getRowClassNames = (
     index: number,
     consumerClassName?: string | ((arg: {}) => string),
   ) => {
     const rowClassNames = getClassName(
-      'bpk-data-table__row',
-      rowSelected === index && 'bpk-data-table__row--selected',
-      onRowClick !== undefined && 'bpk-data-table__row--clickable',
-      index === -1 && 'bpk-data-table__header-row',
+      STYLES["bpk-data-table__row"],
+      rowSelected === index && STYLES["bpk-data-table__row--selected"],
+      onRowClick !== undefined && STYLES["bpk-data-table__row--clickable"],
+      index === -1 && STYLES["bpk-data-table__header-row"],
       consumerClassName &&
         (typeof consumerClassName === 'function'
           ? consumerClassName({ index })
@@ -79,8 +77,8 @@ const BpkDataTable = (props: BpkDataTableProps) => {
   };
 
   const headerClassNames = getClassName(
-    'bpk-data-table__row',
-    'bpk-data-table__header-row',
+    STYLES["bpk-data-table__row"],
+    STYLES["bpk-data-table__header-row"],
     headerClassName,
   );
 
@@ -142,7 +140,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
   };
 
   return (
-    <div
+    (<div
       {...getTableProps({
         style: { width, height },
         className: classNames,
@@ -179,7 +177,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
       <div {...getTableBodyProps()}>
         {rows.map((row: {[key: string]: any}, i: number) => {
           prepareRow(row);
-          const cellClassNames = [getClassName('bpk-data-table__cell')];
+          const cellClassNames = [getClassName(STYLES["bpk-data-table__cell"])];
           return (
             <div
               onClick={() => onRowClicked(i)}
@@ -217,7 +215,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
           );
         })}
       </div>
-    </div>
+    </div>)
   );
 };
 

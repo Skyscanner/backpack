@@ -18,14 +18,12 @@
 /* @flow strict */
 
 import { BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './DefaultLoadingElement.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const DefaultLoadingElement = () => (
-  <div className={getClassName('bpk-map-default-loading-element')}>
+  <div className={getClassName(STYLES["bpk-map-default-loading-element"])}>
     <BpkLargeSpinner type={SPINNER_TYPES.primary} />
   </div>
 );

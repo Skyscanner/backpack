@@ -18,17 +18,15 @@
 
 /* @flow strict */
 
-import BpkButtonBase, { cssModules } from './BpkButtonBase';
+import BpkButtonBase, { getClassName } from './BpkButtonBase';
 import { type Props, defaultProps, propTypes } from './common-types';
 
 import STYLES from './BpkButtonSecondaryOnDark.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const BpkButtonSecondaryOnDark = (props: Props) => {
   const { className, ...rest } = props;
 
-  const classNames = [getClassName('bpk-button--secondary-on-dark')];
+  const classNames = [getClassName(STYLES["bpk-button--secondary-on-dark"])];
 
   if (className) {
     classNames.push(className);

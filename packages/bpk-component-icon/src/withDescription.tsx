@@ -18,11 +18,9 @@
 
 import type { ComponentType } from 'react';
 
-import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
+import { getClassName, wrapDisplayName } from '../../bpk-react-utils';
 
 import STYLES from './withDescription.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export default function withDescription(
   Component: ComponentType<any> | string,
@@ -31,7 +29,7 @@ export default function withDescription(
   const WithDescription = (props: string[]) => (
     <span>
       <Component {...props} />
-      <span className={getClassName('bpk-icon-description')}>
+      <span className={getClassName(STYLES["bpk-icon-description"])}>
         {description}
       </span>
     </span>

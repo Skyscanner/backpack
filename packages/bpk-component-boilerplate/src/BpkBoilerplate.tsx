@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkBoilerplate.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
@@ -30,10 +28,6 @@ const BpkBoilerplate = ({ ...rest }: Props) => {
   // eslint-disable-next-line no-param-reassign
   delete rest.className;
 
-  return (
-    <div className={getClassName('bpk-boilerplate')} {...rest}>
-      I am an example component.
-    </div>
-  )};
+  return (<div className={getClassName(STYLES["bpk-boilerplate"])} {...rest}>I am an example component.</div>);};
 
 export default BpkBoilerplate;

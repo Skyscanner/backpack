@@ -18,14 +18,12 @@
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkContentBubble } from '../../bpk-component-flare';
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { TransitionInitialMount, getClassName } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import { type DialogInnerProps as Props } from './common-types';
 
 import STYLES from './BpkDialogInner.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const BpkDialogInner = (props: Props) => {
   const {
@@ -39,20 +37,20 @@ const BpkDialogInner = (props: Props) => {
     id,
   } = props;
 
-  const classNames = getClassName('bpk-dialog-inner', className);
+  const classNames = getClassName(STYLES["bpk-dialog-inner"], className);
   const contentClassNames = getClassName(
-    'bpk-dialog-inner__content',
+    STYLES["bpk-dialog-inner__content"],
     contentClassName,
   );
   const flareClassNames = getClassName(
-    'bpk-dialog-inner__flare',
+    STYLES["bpk-dialog-inner__flare"],
     flareClassName,
   );
 
   return (
-    <TransitionInitialMount
-      appearClassName={getClassName('bpk-dialog-inner--appear')}
-      appearActiveClassName={getClassName('bpk-dialog-inner--appear-active')}
+    (<TransitionInitialMount
+      appearClassName={getClassName(STYLES["bpk-dialog-inner--appear"])}
+      appearActiveClassName={getClassName(STYLES["bpk-dialog-inner--appear-active"])}
       transitionTimeout={300}
     >
       <section
@@ -69,7 +67,7 @@ const BpkDialogInner = (props: Props) => {
         className={flareClassNames} />}
         <div className={contentClassNames}>{children}</div>
       </section>
-    </TransitionInitialMount>
+    </TransitionInitialMount>)
   );
 };
 

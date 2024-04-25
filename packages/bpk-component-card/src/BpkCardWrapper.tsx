@@ -18,11 +18,9 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkCardWrapper.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   card: ReactNode;
@@ -37,19 +35,19 @@ const BpkCardWrapper = ({
   className = null,
   header,
 }: Props) => {
-  const classNames = getClassName('bpk-card-wrapper', className);
+  const classNames = getClassName(STYLES["bpk-card-wrapper"], className);
 
   return (
-    <div
+    (<div
       className={classNames}
       style={{
         // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
         '--background-color': backgroundColor,
       }}
     >
-      <div className={getClassName('bpk-card-wrapper--header')}>{header}</div>
-      <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>
-    </div>
+      <div className={getClassName(STYLES["bpk-card-wrapper--header"])}>{header}</div>
+      <div className={getClassName(STYLES["bpk-card-wrapper--content"])}>{card}</div>
+    </div>)
   );
 };
 

@@ -36,18 +36,16 @@ import {
 import { remToPx } from '../../packages/bpk-component-barchart/src/utils';
 import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import { getClassName, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import { withSelectedState } from './hocs';
 
 import STYLES from './examples.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const Heading = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.subheading,
   tagName: 'h1',
-  className: getClassName('bpk-heading'),
+  className: getClassName(STYLES["bpk-heading"]),
 });
 
 const RtlBarchart = updateOnDirectionChange(BpkBarchart);
@@ -162,12 +160,12 @@ const CustomScrollColorsExample = () => (
     }}
     xAxisLabel="Month"
     yAxisLabel="Average Price (£)"
-    className={getClassName('bpk-barchart-custom-scrollers')}
+    className={getClassName(STYLES["bpk-barchart-custom-scrollers"])}
     leadingScrollIndicatorClassName={getClassName(
-      'bpk-barchart-custom-scrollers--leading',
+      STYLES["bpk-barchart-custom-scrollers--leading"],
     )}
     trailingScrollIndicatorClassName={getClassName(
-      'bpk-barchart-custom-scrollers--trailing',
+      STYLES["bpk-barchart-custom-scrollers--trailing"],
     )}
   />
 );

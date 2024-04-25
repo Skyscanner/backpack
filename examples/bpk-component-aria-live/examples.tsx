@@ -28,11 +28,9 @@ import { BpkCode } from '../../packages/bpk-component-code';
 import BpkFieldset from '../../packages/bpk-component-fieldset';
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkSwitch from '../../packages/bpk-component-switch';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   preamble?: ReactElement | null;
@@ -52,7 +50,7 @@ const AriaLiveDemo = ({
   ...rest
 }: Props) => (
   <div
-    className={getClassName('bpk-storybook-aria-live-demo', className)}
+    className={getClassName(STYLES["bpk-storybook-aria-live-demo"], className)}
     style={style}
   >
     <p>
@@ -99,7 +97,7 @@ class SelectExample extends Component<
   render() {
     const { destination, direct } = this.state;
     return (
-      <div>
+      (<div>
         <div>
           <p>
             Interactive component with
@@ -108,12 +106,12 @@ class SelectExample extends Component<
           </p>
           <div
             className={getClassName(
-              'bpk-storybook-aria-live-demo__select-wrapper',
+              STYLES["bpk-storybook-aria-live-demo__select-wrapper"],
             )}
           >
             <BpkFieldset
               label="Destination"
-              className={getClassName('bpk-storybook-aria-live-demo__select')}
+              className={getClassName(STYLES["bpk-storybook-aria-live-demo__select"])}
             >
               <BpkSelect
                 id="destination"
@@ -129,7 +127,7 @@ class SelectExample extends Component<
               </BpkSelect>
             </BpkFieldset>
             <BpkSwitch
-              className={getClassName('bpk-storybook-aria-live-demo__switch')}
+              className={getClassName(STYLES["bpk-storybook-aria-live-demo__switch"])}
               label="Direct flights only"
               checked={direct}
               onChange={this.toggleDirectness}
@@ -140,7 +138,7 @@ class SelectExample extends Component<
           aria-atomic
           visible
           id={this.id}
-          className={getClassName('bpk-storybook-aria-live-demo__aria-live')}
+          className={getClassName(STYLES["bpk-storybook-aria-live-demo__aria-live"])}
           preamble={
             <p>
               This region has <BpkCode>id=&quot;{this.id}&quot;</BpkCode>.
@@ -157,7 +155,7 @@ class SelectExample extends Component<
             </strong>
           </p>
         </AriaLiveDemo>
-      </div>
+      </div>)
     );
   }
 }
@@ -199,10 +197,10 @@ class ChipsExample extends Component<
   render() {
     const { categories, updates } = this.state;
     return (
-      <div>
+      (<div>
         <div
           className={getClassName(
-            'bpk-storybook-aria-live-demo__chips-wrapper',
+            STYLES["bpk-storybook-aria-live-demo__chips-wrapper"],
           )}
         >
           <p>
@@ -212,7 +210,7 @@ class ChipsExample extends Component<
           </p>
           {Object.keys(categories).map((category) => (
             <BpkChip
-              className={getClassName('bpk-storybook-aria-live-demo__chip')}
+              className={getClassName(STYLES["bpk-storybook-aria-live-demo__chip"])}
               aria-controls={this.id}
               selected={categories[category]}
               accessibilityLabel={category}
@@ -226,7 +224,7 @@ class ChipsExample extends Component<
         </div>
         <AriaLiveDemo
           id={this.id}
-          className={getClassName('bpk-storybook-aria-live-demo__aria-live')}
+          className={getClassName(STYLES["bpk-storybook-aria-live-demo__aria-live"])}
           preamble={
             <p>
               This region has <BpkCode>id=&quot;{this.id}&quot;</BpkCode>.
@@ -241,7 +239,7 @@ class ChipsExample extends Component<
             </p>
           ))}
         </AriaLiveDemo>
-      </div>
+      </div>)
     );
   }
 }

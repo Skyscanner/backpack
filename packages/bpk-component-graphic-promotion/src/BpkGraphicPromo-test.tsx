@@ -18,15 +18,13 @@
 
 import { fireEvent, render } from '@testing-library/react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
 
 import type { Props } from './BpkGraphicPromo';
 
 import STYLES from './BpkGraphicPromo.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const props: Props = {
   buttonText: 'Learn more',
@@ -106,7 +104,7 @@ describe('BpkGraphicPromo', () => {
     render(<BpkGraphicPromo {...props} />);
 
     const graphicPromo = document.getElementsByClassName(
-      getClassName('bpk-graphic-promo'),
+      getClassName(STYLES["bpk-graphic-promo"]),
     )[0];
     fireEvent.click(graphicPromo);
 
@@ -117,7 +115,7 @@ describe('BpkGraphicPromo', () => {
     render(<BpkGraphicPromo {...props} />);
 
     const graphicPromoCTA = document.getElementsByClassName(
-      getClassName('bpk-graphic-promo__cta'),
+      getClassName(STYLES["bpk-graphic-promo__cta"]),
     )[0];
     fireEvent.click(graphicPromoCTA);
 

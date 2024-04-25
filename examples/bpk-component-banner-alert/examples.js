@@ -29,13 +29,11 @@ import BpkBannerAlert, {
 } from '../../packages/bpk-component-banner-alert';
 import { BpkButtonPrimary } from '../../packages/bpk-component-button';
 import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
@@ -62,47 +60,45 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
   }
 
   render() {
-    return (
-      <>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        <BpkBannerAlertDismissable
-          show={!this.state.dismissed}
-          dismissButtonLabel="Dismiss"
-          onDismiss={() => {
+    return (<>
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <BpkBannerAlertDismissable
+        show={!this.state.dismissed}
+        dismissButtonLabel="Dismiss"
+        onDismiss={() => {
+          this.setState((prevState) => ({
+            dismissed: true,
+            updates: [...prevState.updates, 'Success alert dismissed'],
+          }));
+        }}
+        message="Neutral alert with dismiss option"
+        {...this.props}
+      />
+      {this.state.dismissed && (
+        <BpkButtonPrimary
+          className={getClassName(STYLES["bpk-banner-alert-examples__component"])}
+          onClick={() => {
             this.setState((prevState) => ({
-              dismissed: true,
-              updates: [...prevState.updates, 'Success alert dismissed'],
+              dismissed: false,
+              updates: [...prevState.updates, 'Success alert added'],
             }));
           }}
-          message="Neutral alert with dismiss option"
-          {...this.props}
-        />
-        {this.state.dismissed && (
-          <BpkButtonPrimary
-            className={getClassName('bpk-banner-alert-examples__component')}
-            onClick={() => {
-              this.setState((prevState) => ({
-                dismissed: false,
-                updates: [...prevState.updates, 'Success alert added'],
-              }));
-            }}
-          >
-            Reset
-          </BpkButtonPrimary>
-        )}
-        <AriaLiveDemo
-          visible
-          className={getClassName('bpk-banner-alert-examples__component')}
         >
-          {this.state.updates.map((u) => (
-            <>
-              {u}
-              <br />
-            </>
-          ))}
-        </AriaLiveDemo>
-      </>
-    );
+          Reset
+        </BpkButtonPrimary>
+      )}
+      <AriaLiveDemo
+        visible
+        className={getClassName(STYLES["bpk-banner-alert-examples__component"])}
+      >
+        {this.state.updates.map((u) => (
+          <>
+            {u}
+            <br />
+          </>
+        ))}
+      </AriaLiveDemo>
+    </>);
   }
 }
 
@@ -112,31 +108,31 @@ const BpkBannerAlertExpandableState = withBannerAlertState(
 
 const NeutralExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlert
+  (<BpkBannerAlert
     message="Neutral alert"
     type={ALERT_TYPES.NEUTRAL}
     {...props}
-  />
+  />)
 );
 const PrimaryExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlert
+  (<BpkBannerAlert
     message="Primary alert"
     type={ALERT_TYPES.PRIMARY}
     {...props}
-  />
+  />)
 );
 const SuccessExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlert
+  (<BpkBannerAlert
     message="Success alert"
     type={ALERT_TYPES.SUCCESS}
     {...props}
-  />
+  />)
 );
 const SuccessLongMessageExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} {...props} />
+  (<BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} {...props} />)
 );
 const DismissableExample = () => (
   <BpkBannerAlertDismissable
@@ -165,7 +161,7 @@ const SuccessAnimateOnEnterExample = () => (
 );
 const SuccessWithReactRenderedMessageExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlert
+  (<BpkBannerAlert
     message={
       <span style={{ fontWeight: fontWeightBold }}>
         Successful alert with custom rendered message
@@ -173,15 +169,15 @@ const SuccessWithReactRenderedMessageExample = (props: {}) => (
     }
     type={ALERT_TYPES.SUCCESS}
     {...props}
-  />
+  />)
 );
 const WarnExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlert message="Warn alert" type={ALERT_TYPES.WARN} {...props} />
+  (<BpkBannerAlert message="Warn alert" type={ALERT_TYPES.WARN} {...props} />)
 );
 const ErrorExample = (props: {}) => (
   // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <BpkBannerAlert message="Error alert" type={ALERT_TYPES.ERROR} {...props} />
+  (<BpkBannerAlert message="Error alert" type={ALERT_TYPES.ERROR} {...props} />)
 );
 const SuccessDismissableBehaviourExample = () => (
   <BpkBannerAlertDismissableState
@@ -219,19 +215,19 @@ const DocsDefaultExample = () => (
   <>
     <NeutralExample />
     <PrimaryExample
-      className={getClassName('bpk-banner-alert-examples__component')}
+      className={getClassName(STYLES["bpk-banner-alert-examples__component"])}
     />
     <SuccessExample
-      className={getClassName('bpk-banner-alert-examples__component')}
+      className={getClassName(STYLES["bpk-banner-alert-examples__component"])}
     />
     <SuccessWithReactRenderedMessageExample
-      className={getClassName('bpk-banner-alert-examples__component')}
+      className={getClassName(STYLES["bpk-banner-alert-examples__component"])}
     />
     <WarnExample
-      className={getClassName('bpk-banner-alert-examples__component')}
+      className={getClassName(STYLES["bpk-banner-alert-examples__component"])}
     />
     <ErrorExample
-      className={getClassName('bpk-banner-alert-examples__component')}
+      className={getClassName(STYLES["bpk-banner-alert-examples__component"])}
     />
   </>
 );

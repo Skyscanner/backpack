@@ -21,15 +21,12 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import { INPUT_TYPES } from '../../bpk-component-input';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import InputField from './BpkInputField';
 
 import STYLES from './BpkSplitInput.module.scss';
 
-const getClassName = cssModules(STYLES);
-
-// keyCode constants
 const BACKSPACE = 8;
 const LEFT_ARROW = 37;
 const RIGHT_ARROW = 39;
@@ -216,9 +213,9 @@ class BpkSplitInput extends Component {
 
   render() {
     return (
-      <div className={getClassName('bpk-split-input')}>
+      (<div className={getClassName(STYLES["bpk-split-input"])}>
         {this.renderInputs()}
-      </div>
+      </div>)
     );
   }
 }

@@ -27,11 +27,9 @@ import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkSpinner } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkBackgroundImage.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type BpkBackgroundImageProps = {
   children?: ReactNode;
@@ -101,16 +99,16 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     const calculatedAspectRatio = this.getAspectRatio();
     const aspectRatioPc = `${100 / calculatedAspectRatio}%`;
 
-    const classNames = [getClassName('bpk-background-image')];
-    const imageClassNames = [getClassName('bpk-background-image__img')];
+    const classNames = [getClassName(STYLES["bpk-background-image"])];
+    const imageClassNames = [getClassName(STYLES["bpk-background-image__img"])];
 
     if (!loading) {
-      classNames.push(getClassName('bpk-background-image--no-background'));
-      imageClassNames.push(getClassName('bpk-background-image__img--shown'));
+      classNames.push(getClassName(STYLES["bpk-background-image--no-background"]));
+      imageClassNames.push(getClassName(STYLES["bpk-background-image__img--shown"]));
     }
 
     return (
-      <div style={style} className={className}>
+      (<div style={style} className={className}>
         <div
           style={{
             height: 0,
@@ -128,12 +126,12 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
           {loading && (
             <CSSTransition
               classNames={{
-                exit: getClassName('bpk-image__spinner--shown'),
-                exitActive: getClassName('bpk-image__spinner--hidden'),
+                exit: getClassName(STYLES["bpk-image__spinner--shown"]),
+                exitActive: getClassName(STYLES["bpk-image__spinner--hidden"]),
               }}
               timeout={parseInt(animations.durationBase, 10)}
             >
-              <div className={getClassName('bpk-image__spinner')}>
+              <div className={getClassName(STYLES["bpk-image__spinner"])}>
                 <BpkSpinner />
               </div>
             </CSSTransition>
@@ -150,12 +148,12 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
             </noscript>
           )}
           {!loading && (
-            <div className={getClassName('bpk-background-image__content')}>
+            <div className={getClassName(STYLES["bpk-background-image__content"])}>
               {children}
             </div>
           )}
         </div>
-      </div>
+      </div>)
     );
   }
 }

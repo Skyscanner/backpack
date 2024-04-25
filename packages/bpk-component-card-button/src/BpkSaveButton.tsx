@@ -29,7 +29,7 @@ import BpkHeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
 import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkSaveButton.module.scss';
 
@@ -47,8 +47,6 @@ export const STYLE_TYPES = {
 } as const;
 
 export type StyleType = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   checked: boolean;
@@ -79,14 +77,14 @@ const BpkSaveButton = ({
     ? AlignedHeartOutlineIconSm
     : AlignedHeartOutlineIcon;
   return (
-    <BpkButtonV2
+    (<BpkButtonV2
       aria-label={accessibilityLabel}
       // TODO: className to be removed
       // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName(
-        'bpk-save-button',
-        smallSize && 'bpk-save-button__small',
-        `bpk-save-button__${style}`,
+        STYLES["bpk-save-button"],
+        smallSize && STYLES["bpk-save-button__small"],
+        STYLES[`bpk-save-button__${style}`],
       )}
       onClick={(e: MouseEvent) => {
         onCheckedChange(e);
@@ -100,24 +98,24 @@ const BpkSaveButton = ({
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName(
-          'bpk-save-button__icon',
-          'bpk-save-button__heartIcon',
-          toggle && checked && 'bpk-save-button__heartIcon--toggle',
-          `bpk-save-button__heartIcon--${checked ? 'show' : 'hide'}`,
-          `bpk-save-button__heartIcon--${style}`,
+          STYLES["bpk-save-button__icon"],
+          STYLES["bpk-save-button__heartIcon"],
+          toggle && checked && STYLES["bpk-save-button__heartIcon--toggle"],
+          STYLES[`bpk-save-button__heartIcon--${checked ? 'show' : 'hide'}`],
+          STYLES[`bpk-save-button__heartIcon--${style}`],
         )}
       />
       <HeartOutLineIcon
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName(
-          'bpk-save-button__icon',
-          'bpk-save-button__heartOutlineIcon',
-          `bpk-save-button__heartOutlineIcon--${checked ? 'hide' : 'show'}`,
-          `bpk-save-button__heartOutlineIcon--${style}`,
+          STYLES["bpk-save-button__icon"],
+          STYLES["bpk-save-button__heartOutlineIcon"],
+          STYLES[`bpk-save-button__heartOutlineIcon--${checked ? 'hide' : 'show'}`],
+          STYLES[`bpk-save-button__heartOutlineIcon--${style}`],
         )}
       />
-    </BpkButtonV2>
+    </BpkButtonV2>)
   );
 };
 

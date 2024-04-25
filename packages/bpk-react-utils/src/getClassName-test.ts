@@ -16,47 +16,28 @@
  * limitations under the License.
  */
 
-import cssModules from './cssModules';
+import getClassName from './getClassName';
 
-describe('cssModules', () => {
-  it('should return a function', () => {
-    expect(cssModules()).toBeInstanceOf(Function);
-  });
+describe('getClassName', () => {
 
   describe('returned function', () => {
     it('should pass through key as className if not found', () => {
-      const getClassName = cssModules();
-
       expect(getClassName('foo')).toEqual('foo');
       expect(getClassName('bar')).toEqual('bar');
       expect(getClassName('baz')).toEqual('baz');
     });
 
     it('should resolve classNames for known keys', () => {
-      const getClassName = cssModules({
-        foo: 'a',
-        bar: 'b',
-        baz: 'c',
-      });
-
       expect(getClassName('foo')).toEqual('a');
       expect(getClassName('bar')).toEqual('b');
       expect(getClassName('baz')).toEqual('c');
     });
 
     it('should resolve multiple class names', () => {
-      const getClassName = cssModules({
-        foo: 'a',
-      });
-
       expect(getClassName('foo', 'bar')).toEqual('a bar');
     });
 
     it('should ignore values other than strings', () => {
-      const getClassName = cssModules({
-        foo: 'a',
-      });
-
       expect(getClassName('foo', false, 1, undefined, {}, true, 'bar')).toEqual(
         'a bar',
       );

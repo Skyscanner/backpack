@@ -18,7 +18,7 @@
 
 import { PureComponent } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import { orderDaysOfWeek } from './date-utils';
 
@@ -30,8 +30,6 @@ import type {
 } from './custom-proptypes';
 
 import STYLES from './BpkCalendarGridHeader.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = DefaultProps & {
   /**
@@ -69,7 +67,7 @@ const WeekDayComponent = ({
   <Element
     // TODO: className to be removed
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    className={getClassName('bpk-calendar-header__weekday')}
+    className={getClassName(STYLES["bpk-calendar-header__weekday"])}
     title={weekDay.name}
   >
     <span>{weekDay[weekDayKey]}</span>
@@ -87,14 +85,14 @@ class BpkCalendarGridHeader extends PureComponent<Props> {
 
     const daysOfWeek = orderDaysOfWeek(this.props.daysOfWeek, weekStartsOn);
 
-    const classNames = [getClassName('bpk-calendar-header')];
+    const classNames = [getClassName(STYLES["bpk-calendar-header"])];
     if (className) {
       classNames.push(className);
     }
 
     return (
-      <header className={classNames.join(' ')} aria-hidden>
-        <ol className={getClassName('bpk-calendar-header__week')}>
+      (<header className={classNames.join(' ')} aria-hidden>
+        <ol className={getClassName(STYLES["bpk-calendar-header__week"])}>
           {daysOfWeek.map((weekDay) => (
             <WeekDayComponent
               Element="li"
@@ -104,7 +102,7 @@ class BpkCalendarGridHeader extends PureComponent<Props> {
             />
           ))}
         </ol>
-      </header>
+      </header>)
     );
   }
 }

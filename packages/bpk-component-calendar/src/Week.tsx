@@ -19,7 +19,7 @@
 import type { ElementType, ReactElement } from 'react';
 import { Component } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import { SELECTION_TYPES } from './BpkCalendarDate';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
@@ -44,8 +44,6 @@ import type {
 // This should be using its own css file as `BpkCalendarGrid` is also importing `BpkCalendarGrid.module.scss`
 // and the order of css imports can break the component.
 import STYLES from './BpkCalendarGrid.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const shallowEqualProps = (
   props1: Props,
@@ -393,7 +391,7 @@ class Week extends Component<Props> {
     }
 
     return (
-      <div className={getClassName('bpk-calendar-grid__week')}>
+      (<div className={getClassName(STYLES["bpk-calendar-grid__week"])}>
         {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate
@@ -438,7 +436,7 @@ class Week extends Component<Props> {
             </DateContainer>
           );
         })}
-      </div>
+      </div>)
     );
   }
 }
@@ -461,8 +459,8 @@ const DateContainer = ({
   selectionType,
 }: DateContainerProps) => {
   const classNames = getClassName(
-    'bpk-calendar-grid__date',
-    `bpk-calendar-grid__date--${selectionType}`,
+    STYLES["bpk-calendar-grid__date"],
+    STYLES[`bpk-calendar-grid__date--${selectionType}`],
     className,
   );
 

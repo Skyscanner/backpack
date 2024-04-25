@@ -20,11 +20,9 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkCodeBlock.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   children: Node,
@@ -34,12 +32,12 @@ type Props = {
 const BpkCodeBlock = (props: Props) => {
   const { alternate, children, className, ...rest } = props;
   const preClassNames = getClassName(
-    'bpk-code__pre',
-    alternate && 'bpk-code__pre--alternate',
+    STYLES['bpk-code__pre'],
+    alternate && STYLES['bpk-code__pre--alternate'],
     className,
   );
 
-  const codeClassNames = getClassName('bpk-code', 'bpk-code--block');
+  const codeClassNames = getClassName(STYLES['bpk-code'], STYLES['bpk-code--block']);
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.

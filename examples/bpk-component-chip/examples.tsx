@@ -28,12 +28,10 @@ import BpkSelectableChip, {
 import FaceHappyIconSm from '../../packages/bpk-component-icon/sm/face--happy';
 import FilterIconSm from '../../packages/bpk-component-icon/sm/filter';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type StatefulSelectableChipProps = Omit<BpkSelectableChipProps, 'accessibilityLabel' | 'onClick'>;
 
@@ -43,14 +41,14 @@ const StatefulSelectableChip = (props: StatefulSelectableChipProps) => {
   const toggleSelected = () => setSelected(!selected);
 
   return (
-    <BpkSelectableChip
+    (<BpkSelectableChip
       {...props}
       accessibilityLabel="Toggle chip"
-      className={getClassName('bpk-chip-examples__chip')}
+      className={getClassName(STYLES["bpk-chip-examples__chip"])}
       selected={selected}
       onClick={toggleSelected}
-    />
-  )
+    />)
+  );
 };
 
 const StatefulDropdownChip = (props: StatefulSelectableChipProps) => {
@@ -58,13 +56,13 @@ const StatefulDropdownChip = (props: StatefulSelectableChipProps) => {
   const toggleSelected = () => setSelected(!selected);
 
   return (
-    <BpkDropdownChip
+    (<BpkDropdownChip
       {...props}
       accessibilityLabel="Toggle chip"
-      className={getClassName('bpk-chip-examples__chip')}
+      className={getClassName(STYLES["bpk-chip-examples__chip"])}
       selected={selected}
       onClick={toggleSelected}
-    />
+    />)
   );
 };
 
@@ -75,14 +73,14 @@ const StatefulIconChip = (props: StatefulSelectableChipProps) => {
   const toggleSelected = () => setSelected(!selected);
 
   return (
-    <BpkIconChip
+    (<BpkIconChip
       {...props}
       accessibilityLabel="Toggle chip"
-      className={getClassName('bpk-chip-examples__chip')}
+      className={getClassName(STYLES["bpk-chip-examples__chip"])}
       selected={selected}
       onClick={toggleSelected}
-    />
-  )
+    />)
+  );
 };
 
 
@@ -99,8 +97,8 @@ const StatefulDismissibleChipsExample = (props: StatefulSelectableChipProps) => 
   }
 
   return (
-    <div>
-      <div className={getClassName(`bpk-chip-examples__${props.type}`)}>
+    (<div>
+      <div className={getClassName(STYLES[`bpk-chip-examples__${props.type}`])}>
         {chips.map((chip, index) => (
           <BpkDismissibleChip
             {...props}
@@ -109,7 +107,7 @@ const StatefulDismissibleChipsExample = (props: StatefulSelectableChipProps) => 
               removeChip(index);
             }}
             accessibilityLabel="Remove chip"
-            className={getClassName('bpk-chip-examples__chip')}
+            className={getClassName(STYLES["bpk-chip-examples__chip"])}
           >
             {chip}
           </BpkDismissibleChip>
@@ -123,7 +121,7 @@ const StatefulDismissibleChipsExample = (props: StatefulSelectableChipProps) => 
           </>
         ))}
       </AriaLiveDemo>
-    </div>
+    </div>)
   );
 }
 
@@ -142,7 +140,7 @@ const StatefulRadioGroupChipsExample = (props: StatefulSelectableChipProps) => {
   };
 
   return (
-    <div>
+    (<div>
       <div role="radiogroup" aria-labelledby="favorite-color-label">
         <BpkText
           id="favorite-color-label"
@@ -162,7 +160,7 @@ const StatefulRadioGroupChipsExample = (props: StatefulSelectableChipProps) => {
             }}
             selected={selectedIndex === index}
             disabled={index === 3}
-            className={getClassName('bpk-chip-examples__chip')}
+            className={getClassName(STYLES["bpk-chip-examples__chip"])}
             accessibilityLabel={chip}
           >
             {chip}
@@ -170,7 +168,7 @@ const StatefulRadioGroupChipsExample = (props: StatefulSelectableChipProps) => {
         ))}
       </div>
       <AriaLiveDemo
-        className={getClassName('bpk-banner-alert-examples__component')}
+        className={getClassName(STYLES["bpk-banner-alert-examples__component"])}
         visible
       >
         {updates.map((update) => (
@@ -180,13 +178,13 @@ const StatefulRadioGroupChipsExample = (props: StatefulSelectableChipProps) => {
           </>
         ))}
       </AriaLiveDemo>
-    </div>
+    </div>)
   );
 };
 
 
 const StatefulSelectableChips = ({ ...rest }: {}) => (
-  <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>
+  <div className={getClassName(STYLES[`bpk-chip-examples__${rest.type}`])}>
     <StatefulSelectableChip {...rest}>Cheapest flights</StatefulSelectableChip>
     <StatefulSelectableChip {...rest} selected>
       Direct flights
@@ -199,7 +197,7 @@ const StatefulSelectableChips = ({ ...rest }: {}) => (
 
 
 const StatefulIconChips = ({ ...rest }: {}) => (
-  <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>
+  <div className={getClassName(STYLES[`bpk-chip-examples__${rest.type}`])}>
     <StatefulIconChip {...rest} />
     <StatefulIconChip {...rest} selected />
     <StatefulIconChip {...rest} disabled />
@@ -208,7 +206,7 @@ const StatefulIconChips = ({ ...rest }: {}) => (
 
 
 const StatefulDropdownChips = ({ ...rest }: {}) => (
-  <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>
+  <div className={getClassName(STYLES[`bpk-chip-examples__${rest.type}`])}>
     <StatefulDropdownChip {...rest}>Car type</StatefulDropdownChip>
     <StatefulDropdownChip {...rest} selected>
       Pick-up
@@ -227,11 +225,11 @@ const AllSelectableChipsExample = () => (
   <div>
     {Object.keys(CHIP_TYPES).map((chipType) => (
       <>
-        <div className={getClassName(`bpk-chip-examples__container`)}>
+        <div className={getClassName(STYLES[`bpk-chip-examples__container`])}>
           <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
           <StatefulSelectableChips type={CHIP_TYPES[chipType]} />
         </div>
-        <div className={getClassName(`bpk-chip-examples__container`)}>
+        <div className={getClassName(STYLES[`bpk-chip-examples__container`])}>
           <BpkText textStyle={TEXT_STYLES.heading3}>
             {chipType} with leading icon
           </BpkText>
@@ -248,7 +246,7 @@ const AllSelectableChipsExample = () => (
 const AllIconChipsExample = () => (
   <div>
     {Object.keys(CHIP_TYPES).map((chipType) => (
-      <div className={getClassName(`bpk-chip-examples__container`)}>
+      <div className={getClassName(STYLES[`bpk-chip-examples__container`])}>
         <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
         <StatefulIconChips type={CHIP_TYPES[chipType]} leadingAccessoryView={<FilterIconSm />} />
       </div>
@@ -259,7 +257,7 @@ const AllIconChipsExample = () => (
 const AllDropdownChipsExample = () => (
   <div>
     {Object.keys(CHIP_TYPES).map((chipType) => (
-      <div className={getClassName(`bpk-chip-examples__container`)}>
+      <div className={getClassName(STYLES[`bpk-chip-examples__container`])}>
         <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
         <StatefulDropdownChips type={CHIP_TYPES[chipType]} />
       </div>
@@ -270,7 +268,7 @@ const AllDropdownChipsExample = () => (
 const AllDismissibleChipsExample = () => (
   <div>
     {Object.keys(CHIP_TYPES).map((chipType) => (
-      <div className={getClassName(`bpk-chip-examples__container`)}>
+      <div className={getClassName(STYLES[`bpk-chip-examples__container`])}>
         <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
         <StatefulDismissibleChipsExample type={CHIP_TYPES[chipType]} />
       </div>

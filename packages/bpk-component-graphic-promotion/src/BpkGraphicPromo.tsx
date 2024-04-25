@@ -19,11 +19,9 @@
 import type { KeyboardEvent, MouseEvent } from 'react';
 
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkGraphicPromo.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const ACCESSIBILITY_KEYS = {
   Enter: 13 /* Enter */,
@@ -110,11 +108,11 @@ const BpkGraphicPromo = ({
   const onKeyWrapper = (event: KeyboardEvent<HTMLElement>) =>
     isAccessibilityClick(event) && onClick();
 
-  const cardClasses = getClassName('bpk-card', 'bpk-graphic-promo', className);
+  const cardClasses = getClassName(STYLES["bpk-card"], STYLES["bpk-graphic-promo"], className);
   const containerClasses = getClassName(
-    'bpk-graphic-promo__container',
-    `bpk-graphic-promo__container--${textAlign}`,
-    invertVertically && 'bpk-graphic-promo__container--inverted',
+    STYLES["bpk-graphic-promo__container"],
+    STYLES[`bpk-graphic-promo__container--${textAlign}`],
+    invertVertically && STYLES["bpk-graphic-promo__container--inverted"],
   );
 
   const getTextClasses = (baseClass: string) =>
@@ -124,7 +122,7 @@ const BpkGraphicPromo = ({
     // The card appears as a single component for the screen reader; its children are hidden. The card handles mouse
     // clicks and key presses (Enter/Space) for the whole component, as described here:
     // https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
-    <div
+    (<div
       id={contentId || ''}
       className={cardClasses}
       style={style}
@@ -149,12 +147,12 @@ const BpkGraphicPromo = ({
           {sponsor && (
             <>
               <span
-                className={getClassName('bpk-graphic-promo__sponsor-label')}
+                className={getClassName(STYLES["bpk-graphic-promo__sponsor-label"])}
               >
                 {sponsor.label}
               </span>
               <img
-                className={getClassName('bpk-graphic-promo__sponsor-logo')}
+                className={getClassName(STYLES["bpk-graphic-promo__sponsor-logo"])}
                 alt={sponsor.altText}
                 src={sponsor.logo}
               />
@@ -164,19 +162,19 @@ const BpkGraphicPromo = ({
         <div className={getTextClasses('bpk-graphic-promo__promo-content')}>
           {!sponsor && tagline && (
             <span
-              className={getClassName('bpk-graphic-promo__tagline')}
+              className={getClassName(STYLES["bpk-graphic-promo__tagline"])}
             >
               {tagline}
             </span>
           )}
           <h2
-            className={getClassName('bpk-graphic-promo__headline')}
+            className={getClassName(STYLES["bpk-graphic-promo__headline"])}
           >
             {headline}
           </h2>
           {subheading && (
             <p
-              className={getClassName('bpk-graphic-promo__subheading')}
+              className={getClassName(STYLES["bpk-graphic-promo__subheading"])}
             >
               {subheading}
             </p>
@@ -185,7 +183,7 @@ const BpkGraphicPromo = ({
             type={BUTTON_TYPES.primaryOnDark}
             // TODO: className to be removed
             // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            className={getClassName('bpk-graphic-promo__cta')}
+            className={getClassName(STYLES["bpk-graphic-promo__cta"])}
             onClick={onClickWrapper}
             tabIndex={-1} /* button is not focusable for accessibility */
           >
@@ -193,7 +191,7 @@ const BpkGraphicPromo = ({
           </BpkButtonV2>
         </div>
       </div>
-    </div>
+    </div>)
   );
 };
 

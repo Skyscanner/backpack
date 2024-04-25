@@ -20,7 +20,7 @@ import { Component } from 'react';
 
 import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
@@ -28,7 +28,6 @@ import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 import STYLES from './BpkThemeToggle.module.scss';
 
 const inputId = 'theme-select';
-const getClassName = cssModules(STYLES);
 const availableThemes = Object.keys(bpkCustomThemes);
 
 const setTheme = (theme) => {
@@ -83,8 +82,8 @@ class BpkThemeToggle extends Component {
   render() {
     const { ...rest } = this.props;
     return (
-      <div {...rest}>
-        <span className={getClassName('bpk-theme-toggle__label')}>
+      (<div {...rest}>
+        <span className={getClassName(STYLES["bpk-theme-toggle__label"])}>
           <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
         </span>
         <BpkSelect
@@ -103,7 +102,7 @@ class BpkThemeToggle extends Component {
             </option>
           ))}
         </BpkSelect>
-      </div>
+      </div>)
     );
   }
 }

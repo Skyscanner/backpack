@@ -19,18 +19,16 @@
 import PropTypes from 'prop-types';
 
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkPaginationPage.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const BpkPaginationPage = (props) => {
-  const classNames = [getClassName('bpk-pagination-page')];
+  const classNames = [getClassName(STYLES["bpk-pagination-page"])];
   const { isSelected, onSelect, page, pageLabel } = props;
 
   if (isSelected) {
-    classNames.push(getClassName('bpk-pagination-page--selected'));
+    classNames.push(getClassName(STYLES["bpk-pagination-page--selected"]));
   }
 
   return (

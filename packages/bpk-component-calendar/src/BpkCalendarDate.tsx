@@ -19,13 +19,11 @@
 import type { KeyboardEvent } from 'react';
 import { PureComponent } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import type { DateModifiers } from './custom-proptypes';
 
 import STYLES from './BpkCalendarDate.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export const SELECTION_TYPES = {
   none: 'none',
@@ -153,31 +151,31 @@ class BpkCalendarDate extends PureComponent<Props> {
       ...buttonProps
     } = this.props;
 
-    const classNames = [getClassName('bpk-calendar-date')];
+    const classNames = [getClassName(STYLES["bpk-calendar-date"])];
 
     Object.keys(modifiers!).forEach((modifier) => {
       if (modifiers![modifier](this.props)) {
         classNames.push(
-          getClassName(`bpk-calendar-date--modifier-${modifier}`),
+          getClassName(STYLES[`bpk-calendar-date--modifier-${modifier}`]),
         );
       }
     });
 
     if (isFocused) {
-      classNames.push(getClassName('bpk-calendar-date--focused'));
+      classNames.push(getClassName(STYLES["bpk-calendar-date--focused"]));
     }
     if (isSelected) {
-      classNames.push(getClassName('bpk-calendar-date--selected'));
+      classNames.push(getClassName(STYLES["bpk-calendar-date--selected"]));
     }
     if (isBlocked) {
-      classNames.push(getClassName('bpk-calendar-date--blocked'));
+      classNames.push(getClassName(STYLES["bpk-calendar-date--blocked"]));
     }
     if (isOutside) {
-      classNames.push(getClassName('bpk-calendar-date--outside'));
+      classNames.push(getClassName(STYLES["bpk-calendar-date--outside"]));
     }
 
     if (selectionType !== SELECTION_TYPES.none) {
-      classNames.push(getClassName(`bpk-calendar-date--${selectionType}`));
+      classNames.push(getClassName(STYLES[`bpk-calendar-date--${selectionType}`]));
     }
 
     if (className) {

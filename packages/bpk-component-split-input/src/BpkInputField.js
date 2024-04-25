@@ -21,11 +21,9 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import BpkInput from '../../bpk-component-input';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkInputField.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 class BpkInputField extends Component {
   componentDidUpdate(prevProps) {
@@ -39,7 +37,7 @@ class BpkInputField extends Component {
   render() {
     const { focus, id, index, label, value, ...rest } = this.props;
     return (
-      <div key={index} className={getClassName('bpk-input-field')}>
+      (<div key={index} className={getClassName(STYLES["bpk-input-field"])}>
         <BpkInput
           id={id}
           autoComplete="off"
@@ -51,7 +49,7 @@ class BpkInputField extends Component {
           value={value || ''}
           {...rest}
         />
-      </div>
+      </div>)
     );
   }
 }

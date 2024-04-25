@@ -18,17 +18,15 @@
 
 /* @flow strict */
 
-import BpkButtonBase, { cssModules } from './BpkButtonBase';
+import BpkButtonBase, { getClassName } from './BpkButtonBase';
 import { type Props, defaultProps, propTypes } from './common-types';
 
 import STYLES from './BpkButtonPrimaryOnDark.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const BpkButtonPrimaryOnDark = (props: Props) => {
   const { className, ...rest } = props;
 
-  const classNames = [getClassName('bpk-button--primary-on-dark')];
+  const classNames = [getClassName(STYLES["bpk-button--primary-on-dark"])];
 
   if (className) {
     classNames.push(className);

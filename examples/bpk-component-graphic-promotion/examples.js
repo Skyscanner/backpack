@@ -19,13 +19,12 @@
 import BpkGraphicPromo, {
   TEXT_ALIGN,
 } from '../../packages/bpk-component-graphic-promotion';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
 const contentId = 'graphic-promo-content';
-const getClassName = cssModules(STYLES);
-const graphicPromoClassName = getClassName('bpk-graphic-promotion-example');
+const graphicPromoClassName = getClassName(STYLES["bpk-graphic-promotion-example"]);
 
 const sponsor = {
   label: 'Sponsored',

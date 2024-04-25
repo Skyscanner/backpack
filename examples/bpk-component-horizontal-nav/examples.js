@@ -28,12 +28,10 @@ import BpkHorizontalNav, {
   HORIZONTAL_NAV_TYPES,
 } from '../../packages/bpk-component-horizontal-nav';
 import BpkText from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const Separator = () => (
   <span
@@ -66,7 +64,7 @@ const ScrollToSelectedExample = () => (
       Note - this story works best when viewing the storybook frame alone
     </BpkText>
     <div
-      className={getClassName('bpk-horizontal-nav-stories__narrow-container')}
+      className={getClassName(STYLES["bpk-horizontal-nav-stories__narrow-container"])}
     >
       <BpkHorizontalNav autoScrollToSelected>
         <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
@@ -97,12 +95,12 @@ const LightAppearanceExample = () => (
 
 const UsingCustomScrollColorsExample = () => (
   <BpkHorizontalNav
-    className={getClassName('bpk-horizontal-nav-custom-scrollers')}
+    className={getClassName(STYLES["bpk-horizontal-nav-custom-scrollers"])}
     leadingScrollIndicatorClassName={getClassName(
-      'bpk-horizontal-nav-custom-scrollers--leading',
+      STYLES["bpk-horizontal-nav-custom-scrollers--leading"],
     )}
     trailingScrollIndicatorClassName={getClassName(
-      'bpk-horizontal-nav-custom-scrollers--trailing',
+      STYLES["bpk-horizontal-nav-custom-scrollers--trailing"],
     )}
   >
     <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>

@@ -21,13 +21,11 @@ import { fireEvent, render } from '@testing-library/react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkFloatingNotification from './BpkFloatingNotification';
 
 import STYLES from './BpkFloatingNotification.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const props = {
   text: 'Saved',
@@ -74,7 +72,7 @@ describe('BpkFloatingNotification', () => {
     );
 
     const cta = document.getElementsByClassName(
-      getClassName('bpk-floating-notification__button'),
+      getClassName(STYLES["bpk-floating-notification__button"]),
     )[0];
     fireEvent.click(cta);
 

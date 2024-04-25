@@ -18,24 +18,22 @@
 
 import type { SyntheticEvent } from 'react';
 
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { TransitionInitialMount, getClassName } from '../../bpk-react-utils';
 
 import STYLES from './bpk-scrim.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   onClose?: (e?: SyntheticEvent) => void | null;
 };
 const BpkScrim = ({ onClose = () => {} }: Props) => (
   <TransitionInitialMount
-    appearClassName={getClassName('bpk-scrim--appear')}
-    appearActiveClassName={getClassName('bpk-scrim--appear-active')}
+    appearClassName={getClassName(STYLES["bpk-scrim--appear"])}
+    appearActiveClassName={getClassName(STYLES["bpk-scrim--appear-active"])}
     transitionTimeout={200}
   >
     <div
       role="presentation"
-      className={getClassName('bpk-scrim')}
+      className={getClassName(STYLES["bpk-scrim"])}
       onMouseDown={onClose}
       onTouchStart={onClose}
     />

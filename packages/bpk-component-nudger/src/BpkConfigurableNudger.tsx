@@ -22,13 +22,11 @@ import { withButtonAlignment } from '../../bpk-component-icon';
 import MinusIcon from '../../bpk-component-icon/sm/minus';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import PlusIcon from '../../bpk-component-icon/sm/plus';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import { type CommonProps } from './common-types';
 
 import STYLES from './BpkNudger.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const AlignedMinusIcon = withButtonAlignment(MinusIcon);
 const AlignedPlusIcon = withButtonAlignment(PlusIcon);
@@ -74,27 +72,27 @@ const BpkConfigurableNudger = ({
   value,
   ...rest
 }: Props) => {
-  const classNames = getClassName('bpk-nudger', className);
+  const classNames = getClassName(STYLES["bpk-nudger"], className);
 
   const maxButtonDisabled = compareValues(value, max) >= 0;
   const minButtonDisabled = compareValues(value, min) <= 0;
 
   const minusIconClassNames = getClassName(
-    'bpk-nudger__icon',
-    minButtonDisabled && 'bpk-nudger__icon--disabled',
+    STYLES["bpk-nudger__icon"],
+    minButtonDisabled && STYLES["bpk-nudger__icon--disabled"],
   );
   const plusIconClassNames = getClassName(
-    'bpk-nudger__icon',
-    maxButtonDisabled && 'bpk-nudger__icon--disabled',
+    STYLES["bpk-nudger__icon"],
+    maxButtonDisabled && STYLES["bpk-nudger__icon--disabled"],
   );
   const inputStyles = getClassName(
-    'bpk-nudger__input',
+    STYLES["bpk-nudger__input"],
     inputClassName && inputClassName,
-    buttonType === 'secondaryOnDark' && 'bpk-nudger__input--secondary-on-dark',
+    buttonType === 'secondaryOnDark' && STYLES["bpk-nudger__input--secondary-on-dark"],
   );
 
   return (
-    <div className={classNames}>
+    (<div className={classNames}>
       <BpkButtonV2
         type={BUTTON_TYPES[buttonType]}
         iconOnly
@@ -104,7 +102,7 @@ const BpkConfigurableNudger = ({
         aria-controls={id}
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-nudger__button')}
+        className={getClassName(STYLES["bpk-nudger__button"])}
       >
         
         <AlignedMinusIcon 
@@ -131,14 +129,14 @@ const BpkConfigurableNudger = ({
         aria-controls={id}
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-nudger__button')}
+        className={getClassName(STYLES["bpk-nudger__button"])}
       >
         <AlignedPlusIcon 
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={plusIconClassNames} />
       </BpkButtonV2>
-    </div>
+    </div>)
   );
 };
 

@@ -18,17 +18,15 @@
 
 /* @flow strict */
 
-import BpkButtonBase, { cssModules } from './BpkButtonBase';
+import BpkButtonBase, { getClassName } from './BpkButtonBase';
 import { type Props, defaultProps, propTypes } from './common-types';
 
 import STYLES from './BpkButtonSecondary.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const BpkButtonSecondary = (props: Props) => {
   const { className, ...rest } = props;
 
-  const classNames = [getClassName('bpk-button--secondary')];
+  const classNames = [getClassName(STYLES["bpk-button--secondary"])];
 
   if (className) {
     classNames.push(className);

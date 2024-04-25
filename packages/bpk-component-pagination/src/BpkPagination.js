@@ -18,14 +18,12 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkPaginationList from './BpkPaginationList';
 import BpkPaginationNudger from './BpkPaginationNudger';
 
 import STYLES from './BpkPagination.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const handlePageChange = (onPageChange, pageCount) => (nextPageIndex) => {
   if (onPageChange && nextPageIndex < pageCount && nextPageIndex >= 0) {
@@ -34,7 +32,7 @@ const handlePageChange = (onPageChange, pageCount) => (nextPageIndex) => {
 };
 
 const BpkPagination = (props) => {
-  const classNames = [getClassName('bpk-pagination')];
+  const classNames = [getClassName(STYLES["bpk-pagination"])];
   const {
     className,
     nextLabel,

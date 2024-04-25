@@ -27,11 +27,9 @@ import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkAnimateAndFade.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const ANIMATION_DURATION = parseInt(durationSm, 10);
 
@@ -154,13 +152,13 @@ class AnimateAndFade extends Component<Props, State> {
             {this.state.visible && (
               <CSSTransition
                 classNames={{
-                  exit: getClassName('bpk-animate-and-fade--leave'),
-                  exitActive: getClassName('bpk-animate-and-fade--leave-active'),
-                  enter: getClassName('bpk-animate-and-fade--enter'),
-                  enterActive: getClassName('bpk-animate-and-fade--enter-active'),
-                  appear: getClassName('bpk-animate-and-fade--appear'),
+                  exit: getClassName(STYLES["bpk-animate-and-fade--leave"]),
+                  exitActive: getClassName(STYLES["bpk-animate-and-fade--leave-active"]),
+                  enter: getClassName(STYLES["bpk-animate-and-fade--enter"]),
+                  enterActive: getClassName(STYLES["bpk-animate-and-fade--enter-active"]),
+                  appear: getClassName(STYLES["bpk-animate-and-fade--appear"]),
                   appearActive: getClassName(
-                    'bpk-animate-and-fade--appear-active',
+                    STYLES["bpk-animate-and-fade--appear-active"],
                   ),
                 }}
                 timeout={{

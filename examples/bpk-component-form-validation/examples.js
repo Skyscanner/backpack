@@ -25,13 +25,11 @@ import BpkFormValidation from '../../packages/bpk-component-form-validation';
 import BpkInput from '../../packages/bpk-component-input';
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkTextarea from '../../packages/bpk-component-textarea';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
-const getClassName = cssModules(STYLES);
-
-const formClassName = getClassName('bpkdocs-forms-page__form');
+const formClassName = getClassName(STYLES["bpkdocs-forms-page__form"]);
 
 class FormValidationContainer extends Component {
   constructor() {

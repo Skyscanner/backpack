@@ -18,13 +18,11 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkFlareBar from './BpkFlareBar';
 
 import STYLES from './bpk-content-bubble.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const BpkContentBubble = (props) => {
   const {
@@ -37,23 +35,23 @@ const BpkContentBubble = (props) => {
     ...rest
   } = props;
 
-  const wrapperClassNames = [getClassName('bpk-content-bubble__wrapper')];
+  const wrapperClassNames = [getClassName(STYLES["bpk-content-bubble__wrapper"])];
   const contentClassNames = [
-    getClassName('bpk-content-bubble__content-wrapper'),
+    getClassName(STYLES["bpk-content-bubble__content-wrapper"]),
   ];
 
   if (showPointer) {
     wrapperClassNames.push(
-      getClassName('bpk-content-bubble__wrapper--with-pointer'),
+      getClassName(STYLES["bpk-content-bubble__wrapper--with-pointer"]),
     );
   }
   if (rounded) {
     wrapperClassNames.push(
-      getClassName('bpk-content-bubble__wrapper--rounded'),
+      getClassName(STYLES["bpk-content-bubble__wrapper--rounded"]),
     );
     if (showPointer) {
       wrapperClassNames.push(
-        getClassName('bpk-content-bubble__wrapper--rounded--with-pointer'),
+        getClassName(STYLES["bpk-content-bubble__wrapper--rounded--with-pointer"]),
       );
     }
   }
@@ -67,20 +65,20 @@ const BpkContentBubble = (props) => {
   }
 
   return (
-    <div className={wrapperClassNames.join(' ')} {...rest}>
-      <div className={getClassName('bpk-content-bubble__container')}>
+    (<div className={wrapperClassNames.join(' ')} {...rest}>
+      <div className={getClassName(STYLES["bpk-content-bubble__container"])}>
         <div className={contentClassNames.join(' ')}>{content && content}</div>
         {showPointer && (
           <BpkFlareBar
             rounded={rounded}
             // TODO: className to be removed
             // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            className={getClassName('bpk-content-bubble__pointer')}
+            className={getClassName(STYLES["bpk-content-bubble__pointer"])}
             {...flareProps}
           />
         )}
       </div>
-    </div>
+    </div>)
   );
 };
 

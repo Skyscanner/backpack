@@ -18,11 +18,9 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkDescriptionList.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const buildComponent = (TagName, baseClassName) => {
   const Component = ({ children, className, ...rest }) => {
@@ -35,9 +33,9 @@ const buildComponent = (TagName, baseClassName) => {
     return (
       // TODO: className to be removed
       // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      <TagName className={classNames.join(' ')} {...rest}>
+      (<TagName className={classNames.join(' ')} {...rest}>
         {children}
-      </TagName>
+      </TagName>)
     );
   };
 

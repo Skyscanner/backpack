@@ -25,7 +25,7 @@ import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import {
   addMonths,
@@ -38,8 +38,6 @@ import {
 } from './date-utils';
 
 import STYLES from './BpkCalendarNav.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type MonthChangeEvent =
   | ChangeEvent<HTMLInputElement>
@@ -109,12 +107,12 @@ const BpkCalendarNav = ({
   const nextMonth = addMonths(baseMonth, 1);
 
   return (
-    <div className={getClassName('bpk-calendar-nav')}>
+    (<div className={getClassName(STYLES["bpk-calendar-nav"])}>
       <div style={{ display: 'table-row' }}>
-        <div className={getClassName('bpk-calendar-nav__nudger')}>
+        <div className={getClassName(STYLES["bpk-calendar-nav__nudger"])}>
           <button
             type="button"
-            className={getClassName('bpk-calendar-nav__button')}
+            className={getClassName(STYLES["bpk-calendar-nav__button"])}
             id={`${id}_month_nudger_previous`}
             onClick={changeMonth({
               month: prevMonth,
@@ -130,16 +128,16 @@ const BpkCalendarNav = ({
             <ArrowLeftIcon 
             // TODO: className to be removed
             // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            className={getClassName('bpk-calendar-nav__icon')} />
-            <span className={getClassName('bpk-calendar-nav__text--hidden')}>
+            className={getClassName(STYLES["bpk-calendar-nav__icon"])} />
+            <span className={getClassName(STYLES["bpk-calendar-nav__text--hidden"])}>
               {previousMonthLabel}
             </span>
           </button>
         </div>
-        <div className={getClassName('bpk-calendar-nav__month')}>
+        <div className={getClassName(STYLES["bpk-calendar-nav__month"])}>
           <label
             htmlFor={`${id}_select`}
-            className={getClassName('bpk-calendar-nav__text--hidden')}
+            className={getClassName(STYLES["bpk-calendar-nav__text--hidden"])}
           >
             {changeMonthLabel}
           </label>
@@ -164,10 +162,10 @@ const BpkCalendarNav = ({
             ))}
           </BpkSelect>
         </div>
-        <div className={getClassName('bpk-calendar-nav__nudger')}>
+        <div className={getClassName(STYLES["bpk-calendar-nav__nudger"])}>
           <button
             type="button"
-            className={getClassName('bpk-calendar-nav__button')}
+            className={getClassName(STYLES["bpk-calendar-nav__button"])}
             id={`${id}_month_nudger_next`}
             onClick={changeMonth({
               month: nextMonth,
@@ -184,16 +182,16 @@ const BpkCalendarNav = ({
             <ArrowRightIcon
               // TODO: className to be removed
               // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-              className={getClassName('bpk-calendar-nav__icon')}
+              className={getClassName(STYLES["bpk-calendar-nav__icon"])}
             />
-            <span className={getClassName('bpk-calendar-nav__text--hidden')}>
+            <span className={getClassName(STYLES["bpk-calendar-nav__text--hidden"])}>
               {nextMonthLabel}
             </span>
           </button>
         </div>
         <BpkAriaLive>{formatMonth(baseMonth)}</BpkAriaLive>
       </div>
-    </div>
+    </div>)
   );
 };
 

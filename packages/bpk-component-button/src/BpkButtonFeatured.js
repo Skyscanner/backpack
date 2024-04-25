@@ -18,17 +18,15 @@
 
 /* @flow strict */
 
-import BpkButtonBase, { cssModules } from './BpkButtonBase';
+import BpkButtonBase, { getClassName } from './BpkButtonBase';
 import { type Props, defaultProps, propTypes } from './common-types';
 
 import STYLES from './BpkButtonFeatured.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const BpkButtonFeatured = (props: Props) => {
   const { className, ...rest } = props;
 
-  const classNames = [getClassName('bpk-button--featured')];
+  const classNames = [getClassName(STYLES["bpk-button--featured"])];
 
   if (className) {
     classNames.push(className);

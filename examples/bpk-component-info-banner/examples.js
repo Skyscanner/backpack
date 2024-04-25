@@ -33,13 +33,11 @@ import BpkInfoBanner, {
   withBannerAlertState, BpkInfoBannerDismissable
 } from '../../packages/bpk-component-info-banner';
 import BpkText from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
@@ -66,46 +64,44 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
   }
 
   render() {
-    return (
-      <>
-        <BpkInfoBannerDismissable
-          show={!this.state.dismissed}
-          dismissButtonLabel="Dismiss"
-          onDismiss={() => {
+    return (<>
+      <BpkInfoBannerDismissable
+        show={!this.state.dismissed}
+        dismissButtonLabel="Dismiss"
+        onDismiss={() => {
+          this.setState((prevState) => ({
+            dismissed: true,
+            updates: [...prevState.updates, 'Success alert dismissed'],
+          }));
+        }}
+        message="Neutral alert with dismiss option"
+        {...this.props}
+      />
+      {this.state.dismissed && (
+        <BpkButtonPrimary
+          className={getClassName(STYLES["bpk-info-banner-examples__component"])}
+          onClick={() => {
             this.setState((prevState) => ({
-              dismissed: true,
-              updates: [...prevState.updates, 'Success alert dismissed'],
+              dismissed: false,
+              updates: [...prevState.updates, 'Success alert added'],
             }));
           }}
-          message="Neutral alert with dismiss option"
-          {...this.props}
-        />
-        {this.state.dismissed && (
-          <BpkButtonPrimary
-            className={getClassName('bpk-info-banner-examples__component')}
-            onClick={() => {
-              this.setState((prevState) => ({
-                dismissed: false,
-                updates: [...prevState.updates, 'Success alert added'],
-              }));
-            }}
-          >
-            Reset
-          </BpkButtonPrimary>
-        )}
-        <AriaLiveDemo
-          visible
-          className={getClassName('bpk-info-banner-examples__component')}
         >
-          {this.state.updates.map((u) => (
-            <>
-              {u}
-              <br />
-            </>
-          ))}
-        </AriaLiveDemo>
-      </>
-    );
+          Reset
+        </BpkButtonPrimary>
+      )}
+      <AriaLiveDemo
+        visible
+        className={getClassName(STYLES["bpk-info-banner-examples__component"])}
+      >
+        {this.state.updates.map((u) => (
+          <>
+            {u}
+            <br />
+          </>
+        ))}
+      </AriaLiveDemo>
+    </>);
   }
 }
 
@@ -224,7 +220,7 @@ const OnContrastExample = (props) => (
   <div style={{ backgroundColor: canvasContrastDay, padding: cardPadding }}>
     <BpkText
       tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
+      className={getClassName(STYLES["bpk-info-banner-examples__p"])}
     >
       {message}
     </BpkText>
@@ -236,7 +232,7 @@ const OnContrastExample = (props) => (
     />
     <BpkText
       tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
+      className={getClassName(STYLES["bpk-info-banner-examples__p"])}
     >
       {message}
     </BpkText>
@@ -250,7 +246,7 @@ const OnContrastExample = (props) => (
     </BpkInfoBannerExpandableState>
     <BpkText
       tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
+      className={getClassName(STYLES["bpk-info-banner-examples__p"])}
     >
       {message}
     </BpkText>
@@ -262,7 +258,7 @@ const OnContrastExample = (props) => (
     />
     <BpkText
       tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
+      className={getClassName(STYLES["bpk-info-banner-examples__p"])}
     >
       {message}
     </BpkText>
@@ -274,7 +270,7 @@ const OnContrastExample = (props) => (
     />
     <BpkText
       tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
+      className={getClassName(STYLES["bpk-info-banner-examples__p"])}
     >
       {message}
     </BpkText>
@@ -286,7 +282,7 @@ const OnContrastExample = (props) => (
     />
     <BpkText
       tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
+      className={getClassName(STYLES["bpk-info-banner-examples__p"])}
     >
       {message}
     </BpkText>
@@ -297,16 +293,16 @@ const DocsDefaultExample = () => (
   <>
     <InfoExample />
     <SuccessExample
-      className={getClassName('bpk-info-banner-examples__component')}
+      className={getClassName(STYLES["bpk-info-banner-examples__component"])}
     />
     <SuccessWithReactRenderedMessageExample
-      className={getClassName('bpk-info-banner-examples__component')}
+      className={getClassName(STYLES["bpk-info-banner-examples__component"])}
     />
     <WarningExample
-      className={getClassName('bpk-info-banner-examples__component')}
+      className={getClassName(STYLES["bpk-info-banner-examples__component"])}
     />
     <ErrorExample
-      className={getClassName('bpk-info-banner-examples__component')}
+      className={getClassName(STYLES["bpk-info-banner-examples__component"])}
     />
   </>
 );

@@ -27,7 +27,7 @@ import {
   CALENDAR_SELECTION_TYPE,
   DateUtils,
 } from '../../bpk-component-calendar';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
 import { getMonthsArray, getMonthItemHeights } from './utils';
@@ -36,10 +36,6 @@ import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-com
 
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 
-const getClassName = cssModules(STYLES);
-
-// These constants are here to facilitate calculating the height
-// This is the additional height of each grid without any rows.
 const BASE_MONTH_ITEM_HEIGHT = 8.125;
 const COLUMN_COUNT = 7;
 // Most browsers have by default 16px root font size
@@ -135,7 +131,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
         aria-hidden={index !== 1}
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-scrollable-calendar-grid-list__item')}
+        className={getClassName(STYLES["bpk-scrollable-calendar-grid-list__item"])}
       />
     </div>
   );
@@ -164,8 +160,8 @@ const BpkScrollableCalendarGridList = (props: Props) => {
   const selectedDate = focusedDate || date;
 
   return (
-    <div
-      className={getClassName('bpk-scrollable-calendar-grid-list', className)}
+    (<div
+      className={getClassName(STYLES["bpk-scrollable-calendar-grid-list"], className)}
     >
       <AutoSizer
         onResize={onResize}
@@ -196,7 +192,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
           </List>
         )}
       </AutoSizer>
-    </div>
+    </div>)
   );
 };
 

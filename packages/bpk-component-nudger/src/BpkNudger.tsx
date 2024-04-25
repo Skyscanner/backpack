@@ -19,14 +19,13 @@
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
 import { type CommonProps } from './common-types';
 
 import STYLES from './BpkNudger.module.scss';
 
-const getClassName = cssModules(STYLES);
 const compareValues = (a: number, b: number): number => a - b;
 const incrementValue = (currentValue: number): number => currentValue + 1;
 const decrementValue = (currentValue: number): number => currentValue - 1;
@@ -42,12 +41,12 @@ const BpkNudger = ({
   ...rest
 }: CommonProps) => {
 
-  const classNames = getClassName(title && 'bpk-nudger__container');
+  const classNames = getClassName(title && STYLES["bpk-nudger__container"]);
 
   return (
-    <div className={classNames}>
+    (<div className={classNames}>
       {title && (
-        <div className={getClassName('bpk-nudger__label')}>
+        <div className={getClassName(STYLES["bpk-nudger__label"])}>
           <BpkLabel htmlFor={id}>
             {icon}
           </BpkLabel>
@@ -55,11 +54,11 @@ const BpkNudger = ({
             // For a11y on IOS, role='text' forces label to be read in full. More info: https://axesslab.com/text-splitting/
             // eslint-disable-next-line jsx-a11y/aria-role
             role="text"
-            className={getClassName('bpk-nudger__label--title-subtitle')}
+            className={getClassName(STYLES["bpk-nudger__label--title-subtitle"])}
           >
             <BpkText textStyle={TEXT_STYLES.heading5}>{title}</BpkText>
             {subtitle && (
-              <span className={getClassName('bpk-nudger__label--subtitle')}>
+              <span className={getClassName(STYLES["bpk-nudger__label--subtitle"])}>
                 <BpkText>
                   {subtitle}
                 </BpkText>
@@ -69,7 +68,7 @@ const BpkNudger = ({
         </div>
       )}
       <BpkConfigurableNudger
-        inputClassName={getClassName('bpk-nudger__input--numeric')}
+        inputClassName={getClassName(STYLES["bpk-nudger__input--numeric"])}
         compareValues={compareValues}
         incrementValue={incrementValue}
         decrementValue={decrementValue}
@@ -81,7 +80,7 @@ const BpkNudger = ({
         id={id}
         {...rest}
       />
-    </div>
-  )};
+    </div>)
+  );};
 
 export default BpkNudger;

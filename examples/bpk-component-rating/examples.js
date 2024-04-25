@@ -22,11 +22,9 @@ import BpkRating, {
   RATING_SCALES,
 } from '../../packages/bpk-component-rating';
 import BpkStarRating from '../../packages/bpk-component-star-rating';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const owlSrc =
   'https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-64600-4.svg';
@@ -36,7 +34,7 @@ const tripSrc =
 const ImageTitle = (
   <img
     alt="rating 4.5"
-    className={getClassName('bpk-rating-story--img')}
+    className={getClassName(STYLES["bpk-rating-story--img"])}
     src={owlSrc}
   />
 );
@@ -44,7 +42,7 @@ const ImageTitle = (
 const TripImageTitle = (
   <img
     alt="rating 4.5"
-    className={getClassName('bpk-rating-story--trip')}
+    className={getClassName(STYLES["bpk-rating-story--trip"])}
     src={tripSrc}
   />
 );
@@ -52,7 +50,7 @@ const TripImageTitle = (
 const LargeImageTitle = (
   <img
     alt="rating 4.5"
-    className={getClassName('bpk-rating-story--img')}
+    className={getClassName(STYLES["bpk-rating-story--img"])}
     src={owlSrc}
   />
 );
@@ -69,7 +67,7 @@ const ThreeStars = (
 const LargeTripImageTitle = (
   <img
     alt="rating 4.5"
-    className={getClassName('bpk-rating-story--trip')}
+    className={getClassName(STYLES["bpk-rating-story--trip"])}
     src={tripSrc}
   />
 );

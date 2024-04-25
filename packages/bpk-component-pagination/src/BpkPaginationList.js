@@ -18,14 +18,12 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkPaginationBreak from './BpkPaginationBreak';
 import BpkPaginationPage from './BpkPaginationPage';
 
 import STYLES from './BpkPaginationList.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const BpkPaginationList = (props) => {
   const {
@@ -73,21 +71,19 @@ const BpkPaginationList = (props) => {
 
       if (pageView !== null) {
         return (
-          <li
+          (<li
             key={i} // eslint-disable-line react/no-array-index-key
-            className={getClassName('bpk-pagination-page-list__item')}
+            className={getClassName(STYLES["bpk-pagination-page-list__item"])}
           >
             {pageView}
-          </li>
+          </li>)
         );
       }
       return null;
     })
     .filter((page) => !!page);
 
-  return (
-    <ul className={getClassName('bpk-pagination-page-list')}>{children}</ul>
-  );
+  return (<ul className={getClassName(STYLES["bpk-pagination-page-list"])}>{children}</ul>);
 };
 
 BpkPaginationList.propTypes = {

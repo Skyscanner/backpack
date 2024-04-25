@@ -18,17 +18,15 @@
 
 /* @flow strict */
 
-import BpkButtonBase, { cssModules } from './BpkButtonBase';
+import BpkButtonBase, { getClassName } from './BpkButtonBase';
 import { type Props, defaultProps, propTypes } from './common-types';
 
 import STYLES from './BpkButtonDestructive.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const BpkButtonDestructive = (props: Props) => {
   const { className, ...rest } = props;
 
-  const classNames = [getClassName('bpk-button--destructive')];
+  const classNames = [getClassName(STYLES["bpk-button--destructive"])];
 
   if (className) {
     classNames.push(className);

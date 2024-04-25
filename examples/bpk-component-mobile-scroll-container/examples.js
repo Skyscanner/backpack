@@ -19,21 +19,19 @@
 /* @flow strict */
 
 import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const ScrollExampleBlock = () => (
-  <div className={getClassName('bpk-scroll-block')}>
+  <div className={getClassName(STYLES["bpk-scroll-block"])}>
     {new Array(10).fill().map((props, index) => (
       <div
         // eslint-disable-next-line react/no-array-index-key
         key={index}
         className={getClassName(
-          'bpk-scroll-block__item',
-          index % 2 === 0 && 'bpk-scroll-block__item--alternate',
+          STYLES["bpk-scroll-block__item"],
+          index % 2 === 0 && STYLES["bpk-scroll-block__item--alternate"],
         )}
       >
         {index}
@@ -57,10 +55,10 @@ const WithVisibleScrollbarExample = () => (
 const SettingLeadingAndTrailingIndicatorClassNameExample = () => (
   <BpkMobileScrollContainer
     leadingIndicatorClassName={getClassName(
-      'bpk-stories-mobile-scroll-container__leading-indicator',
+      STYLES["bpk-stories-mobile-scroll-container__leading-indicator"],
     )}
     trailingIndicatorClassName={getClassName(
-      'bpk-stories-mobile-scroll-container__trailing-indicator',
+      STYLES["bpk-stories-mobile-scroll-container__trailing-indicator"],
     )}
   >
     <ScrollExampleBlock />

@@ -23,11 +23,9 @@ import type { Node } from 'react';
 import { Children } from 'react';
 
 import { SPINNER_TYPES } from '../../packages/bpk-component-spinner';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './SpinnerLayout.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   children: Node,
@@ -36,17 +34,17 @@ type Props = {
 const SpinnerLayout = (props: Props) => {
   const { children } = props;
   return (
-    <div className={getClassName('bpk-spinner-layout')}>
+    (<div className={getClassName(STYLES["bpk-spinner-layout"])}>
       {Children.map(children, (child) => {
-        const classNames = [getClassName('bpk-spinner-layout__spinner')];
+        const classNames = [getClassName(STYLES["bpk-spinner-layout__spinner"])];
 
         if (child.props.type === SPINNER_TYPES.light) {
-          classNames.push(getClassName('bpk-spinner-layout__spinner--light'));
+          classNames.push(getClassName(STYLES["bpk-spinner-layout__spinner--light"]));
         }
 
         return <div className={classNames.join(' ')}>{child}</div>;
       })}
-    </div>
+    </div>)
   );
 };
 

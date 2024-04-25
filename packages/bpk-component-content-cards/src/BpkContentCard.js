@@ -19,11 +19,9 @@
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText from '../../bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkContentCard.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type CardLayout = 'HORIZONTAL' | 'VERTICAL';
 
@@ -43,18 +41,18 @@ type Props = {
 const BpkContentCard = ({ card, layout }: Props) => (
   <a
     className={getClassName(
-      'bpk-content-card--link',
+      STYLES["bpk-content-card--link"],
       layout === 'HORIZONTAL'
-        ? 'bpk-content-card--horizontal'
-        : 'bpk-content-card--vertical',
+        ? STYLES["bpk-content-card--horizontal"]
+        : STYLES["bpk-content-card--vertical"],
     )}
     href={card.href}
     target="_blank"
     rel="noreferrer"
   >
-    <div className={getClassName('bpk-content-card--image-container')}>
+    <div className={getClassName(STYLES["bpk-content-card--image-container"])}>
       <img
-        className={getClassName('bpk-content-card--image')}
+        className={getClassName(STYLES["bpk-content-card--image"])}
         alt={card.image.alt || ''}
         src={card.image.url}
         loading="lazy"
@@ -65,7 +63,7 @@ const BpkContentCard = ({ card, layout }: Props) => (
       <BpkText
         // TODO: className to be removed.
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-content-card--headline')}
+        className={getClassName(STYLES["bpk-content-card--headline"])}
         tagName="h3"
       >
         {card.headline}
@@ -73,7 +71,7 @@ const BpkContentCard = ({ card, layout }: Props) => (
       <BpkText
         // TODO: className to be removed.
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-content-card--description')}
+        className={getClassName(STYLES["bpk-content-card--description"])}
         tagName="p"
       >
         {card.description}

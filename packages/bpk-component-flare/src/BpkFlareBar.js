@@ -18,30 +18,28 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import CornerRadius from './__generated__/js/corner-radius';
 import Pointer from './__generated__/js/pointer';
 
 import STYLES from './bpk-flare-bar.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const BpkFlareBar = (props) => {
   const { className, rounded, svgClassName, ...rest } = props;
 
-  const classNames = [getClassName('bpk-flare-bar__container')];
+  const classNames = [getClassName(STYLES["bpk-flare-bar__container"])];
   if (className) {
     classNames.push(className);
   }
 
-  const curveClassNames = [getClassName('bpk-flare-bar__curve')];
+  const curveClassNames = [getClassName(STYLES["bpk-flare-bar__curve"])];
   const leftCornerRadiusClassNames = [
-    getClassName('bpk-flare-bar__rounded-corner'),
+    getClassName(STYLES["bpk-flare-bar__rounded-corner"]),
   ];
   const rightCornerRadiusClassNames = [
-    getClassName('bpk-flare-bar__rounded-corner'),
-    getClassName('bpk-flare-bar__rounded-corner--trailing'),
+    getClassName(STYLES["bpk-flare-bar__rounded-corner"]),
+    getClassName(STYLES["bpk-flare-bar__rounded-corner--trailing"]),
   ];
   if (svgClassName) {
     curveClassNames.push(svgClassName);

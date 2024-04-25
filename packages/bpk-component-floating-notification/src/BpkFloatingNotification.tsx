@@ -26,11 +26,9 @@ import { CSSTransition } from 'react-transition-group';
 import BpkAriaLive from '../../bpk-component-aria-live';
 import { BUTTON_TYPES, BpkButtonV2 } from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkFloatingNotification.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type Props = {
   animateOnEnter?: boolean;
@@ -68,7 +66,7 @@ const BpkFloatingNotification = (props: Props) => {
     ...rest
   } = props;
 
-  const classNames = getClassName('bpk-floating-notification', className);
+  const classNames = getClassName(STYLES["bpk-floating-notification"], className);
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
@@ -79,14 +77,14 @@ const BpkFloatingNotification = (props: Props) => {
   });
 
   return (
-    <CSSTransition
+    (<CSSTransition
       in={showMessage}
       classNames={{
-        exit: getClassName('bpk-floating-notification--leave'),
-        exitActive: getClassName('bpk-floating-notification--leave-active'),
-        exitDone: getClassName('bpk-floating-notification--leave-done'),
-        appear: getClassName('bpk-floating-notification--appear'),
-        appearActive: getClassName('bpk-floating-notification--appear-active'),
+        exit: getClassName(STYLES["bpk-floating-notification--leave"]),
+        exitActive: getClassName(STYLES["bpk-floating-notification--leave-active"]),
+        exitDone: getClassName(STYLES["bpk-floating-notification--leave-done"]),
+        appear: getClassName(STYLES["bpk-floating-notification--appear"]),
+        appearActive: getClassName(STYLES["bpk-floating-notification--appear-active"]),
       }}
       timeout={400}
       appear={animateOnEnter}
@@ -95,7 +93,7 @@ const BpkFloatingNotification = (props: Props) => {
     >
       <div className={classNames} {...rest}>
         {Icon && (
-          <div className={getClassName('bpk-floating-notification__icon')}>
+          <div className={getClassName(STYLES["bpk-floating-notification__icon"])}>
             <Icon aria-hidden />
           </div>
         )}
@@ -104,7 +102,7 @@ const BpkFloatingNotification = (props: Props) => {
           textStyle={TEXT_STYLES.bodyDefault}
           // TODO: className to be removed
           // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={getClassName('bpk-floating-notification__text')}
+          className={getClassName(STYLES["bpk-floating-notification__text"])}
         >
           {text}
         </BpkText>
@@ -115,13 +113,13 @@ const BpkFloatingNotification = (props: Props) => {
             onClick={onClick}
             // TODO: className to be removed
             // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            className={getClassName('bpk-floating-notification__button')}
+            className={getClassName(STYLES["bpk-floating-notification__button"])}
           >
             {ctaText}
           </BpkButtonV2>
         )}
       </div>
-    </CSSTransition>
+    </CSSTransition>)
   );
 };
 

@@ -19,11 +19,9 @@
 import type { ReactNode } from 'react';
 
 import BpkText from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkSectionHeader.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export const SECTION_TYPES = {
   default: 'default',
@@ -45,25 +43,25 @@ const BpkSectionHeader = ({
   title,
   type = SECTION_TYPES.default,
 }: Props) => (
-  <div className={getClassName('bpk-section-header')}>
+  <div className={getClassName(STYLES["bpk-section-header"])}>
     <div
       className={getClassName(
-        'bpk-section-header__title-description',
-        `bpk-section-header__title-description--${type}`,
+        STYLES["bpk-section-header__title-description"],
+        STYLES[`bpk-section-header__title-description--${type}`],
       )}
     >
       <BpkText
         tagName="h2"
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-section-header__title')}
+        className={getClassName(STYLES["bpk-section-header__title"])}
       >
         {title}
       </BpkText>
       {description && <BpkText 
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-section-header__description')}>{description}
+        className={getClassName(STYLES["bpk-section-header__description"])}>{description}
       </BpkText>}
     </div>
     {button}

@@ -24,13 +24,11 @@ The actual component that developers create (i.e. the default export from this p
 
 import type { ReactNode } from 'react';
 
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { TransitionInitialMount, getClassName } from '../../bpk-react-utils';
 
 import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 
 import STYLES from './BpkTooltip.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type TooltipProps = {
   id: string;
@@ -48,23 +46,23 @@ const BpkTooltip = ({
   type = TOOLTIP_TYPES.light,
   ...rest
 }: TooltipProps) => {
-  const classNames = getClassName('bpk-tooltip', className);
+  const classNames = getClassName(STYLES["bpk-tooltip"], className);
 
   const innerClassNames = getClassName(
-    'bpk-tooltip__inner',
-    type === TOOLTIP_TYPES.dark && 'bpk-tooltip__inner--dark',
-    padded && 'bpk-tooltip__inner--padded',
+    STYLES["bpk-tooltip__inner"],
+    type === TOOLTIP_TYPES.dark && STYLES["bpk-tooltip__inner--dark"],
+    padded && STYLES["bpk-tooltip__inner--padded"],
   );
 
   const arrowClassNames = getClassName(
-    'bpk-tooltip__arrow',
-    type === TOOLTIP_TYPES.dark && 'bpk-tooltip__arrow--dark',
+    STYLES["bpk-tooltip__arrow"],
+    type === TOOLTIP_TYPES.dark && STYLES["bpk-tooltip__arrow--dark"],
   );
 
   return (
-    <TransitionInitialMount
-      appearClassName={getClassName('bpk-tooltip--appear')}
-      appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
+    (<TransitionInitialMount
+      appearClassName={getClassName(STYLES["bpk-tooltip--appear"])}
+      appearActiveClassName={getClassName(STYLES["bpk-tooltip--appear-active"])}
       transitionTimeout={200}
     >
       <section
@@ -82,7 +80,7 @@ const BpkTooltip = ({
         />
         <div className={innerClassNames}>{children}</div>
       </section>
-    </TransitionInitialMount>
+    </TransitionInitialMount>)
   );
 };
 

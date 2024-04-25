@@ -19,7 +19,7 @@
 import type { ComponentType, ElementType } from 'react';
 import { Component } from 'react';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
+import { getClassName, isRTL } from '../../bpk-react-utils';
 
 import {
   addMonths,
@@ -39,8 +39,6 @@ import {
 } from './utils';
 
 import STYLES from './BpkCalendarGridTransition.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const transitionValues = {
   previous: '0px',
@@ -176,8 +174,8 @@ class BpkCalendarGridTransition extends Component<Props, State> {
     const { isTransitioning, transitionValue } = this.state;
 
     const stripClassNames = getClassName(
-      'bpk-calendar-grid-transition__strip',
-      isTransitioning && 'bpk-calendar-grid-transition__strip--transitioning',
+      STYLES["bpk-calendar-grid-transition__strip"],
+      isTransitioning && STYLES["bpk-calendar-grid-transition__strip--transitioning"],
     );
 
     let min: Date;
@@ -187,7 +185,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
     }
 
     return (
-      <div className={getClassName('bpk-calendar-grid-transition', className)}>
+      (<div className={getClassName(STYLES["bpk-calendar-grid-transition"], className)}>
         <div
           className={stripClassNames}
           style={getTransformStyles(transitionValue)}
@@ -214,17 +212,17 @@ class BpkCalendarGridTransition extends Component<Props, State> {
                 aria-hidden={index !== 1}
                 // TODO: className to be removed
                 // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-                className={getClassName('bpk-calendar-grid-transition__grid')}
+                className={getClassName(STYLES["bpk-calendar-grid-transition__grid"])}
               />
             ) : (
               <div
-                className={getClassName('bpk-calendar-grid-transition__dummy')}
+                className={getClassName(STYLES["bpk-calendar-grid-transition__dummy"])}
                 key={formatIsoMonth(m)}
               />
             ),
           )}
         </div>
-      </div>
+      </div>)
     );
   }
 }

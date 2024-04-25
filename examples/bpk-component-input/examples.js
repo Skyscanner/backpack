@@ -29,12 +29,10 @@ import BpkInput, {
   CLEAR_BUTTON_MODES,
 } from '../../packages/bpk-component-input';
 import BpkLabel from '../../packages/bpk-component-label';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const { value: valueProp, ...propTypes } = inputPropTypes;
 
@@ -258,7 +256,7 @@ const LargeInputExample = () => (
 
 const DockedExample = () => (
   <div>
-    <div className={getClassName('bpk-forms__viewport-alert')}>
+    <div className={getClassName(STYLES["bpk-forms__viewport-alert"])}>
       <BpkBannerAlert
         type={ALERT_TYPES.WARN}
         message="These are only suitable for larger viewports - try viewing on a desktop device."
@@ -266,32 +264,32 @@ const DockedExample = () => (
     </div>
     <form
       className={getClassName(
-        'bpk-forms__form',
-        'bpk-forms__form--desktop-only',
+        STYLES["bpk-forms__form"],
+        STYLES["bpk-forms__form--desktop-only"],
       )}
     >
       <div>
         <BpkLabel
           htmlFor="input_origin"
-          className={getClassName('bpk-forms__place')}
+          className={getClassName(STYLES["bpk-forms__place"])}
         >
           From
         </BpkLabel>
         <BpkLabel
           htmlFor="input_destination"
-          className={getClassName('bpk-forms__place')}
+          className={getClassName(STYLES["bpk-forms__place"])}
         >
           To
         </BpkLabel>
         <BpkLabel
           htmlFor="input_outbound"
-          className={getClassName('bpk-forms__date')}
+          className={getClassName(STYLES["bpk-forms__date"])}
         >
           Departure date
         </BpkLabel>
         <BpkLabel
           htmlFor="input_inbound"
-          className={getClassName('bpk-forms__date')}
+          className={getClassName(STYLES["bpk-forms__date"])}
         >
           Return date
         </BpkLabel>
@@ -302,7 +300,7 @@ const DockedExample = () => (
           name="input_origin"
           value="Edinburgh"
           onChange={action('orign input changed')}
-          className={getClassName('bpk-forms__place')}
+          className={getClassName(STYLES["bpk-forms__place"])}
           dockedFirst
           large
         />
@@ -311,7 +309,7 @@ const DockedExample = () => (
           name="input_destination"
           value=""
           onChange={action('destination input changed')}
-          className={getClassName('bpk-forms__place')}
+          className={getClassName(STYLES["bpk-forms__place"])}
           dockedMiddle
           large
         />
@@ -320,7 +318,7 @@ const DockedExample = () => (
           name="input_outbound"
           value={new Date(2020, 3, 15).toLocaleDateString()}
           onChange={action('outbound date input changed')}
-          className={getClassName('bpk-forms__date')}
+          className={getClassName(STYLES["bpk-forms__date"])}
           dockedMiddle
           large
         />
@@ -329,7 +327,7 @@ const DockedExample = () => (
           name="input_inbound"
           value={new Date(2020, 3, 16).toLocaleDateString()}
           onChange={action('inbound date input changed')}
-          className={getClassName('bpk-forms__date')}
+          className={getClassName(STYLES["bpk-forms__date"])}
           dockedLast
           large
         />
@@ -337,26 +335,26 @@ const DockedExample = () => (
     </form>
     <form
       className={getClassName(
-        'bpk-forms__form',
-        'bpk-forms__form--desktop-only',
+        STYLES["bpk-forms__form"],
+        STYLES["bpk-forms__form--desktop-only"],
       )}
     >
       <div>
         <BpkLabel
           htmlFor="input_hotels_destination"
-          className={getClassName('bpk-forms__hotels-destination')}
+          className={getClassName(STYLES["bpk-forms__hotels-destination"])}
         >
           Destination or hotel name
         </BpkLabel>
         <BpkLabel
           htmlFor="input_checkin"
-          className={getClassName('bpk-forms__date')}
+          className={getClassName(STYLES["bpk-forms__date"])}
         >
           Check-in
         </BpkLabel>
         <BpkLabel
           htmlFor="input_checkout"
-          className={getClassName('bpk-forms__date')}
+          className={getClassName(STYLES["bpk-forms__date"])}
         >
           Check-out
         </BpkLabel>
@@ -367,7 +365,7 @@ const DockedExample = () => (
           name="input_hotels_destination"
           value=""
           onChange={action('hotels destination input changed')}
-          className={getClassName('bpk-forms__hotels-destination')}
+          className={getClassName(STYLES["bpk-forms__hotels-destination"])}
           dockedFirst
           large
         />
@@ -376,7 +374,7 @@ const DockedExample = () => (
           name="input_checkin"
           value={new Date(2020, 3, 15).toLocaleDateString()}
           onChange={action('checkin date input changed')}
-          className={getClassName('bpk-forms__date')}
+          className={getClassName(STYLES["bpk-forms__date"])}
           dockedMiddle
           large
         />
@@ -385,7 +383,7 @@ const DockedExample = () => (
           name="input_checkout"
           value={new Date(2020, 3, 16).toLocaleDateString()}
           onChange={action('checkout date input changed')}
-          className={getClassName('bpk-forms__date')}
+          className={getClassName(STYLES["bpk-forms__date"])}
           dockedLast
           large
         />

@@ -26,13 +26,11 @@ import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkSpinner } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
 import STYLES from './BpkImage.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type ImageProps = {
   altText: string;
@@ -68,10 +66,10 @@ class Image extends Component<ImageProps> {
   render() {
     const { altText, hidden, onImageLoad, ...rest } = this.props;
 
-    const imgClassNames = [getClassName('bpk-image__img')];
+    const imgClassNames = [getClassName(STYLES["bpk-image__img"])];
 
     if (hidden) {
-      imgClassNames.push(getClassName('bpk-image__img--hidden'));
+      imgClassNames.push(getClassName(STYLES["bpk-image__img--hidden"]));
     }
 
     return (
@@ -141,20 +139,20 @@ class BpkImage extends Component<BpkImageProps> {
       ...rest
     } = this.props;
 
-    const classNames = [getClassName('bpk-image')];
+    const classNames = [getClassName(STYLES["bpk-image"])];
 
     const aspectRatioPercentage = `${100 / this.getAspectRatio()}%`;
 
     if (!loading) {
-      classNames.push(getClassName('bpk-image--no-background'));
+      classNames.push(getClassName(STYLES["bpk-image--no-background"]));
     }
 
     if (borderRadiusStyle !== BORDER_RADIUS_STYLES.none) {
       classNames.push(
         getClassName(
-          `bpk-image--border-radius-${
+          STYLES[`bpk-image--border-radius-${
             BORDER_RADIUS_STYLES[borderRadiusStyle!]
-          }`,
+          }`],
         ),
       );
     }
@@ -163,7 +161,7 @@ class BpkImage extends Component<BpkImageProps> {
     // This ensures that the css / html do not reserve too much spacing
     // when width 100% is not being used
     return (
-      <div style={style} className={className}>
+      (<div style={style} className={className}>
         <div
           ref={(div) => {
             this.placeholder = div;
@@ -192,12 +190,12 @@ class BpkImage extends Component<BpkImageProps> {
           {loading && (
             <CSSTransition
               classNames={{
-                exit: getClassName('bpk-image__spinner--shown'),
-                exitActive: getClassName('bpk-image__spinner--hidden'),
+                exit: getClassName(STYLES["bpk-image__spinner--shown"]),
+                exitActive: getClassName(STYLES["bpk-image__spinner--hidden"]),
               }}
               timeout={parseInt(animations.durationBase, 10)}
             >
-              <div className={getClassName('bpk-image__spinner')}>
+              <div className={getClassName(STYLES["bpk-image__spinner"])}>
                 <BpkSpinner />
               </div>
             </CSSTransition>
@@ -212,7 +210,7 @@ class BpkImage extends Component<BpkImageProps> {
             </noscript>
           )}
         </div>
-      </div>
+      </div>)
     );
   }
 }

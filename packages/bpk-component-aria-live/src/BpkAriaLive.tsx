@@ -18,11 +18,9 @@
 
 import type { ReactElement } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkAriaLive.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export const POLITENESS_SETTINGS = {
   off: 'off',
@@ -48,8 +46,8 @@ const BpkAriaLive = ({
   ...rest
 }: Props) => {
   const classNames = getClassName(
-    'bpk-aria-live',
-    !visible && 'bpk-aria-live--invisible',
+    STYLES["bpk-aria-live"],
+    !visible && STYLES["bpk-aria-live--invisible"],
     className,
   );
 

@@ -22,11 +22,9 @@ import { BpkBackgroundImage } from '../../packages/bpk-component-image';
 import BpkPageIndicator, {
   VARIANT,
 } from '../../packages/bpk-component-page-indicator';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const image =
   'https://content.skyscnr.com/m/50d9dff3186775ad/original/Condor-Homepage-Hero-Option-3.png';
@@ -67,7 +65,7 @@ const OverImageExample = () => (
     <PageIndicatorContainer
       totalIndicators={3}
       variant={VARIANT.overImage}
-      className={getClassName('bpk-page-indicator-examples__container')}
+      className={getClassName(STYLES["bpk-page-indicator-examples__container"])}
     />
   </BpkBackgroundImage>
 );

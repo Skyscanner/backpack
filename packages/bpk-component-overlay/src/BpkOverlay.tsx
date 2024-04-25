@@ -18,11 +18,9 @@
 
 import type { ComponentProps, ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkOverlay.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export const OVERLAY_TYPES = {
   solidLow: 'solidLow',
@@ -88,13 +86,13 @@ const BpkOverlay = (props: Props) => {
     ...rest
   } = props;
 
-  const wrapperClassNames = getClassName('bpk-overlay__wrapper', className);
+  const wrapperClassNames = getClassName(STYLES["bpk-overlay__wrapper"], className);
   const overlayClassNames = getClassName(
-    'bpk-overlay__overlay',
+    STYLES["bpk-overlay__overlay"],
     overlayType !== undefined &&
       overlayType !== null &&
       overlayType !== OVERLAY_TYPES.off &&
-      `bpk-overlay__overlay--${overlayTypeClassSuffixes[overlayType]}`,
+      STYLES[`bpk-overlay__overlay--${overlayTypeClassSuffixes[overlayType]}`],
   );
 
   return (

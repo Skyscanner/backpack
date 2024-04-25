@@ -40,7 +40,7 @@ import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../bpk-component-link';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
 import { ALERT_TYPES, STYLE_TYPES } from './common-types';
@@ -54,8 +54,6 @@ import type {
 } from './common-types';
 
 import STYLES from './BpkInfoBanner.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 const CollapseIcon = withButtonAlignment(ChevronUpIcon);
@@ -71,10 +69,10 @@ const getIconForType = (
   CustomIcon?: FunctionComponent<any> | null,
 ) => {
   const classMap: { [K in AlertTypeValue]: string } = {
-    [ALERT_TYPES.SUCCESS]: getClassName('bpk-info-banner__success-icon'),
-    [ALERT_TYPES.WARNING]: getClassName('bpk-info-banner__warning-icon'),
-    [ALERT_TYPES.ERROR]: getClassName('bpk-info-banner__error-icon'),
-    [ALERT_TYPES.INFO]: getClassName('bpk-info-banner__info-icon'),
+    [ALERT_TYPES.SUCCESS]: getClassName(STYLES["bpk-info-banner__success-icon"]),
+    [ALERT_TYPES.WARNING]: getClassName(STYLES["bpk-info-banner__warning-icon"]),
+    [ALERT_TYPES.ERROR]: getClassName(STYLES["bpk-info-banner__error-icon"]),
+    [ALERT_TYPES.INFO]: getClassName(STYLES["bpk-info-banner__info-icon"]),
   } as const;
   const className = classMap[type];
   const componentMap: {
@@ -97,12 +95,12 @@ type ToggleButtonProps = {
 };
 
 const ToggleButton = (props: ToggleButtonProps) => {
-  const classNames = getClassName('bpk-info-banner__expand-icon');
+  const classNames = getClassName(STYLES["bpk-info-banner__expand-icon"]);
 
   return (
-    <button
+    (<button
       type="button"
-      className={getClassName('bpk-info-banner__toggle-button')}
+      className={getClassName(STYLES["bpk-info-banner__toggle-button"])}
       aria-label={props.label}
       aria-expanded={props.expanded}
       title={props.label}
@@ -110,7 +108,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
       <div className={classNames}>
         {props.expanded ? <CollapseIcon/> : <ExpandIcon/> }
       </div>
-    </button>
+    </button>)
   );
 };
 
@@ -165,20 +163,20 @@ const BpkInfoBannerInner = ({
   const showChildren = isExpandable && expanded;
 
   const sectionClassNames = getClassName(
-    'bpk-info-banner',
-   `bpk-info-banner--${type}`,
-   `bpk-info-banner--style-${style}`,
+    STYLES["bpk-info-banner"],
+   STYLES[`bpk-info-banner--${type}`],
+   STYLES[`bpk-info-banner--style-${style}`],
    bannerClassName && bannerClassName
    );
 
   const headerClassNames = getClassName(
-    'bpk-info-banner__header',
-    isExpandable && 'bpk-info-banner__header--expandable'
+    STYLES["bpk-info-banner__header"],
+    isExpandable && STYLES["bpk-info-banner__header--expandable"]
   );
 
   const childrenContainerClassName = action && isExpandable
-    ? getClassName('bpk-info-banner__children-container--with-action')
-    : getClassName('bpk-info-banner__children-container--no-action')
+    ? getClassName(STYLES["bpk-info-banner__children-container--with-action"])
+    : getClassName(STYLES["bpk-info-banner__children-container--no-action"])
 
   /* eslint-disable
     jsx-a11y/no-static-element-interactions,
@@ -187,7 +185,7 @@ const BpkInfoBannerInner = ({
   // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
   // ToggleButton is focusable and works for this.
   return (
-    <AnimateAndFade
+    (<AnimateAndFade
       animateOnEnter={animateOnEnter}
       animateOnLeave={dismissable || animateOnLeave}
       show={show}
@@ -199,19 +197,19 @@ const BpkInfoBannerInner = ({
           className={headerClassNames}
           onClick={onBannerExpandToggle}
         >
-          <span className={getClassName('bpk-info-banner__icon')}>
+          <span className={getClassName(STYLES["bpk-info-banner__icon"])}>
             {getIconForType(type, icon)}
           </span>
-          <span className={getClassName('bpk-info-banner__message')}>
+          <span className={getClassName(STYLES["bpk-info-banner__message"])}>
             {message}
           </span>
           {isExpandable && (
-            <span className={getClassName('bpk-info-banner__toggle')}>
+            <span className={getClassName(STYLES["bpk-info-banner__toggle"])}>
               <ToggleButton expanded={expanded} label={toggleButtonLabel} />
             </span>
           )}
           {dismissable && (
-            <span className={getClassName('bpk-info-banner__toggle')}>
+            <span className={getClassName(STYLES["bpk-info-banner__toggle"])}>
               <BpkCloseButton
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
@@ -236,7 +234,7 @@ const BpkInfoBannerInner = ({
           )}
         </BpkAnimateHeight>
       </section>
-    </AnimateAndFade>
+    </AnimateAndFade>)
   );
   /* eslint-enable */
 };

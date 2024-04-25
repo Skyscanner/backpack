@@ -25,7 +25,7 @@ import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
 
 import {
-  cssModules,
+  getClassName,
   isDeviceIpad,
   isDeviceIphone,
   wrapDisplayName,
@@ -42,8 +42,6 @@ import {
 } from './scroll-utils';
 
 import STYLES from './bpk-scrim-content.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type Props = {
   /**
@@ -155,7 +153,7 @@ const withScrim = <P extends object>(
         ...rest
       } = this.props;
 
-      const classNames = [getClassName('bpk-scrim-content')];
+      const classNames = [getClassName(STYLES["bpk-scrim-content"])];
 
       if (containerClassName) {
         classNames.push(containerClassName);

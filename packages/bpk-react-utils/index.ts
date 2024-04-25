@@ -19,7 +19,7 @@
 import{ BpkDialogWrapper } from './src/BpkDialogWrapper/BpkDialogWrapper';
 import Portal from './src/Portal';
 import TransitionInitialMount from './src/TransitionInitialMount';
-import cssModules from './src/cssModules';
+import getClassName from './src/getClassName';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import deprecated from './src/deprecated';
 import {
@@ -34,7 +34,7 @@ import wrapDisplayName from './src/wrapDisplayName';
 export {
   Portal,
   TransitionInitialMount,
-  cssModules,
+  getClassName,
   deprecated,
   withDefaultProps,
   wrapDisplayName,
@@ -47,7 +47,7 @@ export {
 export default {
   Portal,
   TransitionInitialMount,
-  cssModules,
+  getClassName,
   deprecated,
   withDefaultProps,
   wrapDisplayName,

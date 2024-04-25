@@ -18,11 +18,9 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkText.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export const TEXT_STYLES = {
   xs: 'xs',
@@ -83,17 +81,17 @@ const BpkText = ({
   ...rest
 }: Props) => {
   const classNames = getClassName(
-    'bpk-text',
-    `bpk-text--${textStyle}`,
+    STYLES["bpk-text"],
+    STYLES[`bpk-text--${textStyle}`],
     className,
   );
 
   return (
     // Allowed, TagName is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <TagName className={classNames} {...rest}>
+    (<TagName className={classNames} {...rest}>
       {children}
-    </TagName>
+    </TagName>)
   );
 };
 

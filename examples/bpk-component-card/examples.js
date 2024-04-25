@@ -30,11 +30,9 @@ import BpkCard, {
   ORIENTATION,
 } from '../../packages/bpk-component-card';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const shortContent = 'Book your next trip on skyscanner.net.';
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
@@ -44,7 +42,7 @@ porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
 const headerContent = (
-  <div className={getClassName('bpk-card-examples__header')}>
+  <div className={getClassName(STYLES["bpk-card-examples__header"])}>
     <BpkText tagName="span" textStyle={TEXT_STYLES.label1}>
       Wrapper title
     </BpkText>
@@ -180,7 +178,7 @@ const WithClassNameWrapperExample = () => (
       </BpkCard>
     }
     header={headerContent}
-    className={getClassName('bpk-card-examples__wrapper')}
+    className={getClassName(STYLES["bpk-card-examples__wrapper"])}
   />
 );
 

@@ -52,12 +52,10 @@ import {
 } from '../../packages/bpk-component-calendar/test-utils';
 import BpkDatepicker from '../../packages/bpk-component-datepicker';
 import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const formatDate = (date) => format(date, 'dd/MM/yyyy');
 
@@ -204,12 +202,12 @@ class ReturnDatepicker extends Component {
 
   render() {
     return (
-      <div id="datepicker-element">
+      (<div id="datepicker-element">
         <div
-          className={getClassName('bpk-datepicker__container')}
+          className={getClassName(STYLES["bpk-datepicker__container"])}
           id="application-element"
         >
-          <div className={getClassName('bpk-datepicker__container--item')}>
+          <div className={getClassName(STYLES["bpk-datepicker__container--item"])}>
             <BpkDatepicker
               id="depart"
               closeButtonText="Close"
@@ -246,7 +244,7 @@ class ReturnDatepicker extends Component {
               onMonthChange={action('Changed month')}
             />
           </div>
-          <div className={getClassName('bpk-datepicker__container--item')}>
+          <div className={getClassName(STYLES["bpk-datepicker__container--item"])}>
             <BpkDatepicker
               id="return"
               closeButtonText="Close"
@@ -289,7 +287,7 @@ class ReturnDatepicker extends Component {
             />
           </div>
         </div>
-      </div>
+      </div>)
     );
   }
 }

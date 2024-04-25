@@ -34,7 +34,7 @@ import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPopover from '../../bpk-component-popover';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import type {
   DaysOfWeek,
@@ -43,8 +43,6 @@ import type {
 } from '../../bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const Input = withOpenEvents(BpkInput);
 
@@ -319,7 +317,7 @@ class BpkDatepicker extends Component<Props, State> {
 
     const input = inputComponent || (
       <div
-        className={getClassName('bpk-datepicker__input')}
+        className={getClassName(STYLES["bpk-datepicker__input"])}
         ref={this.inputRef}
       >
         <Input
@@ -340,7 +338,7 @@ class BpkDatepicker extends Component<Props, State> {
 
     const calendarProps = {
       id: `${id}-calendar`,
-      className: getClassName('bpk-datepicker__calendar'),
+      className: getClassName(STYLES["bpk-datepicker__calendar"]),
       changeMonthLabel,
       dateModifiers,
       daysOfWeek,

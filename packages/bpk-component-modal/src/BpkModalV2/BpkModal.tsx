@@ -22,14 +22,12 @@ import { useEffect, useRef } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../../bpk-component-close-button';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
+import { getClassName, withDefaultProps } from '../../../bpk-react-utils';
 import { MODAL_STYLING } from '../BpkModalInner';
 
 import type { ModalStyle } from '../BpkModalInner';
 
 import STYLES from './BpKModal.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type Props = {
   id: string | undefined;
@@ -62,43 +60,43 @@ const Header = ({
 }) => {
   if (title) {
     return (
-      <div
+      (<div
         id={id}
         className={[
-          getClassName('bpk-modal__header-title'),
-          getClassName(`bpk-modal__header-title-style--${modalStyle}`),
+          getClassName(STYLES["bpk-modal__header-title"]),
+          getClassName(STYLES[`bpk-modal__header-title-style--${modalStyle}`]),
         ].join(' ')}
       >
-        <div className={getClassName('bpk-modal__header-title-container')}>
+        <div className={getClassName(STYLES["bpk-modal__header-title-container"])}>
           <Heading>{title}</Heading>
         </div>
         <BpkCloseButton
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={getClassName(
-            `bpk-modal__close-button-style--${modalStyle}`,
+            STYLES[`bpk-modal__close-button-style--${modalStyle}`],
           )}
           label={closeLabel}
           onClick={onClose}
         />
-      </div>
+      </div>)
     );
   }
   return (
-    <div
+    (<div
       className={[
-        getClassName('bpk-modal__button-container'),
-        getClassName(`bpk-modal__button-container-style--${modalStyle}`),
+        getClassName(STYLES["bpk-modal__button-container"]),
+        getClassName(STYLES[`bpk-modal__button-container-style--${modalStyle}`]),
       ].join(' ')}
     >
       <BpkCloseButton
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName(`bpk-modal__close-button-style--${modalStyle}`)}
+        className={getClassName(STYLES[`bpk-modal__close-button-style--${modalStyle}`])}
         label={closeLabel}
         onClick={onClose}
       />
-    </div>
+    </div>)
   );
 };
 
@@ -188,31 +186,31 @@ export const BpkModalV2 = (props: Props) => {
   }, [id, isOpen, onClose]);
 
   const classNames = getClassName(
-    'bpk-modal',
-    fullScreenOnDesktop && 'bpk-modal--full-screen-desktop',
-    noFullScreenOnMobile && 'bpk-modal--no-full-screen-mobile',
-    wide && 'bpk-modal--wide',
+    STYLES["bpk-modal"],
+    fullScreenOnDesktop && STYLES["bpk-modal--full-screen-desktop"],
+    noFullScreenOnMobile && STYLES["bpk-modal--no-full-screen-mobile"],
+    wide && STYLES["bpk-modal--wide"],
   );
 
   const contentClassNames = getClassName(
-    'bpk-modal__container',
-    fullScreenOnDesktop && 'bpk-modal__container--full-screen-desktop',
-    padded && 'bpk-modal__container--padded',
+    STYLES["bpk-modal__container"],
+    fullScreenOnDesktop && STYLES["bpk-modal__container--full-screen-desktop"],
+    padded && STYLES["bpk-modal__container--padded"],
     modalStyle === MODAL_STYLING.surfaceContrast &&
-      'bpk-modal__container--surface-contrast',
+      STYLES["bpk-modal__container--surface-contrast"],
   );
 
   return isOpen ? (
     <div
       className={getClassName(
-        'bpk-modal-wrapper',
-        dialogSupported ? '' : 'bpk-modal-polyfill',
+        STYLES["bpk-modal-wrapper"],
+        dialogSupported ? '' : STYLES["bpk-modal-polyfill"],
       )}
     >
       {!dialogSupported && (
         <div
           id={`${id}-polyfill`}
-          className={getClassName('bpk-modal-backdrop')}
+          className={getClassName(STYLES["bpk-modal-backdrop"])}
           data-open={isOpen}
         />
       )}

@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-declare const _default: (styles?: {
-    [key: string]: any;
-}) => (...classNames: Array<string | boolean | number | {} | null | undefined>) => string;
-export default _default;
+export default (...classNames: string[]) =>
+    classNames.reduce((className, currentClass) => {
+      if (currentClass && typeof currentClass === 'string') {
+        return `${className} ${currentClass}`
+      }
+      return className;
+    }, '');

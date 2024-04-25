@@ -18,16 +18,14 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkBlockquote.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const BpkBlockquote = (props) => {
-  const classNames = [getClassName('bpk-blockquote')];
+  const classNames = [getClassName(STYLES["bpk-blockquote"])];
   if (props.extraSpace) {
-    classNames.push(getClassName('bpk-blockquote--extra-spacing'));
+    classNames.push(getClassName(STYLES["bpk-blockquote--extra-spacing"]));
   }
 
   return (

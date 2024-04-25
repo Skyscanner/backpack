@@ -21,11 +21,9 @@ import PropTypes from 'prop-types';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import Slider from 'react-slider';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
+import { getClassName, isRTL } from '../../bpk-react-utils';
 
 import STYLES from './BpkSlider.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   className?: string | null;
@@ -35,30 +33,30 @@ type Props = {
 const BpkSlider = (props: Props) => {
   const { className, ...rest } = props;
   const invert = isRTL();
-  const classNames = [getClassName('bpk-slider')];
-  const thumbClassNames = [getClassName('bpk-slider__handle')];
-  const trackClassNames = [getClassName('bpk-slider__bar')];
+  const classNames = [getClassName(STYLES["bpk-slider"])];
+  const thumbClassNames = [getClassName(STYLES["bpk-slider__handle"])];
+  const trackClassNames = [getClassName(STYLES["bpk-slider__bar"])];
 
   const isRange = (rest.value || rest.defaultValue || []).length > 1;
 
   if (isRange) {
-    classNames.push(getClassName('bpk-slider--range'));
+    classNames.push(getClassName(STYLES["bpk-slider--range"]));
   }
   if (className) {
     classNames.push(getClassName(className));
   }
 
   return (
-    <Slider
+    (<Slider
       {...rest}
       withTracks
       snapDragDisabled={false}
       invert={invert}
       className={classNames.join(' ')}
       thumbClassName={thumbClassNames.join(' ')}
-      thumbActiveClassName={getClassName('bpk-slider__handle--active')}
+      thumbActiveClassName={getClassName(STYLES["bpk-slider__handle--active"])}
       trackClassName={trackClassNames.join(' ')}
-    />
+    />)
   );
 };
 

@@ -24,7 +24,7 @@ accessory view of a close icon.
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
@@ -32,8 +32,6 @@ import { CHIP_TYPES } from './commonTypes';
 import type { CommonProps as Props } from './commonTypes';
 
 import STYLES from './BpkSelectableChip.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type BpkDismissibleChipProps = Omit<Props, 'disabled' | 'selected'>;
 
@@ -44,9 +42,9 @@ const BpkDismissibleChip = ({
   ...rest
 }: BpkDismissibleChipProps) => {
   const iconClassNames = getClassName(
-    `bpk-chip--${type}-dismissible__trailing-accessory-view`,
+    STYLES[`bpk-chip--${type}-dismissible__trailing-accessory-view`],
   );
-  const classNames = getClassName(`bpk-chip--${type}-dismissible`, className);
+  const classNames = getClassName(STYLES[`bpk-chip--${type}-dismissible`], className);
 
   return (
     <BpkSelectableChip

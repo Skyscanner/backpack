@@ -24,11 +24,9 @@ import type {
   ComponentProps,
 } from 'react';
 
-import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
+import { getClassName, wrapDisplayName } from '../../bpk-react-utils';
 
 import STYLES from './BpkInput.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const KEYCODES = {
   ENTER: 'Enter',
@@ -160,7 +158,7 @@ const withOpenEvents = <P extends object>(InputComponent: ComponentType<P>) => {
         ...rest
       } = this.props;
 
-      const classNames = [getClassName('bpk-input--with-open-events')];
+      const classNames = [getClassName(STYLES["bpk-input--with-open-events"])];
       if (className) {
         classNames.push(className);
       }

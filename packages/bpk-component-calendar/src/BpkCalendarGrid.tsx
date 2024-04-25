@@ -19,7 +19,7 @@
 import type { ElementType } from 'react';
 import { Component } from 'react';
 
-import { cssModules, isDeviceIos } from '../../bpk-react-utils';
+import { getClassName, isDeviceIos } from '../../bpk-react-utils';
 
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import Week from './Week';
@@ -44,8 +44,6 @@ import STYLES from './BpkCalendarGrid.module.scss';
 
 // NOTE that ./Week is also importing ./BpkCalendarGrid.module.scss so adding this after `./Week` would also do the job but
 // for clarity we should leave it here.
-
-const getClassName = cssModules(STYLES);
 
 type DefaultProps = {
   className?: string | null;
@@ -161,7 +159,7 @@ class BpkCalendarGrid extends Component<Props, State> {
 
     const { calendarMonthWeeks } = this.state;
 
-    const classNames = getClassName('bpk-calendar-grid', className);
+    const classNames = getClassName(STYLES["bpk-calendar-grid"], className);
 
     return (
       <div className={classNames} aria-hidden={!isKeyboardFocusable}>

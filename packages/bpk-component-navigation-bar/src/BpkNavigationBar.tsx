@@ -19,11 +19,9 @@
 import type { ReactElement, ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationBar.module.scss';
-
-const getClassNames = cssModules(STYLES);
 
 export const BAR_STYLES = {
   default: 'default',

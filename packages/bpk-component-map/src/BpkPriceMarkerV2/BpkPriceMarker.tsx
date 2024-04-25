@@ -19,12 +19,11 @@
 import type { MouseEvent, ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules } from '../../../bpk-react-utils';
+import { getClassName } from '../../../bpk-react-utils';
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
 
 import STYLES from './BpkPriceMarker.module.scss';
 
-const getClassName = cssModules(STYLES);
 export const MARKER_STATUSES = {
   unselected: 'unselected',
   selected: 'selected',
@@ -60,13 +59,13 @@ export const BpkPriceMarkerV2 = (props: Props) => {
     ...rest
   } = props;
 
-  const markerWrapperClassNames = getClassName('bpk-price-marker__wrapper');
+  const markerWrapperClassNames = getClassName(STYLES["bpk-price-marker__wrapper"]);
 
   const classNames = getClassName(
-    'bpk-price-marker',
-    onClick && 'bpk-price-marker--dynamic',
-    `bpk-price-marker-${status}`,
-    icon && `bpk-price-marker-${status}--icon`,
+    STYLES["bpk-price-marker"],
+    onClick && STYLES["bpk-price-marker--dynamic"],
+    STYLES[`bpk-price-marker-${status}`],
+    icon && STYLES[`bpk-price-marker-${status}--icon`],
     className,
   );
 

@@ -22,11 +22,9 @@ import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-a
 import BpkSectionHeader, {
   SECTION_TYPES,
 } from '../../packages/bpk-component-section-header';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(
   SmallLongArrowRightIcon,
@@ -61,7 +59,7 @@ const FullExample = () => (
 );
 
 const WithOnDarkExample = () => (
-  <div className={getClassName('bpk-section-header-examples__on-dark')}>
+  <div className={getClassName(STYLES["bpk-section-header-examples__on-dark"])}>
     <BpkSectionHeader
       title="Section title"
       description="Description about this section"
@@ -79,7 +77,7 @@ const MobileExample = () => (
 );
 
 const MixedExample = () => (
-  <div className={getClassName('bpk-section-header-examples__mixed')}>
+  <div className={getClassName(STYLES["bpk-section-header-examples__mixed"])}>
     <DefaultExample />
     <WithDescriptionExample />
     <WithOnDarkExample />

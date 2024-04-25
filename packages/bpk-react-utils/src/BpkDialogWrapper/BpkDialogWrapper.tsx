@@ -21,11 +21,9 @@ import { useEffect, useRef, useState } from "react";
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
 
-import cssModules from '../cssModules';
+import getClassName from '../getClassName';
 
 import STYLES from './BpkDialogWrapper.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export interface Props {
   ariaLabelledby: string;
@@ -48,7 +46,7 @@ export interface Props {
     exit?: string
   };
   timeout?: {appear?: number, exit?: number};
-};
+}
 
 type DialogProps = {
   isDialogOpen: boolean;
@@ -140,7 +138,7 @@ export const BpkDialogWrapper = (props: Props) => {
       {!dialogSupported && (
         <div
           id={`${id}-polyfill`}
-          className={getClassName('bpk-dialog-wrapper--backdrop')}
+          className={getClassName(STYLES["bpk-dialog-wrapper--backdrop"])}
           data-open={isOpen}
         />
       )}
@@ -153,7 +151,7 @@ export const BpkDialogWrapper = (props: Props) => {
       >
         <dialog
           id={id}
-          className={getClassName('bpk-dialog-wrapper--container', dialogClassName)}
+          className={getClassName(STYLES["bpk-dialog-wrapper--container"], dialogClassName)}
           onCancel={(e) => {
             e.preventDefault();
             if (closeOnEscPressed && (!dialogTarget || e.target === dialogTarget)) {
@@ -165,7 +163,7 @@ export const BpkDialogWrapper = (props: Props) => {
           ref={ref}
         >
           <div
-            className={getClassName('bpk-dialog-wrapper--contents')}
+            className={getClassName(STYLES["bpk-dialog-wrapper--contents"])}
             id={`${id}-contents`}
           >
             {children}

@@ -20,13 +20,11 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import { BpkStarNonRtl, STAR_TYPES } from './BpkStar';
 
 import STYLES from './BpkInteractiveStar.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   label: string,
@@ -43,13 +41,13 @@ const BpkInteractiveStar = (props: Props) => {
     props;
 
   const buttonClassNames = getClassName(
-    'bpk-interactive-star',
-    selected && 'bpk-interactive-star--selected',
+    STYLES["bpk-interactive-star"],
+    selected && STYLES["bpk-interactive-star--selected"],
   );
 
   const iconClassNames = getClassName(
-    'bpk-interactive-star__icon',
-    selected && 'bpk-interactive-star__icon--selected',
+    STYLES["bpk-interactive-star__icon"],
+    selected && STYLES["bpk-interactive-star__icon--selected"],
   );
 
   // Note we use `BpkStarRatingNonRtl` here otherwise it already has `scaleX(-1)` applied in RTL.

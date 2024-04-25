@@ -26,14 +26,13 @@ import BpkNavigationBar, {
   BpkNavigationBarIconButton,
   BAR_STYLES,
 } from '../../packages/bpk-component-navigation-bar';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import { action } from '../bpk-storybook-utils';
 
 import AirlineLogo from './AirlineLogo';
 
 import STYLES from './examples.module.scss';
 
-const getClassNames = cssModules(STYLES);
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
 
 const DefaultExample = () => (

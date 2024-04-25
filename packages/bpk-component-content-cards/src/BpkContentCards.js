@@ -17,13 +17,11 @@
  */
 /* eslint react/no-array-index-key: 0 */
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkContentCard from './BpkContentCard';
 
 import STYLES from './BpkContentCards.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   heading: string,
@@ -44,9 +42,9 @@ const BpkContentCards = ({ cards, heading }: Props) => {
   }
 
   return (
-    <div>
-      <h2 className={getClassName('bpk-content-cards--header-text')}>{heading}</h2>
-      <div role="list" className={getClassName('bpk-content-cards--layout')}>
+    (<div>
+      <h2 className={getClassName(STYLES["bpk-content-cards--header-text"])}>{heading}</h2>
+      <div role="list" className={getClassName(STYLES["bpk-content-cards--layout"])}>
         {cards.map((card, index) => (
           <div role="listitem" key={index}>
             <BpkContentCard
@@ -56,7 +54,7 @@ const BpkContentCards = ({ cards, heading }: Props) => {
           </div>
         ))}
       </div>
-    </div>
+    </div>)
   );
 };
 

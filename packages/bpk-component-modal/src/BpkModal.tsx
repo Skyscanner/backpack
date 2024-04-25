@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
+import { Portal, getClassName, isDeviceIphone } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkModalInner, { MODAL_STYLING } from './BpkModalInner';
@@ -27,7 +27,6 @@ import type { Props as ModalDialogProps, ModalStyle } from './BpkModalInner';
 
 import STYLES from './BpkModal.module.scss';
 
-const getClassName = cssModules(STYLES);
 const ScrimBpkModalInner = withScrim(BpkModalInner);
 
 export type Props = Partial<ModalDialogProps> & {
@@ -77,13 +76,13 @@ const BpkModal = ({
   wide = false,
   ...rest
 }: Props) => {
-  const containerClass = [getClassName('bpk-modal__container')];
+  const containerClass = [getClassName(STYLES["bpk-modal__container"])];
 
   if (fullScreen || isIphone) {
-    containerClass.push(getClassName('bpk-modal__container--full-screen'));
+    containerClass.push(getClassName(STYLES["bpk-modal__container--full-screen"]));
   } else if (fullScreenOnMobile) {
     containerClass.push(
-      getClassName('bpk-modal__container--full-screen-mobile'),
+      getClassName(STYLES["bpk-modal__container--full-screen-mobile"]),
     );
   }
 

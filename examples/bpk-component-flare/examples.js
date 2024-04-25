@@ -23,14 +23,12 @@ import {
   BpkContentBubble,
 } from '../../packages/bpk-component-flare';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
-const getClassName = cssModules(STYLES);
-
 const contentShort = (
-  <div className={getClassName('bpk-flare-stories__content')}>
+  <div className={getClassName(STYLES["bpk-flare-stories__content"])}>
     <BpkText tagName="h1" textStyle="xxl">
       Love planet. Will travel.
       <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
@@ -40,7 +38,7 @@ const contentShort = (
   </div>
 );
 const content = (
-  <div className={getClassName('bpk-flare-stories__content')}>
+  <div className={getClassName(STYLES["bpk-flare-stories__content"])}>
     <BpkText tagName="h1" textStyle="xxl">
       Love planet. Will travel.
       <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
@@ -68,26 +66,26 @@ const content = (
 
 const FlareBarExample = () => (
   <BpkFlareBar
-    className={getClassName('bpk-flare-stories__flare-bar')}
-    svgClassName={getClassName('bpk-flare-stories__flare-bar--svg')}
+    className={getClassName(STYLES["bpk-flare-stories__flare-bar"])}
+    svgClassName={getClassName(STYLES["bpk-flare-stories__flare-bar--svg"])}
   />
 );
 
 const FlareBarRoundedExample = () => (
   <BpkFlareBar
-    className={getClassName('bpk-flare-stories__flare-bar')}
+    className={getClassName(STYLES["bpk-flare-stories__flare-bar"])}
     rounded
-    svgClassName={getClassName('bpk-flare-stories__flare-bar--svg')}
+    svgClassName={getClassName(STYLES["bpk-flare-stories__flare-bar--svg"])}
   />
 );
 
 const ContentBubbleFullWithImageExample = () => (
   <BpkContentBubble
     className={getClassName(
-      'bpk-flare-stories__content-bubble',
-      'bpk-flare-stories__content-bubble--image',
-      'bpk-flare-stories__content-bubble--full-width',
-      'bpk-flare-stories__content-bubble--fixed-height--large',
+      STYLES["bpk-flare-stories__content-bubble"],
+      STYLES["bpk-flare-stories__content-bubble--image"],
+      STYLES["bpk-flare-stories__content-bubble--full-width"],
+      STYLES["bpk-flare-stories__content-bubble--fixed-height--large"],
     )}
     rounded={false}
   />
@@ -96,8 +94,8 @@ const ContentBubbleFullWithImageExample = () => (
 const ContentBubbleFullWithContentExample = () => (
   <BpkContentBubble
     className={getClassName(
-      'bpk-flare-stories__content-bubble',
-      'bpk-flare-stories__content-bubble--full-width',
+      STYLES["bpk-flare-stories__content-bubble"],
+      STYLES["bpk-flare-stories__content-bubble--full-width"],
     )}
     rounded={false}
     content={content}
@@ -106,7 +104,7 @@ const ContentBubbleFullWithContentExample = () => (
 
 const ContentBubbleStandaloneExample = () => (
   <BpkContentBubble
-    className={getClassName('bpk-flare-stories__content-bubble')}
+    className={getClassName(STYLES["bpk-flare-stories__content-bubble"])}
     showPointer
     rounded={false}
     content={content}
@@ -116,8 +114,8 @@ const ContentBubbleStandaloneExample = () => (
 const ContentBubbleFixedHeightExample = () => (
   <BpkContentBubble
     className={getClassName(
-      'bpk-flare-stories__content-bubble',
-      'bpk-flare-stories__content-bubble--fixed-height',
+      STYLES["bpk-flare-stories__content-bubble"],
+      STYLES["bpk-flare-stories__content-bubble--fixed-height"],
     )}
     rounded={false}
     content={contentShort}
@@ -127,10 +125,10 @@ const ContentBubbleFixedHeightExample = () => (
 const ContentBubblePointerHiddenExample = () => (
   <BpkContentBubble
     className={getClassName(
-      'bpk-flare-stories__content-bubble',
-      'bpk-flare-stories__content-bubble--image',
-      'bpk-flare-stories__content-bubble--full-width',
-      'bpk-flare-stories__content-bubble--fixed-height',
+      STYLES["bpk-flare-stories__content-bubble"],
+      STYLES["bpk-flare-stories__content-bubble--image"],
+      STYLES["bpk-flare-stories__content-bubble--full-width"],
+      STYLES["bpk-flare-stories__content-bubble--fixed-height"],
     )}
     style={{ height: '45rem' }}
     rounded={false}

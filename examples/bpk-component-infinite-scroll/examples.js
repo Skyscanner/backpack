@@ -30,12 +30,10 @@ import {
   BpkSpinner,
   SPINNER_TYPES,
 } from '../../packages/bpk-component-spinner';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const elementsArray = [
   'Item 1',
@@ -61,7 +59,7 @@ const elementsArray = [
 ];
 
 const List = ({ elements }) => (
-  <BpkList className={getClassName('bpk-infinite-scroll-stories__list')}>
+  <BpkList className={getClassName(STYLES["bpk-infinite-scroll-stories__list"])}>
     {elements.map((element) => (
       <BpkListItem key={element}>{element}</BpkListItem>
     ))}
@@ -101,7 +99,7 @@ class InfiniteDataSource extends DataSource {
 }
 
 const DefaultExample = () => (
-  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+  <div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
     <InfiniteList
       dataSource={new ArrayDataSource(elementsArray)}
       onScrollFinished={action('scroll finished')}
@@ -112,7 +110,7 @@ const DefaultExample = () => (
 );
 
 const StoppingAfterScrollsExample = () => (
-  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+  <div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
     <InfiniteList
       dataSource={new ArrayDataSource(elementsArray)}
       elementsPerScroll={5}
@@ -125,13 +123,13 @@ const StoppingAfterScrollsExample = () => (
 );
 
 const InfiniteListOfElementsExample = () => (
-  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+  <div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
     <InfiniteList dataSource={new InfiniteDataSource()} />
   </div>
 );
 
 const DifferentNumElementsOnLoadAndScrollExample = () => (
-  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+  <div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
     <InfiniteList
       dataSource={new InfiniteDataSource()}
       initiallyLoadedElements={4}
@@ -141,7 +139,7 @@ const DifferentNumElementsOnLoadAndScrollExample = () => (
 );
 
 const LoadOneElementPerScrollExample = () => (
-  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+  <div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
     <InfiniteList
       dataSource={new ArrayDataSource(elementsArray)}
       elementsPerScroll={1}
@@ -150,14 +148,14 @@ const LoadOneElementPerScrollExample = () => (
 );
 
 const CustomLoadingItemExample = () => (
-  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+  <div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
     <InfiniteList
       dataSource={new DelayedDataSource(elementsArray)}
       elementsPerScroll={10}
       renderLoadingComponent={() => (
         <div
           className={getClassName(
-            'bpk-infinite-scroll-stories__custom-component',
+            STYLES["bpk-infinite-scroll-stories__custom-component"],
           )}
         >
           <BpkSpinner type={SPINNER_TYPES.primary} />
@@ -170,7 +168,7 @@ const CustomLoadingItemExample = () => (
 const ForceUpdateDataExample = () => {
   const dataSource = new ArrayDataSource(elementsArray);
   return (
-    <div>
+    (<div>
       <BpkButton
         onClick={() => {
           const newElements = [];
@@ -183,17 +181,17 @@ const ForceUpdateDataExample = () => {
       >
         Update items
       </BpkButton>
-      <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+      <div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
         <InfiniteList dataSource={dataSource} />
       </div>
-    </div>
+    </div>)
   );
 };
 
 const ForceUpdateDataExampleEmptyArrayExample = () => {
   const dataSource = new ArrayDataSource([]);
   return (
-    <div>
+    (<div>
       <BpkButton
         onClick={() => {
           const newElements = [];
@@ -206,7 +204,7 @@ const ForceUpdateDataExampleEmptyArrayExample = () => {
       >
         Update items
       </BpkButton>
-      <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+      <div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
         <InfiniteList
           dataSource={dataSource}
           seeMoreAfter={0}
@@ -216,14 +214,14 @@ const ForceUpdateDataExampleEmptyArrayExample = () => {
           )}
         />
       </div>
-    </div>
+    </div>)
   );
 };
 
 const ForceUpdateDataExampleFromNonEmptyToEmptyExample = () => {
   const dataSource = new ArrayDataSource(elementsArray);
   return (
-    <div>
+    (<div>
       <BpkButton
         onClick={() => {
           dataSource.updateData([]);
@@ -238,7 +236,7 @@ const ForceUpdateDataExampleFromNonEmptyToEmptyExample = () => {
       >
         Add data
       </BpkButton>
-      <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+      <div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
         <InfiniteList
           dataSource={dataSource}
           seeMoreAfter={0}
@@ -248,14 +246,14 @@ const ForceUpdateDataExampleFromNonEmptyToEmptyExample = () => {
           )}
         />
       </div>
-    </div>
+    </div>)
   );
 };
 
 const InferDatasourceWhenLessThanRequestElementsExample = () => {
   const raiseLoadingAction = action('loading');
   return (
-    <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+    (<div className={getClassName(STYLES["bpk-infinite-scroll-stories__fixed-panel"])}>
       <InfiniteList
         dataSource={new DelayedDataSource(elementsArray)}
         seeMoreAfter={20}
@@ -266,7 +264,7 @@ const InferDatasourceWhenLessThanRequestElementsExample = () => {
           return <div>Loading</div>;
         }}
       />
-    </div>
+    </div>)
   );
 };
 

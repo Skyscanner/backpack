@@ -27,11 +27,9 @@ import {
 } from '../../packages/bpk-component-icon';
 import ArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import BpkTicket from '../../packages/bpk-component-ticket';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const AlignedArrowRightIcon = withButtonAlignment(
   withRtlSupport(ArrowRightIcon),
@@ -49,14 +47,14 @@ const flights = Array(100).fill({
 
 const Flight = ({ flight }) => (
   <BpkTicket
-    className={getClassName('bpk-stories-flight')}
-    stubClassName={getClassName('bpk-stories-flight__stub')}
+    className={getClassName(STYLES["bpk-stories-flight"])}
+    stubClassName={getClassName(STYLES["bpk-stories-flight__stub"])}
     stub={
-      <div className={getClassName('bpk-stories-flight__stub')}>
-        <div className={getClassName('bpk-stories-flight__small')}>
+      <div className={getClassName(STYLES["bpk-stories-flight__stub"])}>
+        <div className={getClassName(STYLES["bpk-stories-flight__small"])}>
           8 deals from
         </div>
-        <div className={getClassName('bpk-stories-flight__price')}>
+        <div className={getClassName(STYLES["bpk-stories-flight__price"])}>
           £{flight.price}
         </div>
         <BpkButton>
@@ -65,28 +63,28 @@ const Flight = ({ flight }) => (
       </div>
     }
   >
-    <div className={getClassName('bpk-stories-flight__main')}>
-      <div className={getClassName('bpk-stories-flight__flight-overview')}>
+    <div className={getClassName(STYLES["bpk-stories-flight__main"])}>
+      <div className={getClassName(STYLES["bpk-stories-flight__flight-overview"])}>
         <img
-          className={getClassName('bpk-stories-flight__logo')}
+          className={getClassName(STYLES["bpk-stories-flight__logo"])}
           src={flight.logo}
           alt="BA Logo"
         />
-        <div className={getClassName('bpk-stories-flight__from')}>
-          <div className={getClassName('bpk-stories-flight__time')}>
+        <div className={getClassName(STYLES["bpk-stories-flight__from"])}>
+          <div className={getClassName(STYLES["bpk-stories-flight__time"])}>
             {flight.departure}
           </div>
           <div>{flight.from}</div>
         </div>
         <div>{flight.duration}</div>
-        <div className={getClassName('bpk-stories-flight__to')}>
-          <div className={getClassName('bpk-stories-flight__time')}>
+        <div className={getClassName(STYLES["bpk-stories-flight__to"])}>
+          <div className={getClassName(STYLES["bpk-stories-flight__time"])}>
             {flight.arrival}
           </div>
           <div>{flight.to}</div>
         </div>
       </div>
-      <div className={getClassName('bpk-stories-flight__small')}>
+      <div className={getClassName(STYLES["bpk-stories-flight__small"])}>
         Operated by BA Cityflyer
       </div>
     </div>

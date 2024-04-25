@@ -20,13 +20,11 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import { BpkButtonLink } from '../../bpk-component-link';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkGridToggle.module.scss';
 
-const getClassName = cssModules(STYLES);
-
-const GRID_CLASS_NAME = getClassName('bpk-vertical-grid--on');
+const GRID_CLASS_NAME = getClassName(STYLES["bpk-vertical-grid--on"]);
 
 class BpkGridToggle extends Component {
   constructor(props) {

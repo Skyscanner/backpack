@@ -26,11 +26,10 @@ import {
 import AnimateHeight from '../../bpk-animate-height';
 import { withAlignment } from '../../bpk-component-icon';
 import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation-circle';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkFormValidation.module.scss';
 
-const getClassName = cssModules(STYLES);
 const AlignedExclamationIcon = withAlignment(
   BpkSmallExclamationIcon,
   lineHeightSm,
@@ -42,28 +41,28 @@ const BpkFormValidation = (props) => {
     props;
 
   const classNames = getClassName(
-    'bpk-form-validation',
-    expanded && 'bpk-form-validation--appear',
-    isCheckbox && 'bpk-form-validation--is-checkbox',
+    STYLES["bpk-form-validation"],
+    expanded && STYLES["bpk-form-validation--appear"],
+    isCheckbox && STYLES["bpk-form-validation--is-checkbox"],
     className,
   );
 
   return (
-    <AnimateHeight
+    (<AnimateHeight
       duration={200}
       height={expanded ? 'auto' : 0}
       transitionOverflow="visible"
       {...containerProps}
     >
-      <div className={getClassName('bpk-form-validation__container')}>
+      <div className={getClassName(STYLES["bpk-form-validation__container"])}>
         <div className={classNames} {...rest}>
-          <span className={getClassName('bpk-form-validation__icon')}>
+          <span className={getClassName(STYLES["bpk-form-validation__icon"])}>
             <AlignedExclamationIcon />
           </span>
           {children}
         </div>
       </div>
-    </AnimateHeight>
+    </AnimateHeight>)
   );
 };
 

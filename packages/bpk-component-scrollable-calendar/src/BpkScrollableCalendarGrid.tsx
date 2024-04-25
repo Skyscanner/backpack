@@ -20,13 +20,11 @@ import type { ElementType } from 'react';
 
 import { BpkCalendarGrid } from '../../bpk-component-calendar';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGrid.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = Partial<BpkCalendarGridProps> & {
   DateComponent: ElementType;
@@ -42,21 +40,21 @@ const BpkScrollableCalendarGrid = ({
   month,
   ...rest
 }: Props) => {
-  const classNames = getClassName('bpk-scrollable-calendar-grid', className);
+  const classNames = getClassName(STYLES["bpk-scrollable-calendar-grid"], className);
 
   return (
-    <div className={classNames}>
+    (<div className={classNames}>
       <BpkText
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-scrollable-calendar-grid__title')}
+        className={getClassName(STYLES["bpk-scrollable-calendar-grid__title"])}
         tagName="h1"
         textStyle={TEXT_STYLES.heading4}
       >
         {formatMonth(month)}
       </BpkText>
       <BpkCalendarGrid month={month} ignoreOutsideDate {...rest} />
-    </div>
+    </div>)
   );
 };
 

@@ -24,16 +24,14 @@ import { Component } from 'react';
 import BpkButton from '../../packages/bpk-component-button';
 import BpkDrawer from '../../packages/bpk-component-drawer';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import { getClassName, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.bodyDefault,
   tagName: 'p',
-  className: getClassName('bpk-drawer-paragraph'),
+  className: getClassName(STYLES["bpk-drawer-paragraph"]),
 });
 
 type Props = {
@@ -253,10 +251,10 @@ const WithFullHeightContentExample = () => (
     closeLabel="Close drawer"
     buttonText="Open drawer"
     getApplicationElement={() => document.getElementById('pagewrap')}
-    contentClassName={getClassName('bpk-drawer-content-container')}
+    contentClassName={getClassName(STYLES["bpk-drawer-content-container"])}
   >
     This is a flex drawer. You can put anything you want in here.
-    <BpkButton secondary className={getClassName('bpk-drawer-button')}>
+    <BpkButton secondary className={getClassName(STYLES["bpk-drawer-button"])}>
       I don&apos;t do anything.
     </BpkButton>
   </DrawerContainer>

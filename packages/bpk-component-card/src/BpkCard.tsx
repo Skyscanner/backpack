@@ -18,11 +18,9 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import STYLES from './BpkCard.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   children: ReactNode | string;
@@ -44,9 +42,9 @@ const BpkCard = ({
   ...rest
 }: Props) => {
   const classNames = getClassName(
-    'bpk-card',
-    atomic && !href && 'bpk-card--atomic-button',
-    padded && 'bpk-card--padded',
+    STYLES["bpk-card"],
+    atomic && !href && STYLES["bpk-card--atomic-button"],
+    padded && STYLES["bpk-card--padded"],
     className,
   );
 

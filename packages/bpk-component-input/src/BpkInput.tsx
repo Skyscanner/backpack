@@ -18,7 +18,7 @@
 
 import { Component } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
@@ -31,8 +31,6 @@ type State = {
   persistClearButton: boolean;
 };
 
-const getClassName = cssModules(STYLES);
-
 class BpkInput extends Component<Props, State> {
   static defaultProps = defaultProps;
 
@@ -43,9 +41,9 @@ class BpkInput extends Component<Props, State> {
   }
 
   render() {
-    const classNames = [getClassName('bpk-input')];
-    const containerClassNames = [getClassName('bpk-input__container')];
-    const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
+    const classNames = [getClassName(STYLES["bpk-input"])];
+    const containerClassNames = [getClassName(STYLES["bpk-input__container"])];
+    const clearButtonClassNames = [getClassName(STYLES["bpk-input__clear-button"])];
     const {
       className,
       clearButtonLabel,
@@ -74,41 +72,41 @@ class BpkInput extends Component<Props, State> {
       clearButtonMode && clearButtonMode !== CLEAR_BUTTON_MODES.never;
 
     if (valid) {
-      classNames.push(getClassName('bpk-input--valid'));
+      classNames.push(getClassName(STYLES["bpk-input--valid"]));
     } else if (isInvalid) {
-      classNames.push(getClassName('bpk-input--invalid'));
+      classNames.push(getClassName(STYLES["bpk-input--invalid"]));
     }
 
     if (large) {
-      classNames.push(getClassName('bpk-input--large'));
+      classNames.push(getClassName(STYLES["bpk-input--large"]));
       clearButtonClassNames.push(
-        getClassName('bpk-input__clear-button--large'),
+        getClassName(STYLES["bpk-input__clear-button--large"]),
       );
     }
     if (clearable) {
-      classNames.push(getClassName('bpk-input--clearable'));
+      classNames.push(getClassName(STYLES["bpk-input--clearable"]));
       if (
         clearButtonMode === CLEAR_BUTTON_MODES.always ||
         this.state.persistClearButton
       ) {
-        classNames.push(getClassName('bpk-input--persistent-clearable'));
+        classNames.push(getClassName(STYLES["bpk-input--persistent-clearable"]));
         clearButtonClassNames.push(
-          getClassName('bpk-input__clear-button--persistent'),
+          getClassName(STYLES["bpk-input__clear-button--persistent"]),
         );
       }
     }
 
     if (docked) {
-      classNames.push(getClassName('bpk-input--docked'));
+      classNames.push(getClassName(STYLES["bpk-input--docked"]));
     }
     if (dockedFirst) {
-      classNames.push(getClassName('bpk-input--docked-first'));
+      classNames.push(getClassName(STYLES["bpk-input--docked-first"]));
     }
     if (dockedMiddle) {
-      classNames.push(getClassName('bpk-input--docked-middle'));
+      classNames.push(getClassName(STYLES["bpk-input--docked-middle"]));
     }
     if (dockedLast) {
-      classNames.push(getClassName('bpk-input--docked-last'));
+      classNames.push(getClassName(STYLES["bpk-input--docked-last"]));
     }
     if (className) {
       if (clearable) {

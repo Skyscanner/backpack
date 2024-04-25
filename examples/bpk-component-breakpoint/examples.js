@@ -23,26 +23,24 @@ import type { Node } from 'react';
 import BpkBreakpoint, {
   BREAKPOINTS,
 } from '../../packages/bpk-component-breakpoint';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { getClassName } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const MediaQueryStatus = (props: { children: Node, isActive: boolean }) => {
   const { children, isActive } = props;
 
   const className = getClassName(
     isActive
-      ? 'bpk-breakpoints-demo--active'
-      : 'bpk-breakpoints-demo--inactive',
+      ? STYLES["bpk-breakpoints-demo--active"]
+      : STYLES["bpk-breakpoints-demo--inactive"],
   );
 
   return <div className={className}>{children}</div>;
 };
 
 const DefaultExample = () => (
-  <div className={getClassName('bpk-breakpoints-demo')}>
+  <div className={getClassName(STYLES["bpk-breakpoints-demo"])}>
     <BpkBreakpoint query={BREAKPOINTS.SMALL_MOBILE}>
       {(isActive) => (
         <MediaQueryStatus isActive={isActive}>SMALL MOBILE</MediaQueryStatus>

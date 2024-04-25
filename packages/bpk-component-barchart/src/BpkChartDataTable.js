@@ -20,13 +20,11 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
+import { getClassName } from '../../bpk-react-utils';
 
 import dataProp from './customPropTypes';
 
 import STYLES from './BpkChartDataTable.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type Props = {
   data: Array<any>, // We pass any here as the array can contain free form data depending on the user
@@ -50,7 +48,7 @@ const BpkChartDataTable = (props: Props) => {
   });
 
   return (
-    <table className={getClassName('bpk-chart-data-table')}>
+    (<table className={getClassName(STYLES["bpk-chart-data-table"])}>
       <thead>
         <tr>
           <th>{xAxisLabel}</th>
@@ -58,7 +56,7 @@ const BpkChartDataTable = (props: Props) => {
         </tr>
       </thead>
       <tbody>{rows}</tbody>
-    </table>
+    </table>)
   );
 };
 
