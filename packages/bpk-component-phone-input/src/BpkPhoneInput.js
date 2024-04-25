@@ -149,23 +149,25 @@ const BpkPhoneInput = (props: Props) => {
       className={getClassName('bpk-phone-input', wrapperProps.className)}
     >
       <div>
-        <BpkLabel
-          htmlFor={dialingCodeProps.id}
-          disabled={disabled}
-          // TODO: className to be removed
-          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={getClassName('bpk-phone-input__label')}
-        >
-          {dialingCodeProps.label}
-        </BpkLabel>
+        <div className={getClassName('bpk-phone-input__label')}>
+          <BpkLabel
+            htmlFor={dialingCodeProps.id}
+            disabled={disabled}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+            // className={getClassName('bpk-phone-input__label')}
+          >
+            {dialingCodeProps.label}
+          </BpkLabel>
+        </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkSelect
           {...commonProps}
           {...dialingCodeProps}
           // TODO: className to be removed
           // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={getClassName(dialingCodeProps.className)}
-          wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
+          // className={getClassName(dialingCodeProps.className)}
+          // wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
           value={dialingCode}
           onChange={onDialingCodeChange}
         >
@@ -178,15 +180,17 @@ const BpkPhoneInput = (props: Props) => {
         </BpkSelect>
       </div>
       <div className={getClassName('bpk-phone-input__phone-number')}>
-        <BpkLabel
-          htmlFor={id}
-          disabled={disabled}
-          // TODO: className to be removed
-          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={getClassName('bpk-phone-input__label')}
-        >
-          {label}
-        </BpkLabel>
+        <div className={getClassName('bpk-phone-input__label')}>
+          <BpkLabel
+            htmlFor={id}
+            disabled={disabled}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+            // className={getClassName('bpk-phone-input__label')}
+          >
+            {label}
+          </BpkLabel>
+        </div>
         {/* <span className={getClassName(className)}> */}
           {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
           <BpkInput

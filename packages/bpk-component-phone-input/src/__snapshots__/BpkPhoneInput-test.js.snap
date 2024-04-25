@@ -6,12 +6,16 @@ exports[`BpkPhoneInput should render correctly 1`] = `
     class="bpk-phone-input"
   >
     <div>
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="dialing-code"
+      <div
+        class="bpk-phone-input__label"
       >
-        Dialing code
-      </label>
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
       <select
         aria-invalid="false"
         class="bpk-select dialing-code"
@@ -36,12 +40,16 @@ exports[`BpkPhoneInput should render correctly 1`] = `
     <div
       class="bpk-phone-input__phone-number"
     >
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="phone-input-id"
+      <div
+        class="bpk-phone-input__label"
       >
-        Telephone number
-      </label>
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
       <input
         aria-invalid="false"
         class="bpk-input"
@@ -61,12 +69,16 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
     class="bpk-phone-input"
   >
     <div>
-      <label
-        class="bpk-label bpk-label--disabled bpk-phone-input__label"
-        for="dialing-code"
+      <div
+        class="bpk-phone-input__label"
       >
-        Dialing code
-      </label>
+        <label
+          class="bpk-label bpk-label--disabled"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
       <select
         aria-invalid="false"
         class="bpk-select dialing-code"
@@ -92,12 +104,16 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
     <div
       class="bpk-phone-input__phone-number"
     >
-      <label
-        class="bpk-label bpk-label--disabled bpk-phone-input__label"
-        for="phone-input-id"
+      <div
+        class="bpk-phone-input__label"
       >
-        Telephone number
-      </label>
+        <label
+          class="bpk-label bpk-label--disabled"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
       <input
         aria-invalid="false"
         class="bpk-input"
@@ -118,12 +134,16 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
     class="bpk-phone-input"
   >
     <div>
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="dialing-code"
+      <div
+        class="bpk-phone-input__label"
       >
-        Dialing code
-      </label>
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
       <select
         aria-invalid="false"
         class="bpk-select bpk-select--large dialing-code"
@@ -148,12 +168,16 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
     <div
       class="bpk-phone-input__phone-number"
     >
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="phone-input-id"
+      <div
+        class="bpk-phone-input__label"
       >
-        Telephone number
-      </label>
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
       <input
         aria-invalid="false"
         class="bpk-input bpk-input--large"
@@ -173,12 +197,16 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
     class="bpk-phone-input"
   >
     <div>
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="dialing-code"
+      <div
+        class="bpk-phone-input__label"
       >
-        Dialing code
-      </label>
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
       <select
         aria-invalid="false"
         class="bpk-select dialing-code"
@@ -203,12 +231,16 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
     <div
       class="bpk-phone-input__phone-number"
     >
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="phone-input-id"
+      <div
+        class="bpk-phone-input__label"
       >
-        Telephone number
-      </label>
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
       <input
         aria-invalid="false"
         class="bpk-input bpk-input--valid"
@@ -229,12 +261,16 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
     class="bpk-phone-input container"
   >
     <div>
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="dialing-code"
+      <div
+        class="bpk-phone-input__label"
       >
-        Dialing code
-      </label>
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
       <select
         aria-invalid="false"
         class="bpk-select dialing-code"
@@ -259,12 +295,16 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
     <div
       class="bpk-phone-input__phone-number"
     >
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="phone-input-id"
+      <div
+        class="bpk-phone-input__label"
       >
-        Telephone number
-      </label>
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
       <input
         aria-invalid="false"
         class="bpk-input"
@@ -284,12 +324,16 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
     class="bpk-phone-input"
   >
     <div>
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="dialing-code"
+      <div
+        class="bpk-phone-input__label"
       >
-        Dialing code
-      </label>
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
       <div
         class="bpk-select-wrapper dialing-wrapper"
       >
@@ -322,12 +366,16 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
     <div
       class="bpk-phone-input__phone-number"
     >
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="phone-input-id"
+      <div
+        class="bpk-phone-input__label"
       >
-        Telephone number
-      </label>
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
       <input
         aria-invalid="false"
         class="bpk-input"
@@ -347,12 +395,16 @@ exports[`BpkPhoneInput should render correctly with the "dialingCodeMask" attrib
     class="bpk-phone-input"
   >
     <div>
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="dialing-code"
+      <div
+        class="bpk-phone-input__label"
       >
-        Dialing code
-      </label>
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
       <select
         aria-invalid="false"
         class="bpk-select dialing-code"
@@ -377,12 +429,16 @@ exports[`BpkPhoneInput should render correctly with the "dialingCodeMask" attrib
     <div
       class="bpk-phone-input__phone-number"
     >
-      <label
-        class="bpk-label bpk-phone-input__label"
-        for="phone-input-id"
+      <div
+        class="bpk-phone-input__label"
       >
-        Telephone number
-      </label>
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
       <input
         aria-invalid="false"
         class="bpk-input"
