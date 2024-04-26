@@ -16,8 +16,15 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import themeAttributes from './themeAttributes';
 
-export const ARROW_ID = 'js-bpk-popover-arrow';
-
-export default { ARROW_ID };
+describe('themeAttributes', () => {
+  it('should export the correct theme attributes', () => {
+    expect(themeAttributes).toEqual([
+      'linkColor',
+      'linkHoverColor',
+      'linkActiveColor',
+      'linkVisitedColor',
+    ]);
+  });
+});

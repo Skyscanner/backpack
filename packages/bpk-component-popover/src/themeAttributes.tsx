@@ -16,17 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { themeAttributes as linkAttributes } from '../../bpk-component-link';
 
-import themeAttributes from './themeAttributes';
-
-describe('themeAttributes', () => {
-  it('should export the correct theme attributes', () => {
-    expect(themeAttributes).toEqual([
-      'linkColor',
-      'linkHoverColor',
-      'linkActiveColor',
-      'linkVisitedColor',
-    ]);
-  });
-});
+export default [...linkAttributes];

@@ -18,17 +18,13 @@
 
 /* @flow strict */
 
-import BpkPopoverPortal, {
-  propTypes as bpkPopoverPortalPropTypes,
-  defaultProps as bpkPopoverPortalDefaultProps,
-  type Props,
-} from './src/BpkPopoverPortal';
+import BpkPopover, {
+  type Props
+} from './src/BpkPopover';
 import themeAttributes from './src/themeAttributes';
 
 export type BpkPopoverProps = Props;
 export {
   themeAttributes,
-  bpkPopoverPortalPropTypes,
-  bpkPopoverPortalDefaultProps,
 };
-export default BpkPopoverPortal;
+export default BpkPopover;

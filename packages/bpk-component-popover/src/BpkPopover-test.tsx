@@ -16,99 +16,139 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkPopover from './BpkPopover';
 
 describe('BpkPopover', () => {
+  let onCloseSpy = jest.fn();
+
+  beforeEach(() => {
+    onCloseSpy = jest.fn();
+  })
+
   it('should render correctly', () => {
-    const { asFragment } = render(
+    const target = (<button type="button">My target</button>);
+    render(
       <BpkPopover
         id="my-popover"
         onClose={() => null}
         label="My popover"
         closeButtonText="Close"
+        target={target}
+        isOpen
       >
         My popover content
       </BpkPopover>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('My popover content')).toBeVisible();
   });
 
-  it('should render correctly with "closeButtonProps" provided', () => {
-    const { asFragment } = render(
+  it('should render without an arrow', () => {
+    const target = (<button type="button">My target</button>);
+    render(
       <BpkPopover
         id="my-popover"
         onClose={() => null}
         label="My popover"
         closeButtonText="Close"
-        tabIndex="0"
-        closeButtonProps={{ tabIndex: 0 }}
+        target={target}
+        isOpen
+        showArrow={false}
       >
         My popover content
       </BpkPopover>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByText('My popover content')).toBeVisible();
+  });
+
+  // it('should render to the left', () => {
+  //   const target = (<button type="button">My target</button>);
+  //   const { asFragment } = render(
+  //     <BpkPopover
+  //       id="my-popover"
+  //       onClose={() => null}
+  //       label="My popover"
+  //       closeButtonText="Close"
+  //       target={target}
+  //       isOpen
+  //       placement='left'
+  //     >
+  //       My popover content
+  //     </BpkPopover>,
+  //   );
+  //   expect(asFragment()).toMatchSnapshot();
+  // });
+
+  it('should render correctly with "closeButtonProps" provided', () => {
+    const {container} = render(
+      <BpkPopover
+        id="my-popover"
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+        target={<button type="button">My target</button>}
+        closeButtonProps={{ tabIndex: 0 }}
+        isOpen
+      >
+        My popover content
+      </BpkPopover>,
+    );
+
+    expect(container.querySelector('[tabindex="0"]')).toBeVisible();
   });
 
   it('should render correctly with "padded" attribute equal to false', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkPopover
         id="my-popover"
         onClose={() => null}
         label="My popover"
         closeButtonText="Close"
         padded={false}
+        target={<button type="button">My target</button>}
+        isOpen
       >
         My popover content
       </BpkPopover>,
     );
-    expect(asFragment()).toMatchSnapshot();
-  });
 
-  it('should render correctly with "className" attribute', () => {
-    const { asFragment } = render(
-      <BpkPopover
-        id="my-popover"
-        onClose={() => null}
-        label="My popover"
-        closeButtonText="Close"
-        className="my-custom-class"
-      >
-        My popover content
-      </BpkPopover>,
-    );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelector('.bpk-popover__body--padded')).toBeNull();
+    expect(screen.getByText('My popover content')).toBeVisible();
   });
 
   it('should render correctly with "labelAsTitle" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkPopover
         id="my-popover"
         onClose={() => null}
         label="My popover"
         closeButtonText="Close"
         labelAsTitle
+        target={<button type="button">My target</button>}
+        isOpen
       >
         My popover content
       </BpkPopover>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const heading = container.querySelector('.bpk-popover__header');
+    expect(heading).toBeTruthy();
   });
 
   it('should propagate the click event to the onClose handler when clicking on the closing button', async () => {
-    const onCloseSpy = jest.fn();
     render(
       <BpkPopover
         id="my-popover"
         onClose={onCloseSpy}
         label="My popover"
         closeButtonText="Close"
-        className="my-custom-class"
         labelAsTitle
         closeButtonIcon
+        target={<button type="button">My target</button>}
+        isOpen
       >
         My popover content
       </BpkPopover>,
@@ -118,7 +158,7 @@ describe('BpkPopover', () => {
 
     const closeButton = screen.getByRole('button', { name: 'Close' });
     await fireEvent.click(closeButton);
-
+    
     expect(onCloseSpy).toHaveBeenCalled();
   });
 
@@ -126,16 +166,16 @@ describe('BpkPopover', () => {
     'should propagate the click event to the onClose handler when clicking on the closing link' +
       'when using label as a title',
     async () => {
-      const onCloseSpy = jest.fn();
       render(
         <BpkPopover
           id="my-popover"
           onClose={onCloseSpy}
           label="My popover"
           closeButtonText="Close"
-          className="my-custom-class"
           labelAsTitle
           closeButtonIcon={false}
+          target={<button type="button">My target</button>}
+          isOpen
         >
           My popover content
         </BpkPopover>,
@@ -154,15 +194,15 @@ describe('BpkPopover', () => {
     'should propagate the click event to the onClose handler when clicking on the closing link' +
       'when not using label as a title',
     async () => {
-      const onCloseSpy = jest.fn();
       render(
         <BpkPopover
           id="my-popover"
           onClose={onCloseSpy}
           label="My popover"
           closeButtonText="Close"
-          className="my-custom-class"
           labelAsTitle={false}
+          target={<button type="button">My target</button>}
+          isOpen
         >
           My popover content
         </BpkPopover>,

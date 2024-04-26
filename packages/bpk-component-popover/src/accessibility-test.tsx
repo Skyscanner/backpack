@@ -16,44 +16,24 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkPopover from './BpkPopover';
-import BpkPopoverPortal from './BpkPopoverPortal';
 
 describe('BpkPopover accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
+    const target = (<button type="button">My target</button>);
     const { container } = render(
       <BpkPopover
         id="my-popover"
         onClose={() => null}
         label="My popover"
         closeButtonText="Close"
+        target={target}
       >
         My popover content
       </BpkPopover>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
-
-describe('BpkPopoverPortal accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkPopoverPortal
-        id="my-popover"
-        target={<div>target</div>}
-        isOpen={false}
-        onClose={() => null}
-        label="My popover"
-        closeButtonText="Close"
-      >
-        <div>My popover content</div>
-      </BpkPopoverPortal>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

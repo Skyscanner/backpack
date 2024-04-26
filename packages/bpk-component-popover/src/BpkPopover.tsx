@@ -1,0 +1,239 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import type { SyntheticEvent, ReactNode, ReactElement } from 'react';
+import { useState, useRef, cloneElement, isValidElement } from 'react';
+
+import {
+  useFloating,
+  autoUpdate,
+  offset,
+  useClick,
+  useDismiss,
+  useInteractions,
+  FloatingFocusManager,
+  arrow,
+  FloatingArrow,
+  flip,
+  shift,
+} from '@floating-ui/react';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkCloseButton from '../../bpk-component-close-button';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { BpkButtonLink } from '../../bpk-component-link';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+
+import { ARROW_ID } from './constants';
+
+import STYLES from './BpkPopover.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+const EVENT_SOURCES = {
+  CLOSE_BUTTON: 'CLOSE_BUTTON',
+  CLOSE_LINK: 'CLOSE_LINK',
+};
+
+const bindEventSource =
+  (source: string, callback: any, event: SyntheticEvent<HTMLButtonElement>) => {
+    if (event.persist) {
+      event.persist();
+    }
+
+    callback(event, { source });
+  };
+
+export type Props = {
+  children: ReactNode;
+  closeButtonText: string;
+  id: string;
+  label: string;
+  onClose: (
+    event: SyntheticEvent<HTMLButtonElement>,
+    props: { source: (typeof EVENT_SOURCES)[keyof typeof EVENT_SOURCES] },
+  ) => void;
+  className?: string | null;
+  closeButtonIcon?: boolean;
+  closeButtonProps?: Object;
+  isOpen?: boolean;
+  labelAsTitle?: boolean;
+  padded?: boolean;
+  placement?: 'top' | 'right' | 'bottom' | 'left';
+  showArrow?: Boolean;
+  target: ReactElement<any>;
+};
+
+const BpkPopover = ({
+  children,
+  className = null,
+  closeButtonIcon = true,
+  closeButtonProps = {},
+  closeButtonText,
+  id,
+  isOpen = false,
+  label,
+  labelAsTitle = false,
+  onClose,
+  padded = true,
+  placement = 'bottom',
+  showArrow = true,
+  target,
+  ...rest
+}: Props) => {
+  const [isOpenState, setIsOpenState] = useState(isOpen);
+  const arrowRef = useRef(null);
+
+  const { context, floatingStyles, refs } = useFloating({
+    open: isOpenState,
+    onOpenChange: setIsOpenState,
+    placement,
+    middleware: [
+      showArrow && offset(17),
+      flip({ crossAxis: true }),
+      shift(),
+      showArrow && arrow({ element: arrowRef }),
+    ],
+    whileElementsMounted: autoUpdate,
+  });
+
+  const click = useClick(context);
+  const dismiss = useDismiss(context);
+
+  // Merge all the interactions into prop getters
+  const { getFloatingProps, getReferenceProps } = useInteractions([
+    click,
+    dismiss,
+  ]);
+
+  const targetElement = isValidElement(target) ? (
+    cloneElement(target, {
+      ...getReferenceProps(),
+      ref: refs.setReference,
+    })
+  ) : (
+    <div ref={refs.setReference} {...getReferenceProps()}>
+      {target}
+    </div>
+  );
+  const classNames = getClassName('bpk-popover', className);
+  const bodyClassNames = getClassName(padded && 'bpk-popover__body--padded');
+
+  const labelId = `bpk-popover-label-${id}`;
+
+  return (
+    <>
+      {targetElement}
+      {isOpenState && (
+        <FloatingFocusManager context={context} modal={false}>
+          <div
+            ref={refs.setFloating}
+            style={floatingStyles}
+            {...getFloatingProps()}
+          >
+            <TransitionInitialMount
+              appearClassName={getClassName('bpk-popover--appear')}
+              appearActiveClassName={getClassName('bpk-popover--appear-active')}
+              transitionTimeout={200}
+            >
+              <section
+                id={id}
+                tabIndex={-1}
+                role="dialog"
+                aria-labelledby={labelId}
+                className={classNames}
+                {...rest}
+              >
+                {showArrow && (
+                  <FloatingArrow
+                    ref={arrowRef}
+                    context={context}
+                    id={ARROW_ID}
+                    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+                    className={getClassName('bpk-popover__arrow')}
+                    role="presentation"
+                    stroke={surfaceHighlightDay}
+                    strokeWidth={0.0625}
+                  />
+                )}
+                {labelAsTitle ? (
+                  <header className={getClassName('bpk-popover__header')}>
+                    <BpkText
+                      tagName="h2"
+                      id={labelId}
+                      textStyle={TEXT_STYLES.label1}
+                    >
+                      {label}
+                    </BpkText>
+                    &nbsp;
+                    {closeButtonIcon ? (
+                      <BpkCloseButton
+                        label={closeButtonText}
+                        onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
+                          bindEventSource(EVENT_SOURCES.CLOSE_BUTTON, onClose, event);
+                          setIsOpenState(false);
+                        }}
+                        {...closeButtonProps}
+                      />
+                    ) : (
+                      <BpkButtonLink
+                        onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
+                          bindEventSource(EVENT_SOURCES.CLOSE_LINK, onClose, event);
+                          setIsOpenState(false);
+                        }}
+                        {...closeButtonProps}
+                      >
+                        {closeButtonText}
+                      </BpkButtonLink>
+                    )}
+                  </header>
+                ) : (
+                  <span
+                    id={labelId}
+                    className={getClassName('bpk-popover__label')}
+                  >
+                    {label}
+                  </span>
+                )}
+                <div className={bodyClassNames}>{children}</div>
+                {!labelAsTitle && (
+                  <footer className={getClassName('bpk-popover__footer')}>
+                    <BpkButtonLink
+                      onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
+                        bindEventSource(EVENT_SOURCES.CLOSE_LINK, onClose, event);
+                        setIsOpenState(false);
+                      }}
+                      {...closeButtonProps}
+                    >
+                      {closeButtonText}
+                    </BpkButtonLink>
+                  </footer>
+                )}
+              </section>
+            </TransitionInitialMount>
+          </div>
+        </FloatingFocusManager>
+      )}
+    </>
+  );
+};
+export default BpkPopover;

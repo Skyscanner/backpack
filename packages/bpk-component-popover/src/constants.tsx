@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+export const ARROW_ID = 'js-bpk-popover-arrow';
 
-import { themeAttributes as linkAttributes } from '../../bpk-component-link';
-
-export default [...linkAttributes];
+export default { ARROW_ID };
