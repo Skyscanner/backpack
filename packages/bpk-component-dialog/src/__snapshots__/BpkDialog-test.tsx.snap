@@ -275,32 +275,36 @@ exports[`BpkDialog should render with flare dialog 2`] = `
                 class="bpk-content-bubble__content-wrapper"
               />
               <div
-                class="bpk-flare-bar__container bpk-content-bubble__pointer"
+                class="bpk-content-bubble__pointer"
               >
-                <svg
-                  class="bpk-flare-bar__curve"
-                  viewBox="0 0 14832 55"
+                <div
+                  class="bpk-flare-bar__container"
                 >
-                  <path
-                    d="M7501.307 8.517l-68.043 39.341c-10.632 6.185-23.795 6.185-34.528 0l-68.144-39.34c-8.91-5.173-18.988-8.215-29.316-8.518H0v55h14832V0H7530.671a63.604 63.604 0 00-29.364 8.517z"
-                  />
-                </svg>
-                <svg
-                  class="bpk-flare-bar__rounded-corner"
-                  viewBox="0 0 75 75"
-                >
-                  <path
-                    d="M0 0v75h75C37.5 75 0 37.5 0 0z"
-                  />
-                </svg>
-                <svg
-                  class="bpk-flare-bar__rounded-corner bpk-flare-bar__rounded-corner--trailing"
-                  viewBox="0 0 75 75"
-                >
-                  <path
-                    d="M0 0v75h75C37.5 75 0 37.5 0 0z"
-                  />
-                </svg>
+                  <svg
+                    class="bpk-flare-bar__curve"
+                    viewBox="0 0 14832 55"
+                  >
+                    <path
+                      d="M7501.307 8.517l-68.043 39.341c-10.632 6.185-23.795 6.185-34.528 0l-68.144-39.34c-8.91-5.173-18.988-8.215-29.316-8.518H0v55h14832V0H7530.671a63.604 63.604 0 00-29.364 8.517z"
+                    />
+                  </svg>
+                  <svg
+                    class="bpk-flare-bar__rounded-corner"
+                    viewBox="0 0 75 75"
+                  >
+                    <path
+                      d="M0 0v75h75C37.5 75 0 37.5 0 0z"
+                    />
+                  </svg>
+                  <svg
+                    class="bpk-flare-bar__rounded-corner bpk-flare-bar__rounded-corner--trailing"
+                    viewBox="0 0 75 75"
+                  >
+                    <path
+                      d="M0 0v75h75C37.5 75 0 37.5 0 0z"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -374,32 +378,36 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
                 class="bpk-content-bubble__content-wrapper"
               />
               <div
-                class="bpk-flare-bar__container bpk-content-bubble__pointer"
+                class="bpk-content-bubble__pointer"
               >
-                <svg
-                  class="bpk-flare-bar__curve"
-                  viewBox="0 0 14832 55"
+                <div
+                  class="bpk-flare-bar__container"
                 >
-                  <path
-                    d="M7501.307 8.517l-68.043 39.341c-10.632 6.185-23.795 6.185-34.528 0l-68.144-39.34c-8.91-5.173-18.988-8.215-29.316-8.518H0v55h14832V0H7530.671a63.604 63.604 0 00-29.364 8.517z"
-                  />
-                </svg>
-                <svg
-                  class="bpk-flare-bar__rounded-corner"
-                  viewBox="0 0 75 75"
-                >
-                  <path
-                    d="M0 0v75h75C37.5 75 0 37.5 0 0z"
-                  />
-                </svg>
-                <svg
-                  class="bpk-flare-bar__rounded-corner bpk-flare-bar__rounded-corner--trailing"
-                  viewBox="0 0 75 75"
-                >
-                  <path
-                    d="M0 0v75h75C37.5 75 0 37.5 0 0z"
-                  />
-                </svg>
+                  <svg
+                    class="bpk-flare-bar__curve"
+                    viewBox="0 0 14832 55"
+                  >
+                    <path
+                      d="M7501.307 8.517l-68.043 39.341c-10.632 6.185-23.795 6.185-34.528 0l-68.144-39.34c-8.91-5.173-18.988-8.215-29.316-8.518H0v55h14832V0H7530.671a63.604 63.604 0 00-29.364 8.517z"
+                    />
+                  </svg>
+                  <svg
+                    class="bpk-flare-bar__rounded-corner"
+                    viewBox="0 0 75 75"
+                  >
+                    <path
+                      d="M0 0v75h75C37.5 75 0 37.5 0 0z"
+                    />
+                  </svg>
+                  <svg
+                    class="bpk-flare-bar__rounded-corner bpk-flare-bar__rounded-corner--trailing"
+                    viewBox="0 0 75 75"
+                  >
+                    <path
+                      d="M0 0v75h75C37.5 75 0 37.5 0 0z"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>

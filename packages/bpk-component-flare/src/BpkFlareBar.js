@@ -51,22 +51,12 @@ const BpkFlareBar = (props) => {
 
   return (
     <div className={classNames.join(' ')} {...rest}>
-      <Pointer
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={curveClassNames.join(' ')} 
-      />
+      <Pointer className={curveClassNames.join(' ')} />
       {rounded && (
-        <CornerRadius
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={leftCornerRadiusClassNames.join(' ')} />
+        <CornerRadius className={leftCornerRadiusClassNames.join(' ')} />
       )}
       {rounded && (
-        <CornerRadius
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={rightCornerRadiusClassNames.join(' ')} />
+        <CornerRadius className={rightCornerRadiusClassNames.join(' ')} />
       )}
     </div>
   );
