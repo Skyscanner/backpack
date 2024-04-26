@@ -43,7 +43,7 @@ describe('BpkImage', () => {
       <BpkImage
         altText="image description"
         aspectRatio={816 / 544}
-        style={{ width: "1rem" }}
+        style={{ width: spacings.onePixelRem }}
         src="./path/to/image.jpg"
       />,
     );
