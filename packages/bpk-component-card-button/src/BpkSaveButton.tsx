@@ -21,13 +21,9 @@ import { useState } from 'react';
 
 import { BpkButtonV2 } from '../../bpk-component-button';
 import { withLargeButtonAlignment } from '../../bpk-component-icon';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkHeartIcon from '../../bpk-component-icon/lg/heart';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkHeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
 import { cssModules } from '../../bpk-react-utils';
 

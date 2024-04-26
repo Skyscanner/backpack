@@ -19,8 +19,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import {
-  spacingSm,
-  breakpoints as BREAKPOINTS, // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+  spacings,
+  breakpoints as BREAKPOINTS,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkImage from './BpkImage';
@@ -43,7 +43,7 @@ describe('BpkImage', () => {
       <BpkImage
         altText="image description"
         aspectRatio={816 / 544}
-        style={{ width: spacingSm }}
+        style={{ width: "1rem" }}
         src="./path/to/image.jpg"
       />,
     );
@@ -55,7 +55,7 @@ describe('BpkImage', () => {
       <BpkImage
         altText="image description"
         aspectRatio={816 / 544}
-        style={{ width: spacingSm }}
+        style={{ width: spacings.onePixelRem }}
         className="userland-classname"
         src="./path/to/image.jpg"
       />,

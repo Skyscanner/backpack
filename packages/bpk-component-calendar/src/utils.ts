@@ -18,7 +18,7 @@
 
 import {
   calendarDaySize,
-  calendarDaySpacing, // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+  calendarDaySpacing,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const CSS_UNIT_REGEX = /(^[+-]?(?:\d*\.)?\d+)(.+)/i;
