@@ -128,6 +128,7 @@ const BpkPopover = ({
   const targetElement = isValidElement(target) ? (
     cloneElement(target, {
       ...getReferenceProps(),
+      // @ts-ignore - we're adding a popover ref to the target element so we can position the popover relative to it
       ref: refs.setReference,
     })
   ) : (
