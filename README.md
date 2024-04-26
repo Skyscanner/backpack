@@ -76,6 +76,7 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-section-header`](/packages/bpk-component-section-header)
 [`bpk-component-section-list`](/packages/bpk-component-section-list)
 [`bpk-component-select`](/packages/bpk-component-select)
+[`bpk-component-skeleton`](/packages/bpk-component-skeleton)
 [`bpk-component-slider`](/packages/bpk-component-slider)
 [`bpk-component-spinner`](/packages/bpk-component-spinner)
 [`bpk-component-star-rating`](/packages/bpk-component-star-rating)

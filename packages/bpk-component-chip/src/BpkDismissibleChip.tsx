@@ -21,6 +21,8 @@ The dismissible chip component is just a selectable chip that's
 been hard coded to have disabled={false}, selected and a trailing
 accessory view of a close icon.
 */
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { chipColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
@@ -43,9 +45,6 @@ const BpkDismissibleChip = ({
   type = CHIP_TYPES.default,
   ...rest
 }: BpkDismissibleChipProps) => {
-  const iconClassNames = getClassName(
-    `bpk-chip--${type}-dismissible__trailing-accessory-view`,
-  );
   const classNames = getClassName(`bpk-chip--${type}-dismissible`, className);
 
   return (
@@ -53,15 +52,15 @@ const BpkDismissibleChip = ({
       {...rest}
       leadingAccessoryView={leadingAccessoryView}
       disabled={false}
+      dismissible
       trailingAccessoryView={<CloseCircleIconSm 
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={iconClassNames} />}
+        fill={
+          type === CHIP_TYPES.default || type === CHIP_TYPES.onImage
+            ? chipColors.privateChipOnDarkOnDismissIconNight
+            :  chipColors.privateChipOnDarkOnDismissIconDay } />}
       selected
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames}
     />
   );

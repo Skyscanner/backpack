@@ -58,19 +58,7 @@ const computeScrollIndicatorClassName = (
   const scrollValue = rtl ? -Math.floor(scrollLeft) : Math.ceil(scrollLeft);
   const showLeadingIndicator = scrollValue > 0;
   const showTrailingIndicator = scrollValue < scrollWidth - offsetWidth;
-  const showLeftIndicator = rtl ? showTrailingIndicator : showLeadingIndicator;
-  const showRightIndicator = rtl ? showLeadingIndicator : showTrailingIndicator;
 
-  if (showLeftIndicator) {
-    classNames.push(
-      getClassName('bpk-mobile-scroll-container--left-indicator'),
-    );
-  }
-  if (showRightIndicator) {
-    classNames.push(
-      getClassName('bpk-mobile-scroll-container--right-indicator'),
-    );
-  }
   if (showLeadingIndicator && leadingIndicatorClassName) {
     classNames.push(leadingIndicatorClassName);
   }
@@ -231,8 +219,6 @@ class BpkMobileScrollContainer extends Component<Props, State> {
             ref={(el) => {
               this.innerEl = el;
             }}
-            // TODO: className to be removed
-            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={getClassName('bpk-mobile-scroll-container__inner')}
           >
             {children}
