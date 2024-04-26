@@ -28,6 +28,8 @@ import STYLES from './BpkDialogWrapper.module.scss';
 const getClassName = cssModules(STYLES);
 
 export interface Props {
+  type: string;
+  mobileType: string;
   ariaLabelledby: string;
   children: ReactNode;
   closeOnEscPressed?: boolean;
@@ -72,13 +74,14 @@ export const BpkDialogWrapper = (props: Props) => {
     children,
     closeOnEscPressed = false,
     closeOnScrimClick = false,
-    dialogClassName = '',
     exiting = false,
     id,
     isOpen,
     onClose,
     timeout = {appear: 0, exit: 0},
-    transitionClassNames = {}
+    transitionClassNames = {},
+    type,
+    mobileType,
   } = props;
 
   const ref = useRef<HTMLDialogElement>(null);
@@ -135,6 +138,30 @@ export const BpkDialogWrapper = (props: Props) => {
     };
   }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
 
+  const bottomSheet = getClassName(
+    'bpk-bottom-sheet'
+    );
+  const bottomSheetMobile = getClassName(
+    'bpk-bottom-sheet-mobile'
+    );
+  const modal = getClassName(
+    'bpk-dialog-wrapper--container'
+    );
+
+  let cls;
+  if(type === "modal"){
+    cls = modal;
+  }
+  if(type==="bottom-sheet"){
+    cls = bottomSheet;
+  }
+  if(mobileType === "modal"){
+    cls = modal;
+  }
+  if(mobileType === "bottom-sheet"){
+    cls = bottomSheetMobile;
+  }
+
   return isOpen ? (
     <div
       className={getClassName(
@@ -158,7 +185,7 @@ export const BpkDialogWrapper = (props: Props) => {
       >
         <dialog
           id={id}
-          className={getClassName('bpk-dialog-wrapper--container', dialogClassName)}
+          className={ cls }
           onCancel={(e) => {
             e.preventDefault();
             if (closeOnEscPressed && (!dialogTarget || e.target === dialogTarget)) {

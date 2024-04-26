@@ -84,16 +84,13 @@ const BpkBottomSheet = ({
   }
 
   const headingId = `bpk-bottom-sheet-heading-${id}`;
-  const dialogClassName = getClassName(
-    'bpk-bottom-sheet',
-    wide && 'bpk-bottom-sheet--wide'
-    );
 
     return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
       {(isAboveMobile: boolean) =>
       <BpkDialogWrapper
       ariaLabelledby={ariaLabelledby}
-      dialogClassName={dialogClassName}
+      type="modal"
+      mobileType="bottom-sheet"
       id={id}
       isOpen={isOpen}
       onClose={(

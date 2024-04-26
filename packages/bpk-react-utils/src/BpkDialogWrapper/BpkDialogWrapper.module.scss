@@ -16,6 +16,12 @@
  * limitations under the License.
  */
 @use '../../../unstable__bpk-mixins/tokens';
+@use '../../../unstable__bpk-mixins/borders';
+@use '../../../unstable__bpk-mixins/breakpoints';
+@use '../../../unstable__bpk-mixins/radii';
+@use '../../../unstable__bpk-mixins/shadows';
+@use '../../../unstable__bpk-mixins/typography';
+@use '../../../unstable__bpk-mixins/utils';
 
 @keyframes bpk-dialog-wrapper-scrim {
   0% {
@@ -31,6 +37,7 @@
   &--container {
     padding: 0;
     border: none;
+    @include radii.bpk-border-radius-sm;
 
     &::backdrop {
       position: fixed;
@@ -60,3 +67,46 @@
     padding: 0;
   }
 }
+
+
+ 
+ @mixin animation-slide-up {
+   animation-duration: tokens.$bpk-duration-sm;
+   animation-name: slide-up;
+   animation-timing-function: ease-in-out;
+ }
+ 
+ $close-button-width: tokens.bpk-spacing-lg() * 2;
+
+ .bpk-bottom-sheet {
+    composes: bpk-dialog-wrapper--container;
+    position: fixed;
+    bottom: 0;
+    height: fit-content;
+    max-height: 90%;
+    margin-bottom: 0;
+    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+    overflow-x: hidden;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+ }
+ 
+ .bpk-bottom-sheet-mobile {
+   composes: bpk-dialog-wrapper--container;
+   @media #{tokens.$bpk-breakpoint-query-mobile} {
+    position: fixed;
+    bottom: 0;
+    height: fit-content;
+    max-height: 90%;
+    margin-bottom: 0;
+    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+    overflow-x: hidden;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+ }
+ 
