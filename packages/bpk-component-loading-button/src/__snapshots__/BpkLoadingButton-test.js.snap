@@ -13,12 +13,13 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -39,13 +40,14 @@ exports[`BpkLoadingButton should render correctly 1`] = `
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -66,12 +68,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -93,12 +96,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -119,12 +123,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -149,12 +154,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -175,12 +181,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -201,12 +208,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "linkOnDark" 
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -303,12 +311,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "loading" att
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -329,12 +338,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "primaryOnDar
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -355,12 +365,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "primaryOnLig
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -381,12 +392,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -407,12 +419,13 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondaryOnD
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -433,13 +446,14 @@ exports[`BpkLoadingButton should render correctly with a "destructive" attribute
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -461,13 +475,14 @@ exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -488,13 +503,14 @@ exports[`BpkLoadingButton should render correctly with a "featured" attribute 1`
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -515,13 +531,14 @@ exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = 
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -541,12 +558,13 @@ exports[`BpkLoadingButton should render correctly with a "icon" attribute 1`] = 
     >
       <svg
         aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 01-.75.75H4.5a3 3 0 00-3 3v9a3 3 0 003 3h15a3 3 0 003-3v-9a3 3 0 00-3-3h-.75a.75.75 0 01-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zm2.625 6h-5.25C9.168 7.5 9 7.276 9 7v-.583c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5z"
+          d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5m2.625 6h-5.25C9.168 7.5 9 7.276 9 7v-.583c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5"
         />
       </svg>
     </span>
@@ -567,12 +585,13 @@ exports[`BpkLoadingButton should render correctly with a "iconDisabled" attribut
     >
       <svg
         aria-hidden="true"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 01-.75.75H4.5a3 3 0 00-3 3v9a3 3 0 003 3h15a3 3 0 003-3v-9a3 3 0 00-3-3h-.75a.75.75 0 01-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zm2.625 6h-5.25C9.168 7.5 9 7.276 9 7v-.583c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5z"
+          d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5m2.625 6h-5.25C9.168 7.5 9 7.276 9 7v-.583c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5"
         />
       </svg>
     </span>
@@ -595,12 +614,13 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
       >
         <svg
           aria-hidden="true"
-          style="width: 1rem; height: 1rem;"
+          height="1rem"
           viewBox="0 0 24 24"
+          width="1rem"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 01-.75.75H4.5a3 3 0 00-3 3v9a3 3 0 003 3h15a3 3 0 003-3v-9a3 3 0 00-3-3h-.75a.75.75 0 01-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zm2.625 6h-5.25C9.168 7.5 9 7.276 9 7v-.583c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5z"
+            d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5m2.625 6h-5.25C9.168 7.5 9 7.276 9 7v-.583c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5"
           />
         </svg>
       </span>
@@ -612,13 +632,14 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -643,13 +664,14 @@ exports[`BpkLoadingButton should render correctly with a "iconOnly" attribute 1`
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -669,13 +691,14 @@ exports[`BpkLoadingButton should render correctly with a "iconPosition=leading" 
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -697,12 +720,13 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
@@ -723,13 +747,14 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -750,13 +775,14 @@ exports[`BpkLoadingButton should render correctly with a "linkOnDark" attribute 
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -840,13 +866,14 @@ exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`]
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -867,13 +894,14 @@ exports[`BpkLoadingButton should render correctly with a "primaryOnDark" attribu
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -894,13 +922,14 @@ exports[`BpkLoadingButton should render correctly with a "primaryOnLight" attrib
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -921,13 +950,14 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -948,13 +978,14 @@ exports[`BpkLoadingButton should render correctly with a "secondaryOnDark" attri
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1rem; height: 1rem;"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
-          d="M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z"
+          d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
         />
       </svg>
     </span>
@@ -975,12 +1006,13 @@ exports[`BpkLoadingButton should respect the class names entered as a string 1`]
       <svg
         aria-hidden="true"
         class="bpk-icon--rtl-support"
-        style="width: 1.5rem; height: 1.5rem;"
+        height="1.5rem"
         viewBox="0 0 24 24"
+        width="1.5rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11.293 19.713a1 1 0 001.414 0l7-7a1 1 0 000-1.414l-7-7a1 1 0 00-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 000 2h11.586L11.293 18.3a1 1 0 000 1.414z"
+          d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         />
       </svg>
     </span>
