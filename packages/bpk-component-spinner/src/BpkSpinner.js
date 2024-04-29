@@ -47,12 +47,12 @@ const BpkSpinner = (props: Props) => {
   );
 
   return (
-    <span className={classNames}>
+    <div className={classNames}>
       <SmSpinner
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       />
-    </span>
+    </div>
   );
 };
 

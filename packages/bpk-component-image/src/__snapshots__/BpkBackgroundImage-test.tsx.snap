@@ -61,7 +61,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
       <div
         class="bpk-image__spinner"
       >
-        <span
+        <div
           class="bpk-spinner bpk-spinner--dark"
         >
           <svg
@@ -118,7 +118,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
               opacity=".35"
             />
           </svg>
-        </span>
+        </div>
       </div>
     </div>
   </div>
