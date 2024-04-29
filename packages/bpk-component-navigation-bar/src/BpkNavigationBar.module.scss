@@ -23,11 +23,17 @@
 
 .bpk-navigation-bar {
   position: relative;
-  display: flex;
+  display: grid;
   min-height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-lg();
   padding: tokens.bpk-spacing-base();
-  flex-direction: row;
-  justify-content: center;
+  grid-template-rows: auto;
+
+  // TBC how generally applicable these min sizes are when no button present
+  grid-template-columns: minmax(tokens.bpk-spacing-lg(), auto) 1fr minmax(
+      tokens.bpk-spacing-lg(),
+      auto
+    );
+  justify-content: space-between;
   align-items: center;
 
   @include utils.bpk-themeable-property(
@@ -41,6 +47,12 @@
   }
 
   &__title {
+    grid-column: 2;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
     @include utils.bpk-themeable-property(
       color,
       --bpk-navigation-bar-title-color,
@@ -54,26 +66,32 @@
 
   &__leading-item,
   &__trailing-item {
-    position: absolute;
+    // position: absolute;
 
     @include typography.bpk-label-2;
   }
 
   &__leading-item {
-    left: tokens.bpk-spacing-base();
+    grid-column: 1;
+    justify-self: start;
+
+    // left: tokens.bpk-spacing-base();
 
     @include utils.bpk-rtl {
-      right: tokens.bpk-spacing-base();
-      left: auto;
+      // right: tokens.bpk-spacing-base();
+      // left: auto;
     }
   }
 
   &__trailing-item {
-    right: tokens.bpk-spacing-base();
+    grid-column: 3;
+    justify-self: end;
+
+    // right: tokens.bpk-spacing-base();
 
     @include utils.bpk-rtl {
-      right: auto;
-      left: tokens.bpk-spacing-base();
+      // right: auto;
+      // left: tokens.bpk-spacing-base();
     }
   }
 

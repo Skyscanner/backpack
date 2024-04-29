@@ -30,6 +30,7 @@
   animation-timing-function: ease-in-out;
 }
 
+// Q: can this be removed?
 $close-button-width: tokens.bpk-spacing-lg() * 2;
 
 .bpk-bottom-sheet {
@@ -96,6 +97,13 @@ $close-button-width: tokens.bpk-spacing-lg() * 2;
     @include breakpoints.bpk-breakpoint-above-mobile {
       animation: none;
     }
+  }
+
+  &--title {
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   &--content {

@@ -165,6 +165,7 @@ const WithLogoExample = () => (
   <div className={getClassNames('bpk-navigation-bar-story')}>
     <BpkNavigationBar
       id="test"
+      // todo: this needs to justify-self centre to remain centred
       title={<AirlineLogo />}
       leadingButton={
         <BpkNavigationBarIconButton

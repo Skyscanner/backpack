@@ -87,63 +87,65 @@ const BpkBottomSheet = ({
   const dialogClassName = getClassName(
     'bpk-bottom-sheet',
     wide && 'bpk-bottom-sheet--wide'
-    );
+  );
 
-    return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
-      {(isAboveMobile: boolean) =>
+  return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
+    {(isAboveMobile: boolean) =>
       <BpkDialogWrapper
-      ariaLabelledby={ariaLabelledby}
-      dialogClassName={dialogClassName}
-      id={id}
-      isOpen={isOpen}
-      onClose={(
-        arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
-        arg1?: {
-          source: 'ESCAPE' | 'DOCUMENT_CLICK';
-        }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
-      exiting={exiting}
-      transitionClassNames={{
-        appear: getClassName('bpk-bottom-sheet--appear'),
-        appearActive: getClassName('bpk-bottom-sheet--appear-active'),
-        exit: getClassName('bpk-bottom-sheet--exit')
-      }}
-      closeOnEscPressed={closeOnEscPressed}
-      closeOnScrimClick={closeOnScrimClick}
-      timeout={{appear: animationTimeout, exit: isAboveMobile ? 0 : animationTimeout}}
+        ariaLabelledby={ariaLabelledby}
+        dialogClassName={dialogClassName}
+        id={id}
+        isOpen={isOpen}
+        onClose={(
+          arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
+          arg1?: {
+            source: 'ESCAPE' | 'DOCUMENT_CLICK';
+          }) => handleClose(isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
+        exiting={exiting}
+        transitionClassNames={{
+          appear: getClassName('bpk-bottom-sheet--appear'),
+          appearActive: getClassName('bpk-bottom-sheet--appear-active'),
+          exit: getClassName('bpk-bottom-sheet--exit')
+        }}
+        closeOnEscPressed={closeOnEscPressed}
+        closeOnScrimClick={closeOnScrimClick}
+        timeout={{ appear: animationTimeout, exit: isAboveMobile ? 0 : animationTimeout }}
       >
-      <>
-        <header className={getClassName('bpk-bottom-sheet--header')}>
-          <BpkNavigationBar
-            id={headingId}
-            title={title &&
-              <BpkText id={headingId} textStyle={TEXT_STYLES.label1} tagName="h2">{title}</BpkText>
-            }
-            leadingButton={
-              <BpkCloseButton
-                label={closeLabel}
-                onClick={(
-                  arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
-                  arg1?: {
-                    source: 'ESCAPE' | 'DOCUMENT_CLICK';
-                  }) => handleClose( isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
-              />
-            }
-            trailingButton={
-              actionText && onAction ? (
-                <BpkButtonLink
-                  onClick={onAction}
-                >
-                  {actionText}
-                </BpkButtonLink>
-              ) :
-              null
-            }
-          />
-        </header>
-        <div className={getClassName('bpk-bottom-sheet--content')}>{children}</div>
-    </>
-    </BpkDialogWrapper>
-  }
+        <>
+          <header className={getClassName('bpk-bottom-sheet--header')}>
+            <BpkNavigationBar
+              id={headingId}
+              title={title &&
+                // TBC if do avoid adding class here are we able to clamp the text?
+                // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+                <BpkText className={getClassName('bpk-bottom-sheet--title')} id={headingId} textStyle={TEXT_STYLES.label1} tagName="h2">{title}</BpkText>
+              }
+              leadingButton={
+                <BpkCloseButton
+                  label={closeLabel}
+                  onClick={(
+                    arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
+                    arg1?: {
+                      source: 'ESCAPE' | 'DOCUMENT_CLICK';
+                    }) => handleClose(isAboveMobile ? 0 : animationTimeout, arg0, arg1)}
+                />
+              }
+              trailingButton={
+                actionText && onAction ? (
+                  <BpkButtonLink
+                    onClick={onAction}
+                  >
+                    {actionText}
+                  </BpkButtonLink>
+                ) :
+                  null
+              }
+            />
+          </header>
+          <div className={getClassName('bpk-bottom-sheet--content')}>{children}</div>
+        </>
+      </BpkDialogWrapper>
+    }
   </BpkBreakpoint>
 }
 
