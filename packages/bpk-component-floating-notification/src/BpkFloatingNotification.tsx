@@ -102,20 +102,14 @@ const BpkFloatingNotification = (props: Props) => {
         <BpkText
           tagName="p"
           textStyle={TEXT_STYLES.bodyDefault}
-          // TODO: className to be removed
-          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={getClassName('bpk-floating-notification__text')}
         >
-          {text}
+          <span className={getClassName('bpk-floating-notification__text')}>{text}</span>
         </BpkText>
         <BpkAriaLive aria-hidden>{text}</BpkAriaLive>
         {ctaText && (
           <BpkButtonV2
             type={BUTTON_TYPES.linkOnDark}
             onClick={onClick}
-            // TODO: className to be removed
-            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            className={getClassName('bpk-floating-notification__button')}
           >
             {ctaText}
           </BpkButtonV2>
