@@ -115,11 +115,9 @@ const BpkBottomSheet = ({
           <header className={getClassName('bpk-bottom-sheet--header')}>
             <BpkNavigationBar
               id={headingId}
-              title={title &&
-                // TBC if do avoid adding class here are we able to clamp the text?
-                // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-                <BpkText className={getClassName('bpk-bottom-sheet--title')} id={headingId} textStyle={TEXT_STYLES.label1} tagName="h2">{title}</BpkText>
-              }
+              title={title}
+              titleTextStyle={TEXT_STYLES.label1}
+              titleTagName="h2"
               leadingButton={
                 <BpkCloseButton
                   label={closeLabel}
@@ -132,11 +130,13 @@ const BpkBottomSheet = ({
               }
               trailingButton={
                 actionText && onAction ? (
-                  <BpkButtonLink
-                    onClick={onAction}
-                  >
-                    {actionText}
-                  </BpkButtonLink>
+                  <div className={getClassName('bpk-bottom-sheet--action')}>
+                    <BpkButtonLink
+                      onClick={onAction}
+                    >
+                      {actionText}
+                    </BpkButtonLink>
+                  </div>
                 ) :
                   null
               }

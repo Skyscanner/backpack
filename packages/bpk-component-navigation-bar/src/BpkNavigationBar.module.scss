@@ -27,10 +27,8 @@
   min-height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-lg();
   padding: tokens.bpk-spacing-base();
   grid-template-rows: auto;
-
-  // TBC how generally applicable these min sizes are when no button present
-  grid-template-columns: minmax(tokens.bpk-spacing-lg(), auto) 1fr minmax(
-      tokens.bpk-spacing-lg(),
+  grid-template-columns: minmax(tokens.bpk-spacing-xxl(), auto) 1fr minmax(
+      tokens.bpk-spacing-xxl(),
       auto
     );
   justify-content: space-between;
@@ -59,40 +57,32 @@
       tokens.$bpk-text-primary-day
     );
 
+    :first-child {
+      display: inline;
+    }
+
     &--on-dark {
       color: tokens.$bpk-text-primary-inverse-day;
     }
   }
 
+  &__title-container {
+    justify-self: center;
+  }
+
   &__leading-item,
   &__trailing-item {
-    // position: absolute;
-
     @include typography.bpk-label-2;
   }
 
   &__leading-item {
     grid-column: 1;
     justify-self: start;
-
-    // left: tokens.bpk-spacing-base();
-
-    @include utils.bpk-rtl {
-      // right: tokens.bpk-spacing-base();
-      // left: auto;
-    }
   }
 
   &__trailing-item {
     grid-column: 3;
     justify-self: end;
-
-    // right: tokens.bpk-spacing-base();
-
-    @include utils.bpk-rtl {
-      // right: auto;
-      // left: tokens.bpk-spacing-base();
-    }
   }
 
   &__sticky {

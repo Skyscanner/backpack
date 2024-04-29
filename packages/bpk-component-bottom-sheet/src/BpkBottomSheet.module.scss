@@ -99,11 +99,8 @@ $close-button-width: tokens.bpk-spacing-lg() * 2;
     }
   }
 
-  &--title {
-    text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  &--action {
+    padding-inline-start: tokens.bpk-spacing-lg();
   }
 
   &--content {
