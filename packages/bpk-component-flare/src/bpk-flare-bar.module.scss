@@ -28,7 +28,6 @@
     // https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     // By using `display: flex` we ensure that this container is the nearest block container
     display: flex;
-    min-width: 10rem;
     height: tokens.$bpk-flare-height-desktop;
     overflow: hidden;
 
