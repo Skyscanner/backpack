@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-
 import BpkNavigationBar from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBar';
 import BpkNavigationBarButtonLink from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarButtonLink';
 import BpkNavigationBarIconButton from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarIconButton';
 
 import {
   DefaultExample,
+  LongTitleTextExample,
   LeadingIconOnlyExample,
   TrailingIconOnlyExample,
   WithLinksExample,
@@ -43,6 +43,7 @@ export default {
 };
 
 export const Default = DefaultExample;
+export const LongTitleText = LongTitleTextExample;
 export const OnDark = OnDarkExample;
 export const LeadingIconOnly = LeadingIconOnlyExample;
 
@@ -57,5 +58,5 @@ export const Sticky = StickyExample;
 export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };
