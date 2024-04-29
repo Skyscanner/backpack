@@ -2,7 +2,7 @@
 
 exports[`BpkSpinner should render correctly 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="bpk-spinner bpk-spinner--dark"
   >
     <svg
@@ -59,13 +59,13 @@ exports[`BpkSpinner should render correctly 1`] = `
         opacity=".35"
       />
     </svg>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkSpinner should render correctly with a "alignToButton" attribute 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="bpk-spinner bpk-spinner--dark bpk-spinner--align-to-button"
   >
     <svg
@@ -122,13 +122,13 @@ exports[`BpkSpinner should render correctly with a "alignToButton" attribute 1`]
         opacity=".35"
       />
     </svg>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkSpinner should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="bpk-spinner bpk-spinner--dark my-custom-class"
   >
     <svg
@@ -185,13 +185,13 @@ exports[`BpkSpinner should render correctly with a "className" attribute 1`] = `
         opacity=".35"
       />
     </svg>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkSpinner should render correctly with type as light 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="bpk-spinner bpk-spinner--light"
   >
     <svg
@@ -248,13 +248,13 @@ exports[`BpkSpinner should render correctly with type as light 1`] = `
         opacity=".35"
       />
     </svg>
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkSpinner should render correctly with type as primary 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="bpk-spinner bpk-spinner--primary"
   >
     <svg
@@ -311,6 +311,6 @@ exports[`BpkSpinner should render correctly with type as primary 1`] = `
         opacity=".35"
       />
     </svg>
-  </div>
+  </span>
 </DocumentFragment>
 `;

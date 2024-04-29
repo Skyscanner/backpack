@@ -224,7 +224,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "loading" att
     <span
       class="bpk-loading-button__icon bpk-loading-button__icon--large"
     >
-      <div
+      <span
         class="bpk-spinner bpk-spinner--large bpk-spinner--dark bpk-spinner--align-to-large-button"
       >
         <svg
@@ -294,7 +294,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "loading" att
             opacity=".55"
           />
         </svg>
-      </div>
+      </span>
     </span>
     My button 
     <span
@@ -774,7 +774,7 @@ exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`]
     <span
       class="bpk-loading-button__icon"
     >
-      <div
+      <span
         class="bpk-spinner bpk-spinner--dark bpk-spinner--align-to-button"
       >
         <svg
@@ -831,7 +831,7 @@ exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`]
             opacity=".35"
           />
         </svg>
-      </div>
+      </span>
     </span>
     My button 
     <span

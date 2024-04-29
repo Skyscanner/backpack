@@ -45,12 +45,12 @@ const BpkExtraLargeSpinner = (props: Props) => {
   );
 
   return (
-    <div className={classNames}>
+    <span className={classNames}>
       <XlSpinner
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       />
-    </div>
+    </span>
   );
 };
 
