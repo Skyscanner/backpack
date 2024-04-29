@@ -184,18 +184,18 @@ const OverflowingExample = () => (
   </BottomSheetContainer>
 );
 
-const WrapHeaderTextExample = () => (
+const LongHeaderTextExample = () => (
   <BottomSheetContainer
-    title="Long Bottom Sheet title which wraps"
+    title="Bottom Sheet title which is long"
     closeLabel="Close Bottom Sheet"
   >
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
 
-const WrapHeaderTextWithActionButtonExample = () => (
+const LongHeaderTextWithActionButtonExample = () => (
   <BottomSheetContainer
-    title="Long Bottom Sheet title which wraps"
+    title="Bottom Sheet title which is long"
     closeLabel="Close Bottom Sheet"
     actionText="Action"
     onAction={action('Action clicked')}
@@ -294,8 +294,8 @@ export {
   BackdropClickCloseExample,
   EscapeCloseExample,
   OverflowingExample,
-  WrapHeaderTextExample,
-  WrapHeaderTextWithActionButtonExample,
+  LongHeaderTextExample,
+  LongHeaderTextWithActionButtonExample,
   NoHeaderExample,
   NoHeaderWithActionButtonExample,
   ActionButtonExample,

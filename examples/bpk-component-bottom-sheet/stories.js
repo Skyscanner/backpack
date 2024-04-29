@@ -23,8 +23,8 @@ import {
   BackdropClickCloseExample,
   EscapeCloseExample,
   OverflowingExample,
-  WrapHeaderTextExample,
-  WrapHeaderTextWithActionButtonExample,
+  LongHeaderTextExample,
+  LongHeaderTextWithActionButtonExample,
   NoHeaderExample,
   NoHeaderWithActionButtonExample,
   ActionButtonExample,
@@ -43,9 +43,9 @@ export const BackdropClickClose = BackdropClickCloseExample;
 export const EscapeClose = EscapeCloseExample;
 export const Overflowing = OverflowingExample;
 
-export const WrapHeaderText = WrapHeaderTextExample;
-export const WrapHeaderTextWithActionButton =
-  WrapHeaderTextWithActionButtonExample;
+export const LongHeaderText = LongHeaderTextExample;
+export const LongHeaderTextWithActionButton =
+  LongHeaderTextWithActionButtonExample;
 
 export const NoHeader = NoHeaderExample;
 export const NoHeaderWithActionButton = NoHeaderWithActionButtonExample;

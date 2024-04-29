@@ -30,9 +30,6 @@
   animation-timing-function: ease-in-out;
 }
 
-// Q: can this be removed?
-$close-button-width: tokens.bpk-spacing-lg() * 2;
-
 .bpk-bottom-sheet {
   z-index: tokens.$bpk-zindex-modal;
   width: 100%;
@@ -97,10 +94,6 @@ $close-button-width: tokens.bpk-spacing-lg() * 2;
     @include breakpoints.bpk-breakpoint-above-mobile {
       animation: none;
     }
-  }
-
-  &--action {
-    padding-inline-start: tokens.bpk-spacing-lg();
   }
 
   &--content {

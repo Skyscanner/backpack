@@ -25,14 +25,17 @@
   position: relative;
   display: grid;
   min-height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-lg();
-  padding: tokens.bpk-spacing-base();
+  padding: tokens.bpk-spacing-lg();
   grid-template-rows: auto;
-  grid-template-columns: minmax(tokens.bpk-spacing-xxl(), auto) 1fr minmax(
-      tokens.bpk-spacing-xxl(),
-      auto
-    );
+
+  // 3 columns allowing for buttons at either side and a title then taking the available space in between
+  // min sizes to preserve margins when buttons omitted and ensure some text still shown under extreme zoom
+  grid-template-columns:
+    minmax(tokens.bpk-spacing-lg(), auto) minmax(tokens.bpk-spacing-base(), 1fr)
+    minmax(tokens.bpk-spacing-lg(), auto);
   justify-content: space-between;
   align-items: center;
+  gap: tokens.bpk-spacing-base();
 
   @include utils.bpk-themeable-property(
     background-color,
@@ -57,6 +60,7 @@
       tokens.$bpk-text-primary-day
     );
 
+    // ensure we still apply ellipsis overflow when a custom title element is specified e.g. h2
     :first-child {
       display: inline;
     }

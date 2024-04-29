@@ -130,13 +130,11 @@ const BpkBottomSheet = ({
               }
               trailingButton={
                 actionText && onAction ? (
-                  <div className={getClassName('bpk-bottom-sheet--action')}>
-                    <BpkButtonLink
-                      onClick={onAction}
-                    >
-                      {actionText}
-                    </BpkButtonLink>
-                  </div>
+                  <BpkButtonLink
+                    onClick={onAction}
+                  >
+                    {actionText}
+                  </BpkButtonLink>
                 ) :
                   null
               }
