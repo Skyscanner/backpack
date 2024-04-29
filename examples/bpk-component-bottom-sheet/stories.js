@@ -23,12 +23,14 @@ import {
   BackdropClickCloseExample,
   EscapeCloseExample,
   OverflowingExample,
+  WrapHeaderTextExample,
+  WrapHeaderTextWithActionButtonExample,
   NoHeaderExample,
   NoHeaderWithActionButtonExample,
   ActionButtonExample,
   WideExample,
   NestedExample,
-  MultipleBottomSheetsExample
+  MultipleBottomSheetsExample,
 } from './examples';
 
 export default {
@@ -40,6 +42,10 @@ export const Default = DefaultExample;
 export const BackdropClickClose = BackdropClickCloseExample;
 export const EscapeClose = EscapeCloseExample;
 export const Overflowing = OverflowingExample;
+
+export const WrapHeaderText = WrapHeaderTextExample;
+export const WrapHeaderTextWithActionButton =
+  WrapHeaderTextWithActionButtonExample;
 
 export const NoHeader = NoHeaderExample;
 export const NoHeaderWithActionButton = NoHeaderWithActionButtonExample;
