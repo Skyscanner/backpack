@@ -18,7 +18,6 @@
 
 import { render } from '@testing-library/react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 jest.mock('../../bpk-react-utils', () => {
