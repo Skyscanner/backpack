@@ -18,15 +18,19 @@
 /* @flow strict */
 
 import { Component } from 'react';
-import type { ReactElement } from 'react';
+import type { ChangeEvent, ReactElement } from 'react';
 
 import BpkAriaLive, {
   ARIA_LIVE_POLITENESS_SETTINGS,
 } from '../../packages/bpk-component-aria-live';
 import BpkChip from '../../packages/bpk-component-chip';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkCode } from '../../packages/bpk-component-code';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkFieldset from '../../packages/bpk-component-fieldset';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../packages/bpk-component-select';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSwitch from '../../packages/bpk-component-switch';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -38,8 +42,8 @@ type Props = {
   preamble?: ReactElement | null;
   children: ReactElement;
   className?: string | null;
-  style?: {} | null;
-  visible: Boolean;
+  style?: {};
+  visible?: Boolean;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
@@ -47,7 +51,7 @@ const AriaLiveDemo = ({
   children,
   className = null,
   preamble = null,
-  style = null,
+  style = undefined,
   visible = false,
   ...rest
 }: Props) => (
@@ -74,12 +78,12 @@ const AriaLiveDemo = ({
   </div>
 );
 
-class SelectExample extends Component<
-  {},
+class SelectExample<SProps extends {}> extends Component<
+SProps,
   { destination: string; direct: boolean }
 > {
-  constructor() {
-    super();
+  constructor(props: SProps) {
+    super(props);
     this.state = {
       destination: 'Panjin',
       direct: false,
@@ -119,8 +123,8 @@ class SelectExample extends Component<
                 id="destination"
                 name="destination"
                 value={destination}
-                onChange={(event) => {
-                  this.onChangeDestination(event.target.value);
+                onChange={(event: ChangeEvent<HTMLSelectElement>) => {
+                  this.onChangeDestination(event?.target?.value);
                 }}
               >
                 <option value="Abisko">Abisko</option>
@@ -162,15 +166,15 @@ class SelectExample extends Component<
   }
 }
 
-class ChipsExample extends Component<
-  {},
+class ChipsExample<CProps extends {}> extends Component<
+  CProps,
   {
     categories: { Flights: boolean; Hotels: boolean; 'Car hire': boolean };
     updates: string[];
   }
 > {
-  constructor() {
-    super();
+  constructor(props: CProps) {
+    super(props);
     this.state = {
       categories: {
         Flights: true,
@@ -183,7 +187,7 @@ class ChipsExample extends Component<
 
   id = 'aria-live-chips-example';
 
-  toggleCategory = (category: string) => {
+  toggleCategory = (category: "Flights" | "Hotels" | "Car hire") => {
     this.setState((prevState) => {
       const nextState = prevState;
       nextState.categories[category] = !prevState.categories[category];
@@ -210,7 +214,7 @@ class ChipsExample extends Component<
             <BpkCode>aria-controls=&quot;{this.id}&quot;</BpkCode> to link it to
             the ARIA live region below with the same ID.
           </p>
-          {Object.keys(categories).map((category) => (
+          {(Object.keys(categories) as Array<keyof typeof categories>).map((category) => (
             <BpkChip
               className={getClassName('bpk-storybook-aria-live-demo__chip')}
               aria-controls={this.id}
@@ -235,11 +239,13 @@ class ChipsExample extends Component<
             </p>
           }
         >
-          {updates.map((update) => (
-            <p>
-              <strong>{update}</strong>
-            </p>
-          ))}
+          <>
+            {updates.map((update) => (
+              <p>
+                <strong>{update}</strong>
+              </p>
+            ))}
+          </>
         </AriaLiveDemo>
       </div>
     );
