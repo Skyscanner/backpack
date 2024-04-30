@@ -46,7 +46,7 @@ export const WithForegroundContent = WithForegroundContentExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
-  ...VisualTest,
+  render: VisualTest,
   args: {
     zoomEnabled: true
   }

@@ -49,6 +49,6 @@ export const WithColumnArray = WithColumnArrayExample;
 export const VisualTest = AutowidthExample;
 
 export const VisualTestWithZoom = {
-  ...VisualTest,
+  render: VisualTest,
   args: {zoomEnabled: true}
 }

@@ -48,7 +48,7 @@ export const AllDismissibleTypes = AllDismissibleChipsExample;
 export const RadioGroup = RadioGroupChipsExample;
 export const VisualTest = AllTypesExample;
 export const VisualTestWithZoom = {
-  ...VisualTest,
+  render: VisualTest,
   args: {
     zoomEnabled: true
   }

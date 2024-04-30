@@ -46,7 +46,7 @@ export const SmallOnDark = SmallOnDarkExample;
 export const SmallChecked = SmallCheckedExample;
 export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = {
-  ...VisualTest,
+  render: VisualTest,
   args: {
     zoomEnabled: true
   }
