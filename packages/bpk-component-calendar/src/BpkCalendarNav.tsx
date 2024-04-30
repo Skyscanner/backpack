@@ -196,7 +196,7 @@ const BpkCalendarNav = ({
               // eslint-disable-next-line @skyscanner/rules/forbid-component-props
               className={getClassName('bpk-calendar-nav__icon')}
               fill={
-                disabled || !isWithinRange(prevMonth, { start: min, end: max })
+                disabled || !isWithinRange(addMonths(baseMonth, 1), { start: min, end: max })
                 ? textColors.textDisabledDay
                 : 'currentcolor'
               }
