@@ -73,14 +73,6 @@ const FlareBarExample = () => (
   />
 );
 
-const FlareBarRoundedExample = () => (
-  <BpkFlareBar
-    className={getClassName('bpk-flare-stories__flare-bar')}
-    rounded
-    svgClassName={getClassName('bpk-flare-stories__flare-bar--svg')}
-  />
-);
-
 const ContentBubbleFullWithImageExample = () => (
   <BpkContentBubble
     className={getClassName(
@@ -104,6 +96,19 @@ const ContentBubbleFullWithContentExample = () => (
   />
 );
 
+const ContentBubbleRoundedExample = () => (
+  <div className={getClassName('bpk-flare-stories__container')}>
+    <BpkContentBubble
+    className={getClassName(
+      'bpk-flare-stories__content-bubble',
+    )}
+    rounded
+    flareProps={{svgClassName: getClassName('bpk-flare-stories__flare-bar--svg')}}
+    content={content}
+  />
+</div>
+);
+
 const ContentBubbleStandaloneExample = () => (
   <BpkContentBubble
     className={getClassName('bpk-flare-stories__content-bubble')}
@@ -124,7 +129,7 @@ const ContentBubbleFixedHeightExample = () => (
   />
 );
 
-const ContentBubblePointerHiddenExample = () => (
+const ContentBubblePointerHiddenRoundedExample = () => (
   <BpkContentBubble
     className={getClassName(
       'bpk-flare-stories__content-bubble',
@@ -133,7 +138,7 @@ const ContentBubblePointerHiddenExample = () => (
       'bpk-flare-stories__content-bubble--fixed-height',
     )}
     style={{ height: '45rem' }}
-    rounded={false}
+    rounded
     showPointer={false}
     content={contentShort}
   />
@@ -141,7 +146,7 @@ const ContentBubblePointerHiddenExample = () => (
 
 const MixedExample = () => (
   <div>
-    <ContentBubbleStandaloneExample />
+    <ContentBubbleRoundedExample />
     <ContentBubbleFixedHeightExample />
     <ContentBubbleFullWithContentExample />
   </div>
@@ -149,11 +154,11 @@ const MixedExample = () => (
 
 export {
   FlareBarExample,
-  FlareBarRoundedExample,
   ContentBubbleFullWithImageExample,
   ContentBubbleFullWithContentExample,
+  ContentBubbleRoundedExample,
   ContentBubbleStandaloneExample,
   ContentBubbleFixedHeightExample,
-  ContentBubblePointerHiddenExample,
+  ContentBubblePointerHiddenRoundedExample,
   MixedExample,
 };
