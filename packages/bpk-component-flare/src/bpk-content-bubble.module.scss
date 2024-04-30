@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+@use '../../unstable__bpk-mixins/breakpoints';
 @use '../../unstable__bpk-mixins/tokens';
 
 .bpk-content-bubble {
@@ -45,6 +46,7 @@
   }
 
   &__container {
+    position: relative;
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -59,5 +61,26 @@
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
+  }
+
+  &__rounded-corner {
+    position: absolute;
+    // stylelint-disable-next-line unit-disallowed-list
+    bottom: calc(tokens.$bpk-flare-height-desktop - 2px);
+    left: 0;
+    width: tokens.$bpk-flare-corner-radius;
+    height: tokens.$bpk-flare-corner-radius;
+    fill: tokens.$bpk-surface-default-day;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      // stylelint-disable-next-line unit-disallowed-list
+      bottom: calc(tokens.$bpk-flare-height-mobile - 1px);
+    }
+
+    &--trailing {
+      right: 0;
+      left: auto;
+      transform: rotate(270deg);
+    }
   }
 }
