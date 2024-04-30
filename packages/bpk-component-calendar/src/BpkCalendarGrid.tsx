@@ -22,7 +22,7 @@ import { Component } from 'react';
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
-import Week from './Week';
+import BpkCalendarWeek from './BpkCalendarWeek';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import {
   addMonths,
@@ -41,9 +41,6 @@ import STYLES from './BpkCalendarGrid.module.scss';
 
 // This is because the calendar with transiction is expected to have a fixed width and whenever `bpk-calendar-grid-transition__grid`
 // class is applyed it should override the calendar style.
-
-// NOTE that ./Week is also importing ./BpkCalendarGrid.module.scss so adding this after `./Week` would also do the job but
-// for clarity we should leave it here.
 
 const getClassName = cssModules(STYLES);
 
@@ -167,7 +164,7 @@ class BpkCalendarGrid extends Component<Props, State> {
       <div className={classNames} aria-hidden={!isKeyboardFocusable}>
         <div>
           {calendarMonthWeeks.map((dates) => (
-            <Week
+            <BpkCalendarWeek
               key={formatIsoDate(dates[0])}
               month={month}
               dates={dates}
