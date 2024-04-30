@@ -19,7 +19,6 @@
 import { useEffect, useState } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { breakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import useMediaQuery from './useMediaQuery';
@@ -63,6 +62,7 @@ const BpkBreakpoint = ({
   }, []);
   const matches = useMediaQuery(query, matchSSR);
   if (isClient) {
+    // @ts-expect-error invariant check. query: string matching limited BREAKPOINTS string values
     if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
       console.warn(
         `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,

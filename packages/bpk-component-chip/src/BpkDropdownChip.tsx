@@ -21,7 +21,6 @@ The dropdown chip component is just a selectable chip component
 with a trailing accessory view of a chevron down icon.
 */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDownIconSm from '../../bpk-component-icon/sm/chevron-down';
 
 import BpkSelectableChip from './BpkSelectableChip';
