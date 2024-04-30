@@ -87,9 +87,7 @@ const BpkContentBubble = (props) => {
           {/* These rounded svgs are required as the container background extends into the flare meaning that when we "round" the container the rounded bottom corners are hidden by the flare. */}
           {rounded && showPointer && (
           <CornerRadius className={leftCornerRadiusClassNames.join(' ')} />
-          )}
-          {rounded && showPointer && (
-            <CornerRadius className={rightCornerRadiusClassNames.join(' ')} />
+          <CornerRadius className={rightCornerRadiusClassNames.join(' ')} />
           )}
         </div>
         {showPointer && (
