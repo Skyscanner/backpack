@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { Component } from 'react';
 import type { ChangeEvent, ReactElement } from 'react';
