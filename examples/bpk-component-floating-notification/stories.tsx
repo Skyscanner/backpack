@@ -39,7 +39,10 @@ export const WithCta = CtaExample;
 export const WithCtaIconAndLongText = CtaIconLongTextExample;
 
 export const VisualTest = VisualTestExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+
+export const VisualTestWithZoom = {
+  ...VisualTest,
+  args: {
+    zoomEnabled: true
+  }
 };

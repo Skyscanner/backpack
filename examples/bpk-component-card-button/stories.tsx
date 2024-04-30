@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import BpkSaveButton from '../../packages/bpk-component-card-button/src/BpkSaveButton';
 
 import {
@@ -46,7 +45,9 @@ export const SmallContained = SmallContainedExample;
 export const SmallOnDark = SmallOnDarkExample;
 export const SmallChecked = SmallCheckedExample;
 export const VisualTest = VisualTestExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+export const VisualTestWithZoom = {
+  ...VisualTest,
+  args: {
+    zoomEnabled: true
+  }
+}

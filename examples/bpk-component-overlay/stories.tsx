@@ -27,6 +27,7 @@ import {
   VignetteExample,
   WithForegroundContentExample,
   MixedExample,
+  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from './examples';
 
 export default {
@@ -44,7 +45,9 @@ export const Vignette = VignetteExample;
 export const WithForegroundContent = WithForegroundContentExample;
 
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+export const VisualTestWithZoom = {
+  ...VisualTest,
+  args: {
+    zoomEnabled: true
+  }
+}

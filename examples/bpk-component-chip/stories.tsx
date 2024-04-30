@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkDismissibleChip from '../../packages/bpk-component-chip/src/BpkDismissibleChip';
 import BpkDropdownChip from '../../packages/bpk-component-chip/src/BpkDropdownChip';
 import BpkIconChip from '../../packages/bpk-component-chip/src/BpkIconChip';
@@ -48,7 +47,9 @@ export const AllDropdownTypes = AllDropdownChipsExample;
 export const AllDismissibleTypes = AllDismissibleChipsExample;
 export const RadioGroup = RadioGroupChipsExample;
 export const VisualTest = AllTypesExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+export const VisualTestWithZoom = {
+  ...VisualTest,
+  args: {
+    zoomEnabled: true
+  }
+}

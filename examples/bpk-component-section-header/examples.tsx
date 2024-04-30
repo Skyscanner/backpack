@@ -18,6 +18,7 @@
 
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import { withButtonAlignment } from '../../packages/bpk-component-icon/index';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import BpkSectionHeader, {
   SECTION_TYPES,
