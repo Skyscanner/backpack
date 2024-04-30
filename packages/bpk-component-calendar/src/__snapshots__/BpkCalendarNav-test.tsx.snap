@@ -177,7 +177,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            fill="rgba(0, 0, 0, 0.2)"
+            fill="currentcolor"
             style="width: 1.5rem; height: 1.5rem;"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
