@@ -8,11 +8,11 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
   >
     <div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -31,7 +31,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -50,7 +50,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -69,7 +69,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -88,7 +88,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -107,7 +107,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -126,7 +126,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -145,11 +145,11 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -168,7 +168,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -187,7 +187,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -206,7 +206,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -225,7 +225,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -244,7 +244,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -263,7 +263,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -282,11 +282,11 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -305,7 +305,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -324,7 +324,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -343,7 +343,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -362,7 +362,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -381,7 +381,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -400,7 +400,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -419,11 +419,11 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -442,7 +442,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -461,7 +461,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -480,7 +480,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -499,7 +499,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -518,7 +518,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -537,7 +537,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -556,11 +556,11 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -579,7 +579,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -598,7 +598,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -617,7 +617,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -636,7 +636,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -655,7 +655,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -674,7 +674,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -693,11 +693,11 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -716,7 +716,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -735,7 +735,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -754,7 +754,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -773,7 +773,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -792,7 +792,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -811,7 +811,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -842,11 +842,11 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
   >
     <div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -865,7 +865,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -884,7 +884,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -903,7 +903,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -922,7 +922,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -941,7 +941,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -960,7 +960,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -979,11 +979,11 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1002,7 +1002,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1021,7 +1021,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1040,7 +1040,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1059,7 +1059,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1078,7 +1078,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1097,7 +1097,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1116,11 +1116,11 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1139,7 +1139,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1158,7 +1158,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1177,7 +1177,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1196,7 +1196,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1215,7 +1215,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1234,7 +1234,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1253,11 +1253,11 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1276,7 +1276,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1295,7 +1295,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1314,7 +1314,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1333,7 +1333,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1352,7 +1352,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1371,7 +1371,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1390,11 +1390,11 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1413,7 +1413,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1432,7 +1432,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1451,7 +1451,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1470,7 +1470,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1489,7 +1489,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1508,7 +1508,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1527,11 +1527,11 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1550,7 +1550,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1569,7 +1569,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1588,7 +1588,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1607,7 +1607,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1626,7 +1626,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1645,7 +1645,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -1676,11 +1676,11 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
   >
     <div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1688,7 +1688,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1696,7 +1696,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1704,7 +1704,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1712,7 +1712,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1720,7 +1720,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1728,7 +1728,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1736,11 +1736,11 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1748,7 +1748,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1756,7 +1756,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1764,7 +1764,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1772,7 +1772,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1780,7 +1780,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1788,7 +1788,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1796,11 +1796,11 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1808,7 +1808,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1816,7 +1816,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1824,7 +1824,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1832,7 +1832,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1840,7 +1840,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1848,7 +1848,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1856,11 +1856,11 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1868,7 +1868,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1876,7 +1876,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1884,7 +1884,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1892,7 +1892,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1900,7 +1900,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1908,7 +1908,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1916,11 +1916,11 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1928,7 +1928,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1936,7 +1936,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1944,7 +1944,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1952,7 +1952,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1960,7 +1960,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1968,7 +1968,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1976,11 +1976,11 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1988,7 +1988,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -1996,7 +1996,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -2004,7 +2004,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -2012,7 +2012,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(209, 67, 91); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -2020,7 +2020,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -2028,7 +2028,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <div
             style="background-color: rgb(0, 166, 152); width: 50%; height: 50%; border-radius: 5rem; margin: 25%;"
@@ -2048,11 +2048,11 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
   >
     <div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2071,7 +2071,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2090,7 +2090,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2109,7 +2109,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2128,7 +2128,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2147,7 +2147,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2166,7 +2166,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2185,11 +2185,11 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2208,7 +2208,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2227,7 +2227,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2246,7 +2246,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2265,7 +2265,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2284,7 +2284,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2303,7 +2303,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2322,11 +2322,11 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2345,7 +2345,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2364,7 +2364,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2383,7 +2383,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2402,7 +2402,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2421,7 +2421,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2440,7 +2440,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2459,11 +2459,11 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2482,7 +2482,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2501,7 +2501,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2520,7 +2520,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2539,7 +2539,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2558,7 +2558,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2577,7 +2577,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2596,11 +2596,11 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2619,7 +2619,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2638,7 +2638,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2657,7 +2657,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2676,7 +2676,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2695,7 +2695,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2714,7 +2714,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2733,11 +2733,11 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
       </div>
       <div
-        class="bpk-calendar-grid__week"
+        class="bpk-calendar-week"
       >
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2756,7 +2756,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2775,7 +2775,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2794,7 +2794,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2813,7 +2813,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2832,7 +2832,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
@@ -2851,7 +2851,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </div>
         <div
           aria-hidden="false"
-          class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+          class="bpk-calendar-week__date bpk-calendar-week__date--none"
         >
           <button
             aria-hidden="false"
