@@ -19,13 +19,8 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkFloatingNotification from './BpkFloatingNotification';
-
-import STYLES from './BpkFloatingNotification.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const props = {
   text: 'Saved',

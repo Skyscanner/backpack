@@ -21,9 +21,7 @@ import { cloneElement, useState } from 'react';
 
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
 
 type Props = {
