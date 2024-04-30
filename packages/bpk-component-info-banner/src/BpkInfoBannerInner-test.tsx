@@ -18,7 +18,6 @@
 
 import { render } from '@testing-library/react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CurrencyIcon from '../../bpk-component-icon/sm/currency';
 
 import BpkInfoBannerInner, { CONFIGURATION } from './BpkInfoBannerInner';

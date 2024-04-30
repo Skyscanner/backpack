@@ -18,9 +18,7 @@
 
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import MinusIcon from '../../bpk-component-icon/sm/minus';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import PlusIcon from '../../bpk-component-icon/sm/plus';
 import { cssModules } from '../../bpk-react-utils';
 
