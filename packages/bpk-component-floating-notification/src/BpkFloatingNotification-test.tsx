@@ -72,10 +72,9 @@ describe('BpkFloatingNotification', () => {
       <BpkFloatingNotification ctaText="View" onClick={onClick} {...props} />,
     );
 
-    const cta = document.getElementsByClassName(
-      getClassName('bpk-floating-notification__button'),
-    )[0];
-    fireEvent.click(cta);
+    const cta = document.getElementsByTagName("button").item(0);
+    expect(cta).toBeDefined();
+    fireEvent.click(cta as HTMLButtonElement);
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
