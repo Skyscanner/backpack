@@ -66,14 +66,6 @@
     }
   }
 
-  &__button {
-    min-height: 0;
-    padding: 0;
-    color: tokens.$bpk-text-on-dark-day;
-    margin-inline-start: auto;
-    word-break: keep-all;
-  }
-
   &__icon {
     margin-right: tokens.bpk-spacing-md();
     margin-left: tokens.bpk-spacing-sm();
