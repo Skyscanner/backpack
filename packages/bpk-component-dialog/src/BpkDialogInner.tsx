@@ -30,6 +30,7 @@ const getClassName = cssModules(STYLES);
 const BpkDialogInner = (props: Props) => {
   const {
     ariaLabel,
+    ariaModal = false,
     children,
     className = null,
     contentClassName,
@@ -60,10 +61,11 @@ const BpkDialogInner = (props: Props) => {
         tabIndex={-1}
         role="dialog"
         aria-label={ariaLabel}
+        aria-modal={ariaModal}
         className={classNames}
         ref={dialogRef}
       >
-        {flare && <BpkContentBubble 
+        {flare && <BpkContentBubble
         // TODO: className to be removed
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={flareClassNames} />}
