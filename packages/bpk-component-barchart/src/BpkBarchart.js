@@ -73,6 +73,7 @@ type Props = {
   yAxisLabel: string,
   initialWidth: number,
   initialHeight: number,
+  className: ?string,
   leadingScrollIndicatorClassName: ?string,
   trailingScrollIndicatorClassName: ?string,
   outlierPercentage: ?number,
@@ -109,6 +110,7 @@ class BpkBarchart extends Component<Props, State> {
   svgEl: ?Element;
 
   static defaultProps = {
+    className: null,
     leadingScrollIndicatorClassName: null,
     trailingScrollIndicatorClassName: null,
     outlierPercentage: null,
@@ -168,6 +170,7 @@ class BpkBarchart extends Component<Props, State> {
   render() {
     const {
       BarComponent,
+      className,
       data,
       disableDataTable,
       getBarLabel,
@@ -204,6 +207,11 @@ class BpkBarchart extends Component<Props, State> {
       bottom: xAxisMargin,
     });
 
+    const classNames = [getClassName('bpk-barchart')];
+    if (className) {
+      classNames.push(className);
+    }
+
     const width = this.state.width - margin.left - margin.right;
     const height = this.state.height - margin.bottom - margin.top;
     const maxYValue = getMaxYValue(
@@ -233,7 +241,7 @@ class BpkBarchart extends Component<Props, State> {
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={getClassName('bpk-barchart')}
+          className={classNames.join(' ')}
           width={this.state.width}
           height={this.state.height}
           ref={(svgEl) => {
@@ -322,6 +330,7 @@ BpkBarchart.propTypes = {
   initialWidth: PropTypes.number.isRequired,
   initialHeight: PropTypes.number.isRequired,
 
+  className: PropTypes.string,
   leadingScrollIndicatorClassName: PropTypes.string,
   trailingScrollIndicatorClassName: PropTypes.string,
   /**
