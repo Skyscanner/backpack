@@ -26,7 +26,6 @@ import {
   lineHeightXxl,
   iconSizeSm,
   iconSizeLg,
-  // @ts-expect-error Untyped import. We will need to review how these files are handled
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import withAlignment from './withAlignment';
