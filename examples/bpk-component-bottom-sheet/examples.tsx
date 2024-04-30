@@ -20,10 +20,13 @@ import { Component, Children } from 'react';
 import type { ReactNode } from 'react';
 
 import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from '../bpk-storybook-utils';
+
+import type { BpkBottomSheetProps } from '../../packages/bpk-component-bottom-sheet';
 
 import STYLES from './examples.module.scss';
 
@@ -91,19 +94,21 @@ const content = [
   </Paragraph>,
 ];
 
+type BottomSheetContainerProps = {
+  children: ReactNode,
+  isComponentOpen?: boolean,
+  id?: string,
+} & Omit<BpkBottomSheetProps, "ariaLabelledby" | "id"| "isOpen" | "onClose" >
+
 class BottomSheetContainer extends Component<
-  {
-    children: ReactNode,
-    isComponentOpen?: boolean,
-    id?: string
-  },
+BottomSheetContainerProps,
   {
     isOpen: boolean,
   }
 > {
 
-  constructor() {
-    super();
+  constructor(props: BottomSheetContainerProps) {
+    super(props);
 
     this.state = {
       isOpen: false,
@@ -137,14 +142,15 @@ class BottomSheetContainer extends Component<
     return (
       <div id="bottom-sheet-container">
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>
+          <BpkButtonV2 onClick={this.onOpen}>
             Open bottom sheet
-          </BpkButton>
+          </BpkButtonV2>
           <BpkBottomSheet
+            ariaLabelledby='test'
             id={id || "my-bottom-sheet"}
-            isOpen={this.state.isOpen}
-            onClose={this.onClose}
             {...rest}
+            onClose={this.onClose}
+            isOpen={this.state.isOpen}
           >
             {children}
           </BpkBottomSheet>
