@@ -20,7 +20,6 @@ import type { ChangeEvent, MouseEvent } from 'react';
 
 import {
   textColors,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkAriaLive from '../../bpk-component-aria-live';
