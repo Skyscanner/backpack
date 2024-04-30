@@ -20,7 +20,6 @@ import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import CornerRadius from './__generated__/js/corner-radius';
 import Pointer from './__generated__/js/pointer';
 
 import STYLES from './bpk-flare-bar.module.scss';
@@ -36,38 +35,14 @@ const BpkFlareBar = (props) => {
   }
 
   const curveClassNames = [getClassName('bpk-flare-bar__curve')];
-  const leftCornerRadiusClassNames = [
-    getClassName('bpk-flare-bar__rounded-corner'),
-  ];
-  const rightCornerRadiusClassNames = [
-    getClassName('bpk-flare-bar__rounded-corner'),
-    getClassName('bpk-flare-bar__rounded-corner--trailing'),
-  ];
+
   if (svgClassName) {
     curveClassNames.push(svgClassName);
-    leftCornerRadiusClassNames.push(svgClassName);
-    rightCornerRadiusClassNames.push(svgClassName);
   }
 
   return (
     <div className={classNames.join(' ')} {...rest}>
-      <Pointer
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={curveClassNames.join(' ')} 
-      />
-      {rounded && (
-        <CornerRadius
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={leftCornerRadiusClassNames.join(' ')} />
-      )}
-      {rounded && (
-        <CornerRadius
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={rightCornerRadiusClassNames.join(' ')} />
-      )}
+      <Pointer className={curveClassNames.join(' ')} />
     </div>
   );
 };
