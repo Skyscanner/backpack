@@ -21,6 +21,10 @@
 .bpk-flare-stories {
   padding: tokens.bpk-spacing-xl();
 
+  &__container {
+    background-color: tokens.$bpk-core-primary-day;
+  }
+
   &__flare-bar {
     width: 100%;
     margin-bottom: 2rem;
