@@ -68,17 +68,11 @@
     }
 
     .bpk-calendar-nav__icon {
-      fill: currentcolor;
-
       @include icons.bpk-icon--rtl-support;
     }
 
     &:disabled {
       cursor: not-allowed;
-
-      .bpk-calendar-nav__icon {
-        fill: tokens.$bpk-text-disabled-day;
-      }
     }
   }
 

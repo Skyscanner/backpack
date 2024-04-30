@@ -40,10 +40,8 @@ import type {
   SelectionConfigurationRange,
 } from './custom-proptypes';
 
-// TODO: Move this to `Week.scss`
-// This should be using its own css file as `BpkCalendarGrid` is also importing `BpkCalendarGrid.module.scss`
-// and the order of css imports can break the component.
-import STYLES from './BpkCalendarGrid.module.scss';
+
+import STYLES from './BpkCalendarWeek.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -263,9 +261,9 @@ type DefaultProps = {
 };
 
 /*
-  Week - table row containing a week full of DateContainer components
+  BpkCalendarWeek - table row containing a week full of DateContainer components
 */
-class Week extends Component<Props> {
+class BpkCalendarWeek extends Component<Props> {
   static defaultProps: DefaultProps = {
     dateProps: {},
     focusedDate: null,
@@ -393,7 +391,7 @@ class Week extends Component<Props> {
     }
 
     return (
-      <div className={getClassName('bpk-calendar-grid__week')}>
+      <div className={getClassName('bpk-calendar-week')}>
         {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate
@@ -461,8 +459,8 @@ const DateContainer = ({
   selectionType,
 }: DateContainerProps) => {
   const classNames = getClassName(
-    'bpk-calendar-grid__date',
-    `bpk-calendar-grid__date--${selectionType}`,
+    'bpk-calendar-week__date',
+    `bpk-calendar-week__date--${selectionType}`,
     className,
   );
 
@@ -473,4 +471,4 @@ const DateContainer = ({
   );
 };
 
-export default Week;
+export default BpkCalendarWeek;
