@@ -47,7 +47,7 @@ export const WithOnDark = WithOnDarkExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
-  ...VisualTest,
+  render: VisualTest,
   args: {
     zoomEnabled: true
   }
