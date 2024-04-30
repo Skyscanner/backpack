@@ -117,7 +117,7 @@ const BpkBottomSheet = ({
               id={headingId}
               title={title}
               titleTextStyle={TEXT_STYLES.label1}
-              titleTagName="h2"
+              titleTagName={title ? "h2" : undefined}
               leadingButton={
                 <BpkCloseButton
                   label={closeLabel}
