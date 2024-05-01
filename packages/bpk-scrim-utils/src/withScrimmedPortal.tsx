@@ -20,8 +20,9 @@ import type { ComponentType} from 'react';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import withScrim from './withScrim';
 import BpkScrim from './BpkScrim';
+import withScrim from './withScrim';
+
 import type { Props as ScrimProps } from './withScrim';
 
 export type Props = ScrimProps & {

@@ -20,12 +20,8 @@ import type { ComponentProps, MouseEvent, ReactNode } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
-import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkNavigationBarButtonLink.module.scss';
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
-
-const getClassName = cssModules(STYLES);
 
 export interface Props extends ComponentProps<BpkButtonLink> {
   children: ReactNode,
@@ -41,16 +37,16 @@ const BpkNavigationBarButtonLink = ({
   className,
   ...rest
 }: Props) => (
-  <BpkButtonLink
-    className={getClassName(
-      'bpk-navigation-bar-button-link',
-      `bpk-navigation-bar-button-link--${barStyle}`,
-      className
-    )}
-    {...rest}
-  >
-    {children}
-  </BpkButtonLink>
+  <span className={className}>
+    <BpkButtonLink
+      alternate={barStyle === BAR_STYLES.onDark}
+      {
+        ...rest
+      }
+    >
+      {children}
+    </BpkButtonLink>
+  </span>
 );
 
 export default BpkNavigationBarButtonLink;

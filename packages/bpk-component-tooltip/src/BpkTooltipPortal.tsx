@@ -16,16 +16,19 @@
  * limitations under the License.
  */
 
-import { createPopper } from '@popperjs/core';
 import { cloneElement, Component } from 'react';
 import type { ReactNode, ReactElement } from 'react';
+
+import { createPopper } from '@popperjs/core';
 
 import { Portal, cssModules } from '../../bpk-react-utils';
 
 import BpkTooltip from './BpkTooltip';
-import type { TooltipProps } from './BpkTooltip';
-import STYLES from './BpkTooltip.module.scss';
 import { TOOLTIP_TYPES } from './constants';
+
+import type { TooltipProps } from './BpkTooltip';
+
+import STYLES from './BpkTooltip.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -210,6 +213,8 @@ class BpkTooltipPortal extends Component<Props, State> {
             onClose={this.closeTooltip}
             style={portalStyle}
             renderTarget={renderTarget}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={classNames.join(' ')}
           >
             <BpkTooltip padded={padded} {...rest}>

@@ -53,6 +53,8 @@ const withDefaultProps = (
 
     return (
       <WrappedComponent
+        // General HOC difficult/impossible to remove
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={classNames.join(' ')}
         {...defaultRest}
         {...rest}

@@ -99,11 +99,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 >
                   <div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -123,7 +123,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -143,7 +143,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -163,7 +163,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -183,7 +183,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -203,7 +203,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -223,7 +223,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -243,11 +243,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -267,7 +267,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -287,7 +287,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -307,7 +307,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -327,7 +327,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -347,7 +347,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -367,7 +367,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -386,11 +386,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -409,7 +409,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -428,7 +428,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -447,7 +447,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -466,7 +466,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -485,7 +485,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -504,7 +504,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -523,11 +523,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -546,7 +546,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -565,7 +565,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -584,7 +584,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -603,7 +603,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -622,7 +622,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -641,7 +641,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -680,11 +680,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 >
                   <div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -703,7 +703,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -722,7 +722,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -741,7 +741,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -760,7 +760,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -779,7 +779,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -798,7 +798,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -817,11 +817,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -840,7 +840,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -859,7 +859,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -878,7 +878,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -897,7 +897,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -916,7 +916,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -935,7 +935,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -954,11 +954,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -977,7 +977,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -996,7 +996,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1015,7 +1015,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1034,7 +1034,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1053,7 +1053,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1072,7 +1072,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1091,11 +1091,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1114,7 +1114,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1133,7 +1133,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1152,7 +1152,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1171,7 +1171,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1190,7 +1190,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1209,7 +1209,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1228,11 +1228,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1251,7 +1251,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1270,7 +1270,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1289,19 +1289,19 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                     </div>
                   </div>
@@ -1429,11 +1429,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 >
                   <div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1453,7 +1453,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1473,7 +1473,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1493,7 +1493,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1513,7 +1513,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1533,7 +1533,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1553,7 +1553,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1573,11 +1573,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1597,7 +1597,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1617,7 +1617,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1637,7 +1637,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1657,7 +1657,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1677,7 +1677,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -1697,7 +1697,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1716,11 +1716,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--start"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--start"
                       >
                         <button
                           aria-hidden="false"
@@ -1739,7 +1739,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--middle"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--middle"
                       >
                         <button
                           aria-hidden="false"
@@ -1758,7 +1758,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--middle"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--middle"
                       >
                         <button
                           aria-hidden="false"
@@ -1777,7 +1777,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--middle"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--middle"
                       >
                         <button
                           aria-hidden="false"
@@ -1796,7 +1796,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--middle"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--middle"
                       >
                         <button
                           aria-hidden="false"
@@ -1815,7 +1815,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--end"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--end"
                       >
                         <button
                           aria-hidden="false"
@@ -1834,7 +1834,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1853,11 +1853,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1876,7 +1876,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1895,7 +1895,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1914,7 +1914,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1933,7 +1933,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1952,7 +1952,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -1971,7 +1971,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2010,11 +2010,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 >
                   <div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2033,7 +2033,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2052,7 +2052,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2071,7 +2071,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2090,7 +2090,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2109,7 +2109,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2128,7 +2128,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2147,11 +2147,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2170,7 +2170,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2189,7 +2189,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2208,7 +2208,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2227,7 +2227,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2246,7 +2246,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2265,7 +2265,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2284,11 +2284,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2307,7 +2307,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2326,7 +2326,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2345,7 +2345,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2364,7 +2364,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2383,7 +2383,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2402,7 +2402,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2421,11 +2421,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2444,7 +2444,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2463,7 +2463,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2482,7 +2482,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2501,7 +2501,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2520,7 +2520,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2539,7 +2539,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2558,11 +2558,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2581,7 +2581,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2600,7 +2600,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -2619,19 +2619,19 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                     </div>
                   </div>
@@ -2759,11 +2759,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 >
                   <div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2783,7 +2783,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2803,7 +2803,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2823,7 +2823,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2843,7 +2843,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2863,7 +2863,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2883,7 +2883,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2903,11 +2903,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2927,7 +2927,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2947,7 +2947,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2967,7 +2967,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -2987,7 +2987,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -3007,7 +3007,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -3027,7 +3027,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3046,11 +3046,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3069,7 +3069,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3088,7 +3088,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3107,7 +3107,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3126,7 +3126,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3145,7 +3145,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3164,7 +3164,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3183,11 +3183,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3206,7 +3206,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3225,7 +3225,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3244,7 +3244,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3263,7 +3263,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3282,7 +3282,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3301,7 +3301,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3340,11 +3340,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 >
                   <div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3363,7 +3363,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3382,7 +3382,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3401,7 +3401,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3420,7 +3420,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3439,7 +3439,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3458,7 +3458,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3477,11 +3477,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3500,7 +3500,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3519,7 +3519,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3538,7 +3538,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3557,7 +3557,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3576,7 +3576,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3595,7 +3595,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3614,11 +3614,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3637,7 +3637,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3656,7 +3656,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3675,7 +3675,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3694,7 +3694,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3713,7 +3713,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3732,7 +3732,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3751,11 +3751,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3774,7 +3774,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3793,7 +3793,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3812,7 +3812,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3831,7 +3831,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3850,7 +3850,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3869,7 +3869,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3888,11 +3888,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3911,7 +3911,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3930,7 +3930,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -3949,19 +3949,19 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                     </div>
                   </div>
@@ -4089,11 +4089,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 >
                   <div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4113,7 +4113,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4133,7 +4133,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4153,7 +4153,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4173,7 +4173,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4193,7 +4193,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4213,7 +4213,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4233,11 +4233,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4257,7 +4257,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4277,7 +4277,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4297,7 +4297,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4317,7 +4317,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4337,7 +4337,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="true"
@@ -4357,7 +4357,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4376,11 +4376,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4399,7 +4399,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4418,7 +4418,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4437,7 +4437,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4456,7 +4456,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4475,7 +4475,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4494,7 +4494,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4513,11 +4513,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4536,7 +4536,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4555,7 +4555,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4574,7 +4574,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4593,7 +4593,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4612,7 +4612,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4631,7 +4631,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4670,11 +4670,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 >
                   <div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4693,7 +4693,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4712,7 +4712,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4731,7 +4731,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4750,7 +4750,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4769,7 +4769,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4788,7 +4788,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4807,11 +4807,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4830,7 +4830,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4849,7 +4849,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4868,7 +4868,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4887,7 +4887,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4906,7 +4906,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4925,7 +4925,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4944,11 +4944,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4967,7 +4967,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -4986,7 +4986,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5005,7 +5005,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5024,7 +5024,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5043,7 +5043,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5062,7 +5062,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5081,11 +5081,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5104,7 +5104,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5123,7 +5123,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5142,7 +5142,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5161,7 +5161,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5180,7 +5180,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5199,7 +5199,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5218,11 +5218,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                     </div>
                     <div
-                      class="bpk-calendar-grid__week"
+                      class="bpk-calendar-week"
                     >
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5241,7 +5241,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5260,7 +5260,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="false"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       >
                         <button
                           aria-hidden="false"
@@ -5279,19 +5279,19 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                       </div>
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                       <div
                         aria-hidden="true"
-                        class="bpk-calendar-grid__date bpk-calendar-grid__date--none"
+                        class="bpk-calendar-week__date bpk-calendar-week__date--none"
                       />
                     </div>
                   </div>

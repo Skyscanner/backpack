@@ -23,6 +23,7 @@ import PropTypes from 'prop-types';
 import { cssModules } from '../../bpk-react-utils';
 
 import { BpkStarNonRtl, STAR_TYPES } from './BpkStar';
+
 import STYLES from './BpkInteractiveStar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -63,8 +64,13 @@ const BpkInteractiveStar = (props: Props) => {
       aria-pressed={selected}
       type="button"
     >
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
-      <BpkStarNonRtl className={iconClassNames} type={type} {...rest} />
+      <div className={iconClassNames} >
+        <BpkStarNonRtl
+          type={type} 
+          /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */
+          {...rest} 
+        />
+      </div>
     </button>
   );
 };

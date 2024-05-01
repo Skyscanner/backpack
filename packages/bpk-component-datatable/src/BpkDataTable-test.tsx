@@ -16,14 +16,15 @@
  * limitations under the License.
  */
 
- 
+
 
 import { Fragment } from 'react';
+
 import { render, screen, fireEvent, within } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
-import { SORT_DIRECTION_TYPES } from './common-types';
 import BpkDataTable from './BpkDataTable';
+import { SORT_DIRECTION_TYPES } from './common-types';
 
 const rows = [
   { name: 'Jose', description: 'Software Engineer', bla: 'Bla' },
@@ -118,7 +119,7 @@ describe('BpkDataTable', () => {
           { label: 'Name', accessor: 'name', width: "6.25rem" },
           { label: 'Description', accessor: 'description', width: "6.25rem", flexGrow: 1 },
           { label: 'Bla', accessor: 'bla', width: "6.25rem" },
-        ]} /> 
+        ]} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -199,7 +200,8 @@ describe('BpkDataTable', () => {
     const sortIconUp = document.getElementsByClassName(
       'bpk-data-table-column__sort-icon--up',
     )[0];
-    await fireEvent.click(sortIconUp);
+    const clickArrow = sortIconUp.querySelector('svg') as SVGSVGElement;
+    await fireEvent.click(clickArrow) ;
 
     const firstRowNameSorted = within(
       screen.getAllByRole('rowgroup')[0],
@@ -235,7 +237,8 @@ describe('BpkDataTable', () => {
     const sortIconDown = document.getElementsByClassName(
       'bpk-data-table-column__sort-icon--down',
     )[0];
-    await fireEvent.click(sortIconDown);
+    const clickArrow = sortIconDown.querySelector('svg') as SVGSVGElement;
+    await fireEvent.click(clickArrow);
 
     const firstRowNameSorted = within(
       screen.getAllByRole('rowgroup')[0],

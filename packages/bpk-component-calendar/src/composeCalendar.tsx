@@ -21,11 +21,13 @@ import type { ComponentType } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+
 import type {
   DaysOfWeek,
   SelectionConfiguration,
   DateModifiers,
 } from './custom-proptypes';
+
 import STYLES from './BpkCalendar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -198,6 +200,8 @@ const composeCalendar = (
             daysOfWeek={daysOfWeek}
             weekStartsOn={weekStartsOn}
             weekDayKey={weekDayKey}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={headerClasses.join(' ')}
             {...headerProps}
           />
@@ -218,6 +222,8 @@ const composeCalendar = (
           focusedDate={focusedDate}
           markToday={markToday}
           markOutsideDays={markOutsideDays}
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={gridClasses.join(' ')}
           dateProps={dateProps}
           selectionConfiguration={selectionConfiguration}

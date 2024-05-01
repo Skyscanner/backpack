@@ -18,11 +18,11 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 import { withRtlSupport } from '../../bpk-component-icon';
 import ArrowLeftIcon from '../../bpk-component-icon/sm/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/sm/arrow-right';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPaginationNudger.module.scss';
 
@@ -33,10 +33,14 @@ const AlignedArrowRightIcon = withRtlSupport(ArrowRightIcon);
 const nudgerIcon = (forward) =>
   forward ? (
     <AlignedArrowRightIcon
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName('bpk-pagination-nudger__icon')}
     />
   ) : (
     <AlignedArrowLeftIcon
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName('bpk-pagination-nudger__icon')}
     />
   );
@@ -49,6 +53,8 @@ const BpkPaginationNudger = (props) => {
       type={BUTTON_TYPES.link}
       onClick={onNudge}
       disabled={disabled}
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName('bpk-pagination-nudger')}
     >
       {nudgerIcon(forward)}

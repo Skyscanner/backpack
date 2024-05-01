@@ -16,18 +16,20 @@
  * limitations under the License.
  */
 
+import BpkDismissibleChip from './src/BpkDismissibleChip';
+import BpkDropdownChip from './src/BpkDropdownChip';
+import BpkIconChip from './src/BpkIconChip';
 import BpkSelectableChip, {
   type Props as SelectableProps,
 } from './src/BpkSelectableChip';
-import BpkDismissibleChip from './src/BpkDismissibleChip';
-import BpkDropdownChip from './src/BpkDropdownChip';
-import type { CommonProps } from './src/commonTypes';
 import { CHIP_TYPES } from './src/commonTypes';
 import themeAttributes from './src/themeAttributes';
+
+import type { CommonProps } from './src/commonTypes';
 
 export type BpkSelectableChipProps = SelectableProps;
 export type BpkDismissibleChipProps = CommonProps;
 export type BpkDropdownChipProps = CommonProps;
 
 export default BpkSelectableChip;
-export { BpkDismissibleChip, BpkDropdownChip, CHIP_TYPES, themeAttributes };
+export { BpkDismissibleChip, BpkDropdownChip, BpkIconChip, CHIP_TYPES, themeAttributes };

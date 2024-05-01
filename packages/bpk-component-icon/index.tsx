@@ -17,16 +17,16 @@
  */
 
 import type { ComponentType } from 'react';
+
 import {
   iconSizeSm,
   iconSizeLg,
   privateButtonLineHeight,
-  // @ts-expect-error Untyped import. We will need to review how these files are handled
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import withAlignment from './src/withAlignment';
-import withRtlSupport from './src/withRtlSupport';
 import withDescription from './src/withDescription';
+import withRtlSupport from './src/withRtlSupport';
 
 // Wrapper functions to provide backwards compatibility
 function withButtonAlignment(WrappedComponent: ComponentType<any>) {

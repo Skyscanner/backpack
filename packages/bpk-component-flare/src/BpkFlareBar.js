@@ -20,9 +20,9 @@ import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './bpk-flare-bar.module.scss';
 import Pointer from './__generated__/js/pointer';
-import CornerRadius from './__generated__/js/corner-radius';
+
+import STYLES from './bpk-flare-bar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -35,28 +35,14 @@ const BpkFlareBar = (props) => {
   }
 
   const curveClassNames = [getClassName('bpk-flare-bar__curve')];
-  const leftCornerRadiusClassNames = [
-    getClassName('bpk-flare-bar__rounded-corner'),
-  ];
-  const rightCornerRadiusClassNames = [
-    getClassName('bpk-flare-bar__rounded-corner'),
-    getClassName('bpk-flare-bar__rounded-corner--trailing'),
-  ];
+
   if (svgClassName) {
     curveClassNames.push(svgClassName);
-    leftCornerRadiusClassNames.push(svgClassName);
-    rightCornerRadiusClassNames.push(svgClassName);
   }
 
   return (
     <div className={classNames.join(' ')} {...rest}>
       <Pointer className={curveClassNames.join(' ')} />
-      {rounded && (
-        <CornerRadius className={leftCornerRadiusClassNames.join(' ')} />
-      )}
-      {rounded && (
-        <CornerRadius className={rightCornerRadiusClassNames.join(' ')} />
-      )}
     </div>
   );
 };

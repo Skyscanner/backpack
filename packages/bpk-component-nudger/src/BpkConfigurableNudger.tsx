@@ -18,13 +18,12 @@
 
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import MinusIcon from '../../bpk-component-icon/sm/minus';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import PlusIcon from '../../bpk-component-icon/sm/plus';
 import { cssModules } from '../../bpk-react-utils';
 
 import { type CommonProps } from './common-types';
+
 import STYLES from './BpkNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -101,9 +100,15 @@ const BpkConfigurableNudger = ({
         disabled={minButtonDisabled}
         title={decreaseButtonLabel}
         aria-controls={id}
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-nudger__button')}
       >
-        <AlignedMinusIcon className={minusIconClassNames} />
+        
+        <AlignedMinusIcon 
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={minusIconClassNames} />
       </BpkButtonV2>
       <input
         type="text"
@@ -122,9 +127,14 @@ const BpkConfigurableNudger = ({
         disabled={maxButtonDisabled}
         title={increaseButtonLabel}
         aria-controls={id}
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-nudger__button')}
       >
-        <AlignedPlusIcon className={plusIconClassNames} />
+        <AlignedPlusIcon 
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={plusIconClassNames} />
       </BpkButtonV2>
     </div>
   );

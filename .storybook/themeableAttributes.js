@@ -47,19 +47,19 @@ import {
   priceMarkerThemeAttributes,
 } from '../packages/bpk-component-map';
 import { themeAttributes as modalThemeAttributes } from '../packages/bpk-component-modal';
+import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk-component-navigation-bar';
 import { themeAttributes as nudgerThemeAttributes } from '../packages/bpk-component-nudger';
 import { themeAttributes as paginationThemeAttributes } from '../packages/bpk-component-pagination';
 import { themeAttributes as popoverThemeAttributes } from '../packages/bpk-component-popover';
 import { themeAttributes as progressThemeAttributes } from '../packages/bpk-component-progress';
 import { themeAttributes as radioThemeAttributes } from '../packages/bpk-component-radio';
 import { themeAttributes as selectThemeAttributes } from '../packages/bpk-component-select';
-import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-component-slider';
 import { themeAttributes as skipLinkThemeAttributes } from '../packages/bpk-component-skip-link';
+import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-component-slider';
 import { themeAttributes as spinnerThemeAttributes } from '../packages/bpk-component-spinner';
 import { themeAttributes as starRatingThemeAttributes } from '../packages/bpk-component-star-rating';
 import { themeAttributes as switchThemeAttributes } from '../packages/bpk-component-switch';
 import { themeAttributes as textareaThemeAttributes } from '../packages/bpk-component-textarea';
-import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk-component-navigation-bar';
 
 const storybookAttributes = ['primaryColor', 'themeName', 'logoFillColor'];
 

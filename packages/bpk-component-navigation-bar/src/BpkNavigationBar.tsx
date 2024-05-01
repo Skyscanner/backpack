@@ -17,35 +17,29 @@
  */
 
 import type { ReactElement, ReactNode } from 'react';
-import { cloneElement } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationBar.module.scss';
 
 const getClassNames = cssModules(STYLES);
 
 export const BAR_STYLES = {
-  'default': 'default',
+  default: 'default',
   onDark: 'on-dark',
 };
-export type BarStyle = (typeof BAR_STYLES)[keyof typeof BAR_STYLES]
+export type BarStyle = (typeof BAR_STYLES)[keyof typeof BAR_STYLES];
 
 export type Props = {
-  id: string,
-  title: ReactNode,
-  className?: string,
-  leadingButton?: ReactElement | null,
-  trailingButton?: ReactElement | null,
-  sticky?: boolean,
-  barStyle?: BarStyle,
+  id: string;
+  title: ReactNode;
+  className?: string;
+  leadingButton?: ReactElement | null;
+  trailingButton?: ReactElement | null;
+  sticky?: boolean;
+  barStyle?: BarStyle;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
-
-const cloneWithClasses = (elem: ReactElement, ...newStyles: string[]) => {
-  const className = getClassNames(elem.props.className, ...newStyles);
-  return cloneElement(elem, { ...elem.props, className });
 };
 
 const BpkNavigationBar = (props: Props) => {
@@ -76,32 +70,41 @@ const BpkNavigationBar = (props: Props) => {
       )}
       {...rest}
     >
-      {leadingButton &&
-        cloneWithClasses(
-          leadingButton,
-          'bpk-navigation-bar__leading-item',
-          `bpk-navigation-bar__leading-item--${barStyle}`,
-        )}
-      {typeof title === 'string' ? (
-        <BpkText
-          id={titleId}
-          textStyle={TEXT_STYLES.heading5}
+      {leadingButton && (
+        <div
           className={getClassNames(
-            'bpk-navigation-bar__title',
-            `bpk-navigation-bar__title--${barStyle}`,
+            'bpk-navigation-bar__leading-item',
+            `bpk-navigation-bar__leading-item--${barStyle}`,
           )}
         >
-          {title}
-        </BpkText>
+          {leadingButton}
+        </div>
+      )}
+      {typeof title === 'string' ? (
+        <span className={getClassNames(
+          'bpk-navigation-bar__title',
+          `bpk-navigation-bar__title--${barStyle}`,
+        )}>
+          <BpkText
+            id={titleId}
+            textStyle={TEXT_STYLES.heading5}
+          >
+            {title}
+          </BpkText>
+        </span>
       ) : (
         title
       )}
-      {trailingButton &&
-        cloneWithClasses(
-          trailingButton,
-          'bpk-navigation-bar__trailing-item',
-          `bpk-navigation-bar__trailing-item--${barStyle}`,
-        )}
+      {trailingButton && (
+        <div
+          className={getClassNames(
+            'bpk-navigation-bar__trailing-item',
+            `bpk-navigation-bar__trailing-item-${barStyle}`,
+          )}
+        >
+          {trailingButton}
+        </div>
+      )}
     </nav>
   );
 };

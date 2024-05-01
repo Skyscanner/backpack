@@ -27,13 +27,13 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.0.0
+        uses: actions/cache/restore@v4.0.2
         id: npm-cache
         with:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Build Backpack
         run: npm run build
@@ -62,16 +62,16 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore Cache
-        uses: actions/cache/restore@v4.0.0
+        uses: actions/cache/restore@v4.0.2
         id: npm-cache
         with:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.0.0
+        uses: actions/cache/restore@v4.0.2
         id: storybook-dist-cache
         with:
           path: dist-storybook/
@@ -99,13 +99,13 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.0.0
+        uses: actions/cache/restore@v4.0.2
         id: npm-cache
         with:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Danger
         run: npm run danger

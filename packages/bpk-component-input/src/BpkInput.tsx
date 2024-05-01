@@ -21,9 +21,11 @@ import { Component } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
-import STYLES from './BpkInput.module.scss';
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
+
 import type { Props } from './common-types';
+
+import STYLES from './BpkInput.module.scss';
 
 type State = {
   persistClearButton: boolean;
@@ -160,6 +162,8 @@ class BpkInput extends Component<Props, State> {
                 this.setState({ persistClearButton: false });
               }
             }}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={clearButtonClassNames.join(' ')}
           />
         )}

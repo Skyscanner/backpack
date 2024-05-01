@@ -11,17 +11,25 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="2 out of 5 stars"
@@ -29,17 +37,25 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="3 out of 5 stars"
@@ -47,17 +63,25 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       class="bpk-interactive-star bpk-interactive-star--selected"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="4 out of 5 stars"
@@ -65,17 +89,25 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="5 out of 5 stars"
@@ -83,17 +115,25 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -110,17 +150,25 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="2 out of 5 stars"
@@ -128,17 +176,25 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="3 out of 5 stars"
@@ -146,17 +202,25 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="4 out of 5 stars"
@@ -164,17 +228,25 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="5 out of 5 stars"
@@ -182,17 +254,25 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -209,17 +289,25 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1.5rem; height: 1.5rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--large bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.12 8.218a1 1 0 0 0 .755-.563l2.453-5.217a.735.735 0 0 1 1.344 0l2.454 5.217a1 1 0 0 0 .755.563l5.476.83a.795.795 0 0 1 .416 1.338l-3.989 4.07a1 1 0 0 0-.272.862l.943 5.763a.757.757 0 0 1-1.087.827l-4.885-2.695a1 1 0 0 0-.966 0l-4.885 2.695a.757.757 0 0 1-1.087-.828l.948-5.761a1 1 0 0 0-.273-.863l-3.993-4.07a.795.795 0 0 1 .416-1.34z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="2 out of 5 stars"
@@ -227,17 +315,25 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1.5rem; height: 1.5rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--large bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.12 8.218a1 1 0 0 0 .755-.563l2.453-5.217a.735.735 0 0 1 1.344 0l2.454 5.217a1 1 0 0 0 .755.563l5.476.83a.795.795 0 0 1 .416 1.338l-3.989 4.07a1 1 0 0 0-.272.862l.943 5.763a.757.757 0 0 1-1.087.827l-4.885-2.695a1 1 0 0 0-.966 0l-4.885 2.695a.757.757 0 0 1-1.087-.828l.948-5.761a1 1 0 0 0-.273-.863l-3.993-4.07a.795.795 0 0 1 .416-1.34z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="3 out of 5 stars"
@@ -245,17 +341,25 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1.5rem; height: 1.5rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--large bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.12 8.218a1 1 0 0 0 .755-.563l2.453-5.217a.735.735 0 0 1 1.344 0l2.454 5.217a1 1 0 0 0 .755.563l5.476.83a.795.795 0 0 1 .416 1.338l-3.989 4.07a1 1 0 0 0-.272.862l.943 5.763a.757.757 0 0 1-1.087.827l-4.885-2.695a1 1 0 0 0-.966 0l-4.885 2.695a.757.757 0 0 1-1.087-.828l.948-5.761a1 1 0 0 0-.273-.863l-3.993-4.07a.795.795 0 0 1 .416-1.34z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="4 out of 5 stars"
@@ -263,17 +367,25 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1.5rem; height: 1.5rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--large bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.12 8.218a1 1 0 0 0 .755-.563l2.453-5.217a.735.735 0 0 1 1.344 0l2.454 5.217a1 1 0 0 0 .755.563l5.476.83a.795.795 0 0 1 .416 1.338l-3.989 4.07a1 1 0 0 0-.272.862l.943 5.763a.757.757 0 0 1-1.087.827l-4.885-2.695a1 1 0 0 0-.966 0l-4.885 2.695a.757.757 0 0 1-1.087-.828l.948-5.761a1 1 0 0 0-.273-.863l-3.993-4.07a.795.795 0 0 1 .416-1.34z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="5 out of 5 stars"
@@ -281,17 +393,25 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
       class="bpk-interactive-star bpk-interactive-star--selected"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--large bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        style="width: 1.5rem; height: 1.5rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <path
-          d="M8.12 8.218a1 1 0 00.755-.563l2.453-5.217a.735.735 0 011.344 0l2.454 5.217a1 1 0 00.755.563l5.476.83a.795.795 0 01.416 1.338l-3.989 4.07a1 1 0 00-.272.862l.943 5.763a.757.757 0 01-1.087.827l-4.885-2.695a1 1 0 00-.966 0l-4.885 2.695a.757.757 0 01-1.087-.828l.948-5.761a1 1 0 00-.273-.863l-3.993-4.07a.795.795 0 01.416-1.34l5.476-.828z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--large bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.12 8.218a1 1 0 0 0 .755-.563l2.453-5.217a.735.735 0 0 1 1.344 0l2.454 5.217a1 1 0 0 0 .755.563l5.476.83a.795.795 0 0 1 .416 1.338l-3.989 4.07a1 1 0 0 0-.272.862l.943 5.763a.757.757 0 0 1-1.087.827l-4.885-2.695a1 1 0 0 0-.966 0l-4.885 2.695a.757.757 0 0 1-1.087-.828l.948-5.761a1 1 0 0 0-.273-.863l-3.993-4.07a.795.795 0 0 1 .416-1.34z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -308,17 +428,25 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="2 out of 8 stars"
@@ -326,17 +454,25 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="3 out of 8 stars"
@@ -344,17 +480,25 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="4 out of 8 stars"
@@ -362,17 +506,25 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="5 out of 8 stars"
@@ -380,17 +532,25 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       class="bpk-interactive-star bpk-interactive-star--selected"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="6 out of 8 stars"
@@ -398,17 +558,25 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="7 out of 8 stars"
@@ -416,17 +584,25 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="8 out of 8 stars"
@@ -434,17 +610,25 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -461,17 +645,25 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="2 out of 5 stars"
@@ -479,17 +671,25 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="3 out of 5 stars"
@@ -497,17 +697,25 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="4 out of 5 stars"
@@ -515,17 +723,25 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="5 out of 5 stars"
@@ -533,17 +749,25 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -560,17 +784,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="2 out of 5 stars"
@@ -578,17 +810,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="3 out of 5 stars"
@@ -596,17 +836,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       class="bpk-interactive-star bpk-interactive-star--selected"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="4 out of 5 stars"
@@ -614,17 +862,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="5 out of 5 stars"
@@ -632,17 +888,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -659,17 +923,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="2 out of 5 stars"
@@ -677,17 +949,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="3 out of 5 stars"
@@ -695,17 +975,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="4 out of 5 stars"
@@ -713,17 +1001,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="5 out of 5 stars"
@@ -731,17 +1027,25 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M22.262 10.306a.834.834 0 00-.437-1.405l-5.75-.87a1.05 1.05 0 01-.793-.592L12.706 1.96a.771.771 0 00-1.412 0L8.718 7.439a1.05 1.05 0 01-.793.59l-5.75.87a.835.835 0 00-.436 1.408L5.93 14.58a1.052 1.052 0 01.286.906l-.995 6.05a.795.795 0 001.142.868l5.129-2.83a1.05 1.05 0 011.014 0l5.129 2.83a.795.795 0 001.142-.868l-.99-6.051a1.05 1.05 0 01.286-.905zM15.93 12.48a4.05 4.05 0 00-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 00-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 00-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 003.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 003.06 2.28l1.532.232z"
-        />
-      </svg>
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>
@@ -758,17 +1062,25 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="2 out of 5 stars"
@@ -776,17 +1088,25 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="3 out of 5 stars"
@@ -794,17 +1114,25 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="4 out of 5 stars"
@@ -812,17 +1140,25 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       class="bpk-interactive-star"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
     <button
       aria-label="5 out of 5 stars"
@@ -830,17 +1166,25 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
       class="bpk-interactive-star bpk-interactive-star--selected"
       type="button"
     >
-      <svg
-        aria-hidden="true"
-        class="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
       >
-        <path
-          d="M7.925 8.03a1.05 1.05 0 00.793-.591l2.576-5.478a.771.771 0 011.412 0l2.576 5.478a1.048 1.048 0 00.793.59l5.75.87a.835.835 0 01.437 1.407l-4.188 4.274a1.05 1.05 0 00-.287.905l.99 6.05a.795.795 0 01-1.141.869l-5.13-2.83a1.05 1.05 0 00-1.013 0l-5.13 2.83a.795.795 0 01-1.141-.87l.995-6.05a1.05 1.05 0 00-.286-.904l-4.192-4.273A.834.834 0 012.175 8.9z"
-        />
-      </svg>
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
     </button>
   </div>
 </DocumentFragment>

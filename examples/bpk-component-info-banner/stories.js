@@ -20,7 +20,6 @@ import BpkInfoBanner from '../../packages/bpk-component-info-banner/src/BpkInfoB
 import BpkInfoBannerDismissable from '../../packages/bpk-component-info-banner/src/BpkInfoBannerDismissable';
 import BpkInfoBannerExpandable from '../../packages/bpk-component-info-banner/src/BpkInfoBannerExpandable';
 
-import { withBannerAlertStateMock } from './stories-utils';
 import {
   DefaultExample,
   InfoExample,
@@ -40,6 +39,7 @@ import {
   DocsDefaultExample,
   OnContrastExample,
 } from './examples';
+import { withBannerAlertStateMock } from './stories-utils';
 
 export default {
   title: 'bpk-component-info-banner',

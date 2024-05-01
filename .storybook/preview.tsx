@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-import { Title, PRIMARY_STORY } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';
-import type { Preview } from '@storybook/react';
+import { Title, PRIMARY_STORY } from '@storybook/blocks';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
@@ -30,6 +29,8 @@ import BpkThemeToggle, {
 import BpkThemeProvider from '../packages/bpk-theming';
 
 import themeableAttributes from './themeableAttributes';
+
+import type { Preview } from '@storybook/react';
 
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 

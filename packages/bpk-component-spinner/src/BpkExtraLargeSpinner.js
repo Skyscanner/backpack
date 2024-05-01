@@ -19,12 +19,14 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+
 import XlSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/xl';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSpinner.module.scss';
 import SPINNER_TYPES from './spinnerTypes';
+
+import STYLES from './BpkSpinner.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -42,8 +44,14 @@ const BpkExtraLargeSpinner = (props: Props) => {
     className,
   );
 
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  return <XlSpinner className={classNames} {...rest} />;
+  return (
+    <span className={classNames}>
+      <XlSpinner
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+        {...rest}
+      />
+    </span>
+  );
 };
 
 BpkExtraLargeSpinner.propTypes = {

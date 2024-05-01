@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkImage, {
   BpkBackgroundImage,
   withLazyLoading,
   withLoadingBehavior,
   BORDER_RADIUS_STYLES,
 } from '../../packages/bpk-component-image';
+import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
 const image =
   'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';

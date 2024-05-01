@@ -17,7 +17,7 @@
  */
 
 import type { ReactNode } from 'react';
-import type { Props as ModalDialogProps } from './BpkModalInner';
+import type { Props as ModalDialogProps, ModalStyle } from './BpkModalInner';
 export type Props = Partial<ModalDialogProps> & {
     id: string;
     children: ReactNode;
@@ -25,6 +25,7 @@ export type Props = Partial<ModalDialogProps> & {
     isOpen: boolean;
     closeOnScrimClick?: boolean;
     closeOnEscPressed?: boolean;
+    modalStyle?: ModalStyle;
     renderTarget?: null | HTMLElement | (() => null | HTMLElement);
     onClose?: (arg0?: TouchEvent | MouseEvent | KeyboardEvent, arg1?: {
         source: 'ESCAPE' | 'DOCUMENT_CLICK';

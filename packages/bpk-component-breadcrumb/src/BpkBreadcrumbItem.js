@@ -21,11 +21,11 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
+import { withRtlSupport } from '../../bpk-component-icon';
+import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
 import BpkLink from '../../bpk-component-link';
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import { withRtlSupport } from '../../bpk-component-icon';
-import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
 
 import STYLES from './BpkBreadcrumbItem.module.scss';
 
@@ -49,28 +49,30 @@ const BpkBreadcrumbItem = (props: Props) => {
     <li className={getClassName('bpk-breadcrumb-item', className)} {...rest}>
       {active ? (
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-        <BpkText
-          className={getClassName('bpk-breadcrumb-item__active-item')}
-          aria-current="page"
-          {...linkProps}
-        >
-          {children}
-        </BpkText>
+        <div className={getClassName('bpk-breadcrumb-item__active-item')}>
+          <BpkText
+            aria-current="page"
+            {...linkProps}
+          >
+            {children}
+          </BpkText>
+        </div>
       ) : (
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-        <BpkLink
-          href={href}
-          className={getClassName('bpk-breadcrumb-item__link')}
-          {...linkProps}
-        >
-          {children}
-        </BpkLink>
+        <div className={getClassName('bpk-breadcrumb-item__link')}>
+          <BpkLink
+            href={href}
+            {...linkProps}
+          >
+            {children}
+          </BpkLink>
+        </div>
       )}
-      {!active && (
-        <RtlSupportedArrowRight
-          className={getClassName('bpk-breadcrumb-item__arrow')}
-        />
-      )}
+      <div className={getClassName('bpk-breadcrumb-item__arrow')}>
+        {!active && (
+          <RtlSupportedArrowRight/>
+        )}
+      </div>
     </li>
   );
 };

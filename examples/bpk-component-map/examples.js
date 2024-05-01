@@ -17,17 +17,15 @@
  */
 /* @flow strict */
 
-import { Component } from 'react';
-import type { Node } from 'react';
 import PropTypes from 'prop-types';
+import type { Node } from 'react';
+import { Component } from 'react';
 
-import { action } from '../bpk-storybook-utils';
-import BpkText from '../../packages/bpk-component-text';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
-import LandmarkIconSm from '../../packages/bpk-component-icon/sm/landmark';
 import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
 import FoodIconSm from '../../packages/bpk-component-icon/sm/food';
 import HotelIconSm from '../../packages/bpk-component-icon/sm/hotels';
+import LandmarkIconSm from '../../packages/bpk-component-icon/sm/landmark';
 import BpkMap, {
   BpkOverlayView,
   BpkIconMarker,
@@ -37,6 +35,8 @@ import BpkMap, {
   MARKER_STATUSES,
   withGoogleMapsScript,
 } from '../../packages/bpk-component-map';
+import BpkText from '../../packages/bpk-component-text';
+import { action } from '../bpk-storybook-utils';
 
 const BpkMapWithLoading = withGoogleMapsScript(BpkMap);
 

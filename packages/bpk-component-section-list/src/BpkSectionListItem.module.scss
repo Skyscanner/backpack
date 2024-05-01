@@ -40,6 +40,7 @@
   }
 
   &__chevron {
+    display: contents;
     fill: tokens.$bpk-text-secondary-day;
 
     #{$root}:hover & {

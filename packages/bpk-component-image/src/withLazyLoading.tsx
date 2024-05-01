@@ -18,6 +18,7 @@
 
 import type { ComponentType } from 'react';
 import { Component } from 'react';
+
 import throttle from 'lodash/throttle';
 
 import { wrapDisplayName } from '../../bpk-react-utils';

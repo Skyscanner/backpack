@@ -18,8 +18,8 @@
 
 import type { MouseEvent, ReactNode } from 'react';
 
-import { cssModules } from '../../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
+import { cssModules } from '../../../bpk-react-utils';
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
 
 import STYLES from './BpkPriceMarker.module.scss';

@@ -21,26 +21,26 @@ import { Component } from 'react';
 
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 
-import Week from './Week';
+import { addCalendarGridTransition } from './BpkCalendarGridTransition';
+import BpkCalendarWeek from './BpkCalendarWeek';
+import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import {
   addMonths,
   formatIsoDate,
   getCalendarMonthWeeks,
   isSameMonth,
 } from './date-utils';
+
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
-import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+
 import STYLES from './BpkCalendarGrid.module.scss';
-import { addCalendarGridTransition } from './BpkCalendarGridTransition';
+
 // This should be imported after `./BpkCalendarGrid.module.scss`.
 // Because of how css specificity works the class `bpk-calendar-grid-transition__grid` needs to be defined
 // after `bpk-calendar-grid` (defined by BpkCalendarGrid.module.scss) so it can override width and display of the calendar
 
 // This is because the calendar with transiction is expected to have a fixed width and whenever `bpk-calendar-grid-transition__grid`
 // class is applyed it should override the calendar style.
-
-// NOTE that ./Week is also importing ./BpkCalendarGrid.module.scss so adding this after `./Week` would also do the job but
-// for clarity we should leave it here.
 
 const getClassName = cssModules(STYLES);
 
@@ -164,7 +164,7 @@ class BpkCalendarGrid extends Component<Props, State> {
       <div className={classNames} aria-hidden={!isKeyboardFocusable}>
         <div>
           {calendarMonthWeeks.map((dates) => (
-            <Week
+            <BpkCalendarWeek
               key={formatIsoDate(dates[0])}
               month={month}
               dates={dates}

@@ -17,12 +17,11 @@
  */
 
 
-import BpkStarRating from '../../packages/bpk-component-star-rating/src/BpkStarRating';
-import { BpkStarNonRtl } from '../../packages/bpk-component-star-rating/src/BpkStar';
-import BpkInteractiveStarRating from '../../packages/bpk-component-star-rating/src/BpkInteractiveStarRating';
 import BpkInteractiveStar from '../../packages/bpk-component-star-rating/src/BpkInteractiveStar';
+import BpkInteractiveStarRating from '../../packages/bpk-component-star-rating/src/BpkInteractiveStarRating';
+import { BpkStarNonRtl } from '../../packages/bpk-component-star-rating/src/BpkStar';
+import BpkStarRating from '../../packages/bpk-component-star-rating/src/BpkStarRating';
 
-import WithInteractiveStarRatingStateMock from './stories-utils';
 import {
   FullExample,
   FullStarsExample,
@@ -36,6 +35,7 @@ import {
   InteractiveExample,
   MixedExample,
 } from './examples';
+import WithInteractiveStarRatingStateMock from './stories-utils';
 
 export default {
   title: 'bpk-component-star-rating',

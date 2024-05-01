@@ -18,8 +18,8 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSectionHeader.module.scss';
 
@@ -52,13 +52,12 @@ const BpkSectionHeader = ({
         `bpk-section-header__title-description--${type}`,
       )}
     >
-      <BpkText
-        tagName="h2"
-        className={getClassName('bpk-section-header__title')}
-      >
-        {title}
-      </BpkText>
-      {description && <BpkText className={getClassName('bpk-section-header__description')}>{description}</BpkText>}
+      <h2 className={getClassName('bpk-section-header__title')}>{title}</h2>
+      {description && (
+        <span className={getClassName('bpk-section-header__description')}>
+          <BpkText>{description}</BpkText>
+        </span>
+      )}
     </div>
     {button}
   </div>

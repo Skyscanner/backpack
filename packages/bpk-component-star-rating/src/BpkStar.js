@@ -20,13 +20,13 @@
 
 import PropTypes from 'prop-types';
 
-import SmallIcon from '../../bpk-component-icon/sm/star';
-import LargeIcon from '../../bpk-component-icon/lg/star';
-import OutlineSmallIcon from '../../bpk-component-icon/sm/star-outline';
-import OutlineLargeIcon from '../../bpk-component-icon/lg/star-outline';
-import HalfSmallIcon from '../../bpk-component-icon/sm/star-half';
-import HalfLargeIcon from '../../bpk-component-icon/lg/star-half';
 import { withRtlSupport } from '../../bpk-component-icon';
+import LargeIcon from '../../bpk-component-icon/lg/star';
+import HalfLargeIcon from '../../bpk-component-icon/lg/star-half';
+import OutlineLargeIcon from '../../bpk-component-icon/lg/star-outline';
+import SmallIcon from '../../bpk-component-icon/sm/star';
+import HalfSmallIcon from '../../bpk-component-icon/sm/star-half';
+import OutlineSmallIcon from '../../bpk-component-icon/sm/star-outline';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkStar.module.scss';
@@ -80,18 +80,26 @@ const BpkStar = (props: Props) => {
   if (type === STAR_TYPES.HALF) {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-      <span className={containerClassNames} {...rest}>
-        <HalfIcon className={halfIconClassNames} />
+      <span className={[containerClassNames, halfIconClassNames]} {...rest}>
+        <HalfIcon />
       </span>
     );
   }
 
   return type === STAR_TYPES.FULL ? (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <Icon className={iconClassNames} {...rest} />
+    <span className={iconClassNames} >
+      <Icon 
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+      {...rest} />
+    </span>
+
   ) : (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <OutlineIcon className={iconClassNames} {...rest} />
+    <span className={iconClassNames} >
+      <OutlineIcon 
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+      {...rest} />
+    </span>
+
   );
 };
 

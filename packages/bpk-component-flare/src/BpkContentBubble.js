@@ -21,6 +21,8 @@ import PropTypes from 'prop-types';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkFlareBar from './BpkFlareBar';
+import CornerRadius from './__generated__/js/corner-radius';
+
 import STYLES from './bpk-content-bubble.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -60,6 +62,18 @@ const BpkContentBubble = (props) => {
   if (className) {
     wrapperClassNames.push(className);
   }
+  const leftCornerRadiusClassNames = [
+    getClassName('bpk-content-bubble__rounded-corner'),
+  ];
+  const rightCornerRadiusClassNames = [
+    getClassName('bpk-content-bubble__rounded-corner'),
+    getClassName('bpk-content-bubble__rounded-corner--trailing'),
+  ];
+
+  if (flareProps?.svgClassName) {
+    leftCornerRadiusClassNames.push(flareProps.svgClassName);
+    rightCornerRadiusClassNames.push(flareProps.svgClassName);
+  }
 
   if (contentClassName) {
     contentClassNames.push(contentClassName);
@@ -68,13 +82,23 @@ const BpkContentBubble = (props) => {
   return (
     <div className={wrapperClassNames.join(' ')} {...rest}>
       <div className={getClassName('bpk-content-bubble__container')}>
-        <div className={contentClassNames.join(' ')}>{content && content}</div>
+        <div className={contentClassNames.join(' ')}>
+          {content}
+          {/* These rounded svgs are required as the container background extends into the flare meaning that when we "round" the container the rounded bottom corners are hidden by the flare. */}
+          {rounded && showPointer && (
+          <>
+            <CornerRadius className={leftCornerRadiusClassNames.join(' ')} />
+            <CornerRadius className={rightCornerRadiusClassNames.join(' ')} />
+          </>
+          )}
+        </div>
         {showPointer && (
-          <BpkFlareBar
-            rounded={rounded}
-            className={getClassName('bpk-content-bubble__pointer')}
-            {...flareProps}
-          />
+          <div className={getClassName('bpk-content-bubble__pointer')}>
+            <BpkFlareBar
+              rounded={rounded}
+              {...flareProps}
+            />
+          </div>
         )}
       </div>
     </div>

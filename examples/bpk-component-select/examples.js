@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Component } from 'react';
 
-import { action } from '../bpk-storybook-utils';
 import BpkSelect from '../../packages/bpk-component-select';
+import { action } from '../bpk-storybook-utils';
 
 class StatefulBpkSelect extends Component {
   constructor() {

@@ -19,12 +19,14 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+
 import SmSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/sm';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSpinner.module.scss';
 import SPINNER_TYPES from './spinnerTypes';
+
+import STYLES from './BpkSpinner.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -44,8 +46,14 @@ const BpkSpinner = (props: Props) => {
     className,
   );
 
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  return <SmSpinner className={classNames} {...rest} />;
+  return (
+    <span className={classNames}>
+      <SmSpinner
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+        {...rest}
+      />
+    </span>
+  );
 };
 
 BpkSpinner.propTypes = {

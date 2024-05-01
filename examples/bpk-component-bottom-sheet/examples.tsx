@@ -19,11 +19,14 @@
 import { Component, Children } from 'react';
 import type { ReactNode } from 'react';
 
-import { action } from '../bpk-storybook-utils';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
-import BpkButton from '../../packages/bpk-component-button';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action } from '../bpk-storybook-utils';
+
+import type { BpkBottomSheetProps } from '../../packages/bpk-component-bottom-sheet';
 
 import STYLES from './examples.module.scss';
 
@@ -91,21 +94,33 @@ const content = [
   </Paragraph>,
 ];
 
+type BottomSheetContainerProps = {
+  children: ReactNode,
+  isComponentOpen?: boolean,
+  id?: string,
+} & Omit<BpkBottomSheetProps, "ariaLabelledby" | "id"| "isOpen" | "onClose" >
+
 class BottomSheetContainer extends Component<
-  {
-    children: ReactNode,
-  },
+BottomSheetContainerProps,
   {
     isOpen: boolean,
   }
 > {
 
-  constructor() {
-    super();
+  constructor(props: BottomSheetContainerProps) {
+    super(props);
 
     this.state = {
       isOpen: false,
     };
+  }
+
+  componentDidMount(): void {
+    if (this.props?.isComponentOpen) {
+      this.setState({
+        isOpen: true
+      })
+    }
   }
 
   onOpen = () => {
@@ -121,22 +136,21 @@ class BottomSheetContainer extends Component<
   };
 
   render() {
-    const { children, ...rest } =
+    const { children, id, ...rest } =
       this.props;
 
     return (
       <div id="bottom-sheet-container">
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>
+          <BpkButtonV2 onClick={this.onOpen}>
             Open bottom sheet
-          </BpkButton>
+          </BpkButtonV2>
           <BpkBottomSheet
-            id="my-bottom-sheet"
-            isOpen={this.state.isOpen}
-            onClose={this.onClose}
-            getApplicationElement={() => document.getElementById('pagewrap')}
-            renderTarget={() => document.getElementById('bottom-sheet-container')}
+            ariaLabelledby='test'
+            id={id || "my-bottom-sheet"}
             {...rest}
+            onClose={this.onClose}
+            isOpen={this.state.isOpen}
           >
             {children}
           </BpkBottomSheet>
@@ -148,6 +162,18 @@ class BottomSheetContainer extends Component<
 
 const DefaultExample = () => (
   <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet">
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
+const BackdropClickCloseExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" closeOnScrimClick>
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
+const EscapeCloseExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" closeOnEscPressed>
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
@@ -186,12 +212,72 @@ const WideExample = () => (
   </BottomSheetContainer>
 );
 
+const NestedExample = () => (
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    wide
+    closeOnEscPressed
+    closeOnScrimClick
+    >
+      Outer Bottom Sheet
+    <BottomSheetContainer
+      title="Inner Bottom Sheet"
+      closeLabel="Close Inner Bottom Sheet"
+      id="inner-bottom-sheet"
+      closeOnEscPressed
+      closeOnScrimClick
+    >
+      Inner Bottom Sheet
+    </BottomSheetContainer>
+  </BottomSheetContainer>
+);
+
+const MultipleBottomSheetsExample = () => (
+  <>
+    <BottomSheetContainer
+      title="Bottom Sheet 1"
+      closeLabel="Bottom Sheet 1"
+      isComponentOpen
+      closeOnEscPressed
+      closeOnScrimClick
+      id="bottom-sheet-1"
+      wide
+    >
+      This is a bottom sheet 1.
+    </BottomSheetContainer>
+    <BottomSheetContainer
+      title="Bottom Sheet 2"
+      closeLabel="Bottom Sheet 2"
+      isComponentOpen
+      closeOnEscPressed
+      closeOnScrimClick
+      id="bottom-sheet-2"
+    >
+      This is a bottom sheet 2.
+    </BottomSheetContainer>
+    <BottomSheetContainer
+      title="Bottom Sheet 3"
+      closeLabel="Bottom Sheet 3"
+      isComponentOpen
+      closeOnEscPressed
+      closeOnScrimClick
+      id="bottom-sheet-3"
+    >
+      This is a bottom sheet 3.
+    </BottomSheetContainer>
+  </>
+)
 
 export {
   DefaultExample,
+  BackdropClickCloseExample,
+  EscapeCloseExample,
   OverflowingExample,
   NoHeaderExample,
   NoHeaderWithActionButtonExample,
   ActionButtonExample,
-  WideExample
+  WideExample,
+  NestedExample,
+  MultipleBottomSheetsExample
 };

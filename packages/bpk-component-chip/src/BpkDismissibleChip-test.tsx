@@ -19,8 +19,9 @@
 import { render } from '@testing-library/react';
 
 import BpkDismissibleChip from './BpkDismissibleChip';
-import type { CommonProps as Props } from './commonTypes';
 import { CHIP_TYPES } from './commonTypes';
+
+import type { CommonProps as Props } from './commonTypes';
 
 // Just a convenience wrapper that includes the default props so we don't
 // have to keep writing them for each test.

@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import { render } from '@testing-library/react';
+
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkMobileScrollContainer, {
@@ -91,13 +92,35 @@ describe('BpkMobileScrollContainer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with ariaLabel prop', () => {
+    const { asFragment } = render(
+      <BpkMobileScrollContainer ariaLabel="my nav content">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkMobileScrollContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with ariaLabel prop set to null', () => {
+    const { asFragment } = render(
+      <BpkMobileScrollContainer ariaLabel={null}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkMobileScrollContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   describe('functions', () => {
     describe('computeScrollIndicatorClassName', () => {
       it('returns null if `scrollerEl is null', () => {
         expect(computeScrollIndicatorClassName(null)).toBeNull();
       });
 
-      it('should return left className and custom leadingIndicatorClassName if scrolling left is possible', () => {
+      it('should return custom leadingIndicatorClassName if scrolling left is possible', () => {
         const scrollerEl = makeMockScroller(10, 200, 200);
 
         expect(
@@ -107,12 +130,11 @@ describe('BpkMobileScrollContainer', () => {
             'custom-trailing-class-name',
           ),
         ).toEqual([
-          'bpk-mobile-scroll-container--left-indicator',
           'custom-leading-class-name',
         ]);
       });
 
-      it('should return right className and custom trailingIndicatorClassName if scrolling right is possible', () => {
+      it('should return custom trailingIndicatorClassName if scrolling right is possible', () => {
         const scrollerEl = makeMockScroller(0, 250, 200);
 
         expect(
@@ -122,12 +144,11 @@ describe('BpkMobileScrollContainer', () => {
             'custom-trailing-class-name',
           ),
         ).toEqual([
-          'bpk-mobile-scroll-container--right-indicator',
           'custom-trailing-class-name',
         ]);
       });
 
-      it('should return right and left className plus custom leadingIndicatorClassName and custom trailingIndicatorClassName if scrolling both right and left is possible', () => {
+      it('should return custom leadingIndicatorClassName and custom trailingIndicatorClassName if scrolling both right and left is possible', () => {
         const scrollerEl = makeMockScroller(10, 250, 200);
 
         const classNames = computeScrollIndicatorClassName(
@@ -136,12 +157,6 @@ describe('BpkMobileScrollContainer', () => {
           'custom-trailing-class-name',
         );
 
-        expect(classNames).toContain(
-          'bpk-mobile-scroll-container--left-indicator',
-        );
-        expect(classNames).toContain(
-          'bpk-mobile-scroll-container--right-indicator',
-        );
         expect(classNames).toContain('custom-leading-class-name');
         expect(classNames).toContain('custom-trailing-class-name');
       });

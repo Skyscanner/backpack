@@ -21,13 +21,14 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { BpkButtonLink } from '../../bpk-component-link';
 import BpkCloseButton from '../../bpk-component-close-button';
+import { BpkButtonLink } from '../../bpk-component-link';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkPopover.module.scss';
 import { ARROW_ID } from './constants';
+
+import STYLES from './BpkPopover.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -119,6 +120,8 @@ const BpkPopover = (props: Props) => {
             &nbsp;
             {closeButtonIcon ? (
               <BpkCloseButton
+                // TODO: className to be removed
+                // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                 className={getClassName('bpk-popover__close-button')}
                 label={closeButtonText}
                 onClick={bindEventSource(

@@ -15,10 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import type { MouseEvent, FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { CSSTransition } from 'react-transition-group';
 
@@ -101,16 +101,14 @@ const BpkFloatingNotification = (props: Props) => {
         <BpkText
           tagName="p"
           textStyle={TEXT_STYLES.bodyDefault}
-          className={getClassName('bpk-floating-notification__text')}
         >
-          {text}
+          <span className={getClassName('bpk-floating-notification__text')}>{text}</span>
         </BpkText>
         <BpkAriaLive aria-hidden>{text}</BpkAriaLive>
         {ctaText && (
           <BpkButtonV2
             type={BUTTON_TYPES.linkOnDark}
             onClick={onClick}
-            className={getClassName('bpk-floating-notification__button')}
           >
             {ctaText}
           </BpkButtonV2>

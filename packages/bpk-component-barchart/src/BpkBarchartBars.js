@@ -18,8 +18,10 @@
 
 /* @flow strict */
 
-import { scaleBand, scaleLinear } from 'd3-scale';
 import PropTypes from 'prop-types';
+
+import { scaleBand, scaleLinear } from 'd3-scale';
+
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkBarchartBar from './BpkBarchartBar';

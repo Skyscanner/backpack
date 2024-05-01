@@ -19,15 +19,16 @@
 /* @flow strict */
 
 import { useRef, forwardRef } from 'react';
+
 import {
   colorMonteverde,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkTooltip, {
   TOOLTIP_TYPES,
 } from '../../packages/bpk-component-tooltip';
+import { withDefaultProps } from '../../packages/bpk-react-utils';
 
 const wrapperStyle = {
   display: 'flex',

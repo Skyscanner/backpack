@@ -18,7 +18,13 @@
 
 /* @flow strict */
 
-import { action } from '../bpk-storybook-utils';
+import BpkStarRating, {
+  BpkInteractiveStarRating,
+  BpkStar,
+  withInteractiveStarRatingState,
+  STAR_TYPES,
+  ROUNDING_TYPES,
+} from '../../packages/bpk-component-star-rating';
 import {
   BpkTable,
   BpkTableBody,
@@ -27,13 +33,7 @@ import {
   BpkTableHead,
   BpkTableHeadCell,
 } from '../../packages/bpk-component-table';
-import BpkStarRating, {
-  BpkInteractiveStarRating,
-  BpkStar,
-  withInteractiveStarRatingState,
-  STAR_TYPES,
-  ROUNDING_TYPES,
-} from '../../packages/bpk-component-star-rating';
+import { action } from '../bpk-storybook-utils';
 
 const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,

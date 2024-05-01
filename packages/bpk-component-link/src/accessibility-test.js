@@ -21,8 +21,8 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkLink from './BpkLink';
 import BpkButtonLink from './BpkButtonLink';
+import BpkLink from './BpkLink';
 
 describe('BpkLink accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

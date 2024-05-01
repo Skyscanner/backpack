@@ -18,10 +18,10 @@
 
 import { render } from '@testing-library/react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSmallFlightIcon from '../../bpk-component-icon/sm/flight';
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';
+
 import type { BadgeType } from './BpkBadge';
 
 describe('BpkBadge', () => {

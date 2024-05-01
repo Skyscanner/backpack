@@ -1,0 +1,455 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkIconChip should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default bpk-chip--icon-only"
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with a "className" attribute 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default bpk-chip--icon-only custom-class"
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="default" 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default bpk-chip--icon-only"
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="default" and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled bpk-chip--icon-only"
+    disabled=""
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="default" and selected 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--default bpk-chip--icon-only bpk-chip--default-selected"
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="default", selected and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled bpk-chip--icon-only"
+    disabled=""
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="on-dark" 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--icon-only"
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="on-dark" and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled bpk-chip--icon-only"
+    disabled=""
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="on-dark" and selected 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--icon-only bpk-chip--on-dark-selected"
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="on-dark", selected and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled bpk-chip--icon-only"
+    disabled=""
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="on-image" 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image bpk-chip--icon-only"
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="on-image" and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="false"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled bpk-chip--icon-only"
+    disabled=""
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="on-image" and selected 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-image bpk-chip--icon-only bpk-chip--on-image-selected"
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkIconChip should render correctly with type="on-image", selected and disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled bpk-chip--icon-only"
+    disabled=""
+    role="checkbox"
+    title="Filter"
+    type="button"
+  >
+    <span
+      class="bpk-chip__leading-accessory-view bpk-chip--icon-only__leading-accessory-view"
+    >
+      <svg
+        aria-hidden="true"
+        height="1rem"
+        viewBox="0 0 24 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M7.94 1.94A1.5 1.5 0 0 0 7.5 3v.75a.75.75 0 0 1-.75.75H3a1.5 1.5 0 0 0 0 3h3.75a.75.75 0 0 1 .75.75V9a1.5 1.5 0 0 0 3 0V3a1.5 1.5 0 0 0-2.56-1.06m.282 17.56H9a1.5 1.5 0 1 0 0-3H3a1.5 1.5 0 1 0 0 3zm6.998.22a.75.75 0 0 1 .53-.22H21a1.5 1.5 0 1 0 0-3h-5.25a.75.75 0 0 1-.75-.75V15a1.5 1.5 0 1 0-3 0v6a1.5 1.5 0 1 0 3 0v-.75a.75.75 0 0 1 .22-.53M13.94 4.94A1.5 1.5 0 0 0 15 7.5h6a1.5 1.5 0 0 0 0-3h-6a1.5 1.5 0 0 0-1.06.44"
+        />
+      </svg>
+    </span>
+    <span
+      class="bpk-text bpk-text--footnote"
+    />
+  </button>
+</DocumentFragment>
+`;

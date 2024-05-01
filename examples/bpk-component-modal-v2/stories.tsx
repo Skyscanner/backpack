@@ -34,6 +34,7 @@ import {
   NoFullScreenOnMobileNoTitleExample,
   NoHeaderExample,
   MultipleModalsExample,
+  ContrastExample,
 } from './examples';
 
 export default {
@@ -56,3 +57,4 @@ export const NoFullScreenOnMobile = NoFullScreenOnMobileExample;
 export const NoFullScreenOnMobileNoTitle = NoFullScreenOnMobileNoTitleExample;
 export const NoHeader = NoHeaderExample;
 export const MultipleModals = MultipleModalsExample;
+export const Contrast = ContrastExample;

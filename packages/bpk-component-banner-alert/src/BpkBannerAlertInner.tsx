@@ -21,30 +21,29 @@
  */
 
 import type { ReactNode, FunctionComponent, SVGProps } from 'react';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { withButtonAlignment } from '../../bpk-component-icon';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { withButtonAlignment } from '../../bpk-component-icon';
 import ChevronDownIcon from '../../bpk-component-icon/lg/chevron-down';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
+import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
+import { ALERT_TYPES } from './common-types';
+
 import type {
   AlertTypeValue,
   CommonProps,
   OnDismissHandler,
   OnExpandToggleHandler,
 } from './common-types';
-import { ALERT_TYPES } from './common-types';
+
 import STYLES from './BpkBannerAlert.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -81,6 +80,8 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
+  // TODO: className to be removed
+  // eslint-disable-next-line @skyscanner/rules/forbid-component-props
   return <AlignedIcon className={className} />;
 };
 
@@ -103,7 +104,10 @@ const ToggleButton = (props: ToggleButtonProps) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <ExpandIcon className={classNames.join(' ')} />
+      <ExpandIcon 
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      className={classNames.join(' ')} />
     </button>
   );
 };
@@ -202,7 +206,6 @@ const BpkBannerAlertInner = ({
           {dismissable && (
             <span className={getClassName('bpk-banner-alert__toggle')}>
               <BpkCloseButton
-                className={getClassName('bpk-banner-alert__toggle-button')}
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
                 label={dismissButtonLabel}

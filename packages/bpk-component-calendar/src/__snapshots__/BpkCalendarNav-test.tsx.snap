@@ -20,12 +20,14 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            style="width: 1.5rem; height: 1.5rem;"
+            fill="rgba(0, 0, 0, 0.2)"
+            height="1.5rem"
             viewBox="0 0 24 24"
+            width="1.5rem"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M16.5 17.293V6.707a1.632 1.632 0 00-2.701-1.296l-5.724 5.081a1.75 1.75 0 00-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 002.75-1.251z"
+              d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251"
             />
           </svg>
           <span
@@ -75,12 +77,14 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            style="width: 1.5rem; height: 1.5rem;"
+            fill="rgba(0, 0, 0, 0.2)"
+            height="1.5rem"
             viewBox="0 0 24 24"
+            width="1.5rem"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M7.5 17.293V6.707a1.632 1.632 0 012.701-1.296l5.724 5.081a1.75 1.75 0 01.121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 01-2.75-1.251z"
+              d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251"
             />
           </svg>
           <span
@@ -121,12 +125,14 @@ exports[`BpkCalendarNav should render correctly 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            style="width: 1.5rem; height: 1.5rem;"
+            fill="rgba(0, 0, 0, 0.2)"
+            height="1.5rem"
             viewBox="0 0 24 24"
+            width="1.5rem"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M16.5 17.293V6.707a1.632 1.632 0 00-2.701-1.296l-5.724 5.081a1.75 1.75 0 00-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 002.75-1.251z"
+              d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251"
             />
           </svg>
           <span
@@ -174,12 +180,14 @@ exports[`BpkCalendarNav should render correctly 1`] = `
           <svg
             aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            style="width: 1.5rem; height: 1.5rem;"
+            fill="currentcolor"
+            height="1.5rem"
             viewBox="0 0 24 24"
+            width="1.5rem"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M7.5 17.293V6.707a1.632 1.632 0 012.701-1.296l5.724 5.081a1.75 1.75 0 01.121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 01-2.75-1.251z"
+              d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251"
             />
           </svg>
           <span
@@ -220,12 +228,14 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
           <svg
             aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            style="width: 1.5rem; height: 1.5rem;"
+            fill="rgba(0, 0, 0, 0.2)"
+            height="1.5rem"
             viewBox="0 0 24 24"
+            width="1.5rem"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M16.5 17.293V6.707a1.632 1.632 0 00-2.701-1.296l-5.724 5.081a1.75 1.75 0 00-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 002.75-1.251z"
+              d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251"
             />
           </svg>
           <span
@@ -275,12 +285,14 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
           <svg
             aria-hidden="true"
             class="bpk-calendar-nav__icon"
-            style="width: 1.5rem; height: 1.5rem;"
+            fill="rgba(0, 0, 0, 0.2)"
+            height="1.5rem"
             viewBox="0 0 24 24"
+            width="1.5rem"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M7.5 17.293V6.707a1.632 1.632 0 012.701-1.296l5.724 5.081a1.75 1.75 0 01.121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 01-2.75-1.251z"
+              d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251"
             />
           </svg>
           <span

@@ -18,9 +18,10 @@
 
 import { render } from '@testing-library/react';
 
-import type { Props } from './BpkSelectableChip';
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
+
+import type { Props } from './BpkSelectableChip';
 
 // Just a convenience wrapper that includes the default props so we don't
 // have to keep writing them for each test.
@@ -66,6 +67,18 @@ describe('BpkSelectableChip', () => {
         <TestChip
           type={chipType}
           leadingAccessoryView={<span>Leading</span>}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it(`should render correctly with type="${chipType}" and a leading accessory view without children`, () => {
+      const { asFragment } = render(
+        <BpkSelectableChip
+          type={chipType}
+          leadingAccessoryView={<span>Leading</span>}
+          accessibilityLabel="Toggle"
+          onClick={() => null}
         />,
       );
       expect(asFragment()).toMatchSnapshot();

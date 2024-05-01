@@ -18,9 +18,10 @@
 
 /* @flow strict */
 
-import isEqual from 'lodash/isEqual';
 import { Component } from 'react';
 import type { ComponentType } from 'react';
+
+import isEqual from 'lodash/isEqual';
 
 import { wrapDisplayName } from '../../packages/bpk-react-utils';
 

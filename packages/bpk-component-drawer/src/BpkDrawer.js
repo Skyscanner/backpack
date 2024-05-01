@@ -21,13 +21,10 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { Portal, cssModules } from '../../bpk-react-utils';
+import { Portal } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
-import STYLES from './BpkDrawer.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
 
@@ -86,7 +83,6 @@ class BpkDrawer extends Component<Props, State> {
           isDrawerShown={isDrawerShown}
           onClose={this.hide}
           onCloseAnimationComplete={this.onCloseAnimationComplete}
-          containerClassName={getClassName('bpk-drawer__container')}
           {...rest}
         />
       </Portal>

@@ -11,9 +11,13 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "focuse
       type="button"
     >
       <span
-        class="bpk-text bpk-text--label-1 bpk-price-marker bpk-price-marker-focused"
+        class="bpk-price-marker bpk-price-marker-focused"
       >
-        £120
+        <span
+          class="bpk-text bpk-text--label-1"
+        >
+          £120
+        </span>
       </span>
       <div
         class="bpk-price-marker__arrow bpk-price-marker__arrow-focused"
@@ -34,9 +38,13 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "viewed
       type="button"
     >
       <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-viewed"
+        class="bpk-price-marker bpk-price-marker-viewed"
       >
-        £120
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
       </span>
       <div
         class="bpk-price-marker__arrow bpk-price-marker__arrow-viewed"
@@ -57,9 +65,13 @@ exports[`BpkMapMarker should render correctly with a "arrowClassName" attribute 
       type="button"
     >
       <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default"
+        class="bpk-price-marker bpk-price-marker-default"
       >
-        £120
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
       </span>
       <div
         class="bpk-price-marker__arrow bpk-price-marker__arrow-default custom-class-1 custom-class-2"
@@ -81,9 +93,13 @@ exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`]
       type="button"
     >
       <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default"
+        class="bpk-price-marker bpk-price-marker-default"
       >
-        £120
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
       </span>
       <div
         class="bpk-price-marker__arrow bpk-price-marker__arrow-default"
@@ -104,9 +120,13 @@ exports[`BpkMapMarker should render correctly with a "className" attribute 1`] =
       type="button"
     >
       <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default custom-class-1 custom-class-2"
+        class="bpk-price-marker bpk-price-marker-default custom-class-1 custom-class-2"
       >
-        £120
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
       </span>
       <div
         class="bpk-price-marker__arrow bpk-price-marker__arrow-default"
@@ -128,9 +148,13 @@ exports[`BpkMapMarker should render correctly with a "disabled" attribute 1`] = 
       type="button"
     >
       <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default bpk-price-marker-disabled"
+        class="bpk-price-marker bpk-price-marker-default bpk-price-marker-disabled"
       >
-        Sold out
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          Sold out
+        </span>
       </span>
       <div
         class="bpk-price-marker__arrow bpk-price-marker__arrow-default bpk-price-marker__arrow-disabled"
@@ -151,9 +175,13 @@ exports[`BpkMapMarker should render correctly with a "onClick" attribute 1`] = `
       type="button"
     >
       <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default bpk-price-marker--dynamic"
+        class="bpk-price-marker bpk-price-marker-default bpk-price-marker--dynamic"
       >
-        £120
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
       </span>
       <div
         class="bpk-price-marker__arrow bpk-price-marker__arrow-default"
@@ -174,9 +202,13 @@ exports[`BpkMapMarker should render properly 1`] = `
       type="button"
     >
       <span
-        class="bpk-text bpk-text--label-2 bpk-price-marker bpk-price-marker-default"
+        class="bpk-price-marker bpk-price-marker-default"
       >
-        £120
+        <span
+          class="bpk-text bpk-text--label-2"
+        >
+          £120
+        </span>
       </span>
       <div
         class="bpk-price-marker__arrow bpk-price-marker__arrow-default"

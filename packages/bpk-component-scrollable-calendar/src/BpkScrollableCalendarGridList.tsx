@@ -18,20 +18,23 @@
 
 import { useRef, useState, useMemo, useEffect } from 'react';
 import type { ElementType } from 'react';
-import { startOfDay, startOfMonth } from 'date-fns';
-import { VariableSizeList as List } from 'react-window';
-import AutoSizer from 'react-virtualized-auto-sizer';
 
-import { cssModules } from '../../bpk-react-utils';
+import { startOfDay, startOfMonth } from 'date-fns';
+import AutoSizer from 'react-virtualized-auto-sizer';
+import { VariableSizeList as List } from 'react-window';
+
 import {
   CALENDAR_SELECTION_TYPE,
   DateUtils,
 } from '../../bpk-component-calendar';
+import { cssModules } from '../../bpk-react-utils';
+
+import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
+import { getMonthsArray, getMonthItemHeights } from './utils';
+
 import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
-import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
-import { getMonthsArray, getMonthItemHeights } from './utils';
 
 const getClassName = cssModules(STYLES);
 
@@ -130,6 +133,8 @@ const BpkScrollableCalendarGridList = (props: Props) => {
         focusedDate={focusedDate}
         preventKeyboardFocus={rest.preventKeyboardFocus}
         aria-hidden={index !== 1}
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-scrollable-calendar-grid-list__item')}
       />
     </div>

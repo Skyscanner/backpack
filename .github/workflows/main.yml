@@ -28,13 +28,13 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Upload to Cache
-        uses: actions/cache@v4.0.0
+        uses: actions/cache@v4.0.2
         id: npm-cache
         with:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Install dependencies
         if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
@@ -52,16 +52,16 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore NPM Cache
-        uses: actions/cache/restore@v4.0.0
+        uses: actions/cache/restore@v4.0.2
         id: npm-cache
         with:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
       
       - name: Upload dist-storybook to Cache
-        uses: actions/cache@v4.0.0
+        uses: actions/cache@v4.0.2
         id: storybook-dist-cache
         with:
           path: |
@@ -94,23 +94,23 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore npm Cache
-        uses: actions/cache/restore@v4.0.0
+        uses: actions/cache/restore@v4.0.2
         id: npm-cache
         with:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
       
       - name: Restore Cache
-        uses: actions/cache/restore@v4.0.0
+        uses: actions/cache/restore@v4.0.2
         id: storybook-dist-cache
         with:
           path: dist-storybook/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
       
       - name: Deploy Storybook for main
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
@@ -131,20 +131,20 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore npm Cache
-        uses: actions/cache/restore@v4.0.0
+        uses: actions/cache/restore@v4.0.2
         id: npm-cache
         with:
           path: |
             node_modules/
             packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Build Sass docs
         if: github.ref == 'refs/heads/main'
         run:  npm run sassdoc
   
       - name: Deploy Sass docs to backpack.github.io, if on main branch
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}

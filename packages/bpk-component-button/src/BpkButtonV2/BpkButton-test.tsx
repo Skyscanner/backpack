@@ -19,8 +19,9 @@
 import { render } from '@testing-library/react';
 
 import { BpkButtonV2 } from './BpkButton';
-import type { ButtonType } from './common-types';
 import { SIZE_TYPES, BUTTON_TYPES } from './common-types';
+
+import type { ButtonType } from './common-types';
 
 describe('BpkButtonV2', () => {
   Object.keys(BUTTON_TYPES).forEach((buttonType) => {

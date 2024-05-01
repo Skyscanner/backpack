@@ -17,7 +17,7 @@
  */
 
 import { render } from '@testing-library/react';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkCardWrapper from './BpkCardWrapper';
