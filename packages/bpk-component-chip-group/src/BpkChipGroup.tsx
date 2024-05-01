@@ -20,7 +20,6 @@ import { useRef, useState } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkSelectableChip, { BpkDismissibleChip, BpkIconChip, BpkDropdownChip, CHIP_TYPES } from '../../bpk-component-chip';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';

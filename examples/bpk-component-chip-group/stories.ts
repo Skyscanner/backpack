@@ -58,7 +58,7 @@ export const WithLabel = BpkChipGroupWithLabel;
 export const AllChipTypes = AllChipTypesGroup;
 export const ExampleStateManagement = StateManagement;
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
+export const VisualTestWithZoom = {
+  render: VisualTest,
   zoomEnabled: true,
 };

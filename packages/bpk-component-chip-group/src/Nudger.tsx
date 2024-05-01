@@ -21,9 +21,7 @@ import { type MutableRefObject, useEffect, useState } from 'react';
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { CHIP_TYPES } from '../../bpk-component-chip';
 import { withButtonAlignment } from '../../bpk-component-icon/index';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowLeft from '../../bpk-component-icon/sm/long-arrow-left';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowRight from '../../bpk-component-icon/sm/long-arrow-right';
 import { cssModules, isRTL } from '../../bpk-react-utils/index';
 
