@@ -212,8 +212,6 @@ class BpkCalendarGridTransition extends Component<Props, State> {
                       )
                 }
                 aria-hidden={index !== 1}
-                // TODO: className to be removed
-                // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                 className={getClassName('bpk-calendar-grid-transition__grid')}
               />
             ) : (
