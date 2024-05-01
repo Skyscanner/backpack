@@ -24,7 +24,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 import BpkNavigationBar from "../../bpk-component-navigation-bar";
-import BpkText, { TEXT_STYLES } from "../../bpk-component-text/src/BpkText";
+import { TEXT_STYLES } from "../../bpk-component-text/src/BpkText";
 import { BpkDialogWrapper, cssModules } from "../../bpk-react-utils";
 
 import STYLES from './BpkBottomSheet.module.scss';

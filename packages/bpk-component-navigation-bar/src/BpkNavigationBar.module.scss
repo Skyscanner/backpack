@@ -25,7 +25,7 @@
   position: relative;
   display: grid;
   min-height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-lg();
-  padding: tokens.bpk-spacing-lg();
+  padding: tokens.bpk-spacing-base();
   grid-template-rows: auto;
 
   // 3 columns allowing for buttons at either side and a title then taking the available space in between
