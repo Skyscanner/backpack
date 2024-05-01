@@ -24,11 +24,7 @@ import type {
   ComponentProps,
 } from 'react';
 
-import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
-
-import STYLES from './BpkInput.module.scss';
-
-const getClassName = cssModules(STYLES);
+import { wrapDisplayName } from '../../bpk-react-utils';
 
 const KEYCODES = {
   ENTER: 'Enter',
@@ -87,7 +83,7 @@ const withEventHandler =
     }
   };
 
-const withOpenEvents = <P extends object>(InputComponent: ComponentType<P>) => {
+const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: ComponentType<P>) => {
   class WithOpenEvents extends Component<P & InputProps & WithOpenEventsProps> {
     public static displayName: string;
 
@@ -160,11 +156,6 @@ const withOpenEvents = <P extends object>(InputComponent: ComponentType<P>) => {
         ...rest
       } = this.props;
 
-      const classNames = [getClassName('bpk-input--with-open-events')];
-      if (className) {
-        classNames.push(className);
-      }
-
       const eventHandlers: EventHandlers = {
         onClick: withEventHandler(onOpen, onClick),
         // @ts-expect-error for some reason the type KeyboardEvent was not being recognized as
@@ -189,19 +180,18 @@ const withOpenEvents = <P extends object>(InputComponent: ComponentType<P>) => {
       eventHandlers.onBlur = withEventHandler(this.handleBlur, onBlur);
 
       return (
-        <InputComponent
-          // TODO: className to be removed
-          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={classNames.join(' ')}
-          {...eventHandlers}
-          {...(rest as P)}
-        />
+          <WithOpenEventsInputComponent
+            className={className}
+            {...eventHandlers}
+            {...(rest as P)}
+            data-openable // This allows for conditional styling within BpkInput
+          />
       );
     }
   }
 
   WithOpenEvents.displayName = wrapDisplayName(
-    InputComponent,
+    WithOpenEventsInputComponent,
     'withOpenEvents',
   );
 
