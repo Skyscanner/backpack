@@ -20,11 +20,6 @@ import type { ComponentProps } from 'react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ClearIcon from '../../bpk-component-icon/sm/close-circle';
-import { cssModules } from '../../bpk-react-utils';
-
-import STYLES from './BpkClearButton.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const ClearButtonIcon = withButtonAlignment(ClearIcon);
 
@@ -32,30 +27,20 @@ interface Props extends ComponentProps<'button'> {
   label: string;
 }
 
-const BpkClearButton = ({ className, label, onClick, ...rest }: Props) => {
-  const classNames = [getClassName('bpk-clear-button')];
-
-  if (className) {
-    classNames.push(className);
-  }
-
-  return (
-    <button
-      type="button"
-      title={label}
-      onClick={onClick}
-      aria-label={label}
-      className={classNames.join(' ')}
-      {...rest}
-    >
-      <ClearButtonIcon
-        focusable="false" // prevents focus on IE11
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-clear-button__icon')}
-      />
-    </button>
-  );
-};
+const BpkClearButton = ({ className, label, onClick, ...rest }: Props) => (
+  <button
+    type="button"
+    title={label}
+    onClick={onClick}
+    aria-label={label}
+    className={className}
+    {...rest}
+  >
+    <ClearButtonIcon
+      focusable="false" // prevents focus on IE11
+      fill="currentcolor"
+    />
+  </button>
+);
 
 export default BpkClearButton;
