@@ -37,13 +37,12 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -53,13 +52,12 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -89,13 +87,12 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -105,13 +102,12 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -141,13 +137,12 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -157,13 +152,12 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -272,13 +266,12 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -288,13 +281,12 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -324,13 +316,12 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -340,13 +331,12 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -376,13 +366,12 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -392,13 +381,12 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -507,13 +495,12 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -523,13 +510,12 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -559,13 +545,12 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -575,13 +560,12 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -611,13 +595,12 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -627,13 +610,12 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -742,13 +724,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -758,13 +739,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -794,13 +774,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -810,13 +789,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -846,13 +824,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -862,13 +839,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -977,13 +953,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -993,13 +968,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1029,13 +1003,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1045,13 +1018,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1081,13 +1053,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1097,13 +1068,12 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1212,13 +1182,12 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1228,13 +1197,12 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1264,13 +1232,12 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1280,13 +1247,12 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1316,13 +1282,12 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1332,13 +1297,12 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1447,13 +1411,12 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1463,13 +1426,12 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1499,13 +1461,12 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1515,13 +1476,12 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1551,13 +1511,12 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1567,13 +1526,12 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1682,13 +1640,12 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1698,13 +1655,12 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1734,13 +1690,12 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1750,13 +1705,12 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
@@ -1786,13 +1740,12 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291"
+                  d="M7.463 15.75h9.074a1.358 1.358 0 001.11-2.251l-4.354-4.77a1.53 1.53 0 00-2.184-.04l-4.718 4.77a1.357 1.357 0 001.072 2.291z"
                 />
               </svg>
             </div>
@@ -1802,13 +1755,12 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
               <svg
                 aria-hidden="true"
                 class="bpk-icon--rtl-support"
-                height="1rem"
+                style="width: 1rem; height: 1rem;"
                 viewBox="0 0 24 24"
-                width="1rem"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291"
+                  d="M16.537 8.25H7.463a1.358 1.358 0 00-1.11 2.251l4.354 4.77a1.53 1.53 0 002.184.04l4.718-4.77a1.357 1.357 0 00-1.072-2.291z"
                 />
               </svg>
             </div>
