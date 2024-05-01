@@ -30,32 +30,29 @@ const ClearButtonIcon = withButtonAlignment(ClearIcon);
 
 interface Props extends ComponentProps<'button'> {
   label: string;
+  persistent?: boolean,
+  large?: boolean,
 }
-
-const BpkClearButton = ({ className, label, onClick, ...rest }: Props) => {
-  const classNames = [getClassName('bpk-clear-button')];
-
-  if (className) {
-    classNames.push(className);
-  }
-
-  return (
+const cls = (persistent?: boolean, large?: boolean) => {
+  if(persistent && large) return STYLES['persistent-large'];
+  if(persistent) return STYLES.persistent
+  if(large) return STYLES['default-large']
+  return STYLES.default
+}
+const BpkClearButton = ({ className, label, large, onClick, persistent, ...rest }: Props) => (
     <button
       type="button"
       title={label}
       onClick={onClick}
       aria-label={label}
-      className={classNames.join(' ')}
+      className={cls(persistent, large)}
       {...rest}
     >
       <ClearButtonIcon
         focusable="false" // prevents focus on IE11
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-clear-button__icon')}
+        fill="currentcolor"
       />
     </button>
   );
-};
 
 export default BpkClearButton;

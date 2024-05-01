@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
+@use '../../unstable__bpk-mixins/forms';
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/utils';
 
 .bpk-clear-button {
+  @include forms.bpk-input__clear-button;
   padding: 0;
   border: 0;
   background-color: transparent;
@@ -34,8 +36,21 @@
   &:active {
     color: tokens.$bpk-text-primary-day;
   }
+}
+.default {
+  composes: bpk-clear-button;
+  display: none;
+}
+.persistent {
+  composes: bpk-clear-button;
+  display: inherit;
+}
 
-  &__icon {
-    fill: currentcolor;
-  }
+.default-large {
+  composes: bpk-clear-button bpk-clear-button--large;
+  display: none;
+}
+.persistent-large {
+  composes: bpk-clear-button bpk-clear-button--large;
+  display: inherit;
 }

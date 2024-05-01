@@ -45,7 +45,6 @@ class BpkInput extends Component<Props, State> {
   render() {
     const classNames = [getClassName('bpk-input')];
     const containerClassNames = [getClassName('bpk-input__container')];
-    const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
     const {
       className,
       clearButtonLabel,
@@ -81,9 +80,6 @@ class BpkInput extends Component<Props, State> {
 
     if (large) {
       classNames.push(getClassName('bpk-input--large'));
-      clearButtonClassNames.push(
-        getClassName('bpk-input__clear-button--large'),
-      );
     }
     if (clearable) {
       classNames.push(getClassName('bpk-input--clearable'));
@@ -92,9 +88,6 @@ class BpkInput extends Component<Props, State> {
         this.state.persistClearButton
       ) {
         classNames.push(getClassName('bpk-input--persistent-clearable'));
-        clearButtonClassNames.push(
-          getClassName('bpk-input__clear-button--persistent'),
-        );
       }
     }
 
@@ -146,6 +139,8 @@ class BpkInput extends Component<Props, State> {
         {renderedInput}
         {value.length > 0 && (
           <BpkClearButton
+            persistent={clearButtonMode === CLEAR_BUTTON_MODES.always || this.state.persistClearButton}
+            large={large}
             tabIndex={-1}
             label={clearButtonLabel || ''}
             onMouseDown={onMouseDown}
@@ -162,9 +157,6 @@ class BpkInput extends Component<Props, State> {
                 this.setState({ persistClearButton: false });
               }
             }}
-            // TODO: className to be removed
-            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            className={clearButtonClassNames.join(' ')}
           />
         )}
       </div>

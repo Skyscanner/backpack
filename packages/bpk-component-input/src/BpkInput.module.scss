@@ -26,16 +26,6 @@
     @include forms.bpk-input__container;
   }
 
-  &__clear-button {
-    display: none;
-
-    @include forms.bpk-input__clear-button;
-
-    &--persistent {
-      display: inherit;
-    }
-  }
-
   &--valid {
     @include forms.bpk-input--valid;
   }
@@ -48,7 +38,7 @@
     @include forms.bpk-input--clearable;
 
     // Display the clear button when a clearable input is focused.
-    &:focus + .bpk-input__clear-button {
+    &:focus + button {
       display: inherit;
     }
   }
