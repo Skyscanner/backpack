@@ -44,6 +44,9 @@ type GridProps = {
 type RowProps = {
   layoutDesktop: 'row';
   accessory?: typeof BpkAccessoryTypes.Pagination;
+  ariaLabelIndicator: string;
+  ariaLabelNext: string;
+  ariaLabelPrev: string;
 };
 
 type StackProps = {

@@ -40,6 +40,9 @@ const mockScroll = jest.fn();
 describe('BpkCardListRow', () => {
   const props = {
     accessory: 'pagination' as typeof BpkAccessoryTypes.Pagination,
+    ariaLabelIndicator: 'Go to slide',
+    ariaLabelNext: 'Next',
+    ariaLabelPrev: 'Previous',
     numberOfCardsToShow: 3,
   };
 
@@ -107,7 +110,7 @@ describe('BpkCardListRow', () => {
   });
 
   describe('pagination accessory', () => {
-    it('should render cards and accessory correctly for 10 cards', () => {
+    it('should render cards and accessory correctly for 10 cards with correct aria labels', () => {
       mockRef(1224, 'once');
       mockRef(408);
       const { container } = render(
@@ -117,6 +120,11 @@ describe('BpkCardListRow', () => {
       expect(
         container.getElementsByClassName('bpk-page-indicator__indicator'),
       ).toHaveLength(4);
+      expect(screen.getByRole('button', { name: 'Previous' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
+      expect(
+        screen.getByRole('button', { name: 'Go to slide 1' }),
+      ).toBeInTheDocument();
     });
 
     it('should update the pageIndicator buttons when next arrow clicked', async () => {
@@ -140,7 +148,7 @@ describe('BpkCardListRow', () => {
       expect(nextArrow).toHaveAttribute('disabled', '');
     });
 
-    it('should update the pageIndicator indicators on click', async () => {
+    it('should update the pageIndicator indicators on click with correct aria labels', async () => {
       mockRef(1224, 'once');
       mockRef(408);
       const { container } = render(

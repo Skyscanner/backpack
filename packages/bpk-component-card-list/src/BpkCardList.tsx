@@ -124,6 +124,9 @@ const BpkCardList = (props: BpkCardListProps) => {
                 <BpkCardListRow
                   accessory={button ? undefined : accessory}
                   numberOfCardsToShow={initiallyShownCards}
+                  ariaLabelNext={props.ariaLabelNext}
+                  ariaLabelPrev={props.ariaLabelPrev}
+                  ariaLabelIndicator={props.ariaLabelIndicator}
                 >
                   {allCards}
                 </BpkCardListRow>

@@ -36,13 +36,19 @@ const DEBOUNCE_TIME = 150;
 let setVisibleIndexes: (array: number[]) => {};
 
 type BpkCardListRowProps = {
+  accessory?: typeof BpkAccessoryTypes.Pagination;
+  ariaLabelIndicator: string;
+  ariaLabelNext: string;
+  ariaLabelPrev: string;
   children: ReactElement[];
   numberOfCardsToShow: number;
-  accessory?: typeof BpkAccessoryTypes.Pagination;
 };
 
 const BpkCardListRow = ({
   accessory,
+  ariaLabelIndicator,
+  ariaLabelNext,
+  ariaLabelPrev,
   children,
   numberOfCardsToShow,
 }: BpkCardListRowProps) => {
@@ -178,9 +184,9 @@ const BpkCardListRow = ({
         <BpkPageIndicator
           currentIndex={pageIndex}
           totalIndicators={numberOfIndicators}
-          indicatorLabel="Go to slide" // TODO: confirm values
-          prevNavLabel="Previous" // TODO: confirm values
-          nextNavLabel="Next" // TODO: confirm values
+          indicatorLabel={ariaLabelIndicator}
+          prevNavLabel={ariaLabelPrev}
+          nextNavLabel={ariaLabelNext}
           showNav
           onClick={(
             e: MouseEvent<HTMLButtonElement>,
