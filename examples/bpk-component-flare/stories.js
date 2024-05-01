@@ -22,12 +22,12 @@ import BpkFlareBar from '../../packages/bpk-component-flare/src/BpkFlareBar';
 
 import {
   FlareBarExample,
-  FlareBarRoundedExample,
   ContentBubbleFullWithImageExample,
   ContentBubbleFullWithContentExample,
+  ContentBubbleRoundedExample,
   ContentBubbleStandaloneExample,
   ContentBubbleFixedHeightExample,
-  ContentBubblePointerHiddenExample,
+  ContentBubblePointerHiddenRoundedExample,
   MixedExample,
 } from './examples';
 
@@ -41,19 +41,19 @@ export default {
 
 export const BpkFlareBarDefault = FlareBarExample;
 
-export const BpkFlareBarRounded = FlareBarRoundedExample;
-
 export const BpkContentBubbleFullWidthWithBackgroundImage =
   ContentBubbleFullWithImageExample;
 
 export const BpkContentBubbleFullWidthWithContent =
   ContentBubbleFullWithContentExample;
 
+export const BpkContentBubbleRounded = ContentBubbleRoundedExample;
+
 export const BpkContentBubbleStandalone = ContentBubbleStandaloneExample;
 
 export const BpkContentBubbleFixedHeight = ContentBubbleFixedHeightExample;
 
-export const BpkContentBubblePointerHidden = ContentBubblePointerHiddenExample;
+export const BpkContentBubblePointerHiddenRounded = ContentBubblePointerHiddenRoundedExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});

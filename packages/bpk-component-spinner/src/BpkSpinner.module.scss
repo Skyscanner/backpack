@@ -21,6 +21,8 @@
 @use '../../unstable__bpk-mixins/utils';
 
 .bpk-spinner {
+  display: block;
+
   @include spinners.bpk-spinner;
 
   &--primary {

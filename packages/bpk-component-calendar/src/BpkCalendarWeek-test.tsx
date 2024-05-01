@@ -22,9 +22,9 @@ import { startOfDay } from 'date-fns/startOfDay';
 
 import { CALENDAR_SELECTION_TYPE, SELECTION_TYPES } from '..';
 
-import Week from './Week';
+import BpkCalendarWeek from './BpkCalendarWeek';
 
-import type { Props } from './Week';
+import type { Props } from './BpkCalendarWeek';
 
 const mockDateComponent = jest.fn();
 
@@ -34,7 +34,7 @@ const DummyDateComponent = (props: any) => {
 };
 
 const initialProps: Props = {
-  ...Week.defaultProps,
+  ...BpkCalendarWeek.defaultProps,
   DateComponent: DummyDateComponent,
   dateModifiers: {},
   dates: [
@@ -55,19 +55,19 @@ const initialProps: Props = {
   weekStartsOn: 0,
 };
 
-describe('Week', () => {
+describe('BpkCalendarWeek', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   it('should render correctly', () => {
-    const { asFragment } = render(<Week {...initialProps} />);
+    const { asFragment } = render(<BpkCalendarWeek {...initialProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should set "isOutside" prop correctly when "markOutsideDays" attribute equals to "true"', () => {
-    render(<Week {...initialProps} markOutsideDays />);
+    render(<BpkCalendarWeek {...initialProps} markOutsideDays />);
 
     expect(mockDateComponent).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -79,7 +79,7 @@ describe('Week', () => {
 
   it('should set "isSelected" prop correctly when selectionConfiguration type is "range"', () => {
     render(
-      <Week
+      <BpkCalendarWeek
         {...initialProps}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.range,
@@ -111,7 +111,7 @@ describe('Week', () => {
 
   it('should set "isSelected" prop correctly when selectionConfiguration type is "single"', () => {
     render(
-      <Week
+      <BpkCalendarWeek
         {...initialProps}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
@@ -130,7 +130,7 @@ describe('Week', () => {
 
   it('should not have any selected dates when selectionConfiguration has null date', () => {
     render(
-      <Week
+      <BpkCalendarWeek
         {...initialProps}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
@@ -148,7 +148,7 @@ describe('Week', () => {
 
   it('should set "selectionType" prop correctly when selectionConfiguration type is "single"', () => {
     render(
-      <Week
+      <BpkCalendarWeek
         {...initialProps}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.single,
@@ -167,7 +167,7 @@ describe('Week', () => {
 
   it('should set "selectionType" prop correctly when selectionConfiguration type is "range" and has no "endDate"', () => {
     render(
-      <Week
+      <BpkCalendarWeek
         {...initialProps}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.range,
@@ -187,7 +187,7 @@ describe('Week', () => {
 
   it('should set "selectionType" prop correctly when selectionConfiguration type is "range"', () => {
     render(
-      <Week
+      <BpkCalendarWeek
         {...initialProps}
         selectionConfiguration={{
           type: CALENDAR_SELECTION_TYPE.range,

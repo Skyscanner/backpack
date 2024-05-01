@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import BpkDataTable from '../../packages/bpk-component-datatable/src/BpkDataTable';
 
 import {
@@ -32,7 +31,7 @@ import {
 export default {
   title: 'bpk-component-datatable',
   component: BpkDataTable,
-};
+}
 
 export const Autowidth = AutowidthExample;
 export const RowsNotHoverableOrClickable = NonClickNonHoverRowsExample;
@@ -48,7 +47,8 @@ export const CustomHeaderData = HeaderRendererExample;
 export const WithColumnArray = WithColumnArrayExample;
 
 export const VisualTest = AutowidthExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {zoomEnabled: true}
+}

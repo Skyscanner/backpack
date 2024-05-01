@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import type { ReactNode } from 'react';
-import { Component, Children } from 'react';
+import { Children, useState } from 'react';
 
-import BpkButton from '../../packages/bpk-component-button';
+import {BpkButtonV2} from '../../packages/bpk-component-button';
 import { BpkModalV2, MODAL_STYLING } from '../../packages/bpk-component-modal';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+
+import type { Props as BpkModalProps } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
 
 import STYLES from './examples.module.scss';
 
@@ -34,10 +34,6 @@ const Paragraph = withDefaultProps(BpkText, {
   tagName: 'p',
   className: getClassName('bpk-modal-paragraph'),
 });
-
-type Props = {
-  children: ReactNode;
-};
 
 const content = [
   <Paragraph>
@@ -95,49 +91,27 @@ const content = [
   </Paragraph>,
 ];
 
-class ModalContainer extends Component<Props, { isOpen: boolean }> {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+const ModalContainer = (props: Omit<BpkModalProps, "id" | "isOpen" | "ariaLabelledby" | "closeLabel" | "onClose">) => {
+  const [isOpen, setOpen] = useState(false);
 
-  constructor() {
-    super();
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  onOpen = () => {
-    this.setState({
-      isOpen: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      isOpen: false,
-    });
-  };
-
-  render() {
-    return (
-      <div id="modal-container">
-        <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
-        </div>
-        <BpkModalV2
-          id="bpk-modal"
-          ariaLabelledby="bpk-modal-label-my-dialog"
-          closeLabel="Close modal"
-          isOpen={this.state.isOpen}
-          onClose={this.onClose}
-          {...this.props}
-        >
-          {this.props.children}
-        </BpkModalV2>
+  return (
+    <div id="modal-container">
+      <div id="pagewrap">
+        <BpkButtonV2 onClick={() => setOpen(true)}>Open modal</BpkButtonV2>
       </div>
-    );
-  }
+      <BpkModalV2
+        id="bpk-modal"
+        ariaLabelledby="bpk-modal-label-my-dialog"
+        closeLabel="Close modal"
+        isOpen={isOpen}
+        onClose={() => setOpen(false)}
+        {...props}
+      >
+        {props.children}
+      </BpkModalV2>
+    </div>
+  );
+
 }
 
 const DefaultExample = () => (
@@ -152,7 +126,6 @@ const DefaultExample = () => (
 const ContrastExample = () => (
   <ModalContainer
     title="Modal title"
-    closeLabel="Close modal"
     modalStyle={MODAL_STYLING.surfaceContrast}
   >
     This is a contrast modal. You can put anything you want in here.

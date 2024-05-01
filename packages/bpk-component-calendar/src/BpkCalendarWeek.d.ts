@@ -43,9 +43,9 @@ type DefaultProps = {
     cellClassName?: string | null;
     selectionConfiguration?: SelectionConfiguration;
 };
-declare class Week extends Component<Props> {
+declare class BpkCalendarWeek extends Component<Props> {
     static defaultProps: DefaultProps;
     shouldComponentUpdate(nextProps: Props): boolean;
     render(): JSX.Element | null;
 }
-export default Week;
+export default BpkCalendarWeek;

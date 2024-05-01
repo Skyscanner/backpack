@@ -22,7 +22,7 @@ const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
 
 gulp.task('copy', () =>
   gulp
-    .src(`${ICONS_FOLDER_PATH}/**/*.js`)
+    .src(`${ICONS_FOLDER_PATH}/**/*`)
     .pipe(gulp.dest('./packages/bpk-component-icon')),
 );
 

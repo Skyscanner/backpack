@@ -19,7 +19,6 @@
 import type { ComponentProps } from 'react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ClearIcon from '../../bpk-component-icon/sm/close-circle';
 import { cssModules } from '../../bpk-react-utils';
 

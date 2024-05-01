@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { type JSX } from "react";
 
 export const SORT_DIRECTION_TYPES = {
   ASC: 'ASC',
@@ -53,7 +54,7 @@ export type BpkDataTableProps = {
    * For custom sorting, pass a sort function - must be memoized. It should return 1 if rowA is larger, and -1 if rowB is larger.
    * You can also pass a string: basic, datetime, alphanumeric. By default, alphanumeric sorting will be applied.
    */
-  sort?: string | ((rowA: {}, rowB: {}, columnId: string, desc: boolean) => number);
+  sort?: string | ((rowA: any, rowB: any, columnId: string, desc: boolean) => number);
   /**
    * Use sortBy to specify which column the custom sorting will be applied to. To specify the column, use the accessor of the column.
    */
@@ -93,7 +94,7 @@ export type ColumnType = {
    * Optional function to format the cell data.
    * @returns {string | JSX.Element} The formatted cell data.
    */
-  Cell?: (arg: { rowData: {}, rowIndex: number, accessor: string, columnIndex: number, cellData: {} }) => JSX.Element | string;
+  Cell?: (arg: { rowData: any, rowIndex: number, accessor: string, columnIndex: number, cellData: any }) => JSX.Element | string;
   label?: string;
   style?: {};
   defaultSortDirection?: (typeof SORT_DIRECTION_TYPES)[keyof typeof SORT_DIRECTION_TYPES];

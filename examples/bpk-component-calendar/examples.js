@@ -24,7 +24,7 @@ import {
   BpkCalendarNav,
   BpkCalendarDate,
 } from '../../packages/bpk-component-calendar';
-import Week from '../../packages/bpk-component-calendar/src/Week';
+import BpkCalendarWeek from '../../packages/bpk-component-calendar/src/BpkCalendarWeek';
 import { CALENDAR_SELECTION_TYPE } from '../../packages/bpk-component-calendar/src/custom-proptypes';
 import BpkText from '../../packages/bpk-component-text';
 import { action } from '../bpk-storybook-utils';
@@ -245,7 +245,7 @@ const CustomComposedCalendarExample = () => (
 
 const WeekExample = () => {
   const weekProps = {
-    ...Week.defaultProps,
+    ...BpkCalendarWeek.defaultProps,
     DateComponent: DummyDateComponent,
     dateModifiers: {},
     dates: [
@@ -274,8 +274,8 @@ const WeekExample = () => {
       </p>
       <table>
         <tbody>
-          <Week {...weekProps} />
-          <Week {...weekProps} />
+          <BpkCalendarWeek {...weekProps} />
+          <BpkCalendarWeek {...weekProps} />
         </tbody>
       </table>
     </div>
