@@ -4,7 +4,6 @@ exports[`BpkClearButton should render correctly 1`] = `
 <DocumentFragment>
   <button
     aria-label="Clear"
-    class="bpk-clear-button"
     title="Clear"
     type="button"
   >
@@ -13,7 +12,7 @@ exports[`BpkClearButton should render correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-clear-button__icon"
+        fill="currentcolor"
         focusable="false"
         height="1rem"
         viewBox="0 0 24 24"
@@ -33,7 +32,7 @@ exports[`BpkClearButton should render correctly with a custom class 1`] = `
 <DocumentFragment>
   <button
     aria-label="Clear"
-    class="bpk-clear-button foo-class"
+    class="foo-class"
     title="Clear"
     type="button"
   >
@@ -42,7 +41,7 @@ exports[`BpkClearButton should render correctly with a custom class 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-clear-button__icon"
+        fill="currentcolor"
         focusable="false"
         height="1rem"
         viewBox="0 0 24 24"
