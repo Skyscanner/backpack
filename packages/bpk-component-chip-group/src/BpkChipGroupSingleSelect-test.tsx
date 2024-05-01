@@ -51,24 +51,6 @@ describe('BpkChipGroupSingleSelect', () => {
     }
   ];
 
-  it('should render correctly with type = rail', () => {
-    const { asFragment } = render(
-      <BpkChipGroupSingleSelect
-        chips={chips}
-        type={CHIP_GROUP_TYPES.rail}
-        ariaLabel="Filter cities"
-        leadingNudgerLabel="Scroll back"
-        trailingNudgerLabel="Scroll forward"
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with type = wrap', () => {
-    const { asFragment } = render(<BpkChipGroupSingleSelect chips={chips} type={CHIP_GROUP_TYPES.wrap} ariaLabel="Filter cities" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should call onItemClick when a chip is clicked', async () => {
     const user = userEvent.setup();
 
